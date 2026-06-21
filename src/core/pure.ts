@@ -102,11 +102,58 @@ export interface FinalBrief {
   paletteAccent: { value: string | null; source: string };
 }
 
+export interface HandoffPacket {
+  packetVersion: '1.0.0';
+  packetId: string;
+  projectId: string;
+  sourceHash: string;
+  role: 'IMAGE' | 'MOTION' | 'SUNO';
+  scene: {
+    id: number;
+    sourceId: string | null;
+    exactSourceBeat: string;
+    sourceStatus: string;
+    intent: string;
+    dominantSubject: string;
+    event: string;
+    continuity: {
+      previousSceneId: number | null;
+      nextSceneId: number | null;
+      characterLock: string;
+      worldLock: string;
+      semanticFingerprint: string;
+    };
+  };
+  world: {
+    id: string;
+    recipe: { id: string; source: string };
+    renderRecipe: string;
+    texture?: string;
+    lighting?: string;
+    camera: string;
+    composition: string | null;
+    motionGrammar?: string;
+  };
+  refDNA: FinalBrief['referenceDNA'];
+  locks: { character: string; product: null; visibleText: string };
+  targetModel: { kind: 'image' | 'video' | 'music'; provider: string; label: string };
+  negatives: string[];
+  warnings: Array<{ code: string; message: string }>;
+  draft: { previewPrompt: string; canonical: false };
+}
+
+export type HandoffPacketSet = {
+  IMAGE: HandoffPacket;
+  MOTION: HandoffPacket;
+  SUNO: HandoffPacket;
+};
+
 export interface PureScene {
   id: number;
   topic: string;
   architecture: SceneArchitecture;
   finalBrief: FinalBrief;
+  handoff: HandoffPacketSet;
   imagePrompt: string;
   voiceOver: string;
   sunoBrief: string;
@@ -441,6 +488,86 @@ function calcPacing(sceneId: number, sceneCount: number) {
 // Public API
 // ============================================================
 
+function buildHandoffPackets(args: {
+  scene: Omit<PureScene, 'handoff'>;
+  world: SurgeryWorld;
+  cast: string;
+  count: number;
+  projectId: string;
+  sourceHash: string;
+  imageModel: string;
+  videoModel: string;
+}): HandoffPacketSet {
+  const { scene, world, cast, count, projectId, sourceHash, imageModel, videoModel } = args;
+  const negatives = GLOBAL_NEGATIVES.slice();
+  const continuity = {
+    previousSceneId: scene.id > 1 ? scene.id - 1 : null,
+    nextSceneId: scene.id < count ? scene.id + 1 : null,
+    characterLock: cast,
+    worldLock: world.id,
+    semanticFingerprint: scene.architecture.semanticFingerprint,
+  };
+  const sceneCore = {
+    id: scene.id,
+    sourceId: scene.architecture.source.sourceId,
+    exactSourceBeat: scene.architecture.source.exactText,
+    sourceStatus: scene.architecture.source.status,
+    intent: scene.architecture.beat,
+    dominantSubject: scene.architecture.dominantSubject,
+    event: scene.architecture.event,
+    continuity,
+  };
+  const worldCore = {
+    id: world.id,
+    recipe: scene.finalBrief.recipe,
+    renderRecipe: world.render,
+    texture: world.texture,
+    lighting: world.lighting,
+    camera: scene.architecture.imageVantage,
+    composition: world.compositionConstraint || null,
+    motionGrammar: world.motionNotes,
+  };
+  const locks = { character: cast, product: null, visibleText: 'NO_UNSOURCED_VISIBLE_TEXT' };
+
+  const makePacket = (role: 'IMAGE' | 'MOTION' | 'SUNO', label: string, draftPrompt: string): HandoffPacket => {
+    const warnings: Array<{ code: string; message: string }> = [];
+    if (scene.architecture.source.status !== 'SOURCE_BOUND') {
+      warnings.push({ code: 'UNSOURCED_INPUT', message: scene.architecture.source.notice || 'Unsourced topic input.' });
+    }
+    if (scene.finalBrief.referenceDNA.status === 'SUPPRESSED_WORLD_MISMATCH') {
+      warnings.push({ code: 'REFERENCE_DNA_SUPPRESSED', message: 'Reference DNA cannot override the selected world.' });
+    }
+    if (role === 'MOTION') {
+      warnings.push({ code: 'APPROVED_IMAGE_REQUIRED', message: 'Motion stays locked until an approved image exists.' });
+    }
+    return {
+      packetVersion: '1.0.0',
+      packetId: stableSemanticFingerprint([projectId, sourceHash, String(scene.id), role, label]),
+      projectId,
+      sourceHash,
+      role,
+      scene: sceneCore,
+      world: worldCore,
+      refDNA: scene.finalBrief.referenceDNA,
+      locks,
+      targetModel: {
+        kind: role === 'IMAGE' ? 'image' : role === 'MOTION' ? 'video' : 'music',
+        provider: role === 'SUNO' ? 'SUNO' : role === 'IMAGE' ? imageModel.split('_')[0] : videoModel.split('_')[0],
+        label,
+      },
+      negatives,
+      warnings,
+      draft: { previewPrompt: draftPrompt, canonical: false },
+    };
+  };
+
+  return {
+    IMAGE: makePacket('IMAGE', imageModel, scene.imagePrompt),
+    MOTION: makePacket('MOTION', videoModel, world.motionNotes || world.motion || 'world-native motion grammar'),
+    SUNO: makePacket('SUNO', 'Custom Mode', scene.sunoBrief),
+  };
+}
+
 export function generateBatch(input: BriefInput): GenerationResult {
   const { projectTopic, projectClass, sceneCount, cast, selectedWorldId, selectedRefId, selectedPaletteId } = input;
 
@@ -463,6 +590,13 @@ export function generateBatch(input: BriefInput): GenerationResult {
 
   const paletteOverride = DATA.palettes.find((p) => p.id === selectedPaletteId);
   const count = Math.max(1, Math.min(20, Number(sceneCount) || 5));
+  const sourceParsed = parseSourceInput(projectTopic);
+  const projectId = stableSemanticFingerprint(['PROJECT', projectTopic.trim()]);
+  const sourceHash = stableSemanticFingerprint([
+    'SOURCE',
+    sourceParsed.status,
+    ...sourceParsed.beats.map((b) => b.exactText),
+  ]);
   const scenes: PureScene[] = [];
 
   for (let i = 1; i <= count; i++) {
@@ -473,7 +607,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     const sunoBrief = buildSunoBrief(i, count, world);
     const pacing = calcPacing(i, count);
 
-    scenes.push({
+    const sceneCore: Omit<PureScene, 'handoff'> = {
       id: i,
       topic: `${projectTopic} — Sahne ${i}`,
       architecture: arch,
@@ -484,7 +618,18 @@ export function generateBatch(input: BriefInput): GenerationResult {
       durationSec: pacing.duration,
       intensity: pacing.intensity,
       phaseName: pacing.phaseName,
+    };
+    const handoff = buildHandoffPackets({
+      scene: sceneCore,
+      world,
+      cast,
+      count,
+      projectId,
+      sourceHash,
+      imageModel: input.imageModel,
+      videoModel: input.videoModel,
     });
+    scenes.push({ ...sceneCore, handoff });
   }
 
   return { status: 'GENERATED', scenes, contractGate };

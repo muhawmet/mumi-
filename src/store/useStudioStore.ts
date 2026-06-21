@@ -1,9 +1,9 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import type { SceneArchitecture, HandoffPacketSet } from '../core/pure';
 
 export type Step = 'dashboard' | 'recipe' | 'timeline';
 export type Cast = 'Aras' | 'Defne' | 'İkisi';
-
-import type { SceneArchitecture } from '../core/pure';
 
 export interface Scene {
   id: number;
@@ -14,39 +14,35 @@ export interface Scene {
   durationSec: number;
   intensity: number;
   phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
+  handoff: HandoffPacketSet;
 }
 
 export interface StudioState {
-  // Stage 1: Brief
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
   cast: Cast;
 
-  // Stage 2: Recipe
   selectedWorldId: string;
   selectedPropId: string;
   selectedRefId: string;
   selectedPaletteId: string;
   selectedMusicId: string;
 
-  // Stage 2b: Models
   imageModel: string;
   videoModel: string;
 
-  // Stage 3: Production
   scenes: Scene[];
   selectedSceneId: number | null;
   isGenerating: boolean;
   lastError: string | null;
 
-  // Navigation
   currentStep: Step;
 
-  // Generic + specific actions
   setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
   setScenes: (scenes: Scene[]) => void;
   setCurrentStep: (step: Step) => void;
+  applyPreset: (preset: Partial<StudioState>) => void;
   reset: () => void;
 }
 
@@ -73,13 +69,39 @@ const initial = {
   currentStep: 'dashboard' as Step,
 };
 
-export const useStudioStore = create<StudioState>((set) => ({
-  ...initial,
+export const useStudioStore = create<StudioState>()(
+  persist(
+    (set) => ({
+      ...initial,
 
-  setField: (field, value) => set({ [field]: value } as Partial<StudioState>),
-  setScenes: (scenes) => set({ scenes }),
-  setCurrentStep: (currentStep) => set({ currentStep }),
-  reset: () => set(initial),
-}));
+      setField: (field, value) => set({ [field]: value } as Partial<StudioState>),
+      setScenes: (scenes) => set({ scenes }),
+      setCurrentStep: (currentStep) => set({ currentStep }),
+      applyPreset: (preset) => set(preset as Partial<StudioState>),
+      reset: () => set(initial),
+    }),
+    {
+      name: 'mamilas-studio-v1',
+      storage: createJSONStorage(() => localStorage),
+      partialize: (s) => ({
+        projectTopic: s.projectTopic,
+        projectClass: s.projectClass,
+        sceneCount: s.sceneCount,
+        cast: s.cast,
+        selectedWorldId: s.selectedWorldId,
+        selectedPropId: s.selectedPropId,
+        selectedRefId: s.selectedRefId,
+        selectedPaletteId: s.selectedPaletteId,
+        selectedMusicId: s.selectedMusicId,
+        imageModel: s.imageModel,
+        videoModel: s.videoModel,
+        scenes: s.scenes,
+        selectedSceneId: s.selectedSceneId,
+        currentStep: s.currentStep,
+      }),
+      version: 1,
+    },
+  ),
+);
 
 export type StudioStore = ReturnType<typeof useStudioStore.getState>;
