@@ -87,6 +87,31 @@ test('server: dotfile under public/ is not served', async () => {
   assert.equal(res.status, 404);
 });
 
+test('server: /api/brain returns the markdown index', async () => {
+  const res = await request(server, 'GET', '/api/brain');
+  assert.equal(res.status, 200);
+  const data = JSON.parse(res.body);
+  assert.ok(Array.isArray(data.sections) && data.sections.length > 0);
+  for (const s of data.sections) {
+    assert.match(s.name, /\.md$/);
+    assert.ok(typeof s.bytes === 'number' && s.bytes > 0);
+  }
+});
+
+test('server: /api/brain/:section returns markdown for whitelisted name', async () => {
+  const res = await request(server, 'GET', '/api/brain/04_SUNO.md');
+  assert.equal(res.status, 200);
+  assert.match(res.body, /verse_gwen|paper_diorama/);
+});
+
+test('server: /api/brain/:section rejects path traversal and non-whitelist names', async () => {
+  for (const bad of ['..%2F..%2Fpackage.json', 'foo.txt', 'foo%20bar.md', 'sub%2Fdir.md']) {
+    const res = await request(server, 'GET', '/api/brain/' + bad);
+    assert.ok(res.status === 400 || res.status === 403 || res.status === 404,
+      `expected non-2xx for ${bad}, got ${res.status}`);
+  }
+});
+
 test('server: /api/worlds returns array with required fields', async () => {
   const res = await request(server, 'GET', '/api/worlds');
   assert.equal(res.status, 200);

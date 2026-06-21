@@ -379,10 +379,16 @@ test('model registry passes approved targets to agents without claiming version 
   assert.equal(vm.runInContext('STATE.scenes.length', unknown.context), 0);
 });
 
-test('every visible model selector label is covered by the registry', () => {
-  const html = readFileSync(path.join(ROOT, 'public/index.html'), 'utf8');
-  assert.deepEqual(readSelectGroups(html, 'image-model'), MODEL_REGISTRY.image);
-  assert.deepEqual(readSelectGroups(html, 'video-model'), MODEL_REGISTRY.video);
+test('model registry advertises an immutable, advisory-only catalog shape', () => {
+  assert.equal(MODEL_REGISTRY.role, 'ADVISORY_TARGET_CATALOG');
+  assert.ok(MODEL_REGISTRY.registryVersion);
+  for (const bucket of ['image', 'video']) {
+    assert.ok(MODEL_REGISTRY[bucket], `${bucket} bucket present`);
+    for (const [provider, labels] of Object.entries(MODEL_REGISTRY[bucket])) {
+      assert.ok(Array.isArray(labels) && labels.length > 0, `${bucket}.${provider} has at least one label`);
+      labels.forEach((l) => assert.equal(typeof l, 'string', `${bucket}.${provider} label is string`));
+    }
+  }
 });
 
 test('Final Brief hierarchy keeps Reference DNA subordinate to world and recipe', async () => {

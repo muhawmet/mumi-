@@ -19,7 +19,7 @@
   <!-- LEFT SIDEBAR: Setup & Controls -->
   <aside id="studio-sidebar" class="studio-sidebar">
      <div class="sidebar-header">
-       <div class="sidebar-logo">MAMILAS PRO</div>
+       <h1 class="sidebar-logo">MAMILAS PRO</h1>
        <div class="health-status">
          <div id="health-dot" class="dot"></div>
          <span id="health-text">SYSTEM STANDBY</span>
@@ -29,41 +29,41 @@
      <div class="control-panel">
          <!-- PROJECT SETTINGS -->
          <div class="control-group">
-            <label class="control-label">PROJECT TOPIC</label>
-            <input type="text" class="studio-input" id="project-topic" value="GENERIC TOPIC" />
+            <label class="control-label" for="project-topic">Project topic</label>
+            <input type="text" class="studio-input" id="project-topic" value="" placeholder="e.g. Water cycle for 4th grade" />
          </div>
 
          <div class="control-group">
-            <label class="control-label">CLASS / ID</label>
+            <label class="control-label" for="project-class">Class / ID</label>
             <input type="text" class="studio-input" id="project-class" value="ALPHA_01" />
          </div>
 
          <div class="control-group">
-            <label class="control-label">SUBJECT FOCUS</label>
-            <div id="project-character" class="char-selector-group">
-               <button class="char-btn active" data-char="Aras">ALPHA</button>
-               <button class="char-btn" data-char="Defne">BETA</button>
-               <button class="char-btn" data-char="İkisi">ENSEMBLE</button>
+            <span class="control-label" id="subject-focus-label">Cast</span>
+            <div id="project-character" class="char-selector-group" role="radiogroup" aria-labelledby="subject-focus-label">
+               <button class="char-btn active" data-char="Aras" role="radio" aria-checked="true">Aras</button>
+               <button class="char-btn" data-char="Defne" role="radio" aria-checked="false">Defne</button>
+               <button class="char-btn" data-char="İkisi" role="radio" aria-checked="false">Both</button>
             </div>
          </div>
 
          <div class="control-group">
-            <label class="control-label">NODE COUNT (SCENES)</label>
+            <label class="control-label" for="project-scenes">Scene count</label>
             <div class="slider-wrapper">
                <input type="range" id="project-scenes" class="studio-slider" min="1" max="80" value="5" oninput="document.getElementById('slider-val-display').innerText = this.value; document.getElementById('batch-btn-count').innerText = this.value;" />
-               <div id="slider-val-display" class="slider-val">5</div>
+               <div id="slider-val-display" class="slider-val" aria-live="polite">5</div>
             </div>
          </div>
 
          <button id="btn-batch-generate" class="btn-generate">
-            INITIATE SWARM (<span id="batch-btn-count">5</span>)
+            Generate <span id="batch-btn-count">5</span> scenes
          </button>
 
          <div class="control-divider"></div>
 
          <!-- REFERENCES & AESTHETICS (CLEAN DROPDOWNS) -->
          <div class="control-group">
-            <label class="control-label">VISUAL BASE (WORLD)</label>
+            <label class="control-label" for="cascade-world">Visual world</label>
             <select id="cascade-world" class="studio-select">
                <option value="pixar_feature">3D Pixar</option>
                <option value="arcane_painterly">Arcane Painterly</option>
@@ -75,7 +75,7 @@
          </div>
 
          <div class="control-group">
-            <label class="control-label">TEXTURE & PROP FOCUS</label>
+            <label class="control-label" for="cascade-prop">Prop focus</label>
             <select id="cascade-prop" class="studio-select">
                <option value="paper">Paperworld</option>
                <option value="clay">Claymation</option>
@@ -86,12 +86,12 @@
          </div>
 
          <div class="control-group">
-            <label class="control-label">GOLDEN REFERENCE</label>
+            <label class="control-label" for="cascade-reference">Golden reference</label>
             <select id="cascade-reference" class="studio-select"></select>
          </div>
 
          <div class="control-group">
-            <label class="control-label">COLOR PALETTE</label>
+            <label class="control-label" for="cascade-palette">Color palette</label>
             <select id="cascade-palette" class="studio-select">
                <option value="vibrant_clean_education">Vibrant Education</option>
                <option value="rembrandt_amber">Rembrandt Amber</option>
@@ -102,7 +102,7 @@
          </div>
 
          <div class="control-group">
-            <label class="control-label">AUDIO PROFILE</label>
+            <label class="control-label" for="cascade-music">Audio profile</label>
             <select id="cascade-music" class="studio-select">
                <option value="epic_orchestral">Epic Orchestral</option>
                <option value="warm_acoustic">Warm Acoustic</option>
@@ -112,143 +112,64 @@
             </select>
          </div>
 
-         <!-- Hidden / Extra Tools Required for tests to pass -->
-         <div class="hidden-tools" style="display:none;">
-            <input type="file" id="file-import-json">
-            <button id="btn-api-save"></button>
-            <button id="btn-export-xml"></button>
-            <button id="btn-export-json"></button>
-            <button id="btn-import-json"></button>
-            <button id="btn-ab-test"></button>
-            <button id="btn-focus-toggle"></button>
-            <button id="btn-sound-toggle"></button>
-            <select id="image-model">
-              <optgroup label="FLUX">
-                <option>Auto</option>
-                <option>Cinematic</option>
-                <option>Classic</option>
-                <option>Classic Fast</option>
-                <option>Flux.1</option>
-                <option>Flux.1 Fast</option>
-                <option>Flux.1 Kontext Max/Pro</option>
-                <option>Flux.1 Realism</option>
-                <option>Flux.2 Max/Pro</option>
-              </optgroup>
-              <optgroup label="GOOGLE">
-                <option>Imagen 3</option>
-                <option>Imagen 4</option>
-                <option>Imagen 4 Fast</option>
-                <option>Imagen 4 Ultra</option>
-                <option>Nano Banana</option>
-                <option>Nano Banana 2</option>
-                <option>Nano Banana Pro</option>
-              </optgroup>
-              <optgroup label="GPT">
-                <option>GPT</option>
-                <option>1-HQ</option>
-                <option>1.5</option>
-                <option>1.5-High</option>
-                <option>2</option>
-              </optgroup>
-              <optgroup label="MYSTIC">
-                <option>1.0</option>
-                <option>2.5</option>
-                <option>2.5 Flexible</option>
-                <option>2.5 Fluid</option>
-              </optgroup>
-              <optgroup label="RECRAFT">
-                <option>V4</option>
-                <option>V4 Pro</option>
-                <option>V4.1</option>
-              </optgroup>
-              <optgroup label="SEEDREAM">
-                <option>4</option>
-                <option>4 4K</option>
-                <option>4.5</option>
-                <option>5 Lite</option>
-              </optgroup>
-              <optgroup label="DİĞER">
-                <option>Grok</option>
-                <option>Ideogram</option>
-                <option>Ideogram 4</option>
-                <option>Krea 2</option>
-                <option>Luma Uni-1.1</option>
-                <option>MAI Image 2.5</option>
-                <option>Qwen</option>
-                <option>Runway</option>
-              </optgroup>
-            </select>
-            <select id="video-model">
-              <optgroup label="KLING">
-                <option>3.0</option>
-                <option>3.0 Omni</option>
-                <option>3.0 Turbo</option>
-                <option>3.0 Motion Control</option>
-                <option>2.6</option>
-                <option>2.6 Motion Control</option>
-                <option>O1</option>
-                <option>2.5</option>
-                <option>2.1</option>
-                <option>2.1 Master</option>
-              </optgroup>
-              <optgroup label="SEEDANCE">
-                <option>2.0</option>
-                <option>2.0 Fast</option>
-                <option>1.5 Pro</option>
-              </optgroup>
-              <optgroup label="VEO">
-                <option>3.1</option>
-                <option>3.1 Fast</option>
-                <option>3.1 Lite</option>
-              </optgroup>
-              <optgroup label="WAN">
-                <option>2.7</option>
-                <option>2.6</option>
-                <option>2.5</option>
-                <option>2.2</option>
-              </optgroup>
-              <optgroup label="RUNWAY">
-                <option>Gen-4.5</option>
-                <option>Gen 4</option>
-              </optgroup>
-              <optgroup label="VEED">
-                <option>Fabric 1.0</option>
-                <option>Fabric 1.0 Fast</option>
-              </optgroup>
-              <optgroup label="LTX">
-                <option>2 Fast</option>
-                <option>2 Pro</option>
-              </optgroup>
-              <optgroup label="MINIMAX">
-                <option>Hailuo 2.3</option>
-                <option>2.3 Fast</option>
-                <option>02</option>
-              </optgroup>
-              <optgroup label="SORA">
-                <option>2 Pro</option>
-                <option>2</option>
-              </optgroup>
-              <optgroup label="PIXVERSE">
-                <option>6</option>
-                <option>5.5</option>
-              </optgroup>
-              <optgroup label="DİĞER">
-                <option>Grok</option>
-                <option>Grok Imagine 1.5</option>
-                <option>Happy Horse</option>
-                <option>Omni Human 1.5</option>
-                <option>Auto</option>
-              </optgroup>
-            </select>
-            <div id="cinematic-loader"></div>
+         <div class="control-divider"></div>
+
+         <details class="advanced-models">
+           <summary>Target models (advisory)</summary>
+           <div class="control-group">
+             <label class="control-label" for="image-model">Image target</label>
+             <select id="image-model" class="studio-select" aria-label="Image model target"></select>
+           </div>
+           <div class="control-group">
+             <label class="control-label" for="video-model">Video target</label>
+             <select id="video-model" class="studio-select" aria-label="Video model target"></select>
+           </div>
+           <p class="advanced-note">Labels passed verbatim to agents. Versions resolved live by the receiving agent.</p>
+         </details>
+
+         <div class="sidebar-footer">
+           <input type="file" id="file-import-json" accept=".json" hidden>
+           <div class="toolbar">
+             <button id="btn-api-save" class="tool-btn" type="button" title="Save project to backend">Save</button>
+             <button id="btn-export-json" class="tool-btn" type="button" title="Export scenes as JSON">JSON</button>
+             <button id="btn-export-xml" class="tool-btn" type="button" title="Export Premiere XMEML">XML</button>
+             <button id="btn-import-json" class="tool-btn" type="button" title="Import scene pack">Import</button>
+             <button id="btn-ab-test" class="tool-btn" type="button" title="Print A/B test brief to console">A/B</button>
+             <button id="btn-master-brief" class="tool-btn" type="button" title="Copy master brief">Brief</button>
+           </div>
+           <div class="toolbar mode-toggles">
+             <button id="btn-focus-toggle" class="tool-btn-ghost" type="button" aria-pressed="false">Focus</button>
+             <button id="btn-sound-toggle" class="tool-btn-ghost" type="button" aria-pressed="false">Sound</button>
+             <button id="btn-brain" class="tool-btn-ghost" type="button" aria-haspopup="dialog">Brain</button>
+           </div>
          </div>
      </div>
   </aside>
 
+  <div id="brain-modal" class="brain-modal" role="dialog" aria-modal="true" aria-labelledby="brain-modal-title" hidden>
+    <div class="brain-modal-card">
+      <header class="brain-modal-header">
+        <h2 id="brain-modal-title">Agent brain</h2>
+        <button id="btn-brain-close" class="btn-mini-ghost" type="button" aria-label="Close">Close</button>
+      </header>
+      <div class="brain-modal-body">
+        <nav class="brain-sections" id="brain-sections" aria-label="Brain sections"></nav>
+        <article class="brain-content" id="brain-content" aria-live="polite"></article>
+      </div>
+    </div>
+  </div>
+
+  <div id="cinematic-loader" class="cinematic-loader" aria-hidden="true">
+    <div class="cinematic-loader-inner">
+      <div class="spinner"></div>
+      <div class="cinematic-loader-text">Generating scenes…</div>
+    </div>
+  </div>
+
   <!-- MIDDLE: Main Preview Player & Details -->
   <main class="studio-main">
       <div class="preview-header">
-         <div class="preview-title">ON-SCREEN PREVIEW</div>
+         <div class="preview-title">Scene preview</div>
          <div id="pacing-graph-container" class="mini-pacing"><div id="pacing-graph"></div></div>
       </div>
 
@@ -256,35 +177,48 @@
       <div class="preview-player-area">
           <div id="detail-empty-state" class="empty-state">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.2; margin-bottom: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <h2>NO SCENE SELECTED</h2>
-              <p>Configure your project and initiate the swarm to generate a scene sequence.</p>
+              <h2>No scene selected yet</h2>
+              <p>Configure your project on the left, generate, then pick a scene to inspect its prompts.</p>
               <div class="empty-tips">
-                <div class="empty-tip"><span class="empty-tip-step">1</span>Set project topic, class, and subject focus on the left.</div>
+                <div class="empty-tip"><span class="empty-tip-step">1</span>Set project topic, class, and cast on the left.</div>
                 <div class="empty-tip"><span class="empty-tip-step">2</span>Pick a visual world, prop focus, palette and audio profile.</div>
-                <div class="empty-tip"><span class="empty-tip-step">3</span>Hit <b>INITIATE SWARM</b> — then click any node in the timeline.</div>
+                <div class="empty-tip"><span class="empty-tip-step">3</span>Click <b>Generate scenes</b> — then pick a row from the timeline.</div>
               </div>
           </div>
           
           <div class="preview-content-wrapper">
-             <h2 id="detail-title"></h2>
+             <header class="scene-meta">
+               <div class="scene-meta-main">
+                 <span id="scene-meta-index" class="scene-meta-index">—</span>
+                 <div>
+                   <h2 id="detail-title"></h2>
+                   <div id="scene-meta-tags" class="scene-meta-tags"></div>
+                 </div>
+               </div>
+               <div class="scene-actions">
+                 <button id="btn-scene-copy-all" class="btn-mini" type="button">Copy all prompts</button>
+                 <button id="btn-scene-mark-done" class="btn-mini" type="button">Mark done</button>
+                 <button id="btn-scene-regenerate" class="btn-mini btn-mini-ghost" type="button">Regenerate</button>
+               </div>
+             </header>
              <div class="prompt-group">
-                <div class="prompt-label">IMAGE PROMPT</div>
+                <div class="prompt-label">Image prompt</div>
                 <div id="detail-image-prompt" class="prompt-box"></div>
              </div>
              
              <div class="prompt-group">
-                <div class="prompt-label">MOTION PROMPT</div>
+                <div class="prompt-label">Motion prompt</div>
                 <div id="detail-motion-prompt" class="prompt-box mono"></div>
-                <button id="btn-copy-motion" class="btn-copy">COPY MOTION</button>
+                <button id="btn-copy-motion" class="btn-copy" aria-label="Copy motion prompt">Copy</button>
              </div>
              
              <div class="prompt-group-half">
                 <div>
-                   <div class="prompt-label">SUNO AUDIO</div>
+                   <div class="prompt-label">Suno audio</div>
                    <div id="detail-suno-prompt" class="prompt-box mono"></div>
                 </div>
                 <div>
-                   <div class="prompt-label">VOICEOVER</div>
+                   <div class="prompt-label">Voiceover</div>
                    <div id="detail-vo-prompt" class="prompt-box mono"></div>
                 </div>
              </div>
@@ -295,9 +229,28 @@
 
       <!-- BOTTOM: Timeline Storyboard -->
       <footer class="studio-timeline">
-         <div class="timeline-header">SCENE SEQUENCE (TIMELINE)</div>
+         <div class="timeline-header">
+           <span>Scene Sequence</span>
+           <div class="timeline-legend" aria-label="Status legend">
+             <span class="status-chip status-pending"><span class="status-dot"></span>Pending</span>
+             <span class="status-chip status-active"><span class="status-dot"></span>Active</span>
+             <span class="status-chip status-done"><span class="status-dot"></span>Done</span>
+             <span class="status-chip status-blocked"><span class="status-dot"></span>Blocked</span>
+           </div>
+         </div>
          <div class="timeline-scroll-area">
-             <table class="timeline-table">
+             <table class="timeline-table" aria-label="Scene timeline">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Scene</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Video</th>
+                    <th scope="col">Music</th>
+                    <th scope="col">VO</th>
+                  </tr>
+                </thead>
                 <tbody id="table-body">
                    <!-- app.js generates rows here -->
                 </tbody>
@@ -316,6 +269,7 @@
 <script src="ab-tester.js"></script>
 <script src="pacing-graph.js"></script>
 <script src="brief-generator.js"></script>
+<script src="motion-validator.js"></script>
 <script src="app.js"></script>
 <script src="ui-sugar.js"></script>
 </body>

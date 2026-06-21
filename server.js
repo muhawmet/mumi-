@@ -34,6 +34,42 @@ app.get('/api/worlds', (req, res) => {
   res.json(VISUAL_WORLDS);
 });
 
+// GET /api/brain — brain/*.md dosya listesi + meta (boyut)
+app.get('/api/brain', (_req, res) => {
+  try {
+    const files = fs.readdirSync(BRAIN_DIR)
+      .filter((f) => f.endsWith('.md'))
+      .sort()
+      .map((f) => {
+        const full = path.join(BRAIN_DIR, f);
+        const stat = fs.statSync(full);
+        return { name: f, bytes: stat.size, modified: stat.mtime.toISOString() };
+      });
+    res.json({ sections: files });
+  } catch (e) {
+    res.status(500).json({ error: 'brain_index_failed' });
+  }
+});
+
+// GET /api/brain/:section — tek brain dosyasının içeriği (sadece beyaz liste)
+app.get('/api/brain/:section', (req, res) => {
+  const raw = String(req.params.section || '');
+  if (!/^[A-Za-z0-9_]+\.md$/.test(raw)) {
+    return res.status(400).json({ error: 'invalid_section_name' });
+  }
+  const full = path.join(BRAIN_DIR, raw);
+  if (!full.startsWith(BRAIN_DIR + path.sep)) {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  try {
+    if (!fs.existsSync(full)) return res.status(404).json({ error: 'not_found' });
+    const text = fs.readFileSync(full, 'utf8');
+    res.type('text/markdown').send(text);
+  } catch (e) {
+    res.status(500).json({ error: 'read_failed' });
+  }
+});
+
 // POST /api/generate-card
 // Body: { topic, grade, sceneIndex, sceneCount, world, character, imageModel, videoModel, notes }
 // Returns: { imagePrompt, videoPrompt, sunoPrompt, inputCard }

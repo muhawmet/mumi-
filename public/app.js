@@ -746,7 +746,7 @@ async function generateBatch() {
     if (STATE.contractGate.status === 'BLOCKED') {
       STATE.scenes = [];
       saveState();
-      alert(`BLOCKED: ${STATE.contractGate.findings.map(finding => finding.code).join(', ')}`);
+      showToast(`BLOCKED: ${STATE.contractGate.findings.map(finding => finding.code).join(', ')}`, 'error');
       renderTable();
       renderDetailPanel();
       return STATE.contractGate;
@@ -900,7 +900,30 @@ function renderDetailPanel() {
   if (container) container.style.display = 'block';
   if (emptyState) emptyState.style.display = 'none';
 
-  if (titleEl) titleEl.innerText = `Sahne ${ scene.id } Detayı`;
+  if (titleEl) titleEl.innerText = scene.topic || `Sahne ${scene.id}`;
+
+  const indexEl = document.getElementById('scene-meta-index');
+  if (indexEl) indexEl.textContent = '#' + (scene.index ?? scene.id ?? '?');
+  const tagsEl = document.getElementById('scene-meta-tags');
+  if (tagsEl) {
+    const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
+    const worldName = (world && world.name) || STATE.selectedWorldId || 'world';
+    const phase = scene.phase || scene.beatLabel || 'beat';
+    const castLabel = STATE.character === 'İkisi' ? 'Aras + Defne' : (STATE.character || 'cast');
+    const statusLabel = (scene.status || 'pending').toString().toLowerCase();
+    tagsEl.innerHTML = '';
+    [
+      { cls: 'tag-world', text: worldName },
+      { cls: 'tag-phase', text: phase },
+      { cls: 'tag-cast', text: castLabel },
+      { cls: 'tag-status', text: statusLabel }
+    ].forEach(t => {
+      const s = document.createElement('span');
+      s.className = 'scene-tag ' + t.cls;
+      s.textContent = t.text;
+      tagsEl.appendChild(s);
+    });
+  }
 
   const promptText = scene.canonicalPrompt || scene.imagePrompt;
   const prefix = scene.canonicalPrompt ? '[CANONICAL AGENT OUTPUT]\n' : '[DRAFT PREVIEW — NON-CANONICAL]\n';
@@ -912,6 +935,19 @@ function renderDetailPanel() {
     if (scene.motionPrompt) {
       motionEl.innerText = scene.motionPrompt;
       if (motionEl.parentElement) motionEl.parentElement.classList.remove('locked');
+      if (typeof window !== 'undefined' && typeof window.validateMotionAgainstImage === 'function') {
+        const { ok, foreign } = window.validateMotionAgainstImage(promptText, scene.motionPrompt);
+        const existing = motionEl.parentElement && motionEl.parentElement.querySelector('.motion-warning');
+        if (existing) existing.remove();
+        if (!ok && motionEl.parentElement) {
+          const warn = document.createElement('div');
+          warn.className = 'motion-warning';
+          warn.setAttribute('role', 'alert');
+          warn.innerHTML = '<b>Motion ↔ Image koherans uyarısı.</b> Image\'da olmayan kelimeler: <code>' +
+            foreign.map(escapeHTML).join(', ') + '</code>. brain/03_MOTION.md "play the approved frame" diyor.';
+          motionEl.parentElement.insertBefore(warn, motionEl.nextSibling);
+        }
+      }
     } else {
       const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId) || BRAIN.worlds[0];
       const motionNotes = (world && world.motionNotes) ? world.motionNotes : 'N/A';
@@ -1463,7 +1499,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnApiSave) {
     let isSaving = false;
     btnApiSave.addEventListener('click', async () => {
-      if (!window.saveProjectToDisk) return alert("API module missing.");
+      if (!window.saveProjectToDisk) return showToast("API module missing.", "error");
       if (isSaving) return;
       isSaving = true;
       const originalText = btnApiSave.innerText;
@@ -1471,9 +1507,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btnApiSave.disabled = true;
         btnApiSave.innerText = "Kaydediliyor...";
         await window.saveProjectToDisk({ ...STATE, version: "1.0.0" });
-        alert("Proje başarıyla Backend'e kaydedildi!");
+        showToast("Proje kaydedildi.", "success");
       } catch (err) {
-        alert("Hata: Proje kaydedilemedi.");
+        showToast("Proje kaydedilemedi.", "error");
       } finally {
         btnApiSave.innerText = originalText;
         btnApiSave.disabled = false;
@@ -1485,7 +1521,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnXmlExport = document.getElementById('btn-export-xml');
   if (btnXmlExport) {
     btnXmlExport.addEventListener('click', () => {
-      if (!window.exportTimelineXML) return alert("XML Exporter missing.");
+      if (!window.exportTimelineXML) return showToast("XML Exporter eksik.", "error");
       window.exportTimelineXML(STATE.scenes);
     });
   }
@@ -1493,13 +1529,82 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnAbTest = document.getElementById('btn-ab-test');
   if (btnAbTest) {
     btnAbTest.addEventListener('click', () => {
-      if (!window.generateABTestBrief) return alert("A/B Tester missing.");
+      if (!window.generateABTestBrief) return showToast("A/B Tester eksik.", "error");
       const markdown = window.generateABTestBrief(STATE.scenes, "Kling", "Sora");
-      alert("A/B Test konsola yazdırıldı!");
+      showToast("A/B Test konsola yazdırıldı.", "info");
       console.log(markdown);
+    });
+  }
+
+  const btnSceneCopyAll = document.getElementById('btn-scene-copy-all');
+  if (btnSceneCopyAll) {
+    btnSceneCopyAll.addEventListener('click', () => {
+      const scene = STATE.scenes.find(s => s.id === STATE.selectedSceneId);
+      if (!scene) return showToast('Önce bir sahne seç.', 'warning');
+      const blob = [
+        '# ' + (scene.topic || 'Scene ' + scene.id),
+        '\n## Image\n' + (scene.canonicalPrompt || scene.imagePrompt || ''),
+        '\n## Motion\n' + (scene.motionPrompt || '(awaiting frame)'),
+        '\n## Suno\n' + (scene.canonicalSunoPrompt || scene.sunoBrief || ''),
+        '\n## VO\n' + (scene.voiceOver || '')
+      ].join('\n');
+      navigator.clipboard.writeText(blob)
+        .then(() => showToast('Tüm prompt\'lar kopyalandı.', 'success'))
+        .catch(() => showToast('Kopyalama başarısız.', 'error'));
+    });
+  }
+
+  const btnSceneMarkDone = document.getElementById('btn-scene-mark-done');
+  if (btnSceneMarkDone) {
+    btnSceneMarkDone.addEventListener('click', () => {
+      const scene = STATE.scenes.find(s => s.id === STATE.selectedSceneId);
+      if (!scene) return showToast('Önce bir sahne seç.', 'warning');
+      scene.status = scene.status === 'done' ? 'pending' : 'done';
+      saveState();
+      renderTable();
+      renderDetailPanel();
+      showToast('Sahne durumu güncellendi: ' + scene.status, 'success');
+    });
+  }
+
+  const btnSceneRegen = document.getElementById('btn-scene-regenerate');
+  if (btnSceneRegen) {
+    btnSceneRegen.addEventListener('click', () => {
+      const scene = STATE.scenes.find(s => s.id === STATE.selectedSceneId);
+      if (!scene) return showToast('Önce bir sahne seç.', 'warning');
+      scene.status = 'pending';
+      scene.canonicalPrompt = '';
+      scene.canonicalSunoPrompt = '';
+      saveState();
+      renderTable();
+      renderDetailPanel();
+      showToast('Sahne yeniden üretime hazır.', 'info');
     });
   }
 });
 function showToast(msg, type) {
-  console.log('TOAST: ' + type + ' - ' + msg);
+  const t = type || 'info';
+  if (typeof document === 'undefined') return;
+  let host = document.getElementById('toast-host');
+  if (!host) {
+    host = document.createElement('div');
+    host.id = 'toast-host';
+    host.setAttribute('aria-live', 'polite');
+    host.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(host);
+  }
+  const el = document.createElement('div');
+  el.className = 'toast toast-' + t;
+  el.setAttribute('role', t === 'error' ? 'alert' : 'status');
+  el.textContent = String(msg);
+  host.appendChild(el);
+  const raf = (typeof requestAnimationFrame === 'function') ? requestAnimationFrame : (cb => setTimeout(cb, 16));
+  raf(() => el.classList.add('toast-in'));
+  const ttl = t === 'error' ? 6000 : 3500;
+  setTimeout(() => {
+    el.classList.remove('toast-in');
+    el.classList.add('toast-out');
+    setTimeout(() => el.remove(), 260);
+  }, ttl);
 }
+if (typeof window !== 'undefined') window.showToast = showToast;

@@ -108,7 +108,6 @@ document.body.addEventListener('click', (e) => {
     const finalBrief = generateMasterBriefText();
     if (finalBrief.startsWith("Lütfen")) {
       if (window.showToast) window.showToast(finalBrief, 'error');
-      else alert(finalBrief);
       return;
     }
     

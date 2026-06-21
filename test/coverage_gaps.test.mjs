@@ -370,11 +370,11 @@ test('btn-api-save successfully saves project to disk via saveProjectToDisk', as
 
   assert.equal(h.context.saveProjectToDiskCalls.length, 1);
   assert.equal(h.context.saveProjectToDiskCalls[0].version, '1.0.0');
-  assert.equal(h.alerts.length, 1);
-  assert.ok(h.alerts[0].includes('Proje başarıyla Backend\'e kaydedildi!'));
+  const successToast = h.toasts.find(t => t.type === 'success' && /kaydedildi/i.test(t.msg));
+  assert.ok(successToast, 'expected success toast about save');
 });
 
-test('btn-api-save failure flow alerts error', async () => {
+test('btn-api-save failure flow surfaces error toast', async () => {
   const h = createBrowserHarness();
   boot(h);
 
@@ -386,8 +386,8 @@ test('btn-api-save failure flow alerts error', async () => {
   await new Promise(resolve => setTimeout(resolve, 10));
 
   assert.equal(h.context.saveProjectToDiskCalls.length, 1);
-  assert.equal(h.alerts.length, 1);
-  assert.ok(h.alerts[0].includes('Hata: Proje kaydedilemedi.'));
+  const errorToast = h.toasts.find(t => t.type === 'error' && /kaydedilemedi/i.test(t.msg));
+  assert.ok(errorToast, 'expected error toast about save failure');
 });
 
 test('btn-export-xml clicks and runs exportTimelineXML without throwing', async () => {
@@ -419,8 +419,8 @@ test('btn-ab-test clicks and runs generateABTestBrief to console', async () => {
     console.log = originalLog;
   }
 
-  assert.equal(h.alerts.length, 1);
-  assert.ok(h.alerts[0].includes('A/B Test konsola yazdırıldı!'));
+  const abToast = h.toasts.find(t => /a\/b test/i.test(t.msg));
+  assert.ok(abToast, 'expected toast about A/B test');
   assert.ok(logOutput.length > 0);
   assert.ok(logOutput[0].includes('A/B Test Brief'));
 });

@@ -29,7 +29,7 @@ window.exportTimelineXML = function(scenes) {
                   <out>${durationFrames}</out>
                   <file id="file-${index + 1}">
                     <name>Placeholder ${index + 1}</name>
-                    <pathurl>file://localhost/placeholder.mp4</pathurl>
+                    <pathurl>${(scene && (scene.motionUrl || scene.videoUrl)) ? String(scene.motionUrl || scene.videoUrl) : `file://localhost/Scene_${String(index + 1).padStart(3, '0')}.mp4`}</pathurl>
                     <rate>
                       <timebase>${fps}</timebase>
                       <ntsc>FALSE</ntsc>
