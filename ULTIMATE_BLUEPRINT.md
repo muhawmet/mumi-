@@ -88,3 +88,7 @@ The JSON file contains a single root object with the following top-level keys:
 8. `regression`: Regression test cases.
 
 Use these keys to map options into the Select/Dropdown React components (e.g., `<select>` mapping over `SURGERY_DATA.worlds`).
+
+## CRITICAL HANDOFF NOTE FOR CLAUDE
+Due to context length limits, the final step of converting `src/core/app.ts`, `src/core/audio-engine.ts`, and `src/core/brief-generator.ts` into PURE functions (removing `document.getElementById` and `window.STATE` references) was aborted mid-flight. 
+**YOUR FIRST TASK IN THE NEW CONVERSATION:** Go into `src/core/` and refactor those files so they only take arguments (from Zustand) and return pure data. Do NOT let them touch the DOM. Once done, build out the React UI step-by-step.
