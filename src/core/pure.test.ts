@@ -8,6 +8,7 @@ import {
   groupedRefs,
   groupedWorlds,
   parseSourceInput,
+  validateMotion,
   type BriefInput,
   type SurgeryWorld,
 } from './pure';
@@ -206,6 +207,32 @@ describe('generateBatch', () => {
     const sourceHashes = new Set(result.scenes.map((s) => s.handoff.IMAGE.sourceHash));
     expect(projectIds.size).toBe(1);
     expect(sourceHashes.size).toBe(1);
+  });
+});
+
+describe('validateMotion', () => {
+  it('passes when motion only adds camera + direction words', () => {
+    const img = 'Pixar render of Aras the boy holding a glowing water droplet over a forest stream.';
+    const motion = 'Camera slowly dollies forward; the droplet gently moves down toward the stream.';
+    const r = validateMotion(img, motion);
+    expect(r.ok).toBe(true);
+    expect(r.foreign).toEqual([]);
+  });
+
+  it('flags foreign content tokens introduced by motion only', () => {
+    const img = 'Pixar render of Aras holding a glowing water droplet over a forest stream.';
+    const motion = 'Dragon appears, breathes fire, palace explodes, neon laser dance, sword duel.';
+    const r = validateMotion(img, motion, 3);
+    expect(r.ok).toBe(false);
+    expect(r.foreign.length).toBeGreaterThan(3);
+    expect(r.foreign).toEqual(expect.arrayContaining(['dragon']));
+  });
+
+  it('threshold parameter controls strictness', () => {
+    const img = 'forest scene';
+    const motion = 'extra alien spaceship';
+    expect(validateMotion(img, motion, 10).ok).toBe(true);
+    expect(validateMotion(img, motion, 0).ok).toBe(false);
   });
 });
 

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Copy, Check } from 'lucide-react';
-import { useStudioStore, type Scene } from '../../store/useStudioStore';
-import { Panel, Button } from '../../components/Layout/PanelKit';
+import { Copy, Check, Edit3, X } from 'lucide-react';
+import { useStudioStore, effectivePrompt, type Scene } from '../../store/useStudioStore';
+import { Panel, Button, inputStyle } from '../../components/Layout/PanelKit';
+import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
 
 const PHASE_COLORS: Record<string, string> = {
   Intro: '#4df5a0',
@@ -13,9 +14,18 @@ const PHASE_COLORS: Record<string, string> = {
 
 export const TimelineStep = () => {
   const state = useStudioStore();
-  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes } = state;
+  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, setSceneOverride } = state;
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
   const onGenerate = generateScenes;
+  const exportCtx: ExportContext = {
+    topic: state.projectTopic,
+    projectClass: state.projectClass,
+    cast: state.cast,
+    worldId: state.selectedWorldId,
+    refId: state.selectedRefId,
+    paletteId: state.selectedPaletteId,
+  };
+  const safeName = state.projectTopic.replace(/[^a-zA-Z0-9_-]+/g, '_').slice(0, 60) || 'mamilas';
 
   const onExportJSON = () => {
     const payload = {
@@ -35,7 +45,19 @@ export const TimelineStep = () => {
   const onExportHandoff = () => {
     if (!scenes.length) return;
     const payload = scenes.map((s) => ({ sceneId: s.id, packets: s.handoff }));
-    downloadFile(`${state.projectTopic.replace(/\s+/g, '_')}_handoff_packets.json`, JSON.stringify(payload, null, 2), 'application/json');
+    downloadFile(`${safeName}_handoff_packets.json`, JSON.stringify(payload, null, 2), 'application/json');
+  };
+
+  const onExportCSV = () => {
+    if (!scenes.length) return;
+    const scenesForExport: Scene[] = scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) }));
+    downloadFile(`${safeName}_scenes.csv`, scenesToCSV(scenesForExport, exportCtx), 'text/csv;charset=utf-8');
+  };
+
+  const onExportMD = () => {
+    if (!scenes.length) return;
+    const scenesForExport: Scene[] = scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) }));
+    downloadFile(`${safeName}_scenes.md`, scenesToMarkdown(scenesForExport, exportCtx), 'text/markdown;charset=utf-8');
   };
 
   const totalDuration = scenes.reduce((sum, s) => sum + s.durationSec, 0);
@@ -54,8 +76,10 @@ export const TimelineStep = () => {
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <Button variant="ghost" onClick={() => setCurrentStep('recipe')}>← Reçete</Button>
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportJSON}>Export JSON</Button>}
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff paketleri</Button>}
+          {scenes.length > 0 && <Button variant="ghost" onClick={onExportJSON}>JSON</Button>}
+          {scenes.length > 0 && <Button variant="ghost" onClick={onExportCSV}>CSV</Button>}
+          {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
+          {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
             {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
@@ -150,7 +174,11 @@ export const TimelineStep = () => {
                   <DetailRow label="Event" value={selected.architecture.event} />
                   <DetailRow label="Vantage" value={selected.architecture.imageVantage} mono />
                   <DetailRow label="Fingerprint" value={selected.architecture.semanticFingerprint} mono />
-                  <DetailRow label="Image prompt" value={selected.imagePrompt} mono block copyable />
+                  <ImagePromptRow
+                    scene={selected}
+                    onSave={(v) => setSceneOverride(selected.id, v)}
+                    onReset={() => setSceneOverride(selected.id, null)}
+                  />
                   <DetailRow label="Voice over" value={selected.voiceOver} copyable />
                   <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
                   <details>
@@ -198,6 +226,123 @@ export const TimelineStep = () => {
     </div>
   );
 };
+
+const ImagePromptRow: React.FC<{
+  scene: Scene;
+  onSave: (v: string) => void;
+  onReset: () => void;
+}> = ({ scene, onSave, onReset }) => {
+  const isOverridden = typeof scene.userImagePrompt === 'string';
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(effectivePrompt(scene));
+  const [copied, setCopied] = useState(false);
+  const live = effectivePrompt(scene);
+
+  const copy = () => {
+    navigator.clipboard.writeText(live).then(() => {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1500);
+    });
+  };
+
+  return (
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+        <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>
+          IMAGE PROMPT
+          {isOverridden && (
+            <span style={{ marginLeft: 8, color: 'var(--green, #4df5a0)' }}>· EDITED</span>
+          )}
+        </div>
+        <div style={{ display: 'flex', gap: 6 }}>
+          {!editing && (
+            <button
+              onClick={() => {
+                setDraft(live);
+                setEditing(true);
+              }}
+              style={iconBtnStyle()}
+            >
+              <Edit3 size={11} /> DÜZENLE
+            </button>
+          )}
+          {isOverridden && !editing && (
+            <button onClick={onReset} style={iconBtnStyle('var(--red, #f54d6b)')}>
+              <X size={11} /> SIFIRLA
+            </button>
+          )}
+          <button onClick={copy} style={iconBtnStyle(copied ? 'var(--green, #4df5a0)' : undefined)}>
+            {copied ? <Check size={11} /> : <Copy size={11} />}
+            {copied ? 'KOPYALANDI' : 'KOPYALA'}
+          </button>
+        </div>
+      </div>
+      {editing ? (
+        <div>
+          <textarea
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            style={{
+              ...inputStyle,
+              width: '100%',
+              minHeight: 140,
+              fontFamily: "'JetBrains Mono Variable', monospace",
+              fontSize: 12,
+              resize: 'vertical',
+            }}
+          />
+          <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+            <button
+              onClick={() => {
+                onSave(draft);
+                setEditing(false);
+              }}
+              style={iconBtnStyle('var(--gold)')}
+            >
+              KAYDET
+            </button>
+            <button onClick={() => setEditing(false)} style={iconBtnStyle()}>
+              VAZGEÇ
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div
+          style={{
+            color: '#fff',
+            fontFamily: "'JetBrains Mono Variable', monospace",
+            fontSize: 12,
+            background: 'rgba(0,0,0,.3)',
+            padding: '10px 12px',
+            borderRadius: 8,
+            border: `1px solid ${isOverridden ? 'rgba(77,245,160,.35)' : 'var(--line)'}`,
+            whiteSpace: 'pre-wrap',
+            wordBreak: 'break-word',
+          }}
+        >
+          {live}
+        </div>
+      )}
+    </div>
+  );
+};
+
+function iconBtnStyle(accent?: string): React.CSSProperties {
+  return {
+    padding: '4px 8px',
+    fontSize: 10,
+    background: 'transparent',
+    border: '1px solid var(--line2)',
+    borderRadius: 6,
+    color: accent || 'var(--text-muted)',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+    letterSpacing: 1,
+    fontFamily: 'inherit',
+  };
+}
 
 const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?: boolean; copyable?: boolean }> = ({
   label,

@@ -636,6 +636,60 @@ export function generateBatch(input: BriefInput): GenerationResult {
 }
 
 // Used by the Recipe step for grouped dropdowns
+// ============================================================
+// Motion validator — prevent motion prompts from introducing
+// content tokens that were never approved in the image.
+// ============================================================
+
+const MOTION_STOPWORDS = new Set([
+  // Connectives
+  'a','an','and','as','at','by','for','from','in','into','of','on','or','the','to','with',
+  // Generic motion verbs (allowed by definition)
+  'move','moves','moving','motion','slow','slowly','fast','quick','quickly','smooth','smoothly',
+  'gentle','gently','steady','steadily','sudden','suddenly','then','while','before','after',
+  // Camera vocabulary (allowed)
+  'camera','pan','pans','tilt','tilts','dolly','dollies','push','pushes','pull','pulls',
+  'zoom','zooms','rack','racks','focus','frame','frames','shot','take','takes',
+  'second','seconds','fps','tracking','tracks','crane','cranes','glide','glides',
+  // Direction
+  'left','right','up','down','forward','back','backward','across','around','toward','away',
+  // Intensity
+  'subtle','soft','hard','intense','calm','energetic',
+]);
+
+const TOKEN_RE = /[a-zA-ZığüşöçİĞÜŞÖÇ][a-zA-ZığüşöçİĞÜŞÖÇ-]{2,}/g;
+
+function tokenSet(text: string): Set<string> {
+  const out = new Set<string>();
+  const matches = text.toLowerCase().match(TOKEN_RE) ?? [];
+  for (const m of matches) {
+    if (!MOTION_STOPWORDS.has(m)) out.add(m);
+  }
+  return out;
+}
+
+export interface MotionValidation {
+  ok: boolean;
+  foreign: string[];
+  threshold: number;
+}
+
+/**
+ * Detect content tokens in `motionPrompt` that don't appear in `imagePrompt`.
+ * Camera, direction, and generic motion words are ignored. More than `threshold`
+ * foreign tokens flips ok=false — that means motion is asking for things the
+ * image never established (a recipe for identity drift across frames).
+ */
+export function validateMotion(imagePrompt: string, motionPrompt: string, threshold = 3): MotionValidation {
+  const imgTokens = tokenSet(imagePrompt);
+  const motionTokens = tokenSet(motionPrompt);
+  const foreign: string[] = [];
+  for (const t of motionTokens) {
+    if (!imgTokens.has(t)) foreign.push(t);
+  }
+  return { ok: foreign.length <= threshold, foreign: foreign.slice(0, 12), threshold };
+}
+
 export function groupedRefs(): Record<string, SurgeryRef[]> {
   const groups: Record<string, SurgeryRef[]> = {};
   for (const r of DATA.refs) {

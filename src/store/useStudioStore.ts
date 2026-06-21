@@ -15,7 +15,12 @@ export interface Scene {
   intensity: number;
   phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
   handoff: HandoffPacketSet;
+  /** Optional user-edited override for the image prompt. Export uses this if set. */
+  userImagePrompt?: string;
 }
+
+/** Returns the prompt that should be used downstream — override wins over generated. */
+export const effectivePrompt = (s: Scene): string => s.userImagePrompt ?? s.imagePrompt;
 
 export interface StudioState {
   projectTopic: string;
@@ -45,6 +50,7 @@ export interface StudioState {
   applyPreset: (preset: Partial<StudioState>) => void;
   generateScenes: () => void;
   advance: () => void;
+  setSceneOverride: (sceneId: number, override: string | null) => void;
   reset: () => void;
 }
 
@@ -130,6 +136,20 @@ export const useStudioStore = create<StudioState>()(
           });
         }
       },
+
+      setSceneOverride: (sceneId, override) =>
+        set((s) => ({
+          scenes: s.scenes.map((sc) =>
+            sc.id === sceneId
+              ? override === null
+                ? (() => {
+                    const { userImagePrompt: _drop, ...rest } = sc;
+                    return rest as Scene;
+                  })()
+                : { ...sc, userImagePrompt: override }
+              : sc,
+          ),
+        })),
 
       advance: () => {
         const s = get();
