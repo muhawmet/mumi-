@@ -1064,280 +1064,6 @@
       ]
     }
   ],
-  "palettes": [
-    {
-      "id": "vibrant_clean_education",
-      "name": "Vibrant Clean Education",
-      "colors": [
-        "#ffd34e",
-        "#59a7ff",
-        "#111827",
-        "#ffffff"
-      ],
-      "c0": "warm key",
-      "c1": "cool bounce",
-      "c2": "clean shadow",
-      "c3": "friendly accent",
-      "use": "education",
-      "avoid": "muddy colors"
-    },
-    {
-      "id": "deep_space_blue",
-      "name": "Deep Space Blue",
-      "colors": [
-        "#06111f",
-        "#2f80ed",
-        "#f5c842",
-        "#ffffff"
-      ],
-      "c0": "deep blue key",
-      "c1": "scientific fill",
-      "c2": "dark depth",
-      "c3": "gold insight",
-      "use": "science",
-      "avoid": "black crush"
-    },
-    {
-      "id": "historical_sepia",
-      "name": "Historical Sepia",
-      "colors": [
-        "#c79a56",
-        "#5c3d20",
-        "#efe1c5",
-        "#0b0704"
-      ],
-      "c0": "archive key",
-      "c1": "brown fill",
-      "c2": "deep shadow",
-      "c3": "paper accent",
-      "use": "history",
-      "avoid": "propaganda red overload"
-    },
-    {
-      "id": "pastel_soft",
-      "name": "Pastel Soft",
-      "colors": [
-        "#f8c2d2",
-        "#b9d9ff",
-        "#f7e7a0",
-        "#7f6a8a"
-      ],
-      "c0": "soft warm key",
-      "c1": "pastel fill",
-      "c2": "gentle shadow",
-      "c3": "memory accent",
-      "use": "emotion",
-      "avoid": "saccharine"
-    },
-    {
-      "id": "ghibli_meadow",
-      "name": "Ghibli Meadow",
-      "colors": [
-        "#d8e8b0",
-        "#7ba36a",
-        "#fff1c8",
-        "#3f5d46"
-      ],
-      "c0": "diffused sun",
-      "c1": "leaf fill",
-      "c2": "soft depth",
-      "c3": "cream accent",
-      "use": "story/nature",
-      "avoid": "creature copy"
-    },
-    {
-      "id": "rembrandt_amber",
-      "name": "Rembrandt Amber",
-      "colors": [
-        "#d99a36",
-        "#1b1110",
-        "#5b6f8a",
-        "#f4e0b2"
-      ],
-      "c0": "amber side key",
-      "c1": "cool fill",
-      "c2": "heavy shadow",
-      "c3": "skin/paper accent",
-      "use": "painterly/cinematic",
-      "avoid": "muddy face"
-    },
-    {
-      "id": "commercial_neutral",
-      "name": "Commercial Neutral",
-      "colors": [
-        "#f6f2e8",
-        "#151515",
-        "#b8bec7",
-        "#d6a44a"
-      ],
-      "c0": "clean studio key",
-      "c1": "black negative fill",
-      "c2": "neutral shadow",
-      "c3": "premium accent",
-      "use": "commercial",
-      "avoid": "generic stock ad"
-    },
-    {
-      "id": "warm_commercial_gold",
-      "name": "Warm Commercial Gold",
-      "colors": [
-        "#f2c36b",
-        "#171717",
-        "#fff3df",
-        "#8b5a2b"
-      ],
-      "c0": "gold key",
-      "c1": "dark fill",
-      "c2": "cream bounce",
-      "c3": "wood/amber accent",
-      "use": "product/food",
-      "avoid": "orange mush"
-    },
-    {
-      "id": "muted_documentary",
-      "name": "Muted Documentary",
-      "colors": [
-        "#d7d3c8",
-        "#68717d",
-        "#20242b",
-        "#d6a44a"
-      ],
-      "c0": "natural key",
-      "c1": "cool fill",
-      "c2": "real shadow",
-      "c3": "human warmth",
-      "use": "corporate/doc",
-      "avoid": "over-grade"
-    },
-    {
-      "id": "skin_realism",
-      "name": "Skin Realism",
-      "colors": [
-        "#e0b894",
-        "#6b4b3e",
-        "#f3d3b8",
-        "#161417"
-      ],
-      "c0": "skin key",
-      "c1": "wardrobe fill",
-      "c2": "soft highlight",
-      "c3": "deep portrait shadow",
-      "use": "human",
-      "avoid": "plastic skin"
-    },
-    {
-      "id": "luxury_black_gold",
-      "name": "Luxury Black Gold",
-      "colors": [
-        "#050507",
-        "#f0c46a",
-        "#d8d4cb",
-        "#4a4a52"
-      ],
-      "c0": "black negative key",
-      "c1": "gold rim",
-      "c2": "soft textile fill",
-      "c3": "silver detail",
-      "use": "luxury",
-      "avoid": "cheap glamour"
-    },
-    {
-      "id": "clinical_blue",
-      "name": "Clinical Blue",
-      "colors": [
-        "#f5f7fb",
-        "#8aa4c8",
-        "#141821",
-        "#58b7ff"
-      ],
-      "c0": "white clinical key",
-      "c1": "blue fill",
-      "c2": "dark device shadow",
-      "c3": "screen accent",
-      "use": "tech/medical",
-      "avoid": "hologram spam"
-    },
-    {
-      "id": "food_amber_macro",
-      "name": "Food Amber Macro",
-      "colors": [
-        "#f0b85a",
-        "#3a1f12",
-        "#fff1c8",
-        "#7a2e1f"
-      ],
-      "c0": "appetite amber key",
-      "c1": "deep brown fill",
-      "c2": "cream bounce",
-      "c3": "sauce accent",
-      "use": "food",
-      "avoid": "plastic food"
-    },
-    {
-      "id": "architecture_daylight",
-      "name": "Architecture Daylight",
-      "colors": [
-        "#e8e2d7",
-        "#8b8f96",
-        "#101215",
-        "#c9a56b"
-      ],
-      "c0": "window daylight",
-      "c1": "neutral fill",
-      "c2": "architectural shadow",
-      "c3": "material accent",
-      "use": "architecture",
-      "avoid": "flat showroom"
-    },
-    {
-      "id": "automotive_night",
-      "name": "Automotive Night",
-      "colors": [
-        "#090b0f",
-        "#d4d8df",
-        "#f2b94b",
-        "#5d6674"
-      ],
-      "c0": "night key",
-      "c1": "metal fill",
-      "c2": "road shadow",
-      "c3": "headlight accent",
-      "use": "automotive",
-      "avoid": "game CGI"
-    },
-    {
-      "id": "civic_morning",
-      "name": "Civic Morning",
-      "colors": [
-        "#d7d3c8",
-        "#7b8794",
-        "#1f2937",
-        "#d6a44a"
-      ],
-      "c0": "morning practical key",
-      "c1": "street fill",
-      "c2": "civic shadow",
-      "c3": "warm human accent",
-      "use": "municipality/reels",
-      "avoid": "stock civic"
-    },
-    {
-      "id": "editorial_monochrome",
-      "name": "Editorial Monochrome",
-      "colors": [
-        "#f5f5f0",
-        "#121212",
-        "#9ca3af",
-        "#f5c842"
-      ],
-      "c0": "white sculpted key",
-      "c1": "black negative",
-      "c2": "grey textile shadow",
-      "c3": "gold accent",
-      "use": "editorial",
-      "avoid": "flat monochrome"
-    }
-  ],
   "refs": [
     {
       "id": "pixar_dimensional",
@@ -2738,6 +2464,551 @@
       "dna": "pop appetite, burger geometry",
       "preview": "food",
       "anchor": "fast food pop"
+    }
+  ],
+  "palettes": [
+    {
+      "id": "vibrant_clean_education",
+      "name": "Vibrant Clean Education",
+      "colors": [
+        "#ffd34e",
+        "#59a7ff",
+        "#111827",
+        "#ffffff"
+      ],
+      "c0": "warm key",
+      "c1": "cool bounce",
+      "c2": "clean shadow",
+      "c3": "friendly accent",
+      "use": "education",
+      "avoid": "muddy colors"
+    },
+    {
+      "id": "deep_space_blue",
+      "name": "Deep Space Blue",
+      "colors": [
+        "#06111f",
+        "#2f80ed",
+        "#f5c842",
+        "#ffffff"
+      ],
+      "c0": "deep blue key",
+      "c1": "scientific fill",
+      "c2": "dark depth",
+      "c3": "gold insight",
+      "use": "science",
+      "avoid": "black crush"
+    },
+    {
+      "id": "historical_sepia",
+      "name": "Historical Sepia",
+      "colors": [
+        "#c79a56",
+        "#5c3d20",
+        "#efe1c5",
+        "#0b0704"
+      ],
+      "c0": "archive key",
+      "c1": "brown fill",
+      "c2": "deep shadow",
+      "c3": "paper accent",
+      "use": "history",
+      "avoid": "propaganda red overload"
+    },
+    {
+      "id": "pastel_soft",
+      "name": "Pastel Soft",
+      "colors": [
+        "#f8c2d2",
+        "#b9d9ff",
+        "#f7e7a0",
+        "#7f6a8a"
+      ],
+      "c0": "soft warm key",
+      "c1": "pastel fill",
+      "c2": "gentle shadow",
+      "c3": "memory accent",
+      "use": "emotion",
+      "avoid": "saccharine"
+    },
+    {
+      "id": "ghibli_meadow",
+      "name": "Ghibli Meadow",
+      "colors": [
+        "#d8e8b0",
+        "#7ba36a",
+        "#fff1c8",
+        "#3f5d46"
+      ],
+      "c0": "diffused sun",
+      "c1": "leaf fill",
+      "c2": "soft depth",
+      "c3": "cream accent",
+      "use": "story/nature",
+      "avoid": "creature copy"
+    },
+    {
+      "id": "rembrandt_amber",
+      "name": "Rembrandt Amber",
+      "colors": [
+        "#d99a36",
+        "#1b1110",
+        "#5b6f8a",
+        "#f4e0b2"
+      ],
+      "c0": "amber side key",
+      "c1": "cool fill",
+      "c2": "heavy shadow",
+      "c3": "skin/paper accent",
+      "use": "painterly/cinematic",
+      "avoid": "muddy face"
+    },
+    {
+      "id": "commercial_neutral",
+      "name": "Commercial Neutral",
+      "colors": [
+        "#f6f2e8",
+        "#151515",
+        "#b8bec7",
+        "#d6a44a"
+      ],
+      "c0": "clean studio key",
+      "c1": "black negative fill",
+      "c2": "neutral shadow",
+      "c3": "premium accent",
+      "use": "commercial",
+      "avoid": "generic stock ad"
+    },
+    {
+      "id": "warm_commercial_gold",
+      "name": "Warm Commercial Gold",
+      "colors": [
+        "#f2c36b",
+        "#171717",
+        "#fff3df",
+        "#8b5a2b"
+      ],
+      "c0": "gold key",
+      "c1": "dark fill",
+      "c2": "cream bounce",
+      "c3": "wood/amber accent",
+      "use": "product/food",
+      "avoid": "orange mush"
+    },
+    {
+      "id": "muted_documentary",
+      "name": "Muted Documentary",
+      "colors": [
+        "#d7d3c8",
+        "#68717d",
+        "#20242b",
+        "#d6a44a"
+      ],
+      "c0": "natural key",
+      "c1": "cool fill",
+      "c2": "real shadow",
+      "c3": "human warmth",
+      "use": "corporate/doc",
+      "avoid": "over-grade"
+    },
+    {
+      "id": "skin_realism",
+      "name": "Skin Realism",
+      "colors": [
+        "#e0b894",
+        "#6b4b3e",
+        "#f3d3b8",
+        "#161417"
+      ],
+      "c0": "skin key",
+      "c1": "wardrobe fill",
+      "c2": "soft highlight",
+      "c3": "deep portrait shadow",
+      "use": "human",
+      "avoid": "plastic skin"
+    },
+    {
+      "id": "luxury_black_gold",
+      "name": "Luxury Black Gold",
+      "colors": [
+        "#050507",
+        "#f0c46a",
+        "#d8d4cb",
+        "#4a4a52"
+      ],
+      "c0": "black negative key",
+      "c1": "gold rim",
+      "c2": "soft textile fill",
+      "c3": "silver detail",
+      "use": "luxury",
+      "avoid": "cheap glamour"
+    },
+    {
+      "id": "clinical_blue",
+      "name": "Clinical Blue",
+      "colors": [
+        "#f5f7fb",
+        "#8aa4c8",
+        "#141821",
+        "#58b7ff"
+      ],
+      "c0": "white clinical key",
+      "c1": "blue fill",
+      "c2": "dark device shadow",
+      "c3": "screen accent",
+      "use": "tech/medical",
+      "avoid": "hologram spam"
+    },
+    {
+      "id": "food_amber_macro",
+      "name": "Food Amber Macro",
+      "colors": [
+        "#f0b85a",
+        "#3a1f12",
+        "#fff1c8",
+        "#7a2e1f"
+      ],
+      "c0": "appetite amber key",
+      "c1": "deep brown fill",
+      "c2": "cream bounce",
+      "c3": "sauce accent",
+      "use": "food",
+      "avoid": "plastic food"
+    },
+    {
+      "id": "architecture_daylight",
+      "name": "Architecture Daylight",
+      "colors": [
+        "#e8e2d7",
+        "#8b8f96",
+        "#101215",
+        "#c9a56b"
+      ],
+      "c0": "window daylight",
+      "c1": "neutral fill",
+      "c2": "architectural shadow",
+      "c3": "material accent",
+      "use": "architecture",
+      "avoid": "flat showroom"
+    },
+    {
+      "id": "automotive_night",
+      "name": "Automotive Night",
+      "colors": [
+        "#090b0f",
+        "#d4d8df",
+        "#f2b94b",
+        "#5d6674"
+      ],
+      "c0": "night key",
+      "c1": "metal fill",
+      "c2": "road shadow",
+      "c3": "headlight accent",
+      "use": "automotive",
+      "avoid": "game CGI"
+    },
+    {
+      "id": "civic_morning",
+      "name": "Civic Morning",
+      "colors": [
+        "#d7d3c8",
+        "#7b8794",
+        "#1f2937",
+        "#d6a44a"
+      ],
+      "c0": "morning practical key",
+      "c1": "street fill",
+      "c2": "civic shadow",
+      "c3": "warm human accent",
+      "use": "municipality/reels",
+      "avoid": "stock civic"
+    },
+    {
+      "id": "editorial_monochrome",
+      "name": "Editorial Monochrome",
+      "colors": [
+        "#f5f5f0",
+        "#121212",
+        "#9ca3af",
+        "#f5c842"
+      ],
+      "c0": "white sculpted key",
+      "c1": "black negative",
+      "c2": "grey textile shadow",
+      "c3": "gold accent",
+      "use": "editorial",
+      "avoid": "flat monochrome"
+    }
+  ],
+  "agents": [
+    {
+      "id": "idea",
+      "name": "Idea Generator",
+      "icon": "🧠",
+      "role": "Creative strategy + scenario architecture",
+      "summary": "Chooses Production Path before scenario. Turns weak client briefs into routes, recommendation, scene architecture and MAMILAS handoff."
+    },
+    {
+      "id": "master",
+      "name": "Master Brief",
+      "icon": "🧭",
+      "role": "Final Brief architect",
+      "summary": "Creates strict path-aware Final Brief, resolves path conflicts, protects Render Lock, source integrity, scene IDs and @tags."
+    },
+    {
+      "id": "image",
+      "name": "Image Director",
+      "icon": "🖼️",
+      "role": "Nano Banana / Gemini start frames",
+      "summary": "Reads Production Path before World. Real path = photoreal/commercial/live-action frames. Animation path = tactile metaphor. Preserves @tags/logo/text."
+    },
+    {
+      "id": "motion",
+      "name": "Motion Director",
+      "icon": "🎞️",
+      "role": "Kling 3.0 motion prompts",
+      "summary": "Pure motion only. Reads Production Path before camera. Real path = restrained filmic. Animation = material physics. 5-6s beat/split aware."
+    },
+    {
+      "id": "proof",
+      "name": "Proof Director",
+      "icon": "✅",
+      "role": "Path conflict and QA",
+      "summary": "Fails contamination, skipped IDs, weak render locks, text/logo risk, scene source loss, generic AI-video smell."
+    },
+    {
+      "id": "suno",
+      "name": "Suno Music",
+      "icon": "🎵",
+      "role": "Narration-safe sound",
+      "summary": "Path-aware instrumental score, Custom Mode thinking, no vocals unless requested, VO-safe mix."
+    },
+    {
+      "id": "client",
+      "name": "Client Pitch",
+      "icon": "💼",
+      "role": "Sellable pitch wrapper",
+      "summary": "Turns Final Brief into client-facing concept rationale and approval text without exposing prompt mechanics."
+    }
+  ],
+  "golden": [
+    {
+      "id": "image_real_product",
+      "name": "IMAGE · Product Hero · Nano Banana",
+      "agent": "image",
+      "path": "PRODUCT_HERO",
+      "score": "10/10 target",
+      "bad": "A cinematic shot of a premium phone case, dramatic lighting, ultra realistic, 4K.",
+      "why_bad": "Generic. No geometry lock, logo/text rule, material behavior, lens, reflection, surface fidelity, start-frame stability.",
+      "gold": "Ultra-real premium commercial studio frame, exact product geometry locked, macro 100mm lens, clean black negative space, controlled gold rim light across aramid fiber texture, crisp edge highlights, realistic micro-scratches and weave depth, stable logo/packaging plane if present, shallow depth of field, product centered as hero object, no CGI plastic sheen, no warped text, no extra objects, frozen cinematic start frame ready for motion.",
+      "qa": [
+        "geometry lock",
+        "surface material",
+        "lens",
+        "reflection",
+        "logo/text stability",
+        "no plastic"
+      ]
+    },
+    {
+      "id": "image_human_testimonial",
+      "name": "IMAGE · Human Testimonial · Realism",
+      "agent": "image",
+      "path": "HUMAN_TESTIMONIAL",
+      "score": "10/10 target",
+      "bad": "A happy customer talking to camera in a nice office, cinematic.",
+      "why_bad": "Stock testimonial. No skin texture, eye-line, wardrobe fabric, practical light, human imperfection, location credibility.",
+      "gold": "Photoreal human portrait film frame, 50mm lens at eye height, natural skin texture with subtle pores and asymmetry, believable eye-line slightly off-camera, real wardrobe fabric with visible weave, soft practical key light from window left, muted office background with authentic depth, restrained color grade, human-scale framing, calm expression, no plastic skin, no fake smile, no beauty smoothing, frozen start frame.",
+      "qa": [
+        "skin",
+        "eyeline",
+        "wardrobe",
+        "practical light",
+        "no fake smile"
+      ]
+    },
+    {
+      "id": "image_animation_edu",
+      "name": "IMAGE · Aras + Defne · Education",
+      "agent": "image",
+      "path": "ANIMATION_EDU",
+      "score": "10/10 target",
+      "bad": "A Pixar classroom where kids learn about liquid measurements.",
+      "why_bad": "Too literal/classroom. No tactile metaphor, dominant lesson-object, motion hook, character/lip safety.",
+      "gold": "Premium 3D Pixar-quality animated feature frame inside a handcrafted soft-clay learning world, one oversized transparent measuring beaker as the dominant lesson-object, warm classroom sunlight, tactile rounded materials, Aras and Defne as quiet observer anchors with closed mouths, measurement marks physically engraved on a wooden base, liquid surface paused halfway with a visible light reflection ready to move, foreground clay droplets leading the eye, clean readable composition, no flat worksheet, no random labels, motion-ready start frame.",
+      "qa": [
+        "dominant object",
+        "tactile metaphor",
+        "closed mouths",
+        "motion hook",
+        "readable composition"
+      ]
+    },
+    {
+      "id": "motion_product_kling_safe",
+      "name": "MOTION · Product Hero · Kling 3.0",
+      "agent": "motion",
+      "path": "PRODUCT_HERO",
+      "score": "10/10 target",
+      "bad": "Camera zooms in while light sweeps over the phone case.",
+      "why_bad": "Lazy zoom. No parallax, no physical reflection choreography, no start/end discipline, no tail hold.",
+      "gold": "Low macro dolly slides once along the black tabletop, a blurred foreground edge giving parallax; as it arrives a single gold rim highlight travels once across the aramid weave and lands on the logo plane, which stays fixed and readable. Product geometry locked, no shape change. The move completes by ~5s into a three-quarter hero hold with clean negative space and a faint specular shimmer. Negative field: morphing, warping logo/text, changing product shape, extra objects, flicker. For more coverage add a second short beat instead of stretching this one.",
+      "qa": [
+        "camera first",
+        "one reflection event",
+        "geometry/logo stable",
+        "5-6s single beat",
+        "tail hold"
+      ]
+    },
+    {
+      "id": "motion_animation_edu",
+      "name": "MOTION · Animation Education · Kling 3.0",
+      "agent": "motion",
+      "path": "ANIMATION_EDU",
+      "score": "10/10 target",
+      "bad": "The camera slowly pushes in and the objects glow.",
+      "why_bad": "Generic AI-video. No material/world physics, no educational reveal, no environment reaction, no final frame logic.",
+      "gold": "Child-eye push toward the clay lesson table; the liquid surface rises in ONE clean physical move and stops exactly at the engraved mark, a single warm highlight settling on the glass. Beaker geometry, table, engraved text and the characters stay fixed; one clay droplet wobbles once from the motion. Main event done by ~5s, then a stable three-quarter final hold with the level locked at the mark. Negative field: morphing, warping engraved text, changing faces, opening mouths, extra liquid, flicker. One short 5-6s Kling-safe beat — cover more VO with another beat, never by stretching this one.",
+      "qa": [
+        "one physical event",
+        "5-6s single beat",
+        "character/lip safety",
+        "anti-morph negatives",
+        "stable final"
+      ]
+    },
+    {
+      "id": "motion_documentary_real",
+      "name": "MOTION · Documentary Civic · Kling 3.0",
+      "agent": "motion",
+      "path": "LIVE_ACTION_CORPORATE",
+      "score": "10/10 target",
+      "bad": "Drone shot of the city with cinematic music and people smiling.",
+      "why_bad": "Stock civic montage. No human scale, no motivated camera, no authentic public texture.",
+      "gold": "Handheld micro-drift begins at child height beside a real sidewalk, following the chalk line as pedestrians pass naturally in soft background parallax. The camera does not fly; it moves like a documentary operator walking slowly, letting practical morning light reveal the civic texture of paving stones, storefront glass and passing shadows. by the late beat the line leads into a modest public square where children’s movement creates the reveal. Final hold: stable human-scale frame, no politician hero shot, no stock crowd, no artificial glow.",
+      "qa": [
+        "human scale",
+        "documentary camera",
+        "natural light",
+        "civic texture",
+        "no stock"
+      ]
+    },
+    {
+      "id": "suno_doc_safe",
+      "name": "SUNO · Documentary / Corporate · v5.5",
+      "agent": "suno",
+      "path": "LIVE_ACTION_CORPORATE",
+      "score": "10/10 target",
+      "bad": "Epic inspiring cinematic music with emotional vocals.",
+      "why_bad": "Too trailer-like and vocals fight voice-over.",
+      "gold": "Narration-safe instrumental documentary score, 82 BPM, soft felt piano pulse, restrained warm strings, low sub texture, subtle brushed percussion, no vocals, no lead melody during dialogue, gentle rise at midpoint, final warm resolve, clean mix with voice-over space, custom mode style layers: documentary, civic warmth, restrained cinematic, human scale.",
+      "qa": [
+        "no vocals",
+        "VO safe",
+        "restrained",
+        "path tone",
+        "clear style layers"
+      ]
+    },
+    {
+      "id": "suno_animation_edu",
+      "name": "SUNO · Aras + Defne Education · v5.5",
+      "agent": "suno",
+      "path": "ANIMATION_EDU",
+      "score": "10/10 target",
+      "bad": "Happy fun cheerful uplifting kids learning music.",
+      "why_bad": "Mood-filler. No named instruments, no bpm/groove, no VO pocket, no scene-mapped arc — Suno drifts.",
+      "gold": "Narration-safe instrumental education motif, 96 BPM light swing, felted celesta lead with a marimba answer, pizzicato string pulse, one soft clarinet, gentle shaker (no kick clipping the VO); clear midrange pocket left open for Aras and Defne VO and ducked under dialogue; intro one curious celesta phrase, build adds marimba and pizzicato at the concept reveal, one small peak on the transformation beat, warm resolve on a single held celesta note. Custom mode style layers: children's education, warm, curious, tactile, hummable. Exclude: vocals, lyrics, big drums, EDM drops, trailer brass, busy percussion.",
+      "qa": [
+        "named instruments",
+        "bpm + groove",
+        "VO-safe pocket",
+        "scene-mapped arc",
+        "no mood-filler"
+      ]
+    },
+    {
+      "id": "suno_product_hero",
+      "name": "SUNO · Product Hero · v5.5",
+      "agent": "suno",
+      "path": "PRODUCT_HERO",
+      "score": "10/10 target",
+      "bad": "Luxury epic premium powerful emotional product music.",
+      "why_bad": "Trailer cliché. No instruments, no bpm, no space, no designed reveal sound, fights the VO.",
+      "gold": "Narration-safe premium product bed, 84 BPM, muted felt-piano pulse over a low sub-bass foundation, one designed signature synth tone reserved only for the product reveal, wide clean room; midrange pocket kept open for VO and ducked under dialogue; intro sparse pulse, build adds the sub at the macro pass, a single signature hit lands on the logo/reveal beat, clean resolve on one sustained low note. Custom mode style layers: premium commercial, restrained, confident, modern, spacious. Exclude: vocals, busy percussion clipping the VO, trailer brass, genre drift.",
+      "qa": [
+        "named instruments",
+        "bpm + space",
+        "signature reveal sound",
+        "VO-safe",
+        "restraint"
+      ]
+    },
+    {
+      "id": "proof_reference_ip",
+      "name": "PROOF · Reference IP Safety",
+      "agent": "proof",
+      "path": "STYLIZED_PREMIUM",
+      "score": "hard fail test",
+      "bad": "Make Aras look like Ichigo holding a Zanpakuto in Soul Society uniform.",
+      "why_bad": "Direct protected character/costume/weapon/world copy.",
+      "gold": "FAIL. Reference contamination. Convert to: high-contrast black/orange blade-pressure grammar, negative-space slash timing, spiritual-energy abstraction, original character design, no Ichigo likeness, no Zanpakutō design, no uniform/logo/world copy.",
+      "qa": [
+        "detect IP copy",
+        "abstract DNA",
+        "preserve original assets"
+      ]
+    },
+    {
+      "id": "image_game_world",
+      "name": "IMAGE · Game Art Direction · Zelda/Elden Mix",
+      "agent": "image",
+      "path": "STYLIZED_PREMIUM",
+      "score": "10/10 target",
+      "bad": "A Zelda and Elden Ring inspired fantasy world with a hero.",
+      "why_bad": "Names references but no translation; risks IP copy.",
+      "gold": "Original open-air mythic adventure frame: soft cel-shaded green-gold landscape meets decayed gothic ruin scale, low sun cutting through fogged stone arches, tiny original child explorer silhouette for scale, ancient-tech glow embedded in broken masonry, wide 24mm lens, clear foreground grass motion hook, no Link/Tarnished likeness, no Triforce, no armor/logo/weapon copy, IP-safe synthesis of exploration mood and mythic ruin gravity.",
+      "qa": [
+        "reference synthesis",
+        "IP-safe",
+        "landscape scale",
+        "palette pressure",
+        "motion hook"
+      ]
+    }
+  ],
+  "regression": [
+    {
+      "id": "reg_real_path_contamination",
+      "name": "Real Path Contamination",
+      "input": "Ultra Real Commercial + clay diorama + Pixar render lock",
+      "expected": "FAIL: real path cannot inherit clay/Pixar/diorama unless hybrid override is active."
+    },
+    {
+      "id": "reg_source_loss",
+      "name": "Source Loss",
+      "input": "Raw source 1200 chars, scene source 980 chars",
+      "expected": "FAIL: coverage below 100%; return to Lossless Ingest."
+    },
+    {
+      "id": "reg_logo_morph",
+      "name": "Logo/Text Morph Risk",
+      "input": "Product hero with logo visible + motion prompt moves surface aggressively",
+      "expected": "FIX: freeze logo/text plane; only camera/light/reflection moves."
+    },
+    {
+      "id": "reg_lazy_motion",
+      "name": "Lazy Motion",
+      "input": "Camera slowly zooms in, lights glow, cinematic",
+      "expected": "FIX: add motivated camera arc, physical action, environment reaction, final tail hold."
+    },
+    {
+      "id": "reg_ip_reference",
+      "name": "IP Reference Misuse",
+      "input": "Make it look like Luffy on the Thousand Sunny",
+      "expected": "FAIL/FIX: abstract into sunny ocean adventure, ship-deck scale, bold primaries; no Luffy/Sunny copy."
     }
   ]
 }

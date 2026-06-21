@@ -3,7 +3,7 @@ const BRAIN = {
 
   references: [
     {
-      id: 'arcane', title: 'Arcane', kind: 'dizi', worldId: 'arcane_painterly',
+      id: 'arcane', title: 'Arcane', kind: 'dizi', worldId: 'clay',
       dna: { palette: ['#0e7c7b', '#d62246', '#f4a259'], texture: 'oil-painted', lighting: 'neon chiaroscuro', linework: 'painterly', mood: 'dramatic, gritty, emotional' },
       previewArt: { gradient: 'linear-gradient(135deg,#0e7c7b,#1b1b2f 55%,#d62246)', overlay: 'crack-texture', accent: '#f4a259' }
     },
@@ -43,7 +43,7 @@ const BRAIN = {
       previewArt: { gradient: 'linear-gradient(135deg,#facc15,#ec4899 55%,#06b6d4)', overlay: 'crack-texture', accent: '#f472b6' }
     },
     {
-      id: 'pussinboots', title: 'Puss in Boots: Last Wish', kind: 'film', worldId: 'arcane_painterly',
+      id: 'pussinboots', title: 'Puss in Boots: Last Wish', kind: 'film', worldId: 'clay',
       dna: { palette: ['#ef4444', '#f59e0b', '#10b981'], texture: 'painterly 3D', lighting: 'warm gold', linework: 'stepped paint', mood: 'adventurous, mythic' },
       previewArt: { gradient: 'linear-gradient(135deg,#ef4444,#f59e0b 55%,#10b981)', overlay: 'soft-bokeh', accent: '#facc15' }
     },
@@ -90,8 +90,10 @@ const BRAIN = {
 window.loadWorlds = async function() {
   if (BRAIN.worlds && BRAIN.worlds.length > 0) return;
   try {
-    const res = await fetch('/api/worlds');
-    BRAIN.worlds = await res.json();
+    const res = await fetch('/api/taxonomy');
+    const data = await res.json();
+    BRAIN.taxonomy = data;
+    BRAIN.worlds = data.worlds || data;
   } catch(e) {
     console.error('Failed to load worlds', e);
   }

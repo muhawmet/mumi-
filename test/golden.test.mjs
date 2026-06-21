@@ -79,7 +79,11 @@ function createHarness({ topic = 'Kesirler', scenes = '3', storage = new Map() }
     getElementById:    id  => elements.get(id) ?? null,
     querySelector:     sel => sel === '.copy-claude-btn' ? claudeButton : null,
     querySelectorAll:  sel => sel === '.char-btn' ? charButtons : [],
-    addEventListener: (type, fn) => listeners.set(type, fn),
+    addEventListener: (type, fn) => {
+      const arr = listeners.get(type) || [];
+      arr.push(fn);
+      listeners.set(type, arr);
+    },
   };
 
   const context = {
@@ -94,17 +98,22 @@ function createHarness({ topic = 'Kesirler', scenes = '3', storage = new Map() }
     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v) },
     navigator: { clipboard: { writeText: async () => {} } },
     open: () => null, setTimeout, window: {},
+    addEventListener: (type, fn) => {
+      const arr = listeners.get(type) || [];
+      arr.push(fn);
+      listeners.set(type, arr);
+    },
   };
   context.window = context;
   return { context: vm.createContext(context), elements, listeners, claudeButton };
 }
 
 function boot(harness) {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const src = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(src, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
 }
 
 function getScenes(ctx) {

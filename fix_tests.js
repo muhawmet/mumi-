@@ -11,11 +11,11 @@ for (const file of files) {
   // We want to add BRAIN.worlds = JSON.parse(readFileSync('data/worlds.json')) to harness contexts.
   // Actually, easiest is to just find `readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');`
   // and replace it with:
-  // `readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';`
+  // `readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';`
   
   content = content.replace(
     /readFileSync\(\s*path\.join\(ROOT,\s*'public\/brain\.js'\),\s*'utf8'\s*\)/g,
-    "readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';'"
+    "readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;'"
   );
   
   fs.writeFileSync(filePath, content);

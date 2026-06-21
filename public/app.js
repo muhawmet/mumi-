@@ -1,18 +1,6 @@
 // --- PHASE 3: ADAPTIVE UI STATE & RENDER LOGIC --- //
 
 function mapRefIdToBrainRefId(id) {
-  if (!id) return null;
-  const lower = id.toLowerCase();
-  if (lower.includes('demon_slayer') || lower.includes('demonslayer')) return 'demonslayer';
-  if (lower.includes('spider_verse') || lower.includes('spiderverse')) return 'spiderverse';
-  if (lower.includes('totoro') || lower.includes('ghibli') || lower.includes('spirited_away') || lower.includes('princess_mononoke')) return 'ghibli';
-  if (lower.includes('arcane')) return 'arcane';
-  if (lower.includes('pixar') || lower.includes('coco') || lower.includes('soul')) return 'pixar';
-  if (lower.includes('klaus')) return 'klaus';
-  if (lower.includes('mitchells')) return 'mitchells';
-  if (lower.includes('edgerunners')) return 'edgerunners';
-  if (lower.includes('puss_in_boots') || lower.includes('pussinboots')) return 'pussinboots';
-  if (lower.includes('spidergwen') || lower.includes('gwen')) return 'spidergwen';
   return id;
 }
 
@@ -28,8 +16,8 @@ function mapMusicStyleToWorldId(style, defaultWorldId) {
 }
 
 const STATE = {
-  selectedWorldId: 'arcane_painterly',
-  selectedRefId: null,
+  selectedWorldId: 'clay',
+  selectedRefId: 'pixar_dimensional',
   selectedPropId: null,
   selectedPaletteId: null,
   selectedMusicId: null
@@ -63,13 +51,13 @@ function initCascadeUI() {
   cascadeRef.innerHTML = '<option disabled selected>Seçiniz (Optimum Preset İçin)...</option>';
   
   // Group by category
-  const categories = [...new Set(MASTER_REFERENCES.map(r => r.category))];
+  const categories = [...new Set((BRAIN.taxonomy.refs || []).map(r => (r.category || r.cat)))];
   
   categories.forEach(cat => {
     const optgroup = document.createElement('optgroup');
     optgroup.label = cat.toUpperCase();
     
-    MASTER_REFERENCES.filter(r => r.category === cat).forEach(ref => {
+    (BRAIN.taxonomy.refs || []).filter(r => (r.category || r.cat) === cat).forEach(ref => {
       const opt = document.createElement('option');
       opt.value = ref.id;
       opt.textContent = ref.name;
@@ -82,7 +70,7 @@ function initCascadeUI() {
   // Attach Event Listener for Cascade Auto-Fill
   cascadeRef.addEventListener('change', (e) => {
     const refId = e.target.value;
-    const ref = MASTER_REFERENCES.find(r => r.id === refId);
+    const ref = (BRAIN.taxonomy.refs || []).find(r => r.id === refId);
     
     if (ref) {
       if (cascadePalette && ref.autoPalette) {
@@ -338,7 +326,7 @@ function parseSourceInput(topic) {
 
 function buildImageVantage(world, sceneIndex) {
   const index = Math.max(1, Number(sceneIndex) || 1) - 1;
-  const tactile = world && world.category === 'tactile';
+  const tactile = world && (world.group || '').toLowerCase() === 'tactile';
   const pool = tactile ? [
     '35mm three-quarter wide exterior view, complete miniature frame visible',
     '50mm eye-level wide exterior view, foreground mechanism and layered background readable',
@@ -431,10 +419,10 @@ function validateBriefCompatibility({ path, world, recipe }) {
       message: `REAL path ${path} cannot use tactile recipe ${recipe.id}`
     });
   }
-  if (realPath && world.category !== 'real') {
+  if (realPath && (world.group || '').toLowerCase() !== 'real') {
     findings.push({
       code: 'WORLD_PATH_MISMATCH',
-      message: `REAL path ${path} cannot use ${world.category} world ${world.id}`
+      message: `REAL path ${path} cannot use ${(world.group || '').toLowerCase()} world ${world.id}`
     });
   }
   return {
@@ -447,12 +435,10 @@ function validateBriefCompatibility({ path, world, recipe }) {
 
 function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
   const brainRefId = mapRefIdToBrainRefId(selectedRefId);
-  const reference = (brainRefId && typeof BRAIN !== 'undefined' && BRAIN.references) 
-    ? BRAIN.references.find(ref => ref.id === brainRefId) 
-    : null;
-  const compatibleReference = reference && reference.worldId === world.id ? reference : null;
+  const reference = (brainRefId && typeof BRAIN !== 'undefined' && BRAIN.taxonomy && BRAIN.taxonomy.refs) ? BRAIN.taxonomy.refs.find(ref => ref.id === brainRefId) : null;
+  const compatibleReference = reference && (!reference.worldId || reference.worldId === world.id) ? reference : null;
   const recipe = deriveTeachingRecipe(world);
-  const paletteAccent = world.palette && world.palette.length ? world.palette[world.palette.length - 1] : null;
+  const paletteAccent = world.colors && world.colors.length ? world.colors[world.colors.length - 1] : null;
 
   return {
     authority: ['SOURCE', 'WORLD', 'RECIPE', 'REFERENCE_DNA', 'PALETTE_ACCENT'],
@@ -460,7 +446,7 @@ function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
     source: sceneArchitecture.source,
     world: {
       id: world.id,
-      renderRecipe: world.renderRecipe,
+      renderRecipe: world.render,
       texture: world.texture,
       lighting: world.lighting
     },
@@ -488,7 +474,7 @@ function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
 }
 
 function buildImagePrompt(topic, sceneIndex, sceneCount, sceneArchitecture, finalBrief, world, character, model) {
-  let prompt = world.renderRecipe;
+  let prompt = world.render;
   prompt += `. Project topic: ${topic}`;
   prompt += `. Source status: ${sceneArchitecture.source.status}`;
   prompt += `. Source beat: ${sceneArchitecture.source.sourceId || 'UNBOUND'} — ${sceneArchitecture.source.exactText}`;
@@ -605,7 +591,7 @@ function createHandoffPacket(scene, role, world, identity) {
     world: {
       id: world.id,
       recipe: cloneJSON(scene.finalBrief.recipe),
-      renderRecipe: world.renderRecipe,
+      renderRecipe: world.render,
       texture: world.texture,
       lighting: world.lighting,
       camera: scene.sceneArchitecture.imageVantage,
@@ -1629,3 +1615,15 @@ function showToast(msg, type) {
   }, ttl);
 }
 if (typeof window !== 'undefined') window.showToast = showToast;
+
+
+// Mobile Drawer Toggles
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('mobile-nav-toggle');
+    const side = document.querySelector('.side');
+    if (navToggle && side) {
+        navToggle.addEventListener('click', () => {
+            side.classList.toggle('open');
+        });
+    }
+});

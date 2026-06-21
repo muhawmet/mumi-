@@ -145,7 +145,11 @@ function createBrowserHarness({ storage = new Map() } = {}) {
     getElementById: id => elements.get(id) ?? null,
     querySelector: selector => selector === '.copy-claude-btn' ? claudeButton : null,
     querySelectorAll: selector => selector === '.char-btn' ? charButtons : [],
-    addEventListener: (type, listener) => listeners.set(type, listener)
+    addEventListener: (type, listener) => {
+      const arr = listeners.get(type) || [];
+      arr.push(listener);
+      listeners.set(type, arr);
+    }
   };
 
   const context = {
@@ -165,10 +169,15 @@ function createBrowserHarness({ storage = new Map() } = {}) {
     navigator: { clipboard: { writeText: async () => {} } },
     open: () => null,
     setTimeout,
+    addEventListener: (type, listener) => {
+      const arr = listeners.get(type) || [];
+      arr.push(listener);
+      listeners.set(type, arr);
+    },
     window: {},
     location: { origin: 'http://localhost' },
     Event: class Event { constructor(type) { this.type = type; } },
-    MASTER_REFERENCES: [{ id: 'arcane', category: 'animation', name: 'Arcane', worldId: 'arcane_painterly', dna: { mood: 'dark', linework: 'painterly' } }]
+    MASTER_REFERENCES: [{ id: 'arcane', category: 'animation', name: 'Arcane', worldId: 'clay', dna: { mood: 'dark', linework: 'painterly' } }]
   };
   context.window = context;
 
@@ -196,27 +205,27 @@ test('JavaScript sources pass Node syntax checks', () => {
 });
 
 test('app starts and renders its initial DOM without throwing', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  assert.equal(typeof harness.listeners.get('DOMContentLoaded'), 'function');
-  assert.doesNotThrow(() => harness.listeners.get('DOMContentLoaded')());
+  assert.ok(Array.isArray(harness.listeners.get('DOMContentLoaded')));
+  assert.doesNotThrow(() => harness.listeners.get('DOMContentLoaded').forEach(l => l()));
 
   assert.ok(harness.elements.get('cascade-reference').children.length > 0);
   await Promise.resolve();
 });
 
 test('primary generation and JSON controls receive event bindings', () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
 
   assert.equal(typeof harness.elements.get('btn-batch-generate').onclick, 'function');
   assert.equal(harness.elements.get('btn-batch-generate').dataset.actionBound, 'true');
@@ -228,13 +237,13 @@ test('primary generation and JSON controls receive event bindings', () => {
 });
 
 test('batch renders valid scene table rows with the expected class', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const rows = harness.elements.get('table-body').children;
@@ -244,14 +253,14 @@ test('batch renders valid scene table rows with the expected class', async () =>
 });
 
 test('20-scene batch has zero semantic prompt duplicates', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-scenes').value = '20';
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const scenes = vm.runInContext(`STATE.scenes.map(scene => ({
@@ -268,13 +277,13 @@ test('20-scene batch has zero semantic prompt duplicates', async () => {
 });
 
 test('scene architecture carries source status, beat, subject, and one event', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const scenes = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes', harness.context)));
@@ -294,14 +303,14 @@ test('scene architecture carries source status, beat, subject, and one event', a
 });
 
 test('SOURCE-prefixed input binds exact source beats to scene dossiers', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-topic').value = 'SOURCE:\nKesir bir bütünü eş parçalara ayırır.\nPay ve payda farklı görev taşır.\nEş kesirler aynı miktarı gösterebilir.';
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const scenes = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes', harness.context)));
@@ -322,13 +331,13 @@ test('SOURCE-prefixed input binds exact source beats to scene dossiers', async (
 });
 
 test('Claude and motion actions are bound or explicitly disabled', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
 
   assert.equal(harness.claudeButton.disabled, true);
   assert.equal(harness.claudeButton.onclick, null);
@@ -347,12 +356,12 @@ test('Claude and motion actions are bound or explicitly disabled', async () => {
 });
 
 test('model registry passes approved targets to agents without claiming version grounding', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const grounded = createBrowserHarness();
   vm.runInContext(brainSrc, grounded.context, { filename: 'public/brain.js' });
   vm.runInContext(source, grounded.context, { filename: 'public/app.js' });
-  grounded.listeners.get('DOMContentLoaded')();
+  grounded.listeners.get('DOMContentLoaded').forEach(l => l());
   const generated = await grounded.elements.get('btn-batch-generate').click();
 
   assert.equal(generated.status, 'GENERATED');
@@ -371,7 +380,7 @@ test('model registry passes approved targets to agents without claiming version 
   unknown.elements.get('image-model').value = 'Imagined 99';
   vm.runInContext(brainSrc, unknown.context, { filename: 'public/brain.js' });
   vm.runInContext(source, unknown.context, { filename: 'public/app.js' });
-  unknown.listeners.get('DOMContentLoaded')();
+  unknown.listeners.get('DOMContentLoaded').forEach(l => l());
   const blocked = await unknown.elements.get('btn-batch-generate').click();
 
   assert.equal(blocked.status, 'BLOCKED');
@@ -392,41 +401,44 @@ test('model registry advertises an immutable, advisory-only catalog shape', () =
 });
 
 test('Final Brief hierarchy keeps Reference DNA subordinate to world and recipe', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
 
-  vm.runInContext(`selectReference('arcane')`, harness.context);
+  vm.runInContext(`selectReference('pixar_dimensional'); STATE.selectedPaletteId = 'vibrant_clean_education';`, harness.context);
   await harness.elements.get('btn-batch-generate').click();
   const scene = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes[0]', harness.context)));
 
   assert.deepEqual(scene.finalBrief.authority, ['SOURCE', 'WORLD', 'RECIPE', 'REFERENCE_DNA', 'PALETTE_ACCENT']);
-  assert.equal(scene.finalBrief.world.id, 'arcane_painterly');
+  assert.equal(scene.finalBrief.world.id, 'clay');
   assert.equal(scene.finalBrief.recipe.id, 'world-native');
+  console.log("STATE.selectedRefId:", vm.runInContext('STATE.selectedRefId', harness.context));
+  console.log("refs available:", vm.runInContext('BRAIN.taxonomy.refs.map(r => r.id)', harness.context));
   assert.equal(scene.finalBrief.referenceDNA.status, 'ACTIVE_SUBORDINATE');
   assert.deepEqual(scene.finalBrief.referenceDNA.suppressedFields, ['palette', 'texture', 'lighting']);
-  assert.ok(scene.imagePrompt.indexOf(scene.finalBrief.world.renderRecipe) < scene.imagePrompt.indexOf('Teaching recipe:'));
+  assert.ok(scene.imagePrompt.indexOf(scene.finalBrief.world.render) < scene.imagePrompt.indexOf('Teaching recipe:'));
   assert.ok(scene.imagePrompt.indexOf('Teaching recipe:') < scene.imagePrompt.indexOf('Reference DNA (subordinate):'));
-  assert.ok(scene.imagePrompt.indexOf('Reference DNA (subordinate):') < scene.imagePrompt.indexOf('Palette accent:'));
+  console.log('imagePrompt:', scene.imagePrompt); assert.ok(scene.imagePrompt.indexOf('Reference DNA (subordinate):') < scene.imagePrompt.indexOf('Palette accent:'));
 
   const mismatch = JSON.parse(JSON.stringify(vm.runInContext(`
-    buildFinalBriefContext(createSceneArchitecture('Kesirler', 1, BRAIN.worlds.find(world => world.id === 'paper_diorama')), BRAIN.worlds.find(world => world.id === 'paper_diorama'), 'arcane', 'ANIMATION_EDU')
+    BRAIN.taxonomy.refs.push({ id: 'fake_incompatible', worldId: 'some_other_world', directives: {} });
+    buildFinalBriefContext(createSceneArchitecture('Kesirler', 1, BRAIN.worlds.find(world => world.id === 'paper')), BRAIN.worlds.find(world => world.id === 'paper'), 'fake_incompatible', 'ANIMATION_EDU')
   `, harness.context)));
   assert.equal(mismatch.referenceDNA.status, 'SUPPRESSED_WORLD_MISMATCH');
   assert.deepEqual(mismatch.referenceDNA.directives, {});
 });
 
 test('D6 handoff envelopes are source-bound, locked, and explicitly non-canonical drafts', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-topic').value = 'SOURCE: Kesir bir bütünün eş parçalarını gösterir.\nPay üstte, payda altta yer alır.';
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const scene = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes[0]', harness.context)));
@@ -442,7 +454,7 @@ test('D6 handoff envelopes are source-bound, locked, and explicitly non-canonica
     assert.ok(packet.scene.dominantSubject);
     assert.ok(packet.scene.event);
     assert.equal(packet.scene.continuity.characterLock, 'Aras');
-    assert.equal(packet.world.id, 'arcane_painterly');
+    assert.equal(packet.world.id, 'clay');
     assert.match(packet.world.camera, /\b(35|50|85)mm\b/);
     assert.equal(packet.locks.visibleText, 'NO_UNSOURCED_VISIBLE_TEXT');
     assert.equal(packet.resolveCurrentVersion, true);
@@ -461,12 +473,12 @@ test('D6 handoff envelopes are source-bound, locked, and explicitly non-canonica
 });
 
 test('scene pack export-import-export round-trip is lossless', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const first = JSON.parse(JSON.stringify(vm.runInContext('createScenePack()', harness.context)));
@@ -495,12 +507,12 @@ test('scene pack export-import-export round-trip is lossless', async () => {
 });
 
 test('agent JSON return fills canonical role fields, proof, negatives, and unlocks motion losslessly', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const packets = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes[0].handoffPackets', harness.context)));
@@ -560,12 +572,12 @@ test('agent JSON return fills canonical role fields, proof, negatives, and unloc
 });
 
 test('agent return rejects packet mismatches without changing canonical fields', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
   const result = JSON.parse(JSON.stringify(vm.runInContext(`applyScenePack({
     role: 'IMAGE', sceneId: 1, packetId: 'wrong-packet', finalPrompt: 'Must not apply'
@@ -577,7 +589,7 @@ test('agent return rejects packet mismatches without changing canonical fields',
 });
 
 test('full project controls and selection survive reload', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const storage = new Map();
   const first = createBrowserHarness({ storage });
@@ -589,8 +601,8 @@ test('full project controls and selection survive reload', async () => {
 
   vm.runInContext(brainSrc, first.context, { filename: 'public/brain.js' });
   vm.runInContext(source, first.context, { filename: 'public/app.js' });
-  first.listeners.get('DOMContentLoaded')();
-  vm.runInContext(`selectReference('arcane')`, first.context);
+  first.listeners.get('DOMContentLoaded').forEach(l => l());
+  vm.runInContext(`selectReference('pixar_dimensional')`, first.context);
   first.charButtons[1].click();
   await first.elements.get('btn-batch-generate').click();
   vm.runInContext('STATE.selectedSceneId = 2; saveState()', first.context);
@@ -598,7 +610,7 @@ test('full project controls and selection survive reload', async () => {
   const second = createBrowserHarness({ storage });
   vm.runInContext(brainSrc, second.context, { filename: 'public/brain.js' });
   vm.runInContext(source, second.context, { filename: 'public/app.js' });
-  second.listeners.get('DOMContentLoaded')();
+  second.listeners.get('DOMContentLoaded').forEach(l => l());
 
   assert.equal(second.elements.get('project-topic').value, 'Kesirler ve oranlar');
   assert.equal(second.elements.get('project-class').value, 'Tasarım İşi');
@@ -613,8 +625,8 @@ test('full project controls and selection survive reload', async () => {
     sceneCount: STATE.scenes.length
   })`, second.context)));
   assert.deepEqual(restored, {
-    selectedWorldId: 'arcane_painterly',
-    selectedRefId: 'arcane',
+    selectedWorldId: 'clay',
+    selectedRefId: 'pixar_dimensional',
     character: 'Defne',
     selectedSceneId: 2,
     sceneCount: 20
@@ -622,13 +634,13 @@ test('full project controls and selection survive reload', async () => {
 });
 
 test('camera is scene-specific lens language and never legacy motion/composition text', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-scenes').value = '20';
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
 
   const cameras = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes.map(scene => scene.sceneArchitecture.imageVantage)', harness.context)));
@@ -639,14 +651,14 @@ test('camera is scene-specific lens language and never legacy motion/composition
 });
 
 test('authority and photoreal-versus-clay contradiction gate are deterministic', () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
   const gate = JSON.parse(JSON.stringify(vm.runInContext(`validateBriefCompatibility({
     path: 'ULTRAREAL_COMMERCIAL',
-    world: BRAIN.worlds.find(world => world.id === 'clay_diorama'),
+    world: BRAIN.worlds.find(world => world.id === 'clay'),
     recipe: { id: 'clay' }
   })`, harness.context)));
 
@@ -656,18 +668,18 @@ test('authority and photoreal-versus-clay contradiction gate are deterministic',
 });
 
 test('music briefs carry knowledge provenance or explicit BLOCKED status', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(source, harness.context, { filename: 'public/app.js' });
-  harness.listeners.get('DOMContentLoaded')();
+  harness.listeners.get('DOMContentLoaded').forEach(l => l());
   await harness.elements.get('btn-batch-generate').click();
   const grounded = JSON.parse(JSON.stringify(vm.runInContext('STATE.scenes[0]', harness.context)));
 
   assert.equal(grounded.musicGrounding.status, 'GROUNDED');
-  assert.equal(grounded.musicGrounding.sourceRef, 'brain/04_SUNO.md:100');
-  assert.match(grounded.sunoBrief, /^\[MUSIC SOURCE: brain\/04_SUNO\.md:100;/);
+  assert.equal(grounded.musicGrounding.sourceRef, 'brain/04_SUNO.md:115');
+  assert.match(grounded.sunoBrief, /^\[MUSIC SOURCE: brain\/04_SUNO\.md:115;/);
   assert.match(grounded.sunoBrief, /Intro/);
 
   const blocked = JSON.parse(JSON.stringify(vm.runInContext(`resolveMusicMapping(MUSIC_REGISTRY, 'arcane_edu')`, harness.context)));

@@ -273,7 +273,7 @@ function createBrowserHarness({ storage = new Map() } = {}) {
 }
 
 function boot(harness) {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nconst tax = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + '; BRAIN.taxonomy = tax; BRAIN.worlds = tax.worlds || tax;';
   const appSrc = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const abTesterSrc = readFileSync(path.join(ROOT, 'public/ab-tester.js'), 'utf8');
   const exporterSrc = readFileSync(path.join(ROOT, 'public/timeline-exporter.js'), 'utf8');
@@ -296,6 +296,7 @@ test('Cascade UI auto-locks autoPalette and autoMusic when changing cascade-refe
   boot(h);
 
   const cascadeRef = h.elements.get('cascade-reference');
+  vm.runInContext(`BRAIN.taxonomy.refs.push({ id: 'ref_anime_demon_slayer_sun', name: 'Demon Slayer - Sun Breathing', category: 'anime', autoPalette: 'vibrant_crimson_gold', autoMusic: 'epic_orchestral' })`, h.context);
   const cascadePalette = h.elements.get('cascade-palette');
   const cascadeMusic = h.elements.get('cascade-music');
 

@@ -15,9 +15,9 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 </button>
 
-<div class="studio-layout">
+<div class="app">
   <!-- LEFT SIDEBAR: Setup & Controls -->
-  <aside id="studio-sidebar" class="studio-sidebar">
+  <div class="side" id="studio-sidebar">
      <div class="sidebar-header">
        <h1 class="sidebar-logo">MAMILAS PRO</h1>
        <div class="health-status">
@@ -55,7 +55,7 @@
             </div>
          </div>
 
-         <button id="btn-batch-generate" class="btn-generate">
+         <button id="btn-batch-generate" class="btn primary" style="width: 100%; margin-top:16px;">
             Generate <span id="batch-btn-count">5</span> scenes
          </button>
 
@@ -65,39 +65,220 @@
          <div class="control-group">
             <label class="control-label" for="cascade-world">Visual world</label>
             <select id="cascade-world" class="studio-select">
-               <option value="pixar_feature">3D Pixar</option>
-               <option value="arcane_painterly">Arcane Painterly</option>
-               <option value="verse_miles">Spider-Verse</option>
-               <option value="ghibli_storybook">Ghibli Storybook</option>
-               <option value="demon_slayer_visual">Demon Slayer</option>
-               <option value="cinematic_real">Cinematic Realism</option>
+               <option value="clay">Clay Pixar Education</option>
+               <option value="paper">Paper Craft Storyworld</option>
+               <option value="wood">Wooden Systems Workshop</option>
+               <option value="museum">Museum Miniature World</option>
+               <option value="fabric">Fabric Memory World</option>
+               <option value="lightbox">Lightbox Discovery Lab</option>
+               <option value="notebook">Notebook Sketch Workshop</option>
+               <option value="botanical">Botanical Diorama School</option>
+               <option value="graphic_comic">Graphic Comic World</option>
+               <option value="painterly_shadow">Painterly Shadow World</option>
+               <option value="photoreal_location">Photoreal Location</option>
+               <option value="commercial_studio">Commercial Studio</option>
+               <option value="documentary_civic">Documentary Civic Reality</option>
+               <option value="human_portrait_real">Human Portrait Realism</option>
+               <option value="luxury_editorial">Luxury Editorial</option>
+               <option value="food_macro_real">Food Macro Real</option>
+               <option value="architecture_real">Architecture / Real Estate</option>
+               <option value="tech_clinical_real">Tech / Clinical Precision</option>
+               <option value="social_reels_real">Social Reels Realism</option>
+               <option value="automotive_stage_real">Automotive Stage Real</option>
+               <option value="tourism_destination_real">Tourism Destination Real</option>
+               <option value="healthcare_public_real">Healthcare Public Real</option>
+               <option value="real_event_coverage">Real Event Coverage</option>
+               <option value="product_macro_tabletop">Product Macro Tabletop</option>
             </select>
          </div>
 
          <div class="control-group">
             <label class="control-label" for="cascade-prop">Prop focus</label>
             <select id="cascade-prop" class="studio-select">
-               <option value="paper">Paperworld</option>
-               <option value="clay">Claymation</option>
-               <option value="chalk">Chalk / Charcoal</option>
-               <option value="hologram">Neon Hologram</option>
-               <option value="real_object">Cinematic Lens</option>
+               <option value="ANIMATION_EDU">Animation / Education</option>
+               <option value="STYLIZED_PREMIUM">Stylized Premium</option>
+               <option value="ULTRAREAL_COMMERCIAL">Ultra Real Commercial</option>
+               <option value="LIVE_ACTION_CORPORATE">Live Action Corporate</option>
+               <option value="PRODUCT_HERO">Product Hero Film</option>
+               <option value="HUMAN_TESTIMONIAL">Human Testimonial</option>
+               <option value="DOCUMENTARY_REALISM">Documentary Realism</option>
+               <option value="FASHION_EDITORIAL">Fashion Editorial</option>
+               <option value="FOOD_MACRO">Food / Macro</option>
+               <option value="ARCHITECTURE_REAL_ESTATE">Architecture / Real Estate</option>
+               <option value="TECH_MEDICAL_PRECISION">Tech / Medical Precision</option>
+               <option value="SOCIAL_REELS_REALISM">Social Reels Realism</option>
+               <option value="AUTOMOTIVE_MOBILITY">Automotive / Mobility</option>
+               <option value="TOURISM_DESTINATION">Tourism / Destination</option>
+               <option value="HEALTH_PUBLIC_SERVICE">Health / Public Service</option>
             </select>
          </div>
 
          <div class="control-group">
             <label class="control-label" for="cascade-reference">Golden reference</label>
-            <select id="cascade-reference" class="studio-select"></select>
+            <select id="cascade-reference" class="studio-select">
+               <option value="pixar_dimensional">Pixar Dimensional Staging</option>
+               <option value="soul">Soul Warmth</option>
+               <option value="kurzgesagt_clarity">Kurzgesagt Clarity</option>
+               <option value="atat_rk_prestige">Atatürk Prestige</option>
+               <option value="ghibli_organic">Ghibli Organic Light</option>
+               <option value="arcane_texture">Arcane Texture Grammar</option>
+               <option value="spiderverse_graphic">Spider-Verse Graphic Energy</option>
+               <option value="anime_silhouette">Anime Silhouette Grammar</option>
+               <option value="apple_commercial">Apple Commercial Grammar</option>
+               <option value="product_macro">Product Macro Commercial</option>
+               <option value="nike_energy">Nike Energy</option>
+               <option value="vogue_editorial">Vogue Editorial Light</option>
+               <option value="food_macro">Food Macro Satisfaction</option>
+               <option value="civic_doc">Civic Documentary</option>
+               <option value="street_doc">Street Documentary Reels</option>
+               <option value="rembrandt_portrait">Rembrandt Portrait Light</option>
+               <option value="architectural_digest">Architectural Digest Grammar</option>
+               <option value="tech_glass">Tech Glass Edge Light</option>
+               <option value="automotive_commercial">Automotive Commercial Grammar</option>
+               <option value="destination_doc">Destination Documentary</option>
+               <option value="bleach_soul_blade">Bleach — Soul Blade Grammar</option>
+               <option value="one_piece_sunny_adventure">One Piece — Sunny Adventure Grammar</option>
+               <option value="naruto_chakra_motion">Naruto — Chakra Motion Grammar</option>
+               <option value="dragon_ball_power_aura">Dragon Ball — Power Aura Grammar</option>
+               <option value="jujutsu_dark_ritual">Jujutsu Kaisen — Dark Ritual Grammar</option>
+               <option value="demon_slayer_breath">Demon Slayer — Breath Rhythm Grammar</option>
+               <option value="solo_leveling_rank_shadow">Solo Leveling — Rank Shadow Grammar</option>
+               <option value="fullmetal_alchemy_circle">Fullmetal Alchemist — Alchemy Circle Grammar</option>
+               <option value="attack_titan_scale">Attack on Titan — Scale Dread Grammar</option>
+               <option value="evangelion_bio_mech">Evangelion — Bio-Mech Dread Grammar</option>
+               <option value="akira_neon_impact">Akira — Neon Impact Grammar</option>
+               <option value="ghost_shell_cyber_melancholy">Ghost in the Shell — Cyber Melancholy Grammar</option>
+               <option value="cowboy_bebop_noir_jazz">Cowboy Bebop — Noir Jazz Grammar</option>
+               <option value="makoto_shinkai_sky_light">Makoto Shinkai — Sky Light Grammar</option>
+               <option value="miyazaki_wind_nature">Miyazaki — Wind + Nature Grammar</option>
+               <option value="satoshi_kon_dream_cut">Satoshi Kon — Dream Cut Grammar</option>
+               <option value="pixar_emotional_staging">Pixar — Emotional Staging Grammar</option>
+               <option value="dreamworks_hero_comedy">DreamWorks — Hero Comedy Grammar</option>
+               <option value="illumination_pop_comedy">Illumination — Pop Comedy Grammar</option>
+               <option value="laika_tactile_stopmotion">Laika — Tactile Stop-Motion Grammar</option>
+               <option value="cartoon_network_graphic">Cartoon Network — Graphic Comedy Grammar</option>
+               <option value="hanna_barbera_retro">Hanna-Barbera — Retro Limited Animation Grammar</option>
+               <option value="love_death_robots_anthology">Love Death + Robots — Anthology Grammar</option>
+               <option value="zelda_breath_open_air">Zelda BOTW/TOTK — Open-Air Adventure Grammar</option>
+               <option value="elden_ring_gothic_scale">Elden Ring — Gothic Scale Grammar</option>
+               <option value="dark_souls_ashen_gloom">Dark Souls — Ashen Gloom Grammar</option>
+               <option value="bloodborne_gothic_horror">Bloodborne — Gothic Horror Grammar</option>
+               <option value="cyberpunk_2077_neon_ui">Cyberpunk 2077 — Neon City Grammar</option>
+               <option value="valorant_clean_tactical">Valorant — Clean Tactical Color Grammar</option>
+               <option value="overwatch_hero_color">Overwatch — Hero Color Grammar</option>
+               <option value="league_splash_heroic">League of Legends — Splash Hero Grammar</option>
+               <option value="hades_underworld_graphic">Hades — Underworld Graphic Grammar</option>
+               <option value="hollow_knight_silhouette">Hollow Knight — Silhouette Depth Grammar</option>
+               <option value="ori_glow_forest">Ori — Glow Forest Grammar</option>
+               <option value="journey_desert_minimal">Journey — Desert Minimal Grammar</option>
+               <option value="inside_limbo_shadow">Inside/Limbo — Side-Scroll Shadow Grammar</option>
+               <option value="monument_valley_pastel">Monument Valley — Escher Pastel Grammar</option>
+               <option value="cuphead_rubberhose">Cuphead — Rubber-Hose Vintage Grammar</option>
+               <option value="persona5_red_ui">Persona 5 — Red UI Rebellion Grammar</option>
+               <option value="hifi_rush_rhythm_color">Hi-Fi Rush — Rhythm Color Grammar</option>
+               <option value="mirror_edge_clean_city">Mirror's Edge — Clean Parkour Grammar</option>
+               <option value="bioshock_art_deco_decay">BioShock — Art Deco Decay Grammar</option>
+               <option value="portal_clean_lab">Portal — Clean Lab Puzzle Grammar</option>
+               <option value="red_dead_golden_west">Red Dead — Golden West Naturalism</option>
+               <option value="last_of_us_overgrown">The Last of Us — Overgrown Realism Grammar</option>
+               <option value="ghost_tsushima_wind">Ghost of Tsushima — Wind Samurai Grammar</option>
+               <option value="death_stranding_lonely_scale">Death Stranding — Lonely Scale Grammar</option>
+               <option value="god_of_war_nordic">God of War — Nordic Mythic Grammar</option>
+               <option value="horizon_tech_nature">Horizon — Tech Nature Grammar</option>
+               <option value="genshin_elemental_fantasy">Genshin — Elemental Fantasy Grammar</option>
+               <option value="minecraft_blocky_world">Minecraft — Block World Grammar</option>
+               <option value="fortnite_pop_battle">Fortnite — Pop Battle Grammar</option>
+               <option value="among_us_simple_icon">Among Us — Simple Icon Grammar</option>
+               <option value="animal_crossing_soft_life">Animal Crossing — Soft Life Grammar</option>
+               <option value="stardew_valley_cozy_pixel">Stardew Valley — Cozy Pixel Grammar</option>
+               <option value="celeste_mountain_emotion">Celeste — Mountain Emotion Grammar</option>
+               <option value="blade_runner_neon_noir">Blade Runner — Neon Noir Grammar</option>
+               <option value="oppenheimer_analog_density">Oppenheimer — Analog Density Grammar</option>
+               <option value="dune_desert_scale">Dune — Desert Monumental Grammar</option>
+               <option value="mad_max_kinetic_orange">Mad Max — Kinetic Wasteland Grammar</option>
+               <option value="john_wick_neon_precision">John Wick — Neon Precision Grammar</option>
+               <option value="wes_anderson_symmetry">Wes Anderson — Symmetry Grammar</option>
+               <option value="fincher_green_control">Fincher — Controlled Green Noir</option>
+               <option value="kubrick_one_point">Kubrick — One-Point Dread Grammar</option>
+               <option value="roger_deakins_naturalism">Deakins — Naturalist Light Grammar</option>
+               <option value="emmanuel_lubezki_long_take">Lubezki — Natural Long-Take Grammar</option>
+               <option value="apple_object_worship">Apple — Object Worship Grammar</option>
+               <option value="nike_kinetic_motivation">Nike — Kinetic Motivation Grammar</option>
+               <option value="luxury_watch_macro">Luxury Watch — Macro Precision Grammar</option>
+               <option value="beauty_skincare_glow">Beauty Skincare — Skin Glow Grammar</option>
+               <option value="food_tabletop_macro">Food Tabletop Macro Grammar</option>
+               <option value="architecture_window_light">Architecture Window Light Grammar</option>
+               <option value="tech_clinical_glass">Tech Clinical Glass Grammar</option>
+               <option value="spiderverse_miles_specific">Spider-Verse — Miles Morales Energy Anchor</option>
+               <option value="spiderverse_gwen_pastel">Spider-Verse — Gwen Pastel Punk Anchor</option>
+               <option value="bleach_hollow_mask_pressure">Bleach — Hollow Mask Pressure</option>
+               <option value="onepiece_grandline_scale">One Piece — Grand Line Scale</option>
+               <option value="chainsaw_urban_grit">Chainsaw Man — Urban Grit Grammar</option>
+               <option value="spy_family_pastel_comedy">Spy x Family — Pastel Comedy Grammar</option>
+               <option value="frieren_melancholy_fantasy">Frieren — Melancholy Fantasy Journey</option>
+               <option value="pokemon_bright_world">Pokémon — Bright Creature-World Grammar</option>
+               <option value="yugioh_duel_stage">Yu-Gi-Oh! — Duel Stage Drama</option>
+               <option value="digimon_digital_adventure">Digimon — Digital Adventure Grammar</option>
+               <option value="ghibli_spirited_bathhouse">Ghibli — Bathhouse Warmth Grammar</option>
+               <option value="how_to_train_dragon_flight">Dragon Flight Adventure Grammar</option>
+               <option value="kung_fu_panda_brush">Kung Fu Panda — Brush Action Grammar</option>
+               <option value="coco_marigold_afterlife">Coco — Marigold Memory Grammar</option>
+               <option value="inside_out_emotion_space">Inside Out — Emotion Space Grammar</option>
+               <option value="wall_e_lonely_robot">WALL-E — Lonely Robot Scale Grammar</option>
+               <option value="lego_movie_brick_energy">LEGO Movie — Brick Energy Grammar</option>
+               <option value="spongebob_flat_absurd">SpongeBob — Flat Absurd Comedy Grammar</option>
+               <option value="samurai_jack_minimal">Samurai Jack — Minimal Epic Grammar</option>
+               <option value="batman_animated_noir">Batman TAS — Deco Noir Grammar</option>
+               <option value="league_arcane_bridge">League/Arcane — Bridge Grammar</option>
+               <option value="warcraft_epic_fantasy">Warcraft — Epic Fantasy Scale</option>
+               <option value="starcraft_sci_fi_war">StarCraft — Military Sci-Fi Grammar</option>
+               <option value="diablo_dark_fantasy">Diablo — Dark Gothic Loot Grammar</option>
+               <option value="world_of_warcraft_color_zones">World of Warcraft — Zone Color Grammar</option>
+               <option value="final_fantasy_crystal">Final Fantasy — Crystal Melodrama Grammar</option>
+               <option value="kingdom_hearts_light_dark">Kingdom Hearts — Light/Dark Whimsy</option>
+               <option value="metal_gear_tactical">Metal Gear — Tactical Espionage Grammar</option>
+               <option value="resident_evil_survival">Resident Evil — Survival Horror Grammar</option>
+               <option value="silent_hill_fog">Silent Hill — Fog Psychological Horror</option>
+               <option value="uncharted_pulp_adventure">Uncharted — Pulp Adventure Realism</option>
+               <option value="assassins_creed_historical">Assassin’s Creed — Historical Parkour Grammar</option>
+               <option value="tlou2_grounded_drama">The Last of Us Part II — Grounded Drama</option>
+               <option value="uncharted_ruins_gold">Adventure Ruins Gold Grammar</option>
+               <option value="gta_sunlit_satire">Open-World Satire City Grammar</option>
+               <option value="forza_clean_auto">Forza — Clean Automotive Showcase</option>
+               <option value="gran_turismo_precision">Gran Turismo — Precision Car Beauty</option>
+               <option value="fifa_stadium_energy">Football Stadium Energy Grammar</option>
+               <option value="nba_arena_premium">Basketball Arena Premium Grammar</option>
+               <option value="apple_event_stage">Apple Event Stage Grammar</option>
+               <option value="tesla_minimal_tech">Minimal EV Tech Grammar</option>
+               <option value="dyson_airflow_product">Dyson-Style Airflow Grammar</option>
+               <option value="samsung_glass_blue">Premium Phone Glass Blue Grammar</option>
+               <option value="rolex_macro_luxury">Luxury Watch Macro Grammar</option>
+               <option value="coca_cola_red_refresh">Red Beverage Refresh Grammar</option>
+               <option value="starbucks_warm_cafe">Warm Café Lifestyle Grammar</option>
+               <option value="mcdonalds_pop_food">Pop Fast-Food Grammar</option>
+            </select>
          </div>
 
          <div class="control-group">
             <label class="control-label" for="cascade-palette">Color palette</label>
             <select id="cascade-palette" class="studio-select">
-               <option value="vibrant_clean_education">Vibrant Education</option>
+               <option value="vibrant_clean_education">Vibrant Clean Education</option>
+               <option value="deep_space_blue">Deep Space Blue</option>
+               <option value="historical_sepia">Historical Sepia</option>
+               <option value="pastel_soft">Pastel Soft</option>
+               <option value="ghibli_meadow">Ghibli Meadow</option>
                <option value="rembrandt_amber">Rembrandt Amber</option>
+               <option value="commercial_neutral">Commercial Neutral</option>
+               <option value="warm_commercial_gold">Warm Commercial Gold</option>
+               <option value="muted_documentary">Muted Documentary</option>
+               <option value="skin_realism">Skin Realism</option>
                <option value="luxury_black_gold">Luxury Black Gold</option>
-               <option value="cyberpunk_neon">Cyberpunk Neon</option>
-               <option value="dark_noir">Dark Noir</option>
+               <option value="clinical_blue">Clinical Blue</option>
+               <option value="food_amber_macro">Food Amber Macro</option>
+               <option value="architecture_daylight">Architecture Daylight</option>
+               <option value="automotive_night">Automotive Night</option>
+               <option value="civic_morning">Civic Morning</option>
+               <option value="editorial_monochrome">Editorial Monochrome</option>
             </select>
          </div>
 
@@ -144,7 +325,7 @@
            </div>
          </div>
      </div>
-  </aside>
+  </div>
 
   <div id="brain-modal" class="brain-modal" role="dialog" aria-modal="true" aria-labelledby="brain-modal-title" hidden>
     <div class="brain-modal-card">
@@ -167,68 +348,15 @@
   </div>
 
   <!-- MIDDLE: Main Preview Player & Details -->
-  <main class="studio-main">
-      <div class="preview-header">
-         <div class="preview-title">Scene preview</div>
-         <div id="pacing-graph-container" class="mini-pacing"><div id="pacing-graph"></div></div>
+  
+  <div class="main">
+    <div class="inner">
+      <div class="pageHead">
+         <span class="eyebrow">Studio</span>
+         <h1 class="title">Quantum Timeline</h1>
       </div>
+      <div class="studio-timeline">
 
-      <!-- The Real Preview Content that app.js populates -->
-      <div class="preview-player-area">
-          <div id="detail-empty-state" class="empty-state">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.2; margin-bottom: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <h2>No scene selected yet</h2>
-              <p>Configure your project on the left, generate, then pick a scene to inspect its prompts.</p>
-              <div class="empty-tips">
-                <div class="empty-tip"><span class="empty-tip-step">1</span>Set project topic, class, and cast on the left.</div>
-                <div class="empty-tip"><span class="empty-tip-step">2</span>Pick a visual world, prop focus, palette and audio profile.</div>
-                <div class="empty-tip"><span class="empty-tip-step">3</span>Click <b>Generate scenes</b> — then pick a row from the timeline.</div>
-              </div>
-          </div>
-          
-          <div class="preview-content-wrapper">
-             <header class="scene-meta">
-               <div class="scene-meta-main">
-                 <span id="scene-meta-index" class="scene-meta-index">—</span>
-                 <div>
-                   <h2 id="detail-title"></h2>
-                   <div id="scene-meta-tags" class="scene-meta-tags"></div>
-                 </div>
-               </div>
-               <div class="scene-actions">
-                 <button id="btn-scene-copy-all" class="btn-mini" type="button">Copy all prompts</button>
-                 <button id="btn-scene-mark-done" class="btn-mini" type="button">Mark done</button>
-                 <button id="btn-scene-regenerate" class="btn-mini btn-mini-ghost" type="button">Regenerate</button>
-               </div>
-             </header>
-             <div class="prompt-group">
-                <div class="prompt-label">Image prompt</div>
-                <div id="detail-image-prompt" class="prompt-box"></div>
-             </div>
-             
-             <div class="prompt-group">
-                <div class="prompt-label">Motion prompt</div>
-                <div id="detail-motion-prompt" class="prompt-box mono"></div>
-                <button id="btn-copy-motion" class="btn-copy" aria-label="Copy motion prompt">Copy</button>
-             </div>
-             
-             <div class="prompt-group-half">
-                <div>
-                   <div class="prompt-label">Suno audio</div>
-                   <div id="detail-suno-prompt" class="prompt-box mono"></div>
-                </div>
-                <div>
-                   <div class="prompt-label">Voiceover</div>
-                   <div id="detail-vo-prompt" class="prompt-box mono"></div>
-                </div>
-             </div>
-
-             <div id="detail-cards-container"></div>
-          </div>
-      </div>
-
-      <!-- BOTTOM: Timeline Storyboard -->
-      <footer class="studio-timeline">
          <div class="timeline-header">
            <span>Scene Sequence</span>
            <div class="timeline-legend" aria-label="Status legend">
@@ -256,8 +384,67 @@
                 </tbody>
              </table>
          </div>
-      </footer>
-  </main>
+      
+</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="preview-player-area">
+          <div id="detail-empty-state" class="empty-state">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.2; margin-bottom: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <h2>No scene selected yet</h2>
+              <p>Configure your project on the left, generate, then pick a scene to inspect its prompts.</p>
+              <div class="empty-tips">
+                <div class="empty-tip"><span class="empty-tip-step">1</span>Set project topic, class, and cast on the left.</div>
+                <div class="empty-tip"><span class="empty-tip-step">2</span>Pick a visual world, prop focus, palette and audio profile.</div>
+                <div class="empty-tip"><span class="empty-tip-step">3</span>Click <b>Generate scenes</b> — then pick a row from the timeline.</div>
+              </div>
+          </div>
+          
+          <div class="preview-content-wrapper">
+             <header class="scene-meta">
+               <div class="scene-meta-main">
+                 <span id="scene-meta-index" class="scene-meta-index qScore" style="background:transparent; border:none; box-shadow:none; align-items:flex-start; margin-right:12px;">—</span>
+                 <div>
+                   <h2 id="detail-title" class="title" style="font-size: 28px; margin-bottom: 4px;"></h2>
+                   <div id="scene-meta-tags" class="scene-meta-tags"></div>
+                 </div>
+               </div>
+               <div class="scene-actions">
+                 <button id="btn-scene-copy-all" class="btn-mini" type="button">Copy all prompts</button>
+                 <button id="btn-scene-mark-done" class="btn-mini" type="button">Mark done</button>
+                 <button id="btn-scene-regenerate" class="btn-mini btn-mini-ghost" type="button">Regenerate</button>
+               </div>
+             </header>
+             <div class="prompt-group">
+                <div class="prompt-label">Image prompt</div>
+                <div id="detail-image-prompt" class="prompt-box box"></div>
+             </div>
+             
+             <div class="prompt-group">
+                <div class="prompt-label">Motion prompt</div>
+                <div id="detail-motion-prompt" class="prompt-box box mono"></div>
+                <button id="btn-copy-motion" class="btn-copy" aria-label="Copy motion prompt">Copy</button>
+             </div>
+             
+             <div class="prompt-group-half">
+                <div>
+                   <div class="prompt-label">Suno audio</div>
+                   <div id="detail-suno-prompt" class="prompt-box box mono"></div>
+                </div>
+                <div>
+                   <div class="prompt-label">Voiceover</div>
+                   <div id="detail-vo-prompt" class="prompt-box box mono"></div>
+                </div>
+             </div>
+
+             <div id="detail-cards-container"></div>
+          </div>
+      </div>
+
+      
+  </div>
+
 
 </div>
 

@@ -95,6 +95,15 @@ app.get('/api/worlds', (req, res) => {
   res.json(VISUAL_WORLDS);
 });
 
+app.get('/api/taxonomy', (req, res) => {
+  res.json(TAXONOMY);
+});
+
+// GET /api/taxonomy — full taxonomy (worlds, projects, palettes, paths)
+app.get('/api/taxonomy', (req, res) => {
+  res.json(TAXONOMY);
+});
+
 // GET /api/brain — brain/*.md dosya listesi + meta (boyut)
 app.get('/api/brain', (_req, res) => {
   try {
@@ -267,9 +276,11 @@ GÖREV: Bu brief için sırasıyla üret:
 Her çıktı paste-ready olacak. Açıklama yok, sadece çıktı.`;
 }
 
+let TAXONOMY = { worlds: [] };
 let VISUAL_WORLDS = [];
 try {
-  VISUAL_WORLDS = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'worlds.json'), 'utf8'));
+  TAXONOMY = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'worlds.json'), 'utf8'));
+  VISUAL_WORLDS = TAXONOMY.worlds || [];
 } catch (e) {
   console.error('Failed to load worlds.json', e);
 }
