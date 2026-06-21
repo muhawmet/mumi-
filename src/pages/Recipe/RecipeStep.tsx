@@ -212,7 +212,7 @@ export const RecipeStep = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>← Brief'e dön</Button>
         <Button onClick={() => setCurrentStep('timeline')} disabled={!selectedWorldId}>
-          Timeline'a geç →
+          Timeline'a geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
         </Button>
       </div>
     </div>

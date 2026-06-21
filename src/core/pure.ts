@@ -235,7 +235,7 @@ function stableSemanticFingerprint(parts: Array<string | number>): string {
   return `scene-${(hash >>> 0).toString(16).padStart(8, '0')}`;
 }
 
-function parseSourceInput(topic: string) {
+export function parseSourceInput(topic: string) {
   const raw = String(topic || '').trim();
   const sourceMatch = raw.match(/^SOURCE:\s*([\s\S]+)$/i);
   if (!sourceMatch) {

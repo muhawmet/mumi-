@@ -13,8 +13,8 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const setCurrentStep = useStudioStore((s) => s.setCurrentStep);
 
   return (
-    <div style={styles.shell}>
-      <nav style={styles.sidebar}>
+    <div className="ml-shell" style={styles.shell}>
+      <nav className="ml-sidebar" style={styles.sidebar}>
         <header style={styles.brand}>
           <Sparkles size={20} color="var(--gold)" />
           <div>
@@ -41,13 +41,13 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
           })}
         </ol>
 
-        <footer style={styles.footer}>
+        <footer className="ml-footer" style={styles.footer}>
           <div style={styles.footerLine}>M4 Max · iPhone 16 Pro Max</div>
           <div style={styles.footerLine}>Quantum OS Build</div>
         </footer>
       </nav>
 
-      <main style={styles.main}>{children}</main>
+      <main className="ml-main" style={styles.main}>{children}</main>
     </div>
   );
 };

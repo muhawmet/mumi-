@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useStudioStore, type Cast } from '../../store/useStudioStore';
 import { Panel, Field, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { PHASE0_VIDEO, PHASE0_DESIGN, type Phase0Preset } from '../../data/presets';
+import { parseSourceInput } from '../../core/pure';
 
 const CLASS_OPTIONS = [
   { id: 'EĞİTİM_01', label: 'Eğitim · İlkokul' },
@@ -25,6 +26,8 @@ export const DashboardStep = () => {
   const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const presets = kind === 'video' ? PHASE0_VIDEO : PHASE0_DESIGN;
+  const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
+  const isSourceBound = sourceParsed.status === 'SOURCE_BOUND';
 
   const onPreset = (p: Phase0Preset) => {
     setActivePreset(p.id);
@@ -122,11 +125,11 @@ export const DashboardStep = () => {
       <Panel title="Konu & Sınıf">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
           <Field label="Proje konusu" hint='Kanonik kaynak için "SOURCE:" ön ekiyle çoklu beat yazabilirsin.'>
-            <input
-              style={inputStyle}
+            <textarea
+              style={{ ...inputStyle, minHeight: isSourceBound ? 120 : 44, resize: 'vertical', fontFamily: isSourceBound ? "'JetBrains Mono Variable', monospace" : 'inherit' }}
               value={projectTopic}
               onChange={(e) => setField('projectTopic', e.target.value)}
-              placeholder="örn. Su Döngüsü"
+              placeholder="örn. Su Döngüsü — veya SOURCE: ile çoklu beat"
             />
           </Field>
           <Field label="Proje sınıfı / yolu">
@@ -153,6 +156,39 @@ export const DashboardStep = () => {
             />
           </Field>
         </div>
+        <AnimatePresence>
+          {isSourceBound && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              style={{ overflow: 'hidden', marginTop: 18 }}
+            >
+              <div
+                style={{
+                  padding: 14,
+                  borderRadius: 10,
+                  background: 'rgba(77,245,160,.05)',
+                  border: '1px solid rgba(77,245,160,.25)',
+                }}
+              >
+                <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--green, #4df5a0)', fontWeight: 700, marginBottom: 8 }}>
+                  SOURCE BOUND · {sourceParsed.beats.length} BEAT
+                </div>
+                <ol style={{ margin: 0, paddingLeft: 18, fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                  {sourceParsed.beats.map((b) => (
+                    <li key={b.sourceId ?? b.exactText}>
+                      <span style={{ color: 'var(--green)', fontFamily: "'JetBrains Mono Variable', monospace", fontSize: 11 }}>
+                        {b.sourceId ?? '—'}
+                      </span>{' '}
+                      <span style={{ color: '#fff' }}>{b.exactText}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Panel>
 
       <Panel title="Oyuncu kadrosu" subtitle="referenceFaceLocked uygulanır — kimlik kayması engellenir.">
@@ -183,7 +219,9 @@ export const DashboardStep = () => {
       </Panel>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
-        <Button onClick={() => setCurrentStep('recipe')}>Reçeteye geç →</Button>
+        <Button onClick={() => setCurrentStep('recipe')}>
+          Reçeteye geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
+        </Button>
       </div>
     </div>
   );

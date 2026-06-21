@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Copy, Check } from 'lucide-react';
 import { useStudioStore, type Scene } from '../../store/useStudioStore';
 import { Panel, Button } from '../../components/Layout/PanelKit';
-import { generateBatch } from '../../core/pure';
 
 const PHASE_COLORS: Record<string, string> = {
   Intro: '#4df5a0',
@@ -14,51 +13,9 @@ const PHASE_COLORS: Record<string, string> = {
 
 export const TimelineStep = () => {
   const state = useStudioStore();
-  const { scenes, selectedSceneId, isGenerating, lastError, setField, setScenes, setCurrentStep } = state;
+  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes } = state;
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
-
-  const onGenerate = () => {
-    setField('isGenerating', true);
-    setField('lastError', null);
-    try {
-      const result = generateBatch({
-        projectTopic: state.projectTopic,
-        projectClass: state.projectClass,
-        sceneCount: state.sceneCount,
-        cast: state.cast,
-        selectedWorldId: state.selectedWorldId,
-        selectedPropId: state.selectedPropId,
-        selectedRefId: state.selectedRefId,
-        selectedPaletteId: state.selectedPaletteId,
-        selectedMusicId: state.selectedMusicId,
-        imageModel: state.imageModel,
-        videoModel: state.videoModel,
-      });
-
-      if (result.status === 'BLOCKED') {
-        setField('lastError', result.contractGate.findings.map((f) => `${f.code}: ${f.message}`).join(' · '));
-        setScenes([]);
-      } else {
-        const adapted: Scene[] = result.scenes.map((s) => ({
-          id: s.id,
-          architecture: s.architecture,
-          imagePrompt: s.imagePrompt,
-          voiceOver: s.voiceOver,
-          sunoBrief: s.sunoBrief,
-          durationSec: s.durationSec,
-          intensity: s.intensity,
-          phaseName: s.phaseName,
-          handoff: s.handoff,
-        }));
-        setScenes(adapted);
-        setField('selectedSceneId', adapted[0]?.id ?? null);
-      }
-    } catch (err) {
-      setField('lastError', err instanceof Error ? err.message : String(err));
-    } finally {
-      setField('isGenerating', false);
-    }
-  };
+  const onGenerate = generateScenes;
 
   const onExportJSON = () => {
     const payload = {
@@ -100,7 +57,7 @@ export const TimelineStep = () => {
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportJSON}>Export JSON</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff paketleri</Button>}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
-            {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : 'BATCH ÜRET'}
+            {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
         </div>
       </header>
@@ -133,7 +90,8 @@ export const TimelineStep = () => {
       ) : (
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) 1.6fr', gap: 24 }}>
           <Panel title={`Sahneler (${scenes.length})`}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <PacingArc scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
               {scenes.map((s, i) => {
                 const active = selectedSceneId === s.id;
                 return (
@@ -305,6 +263,64 @@ const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?
       >
         {value}
       </div>
+    </div>
+  );
+};
+
+const PacingArc: React.FC<{
+  scenes: Scene[];
+  selectedSceneId: number | null;
+  onPick: (id: number) => void;
+}> = ({ scenes, selectedSceneId, onPick }) => {
+  if (scenes.length === 0) return null;
+  const W = 100;
+  const H = 56;
+  const padY = 6;
+  const range = H - padY * 2;
+  const points = scenes.map((s, i) => {
+    const x = scenes.length === 1 ? W / 2 : (i / (scenes.length - 1)) * W;
+    const y = H - padY - (s.intensity / 100) * range;
+    return { x, y, scene: s };
+  });
+  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ');
+  const areaPath = `${linePath} L ${W} ${H - padY} L 0 ${H - padY} Z`;
+  return (
+    <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          fontSize: 10,
+          letterSpacing: 2,
+          color: 'var(--text-muted)',
+          marginBottom: 6,
+          fontWeight: 700,
+        }}
+      >
+        <span>PACING ARCI</span>
+        <span style={{ color: 'var(--gold)' }}>
+          {Math.round(Math.min(...scenes.map((s) => s.intensity)))}–{Math.round(Math.max(...scenes.map((s) => s.intensity)))} %
+        </span>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" style={{ width: '100%', height: 70, display: 'block' }}>
+        <defs>
+          <linearGradient id="pacingFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="#f7c948" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#f7c948" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path d={areaPath} fill="url(#pacingFill)" />
+        <path d={linePath} fill="none" stroke="#f7c948" strokeWidth="0.8" />
+        {points.map((p) => {
+          const active = selectedSceneId === p.scene.id;
+          return (
+            <g key={p.scene.id} style={{ cursor: 'pointer' }} onClick={() => onPick(p.scene.id)}>
+              <circle cx={p.x} cy={p.y} r={active ? 2.4 : 1.6} fill={PHASE_COLORS[p.scene.phaseName] || '#fff'} stroke="#0a0a14" strokeWidth="0.3" />
+              {active && <circle cx={p.x} cy={p.y} r={3.6} fill="none" stroke="#f7c948" strokeWidth="0.4" />}
+            </g>
+          );
+        })}
+      </svg>
     </div>
   );
 };
