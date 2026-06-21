@@ -1,0 +1,22 @@
+{
+  "name": "mamilas_new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.mjs",
+    "start": "node server.js",
+    "qa": "node qa_capture.js",
+    "snapshot": "node take-screenshots.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "canvas": "^3.2.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "puppeteer": "^25.1.0"
+  }
+}

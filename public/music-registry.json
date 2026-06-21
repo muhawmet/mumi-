@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryVersion": "2026-06-19.1",
+  "groundingPolicy": "Only mappings explicitly present in brain/04_SUNO.md are allowed.",
+  "mappings": {
+    "paper_diorama": { "sourceRef": "brain/04_SUNO.md:117", "text": "light guitar or piano, paper-rustle sound design optional, quiet and revealing." },
+    "clay_diorama": { "sourceRef": "brain/04_SUNO.md:115", "text": "muted plucked strings (toy piano, music box, glockenspiel). Hand-made warmth." },
+    "pixar_feature": { "sourceRef": "brain/04_SUNO.md:94", "text": "warm orchestral — solo piano lead, sustained strings in support, occasional soft brass swell. Friendly and adventurous. Never ominous or ironic." },
+    "watercolor_storybook": { "sourceRef": "brain/04_SUNO.md:95", "text": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried. No driving rhythm." },
+    "arcane_painterly": { "sourceRef": "brain/04_SUNO.md:100", "text": "low brass undertone, tense string col legno, amber harmonic warmth over a dark bass. Cinematic pressure without trailer cliché." },
+    "arcane_undercity": { "sourceRef": "brain/04_SUNO.md:100", "text": "low brass undertone, tense string col legno, amber harmonic warmth over a dark bass." },
+    "verse_edu": { "sourceRef": "brain/04_SUNO.md:101", "text": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos." },
+    "verse_miles": { "sourceRef": "brain/04_SUNO.md:101", "text": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos." },
+    "verse_gwen": { "sourceRef": "brain/04_SUNO.md:148", "text": "delicate piano or harp arpeggios, soft sustained strings, light brushed percussion at most. Flowing and graceful, never driving. No kinetic synth stabs." },
+    "verse_noir": { "sourceRef": "brain/04_SUNO.md:149", "text": "sparse noir jazz — lone muted trumpet or upright bass, brushed kit, smoky sustained chords. Tension through space, not energy. No kinetic synth stabs." },
+    "anime_edu": { "sourceRef": "brain/04_SUNO.md:101", "text": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos." },
+    "anime_cel": { "sourceRef": "brain/04_SUNO.md:101", "text": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos." },
+    "demon_slayer_visual": { "sourceRef": "brain/04_SUNO.md:150", "text": "cinematic orchestral with traditional Japanese instrumentation — taiko swell, shakuhachi or koto motif over sustained strings. Builds to the FX bloom, settles on the held ring. Dignified intensity, no synth-pop." },
+    "ghibli_storybook": { "sourceRef": "brain/04_SUNO.md:95", "text": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried. No driving rhythm." },
+    "ghibli_felt_edu": { "sourceRef": "brain/04_SUNO.md:151", "text": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried." },
+    "chalk_universe": { "sourceRef": "brain/04_SUNO.md:98", "text": "lo-fi acoustic, muted upright piano, nostalgic warmth, slight room ambiance. No clean digital production." },
+    "flat_vector_cartoon": { "sourceRef": "brain/04_SUNO.md:96", "text": "playful synth or muted brass, punchy percussion, bright stabs on key moments. Energetic but never aggressive." },
+    "shadow_puppet": { "sourceRef": "brain/04_SUNO.md:124", "text": "acoustic oud or frame drum at low volume, theatrical restraint." },
+    "book_theater": { "sourceRef": "brain/04_SUNO.md:117", "text": "light guitar or piano, paper-rustle sound design optional, quiet and revealing." },
+    "wood_diorama": { "sourceRef": "brain/04_SUNO.md:116", "text": "single marimba or prepared piano with clear attack. Mechanical and precise, each note timed to a mechanism click." },
+    "felt_diorama": { "sourceRef": "brain/04_SUNO.md:115", "text": "muted plucked strings (toy piano, music box, glockenspiel). Hand-made warmth." },
+    "stained_glass": { "sourceRef": "brain/04_SUNO.md:123", "text": "solo organ or choir pad, slow and ceremonial. Light and space as sonic identity." },
+    "graphic_poster_world": { "sourceRef": "brain/04_SUNO.md:102", "text": "bold brass hits on downbeats, driving 4/4 rhythm, civic confidence. Clean and declarative." },
+    "oil_painted_classic": { "sourceRef": "brain/04_SUNO.md:99", "text": "sparse strings or period ensemble (harpsichord, lute, solo violin). Dignified, legato, no percussion. Museum gravity." },
+    "cinematic_real": { "sourceRef": "brain/04_SUNO.md:152", "text": "low dark synth drone, slow warm string pad, cinematic pulse. Atmospheric and serious, no orchestral peaks." }
+  }
+}
