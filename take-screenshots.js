@@ -2,37 +2,47 @@ const puppeteer = require('puppeteer');
 const { spawn } = require('child_process');
 
 (async () => {
-  console.log("Starting server...");
   const server = spawn('node', ['server.js'], { env: { ...process.env, PORT: 3000 } });
   
-  await new Promise(r => setTimeout(r, 2000));
-  
-  console.log("Launching browser...");
-  const browser = await puppeteer.launch({ headless: 'new' });
-  const page = await browser.newPage();
+  // Wait for server to boot
+  await new Promise(r => setTimeout(r, 1000));
   
   try {
-    await page.goto('http://localhost:3000', { waitUntil: 'networkidle0', timeout: 10000 });
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
     
-    console.log("Capturing Dashboard (Desktop)...");
+    // Desktop Dashboard
     await page.setViewport({width: 1440, height: 900});
-    await page.screenshot({path: 'ssler/01_dashboard_desktop.png', fullPage: true});
-
-    console.log("Capturing Dashboard (Mobile closed)...");
-    await page.setViewport({width: 390, height: 844});
-    await page.reload({ waitUntil: 'networkidle0' });
-    await page.screenshot({path: 'ssler/02_dashboard_mobile.png', fullPage: false});
-
-    console.log("Capturing Dashboard (Mobile drawer open)...");
-    await page.evaluate(() => document.getElementById('studio-sidebar').classList.add('open'));
-    await new Promise(r => setTimeout(r, 400));
-    await page.screenshot({path: 'ssler/03_dashboard_mobile_open.png', fullPage: false});
+    await page.goto('http://localhost:3000', {waitUntil: 'networkidle0'});
+    await page.screenshot({path: 'ssler/01_dashboard.png'});
     
-  } catch (e) {
-    console.error("Puppeteer Error:", e);
-  } finally {
+    // Ingest View
+    await page.evaluate(() => switchView('ingest'));
+    await new Promise(r => setTimeout(r, 300)); //(300);
+    await page.screenshot({path: 'ssler/02_ingest.png'});
+    
+    // Recipe View
+    await page.evaluate(() => switchView('recipe'));
+    await new Promise(r => setTimeout(r, 300)); //(300);
+    await page.screenshot({path: 'ssler/03_recipe.png'});
+
+    // Ref DNA View
+    await page.evaluate(() => switchView('refdna'));
+    await new Promise(r => setTimeout(r, 300)); //(300);
+    await page.screenshot({path: 'ssler/04_refdna.png'});
+    
+    // Timeline View
+    await page.evaluate(() => switchView('timeline'));
+    await new Promise(r => setTimeout(r, 300)); //(300);
+    await page.screenshot({path: 'ssler/05_timeline.png'});
+    
     await browser.close();
     server.kill();
+    console.log('Screenshots captured!');
     process.exit(0);
+  } catch(e) {
+    console.error(e);
+    server.kill();
+    process.exit(1);
   }
 })();

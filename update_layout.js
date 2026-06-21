@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAMILAS PRO STUDIO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="mob-bar"><div class="mob-logo"><b>MAMI</b>LAS</div><div class="mob-spacer"></div><button class="mob-icon" aria-label="Toggle preview panel" onclick="document.getElementById('studio-sidebar').classList.toggle('open')">☰</button></header>
+const fs = require('fs');
+let html = fs.readFileSync('public/index.html', 'utf8');
 
-<button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle controls">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-</button>
-
-<div class="app">
-  <!-- LEFT SIDEBAR: Setup & Controls -->
-  
+// We are going to replace the `<div class="side" id="studio-sidebar">...</div>` with a proper navigation menu
+const navMenu = `
   <div class="side" id="studio-sidebar">
      <div class="sidebar-header">
        <h1 class="sidebar-logo">MAMI<b>LAS</b> PRO</h1>
@@ -60,30 +44,14 @@
         </button>
      </nav>
   </div>
+`;
 
-  <div id="brain-modal" class="brain-modal" role="dialog" aria-modal="true" aria-labelledby="brain-modal-title" hidden>
-    <div class="brain-modal-card">
-      <header class="brain-modal-header">
-        <h2 id="brain-modal-title">Agent brain</h2>
-        <button id="btn-brain-close" class="btn-mini-ghost" type="button" aria-label="Close">Close</button>
-      </header>
-      <div class="brain-modal-body">
-        <nav class="brain-sections" id="brain-sections" aria-label="Brain sections"></nav>
-        <article class="brain-content" id="brain-content" aria-live="polite"></article>
-      </div>
-    </div>
-  </div>
+// Replace the old side
+html = html.replace(/<div class="side" id="studio-sidebar">[\s\S]*?<\/div>\s*<\/div>\s*<div id="brain-modal"/, navMenu + '\n  <div id="brain-modal"');
 
-  <div id="cinematic-loader" class="cinematic-loader" aria-hidden="true">
-    <div class="cinematic-loader-inner">
-      <div class="spinner"></div>
-      <div class="cinematic-loader-text">Generating scenes…</div>
-    </div>
-  </div>
-
-  <!-- MIDDLE: Main Preview Player & Details -->
-  
-  
+// Now, we need to wrap the existing timeline in the center in a view, and add the new views.
+// The center is `<div class="main">`
+const newViews = `
   <div class="main">
     <div class="inner">
       
@@ -223,102 +191,13 @@
 
       <!-- TIMELINE VIEW -->
       <div id="view-timeline" class="app-view" style="display:none;">
+`;
 
-      <div class="studio-timeline">
+// Extract timeline HTML
+const mainMatch = html.match(/<div class="main">[\s\S]*?<div class="pageHead">[\s\S]*?<\/div>([\s\S]*?)<\/div>\s*<\/div>\s*<div class="right">/);
+const timelineHtml = mainMatch ? mainMatch[1] : '';
 
-         <div class="timeline-header">
-           <span>Scene Sequence</span>
-           <div class="timeline-legend" aria-label="Status legend">
-             <span class="status-chip status-pending"><span class="status-dot"></span>Pending</span>
-             <span class="status-chip status-active"><span class="status-dot"></span>Active</span>
-             <span class="status-chip status-done"><span class="status-dot"></span>Done</span>
-             <span class="status-chip status-blocked"><span class="status-dot"></span>Blocked</span>
-           </div>
-         </div>
-         <div class="timeline-scroll-area">
-             <table class="timeline-table" aria-label="Scene timeline">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Scene</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Video</th>
-                    <th scope="col">Music</th>
-                    <th scope="col">VO</th>
-                  </tr>
-                </thead>
-                <tbody id="table-body">
-                   <!-- app.js generates rows here -->
-                </tbody>
-             </table>
-         </div>
-      
-</div>
-    
-      </div>
-    </div>
-  </div>
-  <div class="right">
-    <div class="preview-player-area">
-          <div id="detail-empty-state" class="empty-state">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.2; margin-bottom: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <h2>No scene selected yet</h2>
-              <p>Configure your project on the left, generate, then pick a scene to inspect its prompts.</p>
-              <div class="empty-tips">
-                <div class="empty-tip"><span class="empty-tip-step">1</span>Set project topic, class, and cast on the left.</div>
-                <div class="empty-tip"><span class="empty-tip-step">2</span>Pick a visual world, prop focus, palette and audio profile.</div>
-                <div class="empty-tip"><span class="empty-tip-step">3</span>Click <b>Generate scenes</b> — then pick a row from the timeline.</div>
-              </div>
-          </div>
-          
-          <div class="preview-content-wrapper">
-             <header class="scene-meta">
-               <div class="scene-meta-main">
-                 <span id="scene-meta-index" class="scene-meta-index qScore" style="background:transparent; border:none; box-shadow:none; align-items:flex-start; margin-right:12px;">—</span>
-                 <div>
-                   <h2 id="detail-title" class="title" style="font-size: 28px; margin-bottom: 4px;"></h2>
-                   <div id="scene-meta-tags" class="scene-meta-tags"></div>
-                 </div>
-               </div>
-               <div class="scene-actions">
-                 <button id="btn-scene-copy-all" class="btn-mini" type="button">Copy all prompts</button>
-                 <button id="btn-scene-mark-done" class="btn-mini" type="button">Mark done</button>
-                 <button id="btn-scene-regenerate" class="btn-mini btn-mini-ghost" type="button">Regenerate</button>
-               </div>
-             </header>
-             <div class="prompt-group">
-                <div class="prompt-label">Image prompt</div>
-                <div id="detail-image-prompt" class="prompt-box box"></div>
-             </div>
-             
-             <div class="prompt-group">
-                <div class="prompt-label">Motion prompt</div>
-                <div id="detail-motion-prompt" class="prompt-box box mono"></div>
-                <button id="btn-copy-motion" class="btn-copy" aria-label="Copy motion prompt">Copy</button>
-             </div>
-             
-             <div class="prompt-group-half">
-                <div>
-                   <div class="prompt-label">Suno audio</div>
-                   <div id="detail-suno-prompt" class="prompt-box box mono"></div>
-                </div>
-                <div>
-                   <div class="prompt-label">Voiceover</div>
-                   <div id="detail-vo-prompt" class="prompt-box box mono"></div>
-                </div>
-             </div>
+html = html.replace(/<div class="main">[\s\S]*?<\/div>\s*<\/div>\s*<div class="right">/, newViews + timelineHtml + '\n      </div>\n    </div>\n  </div>\n  <div class="right">');
 
-             <div id="detail-cards-container"></div>
-          </div>
-      </div>
-
-      
-  </div>
-
-
-</div>
-
-<script src="bundle.js"></script>
-<script src="beautify_selects.js"></script><script src="navigation.js"></script></body>
-</html>
+fs.writeFileSync('public/index.html', html);
+console.log("Layout refactored for SPA");
