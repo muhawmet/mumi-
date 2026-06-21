@@ -209,13 +209,22 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    populateWorldsFromBrain();
-    populateModelTargets();
-    bindEmptyStateToggle();
-    ['cascade-world', 'cascade-prop', 'cascade-reference', 'cascade-palette', 'cascade-music']
-      .forEach(convertSelectToButtons);
-    bindMobileNav();
-    bindBodyScrollLock();
-    bindBrainModal();
+    const init = () => {
+      populateWorldsFromBrain();
+      populateModelTargets();
+      bindEmptyStateToggle();
+      ['cascade-world', 'cascade-prop', 'cascade-reference', 'cascade-palette', 'cascade-music']
+        .forEach(convertSelectToButtons);
+      bindMobileNav();
+      bindBodyScrollLock();
+      bindBrainModal();
+    };
+    if (typeof BRAIN !== 'undefined' && BRAIN.worlds && BRAIN.worlds.length > 0) {
+      init();
+    } else if (window.loadWorlds) {
+      window.loadWorlds().then(init);
+    } else {
+      init();
+    }
   });
 })();

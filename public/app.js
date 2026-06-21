@@ -359,17 +359,21 @@ function buildImageVantage(world, sceneIndex) {
 function createSceneArchitecture(topic, sceneIndex, world) {
   const index = Math.max(1, Number(sceneIndex) || 1) - 1;
   const sourceInput = parseSourceInput(topic);
+  const cycle = Math.floor(index / sourceInput.beats.length);
   const sourceBeat = sourceInput.beats[index % sourceInput.beats.length];
   const intent = SCENE_INTENTS[index % SCENE_INTENTS.length];
   const event = SCENE_EVENTS[Math.floor(index / SCENE_INTENTS.length) % SCENE_EVENTS.length];
   const focus = SCENE_FOCUSES[index % SCENE_FOCUSES.length];
-  const dominantSubject = `${sourceBeat.exactText} — ${focus}`;
+  
+  let beatText = sourceBeat.exactText;
+  if (cycle > 0) beatText += ` (Gelişim Evresi ${cycle + 1})`;
+  const dominantSubject = `${beatText} — ${focus}`;
 
   return {
     source: {
       status: sourceInput.status,
       sourceId: sourceBeat.sourceId,
-      exactText: sourceBeat.exactText,
+      exactText: beatText,
       notice: sourceInput.notice
     },
     beat: intent,
@@ -381,7 +385,8 @@ function createSceneArchitecture(topic, sceneIndex, world) {
       sourceBeat.sourceId || sourceBeat.exactText,
       intent,
       dominantSubject,
-      event
+      event,
+      cycle
     ])
   };
 }
@@ -442,7 +447,9 @@ function validateBriefCompatibility({ path, world, recipe }) {
 
 function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
   const brainRefId = mapRefIdToBrainRefId(selectedRefId);
-  const reference = brainRefId ? BRAIN.references.find(ref => ref.id === brainRefId) : null;
+  const reference = (brainRefId && typeof BRAIN !== 'undefined' && BRAIN.references) 
+    ? BRAIN.references.find(ref => ref.id === brainRefId) 
+    : null;
   const compatibleReference = reference && reference.worldId === world.id ? reference : null;
   const recipe = deriveTeachingRecipe(world);
   const paletteAccent = world.palette && world.palette.length ? world.palette[world.palette.length - 1] : null;
@@ -462,9 +469,9 @@ function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
       id: reference.id,
       status: compatibleReference ? 'ACTIVE_SUBORDINATE' : 'SUPPRESSED_WORLD_MISMATCH',
       worldId: reference.worldId,
-      directives: compatibleReference ? {
-        mood: reference.dna.mood,
-        linework: reference.dna.linework
+      directives: (compatibleReference && reference.dna) ? {
+        mood: reference.dna.mood || '',
+        linework: reference.dna.linework || ''
       } : {},
       suppressedFields: ['palette', 'texture', 'lighting']
     } : {
@@ -506,10 +513,14 @@ function buildImagePrompt(topic, sceneIndex, sceneCount, sceneArchitecture, fina
   }
   if (finalBrief.paletteAccent.value) prompt += `. Palette accent: ${finalBrief.paletteAccent.value}`;
   
-  if (character && character !== 'İkisi') {
+  if (character === 'Aras') {
+    prompt += `. Subject: Aras (young boy with curly hair, referenceFaceLocked)`;
+  } else if (character === 'Defne') {
+    prompt += `. Subject: Defne (young girl with braided hair, referenceFaceLocked)`;
+  } else if (character === 'İkisi' || character === 'ENSEMBLE') {
+    prompt += `. Subjects: Aras and Defne (referenceFaceLocked)`;
+  } else if (character) {
     prompt += `. Subject: ${character}`;
-  } else if (character === 'İkisi') {
-    prompt += `.Subjects: Aras and Defne`;
   }
   
   let negatives = getGlobalNegatives();
@@ -675,8 +686,8 @@ function buildSunoBrief(sceneIndex, sceneCount, musicGrounding) {
     return `BLOCKED: ${musicGrounding.code} for ${musicGrounding.worldId}; no music style was guessed.`;
   }
   const progress = sceneCount <= 1 ? 1 : (sceneIndex - 1) / (sceneCount - 1);
-  const stage = progress < 0.2 ? 'INTRO' : progress < 0.65 ? 'BUILD' : progress < 0.85 ? 'PEAK' : 'RESOLVE';
-  return `[MUSIC SOURCE: ${musicGrounding.sourceRef}; REGISTRY: ${musicGrounding.registryVersion}] ${musicGrounding.text} STRUCTURE: ${stage} for scene ${sceneIndex}/${sceneCount}. VO POCKET: keep 1–4 kHz sparse; no sustained vocals; reduce transients under narration.`;
+  const stage = progress < 0.2 ? 'Intro' : progress < 0.65 ? 'Build' : progress < 0.85 ? 'Peak' : 'Resolve';
+  return `[MUSIC SOURCE: ${musicGrounding.sourceRef}; REGISTRY: ${musicGrounding.registryVersion}] ${musicGrounding.text} [${stage}] for scene ${sceneIndex}/${sceneCount}. VO POCKET: keep 1–4 kHz sparse; no sustained vocals; reduce transients under narration.`;
 }
 
 // Batch Generator
@@ -864,10 +875,10 @@ function renderTable() {
       <td>${escapeHTML(scene.id)}</td>
       <td>${escapeHTML(scene.topic.length > 50 ? scene.topic.substring(0, 50) + '...' : scene.topic)}</td>
       <td><span class="status-badge status-${escapeHTML(scene.status.toLowerCase())}"></span> ${escapeHTML(scene.status)}</td>
-      <td class="item-check ${scene.imageStatus === 'done' ? 'done' : ''}">${scene.imageStatus === 'done' ? '✓' : '○'}</td>
-      <td class="item-check ${scene.videoStatus === 'done' ? 'done' : ''}">${scene.videoStatus === 'done' ? '✓' : '○'}</td>
-      <td class="item-check ${scene.sunoStatus === 'done' ? 'done' : ''}">${scene.sunoStatus === 'done' ? '✓' : '○'}</td>
-      <td class="item-check ${scene.voStatus === 'done' ? 'done' : ''}">${scene.voStatus === 'done' ? '✓' : '○'}</td>
+      <td title="${scene.imageStatus}" class="item-check ${scene.imageStatus === 'done' ? 'done' : ''}">${scene.imageStatus === 'done' ? '✓' : '○'}</td>
+      <td title="${scene.imageStatus}" class="item-check ${scene.videoStatus === 'done' ? 'done' : ''}">${scene.videoStatus === 'done' ? '✓' : '○'}</td>
+      <td title="${scene.imageStatus}" class="item-check ${scene.sunoStatus === 'done' ? 'done' : ''}">${scene.sunoStatus === 'done' ? '✓' : '○'}</td>
+      <td title="${scene.imageStatus}" class="item-check ${scene.voStatus === 'done' ? 'done' : ''}">${scene.voStatus === 'done' ? '✓' : '○'}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -1428,6 +1439,7 @@ function checkHealth() {
 
 // Bindings and Startup
 document.addEventListener('DOMContentLoaded', () => {
+  const initApp = () => {
   loadState();
   initUI();
   restoreProjectControls();
@@ -1581,7 +1593,16 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Sahne yeniden üretime hazır.', 'info');
     });
   }
+  };
+  if (typeof BRAIN !== 'undefined' && BRAIN.worlds && BRAIN.worlds.length > 0) {
+    initApp();
+  } else if (window.loadWorlds) {
+    window.loadWorlds().then(initApp);
+  } else {
+    initApp();
+  }
 });
+
 function showToast(msg, type) {
   const t = type || 'info';
   if (typeof document === 'undefined') return;

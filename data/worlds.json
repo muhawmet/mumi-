@@ -1,0 +1,615 @@
+[
+  {
+    "id": "paper_diorama",
+    "name": "Paper Diorama",
+    "category": "tactile",
+    "emoji": "📄",
+    "palette": [
+      "#fef3c7",
+      "#fde68a",
+      "#d97706",
+      "#78350f"
+    ],
+    "texture": "Crisp cut paper edges",
+    "lighting": "Fold shadow lines, tunnel depth visible",
+    "imageVantageConstraint": "Exterior view, full scale visible",
+    "linework": "None",
+    "renderRecipe": "receding page planes at distinct depth layers, pop-up mechanism at center, fold shadow lines, tunnel depth visible. Crisp cut paper edges.",
+    "musicMapping": "light guitar or piano, paper-rustle sound design optional, quiet and revealing.",
+    "motionNotes": "one page layer lifts or one pop-up element rises. Hold on the open structure.",
+    "negatives": [
+      "plastic look",
+      "flat lighting",
+      "macro crop"
+    ]
+  },
+  {
+    "id": "clay_diorama",
+    "name": "Clay Diorama",
+    "category": "tactile",
+    "emoji": "🎨",
+    "palette": [
+      "#c2410c",
+      "#9a3412",
+      "#78350f",
+      "#ffedd5"
+    ],
+    "texture": "thumbprint texture visible, seam lines between clay sections, matte clay sheen",
+    "lighting": "soft directional light, gentle shadows",
+    "imageVantageConstraint": "Exterior view, full scale visible",
+    "linework": "None",
+    "renderRecipe": "rounded terrain landscape, one central junction mechanism where the lesson joins or separates, finger-smoothed imperfection everywhere. Matte clay sheen, no gloss.",
+    "musicMapping": "muted plucked strings (toy piano, music box, glockenspiel). Hand-made warmth.",
+    "motionNotes": "one clay piece rolls in, joins, or separates at the central junction. Settle with a soft wobble.",
+    "negatives": [
+      "glossy CGI",
+      "perfectly smooth",
+      "macro crop"
+    ]
+  },
+  {
+    "id": "pixar_feature",
+    "name": "Pixar Feature",
+    "category": "animation",
+    "emoji": "✨",
+    "palette": [
+      "#fb7185",
+      "#fbbf24",
+      "#60a5fa",
+      "#1e40af"
+    ],
+    "texture": "soft 3D subsurface",
+    "lighting": "warm bounce light from below-left, soft drop shadow on ground plane",
+    "imageVantageConstraint": "35mm three-quarter medium-wide, shallow depth",
+    "linework": "none",
+    "renderRecipe": "rounded bevels, warm bounce light from below-left, soft drop shadow on ground plane, clean readable silhouettes. No flat classroom staging, no generic shiny CGI.",
+    "musicMapping": "warm orchestral — solo piano lead, sustained strings in support, occasional soft brass swell. Friendly and adventurous. Never ominous or ironic.",
+    "motionNotes": "one warm organic event with soft ease-in/ease-out. Emotional weight in the settle. Camera: gentle push or tilt. Never snap-cut motion.",
+    "negatives": [
+      "flat classroom staging",
+      "generic shiny CGI",
+      "ominous lighting"
+    ]
+  },
+  {
+    "id": "watercolor_storybook",
+    "name": "Watercolor Storybook",
+    "category": "animation",
+    "emoji": "🎨",
+    "palette": [
+      "#34d399",
+      "#bae6fd",
+      "#fde68a",
+      "#059669"
+    ],
+    "texture": "pigment blooms at edges, paper grain visible",
+    "lighting": "warm wash light",
+    "compositionConstraint": "2D flat or soft isometric projection",
+    "linework": "uneven brush edges, no hard digital lines",
+    "renderRecipe": "pigment blooms at edges, paper grain visible, warm wash light. Keep detail soft, brush edges uneven. No hard digital lines.",
+    "musicMapping": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried. No driving rhythm.",
+    "motionNotes": "one warm organic event with soft ease-in/ease-out. Emotional weight in the settle. Camera: gentle push or tilt.",
+    "negatives": [
+      "hard digital lines",
+      "3D shading",
+      "sharp vector edges"
+    ]
+  },
+  {
+    "id": "arcane_edu",
+    "name": "Arcane (Edu)",
+    "category": "arcane",
+    "emoji": "⚡",
+    "palette": [
+      "#0e7c7b",
+      "#d62246",
+      "#f4a259",
+      "#1b1b2f"
+    ],
+    "texture": "Fortiche oil-paint surface texture on all elements",
+    "lighting": "Amber-blue contrast preserved. Educational prop rendered in same oil-paint style.",
+    "compositionConstraint": "subject clearly readable at center frame, open or structured space",
+    "linework": "painterly edges",
+    "renderRecipe": "Fortiche oil-paint surface texture on all elements, but setting is open or structured space (not claustrophobic). Amber-blue contrast preserved. Subject clearly readable at center frame, educational prop rendered in same oil-paint style. Teaching moment framed with deliberate negative space.",
+    "musicMapping": "low brass undertone, tense string col legno, amber harmonic warmth over a dark bass. Cinematic pressure without trailer cliché.",
+    "motionNotes": "One kinetic build-and-release but smoother — camera locked low, slow lift on subject's educational action completion. Settle on the teaching result. No undercity environmental motion.",
+    "negatives": [
+      "undercity tunnel framing",
+      "cute softness",
+      "plastic 3D"
+    ]
+  },
+  {
+    "id": "arcane_painterly",
+    "name": "Arcane Painterly",
+    "category": "arcane",
+    "emoji": "🌆",
+    "palette": [
+      "#0e7c7b",
+      "#d62246",
+      "#f4a259",
+      "#1b1b2f"
+    ],
+    "texture": "hand-textured surfaces",
+    "lighting": "bold value separation, amber-blue contrast, rim-lit subject",
+    "compositionConstraint": "serious graphic staging",
+    "linework": "painterly edges, no hard outline",
+    "renderRecipe": "hand-textured surfaces, bold value separation, amber-blue contrast, serious graphic staging. Rim-lit subject.",
+    "musicMapping": "low brass undertone, tense string col legno, amber harmonic warmth over a dark bass. Cinematic pressure without trailer cliché.",
+    "motionNotes": "one strong kinetic event — build pressure, then decisive release into a locked hold. Energy first, stable freeze after. Camera: low locked angle or fast motivated pan into lock.",
+    "negatives": [
+      "cute softness",
+      "copied characters",
+      "flat vector"
+    ]
+  },
+  {
+    "id": "arcane_undercity",
+    "name": "Arcane Undercity",
+    "category": "arcane",
+    "emoji": "🌑",
+    "palette": [
+      "#0e7c7b",
+      "#d62246",
+      "#1b1b2f",
+      "#4c1d95"
+    ],
+    "texture": "Fortiche oil-paint",
+    "lighting": "extreme chiaroscuro — blacks crush hard, amber ember practicals, toxic purple-green haze",
+    "compositionConstraint": "oppressive low-ceiling undercity tunnels, depth haze at every layer",
+    "linework": "painterly edges",
+    "renderRecipe": "Fortiche oil-paint, oppressive low-ceiling undercity tunnels, toxic purple-green haze fills mid-ground, amber ember practicals as sole warmth against cold haze, extreme chiaroscuro — blacks crush hard, deep shadow mass occupies bottom third, atmospheric depth haze at every background layer. Subject rim-lit with cold edge, face half-obscured.",
+    "musicMapping": "low brass undertone, tense string col legno, amber harmonic warmth over a dark bass.",
+    "motionNotes": "Slow authoritative creep through toxic haze — camera pushes forward through atmospheric depth layers, one ember or particle drifts diagonally across frame, subject rises or steps forward into rim light. Lock on face or silhouette. No snap cuts.",
+    "negatives": [
+      "sky",
+      "open air",
+      "flat lighting"
+    ]
+  },
+  {
+    "id": "verse_edu",
+    "name": "Spider-Verse (Edu)",
+    "category": "verse",
+    "emoji": "🕷️",
+    "palette": [
+      "#e11d48",
+      "#0ea5e9",
+      "#facc15",
+      "#1e1e28"
+    ],
+    "texture": "Ben-Day halftone dot fill in all flat color areas",
+    "lighting": "pop chromatic",
+    "compositionConstraint": "bold diagonal layout, multi-panel grid suggestion at borders",
+    "linework": "bold ink contours",
+    "renderRecipe": "High-contrast comic-panel frame visible at edges, Ben-Day halftone dot fill in all flat color areas, bold diagonal layout, knowledge fact rendered in caption-box graphic insert, multi-panel grid suggestion at borders. Energetic but legible.",
+    "musicMapping": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos.",
+    "motionNotes": "Caption-box reveal — one fact panel drops or slides into frame, halftone fills animate behind it, subject makes single decisive reaction gesture, frame freezes on completed panel composition. One event, one caption, one freeze.",
+    "negatives": [
+      "photoreal skin",
+      "blurry edges",
+      "smooth gradients"
+    ]
+  },
+  {
+    "id": "verse_miles",
+    "name": "Spider-Verse Miles",
+    "category": "verse",
+    "emoji": "🌆",
+    "palette": [
+      "#e11d48",
+      "#0ea5e9",
+      "#facc15",
+      "#1e1e28"
+    ],
+    "texture": "Ben-Day dots coarser at shadow edges, offset color registration",
+    "lighting": "pop chromatic, amber-red graffiti wall background",
+    "compositionConstraint": "energetic diagonal compositions",
+    "linework": "bold ink contours",
+    "renderRecipe": "Brooklyn warm palette — amber-red graffiti wall background, Ben-Day dots coarser at shadow edges, offset color registration trailing on fast-moving elements, bold ink contours on all subjects, energetic diagonal compositions.",
+    "musicMapping": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos.",
+    "motionNotes": "Fast snap-cut motion — action builds with speed lines, one decisive move, then hard comic-panel freeze. Energy lines appear at peak impact point. Registration offset trails the moving element. No smooth easing, no organic settle.",
+    "negatives": [
+      "web pattern",
+      "suit",
+      "copied character designs"
+    ]
+  },
+  {
+    "id": "verse_gwen",
+    "name": "Spider-Verse Gwen",
+    "category": "verse",
+    "emoji": "🌸",
+    "palette": [
+      "#fbcfe8",
+      "#f8fafc",
+      "#94a3b8",
+      "#ec4899"
+    ],
+    "texture": "watercolor bleed at frame edges and shadow masses",
+    "lighting": "pastel pink-white-grey palette, quiet energy",
+    "compositionConstraint": "ballet geometry in composition (circular arcs, radial balance)",
+    "linework": "delicate graphic contours",
+    "renderRecipe": "Pastel pink-white-grey palette, watercolor bleed at frame edges and shadow masses, delicate graphic contours, ballet geometry in composition (circular arcs, radial balance), quiet energy.",
+    "musicMapping": "delicate piano or harp arpeggios, soft sustained strings, light brushed percussion at most. Flowing and graceful, never driving. No kinetic synth stabs.",
+    "motionNotes": "Flowing circular arc trajectory, soft watercolor-bleed pulse at frame edges on peak, subject settles into extended grace position. Gentle offset color registration follows the arc. Hold on poised final pose. No kinetic snap.",
+    "negatives": [
+      "kinetic diagonal chaos",
+      "copied character features"
+    ]
+  },
+  {
+    "id": "verse_noir",
+    "name": "Spider-Verse Noir",
+    "category": "verse",
+    "emoji": "🎭",
+    "palette": [
+      "#9ca3af",
+      "#111827",
+      "#0ea5e9",
+      "#e11d48"
+    ],
+    "texture": "Near-monochrome palette, heavy ink shadow blocks",
+    "lighting": "film-noir low-key lighting with one strong motivated beam, high-contrast silhouette hierarchy",
+    "motionCameraGrammar": "locked camera",
+    "linework": "heavy ink",
+    "renderRecipe": "Near-monochrome palette (warm grey + deep black dominant, one accent maximum — cold blue or deep red). Heavy ink shadow blocks, film-noir low-key lighting with one strong motivated beam, high-contrast silhouette hierarchy.",
+    "musicMapping": "sparse noir jazz — lone muted trumpet or upright bass, brushed kit, smoky sustained chords. Tension through space, not energy. No kinetic synth stabs.",
+    "motionNotes": "Venetian-blind light sweep — a stripe of light passes across the static subject (camera locked), illuminating face or object detail band by band. One slow horizontal light sweep, hard hold when fully lit. No subject motion.",
+    "negatives": [
+      "color distractions",
+      "Ben-Day dots"
+    ]
+  },
+  {
+    "id": "anime_edu",
+    "name": "Anime (Edu)",
+    "category": "anime",
+    "emoji": "⚔️",
+    "palette": [
+      "#0ea5e9",
+      "#f43f5e",
+      "#1e1b4b",
+      "#facc15"
+    ],
+    "texture": "Crisp cel-animation surfaces",
+    "lighting": "high-contrast simple staging, clean solid-color shadow shapes (no gradients)",
+    "motionCameraGrammar": "locked low angle, then hard snap to locked mid on the hold",
+    "linework": "bold ink outlines, speed/energy direction lines",
+    "renderRecipe": "Crisp cel-animation surfaces, clean solid-color shadow shapes (no gradients), bold ink outlines, speed/energy direction lines radiating from key subject, high-contrast simple staging. Educational reveal treated as shonen dramatic moment — one clear hero action, one clear result.",
+    "musicMapping": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos.",
+    "motionNotes": "Energy-line burst radiates outward from teaching reveal point, subject completes one decisive demonstration gesture simultaneously, energy lines dissipate into clean freeze. Camera: locked low angle, then hard snap to locked mid on the hold. Two camera positions total, hard cut between them.",
+    "negatives": [
+      "copied faces",
+      "copied costumes",
+      "named powers"
+    ]
+  },
+  {
+    "id": "anime_cel",
+    "name": "Anime Cel",
+    "category": "anime",
+    "emoji": "🌸",
+    "palette": [
+      "#0ea5e9",
+      "#f43f5e",
+      "#1e1b4b",
+      "#facc15"
+    ],
+    "texture": "Crisp cel-animation surfaces",
+    "lighting": "clean solid-color shadow shapes",
+    "compositionConstraint": "direct readable staging",
+    "linework": "bold ink outlines",
+    "renderRecipe": "crisp shadow shapes, energy lines, controlled saturation, direct readable staging.",
+    "musicMapping": "energetic melodic synth lead, driving snare and hi-hat, kinetic synth stabs. Controlled intensity, not chaos.",
+    "motionNotes": "one strong kinetic event — build pressure, then decisive release into a locked hold. Energy first, stable freeze after. Camera: low locked angle or fast motivated pan into lock.",
+    "negatives": [
+      "copied faces",
+      "copied costumes"
+    ]
+  },
+  {
+    "id": "demon_slayer_visual",
+    "name": "Demon Slayer",
+    "category": "anime",
+    "emoji": "🔥",
+    "palette": [
+      "#0ea5e9",
+      "#f43f5e",
+      "#1e1b4b",
+      "#facc15"
+    ],
+    "texture": "traditional ink-wash backgrounds, Ufotable ultra-detailed surfaces on foreground subjects",
+    "lighting": "Extreme contrast: crushed dark ink BG vs luminous FX",
+    "motionCameraGrammar": "locked camera",
+    "linework": "sharp cel",
+    "renderRecipe": "Taisho-era Japan setting, traditional ink-wash backgrounds (loose brushwork, atmospheric depth), Ufotable ultra-detailed surfaces on foreground subjects (fine fabric fold rendering), breathing technique visualization as stylized FX color-gradient overlay on dark ground — luminous water/flame/lightning halo expands from subject. Extreme contrast: crushed dark ink BG vs luminous FX.",
+    "musicMapping": "cinematic orchestral with traditional Japanese instrumentation — taiko swell, shakuhachi or koto motif over sustained strings. Builds to the FX bloom, settles on the held ring. Dignified intensity, no synth-pop.",
+    "motionNotes": "FX overlay blooms outward from subject — breathing technique color gradient expands from body through dark BG, peaks as full-frame luminous halo, then contracts back to a single ring held at body edge. Subject and camera both locked throughout. One expansion, one contraction, hold at ring.",
+    "negatives": [
+      "copied character features",
+      "named technique text"
+    ]
+  },
+  {
+    "id": "ghibli_storybook",
+    "name": "Ghibli Storybook",
+    "category": "ghibli",
+    "emoji": "🍃",
+    "palette": [
+      "#34d399",
+      "#bae6fd",
+      "#fde68a",
+      "#059669"
+    ],
+    "texture": "soft watercolor skies, lived-in handcrafted spaces",
+    "lighting": "soft natural light",
+    "compositionConstraint": "gentle readable framing",
+    "linework": "gentle line work",
+    "renderRecipe": "soft natural light, gentle line work, lived-in handcrafted spaces, watercolor skies.",
+    "musicMapping": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried. No driving rhythm.",
+    "motionNotes": "one warm organic event with soft ease-in/ease-out. Emotional weight in the settle. Camera: gentle push or tilt.",
+    "negatives": [
+      "copied film locations",
+      "protected creature designs"
+    ]
+  },
+  {
+    "id": "ghibli_felt_edu",
+    "name": "Ghibli + Felt",
+    "category": "ghibli",
+    "emoji": "🧶",
+    "palette": [
+      "#34d399",
+      "#bae6fd",
+      "#fde68a",
+      "#059669"
+    ],
+    "texture": "Ghibli soft watercolor-wash rendering for the environment, felt_diorama terrain elements at foreground",
+    "lighting": "gentle hand-painted light",
+    "motionCameraGrammar": "gentle push-in toward the mechanism",
+    "linework": "gentle line work",
+    "renderRecipe": "Ghibli soft watercolor-wash rendering for the environment (gentle hand-painted light, lived-in natural spaces), felt_diorama terrain elements at foreground — visible fabric weave, stitched paths, button tokens. Teaching mechanism is a felt object in a Ghibli-soft painted world. Always show both: the felt tactile surface AND the watercolor environment behind it.",
+    "musicMapping": "acoustic guitar or piano, soft woodwinds (flute, recorder), gentle plucked strings. Warm, tender, unhurried.",
+    "motionNotes": "Felt mechanism extends one segment or one button drops into place (felt_diorama contract: soft textile settle). Camera: gentle push-in toward the mechanism. Environment stirs barely — a leaf or thread moves once with a breath of air, settles. Ghibli ease-in/ease-out physics throughout. No kinetic snap anywhere.",
+    "negatives": [
+      "copied film locations",
+      "sharp vector edges"
+    ]
+  },
+  {
+    "id": "chalk_universe",
+    "name": "Chalk Universe",
+    "category": "animation",
+    "emoji": "🖊️",
+    "palette": [
+      "#f8fafc",
+      "#94a3b8",
+      "#0f172a",
+      "#e2e8f0"
+    ],
+    "texture": "chalk dust bloom, soft powdery edges",
+    "lighting": "glowing chalk lines on deep slate",
+    "motionCameraGrammar": "locked wide camera",
+    "linework": "powdery chalk marks",
+    "renderRecipe": "glowing chalk lines on deep slate, chalk dust bloom, soft powdery edges.",
+    "musicMapping": "lo-fi acoustic, muted upright piano, nostalgic warmth, slight room ambiance. No clean digital production.",
+    "motionNotes": "chalk marks bloom or erase in one sweep — motion IS the drawing or erasing of a shape. Camera: locked wide. No object motion independent of chalk.",
+    "negatives": [
+      "hard digital glow",
+      "flat text walls"
+    ]
+  },
+  {
+    "id": "flat_vector_cartoon",
+    "name": "Flat Vector",
+    "category": "animation",
+    "emoji": "🔷",
+    "palette": [
+      "#ef4444",
+      "#3b82f6",
+      "#facc15",
+      "#10b981"
+    ],
+    "texture": "no texture, clean solid colors",
+    "lighting": "one simple shadow shape, no gradients",
+    "motionCameraGrammar": "locked or clean lateral slide",
+    "linework": "clean vector edges",
+    "renderRecipe": "crisp flat color fields, one simple shadow shape, no gradients. Bold shape readable at 72px.",
+    "musicMapping": "playful synth or muted brass, punchy percussion, bright stabs on key moments. Energetic but never aggressive.",
+    "motionNotes": "crisp mechanical event, snap timing, clean overshoot-and-hold. Camera: locked or clean lateral slide. No organic easing.",
+    "negatives": [
+      "texture",
+      "gradient mush"
+    ]
+  },
+  {
+    "id": "shadow_puppet",
+    "name": "Shadow Puppet",
+    "category": "tactile",
+    "emoji": "🎪",
+    "palette": [
+      "#f59e0b",
+      "#b45309",
+      "#1e1b4b",
+      "#fcd34d"
+    ],
+    "texture": "layered cut-out scenery at different depths",
+    "lighting": "warm glowing backlit cloth screen",
+    "imageVantageConstraint": "locked wide exterior view",
+    "linework": "crisp dark silhouettes",
+    "renderRecipe": "warm glowing backlit cloth screen, crisp dark silhouettes on visible control rods, layered cut-out scenery at different depths. One silhouette in expressive pose.",
+    "musicMapping": "acoustic oud or frame drum at low volume, theatrical restraint.",
+    "motionNotes": "one silhouette makes one expressive gesture (arm raise, bow, point), then holds in silhouette.",
+    "negatives": [
+      "3D volume",
+      "front lighting"
+    ]
+  },
+  {
+    "id": "book_theater",
+    "name": "Book Theater",
+    "category": "tactile",
+    "emoji": "📚",
+    "palette": [
+      "#b45309",
+      "#78350f",
+      "#1e1b4b",
+      "#fef3c7"
+    ],
+    "texture": "wooden spine texture, paper pages",
+    "lighting": "warm desk-lamp key light",
+    "imageVantageConstraint": "locked wide exterior view",
+    "linework": "none",
+    "renderRecipe": "open book with pages rising into nested stage regions, theatrical flat layers, wooden spine texture, warm desk-lamp key light. Curtain-page mechanics visible.",
+    "musicMapping": "light guitar or piano, paper-rustle sound design optional, quiet and revealing.",
+    "motionNotes": "one nested stage region lifts or a single spotlight illuminates a new layer. Curtain-page settle.",
+    "negatives": [
+      "macro crop",
+      "plastic look"
+    ]
+  },
+  {
+    "id": "wood_diorama",
+    "name": "Wood Diorama",
+    "category": "tactile",
+    "emoji": "🪵",
+    "palette": [
+      "#78350f",
+      "#451a03",
+      "#1c1917",
+      "#fef3c7"
+    ],
+    "texture": "carved groove detail, warm amber polish, machined edge clarity",
+    "lighting": "studio lighting, clear shadows",
+    "imageVantageConstraint": "locked wide exterior view",
+    "linework": "none",
+    "renderRecipe": "dominant gear or rail-and-block system at center, carved groove detail, warm amber polish, machined edge clarity. One primary mechanism, not a tangle.",
+    "musicMapping": "single marimba or prepared piano with clear attack. Mechanical and precise, each note timed to a mechanism click.",
+    "motionNotes": "one gear or rail segment completes its cycle — click and mechanical lock.",
+    "negatives": [
+      "macro crop",
+      "messy clutter"
+    ]
+  },
+  {
+    "id": "felt_diorama",
+    "name": "Felt Diorama",
+    "category": "tactile",
+    "emoji": "🧶",
+    "palette": [
+      "#0ea5e9",
+      "#0369a1",
+      "#1e3a8a",
+      "#e0f2fe"
+    ],
+    "texture": "visible weave texture, soft compression",
+    "lighting": "gentle textile shadows",
+    "imageVantageConstraint": "locked wide exterior view",
+    "linework": "none",
+    "renderRecipe": "fabric terrain hills, stitched route paths, button tokens placed, extending thread visible. Soft compression, visible weave texture, gentle textile shadows.",
+    "musicMapping": "muted plucked strings (toy piano, music box, glockenspiel). Hand-made warmth.",
+    "motionNotes": "one thread route extends one segment, one button token drops into place. Soft textile settle.",
+    "negatives": [
+      "macro crop",
+      "glossy surfaces"
+    ]
+  },
+  {
+    "id": "stained_glass",
+    "name": "Stained Glass",
+    "category": "tactile",
+    "emoji": "🌈",
+    "palette": [
+      "#ef4444",
+      "#3b82f6",
+      "#facc15",
+      "#10b981"
+    ],
+    "texture": "jewel-tone glass panels",
+    "lighting": "warm backlit glow, colored light spilling onto foreground surface",
+    "motionCameraGrammar": "locked wide camera",
+    "linework": "dark lead came outlines clearly visible",
+    "renderRecipe": "jewel-tone glass panels, dark lead came outlines clearly visible, warm backlit glow, colored light spilling onto foreground surface.",
+    "musicMapping": "solo organ or choir pad, slow and ceremonial. Light and space as sonic identity.",
+    "motionNotes": "backlight intensity rises gently, colored floor spill brightens, holds at full glow.",
+    "negatives": [
+      "3D rendering",
+      "flat color fields"
+    ]
+  },
+  {
+    "id": "graphic_poster_world",
+    "name": "Graphic Poster",
+    "category": "animation",
+    "emoji": "🖼️",
+    "palette": [
+      "#ef4444",
+      "#3b82f6",
+      "#facc15",
+      "#1e1b4b"
+    ],
+    "texture": "flat color blocks",
+    "lighting": "no busy detail, flat lighting",
+    "motionCameraGrammar": "locked camera",
+    "linework": "clean vector edges",
+    "renderRecipe": "flat color blocks, confident negative space, limited palette.",
+    "musicMapping": "bold brass hits on downbeats, driving 4/4 rhythm, civic confidence. Clean and declarative.",
+    "motionNotes": "bold graphic wipe or reveal — motion is compositional change, not organic object animation. No softness.",
+    "negatives": [
+      "busy detail",
+      "gradient soup",
+      "tiny unreadable text"
+    ]
+  },
+  {
+    "id": "oil_painted_classic",
+    "name": "Oil Painted",
+    "category": "animation",
+    "emoji": "🖌️",
+    "palette": [
+      "#f59e0b",
+      "#78350f",
+      "#1b1b2f",
+      "#4c1d95"
+    ],
+    "texture": "visible impasto brushwork, varnish glow",
+    "lighting": "deep chiaroscuro. Museum gravity",
+    "motionCameraGrammar": "slow authoritative camera drift",
+    "linework": "painterly edges",
+    "renderRecipe": "visible impasto brushwork, varnish glow, deep chiaroscuro. Museum gravity.",
+    "musicMapping": "sparse strings or period ensemble (harpsichord, lute, solo violin). Dignified, legato, no percussion. Museum gravity.",
+    "motionNotes": "slow authoritative camera drift or motivated light shift — no snap, no kinetic event. The frame breathes; nothing rushes.",
+    "negatives": [
+      "flat poster feel",
+      "cheap filter look",
+      "copied artworks"
+    ]
+  },
+  {
+    "id": "cinematic_real",
+    "name": "Cinematic Realism",
+    "category": "cinematic",
+    "emoji": "🎬",
+    "palette": [
+      "#171717",
+      "#404040",
+      "#737373",
+      "#e5e5e5"
+    ],
+    "texture": "realistic textures, high fidelity details, skin pores and fabric weave visible",
+    "lighting": "cinematic key light, dramatic shadows, soft backlight separation, volumetric dust particles",
+    "imageVantageConstraint": "35mm anamorphic lens, shallow depth of field",
+    "linework": "none",
+    "renderRecipe": "photorealistic rendering, high-fidelity physical textures, cinematic key lighting with dramatic shadow contrast, soft backlight separation, volumetric atmosphere. 35mm anamorphic lens frame.",
+    "musicMapping": "low dark synth drone, slow warm string pad, cinematic pulse. Atmospheric and serious, no orchestral peaks.",
+    "motionNotes": "slow camera tracking or pan. Subtle focus pull onto key subject. High dynamic range detail.",
+    "negatives": [
+      "plastic CGI",
+      "cartoon style",
+      "2D illustration",
+      "oversaturated colors",
+      "drawings"
+    ]
+  }
+]

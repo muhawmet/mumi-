@@ -100,7 +100,7 @@ function createHarness({ topic = 'Kesirler', scenes = '3', storage = new Map() }
 }
 
 function boot(harness) {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const src = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
   vm.runInContext(src, harness.context, { filename: 'public/app.js' });

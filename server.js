@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
@@ -5,12 +7,71 @@ const path = require('path');
 const packageJson = require('./package.json');
 
 const app = express();
+
+// Middleware MUST be before routes
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
-app.use(cors(ALLOWED_ORIGINS.length > 0
-  ? { origin: ALLOWED_ORIGINS }
-  : {}));
+app.use(cors(ALLOWED_ORIGINS.length > 0 ? { origin: ALLOWED_ORIGINS } : {}));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.static(path.join(__dirname, 'public'), { dotfiles: 'ignore', index: 'index.html' }));
+
+// --- PHASE D: JOB QUEUE SKELETON (NO ACTUAL API COSTS) ---
+const JOB_QUEUE = new Map();
+let jobIdCounter = 1;
+
+function processJobMock(jobId) {
+  const job = JOB_QUEUE.get(jobId);
+  if (!job) return;
+  
+  job.status = 'PROCESSING';
+  
+  // Simulate network delay and processing (2-4 seconds)
+  const delay = Math.floor(Math.random() * 2000) + 2000;
+  
+  setTimeout(() => {
+    job.status = 'COMPLETED';
+    job.result = {
+      type: job.type,
+      message: `MOCK_${job.type}_SUCCESS`,
+      url: `/mock-assets/${job.type.toLowerCase()}-${Date.now()}.mp4`,
+      completedAt: new Date().toISOString()
+    };
+  }, delay);
+}
+
+// POST /api/jobs/enqueue
+// Body: { type: 'IMAGE' | 'MOTION' | 'SUNO' | 'VOICE', payload: {...} }
+app.post('/api/jobs/enqueue', (req, res) => {
+  const { type, payload } = req.body;
+  
+  if (!['IMAGE', 'MOTION', 'SUNO', 'VOICE'].includes(type)) {
+    return res.status(400).json({ error: 'invalid_job_type' });
+  }
+  
+  const jobId = `job_${Date.now()}_${jobIdCounter++}`;
+  JOB_QUEUE.set(jobId, {
+    id: jobId,
+    type,
+    payload,
+    status: 'QUEUED', // QUEUED, PROCESSING, COMPLETED, FAILED
+    createdAt: new Date().toISOString()
+  });
+  
+  // Asynchronously process the job
+  processJobMock(jobId);
+  
+  res.json({ success: true, jobId, status: 'QUEUED' });
+});
+
+// GET /api/jobs/:id
+app.get('/api/jobs/:id', (req, res) => {
+  const job = JOB_QUEUE.get(req.params.id);
+  if (!job) return res.status(404).json({ error: 'job_not_found' });
+  res.json(job);
+});
+// ------------------------------------------------------------
+
+
+
 
 const BRAIN_DIR = path.join(__dirname, 'brain');
 const DATA_DIR = path.join(__dirname, 'data');
@@ -206,34 +267,12 @@ GÖREV: Bu brief için sırasıyla üret:
 Her çıktı paste-ready olacak. Açıklama yok, sadece çıktı.`;
 }
 
-const VISUAL_WORLDS = [
-  { id: 'paper_diorama', name: 'Paper Diorama', category: 'tactile', emoji: '📄' },
-  { id: 'clay_diorama', name: 'Clay Diorama', category: 'tactile', emoji: '🎨' },
-  { id: 'pixar_feature', name: 'Pixar Feature', category: 'animation', emoji: '✨' },
-  { id: 'watercolor_storybook', name: 'Watercolor Storybook', category: 'animation', emoji: '🎨' },
-  { id: 'arcane_edu', name: 'Arcane (Edu)', category: 'arcane', emoji: '⚡' },
-  { id: 'arcane_painterly', name: 'Arcane Painterly', category: 'arcane', emoji: '🌆' },
-  { id: 'arcane_undercity', name: 'Arcane Undercity', category: 'arcane', emoji: '🌑' },
-  { id: 'verse_edu', name: 'Spider-Verse (Edu)', category: 'verse', emoji: '🕷️' },
-  { id: 'verse_miles', name: 'Spider-Verse Miles', category: 'verse', emoji: '🌆' },
-  { id: 'verse_gwen', name: 'Spider-Verse Gwen', category: 'verse', emoji: '🌸' },
-  { id: 'verse_noir', name: 'Spider-Verse Noir', category: 'verse', emoji: '🎭' },
-  { id: 'anime_edu', name: 'Anime (Edu)', category: 'anime', emoji: '⚔️' },
-  { id: 'anime_cel', name: 'Anime Cel', category: 'anime', emoji: '🌸' },
-  { id: 'demon_slayer_visual', name: 'Demon Slayer', category: 'anime', emoji: '🔥' },
-  { id: 'ghibli_storybook', name: 'Ghibli Storybook', category: 'ghibli', emoji: '🍃' },
-  { id: 'ghibli_felt_edu', name: 'Ghibli + Felt', category: 'ghibli', emoji: '🧶' },
-  { id: 'chalk_universe', name: 'Chalk Universe', category: 'animation', emoji: '🖊️' },
-  { id: 'flat_vector_cartoon', name: 'Flat Vector', category: 'animation', emoji: '🔷' },
-  { id: 'shadow_puppet', name: 'Shadow Puppet', category: 'tactile', emoji: '🎪' },
-  { id: 'book_theater', name: 'Book Theater', category: 'tactile', emoji: '📚' },
-  { id: 'wood_diorama', name: 'Wood Diorama', category: 'tactile', emoji: '🪵' },
-  { id: 'felt_diorama', name: 'Felt Diorama', category: 'tactile', emoji: '🧶' },
-  { id: 'stained_glass', name: 'Stained Glass', category: 'tactile', emoji: '🌈' },
-  { id: 'graphic_poster_world', name: 'Graphic Poster', category: 'animation', emoji: '🖼️' },
-  { id: 'oil_painted_classic', name: 'Oil Painted', category: 'animation', emoji: '🖌️' },
-  { id: 'cinematic_real', name: 'Cinematic Realism', category: 'cinematic', emoji: '🎬' },
-];
+let VISUAL_WORLDS = [];
+try {
+  VISUAL_WORLDS = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'worlds.json'), 'utf8'));
+} catch (e) {
+  console.error('Failed to load worlds.json', e);
+}
 
 app.use(errorHandler);
 

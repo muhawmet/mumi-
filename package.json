@@ -6,9 +6,15 @@
   "scripts": {
     "test": "node --test test/*.mjs",
     "start": "node server.js",
-    "snapshot": "node take-screenshots.js"
+    "snapshot": "node take-screenshots.js",
+    "build": "esbuild public/main.js --bundle --outfile=public/bundle.js --minify"
   },
-  "keywords": ["mamilas", "ai", "video", "production"],
+  "keywords": [
+    "mamilas",
+    "ai",
+    "video",
+    "production"
+  ],
   "author": "Muhammet (mami)",
   "license": "ISC",
   "type": "commonjs",
@@ -17,6 +23,8 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "canvas": "^3.2.3",
+    "esbuild": "^0.28.1",
     "puppeteer": "^25.1.0"
   }
 }

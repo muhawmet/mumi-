@@ -273,7 +273,7 @@ function createBrowserHarness({ storage = new Map() } = {}) {
 }
 
 function boot(harness) {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const appSrc = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const abTesterSrc = readFileSync(path.join(ROOT, 'public/ab-tester.js'), 'utf8');
   const exporterSrc = readFileSync(path.join(ROOT, 'public/timeline-exporter.js'), 'utf8');

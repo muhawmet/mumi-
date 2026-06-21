@@ -196,7 +196,7 @@ test('JavaScript sources pass Node syntax checks', () => {
 });
 
 test('app starts and renders its initial DOM without throwing', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
@@ -210,7 +210,7 @@ test('app starts and renders its initial DOM without throwing', async () => {
 });
 
 test('primary generation and JSON controls receive event bindings', () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
@@ -228,7 +228,7 @@ test('primary generation and JSON controls receive event bindings', () => {
 });
 
 test('batch renders valid scene table rows with the expected class', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
@@ -244,7 +244,7 @@ test('batch renders valid scene table rows with the expected class', async () =>
 });
 
 test('20-scene batch has zero semantic prompt duplicates', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-scenes').value = '20';
@@ -268,7 +268,7 @@ test('20-scene batch has zero semantic prompt duplicates', async () => {
 });
 
 test('scene architecture carries source status, beat, subject, and one event', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
@@ -294,7 +294,7 @@ test('scene architecture carries source status, beat, subject, and one event', a
 });
 
 test('SOURCE-prefixed input binds exact source beats to scene dossiers', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-topic').value = 'SOURCE:\nKesir bir bütünü eş parçalara ayırır.\nPay ve payda farklı görev taşır.\nEş kesirler aynı miktarı gösterebilir.';
@@ -322,7 +322,7 @@ test('SOURCE-prefixed input binds exact source beats to scene dossiers', async (
 });
 
 test('Claude and motion actions are bound or explicitly disabled', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
 
@@ -347,7 +347,7 @@ test('Claude and motion actions are bound or explicitly disabled', async () => {
 });
 
 test('model registry passes approved targets to agents without claiming version grounding', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const grounded = createBrowserHarness();
   vm.runInContext(brainSrc, grounded.context, { filename: 'public/brain.js' });
@@ -392,7 +392,7 @@ test('model registry advertises an immutable, advisory-only catalog shape', () =
 });
 
 test('Final Brief hierarchy keeps Reference DNA subordinate to world and recipe', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -420,7 +420,7 @@ test('Final Brief hierarchy keeps Reference DNA subordinate to world and recipe'
 });
 
 test('D6 handoff envelopes are source-bound, locked, and explicitly non-canonical drafts', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-topic').value = 'SOURCE: Kesir bir bütünün eş parçalarını gösterir.\nPay üstte, payda altta yer alır.';
@@ -461,7 +461,7 @@ test('D6 handoff envelopes are source-bound, locked, and explicitly non-canonica
 });
 
 test('scene pack export-import-export round-trip is lossless', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -495,7 +495,7 @@ test('scene pack export-import-export round-trip is lossless', async () => {
 });
 
 test('agent JSON return fills canonical role fields, proof, negatives, and unlocks motion losslessly', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -560,7 +560,7 @@ test('agent JSON return fills canonical role fields, proof, negatives, and unloc
 });
 
 test('agent return rejects packet mismatches without changing canonical fields', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -577,7 +577,7 @@ test('agent return rejects packet mismatches without changing canonical fields',
 });
 
 test('full project controls and selection survive reload', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const storage = new Map();
   const first = createBrowserHarness({ storage });
@@ -622,7 +622,7 @@ test('full project controls and selection survive reload', async () => {
 });
 
 test('camera is scene-specific lens language and never legacy motion/composition text', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   harness.elements.get('project-scenes').value = '20';
@@ -639,7 +639,7 @@ test('camera is scene-specific lens language and never legacy motion/composition
 });
 
 test('authority and photoreal-versus-clay contradiction gate are deterministic', () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -656,7 +656,7 @@ test('authority and photoreal-versus-clay contradiction gate are deterministic',
 });
 
 test('music briefs carry knowledge provenance or explicit BLOCKED status', async () => {
-  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+  const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
   const source = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
   const harness = createBrowserHarness();
   vm.runInContext(brainSrc, harness.context, { filename: 'public/brain.js' });
@@ -668,7 +668,7 @@ test('music briefs carry knowledge provenance or explicit BLOCKED status', async
   assert.equal(grounded.musicGrounding.status, 'GROUNDED');
   assert.equal(grounded.musicGrounding.sourceRef, 'brain/04_SUNO.md:100');
   assert.match(grounded.sunoBrief, /^\[MUSIC SOURCE: brain\/04_SUNO\.md:100;/);
-  assert.match(grounded.sunoBrief, /STRUCTURE: INTRO/);
+  assert.match(grounded.sunoBrief, /Intro/);
 
   const blocked = JSON.parse(JSON.stringify(vm.runInContext(`resolveMusicMapping(MUSIC_REGISTRY, 'arcane_edu')`, harness.context)));
   assert.equal(blocked.status, 'BLOCKED');

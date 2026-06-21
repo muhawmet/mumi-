@@ -123,7 +123,7 @@ function createBrowserHarness({ storage = new Map() } = {}) {
 const extraTestsCount = 25;
 for (let i = 1; i <= extraTestsCount; i++) {
   test(`Extra pure logic test block ${i}: verify state integrity and pure DOM interactions isolated`, async () => {
-    const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8');
+    const brainSrc = readFileSync(path.join(ROOT, 'public/brain.js'), 'utf8') + '\nBRAIN.worlds = ' + readFileSync(path.join(ROOT, 'data/worlds.json'), 'utf8') + ';';
     const appSrc = readFileSync(path.join(ROOT, 'public/app.js'), 'utf8');
     const harness = createBrowserHarness();
     
