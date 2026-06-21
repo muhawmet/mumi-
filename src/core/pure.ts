@@ -32,7 +32,8 @@ export interface SurgeryRef {
   cat: string;
   use?: string;
   avoid?: string;
-  dna?: { mood?: string; linework?: string; palette?: string[]; texture?: string; lighting?: string };
+  /** In SURGERY_DATA this is a free-text string describing the DNA. */
+  dna?: string;
   preview?: string;
   anchor?: string;
   worldId?: string;
@@ -94,9 +95,13 @@ export interface FinalBrief {
   recipe: { id: string; source: string };
   referenceDNA: {
     id: string | null;
+    name?: string;
     status: string;
     worldId?: string;
-    directives: { mood?: string; linework?: string };
+    /** Single line of DNA guidance subordinate to the world. */
+    directive: string;
+    use?: string;
+    avoid?: string;
     suppressedFields: string[];
   };
   paletteAccent: { value: string | null; source: string };
@@ -384,14 +389,25 @@ function buildFinalBriefContext(
     referenceDNA: reference
       ? {
           id: reference.id,
+          name: reference.name,
           status: compatible ? 'ACTIVE_SUBORDINATE' : 'SUPPRESSED_WORLD_MISMATCH',
           worldId: reference.worldId,
-          directives: compatible && reference.dna ? { mood: reference.dna.mood, linework: reference.dna.linework } : {},
+          directive: compatible && reference.dna ? reference.dna : '',
+          use: reference.use,
+          avoid: reference.avoid,
           suppressedFields: ['palette', 'texture', 'lighting'],
         }
-      : { id: null, status: 'NONE', directives: {}, suppressedFields: [] },
+      : { id: null, status: 'NONE', directive: '', suppressedFields: [] },
     paletteAccent: { value: paletteAccent, source: paletteOverride ? 'USER_PALETTE' : 'WORLD_PALETTE_LAST_ACCENT' },
   };
+}
+
+function joinClause(parts: string[]): string {
+  // Strip trailing punctuation then join with ". " so we never get ".." artifacts.
+  return parts
+    .filter(Boolean)
+    .map((p) => p.replace(/[.\s]+$/, ''))
+    .join('. ');
 }
 
 function buildImagePrompt(
@@ -402,58 +418,82 @@ function buildImagePrompt(
   character: string,
   paletteOverride?: SurgeryPalette,
 ): string {
-  let p = world.render;
-  p += `. Project topic: ${topic}`;
-  p += `. Source status: ${arch.source.status}`;
-  p += `. Source beat: ${arch.source.sourceId || 'UNBOUND'} — ${arch.source.exactText}`;
-  if (arch.source.notice) p += `. ${arch.source.notice}`;
-  p += `. Scene intent: ${arch.beat}`;
-  p += `. Dominant subject: ${arch.dominantSubject}`;
-  p += `. Single visible event: ${arch.event}`;
+  const parts: string[] = [];
+  parts.push(world.render);
+  parts.push(`Project topic: ${topic}`);
+  parts.push(`Source status: ${arch.source.status}`);
+  parts.push(`Source beat: ${arch.source.sourceId || 'UNBOUND'} — ${arch.source.exactText}`);
+  if (arch.source.notice) parts.push(arch.source.notice);
+  parts.push(`Scene intent: ${arch.beat}`);
+  parts.push(`Dominant subject: ${arch.dominantSubject}`);
+  parts.push(`Single visible event: ${arch.event}`);
 
   if (paletteOverride?.colors?.length) {
-    p += `. Palette: ${paletteOverride.colors.join(', ')}`;
+    parts.push(`Palette: ${paletteOverride.colors.join(', ')}`);
   } else if (world.palette) {
-    p += `. Palette: ${world.palette.join(', ')}`;
+    parts.push(`Palette: ${world.palette.join(', ')}`);
   } else if (world.colors) {
-    p += `. Palette: ${world.colors.join(', ')}`;
+    parts.push(`Palette: ${world.colors.join(', ')}`);
   }
-  if (world.texture) p += `. Texture: ${world.texture}`;
-  if (world.lighting) p += `. Lighting: ${world.lighting}`;
-  if (world.compositionConstraint) p += `. Composition: ${world.compositionConstraint}`;
-  p += `. Camera/vantage: ${arch.imageVantage}`;
-  p += `. Teaching recipe: ${brief.recipe.id}`;
+  if (world.texture) parts.push(`Texture: ${world.texture}`);
+  if (world.lighting) parts.push(`Lighting: ${world.lighting}`);
+  if (world.compositionConstraint) parts.push(`Composition: ${world.compositionConstraint}`);
+  parts.push(`Camera/vantage: ${arch.imageVantage}`);
+  parts.push(`Teaching recipe: ${brief.recipe.id}`);
 
-  if (brief.referenceDNA.status === 'ACTIVE_SUBORDINATE') {
-    p += `. Reference DNA (subordinate): ${brief.referenceDNA.directives.mood || ''}, ${brief.referenceDNA.directives.linework || ''}`;
+  if (brief.referenceDNA.status === 'ACTIVE_SUBORDINATE' && brief.referenceDNA.directive) {
+    // Reference DNA enters as language/grammar guidance — subordinate to world; never overrides material/palette.
+    parts.push(`Reference DNA (subordinate to world): ${brief.referenceDNA.directive}`);
+    if (brief.referenceDNA.use) parts.push(`Reference language to keep: ${brief.referenceDNA.use}`);
+    if (brief.referenceDNA.avoid) parts.push(`Reference to avoid: ${brief.referenceDNA.avoid}`);
+  } else if (brief.referenceDNA.status === 'SUPPRESSED_WORLD_MISMATCH') {
+    parts.push(`Reference DNA suppressed (world mismatch)`);
   }
-  if (brief.paletteAccent.value) p += `. Palette accent: ${brief.paletteAccent.value}`;
+  if (brief.paletteAccent.value) parts.push(`Palette accent: ${brief.paletteAccent.value}`);
 
-  if (character === 'Aras') p += `. Subject: Aras (young boy with curly hair, referenceFaceLocked)`;
-  else if (character === 'Defne') p += `. Subject: Defne (young girl with braided hair, referenceFaceLocked)`;
-  else if (character === 'İkisi') p += `. Subjects: Aras and Defne (referenceFaceLocked)`;
+  if (character === 'Aras') parts.push('Subject: Aras (young boy with curly hair, referenceFaceLocked)');
+  else if (character === 'Defne') parts.push('Subject: Defne (young girl with braided hair, referenceFaceLocked)');
+  else if (character === 'İkisi') parts.push('Subjects: Aras and Defne (referenceFaceLocked)');
 
-  return `${p} --no ${GLOBAL_NEGATIVES.join(', ')}`;
+  return `${joinClause(parts)}. --no ${GLOBAL_NEGATIVES.join(', ')}`;
 }
 
 function buildVoiceOver(sceneIndex: number, topic: string, projectClass: string): string {
   const isDesign = projectClass === 'Tasarım İşi' || projectClass === 'STYLIZED_PREMIUM';
-  const pool = isDesign
-    ? [
-        `[Draft: Introduce ${topic || 'the concept'} visually.]`,
-        `[Draft: Highlight the details and atmosphere.]`,
-        `[Draft: Show the progression or action.]`,
-        `[Draft: Emphasize the emotional or visual climax.]`,
-        `[Draft: Concluding shot and takeaway.]`,
-      ]
-    : [
-        `[Draft: Welcome the audience and introduce ${topic || 'the topic'}.]`,
-        `[Draft: Explain the first key concept shown on screen.]`,
-        `[Draft: Dive deeper into the mechanics or details.]`,
-        `[Draft: Show the practical application or result.]`,
-        `[Draft: Summarize the lesson and say goodbye.]`,
-      ];
-  return pool[(sceneIndex - 1) % pool.length];
+  const isReal = /ULTRAREAL|REAL|COMMERCIAL|LIVE/.test(projectClass);
+  const t = topic || 'konu';
+
+  if (isReal) {
+    const real = [
+      `[Taslak: Açılış — ürünü/hikâyenin merkez nesnesini sahneye tanıt.]`,
+      `[Taslak: Detay — dokunsal ve duyusal bir mikro an ile çekiciliği kur.]`,
+      `[Taslak: Vaat — ${t} izleyiciye ne sunuyor; tek cümlede söyle.]`,
+      `[Taslak: Doruk — tek görünen değişim ile değeri kanıtla.]`,
+      `[Taslak: Kapanış — kısa, net bir çağrı veya kalıcı imaj.]`,
+    ];
+    return real[(sceneIndex - 1) % real.length];
+  }
+  if (isDesign) {
+    const design = [
+      `[Taslak: ${t} için görsel açılış — tek dominant unsur, net hiyerarşi.]`,
+      `[Taslak: Atmosfer ve detay; izleyici bakışını sahneye çağır.]`,
+      `[Taslak: Aksiyon ya da değişim — ne, neyi etkiledi?]`,
+      `[Taslak: Duygusal/görsel doruk; aklında kalan tek kare.]`,
+      `[Taslak: Kapanış — özet imaj ya da kısa eylem çağrısı.]`,
+    ];
+    return design[(sceneIndex - 1) % design.length];
+  }
+  // Default: education (Aras & Defne tone)
+  const edu = [
+    `[Taslak: Merhaba! Bugün birlikte ${t} konusunu keşfedeceğiz.]`,
+    `[Taslak: Önce ekranda gördüğümüz ilk şeyi anlayalım.]`,
+    `[Taslak: Şimdi mekanizmaya daha yakından bakalım.]`,
+    `[Taslak: Gerçek hayatta bu nasıl işliyor, görelim.]`,
+    `[Taslak: Sonuç gözümüzün önünde — ${t} böyle çalışıyor.]`,
+    `[Taslak: Özetleyelim — bugün öğrendiğimiz tek cümlelik fikir.]`,
+    `[Taslak: Bir sonraki bölümde yeni bir maceraya hazır olun!]`,
+  ];
+  return edu[(sceneIndex - 1) % edu.length];
 }
 
 function buildSunoBrief(sceneIndex: number, sceneCount: number, world: SurgeryWorld): string {
