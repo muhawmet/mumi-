@@ -1,4 +1,4 @@
-const MASTER_REFERENCES = [
+window.MASTER_REFERENCES = [
   {
     "id": "ref_anime_demon_slayer_sun",
     "name": "Demon Slayer - Sun Breathing",

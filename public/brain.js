@@ -1,4 +1,4 @@
-const BRAIN = {
+window.window.BRAIN = {
   worlds: [],
 
   references: [
@@ -88,12 +88,12 @@ const BRAIN = {
 };
 
 window.loadWorlds = async function() {
-  if (BRAIN.worlds && BRAIN.worlds.length > 0) return;
+  if (window.BRAIN.worlds && window.BRAIN.worlds.length > 0) return;
   try {
     const res = await fetch('/api/taxonomy');
     const data = await res.json();
-    BRAIN.taxonomy = data;
-    BRAIN.worlds = data.worlds || data;
+    window.BRAIN.taxonomy = data;
+    window.BRAIN.worlds = data.worlds || data;
   } catch(e) {
     console.error('Failed to load worlds', e);
   }

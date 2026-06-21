@@ -6,7 +6,7 @@ function generateMasterBriefText() {
     return "Lütfen önce BATCH ÜRET butonuna basarak sahneleri oluşturun.";
   }
   
-  const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId) || BRAIN.worlds[0];
+  const world = window.BRAIN.worlds.find(w => w.id === STATE.selectedWorldId) || window.BRAIN.worlds[0];
   const topicEl = document.getElementById('project-topic');
   const projectTopic = topicEl ? topicEl.value || 'Genel Konu' : 'Genel Konu';
   const projectClass = document.getElementById('project-class') ? document.getElementById('project-class').value : '';

@@ -51,13 +51,13 @@ function initCascadeUI() {
   cascadeRef.innerHTML = '<option disabled selected>Seçiniz (Optimum Preset İçin)...</option>';
   
   // Group by category
-  const categories = [...new Set((BRAIN.taxonomy.refs || []).map(r => (r.category || r.cat)))];
+  const categories = [...new Set((window.BRAIN.taxonomy.refs || []).map(r => (r.category || r.cat)))];
   
   categories.forEach(cat => {
     const optgroup = document.createElement('optgroup');
     optgroup.label = cat.toUpperCase();
     
-    (BRAIN.taxonomy.refs || []).filter(r => (r.category || r.cat) === cat).forEach(ref => {
+    (window.BRAIN.taxonomy.refs || []).filter(r => (r.category || r.cat) === cat).forEach(ref => {
       const opt = document.createElement('option');
       opt.value = ref.id;
       opt.textContent = ref.name;
@@ -70,7 +70,7 @@ function initCascadeUI() {
   // Attach Event Listener for Cascade Auto-Fill
   cascadeRef.addEventListener('change', (e) => {
     const refId = e.target.value;
-    const ref = (BRAIN.taxonomy.refs || []).find(r => r.id === refId);
+    const ref = (window.BRAIN.taxonomy.refs || []).find(r => r.id === refId);
     
     if (ref) {
       if (cascadePalette && ref.autoPalette) {
@@ -241,10 +241,10 @@ document.querySelectorAll('.char-btn').forEach(btn => {
 
 // Generation Helpers
 function getGlobalNegatives() {
-  return BRAIN.negativeLibrary.global.join(', ');
+  return window.BRAIN.negativeLibrary.global.join(', ');
 }
 function getWorldNegatives(worldId) {
-  return BRAIN.negativeLibrary.perWorld[worldId] ? BRAIN.negativeLibrary.perWorld[worldId].join(', ') : '';
+  return window.BRAIN.negativeLibrary.perWorld[worldId] ? window.BRAIN.negativeLibrary.perWorld[worldId].join(', ') : '';
 }
 
 const SCENE_INTENTS = [
@@ -367,7 +367,7 @@ function createSceneArchitecture(topic, sceneIndex, world) {
     beat: intent,
     dominantSubject,
     event,
-    imageVantage: buildImageVantage(world || BRAIN.worlds[0], sceneIndex),
+    imageVantage: buildImageVantage(world || window.BRAIN.worlds[0], sceneIndex),
     semanticFingerprint: stableSemanticFingerprint([
       sourceInput.status,
       sourceBeat.sourceId || sourceBeat.exactText,
@@ -435,7 +435,7 @@ function validateBriefCompatibility({ path, world, recipe }) {
 
 function buildFinalBriefContext(sceneArchitecture, world, selectedRefId, path) {
   const brainRefId = mapRefIdToBrainRefId(selectedRefId);
-  const reference = (brainRefId && typeof BRAIN !== 'undefined' && BRAIN.taxonomy && BRAIN.taxonomy.refs) ? BRAIN.taxonomy.refs.find(ref => ref.id === brainRefId) : null;
+  const reference = (brainRefId && typeof window.BRAIN !== 'undefined' && window.BRAIN.taxonomy && window.BRAIN.taxonomy.refs) ? window.BRAIN.taxonomy.refs.find(ref => ref.id === brainRefId) : null;
   const compatibleReference = reference && (!reference.worldId || reference.worldId === world.id) ? reference : null;
   const recipe = deriveTeachingRecipe(world);
   const paletteAccent = world.colors && world.colors.length ? world.colors[world.colors.length - 1] : null;
@@ -518,8 +518,8 @@ function buildImagePrompt(topic, sceneIndex, sceneCount, sceneArchitecture, fina
 
 function sceneNegatives(scene, world) {
   return {
-    global: cloneJSON(BRAIN.negativeLibrary.global),
-    world: cloneJSON(BRAIN.negativeLibrary.perWorld[world.id] || []),
+    global: cloneJSON(window.BRAIN.negativeLibrary.global),
+    world: cloneJSON(window.BRAIN.negativeLibrary.perWorld[world.id] || []),
     perScene: cloneJSON(scene.perSceneNegatives || [])
   };
 }
@@ -617,7 +617,7 @@ function createHandoffPacket(scene, role, world, identity) {
 }
 
 function refreshSceneHandoffPackets(topic) {
-  const world = BRAIN.worlds.find(item => item.id === STATE.selectedWorldId);
+  const world = window.BRAIN.worlds.find(item => item.id === STATE.selectedWorldId);
   const identity = projectIdentity(topic, parseSourceInput(topic));
   STATE.scenes.forEach(scene => {
     scene.handoffPackets = ['IMAGE', 'MOTION', 'SUNO'].map(role => createHandoffPacket(scene, role, world, identity));
@@ -730,7 +730,7 @@ async function generateBatch() {
     };
     const imageModel = imageAdapter.targetModel.label;
     
-    const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
+    const world = window.BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
     if (!world) {
       if (window.AudioEngine) window.AudioEngine.error();
       showToast("Lütfen bir vizyonel dünya seçin.", "error");
@@ -903,7 +903,7 @@ function renderDetailPanel() {
   if (indexEl) indexEl.textContent = '#' + (scene.index ?? scene.id ?? '?');
   const tagsEl = document.getElementById('scene-meta-tags');
   if (tagsEl) {
-    const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
+    const world = window.BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
     const worldName = (world && world.name) || STATE.selectedWorldId || 'world';
     const phase = scene.phase || scene.beatLabel || 'beat';
     const castLabel = STATE.character === 'İkisi' ? 'Aras + Defne' : (STATE.character || 'cast');
@@ -946,7 +946,7 @@ function renderDetailPanel() {
         }
       }
     } else {
-      const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId) || BRAIN.worlds[0];
+      const world = window.BRAIN.worlds.find(w => w.id === STATE.selectedWorldId) || window.BRAIN.worlds[0];
       const motionNotes = (world && world.motionNotes) ? world.motionNotes : 'N/A';
       motionEl.innerHTML = `<span>🔒</span> Görsel indirilince analiz edilecek. JSON dışa ver → vision-AI → JSON içe al.<br><br><span style="color:var(--text-2)">World Motion Rules: ${escapeHTML(motionNotes)}</span>`;
       if (motionEl.parentElement) motionEl.parentElement.classList.add('locked');
@@ -1191,7 +1191,7 @@ function createScenePack() {
   }
 
   const projectTopic = document.getElementById('project-topic').value || 'Mamilas Projesi';
-  const world = BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
+  const world = window.BRAIN.worlds.find(w => w.id === STATE.selectedWorldId);
   refreshSceneHandoffPackets(projectTopic);
   const preservedPack = cloneJSON(STATE.importedScenePack) || {};
   const preservedScenes = Array.isArray(preservedPack.scenes) ? preservedPack.scenes : [];
@@ -1580,7 +1580,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   };
-  if (typeof BRAIN !== 'undefined' && BRAIN.worlds && BRAIN.worlds.length > 0) {
+  if (typeof window.BRAIN !== 'undefined' && window.BRAIN.worlds && window.BRAIN.worlds.length > 0) {
     initApp();
   } else if (window.loadWorlds) {
     window.loadWorlds().then(initApp);
