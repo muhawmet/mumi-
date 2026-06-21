@@ -1,57 +1,85 @@
 import { create } from 'zustand';
 
-export interface Topic {
-  id: string;
-  name: string;
-}
+export type Step = 'dashboard' | 'recipe' | 'timeline';
+export type Cast = 'Aras' | 'Defne' | 'İkisi';
 
-export interface Class {
-  id: string;
-  name: string;
-}
+import type { SceneArchitecture } from '../core/pure';
 
 export interface Scene {
-  id: string;
-  title: string;
-  description: string;
-  duration?: number;
+  id: number;
+  architecture: SceneArchitecture;
+  imagePrompt: string;
+  voiceOver: string;
+  sunoBrief: string;
+  durationSec: number;
+  intensity: number;
+  phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
 }
 
-export interface World {
-  id: string;
-  name: string;
-}
-
-export type Step = 'dashboard' | 'recipe' | 'timeline';
-
-interface StudioState {
-  topic: Topic | null;
-  classData: Class | null;
+export interface StudioState {
+  // Stage 1: Brief
+  projectTopic: string;
+  projectClass: string;
   sceneCount: number;
+  cast: Cast;
+
+  // Stage 2: Recipe
+  selectedWorldId: string;
+  selectedPropId: string;
+  selectedRefId: string;
+  selectedPaletteId: string;
+  selectedMusicId: string;
+
+  // Stage 2b: Models
+  imageModel: string;
+  videoModel: string;
+
+  // Stage 3: Production
   scenes: Scene[];
-  selectedWorld: World | null;
+  selectedSceneId: number | null;
+  isGenerating: boolean;
+  lastError: string | null;
+
+  // Navigation
   currentStep: Step;
 
-  setTopic: (topic: Topic | null) => void;
-  setClassData: (classData: Class | null) => void;
-  setSceneCount: (count: number) => void;
+  // Generic + specific actions
+  setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
   setScenes: (scenes: Scene[]) => void;
-  setSelectedWorld: (world: World | null) => void;
   setCurrentStep: (step: Step) => void;
+  reset: () => void;
 }
 
-export const useStudioStore = create<StudioState>((set) => ({
-  topic: null,
-  classData: null,
-  sceneCount: 0,
-  scenes: [],
-  selectedWorld: null,
-  currentStep: 'dashboard',
+const initial = {
+  projectTopic: 'Su Döngüsü',
+  projectClass: 'EĞİTİM_01',
+  sceneCount: 5,
+  cast: 'İkisi' as Cast,
 
-  setTopic: (topic) => set({ topic }),
-  setClassData: (classData) => set({ classData }),
-  setSceneCount: (sceneCount) => set({ sceneCount }),
+  selectedWorldId: '',
+  selectedPropId: 'native_world',
+  selectedRefId: '',
+  selectedPaletteId: '',
+  selectedMusicId: '',
+
+  imageModel: 'midjourney_v7',
+  videoModel: 'kling_2_1',
+
+  scenes: [] as Scene[],
+  selectedSceneId: null as number | null,
+  isGenerating: false,
+  lastError: null as string | null,
+
+  currentStep: 'dashboard' as Step,
+};
+
+export const useStudioStore = create<StudioState>((set) => ({
+  ...initial,
+
+  setField: (field, value) => set({ [field]: value } as Partial<StudioState>),
   setScenes: (scenes) => set({ scenes }),
-  setSelectedWorld: (selectedWorld) => set({ selectedWorld }),
   setCurrentStep: (currentStep) => set({ currentStep }),
+  reset: () => set(initial),
 }));
+
+export type StudioStore = ReturnType<typeof useStudioStore.getState>;
