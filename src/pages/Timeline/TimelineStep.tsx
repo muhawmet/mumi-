@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Copy, Check, Edit3, X } from 'lucide-react';
 import { useStudioStore, effectivePrompt, type Scene } from '../../store/useStudioStore';
+import { quantumScore, proofDoctor, qaScore } from '../../core/proof';
 import { Panel, Button, inputStyle } from '../../components/Layout/PanelKit';
 import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
 
@@ -94,6 +95,9 @@ export const TimelineStep = () => {
             {state.projectKind === 'design'
               ? 'Statik tasarım teslimi: birleşik brief + production-ready IMAGE handoff paketleri.'
               : 'Pure batch generator: kontrat kapısı + birleşik brief + IMAGE/MOTION/SUNO handoff paketleri.'}
+            <span style={{ marginLeft: 16, display: 'inline-block', background: 'rgba(247, 201, 72, 0.15)', color: '#f7c948', padding: '2px 8px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>
+              QUANTUM {quantumScore(state)}/100
+            </span>
           </p>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -186,11 +190,23 @@ export const TimelineStep = () => {
                         {state.projectKind === 'video' && s.duration && !s.duration.ok && (
                           <span style={{ color: 'var(--red)', fontWeight: 700, marginLeft: 6 }}>· BÖLEMEZSİN</span>
                         )}
+                        <span style={{ marginLeft: 6, color: qaScore(effectivePrompt(s)) >= 80 ? 'var(--green, #4df5a0)' : 'var(--gold)' }}>
+                          · QA {qaScore(effectivePrompt(s))}
+                        </span>
                       </div>
                     </div>
                   </motion.button>
                 );
               })}
+            </div>
+            
+            <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid var(--line2)' }}>
+              <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--text-muted)', fontWeight: 700, marginBottom: 8 }}>BATCH QA & ÜRETİM DEFTERİ</div>
+              <div style={{ fontSize: 13, color: '#fff', lineHeight: 1.6 }}>
+                <div>İlk sahne QA: <span style={{ color: 'var(--gold)' }}>{qaScore(effectivePrompt(scenes[0]))}</span></div>
+                <div>Ortalama QA: <span style={{ color: 'var(--gold)' }}>{Math.round(scenes.reduce((acc, s) => acc + qaScore(effectivePrompt(s)), 0) / scenes.length)}</span></div>
+                <div>Hazır Sahneler: <span style={{ color: 'var(--green, #4df5a0)' }}>{scenes.filter(s => qaScore(effectivePrompt(s)) >= 80).length} / {scenes.length}</span></div>
+              </div>
             </div>
           </Panel>
 
@@ -379,6 +395,45 @@ const ImagePromptRow: React.FC<{
           {live}
         </div>
       )}
+      
+      {/* Kanıt Doktoru Rail */}
+      <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {proofDoctor({ type: 'scene', text: live }).map((f, idx) => (
+          <div key={idx} style={{ 
+            padding: '6px 10px', 
+            borderRadius: 6, 
+            fontSize: 11,
+            background: f.status === 'PASS' ? 'rgba(77,245,160,.1)' : f.status === 'FAIL' ? 'rgba(245,77,107,.1)' : 'rgba(247,201,72,.1)',
+            border: `1px solid ${f.status === 'PASS' ? 'rgba(77,245,160,.3)' : f.status === 'FAIL' ? 'rgba(245,77,107,.3)' : 'rgba(247,201,72,.3)'}`,
+            color: f.status === 'PASS' ? '#4df5a0' : f.status === 'FAIL' ? '#f54d6b' : '#f7c948',
+          }}>
+            <div style={{ fontWeight: 700, marginBottom: 2 }}>
+              {f.status} {f.problem && `· ${f.problem}`}
+            </div>
+            {f.why && <div style={{ opacity: 0.8, marginBottom: 4 }}>{f.why}</div>}
+            {f.replaceWith && f.status !== 'PASS' && (
+              <button
+                onClick={() => {
+                  onSave(live + ' ' + f.replaceWith);
+                }}
+                style={{
+                  background: 'rgba(0,0,0,.2)',
+                  border: '1px solid currentColor',
+                  borderRadius: 4,
+                  padding: '2px 8px',
+                  fontSize: 10,
+                  cursor: 'pointer',
+                  color: 'inherit',
+                  fontFamily: 'inherit',
+                  fontWeight: 600,
+                }}
+              >
+                HIZLI UYGULA (FIX)
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
