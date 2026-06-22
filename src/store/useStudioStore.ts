@@ -95,6 +95,7 @@ export interface StudioState {
 
   imageModel: string;
   videoModel: string;
+  brandKitLock: string;
 
   rawSource: string;
   sourceBeats: SourceBeat[];
@@ -146,6 +147,7 @@ const initial = {
 
   imageModel: 'midjourney_v7',
   videoModel: 'kling_2_1',
+  brandKitLock: '',
 
   rawSource: '',
   sourceBeats: [] as SourceBeat[],
@@ -345,6 +347,7 @@ export const useStudioStore = create<StudioState>()(
             selectedMusicId: s.selectedMusicId,
             imageModel: s.imageModel,
             videoModel: s.videoModel,
+            brandKitLock: s.brandKitLock,
           });
           if (result.status === 'BLOCKED') {
             set({

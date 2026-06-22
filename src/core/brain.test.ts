@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
   registerOf, realFamilyOf, conceptRanked, dnaDirectives, durationGuard,
-  primeSuno, estimateSec, renderLock, primeCamera,
+  primeSuno, estimateSec, renderLock, primeCamera, buildAgentBrief,
+  buildVariantBriefs, recommendReason
 } from './brain';
 import { DATA } from './pure';
 
@@ -95,5 +96,44 @@ describe('renderLock + primeCamera', () => {
     const a = primeCamera(1, 'kaynak bir', 0, 'EDU');
     const b = primeCamera(2, 'kaynak bir', 1, 'EDU', 'kaynak bir', 1);
     expect(a).not.toBe(b);
+  });
+});
+
+describe('Brand Kit Lock', () => {
+  it('injects verbatim brand guidelines into agent brief when locked', () => {
+    const brief = buildAgentBrief({
+      projectTopic: 'test', productionPath: 'test', register: 'EDU',
+      world: clayWorld, dna: { names: 'n', camera: 'c', light: 'l', staging: 's', motion: 'm', texture: 't', avoid: 'a' },
+      cast: '', brandKitLock: 'Verbatim Brand Name: Acme. Colors: #ff0000.'
+    }, []);
+    expect(brief).toContain('== BRAND KIT LOCK ==');
+    expect(brief).toContain('Verbatim Brand Name: Acme. Colors: #ff0000.');
+  });
+});
+
+describe('buildVariantBriefs', () => {
+  it('yields exactly 3 briefs differing only in chosen variable', () => {
+    const ctx = {
+      projectTopic: 'test', productionPath: 'test', register: 'EDU' as const,
+      world: clayWorld, dna: { names: 'n', camera: 'c', light: 'l', staging: 's', motion: 'm', texture: 't', avoid: 'a' },
+      cast: ''
+    };
+    const scenes: any[] = [];
+    const variants = buildVariantBriefs(ctx, scenes, 'world', [
+      clayWorld,
+      { ...clayWorld, name: 'B One Step' },
+      { ...clayWorld, name: 'C Stronger' }
+    ]);
+    expect(variants.length).toBe(3);
+    expect(variants[0]).toContain(clayWorld.name);
+    expect(variants[1]).toContain('B One Step');
+    expect(variants[2]).toContain('C Stronger');
+  });
+});
+
+describe('recommendReason', () => {
+  it('generates a smart suggestion based on reference DNA', () => {
+    const reason = recommendReason(clayWorld, pixarRef);
+    expect(reason).toContain(pixarRef.name);
   });
 });

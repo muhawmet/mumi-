@@ -1,8 +1,9 @@
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
-import { Panel, Field, Button, selectStyle } from '../../components/Layout/PanelKit';
+import { useStudioStore, recipeReadiness, type StudioState } from '../../store/useStudioStore';
+import { Panel, Field, Button, selectStyle, inputStyle } from '../../components/Layout/PanelKit';
 import { DATA, groupedRefs, groupedWorlds, deriveTeachingRecipe } from '../../core/pure';
+import { recommendReason, buildVariantBriefs, type AgentBriefCtx, type AgentBriefScene } from '../../core/brain';
 
 function worldGradient(colors?: string[]): string {
   if (!colors || colors.length === 0) return 'linear-gradient(135deg,#1a1a2e,#16213e)';
@@ -17,15 +18,19 @@ export const RecipeStep = () => {
     selectedPropId,
     selectedRefId,
     selectedPaletteId,
+    brandKitLock,
     setField,
     setCurrentStep,
     advance,
   } = useStudioStore();
 
+  const [variants, setVariants] = useState<string[]>([]);
+
   const worldGroups = useMemo(() => groupedWorlds(), []);
   const refGroups = useMemo(() => groupedRefs(), []);
   const selectedWorld = DATA.worlds.find((w) => w.id === selectedWorldId);
   const selectedPalette = DATA.palettes.find((p) => p.id === selectedPaletteId);
+  const selectedRef = DATA.refs.find((r) => r.id === selectedRefId);
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefId });
 
@@ -127,6 +132,12 @@ export const RecipeStep = () => {
               ))}
             </select>
           </Field>
+          {selectedRef && selectedWorld && (
+            <div style={{ marginTop: 12, padding: 12, background: 'rgba(247,201,72,.1)', border: '1px solid rgba(247,201,72,.3)', borderRadius: 8, fontSize: 12, color: 'var(--gold)', lineHeight: 1.5 }}>
+              <strong style={{ display: 'block', marginBottom: 4 }}>Akıllı Öneri:</strong> 
+              {recommendReason(selectedWorld, selectedRef)}
+            </div>
+          )}
         </Panel>
 
         <Panel title="Tactile recipe" subtitle="Dünya tactile değilse 'world-native' kalır.">
@@ -227,7 +238,52 @@ export const RecipeStep = () => {
         </div>
       )}
 
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className="recipe-controls-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginTop: 24 }}>
+        <Panel title="Brand Kit Lock" subtitle="Marka kimliğini Ajan Brief'ine kilitler">
+          <textarea
+            value={brandKitLock}
+            onChange={(e) => setField('brandKitLock', e.target.value)}
+            placeholder="Verbatim Brand Name: Acme. Colors: #ff0000. Font: Inter. (Boş bırakırsanız kilitsiz)"
+            style={{ width: '100%', minHeight: 80, ...inputStyle, resize: 'vertical' }}
+          />
+        </Panel>
+
+        <Panel title="Kreatif Varyant Testi (A/B/C)" subtitle="Seçili DNA üzerinden 3 varyant üretir">
+          <div style={{ display: 'flex', gap: 12 }}>
+            <Button variant="ghost" onClick={() => {
+              const state = useStudioStore.getState();
+              if (!state.selectedWorldId) return;
+              const ctx: AgentBriefCtx = {
+                projectTopic: state.projectTopic, productionPath: state.projectClass, register: 'REAL',
+                world: selectedWorld!, palette: selectedPalette, dna: { names: '', camera: '', light: '', staging: '', motion: '', texture: '', avoid: '' }, cast: state.cast, projectKind: state.projectKind, brandKitLock: state.brandKitLock
+              };
+              const alts = [selectedWorld, DATA.worlds[0], DATA.worlds[1]];
+              setVariants(buildVariantBriefs(ctx, [], 'world', alts).map(v => v.slice(0, 150) + '...'));
+            }}>Dünya Varyantı (Mock)</Button>
+            <Button variant="ghost" onClick={() => {
+              const state = useStudioStore.getState();
+              if (!state.selectedPaletteId) return;
+              const ctx: AgentBriefCtx = {
+                projectTopic: state.projectTopic, productionPath: state.projectClass, register: 'REAL',
+                world: selectedWorld!, palette: selectedPalette, dna: { names: '', camera: '', light: '', staging: '', motion: '', texture: '', avoid: '' }, cast: state.cast, projectKind: state.projectKind, brandKitLock: state.brandKitLock
+              };
+              const alts = [selectedPalette, DATA.palettes[0], DATA.palettes[1]];
+              setVariants(buildVariantBriefs(ctx, [], 'palette', alts).map(v => v.slice(0, 150) + '...'));
+            }}>Palet Varyantı (Mock)</Button>
+          </div>
+          {variants.length > 0 && (
+            <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {variants.map((v, i) => (
+                <div key={i} style={{ padding: 8, background: 'rgba(0,0,0,.3)', borderRadius: 6, fontSize: 10, fontFamily: 'monospace', color: '#888' }}>
+                  <strong style={{ color: 'var(--gold)' }}>Varyant {['A', 'B', 'C'][i]}:</strong> {v}
+                </div>
+              ))}
+            </div>
+          )}
+        </Panel>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, marginBottom: 40 }}>
         <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>← Brief'e dön</Button>
         <Button onClick={() => advance()} disabled={!readiness.ready}>
           Sahneler'e geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>

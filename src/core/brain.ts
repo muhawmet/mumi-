@@ -256,7 +256,7 @@ export interface AgentBriefScene { id: number | string; source: string; concept:
 export interface AgentBriefCtx {
   projectTopic: string; productionPath: string; register: Register;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
-  projectKind?: 'video' | 'design';
+  projectKind?: 'video' | 'design'; brandKitLock?: string;
 }
 
 export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): string {
@@ -279,6 +279,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
       ? 'Deliverable: STATIC DESIGN. Produce image/design directions only; no Kling, motion, Suno, music or VO deliverables.'
       : 'Engines: Nano Banana 2 (image) → Kling 3.0 (motion) → Suno v5.5 (music) → ElevenLabs (VO)',
     '',
+    ...(ctx.brandKitLock ? ['== BRAND KIT LOCK ==', ctx.brandKitLock, ''] : []),
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
     renderLock(world, register),
     '',
@@ -332,4 +333,24 @@ export function buildMotionPrompt(sceneId: number | string, concept: Concept, ca
   return '[' + T(sceneId) + '] MOTION (Kling 3.0 i2v · 5-6s · plays the approved start frame)\n' + body +
     '\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.' +
     (sec && sec > 8 ? '\nSPLIT NOTE: source runs ~' + sec + 's — cover with a second approved frame, never stretch this beat.' : '');
+}
+
+// ---------------- variant generator & smart suggestions ----------------
+
+export function buildVariantBriefs(ctx: AgentBriefCtx, scenes: AgentBriefScene[], variable: 'world' | 'palette', alternatives: any[]): string[] {
+  if (alternatives.length !== 3) throw new Error('Exactly 3 alternatives required for variant briefs.');
+  return alternatives.map(alt => {
+    const variantCtx = { ...ctx };
+    if (variable === 'world') variantCtx.world = alt as SurgeryWorld;
+    if (variable === 'palette') variantCtx.palette = alt as SurgeryPalette;
+    return buildAgentBrief(variantCtx, scenes);
+  });
+}
+
+export function recommendReason(world: SurgeryWorld, ref: SurgeryRef): string {
+  if (!world || !ref) return '';
+  const isReal = registerOf(world.id) === 'REAL';
+  if (isReal && /macro|studio/i.test(ref.name)) return `A ${ref.name} approach enhances the material depth of ${world.name}.`;
+  if (!isReal && /stylized|3d|illustration/i.test(ref.name)) return `The ${ref.name} DNA provides clear staging logic for ${world.name}.`;
+  return `Consider ${ref.name} for its specific light and camera behavior that suits this scene.`;
 }

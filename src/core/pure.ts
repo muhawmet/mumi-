@@ -104,6 +104,7 @@ export interface BriefInput {
   selectedMusicId: string;
   imageModel: string;
   videoModel: string;
+  brandKitLock?: string;
 }
 
 export interface RecipeDefaults {
@@ -696,7 +697,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
   }
 
   const agentBrief = buildAgentBrief(
-    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast, projectKind },
+    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast, projectKind, brandKitLock: input.brandKitLock },
     briefScenes,
   );
 
