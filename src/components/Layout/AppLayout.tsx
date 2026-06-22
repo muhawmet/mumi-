@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, Palette, Film, Sparkles } from 'lucide-react';
-import { useStudioStore, type Step } from '../../store/useStudioStore';
+import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudioStore';
 
 const STEPS: Array<{ id: Step; label: string; icon: React.ReactNode; index: number }> = [
   { id: 'dashboard', label: 'Brief', icon: <LayoutDashboard size={18} />, index: 1 },
@@ -11,6 +11,10 @@ const STEPS: Array<{ id: Step; label: string; icon: React.ReactNode; index: numb
 export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const currentStep = useStudioStore((s) => s.currentStep);
   const setCurrentStep = useStudioStore((s) => s.setCurrentStep);
+  const rawSource = useStudioStore((s) => s.rawSource);
+  const sourceReport = useStudioStore((s) => s.sourceReport);
+  const sourceBeats = useStudioStore((s) => s.sourceBeats);
+  const sourceGate = sourceReadiness({ rawSource, sourceReport });
 
   return (
     <div className="ml-shell" style={styles.shell}>
@@ -48,6 +52,24 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
       </nav>
 
       <main className="ml-main" style={styles.main}>{children}</main>
+
+      <aside className="ml-right-rail" style={styles.rightRail} data-testid="source-right-rail">
+        <div style={styles.railEyebrow}>SOURCE GATE</div>
+        <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
+          {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
+        </div>
+        <p style={styles.railCopy}>
+          {!rawSource
+            ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
+            : sourceGate.ready
+              ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
+              : sourceGate.reason}
+        </p>
+        <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
+        <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
+        <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
+        <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
+      </aside>
     </div>
   );
 };
@@ -118,4 +140,19 @@ const styles: Record<string, React.CSSProperties> = {
   footer: { marginTop: 'auto', fontSize: 10, color: 'var(--text-muted, #94a3b8)', letterSpacing: 1 },
   footerLine: { opacity: 0.7 },
   main: { flex: 1, padding: '48px 56px', overflowY: 'auto', position: 'relative' },
+  rightRail: {
+    width: 280,
+    flexShrink: 0,
+    padding: '28px 22px',
+    borderLeft: '1px solid var(--line, #ffffff10)',
+    background: 'linear-gradient(180deg, #090b11, #050609)',
+    position: 'sticky',
+    top: 0,
+    height: '100vh',
+  },
+  railEyebrow: { fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 800 },
+  railStatus: { fontSize: 26, fontWeight: 800, marginTop: 12 },
+  railCopy: { color: 'var(--text-muted)', fontSize: 12, lineHeight: 1.55, minHeight: 76 },
+  railMetric: { display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', padding: '12px 0', color: 'var(--text-muted)', fontSize: 11 },
+  railHash: { display: 'grid', gap: 5, borderTop: '1px solid var(--line)', padding: '12px 0', color: 'var(--text-muted)', fontSize: 10 },
 };

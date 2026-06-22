@@ -1,17 +1,12 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useStudioStore, type Cast } from '../../store/useStudioStore';
+import { sourceReadiness, useStudioStore, type Cast } from '../../store/useStudioStore';
 import { Panel, Field, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { PHASE0_VIDEO, PHASE0_DESIGN, type Phase0Preset } from '../../data/presets';
-import { parseSourceInput } from '../../core/pure';
+import { DATA, parseSourceInput } from '../../core/pure';
+import { decodeBrief } from '../../core/source';
 
-const CLASS_OPTIONS = [
-  { id: 'EĞİTİM_01', label: 'Eğitim · İlkokul' },
-  { id: 'EĞİTİM_02', label: 'Eğitim · Ortaokul' },
-  { id: 'EĞİTİM_03', label: 'Eğitim · Lise' },
-  { id: 'Tasarım İşi', label: 'Tasarım İşi · Stylized' },
-  { id: 'ULTRAREAL_COMMERCIAL', label: 'Reklam · Ultra-Real' },
-];
+const CLASS_OPTIONS = DATA.paths.map((path) => ({ id: path.id, label: path.name }));
 
 const CAST_OPTIONS: Array<{ id: Cast; label: string; sub: string }> = [
   { id: 'Aras', label: 'Aras', sub: 'erkek çocuk' },
@@ -20,13 +15,18 @@ const CAST_OPTIONS: Array<{ id: Cast; label: string; sub: string }> = [
 ];
 
 export const DashboardStep = () => {
-  const { projectKind, projectTopic, projectClass, sceneCount, cast, setField, setCurrentStep, applyPreset } =
-    useStudioStore();
+  const {
+    projectKind, selectedProjectId, projectTopic, projectClass, sceneCount, cast,
+    rawSource, sourceBeats, sourceReport,
+    setField, setCurrentStep, applyPreset, setRawSource, decodeRawSource, ingestRawSource,
+  } = useStudioStore();
   const [kind, setKind] = useState<'video' | 'design'>(projectKind);
   const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const presets = kind === 'video' ? PHASE0_VIDEO : PHASE0_DESIGN;
   const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
+  const decoded = useMemo(() => (rawSource.trim() ? decodeBrief(rawSource) : null), [rawSource]);
+  const sourceGate = sourceReadiness({ rawSource, sourceReport });
   const isSourceBound = sourceParsed.status === 'SOURCE_BOUND';
 
   const onPreset = (p: Phase0Preset) => {
@@ -125,6 +125,86 @@ export const DashboardStep = () => {
         </div>
       </Panel>
 
+      <Panel
+        title="Brief decode & kayıpsız ingest"
+        subtitle="Müşteri metni önce gerçek production path'e çözülür, sonra hiçbir karakter kaybetmeden source beat'lere ayrılır."
+      >
+        <Field label="Müşteri briefi / Raw Source Vault" hint="Noktalama, satır sonu ve boşluklar dahil kaynak aynen korunur.">
+          <textarea
+            data-testid="raw-source-input"
+            style={{ ...inputStyle, minHeight: 150, resize: 'vertical', fontFamily: "'JetBrains Mono Variable', monospace", lineHeight: 1.55 }}
+            value={rawSource}
+            onChange={(event) => setRawSource(event.target.value)}
+            placeholder="Örn. 3. sınıf öğrencileri için su döngüsü dersi..."
+          />
+        </Field>
+
+        {decoded && (
+          <div
+            data-testid="decode-summary"
+            style={{ marginTop: 16, padding: 14, border: '1px solid var(--line2)', borderRadius: 10, background: 'rgba(0,0,0,.22)' }}
+          >
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center' }}>
+              <strong style={{ color: 'var(--gold)', fontSize: 12 }}>{decoded.path}</strong>
+              <span style={{ color: '#fff', fontSize: 13 }}>{decoded.project.name}</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: 11 }}>confidence: {decoded.confidence}</span>
+            </div>
+            <div style={{ color: 'var(--text-muted)', fontSize: 12, marginTop: 7 }}>{decoded.reason}</div>
+          </div>
+        )}
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 16 }}>
+          <Button variant="ghost" disabled={!rawSource.length} onClick={decodeRawSource}>
+            Decode reçetesini uygula
+          </Button>
+          <Button disabled={!rawSource.length} onClick={() => { decodeRawSource(); ingestRawSource(); }}>
+            Decode + Kayıpsız Ingest
+          </Button>
+        </div>
+
+        <div
+          data-testid="source-integrity-report"
+          style={{
+            marginTop: 18,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+            gap: 10,
+          }}
+          className="source-metrics-grid"
+        >
+          {[
+            ['Coverage', sourceReport ? `${sourceReport.coverage}%` : '—'],
+            ['Beat', String(sourceBeats.length)],
+            ['Raw Hash', sourceReport?.rawHash ?? '—'],
+            ['Recon Hash', sourceReport?.reconHash ?? '—'],
+          ].map(([label, value]) => (
+            <div key={label} style={{ padding: 12, border: '1px solid var(--line2)', borderRadius: 10, minWidth: 0 }}>
+              <div style={{ color: 'var(--text-muted)', fontSize: 10, letterSpacing: 1 }}>{label}</div>
+              <div style={{ color: label === 'Coverage' && sourceReport?.ok ? 'var(--green)' : '#fff', fontFamily: "'JetBrains Mono Variable', monospace", fontSize: 13, marginTop: 5, overflowWrap: 'anywhere' }}>{value}</div>
+            </div>
+          ))}
+        </div>
+
+        {sourceBeats.length > 0 && (
+          <ol style={{ margin: '18px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
+            {sourceBeats.map((beat) => (
+              <li key={beat.sourceId} data-testid="source-beat" style={{ display: 'grid', gridTemplateColumns: '92px minmax(0, 1fr)', gap: 10, padding: 10, borderRadius: 8, background: 'rgba(77,245,160,.045)', border: '1px solid rgba(77,245,160,.18)' }}>
+                <span style={{ color: 'var(--green)', fontFamily: "'JetBrains Mono Variable', monospace", fontSize: 10 }}>{beat.sourceId}</span>
+                <span style={{ color: '#fff', whiteSpace: 'pre-wrap', fontSize: 12 }}>{beat.exactText}</span>
+              </li>
+            ))}
+          </ol>
+        )}
+
+        {rawSource.length > 0 && (
+          <div style={{ marginTop: 14, color: sourceGate.ready ? 'var(--green)' : 'var(--red)', fontSize: 12 }}>
+            {sourceGate.ready
+              ? `PASS · ${selectedProjectId} · kaynak üretim için kilitli.`
+              : `FAIL · ${sourceGate.reason}`}
+          </div>
+        )}
+      </Panel>
+
       <Panel title="Konu & Sınıf">
         <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
           <Field label="Proje konusu" hint='Kanonik kaynak için "SOURCE:" ön ekiyle çoklu beat yazabilirsin.'>
@@ -148,11 +228,12 @@ export const DashboardStep = () => {
               ))}
             </select>
           </Field>
-          <Field label="Sahne sayısı" hint="1–20">
+          <Field label="Sahne sayısı" hint={sourceGate.ready && rawSource ? 'Source beat sayısı tarafından kilitli.' : '1–20'}>
             <input
               type="number"
               min={1}
               max={20}
+              disabled={Boolean(sourceGate.ready && rawSource)}
               style={inputStyle}
               value={sceneCount}
               onChange={(e) => setField('sceneCount', Math.max(1, Math.min(20, Number(e.target.value) || 1)))}
@@ -222,7 +303,7 @@ export const DashboardStep = () => {
       </Panel>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
-        <Button onClick={() => setCurrentStep('recipe')}>
+        <Button disabled={!sourceGate.ready} onClick={() => setCurrentStep('recipe')}>
           Reçeteye geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
         </Button>
       </div>

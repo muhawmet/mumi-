@@ -12,10 +12,11 @@ import {
   type BriefInput,
   type SurgeryWorld,
 } from './pure';
+import { ingestSource } from './source';
 
 const baseInput: BriefInput = {
   projectTopic: 'Su Döngüsü',
-  projectClass: 'EĞİTİM_01',
+  projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
   cast: 'İkisi',
   selectedWorldId: 'clay',
@@ -244,6 +245,32 @@ describe('generateBatch', () => {
     const sourceHashes = new Set(result.scenes.map((s) => s.handoff.IMAGE.sourceHash));
     expect(projectIds.size).toBe(1);
     expect(sourceHashes.size).toBe(1);
+  });
+
+  it('uses exact ingested source beats as the generation authority', () => {
+    const rawSource = 'İlk cümle.\nİkinci cümle!';
+    const sourceBeats = ingestSource(rawSource);
+    const result = generateBatch({ ...baseInput, rawSource, sourceBeats, sceneCount: 2 });
+    expect(result.status).toBe('GENERATED');
+    expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
+    expect(result.scenes[0].architecture.source.status).toBe('SOURCE_BOUND');
+  });
+
+  it('blocks generation when a raw vault has not passed lossless ingest', () => {
+    const rawSource = 'İlk cümle. İkinci cümle.';
+    const sourceBeats = ingestSource(rawSource).slice(0, 1);
+    const result = generateBatch({ ...baseInput, rawSource, sourceBeats });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate.findings[0].code).toBe('SOURCE_INTEGRITY_FAIL');
+  });
+
+  it('does not truncate a source-bound batch at the manual 20-scene limit', () => {
+    const rawSource = Array.from({ length: 24 }, (_, index) => `Beat ${index + 1}.`).join(' ');
+    const sourceBeats = ingestSource(rawSource);
+    const result = generateBatch({ ...baseInput, rawSource, sourceBeats, sceneCount: 5 });
+    expect(result.status).toBe('GENERATED');
+    expect(result.scenes).toHaveLength(sourceBeats.length);
+    expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
   });
 });
 

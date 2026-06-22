@@ -48,11 +48,38 @@ test('Phase 0 preset wires world and lets us complete the full flow', async ({ p
 
 test('SOURCE: prefix triggers the live beat preview', async ({ page }) => {
   await freshGoto(page);
-  const topic = page.locator('textarea').first();
+  const topic = page.getByLabel('Proje konusu');
   await topic.fill('SOURCE:\nilk beat\nikinci beat\nüçüncü beat');
   await expect(page.getByText(/SOURCE BOUND · 3 BEAT/i)).toBeVisible();
   await expect(page.getByText('source-001')).toBeVisible();
   await expect(page.getByText('source-003')).toBeVisible();
+});
+
+test('Phase A decodes and losslessly ingests a curriculum brief', async ({ page }) => {
+  await freshGoto(page);
+  const raw = 'Öğrenciler için su döngüsü dersi. Buhar yükselir!';
+  await page.getByTestId('raw-source-input').fill(raw);
+
+  const summary = page.getByTestId('decode-summary');
+  await expect(summary).toContainText('ANIMATION_EDU');
+  await expect(summary).toContainText('Aras + Defne Education');
+
+  await page.getByRole('button', { name: 'Decode + Kayıpsız Ingest' }).click();
+  await expect(page.getByTestId('source-integrity-report')).toContainText('100%');
+  await expect(page.getByTestId('source-beat')).toHaveCount(2);
+  await expect(page.getByTestId('source-right-rail')).toContainText('PASS');
+  await expect(page.getByTestId('source-right-rail')).toContainText('100%');
+});
+
+test('Phase A invalidates stale ingest and blocks progression after source edits', async ({ page }) => {
+  await freshGoto(page);
+  await page.getByTestId('raw-source-input').fill('Birinci kaynak cümlesi. İkinci kaynak cümlesi.');
+  await page.getByRole('button', { name: 'Decode + Kayıpsız Ingest' }).click();
+  await expect(page.getByTestId('source-right-rail')).toContainText('PASS');
+
+  await page.getByTestId('raw-source-input').fill('Kaynak sonradan değiştirildi.');
+  await expect(page.getByTestId('source-right-rail')).toContainText('FAIL');
+  await expect(page.getByRole('button', { name: /Reçeteye geç/ })).toBeDisabled();
 });
 
 test('keyboard shortcut ⌘/Ctrl+Enter advances the step', async ({ page }) => {

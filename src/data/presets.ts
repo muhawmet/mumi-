@@ -77,7 +77,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     kind: 'video',
     gradient: 'linear-gradient(135deg,#ff6b6b,#feca57 50%,#48dbfb)',
     sets: {
-      projectClass: 'Tasarım İşi',
+      projectClass: 'STYLIZED_PREMIUM',
       selectedWorldId: 'clay',
       sceneCount: 6,
     },
@@ -91,7 +91,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     kind: 'video',
     gradient: 'linear-gradient(135deg,#1e3c72,#2a5298)',
     sets: {
-      projectClass: 'Tasarım İşi',
+      projectClass: 'STYLIZED_PREMIUM',
       selectedWorldId: 'painterly_shadow',
       sceneCount: 7,
     },
@@ -105,7 +105,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     kind: 'video',
     gradient: 'linear-gradient(135deg,#fbd786,#f7797d 60%,#c6ffdd)',
     sets: {
-      projectClass: 'EĞİTİM_01',
+      projectClass: 'ANIMATION_EDU',
       selectedWorldId: 'clay',
       selectedPropId: 'clay',
       cast: 'İkisi',
@@ -135,7 +135,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     kind: 'video',
     gradient: 'linear-gradient(135deg,#000428,#004e92)',
     sets: {
-      projectClass: 'Tasarım İşi',
+      projectClass: 'STYLIZED_PREMIUM',
       selectedWorldId: 'graphic_comic',
       sceneCount: 6,
     },
@@ -171,7 +171,7 @@ export const PHASE0_DESIGN: Phase0Preset[] = [
     desc: 'Bayram/yıldönümü kutlama',
     kind: 'design',
     gradient: 'linear-gradient(135deg,#f7971e,#ffd200)',
-    sets: { projectClass: 'Tasarım İşi', selectedWorldId: 'graphic_comic', sceneCount: 1 },
+    sets: { projectClass: 'STYLIZED_PREMIUM', selectedWorldId: 'graphic_comic', sceneCount: 1 },
     refScope: { allow: ['Commercial', 'Stylized Premium'], warn: [] },
   },
   {
@@ -211,7 +211,7 @@ export const PHASE0_DESIGN: Phase0Preset[] = [
     desc: '5-7 kart, eğitici akış',
     kind: 'design',
     gradient: 'linear-gradient(135deg,#1d976c,#93f9b9)',
-    sets: { projectClass: 'EĞİTİM_01', selectedWorldId: 'notebook', sceneCount: 6 },
+    sets: { projectClass: 'ANIMATION_EDU', selectedWorldId: 'notebook', sceneCount: 6 },
     refScope: { allow: ['Stylized Premium', 'Commercial'], warn: [] },
   },
 ];

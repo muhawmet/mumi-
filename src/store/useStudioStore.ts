@@ -7,6 +7,13 @@ import {
   type HandoffPacketSet,
 } from '../core/pure';
 import type { DurationVerdict } from '../core/brain';
+import {
+  decodeBrief,
+  ingestSource,
+  sourceIntegrity,
+  type SourceBeat,
+  type SourceIntegrityReport,
+} from '../core/source';
 
 export type Step = 'dashboard' | 'recipe' | 'timeline';
 export type Cast = 'Aras' | 'Defne' | 'İkisi';
@@ -60,8 +67,19 @@ export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'select
   return { ready: missing.length === 0, missing };
 }
 
+export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport'>): {
+  ready: boolean;
+  reason: string | null;
+} {
+  if (!s.rawSource.length) return { ready: true, reason: null };
+  if (!s.sourceReport) return { ready: false, reason: 'Kaynak henüz ingest edilmedi.' };
+  if (!s.sourceReport.ok) return { ready: false, reason: `Kaynak bütünlüğü ${s.sourceReport.coverage}%; %100 gerekli.` };
+  return { ready: true, reason: null };
+}
+
 export interface StudioState {
   projectKind: ProjectKind;
+  selectedProjectId: string;
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
@@ -76,6 +94,10 @@ export interface StudioState {
   imageModel: string;
   videoModel: string;
 
+  rawSource: string;
+  sourceBeats: SourceBeat[];
+  sourceReport: SourceIntegrityReport | null;
+
   scenes: Scene[];
   agentBrief: string;
   selectedSceneId: number | null;
@@ -87,6 +109,9 @@ export interface StudioState {
   setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
   setScenes: (scenes: Scene[]) => void;
   setCurrentStep: (step: Step) => void;
+  setRawSource: (raw: string) => void;
+  decodeRawSource: () => void;
+  ingestRawSource: () => void;
   applyPreset: (preset: Partial<StudioState>) => void;
   generateScenes: () => void;
   advance: () => void;
@@ -96,8 +121,9 @@ export interface StudioState {
 
 const initial = {
   projectKind: 'video' as ProjectKind,
+  selectedProjectId: 'education',
   projectTopic: 'Su Döngüsü',
-  projectClass: 'EĞİTİM_01',
+  projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
   cast: 'İkisi' as Cast,
 
@@ -109,6 +135,10 @@ const initial = {
 
   imageModel: 'midjourney_v7',
   videoModel: 'kling_2_1',
+
+  rawSource: '',
+  sourceBeats: [] as SourceBeat[],
+  sourceReport: null as SourceIntegrityReport | null,
 
   scenes: [] as Scene[],
   agentBrief: '',
@@ -200,6 +230,37 @@ export const useStudioStore = create<StudioState>()(
       },
       setScenes: (scenes) => set({ scenes }),
       setCurrentStep: (currentStep) => set({ currentStep }),
+      setRawSource: (rawSource) => set({
+        rawSource,
+        sourceBeats: [],
+        sourceReport: null,
+        scenes: [],
+        agentBrief: '',
+        selectedSceneId: null,
+        lastError: null,
+      }),
+      decodeRawSource: () => {
+        const rawSource = get().rawSource;
+        const decoded = decodeBrief(rawSource);
+        set({
+          selectedProjectId: decoded.project.id,
+          projectClass: decoded.path,
+          selectedWorldId: decoded.project.world,
+          selectedRefId: decoded.project.ref,
+          selectedPaletteId: decoded.project.palette,
+          projectTopic: rawSource.trim().split(/\n+/u)[0]?.slice(0, 160) || get().projectTopic,
+          scenes: [],
+          agentBrief: '',
+          selectedSceneId: null,
+          lastError: null,
+        });
+      },
+      ingestRawSource: () => {
+        const rawSource = get().rawSource;
+        const sourceBeats = ingestSource(rawSource);
+        const sourceReport = sourceIntegrity(rawSource, sourceBeats);
+        set({ sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1) });
+      },
       applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
 
       generateScenes: () => {
@@ -209,6 +270,8 @@ export const useStudioStore = create<StudioState>()(
         try {
           const result = generateBatch({
             projectKind: s.projectKind,
+            rawSource: s.rawSource,
+            sourceBeats: s.sourceBeats,
             projectTopic: s.projectTopic,
             projectClass: s.projectClass,
             sceneCount: s.sceneCount,
@@ -264,7 +327,7 @@ export const useStudioStore = create<StudioState>()(
       advance: () => {
         const s = get();
         if (s.currentStep === 'dashboard') {
-          if (s.projectTopic.trim()) set({ currentStep: 'recipe' });
+          if (s.projectTopic.trim() && sourceReadiness(s).ready) set({ currentStep: 'recipe' });
         } else if (s.currentStep === 'recipe') {
           // Strict gate: world + palette + reference DNA must all be set (no blind batch).
           if (recipeReadiness(s).ready) set({ currentStep: 'timeline' });
@@ -280,6 +343,7 @@ export const useStudioStore = create<StudioState>()(
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({
         projectKind: s.projectKind,
+        selectedProjectId: s.selectedProjectId,
         projectTopic: s.projectTopic,
         projectClass: s.projectClass,
         sceneCount: s.sceneCount,
@@ -291,12 +355,15 @@ export const useStudioStore = create<StudioState>()(
         selectedMusicId: s.selectedMusicId,
         imageModel: s.imageModel,
         videoModel: s.videoModel,
+        rawSource: s.rawSource,
+        sourceBeats: s.sourceBeats,
+        sourceReport: s.sourceReport,
         scenes: s.scenes,
         agentBrief: s.agentBrief,
         selectedSceneId: s.selectedSceneId,
         currentStep: s.currentStep,
       }),
-      version: 2,
+      version: 3,
       migrate: (persistedState) => migratePersistedState(persistedState),
     },
   ),

@@ -8,6 +8,7 @@ import {
   buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief,
   type Concept, type DurationVerdict, type AgentBriefScene,
 } from './brain';
+import { sourceIntegrity, type SourceBeat } from './source';
 
 // ============================================================
 // Types
@@ -90,6 +91,8 @@ export const DATA = SURGERY as unknown as SurgeryData;
 
 export interface BriefInput {
   projectKind?: 'video' | 'design';
+  rawSource?: string;
+  sourceBeats?: SourceBeat[];
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
@@ -380,9 +383,10 @@ export function validateBriefCompatibility(args: {
   };
 }
 
-function createSceneArchitecture(topic: string, sceneIndex: number, world: SurgeryWorld): SceneArchitecture {
+type ParsedSource = ReturnType<typeof parseSourceInput>;
+
+function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, world: SurgeryWorld): SceneArchitecture {
   const index = Math.max(1, Number(sceneIndex) || 1) - 1;
-  const sourceInput = parseSourceInput(topic);
   const cycle = Math.floor(index / sourceInput.beats.length);
   const sourceBeat = sourceInput.beats[index % sourceInput.beats.length];
   const intent = SCENE_INTENTS[index % SCENE_INTENTS.length];
@@ -582,9 +586,43 @@ export function generateBatch(input: BriefInput): GenerationResult {
     return { status: 'BLOCKED', scenes: [], contractGate };
   }
 
+  if (input.rawSource?.length) {
+    if (!input.sourceBeats?.length) {
+      return {
+        status: 'BLOCKED',
+        scenes: [],
+        contractGate: {
+          status: 'BLOCKED',
+          findings: [{ code: 'SOURCE_NOT_INGESTED', message: 'Raw Source Vault kayıpsız ingest edilmeden üretim yapılamaz.' }],
+        },
+        error: 'SOURCE_NOT_INGESTED',
+      };
+    }
+    const integrity = sourceIntegrity(input.rawSource, input.sourceBeats);
+    if (!integrity.ok) {
+      return {
+        status: 'BLOCKED',
+        scenes: [],
+        contractGate: {
+          status: 'BLOCKED',
+          findings: [{ code: 'SOURCE_INTEGRITY_FAIL', message: `Kaynak bütünlüğü ${integrity.coverage}%; üretim için %100 gerekli.` }],
+        },
+        error: 'SOURCE_INTEGRITY_FAIL',
+      };
+    }
+  }
+
   const paletteOverride = DATA.palettes.find((p) => p.id === selectedPaletteId);
-  const count = Math.max(1, Math.min(20, Number(sceneCount) || 5));
-  const sourceParsed = parseSourceInput(projectTopic);
+  const count = input.rawSource?.length && input.sourceBeats?.length
+    ? input.sourceBeats.length
+    : Math.max(1, Math.min(20, Number(sceneCount) || 5));
+  const sourceParsed: ParsedSource = input.rawSource?.length && input.sourceBeats?.length
+    ? {
+        status: 'SOURCE_BOUND',
+        beats: input.sourceBeats.map((beat) => ({ sourceId: beat.sourceId, exactText: beat.exactText })),
+        notice: null,
+      }
+    : parseSourceInput(projectTopic);
   const projectId = stableSemanticFingerprint(['PROJECT', projectTopic.trim()]);
   const sourceHash = stableSemanticFingerprint([
     'SOURCE',
@@ -605,7 +643,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
   const briefScenes: AgentBriefScene[] = [];
 
   for (let i = 1; i <= count; i++) {
-    const arch = createSceneArchitecture(projectTopic, i, world);
+    const arch = createSceneArchitecture(sourceParsed, i, world);
     const brief = buildFinalBriefContext(arch, world, input.selectedPropId, selectedRefId, path, paletteOverride);
     const pacing = calcPacing(i, count);
 

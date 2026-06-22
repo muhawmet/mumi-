@@ -5,6 +5,7 @@ import {
   migratePersistedState,
   presetWithDefaults,
   recipeReadiness,
+  sourceReadiness,
   type Scene,
   useStudioStore,
 } from './useStudioStore';
@@ -12,7 +13,7 @@ import {
 function generatedScene(): Scene {
   const result = generateBatch({
     projectTopic: 'SOURCE:\nkısa kaynak',
-    projectClass: 'EĞİTİM_01',
+    projectClass: 'ANIMATION_EDU',
     sceneCount: 1,
     cast: 'İkisi',
     selectedWorldId: 'clay',
@@ -42,8 +43,8 @@ function generatedScene(): Scene {
 describe('studio store helpers', () => {
   it('auto-wires preset defaults and clears stale generation output', () => {
     const preset = presetWithDefaults(
-      { projectClass: 'EĞİTİM_01', selectedWorldId: '' },
-      { projectClass: 'EĞİTİM_01', selectedWorldId: 'clay', sceneCount: 5 },
+      { projectClass: 'ANIMATION_EDU', selectedWorldId: '' },
+      { projectClass: 'ANIMATION_EDU', selectedWorldId: 'clay', sceneCount: 5 },
     );
     expect(DATA.refs.some((r) => r.id === preset.selectedRefId)).toBe(true);
     expect(DATA.palettes.some((p) => p.id === preset.selectedPaletteId)).toBe(true);
@@ -84,5 +85,33 @@ describe('studio store helpers', () => {
     expect(migrated.scenes).toEqual([]);
     expect(migrated.agentBrief).toBe('');
     expect(migrated.selectedSceneId).toBeNull();
+  });
+
+  it('decodes and ingests the raw vault into a production-ready source contract', () => {
+    useStudioStore.getState().reset();
+    useStudioStore.getState().setRawSource('3. sınıf su döngüsü dersi. Buhar yükselir!');
+    expect(sourceReadiness(useStudioStore.getState()).ready).toBe(false);
+
+    useStudioStore.getState().decodeRawSource();
+    useStudioStore.getState().ingestRawSource();
+    const state = useStudioStore.getState();
+    expect(state.selectedProjectId).toBe('education');
+    expect(state.projectClass).toBe('ANIMATION_EDU');
+    expect(state.sourceBeats.length).toBeGreaterThan(1);
+    expect(state.sourceBeats.map((beat) => beat.exactText).join('')).toBe(state.rawSource);
+    expect(state.sourceReport?.coverage).toBe(100);
+    expect(sourceReadiness(state).ready).toBe(true);
+    useStudioStore.getState().reset();
+  });
+
+  it('invalidates an old ingest report when the raw source changes', () => {
+    useStudioStore.getState().reset();
+    useStudioStore.getState().setRawSource('Birinci cümle. İkinci cümle.');
+    useStudioStore.getState().ingestRawSource();
+    expect(useStudioStore.getState().sourceReport?.ok).toBe(true);
+    useStudioStore.getState().setRawSource('Değişen kaynak.');
+    expect(useStudioStore.getState().sourceBeats).toEqual([]);
+    expect(useStudioStore.getState().sourceReport).toBeNull();
+    useStudioStore.getState().reset();
   });
 });
