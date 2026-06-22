@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Copy, Check, Edit3, X } from 'lucide-react';
 import { useStudioStore, effectivePrompt, type Scene } from '../../store/useStudioStore';
 import { quantumScore, proofDoctor, qaScore } from '../../core/proof';
-import { Panel, Button, inputStyle } from '../../components/Layout/PanelKit';
+import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
+import { DATA } from '../../core/pure';
+import { dnaDirectives, registerOf, primePacket } from '../../core/brain';
 
 const PHASE_COLORS: Record<string, string> = {
   Intro: '#4df5a0',
@@ -63,6 +65,23 @@ export const TimelineStep = () => {
     });
   };
 
+  const [packetCopied, setPacketCopied] = useState<string | null>(null);
+  const onCopyPacket = (role: 'image' | 'motion' | 'suno' | 'idea' | 'proof') => {
+    const text = state.agentPackets?.[role];
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(() => {
+      const labels = {
+        image: 'IMAGE',
+        motion: 'MOTION',
+        suno: 'SUNO',
+        idea: 'IDEA',
+        proof: 'PROOF'
+      };
+      setPacketCopied(labels[role]);
+      setTimeout(() => setPacketCopied(null), 1500);
+    });
+  };
+
   const onExportCSV = () => {
     if (!scenes.length) return;
     const scenesForExport: Scene[] = scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) }));
@@ -107,9 +126,56 @@ export const TimelineStep = () => {
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
           {scenes.length > 0 && (
-            <Button variant="ghost" onClick={onCopyAgentBrief}>
-              {briefCopied ? '✓ Kopyalandı' : 'Ajan Brief (Claude/GPT)'}
-            </Button>
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              <select
+                value=""
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (!val) return;
+                  if (val === 'brief') onCopyAgentBrief();
+                  else onCopyPacket(val as any);
+                  e.target.value = '';
+                }}
+                style={{
+                  ...selectStyle,
+                  padding: '12px 32px 12px 20px',
+                  background: 'transparent',
+                  border: '1px solid var(--line3, #ffffff34)',
+                  borderRadius: 10,
+                  color: '#fff',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  appearance: 'none',
+                  outline: 'none',
+                }}
+              >
+                <option value="" disabled style={{ background: '#0b0d13', color: 'var(--text-muted)' }}>
+                  {packetCopied ? `✓ ${packetCopied} Kopyalandı` : briefCopied ? '✓ Brief Kopyalandı' : 'Ajan Paketleri'}
+                </option>
+                <option value="brief" style={{ background: '#0b0d13' }}>Ana Ajan Brief</option>
+                <option value="image" style={{ background: '#0b0d13' }}>IMAGE Paketi (Görsel)</option>
+                <option value="motion" style={{ background: '#0b0d13' }}>MOTION Paketi (Hareket)</option>
+                {state.projectKind === 'video' && (
+                  <option value="suno" style={{ background: '#0b0d13' }}>SUNO Paketi (Müzik)</option>
+                )}
+                <option value="idea" style={{ background: '#0b0d13' }}>IDEA Paketi (Fikir)</option>
+                <option value="proof" style={{ background: '#0b0d13' }}>PROOF Paketi (Denetim)</option>
+              </select>
+              <span
+                style={{
+                  position: 'absolute',
+                  right: 12,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  pointerEvents: 'none',
+                  color: 'var(--text-muted)',
+                  fontSize: 10,
+                }}
+              >
+                ▼
+              </span>
+            </div>
           )}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
             {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>

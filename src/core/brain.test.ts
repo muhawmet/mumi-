@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   registerOf, realFamilyOf, conceptRanked, dnaDirectives, durationGuard,
   primeSuno, estimateSec, renderLock, primeCamera, buildAgentBrief,
-  buildVariantBriefs, recommendReason
+  buildVariantBriefs, recommendReason, primePacket
 } from './brain';
 import { DATA } from './pure';
 
@@ -107,6 +107,8 @@ describe('Brand Kit Lock', () => {
       cast: '', brandKitLock: 'Verbatim Brand Name: Acme. Colors: #ff0000.'
     }, []);
     expect(brief).toContain('== BRAND KIT LOCK ==');
+    // The agents key their lock gate on this exact token.
+    expect(brief).toContain('BRAND KIT: LOCKED');
     expect(brief).toContain('Verbatim Brand Name: Acme. Colors: #ff0000.');
   });
 });
@@ -137,3 +139,61 @@ describe('recommendReason', () => {
     expect(reason).toContain(pixarRef.name);
   });
 });
+
+describe('primePacket & buildAgentBrief richness', () => {
+  const ctx = {
+    projectTopic: 'Water cycle exploration',
+    productionPath: 'ANIMATION_EDU',
+    register: 'EDU' as const,
+    world: clayWorld,
+    dna: { names: 'Pixar Ref', camera: 'medium view', light: 'soft ambient', staging: 'centered', motion: 'gentle drift', texture: 'clay texture', avoid: 'plastic' },
+    cast: 'Aras + Defne',
+    brandKitLock: 'Verbatim Brand: Mamilas Education.'
+  };
+
+  const scenes = [
+    {
+      id: 1,
+      source: 'Güneş suyu ısıtır.',
+      concept: { subject: 'sea under sunlight', event: 'water vapor rises', matched: true },
+      camera: 'medium view',
+      sec: 6
+    }
+  ];
+
+  it('buildAgentBrief includes brand-kit and proof state, and stays pristine (no variant block) by default', () => {
+    const brief = buildAgentBrief(ctx, scenes);
+    expect(brief).toContain('== BRAND KIT LOCK ==');
+    expect(brief).toContain('Verbatim Brand: Mamilas Education.');
+    expect(brief).toContain('== PROOF STATE & QUALITY STATUS ==');
+    expect(brief).toContain('Status: PASS');
+    // No invented variants pollute a normal brief.
+    expect(brief).not.toContain('CREATIVE VARIANT');
+    expect(brief).not.toContain('amber or custom palette');
+  });
+
+  it('injects the GLOBAL_BRAIN variant declaration only when a variant test is active', () => {
+    const brief = buildAgentBrief({ ...ctx, variantTest: { variable: 'world', variant: 'B' } }, scenes);
+    expect(brief).toContain('== CREATIVE VARIANT TEST — variable: world ==');
+    expect(brief).toContain('This brief is Variant B.');
+    expect(brief).toContain('Only the world differs across A/B/C');
+  });
+
+  it('each primePacket contains its director header and render lock verbatim, no invented variants', () => {
+    const packets: Array<'image' | 'motion' | 'suno' | 'idea' | 'proof'> = ['image', 'motion', 'suno', 'idea', 'proof'];
+    for (const p of packets) {
+      const result = primePacket(p, ctx, scenes);
+      // Verify director header
+      const expectedHeader = p === 'motion' ? 'MAMILAS MOTION DIRECTOR — Kling 3.0' : p === 'suno' ? 'MAMILAS SUNO DIRECTOR — v5.5 Custom Mode' : `MAMILAS ${p.toUpperCase()} DIRECTOR`;
+      expect(result).toContain(expectedHeader);
+      // Verify render lock verbatim
+      expect(result).toContain(clayWorld.render);
+      // Verify brand kit lock and proof state present, no fabricated variant copy
+      expect(result).toContain('== BRAND KIT LOCK ==');
+      expect(result).toContain('== PROOF STATE & QUALITY STATUS ==');
+      expect(result).toContain('Status: PASS');
+      expect(result).not.toContain('amber or custom palette');
+    }
+  });
+});
+

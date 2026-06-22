@@ -5,7 +5,7 @@
 import SURGERY from './SURGERY_DATA.json';
 import {
   registerOf, dnaDirectives, primeConcept, primeCamera, buildImagePrompt as brainImagePrompt,
-  buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief,
+  buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket,
   type Concept, type DurationVerdict, type AgentBriefScene,
 } from './brain';
 import { sourceIntegrity, type SourceBeat } from './source';
@@ -209,6 +209,13 @@ export interface GenerationResult {
   contractGate: { status: string; findings: Array<{ code: string; message: string }> };
   /** Legacy primeBrief payload — paste into Claude Projects / Custom GPT as the director system prompt. */
   agentBrief?: string;
+  agentPackets?: {
+    image: string;
+    motion: string;
+    suno: string;
+    idea: string;
+    proof: string;
+  };
   error?: string;
 }
 
@@ -696,12 +703,29 @@ export function generateBatch(input: BriefInput): GenerationResult {
     scenes.push({ ...sceneCore, handoff });
   }
 
-  const agentBrief = buildAgentBrief(
-    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast, projectKind, brandKitLock: input.brandKitLock },
-    briefScenes,
-  );
+  const agentCtx = {
+    projectTopic,
+    productionPath: path,
+    register,
+    world,
+    palette: paletteOverride,
+    dna,
+    cast,
+    projectKind,
+    brandKitLock: input.brandKitLock,
+  };
 
-  return { status: 'GENERATED', scenes, contractGate, agentBrief };
+  const agentBrief = buildAgentBrief(agentCtx, briefScenes);
+
+  const agentPackets = {
+    image: primePacket('image', agentCtx, briefScenes),
+    motion: primePacket('motion', agentCtx, briefScenes),
+    suno: primePacket('suno', agentCtx, briefScenes),
+    idea: primePacket('idea', agentCtx, briefScenes),
+    proof: primePacket('proof', agentCtx, briefScenes),
+  };
+
+  return { status: 'GENERATED', scenes, contractGate, agentBrief, agentPackets };
 }
 
 // Used by the Recipe step for grouped dropdowns

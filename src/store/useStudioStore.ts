@@ -103,6 +103,7 @@ export interface StudioState {
 
   scenes: Scene[];
   agentBrief: string;
+  agentPackets: { image: string; motion: string; suno: string; idea: string; proof: string; } | null;
   selectedSceneId: number | null;
   isGenerating: boolean;
   lastError: string | null;
@@ -155,6 +156,7 @@ const initial = {
 
   scenes: [] as Scene[],
   agentBrief: '',
+  agentPackets: null as { image: string; motion: string; suno: string; idea: string; proof: string; } | null,
   selectedSceneId: null as number | null,
   isGenerating: false,
   lastError: null as string | null,
@@ -215,6 +217,7 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
     ...persisted,
     scenes,
     agentBrief: scenes.length && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
+    agentPackets: persisted.agentPackets || null,
     selectedSceneId: scenes.some((s) => s.id === persisted.selectedSceneId) ? persisted.selectedSceneId ?? null : null,
   };
 }
@@ -226,7 +229,7 @@ export const useStudioStore = create<StudioState>()(
 
       setField: (field, value) => {
         const s = get();
-        const clearGeneration = { scenes: [], agentBrief: '', selectedSceneId: null, lastError: null };
+        const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null };
         if (field === 'selectedWorldId') {
           const defaults = resolveRecipeDefaults(s.projectClass, String(value));
           set({ selectedWorldId: String(value), ...defaults, ...clearGeneration });
@@ -254,6 +257,7 @@ export const useStudioStore = create<StudioState>()(
         sourceReport: null,
         scenes: [],
         agentBrief: '',
+        agentPackets: null,
         selectedSceneId: null,
         lastError: null,
       }),
@@ -269,6 +273,7 @@ export const useStudioStore = create<StudioState>()(
           projectTopic: rawSource.trim().split(/\n+/u)[0]?.slice(0, 160) || get().projectTopic,
           scenes: [],
           agentBrief: '',
+          agentPackets: null,
           selectedSceneId: null,
           lastError: null,
         });
@@ -372,6 +377,7 @@ export const useStudioStore = create<StudioState>()(
             set({
               scenes: adapted,
               agentBrief: result.agentBrief ?? '',
+              agentPackets: result.agentPackets ?? null,
               selectedSceneId: adapted[0]?.id ?? null,
               isGenerating: false,
             });
@@ -424,6 +430,7 @@ export const useStudioStore = create<StudioState>()(
         sourceReport: s.sourceReport,
         scenes: s.scenes,
         agentBrief: s.agentBrief,
+        agentPackets: s.agentPackets,
         selectedSceneId: s.selectedSceneId,
         beatMode: s.beatMode,
         workingMode: s.workingMode,
