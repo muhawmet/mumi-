@@ -130,6 +130,19 @@ export interface StudioState {
   advance: () => void;
   setSceneOverride: (sceneId: number, override: string | null) => void;
   reset: () => void;
+
+  vault: VaultEntry[];
+  saveToVault: (name: string) => void;
+  loadFromVault: (id: string) => void;
+  deleteFromVault: (id: string) => void;
+}
+
+/** A named, restorable snapshot of a full project (legacy "Proje Kasası"). */
+export interface VaultEntry {
+  id: string;
+  name: string;
+  savedAt: number;
+  snapshot: Partial<StudioState>;
 }
 
 const initial = {
@@ -167,7 +180,41 @@ const initial = {
   beatAnalysis: null as BeatAnalysis | null,
 
   currentStep: 'dashboard' as Step,
+
+  vault: [] as VaultEntry[],
 };
+
+/** Single source of truth for the persisted/snapshotted project fields (no vault, no transient flags). */
+export function pickProjectState(s: StudioState): Partial<StudioState> {
+  return {
+    projectKind: s.projectKind,
+    selectedProjectId: s.selectedProjectId,
+    projectTopic: s.projectTopic,
+    projectClass: s.projectClass,
+    sceneCount: s.sceneCount,
+    cast: s.cast,
+    selectedWorldId: s.selectedWorldId,
+    selectedPropId: s.selectedPropId,
+    selectedRefId: s.selectedRefId,
+    selectedPaletteId: s.selectedPaletteId,
+    selectedMusicId: s.selectedMusicId,
+    imageModel: s.imageModel,
+    videoModel: s.videoModel,
+    brandKitLock: s.brandKitLock,
+    rawSource: s.rawSource,
+    sourceBeats: s.sourceBeats,
+    sourceReport: s.sourceReport,
+    scenes: s.scenes,
+    agentBrief: s.agentBrief,
+    agentPackets: s.agentPackets,
+    selectedSceneId: s.selectedSceneId,
+    beatMode: s.beatMode,
+    workingMode: s.workingMode,
+    beatKeeps: s.beatKeeps,
+    beatAnalysis: s.beatAnalysis,
+    currentStep: s.currentStep,
+  };
+}
 
 const serverStorage: Storage = {
   length: 0,
@@ -406,39 +453,29 @@ export const useStudioStore = create<StudioState>()(
         }
       },
 
-      reset: () => set(initial),
+      reset: () => set((s) => ({ ...initial, vault: s.vault })),
+
+      saveToVault: (name) => set((s) => {
+        const entry: VaultEntry = {
+          id: `vault_${Date.now().toString(36)}_${s.vault.length}`,
+          name: name.trim() || s.projectTopic.trim() || 'Adsız proje',
+          savedAt: Date.now(),
+          snapshot: pickProjectState(s),
+        };
+        return { vault: [entry, ...s.vault] };
+      }),
+      loadFromVault: (id) => set((s) => {
+        const entry = s.vault.find((e) => e.id === id);
+        if (!entry) return {};
+        return { ...entry.snapshot, isGenerating: false, lastError: null };
+      }),
+      deleteFromVault: (id) => set((s) => ({ vault: s.vault.filter((e) => e.id !== id) })),
     }),
     {
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
-      partialize: (s) => ({
-        projectKind: s.projectKind,
-        selectedProjectId: s.selectedProjectId,
-        projectTopic: s.projectTopic,
-        projectClass: s.projectClass,
-        sceneCount: s.sceneCount,
-        cast: s.cast,
-        selectedWorldId: s.selectedWorldId,
-        selectedPropId: s.selectedPropId,
-        selectedRefId: s.selectedRefId,
-        selectedPaletteId: s.selectedPaletteId,
-        selectedMusicId: s.selectedMusicId,
-        imageModel: s.imageModel,
-        videoModel: s.videoModel,
-        rawSource: s.rawSource,
-        sourceBeats: s.sourceBeats,
-        sourceReport: s.sourceReport,
-        scenes: s.scenes,
-        agentBrief: s.agentBrief,
-        agentPackets: s.agentPackets,
-        selectedSceneId: s.selectedSceneId,
-        beatMode: s.beatMode,
-        workingMode: s.workingMode,
-        beatKeeps: s.beatKeeps,
-        beatAnalysis: s.beatAnalysis,
-        currentStep: s.currentStep,
-      }),
-      version: 4,
+      partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
+      version: 5,
       migrate: (persistedState) => migratePersistedState(persistedState),
     },
   ),

@@ -19,9 +19,11 @@ export const DashboardStep = () => {
     projectKind, selectedProjectId, projectTopic, projectClass, sceneCount, cast,
     rawSource, sourceBeats, sourceReport,
     setField, setCurrentStep, applyPreset, setRawSource, decodeRawSource, ingestRawSource,
+    vault, saveToVault, loadFromVault, deleteFromVault,
   } = useStudioStore();
   const [kind, setKind] = useState<'video' | 'design'>(projectKind);
   const [activePreset, setActivePreset] = useState<string | null>(null);
+  const [vaultName, setVaultName] = useState('');
 
   const presets = kind === 'video' ? PHASE0_VIDEO : PHASE0_DESIGN;
   const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
@@ -300,6 +302,44 @@ export const DashboardStep = () => {
             );
           })}
         </div>
+      </Panel>
+
+      <Panel title="Proje Kasası" subtitle="Aktif projeyi adıyla kaydet; istediğin an birebir geri yükle. Tarayıcıda saklanır.">
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          <input
+            data-testid="vault-name"
+            style={{ ...inputStyle, flex: '1 1 220px' }}
+            value={vaultName}
+            onChange={(e) => setVaultName(e.target.value)}
+            placeholder={`Proje adı (boşsa "${projectTopic.trim() || 'konu'}" kullanılır)`}
+          />
+          <Button data-testid="vault-save" onClick={() => { saveToVault(vaultName); setVaultName(''); }}>
+            Aktif projeyi kasaya kaydet
+          </Button>
+        </div>
+        {vault.length === 0 ? (
+          <div style={{ marginTop: 14, color: 'var(--text-muted)', fontSize: 12 }}>
+            Kasa boş — kaydettiğin projeler burada listelenir.
+          </div>
+        ) : (
+          <ul data-testid="vault-list" style={{ margin: '16px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
+            {vault.map((e) => (
+              <li
+                key={e.id}
+                style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 10, border: '1px solid var(--line2)', background: 'rgba(0,0,0,.2)' }}
+              >
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ color: '#fff', fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{e.name}</div>
+                  <div style={{ color: 'var(--text-muted)', fontSize: 11, marginTop: 2 }}>
+                    {new Date(e.savedAt).toLocaleString('tr-TR')} · {e.snapshot.projectClass} · {(e.snapshot.scenes?.length ?? 0)} sahne
+                  </div>
+                </div>
+                <Button variant="ghost" onClick={() => loadFromVault(e.id)}>Yükle</Button>
+                <Button variant="ghost" onClick={() => deleteFromVault(e.id)}>Sil</Button>
+              </li>
+            ))}
+          </ul>
+        )}
       </Panel>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>

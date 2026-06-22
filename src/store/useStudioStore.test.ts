@@ -114,4 +114,38 @@ describe('studio store helpers', () => {
     expect(useStudioStore.getState().sourceReport).toBeNull();
     useStudioStore.getState().reset();
   });
+
+  it('Proje Kasası: saves, restores and deletes named project snapshots', () => {
+    const s = useStudioStore.getState();
+    s.reset();
+    // delete any persisted vault entries so the assertions are deterministic
+    useStudioStore.getState().vault.slice().forEach((e) => useStudioStore.getState().deleteFromVault(e.id));
+
+    useStudioStore.getState().setField('projectTopic', 'Fotosentez Dersi');
+    useStudioStore.getState().setField('selectedWorldId', 'clay');
+    useStudioStore.getState().saveToVault('Biyoloji #1');
+
+    const afterSave = useStudioStore.getState();
+    expect(afterSave.vault.length).toBe(1);
+    expect(afterSave.vault[0].name).toBe('Biyoloji #1');
+    expect(afterSave.vault[0].snapshot.projectTopic).toBe('Fotosentez Dersi');
+    expect(afterSave.vault[0].snapshot.selectedWorldId).toBe('clay');
+
+    // mutate the live project, then restore from the vault
+    const id = afterSave.vault[0].id;
+    useStudioStore.getState().setField('projectTopic', 'Bambaşka Konu');
+    expect(useStudioStore.getState().projectTopic).toBe('Bambaşka Konu');
+    useStudioStore.getState().loadFromVault(id);
+    expect(useStudioStore.getState().projectTopic).toBe('Fotosentez Dersi');
+    expect(useStudioStore.getState().selectedWorldId).toBe('clay');
+
+    // empty name falls back to the topic; reset keeps the vault intact
+    useStudioStore.getState().saveToVault('   ');
+    expect(useStudioStore.getState().vault[0].name).toBe('Fotosentez Dersi');
+    useStudioStore.getState().reset();
+    expect(useStudioStore.getState().vault.length).toBe(2);
+
+    useStudioStore.getState().vault.slice().forEach((e) => useStudioStore.getState().deleteFromVault(e.id));
+    expect(useStudioStore.getState().vault.length).toBe(0);
+  });
 });

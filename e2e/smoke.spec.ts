@@ -127,3 +127,27 @@ test('design preset produces an honest static IMAGE-only delivery', async ({ pag
   await expect(page.getByText('Motion prompt (Kling)')).toHaveCount(0);
   await expect(page.getByText('Suno brief')).toHaveCount(0);
 });
+
+test('Proje Kasası saves the active project and restores it after a change + reload', async ({ page }) => {
+  await freshGoto(page);
+
+  await page.getByLabel('Proje konusu').fill('Kasa Test Konusu');
+  await page.getByTestId('vault-name').fill('Kayıt #1');
+  await page.getByTestId('vault-save').click();
+
+  const list = page.getByTestId('vault-list');
+  await expect(list).toContainText('Kayıt #1');
+
+  // mutate the live project, then restore from the vault
+  await page.getByLabel('Proje konusu').fill('Bambaşka Konu');
+  await page.getByRole('button', { name: 'Yükle' }).first().click();
+  await expect(page.getByLabel('Proje konusu')).toHaveValue('Kasa Test Konusu');
+
+  // vault survives a reload (persisted)
+  await page.reload();
+  await expect(page.getByTestId('vault-list')).toContainText('Kayıt #1');
+
+  // delete clears it
+  await page.getByRole('button', { name: 'Sil' }).first().click();
+  await expect(page.getByText('Kasa boş — kaydettiğin projeler burada listelenir.')).toBeVisible();
+});
