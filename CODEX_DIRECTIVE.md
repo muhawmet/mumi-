@@ -28,6 +28,15 @@ Claude'a kalır).
 
 ---
 
+## ★★★ YARATICILIK SINIRSIZ
+
+Buradaki kurallar yalnızca DOĞRULUK koruma bantlarıdır (gate yeşil, IP-güvenli,
+kaynak korunur, agents/ Claude'a ait). Bunların DIŞINDA hiçbir sınır yok:
+spec'i aş, kendi epifanilerini ekle, daha iyi bir çözüm görüyorsan yap ve
+CODEX_LOG'da gerekçele. "Talep edilmedi" diye harika bir fikri atlama — bizi
+şaşırt. Çıta: "vay be, bunu düşünmemiştik." Tek şart: guardrail'leri kırmadan,
+final brief'i (Kuzey Yıldızı) daha da güçlendirerek. Cesur ol.
+
 ## ★★ SEN GPT-5.5 (high/xhigh) SİN — buna göre çalış
 
 Yüksek akıl yürütme bütçen var; bunu kullan. Bu yüzden:
