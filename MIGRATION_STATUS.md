@@ -30,6 +30,11 @@
   edit world/ref/palette after applying a preset, so there is no real lock to honestly
   declare. Emit it only once true Phase-0 lock semantics exist.
 
-## Next
-Phase G: High-end UI (design system + primitives), then final parity table.
+## Parity (2026-06-22, Claude)
+Legacy↔modern parity tablosu `FINAL_REPORT.md`'de. Proje Kasası eklendi → legacy'nin
+yapıp modernin yapamadığı işlevsel özellik kalmadı. 88 unit + 10 e2e + lint/tsc/build yeşil.
+
+## Next (opsiyonel, işlev için gerekmiyor)
+Phase G: saf kozmetik tur — `src/ui/**` tipli primitif kütüphanesi + `tokens.css`.
+İşlev tam ve yeşil; bu yalnızca görsel cila katmanı.
 
