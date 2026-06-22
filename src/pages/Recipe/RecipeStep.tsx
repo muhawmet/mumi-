@@ -2,7 +2,9 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
 import { Panel, Field, Button, Chip, selectStyle } from '../../components/Layout/PanelKit';
-import { DATA, groupedWorlds, deriveTeachingRecipe, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
+import { DATA, groupedWorlds, deriveProductionPath, deriveTeachingRecipe, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
+import { registerOf } from '../../core/brain';
+import { dnaStrength, refContribution, refFit, REF_FIT_CONFLICT, starterPackFor } from '../../core/advisor';
 
 function worldGradient(colors?: string[]): string {
   if (!colors || colors.length === 0) return 'linear-gradient(135deg,#1a1a2e,#16213e)';
@@ -86,6 +88,7 @@ export const RecipeStep = () => {
     signature,
     leitmotif,
     tempoCurve,
+    projectClass,
     setField,
     setCurrentStep,
     advance,
@@ -113,6 +116,11 @@ export const RecipeStep = () => {
   const selectedPalette = DATA.palettes.find((p) => p.id === selectedPaletteId);
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefIds });
+  const dnaRegister = registerOf(deriveProductionPath(projectClass));
+  const selectedRefs = (selectedRefIds || []).map((id) => DATA.refs.find((ref) => ref.id === id)).filter(Boolean) as SurgeryRef[];
+  const strength = dnaStrength(selectedRefs, dnaRegister);
+  const starterPack = selectedWorld ? starterPackFor(selectedWorld.id) : [];
+  const starterApplied = starterPack.length > 0 && starterPack.every((ref) => selectedRefIds.includes(ref.id));
 
   const categories = useMemo(() => {
     const cats = new Map<string, number>();
@@ -127,8 +135,16 @@ export const RecipeStep = () => {
     let list = DATA.refs;
     if (activeCat) list = list.filter(r => r.cat === activeCat);
     if (searchQuery) list = list.filter(r => searchMatch(r, searchQuery));
+    if (selectedWorld) list = [...list].sort((a, b) => refFit(selectedWorld, b) - refFit(selectedWorld, a));
     return list;
-  }, [activeCat, searchQuery]);
+  }, [activeCat, searchQuery, selectedWorld]);
+
+  const applyStarterPack = () => {
+    if (!selectedWorld || starterPack.length === 0) return;
+    setField('selectedRefIds', starterPack.map((ref) => ref.id));
+    setToastMsg(`${selectedWorld.name} için küratörlü DNA paketi uygulandı.`);
+    window.setTimeout(() => setToastMsg(null), 3000);
+  };
 
   const toggleRef = (id: string) => {
     setToastMsg(null);
@@ -250,15 +266,59 @@ export const RecipeStep = () => {
       {/* Reference DNA Full Width Vault */}
       <Panel title="Reference DNA" subtitle="Max 3 reference mix. First selected is primary.">
 
+        {selectedWorld && starterPack.length > 0 && (
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: 'var(--sp-4)', alignItems: 'center',
+            padding: 'var(--sp-4)', marginBottom: 'var(--sp-5)', borderRadius: 'var(--r-md)',
+            background: 'var(--goldsoft)', border: '1px solid var(--goldline)', boxShadow: 'var(--ring-gold)',
+          }}>
+            <div style={{ minWidth: 0 }}>
+              <div style={{ fontSize: 10, letterSpacing: 1.8, fontWeight: 800, color: 'var(--gold)', marginBottom: 7 }}>
+                BU DÜNYA İÇİN ÖNERİLEN DNA
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+                {starterPack.map((ref) => (
+                  <span key={ref.id} style={{ padding: '5px 9px', borderRadius: 'var(--r-pill)', background: 'var(--inset)', border: '1px solid var(--line2)', color: 'var(--text-soft)', fontSize: 11, fontWeight: 700 }}>
+                    {ref.name} · %{refFit(selectedWorld, ref)}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <Button onClick={applyStarterPack} disabled={starterApplied}>
+              {starterApplied ? 'Paket aktif' : 'Tek tıkla uygula'}
+            </Button>
+          </div>
+        )}
+
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'auto minmax(120px,1fr) auto', alignItems: 'center', gap: 'var(--sp-3)',
+          padding: '12px 14px', marginBottom: 'var(--sp-4)', borderRadius: 'var(--r-sm)', background: 'var(--inset)', border: '1px solid var(--line2)',
+        }}>
+          <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--text-soft)', letterSpacing: 1 }}>DNA GÜCÜ</span>
+          <span style={{ height: 7, borderRadius: 'var(--r-pill)', background: 'var(--s3)', overflow: 'hidden' }}>
+            <span style={{ display: 'block', width: `${strength.percent}%`, height: '100%', borderRadius: 'inherit', background: strength.filled >= 4 ? 'var(--green)' : strength.filled >= 2 ? 'var(--gold)' : 'var(--red)', transition: 'width var(--dur-2) var(--ease-out)' }} />
+          </span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 800, color: strength.filled >= 4 ? 'var(--green)' : 'var(--gold)' }}>
+            {strength.filled}/{strength.total}
+          </span>
+          <span style={{ gridColumn: '1 / -1', color: 'var(--text-muted)', fontSize: 11 }}>
+            {strength.roles.length ? strength.roles.join(' · ') : 'Henüz brief direktifi doldurulmadı.'}
+            {strength.zeroRefIds.length > 0 && <strong style={{ color: 'var(--red)' }}> · {strength.zeroRefIds.length} gereksiz ref</strong>}
+          </span>
+        </div>
+
         {/* Active Slots */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12, marginBottom: 24 }}>
           {[0, 1, 2].map((i) => {
             const id = (selectedRefIds || [])[i];
             const r = id ? DATA.refs.find(x => x.id === id) : null;
             const isPrimary = i === 0 && r;
+            const fit = r && selectedWorld ? refFit(selectedWorld, r) : 0;
+            const contribution = r ? refContribution(r, dnaRegister) : null;
+            const conflict = Boolean(r && selectedWorld && fit < REF_FIT_CONFLICT);
             return (
               <div key={i} style={{
-                border: r ? (i === 0 ? '2px solid var(--gold)' : '1px solid var(--line2)') : '1px dashed var(--line2)',
+                border: r ? (conflict ? '1px solid var(--red)' : i === 0 ? '2px solid var(--gold)' : '1px solid var(--line2)') : '1px dashed var(--line2)',
                 background: r ? (i === 0 ? 'rgba(247,201,72,.08)' : 'rgba(0,0,0,.2)') : 'rgba(0,0,0,.1)',
                 borderRadius: 12,
                 padding: 16,
@@ -276,6 +336,11 @@ export const RecipeStep = () => {
                   <>
                     <div style={{ fontWeight: 800, fontSize: 14 }}>{r.name}</div>
                     <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{r.cat}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+                      <span style={{ fontSize: 9.5, fontWeight: 800, color: conflict ? 'var(--red)' : 'var(--green)' }}>UYUM %{fit}</span>
+                      {contribution?.roles.map((role) => <span key={role} style={{ fontSize: 9.5, color: 'var(--text-soft)' }}>{role}</span>)}
+                      {contribution?.count === 0 && <span style={{ fontSize: 9.5, fontWeight: 800, color: 'var(--red)' }}>GEREKSİZ</span>}
+                    </div>
                     <button
                       onClick={() => removeRef(r.id)}
                       style={{
@@ -298,8 +363,8 @@ export const RecipeStep = () => {
                     >
                       Kaldır
                     </button>
-                    {r.worldId && selectedWorldId && r.worldId !== selectedWorldId && (
-                      <div style={{ fontSize: 10, color: 'var(--red)', fontWeight: 700, marginTop: 'auto' }}>UYUMSUZ / EXPORT DIŞI</div>
+                    {conflict && (
+                      <div style={{ fontSize: 10, color: 'var(--red)', fontWeight: 700, marginTop: 'auto' }}>DÜNYA İLE ÇATIŞIYOR</div>
                     )}
                   </>
                 ) : (
@@ -320,6 +385,8 @@ export const RecipeStep = () => {
             const selected = (selectedRefIds || []).includes(r.id);
             const isPrimary = (selectedRefIds || [])[0] === r.id;
             const mismatch = Boolean(r.worldId && selectedWorldId && r.worldId !== selectedWorldId);
+            const fit = selectedWorld ? refFit(selectedWorld, r) : 0;
+            const contribution = refContribution(r, dnaRegister);
 
             return (
               <motion.div
@@ -368,6 +435,7 @@ export const RecipeStep = () => {
                       {r.name}
                       {isPrimary && <span style={{ fontSize: 10, background: 'var(--gold)', color: '#000', padding: '4px 8px', borderRadius: 4, fontWeight: 800 }}>PRIMARY DNA</span>}
                       {mismatch && <span style={{ fontSize: 10, background: 'var(--red)', color: '#fff', padding: '4px 8px', borderRadius: 4, fontWeight: 800 }}>UYUMSUZ / EXPORT DIŞI</span>}
+                      {selectedWorld && <span style={{ fontSize: 10, color: fit < REF_FIT_CONFLICT ? 'var(--red)' : 'var(--green)', border: '1px solid currentColor', padding: '4px 8px', borderRadius: 4, fontWeight: 800 }}>DÜNYA UYUMU %{fit}</span>}
                     </h2>
                   </div>
 
@@ -377,6 +445,11 @@ export const RecipeStep = () => {
                       <div style={{ fontSize: 13, color: '#fff', lineHeight: 1.5, background: 'rgba(0,0,0,.3)', padding: 12, borderRadius: 8 }}>{r.dna}</div>
                     </div>
                   )}
+
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                    {contribution.roles.map((role) => <Chip key={role} tone="gold">{role}</Chip>)}
+                    {contribution.count === 0 && <Chip tone="red">Gereksiz · direktif katkısı yok</Chip>}
+                  </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
                     {r.use && (
@@ -473,6 +546,9 @@ export const RecipeStep = () => {
               const selected = (selectedRefIds || []).includes(r.id);
               const isPrimary = (selectedRefIds || [])[0] === r.id;
               const mismatch = Boolean(r.worldId && selectedWorldId && r.worldId !== selectedWorldId);
+              const fit = selectedWorld ? refFit(selectedWorld, r) : 0;
+              const conflict = Boolean(selectedWorld && fit < REF_FIT_CONFLICT);
+              const contribution = refContribution(r, dnaRegister);
 
               return (
                 <motion.div
@@ -484,7 +560,7 @@ export const RecipeStep = () => {
                   onClick={() => setSelectedDetailRefId(r.id)}
                   style={{
                     background: selected ? 'linear-gradient(180deg,rgba(247,201,72,.08),rgba(0,0,0,.2))' : 'linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.2))',
-                    border: selected ? '1px solid var(--gold)' : '1px solid var(--line2)',
+                    border: selected ? '1px solid var(--gold)' : conflict ? '1px solid var(--red)' : '1px solid var(--line2)',
                     borderRadius: 14,
                     overflow: 'hidden',
                     display: 'flex',
@@ -494,6 +570,11 @@ export const RecipeStep = () => {
                   }}
                 >
                   <div style={{ height: 90, background: getRefPreviewBackground(r.preview, selectedPalette?.colors), position: 'relative' }}>
+                    {selectedWorld && (
+                      <span style={{ position: 'absolute', top: 8, right: 8, padding: '4px 7px', borderRadius: 'var(--r-pill)', fontSize: 10, fontWeight: 900, color: conflict ? 'var(--red)' : 'var(--green)', background: conflict ? 'var(--redsoft)' : 'var(--greensoft)', border: '1px solid currentColor' }}>
+                        %{fit} UYUM
+                      </span>
+                    )}
                     {r.anchor && (
                       <div style={{ position: 'absolute', bottom: 6, left: 10, right: 10, fontSize: 9, fontWeight: 800, background: 'rgba(0,0,0,.6)', padding: '4px 6px', borderRadius: 6, color: '#fff' }}>
                         {r.anchor}
@@ -508,6 +589,8 @@ export const RecipeStep = () => {
                     {r.dna && <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.4 }}>{r.dna}</div>}
 
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 'auto', paddingTop: 8 }}>
+                      {contribution.roles.map((role) => <Chip key={role} tone="gold">{role}</Chip>)}
+                      {contribution.count === 0 && <Chip tone="red">Gereksiz</Chip>}
                       {r.use && <span style={{ fontSize: 10, background: 'rgba(77,245,160,.1)', color: 'var(--green)', padding: '3px 6px', borderRadius: 4, fontWeight: 700 }}>USE: {r.use.slice(0,40)}...</span>}
                       {r.avoid && <span style={{ fontSize: 10, background: 'rgba(255,80,80,.1)', color: 'var(--red)', padding: '3px 6px', borderRadius: 4, fontWeight: 700 }}>AVOID: {r.avoid.slice(0,30)}...</span>}
                     </div>
@@ -558,6 +641,7 @@ export const RecipeStep = () => {
 
                       {isPrimary && <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--gold)' }}>PRIMARY</span>}
                       {mismatch && <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--red)' }}>UYUMSUZ / EXPORT DIŞI</span>}
+                      {!mismatch && conflict && <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--red)' }}>DÜNYA İLE ÇATIŞIYOR</span>}
                     </div>
                   </div>
                 </motion.div>

@@ -28,3 +28,33 @@ Run start — 2026-06-23 Europe/Istanbul — AŞAMA 1 başladı; bağlayıcı di
 - Sınır kontrolü: `rg -ni 'aras|defne' src` → `0`; `agents/` ve kaynak/kontrat/golden katmanlarına dokunulmadı; geçici galeri silindi.
 - Kuzey Yıldızı: **Evet** — bu aşama final brief metnini değiştirmiyor fakat seçilen render world’ü doğru ve ayırt edilebilir görselleştirerek ajana gidecek reçetenin yanlış dünya ile kurulma riskini azaltıyor.
 - Sonuç: **AŞAMA 1 PASS**.
+
+## AŞAMA 2 — Akıllı Reference DNA sistemi
+
+### Uygulama
+- Komut: `nl -ba src/core/advisor.ts src/pages/Recipe/RecipeStep.tsx src/components/RecipeRail.tsx` + ref şema dökümü → mevcut seçim, DNA_MAP ve yönetmen notu akışları okundu.
+- Saf zeka: `refFit(world, ref)` explicit world lock > küratörlü pack > kategori > register ailesi hiyerarşisiyle `0–100` uyum üretiyor; kırmızı çatışma eşiği `%45`.
+- Starter pack: 32/32 render world için 3’er özgül ref küratörlendi; `starterPackFor()` yalnız var olan ref ID’leri döndürüyor ve her öğe kendi dünyasında en az `%90` uyumlu.
+- Rol + güç: `refContribution()` ve `dnaStrength()` doğrudan brief’in kullandığı `dnaDirectives/DNA_MAP` çıktısını karşılaştırıp kamera, ışık, kompozisyon, hareket ve doku katkılarını ölçüyor; sıfır katkı `Gereksiz` olarak işaretleniyor.
+- UI: ref kartı/slot/detay yüzeylerine uyum rozeti ve rol chip’leri, 5 alanlı DNA güç barı, uyuma göre akıllı sıralama ve `Bu dünya için önerilen DNA → Tek tıkla uygula` eklendi.
+- RecipeRail: seçili ref `%45` altındaysa canlı `DNA / dünya uyumsuzluğu` uyarısı veriyor; register gerilimi varken çelişkili `Reçete sağlam` övgüsü artık gösterilmiyor.
+- Neden: Referans seçimi isim beğenme işi değil; final brief’e hangi yönetmen direktifini, ne güçte ve seçili world ile ne kadar tutarlı eklediğini kullanıcı seçim anında görmeli.
+
+### Görsel kanıt ve öz-denetim
+- Screenshot: `phase2-reference-intelligence.png` — Arcane starter pack tek tık sonrası 3 slot, `%98/%94/%90` uyum ve `5/5` DNA gücü.
+- Screenshot: `phase2-conflict-warning.png` — Arcane + High-Key Fashion Studio `%22`; kart/slot kırmızı ve RecipeRail canlı çatışma uyarısı.
+- Browser runtime: starter pack uygulandı, düşük uyumlu ref bilinçli eklendi, kart/slot/rail aynı skoru gösterdi; console `0 error / 0 warning`.
+- Before: 217 ref düz listeydi; yalnız explicit `worldId` mismatch engelleniyor, ref’in brief’e gerçek katkısı ve dünya uyumu görünmüyordu.
+- After: her ref puanlı, rollü ve katkı ölçümlü; önerilen pack tek tıkta tutarlı 3’lü reçete kuruyor; kötü seçim saklanmıyor, yönetmen notuna yükseliyor.
+- Kreatif direktör öz-denetimi: ilk turda tüm `Stylized Premium` refler Arcane için `%96` görünerek stil özgüllüğünü ucuzlaştırdı ve rail aynı anda hem “sağlam” hem register uyarısı verdi; pack-öncelikli puan hiyerarşisi ve blocker mantığıyla düzeltildi.
+
+### Gate — PASS
+- Komut: `git diff --check && npx tsc --noEmit && npx eslint . && npx vitest run && npx vite build`
+- TypeScript: `0 hata`.
+- ESLint: `0 hata`.
+- Vitest: `10/10 test file`, `134/134 test PASS`.
+- Vite: `2197 module transformed`, production build başarılı (`✓ built in 137ms`).
+- Saf fonksiyon kanıtı: advisor odak testi `11/11 PASS`; exact lock/preferred/conflict sırası, 32/32 pack, minimum `%90`, rol/güç ve gereksiz-ref davranışı kapsanıyor.
+- Sınır kontrolü: kaynak-bütünlüğü, kontrat kapısı, golden testleri ve `agents/` değişmedi; 2-eksen mimarisi korunuyor.
+- Kuzey Yıldızı: **Evet** — starter pack ve DNA güç ölçümü ajana giden `REFERENCE DNA → DIRECTIVES` bloğunu daha dolu, tutarlı ve üretilebilir hale getiriyor; uyumsuz ref artık sessizce brief’i bulandıramıyor.
+- Sonuç: **AŞAMA 2 PASS**.
