@@ -139,6 +139,48 @@ Yüksek akıl yürütme bütçen var; bunu kullan. Bu yüzden:
 
 ---
 
+## AŞAMA 5 — EPİFANİLER (çekirdek 1-4 bittikten sonra; gate yeşilse uygula)
+
+Bunlar ürünü "araç"tan "yaratıcı yönetmen"e çıkaran içgörüler. Her birini saf
+fonksiyon + test + küçük UI olarak getir; final brief'e işlemeli (Kuzey Yıldızı).
+Sırayı sen seç; en yüksek kaldıraçlısından başla. Yapamadığını `TODO` bırak.
+
+1. **Süreklilik motoru (split'in eksik yarısı).** ~9s dengeli bölmede 2. çekimin
+   başlangıç karesi, 1. çekimin BİTİŞ durumundan türemeli. Brief her bölünmüş beat
+   için "carry-over anchors" yazsın (kalıcı kalması gereken: kap, tepe, ışık yönü) →
+   `brain.ts buildMotionPrompt`/dossier'e "continues from frame N: <state>" alanı.
+   İçgörü: çok-çekimli sahnelerde tutarlılık ancak bağlanma noktaları yazılırsa korunur.
+
+2. **Ağırlıklı DNA harmanı.** 2-3 referans eşit ses değil. Kullanıcı ağırlık versin
+   (ör. %60 Arcane kamera + %40 Bleach kılıç-enerjisi); `dnaDirectives` harmanı brief'te
+   açıkça ifade etsin. İçgörü: "3 ref seçtim hepsi karıştı" sorunu ağırlıkla çözülür.
+
+3. **Tek-cümle yönetmen niyeti (leitmotif).** Kullanıcı bir duygu cümlesi yazsın
+   ("yalnız bir merak, sonra umut"); bu cümle mood/ışık/müzik/pacing'e tüm sahneler
+   boyunca bias olarak yayılsın. İçgörü: tutarlı duygu, dağınık ayar değil tek niyetten gelir.
+
+4. **Metin = ayrı katman (Türkçe garantisi).** Görüntü modelleri Türkçe yazıyı bozar.
+   Brief, görünür metni "önce metinsiz plate üret → üstüne dizgili Türkçe katman bindir"
+   talimatıyla ayırsın. İçgörü: doğru glyph'i modele değil compositing'e bırak.
+
+5. **Çıktı öz-denetimi (ters-brief).** Üretilen görsel/prompt geri yapıştırılınca,
+   PROOF ajanı render-lock'a ne kadar uyduğunu puanlasın + sapmayı işaretlesin
+   ("Arcane istendi ama temiz-CGI çıkmış"). İçgörü: kalite, üretimden sonra ölçülünce kapanır.
+
+6. **Stil-gücü kadranı.** "Hafif ↔ tam Arcane" sürgüsü; on/off değil, prompt ifadesini
+   somut kademelere çevirsin (ima → belirgin → agresif stilizasyon). İçgörü: stil bir
+   anahtar değil, bir doz.
+
+7. **Üretim defteri + sürüm diff.** semanticFingerprint zaten var; iki reçete/brief'i
+   yan yana diff'le (A vs B: neyin değiştiği). İçgörü: tekrarlanabilirlik + bilinçli iterasyon.
+
+8. **Dünya-özel hedefli negatifler.** Jenerik negatif spam yerine her render world'ün
+   `avoid`'undan SADECE o dünyanın hata modlarını enjekte et (Arcane→temiz-CGI değil;
+   Spider-Verse→pürüzsüz interpolasyon değil). İçgörü: negatif, gürültü değil nişan olmalı.
+
+Her epifani için CODEX_LOG'a: içgörü → uyguladığın tasarım → kanıt (test/screenshot).
+Bunlar opsiyonel ama beklenen; çekirdek bittiyse buraya yatırım yap.
+
 ## SABAH (Claude yapacak — sana bilgi)
 Claude her aşamayı bağımsız doğrulayacak: gate'i tekrar koşacak, brief çıktısını probe ile okuyacak, görselleri tarayıcıda çekecek, gereksiz/uydurma şeyleri budayacak, commit geçmişini düzeltecek. O yüzden **dürüst bırak**: yapamadığın yeri `TODO(codex):` ile işaretle, uydurma yeşil verme.
 
