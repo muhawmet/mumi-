@@ -28,14 +28,16 @@ Claude'a kalır).
 
 ---
 
-## ★★★ YARATICILIK SINIRSIZ
+## ★★★ YARATICILIK — sınırlı özgürlük
 
-Buradaki kurallar yalnızca DOĞRULUK koruma bantlarıdır (gate yeşil, IP-güvenli,
-kaynak korunur, agents/ Claude'a ait). Bunların DIŞINDA hiçbir sınır yok:
-spec'i aş, kendi epifanilerini ekle, daha iyi bir çözüm görüyorsan yap ve
-CODEX_LOG'da gerekçele. "Talep edilmedi" diye harika bir fikri atlama — bizi
-şaşırt. Çıta: "vay be, bunu düşünmemiştik." Tek şart: guardrail'leri kırmadan,
-final brief'i (Kuzey Yıldızı) daha da güçlendirerek. Cesur ol.
+Yaratıcılığın YERİ: çözümün KALİTESİ (kompozisyon, efekt, kod zarafeti) ve final
+brief'i güçlendiren küçük iyileştirmeler. Burada cesur ol, beni şaşırt.
+
+Yaratıcılığın YERİ DEĞİL: görevi yeniden tanımlamak, aşama atlamak/eklemek, mimariyi
+değiştirmek, yeni bağımlılık/sayfa/kapsam icat etmek. Tanımlı 5 aşamanın İÇİNDE kal.
+Spec'i AŞMA, spec'i en iyi şekilde GERÇEKLEŞTİR. Aklına büyük bir fikir gelirse
+uygulamadan önce CODEX_LOG'a "ÖNERİ" olarak yaz, Claude sabah karar versin —
+kendi başına kapsam genişletme.
 
 ## ★★ SEN GPT-5.5 (high/xhigh) SİN — buna göre çalış
 
