@@ -20,6 +20,8 @@ body {
 }
 
 #root { width: 100%; min-width: 0; }
+.ml-main { padding: 44px 52px; }
+.ml-step-btn { white-space: nowrap; }
 
 .mono, code, pre { font-family: var(--font-mono); }
 
@@ -101,9 +103,19 @@ textarea { line-height: 1.55; }
   }
   .ml-sidebar ol { flex-direction: row !important; gap: 6px !important; }
   .ml-sidebar .ml-footer { display: none !important; }
-  .ml-main { padding: 24px 20px !important; }
+  .ml-main { padding: 24px 20px; }
+  .ml-step-btn { width: auto !important; }
+  .ml-active-bar {
+    left: 10px !important;
+    right: 10px;
+    top: auto !important;
+    bottom: -4px !important;
+    width: auto !important;
+    height: 3px;
+  }
   .dashboard-form-grid,
   .recipe-controls-grid,
+  .timeline-layout,
   .cast-grid { grid-template-columns: 1fr !important; }
   .source-metrics-grid { grid-template-columns: 1fr 1fr !important; }
 }

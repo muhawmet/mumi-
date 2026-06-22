@@ -14,7 +14,7 @@ export interface Phase0Preset {
   sets: {
     projectClass?: string;
     selectedWorldId?: string;
-    selectedRefId?: string;
+    selectedRefIds?: string[];
     selectedPaletteId?: string;
     selectedPropId?: string;
     sceneCount?: number;

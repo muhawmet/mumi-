@@ -35,8 +35,9 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
             const active = currentStep === s.id;
             return (
               <li key={s.id} style={{ position: 'relative' }}>
-                {active && <span aria-hidden style={styles.activeBar} />}
+                {active && <span className="ml-active-bar" aria-hidden style={styles.activeBar} />}
                 <button
+                  className="ml-step-btn"
                   onClick={() => setCurrentStep(s.id)}
                   style={{ ...styles.stepBtn, ...(active ? styles.stepBtnActive : null) }}
                 >
@@ -90,8 +91,9 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
 const styles: Record<string, React.CSSProperties> = {
   shell: {
     display: 'flex',
-    minHeight: '100vh',
+    height: '100vh',
     width: '100%',
+    overflow: 'hidden',
     background: 'transparent',
     color: 'var(--text)',
     fontFamily: 'var(--font-sans)',
@@ -163,7 +165,7 @@ const styles: Record<string, React.CSSProperties> = {
   stepIcon: { display: 'inline-flex' },
   footer: { marginTop: 'auto', fontSize: 9.5, color: 'var(--text-dim)', letterSpacing: 1, display: 'grid', gap: 3 },
   footerLine: {},
-  main: { flex: 1, padding: '44px 52px', overflowY: 'auto', position: 'relative', minWidth: 0 },
+  main: { flex: 1, overflowY: 'auto', position: 'relative', minWidth: 0 },
   rightRail: {
     width: 288,
     flexShrink: 0,

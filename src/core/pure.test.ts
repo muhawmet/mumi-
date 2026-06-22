@@ -21,7 +21,7 @@ const baseInput: BriefInput = {
   cast: 'İkisi',
   selectedWorldId: 'clay',
   selectedPropId: 'native_world',
-  selectedRefId: '',
+  selectedRefIds: [],
   selectedPaletteId: '',
   selectedMusicId: '',
   imageModel: 'midjourney_v7',
@@ -40,6 +40,17 @@ describe('DATA shape', () => {
       expect(w.id).toBeTruthy();
       expect(w.name).toBeTruthy();
       expect(w.render).toBeTruthy();
+    }
+  });
+
+  it('every reference has id + name + cat + use + avoid + dna', () => {
+    for (const r of DATA.refs) {
+      expect(typeof r.id).toBe('string');
+      expect(typeof r.name).toBe('string');
+      expect(typeof r.cat).toBe('string');
+      expect(typeof r.use).toBe('string');
+      expect(typeof r.avoid).toBe('string');
+      expect(typeof r.dna).toBe('string');
     }
   });
 });

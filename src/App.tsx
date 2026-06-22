@@ -25,18 +25,20 @@ const stepVariants = {
 function App() {
   const currentStep = useStudioStore((state) => state.currentStep);
   const advance = useStudioStore((state) => state.advance);
+  const generateScenes = useStudioStore((state) => state.generateScenes);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const isCmd = e.metaKey || e.ctrlKey;
       if (isCmd && e.key === 'Enter') {
         e.preventDefault();
-        advance();
+        if (currentStep === 'timeline') generateScenes();
+        else advance();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [advance]);
+  }, [advance, currentStep, generateScenes]);
 
   return (
     <AppLayout>

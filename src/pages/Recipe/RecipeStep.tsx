@@ -1,9 +1,8 @@
-import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { useStudioStore, recipeReadiness, type StudioState } from '../../store/useStudioStore';
-import { Panel, Field, Button, selectStyle, inputStyle } from '../../components/Layout/PanelKit';
-import { DATA, groupedRefs, groupedWorlds, deriveTeachingRecipe } from '../../core/pure';
-import { recommendReason, buildVariantBriefs, type AgentBriefCtx, type AgentBriefScene } from '../../core/brain';
+import { useState, useMemo, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
+import { Panel, Field, Button, selectStyle } from '../../components/Layout/PanelKit';
+import { DATA, groupedWorlds, deriveTeachingRecipe, SurgeryRef } from '../../core/pure';
 
 function worldGradient(colors?: string[]): string {
   if (!colors || colors.length === 0) return 'linear-gradient(135deg,#1a1a2e,#16213e)';
@@ -12,27 +11,140 @@ function worldGradient(colors?: string[]): string {
   return `linear-gradient(135deg,${stops.join(',')})`;
 }
 
+// Map categories to preview backgrounds based on the legacy CSS classes
+function getRefPreviewBackground(previewClass?: string): string {
+  const cls = previewClass || 'default';
+  const maps: Record<string, string> = {
+    blade: 'linear-gradient(135deg,#050507,#111827 48%,#f97316 140%)',
+    ship: 'linear-gradient(135deg,#47a3ff,#0b3b62 52%,#ffd166 140%)',
+    pop: 'linear-gradient(135deg,#ff3b80,#29d3ff,#ffe45c)',
+    tactile: 'linear-gradient(135deg,#2b1a2e,#c084fc,#fef3c7)',
+    graphic: 'linear-gradient(135deg,#111827,#facc15,#ef4444)',
+    openair: 'linear-gradient(135deg,#a7f3d0,#38bdf8,#fef3c7)',
+    gothic: 'linear-gradient(135deg,#16120b,#a16207,#020617)',
+    ashen: 'linear-gradient(135deg,#111827,#57534e,#f97316)',
+    gothicblue: 'linear-gradient(135deg,#020617,#1e3a8a,#111827)',
+    cyberpunk: 'linear-gradient(135deg,#050014,#facc15,#22d3ee,#be185d)',
+    tactical: 'linear-gradient(135deg,#111827,#14b8a6,#f97316)',
+    fantasy: 'linear-gradient(135deg,#312e81,#f59e0b,#0f172a)',
+    underworld: 'linear-gradient(135deg,#0f172a,#991b1b,#166534)',
+    silhouette: 'linear-gradient(135deg,#020617,#0f766e,#111827)',
+    glowforest: 'linear-gradient(135deg,#020617,#22d3ee,#a78bfa)',
+    monument: 'linear-gradient(135deg,#fbcfe8,#bfdbfe,#fde68a)',
+    persona: 'linear-gradient(135deg,#000,#ef4444,#fff)',
+    rhythm: 'linear-gradient(135deg,#1d4ed8,#f97316,#facc15)',
+    whitecity: 'linear-gradient(135deg,#fff,#ef4444,#111827)',
+    deco: 'linear-gradient(135deg,#0f172a,#0e7490,#a16207)',
+    lab: 'linear-gradient(135deg,#fff,#f97316,#3b82f6)',
+    western: 'linear-gradient(135deg,#f59e0b,#92400e,#111827)',
+    overgrown: 'linear-gradient(135deg,#14532d,#84cc16,#334155)',
+    lonely: 'linear-gradient(135deg,#030712,#475569,#94a3b8)',
+    nordic: 'linear-gradient(135deg,#0f172a,#93c5fd,#f59e0b)',
+    technature: 'linear-gradient(135deg,#166534,#f97316,#0f172a)',
+    elemental: 'linear-gradient(135deg,#60a5fa,#f9a8d4,#facc15)',
+    voxel: 'linear-gradient(135deg,#16a34a,#854d0e,#60a5fa)',
+    icon: 'linear-gradient(135deg,#ef4444,#60a5fa,#f8fafc)',
+    cozy: 'linear-gradient(135deg,#fde68a,#bbf7d0,#fbcfe8)',
+    pixel: 'linear-gradient(135deg,#7c2d12,#22c55e,#60a5fa)',
+    default: 'linear-gradient(135deg,#111827,#f5c84233)'
+  };
+  return maps[cls] || maps['default'];
+}
+
+const normalize = (s: string) => {
+  return s.toLocaleLowerCase('tr-TR')
+    .replace(/g/g, 'g').replace(/ğ/g, 'g')
+    .replace(/u/g, 'u').replace(/ü/g, 'u')
+    .replace(/s/g, 's').replace(/ş/g, 's')
+    .replace(/i/g, 'i').replace(/ı/g, 'i')
+    .replace(/o/g, 'o').replace(/ö/g, 'o')
+    .replace(/c/g, 'c').replace(/ç/g, 'c');
+};
+
+function searchMatch(ref: SurgeryRef, q: string): boolean {
+  if (!q) return true;
+  const terms = normalize(q).split(' ').filter(Boolean);
+  const target = normalize([ref.name, ref.id, ref.cat, ref.dna, ref.use, ref.avoid, ref.anchor].filter(Boolean).join(' '));
+  return terms.every(t => target.includes(t));
+}
+
 export const RecipeStep = () => {
   const {
     selectedWorldId,
     selectedPropId,
-    selectedRefId,
+    selectedRefIds,
     selectedPaletteId,
-    brandKitLock,
     setField,
     setCurrentStep,
     advance,
   } = useStudioStore();
 
-  const [variants, setVariants] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCat, setActiveCat] = useState<string | null>(null);
+  const [showLimit, setShowLimit] = useState(24);
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [selectedDetailRefId, setSelectedDetailRefId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (selectedDetailRefId) {
+      const el = document.getElementById('hero-detail-panel');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        el.focus();
+      }
+    }
+  }, [selectedDetailRefId]);
 
   const worldGroups = useMemo(() => groupedWorlds(), []);
-  const refGroups = useMemo(() => groupedRefs(), []);
   const selectedWorld = DATA.worlds.find((w) => w.id === selectedWorldId);
   const selectedPalette = DATA.palettes.find((p) => p.id === selectedPaletteId);
-  const selectedRef = DATA.refs.find((r) => r.id === selectedRefId);
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
-  const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefId });
+  const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefIds });
+
+  const categories = useMemo(() => {
+    const cats = new Map<string, number>();
+    DATA.refs.forEach(r => {
+      const c = r.cat || 'other';
+      cats.set(c, (cats.get(c) || 0) + 1);
+    });
+    return Array.from(cats.entries()).sort((a, b) => b[1] - a[1]);
+  }, []);
+
+  const filteredRefs = useMemo(() => {
+    let list = DATA.refs;
+    if (activeCat) list = list.filter(r => r.cat === activeCat);
+    if (searchQuery) list = list.filter(r => searchMatch(r, searchQuery));
+    return list;
+  }, [activeCat, searchQuery]);
+
+  const toggleRef = (id: string) => {
+    setToastMsg(null);
+    const r = DATA.refs.find(x => x.id === id);
+    if (!r) return;
+
+    let next = [...(selectedRefIds || [])];
+    if (next.includes(id)) {
+      next = next.filter(x => x !== id);
+    } else {
+      const mismatch = r.worldId && selectedWorldId && r.worldId !== selectedWorldId;
+      if (mismatch) {
+        setToastMsg('Seçili Dünya ile uyumsuz referans eklenemez.');
+        setTimeout(() => setToastMsg(null), 3000);
+        return;
+      }
+      if (next.length >= 3) {
+        setToastMsg('Maximum 3 Referans DNA seçilebilir. Birini çıkarmalısınız.');
+        setTimeout(() => setToastMsg(null), 3000);
+        return;
+      }
+      next.push(id);
+    }
+    setField('selectedRefIds', next);
+  };
+
+  const removeRef = (id: string) => {
+    setField('selectedRefIds', (selectedRefIds || []).filter(x => x !== id));
+  };
 
   return (
     <div className="recipe-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
@@ -43,6 +155,12 @@ export const RecipeStep = () => {
           Dünya yetkilidir; Reference DNA ona tabidir. Palet, dünya rengini ezerse "USER_PALETTE" olarak işaretlenir.
         </p>
       </header>
+
+      {toastMsg && (
+        <div role="status" aria-live="polite" style={{ position: 'fixed', bottom: 20, left: '50%', transform: 'translateX(-50%)', background: 'var(--gold)', color: '#000', padding: '12px 24px', borderRadius: 99, fontWeight: 700, zIndex: 100, boxShadow: '0 10px 40px rgba(0,0,0,0.5)' }}>
+          {toastMsg}
+        </div>
+      )}
 
       <Panel
         title={`Vizyonel dünya (${DATA.worlds.length})`}
@@ -116,50 +234,353 @@ export const RecipeStep = () => {
         )}
       </Panel>
 
-      <div className="recipe-controls-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-        <Panel title="Reference DNA" subtitle={`${DATA.refs.length} kayıt · subordinate to world`}>
-          <Field label="Referans">
-            <select style={selectStyle} value={selectedRefId} onChange={(e) => setField('selectedRefId', e.target.value)}>
-              <option value="" style={{ background: '#0d1018' }}>(yok)</option>
-              {Object.entries(refGroups).map(([cat, list]) => (
-                <optgroup key={cat} label={cat.toUpperCase()} style={{ background: '#0d1018' }}>
-                  {list.map((r) => (
-                    <option key={r.id} value={r.id} style={{ background: '#0d1018' }}>
-                      {r.name}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-            </select>
-          </Field>
-          {selectedRef && selectedWorld && (
-            <div style={{ marginTop: 12, padding: 12, background: 'rgba(247,201,72,.1)', border: '1px solid rgba(247,201,72,.3)', borderRadius: 8, fontSize: 12, color: 'var(--gold)', lineHeight: 1.5 }}>
-              <strong style={{ display: 'block', marginBottom: 4 }}>Akıllı Öneri:</strong> 
-              {recommendReason(selectedWorld, selectedRef)}
-            </div>
-          )}
-        </Panel>
+      {/* Reference DNA Full Width Vault */}
+      <Panel title="Reference DNA" subtitle="Max 3 reference mix. First selected is primary.">
 
-        <Panel title="Tactile recipe" subtitle="Dünya tactile değilse 'world-native' kalır.">
-          <Field label="Override">
-            <select style={selectStyle} value={selectedPropId} onChange={(e) => setField('selectedPropId', e.target.value)}>
-              <option value="native_world" style={{ background: '#0d1018' }}>Dünya kararı (otomatik)</option>
-              <option value="paper" style={{ background: '#0d1018' }}>paper</option>
-              <option value="clay" style={{ background: '#0d1018' }}>clay</option>
-              <option value="wood" style={{ background: '#0d1018' }}>wood</option>
-              <option value="fabric" style={{ background: '#0d1018' }}>fabric</option>
-              <option value="shadow-puppet" style={{ background: '#0d1018' }}>shadow-puppet</option>
-              <option value="paper-theater" style={{ background: '#0d1018' }}>paper-theater</option>
-              <option value="stained-glass" style={{ background: '#0d1018' }}>stained-glass</option>
-            </select>
-          </Field>
-          {recipe && (
-            <div style={{ marginTop: 12, fontSize: 12, color: 'var(--text-muted)' }}>
-              Aktif: <strong style={{ color: 'var(--gold)' }}>{recipe.id}</strong> · {recipe.source}
-            </div>
-          )}
-        </Panel>
-      </div>
+        {/* Active Slots */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12, marginBottom: 24 }}>
+          {[0, 1, 2].map((i) => {
+            const id = (selectedRefIds || [])[i];
+            const r = id ? DATA.refs.find(x => x.id === id) : null;
+            const isPrimary = i === 0 && r;
+            return (
+              <div key={i} style={{
+                border: r ? (i === 0 ? '2px solid var(--gold)' : '1px solid var(--line2)') : '1px dashed var(--line2)',
+                background: r ? (i === 0 ? 'rgba(247,201,72,.08)' : 'rgba(0,0,0,.2)') : 'rgba(0,0,0,.1)',
+                borderRadius: 12,
+                padding: 16,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+                minHeight: 120,
+                boxShadow: isPrimary ? '0 0 15px rgba(247,201,72,.15)' : 'none'
+              }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: r ? 'var(--gold)' : 'var(--text-muted)', letterSpacing: 1 }}>
+                  SLOT {i + 1} {isPrimary ? '· PRIMARY DNA' : ''}
+                </div>
+                {r ? (
+                  <>
+                    <div style={{ fontWeight: 800, fontSize: 14 }}>{r.name}</div>
+                    <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{r.cat}</div>
+                    <button
+                      onClick={() => removeRef(r.id)}
+                      style={{
+                        position: 'absolute',
+                        top: 12,
+                        right: 12,
+                        background: 'rgba(255,80,80,.1)',
+                        color: 'var(--red)',
+                        border: '1px solid rgba(255,80,80,.2)',
+                        borderRadius: 6,
+                        padding: '10px 14px',
+                        fontSize: 10,
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        minHeight: 44,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      Kaldır
+                    </button>
+                    {r.worldId && selectedWorldId && r.worldId !== selectedWorldId && (
+                      <div style={{ fontSize: 10, color: 'var(--red)', fontWeight: 700, marginTop: 'auto' }}>UYUMSUZ / EXPORT DIŞI</div>
+                    )}
+                  </>
+                ) : (
+                  <div style={{ color: 'var(--text-muted)', fontSize: 12, marginTop: 'auto', marginBottom: 'auto', textAlign: 'center' }}>
+                    Boş Slot
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Selected Detail Hero Area */}
+        <AnimatePresence>
+          {selectedDetailRefId && (() => {
+            const r = DATA.refs.find(x => x.id === selectedDetailRefId);
+            if (!r) return null;
+            const selected = (selectedRefIds || []).includes(r.id);
+            const isPrimary = (selectedRefIds || [])[0] === r.id;
+            const mismatch = Boolean(r.worldId && selectedWorldId && r.worldId !== selectedWorldId);
+
+            return (
+              <motion.div
+                id="hero-detail-panel"
+                tabIndex={-1}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                style={{
+                  background: 'rgba(247,201,72,.06)',
+                  border: '1px solid var(--gold)',
+                  borderRadius: 14,
+                  padding: 20,
+                  marginBottom: 24,
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 32px rgba(247,201,72,.08)',
+                  outline: 'none'
+                }}
+              >
+                <button
+                  onClick={() => setSelectedDetailRefId(null)}
+                  style={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'var(--text-muted)',
+                    cursor: 'pointer',
+                    fontSize: 16,
+                    minHeight: 44,
+                    minWidth: 44,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                  aria-label="Detayı kapat"
+                >
+                  ✕
+                </button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingRight: 40 }}>
+                  <div>
+                    <div style={{ fontSize: 10, color: 'var(--gold)', fontWeight: 700, letterSpacing: 2 }}>{r.cat.toUpperCase()} DETAYI</div>
+                    <h2 style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginTop: 4, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                      {r.name}
+                      {isPrimary && <span style={{ fontSize: 10, background: 'var(--gold)', color: '#000', padding: '4px 8px', borderRadius: 4, fontWeight: 800 }}>PRIMARY DNA</span>}
+                      {mismatch && <span style={{ fontSize: 10, background: 'var(--red)', color: '#fff', padding: '4px 8px', borderRadius: 4, fontWeight: 800 }}>UYUMSUZ / EXPORT DIŞI</span>}
+                    </h2>
+                  </div>
+
+                  {r.dna && (
+                    <div>
+                      <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold)', marginBottom: 2 }}>TAM DNA DIRECTIVE</div>
+                      <div style={{ fontSize: 13, color: '#fff', lineHeight: 1.5, background: 'rgba(0,0,0,.3)', padding: 12, borderRadius: 8 }}>{r.dna}</div>
+                    </div>
+                  )}
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+                    {r.use && (
+                      <div>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', marginBottom: 2 }}>USE (Kullanılacaklar)</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.5, background: 'rgba(77,245,160,.04)', padding: 10, borderRadius: 8 }}>{r.use}</div>
+                      </div>
+                    )}
+                    {r.avoid && (
+                      <div>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', marginBottom: 2 }}>AVOID (Kaçınılacaklar)</div>
+                        <div style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.5, background: 'rgba(255,80,80,.04)', padding: 10, borderRadius: 8 }}>{r.avoid}</div>
+                      </div>
+                    )}
+                  </div>
+
+                  {mismatch && r.worldId && (
+                    <div style={{ fontSize: 12, color: 'var(--red)', fontWeight: 700, background: 'rgba(255,80,80,.06)', padding: 10, borderRadius: 8, border: '1px solid rgba(255,80,80,.2)' }}>
+                      ⚠ UYUMSUZLUK: Bu referans sadece "{r.worldId}" dünyasında çalışmak üzere tasarlanmıştır. Aktif dünya "{selectedWorldId}" olduğu için bu referans aktif mix'e eklenemez ve batch üretimine dahil edilemez.
+                    </div>
+                  )}
+
+                  <div style={{ display: 'flex', gap: 10, marginTop: 8 }}>
+                    <button
+                      onClick={() => toggleRef(r.id)}
+                      disabled={!selected && mismatch}
+                      style={{
+                        background: selected ? 'var(--red)' : (!selected && mismatch) ? 'var(--s1)' : 'var(--gold)',
+                        color: selected ? '#fff' : '#000',
+                        border: 'none',
+                        padding: '12px 24px',
+                        borderRadius: 8,
+                        fontSize: 13,
+                        fontWeight: 800,
+                        cursor: (!selected && mismatch) ? 'not-allowed' : 'pointer',
+                        minHeight: 44,
+                        opacity: (!selected && mismatch) ? 0.5 : 1
+                      }}
+                    >
+                      {selected ? 'Referansı Kaldır' : 'Mix\'e Ekle'}
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })()}
+        </AnimatePresence>
+
+        {/* Vault Controls */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 16, alignItems: 'center' }}>
+          <input
+            type="text"
+            placeholder="DNA, id, özellik ara..."
+            value={searchQuery}
+            onChange={(e) => { setSearchQuery(e.target.value); setShowLimit(24); }}
+            style={{ flex: 1, minWidth: 240, background: 'var(--s2)', border: '1px solid var(--line2)', padding: '10px 14px', borderRadius: 8, color: '#fff', fontSize: 14 }}
+          />
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--gold)', background: 'var(--goldsoft)', padding: '8px 14px', borderRadius: 8, border: '1px solid var(--gold)' }}>
+            {(selectedRefIds || []).length}/3 SEÇİLİ
+          </div>
+        </div>
+
+        {/* Categories */}
+        <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 12, marginBottom: 16, scrollbarWidth: 'none', maxWidth: '100%', WebkitOverflowScrolling: 'touch' }}>
+          <button
+            onClick={() => { setActiveCat(null); setShowLimit(24); }}
+            style={{ padding: '6px 12px', borderRadius: 20, fontSize: 12, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap',
+              background: activeCat === null ? 'var(--gold)' : 'var(--s2)',
+              color: activeCat === null ? '#000' : 'var(--text-muted)',
+              border: activeCat === null ? '1px solid var(--gold)' : '1px solid var(--line2)'
+            }}
+          >
+            Tümü ({DATA.refs.length})
+          </button>
+          {categories.map(([cat, count]) => (
+            <button
+              key={cat}
+              onClick={() => { setActiveCat(cat); setShowLimit(24); }}
+              style={{ padding: '6px 12px', borderRadius: 20, fontSize: 12, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap',
+                background: activeCat === cat ? 'var(--gold)' : 'var(--s2)',
+                color: activeCat === cat ? '#000' : 'var(--text-muted)',
+                border: activeCat === cat ? '1px solid var(--gold)' : '1px solid var(--line2)'
+              }}
+            >
+              {cat} ({count})
+            </button>
+          ))}
+        </div>
+
+        {/* Results Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 14 }}>
+          <AnimatePresence>
+            {filteredRefs.slice(0, showLimit).map(r => {
+              const selected = (selectedRefIds || []).includes(r.id);
+              const isPrimary = (selectedRefIds || [])[0] === r.id;
+              const mismatch = Boolean(r.worldId && selectedWorldId && r.worldId !== selectedWorldId);
+
+              return (
+                <motion.div
+                  layout
+                  key={r.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  onClick={() => setSelectedDetailRefId(r.id)}
+                  style={{
+                    background: selected ? 'linear-gradient(180deg,rgba(247,201,72,.08),rgba(0,0,0,.2))' : 'linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.2))',
+                    border: selected ? '1px solid var(--gold)' : '1px solid var(--line2)',
+                    borderRadius: 14,
+                    overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    boxShadow: selected ? '0 0 20px rgba(247,201,72,.1)' : '0 4px 20px rgba(0,0,0,.2)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <div style={{ height: 90, background: getRefPreviewBackground(r.preview), position: 'relative' }}>
+                    {r.anchor && (
+                      <div style={{ position: 'absolute', bottom: 6, left: 10, right: 10, fontSize: 9, fontWeight: 800, background: 'rgba(0,0,0,.6)', padding: '4px 6px', borderRadius: 6, color: '#fff' }}>
+                        {r.anchor}
+                      </div>
+                    )}
+                  </div>
+                  <div style={{ padding: 14, flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <div>
+                      <div style={{ fontSize: 10, color: 'var(--text-muted)', fontWeight: 700 }}>{r.cat}</div>
+                      <div style={{ fontSize: 14, fontWeight: 800, color: selected ? 'var(--gold)' : '#fff' }}>{r.name}</div>
+                    </div>
+                    {r.dna && <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.4 }}>{r.dna}</div>}
+
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 'auto', paddingTop: 8 }}>
+                      {r.use && <span style={{ fontSize: 10, background: 'rgba(77,245,160,.1)', color: 'var(--green)', padding: '3px 6px', borderRadius: 4, fontWeight: 700 }}>USE: {r.use.slice(0,40)}...</span>}
+                      {r.avoid && <span style={{ fontSize: 10, background: 'rgba(255,80,80,.1)', color: 'var(--red)', padding: '3px 6px', borderRadius: 4, fontWeight: 700 }}>AVOID: {r.avoid.slice(0,30)}...</span>}
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--line2)', paddingTop: 10, marginTop: 4 }}>
+                      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setSelectedDetailRefId(r.id); }}
+                          aria-label={`Detay: ${r.name}`}
+                          style={{
+                            background: 'transparent',
+                            color: 'var(--text-muted)',
+                            border: '1px solid var(--line2)',
+                            padding: '10px 16px',
+                            borderRadius: 8,
+                            fontSize: 11,
+                            fontWeight: 800,
+                            cursor: 'pointer',
+                            minHeight: 44,
+                          }}
+                        >
+                          Detay
+                        </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); toggleRef(r.id); }}
+                          disabled={!selected && mismatch}
+                          aria-label={!selected && mismatch ? `${r.name} seçili dünya ile uyumsuz olduğu için eklenemez` : undefined}
+                          title={!selected && mismatch ? "Bu referans seçili Dünya ile uyumsuz olduğu için eklenemez." : undefined}
+                          style={{
+                            background: selected ? 'var(--goldsoft)' : (!selected && mismatch) ? 'var(--s1)' : 'var(--s3)',
+                            color: (!selected && mismatch) ? 'var(--text-muted)' : selected ? 'var(--gold)' : '#fff',
+                            border: selected ? '1px solid var(--gold)' : '1px solid var(--line2)',
+                            padding: '10px 16px',
+                            borderRadius: 8,
+                            fontSize: 11,
+                            fontWeight: 800,
+                            cursor: (!selected && mismatch) ? 'not-allowed' : 'pointer',
+                            opacity: (!selected && mismatch) ? 0.5 : 1,
+                            minHeight: 44,
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          {selected ? 'Çıkar' : 'Ekle'}
+                        </button>
+                      </div>
+
+                      {isPrimary && <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--gold)' }}>PRIMARY</span>}
+                      {mismatch && <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--red)' }}>UYUMSUZ / EXPORT DIŞI</span>}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
+        {filteredRefs.length > showLimit && (
+          <div style={{ textAlign: 'center', marginTop: 24 }}>
+            <Button variant="ghost" onClick={() => setShowLimit(s => s + 24)}>Daha fazla göster ({filteredRefs.length - showLimit})</Button>
+          </div>
+        )}
+        {filteredRefs.length === 0 && (
+          <div style={{ textAlign: 'center', padding: 40, color: 'var(--text-muted)' }}>Sonuç bulunamadı.</div>
+        )}
+      </Panel>
+
+      <Panel title="Tactile recipe" subtitle="Dünya tactile değilse 'world-native' kalır.">
+        <Field label="Override">
+          <select style={selectStyle} value={selectedPropId} onChange={(e) => setField('selectedPropId', e.target.value)}>
+            <option value="native_world" style={{ background: '#0d1018' }}>Dünya kararı (otomatik)</option>
+            <option value="paper" style={{ background: '#0d1018' }}>paper</option>
+            <option value="clay" style={{ background: '#0d1018' }}>clay</option>
+            <option value="wood" style={{ background: '#0d1018' }}>wood</option>
+            <option value="fabric" style={{ background: '#0d1018' }}>fabric</option>
+            <option value="shadow-puppet" style={{ background: '#0d1018' }}>shadow-puppet</option>
+            <option value="paper-theater" style={{ background: '#0d1018' }}>paper-theater</option>
+            <option value="stained-glass" style={{ background: '#0d1018' }}>stained-glass</option>
+          </select>
+        </Field>
+        {recipe && (
+          <div style={{ marginTop: 12, fontSize: 12, color: 'var(--text-muted)' }}>
+            Aktif: <strong style={{ color: 'var(--gold)' }}>{recipe.id}</strong> · {recipe.source}
+          </div>
+        )}
+      </Panel>
 
       <Panel title={`Palet (${DATA.palettes.length})`} subtitle="Dünya paletini ezerse Brief'te 'USER_PALETTE' işaretlenir.">
         <div
@@ -238,52 +659,7 @@ export const RecipeStep = () => {
         </div>
       )}
 
-      <div className="recipe-controls-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginTop: 24 }}>
-        <Panel title="Brand Kit Lock" subtitle="Marka kimliğini Ajan Brief'ine kilitler">
-          <textarea
-            value={brandKitLock}
-            onChange={(e) => setField('brandKitLock', e.target.value)}
-            placeholder="Verbatim Brand Name: Acme. Colors: #ff0000. Font: Inter. (Boş bırakırsanız kilitsiz)"
-            style={{ width: '100%', minHeight: 80, ...inputStyle, resize: 'vertical' }}
-          />
-        </Panel>
-
-        <Panel title="Kreatif Varyant Testi (A/B/C)" subtitle="Seçili DNA üzerinden 3 varyant üretir">
-          <div style={{ display: 'flex', gap: 12 }}>
-            <Button variant="ghost" onClick={() => {
-              const state = useStudioStore.getState();
-              if (!state.selectedWorldId) return;
-              const ctx: AgentBriefCtx = {
-                projectTopic: state.projectTopic, productionPath: state.projectClass, register: 'REAL',
-                world: selectedWorld!, palette: selectedPalette, dna: { names: '', camera: '', light: '', staging: '', motion: '', texture: '', avoid: '' }, cast: state.cast, projectKind: state.projectKind, brandKitLock: state.brandKitLock
-              };
-              const alts = [selectedWorld, DATA.worlds[0], DATA.worlds[1]];
-              setVariants(buildVariantBriefs(ctx, [], 'world', alts).map(v => v.slice(0, 150) + '...'));
-            }}>Dünya Varyantı (Mock)</Button>
-            <Button variant="ghost" onClick={() => {
-              const state = useStudioStore.getState();
-              if (!state.selectedPaletteId) return;
-              const ctx: AgentBriefCtx = {
-                projectTopic: state.projectTopic, productionPath: state.projectClass, register: 'REAL',
-                world: selectedWorld!, palette: selectedPalette, dna: { names: '', camera: '', light: '', staging: '', motion: '', texture: '', avoid: '' }, cast: state.cast, projectKind: state.projectKind, brandKitLock: state.brandKitLock
-              };
-              const alts = [selectedPalette, DATA.palettes[0], DATA.palettes[1]];
-              setVariants(buildVariantBriefs(ctx, [], 'palette', alts).map(v => v.slice(0, 150) + '...'));
-            }}>Palet Varyantı (Mock)</Button>
-          </div>
-          {variants.length > 0 && (
-            <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {variants.map((v, i) => (
-                <div key={i} style={{ padding: 8, background: 'rgba(0,0,0,.3)', borderRadius: 6, fontSize: 10, fontFamily: 'monospace', color: '#888' }}>
-                  <strong style={{ color: 'var(--gold)' }}>Varyant {['A', 'B', 'C'][i]}:</strong> {v}
-                </div>
-              ))}
-            </div>
-          )}
-        </Panel>
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, marginBottom: 40 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginTop: 12, marginBottom: 40 }}>
         <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>← Brief'e dön</Button>
         <Button onClick={() => advance()} disabled={!readiness.ready}>
           Sahneler'e geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>

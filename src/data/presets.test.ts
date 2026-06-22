@@ -38,9 +38,9 @@ describe('Phase 0 presets', () => {
         preset.sets.projectClass || '',
         preset.sets.selectedWorldId || '',
       );
-      const refId = preset.sets.selectedRefId || defaults.selectedRefId;
+      const refIdArray = preset.sets.selectedRefIds || defaults.selectedRefIds;
       const paletteId = preset.sets.selectedPaletteId || defaults.selectedPaletteId;
-      expect(refIds.has(refId), `${preset.id} -> no valid reference default`).toBe(true);
+      expect(refIdArray.length > 0 && refIdArray.every(id => refIds.has(id)), `${preset.id} -> no valid reference default`).toBe(true);
       expect(paletteIds.has(paletteId), `${preset.id} -> no valid palette default`).toBe(true);
     }
   });

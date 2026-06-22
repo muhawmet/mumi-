@@ -17,7 +17,7 @@ test('Beat Planner renders and mode switch changes numbers', async ({ page }) =>
 
   // Recipe Step
   // Select a valid reference DNA to pass the gate
-  await page.locator('select').first().selectOption('pixar_dimensional');
+  await page.getByRole('button', { name: 'Ekle' }).first().click();
   
   // Wait for the button to be enabled (readiness passed).
   await page.click('button:has-text("Sahneler\'e geç →")');

@@ -2464,6 +2464,776 @@
       "dna": "pop appetite, burger geometry",
       "preview": "food",
       "anchor": "fast food pop"
+    },
+    {
+      "id": "arcane_zaun_dna",
+      "name": "Arcane Zaun Dark",
+      "cat": "Stylized Premium",
+      "use": "Dark drama, undercity atmosphere, corruption themes, mature content",
+      "avoid": "Copying Vi/Jinx/Silco likenesses, actual League of Legends lore",
+      "dna": "Fortiche oil-paint strokes on every surface, toxic purple-green atmospheric haze, ember warm practicals, deep shadow masses, NO clean surfaces, mature angular staging",
+      "preview": "underworld",
+      "anchor": "Zaun painterly haze"
+    },
+    {
+      "id": "arcane_piltover_dna",
+      "name": "Arcane Piltover Gold",
+      "cat": "Stylized Premium",
+      "use": "Power, technology, prestige, order-vs-chaos themes",
+      "avoid": "Copying specific Piltover character designs",
+      "dna": "Fortiche golden hex-tech glow, warm brass architectural painterly surfaces, teal-gold color war, prestige top-down light, mechanical clockwork detail with painterly brushwork",
+      "preview": "deco",
+      "anchor": "hex-tech prestige"
+    },
+    {
+      "id": "verse_miles_dna",
+      "name": "Spider-Verse Miles Grammar",
+      "cat": "Stylized Premium",
+      "use": "Youth energy, courage, identity, street culture aesthetic",
+      "avoid": "Spider-Man character, webs, Marvel logos, Miles Morales likeness",
+      "dna": "Warm halftone Ben-Day dots (orange/red), spray paint texture overlays, bold ink contours, frame-skip rhythm on motion (2-3 frame holds), offset color registration, 2.5D layered depth, kinetic negative space",
+      "preview": "graphic",
+      "anchor": "warm halftone city"
+    },
+    {
+      "id": "verse_gwen_dna",
+      "name": "Spider-Verse Gwen Watercolor",
+      "cat": "Stylized Premium",
+      "use": "Creativity, music, art topics, self-expression, softer emotional content",
+      "avoid": "Gwen Stacy likeness, Spider-Woman costume, Marvel IP",
+      "dna": "Watercolor wash backgrounds, soft pink-teal-white palette, clean ink outlines over painted fills, pastel radial spotlight, gentle offset registration, pop-art flat areas",
+      "preview": "dream",
+      "anchor": "pastel watercolor pop"
+    },
+    {
+      "id": "verse_noir_dna",
+      "name": "Spider-Verse Noir 1940s",
+      "cat": "Stylized Premium",
+      "use": "Mystery, history, deduction, logic, detective reasoning",
+      "avoid": "Spider-Noir character, film noir IP copy",
+      "dna": "True black-and-white value staging, 1940s detective film grammar, crosshatch shadow patterns, Art Deco architectural elements, dramatic low-angle, ink-wash atmosphere, single amber accent element only",
+      "preview": "noir",
+      "anchor": "black-white amber noir"
+    },
+    {
+      "id": "demon_slayer_dna",
+      "name": "Demon Slayer ufotable Grammar",
+      "cat": "Anime Action",
+      "use": "Focus, discipline, mastery, physical effort, determination, emotional resolve",
+      "avoid": "Actual Demon Slayer characters (Tanjiro, Nezuko, etc.), breathing form names, Mugen Train",
+      "dna": "Abstract fluid breathing-pattern overlay (water ripple or flame shape — no IP), 3D-assisted detailed BG painting, wisteria-purple + sunset-orange palette, emotional golden hour light, clean silhouette against painterly BG, elemental particle settle",
+      "preview": "elemental",
+      "anchor": "elemental discipline"
+    },
+    {
+      "id": "jjk_dna",
+      "name": "JJK Cursed Energy Grammar",
+      "cat": "Anime Action",
+      "use": "Moral dilemma, hidden forces, power and responsibility, abstract concept visualization",
+      "avoid": "Gojo, Itadori, actual Domain Expansion names, Cursed Spirit designs",
+      "dna": "Abstract purple-black fractal flame aura (no IP copy), heavy dark shadow masses with energy rim, expressive ink speed lines, high-contrast face from below, modern urban night staging, gritty atmosphere",
+      "preview": "curse",
+      "anchor": "abstract cursed energy"
+    },
+    {
+      "id": "mha_dna",
+      "name": "MHA Hero Panel Grammar",
+      "cat": "Anime Action",
+      "use": "Courage, heroism, effort, \"I can do it\" content, sports, achievement",
+      "avoid": "Specific hero costumes (All Might, Deku, etc.), Quirk names, UA High School",
+      "dna": "Hero silhouette against sky/light BG, bold speed lines radiating from power point, upward dramatic angle, inspirational staging, clean cel shading, panel border aesthetic, determined expression staging",
+      "preview": "aura",
+      "anchor": "hero panel energy"
+    },
+    {
+      "id": "arcane_clay_hybrid",
+      "name": "Arcane × Clay Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Dark topics handled warmly for children, values drama, moral storytelling, history with weight",
+      "avoid": "Actual Arcane/League IP, dark/violent tone — keep educational warmth",
+      "dna": "Clay prop material + Fortiche painterly lighting — warm amber arcane light on clay surfaces, oil-paint brushwork texture applied to clay diorama, miniature staging (camera stays outside), no toxic palette — educational amber warmth",
+      "preview": "tactile",
+      "anchor": "amber clay drama"
+    },
+    {
+      "id": "verse_paper_hybrid",
+      "name": "Spider-Verse × Paper Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Language with energy, math reveals, science discoveries needing impact and clarity",
+      "avoid": "Actual Marvel IP, violent Spider-Man content",
+      "dna": "Paper cutout material + halftone texture printed on layers, bold ink outlines on paper edges, panel energy lines from within the paper world, bright primary color paper with Ben-Day dots, camera outside miniature",
+      "preview": "graphic",
+      "anchor": "paper halftone lesson"
+    },
+    {
+      "id": "ghibli_felt_hybrid",
+      "name": "Ghibli × Felt Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Values, family, belonging, emotional topics, early childhood, empathy",
+      "avoid": "Copying Totoro, specific Ghibli characters",
+      "dna": "Felt/fabric diorama + Ghibli diffused warm light, stitched felt prop surfaces with organic soft Ghibli key light, no hard shadows, lived-in warmth, patchwork texture visible, supremely gentle",
+      "preview": "cozy",
+      "anchor": "felt wonder light"
+    },
+    {
+      "id": "anime_chalk_hybrid",
+      "name": "Anime × Chalk Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Math/science with IMPACT, dramatic reveals, topics needing maximum energy + clarity",
+      "avoid": "Copying specific anime character chalk drawings, too much violence energy",
+      "dna": "Chalk blackboard universe + anime energy lines on chalk drawings, speed lines and impact frames in chalk style, glowing chalk concept props, deep slate BG with chalk dust atmosphere",
+      "preview": "lab",
+      "anchor": "chalk impact frame"
+    },
+    {
+      "id": "setup_threepoint",
+      "name": "Three-Point Beauty Studio",
+      "cat": "Real Setup",
+      "use": "50-85mm; soft key + fill + hair/rim; controlled falloff; seamless or built set",
+      "avoid": "on-camera flash, muddy shadows, plastic skin",
+      "dna": "clean subject/product separation, sculpted form, neutral premium control",
+      "preview": "studio",
+      "anchor": "◐"
+    },
+    {
+      "id": "setup_window",
+      "name": "Window-Light Testimonial",
+      "cat": "Real Setup",
+      "use": "35-50mm at eye height; soft north-window key camera-left; gentle negative fill; real room depth",
+      "avoid": "beauty smoothing, fake bokeh, fake smile",
+      "dna": "honest skin texture, off-camera eyeline, documentary calm",
+      "preview": "window",
+      "anchor": "▤"
+    },
+    {
+      "id": "setup_tabletop",
+      "name": "Product Macro Tabletop",
+      "cat": "Real Setup",
+      "use": "90-100mm macro; single hard key + black/white flags; focus-stack feel; reflection control",
+      "avoid": "plastic CGI sheen, warped logo, extra props",
+      "dna": "surface fidelity, geometry lock, negative space, edge highlights",
+      "preview": "tabletop",
+      "anchor": "◆"
+    },
+    {
+      "id": "setup_verite",
+      "name": "Handheld Verite Doc",
+      "cat": "Real Setup",
+      "use": "35mm handheld micro-drift; available light; follow real action; no staging",
+      "avoid": "stabilized gloss, stock smiling, staged crowd",
+      "dna": "imperfect human truth, motivated grit, present-tense observation",
+      "preview": "verite",
+      "anchor": "╲"
+    },
+    {
+      "id": "setup_goldenhour_auto",
+      "name": "Golden-Hour Automotive",
+      "cat": "Real Setup",
+      "use": "24-35mm low; long warm sun rim; tracking + parallax; reflection pass on bodywork",
+      "avoid": "HDR halo, fake lens flare, CGI gloss",
+      "dna": "sculptural metal, controlled glare, scale and speed",
+      "preview": "goldenhour",
+      "anchor": "◜"
+    },
+    {
+      "id": "setup_highkey",
+      "name": "High-Key Fashion Studio",
+      "cat": "Real Setup",
+      "use": "85-105mm; bright even key; seamless white; crisp wardrobe weave",
+      "avoid": "clutter, low-contrast mud",
+      "dna": "graphic pose, clean negative space, editorial restraint",
+      "preview": "highkey",
+      "anchor": "□"
+    },
+    {
+      "id": "setup_lowkey",
+      "name": "Low-Key Chiaroscuro Portrait",
+      "cat": "Real Setup",
+      "use": "85mm; single hard key + deep falloff; Rembrandt cheek; negative fill",
+      "avoid": "flat fill, crushed black, beauty smoothing",
+      "dna": "sculpted shadow, one carved highlight, gravity and restraint",
+      "preview": "lowkey",
+      "anchor": "◑"
+    },
+    {
+      "id": "setup_neon_street",
+      "name": "Practical Neon Night Street",
+      "cat": "Real Setup",
+      "use": "35mm; practical sign sources; wet-asphalt reflection; motivated colour pools",
+      "avoid": "uniform neon wash, CGI haze, flat fog",
+      "dna": "real night density, colour from sources, layered depth",
+      "preview": "neonstreet",
+      "anchor": "▮"
+    },
+    {
+      "id": "setup_overcast",
+      "name": "Overcast Soft Daylight",
+      "cat": "Real Setup",
+      "use": "35-50mm; big soft sky source; low contrast; true colour",
+      "avoid": "flat boredom without a contrast accent",
+      "dna": "natural product/skin truth, even credible light",
+      "preview": "overcast",
+      "anchor": "▦"
+    },
+    {
+      "id": "setup_hardsun_desert",
+      "name": "Hard Sun Desert Commercial",
+      "cat": "Real Setup",
+      "use": "24mm; hard low/overhead sun; deep crisp shadows; restrained heat shimmer",
+      "avoid": "blown highlights, flare clutter",
+      "dna": "grand scale, raking texture, bold contrast",
+      "preview": "hardsun",
+      "anchor": "◇"
+    },
+    {
+      "id": "setup_tungsten",
+      "name": "Tungsten Interview Warmth",
+      "cat": "Real Setup",
+      "use": "50mm; warm practical key ~3200K; soft fill; practicals as background bokeh",
+      "avoid": "orange cast overload, fake bokeh balls",
+      "dna": "intimate credibility, warm honest skin, real office depth",
+      "preview": "tungsten",
+      "anchor": "◉"
+    },
+    {
+      "id": "setup_anamorphic",
+      "name": "Anamorphic Wide Landscape",
+      "cat": "Real Setup",
+      "use": "wide anamorphic; horizon discipline; oval bokeh; slow parallax",
+      "avoid": "tilted clutter, fake flare streaks",
+      "dna": "grand scale through restraint, clean horizon, negative space",
+      "preview": "anamorphic",
+      "anchor": "▭"
+    },
+    {
+      "id": "story_shonen_adventure",
+      "name": "Shonen Adventure Narrative Grammar",
+      "cat": "Story DNA",
+      "use": "crew-scale discovery, brave problem solving, friendship momentum, island-to-island curiosity",
+      "avoid": "protected characters, pirate logos, exact ship/world copy",
+      "dna": "One Piece-like adventure grammar: sunny scale, found-family energy, big promise at the horizon, comic courage before the reveal. IP-safe: no protected hero likeness, no pirate logo, no exact ship/world copy.",
+      "preview": "ship",
+      "anchor": "adventure timing"
+    },
+    {
+      "id": "story_soul_pressure",
+      "name": "Soul Pressure Reveal Grammar",
+      "cat": "Story DNA",
+      "use": "withheld energy, decisive transformation beat, sharp contrast, one clean reveal instead of visual noise",
+      "avoid": "direct character, sword, uniform, logo or world copy",
+      "dna": "Bleach-like narrative pressure: quiet stance, inner force building, one clean release, high-contrast black/amber timing. IP-safe: no protected hero likeness, weapon design, uniform or exact spirit-world copy.",
+      "preview": "blade",
+      "anchor": "pressure reveal"
+    },
+    {
+      "id": "story_product_desire",
+      "name": "Premium Product Desire Grammar",
+      "cat": "Story DNA",
+      "use": "object worship, macro proof, material seduction, reveal restraint",
+      "avoid": "trailer energy, fake luxury, education cues",
+      "dna": "Premium product narrative: desire comes from exact geometry, surface proof and one restrained reveal; no hype montage.",
+      "preview": "tabletop",
+      "anchor": "object desire"
+    },
+    {
+      "id": "story_civic_child_height",
+      "name": "Civic Child-Height Documentary Grammar",
+      "cat": "Story DNA",
+      "use": "child-height camera, public proof action, real street texture, quiet institutional trust",
+      "avoid": "stock civic montage, drone spectacle, staged smiles",
+      "dna": "Civic documentary narrative: one small human proof action makes the institution feel useful; no politician hero shot, no stock crowd.",
+      "preview": "verite",
+      "anchor": "human proof"
+    },
+    {
+      "id": "cinedna_golden",
+      "name": "Golden Hour Motivated Warmth",
+      "cat": "Cinematography",
+      "use": "long warm amber key low on the horizon, soft wrap, gentle haze, premium glow",
+      "avoid": "flat midday flatness, cold white balance",
+      "dna": "motivated low warm key, long amber shadows, soft falloff, gentle bloom, skin-true warmth",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_anamorphic",
+      "name": "Anamorphic Epic Scale",
+      "cat": "Cinematography",
+      "use": "wide anamorphic field, horizontal flares, atmosphere and light shafts, deep staging, sense of scale",
+      "avoid": "flat snapshot framing, no atmosphere",
+      "dna": "anamorphic width, oval bokeh, horizontal streak flares, haze depth cues, epic scale staging",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_noir",
+      "name": "Noir High-Contrast Night",
+      "cat": "Cinematography",
+      "use": "hard single key, deep crushed shadow, practical pools, wet specular",
+      "avoid": "even fill, flat grey",
+      "dna": "high-contrast chiaroscuro, hard key, deep shadow, selective practical light, moody falloff",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_tealorange",
+      "name": "Teal-Orange Commercial Balance",
+      "cat": "Cinematography",
+      "use": "warm skin against cool environment, clean studio control, glossy product light",
+      "avoid": "muddy mixed white balance",
+      "dna": "teal shadow / warm key balance, controlled gloss, clean separation, premium commercial polish",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_highkey",
+      "name": "High-Key Clean Studio",
+      "cat": "Cinematography",
+      "use": "bright even soft light, low contrast, airy white set, gentle shadow",
+      "avoid": "heavy shadow, moody darkness",
+      "dna": "high-key soft wrap, low contrast, bright clean field, minimal shadow, fresh airy mood",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_overcast",
+      "name": "Overcast Documentary Naturalism",
+      "cat": "Cinematography",
+      "use": "soft diffused daylight, true colour, observational realism, available light",
+      "avoid": "staged studio sheen, theatrical light",
+      "dna": "soft overcast key, even diffusion, naturalistic true colour, restrained handheld honesty",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_neonnight",
+      "name": "Neon Night Practical Pools",
+      "cat": "Cinematography",
+      "use": "saturated neon practicals, wet reflective street, colored pools of light",
+      "avoid": "daytime flatness, grey neutral",
+      "dna": "saturated neon practicals, magenta/cyan pools, wet specular reflections, moody night depth",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_hardkey",
+      "name": "Hard-Key Drama",
+      "cat": "Cinematography",
+      "use": "single hard source, sharp shadow edge, strong modeling, tense mood",
+      "avoid": "soft flat fill",
+      "dna": "hard directional key, crisp shadow edge, strong facial/object modeling, dramatic contrast",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_window",
+      "name": "Soft Window Light",
+      "cat": "Cinematography",
+      "use": "large soft side window source, gentle gradient falloff, intimate calm",
+      "avoid": "hard direct sun, harsh contrast",
+      "dna": "soft motivated window key from one side, gentle wrap, quiet intimate gradient",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_backlit",
+      "name": "Backlit Silhouette",
+      "cat": "Cinematography",
+      "use": "strong backlight rim, subject as shape, atmospheric separation",
+      "avoid": "flat frontal light",
+      "dna": "motivated backlight rim, silhouette read, haze separation, glowing edge",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_handheld",
+      "name": "Handheld Vérité Energy",
+      "cat": "Cinematography",
+      "use": "loose handheld frame, reactive reframing, real-moment immediacy",
+      "avoid": "locked sterile tripod feel",
+      "dna": "handheld micro-movement, reactive reframe, documentary immediacy, present-tense energy",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_symmetry",
+      "name": "Symmetrical Formal Frame",
+      "cat": "Cinematography",
+      "use": "centered symmetry, controlled formal composition, deliberate stillness",
+      "avoid": "random casual framing",
+      "dna": "centered symmetrical composition, formal balance, deliberate static control, graphic order",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_macro",
+      "name": "Macro Surface Intimacy",
+      "cat": "Cinematography",
+      "use": "extreme macro, shallow focus, tactile surface truth, micro detail",
+      "avoid": "wide generic establishing",
+      "dna": "macro proximity, shallow focus plane, tactile surface micro-detail, intimate scale",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_deepfocus",
+      "name": "Deep-Focus Landscape Scale",
+      "cat": "Cinematography",
+      "use": "deep focus, foreground-to-horizon clarity, grand natural scale",
+      "avoid": "compressed flat background",
+      "dna": "deep focus front-to-back, layered depth, grand landscape scale, clear atmospheric perspective",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_naturalkey",
+      "name": "Motivated Naturalistic Key",
+      "cat": "Cinematography",
+      "use": "believable in-world sources only, restrained naturalism, honest contrast",
+      "avoid": "unmotivated theatrical glow",
+      "dna": "naturalistic motivated key (light logic only, never a copy), source-honest contrast, restrained elegance",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "cinedna_availlight",
+      "name": "Available-Light Realism",
+      "cat": "Cinematography",
+      "use": "existing practical light, low intervention, candid truth",
+      "avoid": "heavy rigged studio look",
+      "dna": "available-light realism, practical-only sources, candid low-intervention honesty",
+      "preview": "cinema",
+      "anchor": ""
+    },
+    {
+      "id": "mha_hero_burst",
+      "name": "Hero Academia-like Burst Energy Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "explosive hero entrance, crowd-scale stakes, bold impact framing, teacher-student warmth",
+      "avoid": "protected hero costumes, emblems, school logos, exact character likeness or frame copy",
+      "dna": "hero-society energy: one decisive rescue beat, smoke-and-spark burst, courage under pressure, clean silhouette before impact",
+      "preview": "aura",
+      "anchor": "hero burst energy only"
+    },
+    {
+      "id": "hxh_nen_tactics",
+      "name": "Hunter-like Tactical Aura Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "visible strategy beats, aura-as-geometry, quiet calculation before burst, exam-stage tension",
+      "avoid": "protected character likeness, license-card props, exact ability designs or frame copy",
+      "dna": "tactical shonen grammar: rules explained through staging, aura fields as readable shapes, chess-like pause-then-strike rhythm",
+      "preview": "aura",
+      "anchor": "tactical aura duel only"
+    },
+    {
+      "id": "vinland_north_epic",
+      "name": "Vinland-like North Epic Grammar (IP-safe)",
+      "cat": "Anime / Cinematic",
+      "use": "cold-sea scale, longship horizon, grounded combat weight, quiet grief between battles",
+      "avoid": "protected character likeness, exact ship ornament, sigils, frame copy",
+      "dna": "historical epic grammar: muted northern light, sea-and-snow texture, violence with consequence, stillness as power",
+      "preview": "wall",
+      "anchor": "north epic realism only"
+    },
+    {
+      "id": "mob_psycho_wave",
+      "name": "Mob-like Psychic Wave Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "reality-bending wave forms, percent-meter escalation, humble-hero contrast, graphic distortion peaks",
+      "avoid": "protected character likeness, exact aura designs, logos, frame copy",
+      "dna": "psychic escalation grammar: ordinary flatness breaking into liquid distortion, emotion as physics, restraint then total release",
+      "preview": "spiral",
+      "anchor": "psychic wave deformation only"
+    },
+    {
+      "id": "berserk_dark_engraving",
+      "name": "Berserk-like Dark Engraving Grammar (IP-safe)",
+      "cat": "Anime / Cinematic",
+      "use": "woodcut shadow texture, oversized-weapon weight, lone figure against fate, candle-and-iron mood",
+      "avoid": "protected character likeness, brand marks, exact armor/sword design, frame copy",
+      "dna": "dark medieval grammar: engraving-dense blacks, brutal weight in every swing, doomed-march atmosphere, single ember of will",
+      "preview": "blade",
+      "anchor": "dark engraving texture only"
+    },
+    {
+      "id": "monster_quiet_dread",
+      "name": "Monster-like Quiet Dread Grammar (IP-safe)",
+      "cat": "Anime / Cinematic",
+      "use": "still camera tension, doorway framing, ordinary places turned cold, conversation as suspense",
+      "avoid": "protected character likeness, real-institution logos, exact frame copy",
+      "dna": "psychological thriller grammar: silence heavier than action, clinical European interiors, one face half in shadow, moral weight",
+      "preview": "shadow",
+      "anchor": "psychological quiet dread only"
+    },
+    {
+      "id": "jojo_pose_graphic",
+      "name": "JoJo-like Pose Graphic Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "sculptural poses, onomatopoeia-like graphic shapes, high-fashion color flips, freeze-frame drama",
+      "avoid": "protected character likeness, stand designs, logos, exact panel copy",
+      "dna": "pose-driven grammar: bodies as statues, diagonal menace energy, palette inversions at emotional peaks, graphic sound-shape accents",
+      "preview": "aura",
+      "anchor": "pose graphic menacing only"
+    },
+    {
+      "id": "one_punch_contrast",
+      "name": "One-Punch-like Contrast Comedy Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "deadpan flatness against hyper-detailed action, anticlimax timing, one overwhelming clean hit",
+      "avoid": "protected character likeness, hero-association marks, exact frame copy",
+      "dna": "contrast grammar: mundane simplicity beside apocalyptic detail, comedic pause before absolute impact, effortless power as punchline",
+      "preview": "aura",
+      "anchor": "contrast comedy-action only"
+    },
+    {
+      "id": "violet_light_elegance",
+      "name": "Violet-like Light Elegance Grammar (IP-safe)",
+      "cat": "Anime / Auteur",
+      "use": "letter-writing intimacy, glass-and-lace light, tear-light bokeh, formal beauty in grief",
+      "avoid": "protected character likeness, uniform/brooch design, exact frame copy",
+      "dna": "emotional elegance grammar: every frame lit like memory, hands and small objects as feeling, soft diffusion with precise detail",
+      "preview": "orb",
+      "anchor": "light elegance emotion only"
+    },
+    {
+      "id": "haikyuu_motion_lines",
+      "name": "Haikyuu-like Sport Momentum Grammar (IP-safe)",
+      "cat": "Anime / Shonen",
+      "use": "court-level camera, jump-peak freeze, sweat-and-squeak texture, team rally rhythm",
+      "avoid": "protected character likeness, team crests, exact frame copy",
+      "dna": "sports momentum grammar: speed lines as breath, vertical leap worship, net as dramatic border, teamwork crescendo",
+      "preview": "ribbon",
+      "anchor": "sport momentum lines only"
+    },
+    {
+      "id": "vagabond_ink_brush",
+      "name": "Vagabond-like Ink Brush Grammar (IP-safe)",
+      "cat": "Anime / Auteur",
+      "use": "sumi-e brush texture, blade-grass stillness, single-stroke violence, rain-and-mud realism",
+      "avoid": "protected character likeness, historical-figure portraits as identity, exact panel copy",
+      "dna": "ink grammar: brushstroke as muscle, white space as fear, one breath one cut, nature watching the duel",
+      "preview": "blade",
+      "anchor": "ink brush duel only"
+    },
+    {
+      "id": "abyss_vertical_wonder",
+      "name": "Abyss-like Vertical Wonder Grammar (IP-safe)",
+      "cat": "Anime / Cinematic",
+      "use": "layered depth worlds, cute-against-vast contrast, descent as story, bioluminescent edges",
+      "avoid": "protected character likeness, creature copies, relic designs, frame copy",
+      "dna": "vertical scale grammar: wonder on the surface and dread below, tiny explorers against living strata, light fading by layer",
+      "preview": "curse",
+      "anchor": "vertical wonder-dread only"
+    },
+    {
+      "id": "nolan_imax_practical",
+      "name": "Nolan-like IMAX Practical Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "in-camera scale, time-pressure cross-cutting, physical stunts felt in the chest, minimal CGI texture",
+      "avoid": "director name-dropping in output, studio logos, exact shot copy",
+      "dna": "practical epic grammar: real machines and real light at giant scale, ticking-clock structure, sound-pressure restraint",
+      "preview": "real",
+      "anchor": "practical scale realism only"
+    },
+    {
+      "id": "spielberg_backlight_wonder",
+      "name": "Spielberg-like Backlight Wonder Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "awe-face push-in, doorway silhouettes, suburban magic light, family-eye perspective",
+      "avoid": "director name-dropping, franchise creatures, exact shot copy",
+      "dna": "wonder grammar: light spilling from the unknown, child-height camera, slow reveal of the impossible, warm humanism",
+      "preview": "real",
+      "anchor": "backlight wonder only"
+    },
+    {
+      "id": "wong_karwai_neon_melancholy",
+      "name": "Wong Kar-wai-like Neon Melancholy Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "smeared shutter motion, rain-glass reflections, lonely close framing, saturated night romance",
+      "avoid": "director name-dropping, brand signage, exact shot copy",
+      "dna": "neon melancholy grammar: step-printed time, longing in doorframes and mirrors, cigarette-smoke light, unspoken distance",
+      "preview": "real",
+      "anchor": "neon melancholy only"
+    },
+    {
+      "id": "villeneuve_fog_monolith",
+      "name": "Villeneuve-like Fog Monolith Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "monumental object scale, slow fog reveals, brutalist negative space, low-frequency dread-calm",
+      "avoid": "director name-dropping, alien/ship design copies, exact shot copy",
+      "dna": "monolith grammar: one impossible shape in haze, humans as scale markers, patience as spectacle, muted palette discipline",
+      "preview": "real",
+      "anchor": "fog monolith minimalism only"
+    },
+    {
+      "id": "malick_golden_poetry",
+      "name": "Malick-like Golden Poetry Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "wheat-field hands, floating steadicam drift, whispered-memory pacing, natural light only",
+      "avoid": "director name-dropping, voiceover imitation as content, exact shot copy",
+      "dna": "golden poetry grammar: magic-hour worship, camera as wandering spirit, nature towering over narrative, tactile grass-and-skin texture",
+      "preview": "real",
+      "anchor": "golden-hour poetry only"
+    },
+    {
+      "id": "hitchcock_suspense_geometry",
+      "name": "Hitchcock-like Suspense Geometry Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "staircase and window geometry, dolly-zoom unease, audience-knows-first tension, precise blocking",
+      "avoid": "director name-dropping, film-title references, exact shot copy",
+      "dna": "suspense grammar: information as camera position, ordinary objects charged with threat, geometric shadows, controlled reveal",
+      "preview": "real",
+      "anchor": "suspense geometry only"
+    },
+    {
+      "id": "del_toro_gothic_fairy",
+      "name": "Del Toro-like Gothic Fairy Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "amber-and-teal fairy dark, creature silhouettes with empathy, clockwork-baroque sets, innocence in danger",
+      "avoid": "director name-dropping, creature design copies, exact shot copy",
+      "dna": "gothic fairytale grammar: monsters lit like saints, mechanical-organic textures, candlelit dread with warmth at the center",
+      "preview": "gothic",
+      "anchor": "gothic fairy texture only"
+    },
+    {
+      "id": "tarantino_pulp_frame",
+      "name": "Tarantino-like Pulp Frame Grammar (IP-safe)",
+      "cat": "Live Action Cinema",
+      "use": "trunk-shot vantage, long-dialogue standoffs, needle-drop energy, chapter-card rhythm",
+      "avoid": "director name-dropping, violence glorification in output, exact shot copy",
+      "dna": "pulp grammar: conversation as loaded weapon, low-angle swagger, saturated crime-paperback color, sudden release after slow burn",
+      "preview": "real",
+      "anchor": "pulp frame tension only"
+    },
+    {
+      "id": "ikea_clean_home_story",
+      "name": "IKEA-like Clean Home Story Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "room-as-life-story staging, flat-pack honesty, daylight interiors, small human moments between furniture",
+      "avoid": "brand logos/wordmarks, catalog page copies, competitor references",
+      "dna": "home story grammar: democratic design warmth, one room narrating a family, soft Scandinavian daylight, function shown with humor",
+      "preview": "tabletop",
+      "anchor": "clean home story only"
+    },
+    {
+      "id": "thy_destination_scale",
+      "name": "Airline-like Destination Scale Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "wing-and-cloud majesty, city-to-city montage breath, window-seat wonder, crew-warmth professionalism",
+      "avoid": "airline logos/liveries, real airport branding, exact ad copy",
+      "dna": "destination grammar: the planet as catalog, golden tarmac light, takeoff as emotional lift, cultures met with respect",
+      "preview": "openair",
+      "anchor": "destination scale only"
+    },
+    {
+      "id": "redbull_action_pov",
+      "name": "Energy-like Action POV Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "athlete-mounted vertigo, cliff/sky/street extremes, heartbeat editing, dust-and-spray texture",
+      "avoid": "energy-drink logos, athlete identities, exact stunt copies",
+      "dna": "action POV grammar: body as camera rig, gravity as antagonist, raw GoPro-truth texture, adrenaline arcs with clean landings",
+      "preview": "openair",
+      "anchor": "action pov energy only"
+    },
+    {
+      "id": "chanel_bw_luxury",
+      "name": "Couture-like Monochrome Luxury Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "black-white tuxedo light, perfume-bottle architecture, slow fabric physics, single diamond accent",
+      "avoid": "fashion-house logos, designer names, exact campaign copy",
+      "dna": "monochrome luxury grammar: restraint as wealth, hard key light on glass and silk, timeless studio geometry, one gold breath in grayscale",
+      "preview": "tabletop",
+      "anchor": "monochrome luxury only"
+    },
+    {
+      "id": "lego_brick_build",
+      "name": "Brick-like Modular Build Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "snap-together reveals, stud-texture macro, impossible-things-from-simple-parts arc, playful stop-motion energy",
+      "avoid": "toy-brand logos, minifigure face copies, set-box artwork",
+      "dna": "modular build grammar: creation as play, primary-color confidence, satisfying click rhythm, child-and-adult shared table",
+      "preview": "tabletop",
+      "anchor": "modular build joy only"
+    },
+    {
+      "id": "mercedes_silver_precision",
+      "name": "Marque-like Silver Precision Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "liquid-metal paint worship, engineering-detail macro, autobahn hush, leather-and-stitch interiors",
+      "avoid": "car-brand logos/badges, exact model design, slogan copies",
+      "dna": "precision marque grammar: light flowing over silver bodywork, German-engineering calm, one badge-free grille silhouette, comfort as power",
+      "preview": "auto",
+      "anchor": "silver precision only"
+    },
+    {
+      "id": "spotify_duotone_pop",
+      "name": "Stream-like Duotone Pop Grammar (IP-safe)",
+      "cat": "Commercial",
+      "use": "two-color portrait punches, waveform geometry, playlist-mood cutting, gradient noise texture",
+      "avoid": "streaming-brand logos/UI copies, artist likeness, exact campaign copy",
+      "dna": "duotone grammar: music as color pairs, bold flat silhouettes on loud backgrounds, rhythm-locked motion graphics energy",
+      "preview": "orb",
+      "anchor": "duotone pop energy only"
+    },
+    {
+      "id": "sekiro_ink_resolve",
+      "name": "Sekiro-like Ink Resolve Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "posture-break duels, sengoku rooftop verticality, single-spark parry timing, paper-lantern night",
+      "avoid": "protected character likeness, studio marks, exact boss/scene copy",
+      "dna": "ink resolve grammar: stillness-parry-burst rhythm, autumn-leaf and blood-petal accents, grappling vertical freedom, death as teacher",
+      "preview": "blade",
+      "anchor": "ink resolve duel only"
+    },
+    {
+      "id": "witcher_dark_folk",
+      "name": "Witcher-like Dark Folk Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "mud-and-silver realism, swamp-village folklore, monster-contract melancholy, two-sword silhouette",
+      "avoid": "protected character likeness, medallion/armor design copies, exact scene copy",
+      "dna": "dark folk grammar: fairy tales with dirt under nails, grey moral light, candlelit taverns against haunted moors, slavic dread-beauty",
+      "preview": "gothic",
+      "anchor": "dark folk fantasy only"
+    },
+    {
+      "id": "skyrim_nordic_frost",
+      "name": "Skyrim-like Nordic Frost Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "shout-against-blizzard scale, mead-hall warmth vs glacier blue, dragon-shadow flyovers, rune-stone discovery",
+      "avoid": "protected creature/armor designs, studio marks, exact scene copy",
+      "dna": "nordic frost grammar: open tundra freedom, aurora over snow peaks, ancient stone language, lone wanderer against white vastness",
+      "preview": "openair",
+      "anchor": "nordic frost epic only"
+    },
+    {
+      "id": "mario_color_platform_joy",
+      "name": "Plumber-like Color Platform Joy Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "primary-color optimism, coin-arc rhythm, block-and-pipe geometry, jump as music",
+      "avoid": "protected mascot likeness, logos, exact level/asset copy",
+      "dna": "platform joy grammar: readable shapes at toy scale, bounce physics happiness, secret-around-every-corner design, danger that smiles",
+      "preview": "openair",
+      "anchor": "color platform joy only"
+    },
+    {
+      "id": "sonic_speed_loop",
+      "name": "Sonic-like Speed Loop Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "loop-de-loop momentum, checker-hill horizons, ring-trail light, attitude-cool framing",
+      "avoid": "protected mascot likeness, logos, exact zone/asset copy",
+      "dna": "speed loop grammar: velocity as personality, curve-hugging camera, blue-blur trails on candy landscapes, never-stop forward energy",
+      "preview": "spiral",
+      "anchor": "speed loop energy only"
+    },
+    {
+      "id": "street_fighter_impact_frames",
+      "name": "Fighter-like Impact Frame Grammar (IP-safe)",
+      "cat": "Game Art Direction",
+      "use": "hit-stop freeze drama, ink-splash impact frames, stage-as-character backdrops, rivalry close-ups",
+      "avoid": "protected fighter likeness, logos, exact stage/move copy",
+      "dna": "impact frame grammar: one frame of absolute contact, brush-stroke energy bursts, crowd-roar staging, honor between rivals",
+      "preview": "aura",
+      "anchor": "impact frame duel only"
     }
   ],
   "palettes": [

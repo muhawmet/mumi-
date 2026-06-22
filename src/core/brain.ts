@@ -97,7 +97,7 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
     staging: out.staging.join('; ') || 'one dominant subject, clean readable composition',
     motion: out.motion.join('; ') || 'event completes by ~70%, confident final hold',
     texture: tex,
-    avoid: refs.map((r) => T(r.avoid)).filter(Boolean).join('; ') || 'IP copy',
+    avoid: Array.from(new Set(refs.map((r) => T(r.avoid).trim()).filter(Boolean))).join('; ') || 'IP copy',
   };
 }
 

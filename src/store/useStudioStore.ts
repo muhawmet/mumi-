@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import {
   generateBatch,
   resolveRecipeDefaults,
+  DATA,
   type SceneArchitecture,
   type HandoffPacketSet,
 } from '../core/pure';
@@ -58,14 +59,19 @@ export function applyPromptOverride(scene: Scene, override: string | null): Scen
 }
 
 /** Strict recipe gate — world, palette and reference DNA must all be chosen. */
-export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'selectedRefId'>): {
+export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'selectedRefIds'>): {
   ready: boolean;
   missing: string[];
 } {
   const missing: string[] = [];
   if (!s.selectedWorldId) missing.push('Dünya');
-  if (s.selectedPaletteId === null || s.selectedPaletteId === undefined) missing.push('Palet');
-  if (!s.selectedRefId) missing.push('Referans DNA');
+  if (!s.selectedPaletteId) missing.push('Palet');
+
+  const validRefs = (s.selectedRefIds || []).map((id) => DATA.refs.find((r) => r.id === id)).filter(Boolean);
+  const compatibleRefs = validRefs.filter((r: any) => !r.worldId || r.worldId === s.selectedWorldId);
+  if (compatibleRefs.length === 0) {
+    missing.push('Referans DNA');
+  }
   return { ready: missing.length === 0, missing };
 }
 
@@ -89,7 +95,7 @@ export interface StudioState {
 
   selectedWorldId: string;
   selectedPropId: string;
-  selectedRefId: string;
+  selectedRefIds: string[];
   selectedPaletteId: string;
   selectedMusicId: string;
 
@@ -155,7 +161,7 @@ const initial = {
 
   selectedWorldId: '',
   selectedPropId: 'native_world',
-  selectedRefId: '',
+  selectedRefIds: [] as string[],
   selectedPaletteId: '',
   selectedMusicId: '',
 
@@ -184,6 +190,14 @@ const initial = {
   vault: [] as VaultEntry[],
 };
 
+/** Cleared whenever the recipe or beat plan changes, so generated output never goes stale. */
+const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId'> = {
+  scenes: [],
+  agentBrief: '',
+  agentPackets: null,
+  selectedSceneId: null,
+};
+
 /** Single source of truth for the persisted/snapshotted project fields (no vault, no transient flags). */
 export function pickProjectState(s: StudioState): Partial<StudioState> {
   return {
@@ -195,7 +209,7 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     cast: s.cast,
     selectedWorldId: s.selectedWorldId,
     selectedPropId: s.selectedPropId,
-    selectedRefId: s.selectedRefId,
+    selectedRefIds: s.selectedRefIds,
     selectedPaletteId: s.selectedPaletteId,
     selectedMusicId: s.selectedMusicId,
     imageModel: s.imageModel,
@@ -234,11 +248,9 @@ export function presetWithDefaults(
   const defaults = resolveRecipeDefaults(projectClass, selectedWorldId);
   return {
     ...preset,
-    selectedRefId: preset.selectedRefId || defaults.selectedRefId,
+    selectedRefIds: preset.selectedRefIds?.length ? preset.selectedRefIds : defaults.selectedRefIds,
     selectedPaletteId: preset.selectedPaletteId || defaults.selectedPaletteId,
-    scenes: [],
-    agentBrief: '',
-    selectedSceneId: null,
+    ...STALE_GENERATION,
     lastError: null,
   };
 }
@@ -254,18 +266,84 @@ function hasCurrentSceneShape(value: unknown): value is Scene {
   );
 }
 
+function migrateStateV5ToV6(state: any): any {
+  if (!state || typeof state !== 'object') return state;
+
+  // 1. Ref DNA Migration
+  let refIds: string[] = [];
+  const oldRefId = state.selectedRefId;
+  if (Array.isArray(state.selectedRefIds)) {
+    refIds = [...state.selectedRefIds];
+  } else if (typeof oldRefId === 'string' && oldRefId) {
+    refIds = [oldRefId];
+  }
+
+  // Validate against DATA.refs IDs
+  const validIds = new Set((DATA.refs || []).map((r) => r.id));
+  refIds = refIds.filter((id) => id && typeof id === 'string' && validIds.has(id));
+
+  // Dedupe
+  refIds = Array.from(new Set(refIds));
+
+  // Keep first 3
+  refIds = refIds.slice(0, 3);
+
+  // Remove old key
+  delete state.selectedRefId;
+
+  // Fallback if empty
+  if (refIds.length === 0) {
+    const projectClass = state.projectClass || 'ANIMATION_EDU';
+    const worldId = state.selectedWorldId || '';
+    const defaults = resolveRecipeDefaults(projectClass, worldId);
+    refIds = defaults.selectedRefIds || [];
+  }
+
+  state.selectedRefIds = refIds;
+
+  // 2. Clear old scenes & generation outputs since they contain v5 refDNA
+  state.scenes = [];
+  state.agentBrief = '';
+  state.agentPackets = null;
+  state.selectedSceneId = null;
+
+  return state;
+}
+
 export function migratePersistedState(value: unknown): Partial<StudioState> {
   if (!value || typeof value !== 'object') return {};
-  const persisted = value as Partial<StudioState>;
-  const scenes = Array.isArray(persisted.scenes) && persisted.scenes.every(hasCurrentSceneShape)
-    ? persisted.scenes
-    : [];
+  const persisted = value as any;
+  const hasInvalidOrTooManyRefs = Array.isArray(persisted.selectedRefIds) && (
+    persisted.selectedRefIds.length > 3 ||
+    new Set(persisted.selectedRefIds).size !== persisted.selectedRefIds.length ||
+    persisted.selectedRefIds.some((id: any) => !id || typeof id !== 'string' || !DATA.refs.some(r => r.id === id))
+  );
+  const needsV6Migration = ('selectedRefId' in persisted) || hasInvalidOrTooManyRefs;
+  if (needsV6Migration) {
+    migrateStateV5ToV6(persisted);
+  }
+
+  // Keep only scenes that satisfy the current runtime shape — one malformed scene
+  // no longer nukes the whole batch (D3).
+  const scenes = Array.isArray(persisted.scenes) ? persisted.scenes.filter(hasCurrentSceneShape) : [];
+  const intact = scenes.length === (Array.isArray(persisted.scenes) ? persisted.scenes.length : 0) && scenes.length > 0;
+
+  const vault = Array.isArray(persisted.vault)
+    ? persisted.vault.flatMap((entry: any) => {
+        if (!entry || typeof entry !== 'object' || typeof entry.id !== 'string') return [];
+        return [{ ...entry, snapshot: migratePersistedState(entry.snapshot) }];
+      })
+    : persisted.vault;
+
   return {
     ...persisted,
+    selectedRefIds: persisted.selectedRefIds || [],
+    ...(vault ? { vault } : {}),
     scenes,
-    agentBrief: scenes.length && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
-    agentPackets: persisted.agentPackets || null,
-    selectedSceneId: scenes.some((s) => s.id === persisted.selectedSceneId) ? persisted.selectedSceneId ?? null : null,
+    // Brief + packets are only trustworthy when the full scene batch survived migration.
+    agentBrief: intact && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
+    agentPackets: intact ? persisted.agentPackets || null : null,
+    selectedSceneId: scenes.some((s: any) => s.id === persisted.selectedSceneId) ? persisted.selectedSceneId ?? null : null,
   };
 }
 
@@ -289,7 +367,8 @@ export const useStudioStore = create<StudioState>()(
         }
         const generationFields: Array<keyof StudioState> = [
           'projectKind', 'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
-          'selectedRefId', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
+          'selectedRefIds', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
+          'brandKitLock',
         ];
         set({
           ...({ [field]: value } as Partial<StudioState>),
@@ -302,6 +381,7 @@ export const useStudioStore = create<StudioState>()(
         rawSource,
         sourceBeats: [],
         sourceReport: null,
+        beatAnalysis: null,
         scenes: [],
         agentBrief: '',
         agentPackets: null,
@@ -315,7 +395,7 @@ export const useStudioStore = create<StudioState>()(
           selectedProjectId: decoded.project.id,
           projectClass: decoded.path,
           selectedWorldId: decoded.project.world,
-          selectedRefId: decoded.project.ref,
+          selectedRefIds: decoded.project.ref ? [decoded.project.ref] : [],
           selectedPaletteId: decoded.project.palette,
           projectTopic: rawSource.trim().split(/\n+/u)[0]?.slice(0, 160) || get().projectTopic,
           scenes: [],
@@ -336,7 +416,7 @@ export const useStudioStore = create<StudioState>()(
       setBeatMode: (mode) => {
         const s = get();
         const beatAnalysis = planBeats(s.sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
-        set({ beatMode: mode, beatAnalysis });
+        set({ beatMode: mode, beatAnalysis, ...STALE_GENERATION });
       },
       toggleBeatKeep: (beatId) => {
         const s = get();
@@ -359,7 +439,7 @@ export const useStudioStore = create<StudioState>()(
         const newBeats = [...s.sourceBeats];
         newBeats.splice(index, 2, merged);
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length });
+        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION });
       },
       splitBeat: (index) => {
         const s = get();
@@ -375,7 +455,7 @@ export const useStudioStore = create<StudioState>()(
         const newBeats = [...s.sourceBeats];
         newBeats.splice(index, 1, b1, b2);
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length });
+        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION });
       },
       applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
 
@@ -394,7 +474,7 @@ export const useStudioStore = create<StudioState>()(
             cast: s.cast,
             selectedWorldId: s.selectedWorldId,
             selectedPropId: s.selectedPropId,
-            selectedRefId: s.selectedRefId,
+            selectedRefIds: s.selectedRefIds,
             selectedPaletteId: s.selectedPaletteId,
             selectedMusicId: s.selectedMusicId,
             imageModel: s.imageModel,
@@ -467,7 +547,13 @@ export const useStudioStore = create<StudioState>()(
       loadFromVault: (id) => set((s) => {
         const entry = s.vault.find((e) => e.id === id);
         if (!entry) return {};
-        return { ...entry.snapshot, isGenerating: false, lastError: null };
+        return {
+          ...initial,
+          ...migratePersistedState(entry.snapshot),
+          vault: s.vault,
+          isGenerating: false,
+          lastError: null,
+        };
       }),
       deleteFromVault: (id) => set((s) => ({ vault: s.vault.filter((e) => e.id !== id) })),
     }),
@@ -475,8 +561,13 @@ export const useStudioStore = create<StudioState>()(
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
-      version: 5,
-      migrate: (persistedState) => migratePersistedState(persistedState),
+      version: 6,
+      migrate: (persistedState, version) => {
+        if (version < 6) {
+          return migratePersistedState(persistedState) as any;
+        }
+        return persistedState as any;
+      },
     },
   ),
 );

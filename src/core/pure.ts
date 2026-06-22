@@ -99,7 +99,7 @@ export interface BriefInput {
   cast: 'Aras' | 'Defne' | 'İkisi';
   selectedWorldId: string;
   selectedPropId: string;
-  selectedRefId: string;
+  selectedRefIds: string[];
   selectedPaletteId: string;
   selectedMusicId: string;
   imageModel: string;
@@ -108,7 +108,7 @@ export interface BriefInput {
 }
 
 export interface RecipeDefaults {
-  selectedRefId: string;
+  selectedRefIds: string[];
   selectedPaletteId: string;
 }
 
@@ -127,7 +127,7 @@ export interface FinalBrief {
   source: SceneArchitecture['source'];
   world: { id: string; renderRecipe: string; texture?: string; lighting?: string };
   recipe: { id: string; source: string };
-  referenceDNA: {
+  referenceDNAs: Array<{
     id: string | null;
     name?: string;
     status: string;
@@ -137,7 +137,7 @@ export interface FinalBrief {
     use?: string;
     avoid?: string;
     suppressedFields: string[];
-  };
+  }>;
   paletteAccent: { value: string | null; source: string };
 }
 
@@ -173,7 +173,7 @@ export interface HandoffPacket {
     composition: string | null;
     motionGrammar?: string;
   };
-  refDNA: FinalBrief['referenceDNA'];
+  refDNAs: FinalBrief['referenceDNAs'];
   locks: { character: string; product: null; visibleText: string };
   targetModel: { kind: 'image' | 'video' | 'music'; provider: string; label: string };
   negatives: string[];
@@ -345,9 +345,10 @@ export function resolveRecipeDefaults(projectClass: string, worldId: string): Re
     : deriveProductionPath(projectClass);
   const project = DATA.projects.find((p) => p.world === worldId && p.path === pathId);
   const path = DATA.paths.find((p) => p.id === pathId);
+  const defRef = project?.ref || path?.defaultRef || '';
 
   return {
-    selectedRefId: project?.ref || path?.defaultRef || '',
+    selectedRefIds: defRef ? [defRef] : [],
     selectedPaletteId: project?.palette || path?.defaultPalette || '',
   };
 }
@@ -432,23 +433,14 @@ function buildFinalBriefContext(
   arch: SceneArchitecture,
   world: SurgeryWorld,
   selectedPropId: string,
-  selectedRefId: string,
+  selectedRefIds: string[],
   path: string,
   paletteOverride?: SurgeryPalette,
 ): FinalBrief {
-  const reference = DATA.refs.find((r) => r.id === selectedRefId) || null;
-  const compatible = reference && (!reference.worldId || reference.worldId === world.id) ? reference : null;
-  const recipe = deriveTeachingRecipe(world, selectedPropId);
-  const colors = paletteOverride?.colors || world.colors || world.palette || [];
-  const paletteAccent = colors.length ? colors[colors.length - 1] : null;
-
-  return {
-    authority: ['SOURCE', 'WORLD', 'RECIPE', 'REFERENCE_DNA', 'PALETTE_ACCENT'],
-    path,
-    source: arch.source,
-    world: { id: world.id, renderRecipe: world.render, texture: world.texture, lighting: world.lighting },
-    recipe,
-    referenceDNA: reference
+  const referenceDNAs = selectedRefIds.map(id => {
+    const reference = DATA.refs.find((r) => r.id === id) || null;
+    const compatible = reference && (!reference.worldId || reference.worldId === world.id) ? reference : null;
+    return reference
       ? {
           id: reference.id,
           name: reference.name,
@@ -459,7 +451,20 @@ function buildFinalBriefContext(
           avoid: reference.avoid,
           suppressedFields: ['palette', 'texture', 'lighting'],
         }
-      : { id: null, status: 'NONE', directive: '', suppressedFields: [] },
+      : { id: null, status: 'NONE', directive: '', suppressedFields: [] };
+  });
+
+  const recipe = deriveTeachingRecipe(world, selectedPropId);
+  const colors = paletteOverride?.colors || world.colors || world.palette || [];
+  const paletteAccent = colors.length ? colors[colors.length - 1] : null;
+
+  return {
+    authority: ['SOURCE', 'WORLD', 'RECIPE', 'REFERENCE_DNA', 'PALETTE_ACCENT'],
+    path,
+    source: arch.source,
+    world: { id: world.id, renderRecipe: world.render, texture: world.texture, lighting: world.lighting },
+    recipe,
+    referenceDNAs,
     paletteAccent: { value: paletteAccent, source: paletteOverride ? 'USER_PALETTE' : 'WORLD_PALETTE_LAST_ACCENT' },
   };
 }
@@ -535,8 +540,8 @@ function buildHandoffPackets(args: {
     if (scene.architecture.source.status !== 'SOURCE_BOUND') {
       warnings.push({ code: 'UNSOURCED_INPUT', message: scene.architecture.source.notice || 'Unsourced topic input.' });
     }
-    if (scene.finalBrief.referenceDNA.status === 'SUPPRESSED_WORLD_MISMATCH') {
-      warnings.push({ code: 'REFERENCE_DNA_SUPPRESSED', message: 'Reference DNA cannot override the selected world.' });
+    if (scene.finalBrief.referenceDNAs.some(r => r.status === 'SUPPRESSED_WORLD_MISMATCH')) {
+      warnings.push({ code: 'REFERENCE_DNA_SUPPRESSED', message: 'One or more Reference DNAs cannot override the selected world.' });
     }
     if (role === 'MOTION') {
       warnings.push(projectKind === 'design'
@@ -554,7 +559,7 @@ function buildHandoffPackets(args: {
       role,
       scene: sceneCore,
       world: worldCore,
-      refDNA: scene.finalBrief.referenceDNA,
+      refDNAs: scene.finalBrief.referenceDNAs,
       locks,
       targetModel: {
         kind: role === 'IMAGE' ? 'image' : role === 'MOTION' ? 'video' : 'music',
@@ -575,7 +580,7 @@ function buildHandoffPackets(args: {
 }
 
 export function generateBatch(input: BriefInput): GenerationResult {
-  const { projectTopic, projectClass, sceneCount, cast, selectedWorldId, selectedRefId, selectedPaletteId } = input;
+  const { projectTopic, projectClass, sceneCount, cast, selectedWorldId, selectedRefIds, selectedPaletteId } = input;
 
   const world = DATA.worlds.find((w) => w.id === selectedWorldId);
   if (!world) {
@@ -642,8 +647,9 @@ export function generateBatch(input: BriefInput): GenerationResult {
 
   // Brain context — register, DNA directives and Suno brief are batch-wide.
   const register = registerOf(path);
-  const selectedRef = DATA.refs.find((r) => r.id === selectedRefId);
-  const dna = dnaDirectives(selectedRef ? [selectedRef] : [], register);
+  const selectedRefs = selectedRefIds.map(id => DATA.refs.find(r => r.id === id)).filter(Boolean) as SurgeryRef[];
+  const compatibleRefs = selectedRefs.filter(r => !r.worldId || r.worldId === world.id);
+  const dna = dnaDirectives(compatibleRefs, register);
   const sunoBrief = projectKind === 'design'
     ? 'NOT_APPLICABLE: static design deliverable; no music brief.'
     : primeSuno(path);
@@ -652,7 +658,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
 
   for (let i = 1; i <= count; i++) {
     const arch = createSceneArchitecture(sourceParsed, i, world);
-    const brief = buildFinalBriefContext(arch, world, input.selectedPropId, selectedRefId, path, paletteOverride);
+    const brief = buildFinalBriefContext(arch, world, input.selectedPropId, selectedRefIds, path, paletteOverride);
     const pacing = calcPacing(i, count);
 
     // Semantic concept from the scene's exact source beat — this is the brain.

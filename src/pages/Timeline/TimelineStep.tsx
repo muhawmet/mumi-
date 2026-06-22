@@ -26,7 +26,7 @@ export const TimelineStep = () => {
     projectClass: state.projectClass,
     cast: state.cast,
     worldId: state.selectedWorldId,
-    refId: state.selectedRefId,
+    refIds: state.selectedRefIds,
     paletteId: state.selectedPaletteId,
   };
   const safeName = state.projectTopic.replace(/[^a-zA-Z0-9_-]+/g, '_').slice(0, 60) || 'mamilas';
@@ -39,7 +39,7 @@ export const TimelineStep = () => {
         class: state.projectClass,
         cast: state.cast,
         worldId: state.selectedWorldId,
-        refId: state.selectedRefId,
+        refIds: state.selectedRefIds,
         paletteId: state.selectedPaletteId,
       },
       scenes,
@@ -101,7 +101,7 @@ export const TimelineStep = () => {
       <header style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div>
           <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>
-            STAGE 3 · {state.projectKind === 'design' ? 'DESIGN TESLİMİ' : 'TIMELINE'}
+            STAGE 4 · {state.projectKind === 'design' ? 'DESIGN TESLİMİ' : 'TIMELINE'}
           </div>
           <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>
             {scenes.length
@@ -370,6 +370,7 @@ const ImagePromptRow: React.FC<{
   onSave: (v: string) => void;
   onReset: () => void;
 }> = ({ scene, onSave, onReset }) => {
+  const state = useStudioStore();
   const isOverridden = typeof scene.userImagePrompt === 'string';
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(effectivePrompt(scene));
@@ -464,7 +465,15 @@ const ImagePromptRow: React.FC<{
       
       {/* Kanıt Doktoru Rail */}
       <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 6 }}>
-        {proofDoctor({ type: 'scene', text: live }).map((f, idx) => (
+        {proofDoctor({
+          type: 'scene',
+          text: live,
+          motionText: scene.motionPrompt,
+          sourceCoverage: state.sourceReport?.coverage ?? undefined,
+          productionPath: state.projectClass,
+          hybridMode: state.projectClass?.includes('HYBRID'),
+          hasLockedTextOrLogo: state.projectClass === 'PRODUCT_HERO',
+        }).map((f, idx) => (
           <div key={idx} style={{ 
             padding: '6px 10px', 
             borderRadius: 6, 
@@ -477,7 +486,7 @@ const ImagePromptRow: React.FC<{
               {f.status} {f.problem && `· ${f.problem}`}
             </div>
             {f.why && <div style={{ opacity: 0.8, marginBottom: 4 }}>{f.why}</div>}
-            {f.replaceWith && f.status !== 'PASS' && (
+            {f.status === 'FIX' && f.replaceWith && (
               <button
                 onClick={() => {
                   onSave(live + ' ' + f.replaceWith);
