@@ -57,6 +57,8 @@ export interface SurgeryPalette {
   avoid?: string;
 }
 
+export interface MaterialDef { id: string; name: string; clause: string; motion: string; }
+
 export interface SurgeryData {
   paths: Array<{
     id: string;
@@ -80,6 +82,7 @@ export interface SurgeryData {
     palette: string;
   }>;
   worlds: SurgeryWorld[];
+  materials: MaterialDef[];
   refs: SurgeryRef[];
   palettes: SurgeryPalette[];
   agents: unknown[];
@@ -418,6 +421,15 @@ export function resolveRecipeDefaults(projectClass: string, worldId: string): Re
   };
 }
 
+/** Material (teaching axis) → a render-lock clause that actually changes the look.
+    Empty for 'none'/'native_world'/unknown so pure-style worlds stay untouched. */
+export function materialClauseOf(materialId: string | undefined): string {
+  const id = String(materialId || '');
+  if (!id || id === 'none' || id === 'native_world') return '';
+  const m = (DATA.materials || []).find((x) => x.id === id);
+  return m?.clause || '';
+}
+
 export function deriveTeachingRecipe(world: SurgeryWorld, propOverride: string): { id: string; source: string } {
   if (propOverride && propOverride !== 'native_world') {
     return { id: propOverride, source: 'USER_OVERRIDE' };
@@ -716,6 +728,8 @@ export function generateBatch(input: BriefInput): GenerationResult {
   const selectedRefs = selectedRefIds.map(id => DATA.refs.find(r => r.id === id)).filter(Boolean) as SurgeryRef[];
   const compatibleRefs = selectedRefs.filter(r => !r.worldId || r.worldId === world.id);
   const dna = dnaDirectives(compatibleRefs, register);
+  // Material (teaching axis) only colours non-real registers; REAL footage isn't "made of" clay.
+  const materialClause = register === 'REAL' ? '' : materialClauseOf(input.selectedPropId);
   const sunoBrief = projectKind === 'design'
     ? 'NOT_APPLICABLE: static design deliverable; no music brief.'
     : primeSuno(path);
@@ -739,6 +753,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
       pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
       chars: register === 'EDU' && cast ? cast : undefined,
       projectKind,
+      material: materialClause || undefined,
     });
     const motionPrompt = projectKind === 'design'
       ? 'NOT_APPLICABLE: static design deliverable; no motion prompt.'
@@ -784,6 +799,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     dna,
     cast,
     projectKind,
+    material: materialClause || undefined,
     brandKitLock: input.brandKitLock,
     mood: input.mood ? MOOD_OPTS[input.mood]?.brief : undefined,
     cameraEnergy: input.cameraEnergy ? CAM_OPTS[input.cameraEnergy]?.brief : undefined,

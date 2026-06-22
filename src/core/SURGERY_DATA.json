@@ -680,6 +680,94 @@
   ],
   "worlds": [
     {
+      "id": "pixar3d",
+      "group": "ANIMATION",
+      "name": "Pixar 3D Feature",
+      "formula": "Premium 3D animated feature look (Pixar/DreamWorks tier), material-agnostic",
+      "render": "Premium 3D animated feature frame at studio-feature fidelity: appealing rounded forms with clean readable silhouette, subsurface-soft skin and material response, multi-bounce global-illumination lighting with one warm motivated key, gentle depth-of-field, art-directed colour script, emotional staging, polished cinematic composition. Production-grade, never plasticky game-engine, never photoreal.",
+      "motion": "weighted squash-and-stretch ease, one expressive anticipation, settle into a confident hold",
+      "best": "warm emotional explainers, character-led lessons, broad family appeal",
+      "avoid": "uncanny photorealism, flat cel, stiff game-engine CGI",
+      "colors": ["#ffce6b", "#5fa8ff", "#ff8fa3", "#fff4d6"]
+    },
+    {
+      "id": "anime_cel",
+      "group": "ANIMATION",
+      "name": "Anime Cel (ufotable-grade)",
+      "formula": "Premium Japanese cel animation with 3D-assisted FX and painterly BG",
+      "render": "Premium anime cel frame at top-studio (ufotable/Kyoto-tier) fidelity: crisp cel shading with 2-3 clean value steps, expressive hand-drawn line, detailed painted background with atmospheric depth, dramatic rim and bloom, lens-flare accents, 3D-assisted effects animation (water/flame/light) integrated over 2D characters, emotional golden-hour palette. IP-safe original design — no copied characters.",
+      "motion": "smear-frame impact then ease, effects-animation flourish, held dramatic beat",
+      "best": "shonen energy, emotional action explainers, dramatic reveals",
+      "avoid": "western cartoon proportions, photoreal, muddy shading",
+      "colors": ["#ff7a45", "#7b5cff", "#2f6bff", "#ffe9c7"]
+    },
+    {
+      "id": "arcane",
+      "group": "ANIMATION",
+      "name": "Arcane — Painterly 3D",
+      "formula": "Fortiche-idiom painterly 3D: hand-painted texture over 3D form",
+      "render": "Painterly 3D feature frame in the Fortiche idiom: hand-painted texture maps over 3D geometry with visible brush-stroke albedo, 2D-animated smoke and energy FX composited onto 3D bodies, chromatic rim light, deep teal-and-ember palette, heavy art-directed negative-space shadow, expressive non-photoreal skin, graphic ink accents along silhouette edges, gallery-grade gritty mood. No photoreal CGI, no flat cel, no clean game-engine look.",
+      "motion": "deliberate weighted move, painterly FX flourish, brooding final hold",
+      "best": "gritty emotional drama, mature stylised storytelling, hero moments",
+      "avoid": "clean photoreal CGI, flat cartoon, glossy plastic",
+      "colors": ["#0f7d8c", "#ff6a3d", "#1a1030", "#e8d6a8"]
+    },
+    {
+      "id": "spiderverse",
+      "group": "ANIMATION",
+      "name": "Spider-Verse — Comic Motion",
+      "formula": "Into-the-Spider-Verse idiom: comic-book print motion graphics",
+      "render": "Graphic comic-motion frame in the Spider-Verse idiom: stepped/dual-frame-rate animation feel, visible halftone Ben-Day dots and CMYK mis-registration, bold ink outlines, screen-printed colour offset, onomatopoeia and motion lines as graphic elements, painterly-graphic backgrounds with chromatic aberration, high-energy comic-panel composition. IP-safe original design — print-art-direction quality, not flat vector.",
+      "motion": "stepped 2s-on-3s snap, graphic motion-shape trails, crisp pose-to-pose hold",
+      "best": "kinetic pop energy, bold youth content, high-impact reveals",
+      "avoid": "smooth photoreal interpolation, muted realism, plain flat color",
+      "colors": ["#ff2d75", "#2de2e6", "#ffd400", "#16002e"]
+    },
+    {
+      "id": "ghibli",
+      "group": "ANIMATION",
+      "name": "Ghibli — Watercolor 2D",
+      "formula": "Hand-drawn 2D with watercolor backgrounds and gentle naturalism",
+      "render": "Hand-drawn 2D animation frame in the Ghibli idiom: soft watercolor and gouache painted backgrounds with atmospheric depth, gentle clean character line, naturalistic warm light, wind-in-the-grass living detail, tender humane staging, nostalgic pastel-but-rich palette, hand-crafted warmth. No 3D CGI, no harsh cel banding, no digital sheen.",
+      "motion": "gentle natural drift, wind and breath, calm settle",
+      "best": "calm nature/feeling-led lessons, wonder, slow emotional beats",
+      "avoid": "3D CGI, hard cel, neon digital color",
+      "colors": ["#8fc7e8", "#a8d08d", "#f4d58d", "#fbeede"]
+    },
+    {
+      "id": "stopmotion",
+      "group": "ANIMATION",
+      "name": "Stop-Motion (Laika-grade)",
+      "formula": "Tactile handmade stop-motion miniature with real materials",
+      "render": "Tactile stop-motion frame at Laika fidelity: real handcrafted miniature sets and puppets, visible fabric/clay/wood material grain and fingerprint imperfection, shallow macro depth-of-field, moody practical key light, subtle frame-to-frame handmade jitter, museum-diorama craftsmanship. Photographed-real-objects feel, never smooth CGI, never flat 2D.",
+      "motion": "12fps handmade stutter, weighted puppet move, tactile settle",
+      "best": "crafty tactile explainers, cozy handmade charm, wonder",
+      "avoid": "smooth CGI interpolation, flat vector, photoreal live action",
+      "colors": ["#caa472", "#6d8f7a", "#b5523f", "#efe2c8"]
+    },
+    {
+      "id": "cinematic_real",
+      "group": "REAL",
+      "name": "Sinematik Gerçek (Live-Action)",
+      "formula": "Film-grade photoreal live action — real lens, practical light",
+      "render": "Photoreal live-action cinematic frame at feature-film fidelity: full-frame anamorphic lens character with gentle edge distortion and oval bokeh, true optical depth-of-field, motivated practical lighting with soft natural falloff, authentic skin and material response, restrained teal-amber filmic grade, real lens flare and atmospheric haze, dolly/handheld authenticity. No animation styling, no CGI sheen, no over-grade.",
+      "motion": "real-camera move with parallax, natural settle, no morph",
+      "best": "premium brand films, cinematic real stories, emotive live action",
+      "avoid": "animation styling, plastic CGI, over-graded look",
+      "colors": ["#1f2d3d", "#c98a4b", "#7a8a99", "#f0e6d2"]
+    },
+    {
+      "id": "real_human_doc",
+      "group": "REAL",
+      "name": "Gerçek İnsan / Belgesel Senaryo",
+      "formula": "Authentic real people in real scenarios — documentary truth",
+      "render": "Documentary-real frame of authentic people in real locations and real scenarios: available natural light, candid unposed human moment, real skin tones and lived-in textures, 35mm reportage feel, honest shallow-but-unfussy focus, present-tense observational authenticity, real environmental detail. Real human emotion over polish — no studio gloss, no animation, no staged perfection.",
+      "motion": "observational handheld, real human gesture, unstaged settle",
+      "best": "testimonials, real-life scenarios, public-service, human stories",
+      "avoid": "staged perfection, animation, glossy commercial sheen",
+      "colors": ["#3a3a3a", "#b98c5a", "#8a9ba8", "#efe9e0"]
+    },
+    {
       "id": "clay",
       "group": "STYLIZED",
       "name": "Clay Pixar Education",
@@ -1063,6 +1151,16 @@
         "#71717a"
       ]
     }
+  ],
+  "materials": [
+    { "id": "none", "name": "Saf Stil (malzeme yok)", "clause": "", "motion": "" },
+    { "id": "clay", "name": "Clay / Hamur", "clause": "the whole scene is built from handcrafted soft clay — rounded tactile forms, visible thumbprint texture, matte plasticine surface.", "motion": "clay surfaces wobble once and settle" },
+    { "id": "paper", "name": "Kâğıt / Origami", "clause": "the whole scene is layered cut-paper and origami craft — visible paper grain, crisp folds, soft fold-shadows, papercraft diorama depth.", "motion": "paper layers shift like a pop-up book" },
+    { "id": "felt", "name": "Keçe / Kumaş", "clause": "the whole scene is needle-felted wool and stitched fabric — fuzzy fibre texture, visible stitches, soft handmade plushness.", "motion": "soft fabric sway, gentle settle" },
+    { "id": "wood", "name": "Ahşap", "clause": "the whole scene is carved and turned wood — visible grain, matte varnish, jointed wooden mechanisms.", "motion": "wooden parts pivot on visible joints" },
+    { "id": "chalk", "name": "Tebeşir / Karatahta", "clause": "the whole scene is chalk drawing on a dark board — powdery chalk strokes, smudge highlights, hand-lettered labels.", "motion": "chalk lines draw on then hold" },
+    { "id": "sand", "name": "Kum", "clause": "the whole scene is sand-art on a lightbox — flowing grains, soft silhouette edges, backlit warm glow.", "motion": "grains flow and resettle into shape" },
+    { "id": "glass", "name": "Vitray / Cam", "clause": "the whole scene is stained-glass and blown glass — leaded colour panels, light refracting through translucent material, jewel tones.", "motion": "light passes through glass, colour shifts" }
   ],
   "refs": [
     {

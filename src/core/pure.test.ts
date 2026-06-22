@@ -199,6 +199,20 @@ describe('generateBatch', () => {
     expect(noChar.scenes[0].imagePrompt).not.toMatch(/Character lock/);
   });
 
+  it('renders a premium style world (arcane) and injects the material axis into the lock', () => {
+    const r = generateBatch({ ...baseInput, projectClass: 'EGITIM', selectedWorldId: 'arcane', selectedPropId: 'paper' });
+    expect(r.status).toBe('GENERATED');
+    const img = r.scenes[0].imagePrompt;
+    expect(img).toMatch(/Fortiche|painterly 3D/i);   // arcane render lock present
+    expect(img).toMatch(/Material:/);                  // material axis injected
+    expect(img).toMatch(/cut-paper|paper/i);           // the chosen material clause
+  });
+
+  it('does not inject a material clause for a pure style (none)', () => {
+    const r = generateBatch({ ...baseInput, projectClass: 'EGITIM', selectedWorldId: 'arcane', selectedPropId: 'none' });
+    expect(r.scenes[0].imagePrompt).not.toMatch(/Material:/);
+  });
+
   it('palette override flags paletteAccent.source as USER_PALETTE', () => {
     const palette = DATA.palettes[0];
     const result = generateBatch({ ...baseInput, selectedPaletteId: palette.id });

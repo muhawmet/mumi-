@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
-import { Panel, Field, Button, selectStyle } from '../../components/Layout/PanelKit';
+import { Panel, Field, Button, Chip, selectStyle } from '../../components/Layout/PanelKit';
 import { DATA, groupedWorlds, deriveTeachingRecipe, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
 
 function worldGradient(colors?: string[]): string {
@@ -109,6 +109,7 @@ export const RecipeStep = () => {
 
   const worldGroups = useMemo(() => groupedWorlds(), []);
   const selectedWorld = DATA.worlds.find((w) => w.id === selectedWorldId);
+  const isRealWorld = (selectedWorld?.group || '').toLowerCase() === 'real';
   const selectedPalette = DATA.palettes.find((p) => p.id === selectedPaletteId);
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefIds });
@@ -574,23 +575,48 @@ export const RecipeStep = () => {
         )}
       </Panel>
 
-      <Panel title="Teaching Type (Material)" subtitle="Dünya tactile değilse 'native_world' kalır.">
-        <Field label="Override">
-          <select style={selectStyle} value={selectedPropId} onChange={(e) => setField('selectedPropId', e.target.value)}>
-            <option value="native_world" style={{ background: '#0d1018' }}>Dünya kararı (otomatik)</option>
-            <option value="paper" style={{ background: '#0d1018' }}>paper</option>
-            <option value="clay" style={{ background: '#0d1018' }}>clay</option>
-            <option value="wood" style={{ background: '#0d1018' }}>wood</option>
-            <option value="fabric" style={{ background: '#0d1018' }}>fabric</option>
-            <option value="shadow-puppet" style={{ background: '#0d1018' }}>shadow-puppet</option>
-            <option value="paper-theater" style={{ background: '#0d1018' }}>paper-theater</option>
-            <option value="stained-glass" style={{ background: '#0d1018' }}>stained-glass</option>
-          </select>
-        </Field>
-        {recipe && (
-          <div style={{ marginTop: 12, fontSize: 12, color: 'var(--text-muted)' }}>
-            Aktif: <strong style={{ color: 'var(--gold)' }}>{recipe.id}</strong> · {recipe.source}
+      <Panel
+        title="Anlatı Malzemesi · 2. Eksen"
+        subtitle="Render dünyası bu malzemeyi İŞLER — örn. Arcane render'ı + kâğıt malzeme. Render stilinden bağımsız: sahne neyden yapılı?"
+      >
+        {isRealWorld ? (
+          <div style={{ fontSize: 12.5, color: 'var(--text-muted)', lineHeight: 1.55 }}>
+            <Chip tone="default">GERÇEK</Chip> Foto-gerçek dünyalarda malzeme ekseni uygulanmaz — gerçek görüntü "bir şeyden yapılı" değildir.
           </div>
+        ) : (
+          <>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {DATA.materials.map((m) => {
+                const active = selectedPropId === m.id || (m.id === 'none' && (selectedPropId === 'native_world' || !selectedPropId));
+                return (
+                  <button
+                    key={m.id}
+                    onClick={() => setField('selectedPropId', m.id)}
+                    style={{
+                      padding: '9px 14px', borderRadius: 'var(--r-pill)', cursor: 'pointer', fontSize: 12.5, fontWeight: 700,
+                      border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
+                      background: active ? 'var(--goldsoft)' : 'var(--inset)',
+                      color: active ? 'var(--gold)' : 'var(--text-soft)',
+                      transition: 'all var(--dur) var(--ease)',
+                    }}
+                  >
+                    {m.name}
+                  </button>
+                );
+              })}
+            </div>
+            {(() => {
+              const m = DATA.materials.find((x) => x.id === selectedPropId);
+              if (!m || !m.clause) return (
+                <div style={{ marginTop: 14, fontSize: 12, color: 'var(--text-dim)' }}>Saf render dünyası — malzeme katmanı yok.</div>
+              );
+              return (
+                <div style={{ marginTop: 14, padding: 12, borderRadius: 'var(--r-sm)', background: 'var(--inset)', border: '1px solid var(--line)', borderLeft: '3px solid var(--gold)', fontSize: 12, color: 'var(--text-soft)', lineHeight: 1.55 }}>
+                  <strong style={{ color: 'var(--gold)' }}>Render-lock'a eklenecek:</strong> {m.clause}
+                </div>
+              );
+            })()}
+          </>
         )}
       </Panel>
 

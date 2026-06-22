@@ -52,11 +52,14 @@ const PHASE2FN: Record<string, string> = {
 
 // ---------------- render lock ----------------
 
-export function renderLock(world: SurgeryWorld, register: Register): string {
-  const base = T(world.render);
-  if (base) return base;
-  if (register === 'REAL') return 'Photoreal live-action cinematic frame, real lens depth, practical light, authentic material response, no animation styling.';
-  return 'Premium stylized animated feature frame, original IP-safe design.';
+export function renderLock(world: SurgeryWorld, register: Register, material?: string): string {
+  let base = T(world.render);
+  if (!base) base = register === 'REAL'
+    ? 'Photoreal live-action cinematic frame, real lens depth, practical light, authentic material response, no animation styling.'
+    : 'Premium stylized animated feature frame, original IP-safe design.';
+  const mat = T(material).trim();
+  // The material axis is rendered THROUGH the style: e.g. an Arcane-grade render OF a paper-craft world.
+  return mat ? `${base} Material: ${mat} The style above renders this material — do not flatten the render world.` : base;
 }
 
 // ---------------- palette as light ----------------
@@ -221,7 +224,7 @@ const textPolicyLine = () => 'Text/logo: no new text unless the source asks; any
 export interface PromptCtx {
   world: SurgeryWorld; register: Register; dna: DnaDirectives;
   palette?: SurgeryPalette; pathForbidden: string; chars?: string;
-  projectKind?: 'video' | 'design';
+  projectKind?: 'video' | 'design'; material?: string;
 }
 
 export function buildImagePrompt(sceneId: number | string, concept: Concept, camera: string, ctx: PromptCtx, pv = 0): string {
@@ -229,7 +232,7 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
   const charLock = register === 'EDU' && ctx.chars && T(ctx.chars).trim()
     ? ' ' + T(ctx.chars).replace(/\n/g, ' ') : '';
   const parts = [
-    renderLock(world, register),
+    renderLock(world, register, ctx.material),
     'Dominant element: ' + concept.subject + '.',
     'Staging: ' + dna.staging + '.',
     'Camera/vantage: ' + camera + '.',
@@ -254,7 +257,7 @@ export interface AgentBriefScene { id: number | string; source: string; concept:
 export interface AgentBriefCtx {
   projectTopic: string; productionPath: string; register: Register;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
-  projectKind?: 'video' | 'design'; brandKitLock?: string;
+  projectKind?: 'video' | 'design'; brandKitLock?: string; material?: string;
   mood?: string; cameraEnergy?: string; timeLight?: string; transition?: string; musicVibe?: string;
   pov?: string; signature?: string; leitmotif?: string; tempoCurve?: string;
   /** Only set when an A/B/C variant test is active. Absent on every normal brief — keeps the default brief pristine. */
@@ -312,7 +315,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '',
     ...brandKitBlock(ctx),
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
-    renderLock(world, register),
+    renderLock(world, register, ctx.material),
     '',
     '== AUTHORITY ==',
     'Path > Render Lock > Source meaning > Approved image > Reference DNA > Palette. Lower never overwrites higher.',
@@ -375,7 +378,7 @@ export function primePacket(
 ): string {
   const { world, register, dna, palette } = ctx;
   const regLabel = register === 'REAL' ? 'PHOTOREAL / LIVE ACTION' : register === 'EDU' ? 'ANIMATION / EDUCATION' : 'STYLIZED PREMIUM';
-  const rLock = renderLock(world, register);
+  const rLock = renderLock(world, register, ctx.material);
 
   const head = `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}\nCast: ${T(ctx.cast)}`;
 
