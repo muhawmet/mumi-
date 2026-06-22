@@ -1,50 +1,77 @@
-import { ArrowUpRight, RadioTower } from 'lucide-react';
+import { ArrowUpRight, Eye, AlertTriangle } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { productionPulse } from '../core/productionPulse';
 import { useStudioStore } from '../store/useStudioStore';
 import silverDirector from '../assets/silver-director.png';
 
+const LOCAL_IP_MODE = false;
+
 export function ProductionPulse() {
   const state = useStudioStore();
   const pulse = productionPulse(state);
 
+  const isBriefMissing = pulse.gates.find(g => g.id === 'brief')?.score === 0;
+  const isDNAMissing = pulse.gates.find(g => g.id === 'dna')?.score === 0;
+  
+  let harryComment = "Bekliyorum.";
+  if (pulse.score === 100) {
+    harryComment = "Çelişki görünmüyor. Şimdi kanıt üret.";
+  } else if (isBriefMissing) {
+    harryComment = "Dosyanın omurgası yok. Önce neyi savunduğunu söyle.";
+  } else if (isDNAMissing) {
+    harryComment = "Dünya var, bakış yok. Bir referansın tarafını seç.";
+  } else {
+    harryComment = "Bir şeyler eksik. Parçaları birleştir.";
+  }
+
+  const assetUrl = LOCAL_IP_MODE ? '/assets/harry_dubois.png' : silverDirector;
+
   return (
-    <section className="ml-production-pulse" aria-label="Production Pulse">
-      <div className="ml-pulse-director" title="Aksaçlı yönetmen prodüksiyonu izliyor">
-        <img src={silverDirector} alt="Aksaçlı düşük-poly yönetmen avatarı" />
-        <span><i /> İZLİYOR</span>
-      </div>
-      <div className="ml-pulse-topline">
-        <span className="ml-pulse-kicker"><RadioTower size={11} /> PRODUCTION PULSE</span>
-        <span className={`ml-pulse-status ml-pulse-status--${pulse.status.toLowerCase()}`}>{pulse.status}</span>
-      </div>
-
-      <div className="ml-pulse-orbit">
-        <div className="ml-pulse-ring" style={{ '--pulse-score': `${pulse.score}%` } as CSSProperties}>
-          <div className="ml-pulse-core">
-            <strong>{pulse.score}</strong>
-            <span>READY</span>
+    <section className="ml-harry-pulse" aria-label="Harry Pulse">
+      {LOCAL_IP_MODE && (
+        <div style={{ color: 'var(--amber)', fontSize: 9, marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+          <AlertTriangle size={10} />
+          <span>HARRY ASSET NOT FOUND - FALLBACK REQUIRED</span>
+        </div>
+      )}
+      
+      <div className="ml-harry-container">
+        <div className="ml-harry-avatar-wrap">
+          <img src={assetUrl} alt="Director Avatar" className="ml-harry-avatar" />
+          <div className="ml-harry-avatar-overlay" />
+        </div>
+        
+        <div className="ml-harry-content">
+          <div className="ml-harry-header">
+            <Eye size={12} color="var(--gold)" />
+            <span>{LOCAL_IP_MODE ? 'INLAND EMPIRE' : 'DIRECTOR\'S CUT'}</span>
+          </div>
+          
+          <div className="ml-harry-quote">
+            "{harryComment}"
+          </div>
+          
+          <div className="ml-harry-metrics">
+            <div className="ml-harry-score-bar">
+              <div className="ml-harry-score-fill" style={{ width: `${pulse.score}%` }} />
+            </div>
+            <div className="ml-harry-score-text">
+              <span style={{ color: pulse.score === 100 ? 'var(--green)' : 'var(--gold)' }}>{pulse.score}%</span> READY
+            </div>
           </div>
         </div>
-        <div className="ml-pulse-readout">
-          <strong>{pulse.next.label}</strong>
-          <span>{pulse.next.detail}</span>
+      </div>
+      
+      <button type="button" className="ml-harry-action" onClick={() => state.setCurrentStep(pulse.next.step)}>
+        <span style={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'flex-start' }}>
+          <span style={{ fontSize: 9, color: 'var(--text-muted)' }}>SONRAKİ EN İYİ HAMLE</span>
+          <span>{pulse.next.label}</span>
+        </span>
+        <div className="ml-harry-action-icon">
+          <ArrowUpRight size={14} />
         </div>
-      </div>
-
-      <div className="ml-pulse-gates">
-        {pulse.gates.map((gate) => (
-          <div className="ml-pulse-gate" key={gate.id} title={`${gate.label} · ${gate.detail}`}>
-            <div><span>{gate.label}</span><b>{gate.score}</b></div>
-            <i><span style={{ width: `${gate.score}%` }} /></i>
-          </div>
-        ))}
-      </div>
-
-      <button type="button" className="ml-pulse-action" onClick={() => state.setCurrentStep(pulse.next.step)}>
-        <span>SONRAKİ EN İYİ HAMLE</span>
-        <ArrowUpRight size={14} />
       </button>
     </section>
   );
 }
+

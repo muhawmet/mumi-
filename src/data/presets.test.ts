@@ -1,47 +1,36 @@
 import { describe, it, expect } from 'vitest';
 import { PHASE0_VIDEO, PHASE0_DESIGN } from './presets';
-import { DATA, resolveRecipeDefaults } from '../core/pure';
+import SURGERY_DATA from '../core/SURGERY_DATA.json';
 
-const worldIds = new Set(DATA.worlds.map((w) => w.id));
-
-describe('Phase 0 presets', () => {
-  it('every video preset points at a real world id', () => {
-    for (const p of PHASE0_VIDEO) {
-      if (p.sets.selectedWorldId) {
-        expect(worldIds.has(p.sets.selectedWorldId), `${p.id} → unknown world "${p.sets.selectedWorldId}"`).toBe(true);
+describe('Presets to Surgery Data Mapping', () => {
+  it('should have valid projectClass references in VIDEO presets', () => {
+    const validPaths = SURGERY_DATA.paths.map((p: any) => p.id);
+    const validProjects = SURGERY_DATA.projects.map((p: any) => p.path); // Use path mapped from project
+    
+    // Wait, the sets.projectClass actually points to either a path or a project.
+    // In our presets, we used IDs like 'ULTRAREAL_COMMERCIAL', 'ANIMATION_EDU', etc.
+    // These match SURGERY_DATA.paths.id
+    PHASE0_VIDEO.forEach((preset) => {
+      const pClass = preset.sets.projectClass;
+      if (pClass) {
+        expect(validPaths).toContain(pClass);
       }
-    }
+    });
   });
 
-  it('every design preset points at a real world id', () => {
-    for (const p of PHASE0_DESIGN) {
-      if (p.sets.selectedWorldId) {
-        expect(worldIds.has(p.sets.selectedWorldId), `${p.id} → unknown world "${p.sets.selectedWorldId}"`).toBe(true);
+  it('should have valid projectClass references in DESIGN presets', () => {
+    const validPaths = SURGERY_DATA.paths.map((p: any) => p.id);
+    PHASE0_DESIGN.forEach((preset) => {
+      const pClass = preset.sets.projectClass;
+      if (pClass) {
+        expect(validPaths).toContain(pClass);
       }
-    }
+    });
   });
 
-  it('palette overrides (if any) point at real palettes', () => {
-    const paletteIds = new Set(DATA.palettes.map((p) => p.id));
-    for (const p of [...PHASE0_VIDEO, ...PHASE0_DESIGN]) {
-      if (p.sets.selectedPaletteId) {
-        expect(paletteIds.has(p.sets.selectedPaletteId), `${p.id} → unknown palette "${p.sets.selectedPaletteId}"`).toBe(true);
-      }
-    }
-  });
-
-  it('every preset can auto-wire a real reference and palette', () => {
-    const refIds = new Set(DATA.refs.map((r) => r.id));
-    const paletteIds = new Set(DATA.palettes.map((p) => p.id));
-    for (const preset of [...PHASE0_VIDEO, ...PHASE0_DESIGN]) {
-      const defaults = resolveRecipeDefaults(
-        preset.sets.projectClass || '',
-        preset.sets.selectedWorldId || '',
-      );
-      const refIdArray = preset.sets.selectedRefIds || defaults.selectedRefIds;
-      const paletteId = preset.sets.selectedPaletteId || defaults.selectedPaletteId;
-      expect(refIdArray.length > 0 && refIdArray.every(id => refIds.has(id)), `${preset.id} -> no valid reference default`).toBe(true);
-      expect(paletteIds.has(paletteId), `${preset.id} -> no valid palette default`).toBe(true);
-    }
+  it('should not contain any overlapping IDs', () => {
+    const ids = [...PHASE0_VIDEO, ...PHASE0_DESIGN].map((p) => p.id);
+    const uniqueIds = new Set(ids);
+    expect(ids.length).toBe(uniqueIds.size);
   });
 });

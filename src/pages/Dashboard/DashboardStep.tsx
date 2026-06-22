@@ -95,35 +95,43 @@ export const DashboardStep = () => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.03, duration: 0.25 }}
-                whileHover={{ y: -3 }}
+                whileHover={{ y: -2, backgroundColor: active ? 'var(--s3)' : 'var(--s2)' }}
                 onClick={() => onPreset(p)}
                 style={{
-                  padding: 0,
-                  borderRadius: 14,
-                  border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                  background: 'rgba(0,0,0,0.25)',
+                  padding: '16px 14px',
+                  borderRadius: 'var(--r-md)',
+                  border: `1px solid ${active ? 'var(--goldline)' : 'var(--line2)'}`,
+                  background: active ? 'var(--s2)' : 'var(--s1)',
                   cursor: 'pointer',
                   textAlign: 'left',
                   color: '#fff',
+                  boxShadow: active ? '0 0 0 1px var(--goldline), 0 8px 24px rgba(0,0,0,0.4)' : '0 4px 12px rgba(0,0,0,0.2)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                  position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: active ? '0 0 0 1px var(--gold), 0 12px 30px rgba(247,201,72,.18)' : 'none',
                 }}
               >
-                <div
-                  style={{
-                    height: 70,
-                    background: p.gradient,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 32,
-                  }}
-                >
-                  {p.icon}
+                {active && (
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+                    background: 'linear-gradient(90deg, transparent, var(--gold), transparent)',
+                    boxShadow: '0 0 10px var(--goldglow)'
+                  }} />
+                )}
+                <div style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  width: 36, height: 36, borderRadius: 'var(--r-sm)',
+                  background: active ? 'var(--goldsoft)' : 'var(--s3)',
+                  color: active ? 'var(--gold)' : 'var(--text-muted)',
+                  border: `1px solid ${active ? 'var(--goldline)' : 'var(--line2)'}`
+                }}>
+                  <p.icon size={18} strokeWidth={2} />
                 </div>
-                <div style={{ padding: '12px 14px' }}>
-                  <div style={{ fontSize: 13, fontWeight: 700 }}>{p.label}</div>
-                  <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4, lineHeight: 1.4 }}>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: active ? 'var(--text)' : 'var(--text-soft)' }}>{p.label}</div>
+                  <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4, lineHeight: 1.4 }}>
                     {p.desc}
                   </div>
                 </div>
