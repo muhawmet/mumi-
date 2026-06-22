@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useStudioStore } from '../store/useStudioStore';
 import { DATA, deriveProductionPath } from '../core/pure';
 import { registerOf } from '../core/brain';
+import { directorNotes, type NoteLevel } from '../core/advisor';
 import SURGERY_DATA from '../core/SURGERY_DATA.json';
-import { Target, ChevronDown, Lock, CircleDashed } from 'lucide-react';
+import { Target, ChevronDown, Lock, CircleDashed, Clapperboard, AlertTriangle, Info, CheckCircle2 } from 'lucide-react';
 
 /* ============================================================
    RecipeRail — the right rail during Recipe/Scenes/Timeline.
@@ -17,12 +18,29 @@ const REGISTER_LABEL: Record<string, string> = {
   EDU: 'Animasyon / Eğitim', STY: 'Stilize Premium', REAL: 'Foto-gerçek / Reklam',
 };
 
+const NOTE_TONE: Record<NoteLevel, { Icon: typeof Info; color: string; bg: string; border: string }> = {
+  good: { Icon: CheckCircle2, color: 'var(--green)', bg: 'var(--greensoft)', border: 'rgba(77,245,160,0.3)' },
+  info: { Icon: Info, color: 'var(--amber)', bg: 'rgba(245,181,77,0.1)', border: 'rgba(245,181,77,0.3)' },
+  warn: { Icon: AlertTriangle, color: 'var(--red)', bg: 'var(--redsoft)', border: 'rgba(255,92,121,0.3)' },
+};
+
 export const RecipeRail: React.FC = () => {
   const worldId = useStudioStore((s) => s.selectedWorldId);
   const paletteId = useStudioStore((s) => s.selectedPaletteId);
   const refIds = useStudioStore((s) => s.selectedRefIds);
   const projectClass = useStudioStore((s) => s.projectClass);
+  const propId = useStudioStore((s) => s.selectedPropId);
+  const rawSource = useStudioStore((s) => s.rawSource);
+  const sourceReport = useStudioStore((s) => s.sourceReport);
+  const sceneCount = useStudioStore((s) => s.sceneCount);
+  const scenes = useStudioStore((s) => s.scenes);
   const [open, setOpen] = useState(true);
+
+  const notes = directorNotes({
+    projectClass, selectedWorldId: worldId, selectedPaletteId: paletteId, selectedRefIds: refIds,
+    selectedPropId: propId, rawSource, sourceCoverage: sourceReport?.coverage ?? null,
+    sceneCount, intensities: scenes.map((s) => s.intensity),
+  });
 
   const world = DATA.worlds.find((w) => w.id === worldId);
   const palette = DATA.palettes.find((p) => p.id === paletteId);
@@ -78,6 +96,30 @@ export const RecipeRail: React.FC = () => {
           <div style={S.hint}><CircleDashed size={12} /> Eksik: {missing}</div>
         )}
       </div>
+
+      {/* ── Director's notes (live whole-recipe critique) ── */}
+      {notes.length > 0 && (
+        <div style={S.card}>
+          <div style={{ ...S.head, marginBottom: 12 }}>
+            <span style={S.eyebrow}><Clapperboard size={11} /> YÖNETMEN</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {notes.slice(0, 4).map((n, i) => {
+              const tone = NOTE_TONE[n.level];
+              const Icon = tone.Icon;
+              return (
+                <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '8px 10px', borderRadius: 'var(--r-sm)', background: tone.bg, border: `1px solid ${tone.border}` }}>
+                  <Icon size={13} color={tone.color} style={{ marginTop: 1, flexShrink: 0 }} />
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontSize: 11.5, fontWeight: 700, color: tone.color }}>{n.title}</div>
+                    <div style={{ fontSize: 11, color: 'var(--text-soft)', lineHeight: 1.45, marginTop: 1 }}>{n.detail}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* ── Contextual golden target ── */}
       {target && (

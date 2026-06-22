@@ -5,6 +5,8 @@ import { Panel, Field, Button, inputStyle, selectStyle } from '../../components/
 import { PHASE0_VIDEO, PHASE0_DESIGN, type Phase0Preset } from '../../data/presets';
 import { DATA, parseSourceInput } from '../../core/pure';
 import { decodeBrief } from '../../core/source';
+import { suggestRecipe } from '../../core/advisor';
+import { Wand2 } from 'lucide-react';
 
 const CLASS_OPTIONS = DATA.paths.map((path) => ({ id: path.id, label: path.name }));
 
@@ -18,6 +20,16 @@ export const DashboardStep = () => {
   const [kind, setKind] = useState<'video' | 'design'>(projectKind);
   const [activePreset, setActivePreset] = useState<string | null>(null);
   const [vaultName, setVaultName] = useState('');
+  const [autoRecipe, setAutoRecipe] = useState<{ reason: string; confidence: string } | null>(null);
+
+  const onAutoRecipe = () => {
+    const topic = (rawSource.trim() || projectTopic).trim();
+    if (!topic) return;
+    const s = suggestRecipe(topic);
+    applyPreset({ projectClass: s.path, selectedWorldId: s.worldId, selectedPaletteId: s.paletteId, selectedRefIds: s.refIds });
+    setActivePreset(null);
+    setAutoRecipe({ reason: s.reason, confidence: s.confidence });
+  };
 
   const presets = kind === 'video' ? PHASE0_VIDEO : PHASE0_DESIGN;
   const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
@@ -201,7 +213,34 @@ export const DashboardStep = () => {
         )}
       </Panel>
 
-      <Panel title="Konu & Sınıf">
+      <Panel
+        title="Konu & Sınıf"
+        aside={
+          <Button onClick={onAutoRecipe} disabled={!(rawSource.trim() || projectTopic.trim())} style={{ padding: '9px 14px', fontSize: 12.5 }}>
+            <Wand2 size={14} /> Reçeteyi kur
+          </Button>
+        }
+      >
+        <AnimatePresence>
+          {autoRecipe && (
+            <motion.div
+              initial={{ opacity: 0, y: -6, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              style={{ overflow: 'hidden', marginBottom: 16 }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 'var(--r-sm)', border: '1px solid var(--goldline)', background: 'var(--goldsoft)' }}>
+                <Wand2 size={15} color="var(--gold)" />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--gold-hi)' }}>
+                    Reçete kuruldu · {autoRecipe.confidence === 'high' ? 'yüksek güven' : autoRecipe.confidence === 'medium' ? 'orta güven' : 'tahmini'}
+                  </div>
+                  <div style={{ fontSize: 11.5, color: 'var(--text-soft)', marginTop: 2 }}>{autoRecipe.reason} → Reçete adımında ince ayar yapabilirsin.</div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
           <Field label="Proje konusu" hint='Kanonik kaynak için "SOURCE:" ön ekiyle çoklu beat yazabilirsin.'>
             <textarea
