@@ -32,7 +32,8 @@ test('Phase 0 preset wires world and lets us complete the full flow', async ({ p
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
   await expect(page.getByText('STAGE 2 · REÇETE')).toBeVisible();
 
-  await page.getByRole('button', { name: /Timeline'a geç/ }).click();
+  await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
+  await page.getByRole('button', { name: /İleri → Timeline/ }).click();
   await expect(page.getByText('STAGE 3 · TIMELINE')).toBeVisible();
   await expect(page.getByText(/Üretime hazır/i)).toBeVisible();
 
@@ -93,7 +94,8 @@ test('per-scene override persists across reloads', async ({ page }) => {
   await freshGoto(page);
   await page.getByText('Eğitim · Aras & Defne').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
-  await page.getByRole('button', { name: /Timeline'a geç/ }).click();
+  await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
+  await page.getByRole('button', { name: /İleri → Timeline/ }).click();
   await page.getByRole('button', { name: /BATCH ÜRET/ }).click();
   await expect(page.getByText('Sahne 1 · Intro')).toBeVisible();
 
@@ -114,7 +116,8 @@ test('design preset produces an honest static IMAGE-only delivery', async ({ pag
   await page.getByRole('button', { name: /DESIGN · 7/ }).click();
   await page.getByText('Ürün Postu').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
-  await page.getByRole('button', { name: /Timeline'a geç/ }).click();
+  await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
+  await page.getByRole('button', { name: /İleri → Timeline/ }).click();
 
   await expect(page.getByText('STAGE 3 · DESIGN TESLİMİ')).toBeVisible();
   await page.getByRole('button', { name: /TASARIM ÜRET/ }).click();

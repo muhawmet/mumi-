@@ -19,6 +19,7 @@ export const RecipeStep = () => {
     selectedPaletteId,
     setField,
     setCurrentStep,
+    advance,
   } = useStudioStore();
 
   const worldGroups = useMemo(() => groupedWorlds(), []);
@@ -228,8 +229,8 @@ export const RecipeStep = () => {
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>← Brief'e dön</Button>
-        <Button onClick={() => setCurrentStep('timeline')} disabled={!readiness.ready}>
-          Timeline'a geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
+        <Button onClick={() => advance()} disabled={!readiness.ready}>
+          Sahneler'e geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
         </Button>
       </div>
     </div>

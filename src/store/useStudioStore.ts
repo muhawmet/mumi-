@@ -14,10 +14,12 @@ import {
   type SourceBeat,
   type SourceIntegrityReport,
 } from '../core/source';
+import { planBeats, type BeatMode, type BeatAnalysis } from '../core/beats';
 
-export type Step = 'dashboard' | 'recipe' | 'timeline';
+export type Step = 'dashboard' | 'recipe' | 'scenes' | 'timeline';
 export type Cast = 'Aras' | 'Defne' | 'İkisi';
 export type ProjectKind = 'video' | 'design';
+export type WorkingMode = 'Hızlı' | 'Standart' | 'Sıkı Teslim';
 
 export interface Scene {
   id: number;
@@ -62,7 +64,7 @@ export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'select
 } {
   const missing: string[] = [];
   if (!s.selectedWorldId) missing.push('Dünya');
-  if (!s.selectedPaletteId) missing.push('Palet');
+  if (s.selectedPaletteId === null || s.selectedPaletteId === undefined) missing.push('Palet');
   if (!s.selectedRefId) missing.push('Referans DNA');
   return { ready: missing.length === 0, missing };
 }
@@ -104,6 +106,11 @@ export interface StudioState {
   isGenerating: boolean;
   lastError: string | null;
 
+  beatMode: BeatMode;
+  workingMode: WorkingMode;
+  beatKeeps: Record<string, boolean>;
+  beatAnalysis: BeatAnalysis | null;
+
   currentStep: Step;
 
   setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
@@ -112,6 +119,10 @@ export interface StudioState {
   setRawSource: (raw: string) => void;
   decodeRawSource: () => void;
   ingestRawSource: () => void;
+  setBeatMode: (mode: BeatMode) => void;
+  toggleBeatKeep: (beatId: string) => void;
+  mergeBeats: (index: number) => void;
+  splitBeat: (index: number) => void;
   applyPreset: (preset: Partial<StudioState>) => void;
   generateScenes: () => void;
   advance: () => void;
@@ -145,6 +156,11 @@ const initial = {
   selectedSceneId: null as number | null,
   isGenerating: false,
   lastError: null as string | null,
+
+  beatMode: 'Dengeli' as BeatMode,
+  workingMode: 'Standart' as WorkingMode,
+  beatKeeps: {} as Record<string, boolean>,
+  beatAnalysis: null as BeatAnalysis | null,
 
   currentStep: 'dashboard' as Step,
 };
@@ -256,10 +272,56 @@ export const useStudioStore = create<StudioState>()(
         });
       },
       ingestRawSource: () => {
-        const rawSource = get().rawSource;
+        const s = get();
+        const rawSource = s.rawSource;
         const sourceBeats = ingestSource(rawSource);
         const sourceReport = sourceIntegrity(rawSource, sourceBeats);
-        set({ sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1) });
+        const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({ sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1), beatAnalysis });
+      },
+      setBeatMode: (mode) => {
+        const s = get();
+        const beatAnalysis = planBeats(s.sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
+        set({ beatMode: mode, beatAnalysis });
+      },
+      toggleBeatKeep: (beatId) => {
+        const s = get();
+        const beatKeeps = { ...s.beatKeeps, [beatId]: !s.beatKeeps[beatId] };
+        set({ beatKeeps });
+      },
+      mergeBeats: (index) => {
+        const s = get();
+        const b1 = s.sourceBeats[index];
+        const b2 = s.sourceBeats[index + 1];
+        if (!b1 || !b2) return;
+        const exactText = b1.exactText + ' ' + b2.exactText;
+        const merged: SourceBeat = {
+          sourceId: b1.sourceId,
+          exactText,
+          start: b1.start,
+          end: b2.end,
+          hash: b1.hash + '-' + b2.hash, // rough proxy
+        };
+        const newBeats = [...s.sourceBeats];
+        newBeats.splice(index, 2, merged);
+        const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length });
+      },
+      splitBeat: (index) => {
+        const s = get();
+        const beat = s.sourceBeats[index];
+        if (!beat) return;
+        const words = beat.exactText.split(' ');
+        const mid = Math.floor(words.length / 2);
+        const b1Text = words.slice(0, mid).join(' ');
+        const b2Text = words.slice(mid).join(' ');
+        
+        const b1: SourceBeat = { sourceId: beat.sourceId + '-A', exactText: b1Text, start: beat.start, end: beat.start + b1Text.length, hash: beat.hash + '-A' };
+        const b2: SourceBeat = { sourceId: beat.sourceId + '-B', exactText: b2Text, start: beat.start + b1Text.length + 1, end: beat.end, hash: beat.hash + '-B' };
+        const newBeats = [...s.sourceBeats];
+        newBeats.splice(index, 1, b1, b2);
+        const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length });
       },
       applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
 
@@ -329,10 +391,9 @@ export const useStudioStore = create<StudioState>()(
         if (s.currentStep === 'dashboard') {
           if (s.projectTopic.trim() && sourceReadiness(s).ready) set({ currentStep: 'recipe' });
         } else if (s.currentStep === 'recipe') {
-          // Strict gate: world + palette + reference DNA must all be set (no blind batch).
-          if (recipeReadiness(s).ready) set({ currentStep: 'timeline' });
-        } else if (s.currentStep === 'timeline') {
-          get().generateScenes();
+          if (recipeReadiness(s).ready) set({ currentStep: 'scenes' });
+        } else if (s.currentStep === 'scenes') {
+          set({ currentStep: 'timeline' });
         }
       },
 
@@ -361,9 +422,13 @@ export const useStudioStore = create<StudioState>()(
         scenes: s.scenes,
         agentBrief: s.agentBrief,
         selectedSceneId: s.selectedSceneId,
+        beatMode: s.beatMode,
+        workingMode: s.workingMode,
+        beatKeeps: s.beatKeeps,
+        beatAnalysis: s.beatAnalysis,
         currentStep: s.currentStep,
       }),
-      version: 3,
+      version: 4,
       migrate: (persistedState) => migratePersistedState(persistedState),
     },
   ),

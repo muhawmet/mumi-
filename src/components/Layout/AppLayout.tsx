@@ -5,7 +5,8 @@ import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudi
 const STEPS: Array<{ id: Step; label: string; icon: React.ReactNode; index: number }> = [
   { id: 'dashboard', label: 'Brief', icon: <LayoutDashboard size={18} />, index: 1 },
   { id: 'recipe', label: 'Reçete', icon: <Palette size={18} />, index: 2 },
-  { id: 'timeline', label: 'Timeline', icon: <Film size={18} />, index: 3 },
+  { id: 'scenes', label: 'Sahneler', icon: <Film size={18} />, index: 3 },
+  { id: 'timeline', label: 'Timeline', icon: <Sparkles size={18} />, index: 4 },
 ];
 
 export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

@@ -9,6 +9,9 @@ const DashboardStep = lazy(() =>
 const RecipeStep = lazy(() =>
   import('./pages/Recipe/RecipeStep').then((module) => ({ default: module.RecipeStep })),
 );
+const ScenesStep = lazy(() =>
+  import('./pages/Scenes/ScenesStep').then((module) => ({ default: module.ScenesStep })),
+);
 const TimelineStep = lazy(() =>
   import('./pages/Timeline/TimelineStep').then((module) => ({ default: module.TimelineStep })),
 );
@@ -47,6 +50,11 @@ function App() {
           {currentStep === 'recipe' && (
             <motion.div key="recipe" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <RecipeStep />
+            </motion.div>
+          )}
+          {currentStep === 'scenes' && (
+            <motion.div key="scenes" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+              <ScenesStep />
             </motion.div>
           )}
           {currentStep === 'timeline' && (
