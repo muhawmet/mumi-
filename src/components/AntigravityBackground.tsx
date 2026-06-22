@@ -63,11 +63,14 @@ export const AntigravityBackground: React.FC = () => {
     let raf = 0;
 
     const render = () => {
+      // Guard: before first layout the canvas can be 0×0, which would make the
+      // parallax drivers NaN and blow up createRadialGradient. Skip until sized.
+      if (width < 2 || height < 2) { raf = requestAnimationFrame(render); return; }
       t += 1;
       // ease pointer
       px += (tx - px) * 0.04; py += (ty - py) * 0.04;
-      const pdx = (px / width - 0.5);   // -0.5..0.5 parallax driver
-      const pdy = (py / height - 0.5);
+      const pdx = px / width - 0.5;     // -0.5..0.5 parallax driver
+      const pdy = py / height - 0.5;
 
       ctx.clearRect(0, 0, width, height);
 
