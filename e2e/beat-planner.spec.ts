@@ -23,14 +23,15 @@ test('Beat Planner renders and mode switch changes numbers', async ({ page }) =>
   await page.click('button:has-text("Sahneler\'e geç →")');
 
   // Verify scenes step renders
-  await expect(page.locator('h2:has-text("Sahneler & Beat Planner")')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Beat Planner & Storyboard' })).toBeVisible();
 
-  // Check initial mode
-  const limitText = await page.locator('text=Limit:').textContent();
-  expect(limitText).toContain('3s - 6s - 9s'); // Dengeli defaults
+  // Check initial mode (Dengeli defaults)
+  const limit = page.locator('text=Limit:').first();
+  await expect(limit).toContainText('3s');
+  await expect(limit).toContainText('max 9s');
 
-  // Switch to Ekonomik
+  // Switch to Ekonomik — the limits must change
   await page.click('button:has-text("Ekonomik")');
-  const newLimitText = await page.locator('text=Limit:').textContent();
-  expect(newLimitText).toContain('3.5s - 7s - 11s');
+  await expect(limit).toContainText('3.5s');
+  await expect(limit).toContainText('max 11s');
 });

@@ -1,28 +1,61 @@
 import React from 'react';
 
-export const Panel: React.FC<{ title?: string; subtitle?: string; children: React.ReactNode }> = ({
-  title,
-  subtitle,
-  children,
-}) => (
+/* =============================================================
+   PanelKit — shared premium primitives (Phase G)
+   Every page renders through these, so a change here lifts the
+   whole app. Pure presentation; no business logic.
+   ============================================================= */
+
+export const Panel: React.FC<{
+  title?: string;
+  subtitle?: string;
+  children: React.ReactNode;
+  /** Optional element rendered on the right of the header (actions, chips). */
+  aside?: React.ReactNode;
+}> = ({ title, subtitle, children, aside }) => (
   <section
     style={{
       background:
-        'linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018)),linear-gradient(180deg,#0b0d13,#07080c)',
-      border: '1px solid var(--line2, #ffffff1c)',
-      borderRadius: 16,
-      padding: 24,
-      boxShadow: '0 18px 70px rgba(0,0,0,.24)',
+        'linear-gradient(180deg, var(--glass), rgba(255,255,255,0.012)), linear-gradient(180deg, var(--s1), var(--bg-2))',
+      border: '1px solid var(--line2)',
+      borderRadius: 'var(--r-lg)',
+      padding: 'var(--sp-6)',
+      boxShadow: 'var(--shadow)',
+      position: 'relative',
     }}
   >
-    {title && (
-      <header style={{ marginBottom: 18 }}>
-        <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--gold, #f7c948)', fontWeight: 700 }}>
-          {title.toUpperCase()}
+    {/* hairline top highlight */}
+    <span
+      aria-hidden
+      style={{
+        position: 'absolute', insetInline: 1, top: 0, height: 1,
+        background: 'linear-gradient(90deg, transparent, var(--glass-hi), transparent)',
+        borderTopLeftRadius: 'var(--r-lg)', borderTopRightRadius: 'var(--r-lg)',
+      }}
+    />
+    {(title || aside) && (
+      <header
+        style={{
+          display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
+          gap: 16, marginBottom: subtitle ? 18 : 16,
+        }}
+      >
+        <div>
+          {title && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 5, height: 5, borderRadius: 999, background: 'var(--gold)', boxShadow: '0 0 8px var(--goldglow)' }} />
+              <span style={{ fontSize: 11, letterSpacing: 2.4, color: 'var(--gold)', fontWeight: 700 }}>
+                {title.toUpperCase()}
+              </span>
+            </div>
+          )}
+          {subtitle && (
+            <div style={{ marginTop: 7, fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.5, maxWidth: 620 }}>
+              {subtitle}
+            </div>
+          )}
         </div>
-        {subtitle && (
-          <div style={{ marginTop: 4, fontSize: 13, color: 'var(--text-muted, #94a3b8)' }}>{subtitle}</div>
-        )}
+        {aside && <div style={{ flexShrink: 0 }}>{aside}</div>}
       </header>
     )}
     {children}
@@ -34,51 +67,122 @@ export const Field: React.FC<{ label: string; children: React.ReactNode; hint?: 
   children,
   hint,
 }) => (
-  <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-    <span style={{ fontSize: 11, letterSpacing: 1, color: 'var(--text-muted, #94a3b8)', textTransform: 'uppercase' }}>
+  <label style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+    <span style={{ fontSize: 10.5, letterSpacing: 1.4, color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
       {label}
     </span>
     {children}
-    {hint && <span style={{ fontSize: 11, color: 'var(--text-muted, #94a3b8)', opacity: 0.7 }}>{hint}</span>}
+    {hint && <span style={{ fontSize: 11.5, color: 'var(--text-dim)' }}>{hint}</span>}
   </label>
 );
 
 export const inputStyle: React.CSSProperties = {
-  background: 'rgba(0,0,0,.32)',
-  border: '1px solid var(--line2, #ffffff1c)',
-  borderRadius: 10,
+  background: 'rgba(0,0,0,0.28)',
+  border: '1px solid var(--line2)',
+  borderRadius: 'var(--r-sm)',
   padding: '12px 14px',
-  color: '#fff',
+  color: 'var(--text)',
   fontSize: 14,
   fontFamily: 'inherit',
   outline: 'none',
-  transition: 'border-color .15s',
+  transition: 'border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease)',
 };
 
-export const selectStyle: React.CSSProperties = { ...inputStyle, appearance: 'none', cursor: 'pointer' };
+export const selectStyle: React.CSSProperties = {
+  ...inputStyle,
+  appearance: 'none',
+  cursor: 'pointer',
+  backgroundImage:
+    "url('data:image/svg+xml;utf8,<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 1.5L6 6.5L11 1.5\" stroke=\"%238a93a6\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>')",
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'right 14px center',
+  paddingRight: 38,
+};
 
 export const Button: React.FC<
-  { variant?: 'primary' | 'ghost' } & React.ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ variant = 'primary', style, children, ...rest }) => (
-  <button
-    {...rest}
-    style={{
-      padding: '12px 20px',
-      borderRadius: 10,
-      border: variant === 'primary' ? '1px solid var(--gold, #f7c948)' : '1px solid var(--line3, #ffffff34)',
-      background:
-        variant === 'primary'
-          ? 'linear-gradient(180deg, var(--gold, #f7c948), var(--gold2, #d99a2b))'
-          : 'transparent',
-      color: variant === 'primary' ? '#1a1300' : '#fff',
-      fontWeight: 600,
-      fontSize: 14,
-      cursor: rest.disabled ? 'not-allowed' : 'pointer',
-      opacity: rest.disabled ? 0.5 : 1,
-      letterSpacing: 0.5,
-      ...style,
-    }}
-  >
-    {children}
-  </button>
+  { variant?: 'primary' | 'ghost' | 'danger' } & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ variant = 'primary', style, children, onMouseEnter, onMouseLeave, ...rest }) => {
+  const [hover, setHover] = React.useState(false);
+  const base: React.CSSProperties = {
+    padding: '11px 18px',
+    borderRadius: 'var(--r-sm)',
+    fontWeight: 600,
+    fontSize: 13.5,
+    letterSpacing: 0.3,
+    cursor: rest.disabled ? 'not-allowed' : 'pointer',
+    opacity: rest.disabled ? 0.45 : 1,
+    transition: 'transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease)',
+    transform: hover && !rest.disabled ? 'translateY(-1px)' : 'none',
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+  };
+  const variants: Record<string, React.CSSProperties> = {
+    primary: {
+      border: '1px solid var(--goldline)',
+      background: hover && !rest.disabled
+        ? 'linear-gradient(180deg, var(--gold-hi), var(--gold))'
+        : 'linear-gradient(180deg, var(--gold), var(--gold-2))',
+      color: '#241a00',
+      boxShadow: hover && !rest.disabled ? 'var(--shadow-gold)' : '0 6px 18px rgba(245,196,81,0.14)',
+    },
+    ghost: {
+      border: '1px solid var(--line3)',
+      background: hover && !rest.disabled ? 'var(--glass-2)' : 'transparent',
+      color: 'var(--text)',
+    },
+    danger: {
+      border: '1px solid var(--redsoft)',
+      background: hover && !rest.disabled ? 'var(--redsoft)' : 'transparent',
+      color: 'var(--red)',
+    },
+  };
+  return (
+    <button
+      {...rest}
+      onMouseEnter={(e) => { setHover(true); onMouseEnter?.(e); }}
+      onMouseLeave={(e) => { setHover(false); onMouseLeave?.(e); }}
+      style={{ ...base, ...variants[variant], ...style }}
+    >
+      {children}
+    </button>
+  );
+};
+
+/* — A compact metric tile — */
+export const Stat: React.FC<{ label: string; value: React.ReactNode; tone?: 'default' | 'gold' | 'green' | 'red' }> = ({
+  label, value, tone = 'default',
+}) => {
+  const color = tone === 'gold' ? 'var(--gold)' : tone === 'green' ? 'var(--green)' : tone === 'red' ? 'var(--red)' : 'var(--text)';
+  return (
+    <div style={{ padding: '14px 16px', border: '1px solid var(--line2)', borderRadius: 'var(--r-md)', background: 'rgba(0,0,0,0.22)', minWidth: 0 }}>
+      <div style={{ fontSize: 22, fontWeight: 800, color, fontFamily: 'var(--font-mono)', letterSpacing: -0.5, overflowWrap: 'anywhere' }}>{value}</div>
+      <div style={{ fontSize: 10, letterSpacing: 1.2, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: 5 }}>{label}</div>
+    </div>
+  );
+};
+
+/* — A small status / label pill — */
+export const Chip: React.FC<{ children: React.ReactNode; tone?: 'default' | 'gold' | 'green' | 'red' | 'amber' }> = ({
+  children, tone = 'default',
+}) => {
+  const map = {
+    default: { c: 'var(--text-soft)', b: 'var(--line2)', bg: 'var(--glass)' },
+    gold:    { c: 'var(--gold)', b: 'var(--goldline)', bg: 'var(--goldsoft)' },
+    green:   { c: 'var(--green)', b: 'rgba(77,245,160,0.3)', bg: 'var(--greensoft)' },
+    red:     { c: 'var(--red)', b: 'rgba(255,92,121,0.3)', bg: 'var(--redsoft)' },
+    amber:   { c: 'var(--amber)', b: 'rgba(245,181,77,0.3)', bg: 'rgba(245,181,77,0.1)' },
+  }[tone];
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      fontSize: 10.5, fontWeight: 700, letterSpacing: 0.8, textTransform: 'uppercase',
+      color: map.c, background: map.bg, border: `1px solid ${map.b}`,
+      padding: '4px 10px', borderRadius: 'var(--r-pill)',
+    }}>
+      {children}
+    </span>
+  );
+};
+
+export const Divider: React.FC = () => (
+  <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--line2), transparent)', margin: '4px 0' }} />
 );

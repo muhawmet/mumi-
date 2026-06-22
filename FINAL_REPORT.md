@@ -64,8 +64,22 @@ npm run build   → 325 kB JS (104 kB gzip), ~150 ms
   sonra kullanıcı world/ref/palette'i serbestçe değiştirebiliyor — gerçek bir kilit
   yok. Var olmayan kilidi beyan etmek dürüstlük ihlali olur. Gerçek Phase-0 kilit
   semantiği eklenince açılmalı.
-- **Phase G (high-end UI design-system katmanı):** App halihazırda dark/gold temalı,
-  PanelKit + framer-motion + responsive (≤720px) bir tasarım sistemi üzerinde çalışıyor
-  ve tüm akış gerçek tarayıcıda yeşil. MASTER_BUILD Phase G'nin öngördüğü ayrı
-  `src/ui/**` primitif kütüphanesi + `tokens.css` kapsamlı kozmetik tur YAPILMADI —
-  işlev tamam, saf görsel cila ayrı bir tur olarak bırakıldı. "Bitti" denmedi.
+- *(Önceki not — artık geçersiz: Phase G yapıldı.)*
+
+## Phase G — High-end UI (2026-06-22, yapıldı)
+
+Eski site işlev/menü/içerik kıstası; arayüz 2026 10/10 hedefiyle baştan tasarlandı
+(eski "2004 JS" görünümü kopyalanmadı). Beynin fonksiyonel butonları/akışı korundu.
+
+- `src/styles/tokens.css` (yeni): tek kaynak tasarım sistemi — koyu siyah + **tek altın
+  aksan**, cam yüzeyler, hairline kenarlar, spacing/radius/shadow/blur/motion/type ölçekleri.
+- `src/index.css` baştan yazıldı: 972 satırlık ölü "2004" CSS (`.studio-*`, `.btn-generate`,
+  çakışan mor `--gold` override'ı, dönen gökkuşağı mesh) söküldü; yerine sakin altın halo +
+  derin vinyet, rafine scrollbar, ortak altın focus-ring, responsive 3-kolon→tek-kolon.
+- `PanelKit` premium'a yükseltildi + yeni primitifler: `Stat`, `Chip`, `Divider`; `Button`'a
+  hover-lift + `danger` varyantı.
+- `AppLayout` cam sidebar + aktif adımda altın gösterge çubuğu + rafine sağ panel.
+- **`ScenesStep` tamamen yeniden kuruldu:** Tailwind kurulu olmadığı için stilsiz render
+  olan beyaz kartlar (gerçek 1/10 sayfa) söküldü; dark/gold storyboard + beat planner.
+  Tüm mantık (advance/beatMode/workingMode/merge/split/keep) bire bir korundu.
+- **Phase G gate:** 88 unit + 10 e2e + lint 0 + tsc 0 + build (CSS 10 kB) + **0 konsol hatası**.

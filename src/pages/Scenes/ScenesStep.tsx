@@ -1,184 +1,167 @@
-import React from 'react';
 import { useStudioStore, type WorkingMode } from '../../store/useStudioStore';
 import { type BeatMode } from '../../core/beats';
+import { Panel, Button, Stat, Chip, selectStyle } from '../../components/Layout/PanelKit';
+
+const BEAT_MODES: BeatMode[] = ['Ekonomik', 'Dengeli', 'Hassas', 'Manuel'];
 
 export function ScenesStep() {
   const store = useStudioStore();
-  const { 
-    beatMode, 
-    workingMode, 
-    beatAnalysis, 
-    sourceBeats,
-    beatKeeps,
-    selectedWorldId
-  } = store;
+  const { beatMode, workingMode, beatAnalysis, beatKeeps, selectedWorldId } = store;
+
+  const header = (
+    <header style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'space-between', alignItems: 'flex-end' }}>
+      <div>
+        <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 3 · SAHNELER</div>
+        <h1 style={{ fontSize: 34, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>Beat Planner & Storyboard</h1>
+        <p style={{ color: 'var(--text-muted)', fontSize: 14 }}>
+          Anlamsal beat ekonomisi — VO süresini klip bütçesine göre dengele, BÖLEMEZSİN sınırını koru.
+        </p>
+      </div>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+        <select
+          value={workingMode}
+          onChange={(e) => store.setField('workingMode', e.target.value as WorkingMode)}
+          style={{ ...selectStyle, minWidth: 150 }}
+        >
+          <option value="Hızlı" style={{ background: 'var(--s2)' }}>Hızlı Çalışma</option>
+          <option value="Standart" style={{ background: 'var(--s2)' }}>Standart</option>
+          <option value="Sıkı Teslim" style={{ background: 'var(--s2)' }}>Sıkı Teslim</option>
+        </select>
+        <Button onClick={() => store.advance()}>İleri → Timeline <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span></Button>
+      </div>
+    </header>
+  );
 
   if (!beatAnalysis) {
     return (
-      <div className="scenes-step p-6 space-y-8">
-        <header className="flex justify-between items-center">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-500">Sahneler & Beat Planner (Devre Dışı)</h2>
-            <p className="text-sm text-gray-400 mt-2">Kanonik kaynak (Ingest) bulunamadı. Sadece sahne sayısı ile devam ediliyor.</p>
+      <div className="scenes-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
+        {header}
+        <Panel title="Beat Planner devre dışı" subtitle="Kanonik kaynak (Ingest) bulunamadı — yalnızca sahne sayısıyla devam ediliyor.">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--text-muted)', fontSize: 13 }}>
+            <Chip tone="amber">UNSOURCED</Chip>
+            Brief adımında “Decode + Kayıpsız Ingest” yaparsan beat ekonomisi ve storyboard burada açılır.
           </div>
-          <button 
-            onClick={() => store.advance()}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-bold"
-          >
-            İleri → Timeline
-          </button>
-        </header>
+        </Panel>
       </div>
     );
   }
 
   const { plan, hints, enhancedBeats } = beatAnalysis;
 
-  const handleModeChange = (m: BeatMode) => {
-    store.setBeatMode(m);
-  };
-
-  const handleWorkingModeChange = (m: WorkingMode) => {
-    store.setField('workingMode', m);
-  };
-
   return (
-    <div className="scenes-step p-6 space-y-8">
-      <header className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Sahneler & Beat Planner</h2>
-        <div className="flex gap-4">
-          <select 
-            value={workingMode} 
-            onChange={(e) => handleWorkingModeChange(e.target.value as WorkingMode)}
-            className="border p-2 rounded"
-          >
-            <option value="Hızlı">Hızlı Çalışma</option>
-            <option value="Standart">Standart</option>
-            <option value="Sıkı Teslim">Sıkı Teslim</option>
-          </select>
-          <button 
-            onClick={() => store.advance()}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-bold"
-          >
-            İleri → Timeline
-          </button>
-        </div>
-      </header>
+    <div className="scenes-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
+      {header}
 
-      <div className="flex gap-6">
-        {/* BEAT PLANNER PANEL */}
-        <aside className="w-1/3 bg-gray-50 p-4 border rounded-lg flex flex-col gap-6">
-          <div>
-            <h3 className="font-bold text-lg mb-2">Beat Planner</h3>
-            <div className="flex bg-white rounded border overflow-hidden">
-              {['Ekonomik', 'Dengeli', 'Hassas', 'Manuel'].map((m) => (
+      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 360px) 1fr', gap: 20, alignItems: 'start' }} className="dashboard-form-grid">
+        {/* ---- BEAT PLANNER ---- */}
+        <Panel title="Beat Planner" subtitle={`Limit: ${plan.min}s · hedef ${plan.target}s · max ${plan.max}s`}>
+          <div style={{ display: 'flex', gap: 4, padding: 4, background: 'rgba(0,0,0,0.28)', border: '1px solid var(--line2)', borderRadius: 'var(--r-md)' }}>
+            {BEAT_MODES.map((m) => {
+              const active = beatMode === m;
+              return (
                 <button
                   key={m}
-                  onClick={() => handleModeChange(m as BeatMode)}
-                  className={`flex-1 p-2 text-sm text-center ${beatMode === m ? 'bg-blue-100 font-bold text-blue-800' : 'hover:bg-gray-100'}`}
+                  onClick={() => store.setBeatMode(m)}
+                  style={{
+                    flex: 1, padding: '9px 6px', fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                    borderRadius: 'var(--r-xs)',
+                    border: `1px solid ${active ? 'var(--goldline)' : 'transparent'}`,
+                    background: active ? 'var(--goldsoft)' : 'transparent',
+                    color: active ? 'var(--gold)' : 'var(--text-muted)',
+                    transition: 'all var(--dur) var(--ease)',
+                  }}
                 >
                   {m}
                 </button>
-              ))}
-            </div>
-            <div className="text-xs text-gray-500 mt-2 text-center">
-              Limit: {plan.min}s - {plan.target}s - {plan.max}s
-            </div>
+              );
+            })}
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white p-3 rounded border text-center">
-              <div className="text-2xl font-black">{plan.clips}</div>
-              <div className="text-xs text-gray-500 uppercase">Klip</div>
-            </div>
-            <div className="bg-white p-3 rounded border text-center">
-              <div className="text-2xl font-black">{plan.genSec}s</div>
-              <div className="text-xs text-gray-500 uppercase">Üretim Maliyeti</div>
-            </div>
-            <div className="bg-white p-3 rounded border text-center">
-              <div className="text-2xl font-black">{plan.voSec}s</div>
-              <div className="text-xs text-gray-500 uppercase">Toplam VO</div>
-            </div>
-            <div className="bg-white p-3 rounded border text-center">
-              <div className="text-2xl font-black text-green-600">{plan.savedPct}%</div>
-              <div className="text-xs text-gray-500 uppercase">Tasarruf ({plan.savedSec}s)</div>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 16 }}>
+            <Stat label="Klip" value={plan.clips} />
+            <Stat label="Üretim Maliyeti" value={`${plan.genSec}s`} />
+            <Stat label="Toplam VO" value={`${plan.voSec}s`} />
+            <Stat label={`Tasarruf (${plan.savedSec}s)`} value={`${plan.savedPct}%`} tone="green" />
           </div>
 
           {hints.length > 0 && (
-            <div className="bg-white border rounded p-4 flex flex-col gap-3">
-              <h4 className="font-bold text-sm text-gray-700">Akıllı Öneriler</h4>
+            <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div style={{ fontSize: 10.5, letterSpacing: 1.4, color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
+                Akıllı Öneriler
+              </div>
               {hints.map((hint, idx) => (
-                <div key={idx} className="bg-blue-50 border border-blue-200 p-3 rounded text-sm flex justify-between items-start">
-                  <div>
-                    <div className="font-medium text-blue-900 mb-1">{hint.reason}</div>
-                    <div className="text-blue-700 text-xs">{hint.effect}</div>
+                <div
+                  key={idx}
+                  style={{
+                    display: 'flex', gap: 10, justifyContent: 'space-between', alignItems: 'flex-start',
+                    padding: 12, borderRadius: 'var(--r-sm)', border: '1px solid var(--line2)', background: 'rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--text)' }}>{hint.reason}</div>
+                    <div style={{ fontSize: 11.5, color: 'var(--text-muted)', marginTop: 3 }}>{hint.effect}</div>
                   </div>
-                  {hint.type === 'merge' && (
-                    <button 
-                      onClick={() => store.mergeBeats(hint.i)}
-                      className="text-xs bg-blue-600 text-white px-2 py-1 rounded ml-2 whitespace-nowrap"
-                    >
-                      Birleştir
-                    </button>
-                  )}
-                  {hint.type === 'split' && (
-                    <button 
-                      onClick={() => store.splitBeat(hint.i)}
-                      className="text-xs bg-red-600 text-white px-2 py-1 rounded ml-2 whitespace-nowrap"
-                    >
-                      Böl
-                    </button>
-                  )}
-                  {hint.type === 'keep' && (
-                    <button 
-                      onClick={() => store.toggleBeatKeep(enhancedBeats[hint.i].id)}
-                      className="text-xs bg-gray-600 text-white px-2 py-1 rounded ml-2 whitespace-nowrap"
-                    >
-                      Ayrı Tut
-                    </button>
-                  )}
+                  {hint.type === 'merge' && <Button variant="ghost" onClick={() => store.mergeBeats(hint.i)} style={{ padding: '7px 12px', fontSize: 12 }}>Birleştir</Button>}
+                  {hint.type === 'split' && <Button variant="danger" onClick={() => store.splitBeat(hint.i)} style={{ padding: '7px 12px', fontSize: 12 }}>Böl</Button>}
+                  {hint.type === 'keep' && <Button variant="ghost" onClick={() => store.toggleBeatKeep(enhancedBeats[hint.i].id)} style={{ padding: '7px 12px', fontSize: 12 }}>Ayrı Tut</Button>}
                 </div>
               ))}
             </div>
           )}
-        </aside>
+        </Panel>
 
-        {/* STORYBOARD */}
-        <main className="w-2/3 flex flex-col gap-4">
-          <h3 className="font-bold text-lg">Storyboard</h3>
-          <div className="flex flex-col gap-3">
-            {enhancedBeats.map((beat, i) => {
+        {/* ---- STORYBOARD ---- */}
+        <Panel title="Storyboard" subtitle={`${enhancedBeats.length} sahne · ${selectedWorldId || 'world seçilmedi'}`}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {enhancedBeats.map((beat) => {
               const isOverLimit = beat.voSec > plan.max;
               const isKept = beatKeeps[beat.id];
+              const accent = isOverLimit && beatMode !== 'Manuel' ? 'var(--red)' : 'var(--gold)';
               return (
-                <div key={beat.id} className={`border rounded-lg p-4 flex gap-4 bg-white ${isOverLimit && beatMode !== 'Manuel' ? 'border-red-400 border-l-4' : 'border-l-4 border-l-blue-500'}`}>
-                  <div className="w-16 h-16 bg-gray-200 rounded shrink-0 flex items-center justify-center text-xs text-gray-500 font-medium">
-                    {selectedWorldId || 'World'}
+                <div
+                  key={beat.id}
+                  style={{
+                    display: 'flex', gap: 14, padding: 14, borderRadius: 'var(--r-md)',
+                    border: '1px solid var(--line2)', background: 'rgba(0,0,0,0.2)',
+                    borderLeft: `3px solid ${accent}`,
+                  }}
+                >
+                  <div style={{
+                    width: 56, height: 56, flexShrink: 0, borderRadius: 'var(--r-sm)',
+                    background: 'linear-gradient(135deg, var(--s3), var(--s2))', border: '1px solid var(--line2)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: 9, color: 'var(--text-dim)', fontFamily: 'var(--font-mono)', textAlign: 'center', padding: 4,
+                  }}>
+                    {selectedWorldId || 'WORLD'}
                   </div>
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div className="text-sm font-medium text-gray-800">{beat.text}</div>
-                    <div className="flex gap-4 mt-2 text-xs font-mono">
-                      <span className="text-gray-500">VO: {beat.voSec}s</span>
-                      <span className="text-gray-500">Vis: {beat.visualSec}s</span>
-                      <span className="text-blue-600 font-bold">Clip: {beat.clipSec}s</span>
-                      {isKept && <span className="text-amber-600 font-bold bg-amber-50 px-1 rounded">BÖLEMEZSİN</span>}
-                      {isOverLimit && beatMode !== 'Manuel' && <span className="text-red-600 font-bold bg-red-50 px-1 rounded">OVER LIMIT</span>}
+                  <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 8 }}>
+                    <div style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.5 }}>{beat.text}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: 11 }}>
+                      <span style={{ color: 'var(--text-muted)' }}>VO {beat.voSec}s</span>
+                      <span style={{ color: 'var(--text-muted)' }}>Vis {beat.visualSec}s</span>
+                      <span style={{ color: 'var(--gold)', fontWeight: 700 }}>Clip {beat.clipSec}s</span>
+                      {isKept && <Chip tone="amber">BÖLEMEZSİN</Chip>}
+                      {isOverLimit && beatMode !== 'Manuel' && <Chip tone="red">OVER LIMIT</Chip>}
                     </div>
                   </div>
-                  <div className="flex flex-col gap-1 justify-center shrink-0">
-                    <button 
-                      onClick={() => store.toggleBeatKeep(beat.id)}
-                      className={`text-xs px-2 py-1 border rounded ${isKept ? 'bg-amber-100 border-amber-300 text-amber-800' : 'hover:bg-gray-50'}`}
-                    >
-                      Keep
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => store.toggleBeatKeep(beat.id)}
+                    style={{
+                      alignSelf: 'center', flexShrink: 0, padding: '7px 12px', fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                      borderRadius: 'var(--r-xs)',
+                      border: `1px solid ${isKept ? 'var(--goldline)' : 'var(--line3)'}`,
+                      background: isKept ? 'var(--goldsoft)' : 'transparent',
+                      color: isKept ? 'var(--gold)' : 'var(--text-muted)',
+                      transition: 'all var(--dur) var(--ease)',
+                    }}
+                  >
+                    Keep
+                  </button>
                 </div>
               );
             })}
           </div>
-        </main>
+        </Panel>
       </div>
     </div>
   );

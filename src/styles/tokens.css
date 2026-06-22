@@ -1,0 +1,85 @@
+/* =============================================================
+   MAMILAS · Design tokens (Phase G)
+   Premium 2026 aesthetic: near-black, ONE warm gold accent,
+   glass surfaces, hairline borders, generous spacing. Calm — not neon.
+   Single source of truth for every surface in the app.
+   ============================================================= */
+:root {
+  /* — Surfaces (near-black, subtly layered) — */
+  --bg:        #06070b;
+  --bg-2:      #080a10;
+  --s1:        #0b0e16;
+  --s2:        #10131d;
+  --s3:        #161a26;
+  --s4:        #1e2331;
+
+  /* — Glass — */
+  --glass:        rgba(255, 255, 255, 0.045);
+  --glass-2:      rgba(255, 255, 255, 0.07);
+  --glass-bg:     rgba(16, 19, 29, 0.55);
+  --glass-hi:     rgba(255, 255, 255, 0.10);
+
+  /* — Hairlines — */
+  --line:      rgba(255, 255, 255, 0.07);
+  --line2:     rgba(255, 255, 255, 0.12);
+  --line3:     rgba(255, 255, 255, 0.20);
+
+  /* — The single accent: warm gold — */
+  --gold:      #f5c451;
+  --gold-2:    #d99f2b;
+  --gold-hi:   #ffe08a;
+  --goldsoft:  rgba(245, 196, 81, 0.12);
+  --goldline:  rgba(245, 196, 81, 0.35);
+  --goldglow:  rgba(245, 196, 81, 0.20);
+
+  /* — Status — */
+  --green:     #4df5a0;
+  --greensoft: rgba(77, 245, 160, 0.10);
+  --red:       #ff5c79;
+  --redsoft:   rgba(255, 92, 121, 0.10);
+  --amber:     #f5b54d;
+
+  /* — Text — */
+  --text:      #f4f6fb;
+  --text-soft: #c3ccdb;
+  --text-muted:#8a93a6;
+  --text-dim:  #5b6273;
+
+  /* — Radius — */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* — Spacing scale — */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 56px;
+
+  /* — Shadow / blur — */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.30);
+  --shadow:    0 16px 50px rgba(0, 0, 0, 0.40);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.50);
+  --shadow-gold: 0 12px 34px rgba(245, 196, 81, 0.18);
+  --blur:      18px;
+
+  /* — Motion — */
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur:       0.18s;
+  --dur-2:     0.32s;
+
+  /* — Type — */
+  --font-sans: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* — Back-compat aliases (older inline styles still reference these) — */
+  --gold2: var(--gold-2);
+  --text-main: var(--text);
+  --radius-lg: var(--r-xl);
+  --radius-md: var(--r-md);
+  --radius-sm: var(--r-xs);
+  --cinema-red: #9f1d2f;
+  --r8: 8px; --r10: 10px; --r12: 12px; --r16: 16px;
+}
