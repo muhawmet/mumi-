@@ -58,3 +58,33 @@ Run start — 2026-06-23 Europe/Istanbul — AŞAMA 1 başladı; bağlayıcı di
 - Sınır kontrolü: kaynak-bütünlüğü, kontrat kapısı, golden testleri ve `agents/` değişmedi; 2-eksen mimarisi korunuyor.
 - Kuzey Yıldızı: **Evet** — starter pack ve DNA güç ölçümü ajana giden `REFERENCE DNA → DIRECTIVES` bloğunu daha dolu, tutarlı ve üretilebilir hale getiriyor; uyumsuz ref artık sessizce brief’i bulandıramıyor.
 - Sonuç: **AŞAMA 2 PASS**.
+
+## AŞAMA 3 — 60 Reference DNA sahnesi kalite turu
+
+### Uygulama
+- Komut: `rg -n '^  ...: (ctx, w, h, t, c)' src/components/refScenes.ts` → `60` dedicated ref sahnesi ve `6` world sahnesi ayrı ayrı sayıldı.
+- Görsel tarama: geçici `RefSceneGallery` ile 60 sahne iki canlı palette aynı grid’de render edildi; tüm satırlar kompozisyon, silüet, efekt katmanı, palet tepkisi ve referans özgüllüğü açısından tek tek gözden geçirildi.
+- Güçlendirilen 15 sahne: `one_piece_sunny_adventure`, `naruto_chakra_motion`, `dragon_ball_power_aura`, `solo_leveling_rank_shadow`, `attack_titan_scale`, `onepiece_grandline_scale`, `chainsaw_urban_grit`, `mha_hero_burst`, `hxh_nen_tactics`, `mob_psycho_wave`, `jojo_pose_graphic`, `one_punch_contrast`, `haikyuu_motion_lines`, `laika_tactile_stopmotion`, `ghibli_spirited_bathhouse`.
+- Ortak primitif: IP-güvenli anonim `figureSilhouette()` eklendi; sahneler yüz/kostüm/logo kopyalamadan kamera, ölçek, action axis ve imza efekt enerjisiyle ayrıştırıldı.
+- Test: REF_SCENES sözleşmesi tam `60`, her key gerçek `DATA.refs` ID’si, her değer çizim fonksiyonu; kritik shonen key’leri generic fallback’e düşmüyor.
+- Neden: Küçük preview’de referansın adını okumadan enerjisi anlaşılmalı; aksi halde Reference DNA seçimi görsel kanıt değil etiket seçimi olarak kalır.
+
+### Görsel kanıt ve öz-denetim
+- Before screenshot: `/tmp/phase3-reference-gallery-before.png` (60 × 2, commit dışı denetim girdisi).
+- After screenshot: `phase3-reference-gallery-2-palettes.png` (60 × 2 = 120 canlı kare, final kanıt).
+- Browser console: `0 error / 0 warning`.
+- Before: özellikle One Piece/Naruto/Dragon Ball ve yeni shonen grubu spiral, yıldız, çizgi veya boş horizon gibi jenerik sembollere indirgenmişti; Laika blok dizisi, Bathhouse ise yalnız bokeh noktalarıydı.
+- After: deck+flag+elastic arc, hand-sign+chakra, dikey aura+ground crack, shadow court, wall+scout scale, yağmurlu urban mechanical axis, karşılaşan spor figürleri, 12fps tactile puppet ve katmanlı bathhouse mimarisi olarak referans özgüllüğü kazandı.
+- Kreatif direktör öz-denetimi: “efekt var ama sahne yok” problemi saptandı; her zayıf kareye okunaklı özne, çevre/ölçek kanıtı ve tek dominant action axis eklendi. Kalan 45 sahne özgün kompozisyonunu zaten taşıdığı için gereksiz yeniden yazım yapılmadı.
+- Palet denetimi: Teal/Ember ve Violet/Citron bloklarında tüm 60 sahne kimliğini koruyup `c0–c3` ile görünür biçimde yeniden renklendi; boş/default kare yok.
+
+### Gate — PASS
+- Komut: `git diff --check && npx tsc --noEmit && npx eslint . && npx vitest run && npx vite build`
+- TypeScript: `0 hata`.
+- ESLint: `0 hata`.
+- Vitest: `10/10 test file`, `136/136 test PASS`.
+- Vite: `2197 module transformed`, production build başarılı (`✓ built in 133ms`).
+- Geçici galeri: screenshot sonrası `src/RefSceneGallery.tsx` silindi ve `main.tsx` eski runtime yoluna döndü.
+- Sınır kontrolü: `agents/`, kaynak-bütünlüğü, kontrat kapısı, golden testleri ve 2-eksen üretim mimarisi değişmedi.
+- Kuzey Yıldızı: **Evet** — referans önizlemeleri artık ajana gidecek DNA direktifinin gerçek görsel niyetini seçimden önce kanıtlıyor; yanlış/jenerik referans beklentisi azalıyor.
+- Sonuç: **AŞAMA 3 PASS**.

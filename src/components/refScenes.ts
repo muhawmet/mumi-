@@ -132,6 +132,15 @@ function softOrb(ctx: CtX, x: number, y: number, r: number, col: string, hi: str
   ctx.fillStyle = g;
   ctx.beginPath(); ctx.ellipse(x, y, r, r * 0.96, 0, 0, Math.PI * 2); ctx.fill();
 }
+function figureSilhouette(ctx: CtX, x: number, y: number, scale: number, col: string, lean = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(lean); ctx.fillStyle = col; ctx.strokeStyle = col;
+  ctx.lineWidth = Math.max(2, scale * 0.12); ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.arc(0, -scale * 0.62, scale * 0.16, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(0, -scale * 0.45); ctx.lineTo(scale * 0.22, scale * 0.12); ctx.lineTo(-scale * 0.2, scale * 0.12); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-scale * 0.1, scale * 0.02); ctx.lineTo(-scale * 0.22, scale * 0.55);
+  ctx.moveTo(scale * 0.1, scale * 0.02); ctx.lineTo(scale * 0.26, scale * 0.55); ctx.stroke();
+  ctx.restore();
+}
 
 type CtX = CanvasRenderingContext2D;
 
@@ -621,61 +630,56 @@ export const REF_SCENES: Record<string, SceneFn> = {
   },
   one_piece_sunny_adventure: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[3], c[0], 0.3), mix(c[0], c[2], 0.4));
-    // sun crest rays
-    ctx.save(); ctx.translate(w * 0.5, h * 0.34);
-    for (let i = 0; i < 12; i++) {
-      ctx.rotate(Math.PI / 6 + t * 0.0004);
-      ctx.fillStyle = rgba(c[1], 0.18);
-      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-8, -90); ctx.lineTo(8, -90); ctx.fill();
-    }
-    ctx.restore();
-    radialGlow(ctx, w * 0.5, h * 0.34, 40, c[1], 0.6);
-    // ocean waves
+    radialGlow(ctx, w * 0.75, h * 0.23, 48, c[1], 0.65);
     ctx.fillStyle = mix(c[0], c[2], 0.5); ctx.fillRect(0, h * 0.66, w, h);
-    ribbon(ctx, w, h, t, rgba(c[3], 0.4), h * 0.68, 4, 0, 2);
-    // ship silhouette
-    const sx = w * 0.5 + Math.sin(t * 0.0012) * 18;
-    ctx.fillStyle = c[2];
-    ctx.beginPath(); ctx.moveTo(sx - 16, h * 0.66); ctx.lineTo(sx + 16, h * 0.66); ctx.lineTo(sx + 10, h * 0.72); ctx.lineTo(sx - 10, h * 0.72); ctx.fill();
-    ctx.fillRect(sx - 1, h * 0.5, 2, h * 0.16);
+    ribbon(ctx, w, h, t, rgba(c[3], 0.48), h * 0.69, 5, 0, 2.5);
+    const sx = w * 0.3 + Math.sin(t * 0.0012) * 7;
+    figureSilhouette(ctx, sx, h * 0.59, 38, c[2], -0.08);
+    // Wide-brim silhouette + elastic action arc evoke adventure energy without a copied costume.
+    ctx.fillStyle = c[2]; ctx.beginPath(); ctx.ellipse(sx, h * 0.34, 18, 4, -0.08, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = c[2]; ctx.lineWidth = 5; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(sx + 5, h * 0.47); ctx.bezierCurveTo(w * 0.52, h * 0.28, w * 0.7, h * 0.56, w * 0.83, h * 0.36); ctx.stroke();
+    ctx.fillStyle = c[1]; ctx.beginPath(); ctx.arc(w * 0.83, h * 0.36, 6, 0, Math.PI * 2); ctx.fill();
+    // Wind-filled original flag establishes ship-deck scale.
+    ctx.strokeStyle = c[3]; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(w * 0.58, h * 0.64); ctx.lineTo(w * 0.58, h * 0.28); ctx.stroke();
+    ctx.fillStyle = rgba(c[1], 0.82); ctx.beginPath(); ctx.moveTo(w * 0.59, h * 0.3); ctx.quadraticCurveTo(w * 0.72, h * 0.34 + Math.sin(t * 0.002) * 4, w * 0.78, h * 0.27); ctx.lineTo(w * 0.59, h * 0.47); ctx.fill();
   },
   naruto_chakra_motion: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[2], c[0], 0.2), c[2]);
-    const cx = w / 2, cy = h / 2;
-    // spiral chakra
+    const cx = w * 0.58, cy = h * 0.48;
     ctx.strokeStyle = rgba(c[0], 0.5); ctx.lineWidth = 3; ctx.lineCap = 'round';
     ctx.beginPath();
     for (let a = 0; a < Math.PI * 5; a += 0.04) {
-      const r = a * 3.2;
+      const r = a * 3.6;
       ctx.lineTo(cx + Math.cos(a + t * 0.003) * r, cy + Math.sin(a + t * 0.003) * r);
     }
     ctx.stroke();
     radialGlow(ctx, cx, cy, 36, c[3], 0.5);
-    // dust trails
+    figureSilhouette(ctx, w * 0.33, h * 0.62, 44, c[2], 0.12);
+    // Converging forearms form an anonymous hand-sign read.
+    ctx.strokeStyle = c[3]; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(w * 0.27, h * 0.51); ctx.lineTo(w * 0.38, h * 0.46); ctx.lineTo(w * 0.43, h * 0.51); ctx.stroke();
     for (let i = 0; i < 16; i++) {
       const a = t * 0.002 + i; const r = 40 + (t * 0.04 + i * 12) % 60;
       ctx.fillStyle = rgba(c[1], Math.max(0, 0.4 - r / 250));
       ctx.beginPath(); ctx.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 2, 0, Math.PI * 2); ctx.fill();
     }
+    ctx.strokeStyle = rgba(c[1], 0.36); ctx.lineWidth = 1.5;
+    for (let i = 0; i < 9; i++) { ctx.beginPath(); ctx.moveTo(0, h * (0.54 + i * 0.035)); ctx.lineTo(w * (0.18 + seed(i) * 0.18), h * (0.5 + i * 0.035)); ctx.stroke(); }
   },
   dragon_ball_power_aura: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[2], '#000', 0.25), '#000');
     const cx = w / 2, cy = h * 0.56;
-    // rising aura spikes
-    ctx.save(); ctx.translate(cx, cy);
-    for (let i = 0; i < 18; i++) {
-      const a = (i / 18) * Math.PI * 2;
-      const len = 30 + Math.abs(Math.sin(t * 0.006 + i)) * 36;
-      ctx.strokeStyle = rgba(i % 2 ? c[1] : c[3], 0.6);
-      ctx.lineWidth = 3; ctx.lineCap = 'round';
-      ctx.beginPath(); ctx.moveTo(Math.cos(a) * 12, Math.sin(a) * 12);
-      ctx.lineTo(Math.cos(a) * len, Math.sin(a) * len); ctx.stroke();
-    }
-    ctx.restore();
-    radialGlow(ctx, cx, cy, 48 + Math.sin(t * 0.006) * 8, c[3], 0.7);
-    // ground crackle
+    radialGlow(ctx, cx, cy, 70 + Math.sin(t * 0.006) * 8, c[3], 0.72);
+    // Jagged aura envelope has vertical lift instead of a generic radial star.
+    ctx.fillStyle = rgba(c[1], 0.28); ctx.strokeStyle = rgba(c[3], 0.82); ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(cx, h * 0.08);
+    for (let i = 1; i <= 12; i++) { const a = (i / 12) * Math.PI * 2 - Math.PI / 2; const rr = 42 + (i % 2 ? 17 : 0) + Math.sin(t * 0.005 + i) * 5; ctx.lineTo(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr * 1.22); }
+    ctx.closePath(); ctx.fill(); ctx.stroke();
+    figureSilhouette(ctx, cx, h * 0.65, 50, mix(c[2], '#000', 0.55));
     ctx.strokeStyle = rgba(c[1], 0.3); ctx.lineWidth = 1;
     for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.moveTo(cx, h * 0.8); ctx.lineTo(cx + (seed(i) - 0.5) * w, h * 0.8 + seed(i + 2) * 20); ctx.stroke(); }
+    emberField(ctx, w, h, t, c[3], 24, 0.04);
   },
   jujutsu_dark_ritual: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, '#000', mix(c[2], '#000', 0.4));
@@ -709,19 +713,15 @@ export const REF_SCENES: Record<string, SceneFn> = {
   },
   solo_leveling_rank_shadow: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, '#000', mix(c[2], c[0], 0.2));
-    // rising shadow columns
-    for (let i = 0; i < 8; i++) {
-      const bx = i * (w / 8);
-      const ht = h * (0.4 + Math.abs(Math.sin(t * 0.002 + i)) * 0.45);
-      const g = ctx.createLinearGradient(0, h, 0, h - ht);
-      g.addColorStop(0, rgba(c[0], 0.6)); g.addColorStop(1, rgba(c[0], 0));
-      ctx.fillStyle = g; ctx.fillRect(bx, h - ht, w / 8 - 2, ht);
+    radialGlow(ctx, w * 0.5, h * 0.45, w * 0.36, c[0], 0.48);
+    figureSilhouette(ctx, w * 0.5, h * 0.68, 56, rgba(c[2], 0.96));
+    // An ascending shadow court creates rank hierarchy and depth.
+    for (let i = 0; i < 6; i++) {
+      const x = w * (0.12 + i * 0.15), y = h * (0.79 + Math.abs(i - 2.5) * 0.025);
+      figureSilhouette(ctx, x, y, 24 + (i % 2) * 7, rgba(mix(c[0], c[2], 0.58), 0.7));
+      ctx.fillStyle = rgba(c[3], 0.9); ctx.beginPath(); ctx.ellipse(x, y - 14, 2.4, 1.2, 0, 0, Math.PI * 2); ctx.fill();
     }
-    // glowing eyes
-    for (let i = 0; i < 4; i++) {
-      const x = w * (0.2 + i * 0.2), y = h * 0.7 + Math.sin(t * 0.002 + i) * 6;
-      ctx.fillStyle = rgba(c[3], 0.9); ctx.beginPath(); ctx.arc(x, y, 2.2, 0, Math.PI * 2); ctx.fill();
-    }
+    for (let i = 0; i < 5; i++) ribbon(ctx, w, h, t * (0.65 + i * 0.05), rgba(c[0], 0.12), h * (0.42 + i * 0.07), 10 + i * 2, i, 1.5);
     vignette(ctx, w, h, '#000', 0.7);
   },
   fullmetal_alchemy_circle: (ctx, w, h, t, c) => {
@@ -742,16 +742,25 @@ export const REF_SCENES: Record<string, SceneFn> = {
   attack_titan_scale: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[2], c[1], 0.25), mix(c[2], '#000', 0.2));
     ctx.fillStyle = rgba(c[1], 0.05); ctx.fillRect(0, 0, w, h); // dusty desat
-    // massive wall
+    // Massive wall and crenellations establish oppressive civic scale.
     ctx.fillStyle = mix(c[2], '#000', 0.25); ctx.fillRect(0, h * 0.25, w, h);
+    for (let x = 0; x < w; x += 24) ctx.fillRect(x, h * 0.19, 15, h * 0.08);
     ctx.strokeStyle = rgba('#000', 0.3); ctx.lineWidth = 1;
     for (let y = h * 0.3; y < h; y += 14) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
     // looming shadow over wall
     const sh = h * 0.25 + Math.sin(t * 0.0008) * 6;
-    radialGlow(ctx, w * 0.7, sh - 30, 60, '#000', 0.5);
-    ctx.fillStyle = rgba('#000', 0.6); ctx.beginPath(); ctx.arc(w * 0.7, sh - 20, 26, 0, Math.PI * 2); ctx.fill();
-    // tiny soldier
-    ctx.fillStyle = c[3]; ctx.fillRect(w * 0.3, h * 0.22, 1.5, 3);
+    radialGlow(ctx, w * 0.7, sh - 30, 62, c[1], 0.16);
+    ctx.fillStyle = rgba('#000', 0.72); ctx.beginPath(); ctx.arc(w * 0.7, sh - 20, 28, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = rgba(c[3], 0.7);
+    ctx.beginPath(); ctx.ellipse(w * 0.66, sh - 22, 3, 1.5, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(w * 0.74, sh - 22, 3, 1.5, 0, 0, Math.PI * 2); ctx.fill();
+    // Tiny airborne scouts and cable arcs make the scale ratio unmistakable.
+    for (let i = 0; i < 3; i++) {
+      const x = w * (0.2 + i * 0.12), y = h * (0.34 + seed(i) * 0.2);
+      ctx.fillStyle = c[3]; ctx.fillRect(x, y, 2, 3);
+      ctx.strokeStyle = rgba(c[3], 0.45); ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + 14, y - 20, x + 30, h * 0.24); ctx.stroke();
+    }
+    emberField(ctx, w, h, t, c[1], 18, 0.018);
   },
   bleach_hollow_mask_pressure: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, '#000', mix(c[1], '#000', 0.4));
@@ -776,25 +785,34 @@ export const REF_SCENES: Record<string, SceneFn> = {
   onepiece_grandline_scale: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[3], c[0], 0.35), mix(c[0], c[2], 0.5));
     radialGlow(ctx, w * 0.75, h * 0.25, 44, c[1], 0.5);
-    // distant island
+    // Impossible distant island silhouette establishes voyage scale.
     ctx.fillStyle = rgba(c[2], 0.7);
     ctx.beginPath(); ctx.moveTo(w * 0.2, h * 0.55); ctx.quadraticCurveTo(w * 0.32, h * 0.32, w * 0.45, h * 0.55); ctx.fill();
     // ocean
     ctx.fillStyle = mix(c[0], c[2], 0.55); ctx.fillRect(0, h * 0.55, w, h);
     for (let i = 0; i < 3; i++) ribbon(ctx, w, h, t + i * 200, rgba(c[3], 0.25), h * (0.62 + i * 0.12), 5, i, 1.5);
+    // Foreground prow, mast, flag and small crew silhouette sell the Grand-Line-sized horizon.
+    ctx.fillStyle = rgba(c[2], 0.94); ctx.beginPath(); ctx.moveTo(0, h); ctx.lineTo(w * 0.36, h); ctx.lineTo(w * 0.24, h * 0.73); ctx.lineTo(0, h * 0.66); ctx.fill();
+    ctx.strokeStyle = c[3]; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(w * 0.18, h * 0.72); ctx.lineTo(w * 0.18, h * 0.28); ctx.stroke();
+    ctx.fillStyle = c[1]; ctx.beginPath(); ctx.moveTo(w * 0.19, h * 0.3); ctx.quadraticCurveTo(w * 0.32, h * 0.34 + Math.sin(t * 0.002) * 4, w * 0.39, h * 0.27); ctx.lineTo(w * 0.19, h * 0.47); ctx.fill();
+    figureSilhouette(ctx, w * 0.12, h * 0.69, 19, c[3]);
   },
   chainsaw_urban_grit: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[1], c[2], 0.5), mix(c[2], '#000', 0.3));
     // grit noise
     for (let i = 0; i < 120; i++) { ctx.fillStyle = rgba(c[2], seed(i) * 0.15); ctx.fillRect(seed(i) * w, seed(i + 1) * h, 1.5, 1.5); }
-    // red violence slash
-    ctx.save(); ctx.translate(w / 2, h / 2); ctx.rotate(0.4);
+    // Rainy utility blocks ground the mechanical silhouette in urban grit.
+    ctx.fillStyle = rgba(c[2], 0.58); for (let i = 0; i < 7; i++) ctx.fillRect(i * w / 7, h * (0.35 + seed(i) * 0.2), w / 7 - 3, h);
+    ctx.strokeStyle = rgba(c[3], 0.14); ctx.lineWidth = 1;
+    for (let i = 0; i < 28; i++) { const x = seed(i) * w; ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x - 18, h); ctx.stroke(); }
+    figureSilhouette(ctx, w * 0.48, h * 0.72, 48, rgba(c[2], 0.96), 0.16);
+    // Serrated mechanical action axis, not a copied weapon or character head.
+    ctx.save(); ctx.translate(w / 2, h / 2); ctx.rotate(-0.48);
     ctx.fillStyle = rgba(c[0], 0.7);
-    ctx.beginPath(); ctx.moveTo(-w * 0.4, -3); ctx.lineTo(w * 0.4, 0); ctx.lineTo(-w * 0.4, 6); ctx.fill();
-    // spatter
-    for (let i = 0; i < 12; i++) { ctx.beginPath(); ctx.arc((seed(i) - 0.3) * w * 0.5, (seed(i + 4) - 0.5) * 30, seed(i + 2) * 3, 0, Math.PI * 2); ctx.fill(); }
+    ctx.beginPath(); ctx.moveTo(-w * 0.18, -5); ctx.lineTo(w * 0.42, 0); ctx.lineTo(-w * 0.18, 7); ctx.fill();
+    for (let i = 0; i < 11; i++) { const x = -w * 0.12 + i * w * 0.05; ctx.fillRect(x, -10, 3, 6); }
     ctx.restore();
-    // handheld jitter vignette
+    emberField(ctx, w, h, t, c[1], 22, 0.035);
     vignette(ctx, w, h, '#000', 0.55);
   },
   mha_hero_burst: (ctx, w, h, t, c) => {
@@ -807,25 +825,28 @@ export const REF_SCENES: Record<string, SceneFn> = {
       ctx.fillStyle = rgba(c[3], Math.max(0, 0.6 - r / 110));
       ctx.beginPath(); ctx.arc(w / 2 + Math.cos(a) * r, h * 0.55 + Math.sin(a) * r, 2.4, 0, Math.PI * 2); ctx.fill();
     }
-    // clean hero silhouette before impact
-    ctx.fillStyle = rgba(c[2], 0.85);
-    ctx.beginPath(); ctx.moveTo(w / 2, h * 0.4); ctx.lineTo(w / 2 + 16, h * 0.7); ctx.lineTo(w / 2 - 16, h * 0.7); ctx.fill();
+    figureSilhouette(ctx, w / 2, h * 0.68, 50, rgba(c[2], 0.9), -0.12);
+    ctx.strokeStyle = c[2]; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(w * 0.48, h * 0.47); ctx.lineTo(w * 0.42, h * 0.25); ctx.stroke();
+    ctx.fillStyle = c[1]; ctx.beginPath(); ctx.arc(w * 0.42, h * 0.22, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = rgba(c[2], 0.8); ctx.lineWidth = 3; ctx.strokeRect(5, 5, w - 10, h - 10);
   },
   hxh_nen_tactics: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[2], c[0], 0.18), c[2]);
     // chess grid floor
     ctx.strokeStyle = rgba(c[3], 0.12); ctx.lineWidth = 0.6;
     for (let i = 0; i <= 8; i++) { ctx.beginPath(); ctx.moveTo(0, h * 0.55 + i * 6); ctx.lineTo(w, h * 0.55 + i * 6); ctx.stroke(); }
-    // readable aura field shapes (geometric)
-    const cx = w / 2, cy = h * 0.42;
+    const cx = w / 2, cy = h * 0.4;
     ctx.strokeStyle = rgba(c[0], 0.5); ctx.lineWidth = 1.5;
     const sides = 6;
     ctx.beginPath();
     for (let i = 0; i <= sides; i++) { const a = (i / sides) * Math.PI * 2 + t * 0.0008; const r = 30 + Math.sin(t * 0.002) * 4; ctx.lineTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r); }
     ctx.stroke();
     radialGlow(ctx, cx, cy, 30, c[0], 0.3);
-    // tactical marker
-    ctx.fillStyle = c[1]; ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI * 2); ctx.fill();
+    // Two opposing tacticians and orbiting rule-nodes create strategy, not generic power.
+    figureSilhouette(ctx, w * 0.31, h * 0.72, 34, rgba(c[2], 0.92), 0.08);
+    figureSilhouette(ctx, w * 0.69, h * 0.72, 34, rgba(c[3], 0.72), -0.08);
+    for (let i = 0; i < 5; i++) { const a = t * 0.001 + i * Math.PI * 0.4; ctx.fillStyle = i % 2 ? c[1] : c[3]; ctx.beginPath(); ctx.arc(cx + Math.cos(a) * 38, cy + Math.sin(a) * 23, 3, 0, Math.PI * 2); ctx.fill(); }
+    ctx.strokeStyle = rgba(c[1], 0.35); ctx.beginPath(); ctx.moveTo(w * 0.31, h * 0.5); ctx.lineTo(cx, cy); ctx.lineTo(w * 0.69, h * 0.5); ctx.stroke();
   },
   mob_psycho_wave: (ctx, w, h, t, c) => {
     // ordinary flat top, liquid distortion bottom
@@ -833,7 +854,7 @@ export const REF_SCENES: Record<string, SceneFn> = {
     const g = ctx.createLinearGradient(0, h * 0.5, 0, h);
     g.addColorStop(0, c[0]); g.addColorStop(1, mix(c[0], '#000', 0.4));
     ctx.fillStyle = g; ctx.fillRect(0, h * 0.5, w, h * 0.5);
-    // psychic distortion waves
+    // Psychic distortion waves bend around an intentionally ordinary silhouette.
     for (let k = 0; k < 4; k++) {
       ctx.strokeStyle = rgba(c[3], 0.35 - k * 0.06); ctx.lineWidth = 2; ctx.beginPath();
       for (let x = 0; x <= w; x += 5) {
@@ -843,6 +864,8 @@ export const REF_SCENES: Record<string, SceneFn> = {
       }
       ctx.stroke();
     }
+    figureSilhouette(ctx, w * 0.5, h * 0.67, 38, rgba(c[2], 0.92));
+    for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2 + t * 0.001; const r = 30 + (i % 3) * 10; ctx.fillStyle = rgba(c[3], 0.5); ctx.fillRect(w * 0.5 + Math.cos(a) * r, h * 0.48 + Math.sin(a) * r, 3, 3); }
     // escalation meter
     const pct = (Math.sin(t * 0.001) * 0.5 + 0.5);
     ctx.fillStyle = rgba(c[1], 0.8); ctx.fillRect(w - 16, h - 6 - h * 0.4 * pct, 6, h * 0.4 * pct);
@@ -854,26 +877,29 @@ export const REF_SCENES: Record<string, SceneFn> = {
     // diagonal menace lines
     ctx.strokeStyle = rgba(inv ? c[2] : c[1], 0.35); ctx.lineWidth = 2;
     for (let i = -4; i < 10; i++) { ctx.beginPath(); ctx.moveTo(i * 28, 0); ctx.lineTo(i * 28 - 60, h); ctx.stroke(); }
-    // statue pose silhouette
+    // Statue-like asymmetric fashion pose with a separate foreground hand plane.
     const cx = w / 2;
     ctx.fillStyle = rgba(c[3], 0.9);
     ctx.save(); ctx.translate(cx, h * 0.5); ctx.rotate(0.18);
     ctx.beginPath(); ctx.moveTo(0, -30); ctx.lineTo(22, -6); ctx.lineTo(8, 4); ctx.lineTo(18, 38); ctx.lineTo(-10, 38); ctx.lineTo(-4, 4); ctx.lineTo(-22, 10); ctx.closePath(); ctx.fill();
     ctx.restore();
+    ctx.strokeStyle = rgba(c[3], 0.85); ctx.lineWidth = 7; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(cx + 5, h * 0.36); ctx.lineTo(cx + 48, h * 0.2); ctx.lineTo(cx + 58, h * 0.34); ctx.stroke();
+    radialGlow(ctx, cx, h * 0.54, 54, c[0], 0.2);
     // sound-shape accent
     ctx.fillStyle = rgba(c[1], 0.8); ctx.font = 'bold 16px sans-serif'; ctx.fillText('ゴ', w * 0.72, h * 0.4);
   },
   one_punch_contrast: (ctx, w, h, t, c) => {
     // left: mundane simplicity, right: apocalyptic detail
     ctx.fillStyle = mix(c[3], c[2], 0.2); ctx.fillRect(0, 0, w / 2, h);
-    // simple bald dot hero
-    ctx.fillStyle = c[2]; ctx.beginPath(); ctx.arc(w * 0.25, h * 0.5, 14, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = c[2]; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.arc(w * 0.25, h * 0.46, 8, 0.2, Math.PI - 0.2); ctx.stroke(); // flat eyes line
+    figureSilhouette(ctx, w * 0.25, h * 0.68, 38, c[2]);
+    ctx.strokeStyle = c[2]; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(w * 0.225, h * 0.39); ctx.lineTo(w * 0.275, h * 0.39); ctx.stroke();
     // apocalyptic right half
     fillBg2(ctx, w / 2, 0, w / 2, h, mix(c[0], '#000', 0.2), c[2]);
     emberField(ctx, w, h, t, c[1], 30, 0.05);
     speedLines(ctx, w * 0.75, h * 0.5, t, c[0], 24, 0.0006);
+    ctx.fillStyle = rgba(c[0], 0.72); ctx.beginPath();
+    for (let i = 0; i <= 12; i++) { const a = i / 12 * Math.PI * 2; const r = i % 2 ? 44 : 28; ctx.lineTo(w * 0.76 + Math.cos(a) * r, h * 0.52 + Math.sin(a) * r); } ctx.fill();
     // divider
     ctx.fillStyle = rgba(c[3], 0.4); ctx.fillRect(w / 2 - 1, 0, 2, h);
   },
@@ -883,13 +909,16 @@ export const REF_SCENES: Record<string, SceneFn> = {
     ctx.strokeStyle = rgba(c[3], 0.3); ctx.lineWidth = 1;
     for (let x = 0; x < w; x += 10) { ctx.beginPath(); ctx.moveTo(x, h * 0.7); ctx.lineTo(x, h * 0.78); ctx.stroke(); }
     ctx.beginPath(); ctx.moveTo(0, h * 0.7); ctx.lineTo(w, h * 0.7); ctx.stroke();
-    // vertical leap motion lines
+    // Vertical leap and opposing block converge at a single readable contact point.
     const ly = h * 0.5 - Math.abs(Math.sin(t * 0.0025)) * h * 0.25;
     ctx.strokeStyle = rgba(c[2], 0.5); ctx.lineWidth = 2;
     for (let i = -2; i <= 2; i++) { ctx.beginPath(); ctx.moveTo(w / 2 + i * 10, ly + 30); ctx.lineTo(w / 2 + i * 10, ly + 70); ctx.stroke(); }
-    // ball + leaping figure
     ctx.fillStyle = c[1]; ctx.beginPath(); ctx.arc(w / 2, ly, 8, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = c[2]; ctx.beginPath(); ctx.moveTo(w / 2, ly + 16); ctx.lineTo(w / 2 + 10, ly + 44); ctx.lineTo(w / 2 - 10, ly + 44); ctx.fill();
+    figureSilhouette(ctx, w * 0.39, ly + 55, 38, c[2], -0.16);
+    figureSilhouette(ctx, w * 0.63, ly + 48, 34, rgba(c[3], 0.9), 0.12);
+    ctx.strokeStyle = c[2]; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(w * 0.4, ly + 30); ctx.lineTo(w * 0.49, ly + 5); ctx.stroke();
+    ctx.strokeStyle = c[3]; ctx.beginPath(); ctx.moveTo(w * 0.62, ly + 25); ctx.lineTo(w * 0.53, ly + 5); ctx.stroke();
+    ctx.strokeStyle = rgba(c[1], 0.5); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(w * 0.54, ly - 5, 20, 0.2, 2.5); ctx.stroke();
   },
 
   /* ───────── Anime / Mecha ───────── */
@@ -1085,29 +1114,26 @@ export const REF_SCENES: Record<string, SceneFn> = {
     fillBg(ctx, w, h, mix(c[2], c[0], 0.3), mix(c[2], '#000', 0.3));
     // moody side key light
     radialGlow(ctx, w * 0.25, h * 0.35, w * 0.4, c[1], 0.3);
-    // handmade miniature blocks with texture
-    for (let i = 0; i < 5; i++) {
-      const bx = w * (0.2 + i * 0.14), by = h * 0.55 + seed(i) * 20, s = 16 + seed(i) * 10;
-      ctx.fillStyle = mix([c[0], c[1], c[3]][i % 3], '#000', 0.2 + seed(i) * 0.2);
-      ctx.fillRect(bx, by, s, s);
-      // felt/clay grain
-      for (let g2 = 0; g2 < 14; g2++) { ctx.fillStyle = rgba('#000', 0.12 * seed(i * 9 + g2)); ctx.fillRect(bx + seed(i + g2) * s, by + seed(i * 2 + g2) * s, 1.5, 1.5); }
-    }
-    // gentle stop-motion stutter
-    if ((Math.floor(t / 120)) % 5 === 0) vignette(ctx, w, h, '#000', 0.4);
-    else vignette(ctx, w, h, '#000', 0.55);
+    const qt = Math.floor(t / 83) * 83;
+    figureSilhouette(ctx, w * 0.52, h * 0.7 + Math.sin(qt * 0.003) * 3, 52, c[0], 0.05);
+    // Visible button eyes, stitched coat, armature joints and miniature floor sell tactility.
+    ctx.fillStyle = c[3]; ctx.beginPath(); ctx.arc(w * 0.5, h * 0.37, 3, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.arc(w * 0.54, h * 0.37, 3, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = rgba(c[1], 0.65); ctx.lineWidth = 1; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(w * 0.46, h * 0.55); ctx.lineTo(w * 0.58, h * 0.55); ctx.stroke(); ctx.setLineDash([]);
+    for (let i = 0; i < 90; i++) { ctx.fillStyle = rgba(c[3], 0.06 + seed(i) * 0.08); ctx.fillRect(seed(i + Math.floor(qt / 83)) * w, seed(i + 4) * h, 1, 1); }
+    ctx.fillStyle = rgba(c[2], 0.45); ctx.beginPath(); ctx.ellipse(w * 0.52, h * 0.86, 42, 6, 0, 0, Math.PI * 2); ctx.fill();
+    vignette(ctx, w, h, '#000', 0.48);
   },
   ghibli_spirited_bathhouse: (ctx, w, h, t, c) => {
     fillBg(ctx, w, h, mix(c[2], c[0], 0.3), mix(c[2], '#000', 0.25));
-    // dense lantern interior glow
-    for (let i = 0; i < 16; i++) {
-      const x = (i % 4) * (w / 4) + (w / 8), y = Math.floor(i / 4) * (h / 4) + (h / 8);
-      const pulse = 0.4 + Math.sin(t * 0.002 + i) * 0.25;
-      radialGlow(ctx, x, y, 18, c[1], pulse * 0.5);
-      ctx.fillStyle = rgba(c[3], pulse); ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
+    // Layered original bathhouse silhouette, windows and bridge replace generic bokeh.
+    ctx.fillStyle = mix(c[2], '#000', 0.35); ctx.fillRect(w * 0.17, h * 0.22, w * 0.66, h * 0.63);
+    for (let level = 0; level < 3; level++) {
+      const y = h * (0.25 + level * 0.18); ctx.fillStyle = mix(c[1], c[2], 0.45);
+      ctx.beginPath(); ctx.moveTo(w * (0.1 + level * 0.05), y); ctx.lineTo(w * (0.9 - level * 0.05), y); ctx.lineTo(w * (0.82 - level * 0.04), y - 11); ctx.lineTo(w * (0.18 + level * 0.04), y - 11); ctx.fill();
+      for (let i = 0; i < 5; i++) { const x = w * (0.25 + i * 0.125); const pulse = 0.5 + Math.sin(t * 0.002 + i + level) * 0.2; radialGlow(ctx, x, y + 13, 13, c[1], pulse * 0.42); ctx.fillStyle = rgba(c[3], pulse); ctx.fillRect(x - 2, y + 8, 4, 7); }
     }
-    // warm steam
-    for (let i = 0; i < 6; i++) { const x = seed(i) * w; const y = h - ((t * 0.02 + seed(i) * h) % h); radialGlow(ctx, x, y, 14, c[3], 0.1); }
+    ctx.strokeStyle = rgba(c[3], 0.45); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, h * 0.78); ctx.quadraticCurveTo(w * 0.5, h * 0.64, w, h * 0.78); ctx.stroke();
+    for (let i = 0; i < 8; i++) { const x = seed(i) * w; const y = h - ((t * 0.018 + seed(i) * h) % h); radialGlow(ctx, x, y, 18, c[3], 0.12); }
   },
 
   /* ───────── 2D Animation ───────── */
