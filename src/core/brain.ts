@@ -187,28 +187,37 @@ export function estimateSec(text: string): number {
   return Math.max(3, Math.round((w / 2.35 + 1.5) * 10) / 10);
 }
 
-// Coherent single-shot window (seconds) per engine — tracks 2026-era i2v models,
-// which hold motion far longer than the 2025 ~8s clips. Tune as engines advance.
+// Clean single-shot window (seconds) per engine. Real-world: Kling-class i2v
+// degrades past ~9s (warping, drift) — 9s is the safe ceiling, not 10+. Runway-class
+// holds longer takes. Tune per engine as they advance; default is the safe 9s.
 const ENGINE_USABLE: Record<string, number> = {
-  kling: 10, kling_2_1: 10, kling_3: 10, kling_4: 12,
-  seedance: 10, seedance_2: 10, runway: 16, veo: 12, veo_3: 12, sora: 20, hailuo: 10,
+  kling: 9, kling_2_1: 9, kling_3: 9, kling_4: 10,
+  seedance: 9, seedance_2: 9, hailuo: 9, veo: 8,
+  runway: 14,
 };
 export function engineUsableSec(videoModel: string): number {
   const key = T(videoModel).toLowerCase();
-  return ENGINE_USABLE[key] ?? ENGINE_USABLE[key.split('_')[0]] ?? 10;
+  return ENGINE_USABLE[key] ?? ENGINE_USABLE[key.split('_')[0]] ?? 9;
 }
 
-export interface DurationVerdict { sec: number; usable: number; ok: boolean; level: 'OK' | 'SPLIT'; message: string; }
+export interface DurationVerdict {
+  sec: number; usable: number; ok: boolean; level: 'OK' | 'SPLIT';
+  shots: number; perShot: number; message: string;
+}
 export function durationGuard(scriptText: string, videoModel: string): DurationVerdict {
   const sec = estimateSec(scriptText);
   const usable = engineUsableSec(videoModel);
   const ok = sec <= usable;
+  // Elegant split: balance the beat into N equal clean shots that each sit comfortably
+  // inside the window (never one overflowing clip, never an ugly tiny tail).
+  const shots = ok ? 1 : Math.ceil(sec / usable);
+  const perShot = Math.round((sec / shots) * 10) / 10;
   return {
-    sec, usable, ok,
+    sec, usable, ok, shots, perShot,
     level: ok ? 'OK' : 'SPLIT',
     message: ok
-      ? `~${sec}s · ${videoModel} tutarlı penceresinde (${usable}s)`
-      : `~${sec}s, ${videoModel}'in tutarlı tek-çekim penceresini (${usable}s) aşıyor — beat'i ikinci bir onaylı kareyle sürdür (gerimeyle değil).`,
+      ? `~${sec}s · ${videoModel} temiz penceresinde (${usable}s)`
+      : `~${sec}s · ${videoModel} temiz penceresini (${usable}s) aşıyor → ${shots} dengeli parçaya böl (~${perShot}s × ${shots}), her parça kendi onaylı karesiyle — gerimeyle değil.`,
   };
 }
 
@@ -508,7 +517,7 @@ export function buildMotionPrompt(sceneId: number | string, concept: Concept, ca
   ].join(' ');
   return '[' + T(sceneId) + '] MOTION (i2v · plays the approved start frame)\n' + body +
     '\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.' +
-    (sec && sec > 8 ? '\nSPLIT NOTE: source runs ~' + sec + 's — cover with a second approved frame, never stretch this beat.' : '');
+    (sec && sec > 9 ? '\nSPLIT NOTE: source runs ~' + sec + 's — past the clean ~9s window; cover with balanced approved frames (~' + (Math.round((sec / Math.ceil(sec / 9)) * 10) / 10) + 's each), never stretch this beat.' : '');
 }
 
 // ---------------- variant generator & smart suggestions ----------------
