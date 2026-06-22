@@ -4,6 +4,7 @@ import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudi
 import { PreviewStage } from '../PreviewStage';
 import { RecipeRail } from '../RecipeRail';
 import { AntigravityBackground } from '../AntigravityBackground';
+import { ProductionPulse } from '../ProductionPulse';
 
 const STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNode; index: number }> = [
   { id: 'dashboard', label: 'Brief', hint: 'Kaynak & konu', icon: <LayoutDashboard size={17} />, index: 1 },
@@ -65,6 +66,8 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
             );
           })}
         </ol>
+
+        <ProductionPulse />
 
         <footer className="ml-footer" style={styles.footer}>
           <div style={styles.footerDot}><span style={styles.liveDot} /> M4 Max engine</div>

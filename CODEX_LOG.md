@@ -115,3 +115,15 @@ Run start — 2026-06-23 Europe/Istanbul — AŞAMA 1 başladı; bağlayıcı di
 - Sınır kontrolü: bu aşamada yalnız `AGENT_AUDIT.md`, `phase4-agent-audit.png` ve bu log bölümü üretildi; `agents/`, `knowledge/`, source integrity/contract/golden testleri değişmedi.
 - Kuzey Yıldızı: **Henüz agent bundle tarafında değil** — site doğru 2026 kontratını üretiyor, fakat audit deploy/motion P0'ları çözülmeden agent zincirinin aynı kaliteyi garanti edemediğini açıkça kanıtlıyor. Bu aşamanın teslimi, güvenli düzeltme için exact yol haritasıdır.
 - Sonuç: **AŞAMA 4 RAPOR PASS — AGENT EKOSİSTEMİ FIX REQUIRED**.
+
+## EK TESLİM — Sol-alt Production Pulse + Aksaçlı Yönetmen
+- Uygulama: dört gerçek üretim kapısını (`BRIEF/DNA/PLAN/PACK`) 0–100 ölçen saf `productionPulse()` motoru, ilk blokajı ilgili adıma yönlendiren CTA ve düşük-poly özgün aksaçlı gözlemci avatarı eklendi.
+- İçgörü: boş alan dekorla değil, “şimdi ne eksik?” sorusunu tek bakışta cevaplayan canlı üretim navigasyonuyla değerlendirildi.
+- Test: `productionPulse.test.ts` 4/4 PASS; boş proje, eksik source ingest, eksik DNA ve tam teslim durumları kapsandı.
+- Screenshot: `production-pulse-avatar.png` (1440×900 gerçek uygulama). Browser console: `0 error / 0 warning`.
+- Öz-denetim: ilk hesap reçete eksikken PLAN'ı 100 gösteriyordu; kapı sırası sıkılaştırıldı ve skor 50→dürüst 25 oldu. İlk fotogerçekçi avatar reddedildi; final asset 384px, 124KB RGBA low-poly NPC olarak yeniden üretildi.
+- Gate: `tsc 0`, `eslint 0`, `11/11 file`, `140/140 test PASS`, Vite `2200 module`, build `141ms`.
+- Kuzey Yıldızı: Evet — kullanıcı eksik production lock'u anında görüp doğru adıma gider; eksik reçeteyle paket üretme riski azalır.
+
+## AŞAMA 5 — EPİFANİLER
+- `TODO(codex)`: çekirdek 1–4 ve kullanıcı öncelikli Production Pulse tamamlandıktan sonra kalan kullanım bütçesi nedeniyle yeni kontrat değişikliği başlatılmadı. Yarım continuity/DNA-weight değişikliği bırakmak yerine mevcut `140/140` yeşil durum korundu.
