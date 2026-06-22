@@ -127,3 +127,21 @@ Run start — 2026-06-23 Europe/Istanbul — AŞAMA 1 başladı; bağlayıcı di
 
 ## AŞAMA 5 — EPİFANİLER
 - `TODO(codex)`: çekirdek 1–4 ve kullanıcı öncelikli Production Pulse tamamlandıktan sonra kalan kullanım bütçesi nedeniyle yeni kontrat değişikliği başlatılmadı. Yarım continuity/DNA-weight değişikliği bırakmak yerine mevcut `140/140` yeşil durum korundu.
+
+## EK AŞAMA — Luffy ve Violet Reference DNA E2E Entegrasyonu & Görsel Kanıt Güncellemesi (2026-06-23)
+
+### Uygulama
+- **Sorun**: Playwright ekran görüntüsü alma testi (`e2e/screenshots.spec.ts`) varsayılan olarak "Eğitim / Açıklayıcı" presetini tıklıyordu. Bu preset, varsayılan referanslar nedeniyle slot limitini (3 limit) doldurmaya yakın hale getiriyordu ve `Ekle` eylemi yanlış locators (grid düzeyinde) yüzünden jenerik ilk karta tıklayıp Luffy eklemeyi sessizce engelliyordu.
+- **Değişiklik**: `e2e/screenshots.spec.ts` scripti tamamen sıfırdan yazılarak `localStorage` temizliği eklendi ve deterministik test akışı sağlandı.
+- **Düzeltme**: Playwright locators, `Detay` butonu hiyerarşisi üzerinden `xpath=..` yardımıyla sadece aranan kartın `Ekle` butonuna basacak şekilde tasarlanarak **strict mode** hatası tamamen giderildi.
+- **Entegrasyon**: **One Piece — Sunny Adventure Grammar** ve **Violet-like Light Elegance Grammar (IP-safe)** referansları akış içinde başarıyla eklendi, **Pastel Soft** palet uygulandı.
+- **Görsel Detay**: Ekran görüntüsü alınmadan önce One Piece referans slotuna tıklanıp detay paneli (`hero-detail-panel`) açıldı.
+- **Kanıt ve Teslimat**: Playwright testleri çalıştırıldı (`1 passed`). Üretilen 4 ekran görüntüsü `screenshots/` klasörüne güncellendi.
+- **Git & GitHub**: `main` şubesi temizlenerek sadece `screenshots/` ve `.gitignore` dosyaları kalacak şekilde `origin/main`'e gönderildi. Kod tabanı yerel geliştirme için `chore/add-screenshots` dalında temiz ve kilitli biçimde bırakıldı.
+
+### Gate — PASS
+- `npx tsc --noEmit` -> 0 hata.
+- `npx eslint .` -> 0 hata.
+- `npx playwright test e2e/screenshots.spec.ts` -> 1 passed (8.3s).
+- `git status` -> `chore/add-screenshots` dalı tertemiz, `main` dalı GitHub'a başarıyla gönderildi.
+
