@@ -2,6 +2,7 @@ import React from 'react';
 import { useStudioStore } from '../store/useStudioStore';
 import { buildPreviewState } from '../core/preview';
 import { DATA, deriveTeachingRecipe } from '../core/pure';
+import { CanvasPreview } from './CanvasPreview';
 
 export const PreviewStage: React.FC = () => {
   const store = useStudioStore();
@@ -27,47 +28,89 @@ export const PreviewStage: React.FC = () => {
 
   const state = buildPreviewState(previewInput);
 
+  // Find the preview type from the first selected reference
+  const firstRef = DATA.refs.find((r) => r.id === store.selectedRefIds?.[0]);
+  const previewType = firstRef?.preview || 'default';
+
   return (
     <div className="preview-stage" data-wcat={state.category} style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: '12px',
-      padding: '16px',
-      background: '#1a1d24',
-      borderRadius: '8px',
+      gap: '10px',
+      background: 'rgba(10, 13, 20, 0.5)',
+      backdropFilter: 'blur(30px)',
+      WebkitBackdropFilter: 'blur(30px)',
+      borderRadius: '14px',
       color: '#fff',
-      border: '1px solid #333'
+      border: '1px solid rgba(255, 255, 255, 0.08)',
+      overflow: 'hidden',
     }}>
-      <div style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-        Adaptive Preview
-      </div>
-      <div style={{ fontSize: '16px', fontWeight: 600, color: '#f4c27a' }}>
-        {state.activePreset}
-      </div>
-      
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '8px 0' }}>
+      {/* ── Live Canvas Preview ── */}
+      <div style={{
+        width: '100%',
+        height: '180px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: '14px 14px 0 0',
+      }}>
+        <CanvasPreview
+          colors={state.colors}
+          category={state.category}
+          previewType={previewType}
+          worldId={store.selectedWorldId}
+          refId={store.selectedRefIds?.[0]}
+        />
+
+        {/* Overlay badges */}
         <div style={{
-          width: '48px', height: '48px',
-          background: `linear-gradient(135deg, ${state.colors[0]}, ${state.colors[2] || '#2b2f3a'})`,
-          borderRadius: state.category === 'real' ? '4px' : '50%',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '24px',
-          boxShadow: `0 4px 12px ${state.colors[1] || '#000'}40`
+          position: 'absolute', top: 8, left: 10,
+          fontSize: 9, fontWeight: 800, letterSpacing: 1.2,
+          textTransform: 'uppercase',
+          background: 'rgba(0,0,0,0.55)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255,255,255,0.12)',
+          borderRadius: 6, padding: '3px 7px',
+          color: '#fff',
         }}>
-          {state.icon}
+          {state.category}
         </div>
-        <div>
-          <div style={{ fontWeight: 'bold' }}>{state.worldName}</div>
-          <div style={{ fontSize: '13px', color: '#aaa', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <span>{state.matIcon}</span> {state.matName}
-          </div>
+
+        <div style={{
+          position: 'absolute', top: 8, right: 10,
+          fontSize: 9, fontWeight: 800, letterSpacing: 0.5,
+          background: 'var(--gold)',
+          color: '#1a1100',
+          borderRadius: 6, padding: '3px 7px',
+          maxWidth: 130, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+        }}>
+          {previewType}
+        </div>
+
+        {/* Bottom label */}
+        <div style={{
+          position: 'absolute', bottom: 8, left: 10, right: 10,
+          fontSize: 11, fontWeight: 800,
+          color: '#fff',
+          textShadow: '0 2px 12px rgba(0,0,0,0.8)',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}>
+          <span>{state.worldName}</span>
+          <span style={{ fontSize: 9, opacity: 0.7 }}>{state.matName}</span>
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: '4px', height: '12px', borderRadius: '4px', overflow: 'hidden' }}>
-        {state.colors.map((c, i) => (
-          <div key={i} style={{ flex: 1, background: c }} title={c} />
-        ))}
+      {/* ── Info Section ── */}
+      <div style={{ padding: '4px 14px 14px' }}>
+        <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--gold)', marginBottom: 6 }}>
+          {state.activePreset}
+        </div>
+        
+        {/* Palette strip */}
+        <div style={{ display: 'flex', gap: '3px', height: '10px', borderRadius: '5px', overflow: 'hidden' }}>
+          {state.colors.map((c, i) => (
+            <div key={i} style={{ flex: 1, background: c, transition: 'background 0.4s ease' }} title={c} />
+          ))}
+        </div>
       </div>
     </div>
   );

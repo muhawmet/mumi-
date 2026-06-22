@@ -94,7 +94,7 @@ When the brief does not lock a world via Phase 0, select from these priorities:
 - Human stories, civic, public service, testimonial → documentary_real
 - Institutions, brand campaigns, fashion, drama → cinematic_real_commercial
 
-**ANIMATION_EDU (Aras + Defne lessons, education projects):**
+**ANIMATION_EDU (education lessons, education projects):**
 - Default warm character lesson → pixar_feature
 - Language, gentle story, emotional memory → watercolor_storybook or ghibli_storybook
 - Math, geometry, logic, shapes → low_poly_geo or chalk_universe
@@ -149,7 +149,7 @@ in every scene, not just the look.
 
 | Subject domain | Primary recipe | Alt recipe |
 |---|---|---|
-| General Aras+Defne, character, emotion | clay | fabric |
+| General education, character, emotion | clay | fabric |
 | Language, writing, sequence, cause/effect | paper | notebook |
 | Math mechanisms, logic, systems | wood | clockwork |
 | Science, routes, invisible systems | lightbox | resin_diorama |

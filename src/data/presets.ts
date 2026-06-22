@@ -18,7 +18,7 @@ export interface Phase0Preset {
     selectedPaletteId?: string;
     selectedPropId?: string;
     sceneCount?: number;
-    cast?: 'Aras' | 'Defne' | 'İkisi';
+    cast?: string;
   };
   /** Reference category scoping (cat values in SURGERY_DATA.refs) */
   refScope: { allow: string[]; warn: string[] };
@@ -98,9 +98,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     refScope: { allow: ['Cinematography', 'Stylized Premium', 'Animation Auteur'], warn: [] },
   },
   {
-    id: 'edu_aras_defne',
+    id: 'edu_lesson',
     icon: '🎓',
-    label: 'Eğitim · Aras & Defne',
+    label: 'Eğitim · Ders Anlatımı',
     desc: 'Clay diorama, çocuk dostu eğitim animasyonu',
     kind: 'video',
     gradient: 'linear-gradient(135deg,#fbd786,#f7797d 60%,#c6ffdd)',
@@ -108,7 +108,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
       projectClass: 'ANIMATION_EDU',
       selectedWorldId: 'clay',
       selectedPropId: 'clay',
-      cast: 'İkisi',
+      cast: '',
       sceneCount: 5,
     },
     refScope: { allow: ['Stylized Premium', '3D Animation', '2D Animation'], warn: ['Anime / Cinematic', 'Game / Film'] },

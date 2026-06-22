@@ -87,7 +87,7 @@ function isRevealBeat(t: string) {
 
 function isGreeting(t: string) {
   const x = norm(t || '');
-  return wordCount(t) <= 8 && /^(merhaba|selam|hos geldin|hoş geldin|gunaydin|günaydın|ben (aras|defne)|hey)\b/.test(x.trim());
+  return wordCount(t) <= 8 && /^(merhaba|selam|hos geldin|hoş geldin|gunaydin|günaydın|ben \w+|hey)\b/.test(x.trim());
 }
 
 function contentWords(t: string) {

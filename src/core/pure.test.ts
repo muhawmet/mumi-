@@ -18,7 +18,7 @@ const baseInput: BriefInput = {
   projectTopic: 'Su Döngüsü',
   projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
-  cast: 'İkisi',
+  cast: '',
   selectedWorldId: 'clay',
   selectedPropId: 'native_world',
   selectedRefIds: [],
@@ -191,11 +191,12 @@ describe('generateBatch', () => {
     expect(result.scenes[0].handoff.MOTION.targetModel.label).toBe('kling_2_1');
   });
 
-  it('image prompt mentions the selected cast', () => {
-    const aras = generateBatch({ ...baseInput, cast: 'Aras' });
-    const defne = generateBatch({ ...baseInput, cast: 'Defne' });
-    expect(aras.scenes[0].imagePrompt).toMatch(/Aras/);
-    expect(defne.scenes[0].imagePrompt).toMatch(/Defne/);
+  it('image prompt locks a provided custom character, and stays character-free when cast is empty', () => {
+    const withChar = generateBatch({ ...baseInput, cast: '@mert = 9yo boy, blue sweater, mouth closed' });
+    const noChar = generateBatch({ ...baseInput, cast: '' });
+    expect(withChar.scenes[0].imagePrompt).toMatch(/@mert/);
+    expect(withChar.scenes[0].imagePrompt).toMatch(/Character lock/);
+    expect(noChar.scenes[0].imagePrompt).not.toMatch(/Character lock/);
   });
 
   it('palette override flags paletteAccent.source as USER_PALETTE', () => {
@@ -287,7 +288,7 @@ describe('generateBatch', () => {
 
 describe('validateMotion', () => {
   it('passes when motion only adds camera + direction words', () => {
-    const img = 'Pixar render of Aras the boy holding a glowing water droplet over a forest stream.';
+    const img = 'Pixar render of a boy holding a glowing water droplet over a forest stream.';
     const motion = 'Camera slowly dollies forward; the droplet gently moves down toward the stream.';
     const r = validateMotion(img, motion);
     expect(r.ok).toBe(true);
@@ -295,7 +296,7 @@ describe('validateMotion', () => {
   });
 
   it('flags foreign content tokens introduced by motion only', () => {
-    const img = 'Pixar render of Aras holding a glowing water droplet over a forest stream.';
+    const img = 'Pixar render of a child holding a glowing water droplet over a forest stream.';
     const motion = 'Dragon appears, breathes fire, palace explodes, neon laser dance, sword duel.';
     const r = validateMotion(img, motion, 3);
     expect(r.ok).toBe(false);

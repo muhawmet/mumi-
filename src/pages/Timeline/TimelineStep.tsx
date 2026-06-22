@@ -7,6 +7,8 @@ import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/
 import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
 import { DATA } from '../../core/pure';
 import { dnaDirectives, registerOf, primePacket } from '../../core/brain';
+import { RecipeThumb } from '../../components/RecipeThumb';
+import { Clapperboard } from 'lucide-react';
 
 const PHASE_COLORS: Record<string, string> = {
   Intro: '#4df5a0',
@@ -202,15 +204,37 @@ export const TimelineStep = () => {
 
       {scenes.length === 0 ? (
         <Panel>
-          <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
-            Brief'i tamamlayıp <strong style={{ color: 'var(--gold)' }}>{state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'}</strong>'e bas.
-            <br />
-            {state.projectKind === 'design'
-              ? 'Generator statik tasarım mimarisi + image prompt + IMAGE handoff paketi üretecek.'
-              : 'Pure generator senin için sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretecek.'}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '54px 20px', gap: 18 }}>
+            <div style={{
+              width: 200, height: 116, borderRadius: 'var(--r-lg)', overflow: 'hidden', position: 'relative',
+              boxShadow: 'var(--shadow), 0 0 40px -12px var(--goldglow)',
+            }}>
+              <RecipeThumb radius={20} />
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.25)' }}>
+                <Clapperboard size={34} color="var(--gold-hi)" />
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize: 19, fontWeight: 800, color: 'var(--text)', letterSpacing: -0.3 }}>
+                {state.projectKind === 'design' ? 'Tasarıma hazır' : 'Sahne yok — motoru çalıştır'}
+              </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: 13.5, lineHeight: 1.6, maxWidth: 420, margin: '8px auto 0' }}>
+                {state.projectKind === 'design'
+                  ? 'Generator statik tasarım mimarisi + image prompt + IMAGE handoff paketi üretir.'
+                  : 'Pure generator sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretir.'}
+              </p>
+            </div>
+            <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
+              <Clapperboard size={15} /> {state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span>
+            </Button>
+            {!state.selectedWorldId && <div style={{ fontSize: 12, color: 'var(--amber)' }}>Önce Reçete'de bir dünya seç.</div>}
           </div>
         </Panel>
       ) : (
+        <>
+        {state.projectKind === 'video' && (
+          <FilmStrip scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
+        )}
         <div className="timeline-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) 1.6fr', gap: 24 }}>
           <Panel title={`${state.projectKind === 'design' ? 'Tasarımlar' : 'Sahneler'} (${scenes.length})`}>
             {state.projectKind === 'video' && (
@@ -287,6 +311,19 @@ export const TimelineStep = () => {
                   transition={{ duration: 0.2 }}
                   style={{ display: 'flex', flexDirection: 'column', gap: 18, fontSize: 13, lineHeight: 1.6 }}
                 >
+                  {/* — live preview monitor — */}
+                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', borderRadius: 'var(--r-md)', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
+                    <RecipeThumb radius={14} />
+                    <div style={{ position: 'absolute', top: 10, left: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
+                      <span style={{ width: 7, height: 7, borderRadius: 999, background: PHASE_COLORS[selected.phaseName] || '#fff', boxShadow: `0 0 8px ${PHASE_COLORS[selected.phaseName] || '#fff'}` }} />
+                      <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1, color: '#fff', textShadow: '0 1px 6px #000' }}>
+                        {state.projectKind === 'design' ? `TASARIM ${selected.id}` : `SAHNE ${selected.id} · ${selected.phaseName?.toUpperCase()}`}
+                      </span>
+                    </div>
+                    <div style={{ position: 'absolute', bottom: 10, right: 12, fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 700, color: 'var(--gold-hi)', textShadow: '0 1px 6px #000' }}>
+                      {state.projectKind === 'design' ? 'STATIC' : `${selected.durationSec}s`}
+                    </div>
+                  </div>
                   <DetailRow label="Beat" value={selected.architecture.beat} />
                   <DetailRow label="Dominant subject" value={selected.architecture.dominantSubject} />
                   <DetailRow label="Event" value={selected.architecture.event} />
@@ -360,6 +397,7 @@ export const TimelineStep = () => {
             </AnimatePresence>
           </Panel>
         </div>
+        </>
       )}
     </div>
   );
@@ -594,6 +632,67 @@ const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?
       >
         {value}
       </div>
+    </div>
+  );
+};
+
+/* — Cinematic film strip: frames sized by duration, phase-coloured,
+     with sprocket holes and an intensity bar. The hero of the timeline. — */
+const FilmStrip: React.FC<{
+  scenes: Scene[];
+  selectedSceneId: number | null;
+  onPick: (id: number) => void;
+}> = ({ scenes, selectedSceneId, onPick }) => {
+  if (!scenes.length) return null;
+  const total = scenes.reduce((s, x) => s + Math.max(1, x.durationSec), 0);
+  const Sprockets = () => (
+    <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', height: 12, padding: '0 4px' }}>
+      {Array.from({ length: 22 }).map((_, i) => (
+        <span key={i} style={{ width: 7, height: 5, borderRadius: 1.5, background: 'rgba(0,0,0,0.55)' }} />
+      ))}
+    </div>
+  );
+  return (
+    <div style={{ borderRadius: 'var(--r-lg)', overflow: 'hidden', border: '1px solid var(--line2)', background: 'linear-gradient(180deg,#15151b,#0e0e12)', boxShadow: 'var(--shadow)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 16px 0' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 10, letterSpacing: 1.8, color: 'var(--gold)', fontWeight: 800 }}>
+          <span style={{ width: 5, height: 5, borderRadius: 999, background: 'var(--gold)', boxShadow: '0 0 8px var(--goldglow)' }} /> FİLM ŞERİDİ
+        </span>
+        <span style={{ fontSize: 10.5, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>{scenes.length} sahne · {total}s</span>
+      </div>
+      <Sprockets />
+      <div style={{ display: 'flex', gap: 3, padding: '0 6px' }}>
+        {scenes.map((s) => {
+          const active = selectedSceneId === s.id;
+          const phase = PHASE_COLORS[s.phaseName] || '#888';
+          return (
+            <button
+              key={s.id}
+              onClick={() => onPick(s.id)}
+              title={`Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`}
+              style={{
+                flex: Math.max(0.6, s.durationSec), minWidth: 44, height: 72, position: 'relative',
+                borderRadius: 8, cursor: 'pointer', overflow: 'hidden',
+                border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
+                background: '#0a0a0d',
+                boxShadow: active ? 'var(--ring-gold)' : 'none',
+                transition: 'all var(--dur) var(--ease)',
+                padding: 0,
+              }}
+            >
+              <span aria-hidden style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: phase }} />
+              {/* intensity fill */}
+              <span aria-hidden style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: `${Math.max(8, s.intensity)}%`, background: `linear-gradient(180deg, ${phase}22, ${phase}55)` }} />
+              <span style={{ position: 'absolute', top: 8, left: 7, fontSize: 11, fontWeight: 800, fontFamily: 'var(--font-mono)', color: active ? 'var(--gold-hi)' : '#fff' }}>{s.id}</span>
+              <span style={{ position: 'absolute', bottom: 5, left: 7, fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--text-soft)' }}>{s.durationSec}s</span>
+              {s.duration && !s.duration.ok && (
+                <span style={{ position: 'absolute', top: 6, right: 6, fontSize: 9, fontWeight: 800, color: 'var(--red)' }}>!</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+      <Sprockets />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { planBeats, mergeScore } from './beats';
 
 describe('beats.ts - Semantic Beat Planner', () => {
   const shortBeats = [
-    { id: '1', text: 'Merhaba, ben Aras.' },
+    { id: '1', text: 'Merhaba, ben anlatıcı.' },
     { id: '2', text: 'Bugün su döngüsünü anlatacağız.' }
   ];
 
@@ -28,7 +28,7 @@ describe('beats.ts - Semantic Beat Planner', () => {
 
   it('suggests merge hint on short adjacent beats', () => {
     const analysis = planBeats(shortBeats, 'Ekonomik');
-    // 'Merhaba ben aras' is short and should trigger a merge hint
+    // 'Merhaba ben anlatıcı' is short and should trigger a merge hint
     const hint = analysis.hints.find(h => h.type === 'merge');
     expect(hint).toBeDefined();
     expect(hint?.reason).toContain('birleşebilir');

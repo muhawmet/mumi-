@@ -1,18 +1,12 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { sourceReadiness, useStudioStore, type Cast } from '../../store/useStudioStore';
+import { sourceReadiness, useStudioStore } from '../../store/useStudioStore';
 import { Panel, Field, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { PHASE0_VIDEO, PHASE0_DESIGN, type Phase0Preset } from '../../data/presets';
 import { DATA, parseSourceInput } from '../../core/pure';
 import { decodeBrief } from '../../core/source';
 
 const CLASS_OPTIONS = DATA.paths.map((path) => ({ id: path.id, label: path.name }));
-
-const CAST_OPTIONS: Array<{ id: Cast; label: string; sub: string }> = [
-  { id: 'Aras', label: 'Aras', sub: 'erkek çocuk' },
-  { id: 'Defne', label: 'Defne', sub: 'kız çocuk' },
-  { id: 'İkisi', label: 'İkisi', sub: 'ensemble' },
-];
 
 export const DashboardStep = () => {
   const {
@@ -277,31 +271,16 @@ export const DashboardStep = () => {
         </AnimatePresence>
       </Panel>
 
-      <Panel title="Oyuncu kadrosu" subtitle="referenceFaceLocked uygulanır — kimlik kayması engellenir.">
-        <div className="cast-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
-          {CAST_OPTIONS.map((c) => {
-            const active = cast === c.id;
-            return (
-              <button
-                key={c.id}
-                onClick={() => setField('cast', c.id)}
-                style={{
-                  padding: '20px 16px',
-                  borderRadius: 14,
-                  border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                  background: active ? 'var(--goldsoft)' : 'rgba(0,0,0,.18)',
-                  color: '#fff',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  transition: 'all .18s',
-                }}
-              >
-                <div style={{ fontSize: 18, fontWeight: 700 }}>{c.label}</div>
-                <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{c.sub}</div>
-              </button>
-            );
-          })}
-        </div>
+      <Panel title="Karakter (opsiyonel)" subtitle="Boş bırak → nesne-odaklı, karaktersiz sahne. Doldurursan birebir kilitlenir (kimlik kayması engellenir).">
+        <Field label="Karakter tanımı">
+          <textarea
+            data-testid="cast-input"
+            style={{ ...inputStyle, minHeight: 70, resize: 'vertical', fontFamily: 'inherit' }}
+            value={cast}
+            onChange={(e) => setField('cast', e.target.value)}
+            placeholder="örn. @mehmet = 9 yaşında çocuk, mavi kazak, kısa kahverengi saç, ağzı kapalı. — Boş bırakırsan sahnede karakter olmaz."
+          />
+        </Field>
       </Panel>
 
       <Panel title="Proje Kasası" subtitle="Aktif projeyi adıyla kaydet; istediğin an birebir geri yükle. Tarayıcıda saklanır.">

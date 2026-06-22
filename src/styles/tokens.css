@@ -1,56 +1,68 @@
 /* =============================================================
-   MAMILAS · Design tokens (Phase G)
-   Premium 2026 aesthetic: near-black, ONE warm gold accent,
-   glass surfaces, hairline borders, generous spacing. Calm — not neon.
+   MAMILAS · Design tokens — "Studio Console" 2026
+   Cinematic warm-dark control room. ONE gold light source + a
+   warm ember secondary for ambient only. Surfaces are layered and
+   READABLE (they no longer dissolve into the void). Calm, filmic.
    Single source of truth for every surface in the app.
    ============================================================= */
 :root {
-  /* — Surfaces (near-black, subtly layered) — */
-  --bg:        #06070b;
-  --bg-2:      #080a10;
-  --s1:        #0b0e16;
-  --s2:        #10131d;
-  --s3:        #161a26;
-  --s4:        #1e2331;
+  /* — Surfaces (warm graphite, layered so panels actually read) — */
+  --bg:        #0a0a0d;
+  --bg-2:      #0e0e12;
+  --s1:        #15151b;
+  --s2:        #1c1c24;
+  --s3:        #25252f;
+  --s4:        #31313d;
+
+  /* — Panel fills (opaque enough to separate from the ambient bg) — */
+  --panel:     linear-gradient(180deg, rgba(34,34,43,0.82), rgba(21,21,27,0.82));
+  --panel-2:   linear-gradient(180deg, rgba(40,40,50,0.9), rgba(26,26,33,0.9));
+  --inset:     rgba(0,0,0,0.32);
 
   /* — Glass — */
-  --glass:        rgba(255, 255, 255, 0.045);
-  --glass-2:      rgba(255, 255, 255, 0.07);
-  --glass-bg:     rgba(16, 19, 29, 0.55);
-  --glass-hi:     rgba(255, 255, 255, 0.10);
+  --glass:        rgba(255, 255, 255, 0.05);
+  --glass-2:      rgba(255, 255, 255, 0.08);
+  --glass-bg:     rgba(22, 22, 28, 0.6);
+  --glass-hi:     rgba(255, 255, 255, 0.14);
 
   /* — Hairlines — */
-  --line:      rgba(255, 255, 255, 0.07);
-  --line2:     rgba(255, 255, 255, 0.12);
-  --line3:     rgba(255, 255, 255, 0.20);
+  --line:      rgba(255, 255, 255, 0.08);
+  --line2:     rgba(255, 255, 255, 0.14);
+  --line3:     rgba(255, 255, 255, 0.24);
 
-  /* — The single accent: warm gold — */
-  --gold:      #f5c451;
-  --gold-2:    #d99f2b;
-  --gold-hi:   #ffe08a;
-  --goldsoft:  rgba(245, 196, 81, 0.12);
-  --goldline:  rgba(245, 196, 81, 0.35);
-  --goldglow:  rgba(245, 196, 81, 0.20);
+  /* — The single accent: warm gold (used as LIGHT, not paint) — */
+  --gold:      #f6c862;
+  --gold-2:    #e0a534;
+  --gold-hi:   #ffe6a3;
+  --gold-deep: #1c1503;
+  --goldsoft:  rgba(246, 200, 98, 0.13);
+  --goldline:  rgba(246, 200, 98, 0.42);
+  --goldglow:  rgba(246, 200, 98, 0.28);
+  --grad-gold: linear-gradient(135deg, #ffe6a3 0%, #f6c862 38%, #e0a534 100%);
+
+  /* — Warm ember (ambient / secondary glow only) — */
+  --ember:     #ff9d4d;
+  --embersoft: rgba(255, 157, 77, 0.10);
 
   /* — Status — */
   --green:     #4df5a0;
-  --greensoft: rgba(77, 245, 160, 0.10);
+  --greensoft: rgba(77, 245, 160, 0.12);
   --red:       #ff5c79;
-  --redsoft:   rgba(255, 92, 121, 0.10);
+  --redsoft:   rgba(255, 92, 121, 0.12);
   --amber:     #f5b54d;
 
   /* — Text — */
-  --text:      #f4f6fb;
-  --text-soft: #c3ccdb;
-  --text-muted:#8a93a6;
-  --text-dim:  #5b6273;
+  --text:      #f6f7fb;
+  --text-soft: #c8cedb;
+  --text-muted:#919aac;
+  --text-dim:  #626a7b;
 
   /* — Radius — */
   --r-xs: 8px;
-  --r-sm: 10px;
+  --r-sm: 11px;
   --r-md: 14px;
-  --r-lg: 18px;
-  --r-xl: 24px;
+  --r-lg: 20px;
+  --r-xl: 26px;
   --r-pill: 999px;
 
   /* — Spacing scale — */
@@ -58,17 +70,18 @@
   --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 56px;
 
   /* — Shadow / blur — */
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.30);
-  --shadow:    0 16px 50px rgba(0, 0, 0, 0.40);
-  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.50);
-  --shadow-gold: 0 12px 34px rgba(245, 196, 81, 0.18);
-  --blur:      18px;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow:    0 20px 50px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 34px 90px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 14px 40px rgba(246, 200, 98, 0.22);
+  --ring-gold: 0 0 0 1px var(--goldline), 0 0 28px -6px var(--goldglow);
+  --blur:      14px;
 
   /* — Motion — */
   --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
   --dur:       0.18s;
-  --dur-2:     0.32s;
+  --dur-2:     0.34s;
 
   /* — Type — */
   --font-sans: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;

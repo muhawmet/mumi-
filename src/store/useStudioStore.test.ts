@@ -36,7 +36,7 @@ function generatedScene(): Scene {
     projectTopic: 'SOURCE:\nkısa kaynak',
     projectClass: 'ANIMATION_EDU',
     sceneCount: 1,
-    cast: 'İkisi',
+    cast: '',
     selectedWorldId: 'clay',
     selectedPropId: 'clay',
     selectedRefIds: ['pixar_dimensional'],

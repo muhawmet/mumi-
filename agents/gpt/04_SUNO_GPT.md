@@ -69,7 +69,7 @@ scale — the diorama is small, the music feels small):
 
 ## Teaching Context
 
-- Education (ANIMATION_EDU, Aras + Defne): narration pocket is non-negotiable —
+- Education (ANIMATION_EDU): narration pocket is non-negotiable —
   1–4 kHz sparse on every narration moment, no sustained vocals, music enters
   between beats. Tempo 70–90 BPM (up to 110 for action scenes).
 - Social/commercial (SOCIAL_REELS_REALISM, PRODUCT_HERO): richer texture allowed

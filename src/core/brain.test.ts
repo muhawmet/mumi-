@@ -147,7 +147,7 @@ describe('primePacket & buildAgentBrief richness', () => {
     register: 'EDU' as const,
     world: clayWorld,
     dna: { names: 'Pixar Ref', camera: 'medium view', light: 'soft ambient', staging: 'centered', motion: 'gentle drift', texture: 'clay texture', avoid: 'plastic' },
-    cast: 'Aras + Defne',
+    cast: '',
     brandKitLock: 'Verbatim Brand: Mamilas Education.'
   };
 

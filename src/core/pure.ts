@@ -87,6 +87,62 @@ export interface SurgeryData {
   regression: unknown[];
 }
 
+export const MOOD_OPTS: Record<string, {label:string, brief:string}> = {
+  joy_curiosity:{label:'Neşeli & Merak',brief:'bright, curious and playful - light comedic timing, warm-bright palette lean, upbeat hummable motif, quick but clear pacing'},
+  warm_emotional:{label:'Sıcak & Duygusal',brief:'warm and tender - gentle unhurried pacing, soft warm palette, intimate close staging, emotional music motif'},
+  epic_excite:{label:'Epik & Heyecan',brief:'bold and exciting - larger scale and stronger contrast, punchy pacing, heroic music build to one peak, confident camera'},
+  calm_focus:{label:'Sakin & Huzur',brief:'calm and clear - steady unhurried pacing, clean balanced palette, minimal music and breathing space, clarity-first staging'}
+};
+export const CAM_OPTS: Record<string, {label:string, brief:string}> = {
+  calm_clear:{label:'Sakin & Net',brief:'restrained camera - mostly locked frames and slow motivated dolly, clarity over movement'},
+  explore_pov:{label:'Keşifçi & POV',brief:'exploratory camera - lean on inside-object, child-eye and POV reveals, motivated movement that uncovers the idea'},
+  cinematic_dramatic:{label:'Sinematik & Dramatik',brief:'cinematic camera - bold motivated moves, strong depth, deliberate reveal timing and scale'}
+};
+export const LIGHT_OPTS: Record<string, {label:string, brief:string}> = {
+  morning:{label:'Sabah',brief:'soft cool morning light, gentle long shadows, fresh clean feel'},
+  golden:{label:'Altın Saat',brief:'warm golden-hour light, long amber shadows, premium glow'},
+  night:{label:'Gece',brief:'controlled night light, pools of practical light, deep shadow with focused accents'},
+  studio:{label:'Stüdyo',brief:'clean controlled studio light, soft key and fill, neutral readable shadows'}
+};
+export const MUS_OPTS: Record<string, {label:string, brief:string}> = {
+  warm_motif:{label:'Sıcak Motif',brief:'warm hummable educational motif - felted piano and soft strings, VO-safe, no vocals unless requested'},
+  epic:{label:'Epik',brief:'rising cinematic bed - light percussion building to one peak, VO-safe, no vocals unless requested'},
+  curious:{label:'Merak',brief:'playful curious motif - pizzicato or marimba, light and bright, VO-safe, no vocals unless requested'},
+  minimal:{label:'Minimal',brief:'minimal sparse texture - one instrument and space, strongly VO-safe, no vocals unless requested'}
+};
+export const TRANS_OPTS: Record<string, {label:string, brief:string}> = {
+  match_cut:{label:'Match-cut',brief:'match-cut between scenes on a shared shape or motion; keep continuity and a stable final hold'},
+  morph_safe:{label:'Morph-safe',brief:'morph-safe transitions only - freeze text, logo and face; never melt or morph between scenes'},
+  hard_cut:{label:'Sert Kesme',brief:'clean hard cuts on action; no decorative transitions'}
+};
+export const POV_OPTS: Record<string, {label:string, brief:string}> = {
+  child_eye:{label:'Çocuk gözü',brief:'child-eye level POV — frame the idea at a child\'s height and curiosity'},
+  object_pov:{label:'Nesne-POV',brief:'object-POV — see from inside or from the lesson/hero object itself'},
+  consequence:{label:'Sonuç→sebep',brief:'consequence-to-cause — show the result first, then reveal what caused it'},
+  hidden_mech:{label:'Gizli mekanizma',brief:'hidden-mechanism reveal — open the object to show how it works'},
+  scale_reveal:{label:'Ölçek reveal',brief:'scale reveal — start tight or wide, then reveal true scale of the idea'},
+  locked:{label:'Kilitli kare',brief:'deliberate locked/static frame — stillness that makes the change readable'}
+};
+export const SIG_OPTS: Record<string, {label:string, brief:string}> = {
+  macro_truth:{label:'Makro gerçek',brief:'one macro-truth hero frame — the smallest real detail that carries the whole idea'},
+  scale_hero:{label:'Ölçek kahraman',brief:'one scale-hero frame — the subject revealed at its most epic true size'},
+  silhouette:{label:'Siluet imza',brief:'one silhouette hero frame — the subject read purely as shape against light'},
+  light_shaft:{label:'Işık huzmesi',brief:'one motivated light-shaft frame — a single beam that names the subject'},
+  reflection:{label:'Yansıma',brief:'one reflection/echo frame — the subject seen through what it acts upon'}
+};
+export const LEIT_OPTS: Record<string, {label:string, brief:string}> = {
+  color:{label:'Renk motifi',brief:'a recurring colour accent that returns at the open, the turn and the final frame'},
+  shape:{label:'Şekil motifi',brief:'a recurring shape/object that reappears and pays off at the end'},
+  sound:{label:'Ses motifi',brief:'a recurring musical motif (one short phrase) that returns at each beat'},
+  gesture:{label:'Jest motifi',brief:'a recurring human gesture/micro-action that bookends the episode'}
+};
+export const TEMPO_OPTS: Record<string, {label:string, brief:string}> = {
+  gentle:{label:'Yumuşak yay',brief:'gentle rising arc — calm open, soft build, one tender peak, settled close'},
+  build_peak:{label:'Yapı→doruk',brief:'curiosity hook -> concept -> build -> single strong climax of understanding -> final teaching frame'},
+  punchy:{label:'Tempolu',brief:'punchy episodic — quick hooks and frequent small peaks, energetic throughout, still one clear payoff'},
+  slow_burn:{label:'Slow burn',brief:'slow burn — withhold, let tension build, deliver a late reveal then a stable hold'}
+};
+
 export const DATA = SURGERY as unknown as SurgeryData;
 
 export interface BriefInput {
@@ -96,7 +152,7 @@ export interface BriefInput {
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
-  cast: 'Aras' | 'Defne' | 'İkisi';
+  cast?: string;
   selectedWorldId: string;
   selectedPropId: string;
   selectedRefIds: string[];
@@ -105,6 +161,15 @@ export interface BriefInput {
   imageModel: string;
   videoModel: string;
   brandKitLock?: string;
+  mood?: string;
+  cameraEnergy?: string;
+  timeLight?: string;
+  transition?: string;
+  musicVibe?: string;
+  pov?: string;
+  signature?: string;
+  leitmotif?: string;
+  tempoCurve?: string;
 }
 
 export interface RecipeDefaults {
@@ -580,7 +645,8 @@ function buildHandoffPackets(args: {
 }
 
 export function generateBatch(input: BriefInput): GenerationResult {
-  const { projectTopic, projectClass, sceneCount, cast, selectedWorldId, selectedRefIds, selectedPaletteId } = input;
+  const { projectTopic, projectClass, sceneCount, selectedWorldId, selectedRefIds, selectedPaletteId } = input;
+  const cast = (input.cast || '').trim();
 
   const world = DATA.worlds.find((w) => w.id === selectedWorldId);
   if (!world) {
@@ -671,7 +737,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     const imagePrompt = brainImagePrompt(i, concept, camera, {
       world, register, dna, palette: paletteOverride,
       pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
-      chars: register === 'EDU' ? `${cast}` : undefined,
+      chars: register === 'EDU' && cast ? cast : undefined,
       projectKind,
     });
     const motionPrompt = projectKind === 'design'
@@ -719,6 +785,15 @@ export function generateBatch(input: BriefInput): GenerationResult {
     cast,
     projectKind,
     brandKitLock: input.brandKitLock,
+    mood: input.mood ? MOOD_OPTS[input.mood]?.brief : undefined,
+    cameraEnergy: input.cameraEnergy ? CAM_OPTS[input.cameraEnergy]?.brief : undefined,
+    timeLight: input.timeLight ? LIGHT_OPTS[input.timeLight]?.brief : undefined,
+    transition: input.transition ? TRANS_OPTS[input.transition]?.brief : undefined,
+    musicVibe: input.musicVibe ? MUS_OPTS[input.musicVibe]?.brief : undefined,
+    pov: input.pov ? POV_OPTS[input.pov]?.brief : undefined,
+    signature: input.signature ? SIG_OPTS[input.signature]?.brief : undefined,
+    leitmotif: input.leitmotif ? LEIT_OPTS[input.leitmotif]?.brief : undefined,
+    tempoCurve: input.tempoCurve ? TEMPO_OPTS[input.tempoCurve]?.brief : undefined,
   };
 
   const agentBrief = buildAgentBrief(agentCtx, briefScenes);

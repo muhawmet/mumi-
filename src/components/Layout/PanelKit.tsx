@@ -15,13 +15,15 @@ export const Panel: React.FC<{
 }> = ({ title, subtitle, children, aside }) => (
   <section
     style={{
-      background:
-        'linear-gradient(180deg, var(--glass), rgba(255,255,255,0.012)), linear-gradient(180deg, var(--s1), var(--bg-2))',
+      background: 'var(--panel)',
+      backdropFilter: 'blur(var(--blur))',
+      WebkitBackdropFilter: 'blur(var(--blur))',
       border: '1px solid var(--line2)',
       borderRadius: 'var(--r-lg)',
       padding: 'var(--sp-6)',
-      boxShadow: 'var(--shadow)',
+      boxShadow: 'var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
       position: 'relative',
+      overflow: 'hidden',
     }}
   >
     {/* hairline top highlight */}
@@ -77,7 +79,7 @@ export const Field: React.FC<{ label: string; children: React.ReactNode; hint?: 
 );
 
 export const inputStyle: React.CSSProperties = {
-  background: 'rgba(0,0,0,0.28)',
+  background: 'var(--inset)',
   border: '1px solid var(--line2)',
   borderRadius: 'var(--r-sm)',
   padding: '12px 14px',
@@ -111,28 +113,32 @@ export const Button: React.FC<
     letterSpacing: 0.3,
     cursor: rest.disabled ? 'not-allowed' : 'pointer',
     opacity: rest.disabled ? 0.45 : 1,
-    transition: 'transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease)',
-    transform: hover && !rest.disabled ? 'translateY(-1px)' : 'none',
+    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+    transform: hover && !rest.disabled ? 'translateY(-2px) scale(1.02)' : 'none',
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+    position: 'relative', overflow: 'hidden',
   };
   const variants: Record<string, React.CSSProperties> = {
     primary: {
-      border: '1px solid var(--goldline)',
-      background: hover && !rest.disabled
-        ? 'linear-gradient(180deg, var(--gold-hi), var(--gold))'
-        : 'linear-gradient(180deg, var(--gold), var(--gold-2))',
-      color: '#241a00',
-      boxShadow: hover && !rest.disabled ? 'var(--shadow-gold)' : '0 6px 18px rgba(245,196,81,0.14)',
+      border: '1px solid var(--gold)',
+      background: 'var(--grad-gold)',
+      color: 'var(--gold-deep)',
+      fontWeight: 800,
+      boxShadow: hover && !rest.disabled
+        ? '0 10px 30px -6px var(--goldglow), inset 0 1px 0 rgba(255,255,255,0.5)'
+        : 'var(--shadow-gold), inset 0 1px 0 rgba(255,255,255,0.4)',
     },
     ghost: {
-      border: '1px solid var(--line3)',
-      background: hover && !rest.disabled ? 'var(--glass-2)' : 'transparent',
+      border: '1px solid rgba(255, 255, 255, 0.05)',
+      background: hover && !rest.disabled ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.01)',
       color: 'var(--text)',
+      backdropFilter: 'blur(10px)',
     },
     danger: {
-      border: '1px solid var(--redsoft)',
-      background: hover && !rest.disabled ? 'var(--redsoft)' : 'transparent',
+      border: '1px solid rgba(255, 92, 121, 0.4)',
+      background: hover && !rest.disabled ? 'rgba(255, 92, 121, 0.15)' : 'rgba(255, 92, 121, 0.05)',
       color: 'var(--red)',
+      boxShadow: hover && !rest.disabled ? '0 0 16px rgba(255, 92, 121, 0.2)' : 'none',
     },
   };
   return (
@@ -153,7 +159,7 @@ export const Stat: React.FC<{ label: string; value: React.ReactNode; tone?: 'def
 }) => {
   const color = tone === 'gold' ? 'var(--gold)' : tone === 'green' ? 'var(--green)' : tone === 'red' ? 'var(--red)' : 'var(--text)';
   return (
-    <div style={{ padding: '14px 16px', border: '1px solid var(--line2)', borderRadius: 'var(--r-md)', background: 'rgba(0,0,0,0.22)', minWidth: 0 }}>
+    <div style={{ padding: '14px 16px', border: '1px solid var(--line2)', borderRadius: 'var(--r-md)', background: 'var(--panel-2)', minWidth: 0 }}>
       <div style={{ fontSize: 22, fontWeight: 800, color, fontFamily: 'var(--font-mono)', letterSpacing: -0.5, overflowWrap: 'anywhere' }}>{value}</div>
       <div style={{ fontSize: 10, letterSpacing: 1.2, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: 5 }}>{label}</div>
     </div>

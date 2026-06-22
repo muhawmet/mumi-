@@ -1,6 +1,7 @@
 import { useStudioStore, type WorkingMode } from '../../store/useStudioStore';
 import { type BeatMode } from '../../core/beats';
 import { Panel, Button, Stat, Chip, selectStyle } from '../../components/Layout/PanelKit';
+import { RecipeThumb } from '../../components/RecipeThumb';
 
 const BEAT_MODES: BeatMode[] = ['Ekonomik', 'Dengeli', 'Hassas', 'Manuel'];
 
@@ -84,6 +85,33 @@ export function ScenesStep() {
             <Stat label={`Tasarruf (${plan.savedSec}s)`} value={`${plan.savedPct}%`} tone="green" />
           </div>
 
+          {/* — Beat budget ribbon: each beat proportional, over-limit glows red — */}
+          <div style={{ marginTop: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, letterSpacing: 1.4, color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>
+              <span>Beat Bütçesi</span>
+              <span style={{ color: 'var(--gold)' }}>max {plan.max}s / klip</span>
+            </div>
+            <div style={{ display: 'flex', gap: 2, height: 14, borderRadius: 7, overflow: 'hidden', background: 'var(--inset)', border: '1px solid var(--line2)' }}>
+              {enhancedBeats.map((b) => {
+                const over = b.voSec > plan.max && beatMode !== 'Manuel';
+                return (
+                  <div
+                    key={b.id}
+                    title={`Beat ${b.id}: VO ${b.voSec}s${over ? ' · LİMİT AŞIMI' : ''}`}
+                    style={{
+                      flex: Math.max(0.4, b.clipSec),
+                      background: over
+                        ? 'linear-gradient(180deg, #ff7a8f, var(--red))'
+                        : 'linear-gradient(180deg, var(--gold-hi), var(--gold-2))',
+                      boxShadow: over ? '0 0 8px rgba(255,92,121,0.5)' : 'none',
+                      opacity: beatKeeps[b.id] ? 1 : 0.85,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
           {hints.length > 0 && (
             <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ fontSize: 10.5, letterSpacing: 1.4, color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
@@ -126,14 +154,7 @@ export function ScenesStep() {
                     borderLeft: `3px solid ${accent}`,
                   }}
                 >
-                  <div style={{
-                    width: 56, height: 56, flexShrink: 0, borderRadius: 'var(--r-sm)',
-                    background: 'linear-gradient(135deg, var(--s3), var(--s2))', border: '1px solid var(--line2)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 9, color: 'var(--text-dim)', fontFamily: 'var(--font-mono)', textAlign: 'center', padding: 4,
-                  }}>
-                    {selectedWorldId || 'WORLD'}
-                  </div>
+                  <RecipeThumb size={60} radius={10} />
                   <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 8 }}>
                     <div style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.5 }}>{beat.text}</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: 11 }}>

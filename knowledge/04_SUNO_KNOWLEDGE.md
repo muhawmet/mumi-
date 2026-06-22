@@ -125,7 +125,7 @@ All tactile worlds share: acoustic warmth, one dominant instrument, intimate roo
 
 ## Teaching Context Rules
 
-**For education / lesson delivery (ANIMATION_EDU, Aras + Defne):**
+**For education / lesson delivery (ANIMATION_EDU):**
 - Narration pocket is non-negotiable: keep 1–4 kHz sparse during all narration moments.
 - No sustained vocals. No dense layers under teaching lines.
 - Music enters between beats, not over them.

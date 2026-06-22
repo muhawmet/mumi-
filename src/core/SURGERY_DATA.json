@@ -5,7 +5,7 @@
       "name": "Animation / Education",
       "icon": "🎓",
       "group": "stylized",
-      "desc": "Aras + Defne, tactile Pixar-quality education, world-explains, safe lips.",
+      "desc": "Tactile Pixar-quality education, world-explains, safe lips.",
       "required": "Tactile 3D world material, dominant lesson-object, motion hook, character/lip safety.",
       "forbidden": "generic real corporate defaults, stock ad language, flat slide.",
       "gate": [
@@ -304,7 +304,7 @@
   "projects": [
     {
       "id": "education",
-      "name": "Aras + Defne Education",
+      "name": "Eğitim · Ders Anlatımı",
       "tag": "DEFAULT",
       "icon": "🎓",
       "category": "animation",
@@ -312,10 +312,10 @@
       "world": "clay",
       "ref": "pixar_dimensional",
       "palette": "vibrant_clean_education",
-      "desc": "Ana eğitim serisi. Aras + Defne, tactile Pixar-quality world-explains.",
+      "desc": "Ana eğitim serisi. Tactile Pixar-quality world-explains, nesne-odaklı.",
       "tone": "warm, smart, cinematic, child-friendly",
-      "chars": "@aras = Aras, 8yo boy, navy blazer, red tie, neat dark hair, warm medium skin, curious eyes, mouth closed.\n@defne = Defne, 8yo girl, auburn ponytail, yellow hair clip, soft warm features, mouth closed.",
-      "tip": "Karakterler kilitli; speaker off-mouth; world explains."
+      "chars": "",
+      "tip": "Nesne-odaklı; konuyu dünya anlatır. Karakter istersen Karakter alanından ekle."
     },
     {
       "id": "premium_pixar",
@@ -686,7 +686,7 @@
       "formula": "Premium Pixar cinema + handcrafted soft-clay educational diorama",
       "render": "Premium 3D Pixar-quality animated feature frame, handcrafted soft-clay educational diorama world, warm pastel lighting, tactile rounded materials, clean cinematic composition.",
       "motion": "clay props wobble once, warm highlights slide, stable final hold",
-      "best": "general education, Aras+Defne, tactile metaphors",
+      "best": "general education, tactile metaphors, object-led lessons",
       "avoid": "photorealism, glossy CGI, holograms",
       "colors": [
         "#ffd27c",
@@ -3599,17 +3599,17 @@
     },
     {
       "id": "image_animation_edu",
-      "name": "IMAGE · Aras + Defne · Education",
+      "name": "IMAGE · Education · Object-led",
       "agent": "image",
       "path": "ANIMATION_EDU",
       "score": "10/10 target",
       "bad": "A Pixar classroom where kids learn about liquid measurements.",
-      "why_bad": "Too literal/classroom. No tactile metaphor, dominant lesson-object, motion hook, character/lip safety.",
-      "gold": "Premium 3D Pixar-quality animated feature frame inside a handcrafted soft-clay learning world, one oversized transparent measuring beaker as the dominant lesson-object, warm classroom sunlight, tactile rounded materials, Aras and Defne as quiet observer anchors with closed mouths, measurement marks physically engraved on a wooden base, liquid surface paused halfway with a visible light reflection ready to move, foreground clay droplets leading the eye, clean readable composition, no flat worksheet, no random labels, motion-ready start frame.",
+      "why_bad": "Too literal/classroom. No tactile metaphor, dominant lesson-object, motion hook.",
+      "gold": "Premium 3D Pixar-quality animated feature frame inside a handcrafted soft-clay learning world, one oversized transparent measuring beaker as the dominant lesson-object, warm classroom sunlight, tactile rounded materials, measurement marks physically engraved on a wooden base, liquid surface paused halfway with a visible light reflection ready to move, foreground clay droplets leading the eye, clean readable composition, no flat worksheet, no random labels, motion-ready start frame.",
       "qa": [
         "dominant object",
         "tactile metaphor",
-        "closed mouths",
+        "object-led, no forced character",
         "motion hook",
         "readable composition"
       ]
@@ -3684,13 +3684,13 @@
     },
     {
       "id": "suno_animation_edu",
-      "name": "SUNO · Aras + Defne Education · v5.5",
+      "name": "SUNO · Education · v5.5",
       "agent": "suno",
       "path": "ANIMATION_EDU",
       "score": "10/10 target",
       "bad": "Happy fun cheerful uplifting kids learning music.",
       "why_bad": "Mood-filler. No named instruments, no bpm/groove, no VO pocket, no scene-mapped arc — Suno drifts.",
-      "gold": "Narration-safe instrumental education motif, 96 BPM light swing, felted celesta lead with a marimba answer, pizzicato string pulse, one soft clarinet, gentle shaker (no kick clipping the VO); clear midrange pocket left open for Aras and Defne VO and ducked under dialogue; intro one curious celesta phrase, build adds marimba and pizzicato at the concept reveal, one small peak on the transformation beat, warm resolve on a single held celesta note. Custom mode style layers: children's education, warm, curious, tactile, hummable. Exclude: vocals, lyrics, big drums, EDM drops, trailer brass, busy percussion.",
+      "gold": "Narration-safe instrumental education motif, 96 BPM light swing, felted celesta lead with a marimba answer, pizzicato string pulse, one soft clarinet, gentle shaker (no kick clipping the VO); clear midrange pocket left open for the narration VO and ducked under dialogue; intro one curious celesta phrase, build adds marimba and pizzicato at the concept reveal, one small peak on the transformation beat, warm resolve on a single held celesta note. Custom mode style layers: children's education, warm, curious, tactile, hummable. Exclude: vocals, lyrics, big drums, EDM drops, trailer brass, busy percussion.",
       "qa": [
         "named instruments",
         "bpm + groove",
@@ -3722,7 +3722,7 @@
       "agent": "proof",
       "path": "STYLIZED_PREMIUM",
       "score": "hard fail test",
-      "bad": "Make Aras look like Ichigo holding a Zanpakuto in Soul Society uniform.",
+      "bad": "Make the character look like Ichigo holding a Zanpakuto in Soul Society uniform.",
       "why_bad": "Direct protected character/costume/weapon/world copy.",
       "gold": "FAIL. Reference contamination. Convert to: high-contrast black/orange blade-pressure grammar, negative-space slash timing, spiritual-energy abstraction, original character design, no Ichigo likeness, no Zanpakutō design, no uniform/logo/world copy.",
       "qa": [

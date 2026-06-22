@@ -27,18 +27,9 @@ body {
 
 ::selection { background: var(--goldglow); color: #fff; }
 
-/* — Calm ambient: a single, very soft gold halo + deep vignette.
-     No rotating rainbow. Premium = restraint. — */
+/* — Interactive Antigravity background handled by AntigravityBackground component — */
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(900px 600px at 78% -8%, rgba(245, 196, 81, 0.10), transparent 60%),
-    radial-gradient(1100px 700px at 12% 8%, rgba(80, 110, 200, 0.06), transparent 55%),
-    radial-gradient(1200px 900px at 50% 120%, rgba(0, 0, 0, 0.6), transparent 60%);
+  content: none;
 }
 
 /* — Scrollbars — */

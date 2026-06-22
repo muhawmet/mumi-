@@ -47,7 +47,7 @@ REAL paths (PRODUCT_HERO, ULTRAREAL_COMMERCIAL, LIVE_ACTION_CORPORATE):
 - human / civic / testimonial → documentary_real
 - brand / institution / fashion / drama → cinematic_real_commercial
 
-ANIMATION_EDU (Aras + Defne, lessons):
+ANIMATION_EDU (education lessons):
 - default warm character lesson → pixar_feature
 - language / gentle story / memory → watercolor_storybook, ghibli_storybook
 - math / geometry / logic → low_poly_geo, chalk_universe

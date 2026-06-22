@@ -128,9 +128,6 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
         (ws.length ? ws : [WATER_STAGES[4]]).forEach((w) => out.push({ subject: w[1], event: w[2], matched: true }));
       } else out.push({ subject: e[1], event: e[2], matched: true });
     });
-    if (!out.length && /\b(aras|defne)\b/i.test(s)) {
-      out.push({ subject: 'Aras and Defne as quiet closed-mouth observer anchors beside the dominant lesson object', event: 'the lesson object performs one clear visible change while both characters react only with eyes and posture, and everything settles', matched: true });
-    }
     const fb = EDU_FB[fn] || EDU_FB['Build / Proof'];
     out.push({ subject: fb[0], event: fb[1], matched: false });
     return out;
@@ -229,7 +226,7 @@ export interface PromptCtx {
 
 export function buildImagePrompt(sceneId: number | string, concept: Concept, camera: string, ctx: PromptCtx, pv = 0): string {
   const { world, register, dna, palette } = ctx;
-  const charLock = register === 'EDU' && /\b(aras|defne)\b/i.test(concept.subject + ' ' + (ctx.chars || '')) && ctx.chars
+  const charLock = register === 'EDU' && ctx.chars && T(ctx.chars).trim()
     ? ' ' + T(ctx.chars).replace(/\n/g, ' ') : '';
   const parts = [
     renderLock(world, register),
@@ -242,7 +239,7 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
       ? 'Static composition proof: ' + concept.event.split(',')[0] + '; resolve it in one final frame.'
       : 'Motion seed: the frame is the exact half-second before this event — ' + concept.event.split(',')[0] + ' — everything required already present and primed.',
     textPolicyLine(),
-    charLock ? ('Character lock:' + charLock + ' Mouths closed, observer scale only.') : '',
+    charLock ? ('Character lock:' + charLock + ' Keep exactly as described — observer scale, no invented identity.') : '',
     'Negative: ' + T(ctx.pathForbidden).replace(/\.\s*$/, '') + '; ' + dna.avoid.replace(/\.\s*$/, '') + '; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.',
     ctx.projectKind === 'design' ? 'Final production-ready static design frame.' : 'Clean motion-ready start frame.',
   ].filter(Boolean);
@@ -258,6 +255,8 @@ export interface AgentBriefCtx {
   projectTopic: string; productionPath: string; register: Register;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
   projectKind?: 'video' | 'design'; brandKitLock?: string;
+  mood?: string; cameraEnergy?: string; timeLight?: string; transition?: string; musicVibe?: string;
+  pov?: string; signature?: string; leitmotif?: string; tempoCurve?: string;
   /** Only set when an A/B/C variant test is active. Absent on every normal brief — keeps the default brief pristine. */
   variantTest?: { variable: 'world' | 'palette'; variant: 'A' | 'B' | 'C' };
 }
@@ -330,6 +329,22 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '== PALETTE AS LIGHT ==',
     paletteLight(palette, world),
     '',
+    (ctx.mood || ctx.cameraEnergy || ctx.timeLight || ctx.transition || ctx.musicVibe || ctx.pov || ctx.signature || ctx.leitmotif || ctx.tempoCurve) ? [
+      '== DIRECTION / MOOD ==',
+      [
+        ctx.mood ? `Mood: ${ctx.mood}.` : null,
+        ctx.cameraEnergy ? `Camera energy: ${ctx.cameraEnergy}.` : null,
+        ctx.timeLight ? `Light & time: ${ctx.timeLight}.` : null,
+        ctx.transition ? `Scene transitions: ${ctx.transition}.` : null,
+        ctx.musicVibe ? `Music vibe: ${ctx.musicVibe}.` : null,
+        ctx.pov ? `Camera POV rule: ${ctx.pov} (use only where it reveals the idea; a locked frame is valid).` : null,
+        ctx.signature ? `Signature shot: this episode earns ${ctx.signature} — one memorable hero frame, not every scene.` : null,
+        ctx.leitmotif ? `Leitmotif: ${ctx.leitmotif}.` : null,
+        ctx.tempoCurve ? `Episode tempo/arc: ${ctx.tempoCurve}.` : null
+      ].filter(Boolean).join('\n'),
+      'Apply these across every scene as bias for camera, light, pacing, palette feel and music. They never override Production Path, Visual World, Teaching Material, source text, @tags, logo, face or any lock.',
+      ''
+    ].join('\n') : '',
     ctx.projectKind === 'design' ? '== STATIC DESIGN LAW ==' : '== KLING ANCHOR LAW ==',
     ctx.projectKind === 'design'
       ? 'Each item is a final static composition. Preserve format hierarchy, safe text geometry and source meaning; do not invent animation or soundtrack instructions.'

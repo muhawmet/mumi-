@@ -103,7 +103,7 @@ const DECODER_RULES: DecoderRule[] = [
   { path: 'SOCIAL_REELS_REALISM', project: 'social_reels', score: 8, reason: 'dikey sosyal içerik sinyalleri', keywords: ['reels', 'tiktok', 'instagram', 'sosyal medya', 'vertical'] },
   { path: 'DOCUMENTARY_REALISM', project: 'documentary_realism', score: 7, reason: 'belgesel gerçekçilik sinyalleri', keywords: ['belgesel', 'documentary', 'gerçek mekan', 'doğal ışık', 'gözlemsel'] },
   { path: 'HEALTH_PUBLIC_SERVICE', project: 'health_public', score: 9, reason: 'sağlık kamu hizmeti sinyalleri', keywords: ['sağlık kamu', 'public health', 'hastane kamu', 'bakım hizmeti'] },
-  { path: 'ANIMATION_EDU', project: 'education', score: 9, reason: 'eğitim / müfredat sinyalleri', keywords: ['aras', 'defne', 'sınıf', 'öğrenci', 'ders', 'eğitim', 'müfredat', 'su döngüsü', 'buharlaşma', 'yoğuşma', 'fotosentez', 'kesir', 'noktalama', 'toplama işlemi'] },
+  { path: 'ANIMATION_EDU', project: 'education', score: 9, reason: 'eğitim / müfredat sinyalleri', keywords: ['sınıf', 'öğrenci', 'ders', 'eğitim', 'müfredat', 'su döngüsü', 'buharlaşma', 'yoğuşma', 'fotosentez', 'kesir', 'noktalama', 'toplama işlemi'] },
   { path: 'STYLIZED_PREMIUM', project: 'stylized_premium', score: 8, reason: 'stilize premium sinyalleri', keywords: ['arcane', 'spider-verse', 'spiderverse', 'anime', 'manga', 'stylized', 'stilize', 'painterly'] },
   { path: 'ULTRAREAL_COMMERCIAL', project: 'ultra_real_commercial', score: 6, reason: 'genel reklam / marka sinyalleri', keywords: ['reklam', 'kampanya', 'marka filmi', 'müşteri', 'satış', 'e-ticaret'] },
 ];

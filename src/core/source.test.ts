@@ -28,7 +28,7 @@ describe('decodeBrief', () => {
 });
 
 describe('ingestSource and sourceIntegrity', () => {
-  const raw = 'Aras: Su ısınır.\n\nDefne: Buhar yükselir!  Sonra ne olur?';
+  const raw = 'Öğretmen: Su ısınır.\n\nÖğrenci: Buhar yükselir!  Sonra ne olur?';
 
   it('tiles the raw source without losing punctuation or whitespace', () => {
     const beats = ingestSource(raw);

@@ -18,7 +18,8 @@ import {
 import { planBeats, type BeatMode, type BeatAnalysis } from '../core/beats';
 
 export type Step = 'dashboard' | 'recipe' | 'scenes' | 'timeline';
-export type Cast = 'Aras' | 'Defne' | 'İkisi';
+/** Free-text optional character/cast description. Empty = object-only, no character anchor. */
+export type Cast = string;
 export type ProjectKind = 'video' | 'design';
 export type WorkingMode = 'Hızlı' | 'Standart' | 'Sıkı Teslim';
 
@@ -103,6 +104,16 @@ export interface StudioState {
   videoModel: string;
   brandKitLock: string;
 
+  mood: string;
+  cameraEnergy: string;
+  timeLight: string;
+  transition: string;
+  musicVibe: string;
+  pov: string;
+  signature: string;
+  leitmotif: string;
+  tempoCurve: string;
+
   rawSource: string;
   sourceBeats: SourceBeat[];
   sourceReport: SourceIntegrityReport | null;
@@ -157,7 +168,7 @@ const initial = {
   projectTopic: 'Su Döngüsü',
   projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
-  cast: 'İkisi' as Cast,
+  cast: '' as Cast,
 
   selectedWorldId: '',
   selectedPropId: 'native_world',
@@ -168,6 +179,16 @@ const initial = {
   imageModel: 'midjourney_v7',
   videoModel: 'kling_2_1',
   brandKitLock: '',
+
+  mood: '',
+  cameraEnergy: '',
+  timeLight: '',
+  transition: '',
+  musicVibe: '',
+  pov: '',
+  signature: '',
+  leitmotif: '',
+  tempoCurve: '',
 
   rawSource: '',
   sourceBeats: [] as SourceBeat[],
@@ -215,6 +236,15 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     imageModel: s.imageModel,
     videoModel: s.videoModel,
     brandKitLock: s.brandKitLock,
+    mood: s.mood,
+    cameraEnergy: s.cameraEnergy,
+    timeLight: s.timeLight,
+    transition: s.transition,
+    musicVibe: s.musicVibe,
+    pov: s.pov,
+    signature: s.signature,
+    leitmotif: s.leitmotif,
+    tempoCurve: s.tempoCurve,
     rawSource: s.rawSource,
     sourceBeats: s.sourceBeats,
     sourceReport: s.sourceReport,
@@ -368,7 +398,8 @@ export const useStudioStore = create<StudioState>()(
         const generationFields: Array<keyof StudioState> = [
           'projectKind', 'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
           'selectedRefIds', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
-          'brandKitLock',
+          'brandKitLock', 'mood', 'cameraEnergy', 'timeLight', 'transition', 'musicVibe',
+          'pov', 'signature', 'leitmotif', 'tempoCurve'
         ];
         set({
           ...({ [field]: value } as Partial<StudioState>),
@@ -480,6 +511,15 @@ export const useStudioStore = create<StudioState>()(
             imageModel: s.imageModel,
             videoModel: s.videoModel,
             brandKitLock: s.brandKitLock,
+            mood: s.mood,
+            cameraEnergy: s.cameraEnergy,
+            timeLight: s.timeLight,
+            transition: s.transition,
+            musicVibe: s.musicVibe,
+            pov: s.pov,
+            signature: s.signature,
+            leitmotif: s.leitmotif,
+            tempoCurve: s.tempoCurve,
           });
           if (result.status === 'BLOCKED') {
             set({

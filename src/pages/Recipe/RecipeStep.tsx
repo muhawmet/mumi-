@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
 import { Panel, Field, Button, selectStyle } from '../../components/Layout/PanelKit';
-import { DATA, groupedWorlds, deriveTeachingRecipe, SurgeryRef } from '../../core/pure';
+import { DATA, groupedWorlds, deriveTeachingRecipe, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
 
 function worldGradient(colors?: string[]): string {
   if (!colors || colors.length === 0) return 'linear-gradient(135deg,#1a1a2e,#16213e)';
@@ -11,42 +11,45 @@ function worldGradient(colors?: string[]): string {
   return `linear-gradient(135deg,${stops.join(',')})`;
 }
 
-// Map categories to preview backgrounds based on the legacy CSS classes
-function getRefPreviewBackground(previewClass?: string): string {
+function getRefPreviewBackground(previewClass?: string, colors?: string[]): string {
   const cls = previewClass || 'default';
+  const c = colors && colors.length >= 4 ? colors : ['#111827', '#f5c84233', '#1e3a8a', '#facc15'];
+
+  // Map categories to dynamic CSS gradients using the current palette
+  // This makes the reference grid react to the selected palette!
   const maps: Record<string, string> = {
-    blade: 'linear-gradient(135deg,#050507,#111827 48%,#f97316 140%)',
-    ship: 'linear-gradient(135deg,#47a3ff,#0b3b62 52%,#ffd166 140%)',
-    pop: 'linear-gradient(135deg,#ff3b80,#29d3ff,#ffe45c)',
-    tactile: 'linear-gradient(135deg,#2b1a2e,#c084fc,#fef3c7)',
-    graphic: 'linear-gradient(135deg,#111827,#facc15,#ef4444)',
-    openair: 'linear-gradient(135deg,#a7f3d0,#38bdf8,#fef3c7)',
-    gothic: 'linear-gradient(135deg,#16120b,#a16207,#020617)',
-    ashen: 'linear-gradient(135deg,#111827,#57534e,#f97316)',
-    gothicblue: 'linear-gradient(135deg,#020617,#1e3a8a,#111827)',
-    cyberpunk: 'linear-gradient(135deg,#050014,#facc15,#22d3ee,#be185d)',
-    tactical: 'linear-gradient(135deg,#111827,#14b8a6,#f97316)',
-    fantasy: 'linear-gradient(135deg,#312e81,#f59e0b,#0f172a)',
-    underworld: 'linear-gradient(135deg,#0f172a,#991b1b,#166534)',
-    silhouette: 'linear-gradient(135deg,#020617,#0f766e,#111827)',
-    glowforest: 'linear-gradient(135deg,#020617,#22d3ee,#a78bfa)',
-    monument: 'linear-gradient(135deg,#fbcfe8,#bfdbfe,#fde68a)',
-    persona: 'linear-gradient(135deg,#000,#ef4444,#fff)',
-    rhythm: 'linear-gradient(135deg,#1d4ed8,#f97316,#facc15)',
-    whitecity: 'linear-gradient(135deg,#fff,#ef4444,#111827)',
-    deco: 'linear-gradient(135deg,#0f172a,#0e7490,#a16207)',
-    lab: 'linear-gradient(135deg,#fff,#f97316,#3b82f6)',
-    western: 'linear-gradient(135deg,#f59e0b,#92400e,#111827)',
-    overgrown: 'linear-gradient(135deg,#14532d,#84cc16,#334155)',
-    lonely: 'linear-gradient(135deg,#030712,#475569,#94a3b8)',
-    nordic: 'linear-gradient(135deg,#0f172a,#93c5fd,#f59e0b)',
-    technature: 'linear-gradient(135deg,#166534,#f97316,#0f172a)',
-    elemental: 'linear-gradient(135deg,#60a5fa,#f9a8d4,#facc15)',
-    voxel: 'linear-gradient(135deg,#16a34a,#854d0e,#60a5fa)',
-    icon: 'linear-gradient(135deg,#ef4444,#60a5fa,#f8fafc)',
-    cozy: 'linear-gradient(135deg,#fde68a,#bbf7d0,#fbcfe8)',
-    pixel: 'linear-gradient(135deg,#7c2d12,#22c55e,#60a5fa)',
-    default: 'linear-gradient(135deg,#111827,#f5c84233)'
+    blade: `linear-gradient(135deg, ${c[2]}, ${c[0]} 48%, ${c[3]} 140%)`,
+    ship: `linear-gradient(135deg, ${c[1]}, ${c[0]} 52%, ${c[3]} 140%)`,
+    pop: `linear-gradient(135deg, ${c[3]}, ${c[1]}, ${c[0]})`,
+    tactile: `linear-gradient(135deg, ${c[2]}, ${c[1]}, ${c[3]})`,
+    graphic: `linear-gradient(135deg, ${c[0]}, ${c[3]}, ${c[1]})`,
+    openair: `linear-gradient(135deg, ${c[3]}, ${c[1]}, ${c[2]})`,
+    gothic: `linear-gradient(135deg, ${c[2]}, ${c[0]}, #000)`,
+    ashen: `linear-gradient(135deg, ${c[0]}, ${c[2]}, ${c[1]})`,
+    gothicblue: `linear-gradient(135deg, #000, ${c[1]}, ${c[2]})`,
+    cyberpunk: `linear-gradient(135deg, ${c[2]}, ${c[3]}, ${c[1]})`,
+    tactical: `linear-gradient(135deg, ${c[0]}, ${c[2]}, ${c[3]})`,
+    fantasy: `linear-gradient(135deg, ${c[1]}, ${c[3]}, ${c[0]})`,
+    underworld: `linear-gradient(135deg, ${c[0]}, ${c[2]}, ${c[1]})`,
+    silhouette: `linear-gradient(135deg, #000, ${c[2]}, ${c[0]})`,
+    glowforest: `linear-gradient(135deg, ${c[2]}, ${c[1]}, ${c[3]})`,
+    monument: `linear-gradient(135deg, ${c[3]}, ${c[1]}, ${c[0]})`,
+    persona: `linear-gradient(135deg, #000, ${c[3]}, #fff)`,
+    rhythm: `linear-gradient(135deg, ${c[1]}, ${c[3]}, ${c[2]})`,
+    whitecity: `linear-gradient(135deg, #fff, ${c[3]}, ${c[0]})`,
+    deco: `linear-gradient(135deg, ${c[2]}, ${c[1]}, ${c[3]})`,
+    lab: `linear-gradient(135deg, #fff, ${c[3]}, ${c[1]})`,
+    western: `linear-gradient(135deg, ${c[3]}, ${c[2]}, ${c[0]})`,
+    overgrown: `linear-gradient(135deg, ${c[2]}, ${c[1]}, ${c[0]})`,
+    lonely: `linear-gradient(135deg, ${c[2]}, ${c[0]}, ${c[1]})`,
+    nordic: `linear-gradient(135deg, ${c[0]}, ${c[1]}, ${c[3]})`,
+    technature: `linear-gradient(135deg, ${c[2]}, ${c[3]}, ${c[0]})`,
+    elemental: `linear-gradient(135deg, ${c[1]}, ${c[3]}, ${c[2]})`,
+    voxel: `linear-gradient(135deg, ${c[2]}, ${c[3]}, ${c[1]})`,
+    icon: `linear-gradient(135deg, ${c[3]}, ${c[1]}, #fff)`,
+    cozy: `linear-gradient(135deg, ${c[3]}, ${c[1]}, ${c[2]})`,
+    pixel: `linear-gradient(135deg, ${c[2]}, ${c[1]}, ${c[3]})`,
+    default: `linear-gradient(135deg, ${c[0]}, ${c[2]} 80%)`
   };
   return maps[cls] || maps['default'];
 }
@@ -74,6 +77,15 @@ export const RecipeStep = () => {
     selectedPropId,
     selectedRefIds,
     selectedPaletteId,
+    mood,
+    cameraEnergy,
+    timeLight,
+    transition,
+    musicVibe,
+    pov,
+    signature,
+    leitmotif,
+    tempoCurve,
     setField,
     setCurrentStep,
     advance,
@@ -163,7 +175,7 @@ export const RecipeStep = () => {
       )}
 
       <Panel
-        title={`Vizyonel dünya (${DATA.worlds.length})`}
+        title={`Visual World Type (${DATA.worlds.length})`}
         subtitle={selectedWorld ? selectedWorld.formula : 'Sahnenin tüm görsel grameri buradan akar.'}
       >
         {Object.entries(worldGroups).map(([group, list]) => (
@@ -480,7 +492,7 @@ export const RecipeStep = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  <div style={{ height: 90, background: getRefPreviewBackground(r.preview), position: 'relative' }}>
+                  <div style={{ height: 90, background: getRefPreviewBackground(r.preview, selectedPalette?.colors), position: 'relative' }}>
                     {r.anchor && (
                       <div style={{ position: 'absolute', bottom: 6, left: 10, right: 10, fontSize: 9, fontWeight: 800, background: 'rgba(0,0,0,.6)', padding: '4px 6px', borderRadius: 6, color: '#fff' }}>
                         {r.anchor}
@@ -562,7 +574,7 @@ export const RecipeStep = () => {
         )}
       </Panel>
 
-      <Panel title="Tactile recipe" subtitle="Dünya tactile değilse 'world-native' kalır.">
+      <Panel title="Teaching Type (Material)" subtitle="Dünya tactile değilse 'native_world' kalır.">
         <Field label="Override">
           <select style={selectStyle} value={selectedPropId} onChange={(e) => setField('selectedPropId', e.target.value)}>
             <option value="native_world" style={{ background: '#0d1018' }}>Dünya kararı (otomatik)</option>
@@ -641,6 +653,88 @@ export const RecipeStep = () => {
             {selectedPalette.use && <span> · {selectedPalette.use}</span>}
           </div>
         )}
+      </Panel>
+
+      <Panel title="Mood & Yönetmen Kolları" subtitle="Videonun ruhunu burada kur. Hepsi opsiyonel — boş bırakırsan motor karar verir.">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+          <Field label="Mood / Duygu">
+            <select style={selectStyle} value={mood} onChange={(e) => setField('mood', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(MOOD_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Kamera Enerjisi">
+            <select style={selectStyle} value={cameraEnergy} onChange={(e) => setField('cameraEnergy', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(CAM_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Işık & Saat">
+            <select style={selectStyle} value={timeLight} onChange={(e) => setField('timeLight', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(LIGHT_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Geçiş Stili">
+            <select style={selectStyle} value={transition} onChange={(e) => setField('transition', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(TRANS_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Müzik / Suno Vibe">
+            <select style={selectStyle} value={musicVibe} onChange={(e) => setField('musicVibe', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(MUS_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="POV">
+            <select style={selectStyle} value={pov} onChange={(e) => setField('pov', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(POV_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Signature Shot">
+            <select style={selectStyle} value={signature} onChange={(e) => setField('signature', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(SIG_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Leitmotif">
+            <select style={selectStyle} value={leitmotif} onChange={(e) => setField('leitmotif', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(LEIT_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Bölüm Temposu (Arc)">
+            <select style={selectStyle} value={tempoCurve} onChange={(e) => setField('tempoCurve', e.target.value)}>
+              <option value="" style={{ background: '#0d1018' }}>— (yönetmen seçsin)</option>
+              {Object.entries(TEMPO_OPTS).map(([k, v]) => (
+                <option key={k} value={k} style={{ background: '#0d1018' }}>{v.label}</option>
+              ))}
+            </select>
+          </Field>
+        </div>
+        <div style={{ marginTop: 12 }}>
+          <Button variant="ghost" onClick={() => { setField('mood', ''); setField('cameraEnergy', ''); setField('timeLight', ''); setField('transition', ''); setField('musicVibe', ''); setField('pov', ''); setField('signature', ''); setField('leitmotif', ''); setField('tempoCurve', ''); }}>
+            Hepsini Temizle
+          </Button>
+        </div>
       </Panel>
 
       {!readiness.ready && (
