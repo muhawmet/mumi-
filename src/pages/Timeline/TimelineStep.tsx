@@ -48,6 +48,15 @@ export const TimelineStep = () => {
     downloadFile(`${safeName}_handoff_packets.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
 
+  const [briefCopied, setBriefCopied] = useState(false);
+  const onCopyAgentBrief = () => {
+    if (!state.agentBrief) return;
+    navigator.clipboard.writeText(state.agentBrief).then(() => {
+      setBriefCopied(true);
+      setTimeout(() => setBriefCopied(false), 1500);
+    });
+  };
+
   const onExportCSV = () => {
     if (!scenes.length) return;
     const scenesForExport: Scene[] = scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) }));
@@ -80,6 +89,11 @@ export const TimelineStep = () => {
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportCSV}>CSV</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
+          {scenes.length > 0 && (
+            <Button variant="ghost" onClick={onCopyAgentBrief}>
+              {briefCopied ? '✓ Kopyalandı' : 'Ajan Brief (Claude/GPT)'}
+            </Button>
+          )}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
             {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
@@ -150,6 +164,9 @@ export const TimelineStep = () => {
                       <div style={{ fontSize: 13, fontWeight: 600 }}>Sahne {s.id} · {s.phaseName}</div>
                       <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
                         {s.durationSec}s · intensity {Math.round(s.intensity)}
+                        {s.duration && !s.duration.ok && (
+                          <span style={{ color: 'var(--red)', fontWeight: 700, marginLeft: 6 }}>· BÖLEMEZSİN</span>
+                        )}
                       </div>
                     </div>
                   </motion.button>
@@ -179,7 +196,23 @@ export const TimelineStep = () => {
                     onSave={(v) => setSceneOverride(selected.id, v)}
                     onReset={() => setSceneOverride(selected.id, null)}
                   />
-                  <DetailRow label="Voice over" value={selected.voiceOver} copyable />
+                  {selected.duration && (
+                    <div
+                      style={{
+                        padding: '8px 12px',
+                        borderRadius: 8,
+                        border: `1px solid ${selected.duration.ok ? 'var(--line2)' : 'var(--red)'}`,
+                        background: selected.duration.ok ? 'rgba(0,0,0,.2)' : 'rgba(255,80,80,.12)',
+                        color: selected.duration.ok ? 'var(--text-muted)' : 'var(--red)',
+                        fontSize: 12,
+                        fontWeight: selected.duration.ok ? 400 : 700,
+                      }}
+                    >
+                      {selected.duration.ok ? '⏱ ' : '⚠ '}{selected.duration.message}
+                    </div>
+                  )}
+                  <DetailRow label="Voice over (kaynak metin)" value={selected.voiceOver} block copyable />
+                  <DetailRow label="Motion prompt (Kling)" value={selected.motionPrompt} mono block copyable />
                   <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
                   <details>
                     <summary style={{ cursor: 'pointer', fontSize: 11, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>

@@ -3,6 +3,11 @@
 // Wraps the keepers (motion-validator, pacing, exporter) for React.
 
 import SURGERY from './SURGERY_DATA.json';
+import {
+  registerOf, dnaDirectives, primeConcept, primeCamera, buildImagePrompt as brainImagePrompt,
+  buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief,
+  type Concept, type DurationVerdict, type AgentBriefScene,
+} from './brain';
 
 // ============================================================
 // Types
@@ -160,9 +165,11 @@ export interface PureScene {
   finalBrief: FinalBrief;
   handoff: HandoffPacketSet;
   imagePrompt: string;
+  motionPrompt: string;
   voiceOver: string;
   sunoBrief: string;
   durationSec: number;
+  duration: DurationVerdict;
   intensity: number;
   phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
 }
@@ -171,6 +178,8 @@ export interface GenerationResult {
   status: 'GENERATED' | 'BLOCKED';
   scenes: PureScene[];
   contractGate: { status: string; findings: Array<{ code: string; message: string }> };
+  /** Legacy primeBrief payload — paste into Claude Projects / Custom GPT as the director system prompt. */
+  agentBrief?: string;
   error?: string;
 }
 
@@ -402,107 +411,6 @@ function buildFinalBriefContext(
   };
 }
 
-function joinClause(parts: string[]): string {
-  // Strip trailing punctuation then join with ". " so we never get ".." artifacts.
-  return parts
-    .filter(Boolean)
-    .map((p) => p.replace(/[.\s]+$/, ''))
-    .join('. ');
-}
-
-function buildImagePrompt(
-  topic: string,
-  arch: SceneArchitecture,
-  brief: FinalBrief,
-  world: SurgeryWorld,
-  character: string,
-  paletteOverride?: SurgeryPalette,
-): string {
-  const parts: string[] = [];
-  parts.push(world.render);
-  parts.push(`Project topic: ${topic}`);
-  parts.push(`Source status: ${arch.source.status}`);
-  parts.push(`Source beat: ${arch.source.sourceId || 'UNBOUND'} — ${arch.source.exactText}`);
-  if (arch.source.notice) parts.push(arch.source.notice);
-  parts.push(`Scene intent: ${arch.beat}`);
-  parts.push(`Dominant subject: ${arch.dominantSubject}`);
-  parts.push(`Single visible event: ${arch.event}`);
-
-  if (paletteOverride?.colors?.length) {
-    parts.push(`Palette: ${paletteOverride.colors.join(', ')}`);
-  } else if (world.palette) {
-    parts.push(`Palette: ${world.palette.join(', ')}`);
-  } else if (world.colors) {
-    parts.push(`Palette: ${world.colors.join(', ')}`);
-  }
-  if (world.texture) parts.push(`Texture: ${world.texture}`);
-  if (world.lighting) parts.push(`Lighting: ${world.lighting}`);
-  if (world.compositionConstraint) parts.push(`Composition: ${world.compositionConstraint}`);
-  parts.push(`Camera/vantage: ${arch.imageVantage}`);
-  parts.push(`Teaching recipe: ${brief.recipe.id}`);
-
-  if (brief.referenceDNA.status === 'ACTIVE_SUBORDINATE' && brief.referenceDNA.directive) {
-    // Reference DNA enters as language/grammar guidance — subordinate to world; never overrides material/palette.
-    parts.push(`Reference DNA (subordinate to world): ${brief.referenceDNA.directive}`);
-    if (brief.referenceDNA.use) parts.push(`Reference language to keep: ${brief.referenceDNA.use}`);
-    if (brief.referenceDNA.avoid) parts.push(`Reference to avoid: ${brief.referenceDNA.avoid}`);
-  } else if (brief.referenceDNA.status === 'SUPPRESSED_WORLD_MISMATCH') {
-    parts.push(`Reference DNA suppressed (world mismatch)`);
-  }
-  if (brief.paletteAccent.value) parts.push(`Palette accent: ${brief.paletteAccent.value}`);
-
-  if (character === 'Aras') parts.push('Subject: Aras (young boy with curly hair, referenceFaceLocked)');
-  else if (character === 'Defne') parts.push('Subject: Defne (young girl with braided hair, referenceFaceLocked)');
-  else if (character === 'İkisi') parts.push('Subjects: Aras and Defne (referenceFaceLocked)');
-
-  return `${joinClause(parts)}. --no ${GLOBAL_NEGATIVES.join(', ')}`;
-}
-
-function buildVoiceOver(sceneIndex: number, topic: string, projectClass: string): string {
-  const isDesign = projectClass === 'Tasarım İşi' || projectClass === 'STYLIZED_PREMIUM';
-  const isReal = /ULTRAREAL|REAL|COMMERCIAL|LIVE/.test(projectClass);
-  const t = topic || 'konu';
-
-  if (isReal) {
-    const real = [
-      `[Taslak: Açılış — ürünü/hikâyenin merkez nesnesini sahneye tanıt.]`,
-      `[Taslak: Detay — dokunsal ve duyusal bir mikro an ile çekiciliği kur.]`,
-      `[Taslak: Vaat — ${t} izleyiciye ne sunuyor; tek cümlede söyle.]`,
-      `[Taslak: Doruk — tek görünen değişim ile değeri kanıtla.]`,
-      `[Taslak: Kapanış — kısa, net bir çağrı veya kalıcı imaj.]`,
-    ];
-    return real[(sceneIndex - 1) % real.length];
-  }
-  if (isDesign) {
-    const design = [
-      `[Taslak: ${t} için görsel açılış — tek dominant unsur, net hiyerarşi.]`,
-      `[Taslak: Atmosfer ve detay; izleyici bakışını sahneye çağır.]`,
-      `[Taslak: Aksiyon ya da değişim — ne, neyi etkiledi?]`,
-      `[Taslak: Duygusal/görsel doruk; aklında kalan tek kare.]`,
-      `[Taslak: Kapanış — özet imaj ya da kısa eylem çağrısı.]`,
-    ];
-    return design[(sceneIndex - 1) % design.length];
-  }
-  // Default: education (Aras & Defne tone)
-  const edu = [
-    `[Taslak: Merhaba! Bugün birlikte ${t} konusunu keşfedeceğiz.]`,
-    `[Taslak: Önce ekranda gördüğümüz ilk şeyi anlayalım.]`,
-    `[Taslak: Şimdi mekanizmaya daha yakından bakalım.]`,
-    `[Taslak: Gerçek hayatta bu nasıl işliyor, görelim.]`,
-    `[Taslak: Sonuç gözümüzün önünde — ${t} böyle çalışıyor.]`,
-    `[Taslak: Özetleyelim — bugün öğrendiğimiz tek cümlelik fikir.]`,
-    `[Taslak: Bir sonraki bölümde yeni bir maceraya hazır olun!]`,
-  ];
-  return edu[(sceneIndex - 1) % edu.length];
-}
-
-function buildSunoBrief(sceneIndex: number, sceneCount: number, world: SurgeryWorld): string {
-  const progress = sceneCount <= 1 ? 1 : (sceneIndex - 1) / (sceneCount - 1);
-  const stage = progress < 0.2 ? 'Intro' : progress < 0.65 ? 'Build' : progress < 0.85 ? 'Peak' : 'Resolve';
-  const mapping = world.id;
-  return `[MUSIC TARGET: ${mapping}] World-grounded mood for ${world.name}. [${stage}] for scene ${sceneIndex}/${sceneCount}. VO POCKET: keep 1–4 kHz sparse; no sustained vocals; reduce transients under narration.`;
-}
-
 function calcPacing(sceneId: number, sceneCount: number) {
   const arcPct = (sceneId - 1) / Math.max(1, sceneCount - 1);
   let intensity = 0;
@@ -603,7 +511,7 @@ function buildHandoffPackets(args: {
 
   return {
     IMAGE: makePacket('IMAGE', imageModel, scene.imagePrompt),
-    MOTION: makePacket('MOTION', videoModel, world.motionNotes || world.motion || 'world-native motion grammar'),
+    MOTION: makePacket('MOTION', videoModel, scene.motionPrompt),
     SUNO: makePacket('SUNO', 'Custom Mode', scene.sunoBrief),
   };
 }
@@ -639,13 +547,35 @@ export function generateBatch(input: BriefInput): GenerationResult {
   ]);
   const scenes: PureScene[] = [];
 
+  // Brain context — register, DNA directives and Suno brief are batch-wide.
+  const register = registerOf(path);
+  const selectedRef = DATA.refs.find((r) => r.id === selectedRefId);
+  const dna = dnaDirectives(selectedRef ? [selectedRef] : [], register);
+  const sunoBrief = primeSuno(path);
+  let prev: { src: string; concept: Concept } | undefined;
+  const briefScenes: AgentBriefScene[] = [];
+
   for (let i = 1; i <= count; i++) {
     const arch = createSceneArchitecture(projectTopic, i, world);
     const brief = buildFinalBriefContext(arch, world, selectedRefId, path, paletteOverride);
-    const imagePrompt = buildImagePrompt(projectTopic, arch, brief, world, cast, paletteOverride);
-    const voiceOver = buildVoiceOver(i, projectTopic, projectClass);
-    const sunoBrief = buildSunoBrief(i, count, world);
     const pacing = calcPacing(i, count);
+
+    // Semantic concept from the scene's exact source beat — this is the brain.
+    const beatText = arch.source.exactText;
+    const concept = primeConcept(beatText, register, world.id, pacing.phaseName, prev);
+    const prevId = i > 1 ? i - 1 : undefined;
+    const camera = primeCamera(i, beatText, i - 1, register, prev?.src, prevId);
+    const duration = durationGuard(beatText, input.videoModel);
+
+    const imagePrompt = brainImagePrompt(i, concept, camera, {
+      world, register, dna, palette: paletteOverride,
+      pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
+      chars: register === 'EDU' ? `${cast}` : undefined,
+    });
+    const motionPrompt = buildMotionPrompt(i, concept, camera, dna, duration.sec);
+    const voiceOver = beatText;
+    prev = { src: beatText, concept };
+    briefScenes.push({ id: i, source: beatText, concept, camera, sec: duration.sec });
 
     const sceneCore: Omit<PureScene, 'handoff'> = {
       id: i,
@@ -653,9 +583,11 @@ export function generateBatch(input: BriefInput): GenerationResult {
       architecture: arch,
       finalBrief: brief,
       imagePrompt,
+      motionPrompt,
       voiceOver,
       sunoBrief,
       durationSec: pacing.duration,
+      duration,
       intensity: pacing.intensity,
       phaseName: pacing.phaseName,
     };
@@ -672,7 +604,12 @@ export function generateBatch(input: BriefInput): GenerationResult {
     scenes.push({ ...sceneCore, handoff });
   }
 
-  return { status: 'GENERATED', scenes, contractGate };
+  const agentBrief = buildAgentBrief(
+    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast },
+    briefScenes,
+  );
+
+  return { status: 'GENERATED', scenes, contractGate, agentBrief };
 }
 
 // Used by the Recipe step for grouped dropdowns

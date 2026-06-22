@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { useStudioStore } from '../../store/useStudioStore';
+import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
 import { Panel, Field, Button, selectStyle } from '../../components/Layout/PanelKit';
 import { DATA, groupedRefs, groupedWorlds, deriveTeachingRecipe } from '../../core/pure';
 
@@ -26,6 +26,7 @@ export const RecipeStep = () => {
   const selectedWorld = DATA.worlds.find((w) => w.id === selectedWorldId);
   const selectedPalette = DATA.palettes.find((p) => p.id === selectedPaletteId);
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
+  const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefId });
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
@@ -209,9 +210,25 @@ export const RecipeStep = () => {
         )}
       </Panel>
 
+      {!readiness.ready && (
+        <div
+          style={{
+            padding: '10px 14px',
+            borderRadius: 8,
+            border: '1px solid var(--red)',
+            background: 'rgba(255,80,80,.1)',
+            color: 'var(--red)',
+            fontSize: 13,
+            fontWeight: 600,
+          }}
+        >
+          Eksik seçim: {readiness.missing.join(', ')} — hepsi seçilmeden batch üretilemez.
+        </div>
+      )}
+
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>← Brief'e dön</Button>
-        <Button onClick={() => setCurrentStep('timeline')} disabled={!selectedWorldId}>
+        <Button onClick={() => setCurrentStep('timeline')} disabled={!readiness.ready}>
           Timeline'a geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
         </Button>
       </div>

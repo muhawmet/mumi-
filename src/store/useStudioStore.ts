@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { generateBatch, type SceneArchitecture, type HandoffPacketSet } from '../core/pure';
+import type { DurationVerdict } from '../core/brain';
 
 export type Step = 'dashboard' | 'recipe' | 'timeline';
 export type Cast = 'Aras' | 'Defne' | 'İkisi';
@@ -9,9 +10,11 @@ export interface Scene {
   id: number;
   architecture: SceneArchitecture;
   imagePrompt: string;
+  motionPrompt: string;
   voiceOver: string;
   sunoBrief: string;
   durationSec: number;
+  duration: DurationVerdict;
   intensity: number;
   phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
   handoff: HandoffPacketSet;
@@ -21,6 +24,18 @@ export interface Scene {
 
 /** Returns the prompt that should be used downstream — override wins over generated. */
 export const effectivePrompt = (s: Scene): string => s.userImagePrompt ?? s.imagePrompt;
+
+/** Strict recipe gate — world, palette and reference DNA must all be chosen. */
+export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'selectedRefId'>): {
+  ready: boolean;
+  missing: string[];
+} {
+  const missing: string[] = [];
+  if (!s.selectedWorldId) missing.push('Dünya');
+  if (!s.selectedPaletteId) missing.push('Palet');
+  if (!s.selectedRefId) missing.push('Referans DNA');
+  return { ready: missing.length === 0, missing };
+}
 
 export interface StudioState {
   projectTopic: string;
@@ -38,6 +53,7 @@ export interface StudioState {
   videoModel: string;
 
   scenes: Scene[];
+  agentBrief: string;
   selectedSceneId: number | null;
   isGenerating: boolean;
   lastError: string | null;
@@ -70,6 +86,7 @@ const initial = {
   videoModel: 'kling_2_1',
 
   scenes: [] as Scene[],
+  agentBrief: '',
   selectedSceneId: null as number | null,
   isGenerating: false,
   lastError: null as string | null,
@@ -116,15 +133,18 @@ export const useStudioStore = create<StudioState>()(
               id: sc.id,
               architecture: sc.architecture,
               imagePrompt: sc.imagePrompt,
+              motionPrompt: sc.motionPrompt,
               voiceOver: sc.voiceOver,
               sunoBrief: sc.sunoBrief,
               durationSec: sc.durationSec,
+              duration: sc.duration,
               intensity: sc.intensity,
               phaseName: sc.phaseName,
               handoff: sc.handoff,
             }));
             set({
               scenes: adapted,
+              agentBrief: result.agentBrief ?? '',
               selectedSceneId: adapted[0]?.id ?? null,
               isGenerating: false,
             });
@@ -154,9 +174,10 @@ export const useStudioStore = create<StudioState>()(
       advance: () => {
         const s = get();
         if (s.currentStep === 'dashboard') {
-          set({ currentStep: 'recipe' });
+          if (s.projectTopic.trim()) set({ currentStep: 'recipe' });
         } else if (s.currentStep === 'recipe') {
-          if (s.selectedWorldId) set({ currentStep: 'timeline' });
+          // Strict gate: world + palette + reference DNA must all be set (no blind batch).
+          if (recipeReadiness(s).ready) set({ currentStep: 'timeline' });
         } else if (s.currentStep === 'timeline') {
           get().generateScenes();
         }
@@ -180,6 +201,7 @@ export const useStudioStore = create<StudioState>()(
         imageModel: s.imageModel,
         videoModel: s.videoModel,
         scenes: s.scenes,
+        agentBrief: s.agentBrief,
         selectedSceneId: s.selectedSceneId,
         currentStep: s.currentStep,
       }),
