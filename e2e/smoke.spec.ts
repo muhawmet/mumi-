@@ -81,3 +81,19 @@ test('per-scene override persists across reloads', async ({ page }) => {
   await expect(page.getByText(/EDITED/i)).toBeVisible();
   await expect(page.getByText(/MY CUSTOM PROMPT — locked by the user/)).toBeVisible();
 });
+
+test('design preset produces an honest static IMAGE-only delivery', async ({ page }) => {
+  await freshGoto(page);
+  await page.getByRole('button', { name: /DESIGN · 7/ }).click();
+  await page.getByText('Ürün Postu').click();
+  await page.getByRole('button', { name: /Reçeteye geç/ }).click();
+  await page.getByRole('button', { name: /Timeline'a geç/ }).click();
+
+  await expect(page.getByText('STAGE 3 · DESIGN TESLİMİ')).toBeVisible();
+  await page.getByRole('button', { name: /TASARIM ÜRET/ }).click();
+  await expect(page.getByText('1 tasarım kartı')).toBeVisible();
+  await expect(page.getByText('Tasarım 1', { exact: true })).toBeVisible();
+  await expect(page.getByText('HANDOFF PAKETLERİ (1)')).toBeVisible();
+  await expect(page.getByText('Motion prompt (Kling)')).toHaveCount(0);
+  await expect(page.getByText('Suno brief')).toHaveCount(0);
+});

@@ -45,10 +45,12 @@ body {
   display: flex;
 }
 
+#root { width: 100%; min-width: 0; }
+
 /* Mesh background gradient (slow rotation for ambient depth) */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: -50%; left: -50%; width: 200%; height: 200%;
   z-index: -1;
   background-image: 
@@ -930,6 +932,19 @@ td.item-check:hover { color: var(--gold); }
   }
   .ml-main {
     padding: 24px 18px !important;
+  }
+  .dashboard-form-grid,
+  .recipe-controls-grid,
+  .timeline-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .cast-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .dashboard-step,
+  .recipe-step,
+  .timeline-layout {
+    min-width: 0;
   }
   h1 {
     font-size: 28px !important;

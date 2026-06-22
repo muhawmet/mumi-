@@ -1,6 +1,7 @@
 import type { Scene } from '../store/useStudioStore';
 
 export interface ExportContext {
+  projectKind?: 'video' | 'design';
   topic: string;
   projectClass: string;
   cast: string;
@@ -16,7 +17,17 @@ function csvEscape(v: string): string {
 
 /** CSV with semicolon separator — friendly to Turkish Excel locales. */
 export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
-  const header = [
+  const design = ctx.projectKind === 'design';
+  const header = design ? [
+    'Tasarım',
+    'Beat',
+    'Dominant',
+    'Olay',
+    'Vantage',
+    'Image Prompt',
+    'Kaynak',
+    'Fingerprint',
+  ] : [
     'Sahne',
     'Faz',
     'Süre (s)',
@@ -30,7 +41,16 @@ export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
     'Suno Brief',
     'Fingerprint',
   ];
-  const rows = scenes.map((s) => [
+  const rows = scenes.map((s) => design ? [
+    s.id,
+    s.architecture.beat,
+    s.architecture.dominantSubject,
+    s.architecture.event,
+    s.architecture.imageVantage,
+    s.imagePrompt,
+    s.voiceOver,
+    s.architecture.semanticFingerprint,
+  ] : [
     s.id,
     s.phaseName,
     s.durationSec,
@@ -57,12 +77,15 @@ export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
 
 /** Markdown for production teams reading PR descriptions / Notion etc. */
 export function scenesToMarkdown(scenes: Scene[], ctx: ExportContext): string {
+  const design = ctx.projectKind === 'design';
   const head = [
     `# ${ctx.topic}`,
     '',
     `**Class:** \`${ctx.projectClass}\` · **Cast:** \`${ctx.cast}\` · **World:** \`${ctx.worldId}\``,
     `**Reference DNA:** \`${ctx.refId || 'none'}\` · **Palette:** \`${ctx.paletteId || 'world default'}\``,
-    `**Total:** ${scenes.length} sahne · ${scenes.reduce((a, b) => a + b.durationSec, 0)}s`,
+    design
+      ? `**Total:** ${scenes.length} statik tasarım`
+      : `**Total:** ${scenes.length} sahne · ${scenes.reduce((a, b) => a + b.durationSec, 0)}s`,
     '',
     '---',
     '',
@@ -71,7 +94,7 @@ export function scenesToMarkdown(scenes: Scene[], ctx: ExportContext): string {
   const body = scenes
     .map((s) => {
       return [
-        `## Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`,
+        design ? `## Tasarım ${s.id}` : `## Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`,
         '',
         `- **Beat:** ${s.architecture.beat}`,
         `- **Dominant subject:** ${s.architecture.dominantSubject}`,
@@ -84,14 +107,9 @@ export function scenesToMarkdown(scenes: Scene[], ctx: ExportContext): string {
         s.imagePrompt,
         '```',
         '',
-        '### Voice-over',
-        `> ${s.voiceOver}`,
-        '',
-        '### Suno brief',
-        '```',
-        s.sunoBrief,
-        '```',
-        '',
+        ...(design
+          ? ['### Kaynak', `> ${s.voiceOver}`, '']
+          : ['### Voice-over', `> ${s.voiceOver}`, '', '### Suno brief', '```', s.sunoBrief, '```', '']),
       ].join('\n');
     })
     .join('\n');

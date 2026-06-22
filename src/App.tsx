@@ -1,10 +1,17 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useStudioStore } from './store/useStudioStore';
 import { AppLayout } from './components/Layout/AppLayout';
-import { DashboardStep } from './pages/Dashboard/DashboardStep';
-import { RecipeStep } from './pages/Recipe/RecipeStep';
-import { TimelineStep } from './pages/Timeline/TimelineStep';
+
+const DashboardStep = lazy(() =>
+  import('./pages/Dashboard/DashboardStep').then((module) => ({ default: module.DashboardStep })),
+);
+const RecipeStep = lazy(() =>
+  import('./pages/Recipe/RecipeStep').then((module) => ({ default: module.RecipeStep })),
+);
+const TimelineStep = lazy(() =>
+  import('./pages/Timeline/TimelineStep').then((module) => ({ default: module.TimelineStep })),
+);
 
 const stepVariants = {
   initial: { opacity: 0, x: 20 },
@@ -30,23 +37,25 @@ function App() {
 
   return (
     <AppLayout>
-      <AnimatePresence mode="wait">
-        {currentStep === 'dashboard' && (
-          <motion.div key="dashboard" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-            <DashboardStep />
-          </motion.div>
-        )}
-        {currentStep === 'recipe' && (
-          <motion.div key="recipe" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-            <RecipeStep />
-          </motion.div>
-        )}
-        {currentStep === 'timeline' && (
-          <motion.div key="timeline" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-            <TimelineStep />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Suspense fallback={<div style={{ color: 'var(--text-muted)', padding: 24 }}>Yükleniyor…</div>}>
+        <AnimatePresence mode="wait">
+          {currentStep === 'dashboard' && (
+            <motion.div key="dashboard" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+              <DashboardStep />
+            </motion.div>
+          )}
+          {currentStep === 'recipe' && (
+            <motion.div key="recipe" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+              <RecipeStep />
+            </motion.div>
+          )}
+          {currentStep === 'timeline' && (
+            <motion.div key="timeline" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+              <TimelineStep />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </Suspense>
     </AppLayout>
   );
 }

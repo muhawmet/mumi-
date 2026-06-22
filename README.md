@@ -1,7 +1,7 @@
 # MAMILAS Pro OS
 
 Creative director dashboard for AI-assisted video + design production.
-Brief → Recipe → Timeline, with deterministic batch generation and downstream-ready handoff packets for IMAGE / MOTION / SUNO agents.
+Brief → Recipe → Timeline, with deterministic batch generation and downstream-ready handoff packets: IMAGE / MOTION / SUNO for video, IMAGE-only for static design.
 
 ## Stack
 
@@ -71,7 +71,7 @@ src/
    - Voice-over draft
    - Suno music brief
    - Pacing (Intro / Build-up / Climax / Resolution + duration)
-   - **3 handoff packets** (IMAGE / MOTION / SUNO) ready for downstream agents
+   - Video: **3 handoff packets** (IMAGE / MOTION / SUNO); static design: **IMAGE-only**
 4. **Export** — full timeline JSON or just the handoff packets bundle.
 
 ## State persistence

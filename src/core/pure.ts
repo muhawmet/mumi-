@@ -57,8 +57,27 @@ export interface SurgeryPalette {
 }
 
 export interface SurgeryData {
-  paths: Array<{ id: string; name: string; group: string; desc?: string; icon?: string }>;
-  projects: Array<{ id: string; name: string; tag?: string; category?: string }>;
+  paths: Array<{
+    id: string;
+    name: string;
+    group: string;
+    desc?: string;
+    icon?: string;
+    defaultWorld?: string;
+    defaultRef?: string;
+    defaultPalette?: string;
+    forbidden?: string;
+  }>;
+  projects: Array<{
+    id: string;
+    name: string;
+    tag?: string;
+    category?: string;
+    path: string;
+    world: string;
+    ref: string;
+    palette: string;
+  }>;
   worlds: SurgeryWorld[];
   refs: SurgeryRef[];
   palettes: SurgeryPalette[];
@@ -70,6 +89,7 @@ export interface SurgeryData {
 export const DATA = SURGERY as unknown as SurgeryData;
 
 export interface BriefInput {
+  projectKind?: 'video' | 'design';
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
@@ -81,6 +101,11 @@ export interface BriefInput {
   selectedMusicId: string;
   imageModel: string;
   videoModel: string;
+}
+
+export interface RecipeDefaults {
+  selectedRefId: string;
+  selectedPaletteId: string;
 }
 
 export interface SceneArchitecture {
@@ -302,6 +327,20 @@ export function deriveProductionPath(projectClass: string): string {
   return 'ANIMATION_EDU';
 }
 
+/** Resolve the old app's project/path auto-wiring without mutating caller state. */
+export function resolveRecipeDefaults(projectClass: string, worldId: string): RecipeDefaults {
+  const pathId = DATA.paths.some((p) => p.id === projectClass)
+    ? projectClass
+    : deriveProductionPath(projectClass);
+  const project = DATA.projects.find((p) => p.world === worldId && p.path === pathId);
+  const path = DATA.paths.find((p) => p.id === pathId);
+
+  return {
+    selectedRefId: project?.ref || path?.defaultRef || '',
+    selectedPaletteId: project?.palette || path?.defaultPalette || '',
+  };
+}
+
 export function deriveTeachingRecipe(world: SurgeryWorld, propOverride: string): { id: string; source: string } {
   if (propOverride && propOverride !== 'native_world') {
     return { id: propOverride, source: 'USER_OVERRIDE' };
@@ -350,15 +389,16 @@ function createSceneArchitecture(topic: string, sceneIndex: number, world: Surge
   const event = SCENE_EVENTS[Math.floor(index / SCENE_INTENTS.length) % SCENE_EVENTS.length];
   const focus = SCENE_FOCUSES[index % SCENE_FOCUSES.length];
 
-  let beatText = sourceBeat.exactText;
-  if (cycle > 0) beatText += ` (Gelişim Evresi ${cycle + 1})`;
-  const dominantSubject = `${beatText} — ${focus}`;
+  const developedBeat = cycle > 0
+    ? `${sourceBeat.exactText} (Gelişim Evresi ${cycle + 1})`
+    : sourceBeat.exactText;
+  const dominantSubject = `${developedBeat} — ${focus}`;
 
   return {
     source: {
       status: sourceInput.status,
       sourceId: sourceBeat.sourceId,
-      exactText: beatText,
+      exactText: sourceBeat.exactText,
       notice: sourceInput.notice,
     },
     beat: intent,
@@ -379,13 +419,14 @@ function createSceneArchitecture(topic: string, sceneIndex: number, world: Surge
 function buildFinalBriefContext(
   arch: SceneArchitecture,
   world: SurgeryWorld,
+  selectedPropId: string,
   selectedRefId: string,
   path: string,
   paletteOverride?: SurgeryPalette,
 ): FinalBrief {
   const reference = DATA.refs.find((r) => r.id === selectedRefId) || null;
   const compatible = reference && (!reference.worldId || reference.worldId === world.id) ? reference : null;
-  const recipe = deriveTeachingRecipe(world, '');
+  const recipe = deriveTeachingRecipe(world, selectedPropId);
   const colors = paletteOverride?.colors || world.colors || world.palette || [];
   const paletteAccent = colors.length ? colors[colors.length - 1] : null;
 
@@ -428,8 +469,7 @@ function calcPacing(sceneId: number, sceneCount: number) {
     intensity = 100 - ((arcPct - 0.9) / 0.1) * 70;
     phaseName = 'Resolution';
   }
-  const duration = phaseName === 'Intro' ? 3 : phaseName === 'Build-up' ? 4 : phaseName === 'Climax' ? 6 : 5;
-  return { intensity, phaseName, duration };
+  return { intensity, phaseName };
 }
 
 // ============================================================
@@ -445,8 +485,9 @@ function buildHandoffPackets(args: {
   sourceHash: string;
   imageModel: string;
   videoModel: string;
+  projectKind: 'video' | 'design';
 }): HandoffPacketSet {
-  const { scene, world, cast, count, projectId, sourceHash, imageModel, videoModel } = args;
+  const { scene, world, cast, count, projectId, sourceHash, imageModel, videoModel, projectKind } = args;
   const negatives = GLOBAL_NEGATIVES.slice();
   const continuity = {
     previousSceneId: scene.id > 1 ? scene.id - 1 : null,
@@ -486,7 +527,12 @@ function buildHandoffPackets(args: {
       warnings.push({ code: 'REFERENCE_DNA_SUPPRESSED', message: 'Reference DNA cannot override the selected world.' });
     }
     if (role === 'MOTION') {
-      warnings.push({ code: 'APPROVED_IMAGE_REQUIRED', message: 'Motion stays locked until an approved image exists.' });
+      warnings.push(projectKind === 'design'
+        ? { code: 'NOT_APPLICABLE_STATIC_DESIGN', message: 'Static design deliverables do not create motion.' }
+        : { code: 'APPROVED_IMAGE_REQUIRED', message: 'Motion stays locked until an approved image exists.' });
+    }
+    if (role === 'SUNO' && projectKind === 'design') {
+      warnings.push({ code: 'NOT_APPLICABLE_STATIC_DESIGN', message: 'Static design deliverables do not create music.' });
     }
     return {
       packetVersion: '1.0.0',
@@ -546,18 +592,21 @@ export function generateBatch(input: BriefInput): GenerationResult {
     ...sourceParsed.beats.map((b) => b.exactText),
   ]);
   const scenes: PureScene[] = [];
+  const projectKind = input.projectKind || 'video';
 
   // Brain context — register, DNA directives and Suno brief are batch-wide.
   const register = registerOf(path);
   const selectedRef = DATA.refs.find((r) => r.id === selectedRefId);
   const dna = dnaDirectives(selectedRef ? [selectedRef] : [], register);
-  const sunoBrief = primeSuno(path);
+  const sunoBrief = projectKind === 'design'
+    ? 'NOT_APPLICABLE: static design deliverable; no music brief.'
+    : primeSuno(path);
   let prev: { src: string; concept: Concept } | undefined;
   const briefScenes: AgentBriefScene[] = [];
 
   for (let i = 1; i <= count; i++) {
     const arch = createSceneArchitecture(projectTopic, i, world);
-    const brief = buildFinalBriefContext(arch, world, selectedRefId, path, paletteOverride);
+    const brief = buildFinalBriefContext(arch, world, input.selectedPropId, selectedRefId, path, paletteOverride);
     const pacing = calcPacing(i, count);
 
     // Semantic concept from the scene's exact source beat — this is the brain.
@@ -571,8 +620,11 @@ export function generateBatch(input: BriefInput): GenerationResult {
       world, register, dna, palette: paletteOverride,
       pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
       chars: register === 'EDU' ? `${cast}` : undefined,
+      projectKind,
     });
-    const motionPrompt = buildMotionPrompt(i, concept, camera, dna, duration.sec);
+    const motionPrompt = projectKind === 'design'
+      ? 'NOT_APPLICABLE: static design deliverable; no motion prompt.'
+      : buildMotionPrompt(i, concept, camera, dna, duration.sec);
     const voiceOver = beatText;
     prev = { src: beatText, concept };
     briefScenes.push({ id: i, source: beatText, concept, camera, sec: duration.sec });
@@ -586,7 +638,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
       motionPrompt,
       voiceOver,
       sunoBrief,
-      durationSec: pacing.duration,
+      durationSec: duration.sec,
       duration,
       intensity: pacing.intensity,
       phaseName: pacing.phaseName,
@@ -600,12 +652,13 @@ export function generateBatch(input: BriefInput): GenerationResult {
       sourceHash,
       imageModel: input.imageModel,
       videoModel: input.videoModel,
+      projectKind,
     });
     scenes.push({ ...sceneCore, handoff });
   }
 
   const agentBrief = buildAgentBrief(
-    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast },
+    { projectTopic, productionPath: path, register, world, palette: paletteOverride, dna, cast, projectKind },
     briefScenes,
   );
 

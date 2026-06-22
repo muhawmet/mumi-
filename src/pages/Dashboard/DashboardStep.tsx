@@ -20,9 +20,9 @@ const CAST_OPTIONS: Array<{ id: Cast; label: string; sub: string }> = [
 ];
 
 export const DashboardStep = () => {
-  const { projectTopic, projectClass, sceneCount, cast, setField, setCurrentStep, applyPreset } =
+  const { projectKind, projectTopic, projectClass, sceneCount, cast, setField, setCurrentStep, applyPreset } =
     useStudioStore();
-  const [kind, setKind] = useState<'video' | 'design'>('video');
+  const [kind, setKind] = useState<'video' | 'design'>(projectKind);
   const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const presets = kind === 'video' ? PHASE0_VIDEO : PHASE0_DESIGN;
@@ -31,11 +31,11 @@ export const DashboardStep = () => {
 
   const onPreset = (p: Phase0Preset) => {
     setActivePreset(p.id);
-    applyPreset(p.sets);
+    applyPreset({ ...p.sets, projectKind: p.kind });
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
+    <div className="dashboard-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
       <header>
         <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 1 · BRIEF</div>
         <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>
@@ -51,7 +51,10 @@ export const DashboardStep = () => {
           {(['video', 'design'] as const).map((k) => (
             <button
               key={k}
-              onClick={() => setKind(k)}
+              onClick={() => {
+                setKind(k);
+                setField('projectKind', k);
+              }}
               style={{
                 padding: '8px 18px',
                 borderRadius: 8,
@@ -123,7 +126,7 @@ export const DashboardStep = () => {
       </Panel>
 
       <Panel title="Konu & Sınıf">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+        <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
           <Field label="Proje konusu" hint='Kanonik kaynak için "SOURCE:" ön ekiyle çoklu beat yazabilirsin.'>
             <textarea
               style={{ ...inputStyle, minHeight: isSourceBound ? 120 : 44, resize: 'vertical', fontFamily: isSourceBound ? "'JetBrains Mono Variable', monospace" : 'inherit' }}
@@ -192,7 +195,7 @@ export const DashboardStep = () => {
       </Panel>
 
       <Panel title="Oyuncu kadrosu" subtitle="referenceFaceLocked uygulanır — kimlik kayması engellenir.">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+        <div className="cast-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
           {CAST_OPTIONS.map((c) => {
             const active = cast === c.id;
             return (

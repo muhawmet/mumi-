@@ -201,6 +201,43 @@ describe('generateBatch', () => {
     expect(result.scenes[0].architecture.source.sourceId).toBe('source-001');
   });
 
+  it('preserves exact source beats when scene count cycles past input beats', () => {
+    const result = generateBatch({
+      ...baseInput,
+      sceneCount: 4,
+      projectTopic: 'SOURCE:\nbirinci kaynak\nikinci kaynak',
+    });
+    expect(result.scenes.map((s) => s.voiceOver)).toEqual([
+      'birinci kaynak',
+      'ikinci kaynak',
+      'birinci kaynak',
+      'ikinci kaynak',
+    ]);
+    expect(result.scenes[2].architecture.source.exactText).toBe('birinci kaynak');
+  });
+
+  it('uses the duration guard as the exported scene duration', () => {
+    const result = generateBatch({ ...baseInput, projectTopic: 'Kısa kaynak metni' });
+    expect(result.scenes[0].durationSec).toBe(result.scenes[0].duration.sec);
+  });
+
+  it('propagates the tactile recipe override into final brief and handoff', () => {
+    const result = generateBatch({ ...baseInput, selectedPropId: 'paper' });
+    expect(result.scenes[0].finalBrief.recipe).toEqual({ id: 'paper', source: 'USER_OVERRIDE' });
+    expect(result.scenes[0].handoff.IMAGE.world.recipe).toEqual({ id: 'paper', source: 'USER_OVERRIDE' });
+  });
+
+  it('marks motion and music as not applicable for static design deliverables', () => {
+    const result = generateBatch({ ...baseInput, projectKind: 'design', sceneCount: 1 });
+    const scene = result.scenes[0];
+    expect(scene.imagePrompt).toContain('static design');
+    expect(scene.imagePrompt).not.toContain('motion-ready start frame');
+    expect(scene.motionPrompt).toContain('NOT_APPLICABLE');
+    expect(scene.sunoBrief).toContain('NOT_APPLICABLE');
+    expect(scene.handoff.MOTION.warnings.some((w) => w.code === 'NOT_APPLICABLE_STATIC_DESIGN')).toBe(true);
+    expect(result.agentBrief).toContain('Deliverable: STATIC DESIGN');
+  });
+
   it('all scenes belong to the same projectId/sourceHash', () => {
     const result = generateBatch(baseInput);
     const projectIds = new Set(result.scenes.map((s) => s.handoff.IMAGE.projectId));

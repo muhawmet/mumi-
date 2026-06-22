@@ -223,6 +223,7 @@ const textPolicyLine = () => 'Text/logo: no new text unless the source asks; any
 export interface PromptCtx {
   world: SurgeryWorld; register: Register; dna: DnaDirectives;
   palette?: SurgeryPalette; pathForbidden: string; chars?: string;
+  projectKind?: 'video' | 'design';
 }
 
 export function buildImagePrompt(sceneId: number | string, concept: Concept, camera: string, ctx: PromptCtx, pv = 0): string {
@@ -236,13 +237,15 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     'Camera/vantage: ' + camera + '.',
     'Light: ' + dna.light + '.' + VAR_LIGHT[pv % 3] + ' Palette physics: ' + paletteLight(palette, world),
     'Texture rule: ' + dna.texture + '.',
-    'Motion seed: the frame is the exact half-second before this event — ' + concept.event.split(',')[0] + ' — everything required already present and primed.',
+    ctx.projectKind === 'design'
+      ? 'Static composition proof: ' + concept.event.split(',')[0] + '; resolve it in one final frame.'
+      : 'Motion seed: the frame is the exact half-second before this event — ' + concept.event.split(',')[0] + ' — everything required already present and primed.',
     textPolicyLine(),
     charLock ? ('Character lock:' + charLock + ' Mouths closed, observer scale only.') : '',
     'Negative: ' + T(ctx.pathForbidden).replace(/\.\s*$/, '') + '; ' + dna.avoid.replace(/\.\s*$/, '') + '; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.',
-    'Clean motion-ready start frame.',
+    ctx.projectKind === 'design' ? 'Final production-ready static design frame.' : 'Clean motion-ready start frame.',
   ].filter(Boolean);
-  return '[' + T(sceneId) + '] IMAGE (Nano Banana 2 / Gemini start frame)\n' + parts.join(' ');
+  return '[' + T(sceneId) + '] IMAGE (Nano Banana 2 / Gemini ' + (ctx.projectKind === 'design' ? 'static design' : 'start frame') + ')\n' + parts.join(' ');
 }
 
 // ---------------- agent brief (paste into Claude Projects / Custom GPT) ----------------
@@ -253,6 +256,7 @@ export interface AgentBriefScene { id: number | string; source: string; concept:
 export interface AgentBriefCtx {
   projectTopic: string; productionPath: string; register: Register;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
+  projectKind?: 'video' | 'design';
 }
 
 export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): string {
@@ -271,7 +275,9 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '== RECIPE ==',
     `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}`,
     `Cast: ${T(ctx.cast)}`,
-    'Engines: Nano Banana 2 (image) → Kling 3.0 (motion) → Suno v5.5 (music) → ElevenLabs (VO)',
+    ctx.projectKind === 'design'
+      ? 'Deliverable: STATIC DESIGN. Produce image/design directions only; no Kling, motion, Suno, music or VO deliverables.'
+      : 'Engines: Nano Banana 2 (image) → Kling 3.0 (motion) → Suno v5.5 (music) → ElevenLabs (VO)',
     '',
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
     renderLock(world, register),
@@ -291,14 +297,15 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '== PALETTE AS LIGHT ==',
     paletteLight(palette, world),
     '',
-    '== KLING ANCHOR LAW ==',
-    'Every approved start frame is the half-second before its motion. Kling PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Default 5-6s; longer coverage = another frame, never a stretched beat.',
+    ctx.projectKind === 'design' ? '== STATIC DESIGN LAW ==' : '== KLING ANCHOR LAW ==',
+    ctx.projectKind === 'design'
+      ? 'Each item is a final static composition. Preserve format hierarchy, safe text geometry and source meaning; do not invent animation or soundtrack instructions.'
+      : 'Every approved start frame is the half-second before its motion. Kling PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Default 5-6s; longer coverage = another frame, never a stretched beat.',
     '',
     '== SCENE DOSSIER ==',
     dossier,
     '',
-    '== SOUND ==',
-    primeSuno(ctx.productionPath),
+    ...(ctx.projectKind === 'design' ? [] : ['== SOUND ==', primeSuno(ctx.productionPath), '']),
     '',
     '== FAIL CONDITIONS (Proof) ==',
     '- Source coverage below 100%, skipped/merged/reordered scene IDs',

@@ -1,10 +1,16 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { generateBatch, type SceneArchitecture, type HandoffPacketSet } from '../core/pure';
+import {
+  generateBatch,
+  resolveRecipeDefaults,
+  type SceneArchitecture,
+  type HandoffPacketSet,
+} from '../core/pure';
 import type { DurationVerdict } from '../core/brain';
 
 export type Step = 'dashboard' | 'recipe' | 'timeline';
 export type Cast = 'Aras' | 'Defne' | 'İkisi';
+export type ProjectKind = 'video' | 'design';
 
 export interface Scene {
   id: number;
@@ -25,6 +31,23 @@ export interface Scene {
 /** Returns the prompt that should be used downstream — override wins over generated. */
 export const effectivePrompt = (s: Scene): string => s.userImagePrompt ?? s.imagePrompt;
 
+export function applyPromptOverride(scene: Scene, override: string | null): Scene {
+  const imagePrompt = override ?? scene.imagePrompt;
+  const handoff = {
+    ...scene.handoff,
+    IMAGE: {
+      ...scene.handoff.IMAGE,
+      draft: { ...scene.handoff.IMAGE.draft, previewPrompt: imagePrompt },
+    },
+  };
+
+  if (override === null) {
+    const { userImagePrompt: _drop, ...rest } = scene;
+    return { ...rest, handoff } as Scene;
+  }
+  return { ...scene, userImagePrompt: override, handoff };
+}
+
 /** Strict recipe gate — world, palette and reference DNA must all be chosen. */
 export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'selectedRefId'>): {
   ready: boolean;
@@ -38,6 +61,7 @@ export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'select
 }
 
 export interface StudioState {
+  projectKind: ProjectKind;
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
@@ -71,6 +95,7 @@ export interface StudioState {
 }
 
 const initial = {
+  projectKind: 'video' as ProjectKind,
   projectTopic: 'Su Döngüsü',
   projectClass: 'EĞİTİM_01',
   sceneCount: 5,
@@ -94,15 +119,88 @@ const initial = {
   currentStep: 'dashboard' as Step,
 };
 
+const serverStorage: Storage = {
+  length: 0,
+  clear: () => undefined,
+  getItem: () => null,
+  key: () => null,
+  removeItem: () => undefined,
+  setItem: () => undefined,
+};
+
+export function presetWithDefaults(
+  current: Pick<StudioState, 'projectClass' | 'selectedWorldId'>,
+  preset: Partial<StudioState>,
+): Partial<StudioState> {
+  const projectClass = preset.projectClass ?? current.projectClass;
+  const selectedWorldId = preset.selectedWorldId ?? current.selectedWorldId;
+  const defaults = resolveRecipeDefaults(projectClass, selectedWorldId);
+  return {
+    ...preset,
+    selectedRefId: preset.selectedRefId || defaults.selectedRefId,
+    selectedPaletteId: preset.selectedPaletteId || defaults.selectedPaletteId,
+    scenes: [],
+    agentBrief: '',
+    selectedSceneId: null,
+    lastError: null,
+  };
+}
+
+function hasCurrentSceneShape(value: unknown): value is Scene {
+  if (!value || typeof value !== 'object') return false;
+  const scene = value as Partial<Scene>;
+  return Boolean(
+    typeof scene.motionPrompt === 'string' &&
+      scene.duration &&
+      typeof scene.duration.sec === 'number' &&
+      scene.handoff?.IMAGE?.draft,
+  );
+}
+
+export function migratePersistedState(value: unknown): Partial<StudioState> {
+  if (!value || typeof value !== 'object') return {};
+  const persisted = value as Partial<StudioState>;
+  const scenes = Array.isArray(persisted.scenes) && persisted.scenes.every(hasCurrentSceneShape)
+    ? persisted.scenes
+    : [];
+  return {
+    ...persisted,
+    scenes,
+    agentBrief: scenes.length && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
+    selectedSceneId: scenes.some((s) => s.id === persisted.selectedSceneId) ? persisted.selectedSceneId ?? null : null,
+  };
+}
+
 export const useStudioStore = create<StudioState>()(
   persist(
     (set, get) => ({
       ...initial,
 
-      setField: (field, value) => set({ [field]: value } as Partial<StudioState>),
+      setField: (field, value) => {
+        const s = get();
+        const clearGeneration = { scenes: [], agentBrief: '', selectedSceneId: null, lastError: null };
+        if (field === 'selectedWorldId') {
+          const defaults = resolveRecipeDefaults(s.projectClass, String(value));
+          set({ selectedWorldId: String(value), ...defaults, ...clearGeneration });
+          return;
+        }
+        if (field === 'projectClass') {
+          const defaults = resolveRecipeDefaults(String(value), s.selectedWorldId);
+          set({ projectClass: String(value), ...defaults, ...clearGeneration });
+          return;
+        }
+        const generationFields: Array<keyof StudioState> = [
+          'projectKind', 'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
+          'selectedRefId', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
+        ];
+        set({
+          ...({ [field]: value } as Partial<StudioState>),
+          ...(generationFields.includes(field) ? clearGeneration : {}),
+        });
+      },
       setScenes: (scenes) => set({ scenes }),
       setCurrentStep: (currentStep) => set({ currentStep }),
-      applyPreset: (preset) => set(preset as Partial<StudioState>),
+      applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
 
       generateScenes: () => {
         const s = get();
@@ -110,6 +208,7 @@ export const useStudioStore = create<StudioState>()(
         set({ isGenerating: true, lastError: null });
         try {
           const result = generateBatch({
+            projectKind: s.projectKind,
             projectTopic: s.projectTopic,
             projectClass: s.projectClass,
             sceneCount: s.sceneCount,
@@ -159,16 +258,7 @@ export const useStudioStore = create<StudioState>()(
 
       setSceneOverride: (sceneId, override) =>
         set((s) => ({
-          scenes: s.scenes.map((sc) =>
-            sc.id === sceneId
-              ? override === null
-                ? (() => {
-                    const { userImagePrompt: _drop, ...rest } = sc;
-                    return rest as Scene;
-                  })()
-                : { ...sc, userImagePrompt: override }
-              : sc,
-          ),
+          scenes: s.scenes.map((sc) => (sc.id === sceneId ? applyPromptOverride(sc, override) : sc)),
         })),
 
       advance: () => {
@@ -187,8 +277,9 @@ export const useStudioStore = create<StudioState>()(
     }),
     {
       name: 'mamilas-studio-v1',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({
+        projectKind: s.projectKind,
         projectTopic: s.projectTopic,
         projectClass: s.projectClass,
         sceneCount: s.sceneCount,
@@ -205,7 +296,8 @@ export const useStudioStore = create<StudioState>()(
         selectedSceneId: s.selectedSceneId,
         currentStep: s.currentStep,
       }),
-      version: 1,
+      version: 2,
+      migrate: (persistedState) => migratePersistedState(persistedState),
     },
   ),
 );

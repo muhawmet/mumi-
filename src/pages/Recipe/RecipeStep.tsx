@@ -29,7 +29,7 @@ export const RecipeStep = () => {
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefId });
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
+    <div className="recipe-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
       <header>
         <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 2 · REÇETE</div>
         <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>Görsel DNA</h1>
@@ -110,7 +110,7 @@ export const RecipeStep = () => {
         )}
       </Panel>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+      <div className="recipe-controls-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
         <Panel title="Reference DNA" subtitle={`${DATA.refs.length} kayıt · subordinate to world`}>
           <Field label="Referans">
             <select style={selectStyle} value={selectedRefId} onChange={(e) => setField('selectedRefId', e.target.value)}>

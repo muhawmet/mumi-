@@ -18,6 +18,7 @@ export const TimelineStep = () => {
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
   const onGenerate = generateScenes;
   const exportCtx: ExportContext = {
+    projectKind: state.projectKind,
     topic: state.projectTopic,
     projectClass: state.projectClass,
     cast: state.cast,
@@ -30,6 +31,7 @@ export const TimelineStep = () => {
   const onExportJSON = () => {
     const payload = {
       brief: {
+        kind: state.projectKind,
         topic: state.projectTopic,
         class: state.projectClass,
         cast: state.cast,
@@ -44,7 +46,10 @@ export const TimelineStep = () => {
 
   const onExportHandoff = () => {
     if (!scenes.length) return;
-    const payload = scenes.map((s) => ({ sceneId: s.id, packets: s.handoff }));
+    const payload = scenes.map((s) => ({
+      sceneId: s.id,
+      packets: state.projectKind === 'design' ? { IMAGE: s.handoff.IMAGE } : s.handoff,
+    }));
     downloadFile(`${safeName}_handoff_packets.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
 
@@ -75,12 +80,20 @@ export const TimelineStep = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
       <header style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 3 · TIMELINE</div>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>
+            STAGE 3 · {state.projectKind === 'design' ? 'DESIGN TESLİMİ' : 'TIMELINE'}
+          </div>
           <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>
-            {scenes.length ? `${scenes.length} sahne · ${totalDuration}s` : 'Üretime hazır'}
+            {scenes.length
+              ? state.projectKind === 'design'
+                ? `${scenes.length} tasarım kartı`
+                : `${scenes.length} sahne · ${totalDuration}s`
+              : 'Üretime hazır'}
           </h1>
           <p style={{ color: 'var(--text-muted)', fontSize: 15 }}>
-            Pure batch generator: kontrat kapısı + birleşik brief + IMAGE/MOTION/SUNO handoff paketleri.
+            {state.projectKind === 'design'
+              ? 'Statik tasarım teslimi: birleşik brief + production-ready IMAGE handoff paketleri.'
+              : 'Pure batch generator: kontrat kapısı + birleşik brief + IMAGE/MOTION/SUNO handoff paketleri.'}
           </p>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -95,7 +108,7 @@ export const TimelineStep = () => {
             </Button>
           )}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
-            {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
+            {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
         </div>
       </header>
@@ -120,15 +133,19 @@ export const TimelineStep = () => {
       {scenes.length === 0 ? (
         <Panel>
           <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
-            Brief'i tamamlayıp <strong style={{ color: 'var(--gold)' }}>BATCH ÜRET</strong>'e bas.
+            Brief'i tamamlayıp <strong style={{ color: 'var(--gold)' }}>{state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'}</strong>'e bas.
             <br />
-            Pure generator senin için sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretecek.
+            {state.projectKind === 'design'
+              ? 'Generator statik tasarım mimarisi + image prompt + IMAGE handoff paketi üretecek.'
+              : 'Pure generator senin için sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretecek.'}
           </div>
         </Panel>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) 1.6fr', gap: 24 }}>
-          <Panel title={`Sahneler (${scenes.length})`}>
-            <PacingArc scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
+        <div className="timeline-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) 1.6fr', gap: 24 }}>
+          <Panel title={`${state.projectKind === 'design' ? 'Tasarımlar' : 'Sahneler'} (${scenes.length})`}>
+            {state.projectKind === 'video' && (
+              <PacingArc scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
+            )}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
               {scenes.map((s, i) => {
                 const active = selectedSceneId === s.id;
@@ -161,10 +178,12 @@ export const TimelineStep = () => {
                       }}
                     />
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600 }}>Sahne {s.id} · {s.phaseName}</div>
+                      <div style={{ fontSize: 13, fontWeight: 600 }}>
+                        {state.projectKind === 'design' ? `Tasarım ${s.id}` : `Sahne ${s.id} · ${s.phaseName}`}
+                      </div>
                       <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
-                        {s.durationSec}s · intensity {Math.round(s.intensity)}
-                        {s.duration && !s.duration.ok && (
+                        {state.projectKind === 'design' ? 'statik IMAGE teslimi' : `${s.durationSec}s · intensity ${Math.round(s.intensity)}`}
+                        {state.projectKind === 'video' && s.duration && !s.duration.ok && (
                           <span style={{ color: 'var(--red)', fontWeight: 700, marginLeft: 6 }}>· BÖLEMEZSİN</span>
                         )}
                       </div>
@@ -175,7 +194,7 @@ export const TimelineStep = () => {
             </div>
           </Panel>
 
-          <Panel title={selected ? `Sahne ${selected.id} · Detay` : 'Detay'}>
+          <Panel title={selected ? `${state.projectKind === 'design' ? 'Tasarım' : 'Sahne'} ${selected.id} · Detay` : 'Detay'}>
             <AnimatePresence mode="wait">
               {selected ? (
                 <motion.div
@@ -196,7 +215,7 @@ export const TimelineStep = () => {
                     onSave={(v) => setSceneOverride(selected.id, v)}
                     onReset={() => setSceneOverride(selected.id, null)}
                   />
-                  {selected.duration && (
+                  {state.projectKind === 'video' && selected.duration && (
                     <div
                       style={{
                         padding: '8px 12px',
@@ -211,15 +230,19 @@ export const TimelineStep = () => {
                       {selected.duration.ok ? '⏱ ' : '⚠ '}{selected.duration.message}
                     </div>
                   )}
-                  <DetailRow label="Voice over (kaynak metin)" value={selected.voiceOver} block copyable />
-                  <DetailRow label="Motion prompt (Kling)" value={selected.motionPrompt} mono block copyable />
-                  <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
+                  <DetailRow label={state.projectKind === 'design' ? 'Kaynak metin' : 'Voice over (kaynak metin)'} value={selected.voiceOver} block copyable />
+                  {state.projectKind === 'video' && (
+                    <>
+                      <DetailRow label="Motion prompt (Kling)" value={selected.motionPrompt} mono block copyable />
+                      <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
+                    </>
+                  )}
                   <details>
                     <summary style={{ cursor: 'pointer', fontSize: 11, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>
-                      HANDOFF PAKETLERİ (3)
+                      HANDOFF PAKETLERİ ({state.projectKind === 'design' ? 1 : 3})
                     </summary>
                     <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                      {(['IMAGE', 'MOTION', 'SUNO'] as const).map((role) => {
+                      {(state.projectKind === 'design' ? ['IMAGE'] as const : ['IMAGE', 'MOTION', 'SUNO'] as const).map((role) => {
                         const packet = selected.handoff[role];
                         return (
                           <div
