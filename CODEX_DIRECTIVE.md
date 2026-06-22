@@ -6,6 +6,28 @@ Bu bir emirdir, öneri değil. Sırayla git, atlama, kısa kesme.
 
 ---
 
+## ★ KUZEY YILDIZI — FINAL BRIEF İNANILMAZ OLMALI
+
+Bu projenin tek amacı şu: site'ın ürettiği **final brief + ajan paketleri**, yönetmen
+ajanlarına (eczacılara) yapıştırıldığında **inanılmaz bir reçete** gibi çalışsın.
+Final brief = ajanın elindeki tam, özgül, çelişkisiz, üretilebilir reçete. Her işin
+sonunda kendine sor: "Bu brief'i bir ajana versem, tartışmasız harika bir prompt
+üretir mi?" Cevap evet değilse iş bitmemiştir.
+
+Final brief'in taşıması ZORUNLU (hepsi `brain.ts` `buildAgentBrief`/`primePacket`'te
+üretiliyor — bozma, güçlendir): RENDER LOCK (kelimesi kelimesine, render world'ün
+zengin tarifi) · Material cümlesi (varsa) · MODEL ERA (2026 frontier) · AUTHORITY
+hiyerarşisi · REFERENCE DNA → DIRECTIVES · PALETTE AS LIGHT · I2V ANCHOR LAW + ~9s
+dengeli bölme · SCENE DOSSIER (kaynak+concept+kamera+süre) · SOUND · FAIL CONDITIONS
+· PROOF STATE. Bir alanı zayıf/jenerik bırakma; ajanın kararını netleştir.
+
+Ajan beyinlerini (`agents/GLOBAL_BRAIN.md` + `agents/claude/*` + `agents/gpt/*`)
+**CODEX YAZMAZ** — onlar Claude'a emanet. Sen yalnız site/kod/önizleme/referans
+tarafını yap; ajan dosyalarına dokunma (AŞAMA 4 yalnız DENETİM raporu yazar, içerik
+Claude'a kalır).
+
+---
+
 ## 0. DEĞİŞMEZ KURALLAR (her aşamada geçerli — ihlal = iş reddedilir)
 
 1. **GATE (her commit'ten önce ZORUNLU, hepsi yeşil olmadan commit etme):**
@@ -34,6 +56,17 @@ Bu bir emirdir, öneri değil. Sırayla git, atlama, kısa kesme.
 
 9. Emin olmadığın 3. parti gerçeği (model sürümü, motor limiti) UYDURMA. Tunable bırak + yorumda belirt.
 
+10. **HER ADIMI KANITLA LOGLA (ZORUNLU).** Repoda `CODEX_LOG.md` tut. Her alt-adımda
+    şunları yapıştır: çalıştırdığın komut + çıktısının özeti, gate sonucu (tsc/eslint/
+    vitest/build sayıları), aldığın screenshot dosya adı, before/after notu, ve "neden
+    böyle yaptım" tek cümle. Kanıtsız "yaptım" YASAK. Claude sabah bu logu denetleyecek;
+    log eksikse iş yapılmamış sayılır.
+
+11. **BU UZUN BİR İŞ — acele etme, derinleş.** Bu en az 1 saatlik, titiz bir vardiyadır.
+    Yüzeysel geçme; her sahneyi/komponenti tek tek elden geçir. "High-end" demek: gerçek
+    kompozisyon, gerçek efekt katmanları, okunaklı hiyerarşi, mikro-etkileşim, performans
+    (gereksiz reflow/rAF yok). Ucuz/placeholder iş reddedilir.
+
 ---
 
 ## MİMARİ ÖZET (neye dokunduğunu bil)
@@ -54,7 +87,13 @@ Bu bir emirdir, öneri değil. Sırayla git, atlama, kısa kesme.
 - `src/components/refScenes.ts` desenini örnek al. Yeni bir `WORLD_SCENES: Record<worldId, SceneFn>` ekle (veya `REF_SCENES`'i genişlet) ve `CanvasPreview`'da ref-sahnesi yoksa **world-sahnesi**, o da yoksa kategori taban sırasıyla dene.
 - 6 dünya için özgün sahne yaz: `arcane` (teal+ember, brush-stroke albedo hissi, negatif-alan gölge), `spiderverse` (halftone Ben-Day + CMYK kayma + ink outline + onomatopoeia), `anime_cel` (cel bantları + speed line + rim/bloom), `pixar3d` (yumuşak GI orb + rim), `ghibli` (suluboya gökyüzü + rüzgârda çimen), `stopmotion` (grain + macro DOF + 12fps stutter).
 - Hepsi palet-adaptif (c0–c3), `requestAnimationFrame`, `prefers-reduced-motion` saygılı.
-- **ACCEPTANCE:** her yeni dünya seçildiğinde önizleme görünür biçimde farklı + palet değişince renk değişir. Gate yeşil. Geçici bir galeri HTML ile 6 sahneyi 2 palette render edip screenshot al, sonra galeriyi sil (Claude'un yaptığı gibi).
+- **EFEKT-YÜKLÜ, TANINIR ÖNİZLEME (Mami isteği):** her referans önizlemesi o evrenin
+  ENERJİSİNİ taşımalı — ör. One Piece = hasır-şapka silüeti + gum-gum esneme hareketi +
+  güneş/okyanus enerjisi + bayrak; Naruto = chakra spirali + el-işareti enerjisi.
+  Tanınır ama **IP-GÜVENLİ**: birebir kopyalanmış telifli karakter yüzü/tasarımı YOK —
+  silüet + imza-efekt + renk-enerjisiyle "o seriyi hissettir". Ucuz geometri değil,
+  katmanlı efekt (glow, parçacık, hız çizgisi, halftone) + okunaklı kompozisyon.
+- **ACCEPTANCE:** her yeni dünya/önizleme görünür biçimde farklı + palet değişince renk değişir. Gate yeşil. Geçici galeri HTML ile sahneleri 2 palette render edip screenshot al (CODEX_LOG.md'ye iliştir), sonra galeriyi sil.
 
 ## AŞAMA 2 — Referans sistemini güçlendir ("cılız/ham" — Mami)
 **GOAL:** referans seçimi akıllı ve yönlendirici olsun.
