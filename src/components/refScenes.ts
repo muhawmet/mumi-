@@ -136,6 +136,274 @@ function softOrb(ctx: CtX, x: number, y: number, r: number, col: string, hi: str
 type CtX = CanvasRenderingContext2D;
 
 /* ============================================================
+   WORLD SCENES — keyed by SURGERY_DATA.worlds id
+
+   These establish the render world's visual grammar before a
+   reference is selected. Reference scenes still have priority.
+   ============================================================ */
+export const WORLD_SCENES: Record<string, SceneFn> = {
+  arcane: (ctx, w, h, t, c) => {
+    fillBg(ctx, w, h, mix(c[2], c[0], 0.12), mix(c[2], '#000000', 0.58));
+    radialGlow(ctx, w * 0.7, h * 0.3, w * 0.42, c[0], 0.28);
+    radialGlow(ctx, w * 0.28, h * 0.72, w * 0.34, c[1], 0.2);
+
+    // Broad, imperfect albedo strokes read as paint over volume.
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    for (let i = 0; i < 9; i++) {
+      const y = h * (0.16 + i * 0.075);
+      ctx.strokeStyle = rgba(i % 3 === 0 ? c[1] : c[0], 0.05 + seed(i) * 0.08);
+      ctx.lineWidth = 3 + seed(i + 3) * 9;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(w * (0.05 + seed(i + 4) * 0.18), y);
+      ctx.bezierCurveTo(w * 0.34, y - 18, w * 0.58, y + 22, w * (0.76 + seed(i + 8) * 0.2), y - 4);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Negative-space figure and asymmetrical architectural shadow.
+    const sway = Math.sin(t * 0.0012) * 3;
+    ctx.fillStyle = rgba(mix(c[2], '#000000', 0.72), 0.96);
+    ctx.beginPath();
+    ctx.moveTo(0, h); ctx.lineTo(0, h * 0.48); ctx.lineTo(w * 0.24, h * 0.22);
+    ctx.lineTo(w * 0.42, h); ctx.closePath(); ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(w * 0.64 + sway, h * 0.38, w * 0.052, h * 0.082, -0.16, 0, Math.PI * 2);
+    ctx.moveTo(w * 0.58 + sway, h * 0.45);
+    ctx.bezierCurveTo(w * 0.5 + sway, h * 0.48, w * 0.51 + sway, h * 0.7, w * 0.44 + sway, h * 0.91);
+    ctx.lineTo(w * 0.63 + sway, h * 0.84);
+    ctx.lineTo(w * 0.79 + sway, h * 0.93);
+    ctx.bezierCurveTo(w * 0.73 + sway, h * 0.7, w * 0.79 + sway, h * 0.53, w * 0.69 + sway, h * 0.45);
+    ctx.closePath(); ctx.fill();
+    // Painterly shoulder planes break the silhouette into dimensional masses.
+    ctx.fillStyle = rgba(mix(c[0], c[2], 0.68), 0.82);
+    ctx.beginPath();
+    ctx.moveTo(w * 0.58 + sway, h * 0.47); ctx.lineTo(w * 0.46 + sway, h * 0.58);
+    ctx.lineTo(w * 0.62 + sway, h * 0.62); ctx.lineTo(w * 0.7 + sway, h * 0.47); ctx.closePath(); ctx.fill();
+
+    ctx.strokeStyle = rgba(c[3], 0.68); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(w * 0.585 + sway, h * 0.46); ctx.bezierCurveTo(w * 0.55 + sway, h * 0.6, w * 0.53 + sway, h * 0.72, w * 0.48 + sway, h * 0.88); ctx.stroke();
+    emberField(ctx, w, h, t, c[1], 38, 0.028);
+    vignette(ctx, w, h, c[2], 0.66);
+  },
+
+  spiderverse: (ctx, w, h, t, c) => {
+    fillBg(ctx, w, h, mix(c[0], c[2], 0.34), mix(c[1], c[2], 0.48));
+    ctx.save();
+    ctx.translate(Math.sin(t * 0.004) * 2, 0);
+    ctx.rotate(-0.035);
+
+    // Offset print plates create a deliberate CMYK-like registration error.
+    const shift = 4 + Math.sin(t * 0.003) * 1.5;
+    for (const [dx, col, alpha] of [[-shift, c[0], 0.5], [shift, c[1], 0.42], [0, c[2], 0.95]] as const) {
+      ctx.fillStyle = rgba(col, alpha);
+      ctx.beginPath();
+      ctx.arc(w * 0.52 + dx, h * 0.35, h * 0.12, 0, Math.PI * 2);
+      ctx.moveTo(w * 0.44 + dx, h * 0.43);
+      ctx.lineTo(w * 0.7 + dx, h * 0.88);
+      ctx.lineTo(w * 0.29 + dx, h * 0.88);
+      ctx.closePath(); ctx.fill();
+    }
+    ctx.restore();
+
+    dots(ctx, w, h, c[3], 9, 1.55, 0.2);
+    ctx.save(); ctx.globalCompositeOperation = 'multiply';
+    ctx.fillStyle = rgba(c[2], 0.76);
+    ctx.beginPath(); ctx.moveTo(0, h * 0.22); ctx.lineTo(w * 0.42, 0); ctx.lineTo(w * 0.31, h); ctx.lineTo(0, h); ctx.fill();
+    ctx.restore();
+
+    // Ink gutters and impact lettering make the panel readable at thumbnail size.
+    ctx.strokeStyle = rgba(c[2], 0.9); ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(w * 0.1, 0); ctx.lineTo(w * 0.29, h); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(w * 0.78, 0); ctx.lineTo(w * 0.66, h); ctx.stroke();
+    ctx.save();
+    ctx.translate(w * 0.7, h * 0.25); ctx.rotate(-0.12 + Math.sin(t * 0.002) * 0.025);
+    ctx.font = `900 ${Math.max(18, h * 0.18)}px Impact, sans-serif`;
+    ctx.textAlign = 'center'; ctx.lineJoin = 'round';
+    ctx.strokeStyle = c[2]; ctx.lineWidth = 5; ctx.strokeText('KRAK!', 0, 0);
+    ctx.fillStyle = c[3]; ctx.fillText('KRAK!', 0, 0);
+    ctx.restore();
+    scanlines(ctx, w, h, 0.08);
+  },
+
+  anime_cel: (ctx, w, h, t, c) => {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, mix(c[0], c[3], 0.58));
+    sky.addColorStop(0.56, mix(c[0], c[1], 0.3));
+    sky.addColorStop(0.57, mix(c[2], c[0], 0.34));
+    sky.addColorStop(1, mix(c[2], '#000000', 0.35));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+
+    const cx = w * 0.5, cy = h * 0.55;
+    speedLines(ctx, cx, cy, t, c[3], 44, 0.00016);
+    radialGlow(ctx, cx, cy, w * 0.34, c[3], 0.34);
+
+    // Clean cel silhouette with one hard shadow band and a hot rim.
+    const lift = Math.sin(t * 0.002) * 2;
+    ctx.fillStyle = c[2];
+    // Spiked but anonymous hair mass: anime grammar without copying a character.
+    ctx.beginPath();
+    ctx.moveTo(cx - h * 0.085, h * 0.39 + lift);
+    ctx.lineTo(cx - h * 0.11, h * 0.27 + lift);
+    ctx.lineTo(cx - h * 0.045, h * 0.3 + lift);
+    ctx.lineTo(cx - h * 0.015, h * 0.2 + lift);
+    ctx.lineTo(cx + h * 0.025, h * 0.3 + lift);
+    ctx.lineTo(cx + h * 0.095, h * 0.24 + lift);
+    ctx.lineTo(cx + h * 0.08, h * 0.41 + lift);
+    ctx.quadraticCurveTo(cx, h * 0.46 + lift, cx - h * 0.085, h * 0.39 + lift);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(cx - w * 0.07, h * 0.43 + lift);
+    ctx.lineTo(cx + w * 0.16, h * 0.88);
+    ctx.lineTo(cx - w * 0.18, h * 0.88);
+    ctx.closePath(); ctx.fill();
+    ctx.fillStyle = rgba(mix(c[2], c[0], 0.34), 0.95);
+    ctx.beginPath(); ctx.moveTo(cx, h * 0.27); ctx.arc(cx, h * 0.35 + lift, h * 0.09, -Math.PI / 2, Math.PI / 2); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = rgba(c[3], 0.9); ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(cx, h * 0.35 + lift, h * 0.095, -1.35, 1.25); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx + w * 0.07, h * 0.45); ctx.lineTo(cx + w * 0.17, h * 0.86); ctx.stroke();
+    // A foreshortened energy blade adds a readable action axis.
+    ctx.save(); ctx.translate(cx - w * 0.02, h * 0.58); ctx.rotate(-0.62 + Math.sin(t * 0.002) * 0.025);
+    const bladeGlow = ctx.createLinearGradient(0, 0, w * 0.42, 0);
+    bladeGlow.addColorStop(0, rgba(c[3], 0.2)); bladeGlow.addColorStop(0.18, c[3]); bladeGlow.addColorStop(1, rgba(c[1], 0));
+    ctx.strokeStyle = bladeGlow; ctx.shadowColor = c[3]; ctx.shadowBlur = 11; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(w * 0.42, 0); ctx.stroke(); ctx.restore();
+
+    // Three exposure bands evoke hand-painted cel layers.
+    for (let i = 0; i < 3; i++) {
+      ctx.fillStyle = rgba(i === 1 ? c[1] : c[3], 0.045 + i * 0.018);
+      ctx.fillRect(0, h * (0.18 + i * 0.2), w, h * 0.08);
+    }
+    vignette(ctx, w, h, c[2], 0.44);
+  },
+
+  pixar3d: (ctx, w, h, t, c) => {
+    fillBg(ctx, w, h, mix(c[0], c[3], 0.5), mix(c[2], c[0], 0.24));
+    radialGlow(ctx, w * 0.28, h * 0.22, w * 0.62, c[3], 0.38);
+    radialGlow(ctx, w * 0.78, h * 0.7, w * 0.35, c[1], 0.16);
+
+    // Curved stage and contact occlusion sell a soft global-illumination setup.
+    const floor = ctx.createLinearGradient(0, h * 0.58, 0, h);
+    floor.addColorStop(0, rgba(mix(c[2], c[0], 0.25), 0));
+    floor.addColorStop(1, mix(c[2], '#000000', 0.3));
+    ctx.fillStyle = floor; ctx.fillRect(0, h * 0.52, w, h * 0.48);
+    ctx.fillStyle = rgba(c[2], 0.38);
+    ctx.beginPath(); ctx.ellipse(w * 0.52, h * 0.81, w * 0.2, h * 0.045, 0, 0, Math.PI * 2); ctx.fill();
+
+    const bounce = Math.sin(t * 0.002) * h * 0.018;
+    softOrb(ctx, w * 0.5, h * 0.53 + bounce, h * 0.22, c[0], c[3]);
+    softOrb(ctx, w * 0.66, h * 0.64 - bounce * 0.55, h * 0.1, c[1], c[3]);
+    // Specular rim and a small secondary bounce card reflection.
+    ctx.strokeStyle = rgba(c[3], 0.76); ctx.lineWidth = 2.4;
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.53 + bounce, h * 0.225, -1.3, 0.35); ctx.stroke();
+    ctx.fillStyle = rgba(c[3], 0.56);
+    ctx.beginPath(); ctx.ellipse(w * 0.43, h * 0.44 + bounce, w * 0.025, h * 0.045, -0.7, 0, Math.PI * 2); ctx.fill();
+    vignette(ctx, w, h, c[2], 0.3);
+  },
+
+  ghibli: (ctx, w, h, t, c) => {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, mix(c[3], c[0], 0.18));
+    sky.addColorStop(0.62, mix(c[0], c[3], 0.56));
+    sky.addColorStop(1, mix(c[1], c[0], 0.4));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+
+    // Translucent wash bands keep the sky visibly watercolor, not flat vector art.
+    ctx.save(); ctx.globalCompositeOperation = 'screen';
+    for (let i = 0; i < 8; i++) {
+      const drift = Math.sin(t * 0.00035 + i) * 7;
+      ctx.fillStyle = rgba(i % 2 ? c[3] : c[0], 0.035 + seed(i) * 0.035);
+      ctx.beginPath();
+      ctx.ellipse(w * seed(i + 2) + drift, h * (0.12 + seed(i + 7) * 0.38), w * (0.16 + seed(i) * 0.18), h * 0.055, -0.08, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Repeated translucent contours leave a wet watercolor edge instead of a flat fill.
+    for (let layer = 0; layer < 4; layer++) {
+      ctx.fillStyle = rgba(mix(c[1], c[2], 0.3), 0.35 - layer * 0.045);
+      ctx.beginPath(); ctx.moveTo(0, h * (0.7 + layer * 0.008));
+      ctx.quadraticCurveTo(w * 0.25, h * (0.49 + layer * 0.006), w * 0.52, h * (0.71 + layer * 0.008));
+      ctx.quadraticCurveTo(w * 0.78, h * (0.47 + layer * 0.009), w, h * (0.67 + layer * 0.008));
+      ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.fill();
+    }
+    for (let layer = 0; layer < 3; layer++) {
+      ctx.fillStyle = rgba(mix(c[0], c[2], 0.28), 0.52 - layer * 0.07);
+      ctx.beginPath(); ctx.moveTo(0, h * (0.8 + layer * 0.01));
+      ctx.quadraticCurveTo(w * 0.34, h * (0.64 + layer * 0.006), w * 0.62, h * (0.82 + layer * 0.008));
+      ctx.quadraticCurveTo(w * 0.82, h * (0.69 + layer * 0.006), w, h * (0.78 + layer * 0.008));
+      ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.fill();
+    }
+
+    // Hundreds of cheap blades would shimmer; a sparse foreground silhouette reads better.
+    const wind = Math.sin(t * 0.0011) * 0.22;
+    ctx.strokeStyle = rgba(c[3], 0.52); ctx.lineWidth = 1.2; ctx.lineCap = 'round';
+    for (let i = 0; i < 42; i++) {
+      const x = (i / 41) * w;
+      const bladeH = h * (0.08 + seed(i) * 0.12);
+      ctx.beginPath(); ctx.moveTo(x, h); ctx.quadraticCurveTo(x + wind * bladeH, h - bladeH * 0.62, x + wind * bladeH * 1.35, h - bladeH); ctx.stroke();
+    }
+    emberField(ctx, w, h * 0.92, t, c[3], 14, 0.006);
+  },
+
+  stopmotion: (ctx, w, h, t, c) => {
+    // Quantizing time creates a true 12 fps cadence even on a 60 Hz canvas.
+    const qt = Math.floor(t / (1000 / 12)) * (1000 / 12);
+    fillBg(ctx, w, h, mix(c[0], c[3], 0.28), mix(c[2], '#000000', 0.38));
+    radialGlow(ctx, w * 0.28, h * 0.24, w * 0.46, c[3], 0.3);
+
+    // Macro set: near and far bokeh frame a tactile armature puppet.
+    for (let i = 0; i < 9; i++) {
+      const x = seed(i) * w, y = seed(i + 9) * h;
+      radialGlow(ctx, x, y, 10 + seed(i + 4) * 26, i % 2 ? c[1] : c[3], 0.08 + seed(i) * 0.1);
+    }
+    ctx.fillStyle = rgba(c[2], 0.48);
+    ctx.beginPath(); ctx.ellipse(w * 0.52, h * 0.84, w * 0.22, h * 0.05, 0, 0, Math.PI * 2); ctx.fill();
+
+    const nod = Math.sin(qt * 0.003) * 0.08;
+    ctx.save(); ctx.translate(w * 0.52, h * 0.55); ctx.rotate(nod);
+    const body = ctx.createLinearGradient(-30, -30, 34, 45);
+    body.addColorStop(0, mix(c[0], c[3], 0.42));
+    body.addColorStop(0.5, c[0]);
+    body.addColorStop(1, mix(c[0], c[2], 0.52));
+    ctx.fillStyle = body;
+    ctx.beginPath(); ctx.ellipse(0, 22, w * 0.1, h * 0.22, 0.08, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(0, -h * 0.1, h * 0.105, 0, Math.PI * 2); ctx.fill();
+    // Visible ball joints and asymmetrical arms reveal the physical armature.
+    ctx.strokeStyle = mix(c[0], c[2], 0.5); ctx.lineWidth = 8; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(-w * 0.065, 7); ctx.lineTo(-w * 0.145, 32); ctx.lineTo(-w * 0.12, 62); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(w * 0.065, 7); ctx.lineTo(w * 0.15, 23); ctx.lineTo(w * 0.18, -2); ctx.stroke();
+    ctx.fillStyle = c[1];
+    for (const [jx, jy] of [[-w * 0.145, 32], [w * 0.15, 23]] as const) {
+      ctx.beginPath(); ctx.arc(jx, jy, 4, 0, Math.PI * 2); ctx.fill();
+    }
+    // Tiny inset eyes catch the key light without becoming a franchise design.
+    ctx.fillStyle = c[2];
+    ctx.beginPath(); ctx.arc(-h * 0.036, -h * 0.11, 3.2, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(h * 0.036, -h * 0.11, 3.2, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = rgba(c[2], 0.55); ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.arc(0, -h * 0.075, h * 0.026, 0.15, Math.PI - 0.15); ctx.stroke();
+    // Handmade seams and fingerprints.
+    ctx.strokeStyle = rgba(c[3], 0.3); ctx.lineWidth = 1;
+    ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.arc(0, -h * 0.1, h * 0.075, 0.1, Math.PI * 0.9); ctx.stroke(); ctx.setLineDash([]);
+    for (let i = 0; i < 7; i++) {
+      ctx.strokeStyle = rgba(c[2], 0.1 + seed(i) * 0.1);
+      ctx.beginPath(); ctx.arc((seed(i) - 0.5) * 22, -h * 0.1 + (seed(i + 4) - 0.5) * 18, 3 + seed(i + 7) * 5, 0, Math.PI * 1.4); ctx.stroke();
+    }
+    ctx.restore();
+
+    // Stable seeded grain avoids per-frame noise flicker beyond the 12 fps cadence.
+    ctx.fillStyle = rgba(c[3], 0.1);
+    for (let i = 0; i < 180; i++) {
+      const jitter = Math.floor(qt / 83.34) * 181 + i;
+      ctx.fillRect(seed(jitter) * w, seed(jitter + 1) * h, 0.7 + seed(i) * 0.9, 0.7 + seed(i + 2) * 0.9);
+    }
+    vignette(ctx, w, h, c[2], 0.56);
+  },
+};
+
+/* ============================================================
    SCENES — keyed by ref.id
    ============================================================ */
 export const REF_SCENES: Record<string, SceneFn> = {
@@ -1043,4 +1311,8 @@ function fillBg2(ctx: CtX, x: number, y: number, w: number, h: number, top: stri
 
 export function hasRefScene(id: string | undefined | null): boolean {
   return !!id && id in REF_SCENES;
+}
+
+export function hasWorldScene(id: string | undefined | null): boolean {
+  return !!id && id in WORLD_SCENES;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import type { PreviewCategory } from '../core/preview';
-import { REF_SCENES } from './refScenes';
+import { REF_SCENES, WORLD_SCENES } from './refScenes';
 
 /* ============================================================
    CanvasPreview — GPU-friendly, palette-driven, category-aware
@@ -403,7 +403,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef(0);
   const particlesRef = useRef<Particle[]>([]);
-  void worldId;
+  const reducedMotionRef = useRef(false);
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -429,14 +429,17 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
     ctx.fillStyle = isDark ? colors[2] : '#0a0c14';
     ctx.fillRect(0, 0, w, h);
 
-    // ── Dedicated per-reference scene wins (animation/anime refs) ──
+    // Dedicated reference wins; otherwise the selected render world supplies
+    // the composition before the broad category fallback is considered.
     const refScene = refId ? REF_SCENES[refId] : undefined;
-    if (refScene) {
-      refScene(ctx, w, h, t, colors);
+    const worldScene = WORLD_SCENES[worldId];
+    const dedicatedScene = refScene ?? worldScene;
+    if (dedicatedScene) {
+      dedicatedScene(ctx, w, h, t, colors);
       // subtle scanline polish on top
       ctx.fillStyle = 'rgba(255,255,255,0.01)';
       for (let y = 0; y < h; y += 3) ctx.fillRect(0, y, w, 1);
-      frameRef.current = requestAnimationFrame(draw);
+      if (!reducedMotionRef.current) frameRef.current = requestAnimationFrame(draw);
       return;
     }
 
@@ -458,13 +461,24 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
       ctx.fillRect(0, y, w, 1);
     }
 
-    frameRef.current = requestAnimationFrame(draw);
-  }, [colors, category, previewType, refId]);
+    if (!reducedMotionRef.current) frameRef.current = requestAnimationFrame(draw);
+  }, [colors, category, previewType, worldId, refId]);
 
   useEffect(() => {
+    const media = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+    const syncMotionPreference = () => {
+      reducedMotionRef.current = media?.matches ?? false;
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = requestAnimationFrame(draw);
+    };
+
     particlesRef.current = [];
-    frameRef.current = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(frameRef.current);
+    syncMotionPreference();
+    media?.addEventListener('change', syncMotionPreference);
+    return () => {
+      cancelAnimationFrame(frameRef.current);
+      media?.removeEventListener('change', syncMotionPreference);
+    };
   }, [draw]);
 
   return (
