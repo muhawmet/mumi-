@@ -28,6 +28,28 @@ Claude'a kalır).
 
 ---
 
+## ★★ SEN GPT-5.5 (high/xhigh) SİN — buna göre çalış
+
+Yüksek akıl yürütme bütçen var; bunu kullan. Bu yüzden:
+
+- **Niyet + çıta verildi, mikro-adım değil.** Sana "şu satıra şunu yaz" demiyorum;
+  HEDEFİ ve KALİTE ÇITASINI veriyorum. En iyi uygulamayı sen tasarla, gerekçelendir,
+  uygula. Pasif değil, sahiplen.
+- **Her aşamada öz-denetim döngüsü (zorunlu):** önce yap → sonra KENDİNE düşman gibi
+  bak ("bir kreatif direktör bunu görse nereye 'ucuz/jenerik/eksik' der?") → bulduğun
+  zayıflığı düzelt → ANCAK ondan sonra CODEX_LOG'a PASS yaz. İlk denemeni final sanma.
+- **Dünya-standardı çıta:** çıktı, parasını ödeyen bir ajansın teslim edeceği kalitede
+  mi? "Çalışıyor" yetmez; "etkileyici" hedefle. SVG/canvas önizlemeler bir motion
+  designer'ın elinden çıkmış gibi; kod bir senior'ın yazdığı gibi (tip-güvenli, ölü
+  kod yok, isimlendirme net, performanslı); brief bir yönetmenin okuyup "tamam, bu
+  harika" diyeceği gibi.
+- **Belirsizlikte en iyi varsayımı yaz ve devam et** (GLOBAL_BRAIN §7). Durup sorma;
+  kararı CODEX_LOG'da gerekçele. Yanlışsa Claude sabah düzeltir — ama yarım bırakma.
+- **Token cömert, zaman cömert.** Derinleş. Aceleci/yüzeysel iş, bütçeni kullanmadığın
+  anlamına gelir ve reddedilir.
+
+---
+
 ## 0. DEĞİŞMEZ KURALLAR (her aşamada geçerli — ihlal = iş reddedilir)
 
 1. **GATE (her commit'ten önce ZORUNLU, hepsi yeşil olmadan commit etme):**
