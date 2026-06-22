@@ -800,6 +800,8 @@ export function generateBatch(input: BriefInput): GenerationResult {
     cast,
     projectKind,
     material: materialClause || undefined,
+    imageModel: input.imageModel,
+    videoModel: input.videoModel,
     brandKitLock: input.brandKitLock,
     mood: input.mood ? MOOD_OPTS[input.mood]?.brief : undefined,
     cameraEnergy: input.cameraEnergy ? CAM_OPTS[input.cameraEnergy]?.brief : undefined,

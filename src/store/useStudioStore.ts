@@ -176,8 +176,8 @@ const initial = {
   selectedPaletteId: '',
   selectedMusicId: '',
 
-  imageModel: 'midjourney_v7',
-  videoModel: 'kling_2_1',
+  imageModel: 'nano_banana_2',
+  videoModel: 'kling_3',
   brandKitLock: '',
 
   mood: '',

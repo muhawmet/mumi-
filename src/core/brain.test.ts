@@ -67,7 +67,8 @@ describe('durationGuard (BÖLEMEZSİN)', () => {
     const long = 'kelime '.repeat(40);
     const v = durationGuard(long, 'kling_3');
     expect(v.ok).toBe(false);
-    expect(v.message).toContain('BÖLEMEZSİN');
+    expect(v.level).toBe('SPLIT');
+    expect(v.message).toMatch(/aşıyor|ikinci|kare/i);
   });
 
   it('respects the engine usable limit (runway > kling)', () => {
@@ -184,7 +185,7 @@ describe('primePacket & buildAgentBrief richness', () => {
     for (const p of packets) {
       const result = primePacket(p, ctx, scenes);
       // Verify director header
-      const expectedHeader = p === 'motion' ? 'MAMILAS MOTION DIRECTOR — Kling 3.0' : p === 'suno' ? 'MAMILAS SUNO DIRECTOR — v5.5 Custom Mode' : `MAMILAS ${p.toUpperCase()} DIRECTOR`;
+      const expectedHeader = p === 'motion' ? 'MAMILAS MOTION DIRECTOR — i2v' : p === 'suno' ? 'MAMILAS SUNO DIRECTOR — Custom Mode' : `MAMILAS ${p.toUpperCase()} DIRECTOR`;
       expect(result).toContain(expectedHeader);
       // Verify render lock verbatim
       expect(result).toContain(clayWorld.render);

@@ -187,13 +187,15 @@ export function estimateSec(text: string): number {
   return Math.max(3, Math.round((w / 2.35 + 1.5) * 10) / 10);
 }
 
-// Single-shot usable seconds the named engine renders reliably.
+// Coherent single-shot window (seconds) per engine — tracks 2026-era i2v models,
+// which hold motion far longer than the 2025 ~8s clips. Tune as engines advance.
 const ENGINE_USABLE: Record<string, number> = {
-  kling: 8.5, kling_2_1: 8.5, kling_3: 8.5, seedance: 8.5, seedance_2: 8.5, runway: 14.5,
+  kling: 10, kling_2_1: 10, kling_3: 10, kling_4: 12,
+  seedance: 10, seedance_2: 10, runway: 16, veo: 12, veo_3: 12, sora: 20, hailuo: 10,
 };
 export function engineUsableSec(videoModel: string): number {
   const key = T(videoModel).toLowerCase();
-  return ENGINE_USABLE[key] ?? ENGINE_USABLE[key.split('_')[0]] ?? 8.5;
+  return ENGINE_USABLE[key] ?? ENGINE_USABLE[key.split('_')[0]] ?? 10;
 }
 
 export interface DurationVerdict { sec: number; usable: number; ok: boolean; level: 'OK' | 'SPLIT'; message: string; }
@@ -205,8 +207,8 @@ export function durationGuard(scriptText: string, videoModel: string): DurationV
     sec, usable, ok,
     level: ok ? 'OK' : 'SPLIT',
     message: ok
-      ? `~${sec}s · ${videoModel} ${usable}s sınırı içinde`
-      : `BÖLEMEZSİN: ~${sec}s, ${videoModel} tek çekimde ~${usable}s render eder. Metni kısalt ya da sahneyi böl.`,
+      ? `~${sec}s · ${videoModel} tutarlı penceresinde (${usable}s)`
+      : `~${sec}s, ${videoModel}'in tutarlı tek-çekim penceresini (${usable}s) aşıyor — beat'i ikinci bir onaylı kareyle sürdür (gerimeyle değil).`,
   };
 }
 
@@ -246,7 +248,7 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     'Negative: ' + T(ctx.pathForbidden).replace(/\.\s*$/, '') + '; ' + dna.avoid.replace(/\.\s*$/, '') + '; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.',
     ctx.projectKind === 'design' ? 'Final production-ready static design frame.' : 'Clean motion-ready start frame.',
   ].filter(Boolean);
-  return '[' + T(sceneId) + '] IMAGE (Nano Banana 2 / Gemini ' + (ctx.projectKind === 'design' ? 'static design' : 'start frame') + ')\n' + parts.join(' ');
+  return '[' + T(sceneId) + '] IMAGE (' + (ctx.projectKind === 'design' ? 'final static design frame' : 'motion start frame') + ')\n' + parts.join(' ');
 }
 
 // ---------------- agent brief (paste into Claude Projects / Custom GPT) ----------------
@@ -258,6 +260,7 @@ export interface AgentBriefCtx {
   projectTopic: string; productionPath: string; register: Register;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
   projectKind?: 'video' | 'design'; brandKitLock?: string; material?: string;
+  imageModel?: string; videoModel?: string;
   mood?: string; cameraEnergy?: string; timeLight?: string; transition?: string; musicVibe?: string;
   pov?: string; signature?: string; leitmotif?: string; tempoCurve?: string;
   /** Only set when an A/B/C variant test is active. Absent on every normal brief — keeps the default brief pristine. */
@@ -310,8 +313,11 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}`,
     `Cast: ${T(ctx.cast)}`,
     ctx.projectKind === 'design'
-      ? 'Deliverable: STATIC DESIGN. Produce image/design directions only; no Kling, motion, Suno, music or VO deliverables.'
-      : 'Engines: Nano Banana 2 (image) → Kling 3.0 (motion) → Suno v5.5 (music) → ElevenLabs (VO)',
+      ? 'Deliverable: STATIC DESIGN. Produce image/design directions only; no motion, music or VO deliverables.'
+      : `Pipeline (2026 frontier): image → ${T(ctx.imageModel) || 'current SOTA image model'} · motion → ${T(ctx.videoModel) || 'current SOTA i2v'} · music → Suno · VO → ElevenLabs`,
+    '',
+    '== MODEL ERA — write for 2026 frontier generators ==',
+    'These are current frontier models. Express intent in natural language; trust them with complex single-frame staging, real materials and longer coherent shots. Reserve negatives for genuine failure modes (morph, identity/material drift, invented objects) — never resolution or quality cargo-culting ("4K", "8K", "ultra-detailed", "masterpiece", "award-winning"). Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',
     '',
     ...brandKitBlock(ctx),
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
@@ -348,10 +354,10 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
       'Apply these across every scene as bias for camera, light, pacing, palette feel and music. They never override Production Path, Visual World, Teaching Material, source text, @tags, logo, face or any lock.',
       ''
     ].join('\n') : '',
-    ctx.projectKind === 'design' ? '== STATIC DESIGN LAW ==' : '== KLING ANCHOR LAW ==',
+    ctx.projectKind === 'design' ? '== STATIC DESIGN LAW ==' : '== I2V ANCHOR LAW ==',
     ctx.projectKind === 'design'
       ? 'Each item is a final static composition. Preserve format hierarchy, safe text geometry and source meaning; do not invent animation or soundtrack instructions.'
-      : 'Every approved start frame is the half-second before its motion. Kling PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Default 5-6s; longer coverage = another frame, never a stretched beat.',
+      : 'Every approved start frame is the half-second before its motion. The i2v engine PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Hold ONE event per shot; if the beat needs more than the engine\'s coherent window, continue with another approved frame — never stretch a beat.',
     '',
     ...variantBlock(ctx),
     '== SCENE DOSSIER ==',
@@ -382,7 +388,7 @@ export function primePacket(
 
   const head = `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}\nCast: ${T(ctx.cast)}`;
 
-  const header = `MAMILAS ${id === 'motion' ? 'MOTION DIRECTOR — Kling 3.0' : id === 'suno' ? 'SUNO DIRECTOR — v5.5 Custom Mode' : id.toUpperCase() + ' DIRECTOR'}`;
+  const header = `MAMILAS ${id === 'motion' ? 'MOTION DIRECTOR — i2v' : id === 'suno' ? 'SUNO DIRECTOR — Custom Mode' : id.toUpperCase() + ' DIRECTOR'}`;
 
   const dossierText = scenes.map(s => `${s.concept.subject} ${s.concept.event}`).join(' ');
   const findings = proofDoctor({ type: 'brief', text: dossierText });
@@ -439,8 +445,8 @@ export function primePacket(
     return [
       ...base,
       '',
-      '== KLING ANCHOR LAW ==',
-      'Every approved start frame is the half-second before its motion. Kling PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Default 5-6s; longer coverage = another frame, never a stretched beat.',
+      '== I2V ANCHOR LAW ==',
+      'Every approved start frame is the half-second before its motion. The i2v engine PLAYS the frame: one moving element, one cause-effect-settle event, camera moves through existing space only, nothing invented, stable final hold. Hold ONE event per shot; if the beat needs more than the engine\'s coherent window, continue with another approved frame — never stretch a beat.',
       `MOTION RHYTHM: ${dna.motion}`,
       '',
       '== SCENE DOSSIER (motion lines) ==',
@@ -500,7 +506,7 @@ export function buildMotionPrompt(sceneId: number | string, concept: Concept, ca
     'Rhythm: ' + dna.motion + '; everything settles naturally into a stable 1-1.5s final hold.',
     'Everything not named stays exactly as the start frame shows: world, material, light, faces, text, logo, geometry — never re-described, never re-rendered.',
   ].join(' ');
-  return '[' + T(sceneId) + '] MOTION (Kling 3.0 i2v · 5-6s · plays the approved start frame)\n' + body +
+  return '[' + T(sceneId) + '] MOTION (i2v · plays the approved start frame)\n' + body +
     '\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.' +
     (sec && sec > 8 ? '\nSPLIT NOTE: source runs ~' + sec + 's — cover with a second approved frame, never stretch this beat.' : '');
 }
