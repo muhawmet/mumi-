@@ -88,3 +88,30 @@ Run start — 2026-06-23 Europe/Istanbul — AŞAMA 1 başladı; bağlayıcı di
 - Sınır kontrolü: `agents/`, kaynak-bütünlüğü, kontrat kapısı, golden testleri ve 2-eksen üretim mimarisi değişmedi.
 - Kuzey Yıldızı: **Evet** — referans önizlemeleri artık ajana gidecek DNA direktifinin gerçek görsel niyetini seçimden önce kanıtlıyor; yanlış/jenerik referans beklentisi azalıyor.
 - Sonuç: **AŞAMA 3 PASS**.
+
+## AŞAMA 4 — Agent + Knowledge audit
+
+### Uygulama
+- Kapsam: `agents/GLOBAL_BRAIN.md`, `agents/README.md`, Claude x6, GPT x6 ve Knowledge x6 olmak üzere toplam `20` dosya satır satır mevcut site kontratıyla karşılaştırıldı.
+- Çıktı: `AGENT_AUDIT.md` içinde önceliklendirilmiş `P0/P1/P2` bulguları, gerçek site-token matrisi, 20 dosyalık tekil karar tablosu ve Claude için uygulanabilir 8 adımlı migrasyon sırası üretildi.
+- Kritik P0: README kurulum akışı `GLOBAL_BRAIN.md` dosyasını bağlamıyor; Motion adapter/knowledge katmanı sitenin `~9s → dengeli N shot, her shot ayrı onaylı start frame` yasasını taşımıyor.
+- Kritik P1: child agent/knowledge katmanı emekli `Visual World + Teaching Recipe / TACTILE_3D` ontolojisini ve mevcut DATA'da olmayan ID'leri kullanıyor; ayrıca site tarafından üretilmeyen `PHASE0_PRESET:` tokenına bağlı.
+- Korunan güçlü kurallar: source integrity, brand lock, Türkçe karakter, IP safety, Reference DNA hiyerarşisi, batch disiplini, exact repair ve usable-output-first davranışı PASS olarak ayrıştırıldı.
+- Neden: Claude'un sonraki değişiklikleri tahmine değil, mevcut `SURGERY_DATA`, `src/core/brain.ts` tokenları ve dosya bazlı doğrulama ölçütlerine dayanmalı.
+
+### Görsel kanıt ve öz-denetim
+- Screenshot: `phase4-agent-audit.png` — iki P0, iki ana P1, drift kaynağı, korunacak temeller ve hash bütünlüğünü tek ekranda özetleyen audit dashboard.
+- Browser kontrolü: dashboard gerçek tarayıcıda 1440×900 açıldı; içerik taşması, kesik metin veya kontrast problemi görülmedi. Tek network gürültüsü geçici localhost sayfasının favicon 404 isteğiydi; audit içeriği/runtime hatası değil.
+- Before: 20 dosyadaki doğru temeller ile eski ontology/token tabloları iç içeydi; düzeltme sırası ve gerçek site kontratı tek belgede kanıtlanmıyordu.
+- After: her dosyanın PASS/FIX kararı, exact önerisi ve doğrulama koşulu var; değişiklik yapacak Claude önce deployment ve motion P0'larını, sonra ontology/token P1'larını ele alabilir.
+- Koruma kanıtı: audit öncesi ve sonrası sıralı SHA-1 listeleri `cmp` ile `0` döndürdü — `agents/**/*.md` ve `knowledge/*.md` byte-byte değişmedi.
+
+### Gate — PASS
+- Komut: `git diff --check && npx tsc --noEmit && npx eslint . && npx vitest run && npx vite build`
+- TypeScript: `0 hata`.
+- ESLint: `0 hata`.
+- Vitest: `10/10 test file`, `136/136 test PASS`.
+- Vite: `2197 module transformed`, production build başarılı (`✓ built in 114ms`).
+- Sınır kontrolü: bu aşamada yalnız `AGENT_AUDIT.md`, `phase4-agent-audit.png` ve bu log bölümü üretildi; `agents/`, `knowledge/`, source integrity/contract/golden testleri değişmedi.
+- Kuzey Yıldızı: **Henüz agent bundle tarafında değil** — site doğru 2026 kontratını üretiyor, fakat audit deploy/motion P0'ları çözülmeden agent zincirinin aynı kaliteyi garanti edemediğini açıkça kanıtlıyor. Bu aşamanın teslimi, güvenli düzeltme için exact yol haritasıdır.
+- Sonuç: **AŞAMA 4 RAPOR PASS — AGENT EKOSİSTEMİ FIX REQUIRED**.
