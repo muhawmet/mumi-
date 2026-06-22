@@ -1,6 +1,8 @@
 import React from 'react';
 import { LayoutDashboard, Palette, Film, Sparkles } from 'lucide-react';
 import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudioStore';
+import { PreviewStage } from '../PreviewStage';
+import { GoldenViewer } from '../GoldenViewer';
 
 const STEPS: Array<{ id: Step; label: string; icon: React.ReactNode; index: number }> = [
   { id: 'dashboard', label: 'Brief', icon: <LayoutDashboard size={18} />, index: 1 },
@@ -55,21 +57,30 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
       <main className="ml-main" style={styles.main}>{children}</main>
 
       <aside className="ml-right-rail" style={styles.rightRail} data-testid="source-right-rail">
-        <div style={styles.railEyebrow}>SOURCE GATE</div>
-        <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
-          {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
-        </div>
-        <p style={styles.railCopy}>
-          {!rawSource
-            ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
-            : sourceGate.ready
-              ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
-              : sourceGate.reason}
-        </p>
-        <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
-        <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
-        <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
-        <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
+        {currentStep === 'dashboard' ? (
+          <>
+            <div style={styles.railEyebrow}>SOURCE GATE</div>
+            <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
+              {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
+            </div>
+            <p style={styles.railCopy}>
+              {!rawSource
+                ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
+                : sourceGate.ready
+                  ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
+                  : sourceGate.reason}
+            </p>
+            <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
+            <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
+            <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
+            <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
+          </>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <PreviewStage />
+            <GoldenViewer />
+          </div>
+        )}
       </aside>
     </div>
   );
