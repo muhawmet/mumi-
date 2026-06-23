@@ -21,14 +21,14 @@ test('app boots and renders Brief stage with Phase 0 cards', async ({ page }) =>
   await expect(page.getByText('STAGE 1 · BRIEF')).toBeVisible();
   // Panel title is rendered .toUpperCase() — match the literal uppercased string.
   await expect(page.getByText('PHASE 0 — HAZIR BAŞLANGIÇ')).toBeVisible();
-  await expect(page.getByText('Premium Reklam')).toBeVisible();
-  await expect(page.getByText('Eğitim · Aras & Defne')).toBeVisible();
+  await expect(page.getByText('Ürün / Marka Filmi')).toBeVisible();
+  await expect(page.getByText('Eğitim / Açıklayıcı')).toBeVisible();
 });
 
 test('Phase 0 preset wires world and lets us complete the full flow', async ({ page }) => {
   await freshGoto(page);
 
-  await page.getByText('Eğitim · Aras & Defne').click();
+  await page.getByText('Eğitim / Açıklayıcı').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
   await expect(page.getByText('STAGE 2 · REÇETE')).toBeVisible();
 
@@ -40,8 +40,8 @@ test('Phase 0 preset wires world and lets us complete the full flow', async ({ p
   await page.keyboard.press('Meta+Enter');
 
   await expect(page.getByText('SAHNELER (5)')).toBeVisible();
-  await expect(page.getByText('Sahne 1 · Intro')).toBeVisible();
-  await expect(page.getByText('Sahne 5 · Resolution')).toBeVisible();
+  await expect(page.getByText('SAHNE 1 · INTRO', { exact: true })).toBeVisible();
+  await expect(page.getByText('5/5 üretildi')).toBeVisible();
 
   await expect(page.getByText('IMAGE PROMPT').first()).toBeVisible();
   await expect(page.getByText('PACING ARCI')).toBeVisible();
@@ -63,7 +63,7 @@ test('Phase A decodes and losslessly ingests a curriculum brief', async ({ page 
 
   const summary = page.getByTestId('decode-summary');
   await expect(summary).toContainText('ANIMATION_EDU');
-  await expect(summary).toContainText('Aras + Defne Education');
+  await expect(summary).toContainText('Eğitim · Ders Anlatımı');
 
   await page.getByRole('button', { name: 'Decode + Kayıpsız Ingest' }).click();
   await expect(page.getByTestId('source-integrity-report')).toContainText('100%');
@@ -85,19 +85,19 @@ test('Phase A invalidates stale ingest and blocks progression after source edits
 
 test('keyboard shortcut ⌘/Ctrl+Enter advances the step', async ({ page }) => {
   await freshGoto(page);
-  await page.getByText('Eğitim · Aras & Defne').click();
+  await page.getByText('Eğitim / Açıklayıcı').click();
   await page.keyboard.press('Meta+Enter');
   await expect(page.getByText('STAGE 2 · REÇETE')).toBeVisible();
 });
 
 test('per-scene override persists across reloads', async ({ page }) => {
   await freshGoto(page);
-  await page.getByText('Eğitim · Aras & Defne').click();
+  await page.getByText('Eğitim / Açıklayıcı').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
   await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
   await page.getByRole('button', { name: /İleri → Timeline/ }).click();
-  await page.getByRole('button', { name: /BATCH ÜRET/ }).click();
-  await expect(page.getByText('Sahne 1 · Intro')).toBeVisible();
+  await page.getByRole('button', { name: /BATCH ÜRET/ }).first().click();
+  await expect(page.getByText('SAHNE 1 · INTRO', { exact: true })).toBeVisible();
 
   await page.getByRole('button', { name: /DÜZENLE/ }).first().click();
   const editor = page.locator('textarea').last();
@@ -114,13 +114,13 @@ test('per-scene override persists across reloads', async ({ page }) => {
 test('design preset produces an honest static IMAGE-only delivery', async ({ page }) => {
   await freshGoto(page);
   await page.getByRole('button', { name: /DESIGN · 7/ }).click();
-  await page.getByText('Ürün Postu').click();
+  await page.getByText('Ürün Lansmanı').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
   await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
   await page.getByRole('button', { name: /İleri → Timeline/ }).click();
 
   await expect(page.getByText('STAGE 4 · DESIGN TESLİMİ')).toBeVisible();
-  await page.getByRole('button', { name: /TASARIM ÜRET/ }).click();
+  await page.getByRole('button', { name: /TASARIM ÜRET/ }).first().click();
   await expect(page.getByText('1 tasarım kartı')).toBeVisible();
   await expect(page.getByText('Tasarım 1', { exact: true })).toBeVisible();
   await expect(page.getByText('HANDOFF PAKETLERİ (1)')).toBeVisible();
@@ -181,7 +181,7 @@ test('Reference DNA complete E2E workflow', async ({ page }) => {
   await freshGoto(page);
 
   // 1. Move to Stage 2 Reçete
-  await page.getByText('Eğitim · Aras & Defne').click();
+  await page.getByText('Eğitim / Açıklayıcı').click();
   await page.getByRole('button', { name: /Reçeteye geç/ }).click();
   await expect(page.getByText('STAGE 2 · REÇETE')).toBeVisible();
 
@@ -211,6 +211,7 @@ test('Reference DNA complete E2E workflow', async ({ page }) => {
   await expect(page.getByText('3/3 SEÇİLİ')).toBeVisible();
 
   // 4. Try to add a 4th DNA and check block
+  await searchInput.fill('one piece');
   await addOnePiece.click();
   await expect(page.locator('[role="status"]')).toContainText('Maximum 3 Referans DNA seçilebilir');
   await expect(page.getByText('3/3 SEÇİLİ')).toBeVisible();
@@ -223,6 +224,7 @@ test('Reference DNA complete E2E workflow', async ({ page }) => {
   await expect(page.getByText('2/3 SEÇİLİ')).toBeVisible();
 
   // Select it back to make it 3/3 again
+  await searchInput.fill('kurzgesagt');
   await addKurzgesagt.click();
   await expect(page.getByText('3/3 SEÇİLİ')).toBeVisible();
 
@@ -233,7 +235,7 @@ test('Reference DNA complete E2E workflow', async ({ page }) => {
   // 7. Go to Scenes, then to Timeline and batch generate
   await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
   await page.getByRole('button', { name: /İleri → Timeline/ }).click();
-  await page.getByRole('button', { name: /BATCH ÜRET/ }).click();
+  await page.getByRole('button', { name: /BATCH ÜRET/ }).first().click();
 
   // Verify that the generated prompt contains reference DNA influences
   await page.getByRole('button', { name: /DÜZENLE/ }).first().click();

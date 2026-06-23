@@ -4,7 +4,7 @@ test('Beat Planner renders and mode switch changes numbers', async ({ page }) =>
   await page.goto('http://localhost:5173/');
 
   // Use a preset to quickly set up valid state
-  await page.click('button:has-text("Premium Reklam")');
+  await page.click('button:has-text("Ürün / Marka Filmi")');
 
   // Fill in the brief
   await page.fill('textarea[placeholder*="Örn. 3. sınıf"]', 'Bu bir e2e testi için kısa bir brief. İçinde üç cümle var. Bu da son cümle.');
