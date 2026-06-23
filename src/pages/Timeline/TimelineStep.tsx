@@ -5,6 +5,7 @@ import { useStudioStore, effectivePrompt, type Scene } from '../../store/useStud
 import { quantumScore, proofDoctor, qaScore } from '../../core/proof';
 import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
+import { buildCommandJSON } from '../../core/commandExport';
 import { DATA } from '../../core/pure';
 import { dnaDirectives, registerOf, primePacket } from '../../core/brain';
 import { RecipeThumb } from '../../components/RecipeThumb';
@@ -47,6 +48,12 @@ export const TimelineStep = () => {
       scenes,
     };
     downloadFile(`${state.projectTopic.replace(/\s+/g, '_')}_timeline.json`, JSON.stringify(payload, null, 2), 'application/json');
+  };
+
+  const onExportCommandJSON = () => {
+    if (!scenes.length) return;
+    const payload = buildCommandJSON(state);
+    downloadFile(`${safeName}_mamilas_command.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
 
   const onExportHandoff = () => {
@@ -126,6 +133,7 @@ export const TimelineStep = () => {
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportJSON}>JSON</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportCSV}>CSV</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
+          {scenes.length > 0 && <Button variant="ghost" onClick={onExportCommandJSON}>Komut JSON</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
           {scenes.length > 0 && (
             <div style={{ position: 'relative', display: 'inline-block' }}>

@@ -68,11 +68,6 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         </ol>
 
         <ProductionPulse />
-
-        <footer className="ml-footer" style={styles.footer}>
-          <div style={styles.footerDot}><span style={styles.liveDot} /> M4 Max engine</div>
-          <div style={styles.footerLine}>Quantum OS Build</div>
-        </footer>
       </nav>
 
       <main className="ml-main" style={styles.main}>{children}</main>
@@ -187,10 +182,6 @@ const styles: Record<string, React.CSSProperties> = {
   stepText: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 0 },
   stepLabel: { fontSize: 13.5, fontWeight: 700, lineHeight: 1.1 },
   stepHint: { fontSize: 10, color: 'var(--text-dim)', letterSpacing: 0.2 },
-  footer: { marginTop: 'auto', fontSize: 9.5, color: 'var(--text-dim)', letterSpacing: 0.6, display: 'grid', gap: 6 },
-  footerDot: { display: 'flex', alignItems: 'center', gap: 7, color: 'var(--text-muted)', fontWeight: 600 },
-  liveDot: { width: 6, height: 6, borderRadius: 999, background: 'var(--green)', boxShadow: '0 0 8px var(--green)' },
-  footerLine: {},
   main: { flex: 1, overflowY: 'auto', position: 'relative', minWidth: 0, zIndex: 1 },
   rightRail: {
     width: 296,
