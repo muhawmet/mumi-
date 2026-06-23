@@ -95,6 +95,14 @@ describe('studio store helpers', () => {
     useStudioStore.getState().reset();
   });
 
+  it('migrates older persisted selections to preview the last chosen DNA when no active preview exists', () => {
+    const migrated = migratePersistedState({
+      selectedRefIds: ['pixar_dimensional', 'one_piece_sunny_adventure'],
+      activePreviewRefId: '',
+    });
+    expect(migrated.activePreviewRefId).toBe('one_piece_sunny_adventure');
+  });
+
   it('keeps edited image prompts in the IMAGE handoff and restores generated prompt on reset', () => {
     const scene = generatedScene();
     const edited = applyPromptOverride(scene, 'USER LOCKED PROMPT');

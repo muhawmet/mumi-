@@ -214,6 +214,13 @@ const initial = {
   vault: [] as VaultEntry[],
 };
 
+function previewFallbackRefId(refIds: unknown): string {
+  if (!Array.isArray(refIds)) return '';
+  const validIds = new Set((DATA.refs || []).map((r) => r.id));
+  const validRefIds = refIds.filter((id): id is string => typeof id === 'string' && validIds.has(id));
+  return validRefIds[validRefIds.length - 1] || '';
+}
+
 /** Cleared whenever the recipe or beat plan changes, so generated output never goes stale. */
 const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId'> = {
   scenes: [],
@@ -337,7 +344,7 @@ function migrateStateV5ToV6(state: any): any {
   state.selectedRefIds = refIds;
   state.activePreviewRefId = typeof state.activePreviewRefId === 'string' && validIds.has(state.activePreviewRefId)
     ? state.activePreviewRefId
-    : refIds[0] || '';
+    : previewFallbackRefId(refIds);
 
   // 2. Clear old scenes & generation outputs since they contain v5 refDNA
   state.scenes = [];
@@ -376,7 +383,9 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
   return {
     ...persisted,
     selectedRefIds: persisted.selectedRefIds || [],
-    activePreviewRefId: typeof persisted.activePreviewRefId === 'string' ? persisted.activePreviewRefId : persisted.selectedRefIds?.[0] || '',
+    activePreviewRefId: typeof persisted.activePreviewRefId === 'string' && DATA.refs.some((ref) => ref.id === persisted.activePreviewRefId)
+      ? persisted.activePreviewRefId
+      : previewFallbackRefId(persisted.selectedRefIds),
     ...(vault ? { vault } : {}),
     scenes,
     // Brief + packets are only trustworthy when the full scene batch survived migration.
@@ -408,7 +417,7 @@ export const useStudioStore = create<StudioState>()(
           const refIds = Array.isArray(value) ? value as string[] : [];
           set({
             selectedRefIds: refIds,
-            activePreviewRefId: s.activePreviewRefId || refIds[0] || '',
+            activePreviewRefId: s.activePreviewRefId || previewFallbackRefId(refIds),
             ...clearGeneration,
           });
           return;
@@ -621,9 +630,9 @@ export const useStudioStore = create<StudioState>()(
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
-      version: 6,
+      version: 7,
       migrate: (persistedState, version) => {
-        if (version < 6) {
+        if (version < 7) {
           return migratePersistedState(persistedState) as any;
         }
         return persistedState as any;

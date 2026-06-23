@@ -71,6 +71,7 @@ test('take UI screenshots', async ({ page }) => {
 
   await page.getByRole('button', { name: /İleri → Timeline/ }).click();
   await expect(page.getByText('STAGE 4 · TIMELINE')).toBeVisible();
+  await expect(page.locator('.preview-stage')).toHaveAttribute('data-active-ref', 'one_piece_sunny_adventure');
   await page.waitForTimeout(1000);
   await page.screenshot({ path: 'screenshots/04-timeline.png', fullPage: true });
 });

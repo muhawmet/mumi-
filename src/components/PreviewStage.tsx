@@ -28,7 +28,7 @@ export const PreviewStage: React.FC = () => {
 
   const state = buildPreviewState(previewInput);
 
-  const activeRefId = store.activePreviewRefId || store.selectedRefIds?.[0] || '';
+  const activeRefId = store.activePreviewRefId || store.selectedRefIds?.[store.selectedRefIds.length - 1] || '';
   const activeRef = DATA.refs.find((r) => r.id === activeRefId);
   const previewType = activeRef?.preview || 'default';
 
