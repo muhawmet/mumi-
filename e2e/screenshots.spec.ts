@@ -6,16 +6,18 @@ test('take UI screenshots', async ({ page }) => {
     fs.mkdirSync('screenshots');
   }
 
-  // Clear localStorage to start with a clean state
+  // Robust way to clean localStorage
   await page.goto('/');
-  await page.evaluate(() => {
-    try {
+  await page.waitForLoadState('load');
+  try {
+    await page.evaluate(() => {
       localStorage.removeItem('mamilas-studio-v1');
-    } catch {
-      /* ignore */
-    }
-  });
-  await page.reload();
+    });
+  } catch (e) {
+    // ignore
+  }
+  await page.goto('/');
+  await page.waitForLoadState('load');
   await page.waitForTimeout(500);
   await page.screenshot({ path: 'screenshots/01-dashboard.png', fullPage: true });
 
@@ -52,8 +54,10 @@ test('take UI screenshots', async ({ page }) => {
     // ignore if it doesn't exist
   }
 
-  // Click on the active reference slot at the top to open the details view
-  await page.getByText('One Piece — Sunny Adventure Grammar').first().click();
+  // Open the actual detail panel through the card action.
+  await searchInput.fill('one piece');
+  await page.getByRole('button', { name: 'Detay: One Piece — Sunny Adventure Grammar' }).click();
+  await expect(page.locator('#hero-detail-panel')).toBeVisible();
   await page.waitForTimeout(1000);
 
   // Take screenshot of the recipe page showing One Piece detail view

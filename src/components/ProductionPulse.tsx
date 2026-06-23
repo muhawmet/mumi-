@@ -1,10 +1,7 @@
-import { ArrowUpRight, Eye, AlertTriangle } from 'lucide-react';
-import type { CSSProperties } from 'react';
+import { ArrowUpRight, Eye } from 'lucide-react';
 import { productionPulse } from '../core/productionPulse';
 import { useStudioStore } from '../store/useStudioStore';
-import silverDirector from '../assets/silver-director.png';
-
-const LOCAL_IP_MODE = false;
+import noirDirector from '../assets/noir-creative-director.png';
 
 export function ProductionPulse() {
   const state = useStudioStore();
@@ -24,27 +21,18 @@ export function ProductionPulse() {
     harryComment = "Bir şeyler eksik. Parçaları birleştir.";
   }
 
-  const assetUrl = LOCAL_IP_MODE ? '/assets/harry_dubois.png' : silverDirector;
-
   return (
     <section className="ml-harry-pulse" aria-label="Harry Pulse">
-      {LOCAL_IP_MODE && (
-        <div style={{ color: 'var(--amber)', fontSize: 9, marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
-          <AlertTriangle size={10} />
-          <span>HARRY ASSET NOT FOUND - FALLBACK REQUIRED</span>
-        </div>
-      )}
-      
       <div className="ml-harry-container">
         <div className="ml-harry-avatar-wrap">
-          <img src={assetUrl} alt="Director Avatar" className="ml-harry-avatar" />
+          <img src={noirDirector} alt="Noir creative director" className="ml-harry-avatar" />
           <div className="ml-harry-avatar-overlay" />
         </div>
         
         <div className="ml-harry-content">
           <div className="ml-harry-header">
             <Eye size={12} color="var(--gold)" />
-            <span>{LOCAL_IP_MODE ? 'INLAND EMPIRE' : 'DIRECTOR\'S CUT'}</span>
+            <span>INLAND REVIEW</span>
           </div>
           
           <div className="ml-harry-quote">
@@ -74,4 +62,3 @@ export function ProductionPulse() {
     </section>
   );
 }
-
