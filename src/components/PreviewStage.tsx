@@ -48,10 +48,11 @@ export const PreviewStage: React.FC = () => {
       {/* ── Live Canvas Preview ── */}
       <div style={{
         width: '100%',
-        height: '180px',
+        height: '224px',
         position: 'relative',
         overflow: 'hidden',
         borderRadius: '14px 14px 0 0',
+        boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.06), 0 18px 44px -28px rgba(247,201,72,0.35)',
       }}>
         <CanvasPreview
           colors={state.colors}

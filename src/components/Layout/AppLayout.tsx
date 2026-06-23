@@ -73,30 +73,37 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
       <main className="ml-main" style={styles.main}>{children}</main>
 
       <aside className="ml-right-rail" style={styles.rightRail} data-testid="source-right-rail">
-        {currentStep === 'dashboard' ? (
-          <>
-            <div style={styles.railEyebrow}>SOURCE GATE</div>
-            <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
-              {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
+        <div style={styles.railStack}>
+          <section style={styles.drawingMonitor}>
+            <div style={styles.monitorHead}>
+              <span style={styles.railEyebrow}>ÇİZİM EKRANI</span>
+              <span style={styles.monitorKicker}>LIVE CANVAS</span>
             </div>
-            <p style={styles.railCopy}>
-              {!rawSource
-                ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
-                : sourceGate.ready
-                  ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
-                  : sourceGate.reason}
-            </p>
-            <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
-            <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
-            <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
-            <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
-          </>
-        ) : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <PreviewStage />
+          </section>
+
+          {currentStep === 'dashboard' ? (
+            <section style={styles.sourceCard}>
+              <div style={styles.railEyebrow}>SOURCE GATE</div>
+              <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
+                {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
+              </div>
+              <p style={styles.railCopy}>
+                {!rawSource
+                  ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
+                  : sourceGate.ready
+                    ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
+                    : sourceGate.reason}
+              </p>
+              <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
+              <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
+              <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
+              <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
+            </section>
+          ) : (
             <RecipeRail />
-          </div>
-        )}
+          )}
+        </div>
       </aside>
     </div>
   );
@@ -184,9 +191,9 @@ const styles: Record<string, React.CSSProperties> = {
   stepHint: { fontSize: 10, color: 'var(--text-dim)', letterSpacing: 0.2 },
   main: { flex: 1, overflowY: 'auto', position: 'relative', minWidth: 0, zIndex: 1 },
   rightRail: {
-    width: 296,
+    width: 340,
     flexShrink: 0,
-    padding: '26px 20px',
+    padding: '24px 20px',
     borderLeft: '1px solid var(--line)',
     background: 'rgba(12, 12, 16, 0.66)',
     backdropFilter: 'blur(26px)',
@@ -197,6 +204,24 @@ const styles: Record<string, React.CSSProperties> = {
     overflowY: 'auto',
     zIndex: 2,
   },
+  railStack: { display: 'flex', flexDirection: 'column', gap: 18 },
+  drawingMonitor: {
+    padding: 10,
+    borderRadius: 20,
+    border: '1px solid rgba(247, 201, 72, 0.18)',
+    background:
+      'linear-gradient(180deg, rgba(247, 201, 72, 0.08), rgba(255,255,255,0.025) 42%, rgba(0,0,0,0.12))',
+    boxShadow: '0 18px 45px -34px var(--goldglow), inset 0 1px 0 rgba(255,255,255,0.06)',
+  },
+  monitorHead: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '2px 4px 10px' },
+  monitorKicker: {
+    fontSize: 9,
+    letterSpacing: 1.4,
+    color: 'var(--text-dim)',
+    fontWeight: 800,
+    fontFamily: 'var(--font-mono)',
+  },
+  sourceCard: { padding: 16, border: '1px solid var(--line2)', borderRadius: 'var(--r-lg)', background: 'var(--panel)', boxShadow: 'var(--shadow-sm)' },
   railEyebrow: { fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 800 },
   railStatus: { fontSize: 28, fontWeight: 800, marginTop: 12, letterSpacing: -0.5 },
   railCopy: { color: 'var(--text-muted)', fontSize: 12, lineHeight: 1.6, minHeight: 76, marginTop: 6 },
