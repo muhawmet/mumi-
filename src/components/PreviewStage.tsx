@@ -28,12 +28,12 @@ export const PreviewStage: React.FC = () => {
 
   const state = buildPreviewState(previewInput);
 
-  // Find the preview type from the first selected reference
-  const firstRef = DATA.refs.find((r) => r.id === store.selectedRefIds?.[0]);
-  const previewType = firstRef?.preview || 'default';
+  const activeRefId = store.activePreviewRefId || store.selectedRefIds?.[0] || '';
+  const activeRef = DATA.refs.find((r) => r.id === activeRefId);
+  const previewType = activeRef?.preview || 'default';
 
   return (
-    <div className="preview-stage" data-wcat={state.category} style={{
+    <div className="preview-stage" data-wcat={state.category} data-active-ref={activeRef?.id || ''} style={{
       display: 'flex',
       flexDirection: 'column',
       gap: '10px',
@@ -59,7 +59,7 @@ export const PreviewStage: React.FC = () => {
           category={state.category}
           previewType={previewType}
           worldId={store.selectedWorldId}
-          refId={store.selectedRefIds?.[0]}
+          refId={activeRef?.id}
         />
 
         {/* Overlay badges */}
@@ -95,7 +95,7 @@ export const PreviewStage: React.FC = () => {
           textShadow: '0 2px 12px rgba(0,0,0,0.8)',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         }}>
-          <span>{state.worldName}</span>
+          <span>{activeRef?.name || state.worldName}</span>
           <span style={{ fontSize: 9, opacity: 0.7 }}>{state.matName}</span>
         </div>
       </div>

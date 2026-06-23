@@ -58,6 +58,7 @@ test('take UI screenshots', async ({ page }) => {
   await searchInput.fill('one piece');
   await page.getByRole('button', { name: 'Detay: One Piece — Sunny Adventure Grammar' }).click();
   await expect(page.locator('#hero-detail-panel')).toBeVisible();
+  await expect(page.locator('.preview-stage')).toHaveAttribute('data-active-ref', 'one_piece_sunny_adventure');
   await page.waitForTimeout(1000);
 
   // Take screenshot of the recipe page showing One Piece detail view

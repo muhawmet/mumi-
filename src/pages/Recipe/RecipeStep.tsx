@@ -90,6 +90,7 @@ export const RecipeStep = () => {
     tempoCurve,
     projectClass,
     setField,
+    setActivePreviewRefId,
     setCurrentStep,
     advance,
   } = useStudioStore();
@@ -142,11 +143,13 @@ export const RecipeStep = () => {
   const applyStarterPack = () => {
     if (!selectedWorld || starterPack.length === 0) return;
     setField('selectedRefIds', starterPack.map((ref) => ref.id));
+    setActivePreviewRefId(starterPack[0]?.id || '');
     setToastMsg(`${selectedWorld.name} için küratörlü DNA paketi uygulandı.`);
     window.setTimeout(() => setToastMsg(null), 3000);
   };
 
   const toggleRef = (id: string) => {
+    setActivePreviewRefId(id);
     setToastMsg(null);
     const r = DATA.refs.find(x => x.id === id);
     if (!r) return;
@@ -173,6 +176,11 @@ export const RecipeStep = () => {
 
   const removeRef = (id: string) => {
     setField('selectedRefIds', (selectedRefIds || []).filter(x => x !== id));
+  };
+
+  const inspectRef = (id: string) => {
+    setSelectedDetailRefId(id);
+    setActivePreviewRefId(id);
   };
 
   return (
@@ -557,7 +565,7 @@ export const RecipeStep = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  onClick={() => setSelectedDetailRefId(r.id)}
+                  onClick={() => inspectRef(r.id)}
                   style={{
                     background: selected ? 'linear-gradient(180deg,rgba(247,201,72,.08),rgba(0,0,0,.2))' : 'linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.2))',
                     border: selected ? '1px solid var(--gold)' : conflict ? '1px solid var(--red)' : '1px solid var(--line2)',
@@ -598,7 +606,7 @@ export const RecipeStep = () => {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--line2)', paddingTop: 10, marginTop: 4 }}>
                       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         <button
-                          onClick={(e) => { e.stopPropagation(); setSelectedDetailRefId(r.id); }}
+                          onClick={(e) => { e.stopPropagation(); inspectRef(r.id); }}
                           aria-label={`Detay: ${r.name}`}
                           style={{
                             background: 'transparent',

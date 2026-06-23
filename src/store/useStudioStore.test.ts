@@ -79,8 +79,19 @@ describe('studio store helpers', () => {
     const state = useStudioStore.getState();
     expect(state.selectedWorldId).toBe('clay');
     expect(DATA.refs.some((r) => state.selectedRefIds.includes(r.id))).toBe(true);
+    expect(state.activePreviewRefId).toBe(state.selectedRefIds[0]);
     expect(DATA.palettes.some((p) => p.id === state.selectedPaletteId)).toBe(true);
     expect(recipeReadiness(state).ready).toBe(true);
+    useStudioStore.getState().reset();
+  });
+
+  it('keeps the drawing monitor on the inspected reference instead of forcing the first slot', () => {
+    useStudioStore.getState().reset();
+    useStudioStore.getState().setActivePreviewRefId('one_piece_sunny_adventure');
+    useStudioStore.getState().setField('selectedRefIds', ['pixar_dimensional', 'soul']);
+    const state = useStudioStore.getState();
+    expect(state.selectedRefIds).toEqual(['pixar_dimensional', 'soul']);
+    expect(state.activePreviewRefId).toBe('one_piece_sunny_adventure');
     useStudioStore.getState().reset();
   });
 

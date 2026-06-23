@@ -97,6 +97,7 @@ export interface StudioState {
   selectedWorldId: string;
   selectedPropId: string;
   selectedRefIds: string[];
+  activePreviewRefId: string;
   selectedPaletteId: string;
   selectedMusicId: string;
 
@@ -133,6 +134,7 @@ export interface StudioState {
   currentStep: Step;
 
   setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
+  setActivePreviewRefId: (id: string) => void;
   setScenes: (scenes: Scene[]) => void;
   setCurrentStep: (step: Step) => void;
   setRawSource: (raw: string) => void;
@@ -173,6 +175,7 @@ const initial = {
   selectedWorldId: '',
   selectedPropId: 'native_world',
   selectedRefIds: [] as string[],
+  activePreviewRefId: '',
   selectedPaletteId: '',
   selectedMusicId: '',
 
@@ -231,6 +234,7 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     selectedWorldId: s.selectedWorldId,
     selectedPropId: s.selectedPropId,
     selectedRefIds: s.selectedRefIds,
+    activePreviewRefId: s.activePreviewRefId,
     selectedPaletteId: s.selectedPaletteId,
     selectedMusicId: s.selectedMusicId,
     imageModel: s.imageModel,
@@ -279,6 +283,7 @@ export function presetWithDefaults(
   return {
     ...preset,
     selectedRefIds: preset.selectedRefIds?.length ? preset.selectedRefIds : defaults.selectedRefIds,
+    activePreviewRefId: (preset.selectedRefIds?.length ? preset.selectedRefIds[0] : defaults.selectedRefIds[0]) || '',
     selectedPaletteId: preset.selectedPaletteId || defaults.selectedPaletteId,
     ...STALE_GENERATION,
     lastError: null,
@@ -330,6 +335,9 @@ function migrateStateV5ToV6(state: any): any {
   }
 
   state.selectedRefIds = refIds;
+  state.activePreviewRefId = typeof state.activePreviewRefId === 'string' && validIds.has(state.activePreviewRefId)
+    ? state.activePreviewRefId
+    : refIds[0] || '';
 
   // 2. Clear old scenes & generation outputs since they contain v5 refDNA
   state.scenes = [];
@@ -368,6 +376,7 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
   return {
     ...persisted,
     selectedRefIds: persisted.selectedRefIds || [],
+    activePreviewRefId: typeof persisted.activePreviewRefId === 'string' ? persisted.activePreviewRefId : persisted.selectedRefIds?.[0] || '',
     ...(vault ? { vault } : {}),
     scenes,
     // Brief + packets are only trustworthy when the full scene batch survived migration.
@@ -387,12 +396,21 @@ export const useStudioStore = create<StudioState>()(
         const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null };
         if (field === 'selectedWorldId') {
           const defaults = resolveRecipeDefaults(s.projectClass, String(value));
-          set({ selectedWorldId: String(value), ...defaults, ...clearGeneration });
+          set({ selectedWorldId: String(value), ...defaults, activePreviewRefId: defaults.selectedRefIds[0] || '', ...clearGeneration });
           return;
         }
         if (field === 'projectClass') {
           const defaults = resolveRecipeDefaults(String(value), s.selectedWorldId);
-          set({ projectClass: String(value), ...defaults, ...clearGeneration });
+          set({ projectClass: String(value), ...defaults, activePreviewRefId: defaults.selectedRefIds[0] || '', ...clearGeneration });
+          return;
+        }
+        if (field === 'selectedRefIds') {
+          const refIds = Array.isArray(value) ? value as string[] : [];
+          set({
+            selectedRefIds: refIds,
+            activePreviewRefId: s.activePreviewRefId || refIds[0] || '',
+            ...clearGeneration,
+          });
           return;
         }
         const generationFields: Array<keyof StudioState> = [
@@ -406,6 +424,7 @@ export const useStudioStore = create<StudioState>()(
           ...(generationFields.includes(field) ? clearGeneration : {}),
         });
       },
+      setActivePreviewRefId: (activePreviewRefId) => set({ activePreviewRefId }),
       setScenes: (scenes) => set({ scenes }),
       setCurrentStep: (currentStep) => set({ currentStep }),
       setRawSource: (rawSource) => set({
@@ -427,6 +446,7 @@ export const useStudioStore = create<StudioState>()(
           projectClass: decoded.path,
           selectedWorldId: decoded.project.world,
           selectedRefIds: decoded.project.ref ? [decoded.project.ref] : [],
+          activePreviewRefId: decoded.project.ref || '',
           selectedPaletteId: decoded.project.palette,
           projectTopic: rawSource.trim().split(/\n+/u)[0]?.slice(0, 160) || get().projectTopic,
           scenes: [],
