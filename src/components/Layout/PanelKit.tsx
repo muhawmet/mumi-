@@ -12,8 +12,11 @@ export const Panel: React.FC<{
   children: React.ReactNode;
   /** Optional element rendered on the right of the header (actions, chips). */
   aside?: React.ReactNode;
-}> = ({ title, subtitle, children, aside }) => (
+  className?: string;
+  style?: React.CSSProperties;
+}> = ({ title, subtitle, children, aside, className, style }) => (
   <section
+    className={className}
     style={{
       background: 'var(--panel)',
       backdropFilter: 'blur(var(--blur))',
@@ -24,6 +27,7 @@ export const Panel: React.FC<{
       boxShadow: 'var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
       position: 'relative',
       overflow: 'hidden',
+      ...style,
     }}
   >
     {/* hairline top highlight */}

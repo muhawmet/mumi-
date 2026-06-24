@@ -2,8 +2,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStudioStore, recipeReadiness } from '../../store/useStudioStore';
 import { Panel, Field, Button, Chip, selectStyle } from '../../components/Layout/PanelKit';
-import { DATA, groupedWorlds, deriveProductionPath, deriveTeachingRecipe, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
-import { registerOf } from '../../core/brain';
+import { DATA, groupedWorlds, deriveProductionPath, deriveTeachingRecipe, materialClauseOf, SurgeryRef, MOOD_OPTS, CAM_OPTS, LIGHT_OPTS, MUS_OPTS, TRANS_OPTS, POV_OPTS, SIG_OPTS, LEIT_OPTS, TEMPO_OPTS } from '../../core/pure';
+import { registerOf, renderLock } from '../../core/brain';
 import { dnaStrength, refContribution, refFit, REF_FIT_CONFLICT, starterPackFor } from '../../core/advisor';
 
 function worldGradient(colors?: string[]): string {
@@ -118,9 +118,12 @@ export const RecipeStep = () => {
   const recipe = selectedWorld ? deriveTeachingRecipe(selectedWorld, selectedPropId) : null;
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, selectedRefIds });
   const dnaRegister = registerOf(deriveProductionPath(projectClass));
+  const selectedMaterialClause = isRealWorld ? '' : materialClauseOf(selectedPropId);
+  const selectedWorldRenderLock = selectedWorld ? renderLock(selectedWorld, dnaRegister, selectedMaterialClause || undefined) : '';
+  const isNamedStyleWorld = Boolean(selectedWorld && /arcane|spider|ghibli|anime|pixar|laika/i.test(`${selectedWorld.id} ${selectedWorld.name}`));
   const selectedRefs = (selectedRefIds || []).map((id) => DATA.refs.find((ref) => ref.id === id)).filter(Boolean) as SurgeryRef[];
-  const strength = dnaStrength(selectedRefs, dnaRegister);
   const starterPack = selectedWorld ? starterPackFor(selectedWorld.id) : [];
+  const strength = dnaStrength(selectedRefs, dnaRegister);
   const starterApplied = starterPack.length > 0 && starterPack.every((ref) => selectedRefIds.includes(ref.id));
 
   const categories = useMemo(() => {
@@ -184,7 +187,7 @@ export const RecipeStep = () => {
   };
 
   return (
-    <div className="recipe-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1180 }}>
+    <div className="recipe-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1600 }}>
       <header>
         <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 2 · REÇETE</div>
         <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>Görsel DNA</h1>
@@ -202,6 +205,12 @@ export const RecipeStep = () => {
       <Panel
         title={`Visual World Type (${DATA.worlds.length})`}
         subtitle={selectedWorld ? selectedWorld.formula : 'Sahnenin tüm görsel grameri buradan akar.'}
+        className="world-type-panel"
+        style={{
+          background: 'linear-gradient(180deg, rgba(34,34,43,0.64), rgba(14,14,18,0.52))',
+          backdropFilter: 'blur(18px)',
+          WebkitBackdropFilter: 'blur(18px)',
+        }}
       >
         {Object.entries(worldGroups).map(([group, list]) => (
           <div key={group} style={{ marginBottom: 18 }}>
@@ -211,7 +220,7 @@ export const RecipeStep = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(148px, 1fr))',
                 gap: 10,
               }}
             >
@@ -228,8 +237,8 @@ export const RecipeStep = () => {
                     style={{
                       padding: 0,
                       borderRadius: 12,
-                      border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                      background: 'rgba(0,0,0,.25)',
+                      border: `1px solid ${active ? 'var(--gold)' : 'rgba(255,255,255,.12)'}`,
+                      background: active ? 'rgba(247,201,72,.075)' : 'rgba(0,0,0,.24)',
                       cursor: 'pointer',
                       textAlign: 'left',
                       color: '#fff',
@@ -237,10 +246,10 @@ export const RecipeStep = () => {
                       boxShadow: active ? '0 0 0 1px var(--gold), 0 12px 30px rgba(247,201,72,.16)' : 'none',
                     }}
                   >
-                    <div style={{ height: 56, background: worldGradient(w.colors) }} />
+                    <div style={{ height: 52, background: worldGradient(w.colors) }} />
                     <div style={{ padding: '10px 12px' }}>
-                      <div style={{ fontSize: 12, fontWeight: 700 }}>{w.name}</div>
-                      <div style={{ fontSize: 10, color: 'var(--text-muted)', marginTop: 2 }}>{w.id}</div>
+                      <div style={{ fontSize: 12, fontWeight: 800, lineHeight: 1.2 }}>{w.name}</div>
+                      <div style={{ fontSize: 10, color: 'var(--text-muted)', marginTop: 3 }}>{w.id}</div>
                     </div>
                   </motion.button>
                 );
@@ -251,22 +260,106 @@ export const RecipeStep = () => {
         {selectedWorld && (
           <div
             style={{
-              marginTop: 12,
-              padding: 14,
-              borderRadius: 10,
-              background: 'rgba(247,201,72,.04)',
-              border: '1px solid var(--line2)',
-              fontSize: 12,
-              color: 'var(--text-muted)',
-              lineHeight: 1.55,
+              marginTop: 14,
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1.35fr) minmax(240px, .65fr)',
+              gap: 12,
             }}
+            className="world-authority-grid"
           >
-            <div><strong style={{ color: '#fff' }}>Render:</strong> {selectedWorld.render}</div>
-            {selectedWorld.motion && (
-              <div style={{ marginTop: 6 }}>
-                <strong style={{ color: '#fff' }}>Motion:</strong> {selectedWorld.motion}
+            <div
+              style={{
+                padding: 16,
+                borderRadius: 12,
+                background: 'rgba(247,201,72,.055)',
+                border: '1px solid var(--goldline)',
+                boxShadow: 'var(--ring-gold)',
+                minWidth: 0,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 10 }}>
+                <div>
+                  <div style={{ fontSize: 10, letterSpacing: 2.2, color: 'var(--gold)', fontWeight: 900 }}>
+                    RENDER LOCK · WORLD TYPE ANAYASASI
+                  </div>
+                  <div style={{ marginTop: 4, color: '#fff', fontSize: 14, fontWeight: 800 }}>
+                    {selectedWorld.name}
+                  </div>
+                </div>
+                <Chip tone="gold">Copy verbatim</Chip>
               </div>
-            )}
+              <div
+                style={{
+                  padding: 13,
+                  borderRadius: 10,
+                  background: 'rgba(0,0,0,.28)',
+                  border: '1px solid var(--line2)',
+                  color: 'var(--text-soft)',
+                  fontSize: 12,
+                  lineHeight: 1.58,
+                  overflowWrap: 'anywhere',
+                }}
+              >
+                {selectedWorldRenderLock}
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 10, marginTop: 12 }}>
+                {selectedWorld.best && (
+                  <div style={{ padding: 11, borderRadius: 9, background: 'rgba(77,245,160,.045)', border: '1px solid rgba(77,245,160,.18)' }}>
+                    <div style={{ color: 'var(--green)', fontSize: 10, letterSpacing: 1.5, fontWeight: 800 }}>BEST FOR</div>
+                    <div style={{ color: 'var(--text-soft)', fontSize: 11.5, lineHeight: 1.45, marginTop: 5 }}>{selectedWorld.best}</div>
+                  </div>
+                )}
+                {selectedWorld.avoid && (
+                  <div style={{ padding: 11, borderRadius: 9, background: 'rgba(255,92,121,.045)', border: '1px solid rgba(255,92,121,.18)' }}>
+                    <div style={{ color: 'var(--red)', fontSize: 10, letterSpacing: 1.5, fontWeight: 800 }}>AVOID</div>
+                    <div style={{ color: 'var(--text-soft)', fontSize: 11.5, lineHeight: 1.45, marginTop: 5 }}>{selectedWorld.avoid}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div
+              style={{
+                padding: 16,
+                borderRadius: 12,
+                background: 'rgba(0,0,0,.22)',
+                border: '1px solid var(--line2)',
+                minWidth: 0,
+              }}
+            >
+              <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--text-muted)', fontWeight: 900 }}>
+                AUTHORITY ORDER
+              </div>
+              <ol style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
+                {[
+                  ['1', 'Path', deriveProductionPath(projectClass)],
+                  ['2', 'World Type', selectedWorld.name],
+                  ['3', 'Source meaning', 'Brief her zaman korunur'],
+                  ['4', 'Reference DNA', 'World Type üstüne katkı yapar'],
+                  ['5', 'Palette', 'Işık davranışı olarak okunur'],
+                ].map(([rank, label, value]) => (
+                  <li key={rank} style={{ display: 'grid', gridTemplateColumns: '24px minmax(0, 1fr)', gap: 9, alignItems: 'start' }}>
+                    <span style={{ width: 22, height: 22, borderRadius: 999, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: rank === '2' ? 'var(--gold)' : 'var(--s3)', color: rank === '2' ? '#000' : 'var(--text-muted)', fontSize: 10, fontWeight: 900, fontFamily: 'var(--font-mono)' }}>
+                      {rank}
+                    </span>
+                    <span style={{ minWidth: 0 }}>
+                      <span style={{ display: 'block', color: '#fff', fontSize: 12, fontWeight: 800 }}>{label}</span>
+                      <span style={{ display: 'block', color: 'var(--text-muted)', fontSize: 11.5, lineHeight: 1.35, marginTop: 2 }}>{value}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              {isNamedStyleWorld && (
+                <div style={{ marginTop: 13, padding: 11, borderRadius: 9, background: 'rgba(247,201,72,.06)', border: '1px solid var(--goldline)', color: 'var(--text-soft)', fontSize: 11.5, lineHeight: 1.45 }}>
+                  <strong style={{ color: 'var(--gold)' }}>{selectedWorld.name}</strong> seçimi karakter, logo veya hazır evren kopyası değildir; render gramerini kilitler. DNA, bu kilidi ezemez.
+                </div>
+              )}
+              {selectedWorld.motion && (
+                <div style={{ marginTop: 10, color: 'var(--text-muted)', fontSize: 11.5, lineHeight: 1.45 }}>
+                  <strong style={{ color: '#fff' }}>Motion:</strong> {selectedWorld.motion}
+                </div>
+              )}
+            </div>
           </div>
         )}
       </Panel>

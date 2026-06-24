@@ -14,15 +14,15 @@
   --s3:        #25252f;
   --s4:        #31313d;
 
-  /* — Panel fills (opaque enough to separate from the ambient bg) — */
-  --panel:     linear-gradient(180deg, rgba(34,34,43,0.82), rgba(21,21,27,0.82));
-  --panel-2:   linear-gradient(180deg, rgba(40,40,50,0.9), rgba(26,26,33,0.9));
-  --inset:     rgba(0,0,0,0.32);
+  /* — Panel fills (glass enough to reveal the aquarium, still readable) — */
+  --panel:     linear-gradient(180deg, rgba(34,34,43,0.68), rgba(16,16,22,0.58));
+  --panel-2:   linear-gradient(180deg, rgba(40,40,50,0.76), rgba(20,20,27,0.66));
+  --inset:     rgba(0,0,0,0.26);
 
   /* — Glass — */
   --glass:        rgba(255, 255, 255, 0.05);
   --glass-2:      rgba(255, 255, 255, 0.08);
-  --glass-bg:     rgba(22, 22, 28, 0.6);
+  --glass-bg:     rgba(22, 22, 28, 0.48);
   --glass-hi:     rgba(255, 255, 255, 0.14);
 
   /* — Hairlines — */

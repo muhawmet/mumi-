@@ -77,6 +77,16 @@ export const DirectorStep = () => {
   const selectedWorld = DATA.worlds.find((world) => world.id === selectedWorldId);
   const selectedPalette = DATA.palettes.find((palette) => palette.id === selectedPaletteId);
   const selectedRefs = resolveRefs(selectedRefIds || []);
+  const activeDecisionRows = preset?.directorPanel.groups.map((group) => {
+    const choiceId = directorChoices[group.id] || group.defaultChoiceId;
+    const choice = group.choices.find((item) => item.id === choiceId) || group.choices[0];
+    return {
+      id: group.id,
+      label: group.label,
+      value: choice?.label || '—',
+      desc: choice?.desc || '',
+    };
+  }) || [];
 
   const refreshMandate = (nextChoices = directorChoices, activePreset = preset) => {
     if (!activePreset) return;
@@ -129,7 +139,7 @@ export const DirectorStep = () => {
   }
 
   return (
-    <div className="director-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1120 }}>
+    <div className="director-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1460 }}>
       <header>
         <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>
           STAGE 2 · {preset.directorPanel.eyebrow}
@@ -142,180 +152,249 @@ export const DirectorStep = () => {
         </p>
       </header>
 
-      <Panel
-        title="Path kararları"
-        subtitle="Bu menü seçili Phase 0 yoluna aittir; seçenekler final brief ve prompt beynine mandate olarak taşınır."
-        aside={
-          <Button variant="ghost" onClick={resetToPreset} style={{ padding: '9px 13px', fontSize: 12 }}>
-            <RotateCcw size={14} /> Default'a dön
-          </Button>
-        }
+      <div
+        className="director-workspace"
+        style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(260px, 320px)', gap: 18, alignItems: 'start' }}
       >
-        <div style={{ display: 'grid', gap: 18 }}>
-          {preset.directorPanel.groups.map((group) => (
-            <section key={group.id} style={{ display: 'grid', gap: 10 }}>
-              <div>
-                <div style={{ color: 'var(--text)', fontSize: 13, fontWeight: 800 }}>{group.label}</div>
-                <div style={{ color: 'var(--text-muted)', fontSize: 12, marginTop: 3 }}>{group.desc}</div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 10 }}>
-                {group.choices.map((choice) => {
-                  const active = (directorChoices[group.id] || group.defaultChoiceId) === choice.id;
-                  return (
-                    <button
-                      key={choice.id}
-                      type="button"
-                      onClick={() => choose(group.id, choice.id)}
-                      style={{
-                        minHeight: 116,
-                        padding: '14px 14px',
-                        borderRadius: 'var(--r-md)',
-                        border: `1px solid ${active ? 'var(--goldline)' : 'var(--line2)'}`,
-                        background: active ? 'var(--goldsoft)' : 'rgba(255,255,255,0.025)',
-                        color: 'var(--text)',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 9,
-                        boxShadow: active ? '0 10px 26px -18px var(--goldglow)' : 'none',
-                      }}
-                    >
-                      <span style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'flex-start' }}>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: active ? 'var(--gold-hi)' : 'var(--text-soft)' }}>
-                          {choice.label}
-                        </span>
-                        {active && <Check size={15} color="var(--gold)" strokeWidth={3} />}
-                      </span>
-                      <span style={{ fontSize: 11.5, lineHeight: 1.45, color: 'var(--text-muted)' }}>{choice.desc}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
-        </div>
-      </Panel>
-
-      <Panel title="Canlı ince ayar" subtitle="Path kararını bozmadan dünya, palet, referans paketi ve sahne sayısını burada netleştir.">
-        <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-          <Field label="Production path">
-            <select
-              aria-label="Production path"
-              data-testid="director-project-class"
-              style={selectStyle}
-              value={projectClass}
-              onChange={(event) => setField('projectClass', event.target.value)}
-            >
-              {DATA.paths.map((path) => (
-                <option key={path.id} value={path.id} style={{ background: '#0d1018' }}>
-                  {path.name}
-                </option>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0 }}>
+          <Panel
+            title="Path kararları"
+            subtitle="Bu menü seçili Phase 0 yoluna aittir; seçenekler final brief ve prompt beynine mandate olarak taşınır."
+            aside={
+              <Button variant="ghost" onClick={resetToPreset} style={{ padding: '9px 13px', fontSize: 12 }}>
+                <RotateCcw size={14} /> Default'a dön
+              </Button>
+            }
+          >
+            <div style={{ display: 'grid', gap: 18 }}>
+              {preset.directorPanel.groups.map((group) => (
+                <section key={group.id} style={{ display: 'grid', gap: 10 }}>
+                  <div>
+                    <div style={{ color: 'var(--text)', fontSize: 13, fontWeight: 800 }}>{group.label}</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: 12, marginTop: 3 }}>{group.desc}</div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 10 }}>
+                    {group.choices.map((choice) => {
+                      const active = (directorChoices[group.id] || group.defaultChoiceId) === choice.id;
+                      return (
+                        <button
+                          key={choice.id}
+                          type="button"
+                          onClick={() => choose(group.id, choice.id)}
+                          style={{
+                            minHeight: 116,
+                            padding: '14px 14px',
+                            borderRadius: 'var(--r-md)',
+                            border: `1px solid ${active ? 'var(--goldline)' : 'var(--line2)'}`,
+                            background: active ? 'var(--goldsoft)' : 'rgba(255,255,255,0.025)',
+                            color: 'var(--text)',
+                            cursor: 'pointer',
+                            textAlign: 'left',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 9,
+                            boxShadow: active ? '0 10px 26px -18px var(--goldglow)' : 'none',
+                          }}
+                        >
+                          <span style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'flex-start' }}>
+                            <span style={{ fontSize: 13, fontWeight: 800, color: active ? 'var(--gold-hi)' : 'var(--text-soft)' }}>
+                              {choice.label}
+                            </span>
+                            {active && <Check size={15} color="var(--gold)" strokeWidth={3} />}
+                          </span>
+                          <span style={{ fontSize: 11.5, lineHeight: 1.45, color: 'var(--text-muted)' }}>{choice.desc}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </section>
               ))}
-            </select>
-          </Field>
-          <Field label="World">
-            <select
-              aria-label="World"
-              data-testid="director-world"
-              style={selectStyle}
-              value={selectedWorldId}
-              onChange={(event) => setField('selectedWorldId', event.target.value)}
-            >
-              {DATA.worlds.map((world) => (
-                <option key={world.id} value={world.id} style={{ background: '#0d1018' }}>
-                  {world.group} · {world.name}
-                </option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Palet">
-            <select
-              aria-label="Palet"
-              data-testid="director-palette"
-              style={selectStyle}
-              value={selectedPaletteId}
-              onChange={(event) => setField('selectedPaletteId', event.target.value)}
-            >
-              <option value="" style={{ background: '#0d1018' }}>Palet seç</option>
-              {DATA.palettes.map((palette) => (
-                <option key={palette.id} value={palette.id} style={{ background: '#0d1018' }}>
-                  {palette.name}
-                </option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Sahne sayısı" hint="1-20">
-            <input
-              type="number"
-              min={1}
-              max={20}
-              style={inputStyle}
-              value={sceneCount}
-              onChange={(event) => setField('sceneCount', Math.max(1, Math.min(20, Number(event.target.value) || 1)))}
-            />
-          </Field>
-          <Field label="Referans paketi" hint="En fazla 3 DNA. Reçete adımında tek tek cerrahi seçim devam ediyor.">
-            <select
-              aria-label="Referans paketi"
-              data-testid="director-ref-pack"
-              style={selectStyle}
-              value={(selectedRefIds || []).join(',')}
-              onChange={(event) => setRefPack(event.target.value)}
-            >
-              <option value="" style={{ background: '#0d1018' }}>DNA paketi seç</option>
-              {preset.directorPanel.groups.flatMap((group) => (
-                group.choices.flatMap((choice) => (
-                  choice.sets.selectedRefIds?.length
-                    ? [(
-                      <option key={`${group.id}:${choice.id}`} value={choice.sets.selectedRefIds.join(',')} style={{ background: '#0d1018' }}>
-                        {group.label} · {choice.label}
-                      </option>
-                    )]
-                    : []
-                ))
-              ))}
-            </select>
-          </Field>
-        </div>
-
-        <div style={{ marginTop: 18, display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 10 }}>
-          {[
-            ['World', selectedWorld?.name || '—'],
-            ['Palet', selectedPalette?.name || '—'],
-            ['Ref DNA', selectedRefs.map((ref) => ref?.name).join(' + ') || '—'],
-          ].map(([label, value]) => (
-            <div key={label} style={{ padding: 12, borderRadius: 10, border: '1px solid var(--line2)', background: 'rgba(0,0,0,.18)', minWidth: 0 }}>
-              <div style={{ color: 'var(--text-muted)', fontSize: 10, letterSpacing: 1.4, textTransform: 'uppercase', fontWeight: 700 }}>{label}</div>
-              <div style={{ color: '#fff', fontSize: 12.5, marginTop: 6, lineHeight: 1.35, overflowWrap: 'anywhere' }}>{value}</div>
             </div>
-          ))}
-        </div>
-      </Panel>
+          </Panel>
 
-      <Panel title="Final brief kaydı" subtitle="Bu metin sahne promptlarına ve agent brief'e gider; seçtiğin kararların izi burada görünür.">
-        <div
+          <Panel title="Canlı ince ayar" subtitle="Path kararını bozmadan dünya, palet, referans paketi ve sahne sayısını burada netleştir.">
+            <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <Field label="Production path">
+                <select
+                  aria-label="Production path"
+                  data-testid="director-project-class"
+                  style={selectStyle}
+                  value={projectClass}
+                  onChange={(event) => setField('projectClass', event.target.value)}
+                >
+                  {DATA.paths.map((path) => (
+                    <option key={path.id} value={path.id} style={{ background: '#0d1018' }}>
+                      {path.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="World">
+                <select
+                  aria-label="World"
+                  data-testid="director-world"
+                  style={selectStyle}
+                  value={selectedWorldId}
+                  onChange={(event) => setField('selectedWorldId', event.target.value)}
+                >
+                  {DATA.worlds.map((world) => (
+                    <option key={world.id} value={world.id} style={{ background: '#0d1018' }}>
+                      {world.group} · {world.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Palet">
+                <select
+                  aria-label="Palet"
+                  data-testid="director-palette"
+                  style={selectStyle}
+                  value={selectedPaletteId}
+                  onChange={(event) => setField('selectedPaletteId', event.target.value)}
+                >
+                  <option value="" style={{ background: '#0d1018' }}>Palet seç</option>
+                  {DATA.palettes.map((palette) => (
+                    <option key={palette.id} value={palette.id} style={{ background: '#0d1018' }}>
+                      {palette.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Sahne sayısı" hint="1-20">
+                <input
+                  type="number"
+                  min={1}
+                  max={20}
+                  style={inputStyle}
+                  value={sceneCount}
+                  onChange={(event) => setField('sceneCount', Math.max(1, Math.min(20, Number(event.target.value) || 1)))}
+                />
+              </Field>
+              <Field label="Referans paketi" hint="En fazla 3 DNA. Reçete adımında tek tek cerrahi seçim devam ediyor.">
+                <select
+                  aria-label="Referans paketi"
+                  data-testid="director-ref-pack"
+                  style={selectStyle}
+                  value={(selectedRefIds || []).join(',')}
+                  onChange={(event) => setRefPack(event.target.value)}
+                >
+                  <option value="" style={{ background: '#0d1018' }}>DNA paketi seç</option>
+                  {preset.directorPanel.groups.flatMap((group) => (
+                    group.choices.flatMap((choice) => (
+                      choice.sets.selectedRefIds?.length
+                        ? [(
+                          <option key={`${group.id}:${choice.id}`} value={choice.sets.selectedRefIds.join(',')} style={{ background: '#0d1018' }}>
+                            {group.label} · {choice.label}
+                          </option>
+                        )]
+                        : []
+                    ))
+                  ))}
+                </select>
+              </Field>
+            </div>
+
+            <div style={{ marginTop: 18, display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 10 }}>
+              {[
+                ['World', selectedWorld?.name || '—'],
+                ['Palet', selectedPalette?.name || '—'],
+                ['Ref DNA', selectedRefs.map((ref) => ref?.name).join(' + ') || '—'],
+              ].map(([label, value]) => (
+                <div key={label} style={{ padding: 12, borderRadius: 10, border: '1px solid var(--line2)', background: 'rgba(0,0,0,.18)', minWidth: 0 }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: 10, letterSpacing: 1.4, textTransform: 'uppercase', fontWeight: 700 }}>{label}</div>
+                  <div style={{ color: '#fff', fontSize: 12.5, marginTop: 6, lineHeight: 1.35, overflowWrap: 'anywhere' }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </Panel>
+
+          <Panel title="Final brief kaydı" subtitle="Bu metin sahne promptlarına ve agent brief'e gider; seçtiğin kararların izi burada görünür.">
+            <div
+              style={{
+                padding: 14,
+                borderRadius: 10,
+                border: '1px solid var(--line2)',
+                background: 'rgba(0,0,0,.22)',
+                color: 'var(--text-soft)',
+                fontSize: 12.5,
+                lineHeight: 1.6,
+              }}
+            >
+              {directorBrief || buildDirectorMandate(preset, directorChoices)}
+            </div>
+          </Panel>
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10 }}>
+            <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>
+              <ArrowLeft size={15} /> Brief'e dön
+            </Button>
+            <Button onClick={() => setCurrentStep('recipe')}>
+              Reçeteye geç <ArrowRight size={15} />
+            </Button>
+          </div>
+        </div>
+
+        <aside
+          className="director-decision-rail"
           style={{
-            padding: 14,
-            borderRadius: 10,
+            position: 'sticky',
+            top: 24,
+            padding: 16,
+            borderRadius: 'var(--r-lg)',
             border: '1px solid var(--line2)',
-            background: 'rgba(0,0,0,.22)',
-            color: 'var(--text-soft)',
-            fontSize: 12.5,
-            lineHeight: 1.6,
+            background: 'linear-gradient(180deg, rgba(16,16,22,.54), rgba(6,7,11,.32))',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,.07), 0 18px 46px rgba(0,0,0,.28)',
           }}
         >
-          {directorBrief || buildDirectorMandate(preset, directorChoices)}
-        </div>
-      </Panel>
+          <div style={{ fontSize: 10, letterSpacing: 2.1, color: 'var(--gold)', fontWeight: 900 }}>
+            DECISION RECORD
+          </div>
+          <div style={{ marginTop: 8, color: '#fff', fontSize: 15, fontWeight: 900, lineHeight: 1.25 }}>
+            {preset.label}
+          </div>
+          <div style={{ marginTop: 5, color: 'var(--text-muted)', fontSize: 11.5, lineHeight: 1.45 }}>
+            Final brief'e giden aktif yaratıcı kilitler.
+          </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10 }}>
-        <Button variant="ghost" onClick={() => setCurrentStep('dashboard')}>
-          <ArrowLeft size={15} /> Brief'e dön
-        </Button>
-        <Button onClick={() => setCurrentStep('recipe')}>
-          Reçeteye geç <ArrowRight size={15} />
-        </Button>
+          <div style={{ display: 'grid', gap: 9, marginTop: 16 }}>
+            {activeDecisionRows.map((row) => (
+              <div key={row.id} style={{ padding: 11, borderRadius: 10, background: 'rgba(0,0,0,.22)', border: '1px solid var(--line)' }}>
+                <div style={{ color: 'var(--text-muted)', fontSize: 9.5, letterSpacing: 1.2, textTransform: 'uppercase', fontWeight: 800 }}>
+                  {row.label}
+                </div>
+                <div style={{ marginTop: 4, color: 'var(--gold-hi)', fontSize: 12.5, fontWeight: 850 }}>
+                  {row.value}
+                </div>
+                {row.desc && (
+                  <div style={{ marginTop: 4, color: 'var(--text-dim)', fontSize: 11, lineHeight: 1.35 }}>
+                    {row.desc}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--line2), transparent)', margin: '15px 0' }} />
+
+          <div style={{ display: 'grid', gap: 8 }}>
+            {[
+              ['World', selectedWorld?.name || '—'],
+              ['Palette', selectedPalette?.name || '—'],
+              ['Ref DNA', selectedRefs.map((ref) => ref?.name).join(' + ') || '—'],
+            ].map(([label, value]) => (
+              <div key={label} style={{ display: 'grid', gap: 2 }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: 9.5, letterSpacing: 1.2, textTransform: 'uppercase', fontWeight: 800 }}>
+                  {label}
+                </span>
+                <span style={{ color: 'var(--text-soft)', fontSize: 11.5, lineHeight: 1.35, overflowWrap: 'anywhere' }}>
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </div>
   );
