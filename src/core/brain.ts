@@ -235,7 +235,7 @@ const textPolicyLine = () => 'Text/logo: no new text unless the source asks; any
 export interface PromptCtx {
   world: SurgeryWorld; register: Register; dna: DnaDirectives;
   palette?: SurgeryPalette; pathForbidden: string; chars?: string;
-  projectKind?: 'video' | 'design'; material?: string;
+  projectKind?: 'video' | 'design'; material?: string; directorBrief?: string;
 }
 
 export function buildImagePrompt(sceneId: number | string, concept: Concept, camera: string, ctx: PromptCtx, pv = 0): string {
@@ -252,6 +252,7 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     ctx.projectKind === 'design'
       ? 'Static composition proof: ' + concept.event.split(',')[0] + '; resolve it in one final frame.'
       : 'Motion seed: the frame is the exact half-second before this event — ' + concept.event.split(',')[0] + ' — everything required already present and primed.',
+    ctx.directorBrief ? 'Director mandate: ' + T(ctx.directorBrief).replace(/\s+/g, ' ').trim() + '.' : '',
     textPolicyLine(),
     charLock ? ('Character lock:' + charLock + ' Keep exactly as described — observer scale, no invented identity.') : '',
     'Negative: ' + T(ctx.pathForbidden).replace(/\.\s*$/, '') + '; ' + dna.avoid.replace(/\.\s*$/, '') + '; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.',
@@ -270,6 +271,7 @@ export interface AgentBriefCtx {
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
   projectKind?: 'video' | 'design'; brandKitLock?: string; material?: string;
   imageModel?: string; videoModel?: string;
+  directorBrief?: string;
   mood?: string; cameraEnergy?: string; timeLight?: string; transition?: string; musicVibe?: string;
   pov?: string; signature?: string; leitmotif?: string; tempoCurve?: string;
   /** Only set when an A/B/C variant test is active. Absent on every normal brief — keeps the default brief pristine. */
@@ -347,6 +349,12 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '== PALETTE AS LIGHT ==',
     paletteLight(palette, world),
     '',
+    ctx.directorBrief ? [
+      '== DIRECTOR MANDATE ==',
+      ctx.directorBrief,
+      'This mandate is the Phase 0 creative-director decision record. It sharpens taste, proof strategy and anti-generic guards; it never overrides source, render lock, product/brand geometry, face, logo or text locks.',
+      ''
+    ].join('\n') : '',
     (ctx.mood || ctx.cameraEnergy || ctx.timeLight || ctx.transition || ctx.musicVibe || ctx.pov || ctx.signature || ctx.leitmotif || ctx.tempoCurve) ? [
       '== DIRECTION / MOOD ==',
       [

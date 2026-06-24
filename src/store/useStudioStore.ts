@@ -17,7 +17,7 @@ import {
 } from '../core/source';
 import { planBeats, type BeatMode, type BeatAnalysis } from '../core/beats';
 
-export type Step = 'dashboard' | 'recipe' | 'scenes' | 'timeline';
+export type Step = 'dashboard' | 'director' | 'recipe' | 'scenes' | 'timeline';
 /** Free-text optional character/cast description. Empty = object-only, no character anchor. */
 export type Cast = string;
 export type ProjectKind = 'video' | 'design';
@@ -114,6 +114,9 @@ export interface StudioState {
   signature: string;
   leitmotif: string;
   tempoCurve: string;
+  phase0PresetId: string;
+  directorChoices: Record<string, string>;
+  directorBrief: string;
 
   rawSource: string;
   sourceBeats: SourceBeat[];
@@ -192,6 +195,9 @@ const initial = {
   signature: '',
   leitmotif: '',
   tempoCurve: '',
+  phase0PresetId: '',
+  directorChoices: {} as Record<string, string>,
+  directorBrief: '',
 
   rawSource: '',
   sourceBeats: [] as SourceBeat[],
@@ -256,6 +262,9 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     signature: s.signature,
     leitmotif: s.leitmotif,
     tempoCurve: s.tempoCurve,
+    phase0PresetId: s.phase0PresetId,
+    directorChoices: s.directorChoices,
+    directorBrief: s.directorBrief,
     rawSource: s.rawSource,
     sourceBeats: s.sourceBeats,
     sourceReport: s.sourceReport,
@@ -426,7 +435,7 @@ export const useStudioStore = create<StudioState>()(
           'projectKind', 'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
           'selectedRefIds', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
           'brandKitLock', 'mood', 'cameraEnergy', 'timeLight', 'transition', 'musicVibe',
-          'pov', 'signature', 'leitmotif', 'tempoCurve'
+          'pov', 'signature', 'leitmotif', 'tempoCurve', 'phase0PresetId', 'directorChoices', 'directorBrief'
         ];
         set({
           ...({ [field]: value } as Partial<StudioState>),
@@ -549,6 +558,9 @@ export const useStudioStore = create<StudioState>()(
             signature: s.signature,
             leitmotif: s.leitmotif,
             tempoCurve: s.tempoCurve,
+            phase0PresetId: s.phase0PresetId,
+            directorChoices: s.directorChoices,
+            directorBrief: s.directorBrief,
           });
           if (result.status === 'BLOCKED') {
             set({
@@ -594,7 +606,9 @@ export const useStudioStore = create<StudioState>()(
       advance: () => {
         const s = get();
         if (s.currentStep === 'dashboard') {
-          if (s.projectTopic.trim() && sourceReadiness(s).ready) set({ currentStep: 'recipe' });
+          if (s.projectTopic.trim() && sourceReadiness(s).ready) set({ currentStep: s.phase0PresetId ? 'director' : 'recipe' });
+        } else if (s.currentStep === 'director') {
+          set({ currentStep: 'recipe' });
         } else if (s.currentStep === 'recipe') {
           if (recipeReadiness(s).ready) set({ currentStep: 'scenes' });
         } else if (s.currentStep === 'scenes') {

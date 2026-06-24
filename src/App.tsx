@@ -6,6 +6,9 @@ import { AppLayout } from './components/Layout/AppLayout';
 const DashboardStep = lazy(() =>
   import('./pages/Dashboard/DashboardStep').then((module) => ({ default: module.DashboardStep })),
 );
+const DirectorStep = lazy(() =>
+  import('./pages/Director/DirectorStep').then((module) => ({ default: module.DirectorStep })),
+);
 const RecipeStep = lazy(() =>
   import('./pages/Recipe/RecipeStep').then((module) => ({ default: module.RecipeStep })),
 );
@@ -47,6 +50,11 @@ function App() {
           {currentStep === 'dashboard' && (
             <motion.div key="dashboard" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <DashboardStep />
+            </motion.div>
+          )}
+          {currentStep === 'director' && (
+            <motion.div key="director" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+              <DirectorStep />
             </motion.div>
           )}
           {currentStep === 'recipe' && (

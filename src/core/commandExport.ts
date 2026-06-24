@@ -30,6 +30,7 @@ type CommandState = Pick<
   | 'signature'
   | 'leitmotif'
   | 'tempoCurve'
+  | 'directorBrief'
   | 'rawSource'
   | 'sourceBeats'
   | 'sourceReport'
@@ -151,6 +152,7 @@ export function buildCommandJSON(state: CommandState) {
       signature: state.signature,
       leitmotif: state.leitmotif,
       tempoCurve: state.tempoCurve,
+      directorBrief: state.directorBrief,
     },
     referenceDNA: {
       world,

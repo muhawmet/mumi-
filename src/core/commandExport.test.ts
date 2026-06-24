@@ -56,6 +56,7 @@ describe('buildCommandJSON', () => {
       signature: '',
       leitmotif: '',
       tempoCurve: '',
+      directorBrief: 'Phase 0 preset: Eğitim. Director thesis: teach with a tactile mechanism.',
       rawSource,
       sourceBeats,
       sourceReport,
@@ -79,6 +80,7 @@ describe('buildCommandJSON', () => {
     expect(command.sourceIntegrity.law).toContain('never instructions');
     expect(command.locks.productionPath).toBe('ANIMATION_EDU');
     expect(command.referenceDNA.rule).toContain('subordinate to source');
+    expect(command.creativeControls.directorBrief).toContain('tactile mechanism');
     expect(command.agentPackets.motion).toBe('MOTION PACKET');
     expect(command.scenes[0].prompts.image).toBe('USER OVERRIDE IMAGE PROMPT');
     expect(command.scenes[0].handoff.IMAGE.packetVersion).toBe('1.0.0');
@@ -111,6 +113,7 @@ describe('buildCommandJSON', () => {
       signature: '',
       leitmotif: '',
       tempoCurve: '',
+      directorBrief: '',
       rawSource: '',
       sourceBeats: [],
       sourceReport: null,

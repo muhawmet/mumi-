@@ -199,6 +199,17 @@ describe('generateBatch', () => {
     expect(noChar.scenes[0].imagePrompt).not.toMatch(/Character lock/);
   });
 
+  it('carries the Phase 0 director mandate into scene prompts and the agent brief', () => {
+    const result = generateBatch({
+      ...baseInput,
+      directorBrief: 'Phase 0 preset: Product proof. Anti-generic guard: prove the strategy with physical staging.',
+    });
+    expect(result.scenes[0].imagePrompt).toContain('Director mandate');
+    expect(result.scenes[0].imagePrompt).toContain('physical staging');
+    expect(result.agentBrief).toContain('== DIRECTOR MANDATE ==');
+    expect(result.agentBrief).toContain('Product proof');
+  });
+
   it('renders a premium style world (arcane) and injects the material axis into the lock', () => {
     const r = generateBatch({ ...baseInput, projectClass: 'EGITIM', selectedWorldId: 'arcane', selectedPropId: 'paper' });
     expect(r.status).toBe('GENERATED');

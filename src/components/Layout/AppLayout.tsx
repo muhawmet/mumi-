@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, Palette, Film, Sparkles, Check, Eye, EyeOff } from 'lucide-react';
+import { LayoutDashboard, Palette, Film, Sparkles, Check, Eye, EyeOff, SlidersHorizontal } from 'lucide-react';
 import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudioStore';
 import { PreviewStage } from '../PreviewStage';
 import { RecipeRail } from '../RecipeRail';
 import { AntigravityBackground } from '../AntigravityBackground';
 import { ProductionPulse } from '../ProductionPulse';
 
-const STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNode; index: number }> = [
+const BASE_STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNode; index: number; presetOnly?: boolean }> = [
   { id: 'dashboard', label: 'Brief', hint: 'Kaynak & konu', icon: <LayoutDashboard size={17} />, index: 1 },
-  { id: 'recipe', label: 'Reçete', hint: 'Dünya · palet · DNA', icon: <Palette size={17} />, index: 2 },
-  { id: 'scenes', label: 'Sahneler', hint: 'Beat planı', icon: <Film size={17} />, index: 3 },
-  { id: 'timeline', label: 'Timeline', hint: 'Üret & teslim', icon: <Sparkles size={17} />, index: 4 },
+  { id: 'director', label: 'Yönetmen', hint: 'Path kararları', icon: <SlidersHorizontal size={17} />, index: 2, presetOnly: true },
+  { id: 'recipe', label: 'Reçete', hint: 'Dünya · palet · DNA', icon: <Palette size={17} />, index: 3 },
+  { id: 'scenes', label: 'Sahneler', hint: 'Beat planı', icon: <Film size={17} />, index: 4 },
+  { id: 'timeline', label: 'Timeline', hint: 'Üret & teslim', icon: <Sparkles size={17} />, index: 5 },
 ];
 
 export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -20,8 +21,10 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const rawSource = useStudioStore((s) => s.rawSource);
   const sourceReport = useStudioStore((s) => s.sourceReport);
   const sourceBeats = useStudioStore((s) => s.sourceBeats);
+  const phase0PresetId = useStudioStore((s) => s.phase0PresetId);
   const sourceGate = sourceReadiness({ rawSource, sourceReport });
-  const activeIdx = STEPS.findIndex((s) => s.id === currentStep);
+  const steps = BASE_STEPS.filter((step) => !step.presetOnly || phase0PresetId || currentStep === step.id);
+  const activeIdx = Math.max(0, steps.findIndex((s) => s.id === currentStep));
 
   return (
     <div className={`ml-shell${aquariumMode ? ' ml-aquarium-mode' : ''}`} style={styles.shell}>
@@ -54,8 +57,8 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
 
         <ol style={styles.stepList}>
           <span aria-hidden style={styles.spine} />
-          <span aria-hidden style={{ ...styles.spineFill, height: `calc(${(activeIdx / (STEPS.length - 1)) * 100}% )` }} />
-          {STEPS.map((s, i) => {
+          <span aria-hidden style={{ ...styles.spineFill, height: `calc(${(activeIdx / Math.max(1, steps.length - 1)) * 100}% )` }} />
+          {steps.map((s, i) => {
             const active = currentStep === s.id;
             const done = i < activeIdx;
             return (

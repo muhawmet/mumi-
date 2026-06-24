@@ -94,29 +94,63 @@ export const MOOD_OPTS: Record<string, {label:string, brief:string}> = {
   joy_curiosity:{label:'Neşeli & Merak',brief:'bright, curious and playful - light comedic timing, warm-bright palette lean, upbeat hummable motif, quick but clear pacing'},
   warm_emotional:{label:'Sıcak & Duygusal',brief:'warm and tender - gentle unhurried pacing, soft warm palette, intimate close staging, emotional music motif'},
   epic_excite:{label:'Epik & Heyecan',brief:'bold and exciting - larger scale and stronger contrast, punchy pacing, heroic music build to one peak, confident camera'},
-  calm_focus:{label:'Sakin & Huzur',brief:'calm and clear - steady unhurried pacing, clean balanced palette, minimal music and breathing space, clarity-first staging'}
+  calm_focus:{label:'Sakin & Huzur',brief:'calm and clear - steady unhurried pacing, clean balanced palette, minimal music and breathing space, clarity-first staging'},
+  real_confident:{label:'Gerçek Reklam · Güven',brief:'premium real-commercial confidence - believable product truth, disciplined taste, no fake corporate excitement'},
+  human_trust:{label:'İnsan Güveni',brief:'human trust and lived-in credibility - honest faces, useful gestures, documentary warmth, no stock-smile performance'},
+  luxury_restraint:{label:'Lüks Sadelik',brief:'luxury restraint - quiet status, negative space, refined detail, expensive stillness, no loud promo energy'},
+  social_native:{label:'Native Sosyal',brief:'native social urgency - fast hook, authentic phone-era rhythm, creator-adjacent energy, no overproduced TVC gloss'},
+  clinical_precision:{label:'Klinik Hassasiyet',brief:'clinical precision - calm confidence, clean evidence, exact surfaces, trust through restraint and clarity'},
+  civic_honest:{label:'Kamu Gerçekliği',brief:'civic honesty - public-service clarity, real place texture, dignified human scale, no propaganda polish'},
+  editorial_desire:{label:'Editorial Arzu',brief:'editorial desire - fashion-grade mood, controlled sensual detail, confident asymmetry, never cheap glamour'},
+  system_clarity:{label:'Sistem Netliği',brief:'structured clarity - hierarchy, repeated modules, readable information architecture and deliberate white space'}
 };
 export const CAM_OPTS: Record<string, {label:string, brief:string}> = {
   calm_clear:{label:'Sakin & Net',brief:'restrained camera - mostly locked frames and slow motivated dolly, clarity over movement'},
   explore_pov:{label:'Keşifçi & POV',brief:'exploratory camera - lean on inside-object, child-eye and POV reveals, motivated movement that uncovers the idea'},
-  cinematic_dramatic:{label:'Sinematik & Dramatik',brief:'cinematic camera - bold motivated moves, strong depth, deliberate reveal timing and scale'}
+  cinematic_dramatic:{label:'Sinematik & Dramatik',brief:'cinematic camera - bold motivated moves, strong depth, deliberate reveal timing and scale'},
+  locked_premium:{label:'Premium Kilitli',brief:'locked premium frames, exact product geometry, deliberate negative space and only one motivated move when earned'},
+  macro_glide:{label:'Makro Glide',brief:'macro glide camera - tactile surface travel, controlled parallax, geometry-respecting close detail, no floating product tricks'},
+  handheld_human:{label:'Elde İnsan',brief:'handheld human realism - small observational drift, shoulder-height truth, imperfect timing that feels witnessed'},
+  location_dolly:{label:'Mekan Dolly',brief:'slow location dolly or slider - reveal real space, practical depth and human-scale anchors before the hero beat'},
+  social_phone:{label:'Telefon Ritmi',brief:'phone-native camera - direct, close, fast readable reframes, creator realism without chaotic shake'},
+  editorial_locked:{label:'Editorial Kompozisyon',brief:'editorial composed camera - long-lens compression, exact posture/shape, elegant crop discipline'},
+  system_scan:{label:'Sistem Scan',brief:'interface/system camera - straight-on readable frames, measured push-ins, screen-safe reflections and no UI warping'}
 };
 export const LIGHT_OPTS: Record<string, {label:string, brief:string}> = {
   morning:{label:'Sabah',brief:'soft cool morning light, gentle long shadows, fresh clean feel'},
   golden:{label:'Altın Saat',brief:'warm golden-hour light, long amber shadows, premium glow'},
   night:{label:'Gece',brief:'controlled night light, pools of practical light, deep shadow with focused accents'},
-  studio:{label:'Stüdyo',brief:'clean controlled studio light, soft key and fill, neutral readable shadows'}
+  studio:{label:'Stüdyo',brief:'clean controlled studio light, soft key and fill, neutral readable shadows'},
+  highkey_clean:{label:'High-Key Clean',brief:'Apple-grade high-key clean field, soft wrap, exact shadow control, product edges readable and calm'},
+  window_natural:{label:'Doğal Pencere',brief:'motivated window naturalism - believable direction, skin-safe falloff, room air and honest contrast'},
+  tabletop_control:{label:'Tabletop Kontrol',brief:'controlled tabletop light - crisp specular passes, grounded contact shadows, exact material truth'},
+  overcast_doc:{label:'Overcast Doc',brief:'soft overcast documentary light, public-place honesty, no glamorized contrast'},
+  golden_commercial:{label:'Altın Reklam',brief:'premium golden-hour commercial light, warm long shadows, motivated glow and believable skin/product highlights'},
+  luxury_lowkey:{label:'Luxury Low-Key',brief:'low-key luxury light - deep blacks, selective highlight, expensive falloff, one readable hero edge'},
+  clinical_white:{label:'Klinik Beyaz',brief:'clinical white precision - clean high-key, cool bounce, exact glass/metal edges, trustworthy sterility'},
+  warm_home:{label:'Sıcak Ev',brief:'warm home utility light - practical lamps, soft amber skin, honest domestic texture'},
+  editorial_flash:{label:'Editorial Flash',brief:'editorial flash/key discipline - crisp fashion contrast, sculpted face/product planes, no random flare'}
 };
 export const MUS_OPTS: Record<string, {label:string, brief:string}> = {
   warm_motif:{label:'Sıcak Motif',brief:'warm hummable educational motif - felted piano and soft strings, VO-safe, no vocals unless requested'},
   epic:{label:'Epik',brief:'rising cinematic bed - light percussion building to one peak, VO-safe, no vocals unless requested'},
   curious:{label:'Merak',brief:'playful curious motif - pizzicato or marimba, light and bright, VO-safe, no vocals unless requested'},
-  minimal:{label:'Minimal',brief:'minimal sparse texture - one instrument and space, strongly VO-safe, no vocals unless requested'}
+  minimal:{label:'Minimal',brief:'minimal sparse texture - one instrument and space, strongly VO-safe, no vocals unless requested'},
+  education_light:{label:'Eğitim Hafif',brief:'light educational bed - celesta, marimba or pizzicato motif, curious but uncluttered, VO-safe and friendly'},
+  premium_commercial:{label:'Premium Reklam',brief:'premium commercial restraint - muted pulse, sparse signature tone on reveal, VO-safe, no trailer brass'},
+  doc_roomtone:{label:'Doc Roomtone',brief:'documentary roomtone bed - quiet felt texture, human breath space, almost invisible support under VO'},
+  social_snap:{label:'Sosyal Snap',brief:'short-form snap bed - quick hook, clean micro-drop, low clutter, platform-native but still premium'},
+  luxury_minimal:{label:'Lüks Minimal',brief:'luxury minimal bed - sub pulse, brushed texture, one elegant motif, silence used as status'},
+  tech_precision:{label:'Tech Precision',brief:'tech precision bed - soft modular pulse, glassy ticks, clinical low-end control, no EDM cliché'}
 };
 export const TRANS_OPTS: Record<string, {label:string, brief:string}> = {
   match_cut:{label:'Match-cut',brief:'match-cut between scenes on a shared shape or motion; keep continuity and a stable final hold'},
   morph_safe:{label:'Morph-safe',brief:'morph-safe transitions only - freeze text, logo and face; never melt or morph between scenes'},
-  hard_cut:{label:'Sert Kesme',brief:'clean hard cuts on action; no decorative transitions'}
+  hard_cut:{label:'Sert Kesme',brief:'clean hard cuts on action; no decorative transitions'},
+  product_match:{label:'Ürün Match',brief:'product match-cuts on shape, edge, reflection or gesture; preserve exact geometry through every cut'},
+  doc_cut:{label:'Belgesel Cut',brief:'observational cuts motivated by human action; no decorative transitions, no fake montage energy'},
+  social_cut:{label:'Sosyal Cut',brief:'tight social cuts on hook/action/proof; fast but readable, no random glitch pack'},
+  editorial_cut:{label:'Editorial Cut',brief:'editorial hard cuts on pose, silhouette and texture; let stillness carry luxury'}
 };
 export const POV_OPTS: Record<string, {label:string, brief:string}> = {
   child_eye:{label:'Çocuk gözü',brief:'child-eye level POV — frame the idea at a child\'s height and curiosity'},
@@ -124,14 +158,24 @@ export const POV_OPTS: Record<string, {label:string, brief:string}> = {
   consequence:{label:'Sonuç→sebep',brief:'consequence-to-cause — show the result first, then reveal what caused it'},
   hidden_mech:{label:'Gizli mekanizma',brief:'hidden-mechanism reveal — open the object to show how it works'},
   scale_reveal:{label:'Ölçek reveal',brief:'scale reveal — start tight or wide, then reveal true scale of the idea'},
-  locked:{label:'Kilitli kare',brief:'deliberate locked/static frame — stillness that makes the change readable'}
+  locked:{label:'Kilitli kare',brief:'deliberate locked/static frame — stillness that makes the change readable'},
+  product_orbit:{label:'Ürün Etrafı',brief:'product-first POV — camera earns every angle from product truth, contact shadows and real use context'},
+  customer_hand:{label:'Kullanıcı Eli',brief:'customer-hand POV — show the useful action from human distance without hiding the product geometry'},
+  witness:{label:'Tanık POV',brief:'witness POV — observe a real person or place without forcing performance; credibility over spectacle'},
+  phone_native:{label:'Telefon POV',brief:'phone-native POV — vertical-friendly proximity and directness, but keep exposure and composition intentional'},
+  system_reader:{label:'Sistem Okuru',brief:'reader/user POV — screen, object or layout remains legible; camera behaves like a careful evaluator'}
 };
 export const SIG_OPTS: Record<string, {label:string, brief:string}> = {
   macro_truth:{label:'Makro gerçek',brief:'one macro-truth hero frame — the smallest real detail that carries the whole idea'},
   scale_hero:{label:'Ölçek kahraman',brief:'one scale-hero frame — the subject revealed at its most epic true size'},
   silhouette:{label:'Siluet imza',brief:'one silhouette hero frame — the subject read purely as shape against light'},
   light_shaft:{label:'Işık huzmesi',brief:'one motivated light-shaft frame — a single beam that names the subject'},
-  reflection:{label:'Yansıma',brief:'one reflection/echo frame — the subject seen through what it acts upon'}
+  reflection:{label:'Yansıma',brief:'one reflection/echo frame — the subject seen through what it acts upon'},
+  product_reveal:{label:'Ürün Reveal',brief:'one product-reveal hero frame — the object becomes undeniable through light, scale and exact material truth'},
+  usage_payoff:{label:'Kullanım Payoff',brief:'one usage-payoff frame — the product or service proves itself through a real action, not a slogan'},
+  human_truth:{label:'İnsan Gerçeği',brief:'one human-truth frame — a credible micro-expression or gesture that carries the promise'},
+  brand_mark:{label:'Marka İmzası',brief:'one brand-mark frame — logo/text remains locked geometry while light or context earns the recognition'},
+  system_grid:{label:'Sistem Grid',brief:'one system-grid frame — hierarchy, modules and output align into a calm final proof'}
 };
 export const LEIT_OPTS: Record<string, {label:string, brief:string}> = {
   color:{label:'Renk motifi',brief:'a recurring colour accent that returns at the open, the turn and the final frame'},
@@ -143,7 +187,15 @@ export const TEMPO_OPTS: Record<string, {label:string, brief:string}> = {
   gentle:{label:'Yumuşak yay',brief:'gentle rising arc — calm open, soft build, one tender peak, settled close'},
   build_peak:{label:'Yapı→doruk',brief:'curiosity hook -> concept -> build -> single strong climax of understanding -> final teaching frame'},
   punchy:{label:'Tempolu',brief:'punchy episodic — quick hooks and frequent small peaks, energetic throughout, still one clear payoff'},
-  slow_burn:{label:'Slow burn',brief:'slow burn — withhold, let tension build, deliver a late reveal then a stable hold'}
+  slow_burn:{label:'Slow burn',brief:'slow burn — withhold, let tension build, deliver a late reveal then a stable hold'},
+  educational_arc:{label:'Eğitim Yayı',brief:'educational arc — orient the idea, show mechanism, repeat the cause-effect once, then land on a clear final teaching frame'},
+  launch_tease:{label:'Launch Tease',brief:'launch-teaser arc — intrigue, partial reveal, proof detail, final product/brand confirmation'},
+  problem_solution:{label:'Problem→Çözüm',brief:'problem-solution arc — real friction, useful action, visible result, restrained confidence'},
+  proof_buildup:{label:'Kanıt İnşası',brief:'proof-build arc — claim, evidence detail, real use, hero proof, quiet resolved trust'},
+  social_hook:{label:'Sosyal Hook',brief:'short-form hook arc — immediate problem or visual hook, rapid proof beats, clean final CTA-ready hold'},
+  documentary_arc:{label:'Doc Arc',brief:'documentary arc — place/person truth first, observed process, earned outcome, no salesy punchline'},
+  editorial_arc:{label:'Editorial Arc',brief:'editorial arc — mood, texture, silhouette, signature frame; desire through restraint'},
+  system_arc:{label:'Sistem Arc',brief:'system arc — context, structure, proof module, final organized output'}
 };
 
 export const DATA = SURGERY as unknown as SurgeryData;
@@ -164,6 +216,9 @@ export interface BriefInput {
   imageModel: string;
   videoModel: string;
   brandKitLock?: string;
+  phase0PresetId?: string;
+  directorChoices?: Record<string, string>;
+  directorBrief?: string;
   mood?: string;
   cameraEnergy?: string;
   timeLight?: string;
@@ -748,13 +803,14 @@ export function generateBatch(input: BriefInput): GenerationResult {
     const camera = primeCamera(i, beatText, i - 1, register, prev?.src, prevId);
     const duration = durationGuard(beatText, input.videoModel);
 
-    const imagePrompt = brainImagePrompt(i, concept, camera, {
-      world, register, dna, palette: paletteOverride,
-      pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
-      chars: register === 'EDU' && cast ? cast : undefined,
-      projectKind,
-      material: materialClause || undefined,
-    });
+      const imagePrompt = brainImagePrompt(i, concept, camera, {
+        world, register, dna, palette: paletteOverride,
+        pathForbidden: contractGate.findings.length ? '' : (DATA.paths.find((p) => p.id === path) as { forbidden?: string } | undefined)?.forbidden || '',
+        chars: register === 'EDU' && cast ? cast : undefined,
+        projectKind,
+        material: materialClause || undefined,
+        directorBrief: input.directorBrief,
+      });
     const motionPrompt = projectKind === 'design'
       ? 'NOT_APPLICABLE: static design deliverable; no motion prompt.'
       : buildMotionPrompt(i, concept, camera, dna, duration.sec);
@@ -803,6 +859,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     imageModel: input.imageModel,
     videoModel: input.videoModel,
     brandKitLock: input.brandKitLock,
+    directorBrief: input.directorBrief,
     mood: input.mood ? MOOD_OPTS[input.mood]?.brief : undefined,
     cameraEnergy: input.cameraEnergy ? CAM_OPTS[input.cameraEnergy]?.brief : undefined,
     timeLight: input.timeLight ? LIGHT_OPTS[input.timeLight]?.brief : undefined,

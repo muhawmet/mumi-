@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sourceReadiness, useStudioStore } from '../../store/useStudioStore';
 import { Panel, Field, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
-import { PHASE0_VIDEO, PHASE0_DESIGN, type Phase0Preset } from '../../data/presets';
+import { PHASE0_VIDEO, PHASE0_DESIGN, buildDirectorMandate, directorChoiceMap, directorDefaultSets, type Phase0Preset } from '../../data/presets';
 import { DATA, parseSourceInput } from '../../core/pure';
 import { decodeBrief } from '../../core/source';
 import { suggestRecipe } from '../../core/advisor';
@@ -14,11 +14,11 @@ export const DashboardStep = () => {
   const {
     projectKind, selectedProjectId, projectTopic, projectClass, sceneCount, cast,
     rawSource, sourceBeats, sourceReport,
+    phase0PresetId,
     setField, setCurrentStep, applyPreset, setRawSource, decodeRawSource, ingestRawSource,
     vault, saveToVault, loadFromVault, deleteFromVault,
   } = useStudioStore();
   const [kind, setKind] = useState<'video' | 'design'>(projectKind);
-  const [activePreset, setActivePreset] = useState<string | null>(null);
   const [vaultName, setVaultName] = useState('');
   const [autoRecipe, setAutoRecipe] = useState<{ reason: string; confidence: string } | null>(null);
 
@@ -27,7 +27,9 @@ export const DashboardStep = () => {
     if (!topic) return;
     const s = suggestRecipe(topic);
     applyPreset({ projectClass: s.path, selectedWorldId: s.worldId, selectedPaletteId: s.paletteId, selectedRefIds: s.refIds });
-    setActivePreset(null);
+    setField('phase0PresetId', '');
+    setField('directorChoices', {});
+    setField('directorBrief', '');
     setAutoRecipe({ reason: s.reason, confidence: s.confidence });
   };
 
@@ -38,8 +40,11 @@ export const DashboardStep = () => {
   const isSourceBound = sourceParsed.status === 'SOURCE_BOUND';
 
   const onPreset = (p: Phase0Preset) => {
-    setActivePreset(p.id);
-    applyPreset({ ...p.sets, projectKind: p.kind });
+    const defaults = directorChoiceMap(p);
+    applyPreset({ ...p.sets, ...directorDefaultSets(p), projectKind: p.kind, directorBrief: buildDirectorMandate(p, defaults) });
+    setField('phase0PresetId', p.id);
+    setField('directorChoices', defaults);
+    setCurrentStep('director');
   };
 
   return (
@@ -61,6 +66,9 @@ export const DashboardStep = () => {
               key={k}
               onClick={() => {
                 setKind(k);
+                setField('phase0PresetId', '');
+                setField('directorChoices', {});
+                setField('directorBrief', '');
                 setField('projectKind', k);
               }}
               style={{
@@ -88,7 +96,7 @@ export const DashboardStep = () => {
           }}
         >
           {presets.map((p, i) => {
-            const active = activePreset === p.id;
+            const active = phase0PresetId === p.id;
             return (
               <motion.button
                 key={p.id}
@@ -369,8 +377,8 @@ export const DashboardStep = () => {
       </Panel>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
-        <Button disabled={!sourceGate.ready} onClick={() => setCurrentStep('recipe')}>
-          Reçeteye geç → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
+        <Button disabled={!sourceGate.ready} onClick={() => setCurrentStep(phase0PresetId ? 'director' : 'recipe')}>
+          {phase0PresetId ? 'Yönetmene geç' : 'Reçeteye geç'} → <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
         </Button>
       </div>
     </div>
