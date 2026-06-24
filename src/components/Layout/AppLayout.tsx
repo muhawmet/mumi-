@@ -1,5 +1,5 @@
-import React from 'react';
-import { LayoutDashboard, Palette, Film, Sparkles, Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { LayoutDashboard, Palette, Film, Sparkles, Check, Eye, EyeOff } from 'lucide-react';
 import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudioStore';
 import { PreviewStage } from '../PreviewStage';
 import { RecipeRail } from '../RecipeRail';
@@ -14,6 +14,7 @@ const STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNod
 ];
 
 export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [aquariumMode, setAquariumMode] = useState(false);
   const currentStep = useStudioStore((s) => s.currentStep);
   const setCurrentStep = useStudioStore((s) => s.setCurrentStep);
   const rawSource = useStudioStore((s) => s.rawSource);
@@ -23,11 +24,26 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const activeIdx = STEPS.findIndex((s) => s.id === currentStep);
 
   return (
-    <div className="ml-shell" style={styles.shell}>
+    <div className={`ml-shell${aquariumMode ? ' ml-aquarium-mode' : ''}`} style={styles.shell}>
       <AntigravityBackground />
-      <div className="ml-spotlight" aria-hidden style={styles.spotlight} />
+      <div className="ml-spotlight" aria-hidden style={{ ...styles.spotlight, opacity: aquariumMode ? 0.28 : 1 }} />
 
-      <nav className="ml-sidebar" style={styles.sidebar}>
+      <button
+        type="button"
+        className="ml-aquarium-toggle"
+        aria-pressed={aquariumMode}
+        onClick={() => setAquariumMode((next) => !next)}
+        style={{
+          ...styles.aquariumToggle,
+          right: aquariumMode ? 22 : 364,
+          ...(aquariumMode ? styles.aquariumToggleActive : null),
+        }}
+      >
+        {aquariumMode ? <EyeOff size={15} /> : <Eye size={15} />}
+        <span>{aquariumMode ? 'MENÜLERİ AÇ' : 'AKVARYUM MODU'}</span>
+      </button>
+
+      <nav className="ml-sidebar" style={{ ...styles.sidebar, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }}>
         <header style={styles.brand}>
           <span style={styles.brandMark}><Sparkles size={17} color="var(--gold-deep)" /></span>
           <div>
@@ -70,9 +86,9 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         <ProductionPulse />
       </nav>
 
-      <main className="ml-main" style={styles.main}>{children}</main>
+      <main className="ml-main" style={{ ...styles.main, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }}>{children}</main>
 
-      <aside className="ml-right-rail" style={styles.rightRail} data-testid="source-right-rail">
+      <aside className="ml-right-rail" style={{ ...styles.rightRail, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }} data-testid="source-right-rail">
         <div style={styles.railStack}>
           <section style={styles.drawingMonitor}>
             <div style={styles.monitorHead}>
@@ -127,6 +143,43 @@ const styles: Record<string, React.CSSProperties> = {
       'radial-gradient(120% 80% at 18% -10%, rgba(246,200,98,0.07), transparent 50%),' +
       'radial-gradient(100% 90% at 100% 110%, rgba(255,157,77,0.05), transparent 55%),' +
       'linear-gradient(180deg, rgba(10,10,13,0.2), rgba(10,10,13,0.6))',
+    transition: 'opacity var(--dur-2) var(--ease)',
+  },
+  aquariumToggle: {
+    position: 'fixed',
+    right: 364,
+    top: 18,
+    zIndex: 6,
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 8,
+    padding: '10px 13px',
+    borderRadius: 999,
+    border: '1px solid rgba(247, 201, 72, 0.28)',
+    background: 'rgba(12, 12, 16, 0.72)',
+    color: 'var(--text)',
+    boxShadow: '0 16px 38px -28px var(--goldglow), inset 0 1px 0 rgba(255,255,255,0.08)',
+    backdropFilter: 'blur(18px)',
+    WebkitBackdropFilter: 'blur(18px)',
+    cursor: 'pointer',
+    fontSize: 10,
+    fontWeight: 900,
+    letterSpacing: 1.4,
+    fontFamily: 'var(--font-mono)',
+    transition: 'all var(--dur) var(--ease)',
+  },
+  aquariumToggleActive: {
+    borderColor: 'rgba(91, 232, 255, 0.42)',
+    color: 'rgba(189, 248, 255, 0.96)',
+    background: 'rgba(4, 11, 18, 0.62)',
+    boxShadow: '0 0 28px rgba(91, 232, 255, 0.16), inset 0 1px 0 rgba(255,255,255,0.08)',
+  },
+  aquariumHiddenChrome: {
+    opacity: 0,
+    visibility: 'hidden',
+    pointerEvents: 'none',
+    transform: 'scale(0.985)',
+    transition: 'opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease), visibility var(--dur-2) var(--ease)',
   },
   sidebar: {
     width: 256,
