@@ -1,8 +1,24 @@
-# MAMILAS Agent Kurulum ve Kullanım
+# MAMILAS Agent Setup
 
-## Dosya Eşleşmesi
+This folder installs external agents that read final briefs and role packets
+copied from the MAMILAS site. Agents do not replace the site; they are specialist
+directors that understand its language.
 
-| Rol | GPT talimatı | Claude talimatı | Knowledge |
+## Setup Order
+
+Each agent is built from three parts:
+
+1. `agents/GLOBAL_BRAIN.md`
+2. Provider adapter: `agents/gpt/*` or `agents/claude/*`
+3. Role knowledge: `knowledge/*`
+
+This order is intentional. The global brain defines shared behavior, the adapter
+shapes the provider-specific working style, and the knowledge file provides role
+craft reference.
+
+## File Map
+
+| Role | GPT adapter | Claude adapter | Knowledge |
 |---|---|---|---|
 | IDEA | `gpt/01_IDEA_GPT.md` | `claude/01_IDEA_CLAUDE.md` | `../knowledge/01_IDEA_KNOWLEDGE.md` |
 | IMAGE | `gpt/02_IMAGE_GPT.md` | `claude/02_IMAGE_CLAUDE.md` | `../knowledge/02_IMAGE_KNOWLEDGE.md` |
@@ -11,44 +27,57 @@
 | DESIGN | `gpt/05_DESIGN_GPT.md` | `claude/05_DESIGN_CLAUDE.md` | `../knowledge/05_DESIGN_KNOWLEDGE.md` |
 | PROOF | `gpt/06_PROOF_GPT.md` | `claude/06_PROOF_CLAUDE.md` | `../knowledge/06_PROOF_KNOWLEDGE.md` |
 
-## Kurulum
+## GPT Setup
 
-- GPT-5.5: GPT dosyasını talimat olarak, eşleşen knowledge dosyasını bilgi
-  kaynağı olarak ekleyin.
-- Claude: Claude dosyasını project/custom instruction olarak, eşleşen knowledge
-  dosyasını project knowledge olarak ekleyin.
-- Her görevde siteden alınan ilgili handoff/brief metnini kullanıcı girdisi
-  olarak verin.
+- Put `GLOBAL_BRAIN.md` first in Instructions, then the matching GPT adapter.
+- Upload only the matching role knowledge file to Knowledge.
+- Keep rules in Instructions and craft/reference in Knowledge.
+- Paste the site's `agentBrief`, role packet, or command JSON into the chat.
 
-## Kullanım Sırası
+## Claude Setup
+
+- Put `GLOBAL_BRAIN.md` first in Project Instructions, then the matching Claude
+  adapter.
+- Upload only the matching role knowledge file to Project Knowledge.
+- Claude may use Project Knowledge/RAG, but the site brief always remains the
+  highest authority.
+- Paste the site's `agentBrief`, role packet, or command JSON into the chat.
+
+## Site Packets
+
+Video chain:
 
 `SITE -> IDEA -> IMAGE -> MOTION -> SUNO -> PROOF`
 
-Design işleri için:
+Design chain:
 
-`SITE Design -> IDEA -> DESIGN -> PROOF`
+`SITE Design -> IDEA -> DESIGN or IMAGE packet -> PROOF`
 
-## Site Paket Eşlemesi (mamilas-modern)
+The site may currently provide the design role packet through the `image` channel
+for static design work. If the job is static design, give the main agent brief or
+design/image packet to the `05_DESIGN_*` adapter; it should read the task as
+static format work, not video work.
 
-Modern site Timeline ekranındaki **"Ajan Paketleri"** menüsü her ajan için
-hazır bir giriş paketi üretir. Kopyala → eşleşen ajana yapıştır:
+The Timeline screen's `Ajan Paketleri` menu provides:
 
-| Site menü öğesi | Ajan |
+| Site packet | Agent to use |
 |---|---|
-| Ana Ajan Brief | tüm zincir (ortak production brief) |
-| IDEA Paketi (Fikir) | `01_IDEA_*` |
-| IMAGE Paketi (Görsel) | `02_IMAGE_*` |
-| MOTION Paketi (Hareket) | `03_MOTION_*` |
-| SUNO Paketi (Müzik) — yalnız video | `04_SUNO_*` |
-| PROOF Paketi (Denetim) | `06_PROOF_*` |
+| Ana Ajan Brief | shared context for the whole chain |
+| IDEA Paketi | route / scene architecture |
+| IMAGE Paketi | start-frame image prompts |
+| MOTION Paketi | i2v motion prompts |
+| SUNO Paketi | music / sound direction |
+| PROOF Paketi | audit and repair |
 
-Paketlerin taşıdığı tetik tokenleri (`BRAND KIT: LOCKED`,
-`CREATIVE VARIANT TEST — variable:`, `RENDER LOCK`, `SCENE DOSSIER`,
-`PROOF STATE & QUALITY STATUS`) ile ajan kapıları arasındaki sözleşme
-`GLOBAL_BRAIN.md` → "Site ↔ Ajan Paketleri" bölümünde tanımlıdır.
+## Main Principle
 
-## Sağlayıcı Kararı
+Preserve locks without killing creativity. Agents are not generic validators.
+With source and render lock fixed, they should still propose stronger scenes,
+framing, motion, music, and proof repairs.
 
-GPT talimatları kısa, başlıklı sözleşmeler ve ayrı knowledge yönlendirmesi
-kullanır. Claude talimatları açıklayıcı ve iyi biçimlenmiş XML bölümleri
-kullanır. Her iki sağlayıcı da kullanılabilir üretim çıktısını önce verir.
+## Forbidden Legacy Language
+
+This modern app is not the old single-file HTML version. Agents must not make
+decisions from legacy Phase 0 tokens, single-axis world/recipe language, or
+retired world IDs. Modern language is: `Render World`, `Material`, `RENDER LOCK`,
+`DIRECTOR MANDATE`, `SCENE DOSSIER`, and `I2V ANCHOR LAW`.

@@ -368,7 +368,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
         ctx.leitmotif ? `Leitmotif: ${ctx.leitmotif}.` : null,
         ctx.tempoCurve ? `Episode tempo/arc: ${ctx.tempoCurve}.` : null
       ].filter(Boolean).join('\n'),
-      'Apply these across every scene as bias for camera, light, pacing, palette feel and music. They never override Production Path, Visual World, Teaching Material, source text, @tags, logo, face or any lock.',
+      'Apply these across every scene as bias for camera, light, pacing, palette feel and music. They never override Production Path, Render World, Material, source text, @tags, logo, face or any lock.',
       ''
     ].join('\n') : '',
     ctx.projectKind === 'design' ? '== STATIC DESIGN LAW ==' : '== I2V ANCHOR LAW ==',
