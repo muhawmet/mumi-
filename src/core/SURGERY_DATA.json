@@ -746,6 +746,39 @@
       "colors": ["#caa472", "#6d8f7a", "#b5523f", "#efe2c8"]
     },
     {
+      "id": "mappa_cinematic",
+      "group": "ANIMATION",
+      "name": "MAPPA — Cinematic Dark Anime",
+      "formula": "MAPPA-studio high-detail dark cinematic anime with fluid motion and atmosphere",
+      "render": "Premium cinematic anime frame at MAPPA-studio fidelity: high-detail character linework with expressive facial microanimation, heavy atmospheric background painting with volumetric haze and urban texture, extreme motion blur on action beats with smear-frame impacts, sharp value contrast (deep shadows, one bright accent), desaturated gritty palette with selective color pops on emotional peaks, dynamic diagonal compositions, 3D-integrated FX animation for fire/smoke/energy. Dark, adult, technically uncompromising. IP-safe original design — no copied characters.",
+      "motion": "fluid complex motion arc with held smear frame at peak, atmospheric FX confirm the beat, brooding weight in the settle",
+      "best": "dark action series energy, intense emotional confrontation, gritty drama, mature narrative",
+      "avoid": "flat cheerful cel, clean Pixar warmth, pastel softness, western cartoon proportions",
+      "colors": ["#1a1a2e", "#e63946", "#457b9d", "#f1c40f"]
+    },
+    {
+      "id": "bones_action",
+      "group": "ANIMATION",
+      "name": "Bones — Precision Action Anime",
+      "formula": "Bones-studio clean high-fidelity action anime: FMA Brotherhood / My Hero Academia idiom",
+      "render": "Clean high-fidelity action anime frame at Bones-studio caliber: precise expressive linework with clean ink outlines, smooth dynamic action choreography with weight and follow-through, rich warm shadows (3-value clean shading), detailed mechanical and elemental FX animation with crisp edges, strong emotive character expression, hand-painted background art with textural depth, warm amber-and-blue palette with one saturated accent on the action peak. Technically meticulous — every moving part reads clearly at full speed. IP-safe original design — no copied characters.",
+      "motion": "smooth choreographed action flow with clear anticipation, weight-driven follow-through, clean impact frame and settle",
+      "best": "action-driven character moments, elemental/power FX reveals, dramatic emotional peaks with kinetic energy",
+      "avoid": "muddy overlapping linework, photoreal, dark desaturated MAPPA palette, flat vector",
+      "colors": ["#e8a020", "#2255cc", "#cc3322", "#f5e8d0"]
+    },
+    {
+      "id": "toei_adventure",
+      "group": "ANIMATION",
+      "name": "Toei — Grand Adventure Anime",
+      "formula": "Toei Animation classic grand adventure idiom: One Piece / Dragon Ball energy",
+      "render": "Classic grand adventure anime frame in the Toei Animation idiom: bold clean ink outlines with expressive character proportions, highly saturated vibrant color palette (ocean blues, sun golds, bright primaries), energetic adventure-scale composition with clear horizon and vast open world behind the subject, dynamic exaggerated expressions and poses, strong graphic silhouette reads, punchy color-hold effects on impact beats, hand-painted cel-era background warmth. Optimistic, large-scale, impossible adventure feeling. IP-safe original design — no copied characters.",
+      "motion": "bold exaggerated anticipation into a snappy action beat, elastic energy release, triumphant hold with environmental confirmation",
+      "best": "grand adventure reveals, friendship/resolve moments, vast-scale world establishing, triumphant emotional peaks",
+      "avoid": "dark desaturated realism, detailed photoreal backgrounds, subtle restrained motion, muted palette",
+      "colors": ["#ff6b00", "#0099dd", "#ffe033", "#00cc55"]
+    },
+    {
       "id": "cinematic_real",
       "group": "REAL",
       "name": "Sinematik Gerçek (Live-Action)",

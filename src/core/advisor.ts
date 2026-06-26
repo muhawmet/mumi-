@@ -137,6 +137,9 @@ const STARTER_PACKS: Record<string, string[]> = {
   spiderverse: ['spiderverse_graphic', 'verse_miles_dna', 'spiderverse_gwen_pastel'],
   ghibli: ['ghibli_organic', 'miyazaki_wind_nature', 'ghibli_spirited_bathhouse'],
   stopmotion: ['laika_tactile_stopmotion', 'lego_movie_brick_energy', 'arcane_clay_hybrid'],
+  mappa_cinematic: ['jujutsu_dark_ritual', 'demon_slayer_breath', 'solo_leveling_rank_shadow'],
+  bones_action: ['dragon_ball_power_aura', 'naruto_chakra_motion', 'anime_silhouette'],
+  toei_adventure: ['one_piece_sunny_adventure', 'dragon_ball_power_aura', 'naruto_chakra_motion'],
   cinematic_real: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'],
   real_human_doc: ['civic_doc', 'setup_verite', 'cinedna_handheld'],
   clay: ['pixar_dimensional', 'arcane_clay_hybrid', 'kurzgesagt_clarity'],
@@ -304,7 +307,9 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
 
   // reference coherence — too many distinct DNA families muddies the voice
   if (refs.length > 3) {
-    notes.push({ level: 'info', title: 'Çok fazla referans', detail: `${refs.length} DNA sesi karışır. En güçlü 3'e in.` });
+    const sorted = world ? [...refs].sort((a, b) => refFit(world, b) - refFit(world, a)) : refs;
+    const toRemove = sorted.slice(3).map((r) => r.name);
+    notes.push({ level: 'info', title: 'Çok fazla referans', detail: `${refs.length} DNA sesi karışır. Çıkar: ${toRemove.join(', ')}.` });
   } else if (refs.length >= 2) {
     const families = new Set(refs.map((r) => refFamily(r.cat)));
     if (families.size === refs.length) {
