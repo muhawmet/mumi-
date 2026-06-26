@@ -24,9 +24,64 @@ describe('conceptRanked (semantic brain)', () => {
     expect(c[0].subject.toLowerCase()).toContain('sea');
   });
 
+  it('expands a generic water-cycle topic into multiple usable stages', () => {
+    const c = conceptRanked('Su Döngüsü', 'EDU', 'arcane', 'Build-up');
+    expect(c.filter((item) => item.matched)).toHaveLength(5);
+    expect(new Set(c.slice(0, 5).map((item) => item.subject)).size).toBe(5);
+  });
+
   it('detects math equation source → balance scale concept', () => {
     const c = conceptRanked('iki sayının toplamı eşittir', 'EDU', 'clay', 'Build-up');
     expect(c.some((x) => /balance|tile|grid|scale/i.test(x.subject))).toBe(true);
+  });
+
+  it('detects civic decision source instead of falling back to capsule boilerplate', () => {
+    const c = conceptRanked('Peki hiç düşündün mü; şehirdeki bir kararı kim alıyor?', 'EDU', 'arcane', 'Intro');
+    expect(c[0].matched).toBe(true);
+    expect(`${c[0].subject} ${c[0].event}`).toMatch(/civic|decision|citizen|council|neighborhood/i);
+  });
+
+  it('detects Turkish digital literacy source with dotted İ casing', () => {
+    const c = conceptRanked('İnternette gördüğümüz her bilgi doğru olmayabilir.', 'EDU', 'arcane', 'Build-up');
+    expect(c[0].matched).toBe(true);
+    expect(`${c[0].subject} ${c[0].event}`).toMatch(/digital|source-check|trusted-source|advertising/i);
+  });
+
+  it('keeps broad curriculum signals out of civic fallback collisions', () => {
+    const math = conceptRanked('Toplama işleminde sonuç eşittir.', 'EDU', 'arcane', 'Build-up')[0];
+    const cause = conceptRanked('Çünkü sebep sonuç ilişkisini kurar.', 'EDU', 'arcane', 'Build-up')[0];
+    expect(math.subject).toMatch(/balance scale|number tiles/i);
+    expect(cause.subject).toMatch(/cause card|result card|bridge/i);
+    expect(`${math.subject} ${cause.subject}`).not.toMatch(/public result board|civic decision/i);
+  });
+
+  it('stress-covers common education sources without generic fallback as first choice', () => {
+    const fixtures = [
+      'Yaprak klorofil ile fotosentez yapar.',
+      'Kuvvet uygulayınca blok sürtünme ile yavaşlar.',
+      'Gezegen yörüngede güneş çevresinde döner.',
+      'Buz ısı alınca erime gerçekleşir.',
+      'Kesir pay ve payda ile bütünün parçasını gösterir.',
+      'Üçgenin açıları ve çevresi ölçülür.',
+      'Saat dakika ve süre ölçmeyi gösterir.',
+      'Atatürk Cumhuriyet ve bağımsızlık konusunu anlatır.',
+      'Harita pusula ve bölge yön bulmayı anlatır.',
+      'Empati ve saygı arkadaşlıkta önemlidir.',
+      'Fiil isim sıfat sözcük türlerini ayırırız.',
+      'Ana fikir paragraf içinde bulunur.',
+      'Sindirim sistemi organların görevini gösterir.',
+      'Geri dönüşüm atıkları dönüştürür.',
+      'Yaya geçidi ve emniyet kemeri güvenliğimizi korur.',
+      'Deprem çantası ve tatbikat hazırlığı yapılır.',
+      'Belediye meclisi park kararını tartışır.',
+      'Vatandaş önerisini dilekçeye çevirir.',
+      'Reklam ile bilgi birbirinden ayrılmalıdır.',
+    ];
+    for (const source of fixtures) {
+      const top = conceptRanked(source, 'EDU', 'arcane', 'Build-up')[0];
+      expect(top.matched, source).toBe(true);
+      expect(`${top.subject} ${top.event}`, source).not.toMatch(/sealed capsule|working model of the core idea|abstract core-idea/i);
+    }
   });
 
   it('always returns at least a fallback concept', () => {
@@ -197,4 +252,3 @@ describe('primePacket & buildAgentBrief richness', () => {
     }
   });
 });
-

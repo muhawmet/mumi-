@@ -6,9 +6,9 @@ import SURGERY from './SURGERY_DATA.json';
 import {
   registerOf, dnaDirectives, primeConcept, primeCamera, buildImagePrompt as brainImagePrompt,
   buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket,
-  type Concept, type DurationVerdict, type AgentBriefScene,
+  type Concept, type DurationVerdict, type AgentBriefScene, type Register,
 } from './brain';
-import { sourceIntegrity, type SourceBeat } from './source';
+import { ingestSource, sourceIntegrity, type SourceBeat } from './source';
 
 // ============================================================
 // Types
@@ -347,14 +347,14 @@ export interface GenerationResult {
 // ============================================================
 
 const SCENE_INTENTS = [
-  'orient the audience to the core idea',
+  'orient the audience to this exact source beat',
   'identify the first essential element',
   'expose the governing relationship',
   'demonstrate the mechanism in action',
   'contrast a correct and incorrect state',
   'transform the initial state visibly',
   'verify the result with observable proof',
-  'apply the idea to a concrete situation',
+  'apply this source beat to a concrete situation',
   'connect the result to the wider system',
   'resolve the sequence with a clear takeaway',
 ];
@@ -418,14 +418,18 @@ export function parseSourceInput(topic: string) {
       notice: 'UNSOURCED: only a topic was supplied; no canonical source beat is claimed.',
     };
   }
-  const beats = sourceMatch[1]
+  const sourceBody = sourceMatch[1].trim();
+  const lineBeats = sourceBody
     .split(/\n+/)
     .map((t) => t.trim())
-    .filter(Boolean)
-    .map((exactText, i) => ({
-      sourceId: `source-${String(i + 1).padStart(3, '0')}` as string | null,
-      exactText,
-    }));
+    .filter(Boolean);
+  const exactBeats = lineBeats.length > 1
+    ? lineBeats
+    : ingestSource(sourceBody).map((beat) => beat.exactText.trim()).filter(Boolean);
+  const beats = exactBeats.map((exactText, i) => ({
+    sourceId: `source-${String(i + 1).padStart(3, '0')}` as string | null,
+    exactText,
+  }));
   return {
     status: beats.length > 0 ? 'SOURCE_BOUND' : 'UNSOURCED_TOPIC_INPUT',
     beats: beats.length > 0 ? beats : [{ sourceId: null as string | null, exactText: 'Genel Konu' }],
@@ -455,8 +459,23 @@ function buildImageVantage(world: SurgeryWorld, sceneIndex: number): string {
 }
 
 export function deriveProductionPath(projectClass: string): string {
-  const v = String(projectClass || '').toUpperCase();
-  if (/ULTRA|REAL|COMMERCIAL|PRODUCT|LIVE ACTION/.test(v)) return 'ULTRAREAL_COMMERCIAL';
+  const raw = String(projectClass || '').trim();
+  const v = raw.toUpperCase();
+  const exactPath = DATA.paths.find((path) => path.id.toUpperCase() === v);
+  if (exactPath) return exactPath.id;
+  if (/FOOD|ESPRESSO|KAHVE|RESTAURANT|MEN[ÜU]|İÇECEK|ICECEK/.test(v)) return 'FOOD_MACRO';
+  if (/HEALTH|SA[ĞG]LIK|HASTANE|BAKIM|PUBLIC HEALTH/.test(v)) return 'HEALTH_PUBLIC_SERVICE';
+  if (/TECH|MEDICAL|MEDIKAL|MEDİKAL|CLINIC|KLINIK|KLİNİK|SAAS/.test(v)) return 'TECH_MEDICAL_PRECISION';
+  if (/FASHION|MODA|EDITORIAL|ED[İI]TORIAL/.test(v)) return 'FASHION_EDITORIAL';
+  if (/ARCHITECTURE|M[İI]MAR|REAL ESTATE|GAYR[İI]MENKUL/.test(v)) return 'ARCHITECTURE_REAL_ESTATE';
+  if (/TOURISM|TUR[İI]ZM|DESTINATION|DEST[İI]NASYON/.test(v)) return 'TOURISM_DESTINATION';
+  if (/AUTO|OTOMOT[İI]V|MOBILITY|ARA[ÇC]/.test(v)) return 'AUTOMOTIVE_MOBILITY';
+  if (/SOCIAL|REELS|TIKTOK|T[İI]KTOK|INSTAGRAM|VERTICAL|D[İI]KEY/.test(v)) return 'SOCIAL_REELS_REALISM';
+  if (/DOCUMENTARY|BELGESEL/.test(v)) return 'DOCUMENTARY_REALISM';
+  if (/TESTIMONIAL|R[ÖO]PORTAJ|DENEY[İI]M/.test(v)) return 'HUMAN_TESTIMONIAL';
+  if (/LIVE[_\s-]?ACTION|CORPORATE|KURUM|BELED[İI]YE|KAMU/.test(v)) return 'LIVE_ACTION_CORPORATE';
+  if (/PRODUCT|PACKSHOT|[ÜU]R[ÜU]N|LOGO/.test(v)) return 'PRODUCT_HERO';
+  if (/ULTRA|REAL|COMMERCIAL|REKLAM|MARKA/.test(v)) return 'ULTRAREAL_COMMERCIAL';
   if (/TASARIM|DESIGN/.test(v)) return 'STYLIZED_PREMIUM';
   return 'ANIMATION_EDU';
 }
@@ -502,7 +521,9 @@ export function validateBriefCompatibility(args: {
 }): { status: 'PASS' | 'BLOCKED'; authority: string[]; path: string; findings: Array<{ code: string; message: string }> } {
   const { path, world, recipe } = args;
   const findings: Array<{ code: string; message: string }> = [];
-  const realPath = /REAL|COMMERCIAL|PRODUCT|LIVE_ACTION/.test(path);
+  const register = registerOf(path);
+  const realPath = register === 'REAL';
+  const realWorld = (world.group || '').toLowerCase() === 'real';
   const tactileRecipe = recipe.id && recipe.id !== 'world-native';
   if (realPath && tactileRecipe) {
     findings.push({
@@ -510,10 +531,16 @@ export function validateBriefCompatibility(args: {
       message: `REAL path ${path} cannot use tactile recipe ${recipe.id}`,
     });
   }
-  if (realPath && (world.group || '').toLowerCase() !== 'real') {
+  if (realPath && !realWorld) {
     findings.push({
       code: 'WORLD_PATH_MISMATCH',
       message: `REAL path ${path} cannot use ${(world.group || '').toLowerCase()} world ${world.id}`,
+    });
+  }
+  if (!realPath && realWorld) {
+    findings.push({
+      code: 'WORLD_PATH_MISMATCH',
+      message: `${register} path ${path} cannot use real world ${world.id}`,
     });
   }
   return {
@@ -526,12 +553,21 @@ export function validateBriefCompatibility(args: {
 
 type ParsedSource = ReturnType<typeof parseSourceInput>;
 
+function compactSourceCue(text: string): string {
+  const compact = String(text || '').replace(/\s+/g, ' ').trim();
+  if (/\b(ignore|disregard|forget|delete|override|system prompt|prior rules|render lock|jailbreak)\b/i.test(compact)) {
+    return 'an inert quoted-source card flagged as unsafe instruction text';
+  }
+  if (compact.length <= 120) return compact;
+  return `${compact.slice(0, 117).trim()}...`;
+}
+
 function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, world: SurgeryWorld): SceneArchitecture {
   const index = Math.max(1, Number(sceneIndex) || 1) - 1;
   const cycle = Math.floor(index / sourceInput.beats.length);
   const sourceBeat = sourceInput.beats[index % sourceInput.beats.length];
   const intent = SCENE_INTENTS[index % SCENE_INTENTS.length];
-  const event = SCENE_EVENTS[Math.floor(index / SCENE_INTENTS.length) % SCENE_EVENTS.length];
+  const event = SCENE_EVENTS[index % SCENE_EVENTS.length];
   const focus = SCENE_FOCUSES[index % SCENE_FOCUSES.length];
 
   const developedBeat = cycle > 0
@@ -558,6 +594,35 @@ function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, 
       event,
       cycle,
     ]),
+  };
+}
+
+function architectureFallbackConcept(arch: SceneArchitecture, phaseName: PureScene['phaseName'], register: Register): Concept {
+  const sourceCue = compactSourceCue(arch.source.exactText || arch.dominantSubject);
+  const phaseSubject: Record<Register, Record<PureScene['phaseName'], string>> = {
+    EDU: {
+      Intro: 'one readable question-board scene built from this exact beat',
+      'Build-up': 'one concrete teaching mechanism that isolates this beat as a visible cause-and-effect',
+      Climax: 'one proof-stage scene where this beat creates an observable learning consequence',
+      Resolution: 'one final takeaway scene that gathers this beat into a readable end state',
+    },
+    STY: {
+      Intro: 'one stylized question frame that makes this exact beat visually concrete',
+      'Build-up': 'one graphic proof frame that isolates this beat as a visible tension',
+      Climax: 'one stylized consequence frame where this beat visibly turns',
+      Resolution: 'one earned emblem frame that resolves this exact beat without adding story facts',
+    },
+    REAL: {
+      Intro: 'one real human-scale detail that makes this exact beat observable',
+      'Build-up': 'one practical real-world action that isolates this beat as evidence',
+      Climax: 'one real proof moment where this beat creates an observable consequence',
+      Resolution: 'one restrained real-world final detail that resolves this exact beat',
+    },
+  };
+  return {
+    subject: `${phaseSubject[register][phaseName]}: ${sourceCue} — ${arch.beat}`,
+    event: `${arch.event}, then the frame holds with this exact beat resolved and no extra idea added`,
+    matched: false,
   };
 }
 
@@ -798,7 +863,9 @@ export function generateBatch(input: BriefInput): GenerationResult {
 
     // Semantic concept from the scene's exact source beat — this is the brain.
     const beatText = arch.source.exactText;
-    const concept = primeConcept(beatText, register, world.id, pacing.phaseName, prev);
+    const conceptVariant = sourceParsed.status !== 'SOURCE_BOUND' && sourceParsed.beats.length === 1 ? i - 1 : 0;
+    const rankedConcept = primeConcept(beatText, register, world.id, pacing.phaseName, prev, conceptVariant);
+    const concept = rankedConcept.matched ? rankedConcept : architectureFallbackConcept(arch, pacing.phaseName, register);
     const prevId = i > 1 ? i - 1 : undefined;
     const camera = primeCamera(i, beatText, i - 1, register, prev?.src, prevId);
     const duration = durationGuard(beatText, input.videoModel);

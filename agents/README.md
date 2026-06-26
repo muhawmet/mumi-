@@ -69,6 +69,30 @@ The Timeline screen's `Ajan Paketleri` menu provides:
 | SUNO Paketi | music / sound direction |
 | PROOF Paketi | audit and repair |
 
+## Site Blocks All Agents Must Know
+
+Every adapter now recognizes these blocks from the site brief:
+
+| Block | Purpose |
+|---|---|
+| `SOURCE SECURITY BOUNDARY` | Marks customer data as untouchable |
+| `RECIPE` | Path, register, world, cast |
+| `MODEL ERA` | Write for 2026 frontier models |
+| `BRAND KIT: LOCKED` | Brand elements frozen |
+| `RENDER LOCK` | Verbatim visual-grammar guarantee (may include material clause) |
+| `AUTHORITY` | Priority order: path > lock > source > approved image > material > mandate/mood > DNA > palette |
+| `REFERENCE DNA → DIRECTIVES` | Camera, light, staging, texture, motion |
+| `PALETTE AS LIGHT` | Key/fill/shadow/accent as light behavior |
+| `DIRECTOR MANDATE` | Phase 0 creative-director decision record |
+| `DIRECTION / MOOD` | Mood, camera energy, light, transitions, music, POV, signature, leitmotif, tempo |
+| `STATIC DESIGN LAW` | Design mode (replaces I2V ANCHOR LAW) |
+| `I2V ANCHOR LAW` | Motion start-frame contract |
+| `CREATIVE VARIANT TEST` | A/B/C variant isolation |
+| `SCENE DOSSIER` | Per-scene source, concept, event, camera |
+| `SOUND` | Suno direction |
+| `FAIL CONDITIONS` | Proof checklist |
+| `PROOF STATE & QUALITY STATUS` | Regression detector output |
+
 ## Main Principle
 
 Preserve locks without killing creativity. Agents are not generic validators.

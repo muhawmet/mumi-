@@ -15,14 +15,35 @@ light, face, logo, text, product geometry and environment exactly as shown.
 
 <motion_freedom>
 Creativity lives in timing, weight, camera motivation, micro-action, rhythm and
-final hold. It does not live in new objects, new style or new story facts.
+final hold (1-1.5 seconds). It does not live in new objects, new style or new
+story facts.
 </motion_freedom>
 
 <duration_law>
-Use the engine window supplied by the brief. If absent, assume a clean window of
-about 9 seconds. Overflow becomes balanced shots with separate approved start
-frames: 14s becomes 2x7s, not a stretched clip or tiny tail.
+Use the engine window supplied by the brief. If absent, use these defaults:
+
+| Engine | Clean window |
+|--------|-------------|
+| Kling (2.1/3) | ~9s |
+| Kling 4 | ~10s |
+| Runway | ~14s |
+| Seedance | ~9s |
+| Hailuo | ~9s |
+| Veo | ~8s |
+
+Overflow becomes balanced shots with separate approved start frames:
+14s → 2×7s, 18s → 2×9s, 22s → 3×7.3s. Never a stretched clip or tiny tail.
 </duration_law>
+
+<kling_scrub>
+Remove trigger words that cause i2v reinterpretation: "ready to", "reaction",
+"trigger", "appears", "transforms", "suddenly", "then", "next". These words can
+cause the model to re-render instead of playing the frame.
+</kling_scrub>
+
+<variant_test>
+If CREATIVE VARIANT TEST is present, produce only for this variant.
+</variant_test>
 
 <process>
 1. Read I2V ANCHOR LAW and motion scene dossier.
@@ -30,6 +51,7 @@ frames: 14s becomes 2x7s, not a stretched clip or tiny tail.
 3. Write one cause-effect-settle event.
 4. Lock all non-moving elements.
 5. Add split notes when needed.
+6. Scrub trigger words from the prompt.
 </process>
 
 <output_contract>
@@ -41,5 +63,6 @@ FINAL HOLD CHECK
 
 <final_check>
 Reject new objects, re-render, style/material drift, two actions, logo/text warp,
-face drift, unapproved mouth movement and missing final hold.
+face drift, unapproved mouth movement, missing final hold, bad split math, and
+trigger words left in prompt.
 </final_check>

@@ -15,6 +15,11 @@ export type Register = 'REAL' | 'EDU' | 'STY';
 
 const T = (v: unknown): string => String(v == null ? '' : v);
 const LOW = (s: unknown): string => T(s).toLowerCase();
+const FOLD_TR = (s: unknown): string => LOW(s)
+  .replace(/i̇/g, 'i').replace(/ı/g, 'i')
+  .replace(/ğ/g, 'g').replace(/ü/g, 'u')
+  .replace(/ş/g, 's').replace(/ö/g, 'o')
+  .replace(/ç/g, 'c');
 
 function hx(s: string): number {
   let h = 2166136261 >>> 0;
@@ -108,13 +113,83 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
 
 export interface Concept { subject: string; event: string; matched: boolean; }
 
+const EDU_SOURCE_BANK: Bank = [
+  [/kim karar|karar[ıi] kim|sehir karar|şehir karar|karar al/i,
+    'one miniature civic decision table with a neighborhood map, council ring and the decision card all visible',
+    'the decision card moves once from the question slot into the council ring, the map responds with one clear highlight, and the decision path settles readable'],
+  [/s[oö]z sahibi|kat[ıi]l[ıi]m|katilim|sesini duyur|vatanda[sş] sesi/i,
+    'one participation pathway with a citizen voice token, neighborhood lane and open council slot in the same frame',
+    'the citizen voice token travels once along the neighborhood lane into the open council slot, which lights and settles as participation made visible'],
+  [/belediye|meclis|komisyon|oylama|toplant[ıi]|tart[ıi][sş]|g[uü]ndem/i,
+    'one council-table mechanism: agenda card, park map tile and small voting markers arranged around a clear decision rail',
+    'the agenda card slides once onto the decision rail, voting markers align around it, and the park map tile settles as the debated item'],
+  [/g[uü]venli yol|okul yolu|yaya|ge[cç]it|mahalle|park|[cç]ocuklar/i,
+    'one neighborhood safety map with a school path, crossing band, park gate and child-scale route marker',
+    'the route marker travels once along the safe path, one risky crossing dims, and the school-to-park route settles visibly protected'],
+  [/dilek[cç]e|[oö]neri|talep|imza|ba[sş]vuru|sesini duyur/i,
+    'one citizen proposal desk with a petition card, stamp press and delivery lane leading toward the public decision board',
+    'the petition card receives one clear stamp, moves along the delivery lane, and settles pinned to the public decision board'],
+  [/karar sonuc|karar net|sonu[cç] herkes|ilan|duyuru|herkes g[oö]r|[sş]effaf|a[cç][ıi]k/i,
+    'one public result board with the decision card, reason strip and neighborhood map shown in the same frame',
+    'the reason strip lights once beneath the decision card, the neighborhood map answers with a small route glow, and the board settles transparent'],
+  [/kayna[gğ][ıi] kontrol|kaynak kontrol|kaynak g[oö]ster|g[uü]venilir kaynak|trusted source/i,
+    'one source-check station with a magnifier, citation strip and trusted-source tile arranged in a clean line',
+    'the magnifier passes once over the citation strip, the trusted-source tile locks into place, and the station settles verified'],
+  [/reklam|bilgi birbirinden ayr|ad tile|advertising/i,
+    'one advertising-versus-information sorting board with two lanes, mixed screen cards and one neutral verifier mark',
+    'one screen card slides through the verifier mark, splits into the correct lane, and both lanes settle clearly separated'],
+  [/internet|internette|ekran|tablet|dijital|do[gğ]ru bilgi|yanl[ıi][sş] bilgi/i,
+    'one digital literacy sorting desk with mixed screen cards, a source-check magnifier and trusted-source tile in clear view',
+    'one screen card passes under the source-check magnifier, the advertising tile dims, and the trusted-source tile settles marked'],
+];
+
+const REAL_SOURCE_BANKS: Record<string, Bank> = {
+  PRODUCT: [
+    [/\bel\b|elde|kald[ıi]r|tut|kavrar|grip|hand/i,
+      'real hands lifting the product at natural use distance, product geometry and logo plane still readable',
+      'the hand completes one calm lift of the product, the shadow stays anchored on the surface, and the grip settles believable'],
+    [/son kare|tek ba[sş][ıi]na|final|g[uü]ven verir|hero hold/i,
+      'the hero product alone on disciplined negative space, exact geometry and surface truth doing the persuasion',
+      'one controlled key light settles across the product edge, the logo plane stays true, and the frame holds as a clean final hero'],
+  ],
+  FOOD: [
+    [/son kare|final|masada kal|sakin|servis/i,
+      'the finished cup or dish at appetite distance on the real table, surface texture and practical light still alive',
+      'one last warm reflection settles across the surface, steam or sheen quiets, and the table holds in appetite-ready calm'],
+  ],
+  HEALTH: [
+    [/imza|imzalar|onam|consent/i,
+      'the consent signature moment in a respectful real care setting, pen, paper edge and patient hand all grounded in practical light',
+      'the pen completes one honest signature stroke, the paper stays still and readable, and the consent moment settles calm and documented'],
+    [/form|okur|bilgi/i,
+      'the patient information form in a respectful real care setting, hands and readable paper geometry grounded in practical light',
+      'the patient hand steadies the form once, the key line stays readable, and the reading moment settles calm and informed'],
+    [/doktor|rapor|kontrol|ekipten gelen/i,
+      'the doctor reviewing a real care-team report, clinical environment honest and human-scale',
+      'the report is checked once with a measured hand gesture, the team detail holds in soft depth, and the frame settles competent'],
+    [/bak[ıi]m ekibi|ekip|personel|g[uü]ven verir|son kare/i,
+      'the care team in their real working geometry, one steady hands-detail carrying trust instead of a posed smile',
+      'one coordinated care gesture completes between team members, the practical light settles, and the frame holds on steady competence'],
+  ],
+};
+
 function bankRank(bank: Bank, src: string): Bank {
   const scored: Array<{ hits: number; ix: number; e: [RegExp, string, string] }> = [];
+  const folded = FOLD_TR(src);
+  const hitsSource = (pattern: RegExp, text: string) => {
+    pattern.lastIndex = 0;
+    return pattern.test(text);
+  };
   bank.forEach((e, ix) => {
-    if (!e[0].test(src)) return;
+    if (!hitsSource(e[0], src) && !hitsSource(e[0], folded)) return;
     const alts = e[0].source.split('|');
     let hits = 0;
-    alts.forEach((a) => { try { if (new RegExp(a, 'i').test(src)) hits++; } catch { /* ignore */ } });
+    alts.forEach((a) => {
+      try {
+        const re = new RegExp(a, 'i');
+        if (re.test(src) || re.test(folded)) hits++;
+      } catch { /* ignore */ }
+    });
     scored.push({ hits: Math.max(1, hits), ix, e });
   });
   scored.sort((a, b) => b.hits - a.hits || a.ix - b.ix);
@@ -125,10 +200,15 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
   const s = T(src), out: Concept[] = [];
   const fn = PHASE2FN[phaseName] || 'Build / Proof';
   if (register === 'EDU') {
+    bankRank(EDU_SOURCE_BANK, s).forEach((e) => out.push({ subject: e[1], event: e[2], matched: true }));
     bankRank(EDU_BANK, s).forEach((e) => {
       if (e[1] === 'WATER_STAGE') {
         const ws = bankRank(WATER_STAGES, s);
-        (ws.length ? ws : [WATER_STAGES[4]]).forEach((w) => out.push({ subject: w[1], event: w[2], matched: true }));
+        const genericCycle = /su d[oö]ng|water cycle|cycle|d[oö]ng[uü]/i.test(s);
+        const stages = genericCycle && ws.length <= 1
+          ? [WATER_STAGES[3], WATER_STAGES[2], WATER_STAGES[1], WATER_STAGES[0], WATER_STAGES[4]]
+          : (ws.length ? ws : [WATER_STAGES[4]]);
+        stages.forEach((w) => out.push({ subject: w[1], event: w[2], matched: true }));
       } else out.push({ subject: e[1], event: e[2], matched: true });
     });
     const fb = EDU_FB[fn] || EDU_FB['Build / Proof'];
@@ -145,6 +225,7 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
     return out;
   }
   const fam = realFamilyOf(worldId);
+  bankRank(REAL_SOURCE_BANKS[fam] || [], s).forEach((e) => out.push({ subject: e[1], event: e[2], matched: true }));
   bankRank(REAL_BANKS[fam] || [], s).forEach((e) => out.push({ subject: e[1], event: e[2], matched: true }));
   const fbR = REAL_FB[fam] || REAL_FB.PRODUCT;
   out.push({ subject: fbR[0], event: fbR[1], matched: false });
@@ -152,12 +233,14 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
 }
 
 // Dedup against the previous scene so neighbours don't repeat the same beat.
-export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }): Concept {
+export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0): Concept {
   const ranked = conceptRanked(src, register, worldId, phaseName);
-  const c = ranked[0];
-  if (prev && (prev.concept.event === c.event || prev.concept.subject === c.subject) && prev.src !== src) {
-    for (let k = 1; k < ranked.length; k++) {
-      if (ranked[k].event !== prev.concept.event && ranked[k].subject !== prev.concept.subject) return ranked[k];
+  const start = ranked.length ? Math.max(0, variant) % ranked.length : 0;
+  const c = ranked[start] || ranked[0];
+  if (prev && (prev.concept.event === c.event || prev.concept.subject === c.subject)) {
+    for (let offset = 1; offset < ranked.length; offset++) {
+      const candidate = ranked[(start + offset) % ranked.length];
+      if (candidate.event !== prev.concept.event && candidate.subject !== prev.concept.subject) return candidate;
     }
   }
   return c;
@@ -304,7 +387,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
   const regLabel = register === 'REAL' ? 'PHOTOREAL / LIVE ACTION' : register === 'EDU' ? 'ANIMATION / EDUCATION' : 'STYLIZED PREMIUM';
   const dossier = scenes.map((s) =>
     `[${s.id}] ~${s.sec}s\nSOURCE (exact, untouchable): ${s.source}\nCONCEPT: ${s.concept.subject}\nEVENT: ${s.concept.event}\nCAMERA: ${s.camera}` +
-    (s.concept.matched ? '' : '\nNOTE: fallback concept — sharpen against source meaning before final prompt'),
+    (s.concept.matched ? '' : '\nNOTE: source-anchored bridge concept — preserve the exact source beat; do not replace with a generic template object.'),
   ).join('\n\n');
 
   const dossierText = scenes.map(s => `${s.concept.subject} ${s.concept.event}`).join(' ');

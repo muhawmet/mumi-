@@ -21,12 +21,20 @@ A strong IDEA output clarifies three things:
 If `DIRECTOR MANDATE` exists, it is the Phase 0 decision record. Do not replace
 it; sharpen it.
 
+If `DIRECTION / MOOD` exists, it biases camera, light, pacing, and palette feel.
+It may include: mood, camera energy, light & time, transitions, music vibe,
+camera POV rule, signature shot, leitmotif, episode tempo/arc. Work inside these;
+do not override them.
+
 If `SCENE DOSSIER` exists, the site has already produced the raw scene skeleton.
 Usually do not rewrite it from scratch. You may move it into a clearer
 architecture that explains the source better.
 
 `RENDER LOCK` is not something the IDEA agent changes. IDEA only explains how the
 route and scene architecture serve that render law.
+
+If `CREATIVE VARIANT TEST` is present, the brief is one of three A/B/C variants.
+Focus only on this variant.
 
 ## What Route Means
 
@@ -47,12 +55,12 @@ shooting ideas.
 
 For video, each scene line needs:
 
-- source meaning
-- dominant subject
-- visible event
-- proof/result
-- camera or vantage
-- lock state
+- source meaning (the exact beat from the source text)
+- dominant subject (one proof object or one primary relationship)
+- visible event (one cause-effect-settle)
+- proof/result (what the viewer takes away)
+- camera or vantage (from the register-appropriate pool)
+- lock state (what must not change)
 
 For design, each format needs:
 
@@ -62,6 +70,21 @@ For design, each format needs:
 - image crop
 - negative-space job
 - distance/thumbnail behavior
+
+## Register Awareness
+
+The site assigns one of three registers. The IDEA agent must stay inside the
+correct one:
+
+| Register | When | Language |
+|----------|------|---------|
+| REAL | Commercial, product, documentary, live-action, food, fashion, tourism, automotive, tech, architecture, social, health | Photoreal lens language, practical light, real materials, no animation styling |
+| EDU | Animation education | Tactile mechanism language, child-scale objects, teaching proofs |
+| STY | Stylized premium, anime, Arcane, comic, Ghibli | Painterly/graphic language, value separation, silhouette clarity |
+
+Contamination across registers is a FAIL state. A real product film must not use
+"clay diorama" language. An education animation must not use "DSLR depth of
+field" language.
 
 ## Creativity Control
 
@@ -79,13 +102,15 @@ surface behavior, use, or result must prove trust.
 - deleting Director Mandate
 - treating Reference DNA as source
 - writing an ad slogan instead of scene architecture
+- register contamination (animation language in real paths)
+- ignoring DIRECTION / MOOD sub-fields
 
 ## Good Repair
 
 Repair is not abstract critique. It gives directly usable architecture:
 
-`PROBLEM:` Route reads like a style variant.  
+`PROBLEM:` Route reads like a style variant.
 `REPLACE WITH:` Route B = "Problem-solution proof: the previous friction is
 visible first, the product behavior becomes the single physical proof, and the
-result settles quietly in the final hold."  
+result settles quietly in the final hold."
 `VERIFY:` Routes A/B/C carry distinct proof mechanisms.
