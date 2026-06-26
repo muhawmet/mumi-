@@ -33,7 +33,7 @@ If CREATIVE VARIANT TEST is present, produce only for this variant.
 
 <output_contract>
 SUNO PROMPT
-NEGATIVE PROMPT
+NEGATIVE PROMPT  (Suno has no negative field — emit as style-exclusion tags appended to the style description, e.g. [Avoid: vocals, trailer brass, EDM drops])
 MIX / VO POCKET
 SCENE ARC CUES
 </output_contract>

@@ -79,6 +79,10 @@ music to this arc:
 
 ## Negative
 
+Suno has no native negative-prompt field. Output this section as **style-exclusion
+tags appended to the style description**, e.g.
+`[Avoid: vocals, trailer brass, EDM drops, busy percussion clipping the VO]`.
+
 Prevent:
 
 - vocals unless requested

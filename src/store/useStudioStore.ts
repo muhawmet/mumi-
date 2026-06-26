@@ -11,6 +11,7 @@ import type { DurationVerdict } from '../core/brain';
 import {
   decodeBrief,
   ingestSource,
+  autoGroupBeats,
   sourceIntegrity,
   type SourceBeat,
   type SourceIntegrityReport,
@@ -234,6 +235,10 @@ const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPacket
   agentPackets: null,
   selectedSceneId: null,
 };
+
+// Above this many sentence atoms, ingest auto-groups into thematic beats
+// (keeps short briefs sentence-level so manual beat control is unaffected).
+const AUTO_GROUP_THRESHOLD = 12;
 
 /** Single source of truth for the persisted/snapshotted project fields (no vault, no transient flags). */
 export function pickProjectState(s: StudioState): Partial<StudioState> {
@@ -477,15 +482,28 @@ export const useStudioStore = create<StudioState>()(
       ingestRawSource: () => {
         const s = get();
         const rawSource = s.rawSource;
-        const sourceBeats = ingestSource(rawSource);
+        const atoms = ingestSource(rawSource);
+        // Auto-group granular ingests into thematic beats so a 3-minute script
+        // doesn't explode into 50+ scenes. Tiny inputs and Manuel mode stay
+        // sentence-level (user keeps full manual control via merge/split).
+        const sourceBeats = s.beatMode !== 'Manuel' && atoms.length > AUTO_GROUP_THRESHOLD
+          ? autoGroupBeats(rawSource, s.beatMode)
+          : atoms;
         const sourceReport = sourceIntegrity(rawSource, sourceBeats);
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
         set({ sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1), beatAnalysis });
       },
       setBeatMode: (mode) => {
         const s = get();
-        const beatAnalysis = planBeats(s.sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
-        set({ beatMode: mode, beatAnalysis, ...STALE_GENERATION });
+        // Changing the beat mode re-derives granularity from the original vault
+        // when grouping applies; otherwise keep the existing (possibly hand-edited) beats.
+        const regroup = !!s.rawSource && mode !== 'Manuel' && ingestSource(s.rawSource).length > AUTO_GROUP_THRESHOLD;
+        const sourceBeats = regroup ? autoGroupBeats(s.rawSource, mode) : s.sourceBeats;
+        const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
+        const regroupPatch = regroup
+          ? { sourceBeats, sourceReport: sourceIntegrity(s.rawSource, sourceBeats), sceneCount: Math.max(1, sourceBeats.length || 1) }
+          : {};
+        set({ beatMode: mode, beatAnalysis, ...regroupPatch, ...STALE_GENERATION });
       },
       toggleBeatKeep: (beatId) => {
         const s = get();

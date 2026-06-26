@@ -241,6 +241,40 @@ describe('Proof & Quality', () => {
       expect(finding).toBeUndefined();
     });
 
+    // 6. reg_concept_monotony tests (brief-level)
+    it('reg_concept_monotony: FIX when a brief reuses one concept across many scenes', () => {
+      const text = Array.from({ length: 10 }, () => 'CONCEPT: one civic decision table').join('\n');
+      const finding = proofDoctor({ type: 'brief', text }).find((f) => f.problem === 'Concept Monotony');
+      expect(finding).toBeDefined();
+      expect(finding?.status).toBe('FIX');
+    });
+
+    it('reg_concept_monotony: does not fire on scene-level input', () => {
+      const text = Array.from({ length: 10 }, () => 'CONCEPT: one civic decision table').join('\n');
+      const finding = proofDoctor({ type: 'scene', text }).find((f) => f.problem === 'Concept Monotony');
+      expect(finding).toBeUndefined();
+    });
+
+    it('reg_concept_monotony: passes when concepts are diverse', () => {
+      const text = Array.from({ length: 8 }, (_, i) => `CONCEPT: distinct concept ${i}`).join('\n');
+      const finding = proofDoctor({ type: 'brief', text }).find((f) => f.problem === 'Concept Monotony');
+      expect(finding).toBeUndefined();
+    });
+
+    // 7. reg_fallback_leak tests (brief-level)
+    it('reg_fallback_leak: FAIL when generic fallback templates repeat >2 times', () => {
+      const text = Array.from({ length: 3 }, () => 'CONCEPT: one sealed capsule object').join('\n');
+      const finding = proofDoctor({ type: 'brief', text }).find((f) => f.problem === 'Fallback Leak');
+      expect(finding).toBeDefined();
+      expect(finding?.status).toBe('FAIL');
+    });
+
+    it('reg_fallback_leak: does not fire on scene-level input', () => {
+      const text = Array.from({ length: 3 }, () => 'one sealed capsule object').join('\n');
+      const finding = proofDoctor({ type: 'scene', text }).find((f) => f.problem === 'Fallback Leak');
+      expect(finding).toBeUndefined();
+    });
+
     // Unknown ID test
     it('throws error for unknown regression ID', () => {
       const originalReg = [...SURGERY_DATA.regression];

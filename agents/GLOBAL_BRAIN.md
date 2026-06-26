@@ -97,6 +97,23 @@ In REAL paths, tactile Material does not apply. Real commercial, documentary,
 portrait, product, architecture, and event work must not leak into clay, toy, or
 diorama language.
 
+## 6b. Hybrid Path Resolution Law
+
+When the selected Path Register (e.g. EDU) differs from the Render World Register
+(e.g. STY / Arcane), the scene is a **Hybrid Path**. Resolve the tension by role:
+
+1. **Hierarchy Rule:** The Path Register governs the **Concept, Proof Mechanism, and
+   Camera Angle Pool**. The Render World Register governs the **Style, Lighting Physics,
+   and Visual Rendering Lock**.
+2. **No false-positive contamination:** The PROOF agent must not flag world-specific
+   style terms (e.g. "painterly 3D", "graphic shadows", "teal-and-amber") as register
+   contamination in an EDU path, provided they live strictly inside the Render Lock or
+   style descriptions — not in the concept or proof mechanism.
+3. **Execution example (EDU + Arcane):** Stage the scene as a tactile educational
+   mechanism (EDU concept), film it with an 85mm macro creep / child-eye push (EDU
+   camera), but render it with Arcane's teal-and-amber painterly brushstrokes and heavy
+   negative-space shadows (STY world).
+
 ## 7. Render Lock
 
 `RENDER LOCK` is the quality contract for image generation. In IMAGE work, it

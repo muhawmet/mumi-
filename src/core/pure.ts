@@ -827,6 +827,19 @@ export function generateBatch(input: BriefInput): GenerationResult {
   const count = input.rawSource?.length && input.sourceBeats?.length
     ? input.sourceBeats.length
     : Math.max(1, Math.min(20, Number(sceneCount) || 5));
+  // Scene-count guard: a single brief should not explode into dozens of clips.
+  // Group the source into thematic beats (Beat Planner / auto-group) before producing.
+  if (count > 25) {
+    return {
+      status: 'BLOCKED',
+      scenes: [],
+      contractGate: {
+        status: 'BLOCKED',
+        findings: [{ code: 'SCENE_OVERFLOW', message: `${count} sahne tespit edildi (üst sınır 25). Kaynağı tematik beat'lere grupla (Beat Planner / Akıllı Grupla) ve yeniden üret.` }],
+      },
+      error: 'SCENE_OVERFLOW',
+    };
+  }
   const sourceParsed: ParsedSource = input.rawSource?.length && input.sourceBeats?.length
     ? {
         status: 'SOURCE_BOUND',
@@ -854,6 +867,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     ? 'NOT_APPLICABLE: static design deliverable; no music brief.'
     : primeSuno(path);
   let prev: { src: string; concept: Concept } | undefined;
+  const emittedConcepts: Concept[] = [];
   const briefScenes: AgentBriefScene[] = [];
 
   for (let i = 1; i <= count; i++) {
@@ -864,7 +878,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     // Semantic concept from the scene's exact source beat — this is the brain.
     const beatText = arch.source.exactText;
     const conceptVariant = sourceParsed.status !== 'SOURCE_BOUND' && sourceParsed.beats.length === 1 ? i - 1 : 0;
-    const rankedConcept = primeConcept(beatText, register, world.id, pacing.phaseName, prev, conceptVariant);
+    const rankedConcept = primeConcept(beatText, register, world.id, pacing.phaseName, prev, conceptVariant, emittedConcepts);
     const concept = rankedConcept.matched ? rankedConcept : architectureFallbackConcept(arch, pacing.phaseName, register);
     const prevId = i > 1 ? i - 1 : undefined;
     const camera = primeCamera(i, beatText, i - 1, register, prev?.src, prevId);
@@ -883,6 +897,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
       : buildMotionPrompt(i, concept, camera, dna, duration.sec);
     const voiceOver = beatText;
     prev = { src: beatText, concept };
+    emittedConcepts.push(concept);
     briefScenes.push({ id: i, source: beatText, concept, camera, sec: duration.sec });
 
     const sceneCore: Omit<PureScene, 'handoff'> = {

@@ -26,7 +26,7 @@ Score the edit; do not invent visuals.
 ## Output
 
 `SUNO PROMPT`
-`NEGATIVE PROMPT`
+`NEGATIVE PROMPT` — Suno has no negative field; emit as style-exclusion tags appended to the style description, e.g. `[Avoid: vocals, trailer brass, EDM drops]`
 `MIX / VO POCKET`
 `SCENE ARC CUES`
 

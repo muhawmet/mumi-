@@ -43,6 +43,11 @@ const BEAT_MODES: Record<BeatMode, { min: number; target: number; max: number }>
   Manuel: { min: 0, target: 0, max: 99 },
 };
 
+/** Duration bounds for a beat mode — shared with the source auto-grouper. */
+export function beatBounds(mode: BeatMode): { min: number; target: number; max: number } {
+  return BEAT_MODES[mode] || BEAT_MODES['Dengeli'];
+}
+
 function clean(v: string) {
   return String(v || '').replace(/\s+/g, ' ').trim();
 }

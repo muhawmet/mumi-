@@ -32,13 +32,18 @@ conflict with the site packet.
 
 ## Regression Detectors
 
-The site's `proofDoctor()` runs five specific regression detectors. Know them:
+The site's `proofDoctor()` runs seven specific regression detectors. Know them:
 
 ### reg_real_path_contamination
 **Trigger**: Text claims realism (ultra-real, photoreal, realistic) AND contains
 stylized language (clay, pixar, diorama) in the same positive prompt.
 **Verdict**: FAIL
-**Exception**: Hybrid mode explicitly enabled.
+**Exceptions**:
+1. Hybrid mode explicitly enabled.
+2. The Render World is Stylized (STY) rendering a Tactile/Educational (EDU) path. In
+   this case the stylized visual descriptors come from the Render Lock and are
+   permitted alongside the educational concept — see the Hybrid Path Resolution Law
+   in `GLOBAL_BRAIN.md` §6b. Do not flag them as contamination.
 
 ### reg_source_loss
 **Trigger**: Source coverage is below 100%.
@@ -63,6 +68,20 @@ final tail hold."
 **Trigger**: Positive text contains protected IP names (Luffy, One Piece, etc.).
 **Verdict**: FAIL
 **Why**: Cannot use copyrighted character names or properties.
+
+### reg_concept_monotony
+**Trigger**: A brief (`type: 'brief'`) has more than 5 `CONCEPT:` lines but fewer
+than 30% unique concepts.
+**Verdict**: FIX
+**Repair**: Group the source into thematic beats (Beat Planner / auto-group) or
+deepen the concept bank.
+
+### reg_fallback_leak
+**Trigger**: A brief (`type: 'brief'`) repeats generic fallback concept templates
+(sealed capsule, working model of the core idea, "fallback concept — sharpen") more
+than twice.
+**Verdict**: FAIL
+**Repair**: Expand `EDU_SOURCE_BANK` patterns or re-ingest the source into beats.
 
 ## QA Score Components
 

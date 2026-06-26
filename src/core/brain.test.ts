@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   registerOf, realFamilyOf, conceptRanked, dnaDirectives, durationGuard,
-  primeSuno, estimateSec, renderLock, primeCamera, buildAgentBrief,
+  primeSuno, estimateSec, renderLock, primeCamera, primeConcept, buildAgentBrief,
   buildVariantBriefs, recommendReason, primePacket
 } from './brain';
 import { DATA } from './pure';
@@ -88,6 +88,35 @@ describe('conceptRanked (semantic brain)', () => {
     const c = conceptRanked('tamamen alakasız metin', 'EDU', 'clay', 'Intro');
     expect(c.length).toBeGreaterThan(0);
     expect(c[c.length - 1].matched).toBe(false);
+  });
+
+  it('matches the expanded civic-education concept bank', () => {
+    const cases: Array<[string, RegExp]> = [
+      ['Anayasa ve kanun adaleti sağlar.', /law-foundation|justice/],
+      ['Kamuoyu ve toplum sesi kararı etkiler.', /public-opinion/],
+      ['Seçim ve sandık ile milletvekili seçilir.', /ballot/],
+      ['Sivil toplum ve dernek gönüllü çalışır.', /civic-bridge|volunteer/],
+      ['Dijital vatandaşlık e-devlet ile olur.', /digital civic portal/],
+      ['Bu unsurlar birbirini etkiler ve hep birlikte çalışır.', /interconnection/],
+    ];
+    for (const [source, re] of cases) {
+      const top = conceptRanked(source, 'EDU', 'arcane', 'Build-up')[0];
+      expect(top.matched, source).toBe(true);
+      expect(`${top.subject} ${top.event}`, source).toMatch(re);
+    }
+  });
+
+  it('primeConcept stays deterministic and unchanged without allPrevious', () => {
+    const src = 'Anayasa ve kanun adaleti sağlar.';
+    expect(primeConcept(src, 'EDU', 'arcane', 'Build-up')).toEqual(primeConcept(src, 'EDU', 'arcane', 'Build-up'));
+  });
+
+  it('primeConcept rotates away from an over-used subject when alternatives exist', () => {
+    const src = 'Anayasa ve kanun adaleti sağlar.';
+    const first = primeConcept(src, 'EDU', 'arcane', 'Build-up');
+    const overUsed = [first, first, first];
+    const next = primeConcept(src, 'EDU', 'arcane', 'Build-up', undefined, 0, overUsed);
+    expect(next.subject).not.toBe(first.subject);
   });
 
   it('real register routes through the world→family bank', () => {

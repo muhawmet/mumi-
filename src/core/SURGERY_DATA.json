@@ -3877,6 +3877,18 @@
       "name": "IP Reference Misuse",
       "input": "Make it look like Luffy on the Thousand Sunny",
       "expected": "FAIL/FIX: abstract into sunny ocean adventure, ship-deck scale, bold primaries; no Luffy/Sunny copy."
+    },
+    {
+      "id": "reg_concept_monotony",
+      "name": "Concept Monotony",
+      "input": "Brief with many CONCEPT lines but few unique subjects",
+      "expected": "FIX: too many scenes reuse the same concept; group source into thematic beats or deepen the concept bank."
+    },
+    {
+      "id": "reg_fallback_leak",
+      "name": "Fallback Leak",
+      "input": "Brief where multiple scenes use generic fallback concept templates",
+      "expected": "FAIL: generic fallback concepts repeated; expand EDU_SOURCE_BANK patterns or re-ingest source."
     }
   ]
 }

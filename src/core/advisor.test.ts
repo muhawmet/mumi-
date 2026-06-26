@@ -51,6 +51,26 @@ describe('directorNotes', () => {
     const notes = directorNotes({ ...full, selectedWorldId: 'arcane', selectedRefIds: ['setup_highkey'] });
     expect(notes.some((n) => /DNA \/ dünya uyumsuzluğu/.test(n.title))).toBe(true);
   });
+
+  it('warns when scene count is too high', () => {
+    const notes = directorNotes({ ...full, sceneCount: 24 });
+    expect(notes.some((n) => n.level === 'warn' && /Sahne sayısı/.test(n.title))).toBe(true);
+  });
+
+  it('warns when the preset register does not match the path register', () => {
+    const notes = directorNotes({ ...full, phase0PresetId: 'product_brand' });
+    expect(notes.some((n) => n.level === 'warn' && /Preset \/ register/.test(n.title))).toBe(true);
+  });
+
+  it('does not warn when the preset register matches (edu_explainer on EDU)', () => {
+    const notes = directorNotes({ ...full, phase0PresetId: 'edu_explainer' });
+    expect(notes.some((n) => /Preset \/ register/.test(n.title))).toBe(false);
+  });
+
+  it('flags palette/world tension on a gritty world with a clean palette', () => {
+    const notes = directorNotes({ ...full, selectedWorldId: 'arcane', selectedPaletteId: 'vibrant_clean_education' });
+    expect(notes.some((n) => n.level === 'info' && /Palet \/ dünya/.test(n.title))).toBe(true);
+  });
 });
 
 describe('reference intelligence', () => {

@@ -139,6 +139,39 @@ const DETECTORS: Record<string, DetectorFunc> = {
       };
     }
     return null;
+  },
+  // Brief-level: many CONCEPT lines but few unique subjects = monotonous brief.
+  reg_concept_monotony: (input, reg) => {
+    if (input.type !== 'brief') return null;
+    const concepts = input.text.match(/CONCEPT:\s*(.+)/gi) || [];
+    if (concepts.length <= 5) return null;
+    const unique = new Set(concepts.map((c) => c.trim().toLowerCase()));
+    if (unique.size / concepts.length < 0.3) {
+      return {
+        status: 'FIX',
+        problem: reg.name,
+        why: reg.expected,
+        replaceWith: 'group source into thematic beats (Beat Planner / auto-group) or deepen the concept bank.',
+        verify: `${concepts.length} concepts, only ${unique.size} unique.`,
+      };
+    }
+    return null;
+  },
+  // Brief-level: generic fallback concept templates repeated across scenes.
+  reg_fallback_leak: (input, reg) => {
+    if (input.type !== 'brief') return null;
+    const lower = input.text.toLowerCase();
+    const fallbackCount = (lower.match(/sealed capsule object|working model of the core idea|fallback concept — sharpen/g) || []).length;
+    if (fallbackCount > 2) {
+      return {
+        status: 'FAIL',
+        problem: reg.name,
+        why: reg.expected,
+        replaceWith: 'expand EDU_SOURCE_BANK patterns or re-ingest the source into thematic beats.',
+        verify: `${fallbackCount} generic fallback concepts detected.`,
+      };
+    }
+    return null;
   }
 };
 

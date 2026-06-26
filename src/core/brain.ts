@@ -141,6 +141,25 @@ const EDU_SOURCE_BANK: Bank = [
   [/internet|internette|ekran|tablet|dijital|do[gğ]ru bilgi|yanl[ıi][sş] bilgi/i,
     'one digital literacy sorting desk with mixed screen cards, a source-check magnifier and trusted-source tile in clear view',
     'one screen card passes under the source-check magnifier, the advertising tile dims, and the trusted-source tile settles marked'],
+  // ---- civic-education depth (reduces fallback rate on participation briefs) ----
+  [/hukuk|anayasa|kanun|adalet|mahkeme|hak ve [oö]zg[uü]rl[uü]k/i,
+    'one law-foundation mechanism: a constitution tablet, a balance-of-justice beam and a single rule card on a civic plinth',
+    'the rule card settles onto the justice beam, the beam levels once, and the constitution tablet lights along the matching article'],
+  [/kamuoyu|halk[ıi]n g[oö]r[uü][sş]|toplum sesi|ortak g[oö]r[uü][sş]|kamu g[oö]r[uü][sş]/i,
+    'one public-opinion gauge with citizen voice tokens gathering on one side of a visible threshold line',
+    'citizen voice tokens accumulate past the threshold, the gauge needle tips once, and the decision board answers with a single visible shift'],
+  [/siyasi parti|sand[ıi]k|se[cç]im|milletvekili|oy pusula|aday g[oö]ster/i,
+    'one ballot-path mechanism with party banners, a ballot card and a parliament-seat ring visible together',
+    'the ballot card travels once from the citizen hand through the ballot box into the parliament ring, and the seat lamp lights a single time'],
+  [/\bstk\b|sivil toplum|dernek|vak[ıi]f|g[oö]n[uü]ll[uü]/i,
+    'one civic-bridge mechanism linking a citizen-group marker to the council door across a visible volunteer lane',
+    'the citizen-group marker crosses the volunteer-lane bridge, reaches the council door, and the door opens one visible degree'],
+  [/dijital vatanda[sş]|e-?devlet|dijital dilek[cç]e|[cç]evrim ?i[cç]i oy|online ba[sş]vuru/i,
+    'one digital civic portal with a screen card, a secure login token and an e-petition slot inside a clean interface frame',
+    'the login token authenticates once, the e-petition card slides into the submission slot, and the portal confirms with a single check mark'],
+  [/birbirini etkile|birlikte [cç]al[ıi][sş]|ba[gğ]lant[ıi]l[ıi]|etkile[sş]im|el ele|hep birlikte/i,
+    'one interconnection web with five civic nodes and visible threads linking them on a dark civic table',
+    'one thread pulses from a source node through the web, each linked node answers with a small light, and the whole web settles interconnected'],
 ];
 
 const REAL_SOURCE_BANKS: Record<string, Bank> = {
@@ -233,17 +252,30 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
 }
 
 // Dedup against the previous scene so neighbours don't repeat the same beat.
-export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0): Concept {
+// When `allPrevious` is supplied (the concepts already emitted in this batch),
+// also rotate away from any subject that has already been used REPEAT_CAP times,
+// breaking the long-run monotony that makes one template carry dozens of scenes.
+// With `allPrevious` omitted the behaviour is identical to the neighbour-only dedup.
+const CONCEPT_REPEAT_CAP = 3;
+export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0, allPrevious?: Concept[]): Concept {
   const ranked = conceptRanked(src, register, worldId, phaseName);
-  const start = ranked.length ? Math.max(0, variant) % ranked.length : 0;
-  const c = ranked[start] || ranked[0];
-  if (prev && (prev.concept.event === c.event || prev.concept.subject === c.subject)) {
-    for (let offset = 1; offset < ranked.length; offset++) {
-      const candidate = ranked[(start + offset) % ranked.length];
-      if (candidate.event !== prev.concept.event && candidate.subject !== prev.concept.subject) return candidate;
-    }
+  if (!ranked.length) return { subject: '', event: '', matched: false };
+  const start = Math.max(0, variant) % ranked.length;
+  const subjectUses = (subject: string) =>
+    allPrevious ? allPrevious.reduce((n, c) => n + (c.subject === subject ? 1 : 0), 0) : 0;
+
+  // Walk candidates from `start`: skip neighbour clashes, then prefer a candidate
+  // still under the repeat cap. `firstNeighbourSafe` preserves the legacy fallback
+  // (return the first non-clashing candidate) when everything is over the cap.
+  let firstNeighbourSafe: Concept | undefined;
+  for (let offset = 0; offset < ranked.length; offset++) {
+    const candidate = ranked[(start + offset) % ranked.length];
+    if (prev && (prev.concept.event === candidate.event || prev.concept.subject === candidate.subject)) continue;
+    if (!firstNeighbourSafe) firstNeighbourSafe = candidate;
+    if (subjectUses(candidate.subject) >= CONCEPT_REPEAT_CAP) continue;
+    return candidate;
   }
-  return c;
+  return firstNeighbourSafe || ranked[start];
 }
 
 // ---------------- camera director (semantic-anchored, anti-monotony) ----------------

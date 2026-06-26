@@ -45,6 +45,7 @@ export interface AdvisorInput {
   sourceCoverage?: number | null;
   sceneCount?: number;
   intensities?: number[];
+  phase0PresetId?: string;
 }
 
 // Which preview categories sit honestly under each register.
@@ -56,6 +57,24 @@ const REGISTER_OK: Record<Register, PreviewCategory[]> = {
 const REGISTER_LABEL: Record<Register, string> = {
   EDU: 'Animasyon/Eğitim', STY: 'Stilize Premium', REAL: 'Foto-gerçek',
 };
+
+// Which registers each Phase-0 preset's Director Mandate was authored for.
+// Catches e.g. a "Ürün / Marka Filmi" mandate being applied to an EDU script.
+const PRESET_REGISTER_MAP: Record<string, Register[]> = {
+  product_brand: ['REAL'],
+  cinematic_story: ['REAL'],
+  social_short: ['REAL'],
+  doc_human: ['REAL'],
+  corp_public: ['REAL'],
+  event_campaign: ['REAL'],
+  edu_explainer: ['EDU', 'STY'],
+  stylized_game: ['STY'],
+};
+
+// Gritty render worlds vs. clean/bright palettes: the Render Lock wins by
+// authority, but the palette can mislead downstream agents — worth a heads-up.
+const GRITTY_WORLD_IDS = new Set(['arcane', 'painterly_shadow', 'graphic_comic']);
+const CLEAN_PALETTE_IDS = new Set(['vibrant_clean_education', 'pastel_soft', 'clinical_blue']);
 
 function refFamily(cat: string): string {
   return String(cat || '').split('/')[0].trim().toLowerCase();
@@ -238,6 +257,28 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     }
   }
 
+  // preset (Director Mandate) ↔ register coherence — e.g. a product-film mandate on an EDU script
+  if (input.phase0PresetId) {
+    const allowed = PRESET_REGISTER_MAP[input.phase0PresetId];
+    if (allowed && !allowed.includes(register)) {
+      notes.push({
+        level: 'warn',
+        title: 'Preset / register uyumsuzluğu',
+        detail: `"${input.phase0PresetId}" preset'i ${allowed.map((r) => REGISTER_LABEL[r]).join(' / ')} için tasarlandı, ama mevcut path ${REGISTER_LABEL[register]}. Director Mandate yanlış dili konuşuyor — register'a uygun bir preset seç.`,
+      });
+      blocking = true;
+    }
+  }
+
+  // palette ↔ world mood harmony (non-blocking: Render Lock has authority)
+  if (world && GRITTY_WORLD_IDS.has(world.id) && CLEAN_PALETTE_IDS.has(input.selectedPaletteId)) {
+    notes.push({
+      level: 'info',
+      title: 'Palet / dünya gerilimi',
+      detail: `"${world.name}" gritty bir dünya ama seçili palet temiz/parlak. Render Lock kazanır, fakat agentlar palet bilgisiyle karışabilir — dünyaya uygun bir palet daha tutarlı olur.`,
+    });
+  }
+
   const lowFitRefs = world
     ? refs.map((ref) => ({ ref, fit: refFit(world, ref) })).filter(({ fit }) => fit < REF_FIT_CONFLICT)
     : [];
@@ -269,6 +310,15 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     if (families.size === refs.length) {
       notes.push({ level: 'info', title: 'Referanslar dağınık', detail: `Seçili DNA'lar ${families.size} ayrı aileden; ortak bir görsel dil seçersen sahneler tutarlı olur.` });
     }
+  }
+
+  // scene-count guard — too many scenes = unproducible, no narrative arc
+  if ((input.sceneCount ?? 0) > 20) {
+    notes.push({
+      level: 'warn',
+      title: 'Sahne sayısı çok yüksek',
+      detail: `${input.sceneCount} sahne planlandı. Tipik içerik için 8-15 sahne yeter (üst sınır 25). Kaynağı tematik beat'lere grupla (Beat Planner / Akıllı Grupla).`,
+    });
   }
 
   // source intelligence

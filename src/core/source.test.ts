@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import SURGERY from './SURGERY_DATA.json';
-import { decodeBrief, ingestSource, sourceIntegrity } from './source';
+import { decodeBrief, ingestSource, autoGroupBeats, sourceIntegrity } from './source';
 
 describe('decodeBrief', () => {
   it('chooses the education path when curriculum signals are present', () => {
@@ -55,5 +55,45 @@ describe('ingestSource and sourceIntegrity', () => {
     expect(report.ok).toBe(false);
     expect(report.coverage).toBeLessThan(100);
     expect(report.rawHash).not.toBe(report.reconHash);
+  });
+});
+
+describe('autoGroupBeats', () => {
+  const longSource = Array.from(
+    { length: 16 },
+    (_, i) => `Kısa cümle ${i + 1}.`,
+  ).join(' ');
+
+  it('groups granular atoms into fewer thematic beats', () => {
+    const atoms = ingestSource(longSource);
+    const grouped = autoGroupBeats(longSource, 'Dengeli');
+    expect(grouped.length).toBeGreaterThan(0);
+    expect(grouped.length).toBeLessThan(atoms.length);
+  });
+
+  it('stays lossless — grouped beats reconstruct the raw source exactly', () => {
+    const grouped = autoGroupBeats(longSource, 'Dengeli');
+    expect(grouped.map((b) => b.exactText).join('')).toBe(longSource);
+    expect(sourceIntegrity(longSource, grouped).coverage).toBe(100);
+  });
+
+  it('renumbers source ids sequentially', () => {
+    const grouped = autoGroupBeats(longSource, 'Dengeli');
+    expect(grouped.map((b) => b.sourceId)).toEqual(
+      grouped.map((_, i) => `source-${String(i + 1).padStart(3, '0')}`),
+    );
+  });
+
+  it('is deterministic and respects beat mode (Ekonomik groups at least as hard as Hassas)', () => {
+    expect(autoGroupBeats(longSource, 'Dengeli')).toEqual(autoGroupBeats(longSource, 'Dengeli'));
+    const eko = autoGroupBeats(longSource, 'Ekonomik').length;
+    const hassas = autoGroupBeats(longSource, 'Hassas').length;
+    expect(eko).toBeLessThanOrEqual(hassas);
+  });
+
+  it('leaves a single atom untouched', () => {
+    const grouped = autoGroupBeats('Tek cümle.', 'Dengeli');
+    expect(grouped).toHaveLength(1);
+    expect(grouped[0].exactText).toBe('Tek cümle.');
   });
 });

@@ -1,4 +1,5 @@
 import SURGERY from './SURGERY_DATA.json';
+import { mergeScore, beatBounds, type BeatMode } from './beats';
 
 export interface SourceProject {
   id: string;
@@ -181,6 +182,49 @@ export function ingestSource(raw: string): SourceBeat[] {
     });
   }
   return beats;
+}
+
+/**
+ * Group sentence-level atoms into thematic beats by reusing the Beat Planner's
+ * semantic `mergeScore`. A greedy left-to-right pass merges adjacent atoms while
+ * the score clears the merge threshold (short beats, connectors and semantic
+ * overlap all push the score up; exceeding the mode's max duration returns -99,
+ * giving a natural hard cap). Reconstruction stays lossless: merged `exactText`
+ * is the concatenation of the original atoms, so `sourceIntegrity` still reports
+ * 100%. `ingestSource` itself is untouched.
+ */
+const AUTO_GROUP_MERGE_THRESHOLD = 3;
+export function autoGroupBeats(raw: string, mode: BeatMode = 'Dengeli'): SourceBeat[] {
+  const atoms = ingestSource(raw);
+  if (atoms.length <= 1) return atoms;
+  const bounds = beatBounds(mode);
+
+  const grouped: SourceBeat[] = [];
+  let current = atoms[0];
+  for (let i = 1; i < atoms.length; i += 1) {
+    const next = atoms[i];
+    if (mergeScore(current.exactText, next.exactText, bounds) >= AUTO_GROUP_MERGE_THRESHOLD) {
+      current = {
+        sourceId: current.sourceId,
+        exactText: current.exactText + next.exactText,
+        start: current.start,
+        end: next.end,
+        hash: '',
+      };
+    } else {
+      grouped.push(current);
+      current = next;
+    }
+  }
+  grouped.push(current);
+
+  return grouped.map((beat, index) => ({
+    sourceId: `source-${String(index + 1).padStart(3, '0')}`,
+    exactText: beat.exactText,
+    start: beat.start,
+    end: beat.end,
+    hash: sourceHash(beat.exactText),
+  }));
 }
 
 function exactSource(scene: SourceLike): string {

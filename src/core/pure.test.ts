@@ -366,6 +366,16 @@ describe('generateBatch', () => {
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
   });
 
+  it('blocks generation when the scene count exceeds the 25-scene ceiling', () => {
+    const rawSource = Array.from({ length: 30 }, (_, index) => `Beat ${index + 1}.`).join(' ');
+    const sourceBeats = ingestSource(rawSource);
+    const result = generateBatch({ ...baseInput, rawSource, sourceBeats });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.error).toBe('SCENE_OVERFLOW');
+    expect(result.contractGate.findings.some((f) => f.code === 'SCENE_OVERFLOW')).toBe(true);
+    expect(result.scenes).toHaveLength(0);
+  });
+
   it('keeps fallback concept lines source-bound instead of repeating capsule templates', () => {
     const rawSource = Array.from(
       { length: 14 },
