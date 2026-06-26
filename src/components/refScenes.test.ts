@@ -7,10 +7,13 @@ describe('WORLD_SCENES', () => {
     expect(Object.keys(WORLD_SCENES).sort()).toEqual([
       'anime_cel',
       'arcane',
+      'bones_action',
       'ghibli',
+      'mappa_cinematic',
       'pixar3d',
       'spiderverse',
       'stopmotion',
+      'toei_adventure',
     ]);
   });
 

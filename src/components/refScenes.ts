@@ -410,6 +410,152 @@ export const WORLD_SCENES: Record<string, SceneFn> = {
     }
     vignette(ctx, w, h, c[2], 0.56);
   },
+
+  mappa_cinematic: (ctx, w, h, t, c) => {
+    // MAPPA dark cinematic: heavy shadow mass, selective color pop, volumetric haze
+    fillBg(ctx, w, h, mix(c[2], '#000000', 0.72), '#050508');
+    // Atmospheric haze layer
+    const haze = ctx.createLinearGradient(0, 0, 0, h);
+    haze.addColorStop(0, rgba(mix(c[0], c[2], 0.4), 0.18));
+    haze.addColorStop(0.5, rgba(c[2], 0.08));
+    haze.addColorStop(1, rgba('#000000', 0.4));
+    ctx.fillStyle = haze; ctx.fillRect(0, 0, w, h);
+
+    // Selective accent glow — one color pop against the dark mass
+    radialGlow(ctx, w * 0.55, h * 0.35, w * 0.28, c[1], 0.55);
+    radialGlow(ctx, w * 0.22, h * 0.6, w * 0.18, c[0], 0.22);
+
+    // Dark environment silhouette mass (urban architecture)
+    ctx.fillStyle = rgba('#000000', 0.75);
+    ctx.beginPath();
+    ctx.moveTo(0, h); ctx.lineTo(0, h * 0.52);
+    ctx.lineTo(w * 0.08, h * 0.35); ctx.lineTo(w * 0.16, h * 0.42);
+    ctx.lineTo(w * 0.22, h * 0.28); ctx.lineTo(w * 0.3, h * 0.45);
+    ctx.lineTo(w * 0.38, h * 0.6); ctx.lineTo(w * 0.38, h);
+    ctx.closePath(); ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(w * 0.7, h); ctx.lineTo(w * 0.7, h * 0.38);
+    ctx.lineTo(w * 0.78, h * 0.22); ctx.lineTo(w * 0.84, h * 0.32);
+    ctx.lineTo(w * 0.9, h * 0.18); ctx.lineTo(w, h * 0.3);
+    ctx.lineTo(w, h); ctx.closePath(); ctx.fill();
+
+    // Figure silhouette at power stance — anonymous geometry
+    const pulse = Math.sin(t * 0.0015) * 1.5;
+    ctx.fillStyle = rgba(mix(c[2], '#000000', 0.6), 0.95);
+    ctx.beginPath(); ctx.arc(w * 0.55, h * 0.34 + pulse, h * 0.072, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(w * 0.47, h * 0.42); ctx.lineTo(w * 0.55, h * 0.4);
+    ctx.lineTo(w * 0.63, h * 0.44); ctx.lineTo(w * 0.65, h * 0.72);
+    ctx.lineTo(w * 0.58, h * 0.72); ctx.lineTo(w * 0.55, h * 0.54);
+    ctx.lineTo(w * 0.52, h * 0.72); ctx.lineTo(w * 0.44, h * 0.72);
+    ctx.closePath(); ctx.fill();
+
+    // Cursed energy / aura — fractured light geometry
+    ctx.strokeStyle = rgba(c[1], 0.7 + Math.sin(t * 0.003) * 0.15);
+    ctx.lineWidth = 1.2; ctx.shadowColor = c[1]; ctx.shadowBlur = 8;
+    for (let i = 0; i < 6; i++) {
+      const angle = (i / 6) * Math.PI * 2 + t * 0.0005;
+      const r = h * (0.12 + seed(i) * 0.06 + Math.sin(t * 0.002 + i) * 0.02);
+      ctx.beginPath();
+      ctx.moveTo(w * 0.55, h * 0.54 + pulse);
+      ctx.lineTo(w * 0.55 + Math.cos(angle) * r, h * 0.54 + Math.sin(angle) * r * 0.65 + pulse);
+      ctx.stroke();
+    }
+    ctx.shadowBlur = 0;
+    vignette(ctx, w, h, '#000000', 0.62);
+  },
+
+  bones_action: (ctx, w, h, t, c) => {
+    // Bones precision: clean ink outlines, smooth choreography, warm amber-blue balance
+    fillBg(ctx, w, h, mix(c[0], c[3], 0.38), mix(c[0], '#1a1420', 0.45));
+    radialGlow(ctx, w * 0.5, h * 0.28, w * 0.52, mix(c[3], '#ffffff', 0.2), 0.3);
+    radialGlow(ctx, w * 0.5, h * 0.7, w * 0.32, c[1], 0.18);
+
+    // Action horizon line
+    ctx.strokeStyle = rgba(c[3], 0.15); ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, h * 0.68); ctx.lineTo(w, h * 0.68); ctx.stroke();
+
+    // Speed lines — clean radiating from impact center
+    speedLines(ctx, w * 0.5, h * 0.45, t, c[3], 28, 0.00012);
+
+    // Figure in decisive action mid-frame — clean proportions
+    const lean = Math.sin(t * 0.0018) * 0.04;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.45); ctx.rotate(lean);
+    // Body
+    ctx.fillStyle = mix(c[2], c[3], 0.25);
+    ctx.beginPath(); ctx.ellipse(0, h * 0.04, w * 0.085, h * 0.19, 0, 0, Math.PI * 2); ctx.fill();
+    // Head
+    ctx.fillStyle = mix(c[2], c[0], 0.3);
+    ctx.beginPath(); ctx.arc(0, -h * 0.175, h * 0.075, 0, Math.PI * 2); ctx.fill();
+    // Clean ink outline
+    ctx.strokeStyle = mix(c[2], '#000000', 0.55); ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(0, -h * 0.175, h * 0.076, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(0, h * 0.04, w * 0.086, h * 0.191, 0, 0, Math.PI * 2); ctx.stroke();
+    // Extended arm — action pose
+    ctx.strokeStyle = mix(c[2], '#000000', 0.55); ctx.lineWidth = 3; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(-w * 0.04, -h * 0.06); ctx.lineTo(-w * 0.22, h * 0.08); ctx.stroke();
+    // Accent rim
+    ctx.strokeStyle = rgba(c[3], 0.7); ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(w * 0.06, -h * 0.2, h * 0.078, -Math.PI * 0.6, Math.PI * 0.2); ctx.stroke();
+    ctx.restore();
+
+    // Ground shadow
+    ctx.fillStyle = rgba(mix(c[2], '#000000', 0.7), 0.35);
+    ctx.beginPath(); ctx.ellipse(w * 0.5, h * 0.67, w * 0.12, h * 0.025, 0, 0, Math.PI * 2); ctx.fill();
+    vignette(ctx, w, h, mix(c[2], '#000000', 0.4), 0.38);
+  },
+
+  toei_adventure: (ctx, w, h, t, c) => {
+    // Toei grand adventure: bold saturated sky, vast horizon, triumphant scale
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.62);
+    sky.addColorStop(0, mix(c[0], c[3], 0.18));
+    sky.addColorStop(0.6, mix(c[0], c[1], 0.35));
+    sky.addColorStop(1, mix(c[1], '#ffffff', 0.22));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.62);
+
+    // Ocean / ground plane
+    const sea = ctx.createLinearGradient(0, h * 0.62, 0, h);
+    sea.addColorStop(0, mix(c[1], c[0], 0.28));
+    sea.addColorStop(1, mix(c[1], c[2], 0.45));
+    ctx.fillStyle = sea; ctx.fillRect(0, h * 0.62, w, h * 0.38);
+
+    // Sun / focal energy — large adventure-scale glow
+    radialGlow(ctx, w * 0.72, h * 0.28, w * 0.34, mix(c[3], '#ffffff', 0.4), 0.55);
+    radialGlow(ctx, w * 0.72, h * 0.28, w * 0.14, '#ffffff', 0.4);
+
+    // Horizon cloud mass
+    ctx.fillStyle = rgba('#ffffff', 0.22);
+    ctx.beginPath(); ctx.ellipse(w * 0.2, h * 0.56, w * 0.18, h * 0.065, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(w * 0.35, h * 0.57, w * 0.12, h * 0.05, 0, 0, Math.PI * 2); ctx.fill();
+
+    // Heroic figure silhouette — bold clean outline, fist-raised celebration pose
+    const bob = Math.sin(t * 0.0014) * 1.8;
+    ctx.fillStyle = mix(c[2], '#000000', 0.3);
+    ctx.beginPath(); ctx.arc(w * 0.3, h * 0.44 + bob, h * 0.068, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(w * 0.23, h * 0.51 + bob); ctx.lineTo(w * 0.3, h * 0.5 + bob);
+    ctx.lineTo(w * 0.37, h * 0.52 + bob); ctx.lineTo(w * 0.38, h * 0.7);
+    ctx.lineTo(w * 0.32, h * 0.7); ctx.lineTo(w * 0.3, h * 0.58 + bob);
+    ctx.lineTo(w * 0.28, h * 0.7); ctx.lineTo(w * 0.22, h * 0.7);
+    ctx.closePath(); ctx.fill();
+    // Raised fist
+    ctx.beginPath(); ctx.arc(w * 0.22, h * 0.41 + bob, h * 0.03, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = rgba('#ffffff', 0.85); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(w * 0.3, h * 0.44 + bob, h * 0.07, -Math.PI * 0.6, Math.PI * 0.15); ctx.stroke();
+
+    // Bold ink outline style
+    ctx.strokeStyle = rgba(mix(c[2], '#000000', 0.65), 0.9); ctx.lineWidth = 2.2;
+    ctx.beginPath(); ctx.arc(w * 0.3, h * 0.44 + bob, h * 0.069, 0, Math.PI * 2); ctx.stroke();
+
+    // Water sparkles on the horizon
+    for (let i = 0; i < 12; i++) {
+      const px = seed(i) * w, py = h * 0.64 + seed(i + 7) * h * 0.3;
+      const flicker = 0.3 + Math.sin(t * 0.003 + i * 0.8) * 0.2;
+      ctx.fillStyle = rgba('#ffffff', flicker * 0.5);
+      ctx.fillRect(px, py, 2 + seed(i + 3) * 3, 1);
+    }
+    vignette(ctx, w, h, c[2], 0.3);
+  },
 };
 
 /* ============================================================

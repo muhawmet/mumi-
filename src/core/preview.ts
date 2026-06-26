@@ -7,7 +7,7 @@ export function worldCategory(tokenString: string): PreviewCategory {
   if (/arcane|arcane_clay|arcane_edu|arcane_undercity/.test(id)) return 'arcane';
   if (/verse|spiderverse|verse_paper|verse_edu|verse_miles|verse_gwen/.test(id)) return 'verse';
   if (/clay|pixar|paper|felt|chalk|ghibli|anime_edu|anime_chalk/.test(id)) return 'edu';
-  if (/anime|demon_slayer|jjk|mha|graphic_comic|painterly/.test(id)) return 'anime';
+  if (/anime|demon_slayer|jjk|mha|graphic_comic|painterly|mappa|bones_action|toei/.test(id)) return 'anime';
   if (/commercial|real|photo|cinematic_real|documentary/.test(id)) return 'real';
   return 'edu';
 }
