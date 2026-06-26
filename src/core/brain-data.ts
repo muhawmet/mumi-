@@ -313,6 +313,17 @@ export const CAM_REAL: string[] =['35mm human-scale handheld micro-drift, moveme
  'gentle push-in at the subject\u2019s true working distance, environment honest behind'];
 
 export const DNA_MAP: Array<[RegExp, string, string]> =[
+ // --- Anime/Shonen → cinematography translation (specific entries first, before generic fallbacks) ---
+ // These translate anime-specific DNA terms into real-lens camera/light/staging/motion decisions.
+ [/ribbon.*arc|arcing ribbon|elemental ribbon|ribbon flow/i,'camera','one sweeping diagonal arc move: enter from the force corner, resolve at subject in a single committed travel'],
+ [/breath rhythm|rhythmic tension|tense breath|action.*breath/i,'motion','rhythmic tension escalation: motion builds through timed beats, explosive pressure at the peak, hard confident hold'],
+ [/elemental force|elemental energy|elemental spirit|spiritual energy/i,'staging','force-line diagonal: energy line travels from frame corner to a single decisive focal point, everything else subordinate'],
+ [/blade silhouette|sword arc|slash timing|negative.*space.*slash/i,'camera','low-angle motivated diagonal — action geometry drives the frame, one decisive line from corner to center'],
+ [/spiritual pressure|dark ritual|cursed energy|rank shadow|shadow rise/i,'staging','power staging: subject in commanding position, negative space above charged with implicit weight'],
+ [/purple.*shadow|purple.*hierarchy|spectral shadow|purple.*black/i,'light','desaturated low-key: deep shadow mass, single cold accent defining hierarchy from below'],
+ [/arc.*of.*effort|spiral motion|dust trail|circular energy|warm.*determination/i,'motion','arc-of-effort motion: one rising trajectory peaks and lands — particle/dust confirmation on arrival only'],
+ [/high.*contrast.*black|black.*orange|orange.*black|black.*white.*contrast/i,'light','extreme high-contrast: dominant shadow mass with single warm accent cut — no ambient fill, no grey zones'],
+ // --- Standard cinematography entries ---
  [/kinetic|leap|fall|speed|chase|action|impact|rebellion/i,'camera','one bolder committed camera travel is allowed — never two moves'],
  [/handheld|documentary|observational|street/i,'camera','documentary handheld micro-drift at operator walking pace'],
  [/macro|surface|reflection choreography|edge light|precision/i,'camera','macro/close vantage favoured, geometry-respecting moves only'],
@@ -337,7 +348,7 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/retro|limited animation|cut-?out|flat absurd|poster flat/i,'staging','flat graphic staging: poses read as cut-out shapes against minimal background'],
  [/cyber|glass|hologra|interface|refraction/i,'light','cool edge-light precision: controlled glass refraction, no neon spam'],
  [/showcase|airflow|engineered|machined|precision car|clean automotive/i,'camera','engineered product choreography: one machined-smooth move, zero handheld noise'],
- [/whimsy|bathhouse|organic ease|breath|gentle wind/i,'motion','organic ease: motion breathes in and settles out, nothing mechanical'],
+ [/whimsy|bathhouse|organic ease|gentle wind/i,'motion','organic ease: motion breathes in and settles out, nothing mechanical'],
  [/anthology|experimental|bold formal/i,'staging','one bold formal experiment per frame, everything else disciplined'],
  [/rebellion|punk|red ui|defiant/i,'light','one rebellious accent colour owns the energy of the frame, all else neutral'],
  [/melody|lyrical|poetic|dreamlike/i,'motion','lyrical pacing: the event unfolds as one unbroken legato phrase'],

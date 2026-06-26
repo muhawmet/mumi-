@@ -98,6 +98,18 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
   const tex = texN
     ? `exactly ONE texture clause per prompt, from the "${texWord}" family — texture is seasoning, never the subject`
     : 'no texture clause beyond the world material itself';
+  // Cross-contamination guard: anime/shonen refs used in a REAL register world contribute
+  // cinematography DNA only (energy, tension, camera geometry, light drama) — never anime rendering.
+  // Without this, models drift toward hand-drawn or cel-shaded output even in live-action briefs.
+  const hasAnimeRefInReal = register === 'REAL' && refs.some((r) => /anime|shonen/i.test(T(r.cat)));
+  const avoidParts = Array.from(new Set(refs.map((r) => T(r.avoid).trim()).filter(Boolean)));
+  if (hasAnimeRefInReal) {
+    avoidParts.push(
+      'anime rendering, cel-shaded fill, hand-drawn ink outlines, flat colour, 2D animation styling — ' +
+      'these references contribute CINEMATOGRAPHY DNA only (lighting energy, camera geometry, compositional tension, motion rhythm); ' +
+      'apply exclusively through a real lens, practical lighting rig, live-action photography'
+    );
+  }
   return {
     names: refs.map((r) => r.name).join(' + ') || 'path-native',
     camera: out.camera.join('; ') || (register === 'REAL' ? 'restrained filmic moves, geometry-respecting' : "committed single moves in the world's own grammar"),
@@ -105,7 +117,7 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
     staging: out.staging.join('; ') || 'one dominant subject, clean readable composition',
     motion: out.motion.join('; ') || 'event completes by ~70%, confident final hold',
     texture: tex,
-    avoid: Array.from(new Set(refs.map((r) => T(r.avoid).trim()).filter(Boolean))).join('; ') || 'IP copy',
+    avoid: avoidParts.join('; ') || 'IP copy',
   };
 }
 
