@@ -515,7 +515,7 @@ export const useStudioStore = create<StudioState>()(
         const b1 = s.sourceBeats[index];
         const b2 = s.sourceBeats[index + 1];
         if (!b1 || !b2) return;
-        const exactText = b1.exactText + ' ' + b2.exactText;
+        const exactText = s.rawSource ? s.rawSource.slice(b1.start, b2.end) : b1.exactText + b2.exactText;
         const merged: SourceBeat = {
           sourceId: b1.sourceId,
           exactText,
@@ -526,7 +526,13 @@ export const useStudioStore = create<StudioState>()(
         const newBeats = [...s.sourceBeats];
         newBeats.splice(index, 2, merged);
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION });
+        set({
+          sourceBeats: newBeats,
+          sourceReport: s.rawSource ? sourceIntegrity(s.rawSource, newBeats) : s.sourceReport,
+          beatAnalysis,
+          sceneCount: newBeats.length,
+          ...STALE_GENERATION,
+        });
       },
       splitBeat: (index) => {
         const s = get();

@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import SURGERY from './SURGERY_DATA.json';
-import { decodeBrief, ingestSource, autoGroupBeats, sourceIntegrity } from './source';
+import {
+  decodeBrief,
+  ingestSource,
+  autoGroupBeats,
+  sourceIntegrity,
+  durationBudgetSourceBeats,
+  sourceSceneBudget,
+} from './source';
 
 describe('decodeBrief', () => {
   it('chooses the education path when curriculum signals are present', () => {
@@ -95,5 +102,71 @@ describe('autoGroupBeats', () => {
     const grouped = autoGroupBeats('Tek cümle.', 'Dengeli');
     expect(grouped).toHaveLength(1);
     expect(grouped[0].exactText).toBe('Tek cümle.');
+  });
+
+  it('budgets a 65s-ish Turkish VO into about 13 scenes instead of atom scenes', () => {
+    const raw = [
+      ...Array.from({ length: 43 }, (_, i) => `Öğrenci kavramı ${i + 1}.`),
+      ...Array.from({ length: 8 }, (_, i) => `Ders ${i + 1}.`),
+    ].join(' ');
+    const atoms = ingestSource(raw);
+    const budget = sourceSceneBudget(raw, 'Dengeli');
+    const grouped = durationBudgetSourceBeats(raw, 'Dengeli', atoms);
+
+    expect(atoms).toHaveLength(51);
+    expect(budget.estimatedVoSeconds).toBeGreaterThanOrEqual(60);
+    expect(budget.estimatedVoSeconds).toBeLessThanOrEqual(65);
+    expect(budget.targetSceneCount).toBe(13);
+    expect(grouped).toHaveLength(13);
+    expect(grouped).not.toHaveLength(25);
+    expect(grouped.map((beat) => beat.exactText).join('')).toBe(raw);
+    expect(sourceIntegrity(raw, grouped).coverage).toBe(100);
+  });
+
+  it('avoids starting grouped scenes with stranded Turkish conjunctions', () => {
+    const raw = [
+      'Toplum birlikte yaşar.',
+      'Ve kurallar bu yaşamı düzenler.',
+      'Çocuklar haklarını öğrenir.',
+      'Ama sorumluluklarını da fark eder.',
+      'Kamuoyu ortak sesi duyurur.',
+      'Sonra kararlar daha görünür olur.',
+      'STK gönüllü katkı sağlar.',
+      'Medya bilgiyi yayar.',
+      'Hukuk hakları korur.',
+      'Vatandaş sözünü söyler.',
+    ].join(' ');
+    const grouped = durationBudgetSourceBeats(raw, 'Dengeli', ingestSource(raw));
+
+    expect(grouped.length).toBeGreaterThan(1);
+    expect(grouped.map((beat) => beat.exactText).join('')).toBe(raw);
+    expect(grouped.some((beat) => /^(Ve|Ama|Çünkü|Fakat|Sonra)\b/u.test(beat.exactText.trim()))).toBe(false);
+  });
+
+  it('keeps listed educational concepts as separate dominant scene ideas', () => {
+    const raw = [
+      'Bu derste toplumsal katılım yollarını tanırız.',
+      'HUKUK hakları ve kuralları korur.',
+      'KAMUOYU ortak düşünceyi görünür yapar.',
+      'MEDYA bilgiyi topluma ulaştırır.',
+      'STK gönüllü katılımı örgütler.',
+      'SİYASİ PARTİ çözüm önerilerini temsil eder.',
+      'Bu grupların her biri katılımı güçlendirir.',
+    ].join(' ');
+    const grouped = durationBudgetSourceBeats(raw, 'Dengeli', ingestSource(raw));
+    const conceptPattern = /HUKUK|KAMUOYU|MEDYA|STK|SİYASİ PARTİ/gu;
+    const conceptGroups = grouped.filter((beat) => {
+      conceptPattern.lastIndex = 0;
+      return conceptPattern.test(beat.exactText);
+    });
+
+    expect(sourceSceneBudget(raw, 'Dengeli').targetSceneCount).toBeLessThan(5);
+    expect(conceptGroups).toHaveLength(5);
+    for (const beat of conceptGroups) {
+      const matches = beat.exactText.match(conceptPattern) || [];
+      expect(matches).toHaveLength(1);
+    }
+    expect(grouped.map((beat) => beat.exactText).join('')).toBe(raw);
+    expect(sourceIntegrity(raw, grouped).coverage).toBe(100);
   });
 });

@@ -64,7 +64,7 @@ describe('buildCommandJSON', () => {
       workingMode: 'Standart',
       beatKeeps: {},
       beatAnalysis: null,
-      scenes: [firstScene, generated.scenes[1]],
+      scenes: [firstScene, ...generated.scenes.slice(1)],
       agentBrief: 'GLOBAL BRIEF',
       agentPackets: {
         idea: 'IDEA PACKET',

@@ -36,6 +36,13 @@ export interface SourceIntegrityReport {
   segments: number;
 }
 
+export interface SourceSceneBudget {
+  estimatedVoSeconds: number;
+  usableVoSecondsPerScene: number;
+  targetSceneCount: number;
+  rawTargetSceneCount: number;
+}
+
 type SourceLike =
   | string
   | SourceBeat
@@ -50,6 +57,25 @@ const DATA = SURGERY as unknown as {
 };
 
 const DEFAULT_PROJECT_ID = 'ultra_real_commercial';
+export const ELEVENLABS_V3_TURKISH_WORDS_PER_SECOND = 2.35;
+export const KLING_SAFE_VO_SECONDS_PER_SCENE = 5;
+export const MAX_DURATION_BUDGETED_SCENES = 25;
+
+const MODE_USABLE_SECONDS: Record<BeatMode, number> = {
+  Ekonomik: 5.5,
+  Dengeli: KLING_SAFE_VO_SECONDS_PER_SCENE,
+  Hassas: 4.5,
+  Manuel: KLING_SAFE_VO_SECONDS_PER_SCENE,
+};
+
+const PROTECTED_EDU_CONCEPTS = [
+  'siyasi parti',
+  'sivil toplum kurulusu',
+  'kamuoyu',
+  'hukuk',
+  'medya',
+  'stk',
+];
 
 export function sourceHash(value: string): string {
   let hash = 2166136261 >>> 0;
@@ -184,21 +210,192 @@ export function ingestSource(raw: string): SourceBeat[] {
   return beats;
 }
 
+function sourceText(value: string | SourceBeat[]): string {
+  return Array.isArray(value) ? value.map((beat) => beat.exactText).join('') : value;
+}
+
+function wordCount(value: string): number {
+  return (value.match(/\S+/gu) || []).length;
+}
+
+function roundTenth(value: number): number {
+  return Math.round(value * 10) / 10;
+}
+
+export function estimateTurkishVoSeconds(value: string | SourceBeat[]): number {
+  const text = sourceText(value);
+  const words = wordCount(text);
+  if (!words) return 0;
+  const sentencePauses = (text.match(/[.!?。！？]+/gu) || []).length * 0.05;
+  const clausePauses = (text.match(/[,;:]+/gu) || []).length * 0.08;
+  return roundTenth((words / ELEVENLABS_V3_TURKISH_WORDS_PER_SECOND) + sentencePauses + clausePauses);
+}
+
+export function sourceSceneBudget(
+  value: string | SourceBeat[],
+  mode: BeatMode = 'Dengeli',
+  maxScenes = MAX_DURATION_BUDGETED_SCENES
+): SourceSceneBudget {
+  const estimatedVoSeconds = estimateTurkishVoSeconds(value);
+  const usableVoSecondsPerScene = MODE_USABLE_SECONDS[mode] || KLING_SAFE_VO_SECONDS_PER_SCENE;
+  const rawTargetSceneCount = Math.max(1, Math.ceil(estimatedVoSeconds / usableVoSecondsPerScene) || 1);
+  return {
+    estimatedVoSeconds,
+    usableVoSecondsPerScene,
+    rawTargetSceneCount,
+    targetSceneCount: Math.max(1, Math.min(maxScenes, rawTargetSceneCount)),
+  };
+}
+
+function cleanText(value: string): string {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function startsWithStrandedConnector(value: string): boolean {
+  return /^(ve|ama|çünkü|cunku|fakat|sonra|ardından|ardindan|yani|böylece|boylece|bu yüzden|bu yuzden|işte|iste)\b/iu.test(cleanText(value));
+}
+
+function endsWithStrandedConnector(value: string): boolean {
+  return /\b(ve|ama|çünkü|cunku|fakat|sonra|ardından|ardindan|yani|fakat)$/iu.test(cleanText(value));
+}
+
+function startsWithContextFragment(value: string): boolean {
+  return /^(bu|buna|bunu|bunun|şu|şuna|şunu|şunun|o|onu|onun|böyle|boyle)\b/iu.test(cleanText(value));
+}
+
+function conceptText(value: string): string {
+  return normalize(cleanText(value))
+    .replace(/[“”"'’():;,.!?]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function protectedConceptLead(value: string): string | null {
+  const text = conceptText(value);
+  return PROTECTED_EDU_CONCEPTS.find((concept) => (
+    text === concept
+    || text.startsWith(`${concept} `)
+    || text.startsWith(`${concept}lar `)
+    || text.startsWith(`${concept}ler `)
+  )) ?? null;
+}
+
+function protectedConceptCount(value: string): number {
+  const text = ` ${conceptText(value)} `;
+  return PROTECTED_EDU_CONCEPTS.filter((concept) => text.includes(` ${concept} `)).length;
+}
+
+function isOverviewConceptAtom(value: string): boolean {
+  return protectedConceptCount(value) >= 2;
+}
+
+function protectedConceptBoundary(left: SourceBeat, right: SourceBeat): boolean {
+  const nextConcept = protectedConceptLead(right.exactText);
+  if (!nextConcept || isOverviewConceptAtom(right.exactText)) return false;
+  const currentConcept = protectedConceptLead(left.exactText);
+  return !currentConcept || currentConcept !== nextConcept || isOverviewConceptAtom(left.exactText);
+}
+
+function badSceneBoundary(left: SourceBeat, right: SourceBeat): boolean {
+  const l = cleanText(left.exactText);
+  const r = cleanText(right.exactText);
+  return startsWithStrandedConnector(r)
+    || endsWithStrandedConnector(l)
+    || l.endsWith(':')
+    || startsWithContextFragment(r);
+}
+
+function beatFromRange(beats: SourceBeat[], startIndex: number, endIndex: number, outputIndex: number): SourceBeat {
+  const first = beats[startIndex];
+  const last = beats[endIndex];
+  const exactText = beats.slice(startIndex, endIndex + 1).map((beat) => beat.exactText).join('');
+  return {
+    sourceId: `source-${String(outputIndex + 1).padStart(3, '0')}`,
+    exactText,
+    start: first.start,
+    end: last.end,
+    hash: sourceHash(exactText),
+  };
+}
+
+function renumberBeats(beats: SourceBeat[]): SourceBeat[] {
+  return beats.map((beat, index) => ({
+    sourceId: `source-${String(index + 1).padStart(3, '0')}`,
+    exactText: beat.exactText,
+    start: beat.start,
+    end: beat.end,
+    hash: sourceHash(beat.exactText),
+  }));
+}
+
+export function durationBudgetSourceBeats(
+  raw: string,
+  mode: BeatMode = 'Dengeli',
+  sourceBeats: SourceBeat[] = ingestSource(raw)
+): SourceBeat[] {
+  if (sourceBeats.length <= 1) return renumberBeats(sourceBeats);
+  const budget = sourceSceneBudget(raw, mode);
+  const targetCount = Math.min(sourceBeats.length, budget.targetSceneCount);
+  if (targetCount >= sourceBeats.length) return renumberBeats(sourceBeats);
+
+  const durations = sourceBeats.map((beat) => Math.max(0.1, estimateTurkishVoSeconds(beat.exactText)));
+  const totalSec = durations.reduce((sum, duration) => sum + duration, 0);
+  const targetSec = totalSec / targetCount;
+  const groups: SourceBeat[] = [];
+  let groupStart = 0;
+  let groupSec = 0;
+
+  for (let i = 0; i < sourceBeats.length; i += 1) {
+    groupSec += durations[i];
+    const conceptBoundary = i < sourceBeats.length - 1 && protectedConceptBoundary(sourceBeats[i], sourceBeats[i + 1]);
+    if (conceptBoundary) {
+      groups.push(beatFromRange(sourceBeats, groupStart, i, groups.length));
+      groupStart = i + 1;
+      groupSec = 0;
+      continue;
+    }
+
+    const groupsLeftAfterClose = targetCount - groups.length - 1;
+    if (groupsLeftAfterClose <= 0) continue;
+
+    const atomsLeft = sourceBeats.length - i - 1;
+    if (atomsLeft < groupsLeftAfterClose) continue;
+
+    const nextDuration = durations[i + 1] || 0;
+    const boundaryBad = i < sourceBeats.length - 1 && badSceneBoundary(sourceBeats[i], sourceBeats[i + 1]);
+    const mustClose = atomsLeft === groupsLeftAfterClose;
+    const closeByTarget = groupSec >= targetSec && !boundaryBad;
+    const closeByBalance = groupSec >= targetSec * 0.7
+      && Math.abs(groupSec - targetSec) <= Math.abs((groupSec + nextDuration) - targetSec)
+      && !boundaryBad;
+
+    if (mustClose || closeByTarget || closeByBalance) {
+      groups.push(beatFromRange(sourceBeats, groupStart, i, groups.length));
+      groupStart = i + 1;
+      groupSec = 0;
+    }
+  }
+
+  if (groupStart < sourceBeats.length) {
+    groups.push(beatFromRange(sourceBeats, groupStart, sourceBeats.length - 1, groups.length));
+  }
+
+  return renumberBeats(groups);
+}
+
 /**
- * Group sentence-level atoms into thematic beats by reusing the Beat Planner's
- * semantic `mergeScore`. A greedy left-to-right pass merges adjacent atoms while
- * the score clears the merge threshold (short beats, connectors and semantic
- * overlap all push the score up; exceeding the mode's max duration returns -99,
- * giving a natural hard cap). Reconstruction stays lossless: merged `exactText`
- * is the concatenation of the original atoms, so `sourceIntegrity` still reports
- * 100%. `ingestSource` itself is untouched.
+ * Group sentence-level atoms into duration-budgeted scene beats. Reconstruction
+ * stays lossless: merged `exactText` is only the concatenation of original atoms,
+ * so `sourceIntegrity` still reports 100%. `ingestSource` itself is untouched.
  */
 const AUTO_GROUP_MERGE_THRESHOLD = 3;
 export function autoGroupBeats(raw: string, mode: BeatMode = 'Dengeli'): SourceBeat[] {
   const atoms = ingestSource(raw);
   if (atoms.length <= 1) return atoms;
-  const bounds = beatBounds(mode);
+  const budgeted = durationBudgetSourceBeats(raw, mode, atoms);
+  if (budgeted.length < atoms.length) return budgeted;
 
+  const bounds = beatBounds(mode);
   const grouped: SourceBeat[] = [];
   let current = atoms[0];
   for (let i = 1; i < atoms.length; i += 1) {

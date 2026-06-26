@@ -9,6 +9,6 @@ export default defineConfig({
     port: process.env.PORT ? Number(process.env.PORT) : undefined,
   },
   test: {
-    exclude: ['e2e/**', 'node_modules/**'],
+    exclude: ['e2e/**', '.claude/**', 'node_modules/**'],
   },
 })
