@@ -313,8 +313,8 @@ export const CAM_REAL: string[] =['35mm human-scale handheld micro-drift, moveme
  'gentle push-in at the subject\u2019s true working distance, environment honest behind'];
 
 export const DNA_MAP: Array<[RegExp, string, string]> =[
- // --- Anime/Shonen → cinematography translation (specific entries first, before generic fallbacks) ---
- // These translate anime-specific DNA terms into real-lens camera/light/staging/motion decisions.
+ // --- Specific DNA → cinematography translation (runs before generic patterns) ---
+ // Anime/Shonen: translate anime visual language into real-lens decisions
  [/ribbon.*arc|arcing ribbon|elemental ribbon|ribbon flow/i,'camera','one sweeping diagonal arc move: enter from the force corner, resolve at subject in a single committed travel'],
  [/breath rhythm|rhythmic tension|tense breath|action.*breath/i,'motion','rhythmic tension escalation: motion builds through timed beats, explosive pressure at the peak, hard confident hold'],
  [/elemental force|elemental energy|elemental spirit|spiritual energy/i,'staging','force-line diagonal: energy line travels from frame corner to a single decisive focal point, everything else subordinate'],
@@ -323,6 +323,29 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/purple.*shadow|purple.*hierarchy|spectral shadow|purple.*black/i,'light','desaturated low-key: deep shadow mass, single cold accent defining hierarchy from below'],
  [/arc.*of.*effort|spiral motion|dust trail|circular energy|warm.*determination/i,'motion','arc-of-effort motion: one rising trajectory peaks and lands — particle/dust confirmation on arrival only'],
  [/high.*contrast.*black|black.*orange|orange.*black|black.*white.*contrast/i,'light','extreme high-contrast: dominant shadow mass with single warm accent cut — no ambient fill, no grey zones'],
+ // Portrait / intimate face: missing camera + staging + motion
+ [/portrait|intimate.*face|dignified.*face|human.*clarity|face.*expression|human dignity/i,'camera','intimate focal compression: moderate telephoto equivalent, face fills the emotional center, one geometry-respecting reframe only'],
+ [/portrait|dignified|prestige|national.*prestige|archive.*warm|respectful.*symbol/i,'staging','full-presence dignified composition: subject given the whole frame, surroundings confirm without competing'],
+ [/portrait|face.*light|dignified.*hold|gentle.*face|intimate.*still/i,'motion','anchored stillness: subject holds position with one breath-scale micro-settle, no mechanical movement'],
+ // Painterly / volume-lit: Arcane, Ghibli, stylized with real DNA
+ [/painted.*volume|volume.*light|painterly.*cinematic|angular.*silhouette|fortiche/i,'camera','dramatic locked angle: low-to-mid architectural frame, one motivated push into the composition depth'],
+ [/warm.*cold.*value|value.*war|colour.*tension|painted.*texture.*cinematic/i,'motion','weighted colour settle: motion ends with a material sense of gravity, warm/cold shift confirms the beat'],
+ // Fashion / luxury / textile
+ [/luxury.*pose|sculpted.*light|textile.*authority|vogue|couture|fashion.*editorial/i,'camera','fashion vantage: neutral or elevated angle, frame edges razor-clean, one axis of movement only'],
+ [/luxury|fashion.*quality|textile|pose.*turn|couture|editorial.*hold/i,'motion','held presence: subject achieves position and holds — one deliberate micro-settle confirms arrival, nothing mechanical'],
+ // Physical effort / athletic / commercial sports
+ [/sweat|physical.*effort|athlete|hero.*silhouette|body.*performance|kinetic.*hero/i,'staging','performance axis: subject on the action line, effort legible in body form, environment confirms scale at distance'],
+ [/sweat|physical.*effort|athlete|kinetic.*force|physical.*motivation/i,'motion','sustained effort arc: continuous committed motion through the peak, clean deceleration landing'],
+ // Appetite / food macro
+ [/appetite|viscosity|sensory.*macro|food.*beauty|pour.*moment|steam.*condense/i,'staging','appetite-close: subject at touching distance, one key sensory detail at the emotional center, background softened'],
+ [/appetite|viscosity|pour.*moment|macro.*food|drip|condensation/i,'motion','sensory arrival: one slow deliberate approach to the appetite moment, settle at the peak of desire'],
+ // Automotive / speed grammar
+ [/speed.*grammar|low.*tracking|metal.*reflect|body.*line.*pass|road.*pass/i,'staging','ground-level stance: low camera line, subject form against open depth or road perspective, horizon confirms scale'],
+ // Architecture / spatial / window light
+ [/window.*light|spatial.*depth|threshold.*reveal|material.*calm|space.*depth/i,'camera','spatial reveal: one slow dolly through threshold or along the depth axis, camera arrives and holds'],
+ [/spatial.*reveal|window.*light|threshold.*entry|architecture.*reveal/i,'motion','spatial drift: camera or light drifts through one threshold, lands and holds in the destination quality'],
+ // System / hierarchy / clarity (Kurzgesagt-type)
+ [/system|hierarchy|cause.*effect|explanatory|readable.*flow|information.*design/i,'staging','logical hierarchy: components spatially ranked by importance, reading line clear, negative space guides the eye'],
  // --- Standard cinematography entries ---
  [/kinetic|leap|fall|speed|chase|action|impact|rebellion/i,'camera','one bolder committed camera travel is allowed — never two moves'],
  [/handheld|documentary|observational|street/i,'camera','documentary handheld micro-drift at operator walking pace'],

@@ -98,14 +98,16 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
   const tex = texN
     ? `exactly ONE texture clause per prompt, from the "${texWord}" family — texture is seasoning, never the subject`
     : 'no texture clause beyond the world material itself';
-  // Cross-contamination guard: anime/shonen refs used in a REAL register world contribute
-  // cinematography DNA only (energy, tension, camera geometry, light drama) — never anime rendering.
-  // Without this, models drift toward hand-drawn or cel-shaded output even in live-action briefs.
-  const hasAnimeRefInReal = register === 'REAL' && refs.some((r) => /anime|shonen/i.test(T(r.cat)));
+  // Cross-contamination guard: stylized/animation refs in a REAL register world contribute
+  // cinematography DNA only — energy, tension, camera geometry, light drama — NOT rendering style.
+  // Covers Anime/Shonen, Anime/Graphic, 3D Animation, Stylized Premium used in live-action context.
+  const stylizedInReal = register === 'REAL' && refs.some((r) =>
+    /anime|shonen|3d animation|stylized premium/i.test(T(r.cat))
+  );
   const avoidParts = Array.from(new Set(refs.map((r) => T(r.avoid).trim()).filter(Boolean)));
-  if (hasAnimeRefInReal) {
+  if (stylizedInReal) {
     avoidParts.push(
-      'anime rendering, cel-shaded fill, hand-drawn ink outlines, flat colour, 2D animation styling — ' +
+      'anime rendering, cel-shaded fill, hand-drawn ink outlines, flat colour, 2D or 3D animation styling — ' +
       'these references contribute CINEMATOGRAPHY DNA only (lighting energy, camera geometry, compositional tension, motion rhythm); ' +
       'apply exclusively through a real lens, practical lighting rig, live-action photography'
     );
