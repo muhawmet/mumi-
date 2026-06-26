@@ -777,7 +777,7 @@ export const useStudioStore = create<StudioState>()(
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
-      version: 8,
+      version: 9,
       migrate: (persistedState, version) => {
         let s: any = persistedState;
         if (version < 7) {
@@ -791,6 +791,30 @@ export const useStudioStore = create<StudioState>()(
             s.vault = s.vault.map((entry: any) =>
               entry && typeof entry === 'object' && entry.snapshot && typeof entry.snapshot === 'object'
                 ? { ...entry, snapshot: { ...entry.snapshot, videoModel: normalizeVideoModel(entry.snapshot.videoModel) } }
+                : entry,
+            );
+          }
+        }
+        // v9: heal legacy engine name embedded in scene duration.message strings.
+        // durationGuard embeds videoModel directly in the message; old scenes carry
+        // the stale "kling_2_1" text even after state.videoModel was healed in v8.
+        const LEGACY_IN_MSG = /kling_2_1|kling_21|kling_2\b|kling\b(?!_)/g;
+        const healMsg = (msg: string) =>
+          typeof msg === 'string' ? msg.replace(LEGACY_IN_MSG, CURRENT_VIDEO_MODEL) : msg;
+        const healScenes = (scenes: any[]) =>
+          Array.isArray(scenes)
+            ? scenes.map((sc: any) =>
+                sc?.duration?.message
+                  ? { ...sc, duration: { ...sc.duration, message: healMsg(sc.duration.message) } }
+                  : sc,
+              )
+            : scenes;
+        if (version < 9 && s && typeof s === 'object') {
+          s.scenes = healScenes(s.scenes);
+          if (Array.isArray(s.vault)) {
+            s.vault = s.vault.map((entry: any) =>
+              entry?.snapshot?.scenes
+                ? { ...entry, snapshot: { ...entry.snapshot, scenes: healScenes(entry.snapshot.scenes) } }
                 : entry,
             );
           }

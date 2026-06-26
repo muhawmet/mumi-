@@ -313,11 +313,11 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
   }
 
   // scene-count note — long-form is allowed; this is a soft cost heads-up, not a block.
-  if ((input.sceneCount ?? 0) > 40) {
+  if ((input.sceneCount ?? 0) > 30) {
     notes.push({
       level: 'info',
       title: 'Uzun format',
-      detail: `${input.sceneCount} sahne planlandı — uzun format (4 dk+) için normal. Üretim/klip maliyeti yüksek olur; bir beat moduna basmak (Dengeli/Ekonomik/Hassas) sahneleri otomatik doğru boyuta getirir.`,
+      detail: `${input.sceneCount} sahne planlandı — uzun format (4 dk+) için normal. Üretim/klip maliyeti yüksek olur; sahne sayısını düşürmeyi veya source'u daha az satıra bölmeyi düşün.`,
     });
   }
 

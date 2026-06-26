@@ -370,7 +370,7 @@ export const TimelineStep = () => {
                   <DetailRow label={state.projectKind === 'design' ? 'Kaynak metin' : 'Voice over (kaynak metin)'} value={selected.voiceOver} block copyable />
                   {state.projectKind === 'video' && (
                     <>
-                      <DetailRow label="Motion prompt (Kling)" value={selected.motionPrompt} mono block copyable />
+                      <DetailRow label={`Motion prompt (${state.videoModel ?? 'kling_3'})`} value={selected.motionPrompt} mono block copyable />
                       <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
                     </>
                   )}

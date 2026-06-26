@@ -279,15 +279,15 @@ export const DashboardStep = () => {
               ))}
             </select>
           </Field>
-          <Field label="Sahne sayısı" hint={sourceGate.ready && rawSource ? 'Source beat sayısı tarafından kilitli.' : '1–20'}>
+          <Field label="Sahne sayısı" hint={sourceGate.ready && rawSource ? 'Source beat sayısı tarafından kilitli.' : '1–60'}>
             <input
               type="number"
               min={1}
-              max={20}
+              max={60}
               disabled={Boolean(sourceGate.ready && rawSource)}
               style={inputStyle}
               value={sceneCount}
-              onChange={(e) => setField('sceneCount', Math.max(1, Math.min(20, Number(e.target.value) || 1)))}
+              onChange={(e) => setField('sceneCount', Math.max(1, Math.min(60, Number(e.target.value) || 1)))}
             />
           </Field>
         </div>

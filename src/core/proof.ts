@@ -38,8 +38,9 @@ export function qaScore(prompt: string): number {
     score -= 25;
   }
   
-  // IP / Anime / specific word deductions
-  if (lower.includes('luffy') || lower.includes('sunny') || lower.includes('anime')) {
+  // Specific IP character references — generic style words (anime, sunny) are valid
+  const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|naruto|goku|pikachu)\b/u.test(lower);
+  if (hasSpecificIP) {
     score -= 50;
   }
   
@@ -151,7 +152,7 @@ const DETECTORS: Record<string, DetectorFunc> = {
         status: 'FIX',
         problem: reg.name,
         why: reg.expected,
-        replaceWith: 'group source into thematic beats (Beat Planner / auto-group) or deepen the concept bank.',
+        replaceWith: 'kaynak metni daha fazla satıra böl veya konuyu daha spesifik yaz.',
         verify: `${concepts.length} concepts, only ${unique.size} unique.`,
       };
     }
@@ -167,7 +168,7 @@ const DETECTORS: Record<string, DetectorFunc> = {
         status: 'FAIL',
         problem: reg.name,
         why: reg.expected,
-        replaceWith: 'expand EDU_SOURCE_BANK patterns or re-ingest the source into thematic beats.',
+        replaceWith: 'kaynak metnini daha spesifik yeniden yaz veya daha fazla satıra böl.',
         verify: `${fallbackCount} generic fallback concepts detected.`,
       };
     }

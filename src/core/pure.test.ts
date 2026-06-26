@@ -25,7 +25,7 @@ const baseInput: BriefInput = {
   selectedPaletteId: '',
   selectedMusicId: '',
   imageModel: 'midjourney_v7',
-  videoModel: 'kling_2_1',
+  videoModel: 'kling_3',
 };
 
 describe('DATA shape', () => {
@@ -225,9 +225,9 @@ describe('generateBatch', () => {
   });
 
   it('handoff packets carry the selected target model labels', () => {
-    const result = generateBatch({ ...baseInput, imageModel: 'midjourney_v7', videoModel: 'kling_2_1' });
+    const result = generateBatch({ ...baseInput, imageModel: 'midjourney_v7', videoModel: 'kling_3' });
     expect(result.scenes[0].handoff.IMAGE.targetModel.label).toBe('midjourney_v7');
-    expect(result.scenes[0].handoff.MOTION.targetModel.label).toBe('kling_2_1');
+    expect(result.scenes[0].handoff.MOTION.targetModel.label).toBe('kling_3');
   });
 
   it('image prompt locks a provided custom character, and stays character-free when cast is empty', () => {
