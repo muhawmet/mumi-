@@ -403,7 +403,7 @@ export const RecipeStep = () => {
             {strength.filled}/{strength.total}
           </span>
           <span style={{ gridColumn: '1 / -1', color: 'var(--text-muted)', fontSize: 11 }}>
-            {strength.roles.length ? strength.roles.join(' · ') : 'Henüz brief direktifi doldurulmadı.'}
+            {strength.roles.length ? strength.roles.join(' · ') : selectedRefs.length === 0 ? 'Referans seçilmedi — en az 1 DNA ekle.' : 'Seçili referanslar direktif katkısı yapmıyor.'}
             {strength.zeroRefIds.length > 0 && <strong style={{ color: 'var(--red)' }}> · {strength.zeroRefIds.length} gereksiz ref</strong>}
           </span>
         </div>

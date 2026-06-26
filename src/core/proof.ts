@@ -39,7 +39,7 @@ export function qaScore(prompt: string): number {
   }
   
   // Specific IP character references — generic style words (anime, sunny) are valid
-  const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|naruto|goku|pikachu)\b/u.test(lower);
+  const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna)\b/u.test(lower);
   if (hasSpecificIP) {
     score -= 50;
   }
@@ -115,7 +115,7 @@ const DETECTORS: Record<string, DetectorFunc> = {
   reg_lazy_motion: (input, reg) => {
     if (input.motionText) {
       const motionLower = input.motionText.toLowerCase();
-      const hasLazyTriggers = /\b(slow zoom|slow pan|zoom in|zoom out|glow|lights glow|cinematic)\b/i.test(motionLower);
+      const hasLazyTriggers = /\b(slow zoom|slow pan|zoom in|zoom out|lights glow)\b/i.test(motionLower);
       const hasConcreteAction = /\b(hold|settle|event|reaction|motivated camera|physical action|reveal|open|shatter|spin|rotate|flow|fall|rise|glide)\b/i.test(motionLower);
       if (hasLazyTriggers && !hasConcreteAction) {
         return {

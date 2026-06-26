@@ -126,7 +126,7 @@ export const DirectorStep = () => {
           <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>STAGE 2 · YÖNETMEN</div>
           <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>Önce bir yol seç</h1>
           <p style={{ color: 'var(--text-muted)', fontSize: 15 }}>
-            Bu ekran Phase 0 preset'ine göre açılır. Brief'e dönüp bir başlangıç seçince path kararları burada görünür.
+            Yönetmen ekranı Phase 0 başlangıcına bağlıdır. Brief sayfasında Phase 0 kartlarından birini seç, yönetmen karar masası burada açılır.
           </p>
         </header>
         <Panel>
