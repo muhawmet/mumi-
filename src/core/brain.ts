@@ -39,6 +39,7 @@ export function registerOf(productionPath: string): Register {
 // New app folds the granular real path into the world id — map it back to a bank family.
 const WORLD2FAMILY: Record<string, string> = {
   product_macro_tabletop: 'PRODUCT', commercial_studio: 'PRODUCT',
+  cinematic_real: 'EVENT', real_human_doc: 'TESTIMONIAL',
   food_macro_real: 'FOOD', documentary_civic: 'CIVIC', real_event_coverage: 'EVENT',
   human_portrait_real: 'TESTIMONIAL', luxury_editorial: 'FASHION',
   tourism_destination_real: 'TOURISM', automotive_stage_real: 'AUTO',
