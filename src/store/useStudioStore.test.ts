@@ -409,3 +409,122 @@ describe('studio store helpers', () => {
     expect(directives.avoid).toBe('copying characters');
   });
 });
+
+describe('storyboard editing integrity (production workflow fixes)', () => {
+  it('splitBeat: lossless slice, no character loss, integrity holds', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Şehirdeki kararları kim alıyor bilmiyoruz. Yöneticiler hangi kararları neden veriyor.';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().ingestRawSource();
+    useStudioStore.getState().splitBeat(0);
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    expect(state.sourceReport?.ok).toBe(true);
+    expect(state.sourceReport?.coverage).toBe(100);
+    useStudioStore.getState().reset();
+  });
+
+  it('splitBeat: rejects with lastError when no safe split point exists', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Kim?';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().ingestRawSource();
+    const before = useStudioStore.getState().sourceBeats.length;
+    useStudioStore.getState().splitBeat(0);
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    expect(state.sourceBeats.length).toBe(before);
+    expect(state.lastError).toBeTruthy();
+    useStudioStore.getState().reset();
+  });
+
+  it('splitBeat: repeated 3x on index 0 preserves integrity', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Birinci uzun cümle burada. İkinci uzun cümle burada. Üçüncü uzun cümle burada.';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().ingestRawSource();
+    for (let i = 0; i < 3; i++) {
+      if (useStudioStore.getState().sourceBeats.length > 0) {
+        useStudioStore.getState().splitBeat(0);
+      }
+    }
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    expect(state.sourceReport?.ok).toBe(true);
+    useStudioStore.getState().reset();
+  });
+
+  it('splitBeat: preserves Turkish multiline/whitespace source', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Su ısınır.\n\nBuhar yükselir!  Sonra ne olur?';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().ingestRawSource();
+    if (useStudioStore.getState().sourceBeats.length > 0) {
+      useStudioStore.getState().splitBeat(0);
+    }
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    useStudioStore.getState().reset();
+  });
+
+  it('setBeatMode: regroups cleanly from rawSource even for small source', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Bir cümle var. İki cümle var. Üç cümle var.';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().ingestRawSource();
+    // Inject a deliberately broken storyboard, then switch mode.
+    useStudioStore.setState({
+      sourceBeats: [{ sourceId: 'source-001', exactText: 'BOZULMUŞ', start: 0, end: 8, hash: 'x' }],
+    });
+    useStudioStore.getState().setBeatMode('Ekonomik');
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    expect(state.sourceReport?.ok).toBe(true);
+    useStudioStore.getState().reset();
+  });
+
+  it('resetStoryboard: restores clean storyboard without touching recipe', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Cümle bir burada. Cümle iki burada.';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().decodeRawSource();
+    useStudioStore.getState().ingestRawSource();
+    useStudioStore.getState().setField('selectedWorldId', 'clay');
+    const worldBefore = useStudioStore.getState().selectedWorldId;
+    const topicBefore = useStudioStore.getState().projectTopic;
+    useStudioStore.setState({ sourceBeats: [], sourceReport: null });
+    useStudioStore.getState().resetStoryboard();
+    const state = useStudioStore.getState();
+    expect(state.sourceBeats.map((b) => b.exactText).join('')).toBe(raw);
+    expect(state.sourceReport?.ok).toBe(true);
+    expect(state.selectedWorldId).toBe(worldBefore);
+    expect(state.projectTopic).toBe(topicBefore);
+    useStudioStore.getState().reset();
+  });
+
+  it('advance: sets lastError when source not ingested', () => {
+    useStudioStore.getState().reset();
+    useStudioStore.setState({ rawSource: 'test source', sourceReport: null, projectTopic: 'Konu' });
+    useStudioStore.getState().advance();
+    expect(useStudioStore.getState().lastError).toBeTruthy();
+    useStudioStore.getState().reset();
+  });
+
+  it('generateScenes: edited (merged) storyboard is generated verbatim, not re-budgeted', () => {
+    useStudioStore.getState().reset();
+    const raw = 'Cümle A burada var. Cümle B burada var.';
+    useStudioStore.getState().setRawSource(raw);
+    useStudioStore.getState().decodeRawSource();
+    useStudioStore.getState().ingestRawSource();
+    useStudioStore.getState().mergeBeats(0);
+    const mergedCount = useStudioStore.getState().sourceBeats.length;
+    useStudioStore.getState().setField('selectedWorldId', 'clay');
+    useStudioStore.getState().generateScenes();
+    const state = useStudioStore.getState();
+    if (state.scenes.length > 0) {
+      expect(state.scenes.length).toBe(mergedCount);
+      expect(state.scenes.map((s) => s.voiceOver).join('')).toBe(raw);
+    }
+    useStudioStore.getState().reset();
+  });
+});

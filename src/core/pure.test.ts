@@ -12,7 +12,7 @@ import {
   type BriefInput,
   type SurgeryWorld,
 } from './pure';
-import { ingestSource, sourceIntegrity } from './source';
+import { ingestSource, autoGroupBeats, sourceIntegrity } from './source';
 
 const baseInput: BriefInput = {
   projectTopic: 'Su Döngüsü',
@@ -357,25 +357,27 @@ describe('generateBatch', () => {
     expect(result.contractGate.findings[0].code).toBe('SOURCE_INTEGRITY_FAIL');
   });
 
-  it('duration-budgets a source-bound batch instead of mirroring atom count', () => {
+  it('generates one scene per canonical storyboard beat (budgeting happens at ingest)', () => {
     const rawSource = Array.from({ length: 24 }, (_, index) => `Kavram ${index + 1} anlatılır.`).join(' ');
-    const sourceBeats = ingestSource(rawSource);
+    const atoms = ingestSource(rawSource);
+    const sourceBeats = autoGroupBeats(rawSource, 'Dengeli');
     const result = generateBatch({ ...baseInput, rawSource, sourceBeats, sceneCount: 5 });
     expect(result.status).toBe('GENERATED');
-    expect(result.scenes.length).toBeGreaterThan(1);
-    expect(result.scenes.length).toBeLessThan(sourceBeats.length);
+    expect(result.scenes.length).toBe(sourceBeats.length);
+    expect(sourceBeats.length).toBeLessThan(atoms.length);
     expect(result.scenes.length).toBeLessThanOrEqual(25);
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
     expect(sourceIntegrity(rawSource, result.scenes).coverage).toBe(100);
   });
 
-  it('budgets 30 short atoms below the 25-scene safety ceiling', () => {
+  it('keeps a 30-atom storyboard below the 25-scene safety ceiling once budgeted', () => {
     const rawSource = Array.from({ length: 30 }, (_, index) => `Hak ${index + 1} korunur.`).join(' ');
-    const sourceBeats = ingestSource(rawSource);
+    const atoms = ingestSource(rawSource);
+    const sourceBeats = autoGroupBeats(rawSource, 'Dengeli');
     const result = generateBatch({ ...baseInput, rawSource, sourceBeats });
     expect(result.status).toBe('GENERATED');
-    expect(result.scenes.length).toBeGreaterThan(1);
-    expect(result.scenes.length).toBeLessThan(sourceBeats.length);
+    expect(result.scenes.length).toBe(sourceBeats.length);
+    expect(sourceBeats.length).toBeLessThan(atoms.length);
     expect(result.scenes.length).toBeLessThan(25);
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
   });
@@ -385,10 +387,12 @@ describe('generateBatch', () => {
       ...Array.from({ length: 43 }, (_, index) => `Öğrenci kavramı ${index + 1}.`),
       ...Array.from({ length: 8 }, (_, index) => `Ders ${index + 1}.`),
     ].join(' ');
-    const sourceBeats = ingestSource(rawSource);
+    const atoms = ingestSource(rawSource);
+    const sourceBeats = autoGroupBeats(rawSource, 'Dengeli');
     const result = generateBatch({ ...baseInput, rawSource, sourceBeats });
     expect(result.status).toBe('GENERATED');
-    expect(sourceBeats).toHaveLength(51);
+    expect(atoms).toHaveLength(51);
+    expect(result.scenes).toHaveLength(sourceBeats.length);
     expect(result.scenes).toHaveLength(13);
     expect(result.scenes).not.toHaveLength(25);
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);

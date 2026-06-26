@@ -16,7 +16,7 @@ import {
   type SourceBeat,
   type SourceIntegrityReport,
 } from '../core/source';
-import { planBeats, type BeatMode, type BeatAnalysis } from '../core/beats';
+import { planBeats, eventBoundary, type BeatMode, type BeatAnalysis } from '../core/beats';
 
 export type Step = 'dashboard' | 'director' | 'recipe' | 'scenes' | 'timeline';
 /** Free-text optional character/cast description. Empty = object-only, no character anchor. */
@@ -58,6 +58,30 @@ export function applyPromptOverride(scene: Scene, override: string | null): Scen
     return { ...rest, handoff } as Scene;
   }
   return { ...scene, userImagePrompt: override, handoff };
+}
+
+/**
+ * Fallback split point for splitBeat when no semantic boundary is found: the
+ * sentence-end punctuation (+ following whitespace) closest to the midpoint that
+ * leaves real text on both sides. Returns an index into `segment`, or -1.
+ */
+function sentenceBoundary(segment: string): number {
+  const re = /[.!?…。！？]+[\s]+/gu;
+  const mid = segment.length / 2;
+  let best = -1;
+  let bestDist = Infinity;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(segment))) {
+    const cut = m.index + m[0].length;
+    if (cut <= 0 || cut >= segment.length) continue;
+    if (!segment.slice(0, cut).trim() || !segment.slice(cut).trim()) continue;
+    const dist = Math.abs(cut - mid);
+    if (dist < bestDist) {
+      bestDist = dist;
+      best = cut;
+    }
+  }
+  return best;
 }
 
 /** Strict recipe gate — world, palette and reference DNA must all be chosen. */
@@ -153,6 +177,7 @@ export interface StudioState {
   advance: () => void;
   setSceneOverride: (sceneId: number, override: string | null) => void;
   reset: () => void;
+  resetStoryboard: () => void;
 
   vault: VaultEntry[];
   saveToVault: (name: string) => void;
@@ -495,9 +520,11 @@ export const useStudioStore = create<StudioState>()(
       },
       setBeatMode: (mode) => {
         const s = get();
-        // Changing the beat mode re-derives granularity from the original vault
-        // when grouping applies; otherwise keep the existing (possibly hand-edited) beats.
-        const regroup = !!s.rawSource && mode !== 'Manuel' && ingestSource(s.rawSource).length > AUTO_GROUP_THRESHOLD;
+        // Every mode except Manuel cleanly regroups from the immutable rawSource,
+        // so a previously broken (hand-edited) storyboard is always repaired here.
+        // Manuel preserves the user's existing beats untouched. No threshold guard:
+        // small sources must regroup too, otherwise broken state survives mode switches.
+        const regroup = !!s.rawSource && mode !== 'Manuel';
         const sourceBeats = regroup ? autoGroupBeats(s.rawSource, mode) : s.sourceBeats;
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
         const regroupPatch = regroup
@@ -538,17 +565,48 @@ export const useStudioStore = create<StudioState>()(
         const s = get();
         const beat = s.sourceBeats[index];
         if (!beat) return;
-        const words = beat.exactText.split(' ');
-        const mid = Math.floor(words.length / 2);
-        const b1Text = words.slice(0, mid).join(' ');
-        const b2Text = words.slice(mid).join(' ');
-        
-        const b1: SourceBeat = { sourceId: beat.sourceId + '-A', exactText: b1Text, start: beat.start, end: beat.start + b1Text.length, hash: beat.hash + '-A' };
-        const b2: SourceBeat = { sourceId: beat.sourceId + '-B', exactText: b2Text, start: beat.start + b1Text.length + 1, end: beat.end, hash: beat.hash + '-B' };
+        const rawSource = s.rawSource;
+        if (!rawSource) {
+          set({ lastError: 'Kaynak yok; bölme yapılamaz.' });
+          return;
+        }
+        // Slice the exact original characters — never split(' ')/join(' '), which
+        // would collapse newlines/tabs/multi-spaces and drop characters. The cut is
+        // a semantic boundary inside the beat; fall back to a sentence-end boundary.
+        const segment = rawSource.slice(beat.start, beat.end);
+        let cut = eventBoundary(segment);
+        if (cut <= 0) cut = sentenceBoundary(segment);
+        if (cut <= 0 || cut >= segment.length
+          || !segment.slice(0, cut).trim() || !segment.slice(cut).trim()) {
+          set({ lastError: 'Güvenli bölme noktası bulunamadı; bu beat bölünemiyor.' });
+          return;
+        }
+        const cutAbs = beat.start + cut;
+        const b1: SourceBeat = {
+          sourceId: beat.sourceId + '-A',
+          exactText: rawSource.slice(beat.start, cutAbs),
+          start: beat.start,
+          end: cutAbs,
+          hash: beat.hash + '-A',
+        };
+        const b2: SourceBeat = {
+          sourceId: beat.sourceId + '-B',
+          exactText: rawSource.slice(cutAbs, beat.end),
+          start: cutAbs,
+          end: beat.end,
+          hash: beat.hash + '-B',
+        };
         const newBeats = [...s.sourceBeats];
         newBeats.splice(index, 1, b1, b2);
+        // Reject the split outright if it would break source integrity — never let
+        // a stale OK report mask a lossy storyboard.
+        const sourceReport = sourceIntegrity(rawSource, newBeats);
+        if (!sourceReport.ok) {
+          set({ lastError: `Bölme bütünlüğü bozdu (%${sourceReport.coverage}); işlem geri alındı.` });
+          return;
+        }
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats: newBeats, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION });
+        set({ sourceBeats: newBeats, sourceReport, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION, lastError: null });
       },
       applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
 
@@ -630,17 +688,56 @@ export const useStudioStore = create<StudioState>()(
       advance: () => {
         const s = get();
         if (s.currentStep === 'dashboard') {
-          if (s.projectTopic.trim() && sourceReadiness(s).ready) set({ currentStep: s.phase0PresetId ? 'director' : 'recipe' });
+          if (!s.projectTopic.trim()) {
+            set({ lastError: 'Proje konusu boş. Brief adımında konu girin.' });
+            return;
+          }
+          const srcGate = sourceReadiness(s);
+          if (!srcGate.ready) {
+            set({ lastError: `Kaynak hazır değil: ${srcGate.reason}` });
+            return;
+          }
+          set({ currentStep: s.phase0PresetId ? 'director' : 'recipe', lastError: null });
         } else if (s.currentStep === 'director') {
-          set({ currentStep: 'recipe' });
+          set({ currentStep: 'recipe', lastError: null });
         } else if (s.currentStep === 'recipe') {
-          if (recipeReadiness(s).ready) set({ currentStep: 'scenes' });
+          const rcp = recipeReadiness(s);
+          if (!rcp.ready) {
+            set({ lastError: `Reçete eksik: ${rcp.missing.join(', ')}` });
+            return;
+          }
+          set({ currentStep: 'scenes', lastError: null });
         } else if (s.currentStep === 'scenes') {
-          set({ currentStep: 'timeline' });
+          set({ currentStep: 'timeline', lastError: null });
         }
       },
 
       reset: () => set((s) => ({ ...initial, vault: s.vault })),
+
+      // Rebuild ONLY the storyboard from the immutable rawSource — recipe, world,
+      // palette, topic and all project settings are preserved. Clears stale output.
+      resetStoryboard: () => {
+        const s = get();
+        if (!s.rawSource) {
+          set({ lastError: 'Sıfırlanacak kaynak yok.' });
+          return;
+        }
+        const atoms = ingestSource(s.rawSource);
+        const sourceBeats = s.beatMode !== 'Manuel' && atoms.length > AUTO_GROUP_THRESHOLD
+          ? autoGroupBeats(s.rawSource, s.beatMode)
+          : atoms;
+        const sourceReport = sourceIntegrity(s.rawSource, sourceBeats);
+        const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({
+          sourceBeats,
+          sourceReport,
+          beatAnalysis,
+          beatKeeps: {},
+          sceneCount: Math.max(1, sourceBeats.length || 1),
+          lastError: null,
+          ...STALE_GENERATION,
+        });
+      },
 
       saveToVault: (name) => set((s) => {
         const entry: VaultEntry = {

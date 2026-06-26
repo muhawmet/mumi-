@@ -28,15 +28,33 @@ export function ScenesStep() {
           <option value="Standart" style={{ background: 'var(--s2)' }}>Standart</option>
           <option value="Sıkı Teslim" style={{ background: 'var(--s2)' }}>Sıkı Teslim</option>
         </select>
+        <Button variant="ghost" onClick={() => store.resetStoryboard()}>Storyboard Sıfırla</Button>
         <Button onClick={() => store.advance()}>İleri → Timeline <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span></Button>
       </div>
     </header>
   );
 
+  const errorBanner = store.lastError ? (
+    <div
+      role="alert"
+      style={{
+        padding: '10px 14px',
+        borderRadius: 8,
+        border: '1px solid var(--red, #f54d6b)',
+        background: 'rgba(245,77,107,.08)',
+        color: '#fdb',
+        fontSize: 13,
+      }}
+    >
+      ⚠ {store.lastError}
+    </div>
+  ) : null;
+
   if (!beatAnalysis) {
     return (
       <div className="scenes-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
         {header}
+        {errorBanner}
         <Panel title="Beat Planner devre dışı" subtitle="Kanonik kaynak (Ingest) bulunamadı — yalnızca sahne sayısıyla devam ediliyor.">
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--text-muted)', fontSize: 13 }}>
             <Chip tone="amber">UNSOURCED</Chip>
@@ -52,6 +70,7 @@ export function ScenesStep() {
   return (
     <div className="scenes-step" style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1080 }}>
       {header}
+      {errorBanner}
 
       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 360px) 1fr', gap: 20, alignItems: 'start' }} className="dashboard-form-grid">
         {/* ---- BEAT PLANNER ---- */}

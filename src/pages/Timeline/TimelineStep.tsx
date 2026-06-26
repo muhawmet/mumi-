@@ -45,7 +45,8 @@ export const TimelineStep = () => {
         refIds: state.selectedRefIds,
         paletteId: state.selectedPaletteId,
       },
-      scenes,
+      // Export the user-edited prompt (override wins), matching CSV/MD/Command exports.
+      scenes: scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) })),
     };
     downloadFile(`${state.projectTopic.replace(/\s+/g, '_')}_timeline.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
@@ -187,7 +188,7 @@ export const TimelineStep = () => {
               </span>
             </div>
           )}
-          <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
+          <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId || (state.rawSource.length > 0 && !state.sourceReport?.ok)}>
             {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
         </div>
@@ -232,7 +233,7 @@ export const TimelineStep = () => {
                   : 'Pure generator sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretir.'}
               </p>
             </div>
-            <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}>
+            <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId || (state.rawSource.length > 0 && !state.sourceReport?.ok)}>
               <Clapperboard size={15} /> {state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span>
             </Button>
             {!state.selectedWorldId && <div style={{ fontSize: 12, color: 'var(--amber)' }}>Önce Reçete'de bir dünya seç.</div>}

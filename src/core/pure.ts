@@ -8,7 +8,7 @@ import {
   buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket,
   type Concept, type DurationVerdict, type AgentBriefScene, type Register,
 } from './brain';
-import { durationBudgetSourceBeats, ingestSource, sourceIntegrity, type SourceBeat } from './source';
+import { ingestSource, sourceIntegrity, type SourceBeat } from './source';
 
 // ============================================================
 // Types
@@ -824,11 +824,13 @@ export function generateBatch(input: BriefInput): GenerationResult {
   }
 
   const paletteOverride = DATA.palettes.find((p) => p.id === selectedPaletteId);
-  const budgetedSourceBeats = input.rawSource?.length && input.sourceBeats?.length
-    ? durationBudgetSourceBeats(input.rawSource, 'Dengeli', input.sourceBeats)
+  // Production uses the current edited canonical storyboard verbatim — no hidden
+  // re-budgeting. The user's manual split/merge/mode edits ARE the storyboard.
+  const productionSourceBeats = input.rawSource?.length && input.sourceBeats?.length
+    ? input.sourceBeats
     : [];
-  const count = input.rawSource?.length && budgetedSourceBeats.length
-    ? budgetedSourceBeats.length
+  const count = input.rawSource?.length && productionSourceBeats.length
+    ? productionSourceBeats.length
     : Math.max(1, Math.min(20, Number(sceneCount) || 5));
   // Scene-count guard: a single brief should not explode into dozens of clips.
   // Group the source into thematic beats (Beat Planner / auto-group) before producing.
@@ -843,10 +845,10 @@ export function generateBatch(input: BriefInput): GenerationResult {
       error: 'SCENE_OVERFLOW',
     };
   }
-  const sourceParsed: ParsedSource = input.rawSource?.length && budgetedSourceBeats.length
+  const sourceParsed: ParsedSource = input.rawSource?.length && productionSourceBeats.length
     ? {
         status: 'SOURCE_BOUND',
-        beats: budgetedSourceBeats.map((beat) => ({ sourceId: beat.sourceId, exactText: beat.exactText })),
+        beats: productionSourceBeats.map((beat) => ({ sourceId: beat.sourceId, exactText: beat.exactText })),
         notice: null,
       }
     : parseSourceInput(projectTopic);

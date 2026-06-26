@@ -134,7 +134,7 @@ export function mergeScore(a: string, b: string, bounds: { min: number; target: 
   return sc;
 }
 
-function eventBoundary(src: string) {
+export function eventBoundary(src: string) {
   const s = String(src || '');
   let best = -1;
   let bestScore = -1;
