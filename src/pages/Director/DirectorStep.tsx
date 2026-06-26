@@ -64,6 +64,8 @@ export const DirectorStep = () => {
     selectedPaletteId,
     selectedRefIds,
     sceneCount,
+    imageModel,
+    videoModel,
     setField,
     setCurrentStep,
     applyPreset,
@@ -305,6 +307,35 @@ export const DirectorStep = () => {
                   <div style={{ color: '#fff', fontSize: 12.5, marginTop: 6, lineHeight: 1.35, overflowWrap: 'anywhere' }}>{value}</div>
                 </div>
               ))}
+            </div>
+          </Panel>
+
+          <Panel title="Pipeline modelleri" subtitle="Image ve motion için aktif frontier model — brief output'una yansır.">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <Field label="Image model">
+                <select style={selectStyle} value={imageModel} onChange={(e) => setField('imageModel', e.target.value)}>
+                  <option value="flux_1_1_pro" style={{ background: '#0d1018' }}>FLUX.1.1 Pro</option>
+                  <option value="flux_2_pro" style={{ background: '#0d1018' }}>FLUX.2 Pro</option>
+                  <option value="midjourney_v7" style={{ background: '#0d1018' }}>Midjourney v7</option>
+                  <option value="gpt_image_2" style={{ background: '#0d1018' }}>GPT Image 2</option>
+                  <option value="imagen_4" style={{ background: '#0d1018' }}>Imagen 4</option>
+                  <option value="ideogram_3" style={{ background: '#0d1018' }}>Ideogram 3</option>
+                  <option value="firefly_4" style={{ background: '#0d1018' }}>Adobe Firefly 4</option>
+                </select>
+              </Field>
+              <Field label="Motion (i2v) model">
+                <select style={selectStyle} value={videoModel} onChange={(e) => setField('videoModel', e.target.value)}>
+                  <option value="kling_3" style={{ background: '#0d1018' }}>Kling 3.0 — 10s pencere</option>
+                  <option value="kling_3_turbo" style={{ background: '#0d1018' }}>Kling 3.0 Turbo — 10s</option>
+                  <option value="kling_o3" style={{ background: '#0d1018' }}>Kling O3 — 12s pencere</option>
+                  <option value="runway_gen4" style={{ background: '#0d1018' }}>Runway Gen-4 — 14s</option>
+                  <option value="runway_gen4_5" style={{ background: '#0d1018' }}>Runway Gen-4.5 — 14s</option>
+                  <option value="veo_3" style={{ background: '#0d1018' }}>Veo 3 — 10s</option>
+                  <option value="veo_3_1" style={{ background: '#0d1018' }}>Veo 3.1 — 10s</option>
+                  <option value="pika_2_2" style={{ background: '#0d1018' }}>Pika 2.2 — 10s</option>
+                  <option value="hailuo_2" style={{ background: '#0d1018' }}>Hailuo 2 — 10s</option>
+                </select>
+              </Field>
             </div>
           </Panel>
 

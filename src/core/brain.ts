@@ -321,9 +321,12 @@ export function estimateSec(text: string): number {
 // degrades past ~9s (warping, drift) — 9s is the safe ceiling, not 10+. Runway-class
 // holds longer takes. Tune per engine as they advance; default is the safe 9s.
 const ENGINE_USABLE: Record<string, number> = {
-  kling: 9, kling_2_1: 9, kling_3: 9, kling_4: 10,
-  seedance: 9, seedance_2: 9, hailuo: 9, veo: 8,
-  runway: 14,
+  kling: 9, kling_2_1: 9,
+  kling_3: 10, kling_3_turbo: 10, kling_o3: 12,
+  seedance: 9, seedance_2: 10, hailuo: 9, hailuo_2: 10,
+  veo: 8, veo_3: 10, veo_3_1: 10,
+  runway: 14, runway_gen4: 14, runway_gen4_5: 14,
+  pika: 9, pika_2_2: 10,
 };
 export function engineUsableSec(videoModel: string): number {
   const key = T(videoModel).toLowerCase();
@@ -458,7 +461,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
       : `Pipeline (2026 frontier): image → ${T(ctx.imageModel) || 'current SOTA image model'} · motion → ${T(ctx.videoModel) || 'current SOTA i2v'} · music → Suno · VO → ElevenLabs`,
     '',
     '== MODEL ERA — write for 2026 frontier generators ==',
-    'These are current frontier models. Express intent in natural language; trust them with complex single-frame staging, real materials and longer coherent shots. Reserve negatives for genuine failure modes (morph, identity/material drift, invented objects) — never resolution or quality cargo-culting ("4K", "8K", "ultra-detailed", "masterpiece", "award-winning"). Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',
+    'Image: FLUX.1.1 Pro / FLUX.2 Pro class, Midjourney v7, GPT Image 2, Imagen 4 — all understand single-sentence lighting, complex material descriptions, precise compositional geometry in natural language. Motion: Kling 3.0 / Kling O3 class — native 4K, 10-15s coherent window, multimodal (video+audio unified), excellent start-frame fidelity, accurate camera grammar interpretation. Reserve negatives for genuine failure modes (morph, drift, invented objects) only. Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',
     '',
     ...brandKitBlock(ctx),
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
@@ -644,8 +647,9 @@ function klingScrub(t: string): string {
   return T(t).replace(/\b(ready to|reaction|trigger|appears?|transforms?|suddenly|then|next,?)\b/gi, '').replace(/\s{2,}/g, ' ').replace(/\s+,/g, ',').trim();
 }
 
-export function buildMotionPrompt(sceneId: number | string, concept: Concept, camera: string, dna: DnaDirectives, sec?: number): string {
+export function buildMotionPrompt(sceneId: number | string, concept: Concept, camera: string, dna: DnaDirectives, sec?: number, videoModel?: string): string {
   const ev = klingScrub(concept.event), sub = klingScrub(concept.subject.split(',')[0]);
+  const window = engineUsableSec(videoModel || 'kling_3');
   const body = [
     'Camera: ' + klingScrub(camera) + '.',
     'Moving element: ' + sub + ' — already in frame, already grounded.',
@@ -655,7 +659,7 @@ export function buildMotionPrompt(sceneId: number | string, concept: Concept, ca
   ].join(' ');
   return '[' + T(sceneId) + '] MOTION (i2v · plays the approved start frame)\n' + body +
     '\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.' +
-    (sec && sec > 9 ? '\nSPLIT NOTE: source runs ~' + sec + 's — past the clean ~9s window; cover with balanced approved frames (~' + (Math.round((sec / Math.ceil(sec / 9)) * 10) / 10) + 's each), never stretch this beat.' : '');
+    (sec && sec > window ? '\nSPLIT NOTE: source runs ~' + sec + 's — past the clean ~' + window + 's window; cover with balanced approved frames (~' + (Math.round((sec / Math.ceil(sec / window)) * 10) / 10) + 's each), never stretch this beat.' : '');
 }
 
 // ---------------- variant generator & smart suggestions ----------------

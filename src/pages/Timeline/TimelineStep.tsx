@@ -8,7 +8,7 @@ import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/ex
 import { buildCommandJSON } from '../../core/commandExport';
 import { buildProductionExport, bundleSlug } from '../../core/productionExport';
 import { DATA } from '../../core/pure';
-import { dnaDirectives, registerOf, primePacket } from '../../core/brain';
+import { dnaDirectives, registerOf, primePacket, engineUsableSec } from '../../core/brain';
 import { RecipeThumb } from '../../components/RecipeThumb';
 import { Clapperboard } from 'lucide-react';
 
@@ -376,7 +376,7 @@ export const TimelineStep = () => {
                   <DetailRow label={state.projectKind === 'design' ? 'Kaynak metin' : 'Voice over (kaynak metin)'} value={selected.voiceOver} block copyable />
                   {state.projectKind === 'video' && (
                     <>
-                      <DetailRow label={`Motion prompt (${state.videoModel ?? 'kling_3'})`} value={selected.motionPrompt} mono block copyable />
+                      <DetailRow label={`Motion prompt (${state.videoModel ?? 'kling_3'} · ${engineUsableSec(state.videoModel ?? 'kling_3')}s pencere)`} value={selected.motionPrompt} mono block copyable />
                       <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
                     </>
                   )}

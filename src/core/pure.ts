@@ -889,7 +889,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
       });
     const motionPrompt = projectKind === 'design'
       ? 'NOT_APPLICABLE: static design deliverable; no motion prompt.'
-      : buildMotionPrompt(i, concept, camera, dna, duration.sec);
+      : buildMotionPrompt(i, concept, camera, dna, duration.sec, input.videoModel);
     const voiceOver = beatText;
     prev = { src: beatText, concept };
     emittedConcepts.push(concept);

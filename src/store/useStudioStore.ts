@@ -210,7 +210,7 @@ const initial = {
   selectedPaletteId: '',
   selectedMusicId: '',
 
-  imageModel: 'nano_banana_2',
+  imageModel: 'flux_1_1_pro',
   videoModel: 'kling_3',
   brandKitLock: '',
 
@@ -397,7 +397,7 @@ function migrateStateV5ToV6(state: any): any {
   return state;
 }
 
-/** Current i2v engine. Legacy Kling ids upgrade to this on load (same 9s window). */
+/** Current i2v engine. Legacy Kling ids upgrade to this on load. */
 export const CURRENT_VIDEO_MODEL = 'kling_3';
 const LEGACY_VIDEO_MODELS = new Set(['kling', 'kling_2', 'kling_21', 'kling_2_1']);
 export function normalizeVideoModel(value: unknown): string {
