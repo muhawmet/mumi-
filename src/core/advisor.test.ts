@@ -52,9 +52,11 @@ describe('directorNotes', () => {
     expect(notes.some((n) => /DNA \/ dünya uyumsuzluğu/.test(n.title))).toBe(true);
   });
 
-  it('warns when scene count is too high', () => {
-    const notes = directorNotes({ ...full, sceneCount: 24 });
-    expect(notes.some((n) => n.level === 'warn' && /Sahne sayısı/.test(n.title))).toBe(true);
+  it('does not warn for a normal scene count, and flags long-form only as info', () => {
+    const normal = directorNotes({ ...full, sceneCount: 24 });
+    expect(normal.some((n) => /Uzun format|Sahne sayısı/.test(n.title))).toBe(false);
+    const longForm = directorNotes({ ...full, sceneCount: 48 });
+    expect(longForm.some((n) => n.level === 'info' && /Uzun format/.test(n.title))).toBe(true);
   });
 
   it('warns when the preset register does not match the path register', () => {

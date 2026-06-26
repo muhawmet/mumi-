@@ -382,6 +382,23 @@ describe('generateBatch', () => {
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
   });
 
+  it('generates a long-form (4 min+) storyboard above the old 25-scene cap without blocking', () => {
+    // 36 substantial sentences (~5s VO each) → budgeting keeps them as distinct
+    // beats, well past the retired 25-scene ceiling. Must generate, not block.
+    const rawSource = Array.from(
+      { length: 36 },
+      (_, index) => `Bu ${index + 1}. anlatım cümlesi yeterince uzundur ve yaklaşık beş saniye sürer.`,
+    ).join(' ');
+    const sourceBeats = autoGroupBeats(rawSource, 'Dengeli');
+    const result = generateBatch({ ...baseInput, rawSource, sourceBeats });
+    expect(result.status).toBe('GENERATED');
+    expect(result.error).toBeUndefined();
+    expect(sourceBeats.length).toBeGreaterThan(25);
+    expect(result.scenes.length).toBe(sourceBeats.length);
+    expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
+    expect(sourceIntegrity(rawSource, result.scenes).coverage).toBe(100);
+  });
+
   it('budgets a 65s-ish Turkish lesson to roughly 13 generated scenes', () => {
     const rawSource = [
       ...Array.from({ length: 43 }, (_, index) => `Öğrenci kavramı ${index + 1}.`),

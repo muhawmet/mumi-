@@ -832,19 +832,9 @@ export function generateBatch(input: BriefInput): GenerationResult {
   const count = input.rawSource?.length && productionSourceBeats.length
     ? productionSourceBeats.length
     : Math.max(1, Math.min(20, Number(sceneCount) || 5));
-  // Scene-count guard: a single brief should not explode into dozens of clips.
-  // Group the source into thematic beats (Beat Planner / auto-group) before producing.
-  if (count > 25) {
-    return {
-      status: 'BLOCKED',
-      scenes: [],
-      contractGate: {
-        status: 'BLOCKED',
-        findings: [{ code: 'SCENE_OVERFLOW', message: `${count} sahne tespit edildi (üst sınır 25). Kaynağı tematik beat'lere grupla (Beat Planner / Akıllı Grupla) ve yeniden üret.` }],
-      },
-      error: 'SCENE_OVERFLOW',
-    };
-  }
+  // No scene-count ceiling: long-form videos (4+ min) legitimately need 40–60+
+  // beats, and the user's beat plan is authoritative. `count` is the storyboard
+  // the user actually built; production follows it verbatim.
   const sourceParsed: ParsedSource = input.rawSource?.length && productionSourceBeats.length
     ? {
         status: 'SOURCE_BOUND',

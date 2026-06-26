@@ -59,7 +59,12 @@ const DATA = SURGERY as unknown as {
 const DEFAULT_PROJECT_ID = 'ultra_real_commercial';
 export const ELEVENLABS_V3_TURKISH_WORDS_PER_SECOND = 2.35;
 export const KLING_SAFE_VO_SECONDS_PER_SCENE = 5;
-export const MAX_DURATION_BUDGETED_SCENES = 25;
+// No creative ceiling on auto-budgeted scenes: long-form (4+ min) videos need
+// 40–60+ beats and the user's beat plan is authoritative. This stays only as an
+// extreme runaway guard, far above any real video length — not a limit to design
+// around. Pressing a beat mode (Dengeli/Ekonomik/Hassas) auto-sizes to the real
+// count, so the user never has to split beats by hand.
+export const MAX_DURATION_BUDGETED_SCENES = 600;
 
 const MODE_USABLE_SECONDS: Record<BeatMode, number> = {
   Ekonomik: 5.5,

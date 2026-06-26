@@ -26,6 +26,7 @@ craft reference.
 | SUNO | `gpt/04_SUNO_GPT.md` | `claude/04_SUNO_CLAUDE.md` | `../knowledge/04_SUNO_KNOWLEDGE.md` |
 | DESIGN | `gpt/05_DESIGN_GPT.md` | `claude/05_DESIGN_CLAUDE.md` | `../knowledge/05_DESIGN_KNOWLEDGE.md` |
 | PROOF | `gpt/06_PROOF_GPT.md` | `claude/06_PROOF_CLAUDE.md` | `../knowledge/06_PROOF_KNOWLEDGE.md` |
+| PRODUCTION | `gpt/07_PRODUCTION_GPT.md` | `claude/07_PRODUCTION_CLAUDE.md` | `../knowledge/07_PRODUCTION_KNOWLEDGE.md` |
 
 ## GPT Setup
 
@@ -42,6 +43,38 @@ craft reference.
 - Claude may use Project Knowledge/RAG, but the site brief always remains the
   highest authority.
 - Paste the site's `agentBrief`, role packet, or command JSON into the chat.
+
+## Production Bundle (Final Brief → folder → motion from frames)
+
+After the Final Brief, the Timeline screen's **`⬇ Üretim Paketi`** button exports a
+single self-describing file, `<slug>_production.json` (schema
+`mamilas.production.v2026`). This is the doctor's prescription. The
+**Production Agent** is the pharmacist that fills it.
+
+Flow:
+
+`SITE Final Brief -> ⬇ Üretim Paketi (project.json) -> doctor generates start frames
+-> Production Agent reads frames -> motion/<id>.txt`
+
+1. Drop `<slug>_production.json` (renamed or as `project.json`) into an empty folder.
+2. Run the Production Agent (Pass A — scaffold): it writes `image_prompts/<id>.txt`,
+   `final_brief.md`, `suno.txt`, `report.md` and creates `images/` + `motion/`.
+3. Generate the start frames from `image_prompts/`, save them as
+   `images/<id>.png` (`<id>` = scene id).
+4. Run the Production Agent again (Pass B — motion): it **looks at each frame** and
+   writes `motion/<id>.txt`, then refreshes `report.md`.
+
+Three interchangeable surfaces, one contract:
+
+| Surface | Setup | Frames come from |
+|---|---|---|
+| Claude Code / Codex CLI | Open the folder, run `agents/production/RUN_MOTION_AGENT.md` | read from disk (no screenshots) |
+| Claude Project | Instructions: `GLOBAL_BRAIN.md` + `claude/07_PRODUCTION_CLAUDE.md`; Knowledge: `07_PRODUCTION_KNOWLEDGE.md` | pasted JSON + attached images |
+| Custom GPT | Instructions: `GLOBAL_BRAIN.md` + `gpt/07_PRODUCTION_GPT.md`; Knowledge: `07_PRODUCTION_KNOWLEDGE.md` | pasted JSON + attached images |
+
+The CLI runner template lives at `agents/production/RUN_MOTION_AGENT.md`. The one
+law for every surface: **no image, no motion** — final motion is written only after
+the start frame exists and has been seen.
 
 ## Site Packets
 

@@ -6,6 +6,7 @@ import { quantumScore, proofDoctor, qaScore } from '../../core/proof';
 import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
 import { buildCommandJSON } from '../../core/commandExport';
+import { buildProductionExport, bundleSlug } from '../../core/productionExport';
 import { DATA } from '../../core/pure';
 import { dnaDirectives, registerOf, primePacket } from '../../core/brain';
 import { RecipeThumb } from '../../components/RecipeThumb';
@@ -55,6 +56,13 @@ export const TimelineStep = () => {
     if (!scenes.length) return;
     const payload = buildCommandJSON(state);
     downloadFile(`${safeName}_mamilas_command.json`, JSON.stringify(payload, null, 2), 'application/json');
+  };
+
+  const onExportProduction = () => {
+    if (!scenes.length) return;
+    const payload = buildProductionExport(state);
+    // Single self-describing file. Drop it in an empty folder; the agent scaffolds the rest.
+    downloadFile(`${bundleSlug(state.projectTopic)}_production.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
 
   const onExportHandoff = () => {
@@ -135,6 +143,7 @@ export const TimelineStep = () => {
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportCSV}>CSV</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportCommandJSON}>Komut JSON</Button>}
+          {scenes.length > 0 && <Button onClick={onExportProduction} title="Tek dosya üretim paketi — boş klasöre koy, görselleri üret, ajan motionu yazsın">⬇ Üretim Paketi</Button>}
           {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
           {scenes.length > 0 && (
             <div style={{ position: 'relative', display: 'inline-block' }}>

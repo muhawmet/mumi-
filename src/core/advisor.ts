@@ -312,12 +312,12 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     }
   }
 
-  // scene-count guard — too many scenes = unproducible, no narrative arc
-  if ((input.sceneCount ?? 0) > 20) {
+  // scene-count note — long-form is allowed; this is a soft cost heads-up, not a block.
+  if ((input.sceneCount ?? 0) > 40) {
     notes.push({
-      level: 'warn',
-      title: 'Sahne sayısı çok yüksek',
-      detail: `${input.sceneCount} sahne planlandı. Tipik içerik için 8-15 sahne yeter (üst sınır 25). Kaynağı tematik beat'lere grupla (Beat Planner / Akıllı Grupla).`,
+      level: 'info',
+      title: 'Uzun format',
+      detail: `${input.sceneCount} sahne planlandı — uzun format (4 dk+) için normal. Üretim/klip maliyeti yüksek olur; bir beat moduna basmak (Dengeli/Ekonomik/Hassas) sahneleri otomatik doğru boyuta getirir.`,
     });
   }
 
