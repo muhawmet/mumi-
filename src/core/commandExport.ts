@@ -1,6 +1,7 @@
 import { DATA } from './pure';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
+import { normalizeVideoModel } from '../store/useStudioStore';
 import type { Scene, StudioState } from '../store/useStudioStore';
 
 type CommandRole = 'idea' | 'image' | 'motion' | 'suno' | 'proof';
@@ -139,7 +140,7 @@ export function buildCommandJSON(state: CommandState) {
       refIds: state.selectedRefIds,
       musicId: state.selectedMusicId,
       imageModel: state.imageModel,
-      videoModel: state.videoModel,
+      videoModel: normalizeVideoModel(state.videoModel),
       brandKitLock: state.brandKitLock,
     },
     creativeControls: {

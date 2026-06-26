@@ -394,6 +394,14 @@ function migrateStateV5ToV6(state: any): any {
   return state;
 }
 
+/** Current i2v engine. Legacy Kling ids upgrade to this on load (same 9s window). */
+export const CURRENT_VIDEO_MODEL = 'kling_3';
+const LEGACY_VIDEO_MODELS = new Set(['kling', 'kling_2', 'kling_21', 'kling_2_1']);
+export function normalizeVideoModel(value: unknown): string {
+  if (typeof value !== 'string' || !value) return CURRENT_VIDEO_MODEL;
+  return LEGACY_VIDEO_MODELS.has(value.toLowerCase()) ? CURRENT_VIDEO_MODEL : value;
+}
+
 export function migratePersistedState(value: unknown): Partial<StudioState> {
   if (!value || typeof value !== 'object') return {};
   const persisted = value as any;
@@ -421,6 +429,7 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
 
   return {
     ...persisted,
+    videoModel: normalizeVideoModel(persisted.videoModel),
     selectedRefIds: persisted.selectedRefIds || [],
     activePreviewRefId: typeof persisted.activePreviewRefId === 'string' && DATA.refs.some((ref) => ref.id === persisted.activePreviewRefId)
       ? persisted.activePreviewRefId
@@ -613,7 +622,10 @@ export const useStudioStore = create<StudioState>()(
       generateScenes: () => {
         const s = get();
         if (s.isGenerating) return;
-        set({ isGenerating: true, lastError: null });
+        // Heal any stale/legacy engine id (e.g. persisted kling_2_1) before producing,
+        // so every scene's duration/split and motion handoff name the current engine.
+        const videoModel = normalizeVideoModel(s.videoModel);
+        set({ isGenerating: true, lastError: null, videoModel });
         try {
           const result = generateBatch({
             projectKind: s.projectKind,
@@ -629,7 +641,7 @@ export const useStudioStore = create<StudioState>()(
             selectedPaletteId: s.selectedPaletteId,
             selectedMusicId: s.selectedMusicId,
             imageModel: s.imageModel,
-            videoModel: s.videoModel,
+            videoModel,
             brandKitLock: s.brandKitLock,
             mood: s.mood,
             cameraEnergy: s.cameraEnergy,
@@ -765,12 +777,25 @@ export const useStudioStore = create<StudioState>()(
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
-      version: 7,
+      version: 8,
       migrate: (persistedState, version) => {
+        let s: any = persistedState;
         if (version < 7) {
-          return migratePersistedState(persistedState) as any;
+          s = migratePersistedState(s);
         }
-        return persistedState as any;
+        // v8: heal legacy/stale engine ids (e.g. kling_2_1 → kling_3) in state and
+        // every vault snapshot, so the persisted project itself shows the current engine.
+        if (s && typeof s === 'object') {
+          s.videoModel = normalizeVideoModel(s.videoModel);
+          if (Array.isArray(s.vault)) {
+            s.vault = s.vault.map((entry: any) =>
+              entry && typeof entry === 'object' && entry.snapshot && typeof entry.snapshot === 'object'
+                ? { ...entry, snapshot: { ...entry.snapshot, videoModel: normalizeVideoModel(entry.snapshot.videoModel) } }
+                : entry,
+            );
+          }
+        }
+        return s;
       },
     },
   ),

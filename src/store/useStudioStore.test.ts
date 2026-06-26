@@ -141,6 +141,17 @@ describe('studio store helpers', () => {
     expect(migrated.selectedSceneId).toBe(scene.id);
   });
 
+  it('upgrades legacy Kling video models to the current one on load', () => {
+    expect(migratePersistedState({ videoModel: 'kling_2_1' }).videoModel).toBe('kling_3');
+    expect(migratePersistedState({ videoModel: 'kling_2' }).videoModel).toBe('kling_3');
+    expect(migratePersistedState({ videoModel: 'kling' }).videoModel).toBe('kling_3');
+    // current and other engines are left untouched
+    expect(migratePersistedState({ videoModel: 'kling_3' }).videoModel).toBe('kling_3');
+    expect(migratePersistedState({ videoModel: 'kling_4' }).videoModel).toBe('kling_4');
+    expect(migratePersistedState({ videoModel: 'runway' }).videoModel).toBe('runway');
+    expect(migratePersistedState({}).videoModel).toBe('kling_3');
+  });
+
   it('rejects an empty palette at the recipe gate', () => {
     expect(recipeReadiness({ selectedWorldId: 'clay', selectedRefIds: ['pixar_dimensional'], selectedPaletteId: '' })).toEqual({
       ready: false,
