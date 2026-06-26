@@ -158,10 +158,12 @@ export interface StudioState {
   workingMode: WorkingMode;
   beatKeeps: Record<string, boolean>;
   beatAnalysis: BeatAnalysis | null;
+  personalMode: boolean;
 
   currentStep: Step;
 
   setField: <K extends keyof StudioState>(field: K, value: StudioState[K]) => void;
+  togglePersonalMode: () => void;
   setActivePreviewRefId: (id: string) => void;
   setScenes: (scenes: Scene[]) => void;
   setCurrentStep: (step: Step) => void;
@@ -240,6 +242,7 @@ const initial = {
   workingMode: 'Standart' as WorkingMode,
   beatKeeps: {} as Record<string, boolean>,
   beatAnalysis: null as BeatAnalysis | null,
+  personalMode: false,
 
   currentStep: 'dashboard' as Step,
 
@@ -734,10 +737,10 @@ export const useStudioStore = create<StudioState>()(
           set({ lastError: 'Sıfırlanacak kaynak yok.' });
           return;
         }
-        const atoms = ingestSource(s.rawSource);
-        const sourceBeats = s.beatMode !== 'Manuel' && atoms.length > AUTO_GROUP_THRESHOLD
+        const regroup = s.beatMode !== 'Manuel';
+        const sourceBeats = regroup
           ? autoGroupBeats(s.rawSource, s.beatMode)
-          : atoms;
+          : ingestSource(s.rawSource);
         const sourceReport = sourceIntegrity(s.rawSource, sourceBeats);
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
         set({
@@ -750,6 +753,8 @@ export const useStudioStore = create<StudioState>()(
           ...STALE_GENERATION,
         });
       },
+
+      togglePersonalMode: () => set((s) => ({ personalMode: !s.personalMode })),
 
       saveToVault: (name) => set((s) => {
         const entry: VaultEntry = {

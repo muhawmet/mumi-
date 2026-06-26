@@ -21,7 +21,7 @@ const PHASE_COLORS: Record<string, string> = {
 
 export const TimelineStep = () => {
   const state = useStudioStore();
-  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, setSceneOverride } = state;
+  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, setSceneOverride, togglePersonalMode } = state;
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
   const onGenerate = generateScenes;
   const exportCtx: ExportContext = {
@@ -298,8 +298,8 @@ export const TimelineStep = () => {
                         {state.projectKind === 'video' && s.duration && !s.duration.ok && (
                           <span style={{ color: 'var(--red)', fontWeight: 700, marginLeft: 6 }}>· BÖLEMEZSİN</span>
                         )}
-                        <span style={{ marginLeft: 6, color: qaScore(effectivePrompt(s)) >= 80 ? 'var(--green, #4df5a0)' : 'var(--gold)' }}>
-                          · QA {qaScore(effectivePrompt(s))}
+                        <span style={{ marginLeft: 6, color: qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80 ? 'var(--green, #4df5a0)' : 'var(--gold)' }}>
+                          · QA {qaScore(effectivePrompt(s), { personalMode: state.personalMode })}{state.personalMode ? ' P' : ''}
                         </span>
                       </div>
                     </div>
@@ -311,10 +311,16 @@ export const TimelineStep = () => {
             <div style={{ marginTop: 24, paddingTop: 16, borderTop: '1px solid var(--line2)' }}>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--text-muted)', fontWeight: 700, marginBottom: 8 }}>BATCH QA & ÜRETİM DEFTERİ</div>
               <div style={{ fontSize: 13, color: '#fff', lineHeight: 1.6 }}>
-                <div>İlk sahne QA: <span style={{ color: 'var(--gold)' }}>{qaScore(effectivePrompt(scenes[0]))}</span></div>
-                <div>Ortalama QA: <span style={{ color: 'var(--gold)' }}>{Math.round(scenes.reduce((acc, s) => acc + qaScore(effectivePrompt(s)), 0) / scenes.length)}</span></div>
-                <div>Hazır Sahneler: <span style={{ color: 'var(--green, #4df5a0)' }}>{scenes.filter(s => qaScore(effectivePrompt(s)) >= 80).length} / {scenes.length}</span></div>
+                <div>İlk sahne QA: <span style={{ color: 'var(--gold)' }}>{qaScore(effectivePrompt(scenes[0]), { personalMode: state.personalMode })}</span></div>
+                <div>Ortalama QA: <span style={{ color: 'var(--gold)' }}>{Math.round(scenes.reduce((acc, s) => acc + qaScore(effectivePrompt(s), { personalMode: state.personalMode }), 0) / scenes.length)}</span></div>
+                <div>Hazır Sahneler: <span style={{ color: 'var(--green, #4df5a0)' }}>{scenes.filter(s => qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80).length} / {scenes.length}</span></div>
               </div>
+              <button
+                onClick={togglePersonalMode}
+                style={{ marginTop: 10, fontSize: 11, padding: '4px 10px', background: state.personalMode ? 'var(--gold)' : 'transparent', color: state.personalMode ? '#000' : 'var(--text-muted)', border: '1px solid var(--line2)', borderRadius: 4, cursor: 'pointer', letterSpacing: 1 }}
+              >
+                {state.personalMode ? 'PERSONAL ON — IP guard kapalı' : 'PERSONAL MOD'}
+              </button>
             </div>
           </Panel>
 

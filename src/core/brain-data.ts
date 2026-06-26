@@ -177,6 +177,25 @@ export const STY_BANK: Bank =[
  [/d[uü][sş]man.*güçlü|rakip.*kuvvet|villain.*reveal|antagonist|karanlık.*güç/i,
   'the original antagonist occupying the dominant compositional mass, their power made spatial — light bending around them or withdrawn from their space',
   'one shadow arm of their presence extends one degree toward the frame edge, the ambient light retreating before it, and the frame settles on the scale of the threat'],
+ // --- MAPPA-grade dark cinematic / urban atmospheric ---
+ [/karanl[iı]k atmosfer|dark atmospheric|karanl[iı]k.*[sş]ehir|urban dark|gritty city|karanlık.*kentsel/i,
+  'heavy atmospheric depth: one original figure in a gritty urban void, smoke-diffused backlight carving their silhouette from the dark mass behind',
+  'the backlight bleeds one degree through the smoke layer, finding the figure edge and holding it, the surrounding urban texture settling into controlled deep shadow'],
+ [/la[gğ]netli|curse|la[gğ]netli enerji|cursed space|lanetli.*alan|cursed domain|barrier.*space/i,
+  'one original figure at the boundary of a cursed space — the domain pressing visible pressure against every surface, distorted geometry at the edges',
+  'the cursed pressure pulses once outward from the center, one surface crack or shadow arm extending then locking, the boundary settling with visible weight at every edge'],
+ [/duman|sis|smoke|haze|atmospheric haze|havada as[iı]l[iı]/i,
+  'volumetric smoke or haze filling the mid-ground, one figure or object reading clean through it as the only sharp plane',
+  'the haze drifts one slow layer pass across the mid-ground, the sharp plane holding fixed as the soft world moves behind it, settling with the subject fully isolated in focus'],
+ [/hapishane|kafes|cage|s[iı]k[iı][sş][iı]k|enclosed.*tension|trapped|surrounded/i,
+  'one original figure inside a compressed spatial frame — walls, bars, or crowd mass pressing the negative space tight around them',
+  'the surrounding mass contracts one increment, tightening the negative space, the figure edge gaining rim light as the compression peaks and the frame locks on the held stand'],
+ [/kan|sava[sş] sonras[iı]|yenilgi.*a[gğ]|aftermath|battle remnant|cost.*visible/i,
+  'a quiet aftermath frame: one original figure surrounded by evidence of what was spent, the cost readable in the spatial geometry around them',
+  'one remaining element of the cost catches the only warm light and holds it, the figure settling in the surrounded quiet, the full weight of the aftermath visible without exaggeration'],
+ [/gözler|yüz bask[iı]|face pressure|intense face|karakter.*yüz.*gerilim|close.*face.*weight/i,
+  'extreme close portrait: one original face under maximum emotional compression, the eye-line reading the interior weight without release',
+  'the key light holds fixed on the face, one micro-expression arriving at the eye and locking — no movement beyond this single interior beat, the frame resting on the unspoken weight'],
  // --- Original STY_BANK entries ---
  [/k[iı]v[iı]lc[iı]m|makine [cç]al[iı][sş]|ilk [cç]al[iı][sş]|ate[sş]le|spark|ignit/i,
   'the dormant machine heart at frame center, one ready contact point catching the only warm light',
@@ -412,7 +431,31 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/melody|lyrical|poetic|dreamlike/i,'motion','lyrical pacing: the event unfolds as one unbroken legato phrase'],
  [/sports|victory|arena|competition/i,'staging','arena staging: subject on a performance line, depth built from witnesses'],
  [/horror|tension|unease|lurking/i,'light','withheld light: the key arrives late, shadow holds information until the event'],
- [/mecha|industrial|machinery|hydraulic/i,'motion','industrial weight: mass leads, inertia visible, every stop earns a micro-settle']
+ [/mecha|industrial|machinery|hydraulic/i,'motion','industrial weight: mass leads, inertia visible, every stop earns a micro-settle'],
+ // Available light / naturalistic / verite
+ [/available.?light|practical.only.*source|candid.*low.*inter|available-light real/i,'camera','lock the camera to a fluid float that never fights the available light — each move justifies itself by following a light direction or revealing a motivated source'],
+ [/available.?light|practical.only.*source|candid.*low.*inter/i,'light','practical-only sourcing: every exposure choice traces to a real light in the scene, zero supplemental fill, latitude carries the image'],
+ [/imperfect.*truth|motivated grit|present.?tense.*observ|human truth.*grit|verite/i,'camera','verite witness: camera finds its position based on what the subject does, never anticipates, reframes only when forced, imprecision confirms presence'],
+ // Authentic destination / travel
+ [/authentic place|travel desire|destination.*desire|place-led/i,'camera','destination reveal: begin with a detail that could be anywhere, one slow back-reveal commits to the full place, hold the vista'],
+ [/authentic place|travel desire|destination.*desire/i,'staging','human-scale place grammar: one person in scale relationship to landscape or architecture confirms the invitation'],
+ // Analog / tungsten / film density
+ [/tungsten|analog pressure|film density|analog grain|film stock/i,'light','tungsten-biased key: 2700-3200K source reads as warm incandescent, shadow edges soft from real diffusion, grain in the blacks acceptable'],
+ // Beauty / skincare / soft-lit face
+ [/soft skin|cream texture|skincare|beauty.*glow|skin.*glow|skin.*clarity/i,'light','beauty wrap: large-format diffused key at low angle to skin, surface texture is the proof, fill ratio high enough that no shadow reads as hard'],
+ [/soft skin|cream texture|skincare|beauty.*glow/i,'camera','beauty proximity: close enough to read skin texture without distortion, shallow focus on the key sensory surface'],
+ // Keynote / product stage reveal
+ [/keynote stage|product reveal|stage.*reveal|black.*stage|stage.*emergence/i,'staging','stage-emergence: subject arrives out of total darkness into a precision pool of light, the void is the value message'],
+ [/keynote stage|product reveal|minimal.*ev.*stage|minimal.*tech.*light|minimal.*stage/i,'camera','clean reveal move: one slow motivated approach as subject achieves its final lit position, no repositioning after arrival'],
+ // Three-point / sculpted studio
+ [/sculpted form|three.?point|subject.*separation|neutral premium control/i,'light','three-point control: key defines form, fill holds detail in the shadow, rim separates subject from field — ratios precise, no source competes'],
+ // Night density / coloured practicals
+ [/night density|colour from sources|layered depth.*night|neon.*street.*real/i,'light','coloured practical sourcing: each light in frame is a named real source, colours come only from those sources, overlapping pools build the depth'],
+ // Even / overcast
+ [/even credible light|overcast.*even|natural.*truth.*even|skin truth.*even|credible light/i,'light','overcast diffusion: sky acts as a single enormous source, all shadows directional-soft, no fill fight, colour temperature honest'],
+ // Suspense geometry
+ [/suspense grammar|information as camera|geometric shadows|ordinary objects charged|controlled reveal/i,'camera','suspense framing: what the camera shows IS the information — hold longer than comfortable, let the ordinary object fill the frame until it becomes threat'],
+ [/suspense grammar|geometric shadows|ordinary.*charged.*threat/i,'staging','geometric threat staging: subject and object in precise spatial relationship, shadow geometry reinforces the menace, negative space holds tension']
 ];
 
 export const SUNO_MAP: Record<string, string> ={
@@ -430,7 +473,11 @@ export const SUNO_MAP: Record<string, string> ={
  SOCIAL_REELS_REALISM:'Thumb-stop bed, 96-112 BPM; punchy but VO-safe: muted plucks, tight sub, finger snaps or soft perc, hook lands inside the first 2 seconds, clean loopable resolve.',
  AUTOMOTIVE_MOBILITY:'Kinetic premium bed, 88-104 BPM; deep sub pulse, filtered analog arps following the body-line passes, one engine-adjacent (never literal) swell on the stance beat. Space: night road width.',
  TOURISM_DESTINATION:'Place-led warm score, 76-90 BPM; nylon guitar or duduk-adjacent lead used sparingly, warm strings, light hand percussion, golden-hour swell aligned to the vista beat. Authentic, never stock-travel.',
- HEALTH_PUBLIC_SERVICE:'Care-grade underscore, 68-78 BPM; soft piano, warm viola, breath-paced phrasing, zero drama spikes. Dignity in the mix: VO pocket always open.'
+ HEALTH_PUBLIC_SERVICE:'Care-grade underscore, 68-78 BPM; soft piano, warm viola, breath-paced phrasing, zero drama spikes. Dignity in the mix: VO pocket always open.',
+ // Anime world overrides — world-specific briefs take priority over production-path fallback
+ mappa_cinematic:'Dark cinematic anime score, 60-82 BPM; low cello drone under sparse piano, processed taiko hits timed to beat impacts, electric bass pulse in the low end, JJK-era dissonant string swells for tension beats, one restrained orchestral swell at the climax — never trailer brass. Space: wide reverb hall with close room layer. Arc: oppressive quiet intro, building dread, single committed peak, unresolved dark hold.',
+ bones_action:'Precision action score, 88-108 BPM; clean orchestral strings driving the main rhythm, warm brass accents on peak hits, light electronic pulse underneath, clear dynamic breathing between action bursts. Space: medium concert hall with controlled reverb. Arc: purposeful intro establishing stakes, rhythmic build through the middle, decisive peak on the choreography apex, earned warm resolve.',
+ toei_adventure:'Grand adventure score, 90-112 BPM; bright brass fanfare as the lead voice, full strings, triumphant percussion, one big thematic hook that lands on the adventure promise beat. Space: wide open air — big room. Arc: horizon-opening intro, joyful build, full ensemble peak on the reveal of scale or found-family moment, optimistic warm resolve. Never ironic, never subdued.'
 };
 
 export const VAR_LIGHT: string[] =['',' Light variant: trade the key one stop softer and let the accent colour carry the subject edge.',' Light variant: motivate the key from the opposite side and let the shadow mass lead the composition.'];

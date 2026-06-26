@@ -353,8 +353,8 @@ export function durationGuard(scriptText: string, videoModel: string): DurationV
 
 // ---------------- Suno brief ----------------
 
-export function primeSuno(productionPath: string): string {
-  const base = SUNO_MAP[productionPath] || 'Narration-safe instrumental bed, 78-90 BPM, sparse warm instrumentation, room air, VO pocket open.';
+export function primeSuno(productionPath: string, worldId?: string): string {
+  const base = (worldId && SUNO_MAP[worldId]) || SUNO_MAP[productionPath] || 'Narration-safe instrumental bed, 78-90 BPM, sparse warm instrumentation, room air, VO pocket open.';
   return base + ' Always: no vocals unless requested, duck under dialogue, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.';
 }
 
@@ -510,7 +510,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '== SCENE DOSSIER ==',
     dossier,
     '',
-    ...(ctx.projectKind === 'design' ? [] : ['== SOUND ==', primeSuno(ctx.productionPath), '']),
+    ...(ctx.projectKind === 'design' ? [] : ['== SOUND ==', primeSuno(ctx.productionPath, world.id), '']),
     '',
     '== FAIL CONDITIONS (Proof) ==',
     '- Source coverage below 100%, skipped/merged/reordered scene IDs',
@@ -607,7 +607,7 @@ export function primePacket(
       ...base,
       '',
       '== SUNO DIRECTIVE ==',
-      primeSuno(ctx.productionPath),
+      primeSuno(ctx.productionPath, world.id),
       '',
       '== SCENE ARC ==',
       sceneArc

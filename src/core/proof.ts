@@ -26,22 +26,24 @@ function auditableText(text: string): string {
   return negativeStart >= 0 ? lower.slice(0, negativeStart) : lower;
 }
 
-export function qaScore(prompt: string): number {
+export function qaScore(prompt: string, opts?: { personalMode?: boolean }): number {
   if (!prompt) return 0;
-  
+
   let score = 100;
   const lower = auditableText(prompt);
-  
+
   // Deductions based on regressions
   const claimsRealism = /\b(?:ultra[ -]?real|photoreal|realistic|real world|documentary)\b/u.test(lower);
   if (claimsRealism && (lower.includes('clay') || lower.includes('pixar') || lower.includes('diorama'))) {
     score -= 25;
   }
-  
-  // Specific IP character references — generic style words (anime, sunny) are valid
-  const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna)\b/u.test(lower);
-  if (hasSpecificIP) {
-    score -= 50;
+
+  // Specific IP character references — skipped in personal mode (user owns intent)
+  if (!opts?.personalMode) {
+    const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna)\b/u.test(lower);
+    if (hasSpecificIP) {
+      score -= 50;
+    }
   }
   
   // "cinematic" can be valid when backed by concrete staging; 4K/stunning are empty quality claims.
