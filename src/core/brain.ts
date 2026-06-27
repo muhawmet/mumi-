@@ -409,7 +409,7 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     ctx.directorBrief ? 'Director mandate: ' + T(ctx.directorBrief).replace(/\s+/g, ' ').trim() + '.' : '',
     textPolicyLine(),
     charLock ? ('Character lock:' + charLock + ' Keep exactly as described — observer scale, no invented identity.') : '',
-    'Negative: ' + T(ctx.pathForbidden).replace(/\.\s*$/, '') + '; ' + dna.avoid.replace(/\.\s*$/, '') + '; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.',
+    'Negative: ' + [T(ctx.pathForbidden).replace(/\.\s*$/, ''), dna.avoid.replace(/\.\s*$/, ''), 'empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text'].filter(s => s.trim()).join('; ') + '.',
     ctx.projectKind === 'design' ? 'Final production-ready static design frame.' : 'Clean motion-ready start frame.',
   ].filter(Boolean);
   return '[' + T(sceneId) + '] IMAGE (' + (ctx.projectKind === 'design' ? 'final static design frame' : 'motion start frame') + ')\n' + parts.join(' ');
