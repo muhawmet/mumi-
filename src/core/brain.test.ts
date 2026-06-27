@@ -124,6 +124,35 @@ describe('conceptRanked (semantic brain)', () => {
     const c = conceptRanked('espresso fincana dökülüyor', 'REAL', 'food_macro_real', 'Build-up');
     expect(c[0].subject.toLowerCase()).toMatch(/cup|crema|pour/);
   });
+
+  it('STY register covers 20 common genre topics without generic fallback', () => {
+    const styFixtures = [
+      'Robotlar ve insanlığın son savaşı',
+      'Uzayda kaybolmuş astronot',
+      'Siber dünyada hacker iz sürüyor',
+      'Kabus gibi karanlık bir orman',
+      'Sisli ormanda kaybolmuş çocuk',
+      'Ejderha terbiyecisi fantezi dünyasında',
+      'Antik tapınakta hazine arayan kaşif',
+      'Final maçında son saniyede gol',
+      'Sahneye çıkan genç müzisyen',
+      'Köyde sakin bir yaz günü',
+      'Eski arkadaşların sürpriz buluşması',
+      'Komedik bir plan tam gitmedi',
+      'İki genç arasındaki sessiz aşk',
+      'Kayıp sonrası derin yalnızlık',
+      'Dedektif ipuçlarını birleştiriyor',
+      'Samuray son düelonu bekliyor',
+      'Kıyamet sonrası dünyada hayatta kalmak',
+      'Fırça darbelerinden oluşan savaş sahnesi',
+      'Bilim insanı çığır açan keşfin eşiğinde',
+      'Kahramanın son kez ayağa kalkması',
+    ];
+    for (const source of styFixtures) {
+      const top = conceptRanked(source, 'STY', 'arcane', 'Build-up')[0];
+      expect(top.matched, source).toBe(true);
+    }
+  });
 });
 
 describe('dnaDirectives', () => {

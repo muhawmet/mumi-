@@ -232,7 +232,79 @@ export const STY_BANK: Bank =[
   'the dawn band rises one slow degree, warm value flooding the lowest plane and climbing the silhouette edge, and the frame settles in first light'],
  [/mesaj|final s[oö]z|kapan[iı][sş]|imza|signature/i,
   'the story emblem of this film — an original mark or object earned by the narrative — under a single committed key light',
-  'the key light tightens once onto the emblem, every other plane falling to clean dark value, and the emblem settles as the final word']
+  'the key light tightens once onto the emblem, every other plane falling to clean dark value, and the emblem settles as the final word'],
+ // --- Sci-fi / mecha / space ---
+ [/robot|mecha|uzay|galaksi|siborg|mekanik kalp|yapay zeka|mekanik|biyonik|exo.?suit|cyborg|android/i,
+  'one original mech or bio-mechanical figure at rest in an industrial void, scale gap between its mass and the human pilot established',
+  'the mech completes one weighted mechanical activation — joints locking, power lines brightening in sequence — and settles in commanded posture with the pilot confirmed at the control point'],
+ [/uzay yolculu[gğ]u|galaktik|uzay sava[sş]|yıldız|nebula|evren|orbital|planet|güne[sş] sistemi/i,
+  'one original spacecraft or suited figure at the frontier of an impossible scale — a star field or gas cloud establishing depth behind',
+  'the vessel or figure carries one committed arc into that depth, scale confirmed by one tiny course-correction detail, and the cosmos holds silent and vast on arrival'],
+ [/siber|dijital d[uü]nya|hologram|matrix|sanal gerçek|kod ya[gğ]muru|data|arayüz/i,
+  'one original figure inside a layered digital construct — data planes stacking at depth, the exit point a brighter node in the far field',
+  'one data column collapses into the figure as information, the construct brightening a single plane around them, and the figure holds with new knowledge confirmed in their posture'],
+ // --- Psychological horror / dread ---
+ [/korku|dehşet|kabus|hayalet|canavar|karanlık v[aâ]rl[iı]k|gizem|gerilim|psikolojik/i,
+  'one original figure at the center of a long corridor or open room, a single practical light behind them — what lies ahead deliberately unclear',
+  'the light source behind dims one degree, shadow advancing from the unseen direction a single slow step, and the figure holds without retreat as the dread settles in the space between them'],
+ [/sis|gizli tehdit|paranoya|kaybolma|labirent|terk edilmiş|ıssız bina|unutulmu[sş] yer/i,
+  'a fog-filled or partially revealed environment, one detail sharp against soft white — the figure reduced to silhouette at mid-ground',
+  'the fog drifts one slow rotation around the sharp detail, the figure silhouette holding position, and one sound-implication settles into the silence as the threat becomes spatial'],
+ // --- Fantasy RPG / epic world-building ---
+ [/ejderha|b[uü]y[uü]c[uü]|b[uü]y[uü]|fantezi|krall[iı]k|büyülü|sihir|büyü|elfler|cüceler|mitoloji/i,
+  'one original mage or hero figure at the threshold of a world-scale event — magic geometry radiating outward from the central point as readable shaped light',
+  'the magic geometry completes one expansion arc outward from the cast point, environment reacting with a single material-truth response, and the figure stands in the new world-state'],
+ [/antik tapınak|harabe|hazine|keşif yolculu[gğ]u|macera haritası|gizli kap[iı]|portal/i,
+  'one original explorer figure against an ancient structure at architectural scale, one source of light leaking from the threshold ahead',
+  'the threshold light brightens one degree as the explorer approaches, stone geometry revealing itself in the growing illumination, and the explorer settles at the entry point with the ruin opened before them'],
+ // --- Sports / rhythm / performance ---
+ [/spor|turnuva|final mac[iı]|gol|say[iı]|kupa|şampiyon|müsabaka|skor/i,
+  'one original athlete figure at the peak performance moment — the field or court in depth behind, one critical opponent or goal element in the facing direction',
+  'the athlete completes one peak physical motion that decides the moment, environmental lighting confirming the achievement with a single widening of the key, and the figure holds in the result pose'],
+ [/ritim|m[uü]zik|dans|performans sahne|konser|sahne[ye] [cç][iı]k|enstr[uü]man|melodi|m[uü]zisyen|sanat[cç][iı]|solist|grup|bant|rap|beat/i,
+  'one original performer figure in a committed mid-performance pose, stage light narrowed to the performance space and the instrument or motion as the bright focal mass',
+  'the performance peak arrives in a single sustained motion — the note, the move, the beat landing — stage light confirming the moment with one upward shift, and the figure holds in the held resolution'],
+ // --- Cozy / pastoral / slice of life ---
+ [/k[oö]y|[cç]iftlik|huzur|sakin|sessiz hayat|g[uü]nd[uü]z.*yaşam|kafa dinle|do[gğ]ada|bahçe/i,
+  'one original figure in a small-scale domestic or natural environment, warm afternoon key, every surface suggesting comfort and seasonal rhythm',
+  'one small habitual action completes — a door opened, a crop tended, a tea poured — the warmth of the light settling with the gesture, and the world returns to its patient quiet'],
+ [/arkada[sş] toplulu[gğ]u|birarada|yemek masas[iı]|aile an[iı]|kar[sş][iı]la[sş]ma|veda|bulu[sş]ma/i,
+  'two or more original figures sharing one warm domestic space, practical light motivated from the real room source, faces unposed and present',
+  'one shared moment completes — a gesture passed, a laugh released, a look exchanged — the room light holding all figures equally, and the gathering settles in unhurried warmth'],
+ // --- Comedy / absurd ---
+ [/komedi|e[gğ]lence|gülme|abs[uü]rd|kari[cç]at[uü]r|[sş]aka|mizah|komik sahne|güldürü/i,
+  'one original comic figure caught at the peak of an absurd situation — body language doing the punchline, environment slightly too large or wrong-scale for them',
+  'the punchline beat lands — a single snap of physical consequence — and the figure holds in frozen comic surprise for exactly one beat before the world settles into the new wrong normal'],
+ [/oyun boz|plan i[sş]e yaramad[iı]|gaf|talihsizlik|beklenmedik|sürpriz|ani d[oö]n[uü][sş]/i,
+  'one original figure in the frame at the exact moment the plan goes wrong — one element visibly out of position, the consequence still arriving from the right',
+  'the out-of-position element completes its wrong trajectory in one beat and lands, the figure\'s reaction arriving a half-beat after, and the frame holds on the settled chaos'],
+ // --- Emotional / romantic / drama ---
+ [/aşk|sevgi|romantik|özlem|duygusal yolculuk|anı|mektup|ayr[iı]l[iı]k|hasret|gel.*ayr[iı]l/i,
+  'two original figures in a quiet emotionally charged space — the object or letter or place between them carrying more weight than the people',
+  'the shared object passes once between them or one figure reaches and holds without the other responding, a single warm value confirming the human cost, and the frame settles on the space between'],
+ [/yas|kay[iı]p|üzüntü|gözyaş[iı]|bo[sş]luk|anısına|hüzün|yalnızlık.*derin/i,
+  'one original figure in a space that has been emptied — the absent element implied by the remaining one warm detail they left behind',
+  'the warm remaining detail catches the only live light in the frame, the figure\'s response arriving once as a turn of the head or a lowering, and the grief settles into the held quiet of the space'],
+ // --- Noir / detective / mystery ---
+ [/dedektif|soruşturma|cinayet|su[cç]|sır|gizli|iz s[uü]r|ka[cç][iı][sş]|komplo|hile|çözüm/i,
+  'one original investigator figure at the center of a spread of evidence — rain-light or practical lamp making each clue separately readable',
+  'the investigator\'s hand lifts one clue into the motivated light, the piece fitting a confirmed connection, and the case geography settles one step closer to the answer'],
+ // --- Historical / samurai / martial arts ---
+ [/samuray|[sş][oö]valye|ortaça[gğ]|kılıç ustas[iı]|d[oö]v[uü][sş] sanat[iı]|duel|d[oö]v[uü][sş] alanı|antik sava[sş]/i,
+  'one original warrior figure in a historical setting at the calm before a decisive exchange — the environment honest to its era, light raking the material truth of their gear',
+  'one measured decisive exchange completes — strike, parry, or stance locked — environment answering with a single material consequence, and both figures settle in the held aftermath of the instant'],
+ // --- Post-apocalyptic / survival / dystopia ---
+ [/k[iı]yamet|y[iı]k[iı]nt[iı]|hayatta kalan|distopya|[cç][oö]km[uü][sş] d[uü]nya|virüs|salgın|terk edilmiş [sş]ehir|sava[sş] sonras[iı] d[uü]nya/i,
+  'one original survivor figure in a long-ruined environment, one functional object or living detail confirming that life persists in the wreckage',
+  'the surviving detail catches the only warm light in the cold ruin — a flame, a flower, a working radio — the figure turning toward it, and the frame settles on the fact of persistence'],
+ // --- Ink / brushwork / graphic novel ---
+ [/fırça darbe|m[uü]rekkep|çizgi roman|manga panel|karakalem|eskiz|tuval|hat sanat[iı]/i,
+  'one original figure rendered as a brushstroke decision — negative white space completing the meaning, the most economical mark doing the full weight of the pose',
+  'one final defining brushstroke arrives into the frame and locks — the image complete where before it was open — and the white space settles as intentional silence'],
+ // --- Wonder / discovery / science ---
+ [/ke[sş]if|merak|bilim|deney|bulu[sş]|mucize|hayret|ilk kez g[oö]rme|gizem[iı] [cç][oö]z/i,
+  'one original discoverer figure at the exact moment of first contact with the unknown thing — scale relationship establishing its significance',
+  'the unknown thing reveals itself one degree — one property becoming legible — the figure\'s response arriving as a forward lean or a held breath, and the frame settles on the suspended moment of understanding arriving']
 ];
 
 export const STY_FB: FB ={
@@ -455,7 +527,21 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/even credible light|overcast.*even|natural.*truth.*even|skin truth.*even|credible light/i,'light','overcast diffusion: sky acts as a single enormous source, all shadows directional-soft, no fill fight, colour temperature honest'],
  // Suspense geometry
  [/suspense grammar|information as camera|geometric shadows|ordinary objects charged|controlled reveal/i,'camera','suspense framing: what the camera shows IS the information — hold longer than comfortable, let the ordinary object fill the frame until it becomes threat'],
- [/suspense grammar|geometric shadows|ordinary.*charged.*threat/i,'staging','geometric threat staging: subject and object in precise spatial relationship, shadow geometry reinforces the menace, negative space holds tension']
+ [/suspense grammar|geometric shadows|ordinary.*charged.*threat/i,'staging','geometric threat staging: subject and object in precise spatial relationship, shadow geometry reinforces the menace, negative space holds tension'],
+ // Dream-cut / fractured identity (Satoshi Kon)
+ [/dream.?match|fractured identity|reality.*cut|memory.*edit|identity.*fracture/i,'motion','dream-cut rhythm: cuts arrive before the viewer expects, parallel realities overlap in a single held frame, identity revealed through the edit itself'],
+ [/dream.?match|fractured identity|reality.*cut/i,'staging','fractured space staging: two states of the same environment in one frame, the seam between them is the subject'],
+ // White city / clean graphic city (Mirror's Edge)
+ [/white city|red.*motion|clean.*city|parkour.*geometric|white.*urban|runner.*city/i,'staging','graphic city staging: the running line is the architecture, white negative space confirms freedom, one red accent marks the route'],
+ [/white city|red.*motion|clean.*city/i,'motion','route-line motion: camera follows the body line through the city, one continuous committed trajectory, zero hesitation'],
+ // Simple icon / flat suspicion (Among Us)
+ [/simple icon|flat suspicion|icon shapes|social deduction|crewmate|impostor/i,'staging','flat icon staging: simplified readable shapes in social arrangement, suspicion shown through proximity and negative space, no texture complexity'],
+ // Cozy village / rounded calm (Animal Crossing)
+ [/cozy village|cozy.*pastel|cozy.*pixel|rounded calm|village pastel|seasonal.*warm|cozy.*farm/i,'motion','organic ease: motion breathes in gently and settles with village-calm rhythm, zero mechanical urgency'],
+ [/cozy village|cozy.*pastel|rounded calm/i,'light','warm ambient fill: soft diffused daylight or lantern warmth, no hard shadows, every surface invites touch'],
+ // Fantasy zone palette / readable world (WoW-type)
+ [/fantasy zone|zone palette|readable world|zone.*color|world.*zone|area.*palette/i,'staging','zone-palette staging: each region reads as a distinct color world, readability above realism, depth built from layered saturated zones'],
+ [/fantasy zone|zone palette|readable world/i,'light','zone-signature light: each zone has its own motivating source (sun angle, magical ambience, underground glow), colour is geography']
 ];
 
 export const SUNO_MAP: Record<string, string> ={
