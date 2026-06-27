@@ -45,6 +45,7 @@ const WORLD2FAMILY: Record<string, string> = {
   tourism_destination_real: 'TOURISM', automotive_stage_real: 'AUTO',
   tech_clinical_real: 'TECH', architecture_real: 'ARCH', social_reels_real: 'SOCIAL',
   healthcare_public_real: 'HEALTH',
+  photoreal_location: 'TOURISM',
 };
 export function realFamilyOf(worldId: string): string {
   return WORLD2FAMILY[T(worldId)] || 'PRODUCT';

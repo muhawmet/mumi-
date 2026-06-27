@@ -125,6 +125,25 @@ describe('conceptRanked (semantic brain)', () => {
     expect(c[0].subject.toLowerCase()).toMatch(/cup|crema|pour/);
   });
 
+  it('REAL register broad-topic triggers match without generic fallback', () => {
+    const cases: [string, string, string][] = [
+      ['Kafe kahvesi hazırlanıyor', 'REAL', 'food_macro_real'],
+      ['Müşteri deneyimini paylaşıyor', 'REAL', 'real_human_doc'],
+      ['Şehir merkezinde moda fotoğrafı', 'REAL', 'luxury_editorial'],
+      ['Elektrikli araç yolda test ediliyor', 'REAL', 'automotive_stage_real'],
+      ['Modern daire iç mekanı gösterimi', 'REAL', 'architecture_real'],
+      ['Doğu Anadolu yaylalarında sabah', 'REAL', 'tourism_destination_real'],
+      ['Düğün töreni anıları', 'REAL', 'cinematic_real'],
+      ['Vatandaşlar mahallede buluşuyor', 'REAL', 'documentary_civic'],
+      ['Hastane ekibi çalışıyor', 'REAL', 'healthcare_public_real'],
+      ['Tarih mirası belgesel', 'REAL', 'documentary_civic'],
+    ];
+    for (const [source, register, worldId] of cases) {
+      const top = conceptRanked(source, register as 'REAL', worldId, 'Build-up')[0];
+      expect(top?.matched, `${source} → ${worldId}`).toBe(true);
+    }
+  });
+
   it('STY register covers 20 common genre topics without generic fallback', () => {
     const styFixtures = [
       'Robotlar ve insanlığın son savaşı',
