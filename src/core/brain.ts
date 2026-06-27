@@ -145,7 +145,7 @@ const EDU_SOURCE_BANK: Bank = [
   [/dilek[cç]e|[oö]neri|talep|imza|ba[sş]vuru|sesini duyur/i,
     'one citizen proposal desk with a petition card, stamp press and delivery lane leading toward the public decision board',
     'the petition card receives one clear stamp, moves along the delivery lane, and settles pinned to the public decision board'],
-  [/karar sonuc|karar net|sonu[cç] herkes|ilan|duyuru|herkes g[oö]r|[sş]effaf|a[cç][ıi]k/i,
+  [/karar sonuc|karar net|sonu[cç] herkes|ilan|duyuru|herkes g[oö]r|[sş]effaf|\ba[cç][ıi]k\b/i,
     'one public result board with the decision card, reason strip and neighborhood map shown in the same frame',
     'the reason strip lights once beneath the decision card, the neighborhood map answers with a small route glow, and the board settles transparent'],
   [/kayna[gğ][ıi] kontrol|kaynak kontrol|kaynak g[oö]ster|g[uü]venilir kaynak|trusted source/i,
@@ -231,7 +231,27 @@ function bankRank(bank: Bank, src: string): Bank {
   return scored.map((x) => x.e);
 }
 
-export function conceptRanked(src: string, register: Register, worldId: string, phaseName: string): Concept[] {
+// Derive the REAL concept-bank family from production path first (semantic intent),
+// falling back to world-id mapping (visual style choice). This prevents a world like
+// "cinematic_real" (EVENT) from overriding the concept bank when the path is PRODUCT.
+function realConceptFamily(productionPath: string, worldId: string): string {
+  const p = T(productionPath).toUpperCase();
+  if (/COMMERCIAL|PRODUCT|STUDIO/.test(p)) return 'PRODUCT';
+  if (/FOOD/.test(p)) return 'FOOD';
+  if (/HEALTH|MEDICAL|CARE/.test(p)) return 'HEALTH';
+  if (/FASHION|EDITORIAL/.test(p)) return 'FASHION';
+  if (/TOURISM|DESTINATION|TRAVEL/.test(p)) return 'TOURISM';
+  if (/AUTO|CAR|VEHICLE/.test(p)) return 'AUTO';
+  if (/TECH|DEVICE|DIGITAL/.test(p)) return 'TECH';
+  if (/ARCH|REAL.ESTATE|INTERIOR/.test(p)) return 'ARCH';
+  if (/SOCIAL|REELS/.test(p)) return 'SOCIAL';
+  if (/CIVIC|CITY|URBAN/.test(p)) return 'CIVIC';
+  if (/EVENT|LAUNCH|CEREMONY|CONFERENCE/.test(p)) return 'EVENT';
+  if (/TESTIMONIAL|INTERVIEW/.test(p)) return 'TESTIMONIAL';
+  return realFamilyOf(worldId);
+}
+
+export function conceptRanked(src: string, register: Register, worldId: string, phaseName: string, productionPath = ''): Concept[] {
   const s = T(src), out: Concept[] = [];
   const fn = PHASE2FN[phaseName] || 'Build / Proof';
   if (register === 'EDU') {
@@ -259,7 +279,7 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
     out.push({ subject: fb[0], event: fb[1], matched: false });
     return out;
   }
-  const fam = realFamilyOf(worldId);
+  const fam = realConceptFamily(productionPath, worldId);
   bankRank(REAL_SOURCE_BANKS[fam] || [], s).forEach((e) => out.push({ subject: e[1], event: e[2], matched: true }));
   bankRank(REAL_BANKS[fam] || [], s).forEach((e) => out.push({ subject: e[1], event: e[2], matched: true }));
   const fbR = REAL_FB[fam] || REAL_FB.PRODUCT;
@@ -273,8 +293,8 @@ export function conceptRanked(src: string, register: Register, worldId: string, 
 // breaking the long-run monotony that makes one template carry dozens of scenes.
 // With `allPrevious` omitted the behaviour is identical to the neighbour-only dedup.
 const CONCEPT_REPEAT_CAP = 3;
-export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0, allPrevious?: Concept[]): Concept {
-  const ranked = conceptRanked(src, register, worldId, phaseName);
+export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0, allPrevious?: Concept[], productionPath = ''): Concept {
+  const ranked = conceptRanked(src, register, worldId, phaseName, productionPath);
   if (!ranked.length) return { subject: '', event: '', matched: false };
   const start = Math.max(0, variant) % ranked.length;
   const subjectUses = (subject: string) =>

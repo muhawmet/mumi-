@@ -8,7 +8,7 @@ export const EDU_BANK: Bank =[
  [/fotosentez|klorofil|yaprak|bitki b[uü]y|\bk[oö]k|\btohum|photosynth/i,
   'one oversized translucent leaf model with a visible inner channel',
   'the leaf draws in one water drop and one beam of light, a single bright food drop forms inside the channel and settles glowing at the stem'],
- [/su d[oö]ng|buharla[sş]|\bbuhar\b|ya[gğ]mur|bulut|yo[gğ]u[sş]|damla|nehirle|denize d[oö]n|evapor/i,'WATER_STAGE',''],
+ [/su d[oö]ng|buharla[sş]|\bbuhar\b|ya[gğ]mur|bulut|yo[gğ]u[sş]|damla|nehirle|denize d[oö]n|evapor|[iı]s[iı]t|y[uü]ksel|g[uü]ne[sş].*su|su.*[iı]s[iı]|molek[uü]l.*su|su.*molek[uü]l/i,'WATER_STAGE',''],
  [/kuvvet|s[uü]rt[uü]nme|yer[cç]ekimi|m[iı]knat[iı]s|itme|[cç]ekme|enerji d[oö]n[uü]/i,
   'one demo rig with a slider block and a visible force arrow rail',
   'the block slides once along the rail exactly as far as the force arrow shows, leaving a faint friction mark, and both settle aligned'],

@@ -873,7 +873,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
     // Semantic concept from the scene's exact source beat — this is the brain.
     const beatText = arch.source.exactText;
     const conceptVariant = sourceParsed.status !== 'SOURCE_BOUND' && sourceParsed.beats.length === 1 ? i - 1 : 0;
-    const rankedConcept = primeConcept(beatText, register, world.id, pacing.phaseName, prev, conceptVariant, emittedConcepts);
+    const rankedConcept = primeConcept(beatText, register, world.id, pacing.phaseName, prev, conceptVariant, emittedConcepts, path);
     const concept = rankedConcept.matched ? rankedConcept : architectureFallbackConcept(arch, pacing.phaseName, register);
     const prevId = i > 1 ? i - 1 : undefined;
     const camera = primeCamera(i, beatText, i - 1, register, prev?.src, prevId);

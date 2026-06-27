@@ -144,6 +144,30 @@ describe('conceptRanked (semantic brain)', () => {
     }
   });
 
+  // --- regression guards for concept-bank bug fixes ---
+
+  it('EDU: evaporation beat (güneş+yüksel) triggers water-cycle concept, not generic fallback', () => {
+    const c = conceptRanked('Güneş denizi ısıtır, su molekülleri yükselir', 'EDU', 'spiderverse', 'Build-up');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).toMatch(/sea|evapor|vapour|water bead/i);
+  });
+
+  it('EDU: "damlacıkları" must NOT false-match civic açık regex → cloud beat gets condensation concept', () => {
+    const c = conceptRanked('Bulutlar oluşur, soğuyan su damlacıkları birleşir', 'EDU', 'spiderverse', 'Build-up');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).not.toMatch(/public result board|decision card|neighborhood map/i);
+    expect(`${top.subject} ${top.event}`).toMatch(/vapour|cloud|cool|sky/i);
+  });
+
+  it('REAL: productionPath COMMERCIAL_PRODUCT overrides cinematic_real→EVENT world mapping', () => {
+    const c = conceptRanked('Ürün masanın üzerinde tek başına, saf ve güçlü', 'REAL', 'cinematic_real', 'Build-up', 'COMMERCIAL_PRODUCT');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).toMatch(/hero product|negative space|product alone/i);
+  });
+
   it('STY register covers 20 common genre topics without generic fallback', () => {
     const styFixtures = [
       'Robotlar ve insanlığın son savaşı',
