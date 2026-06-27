@@ -43,6 +43,7 @@ type CommandState = Pick<
   | 'agentBrief'
   | 'agentPackets'
 >;
+type CommandStateWithPersonal = CommandState & { personalMode?: boolean };
 
 function compactText(value: string | undefined): string | null {
   const text = (value || '').trim();
@@ -72,7 +73,7 @@ function activeRoles(kind: StudioState['projectKind']): CommandRole[] {
   return kind === 'design' ? ['idea', 'image', 'proof'] : ['idea', 'image', 'motion', 'suno', 'proof'];
 }
 
-function agentPackets(state: CommandState): Partial<Record<CommandRole, string>> {
+function agentPackets(state: CommandStateWithPersonal): Partial<Record<CommandRole, string>> {
   const roles = activeRoles(state.projectKind);
   const packets: Partial<Record<CommandRole, string>> = {};
   for (const role of roles) {
@@ -82,7 +83,7 @@ function agentPackets(state: CommandState): Partial<Record<CommandRole, string>>
   return packets;
 }
 
-function commandRoles(state: CommandState) {
+function commandRoles(state: CommandStateWithPersonal) {
   return activeRoles(state.projectKind).map((role) => ({
     role,
     inputKey: role === 'idea' ? 'agentBrief' : `agentPackets.${role}`,
@@ -91,7 +92,7 @@ function commandRoles(state: CommandState) {
   }));
 }
 
-export function buildCommandJSON(state: CommandState) {
+export function buildCommandJSON(state: CommandStateWithPersonal) {
   const world = DATA.worlds.find((item) => item.id === state.selectedWorldId) ?? null;
   const palette = DATA.palettes.find((item) => item.id === state.selectedPaletteId) ?? null;
   const path = DATA.paths.find((item) => item.id === state.projectClass) ?? null;
@@ -180,7 +181,7 @@ export function buildCommandJSON(state: CommandState) {
         ? { IMAGE: scene.handoff.IMAGE }
         : scene.handoff,
       qa: {
-        imageScore: qaScore(scenePrompt(scene)),
+        imageScore: qaScore(scenePrompt(scene), { personalMode: state.personalMode }),
         proof: proofDoctor({
           type: 'scene',
           text: scenePrompt(scene),
