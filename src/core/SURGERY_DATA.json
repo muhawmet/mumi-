@@ -688,7 +688,12 @@
       "motion": "weighted squash-and-stretch ease, one expressive anticipation, settle into a confident hold",
       "best": "warm emotional explainers, character-led lessons, broad family appeal",
       "avoid": "uncanny photorealism, flat cel, stiff game-engine CGI",
-      "colors": ["#ffce6b", "#5fa8ff", "#ff8fa3", "#fff4d6"]
+      "colors": [
+        "#ffce6b",
+        "#5fa8ff",
+        "#ff8fa3",
+        "#fff4d6"
+      ]
     },
     {
       "id": "anime_cel",
@@ -699,7 +704,12 @@
       "motion": "smear-frame impact then ease, effects-animation flourish, held dramatic beat",
       "best": "shonen energy, emotional action explainers, dramatic reveals",
       "avoid": "western cartoon proportions, photoreal, muddy shading",
-      "colors": ["#ff7a45", "#7b5cff", "#2f6bff", "#ffe9c7"]
+      "colors": [
+        "#ff7a45",
+        "#7b5cff",
+        "#2f6bff",
+        "#ffe9c7"
+      ]
     },
     {
       "id": "arcane",
@@ -710,7 +720,12 @@
       "motion": "deliberate weighted move, painterly FX flourish, brooding final hold",
       "best": "gritty emotional drama, mature stylised storytelling, hero moments",
       "avoid": "clean photoreal CGI, flat cartoon, glossy plastic",
-      "colors": ["#0f7d8c", "#ff6a3d", "#1a1030", "#e8d6a8"]
+      "colors": [
+        "#0f7d8c",
+        "#ff6a3d",
+        "#1a1030",
+        "#e8d6a8"
+      ]
     },
     {
       "id": "spiderverse",
@@ -721,7 +736,12 @@
       "motion": "stepped 2s-on-3s snap, graphic motion-shape trails, crisp pose-to-pose hold",
       "best": "kinetic pop energy, bold youth content, high-impact reveals",
       "avoid": "smooth photoreal interpolation, muted realism, plain flat color",
-      "colors": ["#ff2d75", "#2de2e6", "#ffd400", "#16002e"]
+      "colors": [
+        "#ff2d75",
+        "#2de2e6",
+        "#ffd400",
+        "#16002e"
+      ]
     },
     {
       "id": "ghibli",
@@ -732,7 +752,12 @@
       "motion": "gentle natural drift, wind and breath, calm settle",
       "best": "calm nature/feeling-led lessons, wonder, slow emotional beats",
       "avoid": "3D CGI, hard cel, neon digital color",
-      "colors": ["#8fc7e8", "#a8d08d", "#f4d58d", "#fbeede"]
+      "colors": [
+        "#8fc7e8",
+        "#a8d08d",
+        "#f4d58d",
+        "#fbeede"
+      ]
     },
     {
       "id": "stopmotion",
@@ -743,7 +768,12 @@
       "motion": "12fps handmade stutter, weighted puppet move, tactile settle",
       "best": "crafty tactile explainers, cozy handmade charm, wonder",
       "avoid": "smooth CGI interpolation, flat vector, photoreal live action",
-      "colors": ["#caa472", "#6d8f7a", "#b5523f", "#efe2c8"]
+      "colors": [
+        "#caa472",
+        "#6d8f7a",
+        "#b5523f",
+        "#efe2c8"
+      ]
     },
     {
       "id": "mappa_cinematic",
@@ -754,7 +784,12 @@
       "motion": "fluid complex motion arc with held smear frame at peak, atmospheric FX confirm the beat, brooding weight in the settle",
       "best": "dark action series energy, intense emotional confrontation, gritty drama, mature narrative",
       "avoid": "flat cheerful cel, clean Pixar warmth, pastel softness, western cartoon proportions",
-      "colors": ["#1a1a2e", "#e63946", "#457b9d", "#f1c40f"]
+      "colors": [
+        "#1a1a2e",
+        "#e63946",
+        "#457b9d",
+        "#f1c40f"
+      ]
     },
     {
       "id": "bones_action",
@@ -765,7 +800,12 @@
       "motion": "smooth choreographed action flow with clear anticipation, weight-driven follow-through, clean impact frame and settle",
       "best": "action-driven character moments, elemental/power FX reveals, dramatic emotional peaks with kinetic energy",
       "avoid": "muddy overlapping linework, photoreal, dark desaturated MAPPA palette, flat vector",
-      "colors": ["#e8a020", "#2255cc", "#cc3322", "#f5e8d0"]
+      "colors": [
+        "#e8a020",
+        "#2255cc",
+        "#cc3322",
+        "#f5e8d0"
+      ]
     },
     {
       "id": "toei_adventure",
@@ -776,7 +816,12 @@
       "motion": "bold exaggerated anticipation into a snappy action beat, elastic energy release, triumphant hold with environmental confirmation",
       "best": "grand adventure reveals, friendship/resolve moments, vast-scale world establishing, triumphant emotional peaks",
       "avoid": "dark desaturated realism, detailed photoreal backgrounds, subtle restrained motion, muted palette",
-      "colors": ["#ff6b00", "#0099dd", "#ffe033", "#00cc55"]
+      "colors": [
+        "#ff6b00",
+        "#0099dd",
+        "#ffe033",
+        "#00cc55"
+      ]
     },
     {
       "id": "cinematic_real",
@@ -787,7 +832,12 @@
       "motion": "real-camera move with parallax, natural settle, no morph",
       "best": "premium brand films, cinematic real stories, emotive live action",
       "avoid": "animation styling, plastic CGI, over-graded look",
-      "colors": ["#1f2d3d", "#c98a4b", "#7a8a99", "#f0e6d2"]
+      "colors": [
+        "#1f2d3d",
+        "#c98a4b",
+        "#7a8a99",
+        "#f0e6d2"
+      ]
     },
     {
       "id": "real_human_doc",
@@ -798,7 +848,12 @@
       "motion": "observational handheld, real human gesture, unstaged settle",
       "best": "testimonials, real-life scenarios, public-service, human stories",
       "avoid": "staged perfection, animation, glossy commercial sheen",
-      "colors": ["#3a3a3a", "#b98c5a", "#8a9ba8", "#efe9e0"]
+      "colors": [
+        "#3a3a3a",
+        "#b98c5a",
+        "#8a9ba8",
+        "#efe9e0"
+      ]
     },
     {
       "id": "clay",
@@ -1186,14 +1241,54 @@
     }
   ],
   "materials": [
-    { "id": "none", "name": "Saf Stil (malzeme yok)", "clause": "", "motion": "" },
-    { "id": "clay", "name": "Clay / Hamur", "clause": "the whole scene is built from handcrafted soft clay — rounded tactile forms, visible thumbprint texture, matte plasticine surface.", "motion": "clay surfaces wobble once and settle" },
-    { "id": "paper", "name": "Kâğıt / Origami", "clause": "the whole scene is layered cut-paper and origami craft — visible paper grain, crisp folds, soft fold-shadows, papercraft diorama depth.", "motion": "paper layers shift like a pop-up book" },
-    { "id": "felt", "name": "Keçe / Kumaş", "clause": "the whole scene is needle-felted wool and stitched fabric — fuzzy fibre texture, visible stitches, soft handmade plushness.", "motion": "soft fabric sway, gentle settle" },
-    { "id": "wood", "name": "Ahşap", "clause": "the whole scene is carved and turned wood — visible grain, matte varnish, jointed wooden mechanisms.", "motion": "wooden parts pivot on visible joints" },
-    { "id": "chalk", "name": "Tebeşir / Karatahta", "clause": "the whole scene is chalk drawing on a dark board — powdery chalk strokes, smudge highlights, hand-lettered labels.", "motion": "chalk lines draw on then hold" },
-    { "id": "sand", "name": "Kum", "clause": "the whole scene is sand-art on a lightbox — flowing grains, soft silhouette edges, backlit warm glow.", "motion": "grains flow and resettle into shape" },
-    { "id": "glass", "name": "Vitray / Cam", "clause": "the whole scene is stained-glass and blown glass — leaded colour panels, light refracting through translucent material, jewel tones.", "motion": "light passes through glass, colour shifts" }
+    {
+      "id": "none",
+      "name": "Saf Stil (malzeme yok)",
+      "clause": "",
+      "motion": ""
+    },
+    {
+      "id": "clay",
+      "name": "Clay / Hamur",
+      "clause": "the whole scene is built from handcrafted soft clay — rounded tactile forms, visible thumbprint texture, matte plasticine surface.",
+      "motion": "clay surfaces wobble once and settle"
+    },
+    {
+      "id": "paper",
+      "name": "Kâğıt / Origami",
+      "clause": "the whole scene is layered cut-paper and origami craft — visible paper grain, crisp folds, soft fold-shadows, papercraft diorama depth.",
+      "motion": "paper layers shift like a pop-up book"
+    },
+    {
+      "id": "felt",
+      "name": "Keçe / Kumaş",
+      "clause": "the whole scene is needle-felted wool and stitched fabric — fuzzy fibre texture, visible stitches, soft handmade plushness.",
+      "motion": "soft fabric sway, gentle settle"
+    },
+    {
+      "id": "wood",
+      "name": "Ahşap",
+      "clause": "the whole scene is carved and turned wood — visible grain, matte varnish, jointed wooden mechanisms.",
+      "motion": "wooden parts pivot on visible joints"
+    },
+    {
+      "id": "chalk",
+      "name": "Tebeşir / Karatahta",
+      "clause": "the whole scene is chalk drawing on a dark board — powdery chalk strokes, smudge highlights, hand-lettered labels.",
+      "motion": "chalk lines draw on then hold"
+    },
+    {
+      "id": "sand",
+      "name": "Kum",
+      "clause": "the whole scene is sand-art on a lightbox — flowing grains, soft silhouette edges, backlit warm glow.",
+      "motion": "grains flow and resettle into shape"
+    },
+    {
+      "id": "glass",
+      "name": "Vitray / Cam",
+      "clause": "the whole scene is stained-glass and blown glass — leaded colour panels, light refracting through translucent material, jewel tones.",
+      "motion": "light passes through glass, colour shifts"
+    }
   ],
   "refs": [
     {
@@ -1203,7 +1298,7 @@
       "use": "dimensional staging, appealing forms, tactile material, production-clean light",
       "avoid": "copying characters or exact film grammar",
       "dna": "soft rounded forms, readable silhouette, emotional appeal, material bounce",
-      "preview": "default",
+      "preview": "orb",
       "anchor": ""
     },
     {
@@ -1213,7 +1308,7 @@
       "use": "soft classroom warmth, emotional clarity, clean dimensional faces",
       "avoid": "copying characters",
       "dna": "warm fills, gentle faces, human clarity",
-      "preview": "default",
+      "preview": "orb",
       "anchor": ""
     },
     {
@@ -1223,7 +1318,7 @@
       "use": "clear system thinking, geometric hierarchy, explanatory simplicity",
       "avoid": "flat infographic",
       "dna": "simple systems, readable hierarchy, cause-effect",
-      "preview": "default",
+      "preview": "circle",
       "anchor": ""
     },
     {
@@ -1233,7 +1328,7 @@
       "use": "respectful national prestige, warm practical light, early republic dignity",
       "avoid": "caricature, propaganda poster",
       "dna": "dignity, archive warmth, restrained symbolism",
-      "preview": "default",
+      "preview": "arch",
       "anchor": ""
     },
     {
@@ -1243,7 +1338,7 @@
       "use": "diffused painterly light, lived-in organic detail, quiet wonder",
       "avoid": "creature/design copy",
       "dna": "organic light, nature texture, child-height wonder",
-      "preview": "default",
+      "preview": "cozy",
       "anchor": ""
     },
     {
@@ -1253,7 +1348,7 @@
       "use": "painterly cinematic texture, angular silhouettes, chiaroscuro, mature color contrast",
       "avoid": "franchise characters/city/costumes",
       "dna": "painted volume, hard shadow mass, warm/cold value war",
-      "preview": "default",
+      "preview": "deco",
       "anchor": ""
     },
     {
@@ -1263,7 +1358,7 @@
       "use": "graphic halftone texture, bold value separation, kinetic layered 2D/3D staging",
       "avoid": "Spider-Man, webs, logos",
       "dna": "halftone texture, kinetic panels, rhythmic cuts",
-      "preview": "default",
+      "preview": "graphic",
       "anchor": "Miles / graffiti motion"
     },
     {
@@ -1273,7 +1368,7 @@
       "use": "sharp silhouette, rim contrast, compressed action tension",
       "avoid": "named powers/uniforms",
       "dna": "dramatic shadow, rim edge, focused tension",
-      "preview": "default",
+      "preview": "silhouette",
       "anchor": ""
     },
     {
@@ -1283,7 +1378,7 @@
       "use": "clean negative space, hero subject, controlled studio key, precise material reflection",
       "avoid": "Apple logos/layout copy",
       "dna": "object worship, restraint, reflection choreography",
-      "preview": "default",
+      "preview": "apple",
       "anchor": ""
     },
     {
@@ -1293,7 +1388,7 @@
       "use": "macro texture, slow satisfaction, tactile surface detail, reflection control",
       "avoid": "copied labels",
       "dna": "surface proof, shallow DOF, premium edge highlights",
-      "preview": "default",
+      "preview": "tabletop",
       "anchor": ""
     },
     {
@@ -1303,7 +1398,7 @@
       "use": "dramatic backlight, kinetic hero silhouette, physical effort",
       "avoid": "logo/slogan/athlete likeness",
       "dna": "kinetic silhouettes, sweat, physical motivation",
-      "preview": "default",
+      "preview": "nike",
       "anchor": ""
     },
     {
@@ -1313,7 +1408,7 @@
       "use": "luxury pose, sculpted light, textile detail, elegant negative space",
       "avoid": "cover/celebrity copy",
       "dna": "editorial posture, negative space, textile authority",
-      "preview": "default",
+      "preview": "shadow",
       "anchor": ""
     },
     {
@@ -1323,7 +1418,7 @@
       "use": "steam, condensation, viscosity, macro appetite light",
       "avoid": "plastic food",
       "dna": "sensory macro, appetite texture, viscosity",
-      "preview": "default",
+      "preview": "food",
       "anchor": ""
     },
     {
@@ -1333,7 +1428,7 @@
       "use": "real public space, human scale, observational civic warmth, restrained grade",
       "avoid": "stock corporate montage",
       "dna": "citizen scale, public texture, real light",
-      "preview": "default",
+      "preview": "verite",
       "anchor": ""
     },
     {
@@ -1343,7 +1438,7 @@
       "use": "authentic street handheld, modern social framing, real subject behavior",
       "avoid": "amateur shaky mess",
       "dna": "handheld truth, street texture, vertical immediacy",
-      "preview": "default",
+      "preview": "verite",
       "anchor": ""
     },
     {
@@ -1353,7 +1448,7 @@
       "use": "directional key light, deep shadow shaping, dignified face emphasis",
       "avoid": "painting copy",
       "dna": "warm key, deep shadow, human dignity",
-      "preview": "default",
+      "preview": "lowkey",
       "anchor": ""
     },
     {
@@ -1363,7 +1458,7 @@
       "use": "clean spatial depth, elegant real materials, window light, calm camera",
       "avoid": "magazine logo/copy",
       "dna": "window light, space depth, material calm",
-      "preview": "default",
+      "preview": "arch",
       "anchor": ""
     },
     {
@@ -1373,7 +1468,7 @@
       "use": "glass edge light, premium device surface, clean studio precision",
       "avoid": "exact device clone",
       "dna": "edge light, device surface, precise geometry",
-      "preview": "default",
+      "preview": "tech",
       "anchor": ""
     },
     {
@@ -1383,7 +1478,7 @@
       "use": "low tracking, controlled reflections, lens-compressed road/studio hero framing",
       "avoid": "toy-car/CGI game",
       "dna": "metal reflections, low camera, speed grammar",
-      "preview": "default",
+      "preview": "auto",
       "anchor": ""
     },
     {
@@ -1393,7 +1488,7 @@
       "use": "place texture, human scale, golden hour documentary desire",
       "avoid": "postcard stock",
       "dna": "authentic place, travel desire, natural light",
-      "preview": "default",
+      "preview": "openair",
       "anchor": ""
     },
     {
@@ -3770,10 +3865,10 @@
       "score": "10/10 target",
       "bad": "The camera slowly pushes in and the objects glow.",
       "why_bad": "Generic AI-video. No material/world physics, no educational reveal, no environment reaction, no final frame logic.",
-      "gold": "Child-eye push toward the clay lesson table; the liquid surface rises in ONE clean physical move and stops exactly at the engraved mark, a single warm highlight settling on the glass. Beaker geometry, table, engraved text and the characters stay fixed; one clay droplet wobbles once from the motion. Main event done by ~5s, then a stable three-quarter final hold with the level locked at the mark. Negative field: morphing, warping engraved text, changing faces, opening mouths, extra liquid, flicker. One short 5-6s Kling-safe beat — cover more VO with another beat, never by stretching this one.",
+      "gold": "Child-eye push toward the clay lesson table; the liquid surface rises in ONE clean physical move and stops exactly at the engraved mark, a single warm highlight settling on the glass. Beaker geometry, table, engraved text and the characters stay fixed; one clay droplet wobbles once from the motion. Main event done by ~5s, then a stable three-quarter final hold with the level locked at the mark. Negative field: morphing, warping engraved text, changing faces, opening mouths, extra liquid, flicker. This beat completes well within Kling 3.0's 10s window — for more VO coverage, chain a second approved beat rather than stretching this one.",
       "qa": [
         "one physical event",
-        "5-6s single beat",
+        "single beat within 10s window",
         "character/lip safety",
         "anti-morph negatives",
         "stable final"
