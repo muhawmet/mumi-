@@ -458,7 +458,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     `Cast: ${T(ctx.cast)}`,
     ctx.projectKind === 'design'
       ? 'Deliverable: STATIC DESIGN. Produce image/design directions only; no motion, music or VO deliverables.'
-      : `Pipeline (2026 frontier): image → ${T(ctx.imageModel) || 'current SOTA image model'} · motion → ${T(ctx.videoModel) || 'current SOTA i2v'} · music → Suno · VO → ElevenLabs`,
+      : `Pipeline (2026 frontier): image → ${T(ctx.imageModel) || 'flux_1_1_pro'} · motion → ${T(ctx.videoModel) || 'kling_3'} (${engineUsableSec(T(ctx.videoModel) || 'kling_3')}s clean window) · music → Suno · VO → ElevenLabs`,
     '',
     '== MODEL ERA — write for 2026 frontier generators ==',
     'Image: FLUX.1.1 Pro / FLUX.2 Pro class, Midjourney v7, GPT Image 2, Imagen 4 — all understand single-sentence lighting, complex material descriptions, precise compositional geometry in natural language. Motion: Kling 3.0 / Kling O3 class — native 4K, 10-15s coherent window, multimodal (video+audio unified), excellent start-frame fidelity, accurate camera grammar interpretation. Reserve negatives for genuine failure modes (morph, drift, invented objects) only. Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',

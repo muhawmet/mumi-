@@ -728,7 +728,7 @@ function buildHandoffPackets(args: {
     lighting: world.lighting,
     camera: scene.architecture.imageVantage,
     composition: world.compositionConstraint || null,
-    motionGrammar: world.motionNotes,
+    motionGrammar: world.motion,
   };
   const locks = { character: cast, product: null, visibleText: 'NO_UNSOURCED_VISIBLE_TEXT' };
 
@@ -860,7 +860,7 @@ export function generateBatch(input: BriefInput): GenerationResult {
   const materialClause = register === 'REAL' ? '' : materialClauseOf(input.selectedPropId);
   const sunoBrief = projectKind === 'design'
     ? 'NOT_APPLICABLE: static design deliverable; no music brief.'
-    : primeSuno(path);
+    : primeSuno(path, world.id);
   let prev: { src: string; concept: Concept } | undefined;
   const emittedConcepts: Concept[] = [];
   const briefScenes: AgentBriefScene[] = [];

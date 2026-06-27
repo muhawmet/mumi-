@@ -170,6 +170,30 @@ describe('primeSuno', () => {
     expect(s).toMatch(/BPM/);
     expect(s).toMatch(/no vocals unless requested/);
   });
+
+  it('world-specific overrides: mappa_cinematic gets dark cinematic score, not path fallback', () => {
+    const s = primeSuno('STYLIZED_PREMIUM', 'mappa_cinematic');
+    expect(s).toMatch(/dark cinematic/i);
+    expect(s).toMatch(/cello|taiko/i);
+    expect(s).not.toMatch(/Cinematic stylized bed/);
+  });
+
+  it('world-specific overrides: bones_action gets precision action score', () => {
+    const s = primeSuno('STYLIZED_PREMIUM', 'bones_action');
+    expect(s).toMatch(/precision action/i);
+    expect(s).toMatch(/orchestral/i);
+  });
+
+  it('world-specific overrides: toei_adventure gets grand adventure score', () => {
+    const s = primeSuno('STYLIZED_PREMIUM', 'toei_adventure');
+    expect(s).toMatch(/grand adventure/i);
+    expect(s).toMatch(/brass/i);
+  });
+
+  it('falls back to path SUNO when worldId has no specific entry', () => {
+    const s = primeSuno('ANIMATION_EDU', 'ghibli');
+    expect(s).toMatch(/BPM/);
+  });
 });
 
 describe('renderLock + primeCamera', () => {
