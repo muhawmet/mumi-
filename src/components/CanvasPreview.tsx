@@ -1152,11 +1152,60 @@ function renderMotif(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
 
 // ── Main Component ──────────────────────────────────────────
 
+// ── Pixel-art render pipeline ──────────────────────────────
+// 1. Render scene into a tiny 64×40 offscreen canvas.
+// 2. Quantize every pixel to the 6-color palette (4 palette + black + white).
+// 3. Upscale with imageSmoothingEnabled=false → crispy NES-style pixels.
+// 4. Draw a subtle pixel-grid overlay for extra crunch.
+const PX_W = 64;
+const PX_H = 40;
+
+function makeOffscreen(): OffscreenCanvas | HTMLCanvasElement {
+  if (typeof OffscreenCanvas !== 'undefined') return new OffscreenCanvas(PX_W, PX_H);
+  const c = document.createElement('canvas'); c.width = PX_W; c.height = PX_H; return c;
+}
+
+function hexToRgbTuple(hex: string): [number, number, number] {
+  const h = (hex || '#000').replace('#', '').padEnd(6, '0');
+  return [parseInt(h.slice(0,2),16)||0, parseInt(h.slice(2,4),16)||0, parseInt(h.slice(4,6),16)||0];
+}
+
+// Palette quantization: snap every pixel to the nearest of 6 colors
+function quantizeToPalette(
+  imageData: ImageData,
+  palette: [number,number,number][]
+): void {
+  const d = imageData.data;
+  for (let i = 0; i < d.length; i += 4) {
+    if (d[i+3] < 12) continue; // transparent
+    let best = 0, bestDist = Infinity;
+    for (let p = 0; p < palette.length; p++) {
+      const [pr, pg, pb] = palette[p];
+      const dr = d[i]-pr, dg = d[i+1]-pg, db = d[i+2]-pb;
+      // perceptual weighting (luma)
+      const dist = dr*dr*0.299 + dg*dg*0.587 + db*db*0.114;
+      if (dist < bestDist) { bestDist = dist; best = p; }
+    }
+    d[i] = palette[best][0]; d[i+1] = palette[best][1]; d[i+2] = palette[best][2];
+  }
+}
+
+// Pixel-grid overlay
+function drawPixelGrid(ctx: CanvasRenderingContext2D, w: number, h: number) {
+  const pxW = w / PX_W;
+  const pxH = h / PX_H;
+  ctx.strokeStyle = 'rgba(0,0,0,0.22)';
+  ctx.lineWidth = 0.4;
+  for (let x = 0; x <= w; x += pxW) { ctx.beginPath(); ctx.moveTo(Math.round(x)+0.5, 0); ctx.lineTo(Math.round(x)+0.5, h); ctx.stroke(); }
+  for (let y = 0; y <= h; y += pxH) { ctx.beginPath(); ctx.moveTo(0, Math.round(y)+0.5); ctx.lineTo(w, Math.round(y)+0.5); ctx.stroke(); }
+}
+
 export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, previewType, worldId, refId }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef(0);
   const particlesRef = useRef<Particle[]>([]);
   const reducedMotionRef = useRef(false);
+  const offscreenRef = useRef<OffscreenCanvas | HTMLCanvasElement | null>(null);
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -1175,49 +1224,66 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
       ctx.scale(dpr, dpr);
     }
 
+    // Create offscreen canvas once
+    if (!offscreenRef.current) offscreenRef.current = makeOffscreen();
+    const off = offscreenRef.current;
+    const pctx = (off as HTMLCanvasElement).getContext('2d') as CanvasRenderingContext2D;
+    if (!pctx) return;
+
     const t = performance.now();
 
-    // Clear with dark base
+    // ── Render scene into the tiny pixel canvas ──────────────
+    pctx.clearRect(0, 0, PX_W, PX_H);
     const isDark = luminance(colors[2]) < 0.3;
-    ctx.fillStyle = isDark ? colors[2] : '#0a0c14';
-    ctx.fillRect(0, 0, w, h);
+    pctx.fillStyle = isDark ? colors[2] : '#0a0c14';
+    pctx.fillRect(0, 0, PX_W, PX_H);
 
-    // Dedicated reference wins; otherwise the selected render world supplies
-    // the composition before the broad category fallback is considered.
     const refScene = refId ? REF_SCENES[refId] : undefined;
     const worldScene = WORLD_SCENES[worldId];
     const dedicatedScene = refScene ?? worldScene;
     if (dedicatedScene) {
-      dedicatedScene(ctx, w, h, t, colors);
-      // subtle scanline polish on top
-      ctx.fillStyle = 'rgba(255,255,255,0.01)';
-      for (let y = 0; y < h; y += 3) ctx.fillRect(0, y, w, 1);
-      if (!reducedMotionRef.current) frameRef.current = requestAnimationFrame(draw);
-      return;
+      dedicatedScene(pctx, PX_W, PX_H, t, colors);
+    } else {
+      switch (category) {
+        case 'edu':    renderEdu(pctx, PX_W, PX_H, t, colors); break;
+        case 'arcane': renderArcane(pctx, PX_W, PX_H, t, colors, particlesRef.current); break;
+        case 'anime':  renderAnime(pctx, PX_W, PX_H, t, colors); break;
+        case 'verse':  renderVerse(pctx, PX_W, PX_H, t, colors); break;
+        case 'real':   renderReal(pctx, PX_W, PX_H, t, colors); break;
+      }
+      renderMotif(pctx, PX_W, PX_H, t, colors, previewType);
     }
 
-    // Category-specific base layer
-    switch (category) {
-      case 'edu':   renderEdu(ctx, w, h, t, colors); break;
-      case 'arcane': renderArcane(ctx, w, h, t, colors, particlesRef.current); break;
-      case 'anime': renderAnime(ctx, w, h, t, colors); break;
-      case 'verse': renderVerse(ctx, w, h, t, colors); break;
-      case 'real':  renderReal(ctx, w, h, t, colors); break;
+    // ── Palette quantization — snap every pixel to 6-color palette ──
+    try {
+      const imgData = pctx.getImageData(0, 0, PX_W, PX_H);
+      const pal: [number,number,number][] = [
+        hexToRgbTuple(colors[0]),
+        hexToRgbTuple(colors[1]),
+        hexToRgbTuple(colors[2]),
+        hexToRgbTuple(colors[3]),
+        [8, 8, 12],          // near-black
+        [240, 238, 232],     // near-white
+      ];
+      quantizeToPalette(imgData, pal);
+      pctx.putImageData(imgData, 0, 0);
+    } catch {
+      // SecurityError on cross-origin canvas — skip quantization
     }
 
-    // Motif overlay from reference preview type
-    renderMotif(ctx, w, h, t, colors, previewType);
+    // ── Upscale pixel canvas → main canvas (no smoothing = crispy) ──
+    ctx.clearRect(0, 0, w, h);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(off as CanvasImageSource, 0, 0, w, h);
 
-    // Subtle scanline overlay for cinematic polish
-    ctx.fillStyle = 'rgba(255,255,255,0.01)';
-    for (let y = 0; y < h; y += 3) {
-      ctx.fillRect(0, y, w, 1);
-    }
+    // Subtle pixel-grid overlay for extra crunch
+    drawPixelGrid(ctx, w, h);
 
     if (!reducedMotionRef.current) frameRef.current = requestAnimationFrame(draw);
   }, [colors, category, previewType, worldId, refId]);
 
   useEffect(() => {
+    offscreenRef.current = null; // reset offscreen on prop change
     const media = window.matchMedia?.('(prefers-reduced-motion: reduce)');
     const syncMotionPreference = () => {
       reducedMotionRef.current = media?.matches ?? false;
@@ -1242,6 +1308,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
         height: '100%',
         display: 'block',
         borderRadius: 'inherit',
+        imageRendering: 'pixelated',
       }}
     />
   );
