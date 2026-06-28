@@ -146,6 +146,41 @@ describe('conceptRanked (semantic brain)', () => {
 
   // --- regression guards for concept-bank bug fixes ---
 
+  it('EDU: "Ampul ışık verir" routes to circuit concept, not optics/prizma', () => {
+    const c = conceptRanked('Ampul ışık verir.', 'EDU', 'clay', 'Build-up');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).toMatch(/circuit|bulb|battery|switch|board/i);
+    expect(`${top.subject} ${top.event}`).not.toMatch(/prism|optics rig|spectrum/i);
+  });
+
+  it('EDU: "Prizmada ışık kırılır" still routes to optics, not circuit', () => {
+    const c = conceptRanked('Prizmada ışık kırılır.', 'EDU', 'clay', 'Build-up');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).toMatch(/prism|optics|spectrum|lamp|screen/i);
+  });
+
+  it('STY: "Viking ada" does NOT trigger revenge/kin concept', () => {
+    const c = conceptRanked('Viking tarzı devlerin yaşadığı ada macerası', 'STY', 'painterly_shadow', 'Build-up');
+    const top = c[0];
+    expect(`${top.subject} ${top.event}`).not.toMatch(/interior weight|revenge|kin|controlled menace|fury/i);
+  });
+
+  it('STY: "büyür" (to grow) does NOT trigger magic/fantasy concept', () => {
+    const c = conceptRanked('Ekip adaya yaklaştıkça okyanus ve gökyüzü büyür', 'STY', 'painterly_shadow', 'Build-up');
+    const top = c[0];
+    expect(`${top.subject} ${top.event}`).not.toMatch(/mage|magic geometry|magic expansion|sorcerer|fantasy/i);
+  });
+
+  it('STY: "uzay istasyonu" routes to space concept, NOT mecha', () => {
+    const c = conceptRanked('Uzay istasyonu yeni gezegene doğru ilerler.', 'STY', 'painterly_shadow', 'Build-up');
+    const top = c[0];
+    expect(top.matched).toBe(true);
+    expect(`${top.subject} ${top.event}`).toMatch(/spacecraft|frontier|star field|cosmos|vessel|suited/i);
+    expect(`${top.subject} ${top.event}`).not.toMatch(/mech|bio-mechanical|industrial void|pilot/i);
+  });
+
   it('EDU: evaporation beat (güneş+yüksel) triggers water-cycle concept, not generic fallback', () => {
     const c = conceptRanked('Güneş denizi ısıtır, su molekülleri yükselir', 'EDU', 'spiderverse', 'Build-up');
     const top = c[0];

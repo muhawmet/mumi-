@@ -160,6 +160,26 @@ const DETECTORS: Record<string, DetectorFunc> = {
     }
     return null;
   },
+  // Scene or brief: primary subject is a vague bridge phrase, not a concrete visual object.
+  reg_generic_bridge: (input, reg) => {
+    const lower = input.text.toLowerCase();
+    const bridgePhrases = [
+      'concept model', 'teaching mechanism', 'final readable summary model',
+      'earned emblem', 'opening visual statement', 'tension frame',
+      'human-scale detail', 'two original figures in a quiet emotionally charged space',
+    ];
+    const hits = bridgePhrases.filter((p) => lower.includes(p));
+    if (hits.length >= 2) {
+      return {
+        status: 'FIX',
+        problem: reg.name,
+        why: reg.expected,
+        replaceWith: 'replace generic bridge subject with a concrete visible object directly from the source beat.',
+        verify: `Generic bridge phrases found: ${hits.join(', ')}`,
+      };
+    }
+    return null;
+  },
   // Brief-level: generic fallback concept templates repeated across scenes.
   reg_fallback_leak: (input, reg) => {
     if (input.type !== 'brief') return null;

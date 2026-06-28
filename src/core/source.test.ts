@@ -23,6 +23,48 @@ describe('decodeBrief', () => {
     expect(decoded.project.id).toBe('product_hero');
   });
 
+  it('routes anime / shonen adventure to STYLIZED_PREMIUM, not commercial fallback', () => {
+    const briefs = [
+      'One Piece Elbaf tarzı dev ada macerası',
+      'Grand Line yelkenli ada keşfi anime tarzında',
+      'Demon Slayer gibi nefes ritmiyle kılıç sahnesi anime macera',
+      'Solo Leveling gate açılışı ve güç yükselişi anime',
+    ];
+    for (const brief of briefs) {
+      const decoded = decodeBrief(brief);
+      expect(decoded.path).toBe('STYLIZED_PREMIUM');
+      expect(decoded.confidence).not.toBe('fallback');
+    }
+  });
+
+  it('routes space/cosmic briefs to STYLIZED_PREMIUM, not commercial fallback', () => {
+    const briefs = [
+      'Uzay istasyonu halka gezegene yaklaşıyor uzay keşfi',
+      'Astronot nebulada uzay yolculuğu kozmik',
+    ];
+    for (const brief of briefs) {
+      const decoded = decodeBrief(brief);
+      expect(decoded.path).toBe('STYLIZED_PREMIUM');
+      expect(decoded.confidence).not.toBe('fallback');
+    }
+  });
+
+  it('routes electricity / circuit curriculum topics to ANIMATION_EDU', () => {
+    const briefs = [
+      'Elektrik devresi: pil anahtar ampul akım',
+      'Pil devreye enerji sağlar; ampul ışık verir',
+    ];
+    for (const brief of briefs) {
+      const decoded = decodeBrief(brief);
+      expect(decoded.path).toBe('ANIMATION_EDU');
+    }
+  });
+
+  it('routes architecture interior language to ARCHITECTURE_REAL_ESTATE', () => {
+    const decoded = decodeBrief('Mimari salon kapısı açılır mermer iç mekan ışık');
+    expect(decoded.path).toBe('ARCHITECTURE_REAL_ESTATE');
+  });
+
   it('returns only IDs that exist and agree in SURGERY_DATA', () => {
     const decoded = decodeBrief('Belediye için 23 Nisan kamusal etkinlik filmi.');
     const project = SURGERY.projects.find((item) => item.id === decoded.project.id);
