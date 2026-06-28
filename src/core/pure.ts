@@ -477,6 +477,8 @@ export function deriveProductionPath(projectClass: string): string {
   if (/PRODUCT|PACKSHOT|[ÜU]R[ÜU]N|LOGO/.test(v)) return 'PRODUCT_HERO';
   if (/ULTRA|REAL|COMMERCIAL|REKLAM|MARKA/.test(v)) return 'ULTRAREAL_COMMERCIAL';
   if (/TASARIM|DESIGN/.test(v)) return 'STYLIZED_PREMIUM';
+  if (/STYLIZED|ANIME|ANIMATION|MANGA|COMIC|ÇIZGI|CIZGI/.test(v)) return 'STYLIZED_PREMIUM';
+  if (/EDU|EGITIM|EĞİTİM|ÖĞRET|OGRET|LESSON|DERS/.test(v)) return 'ANIMATION_EDU';
   return 'ANIMATION_EDU';
 }
 
@@ -599,28 +601,30 @@ function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, 
 
 function architectureFallbackConcept(arch: SceneArchitecture, phaseName: PureScene['phaseName'], register: Register): Concept {
   const sourceCue = compactSourceCue(arch.source.exactText || arch.dominantSubject);
+  // Short core noun for motion-prompt "Moving element" (split at : or — and take first chunk ≤ 55c)
+  const coreNoun = sourceCue.split(/[:—]/)[0].trim().slice(0, 55);
   const phaseSubject: Record<Register, Record<PureScene['phaseName'], string>> = {
     EDU: {
-      Intro: 'one readable question-board scene built from this exact beat',
-      'Build-up': 'one concrete teaching mechanism that isolates this beat as a visible cause-and-effect',
-      Climax: 'one proof-stage scene where this beat creates an observable learning consequence',
-      Resolution: 'one final takeaway scene that gathers this beat into a readable end state',
+      Intro: `the concept model for "${coreNoun}", labelled parts visible and ready`,
+      'Build-up': `the teaching mechanism isolating cause and effect in "${coreNoun}", mechanism primed`,
+      Climax: `the proof stage for "${coreNoun}", result already forming in the frame`,
+      Resolution: `the final readable summary model for "${coreNoun}", all parts resolved`,
     },
     STY: {
-      Intro: 'one stylized question frame that makes this exact beat visually concrete',
-      'Build-up': 'one graphic proof frame that isolates this beat as a visible tension',
-      Climax: 'one stylized consequence frame where this beat visibly turns',
-      Resolution: 'one earned emblem frame that resolves this exact beat without adding story facts',
+      Intro: `the opening visual statement for "${coreNoun}", graphic weight already present`,
+      'Build-up': `the tension frame for "${coreNoun}", graphic proof positioned and primed`,
+      Climax: `the turning-point frame for "${coreNoun}", consequence already visible`,
+      Resolution: `the earned emblem for "${coreNoun}", no new story fact added`,
     },
     REAL: {
-      Intro: 'one real human-scale detail that makes this exact beat observable',
-      'Build-up': 'one practical real-world action that isolates this beat as evidence',
-      Climax: 'one real proof moment where this beat creates an observable consequence',
-      Resolution: 'one restrained real-world final detail that resolves this exact beat',
+      Intro: `the human-scale detail that makes "${coreNoun}" observable, subject in frame`,
+      'Build-up': `the practical action that isolates "${coreNoun}" as evidence, ready to unfold`,
+      Climax: `the real proof moment for "${coreNoun}", consequence already visible`,
+      Resolution: `the restrained final detail resolving "${coreNoun}", settled and clear`,
     },
   };
   return {
-    subject: `${phaseSubject[register][phaseName]}: ${sourceCue} — ${arch.beat}`,
+    subject: phaseSubject[register][phaseName],
     event: `${arch.event}, then the frame holds with this exact beat resolved and no extra idea added`,
     matched: false,
   };
