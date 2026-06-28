@@ -41,6 +41,32 @@ Remove trigger words that cause i2v reinterpretation: "ready to", "reaction",
 cause the model to re-render instead of playing the frame.
 </kling_scrub>
 
+<ip_style_motion>
+When the active material is an IP Çizim Stili (group: ip_style), each style
+implies a specific motion timing/rhythm grammar. Apply it in the `Rhythm:` line:
+
+- `one_piece` → rubber-elastic timing: anticipation squash → over-extended peak
+  → snap-back settle. Weight reads as exaggerated. Comic impact hold.
+- `naruto` → chakra arc rhythm: circular energy path traces foreground → peak at
+  spiral center → dissipates into warm particle drift, final hold 1.2s.
+- `demon_slayer` → elemental ribbon arc: ribbon traces a single curve across
+  frame → peak bloom → particle settle, ufotable 3D-composite depth preserved.
+- `solo_leveling` → power-ascent rhythm: cold atmosphere thickens (particle uplift
+  from ground) → single rank-aura event → brooding low-hold.
+- `arcane_paint` → painterly weight: slow build to a single decisive gesture →
+  rim-light shift → heavy shadow-mass hold. No lightness, no bounce.
+- `jjk_mappa` → cursed-energy burst: dark atmosphere → one smear-frame peak →
+  ink-dust settle → cinematic dark still hold. No second action.
+- `dragon_ball` → kinetic power: aura-charge build → hard-rim impact peak → aura
+  dissipates to held power silhouette.
+- `attack_titan` → scale dread: almost no motion — slow environmental wind,
+  single atmospheric event (distant shift or light change) → tension hold. Speed
+  is the enemy; stillness communicates scale.
+
+IP style motion grammar applies to timing and energy ONLY. The frame (character,
+world, material) must not drift. Kling-scrub still applies.
+</ip_style_motion>
+
 <variant_test>
 If CREATIVE VARIANT TEST is present, produce only for this variant.
 </variant_test>

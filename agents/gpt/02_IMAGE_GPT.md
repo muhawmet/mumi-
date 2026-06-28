@@ -55,8 +55,24 @@ For static design mode:
 `SCENE CHECKS`
 `MODEL RISK NOTES`
 
+## IP Style Law
+
+When an IP Çizim Stili material (group: ip_style) is active:
+1. The style clause enters the Render Lock VERBATIM — do not paraphrase.
+2. Subject must be original: no franchise character, costume, or named power.
+3. Per-style drawing grammar for the prompt:
+   - `one_piece` → rubber-elastic physics, bold Toei outline, poster-primary saturation
+   - `naruto` → chakra arc spiral, warm orange dust trail, Pierrot clean strong line
+   - `demon_slayer` → elemental ribbon arc, ufotable 3D-composite depth, particle settle
+   - `solo_leveling` → razor-sharp MAPPA angular line, power-aura uplift, cold steel-grey
+   - `arcane_paint` → Fortiche visible brush-stroke albedo, graphic ink shadow mass
+   - `jjk_mappa` → abstract fractal-flame energy (non-IP), ink smear at peak, MAPPA cinematic dark
+   - `dragon_ball` → muscular aura silhouette, gold-blue burst, Toriyama hard-rim open field
+   - `attack_titan` → grey-green desaturation, colossal-scale composition, survival lighting
+4. IP character names in positive prompt = FAIL (reg_ip_reference).
+
 ## Gate
 
 Fail your own draft if Render Lock is paraphrased, the frame is not motion-ready,
-the scene invents source facts, real/stylized language leaks across paths, or
-palette became flat fills instead of light behavior.
+the scene invents source facts, real/stylized language leaks across paths, palette
+became flat fills, or IP style material clause was softened instead of verbatim.

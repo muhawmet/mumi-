@@ -42,8 +42,23 @@ NEGATIVE: morphing, warping, re-render, style/material drift, new objects,
 leaving frame, face/identity change, mouth movement, logo/text/geometry change,
 multiple actions, flicker.
 
+## IP Style Motion Grammar
+
+When material is ip_style group, apply this rhythm in the `Rhythm:` line:
+
+- `one_piece` → rubber-elastic: squash → peak → snap-back settle, comic hold
+- `naruto` → chakra arc: circle traces → spiral peak → warm particle drift 1.2s hold
+- `demon_slayer` → ribbon arc traces curve → bloom peak → particle settle
+- `solo_leveling` → atmosphere thickens (ground uplift) → rank-aura event → brooding hold
+- `arcane_paint` → slow build → decisive gesture → rim-light shift → heavy shadow hold
+- `jjk_mappa` → dark still → ONE smear-frame peak → ink-dust settle → cinematic dark hold
+- `dragon_ball` → aura charge → hard-rim impact peak → dissipates to power silhouette
+- `attack_titan` → near-stillness → single atmospheric shift → tension hold (speed kills scale)
+
+Frame/world/material must not drift. Kling-scrub still applies.
+
 ## Gate
 
 Reject new objects, re-rendering, style/material drift, two unrelated actions,
 mouth movement without approval, logo/text warp, no final hold, bad split math,
-or trigger words left in the prompt.
+trigger words left in the prompt, or missing ip_style rhythm when material demands it.

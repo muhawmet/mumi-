@@ -133,7 +133,17 @@ Değişmez: dünya/render · materyal · yüz/kimlik · logo/yazı/ürün geomet
 - endüstriyel/mecha ref → "industrial weight: mass leads, inertia visible, micro-settle"
 - lirik/şiirsel ref → "lyrical pacing: event unfolds as one unbroken legato phrase"
 
-**Yaygın Hatalar:** aynı anda iki olay · kamera sahneyi terk eder · yeni nesne belirir · dünya/materyal re-render · logo/yazı morphs · ağız hareketi · final hold yok · kötü bölme matematiği · promptta kalan tetikleyici sözcükler
+**IP Çizim Stili Materyaller — Motion Ritim (materyal ip_style grubundaysa uygula):**
+- `one_piece` → rubber-elastic: squash → uzamış peak → snap-back oturma, komik hold
+- `naruto` → chakra ark: daire iz → spiral peak → sıcak partikül drift, 1.2s hold
+- `demon_slayer` → eleman ribbon: tek yay izi → bloom peak → partikül oturma
+- `solo_leveling` → güç yükselişi: atmosfer yoğunlaşır (zemin partikül) → aura olayı → kasvetli hold
+- `arcane_paint` → painterly ağırlık: yavaş build → tek jest → rim-ışık kayması → ağır shadow hold
+- `jjk_mappa` → lanet patlaması: karanlık sakin → TEK smear peak → ink-toz oturma → sinematik dark hold
+- `dragon_ball` → kinetik aura: yüklenme → sert rim impact → aura dağılır, güç silüeti hold
+- `attack_titan` → ölçek dehşeti: neredeyse hareketsiz → tek atmosferik kayma → gerilim hold (hız ölçeği öldürür)
+
+**Yaygın Hatalar:** aynı anda iki olay · kamera sahneyi terk eder · yeni nesne belirir · dünya/materyal re-render · logo/yazı morphs · ağız hareketi · final hold yok · kötü bölme matematiği · promptta kalan tetikleyici sözcükler · ip_style materyal varken ritim uygulanmamış
 
 ---
 
@@ -206,8 +216,19 @@ Hold: everything not named stays exactly as the start frame shows — world, mat
 NEGATIVE: morphing, warping, re-render, style/material drift, new objects or scenery, leaving the frame, face/identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.
 SPLIT NOTE: [only when duration exceeds window — N shots × ~perShot s, each needs its own frame]
 
+## IP Style Motion Grammar
+When material is ip_style group, apply in the Rhythm line:
+- one_piece → rubber-elastic squash-peak-snap, comic hold
+- naruto → chakra arc circle trace → spiral peak → warm particle drift 1.2s
+- demon_slayer → ribbon arc → bloom peak → particle settle
+- solo_leveling → atmosphere thickens → rank-aura event → brooding hold
+- arcane_paint → slow build → decisive gesture → rim-light shift → heavy shadow hold
+- jjk_mappa → dark still → ONE smear peak → ink-dust settle → cinematic dark hold
+- dragon_ball → aura charge → hard-rim impact → dissipates to power silhouette hold
+- attack_titan → near-stillness → single atmospheric shift → tension hold
+
 ## Gate
-Reject: new objects · re-render · style drift · two unrelated actions · mouth movement without approval · logo/text warp · no final hold · bad split math · trigger words in prompt.
+Reject: new objects · re-render · style drift · two unrelated actions · mouth movement without approval · logo/text warp · no final hold · bad split math · trigger words in prompt · ip_style rhythm missing when material demands it.
 
 ## JSON Field Map
 - `agentBrief` → write to final_brief.md

@@ -110,6 +110,27 @@ The site derives motion rhythm from Reference DNA:
 - lyrical/poetic refs → "lyrical pacing: event unfolds as one unbroken legato phrase"
 - organic ease refs → "motion breathes in and settles out, nothing mechanical"
 
+## IP Çizim Stili Motion Grammar
+
+When the active material is an IP Çizim Stili (group: ip_style), the motion
+rhythm for that style must appear in the `Rhythm:` line. The world rendering must
+not drift; only timing/weight/energy changes.
+
+| Material | Rhythm Pattern | Key Rule |
+|---|---|---|
+| `one_piece` | rubber-elastic: squash → over-extended peak → snap-back settle, comic impact hold | Exaggerated physics — NOT realistic |
+| `naruto` | chakra arc: circle traces foreground → spiral center peak → warm particle drift, 1.2s hold | Arc is the hero element |
+| `demon_slayer` | elemental ribbon: ribbon traces curve → bloom peak → particle settle | ufotable depth preserved throughout |
+| `solo_leveling` | power-ascent: atmosphere thickens (ground particle uplift) → rank-aura event → brooding low-hold | Cold energy, no warmth |
+| `arcane_paint` | painterly weight: slow build → single decisive gesture → rim-light shift → heavy shadow-mass hold | No lightness, no bounce |
+| `jjk_mappa` | cursed burst: dark still → smear-frame peak → ink-dust settle → cinematic dark hold | ONE smear only, then stillness |
+| `dragon_ball` | kinetic aura: charge build → hard-rim impact peak → aura dissipates to power silhouette hold | Aura is motivator, not new element |
+| `attack_titan` | scale dread: near-stillness → single atmospheric shift → tension hold | Speed kills scale; stillness communicates size |
+
+These patterns apply to timing and energy only. Frame, world, and material must
+not drift — `attack_titan` pacing does not mean the scene becomes grey; the
+rendering is already grey from the Render Lock.
+
 ## Failure Patterns
 
 - two events at once
@@ -121,6 +142,7 @@ The site derives motion rhythm from Reference DNA:
 - no final hold
 - bad split math (tiny leftover tail, stretched clip)
 - trigger words left in prompt (suddenly, transforms, appears)
+- IP style motion rhythm not applied when material is ip_style group
 
 ## Repair
 

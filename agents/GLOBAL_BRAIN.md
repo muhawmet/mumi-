@@ -262,3 +262,37 @@ This modern app is not the old single-file HTML version. Agents must not make
 decisions from legacy Phase 0 tokens, single-axis world/recipe language, or
 retired world IDs. Modern language is: `Render World`, `Material`, `RENDER LOCK`,
 `DIRECTOR MANDATE`, `SCENE DOSSIER`, and `I2V ANCHOR LAW`.
+
+## 18. IP Çizim Stili Materials (group: ip_style)
+
+Eight franchise drawing-style materials are available. These are **Material** entries
+(not Render Worlds). Each adds a style-grammar clause that enters the Render Lock
+via `materialClauseOf()`.
+
+| ID | Franchise Grammar | Clause Key Idea |
+|---|---|---|
+| `one_piece` | Toei bold outlines, rubber-elastic proportions, saturated primary punch | rubber-limb exaggeration, bold black outlines, poster-vibrant fills |
+| `naruto` | Pierrot clean cel, chakra arc energy circles, warm golden determination | chakra spiral motif, warm orange dust trails, clean strong line |
+| `demon_slayer` | ufotable 3D-composite, elemental ribbon arcs, ufotable particle density | elemental breathe-pattern arcs, painterly 3D-composite on top of tight linework |
+| `solo_leveling` | MAPPA high-fidelity manhwa, sharp angular linework, dark power-ascent color | razor-sharp angular line, power-aura uplift particle, cold steel-grey ground |
+| `arcane_paint` | Fortiche painterly albedo, oil-paint brush over 3D | visible brush-stroke albedo on every surface plane, graphic shadow mass |
+| `jjk_mappa` | MAPPA cinematic, abstract black energy, ink speed-line smear | abstract cursed energy (fractal flame, NOT IP-specific), ink smear at peak frame |
+| `dragon_ball` | Toriyama bold outline, explosive power aura, primary color impact | muscular energy silhouette, gold/blue aura burst, hard-rim open-field staging |
+| `attack_titan` | WIT/MAPPA desaturated military, scale dread, grey tactical | grey-green desaturation, colossal-scale composition, survival lighting — no warmth |
+
+### IP Style Law for Agents
+
+1. **Clause enters Render Lock, NOT subject.** The style grammar shapes HOW the scene is rendered, not WHAT character appears.
+2. **Subject must be original.** No franchise character likenesses, costumes, logos, or signature power effects from the named IP.
+3. **IP style + any Render World.** A `jjk_mappa` clause can apply to an `arcane` world or an `anime_cel` world. The World handles rendering quality; the IP style clause shapes the drawing grammar inside it.
+4. **For motion:** IP style material implies specific motion timing/rhythm (see §9 and adapter knowledge). `one_piece` → rubber elastic timing; `demon_slayer` → elemental ribbon arc with particle settle; `jjk_mappa` → ink smear at peak, then brooding hold.
+5. **Proof instruction always wins.** If brief says RENDER LOCK verbatim, the material clause is already embedded — do not add it twice.
+
+### IP Style vs IP World
+
+| | IP Çizim Stili (Material) | IP_WORLD (Render World) |
+|---|---|---|
+| Type | Material | Render World |
+| Sets | Drawing grammar | Environment + setting |
+| Usage | Combined with any World | Selected as the World itself |
+| Example | `anime_cel` world + `demon_slayer` material | `demon_slayer_taisho` world |

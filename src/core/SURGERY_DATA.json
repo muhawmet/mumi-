@@ -1483,7 +1483,7 @@
       "cat": "3D Animation",
       "use": "soft classroom warmth, emotional clarity, clean dimensional faces",
       "avoid": "copying characters",
-      "dna": "warm fills, gentle faces, human clarity",
+      "dna": "warm jazz-breathing fills on gentle faces, warm ambient fill tonality, spatial depth through soft atmosphere, 50mm intimate working distance",
       "preview": "orb",
       "anchor": ""
     },
@@ -1593,7 +1593,7 @@
       "cat": "Product / Macro",
       "use": "steam, condensation, viscosity, macro appetite light",
       "avoid": "plastic food",
-      "dna": "sensory macro, appetite texture, viscosity",
+      "dna": "extreme macro surface staging, appetite texture fills frame (pour/cut/steam), 100mm surface-level slide, viscosity and color saturation as mood, no background distractions",
       "preview": "food",
       "anchor": ""
     },
@@ -1623,7 +1623,7 @@
       "cat": "Fine Art Lighting",
       "use": "directional key light, deep shadow shaping, dignified face emphasis",
       "avoid": "painting copy",
-      "dna": "warm key, deep shadow, human dignity",
+      "dna": "warm single key from above-left, deep shadow mass fills 70% frame, human face isolated in chiaroscuro light pool, intimate working distance",
       "preview": "lowkey",
       "anchor": ""
     },
@@ -1633,7 +1633,7 @@
       "cat": "Architecture",
       "use": "clean spatial depth, elegant real materials, window light, calm camera",
       "avoid": "magazine logo/copy",
-      "dna": "window light, space depth, material calm",
+      "dna": "window light spatial depth reveal, one threshold opening the depth axis, material calm (concrete/wood/glass), slow dolly through threshold, clean negative space",
       "preview": "arch",
       "anchor": ""
     },
@@ -1763,7 +1763,7 @@
       "cat": "Anime / Mecha",
       "use": "purple-green tension, giant silhouette, warning lights, control-room anxiety, apocalyptic scale",
       "avoid": "Eva designs, plugsuits, NERV logos, exact mecha silhouettes",
-      "dna": "bio-mech scale, green/purple warning light",
+      "dna": "towering bio-mech scale beside tiny human, green-purple warning light, angular industrial restraint, low-angle up shot, scale dread compression",
       "preview": "mecha",
       "anchor": "Eva / bio-mech scale"
     },
@@ -1773,7 +1773,7 @@
       "cat": "Anime / Cinematic",
       "use": "red kinetic energy, neon city, psychic pressure, speed streaks, apocalyptic urban palette",
       "avoid": "bike design, characters, capsule logo, exact shots",
-      "dna": "red neon impact, urban psychic pressure",
+      "dna": "kinetic red neon impact, radiating speed lines from psychic burst center, compressed dark urban canyon, one committed camera travel, aftermath energy hold",
       "preview": "neon",
       "anchor": "Kaneda / red impact"
     },
@@ -1783,7 +1783,7 @@
       "cat": "Anime / Cinematic",
       "use": "cold cybernetic city, rain glass, green-blue data light, philosophical stillness",
       "avoid": "Major likeness, Section logos, exact UI/props",
-      "dna": "rainy cyber blues, reflective city glass",
+      "dna": "rainy cyber city at night, layered reflective wet glass depth, atmospheric cyan-blue haze, solitary figure on wet surface, vertical urban scale",
       "preview": "cyber",
       "anchor": "Major / cyber rain"
     },
@@ -1793,7 +1793,7 @@
       "cat": "Anime / Cinematic",
       "use": "space-noir, jazz pacing, smoky silhouettes, mustard/teal loneliness, retro-future framing",
       "avoid": "characters, ship copy, title cards, exact frames",
-      "dna": "noir jazz, retro space color, smoky shadow",
+      "dna": "restrained jazz rhythm — wide negative space, one figure at rest, warm retro color, long confident hold, cinematic shadow, no kinetic action",
       "preview": "noir",
       "anchor": "Spike / jazz noir"
     },
@@ -1813,7 +1813,7 @@
       "cat": "Animation Auteur",
       "use": "handcrafted nature, wind movement, lived-in objects, emotional environmental scale",
       "avoid": "characters/creatures, exact designs",
-      "dna": "wind, grass, soft watercolor depth",
+      "dna": "wind confirms motion on grass and cloth, organic ease breathes in and settles out, soft watercolor depth, gentle float camera, environmental confirmation",
       "preview": "wind",
       "anchor": "Miyazaki / wind nature"
     },
@@ -1833,7 +1833,7 @@
       "cat": "3D Animation",
       "use": "appealing silhouettes, tactile material, emotional clarity, readable staging",
       "avoid": "characters, exact worlds, logos",
-      "dna": "rounded 3D staging, soft material emotion",
+      "dna": "rounded soft 3D materials, child-eye push vantage, warm practical light motivating soft shadow, tactile proof object foreground, emotional staging",
       "preview": "pixar",
       "anchor": ""
     },
@@ -1913,7 +1913,7 @@
       "cat": "Game Art Direction",
       "use": "decayed gold, gothic silhouette, impossible scale, fogged mythic distance, tragic grandeur",
       "avoid": "boss/armor/symbol/castle copy",
-      "dna": "decayed gold, mythic ruins, scale dread",
+      "dna": "decayed golden gothic ruins under enormous dark sky, architecture dwarfs any figure, rim-light from golden ember below, scale dread wide low angle",
       "preview": "gothic",
       "anchor": "Tarnished / gothic scale"
     },
@@ -1993,7 +1993,7 @@
       "cat": "Game Art Direction",
       "use": "tiny figure in huge dark world, blue-green caves, readable silhouette, melancholic depth",
       "avoid": "characters/bugs/logos",
-      "dna": "small hero, huge shadow world",
+      "dna": "tiny hero silhouette in vast dark architectural world, high-contrast rim-light only, enormous negative-space shadow, side-scroll static wide vantage",
       "preview": "silhouette",
       "anchor": "Knight / cave silhouette"
     },
@@ -2003,7 +2003,7 @@
       "cat": "Game Art Direction",
       "use": "bioluminescent forest, soft glow, blue/purple emotional haze, fragile silhouette",
       "avoid": "Ori likeness/logos/exact forest",
-      "dna": "bioluminescent forest, fragile glow",
+      "dna": "bioluminescent forest glow points in deep cold dark, spatial depth through layered light halos, fragile organic ease, gentle arc float, soft luminous texture",
       "preview": "glowforest",
       "anchor": "Ori / glow forest"
     },
@@ -2053,7 +2053,7 @@
       "cat": "Game Art Direction",
       "use": "red/black/white graphic UI, diagonal cuts, stylish rebellion, jazz rhythm",
       "avoid": "characters/masks/logos/UI exact copy",
-      "dna": "red black graphic rebellion",
+      "dna": "red-black graphic rebellion, hard geometric shadow shapes, frontal confrontational static framing, UI-energy graphic overlay, design-first composition",
       "preview": "persona",
       "anchor": "Joker / red rebellion"
     },
@@ -2103,7 +2103,7 @@
       "cat": "Game Art Direction",
       "use": "golden hour western landscape, dust, worn leather, human-scale naturalism",
       "avoid": "characters/logos/exact towns",
-      "dna": "dusty golden western realism",
+      "dna": "magic-hour golden light at horizon, photorealistic material weight (leather/wood/metal), 50mm slow dolly at human scale, long shadow, wide plain",
       "preview": "western",
       "anchor": ""
     },
@@ -2113,7 +2113,7 @@
       "cat": "Game Art Direction",
       "use": "overgrown urban decay, natural light, moss, grounded human emotion",
       "avoid": "characters/logos/exact scenes",
-      "dna": "green overgrowth, grounded realism",
+      "dna": "window light filters through green overgrowth reclaiming architecture, grounded handheld micro-drift, material weight and decay, quiet realism",
       "preview": "overgrown",
       "anchor": ""
     },
@@ -2143,7 +2143,7 @@
       "cat": "Game Art Direction",
       "use": "cold blue Nordic forests, warm rune light, heavy character scale, mythic stone",
       "avoid": "Kratos/Atreus/weapons/runes exact",
-      "dna": "Nordic cold, mythic warm runes",
+      "dna": "Nordic cold grey sky, one mythic ember-warm rune accent, low-angle upward composition looking up at scale, deliberate weight and slow push",
       "preview": "nordic",
       "anchor": "Kratos / nordic myth"
     },
@@ -2223,7 +2223,7 @@
       "cat": "Game Art Direction",
       "use": "pixel mountain scale, emotional color shifts, cold-to-warm climb, readable challenge",
       "avoid": "characters/logos/exact levels",
-      "dna": "pixel climb, emotional gradient",
+      "dna": "small pixel figure against massive emotional mountain gradient, upward implied motion, warm-to-cool color shift on effort, held wide static frame",
       "preview": "pixelmountain",
       "anchor": ""
     },
@@ -2233,7 +2233,7 @@
       "cat": "Live Action Cinema",
       "use": "cyan/magenta rain, reflective black streets, sodium warmth, atmospheric haze",
       "avoid": "specific shots, logos, exact vehicles",
-      "dna": "wet neon noir, haze and reflective darkness",
+      "dna": "wet neon reflections on rain-slick surface, layered neon depth haze, lone figure silhouette crushed by urban scale, atmospheric blue-amber perspective",
       "preview": "neonnoir",
       "anchor": ""
     },
@@ -2243,7 +2243,7 @@
       "cat": "Live Action Cinema",
       "use": "dusty tungsten, restrained saturation, analog grain, face tension, practical light realism",
       "avoid": "faces, shots, lab/prop copy",
-      "dna": "tungsten dust, analog pressure",
+      "dna": "tungsten warm key cuts dense atmospheric haze, tight intimate frame urgency, heavy shadow mass, analog grain texture, working-distance close vantage",
       "preview": "analog",
       "anchor": ""
     },
@@ -2253,7 +2253,7 @@
       "cat": "Live Action Cinema",
       "use": "sand scale, brutalist silhouettes, low sun, ceremonial slowness, monochrome vastness",
       "avoid": "costumes, vehicles, symbols, exact shots",
-      "dna": "monumental desert, low sun, scale dread",
+      "dna": "monumental desert scale dread, low sun horizon, single figure crushed by landscape, vast negative space, featureless sky above, silence implied by composition",
       "preview": "desert",
       "anchor": ""
     },
@@ -2273,7 +2273,7 @@
       "cat": "Live Action Cinema",
       "use": "blue/red neon interiors, clean action geography, black contrast, glossy reflections",
       "avoid": "character/costume copy, exact setpieces",
-      "dna": "neon precision, glossy action space",
+      "dna": "neon precision lighting on wet floor, choreographed stillness before kinetic action, lateral slide at working distance, controlled shadow geometry",
       "preview": "wick",
       "anchor": ""
     },
@@ -2283,7 +2283,7 @@
       "cat": "Live Action Cinema",
       "use": "centered symmetry, pastel blocking, miniature-like staging, deadpan color order",
       "avoid": "exact frames, costumes, title cards",
-      "dna": "symmetry, pastel order, frontal staging",
+      "dna": "perfect bilateral symmetry, frontal locked camera, pastel flat-lit surface, deadpan centered staging in clean field, no depth compression",
       "preview": "symmetry",
       "anchor": ""
     },
@@ -2303,7 +2303,7 @@
       "cat": "Live Action Cinema",
       "use": "one-point perspective, symmetrical dread, slow zoom, sterile geometry",
       "avoid": "exact shots/costumes",
-      "dna": "one-point perspective, controlled dread",
+      "dna": "extreme one-point perspective receding corridor or road, controlled dread atmosphere, deliberate locked placement, deep field compression, slow push",
       "preview": "onepoint",
       "anchor": ""
     },
@@ -2313,7 +2313,7 @@
       "cat": "Cinematography",
       "use": "motivated practical light, restrained contrast, human-scale naturalism, clear geography",
       "avoid": "specific movie shot copy",
-      "dna": "motivated light, quiet realism",
+      "dna": "single motivated light source (window or time-of-day sun), quiet grounded realism, handheld micro-drift at walking pace, natural shadow fall, human scale",
       "preview": "deakins",
       "anchor": ""
     },

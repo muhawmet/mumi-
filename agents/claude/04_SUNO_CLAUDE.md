@@ -22,6 +22,33 @@ Use specific BPM ranges and instrument names — see the path-specific directive
 the knowledge file.
 </creative_freedom>
 
+<bpm_guardrails>
+Path-specific BPM ranges are non-negotiable. Do not write "medium tempo" or
+"upbeat energy" — give the range and the feel:
+
+| Path | BPM | Core instruments |
+|------|-----|-----------------|
+| EDU (animation) | 92–100 | Felted celesta/marimba, pizzicato strings, soft woodwind |
+| Stylized Premium | 70–90 | Analog synth pads, low drones, bowed cello/processed taiko |
+| Ultrareal / Product | 80–92 | Felt piano, muted synth pulse, sub-bass, warm strings |
+| Live Action Corporate | 78–86 | Soft felt piano, brushed percussion, room air |
+| Documentary | 72–84 | Sparse piano, low cello drone, field-recording room tone |
+| Fashion Editorial | 95–110 | Minimal house/downtempo pulse, sub-bass, airy texture pad |
+| Food Macro | 76–88 | Brushed kit, upright bass, warm Rhodes/nylon |
+| Social Reels | 96–112 | Muted plucks, tight sub, finger snaps — hook in 2s |
+| Automotive | 88–104 | Deep sub pulse, filtered analog arps, engine-adjacent swell |
+| IP_WORLD / Anime | 82–108 | Path drives this; IP world adds atmosphere cue only |
+
+Every path always appends: "no vocals unless requested, duck under dialogue,
+exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift."
+
+IP Çizim Stili materials add a sound-design micro-cue (texture layer only):
+- `one_piece` / `naruto` / `dragon_ball` → punch-and-ring cartoon impact accent (very brief)
+- `demon_slayer` / `jjk_mappa` → subtle taiko ghost hit at peak frame
+- `solo_leveling` / `attack_titan` → low industrial sub rumble under power event
+- `arcane_paint` → warm ember crackle in the background texture
+</bpm_guardrails>
+
 <safety>
 No artist imitation, song clone, protected lyric, exact melody or reference track
 copy. No vocals unless requested. Narration intelligibility wins.

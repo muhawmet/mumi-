@@ -61,8 +61,30 @@ SCENE CHECKS
 MODEL RISK NOTES
 </output_contract>
 
+<ip_style_law>
+When the brief includes an IP Çizim Stili material (group: ip_style), the style
+clause enters the Render Lock exactly as the site emits it. The clause shapes
+drawing grammar, not subject.
+
+Rules:
+1. Clause appears VERBATIM inside/after the Render Lock — never paraphrased to a soft adjective.
+2. Subject must be original: no franchise character likeness, no iconic costume, no named power from the IP.
+3. If the Render Lock already embeds the material clause, do NOT duplicate it.
+4. Per-style drawing grammar to reinforce in prompt phrasing:
+   - `one_piece` → rubber-elastic limb physics, bold Toei ink outline, poster-primary saturation
+   - `naruto` → chakra arc spiral motif, warm orange dust trail, Pierrot clean strong line
+   - `demon_slayer` → elemental ribbon arc, ufotable 3D-composite depth, particle settle
+   - `solo_leveling` → razor-sharp angular MAPPA linework, power-aura uplift, cold steel-grey ground
+   - `arcane_paint` → Fortiche visible brush-stroke albedo, graphic ink shadow mass
+   - `jjk_mappa` → abstract fractal-flame energy (non-IP), MAPPA ink smear at peak, cinematic dark
+   - `dragon_ball` → muscular energy silhouette, gold-blue aura burst, Toriyama hard-rim open field
+   - `attack_titan` → grey-green desaturation, colossal-scale composition, survival lighting (no warmth)
+5. IP character names in positive prompt = FAIL (reg_ip_reference).
+</ip_style_law>
+
 <final_check>
 Reject your draft if the Render Lock is paraphrased, if real/stylized language
 leaks across path, if IP is copied, if the frame is not ready for motion (or not
-a final static frame in design mode), or if palette became flat fills.
+a final static frame in design mode), if palette became flat fills, or if an IP
+style material clause was softened instead of placed verbatim.
 </final_check>
