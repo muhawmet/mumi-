@@ -500,6 +500,7 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/window.*light|spatial.*depth|threshold.*reveal|material.*calm|space.*depth/i,'camera','spatial reveal: one slow dolly through threshold or along the depth axis, camera arrives and holds'],
  [/spatial.*reveal|window.*light|threshold.*entry|architecture.*reveal/i,'motion','spatial drift: camera or light drifts through one threshold, lands and holds in the destination quality'],
  // System / hierarchy / clarity (Kurzgesagt-type)
+ [/system|hierarchy|cause.*effect|explanatory|readable.*flow|information.*design/i,'camera','overhead or neutral mid-distance locked reveal: concept fully visible in a clean field, one deliberate expand-and-settle move'],
  [/system|hierarchy|cause.*effect|explanatory|readable.*flow|information.*design/i,'staging','logical hierarchy: components spatially ranked by importance, reading line clear, negative space guides the eye'],
  // --- Standard cinematography entries ---
  [/kinetic|leap|fall|speed|chase|action|impact|rebellion/i,'camera','one bolder committed camera travel is allowed — never two moves'],
