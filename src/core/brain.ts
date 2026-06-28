@@ -191,6 +191,15 @@ const REAL_SOURCE_BANKS: Record<string, Bank> = {
     [/son kare|final|masada kal|sakin|servis/i,
       'the finished cup or dish at appetite distance on the real table, surface texture and practical light still alive',
       'one last warm reflection settles across the surface, steam or sheen quiets, and the table holds in appetite-ready calm'],
+    [/gözler kap|yudum|tat|haz|his|duyum|kapat|kapan|sip|taste|pleasure|sensation/i,
+      'the drinker\'s face at intimate distance, eyes softly closed in genuine sensory satisfaction, warm practical light on skin',
+      'the eyes complete one unhurried closing, the expression settles into quiet satisfaction, and the frame holds on the human truth of the moment'],
+    [/gelenek|alı[sş]kanlık|ritüel|an[ıi]|hat[ıi]ra|kültür|tradition|heritage|ritual|memory|moment/i,
+      'one heritage object — cup, vessel or familiar surface — on a worn table, the patina and practical light together telling a longer story',
+      'one settled ray of warm light crosses the heritage object a single time, the surface detail holds honest, and the frame closes on the quiet weight of the ritual'],
+    [/bar[ıi][sş]ta|cezve|demleme|pi[sş]irme|dök|akıt|pour|brew|prepare/i,
+      'a clean pour into the cup at macro working distance, liquid ribbon and the vessel both in the frame, copper or ceramic catching the window key',
+      'the pour completes one unbroken arc into the cup, the crema spreads once across the surface, and the preparation settles with maker\'s confidence'],
   ],
   HEALTH: [
     [/imza|imzalar|onam|consent/i,
@@ -296,22 +305,30 @@ const CONCEPT_REPEAT_CAP = 3;
 export function primeConcept(src: string, register: Register, worldId: string, phaseName: string, prev?: { src: string; concept: Concept }, variant = 0, allPrevious?: Concept[], productionPath = ''): Concept {
   const ranked = conceptRanked(src, register, worldId, phaseName, productionPath);
   if (!ranked.length) return { subject: '', event: '', matched: false };
-  const start = Math.max(0, variant) % ranked.length;
   const subjectUses = (subject: string) =>
     allPrevious ? allPrevious.reduce((n, c) => n + (c.subject === subject ? 1 : 0), 0) : 0;
 
-  // Walk candidates from `start`: skip neighbour clashes, then prefer a candidate
-  // still under the repeat cap. `firstNeighbourSafe` preserves the legacy fallback
-  // (return the first non-clashing candidate) when everything is over the cap.
-  let firstNeighbourSafe: Concept | undefined;
-  for (let offset = 0; offset < ranked.length; offset++) {
-    const candidate = ranked[(start + offset) % ranked.length];
-    if (prev && (prev.concept.event === candidate.event || prev.concept.subject === candidate.subject)) continue;
-    if (!firstNeighbourSafe) firstNeighbourSafe = candidate;
-    if (subjectUses(candidate.subject) >= CONCEPT_REPEAT_CAP) continue;
-    return candidate;
-  }
-  return firstNeighbourSafe || ranked[start];
+  // Matched semantic concepts always beat fallbacks. Apply variant rotation
+  // within each pool separately so anti-monotony still works when there are
+  // multiple matched candidates, but we never skip a matched concept for a
+  // fallback just because the variant index happens to start past it.
+  const pick = (pool: Concept[]): Concept | undefined => {
+    if (!pool.length) return undefined;
+    const s = Math.max(0, variant) % pool.length;
+    let firstSafe: Concept | undefined;
+    for (let offset = 0; offset < pool.length; offset++) {
+      const candidate = pool[(s + offset) % pool.length];
+      if (prev && (prev.concept.event === candidate.event || prev.concept.subject === candidate.subject)) continue;
+      if (!firstSafe) firstSafe = candidate;
+      if (subjectUses(candidate.subject) >= CONCEPT_REPEAT_CAP) continue;
+      return candidate;
+    }
+    return firstSafe;
+  };
+
+  const matchedPool = ranked.filter(c => c.matched);
+  const fallbackPool = ranked.filter(c => !c.matched);
+  return pick(matchedPool) ?? pick(fallbackPool) ?? ranked[Math.max(0, variant) % ranked.length];
 }
 
 // ---------------- camera director (semantic-anchored, anti-monotony) ----------------
@@ -496,7 +513,7 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
       : `Pipeline (2026 frontier): image → ${T(ctx.imageModel) || 'flux_1_1_pro'} · motion → ${T(ctx.videoModel) || 'kling_3'} (${engineUsableSec(T(ctx.videoModel) || 'kling_3')}s clean window) · music → Suno · VO → ElevenLabs`,
     '',
     '== MODEL ERA — write for 2026 frontier generators ==',
-    'Image: FLUX.1.1 Pro / FLUX.2 Pro class, Midjourney v7, GPT Image 2, Imagen 4 — all understand single-sentence lighting, complex material descriptions, precise compositional geometry in natural language. Motion: Kling 3.0 / Kling O3 class — native 4K, 10-15s coherent window, multimodal (video+audio unified), excellent start-frame fidelity, accurate camera grammar interpretation. Reserve negatives for genuine failure modes (morph, drift, invented objects) only. Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',
+    'Image: FLUX.1.1 Pro / FLUX.2 Pro class, Midjourney v7, GPT Image 2, Imagen 4 — all understand single-sentence lighting, complex material descriptions, and precise compositional geometry in natural language. Motion (2026 frontier): Kling 3.0 / Kling O3 / Kling 4 — native 4K, 10-15s coherent window, multimodal video+audio unified, excellent start-frame fidelity; Seedance 2 — world-class subject tracking, physics-stable long shots, highest temporal consistency; Veo 3 — Google DeepMind cinematic quality with native audio generation; Runway Gen4/Gen4-Turbo — longest coherent windows (14s+), best for dialogue-heavy sequences. All 2026 engines interpret camera grammar and lighting physics from natural language accurately. Reserve negatives only for genuine failure modes (morph, material drift, invented objects). Concrete subject + light + camera specificity beats adjective stacking. Do not write defensively for weak older models.',
     '',
     ...brandKitBlock(ctx),
     '== RENDER LOCK (copy this VERBATIM into every image prompt) ==',
@@ -712,8 +729,20 @@ export function buildVariantBriefs(ctx: AgentBriefCtx, scenes: AgentBriefScene[]
 
 export function recommendReason(world: SurgeryWorld, ref: SurgeryRef): string {
   if (!world || !ref) return '';
-  const isReal = registerOf(world.id) === 'REAL';
-  if (isReal && /macro|studio/i.test(ref.name)) return `A ${ref.name} approach enhances the material depth of ${world.name}.`;
-  if (!isReal && /stylized|3d|illustration/i.test(ref.name)) return `The ${ref.name} DNA provides clear staging logic for ${world.name}.`;
-  return `Consider ${ref.name} for its specific light and camera behavior that suits this scene.`;
+  const register = registerOf(world.id);
+  // First DNA clause (e.g. "soft rounded forms") is the most specific visual signal.
+  const dnaCore = T(ref.dna).split(',')[0].trim().slice(0, 60).toLowerCase();
+  // First two use clauses describe how to apply the ref.
+  const useCore = T(ref.use).split(',').slice(0, 2).map(s => s.trim()).join(' and ').slice(0, 80).toLowerCase();
+  const worldName = T(world.name);
+  if (dnaCore && useCore) {
+    // Cross-register guard: stylized/anime ref inside a REAL world — cinematography only.
+    const crossGuard = register === 'REAL' && /anime|3d animation|stylized/i.test(T(ref.cat))
+      ? ` Channel cinematography and light geometry only — no ${T(ref.cat)} rendering inside ${worldName}.`
+      : '';
+    return `${ref.name} brings ${dnaCore} into ${worldName} — use for ${useCore}.${crossGuard}`;
+  }
+  if (dnaCore) return `${ref.name} contributes ${dnaCore} to ${worldName}.`;
+  if (useCore) return `${ref.name}: use for ${useCore} inside ${worldName}.`;
+  return `${ref.name} contributes ${T(ref.cat)}-class staging and light geometry to ${worldName}.`;
 }
