@@ -247,11 +247,11 @@ function realConceptFamily(productionPath: string, worldId: string): string {
   const p = T(productionPath).toUpperCase();
   if (/COMMERCIAL|PRODUCT|STUDIO/.test(p)) return 'PRODUCT';
   if (/FOOD/.test(p)) return 'FOOD';
+  if (/TECH|DEVICE|DIGITAL/.test(p)) return 'TECH';   // before MEDICAL — TECH_MEDICAL_PRECISION → TECH
   if (/HEALTH|MEDICAL|CARE/.test(p)) return 'HEALTH';
   if (/FASHION|EDITORIAL/.test(p)) return 'FASHION';
   if (/TOURISM|DESTINATION|TRAVEL/.test(p)) return 'TOURISM';
   if (/AUTO|CAR|VEHICLE/.test(p)) return 'AUTO';
-  if (/TECH|DEVICE|DIGITAL/.test(p)) return 'TECH';
   if (/ARCH|REAL.ESTATE|INTERIOR/.test(p)) return 'ARCH';
   if (/SOCIAL|REELS/.test(p)) return 'SOCIAL';
   if (/CIVIC|CITY|URBAN/.test(p)) return 'CIVIC';
