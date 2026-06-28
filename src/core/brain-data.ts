@@ -30,7 +30,7 @@ export const EDU_BANK: Bank =[
  [/b[oö]lme i[sş]lem|payla[sş]t[iı]rma|division/i,
   'one sharing tray where a stack of tokens waits above equal empty cups',
   'the token stack deals itself once around the cups in even turns, each cup filling equally, and the last token settles showing the remainder'],
- [/geometri|[uü][cç]gen|\bkare\b|daire|dikd[oö]rtgen|\ba[cç][iı]\b|\balan\b|[cç]evre [oö]l[cç]|shape|angle/i,
+ [/geometri|[uü][cç]gen|\bkare\b|daire|dikd[oö]rtgen|a[cç][iı]lar|[cç]evre [oö]l[cç]|shape|angle/i,
   'one shape-building table with edge sticks and a corner protractor token',
   'edge sticks rise and join one by one into the named shape, the angle token clicks at its corner, and the build settles rigid'],
  [/say[iı] do[gğ]rusu|\brakam|\bonluk|\bbirlik\b|basamak|ritmik say|place value/i,
