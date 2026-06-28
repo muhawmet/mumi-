@@ -143,6 +143,38 @@ The site includes seven franchise-specific world entries under the `IP_WORLD` gr
 
 **Character-free guarantee:** the `avoid` field for each world explicitly names all franchise characters, emblems, and costumes. The Render Lock describes environment only — no character is required to reconstruct the world.
 
+### New Animation Worlds (2026 Expansion)
+
+Two additional ANIMATION worlds with full Render Locks:
+
+| World | Core Identity |
+|---|---|
+| `kurzgesagt_edu` | Flat vector educational universe — dark cosmic void, warm amber insight glow, isometric/cross-section staging, Kurzgesagt-Vienna idiom |
+| `retro_anime_film` | 1970s-1980s cel animation — analog film grain, limited flat palette, hand-painted backgrounds, Akira/Nausicaa era |
+
+### New Stylized Worlds (2026 Expansion)
+
+Three additional STYLIZED worlds:
+
+| World | Core Identity |
+|---|---|
+| `whiteboard_explainer` | RSA Animate-style — white surface, black ink drawing on in real time, selective colour-marker wash, live-drawn authenticity |
+| `motion_design_flat` | Clean geometric flat design — bold color field, sans-serif grid, Buck/Tendril design-system precision, zero texture |
+| `ukiyo_e_print` | Edo-period woodblock print — flat Prussian-blue color planes, Hokusai/Hiroshige stylized nature patterns, zero Western shadow |
+
+**Total worlds: 47** (9 ANIMATION + 14 REAL + 14 STYLIZED + 7 IP_WORLD + 3 new STYLIZED).
+
+### New Tactile Materials (2026 Expansion)
+
+Four new `tactile` group materials added to the Material axis (alongside clay, paper, felt, wood, chalk, sand, glass):
+
+| ID | Clause Core |
+|---|---|
+| `watercolor` | academic watercolor — wet-on-wet bleeding edges, granulation in wash fields, white paper highlights |
+| `wax_crayon` | wax crayon — bold primary strokes, wax resist texture, child-honest color mixing |
+| `ink_brush` | East Asian ink-brush — sumi on rice paper, calligraphic weight, white breathing-space negative space |
+| `neon_tube` | neon glass tubes — colored light from within curved glass, halo glow on dark surfaces, night atmosphere |
+
 ## 8. Model Era
 
 Write for 2026 frontier models. Intent should be clear, natural, and concrete.

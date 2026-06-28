@@ -77,6 +77,22 @@ Material does not downgrade the World. Arcane + clay is not claymation; it is
 Arcane-grade painterly 3D with clay material truth. Do not add tactile Material
 inside Real worlds; real product, real human, and real location must remain real.
 
+### Tactile Materials (full list, group: tactile)
+
+| ID | Clause Core | Motion Hint |
+|---|---|---|
+| `clay` | handcrafted soft clay — rounded tactile forms, visible thumbprint, matte plasticine | wobble once and settle |
+| `paper` | layered cut-paper and origami — paper grain, crisp folds, fold-shadows | layers shift like pop-up book |
+| `felt` | needle-felted wool and stitched fabric — fuzzy fibre, visible stitches | soft fabric sway |
+| `wood` | carved and turned wood — visible grain, matte varnish, jointed mechanisms | wooden parts pivot on joints |
+| `chalk` | chalk drawing on dark board — powdery strokes, smudge highlights, hand-lettered | chalk lines draw on |
+| `sand` | sand-art on lightbox — flowing grains, soft silhouette edges, backlit warm glow | grains flow and resettle |
+| `glass` | stained-glass and blown glass — leaded colour panels, jewel tones, light refracting | light passes through, colour shifts |
+| `watercolor` | academic watercolor — wet-on-wet bleeding edges, granulation in wash fields | wash bleeds softly across paper |
+| `wax_crayon` | wax crayon — bold primary strokes, wax resist texture, child-honest color mixing | strokes build layer by layer |
+| `ink_brush` | sumi-e ink-brush — single-stroke calligraphic weight, white negative space | ink arc sweeps and settles |
+| `neon_tube` | neon glass tubes — colored light from within curved glass, halo on dark surfaces | tube flickers to life, halo blooms |
+
 ## Palette As Light
 
 The site provides palette as: `key [color], fill [color], shadow [color], accent

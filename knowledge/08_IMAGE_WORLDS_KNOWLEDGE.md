@@ -331,6 +331,88 @@ effect sequences.
 
 ---
 
+## 2026 EXPANSION WORLDS
+
+### Kurzgesagt — Flat Cosmic Explainer (`kurzgesagt_edu`)
+
+> Premium flat vector educational animation frame in the Kurzgesagt-Vienna idiom:
+> deep midnight-blue cosmic void or crisp environmental cross-section as background,
+> all subjects as clean flat geometric vector shapes with bold ink-black outlines and
+> a strictly controlled warm palette, information-as-architecture (cells, atoms,
+> cities, systems staged as readable geometric compositions), one clear concept-object
+> at the dramatic center, warm amber-orange practicals glowing from within the
+> composition, isometric or cross-section staging maximizes information density. No
+> shape gradients, no photorealism, no 3D rendering. Color script: deep midnight blue
+> (void), warm amber-gold (insight/energy), clean white (clarity), bold red-orange
+> (danger), teal (science/process). 10-second arc: cosmic or environmental context
+> breathes into view — one concept-object completes its geometric reveal — warm
+> amber-lit insight hold.
+
+---
+
+### Whiteboard Explainer — RSA Animate Style (`whiteboard_explainer`)
+
+> Premium animated whiteboard frame at RSA Animate educational fidelity: clean bright
+> white surface as world canvas, black ink lines appearing and growing to reveal
+> concepts — diagrams, flow charts, cause-effect chains — building from rough stroke
+> to settled final form in pedagogical sequence, hand-lettered key terms as structural
+> elements, selective flat marker wash on key concept objects (single hue per beat),
+> blank white breathing room as active negative space. Composition follows reading
+> direction: left-to-right reveal, one active semantic zone at a time. Warm soft key
+> light from above gives the surface gentle depth. 10-second arc: white surface
+> breathes — ink strokes build the concept diagram with deliberate pacing — settled
+> complete concept composition hold.
+
+---
+
+### Retro Anime Film — 70s-80s Cel and Grain (`retro_anime_film`)
+
+> Cinematic cel animation frame in the 1970s-1980s studio idiom: hand-inked cels over
+> fully hand-painted backgrounds with visible brush-stroke texture, limited 4-8 color
+> flat cel palette (no gradient fills — clean opaque paint washes only), heavy
+> dramatic atmosphere with analog 35mm film grain across the entire frame, aged
+> filmic color timing (pushed reds, muted blues, warm creams, oxidized highlights),
+> dynamic painterly backgrounds that dwarf the figure with gestural brush art. Visible
+> cel registration imperfection adds period authenticity. Color script: warm
+> cream-white (base fill), desaturated brick-red (dominant warm), deep navy-black
+> (shadow mass), pale amber-gold (sky and hope). 10-second arc: retro painted world
+> establishes in analog atmosphere — one deliberate cel-animation action arc completes
+> with full weight — held cinematic film-print end frame.
+
+---
+
+### Flat Motion Design — Clean Geometric (`motion_design_flat`)
+
+> Premium flat motion design frame at top-agency fidelity: bold geometric color field
+> composition with clean sans-serif typography as structural element, product or
+> concept as elegant simplified geometric object at center, strict typographic grid
+> underlying every element placement, bold two-three color palette with high-contrast
+> background (deep navy or off-white), smooth geometric shapes with precise edge
+> alignment, zero texture or photorealism. Design-system logic applied to every
+> element: spacing, scale hierarchy, and color role are functional not decorative. One
+> clear primary element, secondary elements reduced in scale. Negative space is as
+> designed as filled areas. 10-second arc: clean geometric environment assembles —
+> one concept object or product reveals with crisp motion — design-locked
+> confident hold.
+
+---
+
+### Ukiyo-e Woodblock Print (`ukiyo_e_print`)
+
+> Premium Japanese woodblock print frame at Edo master-printer fidelity: all subjects
+> rendered as flat opaque color planes with bold black woodblock contour lines — no
+> Western-style shading, no cast shadow, no atmospheric perspective. Wave forms,
+> mountains, flora, and figures stylized into decorative geometric patterns (Hokusai
+> foam spirals, Hiroshige rain lines, decorative cloud formations). Color palette
+> limited to 5-8 flat ink washes (Prussian blue, sumi black, persimmon orange, pale
+> yellow, white paper ground). Background sky shows woodblock registration grain.
+> Figures rendered with classic elongated elegant proportions. Natural elements
+> dominate compositional scale. 10-second arc: decorative Japanese world pattern
+> establishes in flat planes — one nature force or human gesture completes in
+> woodblock-graphic manner — held complete print composition.
+
+---
+
 ## EDU PATH RENDER WORLDS
 
 ### Clay Pixar Education (`clay` world)
@@ -418,6 +500,37 @@ Lock. Subject must always be original — no franchise characters.
 > realistic detailed linework with no exaggeration. Apply this grammar — do not
 > introduce AoT franchise characters, Titan creature designs, military emblems, or
 > ODM gear.
+
+---
+
+## NEW TACTILE MATERIALS (2026 Expansion)
+
+These four new materials join the original seven (clay, paper, felt, wood, chalk, sand, glass).
+
+### `watercolor` — Academic Watercolor
+> the whole scene is painted in academic watercolor — soft wet-on-wet bleeding edges,
+> granulation texture in wash fields, white paper showing through highlights, visible
+> brush direction in mid-tones, delicate layered glazes for depth.
+Motion: wash bleeds softly across wet paper, pigment granulates in shadow pools.
+
+### `wax_crayon` — Wax Crayon
+> the whole scene is drawn in wax crayon — bold primary strokes with wax texture
+> resist, deliberate hand-pressure variation across every surface, child-honest color
+> mixing where hues overlap, rough paper grain visible through wax.
+Motion: crayon strokes build color layer by layer, wax resist reveals paper grain with warmth.
+
+### `ink_brush` — Sumi-e Ink Brush
+> the whole scene is painted in East Asian ink-brush style — sumi ink on rice paper,
+> expressive single-stroke brush marks with deliberate calligraphic weight, white
+> breathing-space as active negative space, wet-brush blur at speed edges, ink
+> concentration ranging from dense black mass to pale diluted wash.
+Motion: ink brush stroke sweeps in a single arc across rice paper, settling into held completed form.
+
+### `neon_tube` — Neon Glass Tube
+> the whole scene is constructed from glowing neon glass tubes — colored neon light
+> illuminating from within curved glass with soft halo glow on surrounding dark
+> surfaces, night atmosphere, adjacent tube colors mixing in warm overlapping halo zones.
+Motion: neon tube flickers to life with brief voltage spark, halo glow blooms and settles warm.
 
 ---
 
