@@ -377,3 +377,72 @@ describe('primePacket & buildAgentBrief richness', () => {
     }
   });
 });
+
+describe('primeSuno path normalisation', () => {
+  it('FOOD path gets food-specific sensory bed, not generic fallback', () => {
+    const s = primeSuno('FOOD', 'food_macro_real');
+    expect(s).toContain('76-88 BPM');
+    expect(s).toContain('brushed kit');
+    expect(s).not.toContain('78-90 BPM, sparse warm instrumentation');
+  });
+
+  it('PRODUCT path gets minimal product bed', () => {
+    const s = primeSuno('PRODUCT', 'product_macro_tabletop');
+    expect(s).toContain('80-90 BPM');
+    expect(s).toContain('felt-piano');
+    expect(s).not.toContain('78-90 BPM, sparse warm instrumentation');
+  });
+
+  it('TOURISM path gets place-led warm score', () => {
+    const s = primeSuno('TOURISM', 'tourism_destination_real');
+    expect(s).toContain('nylon guitar');
+    expect(s).not.toContain('sparse warm instrumentation');
+  });
+
+  it('HEALTH path gets care-grade underscore', () => {
+    const s = primeSuno('HEALTH', 'healthcare_public_real');
+    expect(s).toContain('68-78 BPM');
+    expect(s).not.toContain('sparse warm instrumentation');
+  });
+
+  it('AUTO path gets kinetic premium bed', () => {
+    const s = primeSuno('AUTO', 'automotive_stage_real');
+    expect(s).toContain('sub pulse');
+    expect(s).not.toContain('sparse warm instrumentation');
+  });
+
+  it('ANIMATION_EDU path still works (regression)', () => {
+    const s = primeSuno('ANIMATION_EDU', 'anime_cel');
+    expect(s).toContain('92-100 BPM');
+    expect(s).toContain('felted celesta');
+  });
+
+  it('world-level suno override takes priority over path', () => {
+    const s = primeSuno('STYLIZED_PREMIUM', 'mappa_cinematic');
+    expect(s).toContain('60-82 BPM');
+    expect(s).toContain('Dark cinematic');
+  });
+});
+
+describe('STY_BANK \\brun\\b false-positive guard', () => {
+  it('görünür does NOT trigger chase/run concept bank', () => {
+    const src = 'Ufukta yeni topraklar görünür, gemi yelken açar';
+    const concepts = conceptRanked(src, 'STY', 'arcane', 'Intro');
+    // Should get adventure traveler concept (yelken/ufukta pattern), not kinetic silhouette
+    expect(concepts[0].subject).not.toContain('kinetic figure silhouette mid-stride');
+  });
+
+  it('adventure source (yelken/ufuk) triggers traveler concept', () => {
+    const src = 'Ufukta yeni topraklar görünür, gemi yelken açar, ekip yeni dünyayı keşfetmeye hazır';
+    const concepts = conceptRanked(src, 'STY', 'arcane', 'Intro');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('traveler');
+  });
+
+  it('genuine run/chase source still triggers kinetic concept', () => {
+    const src = 'Kahraman düşmandan kaçmak için koşuyor, chase begins';
+    const concepts = conceptRanked(src, 'STY', 'arcane', 'Climax');
+    const kinetic = concepts.find(c => c.subject.includes('kinetic figure silhouette'));
+    expect(kinetic).toBeTruthy();
+  });
+});

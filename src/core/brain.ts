@@ -377,8 +377,22 @@ export function durationGuard(scriptText: string, videoModel: string): DurationV
 
 // ---------------- Suno brief ----------------
 
+// Normalise short production-path tokens (used by the new React app) to the
+// full SUNO_MAP keys. Keeps path IDs short while suno stays path-aware.
+const SUNO_PATH_NORM: Record<string, string> = {
+  FOOD: 'FOOD_MACRO', PRODUCT: 'PRODUCT_HERO', COMMERCIAL: 'ULTRAREAL_COMMERCIAL',
+  CIVIC: 'LIVE_ACTION_CORPORATE', EVENT: 'LIVE_ACTION_CORPORATE',
+  TESTIMONIAL: 'HUMAN_TESTIMONIAL', DOCUMENTARY: 'DOCUMENTARY_REALISM',
+  FASHION: 'FASHION_EDITORIAL', TOURISM: 'TOURISM_DESTINATION',
+  AUTO: 'AUTOMOTIVE_MOBILITY', AUTOMOTIVE: 'AUTOMOTIVE_MOBILITY',
+  TECH: 'TECH_MEDICAL_PRECISION', ARCH: 'ARCHITECTURE_REAL_ESTATE',
+  ARCHITECTURE: 'ARCHITECTURE_REAL_ESTATE', SOCIAL: 'SOCIAL_REELS_REALISM',
+  HEALTH: 'HEALTH_PUBLIC_SERVICE', HISTORY: 'LIVE_ACTION_CORPORATE',
+};
+
 export function primeSuno(productionPath: string, worldId?: string): string {
-  const base = (worldId && SUNO_MAP[worldId]) || SUNO_MAP[productionPath] || 'Narration-safe instrumental bed, 78-90 BPM, sparse warm instrumentation, room air, VO pocket open.';
+  const pNorm = SUNO_PATH_NORM[T(productionPath).toUpperCase()] || productionPath;
+  const base = (worldId && SUNO_MAP[worldId]) || SUNO_MAP[pNorm] || SUNO_MAP[productionPath] || 'Narration-safe instrumental bed, 78-90 BPM, sparse warm instrumentation, room air, VO pocket open.';
   return base + ' Always: no vocals unless requested, duck under dialogue, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.';
 }
 
