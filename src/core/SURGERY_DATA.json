@@ -2511,7 +2511,7 @@
       "cat": "Stylized Premium",
       "use": "graffiti color bursts, black-red hero contrast, comic halftone, leap/fall rhythm, urban youth energy",
       "avoid": "Miles suit/logo/webs/exact face, Marvel symbols, exact shot copy",
-      "dna": "black-red silhouette pressure, graffiti cyan/pink accents, kinetic falling camera",
+      "dna": "black-red hero silhouette under pressure from below \u2014 Ben-Day halftone dots layered on urban rooftop staging, graffiti cyan and neon pink accent burst framing the lead edge, kinetic diagonal falling camera locked on the subject's silhouette mass, speed-smear impact lines radiating from the point of peak force",
       "preview": "halftone",
       "anchor": "Miles / graffiti leap"
     },
@@ -3094,6 +3094,66 @@
       "dna": "Chalk blackboard universe + anime energy lines on chalk drawings, speed lines and impact frames in chalk style, glowing chalk concept props, deep slate BG with chalk dust atmosphere",
       "preview": "lab",
       "anchor": "chalk impact frame"
+    },
+    {
+      "id": "pixar_watercolor_hybrid",
+      "name": "Pixar \u00d7 Watercolor Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Wonder-filled science, nature cycles, emotional journeys for children, biology and ecology",
+      "avoid": "Copying Pixar IP characters, photo-realistic rendering \u2014 keep painterly and warm",
+      "dna": "Pixar soft emotional key light motivating wet-on-wet watercolor wash backgrounds \u2014 visible paper grain on flat surfaces, color fields bleed warmly at edges where two washes meet, the dominant concept object rests on a patch of reserved white paper, child-wonder scale staging, diffused fill with no hard shadow edges",
+      "preview": "tactile",
+      "anchor": "watercolor wonder"
+    },
+    {
+      "id": "stopmotion_wood_hybrid",
+      "name": "Stop-Motion \u00d7 Wood Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Mechanical processes, how-things-work, construction sequences, physics and engineering for children",
+      "avoid": "Digital smooth animation feel \u2014 the handmade stutter and wood grain must be visible",
+      "dna": "Laika-grade stop-motion puppet weight built from carved and turned wood \u2014 each pivot joint clearly shows the grain and varnish catching the key light, camera close enough to see the wood texture and jointed mechanism, deliberate one-frame-at-a-time settle after each move, slight motion blur on action peak, stable final frame with the mechanism fully extended",
+      "preview": "tactile",
+      "anchor": "wood mechanism hold"
+    },
+    {
+      "id": "kurzgesagt_sand_hybrid",
+      "name": "Kurzgesagt \u00d7 Sand Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "System cycles, cosmic scale, water/food/energy cycles, abstract process explanations",
+      "avoid": "Rough or unclear sand forms \u2014 sand silhouettes must read as clean geometric Kurzgesagt shapes",
+      "dna": "Kurzgesagt flat-vector diagram logic rebuilt as backlit sand-art \u2014 warm amber lightbox glow illuminates grain silhouettes from below, sand flows and resettles as the concept transforms between states, isometric bird's-eye vantage locked overhead, smooth grain drift on the moving element only, stilled sand pool as the final stable hold",
+      "preview": "circle",
+      "anchor": "sand system reveal"
+    },
+    {
+      "id": "whiteboard_ink_hybrid",
+      "name": "Whiteboard \u00d7 Ink-Brush Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Step-by-step processes, cause-and-effect chains, how-to sequences, lesson walkthroughs",
+      "avoid": "Messy or illegible strokes \u2014 every ink line must read clearly against the white surface",
+      "dna": "RSA-Animate whiteboard draw-on grammar with East Asian sumi-e ink-brush quality \u2014 single-stroke calligraphic weight as the drawing hand traces each concept element in sequence, white negative space dominates the frame, selective accent-color marker wash floods behind the key concept node, camera wide and locked as the diagram builds from left to right across the board",
+      "preview": "graphic",
+      "anchor": "ink draw-on reveal"
+    },
+    {
+      "id": "ghibli_watercolor_hybrid",
+      "name": "Ghibli \u00d7 Watercolor Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Seasons, environment, cultural traditions, gentle emotional arcs, early childhood empathy content",
+      "avoid": "Copying Ghibli IP characters or specific Ghibli scenes",
+      "dna": "Ghibli diffused organic side-window key light applied to academic watercolor technique \u2014 wet-on-wet wash bleeding freely at sky and horizon edges, visible granulation in shadow fields, white paper highlights preserved on the primary concept subject, no hard outline on any edge, all boundaries softly bleeding into neighboring wash fields, supremely gentle temperature bias",
+      "preview": "cozy",
+      "anchor": "watercolor gentle wash"
+    },
+    {
+      "id": "anime_wax_hybrid",
+      "name": "Anime \u00d7 Wax-Crayon Hybrid",
+      "cat": "Hybrid Edu",
+      "use": "Lively and bold lesson starters, exciting discovery moments, high-energy concept introductions for children",
+      "avoid": "Too much detail \u2014 wax crayon honesty requires bold, simple forms only",
+      "dna": "Toei bold-outline anime energy expressed entirely through wax crayon drawing \u2014 bold primary wax strokes build the scene layer by layer, wax resist texture creates spontaneous grain between color areas, anime-style impact lines rendered in crayon strokes, child-honest color mixing where two primary wax layers meet at concept object edges, warm and energetic poster-primary palette",
+      "preview": "graphic",
+      "anchor": "crayon impact energy"
     },
     {
       "id": "setup_threepoint",

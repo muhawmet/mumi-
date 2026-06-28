@@ -96,6 +96,21 @@ clean window.
 - Arcane/painterly: weight, rim-light shift, painterly FX, brooding hold.
 - Anime/comic: pose clarity, impact accent, graphic smear, crisp lock.
 - Stop-motion: handmade stutter, puppet weight, tactile settle.
+- kurzgesagt_edu: isometric diagram expands from center; one connector line draws
+  across to insight node; amber glow lands and holds. Camera locked wide overhead.
+  No camera move — the diagram is the event.
+- whiteboard_explainer: one ink stroke draws forward across the board as the
+  concept traces; color marker wash floods behind the key node; camera locked wide,
+  pulls back slowly as diagram fills. Hand exits frame; hold on completed diagram.
+- retro_anime_film: cel silhouette steps forward in deliberate limited-animation
+  frames; film grain layers over the hold; static camera — the stillness and grain
+  communicate period weight. 1.5s grain-flutter hold, no new geometry.
+- motion_design_flat: bold geometric shape snaps to final grid position; secondary
+  block slides into alignment; camera locked straight-on. No ambient drift, no
+  bounce — crisp snap-and-hold. 1s hold on locked final state.
+- ukiyo_e_print: wave pattern flows in one sinusoidal pulse across the frame;
+  Prussian-blue plane darkens at crest; no camera move. The stillness after the
+  wave settles is the closing state — woodblock composition must stay flat.
 
 ## DNA Motion Directives
 

@@ -123,6 +123,11 @@ Değişmez: dünya/render · materyal · yüz/kimlik · logo/yazı/ürün geomet
 - Arcane/painterly: ağırlık, rim-ışık kayması, painterly FX, kasvetli hold
 - Anime/comic: poz netliği, etki aksanı, grafik smear, keskin kilit
 - Stop-motion: el yapımı titreme, kukla ağırlığı, dokunsal oturma
+- kurzgesagt_edu: izometrik diyagram merkezden genişler; tek bağlantı çizgisi insight düğümüne uzanır; amber ışık iner ve holdda oturur; kamera kilitli geniş tepeden — hareket diyagramın kendisidir
+- whiteboard_explainer: tek mürekkep darbesi kavram boyunca ileriye çizer; renk marker yıkaması anahtar düğümün arkasını doldurur; kamera çok yavaş geri çekilir, diyagram tamamlanınca durur; el kadrajı terk eder
+- retro_anime_film: cel silüeti bilinçli limited-animation karelerinde ilerler; film tanesi hold üzerine katmanlanır; statik kamera — durağanlık ve tane dönemi ağırlığını iletir; 1.5s tane titreme holdu
+- motion_design_flat: bold geometrik şekil son ızgara konumuna snap'ler; ikincil blok hizaya kayar; kamera düz kilitli; bounce yok — keskin snap-and-hold; 1s kilitli final holdda
+- ukiyo_e_print: dalga deseni tek sinüzoidal nabızla soldan sağa akar; Prusya mavisi düzlem zirvede koyulaşır; kamera hareketi yok — dalgadan sonraki durağanlık kapanış halidir
 
 **DNA Motion Direktifleri (siteden türetilir):**
 - kinetik/aksiyon ref → "one bolder committed camera travel — never two moves"
@@ -215,6 +220,18 @@ Rhythm: [from DNA motion directive]; settles into stable 1-1.5s final hold.
 Hold: everything not named stays exactly as the start frame shows — world, material, light, faces, text, logo, geometry. Never re-described, never re-rendered.
 NEGATIVE: morphing, warping, re-render, style/material drift, new objects or scenery, leaving the frame, face/identity change, mouth movement, logo/text/geometry change, multiple actions, flicker.
 SPLIT NOTE: [only when duration exceeds window — N shots × ~perShot s, each needs its own frame]
+
+## World-Specific Motion
+- Real: natural gesture, product contact, parallax, barely breathing camera, practical light.
+- Education tactile: mechanism opens, piece settles, light passes through layer. Child-eye vantage, slow dolly, macro creep.
+- Arcane/painterly: weight, rim-light shift, painterly FX, brooding hold.
+- Anime/comic: pose clarity, impact accent, graphic smear, crisp lock.
+- Stop-motion: handmade stutter, puppet weight, tactile settle.
+- kurzgesagt_edu: isometric diagram expands from center; connector line draws to insight node; amber glow lands and holds. Camera locked wide overhead — the diagram is the event.
+- whiteboard_explainer: one ink stroke draws forward; color marker wash floods behind key node; camera pulls back slowly as diagram fills; hand exits; hold on completed board.
+- retro_anime_film: cel silhouette steps in deliberate limited-animation frames; film grain layers over hold; static camera — stillness and grain communicate period weight; 1.5s grain-flutter hold.
+- motion_design_flat: bold shape snaps to grid position; secondary block slides into alignment; camera locked straight-on; no bounce, crisp snap-and-hold; 1s locked final state.
+- ukiyo_e_print: wave flows in one sinusoidal pulse across frame; Prussian-blue plane darkens at crest; no camera move — the stillness after the wave is the closing state.
 
 ## IP Style Motion Grammar
 When material is ip_style group, apply in the Rhythm line:

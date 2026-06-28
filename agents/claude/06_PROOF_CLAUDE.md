@@ -23,16 +23,22 @@ window table), output shape, and trigger word cleanliness.
 </proof_scope>
 
 <regression_detectors>
-The site runs five specific detectors. Apply them:
+The site runs seven specific detectors. Apply them:
 
 1. reg_real_path_contamination — FAIL if text claims realism AND has stylized
-   language (clay/pixar/diorama) in positive prompt.
+   language (clay/pixar/diorama) in positive prompt. Exception: Hybrid Path
+   (EDU path + STY world) — see GLOBAL_BRAIN §6b.
 2. reg_source_loss — FAIL if source coverage below 100%.
 3. reg_logo_morph — FIX if locked text/logo AND motion has morph/warp/deform
    WITHOUT freeze/lock protection.
 4. reg_lazy_motion — FIX if motion has lazy triggers (slow zoom, glow, cinematic)
    WITHOUT concrete physical action (hold, settle, reveal, open, spin, etc).
 5. reg_ip_reference — FAIL if positive text contains protected IP names.
+6. reg_concept_monotony — FIX if brief has more than 5 CONCEPT lines but fewer
+   than 30% unique concepts. Repair: group into thematic beats or deepen concept bank.
+7. reg_fallback_leak — FAIL if brief repeats generic fallback concept templates
+   ("sealed capsule", "working model of the core idea", "fallback concept — sharpen")
+   more than twice. Repair: expand EDU_SOURCE_BANK patterns or re-ingest source.
 </regression_detectors>
 
 <verdict_rules>
