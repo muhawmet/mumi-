@@ -174,6 +174,13 @@ const STARTER_PACKS: Record<string, string[]> = {
   aot_wall_world: ['attack_titan_scale', 'vagabond_ink_brush', 'inside_limbo_shadow'],
   naruto_shinobi_world: ['naruto_chakra_motion', 'dragon_ball_power_aura', 'anime_silhouette'],
   bleach_soul_world: ['bleach_soul_blade', 'bleach_hollow_mask_pressure', 'anime_silhouette'],
+  // New animation worlds
+  kurzgesagt_edu: ['kurzgesagt_clarity', 'nasa_vintage_poster', 'bauhaus_geometric'],
+  whiteboard_explainer: ['kurzgesagt_clarity', 'batman_timm_graphic', 'samurai_jack_minimal'],
+  retro_anime_film: ['akira_neon_impact', 'ghost_shell_cyber_melancholy', 'cowboy_bebop_noir_jazz'],
+  // New stylized worlds
+  motion_design_flat: ['bauhaus_geometric', 'constructivist_poster', 'apple_object_worship'],
+  ukiyo_e_print: ['hokusai_woodblock', 'medieval_illuminated', 'turkish_folk_iznik'],
 };
 
 function worldRegister(world: SurgeryWorld): Register {

@@ -13,14 +13,19 @@ describe('WORLD_SCENES', () => {
       'demon_slayer_taisho',
       'ghibli',
       'jjk_cursed_domain',
+      'kurzgesagt_edu',
       'mappa_cinematic',
+      'motion_design_flat',
       'naruto_shinobi_world',
       'one_piece_grand_line',
       'pixar3d',
+      'retro_anime_film',
       'solo_leveling_gate',
       'spiderverse',
       'stopmotion',
       'toei_adventure',
+      'ukiyo_e_print',
+      'whiteboard_explainer',
     ]);
   });
 

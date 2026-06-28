@@ -809,6 +809,175 @@ export const WORLD_SCENES: Record<string, SceneFn> = {
     ctx.fillRect(0, h * 0.42, w, h * 0.58);
     vignette(ctx, w, h, mix(c[3], '#ccc', 0.5), 0.35);
   },
+
+  // ── Kurzgesagt Flat Cosmic Explainer ──────────────────────────────────
+  kurzgesagt_edu: (ctx, w, h, t, c) => {
+    // deep cosmic void background
+    fillBg(ctx, w, h, '#0c1520', '#060e18');
+    // floating flat geometric shapes (info-architecture)
+    const pulse = Math.sin(t * 0.0018) * 0.12 + 0.88;
+    // teal circle (planet/cell)
+    ctx.fillStyle = rgba(mix(c[2] || '#4ecdc4', '#fff', 0.1), 0.85 * pulse);
+    ctx.beginPath(); ctx.arc(w * 0.26, h * 0.38, 18 * pulse, 0, Math.PI * 2); ctx.fill();
+    // amber triangle (insight)
+    ctx.fillStyle = rgba(c[1] || '#f5a623', 0.9 * pulse);
+    ctx.beginPath(); ctx.moveTo(w * 0.62, h * 0.18); ctx.lineTo(w * 0.76, h * 0.44); ctx.lineTo(w * 0.48, h * 0.44); ctx.closePath(); ctx.fill();
+    // amber glow — insight center
+    radialGlow(ctx, w * 0.62, h * 0.36, 40 + Math.sin(t * 0.002) * 6, c[1] || '#f5a623', 0.35);
+    // small connector dots
+    for (let i = 0; i < 5; i++) {
+      const px = w * (0.15 + i * 0.17), py = h * (0.68 + Math.sin(t * 0.001 + i) * 0.06);
+      ctx.fillStyle = rgba('#ffffff', 0.55);
+      ctx.beginPath(); ctx.arc(px, py, 3.5, 0, Math.PI * 2); ctx.fill();
+    }
+    // systemic line connecting shapes
+    ctx.strokeStyle = rgba('#ffffff', 0.18);
+    ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(w * 0.26, h * 0.38); ctx.lineTo(w * 0.62, h * 0.36); ctx.stroke();
+    vignette(ctx, w, h, '#000', 0.4);
+  },
+
+  // ── Whiteboard Explainer RSA Animate ─────────────────────────────────
+  whiteboard_explainer: (ctx, w, h, t, c) => {
+    // clean white board surface
+    ctx.fillStyle = '#f8f8f6';
+    ctx.fillRect(0, 0, w, h);
+    // subtle warm key from above
+    const grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, 'rgba(255,250,240,0.6)');
+    grad.addColorStop(1, 'rgba(245,245,235,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+    // animated ink lines drawing in
+    const progress = (Math.sin(t * 0.0008) * 0.5 + 0.5);
+    ctx.strokeStyle = '#1a1a1a';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    // arrow / flow diagram
+    const arrowX = w * 0.15 + (w * 0.55) * progress;
+    ctx.beginPath(); ctx.moveTo(w * 0.15, h * 0.42); ctx.lineTo(arrowX, h * 0.42); ctx.stroke();
+    if (progress > 0.5) {
+      ctx.beginPath(); ctx.moveTo(arrowX, h * 0.42); ctx.lineTo(arrowX - 7, h * 0.35); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(arrowX, h * 0.42); ctx.lineTo(arrowX - 7, h * 0.49); ctx.stroke();
+    }
+    // circle concept node
+    ctx.strokeStyle = c[2] || '#e85d04';
+    ctx.lineWidth = 2.5;
+    const nodeR = 18 * Math.min(progress * 2, 1);
+    ctx.beginPath(); ctx.arc(w * 0.22, h * 0.42, nodeR, 0, Math.PI * 2 * Math.min(progress * 3, 1)); ctx.stroke();
+    // color marker wash on key word
+    if (progress > 0.7) {
+      ctx.fillStyle = rgba(c[2] || '#e85d04', 0.18);
+      ctx.fillRect(w * 0.52, h * 0.3, w * 0.32, h * 0.22);
+    }
+    // hand-lettered label lines
+    ctx.fillStyle = 'rgba(30,30,30,0.7)';
+    for (let i = 0; i < 3; i++) {
+      const lw = (w * 0.22 + Math.random() * w * 0.08) * Math.min(progress * 2, 1);
+      ctx.fillRect(w * 0.58, h * (0.34 + i * 0.07), lw * 0.4, 2.5);
+    }
+  },
+
+  // ── Retro Anime Film 70s-80s Cel ─────────────────────────────────────
+  retro_anime_film: (ctx, w, h, t, c) => {
+    // warm cream sky — analog colour timing
+    fillBg(ctx, w, h, mix(c[0] || '#f5e8c8', '#ffeedd', 0.5), mix(c[2] || '#1a2040', '#000', 0.3));
+    // painterly background — distant mountain silhouette
+    ctx.fillStyle = rgba(mix(c[2] || '#1a2040', c[0] || '#f5e8c8', 0.25), 0.9);
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.58);
+    for (let x = 0; x <= w; x += 8) {
+      const y = h * (0.42 + 0.16 * Math.abs(Math.sin(x * 0.04 + 0.5)));
+      ctx.lineTo(x, y);
+    }
+    ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fill();
+    // amber sky light source
+    radialGlow(ctx, w * 0.72, h * 0.18, 55, c[3] || '#d4a030', 0.45);
+    // dramatic cel silhouette figure
+    const figX = w * 0.38, figBase = h * 0.75;
+    ctx.fillStyle = rgba('#0a0a0a', 0.92);
+    ctx.beginPath(); ctx.ellipse(figX, figBase - h * 0.26, 11, 14, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(figX - 13, figBase - h * 0.1); ctx.lineTo(figX - 8, figBase); ctx.lineTo(figX + 8, figBase); ctx.lineTo(figX + 13, figBase - h * 0.1); ctx.closePath(); ctx.fill();
+    // analog film grain overlay
+    for (let i = 0; i < 180; i++) {
+      const gx = Math.random() * w, gy = Math.random() * h;
+      ctx.fillStyle = `rgba(255,255,220,${0.03 + Math.random() * 0.05})`;
+      ctx.fillRect(gx, gy, 1, 1);
+    }
+    // color-bleed vignette (aged film)
+    vignette(ctx, w, h, mix(c[1] || '#8b2000', '#000', 0.6), 0.5);
+  },
+
+  // ── Flat Motion Design Clean Geometric ───────────────────────────────
+  motion_design_flat: (ctx, w, h, t, c) => {
+    // deep navy ground
+    ctx.fillStyle = c[0] || '#1a2640';
+    ctx.fillRect(0, 0, w, h);
+    const accent = c[1] || '#4f9cf9';
+    const slide = Math.sin(t * 0.0012) * 0.5 + 0.5;
+    // primary geometric object — rounded rect hero
+    const rx = w * (0.22 + slide * 0.06), ry = h * 0.28, rw = w * 0.4, rh = h * 0.32;
+    ctx.fillStyle = rgba(accent, 0.92);
+    ctx.beginPath();
+    ctx.roundRect?.(rx, ry, rw, rh, 8) ?? ctx.rect(rx, ry, rw, rh);
+    ctx.fill();
+    // secondary small accent block
+    ctx.fillStyle = rgba(c[3] || '#e84c3d', 0.85);
+    ctx.beginPath();
+    ctx.roundRect?.(w * 0.68, h * 0.18, w * 0.14, h * 0.12, 4) ?? ctx.rect(w * 0.68, h * 0.18, w * 0.14, h * 0.12);
+    ctx.fill();
+    // typographic lines (structural)
+    ctx.fillStyle = rgba('#f5f5f0', 0.65);
+    ctx.fillRect(w * 0.1, h * 0.7, w * 0.55 * (0.4 + slide * 0.6), 3);
+    ctx.fillStyle = rgba('#f5f5f0', 0.35);
+    ctx.fillRect(w * 0.1, h * 0.76, w * 0.38, 2);
+    ctx.fillRect(w * 0.1, h * 0.81, w * 0.28, 2);
+    // negative space breathing — grid dots
+    for (let gx = 0; gx < 4; gx++) for (let gy = 0; gy < 3; gy++) {
+      ctx.fillStyle = rgba('#fff', 0.08);
+      ctx.beginPath(); ctx.arc(w * (0.78 + gx * 0.06), h * (0.52 + gy * 0.1), 1.5, 0, Math.PI * 2); ctx.fill();
+    }
+  },
+
+  // ── Ukiyo-e Woodblock Print ───────────────────────────────────────────
+  ukiyo_e_print: (ctx, w, h, t, c) => {
+    // warm parchment paper ground
+    ctx.fillStyle = c[1] || '#f0e8c0';
+    ctx.fillRect(0, 0, w, h);
+    const prussian = c[0] || '#2b5b8a';
+    const persimmon = c[2] || '#d44020';
+    // woodblock sky — flat Prussian blue register
+    ctx.fillStyle = rgba(prussian, 0.82);
+    ctx.fillRect(0, 0, w, h * 0.38);
+    // Fuji-scale mountain (flat shape, no gradient)
+    ctx.fillStyle = rgba(mix(prussian, '#fff', 0.6), 0.9);
+    ctx.beginPath();
+    ctx.moveTo(w * 0.3, h * 0.38);
+    ctx.lineTo(w * 0.5, h * 0.08);
+    ctx.lineTo(w * 0.7, h * 0.38);
+    ctx.closePath(); ctx.fill();
+    // Hokusai-style flat wave forms (stylized spiral)
+    const wavePhase = t * 0.0006;
+    for (let wi = 0; wi < 3; wi++) {
+      const wy = h * (0.52 + wi * 0.13);
+      ctx.strokeStyle = rgba(prussian, 0.85 - wi * 0.15);
+      ctx.lineWidth = wi === 0 ? 3 : 2;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 3) {
+        const y = wy + Math.sin(x * 0.08 + wavePhase + wi * 1.2) * h * 0.055;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // flat decorative persimmon accent — stamp/cartouche
+    ctx.fillStyle = rgba(persimmon, 0.88);
+    ctx.fillRect(w * 0.78, h * 0.06, w * 0.17, h * 0.14);
+    // woodblock registration grain on sky
+    for (let i = 0; i < 60; i++) {
+      ctx.fillStyle = rgba(prussian, 0.06 + Math.random() * 0.04);
+      ctx.fillRect(Math.random() * w, Math.random() * h * 0.38, 2, 1);
+    }
+  },
 };
 export const REF_SCENES: Record<string, SceneFn> = {
 
