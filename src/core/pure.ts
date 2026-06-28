@@ -477,7 +477,7 @@ export function deriveProductionPath(projectClass: string): string {
   if (/PRODUCT|PACKSHOT|[ÜU]R[ÜU]N|LOGO/.test(v)) return 'PRODUCT_HERO';
   if (/ULTRA|REAL|COMMERCIAL|REKLAM|MARKA/.test(v)) return 'ULTRAREAL_COMMERCIAL';
   if (/TASARIM|DESIGN/.test(v)) return 'STYLIZED_PREMIUM';
-  if (/STYLIZED|ANIME|ANIMATION|MANGA|COMIC|ÇIZGI|CIZGI/.test(v)) return 'STYLIZED_PREMIUM';
+  if (/STYLIZED|ANIME|MANGA|COMIC|ÇIZGI|CIZGI/.test(v)) return 'STYLIZED_PREMIUM';
   if (/EDU|EGITIM|EĞİTİM|ÖĞRET|OGRET|LESSON|DERS/.test(v)) return 'ANIMATION_EDU';
   return 'ANIMATION_EDU';
 }
