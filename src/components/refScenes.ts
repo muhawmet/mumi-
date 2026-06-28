@@ -556,11 +556,260 @@ export const WORLD_SCENES: Record<string, SceneFn> = {
     }
     vignette(ctx, w, h, c[2], 0.3);
   },
-};
 
-/* ============================================================
-   SCENES — keyed by ref.id
-   ============================================================ */
+  /* ───────── IP_WORLD — Franchise Environment Recipes ───────── */
+
+  demon_slayer_taisho: (ctx, w, h, t, c) => {
+    // Taisho-era mountain night: indigo-black sky, amber lantern pools, teal wisteria glow
+    fillBg(ctx, w, h, mix(c[0], '#000', 0.6), mix(c[2], c[0], 0.5));
+    // cedar tree silhouettes
+    ctx.fillStyle = rgba('#000', 0.85);
+    for (let i = 0; i < 7; i++) {
+      const x = seed(i) * w;
+      const tw = 14 + seed(i + 2) * 18;
+      ctx.beginPath(); ctx.moveTo(x, h); ctx.lineTo(x - tw * 0.5, h * 0.15); ctx.lineTo(x + tw * 0.5, h * 0.15); ctx.closePath(); ctx.fill();
+      // lower trunk
+      ctx.fillRect(x - tw * 0.12, h * 0.55, tw * 0.24, h * 0.45);
+    }
+    // stone lanterns — amber warm pools
+    for (let i = 0; i < 4; i++) {
+      const lx = w * (0.12 + i * 0.24);
+      const ly = h * 0.72;
+      const flicker = 0.7 + Math.sin(t * 0.006 + i * 1.3) * 0.2;
+      radialGlow(ctx, lx, ly, 28 + seed(i) * 10, c[1], flicker * 0.55);
+      ctx.fillStyle = rgba(c[1], 0.9);
+      ctx.fillRect(lx - 4, ly - 12, 8, 14);
+      ctx.fillRect(lx - 6, ly - 14, 12, 4);
+    }
+    // wisteria cave glow — teal supernatural from below
+    radialGlow(ctx, w * 0.5, h * 0.92, w * 0.38, c[2], 0.35);
+    // phosphorescent particles drifting up
+    for (let i = 0; i < 22; i++) {
+      const px = seed(i * 3) * w;
+      const py = h - (seed(i * 3 + 1) * h + t * 0.018 * (0.5 + seed(i))) % h;
+      ctx.fillStyle = rgba(i % 3 === 0 ? c[2] : c[3], 0.55 + Math.sin(t * 0.004 + i) * 0.2);
+      ctx.beginPath(); ctx.arc(px, py, 1.4 + seed(i * 3 + 2) * 1.6, 0, Math.PI * 2); ctx.fill();
+    }
+    vignette(ctx, w, h, mix(c[0], '#000', 0.4), 0.75);
+  },
+
+  one_piece_grand_line: (ctx, w, h, t, c) => {
+    // Grand Line: cobalt ocean, gold sun, volcanic island silhouette, epic scale
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.55);
+    sky.addColorStop(0, mix(c[0], c[3], 0.55));
+    sky.addColorStop(1, mix(c[0], '#fff', 0.25));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.55);
+    // sun disc — bold gold
+    radialGlow(ctx, w * 0.72, h * 0.18, 44, c[1], 0.9);
+    ctx.fillStyle = rgba(mix(c[1], '#fff', 0.2), 0.95);
+    ctx.beginPath(); ctx.arc(w * 0.72, h * 0.18, 16, 0, Math.PI * 2); ctx.fill();
+    // sun rays — bold graphic
+    ctx.save(); ctx.translate(w * 0.72, h * 0.18);
+    for (let i = 0; i < 10; i++) {
+      const a = (i / 10) * Math.PI * 2 + t * 0.0004;
+      ctx.strokeStyle = rgba(c[1], 0.18 + seed(i) * 0.12);
+      ctx.lineWidth = 2 + seed(i + 5) * 4;
+      ctx.beginPath(); ctx.moveTo(Math.cos(a) * 20, Math.sin(a) * 20); ctx.lineTo(Math.cos(a) * (60 + seed(i + 2) * 50), Math.sin(a) * (60 + seed(i + 2) * 50)); ctx.stroke();
+    }
+    ctx.restore();
+    // ocean — saturated cobalt
+    const ocean = ctx.createLinearGradient(0, h * 0.52, 0, h);
+    ocean.addColorStop(0, mix(c[0], '#fff', 0.25)); ocean.addColorStop(1, mix(c[0], '#000', 0.3));
+    ctx.fillStyle = ocean; ctx.fillRect(0, h * 0.52, w, h * 0.48);
+    // ocean sparkle
+    for (let i = 0; i < 18; i++) { const sx = seed(i * 2) * w; const sy = h * 0.58 + seed(i * 2 + 1) * h * 0.38; const flicker = 0.2 + Math.sin(t * 0.007 + i * 0.9) * 0.15; ctx.fillStyle = rgba('#fff', flicker); ctx.fillRect(sx, sy, 2, 1); }
+    // volcanic island silhouette — dramatic
+    ctx.fillStyle = '#000';
+    ctx.beginPath(); ctx.moveTo(w * 0.08, h * 0.54); ctx.quadraticCurveTo(w * 0.18, h * 0.25, w * 0.28, h * 0.54); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(w * 0.22, h * 0.54); ctx.quadraticCurveTo(w * 0.32, h * 0.35, w * 0.42, h * 0.54); ctx.fill();
+    // tiny ship — epic scale
+    ctx.fillStyle = rgba(mix(c[2], '#000', 0.3), 0.9);
+    ctx.fillRect(w * 0.6, h * 0.56, 18, 6);
+    ctx.beginPath(); ctx.moveTo(w * 0.66, h * 0.56); ctx.lineTo(w * 0.66, h * 0.48); ctx.lineTo(w * 0.72, h * 0.56); ctx.fill();
+    vignette(ctx, w, h, c[0], 0.38);
+  },
+
+  solo_leveling_gate: (ctx, w, h, t, c) => {
+    // Modern city with Gate portal: deep purple-black, violet rift, shadow realm atmosphere
+    fillBg(ctx, w, h, mix(c[0], '#000', 0.7), mix(c[2], '#000', 0.5));
+    // city building silhouettes
+    ctx.fillStyle = rgba(mix(c[2], '#000', 0.6), 0.8);
+    for (let i = 0; i < 8; i++) {
+      const bw = 20 + seed(i) * 35; const bh = h * (0.25 + seed(i + 3) * 0.4);
+      ctx.fillRect(seed(i + 1) * w * 0.9, h - bh, bw, bh);
+    }
+    // Gate portal — oval violet rift
+    const gx = w * 0.5, gy = h * 0.42;
+    const pulse = Math.sin(t * 0.003) * 0.15 + 0.85;
+    ctx.save();
+    // outer glow
+    for (let r = 3; r >= 1; r--) {
+      ctx.strokeStyle = rgba(c[1], 0.15 * r * pulse);
+      ctx.lineWidth = r * 6;
+      ctx.beginPath(); ctx.ellipse(gx, gy, 48 + r * 8, 64 + r * 10, 0, 0, Math.PI * 2); ctx.stroke();
+    }
+    // Gate edge
+    ctx.strokeStyle = rgba(c[1], 0.9 * pulse);
+    ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.ellipse(gx, gy, 48, 64, 0, 0, Math.PI * 2); ctx.stroke();
+    // Gate interior — deep void
+    ctx.fillStyle = rgba('#000', 0.85);
+    ctx.beginPath(); ctx.ellipse(gx, gy, 44, 60, 0, 0, Math.PI * 2); ctx.fill();
+    // mana energy particles from gate
+    for (let i = 0; i < 28; i++) {
+      const a = (i / 28) * Math.PI * 2 + t * 0.0015;
+      const d = 40 + Math.sin(t * 0.005 + i) * 15;
+      const px = gx + Math.cos(a) * d, py = gy + Math.sin(a) * d * 1.3;
+      ctx.fillStyle = rgba(i % 4 === 0 ? c[1] : c[3], 0.4 + Math.sin(t * 0.008 + i) * 0.25);
+      ctx.beginPath(); ctx.arc(px, py, 1.5, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+    // ground dark fog
+    radialGlow(ctx, w * 0.5, h, w * 0.6, c[1], 0.18);
+    vignette(ctx, w, h, '#000', 0.8);
+  },
+
+  jjk_cursed_domain: (ctx, w, h, t, c) => {
+    // Contemporary Japan invaded by cursed energy: void black, purple tendrils, sickly green
+    fillBg(ctx, w, h, mix(c[0], c[1], 0.06), '#000');
+    // urban geometry suggestion
+    ctx.strokeStyle = rgba(mix(c[2], c[1], 0.3), 0.15);
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 5; i++) { const x = w * (0.1 + i * 0.18); ctx.beginPath(); ctx.moveTo(x, h); ctx.lineTo(x, h * 0.3 + seed(i) * h * 0.2); ctx.stroke(); }
+    ctx.strokeStyle = rgba(mix(c[2], c[1], 0.3), 0.1);
+    for (let j = 0; j < 4; j++) { const y = h * (0.35 + j * 0.15); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+    // cursed energy tendrils from edges
+    ctx.save(); ctx.globalCompositeOperation = 'screen';
+    for (let i = 0; i < 5; i++) {
+      const sx = seed(i * 4) * w, sy = i < 2 ? 0 : (i < 4 ? h : seed(i) * h);
+      ctx.strokeStyle = rgba(i % 2 === 0 ? c[1] : c[3], 0.3 + Math.sin(t * 0.003 + i) * 0.12);
+      ctx.lineWidth = 2 + seed(i + 2) * 4;
+      ctx.beginPath(); ctx.moveTo(sx, sy);
+      const cp1x = sx + (w * 0.5 - sx) * 0.3 + Math.sin(t * 0.002 + i) * 30;
+      const cp1y = sy + (h * 0.5 - sy) * 0.3;
+      ctx.quadraticCurveTo(cp1x, cp1y, w * 0.35 + seed(i * 5) * w * 0.3, h * 0.3 + seed(i * 5 + 1) * h * 0.4);
+      ctx.stroke();
+    }
+    ctx.restore();
+    // domain core — Hollow Purple energy
+    radialGlow(ctx, w * 0.5, h * 0.4, 55 + Math.sin(t * 0.004) * 8, c[1], 0.45);
+    ctx.fillStyle = rgba(mix(c[1], '#fff', 0.6), 0.08 + Math.sin(t * 0.005) * 0.04);
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.4, 20, 0, Math.PI * 2); ctx.fill();
+    // sickly green curse aura corners
+    for (const [cx2, cy2] of [[0, 0], [w, 0], [0, h], [w, h]]) {
+      radialGlow(ctx, cx2, cy2, 60, c[3], 0.12 + Math.sin(t * 0.003) * 0.06);
+    }
+    vignette(ctx, w, h, '#000', 0.9);
+  },
+
+  aot_wall_world: (ctx, w, h, t, c) => {
+    // 50-meter stone wall, grey military sky, scale-dread composition
+    // desaturated grey sky
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.4);
+    sky.addColorStop(0, mix(c[0], '#aaaaaa', 0.6)); sky.addColorStop(1, mix(c[1], '#888', 0.5));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.4);
+    // wall face — dominating vertical stone mass
+    ctx.fillStyle = ctx.createLinearGradient(0, h * 0.38, 0, h * 0.95) as unknown as string;
+    const wallGrad = ctx.createLinearGradient(0, h * 0.38, 0, h * 0.95);
+    wallGrad.addColorStop(0, mix(c[1], '#fff', 0.15)); wallGrad.addColorStop(1, mix(c[1], '#000', 0.25));
+    ctx.fillStyle = wallGrad; ctx.fillRect(0, h * 0.38, w, h * 0.57);
+    // stone texture — horizontal courses
+    ctx.strokeStyle = rgba(mix(c[3], '#000', 0.5), 0.22);
+    ctx.lineWidth = 0.8;
+    for (let y = h * 0.42; y < h * 0.95; y += h * 0.035) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+    // vertical joints — offset alternating rows
+    for (let row = 0; row < 16; row++) {
+      const y = h * 0.42 + row * h * 0.035;
+      const offset = row % 2 === 0 ? 0 : 0.12;
+      for (let x = offset * w; x < w; x += w * 0.24) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + h * 0.035); ctx.stroke(); }
+    }
+    // wall top edge + tiny patrol figure
+    ctx.fillStyle = mix(c[1], '#000', 0.3); ctx.fillRect(0, h * 0.37, w, h * 0.025);
+    // tiny figure — scale reference (human = 1/50 of wall)
+    const figX = w * 0.55, figY = h * 0.375;
+    ctx.fillStyle = rgba(mix(c[3], '#000', 0.7), 0.95);
+    ctx.fillRect(figX - 1, figY, 2, 7);
+    ctx.beginPath(); ctx.arc(figX, figY - 2, 2, 0, Math.PI * 2); ctx.fill();
+    // meadow strip at bottom
+    const meadow = ctx.createLinearGradient(0, h * 0.92, 0, h);
+    meadow.addColorStop(0, mix(c[0], '#5a6840', 0.5)); meadow.addColorStop(1, c[3]);
+    ctx.fillStyle = meadow; ctx.fillRect(0, h * 0.92, w, h * 0.08);
+    // overcast atmosphere
+    ctx.fillStyle = rgba(mix(c[1], '#ccc', 0.4), 0.07 + Math.sin(t * 0.0012) * 0.03);
+    ctx.fillRect(0, 0, w, h * 0.5);
+    vignette(ctx, w, h, mix(c[3], '#000', 0.5), 0.55);
+  },
+
+  naruto_shinobi_world: (ctx, w, h, t, c) => {
+    // Hidden Leaf: red-clay rooftops, mountain valley, golden-hour warmth, chakra arc
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.42);
+    sky.addColorStop(0, mix(c[3], '#88aacc', 0.5)); sky.addColorStop(1, mix(c[0], c[3], 0.4));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.42);
+    // mountain silhouette
+    ctx.fillStyle = mix(c[1], '#000', 0.55);
+    ctx.beginPath(); ctx.moveTo(0, h * 0.42); ctx.lineTo(w * 0.15, h * 0.15); ctx.lineTo(w * 0.3, h * 0.28); ctx.lineTo(w * 0.5, h * 0.1); ctx.lineTo(w * 0.72, h * 0.22); ctx.lineTo(w * 0.88, h * 0.18); ctx.lineTo(w, h * 0.3); ctx.lineTo(w, h * 0.42); ctx.closePath(); ctx.fill();
+    // carved monument face on cliff
+    ctx.strokeStyle = rgba(mix(c[0], c[1], 0.3), 0.15); ctx.lineWidth = 3;
+    for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.arc(w * (0.32 + i * 0.1), h * 0.3, 8, 0, Math.PI); ctx.stroke(); }
+    // layered rooftops — red-clay tile
+    for (let row = 0; row < 4; row++) {
+      const y = h * (0.5 + row * 0.1); const roofColor = mix(c[2], c[0], 0.4 + row * 0.1);
+      ctx.fillStyle = rgba(roofColor, 0.95);
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w * 0.15, y - h * 0.06); ctx.lineTo(w * 0.3, y); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(w * 0.22, y); ctx.lineTo(w * 0.42, y - h * 0.07); ctx.lineTo(w * 0.6, y); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(w * 0.5, y); ctx.lineTo(w * 0.72, y - h * 0.06); ctx.lineTo(w, y); ctx.fill();
+    }
+    // golden afternoon warmth wash
+    radialGlow(ctx, w * 0.75, h * 0.15, w * 0.45, c[0], 0.22);
+    // chakra arc — circular warm-to-blue trace
+    const arcPhase = (t * 0.002) % (Math.PI * 2);
+    ctx.strokeStyle = rgba(c[0], 0.55); ctx.lineWidth = 2.5; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.38, 28, arcPhase, arcPhase + Math.PI * 1.3); ctx.stroke();
+    ctx.strokeStyle = rgba(c[3], 0.4); ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.38, 20, arcPhase + Math.PI, arcPhase + Math.PI * 1.8); ctx.stroke();
+    vignette(ctx, w, h, mix(c[1], '#000', 0.3), 0.45);
+  },
+
+  bleach_soul_world: (ctx, w, h, t, c) => {
+    // Soul Society: white-stone architecture, ink-black contrast, soul orange energy
+    // bright open sky — spiritual plane
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.45);
+    sky.addColorStop(0, mix(c[3], c[1], 0.2)); sky.addColorStop(1, mix(c[3], '#dde8ff', 0.4));
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.45);
+    // Seireitei white-stone walls
+    const wallColor = mix(c[1], '#fff', 0.15);
+    ctx.fillStyle = rgba(wallColor, 0.95); ctx.fillRect(0, h * 0.42, w, h * 0.58);
+    // stone course lines
+    ctx.strokeStyle = rgba(mix(c[1], '#888', 0.6), 0.2); ctx.lineWidth = 0.7;
+    for (let y = h * 0.46; y < h; y += h * 0.04) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+    // pagoda towers — tiered
+    const drawPagoda = (px: number, baseY: number, floors: number, scale: number) => {
+      for (let f = 0; f < floors; f++) {
+        const fy = baseY - f * h * 0.12 * scale;
+        const fw = (floors - f) * 18 * scale;
+        ctx.fillStyle = rgba(mix(c[0], '#000', 0.4), 0.9);
+        ctx.fillRect(px - fw, fy, fw * 2, h * 0.1 * scale);
+        ctx.fillStyle = rgba(mix(c[0], '#000', 0.55), 0.95);
+        ctx.beginPath(); ctx.moveTo(px - fw * 1.2, fy); ctx.lineTo(px, fy - h * 0.06 * scale); ctx.lineTo(px + fw * 1.2, fy); ctx.fill();
+      }
+    };
+    drawPagoda(w * 0.22, h * 0.44, 3, 0.8);
+    drawPagoda(w * 0.65, h * 0.42, 4, 1.0);
+    drawPagoda(w * 0.85, h * 0.46, 2, 0.6);
+    // Shinigami robe shadow — ink-black silhouette
+    const sway = Math.sin(t * 0.0015) * 2.5;
+    ctx.fillStyle = rgba(c[0], 0.95);
+    ctx.beginPath();
+    ctx.ellipse(w * 0.42 + sway, h * 0.32, 9, 12, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(w * 0.34 + sway, h * 0.42); ctx.lineTo(w * 0.44 + sway, h * 0.68); ctx.lineTo(w * 0.52 + sway, h * 0.68); ctx.lineTo(w * 0.5 + sway, h * 0.42); ctx.fill();
+    // soul orange spiritual energy
+    radialGlow(ctx, w * 0.5, h * 0.5, 50 + Math.sin(t * 0.003) * 8, c[2], 0.28);
+    // spiritual pressure shimmer on white stone
+    ctx.fillStyle = rgba(c[2], 0.06 + Math.sin(t * 0.004) * 0.03);
+    ctx.fillRect(0, h * 0.42, w, h * 0.58);
+    vignette(ctx, w, h, mix(c[3], '#ccc', 0.5), 0.35);
+  },
+};
 export const REF_SCENES: Record<string, SceneFn> = {
 
   /* ───────── 3D Animation ───────── */

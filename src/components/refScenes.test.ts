@@ -3,14 +3,21 @@ import { DATA } from '../core/pure';
 import { hasRefScene, hasWorldScene, REF_SCENES, WORLD_SCENES } from './refScenes';
 
 describe('WORLD_SCENES', () => {
-  it('covers every premium animation world with a dedicated scene', () => {
+  it('covers every premium animation world + IP_WORLD entries with a dedicated scene', () => {
     expect(Object.keys(WORLD_SCENES).sort()).toEqual([
       'anime_cel',
+      'aot_wall_world',
       'arcane',
+      'bleach_soul_world',
       'bones_action',
+      'demon_slayer_taisho',
       'ghibli',
+      'jjk_cursed_domain',
       'mappa_cinematic',
+      'naruto_shinobi_world',
+      'one_piece_grand_line',
       'pixar3d',
+      'solo_leveling_gate',
       'spiderverse',
       'stopmotion',
       'toei_adventure',
