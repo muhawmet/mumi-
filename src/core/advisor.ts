@@ -166,6 +166,14 @@ const STARTER_PACKS: Record<string, string[]> = {
   healthcare_public_real: ['setup_window', 'civic_doc', 'cinedna_overcast'],
   real_event_coverage: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'],
   product_macro_tabletop: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'],
+  // IP_WORLD group — curated ref pack per franchise world
+  demon_slayer_taisho: ['demon_slayer_breath', 'demon_slayer_dna', 'makoto_shinkai_sky_light'],
+  one_piece_grand_line: ['one_piece_sunny_adventure', 'onepiece_grandline_scale', 'anime_silhouette'],
+  solo_leveling_gate: ['solo_leveling_rank_shadow', 'jujutsu_dark_ritual', 'inside_limbo_shadow'],
+  jjk_cursed_domain: ['jujutsu_dark_ritual', 'solo_leveling_rank_shadow', 'demon_slayer_breath'],
+  aot_wall_world: ['attack_titan_scale', 'vagabond_ink_brush', 'inside_limbo_shadow'],
+  naruto_shinobi_world: ['naruto_chakra_motion', 'dragon_ball_power_aura', 'anime_silhouette'],
+  bleach_soul_world: ['bleach_soul_blade', 'bleach_hollow_mask_pressure', 'anime_silhouette'],
 };
 
 function worldRegister(world: SurgeryWorld): Register {

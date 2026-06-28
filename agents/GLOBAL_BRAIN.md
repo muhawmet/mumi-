@@ -127,6 +127,22 @@ The site may append a material clause: `Material: [name] The style above renders
 this material — do not flatten the render world.` This clause is part of the
 lock.
 
+### IP World Group (group: IP_WORLD)
+
+The site includes seven franchise-specific world entries under the `IP_WORLD` group. Each contains a 1200-1400 character Render Lock describing the **world environment** of that franchise without any named character — the lock encodes time period, location types, color script, atmospheric conditions, rendering technique, and motion arc.
+
+| World | Core Environment |
+|---|---|
+| `demon_slayer_taisho` | Taisho-era Japan mountain wilderness, cedar forests, stone lanterns, ufotable 3D-composite technique |
+| `one_piece_grand_line` | Grand Line ocean and island archipelago, Toei bold saturated palette, epic scale |
+| `solo_leveling_gate` | Modern Korean city + Gate portals, dungeon interiors, purple-black shadow void |
+| `jjk_cursed_domain` | Contemporary Japan invaded by cursed energy, MAPPA dark cinematic, domain expansion |
+| `aot_wall_world` | 50-meter stone walls, grey desaturated military atmosphere, scale-dread compositions |
+| `naruto_shinobi_world` | Hidden Leaf Village, training grounds, chakra energy arcs, Pierrot bold color |
+| `bleach_soul_world` | Soul Society white-stone architecture, Shinigami civilization, ink-black/white contrast |
+
+**Character-free guarantee:** the `avoid` field for each world explicitly names all franchise characters, emblems, and costumes. The Render Lock describes environment only — no character is required to reconstruct the world.
+
 ## 8. Model Era
 
 Write for 2026 frontier models. Intent should be clear, natural, and concrete.

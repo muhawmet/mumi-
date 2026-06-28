@@ -117,6 +117,35 @@ The site may generate light variants for batch variety:
 - Variant 2: motivate the key from the opposite side, let the shadow mass lead
   the composition
 
+## IP World Recipes (group: IP_WORLD)
+
+These seven worlds are franchise-specific environment recipes. Each has a 1200-1400 character Render Lock describing the **world**, not its characters. Use the lock verbatim; the world is fully reconstructible from it without any IP character.
+
+| World ID | Name | Core Environment | Color Script | Avoid |
+|---|---|---|---|---|
+| `demon_slayer_taisho` | Demon Slayer — Taisho Dark Fantasy | Taisho-era Japan mountain wilderness, cedar forests, stone lanterns, demon-realm wisteria caves | Indigo-black sky · amber lantern · teal demon energy · cherry pink dawn | Tanjiro/Nezuko/Hashira likenesses; haori patterns; sword designs; Corps emblems |
+| `one_piece_grand_line` | One Piece — Grand Line Adventure | Vast tropical ocean, volcanic island archipelago, sky islands, underwater palaces | Saturated cobalt ocean · gold sun · tropical jade · bold primaries | Luffy/crew likenesses; Straw Hat; Jolly Roger; Thousand Sunny |
+| `solo_leveling_gate` | Solo Leveling — Gate Hunter World | Modern Korean city + Gate portals, dungeon stone corridors, shadow realm void | Purple-black shadow · electric indigo aura · blood-red gate core · cold steel grey | Sung Jinwoo; shadow soldier designs; mana UI screens |
+| `jjk_cursed_domain` | JJK — Cursed Domain World | Contemporary Japan invaded by cursed energy, domain expansion distortion, Hollow Purple environment | Void black · cursed purple · blue positive energy · sickly green curse | Gojo (blindfold/white hair); Yuji/Megumi/Sukuna likenesses; Jujutsu High uniforms |
+| `aot_wall_world` | AoT — Wall Civilization World | 50-meter stone walls, grey sky, rolling meadow to treeline, cramped Wall Rose streets | Dusty grey-green · stone grey · ochre earth · selective blood-red accent | Titan designs; Eren/Mikasa/Levi likenesses; Survey Corps emblems; ODM gear |
+| `naruto_shinobi_world` | Naruto — Shinobi Era World | Hidden Leaf Village, stone training grounds, dense bamboo forest, mountain pass | Orange-gold warmth · deep forest green · dusty red effort · sky blue hope | Naruto/Sasuke/Kakashi likenesses; headband symbols; jutsu signs; Akatsuki cloak |
+| `bleach_soul_world` | Bleach — Soul Society World | Seireitei white-stone architecture, Rukongai alleys, spiritual pressure void | Ink-black mass · stark white architecture · soul orange-amber energy | Ichigo/Rukia/Aizen likenesses; specific Zanpakutō designs; division crests; Hollow masks |
+
+### How IP World Recipes Work
+
+The Render Lock for each IP world carries:
+1. **Environment layers** — specific named locations and their spatial character
+2. **Color script** — named roles (sky, light source, energy, accent) not hex fills
+3. **Rendering technique** — which studio's approach (ufotable, MAPPA, Toei, WIT/MAPPA)
+4. **10-second motion arc** — environment breathes → one event traces → atmospheric hold
+
+When a user selects `demon_slayer_taisho` + `demon_slayer_breath` ref:
+- RENDER LOCK = full Taisho world recipe → the world is reproducible from this alone
+- DNA DIRECTIVES = breath pattern camera/light/staging grammar
+- Combined brief = world environment + technique grammar = character-free franchise world
+
+The character-free guarantee lives in `avoid`: every world entry explicitly names the IP characters and emblems that must not appear.
+
 ## Failure Patterns
 
 - shortened or paraphrased Render Lock
