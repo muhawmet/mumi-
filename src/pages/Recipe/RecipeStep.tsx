@@ -770,26 +770,36 @@ export const RecipeStep = () => {
           </div>
         ) : (
           <>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {DATA.materials.map((m) => {
-                const active = selectedPropId === m.id || (m.id === 'none' && (selectedPropId === 'native_world' || !selectedPropId));
-                return (
-                  <button
-                    key={m.id}
-                    onClick={() => setField('selectedPropId', m.id)}
-                    style={{
-                      padding: '9px 14px', borderRadius: 'var(--r-pill)', cursor: 'pointer', fontSize: 12.5, fontWeight: 700,
-                      border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                      background: active ? 'var(--goldsoft)' : 'var(--inset)',
-                      color: active ? 'var(--gold)' : 'var(--text-soft)',
-                      transition: 'all var(--dur) var(--ease)',
-                    }}
-                  >
-                    {m.name}
-                  </button>
-                );
-              })}
-            </div>
+            {(['tactile', 'ip_style'] as const).map((grp) => {
+              const grpMaterials = DATA.materials.filter((m) => (m as { group?: string }).group === grp || (!( m as { group?: string }).group && grp === 'tactile'));
+              const label = grp === 'tactile' ? 'Malzeme / Doku' : 'IP Çizim Stili';
+              return (
+                <div key={grp} style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--text-muted)', fontWeight: 700, marginBottom: 7 }}>{label}</div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    {grpMaterials.map((m) => {
+                      const active = selectedPropId === m.id || (m.id === 'none' && (selectedPropId === 'native_world' || !selectedPropId));
+                      return (
+                        <button
+                          key={m.id}
+                          onClick={() => setField('selectedPropId', m.id)}
+                          style={{
+                            padding: '9px 14px', borderRadius: 'var(--r-pill)', cursor: 'pointer', fontSize: 12.5, fontWeight: 700,
+                            border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
+                            background: active ? 'var(--goldsoft)' : 'var(--inset)',
+                            color: active ? 'var(--gold)' : 'var(--text-soft)',
+                            transition: 'all var(--dur) var(--ease)',
+                          }}
+                        >
+                          {m.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+
             {(() => {
               const m = DATA.materials.find((x) => x.id === selectedPropId);
               if (!m || !m.clause) return (

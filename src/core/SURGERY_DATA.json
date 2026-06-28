@@ -1357,49 +1357,113 @@
       "id": "none",
       "name": "Saf Stil (malzeme yok)",
       "clause": "",
-      "motion": ""
+      "motion": "",
+      "group": "tactile"
     },
     {
       "id": "clay",
       "name": "Clay / Hamur",
       "clause": "the whole scene is built from handcrafted soft clay — rounded tactile forms, visible thumbprint texture, matte plasticine surface.",
-      "motion": "clay surfaces wobble once and settle"
+      "motion": "clay surfaces wobble once and settle",
+      "group": "tactile"
     },
     {
       "id": "paper",
       "name": "Kâğıt / Origami",
       "clause": "the whole scene is layered cut-paper and origami craft — visible paper grain, crisp folds, soft fold-shadows, papercraft diorama depth.",
-      "motion": "paper layers shift like a pop-up book"
+      "motion": "paper layers shift like a pop-up book",
+      "group": "tactile"
     },
     {
       "id": "felt",
       "name": "Keçe / Kumaş",
       "clause": "the whole scene is needle-felted wool and stitched fabric — fuzzy fibre texture, visible stitches, soft handmade plushness.",
-      "motion": "soft fabric sway, gentle settle"
+      "motion": "soft fabric sway, gentle settle",
+      "group": "tactile"
     },
     {
       "id": "wood",
       "name": "Ahşap",
       "clause": "the whole scene is carved and turned wood — visible grain, matte varnish, jointed wooden mechanisms.",
-      "motion": "wooden parts pivot on visible joints"
+      "motion": "wooden parts pivot on visible joints",
+      "group": "tactile"
     },
     {
       "id": "chalk",
       "name": "Tebeşir / Karatahta",
       "clause": "the whole scene is chalk drawing on a dark board — powdery chalk strokes, smudge highlights, hand-lettered labels.",
-      "motion": "chalk lines draw on then hold"
+      "motion": "chalk lines draw on then hold",
+      "group": "tactile"
     },
     {
       "id": "sand",
       "name": "Kum",
       "clause": "the whole scene is sand-art on a lightbox — flowing grains, soft silhouette edges, backlit warm glow.",
-      "motion": "grains flow and resettle into shape"
+      "motion": "grains flow and resettle into shape",
+      "group": "tactile"
     },
     {
       "id": "glass",
       "name": "Vitray / Cam",
       "clause": "the whole scene is stained-glass and blown glass — leaded colour panels, light refracting through translucent material, jewel tones.",
-      "motion": "light passes through glass, colour shifts"
+      "motion": "light passes through glass, colour shifts",
+      "group": "tactile"
+    },
+    {
+      "id": "one_piece",
+      "name": "One Piece Çizim Stili",
+      "clause": "drawn in Toei Animation One Piece visual grammar — bold clean ink outlines with dynamic line-weight variation on every edge, maximum-saturation color palette across all hues (ocean cobalt, tropical jade, gold sun, bold primaries), highly exaggerated proportions and elastic anatomy throughout, graphic readable silhouettes against open sky or sea, adventure-scale composition with tiny figure against vast environment. Apply this visual grammar to the described concept — do not introduce franchise characters or Straw Hat iconography.",
+      "motion": "exaggerated elastic anticipation, bold action timing, wide triumphant hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "naruto",
+      "name": "Naruto Çizim Stili",
+      "clause": "drawn in Pierrot Animation Naruto visual grammar — bold clean ink outlines with consistent line weight, vibrant flat cel colors with simple 2-tone cel shading (bright day light, one clean shadow plane), chakra/energy paths rendered as glowing circular orange-blue arcs with dust-trail particles, strong dynamic action poses with visible speed lines, warm determination palette (orange-gold effort, deep forest green, sky blue resolve, dusty earth). Apply this visual grammar to the described concept — do not introduce Naruto franchise characters, headband symbols, or Hidden Village emblems.",
+      "motion": "chakra arc traces circular path, dust trail on movement, warm determined hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "demon_slayer",
+      "name": "Demon Slayer / Ufotable Stili",
+      "clause": "drawn in ufotable Demon Slayer visual grammar — crisp precise cel linework with luminous hand-painted 3D-composite backgrounds, high-contrast dramatic rim lighting isolating subject from deep atmospheric shadow, elemental energy rendered as flowing ribbon arcs with trailing particles (water arcs, flame ribbons, wind ribbons — color and motion determined by concept, not IP), volumetric particle dust through environment, supernatural energy bloom at technique peaks. Apply this visual grammar to the described concept — do not introduce Demon Slayer franchise characters, haori patterns, or Corps emblems.",
+      "motion": "elemental ribbon arc traces through dark, atmospheric particle drift, dramatic contrast hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "solo_leveling",
+      "name": "Solo Leveling Manhwa Stili",
+      "clause": "drawn in Solo Leveling manhwa-adaptation anime visual grammar — clean high-fidelity linework with dramatic dark-field compositions, deep purple-black atmospheric void as negative space, rank or power hierarchy visualized as visible aura pressure distorting the air around a subject, low heroic camera angles, spectral particle uplift from ground level, cold steel-grey and electric indigo color contrast. Apply this visual grammar to the described concept — do not introduce Solo Leveling franchise characters, shadow soldier designs, or mana UI screens.",
+      "motion": "power aura rises from ground, atmospheric pressure particle lift, rank-presence hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "arcane_paint",
+      "name": "Arcane Painterly Stili",
+      "clause": "drawn in Fortiche Arcane painterly animation visual grammar — hand-painted texture maps with visible oil-paint and brush-stroke albedo on every surface, 2D animated smoke and energy FX composited over 3D-painted subjects, heavy shadow mass with single warm ember accent from one directional light, mature industrial-fantasy color palette (teal-blue atmospheric haze, warm amber ember practicals, deep shadow masses, NO clean surfaces). Apply this visual grammar to the described concept — do not introduce League of Legends champions, specific costumes, or Piltover/Zaun locations.",
+      "motion": "deliberate weighted movement, painterly FX flourish, ember-lit brooding hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "jjk_mappa",
+      "name": "JJK / MAPPA Dark Stili",
+      "clause": "drawn in MAPPA Jujutsu Kaisen visual grammar — high-detail fluid linework with contemporary urban texture, cursed energy rendered as black-purple atmospheric mass with spectral edges bleeding into air, kinetic action with motion smear at peak force, dark void negative space contrasting with high-intensity energy flash (white inverse, vivid blue, sickly green), mature cinematic composition with heavy atmospheric ground. Apply this visual grammar to the described concept — do not introduce JJK franchise characters, specific technique geometries, or Jujutsu High uniforms.",
+      "motion": "energy detonation with smear peak, cursed atmospheric drift, cinematic dark hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "dragon_ball",
+      "name": "Dragon Ball Z Stili",
+      "clause": "drawn in Toei Animation Dragon Ball Z visual grammar — bold expressive ink outlines with powerful line weight variation, iconic power-level aura rendered as vibrating energy field with radiating lines and sparks around subject, extreme muscle tension and explosive action poses, highly saturated bright color palette (golden Saiyan aura, sky-blue ki energy, bold primary hero colors), speed lines and energy impact marks. Apply this visual grammar to the described concept — do not introduce Dragon Ball franchise characters, Saiyan transformations, or energy attack designs.",
+      "motion": "power aura charges and expands, ki energy radiates outward, supreme power hold",
+      "group": "ip_style"
+    },
+    {
+      "id": "attack_titan",
+      "name": "Attack on Titan Stili",
+      "clause": "drawn in WIT/MAPPA Attack on Titan visual grammar — cinematic desaturated color palette (dusty military greens, stone grey, ochre earth — never bright or saturated), extreme scale contrast compositions (small figure against enormous architectural or natural scale), heavy military atmosphere with survival-tension staging, realistic detailed ink linework with no exaggeration, grey overcast sky as constant atmospheric presence. Apply this visual grammar to the described concept — do not introduce AoT franchise characters, Titan creature designs, military emblems, or ODM gear.",
+      "motion": "slow atmospheric establish, scale reveal, tension hold with wind and grass",
+      "group": "ip_style"
     }
   ],
   "refs": [
