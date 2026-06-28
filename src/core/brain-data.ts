@@ -198,7 +198,7 @@ export const STY_BANK: Bank =[
  [/kader|alın yazısı|destiny|fate.*seal|yazgı|chosen/i,
   'the original figure beneath or before a vast symbol of inevitability — scale contrast extreme, the fate element larger than the human',
   'the fate element shifts one degree toward the figure, its shadow passing across them and revealing the face as they meet it, the frame settling on the accepted weight'],
- [/g[uü][cç]len|g[uü][cç] kazan|power.*surge|enerji patlamas[iı]|aura.*rise|power.*level/i,
+ [/g[uü][cç]len|g[uü][cç] kazan|g[uü][cç] y[uü]ksel|power.*surge|enerji patlamas[iı]|aura.*rise|power.*level|y[uü]ksel|awakening|ascent|gate.*open|kap[iı].*a[cç]/i,
   'the original figure at the center of a power expansion — energy geometry radiating outward from their core in controlled arcs',
   'the energy arcs extend one beat outward then pull tight to the figure edge, the ambient light dropping as the figure own light claims the frame, settling at full radiating power'],
  [/son.*kez|son.*d[oö]v[uü][sş]|last.*fight|final.*battle|veda.*kahraman/i,

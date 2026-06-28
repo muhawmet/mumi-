@@ -446,3 +446,82 @@ describe('STY_BANK \\brun\\b false-positive guard', () => {
     expect(kinetic).toBeTruthy();
   });
 });
+
+describe('EDU_BANK new entries (2026-06-28)', () => {
+  const edu = (src: string) => conceptRanked(src, 'EDU', 'ghibli_soft', 'Build-up');
+
+  it('kalp/heart matches cutaway heart model', () => {
+    const concepts = edu('İnsan kalbi sağ ve sol karıncıklar kanı pompalar');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('heart model');
+  });
+
+  it('sinir sistemi/beyin matches neuron pathway model', () => {
+    const concepts = edu('Sinir sistemi ve beyin nöron ağı nasıl çalışır');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('neuron');
+  });
+
+  it('ışık/kırılma matches optics rig', () => {
+    const concepts = edu('Işığın yansıması ve kırılması, prizmanın renk ayrıştırması');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('optics rig');
+  });
+
+  it('ses/titreşim matches tuning fork', () => {
+    const concepts = edu('Ses dalgaları titreşim ve yankı nasıl oluşur');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('tuning fork');
+  });
+
+  it('elektrik/devre matches circuit board', () => {
+    const concepts = edu('Elektrik devre pil ve ampul akım akışı');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('circuit board');
+  });
+
+  it('atom/molekül/madde matches element-tile board', () => {
+    const concepts = edu('Madde atom ve molekül yapısı element özellikleri');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('element-tile board');
+  });
+
+  it('üçgenin açıları matches shape-building geometry concept', () => {
+    const concepts = edu('Üçgenin açıları ve geometri kuralları');
+    expect(concepts[0].matched).toBe(true);
+    // matches the geometry bank entry (edge sticks + protractor)
+    expect(concepts[0].subject).toContain('shape-building table');
+  });
+
+  it('üretim/tarım matches growth-cycle planting stage', () => {
+    const concepts = edu('Tarım ve üretim çiftçi toprak hazırlığı');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('planting stage');
+  });
+
+  it('hücre bölünme/mitoz matches cell dome', () => {
+    const concepts = edu('Hücre bölünmesi mitoz ve DNA kopyalanması');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('cell dome');
+  });
+
+  it('OBOB/OKEK matches factor grid', () => {
+    const concepts = edu('OBOB ve OKEK bulma hüceman bütün sayı hesaplama');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('factor grid');
+  });
+});
+
+describe('STY_BANK power-surge expanded pattern', () => {
+  it('"güç yükselişi" triggers power expansion concept', () => {
+    const concepts = conceptRanked('Güç yükselişi başladı karakter güçleniyor', 'STY', 'solo_leveling_gate', 'Climax');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('power expansion');
+  });
+
+  it('"awakening" triggers power expansion concept', () => {
+    const concepts = conceptRanked('The awakening begins power level rising', 'STY', 'solo_leveling_gate', 'Climax');
+    expect(concepts[0].matched).toBe(true);
+    expect(concepts[0].subject).toContain('power expansion');
+  });
+});
