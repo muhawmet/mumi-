@@ -162,7 +162,7 @@ Three additional STYLIZED worlds:
 | `motion_design_flat` | Clean geometric flat design — bold color field, sans-serif grid, Buck/Tendril design-system precision, zero texture |
 | `ukiyo_e_print` | Edo-period woodblock print — flat Prussian-blue color planes, Hokusai/Hiroshige stylized nature patterns, zero Western shadow |
 
-**Total worlds: 47** (9 ANIMATION + 14 REAL + 14 STYLIZED + 7 IP_WORLD + 3 new STYLIZED).
+**Total worlds: 47** (11 ANIMATION + 16 REAL + 13 STYLIZED + 7 IP_WORLD).
 
 ### New Tactile Materials (2026 Expansion)
 
@@ -328,3 +328,24 @@ via `materialClauseOf()`.
 | Sets | Drawing grammar | Environment + setting |
 | Usage | Combined with any World | Selected as the World itself |
 | Example | `anime_cel` world + `demon_slayer` material | `demon_slayer_taisho` world |
+
+## 19. Reference Library — Counts & Hybrid Edu List
+
+**Total refs: 235** (as of 2026-06-28 state)
+
+### Hybrid Edu Refs (10) — World × Tactile crossovers for educational animation
+
+These refs combine a Render World's visual grammar with a Tactile Material's surface — used when the brief needs both educational clarity AND handmade warmth.
+
+| Ref ID | World grammar | Tactile surface | Best for |
+|---|---|---|---|
+| `arcane_clay_hybrid` | Arcane painterly | Clay | Creative-industry or tech EDU |
+| `verse_paper_hybrid` | Spider-Verse pop-art | Paper | Comic-style lesson starters |
+| `ghibli_felt_hybrid` | Ghibli soft organic | Felt | Nature / seasons / culture |
+| `anime_chalk_hybrid` | Bold anime cel | Chalk | High-energy concept reveals |
+| `pixar_watercolor_hybrid` | Pixar soft key-light | Watercolor | Wonder science, biology |
+| `stopmotion_wood_hybrid` | Laika stop-motion | Wood | Mechanical processes, physics |
+| `kurzgesagt_sand_hybrid` | Kurzgesagt flat-vector | Sand | System cycles, environment |
+| `whiteboard_ink_hybrid` | RSA-Animate whiteboard | Ink brush | Step-by-step procedural |
+| `ghibli_watercolor_hybrid` | Ghibli diffused light | Watercolor | Seasons, cultural lessons |
+| `anime_wax_hybrid` | Toei bold-outline anime | Wax crayon | Bold lesson starters, art EDU |
