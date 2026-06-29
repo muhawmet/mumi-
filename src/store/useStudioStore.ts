@@ -17,6 +17,7 @@ import {
   type SourceIntegrityReport,
 } from '../core/source';
 import { planBeats, eventBoundary, type BeatMode, type BeatAnalysis } from '../core/beats';
+import { starterPackFor } from '../core/advisor';
 
 export type Step = 'dashboard' | 'director' | 'recipe' | 'scenes' | 'timeline';
 /** Free-text optional character/cast description. Empty = object-only, no character anchor. */
@@ -455,8 +456,13 @@ export const useStudioStore = create<StudioState>()(
         const s = get();
         const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null };
         if (field === 'selectedWorldId') {
-          const defaults = resolveRecipeDefaults(s.projectClass, String(value));
-          set({ selectedWorldId: String(value), ...defaults, activePreviewRefId: defaults.selectedRefIds[0] || '', ...clearGeneration });
+          const worldId = String(value);
+          const defaults = resolveRecipeDefaults(s.projectClass, worldId);
+          // World's curated starter pack overrides the generic path default ref
+          const starterRefs = starterPackFor(worldId);
+          const refIds = starterRefs.length ? starterRefs.map((r) => r.id) : defaults.selectedRefIds;
+          const mergedDefaults = { ...defaults, selectedRefIds: refIds };
+          set({ selectedWorldId: worldId, ...mergedDefaults, activePreviewRefId: refIds[0] || '', ...clearGeneration });
           return;
         }
         if (field === 'projectClass') {
