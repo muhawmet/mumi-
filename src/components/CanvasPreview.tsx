@@ -1095,12 +1095,53 @@ function renderMotif(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
       break;
     }
     case 'pixel': {
-      const ps = 12;
-      for (let gx = 0; gx < w; gx += ps) for (let gy = 0; gy < h; gy += ps) {
-        const pxi = ((gx / ps) + (gy / ps)) % 4;
-        ctx.fillStyle = hexToRgba([colors[0], colors[1], colors[2], colors[3]][pxi], 0.1 + pxi * 0.02);
-        ctx.fillRect(gx, gy, ps - 1, ps - 1);
+      // NES-style landscape: sky → horizon → mountain → ground in palette colors
+      const ps = 8; // pixel size
+      const skyH = Math.floor(h * 0.55);  // sky zone
+      const horizH = Math.floor(h * 0.65); // horizon line
+      // Mountain silhouette heights per column (normalised 0-1, 0=top)
+      const cols = Math.ceil(w / ps);
+      const mountain = Array.from({ length: cols }, (_, xi) => {
+        const nx = xi / cols;
+        return 0.32 + 0.22 * Math.sin(nx * Math.PI * 2.7 + 1.1) + 0.1 * Math.sin(nx * Math.PI * 7.3);
+      });
+      for (let gx = 0; gx < w; gx += ps) {
+        const col = Math.min(Math.floor(gx / ps), cols - 1);
+        const mTop = Math.floor(mountain[col] * h); // pixel y where mountain starts
+        for (let gy = 0; gy < h; gy += ps) {
+          let c: string;
+          if (gy < skyH) {
+            // Sky: dithered gradient between c0 and c1
+            const dither = (Math.floor(gx / ps) + Math.floor(gy / ps)) % 2 === 0;
+            const ratio = gy / skyH;
+            c = ratio < 0.5 ? hexToRgba(colors[0], dither ? 0.9 : 0.7) : hexToRgba(colors[1], dither ? 0.8 : 0.6);
+          } else if (gy >= mTop && gy < horizH) {
+            // Mountain: palette color c2
+            c = hexToRgba(colors[2], 0.95);
+          } else if (gy >= horizH) {
+            // Ground: palette color c3, checkerboard shade
+            const shade = (Math.floor(gx / ps) + Math.floor(gy / ps)) % 2 === 0 ? 0.9 : 0.75;
+            c = hexToRgba(colors[3], shade);
+          } else {
+            // Mid-sky filler
+            c = hexToRgba(colors[1], 0.5);
+          }
+          ctx.fillStyle = c;
+          ctx.fillRect(gx, gy, ps - 1, ps - 1);
+        }
       }
+      // Pixel sun — 2x2 block in c1 at upper-right
+      const sunX = Math.floor(w * 0.78 / ps) * ps;
+      const sunY = Math.floor(h * 0.12 / ps) * ps;
+      ctx.fillStyle = hexToRgba(colors[1], 1);
+      for (let si = 0; si < 2; si++) for (let sj = 0; sj < 2; sj++) {
+        ctx.fillRect(sunX + si * ps, sunY + sj * ps, ps - 1, ps - 1);
+      }
+      // Pixel grid overlay for extra crunch
+      ctx.strokeStyle = 'rgba(0,0,0,0.12)';
+      ctx.lineWidth = 0.5;
+      for (let gx = 0; gx < w; gx += ps) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke(); }
+      for (let gy = 0; gy < h; gy += ps) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke(); }
       break;
     }
     case 'pixelmountain': {
