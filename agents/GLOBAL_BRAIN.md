@@ -331,7 +331,7 @@ via `materialClauseOf()`.
 
 ## 19. Reference Library — Counts & Hybrid Edu List
 
-**Total refs: 235** (as of 2026-06-28 state)
+**Total refs: 228** (as of 2026-06-29 — Scorsese Library Pass complete)
 
 ### Hybrid Edu Refs (10) — World × Tactile crossovers for educational animation
 
@@ -349,3 +349,65 @@ These refs combine a Render World's visual grammar with a Tactile Material's sur
 | `whiteboard_ink_hybrid` | RSA-Animate whiteboard | Ink brush | Step-by-step procedural |
 | `ghibli_watercolor_hybrid` | Ghibli diffused light | Watercolor | Seasons, cultural lessons |
 | `anime_wax_hybrid` | Toei bold-outline anime | Wax crayon | Bold lesson starters, art EDU |
+
+### Scorsese Library Pass (2026-06-29)
+
+All 228 refs now carry **director-level DNA** (≥300 chars each, `cinedna_*` family intentionally compact). Generic placeholder language has been eliminated. Every ref DNA specifies: studio/director name, exact visual technique, camera grammar, palette identity, and the one emotional argument the frame makes. Agents: treat each ref's `dna` field as a cinematographer's technical note — apply it with the specificity it was written with.
+
+---
+
+## 20. IP_WORLD Arc Bible — Arc Detection Protocol
+
+IP_WORLD Render Worlds (all 7) now carry **full arc bibles** in their `render` field. The structure is:
+
+```
+BASE WORLD GRAMMAR: [the default visual environment when no arc is specified]
+
+ARC-SPECIFIC VISUAL GRAMMARS — [arc detection instruction]
+[ARC NAME]: [sub-grammar description]
+...
+
+AGENT INSTRUCTION: Scan source text for arc/location/event cues. If a specific arc is signaled, layer that sub-grammar onto the base world render. If no arc is specified, default to the base grammar.
+```
+
+### Arc Detection Rule for Agents
+
+When a brief uses an IP_WORLD and the source text contains arc-specific keywords, **layer the matching sub-grammar onto the base Render Lock**. The arc sub-grammar specifies:
+- Location architecture and environment specifics
+- Color palette shift from the base
+- Scale and mood changes for that arc
+- Specific visual elements unique to that arc
+
+**Priority:** Arc sub-grammar enriches the base — it does not replace it. Base visual rules (avoid lists, outline style, etc.) always apply.
+
+### Arc Coverage per World (keywords to detect)
+
+| World | Arc | Signal Keywords |
+|---|---|---|
+| `one_piece_grand_line` | Elbaf | elbaf, viking, fjord, rün |
+| `one_piece_grand_line` | Wano | wano, samuray, ukiyo, sakura |
+| `one_piece_grand_line` | Dressrosa | dressrosa, birdcage |
+| `one_piece_grand_line` | Fishman Island | fishman, sualtı, mercan |
+| `one_piece_grand_line` | Marineford | marineford, donmuş okyanus |
+| `one_piece_grand_line` | Egghead | egghead, vegapunk |
+| `one_piece_grand_line` | Alabasta | alabasta, piramit, çöl |
+| `one_piece_grand_line` | Thriller Bark | thriller, hayalet gemi |
+| `demon_slayer_taisho` | Mugen Train | mugen, tren, train |
+| `demon_slayer_taisho` | Entertainment District | yoshiwara, eğlence bölge, gece mahalle |
+| `demon_slayer_taisho` | Swordsmith Village | kılıç köy, swordsmith |
+| `demon_slayer_taisho` | Infinity Castle | sonsuz kale, infinity castle |
+| `naruto_shinobi_world` | Chunin Exam | chunin, ölüm orman, sınav |
+| `naruto_shinobi_world` | Pain's Assault | pain, yıkım, krater |
+| `naruto_shinobi_world` | Great Ninja War | ninja savaş, büyük savaş |
+| `naruto_shinobi_world` | Valley of the End | vadi son, valley end |
+| `bleach_soul_world` | Hueco Mundo | hueco mundo, beyaz çöl, hollow |
+| `bleach_soul_world` | TYBW | tybw, thousand year, quincy |
+| `bleach_soul_world` | Soul King Palace | soul king, kral saray |
+| `jjk_cursed_domain` | Shibuya Incident | shibuya, metro olay |
+| `jjk_cursed_domain` | Culling Game | culling game, koloni |
+| `aot_wall_world` | Marley arc | marley, liberio |
+| `aot_wall_world` | Ocean coast | okyanus, kıyı uçurum |
+| `solo_leveling_gate` | S-Rank dungeon | s-rank dungeon, red gate |
+| `solo_leveling_gate` | Shadow Monarch | shadow monarch, gölge kral |
+
+The full arc sub-grammar text lives in `SURGERY_DATA.json` world `render` fields and enters the brief via `renderLock()` → RENDER LOCK section. Agents receive it verbatim — no reconstruction needed.

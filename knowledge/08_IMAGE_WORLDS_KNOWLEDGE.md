@@ -134,6 +134,16 @@ These worlds describe franchise environments **without any characters**. The Ren
 Lock is fully sufficient to reproduce the world. `avoid` lists all franchise IP
 that must never appear.
 
+### Arc Bible Protocol (2026-06-29)
+
+Each IP_WORLD now carries a **full arc bible** in its Render Lock. When the source
+text signals a specific arc (location name, battle name, character cue), layer the
+matching arc sub-grammar onto the base world grammar. Full arc detection table is in
+`GLOBAL_BRAIN.md §20`. If no arc is detected, use the base world grammar as-is.
+
+**Arc sub-grammar reaches you via the RENDER LOCK section of the brief — read it
+verbatim. The arc sub-grammar is already embedded; do not reconstruct it.**
+
 ### Demon Slayer — Taisho Dark Fantasy (`demon_slayer_taisho`)
 
 **AVOID:** Tanjiro, Nezuko, Zenitsu, Inosuke, Hashira likenesses; haori patterns;

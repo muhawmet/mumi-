@@ -120,6 +120,16 @@ NEGATIVE: morphing, warping, re-render, stil/materyal kayması, yeni nesne veya
 SPLIT NOTE: [sadece gerektiğinde — N çekim × ~perShot s, her birinin kendi karesi]
 
 ═══════════════════════════════════════════
+IP_WORLD ARC TESPİT NOTU (bilgi satırı)
+═══════════════════════════════════════════
+Brief'te IP_WORLD kullanılıyorsa RENDER LOCK içinde arc sub-grameri zaten gömülü gelir.
+Kaynak metinde arc ipucu bulursan report.md başına yaz:
+# Arc: [tespit edilen arc adı] grammar active
+Örnek: # Arc: Elbaf arc — Norse giant grammar active
+Bu sadece bilgi satırı — herhangi bir üretim kararını değiştirmez.
+Full arc detection tablosu: GLOBAL_BRAIN.md §20
+
+═══════════════════════════════════════════
 PASS A — ŞİMDİ YAP, SONRA DUR
 ═══════════════════════════════════════════
 1. Klasörler oluştur: image_prompts/  images/  motion/

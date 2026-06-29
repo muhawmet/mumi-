@@ -165,6 +165,8 @@ JSON dosyası tek doğruluk kaynağı. Schema: mamilas.production.v2026 veya mam
 - `scenes[i].architecture` → özne/olay/kamera
 - `scenes[i].durationSec` + `scenes[i].duration.usable/shots/ok` → süre/bölme kararı
 
+**IP_WORLD ARC TESPİT (bilgi satırı):** Brief'te IP_WORLD varsa RENDER LOCK içinde arc sub-grameri zaten gelir. Kaynak metinde arc ipucu bulursan report.md başına `# Arc: [arc adı] grammar active` yaz — sadece bilgi, üretim kararını değiştirmez.
+
 **PASS A — Şimdi yap, sonra DUR:**
 1. Klasörler: `image_prompts/`  `images/`  `motion/`
 2. Her sahne: `image_prompts/<id>.txt` = `scenes[i].prompts.image` VERBATIM
