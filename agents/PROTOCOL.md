@@ -45,6 +45,22 @@ Her artifact şunları taşır: protocolVersion, protocolHash, phase, role, prov
 storyboardHash, inputArtifactHashes, revision, content, contentHash. Hash uyuşmazlığı veya stale
 girdi sonraki fazı durdurur. Timestamp artifact kimliğine girmez.
 
+Image Author content'i boş bir zarf olamaz: engine-facing `prompt` + `promptHash`, exact
+MamiDirectives receipt'leri, uygulanan kilitler, bastırılan bağlam ve açık risk listesi taşır.
+Motion Author gerçek frameHash, gözlenebilir inventory, prompt + promptHash ve riskleri taşır.
+Her jury PASS dahil gözlenebilir evidence yazar; frame/motion jury current frameHash'i taşır.
+
+Storyboard onayı prompt/final-shot onayından ayrı hash'li workspace receipt'idir. Gerçek frame de
+elle yazılmış metadata değildir: runtime PNG/JPEG/WebP baytını workspace'e alır, SHA-256 ve ölçüyü
+yeniden hesaplar ve gerçek pixel decode zorunlu tutar; current command/storyboard/PASS image-prompt
+artifact zincirine bağlar. Ajanın
+iddia ettiği hash veya dosya adı tek başına motion açmaz.
+
+Runtime'da eklenen exact `LIVE_CHAT` directive kaynak command'i yerinde değiştirmez; yeni canonical
+commandId ve scene context hash'leri taşıyan türetilmiş command yazar. Image Jury PASS sonrası
+Studio'ya yalnız command + tam Author→Jury zincirini taşıyan
+`mamilas.image-artifact-bundle.v1` geri alınır. Düz prompt paste evidence değildir.
+
 ## Gerçeklik sınırı
 
 Marka geometrisi, belirli yüz veya dönem bilgisi kaynak/ref içinde yoksa uydurma:

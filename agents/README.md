@@ -1,107 +1,56 @@
-# MAMILAS Agent Setup
+# MAMILAS Agent Runtime
 
-This folder installs external agents that read final briefs and role packets
-copied from the MAMILAS site. Agents do not replace the site; they are specialist
-directors that understand its language.
+Bu klasördeki tek çalıştırılabilir prodüksiyon yolu canonical command lifecycle'dır:
 
-## Setup Order
+`Timeline Command JSON → scripts/mamilas-command.mjs → agents/PROTOCOL.md → roles/* → adapters/*`
 
-Each agent is built from three parts:
+`gpt/*`, `claude/*`, `kick/*`, `knowledge/*`, `GLOBAL_BRAIN.md` ve eski production packet dosyaları
+tarihsel referanstır; runnable değildir. `agentBrief`, `agentPackets` veya
+`mamilas.production.v2026` provider'a yapıştırılamaz.
 
-1. `agents/GLOBAL_BRAIN.md`
-2. Provider adapter: `agents/gpt/*` or `agents/claude/*`
-3. Role knowledge: `knowledge/*`
+## Manuel lifecycle
 
-This order is intentional. The global brain defines shared behavior, the adapter
-shapes the provider-specific working style, and the knowledge file provides role
-craft reference.
+1. Timeline'dan `*_mamilas_command.json` indir.
+2. Command ve sıradaki tek işi doğrula:
 
-## File Map
+   ```text
+   node scripts/mamilas-command.mjs --file <command.json> --dry-run
+   ```
 
-| Role | GPT adapter | Claude adapter | Knowledge |
-|---|---|---|---|
-| IDEA | `gpt/01_IDEA_GPT.md` | `claude/01_IDEA_CLAUDE.md` | `../knowledge/01_IDEA_KNOWLEDGE.md` |
-| IMAGE | `gpt/02_IMAGE_GPT.md` | `claude/02_IMAGE_CLAUDE.md` | `../knowledge/02_IMAGE_KNOWLEDGE.md` |
-| MOTION | `gpt/03_MOTION_GPT.md` | `claude/03_MOTION_CLAUDE.md` | `../knowledge/03_MOTION_KNOWLEDGE.md` |
-| SUNO | `gpt/04_SUNO_GPT.md` | `claude/04_SUNO_CLAUDE.md` | `../knowledge/04_SUNO_KNOWLEDGE.md` |
-| PROOF | `gpt/06_PROOF_GPT.md` | `claude/06_PROOF_CLAUDE.md` | `../knowledge/06_PROOF_KNOWLEDGE.md` |
-| PRODUCTION | `gpt/07_PRODUCTION_GPT.md` | `claude/07_PRODUCTION_CLAUDE.md` | `../knowledge/07_PRODUCTION_KNOWLEDGE.md` |
+3. Her scene için Mami storyboard onayını ayrı receipt olarak yaz:
 
-## GPT Setup
+   ```text
+   node scripts/mamilas-command.mjs --file <command.json> --approve-storyboard --scene <id>
+   ```
 
-- Put `GLOBAL_BRAIN.md` first in Instructions, then the matching GPT adapter.
-- Upload only the matching role knowledge file to Knowledge.
-- Keep rules in Instructions and craft/reference in Knowledge.
-- Paste the site's `agentBrief`, role packet, or command JSON into the chat.
+4. Mami yeni bir sohbet direktifi verdiyse exact UTF-8 metni yeni canonical command'e ekle. Kaynak
+   command yerinde değişmez; eski approval/artifact'ler stale kalır:
 
-## Claude Setup
+   ```text
+   node scripts/mamilas-command.mjs --file <command.json> --add-directive-file <note.txt> --scope PROJECT --out <new-command.json>
+   node scripts/mamilas-command.mjs --file <command.json> --add-directive-file <note.txt> --scope SCENE --scene <id> --out <new-command.json>
+   ```
 
-- Put `GLOBAL_BRAIN.md` first in Project Instructions, then the matching Claude
-  adapter.
-- Upload only the matching role knowledge file to Project Knowledge.
-- Claude may use Project Knowledge/RAG, but the site brief always remains the
-  highest authority.
-- Paste the site's `agentBrief`, role packet, or command JSON into the chat.
+5. Runtime'la yalnız sıradaki `Image Author → Image Jury` rolünü çalıştır. PASS sonrası
+   Studio'nun doğrulayacağı command+artifact bundle'ı çıkar:
 
-## Command lifecycle (approved storyboard → frame → motion)
+   ```text
+   node scripts/mamilas-command.mjs --file <command.json> --export-image-bundle --scene <id> --out <bundle.json>
+   ```
 
-Timeline exports `*_mamilas_command.json`. The same thin Windows/macOS runner validates
-schema, active decision, storyboard and protocol hashes, then opens exactly one current
-Claude or Codex role. Each author is counter-read by one jury with at most one revision.
+   Studio'ya düz prompt değil bu `mamilas.image-artifact-bundle.v1` dosyası geri alınır. Bundle
+   runtime'da eklenmiş LIVE_CHAT direktiflerini ve bunların yeni commandId/context hash'lerini de taşır.
 
-Mami manually produces and imports the real frame. Motion remains closed until that
-current byte hash carries Mami `APPROVE`. The retired production-bundle/giant-agent files
-are marked non-runnable and are not accepted by the runner.
+6. Mami frame'i harici araçta elle üretir. Runtime PNG/JPEG/WebP dosyasını tam pixel decode eder,
+   SHA-256/dimensions/aspect'i kendisi hesaplar ve Mami verdict'ine bağlar:
 
-## Site Packets
+   ```text
+   node scripts/mamilas-command.mjs --file <command.json> --import-frame <frame> --scene <id> --verdict APPROVE
+   ```
 
-Video chain:
+7. Current gerçek frame + Mami `APPROVE` yoksa Motion açılmaz. Sonraki roller
+   `Frame Jury → Motion Author → Motion Jury` sırasıyla, her biri tek artifact yazarak ilerler.
 
-`SITE -> IDEA -> IMAGE -> MOTION -> SUNO -> PROOF`
-
-The Timeline screen's `Ajan Paketleri` menu provides:
-
-| Site packet | Agent to use |
-|---|---|
-| Ana Ajan Brief | shared context for the whole chain |
-| IDEA Paketi | route / scene architecture |
-| IMAGE Paketi | start-frame image prompts |
-| MOTION Paketi | i2v motion prompts |
-| SUNO Paketi | music / sound direction |
-| PROOF Paketi | audit and repair |
-
-## Site Blocks All Agents Must Know
-
-Every adapter now recognizes these blocks from the site brief:
-
-| Block | Purpose |
-|---|---|
-| `SOURCE SECURITY BOUNDARY` | Marks customer data as untouchable |
-| `RECIPE` | Path, register, world, cast |
-| `MODEL ERA` | Write for 2026 frontier models |
-| `BRAND KIT: LOCKED` | Brand elements frozen |
-| `RENDER LOCK` | Verbatim visual-grammar guarantee (may include material clause) |
-| `AUTHORITY` | Canonical order emitted from code; adapters must defer rather than restate it |
-| `REFERENCE DNA → DIRECTIVES` | Camera, light, staging, texture, motion |
-| `PALETTE AS LIGHT` | Key/fill/shadow/accent as light behavior |
-| `DIRECTOR MANDATE` | Phase 0 creative-director decision record |
-| `DIRECTION / MOOD` | Mood, camera energy, light, transitions, music, POV, signature, leitmotif, tempo |
-| `I2V ANCHOR LAW` | Motion start-frame contract |
-| `CREATIVE VARIANT TEST` | A/B/C variant isolation |
-| `SCENE DOSSIER` | Per-scene source, concept, event, camera |
-| `SOUND` | Suno direction |
-| `FAIL CONDITIONS` | Proof checklist |
-| `PROOF STATE & QUALITY STATUS` | Regression detector output |
-
-## Main Principle
-
-Preserve locks without killing creativity. Agents are not generic validators.
-With source and render lock fixed, they should still propose stronger scenes,
-framing, motion, music, and proof repairs.
-
-## Forbidden Legacy Language
-
-This modern app is not the old single-file HTML version. Agents must not make
-decisions from legacy Phase 0 tokens, single-axis world/recipe language, or
-retired world IDs. Modern language is: `Render World`, `Material`, `RENDER LOCK`,
-`DIRECTOR MANDATE`, `SCENE DOSSIER`, and `I2V ANCHOR LAW`.
+Windows ve macOS launcher'lar yalnız ince kabuktur; karar, hash ve gate yasasını kopyalamaz.
+Claude ve Codex aynı protocol/artifact validator'ı kullanır. Harici generation API, batch,
+otomatik upscale veya ajan loop'u yoktur.

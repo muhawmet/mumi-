@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { buildCommandJSON } from './commandExport';
-import { canonicalize } from './contract';
+import { canonicalize, sha256Hex } from './contract';
 import { DATA, generateBatch, resolveRecipeDefaults } from './pure';
 import { ingestSource, sourceIntegrity } from './source';
 
@@ -115,6 +115,53 @@ describe('Canonical hash — kimlik karardan doğar, saatten değil', () => {
     // Konu AYNI ("Su Döngüsü"), dünya farklı. Bugün commandId yalnız konu+saatten
     // türediği için bu iki farklı üretim aynı kimliği taşıyor.
     expect(ghibli.commandId).not.toBe(clay.commandId);
+  });
+
+  test('receiptli Image Author prompt artifact olarak kalır; Mami el override kimliği değiştirir', () => {
+    const state = decisionState();
+    const before = buildCommandJSON(state as never);
+    const prompt = 'Agent-authored final engine prompt.';
+    const imported = {
+      ...state,
+      scenes: state.scenes.map((scene, index) => index === 0 ? {
+        ...scene,
+        userImagePrompt: prompt,
+        promptReceipt: {
+          finalPrompt: prompt,
+          fromCommandId: before.commandId,
+          promptHash: sha256Hex(prompt),
+          source: 'import' as const,
+          artifactHash: 'a'.repeat(64), juryArtifactHash: 'b'.repeat(64),
+          artifactBundleHashes: ['a'.repeat(64), 'b'.repeat(64)], protocolHash: 'c'.repeat(64),
+          provider: 'codex' as const, storyboardHash: before.lifecycle.storyboardHash,
+          inputArtifactHashes: [before.lifecycle.sceneContextHashes[1]], revision: 0 as const,
+        },
+      } : scene),
+    };
+    const afterImport = buildCommandJSON(imported as never);
+    expect(afterImport.commandId).toBe(before.commandId);
+    expect(afterImport.lifecycle.sceneContextHashes).toEqual(before.lifecycle.sceneContextHashes);
+
+    const staleReceipt = {
+      ...imported,
+      scenes: imported.scenes.map((scene, index) => index === 0 ? {
+        ...scene,
+        promptReceipt: {
+          ...('promptReceipt' in scene ? scene.promptReceipt : {}),
+          fromCommandId: `mamilas-${'0'.repeat(64)}`,
+        },
+      } : scene),
+    };
+    expect(buildCommandJSON(staleReceipt as never).commandId).not.toBe(before.commandId);
+
+    const manual = {
+      ...imported,
+      scenes: imported.scenes.map((scene, index) => index === 0 ? {
+        ...scene,
+        userImagePrompt: `${prompt} Mami manual override.`,
+      } : scene),
+    };
+    expect(buildCommandJSON(manual as never).commandId).not.toBe(before.commandId);
   });
 });
 

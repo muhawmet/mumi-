@@ -4,6 +4,7 @@ import type { Scene, SceneFrameReceipt } from '../store/useStudioStore';
 import { buildProjectPack, serializeProjectPack, verifyProjectPack, projectPackToState, buildCloseout, PROJECT_PACK_SCHEMA, CLOSEOUT_SCHEMA } from './projectPack';
 import { DATA, worldPacketById } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
+import { liveDirectiveId } from './agentProtocol';
 
 /**
  * MACRO 6 — Taşınabilir project pack.
@@ -20,12 +21,17 @@ function fakeScene(id: number, frameReceipt?: SceneFrameReceipt, agentPrompt?: s
     phaseName: 'Intro', handoff: { IMAGE: { draft: {} }, MOTION: {}, SUNO: {} } as never,
     onScreenText: null,
     userImagePrompt: agentPrompt,
-    promptReceipt: agentPrompt ? { finalPrompt: agentPrompt, fromCommandId: 'x', promptHash: promptHash!, source: 'paste' } : undefined,
+    promptReceipt: agentPrompt ? {
+      finalPrompt: agentPrompt, fromCommandId: 'x', promptHash: promptHash!, source: 'paste',
+      artifactHash: 'a'.repeat(64), juryArtifactHash: 'b'.repeat(64),
+      artifactBundleHashes: ['a'.repeat(64), 'b'.repeat(64)], protocolHash: 'c'.repeat(64),
+      provider: 'codex', storyboardHash: 'd'.repeat(64), inputArtifactHashes: ['e'.repeat(64)], revision: 0,
+    } : undefined,
     frameReceipt,
   };
 }
 
-function setupProject() {
+function setupProject(liveMamiDirectives: ReturnType<typeof useStudioStore.getState>['liveMamiDirectives'] = []) {
   const store = useStudioStore.getState();
   store.reset();
   store.setField('projectTopic', 'Termos filmi');
@@ -38,6 +44,7 @@ function setupProject() {
   store.setField('directorChoices', { camera: 'measured', light: 'warm' });
   store.setField('beatKeeps', { 'src-001': true });
   store.setField('beatAnalysis', { verdict: 'PASS', notes: ['keep'] } as never);
+  useStudioStore.setState({ liveMamiDirectives });
   // Authored prompt is part of the canonical decision. Bind the frame only after that
   // override exists, otherwise the fixture itself manufactures a stale frame receipt.
   store.setScenes([fakeScene(1, undefined, 'agent final prompt'), fakeScene(2)]);
@@ -138,11 +145,29 @@ describe('verifyProjectPack — manifest gövdeyle eşleşmeli', () => {
     expect(check.ok).toBe(false);
     expect(check.problems.join(' ')).toMatch(/gerçek frame kanıtı/);
   });
+
+  test('manifesti yeniden hesaplanan stale LIVE_CHAT directive id yine reddedilir', () => {
+    const identity = { source: 'LIVE_CHAT' as const, scope: 'PROJECT' as const, sceneId: null, text: 'Exact note' };
+    setupProject([{ id: liveDirectiveId(identity), ...identity }]);
+    const pack = buildProjectPack(useStudioStore.getState());
+    pack.decision.liveMamiDirectives[0].text = 'Tampered note';
+    pack.manifest.decisionHash = canonicalHash(pack.decision);
+    pack.manifest.packHash = canonicalHash({
+      decision: pack.decision, source: pack.source, worldPacket: pack.worldPacket,
+      shotApprovals: pack.shotApprovals, scenes: pack.scenes,
+    });
+    pack.projectId = `mamilas-${pack.manifest.packHash}`;
+    const check = verifyProjectPack(pack);
+    expect(check.ok).toBe(false);
+    expect(check.problems.join(' ')).toMatch(/LIVE_CHAT directive id stale\/tampered/);
+  });
 });
 
 describe('round-trip — export → import aynı world/approval/frame/motion kapısı verir', () => {
   test('Windows→Mac taşıma: import sonrası karar + approval + rawSource korunur', () => {
-    setupProject();
+    const identity = { source: 'LIVE_CHAT' as const, scope: 'SCENE' as const, sceneId: 1, text: '  Exact runtime notu.\n' };
+    const liveDirective = { id: liveDirectiveId(identity), ...identity };
+    setupProject([liveDirective]);
     const json = useStudioStore.getState().exportProjectPack();
 
     // Başka bir makineyi simüle et: sıfırla, sonra import et.
@@ -155,6 +180,7 @@ describe('round-trip — export → import aynı world/approval/frame/motion kap
     expect(s.selectedWorldId).toBe('product_brand_real');
     expect(s.subject).toBe('Mat siyah termos');
     expect(s.directorBrief).toBe('Ürün yazısını sen yerleştir.');
+    expect(s.liveMamiDirectives).toEqual([liveDirective]);
     expect(s.phase0PresetId).toBe('product_brand');
     expect(s.directorChoices).toEqual({ camera: 'measured', light: 'warm' });
     expect(s.beatKeeps).toEqual({ 'src-001': true });

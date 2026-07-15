@@ -122,17 +122,20 @@ async function run() {
   if (!root) return die('Kanonik scripts/mamilas-command.mjs ve agents/PROTOCOL.md bulunamadı.');
   const commandFile = await chooseCommand();
   if (!commandFile) return;
+  const mutation = process.argv.includes('--approve-storyboard') || process.argv.includes('--import-frame') || process.argv.includes('--add-directive-file') || process.argv.includes('--export-image-bundle');
   const explicitLaunch = process.argv.includes('--launch');
-  const dryRun = process.argv.includes('--dry-run') || (!explicitLaunch && !process.stdin.isTTY);
-  const launch = explicitLaunch || !dryRun;
+  const dryRun = mutation || process.argv.includes('--dry-run') || (!explicitLaunch && !process.stdin.isTTY);
+  const launch = !mutation && (explicitLaunch || !dryRun);
   const provider = launch ? await chooseProvider() : null;
   if (launch && !provider) return;
 
   const args = [join(root, 'scripts', 'mamilas-command.mjs'), '--file', commandFile];
-  for (const name of ['--scene', '--workspace', '--artifacts']) {
+  for (const name of ['--scene', '--workspace', '--artifacts', '--import-frame', '--verdict', '--add-directive-file', '--scope', '--out']) {
     const value = argValue(name);
     if (value) args.push(name, value);
   }
+  if (process.argv.includes('--approve-storyboard')) args.push('--approve-storyboard');
+  if (process.argv.includes('--export-image-bundle')) args.push('--export-image-bundle');
   if (launch) args.push('--launch', '--provider', provider);
   else args.push('--dry-run');
 

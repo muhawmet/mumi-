@@ -15,18 +15,25 @@ receipt, then one fresh independent auditor writes a report. Only critical regre
 immediately; the final convergence session closes the combined secondary ledger. Older Macro sections
 below are historical evidence and cannot override this reset.
 
-Current checkpoint: **Phase 2 Studio Application, UX & Evidence State COMPLETE — 2026-07-15.**
-Builder receipt: `PHASE-2-STUDIO.md`. Fresh independent audit: `PHASE-2-AUDIT.md` → **PASS**. İlk
-auditin `C-01` prompt-source identity bulgusu kapatıldı: receipt metin+SHA yanında override-bağımsız
-`promptSourceCommandId` taşır; karar/storyboard değişince eski prompt readiness, shot approval,
-frame/motion ve closeout boyunca reddedilir, yeniden import zorunludur. `S-01` Dashboard/RecipeRail
-navigasyon bypass'ları canonical `advance()` yoluna döndü. Kanıt: TypeScript PASS, full Vitest
-66 dosya 1875/1875, build PASS, full Playwright 15/15; bağımsız targeted Vitest 45/45 ve gerçek
-Chromium 1/1 PASS. Secondary ledger: `FINAL-CONVERGENCE-LEDGER.md`.
-**Sıradaki tek faz: Phase 3 Command & Manual Production Runtime.** Phase 1 veya Phase 2'yi somut
-cross-phase regresyon kanıtı olmadan yeniden açma. Existing dirty-worktree changes and verified
-receipts must be preserved. Phase 3, canonical `mamilas.command.v2026` exportundan manual runtime
-artifact lifecycle'ını doğrulamalı.
+Current checkpoint: **THREE PHASES COMPLETE + FINAL CONVERGENCE DELIVERED — 2026-07-15.**
+
+- Phase 1 receipt/audit: `PHASE-1-CORE.md` + `PHASE-1-AUDIT.md` → **PASS**.
+- Phase 2 receipt/audit: `PHASE-2-STUDIO.md` + `PHASE-2-AUDIT.md` → **PASS**.
+- Phase 3 receipt/audit: `PHASE-3-COMMAND.md` + `PHASE-3-AUDIT.md` → **PASS**.
+- Final ledger: `FINAL-CONVERGENCE-LEDGER.md`; açık kritik bulgu **0**, tek kabul edilmiş debt ana
+  bundle performans uyarısıdır.
+- Final gates: TypeScript PASS; full Vitest **67 dosya · 1888/1888**; production build PASS; full
+  Playwright **15/15**; runtime/runner syntax PASS; runner mirrors byte-identical; gerçek
+  `inspect-brief` temsilî iki vaka contract PASS.
+
+Canonical manual lifecycle artık şudur:
+`Studio decision → pre-author command → ayrı storyboard approval → Image Author/Jury → validated
+command+artifact bundle → Studio → gerçek fully-decoded frame + Mami APPROVE → Frame Jury → Motion
+Author/Jury`.
+
+Yeni phase/task otomatik başlatma. Mevcut receipts ve dirty-worktree korunur; commit/push Mami'nin
+ayrı kararıdır. Dürüst ürün durumu: **implementation complete / visual validation pending** — gerçek
+yaratıcı frame estetik hükmü yalnız Mami'nindir.
 
 ## CODEX 5.6 SOL TAKEOVER — 2026-07-15
 

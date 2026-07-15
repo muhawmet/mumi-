@@ -1,4 +1,34 @@
 import { test, expect } from '@playwright/test';
+import { readFile } from 'node:fs/promises';
+import { canonicalHash, sha256Hex } from '../src/core/contract';
+
+function imageArtifactBundle(command: any, sceneId: number, prompt: string) {
+  const contextHash = command.lifecycle.sceneContextHashes[sceneId];
+  const authorBody = {
+    schema: 'mamilas.agent-artifact.v1', protocolVersion: command.lifecycle.protocol.version,
+    protocolHash: command.lifecycle.protocol.contentHash, phase: 'IMAGE_PROMPT', role: 'image_author',
+    provider: 'codex', sceneId, decisionHash: command.commandId.replace(/^mamilas-/, ''),
+    storyboardHash: command.lifecycle.storyboardHash, inputArtifactHashes: [contextHash], revision: 0,
+    content: {
+      prompt, promptHash: sha256Hex(prompt),
+      directiveReceipts: command.lifecycle.mamiDirectives
+        .filter((directive: { scope: string; sceneId: number | null }) => directive.scope === 'PROJECT' || directive.sceneId === sceneId)
+        .map((directive: { id: string; text: string }) => ({ id: directive.id, text: directive.text, status: 'APPLIED' })),
+      appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
+    },
+  };
+  const authorArtifact = { ...authorBody, contentHash: canonicalHash(authorBody) };
+  const juryBody = {
+    schema: 'mamilas.agent-artifact.v1', protocolVersion: command.lifecycle.protocol.version,
+    protocolHash: command.lifecycle.protocol.contentHash, phase: 'IMAGE_JURY', role: 'image_jury',
+    provider: 'codex', sceneId, decisionHash: command.commandId.replace(/^mamilas-/, ''),
+    storyboardHash: command.lifecycle.storyboardHash,
+    inputArtifactHashes: [contextHash, authorArtifact.contentHash], revision: 0,
+    content: { verdict: 'PASS', evidence: ['Prompt current decision ve shot ile karşı-okundu.'] },
+  };
+  const juryArtifact = { ...juryBody, contentHash: canonicalHash(juryBody) };
+  return { schema: 'mamilas.image-artifact-bundle.v1', command, artifacts: [authorArtifact, juryArtifact] };
+}
 
 /**
  * Helper: navigate to root with a clean persisted state, BUT keep localStorage
@@ -341,11 +371,19 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
   await expect(page.getByText('AJAN FINAL PROMPT · SHOT ONAYI')).toBeVisible();
   await expect(page.getByText('ONAY BEKLİYOR').first()).toBeVisible();
 
-  //     Site scaffold prompt değildir: current ajan receipt gelmeden canonical readiness prompt
-  //     aşamasında kalır ve Timeline canonical command export'u devre dışıdır.
+  //     Site scaffold prompt değildir: production readiness current ajan receipt gelmeden prompt
+  //     aşamasında kalır. Fakat Image Author'ı başlatan canonical command bunun ÖNCESİNDE export
+  //     edilebilir; aksi halde runtime kendi ilk rolüne ulaşamaz (Phase 3 pre-author seam).
   await expect(page.getByText(/shot current ajan prompt receipt’i bekliyor/).first()).toBeVisible();
   await expect(page.getByText(/READY/).first()).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Komut JSON' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Komut JSON' })).toBeEnabled();
+  const commandDownloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Komut JSON' }).click();
+  const commandDownload = await commandDownloadPromise;
+  const commandPath = await commandDownload.path();
+  if (!commandPath) throw new Error('command download path yok');
+  const command = JSON.parse(await readFile(commandPath, 'utf8'));
+  expect(command.schema).toBe('mamilas.command.v2026');
 
   // 8c. MACRO 5 — gerçek storyboard approval → frame byte import/hash → Mami APPROVE
   //     → motion open zinciri. Frame yükleme storyboard onayından önce açılamaz.
@@ -357,10 +395,9 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
   await expect(authorPanel.getByRole('button', { name: 'Onayla' })).toBeDisabled();
   await authorPanel.getByRole('button', { name: 'Reddet' }).click();
   await expect(authorPanel.getByRole('button', { name: 'Onayla' })).toBeDisabled();
-  await authorPanel.getByPlaceholder(/Ajanın.*final image prompt/).fill(
-    'A single translucent water droplet rises through a tactile educational world; clean plate, no text.',
-  );
-  await authorPanel.getByRole('button', { name: /Ajan prompt'unu geri al/ }).click();
+  const finalPrompt = 'A single translucent water droplet rises through a tactile educational world; clean plate, no text.';
+  await authorPanel.getByPlaceholder(/Image Author.*Image Jury artifact bundle/).fill(JSON.stringify(imageArtifactBundle(command, 1, finalPrompt)));
+  await authorPanel.getByRole('button', { name: /Artifact bundle'ını doğrula/ }).click();
   await authorPanel.getByRole('button', { name: 'Onayla' }).click();
   await expect(authorPanel.getByText(/MAMİ ONAYLADI/)).toBeVisible();
 
@@ -425,10 +462,19 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
   await expect(authorPanel.getByRole('button', { name: 'Onayla' })).toBeDisabled();
 
   // Aynı metin bile yeni kararın prompt-source kimliğine yeniden bağlanmadan kullanılamaz.
-  await authorPanel.getByPlaceholder(/Ajanın.*final image prompt/).fill(
-    'A single translucent water droplet rises through a tactile educational world; clean plate, no text.',
+  // Stale receipt'i temizle, yeni canonical command'i export et ve yeni Author→Jury bundle'ı doğrula.
+  await authorPanel.getByRole('button', { name: /Geri-alımı temizle/ }).click();
+  const changedCommandDownloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Komut JSON' }).click();
+  const changedCommandDownload = await changedCommandDownloadPromise;
+  const changedCommandPath = await changedCommandDownload.path();
+  if (!changedCommandPath) throw new Error('changed command download path yok');
+  const changedCommand = JSON.parse(await readFile(changedCommandPath, 'utf8'));
+  expect(changedCommand.commandId).not.toBe(command.commandId);
+  await authorPanel.getByPlaceholder(/Image Author.*Image Jury artifact bundle/).fill(
+    JSON.stringify(imageArtifactBundle(changedCommand, 1, finalPrompt)),
   );
-  await authorPanel.getByRole('button', { name: /Ajan prompt'unu geri al/ }).click();
+  await authorPanel.getByRole('button', { name: /Artifact bundle'ını doğrula/ }).click();
   await expect(authorPanel.getByRole('button', { name: 'Onayla' })).toBeEnabled();
   await authorPanel.getByRole('button', { name: 'Onayla' }).click();
   await expect(authorPanel.getByText(/MAMİ ONAYLADI/)).toBeVisible();

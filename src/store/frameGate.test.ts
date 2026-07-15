@@ -32,6 +32,9 @@ function fakeScene(id: number, frameReceipt?: SceneFrameReceipt): Scene {
       fromCommandId: 'mamilas-source',
       promptHash: sha256Hex(finalPrompt),
       source: 'paste',
+      artifactHash: 'a'.repeat(64), juryArtifactHash: 'b'.repeat(64),
+      artifactBundleHashes: ['a'.repeat(64), 'b'.repeat(64)], protocolHash: 'c'.repeat(64),
+      provider: 'codex', storyboardHash: 'd'.repeat(64), inputArtifactHashes: ['e'.repeat(64)], revision: 0,
     },
     frameReceipt,
   };

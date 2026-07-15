@@ -4,19 +4,22 @@ import { tmpdir } from 'node:os';
 import { delimiter, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { deflateSync } from 'node:zlib';
+import sharp from 'sharp';
 import { buildCommandJSON } from './commandExport';
 import { generateBatch, resolveRecipeDefaults } from './pure';
+import { canonicalHash, sha256Hex } from './contract';
 
-function commandFixture(approved = true) {
+function commandFixture(approved = true, sceneCount = 1) {
   const defaults = resolveRecipeDefaults('ANIMATION_EDU', 'pixar_3d_edu');
   const generated = generateBatch({
-    projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount: 1, cast: '',
+    projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount, cast: '',
     selectedWorldId: 'pixar_3d_edu', selectedPropId: 'native_world',
     selectedRefIds: defaults.selectedRefIds, selectedPaletteId: 'pastel_soft', selectedMusicId: '',
     imageModel: 'nano_banana_2', videoModel: 'kling_3', directorBrief: 'Başlık yalnız final sahnede olsun.',
   });
   const state: any = {
-    selectedProjectId: 'education', projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount: 1,
+    selectedProjectId: 'education', projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount,
     cast: '', subject: 'Su Döngüsü', location: '', recipeScenes: [], selectedWorldId: 'pixar_3d_edu',
     selectedPropId: 'native_world', selectedRefIds: defaults.selectedRefIds, selectedPaletteId: 'pastel_soft', selectedMusicId: '',
     imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '', mood: '', cameraEnergy: '', timeLight: '',
@@ -26,16 +29,63 @@ function commandFixture(approved = true) {
     osTextMode: 'AUTO', voSyncMode: 'FREE', shotApprovals: {},
   };
   const first = buildCommandJSON(state) as any;
-  if (approved) state.shotApprovals = { 1: { verdict: 'APPROVED', commandId: first.commandId } };
+  if (approved) state.shotApprovals = Object.fromEntries(
+    generated.scenes.map((scene) => [scene.id, { verdict: 'APPROVED', commandId: first.commandId }]),
+  );
   return buildCommandJSON(state) as any;
 }
 
-function run(command: any) {
+function run(command: any, approve = true) {
   const dir = mkdtempSync(join(tmpdir(), 'mamilas-command-'));
   const file = join(dir, 'sample_mamilas_command.json');
   writeFileSync(file, JSON.stringify(command));
   const script = resolve('scripts/mamilas-command.mjs');
+  if (approve) spawnSync(process.execPath, [script, '--file', file, '--approve-storyboard', '--scene', '1'], { cwd: resolve('.'), encoding: 'utf8' });
   return spawnSync(process.execPath, [script, '--file', file, '--dry-run', '--provider', 'codex'], { cwd: resolve('.'), encoding: 'utf8' });
+}
+
+function runAt(dir: string, command: any, args: string[]) {
+  const file = join(dir, 'sample_mamilas_command.json');
+  writeFileSync(file, JSON.stringify(command));
+  return spawnSync(process.execPath, [resolve('scripts/mamilas-command.mjs'), '--file', file, ...args], {
+    cwd: dir, encoding: 'utf8',
+  });
+}
+
+function sealedArtifact(command: any, sceneId: number, role: string, phase: string, revision: 0 | 1, inputArtifactHashes: string[], content: any) {
+  const body = {
+    schema: 'mamilas.agent-artifact.v1', protocolVersion: 'mamilas.agent-protocol.v1',
+    protocolHash: command.lifecycle.protocol.contentHash, phase, role, provider: 'codex', sceneId,
+    decisionHash: command.commandId.replace(/^mamilas-/, ''), storyboardHash: command.lifecycle.storyboardHash,
+    inputArtifactHashes, revision, content,
+  };
+  return { ...body, contentHash: canonicalHash(body) };
+}
+
+function crc32(bytes: Buffer): number {
+  let crc = 0xffffffff;
+  for (const byte of bytes) {
+    crc ^= byte;
+    for (let bit = 0; bit < 8; bit += 1) crc = (crc >>> 1) ^ (0xedb88320 & -(crc & 1));
+  }
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+function pngChunk(type: string, data: Buffer): Buffer {
+  const typeBytes = Buffer.from(type, 'ascii');
+  const length = Buffer.alloc(4); length.writeUInt32BE(data.length);
+  const crc = Buffer.alloc(4); crc.writeUInt32BE(crc32(Buffer.concat([typeBytes, data])));
+  return Buffer.concat([length, typeBytes, data, crc]);
+}
+
+function indexedPngWithoutPalette(): Buffer {
+  const ihdr = Buffer.alloc(13);
+  ihdr.writeUInt32BE(1, 0); ihdr.writeUInt32BE(1, 4);
+  ihdr[8] = 8; ihdr[9] = 3;
+  return Buffer.concat([
+    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+    pngChunk('IHDR', ihdr), pngChunk('IDAT', deflateSync(Buffer.from([0, 0]))), pngChunk('IEND', Buffer.alloc(0)),
+  ]);
 }
 
 describe('interactive command runtime', () => {
@@ -50,9 +100,21 @@ describe('interactive command runtime', () => {
   });
 
   test('storyboard onayı yoksa provider açmaz; approval bekler', () => {
-    const result = run(commandFixture(false));
+    const result = run(commandFixture(false), false);
     expect(result.status, result.stderr).toBe(0);
     expect(JSON.parse(result.stdout).action.kind).toBe('AWAIT_STORYBOARD_APPROVAL');
+  });
+
+  test('prompt öncesi command ayrı hashli storyboard approval sonrası image author açar', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-approval-'));
+    const command = commandFixture(false);
+    const approved = runAt(dir, command, ['--approve-storyboard', '--scene', '1']);
+    expect(approved.status, approved.stderr).toBe(0);
+    expect(JSON.parse(approved.stdout).action.kind).toBe('STORYBOARD_APPROVED');
+    const dry = runAt(dir, command, ['--dry-run']);
+    const out = JSON.parse(dry.stdout);
+    expect(dry.status, dry.stderr).toBe(0);
+    expect(out.action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
   });
 
   test('tampered decision ve protocol hash reddedilir', () => {
@@ -69,6 +131,182 @@ describe('interactive command runtime', () => {
     expect(badProtocol.stderr).toMatch(/protocolHash/);
   });
 
+  test('MamiDirectives, WorldPacket ve on-screen lock tamper context kapısında reddedilir', () => {
+    const directive = commandFixture();
+    directive.lifecycle.mamiDirectives[0].text = 'TAMPERED';
+    const badDirective = run(directive);
+    expect(badDirective.status).not.toBe(0);
+    expect(badDirective.stderr).toMatch(/MamiDirectives exact projection|contextHash/);
+
+    const world = commandFixture();
+    world.worldPacket.lightPhysics = 'TAMPERED LIGHT';
+    const badWorld = run(world);
+    expect(badWorld.status).not.toBe(0);
+    expect(badWorld.stderr).toMatch(/contextHash stale\/tampered/);
+
+    const text = commandFixture();
+    text.scenes[0].prompts.onScreenText = 'TAMPERED TEXT';
+    const badText = run(text);
+    expect(badText.status).not.toBe(0);
+    expect(badText.stderr).toMatch(/contextHash stale\/tampered/);
+  });
+
+  test('exact LIVE_CHAT SCENE directive yeni canonical command üretir ve eski approval/artifactleri stale bırakır', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-live-directive-'));
+    const command = commandFixture();
+    const directivePath = join(dir, 'directive.txt');
+    const exact = '  Bu sahnede başlık bir kez, aynen "SU DÖNGÜSÜ" olsun.\n';
+    writeFileSync(directivePath, exact, 'utf8');
+    const output = join(dir, 'updated_mamilas_command.json');
+    const added = runAt(dir, command, [
+      '--add-directive-file', directivePath, '--scope', 'SCENE', '--scene', '1', '--out', output,
+    ]);
+    expect(added.status, added.stderr).toBe(0);
+    const updated = JSON.parse(readFileSync(output, 'utf8'));
+    expect(updated.commandId).not.toBe(command.commandId);
+    expect(updated.baseDecision.mamiDirectives.at(-1)).toMatchObject({ source: 'LIVE_CHAT', scope: 'SCENE', sceneId: 1, text: exact });
+    expect(updated.lifecycle.mamiDirectives).toEqual(updated.baseDecision.mamiDirectives);
+    expect(updated.lifecycle.shotApprovals).toEqual({});
+    const dry = runAt(dir, updated, ['--dry-run']);
+    expect(dry.status, dry.stderr).toBe(0);
+    expect(JSON.parse(dry.stdout).action.kind).toBe('AWAIT_STORYBOARD_APPROVAL');
+
+    const tampered = structuredClone(updated);
+    tampered.baseDecision.mamiDirectives.at(-1).text += ' TAMPER';
+    tampered.lifecycle.mamiDirectives = structuredClone(tampered.baseDecision.mamiDirectives);
+    tampered.commandId = `mamilas-${canonicalHash(tampered.baseDecision)}`;
+    const tamperedRun = runAt(dir, tampered, ['--dry-run']);
+    expect(tamperedRun.status).not.toBe(0);
+    expect(tamperedRun.stderr).toMatch(/LIVE_CHAT directive id stale\/tampered/);
+  });
+
+  test('hashli ama boş image author content ilerleyemez', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-empty-artifact-'));
+    const command = commandFixture();
+    const artifacts = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifacts, { recursive: true });
+    const empty = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [command.lifecycle.sceneContextHashes[1]], {});
+    writeFileSync(join(artifacts, '1-image_author-r0.json'), JSON.stringify(empty));
+    const result = runAt(dir, command, ['--dry-run']);
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toMatch(/image prompt|directiveReceipts|appliedLocks/);
+  });
+
+  test('gerçek frame import full decode + byte hash/dimensions bağlar; byte değişince motion kapanır', async () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-frame-runtime-'));
+    const command = commandFixture();
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'A physical water-cycle frame with cloud and basin.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
+    });
+    const jury = sealedArtifact(command, 1, 'image_jury', 'IMAGE_JURY', 0, [contextHash, author.contentHash], {
+      verdict: 'PASS', evidence: ['Prompt approved shot ve dünya fiziğini taşıyor.'],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    writeFileSync(join(artifactsDir, '1-image_jury-r0.json'), JSON.stringify(jury));
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+    const headerOnly = join(dir, 'header-only.png');
+    const fakeHeader = Buffer.alloc(24);
+    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]).copy(fakeHeader, 0);
+    fakeHeader.writeUInt32BE(1, 16); fakeHeader.writeUInt32BE(1, 20);
+    writeFileSync(headerOnly, fakeHeader);
+    const fakeImport = runAt(dir, command, ['--import-frame', headerOnly, '--scene', '1', '--verdict', 'APPROVE']);
+    expect(fakeImport.status).not.toBe(0);
+    expect(fakeImport.stderr).toMatch(/tam decode edilebilir PNG\/JPEG\/WebP değil/);
+    const missingPalette = join(dir, 'missing-palette.png');
+    writeFileSync(missingPalette, indexedPngWithoutPalette());
+    const paletteBypass = runAt(dir, command, ['--import-frame', missingPalette, '--scene', '1', '--verdict', 'APPROVE']);
+    expect(paletteBypass.status).not.toBe(0);
+    expect(paletteBypass.stderr).toMatch(/tam decode edilebilir PNG\/JPEG\/WebP değil/);
+
+    const bundlePath = join(dir, 'scene-1-image-bundle.json');
+    const bundleExport = runAt(dir, command, ['--export-image-bundle', '--scene', '1', '--out', bundlePath]);
+    expect(bundleExport.status, bundleExport.stderr).toBe(0);
+    const bundle = JSON.parse(readFileSync(bundlePath, 'utf8'));
+    expect(bundle).toMatchObject({ schema: 'mamilas.image-artifact-bundle.v1', command: { commandId: command.commandId } });
+    expect(bundle.artifacts).toHaveLength(2);
+
+    for (const format of ['jpeg', 'webp'] as const) {
+      const imagePath = join(dir, `frame.${format === 'jpeg' ? 'jpg' : format}`);
+      const bytes = await sharp({ create: { width: 2, height: 1, channels: 3, background: '#336699' } })[format]().toBuffer();
+      writeFileSync(imagePath, bytes);
+      const decoded = runAt(dir, command, ['--import-frame', imagePath, '--scene', '1', '--verdict', 'APPROVE']);
+      expect(decoded.status, decoded.stderr).toBe(0);
+      expect(JSON.parse(decoded.stdout)).toMatchObject({ width: 2, height: 1, verdict: 'APPROVE' });
+    }
+    const pngPath = join(dir, 'frame.png');
+    writeFileSync(pngPath, Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    const imported = runAt(dir, command, ['--import-frame', pngPath, '--scene', '1', '--verdict', 'APPROVE']);
+    expect(imported.status, imported.stderr).toBe(0);
+    expect(JSON.parse(imported.stdout)).toMatchObject({ width: 1, height: 1, verdict: 'APPROVE' });
+
+    const frameReceipt = JSON.parse(readFileSync(join(dir, '.mamilas', 'frames', '1.json'), 'utf8'));
+    const frameJury = sealedArtifact(command, 1, 'frame_jury', 'FRAME_JURY', 0, [
+      contextHash, author.contentHash, jury.contentHash, frameReceipt.contentHash,
+    ], { verdict: 'PASS', frameHash: frameReceipt.frameHash, evidence: ['Gerçek 1×1 test frame baytı açıldı.'] });
+    writeFileSync(join(artifactsDir, '1-frame_jury-r0.json'), JSON.stringify(frameJury));
+    const motion = runAt(dir, command, ['--dry-run']);
+    const out = JSON.parse(motion.stdout);
+    expect(motion.status, motion.stderr).toBe(0);
+    expect(out.action).toEqual({ kind: 'RUN_ROLE', role: 'motion_author', revision: 0 });
+    expect(out.contextSummary.keys).toContain('engine');
+    expect(out.contextSummary.keys).toContain('continuity');
+
+    writeFileSync(join(dir, '.mamilas', 'frames', '1.png'), Buffer.from('tampered bytes'));
+    const stale = runAt(dir, command, ['--dry-run']);
+    expect(stale.status).not.toBe(0);
+    expect(stale.stderr).toMatch(/tam decode edilebilir PNG\/JPEG\/WebP değil|byte\/hash\/dimension/);
+  });
+
+  test('çok sahneli scheduler COMPLETE ilk sahneyi atlayıp sonraki valid rolü seçer', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-multiscene-'));
+    const command = commandFixture(true, 2);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'Scene one approved image prompt.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world'], suppressedContext: [], risks: [],
+    });
+    const imageJury = sealedArtifact(command, 1, 'image_jury', 'IMAGE_JURY', 0, [contextHash, author.contentHash], {
+      verdict: 'PASS', evidence: ['Scene one prompt counter-read.'],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    writeFileSync(join(artifactsDir, '1-image_jury-r0.json'), JSON.stringify(imageJury));
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '2']).status).toBe(0);
+    const pngPath = join(dir, 'frame.png');
+    writeFileSync(pngPath, Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    expect(runAt(dir, command, ['--import-frame', pngPath, '--scene', '1', '--verdict', 'APPROVE']).status).toBe(0);
+    const frame = JSON.parse(readFileSync(join(dir, '.mamilas', 'frames', '1.json'), 'utf8'));
+    const frameJury = sealedArtifact(command, 1, 'frame_jury', 'FRAME_JURY', 0, [
+      contextHash, author.contentHash, imageJury.contentHash, frame.contentHash,
+    ], { verdict: 'PASS', frameHash: frame.frameHash, evidence: ['Frame pixels inspected.'] });
+    const motionPrompt = 'Animate the single visible water droplet settling.';
+    const motionAuthor = sealedArtifact(command, 1, 'motion_author', 'MOTION', 0, [
+      contextHash, author.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash,
+    ], { frameHash: frame.frameHash, inventory: ['one visible water droplet'], prompt: motionPrompt, promptHash: sha256Hex(motionPrompt), risks: [] });
+    const motionJury = sealedArtifact(command, 1, 'motion_jury', 'MOTION_JURY', 0, [
+      contextHash, author.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash, motionAuthor.contentHash,
+    ], { verdict: 'PASS', frameHash: frame.frameHash, evidence: ['Motion preserves the inspected frame.'] });
+    writeFileSync(join(artifactsDir, '1-frame_jury-r0.json'), JSON.stringify(frameJury));
+    writeFileSync(join(artifactsDir, '1-motion_author-r0.json'), JSON.stringify(motionAuthor));
+    writeFileSync(join(artifactsDir, '1-motion_jury-r0.json'), JSON.stringify(motionJury));
+
+    const next = runAt(dir, command, ['--dry-run']);
+    const out = JSON.parse(next.stdout);
+    expect(next.status, next.stderr).toBe(0);
+    expect(out.sceneId).toBe(2);
+    expect(out.action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
+  });
+
   test('Claude/Codex adapters share evidence surface and copy no protocol body', () => {
     const claude = readFileSync(resolve('agents/adapters/claude.md'), 'utf8');
     const codex = readFileSync(resolve('agents/adapters/codex.md'), 'utf8');
@@ -80,34 +318,41 @@ describe('interactive command runtime', () => {
     }
   });
 
-  test('interactive oturum sonrası tam bir yeni role/provider artifact yeniden doğrulanır', () => {
+  test.each(['codex', 'claude'] as const)('%s interactive stub sonrası tam bir yeni role/provider artifact yeniden doğrulanır', (provider) => {
     const dir = mkdtempSync(join(tmpdir(), 'mamilas-session-'));
     const file = join(dir, 'sample_mamilas_command.json');
     writeFileSync(file, JSON.stringify(commandFixture()));
     const bin = join(dir, '.bin');
     mkdirSync(bin);
-    const helper = join(bin, 'fake-codex.mjs');
+    const helper = join(bin, `fake-${provider}.mjs`);
     const runtimeUrl = pathToFileURL(resolve('scripts/mamilas-command.mjs')).href;
     writeFileSync(helper, `
       import { readFile, writeFile } from 'node:fs/promises';
       import { join } from 'node:path';
-      import { canonicalHash } from ${JSON.stringify(runtimeUrl)};
+      import { canonicalHash, sha256 } from ${JSON.stringify(runtimeUrl)};
       const root = join(process.cwd(), '.mamilas');
       const template = JSON.parse(await readFile(join(root, 'ARTIFACT_TEMPLATE.json'), 'utf8'));
-      template.content = { prompt: 'provider-authored prompt' };
+      template.content = {
+        prompt: 'provider-authored prompt',
+        promptHash: sha256('provider-authored prompt'),
+        directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+        appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
+      };
       const sealed = { ...template, contentHash: canonicalHash(template) };
       await writeFile(join(root, 'artifacts', '1-image_author-r0.json'), JSON.stringify(sealed));
     `, 'utf8');
     if (process.platform === 'win32') {
-      writeFileSync(join(bin, 'codex.cmd'), `@echo off\r\n"${process.execPath}" "%~dp0fake-codex.mjs"\r\n`, 'utf8');
+      writeFileSync(join(bin, `${provider}.cmd`), `@echo off\r\n"${process.execPath}" "%~dp0fake-${provider}.mjs"\r\n`, 'utf8');
     } else {
-      const stub = join(bin, 'codex');
+      const stub = join(bin, provider);
       writeFileSync(stub, `#!/bin/sh\nexec "${process.execPath}" "${helper}"\n`, 'utf8');
       chmodSync(stub, 0o755);
     }
 
+    expect(runAt(dir, commandFixture(), ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+
     const result = spawnSync(process.execPath, [
-      resolve('scripts/mamilas-command.mjs'), '--file', file, '--launch', '--provider', 'codex',
+      resolve('scripts/mamilas-command.mjs'), '--file', file, '--launch', '--provider', provider,
     ], {
       cwd: dir,
       encoding: 'utf8',
@@ -116,7 +361,7 @@ describe('interactive command runtime', () => {
     expect(result.status, result.stderr).toBe(0);
     const artifact = JSON.parse(readFileSync(join(dir, '.mamilas', 'artifacts', '1-image_author-r0.json'), 'utf8'));
     expect(artifact.role).toBe('image_author');
-    expect(artifact.provider).toBe('codex');
+    expect(artifact.provider).toBe(provider);
     expect(artifact.sceneId).toBe(1);
     expect(artifact.contentHash).toMatch(/^[0-9a-f]{64}$/);
   });

@@ -2,12 +2,13 @@ import { DATA, effectiveMaterialId, refCompatibleWithWorld, worldPacketById } fr
 import { dnaDirectives, paletteLightPrompt, registerOf } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
-import { canonicalHash, lockDeliveryPromise, SCHEMA_IDS } from './contract';
+import { canonicalHash, lockDeliveryPromise, SCHEMA_IDS, sha256Hex } from './contract';
 import { normalizeVideoModel } from '../store/useStudioStore';
 import type { Scene, StudioState } from '../store/useStudioStore';
-import { directivesFromDirectorBrief, protocolDescriptor, storyboardHashOfScenes } from './agentProtocol';
+import { buildImageAuthorContext, directivesFromDirectorBrief, protocolDescriptor, storyboardHashOfScenes, validatedLiveDirectives } from './agentProtocol';
+import { engineDialect, engineUsableSec } from './engine';
 
-type CommandRole = 'idea' | 'image' | 'motion' | 'suno' | 'proof';
+type CommandRole = 'image_author' | 'image_jury' | 'frame_jury' | 'motion_author' | 'motion_jury';
 
 type CommandState = Pick<
   StudioState,
@@ -64,6 +65,8 @@ type CommandStateWithPersonal = CommandState & {
   recipeScenes?: StudioState['recipeScenes'];
   /** Lifecycle evidence is not part of the creative decision; it binds approvals to it. */
   shotApprovals?: StudioState['shotApprovals'];
+  /** Exact runtime-authored directives adopted from a validated command bundle. */
+  liveMamiDirectives?: StudioState['liveMamiDirectives'];
 };
 
 function compactText(value: string | undefined): string | null {
@@ -95,17 +98,7 @@ function selectedRefs(refIds: string[]) {
 }
 
 function activeRoles(): CommandRole[] {
-  return ['idea', 'image', 'motion', 'suno', 'proof'];
-}
-
-function agentPackets(state: CommandStateWithPersonal): Partial<Record<CommandRole, string>> {
-  const roles = activeRoles();
-  const packets: Partial<Record<CommandRole, string>> = {};
-  for (const role of roles) {
-    const packet = state.agentPackets?.[role];
-    if (packet) packets[role] = packet;
-  }
-  return packets;
+  return ['image_author', 'image_jury', 'frame_jury', 'motion_author', 'motion_jury'];
 }
 
 // GHOST DELIVERY: outputKey used to name `outputs.frames` / `outputs.motion` / `outputs.music`
@@ -115,19 +108,19 @@ function agentPackets(state: CommandStateWithPersonal): Partial<Record<CommandRo
 // Delivery is a FILE. The role table now names the file the runner and folderContract already
 // agree on — one contract, one place.
 const ROLE_DELIVERABLE: Record<CommandRole, string> = {
-  idea: 'final_brief.md',
-  image: 'image_prompts/<id>.txt',
-  motion: 'motion/<id>.txt',
-  suno: 'suno.txt',
-  proof: 'report.md',
+  image_author: '.mamilas/artifacts/<id>-image_author-r<revision>.json',
+  image_jury: '.mamilas/artifacts/<id>-image_jury-r<revision>.json',
+  frame_jury: '.mamilas/artifacts/<id>-frame_jury-r0.json',
+  motion_author: '.mamilas/artifacts/<id>-motion_author-r<revision>.json',
+  motion_jury: '.mamilas/artifacts/<id>-motion_jury-r<revision>.json',
 };
 
 function commandRoles() {
   return activeRoles().map((role) => ({
     role,
-    inputKey: role === 'idea' ? 'agentBrief' : `agentPackets.${role}`,
+    inputKey: 'validated role-specific CONTEXT.json',
     outputKey: ROLE_DELIVERABLE[role],
-    required: role === 'image' || role === 'proof' || role === 'motion',
+    required: true,
   }));
 }
 
@@ -176,11 +169,16 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   const exportedSceneCount = state.scenes.length || state.sceneCount;
   const exportedMaterialId = world ? effectiveMaterialId(world, state.selectedPropId) : state.selectedPropId;
   const rawHash = state.sourceReport?.rawHash ?? sourceHash(sourceText);
+  const mamiDirectives = [
+    ...directivesFromDirectorBrief(state.directorBrief),
+    ...validatedLiveDirectives(state.liveMamiDirectives ?? [], state.scenes.map((scene) => scene.id)),
+  ];
   const lifecycle = {
     protocol: protocolDescriptor(),
     storyboardHash: storyboardHashOfScenes(state.scenes as unknown as Array<Record<string, unknown>>),
-    mamiDirectives: directivesFromDirectorBrief(state.directorBrief),
+    mamiDirectives,
     shotApprovals: { ...(state.shotApprovals ?? {}) },
+    sceneContextHashes: {} as Record<number, string>,
     revisionLimitPerPhase: 1 as const,
     juryVerdicts: ['PASS', 'REJECT', 'FACT_REQUIRED'] as const,
   };
@@ -195,7 +193,21 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   // The decision carries what the production IS (source, path, world, material, palette, refs,
   // models, cast, locks, promise) and never what was DERIVED from it (prompts, agent tasks) or
   // WHEN it happened. `generatedAt` is still recorded — it just no longer defines identity.
-  const baseDecision = {
+  const authoredPromptOverrides = (candidateCommandId?: string) => state.scenes
+    .filter((scene) => scene.userImagePrompt != null && !(
+      scene.promptReceipt?.finalPrompt === scene.userImagePrompt
+      && scene.promptReceipt.promptHash === sha256Hex(scene.userImagePrompt)
+      && /^[0-9a-f]{64}$/.test(scene.promptReceipt.artifactHash ?? '')
+      && /^[0-9a-f]{64}$/.test(scene.promptReceipt.juryArtifactHash ?? '')
+      && /^[0-9a-f]{64}$/.test(scene.promptReceipt.protocolHash ?? '')
+      && Array.isArray(scene.promptReceipt.artifactBundleHashes)
+      && scene.promptReceipt.artifactBundleHashes.includes(scene.promptReceipt.artifactHash ?? '')
+      && scene.promptReceipt.artifactBundleHashes.includes(scene.promptReceipt.juryArtifactHash ?? '')
+      && (candidateCommandId == null || scene.promptReceipt.fromCommandId === candidateCommandId)
+    ))
+    .map((scene) => ({ sceneId: scene.id, userImagePrompt: scene.userImagePrompt }));
+
+  let baseDecision = {
     schema: SCHEMA_IDS.baseDecision,
     source: {
       authority: sourceAuthority,
@@ -261,6 +273,10 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       tempoCurve: state.tempoCurve,
       directorBrief: state.directorBrief,
     },
+    // Exact directive slice is part of the decision identity. The site currently contributes the
+    // SITE directive; command runtime may derive a new canonical command with exact LIVE_CHAT
+    // PROJECT/SCENE directives without mutating this source command in place.
+    mamiDirectives: lifecycle.mamiDirectives,
     // The doctor's own words. They reach agentBrief and project.json verbatim — so they are
     // part of what this production IS.
     authored: {
@@ -280,12 +296,10 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
         avoid: note.avoid,
       })),
     },
-    // Mami's hand-authored final prompt is an AUTHORED decision, not a derived artifact: it
-    // changes what gets made, so it changes what this production IS. (Derived text — agentBrief,
-    // agentPackets — follows from the decision and is deliberately absent.)
-    overrides: state.scenes
-      .filter((scene) => scene.userImagePrompt != null)
-      .map((scene) => ({ sceneId: scene.id, userImagePrompt: scene.userImagePrompt })),
+    // A true Mami hand override is an AUTHORED decision and changes identity. An Image Author
+    // prompt imported with a matching receipt is an artifact OF this decision, not a new decision;
+    // hashing it here would invalidate the very command/artifact chain that produced it.
+    overrides: authoredPromptOverrides(),
     // The promise is read from the text production ACTUALLY USES — the edited storyboard, not
     // the raw vault. Reading the vault here exported a STALE baked_text promise for a batch the
     // gate had (correctly) let through as pedagogy_auto (Codex re-audit).
@@ -298,15 +312,21 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       declaration: state.deliveryDeclaration,
     }).promise,
   };
+  let commandId = `mamilas-${canonicalHash(baseDecision)}`;
+  const boundOverrides = authoredPromptOverrides(commandId);
+  if (canonicalHash(boundOverrides) !== canonicalHash(baseDecision.overrides)) {
+    baseDecision = { ...baseDecision, overrides: boundOverrides };
+    commandId = `mamilas-${canonicalHash(baseDecision)}`;
+  }
 
-  return {
+  const command = {
     schema: 'mamilas.command.v2026',
     version: '1.0.0',
     app: 'MAMILAS Studio Console 2026',
     generatedAt,
     // Full SHA-256, not a 16-hex truncation: the handoff's canonical-hash requirement is
     // SHA-256, and a 64-bit prefix is a needless collision surface for a production identity.
-    commandId: `mamilas-${canonicalHash(baseDecision)}`,
+    commandId,
     baseDecision,
     lifecycle,
     mode: {
@@ -372,7 +392,9 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       ? worldPacketById(world.id, { selectedRefIds: state.selectedRefIds, palette: palette ?? undefined })
       : null,
     agentBrief: state.agentBrief,
-    agentPackets: agentPackets(state),
+    // Legacy/human-readable briefs remain portable evidence, but the command runtime never
+    // pipes them into a provider. Each role receives only its validated minimum context slice.
+    agentPackets: { ...(state.agentPackets ?? {}) },
     scenes: state.scenes.map((scene) => ({
       id: scene.id,
       phaseName: scene.phaseName,
@@ -393,6 +415,11 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       // alan kare gelene kadar NULL; iskelet (motor lehçesi/süre/split notu) adıyla
       // anılan taslakta yaşar, ajan onu Pass B'de kareye bakarak yeniden yazar.
       motionStatus: 'PENDING_IMAGE' as const,
+      motionEngine: {
+        model: normalizeVideoModel(state.videoModel),
+        dialect: engineDialect(normalizeVideoModel(state.videoModel)),
+        usableSeconds: engineUsableSec(normalizeVideoModel(state.videoModel)),
+      },
       prompts: {
         image: scenePrompt(scene),
         motion: null,
@@ -440,4 +467,16 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       ],
     },
   };
+
+  // The creative decision hash identifies what Mami chose. The per-scene executable context
+  // hash separately seals every derived value an author can actually see (WorldPacket physics,
+  // exact directives, on-screen-text lock, approved shot projection and continuity). This keeps
+  // derived data tamper-evident without pretending it is a new user decision.
+  command.lifecycle.sceneContextHashes = Object.fromEntries(
+    command.scenes.map((scene) => [scene.id, canonicalHash({
+      imageAuthor: buildImageAuthorContext(command, scene.id),
+      motionEngine: scene.motionEngine,
+    })]),
+  );
+  return command;
 }

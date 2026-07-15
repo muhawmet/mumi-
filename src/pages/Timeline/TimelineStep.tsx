@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Copy, Check, Clapperboard } from 'lucide-react';
-import { useStudioStore, effectivePrompt, hasCurrentAgentPrompt, motionGate, productionReadiness, type Scene, type ShotApproval, type SceneFrameReceipt } from '../../store/useStudioStore';
+import { useStudioStore, commandAuthoringReadiness, effectivePrompt, hasCurrentAgentPrompt, motionGate, type Scene, type ShotApproval, type SceneFrameReceipt } from '../../store/useStudioStore';
 import { quantumScore, qaScore } from '../../core/proof';
 import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
 import { stageNumber } from '../../components/Layout/AppLayout';
@@ -31,14 +31,14 @@ export const TimelineStep = () => {
   const state = useStudioStore();
   const {
     scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, togglePersonalMode,
-    shotApprovals, approveShot, rejectShot, clearShotApproval, importAgentPrompt, currentCommandId,
+    shotApprovals, approveShot, rejectShot, clearShotApproval, importAgentArtifact, currentCommandId,
     importFrame, setFrameVerdict, clearFrame,
   } = state;
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
   const commandId = currentCommandId();
   const promptSourceId = state.currentPromptSourceCommandId();
   const selectedApproval = selected ? shotApprovals[selected.id] : undefined;
-  const readiness = productionReadiness(state, commandId, promptSourceId);
+  const commandReadiness = commandAuthoringReadiness(state);
 
   const thumbColors = paletteColors(
     DATA.palettes.find((p) => p.id === state.selectedPaletteId),
@@ -73,7 +73,7 @@ export const TimelineStep = () => {
   };
 
   const onExportCommandJSON = () => {
-    if (!scenes.length || !readiness.ready) return;
+    if (!commandReadiness.ready) return;
     const payload = buildCommandJSON(state);
     downloadFile(`${safeName}_mamilas_command.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
@@ -98,15 +98,6 @@ export const TimelineStep = () => {
   };
   const onImportProjectPack = (file: File) => {
     file.text().then((json) => state.importProjectPack(json));
-  };
-
-  const [briefCopied, setBriefCopied] = useState(false);
-  const onCopyAgentBrief = () => {
-    if (!state.agentBrief) return;
-    navigator.clipboard.writeText(state.agentBrief).then(() => {
-      setBriefCopied(true);
-      setTimeout(() => setBriefCopied(false), 1500);
-    });
   };
 
 
@@ -150,11 +141,6 @@ export const TimelineStep = () => {
           {scenes.length > 0 && (
             <Button variant="solid" onClick={() => setCurrentStep('qa')}>
               <span lang="en">Director's Cabinet</span> →
-            </Button>
-          )}
-          {scenes.length > 0 && (
-            <Button variant="ghost" onClick={onCopyAgentBrief}>
-              {briefCopied ? '✓ KOPYALANDI' : <span lang="en">📄 Copy Final Brief</span>}
             </Button>
           )}
           <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}
@@ -230,8 +216,8 @@ export const TimelineStep = () => {
           <Button
             variant="ghost"
             onClick={onExportCommandJSON}
-            disabled={!readiness.ready}
-            title={readiness.ready ? 'Canonical MAMILAS command indir' : `Komut kapalı: ${readiness.reason}`}
+            disabled={!commandReadiness.ready}
+            title={commandReadiness.ready ? 'Canonical MAMILAS command indir' : `Komut kapalı: ${commandReadiness.reason}`}
           >
             Komut JSON
           </Button>
@@ -248,9 +234,9 @@ export const TimelineStep = () => {
               onChange={(e) => { const f = e.target.files?.[0]; if (f) onImportProjectPack(f); e.currentTarget.value = ''; }} />
             <span className="ml-file-picker-face" style={{ display: 'inline-flex', alignItems: 'center', padding: '7px 12px', border: '1px solid var(--m2-line-strong)', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer', color: 'var(--m2-muted)' }}>⬆ Proje İçe Al</span>
           </label>
-          {!readiness.ready && (
+          {!commandReadiness.ready && (
             <span role="status" style={{ flexBasis: '100%', fontSize: 11, color: 'var(--m2-amber)', lineHeight: 1.45 }}>
-              Komut export kapalı — {readiness.reason}
+              Komut export kapalı — {commandReadiness.reason}
             </span>
           )}
         </div>
@@ -395,9 +381,8 @@ export const TimelineStep = () => {
                         )}
                       </div>
 
-                    {/* MACRO 3/4 — Ajan prompt geri-alım + Mami shot onayı. Site prompt YAZMAZ:
-                        prompt'u command'deki ajan yazar, Mami buraya yapıştırır; sonra shot'ı
-                        onaylar. Onay o karara (commandId) bağlanır. */}
+                    {/* MACRO 3/4 — Hash-valid author→jury bundle import + Mami shot onayı.
+                        Site prompt YAZMAZ ve düz prompt kabul etmez. */}
                     <ShotAuthoringPanel
                       key={`auth-${selected.id}`}
                       sceneId={selected.id}
@@ -405,7 +390,7 @@ export const TimelineStep = () => {
                       agentPromptPreview={selected.userImagePrompt ?? ''}
                       approval={selectedApproval}
                       commandId={commandId}
-                      onImport={(text) => importAgentPrompt(selected.id, text, 'paste')}
+                      onImport={(text) => importAgentArtifact(selected.id, text)}
                       onApprove={() => approveShot(selected.id)}
                       onReject={() => rejectShot(selected.id)}
                       onClearApproval={() => clearShotApproval(selected.id)}
@@ -438,10 +423,11 @@ export const TimelineStep = () => {
 };
 
 /**
- * MACRO 3/4 — Shot authoring: ajanın yazdığı final prompt'un geri-alımı + Mami'nin shot onayı.
+ * MACRO 3/4 — Shot authoring: hash-valid Image Author→Jury bundle geri-alımı + Mami shot onayı.
  *
- * Site prompt YAZMAZ. Mami command'de ajana brief verir, ajan final prompt'u yazar; Mami onu
- * buraya yapıştırır (import). Sonra shot'ı onaylar/reddeder — onay o karara (commandId) bağlanır.
+ * Site prompt YAZMAZ. Runtime author+jury artifact'lerini üretir; Mami bundle JSON'u buraya
+ * yapıştırır. Store protocol/decision/storyboard/input/content hash zincirini doğrulamadan prompt
+ * receipt veya shot approval açılmaz.
  * Karar değişince (yeni commandId) onay STALE görünür.
  */
 const ShotAuthoringPanel: React.FC<{
@@ -466,7 +452,7 @@ const ShotAuthoringPanel: React.FC<{
       </div>
 
       {/* Ajan prompt geri-alım */}
-      {hasAgentPrompt ? (
+      {agentPromptPreview ? (
         <div style={{ fontSize: 12.5, color: '#fff', lineHeight: 1.55, background: 'rgba(147,201,168,.06)', border: '1px solid rgba(147,201,168,.25)', borderRadius: 6, padding: '8px 10px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
           <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1.4, color: '#93c9a8', display: 'block', marginBottom: 4 }}>✎ AJAN-YAZIMI PROMPT (site brief'i değil)</span>
           {agentPromptPreview}
@@ -479,12 +465,12 @@ const ShotAuthoringPanel: React.FC<{
           <textarea
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
-            placeholder="Ajanın (command'deki Claude/Codex) yazdığı final image prompt'u buraya yapıştır. Site prompt yazmaz."
+            placeholder="Image Author + Image Jury artifact bundle JSON'unu buraya yapıştır. Düz prompt kabul edilmez."
             style={{ ...inputStyle, minHeight: 90, resize: 'vertical', fontSize: 12.5, lineHeight: 1.5, fontFamily: 'var(--m2-font-mono)' }}
           />
           <div>
             <Button onClick={() => { if (draft.trim()) onImport(draft.trim()); }} disabled={!draft.trim()}>
-              Ajan prompt'unu geri al
+              Artifact bundle'ını doğrula
             </Button>
           </div>
         </>
@@ -503,7 +489,7 @@ const ShotAuthoringPanel: React.FC<{
       </div>
       {!hasAgentPrompt && !approval && (
         <div style={{ fontSize: 11, color: 'var(--m2-muted)', fontStyle: 'italic' }}>
-          Motion, yalnız Mami onayladığı kareden sonra açılır. Önce ajan prompt'unu geri al, sonra shot'ı onayla.
+          Motion, yalnız Mami onayladığı kareden sonra açılır. Önce hash-valid author+jury bundle'ını geri al, sonra shot'ı onayla.
         </div>
       )}
     </div>

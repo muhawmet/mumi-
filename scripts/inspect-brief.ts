@@ -5,13 +5,13 @@ import { generateBatch } from '../src/core/pure';
 
 const inputs = [
   {
-    label: 'A — Eğitim · Aras&Defne · Clay world · no reference',
+    label: 'A — Eğitim · pixar_3d_edu · AUTO clean plate · no reference',
     input: {
       projectTopic: 'Su Döngüsü',
-      projectClass: 'EĞİTİM_01',
+      projectClass: 'ANIMATION_EDU',
       sceneCount: 5,
       cast: 'İkisi' as const,
-      selectedWorldId: 'clay',
+      selectedWorldId: 'pixar_3d_edu',
       selectedPropId: 'native_world',
       selectedRefIds: [],
       selectedPaletteId: '',
@@ -21,16 +21,16 @@ const inputs = [
     },
   },
   {
-    label: 'B — Premium Ad · Cinematic Real · Pixar reference · with palette override',
+    label: 'B — Premium Ad · deakins_naturalist · warm_autumn · incompatible ref suppression',
     input: {
       projectTopic: 'SOURCE:\nÜrün ışıkta dönüyor\nReklam metni şekilleniyor\nLogo netleşip kilitleniyor',
       projectClass: 'ULTRAREAL_COMMERCIAL',
       sceneCount: 4,
       cast: 'Aras' as const,
-      selectedWorldId: 'cinematic_real',
+      selectedWorldId: 'deakins_naturalist',
       selectedPropId: 'native_world',
       selectedRefIds: ['pixar_dimensional'],
-      selectedPaletteId: 'rembrandt_amber',
+      selectedPaletteId: 'warm_autumn',
       selectedMusicId: '',
       imageModel: 'midjourney_v7',
       videoModel: 'kling_2_1',

@@ -27,6 +27,23 @@ export interface JuryContent {
   evidence?: string[];
 }
 
+export interface ImageAuthorContent {
+  prompt: string;
+  promptHash: string;
+  directiveReceipts: Array<{ id: string; text: string; status: 'APPLIED' | 'SUPPRESSED' }>;
+  appliedLocks: string[];
+  suppressedContext: string[];
+  risks: string[];
+}
+
+export interface MotionAuthorContent {
+  frameHash: string;
+  inventory: string[];
+  prompt: string;
+  promptHash: string;
+  risks: string[];
+}
+
 export interface AgentArtifact<T = unknown> {
   schema: typeof AGENT_ARTIFACT_SCHEMA;
   protocolVersion: typeof AGENT_PROTOCOL_VERSION;
@@ -82,7 +99,7 @@ export interface ArtifactVerification {
 
 export function verifyAgentArtifact(
   value: unknown,
-  expected: { decisionHash: string; storyboardHash: string; inputArtifactHashes?: string[] },
+  expected: { decisionHash: string; storyboardHash: string; inputArtifactHashes?: string[]; frameHash?: string },
 ): ArtifactVerification {
   const problems: string[] = [];
   if (!value || typeof value !== 'object') return { ok: false, problems: ['artifact bir nesne değil'] };
@@ -96,6 +113,13 @@ export function verifyAgentArtifact(
   if (!Number.isInteger(a.sceneId) || a.sceneId < 1) problems.push('sceneId geçersiz');
   if (a.revision !== 0 && a.revision !== 1) problems.push('revision yalnız 0 veya 1 olabilir');
   if (!Array.isArray(a.inputArtifactHashes)) problems.push('inputArtifactHashes yok');
+  if (!['claude', 'codex'].includes(a.provider)) problems.push('provider geçersiz');
+  const rolePhase: Record<AgentRole, AgentPhase | null> = {
+    embedded_director: null,
+    image_author: 'IMAGE_PROMPT', image_jury: 'IMAGE_JURY', frame_jury: 'FRAME_JURY',
+    motion_author: 'MOTION', motion_jury: 'MOTION_JURY',
+  };
+  if (!(a.role in rolePhase) || rolePhase[a.role] !== a.phase) problems.push('role/phase geçersiz');
   if (expected.inputArtifactHashes && canonicalHash(a.inputArtifactHashes) !== canonicalHash(expected.inputArtifactHashes)) {
     problems.push('inputArtifactHashes uyuşmuyor');
   }
@@ -108,10 +132,29 @@ export function verifyAgentArtifact(
   if ((a.role === 'image_jury' || a.role === 'frame_jury' || a.role === 'motion_jury')) {
     const jury = a.content as JuryContent;
     if (!['PASS', 'REJECT', 'FACT_REQUIRED'].includes(jury?.verdict)) problems.push('jury verdict geçersiz');
+    if (!Array.isArray(jury?.evidence) || jury.evidence.length === 0 || jury.evidence.some((item) => !item.trim())) {
+      problems.push('jury evidence zorunlu');
+    }
     if (jury?.verdict === 'REJECT' && (!jury.failingCheck?.trim() || !jury.targetedFix?.trim())) {
       problems.push('REJECT exact failingCheck + targetedFix taşımalı');
     }
     if (jury?.verdict === 'FACT_REQUIRED' && !jury.factRequired?.trim()) problems.push('FACT_REQUIRED eksik gerçeği adlandırmalı');
+    if ((a.role === 'frame_jury' || a.role === 'motion_jury') && (a.content as { frameHash?: string })?.frameHash !== expected.frameHash) {
+      problems.push('jury frameHash stale');
+    }
+  } else if (a.role === 'image_author') {
+    const content = a.content as ImageAuthorContent;
+    if (!content?.prompt?.trim() || content.promptHash !== sha256Hex(content.prompt ?? '')) problems.push('image prompt/hash geçersiz');
+    if (!Array.isArray(content?.directiveReceipts)) problems.push('directiveReceipts yok');
+    if (!Array.isArray(content?.appliedLocks) || content.appliedLocks.length === 0) problems.push('appliedLocks yok');
+    if (!Array.isArray(content?.suppressedContext) || !Array.isArray(content?.risks)) problems.push('image receipt listeleri eksik');
+    if (/\[DIRECTOR TASK\]|\bTODO\b|#[0-9a-f]{3,8}\b/i.test(content?.prompt ?? '')) problems.push('image prompt workflow/hex leak');
+  } else if (a.role === 'motion_author') {
+    const content = a.content as MotionAuthorContent;
+    if (content?.frameHash !== expected.frameHash) problems.push('motion frameHash stale');
+    if (!content?.prompt?.trim() || content.promptHash !== sha256Hex(content.prompt ?? '')) problems.push('motion prompt/hash geçersiz');
+    if (!Array.isArray(content?.inventory) || content.inventory.length === 0) problems.push('motion inventory yok');
+    if (!Array.isArray(content?.risks)) problems.push('motion risks yok');
   }
   return { ok: problems.length === 0, problems };
 }
@@ -131,13 +174,40 @@ export function directivesFromDirectorBrief(text: string | undefined): MamiDirec
   return [{ id: 'site-directive-001', source: 'SITE', scope: 'PROJECT', sceneId: null, text }];
 }
 
+export function liveDirectiveId(directive: Omit<MamiDirective, 'id'>): string {
+  return `live-${canonicalHash(directive).slice(0, 16)}`;
+}
+
+/**
+ * LIVE_CHAT directives are authored outside the site and may only re-enter Studio through a
+ * canonical command bundle. Validate the complete shape and deterministic id before allowing
+ * them to become part of the Studio decision state.
+ */
+export function validatedLiveDirectives(value: unknown, sceneIds: number[]): MamiDirective[] {
+  if (value == null) return [];
+  if (!Array.isArray(value)) throw new Error('LIVE_CHAT MamiDirectives dizi olmalı.');
+  const ids = new Set<string>();
+  return value.map((candidate) => {
+    if (!candidate || typeof candidate !== 'object') throw new Error('LIVE_CHAT MamiDirective nesne olmalı.');
+    const directive = candidate as MamiDirective;
+    if (directive.source !== 'LIVE_CHAT') throw new Error('Studio yalnız LIVE_CHAT directive benimseyebilir.');
+    if (directive.scope !== 'PROJECT' && directive.scope !== 'SCENE') throw new Error('LIVE_CHAT scope geçersiz.');
+    if (typeof directive.text !== 'string' || !directive.text.trim()) throw new Error('LIVE_CHAT text boş olamaz.');
+    if (directive.scope === 'PROJECT' && directive.sceneId !== null) throw new Error('PROJECT directive sceneId null olmalı.');
+    if (directive.scope === 'SCENE' && (!Number.isInteger(directive.sceneId) || !sceneIds.includes(directive.sceneId as number))) {
+      throw new Error('SCENE directive geçerli sceneId taşımalı.');
+    }
+    const identity = { source: directive.source, scope: directive.scope, sceneId: directive.sceneId, text: directive.text } as const;
+    if (directive.id !== liveDirectiveId(identity)) throw new Error(`LIVE_CHAT directive id stale/tampered: ${directive.id}`);
+    if (ids.has(directive.id)) throw new Error(`Duplicate LIVE_CHAT directive: ${directive.id}`);
+    ids.add(directive.id);
+    return { id: directive.id, ...identity };
+  });
+}
+
 export function buildImageAuthorContext(command: any, sceneId: number) {
   const scene = command.scenes?.find((item: any) => item.id === sceneId);
   if (!scene) throw new Error(`scene ${sceneId} yok`);
-  const approval = command.lifecycle?.shotApprovals?.[sceneId];
-  if (approval?.verdict !== 'APPROVED' || approval.commandId !== command.commandId) {
-    throw new Error(`scene ${sceneId} current APPROVED storyboard değil`);
-  }
   const relevantDirectives = (command.lifecycle?.mamiDirectives ?? []).filter(
     (d: MamiDirective) => d.scope === 'PROJECT' || d.sceneId === sceneId,
   );
@@ -174,14 +244,21 @@ export function buildImageAuthorContext(command: any, sceneId: number) {
       brandKitLock: command.baseDecision?.locks?.brandKitLock,
       cast: command.baseDecision?.locks?.cast,
       onScreenText: scene.prompts?.onScreenText ?? null,
+      mamiPromptOverride: command.baseDecision?.overrides?.find((item: any) => item.sceneId === sceneId)?.userImagePrompt ?? null,
     },
     targetEngine: command.baseDecision?.engine?.imageModel,
-    continuity: { previousSceneId: sceneId > 1 ? sceneId - 1 : null, nextSceneId: sceneId < command.scenes.length ? sceneId + 1 : null },
+    failureModes: scene.handoff?.IMAGE?.avoid ?? null,
+    continuity: {
+      previousSceneId: sceneId > 1 ? command.scenes[command.scenes.findIndex((item: any) => item.id === sceneId) - 1]?.id ?? null : null,
+      nextSceneId: command.scenes[command.scenes.findIndex((item: any) => item.id === sceneId) + 1]?.id ?? null,
+    },
   };
 }
 
 export function buildMotionAuthorContext(command: any, sceneId: number, frame: any) {
-  if (!frame?.frameHash || frame.verdict !== 'APPROVE' || frame.fromCommandId !== command.commandId) {
+  if (!/^[0-9a-f]{64}$/.test(frame?.frameHash ?? '') || frame.verdict !== 'APPROVE'
+    || frame.fromCommandId !== command.commandId || frame.storyboardHash !== command.lifecycle?.storyboardHash
+    || frame.width <= 0 || frame.height <= 0 || frame.byteSize <= 0 || !frame.localPath) {
     throw new Error('motion yalnız current Mami APPROVE frame ile açılır');
   }
   const scene = command.scenes?.find((item: any) => item.id === sceneId);
@@ -223,7 +300,9 @@ export function nextLifecycleAction(artifacts: AgentArtifact[], frame?: any): Li
   const imageJury = latest<JuryContent>(artifacts, 'image_jury');
   const imageAction = juryAction(imageJury, imageAuthor, 'image_author', 'image_jury');
   if (imageAction) return imageAction;
-  if (!frame) return { kind: 'AWAIT_FRAME' };
+  if (!frame?.frameHash || frame.width <= 0 || frame.height <= 0 || frame.byteSize <= 0 || !frame.localPath) {
+    return { kind: 'AWAIT_FRAME' };
+  }
   if (frame.verdict !== 'APPROVE') return { kind: 'AWAIT_MAMI_APPROVE' };
   const frameJury = latest<JuryContent>(artifacts, 'frame_jury');
   if (!frameJury) return { kind: 'RUN_ROLE', role: 'frame_jury', revision: 0 };

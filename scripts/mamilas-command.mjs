@@ -13,13 +13,17 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { delimiter, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
+import sharp from 'sharp';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(SCRIPT_DIR, '..');
 const PROTOCOL_PATH = join(REPO_ROOT, 'agents', 'PROTOCOL.md');
 const ARTIFACT_SCHEMA = 'mamilas.agent-artifact.v1';
+const STORYBOARD_APPROVAL_SCHEMA = 'mamilas.storyboard-approval.v1';
+const FRAME_RECEIPT_SCHEMA = 'mamilas.frame-receipt.v1';
 const PROTOCOL_VERSION = 'mamilas.agent-protocol.v1';
 const JURY = new Set(['PASS', 'REJECT', 'FACT_REQUIRED']);
+const FRAME_VERDICTS = new Set(['APPROVE', 'REGENERATE', 'PROJECT_ONLY_ACCEPT', 'PENDING']);
 const PROVIDERS = new Set(['claude', 'codex']);
 const ROLE_PHASE = {
   image_author: 'IMAGE_PROMPT', image_jury: 'IMAGE_JURY', frame_jury: 'FRAME_JURY',
@@ -71,7 +75,87 @@ export async function validateCommand(command) {
   const expectedStoryboard = Array.isArray(command?.scenes) ? storyboardHash(command.scenes) : null;
   if (!expectedStoryboard || command?.lifecycle?.storyboardHash !== expectedStoryboard) problems.push('storyboardHash stale/tampered');
   if (command?.lifecycle?.revisionLimitPerPhase !== 1) problems.push('revision limit 1 olmalı');
+  const expectedDirectives = command?.baseDecision?.creativeControls?.directorBrief?.trim()
+    ? [{ id: 'site-directive-001', source: 'SITE', scope: 'PROJECT', sceneId: null, text: command.baseDecision.creativeControls.directorBrief }]
+    : [];
+  const decisionDirectives = command?.baseDecision?.mamiDirectives;
+  if (!Array.isArray(decisionDirectives)) problems.push('baseDecision MamiDirectives yok');
+  else {
+    const siteDirectives = decisionDirectives.filter((item) => item?.source === 'SITE');
+    if (canonicalize(siteDirectives) !== canonicalize(expectedDirectives)) problems.push('SITE MamiDirectives projection stale/tampered');
+    const ids = new Set();
+    for (const directive of decisionDirectives) {
+      if (!directive || typeof directive.id !== 'string' || ids.has(directive.id)) problems.push('MamiDirective id geçersiz/duplicate');
+      ids.add(directive?.id);
+      if (!['SITE', 'LIVE_CHAT'].includes(directive?.source)) problems.push('MamiDirective source geçersiz');
+      if (!['PROJECT', 'SCENE'].includes(directive?.scope)) problems.push('MamiDirective scope geçersiz');
+      if (typeof directive?.text !== 'string' || !directive.text.trim()) problems.push('MamiDirective text boş');
+      if (directive?.scope === 'PROJECT' && directive.sceneId !== null) problems.push('PROJECT directive sceneId null olmalı');
+      if (directive?.scope === 'SCENE' && !command.scenes.some((scene) => scene.id === directive.sceneId)) problems.push('SCENE directive sceneId geçersiz');
+      if (directive?.source === 'LIVE_CHAT') {
+        const identity = { source: directive.source, scope: directive.scope, sceneId: directive.sceneId, text: directive.text };
+        const expectedLiveId = `live-${canonicalHash(identity).slice(0, 16)}`;
+        if (directive.id !== expectedLiveId) problems.push('LIVE_CHAT directive id stale/tampered');
+      }
+    }
+    if (canonicalize(command?.lifecycle?.mamiDirectives ?? []) !== canonicalize(decisionDirectives)) {
+      problems.push('MamiDirectives exact projection stale/tampered');
+    }
+  }
+  if (!command?.lifecycle?.sceneContextHashes || typeof command.lifecycle.sceneContextHashes !== 'object') {
+    problems.push('sceneContextHashes yok');
+  } else if (Array.isArray(command?.scenes)) {
+    for (const scene of command.scenes) {
+      const stored = command.lifecycle.sceneContextHashes[scene.id];
+      const actual = canonicalHash({ imageAuthor: imageContext(command, scene), motionEngine: scene.motionEngine });
+      if (stored !== actual) problems.push(`scene ${scene.id} contextHash stale/tampered`);
+    }
+  }
   return { ok: problems.length === 0, problems, protocolText, protocolHash, expectedId, expectedStoryboard };
+}
+
+function nonEmptyStrings(value) {
+  return Array.isArray(value) && value.every((item) => typeof item === 'string') && value.length > 0;
+}
+
+function validateRoleContent(artifact, command) {
+  const problems = [];
+  const content = artifact?.content;
+  if (!content || typeof content !== 'object' || Array.isArray(content)) return ['content object'];
+  const scene = command.scenes.find((item) => item.id === artifact.sceneId);
+  const directives = (command.lifecycle.mamiDirectives ?? [])
+    .filter((item) => item.scope === 'PROJECT' || item.sceneId === artifact.sceneId);
+  if (artifact.role === 'image_author') {
+    if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('image prompt');
+    if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('image promptHash');
+    if (!Array.isArray(content.directiveReceipts)) problems.push('directiveReceipts');
+    else {
+      const normalized = content.directiveReceipts.map((item) => ({ id: item?.id, text: item?.text, status: item?.status }));
+      const expected = directives.map((item) => ({ id: item.id, text: item.text, status: normalized.find((receipt) => receipt.id === item.id)?.status }));
+      if (canonicalize(normalized.map((item) => ({ ...item })).sort((a, b) => String(a.id).localeCompare(String(b.id)))) !==
+          canonicalize(expected.sort((a, b) => String(a.id).localeCompare(String(b.id))))) problems.push('directiveReceipts exact');
+      if (normalized.some((item) => !['APPLIED', 'SUPPRESSED'].includes(item.status))) problems.push('directiveReceipts status');
+    }
+    if (!nonEmptyStrings(content.appliedLocks)) problems.push('appliedLocks');
+    if (!Array.isArray(content.suppressedContext)) problems.push('suppressedContext');
+    if (!Array.isArray(content.risks)) problems.push('risks');
+    if (/\[DIRECTOR TASK\]|\bTODO\b|#[0-9a-f]{3,8}\b/i.test(content.prompt ?? '')) problems.push('image prompt workflow/hex leak');
+  } else if (artifact.role === 'motion_author') {
+    if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('motion prompt');
+    if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('motion promptHash');
+    if (!nonEmptyStrings(content.inventory)) problems.push('motion inventory');
+    if (!Array.isArray(content.risks)) problems.push('motion risks');
+    if (typeof content.frameHash !== 'string') problems.push('motion frameHash');
+  } else if (String(artifact.role || '').endsWith('_jury')) {
+    const verdict = content.verdict;
+    if (!JURY.has(verdict)) problems.push('jury verdict');
+    if (!nonEmptyStrings(content.evidence)) problems.push('jury evidence');
+    if (verdict === 'REJECT' && (!content.failingCheck?.trim() || !content.targetedFix?.trim())) problems.push('REJECT evidence');
+    if (verdict === 'FACT_REQUIRED' && !content.factRequired?.trim()) problems.push('FACT_REQUIRED evidence');
+    if (['frame_jury', 'motion_jury'].includes(artifact.role) && typeof content.frameHash !== 'string') problems.push('jury frameHash');
+  }
+  if (!scene) problems.push('content scene');
+  return problems;
 }
 
 function verifyArtifact(artifact, command) {
@@ -91,12 +175,7 @@ function verifyArtifact(artifact, command) {
     const { contentHash, ...body } = artifact;
     if (canonicalHash(body) !== contentHash) problems.push('contentHash tampered');
   }
-  if (String(artifact?.role || '').endsWith('_jury')) {
-    const verdict = artifact?.content?.verdict;
-    if (!JURY.has(verdict)) problems.push('jury verdict');
-    if (verdict === 'REJECT' && (!artifact.content.failingCheck?.trim() || !artifact.content.targetedFix?.trim())) problems.push('REJECT evidence');
-    if (verdict === 'FACT_REQUIRED' && !artifact.content.factRequired?.trim()) problems.push('FACT_REQUIRED evidence');
-  }
+  problems.push(...validateRoleContent(artifact, command));
   return { ok: problems.length === 0, problems };
 }
 
@@ -108,7 +187,8 @@ function requiredArtifact(artifacts, role, revision, consumer) {
   return artifact;
 }
 
-function expectedInputs(role, revision, artifacts) {
+function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
+  const contextHash = command.lifecycle.sceneContextHashes[sceneId];
   const latestPassingImageJury = artifacts
     .filter((item) => item.role === 'image_jury' && item.content?.verdict === 'PASS')
     .sort((a, b) => b.revision - a.revision)[0];
@@ -116,25 +196,27 @@ function expectedInputs(role, revision, artifacts) {
   const imageAuthor = imageJury ? requiredArtifact(artifacts, 'image_author', imageJury.revision, role) : null;
   const frameJury = artifactAt(artifacts, 'frame_jury', 0);
 
-  if (role === 'image_author' && revision === 0) return [];
+  if (role === 'image_author' && revision === 0) return [contextHash];
   if (role === 'image_author' && revision === 1) {
     const author0 = requiredArtifact(artifacts, 'image_author', 0, role);
     const jury0 = requiredArtifact(artifacts, 'image_jury', 0, role);
     if (jury0.content?.verdict !== 'REJECT') throw new Error('image_author@1 yalnız REJECT sonrası açılır');
-    return [author0.contentHash, jury0.contentHash];
+    return [contextHash, author0.contentHash, jury0.contentHash];
   }
   if (role === 'image_jury') {
-    return [requiredArtifact(artifacts, 'image_author', revision, role).contentHash];
+    return [contextHash, requiredArtifact(artifacts, 'image_author', revision, role).contentHash];
   }
   if (role === 'frame_jury') {
     if (!imageAuthor || !imageJury) throw new Error('frame_jury: PASS image zinciri yok');
-    return [imageAuthor.contentHash, imageJury.contentHash];
+    if (!frame?.contentHash) throw new Error('frame_jury: current frame receipt yok');
+    return [contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash];
   }
   if (role === 'motion_author') {
     if (!imageAuthor || !imageJury || !frameJury || frameJury.content?.verdict !== 'PASS') {
       throw new Error('motion_author: PASS image/frame zinciri yok');
     }
-    const base = [imageAuthor.contentHash, imageJury.contentHash, frameJury.contentHash];
+    if (!frame?.contentHash) throw new Error('motion_author: current frame receipt yok');
+    const base = [contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash];
     if (revision === 0) return base;
     const author0 = requiredArtifact(artifacts, 'motion_author', 0, role);
     const jury0 = requiredArtifact(artifacts, 'motion_jury', 0, role);
@@ -144,20 +226,20 @@ function expectedInputs(role, revision, artifacts) {
   if (role === 'motion_jury') {
     if (!imageAuthor || !imageJury || !frameJury) throw new Error('motion_jury: prerequisite zinciri yok');
     return [
-      imageAuthor.contentHash, imageJury.contentHash, frameJury.contentHash,
+      contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash,
       requiredArtifact(artifacts, 'motion_author', revision, role).contentHash,
     ];
   }
   throw new Error(`unsupported artifact role: ${role}`);
 }
 
-function validateArtifactChain(artifacts, frame) {
+function validateArtifactChain(artifacts, frame, command, sceneId) {
   const seen = new Set();
   for (const artifact of artifacts) {
     const key = `${artifact.role}@${artifact.revision}`;
     if (seen.has(key)) throw new Error(`duplicate artifact: ${key}`);
     seen.add(key);
-    const expected = expectedInputs(artifact.role, artifact.revision, artifacts);
+    const expected = expectedInputs(artifact.role, artifact.revision, artifacts, command, sceneId, frame);
     if (canonicalize(expected) !== canonicalize(artifact.inputArtifactHashes)) {
       throw new Error(`${key}: inputArtifactHashes zinciri uyuşmuyor`);
     }
@@ -179,6 +261,162 @@ async function loadArtifacts(dir, command) {
     artifacts.push(value);
   }
   return artifacts;
+}
+
+async function parseImageDimensions(bytes) {
+  try {
+    const decoder = sharp(bytes, { failOn: 'error', limitInputPixels: 100_000_000 });
+    const metadata = await decoder.metadata();
+    if (!['png', 'jpeg', 'webp'].includes(metadata.format)) throw new Error('desteklenmeyen format');
+    // metadata() only parses headers. raw().toBuffer() forces a complete pixel decode.
+    const { info } = await decoder.clone().rotate().raw().toBuffer({ resolveWithObject: true });
+    if (!Number.isInteger(info.width) || info.width <= 0 || !Number.isInteger(info.height) || info.height <= 0) {
+      throw new Error('pixel dimensions geçersiz');
+    }
+    return { width: info.width, height: info.height, format: metadata.format };
+  } catch (error) {
+    throw new Error(`frame tam decode edilebilir PNG/JPEG/WebP değil: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+function passingImageArtifacts(artifacts) {
+  const jury = artifacts
+    .filter((item) => item.role === 'image_jury' && item.content?.verdict === 'PASS')
+    .sort((a, b) => b.revision - a.revision)[0];
+  const author = jury ? artifactAt(artifacts, 'image_author', jury.revision) : null;
+  return { author, jury };
+}
+
+function storyboardApprovalBody(command, scene) {
+  return {
+    schema: STORYBOARD_APPROVAL_SCHEMA,
+    sceneId: scene.id,
+    commandId: command.commandId,
+    storyboardHash: command.lifecycle.storyboardHash,
+    sceneContextHash: command.lifecycle.sceneContextHashes[scene.id],
+    verdict: 'APPROVED',
+  };
+}
+
+async function loadStoryboardApproval(root, command, scene) {
+  const file = join(root, 'approvals', `${scene.id}.json`);
+  if (!existsSync(file)) return { ok: false, source: null };
+  const value = JSON.parse(await readFile(file, 'utf8'));
+  const { contentHash, ...body } = value;
+  if (canonicalize(body) !== canonicalize(storyboardApprovalBody(command, scene)) || canonicalHash(body) !== contentHash) {
+    throw new Error(`scene ${scene.id} storyboard approval stale/tampered`);
+  }
+  return { ok: true, source: 'WORKSPACE' };
+}
+
+async function approveStoryboard(root, command, scene) {
+  const body = storyboardApprovalBody(command, scene);
+  const value = { ...body, contentHash: canonicalHash(body) };
+  await mkdir(join(root, 'approvals'), { recursive: true });
+  const file = join(root, 'approvals', `${scene.id}.json`);
+  await writeFile(file, JSON.stringify(value, null, 2), 'utf8');
+  return { file, approvalHash: value.contentHash };
+}
+
+async function addLiveDirective(command, commandFile, args) {
+  const sourceFile = argValue(args, '--add-directive-file');
+  if (!sourceFile) throw new Error('--add-directive-file için UTF-8 metin dosyası zorunlu');
+  const text = await readFile(resolve(sourceFile), 'utf8');
+  if (!text.trim()) throw new Error('LIVE_CHAT MamiDirective boş olamaz');
+  const scope = argValue(args, '--scope') ?? 'PROJECT';
+  if (!['PROJECT', 'SCENE'].includes(scope)) throw new Error('--scope PROJECT|SCENE olmalı');
+  const sceneValue = Number(argValue(args, '--scene'));
+  const sceneId = scope === 'SCENE' ? sceneValue : null;
+  if (scope === 'SCENE' && (!Number.isInteger(sceneId) || !command.scenes.some((scene) => scene.id === sceneId))) {
+    throw new Error('SCENE directive için geçerli --scene zorunlu');
+  }
+  const identity = { source: 'LIVE_CHAT', scope, sceneId, text };
+  const directive = { id: `live-${sha256(canonicalize(identity)).slice(0, 16)}`, ...identity };
+  if ((command.lifecycle.mamiDirectives ?? []).some((item) => item.id === directive.id)) {
+    throw new Error(`LIVE_CHAT directive zaten mevcut: ${directive.id}`);
+  }
+  const updated = JSON.parse(JSON.stringify(command));
+  const existing = updated.baseDecision.mamiDirectives ?? [];
+  updated.baseDecision.mamiDirectives = [...existing.filter((item) => item.id !== directive.id), directive];
+  updated.lifecycle.mamiDirectives = [...updated.baseDecision.mamiDirectives];
+  updated.lifecycle.shotApprovals = {};
+  updated.commandId = `mamilas-${canonicalHash(updated.baseDecision)}`;
+  updated.lifecycle.sceneContextHashes = Object.fromEntries(updated.scenes.map((scene) => [
+    scene.id,
+    canonicalHash({ imageAuthor: imageContext(updated, scene), motionEngine: scene.motionEngine }),
+  ]));
+  const output = resolve(argValue(args, '--out') ?? join(dirname(commandFile), `${directive.id}_mamilas_command.json`));
+  await writeFile(output, JSON.stringify(updated, null, 2), 'utf8');
+  return { output, commandId: updated.commandId, directive };
+}
+
+async function loadFrame(root, command, scene, artifacts) {
+  const receiptPath = join(root, 'frames', `${scene.id}.json`);
+  if (!existsSync(receiptPath)) return null;
+  const receipt = JSON.parse(await readFile(receiptPath, 'utf8'));
+  const { contentHash, ...body } = receipt;
+  if (canonicalHash(body) !== contentHash) throw new Error(`scene ${scene.id} frame receipt tampered`);
+  if (receipt.schema !== FRAME_RECEIPT_SCHEMA || receipt.sceneId !== scene.id) throw new Error(`scene ${scene.id} frame receipt schema/scene`);
+  if (receipt.fromCommandId !== command.commandId || receipt.storyboardHash !== command.lifecycle.storyboardHash) throw new Error(`scene ${scene.id} frame stale`);
+  if (!FRAME_VERDICTS.has(receipt.verdict)) throw new Error(`scene ${scene.id} frame verdict geçersiz`);
+  const { author, jury } = passingImageArtifacts(artifacts);
+  if (!author || !jury || receipt.fromImagePromptArtifactHash !== author.contentHash) throw new Error(`scene ${scene.id} frame prompt bağı stale`);
+  const localPath = resolve(join(root, 'frames', receipt.storedFile ?? ''));
+  const frameDir = `${resolve(join(root, 'frames'))}${process.platform === 'win32' ? '\\' : '/'}`;
+  if (!localPath.startsWith(frameDir) || !existsSync(localPath)) throw new Error(`scene ${scene.id} gerçek frame dosyası yok/geçersiz yol`);
+  const bytes = await readFile(localPath);
+  const dimensions = await parseImageDimensions(bytes);
+  const actualHash = createHash('sha256').update(bytes).digest('hex');
+  const aspect = Number((dimensions.width / dimensions.height).toFixed(3));
+  if (receipt.frameHash !== actualHash || receipt.byteSize !== bytes.length || receipt.width !== dimensions.width || receipt.height !== dimensions.height || receipt.aspect !== aspect) {
+    throw new Error(`scene ${scene.id} gerçek frame byte/hash/dimension uyuşmuyor`);
+  }
+  return { ...receipt, localPath };
+}
+
+async function importFrame(root, command, scene, artifacts, sourcePath, verdict) {
+  if (!FRAME_VERDICTS.has(verdict)) throw new Error('--verdict APPROVE|REGENERATE|PROJECT_ONLY_ACCEPT|PENDING olmalı');
+  const { author, jury } = passingImageArtifacts(artifacts);
+  if (!author || !jury) throw new Error('frame import için PASS image author→jury zinciri zorunlu');
+  const bytes = await readFile(resolve(sourcePath));
+  const dimensions = await parseImageDimensions(bytes);
+  if (dimensions.width <= 0 || dimensions.height <= 0 || bytes.length <= 0) throw new Error('frame dimensions/bytes geçersiz');
+  const framesDir = join(root, 'frames');
+  await mkdir(framesDir, { recursive: true });
+  const storedFile = `${scene.id}.${dimensions.format === 'jpeg' ? 'jpg' : dimensions.format}`;
+  await writeFile(join(framesDir, storedFile), bytes);
+  const body = {
+    schema: FRAME_RECEIPT_SCHEMA,
+    sceneId: scene.id,
+    fromCommandId: command.commandId,
+    storyboardHash: command.lifecycle.storyboardHash,
+    fromImagePromptArtifactHash: author.contentHash,
+    frameHash: createHash('sha256').update(bytes).digest('hex'),
+    width: dimensions.width,
+    height: dimensions.height,
+    aspect: Number((dimensions.width / dimensions.height).toFixed(3)),
+    byteSize: bytes.length,
+    originalFileName: sourcePath.split(/[\\/]/).pop(),
+    storedFile,
+    verdict,
+  };
+  const receipt = { ...body, contentHash: canonicalHash(body) };
+  const receiptPath = join(framesDir, `${scene.id}.json`);
+  await writeFile(receiptPath, JSON.stringify(receipt, null, 2), 'utf8');
+  return { receiptPath, frameHash: receipt.frameHash, width: receipt.width, height: receipt.height, verdict };
+}
+
+async function exportImageBundle(root, command, scene, artifacts, outputArg) {
+  const { author, jury } = passingImageArtifacts(artifacts);
+  if (!author || !jury) throw new Error('site import bundle için PASS image author→jury zinciri zorunlu');
+  const imageArtifacts = artifacts
+    .filter((artifact) => (artifact.role === 'image_author' || artifact.role === 'image_jury') && artifact.revision <= jury.revision)
+    .sort((a, b) => a.revision - b.revision || a.role.localeCompare(b.role));
+  const body = { schema: 'mamilas.image-artifact-bundle.v1', command, artifacts: imageArtifacts };
+  const output = resolve(outputArg ?? join(root, 'site-import', `scene-${scene.id}-image-bundle.json`));
+  await mkdir(dirname(output), { recursive: true });
+  await writeFile(output, JSON.stringify(body, null, 2), 'utf8');
+  return { output, artifactCount: imageArtifacts.length, authorHash: author.contentHash, juryHash: jury.contentHash };
 }
 
 const latest = (artifacts, role) => artifacts.filter((a) => a.role === role).sort((a, b) => b.revision - a.revision)[0];
@@ -228,17 +466,54 @@ function imageContext(command, scene) {
       paletteAsLight: command.worldPacket.paletteAsLight,
       refs: (command.worldPacket.refs ?? []).filter((ref) => ref.compatible),
     } : null,
-    explicitLocks: { brandKitLock: command.baseDecision.locks.brandKitLock, cast: command.baseDecision.locks.cast, onScreenText: scene.prompts?.onScreenText ?? null },
-    continuity: { previousSceneId: scene.id > 1 ? scene.id - 1 : null, nextSceneId: scene.id < command.scenes.length ? scene.id + 1 : null },
+    explicitLocks: {
+      brandKitLock: command.baseDecision.locks.brandKitLock,
+      cast: command.baseDecision.locks.cast,
+      onScreenText: scene.prompts?.onScreenText ?? null,
+      mamiPromptOverride: command.baseDecision.overrides?.find((item) => item.sceneId === scene.id)?.userImagePrompt ?? null,
+    },
+    targetEngine: command.baseDecision.engine.imageModel,
+    failureModes: scene.handoff?.IMAGE?.avoid ?? null,
+    continuity: {
+      previousSceneId: scene.id > 1 ? command.scenes[command.scenes.findIndex((item) => item.id === scene.id) - 1]?.id ?? null : null,
+      nextSceneId: command.scenes[command.scenes.findIndex((item) => item.id === scene.id) + 1]?.id ?? null,
+    },
+  };
+}
+
+function roleDecision(command) {
+  return {
+    commandId: command.commandId,
+    locks: command.baseDecision.locks,
+    engine: command.baseDecision.engine,
+    mode: command.baseDecision.mode,
+    creativeControls: command.baseDecision.creativeControls,
+    deliveryPromise: command.baseDecision.deliveryPromise,
   };
 }
 
 function roleContext(command, scene, artifacts, frame, action) {
-  if (action.role === 'image_author') return imageContext(command, scene);
-  if (action.role === 'image_jury') return { decision: command.baseDecision, storyboardHash: command.lifecycle.storyboardHash, shot: imageContext(command, scene).shot, imagePromptArtifact: latest(artifacts, 'image_author') };
-  if (action.role === 'frame_jury') return { decision: command.baseDecision, storyboardHash: command.lifecycle.storyboardHash, imagePromptArtifact: latest(artifacts, 'image_author'), frame };
-  if (action.role === 'motion_author') return { decision: command.baseDecision, storyboardHash: command.lifecycle.storyboardHash, shot: imageContext(command, scene).shot, mamiDirectives: imageContext(command, scene).mamiDirectives, frame };
-  return { decision: command.baseDecision, storyboardHash: command.lifecycle.storyboardHash, imagePromptArtifact: latest(artifacts, 'image_author'), frame, motionArtifact: latest(artifacts, 'motion_author') };
+  const image = imageContext(command, scene);
+  if (action.role === 'image_author') return image;
+  if (action.role === 'image_jury') return {
+    decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'),
+  };
+  if (action.role === 'frame_jury') return {
+    decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'), frame,
+  };
+  if (action.role === 'motion_author') return {
+    decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    shot: image.shot, mamiDirectives: image.mamiDirectives, explicitLocks: image.explicitLocks,
+    continuity: image.continuity, frame, engine: scene.motionEngine,
+  };
+  return {
+    decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    shot: image.shot, mamiDirectives: image.mamiDirectives, continuity: image.continuity,
+    imagePromptArtifact: latest(artifacts, 'image_author'), frame,
+    motionArtifact: latest(artifacts, 'motion_author'), engine: scene.motionEngine,
+  };
 }
 
 function argValue(args, name) {
@@ -274,13 +549,27 @@ function findExecutable(name) {
 async function launchInteractive(provider, projectDir, workspaceDir) {
   const cli = findExecutable(provider);
   if (!cli) throw new Error(`${provider} CLI bulunamadı`);
-  const instruction = 'Read .mamilas/SESSION.md and follow it. Work only on the single role named there; do not call generation APIs.';
+  const instruction = `Read ${JSON.stringify(join(workspaceDir, 'SESSION.md'))} and follow it. Work only on the single role named there; do not call generation APIs.`;
   const args = provider === 'codex' ? ['-C', projectDir, instruction] : [instruction];
   const child = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
     ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${args.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
     : spawn(cli, args, { cwd: projectDir, stdio: 'inherit' });
-  await new Promise((resolvePromise, reject) => { child.on('exit', resolvePromise); child.on('error', reject); });
+  const exitCode = await new Promise((resolvePromise, reject) => { child.on('exit', resolvePromise); child.on('error', reject); });
+  if (exitCode !== 0) throw new Error(`${provider} oturumu başarısız çıktı: ${exitCode}`);
   return workspaceDir;
+}
+
+function artifactContentTemplate(role, command, scene) {
+  if (role === 'image_author') return {
+    prompt: '', promptHash: '',
+    directiveReceipts: (command.lifecycle.mamiDirectives ?? [])
+      .filter((item) => item.scope === 'PROJECT' || item.sceneId === scene.id)
+      .map((item) => ({ id: item.id, text: item.text, status: '' })),
+    appliedLocks: [], suppressedContext: [], risks: [],
+  };
+  if (role === 'motion_author') return { frameHash: '', inventory: [], prompt: '', promptHash: '', risks: [] };
+  if (role === 'frame_jury' || role === 'motion_jury') return { verdict: '', frameHash: '', evidence: [] };
+  return { verdict: '', evidence: [] };
 }
 
 export async function runCommand(args = process.argv.slice(2)) {
@@ -288,25 +577,71 @@ export async function runCommand(args = process.argv.slice(2)) {
   const command = JSON.parse(await readFile(file, 'utf8'));
   const check = await validateCommand(command);
   if (!check.ok) throw new Error(check.problems.join(' · '));
+  if (args.includes('--add-directive-file')) {
+    const added = await addLiveDirective(command, file, args);
+    return { file, validation: 'PASS', action: { kind: 'DIRECTIVE_ADDED' }, ...added };
+  }
   const projectDir = dirname(file);
-  const sceneArg = Number(argValue(args, '--scene'));
-  const approved = command.scenes.filter((scene) => {
-    const approval = command.lifecycle.shotApprovals?.[scene.id];
-    return approval?.verdict === 'APPROVED' && approval.commandId === command.commandId;
-  });
-  const scene = Number.isFinite(sceneArg) && sceneArg > 0 ? command.scenes.find((item) => item.id === sceneArg) : approved[0];
-  if (!scene) return { file, validation: 'PASS', action: { kind: 'AWAIT_STORYBOARD_APPROVAL' } };
-  const approval = command.lifecycle.shotApprovals?.[scene.id];
-  if (approval?.verdict !== 'APPROVED' || approval.commandId !== command.commandId) throw new Error(`scene ${scene.id} current APPROVED değil`);
   const root = resolve(argValue(args, '--workspace') ?? join(projectDir, '.mamilas'));
   const artifactDir = resolve(argValue(args, '--artifacts') ?? join(root, 'artifacts'));
+  const sceneArg = Number(argValue(args, '--scene'));
+  const explicitScene = Number.isFinite(sceneArg) && sceneArg > 0
+    ? command.scenes.find((item) => item.id === sceneArg)
+    : null;
+  if (Number.isFinite(sceneArg) && sceneArg > 0 && !explicitScene) throw new Error(`scene ${sceneArg} yok`);
+
+  if (args.includes('--approve-storyboard')) {
+    if (!explicitScene) throw new Error('--approve-storyboard için --scene zorunlu');
+    await mkdir(root, { recursive: true });
+    const approval = await approveStoryboard(root, command, explicitScene);
+    return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'STORYBOARD_APPROVED' }, ...approval };
+  }
+
   const artifacts = await loadArtifacts(artifactDir, command);
-  const framePath = join(root, 'frames', `${scene.id}.json`);
-  const frame = existsSync(framePath) ? JSON.parse(await readFile(framePath, 'utf8')) : null;
-  if (frame && (frame.fromCommandId !== command.commandId || !frame.frameHash)) throw new Error(`scene ${scene.id} frame stale/geçersiz`);
-  const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === scene.id);
-  validateArtifactChain(sceneArtifacts, frame);
-  const action = nextAction(sceneArtifacts, frame);
+  if (args.includes('--export-image-bundle')) {
+    if (!explicitScene) throw new Error('--export-image-bundle için --scene zorunlu');
+    const approval = await loadStoryboardApproval(root, command, explicitScene);
+    if (!approval.ok) throw new Error(`scene ${explicitScene.id} storyboard APPROVE değil`);
+    const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === explicitScene.id);
+    validateArtifactChain(sceneArtifacts, null, command, explicitScene.id);
+    const exported = await exportImageBundle(root, command, explicitScene, sceneArtifacts, argValue(args, '--out'));
+    return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'IMAGE_BUNDLE_EXPORTED' }, ...exported };
+  }
+  if (args.includes('--import-frame')) {
+    if (!explicitScene) throw new Error('--import-frame için --scene zorunlu');
+    const approval = await loadStoryboardApproval(root, command, explicitScene);
+    if (!approval.ok) throw new Error(`scene ${explicitScene.id} storyboard APPROVE değil`);
+    const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === explicitScene.id);
+    validateArtifactChain(sceneArtifacts, null, command, explicitScene.id);
+    const imported = await importFrame(
+      root, command, explicitScene, sceneArtifacts,
+      argValue(args, '--import-frame'), argValue(args, '--verdict') ?? 'PENDING',
+    );
+    return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'FRAME_IMPORTED' }, ...imported };
+  }
+
+  let selected = null;
+  const candidates = explicitScene ? [explicitScene] : command.scenes;
+  for (const candidate of candidates) {
+    const approval = await loadStoryboardApproval(root, command, candidate);
+    if (!approval.ok) {
+      selected = { scene: candidate, artifacts: [], frame: null, action: { kind: 'AWAIT_STORYBOARD_APPROVAL' } };
+      break;
+    }
+    const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === candidate.id);
+    const frame = await loadFrame(root, command, candidate, sceneArtifacts);
+    validateArtifactChain(sceneArtifacts, frame, command, candidate.id);
+    const action = nextAction(sceneArtifacts, frame);
+    if (action.kind !== 'COMPLETE' || explicitScene) {
+      selected = { scene: candidate, artifacts: sceneArtifacts, frame, action };
+      break;
+    }
+  }
+  if (!selected) return {
+    file, validation: 'PASS', protocolHash: check.protocolHash, commandId: command.commandId,
+    storyboardHash: check.expectedStoryboard, sceneId: null, action: { kind: 'COMPLETE' }, contextSummary: null,
+  };
+  const { scene, artifacts: sceneArtifacts, frame, action } = selected;
   const context = action.kind === 'RUN_ROLE' ? roleContext(command, scene, sceneArtifacts, frame, action) : null;
   const contextText = context ? JSON.stringify(context) : '';
   const result = {
@@ -340,9 +675,9 @@ export async function runCommand(args = process.argv.slice(2)) {
       sceneId: scene.id,
       decisionHash: command.commandId.replace(/^mamilas-/, ''),
       storyboardHash: command.lifecycle.storyboardHash,
-      inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts),
+      inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts, command, scene.id, frame),
       revision: action.revision,
-      content: {},
+      content: artifactContentTemplate(action.role, command, scene),
     };
     const sessionContext = { ...context, artifactContract: artifactTemplate };
     const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
@@ -359,7 +694,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (produced.role !== action.role || produced.revision !== action.revision || produced.provider !== provider) {
       throw new Error('oturum yanlış role/revision/provider artifact üretti');
     }
-    validateArtifactChain(after, frame);
+    validateArtifactChain(after, frame, command, scene.id);
   }
   return result;
 }

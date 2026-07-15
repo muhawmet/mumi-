@@ -35,12 +35,18 @@ function commandFixture() {
   return buildCommandJSON(state) as any;
 }
 
-function stage(files: Record<string, unknown | string>) {
+function stage(files: Record<string, unknown | string>, approve = false) {
   const dir = mkdtempSync(join(REPO, 'agents', '.runner-test-'));
   temps.push(dir);
   cpSync(join(REPO, 'agents', 'runner.mjs'), join(dir, 'runner.mjs'));
   for (const [name, value] of Object.entries(files)) {
     writeFileSync(join(dir, name), typeof value === 'string' ? value : JSON.stringify(value), 'utf8');
+  }
+  if (approve) {
+    const approval = spawnSync(process.execPath, [join(dir, 'runner.mjs'), '--approve-storyboard', '--scene', '1'], {
+      cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    if (approval.status !== 0) return { dir, status: approval.status, out: `${approval.stdout ?? ''}${approval.stderr ?? ''}` };
   }
   const run = spawnSync(process.execPath, [join(dir, 'runner.mjs'), '--dry-run'], {
     cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
@@ -50,7 +56,7 @@ function stage(files: Record<string, unknown | string>) {
 
 describe('cross-platform runner executes the canonical command gate', () => {
   test('a valid command delegates to the lifecycle and reports one next role', () => {
-    const result = stage({ 'su_mamilas_command.json': commandFixture() });
+    const result = stage({ 'su_mamilas_command.json': commandFixture() }, true);
     expect(result.status, result.out).toBe(0);
     expect(result.out).toContain('"validation": "PASS"');
     expect(result.out).toContain('"role": "image_author"');

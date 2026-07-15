@@ -2,6 +2,7 @@ import { canonicalize, canonicalHash, sha256Hex } from './contract';
 import { DATA, worldPacketById } from './pure';
 import { ingestSource, sourceIntegrity } from './source';
 import type { StudioState, Scene, ShotApproval, PromptReceipt, SceneFrameReceipt } from '../store/useStudioStore';
+import { validatedLiveDirectives, type MamiDirective } from './agentProtocol';
 
 /**
  * TAŞINABİLİR PROJECT PACK — MACRO 6.
@@ -53,6 +54,7 @@ export interface ProjectPack {
     osTextMode: string;
     voSyncMode: string;
     directorBrief: string;
+    liveMamiDirectives: MamiDirective[];
     mood: string;
     cameraEnergy: string;
     timeLight: string;
@@ -109,6 +111,7 @@ function decisionOf(s: Pick<StudioState, keyof ProjectPack['decision'] | 'direct
     osTextMode: s.osTextMode,
     voSyncMode: s.voSyncMode,
     directorBrief: s.directorBrief,
+    liveMamiDirectives: s.liveMamiDirectives.map((directive) => ({ ...directive })),
     mood: s.mood,
     cameraEnergy: s.cameraEnergy,
     timeLight: s.timeLight,
@@ -220,6 +223,7 @@ export function verifyProjectPack(value: unknown): PackVerification {
   const approvals = pack.shotApprovals as Record<number, ShotApproval>;
   if (typeof decision.selectedWorldId !== 'string' || typeof decision.projectTopic !== 'string'
       || !Array.isArray(decision.selectedRefIds)
+      || (decision.liveMamiDirectives != null && !Array.isArray(decision.liveMamiDirectives))
       || (decision.recipeScenes != null && !Array.isArray(decision.recipeScenes))) {
     problems.push('Decision zorunlu alanları geçersiz.');
   }
@@ -242,10 +246,24 @@ export function verifyProjectPack(value: unknown): PackVerification {
       && typeof approval.commandId === 'string')) {
     problems.push('Shot approval shape geçersiz.');
   }
+  try {
+    validatedLiveDirectives(decision.liveMamiDirectives ?? [], scenes.map((scene) => scene.id));
+  } catch (error) {
+    problems.push(`LIVE_CHAT directives geçersiz: ${error instanceof Error ? error.message : String(error)}`);
+  }
   for (const scene of scenes) {
     if (scene.promptReceipt) {
       if (scene.agentPrompt !== scene.promptReceipt.finalPrompt
-          || scene.promptReceipt.promptHash !== sha256Hex(scene.promptReceipt.finalPrompt)) {
+          || scene.promptReceipt.promptHash !== sha256Hex(scene.promptReceipt.finalPrompt)
+          || !/^[0-9a-f]{64}$/.test(scene.promptReceipt.artifactHash ?? '')
+          || !/^[0-9a-f]{64}$/.test(scene.promptReceipt.juryArtifactHash ?? '')
+          || !/^[0-9a-f]{64}$/.test(scene.promptReceipt.protocolHash ?? '')
+          || !/^[0-9a-f]{64}$/.test(scene.promptReceipt.storyboardHash ?? '')
+          || !Array.isArray(scene.promptReceipt.artifactBundleHashes)
+          || !scene.promptReceipt.artifactBundleHashes.includes(scene.promptReceipt.artifactHash ?? '')
+          || !scene.promptReceipt.artifactBundleHashes.includes(scene.promptReceipt.juryArtifactHash ?? '')
+          || !Array.isArray(scene.promptReceipt.inputArtifactHashes)
+          || !['claude', 'codex'].includes(scene.promptReceipt.provider ?? '')) {
         problems.push(`Scene ${scene.id} prompt receipt uyuşmuyor.`);
       }
     } else if (scene.agentPrompt != null) {
@@ -325,6 +343,7 @@ export function projectPackToState(pack: ProjectPack): Partial<StudioState> {
     osTextMode: (decision.osTextMode ?? 'AUTO') as StudioState['osTextMode'],
     voSyncMode: (decision.voSyncMode ?? 'FREE') as StudioState['voSyncMode'],
     directorBrief: decision.directorBrief ?? '',
+    liveMamiDirectives: (decision.liveMamiDirectives ?? []).map((directive) => ({ ...directive })),
     mood: decision.mood ?? '',
     cameraEnergy: decision.cameraEnergy ?? '',
     timeLight: decision.timeLight ?? '',

@@ -17,8 +17,16 @@ import {
 import { buildRecipeMarkdown, buildRecipeMachine, registerOf, type RecipeSceneNote } from '../core/brain';
 import type { DurationVerdict } from '../core/brain';
 import type { Blocker } from '../core/contract';
-import { sha256Hex, sha256HexBytes } from '../core/contract';
+import { canonicalHash, sha256Hex, sha256HexBytes } from '../core/contract';
 import { buildCommandJSON } from '../core/commandExport';
+import {
+  directivesFromDirectorBrief,
+  validatedLiveDirectives,
+  verifyAgentArtifact,
+  type AgentArtifact,
+  type ImageAuthorContent,
+  type MamiDirective,
+} from '../core/agentProtocol';
 import { buildCloseout, buildProjectPack, serializeProjectPack, verifyProjectPack, projectPackToState, type ProjectPack } from '../core/projectPack';
 import {
   decodeBrief,
@@ -74,6 +82,15 @@ export interface PromptReceipt {
   promptHash: string;
   /** Kaynak: elle yapıştırma mı, dosya importu mu. */
   source: 'paste' | 'import';
+  /** Validated command lifecycle artifact envelope. Legacy plain-text receipts omit these and are never current. */
+  artifactHash?: string;
+  juryArtifactHash?: string;
+  artifactBundleHashes?: string[];
+  protocolHash?: string;
+  provider?: 'claude' | 'codex';
+  storyboardHash?: string;
+  inputArtifactHashes?: string[];
+  revision?: 0 | 1;
 }
 
 /** Mami'nin bir shot'a verdiği verdict + hangi karara (commandId) bağlı olduğu (MACRO 4). */
@@ -210,7 +227,17 @@ export function hasCurrentAgentPrompt(
   if (!prompt || !receipt) return false;
   return receipt.finalPrompt === prompt
     && receipt.promptHash === sha256Hex(prompt)
-    && receipt.fromCommandId === promptSourceCommandId;
+    && receipt.fromCommandId === promptSourceCommandId
+    && Boolean(receipt.artifactHash?.match(/^[0-9a-f]{64}$/))
+    && Boolean(receipt.juryArtifactHash?.match(/^[0-9a-f]{64}$/))
+    && Array.isArray(receipt.artifactBundleHashes)
+    && receipt.artifactBundleHashes.includes(receipt.artifactHash ?? '')
+    && receipt.artifactBundleHashes.includes(receipt.juryArtifactHash ?? '')
+    && Boolean(receipt.protocolHash?.match(/^[0-9a-f]{64}$/))
+    && Boolean(receipt.storyboardHash?.match(/^[0-9a-f]{64}$/))
+    && Array.isArray(receipt.inputArtifactHashes)
+    && receipt.inputArtifactHashes.length > 0
+    && (receipt.provider === 'claude' || receipt.provider === 'codex');
 }
 
 /**
@@ -218,12 +245,125 @@ export function hasCurrentAgentPrompt(
  * Authored prompt overrides are stripped so importing one prompt cannot change the identity
  * that every prompt receipt must cite; any actual decision/storyboard change still changes it.
  */
-export function promptSourceCommandId(state: StudioState): string {
+export function promptSourceCommand(state: StudioState) {
   const scenes = state.scenes.map((scene) => {
     const { userImagePrompt: _prompt, promptReceipt: _promptReceipt, frameReceipt: _frameReceipt, ...sourceScene } = scene;
     return sourceScene as Scene;
   });
-  return buildCommandJSON({ ...state, scenes } as never).commandId;
+  return buildCommandJSON({ ...state, scenes } as never);
+}
+
+export function promptSourceCommandId(state: StudioState): string {
+  return promptSourceCommand(state).commandId;
+}
+
+function applyImageArtifactBundle(scene: Scene, json: string, state: StudioState): { scene: Scene; liveMamiDirectives: MamiDirective[] } {
+  const parsed = JSON.parse(json) as unknown;
+  const wrapped = parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+    ? parsed as { command?: unknown; artifacts?: unknown[] }
+    : null;
+  const artifacts = Array.isArray(parsed)
+    ? parsed
+    : (wrapped && Array.isArray(wrapped.artifacts)
+      ? wrapped.artifacts
+      : [parsed]);
+  let liveMamiDirectives = state.liveMamiDirectives;
+  let command = promptSourceCommand(state);
+  if (wrapped?.command != null) {
+    const candidate = wrapped.command as ReturnType<typeof promptSourceCommand>;
+    const candidateDirectives = candidate?.lifecycle?.mamiDirectives;
+    if (!Array.isArray(candidateDirectives)) throw new Error('Bundle canonical command MamiDirectives taşımıyor.');
+    const expectedSite = directivesFromDirectorBrief(state.directorBrief);
+    const actualSite = candidateDirectives.filter((directive) => directive?.source === 'SITE');
+    if (canonicalHash(actualSite) !== canonicalHash(expectedSite)) throw new Error('Bundle SITE directive current Studio kararıyla uyuşmuyor.');
+    liveMamiDirectives = validatedLiveDirectives(
+      candidateDirectives.filter((directive) => directive?.source === 'LIVE_CHAT'),
+      state.scenes.map((candidateScene) => candidateScene.id),
+    );
+    const expected = promptSourceCommand({ ...state, liveMamiDirectives } as StudioState);
+    const sameCommand = candidate?.schema === expected.schema
+      && candidate.commandId === expected.commandId
+      && canonicalHash(candidate.baseDecision) === canonicalHash(expected.baseDecision)
+      && candidate.lifecycle?.storyboardHash === expected.lifecycle.storyboardHash
+      && canonicalHash(candidate.lifecycle?.mamiDirectives) === canonicalHash(expected.lifecycle.mamiDirectives)
+      && canonicalHash(candidate.lifecycle?.sceneContextHashes) === canonicalHash(expected.lifecycle.sceneContextHashes)
+      && canonicalHash(candidate.scenes) === canonicalHash(expected.scenes);
+    if (!sameCommand) throw new Error('Bundle command current Studio kararının yalnız LIVE_CHAT ile türetilmiş canonical eşi değil.');
+    command = expected;
+  }
+  const sceneContextHash = command.lifecycle.sceneContextHashes[scene.id];
+  if (!sceneContextHash) throw new Error(`Scene ${scene.id} author context hash yok.`);
+  const verified = artifacts.map((value) => {
+    const check = verifyAgentArtifact(value, {
+      decisionHash: command.commandId.replace(/^mamilas-/, ''),
+      storyboardHash: command.lifecycle.storyboardHash,
+    });
+    if (!check.ok) throw new Error(`Agent artifact geçersiz: ${check.problems.join(' · ')}`);
+    const artifact = value as AgentArtifact;
+    if (artifact.sceneId !== scene.id) throw new Error(`Artifact scene ${artifact.sceneId}; beklenen ${scene.id}.`);
+    return artifact;
+  });
+  const roleRevisions = new Set<string>();
+  for (const artifact of verified) {
+    const key = `${artifact.role}@${artifact.revision}`;
+    if (roleRevisions.has(key)) throw new Error(`Duplicate agent artifact: ${key}`);
+    roleRevisions.add(key);
+  }
+  const by = (role: AgentArtifact['role'], revision: 0 | 1) =>
+    verified.find((artifact) => artifact.role === role && artifact.revision === revision);
+  const author0 = by('image_author', 0);
+  const jury0 = by('image_jury', 0);
+  if (!author0 || !jury0) throw new Error('Image Author@0 + Image Jury@0 artifact bundle zorunlu.');
+  if (JSON.stringify(author0.inputArtifactHashes) !== JSON.stringify([sceneContextHash])) {
+    throw new Error('Image Author@0 inputArtifactHashes current context ile uyuşmuyor.');
+  }
+  if (JSON.stringify(jury0.inputArtifactHashes) !== JSON.stringify([sceneContextHash, author0.contentHash])) {
+    throw new Error('Image Jury@0 inputArtifactHashes zinciri uyuşmuyor.');
+  }
+  const author1 = by('image_author', 1);
+  const jury1 = by('image_jury', 1);
+  let author = author0;
+  let jury = jury0;
+  if (author1 || jury1) {
+    if (!author1 || !jury1 || (jury0.content as { verdict?: string }).verdict !== 'REJECT') {
+      throw new Error('Revision 1 yalnız tam Author0→REJECT Jury0→Author1→Jury1 zinciriyle geçer.');
+    }
+    if (JSON.stringify(author1.inputArtifactHashes) !== JSON.stringify([sceneContextHash, author0.contentHash, jury0.contentHash])) {
+      throw new Error('Image Author@1 inputArtifactHashes zinciri uyuşmuyor.');
+    }
+    if (JSON.stringify(jury1.inputArtifactHashes) !== JSON.stringify([sceneContextHash, author1.contentHash])) {
+      throw new Error('Image Jury@1 inputArtifactHashes zinciri uyuşmuyor.');
+    }
+    author = author1;
+    jury = jury1;
+  }
+  if ((jury.content as { verdict?: string }).verdict !== 'PASS') throw new Error('Final Image Jury verdict PASS değil.');
+  const content = author.content as ImageAuthorContent;
+  const expectedDirectives = command.lifecycle.mamiDirectives
+    .filter((directive) => directive.scope === 'PROJECT' || directive.sceneId === scene.id)
+    .map((directive) => ({ id: directive.id, text: directive.text }))
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const actualDirectives = content.directiveReceipts
+    .map((receipt) => ({ id: receipt.id, text: receipt.text }))
+    .sort((a, b) => a.id.localeCompare(b.id));
+  if (JSON.stringify(actualDirectives) !== JSON.stringify(expectedDirectives)) {
+    throw new Error('Image Author exact MamiDirectives receipt zinciri uyuşmuyor.');
+  }
+  const withPrompt = applyAgentPrompt(scene, content.prompt, command.commandId, 'import');
+  return { scene: {
+    ...withPrompt,
+    promptReceipt: {
+      ...withPrompt.promptReceipt!,
+      artifactHash: author.contentHash,
+      juryArtifactHash: jury.contentHash,
+      artifactBundleHashes: verified.map((artifact) => artifact.contentHash),
+      protocolHash: author.protocolHash,
+      provider: author.provider,
+      storyboardHash: author.storyboardHash,
+      inputArtifactHashes: [...author.inputArtifactHashes],
+      revision: author.revision,
+    },
+  }, liveMamiDirectives };
 }
 
 export function hasValidFrameEvidence(frame: SceneFrameReceipt | undefined): frame is SceneFrameReceipt {
@@ -287,6 +427,41 @@ export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport
 }
 
 /**
+ * Canonical command-authoring gate.
+ *
+ * The command is the Image Author's input, so exporting it cannot depend on evidence that the
+ * author has not produced yet. This gate validates only the decision-side prerequisites shared by
+ * every production phase: source integrity, a complete recipe, a storyboard, and no unresolved
+ * FACT REQUIRED blockers. Prompt receipts and Mami shot approval remain production evidence and
+ * are intentionally enforced by `productionReadiness` instead.
+ */
+export function commandAuthoringReadiness(
+  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers'>,
+): {
+  ready: boolean;
+  reason: string;
+  stage: 'source' | 'recipe' | 'storyboard' | 'blockers' | 'ready';
+} {
+  const src = sourceReadiness(s);
+  if (!src.ready) return { ready: false, reason: `Kaynak hazır değil: ${src.reason}`, stage: 'source' };
+
+  const rcp = recipeReadiness(s);
+  if (!rcp.ready) return { ready: false, reason: `Reçete eksik: ${rcp.missing.join(', ')}`, stage: 'recipe' };
+
+  if (!s.scenes.length) return { ready: false, reason: 'Storyboard üretilmedi.', stage: 'storyboard' };
+
+  if (s.blockers.length) {
+    return {
+      ready: false,
+      reason: `${s.blockers.length} çözülmemiş FACT REQUIRED — Mami kararı bekliyor.`,
+      stage: 'blockers',
+    };
+  }
+
+  return { ready: true, reason: 'Image Author command girdisi hazır.', stage: 'ready' };
+}
+
+/**
  * MOTION GATE (MACRO 5) — motion YALNIZ Mami'nin APPROVE ettiği CURRENT frame ile açılır.
  *
  * Saf fonksiyon: bir sahnenin motion brief'inin açılıp açılamayacağını söyler. Kapı gerçek
@@ -320,18 +495,20 @@ export function motionGate(
 }
 
 /**
- * TEK CANONICAL READINESS (MACRO 4).
+ * TEK CANONICAL PRODUCTION READINESS (MACRO 4).
  *
  * Site-gates.md'nin ölçtüğü kusur: 8+ rakip readiness hesabı çelişiyordu (Timeline "N/N hazır"
  * derken QA aynı batch'i bloklarken Mami iki ekranda iki farklı gerçek görüyordu). Bu fonksiyon
- * TEK gerçek kapıdır: her aşamanın durumunu tek yerde birleştirir. UI bunu okur; ikinci bir
- * hesap üretmez.
+ * TEK production kapısıdır: authoring önkoşullarının üstüne prompt ve shot evidence'ını ekler.
+ * UI shot/frame/motion durumunda bunu okur; command export ise daha erken açılması gereken
+ * `commandAuthoringReadiness` kapısını kullanır.
  *
  * Kapı sırası (her biri bir öncekini varsayar):
  *  1. Kaynak hazır (sourceReadiness)
  *  2. Reçete tamam (recipeReadiness)
  *  3. Storyboard üretildi (scenes var) ve blocker yok (typed FACT REQUIRED temiz)
- *  4. Her shot Mami tarafından APPROVED ve onay GÜNCEL karara bağlı (stale değil)
+ *  4. Her shot current ajan prompt receipt'i taşıyor
+ *  5. Her shot Mami tarafından APPROVED ve onay GÜNCEL karara bağlı (stale değil)
  */
 export function productionReadiness(
   s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers' | 'shotApprovals'>,
@@ -348,15 +525,18 @@ export function productionReadiness(
   pendingShotIds: number[];
   staleShotIds: number[];
 } {
-  const src = sourceReadiness(s);
-  if (!src.ready) return { ready: false, reason: `Kaynak hazır değil: ${src.reason}`, stage: 'source', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
-
-  const rcp = recipeReadiness(s);
-  if (!rcp.ready) return { ready: false, reason: `Reçete eksik: ${rcp.missing.join(', ')}`, stage: 'recipe', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
-
-  if (!s.scenes.length) return { ready: false, reason: 'Storyboard üretilmedi.', stage: 'storyboard', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
-
-  if (s.blockers.length) return { ready: false, reason: `${s.blockers.length} çözülmemiş FACT REQUIRED — Mami kararı bekliyor.`, stage: 'blockers', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
+  const authoring = commandAuthoringReadiness(s);
+  if (!authoring.ready) {
+    return {
+      ready: false,
+      reason: authoring.reason,
+      stage: authoring.stage,
+      promptMissingShotIds: [],
+      approvedShotIds: [],
+      pendingShotIds: [],
+      staleShotIds: [],
+    };
+  }
 
   const promptMissingShotIds = s.scenes.filter((scene) => !hasCurrentAgentPrompt(scene, promptSourceId)).map((scene) => scene.id);
   if (promptMissingShotIds.length) {
@@ -424,6 +604,8 @@ export interface StudioState {
   phase0PresetId: string;
   directorChoices: Record<string, string>;
   directorBrief: string;
+  /** Runtime'da authored, canonical command bundle ile Studio'ya geri alınan exact direktifler. */
+  liveMamiDirectives: MamiDirective[];
   voSyncMode: VoSyncMode;
   osTextMode: OsTextMode;
 
@@ -481,8 +663,8 @@ export interface StudioState {
   exportRecipeJson: () => string;
   advance: () => void;
   setSceneOverride: (sceneId: number, override: string | null) => void;
-  /** Ajanın yazdığı final prompt'u bir shot'a geri alır (MACRO 3). Receipt commandId'ye bağlanır. */
-  importAgentPrompt: (sceneId: number, finalPrompt: string, source?: 'paste' | 'import') => void;
+  /** Hash-valid Image Author→Jury artifact bundle'ını bir shot'a geri alır. */
+  importAgentArtifact: (sceneId: number, artifactBundleJson: string) => void;
   /** Mami bir shot'ı onaylar/reddeder (MACRO 4). Onay güncel karara (commandId) bağlanır. */
   approveShot: (sceneId: number, note?: string) => void;
   rejectShot: (sceneId: number, note?: string) => void;
@@ -577,6 +759,7 @@ const initial = {
   phase0PresetId: '',
   directorChoices: {} as Record<string, string>,
   directorBrief: '',
+  liveMamiDirectives: [] as MamiDirective[],
   voSyncMode: 'FREE' as VoSyncMode,
   osTextMode: 'AUTO' as OsTextMode,
 
@@ -664,6 +847,7 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     phase0PresetId: s.phase0PresetId,
     directorChoices: s.directorChoices,
     directorBrief: s.directorBrief,
+    liveMamiDirectives: s.liveMamiDirectives,
     voSyncMode: s.voSyncMode,
     osTextMode: s.osTextMode,
     rawSource: s.rawSource,
@@ -1282,13 +1466,29 @@ export const useStudioStore = create<StudioState>()(
         }
       },
 
-      importAgentPrompt: (sceneId, finalPrompt, source = 'paste') => {
-        const commandId = get().currentPromptSourceCommandId();
-        set((s) => ({
-          scenes: s.scenes.map((sc) =>
-            sc.id === sceneId ? applyAgentPrompt(sc, finalPrompt, commandId, source) : sc,
-          ),
-        }));
+      importAgentArtifact: (sceneId, artifactBundleJson) => {
+        const current = get();
+        const scene = current.scenes.find((candidate) => candidate.id === sceneId);
+        if (!scene) { set({ lastError: `Scene ${sceneId} yok.` }); return; }
+        if (!artifactBundleJson.trim()) {
+          set((s) => ({
+            scenes: s.scenes.map((candidate) => candidate.id === sceneId ? applyAgentPrompt(candidate, '', current.currentPromptSourceCommandId()) : candidate),
+            lastError: null,
+          }));
+          return;
+        }
+        try {
+          const imported = applyImageArtifactBundle(scene, artifactBundleJson, current);
+          const directivesChanged = canonicalHash(imported.liveMamiDirectives) !== canonicalHash(current.liveMamiDirectives);
+          set((s) => ({
+            scenes: s.scenes.map((candidate) => candidate.id === sceneId ? imported.scene : candidate),
+            liveMamiDirectives: imported.liveMamiDirectives,
+            shotApprovals: directivesChanged ? {} : s.shotApprovals,
+            lastError: null,
+          }));
+        } catch (error) {
+          set({ lastError: error instanceof Error ? error.message : String(error) });
+        }
       },
 
       approveShot: (sceneId, note) => {

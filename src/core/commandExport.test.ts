@@ -84,7 +84,10 @@ describe('buildCommandJSON', () => {
     expect(command.agentPackets.motion).toBe('MOTION PACKET');
     expect(command.scenes[0].prompts.image).toBe('USER OVERRIDE IMAGE PROMPT');
     expect(command.scenes[0].handoff.IMAGE.packetVersion).toBe('1.0.0');
-    expect(command.commands.roles.map((role) => role.role)).toEqual(['idea', 'image', 'motion', 'suno', 'proof']);
+    expect(command.commands.roles.map((role) => role.role)).toEqual([
+      'image_author', 'image_jury', 'frame_jury', 'motion_author', 'motion_jury',
+    ]);
+    expect(command.lifecycle.sceneContextHashes[1]).toMatch(/^[0-9a-f]{64}$/);
     // This assertion used to demand `--input-format json` — it was locking the blind
     // pipeline IN. The package's only supported entry point is the runner, because the
     // runner is where the gates live (frame gate, reference gate, ledger).
@@ -196,7 +199,9 @@ describe('buildCommandJSON', () => {
       agentBrief: '',
       agentPackets: { idea: 'I', image: 'I', motion: 'M', suno: 'S', proof: 'P' },
     });
-    expect(cmd.commands.roles.map((role) => role.role)).toEqual(['idea', 'image', 'motion', 'suno', 'proof']);
+    expect(cmd.commands.roles.map((role) => role.role)).toEqual([
+      'image_author', 'image_jury', 'frame_jury', 'motion_author', 'motion_jury',
+    ]);
   });
 });
 
@@ -480,7 +485,7 @@ describe('the package speaks one delivery contract and one text law', () => {
         `role "${role.role}" delivers to "${role.outputKey}" — a key nothing on disk is named after`,
       ).not.toMatch(/^outputs\./);
       expect(
-        /\.(md|txt|png)$/.test(role.outputKey),
+        /\.(md|txt|png|json)$/.test(role.outputKey),
         `role "${role.role}" delivers to "${role.outputKey}", which is not a file`,
       ).toBe(true);
     }
