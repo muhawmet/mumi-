@@ -10,7 +10,20 @@ tarihsel referanstır; runnable değildir. `agentBrief`, `agentPackets` veya
 
 ## Manuel lifecycle
 
-1. Timeline'dan `*_mamilas_command.json` indir.
+1. Timeline'dan **Komut JSON** indir ve dosyayı `agents/COMMAND-INBOX/` klasörüne bırak.
+   **Proje Paketi** bu klasöre konmaz; Studio'ya geri içe almak içindir. `MOTION-CALISTIR.command`
+   veya `MOTION-CALISTIR.bat` açıldığında runner yalnız bu inbox'taki gerçek
+   `mamilas.command.v2026` dosyalarını görür, sonra **proje adını sorar** ve şunu oluşturur:
+
+   ```text
+   MAMILAS-PROJELER/<proje adı>/runs/<commandId>/
+     mamilas_command.json
+     .mamilas/                 # session, artifact, approval ve frame kanıtları
+   ```
+
+   Aynı proje adı + aynı command kimliği kaldığı yerden devam eder. Karar değişip command kimliği
+   yenilenirse eski kanıtlar silinmez; aynı proje içinde yeni bir `runs/<commandId>` alanı açılır.
+   Bu, ajanın proje bağlamını kendi artifact zincirinde taşımasıdır; projeler birbirine karışmaz.
 2. Command ve sıradaki tek işi doğrula:
 
    ```text
@@ -54,3 +67,11 @@ tarihsel referanstır; runnable değildir. `agentBrief`, `agentPackets` veya
 Windows ve macOS launcher'lar yalnız ince kabuktur; karar, hash ve gate yasasını kopyalamaz.
 Claude ve Codex aynı protocol/artifact validator'ı kullanır. Harici generation API, batch,
 otomatik upscale veya ajan loop'u yoktur.
+
+Terminalden sessiz kullanımda adsız ortak workspace açılmaz; proje adı açıkça verilir:
+
+```text
+node agents/runner.mjs --file <command.json> --project "Su Döngüsü" --dry-run
+```
+
+İleri kullanımda açık `--workspace <klasör>` verilirse proje sorusu ve otomatik klasörleme atlanır.

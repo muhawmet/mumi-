@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { afterAll, describe, expect, test } from 'vitest';
 import { buildCommandJSON } from './commandExport';
@@ -37,18 +37,21 @@ function commandFixture() {
 
 function stage(files: Record<string, unknown | string>, approve = false) {
   const dir = mkdtempSync(join(REPO, 'agents', '.runner-test-'));
+  const inbox = join(dir, 'COMMAND-INBOX');
   temps.push(dir);
   cpSync(join(REPO, 'agents', 'runner.mjs'), join(dir, 'runner.mjs'));
+  mkdirSync(inbox);
   for (const [name, value] of Object.entries(files)) {
-    writeFileSync(join(dir, name), typeof value === 'string' ? value : JSON.stringify(value), 'utf8');
+    writeFileSync(join(inbox, name), typeof value === 'string' ? value : JSON.stringify(value), 'utf8');
   }
+  const projectArgs = ['--project', 'Runner Gate', '--inbox', inbox];
   if (approve) {
-    const approval = spawnSync(process.execPath, [join(dir, 'runner.mjs'), '--approve-storyboard', '--scene', '1'], {
+    const approval = spawnSync(process.execPath, [join(dir, 'runner.mjs'), ...projectArgs, '--approve-storyboard', '--scene', '1'], {
       cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
     });
     if (approval.status !== 0) return { dir, status: approval.status, out: `${approval.stdout ?? ''}${approval.stderr ?? ''}` };
   }
-  const run = spawnSync(process.execPath, [join(dir, 'runner.mjs'), '--dry-run'], {
+  const run = spawnSync(process.execPath, [join(dir, 'runner.mjs'), ...projectArgs, '--dry-run'], {
     cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
   });
   return { dir, status: run.status, out: `${run.stdout ?? ''}${run.stderr ?? ''}` };
@@ -62,12 +65,13 @@ describe('cross-platform runner executes the canonical command gate', () => {
     expect(result.out).toContain('"role": "image_author"');
   });
 
-  test('legacy production JSON is non-runnable even when named project.json', () => {
+  test('project packs in the inbox are named and rejected before a run is created', () => {
     const result = stage({
       'project.json': { schema: 'mamilas.production.v2026', production: { frameGate: {}, sceneIndex: [] } },
     });
     expect(result.status).toBe(1);
-    expect(result.out).toMatch(/unsupported command schema/);
+    expect(result.out).toMatch(/COMMAND-INBOX içinde çalıştırılabilir MAMILAS Command yok/);
+    expect(result.out).toMatch(/mamilas\.production\.v2026/);
   });
 
   test('tampered protocol or decision never reaches a provider', () => {
@@ -81,13 +85,13 @@ describe('cross-platform runner executes the canonical command gate', () => {
   test('corrupt JSON fails closed', () => {
     const result = stage({ 'bad_mamilas_command.json': '{not-json' });
     expect(result.status).toBe(1);
-    expect(result.out).toMatch(/Unexpected token|JSON/);
+    expect(result.out).toMatch(/geçerli JSON değil/);
   });
 
   test('empty folder fails closed', () => {
     const result = stage({});
     expect(result.status).toBe(1);
-    expect(result.out).toMatch(/command\.json bulunamadı/);
+    expect(result.out).toMatch(/COMMAND-INBOX içinde çalıştırılabilir MAMILAS Command yok/);
   });
 
   test('multiple commands without a terminal are never silently resolved', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { chmodSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { delimiter, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -89,6 +89,64 @@ function indexedPngWithoutPalette(): Buffer {
 }
 
 describe('interactive command runtime', () => {
+  test('launcher proje adını güvenli klasöre bağlar ve aynı command çalışmasını kendi içinde sürdürür', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-project-runner-'));
+    const projectsDir = join(dir, 'projects');
+    const command = commandFixture(false);
+    const sourceFile = join(dir, 'downloaded_mamilas_command.json');
+    writeFileSync(sourceFile, JSON.stringify(command));
+    const runner = resolve('agents/runner.mjs');
+    const common = [
+      runner, '--file', sourceFile, '--project', 'Su Döngüsü / 7. Sınıf',
+      '--projects-dir', projectsDir,
+    ];
+
+    const first = spawnSync(process.execPath, [...common, '--dry-run'], { cwd: resolve('.'), encoding: 'utf8' });
+    expect(first.status, first.stderr).toBe(0);
+    const [folder] = readdirSync(projectsDir);
+    const projectDir = join(projectsDir, folder);
+    const runDir = join(projectDir, 'runs', command.commandId);
+    const manifest = JSON.parse(readFileSync(join(projectDir, 'PROJECT.json'), 'utf8'));
+    expect(manifest).toEqual({
+      schema: 'mamilas.local-project.v1',
+      name: 'Su Döngüsü / 7. Sınıf',
+      folder: 'Su Döngüsü - 7. Sınıf',
+      activeCommandId: command.commandId,
+    });
+    expect(existsSync(join(runDir, 'mamilas_command.json'))).toBe(true);
+    expect(existsSync(join(runDir, '.mamilas'))).toBe(true);
+    expect(first.stdout).toContain(projectDir);
+
+    const second = spawnSync(process.execPath, [...common, '--approve-storyboard', '--scene', '1'], {
+      cwd: resolve('.'), encoding: 'utf8',
+    });
+    expect(second.status, second.stderr).toBe(0);
+    expect(existsSync(join(runDir, '.mamilas', 'approvals', '1.json'))).toBe(true);
+    expect(readdirSync(join(projectDir, 'runs'))).toEqual([command.commandId]);
+
+    const collision = spawnSync(process.execPath, [
+      runner, '--file', sourceFile, '--project', 'Su Döngüsü : 7. Sınıf',
+      '--projects-dir', projectsDir, '--dry-run',
+    ], { cwd: resolve('.'), encoding: 'utf8' });
+    expect(collision.status).not.toBe(0);
+    expect(collision.stderr).toContain('aynı klasör adına dönüşüyor');
+  });
+
+  test('launcher non-interactive kullanımda adsız ortak workspace açmaz', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-project-required-'));
+    const projectsDir = join(dir, 'projects');
+    const sourceFile = join(dir, 'downloaded_mamilas_command.json');
+    writeFileSync(sourceFile, JSON.stringify(commandFixture(false)));
+    const result = spawnSync(process.execPath, [
+      resolve('agents/runner.mjs'), '--file', sourceFile, '--projects-dir', projectsDir, '--dry-run',
+    ], {
+      cwd: resolve('.'), encoding: 'utf8',
+    });
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toContain('--project "Proje Adı"');
+    expect(existsSync(projectsDir)).toBe(false);
+  });
+
   test('valid command → next image_author; minimum context site promptunu taşımaz', () => {
     const result = run(commandFixture());
     expect(result.status, result.stderr).toBe(0);

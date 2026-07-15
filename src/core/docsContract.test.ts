@@ -132,6 +132,14 @@ describe('runner is a thin cross-platform command launcher', () => {
     expect(runner).not.toMatch(/production\.frameGate|KICK_DIR|\.mamilas_kick/);
   });
 
+  test.each(RUNNERS)('%s isolates each named project and command revision', (rel) => {
+    const runner = read(rel);
+    expect(runner).toContain('Proje adı:');
+    expect(runner).toContain('MAMILAS-PROJELER');
+    expect(runner).toContain("'runs', runId");
+    expect(runner).toContain('mamilas.local-project.v1');
+  });
+
   test.each(RUNNERS)('%s exposes only interactive Claude/Codex provider selection', (rel) => {
     const runner = read(rel);
     expect(runner).toContain("['claude', 'codex']");
