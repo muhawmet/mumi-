@@ -64,7 +64,7 @@ type KrakenTentacle = {
 };
 
 type BiolumeColor = 'cyan' | 'blue' | 'violet' | 'pink' | 'gold';
-type FishKind = 'lantern' | 'angler' | 'dragon' | 'hatchet' | 'flashlight' | 'viper';
+type FishKind = 'lantern' | 'angler' | 'dragon' | 'hatchet' | 'flashlight' | 'viper' | 'gulper' | 'fangtooth';
 type JellyKind = 'comb' | 'atolla' | 'siphonophore';
 
 const TAU = Math.PI * 2;
@@ -78,7 +78,7 @@ const COLORS: Record<BiolumeColor, { core: string; glow: string; body: string }>
 };
 
 const colorOrder: BiolumeColor[] = ['cyan', 'blue', 'violet', 'pink', 'gold'];
-const fishKinds: FishKind[] = ['angler', 'lantern', 'dragon', 'hatchet', 'flashlight', 'viper', 'lantern', 'dragon', 'hatchet'];
+const fishKinds: FishKind[] = ['angler', 'lantern', 'dragon', 'hatchet', 'flashlight', 'viper', 'gulper', 'fangtooth', 'lantern', 'dragon'];
 const jellyKinds: JellyKind[] = ['comb', 'atolla', 'siphonophore'];
 
 const seededRandom = (seed: number) => {
@@ -194,6 +194,8 @@ const drawFish = (
   sprites: Record<BiolumeColor, GlowSprite>,
   t: number,
   flash: number,
+  pX: number = 0,
+  pY: number = 0,
 ) => {
   const color = COLORS[fish.color];
   const swim = Math.sin(t * 5 + fish.phase);
@@ -204,7 +206,7 @@ const drawFish = (
   const lureY = fish.kind === 'dragon' ? 22 + lureSwing * 0.8 : -17 + lureSwing;
 
   ctx.save();
-  ctx.translate(fish.x, fish.y);
+  ctx.translate(fish.x - pX * 26 * fish.depth, fish.y - pY * 18 * fish.depth);
   ctx.rotate(Math.atan2(fish.vy, fish.vx || fish.direction) * 0.22);
   ctx.scale(fish.direction * fish.scale, fish.scale);
 
@@ -218,7 +220,38 @@ const drawFish = (
   bodyGradient.addColorStop(1, color.glow.replace('ALPHA', '0.5'));
   ctx.fillStyle = bodyGradient;
 
-  if (fish.kind === 'dragon' || fish.kind === 'viper') {
+  if (fish.kind === 'gulper') {
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 24, 14, 0, 0, TAU);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(0, 10);
+    ctx.lineTo(-40, 2);
+    ctx.lineTo(-20, -4);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = 'rgba(0,0,0,0.5)';
+    ctx.beginPath();
+    ctx.moveTo(15, -4);
+    ctx.lineTo(35, 12);
+    ctx.lineTo(5, 14);
+    ctx.fill();
+  } else if (fish.kind === 'fangtooth') {
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 20, 15, 0, 0, TAU);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(-15, 0);
+    ctx.lineTo(-30, -10 + swim * 3);
+    ctx.lineTo(-25, 0);
+    ctx.lineTo(-30, 10 + swim * 3);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(15, 8); ctx.lineTo(15, -2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(10, -6); ctx.lineTo(10, 4); ctx.stroke();
+  } else if (fish.kind === 'dragon' || fish.kind === 'viper') {
     ctx.beginPath();
     ctx.ellipse(-2, 0, 31, fish.kind === 'viper' ? 6.5 : 5.2, 0, 0, TAU);
     ctx.fill();
@@ -324,12 +357,14 @@ const drawJelly = (
   sprites: Record<BiolumeColor, GlowSprite>,
   t: number,
   flash: number,
+  pX: number = 0,
+  pY: number = 0,
 ) => {
   const color = COLORS[jelly.color];
   const pulse = 1 + Math.sin(t * 2 + jelly.phase) * 0.08;
 
   ctx.save();
-  ctx.translate(jelly.x, jelly.y);
+  ctx.translate(jelly.x - pX * 16, jelly.y - pY * 12);
   ctx.scale(jelly.scale * pulse, jelly.scale * pulse);
 
   ctx.globalCompositeOperation = 'lighter';
@@ -401,12 +436,14 @@ const drawAbyssGiant = (
   giant: AbyssGiant,
   sprites: Record<BiolumeColor, GlowSprite>,
   t: number,
+  pX: number = 0,
+  pY: number = 0,
 ) => {
   const color = COLORS[giant.color];
   const swim = Math.sin(t * 1.4 + giant.phase);
 
   ctx.save();
-  ctx.translate(giant.x, giant.y + swim * 7);
+  ctx.translate(giant.x - pX * 45, giant.y + swim * 7 - pY * 30);
   ctx.scale(giant.direction * giant.scale, giant.scale);
   ctx.globalAlpha = 0.78;
 
@@ -459,29 +496,33 @@ const drawKrakenTentacle = (
   tentacle: KrakenTentacle,
   sprites: Record<BiolumeColor, GlowSprite>,
   t: number,
+  pX: number = 0,
+  pY: number = 0,
 ) => {
   const color = COLORS[tentacle.color];
   const reach = tentacle.currentReach;
+  const aX = tentacle.anchorX - pX * 10;
+  const aY = tentacle.anchorY - pY * 10;
   const sway = Math.sin(t * 0.55 + tentacle.phase);
   const curl = Math.cos(t * 0.42 + tentacle.phase) * reach * 0.12;
   const tipX =
     tentacle.side === 'left'
-      ? tentacle.anchorX + reach * 0.72
+      ? aX + reach * 0.72
       : tentacle.side === 'right'
-        ? tentacle.anchorX - reach * 0.72
-        : tentacle.anchorX + sway * reach * 0.24;
+        ? aX - reach * 0.72
+        : aX + sway * reach * 0.24;
   const tipY =
     tentacle.side === 'bottom'
-      ? tentacle.anchorY - reach
-      : tentacle.anchorY + sway * reach * 0.38;
+      ? aY - reach
+      : aY + sway * reach * 0.38;
   const controlX =
     tentacle.side === 'bottom'
-      ? tentacle.anchorX + curl
-      : (tentacle.anchorX + tipX) / 2 + sway * 48 * tentacle.scale;
+      ? aX + curl
+      : (aX + tipX) / 2 + sway * 48 * tentacle.scale;
   const controlY =
     tentacle.side === 'bottom'
-      ? tentacle.anchorY - reach * 0.48
-      : (tentacle.anchorY + tipY) / 2 - reach * 0.22;
+      ? aY - reach * 0.48
+      : (aY + tipY) / 2 - reach * 0.22;
 
   ctx.save();
   ctx.lineCap = 'round';
@@ -492,7 +533,7 @@ const drawKrakenTentacle = (
   ctx.strokeStyle = 'rgba(7, 5, 16, 0.44)';
   ctx.lineWidth = 26 * tentacle.scale;
   ctx.beginPath();
-  ctx.moveTo(tentacle.anchorX, tentacle.anchorY);
+  ctx.moveTo(aX, aY);
   ctx.quadraticCurveTo(controlX, controlY, tipX, tipY);
   ctx.stroke();
 
@@ -500,15 +541,15 @@ const drawKrakenTentacle = (
   ctx.strokeStyle = color.glow.replace('ALPHA', '0.2');
   ctx.lineWidth = 7 * tentacle.scale;
   ctx.beginPath();
-  ctx.moveTo(tentacle.anchorX, tentacle.anchorY);
+  ctx.moveTo(aX, aY);
   ctx.quadraticCurveTo(controlX, controlY, tipX, tipY);
   ctx.stroke();
 
   for (let i = 1; i <= 6; i += 1) {
     const progress = i / 7;
     const oneMinus = 1 - progress;
-    const x = oneMinus * oneMinus * tentacle.anchorX + 2 * oneMinus * progress * controlX + progress * progress * tipX;
-    const y = oneMinus * oneMinus * tentacle.anchorY + 2 * oneMinus * progress * controlY + progress * progress * tipY;
+    const x = oneMinus * oneMinus * aX + 2 * oneMinus * progress * controlX + progress * progress * tipX;
+    const y = oneMinus * oneMinus * aY + 2 * oneMinus * progress * controlY + progress * progress * tipY;
     const sideOffset = (i % 2 === 0 ? 1 : -1) * 7 * tentacle.scale;
     const pulse = biolumeBreath(t, tentacle.phase + i * 0.55, 0.75);
     drawSprite(ctx, sprites[tentacle.color], x + sideOffset, y, 0.1 + progress * 0.07 + pulse * 0.05, 0.12 + pulse * 0.26);
@@ -554,6 +595,7 @@ export const AntigravityBackground: React.FC = () => {
     let parallaxY = 0;
 
     let particles: BiolumeParticle[] = [];
+    let bubbles: BiolumeParticle[] = [];
     let fish: BiolumeFish[] = [];
     let jellies: Jelly[] = [];
     let giants: AbyssGiant[] = [];
@@ -565,6 +607,16 @@ export const AntigravityBackground: React.FC = () => {
       const fishCount = width > 1180 ? 8 : 5;
       const jellyCount = width > 1180 ? 3 : 2;
 
+      bubbles = Array.from({ length: Math.min(30, particleCount / 2) }, (_, i) => ({
+        x: rand() * width,
+        y: height + rand() * height,
+        vx: (rand() - 0.5) * 0.1,
+        vy: -0.4 - rand() * 0.5,
+        radius: 1 + rand() * 2,
+        phase: rand() * TAU,
+        depth: 0.5 + rand() * 0.5,
+        color: colorOrder[i % colorOrder.length]
+      }));
       particles = Array.from({ length: particleCount }, (_, index) => ({
         x: rand() * width,
         y: rand() * height,
@@ -701,6 +753,28 @@ export const AntigravityBackground: React.FC = () => {
       ctx.globalCompositeOperation = 'lighter';
       if (atmosphereCtx) ctx.drawImage(atmosphereCanvas, 0, 0, width, height);
 
+      for (const bubble of bubbles) {
+        if (!reduced) {
+          bubble.x += Math.sin(t * 2 + bubble.phase) * 0.2 * dt;
+          bubble.y += bubble.vy * bubble.depth * dt;
+          if (bubble.y < -20) {
+             bubble.y = height + 20;
+             bubble.x = Math.random() * width;
+          }
+        }
+        ctx.strokeStyle = COLORS[bubble.color].glow.replace('ALPHA', '0.4');
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(
+          bubble.x - parallaxX * 24 * bubble.depth,
+          bubble.y - parallaxY * 20 * bubble.depth,
+          bubble.radius,
+          0,
+          TAU
+        );
+        ctx.stroke();
+      }
+
       for (const particle of particles) {
         const repel = repelFromPointer(particle.x, particle.y, pointerX, pointerY, pointerActive, 170);
         if (!reduced) {
@@ -751,7 +825,7 @@ export const AntigravityBackground: React.FC = () => {
           const targetReach = tentacle.reach * (1 - retreat.intensity * 0.72);
           tentacle.currentReach += (targetReach - tentacle.currentReach) * 0.16 * dt;
         }
-        drawKrakenTentacle(ctx, tentacle, sprites, t);
+        drawKrakenTentacle(ctx, tentacle, sprites, t, parallaxX, parallaxY);
       }
 
       for (const giant of giants) {
@@ -768,7 +842,7 @@ export const AntigravityBackground: React.FC = () => {
           if (giant.x > width + 260 * giant.scale) giant.x = -260 * giant.scale;
           if (giant.x < -280 * giant.scale) giant.x = width + 240 * giant.scale;
         }
-        drawAbyssGiant(ctx, giant, sprites, t);
+        drawAbyssGiant(ctx, giant, sprites, t, parallaxX, parallaxY);
       }
 
       for (const jelly of jellies) {
@@ -784,7 +858,7 @@ export const AntigravityBackground: React.FC = () => {
           jelly.x = wrap(jelly.x, -90, width + 90);
           jelly.y = wrap(jelly.y, -100, height + 120);
         }
-        drawJelly(ctx, jelly, sprites, t, repel.intensity);
+        drawJelly(ctx, jelly, sprites, t, repel.intensity, parallaxX, parallaxY);
       }
 
       for (const swimmer of fish) {
@@ -818,8 +892,36 @@ export const AntigravityBackground: React.FC = () => {
             swimmer.vy = -Math.abs(swimmer.vy) * 0.55;
           }
         }
-        drawFish(ctx, swimmer, sprites, t, repel.intensity);
+        drawFish(ctx, swimmer, sprites, t, repel.intensity, parallaxX, parallaxY);
       }
+
+      // TASK5: God-rays & Vignette
+      ctx.globalCompositeOperation = 'screen';
+      const rayAlpha = 0.03 + Math.sin(t * 0.11) * 0.01;
+      ctx.fillStyle = `rgba(247, 201, 72, ${rayAlpha})`;
+      const sway1 = Math.sin(t * 0.06) * 80;
+      const sway2 = Math.cos(t * 0.05) * 60;
+
+      ctx.beginPath();
+      ctx.moveTo(width * 0.2 + sway1, -50);
+      ctx.lineTo(width * 0.4 + sway1, -50);
+      ctx.lineTo(width * 0.6 + sway1, height + 50);
+      ctx.lineTo(width * 0.1 + sway1, height + 50);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(width * 0.7 + sway2, -50);
+      ctx.lineTo(width * 0.85 + sway2, -50);
+      ctx.lineTo(width * 0.95 + sway2, height + 50);
+      ctx.lineTo(width * 0.5 + sway2, height + 50);
+      ctx.fill();
+
+      ctx.globalCompositeOperation = 'source-over';
+      const vig = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height) * 0.7);
+      vig.addColorStop(0, 'transparent');
+      vig.addColorStop(1, 'rgba(0,0,0,0.45)');
+      ctx.fillStyle = vig;
+      ctx.fillRect(0, 0, width, height);
 
       ctx.globalCompositeOperation = 'source-over';
       if (!reduced) raf = requestAnimationFrame(render);

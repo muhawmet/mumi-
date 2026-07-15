@@ -2,27 +2,38 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import {
   generateBatch,
+  effectiveMaterialId,
+  normalizeMaterialId,
+  normalizePaletteId,
+  normalizeRefIds,
+  normalizeWorldId,
   resolveRecipeDefaults,
   DATA,
   type SceneArchitecture,
   type HandoffPacketSet,
+  type VoSyncMode,
+  type OsTextMode,
 } from '../core/pure';
+import { buildRecipeMarkdown, buildRecipeMachine, registerOf, type RecipeSceneNote } from '../core/brain';
 import type { DurationVerdict } from '../core/brain';
+import type { Blocker } from '../core/contract';
+import { sha256Hex, sha256HexBytes } from '../core/contract';
+import { buildCommandJSON } from '../core/commandExport';
+import { buildCloseout, buildProjectPack, serializeProjectPack, verifyProjectPack, projectPackToState, type ProjectPack } from '../core/projectPack';
 import {
   decodeBrief,
   ingestSource,
   autoGroupBeats,
   sourceIntegrity,
+  extractProductionDossierSource,
   type SourceBeat,
   type SourceIntegrityReport,
 } from '../core/source';
 import { planBeats, eventBoundary, type BeatMode, type BeatAnalysis } from '../core/beats';
-import { starterPackFor } from '../core/advisor';
 
-export type Step = 'dashboard' | 'director' | 'recipe' | 'scenes' | 'timeline';
+export type Step = 'dashboard' | 'director' | 'recipe' | 'scenes' | 'timeline' | 'qa';
 /** Free-text optional character/cast description. Empty = object-only, no character anchor. */
 export type Cast = string;
-export type ProjectKind = 'video' | 'design';
 export type WorkingMode = 'Hızlı' | 'Standart' | 'Sıkı Teslim';
 
 export interface Scene {
@@ -37,12 +48,85 @@ export interface Scene {
   intensity: number;
   phaseName: 'Intro' | 'Build-up' | 'Climax' | 'Resolution';
   handoff: HandoffPacketSet;
+  onScreenText: string | null;
   /** Optional user-edited override for the image prompt. Export uses this if set. */
   userImagePrompt?: string;
+  /**
+   * Ajanın YAZDIĞI final prompt'un siteye geri alınması (MACRO 3). Site prompt üretmez; command'deki
+   * ajan yazar, Mami çıktıyı elle yapıştırır ya da import eder. Receipt hangi brief/command
+   * kimliğinden yazıldığını taşır — kararlar değişince prompt'un hangi karara ait olduğu bellidir.
+   */
+  promptReceipt?: PromptReceipt;
+  /**
+   * Mami'nin harici araçta ürettiği GERÇEK frame'in makbuzu (MACRO 5). Motion yalnız Mami bu
+   * frame'i APPROVE ettiğinde açılır. Frame değişince (yeni hash) motion stale olur.
+   */
+  frameReceipt?: SceneFrameReceipt;
 }
+
+/** Ajan-yazımı final prompt'un geri-alım makbuzu. Hangi karardan doğduğunu hash'le bağlar. */
+export interface PromptReceipt {
+  /** Ajanın yazdığı final image prompt (Mami'nin geri yüklediği). */
+  finalPrompt: string;
+  /** Bu prompt'un yazıldığı command/base-decision kimliği (`buildCommandJSON().commandId`). */
+  fromCommandId: string;
+  /** Prompt'un içerik hash'i — aynı prompt → aynı makbuz (sha256Hex). */
+  promptHash: string;
+  /** Kaynak: elle yapıştırma mı, dosya importu mu. */
+  source: 'paste' | 'import';
+}
+
+/** Mami'nin bir shot'a verdiği verdict + hangi karara (commandId) bağlı olduğu (MACRO 4). */
+export interface ShotApproval {
+  verdict: 'APPROVED' | 'REJECTED';
+  /** Onayın bağlı olduğu karar kimliği. Karar değişince (yeni commandId) bu onay STALE olur. */
+  commandId: string;
+  /** Mami'nin bu shot için serbest notu (opsiyonel). */
+  note?: string;
+}
+
+/**
+ * Mami'nin harici araçta ürettiği ve siteye geri yüklediği GERÇEK frame'in makbuzu (MACRO 5).
+ *
+ * Prompt değil, PİKSEL. Frame'in SHA-256'sı + boyut/aspect + hangi karar/prompt'a bağlı olduğu
+ * kaydedilir. Motion YALNIZ Mami APPROVE ettiği current frame ile açılır. Frame değişince
+ * (yeni frameHash) eski motion receipt'i ve verdict'i STALE olur.
+ */
+export interface SceneFrameReceipt {
+  /** Yüklenen frame dosyasının SHA-256'sı (piksel kimliği). */
+  frameHash: string;
+  /** Frame'in yazıldığı kararın kimliği (`currentCommandId`). Karar değişince frame stale olur. */
+  fromCommandId: string;
+  /** Bu frame hangi ajan-prompt'undan üretildi (varsa `PromptReceipt.promptHash`). */
+  fromPromptHash: string | null;
+  width: number;
+  height: number;
+  /** En-boy oranı, 3 ondalık (ör. 1.778 = 16:9). */
+  aspect: number;
+  /** Dosya adı (Mami'nin referansı — kimlik değil). */
+  fileName: string;
+  byteSize: number;
+  /** Mami'nin frame hükmü. Motion yalnız APPROVE ile açılır. */
+  verdict: 'APPROVE' | 'REGENERATE' | 'PROJECT_ONLY_ACCEPT' | 'PENDING';
+  /** Mami'nin frame notu (opsiyonel). */
+  note?: string;
+}
+
+export type { VoSyncMode, OsTextMode };
+export type SceneNote = RecipeSceneNote;
 
 /** Returns the prompt that should be used downstream — override wins over generated. */
 export const effectivePrompt = (s: Scene): string => s.userImagePrompt ?? s.imagePrompt;
+
+/**
+ * QA/export'a giden her state BUNDAN geçer: el-düzeltmesi (userImagePrompt) imagePrompt'a
+ * indirgenir ki Director Cabinet ve production export GERÇEK gidecek metni denetlesin.
+ * Aksi hâlde firewall temiz üretilmiş prompt'a bakıp yeşil yanar, motora el-metni gider.
+ */
+export const scenesWithEffectivePrompts = <T extends { scenes: Scene[] }>(state: T): T => ({
+  ...state,
+  scenes: state.scenes.map((s) => ({ ...s, imagePrompt: effectivePrompt(s) })),
+});
 
 export function applyPromptOverride(scene: Scene, override: string | null): Scene {
   const imagePrompt = override ?? scene.imagePrompt;
@@ -59,6 +143,100 @@ export function applyPromptOverride(scene: Scene, override: string | null): Scen
     return { ...rest, handoff } as Scene;
   }
   return { ...scene, userImagePrompt: override, handoff };
+}
+
+/**
+ * Ajanın YAZDIĞI final prompt'u siteye geri alır (MACRO 3). Site prompt üretmez; ajan yazar,
+ * Mami çıktıyı elle yapıştırır ya da import eder. `userImagePrompt` override'ını set eder
+ * (böylece QA/export gerçek gidecek metni görür) VE `promptReceipt`'i hangi karardan doğduğunu
+ * hash'le bağlayarak yazar. Boş prompt geri-alımı temizler.
+ */
+/** Yüklenen görselin piksel boyutunu okur (tarayıcı). Test/Node ortamında reddeder → 0×0. */
+function readImageDims(file: File): Promise<{ width: number; height: number }> {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined' || typeof Image === 'undefined' || typeof URL === 'undefined') {
+      reject(new Error('no-image-env'));
+      return;
+    }
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const dims = { width: img.naturalWidth, height: img.naturalHeight };
+      URL.revokeObjectURL(url);
+      resolve(dims);
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error('image-decode-failed'));
+    };
+    img.src = url;
+  });
+}
+
+export function applyAgentPrompt(
+  scene: Scene,
+  finalPrompt: string,
+  fromCommandId: string,
+  source: 'paste' | 'import' = 'paste',
+): Scene {
+  const text = finalPrompt.trim();
+  if (!text) {
+    const cleared = applyPromptOverride(scene, null);
+    const { promptReceipt: _drop, ...rest } = cleared;
+    return rest as Scene;
+  }
+  const withOverride = applyPromptOverride(scene, text);
+  return {
+    ...withOverride,
+    promptReceipt: {
+      finalPrompt: text,
+      fromCommandId,
+      promptHash: sha256Hex(text),
+      source,
+    },
+  };
+}
+
+/**
+ * A shot can enter Mami approval only when the imported author prompt and its receipt agree.
+ * The generated `imagePrompt` is a site scaffold; it is never accepted as author evidence.
+ */
+export function hasCurrentAgentPrompt(
+  scene: Pick<Scene, 'userImagePrompt' | 'promptReceipt'>,
+  promptSourceCommandId: string,
+): boolean {
+  const prompt = scene.userImagePrompt;
+  const receipt = scene.promptReceipt;
+  if (!prompt || !receipt) return false;
+  return receipt.finalPrompt === prompt
+    && receipt.promptHash === sha256Hex(prompt)
+    && receipt.fromCommandId === promptSourceCommandId;
+}
+
+/**
+ * Canonical identity of the decision/storyboard presented to the Image Author.
+ * Authored prompt overrides are stripped so importing one prompt cannot change the identity
+ * that every prompt receipt must cite; any actual decision/storyboard change still changes it.
+ */
+export function promptSourceCommandId(state: StudioState): string {
+  const scenes = state.scenes.map((scene) => {
+    const { userImagePrompt: _prompt, promptReceipt: _promptReceipt, frameReceipt: _frameReceipt, ...sourceScene } = scene;
+    return sourceScene as Scene;
+  });
+  return buildCommandJSON({ ...state, scenes } as never).commandId;
+}
+
+export function hasValidFrameEvidence(frame: SceneFrameReceipt | undefined): frame is SceneFrameReceipt {
+  return Boolean(
+    frame
+    && /^[0-9a-f]{64}$/.test(frame.frameHash)
+    && Number.isInteger(frame.width)
+    && frame.width > 0
+    && Number.isInteger(frame.height)
+    && frame.height > 0
+    && frame.byteSize > 0
+    && frame.aspect > 0,
+  );
 }
 
 /**
@@ -85,20 +263,16 @@ function sentenceBoundary(segment: string): number {
   return best;
 }
 
-/** Strict recipe gate — world, palette and reference DNA must all be chosen. */
-export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'selectedRefIds'>): {
+/** Strict recipe gate — world, palette, subject and at least one scene note must all be chosen. */
+export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes'>): {
   ready: boolean;
   missing: string[];
 } {
   const missing: string[] = [];
   if (!s.selectedWorldId) missing.push('Dünya');
   if (!s.selectedPaletteId) missing.push('Palet');
-
-  const validRefs = (s.selectedRefIds || []).map((id) => DATA.refs.find((r) => r.id === id)).filter(Boolean);
-  const compatibleRefs = validRefs.filter((r: any) => !r.worldId || r.worldId === s.selectedWorldId);
-  if (compatibleRefs.length === 0) {
-    missing.push('Referans DNA');
-  }
+  if (!s.subject.trim()) missing.push('Konu');
+  if (!s.recipeScenes.length) missing.push('Sahne');
   return { ready: missing.length === 0, missing };
 }
 
@@ -112,13 +286,120 @@ export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport
   return { ready: true, reason: null };
 }
 
+/**
+ * MOTION GATE (MACRO 5) — motion YALNIZ Mami'nin APPROVE ettiği CURRENT frame ile açılır.
+ *
+ * Saf fonksiyon: bir sahnenin motion brief'inin açılıp açılamayacağını söyler. Kapı gerçek
+ * piksele bağlıdır (prompt'a değil): frame yoksa, verdict APPROVE değilse ya da frame eski karara
+ * (commandId) bağlıysa (STALE) motion kapalıdır. `PROJECT_ONLY_ACCEPT` motion açmaz — proje
+ * kaydına kabul edilir ama i2v'ye gitmez.
+ */
+export function motionGate(
+  scene: Pick<Scene, 'userImagePrompt' | 'promptReceipt' | 'frameReceipt'>,
+  commandId: string,
+  promptSourceId: string,
+  shotApproval: ShotApproval | undefined,
+): { open: boolean; reason: string } {
+  if (!hasCurrentAgentPrompt(scene, promptSourceId)) {
+    return { open: false, reason: 'Current ajan prompt receipt yok veya prompt değişti.' };
+  }
+  if (shotApproval?.verdict !== 'APPROVED' || shotApproval.commandId !== commandId) {
+    return { open: false, reason: 'Storyboard shot current karar için Mami APPROVED değil.' };
+  }
+  const f = scene.frameReceipt;
+  if (!f) return { open: false, reason: 'Frame yok — Mami harici araçta üretip yüklemeli.' };
+  if (!hasValidFrameEvidence(f)) return { open: false, reason: 'Frame kanıtı geçersiz — okunabilir gerçek görsel ve pozitif boyut gerekli.' };
+  if (f.verdict === 'PENDING') return { open: false, reason: 'Frame yüklendi ama Mami hükmü bekliyor (APPROVE/REGENERATE).' };
+  if (f.verdict === 'REGENERATE') return { open: false, reason: 'Mami REGENERATE dedi — yeni frame gerekli.' };
+  if (f.verdict === 'PROJECT_ONLY_ACCEPT') return { open: false, reason: 'PROJECT_ONLY_ACCEPT — kayda kabul, motion açılmaz.' };
+  if (f.fromCommandId !== commandId) return { open: false, reason: 'Frame eski karara bağlı (karar değişti) — yeniden üretip onayla.' };
+  if (f.fromPromptHash !== scene.promptReceipt?.promptHash) {
+    return { open: false, reason: 'Frame eski ajan prompt’una bağlı — current prompt için yeniden üretip onayla.' };
+  }
+  return { open: true, reason: 'Onaylı current frame var — motion açık.' };
+}
+
+/**
+ * TEK CANONICAL READINESS (MACRO 4).
+ *
+ * Site-gates.md'nin ölçtüğü kusur: 8+ rakip readiness hesabı çelişiyordu (Timeline "N/N hazır"
+ * derken QA aynı batch'i bloklarken Mami iki ekranda iki farklı gerçek görüyordu). Bu fonksiyon
+ * TEK gerçek kapıdır: her aşamanın durumunu tek yerde birleştirir. UI bunu okur; ikinci bir
+ * hesap üretmez.
+ *
+ * Kapı sırası (her biri bir öncekini varsayar):
+ *  1. Kaynak hazır (sourceReadiness)
+ *  2. Reçete tamam (recipeReadiness)
+ *  3. Storyboard üretildi (scenes var) ve blocker yok (typed FACT REQUIRED temiz)
+ *  4. Her shot Mami tarafından APPROVED ve onay GÜNCEL karara bağlı (stale değil)
+ */
+export function productionReadiness(
+  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers' | 'shotApprovals'>,
+  commandId: string,
+  promptSourceId: string,
+): {
+  ready: boolean;
+  /** İnsan-okur tek durum satırı. */
+  reason: string;
+  /** Hangi aşamada durdu. */
+  stage: 'source' | 'recipe' | 'storyboard' | 'blockers' | 'prompt' | 'approval' | 'ready';
+  promptMissingShotIds: number[];
+  approvedShotIds: number[];
+  pendingShotIds: number[];
+  staleShotIds: number[];
+} {
+  const src = sourceReadiness(s);
+  if (!src.ready) return { ready: false, reason: `Kaynak hazır değil: ${src.reason}`, stage: 'source', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
+
+  const rcp = recipeReadiness(s);
+  if (!rcp.ready) return { ready: false, reason: `Reçete eksik: ${rcp.missing.join(', ')}`, stage: 'recipe', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
+
+  if (!s.scenes.length) return { ready: false, reason: 'Storyboard üretilmedi.', stage: 'storyboard', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
+
+  if (s.blockers.length) return { ready: false, reason: `${s.blockers.length} çözülmemiş FACT REQUIRED — Mami kararı bekliyor.`, stage: 'blockers', promptMissingShotIds: [], approvedShotIds: [], pendingShotIds: [], staleShotIds: [] };
+
+  const promptMissingShotIds = s.scenes.filter((scene) => !hasCurrentAgentPrompt(scene, promptSourceId)).map((scene) => scene.id);
+  if (promptMissingShotIds.length) {
+    return {
+      ready: false,
+      reason: `${promptMissingShotIds.length} shot current ajan prompt receipt’i bekliyor.`,
+      stage: 'prompt',
+      promptMissingShotIds,
+      approvedShotIds: [],
+      pendingShotIds: [],
+      staleShotIds: [],
+    };
+  }
+
+  // Her shot GÜNCEL karara bağlı APPROVED olmalı. Stale (eski commandId) veya reject/pending yeterli değil.
+  const approvedShotIds: number[] = [];
+  const pendingShotIds: number[] = [];
+  const staleShotIds: number[] = [];
+  for (const scene of s.scenes) {
+    const a = s.shotApprovals[scene.id];
+    if (!a || a.verdict !== 'APPROVED') pendingShotIds.push(scene.id);
+    else if (a.commandId !== commandId) staleShotIds.push(scene.id);
+    else approvedShotIds.push(scene.id);
+  }
+  if (pendingShotIds.length || staleShotIds.length) {
+    const parts: string[] = [];
+    if (pendingShotIds.length) parts.push(`${pendingShotIds.length} shot onay bekliyor`);
+    if (staleShotIds.length) parts.push(`${staleShotIds.length} shot kararı değişti (yeniden onay gerek)`);
+    return { ready: false, reason: parts.join(' · '), stage: 'approval', promptMissingShotIds, approvedShotIds, pendingShotIds, staleShotIds };
+  }
+
+  return { ready: true, reason: `Tüm ${s.scenes.length} shot current ajan prompt’uyla Mami tarafından onaylandı.`, stage: 'ready', promptMissingShotIds, approvedShotIds, pendingShotIds, staleShotIds };
+}
+
 export interface StudioState {
-  projectKind: ProjectKind;
   selectedProjectId: string;
   projectTopic: string;
   projectClass: string;
   sceneCount: number;
   cast: Cast;
+  location: string;
+  subject: string;
+  recipeScenes: SceneNote[];
 
   selectedWorldId: string;
   selectedPropId: string;
@@ -143,6 +424,8 @@ export interface StudioState {
   phase0PresetId: string;
   directorChoices: Record<string, string>;
   directorBrief: string;
+  voSyncMode: VoSyncMode;
+  osTextMode: OsTextMode;
 
   rawSource: string;
   sourceBeats: SourceBeat[];
@@ -154,12 +437,26 @@ export interface StudioState {
   selectedSceneId: number | null;
   isGenerating: boolean;
   lastError: string | null;
+  /**
+   * Typed FACT REQUIRED'lar (handoff §6). generateBatch BLOCKED dönünce typed blocker'lar
+   * BURADA yaşar — `lastError` string'ine indirgenip KAYBOLMAZ. Site, runner, Claude ve Codex
+   * aynı blocker'ı görür (Codex 5. tur: store bunları düşürüyordu).
+   */
+  blockers: Blocker[];
 
   beatMode: BeatMode;
   workingMode: WorkingMode;
   beatKeeps: Record<string, boolean>;
   beatAnalysis: BeatAnalysis | null;
+  beatHistory: BeatHistoryEntry[];
   personalMode: boolean;
+
+  /**
+   * Mami'nin shot (sahne) onayları (MACRO 4). Storyboard'da her shot approve/reject edilir; onay
+   * o anki kararın kimliğine (`commandId` = brief hash) bağlanır. Kararlar değişince (yeni
+   * commandId) eski onaylar STALE olur — Mami yeniden onaylar. Ajan Mami adına onaylamaz.
+   */
+  shotApprovals: Record<number, ShotApproval>;
 
   currentStep: Step;
 
@@ -175,10 +472,31 @@ export interface StudioState {
   toggleBeatKeep: (beatId: string) => void;
   mergeBeats: (index: number) => void;
   splitBeat: (index: number) => void;
+  manualSplitBeat: (index: number, cutIndex: number) => void;
+  updateBeatText: (index: number, text: string) => void;
+  undoBeatAction: () => void;
   applyPreset: (preset: Partial<StudioState>) => void;
   generateScenes: () => void;
+  exportRecipe: () => string;
+  exportRecipeJson: () => string;
   advance: () => void;
   setSceneOverride: (sceneId: number, override: string | null) => void;
+  /** Ajanın yazdığı final prompt'u bir shot'a geri alır (MACRO 3). Receipt commandId'ye bağlanır. */
+  importAgentPrompt: (sceneId: number, finalPrompt: string, source?: 'paste' | 'import') => void;
+  /** Mami bir shot'ı onaylar/reddeder (MACRO 4). Onay güncel karara (commandId) bağlanır. */
+  approveShot: (sceneId: number, note?: string) => void;
+  rejectShot: (sceneId: number, note?: string) => void;
+  clearShotApproval: (sceneId: number) => void;
+  /** Mami harici araçta ürettiği frame'i bir shot'a yükler (MACRO 5). SHA-256 + boyut ölçülür. */
+  importFrame: (sceneId: number, file: File) => Promise<void>;
+  /** Mami frame hükmü verir: APPROVE motion'u açar; REGENERATE/PROJECT_ONLY_ACCEPT açmaz. */
+  setFrameVerdict: (sceneId: number, verdict: SceneFrameReceipt['verdict'], note?: string) => void;
+  /** Frame'i sahneden kaldırır (motion tekrar kapanır). */
+  clearFrame: (sceneId: number) => void;
+  /** Bu kararın taşınabilir kimliği (brief hash). Onay/receipt bağı bunu kullanır. */
+  currentCommandId: () => string;
+  /** Ajan prompt receipt'lerinin bağlandığı override-bağımsız canonical decision/storyboard kimliği. */
+  currentPromptSourceCommandId: () => string;
   reset: () => void;
   resetStoryboard: () => void;
 
@@ -186,6 +504,24 @@ export interface StudioState {
   saveToVault: (name: string) => void;
   loadFromVault: (id: string) => void;
   deleteFromVault: (id: string) => void;
+
+  /** Taşınabilir project pack'i JSON metnine paketler (MACRO 6). LocalStorage değil, gerçek kayıt. */
+  exportProjectPack: () => string;
+  /** Current karar/prompt/frame zincirinin stale-safe Studio kapanış receipt'i. */
+  exportCloseout: () => string;
+  /** Bir project pack JSON'unu doğrular ve yükler. Bozuksa/uyumsuzsa lastError'a düşer, yüklemez. */
+  importProjectPack: (json: string) => void;
+}
+
+/**
+ * Undo snapshot: beats + their BÖLEMEZSİN (keep) flags travel together, so
+ * undoBeatAction never restores beats while silently dropping a keep flag
+ * (keeps are keyed by beat id; ids change on split/merge/regroup).
+ * Not persisted (pickProjectState'e dahil değil) — tip değişikliği migration gerektirmez.
+ */
+export interface BeatHistoryEntry {
+  beats: SourceBeat[];
+  keeps: Record<string, boolean>;
 }
 
 /** A named, restorable snapshot of a full project (legacy "Proje Kasası"). */
@@ -196,22 +532,36 @@ export interface VaultEntry {
   snapshot: Partial<StudioState>;
 }
 
+export const DEFAULT_PROJECT_TOPIC = 'Su Döngüsü';
+
 const initial = {
-  projectKind: 'video' as ProjectKind,
   selectedProjectId: 'education',
-  projectTopic: 'Su Döngüsü',
+  projectTopic: DEFAULT_PROJECT_TOPIC,
   projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
   cast: '' as Cast,
+  location: '',
+  subject: 'Su Döngüsü',
+  recipeScenes: [
+    {
+      id: 1,
+      vo: 'Konu görsel olarak başlar.',
+      event: 'Ana konu tek somut düzenek veya nesne olarak kadraja yerleşir.',
+      director_note: 'single motivated key, subject centered with clear prop hierarchy',
+      motion_seed: 'ana nesne ilk hareketine hazırlanıyor',
+      turkish_labels: ['KONU'],
+      avoid: ['jenerik metafor; kaynak dışı sembol'],
+    },
+  ] as SceneNote[],
 
   selectedWorldId: '',
-  selectedPropId: 'native_world',
+  selectedPropId: 'none',
   selectedRefIds: [] as string[],
   activePreviewRefId: '',
-  selectedPaletteId: '',
+  selectedPaletteId: 'native_world',
   selectedMusicId: '',
 
-  imageModel: 'flux_1_1_pro',
+  imageModel: 'nano_banana_2',
   videoModel: 'kling_3',
   brandKitLock: '',
 
@@ -227,6 +577,8 @@ const initial = {
   phase0PresetId: '',
   directorChoices: {} as Record<string, string>,
   directorBrief: '',
+  voSyncMode: 'FREE' as VoSyncMode,
+  osTextMode: 'AUTO' as OsTextMode,
 
   rawSource: '',
   sourceBeats: [] as SourceBeat[],
@@ -238,46 +590,59 @@ const initial = {
   selectedSceneId: null as number | null,
   isGenerating: false,
   lastError: null as string | null,
+  blockers: [] as Blocker[],
 
   beatMode: 'Dengeli' as BeatMode,
   workingMode: 'Standart' as WorkingMode,
   beatKeeps: {} as Record<string, boolean>,
   beatAnalysis: null as BeatAnalysis | null,
+  beatHistory: [] as BeatHistoryEntry[],
   personalMode: false,
+
+  shotApprovals: {} as Record<number, ShotApproval>,
 
   currentStep: 'dashboard' as Step,
 
   vault: [] as VaultEntry[],
 };
 
-function previewFallbackRefId(refIds: unknown): string {
-  if (!Array.isArray(refIds)) return '';
-  const validIds = new Set((DATA.refs || []).map((r) => r.id));
-  const validRefIds = refIds.filter((id): id is string => typeof id === 'string' && validIds.has(id));
-  return validRefIds[validRefIds.length - 1] || '';
-}
-
 /** Cleared whenever the recipe or beat plan changes, so generated output never goes stale. */
-const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId'> = {
+const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId' | 'shotApprovals'> = {
   scenes: [],
   agentBrief: '',
   agentPackets: null,
   selectedSceneId: null,
+  // Storyboard yeniden üretilince eski shot onayları artık geçersizdir — Mami yeniden onaylar.
+  shotApprovals: {},
 };
 
 // Above this many sentence atoms, ingest auto-groups into thematic beats
 // (keeps short briefs sentence-level so manual beat control is unaffected).
 const AUTO_GROUP_THRESHOLD = 12;
 
+/**
+ * Mutasyon ÖNCESİ storyboard'u (beats + keeps birlikte) undo geçmişine push'lar.
+ * Boş storyboard snapshot'lanmaz — undo'yu boş state'le kirletmek yerine mevcut
+ * geçmiş aynen korunur. Her beat-mutasyonu ve her regroup yolu bunu kullanır.
+ */
+function snapshotBeatHistory(
+  s: Pick<StudioState, 'beatHistory' | 'sourceBeats' | 'beatKeeps'>,
+): BeatHistoryEntry[] {
+  if (s.sourceBeats.length === 0) return s.beatHistory;
+  return [...s.beatHistory, { beats: [...s.sourceBeats], keeps: { ...s.beatKeeps } }].slice(-50);
+}
+
 /** Single source of truth for the persisted/snapshotted project fields (no vault, no transient flags). */
 export function pickProjectState(s: StudioState): Partial<StudioState> {
   return {
-    projectKind: s.projectKind,
     selectedProjectId: s.selectedProjectId,
     projectTopic: s.projectTopic,
     projectClass: s.projectClass,
     sceneCount: s.sceneCount,
     cast: s.cast,
+    location: s.location,
+    subject: s.subject,
+    recipeScenes: s.recipeScenes,
     selectedWorldId: s.selectedWorldId,
     selectedPropId: s.selectedPropId,
     selectedRefIds: s.selectedRefIds,
@@ -299,6 +664,8 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     phase0PresetId: s.phase0PresetId,
     directorChoices: s.directorChoices,
     directorBrief: s.directorBrief,
+    voSyncMode: s.voSyncMode,
+    osTextMode: s.osTextMode,
     rawSource: s.rawSource,
     sourceBeats: s.sourceBeats,
     sourceReport: s.sourceReport,
@@ -306,6 +673,7 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     agentBrief: s.agentBrief,
     agentPackets: s.agentPackets,
     selectedSceneId: s.selectedSceneId,
+    shotApprovals: s.shotApprovals,
     beatMode: s.beatMode,
     workingMode: s.workingMode,
     beatKeeps: s.beatKeeps,
@@ -328,13 +696,16 @@ export function presetWithDefaults(
   preset: Partial<StudioState>,
 ): Partial<StudioState> {
   const projectClass = preset.projectClass ?? current.projectClass;
-  const selectedWorldId = preset.selectedWorldId ?? current.selectedWorldId;
+  const selectedWorldId = normalizeWorldId(preset.selectedWorldId ?? current.selectedWorldId);
   const defaults = resolveRecipeDefaults(projectClass, selectedWorldId);
+  const selectedRefIds = normalizeRefIds(preset.selectedRefIds?.length ? preset.selectedRefIds : defaults.selectedRefIds);
   return {
     ...preset,
-    selectedRefIds: preset.selectedRefIds?.length ? preset.selectedRefIds : defaults.selectedRefIds,
-    activePreviewRefId: (preset.selectedRefIds?.length ? preset.selectedRefIds[0] : defaults.selectedRefIds[0]) || '',
-    selectedPaletteId: preset.selectedPaletteId || defaults.selectedPaletteId,
+    selectedWorldId,
+    selectedPropId: preset.selectedPropId ? normalizeMaterialId(preset.selectedPropId) : preset.selectedPropId,
+    selectedRefIds,
+    activePreviewRefId: selectedRefIds[0] || '',
+    selectedPaletteId: normalizePaletteId(preset.selectedPaletteId || defaults.selectedPaletteId),
     ...STALE_GENERATION,
     lastError: null,
   };
@@ -354,40 +725,11 @@ function hasCurrentSceneShape(value: unknown): value is Scene {
 function migrateStateV5ToV6(state: any): any {
   if (!state || typeof state !== 'object') return state;
 
-  // 1. Ref DNA Migration
-  let refIds: string[] = [];
-  const oldRefId = state.selectedRefId;
-  if (Array.isArray(state.selectedRefIds)) {
-    refIds = [...state.selectedRefIds];
-  } else if (typeof oldRefId === 'string' && oldRefId) {
-    refIds = [oldRefId];
-  }
-
-  // Validate against DATA.refs IDs
-  const validIds = new Set((DATA.refs || []).map((r) => r.id));
-  refIds = refIds.filter((id) => id && typeof id === 'string' && validIds.has(id));
-
-  // Dedupe
-  refIds = Array.from(new Set(refIds));
-
-  // Keep first 3
-  refIds = refIds.slice(0, 3);
-
-  // Remove old key
+  const legacySingular = typeof state.selectedRefId === 'string' && state.selectedRefId ? [state.selectedRefId] : [];
   delete state.selectedRefId;
-
-  // Fallback if empty
-  if (refIds.length === 0) {
-    const projectClass = state.projectClass || 'ANIMATION_EDU';
-    const worldId = state.selectedWorldId || '';
-    const defaults = resolveRecipeDefaults(projectClass, worldId);
-    refIds = defaults.selectedRefIds || [];
-  }
-
-  state.selectedRefIds = refIds;
-  state.activePreviewRefId = typeof state.activePreviewRefId === 'string' && validIds.has(state.activePreviewRefId)
-    ? state.activePreviewRefId
-    : previewFallbackRefId(refIds);
+  const candidate = Array.isArray(state.selectedRefIds) && state.selectedRefIds.length ? state.selectedRefIds : legacySingular;
+  state.selectedRefIds = normalizeRefIds(candidate);
+  state.activePreviewRefId = state.selectedRefIds[0] || '';
 
   // 2. Clear old scenes & generation outputs since they contain v5 refDNA
   state.scenes = [];
@@ -409,12 +751,7 @@ export function normalizeVideoModel(value: unknown): string {
 export function migratePersistedState(value: unknown): Partial<StudioState> {
   if (!value || typeof value !== 'object') return {};
   const persisted = value as any;
-  const hasInvalidOrTooManyRefs = Array.isArray(persisted.selectedRefIds) && (
-    persisted.selectedRefIds.length > 3 ||
-    new Set(persisted.selectedRefIds).size !== persisted.selectedRefIds.length ||
-    persisted.selectedRefIds.some((id: any) => !id || typeof id !== 'string' || !DATA.refs.some(r => r.id === id))
-  );
-  const needsV6Migration = ('selectedRefId' in persisted) || hasInvalidOrTooManyRefs;
+  const needsV6Migration = ('selectedRefId' in persisted) || Array.isArray(persisted.selectedRefIds);
   if (needsV6Migration) {
     migrateStateV5ToV6(persisted);
   }
@@ -430,16 +767,25 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
         return [{ ...entry, snapshot: migratePersistedState(entry.snapshot) }];
       })
     : persisted.vault;
+  const selectedRefIds = normalizeRefIds(persisted.selectedRefIds);
 
   return {
     ...persisted,
+    selectedWorldId: normalizeWorldId(persisted.selectedWorldId),
+    selectedPropId: normalizeMaterialId(persisted.selectedPropId),
+    selectedPaletteId: normalizePaletteId(persisted.selectedPaletteId),
     videoModel: normalizeVideoModel(persisted.videoModel),
-    selectedRefIds: persisted.selectedRefIds || [],
-    activePreviewRefId: typeof persisted.activePreviewRefId === 'string' && DATA.refs.some((ref) => ref.id === persisted.activePreviewRefId)
+    subject: typeof persisted.subject === 'string' ? persisted.subject : persisted.projectTopic || initial.subject,
+    location: typeof persisted.location === 'string' ? persisted.location : '',
+    recipeScenes: Array.isArray(persisted.recipeScenes) ? persisted.recipeScenes : initial.recipeScenes,
+    selectedRefIds,
+    activePreviewRefId: selectedRefIds.includes(persisted.activePreviewRefId)
       ? persisted.activePreviewRefId
-      : previewFallbackRefId(persisted.selectedRefIds),
+      : selectedRefIds[0] || '',
+    voSyncMode: persisted.voSyncMode ?? 'FREE',
+    osTextMode: persisted.osTextMode ?? 'AUTO',
     ...(vault ? { vault } : {}),
-    scenes,
+    scenes: scenes.map((s: any) => ({ onScreenText: null, ...s })),
     // Brief + packets are only trustworthy when the full scene batch survived migration.
     agentBrief: intact && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
     agentPackets: intact ? persisted.agentPackets || null : null,
@@ -449,20 +795,60 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
 
 export const useStudioStore = create<StudioState>()(
   persist(
-    (set, get) => ({
-      ...initial,
+    (set, get) => {
+      const getRecipeInput = () => {
+        const s = get();
+        const world = DATA.worlds.find((item) => item.id === s.selectedWorldId);
+        if (!world) throw new Error('Reçete export için dünya seçilmedi.');
+        const material = DATA.materials.find((item) => item.id === s.selectedPropId) || DATA.materials.find((item) => item.id === 'none') || null;
+        const palette = DATA.palettes.find((item) => item.id === s.selectedPaletteId) || null;
+        const cast = s.cast
+          .split(/[,\n]+/u)
+          .map((item) => item.trim())
+          .filter(Boolean);
+        return {
+          world,
+          material,
+          palette,
+          cast,
+          location: s.location,
+          subject: s.subject || s.projectTopic,
+          scenes: s.recipeScenes,
+        };
+      };
+
+      return {
+        ...initial,
 
       setField: (field, value) => {
         const s = get();
-        const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null };
+        // Karar değişince storyboard STALE olur — onunla birlikte shot onayları da geçersizdir
+        // (MACRO 4: onay karara bağlıdır). Mami yeniden onaylar.
+        const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null, shotApprovals: {} };
         if (field === 'selectedWorldId') {
-          const worldId = String(value);
-          const defaults = resolveRecipeDefaults(s.projectClass, worldId);
-          // World's curated starter pack overrides the generic path default ref
-          const starterRefs = starterPackFor(worldId);
-          const refIds = starterRefs.length ? starterRefs.map((r) => r.id) : defaults.selectedRefIds;
-          const mergedDefaults = { ...defaults, selectedRefIds: refIds };
-          set({ selectedWorldId: worldId, ...mergedDefaults, activePreviewRefId: refIds[0] || '', ...clearGeneration });
+          const worldId = normalizeWorldId(String(value));
+          const world = DATA.worlds.find((item) => item.id === worldId);
+          // Materyalin dünya-uyumluya çekilmesiyle aynı mantık: register uyuşmayan bir dünya+path
+          // ikilisi generateBatch'i WORLD_PATH_MISMATCH ile bloklardı. Guard iki yönlü ve yalnız
+          // uyuşmazlıkta ateşler — ZATEN uyumlu bir path'i asla ezmez.
+          //  · REAL/sinematik dünya + non-REAL path → catch-all reklam path'i (ULTRAREAL_COMMERCIAL).
+          //  · non-real dünya + REAL path → dünyanın grubuna uygun non-REAL path (edu→ANIMATION_EDU, aksi STYLIZED_PREMIUM).
+          const realWorld = !!world && /real|cinematic/i.test(world.group || '');
+          const pathReal = registerOf(s.projectClass) === 'REAL';
+          let projectClass = s.projectClass;
+          if (realWorld && !pathReal) projectClass = 'ULTRAREAL_COMMERCIAL';
+          else if (world && !realWorld && pathReal) {
+            projectClass = /edu/i.test(world.group || '') ? 'ANIMATION_EDU' : 'STYLIZED_PREMIUM';
+          }
+          const defaults = resolveRecipeDefaults(projectClass, worldId);
+          set({
+            selectedWorldId: worldId,
+            projectClass,
+            selectedPropId: effectiveMaterialId(world, s.selectedPropId),
+            ...defaults,
+            activePreviewRefId: defaults.selectedRefIds[0] || '',
+            ...clearGeneration,
+          });
           return;
         }
         if (field === 'projectClass') {
@@ -471,22 +857,49 @@ export const useStudioStore = create<StudioState>()(
           return;
         }
         if (field === 'selectedRefIds') {
-          const refIds = Array.isArray(value) ? value as string[] : [];
-          set({
-            selectedRefIds: refIds,
-            activePreviewRefId: s.activePreviewRefId || previewFallbackRefId(refIds),
-            ...clearGeneration,
-          });
+          const selectedRefIds = normalizeRefIds(value);
+          set({ selectedRefIds, activePreviewRefId: selectedRefIds[0] || '', ...clearGeneration });
           return;
         }
+        if (field === 'videoModel') {
+          // Scene budget is model-aware: a wider engine window means fewer, longer
+          // beats, so switching the motion engine regroups from the immutable
+          // rawSource (Manuel mode keeps the user's hand-built beats untouched).
+          const videoModel = normalizeVideoModel(String(value));
+          const regroup = !!s.rawSource && s.beatMode !== 'Manuel';
+          const sourceBeats = regroup ? autoGroupBeats(s.rawSource, s.beatMode, videoModel) : s.sourceBeats;
+          const regroupPatch = regroup
+            ? {
+              sourceBeats,
+              sourceReport: sourceIntegrity(s.rawSource, sourceBeats),
+              sceneCount: Math.max(1, sourceBeats.length || 1),
+              beatAnalysis: planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]),
+              // Regrouping mints fresh beat ids, so keep flags bound to the old ids are
+              // stale — clear them. History ise SİLİNMEZ: regroup el emeğini ezdiği için
+              // önce snapshot alınır ki undo son storyboard'u (keeps'iyle) geri getirebilsin.
+              beatKeeps: {},
+              beatHistory: snapshotBeatHistory(s),
+            }
+            : {};
+          set({ videoModel, ...regroupPatch, ...clearGeneration });
+          return;
+        }
+        // NB: selectedWorldId, projectClass, selectedRefIds and videoModel each have a
+        // dedicated early-return branch above, so they are intentionally NOT listed here.
         const generationFields: Array<keyof StudioState> = [
-          'projectKind', 'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
-          'selectedRefIds', 'selectedPaletteId', 'selectedMusicId', 'imageModel', 'videoModel',
+          'projectTopic', 'sceneCount', 'cast', 'selectedPropId',
+          'selectedPaletteId', 'selectedMusicId', 'imageModel',
           'brandKitLock', 'mood', 'cameraEnergy', 'timeLight', 'transition', 'musicVibe',
-          'pov', 'signature', 'leitmotif', 'tempoCurve', 'phase0PresetId', 'directorChoices', 'directorBrief'
+          'pov', 'signature', 'leitmotif', 'tempoCurve', 'phase0PresetId', 'directorChoices', 'directorBrief',
+          'voSyncMode', 'osTextMode', 'location', 'subject', 'recipeScenes',
         ];
+        const normalizedValue = field === 'selectedPaletteId'
+          ? normalizePaletteId(String(value))
+          : field === 'selectedPropId'
+            ? normalizeMaterialId(String(value))
+            : value;
         set({
-          ...({ [field]: value } as Partial<StudioState>),
+          ...({ [field]: normalizedValue } as Partial<StudioState>),
           ...(generationFields.includes(field) ? clearGeneration : {}),
         });
       },
@@ -495,26 +908,40 @@ export const useStudioStore = create<StudioState>()(
       setCurrentStep: (currentStep) => set({ currentStep }),
       setRawSource: (rawSource) => set({
         rawSource,
+        sceneCount: 0,
         sourceBeats: [],
+        beatKeeps: {},
+        beatHistory: [],
         sourceReport: null,
         beatAnalysis: null,
-        scenes: [],
-        agentBrief: '',
-        agentPackets: null,
-        selectedSceneId: null,
+        ...STALE_GENERATION,
         lastError: null,
       }),
       decodeRawSource: () => {
         const rawSource = get().rawSource;
+        const dossierSource = extractProductionDossierSource(rawSource);
         const decoded = decodeBrief(rawSource);
+        // Plain raw source is CONTENT, never permission to infer a recipe. Only an explicitly
+        // labelled MAMILAS dossier may restore its own path/world/ref/palette metadata.
+        if (!dossierSource || decoded.confidence !== 'high') {
+          set({ lastError: null });
+          return;
+        }
+        const selectedRefIds = normalizeRefIds(decoded.project.ref
+          ? [decoded.project.ref]
+          : resolveRecipeDefaults(decoded.path, decoded.project.world).selectedRefIds);
         set({
           selectedProjectId: decoded.project.id,
           projectClass: decoded.path,
-          selectedWorldId: decoded.project.world,
-          selectedRefIds: decoded.project.ref ? [decoded.project.ref] : [],
-          activePreviewRefId: decoded.project.ref || '',
-          selectedPaletteId: decoded.project.palette,
-          projectTopic: rawSource.trim().split(/\n+/u)[0]?.slice(0, 160) || get().projectTopic,
+          selectedWorldId: normalizeWorldId(decoded.project.world),
+          selectedRefIds,
+          activePreviewRefId: selectedRefIds[0] || '',
+          selectedPaletteId: normalizePaletteId(decoded.project.palette),
+          // Decode changes world/palette, so any preset-locked Director mandate is now
+          // stale — clear it the same way Dashboard's onAutoRecipe does.
+          phase0PresetId: '',
+          directorChoices: {},
+          directorBrief: '',
           scenes: [],
           agentBrief: '',
           agentPackets: null,
@@ -524,17 +951,18 @@ export const useStudioStore = create<StudioState>()(
       },
       ingestRawSource: () => {
         const s = get();
-        const rawSource = s.rawSource;
-        const atoms = ingestSource(rawSource);
+        const dossierSource = extractProductionDossierSource(s.rawSource);
+        const rawSource = dossierSource?.rawSource || s.rawSource;
+        const atoms = dossierSource?.beats || ingestSource(rawSource);
         // Auto-group granular ingests into thematic beats so a 3-minute script
         // doesn't explode into 50+ scenes. Tiny inputs and Manuel mode stay
         // sentence-level (user keeps full manual control via merge/split).
-        const sourceBeats = s.beatMode !== 'Manuel' && atoms.length > AUTO_GROUP_THRESHOLD
-          ? autoGroupBeats(rawSource, s.beatMode)
+        const sourceBeats = !dossierSource && s.beatMode !== 'Manuel' && atoms.length > AUTO_GROUP_THRESHOLD
+          ? autoGroupBeats(rawSource, s.beatMode, s.videoModel)
           : atoms;
         const sourceReport = sourceIntegrity(rawSource, sourceBeats);
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1), beatAnalysis });
+        set({ rawSource, sourceBeats, sourceReport, sceneCount: Math.max(1, sourceBeats.length || 1), beatAnalysis });
       },
       setBeatMode: (mode) => {
         const s = get();
@@ -543,10 +971,19 @@ export const useStudioStore = create<StudioState>()(
         // Manuel preserves the user's existing beats untouched. No threshold guard:
         // small sources must regroup too, otherwise broken state survives mode switches.
         const regroup = !!s.rawSource && mode !== 'Manuel';
-        const sourceBeats = regroup ? autoGroupBeats(s.rawSource, mode) : s.sourceBeats;
+        const sourceBeats = regroup ? autoGroupBeats(s.rawSource, mode, s.videoModel) : s.sourceBeats;
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), mode, [5, 10]);
         const regroupPatch = regroup
-          ? { sourceBeats, sourceReport: sourceIntegrity(s.rawSource, sourceBeats), sceneCount: Math.max(1, sourceBeats.length || 1) }
+          ? {
+            sourceBeats,
+            sourceReport: sourceIntegrity(s.rawSource, sourceBeats),
+            sceneCount: Math.max(1, sourceBeats.length || 1),
+            // Regroup el emeğini ezer — önce snapshot, ki undo geri getirebilsin.
+            // Yeni beat id'leri pozisyonel (source-001…) olduğundan eski keep bayrakları
+            // alakasız yeni beat'lere yapışırdı — videoModel branch'ıyla tutarlı: temizle.
+            beatHistory: snapshotBeatHistory(s),
+            beatKeeps: {},
+          }
           : {};
         set({ beatMode: mode, beatAnalysis, ...regroupPatch, ...STALE_GENERATION });
       },
@@ -557,10 +994,19 @@ export const useStudioStore = create<StudioState>()(
       },
       mergeBeats: (index) => {
         const s = get();
-        const b1 = s.sourceBeats[index];
-        const b2 = s.sourceBeats[index + 1];
+        // Son beat için merge = "önceki ile birleştir" — beats.ts kısa-kuyruk hint'i
+        // son index'i verir; index+1 yok diye sessiz no-op olmasın.
+        const i = index < s.sourceBeats.length - 1 ? index : index - 1;
+        const b1 = s.sourceBeats[i];
+        const b2 = s.sourceBeats[i + 1];
         if (!b1 || !b2) return;
-        const exactText = s.rawSource ? s.rawSource.slice(b1.start, b2.end) : b1.exactText + b2.exactText;
+        const historySnapshot = snapshotBeatHistory(s);
+        // exactText tek gerçek: el düzeltmesi (updateBeatText) yalnız exactText'i değiştirir;
+        // rawSource.slice(b1.start, b2.end) o düzeltmeyi sessizce geri alırdı. Aradaki
+        // orijinal boşluğu koruyarak exactText'leri birleştir — pristine beat'lerde
+        // rawSource.slice ile birebir aynı sonuç.
+        const gap = s.rawSource ? s.rawSource.slice(b1.end, b2.start) : '';
+        const exactText = b1.exactText + gap + b2.exactText;
         const merged: SourceBeat = {
           sourceId: b1.sourceId,
           exactText,
@@ -569,10 +1015,17 @@ export const useStudioStore = create<StudioState>()(
           hash: b1.hash + '-' + b2.hash, // rough proxy
         };
         const newBeats = [...s.sourceBeats];
-        newBeats.splice(index, 2, merged);
+        newBeats.splice(i, 2, merged);
+        // BÖLEMEZSİN (keep) taşınır: taraflardan biri keep'liyse merged de keep'li.
+        const beatKeeps = { ...s.beatKeeps };
+        const keep = !!(beatKeeps[b1.sourceId] || beatKeeps[b2.sourceId]);
+        delete beatKeeps[b2.sourceId];
+        if (keep) beatKeeps[merged.sourceId] = true;
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
         set({
           sourceBeats: newBeats,
+          beatKeeps,
+          beatHistory: historySnapshot,
           sourceReport: s.rawSource ? sourceIntegrity(s.rawSource, newBeats) : s.sourceReport,
           beatAnalysis,
           sceneCount: newBeats.length,
@@ -588,10 +1041,10 @@ export const useStudioStore = create<StudioState>()(
           set({ lastError: 'Kaynak yok; bölme yapılamaz.' });
           return;
         }
-        // Slice the exact original characters — never split(' ')/join(' '), which
-        // would collapse newlines/tabs/multi-spaces and drop characters. The cut is
-        // a semantic boundary inside the beat; fall back to a sentence-end boundary.
-        const segment = rawSource.slice(beat.start, beat.end);
+        // Beat'in GÜNCEL metninden kes (exactText tek gerçek): el düzeltmesi varsa
+        // rawSource.slice onu sessizce geri alırdı. Pristine beat'te exactText zaten
+        // rawSource.slice(start,end) ile birebir. Asla split(' ')/join(' ') yok.
+        const segment = beat.exactText;
         let cut = eventBoundary(segment);
         if (cut <= 0) cut = sentenceBoundary(segment);
         if (cut <= 0 || cut >= segment.length
@@ -599,34 +1052,127 @@ export const useStudioStore = create<StudioState>()(
           set({ lastError: 'Güvenli bölme noktası bulunamadı; bu beat bölünemiyor.' });
           return;
         }
-        const cutAbs = beat.start + cut;
+        // Offsetlar yaklaşık kalabilir (düzenlenmiş beat'te bütünlük zaten "altered");
+        // metin gerçeği exactText'te taşınır.
+        const cutAbs = Math.min(beat.start + cut, beat.end);
         const b1: SourceBeat = {
           sourceId: beat.sourceId + '-A',
-          exactText: rawSource.slice(beat.start, cutAbs),
+          exactText: segment.slice(0, cut),
           start: beat.start,
           end: cutAbs,
           hash: beat.hash + '-A',
         };
         const b2: SourceBeat = {
           sourceId: beat.sourceId + '-B',
-          exactText: rawSource.slice(cutAbs, beat.end),
+          exactText: segment.slice(cut),
           start: cutAbs,
           end: beat.end,
           hash: beat.hash + '-B',
         };
         const newBeats = [...s.sourceBeats];
         newBeats.splice(index, 1, b1, b2);
-        // Reject the split outright if it would break source integrity — never let
-        // a stale OK report mask a lossy storyboard.
+        // BÖLEMEZSİN (keep) iki çocuğa da taşınır.
+        const keepSplit = !!s.beatKeeps[beat.sourceId];
+        const beatKeeps = { ...s.beatKeeps };
+        delete beatKeeps[beat.sourceId];
+        if (keepSplit) { beatKeeps[b1.sourceId] = true; beatKeeps[b2.sourceId] = true; }
+        // b1+b2 exactText'leri beat'in exactText'ini kayıpsız yeniden üretir (segment
+        // partisyonu) — pristine beat'te byte-range de birebir korunur. Integrity burada
+        // bozuk okunuyorsa ZATEN önceki bir el düzeltmesiyle bozulmuştu; bu split'i
+        // suçlama. Sadece bu split'in kendisinin yarattığı gerçek regresyonu reddet.
+        const priorReport = s.sourceReport;
         const sourceReport = sourceIntegrity(rawSource, newBeats);
-        if (!sourceReport.ok) {
+        if (priorReport && priorReport.ok && !sourceReport.ok) {
           set({ lastError: `Bölme bütünlüğü bozdu (%${sourceReport.coverage}); işlem geri alındı.` });
           return;
         }
+        const historySnapshot = snapshotBeatHistory(s);
         const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
-        set({ sourceBeats: newBeats, sourceReport, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION, lastError: null });
+        set({ sourceBeats: newBeats, beatKeeps, beatHistory: historySnapshot, sourceReport, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION, lastError: null });
+      },
+      manualSplitBeat: (index, cutIndex) => {
+        const s = get();
+        const beat = s.sourceBeats[index];
+        if (!beat) return;
+        const rawSource = s.rawSource;
+        if (!rawSource) return;
+
+        // cutIndex kullanıcının GÖRDÜĞÜ (edited) metne göre gelir — segment de o olmalı.
+        // rawSource.slice kullanmak hem düzeltmeyi geri alır hem kesimi yanlış karaktere
+        // kaydırırdı (uzunluk değiştiyse). exactText tek gerçek.
+        const segment = beat.exactText;
+        if (cutIndex <= 0 || cutIndex >= segment.length || !segment.slice(0, cutIndex).trim() || !segment.slice(cutIndex).trim()) {
+          set({ lastError: 'Geçersiz manuel bölme noktası.' });
+          return;
+        }
+
+        const cutAbs = Math.min(beat.start + cutIndex, beat.end);
+        const b1: SourceBeat = {
+          sourceId: beat.sourceId + '-M1',
+          exactText: segment.slice(0, cutIndex),
+          start: beat.start,
+          end: cutAbs,
+          hash: beat.hash + '-M1',
+        };
+        const b2: SourceBeat = {
+          sourceId: beat.sourceId + '-M2',
+          exactText: segment.slice(cutIndex),
+          start: cutAbs,
+          end: beat.end,
+          hash: beat.hash + '-M2',
+        };
+        const newBeats = [...s.sourceBeats];
+        newBeats.splice(index, 1, b1, b2);
+        // BÖLEMEZSİN (keep) iki çocuğa da taşınır.
+        const keepSplit = !!s.beatKeeps[beat.sourceId];
+        const beatKeeps = { ...s.beatKeeps };
+        delete beatKeeps[beat.sourceId];
+        if (keepSplit) { beatKeeps[b1.sourceId] = true; beatKeeps[b2.sourceId] = true; }
+
+        // Manual splits are byte-safe too (b1/b2 come straight from rawSource), so a
+        // broken report here means integrity was already broken by an earlier edit on
+        // another beat — not by this split. Block only a genuine regression, never a
+        // pre-existing one. This is the user's own storyboard; a lossless cut is theirs.
+        const priorReport = s.sourceReport;
+        const sourceReport = sourceIntegrity(rawSource, newBeats);
+        if (priorReport && priorReport.ok && !sourceReport.ok) {
+          set({ lastError: `Manuel bölme bütünlüğü bozdu (%${sourceReport.coverage}).` });
+          return;
+        }
+        const historySnapshot = snapshotBeatHistory(s);
+        const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({ sourceBeats: newBeats, beatKeeps, beatHistory: historySnapshot, sourceReport, beatAnalysis, sceneCount: newBeats.length, ...STALE_GENERATION, lastError: null });
+      },
+      updateBeatText: (index, text) => {
+        const s = get();
+        const beat = s.sourceBeats[index];
+        if (!beat) return;
+        const historySnapshot = snapshotBeatHistory(s);
+        const newBeats = [...s.sourceBeats];
+        newBeats[index] = { ...beat, exactText: text };
+
+        // When manually editing, source integrity might be intentionally broken or altered
+        const sourceReport = s.rawSource ? sourceIntegrity(s.rawSource, newBeats) : s.sourceReport;
+        const beatAnalysis = planBeats(newBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        set({ sourceBeats: newBeats, beatHistory: historySnapshot, sourceReport, beatAnalysis, ...STALE_GENERATION, lastError: null });
+      },
+      undoBeatAction: () => {
+        const s = get();
+        if (s.beatHistory.length === 0) return;
+        const historySnapshot = [...s.beatHistory];
+        const prev = historySnapshot.pop();
+        if (!prev) return;
+        const prevBeats = prev.beats;
+        const sourceReport = s.rawSource ? sourceIntegrity(s.rawSource, prevBeats) : s.sourceReport;
+        const beatAnalysis = planBeats(prevBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
+        // keeps beats'le BİRLİKTE geri gelir — undo sonrası BÖLEMEZSİN bayrağı
+        // artık var olmayan çocuk id'lerde asılı kalıp sessizce kaybolmaz.
+        set({ sourceBeats: prevBeats, beatKeeps: { ...prev.keeps }, beatHistory: historySnapshot, sourceReport, beatAnalysis, sceneCount: prevBeats.length, ...STALE_GENERATION, lastError: null });
       },
       applyPreset: (preset) => set((s) => presetWithDefaults(s, preset)),
+
+      exportRecipe: () => buildRecipeMarkdown(getRecipeInput()),
+      exportRecipeJson: () => JSON.stringify(buildRecipeMachine(getRecipeInput()), null, 2),
 
       generateScenes: () => {
         const s = get();
@@ -634,10 +1180,9 @@ export const useStudioStore = create<StudioState>()(
         // Heal any stale/legacy engine id (e.g. persisted kling_2_1) before producing,
         // so every scene's duration/split and motion handoff name the current engine.
         const videoModel = normalizeVideoModel(s.videoModel);
-        set({ isGenerating: true, lastError: null, videoModel });
+        set({ isGenerating: true, lastError: null, blockers: [], videoModel });
         try {
           const result = generateBatch({
-            projectKind: s.projectKind,
             rawSource: s.rawSource,
             sourceBeats: s.sourceBeats,
             projectTopic: s.projectTopic,
@@ -664,10 +1209,21 @@ export const useStudioStore = create<StudioState>()(
             phase0PresetId: s.phase0PresetId,
             directorChoices: s.directorChoices,
             directorBrief: s.directorBrief,
+            voSyncMode: s.voSyncMode,
+            osTextMode: s.osTextMode,
+            // Reçete adımının üç kararı buraya HİÇ gelmiyordu — Mami konuyu, mekânı ve
+            // sahne notlarını yazıyor, generateBatch onları görmüyor, final_brief.md'de
+            // hiçbiri yok. `generationFields` bu üçünü zaten "üretimi geçersiz kılar"
+            // diye işaretliyordu: store onların üretimi etkilediğine İNANIYORDU.
+            subject: s.subject,
+            location: s.location,
+            recipeScenes: s.recipeScenes,
           });
           if (result.status === 'BLOCKED') {
             set({
+              // İnsan-okur özet + TYPED blocker'lar birlikte. Blocker'lar düşürülmez.
               lastError: result.contractGate.findings.map((f) => `${f.code}: ${f.message}`).join(' · '),
+              blockers: result.blockers ?? [],
               scenes: [],
               isGenerating: false,
             });
@@ -684,12 +1240,14 @@ export const useStudioStore = create<StudioState>()(
               intensity: sc.intensity,
               phaseName: sc.phaseName,
               handoff: sc.handoff,
+              onScreenText: sc.onScreenText,
             }));
             set({
               scenes: adapted,
               agentBrief: result.agentBrief ?? '',
               agentPackets: result.agentPackets ?? null,
               selectedSceneId: adapted[0]?.id ?? null,
+              blockers: [],
               isGenerating: false,
             });
           }
@@ -704,6 +1262,143 @@ export const useStudioStore = create<StudioState>()(
       setSceneOverride: (sceneId, override) =>
         set((s) => ({
           scenes: s.scenes.map((sc) => (sc.id === sceneId ? applyPromptOverride(sc, override) : sc)),
+        })),
+
+      currentCommandId: () => {
+        // commandId'nin TEK kaynağı buildCommandJSON'dur — burada yeniden hesaplamak drift
+        // (iki farklı hash) yaratırdı. Aksiyon-içi çağrı: ES-module döngüsü çalışma anında çözülür.
+        try {
+          return buildCommandJSON(get() as never).commandId;
+        } catch {
+          return 'mamilas-unbound';
+        }
+      },
+
+      currentPromptSourceCommandId: () => {
+        try {
+          return promptSourceCommandId(get());
+        } catch {
+          return 'mamilas-unbound';
+        }
+      },
+
+      importAgentPrompt: (sceneId, finalPrompt, source = 'paste') => {
+        const commandId = get().currentPromptSourceCommandId();
+        set((s) => ({
+          scenes: s.scenes.map((sc) =>
+            sc.id === sceneId ? applyAgentPrompt(sc, finalPrompt, commandId, source) : sc,
+          ),
+        }));
+      },
+
+      approveShot: (sceneId, note) => {
+        const current = get();
+        const scene = current.scenes.find((candidate) => candidate.id === sceneId);
+        if (!scene || !hasCurrentAgentPrompt(scene, current.currentPromptSourceCommandId())) {
+          set({ lastError: 'Shot onayı için önce current ajan final prompt’unu receipt ile geri al.' });
+          return;
+        }
+        const commandId = current.currentCommandId();
+        set((s) => ({
+          shotApprovals: { ...s.shotApprovals, [sceneId]: { verdict: 'APPROVED', commandId, note } },
+          lastError: null,
+        }));
+      },
+      rejectShot: (sceneId, note) => {
+        const commandId = get().currentCommandId();
+        set((s) => ({
+          shotApprovals: { ...s.shotApprovals, [sceneId]: { verdict: 'REJECTED', commandId, note } },
+        }));
+      },
+      clearShotApproval: (sceneId) =>
+        set((s) => {
+          const next = { ...s.shotApprovals };
+          delete next[sceneId];
+          return { shotApprovals: next };
+        }),
+
+      importFrame: async (sceneId, file) => {
+        // Gerçek PİKSEL kimliği: dosyanın baytları SHA-256'lanır (prompt değil). Boyut, bir
+        // Image objesiyle ölçülür (tarayıcı). Frame o anki karara (commandId) ve — varsa —
+        // sahnenin ajan-prompt hash'ine bağlanır.
+        const current = get();
+        const commandId = current.currentCommandId();
+        const approval = current.shotApprovals[sceneId];
+        const scene = current.scenes.find((candidate) => candidate.id === sceneId);
+        if (!scene || !hasCurrentAgentPrompt(scene, current.currentPromptSourceCommandId())) {
+          set({ lastError: 'Frame yüklemek için current ajan prompt receipt’i gerekli.' });
+          return;
+        }
+        if (approval?.verdict !== 'APPROVED' || approval.commandId !== commandId) {
+          set({ lastError: 'Frame yüklemek için önce current storyboard shot Mami APPROVED olmalı.' });
+          return;
+        }
+        const buf = new Uint8Array(await file.arrayBuffer());
+        const frameHash = sha256HexBytes(buf);
+        const dims = await readImageDims(file).catch(() => null);
+        if (!dims || dims.width <= 0 || dims.height <= 0 || buf.length <= 0) {
+          set({ lastError: 'Frame okunamadı: geçerli ve boyutu ölçülebilen bir görsel dosyası yükle.' });
+          return;
+        }
+        set((s) => ({
+          scenes: s.scenes.map((sc) => {
+            if (sc.id !== sceneId) return sc;
+            const receipt: SceneFrameReceipt = {
+              frameHash,
+              fromCommandId: commandId,
+              fromPromptHash: sc.promptReceipt!.promptHash,
+              width: dims.width,
+              height: dims.height,
+              aspect: dims.height ? Math.round((dims.width / dims.height) * 1000) / 1000 : 0,
+              fileName: file.name,
+              byteSize: buf.length,
+              verdict: 'PENDING',
+            };
+            return { ...sc, frameReceipt: receipt };
+          }),
+        }));
+      },
+
+      setFrameVerdict: (sceneId, verdict, note) => {
+        const current = get();
+        const commandId = current.currentCommandId();
+        const approval = current.shotApprovals[sceneId];
+        if (verdict === 'APPROVE') {
+          const scene = current.scenes.find((candidate) => candidate.id === sceneId);
+          if (!scene || !hasCurrentAgentPrompt(scene, current.currentPromptSourceCommandId())) {
+            set({ lastError: 'Frame APPROVE için current ajan prompt receipt’i gerekli.' });
+            return;
+          }
+          if (approval?.verdict !== 'APPROVED' || approval.commandId !== commandId) {
+            set({ lastError: 'Frame APPROVE için current storyboard shot onayı gerekli.' });
+            return;
+          }
+          if (!hasValidFrameEvidence(scene.frameReceipt)) {
+            set({ lastError: 'Frame APPROVE için okunabilir gerçek görsel kanıtı gerekli.' });
+            return;
+          }
+          if (scene.frameReceipt.fromCommandId !== commandId || scene.frameReceipt.fromPromptHash !== scene.promptReceipt!.promptHash) {
+            set({ lastError: 'Frame eski karar veya prompt’a bağlı; current prompt için yeniden yükle.' });
+            return;
+          }
+        }
+        set((s) => ({
+          scenes: s.scenes.map((sc) =>
+            sc.id === sceneId && sc.frameReceipt
+              ? { ...sc, frameReceipt: { ...sc.frameReceipt, verdict, note } }
+              : sc,
+          ),
+          lastError: null,
+        }));
+      },
+
+      clearFrame: (sceneId) =>
+        set((s) => ({
+          scenes: s.scenes.map((sc) => {
+            if (sc.id !== sceneId) return sc;
+            const { frameReceipt: _drop, ...rest } = sc;
+            return rest as Scene;
+          }),
         })),
 
       advance: () => {
@@ -730,6 +1425,8 @@ export const useStudioStore = create<StudioState>()(
           set({ currentStep: 'scenes', lastError: null });
         } else if (s.currentStep === 'scenes') {
           set({ currentStep: 'timeline', lastError: null });
+        } else if (s.currentStep === 'timeline') {
+          set({ currentStep: 'qa', lastError: null });
         }
       },
 
@@ -745,12 +1442,13 @@ export const useStudioStore = create<StudioState>()(
         }
         const regroup = s.beatMode !== 'Manuel';
         const sourceBeats = regroup
-          ? autoGroupBeats(s.rawSource, s.beatMode)
+          ? autoGroupBeats(s.rawSource, s.beatMode, s.videoModel)
           : ingestSource(s.rawSource);
         const sourceReport = sourceIntegrity(s.rawSource, sourceBeats);
         const beatAnalysis = planBeats(sourceBeats.map(b => ({ id: b.sourceId, text: b.exactText })), s.beatMode, [5, 10]);
         set({
           sourceBeats,
+          beatHistory: [],
           sourceReport,
           beatAnalysis,
           beatKeeps: {},
@@ -783,7 +1481,79 @@ export const useStudioStore = create<StudioState>()(
         };
       }),
       deleteFromVault: (id) => set((s) => ({ vault: s.vault.filter((e) => e.id !== id) })),
-    }),
+
+      exportProjectPack: () => {
+        const pack = buildProjectPack(get());
+        return serializeProjectPack(pack);
+      },
+
+      exportCloseout: () => {
+        const state = get();
+        return JSON.stringify(buildCloseout(
+          buildProjectPack(state),
+          state.currentCommandId(),
+          state.currentPromptSourceCommandId(),
+        ), null, 2);
+      },
+
+      importProjectPack: (json) => {
+        let parsed: unknown;
+        try {
+          parsed = JSON.parse(json);
+        } catch {
+          set({ lastError: 'Project pack okunamadı: geçersiz JSON.' });
+          return;
+        }
+        try {
+          const check = verifyProjectPack(parsed);
+          if (!check.ok) {
+            set({ lastError: `Project pack doğrulanamadı: ${check.problems.join(' · ') || 'bilinmeyen biçim'}` });
+            return;
+          }
+          if (check.legacy) {
+            // V2026 (eski) proje — read-only import: eski snapshot yolunu kullan, silme yok.
+            set((s) => ({
+              ...initial,
+              ...migratePersistedState(parsed as Record<string, unknown>),
+              vault: s.vault,
+              isGenerating: false,
+              lastError: null,
+            }));
+            return;
+          }
+          const state = projectPackToState(parsed as ProjectPack);
+          set((s) => ({
+            ...initial,
+            ...state,
+            vault: s.vault,
+            isGenerating: false,
+            lastError: null,
+          }));
+          // Pack evidence is useful only when it is reattached to the regenerated canonical
+          // storyboard. Restoring decisions alone silently dropped prompt/frame receipts and made
+          // the advertised round-trip a one-way trip. Generate from the restored decisions, then
+          // bind each evidence record back by scene id; commandId is deterministic and therefore
+          // becomes the same id once authored prompt overrides are restored.
+          get().generateScenes();
+          const evidenceById = new Map(((parsed as ProjectPack).scenes ?? []).map((scene) => [scene.id, scene]));
+          set((current) => ({
+            scenes: current.scenes.map((scene) => {
+              const evidence = evidenceById.get(scene.id);
+              if (!evidence) return scene;
+              return {
+                ...scene,
+                ...(evidence.agentPrompt != null ? { userImagePrompt: evidence.agentPrompt } : {}),
+                ...(evidence.promptReceipt ? { promptReceipt: evidence.promptReceipt } : {}),
+                ...(evidence.frameReceipt ? { frameReceipt: evidence.frameReceipt } : {}),
+              };
+            }),
+          }));
+        } catch (error) {
+          set({ lastError: `Project pack içe alınamadı: ${error instanceof Error ? error.message : String(error)}` });
+        }
+      },
+    };
+  },
     {
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),

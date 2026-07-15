@@ -16,21 +16,21 @@ test('Beat Planner renders and mode switch changes numbers', async ({ page }) =>
   await freshGoto(page);
 
   await page.getByTestId('raw-source-input').fill('Birinci kaynak cümlesi. İkinci kaynak cümlesi. Üçüncü kaynak cümlesi.');
-  await page.getByRole('button', { name: 'Decode + Kayıpsız Ingest' }).click();
+  await page.getByRole('button', { name: 'Kayıpsız Ingest' }).click();
   await expect(page.getByTestId('source-right-rail')).toContainText('PASS');
 
-  // Use a preset to quickly set up valid state and enter the Director step.
+  // The preset click navigates immediately to DirectorStep.
   await page.getByRole('button', { name: 'Eğitim / Açıklayıcı' }).click();
-  
-  // Go to recipe step
-  await page.getByRole('button', { name: /Reçeteye geç/ }).click();
 
-  // Recipe Step
-  // Select a valid reference DNA to pass the gate
-  await page.getByRole('button', { name: 'Ekle' }).first().click();
-  
-  // Wait for the button to be enabled (readiness passed).
-  await page.getByRole('button', { name: /Sahneler'e geç/ }).click();
+  // From DirectorStep, navigate to RecipeStep.
+  // The preset already sets world + palette + 3 refs — no manual ref selection needed.
+  await page.getByRole('button', { name: /Reçeteye geç/ }).click();
+  // Preset açıkken Yönetmen adımı araya girer → Reçete STAGE 3 (appLayoutSteps.test.ts).
+  await expect(page.getByText('STAGE 3 · REÇETE')).toBeVisible();
+
+  // The aquarium-toggle (fixed, right: 364, top: 18) overlaps the RecipeStep
+  // header CTA — use the sidebar step-button instead.
+  await page.locator('.ml-step-btn').filter({ hasText: 'Sahneler' }).click();
 
   // Verify scenes step renders
   await expect(page.getByRole('heading', { name: 'Beat Planner & Storyboard' })).toBeVisible();

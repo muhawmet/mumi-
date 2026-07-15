@@ -4,7 +4,7 @@
     "moduleResolution": "bundler",
     "target": "esnext",
     "lib": ["esnext", "dom", "dom.iterable"],
-    "types": [],
+    "types": ["node"],
 
     "resolveJsonModule": true,
     "noEmit": true,

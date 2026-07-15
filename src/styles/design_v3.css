@@ -1,0 +1,697 @@
+/* =============================================================
+   MAMILAS · DESIGN V3 — "The Floating Stage" (2026-07-02)
+   Cinematic 3D control room: the whole console lives on a
+   perspective stage. Glass panels float in depth, one gold key
+   light + a cool ice-steel counter-glow, slow volumetric atmosphere.
+   Loads AFTER index.css/design_v2.css and owns the app shell.
+   ============================================================= */
+
+:root {
+  /* v3 depth + atmosphere language */
+  --v3-persp: 1400px;
+  --v3-tilt: 7.5deg;
+  /* buz-çeliği karşı-ışık — teal mirasının V3 halefi (§7.1); vurgu değil, dolgu */
+  --v3-ice: #8fa3c2;
+  --v3-icesoft: rgba(143, 163, 194, 0.08);
+  --v3-iceline: rgba(143, 163, 194, 0.22);
+  --v3-abyss: #0a0604;
+  /* sıcak cam: sahne panelin İÇİNDEN okunur — grafit değil, isli kehribar */
+  --v3-glass: rgba(26, 15, 7, 0.34);
+  --v3-glass-hi: rgba(255, 244, 224, 0.06);
+  --v3-edge: rgba(246, 200, 98, 0.16);
+  --v3-shadow-far: 0 48px 90px -30px rgba(0, 0, 0, 0.9);
+  --v3-shadow-near: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+  --v3-dur-slow: 36s;
+}
+
+/* ── The stage: perspective root + atmosphere layers ───────── */
+.ml-shell {
+  perspective: var(--v3-persp);
+  perspective-origin: 50% 42%;
+  background:
+    radial-gradient(130% 90% at 50% -20%, #16100a 0%, var(--v3-abyss) 58%) fixed;
+  isolation: isolate;
+}
+
+/* Sahte atmosfer katmanları (conic ışık süpürmesi + CSS grain + turuncu blob) SÖKÜLDÜ:
+   ışık ve sıcaklık artık arkadaki render'dan gelir; önüne boyalı taklit koymak
+   sahneyi çamura çeviriyordu. Tek kalan örtü .ml-spotlight'taki okunabilirlik ND'si. */
+
+/* ── Perspective floor: the signature 3D horizon grid ──────── */
+.ml-v3-floor {
+  position: fixed;
+  left: -12%;
+  right: -12%;
+  bottom: -4%;
+  height: 34vh;
+  z-index: 0;
+  pointer-events: none;
+  transform: perspective(700px) rotateX(64deg);
+  transform-origin: 50% 100%;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(246, 200, 98, 0.22) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg,
+      rgba(143, 163, 194, 0.12) 0 1px, transparent 1px 64px);
+  mask-image:
+    radial-gradient(120% 100% at 50% 100%, #000 40%, transparent 78%),
+    linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
+  -webkit-mask-image:
+    radial-gradient(120% 100% at 50% 100%, #000 40%, transparent 78%),
+    linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  animation: v3-floor-scroll 24s linear infinite;
+}
+@keyframes v3-floor-scroll {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 46px, 0 0; }
+}
+
+/* Fotoğrafçının ND grad'ı: sahneyi BOĞMAZ, sadece alt bandda metin zeminini toplar.
+   Eski hâli (0.66 siyah perde + sahte altın bloblar) sahneyi kahverengi çamura çeviriyordu. */
+.ml-spotlight {
+  background:
+    linear-gradient(180deg, rgba(10, 6, 3, 0) 0%, rgba(10, 6, 3, 0) 58%, rgba(10, 6, 3, 0.30) 100%) !important;
+}
+
+/* ── Floating glass panels (sidebar / rail / main frame) ───── */
+.ml-sidebar,
+.ml-right-rail {
+  /* Vitrin turu (2026-07-12): dolgu AYNI (0.34), blur 30→16 — sahne panelin
+     İÇİNDEN gerçekten okunur; çamuru yapan blur'du, dolgu değil. 0.22 ve 0.28
+     denendi: GERÇEK 3D tableau (?scene=force) fallback'ten parlak, muted adım
+     metinleri yıkandı → dolgu geri 0.34. Kontrastı dolgu taşır, netliği blur. */
+  background:
+    linear-gradient(165deg, var(--v3-glass-hi), transparent 38%),
+    rgba(26, 15, 7, 0.34) !important;
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 0 !important;
+  transform-style: preserve-3d;
+  transition: transform 700ms var(--m2-ease), box-shadow 700ms var(--m2-ease);
+}
+
+/* Vitrin çerçevesi: panel kutuları AYNEN kalır (sticky+flex geometrisine dokunmak
+   layout'u kaydırıyor — ölçüldü), görünür yüzey clip-path ile içeri alınır →
+   sahne her panelin dört kenarında 16px şerit olarak yaşar, hit-target'lar sabit.
+   Padding kırpılan kenarlarda telafi edilir (inline 24/20 + 16). ≤900 flatten'da yok. */
+@media (min-width: 901px) {
+  .ml-sidebar {
+    clip-path: inset(16px 0 16px 16px round 18px);
+    padding: 40px 20px 40px 36px !important;
+  }
+  .ml-right-rail {
+    clip-path: inset(16px 16px 16px 0 round 18px);
+    padding: 40px 36px 40px 20px !important;
+  }
+}
+
+/* Kenar ışığa bağlı: üst kenar güneşi yakalar (sıcak), alt kenar gök dolgusunu (serin).
+   Tek renk 1px çizgi plastik okunur; golden-hour'da yüzey böyle davranmaz. */
+.ml-sidebar {
+  /* Gerçek 3D tableau'nun parlak göğü muted adım ipuçlarını yıkıyordu (vitrin
+     ÖNCESİNDE de) — metnin altına ışık değil gölge koy: cam karartılmadan okunur. */
+  text-shadow: 0 1px 10px rgba(10, 6, 3, 0.6), 0 0 2px rgba(10, 6, 3, 0.35);
+  transform: rotateY(var(--v3-tilt)) translateZ(6px);
+  transform-origin: right center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 130, 0.30),
+    inset 0 -1px 0 rgba(143, 163, 194, 0.16),
+    inset -1px 0 0 rgba(255, 244, 224, 0.08),
+    var(--v3-shadow-far);
+  border-radius: 0 18px 18px 0;
+}
+
+.ml-right-rail {
+  transform: rotateY(calc(var(--v3-tilt) * -1)) translateZ(6px);
+  transform-origin: left center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 130, 0.30),
+    inset 0 -1px 0 rgba(143, 163, 194, 0.16),
+    inset 1px 0 0 rgba(255, 244, 224, 0.08),
+    var(--v3-shadow-far);
+  border-radius: 18px 0 0 18px;
+}
+
+.ml-sidebar:hover,
+.ml-right-rail:hover {
+  transform: rotateY(0deg) translateZ(22px);
+}
+
+/* the main step area is the hero screen hovering mid-stage */
+.ml-main {
+  transform: translateZ(0);
+}
+.ml-main > div {
+  min-height: 100%;
+}
+.ml-v3-screen {
+  position: relative;
+  /* Vitrin turu: yan gutter 28→40, alt 34→44 — sahnenin ışık kolonu panellerin
+     ARASINDA okunur, altta zemin ızgarası bandı açılır. (Phase-0 slate sabiti
+     buna bağlı: slate = viewport − 896 — aşağıdaki phase0 bloğuyla senkron.) */
+  margin: 26px 40px 44px;
+  border-radius: var(--r-lg);
+  animation: v3-screen-breathe 9s ease-in-out infinite alternate;
+  /* Punch turu yüzeyi 58 yapmıştı; vitrin turu 54 + blur 18→10: içerik kartları
+     zaten opak, camın kendisi sahneyi geçirir — süt geri gelmedi. (46 ve 50 denendi;
+     gerçek 3D tableau'nun parlak bandında giriş metni soluyordu.) */
+  background:
+    linear-gradient(172deg, rgba(255, 214, 130, 0.035), transparent 26%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 38%, transparent), transparent 240px),
+    color-mix(in srgb, var(--s2) 54%, transparent);
+  backdrop-filter: blur(10px) saturate(1.18) contrast(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.18) contrast(1.05);
+  border: 1px solid var(--v3-edge);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 130, 0.16),
+    inset 0 -1px 0 rgba(143, 163, 194, 0.10),
+    0 0 0 1px rgba(0, 0, 0, 0.35),
+    var(--v3-shadow-near);
+  padding: 28px 32px 36px;
+  overflow: clip;
+}
+/* breathe with light only (no transform: keeps hit-targets stable for e2e) */
+@keyframes v3-screen-breathe {
+  from { box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 24px 60px -24px rgba(0, 0, 0, 0.7); }
+  to { box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.055),
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 38px 84px -26px rgba(0, 0, 0, 0.82),
+    0 0 60px -20px rgba(246, 200, 98, 0.18); }
+}
+
+/* gold edge-light kissing the hero screen's top-left */
+.ml-v3-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 26px at 18% 0%, var(--v3-edge), transparent 70%),
+    radial-gradient(40% 20px at 92% 100%, var(--v3-iceline), transparent 75%);
+  opacity: 0.85;
+}
+
+/* ── Brand plate ───────────────────────────────────────────── */
+.ml-v3-brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  background:
+    linear-gradient(150deg, rgba(246, 200, 98, 0.16), transparent 55%),
+    var(--m2-surface);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 8px 18px -8px rgba(246, 200, 98, 0.35);
+  transform: translateZ(14px);
+}
+.ml-v3-brand-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--m2-paper);
+  text-shadow: 0 0 24px rgba(246, 200, 98, 0.25);
+}
+.ml-v3-brand-sub {
+  font-size: 8.5px;
+  color: var(--m2-muted);
+  letter-spacing: 2.4px;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+/* ── Step rail: nodes pop out of the glass ─────────────────── */
+.ml-v3-steplist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.ml-v3-spine,
+.ml-v3-spine-fill {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  width: 2px;
+  border-radius: 2px;
+}
+.ml-v3-spine { bottom: 20px; background: var(--m2-line); }
+.ml-v3-spine-fill {
+  background: linear-gradient(180deg, var(--gold), rgba(246, 200, 98, 0.2));
+  box-shadow: 0 0 12px rgba(246, 200, 98, 0.35);
+  transition: height 500ms var(--m2-ease);
+}
+
+.ml-step-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition: transform 260ms var(--m2-ease), background 260ms var(--m2-ease),
+    border-color 260ms var(--m2-ease), box-shadow 260ms var(--m2-ease);
+}
+.ml-step-btn:hover {
+  background: var(--v3-glass-hi) !important;
+  transform: translateZ(10px) translateX(2px);
+}
+.ml-step-btn.is-active {
+  background:
+    linear-gradient(160deg, rgba(246, 200, 98, 0.10), transparent 60%),
+    var(--m2-surface);
+  border-color: var(--goldline);
+  transform: translateZ(18px);
+  box-shadow:
+    0 14px 30px -14px rgba(0, 0, 0, 0.8),
+    0 0 22px -6px rgba(246, 200, 98, 0.35);
+}
+
+.ml-v3-node {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--m2-line);
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--m2-font-mono);
+  color: var(--m2-muted);
+  background: var(--m2-ink);
+  transition: all 260ms var(--m2-ease);
+}
+.ml-v3-node.is-done {
+  border-color: var(--v3-iceline);
+  color: var(--v3-ice);
+  box-shadow: 0 0 14px -4px rgba(143, 163, 194, 0.5);
+}
+.ml-v3-node.is-active {
+  background: var(--grad-gold);
+  border-color: transparent;
+  color: #191204;
+  box-shadow: 0 6px 20px -6px rgba(246, 200, 98, 0.65);
+}
+
+.ml-v3-step-label { font-size: 13.5px; font-weight: 700; line-height: 1.1; }
+.ml-v3-step-hint { font-size: 10px; color: var(--m2-muted); letter-spacing: 0.2px; }
+.ml-v3-step-icon { display: inline-flex; color: inherit; opacity: 0.85; }
+
+/* ── Right rail: the drawing monitor becomes a hologram bay ── */
+.ml-v3-monitor {
+  padding: 12px;
+  border-radius: 16px;
+  /* tek ısı skalası: monitör de aynı isli-kehribar ailede (soğuk grafit kart yok) */
+  background:
+    linear-gradient(168deg, rgba(255, 214, 130, 0.05), transparent 40%),
+    var(--m2-ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 18px 44px -20px rgba(0, 0, 0, 0.8);
+  transform: translateZ(10px);
+}
+.ml-v3-monitor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px 10px;
+}
+.ml-v3-kicker {
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  color: var(--v3-ice);
+  font-weight: 800;
+  font-family: var(--m2-font-sans);
+}
+
+.ml-v3-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+.ml-v3-eyebrow { font-size: 10px; letter-spacing: 2px; color: var(--m2-muted); font-weight: 800; }
+.ml-v3-status { font-size: 28px; font-weight: 800; margin-top: 12px; letter-spacing: -0.5px; }
+.ml-v3-copy { color: var(--m2-paper); font-size: 12px; line-height: 1.6; min-height: 76px; margin-top: 6px; }
+.ml-v3-metric {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--m2-line);
+  padding: 12px 0;
+  color: var(--m2-muted);
+  font-size: 11.5px;
+}
+.ml-v3-hash {
+  display: grid;
+  gap: 5px;
+  border-top: 1px solid var(--m2-line);
+  padding: 12px 0;
+  color: var(--m2-muted);
+  font-size: 11px;
+  font-family: var(--m2-font-mono);
+}
+/* Source Gate boş-durum daveti: şema dökümü değil, ne geleceğinin fragmanı */
+.ml-v3-gate-invite {
+  display: grid;
+  gap: 6px;
+  border-top: 1px solid var(--m2-line);
+  padding: 12px 0 2px;
+  font-size: 11.5px;
+  color: var(--m2-muted);
+}
+.ml-v3-gate-invite em {
+  font-style: normal;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ── Aquarium toggle: floating pill ────────────────────────── */
+.ml-aquarium-toggle {
+  border-radius: 999px !important;
+  border: 1px solid var(--m2-line) !important;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.05), transparent 50%),
+    rgba(10, 10, 14, 0.7) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.8);
+}
+.ml-aquarium-toggle:hover {
+  border-color: var(--goldline) !important;
+  color: var(--m2-paper) !important;
+}
+
+/* ── Phase-0 archetype deck (Director empty stage) ──────────
+   The archetypes (count comes from PHASE0_VIDEO — never hardcode it)
+   lie on the table as an orderly grid — full titles, no overlap,
+   no cut text. Replaces the old overlapping fan. */
+.ml-v3-deck {
+  display: grid;
+  /* auto-fill responds to the deck's OWN width, not the viewport: at 1280 the
+     rails squeeze the deck to ~458px, so the min must stay ≤ ~215px to hold two
+     columns there (2×208 + gap ≈ 431 ≤ 458). 3 cols emerge past ~640px. */
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  gap: 15px;
+}
+.ml-v3-deck-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 150px;
+  padding: 17px 17px 14px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid var(--m2-line);
+  border-radius: 16px;
+  background:
+    linear-gradient(168deg, rgba(246, 200, 98, 0.07), transparent 44%),
+    var(--m2-surface);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 130, 0.16),
+    0 20px 42px -26px rgba(0, 0, 0, 0.85);
+  transition: transform 240ms var(--m2-ease), border-color 240ms var(--m2-ease), box-shadow 240ms var(--m2-ease);
+  animation: ml-deck-rise 460ms var(--ease-out) both;
+}
+@keyframes ml-deck-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.ml-v3-deck-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--goldline);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 130, 0.28),
+    0 30px 56px -24px rgba(0, 0, 0, 0.9),
+    0 0 26px -12px rgba(246, 200, 98, 0.3);
+}
+.ml-v3-deck-kicker {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.ml-v3-deck-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--m2-paper);
+  line-height: 1.2;
+}
+.ml-v3-deck-thesis {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--m2-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ml-v3-deck-cta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 11px;
+  border-top: 1px solid var(--m2-line);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.ml-v3-deck-free {
+  background:
+    linear-gradient(168deg, rgba(143, 163, 194, 0.09), transparent 44%),
+    var(--m2-surface);
+}
+.ml-v3-deck-free .ml-v3-deck-kicker,
+.ml-v3-deck-free .ml-v3-deck-cta {
+  color: var(--v3-ice);
+}
+
+/* ── Director empty state: deck altındaki void'i bağlam bandıyla kapat ──
+   Sayfa dikeyde dolu okunsun; band alta itilip boşluğu dengeli dağıtır. */
+.director-empty { min-height: 100%; }
+.director-deck-context {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--m2-line);
+  border-left: 2px solid var(--goldline);
+  background:
+    linear-gradient(168deg, rgba(246, 200, 98, 0.06), transparent 60%),
+    var(--m2-surface);
+}
+.director-deck-context-kicker {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.director-deck-context p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--m2-muted);
+  max-width: 760px;
+}
+.director-deck-context strong { color: var(--v3-ice); }
+
+/* ── Reduced motion: the stage sits still ──────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ml-shell::before, .ml-v3-floor, .ml-v3-screen { animation: none; }
+  .ml-sidebar, .ml-right-rail, .ml-step-btn, .thought-dock { transition: none; }
+  .ml-v3-deck-card { animation: none; }
+}
+
+/* Phase 0 slate: ÖLÇÜLDÜ, TAHMİN EDİLMEDİ (2026-07-12, headless Chromium):
+   slate = viewport − 896 (sidebar 256 + sağ ray 340 + screen margin 40×2 + padding'ler) —
+   vitrin turu gutter'ı 28→40 yaptığında 872→896 oldu; 1280→384 · 1440→544 · 1600→704
+   piksel piksel doğrulandı. Ekran margin'i değişirse BU BLOK yeniden ölçülür.
+   Rayın taban ihtiyacı ≥ ~260px (plaka 104 + gap 12 + etiket 117 + padding 24 + border).
+   Üç bant (inline grid'i ezmek için !important):
+   · ≥1500 — taban: 1fr + 316px dosya (1500'de ray 268).
+   · 1420–1499 — İKİ KOLON KORUNUR, dosya daralır: clamp(240px, 100vw−1176px, 316px).
+     calc sabiti 1176 = 896 (kabuk) + 20 (gap) + 260 (ray tabanı) → bu bantta ray
+     HEP ≥260px kalır (1420'de dosya 244/ray 260 · 1440'ta 264/260 · 1499'da 316/267).
+   · <1420 — tek kolon, dosya rayın altına iner. Eşik türetildi: iki kolonun alt
+     sınırı 896+20+260+240(dosya tabanı) = 1416. 1280'de (13" laptop; e2e Desktop
+     Chrome) iki kolon FİZİKEN imkânsız: slate 384, dosya 240'a inse bile ray 124
+     kalır ve arketip etiketi ezilirdi — eski kırık buydu. Kırığa dönüş yok. */
+@media (max-width: 1499px) {
+  .phase0-slate {
+    grid-template-columns: minmax(0, 1fr) clamp(240px, calc(100vw - 1176px), 316px) !important;
+  }
+}
+@media (max-width: 1419px) {
+  .phase0-slate { grid-template-columns: minmax(0, 1fr) !important; }
+  .phase0-slate > [aria-live] { position: static !important; }
+}
+
+/* mobile: flatten the stage (3D reads poorly under 900px) */
+@media (max-width: 900px) {
+  .ml-shell { perspective: none !important; max-width: 100vw; overflow-x: clip !important; }
+  .ml-sidebar, .ml-right-rail { transform: none !important; border-radius: 0 !important; max-width: 100vw !important; clip-path: none !important; }
+  .ml-aquarium-toggle { right: 14px !important; }
+  .ml-v3-screen { margin: 10px; padding: 16px; animation: none; }
+  .ml-v3-floor { display: none; }
+  .thought-dock { right: 16px; }
+}
+
+/* ── M3 panel giydirme: cam iç kart + parşömen (mockup-m3-panels.html)
+   İkisi de backdrop-filter TAŞIMAZ: her zaman blur'lü bir cam atanın
+   (.ml-v3-screen blur30 / .ml-right-rail blur30) içinde otururlar.
+   V3 §3b: cam içine cam konmaz; blur bütçesi bakış hattında 1 kalır. */
+.ml-v3-panel-glass {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  /* beyaz film → sıcak kehribar nefes; taban koyulaştı — süt değil cam */
+  background:
+    linear-gradient(170deg, rgba(255, 214, 130, 0.05), transparent 32%),
+    color-mix(in srgb, var(--s2) 72%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 226, 160, 0.09),
+    0 14px 34px -22px rgba(0, 0, 0, 0.65);
+}
+.ml-v3-parchment {
+  position: relative;
+  border: 1px solid var(--parch-line);
+  border-radius: 16px; /* mockup 18 → radius sözlüğü §3b: parşömen ≤16 */
+  background:
+    linear-gradient(168deg, var(--parch-tint), transparent 34%),
+    color-mix(in srgb, #2a2418 30%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 210, 0.12),
+    var(--v3-shadow-near);
+}
+.ml-v3-parchment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(70% 30px at 20% 0%, rgba(246, 200, 98, 0.14), transparent 72%);
+}
+
+/* Band'lar: M2'de panel söküldü — tek kolon parşömen verdict şeridi */
+.dashboard-decision-band,
+.studio-verdict-band {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px 24px;
+}
+
+/* ── Thought dock: DE ünlem sistemi ─────────────────────── */
+.thought-dock {
+  position: fixed;
+  right: 384px; /* sağ ray 340 + 2×padding + nefes: ray içeriğini örtmez */
+  left: auto;
+  bottom: 26px;
+  transform: none;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease), visibility var(--dur-2) var(--ease);
+}
+.thought-dock > * { pointer-events: auto; }
+.thought-dock.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.985); /* HIDDEN_CHROME reçetesi; translateX artık yok */
+}
+.thought-toast {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: min(520px, calc(100vw - 48px));
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--m2-ink, #0a0c14) 88%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+.thought-toast-copy { flex: 1; min-width: 0; }
+.thought-toast-copy p { margin: 4px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--m2-muted); }
+.thought-toast-copy strong { font-size: 13px; color: var(--m2-paper); }
+.thought-toast-row { display: flex; gap: 8px; align-items: center; margin-bottom: 2px; }
+.thought-toast-voice { font-family: var(--m2-font-mono); font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; }
+.thought-toast-tone { font-family: var(--m2-font-mono); font-size: 9px; font-weight: 800; letter-spacing: 1.2px; padding: 2px 7px; border-radius: 4px; }
+.thought-toast-close { background: none; border: none; color: var(--m2-muted); font-size: 16px; cursor: pointer; line-height: 1; padding: 2px 4px; }
+.thought-caret { animation: thought-blink 0.9s steps(2) infinite; color: var(--m2-amber, #f7c948); }
+@keyframes thought-blink { 50% { opacity: 0; } }
+.thought-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 201, 72, 0.45);
+  background: rgba(247, 201, 72, 0.1);
+  color: var(--m2-amber, #f7c948);
+  font-family: var(--m2-font-mono);
+  font-weight: 800;
+  cursor: pointer;
+}
+.thought-badge-mark { font-size: 15px; }
+.thought-badge-count { font-size: 11px; letter-spacing: 1px; }
+.thought-badge-label { font-size: 9px; letter-spacing: 1.4px; font-weight: 800; opacity: 0.75; }
+.thought-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  z-index: 50;
+  padding: 20px 16px;
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--m2-ink, #0a0c14) 94%, transparent);
+  border-left: 1px solid rgba(247, 201, 72, 0.18);
+  backdrop-filter: blur(18px);
+}
+.thought-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: var(--m2-font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: var(--m2-muted);
+}
+.thought-drawer-head button { background: none; border: none; color: var(--m2-muted); font-size: 18px; cursor: pointer; }

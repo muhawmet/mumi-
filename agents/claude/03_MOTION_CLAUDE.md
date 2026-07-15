@@ -24,12 +24,12 @@ Use the engine window supplied by the brief. If absent, use these defaults:
 
 | Engine | Clean window |
 |--------|-------------|
-| Kling (2.1/3) | ~9s |
-| Kling 4 | ~10s |
-| Runway | ~14s |
-| Seedance | ~9s |
-| Hailuo | ~9s |
-| Veo | ~8s |
+| Kling 3.0 | ~12s |
+| Kling O3 | ~15s |
+| Runway Gen4 | ~14s |
+| Seedance 2 | ~12s |
+| Veo 3 | ~8s |
+| Higgsfield | ~9s |
 
 Overflow becomes balanced shots with separate approved start frames:
 14s → 2×7s, 18s → 2×9s, 22s → 3×7.3s. Never a stretched clip or tiny tail.
@@ -55,7 +55,7 @@ implies a specific motion timing/rhythm grammar. Apply it in the `Rhythm:` line:
   from ground) → single rank-aura event → brooding low-hold.
 - `arcane_paint` → painterly weight: slow build to a single decisive gesture →
   rim-light shift → heavy shadow-mass hold. No lightness, no bounce.
-- `jjk_mappa` → cursed-energy burst: dark atmosphere → one smear-frame peak →
+- `jjk_ink_style` → cursed-energy burst: dark atmosphere → one smear-frame peak →
   ink-dust settle → cinematic dark still hold. No second action.
 - `dragon_ball` → kinetic power: aura-charge build → hard-rim impact peak → aura
   dissipates to held power silhouette.
@@ -92,3 +92,5 @@ Reject new objects, re-render, style/material drift, two actions, logo/text warp
 face drift, unapproved mouth movement, missing final hold, bad split math, and
 trigger words left in prompt.
 </final_check>
+
+Engine dialect: the brief's motion prompts carry an `Engine grammar (<engine>):` sentence tuned to the selected engine (Kling 3.0 start-frame fidelity / O3 tier, Seedance subject-tracking + physics, Veo motivated cinema + native audio clause, Runway single continuous take, Higgsfield named preset move). Preserve it verbatim; write your motion in that dialect. The engine is always called Kling 3.0 — O3 is its reasoning tier, never a separate engine.

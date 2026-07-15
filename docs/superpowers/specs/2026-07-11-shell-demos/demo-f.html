@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAMILAS — Işıktan Bir Film Doğar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; background:#160a05; }
+  body {
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    /* graceful degrade if WebGL fails: warm painted gradient */
+    background:
+      radial-gradient(90% 70% at 66% 68%, #c96f24 0%, #7a3210 40%, #2b0f07 78%, #120603 100%);
+  }
+  #gl { position:fixed; inset:0; display:block; }
+
+  /* ---------- painterly finishing layers ---------- */
+  .vignette { position:fixed; inset:0; pointer-events:none; z-index:5;
+    background:
+      radial-gradient(130% 105% at 50% 46%, transparent 55%, rgba(16,6,3,.34) 82%, rgba(10,3,2,.62) 100%);
+  }
+  .scrim { position:fixed; inset:0; pointer-events:none; z-index:4;
+    background:linear-gradient(97deg, rgba(18,7,3,.52) 0%, rgba(18,7,3,.26) 26%, transparent 52%);
+  }
+  .letterbox-t, .letterbox-b { position:fixed; left:0; right:0; height:7%; pointer-events:none; z-index:6; }
+  .letterbox-t { top:0;    background:linear-gradient(rgba(10,4,2,.55), transparent); }
+  .letterbox-b { bottom:0; background:linear-gradient(transparent, rgba(10,4,2,.6)); }
+  .grain { position:fixed; inset:-50px; pointer-events:none; z-index:7; opacity:.055;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- typography ---------- */
+  .ui { position:fixed; inset:0; z-index:10; pointer-events:none; color:#f4e7cf; }
+
+  .masthead { position:absolute; left:68px; top:60px; }
+  .masthead .word {
+    font-size:14px; font-weight:400; letter-spacing:.52em; text-transform:uppercase;
+    color:rgba(246,229,201,.92);
+    text-shadow:0 1px 22px rgba(20,8,3,.8);
+  }
+  .masthead .rule { width:58px; height:1px; margin-top:14px;
+    background:linear-gradient(90deg, rgba(232,176,106,.9), rgba(232,176,106,0)); }
+  .masthead .role { margin-top:13px; font-size:11.5px; font-style:italic; letter-spacing:.14em;
+    color:rgba(240,214,178,.62); }
+
+  .hero { position:absolute; left:66px; top:29.5%; max-width:640px; }
+  .hero h1 {
+    font-style:italic; font-weight:300;
+    font-size:88px; line-height:1.04; letter-spacing:.005em;
+    color:#f8ecd6;
+    text-shadow:0 2px 46px rgba(24,9,3,.85), 0 0 90px rgba(255,170,80,.18);
+  }
+  .hero h1 em { font-style:italic; font-weight:500; color:#f3d9a8; }
+  .hero .lede {
+    margin-top:30px; max-width:392px;
+    font-size:15.5px; font-weight:300; line-height:1.78; letter-spacing:.012em;
+    color:rgba(243,223,196,.8);
+    text-shadow:0 1px 18px rgba(20,8,3,.9);
+  }
+
+  /* ---------- selected world caption ---------- */
+  .world { position:absolute; left:52.6%; top:7.2%; text-align:left; }
+  .world .k { font-size:10.5px; letter-spacing:.38em; text-transform:uppercase;
+    color:rgba(238,198,142,.85); }
+  .world .v { margin-top:6px; font-size:17.5px; font-style:italic; font-weight:400; color:#f6e6c6;
+    text-shadow:0 1px 16px rgba(20,8,3,.85); }
+  .world .light { margin-top:5px; font-size:12px; font-style:italic; letter-spacing:.05em;
+    color:rgba(240,213,172,.66); }
+  .world .leader { width:1px; height:40px; margin-top:10px; margin-left:52px;
+    background:linear-gradient(rgba(238,190,120,.85), rgba(238,190,120,0)); }
+
+  /* ---------- five stages, museum caption ---------- */
+  .stages { position:absolute; left:68px; bottom:56px; display:flex; align-items:baseline; gap:34px; }
+  .stage { display:flex; align-items:baseline; gap:9px; }
+  .stage .num { font-size:11px; font-style:italic; color:rgba(233,197,146,.55); letter-spacing:.08em; }
+  .stage .name { font-size:12.5px; letter-spacing:.3em; text-transform:uppercase;
+    color:rgba(242,222,192,.56); font-weight:300;
+    text-shadow:0 1px 14px rgba(18,7,3,.9); }
+  .stage.active .name { color:#f0cf98; font-weight:400; }
+  .stage.active .num { color:rgba(240,200,140,.95); }
+  .stage.active { position:relative; }
+  .stage.active::before { content:''; position:absolute; left:-15px; top:50%; transform:translateY(-60%);
+    width:4px; height:4px; border-radius:50%;
+    background:#eebc72; box-shadow:0 0 10px 2px rgba(238,188,114,.75); }
+  .stages .sep { font-size:11px; color:rgba(220,180,130,.3); align-self:center; }
+
+  /* ---------- plaque ---------- */
+  .plaque { position:absolute; right:66px; bottom:52px; text-align:right; }
+  .plaque .t { font-size:13.5px; font-style:italic; color:rgba(244,226,197,.85); letter-spacing:.03em; }
+  .plaque .s { margin-top:6px; font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
+    color:rgba(235,206,164,.44); }
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+
+<div class="scrim"></div>
+<div class="vignette"></div>
+<div class="letterbox-t"></div>
+<div class="letterbox-b"></div>
+
+<div class="ui">
+  <div class="masthead">
+    <div class="word">Mamilas</div>
+    <div class="rule"></div>
+    <div class="role">yapay zekâ sinemasında yönetmen koltuğu</div>
+  </div>
+
+  <div class="hero">
+    <h1>Işıktan<br>bir film <em>doğar.</em></h1>
+    <div class="lede">
+      Burada makine yalnızca fırçadır; el, yönetmenindir.
+      Bir brief fısıldanır, reçete ışığı seçer —
+      ve sahneler altın saatte, tek tek, güneşe doğru dizilir.
+    </div>
+  </div>
+
+  <div class="world">
+    <div class="k">Seçili Dünya</div>
+    <div class="v">Ghibli</div>
+    <div class="light">çayır güneşi · sabah pusu · yumuşak gölge</div>
+    <div class="leader"></div>
+  </div>
+
+  <div class="stages">
+    <div class="stage"><span class="num">I</span><span class="name">Brief</span></div>
+    <div class="stage"><span class="num">II</span><span class="name">Reçete</span></div>
+    <div class="stage active"><span class="num">III</span><span class="name">Sahneler</span></div>
+    <div class="stage"><span class="num">IV</span><span class="name">Zaman Çizgisi</span></div>
+    <div class="stage"><span class="num">V</span><span class="name">Jüri</span></div>
+  </div>
+
+  <div class="plaque">
+    <div class="t">Sahne III — “Altın Saat”</div>
+    <div class="s">tuval üzeri ışık · mmxxvi</div>
+  </div>
+</div>
+
+<div class="grain"></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+/* ============================================================
+   MAMILAS — "Işıktan Bir Film Doğar"
+   A painted golden-hour firmament; a river of luminous film
+   frames sweeping toward the sun; three world-moons in the sky.
+   ============================================================ */
+
+const W = window.innerWidth, H = window.innerHeight;
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* -------------------- the painted sky (Turner) -------------------- */
+function rad(x, cx, cy, r, color){
+  // fade to the SAME hue at alpha 0 — never to transparent black (no gray fringes)
+  const m = color.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
+  const outer = m ? `rgba(${m[1]},${m[2]},${m[3]},0)` : 'rgba(255,255,255,0)';
+  const g = x.createRadialGradient(cx,cy,0,cx,cy,r);
+  g.addColorStop(0,color); g.addColorStop(1,outer);
+  x.fillStyle = g; x.fillRect(cx-r,cy-r,r*2,r*2);
+}
+function stamp(x, cx, cy, r, sx, sy, rot, color){
+  x.save(); x.translate(cx,cy); x.rotate(rot); x.scale(sx,sy);
+  rad(x, 0, 0, r, color); x.restore();
+}
+
+function paintSky(w, h){
+  const c = document.createElement('canvas'); c.width=w; c.height=h;
+  const x = c.getContext('2d');
+  const R = mulberry32(1907);
+  const sunX = 0.660*w, sunY = 0.640*h, horizon = 0.700*h;
+
+  // --- base gradient: deep umber dusk into molten horizon, then dark sea
+  let g = x.createLinearGradient(0,0,0,h);
+  g.addColorStop(0.00,'#0d0503');
+  g.addColorStop(0.22,'#26100a');
+  g.addColorStop(0.44,'#4c1f0d');
+  g.addColorStop(0.60,'#8a3c14');
+  g.addColorStop(0.695,'#cd7326');
+  g.addColorStop(0.715,'#93441a');
+  g.addColorStop(0.82,'#40190b');
+  g.addColorStop(1.00,'#130703');
+  x.fillStyle = g; x.fillRect(0,0,w,h);
+
+  // --- great glow of the sun (screen blend, layered halos)
+  x.globalCompositeOperation = 'screen';
+  rad(x, sunX, sunY, 0.72*w, 'rgba(150,58,14,0.50)');
+  rad(x, sunX, sunY, 0.40*w, 'rgba(214,105,32,0.52)');
+  rad(x, sunX, sunY, 0.20*w, 'rgba(252,160,66,0.62)');
+  rad(x, sunX, sunY, 0.085*w,'rgba(255,214,146,0.85)');
+  rad(x, sunX, sunY, 0.030*w,'rgba(255,244,220,0.98)');
+  x.globalCompositeOperation = 'source-over';
+
+  // --- painterly cloud streets: hundreds of elongated soft stamps
+  const bands = [
+    { yc:0.135, hh:0.075, amp:1.0, dark:0.85 },
+    { yc:0.265, hh:0.085, amp:1.2, dark:0.72 },
+    { yc:0.395, hh:0.075, amp:1.1, dark:0.55 },
+    { yc:0.505, hh:0.060, amp:0.9, dark:0.42 },
+    { yc:0.585, hh:0.042, amp:0.8, dark:0.30 },
+  ];
+  for(const b of bands){
+    const n = Math.floor(150*b.amp);
+    for(let i=0;i<n;i++){
+      const cx = R()*w*1.1 - 0.05*w;
+      const cy = (b.yc + (R()-0.5)*2*b.hh)*h;
+      const d  = Math.hypot(cx-sunX, cy-sunY)/(0.62*w);      // 0 near sun
+      const lit = Math.max(0, 1-d);
+      const r  = 9 + R()*26;
+      const ex = 3.4 + R()*5.2, ey = 0.8 + R()*0.5;
+      const rot = (R()-0.5)*0.12;
+      // shadowed body of the cloud
+      const aDark = (0.028+R()*0.05) * b.dark;
+      stamp(x, cx, cy, r, ex, ey, rot, `rgba(24,10,7,${aDark})`);
+      // lit underside toward the sun
+      if(lit>0.12 && R()>0.35){
+        const aLit = (0.03+R()*0.075)*lit;
+        stamp(x, cx + (sunX>cx?6:-6), cy + 6 + R()*5, r*0.8, ex*0.95, ey*0.7, rot,
+              `rgba(255,${150+Math.floor(60*lit)},${70+Math.floor(40*lit)},${aLit})`);
+      }
+    }
+  }
+
+  // --- long dark streaks crossing the light (classic Turner silhouette)
+  for(let i=0;i<5;i++){
+    const yy = (0.565 + i*0.030 + (R()-0.5)*0.012)*h;
+    const xx = sunX + (R()-0.5)*0.34*w;
+    stamp(x, xx, yy, 15+R()*13, 13+R()*8, 0.55, (R()-0.5)*0.05, `rgba(26,10,6,${0.34+R()*0.18})`);
+    stamp(x, xx + 60, yy+4, 10, 9, 0.45, 0, `rgba(255,150,70,${0.07+R()*0.06})`);
+  }
+
+  // --- upper wisps: amber cirrus + a breath of dusk mauve
+  for(let i=0;i<70;i++){
+    const cx = R()*w, cy = (0.06+R()*0.30)*h;
+    stamp(x, cx, cy, 7+R()*13, 5+R()*7, 0.5, (R()-0.5)*0.25, `rgba(214,120,58,${0.025+R()*0.04})`);
+  }
+  for(let i=0;i<46;i++){
+    const cx = R()*w*0.8, cy = (0.03+R()*0.20)*h;
+    stamp(x, cx, cy, 9+R()*15, 4+R()*6, 0.55, (R()-0.5)*0.2, `rgba(148,86,110,${0.03+R()*0.045})`);
+  }
+
+  // --- the sea: reflection column + strokes
+  x.globalCompositeOperation = 'screen';
+  stamp(x, sunX, horizon+0.035*h, 0.30*w, 1, 0.24, 0, 'rgba(233,120,40,0.34)');
+  x.globalCompositeOperation = 'source-over';
+  // glitter path narrow→wide toward viewer
+  for(let i=0;i<170;i++){
+    const t = Math.pow(R(),1.35);
+    const yy = horizon + 0.012*h + t*(h-horizon-0.03*h);
+    const spread = 14 + t*230;
+    const xx = sunX + (R()-0.5)*spread*1.9;
+    const len = (5 + t*46)*(0.5+R()*0.9);
+    const a = (0.06+R()*0.20)*(1 - t*0.45);
+    stamp(x, xx, yy, 1.6, len, 1, 0, `rgba(255,${185+Math.floor(R()*40)},${105+Math.floor(R()*50)},${a})`);
+  }
+  // dark sea strokes
+  for(let i=0;i<210;i++){
+    const t = Math.pow(R(),1.2);
+    const yy = horizon + 0.008*h + t*(h-horizon);
+    const xx = R()*w;
+    const a = 0.05+R()*0.09;
+    stamp(x, xx, yy, 1.7, 8+t*44+R()*20, 1, 0, `rgba(15,6,4,${a})`);
+  }
+
+  // --- a lone rowboat on the glitter path — the director, sailing toward the light
+  {
+    const bx = 0.578*w, by = 0.866*h, bs = 0.85;
+    // soft glow behind the silhouette so it reads
+    x.globalCompositeOperation='screen';
+    stamp(x, bx, by-4, 26*bs, 2.4, 1, 0, 'rgba(255,190,110,0.30)');
+    x.globalCompositeOperation='source-over';
+    x.fillStyle='rgba(16,6,3,0.92)';
+    // hull
+    x.beginPath();
+    x.moveTo(bx-34*bs, by);
+    x.quadraticCurveTo(bx, by+15*bs, bx+36*bs, by-2*bs);
+    x.quadraticCurveTo(bx+10*bs, by+4*bs, bx-34*bs, by);
+    x.fill();
+    // seated figure
+    x.beginPath(); x.arc(bx-2*bs, by-13*bs, 4.6*bs, 0, 7); x.fill();
+    x.beginPath();
+    x.moveTo(bx-8*bs, by-1); x.quadraticCurveTo(bx-4*bs, by-12*bs, bx+3*bs, by-9*bs);
+    x.quadraticCurveTo(bx+7*bs, by-6*bs, bx+6*bs, by-1); x.closePath(); x.fill();
+    // oar — a quiet diagonal
+    x.strokeStyle='rgba(16,6,3,0.7)'; x.lineWidth=1.4*bs; x.lineCap='round';
+    x.beginPath(); x.moveTo(bx+3*bs, by-7*bs); x.lineTo(bx+24*bs, by+8*bs); x.stroke();
+    // rippled reflection
+    x.fillStyle='rgba(14,5,3,0.4)';
+    stamp(x, bx, by+9*bs, 2.4, 13*bs, 1, 0, 'rgba(14,5,3,0.45)');
+    stamp(x, bx-4*bs, by+14*bs, 1.8, 9*bs, 1, 0, 'rgba(14,5,3,0.3)');
+  }
+
+  // --- distant birds near the light — small brush gulls
+  x.strokeStyle = 'rgba(28,11,6,0.62)'; x.lineCap='round';
+  const birds = [[0.505,0.470,10],[0.545,0.438,7],[0.470,0.512,6],[0.585,0.492,8],[0.528,0.548,5]];
+  for(const [bx,by,s] of birds){
+    x.lineWidth = s*0.16;
+    x.beginPath();
+    x.moveTo(bx*w - s, by*h);
+    x.quadraticCurveTo(bx*w - s*0.4, by*h - s*0.62, bx*w, by*h);
+    x.quadraticCurveTo(bx*w + s*0.4, by*h - s*0.62, bx*w + s, by*h);
+    x.stroke();
+  }
+
+  // --- fine canvas grain
+  const noise = document.createElement('canvas'); noise.width=140; noise.height=140;
+  const nx = noise.getContext('2d'); const id = nx.createImageData(140,140);
+  for(let i=0;i<id.data.length;i+=4){
+    const v = 118 + Math.floor(R()*80);
+    id.data[i]=v; id.data[i+1]=v; id.data[i+2]=v; id.data[i+3]=255;
+  }
+  nx.putImageData(id,0,0);
+  x.globalAlpha = 0.045; x.globalCompositeOperation='overlay';
+  x.fillStyle = x.createPattern(noise,'repeat'); x.fillRect(0,0,w,h);
+  x.globalAlpha = 1; x.globalCompositeOperation='source-over';
+
+  return c;
+}
+
+/* -------------------- mini scene paintings (the frames) -------------------- */
+function sceneTexture(kind, numeral){
+  const w=340, h=196;
+  const c=document.createElement('canvas'); c.width=w; c.height=h;
+  const x=c.getContext('2d'); const R=mulberry32(60+kind*13);
+  const grad=(stops)=>{ const g=x.createLinearGradient(0,0,0,h); for(const [p,cl] of stops) g.addColorStop(p,cl); x.fillStyle=g; x.fillRect(0,0,w,h); };
+  const hills=(col, base, amp)=>{ x.fillStyle=col; x.beginPath(); x.moveTo(0,h);
+    for(let i=0;i<=16;i++){ const px=i/16*w; x.lineTo(px, base + Math.sin(i*0.9+kind)*amp + (R()-0.5)*6); }
+    x.lineTo(w,h); x.closePath(); x.fill(); };
+
+  switch(kind%9){
+    case 0: // Ghibli meadow — grass sun, morning haze
+      grad([[0,'#7db8d8'],[0.38,'#c4dcae'],[0.60,'#f2dfa0'],[1,'#ecce8a']]);
+      // soft morning sun — luminous, screen-blended
+      x.globalCompositeOperation='screen';
+      rad(x, w*0.70, h*0.24, 40, 'rgba(255,222,150,0.75)');
+      rad(x, w*0.70, h*0.24, 13, 'rgba(255,250,232,1)');
+      x.globalCompositeOperation='source-over';
+      // layered hills with aerial perspective
+      hills('#aabe7e', h*0.58, 7);
+      hills('#7fa055', h*0.68, 9);
+      hills('#436633', h*0.83, 7);
+      // morning mist hugging the hill line
+      stamp(x, w*0.38, h*0.63, 24, 4.5, 0.85, 0, 'rgba(246,242,220,0.42)');
+      stamp(x, w*0.78, h*0.59, 18, 3.5, 0.75, 0, 'rgba(250,244,224,0.34)');
+      // solid Ghibli cumulus
+      const cloud=(cx2,cy2,s2)=>{
+        x.fillStyle='rgba(255,255,255,0.97)';
+        x.beginPath();
+        x.arc(cx2-11*s2, cy2+3*s2, 8*s2, 0, 7);
+        x.arc(cx2,        cy2-3*s2, 11*s2, 0, 7);
+        x.arc(cx2+12*s2,  cy2+2*s2, 8.5*s2, 0, 7);
+        x.arc(cx2+2*s2,   cy2+5*s2, 9*s2, 0, 7);
+        x.fill();
+        x.fillStyle='rgba(206,222,214,0.32)';
+        x.beginPath(); x.arc(cx2+1*s2, cy2+8*s2, 9.5*s2, 0, Math.PI); x.fill();
+      };
+      cloud(w*0.27, h*0.20, 1.15); cloud(w*0.46, h*0.13, 0.7);
+      // meadow flecks
+      for(let i=0;i<44;i++){
+        x.fillStyle = R()>0.5 ? 'rgba(252,244,200,0.6)' : 'rgba(234,116,86,0.45)';
+        x.fillRect(R()*w, h*(0.72+R()*0.24), 1.8, 1.8);
+      }
+      break;
+    case 1: // golden sea (echo of the great sky) — luminous
+      grad([[0,'#93400f'],[0.32,'#dd8028'],[0.54,'#f8b054'],[0.61,'#c05e1a'],[1,'#5c250c']]);
+      rad(x, w*0.52, h*0.52, 70, 'rgba(255,190,100,0.55)');
+      rad(x, w*0.52, h*0.55, 34, 'rgba(255,228,170,0.95)');
+      rad(x, w*0.52, h*0.55, 13, 'rgba(255,250,232,1)');
+      for(let i=0;i<26;i++){
+        const tt=R(); stamp(x, w*0.52+(R()-0.5)*tt*90, h*(0.64+tt*0.32), 1.6, 5+tt*20, 1, 0, `rgba(255,206,120,${0.25+R()*0.35})`);
+      }
+      for(let i=0;i<3;i++) stamp(x, w*(0.3+R()*0.4), h*(0.40+i*0.05), 8, 8+R()*5, 0.5, 0, 'rgba(40,14,6,0.35)');
+      break;
+    case 2: // warm interior — window light falling
+      grad([[0,'#301508'],[1,'#1c0c05']]);
+      x.save(); x.globalCompositeOperation='screen';
+      x.translate(w*0.58,0); x.transform(1,0,-0.42,1,0,0);
+      const wg=x.createLinearGradient(0,0,0,h);
+      wg.addColorStop(0,'rgba(255,214,150,0.85)'); wg.addColorStop(1,'rgba(255,160,80,0.06)');
+      x.fillStyle=wg; x.fillRect(0,0,w*0.20,h); x.restore();
+      rad(x, w*0.62, h*0.86, 70, 'rgba(255,170,90,0.30)');
+      break;
+    case 3: // jewel cosmos (Kurzgesagt-hued) — saturated, luminous
+      grad([[0,'#2c4a72'],[0.6,'#1c3252'],[1,'#122238']]);
+      rad(x, w*0.32, h*0.42, 52, 'rgba(255,190,80,0.5)');
+      rad(x, w*0.32, h*0.42, 30, 'rgba(252,190,72,1)');
+      rad(x, w*0.68, h*0.28, 17, 'rgba(240,104,104,1)');
+      rad(x, w*0.78, h*0.62, 22, 'rgba(110,204,232,1)');
+      rad(x, w*0.78, h*0.62, 34, 'rgba(110,204,232,0.35)');
+      for(let i=0;i<30;i++) rad(x, R()*w, R()*h, 1.4+R()*1.8, 'rgba(244,244,255,0.85)');
+      break;
+    case 4: // bozkır — steppe with lone tree
+      grad([[0,'#f0cf90'],[0.55,'#dca75c'],[0.62,'#8a5a28'],[1,'#5c3a18']]);
+      rad(x, w*0.40, h*0.44, 44, 'rgba(255,240,200,0.8)');
+      x.strokeStyle='#3a2410'; x.lineWidth=3;
+      x.beginPath(); x.moveTo(w*0.72,h*0.62); x.lineTo(w*0.72,h*0.42); x.stroke();
+      stamp(x, w*0.72, h*0.38, 15, 1.6, 1, 0, 'rgba(46,30,14,0.95)');
+      break;
+    case 5: // blue hour city, amber windows — violet dusk glow
+      grad([[0,'#41598a'],[0.5,'#6e4a72'],[0.72,'#a05a4e'],[1,'#33203c']]);
+      rad(x, w*0.5, h*0.72, 90, 'rgba(255,150,80,0.4)');
+      x.fillStyle='#221836';
+      for(let i=0;i<9;i++){ const bw=16+R()*26, bh=30+R()*70, bx=i/9*w+R()*10; x.fillRect(bx,h-bh,bw,bh); }
+      x.fillStyle='rgba(255,198,100,0.95)';
+      for(let i=0;i<30;i++){ x.fillRect(R()*w, h*0.55+R()*h*0.4, 2.5, 3.5); }
+      break;
+    case 6: // forest shafts
+      grad([[0,'#2e4426'],[0.6,'#1b2c18'],[1,'#0f1a0c']]);
+      x.save(); x.globalCompositeOperation='screen';
+      for(let i=0;i<3;i++){
+        x.save(); x.translate(w*(0.28+i*0.22),0); x.transform(1,0,-0.3,1,0,0);
+        const fg=x.createLinearGradient(0,0,0,h);
+        fg.addColorStop(0,`rgba(240,255,200,${0.35-i*0.07})`); fg.addColorStop(1,'rgba(240,255,200,0)');
+        x.fillStyle=fg; x.fillRect(0,0,16+i*6,h); x.restore();
+      }
+      x.restore();
+      x.fillStyle='rgba(10,18,8,0.9)';
+      for(let i=0;i<5;i++) x.fillRect(w*(0.1+i*0.2)+R()*8, 0, 5+R()*5, h);
+      break;
+    case 7: // dune
+      grad([[0,'#f4d29a'],[0.5,'#eab064'],[1,'#b87838']]);
+      hills('#a86a30', h*0.55, 16); hills('#7c4a20', h*0.78, 10);
+      rad(x, w*0.26, h*0.30, 40, 'rgba(255,244,214,0.85)');
+      break;
+    default: // snow morning
+      grad([[0,'#ccd8e4'],[0.6,'#e8e0d4'],[1,'#f2e6d2']]);
+      hills('#f4f0ea', h*0.70, 8);
+      x.fillStyle='#2c3a34';
+      for(let i=0;i<6;i++){ const px=w*(0.15+i*0.14), ph=22+R()*20;
+        x.beginPath(); x.moveTo(px,h*0.72); x.lineTo(px-7,h*0.72); x.lineTo(px-1,h*0.72-ph); x.lineTo(px+5,h*0.72); x.closePath(); x.fill(); }
+      rad(x, w*0.7, h*0.28, 44, 'rgba(255,240,220,0.75)');
+      break;
+  }
+
+  // painterly unification: faint warm breath + inner shadow
+  x.globalCompositeOperation='soft-light';
+  rad(x, w*0.5, h*0.42, w*0.75, 'rgba(255,180,100,0.35)');
+  x.globalCompositeOperation='source-over';
+  const iv=x.createRadialGradient(w/2,h/2,h*0.42,w/2,h/2,h*0.95);
+  iv.addColorStop(0,'rgba(0,0,0,0)'); iv.addColorStop(1,'rgba(20,8,4,0.24)');
+  x.fillStyle=iv; x.fillRect(0,0,w,h);
+
+  // gilded frame
+  const fg2=x.createLinearGradient(0,0,w,h);
+  fg2.addColorStop(0,'#c8975a'); fg2.addColorStop(0.35,'#f2d9a4'); fg2.addColorStop(0.65,'#a06f36'); fg2.addColorStop(1,'#e8c07c');
+  x.strokeStyle=fg2; x.lineWidth=7; x.strokeRect(3.5,3.5,w-7,h-7);
+  x.strokeStyle='rgba(255,236,196,0.8)'; x.lineWidth=1; x.strokeRect(11.5,11.5,w-23,h-23);
+
+  // numeral
+  x.font='italic 300 17px Fraunces, Georgia, serif';
+  x.fillStyle='rgba(248,226,180,0.9)';
+  x.shadowColor='rgba(20,8,4,0.8)'; x.shadowBlur=5;
+  x.fillText(numeral, w-18-x.measureText(numeral).width, h-19);
+  x.shadowBlur=0;
+
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=4;
+  return t;
+}
+
+/* -------------------- soft sprites -------------------- */
+function glowSprite(inner, mid, size=128){
+  const c=document.createElement('canvas'); c.width=size; c.height=size;
+  const x=c.getContext('2d');
+  const g=x.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);
+  g.addColorStop(0,inner); g.addColorStop(0.35,mid); g.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=g; x.fillRect(0,0,size,size);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace;
+  return t;
+}
+
+/* -------------------- three.js scene -------------------- */
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas:document.getElementById('gl'), antialias:true, alpha:false });
+} catch(e){ console.warn('WebGL yok — boyalı arka planla devam.', e); }
+
+if (renderer){
+  renderer.setPixelRatio(1);
+  renderer.setSize(W,H);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  const skyTex = new THREE.CanvasTexture(paintSky(1600,1000));
+  skyTex.colorSpace = THREE.SRGBColorSpace;
+  scene.background = skyTex;
+  scene.fog = new THREE.FogExp2(0x9c4a18, 0.0155);
+
+  const camera = new THREE.PerspectiveCamera(40, W/H, 0.1, 220);
+  camera.position.set(0, 3.0, 17);
+  camera.lookAt(1.4, 3.0, 0);
+  camera.updateMatrixWorld();
+
+  // helper: place object on the ray through an NDC point at given distance
+  function place(ndcX, ndcY, dist){
+    const v = new THREE.Vector3(ndcX, ndcY, 0.5).unproject(camera);
+    const dir = v.sub(camera.position).normalize();
+    return camera.position.clone().add(dir.multiplyScalar(dist));
+  }
+
+  const sunNDC = { x: 0.320, y: -0.280 };
+
+  // warm directional from the sun + gentle ambient
+  const sunPos = place(sunNDC.x, sunNDC.y, 60);
+  const dl = new THREE.DirectionalLight(0xffc27a, 2.2);
+  dl.position.copy(sunPos); scene.add(dl);
+  scene.add(new THREE.AmbientLight(0x6a3a20, 1.2));
+
+  // --- deep sun halo in 3D space (breathes with the fog & panes)
+  const haloTex = glowSprite('rgba(255,246,224,1)','rgba(255,180,90,0.55)');
+  function addHalo(pos, s, opacity, tint){
+    const m = new THREE.SpriteMaterial({ map:haloTex, color:tint||0xffffff,
+      blending:THREE.AdditiveBlending, transparent:true, opacity, depthWrite:false, fog:false });
+    const sp = new THREE.Sprite(m); sp.position.copy(pos); sp.scale.setScalar(s);
+    scene.add(sp); return sp;
+  }
+  const sunCore = addHalo(place(sunNDC.x, sunNDC.y, 55), 34, 0.9);
+  addHalo(place(sunNDC.x, sunNDC.y, 55), 80, 0.38, 0xffa050);
+
+  /* --- the river of frames: scenes flying into the sun --- */
+  const numerals = ['I','II','III','IV','V','VI','VII','VIII'];
+  const paneSpecs = [
+    // ndcX   ndcY    dist  h     ry     kind
+    [ -0.030, -0.175, 11.5, 1.95, -0.30, 0 ],  // hero — the Ghibli scene
+    [  0.170,  0.010, 15.0, 1.55, -0.44, 1 ],  // golden sea
+    [  0.300,  0.095, 19.5, 1.32, -0.56, 7 ],  // dune
+    [  0.378,  0.075, 24.5, 1.15, -0.68, 4 ],  // bozkır
+    [  0.405, -0.030, 30.0, 1.02, -0.78, 8 ],  // snow morning
+    [  0.390, -0.135, 36.0, 0.92, -0.86, 6 ],  // forest shafts
+    [  0.355, -0.220, 42.0, 0.82, -0.94, 5 ],  // blue hour, diving into the sun
+    [  0.665,  0.440, 33.0, 0.95, -0.24, 3 ],  // high stray — jewel cosmos, upper right
+  ];
+  const paneHaloTex = glowSprite('rgba(255,220,170,0.9)','rgba(255,170,90,0.4)');
+  const panes = [];
+  paneSpecs.forEach((s,i)=>{
+    const [nx, ny, d, ph, ry, kind] = s;
+    const grp = new THREE.Group();
+    grp.position.copy(place(nx, ny, d));
+    grp.rotation.y = ry;
+    grp.rotation.z = (i%2? -1:1) * 0.016 * (1+i*0.10);
+
+    const tex = sceneTexture(kind, numerals[i]);
+    const pw = ph*16/9;
+    const mat = new THREE.MeshBasicMaterial({ map:tex, side:THREE.DoubleSide, fog:true });
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(pw, ph), mat);
+    grp.add(mesh);
+
+    const hm = new THREE.SpriteMaterial({ map:paneHaloTex, blending:THREE.AdditiveBlending,
+      transparent:true, opacity:0.20 + Math.min(i,6)*0.045, depthWrite:false });
+    const halo = new THREE.Sprite(hm); halo.scale.set(pw*1.45, ph*1.65, 1); halo.position.z = -0.25;
+    grp.add(halo);
+
+    scene.add(grp);
+    panes.push({ grp, baseY:grp.position.y, i });
+  });
+
+  /* --- three world-moons: painterly lit orbs in the upper sky --- */
+  function orbTexture(hi, body, shadow){
+    const s=128, c=document.createElement('canvas'); c.width=s; c.height=s;
+    const x=c.getContext('2d');
+    // body sphere, light arriving from lower-right (the sun)
+    const g=x.createRadialGradient(s*0.60, s*0.64, s*0.04, s*0.5, s*0.5, s*0.46);
+    g.addColorStop(0, hi); g.addColorStop(0.45, body); g.addColorStop(1, shadow);
+    x.fillStyle=g; x.beginPath(); x.arc(s/2,s/2,s*0.46,0,7); x.fill();
+    // soft atmosphere rim
+    const rim=x.createRadialGradient(s/2,s/2,s*0.34,s/2,s/2,s*0.5);
+    rim.addColorStop(0,'rgba(0,0,0,0)'); rim.addColorStop(0.92,'rgba(255,220,170,0.16)'); rim.addColorStop(1,'rgba(255,220,170,0)');
+    x.fillStyle=rim; x.fillRect(0,0,s,s);
+    const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace;
+    return t;
+  }
+  const worlds = [
+    { ndc:[0.175, 0.560], d:26, r:0.66, sel:true,  halo:0xe8e0a8,
+      tex:orbTexture('#f2ecc2','#a8bd7e','#4c6440') },                    // Ghibli — meadow light
+    { ndc:[0.345, 0.625], d:31, r:0.48, sel:false, halo:0xffc890,
+      tex:orbTexture('#ffe2b8','#dc9a5e','#6e4426') },                    // warm bounce
+    { ndc:[0.500, 0.665], d:36, r:0.42, sel:false, halo:0x9cc8dc,
+      tex:orbTexture('#d8ecf4','#7ca6bc','#37506a') },                    // jewel night
+  ];
+  let selRing = null;
+  worlds.forEach(wd=>{
+    const pos = place(wd.ndc[0], wd.ndc[1], wd.d);
+    const om = new THREE.SpriteMaterial({ map:wd.tex, transparent:true, fog:false });
+    const orb = new THREE.Sprite(om); orb.position.copy(pos);
+    orb.scale.setScalar(wd.r*2.18); scene.add(orb);
+    addHalo(pos, wd.r*(wd.sel?8.5:5.6), wd.sel?0.42:0.26, wd.halo);
+    if(wd.sel){
+      selRing = new THREE.Mesh(
+        new THREE.TorusGeometry(wd.r*1.85, 0.020, 8, 80),
+        new THREE.MeshBasicMaterial({ color:0xf2cd8c, blending:THREE.AdditiveBlending, transparent:true, opacity:0.9, fog:false })
+      );
+      selRing.position.copy(pos); selRing.rotation.x = 1.25; selRing.rotation.z = 0.30;
+      scene.add(selRing);
+    }
+  });
+
+  /* --- crepuscular rays: a fan of light climbing from the sun into the dusk --- */
+  function rayburstTexture(){
+    const s=1024, c=document.createElement('canvas'); c.width=s; c.height=s;
+    const x2=c.getContext('2d'); x2.translate(s/2,s/2);
+    const spokes = [
+      { a: 2.19, w:0.050, o:0.42 },
+      { a: 2.52, w:0.078, o:0.34 },
+      { a: 2.90, w:0.060, o:0.30 },
+      { a: 1.86, w:0.042, o:0.30 },
+      { a: 1.55, w:0.055, o:0.22 },
+      { a: 3.35, w:0.048, o:0.18 },
+    ];
+    for(const sp of spokes){
+      x2.save(); x2.rotate(-sp.a);           // canvas y-down: negative = counter-clockwise (screen up-left)
+      // three nested wedges: wide-faint to narrow-brighter = feathered edge
+      for(const [wf, of2] of [[1.9, 0.30],[1.0, 0.38],[0.45, 0.42]]){
+        const g = x2.createLinearGradient(0,0,s*0.5,0);
+        g.addColorStop(0,   `rgba(255,214,150,${sp.o*of2})`);
+        g.addColorStop(0.45,`rgba(255,178,96,${sp.o*of2*0.5})`);
+        g.addColorStop(1,   'rgba(255,160,80,0)');
+        x2.fillStyle=g;
+        x2.beginPath();
+        x2.moveTo(0,0);
+        x2.arc(0,0,s*0.5, -sp.w*wf, sp.w*wf);
+        x2.closePath(); x2.fill();
+      }
+      x2.restore();
+    }
+    const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace;
+    return t;
+  }
+  const rb = new THREE.Sprite(new THREE.SpriteMaterial({ map:rayburstTexture(),
+    blending:THREE.AdditiveBlending, transparent:true, opacity:0.42, depthWrite:false, fog:false }));
+  rb.position.copy(place(sunNDC.x, sunNDC.y, 58));
+  rb.scale.setScalar(95);
+  scene.add(rb);
+
+  /* --- floating motes: golden pollen of the studio --- */
+  const moteTex = glowSprite('rgba(255,232,190,1)','rgba(255,190,110,0.5)', 64);
+  function motes(count, spread, size, opacity){
+    const g = new THREE.BufferGeometry();
+    const p = new Float32Array(count*3);
+    const R2 = mulberry32(count*7+3);
+    for(let i=0;i<count;i++){
+      p[i*3]   = (R2()-0.35)*spread.x;
+      p[i*3+1] = R2()*spread.y;
+      p[i*3+2] = 14 - R2()*spread.z;
+    }
+    g.setAttribute('position', new THREE.BufferAttribute(p,3));
+    const m = new THREE.PointsMaterial({ map:moteTex, size, transparent:true, opacity,
+      blending:THREE.AdditiveBlending, depthWrite:false, sizeAttenuation:true, color:0xffcf96 });
+    const pts = new THREE.Points(g,m); scene.add(pts); return pts;
+  }
+  const near = motes(260, {x:34,y:12,z:30}, 0.16, 0.75);
+  const far  = motes(500, {x:60,y:18,z:55}, 0.10, 0.5);
+
+  /* --- render, breathe --- */
+  const clock = new THREE.Clock();
+  function tick(){
+    const t = clock.getElapsedTime();
+    panes.forEach(({grp, baseY, i})=>{
+      grp.position.y = baseY + Math.sin(t*0.32 + i*1.3)*0.05;
+      grp.rotation.y += Math.sin(t*0.2 + i)*0.00012;
+    });
+    if(selRing) selRing.rotation.z = 0.30 + Math.sin(t*0.4)*0.06;
+    sunCore.material.opacity = 0.86 + Math.sin(t*0.8)*0.06;
+    near.rotation.y = Math.sin(t*0.05)*0.02;
+    near.position.y = Math.sin(t*0.11)*0.15;
+    far.position.y  = Math.sin(t*0.07)*0.1;
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  renderer.render(scene, camera);
+  tick();
+
+  addEventListener('resize', ()=>{
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+}
+</script>
+</body>
+</html>

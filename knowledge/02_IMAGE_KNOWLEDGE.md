@@ -14,7 +14,7 @@ A good start frame:
 - feels half a second before motion begins
 - preserves text, logo, product, and face locks
 - turns palette into light behavior
-- uses Reference DNA as seasoning, not authority
+<!-- v2: SİLİNDİ, reçete protokolü GLOBAL_BRAIN.md §REÇETE PROTOKOLÜ v2'ye taşındı -->
 
 ## RENDER LOCK
 
@@ -29,30 +29,37 @@ render world.`
 
 This material clause is part of the lock and must be included verbatim.
 
+The lock also carries the world's hand-authored visual laws as three appended
+sentences: `Line grammar: …`, `Lens grammar: …`, `Light law: …`. They are part
+of the lock — never strip, shorten, or paraphrase them.
+
+## World Calibration Example
+
+When the packet contains a `WORLD CALIBRATION EXAMPLE` block (from the world's
+`example_injection` field), it is a gold-standard sample prompt for that world.
+Match its **discipline, specificity, and vocabulary** — how concrete the light,
+lens, and material language is. NEVER copy its subject, cast, or text into your
+scenes; it calibrates quality, it is not content.
+
+## Reference Contributions
+
+The image packet may carry a `REFERENCE CONTRIBUTIONS` block: one verbatim line
+per selected ref (`- name — DNA: … | Use for: … | Never: …`). These are
+subordinate to the Render Lock and never a style override. Use them to make
+scenes more specific (camera habit, light behavior, staging pressure); a ref's
+`Never:` clause is binding for that ref's influence.
+
+## Director Mood Threading
+
+Site-generated image prompts already thread `mood`, `timeLight`, `cameraEnergy`,
+and `pov` into the prompt text as concrete visual language. Do not re-inject the
+raw adjectives a second time, and do not strip the threaded lines. When writing
+prompts yourself, translate mood words into lens/light/blocking language —
+never leave them as adjectives.
+
 ## Prompt Anatomy (Site-Generated Format)
 
-The site builds prompts with this exact structure. Your output should follow the
-same anatomy:
-
-```
-[ID] IMAGE (motion start frame)
-[Render Lock verbatim]
-Dominant element: [concept subject].
-Staging: [DNA staging directive].
-Camera/vantage: [register-appropriate camera from the pool].
-Light: [DNA light]. [Optional variant]. Palette physics: [palette as light].
-Texture rule: [DNA texture directive].
-Motion seed: the frame is the exact half-second before this event — [concept event] — everything required already present and primed.
-Director mandate: [if present].
-Text/logo: no new text unless the source asks; any visible Turkish text or logo is frozen geometry — only light and camera may cross it.
-Character lock: [if present] Keep exactly as described — observer scale, no invented identity.
-Negative: [path forbidden]; [DNA avoid]; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped text.
-Clean motion-ready start frame.
-```
-
-For static design mode, the anatomy changes:
-- "Motion seed" becomes "Static composition proof"
-- Final line becomes "Final production-ready static design frame"
+<!-- v2: SİLİNDİ, reçete protokolü GLOBAL_BRAIN.md §REÇETE PROTOKOLÜ v2'ye taşındı -->
 
 ## Camera Pools
 
@@ -77,21 +84,30 @@ Material does not downgrade the World. Arcane + clay is not claymation; it is
 Arcane-grade painterly 3D with clay material truth. Do not add tactile Material
 inside Real worlds; real product, real human, and real location must remain real.
 
-### Tactile Materials (full list, group: tactile)
+### Tactile Materials (current IDs — corrected 2026-07-02)
+
+Earlier drafts listed retired short IDs (`clay`, `paper`, `felt`, `sand`,
+`glass`, `chalk`, `wood`) — **none of these exist in `SURGERY_DATA.json`
+today.** The current material roster:
 
 | ID | Clause Core | Motion Hint |
 |---|---|---|
-| `clay` | handcrafted soft clay — rounded tactile forms, visible thumbprint, matte plasticine | wobble once and settle |
-| `paper` | layered cut-paper and origami — paper grain, crisp folds, fold-shadows | layers shift like pop-up book |
-| `felt` | needle-felted wool and stitched fabric — fuzzy fibre, visible stitches | soft fabric sway |
-| `wood` | carved and turned wood — visible grain, matte varnish, jointed mechanisms | wooden parts pivot on joints |
-| `chalk` | chalk drawing on dark board — powdery strokes, smudge highlights, hand-lettered | chalk lines draw on |
-| `sand` | sand-art on lightbox — flowing grains, soft silhouette edges, backlit warm glow | grains flow and resettle |
-| `glass` | stained-glass and blown glass — leaded colour panels, jewel tones, light refracting | light passes through, colour shifts |
+| `paper_craft_popup` | layered cut-paper and pop-up mechanisms — paper grain, crisp folds, fold-shadows | layers shift like pop-up book |
+| `clay_hamur` | handcrafted soft clay — rounded tactile forms, visible thumbprint, matte plasticine | wobble once and settle |
+| `chalkboard_kara_tahta` | chalk drawing on dark board — powdery strokes, smudge highlights, hand-lettered | chalk lines draw on |
+| `wood_tactile` | carved and turned wood — visible grain, matte varnish, jointed mechanisms | wooden parts pivot on joints |
+| `storybook_illustration` | classic children's-book watercolor-and-ink illustration nested within the world | page elements ease into place |
+| `notebook_ink` | lined spiral notebook page, pen-and-ink drawn live by unseen author — ink bleed at nib pressure, paper warp | ink stroke draws forward |
 | `watercolor` | academic watercolor — wet-on-wet bleeding edges, granulation in wash fields | wash bleeds softly across paper |
 | `wax_crayon` | wax crayon — bold primary strokes, wax resist texture, child-honest color mixing | strokes build layer by layer |
 | `ink_brush` | sumi-e ink-brush — single-stroke calligraphic weight, white negative space | ink arc sweeps and settles |
 | `neon_tube` | neon glass tubes — colored light from within curved glass, halo on dark surfaces | tube flickers to life, halo blooms |
+
+Plus the 8 `ip_style` drawing-grammar materials (`one_piece`, `naruto`,
+`demon_slayer`, `solo_leveling`, `arcane_paint`, `jjk_ink_style`, `dragon_ball`,
+`attack_titan`) — see GLOBAL_BRAIN §18 — and `none` (world-native). Each world
+declares which tactile materials it accepts via `material_compat`; incompatible
+selections resolve to `none`.
 
 ## Palette As Light
 
@@ -103,18 +119,9 @@ The site provides palette as: `key [color], fill [color], shadow [color], accent
 - Shadow color determines shadow mass character
 - Accent color edges or rims the dominant subject
 
-## DNA Directives
+## Retired Directives
 
-Reference DNA translates into five subordinate directives:
-
-- CAMERA: derived from the reference's motion/camera DNA
-- LIGHT: derived from light/mood DNA
-- STAGING: derived from composition DNA
-- TEXTURE RULE: exactly ONE texture clause per prompt when DNA triggers it
-- AVOID: specific avoid notes from the reference
-
-DNA never touches: identity, faces, logo, product geometry, source text, path,
-or render lock.
+<!-- v2: SİLİNDİ, reçete protokolü GLOBAL_BRAIN.md §REÇETE PROTOKOLÜ v2'ye taşındı -->
 
 ## Text Policy
 
@@ -122,6 +129,33 @@ Provided visible text is preserved character-for-character. If new writing is
 required, it must be meaningful Turkish. If writing is not required, use
 `NO_TEXT`. AI gibberish, fake logos, broken signage, and random letters are fail
 states.
+
+## Narration Sync
+
+When the brief contains `NARRATION SYNC: LOCKED` and a `VO_ANCHOR` line:
+
+- The image subject and event must **directly depict** what the voice-over narrates.
+- Do not substitute a metaphor, symbol, or genre-generic stand-in for the narrated action.
+- Example: VO_ANCHOR says "Doktor raporu kontrol eder!" → the image must show a doctor reviewing a document, not a generic desk or abstract shape.
+- Style grammar (Render Lock, World, Material) still applies to **how** the scene looks, not **what** it shows.
+- If the VO_ANCHOR is abstract (e.g. "Adalet sağlanır."), choose the most concrete physical representation of that concept — scale, figure, object — visible and unambiguous.
+
+## Start Frame Text
+
+When the brief contains a `== START FRAME TEXT ==` block with a scene entry that
+is not `NO_TEXT`, the text **must appear baked into the start frame image** — not
+as a floating overlay.
+
+- Render the text as part of the scene's physical geometry: clean lettering
+  consistent with the world's visual grammar, bottom-center safe area (or
+  center-frame for Resolution phase).
+- Do not invent additional text; only what the brief specifies.
+- The `Visible text overlay:` line in the IMAGE prompt is the source. Treat it
+  exactly like a logo or product label: locked geometry, no warping, no
+  retyping, no drift.
+- The motion prompt will include a `Start frame has '...' text overlay — preserve
+  character-for-character` instruction — this is the downstream protection. Your
+  job is to set the correct geometry so the engine has something to preserve.
 
 ## Light Variants
 
@@ -133,39 +167,36 @@ The site may generate light variants for batch variety:
 - Variant 2: motivate the key from the opposite side, let the shadow mass lead
   the composition
 
-## IP World Recipes (group: IP_WORLD)
+## Franchise-Environment Worlds (corrected 2026-07-02)
 
-These seven worlds are franchise-specific environment recipes. Each has a 1200-1400 character Render Lock describing the **world**, not its characters. Use the lock verbatim; the world is fully reconstructible from it without any IP character.
+There is no separate `IP_WORLD` group anymore, and the old IDs
+`demon_slayer_taisho`, `one_piece_grand_line`, `jjk_cursed_domain` are retired.
+Seven current Render Worlds merge franchise environment + drawing style into one
+entry. Each has a long Render Lock describing the **world**, not its characters.
+Use the lock verbatim; the world is fully reconstructible from it without any IP
+character.
 
 | World ID | Name | Core Environment | Color Script | Avoid |
 |---|---|---|---|---|
-| `demon_slayer_taisho` | Demon Slayer — Taisho Dark Fantasy | Taisho-era Japan mountain wilderness, cedar forests, stone lanterns, demon-realm wisteria caves | Indigo-black sky · amber lantern · teal demon energy · cherry pink dawn | Tanjiro/Nezuko/Hashira likenesses; haori patterns; sword designs; Corps emblems |
-| `one_piece_grand_line` | One Piece — Grand Line Adventure | Vast tropical ocean, volcanic island archipelago, sky islands, underwater palaces | Saturated cobalt ocean · gold sun · tropical jade · bold primaries | Luffy/crew likenesses; Straw Hat; Jolly Roger; Thousand Sunny |
+| `demon_slayer_ufotable` | Demon Slayer — ufotable | Taisho-era Japan mountain wilderness, cedar forests, stone lanterns, demon-realm wisteria caves | Indigo-black sky · amber lantern · teal demon energy · cherry pink dawn | Tanjiro/Nezuko/Hashira likenesses; haori patterns; sword designs; Corps emblems |
+| `one_piece_toei` | One Piece — Toei | Vast tropical ocean, volcanic island archipelago, sky islands, underwater palaces | Saturated cobalt ocean · gold sun · tropical jade · bold primaries | Luffy/crew likenesses; Straw Hat; Jolly Roger; Thousand Sunny |
 | `solo_leveling_gate` | Solo Leveling — Gate Hunter World | Modern Korean city + Gate portals, dungeon stone corridors, shadow realm void | Purple-black shadow · electric indigo aura · blood-red gate core · cold steel grey | Sung Jinwoo; shadow soldier designs; mana UI screens |
-| `jjk_cursed_domain` | JJK — Cursed Domain World | Contemporary Japan invaded by cursed energy, domain expansion distortion, Hollow Purple environment | Void black · cursed purple · blue positive energy · sickly green curse | Gojo (blindfold/white hair); Yuji/Megumi/Sukuna likenesses; Jujutsu High uniforms |
+| `jjk_mappa` | JJK — MAPPA | Contemporary Japan invaded by cursed energy, domain expansion distortion | Void black · cursed purple · blue positive energy · sickly green curse | Gojo (blindfold/white hair); Yuji/Megumi/Sukuna likenesses; Jujutsu High uniforms |
 | `aot_wall_world` | AoT — Wall Civilization World | 50-meter stone walls, grey sky, rolling meadow to treeline, cramped Wall Rose streets | Dusty grey-green · stone grey · ochre earth · selective blood-red accent | Titan designs; Eren/Mikasa/Levi likenesses; Survey Corps emblems; ODM gear |
 | `naruto_shinobi_world` | Naruto — Shinobi Era World | Hidden Leaf Village, stone training grounds, dense bamboo forest, mountain pass | Orange-gold warmth · deep forest green · dusty red effort · sky blue hope | Naruto/Sasuke/Kakashi likenesses; headband symbols; jutsu signs; Akatsuki cloak |
 | `bleach_soul_world` | Bleach — Soul Society World | Seireitei white-stone architecture, Rukongai alleys, spiritual pressure void | Ink-black mass · stark white architecture · soul orange-amber energy | Ichigo/Rukia/Aizen likenesses; specific Zanpakutō designs; division crests; Hollow masks |
 
+The exact names, render laws, and avoid lists live in `SURGERY_DATA.json` —
+always trust the brief's RENDER LOCK text over this table.
+
 ### How IP World Recipes Work
 
-The Render Lock for each IP world carries:
-1. **Environment layers** — specific named locations and their spatial character
-2. **Color script** — named roles (sky, light source, energy, accent) not hex fills
-3. **Rendering technique** — which studio's approach (ufotable, MAPPA, Toei, WIT/MAPPA)
-4. **10-second motion arc** — environment breathes → one event traces → atmospheric hold
-
-When a user selects `demon_slayer_taisho` + `demon_slayer_breath` ref:
-- RENDER LOCK = full Taisho world recipe → the world is reproducible from this alone
-- DNA DIRECTIVES = breath pattern camera/light/staging grammar
-- Combined brief = world environment + technique grammar = character-free franchise world
-
-The character-free guarantee lives in `avoid`: every world entry explicitly names the IP characters and emblems that must not appear.
+<!-- v2: SİLİNDİ, reçete protokolü GLOBAL_BRAIN.md §REÇETE PROTOKOLÜ v2'ye taşındı -->
 
 ## Failure Patterns
 
 - shortened or paraphrased Render Lock
-- Reference DNA replacing World
+<!-- v2: SİLİNDİ, reçete protokolü GLOBAL_BRAIN.md §REÇETE PROTOKOLÜ v2'ye taşındı -->
 - generic atmospheric scene with no source meaning
 - path contamination: toy/diorama in real advertising, photoreal lens in animation
 - unclear moving element (what will motion animate?)

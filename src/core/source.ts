@@ -1,5 +1,6 @@
 import SURGERY from './SURGERY_DATA.json';
 import { mergeScore, beatBounds, type BeatMode } from './beats';
+import { engineUsableSec } from './engine';
 
 export interface SourceProject {
   id: string;
@@ -99,92 +100,126 @@ function normalize(value: string): string {
     })[char] ?? char);
 }
 
-function includesAny(text: string, phrases: string[]): boolean {
-  return phrases.some((phrase) => text.includes(normalize(phrase)));
-}
-
 function validProject(projectId: string): SourceProject | null {
   const project = DATA.projects.find((candidate) => candidate.id === projectId);
   if (!project) return null;
+  const validRef = !project.ref || DATA.refs.some((item) => item.id === project.ref);
   const valid = DATA.paths.some((item) => item.id === project.path)
     && DATA.worlds.some((item) => item.id === project.world)
-    && DATA.refs.some((item) => item.id === project.ref)
+    && validRef
     && DATA.palettes.some((item) => item.id === project.palette);
   return valid ? project : null;
 }
 
-interface DecoderRule {
-  path: string;
-  project: string;
-  score: number;
-  reason: string;
-  keywords: string[];
-}
-
-const DECODER_RULES: DecoderRule[] = [
-  { path: 'PRODUCT_HERO', project: 'product_hero', score: 12, reason: 'ürün / ambalaj / packshot sinyalleri', keywords: ['ürün filmi', 'ürün reklamı', 'product hero', 'packshot', 'telefon kılıfı', 'ambalaj', 'logo stabil', 'makro yüzey'] },
-  { path: 'FOOD_MACRO', project: 'food_macro', score: 12, reason: 'food / macro sinyalleri', keywords: ['food macro', 'kahve reklamı', 'espresso', 'restoran filmi', 'menü filmi', 'burger', 'tatlı', 'içecek'] },
-  { path: 'AUTOMOTIVE_MOBILITY', project: 'automotive_mobility', score: 11, reason: 'otomotiv / mobilite sinyalleri', keywords: ['otomobil reklamı', 'elektrikli otomobil', 'automotive', 'mobility', 'far çizgisi', 'araç filmi'] },
-  { path: 'FASHION_EDITORIAL', project: 'fashion_editorial', score: 11, reason: 'moda / editorial sinyalleri', keywords: ['moda koleksiyonu', 'fashion film', 'fashion editorial', 'tekstil', 'kumaş dokusu', 'siluet'] },
-  { path: 'ARCHITECTURE_REAL_ESTATE', project: 'architecture_venue', score: 11, reason: 'mimari / mekan sinyalleri', keywords: ['gayrimenkul', 'real estate', 'mimari film', 'architecture', 'villa', 'otel tanıtımı', 'dış cephe', 'salon kapısı', 'iç mekan', 'mermer', 'konut', 'tavan yükseklik', 'pencere ışık', 'mimari aydınlatma'] },
-  { path: 'TECH_MEDICAL_PRECISION', project: 'tech_medical', score: 9, reason: 'teknoloji / medikal sinyalleri', keywords: ['medikal cihaz', 'medical device', 'saas', 'klinik teknoloji', 'hasta takip', 'uygulama tanıtımı'] },
-  { path: 'HUMAN_TESTIMONIAL', project: 'human_testimonial', score: 9, reason: 'röportaj / testimonial sinyalleri', keywords: ['röportaj filmi', 'testimonial', 'müşteri yorumu', 'hasta deneyimi', 'kurucu konuşuyor'] },
-  { path: 'LIVE_ACTION_CORPORATE', project: 'municipality_real', score: 8, reason: 'kurumsal / kamu sinyalleri', keywords: ['belediye', 'kamu filmi', 'vatandaş', 'kurum filmi', 'sosyal sorumluluk'] },
-  { path: 'LIVE_ACTION_CORPORATE', project: 'event_real', score: 10, reason: 'kamusal etkinlik sinyalleri', keywords: ['23 nisan', 'bayram', 'kamusal etkinlik'] },
-  { path: 'TOURISM_DESTINATION', project: 'tourism_destination', score: 8, reason: 'turizm / destinasyon sinyalleri', keywords: ['turizm', 'destinasyon', 'destination film', 'tatil filmi', 'şehir turu'] },
-  { path: 'SOCIAL_REELS_REALISM', project: 'social_reels', score: 8, reason: 'dikey sosyal içerik sinyalleri', keywords: ['reels', 'tiktok', 'instagram', 'sosyal medya', 'vertical'] },
-  { path: 'DOCUMENTARY_REALISM', project: 'documentary_realism', score: 7, reason: 'belgesel gerçekçilik sinyalleri', keywords: ['belgesel', 'documentary', 'gerçek mekan', 'doğal ışık', 'gözlemsel'] },
-  { path: 'HEALTH_PUBLIC_SERVICE', project: 'health_public', score: 9, reason: 'sağlık kamu hizmeti sinyalleri', keywords: ['sağlık kamu', 'public health', 'hastane kamu', 'bakım hizmeti'] },
-  { path: 'ANIMATION_EDU', project: 'education', score: 9, reason: 'eğitim / müfredat sinyalleri', keywords: ['sınıf', 'öğrenci', 'ders', 'eğitim', 'müfredat', 'su döngüsü', 'buharlaşma', 'yoğuşma', 'fotosentez', 'kesir', 'noktalama', 'toplama işlemi', 'elektrik devresi', 'devre', 'pil', 'ampul', 'akım', 'volt', 'anahtar', 'karbondioksit', 'klorofil', 'yaprakta', 'payda', 'bütünün parçası', 'geometri', 'üçgenin', 'madde ve özellikleri', 'atom', 'hücre', 'sindirim sistemi', 'bitki büyür', 'tohum'] },
-  { path: 'STYLIZED_PREMIUM', project: 'anime_action', score: 10, reason: 'anime / shonen macera sinyalleri', keywords: ['one piece', 'elbaf', 'grand line', 'shonen', 'naruto', 'demon slayer', 'attack on titan', 'solo leveling', 'jujutsu kaisen', 'bleach', 'dragon ball', 'anime macera', 'animasyon macera', 'shonen adventure', 'deniz macerası', 'ada macerası', 'yüksek deniz', 'kaptan', 'yelkenli macera'] },
-  { path: 'STYLIZED_PREMIUM', project: 'anime_action', score: 9, reason: 'uzay / kozmik sinyalleri', keywords: ['uzay istasyonu', 'astronot', 'yıldız gezegeni', 'yıldız ve gezegen', 'nebula', 'galaktik', 'orbital istasyon', 'kara delik', 'evren keşfi', 'uzay keşfi', 'uzay yolculuğu', 'interstellar', 'kozmik'] },
-  { path: 'STYLIZED_PREMIUM', project: 'anime_action', score: 9, reason: 'retro anime / cel sinyalleri', keywords: ['retro anime', 'retro animasyon', 'cel animasyon', '70s anime', '80s anime', 'retro nasa', 'vintage anime', 'koridorda ışık', 'titreyen ışık', 'anime film', 'cel film'] },
-  { path: 'STYLIZED_PREMIUM', project: 'stylized_premium', score: 8, reason: 'stilize premium sinyalleri', keywords: ['arcane', 'spider-verse', 'spiderverse', 'anime', 'manga', 'stylized', 'stilize', 'painterly'] },
-  { path: 'ULTRAREAL_COMMERCIAL', project: 'ultra_real_commercial', score: 6, reason: 'genel reklam / marka sinyalleri', keywords: ['reklam', 'kampanya', 'marka filmi', 'müşteri', 'satış', 'e-ticaret'] },
+const DOSSIER_WORLD_RULES: Array<{ world: string; pattern: RegExp }> = [
+  { world: 'one_piece_toei', pattern: /one\s*piece|toei\s*bold[-\s]?cel/i },
+  { world: 'naruto_shinobi_world', pattern: /naruto|shinobi/i },
+  { world: 'demon_slayer_ufotable', pattern: /demon\s*slayer|ufotable/i },
+  { world: 'solo_leveling_gate', pattern: /solo\s*leveling/i },
+  { world: 'aot_wall_world', pattern: /attack\s*on\s*titan|scale\s*dread/i },
+  { world: 'jjk_mappa', pattern: /jujutsu\s*kaisen|cursed\s*ink/i },
+  { world: 'bleach_soul_world', pattern: /bleach|soul\s*world/i },
+  { world: 'spiderverse_sony', pattern: /spider[-\s]?verse/i },
+  { world: 'arcane_fortiche', pattern: /arcane|fortiche/i },
+  { world: 'ghibli_hayao', pattern: /ghibli|miyazaki/i },
 ];
 
-export function decodeBrief(raw: string): DecodeResult {
-  const text = normalize(raw);
-  const matches = DECODER_RULES
-    .filter((rule) => includesAny(text, rule.keywords))
-    .map((rule, index) => ({ rule, index }));
+function dossierLine(raw: string, label: string): string {
+  return raw.match(new RegExp(`^\\s*-\\s*\\*\\*${label}:\\*\\*\\s*(.+)$`, 'imu'))?.[1]?.trim() || '';
+}
 
-  const curriculum = DECODER_RULES.find((rule) => rule.path === 'ANIMATION_EDU')!;
-  const curriculumHit = includesAny(text, curriculum.keywords);
-  const commerceHit = includesAny(text, ['reklam', 'kampanya', 'marka filmi', 'müşteri', 'satış', 'e-ticaret', 'packshot']);
-  const winner = curriculumHit && !commerceHit
-    ? { rule: curriculum, index: -1 }
-    : matches.sort((a, b) => b.rule.score - a.rule.score || a.index - b.index)[0];
+function pathFromDossier(raw: string): string | null {
+  const path = dossierLine(raw, 'Path').toUpperCase();
+  return DATA.paths.some((item) => item.id === path) ? path : null;
+}
+
+function worldFromDossier(raw: string): string | null {
+  const value = dossierLine(raw, 'World');
+  const direct = DATA.worlds.find((world) => world.id === value || normalize(world.id) === normalize(value));
+  if (direct) return direct.id;
+  const byName = DATA.worlds.find((world: any) => normalize(world.name || '').includes(normalize(value)));
+  if (byName) return byName.id;
+  const rule = DOSSIER_WORLD_RULES.find((candidate) => candidate.pattern.test(value));
+  return rule?.world && DATA.worlds.some((world) => world.id === rule.world) ? rule.world : null;
+}
+
+function paletteFromDossier(raw: string): string | null {
+  const paletteName = raw.match(/^### Palette as Light\s*\n(.+?)\s+—/imu)?.[1]?.trim() || '';
+  if (!paletteName) return null;
+  const palette = DATA.palettes.find((item: any) => normalize(item.name || item.id) === normalize(paletteName));
+  return palette?.id || null;
+}
+
+function decodedDossierProject(raw: string): DecodeResult | null {
+  if (!/MAMILAS PRODUCTION DOSSIER|SOURCE \(exact, untouchable\):/iu.test(raw)) return null;
+  const path = pathFromDossier(raw);
+  if (!path) return null;
+  const project = DATA.projects.find((item) => item.path === path) || validProject(DEFAULT_PROJECT_ID);
+  if (!project) return null;
+  const world = worldFromDossier(raw) || project.world;
+  const palette = paletteFromDossier(raw) || project.palette;
+  return {
+    path,
+    project: { ...project, world, palette },
+    reason: 'MAMILAS dossier metadata okundu; path/world/palette eski final brief başlığından korundu.',
+    confidence: 'high',
+  };
+}
+
+export function decodeBrief(raw: string): DecodeResult {
+  const dossier = decodedDossierProject(raw);
+  if (dossier) return dossier;
 
   const fallback = validProject(DEFAULT_PROJECT_ID);
   if (!fallback) throw new Error(`SURGERY_DATA project contract is invalid: ${DEFAULT_PROJECT_ID}`);
-  if (!winner) {
-    return {
-      path: fallback.path,
-      project: fallback,
-      reason: 'Belirleyici sinyal bulunamadı; genel commercial başlangıç kullanıldı.',
-      confidence: 'fallback',
-    };
-  }
-
-  const project = validProject(winner.rule.project);
-  if (!project || project.path !== winner.rule.path) {
-    throw new Error(`SURGERY_DATA decoder contract is invalid: ${winner.rule.project}`);
-  }
-  const weak = raw.trim().split(/\s+/u).filter(Boolean).length < 12;
-  const guarded = curriculumHit && !commerceHit && winner.rule.path === 'ANIMATION_EDU';
   return {
-    path: project.path,
-    project,
-    reason: `${guarded ? 'Müfredat koruması: ' : ''}${winner.rule.reason}${weak ? ' · brief kısa, kurulum tahminidir' : ''}`,
-    confidence: weak ? 'medium' : 'high',
+    path: fallback.path,
+    project: fallback,
+    reason: 'Raw source yalnız içerik olarak taşınır; site kaynak kelimelerinden path, world, ref veya palette seçmez.',
+    confidence: 'fallback',
   };
+}
+
+export function extractProductionDossierSource(raw: string): { rawSource: string; beats: SourceBeat[] } | null {
+  if (!/SOURCE \(exact, untouchable\):/u.test(raw)) return null;
+  const lines = raw.split(/\r?\n/u);
+  const extracted: string[] = [];
+  for (const line of lines) {
+    const marker = 'SOURCE (exact, untouchable):';
+    const index = line.indexOf(marker);
+    if (index < 0) continue;
+    let exactText = line.slice(index + marker.length);
+    if (exactText.startsWith(' ')) exactText = exactText.slice(1);
+    extracted.push(exactText);
+  }
+  if (!extracted.length) return null;
+  const rawSource = extracted.join('');
+  let cursor = 0;
+  const beats = extracted.map((exactText, index) => {
+    const start = cursor;
+    const end = start + exactText.length;
+    cursor = end;
+    return {
+      sourceId: `source-${String(index + 1).padStart(3, '0')}`,
+      exactText,
+      start,
+      end,
+      hash: sourceHash(exactText),
+    };
+  });
+  return { rawSource, beats };
 }
 
 /** Split on sentence endings while retaining every original character in an exact slice. */
 export function ingestSource(raw: string): SourceBeat[] {
+  const dossier = extractProductionDossierSource(raw);
+  if (dossier) return dossier.beats;
+
   if (!raw.length) return [];
-  const sentencePattern = /[^.!?。！？]+(?:[.!?。！？]+|$)/gu;
+  // A sentence runs up to its terminator, then greedily absorbs any trailing
+  // closing punctuation (quotes, brackets, ellipsis) so a lone `"` after `!"`
+  // never spills into its own single-character beat.
+  const sentencePattern = /[^.!?。！？]+(?:[.!?。！？]+["'”’»)\]…]*|$)/gu;
   const matches = [...raw.matchAll(sentencePattern)];
   if (!matches.length) {
     return [{ sourceId: 'source-001', exactText: raw, start: 0, end: raw.length, hash: sourceHash(raw) }];
@@ -192,8 +227,21 @@ export function ingestSource(raw: string): SourceBeat[] {
 
   const beats: SourceBeat[] = [];
   let cursor = 0;
-  for (const match of matches) {
-    const matchEnd = (match.index ?? cursor) + match[0].length;
+  // A NUMBER'S PERIOD IS NOT A SENTENCE'S PERIOD.
+  //
+  // "17. yüzyıl Osmanlı Bursa'sında kandil yanar." split into TWO beats — "17." and "yüzyıl
+  // Osmanlı…" — and the first became a whole SCENE whose entire source was "17.". Turkish
+  // ordinals ("3. sınıf", "20. yüzyıl", "1. Dünya Savaşı") and decimals ("3.14") end in a period
+  // that terminates nothing. A fragment that is only digits and a dot is glued to what follows.
+  const isOrdinalFragment = (t: string) => /^\s*\d+[.,]\s*$/u.test(t);
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i];
+    let matchEnd = (match.index ?? cursor) + match[0].length;
+    // Absorb the next match while this one is only a number and a dot.
+    while (isOrdinalFragment(raw.slice(cursor, matchEnd)) && i + 1 < matches.length) {
+      i += 1;
+      matchEnd = (matches[i].index ?? matchEnd) + matches[i][0].length;
+    }
     if (matchEnd <= cursor) continue;
     const exactText = raw.slice(cursor, matchEnd);
     beats.push({
@@ -239,13 +287,23 @@ export function estimateTurkishVoSeconds(value: string | SourceBeat[]): number {
   return roundTenth((words / ELEVENLABS_V3_TURKISH_WORDS_PER_SECOND) + sentencePauses + clausePauses);
 }
 
+// MODE_USABLE_SECONDS was calibrated against the Kling-class 9s clean window
+// (5s VO / 9s window). Model-aware budgeting keeps that ratio: a longer engine
+// window proportionally raises the per-scene VO budget, so fewer/longer scenes
+// on Runway-class engines and the exact legacy numbers when no model is given.
+const BUDGET_BASELINE_WINDOW = 9;
+
 export function sourceSceneBudget(
   value: string | SourceBeat[],
   mode: BeatMode = 'Dengeli',
-  maxScenes = MAX_DURATION_BUDGETED_SCENES
+  maxScenes = MAX_DURATION_BUDGETED_SCENES,
+  videoModel?: string
 ): SourceSceneBudget {
   const estimatedVoSeconds = estimateTurkishVoSeconds(value);
-  const usableVoSecondsPerScene = MODE_USABLE_SECONDS[mode] || KLING_SAFE_VO_SECONDS_PER_SCENE;
+  const modeUsable = MODE_USABLE_SECONDS[mode] || KLING_SAFE_VO_SECONDS_PER_SCENE;
+  const usableVoSecondsPerScene = videoModel
+    ? roundTenth(modeUsable * engineUsableSec(videoModel) / BUDGET_BASELINE_WINDOW)
+    : modeUsable;
   const rawTargetSceneCount = Math.max(1, Math.ceil(estimatedVoSeconds / usableVoSecondsPerScene) || 1);
   return {
     estimatedVoSeconds,
@@ -268,7 +326,18 @@ function endsWithStrandedConnector(value: string): boolean {
 }
 
 function startsWithContextFragment(value: string): boolean {
-  return /^(bu|buna|bunu|bunun|şu|şuna|şunu|şunun|o|onu|onun|böyle|boyle)\b/iu.test(cleanText(value));
+  const text = cleanText(value);
+  // "Bu beş unsur", "Bu iki madde", "Bu üç kural" etc. are SUMMARY CLOSURES — they close the
+  // previous group and belong with what follows (the overview scene). Allow a split before them.
+  if (/^(bu|buna|bunu|bunun)\s+\S*\s*(iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|\d+)\s+/iu.test(text)) return false;
+  return /^(bu|buna|bunu|bunun|şu|şuna|şunu|şunun|o|onu|onun|böyle|boyle)\b/iu.test(text);
+}
+
+/** Sentence starts with an ordinal sequence marker: "Beşinci unsur", "İkinci adım", "3. Madde" etc. */
+function startsWithOrdinalSequenceIntro(value: string): boolean {
+  const t = normalize(cleanText(value));
+  return /^(birinci|ikinci|ucuncu|dorduncu|besinci|altinci|yedinci|sekizinci|dokuzuncu|onuncu)(si|su)?\s/.test(t)
+    || /^\d+[.)]\s+\S/.test(cleanText(value));
 }
 
 function conceptText(value: string): string {
@@ -339,10 +408,11 @@ function renumberBeats(beats: SourceBeat[]): SourceBeat[] {
 export function durationBudgetSourceBeats(
   raw: string,
   mode: BeatMode = 'Dengeli',
-  sourceBeats: SourceBeat[] = ingestSource(raw)
+  sourceBeats: SourceBeat[] = ingestSource(raw),
+  videoModel?: string
 ): SourceBeat[] {
   if (sourceBeats.length <= 1) return renumberBeats(sourceBeats);
-  const budget = sourceSceneBudget(raw, mode);
+  const budget = sourceSceneBudget(raw, mode, MAX_DURATION_BUDGETED_SCENES, videoModel);
   const targetCount = Math.min(sourceBeats.length, budget.targetSceneCount);
   if (targetCount >= sourceBeats.length) return renumberBeats(sourceBeats);
 
@@ -355,7 +425,10 @@ export function durationBudgetSourceBeats(
 
   for (let i = 0; i < sourceBeats.length; i += 1) {
     groupSec += durations[i];
-    const conceptBoundary = i < sourceBeats.length - 1 && protectedConceptBoundary(sourceBeats[i], sourceBeats[i + 1]);
+    const conceptBoundary = i < sourceBeats.length - 1 && (
+      protectedConceptBoundary(sourceBeats[i], sourceBeats[i + 1])
+      || startsWithOrdinalSequenceIntro(sourceBeats[i + 1].exactText)
+    );
     if (conceptBoundary) {
       groups.push(beatFromRange(sourceBeats, groupStart, i, groups.length));
       groupStart = i + 1;
@@ -397,10 +470,10 @@ export function durationBudgetSourceBeats(
  * so `sourceIntegrity` still reports 100%. `ingestSource` itself is untouched.
  */
 const AUTO_GROUP_MERGE_THRESHOLD = 3;
-export function autoGroupBeats(raw: string, mode: BeatMode = 'Dengeli'): SourceBeat[] {
+export function autoGroupBeats(raw: string, mode: BeatMode = 'Dengeli', videoModel?: string): SourceBeat[] {
   const atoms = ingestSource(raw);
   if (atoms.length <= 1) return atoms;
-  const budgeted = durationBudgetSourceBeats(raw, mode, atoms);
+  const budgeted = durationBudgetSourceBeats(raw, mode, atoms, videoModel);
   if (budgeted.length < atoms.length) return budgeted;
 
   const bounds = beatBounds(mode);

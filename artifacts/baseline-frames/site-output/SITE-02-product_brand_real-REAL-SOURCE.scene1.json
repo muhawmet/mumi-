@@ -1,0 +1,421 @@
+{
+ "id": 1,
+ "topic": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun. — Sahne 1",
+ "architecture": {
+  "source": {
+   "status": "UNSOURCED_TOPIC_INPUT",
+   "sourceId": null,
+   "exactText": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+   "notice": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+  },
+  "beat": "orient the audience to this exact source beat",
+  "dominantSubject": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+  "event": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+  "imageVantage": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+  "semanticFingerprint": "scene-ea3e7fc1"
+ },
+ "finalBrief": {
+  "path": "PRODUCT_HERO",
+  "source": {
+   "status": "UNSOURCED_TOPIC_INPUT",
+   "sourceId": null,
+   "exactText": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+   "notice": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+  },
+  "world": {
+   "id": "product_brand_real",
+   "renderRecipe": "Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature."
+  },
+  "recipe": {
+   "id": "world-native",
+   "source": "NO_TACTILE_OVERRIDE"
+  },
+  "referenceDNAs": [
+   {
+    "id": "product_macro",
+    "name": "Product Macro Surface Proof",
+    "status": "ACTIVE_SUBORDINATE",
+    "directive": "Photoreal product frame in the surface-proof macro lineage (clean material-truth grammar, original subjects only). Medium/era: contemporary product cinematography. Named anchor: surface proof — the clean macro that proves material quality, controlled light revealing texture. Signature light: clean controlled studio light raking across the surface to reveal texture and finish, a soft key with a controlled specular and a defining edge-rim; the light proves the material honestly. Color/grade: clean neutral-to-warm product palette, honest saturation, accurate material color; a clean commercial grade. Lens/optics: 85-100mm macro with a razor-thin focus plane on the surface detail, controlled clarity; programmed micro-moves. Texture/render: honest high-fidelity material surface — weave, grain, coating, stitch, finish — rendered to prove quality; a clean product-macro finish. Composition+motion: a clean macro isolating the material surface-truth, controlled raking light revealing texture, clean negative space; a slow surface-reveal drift; the controlled light and honest surface detail carry the material proof.",
+    "use": "Grammar only, original subjects only — layers a clean product-macro surface-proof material-truth grammar onto the chosen world; use for a clean, honest, material-quality macro beat.",
+    "avoid": "NO real product-brand logo or identifiable branded design. NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO neon, NO fake plastic sheen.",
+    "suppressedFields": [
+     "palette",
+     "texture",
+     "lighting"
+    ]
+   },
+   {
+    "id": "setup_tabletop",
+    "name": "Tabletop Product Setup",
+    "status": "ACTIVE_SUBORDINATE",
+    "directive": "Photoreal studio-lighting frame in the tabletop-product setup lineage (controlled rig grammar, original subjects only). Medium/era: contemporary tabletop commercial studio. Named anchor: tabletop product setup — a controlled small-scale rig, precise light shaping, styled surface. Signature light: precisely controlled small soft sources shaping a product on a tabletop surface, a controlled key with soft fill and an edge-defining rim, a subtle gradient on the sweep; every reflection and shadow intentional. Color/grade: clean controlled product palette, accurate material color, restrained saturation; a precise commercial grade. Lens/optics: 50-100mm tabletop framing, moderate-to-shallow DOF isolating the product, controlled programmed micro-moves; precise clarity. Texture/render: honest material surface under controlled light, a styled tabletop surface (wood, stone, seamless), a clean controlled finish. Composition+motion: a controlled tabletop product composition, precise light shaping the form, a styled surface and clean sweep; a slow controlled reveal or a product settle; the precise controlled light and styled surface carry the commercial polish.",
+    "use": "Grammar only, original subjects only — layers a controlled tabletop-product studio-rig light-shaping grammar onto the chosen world; use for a precise, styled, controlled-product tabletop beat.",
+    "avoid": "NO real product-brand logo or identity. NO uncontrolled glare, NO cluttered chaos, NO harsh flat light, NO oversaturated grade, NO grunge, NO neon.",
+    "suppressedFields": [
+     "palette",
+     "texture",
+     "lighting"
+    ]
+   },
+   {
+    "id": "luxury_watch_macro",
+    "name": "Luxury Watch Macro Precision",
+    "status": "ACTIVE_SUBORDINATE",
+    "directive": "Photoreal product frame in the luxury-watch macro lineage (precision-timepiece grammar, original subjects only). Medium/era: contemporary luxury horology cinematography. Named anchor: watch-macro precision — controlled reflection, gleaming metal and crystal, immaculate mechanical detail. Signature light: precisely controlled hard and soft sources shaping the metal's specular and the crystal's reflection with intention; a controlled edge-gleam on the case and hands; every reflection placed to reveal the precision, no stray glare. Color/grade: premium restrained palette — deep tones with metallic gleam, precise and elegant; a luxury-controlled grade. Lens/optics: 100mm+ macro with an ultra-thin focus plane isolating the dial, hands, or movement detail; controlled focus-stack clarity; programmed micro-moves. Texture/render: flawless precision surface — brushed and polished metal, sapphire crystal reflection, guilloché dial texture, mechanical movement detail; immaculate horological finish. Composition+motion: an ultra-close macro of the timepiece's precision detail, controlled gleam, a slow reverent macro drift across the dial or a hands-sweep; the controlled reflection and precision detail carry the luxury.",
+    "use": "Grammar only, original subjects only — layers a luxury-watch precision-macro controlled-reflection grammar onto the chosen world; use for an elegant, precise, luxury-timepiece macro beat.",
+    "avoid": "NO real watch-brand name, logo, or identifiable model design. NO uncontrolled glare, NO cluttered background, NO cheap saturated grade, NO grunge, NO neon, NO plastic-look surface.",
+    "suppressedFields": [
+     "palette",
+     "texture",
+     "lighting"
+    ]
+   }
+  ],
+  "paletteAccent": {
+   "value": "#FBFBFD",
+   "source": "USER_PALETTE"
+  }
+ },
+ "imagePrompt": "[1] IMAGE (motion start frame)\nSTYLE SYSTEM (the world rendering law — this is HOW to render, not WHAT; apply every clause below to the single concrete frame briefed next): Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature. Line grammar: N/A — photoreal. Clean digital-cinema edge definition with strong micro-contrast on material: glass caustic, metal anisotropy, matte microtexture and label print all resolve as physical matter, never as illustration or pasted overlay. Printed matter on the packaging resolves as real ink on a real substrate with true lens-edge softness. Lens grammar: Product primes: 50mm for set context, 85mm and 100mm for the hero object, 100mm macro at f/5.6 for material detail. Depth of field is shallow but honest — real optical falloff from the stated aperture (f/4–f/8 for product sharpness, f/2.8 for a soft lifestyle context). Delivered 16:9 by default; a vertical reels delivery recomposes the frame to portrait. Clean modern lens coating; flare only as a controlled bloom from a real key or set source, never decorative streaks. Optional fine grain over the clean digital negative. Light law: Controlled and flattering, motivated by the set. A softbox or gradient key shapes the product form; fill one to two stops under key opens the shadow side; a rim or kicker separates the object from the background. Glass, metal, matte and liquid each return a real specular from the actual key position. Practical or window light is allowed for lifestyle context. The register — clean bright-white sweep, luxury dark-field with a single sculpted highlight, or warm lifestyle window — is chosen entirely by the selected palette and time-of-day, on top of this fixed controlled-key foundation. Scene brief (Claude yazar): \"Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude, not image content, do not print into the frame: compose ONE concrete single-frame scene faithful to this world's grammar above; author the dominant element and its half-second motion seed from the source.] Staging: strict composition — centered or negative-space led, frame edges intentional; scale contrast: small subject against large world, honest perspective. Reference anchor (subordinate to the world rendering law above — it colours HOW the frame is made, it never overrides the world, the palette or the negative lock): Product surface proof: clean controlled raking studio light revealing texture, soft key with controlled specular and edge-rim, 85-100mm razor-thin macro, honest material color, clean negative space, surface-reveal drift; Tabletop product setup: controlled small soft sources with key/fill/rim shaping, subtle sweep gradient, 50-100mm tabletop framing, accurate material color, styled surface (wood/stone/seamless), controlled reveal; Luxury watch macro: precisely controlled specular on metal and crystal, placed edge-gleam, 100mm ultra-thin macro on dial/movement detail, premium metallic-gleam grade, immaculate horological surface, reverent macro drift. Camera grammar (this world's framing law — it governs the vantage; the move below happens inside it): Locked, precise product coverage: tabletop and eye-level hero angles, a slow slider drift under a few centimetres or a turntable under a few degrees that ease to a full stop, a macro push-in that lands on the detail that sells; a real hand may enter and exit a stable frame to lift or open the product. Default vantage meets the product at its own height, like a portrait sitter. Never a handheld weave, never a whip pan, never a top-down flat-lay vantage. Camera/vantage: 50mm slow dolly at eye height, one foreground edge passing as parallax. Composition pattern: negative-space dominance (ma) — the dominant element occupies roughly one quarter of frame, disciplined emptiness carrying the rest. Light: warm motivated key with a named source (window, lamp, low sun); controlled reflection passes — every highlight motivated, disciplined and geometry-true. Light variant: trade the key one stop softer and let the accent colour carry the subject edge. Palette physics: Palette light: near-black neutral gray, bright neutral gray, dusky warm red, near-white cool indigo — palette character: clean, sculpted, reflective, neutral. controlled key shapes the form, one rim highlight separates the product. Render these as light behaviour, never flat fills. Texture rule: exactly ONE texture clause per prompt, from the \"grain\" family — texture is seasoning, never the subject. Text/logo: clean plate — this scene carries no on-screen text. No floating text, no caption, no subtitle, no watermark, no added signage; the image alone carries the meaning and the narration speaks it. Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it. Path contract (outranks the world grammar above when they disagree): the frame MUST deliver exact geometry, stable logo and stable product surface (packaging where the product HAS packaging; body/panel geometry where it does not), controlled reflections, hero staging. EVENT BUDGET: this beat names 4 separate events, and a single start frame can only turn on ONE. Choose the event the beat is ABOUT and stage it at its half-second: the ones before it must already be DONE and visible in the frame's state (the scratch already cut, the shutter already up), the ones after it must be LOADED and about to happen (the weight leaning, the crack begun). Do not compress them into one action, do not split the frame into panels, and do not drop any: every named event is present, but only one is HAPPENING. Negative: warped packaging, floating UI spam, clay/toy product, fake plastic surface; NO English signage — Turkish label only; NO fake plastic gloss or wax-fake surface — only the product's real finish and honest speculars; NO teal-orange grade, NO oversaturated ad gloss, NO neon; NO plastic AI-smooth surface on demonstrating hands — real micro-texture and knuckle; NO fake AI bokeh or pasted background blur — only real optical falloff from the stated lens; NO floating UI or overlay text — any text is real printed diegetic matter on the product; NO film-auteur signature imitation — this is commercial advertising, not art cinema; NO real product-brand logo or identifiable branded design; NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO fake plastic sheen; NO real product-brand logo or identity; NO uncontrolled glare, NO cluttered chaos, NO harsh flat light; NO real watch-brand name, logo, or identifiable model design; NO cheap saturated grade, NO plastic-look surface; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping. Clean motion-ready start frame. No named or identifiable person in this frame, and no invented face — an invented likeness drifts into a different one in the next shot. If the source beat above describes a human action, SHOW that action with an anonymous body: face turned away or outside the frame, cropped at the shoulders, seen from behind, or hands and forearms only — the behaviour must be visible, not replaced by a symbol of it. If the beat needs no person, keep the frame free of people and apply the rendering discipline above to THIS WORLD'S OWN MATTER, exactly as its render law names it — not to the surfaces of some other register.",
+ "motionPrompt": "[1] MOTION (i2v · plays the approved start frame)\nCamera: 50mm slow dolly at eye height, one foreground edge passing as parallax. Motion brief (Claude yazar): source beat \"Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude against the approved start frame, not clip content, do not print into the clip: compose ONE single-action, frame-aware motion faithful to the source; only the dominant element already in the frame moves — no new object or scenery enters.] Rhythm: held presence: subject achieves position and holds — one deliberate micro-settle confirms arrival, nothing mechanical; one organic environmental confirmation allowed, on the moving element only — paced by the engine law: attack lands inside the first second, the event resolves by ~70% of the clip, the rest is held; everything settles naturally into a stable 1-1.5s final hold. Motion cadence (this world's own motion signature — the authority for HOW this world moves; obey its cadence discipline exactly, but where it names a hold duration the engine law's final-hold timing above supersedes): Real-time 24fps photoreal motion with true motion blur — no animation smear, no stepped cel cadence. Camera motion is minimal and controlled: a slow slider or a few degrees of turntable that ease to a stop; locked frames hold fully for a macro detail. The product carries one small real event — a cap lifting, a bead of condensation sliding, a cream catching the light; nothing loops, nothing floats, nothing snaps. Engine grammar (Kling 3.0): Kling 3.0 start-frame fidelity: the approved frame is truth — describe only what changes, never re-describe what already exists; the motion reads as the frame's next half-second. Everything not named stays exactly as the start frame shows: world, material, light, faces, text, logo, geometry — never re-described, never re-rendered.\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker, re-render of the start frame.\n[DIRECTOR TASK — frame-specific negatives, do not print into the clip: before finalizing, specialize the baseline negative above to THIS approved frame — name its actual fragile elements (the exact text plate, thin rigging/lines, a reflection edge, the logo) in place of the generic list.]\nSPLIT NOTE: source runs ~19.4s — past the clean ~12s window; cover with balanced approved frames (~9.7s each), never stretch this beat.",
+ "voiceOver": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+ "sunoBrief": "Minimal product bed, 80-90 BPM; muted felt-piano pulse over sub-bass, ONE signature synth tone reserved only for the reveal, wide clean room, single hit on the logo beat, sustained low-note resolve. Always: no vocals unless requested, duck under dialogue, act as a Foley/Sound Designer, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.",
+ "durationSec": 19.4,
+ "duration": {
+  "sec": 19.4,
+  "usable": 12,
+  "ok": false,
+  "shots": 2,
+  "perShot": 9.7,
+  "level": "SPLIT",
+  "message": "~19.4s · kling_3 temiz penceresini (12s) aşıyor → 2 dengeli parçaya böl (~9.7s × 2), her parça kendi onaylı karesiyle — gerimeyle değil."
+ },
+ "intensity": 20,
+ "phaseName": "Intro",
+ "onScreenText": null,
+ "handoff": {
+  "IMAGE": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-787d5dac",
+   "projectId": "scene-bcd0fe3b",
+   "sourceHash": "scene-3b673c10",
+   "role": "IMAGE",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "event": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "",
+     "worldLock": "product_brand_real",
+     "semanticFingerprint": "scene-ea3e7fc1"
+    }
+   },
+   "world": {
+    "id": "product_brand_real",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Real-time 24fps photoreal motion with true motion blur — no animation smear, no stepped cel cadence. Camera motion is minimal and controlled: a slow slider or a few degrees of turntable that ease to a stop; locked frames hold fully for a macro detail. The product carries one small real event — a cap lifting, a bead of condensation sliding, a cream catching the light; nothing loops, nothing floats, nothing snaps."
+   },
+   "refDNAs": [
+    {
+     "id": "product_macro",
+     "name": "Product Macro Surface Proof",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the surface-proof macro lineage (clean material-truth grammar, original subjects only). Medium/era: contemporary product cinematography. Named anchor: surface proof — the clean macro that proves material quality, controlled light revealing texture. Signature light: clean controlled studio light raking across the surface to reveal texture and finish, a soft key with a controlled specular and a defining edge-rim; the light proves the material honestly. Color/grade: clean neutral-to-warm product palette, honest saturation, accurate material color; a clean commercial grade. Lens/optics: 85-100mm macro with a razor-thin focus plane on the surface detail, controlled clarity; programmed micro-moves. Texture/render: honest high-fidelity material surface — weave, grain, coating, stitch, finish — rendered to prove quality; a clean product-macro finish. Composition+motion: a clean macro isolating the material surface-truth, controlled raking light revealing texture, clean negative space; a slow surface-reveal drift; the controlled light and honest surface detail carry the material proof.",
+     "use": "Grammar only, original subjects only — layers a clean product-macro surface-proof material-truth grammar onto the chosen world; use for a clean, honest, material-quality macro beat.",
+     "avoid": "NO real product-brand logo or identifiable branded design. NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO neon, NO fake plastic sheen.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "setup_tabletop",
+     "name": "Tabletop Product Setup",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal studio-lighting frame in the tabletop-product setup lineage (controlled rig grammar, original subjects only). Medium/era: contemporary tabletop commercial studio. Named anchor: tabletop product setup — a controlled small-scale rig, precise light shaping, styled surface. Signature light: precisely controlled small soft sources shaping a product on a tabletop surface, a controlled key with soft fill and an edge-defining rim, a subtle gradient on the sweep; every reflection and shadow intentional. Color/grade: clean controlled product palette, accurate material color, restrained saturation; a precise commercial grade. Lens/optics: 50-100mm tabletop framing, moderate-to-shallow DOF isolating the product, controlled programmed micro-moves; precise clarity. Texture/render: honest material surface under controlled light, a styled tabletop surface (wood, stone, seamless), a clean controlled finish. Composition+motion: a controlled tabletop product composition, precise light shaping the form, a styled surface and clean sweep; a slow controlled reveal or a product settle; the precise controlled light and styled surface carry the commercial polish.",
+     "use": "Grammar only, original subjects only — layers a controlled tabletop-product studio-rig light-shaping grammar onto the chosen world; use for a precise, styled, controlled-product tabletop beat.",
+     "avoid": "NO real product-brand logo or identity. NO uncontrolled glare, NO cluttered chaos, NO harsh flat light, NO oversaturated grade, NO grunge, NO neon.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "luxury_watch_macro",
+     "name": "Luxury Watch Macro Precision",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the luxury-watch macro lineage (precision-timepiece grammar, original subjects only). Medium/era: contemporary luxury horology cinematography. Named anchor: watch-macro precision — controlled reflection, gleaming metal and crystal, immaculate mechanical detail. Signature light: precisely controlled hard and soft sources shaping the metal's specular and the crystal's reflection with intention; a controlled edge-gleam on the case and hands; every reflection placed to reveal the precision, no stray glare. Color/grade: premium restrained palette — deep tones with metallic gleam, precise and elegant; a luxury-controlled grade. Lens/optics: 100mm+ macro with an ultra-thin focus plane isolating the dial, hands, or movement detail; controlled focus-stack clarity; programmed micro-moves. Texture/render: flawless precision surface — brushed and polished metal, sapphire crystal reflection, guilloché dial texture, mechanical movement detail; immaculate horological finish. Composition+motion: an ultra-close macro of the timepiece's precision detail, controlled gleam, a slow reverent macro drift across the dial or a hands-sweep; the controlled reflection and precision detail carry the luxury.",
+     "use": "Grammar only, original subjects only — layers a luxury-watch precision-macro controlled-reflection grammar onto the chosen world; use for an elegant, precise, luxury-timepiece macro beat.",
+     "avoid": "NO real watch-brand name, logo, or identifiable model design. NO uncontrolled glare, NO cluttered background, NO cheap saturated grade, NO grunge, NO neon, NO plastic-look surface.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    }
+   ],
+   "locks": {
+    "character": "",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "image",
+    "provider": "nano",
+    "label": "nano_banana_2"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "[1] IMAGE (motion start frame)\nSTYLE SYSTEM (the world rendering law — this is HOW to render, not WHAT; apply every clause below to the single concrete frame briefed next): Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature. Line grammar: N/A — photoreal. Clean digital-cinema edge definition with strong micro-contrast on material: glass caustic, metal anisotropy, matte microtexture and label print all resolve as physical matter, never as illustration or pasted overlay. Printed matter on the packaging resolves as real ink on a real substrate with true lens-edge softness. Lens grammar: Product primes: 50mm for set context, 85mm and 100mm for the hero object, 100mm macro at f/5.6 for material detail. Depth of field is shallow but honest — real optical falloff from the stated aperture (f/4–f/8 for product sharpness, f/2.8 for a soft lifestyle context). Delivered 16:9 by default; a vertical reels delivery recomposes the frame to portrait. Clean modern lens coating; flare only as a controlled bloom from a real key or set source, never decorative streaks. Optional fine grain over the clean digital negative. Light law: Controlled and flattering, motivated by the set. A softbox or gradient key shapes the product form; fill one to two stops under key opens the shadow side; a rim or kicker separates the object from the background. Glass, metal, matte and liquid each return a real specular from the actual key position. Practical or window light is allowed for lifestyle context. The register — clean bright-white sweep, luxury dark-field with a single sculpted highlight, or warm lifestyle window — is chosen entirely by the selected palette and time-of-day, on top of this fixed controlled-key foundation. Scene brief (Claude yazar): \"Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude, not image content, do not print into the frame: compose ONE concrete single-frame scene faithful to this world's grammar above; author the dominant element and its half-second motion seed from the source.] Staging: strict composition — centered or negative-space led, frame edges intentional; scale contrast: small subject against large world, honest perspective. Reference anchor (subordinate to the world rendering law above — it colours HOW the frame is made, it never overrides the world, the palette or the negative lock): Product surface proof: clean controlled raking studio light revealing texture, soft key with controlled specular and edge-rim, 85-100mm razor-thin macro, honest material color, clean negative space, surface-reveal drift; Tabletop product setup: controlled small soft sources with key/fill/rim shaping, subtle sweep gradient, 50-100mm tabletop framing, accurate material color, styled surface (wood/stone/seamless), controlled reveal; Luxury watch macro: precisely controlled specular on metal and crystal, placed edge-gleam, 100mm ultra-thin macro on dial/movement detail, premium metallic-gleam grade, immaculate horological surface, reverent macro drift. Camera grammar (this world's framing law — it governs the vantage; the move below happens inside it): Locked, precise product coverage: tabletop and eye-level hero angles, a slow slider drift under a few centimetres or a turntable under a few degrees that ease to a full stop, a macro push-in that lands on the detail that sells; a real hand may enter and exit a stable frame to lift or open the product. Default vantage meets the product at its own height, like a portrait sitter. Never a handheld weave, never a whip pan, never a top-down flat-lay vantage. Camera/vantage: 50mm slow dolly at eye height, one foreground edge passing as parallax. Composition pattern: negative-space dominance (ma) — the dominant element occupies roughly one quarter of frame, disciplined emptiness carrying the rest. Light: warm motivated key with a named source (window, lamp, low sun); controlled reflection passes — every highlight motivated, disciplined and geometry-true. Light variant: trade the key one stop softer and let the accent colour carry the subject edge. Palette physics: Palette light: near-black neutral gray, bright neutral gray, dusky warm red, near-white cool indigo — palette character: clean, sculpted, reflective, neutral. controlled key shapes the form, one rim highlight separates the product. Render these as light behaviour, never flat fills. Texture rule: exactly ONE texture clause per prompt, from the \"grain\" family — texture is seasoning, never the subject. Text/logo: clean plate — this scene carries no on-screen text. No floating text, no caption, no subtitle, no watermark, no added signage; the image alone carries the meaning and the narration speaks it. Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it. Path contract (outranks the world grammar above when they disagree): the frame MUST deliver exact geometry, stable logo and stable product surface (packaging where the product HAS packaging; body/panel geometry where it does not), controlled reflections, hero staging. EVENT BUDGET: this beat names 4 separate events, and a single start frame can only turn on ONE. Choose the event the beat is ABOUT and stage it at its half-second: the ones before it must already be DONE and visible in the frame's state (the scratch already cut, the shutter already up), the ones after it must be LOADED and about to happen (the weight leaning, the crack begun). Do not compress them into one action, do not split the frame into panels, and do not drop any: every named event is present, but only one is HAPPENING. Negative: warped packaging, floating UI spam, clay/toy product, fake plastic surface; NO English signage — Turkish label only; NO fake plastic gloss or wax-fake surface — only the product's real finish and honest speculars; NO teal-orange grade, NO oversaturated ad gloss, NO neon; NO plastic AI-smooth surface on demonstrating hands — real micro-texture and knuckle; NO fake AI bokeh or pasted background blur — only real optical falloff from the stated lens; NO floating UI or overlay text — any text is real printed diegetic matter on the product; NO film-auteur signature imitation — this is commercial advertising, not art cinema; NO real product-brand logo or identifiable branded design; NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO fake plastic sheen; NO real product-brand logo or identity; NO uncontrolled glare, NO cluttered chaos, NO harsh flat light; NO real watch-brand name, logo, or identifiable model design; NO cheap saturated grade, NO plastic-look surface; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping. Clean motion-ready start frame. No named or identifiable person in this frame, and no invented face — an invented likeness drifts into a different one in the next shot. If the source beat above describes a human action, SHOW that action with an anonymous body: face turned away or outside the frame, cropped at the shoulders, seen from behind, or hands and forearms only — the behaviour must be visible, not replaced by a symbol of it. If the beat needs no person, keep the frame free of people and apply the rendering discipline above to THIS WORLD'S OWN MATTER, exactly as its render law names it — not to the surfaces of some other register.",
+    "canonical": false
+   }
+  },
+  "MOTION": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-815ab767",
+   "projectId": "scene-bcd0fe3b",
+   "sourceHash": "scene-3b673c10",
+   "role": "MOTION",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "event": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "",
+     "worldLock": "product_brand_real",
+     "semanticFingerprint": "scene-ea3e7fc1"
+    }
+   },
+   "world": {
+    "id": "product_brand_real",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Real-time 24fps photoreal motion with true motion blur — no animation smear, no stepped cel cadence. Camera motion is minimal and controlled: a slow slider or a few degrees of turntable that ease to a stop; locked frames hold fully for a macro detail. The product carries one small real event — a cap lifting, a bead of condensation sliding, a cream catching the light; nothing loops, nothing floats, nothing snaps."
+   },
+   "refDNAs": [
+    {
+     "id": "product_macro",
+     "name": "Product Macro Surface Proof",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the surface-proof macro lineage (clean material-truth grammar, original subjects only). Medium/era: contemporary product cinematography. Named anchor: surface proof — the clean macro that proves material quality, controlled light revealing texture. Signature light: clean controlled studio light raking across the surface to reveal texture and finish, a soft key with a controlled specular and a defining edge-rim; the light proves the material honestly. Color/grade: clean neutral-to-warm product palette, honest saturation, accurate material color; a clean commercial grade. Lens/optics: 85-100mm macro with a razor-thin focus plane on the surface detail, controlled clarity; programmed micro-moves. Texture/render: honest high-fidelity material surface — weave, grain, coating, stitch, finish — rendered to prove quality; a clean product-macro finish. Composition+motion: a clean macro isolating the material surface-truth, controlled raking light revealing texture, clean negative space; a slow surface-reveal drift; the controlled light and honest surface detail carry the material proof.",
+     "use": "Grammar only, original subjects only — layers a clean product-macro surface-proof material-truth grammar onto the chosen world; use for a clean, honest, material-quality macro beat.",
+     "avoid": "NO real product-brand logo or identifiable branded design. NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO neon, NO fake plastic sheen.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "setup_tabletop",
+     "name": "Tabletop Product Setup",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal studio-lighting frame in the tabletop-product setup lineage (controlled rig grammar, original subjects only). Medium/era: contemporary tabletop commercial studio. Named anchor: tabletop product setup — a controlled small-scale rig, precise light shaping, styled surface. Signature light: precisely controlled small soft sources shaping a product on a tabletop surface, a controlled key with soft fill and an edge-defining rim, a subtle gradient on the sweep; every reflection and shadow intentional. Color/grade: clean controlled product palette, accurate material color, restrained saturation; a precise commercial grade. Lens/optics: 50-100mm tabletop framing, moderate-to-shallow DOF isolating the product, controlled programmed micro-moves; precise clarity. Texture/render: honest material surface under controlled light, a styled tabletop surface (wood, stone, seamless), a clean controlled finish. Composition+motion: a controlled tabletop product composition, precise light shaping the form, a styled surface and clean sweep; a slow controlled reveal or a product settle; the precise controlled light and styled surface carry the commercial polish.",
+     "use": "Grammar only, original subjects only — layers a controlled tabletop-product studio-rig light-shaping grammar onto the chosen world; use for a precise, styled, controlled-product tabletop beat.",
+     "avoid": "NO real product-brand logo or identity. NO uncontrolled glare, NO cluttered chaos, NO harsh flat light, NO oversaturated grade, NO grunge, NO neon.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "luxury_watch_macro",
+     "name": "Luxury Watch Macro Precision",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the luxury-watch macro lineage (precision-timepiece grammar, original subjects only). Medium/era: contemporary luxury horology cinematography. Named anchor: watch-macro precision — controlled reflection, gleaming metal and crystal, immaculate mechanical detail. Signature light: precisely controlled hard and soft sources shaping the metal's specular and the crystal's reflection with intention; a controlled edge-gleam on the case and hands; every reflection placed to reveal the precision, no stray glare. Color/grade: premium restrained palette — deep tones with metallic gleam, precise and elegant; a luxury-controlled grade. Lens/optics: 100mm+ macro with an ultra-thin focus plane isolating the dial, hands, or movement detail; controlled focus-stack clarity; programmed micro-moves. Texture/render: flawless precision surface — brushed and polished metal, sapphire crystal reflection, guilloché dial texture, mechanical movement detail; immaculate horological finish. Composition+motion: an ultra-close macro of the timepiece's precision detail, controlled gleam, a slow reverent macro drift across the dial or a hands-sweep; the controlled reflection and precision detail carry the luxury.",
+     "use": "Grammar only, original subjects only — layers a luxury-watch precision-macro controlled-reflection grammar onto the chosen world; use for an elegant, precise, luxury-timepiece macro beat.",
+     "avoid": "NO real watch-brand name, logo, or identifiable model design. NO uncontrolled glare, NO cluttered background, NO cheap saturated grade, NO grunge, NO neon, NO plastic-look surface.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    }
+   ],
+   "locks": {
+    "character": "",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "video",
+    "provider": "kling",
+    "label": "kling_3"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    },
+    {
+     "code": "APPROVED_IMAGE_REQUIRED",
+     "message": "Motion stays locked until an approved image exists."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "[1] MOTION (i2v · plays the approved start frame)\nCamera: 50mm slow dolly at eye height, one foreground edge passing as parallax. Motion brief (Claude yazar): source beat \"Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude against the approved start frame, not clip content, do not print into the clip: compose ONE single-action, frame-aware motion faithful to the source; only the dominant element already in the frame moves — no new object or scenery enters.] Rhythm: held presence: subject achieves position and holds — one deliberate micro-settle confirms arrival, nothing mechanical; one organic environmental confirmation allowed, on the moving element only — paced by the engine law: attack lands inside the first second, the event resolves by ~70% of the clip, the rest is held; everything settles naturally into a stable 1-1.5s final hold. Motion cadence (this world's own motion signature — the authority for HOW this world moves; obey its cadence discipline exactly, but where it names a hold duration the engine law's final-hold timing above supersedes): Real-time 24fps photoreal motion with true motion blur — no animation smear, no stepped cel cadence. Camera motion is minimal and controlled: a slow slider or a few degrees of turntable that ease to a stop; locked frames hold fully for a macro detail. The product carries one small real event — a cap lifting, a bead of condensation sliding, a cream catching the light; nothing loops, nothing floats, nothing snaps. Engine grammar (Kling 3.0): Kling 3.0 start-frame fidelity: the approved frame is truth — describe only what changes, never re-describe what already exists; the motion reads as the frame's next half-second. Everything not named stays exactly as the start frame shows: world, material, light, faces, text, logo, geometry — never re-described, never re-rendered.\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker, re-render of the start frame.\n[DIRECTOR TASK — frame-specific negatives, do not print into the clip: before finalizing, specialize the baseline negative above to THIS approved frame — name its actual fragile elements (the exact text plate, thin rigging/lines, a reflection edge, the logo) in place of the generic list.]\nSPLIT NOTE: source runs ~19.4s — past the clean ~12s window; cover with balanced approved frames (~9.7s each), never stretch this beat.",
+    "canonical": false
+   }
+  },
+  "SUNO": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-4ba38ea7",
+   "projectId": "scene-bcd0fe3b",
+   "sourceHash": "scene-3b673c10",
+   "role": "SUNO",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "event": "Yeni bir mat siyah termos için 30 saniyelik ürün filmi. Termos sabah işe giden bir kullanıcının masasında; buhar, kapak mekanizması ve 12 saat sıcak tutma özelliği görünür kanıtlarla anlatılsın. Ekranda yalnızca ürün üzerindeki ‘MAMILAS THERMO’ yazısı baked-in görünsün; anlatıcı tek kişi olsun.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "",
+     "worldLock": "product_brand_real",
+     "semanticFingerprint": "scene-ea3e7fc1"
+    }
+   },
+   "world": {
+    "id": "product_brand_real",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Turkish product and brand advertising — the register of the hero-object commercial, where a single product is staged and lit like a leading actor and desire is built from real surface physics rather than grade tricks. (1) LIGHT SOURCE — controlled and flattering: a softbox or gradient key shapes the product's form, a fill about one to two stops under key opens the shadow side, and a rim or kicker separates the object from its background; every highlight is a real specular event on the product's actual surface. (2) SURFACE TRUTH — material reflectance is the hero: glass refracts and carries honest caustics, brushed metal shows directional anisotropy, matte plastic and paper hold microtexture, cream and liquid sheet with real viscosity; nothing wax-fake, no gloss beyond the product's real finish. (3) BACKGROUND AND SET — a seamless sweep for clean isolation, a dark field for a sculpted single-highlight look, or a real Turkish home or desk under window light for lifestyle context; reflections in the set stay geometrically coherent. (4) CAMERA — locked and precise: tabletop and eye-level hero angles, a slow slider under a few centimetres or a turntable under a few degrees, a macro push-in that eases to a full stop on the detail that sells; a real hand may enter to lift, open or demonstrate. (5) LENS — 50mm for context, 85mm and 100mm for the hero, 100mm macro for material detail; depth of field is shallow but honest, f/4–f/8 for product sharpness and f/2.8 for a soft context, with real optical falloff. (6) TEXTURE — clean digital-cinema with real material microtexture and honest reflections; optional fine grain; zero plastic AI smoothing, zero painted gloss. IMPERATIVE: build desire from real surface physics — controlled key, honest specular, true material reflectance — and let the palette set clean bright-white, luxury dark-field, or warm lifestyle window. Forbid wax-fake surfaces, painted gloss, teal-orange grade, plastic AI smoothing, English signage, floating overlay text, and imitation of any film-auteur signature.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Real-time 24fps photoreal motion with true motion blur — no animation smear, no stepped cel cadence. Camera motion is minimal and controlled: a slow slider or a few degrees of turntable that ease to a stop; locked frames hold fully for a macro detail. The product carries one small real event — a cap lifting, a bead of condensation sliding, a cream catching the light; nothing loops, nothing floats, nothing snaps."
+   },
+   "refDNAs": [
+    {
+     "id": "product_macro",
+     "name": "Product Macro Surface Proof",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the surface-proof macro lineage (clean material-truth grammar, original subjects only). Medium/era: contemporary product cinematography. Named anchor: surface proof — the clean macro that proves material quality, controlled light revealing texture. Signature light: clean controlled studio light raking across the surface to reveal texture and finish, a soft key with a controlled specular and a defining edge-rim; the light proves the material honestly. Color/grade: clean neutral-to-warm product palette, honest saturation, accurate material color; a clean commercial grade. Lens/optics: 85-100mm macro with a razor-thin focus plane on the surface detail, controlled clarity; programmed micro-moves. Texture/render: honest high-fidelity material surface — weave, grain, coating, stitch, finish — rendered to prove quality; a clean product-macro finish. Composition+motion: a clean macro isolating the material surface-truth, controlled raking light revealing texture, clean negative space; a slow surface-reveal drift; the controlled light and honest surface detail carry the material proof.",
+     "use": "Grammar only, original subjects only — layers a clean product-macro surface-proof material-truth grammar onto the chosen world; use for a clean, honest, material-quality macro beat.",
+     "avoid": "NO real product-brand logo or identifiable branded design. NO cluttered background, NO harsh uncontrolled glare, NO oversaturated grade, NO grunge, NO neon, NO fake plastic sheen.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "setup_tabletop",
+     "name": "Tabletop Product Setup",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal studio-lighting frame in the tabletop-product setup lineage (controlled rig grammar, original subjects only). Medium/era: contemporary tabletop commercial studio. Named anchor: tabletop product setup — a controlled small-scale rig, precise light shaping, styled surface. Signature light: precisely controlled small soft sources shaping a product on a tabletop surface, a controlled key with soft fill and an edge-defining rim, a subtle gradient on the sweep; every reflection and shadow intentional. Color/grade: clean controlled product palette, accurate material color, restrained saturation; a precise commercial grade. Lens/optics: 50-100mm tabletop framing, moderate-to-shallow DOF isolating the product, controlled programmed micro-moves; precise clarity. Texture/render: honest material surface under controlled light, a styled tabletop surface (wood, stone, seamless), a clean controlled finish. Composition+motion: a controlled tabletop product composition, precise light shaping the form, a styled surface and clean sweep; a slow controlled reveal or a product settle; the precise controlled light and styled surface carry the commercial polish.",
+     "use": "Grammar only, original subjects only — layers a controlled tabletop-product studio-rig light-shaping grammar onto the chosen world; use for a precise, styled, controlled-product tabletop beat.",
+     "avoid": "NO real product-brand logo or identity. NO uncontrolled glare, NO cluttered chaos, NO harsh flat light, NO oversaturated grade, NO grunge, NO neon.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    },
+    {
+     "id": "luxury_watch_macro",
+     "name": "Luxury Watch Macro Precision",
+     "status": "ACTIVE_SUBORDINATE",
+     "directive": "Photoreal product frame in the luxury-watch macro lineage (precision-timepiece grammar, original subjects only). Medium/era: contemporary luxury horology cinematography. Named anchor: watch-macro precision — controlled reflection, gleaming metal and crystal, immaculate mechanical detail. Signature light: precisely controlled hard and soft sources shaping the metal's specular and the crystal's reflection with intention; a controlled edge-gleam on the case and hands; every reflection placed to reveal the precision, no stray glare. Color/grade: premium restrained palette — deep tones with metallic gleam, precise and elegant; a luxury-controlled grade. Lens/optics: 100mm+ macro with an ultra-thin focus plane isolating the dial, hands, or movement detail; controlled focus-stack clarity; programmed micro-moves. Texture/render: flawless precision surface — brushed and polished metal, sapphire crystal reflection, guilloché dial texture, mechanical movement detail; immaculate horological finish. Composition+motion: an ultra-close macro of the timepiece's precision detail, controlled gleam, a slow reverent macro drift across the dial or a hands-sweep; the controlled reflection and precision detail carry the luxury.",
+     "use": "Grammar only, original subjects only — layers a luxury-watch precision-macro controlled-reflection grammar onto the chosen world; use for an elegant, precise, luxury-timepiece macro beat.",
+     "avoid": "NO real watch-brand name, logo, or identifiable model design. NO uncontrolled glare, NO cluttered background, NO cheap saturated grade, NO grunge, NO neon, NO plastic-look surface.",
+     "suppressedFields": [
+      "palette",
+      "texture",
+      "lighting"
+     ]
+    }
+   ],
+   "locks": {
+    "character": "",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "music",
+    "provider": "SUNO",
+    "label": "Custom Mode"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "Minimal product bed, 80-90 BPM; muted felt-piano pulse over sub-bass, ONE signature synth tone reserved only for the reveal, wide clean room, single hit on the logo beat, sustained low-note resolve. Always: no vocals unless requested, duck under dialogue, act as a Foley/Sound Designer, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.",
+    "canonical": false
+   }
+  }
+ },
+ "isNight": false
+}

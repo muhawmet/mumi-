@@ -1,0 +1,6 @@
+==== NİYET DEDEKTÖRÜ — A/B/C mod modeli (5 Codex turu sonrası) ====
+
+## WANTED (istek — hepsi signal=true, BLOCKED):
+
+
+(r5-probe: 15 wanted + 15 legit — hepsi doğru; FAIL yok)

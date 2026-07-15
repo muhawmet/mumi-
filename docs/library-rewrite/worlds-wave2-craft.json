@@ -1,0 +1,200 @@
+[
+  {
+    "id": "paper_craft_popup",
+    "one_liner": "Photoreal macro miniature: a pop-up storybook page opening toward camera, every element die-cut cardstock assembled by tab-and-slot, real physical depth in perpendicular paper layers, fiber catching raking light at every cut edge.",
+    "render_law": "Photoreal macro miniature paper-craft diorama — a pop-up storybook page opening flat toward camera. (1) MATERIAL: every element is die-cut cardstock (100-250gsm equivalent, visible fiber) assembled via tab-and-slot mechanisms, hinge folds and stacked layers; every prop is paper — characters, buildings, math tiles, arrows, plants — no clay, no plastic, no fabric. (2) EDGE + GRAIN: paper grain visible at raking light; cut edges show mild fiber tear at the knife stroke. (3) DEPTH: real physical depth — 2-4 layers of paper standing perpendicular to the page — never a painted illusion; the depth of field betrays the true miniature scale. (4) FOLD SHADOW: soft ambient-warm dark under folds, never black; warm bounce fill from below simulates page-glow. (5) LIGHT: warm 3200K key raking oblique to wake the fiber, a cool 5600K rim behind paper edges to backlight and halate the fiber. (6) CAMERA: low-angle side dolly or macro overhead, shallow DOF (f/2.8 macro equivalent) isolating the mechanism. IMPERATIVE: PHOTOREAL MACRO MINIATURE — real paper fiber, real cut edges, true macro depth of field. Forbid 2D cel shading, flat digital illustration, smooth full-CGI plastic surfaces, and any non-paper material on the built elements.",
+    "line_grammar": "No drawn lines. Silhouettes carry via the crisp die-cut paper edge; interior detail is layered paper collage — shape on shape, never a printed line. Letters are raised die-cut cardstock, not printed type.",
+    "lens_grammar": "50-100mm macro. f/2.8-f/4 shallow DOF isolating the mechanism and betraying the miniature scale. Warm tungsten grade (3200K key). Mild 16mm-equivalent film grain. Slight barrel distortion allowed at the 50mm macro end.",
+    "light_law": "Warm key from an oblique angle to rake the paper texture. Cool backlight from behind the paper edges for fiber halation. Bounce fill from an off-white foam-core equivalent. Shadow pockets under folds ambient-warm, never black.",
+    "palette_lock": {
+      "shadow": "#8B6F47",
+      "mid": "#F1E4C6",
+      "accent": "#D9782E",
+      "highlight": "#FFF8E7",
+      "bias": "cream-kraft-terracotta dominant — warm paper-fiber tones catching the tungsten key, with construction-paper primary accents (crimson, cobalt, ochre) allowed where a beat needs a color pop. Shadow is warm paper-brown, never neutral-grey. NO neon, NO pastel-mint, NO cool digital white, NO CG plastic sheen."
+    },
+    "motion_cadence": "Slow deliberate mechanical motion — a tab slides in its slot, a page flap folds, a pop-up rises; every motion has a visible physical constraint. Hold 1.5-2s on the rest position, the fiber settling.",
+    "negative_lock": [
+      "NO CGI 3D characters — all figures are built paper",
+      "NO Pixar-style bevel or subsurface skin",
+      "NO printed line-art on the paper — only cut shapes",
+      "NO fabric, NO clay, NO wood, NO plastic — paper only",
+      "NO named children's-book character (Curious George, Peter Rabbit, etc.)",
+      "NO 3D render, NO octane, NO realistic subsurface shading, NO 2.5D plastic look",
+      "Turkish label only — letters are raised die-cut paper, not printed, NO English signage"
+    ],
+    "example_injection": "Photoreal paper-craft pop-up diorama, low side dolly along the bottom page edge. A pop-up page lies open like a tiny room: a Mamilas paper figure (die-cut cardstock, tab-and-slot) stands mid-scene, with a folded paper element anchored at lower right and another at lower left, a narrow die-cut paper route line running between them. Warm 3200K low-sun key from the right strongly rakes the right corner; cool backlight halates the paper edges. Exactly one tactile note: clean cut-paper laminations show fiber at the corner tears. Turkish labels raised as die-cut cardstock words: 'BAŞLA' right, 'SON' left. Motion seed: the left flap one frame before folding shut. AVOID: CGI skin, English labels, printed line-art, warped Turkish letters, non-paper materials. Clean motion-ready start frame."
+  },
+  {
+    "id": "kurzgesagt_edu",
+    "one_liner": "Kurzgesagt flat-vector explainer: every shape a solid fill with a 1-2px darker outline (never black), a locked isometric diagram camera on a near-black navy field, and a single warm amber 'insight' glow blooming only at the moment of understanding.",
+    "render_law": "Flat vector 2D explainer animation in the Kurzgesagt-in-a-Nutshell visual lineage. (1) SHAPES: every shape is a flat solid-color fill with a subtle 1-2px darker-tone outline (never pure black), zero gradient except the deliberate soft glow halo around the single 'insight' light source. (2) FORMS: characters and props are geometric-simplified — rounded blob and capsule forms, no detailed anatomy. (3) CAMERA: a locked orthographic-feeling overhead or three-quarter isometric view of a diagram or system, never a dramatic Dutch angle. (4) BACKGROUND: near-black navy-charcoal, uncluttered, so the diagram reads instantly. (5) COLOR-CODING is systemic — each conceptual element keeps one consistent flat color across the whole sequence so the audience tracks it without labels. (6) DEPTH: faked with layering and a soft drop-shadow, never true perspective or camera parallax. IMPERATIVE: FLAT 2D VECTOR ONLY — forbid painterly texture, 3D render, photoreal lighting, gradient shading beyond the single insight-glow bloom, and camera Dutch-tilt or handheld drift.",
+    "line_grammar": "Thin 1-2px darker-tone outline (never pure black), uniform weight, no taper. Shapes read as flat geometric silhouettes first; there is no interior rendering, only flat color separation.",
+    "lens_grammar": "Simulated locked overhead or 3/4 isometric orthographic view. No lens distortion, no depth of field, no camera move beyond the diagram's own reveal.",
+    "light_law": "One soft amber 'insight' glow source per beat — everything else flat-lit with no directional shadow. The glow blooms softly at the moment of understanding and never elsewhere; it is a narrative event, not ambient light.",
+    "palette_lock": {
+      "shadow": "#12141C",
+      "mid": "#1B4B57",
+      "accent": "#F2A93B",
+      "highlight": "#FDEBC8",
+      "bias": "a flat near-black navy-charcoal field holding the diagram, a single deep teal-cyan secondary for systemic color-coding, and one warm amber insight-accent that blooms only at the understanding beat. Color is flat information, not light — the only glow is the insight halo. NO gradient shading, NO painterly texture, NO photoreal falloff."
+    },
+    "motion_cadence": "The isometric diagram expands from center; one connector line draws once to the insight node; the amber glow lands and holds. The camera is locked wide overhead — the diagram's own reveal IS the motion event, not the camera.",
+    "negative_lock": [
+      "NO Kurzgesagt bird mascot or any named explainer-channel character",
+      "NO photoreal texture, NO 3D render, NO painterly brushwork",
+      "NO gradient shading beyond the single insight-glow bloom",
+      "NO camera Dutch-tilt or handheld drift",
+      "NO octane, NO ray tracing, NO realistic lighting",
+      "Turkish label only — flat sans-serif diagram lettering, NO English signage"
+    ],
+    "example_injection": "Kurzgesagt-lineage flat vector explainer frame. Subject: a simplified geometric diagram of a concept, each element a flat solid-color shape with a 1-2px charcoal outline, arranged in a locked overhead isometric layout against a near-black navy field. One connector line draws once from the source node to the insight node; a soft amber glow blooms and holds at the insight node. Secondary deep teal-cyan elements stay flat and unlit. Turkish label 'KAVRAM' in flat geometric sans-serif beside the insight node. Motion seed: the connector line mid-draw, the glow about to bloom. AVOID: Kurzgesagt mascot, photoreal texture, 3D render, gradient shading, camera drift, English signage. Clean motion-ready start frame."
+  },
+  {
+    "id": "whiteboard_explainer",
+    "one_liner": "RSA-Animate whiteboard: a pure cream board filling frame, confident pressure-variable graphite ink drawing itself in real time, one deliberate marker-wash color on the key node, and a real hand-and-marker visible at the active stroke edge.",
+    "render_law": "Whiteboard/paper explainer animation in the RSA-Animate lineage. (1) SURFACE: a pure cream-white board fills the frame; drawings appear as if hand-inked in real time. (2) LINE: confident graphite-black ink of varying pressure — thin start, thicker press, thin lift — zero color except one deliberate marker-wash color used to highlight the key concept node. (3) NO SCENERY beyond the board itself. (4) THE HAND: a human hand and forearm holding a marker is visible at the active drawing edge, entering and leaving frame naturally — never a disembodied line. (5) BUILD: composition builds left-to-right or center-out as concepts accumulate, never erased mid-sequence unless the beat explicitly calls for a wipe. IMPERATIVE: FLAT 2D HAND-DRAWN INK ONLY — forbid 3D, painterly rendering, photoreal hand skin, gradient, and any color beyond the graphite ink and the single marker-wash accent.",
+    "line_grammar": "Confident graphite-black ink, pressure-variable weight (thin-thick-thin per stroke), visible start and end taper, occasional natural wobble — never a perfect vector curve. All lettering matches the same hand-inked stroke grammar.",
+    "lens_grammar": "Locked flat-on camera facing the board, no perspective distortion, no camera move beyond a slow reveal pull-back at completion.",
+    "light_law": "Flat even board illumination, no directional shadow beyond the small contact shadow the hand and marker cast on the board surface.",
+    "palette_lock": {
+      "shadow": "#B9B6A8",
+      "mid": "#F5F3EC",
+      "accent": "#D94E3D",
+      "highlight": "#FFFFFF",
+      "bias": "a paper-white board base carrying the whole frame, graphite-grey ink as the only line value, and a single brick-red marker-wash accent flooding the key node. Everything else is unlit flat board-white — the wash is the only saturation. NO gradient, NO 3D shading, NO photographic texture, NO second accent color."
+    },
+    "motion_cadence": "One ink stroke draws forward continuously; the marker-wash floods once behind the key node; the camera pulls back slowly as the diagram completes; the hand exits frame; hold on the completed board.",
+    "negative_lock": [
+      "NO RSA Animate logo or branding",
+      "NO named real-world lecturer or speaker likeness",
+      "NO color beyond the graphite-black ink and the single marker-wash accent",
+      "NO 3D render, NO painterly shading, NO photoreal hand skin",
+      "NO gradient, NO octane, NO ray tracing",
+      "Turkish label only — hand-inked lettering matching the stroke grammar, NO English signage"
+    ],
+    "example_injection": "RSA-Animate-lineage whiteboard frame. Subject: a hand-inked diagram of a concept mid-draw on a cream-white board, confident graphite-black pressure-variable line, a human hand and marker visible at the active stroke edge entering from frame-right. One brick-red marker-wash floods behind the key concept node, everything else unlit flat board-white. Turkish label 'KAVRAM' hand-lettered beside the node in the same stroke grammar. Motion seed: the marker mid-stroke, the wash about to bloom. AVOID: RSA branding, named speaker likeness, extra color, 3D render, photoreal hand, English signage. Clean motion-ready start frame."
+  },
+  {
+    "id": "motion_design_flat",
+    "one_liner": "Kinetic-poster flatness: solid flat color fills with zero gradient or texture, geometric shapes grid-snapped to precise alignment, 2-3 colors per frame for poster confidence, and a locked orthographic camera where the shape's snap IS the motion.",
+    "render_law": "Flat motion-graphics / kinetic-poster design in the modern Saul-Bass-adjacent motion-design lineage. (1) FLATNESS: every element is a solid flat color fill — zero gradient, zero texture, zero simulated 3D shading — pure 2D graphic flatness. (2) GEOMETRY: shapes are geometric-precise (circles, rounded rectangles, exact angles) aligned to an implicit grid. (3) PALETTE: deliberately limited to 2-3 flat colors per frame for poster-level graphic confidence. (4) TYPE: bold geometric sans, grid-locked, when present. (5) SUBJECT: no character faces or organic anatomy — this world is for abstract, brand, and data-visualization subjects, not figures. IMPERATIVE: ABSOLUTE FLAT-COLOR GRAPHIC DISCIPLINE — forbid any gradient, any texture or grain, any 3D or photoreal element, soft-shadow simulation, and organic character anatomy.",
+    "line_grammar": "No outline stroke needed — the shape edge is the silhouette itself, precise and vector-clean, no hand-drawn wobble. Where a stroke is used it is a flat solid weight, part of the geometry.",
+    "lens_grammar": "Simulated flat orthographic 2D camera, dead square-on. No depth of field, no lens distortion, no perspective.",
+    "light_law": "No directional lighting simulation at all — every flat fill is uniformly lit; value contrast comes only from the chosen flat colors, never from shading or falloff.",
+    "palette_lock": {
+      "shadow": "#101820",
+      "mid": "#EDEDEA",
+      "accent": "#FF5A36",
+      "highlight": "#FFFFFF",
+      "bias": "flat solid-color fills only — a deep blue-charcoal ground, a warm near-white field, one bold vermilion-orange accent, clean white — a bold two-to-three-color scheme with poster flatness. Value contrast is the flat color choice itself, never shading. NO gradient, NO texture, NO grain, NO soft-shadow, NO more than three active colors."
+    },
+    "motion_cadence": "A bold geometric shape snaps to its final grid position; a secondary block slides into alignment; the camera is locked straight-on; no bounce — sharp snap-and-hold; 1s locked final state.",
+    "negative_lock": [
+      "NO gradient anywhere, NO texture or grain, NO 3D or photoreal render",
+      "NO organic character anatomy — abstract, brand, or data subjects only",
+      "NO more than 3 flat colors active per frame",
+      "NO octane, NO ray tracing, NO soft-shadow simulation",
+      "Turkish label only — bold grid-locked geometric sans, NO English signage"
+    ],
+    "example_injection": "Flat motion-graphics frame. Subject: a bold flat vermilion-orange circle and a flat warm near-white rounded rectangle, precisely grid-aligned against a flat blue-charcoal ground — representing a concept as abstract geometry, zero gradient, zero texture. Bold geometric sans label 'VERİ' grid-locked beside the shapes. Motion seed: the rectangle mid-slide toward final alignment, about to snap. AVOID: gradients, texture, 3D, organic character forms, soft shadow, English signage. Clean motion-ready start frame."
+  },
+  {
+    "id": "ukiyo_e_print",
+    "one_liner": "Japanese woodblock print grammar: flat carved color-fields with no blend, a confident black key-block outline, Prussian-blue dominant over aged cream paper, one red seal-stamp accent, and bold asymmetric wave-motif staging over visible paper grain.",
+    "render_law": "Japanese ukiyo-e woodblock print in the Hokusai/Hiroshige-adjacent lineage (original composition only). (1) COLOR SEPARATION: flat printed color separation — each color sits in its own hand-carved-feeling flat field, no blended gradient, with a subtle woodgrain-texture bleed at the color-field edges. (2) LINE: a confident black key-block outline with a slightly irregular hand-carved edge quality, never digital-perfect. (3) PALETTE: Prussian-blue dominant with an aged cream-paper base and a single red seal-stamp accent. (4) COMPOSITION: bold graphic flatness with strong asymmetric diagonal or wave-motif staging; deep foreground/background layering achieved through flat color planes rather than photographic perspective. (5) SURFACE: visible paper-grain texture and soft age-toning over the whole print. IMPERATIVE: FLAT PRINTED WOODBLOCK AESTHETIC ONLY — forbid photographic gradient, 3D shading, digital airbrush blending, and modern glossy finish.",
+    "line_grammar": "Confident black key-block outline with a slightly irregular hand-carved edge quality, no digital-perfect vector smoothness. Interior form stated by flat color-field boundaries, not by rendered line.",
+    "lens_grammar": "Simulated flat print-plane composition — no camera lens simulated at all; this is a print, not a photographed or rendered scene. Bold asymmetric diagonal staging.",
+    "light_law": "No directional lighting simulation — value comes from the flat printed color fields themselves, deepening only at each color-plane's own edge (a printed color-block, not a light falloff).",
+    "palette_lock": {
+      "shadow": "#1B3A5C",
+      "mid": "#EDE3C8",
+      "accent": "#B33A3A",
+      "highlight": "#F7F0DD",
+      "bias": "Prussian-blue and aged-paper-cream dominant, a black woodblock key-line, a single madder-red seal-stamp accent. Color is carved flat pigment on paper, deepening only at plane edges — never a light gradient. NO photographic gradient, NO 3D shading, NO digital airbrush blend, NO modern saturation."
+    },
+    "motion_cadence": "A wave or pattern motif flows once across the frame in a single sinusoidal pulse; the Prussian-blue plane darkens once at the pulse's crest; no camera move — the stillness after the pulse is the closing state.",
+    "negative_lock": [
+      "NO direct reproduction of a specific famous historic print (e.g. The Great Wave) — original composition in the grammar only",
+      "NO named ukiyo-e artist signature or seal text",
+      "NO photographic gradient, NO 3D render, NO digital airbrush blend",
+      "NO modern glossy finish, NO octane, NO ray tracing",
+      "Turkish label only — brush-carved woodblock-style lettering, NO English signage"
+    ],
+    "example_injection": "Ukiyo-e woodblock print frame. Subject: an original wave-motif composition, a Prussian-blue flat printed plane cresting behind a foreground element on aged cream-paper, a confident black key-block outline, a single madder-red seal-stamp accent in the upper corner. Visible paper-grain texture and age-toning over the whole print. Turkish label 'DALGA' in brush-carved woodblock lettering. Motion seed: the wave pulse mid-crest, about to darken and settle. AVOID: reproducing a specific famous historic print, named artist signature, photographic gradient, 3D render, English signage. Clean motion-ready start frame."
+  },
+  {
+    "id": "laika_stopmotion",
+    "one_liner": "Laika stop-motion: physical armature puppets with felted-fabric and silicone-skin micro-texture, genuine miniature sets in macro shallow focus, and a faint per-frame micro-strobe in the fine detail that must never be smoothed into digital tweening.",
+    "render_law": "Stop-motion puppet animation in the Laika Studios theatrical lineage (grammar only, not the franchises). (1) PUPPET: every subject is a physical armature puppet with a visible tactile surface — felted fabric, silicone skin with pore-level micro-texture, hand-painted or fabric-sculpted detail, a faint fingerprint or tool-mark trace on soft surfaces. (2) SET: real miniatures — visible practical scale-model texture (the grain of built materials, tiny practical props), shot with genuine depth of field on a macro lens, never a flat digital background. (3) MICRO-STROBE: animation reads as true single-frame stop-motion — a faint per-frame micro-strobe/flicker in fine detail (hair, fabric fringe) from frame-by-frame physical repositioning; this is a FEATURE, never smoothed into digital tweening. (4) LIGHT: practical miniature-set lighting — small hot key lights, real shadow falloff at puppet scale. IMPERATIVE: PHYSICAL-PUPPET TACTILITY ONLY — forbid CG smoothness, digital cel shading, perfectly stable digital-interpolated motion, and flat digital backgrounds.",
+    "line_grammar": "N/A — physical puppet, not line-based. The silhouette is defined by the sculpted or felted puppet surface itself, a soft practical edge, never a hard vector or ink outline.",
+    "lens_grammar": "Macro-to-standard practical lens simulation (35-50mm equivalent at miniature scale), genuine shallow depth of field on the tiny set that betrays its true scale, slight practical lens grain.",
+    "light_law": "Small hot practical key lights at puppet scale, real falloff and real shadow softness proportional to the miniature set size. No digital ambient-occlusion fake — shadows come from an actual light-source position on the built set.",
+    "palette_lock": {
+      "shadow": "#2B211A",
+      "mid": "#8A7458",
+      "accent": "#C97B3D",
+      "highlight": "#F1DCB8",
+      "bias": "warm handmade-material palette — felt, wood, painted resin — earthy tactile tones catching a small hot practical key. Shadow is warm-brown material shadow, never neutral-grey. NO digital-clean saturation, NO CG plastic sheen, NO flat cel color, NO cool digital grade."
+    },
+    "motion_cadence": "The puppet moves in true single-frame stop-motion increments — a faint per-frame micro-strobe in fine surface detail (hair, fabric) each hold. One physical gesture per beat, settling into a tactile final hold with a last faint frame-flicker before stillness.",
+    "negative_lock": [
+      "NO Coraline, NO Kubo, NO Norman, NO any named Laika franchise character or creature design",
+      "NO CG smoothness, NO digital cel shading, NO perfectly stable interpolated motion — must read as true stop-motion",
+      "NO flat digital background — the miniature set must read as physically built",
+      "NO octane, NO ray tracing, NO plastic CG skin",
+      "Turkish label only — hand-crafted physical-prop lettering (carved, painted, or fabric-appliquéd), NO English signage"
+    ],
+    "example_injection": "Laika-lineage stop-motion frame. Subject: an original felted-fabric Mamilas puppet mid-close-up, visible fabric-grain and hand-stitched seam detail, silicone-skin micro-texture on the exposed hands, standing in a genuine miniature set with practical scale-model props in shallow macro depth of field. One small hot key light casts a real falloff shadow across the tactile set floor. Warm handmade palette — felt walnut-browns, a painted copper-resin accent. Turkish label 'MASAL' carved into a tiny wooden sign prop in the background. Motion seed: the puppet mid-gesture, a faint per-frame strobe about to settle into the tactile final hold. AVOID: named Laika characters, CG smoothness, digital cel shading, flat background, English signage. Clean motion-ready start frame."
+  },
+  {
+    "id": "claymation_aardman",
+    "one_liner": "Aardman plasticine: hand-sculpted clay photographed on a real miniature set, fingerprints and tool marks in the surface, wide expressive mouths and sculpted brow strips as the acting engine, and a true 12fps stop-motion stagger with soft edge-boil.",
+    "render_law": "Physical plasticine stop-motion in the Aardman workshop lineage — every character and prop reads as hand-sculpted clay photographed on a real miniature set. (1) SURFACE RECORD: the full tactile record is present — fingerprints pressed into cheeks, tool marks at seams, a faint sheen where a warm thumb smoothed the clay. (2) IMPERFECTION: shapes are softly imperfect — no two eyes exactly level, the mouth re-sculpted between poses so lip shapes vary frame to frame (edge boil). (3) ACTING ENGINE: the wide mouth and heavy brow — huge expressive mouth shapes, eyebrows as separate sculpted clay strips. (4) SET: real-material miniatures — painted cardboard walls, fabric curtains with visibly wrong-scale weave, wire-and-foam trees. (5) LIGHT + PALETTE: warm pigment palette (warm terracotta clay mid, brick-red accent) under soft scaled-down studio light; miniature physics — the depth of field betrays the set's true ~40cm scale. IMPERATIVE: PHOTOGRAPHED MINIATURE PLASTICINE — forbid smooth CGI perfection, digital gloss, 60fps interpolation, real human skin, and drawn outlines or cel shading.",
+    "line_grammar": "No drawn lines. Silhouettes carry through physical light on the sculpted form; the seam where two clay colors meet is a real modeled ridge, slightly proud of the surface. Eye highlights are tiny glued beads catching the key light.",
+    "lens_grammar": "Macro tabletop photography: 50-60mm at f/2.8-f/4 so the miniature set falls into creamy defocus and betrays its true scale. Camera height at character eye-level, ~20cm off the deck. Gentle push-ins on emotional beats, executed as physical dolly moves with a tiny mechanical imperfection.",
+    "light_law": "Scaled-down studio three-point: a soft warm key through diffusion, gentle fill, small practical lamps glowing amber inside the set. Shadows soft-edged and shallow. Thin clay parts pick up a subtle warm translucency — ears glow faintly when backlit.",
+    "palette_lock": {
+      "shadow": "#4A3B32",
+      "mid": "#D6A27A",
+      "accent": "#A33B3B",
+      "highlight": "#F2E3D5",
+      "bias": "warm earthy physical-pigment palette — clay-brown shadow, warm terracotta clay mid, brick-red accent, warm cream highlight — under a soft diffused studio key. Colors are mixed pigment in real clay, catching real falloff. NO digital-clean saturation, NO CG plastic gloss, NO cool grade, NO flat cel color."
+    },
+    "motion_cadence": "True 12fps stop-motion stagger — motion arrives in discrete sculpted poses, never interpolated. Edges boil softly because the clay is re-handled between frames. Blinks are two-frame lid swaps. Fast actions use sculpted clay smears — an arm stretched into a physical blur shape held for 1-2 frames.",
+    "negative_lock": [
+      "NO Wallace, NO Gromit, NO Shaun the Sheep, NO Feathers McGraw, NO Chicken Run identity",
+      "NO smooth 60fps interpolation, NO digital motion blur — only sculpted clay smears",
+      "NO perfect CGI surface, NO digital glow, NO photoreal subsurface skin",
+      "NO drawn outline, NO cel shading",
+      "NO real human hands or scale reference in frame",
+      "Turkish label only — sculpted clay letters or hand-painted miniature signs, NO English signage"
+    ],
+    "example_injection": "Photographed miniature plasticine frame. Subject: a round-cheeked Mamilas clay character at a tiny wooden desk, a thumbprint visible on the left cheek, bead-highlight eyes looking up mid-thought, mouth sculpted into a wide 'o'. Warm diffused key from a window off left, an amber practical desk lamp glowing in-set. Background: a painted cardboard classroom wall falling into creamy macro defocus, a fabric curtain with too-large weave. Sculpted clay letters on the desk edge spell 'FEN' in brick-red. Motion seed: the character's hand hovers one frame from grabbing a clay pencil; edge boil already alive on the sleeve. AVOID: Wallace, Gromit, CGI smoothness, 60fps, drawn outlines, English labels. Clean motion-ready start frame."
+  },
+  {
+    "id": "watercolor_storybook",
+    "one_liner": "Children's-book watercolor on cold-press paper: washes bleeding wet-into-wet with feathered blooms, a loose pencil underdrawing that the paint drifts off-register from, reserved warm paper as the only highlight, and a shadow mixed as blue-grey wash — never black.",
+    "render_law": "Traditional watercolor on cold-press paper in the children's storybook lineage — every frame is a painting whose paper is always felt. (1) WASHES: bleed wet-into-wet at every soft boundary — a sky flows into a hill with a feathered bloom edge; pigment granulates in the valleys of the paper tooth. (2) UNDERDRAWING: a loose pencil underdrawing stays honest and visible, and the color washes drift off-register from it — the paint does not obey the pencil, it converses with it. (3) HIGHLIGHTS: reserved warm paper, never white paint. (4) EDGES do double duty — crisp where the brush ran dry, cauliflower blooms where water pooled. (5) PALETTE: soft and breathable — dusty blue, warm coral, a shadow mixed as a blue-grey wash, never black. (6) FORM + SCALE: objects simplify toward toy-like warmth; scale may gently exaggerate (big moon, small house). White gouache flecks allowed only for stars, snow, dandelion seeds. IMPERATIVE: WET WATERCOLOR ON VISIBLE PAPER — forbid digital gradients, opaque solid fills, hard vector edges, 3D CGI depth, and pure black.",
+    "line_grammar": "Loose graphite pencil line, sketchy and searching — two or three light strokes finding a contour rather than one confident line. Ink used sparingly for eyes and tiny details. Lines and washes intentionally misaligned by a few millimeters.",
+    "lens_grammar": "Flat illustrated staging with gentle atmospheric perspective — distance fades into paler, wetter washes, never photographic blur. Compositions breathe with paper margins; intimate beats float as vignettes on bare white paper.",
+    "light_law": "Light lives in pigment density: shadow is a second wet wash dropped over a dry first pass, glowing at its feathered edge. Sunlight is warm paper left bare. No cast-shadow geometry — shadows are soft pooled blobs anchoring the feet.",
+    "palette_lock": {
+      "shadow": "#3A4A5A",
+      "mid": "#A3C4D9",
+      "accent": "#E8A598",
+      "highlight": "#F9F6F0",
+      "bias": "soft desaturated washes — a mixed blue-grey shadow (never black), dusty-blue mid, warm coral accent, and reserved warm-paper highlight. Pigment granulates in the paper tooth; the darkest value is a wet blue-grey wash. NO opaque solid fill, NO digital gradient ramp, NO hard vector edge, NO pure black, NO saturated primary."
+    },
+    "motion_cadence": "Gentle floating motion — elements drift and settle like paper cutouts on water. Transitions dissolve as one wash bleeding into the next. Nothing snaps; every arrival has a soft overshoot and settle. Two-second holds on painted stillness.",
+    "negative_lock": [
+      "NO 3D CGI, NO photographic depth of field",
+      "NO opaque solid fill, NO digital gradient ramp, NO hard vector edge",
+      "NO black — the darkest value is a mixed blue-grey wash",
+      "NO neon, NO saturated primary color",
+      "NO Beatrix Potter or known picture-book character identity",
+      "Turkish label only — hand-lettered with a fine brush, a slightly wobbly baseline, NO English signage"
+    ],
+    "example_injection": "Wet watercolor storybook frame on cold-press paper. Subject: a small Mamilas child figure in a warm-coral raincoat under an oversized dusty-blue umbrella, the pencil underdrawing visible and slightly off-register from the paint. The puddle at the boots is one wet wash with a cauliflower bloom edge. Background: a hill bleeding into a rain sky wet-into-wet, a distant house fading to a paler wash, paper tooth granulating across the sky. Reserved-paper highlights along the umbrella rim. Hand-lettered 'BAHAR' floats in the top margin with a wobbly brush baseline. Motion seed: one raindrop ring just opening in the puddle. AVOID: CGI, opaque fills, vector edges, pure black, English lettering. Clean motion-ready start frame."
+  }
+]

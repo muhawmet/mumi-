@@ -19,8 +19,17 @@ conflict with the site packet.
 - source coverage (100% required — every source beat present)
 - scene IDs and order (must match source order exactly)
 - path/register (no contamination across REAL/EDU/STY)
-- Render Lock (verbatim in every image prompt, including material clause)
+- Render Lock (verbatim in every image prompt, including material clause AND the
+  world-law sentences `Line grammar:` / `Lens grammar:` / `Light law:` — stripped
+  laws = FIX)
 - Material subordination (Material rendered THROUGH World, never replaces it)
+- Frame gate (motion finalized only after its approved start frame exists;
+  negatives frame-specific, not one generic list pasted into every scene)
+- Reference Contributions (perRef lines verbatim, subordinate to Render Lock;
+  each ref's `Never:` clause respected)
+- World Motion Cadence (when present, world physics outrank reference rhythm)
+- Calibration example hygiene (WORLD CALIBRATION EXAMPLE's subject/cast/text
+  never leaks into scenes — only its discipline and vocabulary)
 - Director Mandate (preserved, not deleted or contradicted)
 - DIRECTION / MOOD (applied as bias, not overriding locks)
 - Reference DNA subordination (seasoning, not authority)
@@ -126,17 +135,6 @@ FAIL/FIX:
 - protected lyrics/melody
 - music changes scene decisions
 - unclear edit arc
-
-## Design Check
-
-FAIL/FIX:
-
-- brand kit drift
-- copy mutation
-- unreadable type
-- format-unsafe crop
-- low contrast
-- key visual disconnected from message
 
 ## Verdict
 

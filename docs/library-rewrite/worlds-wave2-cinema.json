@@ -1,0 +1,203 @@
+[
+  {
+    "id": "fincher_precision",
+    "one_liner": "Fincher's controlled precision: motorized-dolly-perfect or locked-off, geometry placed to the pixel, deep focus at f/5.6-f/8, restrained teal-shadow / warm-practical grade, and a FilmConvert grain laid over digital sharpness to kill the plastic edge.",
+    "render_law": "Photoreal cinematography in the David Fincher / Jeff Cronenweth / Erik Messerschmidt lineage (Se7en, Zodiac, The Social Network, Gone Girl, Mindhunter). The Fincher signature is CONTROL — nothing in frame is accidental. (1) CAMERA: locked-off or motorized-dolly-perfect, NEVER handheld; when it moves it is a slow programmed push over 4-6 seconds. (2) COMPOSITION: geometric — exact symmetry, one-point perspective, or a rule-of-thirds intersection hit precisely; walls squared, props positioned, the subject centered or on a mathematical third. (3) FOCUS: deep — f/5.6-f/8 typical, Fincher prefers everything sharp over shallow bokeh. (4) SENSOR + GRAIN: RED or Alexa Mini digital sharpness softened by a FilmConvert-style 35mm grain overlay to kill the digital edge; slight lateral chromatic aberration at the frame edge. (5) GRADE: restrained teal-and-orange — shadows push toward steel-teal, highlights toward warm candle-amber, but midtones and skin stay accurate, never split-toned into excess. (6) LIGHT: motivated practicals composed AS part of the frame (a desk lamp at an exact angle, monitor glow raking the face from below); shadow falls into teal territory but not pure black; skin protected accurate. IMPERATIVE: absolute realism with obsessive geometric control — use negative fill, motivated practicals, 35mm grain, subtle chromatic aberration, and raw skin micro-texture. Forbid handheld shake, shallow-bokeh dominance, warm-cozy grade, AI plastic-smooth skin, teal-orange excess.",
+    "line_grammar": "N/A — photoreal. Sharp digital detail resolved by a clean sensor, edges softened only by the grain overlay. Silhouette reads via precise value separation and deep-focus edge, never a drawn line. Skin holds pore and micro-texture at close-up.",
+    "lens_grammar": "35mm, 40mm, 50mm primes on RED or Alexa Mini. f/5.6-f/8 deep focus. 1.85:1 or 2.00:1. Digital sharpness present, softened by FilmConvert grain. No lens flare unless a single motivated practical. Slight lateral chromatic aberration at the frame edge only.",
+    "light_law": "One motivated practical plus one soft key plus minimal fill. Practicals — desk lamp, monitor, phone screen — are composed as visual elements at exact angles, not light-meter targets. Shadow falls into steel-teal but holds detail, never pure black. Skin protected accurate to the practical's temperature.",
+    "palette_lock": {
+      "shadow": "#1B3B4B",
+      "mid": "#8B7C6E",
+      "accent": "#F4C97A",
+      "highlight": "#F0E6D2",
+      "bias": "restrained steel-teal shadow against a warm candle-amber highlight, with earth-neutral midtones and accurate protected skin. The teal-and-orange separation is disciplined, present only in the extremes of the curve — never a saturated split-tone. NO neon, NO saturated primary, NO Hollywood teal-orange excess, NO warm-cozy lift."
+    },
+    "motion_cadence": "Locked-off or precision motorized dolly — no handheld ever. Slow reveals over 4-6 seconds at constant velocity. Focus pulls land exactly on the beat. Cuts are precise and on the beat, never a reframe in post.",
+    "negative_lock": [
+      "NO Mark Zuckerberg, NO Tyler Durden, NO Amazing Amy, NO Holden Ford, NO any named Fincher-directed character",
+      "NO Facebook office, NO Fight Club basement, NO Zodiac newsroom, NO Mindhunter FBI office, NO named Fincher location",
+      "NO handheld shake, NO shallow-focus bokeh dominance, NO warm-cozy grade",
+      "NO neon unless a single composed practical",
+      "NO rim-light as decoration, NO porcelain or AI plastic-smooth skin, NO excessive smoothing",
+      "NO teal-orange split-tone excess — the grade stays restrained",
+      "Turkish label only — precision sans-serif signage, sharp and legible, NO English signage"
+    ],
+    "example_injection": "Photoreal cinematography in the David Fincher / Erik Messerschmidt lineage. Locked-off symmetrical composition, 40mm on Alexa Mini at f/5.6 deep focus, 2.00:1. Subject: Mamilas character seated at a dark-wood desk in a Beyoğlu apartment, centered exactly on the frame axis. A warm-tungsten desk lamp rakes the desk surface at a precise 30-degree angle from the left; cool-teal monitor glow lifts the face from below. Ceiling and walls fall into steel-teal shadow, geometric edges emphasized, FilmConvert grain over the sharpness. Turkish label 'DOSYA 47' printed in precision sans-serif on a document at the desk edge, sharp and legible. Motion seed: the hand reaching for the document mid-arc, the motorized dolly beginning a slow push-in. AVOID: Mark Zuckerberg, Fight Club, handheld, shallow bokeh, neon, warm-cozy grade, plastic skin. Clean motion-ready start frame."
+  },
+  {
+    "id": "wes_anderson_symmetric",
+    "one_liner": "Anderson's rigid symmetry: dead-center one-point perspective, everything mirrored on the vertical axis, coordinated pastel palette of 2-3 muted colors per character, flat even motivated light, and snap-whip pans between locked positions.",
+    "render_law": "Photoreal cinematography in the Wes Anderson / Robert Yeoman lineage (symmetric pastel live-action feature comedies). The signature is obsessive SYMMETRY and coordinated design. (1) COMPOSITION: rigid one-point perspective, dead-center, everything mirrored along the vertical axis; every prop period-styled and precisely placed. (2) CAMERA: locked-off, a perpendicular tracking dolly, or a snap-whip pan between locked positions — never organic movement. (3) PALETTE: pastel-vintage and coordinated — mint green, salmon pink, mustard yellow, powder blue, cream white — all muted; each character's costume limited to 2-3 coordinated colors. (4) TYPOGRAPHY: hand-drawn Futura or Archer-style sans-serif, always legible, always composed as part of the frame. (5) LIGHT: motivated but even and flat — Anderson avoids dramatic shadow; fill matches key temperature (no complementary bounce); 2:1 contrast, everything readable; skin slightly desaturated to sit inside the pastel environment. (6) DEPTH: compressed — 35-40mm neutral, subjects arranged in flat perpendicular layers, deep focus, no shallow bokeh. (7) ASPECT: 1.37:1 Academy or 2.00:1 flat. IMPERATIVE: absolute realism inside rigid symmetry — negative fill only where the design allows, motivated even light, 35mm grain, subtle chromatic aberration, raw skin micro-texture. Forbid handheld shake, shallow bokeh, high contrast, saturated primary, dramatic chiaroscuro.",
+    "line_grammar": "N/A — photoreal, but the frame reads graphic because of the symmetry and pastel flatness. Silhouette separation comes from coordinated color blocks against a coordinated ground, not from contrast.",
+    "lens_grammar": "35-40mm primes. f/5.6-f/8 deep focus. 1.37:1 Academy or 2.00:1 flat. No lens flare. Kodak Vision3 250D grade pushed toward pastel. Perpendicular tracking or snap-whip pans only.",
+    "light_law": "Motivated but even and flat. Fill light matches the key temperature — no complementary bounce. Shadow soft and low-contrast, 2:1 typical, everything readable. Dramatic shadow is forbidden; the light serves the symmetry, not the drama.",
+    "palette_lock": {
+      "shadow": "#8B9A7B",
+      "mid": "#F4C7A6",
+      "accent": "#E8817A",
+      "highlight": "#FDF6E3",
+      "bias": "coordinated muted-pastel — sage-mint shadow, warm peach-cream mid, salmon-rose accent, cream highlight — all low-saturation and harmonized as a single designed palette. Skin desaturated slightly to sit inside it. NO neon, NO deep black, NO saturated primary, NO teal-orange grade, NO high-contrast shadow."
+    },
+    "motion_cadence": "Locked-off or perpendicular dolly; snap-whip pans between locked positions. Cuts precise on the beat. Long stillness allowed 3-5s. Any character motion is staged perpendicular or parallel to the frame plane, never diagonal-organic.",
+    "negative_lock": [
+      "NO M. Gustave, NO Suzy Bishop, NO Sam Shakusky, NO Steve Zissou, NO Max Fischer, NO Royal Tenenbaum, NO any named Anderson character",
+      "NO Grand Budapest Hotel, NO Isle of Dogs, NO New Penzance, NO Asteroid City, NO named Anderson location",
+      "NO handheld shake, NO shallow bokeh, NO high contrast, NO saturated primary, NO dramatic chiaroscuro",
+      "NO rim-light as decoration, NO porcelain or AI plastic-smooth skin, NO excessive smoothing",
+      "Turkish label only — hand-drawn Futura or Archer-style sans-serif, precisely composed and centered, NO English signage"
+    ],
+    "example_injection": "Photoreal cinematography in the Wes Anderson / Robert Yeoman lineage. Dead-center one-point perspective, 40mm at f/5.6 deep focus, 2.00:1. Subject: Mamilas character standing centered in the doorway of a pastel sage-mint hotel lobby, symmetric along the vertical axis. Costume: mustard-yellow jacket, salmon-pink shirt, cream trousers — three coordinated colors. Background: two identical brass wall-lamps flanking the doorway, a cream ceiling with parallel ornamental molding mirrored left and right. Even flat motivated light, low contrast, everything readable. Turkish label 'RESEPSİYON' hand-drawn in Futura-style sans-serif on a brass plaque, dead-centered above the doorway. Motion seed: the character mid-turn, preparing to walk perpendicular to camera. AVOID: M. Gustave, Grand Budapest signage, handheld, shallow bokeh, high contrast, saturated primary, dramatic shadow. Clean motion-ready start frame."
+  },
+  {
+    "id": "chivo_naturalist_handheld",
+    "one_liner": "Lubezki's natural-light-only doctrine: sun/moon/fire/window the only sources, magic-hour and blue-hour the default register, wide primes at 14-21mm in deep focus, handheld micro-drift alive with breath — no artificial fixture ever enters the frame.",
+    "render_law": "Photoreal cinematography in the Emmanuel 'Chivo' Lubezki AMC lineage (The Revenant, Birdman, Children of Men, Tree of Life, Gravity). The signature is a REFUSAL of artificial light. (1) SOURCE: natural ONLY — sun, moon, fire, candle, window skylight; no artificial fixture visible or used; fill comes from sky bounce (cool blue), never a rig. (2) REGISTER: magic hour and blue hour are the default — low warm sun with long raking golden shadows, or cool cerulean-shadow blue hour with protected warm highlights. (3) CAMERA: handheld with intentional micro-drift and organic breath — not shaky war-doc, not dead-stabilized, but human-alive; the camera weaves through space following action in long uninterrupted arcs; reframes are natural, discovered, not choreographed. (4) LENS: wide primes — 14mm, 16mm, 21mm, sometimes 35mm — wide enough to hold environment context around the subject, with slight uncorrected barrel distortion at the frame edge. (5) DEPTH: deep, f/5.6-f/8, environment sharp. (6) TEXTURE: organic silver-halide 35mm grain in all values, natural highlight bloom (the atmosphere diffuses, no added filter), skin and foliage holding sub-pixel texture. (7) GRADE: golden-earth dominant — umber skin in magic hour, natural in daylight, cool-blue in blue hour; no teal-orange. IMPERATIVE: absolute realism from natural light only — negative fill, motivated natural source, 35mm grain, slight chromatic aberration, raw skin micro-texture. Forbid artificial fixtures, handheld SHAKE (micro-drift is alive, not chaotic), teal-orange grade, fill flash, shallow-bokeh dominance, AI plastic skin.",
+    "line_grammar": "N/A — photoreal. Wide-angle organic barrel distortion at the frame edges. Silhouette reads via natural light separation; skin and foliage hold sub-pixel texture under the grain.",
+    "lens_grammar": "Wide primes: 14mm, 16mm, 21mm, 35mm. f/5.6-f/8 deep focus. 1.85:1 or 2.39:1. Natural highlight bloom from atmosphere, no added diffusion. 35mm silver-halide grain. Slight uncorrected barrel distortion at the frame edge.",
+    "light_law": "Natural sources only — sun key, cool sky-bounce fill, fire or candle as practical secondary. Magic-hour bias: warm low sun, long shadows. No artificial fixture, no fill flash. Shadow falls into natural darkness, never lifted.",
+    "palette_lock": {
+      "shadow": "#2A1F14",
+      "mid": "#C89968",
+      "accent": "#F4A947",
+      "highlight": "#FFE9B8",
+      "bias": "golden-earth warmth dominant in magic hour — umber shadow, warm-tan mid, low-sun amber accent, warm-cream highlight — shifting to cool cerulean shadow with protected warm highlights in blue hour. Skin follows the natural source temperature. NO teal-orange grade, NO neon, NO artificial saturation, NO cool fill flash."
+    },
+    "motion_cadence": "Handheld micro-drift with organic breath. Long-take aspiration — 30s to 2min continuous, the camera weaving through space following action. Reframes are natural and discovered, not choreographed. No cut where a move can carry the beat.",
+    "negative_lock": [
+      "NO Hugh Glass, NO Riggan Thomson, NO Theo Faron, NO any named Lubezki-shot character",
+      "NO Revenant frontier wilderness (unless the brief asks Turkey wilderness), NO Birdman theater, NO Children of Men London bus",
+      "NO artificial light source, NO fill flash, NO handheld SHAKE (micro-drift only)",
+      "NO neon, NO teal-orange grade, NO shallow-bokeh dominance",
+      "NO rim-light as decoration, NO porcelain or AI plastic-smooth skin, NO excessive smoothing",
+      "Turkish label only — naturalistic, weathered, integrated into the real environment, NO English signage"
+    ],
+    "example_injection": "Photoreal cinematography in the Emmanuel Lubezki AMC lineage. Handheld micro-drift, 21mm wide prime at f/5.6 deep focus, 2.39:1. Subject: Mamilas character crossing a golden-lit Cappadocia hillside during magic hour, the sun low behind camera-right casting a long warm umber-shadow rake across the tuff-stone terrain, a warm golden rim on hair and jacket edge, cool sky-bounce filling the shadow side. Wide-angle slight barrel distortion at the frame edge. Environment context in deep focus: distant fairy chimneys sharp, faint hot-air balloons on the horizon. Turkish label 'GÖREME' integrated as a weathered wooden trail-marker at frame right. Motion seed: the subject mid-step, arms lowering, the camera micro-drift settling on a breath. AVOID: Hugh Glass, Revenant frontier, artificial light, teal-orange grade, shake, neon, plastic skin. Clean motion-ready start frame."
+  },
+  {
+    "id": "noir_high_contrast",
+    "one_liner": "1940s studio noir: pure monochrome chiaroscuro pushed to graphic extremes, whole room-halves dropping to absolute black, one hard motivated source, and venetian-blind slats writing lines of light across a half-lit face through structural smoke.",
+    "render_law": "Strict black-and-white photography in the 1940s studio-noir lineage — chiaroscuro pushed to graphic extremes. (1) SHADOW: absolute — whole halves of rooms drop to pure black and stay there; detail is not owed to the audience. (2) HIGHLIGHT: clips gently on wet streets, chrome and eyes. (3) SOURCE: every frame is built around ONE hard motivated source — a desk lamp, a street light through fog, a projector beam. (4) LIGHT AS ENVIRONMENT: venetian-blind slats, stair rails and window frames cast their geometry onto faces and walls — the environment writes lines of light across the subject. (5) ATMOSPHERE: smoke and fog are structural, giving every beam a body. (6) FACE: half-light — a nose shadow splitting the face, one eye socket swallowed whole. (7) TEXTURE: grazing light reveals wet asphalt, wool overcoats, rain-beaded glass; fine silver-halide grain over everything; a deep optical vignette pulls the eye center-frame. IMPERATIVE: HARD-LIGHT MONOCHROME CHIAROSCURO. Forbid color of any kind, soft even lighting, lifted flat midtones, Sin City spot-color, digital cleanliness.",
+    "line_grammar": "No drawn lines. Composition is drawn by light itself — blind-slat stripes, doorway light-wedges, silhouette edges against fog glow. A subject may be a pure black cutout against a bright wall and still carry the scene.",
+    "lens_grammar": "35mm and 50mm spherical primes, deep-focus staging front-to-back. Low angles under visible ceilings, dutch tilt on a paranoia beat. Heavy optical vignette, gentle halation on clipped practicals. Rain on the lens allowed as a texture event.",
+    "light_law": "One hard key per scene with a visible or implied diegetic source; fill near zero, ratio never below 8:1. Shadow patterns — blinds, banisters, fences — are the second character in every frame. A rim light separates a black-on-black subject from the void.",
+    "palette_lock": {
+      "shadow": "#000000",
+      "mid": "#666666",
+      "accent": "#CCCCCC",
+      "highlight": "#FFFFFF",
+      "bias": "pure monochrome, no color tint anywhere. Value is the only language — absolute black shadow, a single mid-grey step, a bright silver accent, clipped white highlight. Contrast is graphic and hard, an 8:1 ratio minimum, with a grain floor always present. NO color, NO sepia wash, NO lifted midtone, NO soft grey fill."
+    },
+    "motion_cadence": "Slow and deliberate: creeping dolly moves, long brooding holds while smoke drifts through the beam. Characters move between pools of light, vanishing and re-emerging. A single fast action per scene lands harder against the surrounding stillness.",
+    "negative_lock": [
+      "NO color, NO tint, NO sepia wash",
+      "NO soft even lighting, NO lifted flat midtones, NO HDR balance",
+      "NO Sin City graphic-novel treatment — no spot color, no white-on-black inversion",
+      "NO digital cleanliness — the grain floor is always present",
+      "NO modern cars, NO smartphones, NO contemporary streetwear as default",
+      "Turkish label only — neon through fog, frosted-glass door lettering, or a newspaper headline, NO English signage"
+    ],
+    "example_injection": "Hard-light monochrome noir frame. Subject: Mamilas character as a trench-coated figure at an office desk, venetian-blind slats striping the wall and the left half of the face, the right eye socket in full black, cigarette smoke rising into the single hard beam. One clipped highlight lives in the wet eye. Background: a frosted-glass door deep in frame reading 'DEDEKTİF' in reversed letters; the rest of the room swallowed by pure black. Grain floor visible inside the beam, heavy vignette. Motion seed: the smoke column bends as the door handle turns, one frame before it opens. AVOID: any color, sepia, soft fill, Sin City spot color, English signage, digital cleanliness. Clean motion-ready start frame."
+  },
+  {
+    "id": "sci_fi_hard_surface",
+    "one_liner": "Industrial-design cinema PBR: physically-accurate machine surfaces telling a maintenance history — directional micro-scratches, worn paint at bolt heads, panel-gap AO shadow — under clinical cool-slate light with diegetic cyan LED accents.",
+    "render_law": "Photoreal hard-surface CGI in the industrial-design cinema lineage — machinery rendered with physically-accurate PBR discipline. (1) SURFACE HISTORY: every surface tells a maintenance record — brushed metal with directional micro-scratches, fingerprints ghosting on gloss panels, worn paint at bolt heads, panel gaps holding realistic depth shadow. (2) ENGINEERING TRUTH: forms follow believable engineering — chamfers, vents, torx screws, cable routing that could actually exist; greeble density is purposeful, never noise. (3) MATERIAL SEPARATION: materials read honestly under light — anodized aluminum, matte composite, smoked polycarbonate, silicone gasket — each with a correct roughness response. (4) ATMOSPHERE: clinical — cool slate-grey ambient with cyan LED accents and occasional amber warning diodes; thin haze gives depth to hangar-scale spaces. (5) SCALE CUES everywhere — handles, warning decals, wear polished into human touch points. (6) POST: subtle chromatic aberration, gentle filmic ACES rolloff, no bloom abuse. IMPERATIVE: PHYSICALLY-ACCURATE ENGINEERING SURFACES. Forbid organic softness, painterly strokes, stylized characters, fantasy glow-magic, showroom perfection with no wear history, lens-flare abuse.",
+    "line_grammar": "No drawn lines. Edges exist as micro-bevels catching specular light — every chamfer is a light-line written by geometry. Panel gaps read as fine dark seams with ambient-occlusion depth.",
+    "lens_grammar": "Clean cinema primes: 35mm for machine-scale wides, 85-100mm macro for detail passes with razor-thin focus planes. Precise programmed camera moves (slider, gimbal). Subtle lateral chromatic aberration at the frame edge; zero fisheye, zero handheld.",
+    "light_law": "Clinical multi-source studio logic: large soft overhead arrays for base exposure, hard small keys raking across surfaces to wake the micro-scratches, LED strips as diegetic accents reflecting in gloss. Cool 6500K base; cyan and amber accents diegetic only. Shadows clean-edged and physically consistent.",
+    "palette_lock": {
+      "shadow": "#1A1E24",
+      "mid": "#6E7A8A",
+      "accent": "#00D4FF",
+      "highlight": "#E6F0FF",
+      "bias": "cool slate-grey base under a 6500K studio ambient — dark blue-grey shadow, brushed-metal mid, an electric-cyan LED accent (with occasional amber warning diode), cool blue-white highlight. Every accent is a diegetic light source, never a graded tint. NO warm-cozy grade, NO fantasy glow, NO saturated non-diegetic color, NO bloom abuse."
+    },
+    "motion_cadence": "Smooth robotic tracking: constant-velocity slider moves, programmed focus pulls landing exactly on the detail beat. Mechanical animation moves with servo precision — ease profiles engineered, not organic. One slow macro drift per scene across a scratched surface.",
+    "negative_lock": [
+      "NO Star Wars iconography, NO Alien / xenomorph, NO Iron Man armor identity",
+      "NO organic softness, NO painterly strokes, NO stylized character",
+      "NO fantasy glow, NO magic energy effect, NO lens-flare abuse",
+      "NO grunge-free showroom perfection — wear history must exist",
+      "NO handheld camera shake",
+      "Turkish label only — engraved or laser-etched machine labels, warning-decal typography, NO English decals"
+    ],
+    "example_injection": "Photoreal hard-surface frame. Subject: a robotic gripper joint in 100mm macro, a brushed-aluminum knuckle with directional micro-scratches catching a hard raking key from the left, torx screws with worn paint, a silicone gasket seam reading as a fine AO shadow. A cyan LED status strip reflects along the gloss housing; one amber diode blinks near the pivot. Background: hangar depth dissolved in thin cool haze under soft overhead arrays. Laser-etched label 'DİKKAT — SERVO' on the housing. ACES rolloff, subtle edge chromatic aberration. Motion seed: the gripper fingers one servo-tick from closing on a hex bolt. AVOID: xenomorph, Star Wars panels, painterly texture, fantasy glow, English decals, showroom perfection. Clean motion-ready start frame."
+  },
+  {
+    "id": "cyberpunk_neon_noir",
+    "one_liner": "Late-80s theatrical cyber-noir: painted-cel characters over obsessively detailed city plates, crushing blue-blacks cut only by neon signage, wet asphalt answering every source as a second screen, and face-splitting two-tone lighting (cyan fill, magenta rim).",
+    "render_law": "Gritty cyberpunk anime-hybrid rendering in the lineage of late-80s theatrical cyber-noir — painted-cel characters over dense, obsessively detailed city plates. (1) BLACKS: deep crushing blue-blacks swallow whole building faces, cut only by neon signage in hot magenta, electric cyan and sodium amber. (2) WET ASPHALT: every street surface is rain-slicked and answers each neon source with a long broken specular streak — the wet ground is this world's second screen. (3) HAZE: volumetric haze hangs at street level so light beams read as solid cones; steam rises from grates and backlights into silhouettes. (4) SKIN: two-tone color splitting — cool cyan fill from ambient signage, hot magenta rim from the nearest sign. (5) TECHNOLOGY: retrofitted and grimy — thick cable bundles, CRT flicker, stickered vending machines — never clean chrome futurism. (6) DEPTH SEPARATION: backgrounds hold painted architectural detail while characters stay simpler cel so they pop forward. (7) POST: mild anamorphic halation around every neon tube, constant fine grain. IMPERATIVE: CYBER-NOIR PAINTED CEL OVER DETAILED CITY PLATE. Forbid bright daylight, clean utopian tech, pastel palettes, photoreal live-action rendering, glossy 3D CGI characters.",
+    "line_grammar": "Characters carry a thin dark-toned cel line that dissolves on the shadow side — silhouettes read against neon glow, not against outline. Interior detail lines minimal; cloth folds implied by a two-step cel shadow. City plates are line-dense — painted architectural line-work, signage strokes, cable webs. Neon tubes drawn as a hot near-white core with a colored bloom halo, never a flat colored line.",
+    "lens_grammar": "Anamorphic 24mm wide for street establishers with horizontal blue flare on hot sources; 50mm for character work. f/1.8 shallow at close-up so background neon melts into oval anamorphic bokeh discs. Constant fine grain, subtle gate weave. Vertical city shots tilt up into haze that eats the tower tops.",
+    "light_law": "Low-key throughout — base exposure lives in the shadows. The key light is always a diegetic neon or sodium source with a visible origin in or just outside frame. Cyan-blue ambient wash from sky-glow; a magenta or amber rim on the subject's silhouette edge. Default portrait: face half-lit, one eye in light, one in shadow. White light forbidden except a single interrogation-style practical when the beat demands it.",
+    "palette_lock": {
+      "shadow": "#0A0B1A",
+      "mid": "#1D3A5D",
+      "accent": "#FF007F",
+      "highlight": "#00FFFF",
+      "bias": "deep blue-black shadow mass carrying most of the frame, a desaturated steel-blue mid, hot magenta neon accent and electric-cyan highlight as the only saturated events — all diegetic sign-light striking wet surfaces. Neon-bright accents are allowed because they are practical sources, not a grade. NO bright daylight, NO clean chrome utopia, NO pastel, NO warm-cozy interior as default."
+    },
+    "motion_cadence": "Anime action cadence: 3-4 held frames on poses, then a 2-frame smear burst on impacts. Rain falls constantly at real speed as a depth layer. Neon flickers at irregular intervals. The camera drifts slow and low through streets; one whip-pan maximum per scene. Slow-motion holds reserved for a rain-hit silhouette.",
+    "negative_lock": [
+      "NO Akira identities — NO Kaneda, NO Tetsuo, NO red capsule bike; NO Ghost in the Shell identities — NO Motoko, NO Section 9; NO Blade Runner spinner or Deckard iconography",
+      "NO Neo-Tokyo, NO Night City, NO Zaun signage",
+      "NO bright daylight, NO clean utopian chrome, NO pastel palette",
+      "NO photoreal live-action rendering, NO glossy 3D CGI character",
+      "NO earth green, NO warm cozy interior as the default state",
+      "NO cosplay, NO realistic skin pores",
+      "Turkish label only — neon-sign lettering with a hot core and colored bloom halo, NO English signage"
+    ],
+    "example_injection": "Cyber-noir painted-cel frame over a dense city plate. Subject: Mamilas character as the guide, mid-shot at a rain-slicked crossing, cyan ambient fill on the camera-left cheek, a hot magenta rim tracing the hood silhouette from a noodle-bar sign off right. Wet asphalt mirrors the sign as a broken vertical streak. Background: layered Turkish signage — 'AÇIK' glowing cyan with a hot white core — cable webs against a haze-eaten tower, a steam column backlit at mid-ground. Anamorphic blue flare kissing the frame edge. Motion seed: a droplet chain about to fall from the hood edge, the sign flicker one frame from cutting out. AVOID: Kaneda bike, Night City, daylight, pastels, English signage, glossy CGI skin. Clean motion-ready start frame."
+  },
+  {
+    "id": "synthwave_retro_80s",
+    "one_liner": "VHS-era album-cover futurism in motion: an electric-cyan wireframe grid rushing to a banded gradient sun, chrome as the noble mirror-material, neon edges as the only modeling light, and CRT scanlines with tracking jitter living in the signal.",
+    "render_law": "80s retro-futurist synthwave rendering — the world of VHS-era album covers running in real time. (1) GROUND: a glowing electric-cyan wireframe grid perspective-rushing toward a horizon. (2) SUN: an enormous synthetic sunset holds the horizon — a banded gradient sun, hot pink into deep violet-purple, with horizontal occlusion stripes cut across it. (3) CHROME: the noble material — liquid mirror surfaces reflecting the sunset in warped bands with hairline blue scanline reflections. (4) SOLIDS: silhouette-black or near-black purple — light does not model form here, it OUTLINES it; everything important wears a neon edge; palm trees, mountains and skylines exist as backlit cutouts. (5) SIGNAL TEXTURE: CRT scanlines, slight barrel curvature, VHS tracking jitter at the frame bottom, chroma bleed on hot edges, tape noise living in the blacks. (6) STARS: oversized 4-point glints; bloom is generous and unapologetic. IMPERATIVE: VHS-ERA NEON WIREFRAME RETRO-FUTURISM. Forbid natural daylight environments, muted realism, modern minimal design, photoreal texture, PBR realism.",
+    "line_grammar": "Glowing vector lines with a hot near-white core and a colored bloom halo — grid lines, contour outlines, laser horizons. Line weight equals energy. Non-glowing detail lines do not exist: if it matters, it glows.",
+    "lens_grammar": "Wide 24mm with slight barrel distortion as default; fisheye allowed for a hero moment. Horizontal anamorphic-style flares off chrome hits. Bloom heavy, halation on every neon core, VHS chroma fringe at high-contrast edges.",
+    "light_law": "Anti-physical by law: the sunset gradient is the global light, neon edges are the modeling light, and nothing casts a true shadow — objects anchor by their reflection in the grid floor instead. A pink or cyan rim glow is mandatory on every subject silhouette.",
+    "palette_lock": {
+      "shadow": "#1A0524",
+      "mid": "#58125C",
+      "accent": "#FF00AA",
+      "highlight": "#00FFFF",
+      "bias": "deep violet-black shadow, a dark magenta-purple mid, hot-pink neon accent and electric-cyan highlight — the synthwave triad. Color is pure emissive neon and gradient sunlight, anti-physical, glowing rather than lit. NO natural daylight, NO muted realism, NO pastel-vaporwave drift, NO earth tone."
+    },
+    "motion_cadence": "Constant forward drive over the grid toward the sun — the world's default heartbeat. Linear pans and steady zooms; no organic handheld. Chrome reflections slide in counter-motion. One VHS tracking-error hit allowed per scene as a transition.",
+    "negative_lock": [
+      "NO Tron identity — NO lightcycle, NO Tron suit; NO DeLorean; NO Kung Fury cast",
+      "NO natural daylight, NO realistic environment, NO muted color",
+      "NO photoreal texture, NO PBR realism",
+      "NO flat-design minimalism, NO pastel-vaporwave drift — this is synthwave: hot pink, cyan, deep purple",
+      "NO organic handheld camera",
+      "Turkish label only — chrome extruded lettering with pink neon underglow, 80s logo style, NO English logo"
+    ],
+    "example_injection": "VHS-era synthwave frame. Subject: Mamilas character as a chrome-visored rider silhouette on a black bike, dead-center, a hot-pink rim glow tracing the full silhouette, sunset banding reflected warped across the visor. Ground: a cyan wireframe grid rushing to the horizon, one grid cell pulsing brighter than the rest. Background: an enormous banded gradient sun with occlusion stripes, backlit palm cutouts left and right, oversized 4-point star glints. Chrome extruded letters 'HIZ' float above the horizon with pink neon underglow. CRT scanlines, tracking jitter at the frame bottom. Motion seed: the front wheel one frame from crossing the pulsing grid cell. AVOID: Tron lightcycle, DeLorean, daylight, muted realism, English logo. Clean motion-ready start frame."
+  },
+  {
+    "id": "low_poly_ps1",
+    "one_liner": "Raw 32-bit hardware output: hundreds-of-triangles characters with faces painted on flat texture planes, affine texture-swim warping the floor on every pan, gouraud vertex light, 240p jagged silhouettes, and geometry popping through vertex fog.",
+    "render_law": "Authentic 32-bit-era real-time 3D in the PS1 hardware lineage, rendered as if captured from original hardware. (1) POLY BUDGET: brutally low — characters live in the hundreds of triangles, faces painted onto flat texture planes rather than modeled. (2) TEXTURES: tiny (32-64px), nearest-neighbor sampled so every texel is a proud visible square; affine texture mapping warps and swims on floors and walls whenever the camera moves. (3) NO Z-BUFFER POLITENESS: polygons occasionally seam; distant geometry pops in through vertex fog at a hard draw distance. (4) LIGHT: vertex-lit only — light lives at triangle corners and smears across faces as raw gouraud gradients; no cast shadows, characters anchor with a single dark blob decal. (5) COLOR: crushed depth with visible ordered dithering inside every gradient. (6) RASTER: internal 320x240 stretched to frame, jagged un-antialiased polygon edges stair-stepping every silhouette. (7) CHARM: static painted-backdrop-cube sky, chunky low-res texture-font labels. IMPERATIVE: RAW PS1 HARDWARE OUTPUT. Forbid high-resolution textures, smooth per-pixel lighting, modern anti-aliasing, normal maps, HD-remaster polish, softened modern 'PS1-style indie' cleanliness.",
+    "line_grammar": "No outlines. Silhouettes are jagged triangle chains stair-stepped by the 240p raster. Character features live entirely in the texture — painted eyes and mouth on flat face polygons, expression changes arriving as texture swaps.",
+    "lens_grammar": "Fixed game-camera language: low-FOV tank-camera angles, sudden camera cuts at invisible trigger volumes, or a rigid follow-cam with zero damping. No depth of field — distance handled by vertex fog swallowing geometry at a hard draw distance.",
+    "light_law": "Vertex-lit only: one directional light plus flat ambient, computed at triangle corners and gouraud-smeared across faces. Point lights bloom as radial vertex-color gradients pooled on floors. Full black is impossible; darkness is dithered dark-grey fog.",
+    "palette_lock": {
+      "shadow": "#101010",
+      "mid": "#505050",
+      "accent": "#00FF00",
+      "highlight": "#E0E0E0",
+      "bias": "a limited crushed palette with visible ordered dithering standing in for gradients — near-black shadow (never true black, darkness is dithered fog), flat mid-grey, a hardware-primary green accent, dim highlight. Color banding and dither ARE the aesthetic. NO high-bit smooth gradient, NO HD saturation, NO clean modern grade."
+    },
+    "motion_cadence": "Un-interpolated keyframe animation stepping at low sample rates — joints snap between poses. Vertices jitter with fixed-point precision wobble whenever the camera moves. Walk cycles loop visibly. The floor texture swims with affine warp during every pan.",
+    "negative_lock": [
+      "NO Lara Croft, NO Crash Bandicoot, NO Cloud Strife, NO Silent Hill or Resident Evil identity",
+      "NO high-res textures, NO texture filtering (no bilinear smoothing)",
+      "NO smooth shading beyond gouraud, NO normal maps, NO cast shadows",
+      "NO anti-aliasing, NO HD-remaster cleanliness, NO softened modern 'PS1-style indie' look",
+      "NO motion blur, NO depth of field",
+      "Turkish label only — chunky low-res texture-font with slightly misaligned texels, NO English UI font"
+    ],
+    "example_injection": "Raw PS1 hardware frame at 320x240. Subject: Mamilas character as a low-poly kid explorer (under 500 triangles) standing in a stone corridor, the face painted on a flat texture plane with proud square texels, a single dark blob decal anchoring the boots. Gouraud light from a torch smears orange across the wall triangles; the floor texture visibly swims with affine warp toward the camera. Distant corridor geometry dissolves into grey vertex fog laced with ordered dithering. A chunky texture-font label 'BÖLÜM 1' sits low-left, texels slightly misaligned. The silhouette stair-steps jaggedly against the fog. Motion seed: the character's arm mid-snap between two keyframes, reaching for a lever. AVOID: Lara Croft, texture filtering, cast shadows, HD polish, English UI font. Clean motion-ready start frame."
+  }
+]

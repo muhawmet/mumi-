@@ -1,0 +1,261 @@
+{
+ "id": 1,
+ "topic": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır. — Sahne 1",
+ "architecture": {
+  "source": {
+   "status": "UNSOURCED_TOPIC_INPUT",
+   "sourceId": null,
+   "exactText": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+   "notice": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+  },
+  "beat": "orient the audience to this exact source beat",
+  "dominantSubject": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+  "event": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+  "imageVantage": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+  "semanticFingerprint": "scene-fc5512db"
+ },
+ "finalBrief": {
+  "path": "ANIMATION_EDU",
+  "source": {
+   "status": "UNSOURCED_TOPIC_INPUT",
+   "sourceId": null,
+   "exactText": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+   "notice": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+  },
+  "world": {
+   "id": "pixar_3d_edu",
+   "renderRecipe": "Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin."
+  },
+  "recipe": {
+   "id": "world-native",
+   "source": "NO_TACTILE_OVERRIDE"
+  },
+  "referenceDNAs": [],
+  "paletteAccent": {
+   "value": "#FFF6DC",
+   "source": "WORLD_PALETTE_LAST_ACCENT"
+  }
+ },
+ "imagePrompt": "[1] IMAGE (motion start frame)\nSTYLE SYSTEM (the world rendering law — this is HOW to render, not WHAT; apply every clause below to the single concrete frame briefed next): Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin. Line grammar: No outlines — silhouette reads entirely through lighting rim and value separation. Shadow edges are soft, never hard-step. Ambient occlusion painted in, never raytraced-hard. The shape carries via appeal geometry, not line. Lens grammar: 35mm to 50mm equivalent focal length. f/4 on mid-shots, f/2.8 on character close-up, f/5.6 on environment establisher. Vision3 250D color science: neutral-warm film curve with fine grain (16mm-equivalent grain floor, mostly in shadow). Gentle racks on focal plane shifts. No lens flare unless motivated by a visible practical light source in frame. No anamorphic streak. Light law: Single motivated key from a real-world source visible or strongly implied in frame (window sun, desk lamp, overhead classroom fluorescent, screen glow). Complementary bounce fill at 25-35% key intensity, in the key's opposing hue temperature — warm key produces cool-violet bounce, cool daylight key produces warm-honey bounce. Rim accent in the palette's saturated accent tone. Painted soft AO in corner pockets, floor-join, and fabric folds — ambient shadow reads warm-dark, never cold-black. Scene brief (Claude yazar): \"Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude, not image content, do not print into the frame: compose ONE concrete single-frame scene faithful to this world's grammar above; author the dominant element and its half-second motion seed from the source.] Staging: one dominant subject, clean readable composition. Camera grammar (this world's framing law — it governs the vantage; the move below happens inside it): Frame at the height of whoever the story belongs to — a child's eye-line, a creature's, an object's — never a neutral adult observer looking down at it. Stage in real depth: a soft foreground element anchors the near plane, the dominant element reads sharp in the mid, the world falls away behind. Moves are gentle and motivated: a slow push at a beat of understanding, a lateral dolly that lets an existing edge pass as parallax, a rack that hands the eye from one plane to the next. Never a whip pan, never a handheld shake, never a lens flare the frame does not physically justify. Camera/vantage: slow arc around the dominant object, staying on its established geometry. Composition pattern: frame within frame — an aperture already in the scene (window, shelf gap, arch, doorway) contains the dominant element, its border one value darker than what it holds. Light: one motivated key with a named source. Light variant: trade the key one stop softer and let the accent colour carry the subject edge. Palette physics: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills. Texture rule: no texture clause beyond the world material itself. Text/logo: clean plate — this scene carries no on-screen text. No floating text, no caption, no subtitle, no watermark, no added signage; the image alone carries the meaning and the narration speaks it. Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it. Character lock: Aras Keep exactly as described — observer scale, no invented identity. Path contract (outranks the world grammar above when they disagree): the frame MUST deliver tactile world material in THIS world's own medium (the Render Lock decides 2D or 3D — the path never overrides it), dominant lesson-object, motion hook, character/lip safety. EVENT BUDGET: this beat names 2 separate events, and a single start frame can only turn on ONE. Choose the event the beat is ABOUT and stage it at its half-second: the ones before it must already be DONE and visible in the frame's state (the scratch already cut, the shutter already up), the ones after it must be LOADED and about to happen (the weight leaning, the crack begun). Do not compress them into one action, do not split the frame into panels, and do not drop any: every named event is present, but only one is HAPPENING. Cast authority: the people in this frame are EXACTLY the cast named above and nobody else. Where the world law above names a person as an example of its register (a child mid-recital, a veteran's salute, a worker at a bench), that is an illustration of the KIND of truth this world wants — never a casting instruction, and never a licence to add someone the cast does not name. Negative: generic real corporate defaults, stock ad language, flat slide; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO flat graphic fill, NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); IP copy; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); warped or drifting text; character retyping. Clean motion-ready start frame.",
+ "motionPrompt": "[1] MOTION (i2v · plays the approved start frame)\nCamera: slow arc around the dominant object, staying on its established geometry. Motion brief (Claude yazar): source beat \"Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude against the approved start frame, not clip content, do not print into the clip: compose ONE single-action, frame-aware motion faithful to the source; only the dominant element already in the frame moves — no new object or scenery enters.] Rhythm: attack lands inside the first second, the event resolves by ~70% of the clip, the rest is held; everything settles naturally into a stable 1-1.5s final hold. Motion cadence (this world's own motion signature — the authority for HOW this world moves; obey its cadence discipline exactly, but where it names a hold duration the engine law's final-hold timing above supersedes): Squash-stretch physics on every character and prop action: anticipation wind-up, peak action with directional smear, follow-through overshoot, settle with secondary motion. Emotional hold: 12-18 frames on a significant look before the cut. Eye darts before the action — character looks where the action will happen 3-4 frames ahead. Prop pickups have moment-of-contact squash. Walk cycles show weight: pelvis dips on each step, shoulder counter-rotates. 24fps cadence. Engine grammar (Kling 3.0): Kling 3.0 start-frame fidelity: the approved frame is truth — describe only what changes, never re-describe what already exists; the motion reads as the frame's next half-second. Everything not named stays exactly as the start frame shows: world, material, light, faces, text, logo, geometry — never re-described, never re-rendered.\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker, re-render of the start frame.\n[DIRECTOR TASK — frame-specific negatives, do not print into the clip: before finalizing, specialize the baseline negative above to THIS approved frame — name its actual fragile elements (the exact text plate, thin rigging/lines, a reflection edge, the logo) in place of the generic list.]",
+ "voiceOver": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+ "sunoBrief": "Narration-safe instrumental education motif, 92-100 BPM light swing; felted celesta or marimba lead, pizzicato strings, one soft woodwind, gentle shaker (no kick clipping the VO). Space: small warm room. Arc: one curious intro phrase, build at the concept reveal, single small peak on the transformation, warm resolve on a held note. Always: no vocals unless requested, duck under dialogue, act as a Foley/Sound Designer, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.",
+ "durationSec": 4.9,
+ "duration": {
+  "sec": 4.9,
+  "usable": 12,
+  "ok": true,
+  "shots": 1,
+  "perShot": 4.9,
+  "level": "OK",
+  "message": "~4.9s · kling_3 temiz penceresinde (12s)"
+ },
+ "intensity": 20,
+ "phaseName": "Intro",
+ "onScreenText": null,
+ "handoff": {
+  "IMAGE": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-fae06995",
+   "projectId": "scene-37ef6b3a",
+   "sourceHash": "scene-7116bee7",
+   "role": "IMAGE",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "event": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "Aras",
+     "worldLock": "pixar_3d_edu",
+     "semanticFingerprint": "scene-fc5512db"
+    }
+   },
+   "world": {
+    "id": "pixar_3d_edu",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Squash-stretch physics on every character and prop action: anticipation wind-up, peak action with directional smear, follow-through overshoot, settle with secondary motion. Emotional hold: 12-18 frames on a significant look before the cut. Eye darts before the action — character looks where the action will happen 3-4 frames ahead. Prop pickups have moment-of-contact squash. Walk cycles show weight: pelvis dips on each step, shoulder counter-rotates. 24fps cadence."
+   },
+   "refDNAs": [],
+   "locks": {
+    "character": "Aras",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "image",
+    "provider": "nano",
+    "label": "nano_banana_2"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "[1] IMAGE (motion start frame)\nSTYLE SYSTEM (the world rendering law — this is HOW to render, not WHAT; apply every clause below to the single concrete frame briefed next): Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin. Line grammar: No outlines — silhouette reads entirely through lighting rim and value separation. Shadow edges are soft, never hard-step. Ambient occlusion painted in, never raytraced-hard. The shape carries via appeal geometry, not line. Lens grammar: 35mm to 50mm equivalent focal length. f/4 on mid-shots, f/2.8 on character close-up, f/5.6 on environment establisher. Vision3 250D color science: neutral-warm film curve with fine grain (16mm-equivalent grain floor, mostly in shadow). Gentle racks on focal plane shifts. No lens flare unless motivated by a visible practical light source in frame. No anamorphic streak. Light law: Single motivated key from a real-world source visible or strongly implied in frame (window sun, desk lamp, overhead classroom fluorescent, screen glow). Complementary bounce fill at 25-35% key intensity, in the key's opposing hue temperature — warm key produces cool-violet bounce, cool daylight key produces warm-honey bounce. Rim accent in the palette's saturated accent tone. Painted soft AO in corner pockets, floor-join, and fabric folds — ambient shadow reads warm-dark, never cold-black. Scene brief (Claude yazar): \"Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude, not image content, do not print into the frame: compose ONE concrete single-frame scene faithful to this world's grammar above; author the dominant element and its half-second motion seed from the source.] Staging: one dominant subject, clean readable composition. Camera grammar (this world's framing law — it governs the vantage; the move below happens inside it): Frame at the height of whoever the story belongs to — a child's eye-line, a creature's, an object's — never a neutral adult observer looking down at it. Stage in real depth: a soft foreground element anchors the near plane, the dominant element reads sharp in the mid, the world falls away behind. Moves are gentle and motivated: a slow push at a beat of understanding, a lateral dolly that lets an existing edge pass as parallax, a rack that hands the eye from one plane to the next. Never a whip pan, never a handheld shake, never a lens flare the frame does not physically justify. Camera/vantage: slow arc around the dominant object, staying on its established geometry. Composition pattern: frame within frame — an aperture already in the scene (window, shelf gap, arch, doorway) contains the dominant element, its border one value darker than what it holds. Light: one motivated key with a named source. Light variant: trade the key one stop softer and let the accent colour carry the subject edge. Palette physics: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills. Texture rule: no texture clause beyond the world material itself. Text/logo: clean plate — this scene carries no on-screen text. No floating text, no caption, no subtitle, no watermark, no added signage; the image alone carries the meaning and the narration speaks it. Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it. Character lock: Aras Keep exactly as described — observer scale, no invented identity. Path contract (outranks the world grammar above when they disagree): the frame MUST deliver tactile world material in THIS world's own medium (the Render Lock decides 2D or 3D — the path never overrides it), dominant lesson-object, motion hook, character/lip safety. EVENT BUDGET: this beat names 2 separate events, and a single start frame can only turn on ONE. Choose the event the beat is ABOUT and stage it at its half-second: the ones before it must already be DONE and visible in the frame's state (the scratch already cut, the shutter already up), the ones after it must be LOADED and about to happen (the weight leaning, the crack begun). Do not compress them into one action, do not split the frame into panels, and do not drop any: every named event is present, but only one is HAPPENING. Cast authority: the people in this frame are EXACTLY the cast named above and nobody else. Where the world law above names a person as an example of its register (a child mid-recital, a veteran's salute, a worker at a bench), that is an illustration of the KIND of truth this world wants — never a casting instruction, and never a licence to add someone the cast does not name. Negative: generic real corporate defaults, stock ad language, flat slide; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO flat graphic fill, NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); IP copy; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); warped or drifting text; character retyping. Clean motion-ready start frame.",
+    "canonical": false
+   }
+  },
+  "MOTION": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-7d2a4318",
+   "projectId": "scene-37ef6b3a",
+   "sourceHash": "scene-7116bee7",
+   "role": "MOTION",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "event": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "Aras",
+     "worldLock": "pixar_3d_edu",
+     "semanticFingerprint": "scene-fc5512db"
+    }
+   },
+   "world": {
+    "id": "pixar_3d_edu",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Squash-stretch physics on every character and prop action: anticipation wind-up, peak action with directional smear, follow-through overshoot, settle with secondary motion. Emotional hold: 12-18 frames on a significant look before the cut. Eye darts before the action — character looks where the action will happen 3-4 frames ahead. Prop pickups have moment-of-contact squash. Walk cycles show weight: pelvis dips on each step, shoulder counter-rotates. 24fps cadence."
+   },
+   "refDNAs": [],
+   "locks": {
+    "character": "Aras",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "video",
+    "provider": "kling",
+    "label": "kling_3"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    },
+    {
+     "code": "APPROVED_IMAGE_REQUIRED",
+     "message": "Motion stays locked until an approved image exists."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "[1] MOTION (i2v · plays the approved start frame)\nCamera: slow arc around the dominant object, staying on its established geometry. Motion brief (Claude yazar): source beat \"Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.\" [SOURCE — do not render as on-screen text; narration only]. [DIRECTOR TASK — authored by Claude against the approved start frame, not clip content, do not print into the clip: compose ONE single-action, frame-aware motion faithful to the source; only the dominant element already in the frame moves — no new object or scenery enters.] Rhythm: attack lands inside the first second, the event resolves by ~70% of the clip, the rest is held; everything settles naturally into a stable 1-1.5s final hold. Motion cadence (this world's own motion signature — the authority for HOW this world moves; obey its cadence discipline exactly, but where it names a hold duration the engine law's final-hold timing above supersedes): Squash-stretch physics on every character and prop action: anticipation wind-up, peak action with directional smear, follow-through overshoot, settle with secondary motion. Emotional hold: 12-18 frames on a significant look before the cut. Eye darts before the action — character looks where the action will happen 3-4 frames ahead. Prop pickups have moment-of-contact squash. Walk cycles show weight: pelvis dips on each step, shoulder counter-rotates. 24fps cadence. Engine grammar (Kling 3.0): Kling 3.0 start-frame fidelity: the approved frame is truth — describe only what changes, never re-describe what already exists; the motion reads as the frame's next half-second. Everything not named stays exactly as the start frame shows: world, material, light, faces, text, logo, geometry — never re-described, never re-rendered.\nNEGATIVE: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change, mouth movement, logo/text/geometry change, multiple actions, flicker, re-render of the start frame.\n[DIRECTOR TASK — frame-specific negatives, do not print into the clip: before finalizing, specialize the baseline negative above to THIS approved frame — name its actual fragile elements (the exact text plate, thin rigging/lines, a reflection edge, the logo) in place of the generic list.]",
+    "canonical": false
+   }
+  },
+  "SUNO": {
+   "packetVersion": "1.0.0",
+   "packetId": "scene-28342378",
+   "projectId": "scene-37ef6b3a",
+   "sourceHash": "scene-7116bee7",
+   "role": "SUNO",
+   "scene": {
+    "id": 1,
+    "sourceId": null,
+    "exactSourceBeat": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "sourceStatus": "UNSOURCED_TOPIC_INPUT",
+    "intent": "orient the audience to this exact source beat",
+    "dominantSubject": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "event": "Bir çocuk evde kardeşine yardım eder; sorumluluk paylaşılır.",
+    "continuity": {
+     "previousSceneId": null,
+     "nextSceneId": 2,
+     "characterLock": "Aras",
+     "worldLock": "pixar_3d_edu",
+     "semanticFingerprint": "scene-fc5512db"
+    }
+   },
+   "world": {
+    "id": "pixar_3d_edu",
+    "recipe": {
+     "id": "world-native",
+     "source": "NO_TACTILE_OVERRIDE"
+    },
+    "renderRecipe": "Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin.",
+    "camera": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+    "composition": null,
+    "motionGrammar": "Squash-stretch physics on every character and prop action: anticipation wind-up, peak action with directional smear, follow-through overshoot, settle with secondary motion. Emotional hold: 12-18 frames on a significant look before the cut. Eye darts before the action — character looks where the action will happen 3-4 frames ahead. Prop pickups have moment-of-contact squash. Walk cycles show weight: pelvis dips on each step, shoulder counter-rotates. 24fps cadence."
+   },
+   "refDNAs": [],
+   "locks": {
+    "character": "Aras",
+    "product": null,
+    "visibleText": "NO_UNSOURCED_VISIBLE_TEXT"
+   },
+   "targetModel": {
+    "kind": "music",
+    "provider": "SUNO",
+    "label": "Custom Mode"
+   },
+   "negatives": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+   ],
+   "warnings": [
+    {
+     "code": "UNSOURCED_INPUT",
+     "message": "UNSOURCED: only a topic was supplied; no canonical source beat is claimed."
+    }
+   ],
+   "draft": {
+    "previewPrompt": "Narration-safe instrumental education motif, 92-100 BPM light swing; felted celesta or marimba lead, pizzicato strings, one soft woodwind, gentle shaker (no kick clipping the VO). Space: small warm room. Arc: one curious intro phrase, build at the concept reveal, single small peak on the transformation, warm resolve on a held note. Always: no vocals unless requested, duck under dialogue, act as a Foley/Sound Designer, exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift.",
+    "canonical": false
+   }
+  }
+ },
+ "isNight": false
+}

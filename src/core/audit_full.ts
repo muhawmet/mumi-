@@ -7,7 +7,7 @@
  */
 import { DATA } from './pure';
 import {
-  buildAgentBrief, dnaDirectives, registerOf, primeConcept,
+  buildAgentBrief, dnaDirectives, registerOf,
   primeCamera, estimateSec, primeSuno, renderLock, paletteLight, recommendReason,
 } from './brain';
 import type { SurgeryRef, SurgeryWorld, SurgeryPalette } from './pure';
@@ -440,23 +440,16 @@ for (const fx of FIXTURES) {
                      rLock.startsWith('Premium stylized animated feature frame, original IP-safe');
   if (rlFallback && !world.render) issues.push('Render lock is generic fallback — world.render is missing');
 
-  // Concept scenes
-  const emitted: any[] = [];
-  const sceneResults: SceneResult[] = [];
-  fx.sources.forEach((src, i) => {
-    const prev = i > 0 ? { src: fx.sources[i-1], concept: emitted[i-1] } : undefined;
-    const concept = primeConcept(src, register, fx.worldId, i === 0 ? 'Intro' : i === fx.sources.length - 1 ? 'Resolution' : 'Build-up', prev, i, emitted, fx.pathId);
-    emitted.push(concept);
+  // Concept scenes — concept-matching retired (FAZ2): site artık sahne öznesi
+  // ÜRETMEZ; her sahne için verbatim kaynak beat taşınır ve WHAT'ı Claude yazar.
+  // "matchRate" kavramı anlamsızlaştı — banka söküldü.
+  const sceneResults: SceneResult[] = fx.sources.map((src, i) => {
     const camera = primeCamera(i + 1, src, i, register, i > 0 ? fx.sources[i-1] : undefined, i > 0 ? i : undefined);
-    sceneResults.push({ id: i + 1, source: src, matched: concept.matched, subject: concept.subject, event: concept.event, camera });
+    // subject/event = verbatim kaynak (banka öznesi değil); matched anlamını yitirdi.
+    return { id: i + 1, source: src, matched: true, subject: src, event: src, camera };
   });
 
-  const matchedCount = sceneResults.filter(s => s.matched).length;
-  const matchRate = `${matchedCount}/${sceneResults.length}`;
-  if (matchedCount < sceneResults.length) {
-    const fallbackScenes = sceneResults.filter(s => !s.matched).map(s => `[${s.id}]`).join(',');
-    issues.push(`${sceneResults.length - matchedCount} scene(s) fell back to generic concept: ${fallbackScenes}`);
-  }
+  const matchRate = 'N/A (banka söküldü — site özne üretmez, kaynak verbatim taşınır)';
 
   // Cross-register check
   const isCrossReg = register === 'REAL' && refs.some(r => /anime|3d animation|stylized/i.test(r.cat));
@@ -482,7 +475,7 @@ for (const fx of FIXTURES) {
   }, briefScenes);
 
   const hasModelEra = brief.includes('== MODEL ERA');
-  const hasI2vLaw = brief.includes('I2V ANCHOR LAW') || brief.includes('STATIC DESIGN LAW');
+  const hasI2vLaw = brief.includes('I2V ANCHOR LAW');
   const hasAuthorityChain = brief.includes('== AUTHORITY ==');
   if (!hasModelEra) issues.push('MISSING: MODEL ERA section');
   if (!hasI2vLaw) issues.push('MISSING: I2V ANCHOR LAW section');
@@ -500,7 +493,7 @@ for (const fx of FIXTURES) {
     sunoBrief: suno,
     sunoIsGeneric: sunoGeneric,
     scenes: sceneResults,
-    matchedCount, totalScenes: sceneResults.length,
+    matchedCount: sceneResults.length, totalScenes: sceneResults.length,
     matchRate,
     recommendReasons,
     issues,

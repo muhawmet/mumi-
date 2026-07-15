@@ -1,0 +1,65 @@
+== RENDER LOCK (world rendering law — verbatim) ==
+
+Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin. Line grammar: No outlines — silhouette reads entirely through lighting rim and value separation. Shadow edges are soft, never hard-step. Ambient occlusion painted in, never raytraced-hard. The shape carries via appeal geometry, not line. Lens grammar: 35mm to 50mm equivalent focal length. f/4 on mid-shots, f/2.8 on character close-up, f/5.6 on environment establisher. Vision3 250D color science: neutral-warm film curve with fine grain (16mm-equivalent grain floor, mostly in shadow). Gentle racks on focal plane shifts. No lens flare unless motivated by a visible practical light source in frame. No anamorphic streak. Light law: Single motivated key from a real-world source visible or strongly implied in frame (window sun, desk lamp, overhead classroom fluorescent, screen glow). Complementary bounce fill at 25-35% key intensity, in the key's opposing hue temperature — warm key produces cool-violet bounce, cool daylight key produces warm-honey bounce. Rim accent in the palette's saturated accent tone. Painted soft AO in corner pockets, floor-join, and fabric folds — ambient shadow reads warm-dark, never cold-black.
+
+
+
+== SHOW DIRECTIVE (fena fillah show — apply to the frame below) ==
+
+SHOW-FIRST & FULL (fena fillah show): a jaw-dropping, layered space frame — near/mid/far planes all alive, volumetric light (sun-rays raking across a curved surface, drifting moon-dust, lens-catch star glints, warm bounce, rim), rich material texture (regolith grit, suit fabric, visor gloss), and vibrant colour as LIGHT BEHAVIOUR (warm saffron sun against deep cosmic blue, never flat or cold). Carry the three physics details named in the dominant (environmental pressure · physical micro-action · visual/light anchor). The lesson reads INSTANTLY; the spectacle rewards a second look. Scale is a character — use vast depth, tiny-explorer-against-hugeness, cosmic parallax.
+
+
+
+== CAMERA & VANTAGE (adaptive/bold) ==
+
+a bold snap/whip to a thin crescent Moon, @[fa1dffd1-ce27-45a6-9710-c853b9931181:efe:output]  's silhouette small at the edge. The move is bold and motivated; scale and depth are the spectacle.
+
+
+
+== PALETTE AS LIGHT ==
+
+Vibrant Education — shadows read as deep cool blue, midtones read as vivid warm amber, accents read as vivid warm red, highlights read as near-white cool green — palette character: Navy, saffron-yellow, tomato-red, board-white. Broad saffron key lands flat and even, the navy ground drinks the falloff, one tomato beat punctuates, board-white bounces back clean. NO menace, NO muddy midtone, NO desaturation. Render these as light behaviour, never flat fills. (SPACE ADAPTATION: the navy ground becomes deep cosmic blue-black studded with warm star specks; keep saffron/tomato/board-white as the warm accents so the frame never goes cold or desaturated.)
+
+
+
+== REFERENCE DNA (subordinate) ==
+
+Pixar RenderMan-lineage dimensional clarity + emotional-staging geometry + earthly/ethereal dual-register — GRAMMAR ONLY, original subjects, subordinate to world/palette/negative.
+
+
+
+== DOMINANT ELEMENT (the promise this frame is judged against) ==
+
+Now the Moon is a slender curved sliver like a thin banana of light in the deep blue night, mysterious, @[fa1dffd1-ce27-45a6-9710-c853b9931181:efe:output]  's small silhouette watching from the corner. Dominant element: the thin crescent Moon, curious and secretive. Physics: the crescent's sharp lit edge against the dark (anchor) · a star winking near its tip (micro) · the deep-blue night gradient (pressure).
+
+Character reference: @[fa1dffd1-ce27-45a6-9710-c853b9931181:efe:output]  — Magnific @-handle; hold the referenced identity exactly (@[fa1dffd1-ce27-45a6-9710-c853b9931181:efe:output]  = the SAME child in his original friendly spacesuit, not a real astronaut), do not drift.
+
+
+
+== ON-SCREEN TEXT ==
+
+CLEAN PLATE — no on-screen text; the image and narration carry the meaning. No lettering of any language.
+
+
+
+== LANGUAGE LOCK ==
+
+TÜRKÇE METİN KİLİDİ — every visible letter is TURKISH, spelled character-for-character with correct glyphs (ç Ç ğ ı İ ö Ö ş Ş ü Ü). NO English, NO Latin filler, no other language. Diegetic labels live on a real in-world surface (a holographic projection from the explorer's suit/wrist, a floating 3D label with real perspective and light, a cutaway-diagram tag, a console screen) — never a flat 2D overlay/caption bar. Use ONLY the exact Turkish string named in ON-SCREEN TEXT; CLEAN PLATE = no lettering anywhere. Türkiye Maarif astronomy piece.
+
+
+
+== CAST LOCK ==
+
+CAST KİLİDİ — the explorer's identity comes from his tag (do not re-describe him). Any OTHER person (family at home, people on Earth, background) reads Turkish/Anatolian — warm complexion, dark hair; a family is a CONVENTIONAL family. No real astronaut likenesses, no agency insignia. The explorer's spacesuit is an original friendly design (navy + saffron + tomato, crescent motif), NOT a real-agency suit.
+
+
+
+== NEGATIVE ==
+
+Frame-specific: flat crescent, cold grade, @[fa1dffd1-ce27-45a6-9710-c853b9931181:efe:output]  drift.
+
+Baseline: morphing, warping, re-render, style/material drift, new object that changes the beat, leaving the framed idea, face/identity change/drift, duplicated face, garbled or English lettering, Latin filler; generic 3D / stock-render / flat empty slide; clay/plasticine surface; hard cel shading, cartoon outline, anime eye geometry, flat graphic fill, toon shader, 2D on 3D; teal-orange grade, desaturation, muddy midtone; octane harshness; recognizable franchise or real-person characters, real spacecraft/agency logos, brand names; the named literal thing replaced by an icon/arrow/gauge/UI panel that is not diegetic; empty adjectives (cinematic, dynamic, stunning, 4K, epic); warped or drifting text.
+
+
+
+Clean, motion-ready, jaw-dropping start frame.

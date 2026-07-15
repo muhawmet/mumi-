@@ -1,5 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// Aynı makinede paralel worktree'ler koşabilir; 5173 başkasında kalmış olabilir.
+// E2E_PORT ile kendi portunu ver: `E2E_PORT=5199 npm run test:e2e`.
+const PORT = Number(process.env.E2E_PORT ?? 5173);
+const BASE_URL = `http://localhost:${PORT}`;
+
 export default defineConfig({
   testDir: './e2e',
   timeout: 30_000,
@@ -9,7 +14,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list']],
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -20,8 +25,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
+    command: `npm run dev -- --port ${PORT} --strictPort`,
+    url: BASE_URL,
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
   },

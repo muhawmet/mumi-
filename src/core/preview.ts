@@ -1,4 +1,5 @@
 import SURGERY_DATA from './SURGERY_DATA.json';
+import { normalizePaletteId, normalizeWorldId } from './pure';
 
 export type PreviewCategory = 'arcane' | 'verse' | 'edu' | 'anime' | 'real';
 
@@ -13,22 +14,26 @@ export function worldCategory(tokenString: string): PreviewCategory {
 }
 
 export function buildPreviewState(state: any) {
-  const pal = SURGERY_DATA.palettes.find((p: any) => p.id === state.palette) || ({} as any);
-  const colors = [...(pal.colors || [])].slice(0, 4);
+  const paletteId = normalizePaletteId(state.palette);
+  const worldId = normalizeWorldId(state.world);
+  const pal = SURGERY_DATA.palettes.find((p: any) => p.id === paletteId) || ({} as any);
+  const colors = pal.hex
+    ? [pal.hex.shadow, pal.hex.mid, pal.hex.accent, pal.hex.highlight].filter(Boolean).slice(0, 4)
+    : [...(pal.colors || [])].slice(0, 4);
   while (colors.length < 4) colors.push('#2b2f3a');
 
-  const world = SURGERY_DATA.worlds.find((w: any) => w.id === state.world) || ({} as any);
-  const worldName = world.name || state.world || 'World';
+  const world = SURGERY_DATA.worlds.find((w: any) => w.id === worldId) || ({} as any);
+  const worldName = world.name || worldId || 'World';
   const matName = state.teachingMaterial || 'Malzeme';
 
-  const token = [state.world, state.teachingMaterial, state.visualWorld, worldName, matName].join(' ').toLowerCase();
+  const token = [worldId, state.teachingMaterial, state.visualWorld, worldName, matName].join(' ').toLowerCase();
   
   let icon = '●';
   const matKey = String(state.teachingMaterial || '').toLowerCase();
   const matIcons: Record<string, string> = { clay: '⬤', paper: '◻', chalk: '✕', felt: '⬡' };
   const matIcon = matIcons[matKey] || '○';
 
-  const wcat = worldCategory([state.world, state.visualWorld, state.teachingMaterial].join(' '));
+  const wcat = worldCategory([worldId, state.visualWorld, state.teachingMaterial].join(' '));
 
   if (/paper|kag|kağ|origami/.test(token)) icon = '□';
   else if (/chalk|tebe/.test(token)) icon = '×';

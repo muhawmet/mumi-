@@ -8,6 +8,29 @@ The MOTION agent does not write new scenes. It animates the approved start frame
 over time. Successful motion preserves the soul of the image prompt and carries
 one clear event into an edit-ready final hold.
 
+## Frame-Gated Authoring (FRAME-AWARE PROTOCOL)
+
+Motion is **frame-gated**: a motion prompt is finalized only after its approved
+start frame exists. The site's motion packet carries this as the mandatory
+`FRAME-AWARE PROTOCOL` block. Per scene:
+
+1. **WAIT** for the approved start frame. No frame → no motion prompt. Every
+   other deliverable may proceed; motion may not.
+2. **LOOK:** inventory what the frame physically contains — subjects, hands,
+   text plates, props, light direction, background layers, empty space.
+3. **AUTHOR for THAT frame:** pick the one moving element from what the frame
+   actually shows. The dossier EVENT line is intent, the frame is truth —
+   reconcile toward the frame.
+4. **NEGATIVES are frame-specific:** name the exact fragile elements visible in
+   THIS frame (the title plate top-left, the thin rigging lines, the face in
+   mid-ground) — never paste one generic negative list into every scene.
+5. **Mismatch → flag:** if the frame contradicts its CONCEPT/EVENT, do not
+   animate around the contradiction — send the scene back to the IMAGE role
+   with the exact mismatch.
+
+Prompts written before the frame exists are drafts only (`prompts.motion` in the
+JSON export is a draft reference for exactly this reason).
+
 ## I2V Thinking
 
 I2V models may reinterpret the start frame. Therefore the prompt must clearly
@@ -42,7 +65,7 @@ light, faces, text, logo, geometry — never re-described, never re-rendered.
 NEGATIVE: morphing, warping, re-render, style or material drift, new objects or
 scenery, leaving the frame, face or identity change, mouth movement,
 logo/text/geometry change, multiple actions, flicker.
-SPLIT NOTE: [only when sec > 9s]
+SPLIT NOTE: [only when sec exceeds the engine's clean window]
 ```
 
 Note: The site applies "Kling scrub" — removing trigger words like "ready to",
@@ -65,12 +88,11 @@ The site tracks engine-specific clean windows:
 
 | Engine | Clean window |
 |--------|-------------|
-| Kling (2.1/3) | ~9s |
-| Kling 4 | ~10s |
-| Runway | ~14s |
-| Seedance | ~9s |
-| Hailuo | ~9s |
-| Veo | ~8s |
+| Kling 3.0 | ~10s |
+| Kling O3 | ~12s |
+| Runway Gen4 | ~14s |
+| Seedance 2 | ~10s |
+| Veo 3 | ~10s |
 
 Split math: divide the total evenly into shots that fit inside the window.
 
@@ -112,6 +134,14 @@ clean window.
   Prussian-blue plane darkens at crest; no camera move. The stillness after the
   wave settles is the closing state — woodblock composition must stay flat.
 
+## World Motion Cadence — Precedence
+
+The motion packet may include a `WORLD MOTION CADENCE` line carrying the world's
+own `motion_cadence` physics (e.g. one_piece_toei: 12fps character animation on
+2s with smear frames at peak action). This is the world's physical law and
+**takes precedence over any Reference DNA rhythm**. Reference rhythm shapes
+pacing inside the cadence; it never replaces it.
+
 ## DNA Motion Directives
 
 The site derives motion rhythm from Reference DNA:
@@ -138,7 +168,7 @@ not drift; only timing/weight/energy changes.
 | `demon_slayer` | elemental ribbon: ribbon traces curve → bloom peak → particle settle | ufotable depth preserved throughout |
 | `solo_leveling` | power-ascent: atmosphere thickens (ground particle uplift) → rank-aura event → brooding low-hold | Cold energy, no warmth |
 | `arcane_paint` | painterly weight: slow build → single decisive gesture → rim-light shift → heavy shadow-mass hold | No lightness, no bounce |
-| `jjk_mappa` | cursed burst: dark still → smear-frame peak → ink-dust settle → cinematic dark hold | ONE smear only, then stillness |
+| `jjk_ink_style` | cursed burst: dark still → smear-frame peak → ink-dust settle → cinematic dark hold | ONE smear only, then stillness (`jjk_mappa` is the Render World, not this material) |
 | `dragon_ball` | kinetic aura: charge build → hard-rim impact peak → aura dissipates to power silhouette hold | Aura is motivator, not new element |
 | `attack_titan` | scale dread: near-stillness → single atmospheric shift → tension hold | Speed kills scale; stillness communicates size |
 
@@ -158,6 +188,9 @@ rendering is already grey from the Render Lock.
 - bad split math (tiny leftover tail, stretched clip)
 - trigger words left in prompt (suddenly, transforms, appears)
 - IP style motion rhythm not applied when material is ip_style group
+- motion finalized before the approved start frame exists (frame-gate violation)
+- generic negative list pasted into every scene instead of frame-specific negatives
+- WORLD MOTION CADENCE ignored in favor of a reference rhythm
 
 ## Repair
 

@@ -1,0 +1,61 @@
+== RENDER LOCK (world rendering law — verbatim, non-negotiable) ==
+
+Feature-animation 3D CGI in the Pixar RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage (original subjects only). The Pixar signature is NOT 'cute 3D' — it is a specific formal grammar: appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail), subsurface scattering on character skin that carries the scene's light temperature (warm honey SSS under tungsten, cool ivory SSS under daylight, amber-bronze SSS under sodium), wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill. Every prop has a deliberate overscale factor (10-15%) for child-safe readability — a pencil is thumb-width, a bowl is head-width. Material specificity is non-negotiable: wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, metal shows anisotropic brushed highlight, rubber has soft-diffuse sheen with slight translucency at thin edges. Lighting grammar is art-directed, not photo-random: single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below), complementary bounce fill at 25-35% intensity in the key's opposing hue, rim accent in palette's saturated accent color, painted soft ambient occlusion in corner and fold pockets — never hard-black shadow. Composition: character at focal plane sharp at f/4 equivalent, background falling into gentle focus falloff. Squash-stretch physics govern all character and prop motion: every pickup has anticipation, every landing has squash, every fast move has follow-through smear. IMPERATIVE: FULL 3D CGI FEATURE-ANIMATION RENDER — continuous physically-based shading, painterly AO, SSS skin. Strictly forbid 2D cel shading, hard black outlines, flat graphic fill, clay/plasticine surface texture on character skin. Line grammar: No outlines — silhouette reads entirely through lighting rim and value separation. Shadow edges are soft, never hard-step. Ambient occlusion painted in, never raytraced-hard. The shape carries via appeal geometry, not line. Lens grammar: 35mm to 50mm equivalent focal length. f/4 on mid-shots, f/2.8 on character close-up, f/5.6 on environment establisher. Vision3 250D color science: neutral-warm film curve with fine grain (16mm-equivalent grain floor, mostly in shadow). Gentle racks on focal plane shifts. No lens flare unless motivated by a visible practical light source in frame. No anamorphic streak. Light law: Single motivated key from a real-world source visible or strongly implied in frame (window sun, desk lamp, overhead classroom fluorescent, screen glow). Complementary bounce fill at 25-35% key intensity, in the key's opposing hue temperature — warm key produces cool-violet bounce, cool daylight key produces warm-honey bounce. Rim accent in the palette's saturated accent tone. Painted soft AO in corner pockets, floor-join, and fabric folds — ambient shadow reads warm-dark, never cold-black.
+
+
+
+== CAMERA & VANTAGE ==
+
+50mm high three-quarter medium view; cause-and-effect laid out left-to-right in one frame — @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  → the sibling → the wall chore-chart. Frame at the child's eye-line, never a neutral adult looking down. No whip pan, no handheld shake, no unmotivated lens flare.
+
+
+
+== PALETTE AS LIGHT ==
+
+Vibrant Education — shadows read as deep cool blue, midtones read as vivid warm amber, accents read as vivid warm red, highlights read as near-white cool green — palette character: Navy, saffron-yellow, tomato-red, board-white. Broad saffron key lands flat and even, the navy ground drinks the falloff, one tomato beat punctuates, board-white bounces back clean. NO menace, NO muddy midtone, NO desaturation. Render these as light behaviour, never flat fills.
+
+
+
+== REFERENCE DNA (subordinate) ==
+
+Pixar RenderMan-lineage dimensional clarity + emotional-staging geometry + earthly/ethereal dual-register — GRAMMAR ONLY, original subjects, subordinate to the world/palette/negative above; never overrides them.
+
+
+
+== DOMINANT ELEMENT (the promise this frame is judged against) ==
+
+In the warm kitchen, @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  kneels to help a smaller sibling (seen from behind, face away) tie a shoelace; on the wall hangs a hand-built wooden family chore-chart with two hanging lettered tags. Her role here is doubled. Dominant element: @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  looping the lace as the sibling steadies a hand on her shoulder.
+
+Character reference: @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  (Magnific @-handle — hold the referenced identity/face/outfit exactly; do NOT invent or drift the likeness).
+
+Exactly ONE texture clause from the tactile family (grain / weave / brushed metal / soft rubber) — texture is seasoning, never the subject.
+
+
+
+== ON-SCREEN TEXT ==
+
+DIEGETIC — baked into the frame as a real object, NOT an overlay/caption/subtitle. Surface: two small wooden tags hanging from the family chore-chart on the kitchen wall. Reads EXACTLY (Turkish, character-for-character): "ÇOCUK  /  KARDEŞ". Letterform: warm hand-painted / routed serif letters on wood tags, taking the tags' slight tilt and the room's saffron light; Turkish characters exact incl. Ç, Ş. The lettering takes the surface's perspective, material and light; frozen geometry; no floating text, no watermark; and NOTHING else on the surface — no English item text, no filler words.
+
+
+
+== LANGUAGE LOCK ==
+
+TÜRKÇE METİN KİLİDİ — every single piece of lettering visible anywhere in this frame is TURKISH, spelled character-for-character with correct Turkish glyphs (ç Ç ğ ı İ ö Ö ş Ş ü Ü). NO English, NO Latin filler, NO placeholder words (never FIRST/SECOND/LOREM), no other language on any surface (board, sign, tag, label, checklist, poster, notebook). If a surface carries item lines, use ONLY the exact Turkish strings named in the ON-SCREEN TEXT block below; where that block says CLEAN PLATE, no lettering of ANY language appears. This is a Türkiye Maarif-curriculum education piece.
+
+
+
+== CAST LOCK ==
+
+CAST KİLİDİ — @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  's identity comes from her tag; any OTHER person in frame (a sibling, a classmate, a neighbour, background community figures) reads as a Turkish / Anatolian person consistent with this Türkiye school setting — warm Mediterranean-Anatolian complexion, dark hair — belonging to @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  's own community. Secondary people stay UNNAMED and NON-RECURRING; keep them cropped, turned, or face-away exactly where the dominant element says so — no invented recurring face.
+
+
+
+== NEGATIVE ==
+
+Frame-specific (fragile elements in THIS frame): the sibling turning a face to camera, the tag letters warping or losing the Ç/Ş, @[fcaaf2a1-d07d-4904-bb21-8d5c76c994ba:mira:output]  identity drift.
+
+Baseline: morphing, warping, re-render, style or material drift, new objects or scenery, leaving the frame, face or identity change/drift, duplicated face, mouth movement, logo/text/geometry change, flicker; generic 3D / stock-render / flat slide; clay or plasticine surface; hard cel shading, cartoon black outline, anime-style eye geometry, flat graphic fill, toon shader, 2D illustration on 3D forms; teal-orange Hollywood grade, desaturated look, high-contrast noir; octane-render harshness (harsh physical sky, raw caustics, over-sharp AO); ANY English or non-Turkish lettering, Latin filler text (FIRST, SECOND, LOREM), placeholder words; recognizable franchise or real-person characters, logos, brand names; the named literal thing replaced by an icon/pictogram/chart/diagram/arrow/gauge/infographic panel; empty adjectives (cinematic, dynamic, stunning, 4K, epic); warped or drifting text, character retyping.
+
+
+
+Clean, motion-ready start frame.

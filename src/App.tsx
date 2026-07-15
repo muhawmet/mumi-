@@ -18,11 +18,16 @@ const ScenesStep = lazy(() =>
 const TimelineStep = lazy(() =>
   import('./pages/Timeline/TimelineStep').then((module) => ({ default: module.TimelineStep })),
 );
+const QAStep = lazy(() =>
+  import('./pages/QA/QAStep').then((module) => ({ default: module.QAStep })),
+);
 
+/* Cross-fade: çıkan içerik kaymadan solar (popLayout onu akıştan çıkarır),
+   gelen içerik hafif yükselerek gelir — stage geçişinde cam asla boş kalmaz. */
 const stepVariants = {
-  initial: { opacity: 0, x: 20 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -20 },
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0 },
 };
 
 function App() {
@@ -45,35 +50,40 @@ function App() {
 
   return (
     <AppLayout>
-      <Suspense fallback={<div style={{ color: 'var(--text-muted)', padding: 24 }}>Yükleniyor…</div>}>
-        <AnimatePresence mode="wait">
-          {currentStep === 'dashboard' && (
-            <motion.div key="dashboard" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-              <DashboardStep />
-            </motion.div>
-          )}
-          {currentStep === 'director' && (
-            <motion.div key="director" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-              <DirectorStep />
-            </motion.div>
-          )}
-          {currentStep === 'recipe' && (
-            <motion.div key="recipe" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-              <RecipeStep />
-            </motion.div>
-          )}
-          {currentStep === 'scenes' && (
-            <motion.div key="scenes" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-              <ScenesStep />
-            </motion.div>
-          )}
-          {currentStep === 'timeline' && (
-            <motion.div key="timeline" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
-              <TimelineStep />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </Suspense>
+      {/* Suspense her adımın İÇİNDE: yalnız gelen adım suspend eder,
+          çıkan adım cross-fade boyunca ekranda yaşar (1sn boş cam yasağı). */}
+      <AnimatePresence mode="popLayout">
+        {currentStep === 'dashboard' && (
+          <motion.div key="dashboard" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><DashboardStep /></Suspense>
+          </motion.div>
+        )}
+        {currentStep === 'director' && (
+          <motion.div key="director" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><DirectorStep /></Suspense>
+          </motion.div>
+        )}
+        {currentStep === 'recipe' && (
+          <motion.div key="recipe" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><RecipeStep /></Suspense>
+          </motion.div>
+        )}
+        {currentStep === 'scenes' && (
+          <motion.div key="scenes" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><ScenesStep /></Suspense>
+          </motion.div>
+        )}
+        {currentStep === 'timeline' && (
+          <motion.div key="timeline" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><TimelineStep /></Suspense>
+          </motion.div>
+        )}
+        {currentStep === 'qa' && (
+          <motion.div key="qa" variants={stepVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.28 }}>
+            <Suspense fallback={null}><QAStep /></Suspense>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AppLayout>
   );
 }

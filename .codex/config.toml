@@ -1,0 +1,3 @@
+[features]
+image_generation = true
+multi_agent = true

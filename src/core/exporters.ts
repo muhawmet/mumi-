@@ -1,7 +1,6 @@
 import type { Scene } from '../store/useStudioStore';
 
 export interface ExportContext {
-  projectKind?: 'video' | 'design';
   topic: string;
   projectClass: string;
   cast: string;
@@ -15,19 +14,44 @@ function csvEscape(v: string): string {
   return v;
 }
 
+const MIME_EXTENSIONS: Array<[RegExp, string]> = [
+  [/json/i, '.json'],
+  [/csv/i, '.csv'],
+  [/markdown|md/i, '.md'],
+  [/text\/plain/i, '.txt'],
+];
+const EXPORT_SUFFIXES = ['_production', '_mamilas_command', '_handoff_packets', '_timeline', '_scenes'];
+
+function limitDownloadBase(base: string, maxLength = 120): string {
+  if (base.length <= maxLength) return base;
+  const suffix = EXPORT_SUFFIXES.find((candidate) => base.endsWith(candidate));
+  if (!suffix) return base.slice(0, maxLength).replace(/[._-]+$/g, '');
+  const prefixLength = Math.max(1, maxLength - suffix.length);
+  const prefix = base.slice(0, prefixLength).replace(/[._-]+$/g, '');
+  return `${prefix}${suffix}`;
+}
+
+export function normalizeDownloadName(name: string, mime: string): string {
+  const extension = MIME_EXTENSIONS.find(([pattern]) => pattern.test(mime))?.[1] || '';
+  const rawName = String(name || 'mamilas').trim() || 'mamilas';
+  const withExtension = extension && !rawName.toLowerCase().endsWith(extension) ? `${rawName}${extension}` : rawName;
+  const dotIndex = withExtension.lastIndexOf('.');
+  const base = dotIndex > 0 ? withExtension.slice(0, dotIndex) : withExtension;
+  const ext = dotIndex > 0 ? withExtension.slice(dotIndex) : extension;
+  const safeBase = base
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[<>:"/\\|?*\u0000-\u001f]+/g, '_')
+    .replace(/\s+/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .replace(/[._-]+$/g, '');
+  return `${limitDownloadBase(safeBase || 'mamilas')}${ext || ''}`;
+}
+
 /** CSV with semicolon separator — friendly to Turkish Excel locales. */
 export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
-  const design = ctx.projectKind === 'design';
-  const header = design ? [
-    'Tasarım',
-    'Beat',
-    'Dominant',
-    'Olay',
-    'Vantage',
-    'Image Prompt',
-    'Kaynak',
-    'Fingerprint',
-  ] : [
+  const header = [
     'Sahne',
     'Faz',
     'Süre (s)',
@@ -38,19 +62,11 @@ export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
     'Vantage',
     'Image Prompt',
     'Voice Over',
+    'On-Screen Text (baked)',
     'Suno Brief',
     'Fingerprint',
   ];
-  const rows = scenes.map((s) => design ? [
-    s.id,
-    s.architecture.beat,
-    s.architecture.dominantSubject,
-    s.architecture.event,
-    s.architecture.imageVantage,
-    s.imagePrompt,
-    s.voiceOver,
-    s.architecture.semanticFingerprint,
-  ] : [
+  const rows = scenes.map((s) => [
     s.id,
     s.phaseName,
     s.durationSec,
@@ -61,6 +77,7 @@ export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
     s.architecture.imageVantage,
     s.imagePrompt,
     s.voiceOver,
+    s.onScreenText ?? '',
     s.sunoBrief,
     s.architecture.semanticFingerprint,
   ]);
@@ -77,15 +94,12 @@ export function scenesToCSV(scenes: Scene[], ctx: ExportContext): string {
 
 /** Markdown for production teams reading PR descriptions / Notion etc. */
 export function scenesToMarkdown(scenes: Scene[], ctx: ExportContext): string {
-  const design = ctx.projectKind === 'design';
   const head = [
     `# ${ctx.topic}`,
     '',
     `**Class:** \`${ctx.projectClass}\` · **Cast:** \`${ctx.cast}\` · **World:** \`${ctx.worldId}\``,
     `**Reference DNA:** \`${ctx.refIds?.join(', ') || 'none'}\` · **Palette:** \`${ctx.paletteId || 'world default'}\``,
-    design
-      ? `**Total:** ${scenes.length} statik tasarım`
-      : `**Total:** ${scenes.length} sahne · ${scenes.reduce((a, b) => a + b.durationSec, 0)}s`,
+    `**Total:** ${scenes.length} sahne · ${scenes.reduce((a, b) => a + b.durationSec, 0)}s`,
     '',
     '---',
     '',
@@ -94,25 +108,50 @@ export function scenesToMarkdown(scenes: Scene[], ctx: ExportContext): string {
   const body = scenes
     .map((s) => {
       return [
-        design ? `## Tasarım ${s.id}` : `## Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`,
+        `## Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`,
         '',
-        `- **Beat:** ${s.architecture.beat}`,
-        `- **Dominant subject:** ${s.architecture.dominantSubject}`,
-        `- **Event:** ${s.architecture.event}`,
-        `- **Vantage:** \`${s.architecture.imageVantage}\``,
-        `- **Fingerprint:** \`${s.architecture.semanticFingerprint}\``,
+        '| Property | Assignment |',
+        '|---|---|',
+        `| **Beat** | ${s.architecture.beat} |`,
+        `| **Subject** | ${s.architecture.dominantSubject} |`,
+        `| **Event** | ${s.architecture.event} |`,
+        `| **Vantage** | \`${s.architecture.imageVantage}\` |`,
+        `| **Fingerprint** | \`${s.architecture.semanticFingerprint}\` |`,
         '',
         '### Image prompt',
         '```',
         s.imagePrompt,
         '```',
         '',
-        ...(design
-          ? ['### Kaynak', `> ${s.voiceOver}`, '']
-          : ['### Voice-over', `> ${s.voiceOver}`, '', '### Suno brief', '```', s.sunoBrief, '```', '']),
+        '### Voice-over',
+        `> ${s.voiceOver}`,
+        '',
+        ...(s.onScreenText
+          ? ['### On-Screen Text (baked)', `> **"${s.onScreenText}"** — diegetic or designed typography baked into the Image prompt start frame. No post-production overlay downstream.`, '']
+          : ['### On-Screen Text', '> _NO_TEXT — the image carries the meaning_', '']),
+        '### Suno brief', '```', s.sunoBrief, '```', '',
       ].join('\n');
     })
     .join('\n');
 
   return head.join('\n') + body;
+}
+
+export function downloadFile(name: string, content: string, mime: string) {
+  const type = mime.includes('charset=') ? mime : `${mime};charset=utf-8`;
+  const filename = normalizeDownloadName(name, type);
+  const file = typeof File === 'undefined'
+    ? new Blob([content], { type })
+    : new File([content], filename, { type });
+  const url = URL.createObjectURL(file);
+  const a = document.createElement('a');
+  a.href = url;
+  a.rel = 'noopener';
+  a.download = filename;
+  a.setAttribute('download', filename);
+  a.setAttribute('type', type);
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

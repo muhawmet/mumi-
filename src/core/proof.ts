@@ -1,5 +1,178 @@
 import SURGERY_DATA from './SURGERY_DATA.json';
 
+/**
+ * The canonical protected-franchise term list. Single source of truth — it used to be
+ * pasted verbatim in two places in this file, and nothing outside it consulted the list
+ * at all, so free-text fields (notably `cast`) carried franchise names straight into the
+ * image engine. Exported so every path into a prompt can be screened against it.
+ *
+ * Use `containsProtectedTerm` / `protectedTermsIn` rather than building the regex inline.
+ */
+export const PROTECTED_IP_SOURCE = "luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|solo leveling|sung jinwoo|jinwoo|jin-woo|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna|coraline jones|kubo|jinx|caitlyn|jayce|viktor|heimerdinger|ekko|silco|vander|powder|piltover|zaun|spider-man|miles morales|gwen stacy|peter b\\. parker|miguel o'hara|prowler|kiki|chihiro|ponyo|ashitaka|princess mononoke|woody|buzz lightyear|bing bong|merida|radiator springs|monstropolis|max fischer|royal tenenbaum|m\\. gustave|suzy bishop|sam shakusky|steve zissou|tyler durden|fight club|hugh glass|riggan thomson|theo faron";
+
+export function containsProtectedTerm(text: string): boolean {
+  return new RegExp(`\\b(?:${PROTECTED_IP_SOURCE})\\b`, 'iu').test(text || '');
+}
+
+/**
+ * WORK TITLES — the third IP class, and the one that shipped.
+ *
+ * The line here is NOT "anything from a real film". These worlds exist to teach a
+ * studio's RENDERING LANGUAGE, and the data says so deliberately: pixar_3d_edu's
+ * negative_lock reads "NO any named Pixar or Disney animated character · NO Pixar City ·
+ * NO any named Pixar/Disney location" while its positive law asks for exactly that
+ * pipeline ("skin MUST be Pixar SSS-shaded"). Render in the language, never draw their
+ * cast. That is the project's two-way IP rule, and it is coherent — so a STUDIO name in
+ * a craft-lineage clause stays. Strip it and the world goes generic, which the same rule
+ * forbids from the other side.
+ *
+ * What must die is the name of the WORK, and any place or thing inside it. The live
+ * prompt for pixar_3d_edu read "premium-CG feature-animation Soul dual-register ...
+ * ethereal Great-Before" — the Great Before is a LOCATION IN THAT FILM, i.e. the precise
+ * thing the same world's negative_lock forbids. The positive half was ordering what the
+ * negative half banned. Naming the film hands the engine its characters and its shots;
+ * naming the studio hands it a pipeline.
+ *
+ * Scrubbed like a brand, NOT like a character: strip the name, keep the craft. The clause
+ * exists to teach "dual-register: warm tactile earthly versus soft-abstract luminous
+ * ethereal" — that survives the title, and it is the whole point of the ref.
+ *
+ * Case-SENSITIVE on purpose: proper nouns are capitalised in this data, so "Soul" dies
+ * while a legitimate "soulful warmth" lives. Director surnames are NOT here — a lineage
+ * is not a work, and no engine has ever drawn "Pete Docter".
+ */
+export const WORK_TITLE_SOURCE =
+  "Great[- ]Before(?:'s)?|Fury[- ]Road(?:'s)?|Bebop(?:'s)?|Arcane(?:'s)?|Spider[- ]Verse(?:'s)?|Soul(?:'s)?";
+
+const WORK_TITLE_RE = () => new RegExp(`\\b(?:${WORK_TITLE_SOURCE})\\b`, 'gu');
+
+export function containsWorkTitle(text: string): boolean {
+  return WORK_TITLE_RE().test(text || '');
+}
+
+/**
+ * The work titles a text actually carries. `scrubWorkTitles` is the right answer for
+ * REFERENCE prose (data the site owns — silently cleaning it costs nothing). It is the
+ * WRONG answer for Mami's own sentence: cutting "Spider-Verse" out of "Spider-Verse
+ * tarzında olsun" leaves "tarzında olsun", which is both mutilated and still not what he
+ * meant. A gate that stops and NAMES the term lets him re-author it in one sentence.
+ */
+export function workTitlesIn(text: string): string[] {
+  return [...new Set(text?.match(WORK_TITLE_RE()) ?? [])];
+}
+
+/** Removes work/studio names and heals the punctuation the removal leaves behind. */
+export function scrubWorkTitles(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(WORK_TITLE_RE(), '')
+    // Heal only what the removal broke: "ethereal , motivated" → "ethereal, motivated";
+    // "premium-CG  dual-register" → one space. A legitimate "Pete Docter / Dana Murray"
+    // keeps its slash — an earlier draft ate it and quietly degraded the DNA prose.
+    .replace(/\s+([,.;:])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+/**
+ * Terms from PROTECTED_IP_SOURCE that are also ordinary words a Turkish brief may
+ * legitimately use. They belong in the SCORING list (a false positive there only costs
+ * points) but never in a BLOCKING gate, where one would stop Mami's real work:
+ *
+ *   "Robin yeleği giymiş esnaf" · "powder mavisi gömlek" · "Brook marka ayakkabı"
+ *   "Sakura ağacı altında" · "Bleach ile temizlik yapan" · "cell telefonu tutan"
+ *
+ * Their multi-word franchise forms (`nico robin`, `sakura haruno`) stay in the gate.
+ *
+ * Every entry earns its place with a concrete brief it would wrongly block. Anything
+ * without one (`chopper`, `woody`, `jinx`, `merida`…) stays in the gate — a name that
+ * never appears in an ordinary Turkish cast description costs nothing to keep.
+ */
+const GATE_EXEMPT_GENERICS = new Set([
+  'robin',    // "Robin yeleği giymiş esnaf" — kişi adı / kuş
+  'powder',   // "powder mavisi gömlek" — toz mavi
+  'brook',    // "Brook marka ayakkabı"
+  'sakura',   // "Sakura ağacı altında oturan yaşlı adam" — kiraz çiçeği
+  'bleach',   // "Bleach ile temizlik yapan kadın" — çamaşır suyu
+  'cell',     // "cell telefonu tutan genç kadın"
+  'howl',     // an ordinary English verb a bilingual brief may reach for
+  'endeavor', // likewise ("a shared endeavor")
+]);
+
+/**
+ * Franchise names the scoring list never carried. It was assembled around the anime /
+ * A24 / Pixar corpus the worlds are built from; a cast field is free text and reaches
+ * for whatever a person knows. Western tentpoles were simply absent.
+ *
+ * EVERY entry here is either multi-word or a name with no ordinary Turkish reading.
+ * The first draft of this list repeated the very bug it was written to fix — a bare
+ * `batman` blocks "Batmanlı esnaf" (Batman is a Turkish city), a bare `elsa` / `anna`
+ * / `mario` / `fiona` / `olaf` block ordinary given names, and `joker` (the playing
+ * card), `link` (a link), `hulk`, `frozen`, `nemo`, `simba` all read as plain words.
+ * A single-word entry earns its place only when no Turkish brief would ever type it.
+ */
+const GATE_EXTRA_FRANCHISE = [
+  // DC / Marvel — bare "batman"/"thor"/"hulk"/"venom"/"loki"/"joker" are real words or
+  // Turkish place/person names; they enter only in franchise company.
+  'bruce wayne', 'clark kent', 'wonder woman', 'batman costume', 'batman logo',
+  'batman kostüm', 'the dark knight', 'gotham', 'batmobile',
+  'superman', 'aquaman', 'iron man', 'tony stark', 'captain america', 'black widow',
+  'incredible hulk', 'wolverine', 'deadpool', 'spiderman', 'thanos',
+  'harley quinn', 'catwoman', 'the joker', 'god of thunder', 'asgard',
+  // Wizarding world / Star Wars
+  'harry potter', 'hermione', 'dumbledore', 'voldemort', 'hogwarts',
+  'darth vader', 'luke skywalker', 'yoda', 'obi-wan', 'stormtrooper', 'jedi',
+  // Disney / Pixar / Illumination — "elsa", "anna", "olaf", "nemo", "simba", "dory",
+  // "frozen", "fiona", "gru", "minion" all have ordinary readings.
+  'mickey mouse', 'minnie mouse', 'donald duck',
+  'elsa frozen', 'frozen elsa', 'olaf snowman', 'lion king', 'mufasa',
+  'finding nemo', 'shrek', 'princess fiona', 'despicable me',
+  // Games — "mario", "luigi", "link", "zelda" are names; gate the franchise forms.
+  'sonic the hedgehog', 'super mario', 'mario bros', 'luigi mansion',
+  'legend of zelda', 'kratos', 'master chief',
+  'homer simpson', 'bart simpson', 'spongebob', 'patrick star',
+  // Middle-earth / action canon
+  'gandalf', 'frodo', 'gollum', 'aragorn', 'legolas',
+  'james bond', 'indiana jones', 'jack sparrow', 'rambo', 'john wick',
+  't-800', 'skynet', 'neo matrix', 'the matrix', 'morpheus',
+  // Multi-word forms of names exempted above, so the franchise still cannot pass.
+  'nico robin', 'sakura haruno', 'monkey d luffy', 'trafalgar law',
+];
+
+/**
+ * The BLOCKING gate's term list — narrower and stricter than the scoring list.
+ *
+ * Two lists, because they answer different questions. `PROTECTED_IP_SOURCE` asks "does
+ * this prompt smell of IP?" and docks points; a false positive is cheap. The gate asks
+ * "must this batch stop?" and a false positive costs Mami a job. So the gate drops the
+ * words that live double lives in ordinary Turkish, and adds the Western franchises the
+ * scoring corpus never covered.
+ */
+const GATE_IP_TERMS: string[] = [
+  ...PROTECTED_IP_SOURCE.split('|').filter((t) => !GATE_EXEMPT_GENERICS.has(t)),
+  ...GATE_EXTRA_FRANCHISE,
+].sort((a, b) => b.length - a.length); // longest-first so "iron man" beats a bare "man"-like prefix
+
+/**
+ * Turkish agglutinates onto proper nouns, with or without the apostrophe convention:
+ * "Naruto'nun", "Narutonun", "Gokuya", "Totoro'ya". A plain `\b` boundary catches only
+ * the apostrophised forms — "Gokunun" walked straight through. Allow up to four trailing
+ * Turkish-alphabet letters (optionally after an apostrophe) before requiring the boundary.
+ * Over-matching here is the safe direction: a firewall may refuse too much, never too little.
+ */
+const TR_SUFFIX = "(?:['’]?[a-zçğıöşü]{0,4})?";
+
+/** Every gate-protected franchise term present in the text, lowercased and deduped. */
+export function protectedTermsIn(text: string): string[] {
+  if (!text) return [];
+  const hits: string[] = [];
+  for (const term of GATE_IP_TERMS) {
+    const re = new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}${TR_SUFFIX}\\b`, 'iu');
+    if (re.test(text)) hits.push(term);
+  }
+  return [...new Set(hits)];
+}
+
 export interface ProofFinding {
   status: 'PASS' | 'FIX' | 'FAIL';
   problem?: string;
@@ -40,7 +213,7 @@ export function qaScore(prompt: string, opts?: { personalMode?: boolean }): numb
 
   // Specific IP character references — skipped in personal mode (user owns intent)
   if (!opts?.personalMode) {
-    const hasSpecificIP = /\b(?:luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna)\b/u.test(lower);
+    const hasSpecificIP = containsProtectedTerm(lower);
     if (hasSpecificIP) {
       score -= 50;
     }
@@ -133,7 +306,7 @@ const DETECTORS: Record<string, DetectorFunc> = {
   },
   reg_ip_reference: (input, reg) => {
     const positiveText = auditableText(input.text);
-    const hasIP = /\b(?:luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna)\b/i.test(positiveText);
+    const hasIP = containsProtectedTerm(positiveText);
     if (hasIP) {
       return {
         status: 'FAIL',
@@ -167,6 +340,9 @@ const DETECTORS: Record<string, DetectorFunc> = {
       'concept model', 'teaching mechanism', 'final readable summary model',
       'earned emblem', 'opening visual statement', 'tension frame',
       'human-scale detail', 'two original figures in a quiet emotionally charged space',
+      // STY/REAL fallbacks now graft film-grade FB staging onto the source noun;
+      // this marker is their detectable signature (replaces the retired meta strings).
+      'physically embodies',
     ];
     const hits = bridgePhrases.filter((p) => lower.includes(p));
     if (hits.length >= 2) {

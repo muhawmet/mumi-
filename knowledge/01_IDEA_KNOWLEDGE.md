@@ -62,15 +62,6 @@ For video, each scene line needs:
 - camera or vantage (from the register-appropriate pool)
 - lock state (what must not change)
 
-For design, each format needs:
-
-- dominant message/visual
-- reading order
-- copy placement
-- image crop
-- negative-space job
-- distance/thumbnail behavior
-
 ## Register Awareness
 
 The site assigns one of three registers. The IDEA agent must stay inside the

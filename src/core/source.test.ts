@@ -3,6 +3,7 @@ import SURGERY from './SURGERY_DATA.json';
 import {
   decodeBrief,
   ingestSource,
+  extractProductionDossierSource,
   autoGroupBeats,
   sourceIntegrity,
   durationBudgetSourceBeats,
@@ -10,59 +11,46 @@ import {
 } from './source';
 
 describe('decodeBrief', () => {
-  it('chooses the education path when curriculum signals are present', () => {
-    const decoded = decodeBrief('3. sınıf öğrencileri için su döngüsü dersi: buharlaşma ve yoğuşma.');
+  const plainSources = [
+    '3. sınıf öğrencileri için su döngüsü dersi: buharlaşma ve yoğuşma.',
+    'Premium telefon kılıfı reklamı; packshot, logo stabil ve makro yüzey zorunlu.',
+    'One Piece Elbaf tarzı dev ada macerası',
+    'Mimari salon kapısı açılır mermer iç mekan ışık',
+    'kısa',
+  ];
+
+  it.each(plainSources)('plain raw source never infers path/world/ref/palette: %s', (source) => {
+    const decoded = decodeBrief(source);
+    const neutral = decodeBrief('');
+    expect({ path: decoded.path, project: decoded.project }).toEqual({ path: neutral.path, project: neutral.project });
+    expect(decoded.confidence).toBe('fallback');
+    expect(decoded.reason).toContain('kaynak kelimelerinden');
+  });
+
+  it('word count cannot change confidence or creative selection', () => {
+    const short = decodeBrief('ürün');
+    const long = decodeBrief(Array.from({ length: 80 }, () => 'ürün reklamı packshot').join(' '));
+    expect({ path: short.path, project: short.project, confidence: short.confidence })
+      .toEqual({ path: long.path, project: long.project, confidence: long.confidence });
+  });
+
+  it('a protected franchise name in raw source cannot select that franchise world', () => {
+    expect(decodeBrief('One Piece Naruto Demon Slayer').project.world).not.toMatch(/one_piece|naruto|demon_slayer/);
+  });
+
+  it('reads path, world and palette from a pasted MAMILAS production dossier', () => {
+    const decoded = decodeBrief([
+      '# MAMILAS PRODUCTION DOSSIER',
+      '- **Path:** ANIMATION_EDU',
+      '- **World:** One Piece — Toei Bold-Cel',
+      '### Palette as Light',
+      'Vibrant Education — shadow #1D3557, mid #F4C430.',
+      '[1] ~3s',
+      'SOURCE (exact, untouchable): Grup nedir?',
+    ].join('\n'));
     expect(decoded.path).toBe('ANIMATION_EDU');
-    expect(decoded.project.id).toBe('education');
-    expect(decoded.reason).toContain('Müfredat koruması');
-  });
-
-  it('chooses a specific commercial path when its evidence is stronger', () => {
-    const decoded = decodeBrief('Premium telefon kılıfı reklamı; packshot, logo stabil ve makro yüzey zorunlu.');
-    expect(decoded.path).toBe('PRODUCT_HERO');
-    expect(decoded.project.id).toBe('product_hero');
-  });
-
-  it('routes anime / shonen adventure to STYLIZED_PREMIUM, not commercial fallback', () => {
-    const briefs = [
-      'One Piece Elbaf tarzı dev ada macerası',
-      'Grand Line yelkenli ada keşfi anime tarzında',
-      'Demon Slayer gibi nefes ritmiyle kılıç sahnesi anime macera',
-      'Solo Leveling gate açılışı ve güç yükselişi anime',
-    ];
-    for (const brief of briefs) {
-      const decoded = decodeBrief(brief);
-      expect(decoded.path).toBe('STYLIZED_PREMIUM');
-      expect(decoded.confidence).not.toBe('fallback');
-    }
-  });
-
-  it('routes space/cosmic briefs to STYLIZED_PREMIUM, not commercial fallback', () => {
-    const briefs = [
-      'Uzay istasyonu halka gezegene yaklaşıyor uzay keşfi',
-      'Astronot nebulada uzay yolculuğu kozmik',
-    ];
-    for (const brief of briefs) {
-      const decoded = decodeBrief(brief);
-      expect(decoded.path).toBe('STYLIZED_PREMIUM');
-      expect(decoded.confidence).not.toBe('fallback');
-    }
-  });
-
-  it('routes electricity / circuit curriculum topics to ANIMATION_EDU', () => {
-    const briefs = [
-      'Elektrik devresi: pil anahtar ampul akım',
-      'Pil devreye enerji sağlar; ampul ışık verir',
-    ];
-    for (const brief of briefs) {
-      const decoded = decodeBrief(brief);
-      expect(decoded.path).toBe('ANIMATION_EDU');
-    }
-  });
-
-  it('routes architecture interior language to ARCHITECTURE_REAL_ESTATE', () => {
-    const decoded = decodeBrief('Mimari salon kapısı açılır mermer iç mekan ışık');
-    expect(decoded.path).toBe('ARCHITECTURE_REAL_ESTATE');
+    expect(decoded.project.world).toBe('one_piece_toei');
+    expect(decoded.project.palette).toBe('vibrant_edu');
   });
 
   it('returns only IDs that exist and agree in SURGERY_DATA', () => {
@@ -71,7 +59,7 @@ describe('decodeBrief', () => {
     expect(SURGERY.paths.some((item) => item.id === decoded.path)).toBe(true);
     expect(project?.path).toBe(decoded.path);
     expect(SURGERY.worlds.some((item) => item.id === decoded.project.world)).toBe(true);
-    expect(SURGERY.refs.some((item) => item.id === decoded.project.ref)).toBe(true);
+    expect(decoded.project.ref).toBe('');
     expect(SURGERY.palettes.some((item) => item.id === decoded.project.palette)).toBe(true);
   });
 });
@@ -89,6 +77,38 @@ describe('ingestSource and sourceIntegrity', () => {
 
   it('is deterministic for the same raw source', () => {
     expect(ingestSource(raw)).toEqual(ingestSource(raw));
+  });
+
+  it('never orphans a trailing closing quote into its own beat', () => {
+    // "…büyüyecek!" → the terminator "!" closes the sentence, but the closing
+    // quote " must ride WITH that sentence, not spill into a single-char beat.
+    const quoted = 'Öğretmen dedi: "Bu 10 sayısı sihirli bir şeye dönüşecek!" Sınıf sustu.';
+    const beats = ingestSource(quoted);
+    // Losslessness first — every character must survive.
+    expect(beats.map((b) => b.exactText).join('')).toBe(quoted);
+    // No beat may consist solely of closing punctuation / whitespace.
+    for (const b of beats) {
+      expect(/^[\s"'”’»)\]]+$/u.test(b.exactText)).toBe(false);
+    }
+    // The quote closes with the sentence it belongs to.
+    expect(beats.some((b) => b.exactText.includes('dönüşecek!"'))).toBe(true);
+  });
+
+  it('extracts exact SOURCE lines from a pasted production dossier before ingesting', () => {
+    const dossier = [
+      '# MAMILAS PRODUCTION DOSSIER',
+      '[1] ~6s',
+      'SOURCE (exact, untouchable): Peki hiç düşündün mü?',
+      'CONCEPT: old generic concept',
+      '[2] ~5s',
+      'SOURCE (exact, untouchable):  "Biliyor muydun ki aynı anda ailenin üyesisin?"',
+      'CONCEPT: old generic concept',
+    ].join('\n');
+    const extracted = extractProductionDossierSource(dossier);
+    expect(extracted?.rawSource).toBe('Peki hiç düşündün mü? "Biliyor muydun ki aynı anda ailenin üyesisin?"');
+    expect(extracted?.beats).toHaveLength(2);
+    expect(ingestSource(dossier)).toEqual(extracted?.beats);
+    expect(sourceIntegrity(extracted!.rawSource, extracted!.beats).coverage).toBe(100);
   });
 
   it('reports 100% and equal hashes on a lossless round-trip', () => {
@@ -165,6 +185,40 @@ describe('autoGroupBeats', () => {
     expect(sourceIntegrity(raw, grouped).coverage).toBe(100);
   });
 
+  it('scene budget is model-aware: wider engine window → longer per-scene VO budget, fewer scenes', () => {
+    const raw = [
+      ...Array.from({ length: 43 }, (_, i) => `Öğrenci kavramı ${i + 1}.`),
+      ...Array.from({ length: 8 }, (_, i) => `Ders ${i + 1}.`),
+    ].join(' ');
+
+    // No model → exact legacy Kling-baseline numbers stay untouched.
+    const legacy = sourceSceneBudget(raw, 'Dengeli');
+    expect(legacy.usableVoSecondsPerScene).toBe(5);
+
+    // kling_o3 (15s window, 2026-07 web-verified: Kling 3.0 native 3-15s): 5 * 15/9 = 8.3s.
+    const o3 = sourceSceneBudget(raw, 'Dengeli', undefined, 'kling_o3');
+    expect(o3.usableVoSecondsPerScene).toBe(8.3);
+    expect(o3.targetSceneCount).toBeLessThan(legacy.targetSceneCount);
+
+    // runway_gen4 (14s window): 5 * 14/9 = 7.8s per scene — narrower than o3's
+    // 15s window since 2026-07, so it needs at least as many scenes as o3.
+    const runway = sourceSceneBudget(raw, 'Dengeli', undefined, 'runway_gen4');
+    expect(runway.usableVoSecondsPerScene).toBe(7.8);
+    expect(runway.targetSceneCount).toBeGreaterThanOrEqual(o3.targetSceneCount);
+
+    // Explicit kling (9s baseline) === legacy behaviour.
+    const kling = sourceSceneBudget(raw, 'Dengeli', undefined, 'kling');
+    expect(kling.usableVoSecondsPerScene).toBe(5);
+    expect(kling.targetSceneCount).toBe(legacy.targetSceneCount);
+
+    // Grouping honours the model budget and stays lossless.
+    const atoms = ingestSource(raw);
+    const groupedO3 = durationBudgetSourceBeats(raw, 'Dengeli', atoms, 'kling_o3');
+    expect(groupedO3.length).toBeLessThan(durationBudgetSourceBeats(raw, 'Dengeli', atoms).length);
+    expect(groupedO3.map((beat) => beat.exactText).join('')).toBe(raw);
+    expect(sourceIntegrity(raw, groupedO3).coverage).toBe(100);
+  });
+
   it('avoids starting grouped scenes with stranded Turkish conjunctions', () => {
     const raw = [
       'Toplum birlikte yaşar.',
@@ -183,6 +237,31 @@ describe('autoGroupBeats', () => {
     expect(grouped.length).toBeGreaterThan(1);
     expect(grouped.map((beat) => beat.exactText).join('')).toBe(raw);
     expect(grouped.some((beat) => /^(Ve|Ama|Çünkü|Fakat|Sonra)\b/u.test(beat.exactText.trim()))).toBe(false);
+  });
+
+  it('never merges ordinal sequence intros ("Beşinci unsur…") with the preceding sentence', () => {
+    // Each ordinal marker introduces a NEW visual concept — a new start frame.
+    // Merging them produces a scene where Kling's start frame can't represent both ideas.
+    const raw = [
+      'Vatandaşlık katılımı beş unsurdan oluşur.',
+      'Birinci unsur, hukuktur.',
+      'İkinci unsur, kamuoyudur.',
+      'Üçüncü unsur, medyadır.',
+      'Dördüncü unsur, sivil toplum kuruluşlarıdır.',
+      'Beşinci unsur, siyasi partilerdir.',
+      'Bu beş unsur birbirinden bağımsız değildir.',
+    ].join(' ');
+    const grouped = autoGroupBeats(raw, 'Dengeli');
+    expect(grouped.map((b) => b.exactText).join('')).toBe(raw);
+    expect(sourceIntegrity(raw, grouped).coverage).toBe(100);
+    // Each ordinal sentence must be in its own scene, not merged with the one before it
+    const ordinalPattern = /^(Birinci|İkinci|Üçüncü|Dördüncü|Beşinci)\s+unsur/u;
+    for (const beat of grouped) {
+      if (ordinalPattern.test(beat.exactText.trim())) {
+        // ordinal intro must start a new beat, not be appended to a previous one
+        expect(beat.exactText.trim()).toMatch(ordinalPattern);
+      }
+    }
   });
 
   it('keeps listed educational concepts as separate dominant scene ideas', () => {
@@ -210,5 +289,39 @@ describe('autoGroupBeats', () => {
     }
     expect(grouped.map((beat) => beat.exactText).join('')).toBe(raw);
     expect(sourceIntegrity(raw, grouped).coverage).toBe(100);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// A NUMBER'S PERIOD IS NOT A SENTENCE'S PERIOD.
+//
+// "17. yüzyıl Osmanlı Bursa'sında kandil yanar." split into TWO beats — "17." and
+// "yüzyıl Osmanlı…" — and the first became a whole SCENE whose entire source was "17.".
+// A scene, an image prompt and a motion draft, all for a number. Turkish ordinals are
+// everywhere in exactly the material Mami writes: "3. sınıf", "20. yüzyıl", "1. Dünya
+// Savaşı", "2. Meşrutiyet".
+describe('ordinals do not end a sentence', () => {
+  it('a Turkish ordinal is glued to the sentence it belongs to', () => {
+    const beats = ingestSource("17. yüzyıl Osmanlı Bursa'sında kandil yanar. El ipliği geçirir.");
+    expect(beats.length, 'the ordinal became its own beat').toBe(2);
+    expect(beats[0].exactText).toContain('17.');
+    expect(beats[0].exactText).toContain('yüzyıl');
+    expect(beats[0].exactText.trim()).not.toBe('17.');
+  });
+
+  it('works for the ordinals Mami actually types', () => {
+    for (const src of ['3. sınıf öğrencileri deneyi yapar.', '1. Dünya Savaşı başlar.', '20. yüzyıl değişir.']) {
+      const beats = ingestSource(src);
+      expect(beats.length, `"${src}" split on its ordinal`).toBe(1);
+    }
+  });
+
+  it('a real sentence boundary still splits', () => {
+    expect(ingestSource('Su ısınır. Buhar yükselir.').length).toBe(2);
+  });
+
+  it('losslessness survives the glue — every character is still there', () => {
+    const src = "17. yüzyıl Osmanlı Bursa'sında kandil yanar. El ipliği geçirir.";
+    expect(ingestSource(src).map((b) => b.exactText).join('')).toBe(src);
   });
 });

@@ -5,7 +5,7 @@
 // No DOM, no LLM, deterministic. Reuses decodeBrief / registerOf / worldCategory.
 
 import { decodeBrief } from './source';
-import { DATA, deriveProductionPath, deriveTeachingRecipe, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
+import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, refCompatibleWithWorld, resolveRecipeDefaults, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
 import { dnaDirectives, registerOf, type DnaDirectives, type Register } from './brain';
 import { worldCategory, type PreviewCategory } from './preview';
 
@@ -18,15 +18,20 @@ export interface RecipeSuggestion {
   confidence: 'high' | 'medium' | 'fallback';
 }
 
-/** Topic → a complete, valid recipe the user can apply with one click. */
-export function suggestRecipe(topic: string): RecipeSuggestion {
-  const decoded = decodeBrief(topic || '');
+/**
+ * Generic starter recipe. Raw source/topic is deliberately ignored: the site cannot infer
+ * production intent from source words. Mami may explicitly apply this neutral starter, then
+ * choose the real world/palette/ref; intelligent creative development belongs to the Director.
+ */
+export function suggestRecipe(_topic: string): RecipeSuggestion {
+  const decoded = decodeBrief('');
   const p = decoded.project;
+  const defaults = resolveRecipeDefaults(decoded.path, p.world);
   return {
     path: decoded.path,
     worldId: p.world,
     paletteId: p.palette,
-    refIds: p.ref ? [p.ref] : [],
+    refIds: p.ref ? [p.ref] : defaults.selectedRefIds,
     reason: decoded.reason,
     confidence: decoded.confidence,
   };
@@ -71,10 +76,39 @@ const PRESET_REGISTER_MAP: Record<string, Register[]> = {
   stylized_game: ['STY'],
 };
 
+// Every world a Phase-0 preset can legitimately set (its base `sets` plus every
+// director-panel choice). If the final recipe's world is outside this scope, the
+// Director Mandate text still describes one of THESE worlds (e.g. "Clay diorama"
+// while the user switched to kurzgesagt_edu) — downstream agents read a mandate
+// that contradicts the Render Lock. Render Lock wins by authority, so this is a
+// heads-up, never a block. Kept in sync with src/data/presets.ts by a test.
+export const PRESET_WORLD_SCOPE: Record<string, string[]> = {
+  // Reklam yolları (product/corp/event) amaca özel COMMERCIAL_REAL dünyalarına bağlıdır —
+  // film-yönetmeni dünyaları (fincher/chivo/deakins) reklamda kullanılmaz. Bu liste
+  // presets.ts ile senkron kalmak ZORUNDA (advisor.test.ts kilitler).
+  product_brand: ['product_brand_real', 'kurumsal_brand_film'],
+  edu_explainer: ['pixar_3d_edu', 'paper_craft_popup'],
+  cinematic_story: ['deakins_naturalist', 'chivo_naturalist_handheld'],
+  social_short: ['chivo_naturalist_handheld'],
+  doc_human: ['chivo_naturalist_handheld'],
+  corp_public: ['kurumsal_brand_film'],
+  event_campaign: ['civic_promo_real', 'sports_energy_real'],
+  stylized_game: ['arcane_fortiche', 'demon_slayer_ufotable', 'spiderverse_sony', 'jjk_mappa', 'one_piece_toei'],
+  food_beverage: ['appetite_tabletop_real'],
+  edu_promo: ['edu_promo_real'],
+  campaign_kv: ['commercial_studio', 'photoreal_location', 'luxury_editorial'],
+  product_launch: ['product_macro_tabletop', 'commercial_studio', 'tech_clinical_real'],
+  social_content: ['social_reels_real', 'commercial_studio'],
+  editorial_cover: ['luxury_editorial', 'human_portrait_real'],
+  brand_kit: ['commercial_studio', 'photoreal_location'],
+  pitch_deck: ['notebook', 'commercial_studio', 'lightbox'],
+  ui_product: ['tech_clinical_real', 'product_macro_tabletop', 'photoreal_location'],
+};
+
 // Gritty render worlds vs. clean/bright palettes: the Render Lock wins by
 // authority, but the palette can mislead downstream agents — worth a heads-up.
-const GRITTY_WORLD_IDS = new Set(['arcane', 'painterly_shadow', 'graphic_comic']);
-const CLEAN_PALETTE_IDS = new Set(['vibrant_clean_education', 'pastel_soft', 'clinical_blue']);
+const GRITTY_WORLD_IDS = new Set(['arcane', 'arcane_fortiche', 'painterly_shadow', 'graphic_comic']);
+const CLEAN_PALETTE_IDS = new Set(['vibrant_clean_education', 'vibrant_edu', 'pastel_soft', 'clinical_blue', 'cool_scientific']);
 
 function refFamily(cat: string): string {
   return String(cat || '').split('/')[0].trim().toLowerCase();
@@ -131,6 +165,52 @@ const WORLD_REF_CATS: Record<string, string[]> = {
 };
 
 const STARTER_PACKS: Record<string, string[]> = {
+  rick_morty_scifi: ['rick_morty_wobble', 'cartoon_network_graphic'],
+  invincible_hero_comic: ['invincible_hero_impact', 'batman_timm_graphic'],
+  castlevania_gothic: ['castlevania_gothic_sakuga', 'jujutsu_dark_ritual'],
+  pixar_3d_edu: ['pixar_dimensional', 'pixar_emotional_staging', 'soul'],
+  paper_craft_popup: ['verse_paper_hybrid', 'kurzgesagt_clarity', 'cartoon_network_graphic'],
+  ghibli_hayao: ['ghibli_organic', 'miyazaki_wind_nature', 'ghibli_spirited_bathhouse'],
+  arcane_fortiche: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'],
+  spiderverse_sony: ['spiderverse_graphic', 'verse_miles_dna', 'spiderverse_gwen_pastel'],
+  jjk_mappa: ['jujutsu_dark_ritual', 'jjk_dna', 'inside_limbo_shadow'],
+  demon_slayer_ufotable: ['demon_slayer_breath', 'demon_slayer_dna', 'makoto_shinkai_sky_light'],
+  one_piece_toei: ['one_piece_sunny_adventure', 'onepiece_grandline_scale', 'anime_silhouette'],
+  deakins_naturalist: ['roger_deakins_naturalism', 'cinedna_naturalkey', 'cinedna_deepfocus'],
+  fincher_precision: ['cinedna_symmetry', 'cinedna_highkey', 'rembrandt_portrait'],
+  wes_anderson_symmetric: ['cinedna_symmetry', 'bauhaus_geometric', 'vogue_editorial'],
+  chivo_naturalist_handheld: ['emmanuel_lubezki_long_take', 'cinedna_handheld', 'setup_verite'],
+  edu_promo_real: ['cinedna_naturalkey', 'cinedna_highkey', 'apple_object_worship'],
+  kurumsal_brand_film: ['cinedna_symmetry', 'architectural_digest', 'apple_object_worship'],
+  civic_promo_real: ['cinedna_golden', 'civic_doc', 'cinedna_deepfocus'],
+  appetite_tabletop_real: ['product_macro', 'apple_object_worship', 'cinedna_naturalkey'],
+  product_brand_real: ['apple_object_worship', 'product_macro', 'cinedna_highkey'],
+  automotive_hero_real: ['product_glass_refraction', 'roger_deakins_naturalism', 'cinedna_highkey'],
+  nature_doc_real: ['street_doc', 'roger_deakins_naturalism', 'miyazaki_wind_nature'],
+  science_viz_real: ['product_macro', 'cinedna_highkey', 'kurzgesagt_iso'],
+  archival_newsreel: ['street_doc', 'chernobyl_muted_dread', 'newsprint_halftone_panel'],
+  technical_cutaway: ['product_macro', 'kurzgesagt_iso', 'cinedna_highkey'],
+  shinkai_photoreal_anime: ['miyazaki_wind_nature', 'chrome_grid_neon_sun', 'cinedna_goldenhour'],
+  period_reconstruction: ['roger_deakins_naturalism', 'chernobyl_muted_dread', 'street_doc'],
+  sports_energy_real: ['cinedna_handheld', 'setup_verite', 'cinedna_deepfocus'],
+  kurzgesagt_edu: ['kurzgesagt_clarity', 'nasa_vintage_poster', 'bauhaus_geometric'],
+  whiteboard_explainer: ['samurai_jack_minimal', 'kurzgesagt_clarity', 'batman_timm_graphic'],
+  retro_anime_film: ['akira_neon_impact', 'cowboy_bebop_noir_jazz', 'ghost_shell_cyber_melancholy'],
+  motion_design_flat: ['bauhaus_geometric', 'constructivist_poster', 'apple_object_worship'],
+  ukiyo_e_print: ['hokusai_woodblock', 'turkish_folk_iznik', 'medieval_illuminated'],
+  laika_stopmotion: ['laika_tactile_stopmotion', 'ghibli_felt_hybrid', 'lego_movie_brick_energy'],
+  cyberpunk_neon_noir: ['akira_neon_impact', 'ghost_shell_cyber_melancholy', 'arcane_zaun_dna'],
+  vintage_comic_book: ['spiderverse_graphic', 'batman_timm_graphic', 'kurzgesagt_clarity'],
+  claymation_aardman: ['laika_tactile_stopmotion', 'ghibli_felt_hybrid', 'lego_movie_brick_energy'],
+  noir_high_contrast: ['cowboy_bebop_noir_jazz', 'cinedna_handheld', 'inside_limbo_shadow'],
+  watercolor_storybook: ['ghibli_organic', 'miyazaki_wind_nature', 'hokusai_woodblock'],
+  sci_fi_hard_surface: ['akira_neon_impact', 'cinedna_symmetry', 'emmanuel_lubezki_long_take'],
+  synthwave_retro_80s: ['akira_neon_impact', 'ghost_shell_cyber_melancholy', 'spiderverse_gwen_pastel'],
+  low_poly_ps1: ['samurai_jack_minimal', 'kurzgesagt_clarity', 'apple_object_worship'],
+  naruto_shinobi_world: ['naruto_chakra_motion', 'dragon_ball_power_aura', 'anime_silhouette'],
+  aot_wall_world: ['attack_titan_scale', 'vagabond_ink_brush', 'inside_limbo_shadow'],
+  solo_leveling_gate: ['solo_leveling_rank_shadow', 'jujutsu_dark_ritual', 'inside_limbo_shadow'],
+  bleach_soul_world: ['bleach_soul_blade', 'bleach_hollow_mask_pressure', 'anime_silhouette'],
   pixar3d: ['pixar_dimensional', 'pixar_emotional_staging', 'soul'],
   anime_cel: ['anime_silhouette', 'demon_slayer_dna', 'makoto_shinkai_sky_light'],
   arcane: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'],
@@ -166,25 +246,10 @@ const STARTER_PACKS: Record<string, string[]> = {
   healthcare_public_real: ['setup_window', 'civic_doc', 'cinedna_overcast'],
   real_event_coverage: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'],
   product_macro_tabletop: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'],
-  // IP_WORLD group — curated ref pack per franchise world
-  demon_slayer_taisho: ['demon_slayer_breath', 'demon_slayer_dna', 'makoto_shinkai_sky_light'],
-  one_piece_grand_line: ['one_piece_sunny_adventure', 'onepiece_grandline_scale', 'anime_silhouette'],
-  solo_leveling_gate: ['solo_leveling_rank_shadow', 'jujutsu_dark_ritual', 'inside_limbo_shadow'],
-  jjk_cursed_domain: ['jujutsu_dark_ritual', 'solo_leveling_rank_shadow', 'demon_slayer_breath'],
-  aot_wall_world: ['attack_titan_scale', 'vagabond_ink_brush', 'inside_limbo_shadow'],
-  naruto_shinobi_world: ['naruto_chakra_motion', 'dragon_ball_power_aura', 'anime_silhouette'],
-  bleach_soul_world: ['bleach_soul_blade', 'bleach_hollow_mask_pressure', 'anime_silhouette'],
-  // New animation worlds
-  kurzgesagt_edu: ['kurzgesagt_clarity', 'nasa_vintage_poster', 'bauhaus_geometric'],
-  whiteboard_explainer: ['kurzgesagt_clarity', 'batman_timm_graphic', 'samurai_jack_minimal'],
-  retro_anime_film: ['akira_neon_impact', 'ghost_shell_cyber_melancholy', 'cowboy_bebop_noir_jazz'],
-  // New stylized worlds
-  motion_design_flat: ['bauhaus_geometric', 'constructivist_poster', 'apple_object_worship'],
-  ukiyo_e_print: ['hokusai_woodblock', 'medieval_illuminated', 'turkish_folk_iznik'],
 };
 
 function worldRegister(world: SurgeryWorld): Register {
-  return world.group.toUpperCase() === 'REAL' ? 'REAL' : 'STY';
+  return /real|cinematic/i.test(world.group) ? 'REAL' : 'STY';
 }
 
 /** 0–100 world ↔ reference fit. Explicit world locks outrank category affinity. */
@@ -238,16 +303,23 @@ export interface DnaStrength {
   directives: DnaDirectives;
 }
 
-export function dnaStrength(refs: SurgeryRef[], register: Register = 'STY'): DnaStrength {
-  const fields = changedDirectiveFields(refs, register);
+export function dnaStrength(refs: SurgeryRef[], register: Register = 'STY', worldId?: string): DnaStrength {
+  // Same world gate as production (pure.ts refCompatibleWithWorld): a ref the
+  // batch will silently drop must not report strength here.
+  const gatedOut = worldId ? refs.filter((r) => !refCompatibleWithWorld(r, worldId)) : [];
+  const active = refs.filter((r) => !gatedOut.includes(r));
+  const fields = changedDirectiveFields(active, register);
   return {
     filled: fields.length,
     total: CONTRIBUTION_FIELDS.length,
     percent: Math.round((fields.length / CONTRIBUTION_FIELDS.length) * 100),
     fields,
     roles: fields.map((field) => ROLE_LABEL[field]),
-    zeroRefIds: refs.filter((ref) => refContribution(ref, register).count === 0).map((ref) => ref.id),
-    directives: dnaDirectives(refs, register),
+    zeroRefIds: [
+      ...gatedOut.map((ref) => ref.id),
+      ...active.filter((ref) => refContribution(ref, register).count === 0).map((ref) => ref.id),
+    ],
+    directives: dnaDirectives(active, register),
   };
 }
 
@@ -264,7 +336,9 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
 
   if (!world) { notes.push({ level: 'warn', title: 'Dünya seçilmedi', detail: 'Sahnenin görsel grameri yok. Bir vizyonel dünya seç.' }); blocking = true; }
   if (!palette) { notes.push({ level: 'warn', title: 'Palet yok', detail: 'Işık davranışı tanımsız kalır. Bir palet seç (renkler ışık olarak okunur).' }); blocking = true; }
-  if (refs.length === 0) { notes.push({ level: 'warn', title: 'Referans DNA yok', detail: 'Yön yok — sonuç jenerik çıkar. En az bir referans ekle.' }); blocking = true; }
+  if (refs.length === 0) {
+    notes.push({ level: 'info', title: 'Referans DNA seçilmedi', detail: 'Render World tek başına çalışır; ama prodüksiyon seviyesi prompt için 1-3 uyumlu DNA kamera/ışık/hareket tarifini keskinleştirir.' });
+  }
 
   // register ↔ world coherence
   if (world) {
@@ -285,6 +359,20 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
         detail: `"${input.phase0PresetId}" preset'i ${allowed.map((r) => REGISTER_LABEL[r]).join(' / ')} için tasarlandı, ama mevcut path ${REGISTER_LABEL[register]}. Director Mandate yanlış dili konuşuyor — register'a uygun bir preset seç.`,
       });
       blocking = true;
+    }
+  }
+
+  // preset (Director Mandate) ↔ world coherence — mandate text describes a preset
+  // world ("Clay diorama") while the recipe locked a different one. Render Lock
+  // wins by authority; this only warns that the mandate speaks a stale language.
+  if (world && input.phase0PresetId) {
+    const scope = PRESET_WORLD_SCOPE[input.phase0PresetId]?.map(normalizeWorldId);
+    if (scope && !scope.includes(normalizeWorldId(world.id))) {
+      notes.push({
+        level: 'info',
+        title: 'Preset / dünya gerilimi',
+        detail: `"${input.phase0PresetId}" preset'inin Director Mandate metni kendi dünyalarını (${scope.join(', ')}) tarif eder, ama seçili dünya "${world.name}". Render Lock kazanır; yine de mandate'i bu dünyaya göre tazelemek agent karışıklığını önler.`,
+      });
     }
   }
 
@@ -354,9 +442,9 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     if (peak < 60) notes.push({ level: 'info', title: 'Doruk zayıf', detail: `Pacing arcı düz (tepe %${Math.round(peak)}). Bir climax beat'ini yükselt.` });
   }
 
-  if (!blocking && world && palette && refs.length >= 1 && lowFitRefs.length === 0) {
-    const strength = dnaStrength(refs, register);
-    notes.unshift({ level: 'good', title: 'Reçete sağlam', detail: `${REGISTER_LABEL[register]} register'ı, "${world.name}" ve DNA uyumlu; direktif gücü ${strength.filled}/${strength.total} — üretime hazır.` });
+  if (!blocking && world && palette && lowFitRefs.length === 0) {
+    const strength = dnaStrength(refs, register, input.selectedWorldId);
+    notes.unshift({ level: 'good', title: 'Reçete sağlam', detail: `${REGISTER_LABEL[register]} register'ı ve "${world.name}" uyumlu; DNA gücü ${strength.filled}/${strength.total} — üretime hazır.` });
   }
 
   return notes;

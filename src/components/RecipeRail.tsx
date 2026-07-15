@@ -2,7 +2,6 @@ import React from 'react';
 import { useStudioStore } from '../store/useStudioStore';
 import { productionPulse } from '../core/productionPulse';
 import { Lock, ClipboardCheck, FileDiff } from 'lucide-react';
-import caseLedgerLieutenant from '../assets/case-ledger-lieutenant.png';
 
 export const RecipeRail: React.FC = () => {
   const state = useStudioStore();
@@ -22,21 +21,14 @@ export const RecipeRail: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div style={{ ...S.card, padding: 0, overflow: 'hidden' }}>
-        <div style={{ display: 'flex', background: 'var(--s1)', borderBottom: '1px solid var(--line2)' }}>
-          <div style={{ width: 64, height: 80, borderRight: '1px solid var(--line2)', background: 'var(--s2)' }}>
-            <img src={caseLedgerLieutenant} alt="Case ledger lieutenant" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(75%) contrast(1.12)', mixBlendMode: 'luminosity' }} />
-          </div>
-          <div style={{ padding: '12px 14px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--text-muted)', font: '800 9px/1 var(--font-mono)', letterSpacing: 1.5 }}>
-              <ClipboardCheck size={12} color="var(--gold)" />
-              CASE LEDGER
-            </div>
-            <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-dim)', fontStyle: 'italic', lineHeight: 1.4 }}>
-              "Parametre değiştiyse kanıt da değişmeli. Dosyayı yeniden tart."
-            </div>
-          </div>
+        {/* MACRO 4 — ödünç IP portresi (kim_kitsuragi / "CASE LEDGER" persona alıntısı) KALDIRILDI:
+            telif firewall'u satan bir ürünün kendi ekranında Disco karakteri olamaz. Faydalı
+            kısım (SEMANTIC DIFF) nötr bir başlıkla korunuyor. */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--s1)', borderBottom: '1px solid var(--line2)', padding: '12px 16px', color: 'var(--text-muted)', font: '800 9px/1 var(--font-mono)', letterSpacing: 1.5 }}>
+          <ClipboardCheck size={12} color="var(--gold)" />
+          KARAR DEFTERİ
         </div>
-        
+
         <div style={{ padding: 14 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10, color: 'var(--text)', font: '700 10px/1 var(--font-mono)' }}>
             <FileDiff size={12} />
@@ -78,7 +70,7 @@ export const RecipeRail: React.FC = () => {
         </div>
       </div>
 
-      <button onClick={() => state.setCurrentStep(pulse.next.step)} style={{ ...S.card, cursor: 'pointer', textAlign: 'left', border: '1px solid var(--goldline)', background: 'var(--goldsoft)', transition: 'all 0.2s' }}>
+      <button onClick={() => state.advance()} style={{ ...S.card, cursor: 'pointer', textAlign: 'left', border: '1px solid var(--goldline)', background: 'var(--goldsoft)', transition: 'all 0.2s' }}>
         <div style={{ fontSize: 9, color: 'var(--gold)', fontWeight: 800, letterSpacing: 1, marginBottom: 4 }}>SONRAKİ EN İYİ HAMLE</div>
         <div style={{ fontSize: 13, color: 'var(--text)', fontWeight: 600 }}>{pulse.next.label}</div>
         <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>{pulse.next.detail}</div>

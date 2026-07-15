@@ -1,0 +1,204 @@
+[
+  {
+    "id": "spiderverse_sony",
+    "one_liner": "Sony's print-hybrid: 3D forms wearing Ben-Day halftone skin, line layer mis-registered 1-2px off the color plate, hero on 12fps 2s while the camera runs 24fps — the comic page is literally moving.",
+    "render_law": "Sony Pictures Animation Spider-Verse hybrid frame — the founding grammar of the Into/Across pipeline, a precise print-emulation system and NOT 'stylized 3D'. (1) FORMS: full 3D-modeled geometry, but every flat-shaded color fill is overprinted with Ben-Day halftone dots whose size scales with depth — fine dots on the face, coarse dots on the far background, so the halftone itself reads distance. (2) PRINT MIS-REGISTRATION: the color plate sits 1-2px offset from the black line layer, exactly like a cheap comic that slipped on the press — strongest at panel edges, and cyan/magenta separate visibly at high-contrast silhouettes (2-4px chromatic split, read as ink mis-registration, never as a lens defect). (3) LINE: bold brush-textured black line 3-6px, weight HEAVIER on the shadow side of the form, ink texture and dry-brush skips visible — never a clean vector edge. (4) SHADING: hard cel steps, 3 values maximum, no gradient; a hatch or cross-hatch shadow can carry a form the way a comic inker would hatch it. (5) COMIC DEVICES are diegetic physics here: onomatopoeia words break INTO the frame as drawn objects, speed lines are graphic streaks (never motion blur), and an action-panel divider bar may slice the frame diagonally. (6) DUAL-CADENCE MOTION: the hero animates at 12fps on 2s holds while camera and environment run 24fps — this rate-clash is the single most recognizable Spider-Verse signature. IMPERATIVE: PRINT-HYBRID — 3D forms fused with halftone comic printing. Forbid clean smooth CGI, plain flat cel with no dot texture, photoreal rendering, vector-clean line, motion-blur in place of drawn speed lines.",
+    "line_grammar": "Bold brush-textured black line 3-6px, varied weight, thickening on the shadow side of each form; dry-brush ink skips and corner bleed visible. The color fill layer sits 1-2px off the line layer (press mis-registration). Interior detail is economical — a fold, a jaw plane — never fine-line rendering.",
+    "lens_grammar": "35-50mm treated as a comic panel frame. Cyan-magenta chromatic split 2-4px at high-contrast edges (mis-registration, a look choice not a defect). No lens flare unless drawn as a graphic star-burst. Depth stated by halftone dot scale and overlap as much as by focus.",
+    "light_law": "Bold motivated key from a single graphic direction. Fill is a hard-stepped complementary flat color, never a gradient wrap. Rim light becomes a flat graphic shape in the accent hue, not a specular falloff. Highlights are opaque graphic white shapes. Shadow is a printed dot-density field, not a soft ambient pool.",
+    "palette_lock": {
+      "shadow": "#1A0F3D",
+      "mid": "#E63946",
+      "accent": "#00E5FF",
+      "highlight": "#FFFF3D",
+      "bias": "high-saturation primary comic separation — deep violet shadow plate, saturated vermilion-red mid, electric-cyan accent, hot printed-yellow highlight. Halftone dots carry the mids; neon-bright accents allowed because this is print ink, not naturalistic light. NO earth tone, NO desaturated grade, NO gradient shading, NO teal-orange cinematic wash."
+    },
+    "motion_cadence": "Hero character 12fps on 2s holds; camera and background 24fps — dual-cadence is mandatory. Speed lines drawn as graphic streaks, never motion blur. Freeze-frame allowed at a peak beat. Onomatopoeia snaps in on the impact frame and holds 2-3 frames. Smear at peak action is a painted comic streak, not a blur.",
+    "negative_lock": [
+      "NO Miles Morales, NO Peter Parker, NO Peter B. Parker, NO Gwen Stacy, NO Miguel O'Hara, NO Spider-Man 2099, NO Kingpin, NO Prowler, NO any named Spider-Verse character",
+      "NO Spider-Man suit pattern (red-blue web, black-red), NO web-shooter, NO spider emblem",
+      "NO recognizable New York landmark or skyline",
+      "NO clean vector line — brush texture and ink skip are mandatory",
+      "NO smooth naturalistic shading — 3 hard cel steps maximum",
+      "NO motion blur — speed and smear are drawn graphic devices",
+      "Turkish onomatopoeia only — PAT, ŞIK, VUM, GÜM in bold comic letters; NO English POW/BAM/ZAP",
+      "Turkish label only — bold comic letterform with drop shadow, NO English signage"
+    ],
+    "example_injection": "Sony Spider-Verse print-hybrid frame. Halftone dots over flat color, line layer mis-registered 2px off the fills. Subject: Mamilas character on a rooftop mid-turn, 3-value cel shading, bold 4px brush-textured black line heavier on the shadow side of the jaw. Vermilion-red jacket over an electric-cyan sky, cyan-magenta chromatic split at the silhouette edge, fine face-dots against coarse background-dots reading depth. Hero pose held at 12fps while the camera pushes at 24fps. Turkish onomatopoeia 'ŞIK' breaks into the upper-right frame as a drawn object, bold comic letters with drop shadow. Background: a layered Istanbul rooftop, a Turkish sign 'AÇIK' as a flat cyan plate. Motion seed: head turning mid-arc on a 2s hold, a speed-line streak already drawn behind the shoulder. AVOID: Miles Morales, spider emblem, web-suit pattern, clean vector line, English POW, motion blur, naturalistic shading. Clean motion-ready start frame."
+  },
+  {
+    "id": "jjk_mappa",
+    "one_liner": "MAPPA's underexposed cel: key light often absent, subject carved by a cold rim against crushed blue-black, cursed energy an abstract fractal smoke tendril — and at the peak, one or two ink-smear frames where the drawing dissolves into brush motion.",
+    "render_law": "Contemporary MAPPA television-animation frame in the Jujutsu Kaisen production lineage — a deliberately UNDEREXPOSED 2D cel system, 1-1.5 stops below standard cel. (1) EXPOSURE: shadow zones dominate the frame; the subject is rim-lit rather than fill-lit, and the key light is frequently ABSENT — the form reads as a near-silhouette outlined by a cold edge. (2) CEL VALUES: 3 steps, but the shadow value is push-crushed toward blue-black; backgrounds desaturated hard. (3) LINE: confident 2-3px black at rest, HIGH interior line count (fabric folds, hair strand, muscle definition), but at the peak of an action it becomes an INK-SMEAR frame — one or two frames where the drawing dissolves into a brush-ink motion streak and then resolves back to clean line. This smear is the MAPPA signature, not decoration. (4) CURSED ENERGY: abstract fractal black-smoke tendrils with a faint teal-cyan core glow — NEVER a named franchise curse, technique icon, or domain. (5) BACKGROUNDS: photobash-heavy — real photo reference under a painted cool overlay, aggressive atmospheric perspective so the mid-ground fades hazy and grayscale. (6) EFFECTS: hand-drawn on 8-12 frame cycles, never CGI. Post: cold film curve, teal-blue shadow lift, saturation reserved only for a blood or cursed-energy accent against the desaturation. IMPERATIVE: STRICT PURE 2D CEL, authentic flat animation. Forbid any 3D, 2.5D, gradient-airbrush cel, or realistic light interpretation; forbid warm-palette dominance.",
+    "line_grammar": "Confident 2-3px black line at rest with high interior detail (folds, strands, muscle). At the action peak, 1-2 ink-smear brush-motion frames dissolve the line before it resolves. Shadow value crushes toward blue-black; the line survives into the dark where the fill does not.",
+    "lens_grammar": "Flat 2D. Simulated 24-35mm wide during action, 50mm portrait for the drama beat. 16:9. Compositional Dutch tilt permitted at an emotional or dread beat. No physical DOF — depth reads through atmospheric haze.",
+    "light_law": "Rim-dominant. Key light is often absent, the rim outlining the form against a darker ground. Cold blue-black shadow, warm-amber OR cursed-teal rim. Bounce fill minimal or none. The cursed-energy tendril, when present, is a faint local teal glow source, not a bloom that floods the frame.",
+    "palette_lock": {
+      "shadow": "#0B111A",
+      "mid": "#3A4A5A",
+      "accent": "#4DD0E1",
+      "highlight": "#F5E6C8",
+      "bias": "cold blue-gray desaturation dominant — the frame lives below middle exposure; a single warm rim OR a cursed-teal accent is the only saturated event against the grey field. Blood, when present, is the one warm red permitted. NO earth-green, NO pastel, NO Ghibli-warm ambient, NO lifted flat midtone."
+    },
+    "motion_cadence": "Deliberate hold, then 1-2 ink-smear peak frames, then a hard hold on impact. 24fps camera, character 12fps, effects on 8fps loop. 2-3s hold after a climax action while atmosphere settles. Stillness carries dread; the smear carries violence.",
+    "negative_lock": [
+      "NO Yuji Itadori, NO Megumi, NO Nobara, NO Gojo, NO Sukuna, NO Geto, NO Nanami, NO Toji, NO Mahito, NO any named Jujutsu Kaisen character",
+      "NO Shibuya, NO Tokyo Jujutsu High, NO Culling Game location, NO named JJK location",
+      "NO Sukuna finger, NO Ryomen mouth-mark, NO Gojo blindfold or six-eyes glow, NO domain-expansion visual signature",
+      "NO Jujutsu-Tech black-uniform school outfit",
+      "NO 3D render, NO 2.5D hybrid, NO gradient-airbrush cel, NO realistic shading",
+      "NO warm-palette dominance, NO pastel, NO lifted flat exposure",
+      "Turkish label only — brush kanji-inspired stroke weight allowed, NO English signage"
+    ],
+    "example_injection": "MAPPA underexposed-cel frame in Jujutsu Kaisen production grammar. Subject: Mamilas character mid-close-up in profile, rim-lit from camera-right with a cursed-teal edge, key light absent, the form reading as a near-silhouette against crushed blue-black. Confident 2-3px black line, high interior fold detail. Background: a photobash Istanbul night alley under a cool-blue painted overlay, mid-ground hazed to grayscale. Abstract cursed-energy fractal smoke tendrils with a faint teal core rise from the ground plane behind the figure. Turkish label 'GECE' brush-inked on a brick wall. Motion seed: the eye opening — the very next frame will smear into ink as the energy pulses. AVOID: Gojo, Sukuna finger, domain expansion, Jujutsu-Tech uniform, warm palette, 3D. Clean motion-ready start frame."
+  },
+  {
+    "id": "retro_anime_film",
+    "one_liner": "The 1987-94 OVA paradox: every held frame painted to theatrical finish while the motion stays limited at 8-12fps — glossy hair with one airbrushed spec band, gouache backgrounds with brush ridges, and a warm 35mm print-fade with double-exposure halation rings.",
+    "render_law": "Direct-to-video Japanese OVA frame in the 1987-1994 lineage — the OVA paradox as production law: every HELD frame is painted to theatrical finish while the MOTION stays limited (8-12fps feel). (1) CEL: confident 2-3px black line over a soft warm-shifted 2-value cel; hair reads as a single glossy mass with ONE airbrushed band of specular light; mouths small and matte; fabric folds densely inked. (2) BACKGROUNDS: gouache on board with visible brush ridges — NOT digital paint — with dense mechanical line detail and airbrushed metal highlights on any machine or prop. (3) OPTICAL ARTIFACTS: bright practicals (window, lamp, neon sign) bloom with double-exposure HALATION RINGS — a period optical-printer artifact, not modern glow — and cast shadows fall as hard diagonal cel shapes. (4) FILM TEXTURE: a visible 35mm grain layer over every frame, warm amber print-fade, slight line/fill mis-registration. (5) CAMERA: static and deliberate — the era held on the cel and let the painting speak. IMPERATIVE: this is a pastiche of the ERA'S production technique and print texture, ORIGINAL designs only, never a specific franchise. Forbid modern digital-clean gradients, sakuga-fluid 24fps motion, HDR bloom, 3D or 2.5D, named characters, or studio logos.",
+    "line_grammar": "Confident 2-3px black line over soft warm-shifted 2-value cel. Hair a single glossy mass with one airbrushed specular band; small matte mouths; densely inked fabric folds. Slight period-authentic print mis-registration between line and fill.",
+    "lens_grammar": "Flat 2D, simulated 35-40mm portrait framing typical of period OVA compositions. Static camera bias, minimal reframe. A visible 35mm grain layer and warm print-fade sit over the whole frame.",
+    "light_law": "Warm practical key, soft warm-shifted cel shadow (hard diagonal shapes, never grey). Any bright practical blooms with a double-exposure halation ring; metal takes one airbrushed highlight band. No modern soft glow — the bloom is an optical-printer ring.",
+    "palette_lock": {
+      "shadow": "#241C1A",
+      "mid": "#6B5A4E",
+      "accent": "#D98A3D",
+      "highlight": "#F2E6D8",
+      "bias": "warm film-stock cast throughout — amber print-fade in the highlights, muted desaturated secondary hues, visible grain living in every value step. Shadows are warm-brown, never neutral-grey. NO digital-clean gradient, NO HDR bloom, NO modern clean-cel saturation."
+    },
+    "motion_cadence": "Cel silhouette steps forward in deliberate limited-animation frames (8-12fps feel); film grain flutters over each hold; static camera — stillness and grain communicate period weight. 1.5s grain-flutter final hold. Motion is stepped, never fluid.",
+    "negative_lock": [
+      "NO named franchise character, NO specific studio logo or watermark",
+      "NO modern digital-clean cel shading, NO HDR bloom, NO 3D or 2.5D render",
+      "NO smooth 24fps+ motion — must read as limited-animation stepped",
+      "NO cool digital grade — the print is warm-cast",
+      "Turkish label only — period-poster-style lettering, NO English signage"
+    ],
+    "example_injection": "Direct-to-video OVA frame, 1987-94 grammar. Mamilas character at 35mm portrait framing, static hold: 2-3px confident line, warm-shifted 2-value cel, hair a single glossy mass with one airbrushed spec band, small matte mouth. Behind: a gouache-on-board interior with visible brush ridges and a dense-lined original machine with airbrushed metal highlights. A desk lamp blooms with a double-exposure halation ring camera-left; its cast shadow falls as a hard diagonal cel across the wall. Warm amber print-fade, visible 35mm grain, slight line/fill mis-registration. Turkish label 'ANI' in period-poster lettering, upper-left. Motion seed: eyes mid-blink into a held look, grain about to flutter. AVOID: named franchise characters, studio logos, digital-clean gradient, HDR bloom, fluid 24fps, cool grade. Clean motion-ready start frame."
+  },
+  {
+    "id": "naruto_shinobi_world",
+    "one_liner": "Studio Pierrot's shinobi grammar: burnt-orange-and-navy utility costume with bandage wraps, Kishimoto paint-block brows, and chakra as an INWARD single-spiral coiling wind-rings around a fist — never an outward aura ball, never a named jutsu.",
+    "render_law": "Studio Pierrot television-cel frame in the hidden-village shinobi lineage — confident 2-3px black line, flat 2-3 value cel, warm golden-orange key with deep forest-green secondary. What separates Pierrot-shinobi from every other shounen and MUST be present: (1) COSTUME GRAMMAR — burnt-orange and navy color-blocking, utility flak-vests, forearm bandage wraps, open-toe sandal silhouettes, plain unmarked kunai-class tools. (2) FACE — Kishimoto paint-block brows and hard triangular under-eye shadows. (3) MOVEMENT CULTURE — taijutsu: crouched sprint silhouettes, tree-branch launch poses, body-weight low. (4) CHAKRA — an INWARD single-spiral: it coils tight around a fist or underfoot as concentric wind-rings that lift leaf-litter in a small vortex — NEVER an outward glowing aura sphere, never a named jutsu or hand-sign sequence. (5) ENVIRONMENT — a hidden mountain-forest village: warm wood-and-stone facades, rope bridges, paper seals brushed with Turkish calligraphy, river-stone paths, log training posts, a distant mountain face implied but never carved. Sky stays clear noon-blue or dusk-amber; storm drama belongs to other worlds. Dust hangs in canopy sun-shafts. IMPERATIVE: STRICT PURE 2D CEL. Forbid outward aura spheres, horizontal face-stretch comedy (that is Toei grammar), 3D or 2.5D, gradient airbrush, cold desaturation.",
+    "line_grammar": "Confident 2-3px black line, uniform weight at rest, a single hard smear frame at the peak of physical effort. Clean silhouette-first design; costume reads by its color-block shapes before its line.",
+    "lens_grammar": "Flat 2D, simulated 35-50mm portrait for character beats, wider 24mm for training-ground establishing shots. 16:9. No lens flare.",
+    "light_law": "Warm golden-orange key — sun through canopy or village lantern — with deep forest-green ambient fill, dust visible in the sun-shafts. The inward chakra spiral, when present, acts as a brief warm rim light coiling inward, never a bloom that floods the frame.",
+    "palette_lock": {
+      "shadow": "#2E4A2A",
+      "mid": "#C9922F",
+      "accent": "#F2A93B",
+      "highlight": "#FCEBC0",
+      "bias": "warm golden-orange determination dominant, deep forest-green secondary shadow, warm dust-trail accents catching the canopy light. Shadow is green-brown, warm, never cold-neutral. NO cold desaturation, NO pastel, NO neon, NO storm-grey."
+    },
+    "motion_cadence": "Confident hold at rest; taijutsu beats snap with a single smear frame; at climax one inward chakra spiral coils around fist or feet, leaf-litter lifting in the vortex, warm dust trailing; settles into a determined final hold, 1-1.2s. Run-up reads as an arc approach — body low, arms back, dust trailing.",
+    "negative_lock": [
+      "NO Naruto, NO Sasuke, NO Sakura, NO Kakashi, NO Itachi, NO Jiraiya, NO any named Naruto character",
+      "NO Hidden Leaf headband symbol, NO Akatsuki cloud-cloak, NO named jutsu hand-sign sequence",
+      "NO Valley of the End, NO Hokage Mountain carving, NO named franchise location",
+      "NO outward aura sphere — chakra is an inward wind-spiral only",
+      "NO Toei horizontal face-stretch comedy",
+      "NO cold or desaturated palette, NO pastel, NO 3D, NO gradient airbrush",
+      "Turkish label only — bold display letterform, NO English signage"
+    ],
+    "example_injection": "Studio Pierrot shinobi-world frame. Mamilas character crouched in a sprint pose on a river-stone path, confident 2-3px black outline, burnt-orange-and-navy costume blocking with a utility flak-vest and forearm wraps, Kishimoto paint-block brows set in resolve. Warm golden sun-shafts drop through the canopy with dust hanging; deep forest-green shadow. One inward chakra spiral coils around the raised fist as concentric wind-rings, leaf-litter lifting in the small vortex. Background: wood-and-stone village facades, a rope bridge, log training posts, a paper seal brushed with Turkish calligraphy 'MÜHÜR'. Turkish label 'AZİM' bold display letter, upper-right. Motion seed: the spiral mid-coil, about to tighten. AVOID: Naruto, Sasuke, leaf-headband symbol, jutsu hand-signs, carved mountain face, outward aura ball, face-stretch comedy. Clean motion-ready start frame."
+  },
+  {
+    "id": "aot_wall_world",
+    "one_liner": "WIT/MAPPA colossal-wall gravity: near-monochrome grey-green military desaturation, one muted signal-accent (a flare, a cloak trim), the human placed small as a scale indicator against a mass filling 80% of the vertical — stillness IS the tension.",
+    "render_law": "Contemporary WIT Studio / MAPPA television-animation frame in the Attack on Titan environmental lineage — scale-dread through composition, not motion. (1) ENVIRONMENT: immense stone walls and masses, colossal scale IMPLIED through composition (the wall or architecture filling 70-85% of the vertical frame), never stated as a named specific wall. (2) GRADE: grey-green military desaturation dominates, near-monochrome — all secondary hues pulled toward olive-grey — with exactly ONE muted signal color per composition (a flare, a cloak trim, a single warning light). No warmth, no saturation bloom. (3) CEL: confident 2-3px black line, desaturated 2-3 value cel shading, texture emphasis on WEATHERED stone and coarse fabric over clean color fill; surface weathering and staining baked into the mid-tones. (4) LIGHT: overcast grey-green diffuse ambient key with NO warm bounce; a torch or signal flare is the only local hard source in interiors, reading as a single muted accent against the grey field; shadow is flat and heavy, communicating institutional dread rather than filmic drama. (5) COMPOSITION+MOTION: the human figure small at the base or mid-frame as a scale indicator; near-stillness as the motion grammar with ONE atmospheric shift only (wind through dust, a distant silhouette crossing, a flare igniting); the camera holds — speed never communicates scale, stillness does. IMPERATIVE: STRICT PURE 2D CEL. Forbid 3D, warm or bright grading, saturation bloom, and any named franchise transformation or emblem.",
+    "line_grammar": "Confident 2-3px black line, desaturated 2-3 value cel shading. Texture emphasis on weathered stone and coarse fabric over clean color; staining and wear baked into mid-tones rather than drawn as separate detail.",
+    "lens_grammar": "Wide establishing lens (24-28mm simulated) for scale-dread compositions placing the human as a scale indicator; tighter 50mm for a survival-detail human beat. 16:9 or 2.35:1 for maximum vertical scale impact.",
+    "light_law": "Overcast grey-green diffuse ambient key, no warm bounce. A single hard torch or flare is the only local source in interiors, a muted signal-accent against the grey. Shadow reads flat and heavy — dread, not drama.",
+    "palette_lock": {
+      "shadow": "#242E28",
+      "mid": "#5C6B5E",
+      "accent": "#B3441C",
+      "highlight": "#D8DED2",
+      "bias": "grey-green military desaturation dominant, near-monochrome, a single muted signal-color accent (a flare, a cloak trim) carrying the only saturation in the frame. NO warmth, NO saturation bloom, NO pastel, NO clean bright fill."
+    },
+    "motion_cadence": "Near-stillness; one atmospheric shift only — wind through dust, a distant silhouette crossing, a flare igniting; the camera holds, speed never communicates scale, stillness does. Tension hold 2-3s.",
+    "negative_lock": [
+      "NO Eren, NO Mikasa, NO Levi, NO Armin, NO Erwin, NO any named Attack on Titan character",
+      "NO Titan-transformation visual signature, NO Survey Corps wings-of-freedom emblem or insignia",
+      "NO named specific wall (Wall Maria, Rose, Sina) — generic colossal wall environment only",
+      "NO ODM-gear brand signature",
+      "NO warm palette, NO saturation bloom, NO pastel, NO 3D",
+      "Turkish label only — military-stencil lettering, NO English signage"
+    ],
+    "example_injection": "WIT/MAPPA wall-world frame. Subject: a lone figure in military-style gear standing at the base of an immense grey-green weathered-stone wall, scale-dread composition with the wall filling 80% of the vertical frame, the figure small at the bottom third as a scale indicator. Desaturated grey-green dominant, one muted signal-orange flare glowing at the figure's side — the only saturation in frame. Overcast harsh light, no warm bounce, staining baked into the stone mid-tones. Turkish label 'DUVAR' in military-stencil lettering, small, lower-left. Motion seed: dust drifting across the frame, about to settle into stillness. AVOID: named AoT characters, Titan-transformation, Survey Corps emblem, named wall, warm palette, 3D. Clean motion-ready start frame."
+  },
+  {
+    "id": "solo_leveling_gate",
+    "one_liner": "MAPPA manhwa-adaptation: razor-sharp angular lines at digital-panel density, cold steel-blue with ONE electric-indigo accent, and the genre's signature translucent SYSTEM WINDOW hanging in air casting glass-blue screen-light on the subject.",
+    "render_law": "High-fidelity manhwa-adaptation frame in the Solo Leveling environmental lineage — razor-sharp angular linework at digital-painted panel density, MORE interior line detail than TV cel. (1) TWO REGISTERS, one declared per frame: a NIGHT CITY of glass towers with clean cyan-white window grids and wet-asphalt reflections, OR a GATE-DUNGEON interior of rough-hewn stone lit by cold bioluminescent veins in the rock (no torches). (2) GRADE: cold steel-blue and graphite with ONE electric-indigo accent. (3) SIGNATURE — the floating SYSTEM WINDOW: a translucent glass-blue UI panel hanging in air with thin cyan borders and Turkish interface text, casting a faint screen-light on the near side of the subject. (4) COMPOSITION — a POWER-ASCENT ladder: strong verticals, the subject framed low looking up or high looking down, never flat eye-level. (5) THRESHOLD — the Gate exterior exhales a slow purple-black mist mass, a shimmering vertical portal-plane with void beyond. (6) POWER MOMENTS read as ground-particle uplift and a faint violet-indigo silhouette rim — atmosphere, never a named skill. IMPERATIVE: STRICT high-fidelity 2D cel/manhwa shading. Forbid painterly blur and photobash-collage backgrounds (that is jjk_mappa grammar), photoreal 3D, warm-color dominance, and torch-lit fantasy-dungeon cliché.",
+    "line_grammar": "Razor-sharp angular linework at high-fidelity density — more interior line than typical TV cel, closer to a digital-painted manhwa panel finish. Edges are clean and hard, not brush-textured.",
+    "lens_grammar": "Simulated wide 24-28mm for dungeon-corridor scale, tighter 50mm for a character power-ascent close-up. 16:9 or 2.35:1 for corridor scenes. Strong vertical compositions.",
+    "light_law": "Cold steel-blue key; bioluminescent rock veins or cyan window grids are the only practicals; electric-indigo accent as rim only. The system window casts a faint glass-blue screen-light on the near side of the subject. No warm fill anywhere.",
+    "palette_lock": {
+      "shadow": "#12101C",
+      "mid": "#38344A",
+      "accent": "#6A3FD1",
+      "highlight": "#C7C2E0",
+      "bias": "cold dark-blue and steel-grey dominant, an electric-indigo power-aura as the single accent, cyan window/vein practicals as the only cool highlights. Shadow is blue-black, never warm. NO warmth, NO pastel, NO earth-tone, NO torch-amber."
+    },
+    "motion_cadence": "Atmosphere thickens first — ground particles lift; then one rank-aura event, a violet-indigo silhouette outline blooming once; settles into a brooding low-hold, no bounce. The system window fades up cleanly, never snaps.",
+    "negative_lock": [
+      "NO Sung Jin-Woo, NO Cha Hae-In, NO any named Solo Leveling character, NO shadow-soldier army designs",
+      "NO named rank/gate classification iconography (S-Rank, E-Rank as franchise branding), NO monarch-aura signature",
+      "NO warm palette, NO pastel, NO earth-tone dominance",
+      "NO painterly blur, NO photobash-collage background",
+      "NO photoreal 3D render, NO torch-lit fantasy-dungeon cliché",
+      "Turkish label only — sharp geometric sans lettering, NO English signage"
+    ],
+    "example_injection": "High-fidelity manhwa frame, Solo Leveling environmental lineage. Low-angle vertical composition: Mamilas character stands at a Gate threshold, glass towers rising behind with cyan-white window grids over wet asphalt. Razor-sharp angular linework, cold steel-blue palette, one electric-indigo rim accent. A translucent system window floats at shoulder height — glass-blue panel, thin cyan border, Turkish interface text 'GÖREV: BAŞLA' casting a faint screen-light on the jaw. Purple-black mist exhales slowly from the shimmering portal-plane; ground dust begins a faint particle uplift. Turkish label 'YÜKSELİŞ' in cold display type, lower-third. Motion seed: mist mid-exhale, indigo rim about to brighten. AVOID: Sung Jin-Woo, shadow-soldier designs, rank iconography, photobash collage, warm tones, torches. Clean motion-ready start frame."
+  },
+  {
+    "id": "bleach_soul_world",
+    "one_liner": "Studio Pierrot's Soul Society: stark white-stone fortress architecture against true ink-black spiritual-pressure void, extreme contrast with minimal midtone, one warm amber soul-energy accent — contre-jour courtyards holding tension in stillness.",
+    "render_law": "2D cel-animation frame in the Bleach Soul Society environmental lineage — extreme black/white contrast as the core visual law. (1) ENVIRONMENT, three registers: a stark WHITE-STONE fortress-city (Seireitei-style clean geometric stone walls, tiled roofs, wide empty courtyards); weathered WOODEN-ALLEY slum quarters (Rukongai-style low wooden buildings, paper lanterns, dusty paths); and an abstract SPIRITUAL-PRESSURE VOID (a formless charcoal-black atmospheric mass with faint white particulate, never a named technique). (2) CONTRAST: confident 2-3px black line, extreme value contrast — true stark-white fields against true ink-black mass, minimal midtone step. (3) ACCENT: a single soul-energy glow in warm orange-amber is the only chromatic event. (4) LIGHT: stark contre-jour or overhead light in the white-stone courtyards — near-blown highlight against ink-black shadow, no soft gradient; warm lantern glow is the only midtone source in the Rukongai-alley register. (5) COMPOSITION: wide, still courtyards for tension; tight alley framing for intimacy. IMPERATIVE: STRICT PURE 2D CEL with extreme black/white contrast as the governing law. Forbid 3D, painterly gradient, and muddy midtone-heavy grading.",
+    "line_grammar": "Confident 2-3px black line, extreme-contrast cel shading — true black and true white with a minimal single midtone step. Architecture reads by hard geometric edges; the void reads by absence of line entirely.",
+    "lens_grammar": "Flat 2D. Wide static framing for courtyard tension, tighter 35-50mm for alley intimacy. 16:9. No physical DOF.",
+    "light_law": "Stark contre-jour or overhead light in white-stone courtyards — near-blown highlight versus ink-black shadow, no soft gradient. Warm lantern glow is the only midtone source in Rukongai-alley scenes. The spiritual-pressure void emits no light; it is negative space.",
+    "palette_lock": {
+      "shadow": "#0A0A0C",
+      "mid": "#4A4640",
+      "accent": "#D98A3D",
+      "highlight": "#F5F3EC",
+      "bias": "stark ink-black mass against stark near-white architecture, a single warm soul-energy amber as the only accent. The midtone step is minimal and warm-neutral, never a muddy grey wash. NO muddy midtone dominance, NO pastel, NO cold-blue dominance."
+    },
+    "motion_cadence": "Held stillness in the white courtyard; one spiritual-pressure atmospheric mass rises once at the edge of frame, a warm amber energy particle answering; settles into a stark high-contrast final hold, 1.5s.",
+    "negative_lock": [
+      "NO Ichigo, NO Rukia, NO Renji, NO Aizen, NO Byakuya, NO any named Bleach character",
+      "NO specific Zanpakutō weapon design, NO Gotei-13 division/squad crest, NO Hollow mask design",
+      "NO muddy midtone-heavy grading, NO pastel, NO cold-blue dominance",
+      "NO 3D render, NO painterly gradient",
+      "Turkish label only — sharp brush-stroke lettering, NO English signage"
+    ],
+    "example_injection": "Bleach-lineage Soul Society frame. Subject: a lone figure standing in a vast white-stone courtyard, confident 2-3px black line, stark near-blown warm-white architecture against an ink-black shadow mass rising at the frame edge, one warm amber soul-energy particle glowing beside the figure. Extreme contrast, minimal midtone. Contre-jour overhead light. Turkish label 'RUH' in sharp brush-stroke lettering, small, lower corner. Motion seed: the black atmospheric mass mid-rise, about to settle into a stark hold. AVOID: Ichigo, Rukia, Zanpakutō design, division crest, Hollow mask, muddy midtone, cold-blue. Clean motion-ready start frame."
+  },
+  {
+    "id": "vintage_comic_book",
+    "one_liner": "1960s-70s newsprint: visible CMYK halftone rosettes growing into shadow, cyan/magenta plates drifting 1-2px off the black lineart, solid-black ink shadows, bare aged paper as the only white — a page photographed, never a digital drawing.",
+    "render_law": "Simulated vintage printed comic in the 1960s-70s newsprint lineage — every frame reads as a page photographed from an AGED comic, never a digital drawing. (1) HALFTONE: midtones and shadows resolve into visible CMYK halftone rosettes — dot size grows into shadow, dissolves toward highlight. (2) MIS-REGISTRATION: print registration is imperfect — cyan and magenta plates drift 1-2px off the black lineart, strongest near panel edges. (3) INK + PAPER: solid black ink owns the deepest shadows and every outline; paper is the only white — aged warm, slightly foxed at the corners. (4) FLAT PLATES: colors are flat plate fills, never gradients — a sky is one cyan plate, a face one flesh plate with red halftone blush. (5) DRAWN DEVICES: speed lines, impact bursts and emanata are physics here. (6) WEATHERING: hairline cracks inside large black fills, tiny ink skips at line ends; a visible panel border with gutter paper allowed when the beat wants it. IMPERATIVE: AGED CMYK NEWSPRINT COMIC. Forbid smooth digital gradients, 3D shading, photoreal texture, clean vector crispness, manga screentone, and anime cel look.",
+    "line_grammar": "Thick confident black ink outline with brush-weight variance — heavy on the shadow side and undersides, hairline on the light side. Cross-hatching and feathered hatching carry form shadow before halftone does. Faces get economy lines — a single interior stroke states the nose. All lettering hand-inked.",
+    "lens_grammar": "Flat graphic staging with forced comic perspective — dramatic low-angle hero shots, extreme foreshortened fists toward camera. No photographic DOF; depth stated by overlap and line density. Panel-composition logic — subjects break the panel border on a strong beat.",
+    "light_law": "Light is a drawing decision: hard-edged graphic shadow shapes in solid black or dense halftone, cast in one stated direction per panel. No soft falloff anywhere. Highlight equals bare paper left unprinted. Night scenes are a blue plate printed over everything with black shadow shapes on top.",
+    "palette_lock": {
+      "shadow": "#1A1A1A",
+      "mid": "#E8C872",
+      "accent": "#C13525",
+      "highlight": "#F4EBD0",
+      "bias": "warm aged-newsprint paper base carrying the highlights, flat CMYK plate primaries (cyan sky, magenta blush, solid-black ink shadow), a saturated vermilion-red as the hero accent. Color is printed ink, not light — flat plates only. NO smooth gradient, NO desaturated cinematic grade, NO cool digital white."
+    },
+    "motion_cadence": "Step-framed pose-to-pose feel: 2-4 stated poses per action with drawn speed-line trails bridging them. Transitions read as panel slides or page turns. Impact frames flash to a single one-color burst plate for one frame.",
+    "negative_lock": [
+      "NO Marvel or DC identities — NO Spider-Man, NO Batman, NO Superman, NO Hulk — NO their logos or masks",
+      "NO 3D shading, NO smooth gradient, NO photoreal texture",
+      "NO digital vector crispness, NO anti-aliased clean edge",
+      "NO modern flat-design minimalism",
+      "NO manga screentone, NO anime cel look",
+      "Turkish label only — hand-inked comic lettering; speech bubbles and burst shapes with Turkish text allowed, NO English lettering"
+    ],
+    "example_injection": "Aged newsprint comic frame. Subject: Mamilas character as a kid hero in low-angle mid-shot, one arm thrown forward breaking the panel border, flesh tone printed as warm halftone with red-dot blush, heavy black ink on the shadow side of the jaw. The magenta plate drifts 1px off the lineart at the shoulder. Background: one flat cyan sky plate, drawn speed lines converging on the fist, a burst shape behind with 'GÜM!' hand-inked inside. Aged warm paper with a foxed corner, halftone rosettes visible in every midtone, a hairline crack in the large black fill bottom-left. Motion seed: this is the wind-up pose — trailing speed lines already drawn, the next pose implied. AVOID: Spider-Man, Batman logos, gradients, 3D shading, manga screentone, English lettering. Clean motion-ready start frame."
+  }
+]

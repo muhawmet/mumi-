@@ -1,34 +1,35 @@
 /* =============================================================
-   MAMILAS · Design tokens — "Studio Console" 2026
-   Cinematic warm-dark control room. ONE gold light source + a
-   warm ember secondary for ambient only. Surfaces are layered and
-   READABLE (they no longer dissolve into the void). Calm, filmic.
+   MAMILAS · Design tokens — "Golden-Hour Console" 2026
+   Painterly warm-dark console (demo-F dili). Surfaces are deep
+   ember-cognac, not cold graphite; panels are translucent warm-
+   glass floating over a bright golden-hour scene — light bleeds
+   from behind them. Every value is golden-hour physics (r≥g≥b).
    Single source of truth for every surface in the app.
    ============================================================= */
 :root {
-  /* — Surfaces (warm graphite, layered so panels actually read) — */
-  --bg:        #0a0a0d;
-  --bg-2:      #0e0e12;
-  --s1:        #15151b;
-  --s2:        #1c1c24;
-  --s3:        #25252f;
-  --s4:        #31313d;
+  /* — Surfaces (deep ember-cognac, layered so panels read over golden light) — */
+  --bg:        #120a05;
+  --bg-2:      #180f08;
+  --s1:        #20150b;
+  --s2:        #291a0e;
+  --s3:        #352415;
+  --s4:        #45311d;
 
-  /* — Panel fills (glass enough to reveal the aquarium, still readable) — */
-  --panel:     linear-gradient(180deg, rgba(34,34,43,0.68), rgba(16,16,22,0.58));
-  --panel-2:   linear-gradient(180deg, rgba(40,40,50,0.76), rgba(20,20,27,0.66));
-  --inset:     rgba(0,0,0,0.26);
+  /* — Panel fills (translucent warm-glass; scene light bleeds through, still readable) — */
+  --panel:     linear-gradient(180deg, rgba(64,45,27,0.32), rgba(28,18,9,0.18));
+  --panel-2:   linear-gradient(180deg, rgba(76,55,33,0.42), rgba(34,22,12,0.23));
+  --inset:     rgba(10,4,2,0.42);
 
-  /* — Glass — */
-  --glass:        rgba(255, 255, 255, 0.05);
-  --glass-2:      rgba(255, 255, 255, 0.08);
-  --glass-bg:     rgba(22, 22, 28, 0.48);
-  --glass-hi:     rgba(255, 255, 255, 0.14);
+  /* — Glass (warm-tinted, not neutral white) — */
+  --glass:        rgba(255, 244, 224, 0.04);
+  --glass-2:      rgba(255, 244, 224, 0.07);
+  --glass-bg:     rgba(40, 26, 14, 0.28);
+  --glass-hi:     rgba(255, 248, 232, 0.12);
 
-  /* — Hairlines — */
-  --line:      rgba(255, 255, 255, 0.08);
-  --line2:     rgba(255, 255, 255, 0.14);
-  --line3:     rgba(255, 255, 255, 0.24);
+  /* — Hairlines (warm cream, not cold white) — */
+  --line:      rgba(255, 236, 205, 0.09);
+  --line2:     rgba(255, 236, 205, 0.15);
+  --line3:     rgba(255, 236, 205, 0.26);
 
   /* — The single accent: warm gold (used as LIGHT, not paint) — */
   --gold:      #f6c862;
@@ -45,17 +46,22 @@
   --embersoft: rgba(255, 157, 77, 0.10);
 
   /* — Status — */
-  --green:     #4df5a0;
-  --greensoft: rgba(77, 245, 160, 0.12);
+  --green:     #93c9a8;
+  --greensoft: rgba(147, 201, 168, 0.12);
   --red:       #ff5c79;
   --redsoft:   rgba(255, 92, 121, 0.12);
   --amber:     #f5b54d;
 
-  /* — Text — */
-  --text:      #f6f7fb;
-  --text-soft: #c8cedb;
-  --text-muted:#919aac;
-  --text-dim:  #626a7b;
+  /* — Text (warm cream, golden-hour; teal/neon YASAK) — */
+  --text:      #fdf6e6;
+  --text-soft: #ecddc1;
+  --text-muted:#c3a982;
+  --text-dim:  #8f7a5c;
+
+  /* — Parşömen (M3 · lookConfig.palette.paper ile senkron; designLaws.test.ts korur) — */
+  --parch:      #e8ddc8;
+  --parch-tint: rgba(232, 221, 200, 0.07);
+  --parch-line: rgba(232, 221, 200, 0.16);
 
   /* — Radius — */
   --r-xs: 8px;
@@ -75,7 +81,7 @@
   --shadow-lg: 0 34px 90px rgba(0, 0, 0, 0.6);
   --shadow-gold: 0 14px 40px rgba(246, 200, 98, 0.22);
   --ring-gold: 0 0 0 1px var(--goldline), 0 0 28px -6px var(--goldglow);
-  --blur:      14px;
+  --blur:      24px;
 
   /* — Motion — */
   --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -86,6 +92,7 @@
   /* — Type — */
   --font-sans: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
 
   /* — Back-compat aliases (older inline styles still reference these) — */
   --gold2: var(--gold-2);
@@ -95,4 +102,20 @@
   --radius-sm: var(--r-xs);
   --cinema-red: #9f1d2f;
   --r8: 8px; --r10: 10px; --r12: 12px; --r16: 16px;
+
+  /* — M2 Aliases (PanelKit uses these) — */
+  --m2-line-strong: var(--line2);
+  --m2-line: var(--line);
+  --m2-amber: var(--gold);
+  --m2-amber-soft: var(--goldsoft);
+  --m2-muted: var(--text-muted);
+  --m2-paper: var(--text);
+  --m2-ink: var(--bg);
+  --m2-danger: var(--red);
+  --m2-surface: var(--s1);
+  --m2-surface-2: var(--s2);
+  --m2-font-mono: var(--font-mono);
+  --m2-font-sans: var(--font-sans);
+  --m2-hover: var(--dur);
+  --m2-ease: var(--ease);
 }

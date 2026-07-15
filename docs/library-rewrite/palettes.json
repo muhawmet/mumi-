@@ -1,0 +1,50 @@
+[
+  {
+    "id": "native_world",
+    "bias": "Inherits the selected world's palette_lock without modification; engage unless the brief demands a mood the native grade cannot serve."
+  },
+  {
+    "id": "pastel_soft",
+    "bias": "Sage-gray, peach-cream, blush-rose, warm white. High-key diffused north-window softness, all wrap, minimal depth contrast. NO true shadow, NO drama, NO saturated color."
+  },
+  {
+    "id": "vibrant_edu",
+    "bias": "Navy, saffron-yellow, tomato-red, board-white. Declarative learner-facing contrast, one-beat eye-landing accent. NO menace, NO muddy midtone, NO desaturation."
+  },
+  {
+    "id": "deep_noir",
+    "bias": "Photographic black, charcoal, wine-blood red, silver-gray. Total shadow absorption, one contained ember accent, industrial bounce barely lifting faces. NO ambient warmth, NO lifted shadow, NO saturated color."
+  },
+  {
+    "id": "warm_autumn",
+    "bias": "Umber, amber-tan, burnt-orange, golden cream. Grounded afternoon-sun warmth at every tonal stop, handmade material glow. NO cool tone, NO analytical distance, NO neon."
+  },
+  {
+    "id": "cool_scientific",
+    "bias": "Deep navy, teal-blue, bright cyan, cold aqua-white. Clinical blue-cyan precision, LED-readout accent, light-table clarity. NO warm element, NO earth tone, NO saturated primary."
+  },
+  {
+    "id": "earth_natural",
+    "bias": "Umber, tan-khaki, amber-gold, warm cream. Single consistent warm light source, restrained soil-and-sand naturalism. NO cool counter-tone, NO neon, NO high-contrast hierarchy."
+  },
+  {
+    "id": "high_contrast_bold",
+    "bias": "Photographic black, saturated red, saturated yellow, offset white. Graphic two-primary tension, hard cel and poster separation, black-to-midtone cliff. NO transitional gradient, NO atmospheric light, NO desaturation."
+  },
+  {
+    "id": "desaturated_cinematic",
+    "bias": "Cool blue-gray, neutral gray, muted tan, warm-gray white. Overcast lifted-shadow restraint, one solitary muted-warm accent. NO saturated color, NO teal-orange split, NO warm-cozy lift."
+  },
+  {
+    "id": "neon_rain_romance",
+    "bias": "Violet-black, plum-purple, hot magenta, cyan-teal. Wet-neon night, hot-pink sign glow against a cool condensation halo. NO daylight, NO neutral light, NO desaturation."
+  },
+  {
+    "id": "soviet_muted",
+    "bias": "Sovcolor black, olive-gray, dim amber, sage-white. Photochemical institutional desaturation, one disproportionate dim-amber warmth signal. NO saturation, NO glamour light, NO teal-orange."
+  },
+  {
+    "id": "golden_dust_epic",
+    "bias": "Scorched brown, tan-brown, amber-gold, bone-cream. Low-angle desert-sun grazing, geologically-scaled warm monochrome. NO cool interruption, NO shadow lift, NO teal wash."
+  }
+]

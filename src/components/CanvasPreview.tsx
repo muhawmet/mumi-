@@ -1,6 +1,8 @@
-import { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import type { PreviewCategory } from '../core/preview';
 import { REF_SCENES, WORLD_SCENES } from './refScenes';
+import { CharacterStage } from './CharacterStage';
+import { IP_ICONIC } from '../data/worldData';
 
 /* ============================================================
    CanvasPreview — GPU-friendly, palette-driven, category-aware
@@ -14,19 +16,32 @@ interface CanvasPreviewProps {
   previewType: string;       // ref.preview key e.g. 'blade', 'spiral', 'pixar'
   worldId: string;           // e.g. 'clay', 'paper', 'painterly_shadow'
   refId?: string;            // selected reference id — if it has a dedicated scene, that wins
+  variant?: 'default' | 'hero' | 'rail';
+  evidenceLabel?: string;
+}
+
+const FALLBACK_COLORS = ['#253044', '#7aa2ff', '#0a0c14', '#f7c948'];
+
+function safeHex(hex: string | undefined, fallback = '#000000'): string {
+  const value = String(hex || '').trim();
+  return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback;
+}
+
+function normalizeCanvasColors(colors: string[] | undefined): string[] {
+  return FALLBACK_COLORS.map((fallback, index) => safeHex(colors?.[index], fallback));
 }
 
 // ── hex → rgba helper ──────────────────────────────────────
-function hexToRgba(hex: string, alpha = 1): string {
-  const h = hex.replace('#', '');
+function hexToRgba(hex: string | undefined, alpha = 1): string {
+  const h = safeHex(hex).replace('#', '');
   const r = parseInt(h.substring(0, 2), 16) || 0;
   const g = parseInt(h.substring(2, 4), 16) || 0;
   const b = parseInt(h.substring(4, 6), 16) || 0;
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-function hexToRgb(hex: string): [number, number, number] {
-  const h = hex.replace('#', '');
+function hexToRgb(hex: string | undefined): [number, number, number] {
+  const h = String(hex || '#000000').replace('#', '');
   return [
     parseInt(h.substring(0, 2), 16) || 0,
     parseInt(h.substring(2, 4), 16) || 0,
@@ -34,7 +49,7 @@ function hexToRgb(hex: string): [number, number, number] {
   ];
 }
 
-function luminance(hex: string): number {
+function luminance(hex: string | undefined): number {
   const [r, g, b] = hexToRgb(hex);
   return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 }
@@ -43,7 +58,7 @@ function luminance(hex: string): number {
 class Particle {
   x: number; y: number; vx: number; vy: number;
   size: number; color: string; life: number; maxLife: number;
-  constructor(x: number, y: number, color: string, opts?: Partial<{vx:number;vy:number;size:number;life:number}>) {
+  constructor(x: number, y: number, color: string, opts?: Partial<{ vx: number; vy: number; size: number; life: number }>) {
     this.x = x; this.y = y;
     this.vx = opts?.vx ?? (Math.random() - 0.5) * 0.8;
     this.vy = opts?.vy ?? (Math.random() - 0.5) * 0.8;
@@ -383,7 +398,7 @@ function renderMotif(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
       csg.addColorStop(0, hexToRgba(colors[0], 0.18)); csg.addColorStop(1, 'transparent');
       ctx.fillStyle = csg; ctx.fillRect(0, 0, w, h);
       ctx.strokeStyle = hexToRgba(colors[3], 0.07); ctx.lineWidth = 0.5;
-      [1/3, 2/3].forEach(f => {
+      [1 / 3, 2 / 3].forEach(f => {
         ctx.beginPath(); ctx.moveTo(w * f, h * 0.12); ctx.lineTo(w * f, h * 0.88); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(0, h * 0.12 + h * 0.76 * f); ctx.lineTo(w, h * 0.12 + h * 0.76 * f); ctx.stroke();
       });
@@ -640,7 +655,7 @@ function renderMotif(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
     case 'tactical': {
       ctx.strokeStyle = hexToRgba(colors[1], 0.25); ctx.lineWidth = 1;
       const tlen = 22;
-      ([[cx-40,cy-40],[cx+40,cy-40],[cx-40,cy+40],[cx+40,cy+40]] as [number,number][]).forEach(([tx, ty]) => {
+      ([[cx - 40, cy - 40], [cx + 40, cy - 40], [cx - 40, cy + 40], [cx + 40, cy + 40]] as [number, number][]).forEach(([tx, ty]) => {
         const dx = tx < cx ? 1 : -1, dy = ty < cy ? 1 : -1;
         ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(tx + dx * tlen, ty); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(tx, ty + dy * tlen); ctx.stroke();
@@ -955,7 +970,7 @@ function renderMotif(ctx: CanvasRenderingContext2D, w: number, h: number, t: num
       break;
     }
     case 'hardsun': {
-      ([[0.28, 0.62], [0.52, 0.7], [0.74, 0.58]] as [number,number][]).forEach(([fx, fy]) => {
+      ([[0.28, 0.62], [0.52, 0.7], [0.74, 0.58]] as [number, number][]).forEach(([fx, fy]) => {
         ctx.fillStyle = hexToRgba(colors[2], 0.22);
         ctx.beginPath(); ctx.ellipse(w * fx, h * fy, 8, 4, 0, 0, Math.PI * 2); ctx.fill();
       });
@@ -1208,45 +1223,51 @@ function makeOffscreen(): OffscreenCanvas | HTMLCanvasElement {
 
 function hexToRgbTuple(hex: string): [number, number, number] {
   const h = (hex || '#000').replace('#', '').padEnd(6, '0');
-  return [parseInt(h.slice(0,2),16)||0, parseInt(h.slice(2,4),16)||0, parseInt(h.slice(4,6),16)||0];
+  return [parseInt(h.slice(0, 2), 16) || 0, parseInt(h.slice(2, 4), 16) || 0, parseInt(h.slice(4, 6), 16) || 0];
 }
 
 // Palette quantization: snap every pixel to the nearest of 6 colors
 function quantizeToPalette(
   imageData: ImageData,
-  palette: [number,number,number][]
+  palette: [number, number, number][]
 ): void {
   const d = imageData.data;
   for (let i = 0; i < d.length; i += 4) {
-    if (d[i+3] < 12) continue; // transparent
+    if (d[i + 3] < 12) continue; // transparent
     let best = 0, bestDist = Infinity;
     for (let p = 0; p < palette.length; p++) {
       const [pr, pg, pb] = palette[p];
-      const dr = d[i]-pr, dg = d[i+1]-pg, db = d[i+2]-pb;
+      const dr = d[i] - pr, dg = d[i + 1] - pg, db = d[i + 2] - pb;
       // perceptual weighting (luma)
-      const dist = dr*dr*0.299 + dg*dg*0.587 + db*db*0.114;
+      const dist = dr * dr * 0.299 + dg * dg * 0.587 + db * db * 0.114;
       if (dist < bestDist) { bestDist = dist; best = p; }
     }
-    d[i] = palette[best][0]; d[i+1] = palette[best][1]; d[i+2] = palette[best][2];
+    d[i] = palette[best][0]; d[i + 1] = palette[best][1]; d[i + 2] = palette[best][2];
   }
 }
 
-// Pixel-grid overlay
-function drawPixelGrid(ctx: CanvasRenderingContext2D, w: number, h: number) {
+// Pixel-grid overlay. Exported: w=0 guard'ı test edilebilir olsun.
+// KRİTİK: layout öncesi rect 0×0 gelirse adım 0 olur ve `x += 0` sonsuz
+// döngüye girerdi — ana thread'i süresiz kilitleyen e2e freeze'in kök nedeni.
+export function drawPixelGrid(ctx: CanvasRenderingContext2D, w: number, h: number) {
+  if (w <= 0 || h <= 0) return;
   const pxW = w / PX_W;
   const pxH = h / PX_H;
   ctx.strokeStyle = 'rgba(0,0,0,0.22)';
   ctx.lineWidth = 0.4;
-  for (let x = 0; x <= w; x += pxW) { ctx.beginPath(); ctx.moveTo(Math.round(x)+0.5, 0); ctx.lineTo(Math.round(x)+0.5, h); ctx.stroke(); }
-  for (let y = 0; y <= h; y += pxH) { ctx.beginPath(); ctx.moveTo(0, Math.round(y)+0.5); ctx.lineTo(w, Math.round(y)+0.5); ctx.stroke(); }
+  for (let x = 0; x <= w; x += pxW) { ctx.beginPath(); ctx.moveTo(Math.round(x) + 0.5, 0); ctx.lineTo(Math.round(x) + 0.5, h); ctx.stroke(); }
+  for (let y = 0; y <= h; y += pxH) { ctx.beginPath(); ctx.moveTo(0, Math.round(y) + 0.5); ctx.lineTo(w, Math.round(y) + 0.5); ctx.stroke(); }
 }
 
-export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, previewType, worldId, refId }) => {
+export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, previewType, worldId, refId, variant = 'default', evidenceLabel }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef(0);
   const particlesRef = useRef<Particle[]>([]);
-  const reducedMotionRef = useRef(false);
   const offscreenRef = useRef<OffscreenCanvas | HTMLCanvasElement | null>(null);
+
+  // Stable key so a new `colors` array reference each render doesn't rebuild
+  // `draw` and needlessly cancel+restart the rAF loop (matches BeatThumb).
+  const colorKey = colors.join('|');
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -1258,6 +1279,13 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = rect.width;
     const h = rect.height;
+
+    // Layout henüz oturmadıysa (0×0) bu frame'i atla, sonrakinde dene —
+    // 0 boyutla çizim drawPixelGrid'de sonsuz döngüye kadar gidiyordu.
+    if (w <= 0 || h <= 0) {
+      frameRef.current = requestAnimationFrame(draw);
+      return;
+    }
 
     if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
       canvas.width = w * dpr;
@@ -1273,38 +1301,43 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
 
     const t = performance.now();
 
+    const safeColors = normalizeCanvasColors(colors);
+
     // ── Render scene into the tiny pixel canvas ──────────────
     pctx.clearRect(0, 0, PX_W, PX_H);
-    const isDark = luminance(colors[2]) < 0.3;
-    pctx.fillStyle = isDark ? colors[2] : '#0a0c14';
+    const isDark = luminance(safeColors[2]) < 0.3;
+    pctx.fillStyle = isDark ? safeColors[2] : '#0a0c14';
     pctx.fillRect(0, 0, PX_W, PX_H);
 
     const refScene = refId ? REF_SCENES[refId] : undefined;
     const worldScene = WORLD_SCENES[worldId];
     const dedicatedScene = refScene ?? worldScene;
     if (dedicatedScene) {
-      dedicatedScene(pctx, PX_W, PX_H, t, colors);
+      dedicatedScene(pctx, PX_W, PX_H, t, safeColors);
     } else {
       switch (category) {
-        case 'edu':    renderEdu(pctx, PX_W, PX_H, t, colors); break;
-        case 'arcane': renderArcane(pctx, PX_W, PX_H, t, colors, particlesRef.current); break;
-        case 'anime':  renderAnime(pctx, PX_W, PX_H, t, colors); break;
-        case 'verse':  renderVerse(pctx, PX_W, PX_H, t, colors); break;
-        case 'real':   renderReal(pctx, PX_W, PX_H, t, colors); break;
+        case 'edu': renderEdu(pctx, PX_W, PX_H, t, safeColors); break;
+        case 'arcane': renderArcane(pctx, PX_W, PX_H, t, safeColors, particlesRef.current); break;
+        case 'anime': renderAnime(pctx, PX_W, PX_H, t, safeColors); break;
+        case 'verse': renderVerse(pctx, PX_W, PX_H, t, safeColors); break;
+        case 'real': renderReal(pctx, PX_W, PX_H, t, safeColors); break;
       }
-      renderMotif(pctx, PX_W, PX_H, t, colors, previewType);
+      renderMotif(pctx, PX_W, PX_H, t, safeColors, previewType);
     }
 
-    // ── Palette quantization — snap every pixel to 6-color palette ──
+    // ── Palette quantization — snap every pixel to palette ──────
+    // IP_WORLD scenes extend the palette with iconic character
+    // colours so hat-yellow, vest-red, etc. survive the snap.
     try {
       const imgData = pctx.getImageData(0, 0, PX_W, PX_H);
-      const pal: [number,number,number][] = [
-        hexToRgbTuple(colors[0]),
-        hexToRgbTuple(colors[1]),
-        hexToRgbTuple(colors[2]),
-        hexToRgbTuple(colors[3]),
-        [8, 8, 12],          // near-black
-        [240, 238, 232],     // near-white
+      const pal: [number, number, number][] = [
+        hexToRgbTuple(safeColors[0]),
+        hexToRgbTuple(safeColors[1]),
+        hexToRgbTuple(safeColors[2]),
+        hexToRgbTuple(safeColors[3]),
+        [8, 8, 12],
+        [240, 238, 232],
+        ...(IP_ICONIC[worldId] ?? []),
       ];
       quantizeToPalette(imgData, pal);
       pctx.putImageData(imgData, 0, 0);
@@ -1320,37 +1353,110 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({ colors, category, 
     // Subtle pixel-grid overlay for extra crunch
     drawPixelGrid(ctx, w, h);
 
-    if (!reducedMotionRef.current) frameRef.current = requestAnimationFrame(draw);
-  }, [colors, category, previewType, worldId, refId]);
+    // High-Res Character Layer is now handled via React component overlay
+
+    frameRef.current = requestAnimationFrame(draw);
+  }, [colorKey, category, previewType, worldId, refId]);
 
   useEffect(() => {
-    offscreenRef.current = null; // reset offscreen on prop change
-    const media = window.matchMedia?.('(prefers-reduced-motion: reduce)');
-    const syncMotionPreference = () => {
-      reducedMotionRef.current = media?.matches ?? false;
-      cancelAnimationFrame(frameRef.current);
-      frameRef.current = requestAnimationFrame(draw);
-    };
-
+    offscreenRef.current = null;
     particlesRef.current = [];
-    syncMotionPreference();
-    media?.addEventListener('change', syncMotionPreference);
-    return () => {
-      cancelAnimationFrame(frameRef.current);
-      media?.removeEventListener('change', syncMotionPreference);
-    };
+    cancelAnimationFrame(frameRef.current);
+    frameRef.current = requestAnimationFrame(draw);
+    return () => { cancelAnimationFrame(frameRef.current); };
   }, [draw]);
 
+  const showPlateCharacter = variant === 'hero' || variant === 'rail';
+  const plateWidth = variant === 'hero' ? 238 : 156;
+  const plateHeight = variant === 'hero' ? 228 : 168;
+  const textureOpacity = variant === 'rail' ? 0.3 : variant === 'hero' ? 0.34 : 0.26;
+
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        borderRadius: 'inherit',
-        imageRendering: 'pixelated',
-      }}
-    />
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'block',
+          borderRadius: 'inherit',
+          imageRendering: 'pixelated',
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage:
+            "linear-gradient(90deg, rgba(6,7,10,0.12), rgba(6,7,10,0.52) 46%, rgba(6,7,10,0.12)), url('/assets/mamilas-cabinet-texture.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: textureOpacity,
+          mixBlendMode: 'screen',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background:
+            'linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.34)),' +
+            'radial-gradient(circle at 72% 18%, rgba(214,168,79,0.16), transparent 26%)',
+          pointerEvents: 'none',
+        }}
+      />
+      {showPlateCharacter && worldId && (
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            left: variant === 'hero' ? -18 : -10,
+            bottom: variant === 'hero' ? -28 : -18,
+            width: plateWidth,
+            height: plateHeight,
+            pointerEvents: 'none',
+            overflow: 'visible',
+            filter: 'saturate(1.08) contrast(1.05)',
+          }}
+        >
+          <CharacterStage
+            worldId={worldId}
+            width={plateWidth}
+            height={plateHeight}
+            glow
+            mode="plate"
+            accentColor={colors[1] || colors[0]}
+          />
+        </div>
+      )}
+      {evidenceLabel && (
+        <div
+          style={{
+            position: 'absolute',
+            left: showPlateCharacter ? 158 : 10,
+            bottom: 10,
+            maxWidth: showPlateCharacter ? 'calc(100% - 172px)' : 'calc(100% - 78px)',
+            padding: '7px 9px',
+            border: '1px solid rgba(214,168,79,0.28)',
+            borderRadius: 6,
+            background: 'linear-gradient(135deg, rgba(6,7,10,0.78), rgba(30,23,11,0.48))',
+            color: 'var(--m2-paper)',
+            font: '800 9px/1.2 var(--m2-font-mono)',
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 12px 24px rgba(0,0,0,0.28)',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
+          {evidenceLabel}
+        </div>
+      )}
+    </div>
   );
 };

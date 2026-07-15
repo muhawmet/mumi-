@@ -1,29 +1,52 @@
 import { describe, it, expect } from 'vitest';
-import { conceptRanked } from './brain';
+import { buildImagePrompt, type Concept } from './brain';
+import { hasBankResidue } from './faz2_baseline.test';
 
-describe('REAL bank coverage probe', () => {
-  it('all common Turkish REAL sources match without generic fallback', () => {
-    const cases: [string, string, string][] = [
-      ['Fırında yeni pişmiş ekmek hazır', 'REAL', 'food_macro_real'],
-      ['Türk kahvesi fincanına döküldü', 'REAL', 'food_macro_real'],
-      ['Barista latte art yapıyor', 'REAL', 'food_macro_real'],
-      ['Spor araba virajı döndü', 'REAL', 'automotive_stage_real'],
-      ['Yeni model SUV yolda gidiyor', 'REAL', 'automotive_stage_real'],
-      ['Bir müşteri ürün hakkında konuşuyor', 'REAL', 'real_human_doc'],
-      ['Kullanıcılar deneyimlerini paylaşıyor', 'REAL', 'real_human_doc'],
-      ['Moda haftasında defilede bir model', 'REAL', 'luxury_editorial'],
-      ['Tasarımcı yeni koleksiyonunu sunuyor', 'REAL', 'luxury_editorial'],
-      ['Modern ev iç mekan tasarımı', 'REAL', 'architecture_real'],
-      ['Yeni daire projesi tanıtımı', 'REAL', 'architecture_real'],
-      ['Türkiye tarihî yerlerini keşfet', 'REAL', 'tourism_destination_real'],
-      ['Kapadokya yaylasında sabah', 'REAL', 'tourism_destination_real'],
-    ];
-    const fails: string[] = [];
-    for (const [source, register, worldId] of cases) {
-      const top = conceptRanked(source, register as 'REAL', worldId, 'Build-up')[0];
-      if (!top?.matched) fails.push(`${worldId}: "${source}"`);
+// FAZ2: REAL bankaları söküldü. "coverage/matched" kavramları YAPISAL OLARAK yok.
+// Yeni sözleşme: her REAL kaynak için image prompt verbatim kaynağı + "Scene brief
+// (Claude yazar)" taşır, enjekte edilen banka öznesi sızmaz, banka izi yok.
+const BANK_LIKE: Concept = {
+  subject: 'the hero product with its logo plane square to a controlled key light',
+  event: 'one narrow highlight travels across the surface',
+  matched: true,
+};
+const img = (src: string) => buildImagePrompt(1, BANK_LIKE, '85mm macro', {
+  world: {} as any, register: 'REAL', dna: { staging: 's', light: 'l', texture: 't', avoid: 'a' } as any,
+  pathForbidden: '', sourceBeat: src,
+});
+
+describe('REAL bank söküm regresyonu — banka öznesi üretilmez, kaynak verbatim', () => {
+  const SOURCES = [
+    'Fırında yeni pişmiş ekmek hazır',
+    'Türk kahvesi fincanına döküldü',
+    'Barista latte art yapıyor',
+    'Spor araba virajı döndü',
+    'Yeni model SUV yolda gidiyor',
+    'Bir müşteri ürün hakkında konuşuyor',
+    'Kullanıcılar deneyimlerini paylaşıyor',
+    'Moda haftasında defilede bir model',
+    'Tasarımcı yeni koleksiyonunu sunuyor',
+    'Modern ev iç mekan tasarımı',
+    'Yeni daire projesi tanıtımı',
+    'Türkiye tarihî yerlerini keşfet',
+    'Kapadokya yaylasında sabah',
+  ];
+
+  it('tüm REAL kaynakları verbatim taşır + banka öznesi ("hero product") sızmaz', () => {
+    for (const src of SOURCES) {
+      const p = img(src);
+      expect(p, `"${src}" verbatim taşınmadı`).toContain(src);
+      expect(p, `"${src}" Claude talimatı yok`).toContain('Scene brief (Claude yazar)');
+      expect(p, `"${src}" enjekte banka öznesi sızdı`).not.toContain('hero product with its logo plane');
+      expect(hasBankResidue(p), `"${src}" banka izi kaldı`).toBe(false);
     }
-    if (fails.length) console.log('Unmatched:', fails);
-    expect(fails).toEqual([]);
+  });
+
+  it('image prompt her zaman somut kaynak + Claude talimatı taşır (boş/placeholder sızmaz)', () => {
+    for (const src of ['Fırında yeni pişmiş ekmek hazır', 'Spor araba virajı döndü', 'Kapadokya yaylasında sabah']) {
+      const p = img(src);
+      expect(p).toContain(src);
+      expect(p).toContain('Scene brief (Claude yazar)');
+    }
   });
 });

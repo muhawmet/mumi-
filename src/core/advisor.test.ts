@@ -1,115 +1,142 @@
-import { describe, it, expect } from 'vitest';
-import { suggestRecipe, directorNotes, dnaStrength, refContribution, refFit, starterPackFor } from './advisor';
+import { describe, expect, it } from 'vitest';
+import { directorNotes, suggestRecipe, starterPackFor } from './advisor';
 import { DATA } from './pure';
 
 describe('suggestRecipe', () => {
-  it('turns an education topic into a complete, valid recipe', () => {
-    const s = suggestRecipe('Su döngüsü dersi: buharlaşma ve yoğuşma');
-    expect(s.path).toBe('ANIMATION_EDU');
-    expect(DATA.worlds.some((w) => w.id === s.worldId)).toBe(true);
-    expect(DATA.palettes.some((p) => p.id === s.paletteId)).toBe(true);
-    expect(s.refIds.length).toBeGreaterThan(0);
-    expect(DATA.refs.some((r) => r.id === s.refIds[0])).toBe(true);
-  });
-
-  it('routes a product-ad topic to a commercial path', () => {
-    const s = suggestRecipe('ürün reklamı, packshot, makro yüzey');
-    expect(['PRODUCT_HERO', 'ULTRAREAL_COMMERCIAL']).toContain(s.path);
+  it.each([
+    'Su döngüsü dersi: buharlaşma ve yoğuşma',
+    'ürün reklamı, packshot, makro yüzey',
+    'One Piece Elbaf tarzı dev ada macerası',
+  ])('returns the same valid neutral starter without reading source/topic words: %s', (topic) => {
+    const suggestion = suggestRecipe(topic);
+    expect(suggestion).toEqual(suggestRecipe(''));
+    expect(DATA.worlds.some((world) => world.id === suggestion.worldId)).toBe(true);
+    expect(DATA.palettes.some((palette) => palette.id === suggestion.paletteId)).toBe(true);
+    expect(suggestion.refIds.length).toBeGreaterThan(0);
+    expect(suggestion.refIds.every((id) => DATA.refs.some((ref) => ref.id === id))).toBe(true);
   });
 });
 
 describe('directorNotes', () => {
   const full = {
     projectClass: 'ANIMATION_EDU',
-    selectedWorldId: 'clay',
-    selectedPaletteId: DATA.palettes[0].id,
-    selectedRefIds: ['pixar_dimensional'],
+    selectedWorldId: 'pixar_3d_edu',
+    selectedPaletteId: 'vibrant_edu',
+    selectedRefIds: [],
   };
 
-  it('praises a coherent recipe', () => {
+  it('praises a coherent v2 recipe even when reference DNA is optional', () => {
     const notes = directorNotes(full);
     expect(notes[0].level).toBe('good');
+    expect(notes.some((note) => note.title === 'Referans DNA seçilmedi')).toBe(true);
   });
 
-  it('flags missing world/palette/ref as warnings', () => {
+  it('flags missing world and palette as warnings', () => {
     const notes = directorNotes({ projectClass: 'ANIMATION_EDU', selectedWorldId: '', selectedPaletteId: '', selectedRefIds: [] });
-    expect(notes.filter((n) => n.level === 'warn').length).toBeGreaterThanOrEqual(3);
-    expect(notes.some((n) => /Dünya/.test(n.title))).toBe(true);
+    expect(notes.filter((note) => note.level === 'warn').length).toBeGreaterThanOrEqual(2);
+    expect(notes.some((note) => /Dünya/.test(note.title))).toBe(true);
   });
 
-  it('warns when a real path wears an animation world (register clash)', () => {
+  it('warns when a real path wears an animation world', () => {
     const notes = directorNotes({ ...full, projectClass: 'ULTRAREAL_COMMERCIAL' });
-    expect(notes.some((n) => /gerilim|çakış/i.test(n.title + n.detail))).toBe(true);
-  });
-
-  it('notes the single-topic repeat caveat', () => {
-    const notes = directorNotes({ ...full, sceneCount: 5 });
-    expect(notes.some((n) => /Tek konu/.test(n.title))).toBe(true);
-  });
-
-  it('warns when a selected reference fights the render world', () => {
-    const notes = directorNotes({ ...full, selectedWorldId: 'arcane', selectedRefIds: ['setup_highkey'] });
-    expect(notes.some((n) => /DNA \/ dünya uyumsuzluğu/.test(n.title))).toBe(true);
-  });
-
-  it('does not warn for a normal scene count, and flags long-form only as info', () => {
-    const normal = directorNotes({ ...full, sceneCount: 24 });
-    expect(normal.some((n) => /Uzun format|Sahne sayısı/.test(n.title))).toBe(false);
-    const longForm = directorNotes({ ...full, sceneCount: 48 });
-    expect(longForm.some((n) => n.level === 'info' && /Uzun format/.test(n.title))).toBe(true);
+    expect(notes.some((note) => /Register \/ dünya/.test(note.title))).toBe(true);
   });
 
   it('warns when the preset register does not match the path register', () => {
     const notes = directorNotes({ ...full, phase0PresetId: 'product_brand' });
-    expect(notes.some((n) => n.level === 'warn' && /Preset \/ register/.test(n.title))).toBe(true);
+    expect(notes.some((note) => note.level === 'warn' && /Preset \/ register/.test(note.title))).toBe(true);
   });
 
-  it('does not warn when the preset register matches (edu_explainer on EDU)', () => {
-    const notes = directorNotes({ ...full, phase0PresetId: 'edu_explainer' });
-    expect(notes.some((n) => /Preset \/ register/.test(n.title))).toBe(false);
-  });
-
-  it('flags palette/world tension on a gritty world with a clean palette', () => {
-    const notes = directorNotes({ ...full, selectedWorldId: 'arcane', selectedPaletteId: 'vibrant_clean_education' });
-    expect(notes.some((n) => n.level === 'info' && /Palet \/ dünya/.test(n.title))).toBe(true);
+  it('flags long-form scene plans only as info', () => {
+    const normal = directorNotes({ ...full, sceneCount: 24 });
+    expect(normal.some((note) => /Uzun format|Sahne sayısı/.test(note.title))).toBe(false);
+    const longForm = directorNotes({ ...full, sceneCount: 48 });
+    expect(longForm.some((note) => note.level === 'info' && /Uzun format/.test(note.title))).toBe(true);
   });
 });
 
-describe('reference intelligence', () => {
-  it('scores exact locks, preferred categories, and conflicts in descending order', () => {
-    const arcane = DATA.worlds.find((world) => world.id === 'arcane')!;
-    const preferred = DATA.refs.find((ref) => ref.id === 'arcane_texture')!;
-    const conflict = DATA.refs.find((ref) => ref.id === 'setup_highkey')!;
-    expect(refFit(arcane, preferred)).toBeGreaterThanOrEqual(90);
-    expect(refFit(arcane, conflict)).toBeLessThan(45);
-    expect(refFit(undefined, preferred)).toBe(0);
-  });
-
-  it('provides a valid curated 2–3 reference pack for every render world', () => {
+describe('reference intelligence v2', () => {
+  it('provides valid starter packs for each current render world', () => {
     for (const world of DATA.worlds) {
-      const pack = starterPackFor(world.id);
-      expect(pack.length, world.id).toBeGreaterThanOrEqual(2);
-      expect(pack.length, world.id).toBeLessThanOrEqual(3);
-      expect(new Set(pack.map((ref) => ref.id)).size, world.id).toBe(pack.length);
-      expect(pack.every((ref) => DATA.refs.some((candidate) => candidate.id === ref.id)), world.id).toBe(true);
-      expect(pack.every((ref) => refFit(world, ref) >= 90), world.id).toBe(true);
+      const starterPack = starterPackFor(world.id);
+      expect(starterPack.length, world.id).toBeGreaterThan(0);
+      expect(starterPack.length, world.id).toBeLessThanOrEqual(3);
+      expect(starterPack.every((ref) => DATA.refs.some((item) => item.id === ref.id)), world.id).toBe(true);
     }
   });
+});
 
-  it('derives UI roles and combined strength from the same DNA directives as the brief', () => {
-    const refs = ['arcane_texture', 'roger_deakins_naturalism']
-      .map((id) => DATA.refs.find((ref) => ref.id === id)!);
-    const contribution = refContribution(refs[0]);
-    const strength = dnaStrength(refs);
-    expect(contribution.count).toBeGreaterThan(0);
-    expect(strength.filled).toBeGreaterThanOrEqual(contribution.count);
-    expect(strength.total).toBe(5);
-    expect(strength.percent).toBe(strength.filled * 20);
+describe('preset ↔ world tension (Faz 1 — 2026-07-02)', () => {
+  const base = {
+    projectClass: 'ANIMATION_EDU',
+    selectedPaletteId: 'vibrant_edu',
+    selectedRefIds: [],
+  };
+
+  it('warns (info, non-blocking) when the mandate preset never sets the selected world', () => {
+    const notes = directorNotes({ ...base, selectedWorldId: 'kurzgesagt_edu', phase0PresetId: 'edu_explainer' });
+    const note = notes.find((n) => /Preset \/ dünya/.test(n.title));
+    expect(note?.level).toBe('info');
+    expect(note?.detail).toMatch(/Render Lock kazanır/);
   });
 
-  it('marks references that add no mapped directive as unnecessary', () => {
-    const empty = { id: 'empty', name: 'Empty', cat: 'Other', use: '', avoid: '', dna: '' };
-    expect(refContribution(empty).count).toBe(0);
-    expect(dnaStrength([empty]).zeroRefIds).toEqual(['empty']);
+  it('stays silent when the selected world is inside the preset scope', () => {
+    const notes = directorNotes({ ...base, selectedWorldId: 'clay', phase0PresetId: 'edu_explainer' });
+    expect(notes.some((n) => /Preset \/ dünya/.test(n.title))).toBe(false);
+  });
+
+  it('PRESET_WORLD_SCOPE stays in sync with src/data/presets.ts', async () => {
+    const { PHASE0_VIDEO } = await import('../data/presets');
+    const { normalizeWorldId } = await import('./pure');
+    const { PRESET_WORLD_SCOPE } = await import('./advisor');
+    for (const preset of PHASE0_VIDEO) {
+      const worlds = new Set<string>();
+      if (preset.sets.selectedWorldId) worlds.add(normalizeWorldId(preset.sets.selectedWorldId));
+      for (const group of preset.directorPanel.groups) {
+        for (const choice of group.choices) {
+          if (choice.sets.selectedWorldId) worlds.add(normalizeWorldId(choice.sets.selectedWorldId));
+        }
+      }
+      const scopeList = PRESET_WORLD_SCOPE[preset.id];
+      expect(scopeList, `advisor PRESET_WORLD_SCOPE missing preset ${preset.id}`).toBeTruthy();
+      const scoped = new Set(scopeList.map(normalizeWorldId));
+      for (const w of worlds) {
+        expect(scoped.has(w), `preset ${preset.id}: world ${w} missing from advisor scope`).toBe(true);
+      }
+    }
+  });
+});
+
+describe('dnaStrength — world gate (KÖK 7c)', () => {
+  it('a ref pinned to a different world contributes nothing and lands in zeroRefIds', async () => {
+    const { dnaStrength } = await import('./advisor');
+    const arcaneRef = DATA.refs.find((r) => r.id === 'arcane_texture')!; // worldId: arcane_fortiche
+    // Against a different world: production (pure.ts compatibleRefs) drops it,
+    // so the advisor must report zero contribution — UI must not lie.
+    const gated = dnaStrength([arcaneRef], 'STY', 'pixar_3d_edu');
+    expect(gated.filled).toBe(0);
+    expect(gated.zeroRefIds).toContain('arcane_texture');
+    // Against its own world it contributes normally.
+    const native = dnaStrength([arcaneRef], 'STY', 'arcane_fortiche');
+    expect(native.filled).toBeGreaterThan(0);
+    expect(native.zeroRefIds).not.toContain('arcane_texture');
+  });
+});
+
+describe('dnaStrength — CINEMATIC_REAL cross-world allowance (matris kökü)', () => {
+  it('kubrick ref (home: fincher_precision) is NOT zeroed on deakins_naturalist', async () => {
+    const { dnaStrength } = await import('./advisor');
+    const { DATA } = await import('./pure');
+    const kubrick = DATA.refs.find((r) => r.id === 'kubrick_one_point')!;
+    const s = dnaStrength([kubrick], 'REAL', 'deakins_naturalist');
+    expect(s.zeroRefIds).not.toContain('kubrick_one_point');
+    expect(s.filled).toBeGreaterThan(0);
+  });
+  it('IP anime ref stays gated across sibling BOLD_CEL worlds', async () => {
+    const { dnaStrength } = await import('./advisor');
+    const { DATA } = await import('./pure');
+    const naruto = DATA.refs.find((r) => r.id === 'naruto_chakra_motion')!;
+    const s = dnaStrength([naruto], 'STY', 'one_piece_toei');
+    expect(s.zeroRefIds).toContain('naruto_chakra_motion');
   });
 });

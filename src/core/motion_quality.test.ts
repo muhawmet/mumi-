@@ -1,51 +1,78 @@
-import { describe, it, expect } from 'vitest';
-import { dnaDirectives, buildMotionPrompt, primeConcept, conceptRanked } from './brain';
-import { DATA } from './pure';
+import { describe, expect, it } from 'vitest';
+import { buildMotionPrompt, dnaDirectives, type Concept } from './brain';
 
-describe('motion prompt quality', () => {
-  it('MAPPA dark warrior scenario gets specific DNA directives', () => {
-    const refs = ['demon_slayer_breath', 'jujutsu_dark_ritual', 'solo_leveling_rank_shadow']
-      .map(id => DATA.refs.find(r => r.id === id)).filter(Boolean) as any[];
+// FAZ2: konsept motoru söküldü. Motion prompt banka Moving element/Event türetmez;
+// WHAT'ı Claude yazar. Sinematografi çerçevesi (Camera + Motion brief + Rhythm +
+// Engine grammar + frame-gate + NEGATIVE + SPLIT NOTE) korunur.
+const CONCEPT: Concept = { subject: '', event: '', matched: false };
+const SRC = 'Savaşçı son düşmanıyla karanlık sokakta yüzleşir.';
 
-    const dna = dnaDirectives(refs, 'STY');
-    expect(dna.camera).not.toContain('restrained filmic moves');
-    expect(dna.motion).not.toBe('');
+describe('motion prompt quality (FAZ2 çerçeve sözleşmesi)', () => {
+  it('builds a substantial motion prompt from path-native v2 directives', () => {
+    const dna = dnaDirectives([], 'STY');
+    const motion = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 8, undefined, null, SRC);
 
-    const concept = primeConcept('savaşçı son düşmanıyla yüzleşiyor karanlık sokakta', 'STY', 'mappa_cinematic', 'Climax');
-    expect(concept.matched).toBe(true);
-
-    const motion = buildMotionPrompt(1, concept, dna.camera, dna, 8);
-    expect(motion).toContain('MOTION');
+    // structural contract: header + sections present
+    expect(motion).toContain('MOTION (i2v · plays the approved start frame)');
+    expect(motion).toContain('Camera:');
+    // banka Moving element/Event söküldü → Claude Motion brief taşır
+    expect(motion).not.toContain('Moving element:');
+    expect(motion).not.toContain('Event:');
+    expect(motion).toContain('Motion brief (Claude yazar)');
     expect(motion).toContain('Rhythm:');
-    expect(motion.length).toBeGreaterThan(100);
+    expect(motion).toContain('Engine grammar');
+    expect(motion).toContain('Everything not named stays exactly as the start frame shows');
+    expect(motion).toContain('NEGATIVE:');
+
+    // negative section must include core anti-morph terms
+    expect(motion).toContain('morphing');
+    expect(motion).toContain('warping');
+    expect(motion).toContain('style or material drift');
+
+    // scene id appears as bracket prefix
+    expect(motion).toMatch(/^\[1\]/);
   });
 
-  it('Bones action world produces different motion DNA from MAPPA', () => {
-    const bonesRefs = ['dragon_ball_power_aura', 'naruto_chakra_motion', 'anime_silhouette']
-      .map(id => DATA.refs.find(r => r.id === id)).filter(Boolean) as any[];
-    const mappaRefs = ['jujutsu_dark_ritual', 'demon_slayer_breath', 'solo_leveling_rank_shadow']
-      .map(id => DATA.refs.find(r => r.id === id)).filter(Boolean) as any[];
-
-    const dnaBones = dnaDirectives(bonesRefs, 'STY');
-    const dnaMAPPA = dnaDirectives(mappaRefs, 'STY');
-
-    expect(dnaBones.motion).not.toBe(dnaMAPPA.motion);
+  it('includes final hold in rhythm section', () => {
+    const dna = dnaDirectives([], 'STY');
+    const motion = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 8, undefined, null, SRC);
+    expect(motion).toContain('final hold');
   });
 
-  it('toei adventure concept matches for adventure source text', () => {
-    const concepts = conceptRanked('büyük deniz macerası ekip birlikte gidiyor', 'STY', 'toei_adventure', 'Opening Hook');
-    const firstMatched = concepts.find(c => c.matched);
-    expect(firstMatched).toBeTruthy();
-    expect(firstMatched!.subject.length).toBeGreaterThan(10);
+  it('emits SPLIT NOTE when scene duration exceeds engine window', () => {
+    const dna = dnaDirectives([], 'STY');
+    const motionLong = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 30, undefined, null, SRC);
+    expect(motionLong).toContain('SPLIT NOTE');
+    // short duration does NOT emit split note
+    const motionShort = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 5, undefined, null, SRC);
+    expect(motionShort).not.toContain('SPLIT NOTE');
   });
 
-  it('MAPPA dark atmospheric concept matches urban darkness source', () => {
-    const concept = primeConcept('karanlık kentsel atmosfer duman şehir gerilim', 'STY', 'mappa_cinematic', 'Climax');
-    expect(concept.matched).toBe(true);
+  // 2026-07-10: metin artık "overlay" değil — start frame'deki bir YÜZEYE yazılı bir
+  // nesnedir (Mami'nin editörü yok, üstüne katman konacak bir aşama da yok). Kling'e
+  // "overlay" demek onu kaydırılabilir serbest bir katman sanmaya davet ediyordu.
+  it('includes visibleText protection line when the frame bakes text into a surface', () => {
+    const dna = dnaDirectives([], 'STY');
+    const motion = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 8, undefined, 'KUZEY', SRC);
+    expect(motion).toContain("Start frame carries 'KUZEY' written on a surface inside the scene");
+    expect(motion).toMatch(/moves only as its surface moves/i);
+    expect(motion).toMatch(/preserve character-for-character/i);
+    expect(motion).not.toMatch(/overlay/i);
   });
 
-  it('cursed energy source matches MAPPA cursed space concept', () => {
-    const concept = primeConcept('lanetli alan içinde savaş lanetli enerji patlıyor', 'STY', 'mappa_cinematic', 'Climax');
-    expect(concept.matched).toBe(true);
+  it('adventure source text: motion brief verbatim kaynağı taşır (banka öznesi türetmez)', () => {
+    const dna = dnaDirectives([], 'STY');
+    const src = 'Büyük deniz macerasında ekip birlikte gider.';
+    const motion = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 8, undefined, null, src);
+    expect(motion).toContain('Motion brief (Claude yazar)');
+    expect(motion).toContain(src);
+  });
+
+  it('urban darkness source: motion brief verbatim kaynağı taşır', () => {
+    const dna = dnaDirectives([], 'STY');
+    const src = 'Karanlık kentsel atmosferde duman ve gerilim şehri kaplar.';
+    const motion = buildMotionPrompt(1, CONCEPT, dna.camera, dna, 8, undefined, null, src);
+    expect(motion).toContain('Motion brief (Claude yazar)');
+    expect(motion).toContain(src);
   });
 });

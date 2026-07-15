@@ -1,0 +1,58 @@
+==== 1. P0 — Mami termos source (rawHash ba24888a), beyansız ====
+status=BLOCKED scenes=0 findings=["ON_SCREEN_TEXT_INTENT"]
+blocker[0]={"scope":"shot","code":"EXACT_TEXT_REQUIRED","field":"deliveryPromise","requiredEvidence":"Kareye basılacak TAM metin + yüzey, ya da \"temiz plaka\" onayı.","blocks":[1,2,3]}
+
+==== 2. MAMİ 2026-07-05 KİLİDİ — Su Döngüsü (değişmemeli) ====
+status=GENERATED scenes=3 onScreenText=["Su buharlaşır",null,"Yağmur yağar"]
+
+==== 3. NİYET — WANTED (istek → signal=true) ====
+  true  :: urun uzerine sirket adi yazsin
+  true  :: Ekranda "Hoş Geldiniz" var.
+  true  :: print ORGANIC HONEY on the label
+  true  :: Ürün üzerine “MAMILAS THERMO” yazılsın.
+  true  :: Üründe “MAMILAS THERMO” ibaresi yer alsın.
+  true  :: Termos üzerinde “MAMILAS THERMO” metni basılı görünsün.
+  true  :: Slogan olarak "taze her gün" görünsün.
+  true  :: CTA olarak "Hemen Al" çıksın.
+  true  :: Altyazı olarak "2024" gösterilsin.
+  true  :: Etikette "MAMILAS" yazısı olsun.
+  true  :: Ambalajda "MAMILAS" logosu bulunsun.
+  true  :: Açılışta "MAMILAS" logosu gelsin.
+  true  :: Ön yüzde "MAMILAS" yazısı dursun.
+  true  :: Ambalajdaki "Mamilas" ibaresi korunacak.
+  true  :: Şirket adı görünsün.
+  true  :: Logo göster.
+  true  :: Fiyat görünsün.
+  true  :: Telefon numarası görünsün.
+  true  :: Show the logo.
+  → 19/19 yakalandı
+
+==== 4. NİYET — LEGIT/ANLATI/DİYALOG (→ signal=false) ====
+  false :: SUV reklamında logosuz bir araç viraj alsın.
+  false :: USB etiketsiz kablo masada dursun.
+  false :: TV ekranında logo görünmeden ürün demosu oynasın.
+  false :: YAZI YOK; yalnız ürün görünsün.
+  false :: ETİKETSİZ AMBALAJ göster.
+  false :: Ve haritanın sonunda yazan tek kelime gerçek oldu: ev.
+  false :: Logo işareti kontrollü bir key light altında keskin ve net durur.
+  false :: Kayışın dokusu makro planda görünür.
+  false :: Yazlık ev kadrajda olsun.
+  false :: Yazar masada olsun.
+  false :: Yazıcı masada bulunsun.
+  false :: Etiketleme makinesi kadrajda bulunsun.
+  false :: Ürün masada olsun.
+  false :: Oyuncu “Bugün başlıyoruz” desin; ürün kadrajda dursun.
+  false :: Müşteri “minimal ve sessiz” dedi; termosun mevcut ürün yazısı görünmesin.
+  → 15/15 doğru geçti
+
+==== 5. BEYAN — boş/kör baked ihraç edilemez ====
+  items=[] → intent_pending
+  items=[{"exactText":"","surface":""}] → intent_pending
+  items=[{"exactText":"MAMILAS","surface":""}] → intent_pending
+  geçerli beyan → baked_text
+
+==== 6. SHA-256 vs node:crypto ====
+  9/9 vektör node:crypto ile birebir · commandHash=64 hex
+
+==== 7. NFC anahtar determinizmi ====
+  NFD vs NFC aynı hash: true

@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
+import { scrubAnchorIP } from './brain';
 import { quantumScore, qaScore, proofDoctor } from './proof';
+import { DATA } from './pure';
 import SURGERY_DATA from './SURGERY_DATA.json';
 
 describe('Proof & Quality', () => {
@@ -34,7 +36,7 @@ describe('Proof & Quality', () => {
 
       const partialState = quantumScore({
         rawSource: 'Some text',
-        sourceBeats: [{ id: 'b1', text: 'Some text', start: 0, end: 9, hash: 'x' }],
+        sourceBeats: [{ sourceId: 'b1', exactText: 'Some text', start: 0, end: 9, hash: 'x' }],
         scenes: [],
         projectTopic: 'Topic',
         selectedWorldId: 'world',
@@ -44,7 +46,7 @@ describe('Proof & Quality', () => {
 
       const fullState = quantumScore({
         rawSource: 'Some text',
-        sourceBeats: [{ id: 'b1', text: 'Some text', start: 0, end: 9, hash: 'x' }],
+        sourceBeats: [{ sourceId: 'b1', exactText: 'Some text', start: 0, end: 9, hash: 'x' }],
         scenes: [{ id: 1, durationSec: 3 }],
         projectTopic: 'Topic',
         selectedWorldId: 'world',
@@ -294,5 +296,55 @@ describe('Proof & Quality', () => {
         SURGERY_DATA.regression.push(...originalReg);
       }
     });
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// WORK-TITLE FIREWALL — the Apple bug's sibling.
+//
+// scrubAnchorIP kills a commercial BRAND (engine draws a real iPhone) and kills a
+// protected CHARACTER (engine draws Luffy). It does not kill the name of the WORK
+// the craft was learned from — so the real, shipped image prompt for the pixar_3d_edu
+// world says, verbatim, "premium-CG feature-animation Soul dual-register ... ethereal
+// Great-Before". Naming the film IS the instruction: the engine reproduces that film.
+// Four refs leak this way (soul, mad_max_chaos_cam, cowboy_bebop_noir_jazz,
+// attack_titan_scale — the last a STUDIO mark, which the firewall forbids by name).
+//
+// The craft is legitimate and must survive: "dual-register: warm tactile earthly
+// reality versus soft-abstract luminous ethereal" teaches the engine everything the
+// title did, without pointing at the film. Director surnames stay — a lineage is not
+// a work, and no engine draws "Pete Docter".
+describe('work-title firewall (real output)', () => {
+  // Work titles only. STUDIO names (MAPPA, Ufotable, Pixar, Toei) deliberately stay: the
+  // worlds exist to teach a studio's rendering pipeline, and each blocks that studio's CAST
+  // from the other side ("NO any named Pixar or Disney animated character · NO Pixar City").
+  // Render in their language, never draw their cast. Stripping the studio would make the
+  // world generic — which the same two-way rule forbids.
+  const LEAKS = /\b(Soul|Great[- ]Before|Fury[- ]Road|Bebop|Arcane|Spider[- ]Verse)\b/;
+
+  it('no ref anchor ships a work title into the positive prompt', () => {
+    const offenders = DATA.refs
+      .filter((r) => LEAKS.test(scrubAnchorIP(String(r.anchor ?? ''))))
+      .map((r) => r.id);
+    expect(
+      offenders,
+      `these refs name their source WORK in the prompt the engine reads: ${offenders.join(', ')}`,
+    ).toEqual([]);
+  });
+
+  it('scrubs the title but keeps the craft that title was standing for', () => {
+    const soul = DATA.refs.find((r) => r.id === 'soul');
+    const cleaned = scrubAnchorIP(String(soul?.anchor ?? ''));
+    expect(cleaned).not.toMatch(/\bSoul\b/);
+    expect(cleaned).not.toMatch(/Great[- ]Before/);
+    // the grammar the ref exists for must survive the scrub, or we deleted the ref
+    expect(cleaned).toContain('dual-register');
+    expect(cleaned).toContain('soft-abstract luminous');
+    expect(cleaned.length, 'scrubbing must not gut the clause').toBeGreaterThan(80);
+  });
+
+  it('keeps director lineage — a name is not a work', () => {
+    const deakins = DATA.refs.find((r) => r.id === 'roger_deakins_naturalism');
+    expect(scrubAnchorIP(String(deakins?.anchor ?? '')).length).toBeGreaterThan(40);
   });
 });

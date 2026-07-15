@@ -1,0 +1,806 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAMILAS — Yönetmen Konsolu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07090d;
+    --panel:rgba(255,255,255,.028);
+    --panel2:rgba(255,255,255,.014);
+    --line:rgba(255,255,255,.075);
+    --line-soft:rgba(255,255,255,.045);
+    --txt:#ece7dd;
+    --txt2:#a39d90;
+    --txt3:#6d675c;
+    --amber:#f2a03d;
+    --amber-hi:#ffc46a;
+    --amber-dim:rgba(242,160,61,.14);
+    --green:#7fd39a;
+    --mono:'JetBrains Mono',monospace;
+    --disp:'Space Grotesk',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 480px at 44% 30%, rgba(242,160,61,.055), transparent 65%),
+      radial-gradient(700px 500px at 92% 100%, rgba(70,130,140,.05), transparent 60%),
+      radial-gradient(600px 400px at 4% 96%, rgba(242,160,61,.03), transparent 60%);
+  }
+  /* ---------- header ---------- */
+  header{
+    height:58px;display:flex;align-items:center;gap:18px;
+    padding:0 20px;border-bottom:1px solid var(--line-soft);
+    position:relative;z-index:2;
+  }
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand-mark{
+    width:30px;height:30px;border-radius:9px;position:relative;flex:0 0 auto;
+    background:linear-gradient(140deg,#ffc46a,#d97a24);
+    box-shadow:0 0 18px rgba(242,160,61,.35), inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .brand-mark::before{ /* viewfinder corners */
+    content:"";position:absolute;inset:6px;border-radius:3px;
+    background:
+      linear-gradient(#150e05,#150e05) top left/7px 1.8px,
+      linear-gradient(#150e05,#150e05) top left/1.8px 7px,
+      linear-gradient(#150e05,#150e05) top right/7px 1.8px,
+      linear-gradient(#150e05,#150e05) top right/1.8px 7px,
+      linear-gradient(#150e05,#150e05) bottom left/7px 1.8px,
+      linear-gradient(#150e05,#150e05) bottom left/1.8px 7px,
+      linear-gradient(#150e05,#150e05) bottom right/7px 1.8px,
+      linear-gradient(#150e05,#150e05) bottom right/1.8px 7px;
+    background-repeat:no-repeat;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;
+    transform:translate(-50%,-50%);background:#150e05;
+  }
+  .brand h1{font-family:var(--disp);font-size:17px;font-weight:700;letter-spacing:.14em}
+  .brand small{display:block;font-family:var(--mono);font-size:9px;color:var(--txt3);letter-spacing:.22em;margin-top:1px}
+  .hd-div{width:1px;height:26px;background:var(--line)}
+  .proj{
+    display:flex;align-items:center;gap:10px;padding:7px 14px;border-radius:10px;
+    border:1px solid var(--line);background:var(--panel);
+  }
+  .proj .k{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--txt3)}
+  .proj .v{font-weight:600;font-size:12.5px}
+  .proj .m{font-family:var(--mono);font-size:10px;color:var(--txt2)}
+  .hd-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+  .pill{
+    display:flex;align-items:center;gap:7px;padding:6px 11px;border-radius:99px;
+    border:1px solid var(--line);background:var(--panel);
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--txt2);
+  }
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 7px var(--green)}
+  .dot.amber{background:var(--amber);box-shadow:0 0 7px var(--amber)}
+  .clock{font-family:var(--mono);font-size:11px;color:var(--txt2);letter-spacing:.08em;padding-left:8px}
+
+  /* ---------- layout ---------- */
+  .main{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:238px 1fr 338px;gap:14px;
+    height:calc(100% - 58px);padding:14px 16px 16px;
+  }
+  .rail{display:flex;flex-direction:column;gap:12px;min-height:0}
+  .card{
+    background:linear-gradient(165deg,var(--panel),var(--panel2));
+    border:1px solid var(--line);border-radius:16px;
+  }
+  .lbl{
+    font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:var(--txt3);
+    text-transform:uppercase;
+  }
+
+  /* ---------- left: pipeline ---------- */
+  .steps{padding:16px 14px 10px;flex:0 0 auto}
+  .steps .lbl{padding:0 4px 12px}
+  .step{
+    display:flex;gap:12px;padding:11px 10px;border-radius:12px;position:relative;
+    border:1px solid transparent;
+  }
+  .step + .step{margin-top:2px}
+  .step .num{
+    font-family:var(--mono);font-size:10px;width:26px;height:26px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;border-radius:8px;
+    border:1px solid var(--line);color:var(--txt3);background:rgba(255,255,255,.02);
+    position:relative;z-index:1;
+  }
+  .step .tx b{display:block;font-family:var(--disp);font-size:13.5px;font-weight:600;color:var(--txt2)}
+  .step .tx span{font-size:10.5px;color:var(--txt3)}
+  .step::before{ /* connector */
+    content:"";position:absolute;left:23px;top:38px;bottom:-14px;width:1px;
+    background:var(--line-soft);
+  }
+  .step:last-child::before{display:none}
+  .step.done .num{color:var(--amber);border-color:rgba(242,160,61,.35);background:var(--amber-dim)}
+  .step.done .tx b{color:var(--txt2)}
+  .step.done::before{background:rgba(242,160,61,.3)}
+  .step.active{
+    background:linear-gradient(120deg,rgba(242,160,61,.13),rgba(242,160,61,.03));
+    border-color:rgba(242,160,61,.35);
+    box-shadow:0 0 26px -8px rgba(242,160,61,.4), inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .step.active .num{
+    background:linear-gradient(140deg,#ffc46a,#e08a2b);color:#191006;border-color:transparent;
+    box-shadow:0 0 14px rgba(242,160,61,.5);font-weight:500;
+  }
+  .step.active .tx b{color:var(--txt)}
+  .step.active .tx span{color:#c9a06a}
+  .auth{padding:15px 16px;margin-top:auto}
+  .auth .lbl{margin-bottom:11px}
+  .auth ol{list-style:none;font-family:var(--mono);font-size:9.5px;line-height:1.9;color:var(--txt2)}
+  .auth li{display:flex;gap:8px;align-items:baseline}
+  .auth li i{font-style:normal;color:var(--amber);opacity:.7;font-size:8.5px;width:14px}
+  .auth p{margin-top:10px;font-size:10px;color:var(--txt3);border-top:1px solid var(--line-soft);padding-top:9px}
+  .auth p b{color:var(--txt2);font-weight:600}
+
+  /* ---------- center ---------- */
+  .center{display:flex;flex-direction:column;gap:13px;min-width:0;min-height:0}
+  .viewport{
+    position:relative;flex:1;border-radius:18px;overflow:hidden;min-height:0;
+    border:1px solid rgba(255,185,100,.2);
+    background:linear-gradient(180deg,#27505f 0%,#7d9c84 55%,#c98d4d 78%,#8a5a33 100%);
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,.4),
+      0 34px 90px -24px rgba(0,0,0,.85),
+      0 0 130px -34px rgba(242,160,61,.4);
+  }
+  .viewport canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .vp-grain{
+    position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .vp-vig{
+    position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(115% 95% at 50% 42%, transparent 58%, rgba(5,6,9,.5) 100%);
+    box-shadow:inset 0 0 90px rgba(5,6,9,.35);
+  }
+  .vp-grade{
+    position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
+    background:linear-gradient(115deg, rgba(35,90,115,.55), transparent 42%, rgba(255,150,50,.4) 88%);
+  }
+  .thirds{position:absolute;inset:0;pointer-events:none;opacity:.5}
+  .thirds i{position:absolute;background:rgba(255,255,255,.09)}
+  .thirds .v1{left:33.33%;top:0;bottom:0;width:1px}
+  .thirds .v2{left:66.66%;top:0;bottom:0;width:1px}
+  .thirds .h1{top:33.33%;left:0;right:0;height:1px}
+  .thirds .h2{top:66.66%;left:0;right:0;height:1px}
+  .corner{position:absolute;width:20px;height:20px;pointer-events:none;opacity:.85}
+  .corner i{position:absolute;background:rgba(255,220,170,.75)}
+  .corner .a{width:100%;height:1.5px}.corner .b{width:1.5px;height:100%}
+  .c-tl{top:13px;left:13px}.c-tr{top:13px;right:13px;transform:scaleX(-1)}
+  .c-bl{bottom:13px;left:13px;transform:scaleY(-1)}.c-br{bottom:13px;right:13px;transform:scale(-1)}
+  .hud{
+    position:absolute;font-family:var(--mono);pointer-events:none;
+    text-shadow:0 1px 8px rgba(0,0,0,.6);
+  }
+  .hud-chip{
+    display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:9px;
+    background:rgba(7,9,13,.55);border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(6px);
+  }
+  .hud-tl{top:22px;left:44px}
+  .hud-tr{top:22px;right:44px}
+  .hud-bl{bottom:22px;left:44px}
+  .hud-br{bottom:22px;right:44px}
+  .hud .t1{font-size:10px;letter-spacing:.16em;color:#ffd9a0;font-weight:500}
+  .hud .t2{font-size:9.5px;letter-spacing:.1em;color:rgba(240,235,225,.75)}
+  .rec{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 9px var(--amber);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  .focus{
+    position:absolute;left:24.5%;top:47%;width:120px;height:86px;pointer-events:none;opacity:.9;
+  }
+  .focus i{position:absolute;width:13px;height:13px;border:1.5px solid rgba(255,220,170,.9)}
+  .focus .f1{top:0;left:0;border-right:0;border-bottom:0}
+  .focus .f2{top:0;right:0;border-left:0;border-bottom:0}
+  .focus .f3{bottom:0;left:0;border-right:0;border-top:0}
+  .focus .f4{bottom:0;right:0;border-left:0;border-top:0}
+  .focus em{
+    position:absolute;left:0;top:calc(100% + 8px);font-style:normal;font-family:var(--mono);
+    font-size:9px;letter-spacing:.13em;color:#ffd9a0;white-space:nowrap;
+    text-shadow:0 1px 8px rgba(0,0,0,.7);
+  }
+
+  /* ---------- world library ---------- */
+  .worlds{flex:0 0 178px;padding:14px 16px 15px;display:flex;flex-direction:column;min-height:0}
+  .worlds-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+  .worlds-head h3{font-family:var(--disp);font-size:13px;font-weight:600;letter-spacing:.05em}
+  .worlds-head .cnt{font-family:var(--mono);font-size:9.5px;color:var(--txt3);letter-spacing:.08em}
+  .worlds-head .hint{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--txt3);letter-spacing:.1em}
+  .wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;flex:1;min-height:0}
+  .wcard{
+    border:1px solid var(--line);border-radius:13px;overflow:hidden;position:relative;
+    background:rgba(255,255,255,.015);display:flex;flex-direction:column;
+  }
+  .wcard .thumb{height:64px;position:relative;flex:0 0 auto}
+  .wcard .meta{padding:9px 12px 10px}
+  .wcard .meta b{display:block;font-family:var(--disp);font-size:12.5px;font-weight:600;color:var(--txt2)}
+  .wcard .meta span{font-size:10px;color:var(--txt3)}
+  .wtag{
+    position:absolute;top:8px;left:9px;font-family:var(--mono);font-size:8px;letter-spacing:.16em;
+    padding:3px 7px;border-radius:5px;background:rgba(7,9,13,.55);color:rgba(240,235,225,.8);
+    border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px);
+  }
+  .wcard.sel{
+    border-color:rgba(242,160,61,.6);
+    box-shadow:0 0 0 1px rgba(242,160,61,.25), 0 10px 34px -12px rgba(242,160,61,.35);
+  }
+  .wcard.sel .meta b{color:var(--txt)}
+  .wsel{
+    position:absolute;top:8px;right:9px;font-family:var(--mono);font-size:8px;letter-spacing:.16em;
+    padding:3px 7px;border-radius:5px;background:linear-gradient(135deg,#ffc46a,#e08a2b);
+    color:#1a1106;font-weight:500;
+  }
+  .th-ghibli{background:
+    radial-gradient(26px 26px at 74% 32%, rgba(255,224,160,.95), rgba(255,190,110,.35) 55%, transparent 72%),
+    radial-gradient(120% 70% at 30% 108%, #37503a 38%, transparent 62%),
+    radial-gradient(160% 80% at 78% 118%, #58784a 44%, transparent 66%),
+    linear-gradient(180deg,#3d7a86 0%,#79a06b 62%,#d99c54 100%)}
+  .th-pixar{background:
+    radial-gradient(34px 30px at 34% 38%, rgba(255,214,150,.9), transparent 62%),
+    radial-gradient(120% 90% at 70% 120%, #27507e 45%, transparent 70%),
+    linear-gradient(180deg,#142c4c,#3a679e)}
+  .th-kurz{background:
+    linear-gradient(135deg, transparent 46%, rgba(255,190,90,.85) 46%, rgba(255,190,90,.85) 55%, transparent 55%),
+    linear-gradient(315deg, transparent 62%, #4dc6b2 62%, #4dc6b2 74%, transparent 74%),
+    linear-gradient(135deg,#2b3a8f,#6a51c0)}
+  .th-sport{background:
+    radial-gradient(60px 26px at 68% 42%, rgba(255,120,70,.65), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.06) 1px, transparent 1px) 0 0/100% 9px,
+    linear-gradient(180deg,#15171d,#3d211c)}
+
+  /* ---------- right: recipe ---------- */
+  .recipe{padding:19px 20px 18px;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+  .recipe .lbl{margin-bottom:12px}
+  .wname{font-family:var(--disp);font-size:24px;font-weight:700;letter-spacing:.01em;line-height:1.1}
+  .wsub{font-size:11.5px;color:#c9a06a;margin-top:5px;font-weight:500}
+  .dossier{font-size:11.5px;line-height:1.62;color:var(--txt2);margin-top:12px}
+  .law{
+    margin-top:14px;padding:11px 13px;border-radius:11px;
+    background:rgba(242,160,61,.06);border:1px solid rgba(242,160,61,.22);
+    border-left:2.5px solid var(--amber);
+  }
+  .law .lbl{margin-bottom:6px;color:#c9a06a}
+  .law p{font-family:var(--mono);font-size:10px;line-height:1.68;color:#e3d3b4}
+  .dna{margin-top:15px}
+  .dna .lbl{margin-bottom:9px}
+  .dna-row{
+    display:flex;gap:10px;align-items:baseline;padding:5.5px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .dna-row:last-child{border-bottom:0}
+  .dna-row i{
+    font-style:normal;font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+    color:var(--amber);opacity:.85;width:56px;flex:0 0 auto;
+  }
+  .dna-row span{font-size:11px;color:var(--txt2)}
+  .pal{margin-top:13px}
+  .pal .lbl{margin-bottom:10px}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .chip{
+    display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:9px;
+    border:1px solid var(--line);background:rgba(255,255,255,.02);
+    font-size:10.5px;color:var(--txt2);font-weight:500;
+  }
+  .chip u{
+    text-decoration:none;width:13px;height:13px;border-radius:50%;flex:0 0 auto;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 0 8px -1px currentColor;
+  }
+  .u1{background:radial-gradient(circle at 34% 30%,#ffdf9e,#e08a2b)}
+  .u2{background:radial-gradient(circle at 34% 30%,#b9d98a,#5d8a44)}
+  .u3{background:radial-gradient(circle at 34% 30%,#a8ccc9,#3d6e72)}
+  .u4{background:radial-gradient(circle at 34% 30%,#fff4e0,#d9b98a)}
+  .pal-note{font-size:9.8px;color:var(--txt3);margin-top:9px;line-height:1.55}
+  .pal-note b{color:#c9a06a;font-weight:600}
+  .cta{margin-top:auto;padding-top:14px}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    padding:13px;border-radius:12px;border:0;cursor:pointer;
+    background:linear-gradient(135deg,#ffc46a,#e08a2b);
+    font-family:var(--disp);font-size:13.5px;font-weight:700;color:#1a1106;letter-spacing:.03em;
+    box-shadow:0 10px 30px -8px rgba(242,160,61,.55), inset 0 1px 0 rgba(255,255,255,.45);
+  }
+  .cta small{display:block;text-align:center;font-size:9.6px;color:var(--txt3);margin-top:9px;line-height:1.5}
+  .cta small b{color:var(--txt2);font-weight:600}
+</style>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div><h1>MAMILAS</h1><small>YÖNETMEN KONSOLU</small></div>
+  </div>
+  <div class="hd-div"></div>
+  <div class="proj">
+    <span class="k">PROJE</span>
+    <span class="v">Fotosentez — Bir Yaprağın Günlüğü</span>
+    <span class="m">eğitim filmi · 3 sahne · 48 sn</span>
+  </div>
+  <div class="hd-right">
+    <div class="pill"><span class="dot"></span>NANO BANANA 2</div>
+    <div class="pill"><span class="dot"></span>MAGNIFIC</div>
+    <div class="pill"><span class="dot amber"></span>KLING 3.0 · FİNAL</div>
+    <div class="clock">TSİ 23:47</div>
+  </div>
+</header>
+
+<div class="main">
+  <!-- SOL: üretim hattı -->
+  <aside class="rail">
+    <div class="card steps" style="flex:1;display:flex;flex-direction:column">
+      <div class="lbl">Üretim Hattı</div>
+      <div class="step done">
+        <div class="num">✓</div>
+        <div class="tx"><b>Brief</b><span>Kaynak &amp; konu</span></div>
+      </div>
+      <div class="step active">
+        <div class="num">02</div>
+        <div class="tx"><b>Reçete</b><span>Dünya · palet · DNA</span></div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div class="tx"><b>Sahneler</b><span>Beat planı</span></div>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <div class="tx"><b>Timeline</b><span>Üret &amp; teslim</span></div>
+      </div>
+      <div class="step">
+        <div class="num">05</div>
+        <div class="tx"><b>QA</b><span>Cabinet</span></div>
+      </div>
+      <div class="auth" style="padding:15px 4px 4px">
+        <div class="lbl">Otorite Hiyerarşisi</div>
+        <ol>
+          <li><i>01</i>Path</li>
+          <li><i>02</i>World / Render Lock</li>
+          <li><i>03</i>Material</li>
+          <li><i>04</i>Source</li>
+          <li><i>05</i>Onaylı kare</li>
+          <li><i>06</i>Direktör mandası</li>
+          <li><i>07</i>Ref DNA</li>
+          <li><i>08</i>Palet</li>
+        </ol>
+        <p><b>Determinizm:</b> alt katman üstü asla ezmez. Reçete kilitlenince DNA sahnelere kalıtılır.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ORTA: vizör + dünya kütüphanesi -->
+  <section class="center">
+    <div class="viewport" id="vp">
+      <canvas id="gl"></canvas>
+      <div class="thirds"><i class="v1"></i><i class="v2"></i><i class="h1"></i><i class="h2"></i></div>
+      <div class="vp-grade"></div>
+      <div class="vp-grain"></div>
+      <div class="vp-vig"></div>
+      <div class="corner c-tl"><i class="a"></i><i class="b"></i></div>
+      <div class="corner c-tr"><i class="a"></i><i class="b"></i></div>
+      <div class="corner c-bl"><i class="a"></i><i class="b"></i></div>
+      <div class="corner c-br"><i class="a"></i><i class="b"></i></div>
+      <div class="hud hud-tl hud-chip">
+        <span class="rec"></span>
+        <span class="t1">REÇETE ÖNİZLEME</span>
+        <span class="t2">ghibli_meadow_v2 · 16:9 · 24fps</span>
+      </div>
+      <div class="hud hud-tr hud-chip">
+        <span class="t2">SAHNE 01/03 — "Tohum uyanıyor"</span>
+      </div>
+      <div class="hud hud-bl hud-chip">
+        <span class="t1">IŞIK</span>
+        <span class="t2">gün sonu ambarı → çayır yeşili dolgu</span>
+      </div>
+      <div class="hud hud-br hud-chip">
+        <span class="t2">35mm eşdeğeri · NB2 → MAGNIFIC → KLING</span>
+      </div>
+      <div class="focus">
+        <i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i>
+        <em>ODAK · plaka temiz — anlatım VO'da</em>
+      </div>
+    </div>
+
+    <div class="card worlds">
+      <div class="worlds-head">
+        <h3>Dünya Kütüphanesi</h3>
+        <span class="cnt">39 dünya · 99 referans · 12 palet</span>
+        <span class="hint">↹ göz at &nbsp;·&nbsp; ⏎ seç</span>
+      </div>
+      <div class="wgrid">
+        <div class="wcard sel">
+          <div class="thumb th-ghibli"><span class="wtag">EĞİTİM</span><span class="wsel">SEÇİLİ</span></div>
+          <div class="meta"><b>Studio Ghibli</b><span>El çizimi anime · Miyazaki</span></div>
+        </div>
+        <div class="wcard">
+          <div class="thumb th-pixar"><span class="wtag">EĞİTİM</span></div>
+          <div class="meta"><b>Pixar 3D</b><span>Hacim ışığı · Education Tier</span></div>
+        </div>
+        <div class="wcard">
+          <div class="thumb th-kurz"><span class="wtag">AÇIKLAYICI</span></div>
+          <div class="meta"><b>Kurzgesagt</b><span>Flat izometrik anlatım</span></div>
+        </div>
+        <div class="wcard">
+          <div class="thumb th-sport"><span class="wtag">REKLAM</span></div>
+          <div class="meta"><b>Sports Energy</b><span>Ter, sodyum ışığı, ring</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAĞ: seçili dünya reçetesi -->
+  <aside class="rail">
+    <div class="card recipe" style="flex:1">
+      <div class="lbl">Seçili Dünya · Reçete</div>
+      <div class="wname">Studio Ghibli</div>
+      <div class="wsub">Hayao Miyazaki · el çizimi anime · eğitim anlatısı</div>
+      <p class="dossier">
+        Alçak güneş, el boyaması gök ve rüzgârı hissedilen çayır. Sıcak, güven veren
+        bir dünya; kalabalık kadraj yok, tek net odak. Doğa her karede yaşayan bir
+        karakter gibi davranır.
+      </p>
+      <div class="law">
+        <div class="lbl">Render Yasası</div>
+        <p>Her kare el boyaması okunur: yumuşak kontur, renkli gölge, tek sıcak
+        güneş kaynağı. Siyah gölge, plastik parlama ve neon yasak.</p>
+      </div>
+      <div class="dna">
+        <div class="lbl">DNA — 7 Katman</div>
+        <div class="dna-row"><i>ÇİZGİ</i><span>yumuşak, kesintili kontur — cetvel yok</span></div>
+        <div class="dna-row"><i>IŞIK</i><span>alçak güneş, renkli gölge, sıcak rim</span></div>
+        <div class="dna-row"><i>LENS</i><span>35mm eşdeğeri, geniş sahne nefesi</span></div>
+        <div class="dna-row"><i>DOKU</i><span>sulu boya gök, guaj çayır dokusu</span></div>
+        <div class="dna-row"><i>KADRAJ</i><span>ufuk üçte birde, tek odak noktası</span></div>
+        <div class="dna-row"><i>HAREKET</i><span>rüzgâr temposu, yavaş dolly-in</span></div>
+        <div class="dna-row"><i>NEGATİF</i><span>neon yok · plastik yok · kalabalık yok</span></div>
+      </div>
+      <div class="pal">
+        <div class="lbl">Palet — Işık Dili</div>
+        <div class="chips">
+          <div class="chip"><u class="u1"></u>gün sonu ambarı</div>
+          <div class="chip"><u class="u2"></u>çayır yeşili dolgu</div>
+          <div class="chip"><u class="u3"></u>serin gök çamı</div>
+          <div class="chip"><u class="u4"></u>krem bulut tepesi</div>
+        </div>
+        <p class="pal-note"><b>Çeviri yasası:</b> palet prompta ham hex olarak değil,
+        fiziksel ışık dili olarak akar. Vizördeki ışık bu dilden türetilir.</p>
+      </div>
+      <div class="cta">
+        <button class="btn">Reçeteyi Kilitle → Sahnelere Geç</button>
+        <small><b>Kilit sonrası:</b> DNA tüm sahnelere kalıtılır — motion prompt'lar
+        start frame görülmeden yazılmaz.</small>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script type="module">
+const mount = async () => {
+  const THREE = await import('https://unpkg.com/three@0.160.0/build/three.module.js');
+  const vp = document.getElementById('vp');
+  const canvas = document.getElementById('gl');
+  const W = () => vp.clientWidth, H = () => vp.clientHeight;
+
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setSize(W(), H());
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.12;
+
+  const scene = new THREE.Scene();
+
+  /* ---- sky (canvas gradient + painted sun halo) ---- */
+  const skyCv = document.createElement('canvas'); skyCv.width = 1024; skyCv.height = 640;
+  {
+    const c = skyCv.getContext('2d');
+    const g = c.createLinearGradient(0,0,0,640);
+    g.addColorStop(0.00,'#1f4a5e');
+    g.addColorStop(0.34,'#4a8489');
+    g.addColorStop(0.56,'#9db38a');
+    g.addColorStop(0.70,'#e0b46b');
+    g.addColorStop(0.84,'#e29050');
+    g.addColorStop(1.00,'#b96b38');
+    c.fillStyle = g; c.fillRect(0,0,1024,640);
+    // wide warm halo around sun position (~69% x, ~44% y)
+    const halo = c.createRadialGradient(707,282,10,707,282,310);
+    halo.addColorStop(0,'rgba(255,232,180,0.72)');
+    halo.addColorStop(0.25,'rgba(255,205,130,0.3)');
+    halo.addColorStop(1,'rgba(255,205,130,0)');
+    c.fillStyle = halo; c.fillRect(0,0,1024,640);
+  }
+  const skyTex = new THREE.CanvasTexture(skyCv);
+  skyTex.colorSpace = THREE.SRGBColorSpace;
+  scene.background = skyTex;
+  scene.fog = new THREE.Fog(0xdba875, 115, 430);
+
+  /* ---- helpers ---- */
+  const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+  const sstep = (e0,e1,x)=>{const t=clamp((x-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+  const lerp = (a,b,t)=>a+(b-a)*t;
+
+  function groundH(x,z){
+    let h = 4.2*Math.sin(x*0.021+2.2)
+          + 2.8*Math.sin(x*0.047+0.8)*Math.cos(z*0.028)
+          + 2.0*Math.sin(z*0.045+1.2);
+    const far = sstep(120,225,-z);
+    h += far*( 13*Math.sin(x*0.011+1.6) + 6.5*Math.sin(x*0.031+0.5)
+             + 3.5*Math.sin(x*0.07+2.1) + 7 );
+    const front = sstep(-24,26,z);
+    h += front*( 3.0 + 2.2*Math.sin(x*0.04+2.0) + 1.4*Math.sin(x*0.09) );
+    return h;
+  }
+  const pathX = z => lerp(3,-34, clamp((18-z)/113, 0, 1)) + 4*Math.sin(z*0.045);
+
+  /* ---- ground: one continuous mesh, vertex-colored ---- */
+  {
+    const geo = new THREE.PlaneGeometry(640, 300, 190, 95);
+    geo.rotateX(-Math.PI/2);
+    geo.translate(0, 0, -102);
+    const pos = geo.attributes.position;
+    const colors = new Float32Array(pos.count*3);
+    const cNear = new THREE.Color('#4a7a40');
+    const cMid  = new THREE.Color('#79aa58');
+    const cFar  = new THREE.Color('#5d8a86');
+    const cPath = new THREE.Color('#c8b083');
+    const tmp = new THREE.Color();
+    for(let i=0;i<pos.count;i++){
+      const x = pos.getX(i), z = pos.getZ(i);
+      pos.setY(i, groundH(x,z));
+      tmp.copy(cMid);
+      tmp.lerp(cFar, sstep(60,200,-z));
+      tmp.lerp(cNear, sstep(-14,26,z)*0.82);
+      const vary = 0.9 + 0.1*Math.sin(x*0.5)*Math.sin(z*0.47);
+      tmp.multiplyScalar(vary);
+      const d = Math.abs(x - pathX(z));
+      tmp.lerp(cPath, (1 - sstep(1.8,4.6,d)) * sstep(-116,-100,z));
+      colors[i*3]=tmp.r; colors[i*3+1]=tmp.g; colors[i*3+2]=tmp.b;
+    }
+    geo.computeVertexNormals();
+    geo.setAttribute('color', new THREE.BufferAttribute(colors,3));
+    const mat = new THREE.MeshLambertMaterial({vertexColors:true});
+    scene.add(new THREE.Mesh(geo, mat));
+  }
+
+  /* ---- lights ---- */
+  scene.add(new THREE.HemisphereLight(0x9fd3dc, 0x5d6b3a, 0.6));
+  scene.add(new THREE.AmbientLight(0x3a4650, 0.55));
+  const sunPos = new THREE.Vector3(52, 26, -234);
+  const sunL = new THREE.DirectionalLight(0xffc274, 1.42);
+  sunL.position.set(55, 42, -110);
+  sunL.target.position.set(-10, 2, -60);
+  scene.add(sunL, sunL.target);
+
+  /* ---- soft-circle sprite texture ---- */
+  function softCircle(size=64, inner='rgba(255,255,255,1)', mid='rgba(255,255,255,.35)'){
+    const cv = document.createElement('canvas'); cv.width = cv.height = size;
+    const c = cv.getContext('2d');
+    const g = c.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);
+    g.addColorStop(0,inner); g.addColorStop(0.4,mid); g.addColorStop(1,'rgba(255,255,255,0)');
+    c.fillStyle = g; c.fillRect(0,0,size,size);
+    const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t;
+  }
+  const softTex = softCircle();
+
+  /* ---- sun glow sprites ---- */
+  {
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({
+      map:softTex, color:0xffc470, transparent:true, opacity:0.55,
+      blending:THREE.AdditiveBlending, depthWrite:false, fog:false }));
+    glow.position.copy(sunPos); glow.scale.set(105,105,1); glow.material.opacity=0.45; scene.add(glow);
+    const core = new THREE.Sprite(new THREE.SpriteMaterial({
+      map:softTex, color:0xfff3d8, transparent:true, opacity:0.95,
+      blending:THREE.AdditiveBlending, depthWrite:false, fog:false }));
+    core.position.copy(sunPos); core.scale.set(30,30,1); scene.add(core);
+  }
+
+  /* ---- god rays: slanted additive gradient planes ---- */
+  function rayTexture(){
+    const cv = document.createElement('canvas'); cv.width=128; cv.height=256;
+    const c = cv.getContext('2d');
+    const g = c.createLinearGradient(0,0,0,256);
+    g.addColorStop(0,'rgba(255,214,150,0.55)');
+    g.addColorStop(0.7,'rgba(255,200,130,0.12)');
+    g.addColorStop(1,'rgba(255,200,130,0)');
+    c.fillStyle=g; c.fillRect(0,0,128,256);
+    c.globalCompositeOperation='destination-in';
+    const h = c.createLinearGradient(0,0,128,0);
+    h.addColorStop(0,'rgba(0,0,0,0)'); h.addColorStop(0.5,'rgba(0,0,0,1)'); h.addColorStop(1,'rgba(0,0,0,0)');
+    c.fillStyle=h; c.fillRect(0,0,128,256);
+    const t=new THREE.CanvasTexture(cv); t.colorSpace=THREE.SRGBColorSpace; return t;
+  }
+  const rayTex = rayTexture();
+  const rays = [];
+  [[30,4,-150,-0.30,20,0.20],[45,9,-160,-0.36,30,0.26],[62,14,-166,-0.44,18,0.17]]
+  .forEach(([x,y,z,rz,w,o])=>{
+    const m = new THREE.Mesh(
+      new THREE.PlaneGeometry(w,140),
+      new THREE.MeshBasicMaterial({map:rayTex, transparent:true, opacity:o,
+        blending:THREE.AdditiveBlending, depthWrite:false, fog:false, side:THREE.DoubleSide}));
+    m.position.set(x,y,z); m.rotation.z = rz; scene.add(m); rays.push(m);
+  });
+
+  /* ---- clouds ---- */
+  function cloudTexture(){
+    const cv=document.createElement('canvas'); cv.width=256; cv.height=140;
+    const c=cv.getContext('2d');
+    const blobs=[[70,88,44],[118,72,52],[168,86,46],[96,100,38],[146,104,40],[52,102,28],[196,102,30],[128,56,34]];
+    blobs.forEach(([x,y,r])=>{
+      const g=c.createRadialGradient(x,y,2,x,y,r);
+      g.addColorStop(0,'rgba(255,250,240,0.55)');
+      g.addColorStop(0.6,'rgba(255,244,225,0.28)');
+      g.addColorStop(1,'rgba(255,244,225,0)');
+      c.fillStyle=g; c.fillRect(0,0,256,140);
+    });
+    const t=new THREE.CanvasTexture(cv); t.colorSpace=THREE.SRGBColorSpace; return t;
+  }
+  const cloudTex = cloudTexture();
+  const clouds = [];
+  [[-78,50,-252,96,44,0.85],[52,60,-262,120,52,0.7],[-18,68,-268,86,38,0.55],[96,44,-246,72,32,0.6],[-120,58,-260,80,36,0.5]]
+  .forEach(([x,y,z,sx,sy,o])=>{
+    const s=new THREE.Sprite(new THREE.SpriteMaterial({map:cloudTex, color:0xffeed6,
+      transparent:true, opacity:o, depthWrite:false, fog:false}));
+    s.position.set(x,y,z); s.scale.set(sx,sy,1); scene.add(s); clouds.push(s);
+  });
+
+  /* ---- big camphor tree (backlit, right third) ---- */
+  {
+    const tx=30, tz=-85, ty=groundH(tx,tz);
+    const tree=new THREE.Group();
+    const trunkM=new THREE.MeshLambertMaterial({color:0x4a3a2c});
+    const trunk=new THREE.Mesh(new THREE.CylinderGeometry(0.7,1.15,8.5,7), trunkM);
+    trunk.position.y=4.2; tree.add(trunk);
+    const leafM=new THREE.MeshLambertMaterial({color:0x42663c, emissive:0x140c04});
+    [[0,9.5,0,5.6],[3.4,7.8,1,3.9],[-3.6,7.4,-0.8,3.5],[0.6,12.6,0.2,3.4],[-1.8,10.8,1.2,2.9]]
+    .forEach(([x,y,z,r])=>{
+      const s=new THREE.Mesh(new THREE.SphereGeometry(r,10,8), leafM);
+      s.position.set(x,y,z); s.scale.y=0.82; tree.add(s);
+    });
+    tree.position.set(tx,ty,tz); scene.add(tree);
+  }
+
+  /* ---- little house (left third, warm window) ---- */
+  {
+    const hx=-34, hz=-95, hy=groundH(hx,hz);
+    const house=new THREE.Group();
+    const body=new THREE.Mesh(new THREE.BoxGeometry(7,4.6,5.6),
+      new THREE.MeshLambertMaterial({color:0xd9c6a0}));
+    body.position.y=2.3; house.add(body);
+    const roof=new THREE.Mesh(new THREE.ConeGeometry(5.6,3.4,4),
+      new THREE.MeshLambertMaterial({color:0x9c5940}));
+    roof.position.y=6.2; roof.rotation.y=Math.PI/4; house.add(roof);
+    const chim=new THREE.Mesh(new THREE.BoxGeometry(0.9,2.2,0.9),
+      new THREE.MeshLambertMaterial({color:0x8a7a66}));
+    chim.position.set(1.6,6.6,0.6); house.add(chim);
+    const win=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.7),
+      new THREE.MeshBasicMaterial({color:0xffd27a, fog:true}));
+    win.position.set(1.4,2.3,2.85); house.add(win);
+    const win2=win.clone(); win2.position.x=-1.6; house.add(win2);
+    house.rotation.y=0.35; house.position.set(hx,hy,hz); scene.add(house);
+  }
+
+  /* ---- mid-distance tree cluster ---- */
+  {
+    const leafM=new THREE.MeshLambertMaterial({color:0x4a6d51});
+    [[-62,-140],[-50,-150],[6,-155],[64,-145],[76,-130]].forEach(([x,z])=>{
+      const y=groundH(x,z);
+      const s=new THREE.Mesh(new THREE.SphereGeometry(3.6+Math.abs(Math.sin(x))*1.6,8,7), leafM);
+      s.position.set(x,y+3.4,z); s.scale.y=1.15; scene.add(s);
+    });
+  }
+
+  /* ---- flower specks on meadow ---- */
+  {
+    const N=400, p=new Float32Array(N*3), col=new Float32Array(N*3);
+    const cA=new THREE.Color(0xfff1d0), cB=new THREE.Color(0xffcf8e), cC=new THREE.Color(0xf5e6f0);
+    for(let i=0;i<N;i++){
+      const x=(Math.random()*2-1)*95;
+      const z=30-Math.random()*140;
+      p[i*3]=x; p[i*3+1]=groundH(x,z)+0.45; p[i*3+2]=z;
+      const c=[cA,cB,cC][Math.floor(Math.random()*3)];
+      col[i*3]=c.r; col[i*3+1]=c.g; col[i*3+2]=c.b;
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.BufferAttribute(p,3));
+    g.setAttribute('color',new THREE.BufferAttribute(col,3));
+    const m=new THREE.PointsMaterial({size:1.0, map:softTex, vertexColors:true,
+      transparent:true, opacity:0.7, depthWrite:false, sizeAttenuation:true});
+    scene.add(new THREE.Points(g,m));
+  }
+
+  /* ---- pollen / dust catching light (drifting) ---- */
+  let pollen;
+  {
+    const N=200, p=new Float32Array(N*3);
+    for(let i=0;i<N;i++){
+      const z=-6-Math.random()*85;
+      p[i*3]=(Math.random()*2-1)*70 + 8;
+      p[i*3+1]=groundH(p[i*3],z)+0.6+Math.random()*10;
+      p[i*3+2]=z;
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.BufferAttribute(p,3));
+    const m=new THREE.PointsMaterial({size:1.3, map:softTex, color:0xffdca0,
+      transparent:true, opacity:0.6, blending:THREE.AdditiveBlending,
+      depthWrite:false, sizeAttenuation:true});
+    pollen=new THREE.Points(g,m); scene.add(pollen);
+  }
+
+  /* ---- AI materialization: amber wireframe hugging the foreground ---- */
+  {
+    const geo=new THREE.PlaneGeometry(210,26,96,13);
+    geo.rotateX(-Math.PI/2); geo.translate(0,0,33);
+    const pos=geo.attributes.position;
+    for(let i=0;i<pos.count;i++){
+      pos.setY(i, groundH(pos.getX(i), pos.getZ(i))+0.22);
+    }
+    const m=new THREE.MeshBasicMaterial({color:0xffb054, wireframe:true,
+      transparent:true, opacity:0.11, blending:THREE.AdditiveBlending, depthWrite:false});
+    scene.add(new THREE.Mesh(geo,m));
+    // materialization sparks
+    const N=90, p=new Float32Array(N*3);
+    for(let i=0;i<N;i++){
+      const x=(Math.random()*2-1)*90, z=16+Math.random()*28;
+      p[i*3]=x; p[i*3+1]=groundH(x,z)+0.5+Math.random()*1.6; p[i*3+2]=z;
+    }
+    const g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.BufferAttribute(p,3));
+    scene.add(new THREE.Points(g,new THREE.PointsMaterial({size:1.7, map:softTex,
+      color:0xffc46a, transparent:true, opacity:0.55, blending:THREE.AdditiveBlending,
+      depthWrite:false, sizeAttenuation:true})));
+  }
+
+  /* ---- birds near the sun ---- */
+  {
+    const cv=document.createElement('canvas'); cv.width=64; cv.height=32;
+    const c=cv.getContext('2d');
+    c.strokeStyle='rgba(40,34,26,0.9)'; c.lineWidth=3.4; c.lineCap='round';
+    c.beginPath(); c.moveTo(8,22); c.quadraticCurveTo(20,8,32,20);
+    c.quadraticCurveTo(44,8,56,22); c.stroke();
+    const t=new THREE.CanvasTexture(cv); t.colorSpace=THREE.SRGBColorSpace;
+    [[20,34,-200,4.4],[30,30,-190,3.2],[12,29,-195,2.5]].forEach(([x,y,z,s])=>{
+      const b=new THREE.Sprite(new THREE.SpriteMaterial({map:t, transparent:true,
+        opacity:0.85, depthWrite:false, fog:false}));
+      b.position.set(x,y,z); b.scale.set(s,s/2,1); scene.add(b);
+    });
+  }
+
+  /* ---- camera ---- */
+  const camY = groundH(0,46)+6.5;
+  const camera = new THREE.PerspectiveCamera(36, W()/H(), 0.5, 900);
+  camera.position.set(0, camY, 47);
+  const look = new THREE.Vector3(2, camY-3.5, -90);
+  camera.lookAt(look);
+
+  const clock = new THREE.Clock();
+  function frame(){
+    const t = clock.getElapsedTime();
+    camera.position.x = Math.sin(t*0.1)*1.1;
+    camera.position.y = camY + Math.sin(t*0.13)*0.35;
+    camera.lookAt(look);
+    pollen.rotation.y = Math.sin(t*0.05)*0.02;
+    pollen.position.y = Math.sin(t*0.3)*0.4;
+    clouds.forEach((c,i)=>{ c.position.x += Math.sin(t*0.02+i)*0.002; });
+    rays.forEach((r,i)=>{ r.material.opacity = [0.20,0.26,0.17][i]*(0.9+0.15*Math.sin(t*0.6+i*2)); });
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  renderer.render(scene, camera); // guarantee first frame immediately
+  frame();
+
+  window.addEventListener('resize', ()=>{
+    renderer.setSize(W(),H());
+    camera.aspect = W()/H(); camera.updateProjectionMatrix();
+  });
+};
+mount().catch(err => console.error('3D mount failed:', err));
+</script>

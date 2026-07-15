@@ -80,7 +80,9 @@ function beatClipSec(text: string, voRaw: number, videoModelClips: number[]) {
 }
 
 function norm(v: string) {
-  return String(v || '').toLowerCase().replace(/[çğıöşüâîû]/g, (m) => {
+  // tr-TR lowercase şart: locale-agnostik toLowerCase 'İ'yi 'i'+U+0307 yapar ve
+  // ordinal/reveal/connector regex'leri kaçırır (source.ts:95 ile aynı normalize).
+  return String(v || '').toLocaleLowerCase('tr-TR').replace(/̇/g, '').replace(/[çğıöşüâîû]/g, (m) => {
     return ({ ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' } as Record<string, string>)[m] || m;
   });
 }
@@ -110,7 +112,15 @@ function semanticOverlap(a: string, b: string) {
 }
 
 function startsWithConnector(t: string) {
-  return /^(ve|çünkü|cunku|yani|ama|fakat|sonra|ardından|ardindan|böylece|boylece|bu yüzden|bu yuzden|işte|iste|o zaman)\b/i.test(clean(t || ''));
+  // norm() üstünde koş: JS /i flag'i büyük 'İ'yi (U+0130) fold edemez — "İşte..." kaçar.
+  return /^(ve|çünkü|cunku|yani|ama|fakat|sonra|ardından|ardindan|böylece|boylece|bu yüzden|bu yuzden|işte|iste|o zaman)\b/i.test(norm(t || ''));
+}
+
+/** "Beşinci unsur…", "İkinci adım…", "3. Madde…" — ordinal sequence intro signals a new VISUAL CONCEPT. */
+function startsWithSequenceIntroduction(t: string): boolean {
+  const x = norm(t || '').trim();
+  return /^(birinci|ikinci|ucuncu|dorduncu|besinci|altinci|yedinci|sekizinci|dokuzuncu|onuncu)(si|su)?\s/.test(x)
+    || /^\d+[.)]\s+\S/.test(clean(t || ''));
 }
 
 export function mergeScore(a: string, b: string, bounds: { min: number; target: number; max: number }) {
@@ -131,6 +141,7 @@ export function mergeScore(a: string, b: string, bounds: { min: number; target: 
   if (clauseCount(a + ' ' + b) >= 4) sc -= 2;
   if (isRevealBeat(b) && vb >= 2) sc -= 3;
   if (va + vb > bounds.target + 2) sc -= 1;
+  if (startsWithSequenceIntroduction(b)) sc -= 5; // ordinal intro = new visual scene, never merge
   return sc;
 }
 
@@ -220,6 +231,9 @@ export function planBeats(
     }
     if (vo > bounds.max || (vo > bounds.target && eventBoundary(s.text) > 0 && clauseCount(s.text) >= 3)) {
       hints.push({ i, type: 'split', reason: `[${s.id}] ${vo > bounds.max ? `Bu sahne ${vo}s ile beat üst sınırını aşıyor` : 'Bu sahne iki bağımsız fiziksel olay içeriyor'}; bölünmeli.`, effect: `Bölmek hareket güvenliğini artırır; +${videoModelClips[0]}s üretim maliyeti ekler.` });
+    }
+    if (startsWithSequenceIntroduction(s.text)) {
+      hints.push({ i, type: 'keep', reason: `[${s.id}] Sıralı kavram girişi ("Beşinci unsur…" gibi) — start frame tek görsel fikri taşıyabilir.`, effect: 'Önceki sahneyle birleştirme; Kling iki farklı görsel fikri tek animasyonla üretemez.' });
     }
   });
 

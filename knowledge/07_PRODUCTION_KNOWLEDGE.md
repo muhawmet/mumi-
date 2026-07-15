@@ -27,7 +27,6 @@ key, `production`. The fields you use most:
 
 | Path | Meaning |
 |---|---|
-| `mode.projectKind` | `video` or `design`. Design produces no motion/music. |
 | `agentBrief` | Full human-readable production brief → `final_brief.md`. |
 | `scenes[].prompts.image` | Approved start-frame prompt → `image_prompts/<id>.txt` **verbatim**. |
 | `scenes[].prompts.suno` | Per-scene sound cue → folded into the single `suno.txt`. |
@@ -109,7 +108,7 @@ do not recompute — you obey:
   tiny leftover tail.
 
 Engine windows (the site supplies the active one; defaults if absent):
-Kling 2.1/3 ~9s · Kling 4 ~10s · Runway ~14s · Seedance ~9s · Hailuo ~9s · Veo ~8s.
+Kling 3.0 ~10s · Kling O3 ~12s · Runway Gen4 ~14s · Seedance 2 ~10s · Veo 3 ~10s.
 
 ## Kling Scrub
 

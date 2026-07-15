@@ -24,7 +24,6 @@ craft reference.
 | IMAGE | `gpt/02_IMAGE_GPT.md` | `claude/02_IMAGE_CLAUDE.md` | `../knowledge/02_IMAGE_KNOWLEDGE.md` |
 | MOTION | `gpt/03_MOTION_GPT.md` | `claude/03_MOTION_CLAUDE.md` | `../knowledge/03_MOTION_KNOWLEDGE.md` |
 | SUNO | `gpt/04_SUNO_GPT.md` | `claude/04_SUNO_CLAUDE.md` | `../knowledge/04_SUNO_KNOWLEDGE.md` |
-| DESIGN | `gpt/05_DESIGN_GPT.md` | `claude/05_DESIGN_CLAUDE.md` | `../knowledge/05_DESIGN_KNOWLEDGE.md` |
 | PROOF | `gpt/06_PROOF_GPT.md` | `claude/06_PROOF_CLAUDE.md` | `../knowledge/06_PROOF_KNOWLEDGE.md` |
 | PRODUCTION | `gpt/07_PRODUCTION_GPT.md` | `claude/07_PRODUCTION_CLAUDE.md` | `../knowledge/07_PRODUCTION_KNOWLEDGE.md` |
 
@@ -44,52 +43,21 @@ craft reference.
   highest authority.
 - Paste the site's `agentBrief`, role packet, or command JSON into the chat.
 
-## Production Bundle (Final Brief → folder → motion from frames)
+## Command lifecycle (approved storyboard → frame → motion)
 
-After the Final Brief, the Timeline screen's **`⬇ Üretim Paketi`** button exports a
-single self-describing file, `<slug>_production.json` (schema
-`mamilas.production.v2026`). This is the doctor's prescription. The
-**Production Agent** is the pharmacist that fills it.
+Timeline exports `*_mamilas_command.json`. The same thin Windows/macOS runner validates
+schema, active decision, storyboard and protocol hashes, then opens exactly one current
+Claude or Codex role. Each author is counter-read by one jury with at most one revision.
 
-Flow:
-
-`SITE Final Brief -> ⬇ Üretim Paketi (project.json) -> doctor generates start frames
--> Production Agent reads frames -> motion/<id>.txt`
-
-1. Drop `<slug>_production.json` (renamed or as `project.json`) into an empty folder.
-2. Run the Production Agent (Pass A — scaffold): it writes `image_prompts/<id>.txt`,
-   `final_brief.md`, `suno.txt`, `report.md` and creates `images/` + `motion/`.
-3. Generate the start frames from `image_prompts/`, save them as
-   `images/<id>.png` (`<id>` = scene id).
-4. Run the Production Agent again (Pass B — motion): it **looks at each frame** and
-   writes `motion/<id>.txt`, then refreshes `report.md`.
-
-Three interchangeable surfaces, one contract:
-
-| Surface | Setup | Frames come from |
-|---|---|---|
-| Claude Code / Codex CLI | Open the folder, run `agents/production/RUN_MOTION_AGENT.md` | read from disk (no screenshots) |
-| Claude Project | Instructions: `GLOBAL_BRAIN.md` + `claude/07_PRODUCTION_CLAUDE.md`; Knowledge: `07_PRODUCTION_KNOWLEDGE.md` | pasted JSON + attached images |
-| Custom GPT | Instructions: `GLOBAL_BRAIN.md` + `gpt/07_PRODUCTION_GPT.md`; Knowledge: `07_PRODUCTION_KNOWLEDGE.md` | pasted JSON + attached images |
-
-The CLI runner template lives at `agents/production/RUN_MOTION_AGENT.md`. The one
-law for every surface: **no image, no motion** — final motion is written only after
-the start frame exists and has been seen.
+Mami manually produces and imports the real frame. Motion remains closed until that
+current byte hash carries Mami `APPROVE`. The retired production-bundle/giant-agent files
+are marked non-runnable and are not accepted by the runner.
 
 ## Site Packets
 
 Video chain:
 
 `SITE -> IDEA -> IMAGE -> MOTION -> SUNO -> PROOF`
-
-Design chain:
-
-`SITE Design -> IDEA -> DESIGN or IMAGE packet -> PROOF`
-
-The site may currently provide the design role packet through the `image` channel
-for static design work. If the job is static design, give the main agent brief or
-design/image packet to the `05_DESIGN_*` adapter; it should read the task as
-static format work, not video work.
 
 The Timeline screen's `Ajan Paketleri` menu provides:
 
@@ -113,12 +81,11 @@ Every adapter now recognizes these blocks from the site brief:
 | `MODEL ERA` | Write for 2026 frontier models |
 | `BRAND KIT: LOCKED` | Brand elements frozen |
 | `RENDER LOCK` | Verbatim visual-grammar guarantee (may include material clause) |
-| `AUTHORITY` | Priority order: path > lock > source > approved image > material > mandate/mood > DNA > palette |
+| `AUTHORITY` | Canonical order emitted from code; adapters must defer rather than restate it |
 | `REFERENCE DNA → DIRECTIVES` | Camera, light, staging, texture, motion |
 | `PALETTE AS LIGHT` | Key/fill/shadow/accent as light behavior |
 | `DIRECTOR MANDATE` | Phase 0 creative-director decision record |
 | `DIRECTION / MOOD` | Mood, camera energy, light, transitions, music, POV, signature, leitmotif, tempo |
-| `STATIC DESIGN LAW` | Design mode (replaces I2V ANCHOR LAW) |
 | `I2V ANCHOR LAW` | Motion start-frame contract |
 | `CREATIVE VARIANT TEST` | A/B/C variant isolation |
 | `SCENE DOSSIER` | Per-scene source, concept, event, camera |

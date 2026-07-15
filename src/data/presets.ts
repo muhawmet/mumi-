@@ -1,8 +1,9 @@
 import {
   Box, GraduationCap, Clapperboard, Smartphone, User, Building2, CalendarDays, Gamepad2,
-  Image as ImageIcon, Package, Share2, BookOpen, SwatchBook, Presentation, MonitorSmartphone
+  UtensilsCrossed, School,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { normalizeMaterialId, normalizePaletteId, normalizeWorldId } from '../core/pure';
 
 export interface Phase0PresetSets {
   projectClass?: string;
@@ -43,7 +44,6 @@ export interface Phase0Preset {
   icon: LucideIcon;
   label: string;
   desc: string;
-  kind: 'video' | 'design';
   gradient: string;
   sets: Phase0PresetSets;
   refScope: { allow: string[]; warn: string[] };
@@ -81,19 +81,43 @@ export function buildDirectorMandate(preset: Phase0Preset, choices: Record<strin
   ].filter(Boolean).join(' ');
 }
 
-export const PHASE0_VIDEO: Phase0Preset[] = [
+function normalizeSets(sets: Phase0PresetSets): Phase0PresetSets {
+  const out: Phase0PresetSets = { ...sets };
+  if (out.selectedWorldId !== undefined) out.selectedWorldId = normalizeWorldId(out.selectedWorldId);
+  if (out.selectedPaletteId !== undefined) out.selectedPaletteId = normalizePaletteId(out.selectedPaletteId);
+  if (out.selectedPropId !== undefined) out.selectedPropId = normalizeMaterialId(out.selectedPropId);
+  return out;
+}
+
+function normalizePreset(preset: Phase0Preset): Phase0Preset {
+  return {
+    ...preset,
+    sets: normalizeSets(preset.sets),
+    directorPanel: {
+      ...preset.directorPanel,
+      groups: preset.directorPanel.groups.map((group) => ({
+        ...group,
+        choices: group.choices.map((choice) => ({
+          ...choice,
+          sets: normalizeSets(choice.sets),
+        })),
+      })),
+    },
+  };
+}
+
+export const PHASE0_VIDEO: Phase0Preset[] = ([
   {
     id: 'product_brand',
     icon: Box,
     label: 'Ürün / Marka Filmi',
     desc: 'Gerçek reklam, ürün kanıtı ve marka arzusu',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#1a1a2e,#16213e 60%,#0f3460)',
     sets: {
       projectClass: 'PRODUCT_HERO',
-      selectedWorldId: 'product_macro_tabletop',
+      selectedWorldId: 'product_brand_real',
       selectedRefIds: ['apple_object_worship', 'product_macro', 'setup_tabletop'],
-      selectedPaletteId: 'commercial_neutral',
+      selectedPaletteId: 'native_world',
       selectedPropId: 'native_world',
       sceneCount: 6,
       mood: 'real_confident',
@@ -122,9 +146,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
               desc: 'Ürün merkezde; ışık, yüzey ve kullanım tek kanıt hattı.',
               sets: {
                 projectClass: 'PRODUCT_HERO',
-                selectedWorldId: 'product_macro_tabletop',
+                selectedWorldId: 'product_brand_real',
                 selectedRefIds: ['apple_object_worship', 'product_macro', 'setup_tabletop'],
-                selectedPaletteId: 'commercial_neutral',
+                selectedPaletteId: 'native_world',
                 sceneCount: 6,
                 pov: 'product_orbit',
                 signature: 'product_reveal',
@@ -137,9 +161,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
               desc: 'Ürünü gerçek mekanda, gerçek el/alışkanlık içinde kanıtla.',
               sets: {
                 projectClass: 'ULTRAREAL_COMMERCIAL',
-                selectedWorldId: 'photoreal_location',
+                selectedWorldId: 'kurumsal_brand_film',
                 selectedRefIds: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'],
-                selectedPaletteId: 'warm_commercial_gold',
+                selectedPaletteId: 'warm_autumn',
                 sceneCount: 7,
                 mood: 'human_trust',
                 cameraEnergy: 'location_dolly',
@@ -155,9 +179,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
               desc: 'Gerçek insan, kısa kanıt beatleri ve native güven.',
               sets: {
                 projectClass: 'SOCIAL_REELS_REALISM',
-                selectedWorldId: 'social_reels_real',
+                selectedWorldId: 'product_brand_real',
                 selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'],
-                selectedPaletteId: 'muted_documentary',
+                selectedPaletteId: 'desaturated_cinematic',
                 sceneCount: 4,
                 mood: 'social_native',
                 cameraEnergy: 'social_phone',
@@ -181,19 +205,19 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
               id: 'studio_clean',
               label: 'Controlled studio',
               desc: 'Apple temizliği, net ürün geometrisi, sakin premium alan.',
-              sets: { selectedWorldId: 'commercial_studio', selectedPaletteId: 'commercial_neutral', cameraEnergy: 'locked_premium', timeLight: 'highkey_clean' },
+              sets: { selectedWorldId: 'product_brand_real', selectedPaletteId: 'native_world', cameraEnergy: 'locked_premium', timeLight: 'highkey_clean' },
             },
             {
               id: 'tabletop_macro',
               label: 'Tabletop macro',
               desc: 'Yüzey, temas gölgesi ve malzeme gerçekliği daha yakın.',
-              sets: { selectedWorldId: 'product_macro_tabletop', selectedRefIds: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'], selectedPaletteId: 'commercial_neutral', cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', signature: 'macro_truth' },
+              sets: { selectedWorldId: 'product_brand_real', selectedRefIds: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'], selectedPaletteId: 'native_world', cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', signature: 'macro_truth' },
             },
             {
               id: 'human_location',
               label: 'Real location',
               desc: 'Mekan, el ve kullanım ürünü daha az steril ama daha güvenilir yapar.',
-              sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['roger_deakins_naturalism', 'cinedna_naturalkey', 'setup_window'], selectedPaletteId: 'warm_commercial_gold', cameraEnergy: 'location_dolly', timeLight: 'window_natural' },
+              sets: { selectedWorldId: 'kurumsal_brand_film', selectedRefIds: ['roger_deakins_naturalism', 'cinedna_naturalkey', 'setup_window'], selectedPaletteId: 'warm_autumn', cameraEnergy: 'location_dolly', timeLight: 'window_natural' },
             },
           ],
         },
@@ -204,7 +228,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           defaultChoiceId: 'confident_minimal',
           choices: [
             { id: 'confident_minimal', label: 'Confident minimal', desc: 'Az konuşur, ürünün kendisi kanıt olur.', sets: { mood: 'real_confident', musicVibe: 'premium_commercial', transition: 'product_match' } },
-            { id: 'luxury_quiet', label: 'Luxury quiet', desc: 'Siyah, altın, az hareket, pahalı sessizlik.', sets: { mood: 'luxury_restraint', selectedPaletteId: 'luxury_black_gold', timeLight: 'luxury_lowkey', musicVibe: 'luxury_minimal', transition: 'editorial_cut' } },
+            { id: 'luxury_quiet', label: 'Luxury quiet', desc: 'Siyah, altın, az hareket, pahalı sessizlik.', sets: { mood: 'luxury_restraint', selectedPaletteId: 'deep_noir', timeLight: 'luxury_lowkey', musicVibe: 'luxury_minimal', transition: 'editorial_cut' } },
             { id: 'problem_solution', label: 'Problem çözümü', desc: 'Gerçek sürtünme → ürün davranışı → görünür sonuç.', sets: { mood: 'human_trust', pov: 'customer_hand', signature: 'usage_payoff', tempoCurve: 'problem_solution' } },
           ],
         },
@@ -216,13 +240,12 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: GraduationCap,
     label: 'Eğitim / Açıklayıcı',
     desc: 'Pedagojik ritim, nesne-odaklı netlik',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#fbd786,#f7797d 60%,#c6ffdd)',
     sets: {
       projectClass: 'ANIMATION_EDU',
-      selectedWorldId: 'clay',
+      selectedWorldId: 'pixar_3d_edu',
       selectedRefIds: ['pixar_dimensional', 'arcane_clay_hybrid', 'kurzgesagt_clarity'],
-      selectedPaletteId: 'vibrant_clean_education',
+      selectedPaletteId: 'vibrant_edu',
       selectedPropId: 'clay',
       cast: '',
       sceneCount: 5,
@@ -245,9 +268,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'Kavramın hangi materyal ve açıklıkta görüneceğini seç.',
           defaultChoiceId: 'clay_diorama',
           choices: [
-            { id: 'clay_diorama', label: 'Clay diorama', desc: 'Sıcak, dokunsal, Pixar eğitim netliği.', sets: { selectedWorldId: 'clay', selectedPropId: 'clay', selectedRefIds: ['pixar_dimensional', 'arcane_clay_hybrid', 'kurzgesagt_clarity'], selectedPaletteId: 'vibrant_clean_education' } },
-            { id: 'lightbox_lab', label: 'Lightbox lab', desc: 'Bilimsel sistem, cam/ışık ve süreç şeması.', sets: { selectedWorldId: 'lightbox', selectedPropId: 'native_world', selectedRefIds: ['kurzgesagt_clarity', 'tech_glass', 'cinedna_highkey'], selectedPaletteId: 'clinical_blue', timeLight: 'clinical_white' } },
-            { id: 'notebook_workshop', label: 'Notebook workshop', desc: 'Çizim, defter, adım adım açıklama.', sets: { selectedWorldId: 'notebook', selectedPropId: 'native_world', selectedRefIds: ['vagabond_ink_brush', 'samurai_jack_minimal', 'kurzgesagt_clarity'], selectedPaletteId: 'pastel_soft' } },
+            { id: 'clay_diorama', label: 'Clay diorama', desc: 'Sıcak, dokunsal, Pixar eğitim netliği.', sets: { selectedWorldId: 'pixar_3d_edu', selectedPropId: 'clay', selectedRefIds: ['pixar_dimensional', 'arcane_clay_hybrid', 'kurzgesagt_clarity'], selectedPaletteId: 'vibrant_edu' } },
+            { id: 'lightbox_lab', label: 'Lightbox lab', desc: 'Bilimsel sistem, cam/ışık ve süreç şeması.', sets: { selectedWorldId: 'pixar_3d_edu', selectedPropId: 'native_world', selectedRefIds: ['kurzgesagt_clarity', 'tech_glass', 'cinedna_highkey'], selectedPaletteId: 'cool_scientific', timeLight: 'clinical_white' } },
+            { id: 'notebook_workshop', label: 'Notebook workshop', desc: 'Çizim, defter, adım adım açıklama.', sets: { selectedWorldId: 'paper_craft_popup', selectedPropId: 'native_world', selectedRefIds: ['vagabond_ink_brush', 'samurai_jack_minimal', 'kurzgesagt_clarity'], selectedPaletteId: 'pastel_soft' } },
           ],
         },
         {
@@ -269,9 +292,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: Clapperboard,
     label: 'Sinematik Hikâye',
     desc: 'Film dili, duygu ve gerçek mekan ağırlığı',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#0d0d0d,#1a1a1a 50%,#330000)',
-    sets: { projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'cinematic_real', selectedRefIds: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'], selectedPaletteId: 'warm_commercial_gold', sceneCount: 8, mood: 'warm_emotional', cameraEnergy: 'location_dolly', timeLight: 'window_natural', musicVibe: 'doc_roomtone', signature: 'human_truth', tempoCurve: 'documentary_arc' },
+    sets: { projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'deakins_naturalist', selectedRefIds: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'], selectedPaletteId: 'warm_autumn', sceneCount: 8, mood: 'warm_emotional', cameraEnergy: 'location_dolly', timeLight: 'window_natural', musicVibe: 'doc_roomtone', signature: 'human_truth', tempoCurve: 'documentary_arc' },
     refScope: { allow: ['Live Action Cinema', 'Cinematography'], warn: [] },
     directorPanel: {
       eyebrow: 'FILM DIRECTOR',
@@ -283,9 +305,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'Sinematik ağırlığın nereden geleceğini seç.',
           defaultChoiceId: 'naturalist_film',
           choices: [
-            { id: 'naturalist_film', label: 'Naturalist film', desc: 'Deakins/Lubezki çizgisi: doğal ışık, uzun nefes.', sets: { selectedWorldId: 'cinematic_real', selectedRefIds: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'], selectedPaletteId: 'warm_commercial_gold', cameraEnergy: 'location_dolly', timeLight: 'window_natural' } },
-            { id: 'intimate_portrait', label: 'Intimate portrait', desc: 'Yüz, jest ve küçük hakikatler hikayeyi taşır.', sets: { selectedWorldId: 'human_portrait_real', selectedRefIds: ['setup_window', 'rembrandt_portrait', 'cinedna_window'], selectedPaletteId: 'skin_realism', cameraEnergy: 'handheld_human', signature: 'human_truth' } },
-            { id: 'dark_signature', label: 'Dark signature', desc: 'Daha az ışık, daha çok imza ve atmosfer.', sets: { selectedWorldId: 'photoreal_location', selectedPaletteId: 'rembrandt_amber', mood: 'luxury_restraint', timeLight: 'luxury_lowkey', signature: 'silhouette' } },
+            { id: 'naturalist_film', label: 'Naturalist film', desc: 'Deakins/Lubezki çizgisi: doğal ışık, uzun nefes.', sets: { selectedWorldId: 'deakins_naturalist', selectedRefIds: ['roger_deakins_naturalism', 'emmanuel_lubezki_long_take', 'cinedna_naturalkey'], selectedPaletteId: 'warm_autumn', cameraEnergy: 'location_dolly', timeLight: 'window_natural' } },
+            { id: 'intimate_portrait', label: 'Intimate portrait', desc: 'Yüz, jest ve küçük hakikatler hikayeyi taşır.', sets: { selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['setup_window', 'rembrandt_portrait', 'cinedna_window'], selectedPaletteId: 'earth_natural', cameraEnergy: 'handheld_human', signature: 'human_truth' } },
+            { id: 'dark_signature', label: 'Dark signature', desc: 'Daha az ışık, daha çok imza ve atmosfer.', sets: { selectedWorldId: 'chivo_naturalist_handheld', selectedPaletteId: 'warm_autumn', mood: 'luxury_restraint', timeLight: 'luxury_lowkey', signature: 'silhouette' } },
           ],
         },
         {
@@ -307,9 +329,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: Smartphone,
     label: 'Sosyal / Kısa Form',
     desc: 'Hook, kanıt ve platform-native ritim',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#fc5c7d,#6a82fb)',
-    sets: { projectClass: 'SOCIAL_REELS_REALISM', selectedWorldId: 'social_reels_real', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], selectedPaletteId: 'muted_documentary', sceneCount: 4, mood: 'social_native', cameraEnergy: 'social_phone', timeLight: 'window_natural', transition: 'social_cut', musicVibe: 'social_snap', pov: 'phone_native', signature: 'usage_payoff', tempoCurve: 'social_hook' },
+    sets: { projectClass: 'SOCIAL_REELS_REALISM', selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], selectedPaletteId: 'desaturated_cinematic', sceneCount: 4, mood: 'social_native', cameraEnergy: 'social_phone', timeLight: 'window_natural', transition: 'social_cut', musicVibe: 'social_snap', pov: 'phone_native', signature: 'usage_payoff', tempoCurve: 'social_hook' },
     refScope: { allow: ['Commercial', 'Stylized Premium', 'Documentary'], warn: [] },
     directorPanel: {
       eyebrow: 'SOCIAL DIRECTOR',
@@ -323,7 +344,7 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           choices: [
             { id: 'problem_hook', label: 'Problem hook', desc: 'Gerçek sürtünme ilk karede görünür.', sets: { tempoCurve: 'problem_solution', signature: 'usage_payoff', pov: 'phone_native' } },
             { id: 'visual_hook', label: 'Visual hook', desc: 'Önce şaşırtıcı ama fiziksel bir görsel kanıt.', sets: { cameraEnergy: 'macro_glide', signature: 'macro_truth', transition: 'social_cut' } },
-            { id: 'creator_proof', label: 'Creator proof', desc: 'İnsan deneyimi ve hızlı doğrulama önde.', sets: { selectedWorldId: 'social_reels_real', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], cameraEnergy: 'social_phone', mood: 'human_trust' } },
+            { id: 'creator_proof', label: 'Creator proof', desc: 'İnsan deneyimi ve hızlı doğrulama önde.', sets: { selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], cameraEnergy: 'social_phone', mood: 'human_trust' } },
           ],
         },
         {
@@ -345,9 +366,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: User,
     label: 'Belgesel / İnsan Hikâyesi',
     desc: 'Gözlemsel gerçekçilik, insan ölçeği',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#3a3a3a,#b98c5a)',
-    sets: { projectClass: 'DOCUMENTARY_REALISM', selectedWorldId: 'real_human_doc', selectedRefIds: ['civic_doc', 'setup_verite', 'cinedna_handheld'], selectedPaletteId: 'muted_documentary', sceneCount: 6, mood: 'human_trust', cameraEnergy: 'handheld_human', timeLight: 'overcast_doc', transition: 'doc_cut', musicVibe: 'doc_roomtone', pov: 'witness', signature: 'human_truth', tempoCurve: 'documentary_arc' },
+    sets: { projectClass: 'DOCUMENTARY_REALISM', selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['civic_doc', 'setup_verite', 'cinedna_handheld'], selectedPaletteId: 'desaturated_cinematic', sceneCount: 6, mood: 'human_trust', cameraEnergy: 'handheld_human', timeLight: 'overcast_doc', transition: 'doc_cut', musicVibe: 'doc_roomtone', pov: 'witness', signature: 'human_truth', tempoCurve: 'documentary_arc' },
     refScope: { allow: ['Documentary', 'Real Setup'], warn: ['Stylized Premium'] },
     directorPanel: {
       eyebrow: 'DOCUMENTARY DIRECTOR',
@@ -359,9 +379,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'İnsanla arandaki etik mesafeyi seç.',
           defaultChoiceId: 'observed_close',
           choices: [
-            { id: 'observed_close', label: 'Observed close', desc: 'Yakın ama müdahalesiz; jest ve oda sesi önemli.', sets: { selectedWorldId: 'real_human_doc', cameraEnergy: 'handheld_human', pov: 'witness', signature: 'human_truth' } },
-            { id: 'place_first', label: 'Place first', desc: 'Önce mekan hakikati, sonra insan.', sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['roger_deakins_naturalism', 'cinedna_naturalkey', 'setup_verite'], cameraEnergy: 'location_dolly', signature: 'scale_hero' } },
-            { id: 'testimonial_trust', label: 'Testimonial trust', desc: 'Yüz ve güven var; performans yok.', sets: { selectedWorldId: 'human_portrait_real', selectedRefIds: ['setup_window', 'rembrandt_portrait', 'cinedna_window'], selectedPaletteId: 'skin_realism', timeLight: 'window_natural' } },
+            { id: 'observed_close', label: 'Observed close', desc: 'Yakın ama müdahalesiz; jest ve oda sesi önemli.', sets: { selectedWorldId: 'chivo_naturalist_handheld', cameraEnergy: 'handheld_human', pov: 'witness', signature: 'human_truth' } },
+            { id: 'place_first', label: 'Place first', desc: 'Önce mekan hakikati, sonra insan.', sets: { selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['roger_deakins_naturalism', 'cinedna_naturalkey', 'setup_verite'], cameraEnergy: 'location_dolly', signature: 'scale_hero' } },
+            { id: 'testimonial_trust', label: 'Testimonial trust', desc: 'Yüz ve güven var; performans yok.', sets: { selectedWorldId: 'chivo_naturalist_handheld', selectedRefIds: ['setup_window', 'rembrandt_portrait', 'cinedna_window'], selectedPaletteId: 'earth_natural', timeLight: 'window_natural' } },
           ],
         },
       ],
@@ -372,9 +392,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: Building2,
     label: 'Kurumsal / Kamu',
     desc: 'Civic gerçeklik, güven ve hizmet kanıtı',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#1e3c72,#2a5298)',
-    sets: { projectClass: 'LIVE_ACTION_CORPORATE', selectedWorldId: 'documentary_civic', selectedRefIds: ['civic_doc', 'story_civic_child_height', 'setup_verite'], selectedPaletteId: 'civic_morning', sceneCount: 5, mood: 'civic_honest', cameraEnergy: 'location_dolly', timeLight: 'overcast_doc', transition: 'doc_cut', musicVibe: 'doc_roomtone', pov: 'witness', signature: 'usage_payoff', tempoCurve: 'documentary_arc' },
+    sets: { projectClass: 'LIVE_ACTION_CORPORATE', selectedWorldId: 'kurumsal_brand_film', selectedRefIds: ['civic_doc', 'story_civic_child_height', 'setup_verite'], selectedPaletteId: 'earth_natural', sceneCount: 5, mood: 'civic_honest', cameraEnergy: 'location_dolly', timeLight: 'overcast_doc', transition: 'doc_cut', musicVibe: 'doc_roomtone', pov: 'witness', signature: 'usage_payoff', tempoCurve: 'documentary_arc' },
     refScope: { allow: ['Documentary', 'Commercial'], warn: [] },
     directorPanel: {
       eyebrow: 'CIVIC DIRECTOR',
@@ -386,9 +405,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'Kurumsal/kamu anlatısı neyle güven kazansın?',
           defaultChoiceId: 'service_seen',
           choices: [
-            { id: 'service_seen', label: 'Hizmet görülür', desc: 'Vatandaş, mekan ve işleyen süreç beraber.', sets: { selectedWorldId: 'documentary_civic', selectedRefIds: ['civic_doc', 'story_civic_child_height', 'setup_verite'], selectedPaletteId: 'civic_morning', signature: 'usage_payoff' } },
-            { id: 'human_trust', label: 'İnsan güveni', desc: 'Çalışan/vatandaş yüzü ve dürüst pencere ışığı.', sets: { selectedWorldId: 'human_portrait_real', selectedRefIds: ['setup_window', 'civic_doc', 'cinedna_overcast'], selectedPaletteId: 'skin_realism', signature: 'human_truth' } },
-            { id: 'place_system', label: 'Mekan sistemi', desc: 'Bina, yönlendirme, hizmet akışı okunur.', sets: { selectedWorldId: 'architecture_real', selectedRefIds: ['architectural_digest', 'architecture_window_light', 'cinedna_deepfocus'], selectedPaletteId: 'architecture_daylight', cameraEnergy: 'system_scan', signature: 'system_grid' } },
+            { id: 'service_seen', label: 'Hizmet görülür', desc: 'Vatandaş, mekan ve işleyen süreç beraber.', sets: { selectedWorldId: 'kurumsal_brand_film', selectedRefIds: ['civic_doc', 'story_civic_child_height', 'setup_verite'], selectedPaletteId: 'earth_natural', signature: 'usage_payoff' } },
+            { id: 'human_trust', label: 'İnsan güveni', desc: 'Çalışan/vatandaş yüzü ve dürüst pencere ışığı.', sets: { selectedWorldId: 'kurumsal_brand_film', selectedRefIds: ['setup_window', 'civic_doc', 'cinedna_overcast'], selectedPaletteId: 'earth_natural', signature: 'human_truth' } },
+            { id: 'place_system', label: 'Mekan sistemi', desc: 'Bina, yönlendirme, hizmet akışı okunur.', sets: { selectedWorldId: 'kurumsal_brand_film', selectedRefIds: ['architectural_digest', 'architecture_window_light', 'cinedna_deepfocus'], selectedPaletteId: 'earth_natural', cameraEnergy: 'system_scan', signature: 'system_grid' } },
           ],
         },
       ],
@@ -399,9 +418,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: CalendarDays,
     label: 'Etkinlik / Kampanya',
     desc: 'Canlı mekan, kalabalık ve kampanya enerjisi',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#f7971e,#ffd200)',
-    sets: { projectClass: 'LIVE_ACTION_CORPORATE', selectedWorldId: 'real_event_coverage', selectedRefIds: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'], selectedPaletteId: 'warm_commercial_gold', sceneCount: 5, mood: 'real_confident', cameraEnergy: 'handheld_human', timeLight: 'golden_commercial', transition: 'doc_cut', musicVibe: 'premium_commercial', pov: 'witness', signature: 'scale_hero', tempoCurve: 'proof_buildup' },
+    sets: { projectClass: 'LIVE_ACTION_CORPORATE', selectedWorldId: 'civic_promo_real', selectedRefIds: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'], selectedPaletteId: 'warm_autumn', sceneCount: 5, mood: 'real_confident', cameraEnergy: 'handheld_human', timeLight: 'golden_commercial', transition: 'doc_cut', musicVibe: 'premium_commercial', pov: 'witness', signature: 'scale_hero', tempoCurve: 'proof_buildup' },
     refScope: { allow: ['Commercial', 'Cinematography', 'Real Setup'], warn: [] },
     directorPanel: {
       eyebrow: 'EVENT DIRECTOR',
@@ -413,9 +431,9 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'Etkinliğin büyüklüğü nasıl hissedilsin?',
           defaultChoiceId: 'coverage_truth',
           choices: [
-            { id: 'coverage_truth', label: 'Coverage truth', desc: 'Gerçek coverage, el kamerası ve kalabalık parallax.', sets: { selectedWorldId: 'real_event_coverage', selectedRefIds: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'], cameraEnergy: 'handheld_human' } },
-            { id: 'stage_reveal', label: 'Stage reveal', desc: 'Sahne/perde/marka reveal tek imza anı olur.', sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['cinedna_golden', 'setup_threepoint', 'cinedna_deepfocus'], cameraEnergy: 'location_dolly', signature: 'brand_mark', transition: 'product_match' } },
-            { id: 'campaign_energy', label: 'Campaign energy', desc: 'Daha hızlı, daha sosyal, daha paylaşılır.', sets: { selectedWorldId: 'social_reels_real', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], cameraEnergy: 'social_phone', transition: 'social_cut', tempoCurve: 'social_hook' } },
+            { id: 'coverage_truth', label: 'Coverage truth', desc: 'Gerçek coverage, el kamerası ve kalabalık parallax.', sets: { selectedWorldId: 'civic_promo_real', selectedRefIds: ['setup_verite', 'cinedna_handheld', 'fifa_stadium_energy'], cameraEnergy: 'handheld_human' } },
+            { id: 'stage_reveal', label: 'Stage reveal', desc: 'Sahne/perde/marka reveal tek imza anı olur.', sets: { selectedWorldId: 'civic_promo_real', selectedRefIds: ['cinedna_golden', 'setup_threepoint', 'cinedna_deepfocus'], cameraEnergy: 'location_dolly', signature: 'brand_mark', transition: 'product_match' } },
+            { id: 'campaign_energy', label: 'Campaign energy', desc: 'Daha hızlı, daha sosyal, daha paylaşılır.', sets: { selectedWorldId: 'sports_energy_real', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], cameraEnergy: 'social_phone', transition: 'social_cut', tempoCurve: 'social_hook' } },
           ],
         },
       ],
@@ -426,9 +444,8 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
     icon: Gamepad2,
     label: 'Stilize / Oyun-Kinematik',
     desc: 'IP güvenli stilize sinema ve oyun grameri',
-    kind: 'video',
     gradient: 'linear-gradient(135deg,#000428,#004e92)',
-    sets: { projectClass: 'STYLIZED_PREMIUM', selectedWorldId: 'arcane', selectedRefIds: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'], selectedPaletteId: 'deep_space_blue', sceneCount: 6, mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', timeLight: 'night', transition: 'hard_cut', musicVibe: 'epic', signature: 'silhouette', tempoCurve: 'build_peak' },
+    sets: { projectClass: 'STYLIZED_PREMIUM', selectedWorldId: 'arcane_fortiche', selectedRefIds: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'], selectedPaletteId: 'deep_noir', sceneCount: 6, mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', timeLight: 'night', transition: 'hard_cut', musicVibe: 'epic', signature: 'silhouette', tempoCurve: 'build_peak' },
     refScope: { allow: ['Game Art Direction', 'Game / Film', 'Anime / Cinematic'], warn: [] },
     directorPanel: {
       eyebrow: 'STYLIZED DIRECTOR',
@@ -440,207 +457,91 @@ export const PHASE0_VIDEO: Phase0Preset[] = [
           desc: 'Hangi stilize sinema grameri baskın olsun?',
           defaultChoiceId: 'arcane_painterly',
           choices: [
-            { id: 'arcane_painterly', label: 'Painterly 3D', desc: 'Fortiche/Arcane dokusu: boyalı 3D, sert rim light.', sets: { selectedWorldId: 'arcane', selectedRefIds: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'], selectedPaletteId: 'deep_space_blue', timeLight: 'night' } },
-            { id: 'anime_cel', label: 'Anime cel', desc: 'Cel anime, siluet, gökyüzü ve kontrollü action.', sets: { selectedWorldId: 'anime_cel', selectedRefIds: ['anime_silhouette', 'demon_slayer_dna', 'makoto_shinkai_sky_light'], selectedPaletteId: 'pastel_soft', cameraEnergy: 'cinematic_dramatic' } },
-            { id: 'graphic_motion', label: 'Graphic motion', desc: 'Spider-Verse/graphic enerji, shape ve renk ritmi.', sets: { selectedWorldId: 'spiderverse', selectedRefIds: ['spiderverse_graphic', 'verse_miles_dna', 'spiderverse_gwen_pastel'], selectedPaletteId: 'deep_space_blue', transition: 'match_cut' } },
-            { id: 'mappa_dark', label: 'MAPPA Karanlık', desc: 'MAPPA-grade gece, lanet enerjisi, ağır atmosfer.', sets: { selectedWorldId: 'mappa_cinematic', selectedRefIds: ['jjk_dna', 'chainsaw_urban_grit', 'berserk_dark_engraving'], selectedPaletteId: 'deep_space_blue', timeLight: 'night', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', transition: 'hard_cut', musicVibe: 'epic', tempoCurve: 'slow_burn' } },
-            { id: 'bones_action', label: 'Bones Aksiyon', desc: 'Bones-stüdyo hassas aksiyon, temiz linework, dinamik.', sets: { selectedWorldId: 'bones_action', selectedRefIds: ['mha_dna', 'dragon_ball_power_aura', 'hxh_nen_tactics'], selectedPaletteId: 'vibrant_clean_education', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', transition: 'match_cut', musicVibe: 'epic', tempoCurve: 'build_peak' } },
-            { id: 'toei_grand', label: 'Toei Macera', desc: 'Toei büyük macera enerjisi, cesur renkler, epik ölçek.', sets: { selectedWorldId: 'toei_adventure', selectedRefIds: ['onepiece_grandline_scale', 'dragon_ball_power_aura', 'attack_titan_scale'], selectedPaletteId: 'vibrant_clean_education', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', signature: 'scale_hero', tempoCurve: 'build_peak' } },
+            { id: 'arcane_painterly', label: 'Painterly 3D', desc: 'Fortiche/Arcane dokusu: boyalı 3D, sert rim light.', sets: { selectedWorldId: 'arcane_fortiche', selectedRefIds: ['arcane_texture', 'arcane_zaun_dna', 'league_arcane_bridge'], selectedPaletteId: 'deep_noir', timeLight: 'night' } },
+            { id: 'anime_cel', label: 'Anime cel', desc: 'Cel anime, siluet, gökyüzü ve kontrollü action.', sets: { selectedWorldId: 'demon_slayer_ufotable', selectedRefIds: ['anime_silhouette', 'demon_slayer_dna', 'makoto_shinkai_sky_light'], selectedPaletteId: 'pastel_soft', cameraEnergy: 'cinematic_dramatic' } },
+            { id: 'graphic_motion', label: 'Graphic motion', desc: 'Spider-Verse/graphic enerji, shape ve renk ritmi.', sets: { selectedWorldId: 'spiderverse_sony', selectedRefIds: ['spiderverse_graphic', 'verse_miles_dna', 'spiderverse_gwen_pastel'], selectedPaletteId: 'deep_noir', transition: 'match_cut' } },
+            { id: 'mappa_dark', label: 'MAPPA Karanlık', desc: 'MAPPA-grade gece, lanet enerjisi, ağır atmosfer.', sets: { selectedWorldId: 'jjk_mappa', selectedRefIds: ['jujutsu_dark_ritual', 'akira_neon_impact', 'berserk_dark_engraving'], selectedPaletteId: 'deep_noir', timeLight: 'night', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', transition: 'hard_cut', musicVibe: 'epic', tempoCurve: 'slow_burn' } },
+            { id: 'bones_action', label: 'Bones Aksiyon', desc: 'Bones-stüdyo hassas aksiyon, temiz linework, dinamik.', sets: { selectedWorldId: 'jjk_mappa', selectedRefIds: ['mha_dna', 'dragon_ball_power_aura', 'naruto_chakra_motion'], selectedPaletteId: 'vibrant_edu', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', transition: 'match_cut', musicVibe: 'epic', tempoCurve: 'build_peak' } },
+            { id: 'toei_grand', label: 'Toei Macera', desc: 'Toei büyük macera enerjisi, cesur renkler, epik ölçek.', sets: { selectedWorldId: 'one_piece_toei', selectedRefIds: ['onepiece_grandline_scale', 'dragon_ball_power_aura', 'attack_titan_scale'], selectedPaletteId: 'vibrant_edu', mood: 'epic_excite', cameraEnergy: 'cinematic_dramatic', signature: 'scale_hero', tempoCurve: 'build_peak' } },
           ],
         },
       ],
     },
   },
-];
-
-export const PHASE0_DESIGN: Phase0Preset[] = [
+  // İki reklam dünyası öksüz kalmıştı: appetite_tabletop_real (yemek/içecek tabletop)
+  // ve edu_promo_real (eğitim reklamı). Yazılmışlardı ama hiçbir preset onlara bağlı
+  // değildi — konsol o işleri ya ürün reklamına ya kurumsala zorluyordu. Artık kendi
+  // arketipleri var; ikisi de amaca özel COMMERCIAL_REAL dünyasında.
   {
-    id: 'campaign_kv',
-    icon: ImageIcon,
-    label: 'Kampanya Key Visual',
-    desc: 'Tek kare kampanya fikri ve marka imzası',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#ee0979,#ff6a00)',
-    sets: { projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], selectedPaletteId: 'commercial_neutral', sceneCount: 1, mood: 'real_confident', cameraEnergy: 'locked_premium', timeLight: 'highkey_clean', signature: 'brand_mark', tempoCurve: 'system_arc' },
-    refScope: { allow: ['Commercial', 'Fine Art Lighting'], warn: [] },
+    id: 'food_beverage',
+    icon: UtensilsCrossed,
+    label: 'Yemek / İçecek',
+    desc: 'İştah kanıtı: doku, buhar, çıtırtı ve ilk ısırık',
+    gradient: 'linear-gradient(135deg,#3a1f0d,#8a4a1c 55%,#d98324)',
+    sets: { projectClass: 'FOOD_MACRO', selectedWorldId: 'appetite_tabletop_real', selectedRefIds: ['food_macro', 'food_tabletop_macro', 'setup_tabletop'], selectedPaletteId: 'warm_autumn', sceneCount: 5, mood: 'editorial_desire', cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', transition: 'product_match', musicVibe: 'premium_commercial', pov: 'customer_hand', signature: 'macro_truth', tempoCurve: 'proof_buildup' },
+    refScope: { allow: ['Product / Macro', 'Real Setup', 'Commercial'], warn: ['Anime / Cinematic'] },
     directorPanel: {
-      eyebrow: 'KV DIRECTOR',
-      thesis: 'Kampanya görselini poster değil, tek kare stratejik fikir olarak kilitle.',
+      eyebrow: 'FOOD DIRECTOR',
+      thesis: 'İştahı sıfattan değil fizikten kur: ısı, doku, akış ve ilk temas.',
       groups: [
         {
-          id: 'kv_role',
-          label: 'KV rolü',
-          desc: 'Ana görsel neyi taşısın?',
-          defaultChoiceId: 'brand_anchor',
+          id: 'appetite_proof',
+          label: 'İştah kanıtı',
+          desc: 'Yemeği neyin gerçek yaptığını seç — süsleme değil, fizik.',
+          defaultChoiceId: 'texture_truth',
           choices: [
-            { id: 'brand_anchor', label: 'Brand anchor', desc: 'Marka/ürün tek sakin imza ile yerleşir.', sets: { selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], selectedPaletteId: 'commercial_neutral', signature: 'brand_mark' } },
-            { id: 'emotional_key', label: 'Emotional key', desc: 'İnsan/atmosfer fikri taşır, marka bağırmaz.', sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['roger_deakins_naturalism', 'setup_window', 'cinedna_naturalkey'], selectedPaletteId: 'warm_commercial_gold', mood: 'human_trust', signature: 'human_truth' } },
-            { id: 'luxury_key', label: 'Luxury key', desc: 'Az unsur, siyah/altın, pahalı sessizlik.', sets: { selectedWorldId: 'luxury_editorial', selectedRefIds: ['vogue_editorial', 'setup_highkey', 'chanel_bw_luxury'], selectedPaletteId: 'luxury_black_gold', mood: 'luxury_restraint', timeLight: 'luxury_lowkey', signature: 'product_reveal' } },
+            { id: 'texture_truth', label: 'Doku gerçeği', desc: 'Kabuk, kesit, kırılma ve yüzey — makro ölçekte.', sets: { selectedWorldId: 'appetite_tabletop_real', selectedRefIds: ['food_macro', 'food_tabletop_macro', 'setup_tabletop'], cameraEnergy: 'macro_glide', signature: 'macro_truth', timeLight: 'tabletop_control' } },
+            { id: 'heat_and_steam', label: 'Isı ve buhar', desc: 'Buhar, yağın parlaması, tereyağının erimesi — ısı görünür olur.', sets: { selectedWorldId: 'appetite_tabletop_real', selectedRefIds: ['food_macro', 'cinedna_macro', 'setup_tabletop'], timeLight: 'warm_home', signature: 'light_shaft', mood: 'warm_emotional' } },
+            { id: 'first_bite', label: 'İlk temas', desc: 'El, çatal ya da ısırık — insan teması ürünü tamamlar.', sets: { selectedWorldId: 'appetite_tabletop_real', selectedRefIds: ['food_tabletop_macro', 'setup_tabletop', 'cinedna_macro'], pov: 'customer_hand', signature: 'usage_payoff', cameraEnergy: 'locked_premium' } },
           ],
         },
-      ],
-    },
-  },
-  {
-    id: 'product_launch',
-    icon: Package,
-    label: 'Ürün Lansmanı',
-    desc: 'Net ve iddialı ürün sahnesi',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#1d976c,#93f9b9)',
-    sets: { projectClass: 'PRODUCT_HERO', selectedWorldId: 'product_macro_tabletop', selectedRefIds: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'], selectedPaletteId: 'commercial_neutral', sceneCount: 1, mood: 'real_confident', cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', signature: 'product_reveal', tempoCurve: 'launch_tease' },
-    refScope: { allow: ['Product / Macro', 'Commercial'], warn: [] },
-    directorPanel: {
-      eyebrow: 'LAUNCH DIRECTOR',
-      thesis: 'Ürünü havada uçuran yapay render değil, fiziksel lansman kanıtı yap.',
-      groups: [
         {
-          id: 'launch_surface',
-          label: 'Ürün yüzeyi',
-          desc: 'Malzeme ve ışık hangi vaadi taşısın?',
-          defaultChoiceId: 'macro_truth',
+          id: 'food_finish',
+          label: 'Kapanış',
+          desc: 'Son kare neyi bıraksın?',
+          defaultChoiceId: 'clean_plate',
           choices: [
-            { id: 'macro_truth', label: 'Macro truth', desc: 'Yüzey, kenar, temas gölgesi ve malzeme.', sets: { selectedWorldId: 'product_macro_tabletop', selectedRefIds: ['product_macro', 'setup_tabletop', 'luxury_watch_macro'], cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', signature: 'macro_truth' } },
-            { id: 'clean_reveal', label: 'Clean reveal', desc: 'Minimal stüdyo, net ürün formu.', sets: { selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], timeLight: 'highkey_clean', signature: 'product_reveal' } },
-            { id: 'tech_precision', label: 'Tech precision', desc: 'Cam, metal, klinik güven.', sets: { selectedWorldId: 'tech_clinical_real', selectedRefIds: ['tech_glass', 'setup_highkey', 'cinedna_highkey'], selectedPaletteId: 'clinical_blue', mood: 'clinical_precision', timeLight: 'clinical_white', musicVibe: 'tech_precision' } },
+            { id: 'clean_plate', label: 'Temiz tabak', desc: 'Ürün kadraja tek başına oturur, hold nefes alır.', sets: { signature: 'macro_truth', tempoCurve: 'proof_buildup' } },
+            { id: 'brand_mark_food', label: 'Marka vuruşu', desc: 'Ambalaj/marka tek imza anında görünür (kurgu marka).', sets: { signature: 'brand_mark', transition: 'product_match' } },
           ],
         },
       ],
     },
   },
   {
-    id: 'social_content',
-    icon: Share2,
-    label: 'Sosyal İçerik Sistemi',
-    desc: 'Çoklu kart, post serisi, hızlı okunur yapı',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#8e2de2,#4a00e0)',
-    sets: { projectClass: 'SOCIAL_REELS_REALISM', selectedWorldId: 'social_reels_real', selectedRefIds: ['street_doc', 'setup_verite', 'cinedna_handheld'], selectedPaletteId: 'muted_documentary', sceneCount: 3, mood: 'social_native', cameraEnergy: 'social_phone', transition: 'social_cut', signature: 'system_grid', tempoCurve: 'social_hook' },
-    refScope: { allow: ['Commercial', 'Stylized Premium'], warn: [] },
+    id: 'edu_promo',
+    icon: School,
+    label: 'Eğitim Reklamı',
+    desc: 'Okul, kurs, kampüs — gerçek çekim, gerçek ışık',
+    gradient: 'linear-gradient(135deg,#0f2a3d,#1f5f7a 55%,#e0b256)',
+    sets: { projectClass: 'LIVE_ACTION_CORPORATE', selectedWorldId: 'edu_promo_real', selectedRefIds: ['story_civic_child_height', 'setup_window', 'cinedna_naturalkey'], selectedPaletteId: 'earth_natural', sceneCount: 5, mood: 'human_trust', cameraEnergy: 'location_dolly', timeLight: 'window_natural', transition: 'doc_cut', musicVibe: 'education_light', pov: 'child_eye', signature: 'human_truth', tempoCurve: 'educational_arc' },
+    refScope: { allow: ['Documentary', 'Real Setup', 'Commercial'], warn: ['Anime / Cinematic'] },
     directorPanel: {
-      eyebrow: 'CONTENT SYSTEM',
-      thesis: 'Sosyal tasarımı tek post değil, tekrar edilebilir içerik sistemi olarak kur.',
+      eyebrow: 'EDUCATION AD DIRECTOR',
+      thesis: 'Eğitimi slogan değil kanıt olarak sat: öğrenmenin gerçekten olduğu anı çek.',
       groups: [
         {
-          id: 'content_shape',
-          label: 'İçerik şekli',
-          desc: 'Serinin taşıyıcı mantığını seç.',
-          defaultChoiceId: 'proof_cards',
+          id: 'edu_proof',
+          label: 'Neyi ispat ediyoruz',
+          desc: 'Reklamın taşıyacağı tek iddiayı seç.',
+          defaultChoiceId: 'learning_moment',
           choices: [
-            { id: 'proof_cards', label: 'Proof cards', desc: 'Her kart bir kanıt/sonuç taşır.', sets: { signature: 'system_grid', tempoCurve: 'system_arc', mood: 'system_clarity' } },
-            { id: 'creator_native', label: 'Creator native', desc: 'Telefon gerçekliği ve hızlı insan güveni.', sets: { selectedWorldId: 'social_reels_real', cameraEnergy: 'social_phone', pov: 'phone_native', mood: 'social_native' } },
-            { id: 'premium_carousel', label: 'Premium carousel', desc: 'Daha rafine, daha editorial, daha az bağıran seri.', sets: { selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], selectedPaletteId: 'commercial_neutral', mood: 'luxury_restraint', cameraEnergy: 'locked_premium' } },
+            { id: 'learning_moment', label: 'Öğrenme anı', desc: 'Kavrayışın yüze düştüğü an — sahnelenmiş gülümseme değil.', sets: { selectedWorldId: 'edu_promo_real', selectedRefIds: ['story_civic_child_height', 'setup_window', 'cinedna_naturalkey'], pov: 'child_eye', signature: 'human_truth', mood: 'human_trust' } },
+            { id: 'campus_system', label: 'Kampüs / sistem', desc: 'Mekân, ekipman ve işleyen düzen okunur.', sets: { selectedWorldId: 'edu_promo_real', selectedRefIds: ['architecture_window_light', 'setup_window', 'cinedna_deepfocus'], cameraEnergy: 'system_scan', signature: 'system_grid', pov: 'system_reader' } },
+            { id: 'teacher_trust', label: 'Öğretmen güveni', desc: 'Öğreten insanın yetkinliği ve dürüst pencere ışığı.', sets: { selectedWorldId: 'edu_promo_real', selectedRefIds: ['setup_window', 'cinedna_naturalkey', 'story_civic_child_height'], mood: 'human_trust', cameraEnergy: 'locked_premium', timeLight: 'window_natural' } },
+          ],
+        },
+        {
+          id: 'edu_close',
+          label: 'Kapanış',
+          desc: 'Aileye/öğrenciye ne kalsın?',
+          defaultChoiceId: 'earned_confidence',
+          choices: [
+            { id: 'earned_confidence', label: 'Kazanılmış güven', desc: 'Sonuç görünür: yapabilen bir öğrenci, sakin bir kapanış.', sets: { signature: 'human_truth', tempoCurve: 'educational_arc' } },
+            { id: 'institution_mark', label: 'Kurum imzası', desc: 'Kurum kimliği tek dürüst vuruşla kapanır (kurgu marka).', sets: { signature: 'brand_mark', transition: 'doc_cut', mood: 'civic_honest' } },
           ],
         },
       ],
     },
   },
-  {
-    id: 'editorial_cover',
-    icon: BookOpen,
-    label: 'Editorial / Kapak',
-    desc: 'Lüks ve dergi kapağı kalitesi',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#2c1810,#5a3921)',
-    sets: { projectClass: 'FASHION_EDITORIAL', selectedWorldId: 'luxury_editorial', selectedRefIds: ['vogue_editorial', 'setup_highkey', 'chanel_bw_luxury'], selectedPaletteId: 'editorial_monochrome', sceneCount: 1, mood: 'editorial_desire', cameraEnergy: 'editorial_locked', timeLight: 'editorial_flash', signature: 'silhouette', tempoCurve: 'editorial_arc' },
-    refScope: { allow: ['Fashion / Editorial', 'Fine Art Lighting'], warn: [] },
-    directorPanel: {
-      eyebrow: 'EDITORIAL DIRECTOR',
-      thesis: 'Kapak görselini dekor değil, duruş, crop ve ışık kararı yap.',
-      groups: [
-        {
-          id: 'editorial_taste',
-          label: 'Editorial tat',
-          desc: 'Kapak hangi arzuyla çalışsın?',
-          defaultChoiceId: 'fashion_flash',
-          choices: [
-            { id: 'fashion_flash', label: 'Fashion flash', desc: 'Net poz, sert ama kontrollü editorial ışık.', sets: { selectedWorldId: 'luxury_editorial', selectedPaletteId: 'editorial_monochrome', timeLight: 'editorial_flash', cameraEnergy: 'editorial_locked' } },
-            { id: 'quiet_luxury', label: 'Quiet luxury', desc: 'Daha az ışık, daha pahalı negatif alan.', sets: { selectedPaletteId: 'luxury_black_gold', mood: 'luxury_restraint', timeLight: 'luxury_lowkey', signature: 'product_reveal' } },
-            { id: 'portrait_gravity', label: 'Portrait gravity', desc: 'Yüz/figür hikayenin merkezi olur.', sets: { selectedWorldId: 'human_portrait_real', selectedRefIds: ['setup_window', 'rembrandt_portrait', 'cinedna_window'], selectedPaletteId: 'skin_realism', signature: 'human_truth' } },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 'brand_kit',
-    icon: SwatchBook,
-    label: 'Marka Kiti',
-    desc: 'Kurumsal kimlik varlıkları ve sistem dili',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#3a7bd5,#3a6073)',
-    sets: { projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], selectedPaletteId: 'commercial_neutral', sceneCount: 1, mood: 'system_clarity', cameraEnergy: 'system_scan', timeLight: 'highkey_clean', signature: 'system_grid', tempoCurve: 'system_arc' },
-    refScope: { allow: ['Commercial'], warn: [] },
-    directorPanel: {
-      eyebrow: 'BRAND SYSTEM',
-      thesis: 'Marka kitini logo yığını değil, kullanılabilir görsel sistem olarak kur.',
-      groups: [
-        {
-          id: 'brand_system',
-          label: 'Sistem türü',
-          desc: 'Kimlik hangi yüzeyde ispatlansın?',
-          defaultChoiceId: 'identity_grid',
-          choices: [
-            { id: 'identity_grid', label: 'Identity grid', desc: 'Logo, renk, tipografi ve modül hizası.', sets: { mood: 'system_clarity', cameraEnergy: 'system_scan', signature: 'system_grid' } },
-            { id: 'premium_mockups', label: 'Premium mockups', desc: 'Gerçek yüzeyler, temas gölgesi, materyal kalite.', sets: { selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_tabletop', 'cinedna_highkey'], cameraEnergy: 'locked_premium', timeLight: 'highkey_clean' } },
-            { id: 'human_brand', label: 'Human brand', desc: 'Kimlik gerçek kullanım ve insan temasında görünür.', sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['setup_window', 'cinedna_naturalkey', 'roger_deakins_naturalism'], selectedPaletteId: 'warm_commercial_gold', mood: 'human_trust', signature: 'usage_payoff' } },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 'pitch_deck',
-    icon: Presentation,
-    label: 'Sunum / Pitch Deck',
-    desc: 'Kurumsal bilgi, anlatı ve slayt dizilimi',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#ff6b6b,#feca57)',
-    sets: { projectClass: 'ANIMATION_EDU', selectedWorldId: 'notebook', selectedRefIds: ['vagabond_ink_brush', 'samurai_jack_minimal', 'kurzgesagt_clarity'], selectedPaletteId: 'pastel_soft', sceneCount: 6, mood: 'system_clarity', cameraEnergy: 'system_scan', signature: 'system_grid', tempoCurve: 'system_arc' },
-    refScope: { allow: ['Commercial', 'Stylized Premium'], warn: [] },
-    directorPanel: {
-      eyebrow: 'DECK DIRECTOR',
-      thesis: 'Sunumu slayt dekoru değil, ikna eden bilgi mimarisi yap.',
-      groups: [
-        {
-          id: 'deck_mode',
-          label: 'Deck modu',
-          desc: 'Bilgi nasıl taşınsın?',
-          defaultChoiceId: 'clear_system',
-          choices: [
-            { id: 'clear_system', label: 'Clear system', desc: 'Grid, hiyerarşi, sakin bilgi akışı.', sets: { selectedWorldId: 'notebook', selectedPaletteId: 'pastel_soft', mood: 'system_clarity', signature: 'system_grid' } },
-            { id: 'premium_pitch', label: 'Premium pitch', desc: 'Daha ticari, daha temiz, daha yatırımcı dili.', sets: { projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'commercial_studio', selectedRefIds: ['apple_object_worship', 'setup_threepoint', 'cinedna_highkey'], selectedPaletteId: 'commercial_neutral', mood: 'real_confident' } },
-            { id: 'explainer_deck', label: 'Explainer deck', desc: 'Karmaşık konuyu diagram dünyasına indir.', sets: { selectedWorldId: 'lightbox', selectedRefIds: ['kurzgesagt_clarity', 'tech_glass', 'cinedna_highkey'], selectedPaletteId: 'clinical_blue', pov: 'hidden_mech' } },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 'ui_product',
-    icon: MonitorSmartphone,
-    label: 'UI / Ürün Görseli',
-    desc: 'Arayüz ve cihaz odaklı çerçeveler',
-    kind: 'design',
-    gradient: 'linear-gradient(135deg,#11998e,#38ef7d)',
-    sets: { projectClass: 'TECH_MEDICAL_PRECISION', selectedWorldId: 'tech_clinical_real', selectedRefIds: ['tech_glass', 'setup_highkey', 'cinedna_highkey'], selectedPaletteId: 'clinical_blue', sceneCount: 1, mood: 'clinical_precision', cameraEnergy: 'system_scan', timeLight: 'clinical_white', signature: 'system_grid', tempoCurve: 'system_arc' },
-    refScope: { allow: ['Product / Macro', 'Commercial', 'Tech / Medical'], warn: [] },
-    directorPanel: {
-      eyebrow: 'PRODUCT UI DIRECTOR',
-      thesis: 'Arayüzü parlak mockup değil, okunur ürün kanıtı olarak göster.',
-      groups: [
-        {
-          id: 'ui_surface',
-          label: 'UI yüzeyi',
-          desc: 'Ekran/cihaz nasıl inandırıcı kalsın?',
-          defaultChoiceId: 'screen_safe',
-          choices: [
-            { id: 'screen_safe', label: 'Screen-safe', desc: 'Düzgün ekran, az yansıma, okunur UI.', sets: { selectedWorldId: 'tech_clinical_real', selectedRefIds: ['tech_glass', 'setup_highkey', 'cinedna_highkey'], cameraEnergy: 'system_scan', timeLight: 'clinical_white', pov: 'system_reader' } },
-            { id: 'device_macro', label: 'Device macro', desc: 'Cam, kenar, parmak izi yok; premium cihaz gerçekliği.', sets: { selectedWorldId: 'product_macro_tabletop', selectedRefIds: ['product_macro', 'setup_tabletop', 'tech_glass'], cameraEnergy: 'macro_glide', timeLight: 'tabletop_control', signature: 'macro_truth' } },
-            { id: 'use_context', label: 'Use context', desc: 'Ekran gerçek kullanıcı bağlamında anlam kazanır.', sets: { selectedWorldId: 'photoreal_location', selectedRefIds: ['setup_window', 'cinedna_naturalkey', 'roger_deakins_naturalism'], selectedPaletteId: 'warm_commercial_gold', pov: 'customer_hand', signature: 'usage_payoff' } },
-          ],
-        },
-      ],
-    },
-  },
-];
+] as Phase0Preset[]).map(normalizePreset);

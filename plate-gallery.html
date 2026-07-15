@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- plate-gallery — worldPlateArt görsel denetim harness'ı (yalnız dev server).
+     `npx vite --port 5201` altında /plate-gallery.html: 46 dünyanın plakası yan yana.
+     Denetim sorusu: iki plaka birbirine benziyor mu? Benziyorsa ikincisi zararlı. -->
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<title>MAMILAS — 46 Dünya Plaka Denetimi</title>
+<style>
+  body { background: #14100c; color: #f2eee6; font: 12px/1.4 ui-monospace, monospace; margin: 24px; }
+  h1 { font-size: 15px; letter-spacing: 2px; }
+  #grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1480px; }
+  .cell { display: grid; gap: 4px; }
+  .cell canvas { width: 100%; height: auto; border-radius: 6px; display: block; }
+  .cell span { color: #d6a84f; font-size: 10.5px; letter-spacing: 1px; }
+  #contrast { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; max-width: 1480px; margin-bottom: 26px; }
+</style>
+</head>
+<body>
+<h1 id="contrast-title">ZIT ALTILI — whiteboard · noir · ukiyo-e · nature_doc · technical_cutaway · jjk (anime)</h1>
+<div id="contrast"></div>
+<h1>46/46 — TÜM DÜNYALAR</h1>
+<div id="grid"></div>
+<script type="module">
+import { paintWorldIdentity } from '/src/components/worldPlateArt.ts';
+import { DATA } from '/src/core/pure.ts';
+
+const CONTRAST = ['whiteboard_explainer', 'noir_high_contrast', 'ukiyo_e_print', 'nature_doc_real', 'technical_cutaway', 'jjk_mappa'];
+
+function cell(worldId, w, h) {
+  const div = document.createElement('div');
+  div.className = 'cell';
+  const cv = document.createElement('canvas');
+  cv.width = w; cv.height = h;
+  paintWorldIdentity(cv.getContext('2d'), w, h, worldId);
+  const label = document.createElement('span');
+  label.textContent = worldId;
+  div.append(cv, label);
+  return div;
+}
+
+const contrast = document.getElementById('contrast');
+for (const id of CONTRAST) contrast.append(cell(id, 340, 150));
+
+const grid = document.getElementById('grid');
+for (const world of DATA.worlds) grid.append(cell(world.id, 340, 136));
+
+document.title = `MAMILAS — ${DATA.worlds.length} plaka`;
+window.__PLATES_READY = true;
+</script>
+</body>
+</html>

@@ -27,3 +27,20 @@ dist-ssr
 # Playwright
 test-results/
 playwright-report/
+output/
+screenshots/
+.playwright-cli/
+.claude/settings.local.json
+
+# Üretim koşusu artefaktları (proje-başına geçici; kalıcı bilgi knowledge/ altına damıtılır)
+images/
+done/
+markdown/
+agents/done/
+agents/*.cjs
+agents/extract.js
+agents/project.json
+agents/extracted_project.json
+agents/.mamilas_kick.md
+report.md
+RUTHLESS_REVIEW.md

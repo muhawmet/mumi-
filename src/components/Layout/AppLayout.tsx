@@ -3,32 +3,88 @@ import { LayoutDashboard, Palette, Film, Sparkles, Check, Eye, EyeOff, SlidersHo
 import { sourceReadiness, useStudioStore, type Step } from '../../store/useStudioStore';
 import { PreviewStage } from '../PreviewStage';
 import { RecipeRail } from '../RecipeRail';
-import { AntigravityBackground } from '../AntigravityBackground';
 import { ProductionPulse } from '../ProductionPulse';
+import { SceneLayer } from '../../scene/SceneLayer';
+import { useFloorGridVisible } from '../../scene/assetPresence';
 
-const BASE_STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNode; index: number; presetOnly?: boolean }> = [
-  { id: 'dashboard', label: 'Brief', hint: 'Kaynak & konu', icon: <LayoutDashboard size={17} />, index: 1 },
-  { id: 'director', label: 'Yönetmen', hint: 'Path kararları', icon: <SlidersHorizontal size={17} />, index: 2, presetOnly: true },
-  { id: 'recipe', label: 'Reçete', hint: 'Dünya · palet · DNA', icon: <Palette size={17} />, index: 3 },
-  { id: 'scenes', label: 'Sahneler', hint: 'Beat planı', icon: <Film size={17} />, index: 4 },
-  { id: 'timeline', label: 'Timeline', hint: 'Üret & teslim', icon: <Sparkles size={17} />, index: 5 },
+export const BASE_STEPS: Array<{ id: Step; label: string; hint: string; icon: React.ReactNode; presetOnly?: boolean }> = [
+  { id: 'dashboard', label: 'Brief', hint: 'Kaynak & konu', icon: <LayoutDashboard size={17} /> },
+  { id: 'director', label: 'Yönetmen', hint: 'Path kararları', icon: <SlidersHorizontal size={17} />, presetOnly: true },
+  { id: 'recipe', label: 'Reçete', hint: 'Dünya · palet · DNA', icon: <Palette size={17} /> },
+  { id: 'scenes', label: 'Sahneler', hint: 'Beat planı', icon: <Film size={17} /> },
+  { id: 'timeline', label: 'Timeline', hint: 'Üret & teslim', icon: <Sparkles size={17} /> },
 ];
 
+export const QA_STEP: { id: Step; label: string; hint: string; icon: React.ReactNode } = {
+  id: 'qa',
+  label: 'QA',
+  hint: 'Cabinet',
+  icon: <Check size={17} />,
+};
+
+/**
+ * Filters BASE_STEPS by preset-gating, appends QA_STEP when on the qa step,
+ * and assigns displayIndex from VISIBLE list position (1-based) — so the
+ * sidebar never shows a gapped sequence like 1,3,4,5 when a presetOnly step
+ * (director) is hidden.
+ */
+export function visibleSteps<T extends { id: Step; presetOnly?: boolean }>(
+  all: readonly T[],
+  qaStep: T,
+  opts: { phase0PresetId: string | null | undefined; currentStep: Step },
+): Array<T & { displayIndex: number }> {
+  const { phase0PresetId, currentStep } = opts;
+  const baseSteps = all.filter((step) => !step.presetOnly || phase0PresetId || currentStep === step.id);
+  const steps = currentStep === 'qa' ? [...baseSteps, qaStep] : baseSteps;
+  return steps.map((step, i) => ({ ...step, displayIndex: i + 1 }));
+}
+
+/**
+ * Canonical stage number for a page header — the SAME number the sidebar shows
+ * for that step. One source of truth: derives from visibleSteps so a page's
+ * "STAGE n" can never disagree with the rail, and Yönetmen (director) inserting
+ * itself never leaves two different "STAGE 2"s on screen.
+ */
+export function stageNumber(
+  stepId: Step,
+  opts: { phase0PresetId: string | null | undefined; currentStep: Step },
+): number {
+  const found = visibleSteps(BASE_STEPS, QA_STEP, opts).find((s) => s.id === stepId);
+  if (found) return found.displayIndex;
+  const canonical = BASE_STEPS.findIndex((s) => s.id === stepId);
+  return canonical >= 0 ? canonical + 1 : 1;
+}
+
+const HIDDEN_CHROME: React.CSSProperties = {
+  opacity: 0,
+  visibility: 'hidden',
+  pointerEvents: 'none',
+  transform: 'scale(0.985)',
+  transition: 'opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease), visibility var(--dur-2) var(--ease)',
+};
+
 export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const floorGridVisible = useFloorGridVisible();
   const [aquariumMode, setAquariumMode] = useState(false);
   const currentStep = useStudioStore((s) => s.currentStep);
   const setCurrentStep = useStudioStore((s) => s.setCurrentStep);
+  const advance = useStudioStore((s) => s.advance);
   const rawSource = useStudioStore((s) => s.rawSource);
   const sourceReport = useStudioStore((s) => s.sourceReport);
   const sourceBeats = useStudioStore((s) => s.sourceBeats);
   const phase0PresetId = useStudioStore((s) => s.phase0PresetId);
   const sourceGate = sourceReadiness({ rawSource, sourceReport });
-  const steps = BASE_STEPS.filter((step) => !step.presetOnly || phase0PresetId || currentStep === step.id);
+  const hasFailedReport = Boolean(sourceReport && !sourceReport.ok);
+  const steps = visibleSteps(BASE_STEPS, QA_STEP, { phase0PresetId, currentStep });
   const activeIdx = Math.max(0, steps.findIndex((s) => s.id === currentStep));
 
   return (
     <div className={`ml-shell${aquariumMode ? ' ml-aquarium-mode' : ''}`} style={styles.shell}>
-      <AntigravityBackground />
+      {/* B4: AntigravityBackground (2D biyolüminesan akvaryum) emekli — F sıcak-altın diline
+          aykırıydı + ikinci tam-ekran canvas. Tek arka plan otoritesi artık SceneLayer
+          (WebGL'de altın-saat tableau, yoksa sıcak gradient fallback). Dosya durur, kolay geri-al. */}
+      <SceneLayer />
+      {floorGridVisible && <div className="ml-v3-floor" aria-hidden />}
       <div className="ml-spotlight" aria-hidden style={{ ...styles.spotlight, opacity: aquariumMode ? 0.28 : 1 }} />
 
       <button
@@ -46,39 +102,51 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         <span>{aquariumMode ? 'MENÜLERİ AÇ' : 'AKVARYUM MODU'}</span>
       </button>
 
-      <nav className="ml-sidebar" style={{ ...styles.sidebar, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }}>
+      <nav className="ml-sidebar" style={{ ...styles.sidebar, ...(aquariumMode ? HIDDEN_CHROME : null) }}>
         <header style={styles.brand}>
-          <span style={styles.brandMark}><Sparkles size={17} color="var(--gold-deep)" /></span>
+          <span className="ml-v3-brand-mark"><Sparkles size={18} /></span>
           <div>
-            <div style={styles.brandTitle}>MAMILAS</div>
-            <div style={styles.brandSub}>STUDIO CONSOLE · 2026</div>
+            <div className="ml-v3-brand-title">MAMILAS</div>
+            <div className="ml-v3-brand-sub">STUDIO CONSOLE · 2026</div>
           </div>
         </header>
 
-        <ol style={styles.stepList}>
-          <span aria-hidden style={styles.spine} />
-          <span aria-hidden style={{ ...styles.spineFill, height: `calc(${(activeIdx / Math.max(1, steps.length - 1)) * 100}% )` }} />
+        <ol className="ml-v3-steplist">
+          <span aria-hidden className="ml-v3-spine" />
+          <span aria-hidden className="ml-v3-spine-fill" style={{ height: `calc(${(activeIdx / Math.max(1, steps.length - 1)) * 100}% )` }} />
           {steps.map((s, i) => {
             const active = currentStep === s.id;
             const done = i < activeIdx;
             return (
               <li key={s.id} style={styles.stepRow}>
                 <button
-                  className="ml-step-btn"
-                  onClick={() => setCurrentStep(s.id)}
-                  style={{ ...styles.stepBtn, ...(active ? styles.stepBtnActive : null) }}
+                  className={`ml-step-btn${active ? ' is-active' : ''}`}
+                  aria-current={active ? 'step' : undefined}
+                  // MACRO 4 — sidebar kapıları ATLAMAZ. Geri/mevcut/ziyaret edilmiş adıma serbest;
+                  // ileri atlarken hedefe kadar HER ara adımın `advance()` kapısı sırayla denenir
+                  // (kaynak/reçete readiness) — bir kapı tutarsa orada durulur (lastError). Önce
+                  // sidebar setCurrentStep ile tüm kapıları atlıyordu; artık readiness zorunlu.
+                  onClick={() => {
+                    if (i <= activeIdx) { setCurrentStep(s.id); return; }
+                    // İleri: her adımda advance() dene; ilerleme durursa (kapı tuttu) bırak.
+                    for (let guard = 0; guard < steps.length; guard++) {
+                      const idxNow = steps.findIndex((x) => x.id === useStudioStore.getState().currentStep);
+                      if (idxNow >= i) break;
+                      const before = useStudioStore.getState().currentStep;
+                      advance();
+                      if (useStudioStore.getState().currentStep === before) break; // kapı tuttu
+                    }
+                  }}
                 >
-                  <span style={{
-                    ...styles.stepNode,
-                    ...(done ? styles.stepNodeDone : null),
-                    ...(active ? styles.stepNodeActive : null),
-                  }}>
-                    {done ? <Check size={13} strokeWidth={3} /> : s.index}
+                  <span className={`ml-v3-node${done ? ' is-done' : ''}${active ? ' is-active' : ''}`}>
+                    {done ? <Check size={13} strokeWidth={3} /> : s.displayIndex}
                   </span>
-                  <span style={styles.stepIcon}>{s.icon}</span>
+                  <span className="ml-v3-step-icon">{s.icon}</span>
                   <span style={styles.stepText}>
-                    <span style={{ ...styles.stepLabel, color: active ? 'var(--text)' : done ? 'var(--text-soft)' : 'var(--text-muted)' }}>{s.label}</span>
-                    <span style={styles.stepHint}>{s.hint}</span>
+                    {/* Etiket her durumda kendi alt-yazısından BASKIN kalır (ters hiyerarşi yasak):
+                        aktif=paper, bitmiş=muted, sıradaki=text-soft — hiçbiri hairline rengine düşmez. */}
+                    <span className="ml-v3-step-label" style={{ color: active ? 'var(--m2-paper)' : done ? 'var(--m2-muted)' : 'var(--text-soft)' }}>{s.label}</span>
+                    <span className="ml-v3-step-hint">{s.hint}</span>
                   </span>
                 </button>
               </li>
@@ -89,52 +157,71 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         <ProductionPulse />
       </nav>
 
-      <main className="ml-main" style={{ ...styles.main, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }}>{children}</main>
+      <main className="ml-main" style={{ ...styles.main, ...(aquariumMode ? HIDDEN_CHROME : null) }}>
+        <div className="ml-v3-screen">{children}</div>
+      </main>
 
-      <aside className="ml-right-rail" style={{ ...styles.rightRail, ...(aquariumMode ? styles.aquariumHiddenChrome : null) }} data-testid="source-right-rail">
+      <aside className="ml-right-rail" style={{ ...styles.rightRail, ...(aquariumMode ? HIDDEN_CHROME : null) }} data-testid="source-right-rail">
         <div style={styles.railStack}>
-          <section style={styles.drawingMonitor}>
-            <div style={styles.monitorHead}>
-              <span style={styles.railEyebrow}>ÇİZİM EKRANI</span>
-              <span style={styles.monitorKicker}>LIVE CANVAS</span>
+          <section className="ml-v3-monitor">
+            <div className="ml-v3-monitor-head">
+              <span className="ml-v3-eyebrow">ÇİZİM EKRANI</span>
+              <span className="ml-v3-kicker">LIVE CANVAS</span>
             </div>
             <PreviewStage />
           </section>
 
           {currentStep === 'dashboard' ? (
-            <section style={styles.sourceCard}>
-              <div style={styles.railEyebrow}>SOURCE GATE</div>
-              <div style={{ ...styles.railStatus, color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? 'var(--red)' : 'var(--text-muted)' }}>
-                {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : 'FAIL'}
+            <section className="ml-v3-card ml-v3-parchment">
+              <div className="ml-v3-eyebrow">SOURCE GATE</div>
+              <div className="ml-v3-status" style={{ color: sourceGate.ready && rawSource ? 'var(--green)' : rawSource ? (hasFailedReport ? 'var(--m2-danger)' : 'var(--m2-amber)') : 'var(--m2-muted)' }}>
+                {!rawSource ? 'BEKLİYOR' : sourceGate.ready ? 'PASS' : hasFailedReport ? 'FAIL' : 'INGEST BEKLİYOR'}
               </div>
-              <p style={styles.railCopy}>
+              <p className="ml-v3-copy">
                 {!rawSource
-                  ? 'Raw Source Vault boş. Konu bazlı üretim kullanılabilir; kanonik kaynak kilidi yok.'
+                  ? 'İlk adım: müşteri metnini Brief\'e yapıştır. Konu bazlı üretim de açık — kanonik kilit istersen kaynak gir.'
                   : sourceGate.ready
                     ? 'Ham kaynak beat zinciriyle birebir eşleşiyor. Üretim kapısı açık.'
-                    : sourceGate.reason}
+                    : hasFailedReport
+                      ? sourceGate.reason
+                      : 'Metin hazır. "Decode + Kayıpsız Ingest" ile beat\'lere kilitle.'}
               </p>
-              <div style={styles.railMetric}><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : '—'}</strong></div>
-              <div style={styles.railMetric}><span>Segments</span><strong>{sourceBeats.length}</strong></div>
-              <div style={styles.railHash}><span>RAW</span><code>{sourceReport?.rawHash ?? '--------'}</code></div>
-              <div style={styles.railHash}><span>RECON</span><code>{sourceReport?.reconHash ?? '--------'}</code></div>
+              {/* Boş durum NULL tablosu değil DAVET: metrikler ancak ölçülecek bir şey varken görünür. */}
+              {rawSource ? (
+                <>
+                  <div className="ml-v3-metric"><span>Coverage</span><strong>{sourceReport ? `${sourceReport.coverage}%` : 'ingest bekliyor'}</strong></div>
+                  <div className="ml-v3-metric"><span>Segments</span><strong>{sourceBeats.length}</strong></div>
+                  <div className="ml-v3-hash"><span>RAW</span><code>{sourceReport?.rawHash ?? 'ingest bekliyor'}</code></div>
+                  <div className="ml-v3-hash"><span>RECON</span><code>{sourceReport?.reconHash ?? 'ingest bekliyor'}</code></div>
+                </>
+              ) : (
+                <div className="ml-v3-gate-invite">
+                  <span>Metin girince burada canlanır:</span>
+                  <em>kayıpsız coverage · beat zinciri · RAW/RECON bütünlük mührü</em>
+                </div>
+              )}
             </section>
           ) : (
             <RecipeRail />
           )}
         </div>
       </aside>
+
+      {/* MACRO 4 — konuşan-karakter Disco katmanı (ThoughtDock/InnerVoice toast'ları, "CASE LEDGER"
+          persona alıntıları) KALDIRILDI. Mami tek Yönetmen deneyimi görür; gerçek üretim durumu
+          ProductionPulse'ın tek canonical readiness'inde ve QA'nın nötr teknik validator'ında yaşar. */}
     </div>
   );
 };
 
+/* Structural-only inline styles: layout skeleton the CSS stage builds on.
+   All visual language (glass, depth, light) lives in design_v3.css. */
 const styles: Record<string, React.CSSProperties> = {
   shell: {
     display: 'flex',
     height: '100vh',
     width: '100%',
     overflow: 'hidden',
-    background: 'transparent',
     color: 'var(--text)',
     fontFamily: 'var(--font-sans)',
     position: 'relative',
@@ -142,10 +229,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   spotlight: {
     position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
-    background:
-      'radial-gradient(120% 80% at 18% -10%, rgba(246,200,98,0.07), transparent 50%),' +
-      'radial-gradient(100% 90% at 100% 110%, rgba(255,157,77,0.05), transparent 55%),' +
-      'linear-gradient(180deg, rgba(10,10,13,0.2), rgba(10,10,13,0.6))',
     transition: 'opacity var(--dur-2) var(--ease)',
   },
   aquariumToggle: {
@@ -156,42 +239,22 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'inline-flex',
     alignItems: 'center',
     gap: 8,
-    padding: '10px 13px',
-    borderRadius: 999,
-    border: '1px solid rgba(247, 201, 72, 0.28)',
-    background: 'rgba(12, 12, 16, 0.72)',
-    color: 'var(--text)',
-    boxShadow: '0 16px 38px -28px var(--goldglow), inset 0 1px 0 rgba(255,255,255,0.08)',
-    backdropFilter: 'blur(18px)',
-    WebkitBackdropFilter: 'blur(18px)',
+    padding: '10px 14px',
+    color: 'var(--m2-muted)',
     cursor: 'pointer',
-    fontSize: 10,
-    fontWeight: 900,
-    letterSpacing: 1.4,
-    fontFamily: 'var(--font-mono)',
-    transition: 'all var(--dur) var(--ease)',
+    fontSize: 10.5,
+    fontWeight: 700,
+    letterSpacing: 1.2,
+    fontFamily: 'var(--m2-font-sans)',
+    transition: 'all var(--m2-hover) var(--m2-ease)',
   },
   aquariumToggleActive: {
-    borderColor: 'rgba(91, 232, 255, 0.42)',
-    color: 'rgba(189, 248, 255, 0.96)',
-    background: 'rgba(4, 11, 18, 0.62)',
-    boxShadow: '0 0 28px rgba(91, 232, 255, 0.16), inset 0 1px 0 rgba(255,255,255,0.08)',
-  },
-  aquariumHiddenChrome: {
-    opacity: 0,
-    visibility: 'hidden',
-    pointerEvents: 'none',
-    transform: 'scale(0.985)',
-    transition: 'opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease), visibility var(--dur-2) var(--ease)',
+    color: 'var(--m2-paper)',
   },
   sidebar: {
     width: 256,
     flexShrink: 0,
     padding: '24px 20px',
-    borderRight: '1px solid var(--line)',
-    background: 'rgba(12, 12, 16, 0.66)',
-    backdropFilter: 'blur(26px)',
-    WebkitBackdropFilter: 'blur(26px)',
     display: 'flex',
     flexDirection: 'column',
     gap: 34,
@@ -201,59 +264,13 @@ const styles: Record<string, React.CSSProperties> = {
     zIndex: 2,
   },
   brand: { display: 'flex', alignItems: 'center', gap: 12 },
-  brandMark: {
-    width: 34, height: 34, borderRadius: 10, flexShrink: 0,
-    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-    background: 'var(--grad-gold)', boxShadow: 'var(--shadow-gold)',
-  },
-  brandTitle: { fontSize: 15, fontWeight: 800, letterSpacing: 3.5, color: 'var(--text)' },
-  brandSub: { fontSize: 8.5, color: 'var(--gold)', letterSpacing: 2.2, fontWeight: 700, marginTop: 2 },
-  stepList: { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 4, position: 'relative' },
-  spine: { position: 'absolute', left: 15, top: 18, bottom: 18, width: 2, background: 'var(--line2)', borderRadius: 999 },
-  spineFill: { position: 'absolute', left: 15, top: 18, width: 2, background: 'linear-gradient(180deg, var(--gold), var(--gold-2))', borderRadius: 999, boxShadow: '0 0 10px var(--goldglow)', transition: 'height var(--dur-2) var(--ease)' },
   stepRow: { position: 'relative' },
-  stepBtn: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    gap: 12,
-    padding: '9px 11px',
-    background: 'transparent',
-    borderWidth: 1, borderStyle: 'solid', borderColor: 'transparent',
-    borderRadius: 'var(--r-md)',
-    cursor: 'pointer',
-    textAlign: 'left',
-    transition: 'all var(--dur) var(--ease)',
-    position: 'relative',
-    zIndex: 1,
-  },
-  stepBtnActive: {
-    background: 'var(--goldsoft)',
-    borderColor: 'var(--goldline)',
-    boxShadow: '0 6px 20px -10px var(--goldglow)',
-  },
-  stepNode: {
-    width: 26, height: 26, borderRadius: 999, flexShrink: 0,
-    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-    background: 'var(--bg)', borderWidth: 2, borderStyle: 'solid', borderColor: 'var(--line3)',
-    fontSize: 11, fontWeight: 800, fontFamily: 'var(--font-mono)', color: 'var(--text-muted)',
-    transition: 'all var(--dur) var(--ease)',
-  },
-  stepNodeDone: { background: 'var(--bg)', borderColor: 'var(--gold-2)', color: 'var(--gold)' },
-  stepNodeActive: { background: 'var(--grad-gold)', borderColor: 'var(--gold)', color: 'var(--gold-deep)', boxShadow: '0 0 14px var(--goldglow)' },
-  stepIcon: { display: 'inline-flex', color: 'var(--text-muted)' },
   stepText: { display: 'flex', flexDirection: 'column', gap: 1, minWidth: 0 },
-  stepLabel: { fontSize: 13.5, fontWeight: 700, lineHeight: 1.1 },
-  stepHint: { fontSize: 10, color: 'var(--text-dim)', letterSpacing: 0.2 },
   main: { flex: 1, overflowY: 'auto', position: 'relative', minWidth: 0, zIndex: 1 },
   rightRail: {
     width: 340,
     flexShrink: 0,
     padding: '24px 20px',
-    borderLeft: '1px solid var(--line)',
-    background: 'rgba(12, 12, 16, 0.66)',
-    backdropFilter: 'blur(26px)',
-    WebkitBackdropFilter: 'blur(26px)',
     position: 'sticky',
     top: 0,
     height: '100vh',
@@ -261,26 +278,4 @@ const styles: Record<string, React.CSSProperties> = {
     zIndex: 2,
   },
   railStack: { display: 'flex', flexDirection: 'column', gap: 18 },
-  drawingMonitor: {
-    padding: 10,
-    borderRadius: 20,
-    border: '1px solid rgba(247, 201, 72, 0.18)',
-    background:
-      'linear-gradient(180deg, rgba(247, 201, 72, 0.08), rgba(255,255,255,0.025) 42%, rgba(0,0,0,0.12))',
-    boxShadow: '0 18px 45px -34px var(--goldglow), inset 0 1px 0 rgba(255,255,255,0.06)',
-  },
-  monitorHead: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '2px 4px 10px' },
-  monitorKicker: {
-    fontSize: 9,
-    letterSpacing: 1.4,
-    color: 'var(--text-dim)',
-    fontWeight: 800,
-    fontFamily: 'var(--font-mono)',
-  },
-  sourceCard: { padding: 16, border: '1px solid var(--line2)', borderRadius: 'var(--r-lg)', background: 'var(--panel)', boxShadow: 'var(--shadow-sm)' },
-  railEyebrow: { fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 800 },
-  railStatus: { fontSize: 28, fontWeight: 800, marginTop: 12, letterSpacing: -0.5 },
-  railCopy: { color: 'var(--text-muted)', fontSize: 12, lineHeight: 1.6, minHeight: 76, marginTop: 6 },
-  railMetric: { display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', padding: '12px 0', color: 'var(--text-muted)', fontSize: 11.5 },
-  railHash: { display: 'grid', gap: 5, borderTop: '1px solid var(--line)', padding: '12px 0', color: 'var(--text-dim)', fontSize: 10, fontFamily: 'var(--font-mono)' },
 };

@@ -1,31 +1,51 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Copy, Check, Edit3, X } from 'lucide-react';
-import { useStudioStore, effectivePrompt, type Scene } from '../../store/useStudioStore';
-import { quantumScore, proofDoctor, qaScore } from '../../core/proof';
+import { Copy, Check, Clapperboard } from 'lucide-react';
+import { useStudioStore, effectivePrompt, hasCurrentAgentPrompt, motionGate, productionReadiness, type Scene, type ShotApproval, type SceneFrameReceipt } from '../../store/useStudioStore';
+import { quantumScore, qaScore } from '../../core/proof';
 import { Panel, Button, inputStyle, selectStyle } from '../../components/Layout/PanelKit';
-import { scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
+import { stageNumber } from '../../components/Layout/AppLayout';
+import { downloadFile, scenesToCSV, scenesToMarkdown, type ExportContext } from '../../core/exporters';
 import { buildCommandJSON } from '../../core/commandExport';
-import { buildProductionExport, bundleSlug } from '../../core/productionExport';
-import { DATA } from '../../core/pure';
+import { DATA, paletteColors } from '../../core/pure';
 import { dnaDirectives, registerOf, primePacket, engineUsableSec } from '../../core/brain';
-import { RecipeThumb } from '../../components/RecipeThumb';
-import { Clapperboard } from 'lucide-react';
+import { BeatThumb } from '../../components/BeatThumb';
 
 const PHASE_COLORS: Record<string, string> = {
-  Intro: '#4df5a0',
-  'Build-up': '#f7c948',
-  Climax: '#f54d6b',
-  Resolution: '#8b5cf6',
+  Intro: '#93c9a8',
+  'Build-up': '#f6c862',
+  Climax: '#c9573f',
+  Resolution: '#8fb4c9',
+};
+
+// Renk-körü güvenliği: film şeridi fazı yalnız renge dayanmasın — kısa kod da taşısın
+// (kırmızı Climax 'hata' değil, bir mood/faz; kod bunu ayırır).
+const PHASE_CODE: Record<string, string> = {
+  Intro: 'INT',
+  'Build-up': 'BLD',
+  Climax: 'CLX',
+  Resolution: 'RES',
 };
 
 export const TimelineStep = () => {
   const state = useStudioStore();
-  const { scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, setSceneOverride, togglePersonalMode } = state;
+  const {
+    scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, togglePersonalMode,
+    shotApprovals, approveShot, rejectShot, clearShotApproval, importAgentPrompt, currentCommandId,
+    importFrame, setFrameVerdict, clearFrame,
+  } = state;
   const selected = scenes.find((s) => s.id === selectedSceneId) || null;
+  const commandId = currentCommandId();
+  const promptSourceId = state.currentPromptSourceCommandId();
+  const selectedApproval = selected ? shotApprovals[selected.id] : undefined;
+  const readiness = productionReadiness(state, commandId, promptSourceId);
+
+  const thumbColors = paletteColors(
+    DATA.palettes.find((p) => p.id === state.selectedPaletteId),
+    DATA.worlds.find((w) => w.id === state.selectedWorldId),
+  );
   const onGenerate = generateScenes;
   const exportCtx: ExportContext = {
-    projectKind: state.projectKind,
     topic: state.projectTopic,
     projectClass: state.projectClass,
     cast: state.cast,
@@ -36,9 +56,9 @@ export const TimelineStep = () => {
   const safeName = state.projectTopic.replace(/[^a-zA-Z0-9_-]+/g, '_').slice(0, 60) || 'mamilas';
 
   const onExportJSON = () => {
+    if (!scenes.length) return;
     const payload = {
       brief: {
-        kind: state.projectKind,
         topic: state.projectTopic,
         class: state.projectClass,
         cast: state.cast,
@@ -53,25 +73,31 @@ export const TimelineStep = () => {
   };
 
   const onExportCommandJSON = () => {
-    if (!scenes.length) return;
+    if (!scenes.length || !readiness.ready) return;
     const payload = buildCommandJSON(state);
     downloadFile(`${safeName}_mamilas_command.json`, JSON.stringify(payload, null, 2), 'application/json');
-  };
-
-  const onExportProduction = () => {
-    if (!scenes.length) return;
-    const payload = buildProductionExport(state);
-    // Single self-describing file. Drop it in an empty folder; the agent scaffolds the rest.
-    downloadFile(`${bundleSlug(state.projectTopic)}_production.json`, JSON.stringify(payload, null, 2), 'application/json');
   };
 
   const onExportHandoff = () => {
     if (!scenes.length) return;
     const payload = scenes.map((s) => ({
       sceneId: s.id,
-      packets: state.projectKind === 'design' ? { IMAGE: s.handoff.IMAGE } : s.handoff,
+      packets: s.handoff,
     }));
     downloadFile(`${safeName}_handoff_packets.json`, JSON.stringify(payload, null, 2), 'application/json');
+  };
+
+  // MACRO 6 — taşınabilir project pack: karar + world packet + onaylar + prompt/frame receipt'leri
+  // + hash manifest. Windows'ta export → Mac'te import → aynı proje. LocalStorage yalnız cache.
+  const onExportProjectPack = () => {
+    downloadFile(`${safeName}.mamilas-project.json`, state.exportProjectPack(), 'application/json');
+  };
+  const onExportCloseout = () => {
+    if (!scenes.length) return;
+    downloadFile(`${safeName}.mamilas-studio-closeout.json`, state.exportCloseout(), 'application/json');
+  };
+  const onImportProjectPack = (file: File) => {
+    file.text().then((json) => state.importProjectPack(json));
   };
 
   const [briefCopied, setBriefCopied] = useState(false);
@@ -83,22 +109,6 @@ export const TimelineStep = () => {
     });
   };
 
-  const [packetCopied, setPacketCopied] = useState<string | null>(null);
-  const onCopyPacket = (role: 'image' | 'motion' | 'suno' | 'idea' | 'proof') => {
-    const text = state.agentPackets?.[role];
-    if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
-      const labels = {
-        image: 'IMAGE',
-        motion: 'MOTION',
-        suno: 'SUNO',
-        idea: 'IDEA',
-        proof: 'PROOF'
-      };
-      setPacketCopied(labels[role]);
-      setTimeout(() => setPacketCopied(null), 1500);
-    });
-  };
 
   const onExportCSV = () => {
     if (!scenes.length) return;
@@ -119,86 +129,37 @@ export const TimelineStep = () => {
       <header style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div>
           <div style={{ fontSize: 11, letterSpacing: 3, color: 'var(--gold)', fontWeight: 700 }}>
-            STAGE 4 · {state.projectKind === 'design' ? 'DESIGN TESLİMİ' : 'TIMELINE'}
+            STAGE {stageNumber('timeline', { phase0PresetId: state.phase0PresetId, currentStep: 'timeline' })} · TIMELINE
           </div>
-          <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 700, letterSpacing: -0.5 }}>
+          <h1 style={{ fontSize: 38, margin: '8px 0 4px', fontWeight: 500, letterSpacing: '0.005em', fontFamily: 'var(--font-serif)' }}>
             {scenes.length
-              ? state.projectKind === 'design'
-                ? `${scenes.length} tasarım kartı`
-                : `${scenes.length} sahne · ${totalDuration}s`
-              : 'Üretime hazır'}
+              ? `${scenes.length} sahne · ${totalDuration}s`
+              : 'Motor bekliyor'}
           </h1>
           <p style={{ color: 'var(--text-muted)', fontSize: 15 }}>
-            {state.projectKind === 'design'
-              ? 'Statik tasarım teslimi: birleşik brief + production-ready IMAGE handoff paketleri.'
-              : 'Pure batch generator: kontrat kapısı + birleşik brief + IMAGE/MOTION/SUNO handoff paketleri.'}
-            <span style={{ marginLeft: 16, display: 'inline-block', background: 'rgba(247, 201, 72, 0.15)', color: '#f7c948', padding: '2px 8px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>
+            Pure batch generator: kontrat kapısı + birleşik brief + IMAGE/MOTION/SUNO handoff paketleri.
+            <span style={{ marginLeft: 16, display: 'inline-block', background: 'rgba(247, 201, 72, 0.15)', color: '#f6c862', padding: '2px 8px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>
               QUANTUM {quantumScore(state)}/100
             </span>
           </p>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* Tek primary (solid altın) = ilerleme aksiyonu; ikincil işler ghost.
+              İki eş-ağırlık primary çakışması kaldırıldı. lang="en": Director's/Cabinet/Brief İ almasın. */}
           <Button variant="ghost" onClick={() => setCurrentStep('recipe')}>← Reçete</Button>
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportJSON}>JSON</Button>}
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportCSV}>CSV</Button>}
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportMD}>Markdown</Button>}
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportCommandJSON}>Komut JSON</Button>}
-          {scenes.length > 0 && <Button onClick={onExportProduction} title="Tek dosya üretim paketi — boş klasöre koy, görselleri üret, ajan motionu yazsın">⬇ Üretim Paketi</Button>}
-          {scenes.length > 0 && <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>}
           {scenes.length > 0 && (
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-              <select
-                value=""
-                onChange={(e) => {
-                  const val = e.target.value;
-                  if (!val) return;
-                  if (val === 'brief') onCopyAgentBrief();
-                  else onCopyPacket(val as any);
-                  e.target.value = '';
-                }}
-                style={{
-                  ...selectStyle,
-                  padding: '12px 32px 12px 20px',
-                  background: 'transparent',
-                  border: '1px solid var(--line3, #ffffff34)',
-                  borderRadius: 10,
-                  color: '#fff',
-                  fontSize: 14,
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  appearance: 'none',
-                  outline: 'none',
-                }}
-              >
-                <option value="" disabled style={{ background: '#0b0d13', color: 'var(--text-muted)' }}>
-                  {packetCopied ? `✓ ${packetCopied} Kopyalandı` : briefCopied ? '✓ Brief Kopyalandı' : 'Ajan Paketleri'}
-                </option>
-                <option value="brief" style={{ background: '#0b0d13' }}>Ana Ajan Brief</option>
-                <option value="image" style={{ background: '#0b0d13' }}>IMAGE Paketi (Görsel)</option>
-                <option value="motion" style={{ background: '#0b0d13' }}>MOTION Paketi (Hareket)</option>
-                {state.projectKind === 'video' && (
-                  <option value="suno" style={{ background: '#0b0d13' }}>SUNO Paketi (Müzik)</option>
-                )}
-                <option value="idea" style={{ background: '#0b0d13' }}>IDEA Paketi (Fikir)</option>
-                <option value="proof" style={{ background: '#0b0d13' }}>PROOF Paketi (Denetim)</option>
-              </select>
-              <span
-                style={{
-                  position: 'absolute',
-                  right: 12,
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  pointerEvents: 'none',
-                  color: 'var(--text-muted)',
-                  fontSize: 10,
-                }}
-              >
-                ▼
-              </span>
-            </div>
+            <Button variant="solid" onClick={() => setCurrentStep('qa')}>
+              <span lang="en">Director's Cabinet</span> →
+            </Button>
           )}
-          <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId || (state.rawSource.length > 0 && !state.sourceReport?.ok)}>
-            {isGenerating ? 'Üretiliyor…' : scenes.length ? 'Yeniden üret' : state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
+          {scenes.length > 0 && (
+            <Button variant="ghost" onClick={onCopyAgentBrief}>
+              {briefCopied ? '✓ KOPYALANDI' : <span lang="en">📄 Copy Final Brief</span>}
+            </Button>
+          )}
+          <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}
+            title={state.rawSource.length > 0 && !state.sourceReport?.ok ? `⚠ Bütünlük %${state.sourceReport?.coverage ?? 0} — düzenlediğin storyboard kaynaktan sapıyor; VO senin metnini birebir taşır. Yine de derleyebilirsin.` : undefined}>
+            {isGenerating ? 'DERLENİYOR…' : scenes.length ? 'PAKETİ YENİDEN DERLE' : 'AJAN PAKETİNİ DERLE'} <span className="kbd" style={{ marginLeft: 8 }}>⌘↵</span>
           </Button>
         </div>
       </header>
@@ -209,10 +170,11 @@ export const TimelineStep = () => {
           animate={{ opacity: 1, y: 0 }}
           style={{
             padding: '12px 16px',
-            borderRadius: 10,
-            border: '1px solid var(--red, #f54d6b)',
-            background: 'rgba(245,77,107,.08)',
-            color: '#fdb',
+            borderRadius: 0,
+            border: '1px solid var(--m2-danger)',
+            background: 'transparent',
+            color: 'var(--m2-danger)',
+            fontFamily: 'var(--m2-font-mono)',
             fontSize: 13,
           }}
         >
@@ -220,44 +182,81 @@ export const TimelineStep = () => {
         </motion.div>
       )}
 
+      <div className="studio-verdict-band timeline-verdict-band ml-v3-parchment">
+        <div>
+          <span className="studio-verdict-kicker">PRODUCTION READ</span>
+          <strong>{scenes.length ? `${scenes.length} teslim parçası kilitleniyor.` : 'Önce packet compile.'}</strong>
+          <p>
+            Timeline karar yüzeyi: sahne seç, pacing kanıtını oku, sonra export al. Ham paket düğmeleri en sonda kalır.
+          </p>
+        </div>
+      </div>
+
       {scenes.length === 0 ? (
         <Panel>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '54px 20px', gap: 18 }}>
             <div style={{
-              width: 200, height: 116, borderRadius: 'var(--r-lg)', overflow: 'hidden', position: 'relative',
-              boxShadow: 'var(--shadow), 0 0 40px -12px var(--goldglow)',
+              width: 200, height: 116, borderRadius: 0, overflow: 'hidden', position: 'relative',
+              border: '1px solid var(--m2-line-strong)'
             }}>
-              <RecipeThumb radius={20} />
+              <BeatThumb seed="timeline-empty" colors={thumbColors} height={116} width={200} radius={20} />
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.25)' }}>
                 <Clapperboard size={34} color="var(--gold-hi)" />
               </div>
             </div>
             <div>
               <div style={{ fontSize: 19, fontWeight: 800, color: 'var(--text)', letterSpacing: -0.3 }}>
-                {state.projectKind === 'design' ? 'Tasarıma hazır' : 'Sahne yok — motoru çalıştır'}
+                Sahne yok — motoru çalıştır
               </div>
               <p style={{ color: 'var(--text-muted)', fontSize: 13.5, lineHeight: 1.6, maxWidth: 420, margin: '8px auto 0' }}>
-                {state.projectKind === 'design'
-                  ? 'Generator statik tasarım mimarisi + image prompt + IMAGE handoff paketi üretir.'
-                  : 'Pure generator sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretir.'}
+                Pure generator sahne mimarisi + image prompt + VO + Suno brief + 3 handoff paketi üretir.
               </p>
             </div>
-            <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId || (state.rawSource.length > 0 && !state.sourceReport?.ok)}>
-              <Clapperboard size={15} /> {state.projectKind === 'design' ? 'TASARIM ÜRET' : 'BATCH ÜRET'} <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span>
+            <Button onClick={onGenerate} disabled={isGenerating || !state.selectedWorldId}
+            title={state.rawSource.length > 0 && !state.sourceReport?.ok ? `⚠ Bütünlük %${state.sourceReport?.coverage ?? 0} — düzenlediğin storyboard kaynaktan sapıyor; VO senin metnini birebir taşır. Yine de derleyebilirsin.` : undefined}>
+              <Clapperboard size={15} /> {isGenerating ? 'DERLENİYOR…' : scenes.length ? 'PAKETİ YENİDEN DERLE' : 'AJAN PAKETİNİ DERLE'} <span className="kbd" style={{ marginLeft: 6 }}>⌘↵</span>
             </Button>
             {!state.selectedWorldId && <div style={{ fontSize: 12, color: 'var(--amber)' }}>Önce Reçete'de bir dünya seç.</div>}
           </div>
         </Panel>
       ) : (
         <>
-        {state.projectKind === 'video' && (
-          <FilmStrip scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
-        )}
+        <FilmStrip scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', padding: '10px 14px', borderRadius: 10, border: '1px solid var(--m2-line)', background: 'rgba(255,255,255,0.02)' }}>
+          <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1.4, color: 'var(--m2-muted)', fontFamily: 'var(--m2-font-mono)', marginRight: 4 }}>EXPORT</span>
+          <Button variant="ghost" onClick={onExportJSON}>JSON</Button>
+          <Button variant="ghost" onClick={onExportCSV}>CSV</Button>
+          <Button variant="ghost" onClick={onExportMD}>Markdown</Button>
+          <Button
+            variant="ghost"
+            onClick={onExportCommandJSON}
+            disabled={!readiness.ready}
+            title={readiness.ready ? 'Canonical MAMILAS command indir' : `Komut kapalı: ${readiness.reason}`}
+          >
+            Komut JSON
+          </Button>
+          <Button variant="ghost" onClick={onExportHandoff}>Handoff</Button>
+          {/* MACRO 4: Üretim Paketi düğmesi BURADAN KALDIRILDI. Tek gate'li export yolu QA
+              (Director's Cabinet) — readiness kapısı orada yaşar. İki export yolu (biri gate'siz)
+              Cabinet'in blokladığı paketi bir adım geriden indirtiyordu. Tek yol, tek kapı. */}
+          <span style={{ width: 1, height: 20, background: 'var(--m2-line)', margin: '0 2px' }} />
+          {/* MACRO 6 — taşınabilir project pack (Windows↔Mac↔Claude/Codex). */}
+          <Button onClick={onExportProjectPack} title="Taşınabilir proje paketi — karar + world packet + onaylar + prompt/frame receipt'leri + hash manifest. Windows'ta export, Mac'te import.">⬇ Proje Paketi</Button>
+          <Button variant="ghost" onClick={onExportCloseout} disabled={!scenes.length} title="Current karar → ajan prompt → gerçek frame zincirinin stale-safe kapanış receipt’i.">Kapanış Receipt</Button>
+          <label className="ml-file-picker" style={{ display: 'inline-block' }}>
+            <input className="ml-file-input" aria-label="Proje paketi içe al" type="file" accept=".json,application/json"
+              onChange={(e) => { const f = e.target.files?.[0]; if (f) onImportProjectPack(f); e.currentTarget.value = ''; }} />
+            <span className="ml-file-picker-face" style={{ display: 'inline-flex', alignItems: 'center', padding: '7px 12px', border: '1px solid var(--m2-line-strong)', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer', color: 'var(--m2-muted)' }}>⬆ Proje İçe Al</span>
+          </label>
+          {!readiness.ready && (
+            <span role="status" style={{ flexBasis: '100%', fontSize: 11, color: 'var(--m2-amber)', lineHeight: 1.45 }}>
+              Komut export kapalı — {readiness.reason}
+            </span>
+          )}
+        </div>
         <div className="timeline-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 1fr) 1.6fr', gap: 24 }}>
-          <Panel title={`${state.projectKind === 'design' ? 'Tasarımlar' : 'Sahneler'} (${scenes.length})`}>
-            {state.projectKind === 'video' && (
-              <PacingArc scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
-            )}
+          <Panel title={`Sahneler (${scenes.length})`}>
+            <PacingArc scenes={scenes} selectedSceneId={selectedSceneId} onPick={(id) => setField('selectedSceneId', id)} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
               {scenes.map((s, i) => {
                 const active = selectedSceneId === s.id;
@@ -270,11 +269,12 @@ export const TimelineStep = () => {
                     onClick={() => setField('selectedSceneId', s.id)}
                     style={{
                       padding: '12px 14px',
-                      borderRadius: 10,
-                      border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                      background: active ? 'var(--goldsoft)' : 'rgba(0,0,0,.2)',
+                      borderRadius: 0,
+                      border: `1px solid ${active ? 'var(--m2-paper)' : 'var(--m2-line-strong)'}`,
+                      background: active ? 'var(--m2-paper)' : 'transparent',
                       textAlign: 'left',
-                      color: '#fff',
+                      color: active ? 'var(--m2-ink)' : 'var(--m2-muted)',
+                      fontFamily: 'var(--m2-font-mono)',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
@@ -291,14 +291,14 @@ export const TimelineStep = () => {
                     />
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: 13, fontWeight: 600 }}>
-                        {state.projectKind === 'design' ? `Tasarım ${s.id}` : `Sahne ${s.id} · ${s.phaseName}`}
+                        {`Sahne ${s.id} · ${s.phaseName}`}
                       </div>
                       <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
-                        {state.projectKind === 'design' ? 'statik IMAGE teslimi' : `${s.durationSec}s · intensity ${Math.round(s.intensity)}`}
-                        {state.projectKind === 'video' && s.duration && !s.duration.ok && (
+                        {`${s.durationSec}s · intensity ${Math.round(s.intensity)}`}
+                        {s.duration && !s.duration.ok && (
                           <span style={{ color: 'var(--red)', fontWeight: 700, marginLeft: 6 }}>· BÖLEMEZSİN</span>
                         )}
-                        <span style={{ marginLeft: 6, color: qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80 ? 'var(--green, #4df5a0)' : 'var(--gold)' }}>
+                        <span style={{ marginLeft: 6, color: qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80 ? 'var(--green, #93c9a8)' : 'var(--gold)' }}>
                           · QA {qaScore(effectivePrompt(s), { personalMode: state.personalMode })}{state.personalMode ? ' P' : ''}
                         </span>
                       </div>
@@ -313,18 +313,18 @@ export const TimelineStep = () => {
               <div style={{ fontSize: 13, color: '#fff', lineHeight: 1.6 }}>
                 <div>İlk sahne QA: <span style={{ color: 'var(--gold)' }}>{qaScore(effectivePrompt(scenes[0]), { personalMode: state.personalMode })}</span></div>
                 <div>Ortalama QA: <span style={{ color: 'var(--gold)' }}>{Math.round(scenes.reduce((acc, s) => acc + qaScore(effectivePrompt(s), { personalMode: state.personalMode }), 0) / scenes.length)}</span></div>
-                <div>Hazır Sahneler: <span style={{ color: 'var(--green, #4df5a0)' }}>{scenes.filter(s => qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80).length} / {scenes.length}</span></div>
+                <div>Hazır Sahneler: <span style={{ color: 'var(--green, #93c9a8)' }}>{scenes.filter(s => qaScore(effectivePrompt(s), { personalMode: state.personalMode }) >= 80).length} / {scenes.length}</span></div>
               </div>
               <button
                 onClick={togglePersonalMode}
                 style={{ marginTop: 10, fontSize: 11, padding: '4px 10px', background: state.personalMode ? 'var(--gold)' : 'transparent', color: state.personalMode ? '#000' : 'var(--text-muted)', border: '1px solid var(--line2)', borderRadius: 4, cursor: 'pointer', letterSpacing: 1 }}
               >
-                {state.personalMode ? 'PERSONAL ON — IP guard kapalı' : 'PERSONAL MOD'}
+                {state.personalMode ? 'KİŞİSEL MOD AÇIK — IP guard kapalı' : 'KİŞİSEL MOD'}
               </button>
             </div>
           </Panel>
 
-          <Panel title={selected ? `${state.projectKind === 'design' ? 'Tasarım' : 'Sahne'} ${selected.id} · Detay` : 'Detay'}>
+          <Panel title={selected ? `Sahne ${selected.id} · Detay` : 'Detay'}>
             <AnimatePresence mode="wait">
               {selected ? (
                 <motion.div
@@ -337,28 +337,27 @@ export const TimelineStep = () => {
                 >
                   {/* — live preview monitor — */}
                   <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', borderRadius: 'var(--r-md)', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
-                    <RecipeThumb radius={14} />
+                    <BeatThumb seed={`scene-${selected.id}`} colors={thumbColors} height={200} width="100%" radius={14} />
                     <div style={{ position: 'absolute', top: 10, left: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
                       <span style={{ width: 7, height: 7, borderRadius: 999, background: PHASE_COLORS[selected.phaseName] || '#fff', boxShadow: `0 0 8px ${PHASE_COLORS[selected.phaseName] || '#fff'}` }} />
                       <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: 1, color: '#fff', textShadow: '0 1px 6px #000' }}>
-                        {state.projectKind === 'design' ? `TASARIM ${selected.id}` : `SAHNE ${selected.id} · ${selected.phaseName?.toUpperCase()}`}
+                        {`SAHNE ${selected.id} · ${selected.phaseName?.toUpperCase()}`}
                       </span>
                     </div>
                     <div style={{ position: 'absolute', bottom: 10, right: 12, fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 700, color: 'var(--gold-hi)', textShadow: '0 1px 6px #000' }}>
-                      {state.projectKind === 'design' ? 'STATIC' : `${selected.durationSec}s`}
+                      {`${selected.durationSec}s`}
                     </div>
                   </div>
-                  <DetailRow label="Beat" value={selected.architecture.beat} />
-                  <DetailRow label="Dominant subject" value={selected.architecture.dominantSubject} />
-                  <DetailRow label="Event" value={selected.architecture.event} />
-                  <DetailRow label="Vantage" value={selected.architecture.imageVantage} mono />
-                  <DetailRow label="Fingerprint" value={selected.architecture.semanticFingerprint} mono />
-                  <ImagePromptRow
-                    scene={selected}
-                    onSave={(v) => setSceneOverride(selected.id, v)}
-                    onReset={() => setSceneOverride(selected.id, null)}
-                  />
-                  {state.projectKind === 'video' && selected.duration && (
+                  <div style={{ border: '1px solid var(--m2-line)', borderRadius: 8, padding: '10px 12px', background: 'rgba(0,0,0,0.25)' }}>
+                    <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: 1.6, color: 'var(--m2-muted)', fontFamily: 'var(--m2-font-mono)', marginBottom: 8 }}>TEKNİK KANIT · EN</div>
+                    <DetailRow label="Event" value={selected.architecture.event} />
+                    <DetailRow label="Beat" value={selected.architecture.beat} />
+                    <DetailRow label="Dominant subject" value={selected.architecture.dominantSubject} />
+                    <DetailRow label="Vantage" value={selected.architecture.imageVantage} mono />
+                    <DetailRow label="Fingerprint" value={selected.architecture.semanticFingerprint} mono />
+                  </div>
+
+                  {selected.duration && (
                     <div
                       style={{
                         padding: '8px 12px',
@@ -373,47 +372,58 @@ export const TimelineStep = () => {
                       {selected.duration.ok ? '⏱ ' : '⚠ '}{selected.duration.message}
                     </div>
                   )}
-                  <DetailRow label={state.projectKind === 'design' ? 'Kaynak metin' : 'Voice over (kaynak metin)'} value={selected.voiceOver} block copyable />
-                  {state.projectKind === 'video' && (
-                    <>
-                      <DetailRow label={`Motion prompt (${state.videoModel ?? 'kling_3'} · ${engineUsableSec(state.videoModel ?? 'kling_3')}s pencere)`} value={selected.motionPrompt} mono block copyable />
-                      <DetailRow label="Suno brief" value={selected.sunoBrief} mono block copyable />
-                    </>
-                  )}
-                  <details>
-                    <summary style={{ cursor: 'pointer', fontSize: 11, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>
-                      HANDOFF PAKETLERİ ({state.projectKind === 'design' ? 1 : 3})
-                    </summary>
-                    <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                      {(state.projectKind === 'design' ? ['IMAGE'] as const : ['IMAGE', 'MOTION', 'SUNO'] as const).map((role) => {
-                        const packet = selected.handoff[role];
-                        return (
-                          <div
-                            key={role}
-                            style={{
-                              padding: 12,
-                              borderRadius: 8,
-                              border: '1px solid var(--line2)',
-                              background: 'rgba(0,0,0,.25)',
-                              fontFamily: "'JetBrains Mono Variable', monospace",
-                              fontSize: 11,
-                              color: '#cbd5e1',
-                            }}
-                          >
-                            <div style={{ color: 'var(--gold)', fontWeight: 700, marginBottom: 4 }}>
-                              {role} · {packet.targetModel.provider} / {packet.targetModel.label}
-                            </div>
-                            <div>packetId: {packet.packetId}</div>
-                            {packet.warnings.length > 0 && (
-                              <div style={{ marginTop: 6, color: 'var(--red)' }}>
-                                ⚠ {packet.warnings.map((w) => w.code).join(', ')}
-                              </div>
-                            )}
+                  <DetailRow label='Voice over (kaynak metin)' value={selected.voiceOver} block copyable />
+                  <>
+                    <div style={{ marginTop: 2, marginBottom: 2 }}>
+                        <div style={{ fontSize: 10, letterSpacing: 1.6, color: 'var(--text-muted)', fontWeight: 700, marginBottom: 4 }}>
+                          EKRAN METNİ (AE)
+                          <span style={{ marginLeft: 6, fontSize: 10, color: selected.onScreenText ? 'var(--gold)' : 'var(--text-muted)', fontWeight: 400 }}>
+                            {selected.phaseName}
+                          </span>
+                        </div>
+                        {selected.onScreenText ? (
+                          <div style={{ fontSize: 13, color: '#fff', fontWeight: 700, padding: '6px 10px', borderRadius: 6, background: 'rgba(255,200,80,.10)', border: '1px solid rgba(255,200,80,.25)', display: 'inline-block' }}>
+                            "{selected.onScreenText}"
+                            <span style={{ marginLeft: 8, fontSize: 10.5, color: 'var(--text-muted)', fontWeight: 400 }}>
+                              {selected.phaseName === 'Resolution' ? '· Merkez · TITLE' : selected.phaseName === 'Climax' ? '· Alt-merkez · BOLD' : '· Alt-merkez · LABEL'}
+                            </span>
                           </div>
-                        );
-                      })}
-                    </div>
-                  </details>
+                        ) : (
+                          <div style={{ fontSize: 11.5, color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                            NO_TEXT — {selected.phaseName === 'Build-up' ? 'mekanizma görsel konuşuyor' : 'metin yok'}
+                          </div>
+                        )}
+                      </div>
+
+                    {/* MACRO 3/4 — Ajan prompt geri-alım + Mami shot onayı. Site prompt YAZMAZ:
+                        prompt'u command'deki ajan yazar, Mami buraya yapıştırır; sonra shot'ı
+                        onaylar. Onay o karara (commandId) bağlanır. */}
+                    <ShotAuthoringPanel
+                      key={`auth-${selected.id}`}
+                      sceneId={selected.id}
+                      hasAgentPrompt={hasCurrentAgentPrompt(selected, promptSourceId)}
+                      agentPromptPreview={selected.userImagePrompt ?? ''}
+                      approval={selectedApproval}
+                      commandId={commandId}
+                      onImport={(text) => importAgentPrompt(selected.id, text, 'paste')}
+                      onApprove={() => approveShot(selected.id)}
+                      onReject={() => rejectShot(selected.id)}
+                      onClearApproval={() => clearShotApproval(selected.id)}
+                    />
+
+                    {/* MACRO 5 — Manuel Frame + Motion kapısı. Mami harici araçta ürettiği frame'i
+                        yükler; site SHA-256 + boyut ölçer; Mami APPROVE verince motion açılır. */}
+                    <FrameGatePanel
+                      key={`frame-${selected.id}`}
+                      scene={selected}
+                      commandId={commandId}
+                      promptSourceId={promptSourceId}
+                      shotApproval={selectedApproval}
+                      onImportFrame={(file) => { void importFrame(selected.id, file); }}
+                      onVerdict={(v) => setFrameVerdict(selected.id, v)}
+                      onClearFrame={() => clearFrame(selected.id)}
+                    />
+                  </>
                 </motion.div>
               ) : (
                 <div style={{ color: 'var(--text-muted)', padding: 20 }}>Sol listeden bir sahne seç.</div>
@@ -427,170 +437,172 @@ export const TimelineStep = () => {
   );
 };
 
-const ImagePromptRow: React.FC<{
-  scene: Scene;
-  onSave: (v: string) => void;
-  onReset: () => void;
-}> = ({ scene, onSave, onReset }) => {
-  const state = useStudioStore();
-  const isOverridden = typeof scene.userImagePrompt === 'string';
-  const [editing, setEditing] = useState(false);
-  const [draft, setDraft] = useState(effectivePrompt(scene));
-  const [copied, setCopied] = useState(false);
-  const live = effectivePrompt(scene);
-
-  const copy = () => {
-    navigator.clipboard.writeText(live).then(() => {
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1500);
-    });
-  };
+/**
+ * MACRO 3/4 — Shot authoring: ajanın yazdığı final prompt'un geri-alımı + Mami'nin shot onayı.
+ *
+ * Site prompt YAZMAZ. Mami command'de ajana brief verir, ajan final prompt'u yazar; Mami onu
+ * buraya yapıştırır (import). Sonra shot'ı onaylar/reddeder — onay o karara (commandId) bağlanır.
+ * Karar değişince (yeni commandId) onay STALE görünür.
+ */
+const ShotAuthoringPanel: React.FC<{
+  sceneId: number;
+  hasAgentPrompt: boolean;
+  agentPromptPreview: string;
+  approval: ShotApproval | undefined;
+  commandId: string;
+  onImport: (text: string) => void;
+  onApprove: () => void;
+  onReject: () => void;
+  onClearApproval: () => void;
+}> = ({ hasAgentPrompt, agentPromptPreview, approval, commandId, onImport, onApprove, onReject, onClearApproval }) => {
+  const [draft, setDraft] = useState('');
+  const stale = approval != null && approval.commandId !== commandId;
+  const verdictColor = !approval ? 'var(--m2-muted)' : approval.verdict === 'APPROVED' ? '#93c9a8' : '#f5546b';
 
   return (
-    <div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
-        <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>
-          IMAGE PROMPT
-          {isOverridden && (
-            <span style={{ marginLeft: 8, color: 'var(--green, #4df5a0)' }}>· EDITED</span>
-          )}
-        </div>
-        <div style={{ display: 'flex', gap: 6 }}>
-          {!editing && (
-            <button
-              onClick={() => {
-                setDraft(live);
-                setEditing(true);
-              }}
-              style={iconBtnStyle()}
-            >
-              <Edit3 size={11} /> DÜZENLE
-            </button>
-          )}
-          {isOverridden && !editing && (
-            <button onClick={onReset} style={iconBtnStyle('var(--red, #f54d6b)')}>
-              <X size={11} /> SIFIRLA
-            </button>
-          )}
-          <button onClick={copy} style={iconBtnStyle(copied ? 'var(--green, #4df5a0)' : undefined)}>
-            {copied ? <Check size={11} /> : <Copy size={11} />}
-            {copied ? 'KOPYALANDI' : 'KOPYALA'}
-          </button>
-        </div>
+    <div style={{ border: '1px solid var(--m2-line)', borderRadius: 8, padding: '12px 14px', background: 'rgba(0,0,0,0.25)', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: 1.6, color: 'var(--m2-muted)', fontFamily: 'var(--m2-font-mono)' }}>
+        AJAN FINAL PROMPT · SHOT ONAYI
       </div>
-      {editing ? (
-        <div>
-          <textarea
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            style={{
-              ...inputStyle,
-              width: '100%',
-              minHeight: 140,
-              fontFamily: "'JetBrains Mono Variable', monospace",
-              fontSize: 12,
-              resize: 'vertical',
-            }}
-          />
-          <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-            <button
-              onClick={() => {
-                onSave(draft);
-                setEditing(false);
-              }}
-              style={iconBtnStyle('var(--gold)')}
-            >
-              KAYDET
-            </button>
-            <button onClick={() => setEditing(false)} style={iconBtnStyle()}>
-              VAZGEÇ
-            </button>
+
+      {/* Ajan prompt geri-alım */}
+      {hasAgentPrompt ? (
+        <div style={{ fontSize: 12.5, color: '#fff', lineHeight: 1.55, background: 'rgba(147,201,168,.06)', border: '1px solid rgba(147,201,168,.25)', borderRadius: 6, padding: '8px 10px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+          <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1.4, color: '#93c9a8', display: 'block', marginBottom: 4 }}>✎ AJAN-YAZIMI PROMPT (site brief'i değil)</span>
+          {agentPromptPreview}
+          <div style={{ marginTop: 8 }}>
+            <Button variant="ghost" onClick={() => { onImport(''); setDraft(''); }}>Geri-alımı temizle</Button>
           </div>
         </div>
       ) : (
-        <div
-          style={{
-            color: '#fff',
-            fontFamily: "'JetBrains Mono Variable', monospace",
-            fontSize: 12,
-            background: 'rgba(0,0,0,.3)',
-            padding: '10px 12px',
-            borderRadius: 8,
-            border: `1px solid ${isOverridden ? 'rgba(77,245,160,.35)' : 'var(--line)'}`,
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-          }}
-        >
-          {live}
+        <>
+          <textarea
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            placeholder="Ajanın (command'deki Claude/Codex) yazdığı final image prompt'u buraya yapıştır. Site prompt yazmaz."
+            style={{ ...inputStyle, minHeight: 90, resize: 'vertical', fontSize: 12.5, lineHeight: 1.5, fontFamily: 'var(--m2-font-mono)' }}
+          />
+          <div>
+            <Button onClick={() => { if (draft.trim()) onImport(draft.trim()); }} disabled={!draft.trim()}>
+              Ajan prompt'unu geri al
+            </Button>
+          </div>
+        </>
+      )}
+
+      {/* Mami shot onayı */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', borderTop: '1px solid var(--m2-line)', paddingTop: 10 }}>
+        <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1, color: verdictColor, fontFamily: 'var(--m2-font-mono)' }}>
+          {!approval ? 'ONAY BEKLİYOR' : approval.verdict === 'APPROVED' ? (stale ? 'ONAY BAYAT — karar değişti' : '✓ MAMİ ONAYLADI') : '✗ REDDEDİLDİ'}
+        </span>
+        <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
+          <Button onClick={onApprove} disabled={!hasAgentPrompt}>Onayla</Button>
+          <Button variant="ghost" onClick={onReject}>Reddet</Button>
+          {approval && <Button variant="ghost" onClick={onClearApproval}>Onayı sıfırla</Button>}
+        </div>
+      </div>
+      {!hasAgentPrompt && !approval && (
+        <div style={{ fontSize: 11, color: 'var(--m2-muted)', fontStyle: 'italic' }}>
+          Motion, yalnız Mami onayladığı kareden sonra açılır. Önce ajan prompt'unu geri al, sonra shot'ı onayla.
         </div>
       )}
-      
-      {/* Kanıt Doktoru Rail */}
-      <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 6 }}>
-        {proofDoctor({
-          type: 'scene',
-          text: live,
-          motionText: scene.motionPrompt,
-          sourceCoverage: state.sourceReport?.coverage ?? undefined,
-          productionPath: state.projectClass,
-          hybridMode: state.projectClass?.includes('HYBRID'),
-          hasLockedTextOrLogo: state.projectClass === 'PRODUCT_HERO',
-        }).map((f, idx) => (
-          <div key={idx} style={{ 
-            padding: '6px 10px', 
-            borderRadius: 6, 
-            fontSize: 11,
-            background: f.status === 'PASS' ? 'rgba(77,245,160,.1)' : f.status === 'FAIL' ? 'rgba(245,77,107,.1)' : 'rgba(247,201,72,.1)',
-            border: `1px solid ${f.status === 'PASS' ? 'rgba(77,245,160,.3)' : f.status === 'FAIL' ? 'rgba(245,77,107,.3)' : 'rgba(247,201,72,.3)'}`,
-            color: f.status === 'PASS' ? '#4df5a0' : f.status === 'FAIL' ? '#f54d6b' : '#f7c948',
-          }}>
-            <div style={{ fontWeight: 700, marginBottom: 2 }}>
-              {f.status} {f.problem && `· ${f.problem}`}
-            </div>
-            {f.why && <div style={{ opacity: 0.8, marginBottom: 4 }}>{f.why}</div>}
-            {f.status === 'FIX' && f.replaceWith && (
-              <button
-                onClick={() => {
-                  onSave(live + ' ' + f.replaceWith);
-                }}
-                style={{
-                  background: 'rgba(0,0,0,.2)',
-                  border: '1px solid currentColor',
-                  borderRadius: 4,
-                  padding: '2px 8px',
-                  fontSize: 10,
-                  cursor: 'pointer',
-                  color: 'inherit',
-                  fontFamily: 'inherit',
-                  fontWeight: 600,
-                }}
-              >
-                HIZLI UYGULA (FIX)
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
 
-function iconBtnStyle(accent?: string): React.CSSProperties {
-  return {
-    padding: '4px 8px',
-    fontSize: 10,
-    background: 'transparent',
-    border: '1px solid var(--line2)',
-    borderRadius: 6,
-    color: accent || 'var(--text-muted)',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: 4,
-    letterSpacing: 1,
-    fontFamily: 'inherit',
-  };
-}
+/**
+ * MACRO 5 — Manuel Frame + Motion kapısı. Mami harici araçta ürettiği frame'i yükler; site
+ * SHA-256 + boyut/aspect ölçer ve hangi karar/prompt'a bağlı olduğunu receipt'e yazar. Motion
+ * brief YALNIZ Mami APPROVE ettiği current frame ile açılır — prompt'a değil GERÇEK piksele bağlı.
+ */
+const FrameGatePanel: React.FC<{
+  scene: Scene;
+  commandId: string;
+  promptSourceId: string;
+  shotApproval: ShotApproval | undefined;
+  onImportFrame: (file: File) => void;
+  onVerdict: (verdict: SceneFrameReceipt['verdict']) => void;
+  onClearFrame: () => void;
+}> = ({ scene, commandId, promptSourceId, shotApproval, onImportFrame, onVerdict, onClearFrame }) => {
+  const f = scene.frameReceipt;
+  const gate = motionGate(scene, commandId, promptSourceId, shotApproval);
+  const storyboardApproved = shotApproval?.verdict === 'APPROVED' && shotApproval.commandId === commandId;
+  const stale = f != null && (
+    f.fromCommandId !== commandId
+    || !hasCurrentAgentPrompt(scene, promptSourceId)
+    || f.fromPromptHash !== scene.promptReceipt?.promptHash
+  );
+
+  return (
+    <div style={{ border: `1px solid ${gate.open ? 'rgba(147,201,168,.4)' : 'var(--m2-line)'}`, borderRadius: 8, padding: '12px 14px', background: 'rgba(0,0,0,0.25)', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: 1.6, color: 'var(--m2-muted)', fontFamily: 'var(--m2-font-mono)' }}>
+        GERÇEK FRAME · MOTION KAPISI
+      </div>
+
+      {f ? (
+        <>
+          <div style={{ fontSize: 11.5, color: '#fff', fontFamily: 'var(--m2-font-mono)', lineHeight: 1.6, background: 'rgba(0,0,0,0.3)', borderRadius: 6, padding: '8px 10px' }}>
+            <div>📄 {f.fileName} · {(f.byteSize / 1024).toFixed(0)} KB</div>
+            <div>SHA-256: <span style={{ color: 'var(--gold)' }}>{f.frameHash.slice(0, 24)}…</span></div>
+            <div>{f.width}×{f.height} · aspect {f.aspect}{f.aspect === 1.778 ? ' (16:9)' : ''}</div>
+            {stale && <div style={{ color: '#f5546b' }}>⚠ Frame eski karara bağlı — karar değişti, yeniden üret.</div>}
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1, color: gate.open ? '#93c9a8' : 'var(--m2-amber)', fontFamily: 'var(--m2-font-mono)' }}>
+              {f.verdict === 'PENDING' ? 'HÜKÜM BEKLİYOR' : f.verdict === 'APPROVE' ? (gate.open ? '✓ ONAYLI — MOTION AÇIK' : 'ONAYLI (stale)') : f.verdict}
+            </span>
+            <div style={{ display: 'flex', gap: 8, marginLeft: 'auto', flexWrap: 'wrap' }}>
+              <Button onClick={() => onVerdict('APPROVE')}>Onayla</Button>
+              <Button variant="ghost" onClick={() => onVerdict('REGENERATE')}>Yeniden üret</Button>
+              <Button variant="ghost" onClick={() => onVerdict('PROJECT_ONLY_ACCEPT')}>Yalnız projeye al</Button>
+              <Button variant="ghost" onClick={onClearFrame}>Kaldır</Button>
+            </div>
+          </div>
+        </>
+      ) : !storyboardApproved ? (
+        <div style={{ fontSize: 12, color: 'var(--m2-amber)', lineHeight: 1.5 }}>
+          Önce yukarıdaki storyboard shot için Mami Onayla ver. Frame yükleme ondan sonra açılır.
+        </div>
+      ) : (
+        <>
+          <div style={{ fontSize: 12, color: 'var(--m2-muted)', lineHeight: 1.5 }}>
+            Frame'i seçtiğin harici araçta elle üret, sonra buraya yükle. Site
+            görsel ÜRETMEZ — yalnız senin karenin SHA-256'sını ve boyutunu kaydeder.
+          </div>
+          <label className="ml-file-picker" style={{ display: 'inline-block' }}>
+            <input
+              className="ml-file-input"
+              aria-label="Gerçek frame yükle"
+              type="file"
+              accept="image/*"
+              onChange={(e) => { const file = e.target.files?.[0]; if (file) onImportFrame(file); e.currentTarget.value = ''; }}
+            />
+            <span className="ml-file-picker-face" style={{ display: 'inline-block', padding: '8px 14px', border: '1px solid var(--m2-line-strong)', borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: 'pointer', color: 'var(--m2-paper)', fontFamily: 'var(--m2-font-mono)' }}>
+              ⬆ FRAME YÜKLE
+            </span>
+          </label>
+        </>
+      )}
+
+      {/* Motion brief — YALNIZ kapı açıkken. Kapalıysa nedeni yazılır. */}
+      <div style={{ borderTop: '1px solid var(--m2-line)', paddingTop: 10 }}>
+        {gate.open ? (
+          <div style={{ fontSize: 12, color: '#fff', lineHeight: 1.55 }}>
+            <span style={{ fontSize: 9.5, fontWeight: 800, letterSpacing: 1.4, color: '#93c9a8', display: 'block', marginBottom: 4 }}>▶ MOTION BRIEF AÇIK</span>
+            Ajan motion prompt'unu YALNIZ bu onaylı karede görüneni animasyona alarak yazar —
+            karede olmayan karakter/nesne/ortam UYDURULAMAZ. Motor lehçesi ve süre iskeleti:
+            <div style={{ marginTop: 6, fontFamily: 'var(--m2-font-mono)', fontSize: 11.5, color: 'var(--m2-muted)', whiteSpace: 'pre-wrap' }}>{scene.motionPrompt || '(iskelet yok)'}</div>
+          </div>
+        ) : (
+          <div style={{ fontSize: 11.5, color: 'var(--m2-muted)', fontStyle: 'italic' }}>
+            ⏸ Motion kapalı — {gate.reason}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?: boolean; copyable?: boolean }> = ({
   label,
@@ -616,7 +628,7 @@ const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?
           marginBottom: 4,
         }}
       >
-        <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold)', fontWeight: 700 }}>
+        <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--m2-amber)', fontWeight: 700, fontFamily: 'var(--m2-font-mono)' }}>
           {label.toUpperCase()}
         </div>
         {copyable && (
@@ -626,9 +638,10 @@ const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?
               padding: '4px 8px',
               fontSize: 10,
               background: 'transparent',
-              border: '1px solid var(--line2)',
-              borderRadius: 6,
-              color: copied ? 'var(--green, #4df5a0)' : 'var(--text-muted)',
+              border: '1px solid var(--m2-line-strong)',
+              borderRadius: 0,
+              color: copied ? 'var(--m2-paper)' : 'var(--m2-muted)',
+              fontFamily: 'var(--m2-font-mono)',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
@@ -643,13 +656,13 @@ const DetailRow: React.FC<{ label: string; value: string; mono?: boolean; block?
       </div>
       <div
         style={{
-          color: '#fff',
-          fontFamily: mono ? "'JetBrains Mono Variable', 'JetBrains Mono', monospace" : 'inherit',
+          color: 'var(--m2-paper)',
+          fontFamily: mono ? "var(--m2-font-mono)" : 'inherit',
           fontSize: mono ? 12 : 13,
-          background: block ? 'rgba(0,0,0,.3)' : 'transparent',
-          padding: block ? '10px 12px' : 0,
-          borderRadius: block ? 8 : 0,
-          border: block ? '1px solid var(--line)' : 'none',
+          background: 'transparent',
+          padding: 0,
+          borderRadius: 0,
+          border: 'none',
           whiteSpace: 'pre-wrap',
           wordBreak: 'break-word',
         }}
@@ -677,7 +690,7 @@ const FilmStrip: React.FC<{
     </div>
   );
   return (
-    <div style={{ borderRadius: 'var(--r-lg)', overflow: 'hidden', border: '1px solid var(--line2)', background: 'linear-gradient(180deg,#15151b,#0e0e12)', boxShadow: 'var(--shadow)' }}>
+    <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--line2)', background: 'linear-gradient(180deg, rgba(5,4,2,0.72), rgba(12,10,7,0.6))', boxShadow: 'var(--shadow)' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 16px 0' }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 10, letterSpacing: 1.8, color: 'var(--gold)', fontWeight: 800 }}>
           <span style={{ width: 5, height: 5, borderRadius: 999, background: 'var(--gold)', boxShadow: '0 0 8px var(--goldglow)' }} /> FİLM ŞERİDİ
@@ -695,13 +708,13 @@ const FilmStrip: React.FC<{
               onClick={() => onPick(s.id)}
               title={`Sahne ${s.id} · ${s.phaseName} · ${s.durationSec}s`}
               style={{
-                flex: Math.max(0.6, s.durationSec), minWidth: 44, height: 72, position: 'relative',
+                flex: Math.max(0.6, s.durationSec), minWidth: 56, height: 96, position: 'relative',
                 borderRadius: 8, cursor: 'pointer', overflow: 'hidden',
-                border: `1px solid ${active ? 'var(--gold)' : 'var(--line2)'}`,
-                background: '#0a0a0d',
+                border: `1px solid ${active ? 'var(--gold)' : 'rgba(0,0,0,0.55)'}`,
+                background: 'rgba(5,4,2,0.6)',
                 boxShadow: active ? 'var(--ring-gold)' : 'none',
                 transition: 'all var(--dur) var(--ease)',
-                padding: 0,
+                padding: 2,
               }}
             >
               <span aria-hidden style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: phase }} />
@@ -709,8 +722,12 @@ const FilmStrip: React.FC<{
               <span aria-hidden style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: `${Math.max(8, s.intensity)}%`, background: `linear-gradient(180deg, ${phase}22, ${phase}55)` }} />
               <span style={{ position: 'absolute', top: 8, left: 7, fontSize: 11, fontWeight: 800, fontFamily: 'var(--font-mono)', color: active ? 'var(--gold-hi)' : '#fff' }}>{s.id}</span>
               <span style={{ position: 'absolute', bottom: 5, left: 7, fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--text-soft)' }}>{s.durationSec}s</span>
+              {/* Faz kodu: durum salt-renge dayanmaz (renk-körü güvenli) */}
+              <span style={{ position: 'absolute', bottom: 5, right: 6, fontSize: 8, fontWeight: 800, letterSpacing: 0.6, fontFamily: 'var(--font-mono)', color: active ? 'var(--gold-hi)' : 'var(--text-muted)' }}>
+                {PHASE_CODE[s.phaseName] ?? ''}
+              </span>
               {s.duration && !s.duration.ok && (
-                <span style={{ position: 'absolute', top: 6, right: 6, fontSize: 9, fontWeight: 800, color: 'var(--red)' }}>!</span>
+                <span title="Süre limiti aşıldı" style={{ position: 'absolute', top: 6, right: 6, fontSize: 9, fontWeight: 800, color: 'var(--red)' }}>⚠</span>
               )}
             </button>
           );
@@ -759,18 +776,32 @@ const PacingArc: React.FC<{
       <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" style={{ width: '100%', height: 70, display: 'block' }}>
         <defs>
           <linearGradient id="pacingFill" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="#f7c948" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#f7c948" stopOpacity="0" />
+            <stop offset="0%" stopColor="#f6c862" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#f6c862" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path d={areaPath} fill="url(#pacingFill)" />
-        <path d={linePath} fill="none" stroke="#f7c948" strokeWidth="0.8" />
+        <path d={linePath} fill="none" stroke="#f6c862" strokeWidth="0.8" />
         {points.map((p) => {
           const active = selectedSceneId === p.scene.id;
           return (
-            <g key={p.scene.id} style={{ cursor: 'pointer' }} onClick={() => onPick(p.scene.id)}>
+            <g
+              key={p.scene.id}
+              role="button"
+              tabIndex={0}
+              aria-label={`Sahne ${p.scene.id} seç`}
+              aria-pressed={active}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onPick(p.scene.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onPick(p.scene.id);
+                }
+              }}
+            >
               <circle cx={p.x} cy={p.y} r={active ? 2.4 : 1.6} fill={PHASE_COLORS[p.scene.phaseName] || '#fff'} stroke="#0a0a14" strokeWidth="0.3" />
-              {active && <circle cx={p.x} cy={p.y} r={3.6} fill="none" stroke="#f7c948" strokeWidth="0.4" />}
+              {active && <circle cx={p.x} cy={p.y} r={3.6} fill="none" stroke="#f6c862" strokeWidth="0.4" />}
             </g>
           );
         })}
@@ -778,13 +809,3 @@ const PacingArc: React.FC<{
     </div>
   );
 };
-
-function downloadFile(name: string, content: string, mime: string) {
-  const blob = new Blob([content], { type: mime });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = name;
-  a.click();
-  URL.revokeObjectURL(url);
-}

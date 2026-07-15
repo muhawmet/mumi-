@@ -44,7 +44,7 @@ exclude trailer brass, EDM drops, busy percussion clipping the VO, genre drift."
 
 IP Çizim Stili materials add a sound-design micro-cue (texture layer only):
 - `one_piece` / `naruto` / `dragon_ball` → punch-and-ring cartoon impact accent (very brief)
-- `demon_slayer` / `jjk_mappa` → subtle taiko ghost hit at peak frame
+- `demon_slayer` / `jjk_ink_style` → subtle taiko ghost hit at peak frame
 - `solo_leveling` / `attack_titan` → low industrial sub rumble under power event
 - `arcane_paint` → warm ember crackle in the background texture
 </bpm_guardrails>

@@ -51,3 +51,17 @@ describe('beats.ts - Semantic Beat Planner', () => {
     expect(score).toBeGreaterThan(0);
   });
 });
+
+describe('norm() Türkçe locale — büyük İ sahne-kesim sinyallerini bozmaz', () => {
+  const bounds = { min: 4, target: 8, max: 14 };
+  it('büyük-İ ordinal giriş ("İkinci...") küçük harfli haliyle aynı mergeScore verir', () => {
+    const prev = 'Kısa bir cümle.';
+    expect(mergeScore(prev, 'İkinci unsur şudur.', bounds))
+      .toBe(mergeScore(prev, 'ikinci unsur şudur.', bounds));
+  });
+  it('büyük-İ reveal ("İşte...") küçük harfli haliyle aynı mergeScore verir', () => {
+    const prev = 'Kısa bir cümle.';
+    expect(mergeScore(prev, 'İşte buna döngü diyoruz.', bounds))
+      .toBe(mergeScore(prev, 'işte buna döngü diyoruz.', bounds));
+  });
+});
