@@ -1090,12 +1090,12 @@ describe('generateBatch 5-scene — event uniqueness + Moving element quality (S
     videoModel: 'kling_3',
   };
 
-  it('(a.i) architecture.event her sahne için verbatim kaynağı taşır (banka özne uydurmaz)', () => {
+  it('(a.i) architecture.exactSourceBeat her sahne için verbatim kaynağı taşır (banka özne uydurmaz)', () => {
     const result = generateBatch(styInput as any);
     expect(result.status).toBe('GENERATED');
-    // Yeni akış: architecture.event = verbatim kaynak beat (banka öznesi değil).
+    // M3 dürüst ad: architecture.exactSourceBeat = verbatim kaynak beat (banka öznesi değil).
     for (const s of result.scenes) {
-      expect(s.architecture.event, `Sahne ${s.id} event verbatim kaynağı taşımıyor`).toBe(s.voiceOver);
+      expect(s.architecture.exactSourceBeat, `Sahne ${s.id} exactSourceBeat verbatim kaynağı taşımıyor`).toBe(s.voiceOver);
       expect(hasBankResidue(s.imagePrompt), `Sahne ${s.id} banka izi`).toBe(false);
     }
   });
@@ -1142,11 +1142,11 @@ describe('generateBatch 5-scene — event uniqueness + Moving element quality (R
     videoModel: 'kling_3',
   };
 
-  it('(b.i) architecture.event her sahne için verbatim kaynağı taşır (banka özne uydurmaz)', () => {
+  it('(b.i) architecture.exactSourceBeat her sahne için verbatim kaynağı taşır (banka özne uydurmaz)', () => {
     const result = generateBatch(realInput as any);
     expect(result.status).toBe('GENERATED');
     for (const s of result.scenes) {
-      expect(s.architecture.event, `Sahne ${s.id} event verbatim kaynağı taşımıyor`).toBe(s.voiceOver);
+      expect(s.architecture.exactSourceBeat, `Sahne ${s.id} exactSourceBeat verbatim kaynağı taşımıyor`).toBe(s.voiceOver);
       expect(hasBankResidue(s.imagePrompt), `Sahne ${s.id} banka izi`).toBe(false);
     }
   });
@@ -1550,9 +1550,9 @@ describe('BUG 2 — Türkçe sızıntı yok: batch çıktısında TR karakter ol
     }
   });
 
-  it('graft söküldü: architecture.event verbatim kaynak (TR meşru); kıyılmış TR token asla', () => {
+  it('graft söküldü: architecture.exactSourceBeat verbatim kaynak (TR meşru); kıyılmış TR token asla', () => {
     // Eski kök: bank tükenince event'e TR graft yapıştırılıyordu (kayp/pusulann...).
-    // Yeni akış: graft YOK. architecture.event = verbatim kaynak beat — TR diakritik
+    // Yeni akış: graft YOK. architecture.exactSourceBeat = verbatim kaynak beat — TR diakritik
     // artık MEŞRU (kaynak Türkçe); ama KIYILMIŞ (mangled) token asla olmamalı.
     const out = generateBatch({
       projectTopic: 'Seramik ve atölye ve çanak çömlek ve kil',
@@ -1567,10 +1567,10 @@ describe('BUG 2 — Türkçe sızıntı yok: batch çıktısında TR karakter ol
       videoModel: 'kling_3',
     } as any);
     for (const scene of out.scenes) {
-      // event = verbatim kaynak (banka öznesi değil)
-      expect(scene.architecture.event, `S${scene.id} event verbatim kaynağı taşımıyor`).toBe(scene.voiceOver);
+      // exactSourceBeat = verbatim kaynak (banka öznesi değil)
+      expect(scene.architecture.exactSourceBeat, `S${scene.id} exactSourceBeat verbatim kaynağı taşımıyor`).toBe(scene.voiceOver);
       // kıyılmış graft token asla (image + motion)
-      expect(KNOWN_MANGLED.test(scene.architecture.event), `Event'te kıyılmış token: "${scene.architecture.event}"`).toBe(false);
+      expect(KNOWN_MANGLED.test(scene.architecture.exactSourceBeat), `Beat'te kıyılmış token: "${scene.architecture.exactSourceBeat}"`).toBe(false);
       expect(KNOWN_MANGLED.test(scene.motionPrompt), `S${scene.id} motionPrompt kıyılmış token`).toBe(false);
       expect(KNOWN_MANGLED.test(scene.imagePrompt), `S${scene.id} imagePrompt kıyılmış token`).toBe(false);
       // banka Moving element satırı söküldü

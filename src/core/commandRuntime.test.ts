@@ -283,6 +283,8 @@ describe('interactive command runtime', () => {
     const prompt = 'A physical water-cycle frame with cloud and basin.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
+      // BRAIN M3: zorunlu şeffaf yorum receipt'i.
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
       directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
       appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
     });
@@ -354,6 +356,8 @@ describe('interactive command runtime', () => {
     const prompt = 'Scene one approved image prompt.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
+      // BRAIN M3: zorunlu şeffaf yorum receipt'i.
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
       directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
       appliedLocks: ['world'], suppressedContext: [], risks: [],
     });
@@ -431,6 +435,7 @@ describe('interactive command runtime', () => {
       template.content = {
         prompt: 'provider-authored prompt',
         promptHash: sha256('provider-authored prompt'),
+        interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
         directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
         appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
       };

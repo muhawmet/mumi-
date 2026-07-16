@@ -932,10 +932,41 @@ export function normalizeVideoModel(value: unknown): string {
   return LEGACY_VIDEO_MODELS.has(value.toLowerCase()) ? CURRENT_VIDEO_MODEL : value;
 }
 
+/**
+ * BRAIN M3 (Sol KRİTİK #2): eski persisted sahneler `architecture.dominantSubject/event`
+ * (verbatim beat'in byte-copy'si) taşır; yeni şekil dürüst `exactSourceBeat` +
+ * `semanticInterpretationStatus: 'AGENT_AUTHORED'`. Migration olmadan eski projelerde
+ * QA/export/UI sessizce boş alan okur. Kopyalar aynı byte olduğundan iyileşme kayıpsız:
+ * source.exactText (yoksa eski dominantSubject) yeni alana taşınır, kopya alanlar düşer.
+ */
+export function healArchitectureM3(scenes: unknown): any {
+  if (!Array.isArray(scenes)) return scenes;
+  return scenes.map((scene: any) => {
+    const arch = scene?.architecture;
+    if (!arch || typeof arch !== 'object') return scene;
+    if (typeof arch.exactSourceBeat === 'string' && !('dominantSubject' in arch) && !('event' in arch)) return scene;
+    const { dominantSubject, event: _legacyEvent, ...rest } = arch;
+    return {
+      ...scene,
+      architecture: {
+        ...rest,
+        exactSourceBeat: typeof arch.exactSourceBeat === 'string' && arch.exactSourceBeat
+          ? arch.exactSourceBeat
+          : (arch.source?.exactText ?? dominantSubject ?? ''),
+        semanticInterpretationStatus: 'AGENT_AUTHORED' as const,
+      },
+    };
+  });
+}
+
 export function migratePersistedState(value: unknown): Partial<StudioState> {
   if (!value || typeof value !== 'object') return {};
   const persisted = value as any;
-  const needsV6Migration = ('selectedRefId' in persisted) || Array.isArray(persisted.selectedRefIds);
+  // BRAIN M3 (Sol re-audit): v5'in tek gerçek imzası tekil `selectedRefId`dir.
+  // Eski tetik `Array.isArray(selectedRefIds)`i de sayıyordu — bu HER modern state'te
+  // doğru olduğundan loadFromVault/legacy-import her seferinde V5→V6'ya girip
+  // scenes=[] ile sahneleri SİLİYORDU (ölçüldü: iki yol da sceneCount 0 verdi).
+  const needsV6Migration = 'selectedRefId' in persisted;
   if (needsV6Migration) {
     migrateStateV5ToV6(persisted);
   }
@@ -969,7 +1000,9 @@ export function migratePersistedState(value: unknown): Partial<StudioState> {
     voSyncMode: persisted.voSyncMode ?? 'FREE',
     osTextMode: persisted.osTextMode ?? 'AUTO',
     ...(vault ? { vault } : {}),
-    scenes: scenes.map((s: any) => ({ onScreenText: null, ...s })),
+    // BRAIN M3: legacy import yolları (V2026 read-only, project pack) da buradan geçer —
+    // eski architecture şekli her girişte iyileşsin.
+    scenes: healArchitectureM3(scenes.map((s: any) => ({ onScreenText: null, ...s }))),
     // Brief + packets are only trustworthy when the full scene batch survived migration.
     agentBrief: intact && typeof persisted.agentBrief === 'string' ? persisted.agentBrief : '',
     agentPackets: intact ? persisted.agentPackets || null : null,
@@ -1758,7 +1791,7 @@ export const useStudioStore = create<StudioState>()(
       name: 'mamilas-studio-v1',
       storage: createJSONStorage(() => (typeof window === 'undefined' ? serverStorage : window.localStorage)),
       partialize: (s) => ({ ...pickProjectState(s), vault: s.vault }),
-      version: 9,
+      version: 10,
       migrate: (persistedState, version) => {
         let s: any = persistedState;
         if (version < 7) {
@@ -1796,6 +1829,18 @@ export const useStudioStore = create<StudioState>()(
             s.vault = s.vault.map((entry: any) =>
               entry?.snapshot?.scenes
                 ? { ...entry, snapshot: { ...entry.snapshot, scenes: healScenes(entry.snapshot.scenes) } }
+                : entry,
+            );
+          }
+        }
+        // v10 (BRAIN M3): architecture.dominantSubject/event → exactSourceBeat +
+        // semanticInterpretationStatus. Eski byte-copy alanları düşer; verbatim beat korunur.
+        if (version < 10 && s && typeof s === 'object') {
+          s.scenes = healArchitectureM3(s.scenes);
+          if (Array.isArray(s.vault)) {
+            s.vault = s.vault.map((entry: any) =>
+              entry?.snapshot?.scenes
+                ? { ...entry, snapshot: { ...entry.snapshot, scenes: healArchitectureM3(entry.snapshot.scenes) } }
                 : entry,
             );
           }

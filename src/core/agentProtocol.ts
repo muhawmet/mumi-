@@ -54,9 +54,23 @@ export interface JuryContent {
   evidence?: string[];
 }
 
+/**
+ * BRAIN M3 — şeffaf yorum receipt'i (KUSUR-A, Mami revizyonu 2026-07-16).
+ * Ajanın sahne yorumu (dominant özne / tek olay / donmuş an) artık GÖRÜNMEZ değil:
+ * her image_author artifact'i bu tek-satırlık bloğu zorunlu taşır. Bu bir onay
+ * kapısı DEĞİLDİR — akış durmaz; Mami ilk görselleri üretip doğal dille müdahale
+ * eder ve müdahalesi MamiDirectives olarak receipt'te kaynak görünür.
+ */
+export interface InterpretationReceipt {
+  dominantSubject: string;
+  singleEvent: string;
+  frozenInstant: string;
+}
+
 export interface ImageAuthorContent {
   prompt: string;
   promptHash: string;
+  interpretation: InterpretationReceipt;
   directiveReceipts: Array<{ id: string; text: string; status: 'APPLIED' | 'SUPPRESSED' }>;
   appliedLocks: string[];
   suppressedContext: string[];
@@ -172,6 +186,15 @@ export function verifyAgentArtifact(
   } else if (a.role === 'image_author') {
     const content = a.content as ImageAuthorContent;
     if (!content?.prompt?.trim() || content.promptHash !== sha256Hex(content.prompt ?? '')) problems.push('image prompt/hash geçersiz');
+    // BRAIN M3: yorum şeffaf olmak zorunda — üç alan da dolu tek-satır receipt.
+    // Onay kapısı değildir; lifecycle akışını değiştirmez, yalnız görünürlüğü zorlar.
+    const interp = content?.interpretation as unknown as Record<string, unknown> | undefined;
+    // Sol P2: non-string değer TypeError değil kontrollü RED üretmeli (runner ile eşdeğer).
+    const interpField = (key: 'dominantSubject' | 'singleEvent' | 'frozenInstant') =>
+      typeof interp?.[key] === 'string' && (interp[key] as string).trim().length > 0;
+    if (!interpField('dominantSubject') || !interpField('singleEvent') || !interpField('frozenInstant')) {
+      problems.push('interpretation receipt eksik — dominantSubject/singleEvent/frozenInstant üçü de zorunlu');
+    }
     if (!Array.isArray(content?.directiveReceipts)) problems.push('directiveReceipts yok');
     if (!Array.isArray(content?.appliedLocks) || content.appliedLocks.length === 0) problems.push('appliedLocks yok');
     if (!Array.isArray(content?.suppressedContext) || !Array.isArray(content?.risks)) problems.push('image receipt listeleri eksik');

@@ -17,10 +17,20 @@ cue across them and never list them, blend their catalogues, or borrow their sto
 or era. If the approved shot and any fallback topic label disagree, the approved shot wins; record the
 conflict under `risks`, never blend two stories.
 
+Before writing the prompt, state your reading of the scene as a one-line `interpretation` receipt —
+`dominantSubject` (the one thing this frame is about), `singleEvent` (the one thing happening) and
+`frozenInstant` (the exact instant the frame freezes, e.g. "half a second before X"). This makes your
+head visible to Mami; it is NOT an approval gate — write it and continue without stopping. The site
+carries the beat verbatim as `exactSourceBeat` with `semanticInterpretationStatus: AGENT_AUTHORED`:
+interpreting it is your job alone, and the receipt is where that interpretation lives. If Mami later
+corrects your reading in natural language, it arrives as a MamiDirective and must appear as the source
+in `directiveReceipts`.
+
 Before sealing, counter-read the prompt against every `promptQuality.requiredEvidence` and
 `promptQuality.rejectIf` item. Remove any sentence that does not make the pictured instant more
 observable. End with a compact, scene-specific negative line only when it protects a fragile element.
 Record every exact Mami directive in `directiveReceipts` with `APPLIED` or `SUPPRESSED`, plus
 `appliedLocks`, `suppressedContext` and `risks`. Put the prompt and its SHA-256 in `prompt` and
-`promptHash`. Output a `mamilas.agent-artifact.v1` with role `image_author`; never include workflow prose, TODO,
-`[DIRECTOR TASK]` or raw hex in the prompt.
+`promptHash`, and the interpretation receipt in `interpretation` (all three fields required — the
+artifact is rejected without them). Output a `mamilas.agent-artifact.v1` with role `image_author`; never
+include workflow prose, TODO, `[DIRECTOR TASK]` or raw hex in the prompt.

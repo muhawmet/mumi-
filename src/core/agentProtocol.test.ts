@@ -9,7 +9,10 @@ const decisionHash = 'd'.repeat(64);
 const storyboardHash = 's'.repeat(64);
 const base = { provider: 'codex' as const, sceneId: 1, decisionHash, storyboardHash, inputArtifactHashes: [] as string[], revision: 0 as const };
 const imageContent = (prompt: string) => ({
-  prompt, promptHash: sha256Hex(prompt), directiveReceipts: [], appliedLocks: ['world'], suppressedContext: [], risks: [],
+  prompt, promptHash: sha256Hex(prompt),
+  // BRAIN M3: yorum şeffaf — image_author artifact'i zorunlu interpretation receipt'i taşır.
+  interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+  directiveReceipts: [], appliedLocks: ['world'], suppressedContext: [], risks: [],
 });
 
 describe('agent protocol — deterministic hash/tamper/stale', () => {

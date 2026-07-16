@@ -542,7 +542,7 @@ describe('generateBatch', () => {
     expect(packets).not.toContain('fallback concept — sharpen');
     expect(result.scenes.map((scene) => scene.voiceOver).join('')).toBe(rawSource);
     expect(result.scenes[0].imagePrompt).toContain('Bu bölüm kaynak cümlesi 1');
-    expect(new Set(result.scenes.slice(0, 8).map((scene) => scene.architecture.event)).size).toBeGreaterThan(1);
+    expect(new Set(result.scenes.slice(0, 8).map((scene) => scene.architecture.exactSourceBeat)).size).toBeGreaterThan(1);
   });
 
   it('stress-tests civic and digital briefs for final-brief specificity', () => {

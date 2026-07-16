@@ -59,7 +59,12 @@ function imageBundleForCommand(
     phase: 'IMAGE_PROMPT', role: 'image_author', provider: 'codex', sceneId,
     decisionHash: command.commandId.replace(/^mamilas-/, ''), storyboardHash: command.lifecycle.storyboardHash,
     inputArtifactHashes: [contextHash], revision: 0,
-    content: { prompt, promptHash: sha256Hex(prompt), directiveReceipts, appliedLocks: ['world'], suppressedContext: [], risks: [] },
+    content: {
+      prompt, promptHash: sha256Hex(prompt),
+      // BRAIN M3: zorunlu şeffaf yorum receipt'i.
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts, appliedLocks: ['world'], suppressedContext: [], risks: [],
+    },
   });
   const jury = createAgentArtifact({
     phase: 'IMAGE_JURY', role: 'image_jury', provider: 'codex', sceneId,

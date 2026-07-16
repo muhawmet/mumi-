@@ -173,6 +173,15 @@ function validateRoleContent(artifact, command) {
   if (artifact.role === 'image_author') {
     if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('image prompt');
     if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('image promptHash');
+    // BRAIN M3: yorum şeffaf olmak zorunda — dominant özne/tek olay/donmuş an tek-satır receipt.
+    // Onay kapısı DEĞİLDİR (akış durmaz); yalnız görünürlük zorlanır. agentProtocol.ts ile aynı yasa.
+    const interp = content.interpretation;
+    if (!interp || typeof interp !== 'object'
+      || typeof interp.dominantSubject !== 'string' || !interp.dominantSubject.trim()
+      || typeof interp.singleEvent !== 'string' || !interp.singleEvent.trim()
+      || typeof interp.frozenInstant !== 'string' || !interp.frozenInstant.trim()) {
+      problems.push('interpretation receipt eksik (dominantSubject/singleEvent/frozenInstant)');
+    }
     if (!Array.isArray(content.directiveReceipts)) problems.push('directiveReceipts');
     else {
       const normalized = content.directiveReceipts.map((item) => ({ id: item?.id, text: item?.text, status: item?.status }));
@@ -616,6 +625,9 @@ async function launchInteractive(provider, projectDir, workspaceDir) {
 function artifactContentTemplate(role, command, scene) {
   if (role === 'image_author') return {
     prompt: '', promptHash: '',
+    // BRAIN M3: zorunlu şeffaf yorum receipt'i — template boş alanları gösterir ki
+    // ilk gerçek author çıktısı şema yüzünden reddedilmesin.
+    interpretation: { dominantSubject: '', singleEvent: '', frozenInstant: '' },
     directiveReceipts: (command.lifecycle.mamiDirectives ?? [])
       .filter((item) => item.scope === 'PROJECT' || item.sceneId === scene.id)
       .map((item) => ({ id: item.id, text: item.text, status: '' })),

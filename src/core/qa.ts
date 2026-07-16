@@ -172,14 +172,15 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
   const subjectCounts: Record<string, number> = {};
 
   scenes.forEach(s => {
-    const text = ((s.architecture?.dominantSubject || '') + ' ' + (s.architecture?.event || '')).toLowerCase();
+    // BRAIN M3: dominantSubject/event kalktı — ikisi de zaten verbatim beat'in kopyasıydı.
+    const text = (s.architecture?.exactSourceBeat || '').toLowerCase();
     const foundPhrases = genericPhrases.filter(p => text.includes(p));
     if (foundPhrases.length > 0) {
       cSuccess = false;
       cEvidence.push(`Sahne ${s.id}: Jenerik tabir bulundu (${foundPhrases.join(', ')}).`);
       cSceneIds.add(s.id);
     }
-    const subject = s.architecture?.dominantSubject || '';
+    const subject = s.architecture?.exactSourceBeat || '';
     if (subject) subjectCounts[subject] = (subjectCounts[subject] || 0) + 1;
   });
   for (const [sub, count] of Object.entries(subjectCounts)) {
@@ -290,10 +291,10 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
   let longestScene = climaxScenes[0] || scenes[scenes.length - 1];
   if (climaxScenes.length > 0) longestScene = climaxScenes.reduce((prev, curr) => (curr.durationSec > prev.durationSec) ? curr : prev, climaxScenes[0]);
 
-  if (longestScene && longestScene.architecture?.dominantSubject) {
+  if (longestScene && longestScene.architecture?.exactSourceBeat) {
       ieEvidence.push(`Final 1/3'teki en uzun sahne (Sahne ${longestScene.id}, ${longestScene.durationSec}s) analiz edildi.`);
-      ieEvidence.push(`Odak: ${longestScene.architecture.dominantSubject}`);
-      tips.push({ skill: 'inland_empire', level: 'Legendary', success: true, text: `Neden kamera sadece etrafı izliyor? O "${longestScene.architecture.dominantSubject}" var ya... Belki de ona çok daha karanlık, çok daha ruhani bir açıdan yaklaşmalıyız. Nesnelerin cansızlığına bir ruh üfle.`, evidence: ieEvidence, sceneIds: [longestScene.id] });
+      ieEvidence.push(`Odak: ${longestScene.architecture.exactSourceBeat}`);
+      tips.push({ skill: 'inland_empire', level: 'Legendary', success: true, text: `Neden kamera sadece etrafı izliyor? O "${longestScene.architecture.exactSourceBeat}" var ya... Belki de ona çok daha karanlık, çok daha ruhani bir açıdan yaklaşmalıyız. Nesnelerin cansızlığına bir ruh üfle.`, evidence: ieEvidence, sceneIds: [longestScene.id] });
   } else {
       ieEvidence.push("Climax/Son üçte bir bölümünde geçerli bir sahne bulunamadı.");
       tips.push({ skill: 'inland_empire', level: 'Legendary', success: false, text: "Gözlerim karanlıkta hiçbir şey göremiyor. Ruh yok. Bağ kuracak bir nesne bile yok.", evidence: ieEvidence });
@@ -360,12 +361,12 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
       }
 
       // CHECK 3 — TRIAD (imagePrompt only, medium): subject line + light cue + camera cue.
-      // FIX-6b: the subject (architecture.dominantSubject = raw beatText) may carry
+      // FIX-6b: the subject (architecture.exactSourceBeat = raw beatText) may carry
       // internal '\n' from a merged multi-sentence autoGroupBeats beat, while the img
       // injects the SRC_LINE-normalized (\s+→space) form (FIX-6). Comparing raw-vs-normalized
       // makes includes() falsely fail → phantom "özne eksik" → surgeon blocks volition.
       // Normalize whitespace on BOTH sides for the match (display/byte integrity untouched).
-      const subject = (s.architecture?.dominantSubject || '').trim();
+      const subject = (s.architecture?.exactSourceBeat || '').trim();
       const hasSubject = /dominant element\s*:/i.test(img) || (subject !== '' && normWS(img).includes(normWS(subject)));
       const missing: string[] = [];
       if (!hasSubject) missing.push("özne ('Dominant element' / konsept öznesi)");
@@ -441,8 +442,8 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
     // (1) PARANTEZ SOYMA YOK. Eski check parantez içini komple siliyordu (ölü TR-graft
     //     kırıntıları "(kayp)/(pusulann)" içindi). Bugün prompt yolunda böyle bir kırıntı
     //     YOK — pure.ts'in '(Gelişim Evresi N)' etiketi bile motion/image prompt'a hiç
-    //     ulaşmıyor (ölçüldü: 0/8 sahne; pure.ts dominantSubject'i ham exactText'ten
-    //     yeniden kuruyor). Buna karşılık parantez soymak İNSAN AYRIMINI siliyordu:
+    //     ulaşmıyor (ölçüldü: 0/8 sahne; pure.ts exactSourceBeat'i ham exactText'ten
+    //     verbatim taşıyor — M3'te ad dürüstleşti, davranış aynı). Buna karşılık parantez soymak İNSAN AYRIMINI siliyordu:
     //     "Kubbe çöker (gece)" ile "Kubbe çöker (gündüz)" klon sayılıp export'u bloklardı.
     // (2) UNICODE. '\w' Türkçe harfi tanımaz: '[^\w\s—]' filtresi 'çöker'→'ker',
     //     'yavaşça'→'yava a' yapıyor, FARKLI iki Türkçe beat'i aynı çekirdeğe çökertiyordu.

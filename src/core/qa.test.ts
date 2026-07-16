@@ -42,8 +42,8 @@ function createMockState(overrides: Partial<StudioState> = {}): StudioState {
       architecture: {
         source: { status: 'OK', sourceId: '1', exactText: 'text', notice: null },
         beat: 'orient',
-        dominantSubject: 'subject 1',
-        event: 'event 1',
+        exactSourceBeat: 'subject 1 event 1',
+        semanticInterpretationStatus: 'AGENT_AUTHORED' as const,
         imageVantage: '35mm eye-level medium-wide',
         semanticFingerprint: '123'
       },
@@ -63,8 +63,8 @@ function createMockState(overrides: Partial<StudioState> = {}): StudioState {
       architecture: {
         source: { status: 'OK', sourceId: '2', exactText: 'text 2', notice: null },
         beat: 'orient',
-        dominantSubject: 'subject 2',
-        event: 'event 2',
+        exactSourceBeat: 'subject 2 event 2',
+        semanticInterpretationStatus: 'AGENT_AUTHORED' as const,
         imageVantage: '50mm eye-level close',
         semanticFingerprint: '456'
       },
@@ -84,8 +84,8 @@ function createMockState(overrides: Partial<StudioState> = {}): StudioState {
       architecture: {
         source: { status: 'OK', sourceId: '3', exactText: 'text 3', notice: null },
         beat: 'orient',
-        dominantSubject: 'subject 3',
-        event: 'event 3',
+        exactSourceBeat: 'subject 3 event 3',
+        semanticInterpretationStatus: 'AGENT_AUTHORED' as const,
         imageVantage: '85mm high close',
         semanticFingerprint: '789'
       },
@@ -209,7 +209,7 @@ describe('Director Cabinet Evidence-Based QA', () => {
 
   test('generic-fallback detection fires on a scene containing "teaching mechanism"', () => {
     const state = createMockState();
-    state.scenes[0].architecture.dominantSubject = 'a teaching mechanism';
+    state.scenes[0].architecture.exactSourceBeat = 'a teaching mechanism';
     const tips = evaluateDirectorCabinet(state);
     const cTip = tips.find(t => t.skill === 'conceptualization')!;
     expect(cTip.success).toBe(false);

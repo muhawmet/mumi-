@@ -26,8 +26,8 @@ function makeScene(onScreenText: string | null): Scene {
     handoff: {} as Scene['handoff'],
     architecture: {
       beat: 'reveal',
-      dominantSubject: 'leaf',
-      event: 'light strikes surface',
+      exactSourceBeat: 'Işık yaprağa çarpar.',
+      semanticInterpretationStatus: 'AGENT_AUTHORED',
       imageVantage: 'macro',
       semanticFingerprint: 'abc123',
     } as Scene['architecture'],

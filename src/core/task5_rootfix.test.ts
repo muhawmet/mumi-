@@ -162,7 +162,7 @@ function stateWith(projectClass: string, durations: number[]) {
     projectClass, selectedWorldId: 'fincher_precision', selectedPropId: 'none',
     scenes: durations.map((d, i) => ({
       id: i + 1,
-      architecture: { source: { status: 'OK', sourceId: String(i + 1), exactText: 't', notice: null }, beat: 'orient', dominantSubject: 's', event: 'e', imageVantage: `${35 + i * 5}mm ${['eye', 'low', 'high', 'macro', 'wide'][i % 5]} shot`, semanticFingerprint: String(i) },
+      architecture: { source: { status: 'OK', sourceId: String(i + 1), exactText: 't', notice: null }, beat: 'orient', exactSourceBeat: 's e', semanticInterpretationStatus: 'AGENT_AUTHORED', imageVantage: `${35 + i * 5}mm ${['eye', 'low', 'high', 'macro', 'wide'][i % 5]} shot`, semanticFingerprint: String(i) },
       imagePrompt: `[${i + 1}] IMAGE\nrender. Scene brief. Light: soft. Camera: x. Negative: none.`,
       motionPrompt: `[${i + 1}] MOTION\nCamera: x. Motion brief.`,
       durationSec: d, onScreenText: null,
@@ -254,7 +254,7 @@ function cabinetState(recipe: { projectClass: string; selectedWorldId: string },
 
 // ============ FIX-6b: merged çok-cümleli beat özne-eşleşmesi (fixture körlüğü regresyonu) ============
 // FIX-6 sceneBrief'i img'de SRC_LINE (\s+→space) ile normalize etti; qa.ts prompt_surgeon özne
-// kontrolü karşı tarafı (architecture.dominantSubject = HAM \n'li beatText) ham karşılaştırıyordu →
+// kontrolü karşı tarafı (architecture.exactSourceBeat = HAM \n'li beatText) ham karşılaştırıyordu →
 // autoGroupBeats iki cümleyi tek beat'te birleştirince (internal \n) img normalize / subject ham →
 // includes=FALSE → "Triad eksik — özne" → surgeon success=false → volition RENDER'ı bloklardı.
 // Bu regresyon 566 testte görülmedi (hiçbir fixture merged çok-cümleli beat üretmiyordu).
@@ -264,7 +264,7 @@ describe('FIX-6b: merged çok-cümleli beat prompt_surgeon özne-kontrolünü GE
       const { result } = run(recipe);
       // Bu reçete gerçekten merged (internal \n'li) bir beat üretmeli — yoksa test
       // regresyonu koruyamaz (fixture körlüğü tam olarak buydu).
-      const hasMerged = result.scenes.some((s: any) => /\n/.test((s.architecture?.dominantSubject || '').trim()));
+      const hasMerged = result.scenes.some((s: any) => /\n/.test((s.architecture?.exactSourceBeat || '').trim()));
       expect(hasMerged, `${recipe.selectedWorldId}: merged çok-cümleli beat üretilmedi — test regresyonu test etmiyor`).toBe(true);
 
       const tips = evaluateDirectorCabinet(cabinetState(recipe, result));

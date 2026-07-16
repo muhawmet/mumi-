@@ -53,8 +53,8 @@ for (const { label, input } of inputs) {
     console.log(`\n─── Sahne ${s.id} (${s.phaseName}, ${s.durationSec}s, intensity ${Math.round(s.intensity)}) ───`);
     console.log('SOURCE:', s.architecture.source);
     console.log('BEAT:', s.architecture.beat);
-    console.log('DOMINANT:', s.architecture.dominantSubject);
-    console.log('EVENT:', s.architecture.event);
+    console.log('EXACT SOURCE BEAT:', s.architecture.exactSourceBeat);
+    console.log('YORUM:', s.architecture.semanticInterpretationStatus);
     console.log('VANTAGE:', s.architecture.imageVantage);
     console.log('FINGERPRINT:', s.architecture.semanticFingerprint);
     console.log('\nIMAGE PROMPT:');

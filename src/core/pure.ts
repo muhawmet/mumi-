@@ -653,8 +653,15 @@ export function refCompatibleWithWorld(ref: Pick<SurgeryRef, 'worldId'>, worldId
 export interface SceneArchitecture {
   source: { status: string; sourceId: string | null; exactText: string; notice: string | null };
   beat: string;
-  dominantSubject: string;
-  event: string;
+  /**
+   * BRAIN M3 — dürüst adlandırma (KUSUR-A). Eski `dominantSubject`/`event` alanları ham kaynak
+   * cümlenin byte-identical kopyasıydı ama adları "site sahnenin dominant öznesini/olayını seçti"
+   * iddiası taşıyordu. Site semantic author DEĞİLDİR: verbatim beat dürüst adla taşınır,
+   * dominant-özne/tek-olay/donmuş-an YORUMU ajanın işidir ve image_author artifact'inin zorunlu
+   * `interpretation` receipt'inde GÖRÜNÜR yaşar (agentProtocol.ts).
+   */
+  exactSourceBeat: string;
+  semanticInterpretationStatus: 'AGENT_AUTHORED';
   imageVantage: string;
   semanticFingerprint: string;
 }
@@ -690,8 +697,8 @@ export interface HandoffPacket {
     exactSourceBeat: string;
     sourceStatus: string;
     intent: string;
-    dominantSubject: string;
-    event: string;
+    /** BRAIN M3: dominant-özne/olay yorumu pakette taşınmaz — ajanın interpretation receipt'i yazar. */
+    semanticInterpretationStatus: 'AGENT_AUTHORED';
     continuity: {
       previousSceneId: number | null;
       nextSceneId: number | null;
@@ -782,24 +789,9 @@ const SCENE_INTENTS = [
   'resolve the sequence with a clear takeaway',
 ];
 
-const SCENE_EVENTS = [
-  'the key relationship is revealed from an initially neutral arrangement',
-  'one component moves into its correct position and locks',
-  'a visible comparison separates the two possible outcomes',
-  'the mechanism completes one cause-and-effect cycle',
-  'an incorrect arrangement is corrected in one decisive change',
-  'the proof marker appears only after the result is established',
-  'one practical example activates while all supporting elements remain still',
-  'the completed system settles into an edit-safe final state',
-];
-
-const SCENE_FOCUSES = [
-  'concept map',
-  'primary teaching object',
-  'cause-and-effect junction',
-  'worked example',
-  'proof state',
-];
+// BRAIN M3: SCENE_EVENTS/SCENE_FOCUSES bankaları söküldü — ürettikleri `dominantSubject`/`event`
+// süslemesi generateBatch yolunda byte-copy ile eziliyordu (hiçbir canlı çıktıya ulaşmıyordu) ve
+// alan adları site'yi semantic author gibi gösteriyordu. Yorum ajanın işi (interpretation receipt).
 
 const GLOBAL_NEGATIVES = [
   'morphing', 'warping', 'melting', 'extra fingers', 'duplicated face',
@@ -1170,17 +1162,12 @@ type ParsedSource = ReturnType<typeof parseSourceInput>;
 
 function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, world: SurgeryWorld): SceneArchitecture {
   const index = Math.max(1, Number(sceneIndex) || 1) - 1;
-  const cycle = Math.floor(index / sourceInput.beats.length);
   const sourceBeat = sourceInput.beats[index % sourceInput.beats.length];
   const intent = SCENE_INTENTS[index % SCENE_INTENTS.length];
-  const event = SCENE_EVENTS[index % SCENE_EVENTS.length];
-  const focus = SCENE_FOCUSES[index % SCENE_FOCUSES.length];
 
-  const developedBeat = cycle > 0
-    ? `${sourceBeat.exactText} (Gelişim Evresi ${cycle + 1})`
-    : sourceBeat.exactText;
-  const dominantSubject = `${developedBeat} — ${focus}`;
-
+  // BRAIN M3: eski `dominantSubject = "${beat} — ${focus}"` / `event = SCENE_EVENTS[...]` süslemesi
+  // gizli site-yorumuydu ve generateBatch yolunda zaten byte-copy ile eziliyordu — hiçbir canlı
+  // çıktıya ulaşmıyordu. Site verbatim beat'i dürüst adla taşır; yorum ajanın işi.
   return {
     source: {
       status: sourceInput.status,
@@ -1189,16 +1176,14 @@ function createSceneArchitecture(sourceInput: ParsedSource, sceneIndex: number, 
       notice: sourceInput.notice,
     },
     beat: intent,
-    dominantSubject,
-    event,
+    exactSourceBeat: sourceBeat.exactText,
+    semanticInterpretationStatus: 'AGENT_AUTHORED',
     imageVantage: buildImageVantage(world, sceneIndex),
     semanticFingerprint: stableSemanticFingerprint([
       sourceInput.status,
       sourceBeat.sourceId || sourceBeat.exactText,
       intent,
-      dominantSubject,
-      event,
-      cycle,
+      sourceBeat.exactText,
     ]),
   };
 }
@@ -1291,11 +1276,10 @@ function buildHandoffPackets(args: {
   const sceneCore = {
     id: scene.id,
     sourceId: scene.architecture.source.sourceId,
-    exactSourceBeat: scene.architecture.source.exactText,
+    exactSourceBeat: scene.architecture.exactSourceBeat,
     sourceStatus: scene.architecture.source.status,
     intent: scene.architecture.beat,
-    dominantSubject: scene.architecture.dominantSubject,
-    event: scene.architecture.event,
+    semanticInterpretationStatus: scene.architecture.semanticInterpretationStatus,
     continuity,
   };
   const worldCore = {
@@ -1466,19 +1450,10 @@ export function generateBatch(input: BriefInput): GenerationResult {
     // (image sourceBeat + motion Claude-talimatı) açıkça geçer.
     const beatText = arch.source.exactText;
     const concept: Concept = { subject: '', event: '', matched: false };
-    // dominantSubject/event = beatText: architecture kaydı + fingerprint anlamlı
-    // (banka öznesi değil) kaynak taşısın; sahneler fingerprint'te kaynağa göre ayrışsın.
-    const semanticArch: SceneArchitecture = {
-      ...arch,
-      dominantSubject: beatText,
-      event: beatText,
-      semanticFingerprint: stableSemanticFingerprint([
-        sourceParsed.status,
-        arch.source.sourceId || arch.source.exactText,
-        arch.beat,
-        beatText,
-      ]),
-    };
+    // BRAIN M3: eski "dominantSubject/event = beatText" byte-copy ezmesi kalktı —
+    // createSceneArchitecture artık verbatim beat'i dürüst adla (exactSourceBeat) ve
+    // aynı fingerprint girdileriyle üretiyor; ikinci bir kurulum gerekmiyor.
+    const semanticArch: SceneArchitecture = arch;
     const brief = buildFinalBriefContext(semanticArch, world, input.selectedPropId, selectedRefIds, path, paletteOverride);
     const prevId = i > 1 ? i - 1 : undefined;
     const camera = applyWorldCameraLaw(primeCamera(i, beatText, i - 1, register, prev?.src, prevId, 0, world.id), i, world, register, beatText, pathContract(path)?.required);

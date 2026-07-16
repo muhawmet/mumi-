@@ -336,9 +336,9 @@ export const TimelineStep = () => {
                   </div>
                   <div style={{ border: '1px solid var(--m2-line)', borderRadius: 8, padding: '10px 12px', background: 'rgba(0,0,0,0.25)' }}>
                     <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: 1.6, color: 'var(--m2-muted)', fontFamily: 'var(--m2-font-mono)', marginBottom: 8 }}>TEKNİK KANIT · EN</div>
-                    <DetailRow label="Event" value={selected.architecture.event} />
+                    <DetailRow label="Exact source beat" value={selected.architecture.exactSourceBeat} />
                     <DetailRow label="Beat" value={selected.architecture.beat} />
-                    <DetailRow label="Dominant subject" value={selected.architecture.dominantSubject} />
+                    <DetailRow label="Yorum" value={`${selected.architecture.semanticInterpretationStatus} — dominant özne/olay ajanın interpretation receipt'inde`} />
                     <DetailRow label="Vantage" value={selected.architecture.imageVantage} mono />
                     <DetailRow label="Fingerprint" value={selected.architecture.semanticFingerprint} mono />
                   </div>
