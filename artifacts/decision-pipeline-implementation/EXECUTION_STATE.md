@@ -1,5 +1,27 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+> **➡️ AKTİF PLAN (VSCode/Mac, 2026-07-16):** Beyin katmanı inşası — anlama fazı BİTTİ, plan HAZIR.
+> **✅ M0 TAMAM (2026-07-16):** baseline yeşil mühürlendi (tsc 0 · vitest 1896/1896 (67 dosya) · build OK),
+> iki .bat CRLF fix commit `d366231` + push origin/main. Receipt: `receipts/BRAIN-M0.md`.
+> **Mami yetkisi:** commit/push serbest ("körleme sana güveniyorum") — her kapı yeşilken task-sonu ritüelinde.
+> **Aktif task: M1 (canonical consolidation — agents:sync generator + parity test).** Önce oku:
+> 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
+> 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
+> 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`
+> Sıra: **M0 baseline → M1 canonical → M2 prop/fizik → M3 şeffaf-yorum → M4 Image → M5 Motion → M6 QA
+> → M7 ders bankası.**
+> Denetim geçmişi: Sol 5.6 high "otomatik-ayrıştırma"yı reddetti (doğru); Sol'un "ayrı onay fazı" önerisini
+> de **Mami reddetti** (2026-07-16): onay bürokrasisi YOK — ajan tam paketi kesintisiz üretir, yorumunu
+> şeffaf `interpretation` receipt'iyle bırakır; Mami ilk görselleri üretip doğal dille müdahale eder.
+> M7 = Mami isteği: biten projelerin closeout dersleri → Mami-onaylı ders bankası → sonraki proje context'i.
+> DEĞİŞMEZ: API YOK · Mami HER ZAMAN loop'ta ama onay bürokrasisi YOK · site tarif eder/ajan yazar ·
+> madenlenmiş ders evrensel kilit DEĞİL. Baseline yeşil (tsc 0 · vitest 1896/1896); iki .bat CRLF + sharp
+> çalışma ağacında, M0'da Mami onayıyla commit. PUSH YOK.
+>
+> **Eski handoff (arşiv):** `HANDOFF-MACRO-9-AGENT-BRAINS.md` — durum tespiti doğru, ama çözüm planı bu
+> spec+plan'la güncellendi (Sol denetimi sonrası).
+
+
 ## THREE-PHASE RESET — 2026-07-15 (CURRENT AUTHORITY)
 
 Mami deleted the previous long-running goal. Do not auto-continue or declare the old Macro chain
