@@ -1173,6 +1173,59 @@ export async function runCommand(args = process.argv.slice(2)) {
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'FRAME_IMPORTED' }, ...imported };
   }
 
+  // ============================================================================
+  // HARD-FIX 2026-07-16 (rapor A.1/A.7) — YERLEŞİK YÖNETMEN modu. Ürün vaadi:
+  // "Mami yalnız Yerleşik Yönetmen ile konuşur; Author/Jury arkada çalışır."
+  // --director: batch'i ARKA PLANDA ayrı süreç olarak başlatır (log dosyaya),
+  // aynı terminalde kalıcı interaktif Yönetmen oturumu açar. Yönetmen state'i
+  // SAHNE-PROMPTLAR.md + BATCH-LOG.txt'den okur, Mami'ye doğal dilde kısa durum
+  // verir, sıradan REJECT'te susar, yalnız gerçek FACT_REQUIRED'da soru sorar,
+  // Mami direktifini exact LIVE_CHAT olarak --add-directive-file ile bağlar.
+  // ============================================================================
+  if (args.includes('--director')) {
+    const provider = argValue(args, '--provider');
+    if (!['claude', 'codex'].includes(provider)) throw new Error('--director için --provider claude|codex zorunlu');
+    await mkdir(root, { recursive: true });
+    const logPath = join(projectDir, 'BATCH-LOG.txt');
+    const { openSync } = await import('node:fs');
+    const logFd = openSync(logPath, 'a');
+    // Batch arka planda: aynı runtime, --batch --launch; stdout/stderr log dosyasına.
+    const batchChild = spawn(process.execPath, [
+      fileURLToPath(import.meta.url), '--file', file, '--batch', '--launch', '--provider', provider,
+      ...(argValue(args, '--workspace') ? ['--workspace', argValue(args, '--workspace')] : []),
+      ...(argValue(args, '--artifacts') ? ['--artifacts', argValue(args, '--artifacts')] : []),
+    ], { cwd: projectDir, detached: true, stdio: ['ignore', logFd, logFd] });
+    batchChild.unref();
+    // Yönetmen oturum sözleşmesi — rol kartı + canlı dosya işaretçileri.
+    const directorRole = await readFile(join(REPO_ROOT, 'agents', 'roles', 'director-session.md'), 'utf8');
+    await writeFile(join(root, 'DIRECTOR-SESSION.md'), [
+      '# MAMILAS Yerleşik Yönetmen oturumu', '',
+      `Command: ${command.commandId}`,
+      `Proje klasörü: ${projectDir}`,
+      `Canlı durum paketi: ${join(projectDir, 'SAHNE-PROMPTLAR.md')} (her sahne kapanışında güncellenir)`,
+      `Batch günlüğü: ${logPath}`,
+      `Batch süreç PID: ${batchChild.pid}`,
+      `Direktif bağlama: node "${fileURLToPath(import.meta.url)}" --file "${file}" --add-directive-file <utf8.txt> [--scope SCENE --scene <id>]`,
+      '', directorRole,
+    ].join('\n'), 'utf8');
+    console.error(`🎬 Batch arka planda başladı (PID ${batchChild.pid}) — günlük: ${logPath}`);
+    console.error(`🎭 Yerleşik Yönetmen oturumu açılıyor; Mami yalnız bu sohbetle konuşur.\n`);
+    const cli = findExecutable(provider);
+    if (!cli) throw new Error(`${provider} CLI bulunamadı`);
+    const instruction = `Read ${JSON.stringify(join(root, 'DIRECTOR-SESSION.md'))} and follow it. You are the Yerleşik Yönetmen; speak Turkish with Mami.`;
+    const directorArgs = provider === 'codex' ? ['-C', projectDir, instruction] : [instruction];
+    const director = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
+      ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${directorArgs.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
+      : spawn(cli, directorArgs, { cwd: projectDir, stdio: 'inherit' });
+    const exitCode = await new Promise((resolvePromise, reject) => { director.on('exit', resolvePromise); director.on('error', reject); });
+    return {
+      file, validation: 'PASS', commandId: command.commandId,
+      action: { kind: 'DIRECTOR_SESSION_CLOSED' }, batchPid: batchChild.pid, batchLog: logPath, directorExit: exitCode,
+      // İnteraktif sohbet stdout'u insana aitti; kapanışta JSON dökmek sohbeti kirletir.
+      humanSession: true,
+    };
+  }
+
   // BATCH sürücüsü: sahne sahne DURMAK yerine, frame kapısına kadar koşulabilir tüm
   // yazım fazlarını (image author→jury, frame sonrası motion author→jury) tek koşuda
   // tamamlar. Her rol yine tek bağımsız oturumdur; jury yasası, revision limiti,
@@ -1317,7 +1370,12 @@ async function main() {
     const result = process.argv.includes('--seal-artifact')
       ? await sealArtifactDraft()
       : await runCommand();
-    console.log(JSON.stringify(result, null, 2));
+    if (result?.humanSession) {
+      // Yönetmen oturumu insan sohbetiydi — kapanışta JSON dökülmez, kısa kapanış verilir.
+      console.error(`\n🎬 Yönetmen oturumu kapandı. Batch arka planda sürüyorsa durumu SAHNE-PROMPTLAR.md gösterir (günlük: ${result.batchLog}).`);
+    } else {
+      console.log(JSON.stringify(result, null, 2));
+    }
   } catch (error) {
     console.error(`mamilas-command: ${error.message}`);
     process.exitCode = 1;

@@ -5,6 +5,6 @@ if ! command -v node >/dev/null 2>&1; then
   print "\n❌  node bulunamadı. Kur: https://nodejs.org\n"
   read "?Enter: " _; exit 1
 fi
-# Çift tık = BATCH (Mami mandası): tüm sahneler tek koşuda, frame kapısına kadar.
-# Sahne-sahne titiz mod isteyen terminalden `node runner.mjs --scene <id>` koşar.
-exec node runner.mjs --batch "$@"
+# Çift tık = YÖNETMEN (Mami mandası): batch arkada koşar, Mami yalnız Yönetmen'le konuşur.
+# Yalnız-batch isteyen `node runner.mjs --batch`, sahne-sahne mod `--scene <id>` koşar.
+exec node runner.mjs --director "$@"

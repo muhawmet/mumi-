@@ -5,7 +5,7 @@
 import SURGERY from './SURGERY_DATA.json';
 import {
   registerOf, dnaDirectives, primeCamera, primeShotPattern, nightMap, clockMap, type Clock, buildImagePrompt as brainImagePrompt,
-  buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket, applyWorldCameraLaw, lightVariantFor,
+  buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket, applyWorldCameraLaw, gateCameraLens, lightVariantFor,
   paletteLightPrompt,
   type Concept, type DurationVerdict, type AgentBriefScene, type Register, type RecipeSceneNote,
 } from './brain';
@@ -941,7 +941,13 @@ function buildImageVantage(world: SurgeryWorld, sceneIndex: number): string {
         '50mm high three-quarter medium view, cause-and-effect layout visible in one frame',
       ];
   const base = pool[i % pool.length];
-  return world.imageVantageConstraint ? `${base}; constraint: ${world.imageVantageConstraint}` : base;
+  // HARD-FIX 2026-07-16 (rapor madde 23): round-robin havuz lens'i world lens
+  // envelope'undan HABERSİZDİ — gerçek Chivo vakasında storyboard 50mm isterken
+  // world en fazla 35mm diyordu; Author elle karar vermek zorunda kalıyordu.
+  // Ana prompt kamerasının geçtiği AYNI yasa (gateCameraLens) buradan da geçer:
+  // deterministik karar TEK cevap üretir, çelişki ajana taşınmaz.
+  const gated = gateCameraLens(base, world);
+  return world.imageVantageConstraint ? `${gated}; constraint: ${world.imageVantageConstraint}` : gated;
 }
 
 export function deriveProductionPath(projectClass: string): string {

@@ -145,6 +145,24 @@ describe('madde 20/21 — command kanalları tek gerçeklik taşır', () => {
   });
 });
 
+describe('madde 23 — imageVantage world lens envelope yasasından geçer', () => {
+  it('Chivo (max 35mm) dünyasında round-robin havuzun 50/85mm istekleri clamp edilir', () => {
+    const result = generateBatch({
+      projectTopic: 'Belediye tanıtımı', projectClass: 'LIVE_ACTION_CORPORATE', sceneCount: 3,
+      cast: 'orta yaşlı belediye çalışanı',
+      selectedWorldId: 'chivo_naturalist_handheld', selectedPropId: 'none',
+      selectedRefIds: [], selectedPaletteId: '', selectedMusicId: '',
+      imageModel: 'nano_banana_2', videoModel: 'kling_3',
+    });
+    expect(result.status).toBe('GENERATED');
+    for (const scene of result.scenes) {
+      const vantage = (scene as any).architecture.imageVantage as string;
+      // World lens envelope 14-35mm: 50mm/85mm vantage'da yaşayamaz.
+      expect(vantage, `sahne ${scene.id}: ${vantage}`).not.toMatch(/\b(50|85)mm\b/);
+    }
+  });
+});
+
 describe('madde 18 worldPacket yüzeyi — uyumsuz orphan ref packet refs listesinde compatible:false', () => {
   it('2D orphan ref photoreal worldPacket içinde directive taşımaz', () => {
     const world = realWorld();

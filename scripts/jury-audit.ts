@@ -5,7 +5,9 @@
  * (buildProductionExport) üretir, evaluateDirectorCabinet'i koşar ve her
  * senaryo için jüri paketi dosyalarını scratchpad'e yazar.
  *
- * Run: npx tsx scripts/jury-audit.ts
+ * Run: npm run jury-audit   (= npx vite-node scripts/jury-audit.ts)
+ * NOT tsx: agentProtocol.ts'in `PROTOCOL.md?raw` Vite-import'u tsx altında
+ * ERR_UNKNOWN_FILE_EXTENSION ile çöker (rapor madde 27 — ölçüldü, düzeltildi).
  * NEVER modifies src/. Deterministic (no Date.now/random in src path;
  * buildCommandJSON uses new Date() for generatedAt — cosmetic only).
  * İşin sonunda SİLİNİR (geçici audit tooling).

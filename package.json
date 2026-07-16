@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "workbench": "npx tsx scripts/brain-workbench.ts",
+    "jury-audit": "npx vite-node scripts/jury-audit.ts",
     "agents:sync": "node scripts/agents-sync.mjs"
   },
   "dependencies": {

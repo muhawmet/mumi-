@@ -205,6 +205,7 @@ function lifecycleArgs(root, commandFile, useProjectWorkspace) {
     if (value) args.push(name, useProjectWorkspace && ['--import-frame', '--add-directive-file'].includes(name) ? resolve(value) : value);
   }
   if (process.argv.includes('--batch')) args.push('--batch');
+  if (process.argv.includes('--director')) args.push('--director');
   if (process.argv.includes('--all-scenes')) args.push('--all-scenes');
   return args;
 }
@@ -263,6 +264,20 @@ async function run() {
 
   if (process.argv.includes('--approve-storyboard')) args.push('--approve-storyboard');
   if (process.argv.includes('--export-image-bundle')) args.push('--export-image-bundle');
+  // --director: --batch --launch yerine geçer (canonical runtime batch'i arkada
+  // kendisi başlatır, foreground'da Yönetmen sohbetini açar). lifecycleArgs zaten
+  // --director'ı taşıdı; burada yalnız provider eklenir, --batch/--launch eklenmez.
+  if (process.argv.includes('--director') && launch) {
+    const filtered = args.filter((value) => value !== '--batch');
+    filtered.push('--provider', provider);
+    rl.close();
+    const directorChild = spawn(process.execPath, filtered, { cwd: dirname(commandFile), stdio: 'inherit' });
+    await new Promise((resolvePromise, reject) => {
+      directorChild.on('exit', (code) => { process.exitCode = code ?? 1; resolvePromise(); });
+      directorChild.on('error', reject);
+    });
+    return;
+  }
   if (launch) args.push('--launch', '--provider', provider);
   else args.push('--dry-run');
 
