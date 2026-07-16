@@ -636,34 +636,35 @@ function defaultRefIdsForWorld(worldId: string): string[] {
     .map((ref) => ref.id);
 }
 
-// Ref world gate. Cinematography/prestige grammar voices are homed in
-// CINEMATIC_REAL worlds only for preview/default purposes — photoreal camera
-// language is dialect-safe across photoreal worlds, so they may serve any
-// CINEMATIC_REAL host (Kubrick on deakins). IP-homage refs (anime/stylized
-// groups) stay pinned to their world: crossing them would leak one IP's grammar
-// into another IP's frame (naruto ref on one_piece).
+// Ref world gate. A worldId-pinned reference belongs to ONE world and serves only
+// that world — its DNA carries that world's specific location, era and motion
+// signature (Tarkovsky's chivo home carries "Soviet 70s-80s, long-take drift",
+// Breaking Bad's deakins home carries "New Mexico high-desert").
 //
-// HARD-FIX 2026-07-16 (rapor madde 18): a ref WITHOUT a worldId is no longer
-// universally compatible. 54/130 refs carry no worldId; the stylized ones among
-// them (2D Animation, Animation Auteur, Story DNA, Anime/Shonen, Stylized Premium)
-// were leaking rendering-style orders into photoreal worlds — measured in a real
-// package: a Hades-based 2D ref carried "flat 2D illustration / ink-comic" into a
-// photoreal product world whose own negative lock forbade cartoon. Compatibility is
-// now medium-aware: an orphan ref whose category names an animation medium is
-// incompatible with a REAL-register host. Photoreal-medium orphans (Cinematography,
-// Documentary, Product/Macro, Real Setup, Commercial, …) stay legitimate everywhere.
+// HARD-FIX 2026-07-17 (B1+B2, Mami kararı): the old CINEMATIC_REAL→CINEMATIC_REAL
+// cross-world allowance is REMOVED. It let a pinned ref bleed its home world's
+// foreign location/era/motion into a DIFFERENT real world — an İstanbul scene on
+// deakins pulling Tarkovsky's "Soviet art-cinema", or a still frame pulling
+// "long-take drift / time as subject". A pinned ref now serves ONLY its own world;
+// this closes both the location/era leak (B1) and the still-frame motion leak (B2)
+// at their shared root, without any text scrub or new regex. Defaults are unaffected
+// (they already draw refs from their own world — measured: 0 broken defaults).
+//
+// HARD-FIX 2026-07-16 (rapor madde 18): a ref WITHOUT a worldId is not universally
+// compatible either. The stylized orphans (2D Animation, Animation Auteur, Story DNA,
+// Anime/Shonen, Stylized Premium) leak rendering-style orders into photoreal worlds
+// (a Hades-based 2D ref carried "flat 2D illustration / ink-comic" into a photoreal
+// product world). Medium-aware: an orphan whose category names an animation medium is
+// incompatible with a REAL host; photoreal-medium orphans stay legitimate everywhere.
 const ANIMATION_MEDIUM_CAT_RE = /^(?:2D Animation|Animation(?: Auteur| \/)|Anime \/|Story DNA|Stylized Premium)/i;
 
 export function refCompatibleWithWorld(ref: Pick<SurgeryRef, 'worldId' | 'cat'>, worldId: string): boolean {
   if (ref.worldId === worldId) return true;
+  if (ref.worldId) return false; // pinned ref serves ONLY its own world (B1+B2 root fix)
+  // Orphan ref: compatible unless its category orders an animation medium onto a real host.
   const host = DATA.worlds.find((w) => w.id === worldId);
   const hostIsReal = host?.group === 'CINEMATIC_REAL' || host?.group === 'COMMERCIAL_REAL';
-  if (!ref.worldId) {
-    // Orphan ref: compatible unless its category orders an animation medium onto a real host.
-    return !(hostIsReal && ANIMATION_MEDIUM_CAT_RE.test(ref.cat ?? ''));
-  }
-  const home = DATA.worlds.find((w) => w.id === ref.worldId);
-  return home?.group === 'CINEMATIC_REAL' && host?.group === 'CINEMATIC_REAL';
+  return !(hostIsReal && ANIMATION_MEDIUM_CAT_RE.test(ref.cat ?? ''));
 }
 
 export interface SceneArchitecture {

@@ -944,7 +944,7 @@ describe('REAL fallback coreNoun — word-boundary cut (matris kökü)', () => {
   });
 });
 
-describe('cinematography ref world gate — CINEMATIC_REAL cross-world (matris kökü)', () => {
+describe('ref world gate — pinli ref YALNIZ kendi dünyasında (B1+B2 kök, 2026-07-17)', () => {
   const brief = {
     projectTopic: 'Zamanın büküldüğü bir istasyonda babanın kızına veda mesajı',
     projectClass: 'ULTRAREAL_COMMERCIAL', sceneCount: 3, cast: '',
@@ -953,14 +953,19 @@ describe('cinematography ref world gate — CINEMATIC_REAL cross-world (matris k
     selectedPaletteId: '', selectedMusicId: '',
     imageModel: 'nano_banana_2', videoModel: 'kling_3',
   };
-  it('Kubrick/Villeneuve/Tarkovsky (CINEMATIC_REAL homes) contribute on deakins_naturalist', () => {
+  it('YABANCI CINEMATIC_REAL ref (fincher/chivo home) deakins sahnesine artık KATKI VERMEZ', () => {
     const result = generateBatch(brief);
     expect(result.status).toBe('GENERATED');
     const briefText = result.agentBrief ?? '';
-    expect(briefText).toContain('Reference Contributions');
-    expect(briefText).toContain('Kubrick One-Point Corridor');
-    expect(briefText).toContain('Villeneuve Monolith Scale-Dread');
-    expect(briefText).toContain('Tarkovsky Sculpted-Time Drift');
+    // Kök fix: bu ref'ler deakins'e yabancı → DNA'ları prompt yoluna girmez (Tarkovsky'nin
+    // "Soviet / sculpted-time drift"i deakins karesine sızmaz).
+    expect(briefText).not.toContain('Kubrick One-Point Corridor');
+    expect(briefText).not.toContain('Tarkovsky Sculpted-Time Drift');
+  });
+  it('deakins KENDİ home ref\'i (Desert Rig-POV) deakins sahnesine katkı verir', () => {
+    const result = generateBatch({ ...brief, selectedRefIds: ['breaking_bad_desert_pov'] });
+    expect(result.status).toBe('GENERATED');
+    expect(result.agentBrief ?? '').toContain('Reference Contributions');
   });
   it('IP-bound anime refs stay strictly gated across sibling worlds (naruto ref on one_piece)', () => {
     const result = generateBatch({

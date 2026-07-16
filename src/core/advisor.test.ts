@@ -123,12 +123,19 @@ describe('dnaStrength — world gate (KÖK 7c)', () => {
   });
 });
 
-describe('dnaStrength — CINEMATIC_REAL cross-world allowance (matris kökü)', () => {
-  it('kubrick ref (home: fincher_precision) is NOT zeroed on deakins_naturalist', async () => {
+describe('dnaStrength — pinli ref yalnız kendi dünyasında (B1+B2 kök, 2026-07-17)', () => {
+  it('kubrick ref (home: fincher_precision) deakins_naturalist\'te ZEROED (yabancı dünya)', async () => {
     const { dnaStrength } = await import('./advisor');
     const { DATA } = await import('./pure');
     const kubrick = DATA.refs.find((r) => r.id === 'kubrick_one_point')!;
     const s = dnaStrength([kubrick], 'REAL', 'deakins_naturalist');
+    expect(s.zeroRefIds).toContain('kubrick_one_point');
+  });
+  it('kubrick ref KENDİ dünyasında (fincher_precision) ZEROED DEĞİL', async () => {
+    const { dnaStrength } = await import('./advisor');
+    const { DATA } = await import('./pure');
+    const kubrick = DATA.refs.find((r) => r.id === 'kubrick_one_point')!;
+    const s = dnaStrength([kubrick], 'REAL', 'fincher_precision');
     expect(s.zeroRefIds).not.toContain('kubrick_one_point');
     expect(s.filled).toBeGreaterThan(0);
   });

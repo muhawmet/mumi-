@@ -207,6 +207,7 @@ function lifecycleArgs(root, commandFile, useProjectWorkspace) {
   if (process.argv.includes('--batch')) args.push('--batch');
   if (process.argv.includes('--director')) args.push('--director');
   if (process.argv.includes('--all-scenes')) args.push('--all-scenes');
+  if (process.argv.includes('--clear-frame')) args.push('--clear-frame');
   return args;
 }
 
@@ -253,7 +254,7 @@ async function run() {
   const selectedCommand = await chooseCommand(root);
   if (!selectedCommand) return;
   const commandFile = projectName ? prepareProject(selectedCommand, projectName) : selectedCommand;
-  const mutation = process.argv.includes('--approve-storyboard') || process.argv.includes('--import-frame') || process.argv.includes('--add-directive-file') || process.argv.includes('--export-image-bundle');
+  const mutation = process.argv.includes('--approve-storyboard') || process.argv.includes('--import-frame') || process.argv.includes('--add-directive-file') || process.argv.includes('--export-image-bundle') || process.argv.includes('--clear-frame');
   const explicitLaunch = process.argv.includes('--launch');
   const dryRun = mutation || process.argv.includes('--dry-run') || (!explicitLaunch && !process.stdin.isTTY);
   const launch = !mutation && (explicitLaunch || !dryRun);

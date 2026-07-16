@@ -8,8 +8,8 @@
  * Claude/Codex session. No --print, provider API, image/video call or agent loop exists here.
  */
 import { createHash } from 'node:crypto';
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { existsSync, readdirSync, readFileSync, realpathSync } from 'node:fs';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { delimiter, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
@@ -586,7 +586,7 @@ async function addLiveDirective(command, commandFile, args) {
     scene.id,
     canonicalHash({ imageAuthor: imageContext(updated, scene), motionEngine: scene.motionEngine }),
   ]));
-  const output = resolve(argValue(args, '--out') ?? join(dirname(commandFile), `${directive.id}_mamilas_command.json`));
+  const output = jailWrite(argValue(args, '--out') ?? join(dirname(commandFile), `${directive.id}_mamilas_command.json`), dirname(commandFile), '--add-directive-file --out');
   await writeFile(output, JSON.stringify(updated, null, 2), 'utf8');
   return { output, commandId: updated.commandId, directive };
 }
@@ -654,7 +654,8 @@ async function exportImageBundle(root, command, scene, artifacts, outputArg) {
     .filter((artifact) => (artifact.role === 'image_author' || artifact.role === 'image_jury') && artifact.revision <= jury.revision)
     .sort((a, b) => a.revision - b.revision || a.role.localeCompare(b.role));
   const body = { schema: 'mamilas.image-artifact-bundle.v1', command, artifacts: imageArtifacts };
-  const output = resolve(outputArg ?? join(root, 'site-import', `scene-${scene.id}-image-bundle.json`));
+  // F-A4: --out jail'i. root = projectDir/.mamilas → yazma proje ağacında kalmalı.
+  const output = jailWrite(outputArg ?? join(root, 'site-import', `scene-${scene.id}-image-bundle.json`), dirname(resolve(root)), '--export-image-bundle --out');
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, JSON.stringify(body, null, 2), 'utf8');
   return { output, artifactCount: imageArtifacts.length, authorHash: author.contentHash, juryHash: jury.contentHash };
@@ -802,6 +803,35 @@ export function roleContext(command, scene, artifacts, frame, action) {
 function argValue(args, name) {
   const index = args.indexOf(name);
   return index >= 0 ? args[index + 1] : undefined;
+}
+
+// HARD-FIX 2026-07-17 (F-A4): --out yazma yolu jail'i. Migration/directive/seal
+// yolları çıplak resolve() ile kök dışına yazabiliyordu (otonom child bunları
+// SESSION.md ile tetikleyebilir). Yazma HER ZAMAN proje ağacının (command dosyasının
+// dizini) altında kalmalı. Okuma yolları (--import-frame/--add-directive-file) jail'siz
+// kalır bilerek: Mami frame'i harici klasörden (Desktop) getirir — o meşru kullanım.
+//
+// BULGU 2 (garanti denetçi): iki tarafı da symlink-normalize et. macOS'ta cwd realpath
+// (/private/var) iken --file'dan gelen projectDir /var formunda kalıyordu → startsWith
+// symlink prefix farkından meşru --out'u YANLIŞ reddediyordu. Var olan en yakın üst dizini
+// realpath'le (hedef dosya henüz yok olabilir), böylece iki yol aynı gerçek köke iner.
+function realpathClosest(p) {
+  let dir = resolve(p);
+  const tail = [];
+  while (true) {
+    if (existsSync(dir)) { try { return join(realpathSync(dir), ...tail.reverse()); } catch { return resolve(p); } }
+    const parent = dirname(dir);
+    if (parent === dir) return resolve(p);
+    tail.push(dir.slice(parent.length + 1));
+    dir = parent;
+  }
+}
+function jailWrite(target, projectDir, label) {
+  const out = realpathClosest(target);
+  const rootReal = realpathClosest(projectDir);
+  const root = `${rootReal}${process.platform === 'win32' ? '\\' : '/'}`;
+  if (`${out}${process.platform === 'win32' ? '\\' : '/'}`.startsWith(root) || out === rootReal) return out;
+  throw new Error(`${label}: yazma yolu proje klasörünün dışına çıkamaz (${out})`);
 }
 
 function commandCandidates(dir) {
@@ -1059,7 +1089,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     });
     const migratedCheck = await validateCommand(migrated);
     if (!migratedCheck.ok) throw new Error(`command migration reddedildi: ${migratedCheck.problems.join(' · ')}`);
-    const output = resolve(argValue(args, '--out') ?? file);
+    const output = jailWrite(argValue(args, '--out') ?? file, dirname(file), '--migrate-command-context --out');
     await writeFile(output, JSON.stringify(migrated, null, 2), 'utf8');
     // HARD-FIX 2026-07-16 (rapor A.5/G.5): workspace migration — resume, tamamlanmış
     // PASS işleri yeniden koşup usage YAKMAZ. İki türetilmiş katman tazelenir, karar
@@ -1082,12 +1112,26 @@ export async function runCommand(args = process.argv.slice(2)) {
       }
     }
     const migrationArtifactDir = resolve(argValue(args, '--artifacts') ?? join(migrationRoot, 'artifacts'));
+    const hashMap = new Map(); // eski artifact contentHash → yeni contentHash (zincir sırasıyla)
     if (existsSync(migrationArtifactDir)) {
-      const hashMap = new Map(); // eski contentHash → yeni contentHash (zincir sırasıyla)
-      for (const name of readdirSync(migrationArtifactDir).filter((item) => item.endsWith('.json')).sort()) {
+      // HARD-FIX 2026-07-17 (garanti denetçi BULGU 1): DEPENDENCY sırasında işle, alfabetik
+      // DEĞİL. Alfabetik `.sort()` `image_author-r1`'i `image_jury-r0`'dan ÖNCE işliyordu;
+      // r1 author'ın input zinciri r0-jury'nin YENİ hash'ini bekler ama o henüz map'te yok →
+      // r1 zinciri stale kalıp sahneyi kilitliyordu (REJECT sonrası her kare ölürdü).
+      // Lifecycle sırası: role fazı (author→jury→frame→motion) × revision, sonra sahne.
+      const ROLE_ORDER = { image_author: 0, image_jury: 1, frame_jury: 2, motion_author: 3, motion_jury: 4 };
+      const entries = [];
+      for (const name of readdirSync(migrationArtifactDir).filter((item) => item.endsWith('.json'))) {
         let value;
         try { value = JSON.parse(await readFile(join(migrationArtifactDir, name), 'utf8')); } catch { continue; }
         if (value?.schema !== ARTIFACT_SCHEMA) continue;
+        entries.push({ name, value });
+      }
+      entries.sort((a, b) =>
+        (a.value.revision - b.value.revision)
+        || ((ROLE_ORDER[a.value.role] ?? 9) - (ROLE_ORDER[b.value.role] ?? 9))
+        || (a.value.sceneId - b.value.sceneId));
+      for (const { name, value } of entries) {
         const { contentHash: oldHash, ...body } = value;
         body.protocolHash = migrated.lifecycle.protocol.contentHash;
         body.inputArtifactHashes = (body.inputArtifactHashes ?? []).map((hash) =>
@@ -1098,6 +1142,30 @@ export async function runCommand(args = process.argv.slice(2)) {
         migratedWorkspace.artifacts += 1;
       }
     }
+    // HARD-FIX 2026-07-17 (F-A1): frame receipt'leri de taşı. Migration artifact
+    // contentHash'lerini değiştirir (protocolHash yenilendi); frame receipt ise author'ın
+    // ESKİ contentHash'ini `fromImagePromptArtifactHash`'te tutar. Bu remap edilmezse
+    // loadFrame "frame prompt bağı stale" fırlatır → Mami'nin ONAYLADIĞI kare kalıcı ölür
+    // (resume'un tam vaadinin tersi). Frame receipt kendi contentHash'iyle mühürlü olduğu
+    // için remap sonrası receipt de yeniden mühürlenir. fromCommandId/storyboardHash
+    // migration'da byte-aynı kaldığından (karar değişmedi) dokunulmaz.
+    const migrationFramesDir = join(migrationRoot, 'frames');
+    let migratedFrames = 0;
+    if (existsSync(migrationFramesDir)) {
+      for (const name of readdirSync(migrationFramesDir).filter((item) => item.endsWith('.json'))) {
+        let receipt;
+        try { receipt = JSON.parse(await readFile(join(migrationFramesDir, name), 'utf8')); } catch { continue; }
+        if (receipt?.schema !== FRAME_RECEIPT_SCHEMA) continue;
+        const remapped = hashMap.get(receipt.fromImagePromptArtifactHash);
+        if (!remapped || remapped === receipt.fromImagePromptArtifactHash) continue;
+        const { contentHash: _old, ...body } = receipt;
+        body.fromImagePromptArtifactHash = remapped;
+        const resealed = { ...body, contentHash: canonicalHash(body) };
+        await writeFile(join(migrationFramesDir, name), JSON.stringify(resealed, null, 2), 'utf8');
+        migratedFrames += 1;
+      }
+    }
+    migratedWorkspace.frames = migratedFrames;
     return {
       file: output,
       validation: 'PASS',
@@ -1122,6 +1190,15 @@ export async function runCommand(args = process.argv.slice(2)) {
     : null;
   if (Number.isFinite(sceneArg) && sceneArg > 0 && !explicitScene) throw new Error(`scene ${sceneArg} yok`);
 
+  // HARD-FIX 2026-07-17 (F-A5): --batch tüm sahneleri sürer; tekil-sahne mutasyon
+  // bayraklarıyla birleşemez. Eskiden karışım "PASS image zinciri yok" gibi ALAKASIZ
+  // bir hataya düşüyordu (batch erken artifacts=[] geçtiği için). Net, erken hata:
+  if (args.includes('--batch')) {
+    const soloFlags = ['--import-frame', '--export-image-bundle', '--clear-frame', '--add-directive-file', '--approve-storyboard'];
+    const clash = soloFlags.find((flag) => args.includes(flag));
+    if (clash) throw new Error(`--batch ${clash} ile birlikte kullanılamaz: --batch tüm sahneleri sürer, ${clash} tek sahne/işlem içindir. Birini seç.`);
+  }
+
   if (args.includes('--approve-storyboard')) {
     // BATCH: --all-scenes tüm storyboard approval receipt'lerini tek koşuda yazar.
     // Onay kararı yine Mami'nin (runner tek soru sorar); burası yalnız receipt üretimi.
@@ -1138,6 +1215,35 @@ export async function runCommand(args = process.argv.slice(2)) {
     await mkdir(root, { recursive: true });
     const approval = await approveStoryboard(root, command, explicitScene);
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'STORYBOARD_APPROVED' }, ...approval };
+  }
+
+  // HARD-FIX 2026-07-17 (F-A2): frame kurtarma. Bir sahnenin frame receipt'i bozuk
+  // bağa düşerse (ör. eski workspace, elle bozulma) o sahne kilitleniyordu ve karesini
+  // silecek komut yoktu — tek çıkış dosyayı elle silmekti. --clear-frame o sahnenin
+  // frame receipt'ini + saklanan görselini güvenli siler; Mami yeni kare import edebilir.
+  // Karar/artifact zincirine DOKUNMAZ — yalnız frame katmanını temizler.
+  if (args.includes('--clear-frame')) {
+    if (!explicitScene) throw new Error('--clear-frame için --scene zorunlu');
+    const framesDir = join(root, 'frames');
+    const receiptPath = join(framesDir, `${explicitScene.id}.json`);
+    const removed = [];
+    if (existsSync(receiptPath)) {
+      // Saklanan görsel dosyasını da sil (receipt'ten oku; yol jail'i loadFrame ile aynı).
+      try {
+        const receipt = JSON.parse(await readFile(receiptPath, 'utf8'));
+        if (receipt?.storedFile) {
+          const stored = resolve(join(framesDir, receipt.storedFile));
+          const frameDir = `${resolve(framesDir)}${process.platform === 'win32' ? '\\' : '/'}`;
+          if (stored.startsWith(frameDir) && existsSync(stored)) { await rm(stored); removed.push(receipt.storedFile); }
+        }
+      } catch { /* bozuk receipt olsa da .json'u silmeye devam et */ }
+      await rm(receiptPath);
+      removed.push(`${explicitScene.id}.json`);
+    }
+    return {
+      file, validation: 'PASS', sceneId: explicitScene.id,
+      action: { kind: removed.length ? 'FRAME_CLEARED' : 'NO_FRAME' }, removed,
+    };
   }
 
   // Batch sahne-izolasyonlu kendi non-strict yüklemesini yapar — strict ön yükleme
@@ -1356,13 +1462,18 @@ export async function runCommand(args = process.argv.slice(2)) {
 
 export async function sealArtifactDraft(args = process.argv.slice(2)) {
   const draftPath = resolve(argValue(args, '--seal-artifact'));
-  const output = argValue(args, '--out');
-  if (!output) throw new Error('--seal-artifact için --out zorunlu');
+  const outputArg = argValue(args, '--out');
+  if (!outputArg) throw new Error('--seal-artifact için --out zorunlu');
+  // F-A4: seal ajanın (otonom child) kullandığı yoldur — SESSION.md'de --out artifactDir'i
+  // gösterir. Yazma, draft'ın bulunduğu run ağacının (draft'ın iki üstü: .mamilas/... → run
+  // kökü) dışına çıkamaz; child'ın kök-dışı artifact yazmasını engeller.
+  const runRoot = dirname(dirname(draftPath));
+  const output = jailWrite(outputArg, runRoot, '--seal-artifact --out');
   const draft = JSON.parse(await readFile(draftPath, 'utf8'));
   const { contentHash: _ignored, ...body } = draft;
   const sealed = { ...body, contentHash: canonicalHash(body) };
-  await writeFile(resolve(output), JSON.stringify(sealed, null, 2), 'utf8');
-  return { output: resolve(output), contentHash: sealed.contentHash };
+  await writeFile(output, JSON.stringify(sealed, null, 2), 'utf8');
+  return { output, contentHash: sealed.contentHash };
 }
 
 async function main() {
