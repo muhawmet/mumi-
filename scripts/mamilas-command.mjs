@@ -9,7 +9,7 @@
  */
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { delimiter, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
@@ -439,16 +439,69 @@ function validateArtifactChain(artifacts, frame, command, sceneId) {
   return live;
 }
 
-async function loadArtifacts(dir, command) {
-  if (!existsSync(dir)) return [];
+// HARD-FIX 2026-07-16 (rapor A.3/A.4): deterministik format-repair. Gerçek Deneme
+// çöküşünün deseni — jüri doğru yaratıcı verdict'i yazdı ama zorunlu alanları
+// "FAILING CHECK — …" / "TARGETED FIX — …" prefix'iyle evidence[] içine koydu.
+// Bilgi ORADA ve makine-okunur; onarım yaratıcı yorum değil alan taşımadır.
+// Onarılan artifact yeniden mühürlenir (contentHash tazelenir) ve diske yazılır —
+// creative revision hakkı format hatasına YANMAZ.
+const REPAIR_PREFIXES = [
+  { field: 'failingCheck', re: /^FAILING CHECK\s*[—:-]\s*/i },
+  { field: 'targetedFix', re: /^TARGETED FIX\s*[—:-]\s*/i },
+  { field: 'factRequired', re: /^FACT[ _]REQUIRED\s*[—:-]\s*/i },
+];
+function repairJuryArtifact(value) {
+  if (!String(value?.role || '').endsWith('_jury')) return null;
+  const content = value?.content;
+  if (!content || !Array.isArray(content.evidence)) return null;
+  const patch = {};
+  for (const item of content.evidence) {
+    for (const { field, re } of REPAIR_PREFIXES) {
+      if (typeof item === 'string' && re.test(item) && !content[field]?.trim() && !patch[field]) {
+        patch[field] = item.replace(re, '').trim();
+      }
+    }
+  }
+  if (!Object.keys(patch).length) return null;
+  const { contentHash: _drop, ...body } = value;
+  const repairedBody = { ...body, content: { ...content, ...patch } };
+  return { ...repairedBody, contentHash: canonicalHash(repairedBody) };
+}
+
+// HARD-FIX 2026-07-16 (rapor A.4): tek bozuk artifact bütün klasör yüklemesini
+// ÖLDÜRMÜYOR artık. Bozuk dosya önce mekanik onarım dener; onarılamazsa yalnız
+// kendi sahnesi errors[]'a düşer — çağıran sahne-bazlı TECHNICAL_ERROR üretir,
+// diğer sahneler yürür. strict=true eski davranışı korur (tekli akış/mutasyon
+// yolları hâlâ sert durur — sessiz veri bozulması maskelenmez).
+async function loadArtifacts(dir, command, { strict = true } = {}) {
+  if (!existsSync(dir)) return strict ? [] : { artifacts: [], errors: [] };
   const artifacts = [];
+  const errors = [];
   for (const name of readdirSync(dir).filter((item) => item.endsWith('.json')).sort()) {
-    const value = JSON.parse(await readFile(join(dir, name), 'utf8'));
-    const check = verifyArtifact(value, command);
-    if (!check.ok) throw new Error(`${name}: ${check.problems.join(', ')}`);
+    let value;
+    try {
+      value = JSON.parse(await readFile(join(dir, name), 'utf8'));
+    } catch (error) {
+      if (strict) throw new Error(`${name}: geçerli JSON değil (${error.message})`);
+      errors.push({ file: name, sceneId: Number(name.split('-')[0]) || null, problems: ['geçerli JSON değil'] });
+      continue;
+    }
+    let check = verifyArtifact(value, command);
+    if (!check.ok) {
+      const repaired = repairJuryArtifact(value);
+      if (repaired && verifyArtifact(repaired, command).ok) {
+        await writeFile(join(dir, name), JSON.stringify(repaired, null, 2), 'utf8');
+        console.error(`🔧 ${name}: format onarıldı (alanlar evidence'tan taşındı, verdict korundu)`);
+        artifacts.push(repaired);
+        continue;
+      }
+      if (strict) throw new Error(`${name}: ${check.problems.join(', ')}`);
+      errors.push({ file: name, sceneId: value?.sceneId ?? (Number(name.split('-')[0]) || null), problems: check.problems });
+      continue;
+    }
     artifacts.push(value);
   }
-  return artifacts;
+  return strict ? artifacts : { artifacts, errors };
 }
 
 async function parseImageDimensions(bytes) {
@@ -931,8 +984,28 @@ function statusReport(scene, status) {
 // BATCH paket çıktısı: frame-öncesi işi biten her sahnenin PASS image prompt'u tek
 // okunur dosyada toplanır — Mami kareleri seri basar, istisna listesiyle döner.
 // Bu bir üretim/generation batch'i DEĞİLDİR; yalnız yazım fazlarının toplu sürücüsüdür.
-async function writeBatchPromptPack(root, command, sceneReports) {
-  const lines = [`# MAMILAS toplu prompt paketi`, ``, `Command: ${command.commandId}`, ``];
+// HARD-FIX 2026-07-16 (rapor A.6/teslim yüzeyi): paket ATOMİK yazılır (tmp+rename —
+// yarıda kesilen koşu yarım dosya bırakmaz) ve GÖRÜNÜR kopyası run kökünde yaşar
+// (command dosyasının yanı) — Mami gizli .mamilas klasörü açmaz. Özet başa gelir.
+async function writeBatchPromptPack(root, command, sceneReports, projectDir = null) {
+  const counts = { ready: 0, waiting: 0, fact: 0, error: 0, pending: 0 };
+  for (const report of sceneReports) {
+    if (report.state === 'AWAIT_FRAME' && report.prompt) counts.ready += 1;
+    else if (report.state === 'FACT_REQUIRED') counts.fact += 1;
+    else if (report.state === 'TECHNICAL_ERROR') counts.error += 1;
+    else if (report.state === 'PENDING') counts.pending += 1;
+    else counts.waiting += 1;
+  }
+  const lines = [
+    `# MAMILAS toplu prompt paketi`, ``,
+    `Command: ${command.commandId}`, ``,
+    `**${sceneReports.length} sahne** · ${counts.ready} PASS prompt hazır`
+      + (counts.fact ? ` · ${counts.fact} sahne gerçek bilgi bekliyor (FACT_REQUIRED)` : '')
+      + (counts.error ? ` · ${counts.error} sahne teknik hata (diğerleri etkilenmedi)` : '')
+      + (counts.pending ? ` · ${counts.pending} sahne sırada` : '')
+      + (counts.waiting ? ` · ${counts.waiting} sahne diğer aşamalarda` : ''),
+    ``,
+  ];
   for (const report of sceneReports) {
     lines.push(`## Sahne ${report.sceneId} — ${report.phaseName ?? ''}`.trimEnd(), ``);
     if (report.state === 'AWAIT_FRAME' && report.prompt) {
@@ -941,9 +1014,15 @@ async function writeBatchPromptPack(root, command, sceneReports) {
       lines.push(`> ${report.state}${report.reason ? ` — ${report.reason}` : ''}`, ``);
     }
   }
-  const packPath = join(root, 'SAHNE-PROMPTLAR.md');
-  await writeFile(packPath, lines.join('\n'), 'utf8');
-  return packPath;
+  const body = lines.join('\n');
+  const targets = [join(root, 'SAHNE-PROMPTLAR.md')];
+  if (projectDir && resolve(projectDir) !== resolve(root)) targets.push(join(projectDir, 'SAHNE-PROMPTLAR.md'));
+  for (const target of targets) {
+    const tmp = `${target}.tmp`;
+    await writeFile(tmp, body, 'utf8');
+    await rename(tmp, target);
+  }
+  return targets[targets.length - 1];
 }
 
 function artifactContentTemplate(role, command, scene) {
@@ -958,9 +1037,16 @@ function artifactContentTemplate(role, command, scene) {
     appliedLocks: [], suppressedContext: [], risks: [],
   };
   if (role === 'motion_author') return { frameHash: '', inventory: [], prompt: '', promptHash: '', risks: [] };
-  if (role === 'frame_jury' || role === 'motion_jury') return { verdict: '', frameHash: '', evidence: [] };
-  return { verdict: '', evidence: [] };
+  // HARD-FIX 2026-07-16 (rapor A.3 kök nedeni): jury şablonu REJECT/FACT_REQUIRED
+  // alanlarını GÖSTERMİYORDU — gerçek Deneme koşusunda jüri doğru yaratıcı REJECT'i
+  // failingCheck/targetedFix yerine evidence[]'a yazdı (şablona sadıktı) ve validator
+  // bütün batch'i öldürdü. Alanlar artık şablonda görünür; validator sözleşmesi aynı.
+  if (role === 'frame_jury' || role === 'motion_jury') return {
+    verdict: '', frameHash: '', evidence: [], failingCheck: '', targetedFix: '', factRequired: '',
+  };
+  return { verdict: '', evidence: [], failingCheck: '', targetedFix: '', factRequired: '' };
 }
+export const __testArtifactContentTemplate = artifactContentTemplate;
 
 export async function runCommand(args = process.argv.slice(2)) {
   const file = resolveCommandFile(args);
@@ -975,12 +1061,50 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (!migratedCheck.ok) throw new Error(`command migration reddedildi: ${migratedCheck.problems.join(' · ')}`);
     const output = resolve(argValue(args, '--out') ?? file);
     await writeFile(output, JSON.stringify(migrated, null, 2), 'utf8');
+    // HARD-FIX 2026-07-16 (rapor A.5/G.5): workspace migration — resume, tamamlanmış
+    // PASS işleri yeniden koşup usage YAKMAZ. İki türetilmiş katman tazelenir, karar
+    // katmanına dokunulmaz:
+    // (1) approval receipt'leri: Mami'nin onayı storyboard'a verilmişti; storyboard
+    //     byte-aynı doğrulandı (yukarıda) — yalnız türetilmiş sceneContextHash yenilenir.
+    // (2) artifact'ler: content/verdict/inputlar aynı kalır; yalnız protocolHash +
+    //     inputArtifactHashes'teki contextHash referansı güncellenir ve yeniden mühürlenir.
+    //     Zincir bütünlüğü korunur: içerideki hash'ler eski→yeni deterministik eşlenir.
+    const migrationRoot = resolve(argValue(args, '--workspace') ?? join(dirname(output), '.mamilas'));
+    const migratedWorkspace = { approvals: 0, artifacts: 0 };
+    const oldContextHashes = new Map(Object.entries(command.lifecycle.sceneContextHashes ?? {}).map(([id, hash]) => [hash, migrated.lifecycle.sceneContextHashes[id]]));
+    const approvalsDir = join(migrationRoot, 'approvals');
+    if (existsSync(approvalsDir)) {
+      for (const name of readdirSync(approvalsDir).filter((item) => item.endsWith('.json'))) {
+        const scene = migrated.scenes.find((item) => `${item.id}.json` === name);
+        if (!scene) continue;
+        await approveStoryboard(migrationRoot, migrated, scene);
+        migratedWorkspace.approvals += 1;
+      }
+    }
+    const migrationArtifactDir = resolve(argValue(args, '--artifacts') ?? join(migrationRoot, 'artifacts'));
+    if (existsSync(migrationArtifactDir)) {
+      const hashMap = new Map(); // eski contentHash → yeni contentHash (zincir sırasıyla)
+      for (const name of readdirSync(migrationArtifactDir).filter((item) => item.endsWith('.json')).sort()) {
+        let value;
+        try { value = JSON.parse(await readFile(join(migrationArtifactDir, name), 'utf8')); } catch { continue; }
+        if (value?.schema !== ARTIFACT_SCHEMA) continue;
+        const { contentHash: oldHash, ...body } = value;
+        body.protocolHash = migrated.lifecycle.protocol.contentHash;
+        body.inputArtifactHashes = (body.inputArtifactHashes ?? []).map((hash) =>
+          oldContextHashes.get(hash) ?? hashMap.get(hash) ?? hash);
+        const resealed = { ...body, contentHash: canonicalHash(body) };
+        hashMap.set(oldHash, resealed.contentHash);
+        await writeFile(join(migrationArtifactDir, name), JSON.stringify(resealed, null, 2), 'utf8');
+        migratedWorkspace.artifacts += 1;
+      }
+    }
     return {
       file: output,
       validation: 'PASS',
       commandId: migrated.commandId,
       storyboardHash: migrated.lifecycle.storyboardHash,
       action: { kind: 'COMMAND_CONTEXT_MIGRATED' },
+      migratedWorkspace,
     };
   }
   const check = await validateCommand(command);
@@ -1016,7 +1140,9 @@ export async function runCommand(args = process.argv.slice(2)) {
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'STORYBOARD_APPROVED' }, ...approval };
   }
 
-  const artifacts = await loadArtifacts(artifactDir, command);
+  // Batch sahne-izolasyonlu kendi non-strict yüklemesini yapar — strict ön yükleme
+  // batch'te tek bozuk dosyayla bütün koşuyu öldürürdü (2026-07-16 çöküşü).
+  const artifacts = args.includes('--batch') ? [] : await loadArtifacts(artifactDir, command);
   if (args.includes('--export-image-bundle')) {
     if (!explicitScene) throw new Error('--export-image-bundle için --scene zorunlu');
     const approval = await loadStoryboardApproval(root, command, explicitScene);
@@ -1064,8 +1190,42 @@ export async function runCommand(args = process.argv.slice(2)) {
       // Sahne başına güvenlik tavanı: author r0+r1, jury x2, motion aynı — 8 rol
       // koşusundan fazlası lifecycle yasasında zaten imkânsız; döngü kaçağına kapı yok.
       for (let step = 0; step < 8; step += 1) {
-        const live = await loadArtifacts(artifactDir, command);
-        const status = await sceneStatus(root, command, candidate, live);
+        // HARD-FIX 2026-07-16 (rapor A.4): sahne izolasyonu — non-strict yükleme.
+        // Bozuk artifact önce mekanik onarım dener (repairJuryArtifact); onarılamazsa
+        // yalnız SAHİBİ sahne etkilenir, diğer bağımsız sahneler yürür.
+        const { artifacts: live, errors: loadErrors } = await loadArtifacts(artifactDir, command, { strict: false });
+        const ownError = loadErrors.find((error) => error.sceneId === candidate.id);
+        if (ownError) {
+          // Rapor A.3: format/schema hatası için BİR teknik retry hakkı — creative
+          // revision'dan AYRI. Bozuk dosya .invalid'e alınır; launch modunda aynı rol
+          // yeniden açılır (lifecycle bozuk dosyayı görmediği için aynı role/revision'ı
+          // türetir). İkinci bozuk üretim .invalid.2 ile TECHNICAL_ERROR olur.
+          const brokenPath = join(artifactDir, ownError.file);
+          const retryMarker = `${brokenPath}.invalid`;
+          if (launch && !existsSync(retryMarker)) {
+            await rename(brokenPath, retryMarker);
+            console.error(`🔁 Sahne ${candidate.id}: ${ownError.file} format-bozuk (${ownError.problems.join(', ')}) — kenara alındı, aynı rol BİR kez teknik-retry ile yeniden açılıyor (creative revision hakkı yanmadı)`);
+            continue; // döngü aynı sahneyi yeniden değerlendirir → RUN_ROLE türetilir
+          }
+          if (launch && existsSync(retryMarker)) {
+            await rename(brokenPath, `${brokenPath}.invalid.2`);
+          }
+          report = {
+            sceneId: candidate.id, phaseName: candidate.phaseName, state: launch ? 'TECHNICAL_ERROR' : 'FORMAT_RETRY_PENDING',
+            reason: launch
+              ? `${ownError.file}: ${ownError.problems.join(', ')} — teknik retry de başarısız; bu sahne elle incelenmeli, diğer sahneler etkilenmedi.`
+              : `${ownError.file}: ${ownError.problems.join(', ')} — launch modunda aynı rol bir kez teknik-retry ile yeniden koşulur.`,
+          };
+          break;
+        }
+        let status;
+        try {
+          status = await sceneStatus(root, command, candidate, live);
+        } catch (error) {
+          // Zincir/approval hatası da yalnız bu sahneyi işaretler — batch ölmez.
+          report = { sceneId: candidate.id, phaseName: candidate.phaseName, state: 'TECHNICAL_ERROR', reason: error.message };
+          break;
+        }
         if (status.action.kind !== 'RUN_ROLE') {
           report = statusReport(candidate, status);
           break;
@@ -1074,7 +1234,15 @@ export async function runCommand(args = process.argv.slice(2)) {
         // Canlı ilerleme — headless oturumlar sessizdir; Mami koşunun nerede olduğunu
         // stderr'den görür (stdout tek JSON sonuç olarak kalır, parse bozulmaz).
         console.error(`⏳ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} yazıyor…`);
-        await executeRole(check, command, projectDir, root, artifactDir, status, provider, true, live);
+        try {
+          await executeRole(check, command, projectDir, root, artifactDir, status, provider, true, live);
+        } catch (error) {
+          // Rol oturumu/artifact hatası da sahne-bazlı: provider ölür, sahne işaretlenir,
+          // sıradaki sahne yürür. Sonraki koşu (resume) bu sahneyi kaldığı yerden dener.
+          report = { sceneId: candidate.id, phaseName: candidate.phaseName, state: 'TECHNICAL_ERROR', reason: error.message };
+          console.error(`⚠️ Sahne ${candidate.id}/${total} · ${status.action.role} başarısız: ${error.message} — diğer sahneler sürüyor`);
+          break;
+        }
         console.error(`✅ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} mühürlendi`);
       }
       if (!report) throw new Error(`sahne ${candidate.id} rol tavanına çarptı; lifecycle beklenmedik döngüde`);
@@ -1083,8 +1251,15 @@ export async function runCommand(args = process.argv.slice(2)) {
         : report.state;
       console.error(`📦 Sahne ${candidate.id}/${total} → ${summary}`);
       sceneReports.push(report);
+      // HARD-FIX 2026-07-16 (rapor A.6): incremental teslim — paket HER sahne
+      // kapanışında atomik yazılır; koşu yarıda kesilse bile o ana kadarki PASS
+      // promptlar görünür pakette durur. Bekleyen sahneler PENDING olarak listelenir.
+      const pendingReports = command.scenes
+        .filter((scene) => !sceneReports.some((item) => item.sceneId === scene.id))
+        .map((scene) => ({ sceneId: scene.id, phaseName: scene.phaseName, state: 'PENDING' }));
+      await writeBatchPromptPack(root, command, [...sceneReports, ...pendingReports], projectDir);
     }
-    const packPath = await writeBatchPromptPack(root, command, sceneReports);
+    const packPath = await writeBatchPromptPack(root, command, sceneReports, projectDir);
     if (launch) console.error(`\n🎬 Toplu prompt paketi: ${packPath}\n`);
     return {
       file, validation: 'PASS', protocolHash: check.protocolHash, commandId: command.commandId,
