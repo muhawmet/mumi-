@@ -729,6 +729,129 @@ async function launchInteractive(provider, projectDir, workspaceDir) {
   return workspaceDir;
 }
 
+// BATCH modu oturumu: aynı SESSION.md sözleşmesi, ama oturum işini bitirince kendisi
+// çıkar (claude -p / codex exec) — Mami pencere kapatmak için beklemez. Rol başına
+// yine TEK oturum açılır; author ve jury asla aynı context'i paylaşmaz (protokolün
+// "bağımsız jury" yasası oturum sınırıyla korunur).
+async function launchHeadless(provider, projectDir, workspaceDir) {
+  const cli = findExecutable(provider);
+  if (!cli) throw new Error(`${provider} CLI bulunamadı`);
+  const instruction = `Read ${JSON.stringify(join(workspaceDir, 'SESSION.md'))} and follow it. Work only on the single role named there; do not call generation APIs.`;
+  const args = provider === 'codex'
+    ? ['exec', '-C', projectDir, '--sandbox', 'workspace-write', instruction]
+    : ['-p', instruction, '--permission-mode', 'acceptEdits'];
+  const child = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
+    ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${args.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
+    : spawn(cli, args, { cwd: projectDir, stdio: 'inherit' });
+  const exitCode = await new Promise((resolvePromise, reject) => { child.on('exit', resolvePromise); child.on('error', reject); });
+  if (exitCode !== 0) throw new Error(`${provider} oturumu başarısız çıktı: ${exitCode}`);
+  return workspaceDir;
+}
+
+// Tek sahnenin canlı durumunu türetir: approval → artifacts → frame → nextAction.
+// Hem tekli akış hem batch döngüsü aynı yasadan okur; ikinci bir lifecycle yoktur.
+async function sceneStatus(root, command, scene, artifacts) {
+  const approval = await loadStoryboardApproval(root, command, scene);
+  if (!approval.ok) return { scene, artifacts: [], frame: null, action: { kind: 'AWAIT_STORYBOARD_APPROVAL' } };
+  const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === scene.id);
+  const frame = await loadFrame(root, command, scene, sceneArtifacts);
+  // Stale frame-bağımlı artifact'ler ayıklanır — canlı zincir üzerinden ilerlenir
+  // (yeni kare geldiyse frame_jury/motion doğal olarak yeniden açılır).
+  const liveArtifacts = validateArtifactChain(sceneArtifacts, frame, command, scene.id);
+  return { scene, artifacts: liveArtifacts, frame, action: nextAction(liveArtifacts, frame) };
+}
+
+// Bir RUN_ROLE aksiyonu için workspace'i hazırlar, TEK oturum açar ve üretilen
+// tek artifact'i doğrular. İnteraktif ve batch (headless) aynı sözleşmeyi koşar.
+async function executeRole(check, command, projectDir, root, artifactDir, status, provider, headless) {
+  const { scene, artifacts: sceneArtifacts, frame, action } = status;
+  const context = roleContext(command, scene, sceneArtifacts, frame, action);
+  await mkdir(root, { recursive: true });
+  await mkdir(artifactDir, { recursive: true });
+  await mkdir(join(root, 'frames'), { recursive: true });
+  const adapter = await readFile(join(REPO_ROOT, 'agents', 'adapters', `${provider}.md`), 'utf8');
+  const role = await readFile(join(REPO_ROOT, 'agents', 'roles', `${action.role.replaceAll('_', '-')}.md`), 'utf8');
+  await writeFile(join(root, 'PROTOCOL.md'), check.protocolText, 'utf8');
+  await writeFile(join(root, 'ADAPTER.md'), adapter, 'utf8');
+  await writeFile(join(root, 'ROLE.md'), role, 'utf8');
+  const artifactTemplate = {
+    schema: ARTIFACT_SCHEMA,
+    protocolVersion: PROTOCOL_VERSION,
+    protocolHash: check.protocolHash,
+    phase: ROLE_PHASE[action.role],
+    role: action.role,
+    provider,
+    sceneId: scene.id,
+    decisionHash: command.commandId.replace(/^mamilas-/, ''),
+    storyboardHash: command.lifecycle.storyboardHash,
+    inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts, command, scene.id, frame),
+    revision: action.revision,
+    content: artifactContentTemplate(action.role, command, scene),
+  };
+  // BRAIN M7: Mami-onaylı ders bankası — HASH-DIŞI katman (artifactContract gibi).
+  // sceneContextHash'e girmez: dersler atölye hafızasıdır, karar değil; banka
+  // büyüyünce command'ler stale OLMAZ. Yalnız author rolleri okur; çelişkide Mami
+  // direktifi kazanır (role kartı yasası).
+  let approvedLessons = [];
+  if (action.role === 'image_author' || action.role === 'motion_author') {
+    try {
+      const bank = await readFile(join(REPO_ROOT, 'agents', 'lessons', 'APPROVED.md'), 'utf8');
+      approvedLessons = parseApprovedLessons(bank);
+    } catch { /* banka yoksa akış durmaz */ }
+  }
+  const sessionContext = { ...context, approvedLessons, artifactContract: artifactTemplate };
+  const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
+  await writeFile(join(root, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
+  await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');
+  const outputName = `${scene.id}-${action.role}-r${action.revision}.json`;
+  await writeFile(join(root, 'SESSION.md'), `# MAMILAS single-role session\n\nProvider: ${provider}\nRole: ${action.role}\nScene: ${scene.id}\nRevision: ${action.revision}\n\nRead PROTOCOL.md, ADAPTER.md, ROLE.md and CONTEXT.json. Edit only the content in ARTIFACT_TEMPLATE.json, then seal it with:\n\nnode "${fileURLToPath(import.meta.url)}" --seal-artifact "${templatePath}" --out "${join(artifactDir, outputName)}"\n\nWrite exactly this one artifact. Do not run another role.${headless ? '\nWhen the artifact is sealed, exit the session immediately.' : ''}\n`, 'utf8');
+  const beforeHashes = new Set(sceneArtifacts.map((artifact) => artifact.contentHash));
+  await (headless ? launchHeadless : launchInteractive)(provider, projectDir, root);
+  const after = (await loadArtifacts(artifactDir, command)).filter((artifact) => artifact.sceneId === scene.id);
+  const created = after.filter((artifact) => !beforeHashes.has(artifact.contentHash));
+  if (created.length !== 1) throw new Error(`oturum tam bir yeni artifact üretmeli; bulunan ${created.length}`);
+  const produced = created[0];
+  if (produced.role !== action.role || produced.revision !== action.revision || produced.provider !== provider) {
+    throw new Error('oturum yanlış role/revision/provider artifact üretti');
+  }
+  validateArtifactChain(after, frame, command, scene.id);
+  return produced;
+}
+
+// Batch raporu için sahnenin insan-okur durumu. AWAIT_FRAME'e ulaşan sahnenin PASS
+// image prompt'u pakete girer; FACT_REQUIRED sebebiyle durur, gerisi durumunu söyler.
+function statusReport(scene, status) {
+  const report = { sceneId: scene.id, phaseName: scene.phaseName, state: status.action.kind };
+  if (status.action.kind === 'FACT_REQUIRED') report.reason = status.action.reason;
+  if (status.action.kind === 'AWAIT_FRAME' || status.action.kind === 'AWAIT_MAMI_APPROVE') {
+    const author = latest(status.artifacts, 'image_author');
+    if (author?.content?.prompt) report.prompt = author.content.prompt;
+  }
+  if (status.action.kind === 'COMPLETE') {
+    const motion = latest(status.artifacts, 'motion_author');
+    if (motion?.content?.prompt) report.motionPrompt = motion.content.prompt;
+  }
+  return report;
+}
+
+// BATCH paket çıktısı: frame-öncesi işi biten her sahnenin PASS image prompt'u tek
+// okunur dosyada toplanır — Mami kareleri seri basar, istisna listesiyle döner.
+// Bu bir üretim/generation batch'i DEĞİLDİR; yalnız yazım fazlarının toplu sürücüsüdür.
+async function writeBatchPromptPack(root, command, sceneReports) {
+  const lines = [`# MAMILAS toplu prompt paketi`, ``, `Command: ${command.commandId}`, ``];
+  for (const report of sceneReports) {
+    lines.push(`## Sahne ${report.sceneId} — ${report.phaseName ?? ''}`.trimEnd(), ``);
+    if (report.state === 'AWAIT_FRAME' && report.prompt) {
+      lines.push('```', report.prompt, '```', ``);
+    } else {
+      lines.push(`> ${report.state}${report.reason ? ` — ${report.reason}` : ''}`, ``);
+    }
+  }
+  const packPath = join(root, 'SAHNE-PROMPTLAR.md');
+  await writeFile(packPath, lines.join('\n'), 'utf8');
+  return packPath;
+}
+
 function artifactContentTemplate(role, command, scene) {
   if (role === 'image_author') return {
     prompt: '', promptHash: '',
@@ -778,6 +901,17 @@ export async function runCommand(args = process.argv.slice(2)) {
   if (Number.isFinite(sceneArg) && sceneArg > 0 && !explicitScene) throw new Error(`scene ${sceneArg} yok`);
 
   if (args.includes('--approve-storyboard')) {
+    // BATCH: --all-scenes tüm storyboard approval receipt'lerini tek koşuda yazar.
+    // Onay kararı yine Mami'nin (runner tek soru sorar); burası yalnız receipt üretimi.
+    if (args.includes('--all-scenes')) {
+      await mkdir(root, { recursive: true });
+      const approvals = [];
+      for (const scene of command.scenes) {
+        const approval = await approveStoryboard(root, command, scene);
+        approvals.push({ sceneId: scene.id, ...approval });
+      }
+      return { file, validation: 'PASS', sceneId: null, action: { kind: 'STORYBOARD_APPROVED_ALL' }, approvals };
+    }
     if (!explicitScene) throw new Error('--approve-storyboard için --scene zorunlu');
     await mkdir(root, { recursive: true });
     const approval = await approveStoryboard(root, command, explicitScene);
@@ -815,22 +949,47 @@ export async function runCommand(args = process.argv.slice(2)) {
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'FRAME_IMPORTED' }, ...imported };
   }
 
+  // BATCH sürücüsü: sahne sahne DURMAK yerine, frame kapısına kadar koşulabilir tüm
+  // yazım fazlarını (image author→jury, frame sonrası motion author→jury) tek koşuda
+  // tamamlar. Her rol yine tek bağımsız oturumdur; jury yasası, revision limiti,
+  // FACT_REQUIRED ve gerçek-frame kapısı AYNEN geçerlidir — hızlanan tek şey Mami'nin
+  // launcher'a dönme sayısıdır. Otomatik image/video generation burada da YOKTUR.
+  if (args.includes('--batch')) {
+    if (explicitScene) throw new Error('--batch tüm sahneleri sürer; --scene ile birlikte kullanılmaz');
+    const launch = args.includes('--launch');
+    const provider = launch ? argValue(args, '--provider') : null;
+    if (launch && !['claude', 'codex'].includes(provider)) throw new Error('--provider claude|codex zorunlu');
+    const sceneReports = [];
+    for (const candidate of command.scenes) {
+      let report = null;
+      // Sahne başına güvenlik tavanı: author r0+r1, jury x2, motion aynı — 8 rol
+      // koşusundan fazlası lifecycle yasasında zaten imkânsız; döngü kaçağına kapı yok.
+      for (let step = 0; step < 8; step += 1) {
+        const live = await loadArtifacts(artifactDir, command);
+        const status = await sceneStatus(root, command, candidate, live);
+        if (status.action.kind !== 'RUN_ROLE') {
+          report = statusReport(candidate, status);
+          break;
+        }
+        if (!launch) { report = { sceneId: candidate.id, phaseName: candidate.phaseName, state: `RUN_ROLE:${status.action.role}` }; break; }
+        await executeRole(check, command, projectDir, root, artifactDir, status, provider, true);
+      }
+      if (!report) throw new Error(`sahne ${candidate.id} rol tavanına çarptı; lifecycle beklenmedik döngüde`);
+      sceneReports.push(report);
+    }
+    const packPath = await writeBatchPromptPack(root, command, sceneReports);
+    return {
+      file, validation: 'PASS', protocolHash: check.protocolHash, commandId: command.commandId,
+      storyboardHash: check.expectedStoryboard, action: { kind: 'BATCH_REPORT' }, scenes: sceneReports, promptPack: packPath,
+    };
+  }
+
   let selected = null;
   const candidates = explicitScene ? [explicitScene] : command.scenes;
   for (const candidate of candidates) {
-    const approval = await loadStoryboardApproval(root, command, candidate);
-    if (!approval.ok) {
-      selected = { scene: candidate, artifacts: [], frame: null, action: { kind: 'AWAIT_STORYBOARD_APPROVAL' } };
-      break;
-    }
-    const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === candidate.id);
-    const frame = await loadFrame(root, command, candidate, sceneArtifacts);
-    // Stale frame-bağımlı artifact'ler ayıklanır — canlı zincir üzerinden ilerlenir
-    // (yeni kare geldiyse frame_jury/motion doğal olarak yeniden açılır).
-    const liveArtifacts = validateArtifactChain(sceneArtifacts, frame, command, candidate.id);
-    const action = nextAction(liveArtifacts, frame);
-    if (action.kind !== 'COMPLETE' || explicitScene) {
-      selected = { scene: candidate, artifacts: liveArtifacts, frame, action };
+    const status = await sceneStatus(root, command, candidate, artifacts);
+    if (status.action.kind !== 'COMPLETE' || explicitScene) {
+      selected = status;
       break;
     }
   }
@@ -854,55 +1013,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (action.kind !== 'RUN_ROLE') throw new Error(`launch yok: ${action.kind}`);
     const provider = argValue(args, '--provider');
     if (!['claude', 'codex'].includes(provider)) throw new Error('--provider claude|codex zorunlu');
-    await mkdir(root, { recursive: true });
-    await mkdir(artifactDir, { recursive: true });
-    await mkdir(join(root, 'frames'), { recursive: true });
-    const adapter = await readFile(join(REPO_ROOT, 'agents', 'adapters', `${provider}.md`), 'utf8');
-    const role = await readFile(join(REPO_ROOT, 'agents', 'roles', `${action.role.replaceAll('_', '-')}.md`), 'utf8');
-    await writeFile(join(root, 'PROTOCOL.md'), check.protocolText, 'utf8');
-    await writeFile(join(root, 'ADAPTER.md'), adapter, 'utf8');
-    await writeFile(join(root, 'ROLE.md'), role, 'utf8');
-    const artifactTemplate = {
-      schema: ARTIFACT_SCHEMA,
-      protocolVersion: PROTOCOL_VERSION,
-      protocolHash: check.protocolHash,
-      phase: ROLE_PHASE[action.role],
-      role: action.role,
-      provider,
-      sceneId: scene.id,
-      decisionHash: command.commandId.replace(/^mamilas-/, ''),
-      storyboardHash: command.lifecycle.storyboardHash,
-      inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts, command, scene.id, frame),
-      revision: action.revision,
-      content: artifactContentTemplate(action.role, command, scene),
-    };
-    // BRAIN M7: Mami-onaylı ders bankası — HASH-DIŞI katman (artifactContract gibi).
-    // sceneContextHash'e girmez: dersler atölye hafızasıdır, karar değil; banka
-    // büyüyünce command'ler stale OLMAZ. Yalnız author rolleri okur; çelişkide Mami
-    // direktifi kazanır (role kartı yasası).
-    let approvedLessons = [];
-    if (action.role === 'image_author' || action.role === 'motion_author') {
-      try {
-        const bank = await readFile(join(REPO_ROOT, 'agents', 'lessons', 'APPROVED.md'), 'utf8');
-        approvedLessons = parseApprovedLessons(bank);
-      } catch { /* banka yoksa akış durmaz */ }
-    }
-    const sessionContext = { ...context, approvedLessons, artifactContract: artifactTemplate };
-    const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
-    await writeFile(join(root, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
-    await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');
-    const outputName = `${scene.id}-${action.role}-r${action.revision}.json`;
-    await writeFile(join(root, 'SESSION.md'), `# MAMILAS single-role session\n\nProvider: ${provider}\nRole: ${action.role}\nScene: ${scene.id}\nRevision: ${action.revision}\n\nRead PROTOCOL.md, ADAPTER.md, ROLE.md and CONTEXT.json. Edit only the content in ARTIFACT_TEMPLATE.json, then seal it with:\n\nnode "${fileURLToPath(import.meta.url)}" --seal-artifact "${templatePath}" --out "${join(artifactDir, outputName)}"\n\nWrite exactly this one artifact. Do not run another role.\n`, 'utf8');
-    const beforeHashes = new Set(sceneArtifacts.map((artifact) => artifact.contentHash));
-    await launchInteractive(provider, projectDir, root);
-    const after = (await loadArtifacts(artifactDir, command)).filter((artifact) => artifact.sceneId === scene.id);
-    const created = after.filter((artifact) => !beforeHashes.has(artifact.contentHash));
-    if (created.length !== 1) throw new Error(`oturum tam bir yeni artifact üretmeli; bulunan ${created.length}`);
-    const produced = created[0];
-    if (produced.role !== action.role || produced.revision !== action.revision || produced.provider !== provider) {
-      throw new Error('oturum yanlış role/revision/provider artifact üretti');
-    }
-    validateArtifactChain(after, frame, command, scene.id);
+    await executeRole(check, command, projectDir, root, artifactDir, selected, provider, false);
   }
   return result;
 }

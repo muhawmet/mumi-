@@ -463,6 +463,100 @@ describe('interactive command runtime', () => {
     expect(out.action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
   });
 
+  // BATCH mandası (Mami, 2026-07-16): sahne sahne launcher'a dönmek yok. Aşağıdaki
+  // kilitler batch sürücüsünün protokol yasalarını GEVŞETMEDİĞİNİ kanıtlar.
+  test('--approve-storyboard --all-scenes tüm approval receiptlerini tek koşuda yazar', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-batch-approve-'));
+    const command = commandFixture(true, 3);
+    const result = runAt(dir, command, ['--approve-storyboard', '--all-scenes']);
+    expect(result.status, result.stderr).toBe(0);
+    const out = JSON.parse(result.stdout);
+    expect(out.action.kind).toBe('STORYBOARD_APPROVED_ALL');
+    expect(out.approvals).toHaveLength(3);
+    for (const sceneId of [1, 2, 3]) {
+      expect(existsSync(join(dir, '.mamilas', 'approvals', `${sceneId}.json`))).toBe(true);
+    }
+    // Toplu onay sonrası lifecycle ilk sahnenin image_author'ını türetir — tekli yasayla aynı.
+    const next = runAt(dir, command, ['--dry-run']);
+    const nextOut = JSON.parse(next.stdout);
+    expect(nextOut.sceneId).toBe(1);
+    expect(nextOut.action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
+  });
+
+  test('--batch --scene birlikte reddedilir; batch tüm sahneleri sürer', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-batch-scene-'));
+    const command = commandFixture(true, 2);
+    const result = runAt(dir, command, ['--batch', '--scene', '1', '--dry-run']);
+    expect(result.status).toBe(1);
+    expect(result.stderr).toMatch(/--batch tüm sahneleri sürer/);
+  });
+
+  test('--batch raporu her sahnenin durumunu verir; AWAIT_FRAME sahnesinin PASS promptu pakete girer ve frame kapısı AÇILMAZ', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-batch-report-'));
+    const command = commandFixture(true, 2);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    // Sahne 1: PASS image zinciri hazır ama GERÇEK FRAME YOK → batch motion açamaz.
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'Scene one approved image prompt.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world'], suppressedContext: [], risks: [],
+    });
+    const jury = sealedArtifact(command, 1, 'image_jury', 'IMAGE_JURY', 0, [contextHash, author.contentHash], {
+      verdict: 'PASS', evidence: ['Scene one prompt counter-read.'],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    writeFileSync(join(artifactsDir, '1-image_jury-r0.json'), JSON.stringify(jury));
+
+    const result = runAt(dir, command, ['--batch', '--dry-run']);
+    expect(result.status, result.stderr).toBe(0);
+    const out = JSON.parse(result.stdout);
+    expect(out.action.kind).toBe('BATCH_REPORT');
+    expect(out.scenes).toHaveLength(2);
+    // Sahne 1 frame bekliyor; PASS prompt raporda ve pakette. Motion rolü türetilmedi.
+    expect(out.scenes[0]).toMatchObject({ sceneId: 1, state: 'AWAIT_FRAME', prompt });
+    // Sahne 2 hâlâ yazım fazında (launch'sız dry-run rol koşturmaz, dürüstçe söyler).
+    expect(out.scenes[1]).toMatchObject({ sceneId: 2, state: 'RUN_ROLE:image_author' });
+    const pack = readFileSync(join(dir, '.mamilas', 'SAHNE-PROMPTLAR.md'), 'utf8');
+    expect(pack).toContain('Sahne 1');
+    expect(pack).toContain(prompt);
+    expect(pack).toContain('RUN_ROLE:image_author');
+    // Frame kapısı kanıtı: batch koşusu motion artifact'i YARATMADI.
+    expect(readdirSync(artifactsDir).some((name) => name.includes('motion'))).toBe(false);
+  });
+
+  test('--batch FACT_REQUIRED sahnesinde durmaz; sebep raporda, diğer sahneler sürülür', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-batch-fact-'));
+    const command = commandFixture(true, 2);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'Scene one draft prompt.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world'], suppressedContext: [], risks: [],
+    });
+    const jury = sealedArtifact(command, 1, 'image_jury', 'IMAGE_JURY', 0, [contextHash, author.contentHash], {
+      verdict: 'FACT_REQUIRED', factRequired: 'marka logosunun gerçek geometrisi kaynakta yok', evidence: ['Counter-read.'],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    writeFileSync(join(artifactsDir, '1-image_jury-r0.json'), JSON.stringify(jury));
+
+    const result = runAt(dir, command, ['--batch', '--dry-run']);
+    expect(result.status, result.stderr).toBe(0);
+    const out = JSON.parse(result.stdout);
+    expect(out.scenes[0]).toMatchObject({ sceneId: 1, state: 'FACT_REQUIRED' });
+    expect(out.scenes[0].reason).toMatch(/marka logosunun gerçek geometrisi/);
+    expect(out.scenes[1]).toMatchObject({ sceneId: 2, state: 'RUN_ROLE:image_author' });
+  });
+
   test('Claude/Codex adapters share evidence surface and copy no protocol body', () => {
     const claude = readFileSync(resolve('agents/adapters/claude.md'), 'utf8');
     const codex = readFileSync(resolve('agents/adapters/codex.md'), 'utf8');

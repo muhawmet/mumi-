@@ -204,11 +204,15 @@ function lifecycleArgs(root, commandFile, useProjectWorkspace) {
     const value = argValue(name);
     if (value) args.push(name, useProjectWorkspace && ['--import-frame', '--add-directive-file'].includes(name) ? resolve(value) : value);
   }
+  if (process.argv.includes('--batch')) args.push('--batch');
+  if (process.argv.includes('--all-scenes')) args.push('--all-scenes');
   return args;
 }
 
 async function approvePendingStoryboard(root, commandFile, baseArgs) {
-  const preflight = spawnSync(process.execPath, [...baseArgs, '--dry-run'], {
+  // Ön kontrol her zaman tekli lifecycle sorusudur; --batch raporu approval durumunu
+  // gizlememeli (ilk onaysız sahne AWAIT_STORYBOARD_APPROVAL olarak görünmeli).
+  const preflight = spawnSync(process.execPath, [...baseArgs.filter((value) => value !== '--batch'), '--dry-run'], {
     cwd: dirname(commandFile), encoding: 'utf8',
   });
   if (preflight.status !== 0) {
@@ -222,10 +226,17 @@ async function approvePendingStoryboard(root, commandFile, baseArgs) {
   }
   if (next?.action?.kind !== 'AWAIT_STORYBOARD_APPROVAL') return true;
   if (!process.stdin.isTTY) return die(`Sahne ${next.sceneId} storyboard onayı bekliyor; interaktif terminalde yeniden çalıştır.`);
-  const answer = (await ask(`\nSahne ${next.sceneId} storyboardu onaylansın mı? (E/h): `)).trim().toLocaleLowerCase('tr');
+  // BATCH: tek soru, tüm sahneler — Mami 60 kez E yazmaz. Onay kararı yine Mami'nin;
+  // hayır derse hiçbir receipt yazılmaz ve oturum açılmaz.
+  const batch = process.argv.includes('--batch');
+  const question = batch
+    ? '\nTÜM sahnelerin storyboardu onaylansın mı? (E/h): '
+    : `\nSahne ${next.sceneId} storyboardu onaylansın mı? (E/h): `;
+  const answer = (await ask(question)).trim().toLocaleLowerCase('tr');
   if (!['e', 'evet'].includes(answer)) return die('Storyboard onayı verilmedi; prompt oturumu açılmadı.');
-  const approvalArgs = [...baseArgs];
-  if (!argValue('--scene')) approvalArgs.push('--scene', String(next.sceneId));
+  const approvalArgs = baseArgs.filter((value) => value !== '--batch');
+  if (batch) approvalArgs.push('--all-scenes');
+  else if (!argValue('--scene')) approvalArgs.push('--scene', String(next.sceneId));
   approvalArgs.push('--approve-storyboard');
   const approval = spawnSync(process.execPath, approvalArgs, { cwd: dirname(commandFile), encoding: 'utf8' });
   if (approval.status !== 0) return die(`mamilas-command: ${String(approval.stderr ?? '').trim() || 'storyboard onayı yazılamadı'}`);
