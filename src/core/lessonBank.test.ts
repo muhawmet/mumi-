@@ -75,19 +75,30 @@ describe('approvedLessons context slice — kısa, curated, tavanlı', () => {
     expect(slice.every((l) => l.status === 'APPROVED')).toBe(true);
   });
 
-  it('parser PARİTE: lessonBank.ts regex/cap ile runner kopyası birebir (drift kilidi)', async () => {
-    const { readFileSync } = await import('node:fs');
-    const runner = readFileSync('scripts/mamilas-command.mjs', 'utf8');
-    const bank = readFileSync('src/core/lessonBank.ts', 'utf8');
-    // Aynı satır-biçimi imzası iki dosyada da yaşamalı:
-    const SIG = 'kaynak:\\\\s*(.+?)\\\\s*·\\\\s*(\\\\d{4}-\\\\d{2}-\\\\d{2})\\\\s*·\\\\s*Mami onayı';
-    // lessonBank.ts regex'i tek-backslash literal, runner string-içi çift-backslash — normalize et:
-    const norm = (s: string) => s.replace(/\\\\/g, '\\');
-    expect(norm(runner)).toContain(norm(SIG));
-    expect(bank).toContain('Mami onayı');
-    // Cap iki tarafta da 20:
-    expect(bank).toMatch(/APPROVED_LESSONS_CAP = 20/);
-    expect(runner).toMatch(/\.slice\(-20\)/);
+  it('parser FONKSİYONEL PARİTE: TS ve runner parser\'ı aynı girdilerde byte-eş çıktı verir', async () => {
+    // Sol P1: imza/cap smoke-test'i drift'i geçirebilir — iki parser GERÇEKTEN çalıştırılıp
+    // çıktıları karşılaştırılır (adversarial girdiler dahil).
+    const { createRequire } = await import('node:module');
+    const require = createRequire(import.meta.url);
+    const { pathToFileURL } = require('node:url');
+    const { resolve } = require('node:path');
+    const runner = await import(pathToFileURL(resolve('scripts/mamilas-command.mjs')).href);
+    expect(runner.__testParseApprovedLessons, 'runner parser export etmeli').toBeTruthy();
+    const tsParse = (md: string) => approvedLessonsSlice(parseApprovedLessons(md));
+    const cases = [
+      '',
+      '# başlık yalnız',
+      '- düzgün ders — kaynak: P · 2026-07-16 · Mami onayı',
+      '- eksik tarih ders — kaynak: P · Mami onayı',                       // format-dışı → atlanır
+      '- unicode — ders · tire—li — kaynak: Ü Projesi · 2026-01-02 · Mami onayı',
+      '-boşluksuz ders — kaynak: P · 2026-07-16 · Mami onayı',             // "- " yok → atlanır
+      Array.from({ length: 30 }, (_, i) => `- ders ${i} — kaynak: P${i} · 2026-07-16 · Mami onayı`).join('\n'), // cap 20
+      '- sondaki boşluk — kaynak: P · 2026-07-16 · Mami onayı   ',
+    ];
+    for (const md of cases) {
+      expect(JSON.stringify(runner.__testParseApprovedLessons(md)), md.slice(0, 40))
+        .toBe(JSON.stringify(tsParse(md)));
+    }
   });
 
   it('HASH sınırı: ders bankası değişse de sceneContextHash değişmez (command stale olmaz)', async () => {

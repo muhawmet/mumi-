@@ -72,6 +72,21 @@ const CONTRACT_OVERRIDE_POLICY =
   + 'explicitly contradicts. Suppression is reasoning, done by the agent, visible in the receipt — '
   + 'never inferred by code from directive keywords.';
 
+// BRAIN M7 — ders bankası parser'ı. src/core/lessonBank.ts ile FONKSİYONEL parite
+// zorunlu (lessonBank.test.ts iki parser'ı aynı girdilerle çalıştırıp çıktı karşılaştırır).
+const LESSON_LINE_RE = /^-\s+(.+?)\s+—\s+kaynak:\s*(.+?)\s*·\s*(\d{4}-\d{2}-\d{2})\s*·\s*Mami onayı\s*$/u;
+function parseApprovedLessons(markdown) {
+  if (!markdown?.trim()) return [];
+  const lessons = [];
+  for (const line of markdown.split('\n')) {
+    const match = LESSON_LINE_RE.exec(line.trim());
+    if (!match) continue;
+    lessons.push({ lesson: match[1], sourceProject: match[2], date: match[3], status: 'APPROVED' });
+  }
+  return lessons.slice(-20); // lessonBank.ts APPROVED_LESSONS_CAP ile aynı tavan
+}
+export const __testParseApprovedLessons = parseApprovedLessons;
+
 function buildMotionPromptQualityContract({ videoModel }) {
   const key = (videoModel ?? '').toLowerCase();
   const clauses = [
@@ -837,12 +852,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (action.role === 'image_author' || action.role === 'motion_author') {
       try {
         const bank = await readFile(join(REPO_ROOT, 'agents', 'lessons', 'APPROVED.md'), 'utf8');
-        const LESSON_RE = /^-\s+(.+?)\s+—\s+kaynak:\s*(.+?)\s*·\s*(\d{4}-\d{2}-\d{2})\s*·\s*Mami onayı\s*$/u;
-        approvedLessons = bank.split('\n')
-          .map((line) => LESSON_RE.exec(line.trim()))
-          .filter(Boolean)
-          .map((m) => ({ lesson: m[1], sourceProject: m[2], date: m[3], status: 'APPROVED' }))
-          .slice(-20); // context ekonomisi — lessonBank.ts APPROVED_LESSONS_CAP ile aynı
+        approvedLessons = parseApprovedLessons(bank);
       } catch { /* banka yoksa akış durmaz */ }
     }
     const sessionContext = { ...context, approvedLessons, artifactContract: artifactTemplate };

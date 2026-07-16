@@ -39,9 +39,10 @@ Doğru katman: runner'ın hash-dışı `sessionContext`'i (artifactContract ile 
 
 - "Hash-eşitlik testi eksik" → eklendi: banka-bağımsız context determinizmi + approvedLessons'ın
   hash'lenen context'te hiç görünmediği canonicalHash ile kilitli (`lessonBank.test.ts`).
-- "Parser regex/cap iki dosyada kopya, parite testi yok" → parite testi eklendi (imza + cap 20
-  iki dosyada da doğrulanır). Tam fonksiyonel parite (runner'ın parse ÇIKTISI) launch-yolu
-  E2E'si ister — convergence adayı, ledger.
+- "Parser parite smoke-test" (Sol final-tur P1) → **FONKSİYONEL pariteye yükseltildi:** runner
+  parse'ı named `parseApprovedLessons` + `__testParseApprovedLessons` test-export'u; test iki
+  parser'ı 8 adversarial girdide (boş/başlık/format-dışı/unicode/cap-30/trailing-ws) gerçekten
+  çalıştırıp byte-karşılaştırır. **Sol final: PASS.**
 - "Otomatik promote yok" → Sol doğruladı (closeout yalnız CANDIDATE üretir).
 
 ## Gerçek döngü kanıtı
