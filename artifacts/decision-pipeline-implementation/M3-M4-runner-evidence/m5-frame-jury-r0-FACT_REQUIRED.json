@@ -1,0 +1,29 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "FRAME_JURY",
+  "role": "frame_jury",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "77ff329817a7899833251104deb28e06770fb98ac107cd9e98546b45a3f8c806",
+    "2dac9951abdaa93ed3e72275140fb5f0cd0866ff75cf966290022c73f7c9a3bd",
+    "a21c4cc453abf86db3fb53c2daedb30e86e583884f7baf25730edcf1e48c3518",
+    "34fbd8d5e7739261e8e0849a68d509ea7b1523a8d2efae5bdcc2a1e2980cfaf9"
+  ],
+  "revision": 0,
+  "content": {
+    "verdict": "FACT_REQUIRED",
+    "frameHash": "fe923c7cba2455c7cecc0241f7ff9111941c98cf065fbc667ed811e72e97c031",
+    "factRequired": "Gerçek üretim karesi: mevcut frame düz mavi kalibrasyon plate'i — Image Author vaadini (denizci/güverte/cel-figür) taşımıyor. Figürlü world-lock testi ve 2D-medium piksel kontrolü ancak Mami'nin gerçek karesiyle yapılabilir.",
+    "evidence": [
+      "Frame gerçek piksel (1280x720, sharp decode, hash-bağlı) ve Mami APPROVE taşıyor — mekanik gate çalışıyor.",
+      "Ama kart yasası: kare, approved shot ve Image Author vaadiyle karşılaştırılır — düz plate denizci/deck/cel-figür vaadini karşılamıyor; PASS verilemez.",
+      "Bu verdict akış-testinin DÜRÜST sonucudur: zincir motion'a geçmez, frame gate tam da bunun için var."
+    ]
+  },
+  "contentHash": "97e350a71f96e31ce386b58091425109f16dd6f86d7d7fd5888835bb367dfe34"
+}

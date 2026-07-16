@@ -49,3 +49,5 @@ Record every exact Mami directive in `directiveReceipts` with `APPLIED` or `SUPP
 `promptHash`, and the interpretation receipt in `interpretation` (all three fields required — the
 artifact is rejected without them). Output a `mamilas.agent-artifact.v1` with role `image_author`; never
 include workflow prose, TODO, `[DIRECTOR TASK]` or raw hex in the prompt.
+
+When CONTEXT.json carries `approvedLessons`, read them before writing: each is a one-line production lesson Mami approved from a finished project. Treat them like mined clauses — engine-aware defaults, never universal locks; a conflicting APPLIED Mami directive wins and the set-aside lesson is named under `suppressedContext`.

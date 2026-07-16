@@ -72,6 +72,19 @@ const CONTRACT_OVERRIDE_POLICY =
   + 'explicitly contradicts. Suppression is reasoning, done by the agent, visible in the receipt — '
   + 'never inferred by code from directive keywords.';
 
+function buildMotionPromptQualityContract({ videoModel }) {
+  const key = (videoModel ?? '').toLowerCase();
+  const clauses = [
+    ...MINED.motionUniversal,
+    ...(MINED.motionEngine[key] ?? MINED.motionEngine[key.split('_')[0]] ?? []),
+  ];
+  return {
+    requiredEvidence: clauses.filter((c) => c.kind === 'requiredEvidence').map((c) => c.text),
+    rejectIf: clauses.filter((c) => c.kind === 'rejectIf').map((c) => c.text),
+    overridePolicy: CONTRACT_OVERRIDE_POLICY,
+  };
+}
+
 function buildImagePromptQualityContract({ world, imageModel }) {
   const clauses = [
     ...MINED.universal,
@@ -96,6 +109,7 @@ function buildImagePromptQualityContract({ world, imageModel }) {
 
 // Parite kilidi için test-only export — promptQuality.test.ts TS üreticisiyle byte-karşılaştırır.
 export const __testBuildImagePromptQualityContract = buildImagePromptQualityContract;
+export const __testBuildMotionPromptQualityContract = buildMotionPromptQualityContract;
 
 export function canonicalize(value) {
   if (value === null) return 'null';
@@ -621,11 +635,14 @@ function roleContext(command, scene, artifacts, frame, action) {
   };
   if (action.role === 'motion_author') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    // BRAIN M5: motion kontratı — Physics-First, still-lips/no-dialogue, SFX omurgası.
+    motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
     shot: image.shot, mamiDirectives: image.mamiDirectives, explicitLocks: image.explicitLocks,
     continuity: image.continuity, frame, engine: scene.motionEngine,
   };
   return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
+    motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
     shot: image.shot, mamiDirectives: image.mamiDirectives, continuity: image.continuity,
     imagePromptArtifact: latest(artifacts, 'image_author'), frame,
     motionArtifact: latest(artifacts, 'motion_author'), engine: scene.motionEngine,
@@ -812,7 +829,23 @@ export async function runCommand(args = process.argv.slice(2)) {
       revision: action.revision,
       content: artifactContentTemplate(action.role, command, scene),
     };
-    const sessionContext = { ...context, artifactContract: artifactTemplate };
+    // BRAIN M7: Mami-onaylı ders bankası — HASH-DIŞI katman (artifactContract gibi).
+    // sceneContextHash'e girmez: dersler atölye hafızasıdır, karar değil; banka
+    // büyüyünce command'ler stale OLMAZ. Yalnız author rolleri okur; çelişkide Mami
+    // direktifi kazanır (role kartı yasası).
+    let approvedLessons = [];
+    if (action.role === 'image_author' || action.role === 'motion_author') {
+      try {
+        const bank = await readFile(join(REPO_ROOT, 'agents', 'lessons', 'APPROVED.md'), 'utf8');
+        const LESSON_RE = /^-\s+(.+?)\s+—\s+kaynak:\s*(.+?)\s*·\s*(\d{4}-\d{2}-\d{2})\s*·\s*Mami onayı\s*$/u;
+        approvedLessons = bank.split('\n')
+          .map((line) => LESSON_RE.exec(line.trim()))
+          .filter(Boolean)
+          .map((m) => ({ lesson: m[1], sourceProject: m[2], date: m[3], status: 'APPROVED' }))
+          .slice(-20); // context ekonomisi — lessonBank.ts APPROVED_LESSONS_CAP ile aynı
+      } catch { /* banka yoksa akış durmaz */ }
+    }
+    const sessionContext = { ...context, approvedLessons, artifactContract: artifactTemplate };
     const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
     await writeFile(join(root, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
     await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');

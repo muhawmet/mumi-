@@ -407,10 +407,21 @@ export interface Closeout {
   openRisks: string[];
   /** Dersler OBSERVATION olarak başlar. `promoted: false` → ortak hafızaya GEÇMEZ (Mami kararı). */
   observations: Array<{ note: string; promoted: false }>;
+  /**
+   * BRAIN M7: yapılandırılmış ders ADAYLARI — Mami'nin önüne konacak biçimde
+   * (tek satır + kaynak proje + tarih). Hepsi CANDIDATE; Mami onaylarsa
+   * agents/lessons/APPROVED.md'ye ELLE girer ve sonraki projelerin author
+   * context'ine akar (lessonBank.ts). Otomatik promote YOK.
+   */
+  lessonCandidates: Array<{ lesson: string; sourceProject: string; date: string; status: 'CANDIDATE' }>;
 }
 
-/** Kapanmış projenin closeout kanıt zincirini kurar. Otomatik ders üretmez (hepsi OBSERVATION). */
-export function buildCloseout(pack: ProjectPack, currentCommandId: string, currentPromptSourceId: string): Closeout {
+/**
+ * Kapanmış projenin closeout kanıt zincirini kurar. Otomatik ders üretmez (hepsi
+ * OBSERVATION / CANDIDATE). `closedAtDate` (YYYY-AA-GG) çağıranın sorumluluğu —
+ * core deterministik kalır, saat okumaz.
+ */
+export function buildCloseout(pack: ProjectPack, currentCommandId: string, currentPromptSourceId: string, closedAtDate?: string): Closeout {
   const chain: CloseoutChainLink[] = pack.scenes.map((sc) => {
     const fr = sc.frameReceipt;
     const approval = pack.shotApprovals[sc.id] ?? null;
@@ -471,6 +482,18 @@ export function buildCloseout(pack: ProjectPack, currentCommandId: string, curre
     { note: `Karar ${pack.projectId} kapandı: ${summary.approvedFrames}/${summary.totalScenes} onaylı frame.`, promoted: false },
   ];
 
+  // BRAIN M7: kanıt zincirinden yapılandırılmış ders ADAYLARI. Deterministik türetim;
+  // tarih çağıranın verdiği closedAtDate (core saat okumaz). Her aday Mami'nin okuyacağı
+  // tek satır. Hepsi CANDIDATE: promote yalnız Mami'nin APPROVED.md'ye elle yazmasıyla.
+  const date = (closedAtDate ?? '').slice(0, 10) || 'tarih-yok';
+  const lessonCandidates: Closeout['lessonCandidates'] = [];
+  const cand = (lesson: string) =>
+    lessonCandidates.push({ lesson, sourceProject: pack.projectId, date, status: 'CANDIDATE' });
+  cand(`Bu projede ${summary.approvedFrames}/${summary.totalScenes} shot onaylı frame'e ulaştı — oranı düşüren neden neydi, sonraki projede erken çöz.`);
+  if (summary.regenerated > 0) cand(`${summary.regenerated} shot REGENERATE aldı — reddedilen karelerin ortak kusurunu (render/palet/kimlik) bir cümleyle adlandır.`);
+  if (summary.staleEvidence > 0) cand(`${summary.staleEvidence} shot stale zincir taşıdı — karar değiştiren müdahaleler prompt'lara yeniden taşınmadan üretime dönülmüş.`);
+  if (summary.noFrame > 0) cand(`${summary.noFrame} shot hiç frame görmedi — prompt yazılıp motora taşınmayan sahnelerin nedeni (süre mi, prompt kalitesi mi) not edilmeli.`);
+
   return {
     schema: CLOSEOUT_SCHEMA,
     projectId: pack.projectId,
@@ -479,5 +502,6 @@ export function buildCloseout(pack: ProjectPack, currentCommandId: string, curre
     summary,
     openRisks,
     observations,
+    lessonCandidates,
   };
 }

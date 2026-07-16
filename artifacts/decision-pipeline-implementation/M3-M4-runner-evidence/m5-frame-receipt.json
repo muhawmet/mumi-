@@ -1,0 +1,16 @@
+{
+  "schema": "mamilas.frame-receipt.v1",
+  "sceneId": 1,
+  "fromCommandId": "mamilas-ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "fromImagePromptArtifactHash": "2dac9951abdaa93ed3e72275140fb5f0cd0866ff75cf966290022c73f7c9a3bd",
+  "frameHash": "fe923c7cba2455c7cecc0241f7ff9111941c98cf065fbc667ed811e72e97c031",
+  "width": 1280,
+  "height": 720,
+  "aspect": 1.778,
+  "byteSize": 4319,
+  "originalFileName": "frame1.png",
+  "storedFile": "1.png",
+  "verdict": "APPROVE",
+  "contentHash": "34fbd8d5e7739261e8e0849a68d509ea7b1523a8d2efae5bdcc2a1e2980cfaf9"
+}

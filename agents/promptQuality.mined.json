@@ -1,50 +1,77 @@
 {
   "$schema": "mamilas.prompt-quality-mined.v1",
-  "comment": "BRAIN M4 — madenlenmiş üretim yasaları (kaynak: mamilas-brain-intelligence-mined memory + eski hat kazısı). TEK KANON: hem src/core/agentProtocol.ts hem scripts/mamilas-command.mjs bu dosyadan okur; ayna kopya YOK. Maddeler evrensel kilit değildir — Mami direktifi overrideKeys'ten birini anarsa madde suppressed listesine düşer ve kaynağıyla görünür kalır.",
+  "comment": "BRAIN M4/M5 — madenlenmiş üretim yasaları (kaynak: mamilas-brain-intelligence-mined memory + eski hat kazısı). TEK KANON: hem src/core/agentProtocol.ts hem scripts/mamilas-command.mjs bu dosyadan okur; ayna kopya YOK. Maddeler evrensel kilit değildir (overridePolicy): çatışma hükmü AJANIN — kod direktif keyword'ünden madde bastırmaz (polarite bilinemez); overrideKeys yalnız dokümantasyondur (bu madde tipik hangi Mami konusuyla çatışır). Author çatışan maddeyi image'da suppressedContext / motion'da risks altında adlandırır; jüri dayanaksız suppression'ı failing check sayar.",
   "universal": [
     {
       "text": "Detail triad: the frame carries one environmental-pressure detail on a body or surface, one micro-action or physiological event, and one concrete optical event of light or material behaviour (never a mood adjective).",
       "kind": "requiredEvidence",
-      "overrideKeys": ["detay üçlüsü", "detail triad"]
+      "overrideKeys": [
+        "detay üçlüsü",
+        "detail triad"
+      ]
     },
     {
       "text": "Self-contained: the prompt rebuilds the full continuity state (wardrobe wear, accumulated dust or weather, identity clause, environment) from zero — the engine has no memory of a previous scene and the prompt never says \"as before\".",
       "kind": "requiredEvidence",
-      "overrideKeys": ["self-contained", "continuity sıfırdan"]
+      "overrideKeys": [
+        "self-contained",
+        "continuity sıfırdan"
+      ]
     },
     {
       "text": "The prompt closes as a clean motion-ready still, half a second before one concrete named physical event.",
       "kind": "requiredEvidence",
-      "overrideKeys": ["half a second", "yarım saniye", "düz still"]
+      "overrideKeys": [
+        "half a second",
+        "yarım saniye",
+        "düz still"
+      ]
     },
     {
       "text": "Empty quality tokens appear without source backing: 4K, 8K, masterpiece, ultra-detailed, premium, cinematic, stunning, beautiful, polished, award-winning — replace with a concrete lens, film-stock, grain or cadence fact.",
       "kind": "rejectIf",
-      "overrideKeys": ["banned empties", "kalite sıfatı serbest"]
+      "overrideKeys": [
+        "banned empties",
+        "kalite sıfatı serbest"
+      ]
     },
     {
       "text": "The palette is written as a closed hue/color list instead of a saturation/contrast/bias regime — closed lists collapse to duotone in the engine.",
       "kind": "rejectIf",
-      "overrideKeys": ["palet listesi serbest", "closed hue list"]
+      "overrideKeys": [
+        "palet listesi serbest",
+        "closed hue list"
+      ]
     }
   ],
   "animation": [
     {
       "text": "2D-medium law: the prompt states WHICH surfaces carry flat-cel treatment (the figure) versus which surfaces are painted or photoreal (the background) — the gap between them IS the style; a franchise or brand name never substitutes for this physical split.",
       "kind": "requiredEvidence",
-      "overrideKeys": ["2d-plastik", "cel ayrımı", "flat-cel"]
+      "overrideKeys": [
+        "2d-plastik",
+        "cel ayrımı",
+        "flat-cel"
+      ]
     },
     {
       "text": "The world is invoked by a style adjective or franchise name instead of physical material facts (ink line, painted cel, brushed clay) — names do not fix plasticity; materials do.",
       "kind": "rejectIf",
-      "overrideKeys": ["stil sıfatı serbest", "franchise adı serbest"]
+      "overrideKeys": [
+        "stil sıfatı serbest",
+        "franchise adı serbest"
+      ]
     }
   ],
   "photoreal": [
     {
       "text": "Photoreal counter-terms are present against the engine's plastic-commercial default: negative fill, motivated light, subtle 35mm film grain, raw skin micro-texture (or equivalents earned by this shot).",
       "kind": "requiredEvidence",
-      "overrideKeys": ["anti-sheen", "counter-terms", "parlak ticari serbest"]
+      "overrideKeys": [
+        "anti-sheen",
+        "counter-terms",
+        "parlak ticari serbest"
+      ]
     }
   ],
   "engine": {
@@ -52,7 +79,79 @@
       {
         "text": "Camera grammar comes early and numeric: a numeric lens and f-stop (e.g. \"locked 40mm at seated eye level, f/8 deep focus\") — never a vague \"cinematic lens\".",
         "kind": "requiredEvidence",
-        "overrideKeys": ["sayısal lens", "numeric lens", "kamera grameri serbest"]
+        "overrideKeys": [
+          "sayısal lens",
+          "numeric lens",
+          "kamera grameri serbest"
+        ]
+      }
+    ]
+  },
+  "motionUniversal": [
+    {
+      "text": "Physics-First Motion: camera and subject movement is written in the physical vocabulary of mass and cadence (organic handheld drift, macro lens breathing, heavy object momentum, step-printed stutter earned by the world) — never as an abstract camera command.",
+      "kind": "requiredEvidence",
+      "overrideKeys": [
+        "physics-first",
+        "kamera fiili serbest"
+      ]
+    },
+    {
+      "text": "A generic camera-move verb (pan/zoom/dolly/truck/orbit) stands alone as the motion instruction instead of a mass-and-cadence description.",
+      "kind": "rejectIf",
+      "overrideKeys": [
+        "pan serbest",
+        "generic camera move"
+      ]
+    },
+    {
+      "text": "The prompt opens from an observable frame inventory: every moving or protected element it names is visibly present in the APPROVE start frame — nothing is invented off-frame.",
+      "kind": "requiredEvidence",
+      "overrideKeys": [
+        "inventory serbest"
+      ]
+    },
+    {
+      "text": "Exactly one single-action motion: one moving element with one cause-effect-settle arc; everything else is explicitly held pixel-stable.",
+      "kind": "requiredEvidence",
+      "overrideKeys": [
+        "tek hareket serbest",
+        "multi action"
+      ]
+    },
+    {
+      "text": "Still-lips law: every mouth in frame stays closed and motionless; voice-over is a separate ElevenLabs layer and never enters this clip.",
+      "kind": "requiredEvidence",
+      "overrideKeys": [
+        "still-lips",
+        "dudak serbest"
+      ]
+    },
+    {
+      "text": "The prompt writes dialogue, speech, lip movement, mouth animation or any talking cue — the i2v engine never carries dialogue; VO lives on a separate audio layer.",
+      "kind": "rejectIf",
+      "overrideKeys": [
+        "diyalog serbest",
+        "dialogue allowed"
+      ]
+    }
+  ],
+  "motionEngine": {
+    "kling": [
+      {
+        "text": "Native-audio SFX spine: the prompt names 2-4 concrete diegetic sound sources as physical events (what vibrates, scrapes, compresses — e.g. \"dry rope fibers creaking under load, low hull groan\"), never as post labels.",
+        "kind": "requiredEvidence",
+        "overrideKeys": [
+          "sfx serbest",
+          "native audio kapalı"
+        ]
+      },
+      {
+        "text": "A sound is named instead of physically described (\"explosion sound\", \"dramatic music\") — write the physics of the sound or leave the audio line out.",
+        "kind": "rejectIf",
+        "overrideKeys": [
+          "ses adı serbest"
+        ]
       }
     ]
   }

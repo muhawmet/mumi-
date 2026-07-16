@@ -28,7 +28,28 @@
 > kontrol ettir."** M4→M7 aynı oturumda sürüyor; kare hükmü gerektiren her nokta receipt'te "Mami göz
 > bekliyor" olarak işaretli.
 >
-> **Aktif task: M4 (Image Author + Jury zekâsı — promptQuality kontratı + madenlenmiş yasalar).** Önce oku:
+> **✅ M4 TAMAM (2026-07-16, `2a28ff4`):** KUSUR-D image tarafı — `agents/promptQuality.mined.json`
+> tek kanon (2D-medium, detay üçlüsü, palet-rejim, NB2 sayısal lens…); `buildImagePromptQualityContract`
+> dünya/engine-aware, sealed context'in parçası; TS↔runner byte-parite testli. Sol 2 kritik → aynı turda:
+> keyword-override polaritesi (suppression koddan söküldü → `overridePolicy`, ajan muhakemesi, receipt'te
+> görünür) + migration storyboard-verify (reseal yok, tamper testi). Kapı 1927/1927 (71 dosya).
+> Receipt: `receipts/BRAIN-M4.md` + `M4-REAL-OUTPUT.md` + `M3-M4-runner-evidence/`.
+> **✅ M5 TAMAM (2026-07-16):** Motion zekâsı — `buildMotionPromptQualityContract` (Physics-First,
+> still-lips/no-dialogue, Kling SFX-fiziği, frame-inventory, tek-hareket); quoted-source Sol-düzeltmeli
+> final (VERBATIM + tetikleyici-emri etiketi + surgeon SOURCE-alıntı muafiyeti; kör kod-scrub geri alındı);
+> gerçek frame-gated zincir runner'dan geçti (PNG import→APPROVE→frame_jury→motion_author, evidence repo'da).
+> Receipt: `receipts/BRAIN-M5.md`.
+> **✅ M6 TAMAM (2026-07-16):** `juryRedlines.test.ts` (13) — render-lock-inceltme tabanları, prop
+> geri-sızma kilidi, kontrat-boşaltma kilidi, image parite matrisi, kart drift kilitleri; frame-jury
+> kartına figürlü-world-lock + 2D-medium piksel kontrolü. Receipt: `receipts/BRAIN-M6.md`.
+> **✅ M7 TAMAM (2026-07-16):** Ders bankası döngüsü — closeout `lessonCandidates[]` (CANDIDATE, otomatik
+> promote YOK) → `agents/lessons/APPROVED.md` (yalnız Mami yazar) → runner launch-anı `approvedLessons`
+> (HASH-DIŞI sessionContext — command'ler stale olmaz, test kilitli). Banka boş — ilk gerçek dersler
+> Mami'den. Receipt: `receipts/BRAIN-M7.md`.
+> Birleşik kapı: tsc 0 · vitest **1951/1951 (74 dosya)** · build OK. M5-M7 birleşik Sol turu + commit
+> bu oturumun son adımı; teslim raporu Mami dönüşü için hazırlanıyor.
+>
+> **Tamamlandı — M0→M7 beyin katmanı planının tamamı.** Önce oku:
 > 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
 > 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
 > 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`

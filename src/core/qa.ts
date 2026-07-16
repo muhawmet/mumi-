@@ -74,11 +74,17 @@ export function renderLockTextFor(state: StudioState): string {
 // Motion-prompt muafiyet soyucusu (CHECK 2 slop + CHECK 4 trigger ortak kullanır):
 // NEGATIVE: satırı ve 'Engine grammar (' cümlesi taramadan düşer — ikisi de yasak
 // kelimeleri PROHİBİSYON olarak meşru şekilde adlandırır (motor yasası, model çıktısı değil).
+// BRAIN M5: SOURCE-etiketli verbatim alıntı da düşer — kaynak sadakati yasası alıntıyı
+// scrub'lamayı yasaklar ("kullanıcının cümlesini sessizce scrub etme"); alıntının kendi
+// etiketi tetikleyicilerin final prompt'a geçemeyeceğini AJANA emreder, jüri ölçer.
+// Lint yalnız alıntı DIŞINDA kalan gerçek riski tarar.
 function stripExemptMotionLines(motionPrompt: string): string {
   return (motionPrompt || '')
     .split('\n')
     .filter((line) => !line.trim().startsWith('NEGATIVE:'))
-    .map((line) => line.replace(/Engine grammar \([^)]*\):.*?(?=Everything not named|$)/, ''))
+    .map((line) => line
+      .replace(/Engine grammar \([^)]*\):.*?(?=Everything not named|$)/, '')
+      .replace(/source beat "[^"]*" \[SOURCE —[^\]]*\]/, 'source beat [SOURCE-QUOTE-EXEMPT]'))
     .join('\n');
 }
 

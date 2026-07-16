@@ -2757,7 +2757,13 @@ export function buildMotionPrompt(sceneId: number | string, concept: Concept, ca
     // CLAUDE-facing director task (clean English, "do not print into the clip"). The
     // "Motion brief (Claude yazar):" label is an authorship tag (not an imperative) and
     // is kept as the contract anchor.
-    'Motion brief (Claude yazar): source beat "' + SRC_LINE(sourceBeat) + '" [SOURCE — do not render as on-screen text; narration only]. '
+    // BRAIN M5 (ölçülmüş gap + Sol düzeltmesi): ham beat alıntısı klingScrub'ı baypasliyordu
+    // (4/90 gerçek çıktıda i2v tetikleyicisi motora ulaştı). İlk fix alıntıyı KOD ile scrub'lıyordu —
+    // Sol P1: kör silme anlamı katlediyor ("the seed and above the soil, growth.") ve "kullanıcının
+    // cümlesini sessizce scrub etme" yasasını çiğniyor. Doğru katman: kaynak VERBATIM kalır (bu bir
+    // brief'tir, final prompt değil); tetikleyici temizliği AJANIN final yazım işi — motionQuality
+    // kontratı + role kartı bunu zorluyor, jüri ölçüyor. Kod yalnız İŞARETLER:
+    'Motion brief (Claude yazar): source beat "' + SRC_LINE(sourceBeat) + '" [SOURCE — do not render as on-screen text; narration only; i2v trigger words inside this quote (suddenly/transforms/appears/then/ready-to) must NOT survive into the final motion prompt]. '
       + '[DIRECTOR TASK — authored by Claude against the approved start frame, not clip content, do not print into the clip: compose ONE single-action, frame-aware motion faithful to the source; only the dominant element already in the frame moves — no new object or scenery enters.]',
     exitReconcile,
     textProtect,

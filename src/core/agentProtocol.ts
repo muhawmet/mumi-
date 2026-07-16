@@ -57,11 +57,13 @@ interface MinedClause {
 // TEK KANON: agents/promptQuality.mined.json — runner (mamilas-command.mjs) da aynı
 // dosyayı okur; ayna kopya yok. Kontrat sceneContextHash'in parçası olduğundan iki
 // yüzeyin aynı byte'ı üretmesi hash kapısıyla da zorlanır.
-const MINED = MINED_JSON as {
+const MINED = MINED_JSON as unknown as {
   universal: MinedClause[];
   animation: MinedClause[];
   photoreal: MinedClause[];
   engine: Record<string, MinedClause[]>;
+  motionUniversal: MinedClause[];
+  motionEngine: Record<string, MinedClause[]>;
 };
 
 export interface ImagePromptQualityContract {
@@ -116,6 +118,31 @@ export function buildImagePromptQualityContract(args: {
       ...IMAGE_PROMPT_QUALITY_CONTRACT.rejectIf,
       ...clauses.filter((c) => c.kind === 'rejectIf').map((c) => c.text),
     ],
+    overridePolicy: CONTRACT_OVERRIDE_POLICY,
+  };
+}
+
+export interface MotionPromptQualityContract {
+  requiredEvidence: string[];
+  rejectIf: string[];
+  /** Aynı override yasası — suppression ajan muhakemesi, kod tahmin etmez. */
+  overridePolicy: string;
+}
+
+/**
+ * BRAIN M5 — engine-aware motion kontratı. Madenler: Physics-First (kütle/kadans,
+ * jenerik pan/zoom/dolly yasak), frame-inventory, tek-hareket yasası, still-lips /
+ * no-dialogue-ever, Kling native-audio SFX omurgası (sesin adı değil FİZİĞİ).
+ */
+export function buildMotionPromptQualityContract(args: { videoModel?: string }): MotionPromptQualityContract {
+  const key = (args.videoModel ?? '').toLowerCase();
+  const clauses: MinedClause[] = [
+    ...MINED.motionUniversal,
+    ...(MINED.motionEngine[key] ?? MINED.motionEngine[key.split('_')[0]] ?? []),
+  ];
+  return {
+    requiredEvidence: clauses.filter((c) => c.kind === 'requiredEvidence').map((c) => c.text),
+    rejectIf: clauses.filter((c) => c.kind === 'rejectIf').map((c) => c.text),
     overridePolicy: CONTRACT_OVERRIDE_POLICY,
   };
 }
@@ -343,6 +370,10 @@ export function validatedLiveDirectives(value: unknown, sceneIds: number[]): Mam
   });
 }
 
+// BRAIN M7 DİKKAT: approvedLessons bu fonksiyona EKLENMEZ — çıktısı sceneContextHash'e
+// girer; ders bankası her büyüdüğünde tüm command'ler stale olurdu. Dersler atölye
+// hafızasıdır, karar değil: runner launch anında hash-DIŞI sessionContext katmanına
+// koyar (CONTEXT.json.approvedLessons — artifactContract ile aynı katman).
 export function buildImageAuthorContext(command: any, sceneId: number) {
   const scene = command.scenes?.find((item: any) => item.id === sceneId);
   if (!scene) throw new Error(`scene ${sceneId} yok`);
@@ -423,6 +454,8 @@ export function buildMotionAuthorContext(command: any, sceneId: number, frame: a
   const dialect = engineDialect(command.baseDecision?.engine?.videoModel);
   return {
     protocol: command.lifecycle.protocol,
+    // BRAIN M5: motion kontratı — Physics-First, still-lips/no-dialogue, SFX omurgası.
+    motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
     decisionHash: command.commandId.replace(/^mamilas-/, ''),
     storyboardHash: command.lifecycle.storyboardHash,
     shot: { id: scene.id, sceneBrief: scene.sceneBrief, durationSec: scene.durationSec },

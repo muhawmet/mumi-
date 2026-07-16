@@ -1726,6 +1726,8 @@ export const useStudioStore = create<StudioState>()(
           buildProjectPack(state),
           state.currentCommandId(),
           state.currentPromptSourceCommandId(),
+          // BRAIN M7: kapanış tarihi çağıranın işi — core deterministik kalır.
+          new Date().toISOString().slice(0, 10),
         ), null, 2);
       },
 
