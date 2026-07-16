@@ -32,7 +32,7 @@ screenshots/
 .playwright-cli/
 .claude/settings.local.json
 
-# Üretim koşusu artefaktları (proje-başına geçici; kalıcı bilgi knowledge/ altına damıtılır)
+# Üretim koşusu artefaktları (proje-başına geçici; kalıcı ders agents/lessons/APPROVED.md'ye damıtılır)
 images/
 done/
 markdown/
@@ -44,3 +44,8 @@ agents/extracted_project.json
 agents/.mamilas_kick.md
 report.md
 RUTHLESS_REVIEW.md
+
+# Runner koşu çıktıları — üretim verisi repoya girmez (git geçmişi kod içindir).
+# Deneme/gerçek proje koşuları burada doğar; kalıcı bilgi ders bankasına Mami onayıyla geçer.
+agents/MAMILAS-PROJELER/
+site-import/

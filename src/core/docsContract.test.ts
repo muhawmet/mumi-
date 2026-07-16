@@ -1,19 +1,23 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, test } from 'vitest';
 import { AUTHORITY_HIERARCHY } from './brain';
-import { ENGINE_USABLE } from './engine';
 
 const REPO = resolve(process.cwd());
 const read = (rel: string) => readFileSync(resolve(REPO, rel), 'utf8');
 const RUNNERS = ['agents/runner.mjs', 'agents/production/runner.mjs'];
 const KITS = ['agents', 'agents/production'];
 const RETIRED_KICKS = [
-  'agents/kick/claude-tr.md',
-  'agents/kick/codex-en.md',
-  'agents/kick/antigravity-en.md',
   'agents/production/kick/claude-tr.md',
   'agents/production/RUN_MOTION_AGENT.md',
+];
+// 2026-07-16 temizliği (Mami: "çöpleri sil, tertemiz teslim et"): eski hat dokümanları
+// repodan tamamen kaldırıldı. Tombstone bile bırakılmadı — olmayan dosya canlanamaz.
+// Bu kilit geri sızmayı kırmızıya bağlar; eski zekâ mac-hatti-2026-07-16 branch'inde yaşar.
+const PURGED_LEGACY = [
+  'agents/kick', 'agents/claude', 'agents/gpt', 'agents/knowledge', 'agents/done', 'agents/images',
+  'agents/GLOBAL_BRAIN.md', 'agents/AGENT_BRAIN_V2_ADDENDUM.md', 'agents/project.json',
+  'agents/RUN_MOTION_AGENT.md',
 ];
 const ADAPTERS = ['agents/adapters/claude.md', 'agents/adapters/codex.md'];
 const ROLES = [
@@ -49,34 +53,12 @@ describe('canonical product contracts stay bound to code', () => {
     ]);
   });
 
-  test('worked prompt examples never teach raw palette hex', () => {
-    for (const rel of [
-      'agents/claude/02_IMAGE_CLAUDE.md',
-      'agents/gpt/02_IMAGE_GPT.md',
-      'agents/AGENT_BRAIN_V2_ADDENDUM.md',
-    ]) {
-      expect(read(rel).match(/#[0-9A-Fa-f]{6}\b/g) ?? [], rel).toEqual([]);
-    }
-  });
-
-  test('engine-window documentation matches ENGINE_USABLE', () => {
-    const displayToKey: Array<[string, keyof typeof ENGINE_USABLE]> = [
-      ['kling 3.0 o3', 'kling_o3'], ['kling o3', 'kling_o3'], ['kling 3.0', 'kling_3'],
-      ['seedance 2', 'seedance_2'], ['runway gen4', 'runway_gen4'], ['veo 3', 'veo_3'],
-      ['higgsfield', 'higgsfield'],
-    ];
-    for (const rel of ['agents/GLOBAL_BRAIN.md', 'agents/claude/03_MOTION_CLAUDE.md']) {
-      let claims = 0;
-      for (const line of read(rel).split('\n')) {
-        if (!/^\s*\|/.test(line)) continue;
-        const seconds = line.match(/~?\s*(\d+)\s*s\b/);
-        const match = displayToKey.find(([display]) => line.toLowerCase().includes(display));
-        if (!seconds || !match) continue;
-        claims += 1;
-        expect(Number(seconds[1]), `${rel}: ${line}`).toBe(ENGINE_USABLE[match[1]]);
-      }
-      expect(claims, `${rel} carries no engine-window claims`).toBeGreaterThan(0);
-    }
+  // Eski "worked prompt hex" ve "engine-window doc aynası" testlerinin nesneleri
+  // (GLOBAL_BRAIN, 02_IMAGE_*, kick/*) 2026-07-16 temizliğinde silindi. Engine-window
+  // gerçeği artık TEK kanondan yaşar: src/core/engine.ts ENGINE_USABLE — doc aynası yok.
+  // ENGINE_USABLE'ın kendisi engine.test.ts + docsContract'ın diğer kilitleriyle korunur.
+  test.each(PURGED_LEGACY)('%s stays deleted — legacy path cannot creep back', (rel) => {
+    expect(existsSync(resolve(REPO, rel)), `${rel} repoya geri sızmış`).toBe(false);
   });
 });
 
