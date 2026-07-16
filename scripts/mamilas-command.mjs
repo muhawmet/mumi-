@@ -59,6 +59,41 @@ const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
 // BRAIN M4 — madenlenmiş yasalar TEK kanondan; TS tarafıyla (agentProtocol.ts
 // buildImagePromptQualityContract) birebir aynı mantık. Drift sceneContextHash'te kırmızı.
 const MINED = JSON.parse(readFileSync(join(REPO_ROOT, 'agents', 'promptQuality.mined.json'), 'utf8'));
+
+// ============================================================================
+// HARD-FIX 2026-07-16 (rapor madde 16/17) — DETERMİNİSTİK IP/BRAND FIREWALL,
+// üretilen FINAL agent prompt'u üzerinde. Protokol "IP firewall deterministic
+// koddur; ajan rolü değildir" diyordu ama o kod agent-yazımı prompt yoluna hiç
+// bağlanmamıştı: hash-valid + jury-PASS bir artifact korumalı kimlik/marka taşısa
+// mekanik kapıdan geçiyordu. Kanon: agents/ipFirewall.json — src/core/proof.ts ile
+// AYNI dosya (parite testi ipFirewall.test.ts). Türkçe ek yasası (Naruto'nun /
+// Narutonun / Gokuya) proof.ts ile birebir.
+// ============================================================================
+const IP_FIREWALL = JSON.parse(readFileSync(join(REPO_ROOT, 'agents', 'ipFirewall.json'), 'utf8'));
+const FW_GATE_TERMS = [
+  ...IP_FIREWALL.protectedIpSource.split('|').filter((t) => !IP_FIREWALL.gateExemptGenerics.includes(t)),
+  ...IP_FIREWALL.gateExtraFranchise,
+].sort((a, b) => b.length - a.length);
+const FW_ESCAPE = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const FW_BRAND_RE = new RegExp(`\\b(?:${IP_FIREWALL.commercialBrandSource})\\b`, 'giu');
+const FW_WORK_TITLE_RE = new RegExp(`\\b(?:${IP_FIREWALL.workTitleSource})\\b`, 'gu');
+// GATE terimleri regex-source parçaları DEĞİL düz metin (peter b\. parker hariç —
+// proof.ts de escape'lemeden gömer; kanon aynı byte'ı taşıdığı için davranış birebir).
+const FW_TERM_RES = FW_GATE_TERMS.map((term) =>
+  new RegExp(`\\b${FW_ESCAPE(term)}${IP_FIREWALL.turkishSuffix}\\b`, 'iu'));
+
+export function firewallHitsIn(text) {
+  if (!text) return [];
+  const hits = [];
+  for (let i = 0; i < FW_TERM_RES.length; i += 1) {
+    if (FW_TERM_RES[i].test(text)) hits.push(FW_GATE_TERMS[i]);
+  }
+  FW_BRAND_RE.lastIndex = 0;
+  for (const match of text.matchAll(FW_BRAND_RE)) hits.push(match[0].toLowerCase());
+  FW_WORK_TITLE_RE.lastIndex = 0;
+  for (const match of text.matchAll(FW_WORK_TITLE_RE)) hits.push(match[0]);
+  return Array.from(new Set(hits));
+}
 const isAnimationWorld = (world) => Boolean(world?.group && /ANIMATION|STYLIZED/i.test(world.group));
 const isPhotorealWorld = (world) => Boolean(world?.group && /REAL|CINEMATIC|COMMERCIAL/i.test(world.group));
 
@@ -276,12 +311,18 @@ function validateRoleContent(artifact, command) {
     if (!Array.isArray(content.suppressedContext)) problems.push('suppressedContext');
     if (!Array.isArray(content.risks)) problems.push('risks');
     if (/\[DIRECTOR TASK\]|\bTODO\b|#[0-9a-f]{3,8}\b/i.test(content.prompt ?? '')) problems.push('image prompt workflow/hex leak');
+    // Madde 16/17: deterministik IP/brand firewall FINAL prompt üzerinde — jury PASS
+    // ve hash geçerliliği korumalı kimlik/marka sızıntısını meşrulaştıramaz.
+    const imageFirewallHits = firewallHitsIn(content.prompt ?? '');
+    if (imageFirewallHits.length) problems.push(`image prompt IP firewall: ${imageFirewallHits.join(', ')}`);
   } else if (artifact.role === 'motion_author') {
     if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('motion prompt');
     if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('motion promptHash');
     if (!nonEmptyStrings(content.inventory)) problems.push('motion inventory');
     if (!Array.isArray(content.risks)) problems.push('motion risks');
     if (typeof content.frameHash !== 'string') problems.push('motion frameHash');
+    const motionFirewallHits = firewallHitsIn(content.prompt ?? '');
+    if (motionFirewallHits.length) problems.push(`motion prompt IP firewall: ${motionFirewallHits.join(', ')}`);
   } else if (String(artifact.role || '').endsWith('_jury')) {
     const verdict = content.verdict;
     if (!JURY.has(verdict)) problems.push('jury verdict');
@@ -293,6 +334,10 @@ function validateRoleContent(artifact, command) {
   if (!scene) problems.push('content scene');
   return problems;
 }
+
+// Parite/negatif-probe kilidi için test-only export — ipFirewall.test.ts gerçek
+// validator'ı korumalı-kimlik/marka/eser promptlarıyla sürer.
+export const __testValidateRoleContent = validateRoleContent;
 
 function verifyArtifact(artifact, command) {
   const problems = [];
@@ -659,16 +704,29 @@ function roleDecision(command) {
   };
 }
 
-function roleContext(command, scene, artifacts, frame, action) {
+// HARD-FIX 2026-07-16 (rapor madde 13/14/15): jüriler artık Author'ın gördüğü BAĞLAYICI
+// bağlamı bağımsız görür — world fiziği, explicit locks, failure modes. Eskiden jury
+// "one world-physics choice" kanıtını world paketini görmeden, yalnız Author'ın prompt
+// metninden ölçmek zorundaydı: Author'ın vaadi tek gerçeklik kaynağıydı, karşı-okuma
+// süse dönüyordu. Jury context'i sceneContextHash'e GİRMEZ (yalnız imageAuthor hash'lenir)
+// — bu genişleme mevcut command'leri stale etmez.
+export function roleContext(command, scene, artifacts, frame, action) {
   const image = imageContext(command, scene);
   if (action.role === 'image_author') return image;
   if (action.role === 'image_jury') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
-    promptQuality: image.promptQuality, shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'),
+    promptQuality: image.promptQuality, shot: image.shot, mamiDirectives: image.mamiDirectives,
+    world: image.world, explicitLocks: image.explicitLocks, failureModes: image.failureModes,
+    imagePromptArtifact: latest(artifacts, 'image_author'),
   };
   if (action.role === 'frame_jury') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
-    shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'), frame,
+    shot: image.shot, mamiDirectives: image.mamiDirectives,
+    // Madde 14: frame jürisi world/medium yasasını Author'ın vaadinden değil bağımsız
+    // world paketinden ölçer (figürlü world-lock + 2D-medium piksel kontrolü M6'da kartta;
+    // ölçeceği yasa artık context'te).
+    world: image.world, explicitLocks: image.explicitLocks,
+    imagePromptArtifact: latest(artifacts, 'image_author'), frame,
   };
   if (action.role === 'motion_author') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
@@ -681,6 +739,8 @@ function roleContext(command, scene, artifacts, frame, action) {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
     motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
     shot: image.shot, mamiDirectives: image.mamiDirectives, continuity: image.continuity,
+    // Madde 15: motion jürisi explicit locks + world'ü bağımsız kaynaktan görür.
+    world: image.world, explicitLocks: image.explicitLocks,
     imagePromptArtifact: latest(artifacts, 'image_author'), frame,
     motionArtifact: latest(artifacts, 'motion_author'), engine: scene.motionEngine,
   };

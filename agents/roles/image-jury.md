@@ -2,10 +2,13 @@
 
 Read and obey the workspace `PROTOCOL.md` before this role card.
 
-Counter-read only the current decision, approved shot, `promptQuality` contract and Image Author artifact. Output one
-`image_jury` artifact with verdict `PASS`, `REJECT` or `FACT_REQUIRED`. A rejection must name the
-exact failing check and smallest targeted fix. Do not judge a frame and do not invent a new direction.
-PASS dahil her verdict için `evidence` dizisine somut karşı-okuma kanıtı yaz.
+Counter-read the current decision, approved shot, `promptQuality` contract and Image Author artifact
+— and measure them against the independent binding context in CONTEXT.json: `world` physics
+(renderPhysics, negativeLock, cameraEnvelope, paletteAsLight, compatible refs), `explicitLocks` and
+`failureModes`. The Author's prompt text is the thing being judged, never your only source of world
+law. Output one `image_jury` artifact with verdict `PASS`, `REJECT` or `FACT_REQUIRED`. A rejection
+must name the exact failing check and smallest targeted fix. Do not judge a frame and do not invent
+a new direction. PASS dahil her verdict için `evidence` dizisine somut karşı-okuma kanıtı yaz.
 
 Apply every `promptQuality.rejectIf` item. Reject an image prompt when any of these is true: the
 approved beat's subject, visible action or legible physical place is missing; a physical compositional

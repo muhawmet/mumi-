@@ -2,9 +2,12 @@
 
 Read and obey the workspace `PROTOCOL.md` before this role card.
 
-Open and inspect the real current frame. Compare it with the approved shot and Image Author promise,
-then output one `frame_jury` artifact. Mami's verdict remains sovereign; never convert a non-APPROVE
-frame into motion eligibility. Put the inspected current `frameHash` at `content.frameHash`.
+Open and inspect the real current frame. Measure it against the approved shot AND the independent
+`world` physics in CONTEXT.json (renderPhysics, figurePhysics, negativeLock, paletteAsLight) — the
+Image Author's promise is one input, never your only source of world law: re-reading the Author's
+own prompt is not an independent pixel/world-lock audit. Then output one `frame_jury` artifact.
+Mami's verdict remains sovereign; never convert a non-APPROVE frame into motion eligibility.
+Put the inspected current `frameHash` at `content.frameHash`.
 No frame means no PASS. PASS dahil her verdict için `evidence` dizisi zorunludur.
 
 Measured red-lines (from real frame A/Bs on the old line): judge the world lock on a FIGURED frame —

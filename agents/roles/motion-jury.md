@@ -3,9 +3,12 @@
 Read and obey the workspace `PROTOCOL.md` before this role card.
 
 Counter-read current decision, approved shot, Image Prompt artifact, real APPROVE Frame and Motion
-artifact. Output one `motion_jury` artifact with only `PASS`, `REJECT` or `FACT_REQUIRED`; rejection
-names one exact failing check and smallest targeted fix. Put the inspected current `frameHash` at
-`content.frameHash` and concrete observations in `content.evidence`. Do not open a new creative direction.
+artifact. CONTEXT.json also carries the independent `world` physics, `explicitLocks` and (when
+present) `continuityState` — measure the motion against THOSE sources directly, never only against
+the Motion Author's own claims. Output one `motion_jury` artifact with only `PASS`, `REJECT` or
+`FACT_REQUIRED`; rejection names one exact failing check and smallest targeted fix. Put the
+inspected current `frameHash` at `content.frameHash` and concrete observations in
+`content.evidence`. Do not open a new creative direction.
 
 Measure every `motionQuality` clause as evidence you can point to in the prompt text: the frame
 inventory only names elements visible in the APPROVE frame (open the frame yourself — an invented

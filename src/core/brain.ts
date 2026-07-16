@@ -11,6 +11,7 @@ import { engineDialect, engineUsableSec } from './engine';
 import { DATA, paletteColors, worldAvoidText, worldMotionText, worldNegativeLockTextById, worldRenderText, type PathContract } from './pure';
 import type { SurgeryWorld, SurgeryRef, SurgeryPalette } from './pure';
 import { proofDoctor, containsProtectedTerm, scrubWorkTitles } from './proof';
+import IP_FIREWALL from '../../agents/ipFirewall.json';
 
 export type Register = 'REAL' | 'EDU' | 'STY';
 
@@ -1375,9 +1376,10 @@ function negItemIsIP(item: string): boolean {
 // Stil-soyadları (Deakins, Rembrandt, Kubrick, Timm) ve render-hattı adları (RenderMan)
 // KAPSAM DIŞI — repo bunları her yerde meşru stil referansı olarak kullanıyor ve bunlar
 // motora bir marka değil, bir ışık/çizgi grameri ısmarlar.
-// HARD-FIX 2026-07-16 (rapor madde 20): export — commandExport referenceDNA kanalı da
-// aynı kanondan okur; marka scrub'ı artık tek listede yaşar, kanal asimetrisi yok.
-export const COMMERCIAL_BRAND_RE = /\b(?:apple|nike|adidas|chanel|dior|gucci|prada|rolex|omega|coca[- ]?cola|pepsi|starbucks|mcdonald'?s?|samsung|huawei|xiaomi|bmw|mercedes|audi|porsche|ferrari|tesla|toyota|ikea|louis vuitton|hermès|hermes|balenciaga|supreme)\b/gi;
+// HARD-FIX 2026-07-16 (rapor madde 16/17/20): marka listesi TEK KANON — agents/ipFirewall.json.
+// TS yüzeyi (bu dosya + commandExport) VE agent runtime (mamilas-command.mjs) aynı dosyadan
+// okur; drift ipFirewall parite testinde kırmızı. Kapsam bilinçli DAR (yukarıdaki not geçerli).
+export const COMMERCIAL_BRAND_RE = new RegExp(`\\b(?:${IP_FIREWALL.commercialBrandSource})\\b`, 'gi');
 
 /**
  * The banned empty adjectives, removed from any label that reaches the POSITIVE prompt.

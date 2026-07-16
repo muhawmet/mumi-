@@ -1,14 +1,16 @@
 import SURGERY_DATA from './SURGERY_DATA.json';
+import IP_FIREWALL from '../../agents/ipFirewall.json';
 
 /**
- * The canonical protected-franchise term list. Single source of truth — it used to be
- * pasted verbatim in two places in this file, and nothing outside it consulted the list
- * at all, so free-text fields (notably `cast`) carried franchise names straight into the
- * image engine. Exported so every path into a prompt can be screened against it.
+ * The canonical protected-franchise term list. Single source of truth — HARD-FIX
+ * 2026-07-16 (rapor madde 16/17): it now lives in `agents/ipFirewall.json` so the agent
+ * runtime (scripts/mamilas-command.mjs) screens the FINAL agent-authored prompt against
+ * the exact same canon. This module keeps the behaviourally identical exports; the
+ * parity lock is ipFirewall.test.ts (both surfaces, same inputs, same verdicts).
  *
  * Use `containsProtectedTerm` / `protectedTermsIn` rather than building the regex inline.
  */
-export const PROTECTED_IP_SOURCE = "luffy|one piece|straw hat|thousand sunny|roronoa zoro|nami|usopp|sanji|chopper|robin|franky|brook|shanks|blackbeard|whitebeard|naruto|sasuke|kakashi|sakura|itachi|jiraiya|orochimaru|hinata uzumaki|goku|vegeta|gohan|piccolo|frieza|cell|majin buu|dragon ball|solo leveling|sung jinwoo|jinwoo|jin-woo|attack on titan|eren yeager|mikasa ackerman|levi ackerman|armin arlert|demon slayer|tanjiro|nezuko|zenitsu|inosuke|giyu|kokushibo|muzan|jujutsu kaisen|satoru gojo|yuji itadori|megumi fushiguro|nobara kugisaki|ryomen sukuna|bleach|ichigo kurosaki|rukia kuchiki|byakuya|sosuke aizen|fairy tail|natsu dragneel|erza scarlet|gray fullbuster|lucy heartfilia|pikachu|charizard|mewtwo|bulbasaur|squirtle|eevee|pokemon|totoro|no face|calcifer|spirited away|howl|howls moving castle|sailor moon|evangelion|asuka langley|rei ayanami|shinji ikari|fullmetal alchemist|edward elric|alphonse elric|roy mustang|death note|light yagami|l lawliet|my hero academia|izuku midoriya|katsuki bakugo|all might|endeavor|sword art online|kirito|asuna|coraline jones|kubo|jinx|caitlyn|jayce|viktor|heimerdinger|ekko|silco|vander|powder|piltover|zaun|spider-man|miles morales|gwen stacy|peter b\\. parker|miguel o'hara|prowler|kiki|chihiro|ponyo|ashitaka|princess mononoke|woody|buzz lightyear|bing bong|merida|radiator springs|monstropolis|max fischer|royal tenenbaum|m\\. gustave|suzy bishop|sam shakusky|steve zissou|tyler durden|fight club|hugh glass|riggan thomson|theo faron";
+export const PROTECTED_IP_SOURCE: string = IP_FIREWALL.protectedIpSource;
 
 export function containsProtectedTerm(text: string): boolean {
   return new RegExp(`\\b(?:${PROTECTED_IP_SOURCE})\\b`, 'iu').test(text || '');
@@ -41,8 +43,7 @@ export function containsProtectedTerm(text: string): boolean {
  * while a legitimate "soulful warmth" lives. Director surnames are NOT here — a lineage
  * is not a work, and no engine has ever drawn "Pete Docter".
  */
-export const WORK_TITLE_SOURCE =
-  "Great[- ]Before(?:'s)?|Fury[- ]Road(?:'s)?|Bebop(?:'s)?|Arcane(?:'s)?|Spider[- ]Verse(?:'s)?|Soul(?:'s)?";
+export const WORK_TITLE_SOURCE: string = IP_FIREWALL.workTitleSource;
 
 const WORK_TITLE_RE = () => new RegExp(`\\b(?:${WORK_TITLE_SOURCE})\\b`, 'gu');
 
@@ -88,16 +89,9 @@ export function scrubWorkTitles(text: string): string {
  * without one (`chopper`, `woody`, `jinx`, `merida`…) stays in the gate — a name that
  * never appears in an ordinary Turkish cast description costs nothing to keep.
  */
-const GATE_EXEMPT_GENERICS = new Set([
-  'robin',    // "Robin yeleği giymiş esnaf" — kişi adı / kuş
-  'powder',   // "powder mavisi gömlek" — toz mavi
-  'brook',    // "Brook marka ayakkabı"
-  'sakura',   // "Sakura ağacı altında oturan yaşlı adam" — kiraz çiçeği
-  'bleach',   // "Bleach ile temizlik yapan kadın" — çamaşır suyu
-  'cell',     // "cell telefonu tutan genç kadın"
-  'howl',     // an ordinary English verb a bilingual brief may reach for
-  'endeavor', // likewise ("a shared endeavor")
-]);
+// Örnek gerekçeler kanonda: agents/ipFirewall.json (robin=kişi adı/kuş, powder=toz mavi,
+// brook=marka, sakura=kiraz çiçeği, bleach=çamaşır suyu, cell=telefon, howl/endeavor=fiil).
+const GATE_EXEMPT_GENERICS = new Set<string>(IP_FIREWALL.gateExemptGenerics);
 
 /**
  * Franchise names the scoring list never carried. It was assembled around the anime /
@@ -111,33 +105,9 @@ const GATE_EXEMPT_GENERICS = new Set([
  * card), `link` (a link), `hulk`, `frozen`, `nemo`, `simba` all read as plain words.
  * A single-word entry earns its place only when no Turkish brief would ever type it.
  */
-const GATE_EXTRA_FRANCHISE = [
-  // DC / Marvel — bare "batman"/"thor"/"hulk"/"venom"/"loki"/"joker" are real words or
-  // Turkish place/person names; they enter only in franchise company.
-  'bruce wayne', 'clark kent', 'wonder woman', 'batman costume', 'batman logo',
-  'batman kostüm', 'the dark knight', 'gotham', 'batmobile',
-  'superman', 'aquaman', 'iron man', 'tony stark', 'captain america', 'black widow',
-  'incredible hulk', 'wolverine', 'deadpool', 'spiderman', 'thanos',
-  'harley quinn', 'catwoman', 'the joker', 'god of thunder', 'asgard',
-  // Wizarding world / Star Wars
-  'harry potter', 'hermione', 'dumbledore', 'voldemort', 'hogwarts',
-  'darth vader', 'luke skywalker', 'yoda', 'obi-wan', 'stormtrooper', 'jedi',
-  // Disney / Pixar / Illumination — "elsa", "anna", "olaf", "nemo", "simba", "dory",
-  // "frozen", "fiona", "gru", "minion" all have ordinary readings.
-  'mickey mouse', 'minnie mouse', 'donald duck',
-  'elsa frozen', 'frozen elsa', 'olaf snowman', 'lion king', 'mufasa',
-  'finding nemo', 'shrek', 'princess fiona', 'despicable me',
-  // Games — "mario", "luigi", "link", "zelda" are names; gate the franchise forms.
-  'sonic the hedgehog', 'super mario', 'mario bros', 'luigi mansion',
-  'legend of zelda', 'kratos', 'master chief',
-  'homer simpson', 'bart simpson', 'spongebob', 'patrick star',
-  // Middle-earth / action canon
-  'gandalf', 'frodo', 'gollum', 'aragorn', 'legolas',
-  'james bond', 'indiana jones', 'jack sparrow', 'rambo', 'john wick',
-  't-800', 'skynet', 'neo matrix', 'the matrix', 'morpheus',
-  // Multi-word forms of names exempted above, so the franchise still cannot pass.
-  'nico robin', 'sakura haruno', 'monkey d luffy', 'trafalgar law',
-];
+// Liste kanonu agents/ipFirewall.json — tek-kelime giriş yasası (Türkçe okuma çifti olan
+// ad kapıya giremez: batman=şehir, elsa/anna/mario=ad, joker=iskambil…) orada korunur.
+const GATE_EXTRA_FRANCHISE: string[] = IP_FIREWALL.gateExtraFranchise;
 
 /**
  * The BLOCKING gate's term list — narrower and stricter than the scoring list.
@@ -160,7 +130,7 @@ const GATE_IP_TERMS: string[] = [
  * Turkish-alphabet letters (optionally after an apostrophe) before requiring the boundary.
  * Over-matching here is the safe direction: a firewall may refuse too much, never too little.
  */
-const TR_SUFFIX = "(?:['’]?[a-zçğıöşü]{0,4})?";
+const TR_SUFFIX: string = IP_FIREWALL.turkishSuffix;
 
 /** Every gate-protected franchise term present in the text, lowercased and deduped. */
 export function protectedTermsIn(text: string): string[] {
