@@ -498,9 +498,12 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
     : 'no texture clause beyond the world material itself';
   // Cross-contamination guard: stylized/animation refs in a REAL register world contribute
   // cinematography DNA only — energy, tension, camera geometry, light drama — NOT rendering style.
-  // Covers Anime/Shonen, Anime/Graphic, 3D Animation, Stylized Premium used in live-action context.
+  // HARD-FIX 2026-07-16 (rapor madde 19): eski regex yalnız Anime/Shonen + Stylized Premium'u
+  // yakalıyordu ("3d animation" veri setinde yok); 2D Animation, Animation Auteur, Story DNA
+  // ve Animation/* kategorileri delikten geçiyordu — gerçek pakette Hades-tabanlı 2D ref
+  // photoreal world'e "flat 2D / ink-comic" emri taşıdı. Kapsam artık gerçek kategorilerle örtüşür.
   const stylizedInReal = register === 'REAL' && refs.some((r) =>
-    /anime|shonen|3d animation|stylized premium/i.test(T(r.cat))
+    /anime|shonen|2d animation|animation auteur|animation \/|story dna|stylized premium/i.test(T(r.cat))
   );
   const avoidParts = Array.from(new Set(refs.map((r) => T(r.avoid).trim()).filter(Boolean)));
   if (stylizedInReal) {
@@ -524,9 +527,22 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
     return oldGeneric;
   };
 
+  // HARD-FIX 2026-07-16 (rapor madde 20): perRef, commandExport.refDnaText üzerinden
+  // AJANIN prompt-yazım kanalına girer. scrubAnchorIP daha önce yalnız image-prompt'un
+  // ref-anchor cümleciğinde çalışıyordu; "Apple Object Worship" ref'i site scaffold'unda
+  // temizlenirken refDna kanalından ada geri giriyordu. Tüm kanallar aynı kanondan okur:
+  // marka adı sökülür, zanaat tarifi kalır (scrubAnchorIP tam cümlecik yasası; kısa name
+  // alanı için yalnız marka regex'i — 12-karakter tabanı adları boşaltmasın).
+  const scrubBrandName = (s: string) => s.replace(COMMERCIAL_BRAND_RE, '').replace(/\s{2,}/g, ' ').replace(/^[\s,;:—-]+/, '').trim();
   const perRef = refs
     .filter(r => T(r.dna).trim())
-    .map(r => ({ name: T(r.name).trim(), anchor: T(r.anchor).trim(), dna: T(r.dna).trim(), use: T(r.use).trim(), avoid: T(r.avoid).trim() }));
+    .map(r => ({
+      name: scrubBrandName(T(r.name).trim()),
+      anchor: scrubRefFieldIP(T(r.anchor).trim()),
+      dna: scrubRefFieldIP(T(r.dna).trim()),
+      use: scrubRefFieldIP(T(r.use).trim()),
+      avoid: T(r.avoid).trim(),
+    }));
 
   return {
     names,
@@ -1359,7 +1375,9 @@ function negItemIsIP(item: string): boolean {
 // Stil-soyadları (Deakins, Rembrandt, Kubrick, Timm) ve render-hattı adları (RenderMan)
 // KAPSAM DIŞI — repo bunları her yerde meşru stil referansı olarak kullanıyor ve bunlar
 // motora bir marka değil, bir ışık/çizgi grameri ısmarlar.
-const COMMERCIAL_BRAND_RE = /\b(?:apple|nike|adidas|chanel|dior|gucci|prada|rolex|omega|coca[- ]?cola|pepsi|starbucks|mcdonald'?s?|samsung|huawei|xiaomi|bmw|mercedes|audi|porsche|ferrari|tesla|toyota|ikea|louis vuitton|hermès|hermes|balenciaga|supreme)\b/gi;
+// HARD-FIX 2026-07-16 (rapor madde 20): export — commandExport referenceDNA kanalı da
+// aynı kanondan okur; marka scrub'ı artık tek listede yaşar, kanal asimetrisi yok.
+export const COMMERCIAL_BRAND_RE = /\b(?:apple|nike|adidas|chanel|dior|gucci|prada|rolex|omega|coca[- ]?cola|pepsi|starbucks|mcdonald'?s?|samsung|huawei|xiaomi|bmw|mercedes|audi|porsche|ferrari|tesla|toyota|ikea|louis vuitton|hermès|hermes|balenciaga|supreme)\b/gi;
 
 /**
  * The banned empty adjectives, removed from any label that reaches the POSITIVE prompt.
@@ -1471,6 +1489,21 @@ export function scrubAnchorIP(clause: string): string {
   // Ad sökülünce başta kalan bağlaç/noktalama artıkları ("— object worship:", ", reverent…")
   out = out.replace(/^[\s,;:—-]+/, '').trim();
   return out.length > 12 ? out : '';
+}
+
+/**
+ * HARD-FIX 2026-07-16 (rapor madde 20): scrubAnchorIP'nin uzunluk-tabansız kardeşi —
+ * perRef/referenceDNA alanları için. Anchor cümlecikleri 12-karakter tabanıyla korunur
+ * (kısa kalıntı anlamsızdır), ama ref DNA/use alanları kısa OLABİLİR ve verbatim
+ * kalmalıdır; yalnız marka + eser adı sökülür, korumalı karakter cümleciği susturulur.
+ */
+export function scrubRefFieldIP(text: string): string {
+  if (!text) return '';
+  let out = scrubWorkTitles(text.replace(COMMERCIAL_BRAND_RE, ''))
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  if (containsProtectedTerm(out)) return '';
+  return out.replace(/^[\s,;:—-]+/, '').trim();
 }
 
 function scrubImageNegatives(ipParts: string[], brandLocked = false, diagrammatic = false): string {
@@ -1607,7 +1640,10 @@ function scrubImageNegatives(ipParts: string[], brandLocked = false, diagrammati
 // constraint line (those legitimately NAME a rate to forbid it). Still geometry that
 // lives in a temporal sentence is redundantly present in line_grammar, so no unique
 // discipline is lost. renderLock() itself stays pristine — this runs on its output.
-const STILL_TEMPORAL_RE = /\b(?:\d+\s?fps|dual-cadence|rate-clash|ink-smear|frames?\s+(?:dissolve|resolve)|freeze-frame|per-frame\s+micro-strobe|micro-strobe|on\s+\d+s\s+holds?|\d+\s*frame\s+cycles?|painted smear|follow-through smear|smear frame)\b/i;
+// HARD-FIX 2026-07-16 (rapor madde 22): "smear frame" tekildi — "smear frames painted
+// not motion-blurred" gibi çoğul/tireli varyantlar clean start-frame anchor'ına sızıyordu.
+// smear[- ]frames?, smears ve mevcut aile birlikte kapsanır.
+const STILL_TEMPORAL_RE = /\b(?:\d+\s?fps|dual-cadence|rate-clash|ink-smear|frames?\s+(?:dissolve|resolve)|freeze-frame|per-frame\s+micro-strobe|micro-strobe|on\s+\d+s\s+holds?|\d+\s*frame\s+cycles?|painted smears?|follow-through smears?|smear[- ]frames?)\b/i;
 const TEMPORAL_PROTECT_RE = /\b(?:forbid|forbids|imperative|never|avoid)\b/i;
 // A follow-up sentence that OPENS with a back-reference ("This smear…", "That cadence…",
 // "These frames…", "Such a rate…", "It resolves…") depends on the sentence before it.

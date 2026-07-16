@@ -1,5 +1,5 @@
 import { DATA, effectiveMaterialId, refCompatibleWithWorld, worldPacketById } from './pure';
-import { dnaDirectives, paletteLightPrompt, registerOf } from './brain';
+import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, scrubRefFieldIP } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
 import { canonicalHash, lockDeliveryPromise, SCHEMA_IDS, sha256Hex } from './contract';
@@ -79,23 +79,31 @@ function scenePrompt(scene: Scene): string {
   return scene.userImagePrompt ?? scene.imagePrompt;
 }
 
-function selectedRefs(refIds: string[]) {
+// HARD-FIX 2026-07-16 (rapor madde 20/21): iki kusur birlikte kapandı.
+// (1) İki gerçeklik: role slice ref'i susturuyorken top-level referenceDNA.refs aynı
+//     ref'in TAM aktif DNA'sını taşıyordu — ajan hangi gerçeğe inanacağını bilemezdi.
+//     Uyumsuz ref artık her tüketicide açıkça `suppressed: true` + boş DNA taşır
+//     (silinmez — Mami seçimini kaydeder, ama emir vermez).
+// (2) Marka kanal asimetrisi: kapıdaki scrub yalnız ESER adlarını (Soul/Arcane) temizler;
+//     ticari marka (Apple) bu kanaldan ham giriyordu. scrubAnchorIP burada da uygulanır —
+//     ad sökülür, zanaat tarifi kalır (image-prompt kanalıyla aynı kanon).
+function selectedRefs(refIds: string[], worldId: string | null) {
   return refIds
     .map((id) => DATA.refs.find((ref) => ref.id === id))
     .filter((ref): ref is NonNullable<typeof ref> => Boolean(ref))
-    // referenceDNA is not a UI panel — it ships INSIDE the command and reaches only the
-    // current role's validated minimum context slice. It once carried "Soul" 34 times.
-    // No scrub here now: DATA.refs is cleaned once at the
-    // door (pure.ts), so every reader — this one included — is clean by construction.
-    .map((ref) => ({
-      id: ref.id,
-      name: ref.name,
-      category: ref.cat,
-      worldId: ref.worldId ?? null,
-      use: compactText(ref.use),
-      avoid: compactText(ref.avoid),
-      dna: compactText(ref.dna),
-    }));
+    .map((ref) => {
+      const suppressed = Boolean(worldId) && !refCompatibleWithWorld(ref, worldId as string);
+      return {
+        id: ref.id,
+        name: (compactText(ref.name) ?? '').replace(COMMERCIAL_BRAND_RE, '').replace(/\s{2,}/g, ' ').replace(/^[\s,;:—-]+/, '').trim() || ref.id,
+        category: ref.cat,
+        worldId: ref.worldId ?? null,
+        suppressed,
+        use: suppressed ? '' : scrubRefFieldIP(compactText(ref.use) ?? ''),
+        avoid: compactText(ref.avoid),
+        dna: suppressed ? '' : scrubRefFieldIP(compactText(ref.dna) ?? ''),
+      };
+    });
 }
 
 function activeRoles(): CommandRole[] {
@@ -130,7 +138,7 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   const palette = DATA.palettes.find((item) => item.id === state.selectedPaletteId) ?? null;
   const path = DATA.paths.find((item) => item.id === state.projectClass) ?? null;
   const project = DATA.projects.find((item) => item.id === state.selectedProjectId) ?? null;
-  const refs = selectedRefs(state.selectedRefIds);
+  const refs = selectedRefs(state.selectedRefIds, world?.id ?? null);
   // Nöron-sync (T4): per-sahne authoring komisyonu için ref anchor·dna + palet
   // fiziksel ışık. Site özne UYDURMAZ — Claude bu çerçeveden dominant element'i yazar.
   const register = registerOf(state.projectClass);

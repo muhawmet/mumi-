@@ -32,3 +32,9 @@ is an exact failing check: nothing outranks Mami except the product's hard walls
 artifact's `interpretation` receipt is consistent with the prompt (the stated dominant subject,
 single event and frozen instant actually appear); an interpretation that contradicts its own
 prompt is an exact failing check.
+
+When CONTEXT.json carries `continuityState`, measure continuity against THAT independent record
+of the previous approved scene — never against the Author's own risk notes. A recurring subject
+whose identity, wardrobe or accumulated state contradicts `continuityState` is an exact failing
+check. A prompt that silently invents a specific recurring face with no identity fact behind it
+is a `FACT_REQUIRED`, not a PASS.

@@ -642,10 +642,27 @@ function defaultRefIdsForWorld(worldId: string): string[] {
 // CINEMATIC_REAL host (Kubrick on deakins). IP-homage refs (anime/stylized
 // groups) stay pinned to their world: crossing them would leak one IP's grammar
 // into another IP's frame (naruto ref on one_piece).
-export function refCompatibleWithWorld(ref: Pick<SurgeryRef, 'worldId'>, worldId: string): boolean {
-  if (!ref.worldId || ref.worldId === worldId) return true;
-  const home = DATA.worlds.find((w) => w.id === ref.worldId);
+//
+// HARD-FIX 2026-07-16 (rapor madde 18): a ref WITHOUT a worldId is no longer
+// universally compatible. 54/130 refs carry no worldId; the stylized ones among
+// them (2D Animation, Animation Auteur, Story DNA, Anime/Shonen, Stylized Premium)
+// were leaking rendering-style orders into photoreal worlds — measured in a real
+// package: a Hades-based 2D ref carried "flat 2D illustration / ink-comic" into a
+// photoreal product world whose own negative lock forbade cartoon. Compatibility is
+// now medium-aware: an orphan ref whose category names an animation medium is
+// incompatible with a REAL-register host. Photoreal-medium orphans (Cinematography,
+// Documentary, Product/Macro, Real Setup, Commercial, …) stay legitimate everywhere.
+const ANIMATION_MEDIUM_CAT_RE = /^(?:2D Animation|Animation(?: Auteur| \/)|Anime \/|Story DNA|Stylized Premium)/i;
+
+export function refCompatibleWithWorld(ref: Pick<SurgeryRef, 'worldId' | 'cat'>, worldId: string): boolean {
+  if (ref.worldId === worldId) return true;
   const host = DATA.worlds.find((w) => w.id === worldId);
+  const hostIsReal = host?.group === 'CINEMATIC_REAL' || host?.group === 'COMMERCIAL_REAL';
+  if (!ref.worldId) {
+    // Orphan ref: compatible unless its category orders an animation medium onto a real host.
+    return !(hostIsReal && ANIMATION_MEDIUM_CAT_RE.test(ref.cat ?? ''));
+  }
+  const home = DATA.worlds.find((w) => w.id === ref.worldId);
   return home?.group === 'CINEMATIC_REAL' && host?.group === 'CINEMATIC_REAL';
 }
 

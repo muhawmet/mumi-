@@ -1,4 +1,4 @@
-<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/motion-author.md · protocolHash: a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4 · regen: npm run agents:sync -->
+<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/motion-author.md · protocolHash: 80c2592094c985e1cd6dc99e32934f53154746e04d83e6c227f337451e429f12 · regen: npm run agents:sync -->
 ---
 name: mamilas-motion-author
 description: Writes the frame-aware i2v motion prompt from an APPROVED start frame. One moving element, one cause-effect-settle, engine dialect verbatim, Kling-scrubbed. Use only after the frame exists — never blind.

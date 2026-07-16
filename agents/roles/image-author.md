@@ -51,3 +51,12 @@ artifact is rejected without them). Output a `mamilas.agent-artifact.v1` with ro
 include workflow prose, TODO, `[DIRECTOR TASK]` or raw hex in the prompt.
 
 When CONTEXT.json carries `approvedLessons`, read them before writing: each is a one-line production lesson Mami approved from a finished project. Treat them like mined clauses — engine-aware defaults, never universal locks; a conflicting APPLIED Mami directive wins and the set-aside lesson is named under `suppressedContext`.
+
+When CONTEXT.json carries `continuityState`, it is the observable summary of the previous
+approved scene (its interpretation, applied locks and source artifact hash). A recurring subject
+keeps the SAME identity, wardrobe and accumulated physical state named there — rebuild them
+explicitly in this prompt, never assume engine memory. Inventing a fresh anonymous person for a
+one-shot beat is legitimate craft; re-inventing the SAME recurring person differently across
+scenes is a continuity failure. If a specific recurring face or cast fact is required and absent
+from source, refs and locks, do not invent it — the honest output is `FACT_REQUIRED` under risks,
+or Mami binds an identity reference later.

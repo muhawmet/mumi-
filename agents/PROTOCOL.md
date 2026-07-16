@@ -27,7 +27,16 @@ WorldPacket fiziği, compatible refs, palette-as-light, explicit locks, engine d
 modes ve continuity özetini alır. Tüm proje JSON'u veya site-yazımı engine prompt'u almaz.
 Çıktı engine-facing image prompt artifact'idir; workflow/TODO/`[DIRECTOR TASK]`/raw hex içermez.
 
-Image Jury yalnız Decision + Storyboard + Image Prompt'u ölçer. Frame yokken frame PASS vermez.
+Recurring continuity yasası: `continuityState` önceki onaylı sahnenin gözlenebilir özetidir
+(interpretation + uygulanan kilitler + kaynak artifact hash'i). Tekrar eden özne aynı kimlik,
+kıyafet ve birikmiş fiziksel durumla yeniden kurulur — engine hafızası varsayılmaz, kimlik her
+prompt'ta açıkça yeniden yazılır. Anonim tek-shot kişi yaratmak serbesttir; fakat aynı belirli
+kişi birden çok sahnede tekrar ediyorsa ve yüz/cast gerçeği kaynak, ref veya kilitlerde yoksa
+kimlik UYDURULMAZ: dürüst yol `FACT_REQUIRED` veya Mami'nin bağlayacağı identity referansıdır.
+
+Image Jury yalnız Decision + Storyboard + Image Prompt + aynı bağımsız `continuityState`
+gerçeğini ölçer; süreklilik hükmü Author'ın risk notundan değil bu state'ten verilir.
+Frame yokken frame PASS vermez.
 
 ## Frame ve Motion
 

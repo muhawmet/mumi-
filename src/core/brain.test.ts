@@ -597,15 +597,20 @@ describe('STY_BANK power-surge söküm regresyonu — power expansion öznesi ü
 });
 
 describe('ANTIGRAVITY TASK 2', () => {
-  it('dnaDirectives with 2 refs having dna text → perRef has 2 verbatim entries', () => {
+  // HARD-FIX 2026-07-16 (rapor madde 20): perRef artık VERBATIM değil — marka/eser adı
+  // scrubRefFieldIP ile sökülür (Apple refDna kanal sızıntısı buradan geçiyordu).
+  // Zanaat tarifi kısa da olsa kalır; yalnız IP adı düşer.
+  it('dnaDirectives perRef zanaat metnini korur, marka adını söker', () => {
     const refs: any[] = [
       { id: '1', name: 'Ref 1', dna: 'dna one', use: 'use one', avoid: 'avoid one', cat: 'test' },
-      { id: '2', name: 'Ref 2', dna: 'dna two', use: '', avoid: '', cat: 'test' }
+      { id: '2', name: 'Apple Object Worship', dna: 'Apple object-worship lineage: reverent hero-product grammar', use: '', avoid: '', cat: 'test' }
     ];
     const res = dnaDirectives(refs, 'REAL');
     expect(res.perRef.length).toBe(2);
     expect(res.perRef[0]).toEqual({ name: 'Ref 1', anchor: '', dna: 'dna one', use: 'use one', avoid: 'avoid one' });
-    expect(res.perRef[1]).toEqual({ name: 'Ref 2', anchor: '', dna: 'dna two', use: '', avoid: '' });
+    expect(res.perRef[1].name).not.toMatch(/apple/i);
+    expect(res.perRef[1].dna).not.toMatch(/apple/i);
+    expect(res.perRef[1].dna).toContain('object-worship lineage'); // zanaat kalır
   });
 
   it('dnaDirectives with refs present but no DNA_MAP hits → self-contained anchor fallback; with refs=[] → old generic fallback string', () => {

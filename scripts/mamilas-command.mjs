@@ -166,12 +166,12 @@ function storyboardHash(scenes) {
  * storyboardHash is VERIFIED, never resealed — a mismatch is tamper, not drift.
  * Normal execution still rejects stale commands; migration is never implicit.
  */
-export function migrateCommandToCurrentContext(command) {
+export function migrateCommandToCurrentContext(command, currentProtocol = null) {
   const migrated = JSON.parse(JSON.stringify(command));
   if (!Array.isArray(migrated.scenes) || !migrated.lifecycle || !migrated.baseDecision) {
     throw new Error('command migration için canonical command alanları eksik');
   }
-  // BRAIN M4 (Sol kritik): migration YALNIZ sceneContextHashes'i taşır — context ŞEKLİ
+  // BRAIN M4 (Sol kritik): migration YALNIZ türetilmiş hash'leri taşır — context ŞEKLİ
   // değişti (ör. promptQuality kontratı büyüdü) diye hash'ler tazelenir. storyboardHash
   // YENİDEN MÜHÜRLENMEZ: onu tazelemek, scenes'i kurcalanmış bir command'i "migration"la
   // meşrulaştırırdı. Storyboard uyuşmuyorsa bu bir migration vakası değil, tamper vakasıdır.
@@ -179,6 +179,10 @@ export function migrateCommandToCurrentContext(command) {
   if (migrated.lifecycle.storyboardHash !== expectedStoryboard) {
     throw new Error('command migration reddedildi: storyboardHash scenes ile uyuşmuyor (tamper/stale storyboard migration ile meşrulaştırılamaz)');
   }
+  // HARD-FIX 2026-07-16: PROTOCOL.md karar yasasıdır — yasa evrilince eski command'in
+  // yeni yasayla koşabilmesi migration'ın tam amacı. Protokol descriptor'ı da tazelenir
+  // (yalnız açık --migrate-command-context yolunda; normal koşu stale protokolü yine reddeder).
+  if (currentProtocol) migrated.lifecycle.protocol = { ...currentProtocol };
   migrated.lifecycle.sceneContextHashes = Object.fromEntries(migrated.scenes.map((scene) => [
     scene.id,
     canonicalHash({ imageAuthor: imageContext(migrated, scene), motionEngine: scene.motionEngine }),
@@ -761,9 +765,35 @@ async function sceneStatus(root, command, scene, artifacts) {
   return { scene, artifacts: liveArtifacts, frame, action: nextAction(liveArtifacts, frame) };
 }
 
+// HARD-FIX 2026-07-16 (rapor madde 9/10/12): recurring identity continuity.
+// Önceki sahnenin PASS image_author artifact'inden gözlenebilir özet çıkarır —
+// interpretation (dominant özne/tek olay), uygulanan kilitler ve kaynak artifact hash'i.
+// Author "continuity'yi sıfırdan yeniden kur" yasasını artık GERÇEK malzemeyle uygular;
+// Jury aynı gerçeği bağımsız görür (Author'ın risk notundan değil). Engine memory
+// varsayılmaz; özet hash-bağlıdır (sourceArtifactHash) ama sceneContextHash'e GİRMEZ —
+// approvedLessons gibi launch-anı katmanıdır, yoksa her sahne PASS'i sonraki tüm
+// sahnelerin command'ini stale ederdi.
+export function continuityStateFrom(command, scene, allArtifacts) {
+  const prevScene = command.scenes[command.scenes.findIndex((item) => item.id === scene.id) - 1];
+  if (!prevScene) return null;
+  const prevArtifacts = allArtifacts.filter((artifact) => artifact.sceneId === prevScene.id);
+  const { author } = passingImageArtifacts(prevArtifacts);
+  if (!author?.content) return null;
+  return {
+    sceneId: prevScene.id,
+    sourceArtifactHash: author.contentHash,
+    interpretation: author.content.interpretation ?? null,
+    appliedLocks: author.content.appliedLocks ?? [],
+    law: 'Previous approved scene state. Recurring subjects keep the SAME identity, wardrobe and '
+      + 'accumulated physical state described here; rebuild them explicitly in this prompt — the '
+      + 'engine remembers nothing. If a specific recurring face/cast fact is required and absent '
+      + 'from source, refs and locks, do not invent it: the honest path is FACT_REQUIRED.',
+  };
+}
+
 // Bir RUN_ROLE aksiyonu için workspace'i hazırlar, TEK oturum açar ve üretilen
 // tek artifact'i doğrular. İnteraktif ve batch (headless) aynı sözleşmeyi koşar.
-async function executeRole(check, command, projectDir, root, artifactDir, status, provider, headless) {
+async function executeRole(check, command, projectDir, root, artifactDir, status, provider, headless, allArtifacts = []) {
   const { scene, artifacts: sceneArtifacts, frame, action } = status;
   const context = roleContext(command, scene, sceneArtifacts, frame, action);
   await mkdir(root, { recursive: true });
@@ -799,7 +829,11 @@ async function executeRole(check, command, projectDir, root, artifactDir, status
       approvedLessons = parseApprovedLessons(bank);
     } catch { /* banka yoksa akış durmaz */ }
   }
-  const sessionContext = { ...context, approvedLessons, artifactContract: artifactTemplate };
+  // Continuity state — hash-DIŞI katman (approvedLessons gibi). Author VE jury'ler aynı
+  // gerçeği görür: madde 12 — jury continuity'yi Author'ın risk notundan değil bağımsız
+  // önceki-sahne state'inden ölçer.
+  const continuityState = continuityStateFrom(command, scene, allArtifacts);
+  const sessionContext = { ...context, approvedLessons, continuityState, artifactContract: artifactTemplate };
   const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
   await writeFile(join(root, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
   await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');
@@ -872,7 +906,11 @@ export async function runCommand(args = process.argv.slice(2)) {
   const file = resolveCommandFile(args);
   const command = JSON.parse(await readFile(file, 'utf8'));
   if (args.includes('--migrate-command-context')) {
-    const migrated = migrateCommandToCurrentContext(command);
+    const currentProtocolText = await readFile(PROTOCOL_PATH, 'utf8');
+    const migrated = migrateCommandToCurrentContext(command, {
+      version: PROTOCOL_VERSION,
+      contentHash: sha256(currentProtocolText),
+    });
     const migratedCheck = await validateCommand(migrated);
     if (!migratedCheck.ok) throw new Error(`command migration reddedildi: ${migratedCheck.problems.join(' · ')}`);
     const output = resolve(argValue(args, '--out') ?? file);
@@ -976,7 +1014,7 @@ export async function runCommand(args = process.argv.slice(2)) {
         // Canlı ilerleme — headless oturumlar sessizdir; Mami koşunun nerede olduğunu
         // stderr'den görür (stdout tek JSON sonuç olarak kalır, parse bozulmaz).
         console.error(`⏳ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} yazıyor…`);
-        await executeRole(check, command, projectDir, root, artifactDir, status, provider, true);
+        await executeRole(check, command, projectDir, root, artifactDir, status, provider, true, live);
         console.error(`✅ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} mühürlendi`);
       }
       if (!report) throw new Error(`sahne ${candidate.id} rol tavanına çarptı; lifecycle beklenmedik döngüde`);
@@ -1023,7 +1061,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (action.kind !== 'RUN_ROLE') throw new Error(`launch yok: ${action.kind}`);
     const provider = argValue(args, '--provider');
     if (!['claude', 'codex'].includes(provider)) throw new Error('--provider claude|codex zorunlu');
-    await executeRole(check, command, projectDir, root, artifactDir, selected, provider, false);
+    await executeRole(check, command, projectDir, root, artifactDir, selected, provider, false, artifacts);
   }
   return result;
 }
