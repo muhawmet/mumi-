@@ -362,6 +362,61 @@ describe('interactive command runtime', () => {
     expect(stale.stderr).toMatch(/tam decode edilebilir PNG\/JPEG\/WebP değil|byte\/hash\/dimension/);
   });
 
+  test('FABLE fix: frame_jury SONRASI bundle-export ve YENİ kare importu çalışır; stale frame-bağımlı artifact zinciri öldürmez', async () => {
+    // Ölçülmüş kırık (Fable 2026-07-16): frame_jury artifact'i oluştuktan sonra
+    // --export-image-bundle ve --import-frame, frame=null geçen validateArtifactChain
+    // yüzünden KALICI kırılıyordu ("current frame receipt yok" — receipt diskteyken) →
+    // Mami kareyi asla değiştiremiyordu. Fix: gerçek frame yüklenir; yeni kare gelince
+    // eski frame-bağımlı artifact'ler AYIKLANIR (stale = yeniden-koş, ölüm değil).
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-frame-replace-'));
+    const command = commandFixture();
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'A physical water-cycle frame with cloud and basin.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world'], suppressedContext: [], risks: [],
+    });
+    const jury = sealedArtifact(command, 1, 'image_jury', 'IMAGE_JURY', 0, [contextHash, author.contentHash], {
+      verdict: 'PASS', evidence: ['Prompt approved shot ve dünya fiziğini taşıyor.'],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    writeFileSync(join(artifactsDir, '1-image_jury-r0.json'), JSON.stringify(jury));
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+    // İlk kare + frame_jury PASS:
+    const png1 = join(dir, 'frame1.png');
+    writeFileSync(png1, Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    expect(runAt(dir, command, ['--import-frame', png1, '--scene', '1', '--verdict', 'APPROVE']).status).toBe(0);
+    const receipt1 = JSON.parse(readFileSync(join(dir, '.mamilas', 'frames', '1.json'), 'utf8'));
+    const frameJury = sealedArtifact(command, 1, 'frame_jury', 'FRAME_JURY', 0, [
+      contextHash, author.contentHash, jury.contentHash, receipt1.contentHash,
+    ], { verdict: 'PASS', frameHash: receipt1.frameHash, evidence: ['İlk kare açıldı.'] });
+    writeFileSync(join(artifactsDir, '1-frame_jury-r0.json'), JSON.stringify(frameJury));
+
+    // 1) frame_jury varken bundle export ARTIK çalışır (eskiden kırılırdı):
+    const bundlePath = join(dir, 'post-frame-bundle.json');
+    const post = runAt(dir, command, ['--export-image-bundle', '--scene', '1', '--out', bundlePath]);
+    expect(post.status, post.stderr).toBe(0);
+    expect(JSON.parse(readFileSync(bundlePath, 'utf8')).schema).toBe('mamilas.image-artifact-bundle.v1');
+
+    // 2) YENİ (daha iyi) kare importu ARTIK çalışır:
+    const png2 = join(dir, 'frame2.jpg');
+    const bytes2 = await sharp({ create: { width: 2, height: 2, channels: 3, background: '#996633' } }).jpeg().toBuffer();
+    writeFileSync(png2, bytes2);
+    const replace = runAt(dir, command, ['--import-frame', png2, '--scene', '1', '--verdict', 'APPROVE']);
+    expect(replace.status, replace.stderr).toBe(0);
+
+    // 3) Eski frame_jury (yeni kareye göre stale) sahneyi ÖLDÜRMEZ — ayıklanır,
+    //    frame katı yeniden açılır:
+    const next = runAt(dir, command, ['--dry-run']);
+    expect(next.status, next.stderr).toBe(0);
+    expect(JSON.parse(next.stdout).action).toEqual({ kind: 'RUN_ROLE', role: 'frame_jury', revision: 0 });
+    // Image katı korunur (yeniden yazılmaz) — action image tarafına dönmedi.
+  });
+
   test('çok sahneli scheduler COMPLETE ilk sahneyi atlayıp sonraki valid rolü seçer', () => {
     const dir = mkdtempSync(join(tmpdir(), 'mamilas-multiscene-'));
     const command = commandFixture(true, 2);

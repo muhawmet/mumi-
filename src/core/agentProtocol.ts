@@ -435,7 +435,10 @@ export function buildImageAuthorContext(command: any, sceneId: number) {
       mamiPromptOverride: command.baseDecision?.overrides?.find((item: any) => item.sceneId === sceneId)?.userImagePrompt ?? null,
     },
     targetEngine: command.baseDecision?.engine?.imageModel,
-    failureModes: scene.handoff?.IMAGE?.avoid ?? null,
+    // FABLE bulgusu (2026-07-16): alan adı `avoid` DEĞİL `negatives` — yanlış ad iki yüzeyde
+    // birden okunduğu için kanal doğuştan ölüydü (M2 vocabularyExamples vakasının tekrarı);
+    // motor kaçınmaları (morphing/extra-fingers/identity-drift…) author'a hiç ulaşmıyordu.
+    failureModes: scene.handoff?.IMAGE?.negatives ?? null,
     continuity: {
       previousSceneId: sceneId > 1 ? command.scenes[command.scenes.findIndex((item: any) => item.id === sceneId) - 1]?.id ?? null : null,
       nextSceneId: command.scenes[command.scenes.findIndex((item: any) => item.id === sceneId) + 1]?.id ?? null,

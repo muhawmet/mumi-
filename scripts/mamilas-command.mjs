@@ -365,22 +365,29 @@ function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
   throw new Error(`unsupported artifact role: ${role}`);
 }
 
+// FABLE bulgusu (2026-07-16): frame-bağımlı artifact'lerde (frame_jury/motion_*) frameHash
+// uyuşmazlığı FIRLATILIYORDU — Mami daha iyi bir kare getirdiğinde eski jüri/motion artifact'i
+// tüm sahneyi kalıcı kilitliyordu ("kareyi asla değiştiremiyor"). Ürün yasası tam tersini
+// söylüyor: "frame değişince motion stale" — stale, ÖLÜM değil YENİDEN-KOŞ demektir.
+// Yeni davranış: stale frame-bağımlı artifact zinciri kırmaz; AYIKLANIR (yok sayılır) ve
+// dönen liste, canlı zincir olarak kullanılır → nextAction frame_jury'yi yeniden açar.
+// Image katı (author/jury) frameHash taşımaz — tamper/uyuşmazlık orada hâlâ FIRLATIR.
 function validateArtifactChain(artifacts, frame, command, sceneId) {
+  const FRAME_BOUND = new Set(['frame_jury', 'motion_author', 'motion_jury']);
+  const live = artifacts.filter((artifact) =>
+    !FRAME_BOUND.has(artifact.role)
+    || (Boolean(frame?.frameHash) && artifact.content?.frameHash === frame.frameHash));
   const seen = new Set();
-  for (const artifact of artifacts) {
+  for (const artifact of live) {
     const key = `${artifact.role}@${artifact.revision}`;
     if (seen.has(key)) throw new Error(`duplicate artifact: ${key}`);
     seen.add(key);
-    const expected = expectedInputs(artifact.role, artifact.revision, artifacts, command, sceneId, frame);
+    const expected = expectedInputs(artifact.role, artifact.revision, live, command, sceneId, frame);
     if (canonicalize(expected) !== canonicalize(artifact.inputArtifactHashes)) {
       throw new Error(`${key}: inputArtifactHashes zinciri uyuşmuyor`);
     }
-    if (['frame_jury', 'motion_author', 'motion_jury'].includes(artifact.role)) {
-      if (!frame?.frameHash || artifact.content?.frameHash !== frame.frameHash) {
-        throw new Error(`${key}: current frameHash kanıtı yok/stale`);
-      }
-    }
   }
+  return live;
 }
 
 async function loadArtifacts(dir, command) {
@@ -574,7 +581,17 @@ function nextAction(artifacts, frame) {
   if (frame.verdict !== 'APPROVE') return { kind: 'AWAIT_MAMI_APPROVE' };
   const frameJury = latest(artifacts, 'frame_jury');
   if (!frameJury) return { kind: 'RUN_ROLE', role: 'frame_jury', revision: 0 };
-  if (frameJury.content.verdict !== 'PASS') return { kind: 'FACT_REQUIRED', reason: frameJury.content.factRequired || frameJury.content.failingCheck };
+  if (frameJury.content.verdict !== 'PASS') {
+    // FABLE bulgusu: bu dal çıkışsız bir çıkmazdı — REJECT/FACT_REQUIRED sonrası ne yeni kare
+    // yolu söyleniyordu ne de mesaj yol gösteriyordu ("jüri süse dönüyor"). Çıkış her zaman var:
+    // Mami yeni/daha iyi kareyi `--import-frame` ile getirir; frame-bağımlı artifact'ler yeni
+    // frameHash'le doğal stale olur ve frame_jury yeniden koşar. Mesaj artık bunu SÖYLER.
+    const reason = frameJury.content.factRequired || frameJury.content.failingCheck || 'frame jury geçmedi';
+    return {
+      kind: 'FACT_REQUIRED',
+      reason: `${reason} — çıkış yolu: yeni/daha iyi kareyi \`--scene ${frameJury.sceneId} --import-frame <png> --verdict APPROVE\` ile getir; frame-bağımlı artifact'ler yeni kareyle doğal stale olur ve frame jürisi yeniden koşar.`,
+    };
+  }
   return authorJuryAction(artifacts, 'motion_author', 'motion_jury') ?? { kind: 'COMPLETE' };
 }
 
@@ -618,7 +635,8 @@ function imageContext(command, scene) {
       mamiPromptOverride: command.baseDecision.overrides?.find((item) => item.sceneId === scene.id)?.userImagePrompt ?? null,
     },
     targetEngine: command.baseDecision.engine.imageModel,
-    failureModes: scene.handoff?.IMAGE?.avoid ?? null,
+    // FABLE bulgusu: alan `negatives` — `avoid` iki yüzeyde birden yanlıştı (ölü kanal).
+    failureModes: scene.handoff?.IMAGE?.negatives ?? null,
     continuity: {
       previousSceneId: scene.id > 1 ? command.scenes[command.scenes.findIndex((item) => item.id === scene.id) - 1]?.id ?? null : null,
       nextSceneId: command.scenes[command.scenes.findIndex((item) => item.id === scene.id) + 1]?.id ?? null,
@@ -677,7 +695,11 @@ function resolveCommandFile(args) {
   const explicit = argValue(args, '--file') ?? args.find((arg) => !arg.startsWith('--') && arg.endsWith('.json'));
   if (explicit) return resolve(explicit);
   const candidates = commandCandidates(process.cwd());
-  if (candidates.length !== 1) throw new Error(`command seçimi belirsiz: ${candidates.length} aday; --file kullan`);
+  // FABLE bulgusu: eski mesaj aranan kalıbı söylemiyordu — kullanıcı hangi dosya adının
+  // geçerli olduğunu tahmin etmek zorunda kalıyordu ("yanlış sebeple hayır" sınıfı).
+  if (candidates.length !== 1) throw new Error(
+    `command seçimi belirsiz: ${candidates.length} aday. Aranan kalıp: bu klasörde *_mamilas_command.json `
+    + `(siteden "Command JSON" export'unun adı). Doğru dosyayı --file <yol> ile açıkça ver.`);
   return join(process.cwd(), candidates[0]);
 }
 
@@ -768,8 +790,12 @@ export async function runCommand(args = process.argv.slice(2)) {
     const approval = await loadStoryboardApproval(root, command, explicitScene);
     if (!approval.ok) throw new Error(`scene ${explicitScene.id} storyboard APPROVE değil`);
     const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === explicitScene.id);
-    validateArtifactChain(sceneArtifacts, null, command, explicitScene.id);
-    const exported = await exportImageBundle(root, command, explicitScene, sceneArtifacts, argValue(args, '--out'));
+    // FABLE bulgusu: frame=null geçmek, frame_jury/motion artifact'i olan sahnede zinciri
+    // yanlış hatayla ("current frame receipt yok") KALICI kırıyordu — receipt diskteyken.
+    // Ana yol gibi gerçek frame'i yükle; frame yoksa loadFrame zaten null döner.
+    const exportFrame = await loadFrame(root, command, explicitScene, sceneArtifacts);
+    const liveExportArtifacts = validateArtifactChain(sceneArtifacts, exportFrame, command, explicitScene.id);
+    const exported = await exportImageBundle(root, command, explicitScene, liveExportArtifacts, argValue(args, '--out'));
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'IMAGE_BUNDLE_EXPORTED' }, ...exported };
   }
   if (args.includes('--import-frame')) {
@@ -777,9 +803,13 @@ export async function runCommand(args = process.argv.slice(2)) {
     const approval = await loadStoryboardApproval(root, command, explicitScene);
     if (!approval.ok) throw new Error(`scene ${explicitScene.id} storyboard APPROVE değil`);
     const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === explicitScene.id);
-    validateArtifactChain(sceneArtifacts, null, command, explicitScene.id);
+    // FABLE bulgusu: aynı frame=null kilidi — yeni/daha iyi kare import'u da imkânsızlaşıyordu
+    // ("Mami kareyi asla değiştiremiyor"). Mevcut frame'le doğrula; importFrame yeni kareyi
+    // yazınca frame-bağımlı eski artifact'ler (frame_jury/motion) hash'leriyle doğal stale olur.
+    const currentFrame = await loadFrame(root, command, explicitScene, sceneArtifacts);
+    const liveImportArtifacts = validateArtifactChain(sceneArtifacts, currentFrame, command, explicitScene.id);
     const imported = await importFrame(
-      root, command, explicitScene, sceneArtifacts,
+      root, command, explicitScene, liveImportArtifacts,
       argValue(args, '--import-frame'), argValue(args, '--verdict') ?? 'PENDING',
     );
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'FRAME_IMPORTED' }, ...imported };
@@ -795,10 +825,12 @@ export async function runCommand(args = process.argv.slice(2)) {
     }
     const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === candidate.id);
     const frame = await loadFrame(root, command, candidate, sceneArtifacts);
-    validateArtifactChain(sceneArtifacts, frame, command, candidate.id);
-    const action = nextAction(sceneArtifacts, frame);
+    // Stale frame-bağımlı artifact'ler ayıklanır — canlı zincir üzerinden ilerlenir
+    // (yeni kare geldiyse frame_jury/motion doğal olarak yeniden açılır).
+    const liveArtifacts = validateArtifactChain(sceneArtifacts, frame, command, candidate.id);
+    const action = nextAction(liveArtifacts, frame);
     if (action.kind !== 'COMPLETE' || explicitScene) {
-      selected = { scene: candidate, artifacts: sceneArtifacts, frame, action };
+      selected = { scene: candidate, artifacts: liveArtifacts, frame, action };
       break;
     }
   }
