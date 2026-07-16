@@ -3,6 +3,10 @@ name: mamilas-director
 description: MAMILAS Pass A/Pass B veya uçtan uca prodüksiyon istendiğinde gerçek proje paketi, onaylı kare kapısı ve çıktı denetimiyle üretimi koordine eder.
 ---
 
+> **DEPRECATED / ESKİ HAT (2026-07-16):** Bu skill eski "Pass A/Pass B + project.json"
+> akışını anlatır — o hat runnable DEĞİLDİR. Canlı üretim: `/mamilas-uret` (Yönetmen modu,
+> `--director`). Yerleşik Yönetmen'in runtime rol kartı: `agents/roles/director-session.md`.
+
 # MAMILAS Production Director
 
 Önce `AGENTS.md`, `docs/ai/PROJECT_CONTRACT.md` ve gerçek üretim paketini oku. Olmayan

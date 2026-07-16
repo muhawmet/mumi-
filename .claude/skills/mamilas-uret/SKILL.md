@@ -7,7 +7,18 @@ description: MAMILAS manuel World Studio üretimini tek Yerleşik Yönetmen yüz
 
 ## Default: BATCH (Mami mandası, 2026-07-16)
 
-Mami sahne-sahne beklemez. Aksi açıkça istenmedikçe üretim koşusu **batch** sürülür:
+Mami sahne-sahne beklemez. Aksi açıkça istenmedikçe üretim **YÖNETMEN modunda** sürülür
+(çift-tık launcher'ların default'u da budur):
+
+```
+node agents/runner.mjs --project "<Ad>" --director --provider claude
+```
+
+- Batch ARKA planda ayrı süreç olarak koşar (günlük `BATCH-LOG.txt`); Mami foreground'da
+  kalıcı Yerleşik Yönetmen sohbetinde kalır (`agents/roles/director-session.md`): kısa doğal
+  durum alır, sıradan REJECT'te rahatsız edilmez, yalnız gerçek `FACT_REQUIRED`'da soru gelir,
+  sohbet direktifi exact `LIVE_CHAT` olarak bağlanır.
+- Yalnız-batch (Yönetmen'siz, terminali kaplayan) istenirse `--batch --launch` hâlâ durur:
 
 ```
 node agents/runner.mjs --project "<Ad>" --batch --launch --provider claude
@@ -15,7 +26,11 @@ node agents/runner.mjs --project "<Ad>" --batch --launch --provider claude
 
 - Runner TEK soruyla tüm storyboard'ları onaylatır (`--all-scenes` receipt'leri), sonra her
   sahnenin image author→jury zincirini frame kapısına kadar arka arkaya headless oturumlarla
-  koşar. Koşu sonunda `.mamilas/SAHNE-PROMPTLAR.md` toplu prompt paketi yazılır.
+  koşar. `SAHNE-PROMPTLAR.md` her sahne kapanışında ATOMİK güncellenir ve GÖRÜNÜR kopyası
+  run kökünde (command dosyasının yanında) yaşar — Mami `.mamilas` açmaz. Format-bozuk bir
+  jury artifact'i batch'i ÖLDÜRMEZ: mekanik onarım → bir teknik-retry → yalnız o sahne
+  `TECHNICAL_ERROR`; diğer sahneler yürür. Yarım koşu `--migrate-command-context` sonrası
+  kaldığı yerden devam eder (PASS sahneler yeniden koşulmaz).
 - Mami paketi alır, kareleri harici araçta seri basar, İSTİSNA listesiyle döner
   ("3, 17, 42 kötü çünkü ..."); istisnalar `--add-directive-file` ile revizyona girer,
   kalanlar `--import-frame ... --verdict APPROVE` ile mühürlenir.

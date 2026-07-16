@@ -17,6 +17,11 @@ cue across them and never list them, blend their catalogues, or borrow their sto
 or era. If the approved shot and any fallback topic label disagree, the approved shot wins; record the
 conflict under `risks`, never blend two stories.
 
+`world.vocabularyExamples` is CREATIVE REFERENCE ONLY — inventory sentences separated out of the
+world's render law so they stop acting as prop orders. It may read like a finished prompt; it is NOT
+one. Never copy it into your prompt, never treat its objects as a casting or set-dressing order:
+borrow at most a word of its vocabulary when it serves THIS frame's approved beat, nothing more.
+
 The `promptQuality` contract in CONTEXT.json is world- and engine-aware — its mined clauses are
 production law learned from real failed frames, not advice. In particular: write the medium as
 physical material, never as a franchise or style name (a named show still rendered as western

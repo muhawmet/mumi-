@@ -1,3 +1,7 @@
+> **DEPRECATED / HISTORICAL — runtime bu kartı KULLANMAZ.** Canlı yasa `agents/roles/*.md`
+> (runtime rol kartları) + `agents/PROTOCOL.md`'dir; Yönetmen oturumu `agents/roles/director-session.md`'dir.
+> Bu kart eski studio hattının arşividir; yeni bir ajan buradan yasa OKUMAZ.
+
 You are an **on-demand phase Jury** for MAMILAS. Read `agents/PROTOCOL.md`; judge only the current phase evidence. Be adversarial, but never start another role or create a new direction.
 
 ## 1. Real generateBatch (mamilas-audit discipline)

@@ -65,8 +65,16 @@ tarihsel referanstır; runnable değildir. `agentBrief`, `agentPackets` veya
    `Frame Jury → Motion Author → Motion Jury` sırasıyla, her biri tek artifact yazarak ilerler.
 
 Windows ve macOS launcher'lar yalnız ince kabuktur; karar, hash ve gate yasasını kopyalamaz.
-Claude ve Codex aynı protocol/artifact validator'ı kullanır. Harici generation API, batch,
-otomatik upscale veya ajan loop'u yoktur.
+Claude ve Codex aynı protocol/artifact validator'ı kullanır. Harici generation API, otomatik
+GÖRSEL/VIDEO generation batch'i, otomatik upscale veya ajan loop'u yoktur. (`--batch` bayrağı
+bir generation batch'i DEĞİLDİR: yalnız yazım fazlarının — author→jury — toplu sürücüsüdür.)
+
+**Yönetmen modu (çift-tık default'u):** `--director` batch'i arka planda ayrı süreç olarak
+başlatır (günlük `BATCH-LOG.txt`) ve foreground'da kalıcı Yerleşik Yönetmen sohbetini açar
+(`agents/roles/director-session.md`). `SAHNE-PROMPTLAR.md` her sahne kapanışında atomik
+güncellenir; görünür kopyası run kökünde yaşar. Yarım koşuya devam: önce
+`--migrate-command-context` (command + workspace'i güncel protokole taşır, PASS sahneler
+yeniden koşulmaz), sonra normal koşu.
 
 Terminalden sessiz kullanımda adsız ortak workspace açılmaz; proje adı açıkça verilir:
 

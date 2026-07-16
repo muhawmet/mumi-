@@ -51,8 +51,8 @@ kullanımı `:2407` (brief metnine basılıyor). Gerçek çatışma çözümü a
 (`:288-302`, `:616-634`, `:1898-1918`, `:2056-2059`) ve **kaybeden directive sessizce
 eziliyor**. Yeni bir çözüm yazıyorsan **her ezilen directive makbuz bırakmalı**.
 
-**Determinizm kırık.** `commandExport.ts:164` `new Date().toISOString()` → `:173`
-`commandId` **timestamp türevi**, içerik hash'i değil. Aynı kararlar aynı byte'ı üretmiyor.
+**Determinizm — FİXLİ (tarihçe).** `commandId` eskiden timestamp türeviydi; artık içerik
+hash'i (`commandExport.ts` — "no longer defines identity" yorumu). `generatedAt` yalnız kayıt.
 
 **`qaScore` motion'a hiç bakmıyor** (`proof.ts:202-232`) — hex sızıntılı prompt `100` alıyor.
 `qaScore 100` **kalite kanıtı değildir**.
