@@ -46,10 +46,14 @@
 > promote YOK) → `agents/lessons/APPROVED.md` (yalnız Mami yazar) → runner launch-anı `approvedLessons`
 > (HASH-DIŞI sessionContext — command'ler stale olmaz, test kilitli). Banka boş — ilk gerçek dersler
 > Mami'den. Receipt: `receipts/BRAIN-M7.md`.
-> Birleşik kapı: tsc 0 · vitest **1951/1951 (74 dosya)** · build OK. M5-M7 birleşik Sol turu + commit
-> bu oturumun son adımı; teslim raporu Mami dönüşü için hazırlanıyor.
+> Birleşik final kapı: tsc 0 · vitest **1953/1953 (74 dosya)** · build OK. Sol birleşik REJECT'in
+> tüm P1'leri aynı oturumda kapatıldı (dürüst frame-gate kanıtı: frame_jury FACT_REQUIRED → runner
+> motion'ı açmadı · tam-%90 tabanlar · 5/5 prop kilidi · verbatim kontrat kilidi · fonksiyonel
+> parser paritesi) — **Sol final verdict: PASS.** Commit'ler: `2a28ff4` (M4) + M5-M7 + `1335bea`.
 >
-> **Tamamlandı — M0→M7 beyin katmanı planının tamamı.** Önce oku:
+> **🏁 M0→M7 TAMAM — TESLİM: `BRAIN-TESLIM-2026-07-16.md`** (Mami tek-sayfa özet + "SENİN GÖZÜN"
+> listesi). Dürüst durum: implementation complete / visual validation pending — kare hükmü Mami'nin.
+> PUSH atılmadı (Mami dönüşünde). Önce oku:
 > 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
 > 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
 > 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`
