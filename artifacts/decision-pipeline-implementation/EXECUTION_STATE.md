@@ -7,9 +7,18 @@
 > `scripts/agents-sync.mjs` generator + `--check` drift kırmızısı; 12 `.claude/.codex` dosyası GENERATED;
 > 5 parity testi (2'si builder'dan bağımsız). Sol denetimi: kritik 0, P2'nin en önemlisi (test-oracle) hemen
 > kapatıldı, 3 ikincil ledger'da. Kapı: tsc 0 · vitest 1901/1901 (68 dosya) · build OK. Receipt: `receipts/BRAIN-M1.md`.
+> **✅ M2 TAMAM (2026-07-16):** KUSUR-C kapandı — `splitRenderLawPhysics` envanter/fizik ayrımı;
+> 5/46 dünya etkilendi (one_piece/naruto/bleach/cyberpunk/claymation envanter cümleleri →
+> vocabularyExamples, fizik verbatim); deakins kontrol kolu byte-değişmedi. Sol #1 KRİTİK bulgusu
+> (vocabularyExamples role context'ine girmiyordu — görünmez kanal) aynı task'ta kapatıldı +
+> test kilitledi. Gerçek A/B: `M2-AB-image-author.md` (iki gerçek buildCommandJSON + role-kartlı
+> iki final prompt; kare hükmü Mami'de). Sol'un Synthwave false-negative iddiası reddedildi
+> (cümleler ışık/silüet davranışı — gerekçe receipt'te). 4 P2 ledger'da (Naruto/Bleach
+> mekân-kimliği kare A/B'si dahil). Kapı: tsc 0 · vitest 1908/1908 (69 dosya) · build OK.
+> Receipt: `receipts/BRAIN-M2.md`.
 > **Mami yetkisi:** commit/push serbest ("körleme sana güveniyorum") — her kapı yeşilken task-sonu ritüelinde.
 > **Mami (Sol denetimleri için):** "kelimelere takılmayın, kritik değilse post'ta fixleriz."
-> **Aktif task: M2 (render_law prop/fizik ayrımı — toWorldPacket().renderPhysics). Plana göre M2 öncesi /clear.** Önce oku:
+> **Aktif task: M3 (şeffaf yorum receipt'i + dürüst adlandırma — Mami revizyonlu, onay kapısı YOK). Plana göre M3 öncesi /clear.** Önce oku:
 > 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
 > 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
 > 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`
