@@ -3,8 +3,13 @@
 > **➡️ AKTİF PLAN (VSCode/Mac, 2026-07-16):** Beyin katmanı inşası — anlama fazı BİTTİ, plan HAZIR.
 > **✅ M0 TAMAM (2026-07-16):** baseline yeşil mühürlendi (tsc 0 · vitest 1896/1896 (67 dosya) · build OK),
 > iki .bat CRLF fix commit `d366231` + push origin/main. Receipt: `receipts/BRAIN-M0.md`.
+> **✅ M1 TAMAM (2026-07-16):** KUSUR-B kapandı — kanon `agents/roles/studio/*.md` + `agents/manifest.json`;
+> `scripts/agents-sync.mjs` generator + `--check` drift kırmızısı; 12 `.claude/.codex` dosyası GENERATED;
+> 5 parity testi (2'si builder'dan bağımsız). Sol denetimi: kritik 0, P2'nin en önemlisi (test-oracle) hemen
+> kapatıldı, 3 ikincil ledger'da. Kapı: tsc 0 · vitest 1901/1901 (68 dosya) · build OK. Receipt: `receipts/BRAIN-M1.md`.
 > **Mami yetkisi:** commit/push serbest ("körleme sana güveniyorum") — her kapı yeşilken task-sonu ritüelinde.
-> **Aktif task: M1 (canonical consolidation — agents:sync generator + parity test).** Önce oku:
+> **Mami (Sol denetimleri için):** "kelimelere takılmayın, kritik değilse post'ta fixleriz."
+> **Aktif task: M2 (render_law prop/fizik ayrımı — toWorldPacket().renderPhysics). Plana göre M2 öncesi /clear.** Önce oku:
 > 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
 > 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
 > 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`
