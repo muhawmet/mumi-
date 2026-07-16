@@ -1,0 +1,9 @@
+{
+  "schema": "mamilas.storyboard-approval.v1",
+  "sceneId": 5,
+  "commandId": "mamilas-33d29717a1c2cdaa3b2c7bda5680bbea01e1e3f15e36fd1793e26ba9830e6900",
+  "storyboardHash": "d52d02de403ad47cb2e82374c4c256a0a5fbb84235216c6a19ad3cad667b3797",
+  "sceneContextHash": "e224ea467c22fca0a93a39e3af2764cb256330c6d83c09d645e74018b15403b4",
+  "verdict": "APPROVED",
+  "contentHash": "3ff7c239f6afbd142c22b44e8016615c34dcce5e3b0eac32a10ee54c20b62c5d"
+}

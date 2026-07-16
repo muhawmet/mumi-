@@ -1,0 +1,26 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_JURY",
+  "role": "image_jury",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "33d29717a1c2cdaa3b2c7bda5680bbea01e1e3f15e36fd1793e26ba9830e6900",
+  "storyboardHash": "d52d02de403ad47cb2e82374c4c256a0a5fbb84235216c6a19ad3cad667b3797",
+  "inputArtifactHashes": [
+    "aa5d53ef1a3575b6c2bb494e991b3187aa0bd357c1319123157739086db65d73",
+    "1daa598193e411e49998da98bfc98c5aef1da1b0e93740ae97e2b56511af68ad"
+  ],
+  "revision": 0,
+  "content": {
+    "verdict": "PASS",
+    "evidence": [
+      "Subject/action/place stil sözcükleri çıkınca yeniden kurulabiliyor (çocuk · buğuya roket çizme · sahil kasabası çatı arası); kompozisyon ilişkisi somut (lit near cheek + rocket-scratch = iki göz-durağı, harbor lights derinlikte).",
+      "Numeric lens erken (handheld 35mm f/5.6, 1.85:1, çocuğun göz hizası); ışık tümüyle motive (blue-hour gökyüzü key + sıva bounce fill + tek gazyağı lambası sıcak aksan) — chivo_naturalist_handheld fiziği davranış olarak işlenmiş, etiket değil.",
+      "Detay üçlüsü üçü de sahneden doğmuş (deniz-tuzu buğusu / asılı nefes-çiçeği / temiz çizgideki kırılan gök ışığı ipliği); palet REJİM (desatüre soğuk + tek korumalı umber aksan, kapalı liste yok); continuity sıfırdan; half-a-second kapanışı somut (burun çizgisi + akmak üzere damla); banned-empty sıfır.",
+      "Interpretation receipt prompt ile tutarlı; risks dürüst (golden→blue hour uzlaşısı gerekçeli, dünya-uyumlu); [DIRECTOR TASK]/hex/TODO yok."
+    ]
+  },
+  "contentHash": "6b93a46c45b7881a08f21e7fb0fbd4c5c062b420e88576ba7b92b166a34119be"
+}

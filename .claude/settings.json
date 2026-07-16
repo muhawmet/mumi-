@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./src/core/SURGERY_DATA.json)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/gate.sh",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[3] MOTION (i2v · plays the approved start frame)
+Duration: 5s.
+Camera: one slow 40cm parallel side-track matching his existing screen direction; stable horizon, no second move.
+Moving element: @karakter's forward boot and body weight — already grounded in the snow pass.
+Event: the forward boot completes one laborious step, compressing the snow; the displaced powder trails past the boot and settles while his upper body regains balance.
+Rhythm: industrial weight in human scale — mass leads, boot pressure and inertia remain visible; the step resolves by 70%, followed by a stable 1.3s hold.
+Engine grammar (Kling 3.0): start-frame fidelity, event resolves ~70% into the clip.
+Native SFX: forceful alpine crosswind, granular spindrift striking parka fabric, one deep boot crunch through crusted snow, insulated jacket and glove rustle, close muffled breathing through the neck gaiter. No dialogue, no narration, no music, no vocal cry, no mouth movement.
+Hold: exact face, frost, hood, parka baffles, gloves, phone, boots, ridge geometry, light direction and snow layers remain unchanged outside the single step.
+NEGATIVE: morphing, warping, re-render, identity drift, face change, hood collapse, phone change, extra limb, sliding feet, second step, falling, avalanche, new scenery, whiteout, camera shake, mouth movement, speech, flicker, multiple actions.

@@ -1,0 +1,196 @@
+{
+  "protocol": {
+    "version": "mamilas.agent-protocol.v1",
+    "contentHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4"
+  },
+  "promptQuality": {
+    "frameBuildOrder": [
+      "visible subject + decisive action + physical place",
+      "one compositional relationship that makes the beat readable",
+      "one camera relation plus one motivated light or material behaviour from the selected world",
+      "only the narrow, frame-specific constraints that protect the beat"
+    ],
+    "requiredEvidence": [
+      "A viewer can name who or what is dominant, what is happening, and where it is happening without reading style language.",
+      "The composition describes a physical relationship, threshold, foreground/background separation, or eyeline rather than an abstract mood.",
+      "World and reference DNA become an observable choice in this frame; they never introduce a second subject, story, location, era, or identity.",
+      "Detail triad: the frame carries one environmental-pressure detail on a body or surface, one micro-action or physiological event, and one concrete optical event of light or material behaviour (never a mood adjective).",
+      "Self-contained: the prompt rebuilds the full continuity state (wardrobe wear, accumulated dust or weather, identity clause, environment) from zero — the engine has no memory of a previous scene and the prompt never says \"as before\".",
+      "The prompt closes as a clean motion-ready still, half a second before one concrete named physical event.",
+      "Photoreal counter-terms are present against the engine's plastic-commercial default: negative fill, motivated light, subtle 35mm film grain, raw skin micro-texture (or equivalents earned by this shot).",
+      "Camera grammar comes early and numeric: a numeric lens and f-stop (e.g. \"locked 40mm at seated eye level, f/8 deep focus\") — never a vague \"cinematic lens\"."
+    ],
+    "referencePolicy": [
+      "Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.",
+      "Choose at most one reference-derived observable cue when it strengthens this shot; do not list or blend reference catalogues."
+    ],
+    "rejectIf": [
+      "Generic quality adjectives or a style catalogue carry more meaning than the approved beat.",
+      "The prompt could describe a different scene after the subject, action, and place are removed.",
+      "A fallback topic competes with a RAW_SOURCE_VAULT shot.",
+      "A reference supplies invented narrative facts, protected identity, brand, period, or location.",
+      "Empty quality tokens appear without source backing: 4K, 8K, masterpiece, ultra-detailed, premium, cinematic, stunning, beautiful, polished, award-winning — replace with a concrete lens, film-stock, grain or cadence fact.",
+      "The palette is written as a closed hue/color list instead of a saturation/contrast/bias regime — closed lists collapse to duotone in the engine."
+    ],
+    "overridePolicy": "Mined clauses are engine-aware defaults, never universal locks. If an APPLIED Mami directive explicitly conflicts with a clause, the directive wins: the Author sets the clause aside and names it under suppressedContext; the Jury must not enforce a clause that an APPLIED directive explicitly contradicts. Suppression is reasoning, done by the agent, visible in the receipt — never inferred by code from directive keywords."
+  },
+  "decision": {
+    "commandId": "mamilas-33d29717a1c2cdaa3b2c7bda5680bbea01e1e3f15e36fd1793e26ba9830e6900",
+    "locks": {
+      "productionPath": "DOCUMENTARY_REALISM",
+      "projectClass": "DOCUMENTARY_REALISM",
+      "projectId": "education",
+      "musicId": "",
+      "world": "chivo_naturalist_handheld",
+      "material": "none",
+      "palette": "desaturated_cinematic",
+      "refs": [
+        "emmanuel_lubezki_long_take",
+        "cinedna_handheld",
+        "setup_verite"
+      ],
+      "cast": "",
+      "brandKitLock": "",
+      "sceneCount": 12
+    },
+    "engine": {
+      "imageModel": "nano_banana_2",
+      "videoModel": "kling_3"
+    },
+    "mode": {
+      "workingMode": "Standart",
+      "beatMode": "Dengeli",
+      "osTextMode": "AUTO",
+      "voSyncMode": "FREE"
+    }
+  },
+  "storyboardHash": "d52d02de403ad47cb2e82374c4c256a0a5fbb84235216c6a19ad3cad667b3797",
+  "shot": {
+    "id": 1,
+    "phaseName": "Intro",
+    "durationSec": 8.3,
+    "architecture": {
+      "source": {
+        "status": "SOURCE_BOUND",
+        "sourceId": "source-001",
+        "exactText": "Muhammet küçük bir sahil kasabasında, çatı penceresinden gökyüzüne bakan bir çocuktu; cam buğusuna parmağıyla roket çizerdi.",
+        "notice": null
+      },
+      "beat": "orient the audience to this exact source beat",
+      "exactSourceBeat": "Muhammet küçük bir sahil kasabasında, çatı penceresinden gökyüzüne bakan bir çocuktu; cam buğusuna parmağıyla roket çizerdi.",
+      "semanticInterpretationStatus": "AGENT_AUTHORED",
+      "imageVantage": "35mm eye-level medium-wide three-quarter view, dominant subject and environment readable",
+      "semanticFingerprint": "scene-7010187a"
+    },
+    "sceneBrief": "Muhammet küçük bir sahil kasabasında, çatı penceresinden gökyüzüne bakan bir çocuktu; cam buğusuna parmağıyla roket çizerdi."
+  },
+  "mamiDirectives": [
+    {
+      "id": "site-directive-001",
+      "source": "SITE",
+      "scope": "PROJECT",
+      "sceneId": null,
+      "text": "Phase 0 preset: Belgesel / İnsan Hikâyesi. Director thesis: İnsanı reklam figürü değil, tanık olunan gerçek bir özne olarak kur. Locked decisions: Kamera mesafesi: Observed close — Yakın ama müdahalesiz; jest ve oda sesi önemli. Anti-generic guard: never produce a generic preset look; every frame must prove the selected strategy through source meaning, physical staging, motivated light, and the selected world/ref DNA."
+    }
+  ],
+  "world": {
+    "id": "chivo_naturalist_handheld",
+    "renderPhysics": "Photoreal cinematography in the Emmanuel 'Chivo' Lubezki AMC lineage. The signature is a REFUSAL of artificial light. (1) SOURCE: natural ONLY — sun, moon, fire, candle, window skylight; no artificial fixture visible or used; fill comes from sky bounce (cool blue), never a rig. (2) REGISTER: magic hour and blue hour are the default — low warm sun with long raking golden shadows, or cool cerulean-shadow blue hour with protected warm highlights. (3) CAMERA: handheld with intentional micro-drift and organic breath — not shaky war-doc, not dead-stabilized, but human-alive; the camera weaves through space following action in long uninterrupted arcs; reframes are natural, discovered, not choreographed. (4) LENS: wide primes — 14mm, 16mm, 21mm, sometimes 35mm — wide enough to hold environment context around the subject, with slight uncorrected barrel distortion at the frame edge. (5) DEPTH: deep, f/5.6-f/8, environment sharp. (6) TEXTURE: organic silver-halide 35mm grain in all values, natural highlight bloom (the atmosphere diffuses, no added filter), skin and foliage holding sub-pixel texture. (7) GRADE: golden-earth dominant — umber skin in magic hour, natural in daylight, cool-blue in blue hour; no teal-orange. IMPERATIVE: absolute realism from natural light only — negative fill, motivated natural source, 35mm grain, slight chromatic aberration, raw skin micro-texture. Forbid artificial fixtures, handheld SHAKE (micro-drift is alive, not chaotic), teal-orange grade, fill flash, shallow-bokeh dominance, AI plastic skin. N/A — photoreal. Wide-angle organic barrel distortion at the frame edges. Silhouette reads via natural light separation; skin and foliage hold sub-pixel texture under the grain.",
+    "figurePhysics": "N/A — photoreal. Wide-angle organic barrel distortion at the frame edges. Silhouette reads via natural light separation; skin and foliage hold sub-pixel texture under the grain.",
+    "environmentPhysics": "Natural sources only — sun key, cool sky-bounce fill, fire or candle as practical secondary. Magic-hour bias: warm low sun, long shadows. No artificial fixture, no fill flash. Shadow falls into natural darkness, never lifted.",
+    "cameraEnvelope": "Wide primes: 14mm, 16mm, 21mm, 35mm. f/5.6-f/8 deep focus. 1.85:1 or 2.39:1. Natural highlight bloom from atmosphere, no added diffusion. 35mm silver-halide grain. Slight uncorrected barrel distortion at the frame edge. The camera is a body in the room: wide 14-35mm, deep focus, close to the subject and always breathing. It walks with the action in long continuous takes, reframing as a witness would, never cutting away from what it must see. Available light and real geometry do everything; the vantage is human, at head height, inside the event rather than observing it. Never a locked tripod hold, never a telephoto macro, never a top-down vantage.",
+    "lightPhysics": "Natural sources only — sun key, cool sky-bounce fill, fire or candle as practical secondary. Magic-hour bias: warm low sun, long shadows. No artificial fixture, no fill flash. Shadow falls into natural darkness, never lifted.",
+    "materialPhysics": "World-native surface only — no tactile material substitution.",
+    "negativeLock": [
+      "NO Hugh Glass, NO Riggan Thomson, NO Theo Faron, NO any named Lubezki-shot character",
+      "NO Revenant frontier wilderness (unless the brief asks Turkey wilderness), NO Birdman theater, NO Children of Men London bus",
+      "NO artificial light source, NO fill flash, NO handheld SHAKE (micro-drift only)",
+      "NO neon, NO teal-orange grade, NO shallow-bokeh dominance",
+      "NO rim-light as decoration, NO porcelain or AI plastic-smooth skin, NO excessive smoothing",
+      "Turkish label only — naturalistic, weathered, integrated into the real environment, NO English signage"
+    ],
+    "paletteAsLight": "Desaturated — shadows read as deep cool blue, midtones read as dusky cool blue, accents read as dusky warm umber, highlights read as bright warm off-white — palette character: Cool blue-gray, neutral gray, muted tan, warm-gray white. Overcast lifted-shadow restraint, one solitary muted-warm accent. NO saturated color, NO teal-orange split, NO unmotivated warm accent (the world's source-light temperature governs highlights). Render these as light behaviour, never flat fills.",
+    "vocabularyExamples": "Photoreal cinematography in the Emmanuel Lubezki AMC lineage. Handheld micro-drift, 21mm wide prime at f/5.6 deep focus, 2.39:1. Subject: Mamilas character crossing a golden-lit Cappadocia hillside during magic hour, the sun low behind camera-right casting a long warm umber-shadow rake across the tuff-stone terrain, a warm golden rim on hair and jacket edge, cool sky-bounce filling the shadow side. Wide-angle slight barrel distortion at the frame edge. Environment context in deep focus: distant fairy chimneys sharp, faint hot-air balloons on the horizon. Turkish label 'GÖREME' integrated as a weathered wooden trail-marker at frame right. Motion seed: the subject mid-step, arms lowering, the camera micro-drift settling on a breath. AVOID: Hugh Glass, Revenant frontier, artificial light, teal-orange grade, shake, neon, plastic skin. Clean motion-ready start frame.",
+    "refs": [
+      {
+        "id": "emmanuel_lubezki_long_take",
+        "name": "Lubezki Long-Take Naturalism",
+        "compatible": true,
+        "directive": "Photoreal live-action still in the Emmanuel 'Chivo' Lubezki AMC naturalist doctrine. Medium: ARRI Alexa or RED, 1.85:1 or 2.39:1, paired with wide primes. Era: contemporary prestige auteur. Named anchor: Lubezki natural-light-only, magic-hour golden bias, handheld micro-drift. Signature light: natural sources ONLY — sun, moon, fire, candle, window skylight; no artificial fixture visible or compositionally present; magic hour and blue hour are the default operating register (low sun, long golden shadows, raking warm-orange key); shadow fill comes from sky bounce (cool blue), never from a fill light rig. Color/grade: golden-earth dominant — umber skin tones, warm straw and sienna in sunlit areas; blue-hour scenes shift to cool cerulean shadow, protected warm highlights; no teal-orange grade; organic film grain throughout all values. Lens/optics: wide primes at 14mm, 16mm, 21mm, 35mm; f/5.6–f/8 deep focus throughout; slight uncorrected barrel distortion at frame edge; natural highlight bloom (no added diffusion filter — the atmosphere does it); no lens flare added artificially. Texture/render: organic, alive, skin and foliage hold sub-pixel texture; grain is natural silver-halide character, not digital noise. Composition+motion: handheld with intentional micro-drift and organic breath — not shaky war-doc, not dead-stabilized, but human-alive pressure; camera weaves through space following action in long uninterrupted arcs; reframes natural, not choreographed."
+      },
+      {
+        "id": "cinedna_handheld",
+        "name": "Cinematic Observational Handheld",
+        "compatible": true,
+        "directive": "handheld documentary, observational street, verite witness, real-place drift"
+      },
+      {
+        "id": "setup_verite",
+        "name": "Verite Real-Place Setup",
+        "compatible": true,
+        "directive": "Photoreal frame in the verite real-place setup lineage (available-light real-location grammar, original subjects only). Medium/era: naturalistic verite and real-location shooting. Named anchor: verite real-place — available light in a real location, honest naturalism, unstaged presence. Signature light: available light only in a real location — a real window, a practical lamp, real daylight; motivated entirely by the actual space, honest and unglamorous; no added rig, the location's own light. Color/grade: honest location naturalism, accurate skin, real saturation; the grade preserves the real-place truth. Lens/optics: 28-50mm at a natural observational distance in the real space, moderate DOF holding context, steady handheld or locked; no stylized angle. Texture/render: photoreal with honest available-light grain, real location and skin texture, unstaged credibility. Composition+motion: a real person in a real location under its own light, honest observational framing, context held; natural handheld or a locked observational hold; the available real-place light and honest framing carry the verite truth."
+      }
+    ],
+    "referencePolicy": [
+      "Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.",
+      "Choose at most one reference-derived observable cue when it strengthens this shot; do not list or blend reference catalogues."
+    ]
+  },
+  "explicitLocks": {
+    "brandKitLock": "",
+    "cast": "",
+    "onScreenText": null,
+    "mamiPromptOverride": null
+  },
+  "targetEngine": "nano_banana_2",
+  "failureModes": [
+    "morphing",
+    "warping",
+    "melting",
+    "extra fingers",
+    "duplicated face",
+    "text artifacts",
+    "watermark",
+    "flickering",
+    "identity drift between frames"
+  ],
+  "continuity": {
+    "previousSceneId": null,
+    "nextSceneId": 2
+  },
+  "approvedLessons": [],
+  "artifactContract": {
+    "schema": "mamilas.agent-artifact.v1",
+    "protocolVersion": "mamilas.agent-protocol.v1",
+    "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+    "phase": "IMAGE_PROMPT",
+    "role": "image_author",
+    "provider": "claude",
+    "sceneId": 1,
+    "decisionHash": "33d29717a1c2cdaa3b2c7bda5680bbea01e1e3f15e36fd1793e26ba9830e6900",
+    "storyboardHash": "d52d02de403ad47cb2e82374c4c256a0a5fbb84235216c6a19ad3cad667b3797",
+    "inputArtifactHashes": [
+      "aa5d53ef1a3575b6c2bb494e991b3187aa0bd357c1319123157739086db65d73"
+    ],
+    "revision": 0,
+    "content": {
+      "prompt": "",
+      "promptHash": "",
+      "interpretation": {
+        "dominantSubject": "",
+        "singleEvent": "",
+        "frozenInstant": ""
+      },
+      "directiveReceipts": [
+        {
+          "id": "site-directive-001",
+          "text": "Phase 0 preset: Belgesel / İnsan Hikâyesi. Director thesis: İnsanı reklam figürü değil, tanık olunan gerçek bir özne olarak kur. Locked decisions: Kamera mesafesi: Observed close — Yakın ama müdahalesiz; jest ve oda sesi önemli. Anti-generic guard: never produce a generic preset look; every frame must prove the selected strategy through source meaning, physical staging, motivated light, and the selected world/ref DNA.",
+          "status": ""
+        }
+      ],
+      "appliedLocks": [],
+      "suppressedContext": [],
+      "risks": []
+    }
+  }
+}
