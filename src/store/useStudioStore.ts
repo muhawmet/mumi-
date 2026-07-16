@@ -714,7 +714,9 @@ export interface VaultEntry {
   snapshot: Partial<StudioState>;
 }
 
-export const DEFAULT_PROJECT_TOPIC = 'Su Döngüsü';
+// Tek kanon core'da (contract.ts effectiveTopic) — store yalnız yeniden ihraç eder.
+import { DEFAULT_PROJECT_TOPIC } from '../core/contract';
+export { DEFAULT_PROJECT_TOPIC, effectiveTopic } from '../core/contract';
 
 const initial = {
   selectedProjectId: 'education',

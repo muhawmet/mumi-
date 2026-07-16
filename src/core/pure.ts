@@ -16,8 +16,7 @@ import {
   validateDeliveryPromise,
   toBlockers,
   type Blocker,
-  type DeliveryDeclaration,
-} from './contract';
+  type DeliveryDeclaration, effectiveTopic, } from './contract';
 
 // ============================================================
 // Types
@@ -1339,7 +1338,8 @@ export function generateBatch(input: BriefInput): GenerationResult {
   // aynı şeyi soruyor ("Konu"), ve reçete kapısı (recipeReadiness) subject'i zorunlu
   // tutuyor — ama brief yolu yalnız projectTopic'i okuyordu: Mami reçetede konuyu
   // değiştirdiğinde final_brief.md hâlâ Dashboard'un konusunu yazıyordu. (brandKitLock sınıfı.)
-  const projectTopic = (input.subject || '').trim() || input.projectTopic;
+  // FABLE canlı bulgusu: dokunulmamış varsayılan subject projeyi ezmez (contract.ts kanonu).
+  const projectTopic = effectiveTopic(input.subject, input.projectTopic);
   const cast = (input.cast || '').trim();
 
   const normalizedWorldId = normalizeWorldId(selectedWorldId);

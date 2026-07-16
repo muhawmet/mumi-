@@ -6,6 +6,7 @@ import { canonicalHash, lockDeliveryPromise, SCHEMA_IDS, sha256Hex } from './con
 import { normalizeVideoModel } from '../store/useStudioStore';
 import type { Scene, StudioState } from '../store/useStudioStore';
 import { buildImageAuthorContext, directivesFromDirectorBrief, protocolDescriptor, storyboardHashOfScenes, validatedLiveDirectives } from './agentProtocol';
+import { effectiveTopic } from './contract';
 import { engineDialect, engineUsableSec } from './engine';
 
 type CommandRole = 'image_author' | 'image_jury' | 'frame_jury' | 'motion_author' | 'motion_jury';
@@ -159,10 +160,11 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   const paletteLightFor = (isNight: boolean) =>
     world ? paletteLightPrompt(palette ?? undefined, world, isNight) : '';
   const paletteLightText = paletteLightFor(false);
-  // Reçetenin "Subject / Konu" alanı Dashboard'un projectTopic'ini ezer — generateBatch
-  // ile AYNI kural (pure.ts). İki yerde farklı konu = project.json ile final_brief.md
-  // aynı paketin içinde iki başka işten bahsederdi.
-  const topic = (state.subject || '').trim() || state.projectTopic;
+  // Reçetenin "Subject / Konu" alanı projectTopic'i yalnız GERÇEKTEN yazılmışsa ezer —
+  // dokunulmamış 'Su Döngüsü' varsayılanı Mami'nin projesini ezmişti (FABLE canlı bulgusu).
+  // generateBatch ile AYNI kanon (contract.ts effectiveTopic) — ayrışırlarsa project.json
+  // ile final_brief.md iki başka işten bahsederdi.
+  const topic = effectiveTopic(state.subject, state.projectTopic);
   const sourceText = state.rawSource || topic;
   const sourceAuthority = state.rawSource.length ? 'RAW_SOURCE_VAULT' : 'TOPIC_ONLY';
   const generatedAt = new Date().toISOString();

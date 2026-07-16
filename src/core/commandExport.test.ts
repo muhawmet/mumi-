@@ -532,3 +532,17 @@ describe('the package speaks one delivery contract and one text law', () => {
     }
   });
 });
+
+// FABLE canlı bulgusu (Mami yaşadı, 2026-07-16): dokunulmamış 'Su Döngüsü' varsayılan
+// subject'i, Dashboard'a yazılan gerçek projeyi ("Uzaya Giden Muhammet") eziyordu —
+// export dosya adı, locks.topic, projectId hepsi yanlış konudan türedi.
+describe('effectiveTopic — dokunulmamış varsayılan subject projeyi ezmez', () => {
+  it('varsayılan subject + gerçek projectTopic → proje kazanır', async () => {
+    const { effectiveTopic, DEFAULT_PROJECT_TOPIC } = await import('./contract');
+    expect(effectiveTopic(DEFAULT_PROJECT_TOPIC, 'Uzaya Giden Muhammet')).toBe('Uzaya Giden Muhammet');
+    expect(effectiveTopic('', 'Uzaya Giden Muhammet')).toBe('Uzaya Giden Muhammet');
+    expect(effectiveTopic(undefined, 'Uzaya Giden Muhammet')).toBe('Uzaya Giden Muhammet');
+    // Mami GERÇEKTEN subject yazdıysa o kazanır (eski meşru davranış korunur):
+    expect(effectiveTopic('Fincher Uzay Filmi', 'Uzaya Giden Muhammet')).toBe('Fincher Uzay Filmi');
+  });
+});

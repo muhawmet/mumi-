@@ -639,3 +639,22 @@ export function validateDeliveryPromise(
   }
   return findings;
 }
+
+// ============================================================================
+// FABLE canlı bulgusu (Mami yaşadı, 2026-07-16): Reçete'nin "Subject/Konu" alanı
+// doluysa projectTopic'i eziyordu — ama alanın VARSAYILANI da DEFAULT_PROJECT_TOPIC
+// olduğu için hiç dokunulmamış alan, Mami'nin gerçek projesini ("Uzaya Giden
+// Muhammet") sessizce ezdi: export dosya adı, locks.topic, projectId hepsi yanlış
+// konudan türedi. Kural: yalnız Mami'nin GERÇEKTEN yazdığı subject ezer;
+// dokunulmamış varsayılan asla ezmez. İki ezme noktası (commandExport.ts +
+// pure.ts generateBatch) bu tek kanonu kullanır — ayrışırlarsa command ile batch
+// farklı konu taşırdı.
+// ============================================================================
+
+export const DEFAULT_PROJECT_TOPIC = 'Su Döngüsü';
+
+export function effectiveTopic(subject: string | undefined, projectTopic: string): string {
+  const trimmed = (subject || '').trim();
+  if (!trimmed || trimmed === DEFAULT_PROJECT_TOPIC) return projectTopic;
+  return trimmed;
+}
