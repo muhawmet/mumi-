@@ -1,0 +1,44 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_PROMPT",
+  "role": "image_author",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "72fc785e383dde6e358e378ad8ed67a46b0038578c4e2fcbb2dcd99d6e6d22b1",
+    "d03ccced60f3a5c7b18f1b0fa722c5a05efbbe987ef4395989398cd7e8bebffa",
+    "38489f391e7b9459afda5f28f74aca1bc2aea9c26d60d51c4e6c37eea48e7ef7"
+  ],
+  "revision": 1,
+  "content": {
+    "prompt": "35mm eye-level medium-wide three-quarter view from the deck planks, the deck's one-point perspective driving hard toward the bow while the young sailor leans the opposite way, INTO the salt wind — his tilted body cutting against the deck's vanishing line is the frame's one compositional axis. He stands alone at the wooden rail, gripping it with one hand, wind whipping his hair and open collar toward the stern. His face stays fully readable — jaw set, eyes open against the gust — while the wind chaos lives in his clothes and hair. Toei-style bold-cel production frame: 4px uniform pure-black outline around the figure, no taper; fill is 2-value flat cel — saturated mid tones and deep marine-blue cel shadow, never grey. Behind him the sky is hand-brush-painted cumulus masses in cream-white, stacked huge over a hard horizon line. Light: high sun slightly behind camera; shadows read as deep cool blue, midtones vivid warm amber, highlights near-white warm ivory on the cloud tops and the rail's worn edge. No on-screen text. Negative: no grey fill, no gradient shading on the figure, no photoreal skin, no motion blur. Clean motion-ready start frame.",
+    "promptHash": "12fdc0326a8e2c416165e3e2e857f1d48b66a17fead998d5609ef5bc828d4225",
+    "interpretation": {
+      "dominantSubject": "the young sailor's tilted body cutting against the deck's vanishing line, alone at the rail",
+      "singleEvent": "he leans into the salt wind, against the ship's forward rush",
+      "frozenInstant": "half a second before he narrows his eyes at something on the horizon"
+    },
+    "directiveReceipts": [
+      {
+        "id": "site-directive-001",
+        "text": "Fırtına sahnelerinde denizcinin yüzü hep okunur kalsın; kaos gövde diliyle anlatılsın.",
+        "status": "APPLIED"
+      }
+    ],
+    "appliedLocks": [
+      "worldLock:one_piece_toei",
+      "paletteAsLight",
+      "engineDialect:nano_banana_2",
+      "juryTargetedFix:r0 (zıt eksen tek cümlede)"
+    ],
+    "suppressedContext": [
+      "vocabularyExamples frog-eye tower example"
+    ],
+    "risks": []
+  },
+  "contentHash": "a95e7a7818694332f7d663c081d53fd0ca931dade86b4d9b57eae55cb80dd9bc"
+}

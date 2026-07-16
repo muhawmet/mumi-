@@ -8,7 +8,7 @@
  * Claude/Codex session. No --print, provider API, image/video call or agent loop exists here.
  */
 import { createHash } from 'node:crypto';
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { delimiter, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -29,9 +29,9 @@ const ROLE_PHASE = {
   image_author: 'IMAGE_PROMPT', image_jury: 'IMAGE_JURY', frame_jury: 'FRAME_JURY',
   motion_author: 'MOTION', motion_jury: 'MOTION_JURY',
 };
-// This must mirror IMAGE_PROMPT_QUALITY_CONTRACT in src/core/agentProtocol.ts:
-// it is part of the sealed Image Author context, so a runner that drifts fails
-// the sceneContextHash validation before it can launch a provider.
+// Statik çekirdek — src/core/agentProtocol.ts ile aynı; sealed context'in parçası
+// olduğundan drift sceneContextHash kapısında yakalanır. BRAIN M4: madenlenmiş
+// yasalar TEK kanondan (agents/promptQuality.mined.json) okunur — ayna kopya yok.
 const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
   frameBuildOrder: [
     'visible subject + decisive action + physical place',
@@ -55,6 +55,47 @@ const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
     'A reference supplies invented narrative facts, protected identity, brand, period, or location.',
   ],
 });
+
+// BRAIN M4 — madenlenmiş yasalar TEK kanondan; TS tarafıyla (agentProtocol.ts
+// buildImagePromptQualityContract) birebir aynı mantık. Drift sceneContextHash'te kırmızı.
+const MINED = JSON.parse(readFileSync(join(REPO_ROOT, 'agents', 'promptQuality.mined.json'), 'utf8'));
+const isAnimationWorld = (world) => Boolean(world?.group && /ANIMATION|STYLIZED/i.test(world.group));
+const isPhotorealWorld = (world) => Boolean(world?.group && /REAL|CINEMATIC|COMMERCIAL/i.test(world.group));
+
+// Override AJAN muhakemesidir — kod direktif keyword'ünden madde bastırmaz
+// (Sol kritik: "yarım saniye önce patlama olsun" maddeyi İSTEYEN direktiftir; kod
+// polariteyi bilemez). agentProtocol.ts CONTRACT_OVERRIDE_POLICY ile birebir aynı.
+const CONTRACT_OVERRIDE_POLICY =
+  'Mined clauses are engine-aware defaults, never universal locks. If an APPLIED Mami directive '
+  + 'explicitly conflicts with a clause, the directive wins: the Author sets the clause aside and '
+  + 'names it under suppressedContext; the Jury must not enforce a clause that an APPLIED directive '
+  + 'explicitly contradicts. Suppression is reasoning, done by the agent, visible in the receipt — '
+  + 'never inferred by code from directive keywords.';
+
+function buildImagePromptQualityContract({ world, imageModel }) {
+  const clauses = [
+    ...MINED.universal,
+    ...(isAnimationWorld(world) ? MINED.animation : []),
+    ...(isPhotorealWorld(world) ? MINED.photoreal : []),
+    ...(MINED.engine[(imageModel ?? '').toLowerCase()] ?? []),
+  ];
+  return {
+    frameBuildOrder: IMAGE_PROMPT_QUALITY_CONTRACT.frameBuildOrder,
+    requiredEvidence: [
+      ...IMAGE_PROMPT_QUALITY_CONTRACT.requiredEvidence,
+      ...clauses.filter((c) => c.kind === 'requiredEvidence').map((c) => c.text),
+    ],
+    referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
+    rejectIf: [
+      ...IMAGE_PROMPT_QUALITY_CONTRACT.rejectIf,
+      ...clauses.filter((c) => c.kind === 'rejectIf').map((c) => c.text),
+    ],
+    overridePolicy: CONTRACT_OVERRIDE_POLICY,
+  };
+}
+
+// Parite kilidi için test-only export — promptQuality.test.ts TS üreticisiyle byte-karşılaştırır.
+export const __testBuildImagePromptQualityContract = buildImagePromptQualityContract;
 
 export function canonicalize(value) {
   if (value === null) return 'null';
@@ -92,7 +133,8 @@ function storyboardHash(scenes) {
 /**
  * Explicit, local-only migration for a command exported by an older trusted
  * MAMILAS runtime. It changes no decision or scene data: it only reseals the
- * derived storyboard/context hashes after the runtime context schema evolves.
+ * derived sceneContextHashes after the runtime context schema evolves. The
+ * storyboardHash is VERIFIED, never resealed — a mismatch is tamper, not drift.
  * Normal execution still rejects stale commands; migration is never implicit.
  */
 export function migrateCommandToCurrentContext(command) {
@@ -100,7 +142,14 @@ export function migrateCommandToCurrentContext(command) {
   if (!Array.isArray(migrated.scenes) || !migrated.lifecycle || !migrated.baseDecision) {
     throw new Error('command migration için canonical command alanları eksik');
   }
-  migrated.lifecycle.storyboardHash = storyboardHash(migrated.scenes);
+  // BRAIN M4 (Sol kritik): migration YALNIZ sceneContextHashes'i taşır — context ŞEKLİ
+  // değişti (ör. promptQuality kontratı büyüdü) diye hash'ler tazelenir. storyboardHash
+  // YENİDEN MÜHÜRLENMEZ: onu tazelemek, scenes'i kurcalanmış bir command'i "migration"la
+  // meşrulaştırırdı. Storyboard uyuşmuyorsa bu bir migration vakası değil, tamper vakasıdır.
+  const expectedStoryboard = storyboardHash(migrated.scenes);
+  if (migrated.lifecycle.storyboardHash !== expectedStoryboard) {
+    throw new Error('command migration reddedildi: storyboardHash scenes ile uyuşmuyor (tamper/stale storyboard migration ile meşrulaştırılamaz)');
+  }
   migrated.lifecycle.sceneContextHashes = Object.fromEntries(migrated.scenes.map((scene) => [
     scene.id,
     canonicalHash({ imageAuthor: imageContext(migrated, scene), motionEngine: scene.motionEngine }),
@@ -508,7 +557,11 @@ function imageContext(command, scene) {
   }
   return {
     protocol: command.lifecycle.protocol,
-    promptQuality: IMAGE_PROMPT_QUALITY_CONTRACT,
+    // BRAIN M4: dünya/engine-aware kontrat; override ajan muhakemesi (overridePolicy).
+    promptQuality: buildImagePromptQualityContract({
+      world: command.worldPacket ? { group: command.worldPacket.group } : null,
+      imageModel: command.baseDecision?.engine?.imageModel,
+    }),
     decision: { commandId: command.commandId, locks, engine: command.baseDecision.engine, mode: command.baseDecision.mode },
     storyboardHash: command.lifecycle.storyboardHash,
     shot: { id: scene.id, phaseName: scene.phaseName, durationSec: scene.durationSec, architecture: scene.architecture, sceneBrief: scene.sceneBrief },

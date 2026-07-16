@@ -1,0 +1,44 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_PROMPT",
+  "role": "image_author",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "77ff329817a7899833251104deb28e06770fb98ac107cd9e98546b45a3f8c806"
+  ],
+  "revision": 0,
+  "content": {
+    "prompt": "Locked 35mm at deck eye level, f/8 deep focus, medium-wide three-quarter view from the planks. A young sailor stands alone at the wooden rail of a ship deck at open sea, gripping the rail with one hand, body leaning into a hard salt wind. Environmental pressure: the wind flattens his open collar against his neck and drives spray-damp streaks across the deck grain. Micro-action: his knuckles whiten slightly on the rail as a gust lands. Optical event: spindrift catches the high sun behind camera and reads as bright grains against the dark hull shadow. Medium split: the sailor is a flat-cel figure — 4px uniform pure-black outline, two-value cel fill, saturated mid and deep marine-blue cel shadow, never grey — while the sky behind him is hand-brush-painted cumulus in cream-white and the sea is painted texture; the gap between cel figure and painted world is the style. Palette regime: poster-primary saturation with a cool-shadow warm-mid bias — shadows lean deep cool blue, midtones vivid warm amber, highlights near-white warm ivory; accents live only on real surfaces. Continuity from zero: dry canvas shirt with rolled sleeves just starting to dampen at the cuffs, no cargo on deck, clear weather with the storm not yet visible, no other crew in frame. No on-screen text. Negative: no grey fill, no gradient shading on the figure, no photoreal skin, no motion blur. Clean motion-ready still, half a second before he narrows his eyes at the first dark line rising on the horizon.",
+    "promptHash": "c475d97cf2da5a1b471fcfcaafb7c32f91bc41c7ecfe6f14294da2daac5a7251",
+    "interpretation": {
+      "dominantSubject": "the young sailor alone at the deck rail, cel figure against a painted sea-sky",
+      "singleEvent": "he leans into the salt wind as a gust lands on the rail",
+      "frozenInstant": "half a second before he narrows his eyes at the first dark line on the horizon"
+    },
+    "directiveReceipts": [
+      {
+        "id": "site-directive-001",
+        "text": "Fırtına sahnelerinde denizcinin yüzü hep okunur kalsın; kaos gövde diliyle anlatılsın.",
+        "status": "APPLIED"
+      }
+    ],
+    "appliedLocks": [
+      "worldLock:one_piece_toei (2D-medium split)",
+      "paletteAsLight regime",
+      "engine:nano_banana_2 numeric lens early",
+      "detailTriad",
+      "selfContained",
+      "halfSecondBefore"
+    ],
+    "suppressedContext": [],
+    "risks": [
+      "cast tanımsız — tekrar eden karakter gerekirse Mami ref bağlamalı"
+    ]
+  },
+  "contentHash": "2dac9951abdaa93ed3e72275140fb5f0cd0866ff75cf966290022c73f7c9a3bd"
+}

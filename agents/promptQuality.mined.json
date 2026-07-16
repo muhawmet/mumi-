@@ -1,0 +1,59 @@
+{
+  "$schema": "mamilas.prompt-quality-mined.v1",
+  "comment": "BRAIN M4 — madenlenmiş üretim yasaları (kaynak: mamilas-brain-intelligence-mined memory + eski hat kazısı). TEK KANON: hem src/core/agentProtocol.ts hem scripts/mamilas-command.mjs bu dosyadan okur; ayna kopya YOK. Maddeler evrensel kilit değildir — Mami direktifi overrideKeys'ten birini anarsa madde suppressed listesine düşer ve kaynağıyla görünür kalır.",
+  "universal": [
+    {
+      "text": "Detail triad: the frame carries one environmental-pressure detail on a body or surface, one micro-action or physiological event, and one concrete optical event of light or material behaviour (never a mood adjective).",
+      "kind": "requiredEvidence",
+      "overrideKeys": ["detay üçlüsü", "detail triad"]
+    },
+    {
+      "text": "Self-contained: the prompt rebuilds the full continuity state (wardrobe wear, accumulated dust or weather, identity clause, environment) from zero — the engine has no memory of a previous scene and the prompt never says \"as before\".",
+      "kind": "requiredEvidence",
+      "overrideKeys": ["self-contained", "continuity sıfırdan"]
+    },
+    {
+      "text": "The prompt closes as a clean motion-ready still, half a second before one concrete named physical event.",
+      "kind": "requiredEvidence",
+      "overrideKeys": ["half a second", "yarım saniye", "düz still"]
+    },
+    {
+      "text": "Empty quality tokens appear without source backing: 4K, 8K, masterpiece, ultra-detailed, premium, cinematic, stunning, beautiful, polished, award-winning — replace with a concrete lens, film-stock, grain or cadence fact.",
+      "kind": "rejectIf",
+      "overrideKeys": ["banned empties", "kalite sıfatı serbest"]
+    },
+    {
+      "text": "The palette is written as a closed hue/color list instead of a saturation/contrast/bias regime — closed lists collapse to duotone in the engine.",
+      "kind": "rejectIf",
+      "overrideKeys": ["palet listesi serbest", "closed hue list"]
+    }
+  ],
+  "animation": [
+    {
+      "text": "2D-medium law: the prompt states WHICH surfaces carry flat-cel treatment (the figure) versus which surfaces are painted or photoreal (the background) — the gap between them IS the style; a franchise or brand name never substitutes for this physical split.",
+      "kind": "requiredEvidence",
+      "overrideKeys": ["2d-plastik", "cel ayrımı", "flat-cel"]
+    },
+    {
+      "text": "The world is invoked by a style adjective or franchise name instead of physical material facts (ink line, painted cel, brushed clay) — names do not fix plasticity; materials do.",
+      "kind": "rejectIf",
+      "overrideKeys": ["stil sıfatı serbest", "franchise adı serbest"]
+    }
+  ],
+  "photoreal": [
+    {
+      "text": "Photoreal counter-terms are present against the engine's plastic-commercial default: negative fill, motivated light, subtle 35mm film grain, raw skin micro-texture (or equivalents earned by this shot).",
+      "kind": "requiredEvidence",
+      "overrideKeys": ["anti-sheen", "counter-terms", "parlak ticari serbest"]
+    }
+  ],
+  "engine": {
+    "nano_banana_2": [
+      {
+        "text": "Camera grammar comes early and numeric: a numeric lens and f-stop (e.g. \"locked 40mm at seated eye level, f/8 deep focus\") — never a vague \"cinematic lens\".",
+        "kind": "requiredEvidence",
+        "overrideKeys": ["sayısal lens", "numeric lens", "kamera grameri serbest"]
+      }
+    ]
+  }
+}

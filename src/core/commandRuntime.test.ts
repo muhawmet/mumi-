@@ -164,11 +164,13 @@ describe('interactive command runtime', () => {
     expect(JSON.parse(result.stdout).action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
   });
 
-  test('açık migration yalnız türetilmiş context hashlerini güncelleyip commandi yeniden doğrular', () => {
+  test('açık migration yalnız türetilmiş context hashlerini günceller; storyboard VERBATIM doğrulanır', () => {
+    // BRAIN M4 (Sol kritik): migration sceneContextHashes'i tazeler ama storyboardHash'i
+    // YENİDEN MÜHÜRLEMEZ — mühürlemek, scenes'i kurcalanmış bir command'i "migration"la
+    // meşrulaştırırdı. Storyboard tutuyorsa context taşınır; tutmuyorsa migration REDDEDER.
     const dir = mkdtempSync(join(tmpdir(), 'mamilas-context-migration-'));
     const command = commandFixture();
-    command.lifecycle.storyboardHash = 'stale';
-    command.lifecycle.sceneContextHashes[1] = 'stale';
+    command.lifecycle.sceneContextHashes[1] = 'stale'; // context şekli değişti senaryosu
     const file = join(dir, 'sample_mamilas_command.json');
     writeFileSync(file, JSON.stringify(command));
     const result = spawnSync(process.execPath, [
@@ -179,6 +181,19 @@ describe('interactive command runtime', () => {
     const ready = runAt(dir, JSON.parse(readFileSync(file, 'utf8')), ['--dry-run']);
     expect(ready.status, ready.stderr).toBe(0);
     expect(JSON.parse(ready.stdout).action).toEqual({ kind: 'AWAIT_STORYBOARD_APPROVAL' });
+  });
+
+  test('migration stale/tamper storyboardHash taşıyan commandi MEŞRULAŞTIRMAZ — reddeder', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-context-migration-tamper-'));
+    const command = commandFixture();
+    command.lifecycle.storyboardHash = 'stale'; // scenes ile uyuşmayan storyboard = tamper vakası
+    const file = join(dir, 'sample_mamilas_command.json');
+    writeFileSync(file, JSON.stringify(command));
+    const result = spawnSync(process.execPath, [
+      resolve('scripts/mamilas-command.mjs'), '--file', file, '--migrate-command-context', '--out', file,
+    ], { cwd: dir, encoding: 'utf8' });
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toMatch(/storyboardHash scenes ile uyuşmuyor/);
   });
 
   test('storyboard onayı yoksa provider açmaz; approval bekler', () => {

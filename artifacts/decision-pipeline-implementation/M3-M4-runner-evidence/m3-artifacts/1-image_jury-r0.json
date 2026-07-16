@@ -1,0 +1,25 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_JURY",
+  "role": "image_jury",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "72fc785e383dde6e358e378ad8ed67a46b0038578c4e2fcbb2dcd99d6e6d22b1",
+    "d03ccced60f3a5c7b18f1b0fa722c5a05efbbe987ef4395989398cd7e8bebffa"
+  ],
+  "revision": 0,
+  "content": {
+    "verdict": "REJECT",
+    "failingCheck": "promptQuality.requiredEvidence[1] — kompozisyon ilişkisi zayıf: rüzgar yönü ile geminin seyir yönü arasındaki fiziksel ilişki kadrajda okunmuyor",
+    "targetedFix": "Rüzgarın kıç yönüne savurduğu saç/yaka ile pruvaya koşan güverte perspektifinin ZIT eksenini tek cümleyle görünür kıl (subject leans INTO the wind, against the deck's vanishing line).",
+    "evidence": [
+      "Prompt counter-read: subject/action/place mevcut ve stil sıfatı yok; ama beat'in 'tek başına + rüzgara karşı' gerilimi kompozisyon ilişkisi olarak tek cümlede sabitlenmemiş."
+    ]
+  },
+  "contentHash": "38489f391e7b9459afda5f28f74aca1bc2aea9c26d60d51c4e6c37eea48e7ef7"
+}

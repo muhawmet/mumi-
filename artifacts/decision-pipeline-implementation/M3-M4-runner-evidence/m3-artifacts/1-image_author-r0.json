@@ -1,0 +1,43 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_PROMPT",
+  "role": "image_author",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "72fc785e383dde6e358e378ad8ed67a46b0038578c4e2fcbb2dcd99d6e6d22b1"
+  ],
+  "revision": 0,
+  "content": {
+    "prompt": "35mm eye-level medium-wide three-quarter view from the deck planks. A young sailor stands alone at the wooden rail of a ship deck, gripping it with one hand, body leaning into a hard salt wind that whips his hair and open collar toward the stern. His face stays fully readable — jaw set, eyes open against the gust — while the wind chaos lives in his clothes and hair. Toei-style bold-cel production frame: 4px uniform pure-black outline around the figure, no taper; fill is 2-value flat cel — saturated mid tones and deep marine-blue cel shadow, never grey. Behind him the sky is hand-brush-painted cumulus masses in cream-white, stacked huge over a hard horizon line; the deck planks run in strong one-point perspective toward the bow. Light: high sun slightly behind camera; shadows read as deep cool blue, midtones vivid warm amber, highlights near-white warm ivory on the cloud tops and the rail's worn edge. No on-screen text. Negative: no grey fill, no gradient shading on the figure, no photoreal skin, no motion blur. Clean motion-ready start frame.",
+    "promptHash": "900407c5da72b3384e358215fb0ddd90d3f59fcd899858ec3e8c5e1b1590f197",
+    "interpretation": {
+      "dominantSubject": "the young sailor alone at the deck rail, hair and collar whipped by wind",
+      "singleEvent": "he leans into the salt wind, steadying himself against the rail",
+      "frozenInstant": "half a second before he narrows his eyes at something on the horizon"
+    },
+    "directiveReceipts": [
+      {
+        "id": "site-directive-001",
+        "text": "Fırtına sahnelerinde denizcinin yüzü hep okunur kalsın; kaos gövde diliyle anlatılsın.",
+        "status": "APPLIED"
+      }
+    ],
+    "appliedLocks": [
+      "worldLock:one_piece_toei (bold-cel render physics)",
+      "paletteAsLight (cool-blue shadow / warm-amber mid)",
+      "engineDialect:nano_banana_2"
+    ],
+    "suppressedContext": [
+      "vocabularyExamples frog-eye tower example (kadraj bu beat'e ters)"
+    ],
+    "risks": [
+      "cast tanımsız — tekrar eden karakter gerekirse Mami ref bağlamalı"
+    ]
+  },
+  "contentHash": "d03ccced60f3a5c7b18f1b0fa722c5a05efbbe987ef4395989398cd7e8bebffa"
+}

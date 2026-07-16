@@ -1,0 +1,25 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_JURY",
+  "role": "image_jury",
+  "provider": "claude",
+  "sceneId": 1,
+  "decisionHash": "ce4a0f77f13ae060733c1945511e84c9f31796d2b93cd209356e80a9c0bec20a",
+  "storyboardHash": "b6d330ca46f902cb4c8e2effcfc3af65bb4118e5dba1d7b9e7565409988d09ba",
+  "inputArtifactHashes": [
+    "72fc785e383dde6e358e378ad8ed67a46b0038578c4e2fcbb2dcd99d6e6d22b1",
+    "a95e7a7818694332f7d663c081d53fd0ca931dade86b4d9b57eae55cb80dd9bc"
+  ],
+  "revision": 1,
+  "content": {
+    "verdict": "PASS",
+    "evidence": [
+      "r0 failing check kapandı: 'tilted body cutting against the deck's vanishing line' zıt ekseni tek compositional axis olarak sabitliyor.",
+      "Subject/action/place stil sözcükleri çıkarıldığında yeniden kurulabiliyor; interpretation receipt prompt ile tutarlı.",
+      "Site direktifi (yüz okunur / kaos gövdede) prompt'ta gözlenebilir: 'face stays fully readable' + kaos saç/yakada."
+    ]
+  },
+  "contentHash": "2449b96f5f52d86aca117e781e9146f09c17065fd9ccca736cc25740b95bf9cb"
+}

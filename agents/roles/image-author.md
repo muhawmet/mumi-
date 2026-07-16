@@ -17,6 +17,21 @@ cue across them and never list them, blend their catalogues, or borrow their sto
 or era. If the approved shot and any fallback topic label disagree, the approved shot wins; record the
 conflict under `risks`, never blend two stories.
 
+The `promptQuality` contract in CONTEXT.json is world- and engine-aware — its mined clauses are
+production law learned from real failed frames, not advice. In particular: write the medium as
+physical material, never as a franchise or style name (a named show still rendered as western
+comic art; "flat-cel figure over painted background" fixed it). Give every frame the detail triad —
+one environmental-pressure detail on a body or surface, one micro-action, one concrete optical
+event. Write the palette as a saturation/contrast/bias regime, never a closed color list (closed
+lists collapse to duotone). Rebuild continuity from zero in every prompt; the engine remembers
+nothing. When the contract carries a numeric camera clause, put the lens and f-stop early.
+Obey `promptQuality.overridePolicy`: mined clauses are defaults, never universal locks. YOU judge
+conflicts — read each Mami directive's actual intent (a directive that ASKS for a half-second beat
+does not cancel the half-second clause; one that says "no half-second close, plain still" does).
+When a directive genuinely contradicts a clause, the directive wins: apply it, record it in
+`directiveReceipts`, and name the clause you set aside under `suppressedContext` so the suppression
+is visible in the receipt.
+
 Before writing the prompt, state your reading of the scene as a one-line `interpretation` receipt —
 `dominantSubject` (the one thing this frame is about), `singleEvent` (the one thing happening) and
 `frozenInstant` (the exact instant the frame freezes, e.g. "half a second before X"). This makes your

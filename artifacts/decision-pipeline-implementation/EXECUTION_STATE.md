@@ -18,7 +18,17 @@
 > Receipt: `receipts/BRAIN-M2.md`.
 > **Mami yetkisi:** commit/push serbest ("körleme sana güveniyorum") — her kapı yeşilken task-sonu ritüelinde.
 > **Mami (Sol denetimleri için):** "kelimelere takılmayın, kritik değilse post'ta fixleriz."
-> **Aktif task: M3 (şeffaf yorum receipt'i + dürüst adlandırma — Mami revizyonlu, onay kapısı YOK). Plana göre M3 öncesi /clear.** Önce oku:
+> **✅ M3 TAMAM (2026-07-16):** KUSUR-A kapandı — `exactSourceBeat` + `AGENT_AUTHORED` dürüst adlandırma;
+> `interpretation {dominantSubject, singleEvent, frozenInstant}` zorunlu şeffaf receipt (iki yüzeyde tek yasa);
+> onay kapısı YOK (lifecycle değişmedi). Gerçek runner zinciri kanıtı: approve→r0→jury REJECT→r1→PASS→
+> AWAIT_FRAME→LIVE_CHAT (yeni commandId) — `M3-REAL-FLOW.md`. Sol 2 kritik buldu, aynı turda kapatıldı:
+> v10 store migration + needsV6Migration yanlış tetiği (vault-restore sahne silme — pre-existing veri kaybı).
+> Sol final PASS. Kapı: tsc 0 · vitest 1917/1917 (70 dosya) · build OK. Receipt: `receipts/BRAIN-M3.md`.
+> **Mami (oturum içi, 2026-07-16): "clear'sız devam, bütün M'leri bitir, güveniyorum — her M sonunda Sol'a
+> kontrol ettir."** M4→M7 aynı oturumda sürüyor; kare hükmü gerektiren her nokta receipt'te "Mami göz
+> bekliyor" olarak işaretli.
+>
+> **Aktif task: M4 (Image Author + Jury zekâsı — promptQuality kontratı + madenlenmiş yasalar).** Önce oku:
 > 1. `docs/superpowers/specs/2026-07-16-mamilas-brain-layer-design.md` (tasarım + 5 değişmez ürün yasası)
 > 2. `docs/superpowers/plans/2026-07-16-mamilas-brain-layer.md` (M0→M6 plan + /clear kickoff metni)
 > 3. Memory: `[[mamilas-brain-intelligence-mined]]` + `[[mamilas-external-research-2026-07]]`

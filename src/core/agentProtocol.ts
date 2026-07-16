@@ -1,4 +1,5 @@
 import PROTOCOL_TEXT from '../../agents/PROTOCOL.md?raw';
+import MINED_JSON from '../../agents/promptQuality.mined.json';
 import { canonicalHash, sha256Hex } from './contract';
 import { engineDialect, engineUsableSec } from './engine';
 
@@ -31,6 +32,93 @@ export const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
     'A reference supplies invented narrative facts, protected identity, brand, period, or location.',
   ],
 } as const);
+
+// ============================================================================
+// BRAIN M4 — dünya/engine-aware promptQuality kontratı (KUSUR-D).
+// Madenlenmiş üretim yasaları ([[mamilas-brain-intelligence-mined]]) burada nesir
+// değil ÖLÇÜLEBİLİR kontrat maddesi olur: Image Author yazarken counter-read eder,
+// Image Jury requiredEvidence/rejectIf'i ölçer. Ürün yasası #5: hiçbir madde
+// evrensel kilit değildir — Mami direktifi çatışırsa madde aktif listeden düşer ama
+// `suppressed[]`te direktif kaynağıyla GÖRÜNÜR kalır (sessiz silme yok).
+// ============================================================================
+
+interface MinedClause {
+  /** Kontrat cümlesi — jürinin ölçeceği somut madde. */
+  text: string;
+  /** Hangi listeye girer. */
+  kind: 'requiredEvidence' | 'rejectIf';
+  /**
+   * Dokümantasyon: bu madde tipik olarak hangi Mami konularıyla çatışır. KOD OKUMAZ —
+   * suppression ajan muhakemesidir (Sol kritik: keyword eşleme polarite bilemez).
+   */
+  overrideKeys?: string[];
+}
+
+// TEK KANON: agents/promptQuality.mined.json — runner (mamilas-command.mjs) da aynı
+// dosyayı okur; ayna kopya yok. Kontrat sceneContextHash'in parçası olduğundan iki
+// yüzeyin aynı byte'ı üretmesi hash kapısıyla da zorlanır.
+const MINED = MINED_JSON as {
+  universal: MinedClause[];
+  animation: MinedClause[];
+  photoreal: MinedClause[];
+  engine: Record<string, MinedClause[]>;
+};
+
+export interface ImagePromptQualityContract {
+  frameBuildOrder: readonly string[];
+  requiredEvidence: string[];
+  referencePolicy: readonly string[];
+  rejectIf: string[];
+  /**
+   * Override yasası (ürün yasası #5) — KOD DEĞİL, AJAN uygular: kod doğal dilden
+   * niyet/polarite çıkaramaz ("yarım saniye önce patlama olsun" maddeyi İSTEYEN bir
+   * direktiftir, kapatan değil — Sol kritik bulgusu). Author, Mami direktifiyle açıkça
+   * çatışan maddeyi kenara koyup `suppressedContext`e yazar; Jury, APPLIED bir direktifle
+   * açıkça çatışan maddeyi enforce etmez. Böylece suppression MUHAKEME olarak yapılır ve
+   * artifact receipt'inde görünür kalır.
+   */
+  overridePolicy: string;
+}
+
+function isAnimationWorld(world: { group?: string } | null | undefined): boolean {
+  return Boolean(world?.group && /ANIMATION|STYLIZED/i.test(world.group));
+}
+function isPhotorealWorld(world: { group?: string } | null | undefined): boolean {
+  return Boolean(world?.group && /REAL|CINEMATIC|COMMERCIAL/i.test(world.group));
+}
+
+export const CONTRACT_OVERRIDE_POLICY =
+  'Mined clauses are engine-aware defaults, never universal locks. If an APPLIED Mami directive '
+  + 'explicitly conflicts with a clause, the directive wins: the Author sets the clause aside and '
+  + 'names it under suppressedContext; the Jury must not enforce a clause that an APPLIED directive '
+  + 'explicitly contradicts. Suppression is reasoning, done by the agent, visible in the receipt — '
+  + 'never inferred by code from directive keywords.';
+
+export function buildImagePromptQualityContract(args: {
+  world?: { group?: string } | null;
+  imageModel?: string;
+}): ImagePromptQualityContract {
+  const { world, imageModel } = args;
+  const clauses: MinedClause[] = [
+    ...MINED.universal,
+    ...(isAnimationWorld(world) ? MINED.animation : []),
+    ...(isPhotorealWorld(world) ? MINED.photoreal : []),
+    ...(MINED.engine[(imageModel ?? '').toLowerCase()] ?? []),
+  ];
+  return {
+    frameBuildOrder: IMAGE_PROMPT_QUALITY_CONTRACT.frameBuildOrder,
+    requiredEvidence: [
+      ...IMAGE_PROMPT_QUALITY_CONTRACT.requiredEvidence,
+      ...clauses.filter((c) => c.kind === 'requiredEvidence').map((c) => c.text),
+    ],
+    referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
+    rejectIf: [
+      ...IMAGE_PROMPT_QUALITY_CONTRACT.rejectIf,
+      ...clauses.filter((c) => c.kind === 'rejectIf').map((c) => c.text),
+    ],
+    overridePolicy: CONTRACT_OVERRIDE_POLICY,
+  };
+}
 
 export type AgentProvider = 'claude' | 'codex';
 export type AgentRole = 'embedded_director' | 'image_author' | 'image_jury' | 'frame_jury' | 'motion_author' | 'motion_jury';
@@ -268,9 +356,15 @@ export function buildImageAuthorContext(command: any, sceneId: number) {
   const relevantDirectives = (command.lifecycle?.mamiDirectives ?? []).filter(
     (d: MamiDirective) => d.scope === 'PROJECT' || d.sceneId === sceneId,
   );
+  // BRAIN M4: kontrat dünya/engine-aware üretilir. Override AJAN muhakemesidir
+  // (overridePolicy) — kod direktiften madde bastırmaz (Sol kritik: polarite).
+  const promptQuality = buildImagePromptQualityContract({
+    world: command.worldPacket ? { group: command.worldPacket.group } : null,
+    imageModel: command.baseDecision?.engine?.imageModel,
+  });
   return {
     protocol: command.lifecycle.protocol,
-    promptQuality: IMAGE_PROMPT_QUALITY_CONTRACT,
+    promptQuality,
     decision: {
       commandId: command.commandId,
       locks,
