@@ -514,6 +514,9 @@ function imageContext(command, scene) {
       materialPhysics: command.worldPacket.materialPhysics,
       negativeLock: command.worldPacket.negativeLock,
       paletteAsLight: command.worldPacket.paletteAsLight,
+      // BRAIN M2 (Sol #1): render_law'dan ayrılan envanter cümleleri bu kanalda yaşar —
+      // yaratıcı REFERANS, kadro/prop EMRİ değil (commandExport.ts:460).
+      vocabularyExamples: command.worldPacket.vocabularyExamples,
       refs: (command.worldPacket.refs ?? []).filter((ref) => ref.compatible),
       referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
     } : null,

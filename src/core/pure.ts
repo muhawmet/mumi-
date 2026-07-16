@@ -401,6 +401,60 @@ export interface WorldPacket {
   legacyRenderLaw: string;
 }
 
+// ---- BRAIN M2 — render_law prop/fizik ayrımı (KUSUR-C) -------------------------------------
+// Ölçülmüş kusur: render_law'daki somut nesne-ENVANTERİ cümleleri (wanted-poster/caravel,
+// village facades, vending machines…) `renderPhysics` üzerinden set-emri gibi taşınıp kareye
+// sızıyordu. Yasa: "Render law FİZİKTEN yapılmışsa güvenle taşınır. PROP'tan yapılmışsa sızar."
+// Çözüm: envanter cümleleri `vocabularyExamples`'a düşer (yaratıcı referans kanalı — silinmez,
+// kanal değişir); fizik cümleleri VERBATIM `renderPhysics`'te kalır. Kararsız cümle fizik
+// tarafında bırakılır (boşaltma riski > sızıntı riski — A2 pilotu toptan silmeyi denedi,
+// kare stok fotoğrafa kaydı). `legacyRenderLaw` her zaman render_law'ı birebir korur.
+
+/** Somut, sayılabilir set/prop nesneleri — envanter imzasının hammaddesi. */
+const PROP_NOUN_RE =
+  /\b(poster|pennant|hull|figurehead|signage|caravel|bridge|facade|seal|path|machine|cable|curtain|tree|wall|roof|courtyard|lamp|desk|table|window|door|vending|sticker|crt|fortress|village|rope|stone|timber|cardboard|foam|wire|miniature)\w*\b/gi;
+
+/**
+ * Fizik-DAVRANIŞ kalıpları: cümle nesne adı taşısa bile ışık/optik/kompozisyon davranışı
+ * tarif ediyorsa fiziktir (ör. Deakins'in "every photon … traceable to a … light source"
+ * cümlesi window/desk/lamp sayar ama envanter değildir).
+ */
+const PHYSICS_BEHAVIOUR_RE =
+  /\b(light source|photon|motivated|serves as the|soft key|key light|fill (?:light|comes)|bounce|ambient|contrast ratio|falloff|grain|lens|aperture|exposure|implied through composition|filling \d+)/i;
+
+/** render_law'ı cümlelere böler (nokta/ünlem/soru sonrası boşluk). */
+function splitLawSentences(law: string): string[] {
+  return law
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+/**
+ * Bir render_law cümlesi somut nesne-ENVANTERİ mi? Dar imza: ≥3 benzersiz somut nesne VE
+ * fizik-davranış kalıbı yok. Kararsızsa `false` → cümle fizikte kalır (güvenli taraf).
+ */
+function isPropInventorySentence(sentence: string): boolean {
+  const nouns = sentence.match(PROP_NOUN_RE) ?? [];
+  const unique = new Set(nouns.map((n) => n.toLowerCase()));
+  if (unique.size < 3) return false;
+  return !PHYSICS_BEHAVIOUR_RE.test(sentence);
+}
+
+/**
+ * render_law'ı {physics, props} olarak ayırır. Fizik cümleleri ORİJİNAL SIRAYLA ve VERBATIM
+ * korunur; envanter cümleleri props'a düşer. Saf; prompt üretmez.
+ */
+export function splitRenderLawPhysics(law: string): { physics: string; props: string } {
+  const sentences = splitLawSentences((law || '').trim());
+  const physics: string[] = [];
+  const props: string[] = [];
+  for (const s of sentences) {
+    (isPropInventorySentence(s) ? props : physics).push(s);
+  }
+  return { physics: physics.join(' '), props: props.join(' ') };
+}
+
 /**
  * Bir world'ü taşınabilir `WorldPacket`'e derler. Saf: dünyayı ve (opsiyonel) seçili ref/palette
  * bağlamını alır, veri döndürür. Prompt üretmez.
@@ -423,7 +477,11 @@ export function toWorldPacket(
     });
 
   const light = (world.light_law || '').trim();
-  const render = worldRenderText(world);
+  // BRAIN M2: render_law fizik/prop olarak ayrılır — fizik verbatim `renderPhysics`'e,
+  // envanter cümleleri `vocabularyExamples`'a (aşağıda). render_law boşsa eski fallback
+  // zinciri (render/one_liner/name) olduğu gibi çalışır — orada envanter riski ölçülmedi.
+  const lawSplit = splitRenderLawPhysics(world.render_law || '');
+  const render = lawSplit.physics || worldRenderText(world);
 
   return {
     id: world.id,
@@ -448,7 +506,11 @@ export function toWorldPacket(
     // ile hex'i ışık davranışına indirger; `paletteLight` (hex'li) yalnız insan-okur dossier içindir.
     paletteAsLight: paletteLightPrompt(ctx?.palette, world),
     refs,
-    vocabularyExamples: (world.example_injection || '').trim(),
+    // Envanter cümleleri kaybolmaz — yaratıcı-referans kanalına düşer (prop EMRİ değil):
+    vocabularyExamples: [(world.example_injection || '').trim(), lawSplit.props]
+      .filter(Boolean)
+      .join(' ')
+      .trim(),
     legacyRenderLaw: (world.render_law || '').trim(),
   };
 }
