@@ -5,6 +5,33 @@ import { engineDialect, engineUsableSec } from './engine';
 export const AGENT_PROTOCOL_VERSION = 'mamilas.agent-protocol.v1' as const;
 export const AGENT_ARTIFACT_SCHEMA = 'mamilas.agent-artifact.v1' as const;
 
+// This is a writing contract, not a site-authored prompt.  It tells the Author how
+// to turn the deterministic decision slice into a single readable image, and gives
+// the independent Jury the same bar for rejecting generic prose.
+export const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
+  frameBuildOrder: [
+    'visible subject + decisive action + physical place',
+    'one compositional relationship that makes the beat readable',
+    'one camera relation plus one motivated light or material behaviour from the selected world',
+    'only the narrow, frame-specific constraints that protect the beat',
+  ],
+  requiredEvidence: [
+    'A viewer can name who or what is dominant, what is happening, and where it is happening without reading style language.',
+    'The composition describes a physical relationship, threshold, foreground/background separation, or eyeline rather than an abstract mood.',
+    'World and reference DNA become an observable choice in this frame; they never introduce a second subject, story, location, era, or identity.',
+  ],
+  referencePolicy: [
+    'Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.',
+    'Choose at most one reference-derived observable cue when it strengthens this shot; do not list or blend reference catalogues.',
+  ],
+  rejectIf: [
+    'Generic quality adjectives or a style catalogue carry more meaning than the approved beat.',
+    'The prompt could describe a different scene after the subject, action, and place are removed.',
+    'A fallback topic competes with a RAW_SOURCE_VAULT shot.',
+    'A reference supplies invented narrative facts, protected identity, brand, period, or location.',
+  ],
+} as const);
+
 export type AgentProvider = 'claude' | 'codex';
 export type AgentRole = 'embedded_director' | 'image_author' | 'image_jury' | 'frame_jury' | 'motion_author' | 'motion_jury';
 export type AgentPhase = 'DIRECTIVE' | 'IMAGE_PROMPT' | 'IMAGE_JURY' | 'FRAME_JURY' | 'MOTION' | 'MOTION_JURY';
@@ -208,14 +235,22 @@ export function validatedLiveDirectives(value: unknown, sceneIds: number[]): Mam
 export function buildImageAuthorContext(command: any, sceneId: number) {
   const scene = command.scenes?.find((item: any) => item.id === sceneId);
   if (!scene) throw new Error(`scene ${sceneId} yok`);
+  const locks = { ...(command.baseDecision?.locks ?? {}) };
+  // `topic` is a fallback label for topic-only work. Once an approved raw source exists,
+  // letting that stale UI label compete with the shot beat makes the author invent a
+  // second film (for example, a water-cycle topic over a ship-escape scene).
+  if (command.baseDecision?.source?.authority === 'RAW_SOURCE_VAULT' && command.baseDecision.source.rawSource?.trim()) {
+    delete locks.topic;
+  }
   const relevantDirectives = (command.lifecycle?.mamiDirectives ?? []).filter(
     (d: MamiDirective) => d.scope === 'PROJECT' || d.sceneId === sceneId,
   );
   return {
     protocol: command.lifecycle.protocol,
+    promptQuality: IMAGE_PROMPT_QUALITY_CONTRACT,
     decision: {
       commandId: command.commandId,
-      locks: command.baseDecision?.locks,
+      locks,
       engine: command.baseDecision?.engine,
       mode: command.baseDecision?.mode,
     },
@@ -239,6 +274,7 @@ export function buildImageAuthorContext(command: any, sceneId: number) {
       negativeLock: command.worldPacket.negativeLock,
       paletteAsLight: command.worldPacket.paletteAsLight,
       refs: command.worldPacket.refs?.filter((ref: any) => ref.compatible),
+      referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
     } : null,
     explicitLocks: {
       brandKitLock: command.baseDecision?.locks?.brandKitLock,

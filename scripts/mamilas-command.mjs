@@ -29,6 +29,32 @@ const ROLE_PHASE = {
   image_author: 'IMAGE_PROMPT', image_jury: 'IMAGE_JURY', frame_jury: 'FRAME_JURY',
   motion_author: 'MOTION', motion_jury: 'MOTION_JURY',
 };
+// This must mirror IMAGE_PROMPT_QUALITY_CONTRACT in src/core/agentProtocol.ts:
+// it is part of the sealed Image Author context, so a runner that drifts fails
+// the sceneContextHash validation before it can launch a provider.
+const IMAGE_PROMPT_QUALITY_CONTRACT = Object.freeze({
+  frameBuildOrder: [
+    'visible subject + decisive action + physical place',
+    'one compositional relationship that makes the beat readable',
+    'one camera relation plus one motivated light or material behaviour from the selected world',
+    'only the narrow, frame-specific constraints that protect the beat',
+  ],
+  requiredEvidence: [
+    'A viewer can name who or what is dominant, what is happening, and where it is happening without reading style language.',
+    'The composition describes a physical relationship, threshold, foreground/background separation, or eyeline rather than an abstract mood.',
+    'World and reference DNA become an observable choice in this frame; they never introduce a second subject, story, location, era, or identity.',
+  ],
+  referencePolicy: [
+    'Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.',
+    'Choose at most one reference-derived observable cue when it strengthens this shot; do not list or blend reference catalogues.',
+  ],
+  rejectIf: [
+    'Generic quality adjectives or a style catalogue carry more meaning than the approved beat.',
+    'The prompt could describe a different scene after the subject, action, and place are removed.',
+    'A fallback topic competes with a RAW_SOURCE_VAULT shot.',
+    'A reference supplies invented narrative facts, protected identity, brand, period, or location.',
+  ],
+});
 
 export function canonicalize(value) {
   if (value === null) return 'null';
@@ -61,6 +87,25 @@ function storyboardHash(scenes) {
     architecture: scene.architecture,
     sceneBrief: scene.sceneBrief ?? scene.voiceOver,
   })));
+}
+
+/**
+ * Explicit, local-only migration for a command exported by an older trusted
+ * MAMILAS runtime. It changes no decision or scene data: it only reseals the
+ * derived storyboard/context hashes after the runtime context schema evolves.
+ * Normal execution still rejects stale commands; migration is never implicit.
+ */
+export function migrateCommandToCurrentContext(command) {
+  const migrated = JSON.parse(JSON.stringify(command));
+  if (!Array.isArray(migrated.scenes) || !migrated.lifecycle || !migrated.baseDecision) {
+    throw new Error('command migration için canonical command alanları eksik');
+  }
+  migrated.lifecycle.storyboardHash = storyboardHash(migrated.scenes);
+  migrated.lifecycle.sceneContextHashes = Object.fromEntries(migrated.scenes.map((scene) => [
+    scene.id,
+    canonicalHash({ imageAuthor: imageContext(migrated, scene), motionEngine: scene.motionEngine }),
+  ]));
+  return migrated;
 }
 
 export async function validateCommand(command) {
@@ -448,9 +493,14 @@ function nextAction(artifacts, frame) {
 
 function imageContext(command, scene) {
   const directives = (command.lifecycle.mamiDirectives ?? []).filter((d) => d.scope === 'PROJECT' || d.sceneId === scene.id);
+  const locks = { ...(command.baseDecision?.locks ?? {}) };
+  if (command.baseDecision?.source?.authority === 'RAW_SOURCE_VAULT' && command.baseDecision.source.rawSource?.trim()) {
+    delete locks.topic;
+  }
   return {
     protocol: command.lifecycle.protocol,
-    decision: { commandId: command.commandId, locks: command.baseDecision.locks, engine: command.baseDecision.engine, mode: command.baseDecision.mode },
+    promptQuality: IMAGE_PROMPT_QUALITY_CONTRACT,
+    decision: { commandId: command.commandId, locks, engine: command.baseDecision.engine, mode: command.baseDecision.mode },
     storyboardHash: command.lifecycle.storyboardHash,
     shot: { id: scene.id, phaseName: scene.phaseName, durationSec: scene.durationSec, architecture: scene.architecture, sceneBrief: scene.sceneBrief },
     mamiDirectives: directives,
@@ -465,6 +515,7 @@ function imageContext(command, scene) {
       negativeLock: command.worldPacket.negativeLock,
       paletteAsLight: command.worldPacket.paletteAsLight,
       refs: (command.worldPacket.refs ?? []).filter((ref) => ref.compatible),
+      referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
     } : null,
     explicitLocks: {
       brandKitLock: command.baseDecision.locks.brandKitLock,
@@ -497,7 +548,7 @@ function roleContext(command, scene, artifacts, frame, action) {
   if (action.role === 'image_author') return image;
   if (action.role === 'image_jury') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
-    shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'),
+    promptQuality: image.promptQuality, shot: image.shot, mamiDirectives: image.mamiDirectives, imagePromptArtifact: latest(artifacts, 'image_author'),
   };
   if (action.role === 'frame_jury') return {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
@@ -575,6 +626,20 @@ function artifactContentTemplate(role, command, scene) {
 export async function runCommand(args = process.argv.slice(2)) {
   const file = resolveCommandFile(args);
   const command = JSON.parse(await readFile(file, 'utf8'));
+  if (args.includes('--migrate-command-context')) {
+    const migrated = migrateCommandToCurrentContext(command);
+    const migratedCheck = await validateCommand(migrated);
+    if (!migratedCheck.ok) throw new Error(`command migration reddedildi: ${migratedCheck.problems.join(' · ')}`);
+    const output = resolve(argValue(args, '--out') ?? file);
+    await writeFile(output, JSON.stringify(migrated, null, 2), 'utf8');
+    return {
+      file: output,
+      validation: 'PASS',
+      commandId: migrated.commandId,
+      storyboardHash: migrated.lifecycle.storyboardHash,
+      action: { kind: 'COMMAND_CONTEXT_MIGRATED' },
+    };
+  }
   const check = await validateCommand(command);
   if (!check.ok) throw new Error(check.problems.join(' · '));
   if (args.includes('--add-directive-file')) {

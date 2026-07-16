@@ -10,7 +10,7 @@ import { buildCommandJSON } from './commandExport';
 import { generateBatch, resolveRecipeDefaults } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
 
-function commandFixture(approved = true, sceneCount = 1) {
+function commandFixture(approved = true, sceneCount = 1, multilineVoiceOver = false) {
   const defaults = resolveRecipeDefaults('ANIMATION_EDU', 'pixar_3d_edu');
   const generated = generateBatch({
     projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount, cast: '',
@@ -18,6 +18,7 @@ function commandFixture(approved = true, sceneCount = 1) {
     selectedRefIds: defaults.selectedRefIds, selectedPaletteId: 'pastel_soft', selectedMusicId: '',
     imageModel: 'nano_banana_2', videoModel: 'kling_3', directorBrief: 'Başlık yalnız final sahnede olsun.',
   });
+  if (multilineVoiceOver) generated.scenes[0].voiceOver = 'Su buharlaşır.\n  Bulut olur.';
   const state: any = {
     selectedProjectId: 'education', projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount,
     cast: '', subject: 'Su Döngüsü', location: '', recipeScenes: [], selectedWorldId: 'pixar_3d_edu',
@@ -155,6 +156,29 @@ describe('interactive command runtime', () => {
     expect(out.action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
     expect(out.contextSummary.containsSiteGeneratedPrompt).toBe(false);
     expect(out.protocolHash).toMatch(/^[0-9a-f]{64}$/);
+  });
+
+  test('exporttaki çok satırlı ses metni Node çalıştırıcısının storyboard hash kapısından geçer', () => {
+    const result = run(commandFixture(true, 1, true));
+    expect(result.status, result.stderr).toBe(0);
+    expect(JSON.parse(result.stdout).action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
+  });
+
+  test('açık migration yalnız türetilmiş context hashlerini güncelleyip commandi yeniden doğrular', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-context-migration-'));
+    const command = commandFixture();
+    command.lifecycle.storyboardHash = 'stale';
+    command.lifecycle.sceneContextHashes[1] = 'stale';
+    const file = join(dir, 'sample_mamilas_command.json');
+    writeFileSync(file, JSON.stringify(command));
+    const result = spawnSync(process.execPath, [
+      resolve('scripts/mamilas-command.mjs'), '--file', file, '--migrate-command-context', '--out', file,
+    ], { cwd: dir, encoding: 'utf8' });
+    expect(result.status, result.stderr).toBe(0);
+    expect(JSON.parse(result.stdout).action).toEqual({ kind: 'COMMAND_CONTEXT_MIGRATED' });
+    const ready = runAt(dir, JSON.parse(readFileSync(file, 'utf8')), ['--dry-run']);
+    expect(ready.status, ready.stderr).toBe(0);
+    expect(JSON.parse(ready.stdout).action).toEqual({ kind: 'AWAIT_STORYBOARD_APPROVAL' });
   });
 
   test('storyboard onayı yoksa provider açmaz; approval bekler', () => {
@@ -376,6 +400,16 @@ describe('interactive command runtime', () => {
     }
   });
 
+  test('Image Author ve Jury role kartları sahne-öncelikli kalite kontratını taşır', () => {
+    const author = readFileSync(resolve('agents/roles/image-author.md'), 'utf8');
+    const jury = readFileSync(resolve('agents/roles/image-jury.md'), 'utf8');
+    expect(author).toContain('FRAME-BUILD');
+    expect(author).toContain('promptQuality');
+    expect(jury).toContain('physical compositional');
+    expect(jury).toContain('relationship is missing');
+    expect(jury).toContain('promptQuality.rejectIf');
+  });
+
   test.each(['codex', 'claude'] as const)('%s interactive stub sonrası tam bir yeni role/provider artifact yeniden doğrulanır', (provider) => {
     const dir = mkdtempSync(join(tmpdir(), 'mamilas-session-'));
     const file = join(dir, 'sample_mamilas_command.json');
@@ -389,6 +423,10 @@ describe('interactive command runtime', () => {
       import { join } from 'node:path';
       import { canonicalHash, sha256 } from ${JSON.stringify(runtimeUrl)};
       const root = join(process.cwd(), '.mamilas');
+      const context = JSON.parse(await readFile(join(root, 'CONTEXT.json'), 'utf8'));
+      if (!context.promptQuality?.frameBuildOrder?.includes('visible subject + decisive action + physical place')) {
+        throw new Error('Image Author received no sealed prompt-quality contract');
+      }
       const template = JSON.parse(await readFile(join(root, 'ARTIFACT_TEMPLATE.json'), 'utf8'));
       template.content = {
         prompt: 'provider-authored prompt',

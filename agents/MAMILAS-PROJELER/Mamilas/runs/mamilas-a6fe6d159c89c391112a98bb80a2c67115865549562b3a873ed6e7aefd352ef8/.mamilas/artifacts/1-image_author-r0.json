@@ -1,0 +1,43 @@
+{
+  "schema": "mamilas.agent-artifact.v1",
+  "protocolVersion": "mamilas.agent-protocol.v1",
+  "protocolHash": "a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4",
+  "phase": "IMAGE_PROMPT",
+  "role": "image_author",
+  "provider": "codex",
+  "sceneId": 1,
+  "decisionHash": "a6fe6d159c89c391112a98bb80a2c67115865549562b3a873ed6e7aefd352ef8",
+  "storyboardHash": "f7c8355ebf82382672d041d222e0dbdbb827c7b6dbb5e87fb12dc9aa4c26ecdb",
+  "inputArtifactHashes": [
+    "dd5f47fd4fef4ac156db1710f20ba84457cc77e9a8a096bb1b1735b63d856ac3"
+  ],
+  "revision": 0,
+  "content": {
+    "prompt": "A cinematic start frame: John, a lone fugitive with his identity kept indistinct, quietly climbs from a rain-slick harbor quay onto the shadowed side of a departing long-distance cargo ship. He braces one hand on a corroded metal ladder and keeps low behind stacked freight, caught in the exact suspended moment before he disappears aboard; the ship’s immense hull, gangway, mooring lines, and distant harbor layers make the escape route immediately legible. Eye-level medium-wide three-quarter view at 35mm, f/4, 1.78:1, John and the ship readable together, with no top-down angle and no action spectacle. Render as a European industrial painterly 3D hybrid: chunky modeled port architecture and ship forms, deliberate oil-brush texture at every silhouette, painted grime strata, rust oxidation, wet-stone oil-slick iridescence, sculpted paint-clump hair and woven painted fabric. A single warm industrial dock lantern rakes across John and the ladder from one side; cool moonlit harbor air recedes behind him; jewel-teal complementary bounce and a magenta-pink accent rim articulate the silhouette. Warm highlights, cool shadows, deep-violet rather than black in the deepest values, soft painted ambient occlusion, thin-film rainbow metal speculars, warm lantern halation, refined 35mm grain, and subtle chromatic separation at high-contrast edges. The atmosphere is naturalist and tense rather than glossy: a real covert escape staged through physical space, quiet resolve, and motivated light. Original character and original harbor only; no named franchise characters or locations, no blue crystal device, no purple serum, no hard cel outlines, no flat anime shading, no photoreal CGI, no pure black, no earth-green or sepia-brown cast, no legible signage or on-screen text.",
+    "promptHash": "7869baa139c92cf004d84b99c648f1fedd22e6ff0f7674f16d95f2ceb7cfd4f4",
+    "directiveReceipts": [
+      {
+        "id": "site-directive-001",
+        "text": "Phase 0 preset: Sinematik Hikâye. Director thesis: Duyguyu reklam parlatmasıyla değil, gerçek mekan ve sinema grameriyle taşı. Locked decisions: Hikaye modu: Naturalist film — Deakins/Lubezki çizgisi: doğal ışık, uzun nefes. | Duygu yayı: Earned resolve — Yavaş inşa, sessiz güven, finalde rahatlama. Anti-generic guard: never produce a generic preset look; every frame must prove the selected strategy through source meaning, physical staging, motivated light, and the selected world/ref DNA.",
+        "status": "APPLIED"
+      }
+    ],
+    "appliedLocks": [
+      "STYLIZED_PREMIUM production path rendered through the supplied European industrial painterly 3D world physics",
+      "arcane_fortiche world: painted surface boundaries, deep-violet shadows, motivated lantern-and-moon lighting, filmic halation, and 35mm camera envelope",
+      "native_world palette translated as deep-violet shadow, jewel-teal bounce, magenta-pink rim, and warm-cream lantern highlights rather than flat fills",
+      "Compatible reference grammar applied: painterly 3D surface treatment, industrial grime and iridescent metal, and monumental ship-scale staging",
+      "IP firewall applied: original unnamed harbor and original John only; prohibited named characters, locations, and signature devices excluded",
+      "No cast, brand-kit, on-screen text, or Mami prompt override was supplied"
+    ],
+    "suppressedContext": [
+      "The decision topic lock ‘Su Döngüsü’ is not depicted because the supplied approved shot slice is exclusively John secretly boarding a ship; no water-cycle event is present in that slice.",
+      "No physical description, crime details, destination, or prior-scene visual continuity was supplied, so none is invented."
+    ],
+    "risks": [
+      "Semantic continuity risk: the decision topic lock ‘Su Döngüsü’ conflicts with the supplied shot source about John boarding a ship and needs director-level reconciliation before audience-facing continuity can be asserted.",
+      "Character identity remains intentionally non-specific because no source-backed appearance or cast reference was supplied."
+    ]
+  },
+  "contentHash": "53333183c7a544a33a53f613c9205a74e6009d60b465fa58df28e2dda9921f11"
+}

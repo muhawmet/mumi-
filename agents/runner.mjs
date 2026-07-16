@@ -11,7 +11,7 @@ import {
   accessSync, constants, copyFileSync, existsSync, mkdirSync, readFileSync,
   readdirSync, statSync, writeFileSync,
 } from 'node:fs';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { createInterface } from 'node:readline/promises';
 import { delimiter, dirname, join, resolve, sep } from 'node:path';
@@ -198,6 +198,41 @@ async function chooseProvider() {
   return provider;
 }
 
+function lifecycleArgs(root, commandFile, useProjectWorkspace) {
+  const args = [join(root, 'scripts', 'mamilas-command.mjs'), '--file', commandFile];
+  for (const name of ['--scene', '--workspace', '--artifacts', '--import-frame', '--verdict', '--add-directive-file', '--scope', '--out']) {
+    const value = argValue(name);
+    if (value) args.push(name, useProjectWorkspace && ['--import-frame', '--add-directive-file'].includes(name) ? resolve(value) : value);
+  }
+  return args;
+}
+
+async function approvePendingStoryboard(root, commandFile, baseArgs) {
+  const preflight = spawnSync(process.execPath, [...baseArgs, '--dry-run'], {
+    cwd: dirname(commandFile), encoding: 'utf8',
+  });
+  if (preflight.status !== 0) {
+    return die(`mamilas-command: ${String(preflight.stderr ?? '').trim() || 'ön kontrol başarısız'}`);
+  }
+  let next;
+  try {
+    next = JSON.parse(preflight.stdout);
+  } catch {
+    return die('mamilas-command: ön kontrol geçerli JSON döndürmedi.');
+  }
+  if (next?.action?.kind !== 'AWAIT_STORYBOARD_APPROVAL') return true;
+  if (!process.stdin.isTTY) return die(`Sahne ${next.sceneId} storyboard onayı bekliyor; interaktif terminalde yeniden çalıştır.`);
+  const answer = (await ask(`\nSahne ${next.sceneId} storyboardu onaylansın mı? (E/h): `)).trim().toLocaleLowerCase('tr');
+  if (!['e', 'evet'].includes(answer)) return die('Storyboard onayı verilmedi; prompt oturumu açılmadı.');
+  const approvalArgs = [...baseArgs];
+  if (!argValue('--scene')) approvalArgs.push('--scene', String(next.sceneId));
+  approvalArgs.push('--approve-storyboard');
+  const approval = spawnSync(process.execPath, approvalArgs, { cwd: dirname(commandFile), encoding: 'utf8' });
+  if (approval.status !== 0) return die(`mamilas-command: ${String(approval.stderr ?? '').trim() || 'storyboard onayı yazılamadı'}`);
+  process.stdout.write(approval.stdout);
+  return true;
+}
+
 async function run() {
   const root = findRepoRoot(HERE);
   if (!root) return die('Kanonik scripts/mamilas-command.mjs ve agents/PROTOCOL.md bulunamadı.');
@@ -210,19 +245,11 @@ async function run() {
   const explicitLaunch = process.argv.includes('--launch');
   const dryRun = mutation || process.argv.includes('--dry-run') || (!explicitLaunch && !process.stdin.isTTY);
   const launch = !mutation && (explicitLaunch || !dryRun);
+  const args = lifecycleArgs(root, commandFile, Boolean(projectName));
+  if (launch && !(await approvePendingStoryboard(root, commandFile, args))) return;
   const provider = launch ? await chooseProvider() : null;
   if (launch && !provider) return;
 
-  const args = [join(root, 'scripts', 'mamilas-command.mjs'), '--file', commandFile];
-  for (const name of ['--scene', '--workspace', '--artifacts', '--import-frame', '--verdict', '--add-directive-file', '--scope', '--out']) {
-    const value = argValue(name);
-    if (value) {
-      const forwarded = projectName && ['--import-frame', '--add-directive-file'].includes(name)
-        ? resolve(value)
-        : value;
-      args.push(name, forwarded);
-    }
-  }
   if (process.argv.includes('--approve-storyboard')) args.push('--approve-storyboard');
   if (process.argv.includes('--export-image-bundle')) args.push('--export-image-bundle');
   if (launch) args.push('--launch', '--provider', provider);

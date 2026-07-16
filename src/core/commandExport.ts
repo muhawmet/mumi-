@@ -175,7 +175,17 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   ];
   const lifecycle = {
     protocol: protocolDescriptor(),
-    storyboardHash: storyboardHashOfScenes(state.scenes as unknown as Array<Record<string, unknown>>),
+    // Runtime validates the serialized command scenes, not the mutable Studio scene objects.
+    // `sceneBrief` is whitespace-normalized below for the agent-facing command; hashing the
+    // pre-export `voiceOver` here made a valid command fail its own storyboard gate whenever
+    // a source beat contained line breaks or repeated spaces.
+    storyboardHash: storyboardHashOfScenes(state.scenes.map((scene) => ({
+      id: scene.id,
+      phaseName: scene.phaseName,
+      durationSec: scene.durationSec,
+      architecture: scene.architecture,
+      sceneBrief: String(scene.voiceOver ?? '').replace(/\s+/g, ' ').trim(),
+    }))),
     mamiDirectives,
     shotApprovals: { ...(state.shotApprovals ?? {}) },
     sceneContextHashes: {} as Record<number, string>,

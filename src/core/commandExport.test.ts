@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { buildCommandJSON } from './commandExport';
+import { buildImageAuthorContext, storyboardHashOfScenes } from './agentProtocol';
 import { DATA, generateBatch, resolveRecipeDefaults } from './pure';
 import { ingestSource, sourceIntegrity } from './source';
 
@@ -31,6 +32,9 @@ describe('buildCommandJSON', () => {
     expect(generated.status).toBe('GENERATED');
     const firstScene = {
       ...generated.scenes[0],
+      // The command serializes this display text with normalized whitespace. Its lifecycle
+      // storyboard hash must seal that serialized form, not this mutable Studio value.
+      voiceOver: 'Su buharlaşır.\n  Bulut olur.',
       userImagePrompt: 'USER OVERRIDE IMAGE PROMPT',
     };
     const command = buildCommandJSON({
@@ -83,6 +87,18 @@ describe('buildCommandJSON', () => {
     expect(command.creativeControls.directorBrief).toContain('tactile mechanism');
     expect(command.agentPackets.motion).toBe('MOTION PACKET');
     expect(command.scenes[0].prompts.image).toBe('USER OVERRIDE IMAGE PROMPT');
+    expect(command.lifecycle.storyboardHash).toBe(storyboardHashOfScenes(command.scenes));
+    const imageContext = buildImageAuthorContext(command, 1);
+    expect(imageContext.decision.locks).not.toHaveProperty('topic');
+    expect(imageContext.promptQuality.frameBuildOrder).toEqual([
+      'visible subject + decisive action + physical place',
+      'one compositional relationship that makes the beat readable',
+      'one camera relation plus one motivated light or material behaviour from the selected world',
+      'only the narrow, frame-specific constraints that protect the beat',
+    ]);
+    expect(imageContext.promptQuality.referencePolicy).toContain(
+      'Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.',
+    );
     expect(command.scenes[0].handoff.IMAGE.packetVersion).toBe('1.0.0');
     expect(command.commands.roles.map((role) => role.role)).toEqual([
       'image_author', 'image_jury', 'frame_jury', 'motion_author', 'motion_jury',
@@ -92,6 +108,16 @@ describe('buildCommandJSON', () => {
     // pipeline IN. The package's only supported entry point is the runner, because the
     // runner is where the gates live (frame gate, reference gate, ledger).
     expect(command.commands.cliExamples.join('\n')).toContain('MOTION-CALISTIR.command');
+  });
+
+  it('keeps a topic lock only when no raw source can supply the approved shot', () => {
+    const command = {
+      commandId: 'mamilas-test',
+      baseDecision: { locks: { topic: 'Su Döngüsü' }, source: { authority: 'TOPIC_ONLY', rawSource: '' } },
+      lifecycle: { protocol: {}, storyboardHash: 'hash', mamiDirectives: [] },
+      scenes: [{ id: 1, phaseName: 'Intro', durationSec: 5, architecture: {}, sceneBrief: 'Su döngüsü.' }],
+    };
+    expect(buildImageAuthorContext(command, 1).decision.locks).toMatchObject({ topic: 'Su Döngüsü' });
   });
 
   // FRAME-AWARE bir VERİ kapısıdır, tavsiye değil. Site motion taslağını kare
