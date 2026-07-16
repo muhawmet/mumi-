@@ -960,6 +960,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     const provider = launch ? argValue(args, '--provider') : null;
     if (launch && !['claude', 'codex'].includes(provider)) throw new Error('--provider claude|codex zorunlu');
     const sceneReports = [];
+    const total = command.scenes.length;
     for (const candidate of command.scenes) {
       let report = null;
       // Sahne başına güvenlik tavanı: author r0+r1, jury x2, motion aynı — 8 rol
@@ -972,12 +973,21 @@ export async function runCommand(args = process.argv.slice(2)) {
           break;
         }
         if (!launch) { report = { sceneId: candidate.id, phaseName: candidate.phaseName, state: `RUN_ROLE:${status.action.role}` }; break; }
+        // Canlı ilerleme — headless oturumlar sessizdir; Mami koşunun nerede olduğunu
+        // stderr'den görür (stdout tek JSON sonuç olarak kalır, parse bozulmaz).
+        console.error(`⏳ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} yazıyor…`);
         await executeRole(check, command, projectDir, root, artifactDir, status, provider, true);
+        console.error(`✅ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} mühürlendi`);
       }
       if (!report) throw new Error(`sahne ${candidate.id} rol tavanına çarptı; lifecycle beklenmedik döngüde`);
+      const summary = report.state === 'AWAIT_FRAME' ? 'PASS prompt hazır — kare bekliyor'
+        : report.state === 'FACT_REQUIRED' ? `DURDU: ${report.reason ?? 'eksik gerçek'}`
+        : report.state;
+      console.error(`📦 Sahne ${candidate.id}/${total} → ${summary}`);
       sceneReports.push(report);
     }
     const packPath = await writeBatchPromptPack(root, command, sceneReports);
+    if (launch) console.error(`\n🎬 Toplu prompt paketi: ${packPath}\n`);
     return {
       file, validation: 'PASS', protocolHash: check.protocolHash, commandId: command.commandId,
       storyboardHash: check.expectedStoryboard, action: { kind: 'BATCH_REPORT' }, scenes: sceneReports, promptPack: packPath,
