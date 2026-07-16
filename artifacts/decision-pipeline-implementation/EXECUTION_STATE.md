@@ -1,5 +1,17 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+> **✅ HARD-FIX RUN TAMAM (2026-07-16 akşam):** Codex'in 27-madde CLI-akış raporu
+> (`~/Desktop/MAMILAS-YERLESIK-YONETMEN-CLI-AKIS-RAPORU.md`) tek temiz run'da kapandı.
+> Teslim: `HARDFIX-TESLIM-2026-07-16.md`. Commit'ler: `0fcf7e9`(B+D) `d9f43cd`(C)
+> `72c6ff7`(A/batch) `75aca49`(Yönetmen+E) `10cd015`(teslim+e2e). 26 madde fix,
+> 1 geçersiz (E.26 — QA aggregate zaten tek), 1 kısmi→ledger (E.24 scaffold çelişkisi).
+> **Yeni ürün akışı: çift tık = YÖNETMEN modu** (batch arkada, Mami yalnız Yönetmen'le
+> konuşur, görünür SAHNE-PROMPTLAR.md incremental). Çöken Deneme koşusu migrate+resume
+> ile KANITLANDI (5 PASS korundu, 7-12 açıldı). Final kapı: tsc 0 · **vitest 2007/2007
+> (80 dosya)** · build OK · **E2E 15/15** · mirror parity · jury-audit 6/6.
+> Bağımsız denetçi: KRİTİK 0. Dürüst durum: implementation complete / visual validation
+> pending — gerçek 12-sahne koşusu + kare hükmü Mami'nin. PUSH YOK.
+
 > **➡️ AKTİF PLAN (VSCode/Mac, 2026-07-16):** Beyin katmanı inşası — anlama fazı BİTTİ, plan HAZIR.
 > **✅ M0 TAMAM (2026-07-16):** baseline yeşil mühürlendi (tsc 0 · vitest 1896/1896 (67 dosya) · build OK),
 > iki .bat CRLF fix commit `d366231` + push origin/main. Receipt: `receipts/BRAIN-M0.md`.
