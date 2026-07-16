@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { existsSync, mkdirSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { canonicalHash, sha256Hex } from '../src/core/contract';
 
@@ -11,6 +12,9 @@ function imageArtifactBundle(command: any, sceneId: number, prompt: string) {
     storyboardHash: command.lifecycle.storyboardHash, inputArtifactHashes: [contextHash], revision: 0,
     content: {
       prompt, promptHash: sha256Hex(prompt),
+      // BRAIN M3: interpretation zorunlu — bu test M3 sonrası güncellenmemişti
+      // (baseline borcu; 2026-07-16 hard-fix turunda yakalandı ve kapatıldı).
+      interpretation: { dominantSubject: 'translucent water droplet', singleEvent: 'droplet rises', frozenInstant: 'mid-rise, half a second before the surface' },
       directiveReceipts: command.lifecycle.mamiDirectives
         .filter((directive: { scope: string; sceneId: number | null }) => directive.scope === 'PROJECT' || directive.sceneId === sceneId)
         .map((directive: { id: string; text: string }) => ({ id: directive.id, text: directive.text, status: 'APPLIED' })),
@@ -402,6 +406,12 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
   await expect(authorPanel.getByText(/MAMİ ONAYLADI/)).toBeVisible();
 
   const framePanel = page.getByText('GERÇEK FRAME · MOTION KAPISI').locator('..');
+  // Kendi fixture'ını garanti et: screenshots.spec.ts'in koşu sırasına bağımlılık kırılgandı
+  // (klasör cleanup'ta silinmişti ve tekli koşu kırılıyordu — 2026-07-16 hard-fix turu).
+  if (!existsSync('screenshots/01-dashboard.png')) {
+    mkdirSync('screenshots', { recursive: true });
+    await page.screenshot({ path: 'screenshots/01-dashboard.png', fullPage: false });
+  }
   await framePanel.locator('input[accept="image/*"]').setInputFiles('screenshots/01-dashboard.png');
   await expect(framePanel.getByText(/01-dashboard\.png/)).toBeVisible();
   await expect(framePanel.getByText(/SHA-256:/)).toBeVisible();
