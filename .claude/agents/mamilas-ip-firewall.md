@@ -1,3 +1,4 @@
+<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/ip-firewall.md · protocolHash: a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4 · regen: npm run agents:sync -->
 ---
 name: mamilas-ip-firewall
 description: DEPRECATED / NON-RUNNABLE. IP firewall is deterministic code; this file is historical reference only.

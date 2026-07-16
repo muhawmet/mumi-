@@ -1,0 +1,53 @@
+{
+  "$schema": "mamilas.agents-manifest.v1",
+  "comment": "Tek kanon: agents/ altındaki role kartları. .claude/agents ve .codex/agents bu manifest'ten ÜRETİLİR (npm run agents:sync). Elle düzenleme drift testinde kırmızı verir.",
+  "protocol": "agents/PROTOCOL.md",
+  "surfaces": {
+    "claude": ".claude/agents",
+    "codex": ".codex/agents"
+  },
+  "studioAgents": [
+    {
+      "name": "mamilas-director",
+      "source": "agents/roles/studio/director.md",
+      "description": "MAMILAS showrunner. Decodes a production brief into scenes/beats, selects world + refs + palette, and sets the binding MANDATES (pedagogy/safety, character identity-lock, cast). Use FIRST, before any prompt authoring. Read-only planner — never writes image/motion prompts.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    },
+    {
+      "name": "mamilas-image-author",
+      "source": "agents/roles/studio/image-author.md",
+      "description": "Authors the start-frame image prompt (dominant element) for Nano Banana 2 from a DirectorBrief scene. Threads mood/timeLight/cameraEnergy/POV, render-lock, ref grammar, palette-as-light, and bakes diegetic text. Use per scene AFTER the director, BEFORE motion.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    },
+    {
+      "name": "mamilas-ip-firewall",
+      "source": "agents/roles/studio/ip-firewall.md",
+      "description": "DEPRECATED / NON-RUNNABLE. IP firewall is deterministic code; this file is historical reference only.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    },
+    {
+      "name": "mamilas-motion-author",
+      "source": "agents/roles/studio/motion-author.md",
+      "description": "Writes the frame-aware i2v motion prompt from an APPROVED start frame. One moving element, one cause-effect-settle, engine dialect verbatim, Kling-scrubbed. Use only after the frame exists — never blind.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    },
+    {
+      "name": "mamilas-palette-translator",
+      "source": "agents/roles/studio/palette-translator.md",
+      "description": "DEPRECATED / NON-RUNNABLE. Palette translation is deterministic code; this file is historical reference only.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    },
+    {
+      "name": "mamilas-qa-jury",
+      "source": "agents/roles/studio/qa-jury.md",
+      "description": "Adversarial QA jury. Validates a scene's image+motion prompts against real generateBatch output, the 5 red-line render laws, firewall clearance, and the full gate. Rejects and returns to the responsible author on any fail. Use LAST, before Mami takes the frame to the motors.",
+      "tools": "Read, Grep, Bash",
+      "model": "opus"
+    }
+  ]
+}

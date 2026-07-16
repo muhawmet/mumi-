@@ -1,5 +1,6 @@
+# GENERATED — DO NOT EDIT · source: agents/roles/studio/palette-translator.md · protocolHash: a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4 · regen: npm run agents:sync
 name = "mamilas-palette-translator"
-description = "DEPRECATED / NON-RUNNABLE. Palette translation is deterministic code; historical reference only."
+description = "DEPRECATED / NON-RUNNABLE. Palette translation is deterministic code; this file is historical reference only."
 developer_instructions = """
 **DEPRECATED / NON-RUNNABLE:** Active orchestration must not invoke this agent. Palette translation lives in deterministic code. The remainder is historical reference.
 
@@ -17,4 +18,5 @@ Form: `"<≤4-word character lead>. <short physical note>. NO <short negative>."
 - **NO file-essay** — no `luminance %`, `hue °`, `Mood:`, `Register:` dumps. Those pour verbatim into the prompt. Keep it to the short form above.
 - `biasCharacterClause` takes the first ≤4 comma-words as the lead; `biasNegativeClause` takes everything after the first `no/NO` (case-insensitive) — so put exactly ONE short `NO ...` at the end and no stray lowercase "no" mid-sentence, or the whole tail floods the prompt.
 
-Output: the single physical-light phrase, ready to hand to the Image Author (and reused by the Motion Author's lighting continuity)."""
+Output: the single physical-light phrase, ready to hand to the Image Author (and reused by the Motion Author's lighting continuity).
+"""

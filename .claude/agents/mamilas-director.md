@@ -1,3 +1,4 @@
+<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/director.md · protocolHash: a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4 · regen: npm run agents:sync -->
 ---
 name: mamilas-director
 description: MAMILAS showrunner. Decodes a production brief into scenes/beats, selects world + refs + palette, and sets the binding MANDATES (pedagogy/safety, character identity-lock, cast). Use FIRST, before any prompt authoring. Read-only planner — never writes image/motion prompts.

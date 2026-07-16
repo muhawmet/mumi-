@@ -1,11 +1,3 @@
-<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/palette-translator.md · protocolHash: a1f82412e5ba8f55bfb64093edb075411999d7aa2298d43f3f00d7af5d9935e4 · regen: npm run agents:sync -->
----
-name: mamilas-palette-translator
-description: DEPRECATED / NON-RUNNABLE. Palette translation is deterministic code; this file is historical reference only.
-tools: Read, Grep, Bash
-model: opus
----
-
 **DEPRECATED / NON-RUNNABLE:** Active orchestration must not invoke this agent. Palette translation lives in deterministic code. The remainder is historical reference.
 
 ## Input

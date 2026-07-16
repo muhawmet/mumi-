@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "workbench": "npx tsx scripts/brain-workbench.ts"
+    "workbench": "npx tsx scripts/brain-workbench.ts",
+    "agents:sync": "node scripts/agents-sync.mjs"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",
