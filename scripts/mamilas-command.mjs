@@ -764,6 +764,22 @@ function roleDecision(command) {
 // metninden ölçmek zorundaydı: Author'ın vaadi tek gerçeklik kaynağıydı, karşı-okuma
 // süse dönüyordu. Jury context'i sceneContextHash'e GİRMEZ (yalnız imageAuthor hash'lenir)
 // — bu genişleme mevcut command'leri stale etmez.
+// G4: motion rolleri için world fiziği + HAREKET RİTMİ. Hash-DIŞI (roleContext katmanı) —
+// sceneContextHash'e girmez, mevcut command'leri stale etmez, TS↔runner image-parite'sini bozmaz.
+function motionWorld(command) {
+  if (!command.worldPacket) return null;
+  return {
+    id: command.worldPacket.id,
+    renderPhysics: command.worldPacket.renderPhysics,
+    figurePhysics: command.worldPacket.figurePhysics,
+    cameraEnvelope: command.worldPacket.cameraEnvelope,
+    lightPhysics: command.worldPacket.lightPhysics,
+    materialPhysics: command.worldPacket.materialPhysics,
+    negativeLock: command.worldPacket.negativeLock,
+    motionCadence: command.worldPacket.motionCadence, // dünya-dışı hareketi engelleyen anahtar
+  };
+}
+
 export function roleContext(command, scene, artifacts, frame, action) {
   const image = imageContext(command, scene);
   if (action.role === 'image_author') return image;
@@ -786,6 +802,12 @@ export function roleContext(command, scene, artifacts, frame, action) {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
     // BRAIN M5: motion kontratı — Physics-First, still-lips/no-dialogue, SFX omurgası.
     motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
+    // HARD-FIX 2026-07-17 (G4, ordu KÖK-C): motion'ı yazan TEK rol (motion_author) dünyanın
+    // hareket ritmini (motionCadence), kamera zarfını ve negatif kilidini göremiyordu —
+    // worldPacket bu alanları 46 dünyada üretiyor ama motion context'ine hiç girmiyordu.
+    // Sonuç: Tarkovsky long-take dünyasına hızlı-kesme kadans gibi DÜNYA-DIŞI hareket.
+    // motionWorld hash-DIŞI (roleContext) — sceneContextHash'e girmez, command'leri stale etmez.
+    world: motionWorld(command),
     shot: image.shot, mamiDirectives: image.mamiDirectives, explicitLocks: image.explicitLocks,
     continuity: image.continuity, frame, engine: scene.motionEngine,
   };
@@ -793,8 +815,8 @@ export function roleContext(command, scene, artifacts, frame, action) {
     decision: roleDecision(command), storyboardHash: command.lifecycle.storyboardHash,
     motionQuality: buildMotionPromptQualityContract({ videoModel: command.baseDecision?.engine?.videoModel }),
     shot: image.shot, mamiDirectives: image.mamiDirectives, continuity: image.continuity,
-    // Madde 15: motion jürisi explicit locks + world'ü bağımsız kaynaktan görür.
-    world: image.world, explicitLocks: image.explicitLocks,
+    // Madde 15 + G4: motion jürisi explicit locks + world'ü (hareket ritmi dahil) bağımsız görür.
+    world: motionWorld(command), explicitLocks: image.explicitLocks,
     imagePromptArtifact: latest(artifacts, 'image_author'), frame,
     motionArtifact: latest(artifacts, 'motion_author'), engine: scene.motionEngine,
   };
@@ -982,7 +1004,14 @@ async function executeRole(check, command, projectDir, root, artifactDir, status
   await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');
   const outputName = `${scene.id}-${action.role}-r${action.revision}.json`;
   await writeFile(join(root, 'SESSION.md'), `# MAMILAS single-role session\n\nProvider: ${provider}\nRole: ${action.role}\nScene: ${scene.id}\nRevision: ${action.revision}\n\nRead PROTOCOL.md, ADAPTER.md, ROLE.md and CONTEXT.json. Edit only the content in ARTIFACT_TEMPLATE.json, then seal it with:\n\nnode "${fileURLToPath(import.meta.url)}" --seal-artifact "${templatePath}" --out "${join(artifactDir, outputName)}"\n\nWrite exactly this one artifact. Do not run another role.${headless ? '\nWhen the artifact is sealed, exit the session immediately.' : ''}\n`, 'utf8');
-  const beforeHashes = new Set(sceneArtifacts.map((artifact) => artifact.contentHash));
+  // HARD-FIX 2026-07-17 (G2, ordu KÖK-A): before-set DİSKTEKİ TÜM sahne artifact'lerinden
+  // kurulur, canlı (frame-filtreli) `sceneArtifacts`'ten DEĞİL. Eski davranış: yeni kare gelince
+  // stale frame-bağlı artifact (eski frameHash'li motion) canlı listede olmadığı için "created"
+  // sanılıyordu → `created.length` şişip yanlış throw → kare iyileştirme her seferinde sahte
+  // "teknik hata" + yanmış oturum. `after` zaten filtresiz reload; before de öyle olmalı.
+  const beforeAll = (await loadArtifacts(artifactDir, command, { strict: false })).artifacts
+    .filter((artifact) => artifact.sceneId === scene.id);
+  const beforeHashes = new Set(beforeAll.map((artifact) => artifact.contentHash));
   await (headless ? launchHeadless : launchInteractive)(provider, projectDir, root);
   const after = (await loadArtifacts(artifactDir, command)).filter((artifact) => artifact.sceneId === scene.id);
   const created = after.filter((artifact) => !beforeHashes.has(artifact.contentHash));
@@ -1100,7 +1129,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     //     inputArtifactHashes'teki contextHash referansı güncellenir ve yeniden mühürlenir.
     //     Zincir bütünlüğü korunur: içerideki hash'ler eski→yeni deterministik eşlenir.
     const migrationRoot = resolve(argValue(args, '--workspace') ?? join(dirname(output), '.mamilas'));
-    const migratedWorkspace = { approvals: 0, artifacts: 0 };
+    const migratedWorkspace = { approvals: 0, artifacts: 0, frames: 0 };
     const oldContextHashes = new Map(Object.entries(command.lifecycle.sceneContextHashes ?? {}).map(([id, hash]) => [hash, migrated.lifecycle.sceneContextHashes[id]]));
     const approvalsDir = join(migrationRoot, 'approvals');
     if (existsSync(approvalsDir)) {
@@ -1119,19 +1148,14 @@ export async function runCommand(args = process.argv.slice(2)) {
       // r1 author'ın input zinciri r0-jury'nin YENİ hash'ini bekler ama o henüz map'te yok →
       // r1 zinciri stale kalıp sahneyi kilitliyordu (REJECT sonrası her kare ölürdü).
       // Lifecycle sırası: role fazı (author→jury→frame→motion) × revision, sonra sahne.
-      const ROLE_ORDER = { image_author: 0, image_jury: 1, frame_jury: 2, motion_author: 3, motion_jury: 4 };
-      const entries = [];
-      for (const name of readdirSync(migrationArtifactDir).filter((item) => item.endsWith('.json'))) {
-        let value;
-        try { value = JSON.parse(await readFile(join(migrationArtifactDir, name), 'utf8')); } catch { continue; }
-        if (value?.schema !== ARTIFACT_SCHEMA) continue;
-        entries.push({ name, value });
-      }
-      entries.sort((a, b) =>
-        (a.value.revision - b.value.revision)
-        || ((ROLE_ORDER[a.value.role] ?? 9) - (ROLE_ORDER[b.value.role] ?? 9))
-        || (a.value.sceneId - b.value.sceneId));
-      for (const { name, value } of entries) {
+      // HARD-FIX 2026-07-17 (G1, ordu KÖK-A): image → frame receipt → frame-bağlı artifact
+      // karşılıklı bağımlılığı TEK hashMap'le, DOĞRU sırada çözülür. Eskiden frame receipt'ler
+      // artifact döngüsünden SONRA remap ediliyordu; ama frame_jury/motion'ın
+      // inputArtifactHashes'i frame receipt'in contentHash'ini gömdüğünden, onlar işlenirken
+      // frame receipt'in YENİ hash'i henüz hashMap'te yoktu → "frame_jury@0 zinciri uyuşmuyor".
+      // Doğru sıra: (1) image author/jury  (2) frame RECEIPT'ler (hashMap'e ekle)  (3) frame-bağlı.
+      const IMAGE_ROLES = new Set(['image_author', 'image_jury']);
+      const remapArtifact = async (name, value) => {
         const { contentHash: oldHash, ...body } = value;
         body.protocolHash = migrated.lifecycle.protocol.contentHash;
         body.inputArtifactHashes = (body.inputArtifactHashes ?? []).map((hash) =>
@@ -1140,32 +1164,49 @@ export async function runCommand(args = process.argv.slice(2)) {
         hashMap.set(oldHash, resealed.contentHash);
         await writeFile(join(migrationArtifactDir, name), JSON.stringify(resealed, null, 2), 'utf8');
         migratedWorkspace.artifacts += 1;
+      };
+      const entries = [];
+      for (const name of readdirSync(migrationArtifactDir).filter((item) => item.endsWith('.json'))) {
+        let value;
+        try { value = JSON.parse(await readFile(join(migrationArtifactDir, name), 'utf8')); } catch { continue; }
+        if (value?.schema !== ARTIFACT_SCHEMA) continue;
+        entries.push({ name, value });
       }
-    }
-    // HARD-FIX 2026-07-17 (F-A1): frame receipt'leri de taşı. Migration artifact
-    // contentHash'lerini değiştirir (protocolHash yenilendi); frame receipt ise author'ın
-    // ESKİ contentHash'ini `fromImagePromptArtifactHash`'te tutar. Bu remap edilmezse
-    // loadFrame "frame prompt bağı stale" fırlatır → Mami'nin ONAYLADIĞI kare kalıcı ölür
-    // (resume'un tam vaadinin tersi). Frame receipt kendi contentHash'iyle mühürlü olduğu
-    // için remap sonrası receipt de yeniden mühürlenir. fromCommandId/storyboardHash
-    // migration'da byte-aynı kaldığından (karar değişmedi) dokunulmaz.
-    const migrationFramesDir = join(migrationRoot, 'frames');
-    let migratedFrames = 0;
-    if (existsSync(migrationFramesDir)) {
-      for (const name of readdirSync(migrationFramesDir).filter((item) => item.endsWith('.json'))) {
-        let receipt;
-        try { receipt = JSON.parse(await readFile(join(migrationFramesDir, name), 'utf8')); } catch { continue; }
-        if (receipt?.schema !== FRAME_RECEIPT_SCHEMA) continue;
-        const remapped = hashMap.get(receipt.fromImagePromptArtifactHash);
-        if (!remapped || remapped === receipt.fromImagePromptArtifactHash) continue;
-        const { contentHash: _old, ...body } = receipt;
-        body.fromImagePromptArtifactHash = remapped;
-        const resealed = { ...body, contentHash: canonicalHash(body) };
-        await writeFile(join(migrationFramesDir, name), JSON.stringify(resealed, null, 2), 'utf8');
-        migratedFrames += 1;
+      // Faz 1: image katı (revision sırasıyla — r1 author r0-jury'nin yeni hash'ini bekler).
+      const imageEntries = entries.filter((e) => IMAGE_ROLES.has(e.value.role))
+        .sort((a, b) => (a.value.revision - b.value.revision)
+          || (a.value.role < b.value.role ? -1 : 1) || (a.value.sceneId - b.value.sceneId));
+      for (const { name, value } of imageEntries) await remapArtifact(name, value);
+
+      // Faz 2: frame RECEIPT'ler — image author yeni hash'ini kullanır; frame receipt'in
+      // eski→yeni contentHash'i de hashMap'e girer ki frame-bağlı artifact'ler onu bulsun.
+      const migrationFramesDir = join(migrationRoot, 'frames');
+      let migratedFrames = 0;
+      if (existsSync(migrationFramesDir)) {
+        for (const name of readdirSync(migrationFramesDir).filter((item) => item.endsWith('.json'))) {
+          let receipt;
+          try { receipt = JSON.parse(await readFile(join(migrationFramesDir, name), 'utf8')); } catch { continue; }
+          if (receipt?.schema !== FRAME_RECEIPT_SCHEMA) continue;
+          const remappedAuthor = hashMap.get(receipt.fromImagePromptArtifactHash) ?? receipt.fromImagePromptArtifactHash;
+          const { contentHash: oldReceiptHash, ...body } = receipt;
+          body.fromImagePromptArtifactHash = remappedAuthor;
+          const resealed = { ...body, contentHash: canonicalHash(body) };
+          hashMap.set(oldReceiptHash, resealed.contentHash); // frame-bağlı artifact'ler bunu bulur
+          await writeFile(join(migrationFramesDir, name), JSON.stringify(resealed, null, 2), 'utf8');
+          if (resealed.contentHash !== oldReceiptHash) migratedFrames += 1;
+        }
       }
+      migratedWorkspace.frames = migratedFrames;
+
+      // Faz 3: frame-bağlı artifact'ler (frame_jury/motion_author/motion_jury) — input'larında
+      // hem image hem frame receipt yeni hash'lerini bulurlar.
+      const FRAME_ROLE_ORDER = { frame_jury: 0, motion_author: 1, motion_jury: 2 };
+      const frameBound = entries.filter((e) => !IMAGE_ROLES.has(e.value.role))
+        .sort((a, b) => (a.value.revision - b.value.revision)
+          || ((FRAME_ROLE_ORDER[a.value.role] ?? 9) - (FRAME_ROLE_ORDER[b.value.role] ?? 9))
+          || (a.value.sceneId - b.value.sceneId));
+      for (const { name, value } of frameBound) await remapArtifact(name, value);
     }
-    migratedWorkspace.frames = migratedFrames;
     return {
       file: output,
       validation: 'PASS',

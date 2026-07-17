@@ -189,7 +189,11 @@ describe('round-trip — export → import aynı world/approval/frame/motion kap
     expect(s.scenes).toHaveLength(2);
     expect(s.scenes[0].promptReceipt?.finalPrompt).toBe('agent final prompt');
     expect(s.scenes[0].frameReceipt?.frameHash).toBe(sha256Hex('project frame bytes'));
-    expect(motionGate(s.scenes[0], s.currentCommandId(), s.currentPromptSourceCommandId(), s.shotApprovals[1]).open).toBe(true);
+    // G3 (ordu KÖK-B): pack GÖRSEL BAYTINI taşımaz — import edilen APPROVE frame "onaylı gerçek
+    // kare" sayılamaz (gerçek pixel yok, hash sadece format-geçerli). verdict PROJECT_ONLY_ACCEPT'e
+    // düşürülür → motion AÇILMAZ. Mami başka cihazda gerçek görseli yeniden yükleyip APPROVE eder.
+    expect(s.scenes[0].frameReceipt?.verdict).toBe('PROJECT_ONLY_ACCEPT');
+    expect(motionGate(s.scenes[0], s.currentCommandId(), s.currentPromptSourceCommandId(), s.shotApprovals[1]).open).toBe(false);
   });
 
   test('bozuk JSON import lastError verir, state\'i EZMEZ', () => {

@@ -272,6 +272,20 @@ describe('studio store helpers', () => {
     useStudioStore.getState().reset();
   });
 
+  it('G6: kaynak girişte NFC normalize edilir — Windows/Mac (NFD) farkı sessizce bozmaz', () => {
+    useStudioStore.getState().reset();
+    // NFD form: "ş" = s + combining-cedilla, "ü" = u + combining-diaeresis (Mac kopyala)
+    const nfd = 'Sümerá şehri.'.normalize('NFD'); // bilerek NFD
+    useStudioStore.getState().setRawSource(nfd);
+    const stored = useStudioStore.getState().rawSource;
+    expect(stored).toBe(stored.normalize('NFC')); // depoda NFC
+    expect(stored.normalize('NFC') === stored).toBe(true);
+    // ingest sonrası integrity bozulmaz (raw NFC, beats NFC):
+    useStudioStore.getState().ingestRawSource();
+    expect(useStudioStore.getState().sourceReport?.ok).toBe(true);
+    useStudioStore.getState().reset();
+  });
+
   it('Proje Kasası: saves, restores and deletes named project snapshots', () => {
     const s = useStudioStore.getState();
     s.reset();

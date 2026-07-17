@@ -536,7 +536,10 @@ const FrameGatePanel: React.FC<{
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1, color: gate.open ? '#93c9a8' : 'var(--m2-amber)', fontFamily: 'var(--m2-font-mono)' }}>
-              {f.verdict === 'PENDING' ? 'HÜKÜM BEKLİYOR' : f.verdict === 'APPROVE' ? (gate.open ? '✓ ONAYLI — MOTION AÇIK' : 'ONAYLI (stale)') : f.verdict}
+              {f.verdict === 'PENDING' ? 'HÜKÜM BEKLİYOR'
+                : f.verdict === 'APPROVE' ? (gate.open ? '✓ ONAYLI — MOTION AÇIK' : 'ONAYLI (stale)')
+                : f.verdict === 'PROJECT_ONLY_ACCEPT' ? 'YALNIZ PROJEYE ALINDI — gerçek kareyi yeniden yükle (motion kapalı)'
+                : f.verdict}
             </span>
             <div style={{ display: 'flex', gap: 8, marginLeft: 'auto', flexWrap: 'wrap' }}>
               <Button onClick={() => onVerdict('APPROVE')}>Onayla</Button>

@@ -8,6 +8,12 @@ people, setting or text; preserve the target engine dialect/window from context.
 `frameHash` at `content.frameHash` beside a non-empty `inventory`, the final `prompt`, its
 `promptHash` and a `risks` list.
 
+CONTEXT.json carries `world` — the selected world's physics INCLUDING its `motionCadence` (how THIS
+world moves: Tarkovsky long-take drift, Spider-Verse dual-cadence, Deakins locked-off dolly). The
+motion you write must obey that cadence; never author a move foreign to the world (no fast-cutting
+into a contemplative long-take world, no locked-off stillness into a kinetic one). `cameraEnvelope`
+and `negativeLock` bound the move exactly as they bound the still frame.
+
 The `motionQuality` contract in CONTEXT.json is engine-aware production law learned from real failed
 clips. Write motion as physics, never as camera commands: the vocabulary is mass and cadence —
 organic handheld drift, macro lens breathing, heavy object momentum, a step-printed stutter the

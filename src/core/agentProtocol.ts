@@ -463,6 +463,14 @@ export function buildMotionAuthorContext(command: any, sceneId: number, frame: a
     storyboardHash: command.lifecycle.storyboardHash,
     shot: { id: scene.id, sceneBrief: scene.sceneBrief, durationSec: scene.durationSec },
     mamiDirectives: (command.lifecycle.mamiDirectives ?? []).filter((d: MamiDirective) => d.scope === 'PROJECT' || d.sceneId === sceneId),
+    // HARD-FIX 2026-07-17 (G4): dünyanın hareket ritmi motion yazarına ulaşsın (runner ile aynı).
+    world: command.worldPacket ? {
+      id: command.worldPacket.id,
+      renderPhysics: command.worldPacket.renderPhysics,
+      cameraEnvelope: command.worldPacket.cameraEnvelope,
+      negativeLock: command.worldPacket.negativeLock,
+      motionCadence: command.worldPacket.motionCadence,
+    } : null,
     frame: { frameHash: frame.frameHash, width: frame.width, height: frame.height, aspect: frame.aspect, verdict: frame.verdict },
     engine: { ...dialect, usableSeconds: engineUsableSec(command.baseDecision?.engine?.videoModel) },
   };

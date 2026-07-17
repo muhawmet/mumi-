@@ -456,6 +456,61 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
     expect(resumed.scenes[1].reason ?? '').not.toMatch(/zinciri uyuşmuyor|stale/);
   });
 
+  test('G1: migration frame_jury artifact zincirini de taşır — kareli+jürili sahne kilitlenmez (ordu KÖK-A)', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-g1-'));
+    const command = commandFixture(1);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    passChain(command, 1, artifactsDir);
+    const pngB64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
+    const pngPath = join(dir, 'frame.png');
+    writeFileSync(pngPath, Buffer.from(pngB64, 'base64'));
+    expect(runAt(dir, command, ['--import-frame', pngPath, '--scene', '1', '--verdict', 'APPROVE']).status).toBe(0);
+
+    // frame_jury PASS artifact ekle — input'unda frame receipt'in contentHash'i gömülü.
+    const ctx = command.lifecycle.sceneContextHashes[1];
+    const author = JSON.parse(readFileSync(join(artifactsDir, '1-image_author-r0.json'), 'utf8'));
+    const jury = JSON.parse(readFileSync(join(artifactsDir, '1-image_jury-r0.json'), 'utf8'));
+    const frame = JSON.parse(readFileSync(join(dir, '.mamilas', 'frames', '1.json'), 'utf8'));
+    const fjInputs = [ctx, author.contentHash, jury.contentHash, frame.contentHash];
+    const fj = sealed(command, 1, 'frame_jury', 'FRAME_JURY', 0, fjInputs, { verdict: 'PASS', frameHash: frame.frameHash, evidence: ['cr'] });
+    writeFileSync(join(artifactsDir, '1-frame_jury-r0.json'), JSON.stringify(fj));
+    // Motion açık olmalı (frame_jury PASS):
+    const before = JSON.parse(runAt(dir, command, ['--batch', '--dry-run']).stdout);
+    expect(before.scenes[0].state).toBe('RUN_ROLE:motion_author');
+
+    // Eski protokolde mühürle (command + tüm artifact + frame receipt) — gerçek eski workspace.
+    const OLD = 'a'.repeat(64);
+    const stale = JSON.parse(JSON.stringify(command));
+    stale.lifecycle.protocol = { version: 'mamilas.agent-protocol.v1', contentHash: OLD };
+    const chain = new Map<string, string>();
+    // Sıra: image author→jury, sonra frame_jury (frame receipt contentHash chain'e girecek).
+    for (const name of ['1-image_author-r0.json', '1-image_jury-r0.json']) {
+      const p = join(artifactsDir, name); const a = JSON.parse(readFileSync(p, 'utf8')); const old = a.contentHash;
+      a.protocolHash = OLD; a.inputArtifactHashes = a.inputArtifactHashes.map((h: string) => chain.get(h) ?? h);
+      const { contentHash: _d, ...b } = a; a.contentHash = canonicalHash(b); chain.set(old, a.contentHash); writeFileSync(p, JSON.stringify(a));
+    }
+    // frame receipt eski author yeni hash + eski→yeni receipt hash chain'e:
+    const fp = join(dir, '.mamilas', 'frames', '1.json'); const fr = JSON.parse(readFileSync(fp, 'utf8')); const oldFr = fr.contentHash;
+    fr.fromImagePromptArtifactHash = chain.get(author.contentHash)!;
+    const { contentHash: _fd, ...frB } = fr; fr.contentHash = canonicalHash(frB); chain.set(oldFr, fr.contentHash); writeFileSync(fp, JSON.stringify(fr));
+    // frame_jury: input'unda ctx+author+jury+frameReceipt hash'leri — hepsi chain'den remap.
+    const fjp = join(artifactsDir, '1-frame_jury-r0.json'); const fja = JSON.parse(readFileSync(fjp, 'utf8'));
+    fja.protocolHash = OLD; fja.inputArtifactHashes = fja.inputArtifactHashes.map((h: string) => chain.get(h) ?? h);
+    const { contentHash: _jd, ...fjb } = fja; fja.contentHash = canonicalHash(fjb); writeFileSync(fjp, JSON.stringify(fja));
+
+    const migrated = runAt(dir, stale, ['--migrate-command-context']);
+    expect(migrated.status, migrated.stderr).toBe(0);
+    expect(JSON.parse(migrated.stdout).migratedWorkspace.frames).toBe(1);
+
+    // KRİTİK: resume'da sahne 1 (kare+frame_jury PASS) TECHNICAL_ERROR değil, motion_author bekliyor.
+    const migratedCommand = JSON.parse(readFileSync(join(dir, 'sample_mamilas_command.json'), 'utf8'));
+    const resumed = JSON.parse(runAt(dir, migratedCommand, ['--batch', '--dry-run']).stdout);
+    expect(resumed.scenes[0].state, JSON.stringify(resumed.scenes[0])).toBe('RUN_ROLE:motion_author');
+    expect(resumed.scenes[0].reason ?? '').not.toMatch(/zinciri uyuşmuyor|stale/);
+  });
+
   test('F-A2: --clear-frame bozuk/eski kareyi güvenli siler, yeni kare import edilebilir; karar zincirine dokunmaz', () => {
     const dir = mkdtempSync(join(tmpdir(), 'mamilas-clear-frame-'));
     const command = commandFixture(1);

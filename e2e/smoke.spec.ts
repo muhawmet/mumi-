@@ -448,7 +448,10 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
   });
   await page.evaluate(() => (window as any).__mamilas.getState().reset());
   await page.locator('input[aria-label="Proje paketi içe al"]').setInputFiles(packPath);
-  await expect(framePanel.getByText(/ONAYLI — MOTION AÇIK/)).toBeVisible();
+  // G3 (ordu KÖK-B): pack GÖRSEL BAYTINI taşımaz — import edilen APPROVE frame "onaylı gerçek
+  // kare" SAYILAMAZ (gerçek pixel yok). verdict PROJECT_ONLY_ACCEPT'e düşer, motion AÇILMAZ.
+  // Mami başka cihazda gerçek görseli yeniden yükleyip APPROVE edince motion açılır.
+  await expect(framePanel.getByText(/YALNIZ PROJEYE ALINDI|gerçek kareyi yeniden yükle/i)).toBeVisible();
   const gateAfterRoundTrip = await page.evaluate(() => {
     const store = (window as any).__mamilas.getState();
     return {
@@ -458,7 +461,10 @@ test('Reference DNA complete E2E workflow', async ({ page }, testInfo) => {
       height: store.scenes[0].frameReceipt?.height,
     };
   });
-  expect(gateAfterRoundTrip).toEqual(gateBeforeRoundTrip);
+  // Hash/boyut korunur (kanıt taşındı) ama verdict düşürüldü — kimlik değil, güven seviyesi değişti.
+  expect(gateAfterRoundTrip.hash).toBe(gateBeforeRoundTrip.hash);
+  expect(gateAfterRoundTrip.width).toBe(gateBeforeRoundTrip.width);
+  expect(gateAfterRoundTrip.verdict).toBe('PROJECT_ONLY_ACCEPT');
 
   // Taşınmış/eski evidence'in görünür stale kapısı: kararı frame/approval makbuzlarını
   // sessizce yeniden bağlamadan değiştir; UI gerçek commandId farkını kapatmalı.

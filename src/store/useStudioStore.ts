@@ -1125,8 +1125,13 @@ export const useStudioStore = create<StudioState>()(
       setActivePreviewRefId: (activePreviewRefId) => set({ activePreviewRefId }),
       setScenes: (scenes) => set({ scenes }),
       setCurrentStep: (currentStep) => set({ currentStep }),
+      // HARD-FIX 2026-07-17 (G6, ordu ORTA-5): kaynak GİRİŞTE NFC'ye normalize edilir.
+      // Windows'ta yazılıp Mac'te yapıştırılan metin dekompoze (NFD) ü/ç/ş taşıyabilir;
+      // aynı senaryo platforma göre sessizce farklı sahneye bölünüyor, hash determinizmi
+      // kayıyor, VO bozuk bayt taşıyordu. Girişte tek NFC ile hem raw hem türetilen beats
+      // tutarlı kalır (integrity BOZULMAZ — ikisi de NFC) ve platform farkı biter.
       setRawSource: (rawSource) => set({
-        rawSource,
+        rawSource: rawSource.normalize('NFC'),
         sceneCount: 0,
         sourceBeats: [],
         beatKeeps: {},
@@ -1515,8 +1520,18 @@ export const useStudioStore = create<StudioState>()(
         try {
           const imported = applyImageArtifactBundle(scene, artifactBundleJson, current);
           const directivesChanged = canonicalHash(imported.liveMamiDirectives) !== canonicalHash(current.liveMamiDirectives);
+          // HARD-FIX 2026-07-17 (G5, ordu KÖK-A): direktif değişince shotApprovals sıfırlanıyordu
+          // ama frameReceipt sahnede KALIYORDU → yetim frame. Yeni commandId ile o kare zaten
+          // stale (karar değişti); receipt duruyor diye export→import paketi verifyProjectPack.ok
+          // =false verip başka cihazda 0 sahne açıyordu (yedek ölü doğuyordu). Karar değişince
+          // frame kanıtı da temizlenmeli — Mami yeni karar için yeni kareyi yeniden onaylar.
           set((s) => ({
-            scenes: s.scenes.map((candidate) => candidate.id === sceneId ? imported.scene : candidate),
+            scenes: s.scenes.map((candidate) => {
+              if (candidate.id !== sceneId) {
+                return directivesChanged ? { ...candidate, frameReceipt: undefined } : candidate;
+              }
+              return directivesChanged ? { ...imported.scene, frameReceipt: undefined } : imported.scene;
+            }),
             liveMamiDirectives: imported.liveMamiDirectives,
             shotApprovals: directivesChanged ? {} : s.shotApprovals,
             lastError: null,
@@ -1781,7 +1796,17 @@ export const useStudioStore = create<StudioState>()(
                 ...scene,
                 ...(evidence.agentPrompt != null ? { userImagePrompt: evidence.agentPrompt } : {}),
                 ...(evidence.promptReceipt ? { promptReceipt: evidence.promptReceipt } : {}),
-                ...(evidence.frameReceipt ? { frameReceipt: evidence.frameReceipt } : {}),
+                // HARD-FIX 2026-07-17 (G3, ordu KÖK-B): pack GÖRSEL BAYTINI taşımaz — yalnız
+                // receipt'i (frameHash + boyut). verifyProjectPack hash'in FORMAT'ını doğrular,
+                // gerçek pixel'i karşılaştıramaz (pixel yok). Bu yüzden import edilen bir
+                // APPROVE frame "onaylı gerçek kare" SAYILMAZ: verdict PROJECT_ONLY_ACCEPT'e
+                // düşürülür → motion kapısı otomatik AÇILMAZ (frameGate:489). Mami başka cihazda
+                // gerçek görseli yeniden yükleyip APPROVE eder; o zaman gerçek bayt-hash hesaplanır.
+                ...(evidence.frameReceipt
+                  ? { frameReceipt: evidence.frameReceipt.verdict === 'APPROVE'
+                      ? { ...evidence.frameReceipt, verdict: 'PROJECT_ONLY_ACCEPT' as const }
+                      : evidence.frameReceipt }
+                  : {}),
               };
             }),
           }));
