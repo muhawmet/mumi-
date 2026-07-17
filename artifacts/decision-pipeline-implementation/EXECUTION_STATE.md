@@ -1,5 +1,16 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+> **✅ 2026-07-17 GECE — 3 FIX TURU TAMAM (24+ hata), CLEAR'A HAZIR.** Commit zinciri:
+> `416560e` (scan drift) → `c5680dd` (9 fix) → `df3bea4` (G1-G6 6 kök-fix) — hepsi origin/main'e
+> push'lu, çalışma ağacı TERTEMİZ. Garanti denetçiler: 9-fix turunda 2 bulgu (kapatıldı),
+> G-turunda 6/6 SAĞLAM. Kapı: tsc 0 · vitest **2016/2016 (80 dosya)** · build OK · E2E 15/15 ·
+> runner mirror byte-identical · agents-sync OK. gate.sh kalite duvarı RESTORE edildi (commit'te
+> tsc/vitest/build koşar). **AÇIK LEDGER (sonraki tur):** memory `project-mamilas-makro-ledger` —
+> M1 verifyProjectPack hash-içerik ankrajı (KRİTİK, forge koşuldu) + M2 jüri verdict öz-beyan (ORTA),
+> ikisi de KÖK-B; makro ordu `wf_3acfcb9a-12c` usage'da kesildi, resume edilebilir. Site-regex ölü
+> kanalı bilerek dokunulmadı (Mami: aptal regex yasak). Dürüst durum: implementation complete /
+> visual validation pending — gerçek 12-sahne + kare hükmü Mami'nin.
+
 > **✅ HARD-FIX RUN TAMAM (2026-07-16 akşam):** Codex'in 27-madde CLI-akış raporu
 > (`~/Desktop/MAMILAS-YERLESIK-YONETMEN-CLI-AKIS-RAPORU.md`) tek temiz run'da kapandı.
 > Teslim: `HARDFIX-TESLIM-2026-07-16.md`. Commit'ler: `0fcf7e9`(B+D) `d9f43cd`(C)
