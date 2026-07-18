@@ -1,6 +1,6 @@
 import { canonicalize, canonicalHash, sha256Hex } from './contract';
 import { DATA, worldPacketById } from './pure';
-import { ingestSource, sourceIntegrity } from './source';
+import { ingestSource, sourceHash, sourceIntegrity } from './source';
 import type { StudioState, Scene, ShotApproval, PromptReceipt, SceneFrameReceipt } from '../store/useStudioStore';
 import { validatedLiveDirectives, type MamiDirective } from './agentProtocol';
 
@@ -188,6 +188,13 @@ export interface PackVerification {
   problems: string[];
   /** V2026 (legacy) pack mı — read-only import? */
   legacy: boolean;
+  /**
+   * MOD-B kanıtı: KAYNAĞI pack'te taşınmayan, bu yüzden içerikten yeniden türetilip
+   * eşitlenemeyen (yalnız format-geçerli) hash'ler. `ok` bunlara rağmen true olabilir
+   * AMA bu evidence sessizce güvenilmez — çağıran (UI/pack tüketicisi) bunları "zayıf/
+   * doğrulanamayan kanıt" olarak göstermek zorundadır. Boş dizi = her kanıt ankrajlı.
+   */
+  unverifiableEvidence: string[];
 }
 
 /**
@@ -196,14 +203,15 @@ export interface PackVerification {
  */
 export function verifyProjectPack(value: unknown): PackVerification {
   const problems: string[] = [];
-  if (!value || typeof value !== 'object') return { ok: false, problems: ['Pack bir nesne değil.'], legacy: false };
+  const unverifiableEvidence: string[] = [];
+  if (!value || typeof value !== 'object') return { ok: false, problems: ['Pack bir nesne değil.'], legacy: false, unverifiableEvidence };
   const pack = value as Partial<ProjectPack> & { schema?: string };
 
   // Legacy: eski V2026 snapshot/vault — schema yok ama proje alanları var.
   if (pack.schema !== PROJECT_PACK_SCHEMA) {
     const looksLegacy = pack.schema == null
       && ('selectedWorldId' in (value as object) || 'projectTopic' in (value as object));
-    return { ok: looksLegacy, problems: looksLegacy ? [] : ['Bilinmeyen pack biçimi.'], legacy: looksLegacy };
+    return { ok: looksLegacy, problems: looksLegacy ? [] : ['Bilinmeyen pack biçimi.'], legacy: looksLegacy, unverifiableEvidence };
   }
 
   const isRecord = (candidate: unknown): candidate is Record<string, unknown> =>
@@ -215,7 +223,7 @@ export function verifyProjectPack(value: unknown): PackVerification {
   if (!isRecord(pack.shotApprovals)) problems.push('Shot approvals nesnesi yok veya geçersiz.');
   if (!Array.isArray(pack.scenes)) problems.push('Scenes dizisi yok veya geçersiz.');
   if (!isRecord(pack.manifest)) problems.push('Manifest yok veya geçersiz.');
-  if (problems.length) return { ok: false, problems, legacy: false };
+  if (problems.length) return { ok: false, problems, legacy: false, unverifiableEvidence };
 
   const decision = pack.decision as ProjectPack['decision'];
   const source = pack.source as ProjectPack['source'];
@@ -227,11 +235,38 @@ export function verifyProjectPack(value: unknown): PackVerification {
       || (decision.recipeScenes != null && !Array.isArray(decision.recipeScenes))) {
     problems.push('Decision zorunlu alanları geçersiz.');
   }
-  if (!source.beats.every((beat) => beat && typeof beat.sourceId === 'string' && typeof beat.exactText === 'string'
-      && (beat.start == null || Number.isInteger(beat.start))
-      && (beat.end == null || Number.isInteger(beat.end))
-      && typeof beat.hash === 'string')) {
+  const beatsWellShaped = source.beats.every((beat) => beat && typeof beat.sourceId === 'string' && typeof beat.exactText === 'string'
+    && (beat.start == null || Number.isInteger(beat.start))
+    && (beat.end == null || Number.isInteger(beat.end))
+    && typeof beat.hash === 'string');
+  if (!beatsWellShaped) {
     problems.push('Source beat shape geçersiz.');
+  } else {
+    // M1 MOD-A — beat.hash İÇERİK-ANKRAJI. beat.hash pack'te taşınıyor ve KAYNAĞI
+    // (exactText) da pack'te var → format değil İÇERİK doğrulanır: hash exactText'ten
+    // yeniden türetilip eşitlenir. `sourceHash` beats'i mühürleyen tek fonksiyondur
+    // (source.ts / store), aynı türetimle yalan hash yakalanır. `promptHash===sha256Hex`
+    // ile aynı desen — orada çalışan ankraj, burada da.
+    //
+    // KAPSAM NOTU: erken v1 pack'leri (legacy-hash placeholder + span'sız) bu ankrajdan
+    // MUAF — o writer beats'i sourceHash ile mühürlemiyordu; anchor yalnız beats span
+    // taşıyorsa (yani mevcut writer'ın ürettiği pack) uygulanır. projectPackToState o
+    // eski pack'leri zaten rawSource'tan yeniden ingest ediyor.
+    const hasSpans = source.beats.every((beat) => Number.isInteger(beat.start) && Number.isInteger(beat.end));
+    if (hasSpans) {
+      const mismatched = source.beats.filter((beat) => beat.hash !== sourceHash(beat.exactText)).map((beat) => beat.sourceId);
+      if (mismatched.length) {
+        problems.push(`Scene beat hash içerik ile uyuşmuyor (${mismatched.join(', ')}) — hash exactText'ten türemiyor.`);
+      }
+      // Beat bütünlüğü: birleştirilmiş exactText'ler rawSource'u KARAKTER KARAKTER
+      // yeniden kurmalı. sourceIntegrity zaten var ama verify onu HİÇ çağırmıyordu →
+      // forge edilmiş bir beat metni (kendi hash'iyle tutarlı bile olsa) rawSource'la
+      // uyuşmazsa burada yakalanır.
+      const integrity = sourceIntegrity(source.rawSource, source.beats);
+      if (!integrity.ok) {
+        problems.push(`Source kaynak bütünlüğü bozuk — beat'ler rawSource'u yeniden kurmuyor (coverage %${integrity.coverage}, rawHash ${integrity.rawHash} ≠ recon ${integrity.reconHash}).`);
+      }
+    }
   }
   if (!scenes.every((scene) => scene && Number.isInteger(scene.id) && scene.id > 0
       && (scene.agentPrompt == null || typeof scene.agentPrompt === 'string')
@@ -287,7 +322,7 @@ export function verifyProjectPack(value: unknown): PackVerification {
   }
 
   const m = pack.manifest;
-  if (!m) return { ok: false, problems: ['Manifest yok.'], legacy: false };
+  if (!m) return { ok: false, problems: ['Manifest yok.'], legacy: false, unverifiableEvidence };
   if (typeof m.decisionHash !== 'string' || typeof m.sourceHash !== 'string'
       || typeof m.approvalsHash !== 'string' || typeof m.scenesHash !== 'string'
       || typeof m.packHash !== 'string') {
@@ -307,7 +342,28 @@ export function verifyProjectPack(value: unknown): PackVerification {
   if (pack.projectId !== `mamilas-${m.packHash}`) problems.push('projectId packHash ile uyuşmuyor.');
   if (pack.worldPacket && pack.worldPacket.id !== decision.selectedWorldId) problems.push('WorldPacket seçili dünya ile uyuşmuyor.');
 
-  return { ok: problems.length === 0, problems, legacy: false };
+  // M1 MOD-B — DOĞRULANAMAYAN KANIT DAMGASI. Aşağıdaki hash'lerin KAYNAĞI pack'te
+  // taşınmaz (artifact/jury/protocol/storyboard gövdeleri pack'e girmez; frame pixel'i
+  // hiç taşınmaz) → içerikten yeniden türetip eşitlemek İMKÂNSIZ. Format-geçerli olmaları
+  // (64-hex) provenance'ı DEĞİL yalnız biçimi kanıtlar. Bunlar sessizce güvenilemez:
+  // "bu evidence zayıf/format-only" sinyali olarak açıkça işaretlenir (unverifiableEvidence).
+  // Şekil kusuru (yukarıda problems'e yazıldı) ile karıştırılmamalı — burası ŞEKLİ geçen
+  // ama İÇERİĞİ pack'ten doğrulanamayan hash'lerin envanteridir.
+  const hex64 = (v: unknown): v is string => typeof v === 'string' && /^[0-9a-f]{64}$/.test(v);
+  for (const scene of scenes) {
+    const receipt = scene.promptReceipt;
+    if (receipt) {
+      if (hex64(receipt.artifactHash)) unverifiableEvidence.push(`Scene ${scene.id} artifactHash format-only — kaynağı pack'te yok, recompute imkânsız (MOD-B).`);
+      if (hex64(receipt.juryArtifactHash)) unverifiableEvidence.push(`Scene ${scene.id} juryArtifactHash format-only — kaynağı pack'te yok, recompute imkânsız (MOD-B).`);
+      if (hex64(receipt.protocolHash)) unverifiableEvidence.push(`Scene ${scene.id} protocolHash format-only — protokol metni pack'te taşınmaz (MOD-B).`);
+      if (hex64(receipt.storyboardHash)) unverifiableEvidence.push(`Scene ${scene.id} storyboardHash format-only — storyboard gövdesi pack'te taşınmaz (MOD-B).`);
+    }
+    if (scene.frameReceipt && hex64(scene.frameReceipt.frameHash)) {
+      unverifiableEvidence.push(`Scene ${scene.id} frameHash format-only — pack görsel baytı taşımaz, piksel doğrulanamaz (MOD-B).`);
+    }
+  }
+
+  return { ok: problems.length === 0, problems, legacy: false, unverifiableEvidence };
 }
 
 /**

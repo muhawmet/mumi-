@@ -4,6 +4,7 @@ import type { Scene, SceneFrameReceipt } from '../store/useStudioStore';
 import { buildProjectPack, serializeProjectPack, verifyProjectPack, projectPackToState, buildCloseout, PROJECT_PACK_SCHEMA, CLOSEOUT_SCHEMA } from './projectPack';
 import { DATA, worldPacketById } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
+import { sourceHash } from './source';
 import { liveDirectiveId } from './agentProtocol';
 
 /**
@@ -310,5 +311,96 @@ describe('MACRO 7 — closeout: karar→prompt→frame zinciri; dersler OTOMATİ
     expect(co.chain.find((c) => c.sceneId === 1)?.status).toBe('STALE_EVIDENCE');
     expect(co.summary.approvedFrames).toBe(0);
     expect(co.summary.staleEvidence).toBe(1);
+  });
+});
+
+// ============================================================================
+// M1 — HASH-İÇERİK ANKRAJI (KÖK-B: "gate içeriği değil formatı doğruluyor").
+//
+// Kök neden (koşarak kanıtlandı): verify beat.hash'i yalnız `typeof === 'string'`
+// ile kabul ediyordu → sahte beat.hash + hatta uydurma exactText temiz geçiyordu.
+// Yasa: bir hash pack'te taşınıyorsa VE kaynağı da pack'te varsa → verify onu HAM
+// İÇERİKTEN yeniden türetip eşitler (MOD-A). Kaynağı olmayan hash'ler (frame pixel,
+// artifact bundle) MOD-B'de kalır ve AÇIKÇA 'unverifiable/format-only' işaretlenir.
+//
+// Bu dört probe [[mamilas-test-suite-is-hollow]] dersinin gereği: format-only test
+// hiçbir şeyi korumaz; her yeni ankraj bir FORGE-PROBE mutasyonu ile kilitlenir.
+// ============================================================================
+
+/** Kaynak-taşıyan pack: setupProject + gerçek rawSource ingest'i (beat.hash içerik-ankrajlı). */
+function setupSourcedProject() {
+  setupProject();
+  useStudioStore.setState({ rawSource: 'Su buharlaşır. Bulut oluşur. Yağmur düşer.' });
+  useStudioStore.getState().ingestRawSource();
+}
+
+/** Manifest'i verilen (kurcalanmış) gövdeye göre yeniden mühürler — format-geçerli kalsın diye. */
+function reseal(pack: ReturnType<typeof buildProjectPack>) {
+  pack.manifest.decisionHash = canonicalHash(pack.decision);
+  pack.manifest.sourceHash = canonicalHash(pack.source);
+  pack.manifest.worldPacketHash = pack.worldPacket ? canonicalHash(pack.worldPacket) : null;
+  pack.manifest.approvalsHash = canonicalHash(pack.shotApprovals);
+  pack.manifest.scenesHash = canonicalHash(pack.scenes);
+  pack.manifest.packHash = canonicalHash({
+    decision: pack.decision, source: pack.source, worldPacket: pack.worldPacket,
+    shotApprovals: pack.shotApprovals, scenes: pack.scenes,
+  });
+  pack.projectId = `mamilas-${pack.manifest.packHash}`;
+}
+
+describe('M1 — verifyProjectPack hash-içerik ankrajı (forge-probe kilidi)', () => {
+  test('CONTROL: kaynak-taşıyan sağlam pack yeşil geçer', () => {
+    setupSourcedProject();
+    const pack = buildProjectPack(useStudioStore.getState());
+    expect(pack.source.beats.length).toBeGreaterThan(1); // gerçek beat'ler var
+    const v = verifyProjectPack(pack);
+    expect(v.ok).toBe(true);
+    expect(v.problems).toEqual([]);
+  });
+
+  test('ATTACK beatHashLie: exactText aynı, beat.hash yalanı → REDDEDİLİR', () => {
+    setupSourcedProject();
+    const pack = buildProjectPack(useStudioStore.getState());
+    // exactText'e DOKUNMA; yalnız hash'i başka bir metnin hash'iyle değiştir.
+    pack.source.beats[0].hash = sourceHash('TAMAMEN UYDURMA BAŞKA METİN');
+    reseal(pack); // manifest hâlâ format-geçerli — yalnız içerik-ankrajı yakalamalı
+    const v = verifyProjectPack(pack);
+    expect(v.ok).toBe(false);
+    expect(v.problems.join(' ')).toMatch(/beat hash içerik ile uyuşmuyor/i);
+  });
+
+  test('ATTACK exactTextForge: beat metni uydurulup hash de ona uydurulur → REDDEDİLİR', () => {
+    setupSourcedProject();
+    const pack = buildProjectPack(useStudioStore.getState());
+    // Saldırgan hem metni hem beat.hash'i tutarlı forge ediyor: beat.hash === sourceHash(exactText)
+    // geçebilir AMA rawSource ile reconstruction artık uyuşmaz (sourceIntegrity yakalamalı).
+    pack.source.beats[0].exactText = 'Casus metin buraya girdi.';
+    pack.source.beats[0].hash = sourceHash(pack.source.beats[0].exactText);
+    reseal(pack);
+    const v = verifyProjectPack(pack);
+    expect(v.ok).toBe(false);
+    expect(v.problems.join(' ')).toMatch(/kaynak bütünlüğü|rawSource/i);
+  });
+
+  test('FORGE artifactHashes: rastgele format-geçerli hex "unverifiable" işaretlenir (sessiz güven yok)', () => {
+    setupSourcedProject();
+    const pack = buildProjectPack(useStudioStore.getState());
+    // artifactHash/juryArtifactHash gibi hash'lerin KAYNAĞI pack'te taşınmıyor → recompute
+    // imkânsız (MOD-B). Ama sessizce güvenilmemeli: verify bu evidence'ı zayıf/format-only
+    // olarak açıkça işaretlemeli.
+    const v = verifyProjectPack(pack);
+    expect(v.unverifiableEvidence.length).toBeGreaterThan(0);
+    expect(v.unverifiableEvidence.join(' ')).toMatch(/artifactHash|format-only|recompute/i);
+  });
+
+  test('PROMPTHASH_LIE kontrastı: çalışan ankraj hâlâ çalışıyor (promptHash≠sha256(finalPrompt))', () => {
+    setupSourcedProject();
+    const pack = buildProjectPack(useStudioStore.getState());
+    // Bu ankraj zaten çalışıyordu; content-anchor genişletmesi onu BOZMAMALI.
+    pack.scenes[0].promptReceipt!.promptHash = sha256Hex('yanlış prompt');
+    reseal(pack);
+    const v = verifyProjectPack(pack);
+    expect(v.ok).toBe(false);
+    expect(v.problems.join(' ')).toMatch(/prompt receipt uyuşmuyor/i);
   });
 });

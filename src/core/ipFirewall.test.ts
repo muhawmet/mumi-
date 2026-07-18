@@ -81,6 +81,39 @@ describe('runtime negatif probe — hash-valid artifact sızıntıyla mühürlen
   });
 });
 
+// ============================================================================
+// M2 (2026-07-18) — PROMPT SURGEON runtime negatif probe. Kök: mjs validateRoleContent
+// jüri PASS'i (ayrı artifact) + boş-olmayan evidence gördü mü kabul ediyordu; author
+// prompt'un ölçülebilir bir rejectIf (AI-slop) taşıyıp taşımadığına BAKMIYORDU →
+// `verdict:'PASS', evidence:['ok']` bir slop-prompt'u aklayabiliyordu. Fix: author
+// artifact'i prompt'u SURGEON'dan geçer; slop tetiklenirse artifact kırmızı, jüri PASS
+// onu kurtaramaz. agentProtocol.ts verifyAgentArtifact ile FONKSİYONEL PARİTE.
+// ============================================================================
+describe('runtime negatif probe — jüri PASS ölçülebilir slop\'u aklayamaz (mjs)', () => {
+  it('image_author final promptunda AI-slop → validateRoleContent kırmızı', async () => {
+    const runner = await runnerModule();
+    const prompt = 'A thermos, masterpiece, ultra-detailed, trending on artstation, 8k.';
+    const problems = runProbe(runner, 'image_author', prompt);
+    expect(problems.join(' ')).toMatch(/AI-slop \(surgeon\)/);
+    expect(problems.join(' ')).toMatch(/masterpiece/);
+  });
+
+  it('motion_author gövdesinde slop → kırmızı; NEGATIVE prohibition satırı muaf', async () => {
+    const runner = await runnerModule();
+    const dirty = runProbe(runner, 'motion_author', 'Thermos rotates, cinematic lighting, breathtaking.');
+    expect(dirty.join(' ')).toMatch(/AI-slop \(surgeon\)/);
+    const clean = runProbe(runner, 'motion_author', 'Thermos rotates slowly.\nNEGATIVE: masterpiece, cinematic lighting, 8k');
+    expect(clean.filter((p: string) => p.includes('AI-slop'))).toEqual([]);
+  });
+
+  it('temiz zanaat promptu slop problemi ÜRETMEZ', async () => {
+    const runner = await runnerModule();
+    const prompt = 'A weathered fisherman grips the mooring rope; one motivated key light from the low sun; 35mm.';
+    const problems = runProbe(runner, 'image_author', prompt);
+    expect(problems.filter((p: string) => p.includes('AI-slop'))).toEqual([]);
+  });
+});
+
 // validateRoleContent'i minimum geçerli iskeletle sürer — yalnız firewall'un
 // problems dizisine yazıp yazmadığını ölçer (diğer alan hataları beklenir ve filtrelenmez;
 // firewall satırı spesifik arandığı için sahte yeşil imkânsız).

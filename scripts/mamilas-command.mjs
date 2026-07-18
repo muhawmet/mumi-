@@ -94,6 +94,35 @@ export function firewallHitsIn(text) {
   for (const match of text.matchAll(FW_WORK_TITLE_RE)) hits.push(match[0]);
   return Array.from(new Set(hits));
 }
+// ==================== PROMPT SURGEON — runtime ikiz (M2) ====================
+// src/core/qa.ts scanPromptSurgeon'un runtime aynası. Jüri PASS'i (öz-beyan) author
+// prompt'unun kod-ölçülebilir bir rejectIf (AI-slop) taşımasını MEŞRULAŞTIRAMAZ:
+// jüri ayrı artifact, PASS provenance değil correctness iddiasıdır. Bu tespit
+// deterministik ve nötr — SLOP_RE + motion soyucu qa.ts ile BİREBİR aynı desen
+// (parite elle korunur; agentProtocol.test.ts + commandRuntime.test.ts iki yüzeyi de sürer).
+// Hex zaten aşağıda ayrı regex ile yakalanıyor (image prompt workflow/hex leak) → burada
+// yalnız AI-slop taranır, çift-bayrak yok.
+const SLOP_RE = /\b(masterpiece|ultra[- ]?detailed|award[- ]?winning|8k|4k|trending on artstation|best quality|highly detailed|stunning|breathtaking|jaw[- ]?dropping|mind[- ]?blowing|ultra[- ]?realistic|hyper[- ]?realistic|octane render|unreal engine|cinematic (?:lighting|shot|feel|look|quality|masterpiece)|dynamic (?:lighting|shot|angle|pose|composition)|epic (?:scale|shot|scene|lighting))\b/gi;
+
+function stripExemptMotionLines(motionPrompt) {
+  return (motionPrompt || '')
+    .split('\n')
+    .filter((line) => !line.trim().startsWith('NEGATIVE:'))
+    .map((line) => line
+      .replace(/Engine grammar \([^)]*\):.*?(?=Everything not named|$)/, '')
+      .replace(/source beat "[^"]*" \[SOURCE —[^\]]*\]/, 'source beat [SOURCE-QUOTE-EXEMPT]'))
+    .join('\n');
+}
+
+// Tek prompt'ta AI-slop token'ları. motion=true → motion muafiyet soyucusu; image için
+// 'Negative: ' kuyruğu taranmaz (qa.ts ile aynı sıra). Render-lock hex muafiyeti burada
+// GEREKMEZ: slop'un lock içinde meşru geçişi yok, hex zaten ayrı kapıda.
+function surgeonSlopHits(prompt, motion) {
+  const text = prompt || '';
+  const slopScan = motion ? stripExemptMotionLines(text) : text.split(/\bNegative:\s/)[0];
+  return Array.from(new Set((slopScan.match(SLOP_RE) || []).map((t) => t.toLowerCase())));
+}
+
 const isAnimationWorld = (world) => Boolean(world?.group && /ANIMATION|STYLIZED/i.test(world.group));
 const isPhotorealWorld = (world) => Boolean(world?.group && /REAL|CINEMATIC|COMMERCIAL/i.test(world.group));
 
@@ -315,6 +344,9 @@ function validateRoleContent(artifact, command) {
     // ve hash geçerliliği korumalı kimlik/marka sızıntısını meşrulaştıramaz.
     const imageFirewallHits = firewallHitsIn(content.prompt ?? '');
     if (imageFirewallHits.length) problems.push(`image prompt IP firewall: ${imageFirewallHits.join(', ')}`);
+    // M2: PROMPT SURGEON AI-slop çapraz-kontrolü — agentProtocol.ts verifyAgentArtifact ikizi.
+    const imageSlop = surgeonSlopHits(content.prompt ?? '', false);
+    if (imageSlop.length) problems.push(`image prompt AI-slop (surgeon): ${imageSlop.join(', ')}`);
   } else if (artifact.role === 'motion_author') {
     if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('motion prompt');
     if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('motion promptHash');
@@ -323,6 +355,9 @@ function validateRoleContent(artifact, command) {
     if (typeof content.frameHash !== 'string') problems.push('motion frameHash');
     const motionFirewallHits = firewallHitsIn(content.prompt ?? '');
     if (motionFirewallHits.length) problems.push(`motion prompt IP firewall: ${motionFirewallHits.join(', ')}`);
+    // M2: motion author prompt'u da SURGEON'dan geçer (motion muafiyet soyucusuyla).
+    const motionSlop = surgeonSlopHits(content.prompt ?? '', true);
+    if (motionSlop.length) problems.push(`motion prompt AI-slop (surgeon): ${motionSlop.join(', ')}`);
   } else if (String(artifact.role || '').endsWith('_jury')) {
     const verdict = content.verdict;
     if (!JURY.has(verdict)) problems.push('jury verdict');

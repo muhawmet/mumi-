@@ -71,6 +71,47 @@ export function renderLockTextFor(state: StudioState): string {
   return lock;
 }
 
+// ==================== PROMPT SURGEON — SAF, ÇAĞRILABİLİR ÇEKİRDEK ====================
+//
+// M2 (2026-07-18): CHECK 1 (hex-outside-lock) + CHECK 2 (AI-slop) DEDEKSİYONU state'ten
+// ayrıştırılıp saf bir fonksiyona çıkarıldı. Amaç: aynı deterministik lint'i hem
+// `evaluateDirectorCabinet` (sahne bazlı) hem `verifyAgentArtifact` (jüri PASS'ini
+// author prompt'una karşı çapraz-kontrol) çağırabilsin. contentHash PROVENANCE'ı
+// kanıtlar, bu lint CORRECTNESS'i: jüri PASS dese bile prompt kod-ölçülebilir bir
+// rejectIf (ham hex / AI-slop) taşıyorsa artifact reddedilir.
+//
+// DAVRANIŞ DEĞİŞMEZ: cabinet evidence string'lerini KENDİ üretmeye devam eder; bu fn
+// yalnız "hangi hex/slop token'ı sızdı" DEDEKSİYONUNU döndürür (mevcut qa testleri yeşil
+// kalır). runner (mamilas-command.mjs) bu mantığın İKİZİNİ taşır — parite elle korunur.
+
+export interface PromptSurgeonScan {
+  /** Render-lock DIŞINDA kalan ham hex token'ları (Palette Translation Law ihlali). */
+  hexHits: string[];
+  /** Yasak AI-slop dolgu token'ları (Negative/NEGATIVE prohibition satırları muaf). */
+  slopHits: string[];
+}
+
+/**
+ * Tek bir prompt'u (image veya motion) deterministik tarar. `lockText` verilirse
+ * render-lock bloğu hex/slop taramasından ÖNCE soyulur (verbatim kontrat, meşru hex
+ * taşıyabilir). motion=true ise motion muafiyet soyucusu (NEGATIVE + Engine grammar +
+ * SOURCE-alıntı) uygulanır. State YOK — yalnız string girdi, findings çıktı.
+ */
+export function scanPromptSurgeon(
+  prompt: string,
+  opts: { lockText?: string; motion?: boolean } = {},
+): PromptSurgeonScan {
+  const text = prompt || '';
+  const { lockText, motion } = opts;
+  // Hex/slop taramasından önce muafiyetleri soy — cabinet ile BİREBİR aynı sıra.
+  const sansLock = lockText ? text.split(lockText).join(' ') : text;
+  const hexScan = motion ? text : sansLock;
+  const hexHits = Array.from(new Set(hexScan.match(HEX_RE) || []));
+  const slopScan = motion ? stripExemptMotionLines(text) : sansLock.split(/\bNegative:\s/)[0];
+  const slopHits = Array.from(new Set((slopScan.match(SLOP_RE) || []).map((t) => t.toLowerCase())));
+  return { hexHits, slopHits };
+}
+
 // Motion-prompt muafiyet soyucusu (CHECK 2 slop + CHECK 4 trigger ortak kullanır):
 // NEGATIVE: satırı ve 'Engine grammar (' cümlesi taramadan düşer — ikisi de yasak
 // kelimeleri PROHİBİSYON olarak meşru şekilde adlandırır (motor yasası, model çıktısı değil).
@@ -337,15 +378,21 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
     for (const s of scenes) {
       const img = s.imagePrompt || '';
       const mot = s.motionPrompt || '';
-      // The render-lock block is a verbatim contract and MAY contain hex — strip it first.
-      const imgSansLock = lockText ? img.split(lockText).join(' ') : img;
+
+      // CHECK 1+2 — image ve motion prompt'ları saf çekirdekle tara (M2 extraction).
+      // Muafiyetler (render-lock strip / motion soyucu) çekirdeğin İÇİNDE, cabinet ile
+      // birebir aynı sıra. Aşağıdaki merge cabinet'in eski davranışını KORUR: hex için
+      // image(lock-strip)+motion birleşik uniq; slop için image(lock-strip,Negative-cut)
+      // +motion(soyucu) birleşik lowercase uniq.
+      const imgScan = scanPromptSurgeon(img, { lockText });
+      const motScan = scanPromptSurgeon(mot, { motion: true });
 
       // CHECK 1 — HEX LEAK (medium): raw hex violates the Palette Translation Law.
-      const hexHits = [...(imgSansLock.match(HEX_RE) || []), ...(mot.match(HEX_RE) || [])];
+      const hexHits = Array.from(new Set([...imgScan.hexHits, ...motScan.hexHits]));
       if (hexHits.length > 0) {
         psHasMedium = true;
         psSceneIds.add(s.id);
-        const uniq = Array.from(new Set(hexHits));
+        const uniq = hexHits;
         psEvidence.push(`Sahne ${s.id}: Ham hex sızıntısı — ${uniq.map((h) => `'${h}'`).join(', ')} (render lock dışında). Motorlar hex okumaz.`);
         psEvidence.push(`FIX (Sahne ${s.id}): ${uniq.map((h) => `'${h}' → '${hexToLightWords(h)} light'`).join('; ')} — fiziksel ışık dili olarak yaz.`);
       }
@@ -353,12 +400,8 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
       // CHECK 2 — AI-SLOP STACKING (medium): banned filler tokens in either prompt.
       // The prompts' own Negative/NEGATIVE lines legitimately NAME slop tokens in
       // order to forbid them ("empty adjectives (cinematic, dynamic, stunning, 4K)")
-      // — prohibition lines are exempt from the slop scan.
-      // Image: render-lock bloğu (CHECK 1 ile aynı muafiyet) + 'Negative: ' kuyruğu taranmaz.
-      const slopScanImg = imgSansLock.split(/\bNegative:\s/)[0];
-      // Motion: NEGATIVE satırı + Engine grammar cümlesi taranmaz (CHECK 4 ile ortak soyucu).
-      const slopScanMot = stripExemptMotionLines(mot);
-      const slopHits = Array.from(new Set([...(slopScanImg.match(SLOP_RE) || []), ...(slopScanMot.match(SLOP_RE) || [])].map((t) => t.toLowerCase())));
+      // — prohibition lines are exempt from the slop scan (çekirdek uygular).
+      const slopHits = Array.from(new Set([...imgScan.slopHits, ...motScan.slopHits]));
       if (slopHits.length > 0) {
         psHasMedium = true;
         psSceneIds.add(s.id);

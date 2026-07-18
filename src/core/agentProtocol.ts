@@ -2,6 +2,7 @@ import PROTOCOL_TEXT from '../../agents/PROTOCOL.md?raw';
 import MINED_JSON from '../../agents/promptQuality.mined.json';
 import { canonicalHash, sha256Hex } from './contract';
 import { engineDialect, engineUsableSec } from './engine';
+import { scanPromptSurgeon } from './qa';
 
 export const AGENT_PROTOCOL_VERSION = 'mamilas.agent-protocol.v1' as const;
 export const AGENT_ARTIFACT_SCHEMA = 'mamilas.agent-artifact.v1' as const;
@@ -314,12 +315,25 @@ export function verifyAgentArtifact(
     if (!Array.isArray(content?.appliedLocks) || content.appliedLocks.length === 0) problems.push('appliedLocks yok');
     if (!Array.isArray(content?.suppressedContext) || !Array.isArray(content?.risks)) problems.push('image receipt listeleri eksik');
     if (/\[DIRECTOR TASK\]|\bTODO\b|#[0-9a-f]{3,8}\b/i.test(content?.prompt ?? '')) problems.push('image prompt workflow/hex leak');
+    // M2 — PROMPT SURGEON çapraz-kontrolü. Jüri PASS'i (ayrı artifact) CORRECTNESS'i
+    // kanıtlamaz; author prompt'u kod-ölçülebilir bir rejectIf taşıyorsa artifact burada
+    // reddedilir. Hex zaten yukarıda yakalanıyor → burada YALNIZ AI-slop (yeni ölçülebilir
+    // rejectIf). Not: verify'da state yok → lockText verilmez; author prompt final prompt
+    // olduğundan hex muafiyeti bu katmanda uygulanmaz (mevcut :316 hex kapısıyla tutarlı).
+    // Ölçülemeyen kontrat maddeleri (dünya DNA sadakati vb.) jüri agentAsserted alanında
+    // GÖRÜNÜR kalır — bu kod yalnız DETERMİNİSTİK ölçülebilir maddeyi enforce eder.
+    const imgSlop = scanPromptSurgeon(content?.prompt ?? '').slopHits;
+    if (imgSlop.length) problems.push(`image prompt AI-slop (surgeon): ${imgSlop.join(', ')}`);
   } else if (a.role === 'motion_author') {
     const content = a.content as MotionAuthorContent;
     if (content?.frameHash !== expected.frameHash) problems.push('motion frameHash stale');
     if (!content?.prompt?.trim() || content.promptHash !== sha256Hex(content.prompt ?? '')) problems.push('motion prompt/hash geçersiz');
     if (!Array.isArray(content?.inventory) || content.inventory.length === 0) problems.push('motion inventory yok');
     if (!Array.isArray(content?.risks)) problems.push('motion risks yok');
+    // M2 — motion author prompt'u da SURGEON'dan geçer (motion muafiyet soyucusuyla):
+    // NEGATIVE satırı / Engine grammar / SOURCE-alıntı düşer, geri kalan gerçek slop taranır.
+    const motSlop = scanPromptSurgeon(content?.prompt ?? '', { motion: true }).slopHits;
+    if (motSlop.length) problems.push(`motion prompt AI-slop (surgeon): ${motSlop.join(', ')}`);
   }
   return { ok: problems.length === 0, problems };
 }
