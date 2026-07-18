@@ -620,6 +620,13 @@ export interface StudioState {
   isGenerating: boolean;
   lastError: string | null;
   /**
+   * P6 — import edilen pack'in doğrulanamayan (format-only) kanıt uyarısı. verifyProjectPack
+   * MOD-B hash'lerini (artifact/jury/protocol/storyboard/frame — kaynağı pack'te yok) burada
+   * görünür kılar; import başarılı olur ama Mami "bu kanıt zayıf" sinyalini görür. null = hepsi
+   * doğrulanabilir ya da henüz import yapılmadı.
+   */
+  packEvidenceNotice: string[] | null;
+  /**
    * Typed FACT REQUIRED'lar (handoff §6). generateBatch BLOCKED dönünce typed blocker'lar
    * BURADA yaşar — `lastError` string'ine indirgenip KAYBOLMAZ. Site, runner, Claude ve Codex
    * aynı blocker'ı görür (Codex 5. tur: store bunları düşürüyordu).
@@ -775,6 +782,10 @@ const initial = {
   selectedSceneId: null as number | null,
   isGenerating: false,
   lastError: null as string | null,
+  // P6 — import edilen pack'te KAYNAĞI taşınmayan (format-only) hash'lerin görünür uyarısı.
+  // M1 sözleşmesi: verifyProjectPack.unverifiableEvidence sessizce düşürülemez. Bir HATA
+  // değil, "bu kanıt zayıf/doğrulanamaz" bildirimi → import başarılı olur ama Mami görür.
+  packEvidenceNotice: null as string[] | null,
   blockers: [] as Blocker[],
 
   beatMode: 'Dengeli' as BeatMode,
@@ -792,13 +803,16 @@ const initial = {
 };
 
 /** Cleared whenever the recipe or beat plan changes, so generated output never goes stale. */
-const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId' | 'shotApprovals'> = {
+const STALE_GENERATION: Pick<StudioState, 'scenes' | 'agentBrief' | 'agentPackets' | 'selectedSceneId' | 'shotApprovals' | 'packEvidenceNotice'> = {
   scenes: [],
   agentBrief: '',
   agentPackets: null,
   selectedSceneId: null,
   // Storyboard yeniden üretilince eski shot onayları artık geçersizdir — Mami yeniden onaylar.
   shotApprovals: {},
+  // P6 — import edilen "doğrulanamayan kanıt" uyarısı storyboard'a bağlıdır; karar değişip
+  // storyboard STALE olunca bu uyarı da düşer (aksi halde yanıltıcı biçimde ekranda asılı kalır).
+  packEvidenceNotice: null,
 };
 
 // Above this many sentence atoms, ingest auto-groups into thematic beats
@@ -1043,7 +1057,7 @@ export const useStudioStore = create<StudioState>()(
         const s = get();
         // Karar değişince storyboard STALE olur — onunla birlikte shot onayları da geçersizdir
         // (MACRO 4: onay karara bağlıdır). Mami yeniden onaylar.
-        const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null, shotApprovals: {} };
+        const clearGeneration = { scenes: [], agentBrief: '', agentPackets: null, selectedSceneId: null, lastError: null, shotApprovals: {}, packEvidenceNotice: null };
         if (field === 'selectedWorldId') {
           const worldId = normalizeWorldId(String(value));
           const world = DATA.worlds.find((item) => item.id === worldId);
@@ -1759,7 +1773,7 @@ export const useStudioStore = create<StudioState>()(
         try {
           const check = verifyProjectPack(parsed);
           if (!check.ok) {
-            set({ lastError: `Project pack doğrulanamadı: ${check.problems.join(' · ') || 'bilinmeyen biçim'}` });
+            set({ lastError: `Project pack doğrulanamadı: ${check.problems.join(' · ') || 'bilinmeyen biçim'}`, packEvidenceNotice: null });
             return;
           }
           if (check.legacy) {
@@ -1774,12 +1788,17 @@ export const useStudioStore = create<StudioState>()(
             return;
           }
           const state = projectPackToState(parsed as ProjectPack);
+          // P6 — M1 sözleşmesi: format-only (kaynağı pack'te taşınmayan) hash'ler sessizce
+          // güvenilemez. verifyProjectPack bunları unverifiableEvidence ile döndürür; burada
+          // görünür bir uyarıya taşıyoruz. Boşsa null (her kanıt doğrulanabilir).
+          const evidenceNotice = check.unverifiableEvidence.length ? [...check.unverifiableEvidence] : null;
           set((s) => ({
             ...initial,
             ...state,
             vault: s.vault,
             isGenerating: false,
             lastError: null,
+            packEvidenceNotice: evidenceNotice,
           }));
           // Pack evidence is useful only when it is reattached to the regenerated canonical
           // storyboard. Restoring decisions alone silently dropped prompt/frame receipts and made

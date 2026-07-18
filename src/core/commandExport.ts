@@ -1,4 +1,4 @@
-import { DATA, effectiveMaterialId, refCompatibleWithWorld, worldPacketById } from './pure';
+import { DATA, deriveProductionPath, effectiveMaterialId, refCompatibleWithWorld, worldPacketById } from './pure';
 import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, scrubRefFieldIP } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
@@ -136,12 +136,19 @@ function commandRoles() {
 export function buildCommandJSON(state: CommandStateWithPersonal) {
   const world = DATA.worlds.find((item) => item.id === state.selectedWorldId) ?? null;
   const palette = DATA.palettes.find((item) => item.id === state.selectedPaletteId) ?? null;
-  const path = DATA.paths.find((item) => item.id === state.projectClass) ?? null;
+  // P3/P4 — TEK KANON: path/register generateBatch ile AYNI türetimden gelir.
+  // Eskiden path=exact-match(projectClass) + register=registerOf(projectClass ham) idi;
+  // generateBatch ise deriveProductionPath(projectClass) kullanıyordu. Fuzzy bir class
+  // ('ders'→ANIMATION_EDU, 'REKLAM'→ULTRAREAL_COMMERCIAL) için command ile brief farklı
+  // path/register (dolayısıyla farklı DNA/materyal) taşıyordu. deriveProductionPath her
+  // zaman geçerli bir path id döndürür (fallback ANIMATION_EDU), o yüzden ham class asla sızmaz.
+  const productionPathId = deriveProductionPath(state.projectClass);
+  const path = DATA.paths.find((item) => item.id === productionPathId) ?? null;
   const project = DATA.projects.find((item) => item.id === state.selectedProjectId) ?? null;
   const refs = selectedRefs(state.selectedRefIds, world?.id ?? null);
   // Nöron-sync (T4): per-sahne authoring komisyonu için ref anchor·dna + palet
   // fiziksel ışık. Site özne UYDURMAZ — Claude bu çerçeveden dominant element'i yazar.
-  const register = registerOf(state.projectClass);
+  const register = registerOf(productionPathId);
   // WORLD-LOCK (Authority: World/Render Lock > Ref DNA). pure.ts:853 uyumsuz ref'i
   // SUPPRESSED_WORLD_MISMATCH işaretleyip directive'ini boşaltır. Burası o kapıyı
   // atlıyordu: ham selectedRefIds doğrudan dnaDirectives'e gidiyordu, yani One Piece
@@ -248,7 +255,7 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       // vault is empty. Leaving it out let two different films share one id whenever a raw
       // source was present (Codex re-audit).
       topic,
-      productionPath: path?.id ?? state.projectClass,
+      productionPath: productionPathId,
       projectClass: state.projectClass,
       projectId: state.selectedProjectId,
       musicId: state.selectedMusicId,
@@ -368,7 +375,7 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       projectId: state.selectedProjectId,
       projectName: project?.name ?? null,
       projectClass: state.projectClass,
-      productionPath: path?.id ?? state.projectClass,
+      productionPath: productionPathId,
       productionPathName: path?.name ?? null,
       sceneCount: exportedSceneCount,
       topic,
@@ -456,7 +463,7 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
           text: scenePrompt(scene),
           motionText: scene.motionPrompt,
           sourceCoverage: state.sourceReport?.coverage,
-          productionPath: state.projectClass,
+          productionPath: productionPathId,
           hasLockedTextOrLogo: Boolean(state.brandKitLock),
         }),
       },

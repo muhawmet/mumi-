@@ -3,7 +3,8 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { buildCommandJSON } from './commandExport';
 import { buildImageAuthorContext, storyboardHashOfScenes } from './agentProtocol';
-import { DATA, generateBatch, resolveRecipeDefaults } from './pure';
+import { DATA, generateBatch, resolveRecipeDefaults, deriveProductionPath } from './pure';
+import { registerOf } from './brain';
 import { ingestSource, sourceIntegrity } from './source';
 
 describe('buildCommandJSON', () => {
@@ -285,6 +286,43 @@ describe('command export world-lock: uyumsuz ref DNA sızmaz', () => {
     const cmd = buildWith('kurzgesagt_edu', [native.id]);
     const refDna = cmd.scenes[0]?.refDna ?? '';
     expect(refDna, 'uyumlu ref DNA\'sı kayboldu — fix fazla kesti').toContain(native.name);
+  });
+});
+
+// P3+P4 — projectClass ÇİFT-KANON. commandExport eskiden `registerOf(projectClass)` (ham) ve
+// `DATA.paths.find(id===projectClass)` (tam eşleşme) kullanıyordu; generateBatch ise
+// `deriveProductionPath(projectClass)` (fuzzy) + `registerOf(derivedPath)`. Fuzzy bir class
+// ('ders', 'REKLAM') için command ile brief FARKLI path/register (dolayısıyla farklı DNA/materyal)
+// taşıyordu → project.json ile final_brief.md iki başka işten bahsediyordu. Tek kanon: ikisi de
+// deriveProductionPath kullanmalı.
+describe('P3/P4 — command register/path deriveProductionPath kanonunu izler', () => {
+  const buildFuzzy = (projectClass: string) => buildCommandJSON({
+    selectedProjectId: '', projectTopic: 'Yanardağ nasıl patlar?', projectClass,
+    sceneCount: 1, cast: '', selectedWorldId: 'kurzgesagt_edu', selectedPropId: 'none',
+    selectedRefIds: [], selectedPaletteId: 'native_world', selectedMusicId: '',
+    imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '',
+    mood: '', cameraEnergy: '', timeLight: '', transition: '', musicVibe: '',
+    pov: '', signature: '', leitmotif: '', tempoCurve: '', directorBrief: '',
+    rawSource: '', sourceBeats: [], sourceReport: null,
+    beatMode: 'Dengeli', workingMode: 'Standart', beatKeeps: {}, beatAnalysis: null,
+    scenes: [], agentBrief: '',
+    agentPackets: { idea: '', image: '', motion: '', suno: '', proof: '' },
+  } as never) as never as { locks: { productionPath: string }; baseDecision?: unknown };
+
+  it('fuzzy class "ders" → command productionPath deriveProductionPath ile aynı (ham class değil)', () => {
+    const cmd = buildFuzzy('ders');
+    // 'ders' bir path id DEĞİL; kanon onu ANIMATION_EDU'ya türetir. Eski kod ham 'ders' basıyordu.
+    expect(deriveProductionPath('ders')).toBe('ANIMATION_EDU');
+    expect(cmd.locks.productionPath).toBe('ANIMATION_EDU');
+  });
+
+  it('fuzzy REAL class "REKLAM" → command register brief register\'ıyla aynı (STY≠REAL sapması yok)', () => {
+    // registerOf('REKLAM') ham → REAL token yok → STY; registerOf(deriveProductionPath('REKLAM'))
+    // = registerOf('ULTRAREAL_COMMERCIAL') → REAL. Sapma command DNA/materyalini bozardı.
+    expect(deriveProductionPath('REKLAM')).toBe('ULTRAREAL_COMMERCIAL');
+    expect(registerOf('REKLAM')).not.toBe(registerOf(deriveProductionPath('REKLAM')));
+    const cmd = buildFuzzy('REKLAM');
+    expect(cmd.locks.productionPath).toBe('ULTRAREAL_COMMERCIAL');
   });
 });
 

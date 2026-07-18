@@ -81,6 +81,20 @@ export const DashboardStep = () => {
             ⬆ Proje Paketi Aç
           </span>
         </label>
+        {/* P6 — import edilen pack'te doğrulanamayan (format-only) kanıt varsa Mami görür.
+            HATA değil bildirim: import başarılı, ama bu hash'lerin kaynağı pack'te yok, o yüzden
+            "onaylı gerçek kanıt" sayılamaz (gerçek kareyi bu cihazda yeniden yükle). M1 sözleşmesi. */}
+        {studioState.packEvidenceNotice && studioState.packEvidenceNotice.length > 0 && (
+          <div
+            role="status"
+            style={{ marginTop: 10, padding: '8px 12px', border: '1px solid var(--m2-line-strong)', borderRadius: 6, background: 'rgba(214,158,46,0.08)', color: 'var(--text-soft)', fontSize: 12, maxWidth: 640 }}
+          >
+            <strong style={{ color: 'var(--m2-amber)' }}>⚠ Doğrulanamayan kanıt:</strong>{' '}
+            Bu paketteki {studioState.packEvidenceNotice.length} hash yalnızca biçim olarak geçerli —
+            kaynağı pakette taşınmadığı için içeriği doğrulanamaz (format-only). Onaylı gerçek kare/kanıt
+            sayılmaz; gerçek görseli bu cihazda yeniden yükleyip onaylayın.
+          </div>
+        )}
       </header>
 
       {/* Görsel sıra flex-order ile: yapıştırma yüzeyi (order 1) fold'un kahramanı,

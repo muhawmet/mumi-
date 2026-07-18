@@ -195,6 +195,40 @@ describe('round-trip — export → import aynı world/approval/frame/motion kap
     // düşürülür → motion AÇILMAZ. Mami başka cihazda gerçek görseli yeniden yükleyip APPROVE eder.
     expect(s.scenes[0].frameReceipt?.verdict).toBe('PROJECT_ONLY_ACCEPT');
     expect(motionGate(s.scenes[0], s.currentCommandId(), s.currentPromptSourceCommandId(), s.shotApprovals[1]).open).toBe(false);
+    // P6 — verifyProjectPack, kaynağı pack'te taşınmayan format-only hash'leri
+    // (artifact/jury/protocol/storyboard/frame) `unverifiableEvidence` ile döner. M1
+    // sözleşmesi: bu SESSİZCE düşürülemez, tüketici zayıf/doğrulanamayan kanıt olarak
+    // GÖSTERMELİ. Import artık bunu `packEvidenceNotice`'a taşıyor (Mami görebilir).
+    expect(s.packEvidenceNotice).not.toBeNull();
+    expect(s.packEvidenceNotice!.length).toBeGreaterThan(0);
+    expect(s.packEvidenceNotice!.join(' ')).toMatch(/format-only|doğrulanamayan|MOD-B/i);
+  });
+
+  test('P6: karar değişince (setField) stale evidence notice düşer', () => {
+    setupProject();
+    const json = useStudioStore.getState().exportProjectPack();
+    useStudioStore.getState().reset();
+    useStudioStore.getState().importProjectPack(json);
+    // Import notice'ı doldurdu (frame/prompt receipt format-only hash taşıyor).
+    expect(useStudioStore.getState().packEvidenceNotice?.length).toBeGreaterThan(0);
+    // Mami bir karar değiştiriyor → storyboard STALE → uyarı da düşmeli (yanıltıcı asılı kalmasın).
+    useStudioStore.getState().setField('selectedPaletteId', 'pastel_soft');
+    expect(useStudioStore.getState().packEvidenceNotice).toBeNull();
+  });
+
+  test('P6: temiz karar-only pack (format-only hash yok) notice ÜRETMEZ', () => {
+    // Frame/receipt taşımayan bir pack'te doğrulanamayan kanıt yoktur → notice null kalmalı
+    // (yanlış-pozitif uyarı Mami'yi gürültüye boğmasın).
+    setupProject();
+    // Frame ve prompt receipt'leri temizle: yalnız karar taşınsın.
+    useStudioStore.setState({
+      scenes: useStudioStore.getState().scenes.map((sc) => ({ ...sc, frameReceipt: undefined, promptReceipt: undefined, userImagePrompt: undefined })),
+    });
+    const json = useStudioStore.getState().exportProjectPack();
+    useStudioStore.getState().reset();
+    useStudioStore.getState().importProjectPack(json);
+    expect(useStudioStore.getState().lastError).toBeNull();
+    expect(useStudioStore.getState().packEvidenceNotice).toBeNull();
   });
 
   test('bozuk JSON import lastError verir, state\'i EZMEZ', () => {

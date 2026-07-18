@@ -30,7 +30,7 @@ const PHASE_CODE: Record<string, string> = {
 export const TimelineStep = () => {
   const state = useStudioStore();
   const {
-    scenes, selectedSceneId, isGenerating, lastError, setField, setCurrentStep, generateScenes, togglePersonalMode,
+    scenes, selectedSceneId, isGenerating, lastError, packEvidenceNotice, setField, setCurrentStep, generateScenes, togglePersonalMode,
     shotApprovals, approveShot, rejectShot, clearShotApproval, importAgentArtifact, currentCommandId,
     importFrame, setFrameVerdict, clearFrame,
   } = state;
@@ -165,6 +165,31 @@ export const TimelineStep = () => {
           }}
         >
           ⚠ {lastError}
+        </motion.div>
+      )}
+
+      {/* P6 — import edilen pack'te doğrulanamayan (format-only) kanıt uyarısı. Import kullanıcıyı
+          Timeline'a taşıdığı için bildirim BURADA gösterilir (Dashboard'da kalıp görünmez olmasın).
+          HATA değil: import başarılı, ama bu hash'lerin kaynağı pakette yok → "onaylı gerçek kanıt"
+          sayılamaz. Karar değişip storyboard STALE olunca (clearGeneration) uyarı da düşer. */}
+      {packEvidenceNotice && packEvidenceNotice.length > 0 && (
+        <motion.div
+          role="status"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{
+            padding: '12px 16px',
+            border: '1px solid var(--m2-line-strong)',
+            background: 'rgba(214,158,46,0.08)',
+            color: 'var(--text-soft)',
+            fontFamily: 'var(--m2-font-mono)',
+            fontSize: 13,
+          }}
+        >
+          <strong style={{ color: 'var(--m2-amber)' }}>⚠ Doğrulanamayan kanıt:</strong>{' '}
+          Bu paketteki {packEvidenceNotice.length} hash yalnızca biçim olarak geçerli — kaynağı
+          pakette taşınmadığı için içeriği doğrulanamaz (format-only). Onaylı gerçek kare/kanıt
+          sayılmaz; gerçek görseli bu cihazda yeniden yükleyip onaylayın.
         </motion.div>
       )}
 
