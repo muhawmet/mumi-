@@ -1073,8 +1073,14 @@ export function validateBriefCompatibility(args: {
   authoredLocation?: string;
   /** Every scene note flattened into one string (vo, event, director_note, motion_seed, labels, avoid). */
   authoredSceneNotes?: string;
+  /** Mami's free creative direction — reaches buildImagePrompt (`Director mandate:`) + export. */
+  authoredDirectorBrief?: string;
+  /** Brand-kit instruction — reaches the prompt (`Brand kit lock:`). Deliberately carries the
+   *  CUSTOMER'S OWN brand (commercial exemption); screened only for THIRD-PARTY IP + raw hex. */
+  authoredBrandKitLock?: string;
 }): { status: 'PASS' | 'BLOCKED'; path: string; findings: Array<{ code: string; message: string }> } {
-  const { path, world, recipe, cast, authoredSubject, authoredLocation, authoredSceneNotes } = args;
+  const { path, world, recipe, cast, authoredSubject, authoredLocation, authoredSceneNotes,
+    authoredDirectorBrief, authoredBrandKitLock } = args;
   const findings: Array<{ code: string; message: string }> = [];
   const register = registerOf(path);
   const realPath = register === 'REAL';
@@ -1144,10 +1150,19 @@ export function validateBriefCompatibility(args: {
   // Excising a word leaves a mutilated sentence and a still-recognisable franchise. STOP,
   // name the terms, and let him re-author — he is sitting right there. He fixes it in one
   // sentence; the export never carries the leak.
+  // THE FIFTH & SIXTH OPENINGS (P1/P2). directorBrief and brandKitLock are two more of
+  // MAMI'S OWN FREE TEXT fields that reach buildImagePrompt + the export with nobody screening
+  // them: `directorBrief:'Spider-Verse tarzında, gölgeler #FF00AA'` shipped both a work title
+  // and raw hex to the engine. They join the same gate — protected CHARACTER + WORK title +
+  // raw hex — and the same never-silently-rewrite rule. brandKitLock is DELIBERATELY exempt
+  // from the commercial-brand check (it is the customer's OWN brand), but a FOREIGN franchise
+  // or a hex typed into it is not the customer's brand and must not reach the prompt.
   const doctorText: Array<[string, string | undefined]> = [
     ['Konu', authoredSubject],
     ['Lokasyon', authoredLocation],
     ['Sahne notları', authoredSceneNotes],
+    ['Yönetmen notu', authoredDirectorBrief],
+    ['Marka kiti', authoredBrandKitLock],
   ];
   for (const [label, text] of doctorText) {
     if (!text?.trim()) continue;
@@ -1165,7 +1180,11 @@ export function validateBriefCompatibility(args: {
     // Palette Translation Law: a palette reaches the engine as physical light words, never
     // as #RRGGBB. Hex lives in palette_lock and the dossier — it does not live in the prompt
     // path. A hex typed into a scene note walked straight down that path.
-    const hex = text.match(/#[0-9A-Fa-f]{6}\b/g);
+    // HEX LENGTH PARITY: match 3/4/6/8-digit forms, the SAME shapes qa.ts HEX_RE and
+    // brain.hexToLightWords accept. The old 6-only pattern let #F0A and #FF00AAFF leak past
+    // this gate while every other hex surface caught them. (Longest-first so #RRGGBBAA is
+    // consumed whole before the 6-digit alternative eats its first six chars.)
+    const hex = text.match(/#(?:[0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{3})\b/g);
     if (hex?.length) {
       findings.push({
         code: 'RECIPE_RAW_HEX',
@@ -1394,6 +1413,8 @@ export function generateBatch(input: BriefInput): GenerationResult {
       .flatMap((note) => [note.vo, note.event, note.director_note, note.motion_seed, note.turkish_labels, note.avoid])
       .filter(Boolean)
       .join(' • '),
+    authoredDirectorBrief: input.directorBrief,
+    authoredBrandKitLock: input.brandKitLock,
   });
   if (contractGate.status === 'BLOCKED') {
     return { status: 'BLOCKED', scenes: [], contractGate, blockers: toBlockers(contractGate.findings) };

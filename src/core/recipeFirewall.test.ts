@@ -122,4 +122,74 @@ describe('the doctor own free text goes through the copyright firewall', () => {
     const result = run({ subject: 'Pixar kalitesinde bir eğitim sahnesi' });
     expect(result.status).toBe('GENERATED');
   });
+
+  // ── P1 — THE FIFTH OPENING: directorBrief ──────────────────────────────────
+  // directorBrief is Mami's own free creative direction and reaches buildImagePrompt
+  // (`Director mandate:`) + the export verbatim. It went through NO firewall — exactly
+  // the class this gate was built to close. Same rule as subject/scene notes: STOP and
+  // name the term, never silently rewrite.
+  it('P1: blocks a work title in directorBrief instead of shipping it', () => {
+    const result = run({ directorBrief: 'Spider-Verse tarzında olsun, gölgeler morda' });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_IP_LEAK');
+    expect(everythingEmitted(result)).not.toMatch(/spider-verse/i);
+  });
+
+  it('P1: blocks raw hex in directorBrief — it reaches the engine as light, never as #RRGGBB', () => {
+    const result = run({ directorBrief: 'Gölgeler #FF00AA morunda parlasın' });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_RAW_HEX');
+    expect(everythingEmitted(result)).not.toMatch(/#FF00AA/i);
+  });
+
+  it('P1: honest directorBrief prose passes untouched', () => {
+    const result = run({ directorBrief: 'Sıcak anahtar ışık, özneye yakın, sakin tempo' });
+    expect(result.status).toBe('GENERATED');
+  });
+
+  // ── P2 — brandKitLock: THIRD-PARTY IP / HEX ONLY ───────────────────────────
+  // brandKitLock deliberately carries the CUSTOMER'S OWN brand (commercial exemption) —
+  // so the commercial-brand check must NOT fire on it. But a FOREIGN franchise or a raw
+  // hex typed here has no screen at all today, and reaches the prompt ("Brand kit lock:").
+  // Screen only protected third-party IP/work + raw hex; the customer's own brand stays.
+  it('P2: blocks a foreign franchise name in brandKitLock', () => {
+    const result = run({ brandKitLock: 'Naruto Uzumaki logo, turuncu pelerin' });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_IP_LEAK');
+    expect(everythingEmitted(result)).not.toMatch(/naruto/i);
+  });
+
+  it('P2: blocks raw hex in brandKitLock', () => {
+    const result = run({ brandKitLock: 'Logo rengi #FF00AA olacak' });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_RAW_HEX');
+    expect(everythingEmitted(result)).not.toMatch(/#FF00AA/i);
+  });
+
+  // ── Hex length parity (garanti denetçi bulgusu) ────────────────────────────
+  // Gate yalnız 6-haneli hex tarıyordu; kod tabanının geri kalanı (qa.ts HEX_RE,
+  // brain.hexToLightWords, mjs) 3/4/6/8-hane kabul ediyor. 3-hane (#F0A) ve 8-hane
+  // (#FF00AAFF) gate'i geçip export'a sızıyordu. Tüm doctorText alanları için geçerli.
+  it('P-hex: blocks 3-digit hex (#F0A) — codebase-wide parity', () => {
+    const result = run({ directorBrief: 'Gölgeler #F0A tonunda' });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_RAW_HEX');
+    expect(everythingEmitted(result)).not.toMatch(/#F0A\b/i);
+  });
+
+  it('P-hex: blocks 8-digit hex (#FF00AAFF) in a scene note', () => {
+    const result = run({
+      recipeScenes: [{ id: 1, vo: 'Aksan #FF00AAFF olsun', event: '', director_note: '', motion_seed: '', turkish_labels: [], avoid: [] }],
+    });
+    expect(result.status).toBe('BLOCKED');
+    expect(result.contractGate?.findings.map((f) => f.code)).toContain('RECIPE_RAW_HEX');
+    expect(everythingEmitted(result)).not.toMatch(/#FF00AAFF/i);
+  });
+
+  // The whole point of brandKitLock: the customer's OWN brand must pass. A plain brand-kit
+  // instruction with no third-party IP and no hex is legitimate and reaches the brief.
+  it('P2: the customer own brand-kit instruction passes untouched', () => {
+    const result = run({ brandKitLock: 'Marka logosu sağ alt köşede, kurumsal lacivert tonlarda' });
+    expect(result.status).toBe('GENERATED');
+  });
 });

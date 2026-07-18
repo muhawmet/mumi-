@@ -211,6 +211,29 @@ describe('renderLock + primeCamera', () => {
     const b = primeCamera(2, 'kaynak bir', 1, 'EDU', 'kaynak bir', 1);
     expect(a).not.toBe(b);
   });
+
+  // P5 — render_law PROP sızıntısı motor prompt yolunda (buildImagePrompt → renderLock).
+  // KUSUR-C fix'i (splitRenderLawPhysics) YALNIZ WorldPacket'te kullanılıyordu; renderLock
+  // ham render_law'ı verbatim taşıyordu → One Piece karesine "wanted-poster / caravel /
+  // figurehead" prop envanteri sızıyordu. Yasa: fizik VERBATIM kalır, prop cümlesi düşer.
+  // worldPacketPhysics.test.ts WorldPacket tarafını zaten kilitliyor; bu, image-prompt tarafı.
+  it('P5: render lock strips the render_law prop-inventory sentence but keeps the physics verbatim', () => {
+    const oneWorld = DATA.worlds.find((w) => w.id === 'one_piece_toei')!;
+    const lock = renderLock(oneWorld, 'STY');
+    // Prop envanteri (kareye giren set dekoru) motor prompt'una GİRMEZ.
+    expect(lock.toLowerCase()).not.toMatch(/wanted[- ]poster|caravel|figurehead|pennant/);
+    // Fizik VERBATIM korunur — silme değil, kanal ayrımı (stok-fotoğraf çöküşü olmasın).
+    expect(lock).toMatch(/3-5px uniform pure-black outline/);
+    expect(lock).toMatch(/2-value flat cel/);
+    expect(lock.toLowerCase()).toContain('strict pure 2d cel shading');
+  });
+
+  it('P5: a physics-only world render_law reaches the lock unchanged (no over-stripping)', () => {
+    // pixar_3d_edu render_law'ında prop-envanter cümlesi YOK → split fizik = tam law,
+    // lock render metnini verbatim taşımaya devam eder (mevcut startsWith testiyle tutarlı).
+    const lock = renderLock(clayWorld, 'EDU');
+    expect(lock.startsWith(worldRenderText(clayWorld))).toBe(true);
+  });
 });
 
 describe('Brand Kit Lock', () => {

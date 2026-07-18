@@ -114,6 +114,56 @@ describe('runtime negatif probe — jüri PASS ölçülebilir slop\'u aklayamaz 
   });
 });
 
+// ============================================================================
+// P1/P2 (2026-07-19) — directorBrief / brandKitLock runtime firewall paritesi.
+// Site validateBriefCompatibility bu iki serbest-metin alanını korumalı IP/eser/hex
+// için tarar; runtime ikizi (freeTextLeaksIn, validateCommand'e bağlı) AYNI taramayı
+// yapar AMA ticari-marka'yı taramaz (brandKitLock = müşterinin kendi markası).
+// Yeni regex yok — mevcut kanonik ipFirewall primitifleri (FW_TERM_RES/FW_WORK_TITLE_RE).
+// ============================================================================
+describe('runtime free-text firewall — directorBrief/brandKitLock IP+hex paritesi (mjs)', () => {
+  it('korumalı KARAKTER (bare/TR-suffix) yakalanır', async () => {
+    const { freeTextLeaksIn } = await runnerModule();
+    expect(freeTextLeaksIn("Naruto'nun tarzında olsun").length).toBeGreaterThan(0);
+    expect(freeTextLeaksIn('Goku enerjisi').length).toBeGreaterThan(0);
+  });
+
+  it('ESER adı (work title) yakalanır', async () => {
+    const { freeTextLeaksIn } = await runnerModule();
+    expect(freeTextLeaksIn('Spider-Verse tarzında').length).toBeGreaterThan(0);
+  });
+
+  it('ham hex 3/4/6/8-hane yakalanır (site ile parite)', async () => {
+    const { freeTextLeaksIn } = await runnerModule();
+    expect(freeTextLeaksIn('gölge #F0A')).toContain('#F0A');
+    expect(freeTextLeaksIn('aksan #FF00AA')).toContain('#FF00AA');
+    expect(freeTextLeaksIn('aksan #FF00AAFF')).toContain('#FF00AAFF');
+  });
+
+  it('müşterinin KENDİ markası (ticari marka) bloklanmaz — brandKitLock muafiyeti korunur', async () => {
+    const { freeTextLeaksIn } = await runnerModule();
+    // Ticari marka (FW_BRAND_RE) bu taramaya girmez — site asimetrisiyle birebir.
+    expect(freeTextLeaksIn('Marka logosu sağ altta, kurumsal lacivert')).toEqual([]);
+    expect(freeTextLeaksIn('el işi ahşap tezgah, powder mavisi')).toEqual([]);
+  });
+
+  it('validateCommand: leaky directorBrief taşıyan command REDDEDİLİR', async () => {
+    const runner = await runnerModule();
+    // Minimal command iskeleti: yalnız directorBrief sızıntısının validateCommand'de
+    // problem üretip üretmediğini ölçer (diğer alan hataları beklenir, firewall satırı
+    // spesifik arandığı için sahte yeşil imkânsız).
+    const command = {
+      baseDecision: { creativeControls: { directorBrief: 'Spider-Verse tarzında, gölgeler #F0A' }, locks: {} },
+      scenes: [],
+      lifecycle: {},
+    };
+    const result = await runner.validateCommand(command);
+    const problems: string[] = result.problems ?? result;
+    expect(problems.join(' ')).toMatch(/directorBrief IP\/hex sızıntısı/);
+    expect(problems.join(' ')).toMatch(/spider-verse/i);
+  });
+});
+
 // validateRoleContent'i minimum geçerli iskeletle sürer — yalnız firewall'un
 // problems dizisine yazıp yazmadığını ölçer (diğer alan hataları beklenir ve filtrelenmez;
 // firewall satırı spesifik arandığı için sahte yeşil imkânsız).

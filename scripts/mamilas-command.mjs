@@ -94,6 +94,27 @@ export function firewallHitsIn(text) {
   for (const match of text.matchAll(FW_WORK_TITLE_RE)) hits.push(match[0]);
   return Array.from(new Set(hits));
 }
+
+// P1/P2 runtime ikizi — Mami'nin serbest-metin karar alanları (directorBrief, brandKitLock)
+// command JSON'da ham taşınıyor; gate-atlamış/elle üretilmiş bir command runtime'da da
+// yakalanmalı. src/core/pure.ts validateBriefCompatibility doctorText döngüsüyle BİREBİR aynı
+// tarama: korumalı KARAKTER (FW_TERM_RES) + ESER adı (FW_WORK_TITLE_RE) + ham hex — ama
+// TİCARİ MARKA (FW_BRAND_RE) TARANMAZ. Sebep: brandKitLock kasıtlı olarak müşterinin KENDİ
+// markasını taşır (site de commercial-brand'i bu alanlarda taramaz); asimetri korunur.
+// Yeni regex YOK — mevcut kanonik ipFirewall primitifleri yeniden kullanılıyor.
+const FW_HEX_RE = /#(?:[0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{3})\b/g;
+export function freeTextLeaksIn(text) {
+  if (!text) return [];
+  const hits = [];
+  for (let i = 0; i < FW_TERM_RES.length; i += 1) {
+    if (FW_TERM_RES[i].test(text)) hits.push(FW_GATE_TERMS[i]);
+  }
+  FW_WORK_TITLE_RE.lastIndex = 0;
+  for (const match of text.matchAll(FW_WORK_TITLE_RE)) hits.push(match[0]);
+  const hex = text.match(FW_HEX_RE);
+  if (hex) for (const h of hex) hits.push(h);
+  return Array.from(new Set(hits));
+}
 // ==================== PROMPT SURGEON — runtime ikiz (M2) ====================
 // src/core/qa.ts scanPromptSurgeon'un runtime aynası. Jüri PASS'i (öz-beyan) author
 // prompt'unun kod-ölçülebilir bir rejectIf (AI-slop) taşımasını MEŞRULAŞTIRAMAZ:
@@ -293,6 +314,14 @@ export async function validateCommand(command) {
       problems.push('MamiDirectives exact projection stale/tampered');
     }
   }
+  // P1/P2 runtime firewall — directorBrief + brandKitLock ham metni korumalı IP/eser/hex
+  // taşıyamaz (site validateBriefCompatibility doctorText ikizi). Site gate'i atlamış/elle
+  // üretilmiş bir command runtime'da da burada durur. brandKitLock ticari-marka'dan muaf
+  // (kendi markası) — freeTextLeaksIn bilerek FW_BRAND_RE taramaz.
+  const directorBriefLeaks = freeTextLeaksIn(command?.baseDecision?.creativeControls?.directorBrief ?? '');
+  if (directorBriefLeaks.length) problems.push(`directorBrief IP/hex sızıntısı: ${directorBriefLeaks.join(', ')}`);
+  const brandKitLeaks = freeTextLeaksIn(command?.baseDecision?.locks?.brandKitLock ?? '');
+  if (brandKitLeaks.length) problems.push(`brandKitLock IP/hex sızıntısı: ${brandKitLeaks.join(', ')}`);
   if (!command?.lifecycle?.sceneContextHashes || typeof command.lifecycle.sceneContextHashes !== 'object') {
     problems.push('sceneContextHashes yok');
   } else if (Array.isArray(command?.scenes)) {

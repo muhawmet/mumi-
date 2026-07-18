@@ -8,7 +8,7 @@ import {
   CAM_EDU, CAM_STY, CAM_REAL, DNA_MAP, SUNO_MAP, VAR_LIGHT,
 } from './brain-data';
 import { engineDialect, engineUsableSec } from './engine';
-import { DATA, paletteColors, worldAvoidText, worldMotionText, worldNegativeLockTextById, worldRenderText, type PathContract } from './pure';
+import { DATA, paletteColors, splitRenderLawPhysics, worldAvoidText, worldMotionText, worldNegativeLockTextById, worldRenderText, type PathContract } from './pure';
 import type { SurgeryWorld, SurgeryRef, SurgeryPalette } from './pure';
 import { proofDoctor, containsProtectedTerm, scrubWorkTitles } from './proof';
 import IP_FIREWALL from '../../agents/ipFirewall.json';
@@ -62,7 +62,14 @@ export function realFamilyOf(worldId: string): string {
 // ---------------- render lock ----------------
 
 export function renderLock(world: SurgeryWorld, register: Register, material?: string): string {
-  let base = T(worldRenderText(world));
+  // P5 — render_law fizik/prop ayrımı MOTOR PROMPT yolunda da uygulanır. KUSUR-C fix'i
+  // (splitRenderLawPhysics) yalnız WorldPacket'te kullanılıyordu; renderLock ham render_law'ı
+  // verbatim taşıdığı için prop-envanteri (wanted-poster/caravel/figurehead) kareye sızıyordu.
+  // Fizik cümleleri VERBATIM korunur (sıra/harf değişmez); yalnız prop-envanteri cümlesi düşer.
+  // render_law boşsa/split fizik boş dönerse eski worldRenderText fallback zinciri aynen çalışır
+  // (o yol WorldPacket'te de ölçülmemiş — davranış korunur). WorldPacket ile aynı kanon.
+  const physics = world.render_law ? splitRenderLawPhysics(world.render_law).physics : '';
+  let base = T(physics || worldRenderText(world));
   if (!base) base = register === 'REAL'
     ? 'Photoreal live-action cinematic frame, real lens depth, practical light, authentic material response, no animation styling.'
     : 'Stylized animated frame, original IP-safe design with concrete lens, light, line and material rules.';
