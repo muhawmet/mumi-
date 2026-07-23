@@ -65,12 +65,23 @@ describe('Yerleşik Yönetmen modu — foreground sohbet + background batch', ()
         console.error('Yönetmen: batch arkada, Mami ile konuşuyorum.');
         process.exit(0);
       }
-      // Rol oturumu: template'i doldur, mühürle.
-      const template = JSON.parse(await readFile(join(root, 'ARTIFACT_TEMPLATE.json'), 'utf8'));
-      const session = await readFile(join(root, 'SESSION.md'), 'utf8');
+      // Rol oturumu: template'i doldur, mühürle. Oturum scratch'i sahne/rol başına izole
+      // (.mamilas/work/<scene>/<role>/<rev>/), bu yüzden en yeni SESSION.md aranır.
+      const { readdirSync, statSync } = await import('node:fs');
+      const findSessions = (d, acc = []) => {
+        for (const e of readdirSync(d, { withFileTypes: true })) {
+          const full = join(d, e.name);
+          if (e.isDirectory()) findSessions(full, acc);
+          else if (e.name === 'SESSION.md') acc.push(full);
+        }
+        return acc;
+      };
+      const sessionPath = findSessions(root).sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0];
+      const session = await readFile(sessionPath, 'utf8');
+      const template = JSON.parse(await readFile(session.match(/--seal-artifact "([^"]+)"/)[1], 'utf8'));
       const out = session.match(/--out "([^"]+)"/)[1];
       if (template.role === 'image_author') {
-        const prompt = 'Scene ' + template.sceneId + ' director-mode prompt.';
+        const prompt = 'Scene ' + template.sceneId + ' director-mode prompt. Continuous dimensional 3D CGI feature-animation shading with never any photoreal or live-action capture.';
         template.content = {
           prompt, promptHash: sha256(prompt),
           interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },

@@ -820,7 +820,8 @@
         "NO flat graphic fill, NO toon shader, NO 2D illustration style on 3D forms",
         "NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir",
         "Turkish label only — blocky dimensional letterform, raised and legible, NO English signage",
-        "NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO)"
+        "NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO)",
+        "NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene"
       ],
       "example_injection": "Feature-animation 3D CGI frame in the Pixar RenderMan feature-animation pipeline. Single motivated key: warm window sun from camera-right at 45°, cool-violet complementary bounce from left at 30% intensity, tangerine-amber rim accent from low right. Focal plane at f/4: Mamilas character mid-shot, appeal-rounded silhouette, SSS skin reading honey-warm under the tungsten key, dual-point wet eye spec, soft painted AO under the chin. Props: wooden classroom desk shows brown-ochre grain with satin varnish sheen, a thick primary-red pencil (15% overscale) resting diagonally. Character posing: squash landing into the seat, follow-through in the shoulders still settling. Background: soft f/4 falloff onto a warm classroom wall with chalkboard — painted AO in the corner join. Turkish label 'ALTI' as a blocky raised wooden numeral on the desk edge, legible from frame edge. Motion seed: one frame before the character's hand closes around the pencil — anticipation micro-pullback visible. AVOID: Woody, Buzz, Pixar franchise names, clay skin on character, cel outline, teal-orange grade, English signage. Clean motion-ready start frame."
     },

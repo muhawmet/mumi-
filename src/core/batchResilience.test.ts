@@ -8,6 +8,15 @@ import { buildCommandJSON } from './commandExport';
 import { generateBatch, resolveRecipeDefaults } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
 
+// Test fixture dünyası pixar_3d_edu → validateImageRenderLock (mamilas-command.mjs) her
+// image_author promptunda (a) pozitif 3D-CGI medium token ve (b) AYNI cümlede photoreal/
+// live-action yasağı + olumsuzlama arar. Bu kuyruk ikisini de tek cümlede taşır; cümle
+// bölücü `split(/(?<=[.;])\s+/)` onu parçalamasın diye içinde nokta/noktalı virgül YOK.
+// Yer-tutucu promptların gerçek üretim yasasını taşıması körleme yama DEĞİL — kapı gerçek
+// bir üretim yasası (agents/roles/image-author.md) ve fixture onu geçmeli.
+const RENDER_LOCK_TAIL =
+  ' Continuous dimensional 3D CGI feature-animation shading with never any photoreal or live-action capture';
+
 // ============================================================================
 // HARD-FIX 2026-07-16 — rapor A maddeleri (2026-07-16 Deneme koşusu çöküşü).
 // Gerçek olay: sahne 6 jürisi doğru yaratıcı REJECT verdi ama failingCheck/
@@ -60,7 +69,7 @@ function sealed(command: any, sceneId: number, role: string, phase: string, revi
 
 function passChain(command: any, sceneId: number, artifactsDir: string) {
   const contextHash = command.lifecycle.sceneContextHashes[sceneId];
-  const prompt = `Scene ${sceneId} approved image prompt.`;
+  const prompt = `Scene ${sceneId} approved image prompt.${RENDER_LOCK_TAIL}.`;
   const author = sealed(command, sceneId, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
     prompt, promptHash: sha256Hex(prompt),
     interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -79,7 +88,7 @@ function passChain(command: any, sceneId: number, artifactsDir: string) {
 // remap ettiğini kanıtlamak için (garanti denetçi BULGU 1).
 function passChainR1(command: any, sceneId: number, artifactsDir: string) {
   const ch = command.lifecycle.sceneContextHashes[sceneId];
-  const p0 = `Scene ${sceneId} draft.`;
+  const p0 = `Scene ${sceneId} draft.${RENDER_LOCK_TAIL}.`;
   const a0 = sealed(command, sceneId, 'image_author', 'IMAGE_PROMPT', 0, [ch], {
     prompt: p0, promptHash: sha256Hex(p0),
     interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -88,7 +97,7 @@ function passChainR1(command: any, sceneId: number, artifactsDir: string) {
   const j0 = sealed(command, sceneId, 'image_jury', 'IMAGE_JURY', 0, [ch, a0.contentHash], {
     verdict: 'REJECT', failingCheck: 'ışık', targetedFix: 'anahtar ışığı yeniden yaz', evidence: ['cr'],
   });
-  const p1 = `Scene ${sceneId} revised prompt.`;
+  const p1 = `Scene ${sceneId} revised prompt.${RENDER_LOCK_TAIL}.`;
   const a1 = sealed(command, sceneId, 'image_author', 'IMAGE_PROMPT', 1, [ch, a0.contentHash, j0.contentHash], {
     prompt: p1, promptHash: sha256Hex(p1),
     interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -124,7 +133,7 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
     mkdirSync(join(dir, '.mamilas', 'artifacts'), { recursive: true });
     expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'Scene 1 draft.';
+    const prompt = 'Scene 1 draft.' + RENDER_LOCK_TAIL + '.';
     const author = sealed(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -153,7 +162,7 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
     // Sahne 1: PASS zinciri. Sahne 2: author + MALFORMED reject jury. Sahne 3: boş.
     const prompt1 = passChain(command, 1, artifactsDir);
     const contextHash2 = command.lifecycle.sceneContextHashes[2];
-    const prompt2 = 'Scene 2 draft prompt.';
+    const prompt2 = 'Scene 2 draft prompt.' + RENDER_LOCK_TAIL + '.';
     const author2 = sealed(command, 2, 'image_author', 'IMAGE_PROMPT', 0, [contextHash2], {
       prompt: prompt2, promptHash: sha256Hex(prompt2),
       interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -232,7 +241,7 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
 
     // Sahne 1: author hazır + ONARILAMAZ-bozuk jury (verdict alanı hiç yok → repair patch üretemez).
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt1 = 'Scene 1 retry-path prompt.';
+    const prompt1 = 'Scene 1 retry-path prompt.' + RENDER_LOCK_TAIL + '.';
     const author1 = sealed(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt: prompt1, promptHash: sha256Hex(prompt1),
       interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -254,12 +263,24 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
       import { readFile, writeFile } from 'node:fs/promises';
       import { join } from 'node:path';
       import { canonicalHash, sha256 } from ${JSON.stringify(runtimeUrl)};
-      const root = join(process.cwd(), '.mamilas');
-      const template = JSON.parse(await readFile(join(root, 'ARTIFACT_TEMPLATE.json'), 'utf8'));
-      const session = await readFile(join(root, 'SESSION.md'), 'utf8');
+      // Oturum scratch'i sahne/rol basina izole (.mamilas/work/<scene>/<role>/<rev>/).
+      // Sahte provider gercek CLI gibi talimat argumani almadigi icin en yeni SESSION.md'yi bulur.
+      const { readdirSync, statSync } = await import('node:fs');
+      const findSessions = (d, acc = []) => {
+        for (const e of readdirSync(d, { withFileTypes: true })) {
+          const full = join(d, e.name);
+          if (e.isDirectory()) findSessions(full, acc);
+          else if (e.name === 'SESSION.md') acc.push(full);
+        }
+        return acc;
+      };
+      const sessionPath = findSessions(join(process.cwd(), '.mamilas'))
+        .sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0];
+      const session = await readFile(sessionPath, 'utf8');
+      const template = JSON.parse(await readFile(session.match(/--seal-artifact "([^"]+)"/)[1], 'utf8'));
       const out = session.match(/--out "([^"]+)"/)[1];
       if (template.role === 'image_author') {
-        const prompt = 'Scene ' + template.sceneId + ' authored prompt r' + template.revision + '.';
+        const prompt = 'Scene ' + template.sceneId + ' authored prompt r' + template.revision + '. Continuous dimensional 3D CGI feature-animation shading with never any photoreal or live-action capture.';
         template.content = {
           prompt, promptHash: sha256(prompt),
           interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
@@ -587,5 +608,123 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
     expect(existsSync(join(dir, 'SAHNE-PROMPTLAR.md'))).toBe(true);
     const visible = readFileSync(join(dir, 'SAHNE-PROMPTLAR.md'), 'utf8');
     expect(visible).toContain('Sahne 1');
+  });
+
+  // ==========================================================================
+  // 2026-07-23 — Mami'nin gerçek 69 sahnelik koşusundan doğan yasalar.
+  // Sol'un teşhisi: süit "artifact"a bakıyordu, "eylem"e bakmıyordu; o yüzden
+  // üretimi durduran üç duvar 2046 test yeşilken ayakta kaldı.
+  // ==========================================================================
+
+  test('İZOLASYON: rol oturumu dosyaları sahne/rol başına ayrı klasörde (paralel şerit yarışı imkânsız)', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-isolation-'));
+    const command = commandFixture(2);
+    mkdirSync(join(dir, '.mamilas', 'artifacts'), { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    const bin = join(dir, '.bin');
+    mkdirSync(bin);
+    const runtimeUrl = pathToFileURL(resolve('scripts/mamilas-command.mjs')).href;
+    // Sahte provider yalnız oturum dosyalarının NEREDE olduğunu kanıtlar: SESSION.md'yi
+    // run kökünde ARAMAZ, izole yolda bulur ve o yolu bir ize yazar.
+    const helper = join(bin, 'fake-codex.mjs');
+    writeFileSync(helper, `
+      import { readFile, writeFile, appendFile } from 'node:fs/promises';
+      import { readdirSync, statSync } from 'node:fs';
+      import { join, dirname } from 'node:path';
+      import { canonicalHash, sha256 } from ${JSON.stringify(runtimeUrl)};
+      const root = join(process.cwd(), '.mamilas');
+      const find = (d, acc = []) => {
+        for (const e of readdirSync(d, { withFileTypes: true })) {
+          const full = join(d, e.name);
+          if (e.isDirectory()) find(full, acc);
+          else if (e.name === 'SESSION.md') acc.push(full);
+        }
+        return acc;
+      };
+      const sessions = find(root);
+      const sessionPath = sessions.sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0];
+      await appendFile(join(root, 'SESSION-PATHS.txt'), sessionPath + '\\n');
+      const session = await readFile(sessionPath, 'utf8');
+      const template = JSON.parse(await readFile(session.match(/--seal-artifact "([^"]+)"/)[1], 'utf8'));
+      if (template.role === 'image_author') {
+        const prompt = 'Scene ' + template.sceneId + ' isolated prompt. Continuous dimensional 3D CGI feature-animation shading with never any photoreal or live-action capture.';
+        template.content = {
+          prompt, promptHash: sha256(prompt),
+          interpretation: { dominantSubject: 's', singleEvent: 'e', frozenInstant: 'i' },
+          directiveReceipts: [], appliedLocks: ['world'], suppressedContext: [], risks: [],
+        };
+      } else {
+        template.content = { verdict: 'PASS', evidence: ['stub'] };
+      }
+      const { contentHash: _x, ...body } = template;
+      await writeFile(session.match(/--out "([^"]+)"/)[1], JSON.stringify({ ...body, contentHash: canonicalHash(body) }));
+    `, 'utf8');
+    const shim = join(bin, 'codex');
+    writeFileSync(shim, `#!/bin/sh\nexec "${process.execPath}" "${helper}" "$@"\n`, 'utf8');
+    chmodSync(shim, 0o755);
+
+    const result = spawnSync(process.execPath, [
+      resolve('scripts/mamilas-command.mjs'), '--file', join(dir, 'sample_mamilas_command.json'),
+      '--batch', '--launch', '--provider', 'codex',
+    ], { cwd: dir, encoding: 'utf8', env: { ...process.env, PATH: `${bin}${delimiter}${process.env.PATH}` } });
+    expect(result.status, result.stderr).toBe(0);
+
+    // Her rol oturumu KENDİ klasörünü aldı: `.mamilas/work/<scene>/<role>/r<rev>/SESSION.md`.
+    const used = readFileSync(join(dir, '.mamilas', 'SESSION-PATHS.txt'), 'utf8').trim().split('\n');
+    expect(used.length).toBeGreaterThan(1);
+    expect(new Set(used).size).toBe(used.length); // hiçbir iki oturum aynı dosyayı paylaşmadı
+    for (const path of used) expect(path).toMatch(/[\\/]work[\\/]\d+[\\/]image_(author|jury)[\\/]r\d+[\\/]SESSION\.md$/);
+    // Paylaşılan run kökünde oturum dosyası KALMADI.
+    expect(existsSync(join(dir, '.mamilas', 'SESSION.md'))).toBe(false);
+    expect(existsSync(join(dir, '.mamilas', 'ARTIFACT_TEMPLATE.json'))).toBe(false);
+  }, 120_000);
+
+  test('TESLİM KAPISI: eksik sahne varken image fazı tamamlanmış sayılmaz', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-gate-'));
+    const command = commandFixture(3);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    passChain(command, 1, artifactsDir); // yalnız 1 sahne hazır, 2 ve 3 eksik
+
+    const partial = runAt(dir, command, ['--batch', '--dry-run']);
+    expect(partial.status).toBe(0);
+    const partialReport = JSON.parse(partial.stdout);
+    expect(partialReport.imagePhaseComplete).toBe(false);
+    expect(partialReport.incompleteScenes).toEqual([2, 3]);
+
+    passChain(command, 2, artifactsDir);
+    passChain(command, 3, artifactsDir);
+    const full = runAt(dir, command, ['--batch', '--dry-run']);
+    const fullReport = JSON.parse(full.stdout);
+    expect(fullReport.imagePhaseComplete).toBe(true);
+    expect(fullReport.incompleteScenes).toEqual([]);
+  });
+
+  test('TOPLU KARE ALIMI: klasördeki dosyalar ad numarasından sahnelere bağlanır', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-frames-'));
+    const command = commandFixture(2);
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
+    passChain(command, 1, artifactsDir);
+    passChain(command, 2, artifactsDir);
+
+    const framesDir = join(dir, 'kareler');
+    mkdirSync(framesDir);
+    const png = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64');
+    writeFileSync(join(framesDir, '1.png'), png);
+    writeFileSync(join(framesDir, 'scene-2_final.png'), png);
+    writeFileSync(join(framesDir, 'notlar.txt'), 'atlanmalı');
+
+    const result = runAt(dir, command, ['--import-frames', framesDir, '--verdict', 'APPROVE']);
+    expect(result.status, result.stderr).toBe(0);
+    const report = JSON.parse(result.stdout);
+    expect(report.action.kind).toBe('FRAMES_IMPORTED');
+    expect(report.imported.map((item: any) => item.sceneId).sort()).toEqual([1, 2]);
+    expect(report.missingScenes).toEqual([]);
+    expect(report.complete).toBe(true);
+    expect(existsSync(join(dir, '.mamilas', 'frames', '1.json'))).toBe(true);
+    expect(existsSync(join(dir, '.mamilas', 'frames', '2.json'))).toBe(true);
   });
 });

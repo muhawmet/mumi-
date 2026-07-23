@@ -10,7 +10,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, realpathSync } from 'node:fs';
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
-import { delimiter, dirname, extname, join, resolve } from 'node:path';
+import { delimiter, dirname, extname, join, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import sharp from 'sharp';
@@ -79,6 +79,8 @@ const FW_BRAND_RE = new RegExp(`\\b(?:${IP_FIREWALL.commercialBrandSource})\\b`,
 const FW_WORK_TITLE_RE = new RegExp(`\\b(?:${IP_FIREWALL.workTitleSource})\\b`, 'gu');
 // GATE terimleri regex-source parçaları DEĞİL düz metin (peter b\. parker hariç —
 // proof.ts de escape'lemeden gömer; kanon aynı byte'ı taşıdığı için davranış birebir).
+// Kanonik suffix yalnız gerçek Türkçe ek biçimlerini kabul eder; arbitrary harf kuyruğu
+// İngilizce "naming" sözcüğünü Nami diye yanlış blokluyordu.
 const FW_TERM_RES = FW_GATE_TERMS.map((term) =>
   new RegExp(`\\b${FW_ESCAPE(term)}${IP_FIREWALL.turkishSuffix}\\b`, 'iu'));
 
@@ -338,6 +340,30 @@ function nonEmptyStrings(value) {
   return Array.isArray(value) && value.every((item) => typeof item === 'string') && value.length > 0;
 }
 
+function validateImageRenderLock(prompt, command) {
+  const renderLaw = command?.worldPacket?.renderPhysics ?? '';
+  if (!/(?:full 3d cgi|feature-animation 3d|continuous physically[- ]based shading)/i.test(renderLaw)) return [];
+  const problems = [];
+  if (!/(?:3d cgi|feature-animation|continuous (?:physically )?(?:based |shaded )?(?:cgi|3d)|dimensional cgi)/i.test(prompt ?? '')) {
+    problems.push('3D animation render lock pozitif medium eksik');
+  }
+  // Karşı-kilit ARANAN ŞEY: photoreal/live-action'ın yasaklanmış olması. Yasağın hangi
+  // cümlede ve olumsuzlama kelimesinden kaç karakter sonra durduğu ÖNEMSİZ — gerçek
+  // promptlar yasağı uzun bir negatif listenin sonuna koyar ("No text, logos, …,
+  // photorealism, or live-action capture."), araya 150+ karakter girer. Mesafe ölçen
+  // bir pencere bu doğru promptu reddediyordu (2026-07-23, Mami'nin 69 sahnelik koşusu).
+  // Bu yüzden yasaklı terimi arıyoruz; olumsuzlama bağlamını cümle düzeyinde doğruluyoruz.
+  const banned = /\b(?:photoreal(?:ism|istic)?|live[- ]action|photographic (?:human )?capture|real[- ]human photographic skin)\b/i;
+  const negated = (prompt ?? '')
+    .split(/(?<=[.;])\s+/)
+    .some((sentence) => banned.test(sentence)
+      && /\b(?:no|not|never|without|avoid|forbid(?:s|den)?|excluding)\b/i.test(sentence));
+  if (!negated) {
+    problems.push('3D animation render lock photoreal/live-action karşı-kilidi eksik');
+  }
+  return problems;
+}
+
 function validateRoleContent(artifact, command) {
   const problems = [];
   const content = artifact?.content;
@@ -376,6 +402,7 @@ function validateRoleContent(artifact, command) {
     // M2: PROMPT SURGEON AI-slop çapraz-kontrolü — agentProtocol.ts verifyAgentArtifact ikizi.
     const imageSlop = surgeonSlopHits(content.prompt ?? '', false);
     if (imageSlop.length) problems.push(`image prompt AI-slop (surgeon): ${imageSlop.join(', ')}`);
+    problems.push(...validateImageRenderLock(content.prompt ?? '', command));
   } else if (artifact.role === 'motion_author') {
     if (typeof content.prompt !== 'string' || !content.prompt.trim()) problems.push('motion prompt');
     if (content.promptHash !== sha256(content.prompt ?? '')) problems.push('motion promptHash');
@@ -432,13 +459,16 @@ function requiredArtifact(artifacts, role, revision, consumer) {
   return artifact;
 }
 
-function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
+function expectedInputs(role, revision, artifacts, command, sceneId, frame, options = {}) {
   const contextHash = command.lifecycle.sceneContextHashes[sceneId];
   const latestPassingImageJury = artifacts
     .filter((item) => item.role === 'image_jury' && item.content?.verdict === 'PASS')
     .sort((a, b) => b.revision - a.revision)[0];
   const imageJury = latestPassingImageJury;
-  const imageAuthor = imageJury ? requiredArtifact(artifacts, 'image_author', imageJury.revision, role) : null;
+  // Jürisiz modda görüntü zincirinin taşıyıcısı author'dır (passingImageArtifacts ikizi).
+  const imageAuthor = imageJury
+    ? requiredArtifact(artifacts, 'image_author', imageJury.revision, role)
+    : passingImageArtifacts(artifacts, options).author;
   const frameJury = artifactAt(artifacts, 'frame_jury', 0);
 
   if (role === 'image_author' && revision === 0) return [contextHash];
@@ -452,16 +482,17 @@ function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
     return [contextHash, requiredArtifact(artifacts, 'image_author', revision, role).contentHash];
   }
   if (role === 'frame_jury') {
-    if (!imageAuthor || !imageJury) throw new Error('frame_jury: PASS image zinciri yok');
+    if (!imageAuthor) throw new Error('frame_jury: PASS image zinciri yok');
     if (!frame?.contentHash) throw new Error('frame_jury: current frame receipt yok');
-    return [contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash];
+    // Jury hash'i yalnız jury gerçekten koştuysa zincire girer.
+    return [contextHash, imageAuthor.contentHash, ...(imageJury ? [imageJury.contentHash] : []), frame.contentHash];
   }
   if (role === 'motion_author') {
-    if (!imageAuthor || !imageJury || !frameJury || frameJury.content?.verdict !== 'PASS') {
+    if (!imageAuthor || !frameJury || frameJury.content?.verdict !== 'PASS') {
       throw new Error('motion_author: PASS image/frame zinciri yok');
     }
     if (!frame?.contentHash) throw new Error('motion_author: current frame receipt yok');
-    const base = [contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash];
+    const base = [contextHash, imageAuthor.contentHash, ...(imageJury ? [imageJury.contentHash] : []), frame.contentHash, frameJury.contentHash];
     if (revision === 0) return base;
     const author0 = requiredArtifact(artifacts, 'motion_author', 0, role);
     const jury0 = requiredArtifact(artifacts, 'motion_jury', 0, role);
@@ -469,9 +500,9 @@ function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
     return [...base, author0.contentHash, jury0.contentHash];
   }
   if (role === 'motion_jury') {
-    if (!imageAuthor || !imageJury || !frameJury) throw new Error('motion_jury: prerequisite zinciri yok');
+    if (!imageAuthor || !frameJury) throw new Error('motion_jury: prerequisite zinciri yok');
     return [
-      contextHash, imageAuthor.contentHash, imageJury.contentHash, frame.contentHash, frameJury.contentHash,
+      contextHash, imageAuthor.contentHash, ...(imageJury ? [imageJury.contentHash] : []), frame.contentHash, frameJury.contentHash,
       requiredArtifact(artifacts, 'motion_author', revision, role).contentHash,
     ];
   }
@@ -485,7 +516,7 @@ function expectedInputs(role, revision, artifacts, command, sceneId, frame) {
 // Yeni davranış: stale frame-bağımlı artifact zinciri kırmaz; AYIKLANIR (yok sayılır) ve
 // dönen liste, canlı zincir olarak kullanılır → nextAction frame_jury'yi yeniden açar.
 // Image katı (author/jury) frameHash taşımaz — tamper/uyuşmazlık orada hâlâ FIRLATIR.
-function validateArtifactChain(artifacts, frame, command, sceneId) {
+function validateArtifactChain(artifacts, frame, command, sceneId, options = {}) {
   const FRAME_BOUND = new Set(['frame_jury', 'motion_author', 'motion_jury']);
   const live = artifacts.filter((artifact) =>
     !FRAME_BOUND.has(artifact.role)
@@ -495,7 +526,7 @@ function validateArtifactChain(artifacts, frame, command, sceneId) {
     const key = `${artifact.role}@${artifact.revision}`;
     if (seen.has(key)) throw new Error(`duplicate artifact: ${key}`);
     seen.add(key);
-    const expected = expectedInputs(artifact.role, artifact.revision, live, command, sceneId, frame);
+    const expected = expectedInputs(artifact.role, artifact.revision, live, command, sceneId, frame, options);
     if (canonicalize(expected) !== canonicalize(artifact.inputArtifactHashes)) {
       throw new Error(`${key}: inputArtifactHashes zinciri uyuşmuyor`);
     }
@@ -584,12 +615,22 @@ async function parseImageDimensions(bytes) {
   }
 }
 
-function passingImageArtifacts(artifacts) {
+// Jürisiz modda (--skip-image-jury) PASS zincirinin taşıyıcısı author'ın KENDİSİDİR:
+// Mami kalite kapısı olarak kareyi kendi onaylar. Jury artifact'i olan sahnelerde eski
+// yasa aynen geçerli — bu yüzden önce jury aranır, yalnız HİÇ jury yokken author'a
+// düşülür. REJECT'li bir jury varken author'ı "geçmiş" saymayız (o sahne gerçekten
+// revizyon bekliyor); yalnızca jury hiç koşmamışsa jürisiz akış devrededir.
+function passingImageArtifacts(artifacts, options = {}) {
   const jury = artifacts
     .filter((item) => item.role === 'image_jury' && item.content?.verdict === 'PASS')
     .sort((a, b) => b.revision - a.revision)[0];
-  const author = jury ? artifactAt(artifacts, 'image_author', jury.revision) : null;
-  return { author, jury };
+  if (jury) return { author: artifactAt(artifacts, 'image_author', jury.revision), jury };
+  const anyJury = artifacts.some((item) => item.role === 'image_jury');
+  if (options.skipJury && !anyJury) {
+    const author = latest(artifacts, 'image_author');
+    if (author) return { author, jury: null };
+  }
+  return { author: null, jury: null };
 }
 
 function storyboardApprovalBody(command, scene) {
@@ -655,7 +696,7 @@ async function addLiveDirective(command, commandFile, args) {
   return { output, commandId: updated.commandId, directive };
 }
 
-async function loadFrame(root, command, scene, artifacts) {
+async function loadFrame(root, command, scene, artifacts, options = {}) {
   const receiptPath = join(root, 'frames', `${scene.id}.json`);
   if (!existsSync(receiptPath)) return null;
   const receipt = JSON.parse(await readFile(receiptPath, 'utf8'));
@@ -664,8 +705,8 @@ async function loadFrame(root, command, scene, artifacts) {
   if (receipt.schema !== FRAME_RECEIPT_SCHEMA || receipt.sceneId !== scene.id) throw new Error(`scene ${scene.id} frame receipt schema/scene`);
   if (receipt.fromCommandId !== command.commandId || receipt.storyboardHash !== command.lifecycle.storyboardHash) throw new Error(`scene ${scene.id} frame stale`);
   if (!FRAME_VERDICTS.has(receipt.verdict)) throw new Error(`scene ${scene.id} frame verdict geçersiz`);
-  const { author, jury } = passingImageArtifacts(artifacts);
-  if (!author || !jury || receipt.fromImagePromptArtifactHash !== author.contentHash) throw new Error(`scene ${scene.id} frame prompt bağı stale`);
+  const { author } = passingImageArtifacts(artifacts, options);
+  if (!author || receipt.fromImagePromptArtifactHash !== author.contentHash) throw new Error(`scene ${scene.id} frame prompt bağı stale`);
   const localPath = resolve(join(root, 'frames', receipt.storedFile ?? ''));
   const frameDir = `${resolve(join(root, 'frames'))}${process.platform === 'win32' ? '\\' : '/'}`;
   if (!localPath.startsWith(frameDir) || !existsSync(localPath)) throw new Error(`scene ${scene.id} gerçek frame dosyası yok/geçersiz yol`);
@@ -679,10 +720,10 @@ async function loadFrame(root, command, scene, artifacts) {
   return { ...receipt, localPath };
 }
 
-async function importFrame(root, command, scene, artifacts, sourcePath, verdict) {
+async function importFrame(root, command, scene, artifacts, sourcePath, verdict, options = {}) {
   if (!FRAME_VERDICTS.has(verdict)) throw new Error('--verdict APPROVE|REGENERATE|PROJECT_ONLY_ACCEPT|PENDING olmalı');
-  const { author, jury } = passingImageArtifacts(artifacts);
-  if (!author || !jury) throw new Error('frame import için PASS image author→jury zinciri zorunlu');
+  const { author } = passingImageArtifacts(artifacts, options);
+  if (!author) throw new Error('frame import için PASS image prompt zinciri zorunlu');
   const bytes = await readFile(resolve(sourcePath));
   const dimensions = await parseImageDimensions(bytes);
   if (dimensions.width <= 0 || dimensions.height <= 0 || bytes.length <= 0) throw new Error('frame dimensions/bytes geçersiz');
@@ -711,11 +752,13 @@ async function importFrame(root, command, scene, artifacts, sourcePath, verdict)
   return { receiptPath, frameHash: receipt.frameHash, width: receipt.width, height: receipt.height, verdict };
 }
 
-async function exportImageBundle(root, command, scene, artifacts, outputArg) {
-  const { author, jury } = passingImageArtifacts(artifacts);
-  if (!author || !jury) throw new Error('site import bundle için PASS image author→jury zinciri zorunlu');
+async function exportImageBundle(root, command, scene, artifacts, outputArg, options = {}) {
+  const { author, jury } = passingImageArtifacts(artifacts, options);
+  if (!author) throw new Error('site import bundle için PASS image prompt zinciri zorunlu');
+  // Jürisiz modda zincirin üst sınırı author'ın kendi revizyonudur.
+  const maxRevision = jury ? jury.revision : author.revision;
   const imageArtifacts = artifacts
-    .filter((artifact) => (artifact.role === 'image_author' || artifact.role === 'image_jury') && artifact.revision <= jury.revision)
+    .filter((artifact) => (artifact.role === 'image_author' || artifact.role === 'image_jury') && artifact.revision <= maxRevision)
     .sort((a, b) => a.revision - b.revision || a.role.localeCompare(b.role));
   const body = { schema: 'mamilas.image-artifact-bundle.v1', command, artifacts: imageArtifacts };
   // F-A4: --out jail'i. root = projectDir/.mamilas → yazma proje ağacında kalmalı.
@@ -727,10 +770,17 @@ async function exportImageBundle(root, command, scene, artifacts, outputArg) {
 
 const latest = (artifacts, role) => artifacts.filter((a) => a.role === role).sort((a, b) => b.revision - a.revision)[0];
 
-function authorJuryAction(artifacts, authorRole, juryRole) {
+function authorJuryAction(artifacts, authorRole, juryRole, options = {}) {
   const author = latest(artifacts, authorRole);
   const jury = latest(artifacts, juryRole);
   if (!author) return { kind: 'RUN_ROLE', role: authorRole, revision: 0 };
+  // `--skip-image-jury` (Mami direktifi 2026-07-23): kalite kapısı Mami'nin KENDİSİ —
+  // kareleri basıp istisna listesi veriyor ([[mamilas-batch-mode-mandate]]). Jury sahne
+  // başına ikinci bir tam oturum açıp süreyi ikiye katlıyordu. Atlanınca author PASS'i
+  // doğrudan kare kapısına gider; REVISION/FACT_REQUIRED yolları yalnızca jury varken
+  // anlamlıdır, o yüzden burada erken dönüyoruz. Firewall/hash/render-lock kapıları
+  // deterministik koddadır ve ATLANMAZ — kalkan tek şey yaratıcı ikinci-okuma.
+  if (options.skipJury && juryRole === 'image_jury') return null;
   if (!jury || jury.revision < author.revision) return { kind: 'RUN_ROLE', role: juryRole, revision: author.revision };
   if (jury.content.verdict === 'FACT_REQUIRED') return { kind: 'FACT_REQUIRED', reason: jury.content.factRequired };
   if (jury.content.verdict === 'REJECT') {
@@ -741,9 +791,11 @@ function authorJuryAction(artifacts, authorRole, juryRole) {
   return null;
 }
 
-function nextAction(artifacts, frame) {
-  const image = authorJuryAction(artifacts, 'image_author', 'image_jury');
+function nextAction(artifacts, frame, options = {}) {
+  const image = authorJuryAction(artifacts, 'image_author', 'image_jury', options);
   if (image) return image;
+  // Jury atlandıysa author artifact'i olmayan sahne kare kapısına düşmemeli.
+  if (options.skipJury && !latest(artifacts, 'image_author')) return { kind: 'RUN_ROLE', role: 'image_author', revision: 0 };
   if (!frame) return { kind: 'AWAIT_FRAME' };
   if (frame.verdict !== 'APPROVE') return { kind: 'AWAIT_MAMI_APPROVE' };
   const frameJury = latest(artifacts, 'frame_jury');
@@ -949,11 +1001,17 @@ function findExecutable(name) {
   return null;
 }
 
+// Rol oturumlarının modeli SABİTTİR. Sabitlenmeden önce her oturum CLI'ın o anki
+// varsayılanını alıyordu — pencerede açık kalan bir model (2026-07-23 sabahı Fable)
+// sessizce 69 sahnenin prompt yazarına dönüşüyordu. Prompt kalitesi modele doğrudan
+// bağlı olduğu için varsayılana güvenilmez: author ve jury aynı bilinen modelde koşar.
+const ROLE_MODEL = 'claude-opus-4-8[1m]';
+
 async function launchInteractive(provider, projectDir, workspaceDir) {
   const cli = findExecutable(provider);
   if (!cli) throw new Error(`${provider} CLI bulunamadı`);
   const instruction = `Read ${JSON.stringify(join(workspaceDir, 'SESSION.md'))} and follow it. Work only on the single role named there; do not call generation APIs.`;
-  const args = provider === 'codex' ? ['-C', projectDir, instruction] : [instruction];
+  const args = provider === 'codex' ? ['-C', projectDir, instruction] : ['--model', ROLE_MODEL, instruction];
   const child = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
     ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${args.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
     : spawn(cli, args, { cwd: projectDir, stdio: 'inherit' });
@@ -972,7 +1030,7 @@ async function launchHeadless(provider, projectDir, workspaceDir) {
   const instruction = `Read ${JSON.stringify(join(workspaceDir, 'SESSION.md'))} and follow it. Work only on the single role named there; do not call generation APIs.`;
   const args = provider === 'codex'
     ? ['exec', '-C', projectDir, '--sandbox', 'workspace-write', instruction]
-    : ['-p', instruction, '--permission-mode', 'acceptEdits'];
+    : ['-p', instruction, '--model', ROLE_MODEL, '--permission-mode', 'acceptEdits'];
   const child = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
     ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${args.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
     : spawn(cli, args, { cwd: projectDir, stdio: 'inherit' });
@@ -983,15 +1041,15 @@ async function launchHeadless(provider, projectDir, workspaceDir) {
 
 // Tek sahnenin canlı durumunu türetir: approval → artifacts → frame → nextAction.
 // Hem tekli akış hem batch döngüsü aynı yasadan okur; ikinci bir lifecycle yoktur.
-async function sceneStatus(root, command, scene, artifacts) {
+async function sceneStatus(root, command, scene, artifacts, options = {}) {
   const approval = await loadStoryboardApproval(root, command, scene);
   if (!approval.ok) return { scene, artifacts: [], frame: null, action: { kind: 'AWAIT_STORYBOARD_APPROVAL' } };
   const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === scene.id);
-  const frame = await loadFrame(root, command, scene, sceneArtifacts);
+  const frame = await loadFrame(root, command, scene, sceneArtifacts, options);
   // Stale frame-bağımlı artifact'ler ayıklanır — canlı zincir üzerinden ilerlenir
   // (yeni kare geldiyse frame_jury/motion doğal olarak yeniden açılır).
-  const liveArtifacts = validateArtifactChain(sceneArtifacts, frame, command, scene.id);
-  return { scene, artifacts: liveArtifacts, frame, action: nextAction(liveArtifacts, frame) };
+  const liveArtifacts = validateArtifactChain(sceneArtifacts, frame, command, scene.id, options);
+  return { scene, artifacts: liveArtifacts, frame, action: nextAction(liveArtifacts, frame, options) };
 }
 
 // HARD-FIX 2026-07-16 (rapor madde 9/10/12): recurring identity continuity.
@@ -1002,11 +1060,11 @@ async function sceneStatus(root, command, scene, artifacts) {
 // varsayılmaz; özet hash-bağlıdır (sourceArtifactHash) ama sceneContextHash'e GİRMEZ —
 // approvedLessons gibi launch-anı katmanıdır, yoksa her sahne PASS'i sonraki tüm
 // sahnelerin command'ini stale ederdi.
-export function continuityStateFrom(command, scene, allArtifacts) {
+export function continuityStateFrom(command, scene, allArtifacts, options = {}) {
   const prevScene = command.scenes[command.scenes.findIndex((item) => item.id === scene.id) - 1];
   if (!prevScene) return null;
   const prevArtifacts = allArtifacts.filter((artifact) => artifact.sceneId === prevScene.id);
-  const { author } = passingImageArtifacts(prevArtifacts);
+  const { author } = passingImageArtifacts(prevArtifacts, options);
   if (!author?.content) return null;
   return {
     sceneId: prevScene.id,
@@ -1022,17 +1080,23 @@ export function continuityStateFrom(command, scene, allArtifacts) {
 
 // Bir RUN_ROLE aksiyonu için workspace'i hazırlar, TEK oturum açar ve üretilen
 // tek artifact'i doğrular. İnteraktif ve batch (headless) aynı sözleşmeyi koşar.
-async function executeRole(check, command, projectDir, root, artifactDir, status, provider, headless, allArtifacts = []) {
+async function executeRole(check, command, projectDir, root, artifactDir, status, provider, headless, allArtifacts = [], options = {}) {
   const { scene, artifacts: sceneArtifacts, frame, action } = status;
   const context = roleContext(command, scene, sceneArtifacts, frame, action);
   await mkdir(root, { recursive: true });
   await mkdir(artifactDir, { recursive: true });
   await mkdir(join(root, 'frames'), { recursive: true });
+  // Oturum scratch'i sahne/rol/revision başına İZOLE: PROTOCOL/ADAPTER/ROLE/CONTEXT/
+  // TEMPLATE/SESSION eskiden run köküne yazılıyordu, yani eşzamanlı iki rol birbirinin
+  // brief'ini eziyordu (ölçülen `--lanes` yarışının tam kökü). Kalıcı state (artifacts,
+  // frames, approvals) `root` altında kalır — izole olan yalnız tek oturumun girdisi.
+  const sessionDir = join(root, 'work', String(scene.id), action.role, `r${action.revision}`);
+  await mkdir(sessionDir, { recursive: true });
   const adapter = await readFile(join(REPO_ROOT, 'agents', 'adapters', `${provider}.md`), 'utf8');
   const role = await readFile(join(REPO_ROOT, 'agents', 'roles', `${action.role.replaceAll('_', '-')}.md`), 'utf8');
-  await writeFile(join(root, 'PROTOCOL.md'), check.protocolText, 'utf8');
-  await writeFile(join(root, 'ADAPTER.md'), adapter, 'utf8');
-  await writeFile(join(root, 'ROLE.md'), role, 'utf8');
+  await writeFile(join(sessionDir, 'PROTOCOL.md'), check.protocolText, 'utf8');
+  await writeFile(join(sessionDir, 'ADAPTER.md'), adapter, 'utf8');
+  await writeFile(join(sessionDir, 'ROLE.md'), role, 'utf8');
   const artifactTemplate = {
     schema: ARTIFACT_SCHEMA,
     protocolVersion: PROTOCOL_VERSION,
@@ -1043,7 +1107,7 @@ async function executeRole(check, command, projectDir, root, artifactDir, status
     sceneId: scene.id,
     decisionHash: command.commandId.replace(/^mamilas-/, ''),
     storyboardHash: command.lifecycle.storyboardHash,
-    inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts, command, scene.id, frame),
+    inputArtifactHashes: expectedInputs(action.role, action.revision, sceneArtifacts, command, scene.id, frame, options),
     revision: action.revision,
     content: artifactContentTemplate(action.role, command, scene),
   };
@@ -1061,13 +1125,13 @@ async function executeRole(check, command, projectDir, root, artifactDir, status
   // Continuity state — hash-DIŞI katman (approvedLessons gibi). Author VE jury'ler aynı
   // gerçeği görür: madde 12 — jury continuity'yi Author'ın risk notundan değil bağımsız
   // önceki-sahne state'inden ölçer.
-  const continuityState = continuityStateFrom(command, scene, allArtifacts);
+  const continuityState = continuityStateFrom(command, scene, allArtifacts, options);
   const sessionContext = { ...context, approvedLessons, continuityState, artifactContract: artifactTemplate };
-  const templatePath = join(root, 'ARTIFACT_TEMPLATE.json');
-  await writeFile(join(root, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
+  const templatePath = join(sessionDir, 'ARTIFACT_TEMPLATE.json');
+  await writeFile(join(sessionDir, 'CONTEXT.json'), JSON.stringify(sessionContext, null, 2), 'utf8');
   await writeFile(templatePath, JSON.stringify(artifactTemplate, null, 2), 'utf8');
   const outputName = `${scene.id}-${action.role}-r${action.revision}.json`;
-  await writeFile(join(root, 'SESSION.md'), `# MAMILAS single-role session\n\nProvider: ${provider}\nRole: ${action.role}\nScene: ${scene.id}\nRevision: ${action.revision}\n\nRead PROTOCOL.md, ADAPTER.md, ROLE.md and CONTEXT.json. Edit only the content in ARTIFACT_TEMPLATE.json, then seal it with:\n\nnode "${fileURLToPath(import.meta.url)}" --seal-artifact "${templatePath}" --out "${join(artifactDir, outputName)}"\n\nWrite exactly this one artifact. Do not run another role.${headless ? '\nWhen the artifact is sealed, exit the session immediately.' : ''}\n`, 'utf8');
+  await writeFile(join(sessionDir, 'SESSION.md'), `# MAMILAS single-role session\n\nProvider: ${provider}\nRole: ${action.role}\nScene: ${scene.id}\nRevision: ${action.revision}\n\nRead PROTOCOL.md, ADAPTER.md, ROLE.md and CONTEXT.json. Edit only the content in ARTIFACT_TEMPLATE.json, then seal it with:\n\nnode "${fileURLToPath(import.meta.url)}" --seal-artifact "${templatePath}" --out "${join(artifactDir, outputName)}"\n\nWrite exactly this one artifact. Do not run another role.${headless ? '\nWhen the artifact is sealed, exit the session immediately.' : ''}\n`, 'utf8');
   // HARD-FIX 2026-07-17 (G2, ordu KÖK-A): before-set DİSKTEKİ TÜM sahne artifact'lerinden
   // kurulur, canlı (frame-filtreli) `sceneArtifacts`'ten DEĞİL. Eski davranış: yeni kare gelince
   // stale frame-bağlı artifact (eski frameHash'li motion) canlı listede olmadığı için "created"
@@ -1076,8 +1140,15 @@ async function executeRole(check, command, projectDir, root, artifactDir, status
   const beforeAll = (await loadArtifacts(artifactDir, command, { strict: false })).artifacts
     .filter((artifact) => artifact.sceneId === scene.id);
   const beforeHashes = new Set(beforeAll.map((artifact) => artifact.contentHash));
-  await (headless ? launchHeadless : launchInteractive)(provider, projectDir, root);
-  const after = (await loadArtifacts(artifactDir, command)).filter((artifact) => artifact.sceneId === scene.id);
+  await (headless ? launchHeadless : launchInteractive)(provider, projectDir, sessionDir);
+  // Non-strict: strict yükleme TÜM dizini doğrular, yani eşzamanlı başka bir sahnenin
+  // yarım yazılmış dosyası bu sahnenin oturumunu öldürürdü. Sahne izolasyonu yasası
+  // (bir sahnenin hatası diğerlerini etkilemez) yükleme katmanında da geçerli olmalı;
+  // bu sahnenin kendi zinciri aşağıda `validateArtifactChain` ile ayrıca doğrulanıyor.
+  const { artifacts: afterAll, errors: afterErrors } = await loadArtifacts(artifactDir, command, { strict: false });
+  const ownAfterError = afterErrors.find((error) => error.sceneId === scene.id);
+  if (ownAfterError) throw new Error(`${ownAfterError.file}: ${ownAfterError.problems.join(', ')}`);
+  const after = afterAll.filter((artifact) => artifact.sceneId === scene.id);
   const created = after.filter((artifact) => !beforeHashes.has(artifact.contentHash));
   if (created.length !== 1) throw new Error(`oturum tam bir yeni artifact üretmeli; bulunan ${created.length}`);
   const produced = created[0];
@@ -1110,6 +1181,8 @@ function statusReport(scene, status) {
 // HARD-FIX 2026-07-16 (rapor A.6/teslim yüzeyi): paket ATOMİK yazılır (tmp+rename —
 // yarıda kesilen koşu yarım dosya bırakmaz) ve GÖRÜNÜR kopyası run kökünde yaşar
 // (command dosyasının yanı) — Mami gizli .mamilas klasörü açmaz. Özet başa gelir.
+let packWriteCounter = 0;
+
 async function writeBatchPromptPack(root, command, sceneReports, projectDir = null) {
   const counts = { ready: 0, waiting: 0, fact: 0, error: 0, pending: 0 };
   for (const report of sceneReports) {
@@ -1141,7 +1214,9 @@ async function writeBatchPromptPack(root, command, sceneReports, projectDir = nu
   const targets = [join(root, 'SAHNE-PROMPTLAR.md')];
   if (projectDir && resolve(projectDir) !== resolve(root)) targets.push(join(projectDir, 'SAHNE-PROMPTLAR.md'));
   for (const target of targets) {
-    const tmp = `${target}.tmp`;
+    // tmp adı benzersiz: sabit `${target}.tmp` iki eşzamanlı yazıcıda aynı dosyayı
+    // paylaşıp rename'i ENOENT'e düşürüyordu (ölçülen `--lanes` çöküşünün ikinci ayağı).
+    const tmp = `${target}.${process.pid}-${packWriteCounter += 1}.tmp`;
     await writeFile(tmp, body, 'utf8');
     await rename(tmp, target);
   }
@@ -1299,7 +1374,7 @@ export async function runCommand(args = process.argv.slice(2)) {
   // bayraklarıyla birleşemez. Eskiden karışım "PASS image zinciri yok" gibi ALAKASIZ
   // bir hataya düşüyordu (batch erken artifacts=[] geçtiği için). Net, erken hata:
   if (args.includes('--batch')) {
-    const soloFlags = ['--import-frame', '--export-image-bundle', '--clear-frame', '--add-directive-file', '--approve-storyboard'];
+    const soloFlags = ['--import-frame', '--import-frames', '--export-image-bundle', '--clear-frame', '--add-directive-file', '--approve-storyboard'];
     const clash = soloFlags.find((flag) => args.includes(flag));
     if (clash) throw new Error(`--batch ${clash} ile birlikte kullanılamaz: --batch tüm sahneleri sürer, ${clash} tek sahne/işlem içindir. Birini seç.`);
   }
@@ -1367,6 +1442,49 @@ export async function runCommand(args = process.argv.slice(2)) {
     const exported = await exportImageBundle(root, command, explicitScene, liveExportArtifacts, argValue(args, '--out'));
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'IMAGE_BUNDLE_EXPORTED' }, ...exported };
   }
+  // TOPLU KARE ALIMI: 69 kareyi tek tek `--scene N --import-frame <png>` ile getirmek
+  // gerçek üretimde imkânsızdı. `--import-frames <klasör>` klasördeki dosyaları adlarındaki
+  // sahne numarasından eşleştirir (`12.png`, `scene-12.png`, `12_final.png` → sahne 12) ve
+  // her birini tekil yolun AYNI kapılarından geçirir; toplu diye gevşetilmiş kontrol yoktur.
+  if (args.includes('--import-frames')) {
+    const dir = resolve(argValue(args, '--import-frames') ?? '');
+    if (!existsSync(dir)) throw new Error(`--import-frames klasörü yok: ${dir}`);
+    const verdict = argValue(args, '--verdict') ?? 'PENDING';
+    const byScene = new Map();
+    const skipped = [];
+    for (const name of readdirSync(dir).sort()) {
+      if (!/\.(png|jpe?g|webp)$/i.test(name)) continue;
+      const matched = name.match(/(\d+)/);
+      const sceneId = matched ? Number(matched[1]) : null;
+      const scene = command.scenes.find((item) => item.id === sceneId);
+      if (!scene) { skipped.push(name); continue; }
+      if (byScene.has(scene.id)) { skipped.push(`${name} (sahne ${scene.id} zaten eşleşti)`); continue; }
+      byScene.set(scene.id, { scene, path: join(dir, name), file: name });
+    }
+    const imported = [];
+    const failed = [];
+    for (const { scene, path, file: sourceName } of byScene.values()) {
+      try {
+        const approval = await loadStoryboardApproval(root, command, scene);
+        if (!approval.ok) throw new Error('storyboard APPROVE değil');
+        const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === scene.id);
+        const currentFrame = await loadFrame(root, command, scene, sceneArtifacts);
+        const live = validateArtifactChain(sceneArtifacts, currentFrame, command, scene.id);
+        const receipt = await importFrame(root, command, scene, live, path, verdict);
+        imported.push({ sceneId: scene.id, file: sourceName, ...receipt });
+      } catch (error) {
+        // Sahne izolasyonu toplu alımda da geçerli: bir kare reddedilirse diğerleri girer.
+        failed.push({ sceneId: scene.id, file: sourceName, error: error.message });
+      }
+    }
+    const missing = command.scenes.filter((scene) => !byScene.has(scene.id)).map((scene) => scene.id);
+    return {
+      file, validation: 'PASS', action: { kind: 'FRAMES_IMPORTED' },
+      imported, failed, skipped, missingScenes: missing,
+      complete: failed.length === 0 && missing.length === 0,
+    };
+  }
+
   if (args.includes('--import-frame')) {
     if (!explicitScene) throw new Error('--import-frame için --scene zorunlu');
     const approval = await loadStoryboardApproval(root, command, explicitScene);
@@ -1405,6 +1523,7 @@ export async function runCommand(args = process.argv.slice(2)) {
       fileURLToPath(import.meta.url), '--file', file, '--batch', '--launch', '--provider', provider,
       ...(argValue(args, '--workspace') ? ['--workspace', argValue(args, '--workspace')] : []),
       ...(argValue(args, '--artifacts') ? ['--artifacts', argValue(args, '--artifacts')] : []),
+      ...(argValue(args, '--lanes') ? ['--lanes', argValue(args, '--lanes')] : []),
     ], { cwd: projectDir, detached: true, stdio: ['ignore', logFd, logFd] });
     batchChild.unref();
     // Yönetmen oturum sözleşmesi — rol kartı + canlı dosya işaretçileri.
@@ -1424,7 +1543,7 @@ export async function runCommand(args = process.argv.slice(2)) {
     const cli = findExecutable(provider);
     if (!cli) throw new Error(`${provider} CLI bulunamadı`);
     const instruction = `Read ${JSON.stringify(join(root, 'DIRECTOR-SESSION.md'))} and follow it. You are the Yerleşik Yönetmen; speak Turkish with Mami.`;
-    const directorArgs = provider === 'codex' ? ['-C', projectDir, instruction] : [instruction];
+    const directorArgs = provider === 'codex' ? ['-C', projectDir, instruction] : ['--model', ROLE_MODEL, instruction];
     const director = process.platform === 'win32' && ['.cmd', '.bat'].includes(extname(cli).toLowerCase())
       ? spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', `""${cli}" ${directorArgs.map((a) => `"${a.replaceAll('"', '""')}"`).join(' ')}"`], { cwd: projectDir, stdio: 'inherit', windowsVerbatimArguments: true })
       : spawn(cli, directorArgs, { cwd: projectDir, stdio: 'inherit' });
@@ -1449,7 +1568,18 @@ export async function runCommand(args = process.argv.slice(2)) {
     if (launch && !['claude', 'codex'].includes(provider)) throw new Error('--provider claude|codex zorunlu');
     const sceneReports = [];
     const total = command.scenes.length;
-    for (const candidate of command.scenes) {
+    // Sahneler izole (kendi artifact'i, kendi approval'ı, kendi hata sınırı) ve oturum
+    // scratch'i artık `.mamilas/work/<scene>/<role>/<rev>/` altında ayrı, bu yüzden
+    // sahneleri sırayla beklemek yalnızca duvar saatini harcıyor. `--lanes N` aynı yasayı
+    // N şeritte koşturur: rol oturumu, bağımsız jüri, revision limiti ve FACT_REQUIRED
+    // değişmez. Varsayılan tek şerit — paralellik açık talep ister.
+    const lanes = Math.max(1, Math.min(12, Number(argValue(args, '--lanes')) || 1));
+    // `--skip-image-jury`: yaratıcı ikinci-okuma kalkar, sahne başına süre yarıya iner.
+    // Kalite kapısı Mami'nin kendisidir (kareyi basıp istisna listesi verir). Deterministik
+    // kapılar — IP firewall, hash/stale, render lock, path safety — AYNEN koşar.
+    const skipJury = args.includes('--skip-image-jury');
+    const sceneOptions = { skipJury };
+    const runScene = async (candidate) => {
       let report = null;
       // Sahne başına güvenlik tavanı: author r0+r1, jury x2, motion aynı — 8 rol
       // koşusundan fazlası lifecycle yasasında zaten imkânsız; döngü kaçağına kapı yok.
@@ -1484,7 +1614,7 @@ export async function runCommand(args = process.argv.slice(2)) {
         }
         let status;
         try {
-          status = await sceneStatus(root, command, candidate, live);
+          status = await sceneStatus(root, command, candidate, live, sceneOptions);
         } catch (error) {
           // Zincir/approval hatası da yalnız bu sahneyi işaretler — batch ölmez.
           report = { sceneId: candidate.id, phaseName: candidate.phaseName, state: 'TECHNICAL_ERROR', reason: error.message };
@@ -1499,7 +1629,7 @@ export async function runCommand(args = process.argv.slice(2)) {
         // stderr'den görür (stdout tek JSON sonuç olarak kalır, parse bozulmaz).
         console.error(`⏳ Sahne ${candidate.id}/${total} · ${status.action.role} r${status.action.revision} yazıyor…`);
         try {
-          await executeRole(check, command, projectDir, root, artifactDir, status, provider, true, live);
+          await executeRole(check, command, projectDir, root, artifactDir, status, provider, true, live, sceneOptions);
         } catch (error) {
           // Rol oturumu/artifact hatası da sahne-bazlı: provider ölür, sahne işaretlenir,
           // sıradaki sahne yürür. Sonraki koşu (resume) bu sahneyi kaldığı yerden dener.
@@ -1518,16 +1648,41 @@ export async function runCommand(args = process.argv.slice(2)) {
       // HARD-FIX 2026-07-16 (rapor A.6): incremental teslim — paket HER sahne
       // kapanışında atomik yazılır; koşu yarıda kesilse bile o ana kadarki PASS
       // promptlar görünür pakette durur. Bekleyen sahneler PENDING olarak listelenir.
-      const pendingReports = command.scenes
-        .filter((scene) => !sceneReports.some((item) => item.sceneId === scene.id))
-        .map((scene) => ({ sceneId: scene.id, phaseName: scene.phaseName, state: 'PENDING' }));
-      await writeBatchPromptPack(root, command, [...sceneReports, ...pendingReports], projectDir);
-    }
+      // Şeritli koşuda sahneler bitiş sırasına göre birikir; paket her zaman command
+      // sırasına göre yazılır, Mami dosyayı 1'den 69'a okur.
+      const doneById = new Map(sceneReports.map((item) => [item.sceneId, item]));
+      await writeBatchPromptPack(root, command, command.scenes.map((scene) => doneById.get(scene.id)
+        ?? { sceneId: scene.id, phaseName: scene.phaseName, state: 'PENDING' }), projectDir);
+    };
+
+    if (lanes > 1) console.error(`🚦 ${lanes} şerit paralel koşuyor (${total} sahne).`);
+    const queue = [...command.scenes];
+    // Şerit kuyruktan çeker: yavaş bir sahne diğerlerini bloklamaz (sabit blok bölmenin
+    // aksine şeritler boşta kalmaz).
+    await Promise.all(Array.from({ length: Math.min(lanes, queue.length) }, async () => {
+      for (let next = queue.shift(); next; next = queue.shift()) await runScene(next);
+    }));
+    sceneReports.sort((a, b) => a.sceneId - b.sceneId);
     const packPath = await writeBatchPromptPack(root, command, sceneReports, projectDir);
-    if (launch) console.error(`\n🎬 Toplu prompt paketi: ${packPath}\n`);
+    // Teslim kapısı: image fazı ancak HER sahnenin jüri-PASS promptu varken biter. Paket
+    // eskiden eksik sahneyi yalnız gösteriyordu; "N/69 hazır" bir teslim değildir, çünkü
+    // Mami dosyayı tam sanıp kare üretimine geçiyordu.
+    const incomplete = sceneReports.filter((report) => report.state !== 'AWAIT_FRAME' || !report.prompt);
+    const imagePhaseComplete = incomplete.length === 0;
+    if (launch) {
+      console.error(`\n🎬 Toplu prompt paketi: ${packPath}`);
+      if (imagePhaseComplete) {
+        console.error(`✅ ${sceneReports.length}/${sceneReports.length} image prompt hazır — resimleri bekliyorum.\n`);
+      } else {
+        const preview = incomplete.slice(0, 8).map((report) => `${report.sceneId}:${report.state}`).join(', ');
+        console.error(`⛔ Image fazı TAMAMLANMADI — ${incomplete.length}/${sceneReports.length} sahne eksik (${preview}${incomplete.length > 8 ? ', …' : ''}).`);
+        console.error(`   Paket teslim edilmez; eksik sahneler için koşuyu tekrar başlat (resume kaldığı yerden sürer).\n`);
+      }
+    }
     return {
       file, validation: 'PASS', protocolHash: check.protocolHash, commandId: command.commandId,
       storyboardHash: check.expectedStoryboard, action: { kind: 'BATCH_REPORT' }, scenes: sceneReports, promptPack: packPath,
+      imagePhaseComplete, incompleteScenes: incomplete.map((report) => report.sceneId),
     };
   }
 
@@ -1570,9 +1725,14 @@ export async function sealArtifactDraft(args = process.argv.slice(2)) {
   const outputArg = argValue(args, '--out');
   if (!outputArg) throw new Error('--seal-artifact için --out zorunlu');
   // F-A4: seal ajanın (otonom child) kullandığı yoldur — SESSION.md'de --out artifactDir'i
-  // gösterir. Yazma, draft'ın bulunduğu run ağacının (draft'ın iki üstü: .mamilas/... → run
-  // kökü) dışına çıkamaz; child'ın kök-dışı artifact yazmasını engeller.
-  const runRoot = dirname(dirname(draftPath));
+  // gösterir. Yazma, draft'ın bulunduğu run ağacının dışına çıkamaz; child'ın kök-dışı
+  // artifact yazmasını engeller. Jail kökü draft'ın DERİNLİĞİNDEN sayılamaz: oturum
+  // scratch'i artık `.mamilas/work/<scene>/<role>/<rev>/` altında izole, sabit "iki üst"
+  // yanlış dizini işaret ederdi. Kök, yol içindeki `.mamilas` işaretinden bulunur.
+  const draftDir = dirname(draftPath);
+  const marker = `${sep}.mamilas${sep}`;
+  const markerAt = `${draftDir}${sep}`.lastIndexOf(marker);
+  const runRoot = markerAt >= 0 ? draftDir.slice(0, markerAt) : dirname(draftDir);
   const output = jailWrite(outputArg, runRoot, '--seal-artifact --out');
   const draft = JSON.parse(await readFile(draftPath, 'utf8'));
   const { contentHash: _ignored, ...body } = draft;

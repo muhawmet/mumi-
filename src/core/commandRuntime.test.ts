@@ -295,7 +295,7 @@ describe('interactive command runtime', () => {
     const artifactsDir = join(dir, '.mamilas', 'artifacts');
     mkdirSync(artifactsDir, { recursive: true });
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'A physical water-cycle frame with cloud and basin.';
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; a physical water-cycle frame with cloud and basin. No photoreal or live-action capture.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       // BRAIN M3: zorunlu şeffaf yorum receipt'i.
@@ -373,7 +373,7 @@ describe('interactive command runtime', () => {
     const artifactsDir = join(dir, '.mamilas', 'artifacts');
     mkdirSync(artifactsDir, { recursive: true });
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'A physical water-cycle frame with cloud and basin.';
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; a physical water-cycle frame with cloud and basin. No photoreal or live-action capture.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
@@ -423,7 +423,7 @@ describe('interactive command runtime', () => {
     const artifactsDir = join(dir, '.mamilas', 'artifacts');
     mkdirSync(artifactsDir, { recursive: true });
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'Scene one approved image prompt.';
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; scene one approved image prompt. No photoreal or live-action capture.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       // BRAIN M3: zorunlu şeffaf yorum receipt'i.
@@ -499,7 +499,7 @@ describe('interactive command runtime', () => {
     expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
     // Sahne 1: PASS image zinciri hazır ama GERÇEK FRAME YOK → batch motion açamaz.
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'Scene one approved image prompt.';
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; scene one approved image prompt. No photoreal or live-action capture.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
@@ -536,7 +536,7 @@ describe('interactive command runtime', () => {
     mkdirSync(artifactsDir, { recursive: true });
     expect(runAt(dir, command, ['--approve-storyboard', '--all-scenes']).status).toBe(0);
     const contextHash = command.lifecycle.sceneContextHashes[1];
-    const prompt = 'Scene one draft prompt.';
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; scene one draft prompt. No photoreal or live-action capture.';
     const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
       prompt, promptHash: sha256Hex(prompt),
       interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
@@ -573,9 +573,38 @@ describe('interactive command runtime', () => {
     const jury = readFileSync(resolve('agents/roles/image-jury.md'), 'utf8');
     expect(author).toContain('FRAME-BUILD');
     expect(author).toContain('promptQuality');
-    expect(jury).toContain('physical compositional');
-    expect(jury).toContain('relationship is missing');
+    expect(author).toContain('forbidding photoreal/live-action capture');
+    // Jüri üretim kapısıdır, zevk hakemi değil: reddi altı sert hataya bağlı ve estetik
+    // mikro-eleştiri açıkça PASS'a düşer (Mami'nin tolerans yasası, 2026-07-23).
+    expect(jury).toContain('production gate, not a taste critic');
+    expect(jury).toContain('cannot be read from the prompt');
+    expect(jury).toContain('aesthetic micro-critique is NOT a rejection');
     expect(jury).toContain('promptQuality.rejectIf');
+    expect(jury).toContain('photographic register drift is hard failure');
+  });
+
+  test('3D animasyon artifacti pozitif medium + anti-photoreal karşı-kilidi olmadan mühürlenmez', async () => {
+    const runtime = await import(pathToFileURL(resolve('scripts/mamilas-command.mjs')).href);
+    const command = commandFixture() as any;
+    const receipts = command.lifecycle.mamiDirectives.map((item: any) => ({
+      id: item.id, text: item.text, status: 'APPLIED',
+    }));
+    const artifact = (prompt: string) => ({
+      role: 'image_author', sceneId: 1,
+      content: {
+        prompt, promptHash: runtime.sha256(prompt),
+        interpretation: { dominantSubject: 'öğrenci', singleEvent: 'arabayı iter', frozenInstant: 'teker dönmeden önce' },
+        directiveReceipts: receipts, appliedLocks: ['3D world'], suppressedContext: [], risks: [],
+      },
+    });
+    const weak = runtime.__testValidateRoleContent(
+      artifact('3D CGI student pushes a cart under classroom light.'), command,
+    );
+    expect(weak).toContain('3D animation render lock photoreal/live-action karşı-kilidi eksik');
+    const locked = runtime.__testValidateRoleContent(
+      artifact('Continuous dimensional 3D CGI feature-animation shading; a student pushes a cart. No photoreal or live-action capture.'), command,
+    );
+    expect(locked.filter((item: string) => item.includes('3D animation render lock'))).toEqual([]);
   });
 
   test.each(['codex', 'claude'] as const)('%s interactive stub sonrası tam bir yeni role/provider artifact yeniden doğrulanır', (provider) => {
@@ -588,23 +617,37 @@ describe('interactive command runtime', () => {
     const runtimeUrl = pathToFileURL(resolve('scripts/mamilas-command.mjs')).href;
     writeFileSync(helper, `
       import { readFile, writeFile } from 'node:fs/promises';
-      import { join } from 'node:path';
+      import { dirname, join } from 'node:path';
       import { canonicalHash, sha256 } from ${JSON.stringify(runtimeUrl)};
-      const root = join(process.cwd(), '.mamilas');
+      // Oturum scratch'i sahne/rol basina izole (.mamilas/work/<scene>/<role>/<rev>/).
+      // Sahte provider gercek CLI gibi talimat argumani almadigi icin en yeni SESSION.md'yi bulur.
+      const { readdirSync, statSync } = await import('node:fs');
+      const findSessions = (d, acc = []) => {
+        for (const e of readdirSync(d, { withFileTypes: true })) {
+          const full = join(d, e.name);
+          if (e.isDirectory()) findSessions(full, acc);
+          else if (e.name === 'SESSION.md') acc.push(full);
+        }
+        return acc;
+      };
+      const sessionPath = findSessions(join(process.cwd(), '.mamilas'))
+        .sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0];
+      const session = await readFile(sessionPath, 'utf8');
+      const root = dirname(sessionPath);
       const context = JSON.parse(await readFile(join(root, 'CONTEXT.json'), 'utf8'));
       if (!context.promptQuality?.frameBuildOrder?.includes('visible subject + decisive action + physical place')) {
         throw new Error('Image Author received no sealed prompt-quality contract');
       }
-      const template = JSON.parse(await readFile(join(root, 'ARTIFACT_TEMPLATE.json'), 'utf8'));
+      const template = JSON.parse(await readFile(session.match(/--seal-artifact "([^"]+)"/)[1], 'utf8'));
       template.content = {
-        prompt: 'provider-authored prompt',
-        promptHash: sha256('provider-authored prompt'),
+        prompt: 'Continuous dimensional 3D CGI feature-animation shading; provider-authored prompt. No photoreal or live-action capture.',
+        promptHash: sha256('Continuous dimensional 3D CGI feature-animation shading; provider-authored prompt. No photoreal or live-action capture.'),
         interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
         directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
         appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
       };
       const sealed = { ...template, contentHash: canonicalHash(template) };
-      await writeFile(join(root, 'artifacts', '1-image_author-r0.json'), JSON.stringify(sealed));
+      await writeFile(session.match(/--out "([^"]+)"/)[1], JSON.stringify(sealed));
     `, 'utf8');
     if (process.platform === 'win32') {
       writeFileSync(join(bin, `${provider}.cmd`), `@echo off\r\n"${process.execPath}" "%~dp0fake-${provider}.mjs"\r\n`, 'utf8');
