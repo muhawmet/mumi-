@@ -16,7 +16,7 @@ export const DashboardStep = () => {
   const studioState = useStudioStore();
   const {
     selectedProjectId, projectTopic, projectClass, sceneCount, cast,
-    rawSource, sourceBeats, sourceReport,
+    rawSource, sourceBeats, sourceReport, beatMode,
     phase0PresetId,
     setField, setCurrentStep, advance, applyPreset, setRawSource, decodeRawSource, ingestRawSource,
     vault, saveToVault, loadFromVault, deleteFromVault, importProjectPack,
@@ -36,8 +36,8 @@ export const DashboardStep = () => {
   const presets = PHASE0_VIDEO;
   const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
   const decoded = useMemo(() => (rawSource.trim() ? decodeBrief(rawSource) : null), [rawSource]);
-  const sourceGate = sourceReadiness({ rawSource, sourceReport });
-  const hasFailedReport = Boolean(sourceReport && !sourceReport.ok);
+  const sourceGate = sourceReadiness({ rawSource, sourceReport, beatMode });
+  const hasFailedReport = Boolean(sourceReport && !sourceReport.ok && beatMode !== 'Manuel');
   const isSourceBound = sourceParsed.status === 'SOURCE_BOUND';
 
   const onPreset = (p: Phase0Preset) => {

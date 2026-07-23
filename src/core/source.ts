@@ -513,9 +513,23 @@ function exactSource(scene: SourceLike): string {
   return '';
 }
 
+/**
+ * Whitespace-insensitive view of the source, used to tell an *edit* from a *corruption*.
+ *
+ * Splitting scenes by hand legitimately drops blank lines and trailing spaces — the wording is
+ * untouched, only the layout moved. Byte equality calls that a corruption and closes the command
+ * gate; comparing on collapsed whitespace keeps the gate closed for what it exists to catch
+ * (words that no longer match the vault) while letting the director re-cut freely.
+ */
+function wordSkeleton(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 export function sourceIntegrity(rawVault: string, scenes: SourceLike[]): SourceIntegrityReport {
   const reconstructed = scenes.map(exactSource).join('');
-  const ok = rawVault === reconstructed;
+  const exact = rawVault === reconstructed;
+  // Wording preserved, layout changed → a hand re-cut, not a broken ingest.
+  const ok = exact || wordSkeleton(rawVault) === wordSkeleton(reconstructed);
   const coverage = ok
     ? 100
     : Math.min(100, Math.round((reconstructed.length / Math.max(1, rawVault.length)) * 100));

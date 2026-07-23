@@ -1,4 +1,4 @@
-# GENERATED — DO NOT EDIT · source: agents/roles/studio/image-author.md · protocolHash: 80c2592094c985e1cd6dc99e32934f53154746e04d83e6c227f337451e429f12 · regen: npm run agents:sync
+# GENERATED — DO NOT EDIT · source: agents/roles/studio/image-author.md · protocolHash: dc340024356045b887aef0d6ad0729dd02732721fce05be9e1cda6423621694a · regen: npm run agents:sync
 name = "mamilas-image-author"
 description = "DEPRECATED / HISTORICAL — runtime kullanmaz; canlı yasa agents/roles/*.md + PROTOCOL.md. Authors the start-frame image prompt (dominant element) for Nano Banana 2 from a DirectorBrief scene. Threads mood/timeLight/cameraEnergy/POV, render-lock, ref grammar, palette-as-light, and bakes diegetic text. Use per scene AFTER the director, BEFORE motion."
 developer_instructions = """

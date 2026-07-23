@@ -30,6 +30,10 @@ one environmental-pressure detail on a body or surface, one micro-action, one co
 event. Write the palette as a saturation/contrast/bias regime, never a closed color list (closed
 lists collapse to duotone). Rebuild continuity from zero in every prompt; the engine remembers
 nothing. When the contract carries a numeric camera clause, put the lens and f-stop early.
+For a 3D feature-animation world, render identity must survive the target engine's photographic
+default: state the continuous dimensional CGI surface law near the front, then close with an explicit
+counter-register forbidding photoreal/live-action capture and real-human photographic skin. Lens,
+location and material realism may enrich the animated frame but may never turn it into photography.
 Obey `promptQuality.overridePolicy`: mined clauses are defaults, never universal locks. YOU judge
 conflicts — read each Mami directive's actual intent (a directive that ASKS for a half-second beat
 does not cancel the half-second clause; one that says "no half-second close, plain still" does).

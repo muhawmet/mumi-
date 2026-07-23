@@ -1,4 +1,4 @@
-<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/palette-translator.md · protocolHash: 80c2592094c985e1cd6dc99e32934f53154746e04d83e6c227f337451e429f12 · regen: npm run agents:sync -->
+<!-- GENERATED — DO NOT EDIT · source: agents/roles/studio/palette-translator.md · protocolHash: dc340024356045b887aef0d6ad0729dd02732721fce05be9e1cda6423621694a · regen: npm run agents:sync -->
 ---
 name: mamilas-palette-translator
 description: DEPRECATED / NON-RUNNABLE. Palette translation is deterministic code; this file is historical reference only.

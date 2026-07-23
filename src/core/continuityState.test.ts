@@ -93,7 +93,11 @@ describe('rol kartları ve protokol continuity yasasını taşır', () => {
     const { readFileSync } = await import('node:fs');
     const protocol = readFileSync(resolve('agents/PROTOCOL.md'), 'utf8');
     expect(protocol).toMatch(/continuityState/);
-    expect(protocol).toMatch(/kimlik UYDURULMAZ/);
+    // Dış dünya gerçeği uydurulmaz; projeye ait kurgusal karakter ise FACT_REQUIRED
+    // üretmez, Author kanonik kimlik kartı yazar (2026-07-23 daraltması).
+    expect(protocol).toMatch(/UYDURULMAZ/);
+    expect(protocol).toMatch(/kurgusal karakter/);
+    expect(protocol).toMatch(/`FACT_REQUIRED`\s*\n?\s*ÇIKARILMAZ|FACT_REQUIRED`?\s*ÇIKARILMAZ/);
     expect(protocol).toMatch(/Author'ın risk notundan değil/);
   });
 

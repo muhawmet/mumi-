@@ -416,13 +416,19 @@ export function recipeReadiness(s: Pick<StudioState, 'selectedWorldId' | 'select
   return { ready: missing.length === 0, missing };
 }
 
-export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport'>): {
+export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'beatMode'>): {
   ready: boolean;
   reason: string | null;
 } {
   if (!s.rawSource.length) return { ready: true, reason: null };
   if (!s.sourceReport) return { ready: false, reason: 'Kaynak henüz ingest edilmedi.' };
-  if (!s.sourceReport.ok) return { ready: false, reason: `Kaynak bütünlüğü ${s.sourceReport.coverage}%; %100 gerekli.` };
+  // Manuel beat mode means the director cut the scenes by hand: the beats ARE the intended cut,
+  // so the vault is no longer the authority to measure them against. Auto modes still have to
+  // reconstruct the vault, because there a mismatch means the grouping lost text.
+  if (s.beatMode === 'Manuel') return { ready: true, reason: null };
+  // Not coverage — `ok` means the scene wording still matches the vault. Report that, because a
+  // "%100; %100 gerekli" line reads as a contradiction and hides what actually has to be fixed.
+  if (!s.sourceReport.ok) return { ready: false, reason: `Sahne metni kaynaktan sapmış (kapsam %${s.sourceReport.coverage}) — metni değiştirmeden yeniden ingest et.` };
   return { ready: true, reason: null };
 }
 
@@ -436,7 +442,7 @@ export function sourceReadiness(s: Pick<StudioState, 'rawSource' | 'sourceReport
  * are intentionally enforced by `productionReadiness` instead.
  */
 export function commandAuthoringReadiness(
-  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers'>,
+  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'beatMode' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers'>,
 ): {
   ready: boolean;
   reason: string;
@@ -511,7 +517,7 @@ export function motionGate(
  *  5. Her shot Mami tarafından APPROVED ve onay GÜNCEL karara bağlı (stale değil)
  */
 export function productionReadiness(
-  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers' | 'shotApprovals'>,
+  s: Pick<StudioState, 'rawSource' | 'sourceReport' | 'beatMode' | 'selectedWorldId' | 'selectedPaletteId' | 'subject' | 'recipeScenes' | 'scenes' | 'blockers' | 'shotApprovals'>,
   commandId: string,
   promptSourceId: string,
 ): {

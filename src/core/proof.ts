@@ -126,9 +126,9 @@ const GATE_IP_TERMS: string[] = [
 /**
  * Turkish agglutinates onto proper nouns, with or without the apostrophe convention:
  * "Naruto'nun", "Narutonun", "Gokuya", "Totoro'ya". A plain `\b` boundary catches only
- * the apostrophised forms — "Gokunun" walked straight through. Allow up to four trailing
- * Turkish-alphabet letters (optionally after an apostrophe) before requiring the boundary.
- * Over-matching here is the safe direction: a firewall may refuse too much, never too little.
+ * the apostrophised forms — "Gokunun" walked straight through. Allow the canonical Turkish
+ * case/possessive suffix forms, optionally after an apostrophe, before requiring the boundary.
+ * Arbitrary trailing letters are forbidden: they made English "naming" look like Nami + "ng".
  */
 const TR_SUFFIX: string = IP_FIREWALL.turkishSuffix;
 

@@ -298,14 +298,22 @@ export function evaluateDirectorCabinet(state: StudioState): QATip[] {
   // ok/hash eşitliğidir; coverage sadece "ne kadarı eksik" göstergesidir.
   const report = state.sourceReport;
   const coverage = report?.coverage ?? 0;
-  const integrityOk = !!report && report.ok && report.rawHash === report.reconHash;
+  // `ok` is the authority: it already accepts a hand re-cut (same wording, moved layout) and
+  // rejects changed wording. Hash inequality alone only means the layout moved, so it cannot
+  // veto `ok` — otherwise re-splitting scenes by hand reads as a corrupt ingest.
+  // In Manuel mode the hand-made beats are the intended cut, so the vault is not the authority
+  // to measure them against at all (mirrors `sourceReadiness`).
+  const manualCut = state.beatMode === 'Manuel';
+  const integrityOk = !!report && (report.ok || manualCut);
   if (!integrityOk) {
     eSuccess = false;
     eEvidence.push(
       report
-        ? `Kaynak bütünlüğü bozuk — hash uyuşmuyor (raw ${report.rawHash} ≠ recon ${report.reconHash}); coverage %${coverage} yanıltıcı.`
+        ? `Kaynak bütünlüğü bozuk — sahne metni kaynaktan sapmış (coverage %${coverage} yanıltıcı; metni değiştirmeden yeniden ingest et).`
         : `Kaynak raporu yok — bütünlük kanıtlanamıyor.`,
     );
+  } else if (report && report.rawHash !== report.reconHash) {
+    eEvidence.push(`Kaynak bütünlüğü %${coverage} — sahneler elle yeniden bölünmüş (metin birebir, yalnız boşluk düzeni değişmiş).`);
   } else eEvidence.push(`Kaynak bütünlüğü %${coverage}.`);
 
   if (scenes.length !== state.sceneCount) { eSuccess = false; eEvidence.push(`Sahne sayısı uyumsuz: State(${state.sceneCount}) vs Bundle(${scenes.length}).`); }

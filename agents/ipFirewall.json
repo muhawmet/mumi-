@@ -93,5 +93,5 @@
     "trafalgar law"
   ],
   "commercialBrandSource": "apple|nike|adidas|chanel|dior|gucci|prada|rolex|omega|coca[- ]?cola|pepsi|starbucks|mcdonald'?s?|samsung|huawei|xiaomi|bmw|mercedes|audi|porsche|ferrari|tesla|toyota|ikea|louis vuitton|hermès|hermes|balenciaga|supreme",
-  "turkishSuffix": "(?:['’]?[a-zçğıöşü]{0,4})?"
+  "turkishSuffix": "(?:['’]?(?:nın|nin|nun|nün|ın|in|un|ün|ya|ye|yı|yi|yu|yü|da|de|ta|te|dan|den|tan|ten|la|le|lar|ler|dır|dir|dur|dür|tır|tir|tur|tür|sı|si|su|sü|a|e|ı|i|u|ü|m))?"
 }

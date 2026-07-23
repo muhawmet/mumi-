@@ -41,3 +41,14 @@ Author, Jury ve diğer iç roller arka planda çalışır ve Mami'ye asla göste
 `SAHNE-PROMPTLAR.md` başındaki özet satırını Mami'ye aynen oku (örn. "12 sahne · 10 PASS
 prompt hazır · 1 sahne gerçek bilgi bekliyor") ve paketin görünür yolunu göster. Kare
 üretimi ve estetik hüküm Mami'nindir; motion, gerçek frame + Mami APPROVE olmadan açılmaz.
+
+**Image fazının bitişi tek cümledir.** HER sahnenin jüri-PASS promptu hazır olduğunda —
+eksik sahne yok, PENDING/TECHNICAL_ERROR/FACT_REQUIRED kalmadı — Mami'ye şunu söyle:
+"69/69 image prompt hazır, resimleri bekliyorum." (sayı gerçek sahne sayısıdır). Sonra DUR:
+kareler gelene kadar başka faz açma, motion prompt yazdırma, yeni koşu başlatma.
+
+Eksik sahne varsa "hazır" DEME. Kaç sahnenin eksik olduğunu ve nedenini tek cümleyle söyle,
+koşuyu kaldığı yerden sürdür (resume aynı artifact'leri bulur, biten sahneler tekrar yazılmaz).
+
+Mami kareleri getirdiğinde toplu alım tek komuttur — klasördeki dosyalar adlarındaki sahne
+numarasından eşleşir: `--import-frames <klasör> --verdict APPROVE`. Tek tek sahne sorma.

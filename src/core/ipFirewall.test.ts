@@ -42,6 +42,7 @@ describe('kanon paritesi — iki yüzey aynı dosyadan okur', () => {
     'Sakura ağacı altında oturan yaşlı adam',
     'Bleach ile temizlik yapan kadın',
     'a shared endeavor across the team',
+    'without naming information not yet supplied',  // "nami" ⊂ "naming" yalancı kırmızı olmamalı
   ])('fonksiyonel parite — her iki yüzey de GEÇİRİR (yanlış-pozitif yok): %s', async (text) => {
     const { firewallHitsIn } = await runnerModule();
     expect(protectedTermsIn(text), `proof.ts yanlış blokladı: ${text}`).toEqual([]);

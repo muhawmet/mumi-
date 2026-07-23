@@ -12,5 +12,5 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-node runner.mjs --director %*
+node runner.mjs --director --provider codex %*
 if errorlevel 1 pause

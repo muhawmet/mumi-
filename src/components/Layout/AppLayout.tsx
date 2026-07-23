@@ -73,8 +73,9 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const sourceReport = useStudioStore((s) => s.sourceReport);
   const sourceBeats = useStudioStore((s) => s.sourceBeats);
   const phase0PresetId = useStudioStore((s) => s.phase0PresetId);
-  const sourceGate = sourceReadiness({ rawSource, sourceReport });
-  const hasFailedReport = Boolean(sourceReport && !sourceReport.ok);
+  const beatMode = useStudioStore((s) => s.beatMode);
+  const sourceGate = sourceReadiness({ rawSource, sourceReport, beatMode });
+  const hasFailedReport = Boolean(sourceReport && !sourceReport.ok && beatMode !== 'Manuel');
   const steps = visibleSteps(BASE_STEPS, QA_STEP, { phase0PresetId, currentStep });
   const activeIdx = Math.max(0, steps.findIndex((s) => s.id === currentStep));
 

@@ -131,7 +131,12 @@ function prepareProject(commandFile, rawName) {
     if (/^mamilas-[0-9a-f]{64}$/.test(candidate?.commandId ?? '')) commandId = candidate.commandId;
   } catch { /* canonical runtime reports the exact JSON error */ }
   const runId = commandId ?? `unverified-${createHash('sha256').update(commandBytes).digest('hex')}`;
-  const projectsRoot = resolve(argValue('--projects-dir') ?? join(HERE, 'MAMILAS-PROJELER'));
+  // Proje kökü repo köküne bağlı, runner'ın KENDİ dizinine değil: `agents/runner.mjs` ile
+  // byte-ikizi `agents/production/runner.mjs` ayrı ağaçlar açıyordu (aynı proje iki yerde,
+  // resume yanlış artifact'lere bakıyordu). Repo bulunamazsa eski davranışa düşer.
+  const repoRoot = findRepoRoot(HERE);
+  const projectsRoot = resolve(argValue('--projects-dir')
+    ?? join(repoRoot ? join(repoRoot, 'agents') : HERE, 'MAMILAS-PROJELER'));
   const projectDir = resolve(projectsRoot, identity.folder);
   const expectedPrefix = `${projectsRoot}${sep}`.toLowerCase();
   if (!`${projectDir}${sep}`.toLowerCase().startsWith(expectedPrefix)) {
@@ -200,7 +205,7 @@ async function chooseProvider() {
 
 function lifecycleArgs(root, commandFile, useProjectWorkspace) {
   const args = [join(root, 'scripts', 'mamilas-command.mjs'), '--file', commandFile];
-  for (const name of ['--scene', '--workspace', '--artifacts', '--import-frame', '--verdict', '--add-directive-file', '--scope', '--out']) {
+  for (const name of ['--scene', '--workspace', '--artifacts', '--import-frame', '--import-frames', '--verdict', '--add-directive-file', '--scope', '--out', '--lanes']) {
     const value = argValue(name);
     if (value) args.push(name, useProjectWorkspace && ['--import-frame', '--add-directive-file'].includes(name) ? resolve(value) : value);
   }
@@ -214,7 +219,10 @@ function lifecycleArgs(root, commandFile, useProjectWorkspace) {
 async function approvePendingStoryboard(root, commandFile, baseArgs) {
   // Ön kontrol her zaman tekli lifecycle sorusudur; --batch raporu approval durumunu
   // gizlememeli (ilk onaysız sahne AWAIT_STORYBOARD_APPROVAL olarak görünmeli).
-  const preflight = spawnSync(process.execPath, [...baseArgs.filter((value) => value !== '--batch'), '--dry-run'], {
+  // `--director` is dropped alongside `--batch`: this dry run only asks whether a storyboard is
+  // awaiting approval, while the runtime's director branch demands a `--provider` the preflight
+  // has no reason to carry.
+  const preflight = spawnSync(process.execPath, [...baseArgs.filter((value) => value !== '--batch' && value !== '--director'), '--dry-run'], {
     cwd: dirname(commandFile), encoding: 'utf8',
   });
   if (preflight.status !== 0) {
@@ -254,8 +262,11 @@ async function run() {
   const selectedCommand = await chooseCommand(root);
   if (!selectedCommand) return;
   const commandFile = projectName ? prepareProject(selectedCommand, projectName) : selectedCommand;
-  const mutation = process.argv.includes('--approve-storyboard') || process.argv.includes('--import-frame') || process.argv.includes('--add-directive-file') || process.argv.includes('--export-image-bundle') || process.argv.includes('--clear-frame');
-  const explicitLaunch = process.argv.includes('--launch');
+  const mutation = process.argv.includes('--approve-storyboard') || process.argv.includes('--import-frame') || process.argv.includes('--import-frames') || process.argv.includes('--add-directive-file') || process.argv.includes('--export-image-bundle') || process.argv.includes('--clear-frame');
+  // `--director` states the same intent as `--launch`: run it. Double-clicked launchers get no
+  // TTY, so without this they fell through to dry-run, which still forwards `--director` but
+  // never resolves a provider — the runtime then rejects the call as missing `--provider`.
+  const explicitLaunch = process.argv.includes('--launch') || process.argv.includes('--director');
   const dryRun = mutation || process.argv.includes('--dry-run') || (!explicitLaunch && !process.stdin.isTTY);
   const launch = !mutation && (explicitLaunch || !dryRun);
   const args = lifecycleArgs(root, commandFile, Boolean(projectName));

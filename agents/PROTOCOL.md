@@ -30,9 +30,20 @@ modes ve continuity özetini alır. Tüm proje JSON'u veya site-yazımı engine 
 Recurring continuity yasası: `continuityState` önceki onaylı sahnenin gözlenebilir özetidir
 (interpretation + uygulanan kilitler + kaynak artifact hash'i). Tekrar eden özne aynı kimlik,
 kıyafet ve birikmiş fiziksel durumla yeniden kurulur — engine hafızası varsayılmaz, kimlik her
-prompt'ta açıkça yeniden yazılır. Anonim tek-shot kişi yaratmak serbesttir; fakat aynı belirli
-kişi birden çok sahnede tekrar ediyorsa ve yüz/cast gerçeği kaynak, ref veya kilitlerde yoksa
-kimlik UYDURULMAZ: dürüst yol `FACT_REQUIRED` veya Mami'nin bağlayacağı identity referansıdır.
+prompt'ta açıkça yeniden yazılır. Anonim tek-shot kişi yaratmak serbesttir.
+
+Tekrar eden özne için ayrım GERÇEĞİN KAYNAĞINA göredir, tekrara göre değil:
+
+- **Dış dünya gerçeği** (gerçek bir kişinin yüzü, gerçek marka geometrisi, doğrulanması gereken
+  dönem/olay bilgisi) kaynak, ref veya kilitlerde yoksa UYDURULMAZ → `FACT_REQUIRED`.
+- **Projeye ait kurgusal karakter** (kaynak metnin kendi yarattığı kişi) için `FACT_REQUIRED`
+  ÇIKARILMAZ. İlk göründüğü sahnede Author kanonik bir kimlik kartı yazar — yaş, yüz, saç, ten,
+  kıyafet ve en az bir ayırt edici işaret — bunu `interpretation` receipt'ine koyar; kart
+  `continuityState` üzerinden sonraki sahnelere aynen taşınır. Kıyafet sahne kaynağı gerektirdiğinde
+  değişebilir; yüz, saç, ten ve ayırt edici işaret sabit kalır.
+
+Yaratıcı bir eksik `FACT_REQUIRED` sebebi değildir: karar verilebilir bir eksikte Author güvenli
+ve sade bir seçim yapıp `risks` altında bildirir, üretim durmaz.
 
 Image Jury yalnız Decision + Storyboard + Image Prompt + aynı bağımsız `continuityState`
 gerçeğini ölçer; süreklilik hükmü Author'ın risk notundan değil bu state'ten verilir.
