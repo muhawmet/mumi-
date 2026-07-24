@@ -659,9 +659,16 @@ describe('batch dayanıklılığı — 2026-07-16 çöküşü bir daha yaşanmaz
       const { contentHash: _x, ...body } = template;
       await writeFile(session.match(/--out "([^"]+)"/)[1], JSON.stringify({ ...body, contentHash: canonicalHash(body) }));
     `, 'utf8');
-    const shim = join(bin, 'codex');
-    writeFileSync(shim, `#!/bin/sh\nexec "${process.execPath}" "${helper}" "$@"\n`, 'utf8');
-    chmodSync(shim, 0o755);
+    // Sahte provider shim'i platform-uyumlu: runner Windows'ta PATHEXT ile codex.cmd/.bat/.exe
+    // arayıp cmd.exe /c ile çağırır (mamilas-command.mjs findExecutable/launchInteractive), POSIX'te
+    // uzantısız çalıştırılabilir dosyayı shebang ile koşar. İki yüzeyi de yaz.
+    if (process.platform === 'win32') {
+      writeFileSync(join(bin, 'codex.cmd'), `@echo off\r\n"${process.execPath}" "${helper}" %*\r\n`, 'utf8');
+    } else {
+      const shim = join(bin, 'codex');
+      writeFileSync(shim, `#!/bin/sh\nexec "${process.execPath}" "${helper}" "$@"\n`, 'utf8');
+      chmodSync(shim, 0o755);
+    }
 
     const result = spawnSync(process.execPath, [
       resolve('scripts/mamilas-command.mjs'), '--file', join(dir, 'sample_mamilas_command.json'),
