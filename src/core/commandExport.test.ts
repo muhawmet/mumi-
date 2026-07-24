@@ -121,6 +121,30 @@ describe('buildCommandJSON', () => {
     expect(buildImageAuthorContext(command, 1).decision.locks).toMatchObject({ topic: 'Su Döngüsü' });
   });
 
+  // C1: sözleşme (commandExport.ts:478) IMAGE author'a açıkça
+  // "worldPacket.renderPhysics/cameraEnvelope/lightPhysics/motionCadence/paletteAsLight okunur"
+  // diyor. Alan worldPacket'te üretiliyor (pure.ts:501) ve MOTION context'ine giriyor
+  // (agentProtocol.ts:486) ama IMAGE context'ine hiç girmiyordu — sözleşme↔veri çelişkisi,
+  // M2 vocabularyExamples vakasının aynısı (sessiz alan-düşürme = dolaylı silme).
+  it('carries worldPacket.motionCadence into the IMAGE author context as the contract promises', () => {
+    const command = {
+      commandId: 'mamilas-test',
+      baseDecision: { locks: {}, source: { authority: 'TOPIC_ONLY', rawSource: '' } },
+      lifecycle: { protocol: {}, storyboardHash: 'hash', mamiDirectives: [] },
+      worldPacket: {
+        id: 'clay',
+        renderPhysics: 'RP',
+        cameraEnvelope: 'CE',
+        lightPhysics: 'LP',
+        paletteAsLight: 'PAL',
+        negativeLock: 'NEG',
+        motionCadence: '24fps squash-stretch cadence with 12-18 frame emotional holds.',
+      },
+      scenes: [{ id: 1, phaseName: 'Intro', durationSec: 5, architecture: {}, sceneBrief: 'Bir beat.' }],
+    };
+    expect(buildImageAuthorContext(command, 1).world?.motionCadence).toBe(command.worldPacket.motionCadence);
+  });
+
   // FRAME-AWARE bir VERİ kapısıdır, tavsiye değil. Site motion taslağını kare
   // görülmeden üretir (buildMotionPrompt kör çalışır); `.command` bunu üç yerde
   // "TASLAK" diye etiketler ama alan `prompts.motion` adıyla, yapıştırmaya hazır

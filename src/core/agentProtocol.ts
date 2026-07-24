@@ -435,6 +435,11 @@ export function buildImageAuthorContext(command: any, sceneId: number) {
       materialPhysics: command.worldPacket.materialPhysics,
       negativeLock: command.worldPacket.negativeLock,
       paletteAsLight: command.worldPacket.paletteAsLight,
+      // C1: sözleşme (commandExport.ts:478) IMAGE author'a "worldPacket.motionCadence okunur"
+      // der; alan worldPacket'te üretiliyor (pure.ts:501) ve MOTION context'ine giriyor (:486)
+      // ama IMAGE'e hiç girmiyordu — M2 vocabularyExamples vakasının aynısı (sessiz alan-düşürme).
+      // Tek-kare imalı hareket/dinamik-poz + "dünya-dışı hareketi engelleyen anahtar" ajana ulaşır.
+      motionCadence: command.worldPacket.motionCadence,
       // BRAIN M2 (Sol #1): render_law'dan ayrılan envanter cümleleri bu kanalda yaşar.
       // Kanal role context'ine girmezse cümleler görünmez olur (= dolaylı silme).
       // commandExport.ts:460 kuralı geçerli: yaratıcı REFERANS — kadro/prop EMRİ değil.
