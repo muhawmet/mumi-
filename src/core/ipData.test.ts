@@ -120,10 +120,10 @@ describe('IP firewall — the data that reaches the engine', () => {
 // When the scene carries text the recipe is correct and stays (visibleTextLine also
 // promotes it into the positive half, where an engine can actually obey it). When it does
 // not, only the ban survives.
-describe('clean plate must not ship a lettering recipe', () => {
+describe('CLEAN lock: clean plate must not ship a lettering recipe', () => {
   const LETTERFORM = /Turkish label only\s*[—-]/i;
 
-  it('a scene with no on-screen text carries no letterform recipe', async () => {
+  it('CLEAN + no on-screen text → clean plate declared, no letterform recipe', async () => {
     const { generateBatch, resolveRecipeDefaults, DATA: D } = await import('./pure');
     const { ingestSource, sourceIntegrity } = await import('./source');
     const src = 'Kap kaynar. Buhar yükselir. Damla düşer.';
@@ -137,6 +137,9 @@ describe('clean plate must not ship a lettering recipe', () => {
       selectedMusicId: '', imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '',
       mood: '', cameraEnergy: '', timeLight: '', transition: '', musicVibe: '', pov: '',
       signature: '', leitmotif: '', tempoCurve: '', directorBrief: '',
+      // Bu test CLEAN'in (Mami açık kilidi) garantisini kilitler: yazı yasak → reçete de yok.
+      // Adaptif AUTO'daki reçete-var davranışı faz1_triple'ın çelişki testinde kaplanır.
+      osTextMode: 'CLEAN',
       rawSource: src, sourceBeats: beats, sourceReport: sourceIntegrity(src, beats),
     } as never) as unknown as { scenes: Array<{ imagePrompt: string; onScreenText?: string | null }> };
 

@@ -9,7 +9,7 @@ import {
 } from './brain-data';
 import { engineDialect, engineUsableSec } from './engine';
 import { DATA, paletteColors, splitRenderLawPhysics, worldAvoidText, worldMotionText, worldNegativeLockTextById, worldRenderText, type PathContract } from './pure';
-import type { SurgeryWorld, SurgeryRef, SurgeryPalette } from './pure';
+import type { SurgeryWorld, SurgeryRef, SurgeryPalette, OsTextMode } from './pure';
 import { proofDoctor, containsProtectedTerm, scrubWorkTitles } from './proof';
 import IP_FIREWALL from '../../agents/ipFirewall.json';
 
@@ -1107,8 +1107,20 @@ export function primeSuno(productionPath: string, worldId?: string): string {
 
 // ---------------- image / motion prompt compilers ----------------
 
+// CLEAN mode (Mami's explicit lock): the scene carries no on-screen text at all.
 const textPolicyLine = () => 'Text/logo: clean plate — this scene carries no on-screen text. '
   + 'No floating text, no caption, no subtitle, no watermark, no added signage; the image alone carries the meaning and the narration speaks it. '
+  + 'Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it.';
+
+// AUTO/DENSE mode (default): text is ADAPTIVE, not forbidden. The site does not impose
+// text, but it does not ban it either — the Image Author decides per scene whether the
+// frame needs a title/label/sign/board and, if so, bakes it onto a real surface. The old
+// hard "clean plate — no on-screen text" default was the wrong law (Mami: text should be
+// there when the scene needs it, sized to fit). Floating/overlay text stays banned in every
+// mode: text belongs ON a surface in the scene, never laid over it.
+const adaptiveTextLine = () => 'Text/logo: this scene MAY carry on-screen text where the scene needs it — a title, a label, a sign, a board, a screen. '
+  + 'If it does, render it DIEGETICALLY: Turkish, correctly spelled, printed on a real surface the frame already contains, sized to belong to the scene — never a floating caption, subtitle, watermark or overlay laid on top. '
+  + 'If the scene reads clearly without text, a clean plate is equally valid; add text only where it genuinely belongs, and let the narration carry the rest. '
   + 'Any Turkish text or logo already native to the scene is frozen geometry — only light and camera may cross it.';
 
 /**
@@ -1190,6 +1202,10 @@ export interface PromptCtx {
    *  17th century because beat 1 said so. */
   wholeSource?: string;
   onScreenText?: string | null;
+  /** Text mode. AUTO/DENSE → adaptive text (Image Author decides per scene); CLEAN → hard
+   *  clean-plate lock (Mami's explicit no-text). Distinguishes AUTO from CLEAN when
+   *  onScreenText is null (deriveOnScreenText returns null for BOTH). Defaults to AUTO. */
+  osTextMode?: OsTextMode;
   mood?: string; timeLight?: string; cameraEnergy?: string; pov?: string;
   shotPattern?: string;
   sourceBeat?: string;
@@ -2003,9 +2019,13 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
   const visibleTextClause = ctx.onScreenText
     ? visibleTextLine(ctx.onScreenText, world)
     : null;
+  // Mami gave explicit text → lock it. No explicit text → CLEAN forbids it (clean plate),
+  // AUTO/DENSE leave it adaptive for the Image Author to decide per scene.
   const textPolicy = ctx.onScreenText
     ? `Text/logo: '${ctx.onScreenText}' is locked geometry — no warping, no retyping, no distortion.`
-    : textPolicyLine();
+    : ctx.osTextMode === 'CLEAN'
+      ? textPolicyLine()
+      : adaptiveTextLine();
   // Özne devri (FAZ2): site sahne öznesini/motion'ı UYDURMAZ. Her zaman Claude'a
   // verbatim kaynak beat + tek-kare somut sahne talimatı gider; concept.subject/
   // event ve Motion seed satırı ASLA basılmaz — dominant element ve motion seed'i
@@ -2187,9 +2207,10 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     // ref-avoid'daki kısa "handheld"i dedupe'ta yutar), sonra ref DNA avoid.
     'Negative: ' + scrubImageNegatives([
       ctx.pathForbidden,
-      // No text in this scene → the world's letterform RECIPE is not a negative, it is an
-      // order to draw lettering. Keep its bans, drop the recipe (see stripLetterformRecipe).
-      ctx.onScreenText
+      // Text is possible in this scene (explicit text OR adaptive AUTO/DENSE) → the world's
+      // letterform RECIPE is not a negative, it is the order for HOW to draw that lettering;
+      // keep it. Only CLEAN (hard no-text) strips the recipe so the engine draws none.
+      (ctx.onScreenText || ctx.osTextMode !== 'CLEAN')
         ? (ctx.brandKitLock ? stripLetterformRecipe(worldAvoidText(ctx.world), true) : worldAvoidText(ctx.world))
         : stripLetterformRecipe(worldAvoidText(ctx.world), Boolean(ctx.brandKitLock)),
       dna.avoid,

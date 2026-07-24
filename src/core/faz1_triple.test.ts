@@ -263,11 +263,15 @@ describe('FAZ 1 · PROMPT PURITY (every world × every source shape)', () => {
       expect(EMPTY_ADJ.test(pos), `scene ${scene.id}: empty adjective as a positive order`).toBe(false);
       expect(scene.imagePrompt.length, `scene ${scene.id}: no prompt`).toBeGreaterThan(200);
 
-      // A clean plate must not also hand the engine a recipe for lettering.
+      // Çelişki önleme (asıl 2026 bug'ı): prompt ASLA aynı anda "carries no on-screen text"
+      // deyip Türkçe harf reçetesi göndermez — motoru şaşırtıyordu. Adaptif AUTO'da reçete
+      // VAR ama "no text" YOK (ajan gerektikçe diegetik yazar); CLEAN'de "no text" var ama
+      // reçete yok. İkisi de kendi içinde tutarlı — yasak olan sadece ikisinin ÇAKIŞMASI.
       if (!scene.onScreenText) {
-        expect(scene.imagePrompt).toContain('clean plate');
-        expect(/Turkish label only\s*[—-]/i.test(scene.imagePrompt),
-          `scene ${scene.id}: clean plate declared, lettering recipe shipped`).toBe(false);
+        const forbidsText = /carries no on-screen text/i.test(scene.imagePrompt);
+        const shipsRecipe = /Turkish label only\s*[—-]/i.test(scene.imagePrompt);
+        expect(forbidsText && shipsRecipe,
+          `scene ${scene.id}: "no on-screen text" declared AND a lettering recipe shipped together`).toBe(false);
       }
     }
   });

@@ -1531,6 +1531,9 @@ export function generateBatch(input: BriefInput): GenerationResult {
         // "no brand names" — for an advertisement, about the advertised thing.
         brandKitLock: input.brandKitLock || undefined,
         onScreenText,
+        // AUTO/DENSE → adaptive text (agent decides); CLEAN → hard clean-plate lock.
+        // Needed because onScreenText is null for BOTH AUTO and CLEAN.
+        osTextMode: input.osTextMode ?? 'AUTO',
         sourceBeat: beatText,
         wholeSource: input.rawSource,
         isNight: nightByScene[i - 1] ?? false,

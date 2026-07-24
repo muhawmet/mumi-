@@ -1786,13 +1786,14 @@ describe('STY bank söküm regresyonu — koy/köy substring tuzağı yapısal i
 // ─────────────────────────────────────────────────────────────────────────────
 describe('on-screen text: katman değil, sahnedeki yüzey', () => {
   const worldWith = (id: string) => DATA.worlds.find((w) => w.id === id)!;
-  const frameWithText = (worldId: string, text: string | null) =>
+  const frameWithText = (worldId: string, text: string | null, osTextMode: 'AUTO' | 'DENSE' | 'CLEAN' = 'AUTO') =>
     buildImagePrompt(1, BANK_LIKE, '50mm dolly', {
       ...FW_CTX,
       world: worldWith(worldId),
       register: 'EDU',
       sourceBeat: 'Yanardağ nasıl patlar?',
       onScreenText: text,
+      osTextMode,
     });
 
   /** Metin cümlesini gövdeden izole eder — testler tüm prompt'a değil O cümleye bakar. */
@@ -1842,8 +1843,29 @@ describe('on-screen text: katman değil, sahnedeki yüzey', () => {
     expect(line).toMatch(/never a caption, a subtitle, or a plate floating/i);
   });
 
-  it('metin yokken temiz plaka: yüzen yazı/altyazı/tabela yasaklanır', () => {
-    const p = frameWithText('castlevania_gothic', null);
+  // ADAPTİF METİN (Mami isteği): AUTO'da yazının KENDİSİ yasak değil — ajan sahne
+  // gerektiriyorsa diegetik yazı ekler. Yalnız CLEAN (Mami'nin açık kilidi) temiz
+  // plakayı zorlar. Floating/altyazı/watermark HER İKİSİNDE de yasak: yazı sahnedeki
+  // yüzeye baskılıdır, üstüne bindirilmez.
+  it('AUTO: yazının kendisi yasak DEĞİL — ajana adaptif diegetik izin verilir', () => {
+    const p = frameWithText('castlevania_gothic', null, 'AUTO');
+    // "bu sahne yazı taşımaz / clean plate — no on-screen text" DAYATMASI kalkar
+    expect(p).not.toMatch(/carries no on-screen text/i);
+    expect(p).not.toMatch(/the image alone carries the meaning/i);
+    // yerine: gerektikçe diegetik yazı izni
+    expect(p).toMatch(/may carry|if (the |this )?scene needs|diegetic/i);
+  });
+
+  it('AUTO: adaptif izinde bile floating/altyazı/watermark yasağı korunur', () => {
+    const p = frameWithText('castlevania_gothic', null, 'AUTO');
+    expect(p).toMatch(/(no|never a) floating/i);
+    expect(p).toMatch(/caption/i);
+    expect(p).toMatch(/watermark|overlay/i);
+  });
+
+  it('CLEAN (Mami açık kilidi): temiz plaka — yazının kendisi de yasaklanır', () => {
+    const p = frameWithText('castlevania_gothic', null, 'CLEAN');
+    expect(p).toMatch(/carries no on-screen text|clean plate/i);
     expect(p).toMatch(/no (floating text|caption|subtitle)/i);
   });
 
