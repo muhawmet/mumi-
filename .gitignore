@@ -49,3 +49,8 @@ RUTHLESS_REVIEW.md
 # Deneme/gerçek proje koşuları burada doğar; kalıcı bilgi ders bankasına Mami onayıyla geçer.
 agents/MAMILAS-PROJELER/
 site-import/
+
+# üretilmiş medya + deneysel çöp — beyin değil, sync'lenmez (2026-07-24)
+agents/COMMAND-INBOX/**/*.png
+agents/COMMAND-INBOX/**/*.jpg
+artifacts/codex-69-prompts/
