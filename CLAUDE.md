@@ -24,7 +24,7 @@ Kodda yaşayan sayıları, motor listelerini veya durum bilgisini bu dosyaya kop
 - Windows/PowerShell birincil yerel ortamdır; Mac launcher sözleşmesini koru.
 - Gerçek `generateBatch` çıktısını görmeden prompt kalitesi hakkında hüküm verme.
 - Kullanıcının metnini sessizce yeniden yazma; eksik gerçek varsa dur ve bildir.
-- Test silme, ilgisiz dosyaları değiştirme ve push yapma.
+- Test silme, ilgisiz dosyaları değiştirme yok. Commit'ler `main`'e push'lanır (private repo, çok-cihaz).
 - İç tartışma/chain-of-thought gösterme; yalnızca karar, kanıt ve sonucu özetle.
 
 ## Kalite kapısı
