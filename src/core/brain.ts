@@ -2382,28 +2382,21 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
       // Continuity existed only inside the agent's own ledger — the brief never asked one shot
       // to hold anything from the last. A cut dies on what changed between frames, not inside one.
       idx > 0
-        // NOT the light DIRECTION — the shot's own LIGHT VARIANT may legitimately re-motivate
-        // the key from the other side, and an earlier draft of this line fought it in the same
-        // prompt ("keep the same direction" vs "motivate from the opposite side"). What carries
-        // is the world, the material state, and identity: the things a cut dies on.
+        // The invariant CARRY-OVER body (world/material/identity hold, light governed by the
+        // shot's own LIGHT VARIANT line, the ledger duty) is stated ONCE in the §7 Carry-Over Law.
+        // Repeating its ~600 chars under every shot buried the lines that actually differ — a
+        // 69-scene run printed 68 verbatim copies. Same precedent as the authoring commission above.
         ? (() => {
             // The clock is the one thing carryOver may NOT freeze: a beat that says "Sabah
-            // olduğunda" moves it, and a line ordering the time of day to "stay the SAME"
-            // forced the agent to break either the source or the continuity.
-            // Four phases, not two. "Gün batarken" three hours after a morning is a MOVE, and a
-            // boolean night/not-night saw nothing — so a brand-locked Tesla shot was ordered to
-            // hold a morning it had already left, and a paid Kling credit would light the wrong hour.
+            // olduğunda" moves it. Four phases, not two. "Gün batarken" three hours after a morning
+            // is a MOVE. This is the one shot-SPECIFIC fact the §7 law cannot state once, so the
+            // per-shot pointer still carries the clock-change clause when the source moves the hour.
             const was = scenes[idx - 1].clock ?? 'day';
             const now = s.clock ?? 'day';
-            const clock = was === now
-              ? 'its time of day'
-              : `its time of day CHANGES here (${was} → ${now}) — the source moves the clock and the source wins; everything else`;
-            // The permission is granted by the VARIANT LINE ITSELF, not by its mere presence. A
-            // world that cannot obey either pool variant is handed a HOLD line, and an earlier
-            // draft of this sentence read that HOLD as "a LIGHT VARIANT line" and re-granted the
-            // very re-aim the HOLD forbids — the same two-voices-in-one-file bug, rebuilt one
-            // paragraph lower. The LIGHT VARIANT line is the authority; this line only defers.
-            return `CARRY OVER from shot ${scenes[idx - 1].id}: the world, its material state, ${clock} and any recurring identity, product or location stay the SAME. The light is governed by THIS shot's LIGHT VARIANT line and by nothing else: obey it exactly — where it re-motivates the key, the light's QUALITY and its source-kind still persist and its direction may move; where it says HOLD, or where no variant line is printed at all, the light holds exactly as the previous shot set it and nothing is added. Name in your ledger exactly what you are holding, and hold it.`;
+            const clockShift = was === now
+              ? ''
+              : ` EXCEPT its time of day CHANGES here (${was} → ${now}) — the source moves the clock and the source wins.`;
+            return `CARRY OVER from shot ${scenes[idx - 1].id}: hold per the Carry-Over Law (§7).${clockShift}`;
           })()
         : 'CARRY OVER: none — this shot ESTABLISHES the world, its material, its time of day and its light quality. Everything after it inherits what you set here.',
       s.onScreenText ? `BAKED TEXT: '${s.onScreenText}' — inside the frame, on a real surface, never a caption` : 'BAKED TEXT: none — clean plate, the narration carries the meaning',
@@ -2540,6 +2533,13 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     '## 7. Scene Dossier',
     // Stated once, not stapled under all five scenes.
     `> **YOU AUTHOR THE DOMINANT ELEMENT.** For every shot below: translate its exact SOURCE beat into ONE concrete single-frame scene in ${T(world.name)}'s language, faithful to the Render Lock (§3), the Reference DNA (§4) and the Palette-as-Light (§5). The site never invents the subject — you do. The lines under each shot are the decisions the site HAS already made: obey them.`,
+    '',
+    // CARRY-OVER LAW — stated ONCE. Each HOLD shot below carries only a short pointer back to this
+    // (plus its own clock-change clause when the source moves the time of day). The full ~600-char
+    // body used to print verbatim under every shot, burying the per-shot lines that actually differ.
+    scenes.length > 1
+      ? '> **CARRY-OVER LAW (every shot after the first HOLDS from the previous).** The world, its material state, its time of day and any recurring identity, product or location stay the SAME — UNLESS a shot\'s own line says the clock moves, and then the source moves it and the source wins. The light is governed by THIS shot\'s LIGHT VARIANT line and by nothing else: where it re-motivates the key, the light\'s QUALITY and its source-kind still persist and its direction may move; where it says HOLD, or where no variant line is printed at all, the light holds exactly as the previous shot set it and nothing is added. For every HOLD shot, name in your ledger exactly what you are holding, and hold it.'
+      : '',
     '',
     dossier,
     '',

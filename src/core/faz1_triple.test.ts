@@ -398,6 +398,19 @@ describe('FAZ 1 · meaning, not just material', () => {
     const carries = [...brief.matchAll(/CARRY OVER/g)].length;
     expect(carries, 'not every shot carries a continuity line').toBe(generated.scenes.length);
   });
+
+  it('the CARRY-OVER invariant body is stated once (§7 law), not repeated verbatim under every shot', () => {
+    // B1 şişme (ölçüldü): ~600 karakterlik DEĞİŞMEZ CARRY OVER gövdesi her HOLD sahnesi altında
+    // BİREBİR basılıyordu — SOURCES[1] 6 sahne → 5 kopya, 69-sahnelik gerçek koşuda 68 kopya (~40KB).
+    // Fix: yasa §7'de BİR KEZ; sahne altı yalnız kısa işaretçi (+ saat değişirse shot-özel clock-change
+    // cümlesi korunur). Meaning-preserving — 2372-2374'teki "authoring commission stated ONCE" precedent'i.
+    const { generated } = run('pixar_3d_edu', SOURCES[1][1]);
+    const brief = generated.agentBrief ?? '';
+    const bodyHits = brief.split('governed by THIS shot').length - 1;
+    expect(bodyHits, 'CARRY OVER invariant gövdesi her sahnede tekrar ediyor — bir kez yazılmalı').toBe(1);
+    // her HOLD sahnesi hâlâ yasaya işaret eden kısa satır taşır (from-shot referansı korunur)
+    expect(brief).toMatch(/hold per the Carry-Over Law/);
+  });
 });
 
 // ── 7. THE SOURCE OWNS THE CLOCK ──────────────────────────────────────────────────
