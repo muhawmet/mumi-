@@ -362,6 +362,89 @@ describe('interactive command runtime', () => {
     expect(stale.stderr).toMatch(/tam decode edilebilir PNG\/JPEG\/WebP değil|byte\/hash\/dimension/);
   });
 
+  test('--skip-image-jury zinciri import-frame/import-frames/export-bundle/dry-run yollarına da taşınır (R1/R2 yarım-uç)', async () => {
+    // Ölçülmüş kırık (2026-07-24 denetim): --skip-image-jury YALNIZ --batch bloğunda
+    // türetiliyordu; import/export/resume yolları options'sız passingImageArtifacts(artifacts,{})
+    // çağırıp author:null alıyor → juryless sahnede "PASS image prompt zinciri zorunlu" ile
+    // patlıyordu. Yani "batch --skip-image-jury üret → --import-frames getir" akışı uçtan uca kırıktı.
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-skipjury-'));
+    const command = commandFixture();
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; a physical water-cycle frame with cloud and basin. No photoreal or live-action capture.';
+    // YALNIZ author — image_jury artifact'i YOK (juryless senaryonun ta kendisi).
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+
+    // Kontrol: --skip-image-jury OLMADAN juryless sahne kare import'u reddedilmeli (deterministik kapı korunur).
+    const pngPath = join(dir, 'frame.png');
+    writeFileSync(pngPath, Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    const noFlag = runAt(dir, command, ['--import-frame', pngPath, '--scene', '1', '--verdict', 'APPROVE']);
+    expect(noFlag.status).not.toBe(0);
+    expect(noFlag.stderr).toMatch(/PASS image prompt zinciri zorunlu/);
+
+    // --skip-image-jury İLE: author zincirin taşıyıcısı; import başarılı olmalı.
+    const withFlag = runAt(dir, command, ['--import-frame', pngPath, '--scene', '1', '--verdict', 'APPROVE', '--skip-image-jury']);
+    expect(withFlag.status, withFlag.stderr).toBe(0);
+    expect(JSON.parse(withFlag.stdout)).toMatchObject({ width: 1, height: 1, verdict: 'APPROVE' });
+
+    // bundle-export de --skip-image-jury ile juryless sahnede çalışmalı (jury=null taşınır).
+    const bundlePath = join(dir, 'scene-1-image-bundle.json');
+    const bundleExport = runAt(dir, command, ['--export-image-bundle', '--scene', '1', '--out', bundlePath, '--skip-image-jury']);
+    expect(bundleExport.status, bundleExport.stderr).toBe(0);
+    const bundle = JSON.parse(readFileSync(bundlePath, 'utf8'));
+    expect(bundle.artifacts).toHaveLength(1); // yalnız author, jury yok
+
+    // import-frames (toplu) de --skip-image-jury ile juryless sahneyi almalı.
+    const framesDir = join(dir, 'frames-in');
+    mkdirSync(framesDir, { recursive: true });
+    writeFileSync(join(framesDir, '1.png'), Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    const batchImport = runAt(dir, command, ['--import-frames', framesDir, '--verdict', 'APPROVE', '--skip-image-jury']);
+    expect(batchImport.status, batchImport.stderr).toBe(0);
+    const imp = JSON.parse(batchImport.stdout);
+    expect(imp.imported).toHaveLength(1);
+    expect(imp.failed).toHaveLength(0);
+  });
+
+  test('--import-frames sahne-eşleştirme tarih-önekli/çözünürlük içeren dosya adında yanlış sahneye gitmez (R4)', async () => {
+    // Ölçülmüş kırık (2026-07-24 denetim): eşleştirme /(\d+)/ ile İLK rakam grubunu alıyordu.
+    // "2024-06-12-scene-1.png" → 2024 yakalanıyor → sahne yok → sessizce "skipped" + missingScenes.
+    // Kullanıcı kareyi doğru getirse de "eksik sahne" raporlanıyordu. Doğru: sahne-belirteci
+    // (scene-N / N.ext / N_final) hedef alınmalı, gürültü rakamları (tarih/çözünürlük) değil.
+    const dir = mkdtempSync(join(tmpdir(), 'mamilas-import-match-'));
+    const command = commandFixture();
+    const artifactsDir = join(dir, '.mamilas', 'artifacts');
+    mkdirSync(artifactsDir, { recursive: true });
+    const contextHash = command.lifecycle.sceneContextHashes[1];
+    const prompt = 'Continuous dimensional 3D CGI feature-animation shading; a physical water-cycle frame with cloud and basin. No photoreal or live-action capture.';
+    const author = sealedArtifact(command, 1, 'image_author', 'IMAGE_PROMPT', 0, [contextHash], {
+      prompt, promptHash: sha256Hex(prompt),
+      interpretation: { dominantSubject: 'test subject', singleEvent: 'test event', frozenInstant: 'test instant' },
+      directiveReceipts: [{ id: 'site-directive-001', text: 'Başlık yalnız final sahnede olsun.', status: 'APPLIED' }],
+      appliedLocks: ['world', 'palette'], suppressedContext: [], risks: [],
+    });
+    writeFileSync(join(artifactsDir, '1-image_author-r0.json'), JSON.stringify(author));
+    expect(runAt(dir, command, ['--approve-storyboard', '--scene', '1']).status).toBe(0);
+
+    const framesDir = join(dir, 'frames-in');
+    mkdirSync(framesDir, { recursive: true });
+    // Gerçekçi ad: tarih öneki + "scene-1" belirteci. İlk rakam grubu 2024, doğru sahne 1.
+    writeFileSync(join(framesDir, '2024-06-12-scene-1.png'), Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64'));
+    const result = runAt(dir, command, ['--import-frames', framesDir, '--verdict', 'APPROVE', '--skip-image-jury']);
+    expect(result.status, result.stderr).toBe(0);
+    const parsed = JSON.parse(result.stdout);
+    expect(parsed.imported, `skipped=${JSON.stringify(parsed.skipped)} missing=${JSON.stringify(parsed.missingScenes)}`).toHaveLength(1);
+    expect(parsed.imported[0]).toMatchObject({ sceneId: 1 });
+    expect(parsed.missingScenes).toHaveLength(0);
+  });
+
   test('FABLE fix: frame_jury SONRASI bundle-export ve YENİ kare importu çalışır; stale frame-bağımlı artifact zinciri öldürmez', async () => {
     // Ölçülmüş kırık (Fable 2026-07-16): frame_jury artifact'i oluştuktan sonra
     // --export-image-bundle ve --import-frame, frame=null geçen validateArtifactChain

@@ -765,7 +765,8 @@ async function exportImageBundle(root, command, scene, artifacts, outputArg, opt
   const output = jailWrite(outputArg ?? join(root, 'site-import', `scene-${scene.id}-image-bundle.json`), dirname(resolve(root)), '--export-image-bundle --out');
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, JSON.stringify(body, null, 2), 'utf8');
-  return { output, artifactCount: imageArtifacts.length, authorHash: author.contentHash, juryHash: jury.contentHash };
+  // Jürisiz modda jury=null: juryHash null taşınır (author zinciri tek taşıyıcı).
+  return { output, artifactCount: imageArtifacts.length, authorHash: author.contentHash, juryHash: jury ? jury.contentHash : null };
 }
 
 const latest = (artifacts, role) => artifacts.filter((a) => a.role === role).sort((a, b) => b.revision - a.revision)[0];
@@ -1429,6 +1430,13 @@ export async function runCommand(args = process.argv.slice(2)) {
   // Batch sahne-izolasyonlu kendi non-strict yüklemesini yapar — strict ön yükleme
   // batch'te tek bozuk dosyayla bütün koşuyu öldürürdü (2026-07-16 çöküşü).
   const artifacts = args.includes('--batch') ? [] : await loadArtifacts(artifactDir, command);
+  // R1/R2 (2026-07-24 denetim yarım-uç): `--skip-image-jury` batch'te üretilen juryless
+  // sahnenin PASS zincirini author'a taşır. Ama kare-import/bundle-export/tekil-resume yolları
+  // bu bayrağı görmezse `passingImageArtifacts(artifacts, {})` → author:null alıp juryless
+  // sahnede zinciri "PASS image prompt zinciri zorunlu" ile KIRIYORDU. Bayrak batch'e özel
+  // değil; kalite kapısı Mami olan tüm yollar aynı options'ı görmeli. Batch bloğu bu aynı
+  // türetimi kendi scope'unda tekrarlar (:1581) — davranış birebir.
+  const sceneOptions = { skipJury: args.includes('--skip-image-jury') };
   if (args.includes('--export-image-bundle')) {
     if (!explicitScene) throw new Error('--export-image-bundle için --scene zorunlu');
     const approval = await loadStoryboardApproval(root, command, explicitScene);
@@ -1437,9 +1445,9 @@ export async function runCommand(args = process.argv.slice(2)) {
     // FABLE bulgusu: frame=null geçmek, frame_jury/motion artifact'i olan sahnede zinciri
     // yanlış hatayla ("current frame receipt yok") KALICI kırıyordu — receipt diskteyken.
     // Ana yol gibi gerçek frame'i yükle; frame yoksa loadFrame zaten null döner.
-    const exportFrame = await loadFrame(root, command, explicitScene, sceneArtifacts);
-    const liveExportArtifacts = validateArtifactChain(sceneArtifacts, exportFrame, command, explicitScene.id);
-    const exported = await exportImageBundle(root, command, explicitScene, liveExportArtifacts, argValue(args, '--out'));
+    const exportFrame = await loadFrame(root, command, explicitScene, sceneArtifacts, sceneOptions);
+    const liveExportArtifacts = validateArtifactChain(sceneArtifacts, exportFrame, command, explicitScene.id, sceneOptions);
+    const exported = await exportImageBundle(root, command, explicitScene, liveExportArtifacts, argValue(args, '--out'), sceneOptions);
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'IMAGE_BUNDLE_EXPORTED' }, ...exported };
   }
   // TOPLU KARE ALIMI: 69 kareyi tek tek `--scene N --import-frame <png>` ile getirmek
@@ -1454,7 +1462,14 @@ export async function runCommand(args = process.argv.slice(2)) {
     const skipped = [];
     for (const name of readdirSync(dir).sort()) {
       if (!/\.(png|jpe?g|webp)$/i.test(name)) continue;
-      const matched = name.match(/(\d+)/);
+      // R4 (2026-07-24): eski `/(\d+)/` İLK rakam grubunu alıyordu → "2024-06-12-scene-5.png"
+      // yanlışlıkla 2024 sayıp sahneyi kaçırıyordu. Sahne-belirtecini hedefle: önce açık
+      // `scene-N`/`sahne-N` deseni; yoksa uzantıdan hemen önceki rakam grubu (tarih/çözünürlük
+      // önekleri hep başta kalır). Belirsizlik = sessiz yanlış eşleşme yerine skipped.
+      const base = name.replace(/\.(png|jpe?g|webp)$/i, '');
+      const explicit = base.match(/(?:scene|sahne)[-_ ]?(\d+)/i);
+      const trailing = base.match(/(\d+)(?!.*\d)/); // adın SONUNDAKI rakam grubu
+      const matched = explicit ?? trailing;
       const sceneId = matched ? Number(matched[1]) : null;
       const scene = command.scenes.find((item) => item.id === sceneId);
       if (!scene) { skipped.push(name); continue; }
@@ -1468,9 +1483,9 @@ export async function runCommand(args = process.argv.slice(2)) {
         const approval = await loadStoryboardApproval(root, command, scene);
         if (!approval.ok) throw new Error('storyboard APPROVE değil');
         const sceneArtifacts = artifacts.filter((artifact) => artifact.sceneId === scene.id);
-        const currentFrame = await loadFrame(root, command, scene, sceneArtifacts);
-        const live = validateArtifactChain(sceneArtifacts, currentFrame, command, scene.id);
-        const receipt = await importFrame(root, command, scene, live, path, verdict);
+        const currentFrame = await loadFrame(root, command, scene, sceneArtifacts, sceneOptions);
+        const live = validateArtifactChain(sceneArtifacts, currentFrame, command, scene.id, sceneOptions);
+        const receipt = await importFrame(root, command, scene, live, path, verdict, sceneOptions);
         imported.push({ sceneId: scene.id, file: sourceName, ...receipt });
       } catch (error) {
         // Sahne izolasyonu toplu alımda da geçerli: bir kare reddedilirse diğerleri girer.
@@ -1493,11 +1508,11 @@ export async function runCommand(args = process.argv.slice(2)) {
     // FABLE bulgusu: aynı frame=null kilidi — yeni/daha iyi kare import'u da imkânsızlaşıyordu
     // ("Mami kareyi asla değiştiremiyor"). Mevcut frame'le doğrula; importFrame yeni kareyi
     // yazınca frame-bağımlı eski artifact'ler (frame_jury/motion) hash'leriyle doğal stale olur.
-    const currentFrame = await loadFrame(root, command, explicitScene, sceneArtifacts);
-    const liveImportArtifacts = validateArtifactChain(sceneArtifacts, currentFrame, command, explicitScene.id);
+    const currentFrame = await loadFrame(root, command, explicitScene, sceneArtifacts, sceneOptions);
+    const liveImportArtifacts = validateArtifactChain(sceneArtifacts, currentFrame, command, explicitScene.id, sceneOptions);
     const imported = await importFrame(
       root, command, explicitScene, liveImportArtifacts,
-      argValue(args, '--import-frame'), argValue(args, '--verdict') ?? 'PENDING',
+      argValue(args, '--import-frame'), argValue(args, '--verdict') ?? 'PENDING', sceneOptions,
     );
     return { file, validation: 'PASS', sceneId: explicitScene.id, action: { kind: 'FRAME_IMPORTED' }, ...imported };
   }
@@ -1689,7 +1704,7 @@ export async function runCommand(args = process.argv.slice(2)) {
   let selected = null;
   const candidates = explicitScene ? [explicitScene] : command.scenes;
   for (const candidate of candidates) {
-    const status = await sceneStatus(root, command, candidate, artifacts);
+    const status = await sceneStatus(root, command, candidate, artifacts, sceneOptions);
     if (status.action.kind !== 'COMPLETE' || explicitScene) {
       selected = status;
       break;
