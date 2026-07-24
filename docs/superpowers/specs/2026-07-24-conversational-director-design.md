@@ -1,6 +1,6 @@
 # Konuşmalı Yönetmen (Conversational Director) — Tasarım Spec'i
 
-**Tarih:** 2026-07-24 · **Durum:** ONAYLI (Mami, bu oturumda) · **Öncelik:** regex-kill B2'nin ÖNÜNDE.
+**Tarih:** 2026-07-24 · **Durum:** ONAYLI (Mami) · **Rev:** rev2 (2026-07-24, ikinci oturum — §8) · **Öncelik:** regex-kill B2'nin ÖNÜNDE.
 
 ---
 
@@ -122,3 +122,33 @@ uçtan uca, "epik" diyerek, yarıyolda kalmadan alır. Throughput değil — **t
 - Batch orkestrayı yeniden yazma / API entegrasyonu (Nano API yok, elle üretim kalıyor).
 - Otonom uçtan-uca otomasyon (Mami loop'ta olmak İSTİYOR).
 - Yeni jüri süreç mimarisi (jüri = inline checklist, ayrı süreç değil).
+
+---
+
+## 8. Revizyon rev2 (2026-07-24, ikinci oturum) — command'ın en iyi hali
+
+Bu oturumda Mami tasarımı keskinleştirdi. Kararlar:
+
+- **Yön B seçildi:** konuşmalı yönetmen **command'ın resmi standardı** olur — "her seferinde
+  sıfırdan canlı konuş" bir opsiyon değil, **en iyi haliyle kurulur.** Ama §5'in kapısı KORUNUR:
+  skill'e dökmeden önce Mami'nin gerçek videosundan mini koşu "epik" olmalı.
+- **Usage netliği (spec §0'ı düzeltir):** usage'ı yakan **konuşma değildi** — spawn-per-rol
+  **jüri/orkestra yığınıydı.** Hasta yer o. O çıkınca anlık usage düşer; **konuşma korunur** (iyi kısım).
+  Mami: *"bir sürü jüriye bilmem neye dayanmaz; geri kalanda konuşarak yapmak en iyisi; direkt
+  üretmesini hiç istemedim, biraz yön verip o yön vermeyi de öğrenmeli."*
+- **Öğrenme = precedent, YASA DEĞİL.** Yönetmen Mami'nin yönünü **"geçen böyle yapmıştık"** olarak
+  hatırlar; sonraki sefer aynı dünya/ref'te **sunar** (dayatmaz). **Asla** otomatik yasa/keyword/regex
+  üretmez, **asla** kendiliğinden fire etmez — her seferinde Mami onaylar. [[mamilas-bul-sec-onar]] ruhu.
+- **Precedent yeri:** proje **auto-memory** (`memory/`). Mekanizma zaten var, açılışta index yüklenir.
+- **Vizyon (Mami):** *"bir yerden sonra site/command yerine sadece üretmeye yöneleceğiz; iyi inşa
+  edersen memory hep video üretmeye çevrilebilir."* → **Tasarım ilkesi:** precedent kayıtları bir
+  yan-günlük değil, **üretim belleğinin tohumu.** Birinci sınıf üretim bilgisi olarak yazılır
+  (dünya/ref + Mami'nin yönü + epik örnek prompt), ki engineering-state notları zamanla yerini
+  üretim bilgisine bıraksın ve memory tamamen video-üretime dönebilsin.
+
+### Değişmeyen (rev1 hâlâ geçerli)
+Inline jüri = tamir (değişmez #1), toplu onay (değişmez #2), jüri/orkestra kritik yoldan çıkar
+(silinmez, testler yeşil), elle kare → görülen kareden motion.
+
+### YAGNI (rev2)
+Precedent'i parse edip yasaya çeviren makine YOK. Otonom üretim YOK. Yeni jüri mimarisi YOK.
