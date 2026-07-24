@@ -5,6 +5,7 @@ import {
   buildVariantBriefs, recommendReason, primePacket, buildRecipeMarkdown, buildRecipeMachine, recipeJsonFileName,
   eventSeed, mandateSeed, buildImagePrompt, paletteLightPrompt, splitTopLevelCommas, applyWorldCameraLaw,
   hexToLightWords, CAMERA_BAN_PHRASES, reconcileAspectRatio, camPool, lensBandsOf, gateCameraLens, SHOT_PATTERNS, type Concept,
+  clockMap,
 } from './brain';
 import { DATA, worldRenderText, type SurgeryRef, generateBatch, MOOD_OPTS } from './pure';
 import { autoGroupBeats } from './source';
@@ -1784,6 +1785,40 @@ describe('STY bank söküm regresyonu — koy/köy substring tuzağı yapısal i
 // Yeni sözleşme: metin dünyanın kendi harf grameriyle, sahnedeki fiziksel bir
 // TAŞIYICI YÜZEYDE yaşar. Koordinat verilmez — yüzeyi kareye bakan ajan seçer.
 // ─────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// NIGHT BEAT kontaminasyonu (2026-07-25 beyin denetimi, P1). clockMap "karanlık"
+// kelimesini gece işareti sayıyordu — ama fen bağlamında "ışığın geçemediği KARANLIK
+// bölge" gölgenin TANIMIdır, sahne zamanı değil. Bu yanlış-tetikleme + gece-carry,
+// Işık/Gölge dersinde "güneş gökyüzünde hareket eder" beat'ini "No daytime sun" ile
+// çelişkiye düşürüp kareyi teslim edilemez yapıyordu. Fix: "karanlık/karanlıkta" gece
+// listesinden çıkarıldı; gerçek gece "gece/ay ışığı/yıldızlar/gecenin" ile korunur.
+// ─────────────────────────────────────────────────────────────────────────────
+describe('clock: "karanlık" ışık-fiziği bağlamında gece DEĞİLDİR', () => {
+  it('"karanlık bölge" (gölge tanımı) sahneyi geceye çevirmez', () => {
+    expect(clockMap(['Işığın geçemediği karanlık bölgeye gölge denir.'])).toEqual(['day']);
+  });
+
+  it('ışık/gölge dersi zinciri gündüz kalır — güneş beat\'i gece kilidiyle çelişmez', () => {
+    const beats = [
+      'Işık düz bir doğru boyunca yayılır.',
+      'Işığın geçemediği karanlık bölgeye gölge denir.',
+      'Güneş gökyüzünde hareket ettikçe gölgeler yön değiştirir.',
+    ];
+    expect(clockMap(beats)).toEqual(['day', 'day', 'day']);
+  });
+
+  it('gerçek gece KORUNUR: gece/yıldızlar/geceleyin hâlâ geceyi tetikler', () => {
+    expect(clockMap(['O gece şehir uyumadı.'])).toEqual(['night']);
+    expect(clockMap(['Yıldızlar gökyüzünü doldurdu.'])).toEqual(['night']);
+    expect(clockMap(['Geceleyin sokaklar sessizdi.'])).toEqual(['night']);
+  });
+
+  it('gece bağlamı yayılır: ilk cümle gece derse sonraki markersız beat geceyi sürdürür', () => {
+    expect(clockMap(['O gece şehir uyumadı.', 'İnsanlar sokağa indi.']))
+      .toEqual(['night', 'night']);
+  });
+});
+
 describe('on-screen text: katman değil, sahnedeki yüzey', () => {
   const worldWith = (id: string) => DATA.worlds.find((w) => w.id === id)!;
   const frameWithText = (worldId: string, text: string | null, osTextMode: 'AUTO' | 'DENSE' | 'CLEAN' = 'AUTO') =>

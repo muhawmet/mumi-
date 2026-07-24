@@ -1412,7 +1412,11 @@ export const COMMERCIAL_BRAND_RE = new RegExp(`\\b(?:${IP_FIREWALL.commercialBra
 const EMPTY_ADJ_RE = /\b(?:cinematic|dynamic|stunning|epic|4k|8k)\b/gi;
 
 /** A beat that happens after dark. Turkish first — this is what Mami actually types. */
-const NIGHT_BEAT_RE = /\b(gece|geceleyin|karanlık|karanlıkta|akşam karanlığı|gecenin|şafaktan önce|yıldızlar|ay ışığı|night|nightfall|after dark|midnight|moonlit)\b/i;
+// "karanlık/karanlıkta" bilerek gece listesinde DEĞİL: fen bağlamında "ışığın geçemediği
+// KARANLIK bölge" gölgenin tanımıdır, sahne zamanı değil (2026-07-25 denetimi P1). Gerçek
+// gece "gece/geceleyin/gecenin/yıldızlar/ay ışığı" ile işaretlenir; belirsiz "karanlık"ı
+// gece saymak Işık/Gölge dersini "güneş" beat'iyle çelişkiye düşürüyordu.
+const NIGHT_BEAT_RE = /\b(gece|geceleyin|akşam karanlığı|gecenin|şafaktan önce|yıldızlar|ay ışığı|night|nightfall|after dark|midnight|moonlit)\b/i;
 /**
  * How many separate events a beat names. Turkish first — this is what Mami types.
  * A clause boundary that carries its OWN finite verb is a new event: a colon that unpacks a
@@ -1456,7 +1460,8 @@ export type Clock = 'night' | 'dawn' | 'day' | 'dusk';
 const CLOCK_RE: Array<[Clock, RegExp]> = [
   ['dusk', /gün bat|günbat|akşam üstü|akşamüstü|alacakaranlık|akşam ol|güneş bat|sunset|dusk|nightfall|at sundown|golden hour/i],
   ['dawn', /şafak|gün doğ|güneş doğ|seher|tan yeri|ilk ışık|sunrise|at dawn|daybreak|first light/i],
-  ['night', /\b(gece|geceleyin|karanlık|karanlıkta|gecenin|yıldızlar|ay ışığı|night|after dark|midnight|moonlit)\b/i],
+  // "karanlık/karanlıkta" gece işareti DEĞİL — bkz. NIGHT_BEAT_RE notu (P1, gölge≠gece).
+  ['night', /\b(gece|geceleyin|gecenin|yıldızlar|ay ışığı|night|after dark|midnight|moonlit)\b/i],
   ['day', /\b(sabah|sabahleyin|gündüz|öğlen|öğle|ertesi gün|morning|by day|next day|midday|noon)\b/i],
 ];
 
