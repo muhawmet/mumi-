@@ -850,7 +850,10 @@ function imageContext(command, scene) {
       // BRAIN M2 (Sol #1): render_law'dan ayrılan envanter cümleleri bu kanalda yaşar —
       // yaratıcı REFERANS, kadro/prop EMRİ değil (commandExport.ts:460).
       vocabularyExamples: command.worldPacket.vocabularyExamples,
-      refs: (command.worldPacket.refs ?? []).filter((ref) => ref.compatible),
+      // R3 parite: TS agentProtocol.ts:447 `refs?.filter` ile byte-davranış aynı. `?? []` KULLANMA —
+      // undefined refs'te `[]` bırakırdı, TS undefined döndürüp canonicalize'da anahtarı düşürür;
+      // fark elle/legacy worldPacket'te sceneContextHash ayrışması → yanlış "stale/tampered" reddi.
+      refs: command.worldPacket.refs?.filter((ref) => ref.compatible),
       referencePolicy: IMAGE_PROMPT_QUALITY_CONTRACT.referencePolicy,
     } : null,
     explicitLocks: {

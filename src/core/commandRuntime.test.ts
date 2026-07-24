@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { deflateSync } from 'node:zlib';
 import sharp from 'sharp';
 import { buildCommandJSON } from './commandExport';
+import { buildImageAuthorContext } from './agentProtocol';
 import { generateBatch, resolveRecipeDefaults } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
 
@@ -181,6 +182,28 @@ describe('interactive command runtime', () => {
     const ready = runAt(dir, JSON.parse(readFileSync(file, 'utf8')), ['--dry-run']);
     expect(ready.status, ready.stderr).toBe(0);
     expect(JSON.parse(ready.stdout).action).toEqual({ kind: 'AWAIT_STORYBOARD_APPROVAL' });
+  });
+
+  test('undefined worldPacket.refs TS↔mjs hash paritesi (R3): legacy worldPacket sessizce reddedilmez', () => {
+    // R3 KÖK: TS agentProtocol.ts:447 `refs?.filter` → undefined refs'te anahtar DÜŞER;
+    // mjs mamilas-command.mjs:853 `(refs ?? []).filter` → aynı girdide "refs":[] BIRAKIR.
+    // canonicalize (contract.ts:365 / mjs:223) undefined'ı düşürür → iki farklı sceneContextHash →
+    // mjs runner elle/legacy (refs alansız) worldPacket'i "contextHash stale/tampered" ile YANLIŞ reddeder.
+    // toWorldPacket refs'i hep dizi set ettiğinden (pure.ts:507) normal export tetiklemez; parite yasası
+    // gereği yine de kapatılmalı. Fix mjs'i TS'e hizalar (refs?.filter) → undefined düşer → hash özdeş.
+    const command = commandFixture();
+    delete command.worldPacket.refs; // elle/legacy worldPacket: refs alanı hiç yok (undefined)
+    // TS export'un yaptığı gibi türetilmiş sceneContextHash'leri yeniden mühürle (commandExport.ts:503-508).
+    command.lifecycle.sceneContextHashes = Object.fromEntries(
+      command.scenes.map((scene: any) => [scene.id, canonicalHash({
+        imageAuthor: buildImageAuthorContext(command, scene.id),
+        motionEngine: scene.motionEngine,
+      })]),
+    );
+    const result = run(command);
+    // mjs aynı imageContext'i yeniden hesaplar; refs muamelesi TS ile ayrışırsa "stale/tampered" verir.
+    expect(result.status, result.stderr).toBe(0);
+    expect(JSON.parse(result.stdout).action).toEqual({ kind: 'RUN_ROLE', role: 'image_author', revision: 0 });
   });
 
   test('migration stale/tamper storyboardHash taşıyan commandi MEŞRULAŞTIRMAZ — reddeder', () => {
