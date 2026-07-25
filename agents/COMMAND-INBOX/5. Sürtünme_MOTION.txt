@@ -1,0 +1,225 @@
+SÜRTÜNME — MOTION PROMPT'LARI (Kling 3.0, i2v)
+=========================================================================
+Kaynak = onaylı start-frame'ler (5. Sürtünme klasörü). Kling'e o kareyi başlangıç ver,
+MOTION'ı uygula, NEGATİF'i frame-specific ver. Kare GERÇEK — sadece DEĞİŞENİ yazıyorum.
+Motion = karenin "sonraki yarım saniyesi."
+
+DÜNYA CADENCE: squash-stretch (anticipation → peak → follow-through → settle), duygusal hold
+12-18 frame, göz aksiyondan 3-4 frame önce kayar, 24fps. Kamera 35-50mm, nazik-motivasyonlu, film gibi.
+
+HER KLİPTE SABİT NEGATİF (global — Kling ayarı):
+• no dialogue, no talking, mouth closed and still, NO lip movement.
+• silent clip, NO generated audio.
+• NO whip-pan, NO camera shake, NO snap-zoom, NO lens flare, NO anamorphic streak.
+• do NOT morph, re-spell, wobble or add ANY text/letter — all on-screen Turkish text is frozen geometry.
+• NO extra people appearing, NO @efe face drift or redesign, NO style/palette change.
+• warm friction/force glow stays LIGHT — NO real fire, flames, smoke, embers or sparks (unless the frame already has them).
+• "The approved frame is the exact start — animate ONLY what MOTION names; keep design & text frozen."
+
+SÜRE: VO okuma süresi + baş/tail handle (JSON'a değil VO'ya göre). Kling boyu 5s/10s; ekranda Premiere'de trimle.
+Node ayracı: "### " ile başlar.
+=========================================================================
+
+
+##### SEKANS 1 — INTRO (Sahne 1–8) · enerji: sakin→merak→başlık zirvesi #####
+
+
+### Sahne 1 — Kling 10s · ekranda ~8.5s · VO: "Efe bir sabah mutfakta ıslak fayansa basınca az kalsın kayıyordu; ama halıya adım atınca ayakları sapasağlam durdu."
+MOTION: his back foot skids a hair on the slick wet tile — a tiny loss of balance, arms flaring out — then his forward foot plants firm onto the woven rug and grips, weight settling with a small overshoot-and-settle, shoulders relaxing as relief crosses his face. Surfaces alive: the wet-tile reflection ripples and shifts as the foot leaves it, the rug fibers compress and spring under the planting shoe, a fine veil of flour dust drifts slowly through the window daybeam. CAMERA (film gibi): a gentle low dolly-in that breathes with the save and settles on his steadied balance, a soft rack from the wet tile to the gripping foot.
+NEGATİF (frame): @efe must NOT fall, sit or hit the floor — only a near-slip that recovers; no water splash, no spilled liquid; the wet-tile reflection must not smear into a white mirror-blur; the woven rug edge stays intact (no unraveling); no new kitchen clutter or people; mouth closed.
+KAMERA AKIŞI → onun durulduğu an kes; Sahne 2 aşağı çömelmeye iner.
+
+
+### Sahne 2 — Kling 10s · ekranda ~6s · VO: "'Neden buzda ya da ıslak zeminde kayarım da halıda kayamam?' diye düşündü."
+MOTION: his open palm on the wet tile slides a hair — fingertips skating the sheen — while his other hand lowers a touch toward the rug; his head tilts and his gaze travels back and forth between the two surfaces, brow furrowing into the question. Surfaces alive: a shallow reflection warps under the sliding palm, the rug fibers spring where his hand nears, dust motes hang and turn in the low sidelight. CAMERA (film gibi): a slow quarter-arc parallax around him letting the two surfaces pass in the foreground, settling on his puzzled look — the camera posing the question.
+NEGATİF (frame): hands must NOT clip through the floor or grow a third hand; the rug pattern stays stable (no crawling/boiling texture); the tile reflection must not bloom into glare; NO thought-bubble, question mark or floating text; mouth closed (thinking, not speaking).
+KAMERA AKIŞI → merak yüzünde askıda kes; Sahne 3 push ile büyür.
+
+
+### Sahne 3 — Kling 10s · ekranda ~8s · VO: "İşte Efe bugün hayatımızı hem kolaylaştıran hem de bazen zorlaştıran gizli bir kahramanla tanışacaktı:"
+MOTION: dawning wonder blooms across his face — eyes widening, lips parting slightly in awe (not speaking), gaze lifting and drifting toward the warm golden glow entering upper-right. Surfaces alive: a warm rim of light rises along his hairline and cheek, one wet highlight sharpens in his eye, fine dust in the beam begins to glint as the light lifts. CAMERA (film gibi): a slow steady push-in toward his face building anticipation, easing as the glow reaches his eye.
+NEGATİF (frame): the incoming glow must NOT blow out to white or become a lens flare; eyes must not cross or drift apart; NO title or text appears yet (that is the next beat); face identical, no redesign; lips parted in awe but NO speech / NO lip-sync.
+KAMERA AKIŞI → push zirvesinde kes; Sahne 4 başlık reveal'a tilt-up.
+
+
+### Sahne 4 — Kling 5s · ekranda ~3s · VO: "Sürtünme kuvveti."   (BAŞLIK)
+MOTION: the golden letters "SÜRTÜNME KUVVETİ" stay ABSOLUTELY frozen — solid geometry — while ONLY their warm glow blooms and pulses once and a scatter of sparkle particles rises and drifts upward on slow thermals; @efe's awe deepens into a warm beginning smile, the title glow washing warm across his upturned face. CAMERA (film gibi): a slow reverent tilt-up / gentle push arriving on the title — the reveal beat.
+NEGATİF (frame): the letters must NOT warp, morph, wobble, re-spell, change count, add or drop any glyph — 100% frozen; the İ/Ü/Ş diacritics stay correct; sparkles stay subtle — NO fireworks, NO explosion, glow does NOT become fire; @efe face identical; mouth smiles, NO speech.
+KAMERA AKIŞI → başlık ışığı en parlakken kes; Sahne 5 sıcak/sakin over-shoulder ile derse iner.
+
+
+### Sahne 5 — Kling 5s · ekranda ~4s · VO: "Efe önce sürtünmenin ne olduğunu öğrendi."
+MOTION: he pushes the small wooden block a short travel across the desk; it resists and drags, leaning back a hair against his fingertip, his eyes fixed on the contact where block meets wood. Surfaces alive: a faint scuff drag-mark trails the block, desk-light dust drifts; the smart board behind stays soft and static. CAMERA (film gibi): a gentle push-in over his shoulder handing the eye from his focused look down to the block's contact.
+NEGATİF (frame): the smart board's clean title "HAREKET VE SÜRTÜNME" must NOT change, garble, scroll or animate — frozen & soft; the block must not teleport, fly or multiply; the hand must not clip through the block; NO English text appears; mouth closed.
+KAMERA AKIŞI → itiş gerildiğinde kes; Sahne 6 kontak dikişine daha yakın push.
+
+
+### Sahne 6 — Kling 10s · ekranda ~8.5s · VO: "Sürtünme kuvveti, birbirine temas eden iki yüzey arasında oluşan ve genellikle harekete karşı koyan kuvvettir."
+MOTION: he strains and pushes the red block harder — it barely creeps, braced — while the warm friction bloom at the two-surface contact seam kindles and pulses brighter as effort builds, knuckles whitening, a thin line of dust kicking up at the resisting edge. The raised desk word "SÜRTÜNME" stays FROZEN — only warm light crosses it. CAMERA (film gibi): a slow push closing toward the glowing contact seam, a soft rack landing on the friction bloom.
+NEGATİF (frame): the raised "SÜRTÜNME" word must NOT morph, re-spell or slide; the friction bloom stays warm LIGHT — NO real flames, smoke or embers; the block must not shatter, melt or change color; hand/knuckles stay anatomically stable; the background smart board text stays frozen; mouth closed (effort).
+KAMERA AKIŞI → glow zirvedeyken kes; Sahne 7 geri çekilip iki-kural jestine açılır.
+
+
+### Sahne 7 — Kling 5s · ekranda ~3s · VO: "Bunun iki önemli kuralı vardı."
+MOTION: he settles a confident "two" gesture — two fingers held up with a small assured beat — a knowing half-smile arriving; the twin ambient-occlusion shadow settles on the wall, the desk-lamp glow breathes warm, dust drifts slow in the lamplight, the two paired blocks sit ready. CAMERA (film gibi): a near-static hold with the faintest breathing push on the gesture — calm, letting the "two" land.
+NEGATİF (frame): the raised fingers must stay EXACTLY two — no extra fingers, no morphing hand, no count change; NO floating numeral, "2" or text appears; the twin wall shadow must not detach or multiply; the lamp must not flicker or strobe; the two blocks stay put; mouth closed (smile).
+KAMERA AKIŞI → jest otururken kes; Sahne 8 makro kontak anına push.
+
+
+### Sahne 8 — Kling 5s · ekranda ~5s · VO: "Birincisi, temas şarttır; yüzeyler birbirine değmek zorundadır."
+MOTION: he presses the two wooden blocks face-to-face — the moment of contact lands with a tiny squash, and a warm friction bloom flares to life along the touching seam, brightest where the faces meet and fading where they part; a faint fiber of dust puffs at the pressed join. The raised label "TEMAS ŞART" stays FROZEN — only light crosses it. CAMERA (film gibi): a slow macro push to the touching seam, easing as contact is made.
+NEGATİF (frame): the label "TEMAS ŞART" must NOT morph, re-spell or move; the friction bloom is warm LIGHT only — NO fire, sparks or smoke; the two blocks must NOT merge, pass through each other or crush — only a tiny moment-of-contact squash; NO extra text; hands stable; mouth closed.
+KAMERA AKIŞI → temas parladığı an kes; SEKANS 2 (Build-up) başlar — ritim yükselir (int 64→).
+
+
+##### SEKANS 2 — BUILD-UP (Sahne 9–21) · enerji: ritim yükselir (int 48→77) #####
+
+
+### Sahne 9 — Kling 5s · ekranda ~3s · VO: "İkincisi, sürtünme harekete zıt yönlüdür;"
+MOTION: he pushes the cardboard box firmly to the right but it strains and barely creeps, braced, while the warm friction bloom drags backward-left at the box's underside — clearly counter to his push; the box tips back a hair, a thin scuff trails, dust kicks at the resisting seam. CAMERA (film gibi): a low lateral tracking push following the box's rightward strain while the backward glow reads — motivated move.
+NEGATİF (frame): the box must NOT fly, collapse or pop open; friction bloom is warm LIGHT — no flames; the soft smart board behind stays frozen; @efe face stable; mouth closed.
+KAMERA AKIŞI → gerilme anında kes; Sahne 10 iki-yön kontağına yaklaşır.
+
+
+### Sahne 10 — Kling 10s · ekranda ~5.5s · VO: "Efe kutuyu sağa ittiğinde sürtünme onu sola doğru çekmeye çalışıyordu."
+MOTION: the hands push the box a short travel right while the warm friction bloom and a faint drag-smear stream leftward under it — motion-right versus friction-left staged in one read; the box's leading edge lifts a hair, dust kicks backward at the seam. The raised desk word "SÜRTÜNME" stays FROZEN. CAMERA (film gibi): a slow push toward the contact seam, a soft rack from the box to the glowing word.
+NEGATİF (frame): the raised "SÜRTÜNME" and the box's "DİKKAT" marking stay frozen — no morph/re-spell; the smart board's soft UI stays static; friction is light only; the box must not crush; no new text.
+KAMERA AKIŞI → kes; Sahne 11 daha geniş, aydınlık sınıfta yüzey sorusunu açar.
+
+
+### Sahne 11 — Kling 5s · ekranda ~3.5s · VO: "Peki sürtünme her yerde aynı mıydı?"
+MOTION: he lifts @araba a touch and his gaze shifts between the two floor strips — rough versus smooth — weighing where to test, a curious tilt of the head, his thumb settling on @araba's roof; the rough strip scatters the light while the smooth strip throws a specular streak, @araba's wheels catch a small highlight, morning dust drifts. CAMERA (film gibi): a gentle arc-parallax past the two strips settling on his choosing look.
+NEGATİF (frame): @araba stays the exact tagged model — no redesign, no wheel-spin yet; the board "DERS PROGRAMI" and the wall posters stay frozen & soft — no garble, no English; the Turkish flag and portrait stay stable; no extra children; mouth closed.
+KAMERA AKIŞI → seçim anında kes; Sahne 12 arabayı sınıra koyar.
+
+
+### Sahne 12 — Kling 5s · ekranda ~4s · VO: "Efe oyuncak arabasını iki farklı zeminde denedi."
+MOTION: his fingertips rest on @araba's roof at the rough/smooth border, then lift a hair at the instant before release — a held breath before the test; @araba's near wheels dimple the rough surface while the smooth side throws a sheen, a faint shadow anchors it to the border line. CAMERA (film gibi): a high three-quarter slow push down toward the border, easing at the release moment.
+NEGATİF (frame): @araba tagged model frozen — no redesign; it must stay HELD (do not roll away yet); the board "KUVVET VE HAREKET" title frozen, its body soft/blank — no garble; the hand must not clip @araba; mouth closed.
+KAMERA AKIŞI → parmak kalkışında kes; Sahne 13 pürüzlü zemin sürünüşüne bırakır.
+
+
+### Sahne 13 — Kling 5s · ekranda ~3.5s · VO: "Pürüzlü asfaltta araba yavaş gitti; çünkü"
+MOTION: @araba crawls slowly forward, wheels grinding against the coarse pitted asphalt, fine grit dust dragging at the tires, the roughness clearly holding it back — heavy laboured travel; the coarse aggregate catches the raking morning light in tiny shifting shadows, a short heavy shadow clings under it. CAMERA (film gibi): a low ground-level tracking dolly beside @araba, moving slower than a normal car to sell the drag, the surface texture streaming past.
+NEGATİF (frame): @araba tagged model frozen; it must move SLOWLY (high friction — not fast); only grit dust at the wheels — NO smoke or fire; the blurred houses behind stay soft/stable; no text.
+KAMERA AKIŞI → zoraki sürünüşte kes (cümle askıda); Sahne 14 mikro-yüzeye dalar.
+
+
+### Sahne 14 — Kling 10s · ekranda ~9s · VO: "halı, çim, toprak ya da asfalt gibi pürüzlü yüzeylerde mikroskobik girinti ve çıkıntılar çoktur, bu yüzden sürtünme fazladır."
+MOTION: at near-microscopic scale the coarse surface's countless tiny peaks snag and bite against the tire tread as it inches, a warm friction bloom flaring across the many interlocking contact points, tiny grit particles wedging into the valleys. The raised label "PÜRÜZLÜ — SÜRTÜNME FAZLA" stays FROZEN. CAMERA (film gibi): a slow macro creep along the interlocking contact line — intimate, tactile.
+NEGATİF (frame): the label "PÜRÜZLÜ — SÜRTÜNME FAZLA" frozen — no morph/re-spell; friction bloom is warm LIGHT — no real fire; the micro-surface stays coherent (no boiling/melting); NO schematic, arrow or cross-section appears.
+KAMERA AKIŞI → sıcak kontrast kes; Sahne 15 buz kaymasına sert geçiş (hız + enerji sıçraması).
+
+
+### Sahne 15 — Kling 5s · ekranda ~3.5s · VO: "Buzlu zeminde ise araba hızla kaydı; çünkü"
+MOTION: @araba breaks away fast and free across the glossy ice, sliding with a light directional smear and a thin spray of ice mist off the wheels, a faint glide-trail streaking the frost behind — almost no resistance; the ice throws a mirror-clean reflection sliding with it, rink lights bokeh softly behind. CAMERA (film gibi): a smooth fast lateral tracking glide keeping pace with @araba — the camera skating with it (deliberate contrast to 13's crawl).
+NEGATİF (frame): @araba tagged model frozen; it must glide FAST and free (opposite of 13 — do not slow it); ice mist is a fine spray — NO smoke or fire; the reflection must not smear to white; the rink bokeh stays stable; no text.
+KAMERA AKIŞI → kayışta kes (cümle askıda); Sahne 16 pürüzsüz mikro-yüzeye sakin dalar.
+
+
+### Sahne 16 — Kling 10s · ekranda ~7s · VO: "buz, cam, fayans ya da mermer gibi pürüzsüz yüzeylerde pürüz azdır, sürtünme de azdır."
+MOTION: at macro scale the tire glides across the near-perfectly smooth polished surface barely touching, a cool clean specular sheen running unbroken beneath it, almost no interlock — the mirror opposite of scene 14. The raised label "PÜRÜZSÜZ — SÜRTÜNME AZ" stays FROZEN. CAMERA (film gibi): a slow clean macro glide along the unbroken specular line — smooth, effortless.
+NEGATİF (frame): the label "PÜRÜZSÜZ — SÜRTÜNME AZ" frozen — no morph; the specular reflection stays clean (no glare blowout); NO grit or bumps appear (it is smooth); no schematic or arrow.
+KAMERA AKIŞI → kes; Sahne 17 Efe'nin kahkahasına sıçrar (karakter sıcaklığı, espri).
+
+
+### Sahne 17 — Kling 10s · ekranda ~5.5s · VO: "Efe güldü: buz pistine halı serseydik kimse kayamazdı! diye düşündü"
+MOTION: @efe laughs openly — shoulders bouncing, a hand on his belly, head tipping back a little with delight (a laugh, not speech) — delighted by his silly idea; across the shiny ice the woven runner rug lies gripping, the ice throwing a clean sheen on either side of the matte rug, the rug fibers catching rough where the ice is smooth. CAMERA (film gibi): a gentle push-in on his laugh with warmth, a soft rack to the carpet-on-ice gag.
+NEGATİF (frame): @efe's laugh is a natural laugh shape with NO lip-sync words / no speech; face identical; the rug stays a rug (does not slide off); the ice reflection stays clean; NO caption or joke text; no second identifiable person.
+KAMERA AKIŞI → kahkaha zirvesinde kes; Sahne 18 yansımalı farkındalığa durulur.
+
+
+### Sahne 18 — Kling 5s · ekranda ~4s · VO: "Sonra Efe sürtünmenin hayatındaki yerini fark etti."
+MOTION: @efe lifts and turns his shoe (or his hand) slightly, examining it with a dawning thoughtful realization — friction is everywhere — a small nod of understanding; park light dapples through the trees, dust motes drift, benches soft behind. CAMERA (film gibi): a slow push-in / gentle arc settling on his realization — calm, reflective.
+NEGATİF (frame): face identical; any background people stay soft/faceless (no new identifiable faces); no text; mouth closed (thinking).
+KAMERA AKIŞI → kes; Sahne 19 günlük tutuşların triptiğini açar.
+
+
+### Sahne 19 — Kling 10s · ekranda ~7.5s · VO: "Aslında sürtünme olmasaydı yürüyemez, bardağı elinde tutamaz, hatta yazı bile yazamazdık."
+MOTION: within the three locked panels each grip performs one small live action — LEFT: the shoe plants and grips mid-step with a tiny compression; MIDDLE: the fingers dimple slightly to hold the glass secure; RIGHT: the pencil tip bites the paper and lays a short fresh graphite stroke. The three panel seams and the labels "YÜRÜME / TUTMA / YAZMA" stay FROZEN. CAMERA (film gibi): a very slow synchronized push shared across all three panels — the seams never move.
+NEGATİF (frame): the labels "YÜRÜME / TUTMA / YAZMA" frozen — no morph/re-spell; the three panels must NOT blend, slide or reflow — seams locked; each action is tiny and grounded (no large motion); no extra text.
+KAMERA AKIŞI → kes; Sahne 20 diş/lastik diptiğine geçer.
+
+
+### Sahne 20 — Kling 10s · ekranda ~7s · VO: "Ayakkabı tabanındaki dişler ve araç lastiklerinin pürüzlü yapısı sürtünmeyi artırır;"
+MOTION: within the two locked panels — LEFT: the chunky shoe tread presses and grips the ground with a tiny compression; RIGHT: the coarse tire tread bites the road, tiny grit wedging into both grooves for extra hold. The label "SÜRTÜNMEYİ ARTIRIR" stays FROZEN. CAMERA (film gibi): a slow push across the two panels, raking light catching the tread relief; seams locked.
+NEGATİF (frame): the label "SÜRTÜNMEYİ ARTIRIR" frozen; the two panels do not blend; the treads stay solid (no melting); friction here is grip — no fire; NO arrow or diagram.
+KAMERA AKIŞI → kes; Sahne 21 güvenli-basış yürüyüşüne çözülür (ödül anı).
+
+
+### Sahne 21 — Kling 5s · ekranda ~3s · VO: "böylece kaymadan yürür ve dururuz."
+MOTION: @efe walks forward with sure gripping steps and comes to a firm clean stop, one foot planting flat and gripping with a tiny dust settle, balance rock-solid, a satisfied assured look — no slip, no wobble; a firm short shadow anchors him. CAMERA (film gibi): a smooth tracking dolly following his confident stride, settling as he stops on the secure planted foot.
+NEGATİF (frame): @efe must NOT slip or wobble — the payoff is security; face identical; keep the floor/room grounded and soft-warm (no white void); mouth closed; no text.
+KAMERA AKIŞI → Build-up biter; Climax'ın el-ısıtma yakınına kes (kışa/sıcaklığa tonal geçiş).
+
+
+##### SEKANS 3 — CLIMAX (Sahne 22–27) · enerji zirvesi (int 90 @ dişli) sonra modüle #####
+
+
+### Sahne 22 — Kling 10s · ekranda ~7s · VO: "Kışın üşüyünce ellerimizi birbirine sürttüğümüzde ısınmamız da sürtünme sayesindedir."
+MOTION: @efe briskly rubs his two palms together fast, the warm friction bloom kindling and spreading between them — heat made visible as a soft golden glow pulsing with the scrub; his shoulders hunch against the cold, a delighted "it works" warmth breaking on his face, a faint puff of cold breath-fog drifting. CAMERA (film gibi): a gentle push-in to the glowing palms then a soft tilt to his delighted face — intimate warmth against the cold blue.
+NEGATİF (frame): the palm glow stays warm LIGHT — NO real fire or flame; the hands rub but do not clip through each other; breath-fog stays subtle (not smoke); face identical; a delighted breath is fine but NO speech / NO lip-sync; the snowy background stays stable.
+KAMERA AKIŞI → sıcaklıkta kes; Sahne 23 uyarıcı "ama"ya döner (zorluklara tonal pivot).
+
+
+### Sahne 23 — Kling 5s · ekranda ~3.5s · VO: "Ama sürtünmenin zorlaştıran yönleri de vardı:"
+MOTION: @efe's bright mood shifts — a raised eyebrow, one finger lifting in a small cautionary "but…" beat, his look turning thoughtful toward the worn gear waiting beside him; the lifted finger casts a soft settling shadow, the lamp glow breathes, dust drifts over the waiting part. CAMERA (film gibi): a slow push / slight tilt that follows the finger up then racks to the worn gear — setting up the downside.
+NEGATİF (frame): the finger gesture stays clear — no extra fingers, no morphing hand; NO floating text or warning icon; the metal gear stays solid; face identical; mouth closed; keep the background grounded (no white void).
+KAMERA AKIŞI → "ama"da kes; Sahne 24 dişli öğütmesine SERT kes (enerji zirvesi).
+
+
+### Sahne 24 — Kling 5s · ekranda ~4.5s · VO: "makine parçaları birbirine sürtündükçe aşınır ve ısınır."   (REVİZE — eski video çarkı bozdu, sildir)
+MOTION: the two brass gears turn SLOWLY and mesh cleanly, tooth engaging tooth in steady, even mechanical rotation; ONLY the meshing contact line glows warm with friction and softly pulses, a few tiny bright wear-flecks shave off and drift from the teeth, a faint shimmer of heat-haze rises off the hot contact line. Keep the motion small, controlled and mechanical — a slow steady turn, nothing violent. CAMERA (film gibi): a GENTLE, slow, steady macro push toward the meshing point — minimal, almost locked; NO fast push (a fast move warps the gears).
+NEGATİF (frame): the gears are RIGID solid brass — they must NOT deform, melt, morph, bend, wobble, stretch, merge or change tooth count; the teeth stay hard-edged and separate, meshing mechanically correct — NO jamming, NO chaotic spin, NO teeth passing through each other, NO accelerating; the warm glow and existing sparks/wear-flecks stay subtle — do NOT escalate into a fireball, explosion or open flames; heat-haze subtle; NO camera warp, NO whip, NO shake, NO snap-zoom; no text; no lip/face (no people in frame).
+KAMERA AKIŞI → yavaş öğütmede sakin kes; Sahne 25 yağ ile yatışır.
+
+
+### Sahne 25 — Kling 5s · ekranda ~8s'e hold · VO: "İşte bu yüzden kapı menteşelerini ve makine parçalarını yağlarız ki sürtünme azalsın ve parçalar rahat çalışsın."   (kare GÖRÜLDÜ — zemin kadrajda yok, yağ menteşede yapışık)
+MOTION: the golden oil drop at the spout tip releases and the warm amber oil finishes creeping and spreading down along the brass hinge pin and knuckles as a thick glossy coating, glistening and settling into the seams — the oil clings to the brass and never leaves it; a faint warm highlight slides along the freshly-oiled metal as it slicks up, the hinge reading eased and free. The oil can holds still. CAMERA (film gibi): a slow, gentle macro push toward the hinge pin, easing as the oil settles and glistens.
+NEGATİF (frame): the oil stays ON the brass hinge — it must NOT run down the wooden door frame below the hinge, NOT drip off, NOT pool, NOT form a puddle; NO continuous pour or gush from the can (it stays still, one controlled amount); the brass hinge is rigid — no deform/melt/morph; the machine in the background bokeh stays soft and stable; no new text; no camera warp or shake.
+KAMERA AKIŞI → yağ menteşede parlarken kes; Sahne 26 sıcak gün-sonu toplanmasına.
+
+
+### Sahne 26 — Kling 5s · ekranda ~3.5s · VO: "Günün sonunda Efe öğrendiklerini topladı:"
+MOTION: @efe sits back with a satisfied contented nod, his warm gaze over the day's gathered props — the wooden block, @araba and the rug scrap in a neat row; the low sun rims his hair, golden dust motes drift slow, a soft long shadow pools from the props. CAMERA (film gibi): a gentle slow push-in / soft arc over the gathered props settling on his settled face — warm, reflective.
+NEGATİF (frame): @araba stays the tagged model; the props stay put (no rolling); face identical; mouth closed (content); the warm room stays grounded; no text.
+KAMERA AKIŞI → kes; Sahne 27 temiz özet itişine (temas + zıtlık).
+
+
+### Sahne 27 — Kling 5s · ekranda ~4.5s · VO: "Sürtünme kuvveti harekete zıt yönlüdür ve temas gerektirir."
+MOTION: @efe pushes the red block once more as a clean summary — it slides right while the warm friction bloom drags backward-left at the contact seam, both truths in one beat; the block leans back a hair, a thin scuff trails, the cozy library light warm behind. CAMERA (film gibi): a slow push to the glowing contact seam with a soft rack — a measured summarizing move.
+NEGATİF (frame): the friction bloom is warm LIGHT — no fire; the block stays solid; @efe has NO wristwatch and NO ring (stay removed); the library background stays soft/stable; face identical; mouth closed; no text.
+KAMERA AKIŞI → kes; SEKANS 4 (Resolution) — enerji yatışır (int 30), sıcak kapanış.
+
+
+##### SEKANS 4 — RESOLUTION (Sahne 28–31) · sakin, sıcak kapanış #####
+
+
+### Sahne 28 — Kling 10s · ekranda ~5.5s · VO: "Pürüzlü yüzeylerde fazla, pürüzsüz ve kaygan yüzeylerde azdır."
+MOTION: within the two locked panels — LEFT: @araba crawls slow on rough asphalt, gripped, a warm friction bloom at the coarse contact; RIGHT: the same @araba glides fast and free across the ice with a light ice-mist spray. The seam and the labels "PÜRÜZLÜ — ÇOK SÜRTÜNME / PÜRÜZSÜZ — AZ SÜRTÜNME" stay FROZEN. CAMERA (film gibi): a slow synchronized push across both panels (seams locked) — a clean comparative beat.
+NEGATİF (frame): @araba stays the tagged model, identical in both panels; the labels frozen — no morph/re-spell; the panels do not blend; left stays SLOW, right stays FAST (do not swap); friction is light + grit + mist — no fire.
+KAMERA AKIŞI → kes; Sahne 29 kitap taşıyan yaşam anına.
+
+
+### Sahne 29 — Kling 5s · ekranda ~4s · VO: "Sürtünme olmasaydı yürüyemez, cisimleri tutamazdık;"
+MOTION: @efe strides forward with sure gripping steps, securely holding the stack of books against his chest — walking and holding both made safe by friction; his feet plant firm, his fingers dimple slightly on the book edges, an easy confident look; warm hallway light. The chalkboard "SÜRTÜNME KUVVETİ" (approved) stays FROZEN. CAMERA (film gibi): a smooth tracking dolly alongside his confident stride.
+NEGATİF (frame): the chalkboard text "SÜRTÜNME KUVVETİ" stays frozen — no morph/re-spell (keep it — it is approved); the books do not slip or fall; the steps stay steady (no wobble); face identical; mouth closed; no new text.
+KAMERA AKIŞI → kes; Sahne 30 aşınmış taban makrosuna.
+
+
+### Sahne 30 — Kling 5s · ekranda ~3s · VO: "ama fazlası da eşyalarımızı aşındırır."
+MOTION: @efe's thumb presses gently across the worn-smooth patch of the shoe sole, a small "see how it wore down" beat; the raking lamp light shifts a touch across the glassy worn area versus the deeper edge grooves, a faint rubber dust clinging. CAMERA (film gibi): a slow macro push / gentle rotate of the sole toward the light to reveal the wear — intimate.
+NEGATİF (frame): the tread stays worn-smooth as shown (do not re-detail into fresh deep grooves); the thumb does not clip through; no text; keep the background soft (not stark white); the sole stays a sole (no morph).
+KAMERA AKIŞI → kes; Sahne 31 sıcak veda.
+
+
+### Sahne 31 — Kling 5s · ekranda ~4.5s · VO: "Bir sonraki fen macerasında görüşmek üzere; bilimle kalın!"   (KAPANIŞ)
+MOTION: @efe gives a bright open wave with a big warm smile (no speech) — cheerful and satisfied — while warm sparkle particles rise and drift up around him on slow thermals, the golden backlight blooming a warm rim along his hair and waving hand, his smile lifting his cheeks. The glowing Turkish text "BİLİMLE KALIN!" stays FROZEN — only its warm glow gently pulses. CAMERA (film gibi): a gentle push-in / slight tilt on the wave, easing into a warm hold — the closing beat.
+NEGATİF (frame): the text "BİLİMLE KALIN!" frozen — no morph/re-spell, the İ dots stay correct; @efe waves and smiles but NO speech / NO lip-sync; the sparkles stay subtle — NO fireworks or explosion; the backlight stays warm — no lens-flare blowout; face identical; the sunset background stays stable.
+KAMERA AKIŞI → son klip; sıcak vedayı outro için tut.
+
+
+=========================================================================
+TAMAM — 31/31 motion. Ses yok, ağız kilitli, yazılar donuk, @araba tagged, kamera film gibi + sahneler arası ahenkli.
+Süreler VO'ya göre esnek; Premiere'de klipleri sırayla diz, VO + Suno müziği bindir.
+=========================================================================

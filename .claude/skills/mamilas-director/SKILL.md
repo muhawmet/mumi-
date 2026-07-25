@@ -60,19 +60,76 @@ Her sahne için somut kareyi yaz. Teknik (temiz kaynaklardan — Google NB2 rehb
 - **Telif-temiz:** stili ÇAĞIR, stüdyoyu/eseri DEĞİL. "Pixar/RenderMan" gibi marka YAZMA →
   "premium-CG feature-animation 3D CGI, RenderMan-successor lineage." (referenceDNA zaten böyle der.)
 - **Türkçe metin** diegetik ise tırnak içinde + font belirt; değilse **clean plate**. İngilizce tabela yok.
+- **SHOW (premium — okula satılıyor):** öğreticilik kadar show da kusursuz. Her kare TAM-DEKORLU spesifik
+  mekân + 3-katman derinlik (ön bokeh / keskin dominant / arka warm bokeh) + atmosfer (ışık huzmesi, toz, bloom).
+  **BOŞ/BEYAZ VOID YASAK.** "negative space / clean table" yazma → void doğuruyor. "clean plate" YALNIZ metin
+  içindir, arka plan değil. Dominant öğe boşlukla değil odak+ışıkla öne çıkar. **Dekorlu arka planda
+  tahta/poster = SOFT-FOCUS, okunaklı gövde metni YOK** (en fazla tek temiz kısa Türkçe başlık) —
+  yoksa NB2 garbled/İngilizce yazı doğuruyor. ([[mamilas-show-premium-yasasi]])
+- **KELİME TUZAKLARI (JSON'dan gelir, prompta TAŞIMA):** `saffron` → NB2 safran ÇİÇEĞİ çiziyor (palette'ten
+  sızar) → "warm golden" yaz; `bloom` → çiçek → "glow of light"; `sheen` (cilt) → plastik → "soft matte,
+  low specular". Ayrıca **cast ve yaş JSON'da yok** → her prompta "Turkish/Anatolian, main AND background" +
+  sınıf yaşı ("6th-grade ~11-12, pre-teen") yaz, yoksa siyahi/asyalı ve minik çocuk çıkıyor.
+  Tam liste: [[mamilas-command-json-blokajlari]]
 - **INLINE JÜRİ = TAMİR:** prompt'u `agents/promptQuality.mined.json` + core-prompt-path +
   `worldPacket.negativeLock`'a karşı geç; ihlal varsa **oracıkta düzelt**, "hata" yazıp geçme.
 - **Çıktı:** yapıştırmaya hazır **tek-parça code block'lar** (STYLE kuyruğu gömülü). Mami Magnific'e basar.
 
 ## 3. KARE → MOTION — `videoModel` (Kling 3.0)
 
-- Mami onaylı kareyi getirir; **kareyi GÖR** (i2v yasası: onaylı kare = gerçek). Görmeden motion YAZMA.
+- **START FRAME HER ŞEYİ TAŞIR (Kling yeni öğe üretemez).** Kling sonradan bir şey doğurmada çok kötü —
+  kareye yeni karakter/yazı/nesne girince MORPH ediyor. Motion'da **yeni öğe doğurtma** ("sonra bir çocuk
+  gelir", "yazı belirir" YOK); sahnede ne olacaksa **start frame'de zaten var** olsun, motion yalnız var
+  olanı canlandırsın. Bu yüzden start frame show'u tam kurar. (Sürtünme temiz çıktı; Bileşke'de ihlal → morph.)
+- **MUTLAK YASA — GÖRMEDİĞİN KAREYE MOTION YAZMA.** Mami onaylı kareyi getirir; kareyi Read ile AÇ-GÖR (i2v: onaylı
+  kare = gerçek). Kare henüz üretilmediyse motion **BEKLEMEDE** — yalnız start-frame promptunu ver; kare gelip
+  görülünce motion yazılır. (Yeni/revize kare de dahil: revize frame'i görmeden onun motion'ını yazma.)
 - Teknik (fal.ai Kling 3.0 rehberi): start frame = **çıpa**; sadece **değişeni/canlananı** yaz,
   karedekini **yeniden tarif etme**; **DoP gibi düşün** — hareketi zamanla anlat, görünüşü değil;
   açık kamera fiili (dolly push / parallax / rack / tracking); `motionEngine.dialect` ritmi
   (attack ilk saniye, event ~%70'te çözülür, kalan hold); `worldPacket.motionCadence` disiplini.
 - **Kling native ses:** "patlama sesi" değil **fiziğini** yaz. VO ElevenLabs; ekranda kimse konuşmaz.
 - **Frame-specific negatif:** karenin gerçek kırılgan öğelerini adla (metin plakası, ince rig, yansıma).
+- **i2v'de START FRAME motion'ı belirler — bozuk motion'da ÖNCE KAREYİ düzelt.** Kompozisyon/yörünge/geometri
+  kareden gelir: yağ yere döküyorsa kova/damla yörüngesini hedefe çevir (referans-edit), motion'a negatif yığma.
+  Motion'ı sade tut; kare doğruysa hareket doğru akar. (Kamera-kaynaklı bozulma — dişli warp'ı gibi — istisnadır: orada kamera minimal.)
+- **Katı/mekanik nesne (dişli, rig) + hızlı kamera = WARP.** Böyle karelerde kamera minimal/sabit tut + "rigid solid,
+  no deform/melt/morph/merge/tooth-count-change, no pass-through" negatifi ver. Uzun klip = drift/uydurma riski;
+  bozulan karede **5s** kullan.
+
+## 3.5 REVİZYON FAZI — render denetimi (referans-edit)
+
+Mami renderları bir klasöre indirir (ör. `agents/COMMAND-INBOX/<Ad>/`). Her kareyi **GÖZLE aç**
+(Read ile görsel) ve **cümlesiyle (VO) karşılaştır**. Sorunlu kareye `revize.txt` yaz; **sorunsuza
+revize YOK** (Mami bunu node ile çeker).
+
+**Tarama kıstasları (öncelik sırası):**
+1. **VO ↔ sahne uyumu (EN ÖNEMLİ)** — kare, o cümlenin dediğini gösteriyor mu?
+2. **Bozuk/garbled yazı** (tahta, etiket) — okunmayan/yanlış harf.
+3. **Yanlış cast** — siyahi/asyalı YOK; Türk/Anadolu (Türkiye okulları böyle).
+4. **Gereksiz/fazla yazı**, İngilizce tabela.
+5. **World/firewall ihlali** — kara tahta→akıllı tahta, ok/ikon/diyagram, photoreal, franchise.
+6. **Süreklilik** — karakter/hero-prop drift (araba modeli değişmesi; saat/yüzük gibi anomali).
+7. **Boş/void arka plan** (premium-show ihlali).
+
+**`revize.txt` biçimi:** her blok `### dosya.png` ile başlar (node parse eder). İçerik =
+*"Use this referenced image, change ONLY: <fix>. Keep everything else identical."* Sahneyi **baştan
+tarif ETME** — Magnific'te görsel referans olarak bağlı; sadece düzeltmeyi ver. Sorunsuzları tek satır
+listele. **KARAR BASİT:** *sahne bozuksa* (kompozisyon/içerik yanlış, beat tutmuyor) → **baştan üret**;
+*küçük şey değişecekse* (sayı, yazı, renk, tek öğe, tag'li nesne swap'i) → **resimden revize** =
+"use this referenced image, change ONLY …, keep everything else identical."
+Node `###` ayracıyla çeker; blok = dosya adı + tek fix cümlesi.
+**Referans-edit incelikleri:** (a) arka plan yazı/poster Türkçeleştirirken **orijinal odak/bulanıklığı KORU** —
+NB2 eskiden bulanık olanı netleştiriyor; "keep same soft-focus, do not sharpen" de. (b) **Eksik öğe**
+(öğretmen, obje) → sahne hoşsa **referans-edit ile EKLE** ("add a full teacher…"), baştan üretme.
+
+**Tag adaptif:** tekrar eden karakter/hero-prop → `@efe`/`@mira`/`@araba` (Magnific auto-tag'ler),
+süreklilik kilidi. Ama **her ufak nesneye tag açma** — yargıyla, bokunu çıkarmadan.
+
+**TEK GEÇİŞ KURALI (Mami'nin süreç direktifi):** Kareye **bir kez** bak; o geçişte hem **motion**'ı hem
+(varsa) **revize**'yi birlikte yaz — "kare şu an bozuksa bile düzeltilmiş kabul edip motion'ı yaz, revize
+promptunu altına koy". Aynı kareleri tekrar tekrar açıp bakma (context israfı, Mami'yi bekletir).
+Bulanık/okunmayan arka plan yazısına takılma — sadece **net okunan** yanlışı düzelt (ör. "BAKERI").
 
 ## 4. TEMPO — sekans sekans (faz sınırında)
 
@@ -83,8 +140,11 @@ Her sahne için somut kareyi yaz. Teknik (temiz kaynaklardan — Google NB2 rehb
 ## 5. ÇIKTI — ayrı görünür `.md`
 
 Her sekansın prompt'larını sohbette göster VE command'ın yanına **görünür bir dosya** yaz:
-`agents/COMMAND-INBOX/<Ad>_PROMPTLAR.md` (Mami telefondan bile açıp kopyalar). Kaynak JSON'a
-**dokunma** (parity yasası: kaynak command mutasyona uğramaz). Sahne kapandıkça atomik güncelle.
+`agents/COMMAND-INBOX/<Ad>_PROMPTLAR.txt`. **Windows'ta Mami `.txt` ister — `.md` uğraştırıyor;**
+prompt bloklarında ``` fence yerine düz ayraç (`-----`) kullan, kopyalaması kolay olsun
+([[mami-windows-txt-tercihi]]). Kaynak JSON'a **dokunma** (parity yasası: kaynak command mutasyona
+uğramaz). Sahne kapandıkça atomik güncelle. (VO metni + edit planı da ayrı `.txt` — Mami VO'yu kendi
+okutur, Premiere'de klip↔cümle haritasını takip eder.)
 
 ## 6. ÖĞRENME = PRECEDENT (yasa DEĞİL)
 
