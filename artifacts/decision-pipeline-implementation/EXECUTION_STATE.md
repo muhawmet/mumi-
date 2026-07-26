@@ -44,18 +44,62 @@ yerine geçen yetenek. Sonuç: yazıyı post'a bırakan tarif kabul edilmez · m
 dokunmaz (warp/parallax/üstünden kayan kamera yok) · yazı yanlışsa düzeltme yeri Premiere
 değil, kareyi yeniden üretmek.
 
-### ➡️ SIRADAKİ TEK ADIM (restart sonrası)
+### ✅ AÇIK ÇATAL KAPANDI — **(A) Yönetmen tek yüzey** (Mami, 2026-07-26)
 
-**Mami'ye AÇIK ÇATALI yeniden sor** — plan dosyasındaki "AÇIK ÇATAL" bölümü: yönetmen tek
-yüzey mi (A), iki yüzey mi (B), önce tam envanter mi (C). Mami restart öncesi *"tekrar
-sorduracam, bekle"* dedi. **Cevap gelmeden `src/` içinde silme/taşıma YOK.** Ölçüm hazır:
-14.294 satır üç kümeye ayrıldı (canlı / yalnız-site-UI / hiç-çağrılmayan `audit_full` 542).
+Mami'nin kararı: **konuşma ANA yol; site = karar + kütüphane + kanıt.** Sökülecekler
+(ölçülmüş, ~1050 satır): `advisor.ts` 411 · `productionPulse.ts` 100 ·
+`qa.ts→evaluateDirectorCabinet` + `QAStep` · hiç çağrılmayan `audit_full.ts` 542.
+Yasa bundan sonra **tek yerde** yaşar — bugünkü drift'in kaynağı yasanın iki yerde bakım
+istemesiydi. Silme başlamadan önce iki ön koşul: (1) çalışma ağacındaki kirli dosyalar
+çözülür, (2) her sökülen dosyanın site-UI importer'ı (RecipeStep / DashboardStep /
+RecipeRail / innerVoices) aynı turda kapatılır — yarım sökme yasak.
 
-Çatal kapanınca: **G1 — gerçek-kare hataları koda iniyor.** NB2 hata kataloğunun 10 maddesi tek tek ölçülecek:
-her biri için kodda kilit var mı · testle bağlı mı · yalnız ajan hafızasında mı. Ölçüm
-tablosu `receipts/KALP-G1.md`'ye girer, sonra yalnız hafızada olanlar koda iner.
-**Ön ölçüm (varsayım değil, sayım):** `src/core`'da ilgili konularda 13 dosyada 67 iz var —
-yani bir kısmı zaten kilitli. Hangisi olduğu ölçülmeden kilit yazılmaz.
+### ✅ G1 TAMAM — reçete zekâsı (2026-07-26). Receipt: `receipts/KALP-G1.md`
+
+Beş alt kapı, hepsi push'lu (`a3ac3a0..ee7d831`), her biri kapı yeşilken:
+
+- **G1a `81091e3` — site ÖLÇÜM bildirir, ÖNERİ vermez.** `suggestRecipe()` + "Genel başlangıç"
+  düğmesi söküldü (konuyu kasten yok sayıp varsayılan basıyor, üstüne preset/directorChoices/
+  directorBrief temizliyordu). "Reçete sağlam · üretime hazır" → "Evren ölçümü" (uyumluluk
+  yeşilliği üretim sözü değildir). "Doruk zayıf" / "Referanslar dağınık" yaratıcı hükümleri
+  gitti; "Çıkar: X" emri yerine uyum yüzdeleri.
+- **G1b `dc76cd4` — enzim taşıyıcıları kimliğe girdi.** `castAge` · `characterShare` ·
+  `heroTags`. Ölçüm: enzim'in dört kilidinden üçünün ALANI yoktu; kodun kendi yorumu
+  itiraf ediyordu — "üç bitmiş videonun üçünde de cast boştu, @mira/@efe tag'lerini AJAN
+  yazdı". Zincir: StudioState → pickProjectState → BriefInput → AgentBriefCtx → brief §1 →
+  BaseDecision.locks. `normalizeHeroTags` ve `CHARACTER_SHARE_DEFAULT` tek yerde (pure.ts).
+  Girdi yüzeyi RecipeStep'te. **commandId hash'i değişti** (bekleyen `.command.json` = 0).
+- **G1c `23ff18b` — yutulan ölçüm ekrana çıktı.** `directorNotes()` (125 satır uyumluluk
+  ölçümü) hiçbir yüzeyden çağrılmıyordu; tek çağıran kendi testiydi — yeşil test görünmez
+  bir yeteneği koruyordu. RecipeStep'e "Evren ölçümü" paneli + **yüzey kilidi** testi
+  (ölçüm bir ekrandan çağrılmak ve render edilmek zorunda).
+- **G1d `1132b2b` — sessiz ezilme kapandı.** `resolveLightAuthorityReceipt`: 46 dünyanın
+  **31'inde** ref DNA'nın ışık cümlesi düşüyordu, kayıtsız — oysa ref bastırması için makbuz
+  vardı (`SUPPRESSED_WORLD_MISMATCH`). Kalıcı yasa testte: *ışık metni değiştiyse makbuz kaybı
+  listelemek zorunda.* Prompt byte'ı değişmedi (46 dünyada parite). Makbuz kimliğe girmez.
+- **G1e `ee7d831` — SAHTE GÜNEŞ kapandı.** Mami'nin gerçek-kare gözlemi: *"hep sahte bi ışık
+  geliyor güneşten, odada bile."* Ölçüm: tek sahnede `motivated` 8× · `window` 3× · `sun` 3×;
+  dünya yasası kaynak MENÜSÜ sayıyor, hiçbir sahne seçim yapmıyordu. İki kol: anlaşma
+  **tekilleştirir** (`WORLD_AGREES_DEDUPED`) + sahne `light_source` menüyü çözer. Sonuç
+  7/2/2. **Üç test politikası gerekçesiyle güncellendi** (silinmedi) — gerçek-kare hükmü test
+  yeşilini ezer. Ayrıca iki kendi kusuru ölçümle yakalandı: nesne adlı yasak `window`'u 3→5
+  çıkarıyordu (pozitife çevrildi) ve `aperture` lens diyaframıyla çakışıyordu (çıkarıldı).
+
+**Kapı:** tsc 0 · vitest **2096/2096 (85 dosya)** · build OK.
+**Mami yetkisi (2026-07-26):** *"push her zaman açık"* — kapı yeşilken commit+push sorulmaz.
+
+### ➡️ SIRADAKİ TEK ADIM
+
+**Yüzey cerrahisi** — Mami'nin kararı (A) tek yüzey, ama ölçüt "zekâ artıyor mu": **öneri/hüküm
+veren yüzeyler sökülür, ÖLÇÜM kalır.** Sökülecekler: `QAStep` cabinet ·
+`productionPulse.ts` (100) · çağrılmayan `audit_full.ts` (542). Kalan ölçüm (`refFit`,
+`dnaStrength`, `starterPackFor`, `directorNotes`'un ölçüm yarısı) **"advisor" adından
+çıkarılır** — isim öneri iddia ediyor, dosya `universeMeasure.ts` olur. Ön koşul: her sökülen
+dosyanın site-UI importer'ı (RecipeRail / innerVoices / QAStep) aynı turda kapatılır —
+yarım sökme yasak.
+
+Ardından **G2 — 46 dünyaya uygulanabilen ortak 5-kare sınav seti** (45 dünya hiç kare
+görmedi; darboğaz kelime kusuru değil doğrulama maliyeti).
 
 ---
 

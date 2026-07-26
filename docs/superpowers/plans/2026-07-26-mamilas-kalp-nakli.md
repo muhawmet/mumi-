@@ -169,21 +169,29 @@ Bunlar süs değil, operasyonun çalışma koşulu (`/mamilas-buddy` çekirdeği
 
 ## `/clear` KICKOFF — yeni oturum bunu okur
 
+Mami bunu `/clear` sonrası ilk mesaj olarak yapıştırır. Tek işi doğru dosyalara yönlendirmek:
+durumun kendisi dosyalarda yaşar, bu metinde değil (metne durum yazmak, iki kaynak yaratır).
+
 ```
-MAMILAS kalp nakli — devam. Üretim durdu, beyin adaptasyonu sürüyor.
+MAMILAS kalp nakli — devam. Üretim DURDU, beyin adaptasyonu sürüyor. Üretim sorma.
 
-Sırayla oku:
-1. docs/superpowers/plans/2026-07-26-mamilas-kalp-nakli.md   (bu operasyon)
-2. artifacts/decision-pipeline-implementation/EXECUTION_STATE.md  (durum + 07-26 mührü)
-3. docs/ai/PROJECT_CONTRACT.md  (değişmezler)
-4. Aktif kapının receipt'i: artifacts/decision-pipeline-implementation/receipts/KALP-<G>.md
+Sırayla oku, sonra tek adımı söyle:
+1. artifacts/decision-pipeline-implementation/EXECUTION_STATE.md   (en üstteki KALP NAKLİ bölümü — aktif kapı + sıradaki tek adım orada)
+2. docs/superpowers/plans/2026-07-26-mamilas-kalp-nakli.md          (operasyon: kapılar, denetim bölüşümü, receipt biçimi)
+3. artifacts/decision-pipeline-implementation/receipts/KALP-G1.md   (biten işin ölçümleri ve gerekçeleri)
+4. docs/ai/PROJECT_CONTRACT.md                                      (değişmez ürün yasaları)
 
-Skill'ler: /mamilas-pipeline (yürütme) · /mamilas-buddy (çalışma biçimi + DEHB merkezde)
-Denetim: her kapı sonunda Codex bağımsız denetçi.
+Skill'ler: /mamilas-pipeline (yürütme) · /mamilas-buddy (çalışma biçimi — DEHB merkezde)
+Denetim: her kapı sonunda Codex/Sol bağımsız denetçi (kod yazmaz, rapor yazar).
+Yetki: push her zaman açık — kapı yeşilken commit+push sorulmaz.
 
-Sohbet hafızasına güvenme. Çelişki varsa FACT_REQUIRED ile dur.
-Aktif kapı ve sıradaki tek adım EXECUTION_STATE'in en üstünde yazılı.
+Kurallar: sohbet hafızasına güvenme · çelişki varsa FACT_REQUIRED ile dur · kelime avlamak
+yasak (bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır) · gerçek-kare hükmü test yeşilini ezer.
 ```
+
+**Kickoff'un tek bakım kuralı:** buraya durum bilgisi (hangi kapı bitti, hangi commit) YAZILMAZ.
+O bilgi `EXECUTION_STATE.md`'nin en üstünde yaşar. İki yere yazılan durum, bir gün ikiye
+ayrılır — bugün kapattığımız kusurun ta kendisi bu.
 
 ---
 
