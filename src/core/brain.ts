@@ -2336,6 +2336,20 @@ export interface AgentBriefCtx {
   /** CODEX#1 — the path's positive contract. §3 claims "Path > World"; this is what Path asks for. */
   contract?: PathContract;
   world: SurgeryWorld; palette?: SurgeryPalette; dna: DnaDirectives; cast: string;
+  /**
+   * ENZİM TAŞIYICILARI (KALP-G1b, 2026-07-26). `mamilas-enzim` dört kararın üretimden ÖNCE
+   * kilitlenmesini istiyor: preset · karakter oranı · tag listesi · yazı planı. Yalnız yazı
+   * planının alanı vardı; diğer üçü hiçbir yerde yaşamıyordu, yani kilitlenecek yer yoktu.
+   * Sonuç ölçüldü — `brain.ts` kendi yorumunda yazılı: üç bitmiş videonun üçünde de cast
+   * boştu ve `@mira/@efe` tag'lerini AJAN yazdı. Her üretimde yeniden uyduruldu.
+   * Üçü de opsiyoneldir ve boşken TEK SATIR basmazlar: brief byte-eşit kalır.
+   */
+  /** "6. sınıf · 11-12 yaş" — cast serbest metninin içine sıkıştırılmayı bırakan alan. */
+  castAge?: string;
+  /** Karakterli sahne payı 0-100. Mami yasası: her kareye karakter sıkıştırma, 50-50. */
+  characterShare?: number;
+  /** Tekrar eden karakter/hero-prop tag'leri. `normalizeHeroTags` ile normalize gelir. */
+  heroTags?: string[];
   /** Reçetenin "Location" alanı — boşsa §1'e satır basılmaz (brief byte-eşit kalır). */
   location?: string;
   /** Reçetenin sahne notları — doktorun kendi eli. Boşsa hiçbir bölüm basılmaz. */
@@ -2536,6 +2550,17 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     // boştu (@mira/@efe tag'lerini ajan yazdı) — yani her üretimde "- **Cast:** "
     // boş basıldı. Boş alan bilgi değildir; ya cast vardır ya satır yoktur.
     ...(T(ctx.cast) ? [`- **Cast:** ${T(ctx.cast)}`] : []),
+    // Yaş `cast` serbest metninin içine elle sıkıştırılıyordu ("11-12 yaş 5. sınıf öğrencisi
+    // Mira, kısa siyah saç"). Kendi alanı olmadığı için ne kilitlenebiliyor ne de kimliğe
+    // giriyordu — yani aynı reçete iki farklı yaşta cast'le aynı hash'i üretiyordu. Motor
+    // "çocuk" duyduğunda 6 yaşında çiziyor; sınıf yaşı bir stil tercihi değil, casting kararı.
+    ...(T(ctx.castAge) ? [`- **Cast age / grade:** ${T(ctx.castAge)} — every person in this frame reads THIS age. "Child" is not an age: a face that reads six years old in a sixth-grade scene is a casting error, not a style choice. Body proportion, height relative to furniture, and face structure all follow this line.`] : []),
+    // 50-50 yasası: karakter olması gereken sahnede görünür, her karede değil. Kalabalık kare
+    // dolgu gibi okunur ve ders nesnesi gözü kaybeder.
+    ...(typeof ctx.characterShare === 'number' ? [`- **Character share:** roughly ${Math.round(ctx.characterShare)}% of the scenes carry people; the rest are object / phenomenon frames. Do not push a character into a scene that does not need one — a crowded frame reads as filler and the lesson object loses the eye.`] : []),
+    // Tag = kimlik çıpası. Yazılmazsa ajan her sahnede karakteri yeniden icat eder ve
+    // sahneler arası yüz/gövde/nesne kayar (NB2 hata kataloğu: "tag'siz prop drift").
+    ...((ctx.heroTags || []).length ? [`- **Recurring tags:** ${(ctx.heroTags || []).join(' · ')} — each tag is ONE entity: the same face, the same body, the same object in every scene where it appears. A tagged entity is never re-invented per scene. If a tag does not appear in a scene, it is simply absent — never replaced by a lookalike.`] : []),
     // Reçetenin Location alanı buraya kadar hiç gelmiyordu: Mami "İstanbul, sınıf" yazıyor,
     // brief hiç mekân görmüyor, ajan mekânı UYDURUYORDU. Boşken satır basılmaz.
     ...(T(ctx.location) ? [`- **Location:** ${T(ctx.location)} — the real place this shoot happens in; the frame is staged HERE, never in an invented elsewhere.`] : []),

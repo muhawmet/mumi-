@@ -4,7 +4,7 @@ import { useStudioStore, recipeReadiness, type SceneNote } from '../../store/use
 import { Panel, Field, Button, Chip } from '../../components/Layout/PanelKit';
 import { stageNumber } from '../../components/Layout/AppLayout';
 import { CanvasPreview } from '../../components/CanvasPreview';
-import { DATA, isMaterialCompatibleWithWorld, paletteColors, worldRenderText } from '../../core/pure';
+import { CHARACTER_SHARE_DEFAULT, DATA, isMaterialCompatibleWithWorld, paletteColors, worldRenderText } from '../../core/pure';
 import { downloadFile } from '../../core/exporters';
 import { recipeFileName, recipeJsonFileName, registerOf } from '../../core/brain';
 import { dnaStrength, refFit, starterPackFor } from '../../core/advisor';
@@ -59,6 +59,9 @@ export const RecipeStep = () => {
     projectClass,
     timeLight,
     cast,
+    castAge,
+    characterShare,
+    heroTags,
     location,
     subject,
     recipeScenes,
@@ -447,7 +450,7 @@ export const RecipeStep = () => {
       </details>
 
       <details className="recipe-progressive">
-        <summary>Project Metadata · konu, cast, lokasyon</summary>
+        <summary>Project Metadata · konu, cast, yaş, tag, lokasyon</summary>
         <Panel title="Konu, Cast, Lokasyon" subtitle="Ajan reçetesinin insan-okunabilir üst bloğu">
         <div className="recipe-meta-grid">
           <Field label="Subject / Konu">
@@ -458,6 +461,39 @@ export const RecipeStep = () => {
           </Field>
           <Field label="Location">
             <input className="meta-input" value={location} onChange={(event) => setField('location', event.target.value)} placeholder="İstanbul, sınıf, stüdyo..." data-testid="recipe-location" />
+          </Field>
+          {/*
+            ENZİM TAŞIYICILARI (KALP-G1b). Bu üç alan yoktu; yaş `cast` metninin içine
+            sıkıştırılıyor, tag'leri her üretimde ajan uyduruyor, karakter oranı yalnız
+            sohbette söyleniyordu. Üçü de brief §1'e ve kimliğe gider — yani burada bir kez
+            kilitlenir, her prodüksiyonda yeniden konuşulmaz.
+          */}
+          <Field label="Cast yaşı / sınıf" hint="Motor 'çocuk' duyunca 6 yaşında çizer. Sınıf yaşı bir casting kararıdır, stil değil.">
+            <input className="meta-input" value={castAge} onChange={(event) => setField('castAge', event.target.value)} placeholder="6. sınıf · 11-12 yaş" data-testid="recipe-cast-age" />
+          </Field>
+          <Field label="Karakterli sahne payı (%)" hint="50-50 yasası: karakter olması gereken sahnede görünür, her karede değil.">
+            <input
+              className="meta-input"
+              type="number"
+              min={0}
+              max={100}
+              value={characterShare}
+              onChange={(event) => {
+                // Boş input `NaN` üretir; kimliğe NaN yazmak hash'i bozar. Boşluk = varsayılan.
+                const next = Number.parseInt(event.target.value, 10);
+                setField('characterShare', Number.isFinite(next) ? Math.min(100, Math.max(0, next)) : CHARACTER_SHARE_DEFAULT);
+              }}
+              data-testid="recipe-character-share"
+            />
+          </Field>
+          <Field label="Tekrar eden tag'ler" hint="Virgülle ayır. Tag = kimlik çıpası: aynı yüz, aynı gövde, aynı nesne her sahnede.">
+            <input
+              className="meta-input"
+              value={heroTags.join(', ')}
+              onChange={(event) => setField('heroTags', event.target.value.split(','))}
+              placeholder="@mira, @ali, @araba"
+              data-testid="recipe-hero-tags"
+            />
           </Field>
         </div>
         </Panel>

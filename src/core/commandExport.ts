@@ -1,4 +1,4 @@
-import { DATA, deriveProductionPath, effectiveMaterialId, refCompatibleWithWorld, worldPacketById } from './pure';
+import { CHARACTER_SHARE_DEFAULT, DATA, deriveProductionPath, effectiveMaterialId, normalizeHeroTags, refCompatibleWithWorld, worldPacketById } from './pure';
 import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, scrubRefFieldIP } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
@@ -56,6 +56,16 @@ type CommandStateWithPersonal = CommandState & {
   personalMode?: boolean;
   subject?: string;
   location?: string;
+  /**
+   * ENZİM TAŞIYICILARI (KALP-G1b) — brief §1'e ve oradan prompt'a girer, o yüzden kimliğin
+   * parçasıdır. Opsiyonel tutulur çünkü mevcut command fixture'ları ve eski persist edilmiş
+   * state bu alanları taşımıyor; verilmediğinde kimliğe store varsayılanıyla AYNI değer
+   * yazılır (aşağıdaki `?? CHARACTER_SHARE_DEFAULT`) — yani aynı reçete iki farklı yolda
+   * aynı hash'i üretir. Sessiz `undefined` kimliğe girmez.
+   */
+  castAge?: StudioState['castAge'];
+  characterShare?: StudioState['characterShare'];
+  heroTags?: StudioState['heroTags'];
   /** Mami'nin ekran-metni kilidi. `DeliveryPromise` bunu okur — kimliğin parçasıdır. */
   osTextMode?: StudioState['osTextMode'];
   /** VO senkron kipi. agentBrief ve image packet'i değiştirir → karar, dolayısıyla kimlik. */
@@ -269,6 +279,13 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       // if the order is ever made non-semantic, sort it in the PROMPT path first, then here.
       refs: [...state.selectedRefIds],
       cast: state.cast,
+      // ENZİM TAŞIYICILARI (KALP-G1b) — üçü de brief'e ve prompt'a ulaşır, o yüzden üçü de
+      // KİMLİĞİN parçasıdır. Dışarıda bırakmak, aynı reçetenin 11 yaşındaki ve 17 yaşındaki
+      // cast'iyle BYTE-EŞİT id üretmesi demekti; iki farklı filmi ayırt edemeyen kimlik,
+      // kimlik değildir (bu dosyanın kendi yorumu, `creativeControls` gerekçesi).
+      castAge: (state.castAge || '').trim(),
+      characterShare: state.characterShare ?? CHARACTER_SHARE_DEFAULT,
+      heroTags: normalizeHeroTags(state.heroTags),
       brandKitLock: state.brandKitLock,
       sceneCount: exportedSceneCount,
     },
@@ -380,6 +397,11 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       sceneCount: exportedSceneCount,
       topic,
       cast: state.cast,
+      // Enzim taşıyıcıları pakete de yazılır — ajan yaşı/tag'i/oranı tahmin etmesin
+      // (brief §1 ile aynı veri, tek kaynak).
+      castAge: (state.castAge || '').trim(),
+      characterShare: state.characterShare ?? CHARACTER_SHARE_DEFAULT,
+      heroTags: normalizeHeroTags(state.heroTags),
       // Reçetenin Location'ı: ajan mekânı uydurmasın diye pakete de yazılır (brief §1 ile aynı veri).
       location: (state.location || '').trim(),
       worldId: state.selectedWorldId,

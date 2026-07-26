@@ -8,6 +8,7 @@ import {
   normalizeRefIds,
   normalizeWorldId,
   resolveRecipeDefaults,
+  CHARACTER_SHARE_DEFAULT,
   DATA,
   type SceneArchitecture,
   type HandoffPacketSet,
@@ -583,6 +584,18 @@ export interface StudioState {
   projectClass: string;
   sceneCount: number;
   cast: Cast;
+  /**
+   * ENZİM TAŞIYICILARI (KALP-G1b, 2026-07-26) — `mamilas-enzim`'in kesim masasında kilitlemek
+   * istediği kararlardan üçü. Öncesinde alanları yoktu: yaş `cast` metninin içine elle
+   * sıkıştırılıyor, tag'leri her üretimde ajan uyduruyor, karakter oranı yalnız sohbette
+   * söyleniyordu. Üçü de brief §1'e ve kimliğe (BaseDecision.locks) gider.
+   */
+  /** "6. sınıf · 11-12 yaş". Boş = belirtilmedi, brief'e satır basılmaz. */
+  castAge: string;
+  /** Karakterli sahne payı 0-100 (Mami yasası: 50-50, her kareye sıkıştırma). */
+  characterShare: number;
+  /** Tekrar eden karakter/hero-prop tag'leri: @mira, @ali, @araba. */
+  heroTags: string[];
   location: string;
   subject: string;
   recipeScenes: SceneNote[];
@@ -737,6 +750,12 @@ const initial = {
   projectClass: 'ANIMATION_EDU',
   sceneCount: 5,
   cast: '' as Cast,
+  castAge: '',
+  // Mami'nin 50-50 yasasının varsayılanı; sabit `pure.ts`'te tek yerde yaşar. Alan boş
+  // bırakılamaz çünkü "oran yok" ile "oran %0" farklı şeyler: %0 karakter yasağıdır, boşluk
+  // ise karar verilmemişliktir — ve karar verilmemiş oran her üretimde yeniden konuşulur.
+  characterShare: CHARACTER_SHARE_DEFAULT,
+  heroTags: [] as string[],
   location: '',
   subject: 'Su Döngüsü',
   recipeScenes: [
@@ -845,6 +864,11 @@ export function pickProjectState(s: StudioState): Partial<StudioState> {
     projectClass: s.projectClass,
     sceneCount: s.sceneCount,
     cast: s.cast,
+    // Enzim taşıyıcıları projeye ait kararlardır — vault/pack/snapshot ile birlikte taşınır.
+    // Taşınmazlarsa proje bir cihazda açıldığında yaş/tag/oran kaybolur ve yeniden konuşulur.
+    castAge: s.castAge,
+    characterShare: s.characterShare,
+    heroTags: s.heroTags,
     location: s.location,
     subject: s.subject,
     recipeScenes: s.recipeScenes,
@@ -1433,6 +1457,9 @@ export const useStudioStore = create<StudioState>()(
             projectClass: s.projectClass,
             sceneCount: s.sceneCount,
             cast: s.cast,
+            castAge: s.castAge,
+            characterShare: s.characterShare,
+            heroTags: s.heroTags,
             selectedWorldId: s.selectedWorldId,
             selectedPropId: s.selectedPropId,
             selectedRefIds: s.selectedRefIds,

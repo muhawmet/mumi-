@@ -274,6 +274,18 @@ export interface BriefInput {
   projectClass: string;
   sceneCount: number;
   cast?: string;
+  /**
+   * ENZİM TAŞIYICILARI (KALP-G1b, 2026-07-26) — `mamilas-enzim`'in "üretimden önce kilitle"
+   * dediği kararlardan üçü. Önce hiçbir alanı yoktu: yaş `cast` metninin içine sıkıştırılıyor,
+   * tag'leri her üretimde ajan uyduruyor, karakter oranı yalnız sohbette söyleniyordu.
+   * Üçü de prompt'a ulaşır → üçü de kimliğin parçasıdır (BaseDecision.locks).
+   */
+  /** "6. sınıf · 11-12 yaş". Boşsa brief'e satır basılmaz. */
+  castAge?: string;
+  /** Karakterli sahne payı 0-100 (Mami: 50-50). Verilmezse satır basılmaz. */
+  characterShare?: number;
+  /** Tekrar eden karakter/hero-prop tag'leri; `normalizeHeroTags` ile temizlenir. */
+  heroTags?: string[];
   selectedWorldId: string;
   selectedPropId: string;
   selectedRefIds: string[];
@@ -1296,6 +1308,36 @@ function calcPacing(sceneId: number, sceneCount: number) {
 // Public API
 // ============================================================
 
+/**
+ * Karakterli sahne payının varsayılanı (KALP-G1b). Mami'nin 50-50 yasası: karakter olması
+ * gereken sahnede görünür, her karede değil. TEK sabit olarak yaşar — store varsayılanı ile
+ * kimlik (`commandExport`) aynı sayıyı okumak zorunda; iki ayrı literal, aynı reçetenin iki
+ * yolda farklı hash üretmesi demekti.
+ */
+export const CHARACTER_SHARE_DEFAULT = 50;
+
+/**
+ * Hero/karakter tag'lerini tek biçime indirir (KALP-G1b).
+ *
+ * Tag bir KİMLİK çıpasıdır: `@mira` ile `@Mira` iki ayrı varlık sayılırsa çıpa işini yapmaz
+ * ve sahneler arası yüz kayması geri döner. O yüzden küçük harfe indirilir, `@` tek sefer
+ * eklenir, boşluk kırpılır, sıra korunarak tekrar atılır. Sıra korunur çünkü ilk tag genelde
+ * ana karakterdir ve brief'te o sırayla okunur.
+ *
+ * Normalizasyon TEK yerde yaşar: aynı fonksiyon hem brief'i hem kimliği (BaseDecision.locks)
+ * besler. İki yerde normalize etmek, hash'in brief'ten farklı bir listeye bağlanması demekti.
+ */
+export function normalizeHeroTags(tags?: string[]): string[] {
+  const out: string[] = [];
+  for (const raw of tags || []) {
+    const bare = String(raw || '').trim().replace(/^@+/, '').trim().toLowerCase();
+    if (!bare) continue;
+    const tag = `@${bare}`;
+    if (!out.includes(tag)) out.push(tag);
+  }
+  return out;
+}
+
 function buildHandoffPackets(args: {
   scene: Omit<PureScene, 'handoff'>;
   world: SurgeryWorld;
@@ -1637,6 +1679,9 @@ export function generateBatch(input: BriefInput): GenerationResult {
     palette: paletteOverride,
     dna,
     cast,
+    castAge: input.castAge,
+    characterShare: input.characterShare,
+    heroTags: normalizeHeroTags(input.heroTags),
     location: input.location,
     doctorNotes: input.recipeScenes,
     material: materialClause || undefined,

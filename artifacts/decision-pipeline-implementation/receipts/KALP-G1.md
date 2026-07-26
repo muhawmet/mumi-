@@ -130,6 +130,67 @@ dosyada gerekçesi yazılı). Övgüyü kilitleyen test **silinmedi, niyeti koru
 `npm run build` → **OK** (>500 KB ana bundle uyarısı FINAL-CONVERGENCE-LEDGER'da kabul
 edilmiş debt, yeni değil).
 
+## ✅ YAPILDI — G1b: üç taşıyıcı reçeteye indi (2026-07-26)
+
+TDD: `src/core/recipeCarriers.test.ts` önce **kırmızı** (4 kırık / 4 geçen — geçenler "alan
+yokken satır basılmaz" testleriydi, yani kırmızı doğru yerdeydi), sonra yeşil (8/8).
+
+### Eklenen alanlar — tek zincir
+
+`StudioState` → `pickProjectState` (vault/pack/snapshot ile taşınır) → `generateBatch` girdisi
+(`BriefInput`) → `AgentBriefCtx` → brief §1 → **ve** `BaseDecision.locks` (kimlik) +
+command paketi `locks`.
+
+| Alan | Tip | Ne taşır |
+|---|---|---|
+| `castAge` | `string` | "6. sınıf · 11-12 yaş". Boşsa satır basılmaz. |
+| `characterShare` | `number` 0-100 | Karakterli sahne payı; varsayılan `CHARACTER_SHARE_DEFAULT = 50`. |
+| `heroTags` | `string[]` | `@mira · @ali · @araba`; `normalizeHeroTags` ile tek biçim. |
+
+### Brief'e basılan yasa (sadece değer değil, yasası da)
+
+- **Cast age / grade** — *"every person in this frame reads THIS age. 'Child' is not an age:
+  a face that reads six years old in a sixth-grade scene is a casting error, not a style
+  choice."* Gövde oranı, mobilyaya göre boy ve yüz yapısı bu satırı izler.
+- **Character share** — *"roughly N% of the scenes carry people; the rest are object /
+  phenomenon frames. Do not push a character into a scene that does not need one — a crowded
+  frame reads as filler and the lesson object loses the eye."*
+- **Recurring tags** — *"each tag is ONE entity: the same face, the same body, the same object
+  in every scene where it appears… If a tag does not appear in a scene, it is simply absent —
+  never replaced by a lookalike."* (NB2 kataloğundaki "tag'siz prop drift"in kapısı.)
+
+### Determinizm kararları (hash'i bozmamak için)
+
+- `normalizeHeroTags` **tek yerde** yaşar (`pure.ts`) ve hem brief'i hem kimliği besler.
+  İki ayrı normalizasyon, hash'in brief'ten farklı bir listeye bağlanması olurdu.
+  Küçük harfe indirir (`@Mira` ile `@mira` iki varlık sayılırsa çıpa işini yapmaz), `@`'yı
+  tek sefer ekler, sırayı korur (ilk tag genelde ana karakter), tekrarı atar.
+- `CHARACTER_SHARE_DEFAULT` **tek sabit** (`pure.ts`); store varsayılanı ile
+  `commandExport`'un `?? ` düşüşü aynı sayıyı okur. İki literal, aynı reçetenin iki yolda
+  farklı hash üretmesi demekti.
+- Üç alan `CommandStateWithPersonal`'da **opsiyonel** (yerleşik desen: `subject`, `location`,
+  `osTextMode` de öyle) — eski fixture ve persist edilmiş state kırılmadı; verilmediğinde
+  kimliğe store varsayılanıyla aynı değer yazılır, sessiz `undefined` kimliğe girmez.
+- UI'da boş sayı girdisi `NaN` üretiyordu; `NaN` kimliğe yazılırsa hash bozulur → boşluk
+  varsayılana düşürülür, değer 0-100'e kırpılır.
+
+### Girdi yüzeyi (yoksa alan ölü)
+
+`RecipeStep` → "Project Metadata" bloğuna üç alan: **Cast yaşı / sınıf** · **Karakterli sahne
+payı (%)** · **Tekrar eden tag'ler** (virgülle). Her birinin `hint`'i yasayı söylüyor, sadece
+alanı değil. `data-testid`: `recipe-cast-age`, `recipe-character-share`, `recipe-hero-tags`.
+
+### Kapı (gerçek çıktı)
+
+`npx tsc --noEmit` → **0** · `npx vitest run` → **2083/2083 (83 dosya)** · `npm run build` → **OK**.
+Test sayısı 2075 → 2083 (+8 yeni taşıyıcı testi; hiçbir test silinmedi).
+
+### Dürüst uyarı — hash kayması
+
+Üç alan kimliğe girdiği için `commandId` içerik hash'i **değişti**. Bekleyen `.command.json`
+ölçüldü: **yok** (0 dosya), yani geçiş maliyeti sıfır. Eski bir command dosyası elden
+gelirse bayat sayılacaktır — doğrusu bu.
+
 ## Ledger (final convergence'a taşınan)
 
 1. **`directorNotes` ölçümü ekranda görünmüyor** — 125 satır uyumluluk zekâsı hesaplanıyor,

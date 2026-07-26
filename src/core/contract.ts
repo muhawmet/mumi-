@@ -219,6 +219,16 @@ export interface BaseDecision {
     palette: string;
     refs: string[];
     cast: string;
+    /**
+     * ENZİM TAŞIYICILARI (KALP-G1b, 2026-07-26). Üçü de brief §1'e ve oradan prompt'a ulaşır;
+     * "prompt'a ulaşan her karar kimliğe ulaşır" yasası gereği kimliğin parçasıdır. Önce
+     * hiçbiri yoktu: yaş `cast` metninin içine sıkıştırılıyor, tag'leri her üretimde ajan
+     * uyduruyor, karakter oranı yalnız sohbette söyleniyordu — yani her prodüksiyonda
+     * yeniden konuşulan üç karar, geri sarmanın kaynağı.
+     */
+    castAge: string;
+    characterShare: number;
+    heroTags: string[];
     brandKitLock: string;
     sceneCount: number;
   };
