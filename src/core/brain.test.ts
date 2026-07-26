@@ -2133,9 +2133,34 @@ describe('R4 ışık otoritesi: World light_law > jenerik ref-DNA kaynağı', ()
     }
   });
 
-  it('uyumlu dünyada jenerik korunur — R4 gereksiz yere ateşlemez', () => {
+  /**
+   * POLİTİKA DEĞİŞTİ (KALP-G1e, 2026-07-26) — gerçek-kare hükmü test yeşilini ezdi.
+   *
+   * Eski hâli: uyumlu dünyada jenerik kaynak cümlesi KORUNUR ("R4 gereksiz yere ateşlemez").
+   * Gerekçesi makuldü — dünya aynı aileden key kuruyorsa ref'i budamak gereksiz görünüyordu.
+   *
+   * Mami gerçek karelerden kusuru bildirdi: *"Fotolara baksan hep sahte bi ışık geliyor
+   * güneşten, odada bile."* ÖLÇÜM (gerçek generateBatch · pixar_3d_edu · vibrant_edu, tek
+   * sahne): `motivated` 8× · `window` 3× · `sun` 3× · `lamp` 3×. Korunan jenerik, dünya
+   * yasasının ZATEN söylediği kaynağı ikinci kez söylüyordu; motor aynı emri üst üste duyunca
+   * odaya pencere uyduruyor. Yani "gereksiz ateşleme" korkusu, gerçek bir görsel kusura
+   * yol veriyordu.
+   *
+   * Yeni yasa: anlaşma TEKİLLEŞTİRİR. Kaynak kaybolmuyor — dünya ışık yasası onu söylüyor;
+   * yalnız ref'in ikinci kez söylemesi düşüyor. Ref'in kaynak-dışı ışık dili (kontrast, oran,
+   * gölge şekli) her hâlde kalır ve bu bir sonraki testte kilitli.
+   */
+  it('uyumlu dünyada jenerik kaynak cümlesi TEKİLLEŞİR — dünya zaten söylüyor', () => {
     for (const id of WORLD_AGREES) {
-      expect(lightLineOf(id, GENERIC), id).toMatch(/window, lamp, low sun/i);
+      const line = lightLineOf(id, GENERIC);
+      expect(line, `${id}: ref kaynak dayatması ikinci kez basıldı`).not.toMatch(/window, lamp, low sun/i);
+      expect(line, `${id}: kaynak dayatması cümlesi hâlâ duruyor`).not.toMatch(/motivated key with a named source/i);
+      // Kaynak kaybolmadı: dünyanın kendi yasası onu adlandırıyor.
+      const world = DATA.worlds.find((w) => w.id === id)!;
+      expect(String(world.light_law), `${id}: dünya kendi kaynağını adlandırmıyor`)
+        .toMatch(/window|lamp|sun|practical|motivated/i);
+      // Ve ref'in ışık DAVRANIŞI korundu.
+      expect(line, `${id}: ref'in kontrast dili de düştü — fazla budandı`).toMatch(/value separation|shadow shapes/i);
     }
   });
 

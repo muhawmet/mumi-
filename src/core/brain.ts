@@ -1284,6 +1284,12 @@ export interface PromptCtx {
   mood?: string; timeLight?: string; cameraEnergy?: string; pov?: string;
   shotPattern?: string;
   sourceBeat?: string;
+  /**
+   * SAHTE GÜNEŞ KAPISI (KALP-G1e) — bu sahnenin anahtar ışık KAYNAĞI, Mami'nin eliyle.
+   * Dünya yasası bir kaynak menüsü sayıyor; bu alan menüyü çözer. Boşsa uydurma yasağı
+   * basılır (pencere/güneş huzmesi key'i motive etmek için sahneye eklenemez).
+   */
+  namedKeySource?: string;
 }
 
 // ---------------- shot grammar director ----------------
@@ -2003,6 +2009,47 @@ const HELD_LIGHT = " Light variant: HOLD — this world's light law already fixe
  * `project.json`'s image prompt had correctly withheld — and no rule anywhere said which
  * file wins. Both artefacts now come through here. Do not re-derive the pool anywhere else.
  */
+/**
+ * SAHTE GÜNEŞ KAPISI (KALP-G1e, 2026-07-26).
+ *
+ * Mami'nin üretim gözlemi: *"Fotolara baksan hep sahte bi ışık geliyor güneşten, odada bile."*
+ *
+ * Kök neden ölçüldü, tahmin değil. Dünya ışık yasası bir kaynak **MENÜSÜ** adlandırıyor —
+ * pixar_3d_edu: *"a real-world source visible or strongly implied in frame (window sun,
+ * desk lamp, overhead classroom fluorescent, screen glow)"*. Menü var, **seçim yok.** Hiçbir
+ * sahne "bu odanın penceresi yok, ışık tepedeki floresan" diyemiyordu. Motor da menüden en
+ * göze batanı seçiyor: pencere güneşi. Pencere sahnede yoksa **uyduruyor** — key'i haklı
+ * çıkarmak için mekâna pencere ekliyor.
+ *
+ * İki kollu çözüm:
+ *   • Mami sahnenin kaynağını yazdıysa (`light_source`) menü ÇÖZÜLÜR — dünya yasasıyla
+ *     çatışma yok, çünkü yasa "bir kaynak adlandır" diyor, biz adlandırıyoruz.
+ *   • Yazmadıysa uydurma YASAKLANIR: key mekânın kendi ışığıdır; pencere/tavan penceresi/
+ *     güneş huzmesi key'i motive etmek için sahneye EKLENMEZ.
+ *
+ * Yalnız kaynak menüsü olan dünyalarda basılır (`WORLD_KEYS_OFF_WARM_PRACTICAL_RE`) —
+ * düz-ışık, anti-fiziksel ve pigment dünyalarında zaten yönlü key yok, orada cümle gürültü
+ * olurdu ve prompt byte'ı gereksiz değişirdi.
+ */
+export function namedKeySourceClause(world: SurgeryWorld, authored?: string): string {
+  if (isFlatLightWorld(world)) return '';
+  const law = `${T(world.light_law)} ${worldRenderText(world)}`;
+  if (!WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) return '';
+  const named = T(authored || '');
+  if (named) {
+    return ` Named key source for THIS shot: ${named}. The world light law above lists the sources this world may use; this shot uses THAT one and no other — do not add a second source, and do not swap it for a brighter one.`;
+  }
+  // ÖNEMLİ — bu cümle POZİTİF yazılmak ZORUNDA. İlk hâli yasağı nesne adlarıyla kuruyordu
+  // ("never add a window, skylight or sun shaft") ve ÖLÇÜM gösterdi ki bu, prompt'taki
+  // `window` sayısını 3'ten 5'e, `sun`'ı 3'ten 4'e ÇIKARDI — yani yasak, yasakladığı şeyi
+  // çağırdı. Bu projenin kendi yasası: **negatifte olmayan nesneyi anma** (NB2 hata
+  // kataloğu · enzim disiplini). O yüzden burada hiçbir ışık-nesnesi adı geçmez; cümle
+  // yalnızca "mekânın sahip olduğu" ile "mekâna eklenen" arasındaki sınırı çizer.
+  return ' Named key source: the staged location\'s own. The world light law above lists what this world MAY use, not what this place HAS. Read the staged location from the source text and light the frame only with a fixture that place already contains; the key may not be justified by introducing an opening or an exterior source the source text never gave it.';
+  // NOT: "aperture" kelimesi bilinçli çıkarıldı — foto/sinema prompt'unda diyafram (f-stop)
+  // demektir, ışık açıklığı değil. Lens grameriyle çakışıp motoru karıştırıyordu.
+}
+
 export function lightVariantFor(world: SurgeryWorld, pv: number): string {
   if (isFlatLightWorld(world)) return '';
   const variant = VAR_LIGHT[pv % VAR_LIGHT.length] ?? '';
@@ -2064,7 +2111,7 @@ const WORLD_KEYS_OFF_WARM_PRACTICAL_RE = /\b(?:window (?:sun|shaft|light)|desk l
  * Makbuz bir KARAR değil, karardan TÜRETİLEN kanıttır; o yüzden kimliğe (`BaseDecision`)
  * değil command paketine yazılır.
  */
-export type LightAuthorityRule = 'NONE' | 'NO_WORLD_LAW' | 'WORLD_AGREES' | 'FLAT_WORLD_DROPS_DIRECTIONAL' | 'WORLD_LAW_GOVERNS_KEY';
+export type LightAuthorityRule = 'NONE' | 'NO_WORLD_LAW' | 'WORLD_AGREES' | 'WORLD_AGREES_DEDUPED' | 'FLAT_WORLD_DROPS_DIRECTIONAL' | 'WORLD_LAW_GOVERNS_KEY';
 export interface LightAuthorityReceipt {
   light: string;
   /** Düşürülen ref DNA cümleleri — verbatim, kırpılmadan. Boşsa kimse ezilmedi. */
@@ -2091,7 +2138,13 @@ export function resolveLightAuthorityReceipt(dnaLight: string, world: SurgeryWor
     };
   }
   if (WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) {
-    return { light: dnaLight, dropped: [], rule: 'WORLD_AGREES', winner: 'REF_DNA' };
+    const dedupe = clauses.filter((c) => SOURCE_DICTATING_RE.test(c));
+    return {
+      light: resolveLightAuthority(dnaLight, world),
+      dropped: dedupe,
+      rule: dedupe.length ? 'WORLD_AGREES_DEDUPED' : 'WORLD_AGREES',
+      winner: 'WORLD_LIGHT_LAW',
+    };
   }
   const dropped = clauses.filter((c) => SOURCE_DICTATING_RE.test(c));
   return {
@@ -2118,7 +2171,24 @@ export function resolveLightAuthority(dnaLight: string, world: SurgeryWorld): st
       .filter((c) => c && !DIRECTIONAL_LIGHT_RE.test(c));
     return kept.join('; ') || 'no simulated light — value comes from the flat printed colour fields themselves, as the world light law above governs';
   }
-  if (WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) return dnaLight;   // agrees → keep, R4 must not fire needlessly
+  // SAHTE GÜNEŞ FIX (KALP-G1e, 2026-07-26 — Mami'nin üretim gözlemi: "fotolara baksan hep
+  // sahte bi ışık geliyor güneşten, odada bile").
+  //
+  // Eskiden bu dal `return dnaLight` diyordu: dünya ışık yasası ref DNA ile aynı dili
+  // konuşuyorsa ref cümlesi AYNEN korunuyordu. Gerekçe makuldü (R4 gereksiz ateşlenmesin),
+  // sonucu değildi — ÖLÇÜM (gerçek generateBatch · pixar_3d_edu · vibrant_edu): tek sahnede
+  // `motivated` 8×, `window` 3×, `sun` 3×, `lamp` 3×. Üç kanal aynı anahtar ışığı ayrı ayrı
+  // söylüyordu: dünya yasası ("window sun, desk lamp, overhead classroom fluorescent"),
+  // ref DNA ("warm motivated key with a named source (window, lamp, low sun)") ve palet
+  // ("Broad warm golden key"). Motor sekiz kez aynı emri duyunca odaya pencere açıyor;
+  // pencere yoksa uyduruyor. Üstelik ref cümlesinin PARANTEZİ bir örnek listesi değil,
+  // motor için bir seçim menüsü haline geliyor.
+  //
+  // Yasa: **anlaşma tekilleştirir, çoğaltmaz.** Dünya kendi anahtar kaynağını zaten
+  // adlandırıyorsa, ref DNA'nın kaynak-adlandıran cümlesi FAZLALIKTIR ve düşer. Değer/kontrast
+  // grameri ("hard value separation: one strong key, deep readable shadow shapes") kalır —
+  // o ışığın kaynağını değil, davranışını tarif eder. Kayıp makbuzda görünür
+  // (`WORLD_AGREES_DEDUPED`), yani sessiz silme yok.
   const kept = law && T(dnaLight).split(';').map((c) => c.trim()).filter(Boolean)
     .filter((c) => !SOURCE_DICTATING_RE.test(c));
   return (kept || []).join('; ') || 'defer the key to the world light law above — the world governs the primary source';
@@ -2329,7 +2399,16 @@ export function buildImagePrompt(sceneId: number | string, concept: Concept, cam
     // coming from beneath the specimen. A variant that fights the world is not a variation, it is
     // a contradiction. This is the back of the `pv` fix: the wire got connected, the pool never
     // got filtered.
-    'Light: ' + lightDirective + '.' + lightVariantFor(world, pv)
+    // SIRA ÖNEMLİ (KALP-G1e): kaynak cümlesi `Light variant:`ten ÖNCE gelir. Sonrasına
+    // konduğunda brief↔prompt ışık paritesini kırıyordu — `faz1_triple` testi varyantı
+    // "Light variant:" ile "Palette physics:" arası metinden çıkarıyor, yani araya giren
+    // her cümle varyantın parçası sayılıyor. O test 32 sahnenin 9'unda brief'in prompt'un
+    // reddettiği ışığı emrettiği gerçek bir kusuru kilitliyor; kırmak değil, saygı duymak
+    // gerekiyordu. Anlamı da bu sıra daha doğru: önce kaynak adlandırılır, sonra o kaynağa
+    // uygulanacak varyant hareketi gelir.
+    'Light: ' + lightDirective + '.'
+      + namedKeySourceClause(world, ctx.namedKeySource)
+      + lightVariantFor(world, pv)
       + (ctx.timeLight ? ' Time-of-day mandate: ' + ctx.timeLight + '.' : '')
       + ' Palette physics: ' + paletteLightPrompt(palette, world, nightBeat),
     'Texture rule: ' + dna.texture + '.',
@@ -2443,7 +2522,7 @@ function brandKitBlock(ctx: AgentBriefCtx): string[] {
  */
 function doctorNotesSection(ctx: AgentBriefCtx): string[] {
   const notes = (ctx.doctorNotes || []).filter((n) =>
-    T(n.vo) || T(n.event) || T(n.director_note) || T(n.motion_seed)
+    T(n.vo) || T(n.event) || T(n.director_note) || T(n.motion_seed) || T(n.light_source)
     || (n.turkish_labels || []).some((l) => T(l))
     || (n.avoid || []).some((a) => T(a)));
   if (!notes.length) return [];
@@ -2457,6 +2536,10 @@ function doctorNotesSection(ctx: AgentBriefCtx): string[] {
       T(n.event) ? `  - Event: ${T(n.event)}` : '',
       T(n.director_note) ? `  - Director note: ${T(n.director_note)}` : '',
       T(n.motion_seed) ? `  - Motion seed (i2v niyeti — kare onaylanana kadar TALİMAT DEĞİL, niyet): ${T(n.motion_seed)}` : '',
+      // Sahnenin anahtar ışık KAYNAĞI. Dünya yasası menü sayıyor ("window sun, desk lamp,
+      // overhead fluorescent, screen glow"); bu satır o menüyü çözer. Yazılmadığında motor
+      // en göze batanı seçiyor ve odaya pencere uyduruyor — Mami'nin ölçtüğü sahte güneş.
+      T(n.light_source) ? `  - Named key source (bu sahnenin ışığı BU kaynaktan gelir, başkası eklenmez): ${T(n.light_source)}` : '',
       (n.turkish_labels || []).filter((l) => T(l)).length
         ? `  - Baked Turkish label(s) — diegetic, on a real surface, never a caption: ${(n.turkish_labels || []).map((l) => T(l)).filter(Boolean).join(' · ')}`
         : '',
@@ -3062,6 +3145,12 @@ export interface RecipeSceneNote {
   motion_seed: string;
   turkish_labels: string[];
   avoid: string[];
+  /**
+   * SAHTE GÜNEŞ KAPISI (KALP-G1e) — bu sahnenin anahtar ışık kaynağı: "tepedeki floresan,
+   * pencere yok" · "gece, sokak lambası" · "ekran parıltısı". Dünya yasası kaynak menüsü
+   * sayıyor, bu alan menüyü çözer. Opsiyonel: boşken prompt uydurma yasağıyla korunur.
+   */
+  light_source?: string;
 }
 
 export interface RecipeExportInput {

@@ -69,14 +69,35 @@ describe('ışık otoritesi makbuzu — kaybeden görünür olur', () => {
     expect(changed, 'hiçbir dünyada ezilme ölçülmedi — kurulum bozuk').toBeGreaterThanOrEqual(20);
   });
 
-  it('dünya ref DNA ile aynı dili konuşuyorsa kimse ezilmez', () => {
-    // pixar_3d_edu'nun ışık yasası "window sun, desk lamp" ailesinden — ref DNA hayatta kalır.
+  /**
+   * BU TESTİN POLİTİKASI DEĞİŞTİ (KALP-G1e, aynı gün).
+   *
+   * İlk yazımı — birkaç saat önce, eski davranışa karşı — "uyumlu dünyada kimse ezilmez"
+   * diyordu: `dropped` boş, `winner: REF_DNA`, `light` aynen korunur. Sonra Mami gerçek
+   * karelerden bir kusur bildirdi: *"Fotolara baksan hep sahte bi ışık geliyor güneşten,
+   * odada bile."* Ölçüm doğruladı — dünya yasası ile ref DNA aynı anahtar ışığı ayrı ayrı
+   * söyleyince motor sekiz kez aynı emri duyuyor ve odaya pencere uyduruyor.
+   *
+   * Yeni yasa: **anlaşma tekilleştirir, çoğaltmaz.** Dünya kendi kaynağını zaten
+   * adlandırıyorsa ref DNA'nın kaynak-adlandıran cümlesi fazlalıktır ve düşer; kaynağın
+   * kendisi kaybolmaz, çünkü dünya yasası onu söylüyor. Değer/kontrast grameri korunur.
+   *
+   * Test silinmedi: gerçek-kare hükmü test yeşilini ezer (PROJECT_CONTRACT), o yüzden
+   * politika güncellendi ve gerekçesi burada durdu.
+   */
+  it('dünya kendi kaynağını adlandırıyorsa ref DNA\'nın kaynak cümlesi TEKİLLEŞİR', () => {
     const agreeing = world('pixar_3d_edu');
     const dna = dnaDirectives(DATA.refs.slice(0, 3), registerOf('ANIMATION_EDU'));
     const receipt = resolveLightAuthorityReceipt(dna.light, agreeing);
-    expect(receipt.dropped).toEqual([]);
-    expect(receipt.winner).toBe('REF_DNA');
-    expect(receipt.light).toBe(dna.light);
+    expect(receipt.rule).toBe('WORLD_AGREES_DEDUPED');
+    expect(receipt.winner).toBe('WORLD_LIGHT_LAW');
+    // Düşen cümle kaynağı adlandıran cümledir; makbuzda verbatim durur.
+    expect(receipt.dropped.length).toBeGreaterThan(0);
+    expect(receipt.dropped.join(' ')).toMatch(/named source/i);
+    // Kaynak kaybolmadı: dünya ışık yasası onu zaten söylüyor.
+    expect(String(agreeing.light_law)).toMatch(/window sun|desk lamp|motivated key/i);
+    // Ref'in ışık DAVRANIŞI (değer/kontrast) korunur — düşen yalnız kaynak dayatması.
+    expect(receipt.light).toMatch(/value separation|shadow shapes/i);
   });
 
   it('makbuzun `light` alanı eski çözücüyle BYTE-EŞİT — motor prompt kaymaz', () => {

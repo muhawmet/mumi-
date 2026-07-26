@@ -541,6 +541,20 @@ export const RecipeStep = () => {
                 <Field label="Motion Seed">
                   <textarea value={scene.motion_seed} onChange={(event) => updateScene(scene.id, { motion_seed: event.target.value })} />
                 </Field>
+                {/*
+                  SAHTE GÜNEŞ KAPISI (KALP-G1e). Dünya ışık yasası bir kaynak MENÜSÜ sayıyor
+                  ("window sun, desk lamp, overhead fluorescent, screen glow") ve hiçbir sahne
+                  seçim yapmıyordu — motor en göze batanı seçip odaya pencere uyduruyordu.
+                  Bu alan menüyü çözer. Boş bırakılırsa prompt uydurma yasağıyla korunur.
+                */}
+                <Field label="Işık kaynağı (bu sahne)" hint="Boş bırakılırsa motorun pencere uydurması engellenir. Yazarsan menü çözülür: 'tepedeki floresan, pencere yok' · 'gece, sokak lambası' · 'ekran parıltısı'.">
+                  <input
+                    value={scene.light_source ?? ''}
+                    onChange={(event) => updateScene(scene.id, { light_source: event.target.value })}
+                    placeholder="tepedeki floresan panel; odada pencere yok"
+                    data-testid={`recipe-light-source-${scene.id}`}
+                  />
+                </Field>
                 <Field label="Turkish Labels">
                   <input value={listText(scene.turkish_labels)} onChange={(event) => updateScene(scene.id, { turkish_labels: textList(event.target.value) })} />
                 </Field>

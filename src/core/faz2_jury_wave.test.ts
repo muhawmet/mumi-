@@ -233,10 +233,22 @@ describe('R4 — World light_law > jenerik DNA "warm motivated key (window/lamp/
     expect(light).not.toMatch(/motivated key with a named source/i);
     expect(img).toMatch(/key light is (?:often|frequently) absent|rim-dominant/i);
   });
-  it('edu: world light_law jenerikle UYUMLU (window/lamp) — R4 gereksiz yere ATEŞLEMEZ', () => {
-    // pixar edu light_law kendisi "window sun, desk lamp" der → çelişki yok, jenerik korunur
+  /**
+   * POLİTİKA DEĞİŞTİ (KALP-G1e, 2026-07-26). Eski hâli: pixar edu'nun kendi yasası
+   * "window sun, desk lamp" dediği için çelişki yok sayılıyor ve jenerik kaynak cümlesi
+   * KORUNUYORDU. Mami gerçek karelerden bildirdi: "hep sahte bi ışık geliyor güneşten,
+   * odada bile." Ölçüm: tek sahnede `motivated` 8× · `window` 3× · `sun` 3×. Uyum, kaynağın
+   * İKİ KEZ söylenmesi demekti; motor da odaya pencere uyduruyordu.
+   *
+   * Yeni yasa: anlaşma tekilleştirir. Kaynak dünya yasasında (render lock içinde) durmaya
+   * devam eder — kaybolan bir bilgi yok, tekrarlanan bir emir var.
+   */
+  it('edu: dünya kendi kaynağını söylüyorsa jenerik cümle TEKİLLEŞİR', () => {
     const img = juryScene1('edu');
-    expect(lightLineOf(img)).toMatch(/window,\s*lamp,\s*low sun/i);
+    expect(lightLineOf(img)).not.toMatch(/window,\s*lamp,\s*low sun/i);
+    expect(lightLineOf(img)).not.toMatch(/motivated key with a named source/i);
+    // Kaynak kaybolmadı: dünya ışık yasası render lock içinde onu adlandırıyor.
+    expect(img).toMatch(/window sun|desk lamp|overhead classroom/i);
   });
 });
 

@@ -1579,6 +1579,11 @@ export function generateBatch(input: BriefInput): GenerationResult {
         sourceBeat: beatText,
         wholeSource: input.rawSource,
         isNight: nightByScene[i - 1] ?? false,
+        // SAHTE GÜNEŞ KAPISI (KALP-G1e): reçetenin bu sahnesi için Mami bir ışık kaynağı
+        // yazdıysa, dünya yasasının kaynak menüsü ONUNLA çözülür. Sahne id'siyle eşlenir —
+        // sıra değil id, çünkü sahne silinip eklenince sıra kayar ve yanlış sahnenin ışığı
+        // basılırdı (aynı hata `turkish_labels`ta bir kez yaşandı).
+        namedKeySource: (input.recipeScenes || []).find((n) => n.id === i)?.light_source || undefined,
         mood: input.mood ? MOOD_OPTS[input.mood]?.brief : undefined,
         timeLight: input.timeLight ? LIGHT_OPTS[input.timeLight]?.brief : undefined,
         cameraEnergy: input.cameraEnergy ? CAM_OPTS[input.cameraEnergy]?.brief : undefined,
