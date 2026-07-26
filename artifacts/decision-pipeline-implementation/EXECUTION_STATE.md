@@ -110,12 +110,37 @@ değişmedi; iki importer (`RecipeStep`, `innerVoices`) + bir yorum atfı günce
 geçerli** — karar `EXECUTION_STATE.md`'de, kanıt receipt'te. Bugünkü çelişki tam olarak kararın
 iki yere yazılmasından doğdu.
 
+### ✅ G2 TAMAM — 5-kare dünya sınavı (2026-07-26). Receipt: `receipts/KALP-G2.md`
+
+`src/core/worldExam.ts` + `scripts/dunya-sinavi.ts`. **Bir dünyayı sınamanın maliyeti bir
+video prodüksiyonundan bir script koşumuna indi.** Sınav prompt üretir, kare üretmez;
+hükümleri `CARRIED/MISSING/CONFLICT/NOT_MEASURABLE` — **`PASS` yok** (yapısal taşıma görsel
+PASS değildir). Kontrollü deney: beş sahne 46 dünyada byte-eşit, tek değişken dünya; hem bu
+hem determinizm testle kilitli.
+
+**🔴 Sınavın ilk bulgusu — 25 dünyada Mami'nin ışık talimatı sessizce düşüyordu.**
+`namedKeySourceClause`'un ifade-listesi kapısı (`WORLD_KEYS_OFF_WARM_PRACTICAL_RE`) hem
+varsayılan cümleyi hem **Mami'nin yazdığı** kaynağı kesiyordu. İlk tarama 29 gösterdi; ölçüm
+ikiye bölündü — 4'ü düz-ışık dünyası (bandın basılmaması DOĞRU), **25'i gerçek düşme**
+(`automotive_hero_real`, `nature_doc_real`, `cyberpunk_neon_noir`, `period_reconstruction`,
+`castlevania_gothic`…). **G1e neden yakalamadı:** tek dünyada (`pixar_3d_edu`) doğrulanmıştı
+ve orada çalışıyordu — G2'nin var oluş sebebi tam olarak bu. Düzeltme: kapı yalnız varsayılan
+dala taşındı (gürültü gerekçesi orada geçerli), adlandırılmış dal kapısız, düz-ışık istisnası
+korundu. İki test kalıcı kıldı. `PHYSICS` 21/46 → **46/46**.
+
+**Kütüphane sonucu:** 46 dünyanın 46'sı prompt üretiyor, 0 blok; beş eksen de 46/46.
+**Dürüst okuma:** bu "46 dünya iyi kare veriyor" DEMEK DEĞİL — gerçek kare veren dünya sayısı
+hâlâ **1** (`docs/KUTUPHANE-KARNESI.md`). Kazanç: yapısal kusur artık kare üretmeden görülüyor.
+
+**Kapı:** tsc 0 · vitest **2108/2108 (86 dosya)** · build OK. Kanıt: `g2-sinav/` (üç dünya +
+46-dünya tablosu).
+
 ### ➡️ SIRADAKİ TEK ADIM
 
-**G2 — 46 dünyaya uygulanabilen ortak 5-kare sınav seti** (45 dünya hiç kare görmedi; darboğaz
-kelime kusuru değil **doğrulama maliyeti**). Sınav prompt üretir, kare üretmez — kare Mami'nin
-elinde, API yok. Kapı kanıtı: iki dünyada gerçek çıktı — biri bilinen-iyi (Sürtünme referansı),
-biri hiç kare görmemiş bir dünya; fark okunabilir olmalı.
+**G3 — kütüphane sınavı:** sınav seti kütüphaneye uygulanır, kusur **kütüphanede** düzeltilir
+(kod yasası genel, dünya kusuru yerel; kodu her dünya için eğmek beyni bozar). İlk hedef
+G2 ledger #2: `bleach_soul_world` 3/7 · `claymation_aardman` 3/6 · `jjk_mappa` 6/11 — render
+lock'un neden verbatim taşınmadığı, dünya metni mi kod mu.
 
 ---
 

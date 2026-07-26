@@ -1,0 +1,31 @@
+==============================================================================
+kurzgesagt_edu — Kurzgesagt — Flat Isometric Explainer
+grup: ANIMATION_EDU · yol: ANIMATION_EDU · durum: GENERATED
+==============================================================================
+
+✅ PHYSICS      CARRIED
+   yoklar : Dünyanın fiziği kareye iniyor mu — malzeme, ışık ve yüzey davranışı yazılı mı, yoksa yerine nesne envanteri mi geçiyor?
+   ölçüm  : fizik cümlesi 8/8 (%100) · envanter sızıntısı 0/0 · düz ışık dünyası — kaynak sorusu geçersiz
+   kanıt  : fizik: Flat vector 2D explainer animation in the modern flat-isometric science-communication lineage (grammar only, not any named channel).
+
+✅ TEXT         CARRIED
+   yoklar : Türkçe ekran metni karede doğuyor mu — diyakritikleriyle, gerçek bir yüzeye basılmış olarak; yoksa temiz-plaka bandı onu aynı karede iptal mi ediyor?
+   ölçüm  : metin pakette (doktor notu) · diyejetik bant var · temiz-plaka çelişkisi yok · diyakritik korunmuş
+   kanıt  : istek: "DENGE ÖLÇÜMÜ"
+
+✅ REF          CARRIED
+   yoklar : Seçilen referansların DNA'sı gerçekten bir alan dolduruyor mu (kamera/ışık/kompozisyon/hareket/doku), yoksa dünya yasasıyla çakışıp sessizce mi düşüyor?
+   ölçüm  : 3 ref → 5/5 alan (%100) · dolan: kamera/ışık/kompozisyon/hareket/doku · her ref bir alan dolduruyor · ışık ezildi (FLAT_WORLD_DROPS_DIRECTIONAL), makbuz var
+   kanıt  : ezilen: hard value separation: one strong key, deep readable shadow shapes
+   kanıt  : ezilen: warm motivated key with a named source (window, lamp, low sun)
+
+✅ CAST         CARRIED
+   yoklar : Cast yasası kareye iniyor mu — kilitli yaş, karakter payı ve tekrar eden tag tek bir kimliğe bağlanıyor mu?
+   ölçüm  : yaş kilidi var · karakter payı var · 2 tag taşınıyor
+   kanıt  : yaş: 6. sınıf · 11-12 yaş
+
+✅ START_FRAME  CARRIED
+   yoklar : Başlangıç karesi hareketin ihtiyacı olan her şeyi taşıyor mu — motion yeni öğe doğurmadan tek bir eylemi oynatabiliyor mu?
+   ölçüm  : kare motion-hazır ilan edilmiş · kare-sadakati bandı var · yeni-nesne yasağı var · tek-eylem kilidi var
+
+HÜKÜM: kurzgesagt_edu: beş eksen de pakete iniyor (5/5 taşınıyor) — yapısal ölçüm; kare hükmü ayrı kapıdır ve Mami'nindir.

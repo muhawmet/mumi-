@@ -329,7 +329,13 @@ function resolvePaletteGradeConflict(negBias: string, world: SurgeryWorld): stri
 // and it picks the gradient — precisely the failure mode the flat world exists to forbid.
 // Detected from the world's own light_law, never from a hand-kept id list.
 const FLAT_LIGHT_RE = /no directional lighting simulation|no directional shadow|flat-lit with no directional|flat even board illumination/i;
-const isFlatLightWorld = (world: SurgeryWorld) => FLAT_LIGHT_RE.test(world.light_law || '');
+/**
+ * Dünya kendi ışık yasasında yönlü ışık simülasyonunu reddediyor mu. Dışa açık, çünkü
+ * dünya sınavı (`worldExam.ts`) "sahnenin adlandırılmış ışık kaynağı neden basılmadı"
+ * sorusunu iki ayrı cevaba bölmek zorunda: düz-ışık dünyasında basılmaması DOĞRUdur,
+ * yönlü ışığı olan bir dünyada basılmaması Mami'nin talimatının düşmesidir.
+ */
+export const isFlatLightWorld = (world: SurgeryWorld) => FLAT_LIGHT_RE.test(world.light_law || '');
 const paletteReadingFor = (world: SurgeryWorld) => isFlatLightWorld(world)
   ? 'Render these as flat printed plane values — each colour its own uniform field, no simulated light falloff.'
   : 'Render these as light behaviour, never flat fills.';
@@ -2033,12 +2039,25 @@ const HELD_LIGHT = " Light variant: HOLD — this world's light law already fixe
  */
 export function namedKeySourceClause(world: SurgeryWorld, authored?: string): string {
   if (isFlatLightWorld(world)) return '';
-  const law = `${T(world.light_law)} ${worldRenderText(world)}`;
-  if (!WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) return '';
   const named = T(authored || '');
   if (named) {
+    // MAMİ YAZDIYSA KAPI YOK. Ölçüm (dünya sınavı, 46 dünya): ifade-listesi kapısı
+    // aşağıdaki `WORLD_KEYS_OFF_WARM_PRACTICAL_RE` bu dalı da kesiyordu ve 46 dünyanın
+    // **25'inde** Mami'nin yazdığı "pencere yok, tepedeki floresan" cümlesi prompt'a hiç
+    // inmiyordu — makbuzsuz, sessizce. Aralarında ışığın bütün görünüşü olduğu dünyalar
+    // vardı (automotive_hero_real, nature_doc_real, cyberpunk_neon_noir,
+    // period_reconstruction, castlevania_gothic).
+    //
+    // Kapının gerekçesi GÜRÜLTÜ'ydü: kaynak menüsü olmayan bir dünyaya varsayılan cümle
+    // basmak boş yere prompt şişirir. O gerekçe yalnız VARSAYILAN dal için geçerlidir.
+    // Mami kaynağı adlandırdığında ortada gürültü sorusu yoktur — talimat vardır, ve
+    // PROJECT_CONTRACT açık: kullanıcının cümlesi sessizce scrub edilmez.
     return ` Named key source for THIS shot: ${named}. The world light law above lists the sources this world may use; this shot uses THAT one and no other — do not add a second source, and do not swap it for a brighter one.`;
   }
+  // Varsayılan dal — burada kapı YERİNDE DURUR: kaynak menüsü olmayan dünyada bu cümle
+  // hiçbir belirsizliği çözmez, yalnız prompt byte'ı ekler.
+  const law = `${T(world.light_law)} ${worldRenderText(world)}`;
+  if (!WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) return '';
   // ÖNEMLİ — bu cümle POZİTİF yazılmak ZORUNDA. İlk hâli yasağı nesne adlarıyla kuruyordu
   // ("never add a window, skylight or sun shaft") ve ÖLÇÜM gösterdi ki bu, prompt'taki
   // `window` sayısını 3'ten 5'e, `sun`'ı 3'ten 4'e ÇIKARDI — yani yasak, yasakladığı şeyi

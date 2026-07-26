@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { namedKeySourceClause, resolveLightAuthorityReceipt, dnaDirectives, registerOf } from './brain';
+import { namedKeySourceClause, resolveLightAuthorityReceipt, dnaDirectives, registerOf, isFlatLightWorld } from './brain';
 import { DATA, generateBatch } from './pure';
 
 /**
@@ -95,6 +95,37 @@ describe('sahne ışık kaynağı — menüyü çözer', () => {
     if (!flat) return;
     expect(namedKeySourceClause(flat)).toBe('');
     expect(namedKeySourceClause(flat, 'floresan')).toBe('');
+  });
+
+  /**
+   * KALICI YASA (dünya sınavı G2 bulgusu) — **Mami yazdıysa düşmez.**
+   *
+   * Ölçüm: ifade-listesi kapısı (`WORLD_KEYS_OFF_WARM_PRACTICAL_RE`) hem varsayılan cümleyi
+   * hem de Mami'nin YAZDIĞI kaynağı kesiyordu. Sonuç: 46 dünyanın 25'inde "pencere yok,
+   * tepedeki floresan" talimatı prompt'a hiç inmiyordu — makbuzsuz, sessizce. G1e tek
+   * dünyada (pixar_3d_edu) doğrulanmıştı; sınav 25 dünyada çalışmadığını gösterdi.
+   *
+   * Kapı gerekçesi gürültüydü ve yalnız varsayılan dal için geçerlidir. Bu test o ayrımı
+   * kalıcı kılar: düz-ışık olmayan HER dünyada adlandırılmış kaynak hayatta kalmak zorunda.
+   */
+  it('adlandırılmış kaynak düz-ışık olmayan HER dünyada hayatta kalır', () => {
+    const NAMED = 'odanın kendi tepe aydınlatması — pencere yok';
+    const dropped: string[] = [];
+    for (const world of DATA.worlds) {
+      if (isFlatLightWorld(world)) continue;
+      const clause = namedKeySourceClause(world, NAMED);
+      if (!clause.includes(NAMED)) dropped.push(world.id);
+    }
+    expect(
+      dropped,
+      `Mami'nin yazdığı ışık kaynağı bu dünyalarda sessizce düşüyor:\n${dropped.join(' · ')}`,
+    ).toEqual([]);
+  });
+
+  it('varsayılan dalın kapısı YERİNDE — kaynak menüsü olmayan dünyaya cümle basılmaz', () => {
+    // Kapı tamamen sökülseydi bu sayı 0 olurdu ve fix, çözdüğünden fazla prompt şişirirdi.
+    const silent = DATA.worlds.filter((w) => !isFlatLightWorld(w) && namedKeySourceClause(w) === '');
+    expect(silent.length, 'varsayılan dal artık her dünyaya basıyor — kapı sökülmüş').toBeGreaterThan(0);
   });
 });
 
