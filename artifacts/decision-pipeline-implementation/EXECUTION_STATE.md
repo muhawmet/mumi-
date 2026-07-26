@@ -99,7 +99,7 @@ mu"; 642 satır silmek en iyi ihtimalle nötr, `audit_full.ts` bilinçli bir te�
 `audit_full.ts` · `QAStep` **kalıyor.** Yeniden açmak için yeni kanıt gerekir; "çağrılmıyor"
 tek başına kanıt değildir.
 
-**G1f `<pending>` — ad artık yeteneği söylüyor.** Çataldan geriye kalan tek gerçek kusur ucuzdu:
+**G1f `328c9a2` — ad artık yeteneği söylüyor.** Çataldan geriye kalan tek gerçek kusur ucuzdu:
 `advisor.ts` → `universeMeasure.ts` (+ test dosyası, `AdvisorInput` → `UniverseMeasureInput`).
 G1a'da öneri yarısı söküldükten sonra ad **olmayan bir yeteneği iddia ediyordu**. Davranış
 değişmedi; iki importer (`RecipeStep`, `innerVoices`) + bir yorum atfı güncellendi.
