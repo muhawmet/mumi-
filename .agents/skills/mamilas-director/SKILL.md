@@ -61,14 +61,19 @@ Her sahne için somut kareyi yaz. Teknik (temiz kaynaklardan — Google NB2 rehb
   "premium-CG feature-animation 3D CGI, RenderMan-successor lineage." (referenceDNA zaten böyle der.)
 - **Türkçe metin** diegetik ise tırnak içinde + font belirt; değilse **clean plate**. İngilizce tabela yok.
 - **SHOW (premium — okula satılıyor):** öğreticilik kadar show da kusursuz. Her kare TAM-DEKORLU spesifik
-  mekân + 3-katman derinlik (ön bokeh / keskin dominant / arka warm bokeh) + atmosfer (ışık huzmesi, toz, bloom).
+  mekân + 3-katman derinlik (ön bokeh / keskin dominant / arka warm bokeh) + atmosfer (ışık huzmesi, toz,
+  **"soft warm-golden glow of light"** — `bloom` YAZMA, NB2 onu çiçek çiziyor; aşağıdaki tuzak listesi).
   **BOŞ/BEYAZ VOID YASAK.** "negative space / clean table" yazma → void doğuruyor. "clean plate" YALNIZ metin
   içindir, arka plan değil. Dominant öğe boşlukla değil odak+ışıkla öne çıkar. **Dekorlu arka planda
   tahta/poster = SOFT-FOCUS, okunaklı gövde metni YOK** (en fazla tek temiz kısa Türkçe başlık) —
   yoksa NB2 garbled/İngilizce yazı doğuruyor. ([[mamilas-show-premium-yasasi]])
-- **KELİME TUZAKLARI (JSON'dan gelir, prompta TAŞIMA):** `saffron` → NB2 safran ÇİÇEĞİ çiziyor (palette'ten
-  sızar) → "warm golden" yaz; `bloom` → çiçek → "glow of light"; `sheen` (cilt) → plastik → "soft matte,
-  low specular". Ayrıca **cast ve yaş JSON'da yok** → her prompta "Turkish/Anatolian, main AND background" +
+- **KELİME TUZAKLARI — ikisi ARTIK KAYNAKTA kapandı, senin işin değil (2026-07-26):**
+  `saffron` kütüphanede düzeltildi (`vibrant_edu.bias` → "warm golden") · `SSS`→`sheen` çevirisi
+  `translucency` oldu (`brain.ts`). İkisi de `src/core/wordTraps.test.ts` ile kilitli — prompt'a
+  girerlerse test kırmızı yanar. **Sana kalan tek tuzak `bloom`**: motor onu çiçek çiziyor, hiçbir
+  yerde yazma → **"soft round warm-golden glow of light"** de (kanıt: `Bileşke Kuvvet_REVİZE-TUR2.txt`
+  bölüm B "ÇİÇEK OLMUŞ GLOW'LAR", 6 kare). Yeni bir tuzak görürsen prompta yama yapma —
+  kelimeyi kütüphanede düzelt, testi büyüt. Ayrıca **cast ve yaş JSON'da yok** → her prompta "Turkish/Anatolian, main AND background" +
   sınıf yaşı ("6th-grade ~11-12, pre-teen") yaz, yoksa siyahi/asyalı ve minik çocuk çıkıyor.
   Tam liste: [[mamilas-command-json-blokajlari]]
 - **INLINE JÜRİ = TAMİR:** prompt'u `agents/promptQuality.mined.json` + core-prompt-path +

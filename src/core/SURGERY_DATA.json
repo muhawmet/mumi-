@@ -3594,6 +3594,39 @@
       "dna": "Photoreal tabletop commercial still in the hands-at-work advertising lineage (original products only). Medium/era: contemporary product studio, 85–100mm on a locked rig. Named anchor: the hand is a verb, not a decoration. Signature light: the product keeps the key; the hand is lit by spill and one low bounce so it stays a subordinate value — skin never brighter than the hero surface. Color/grade: skin held warm and honest against a controlled neutral set; no orange push, no grey wash. Lens/optics: 85–100mm at f/4 — the contact point (fingertip on the surface) is the sharpest plane in the frame and everything defers to it. Texture/render: real pore, real knuckle, real nail edge, a callus if the hand has earned one; the product's surface deforms or responds where the hand touches it. Composition+motion: the hand enters from a frame edge along the direction the object's own geometry invites; the half-second is the MOMENT OF CONTACT — pressure just arriving, the surface just beginning to answer."
     },
     {
+      "id": "auto_reflection_travel",
+      "name": "Panel Reflection Travel",
+      "cat": "Commercial / Auto",
+      "worldId": "automotive_hero_real",
+      "preview": "automotive_commercial",
+      "anchor": "rolling-hero grammar: the camera tracks parallel to the body at constant distance so one reflected edge travels the whole length of a panel — the move exists to move the reflection, never to hurry",
+      "use": "Grammar only — use when the car is MOVING or the camera is: a low tracking body-line pass, an arc that walks a highlight along the flank, a locked frame with the world sliding through the paint. Sells the sculpture by animating what it reflects.",
+      "avoid": "NO named real vehicle brand, badge or lamp graphic other than a locked client Brand Kit; NO painted-on highlight or airbrushed specular streak; NO floating car without contact shadow and flattened contact patch; NO drone-epic canyon flyover; NO whip pan, NO handheld shake.",
+      "dna": "Photoreal automotive commercial capture in the rolling-hero advertising lineage (original unbadged vehicle designs only). Medium/era: contemporary tracking-vehicle or arm-mounted capture at 24fps with true motion blur. Named anchor: the body is a mirror, so the only real event is the reflection walking the panel. Signature light: a low directional sun raking along the shoulder line so a single running highlight travels the flank while the lower body carries a graded reflection of the ground; the sky does the filling and no key is ever aimed at the paint. Color/grade: graphite and cold neutral hold the body, the road returns its own colour into the sills, and the single warm accent lives in the lamp signature. Lens/optics: 85mm and 135mm at f/5.6 to f/8 so the whole body stays sharp and the proportions stay true, camera height at or below the shoulder line. Texture/render: clearcoat with real depth so the specular sits on the coat and the colour reads through it, anisotropic streak along milled trim, real asphalt aggregate and tyre polish under the wheels. Composition+motion: constant velocity parallel to the body with the horizon steady, the half-second held at the instant the highlight crosses the door seam and the suspension settles from a road joint."
+    },
+    {
+      "id": "auto_flagged_darkfield",
+      "name": "Flagged Dark-Field Hero",
+      "cat": "Commercial / Auto",
+      "worldId": "automotive_hero_real",
+      "preview": "automotive_commercial",
+      "anchor": "showroom dark-field grammar: one enormous soft source stretched the length of the roof, black flags stood close on both flanks carving two clean dark edges, the silhouette defined by what is withheld",
+      "use": "Grammar only — use for the static hero: a launch frame, a studio reveal, a dark-field beauty pass where the car must read as designed geometry rather than as a photograph of a car.",
+      "avoid": "NO named real vehicle brand, badge or lamp graphic other than a locked client Brand Kit; NO key aimed at the paint; NO black-void glass with no cabin behind it; NO featureless infinity ground; NO lifted grey where the flags should hold true black; NO toy or clay proportion.",
+      "dna": "Photoreal automotive commercial still in the studio dark-field hero lineage (original unbadged vehicle designs only). Medium/era: contemporary automotive stage, overhead stretched softbox and flag control. Named anchor: you do not light a car, you light the room the car is standing in. Signature light: one very large soft source stretched along the full length of the roof so a single unbroken gradient runs the glasshouse, black flags stood close on both flanks so the shoulder and sill carve out as two clean dark edges, and a low bounce off the floor lifts the rocker just enough to keep the car planted. Color/grade: near-black surround with true black in the flagged edges, the paint carrying the only chroma, one contained warm accent in the lamp signature. Lens/optics: 135mm at f/8 from a locked head at wheel-arch height, long enough that the perspective flattens and the stance reads as drawn rather than photographed. Texture/render: clearcoat depth with the specular sitting on the coat, panel gaps thin and even, real interior visible behind honest glass, tyre sidewall lettering and a flattened contact patch carrying the weight. Composition+motion: locked and deliberately off-axis so three planes read at once, the half-second is a settle — the last reflection creeping to rest along the shoulder line."
+    },
+    {
+      "id": "auto_night_practical",
+      "name": "Night Practical & Lamp Signature",
+      "cat": "Commercial / Auto",
+      "worldId": "automotive_hero_real",
+      "preview": "automotive_commercial",
+      "anchor": "night-street grammar: no unit light at all — street lamps, shop signage, the car's own lamp graphic and the wet road doing every bit of the lighting, the asphalt working as a second source",
+      "use": "Grammar only — use for the night beat: a Turkish street at dusk or after rain, a lamplit forecourt, an underpass. Sells presence rather than surface, and lets the lamp signature carry the brand's face.",
+      "avoid": "NO named real vehicle brand, badge or lamp graphic other than a locked client Brand Kit; NO English signage — Turkish shopfront and road-sign text only; NO neon wash laid over the body; NO teal-orange grade or crushed noir contrast; NO unmotivated key pretending to be a street lamp.",
+      "dna": "Photoreal automotive commercial capture in the night-practical advertising lineage (original unbadged vehicle designs only). Medium/era: contemporary available-light night capture on a fast prime, real Turkish street. Named anchor: at night the road lights the car, and the car lights the road back. Signature light: practicals only — sodium and cold LED street lamps overhead, shopfront signage across the flank, the vehicle's own running-light graphic and interior glow reading as real emitters; wet asphalt returns every one of those sources as a stretched vertical reflection so the ground carries as much light as the sky. Color/grade: deep cold graphite shadow holding detail, warm sodium pooling under each lamp, the accent living entirely in the lamp signature and the brake glow — never a wash across the paint. Lens/optics: 85mm at f/2.8 to f/4, camera at shoulder height or lower, deep enough that the lamp graphic stays crisp while the street falls to honest optical falloff. Texture/render: rain sheen with real aggregate showing through, tyre polish tracks catching the lamps, spray at the contact patch when the car moves, real cabin visible behind glass with the dash glow inside it. Composition+motion: the car sits or rolls through pools of practical light with the darkness between them intact, the half-second is the arrival into a pool — the lamp signature just lit across the wet road ahead of it."
+    },
+    {
       "id": "corp_architectural_daylight",
       "name": "Architectural Daylight Discipline",
       "cat": "Commercial / Corporate",
@@ -3786,7 +3819,7 @@
         "accent": "#E63946",
         "highlight": "#F1FAEE"
       },
-      "bias": "Navy, saffron-yellow, tomato-red, board-white. Broad saffron key lands flat and even, the navy ground drinks the falloff, one tomato beat punctuates, board-white bounces back clean. NO menace, NO muddy midtone, NO desaturation."
+      "bias": "Navy, warm golden-yellow, tomato-red, board-white. Broad warm golden key lands flat and even, the navy ground drinks the falloff, one tomato beat punctuates, board-white bounces back clean. NO menace, NO muddy midtone, NO desaturation."
     },
     {
       "id": "deep_noir",

@@ -1,0 +1,70 @@
+KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · HERO REFERANSLARI (@tag)
+=========================================================================
+BUNLAR ÜRETİM SIRASININ BİRİNCİSİDİR. Önce bu 5 referansı bas, Magnific'te
+tag'le, ANCAK ONDAN SONRA kare üretimine geç.
+
+Neden: sabahki üretimde kütüphane kitabı tag'siz kaldı ve altı ardışık karede
+altı farklı kitap çıktı — hepsi toptan revize oldu. Bu videoda dinamometre
+neredeyse her karede var; tag'siz gidersek aynı fatura çok daha büyük gelir.
+
+ZATEN ELİMİZDE OLANLAR (yeniden basma): @mira · @araba
+YENİ BASILACAKLAR: @dinamometre-ince · @dinamometre-kalin · @silgi · @tas · @defter
+
+>> KRİTİK SIRA: önce @dinamometre-ince'yi bas ve tag'le. @dinamometre-kalin'i
+   SIFIRDAN ÜRETME — @dinamometre-ince karesinden REFERANS-EDIT ile türet.
+   Sebep: dersin tamamı "aynı alet, farklı yay" karşılaştırmasına dayanıyor.
+   İkisini ayrı ayrı üretirsen gövde, kadran ve renk de değişir, karşılaştırma
+   okunmaz olur.
+=========================================================================
+
+
+### @dinamometre-ince
+-----
+50mm lens at f/4, straight-on three-quarter product view — a single classroom spring scale stands upright and isolated on a seamless warm-neutral studio ground, lit clean for reference. Its barrel is a clear transparent cylinder with a satin-brushed metal cap at each end, and inside it a THIN fine steel coil hangs long and openly spaced, its individual turns clearly separated and countable. A small polished steel hook projects from the bottom cap. A narrow vertical scale strip runs down the front of the barrel carrying only four large, widely spaced raised Turkish numerals — 0, 5, 10, 15 — with a single blocky capital letter N at the top of the strip, nothing else written anywhere on the object. A slim tomato-red pointer sits at the zero mark. The metal reads with an anisotropic brushed highlight, the transparent barrel carries a soft edge refraction, and the whole object rests flat on the ground plane with a soft contact shadow beneath it. The object is drawn slightly overscale for clear readability. Nothing else in frame, no hands, no table clutter, no background props — this is a clean isolated hero reference.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, material specificity mandatory: metal shows an anisotropic brushed highlight, plastic and glass read with honest refraction and soft edge translucency. Lighting is art-directed, never photo-random: one motivated soft key at 45 degrees, complementary bounce fill at a third of key strength in the opposing hue, a saturated rim accent separating the object from the ground, soft painted ambient occlusion where the object meets the ground — shadow reads warm-dark, never cold-black, never hard-stepped. No outlines; the silhouette carries through lighting rim and value separation alone.
+LIGHT AND PALETTE: shadows settle into deep cool blue, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge — that cool-green lift belongs to surfaces only. Render these as light behaviour, never as flat colour fills. No muddy midtone, no desaturation, no teal-orange grade.
+TEXT: the numerals and the letter N are diegetic raised dimensional letterform printed on the scale strip itself, correctly formed, widely spaced. No English words, no floating captions, no labels laid over the image.
+NEGATIVE: no 2D cel shading, no black cartoon outline, no flat graphic fill, no toon shader, no clay or plasticine surface; no photoreal or live-action capture; no recognisable franchise character, real person, logo or brand name; no icon, pictogram, diagram or infographic panel standing in for the object — this is the real physical instrument rendered as matter; no warped, mirrored or invented lettering; no lens flare, no anamorphic streak.
+-----
+
+
+### @dinamometre-kalin   (REFERANS-EDIT — @dinamometre-ince karesinden türet)
+-----
+Use this referenced image of the spring scale. Change ONLY the coil inside the barrel: replace the thin finely spaced steel coil with a THICK heavy-gauge steel coil whose turns are tightly packed and pressed close together, filling the barrel densely. Keep the barrel, the metal caps, the hook, the scale strip, the numerals, the letter N, the red pointer at zero, the lighting, the ground, the shadow and the camera angle absolutely identical.
+-----
+
+
+### @silgi
+-----
+50mm macro at f/4, straight-on three-quarter product view — a single school eraser rests isolated on a seamless warm-neutral studio ground, lit clean for reference. It is a soft rectangular block of pale cream rubber with gently rounded corners and a broad tomato-red band wrapping its middle, and a short loop of fine waxed cord is threaded through one end so it can be hung from a hook. The rubber reads soft-diffuse with a faint translucency at its thin edges and a light dusting of eraser crumb texture on one worn corner. The cord loop lies naturally, not stiff. The object rests flat on the ground plane with a soft contact shadow beneath it, drawn slightly overscale for clear readability. Nothing else in frame, no hands, no clutter, no background props — this is a clean isolated hero reference.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, material specificity mandatory: rubber reads soft-diffuse with translucency at thin edges, cord shows twisted fibre texture. Lighting is art-directed: one motivated soft key at 45 degrees, complementary bounce fill at a third of key strength in the opposing hue, a saturated rim accent separating the object from the ground, soft painted ambient occlusion at the contact line — shadow reads warm-dark, never cold-black. No outlines; the silhouette carries through lighting rim and value separation alone.
+LIGHT AND PALETTE: shadows settle into deep cool blue, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge — that cool-green lift belongs to surfaces only. Render these as light behaviour, never as flat colour fills.
+TEXT: no text of any kind on this object.
+NEGATIVE: no 2D cel shading, no black cartoon outline, no flat graphic fill, no toon shader, no clay or plasticine surface; no photoreal capture; no logo, brand name or written word; no icon or pictogram standing in for the object — this is the real eraser rendered as matter; no lens flare.
+-----
+
+
+### @tas
+-----
+50mm macro at f/4, straight-on three-quarter product view — a single river stone rests isolated on a seamless warm-neutral studio ground, lit clean for reference. It is a smooth rounded grey-blue stone about the size of a fist, its surface worn matte by water with a faint pale mineral vein running across one face and a fine granular tooth catching the raking light. A short loop of fine waxed cord is knotted around its waist so it can be hung from a hook, the cord biting slightly into the stone's curve. The stone rests flat on the ground plane with a heavy soft contact shadow beneath it that reads its weight, drawn slightly overscale for clear readability. Nothing else in frame, no hands, no clutter, no background props — this is a clean isolated hero reference.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, material specificity mandatory: stone shows granular matte tooth with a faint mineral vein, cord shows twisted fibre texture. Lighting is art-directed: one motivated soft key at 45 degrees, complementary bounce fill at a third of key strength in the opposing hue, a saturated rim accent separating the object from the ground, soft painted ambient occlusion at the contact line — shadow reads warm-dark, never cold-black. No outlines; the silhouette carries through lighting rim and value separation alone.
+LIGHT AND PALETTE: shadows settle into deep cool blue, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge — that cool-green lift belongs to surfaces only. Render these as light behaviour, never as flat colour fills.
+TEXT: no text of any kind on this object.
+NEGATIVE: no 2D cel shading, no black cartoon outline, no flat graphic fill, no toon shader, no clay or plasticine surface; no photoreal capture; no logo, brand name or written word; no icon or pictogram standing in for the object — this is the real stone rendered as matter; no lens flare.
+-----
+
+
+### @defter
+-----
+50mm lens at f/4, straight-on three-quarter product view — a single school notebook rests isolated on a seamless warm-neutral studio ground, lit clean for reference. It is a slim hardcover notebook lying flat and closed, its cover a deep navy cloth-textured board with a broad tomato-red spine binding and one soft-brass corner protector catching the light. A slim satin ribbon bookmark in warm amber trails from between the pages and curls once on the ground beside it. The cloth cover shows a fine woven weave under raking light, the page block shows honest cream paper edges with a slight natural unevenness. The notebook rests flat on the ground plane with a soft contact shadow beneath it, drawn slightly overscale for clear readability. The cover carries no writing at all — it is completely blank. Nothing else in frame, no hands, no clutter, no background props — this is a clean isolated hero reference.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, material specificity mandatory: cloth board shows woven weave, brass shows an anisotropic brushed highlight, paper edges read soft and fibrous. Lighting is art-directed: one motivated soft key at 45 degrees, complementary bounce fill at a third of key strength in the opposing hue, a saturated rim accent separating the object from the ground, soft painted ambient occlusion at the contact line — shadow reads warm-dark, never cold-black. No outlines; the silhouette carries through lighting rim and value separation alone.
+LIGHT AND PALETTE: shadows settle into deep cool blue, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge — that cool-green lift belongs to surfaces only. Render these as light behaviour, never as flat colour fills.
+TEXT: the cover is deliberately blank — no title, no writing, no lettering of any kind, in any language.
+NEGATIVE: no 2D cel shading, no black cartoon outline, no flat graphic fill, no toon shader, no clay or plasticine surface; no photoreal capture; no logo, brand name or written word; no icon or pictogram standing in for the object — this is the real notebook rendered as matter; no lens flare.
+-----
+
+=========================================================================
+TAG AÇMADIKLARIM (bilerek): oyun hamuru, tüy, okul çantası, top, kalem.
+Her biri tek ya da iki karede geçiyor ve sürüklenmeleri dersi bozmuyor.
+Her ufak nesneye tag açmak üretimi şişirir.
+=========================================================================

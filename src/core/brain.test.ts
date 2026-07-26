@@ -1434,7 +1434,10 @@ describe("seçilebilir paletin fiziksel ışık cümlesi prompt'a iner", () => {
     cool_scientific: 'clinical blue-cyan precision',
     high_contrast_bold: 'graphic two-primary tension',
     golden_dust_epic: 'low-angle desert-sun grazing',
-    vibrant_edu: 'broad saffron key lands flat and even',
+    // Bias'ın ham sözü "broad saffron key" — `translateFlowerColourNames` onu ışık
+    // davranışına çeviriyor (safran = motorun ÇİÇEK olarak çizdiği kelime, gerçek
+    // kare kanıtı: `wordTraps.test.ts`). Ölçülen yasa aynı: fizik cümlesi iniyor.
+    vibrant_edu: 'broad warm golden key lands flat and even',
     warm_autumn: 'grounded afternoon-sun warmth',
     neon_rain_romance: 'wet-neon night',
     soviet_muted: 'photochemical institutional desaturation',
@@ -1459,7 +1462,7 @@ describe("seçilebilir paletin fiziksel ışık cümlesi prompt'a iner", () => {
   it("renk lead'i ile fizik cümlesi nokta ile ayrılır, virgülle değil", () => {
     const cases: [string, string, string][] = [
       ['deep_noir', 'silver-gray', 'Total shadow absorption'],
-      ['vibrant_edu', 'board-white', 'Broad saffron key'],
+      ['vibrant_edu', 'board-white', 'Broad warm golden key'],  // çiçek-çeviri sonrası
       ['golden_dust_epic', 'bone-cream', 'Low-angle desert-sun'],
       ['cool_scientific', 'cold aqua-white', 'Clinical blue-cyan'],
     ];
@@ -2320,9 +2323,13 @@ describe('doku ailesi: "texture" bir aile adı değil, kategori adıdır', () =>
   });
 
   it('gerçek bir doku ailesi bulunursa o kullanılır', () => {
-    // ink/painterly/tactile/fabric/grain … gibi somut aileler korunur
-    const painterly = DATA.refs.find((r) => /painterly|brush/i.test([r.name, r.dna, r.cat].join(' ')));
-    if (painterly) expect(texRuleOf([painterly.id])).toMatch(/"(painterly|brush)" family/i);
+    // ink/painterly/tactile/fabric/grain … gibi somut aileler korunur.
+    // Fixture KELİME SINIRIYLA aranır: eski hâli altdizge arıyordu ve ilk eşleşen ref
+    // `akira_neon_impact` oluyordu — oradaki tek "brush" **airbrush**'ın içindeydi.
+    // Yani test, düzeltilen kusurun kendisiyle geçiyordu (bkz. dnaWiring.test.ts).
+    const painterly = DATA.refs.find((r) => /\b(painterly|brush)\b/i.test([r.name, r.dna, r.cat].join(' ')));
+    expect(painterly, 'kütüphanede gerçek bir painterly/brush ref\'i yok').toBeTruthy();
+    expect(texRuleOf([painterly!.id])).toMatch(/"(painterly|brush)" family/i);
   });
 
   it('somut aile yoksa doku cümlesi jenerik "texture" ile uydurulmaz', () => {

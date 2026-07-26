@@ -37,7 +37,8 @@ describe('DATA shape', () => {
     // product, corporate, civic, food, sport, edu-promo — had ZERO refs between them, which is
     // to say Mami could not pick a single reference for the work he is actually paid to do.
     // The count is locked so a ref cannot vanish unnoticed; raise it when you add, never lower it.
-    expect(DATA.refs.length).toBe(130);
+    // 130 → 133: automotive_hero_real'a üç imza ref'i (2026-07-26) — bkz. refScenes.test.ts.
+    expect(DATA.refs.length).toBe(133);
     expect(DATA.palettes.length).toBe(12);
   });
 

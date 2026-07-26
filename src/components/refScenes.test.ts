@@ -23,7 +23,10 @@ describe('REF_SCENES', () => {
     // product, corporate, civic, food, sport, edu-promo — had ZERO refs between them, which is
     // to say Mami could not pick a single reference for the work he is actually paid to do.
     // The count is locked so a ref cannot vanish unnoticed; raise it when you add, never lower it.
-    expect(DATA.refs.length).toBe(130);
+    // 130 → 133: automotive_hero_real'ın imza ref'i YOKTU (2026-07-26) — araba reklamı Mami'nin
+    // para kazandığı iş ve dünyanın içinde seçilebilecek tek bir ses bulunmuyordu. Üç ses eklendi:
+    // hareket eden yansıma · flag'lenmiş karanlık stüdyo · gece pratikleri + lamba imzası.
+    expect(DATA.refs.length).toBe(133);
     expect(DATA.refs.some((ref) => ref.id === 'arcane_texture')).toBe(true);
     expect(DATA.refs.some((ref) => ref.id === 'onepiece_grandline_scale')).toBe(true);
     expect(Object.keys(REF_SCENES).length).toBeGreaterThan(0);

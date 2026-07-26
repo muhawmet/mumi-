@@ -228,6 +228,18 @@ function biasCharacterClause(bias: string | undefined): string {
     if (i === 0) { out = text; return; }
     out += (chunks[i - 1].endsSentence ? '. ' : ', ') + text;
   });
+  // ÇİÇEK ADI BURADA ÇEVRİLMEZ — KÜTÜPHANEDE DÜZELTİLİR. (Mami, 2026-07-26: "regex yok")
+  //
+  // `vibrant_edu` bias'ı prompt'a sahne başına İKİ kez "saffron" sokuyordu ve motor
+  // safranı baharat değil ÇİÇEK olarak biliyor: teslim edilmiş 103 karenin tamamı bu
+  // kelimeyle üretildi, sonuç Bileşke Kuvvet'in revize dosyasında YAZILI ("force-glow
+  // safran çiçeği olarak çıkmış" · REVİZE-TUR2 bölüm başlığı "B) ÇİÇEK OLMUŞ GLOW'LAR").
+  // Bir ara sürüm bunu burada, çıkışta çeviren bir sözcük katmanı denedi ve söküldü:
+  // kötü kelimeyi kaynağında değil çıkışında yakalayan katman, kütüphaneyi yanlış
+  // bırakıp semptomu gizler. Kelime `SURGERY_DATA.json` → vibrant_edu.bias içinde
+  // "warm golden" olarak düzeltildi. Koruma testtedir, kodda değil:
+  // `wordTraps.test.ts` 12 paletin hepsini tarar ve bir palet/dünya çiçek adı
+  // taşırsa HANGİSİ olduğunu söyler — sessizce düzeltmez, düzeltmeyi kütüphaneye yollar.
   return `— palette character: ${out}`;
 }
 
@@ -489,6 +501,58 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
   // pozitif stil sinyali sanılıp DNA_MAP'e ateşliyordu (world light_law ile çelişen chiaroscuro
   // "Light:" enjeksiyonu). Eşleştirmeden ÖNCE no/never/avoid cümlelerini (cümle/`;`/`—` sınırında) düş.
   const pool = rawPool.replace(/\b(?:no|never|avoid)\b[^.;—]*/gi, ' ');
+  // KÖK — REF SEÇİMİ ÇALIŞMIYORDU (2026-07-26, kütüphane taraması).
+  //
+  // Bu kanallar prompt'a KARAR olarak giriyor ("Staging: …", "Light: …", "Texture rule: …"),
+  // ama eşleşmelerin büyük kısmı KAZAYDI ve üç ayrı kök sebebi vardı:
+  //
+  //   (a) 7-katman formatının BAŞLIKLARI havuza giriyordu. Her ref DNA'sı zorunlu olarak
+  //       "Signature light:" · "Texture/render:" · "Composition+motion:" taşır. `Signature`
+  //       içindeki `nature`, /wind|nature|organic|leaves|grass/ kuralını 41/46 dünyada
+  //       ateşliyordu; `Composition` başlığı staging kuralını, `Texture` başlığı texture
+  //       kuralını. Başlık FORMAT İSKELETİDİR, ref'in söylediği şey değildir.
+  //   (b) `.*` referans sınırını aşıyordu. Ürün masası paketinde `hero.*silhouette`
+  //       1635 karakterlik bir köprüyle eşleşti — "Hero" birinci ref'in ADINDA, "silhouette"
+  //       ikinci ref'in DNA'sında — ve şişe çekimine atlet sahneleme dili bastı.
+  //   (c) Çıplak token'lar kelime ortasında eşleşiyordu: `fall`→`falloff` (25/46 dünya),
+  //       `wind`→`window` (18/46), `action`→`refraction`. Optiğin en yaygın iki kelimesi.
+  //
+  // Sonuç: farklı ref seçmek kareyi çok az değiştiriyordu, çünkü kanal satırları ref'in
+  // ANLAMINDAN değil format iskeletinden doğuyordu. Bu sınıf daha önce ÜÇ KEZ tek tek
+  // yamandı (brain-data.ts: "KÖK (T5 FIX-1)", "(T5 FIX-5)", "FINAL (whole-branch)") —
+  // kalıplar düzeltildi, YÖNTEM düzeltilmedi. Burada yöntem düzeliyor:
+  // başlıkları düş, her ref'i AYRI ve cümle cümle eşle.
+  const LAYER_HEADER_RE = /\b(?:medium\/era|named anchor|signature light|color\/grade|colour\/grade|lens\/optics|texture\/render|composition\+motion|composition and motion)\s*:/gi;
+  const matchUnits = refs.flatMap((r) =>
+    [r.name, r.dna, r.cat].map(T).join('. ')
+      .replace(LAYER_HEADER_RE, ' ')
+      .replace(/\b(?:no|never|avoid)\b[^.;—]*/gi, ' ')
+      .split(/[.;—]/)
+      .map((s) => s.trim())
+      .filter(Boolean),
+  );
+  /**
+   * Bir kalıp, TEK bir ref'in TEK bir cümlesinde ve KELİME SINIRINDA eşleşiyorsa gerçektir.
+   *
+   * Sınır kuralı kalıpların 40'ını tek tek düzeltmek yerine yöntemi düzeltir: eşleşmenin
+   * kendisi harfle başlıyorsa solunda, harfle bitiyorsa sağında harf olamaz. `fall`
+   * artık `falloff`u, `wind` `window`u, `action` `refraction`u, `nature` `signature`ı
+   * yakalayamaz — ama gerçek "wind moves through the grass" hâlâ yakalanır.
+   */
+  const WORD_CH = /[A-Za-z0-9]/;
+  const fires = (re: RegExp) => {
+    const g = new RegExp(re.source, re.flags.includes('g') ? re.flags : re.flags + 'g');
+    return matchUnits.some((u) => {
+      g.lastIndex = 0;
+      for (let m = g.exec(u); m; m = g.exec(u)) {
+        if (!m[0]) break;
+        const solOk = !WORD_CH.test(m[0][0]) || !WORD_CH.test(u[m.index - 1] ?? ' ');
+        const sagOk = !WORD_CH.test(m[0][m[0].length - 1]) || !WORD_CH.test(u[m.index + m[0].length] ?? ' ');
+        if (solOk && sagOk) return true;
+      }
+      return false;
+    });
+  };
   const out: Record<string, string[]> = { camera: [], light: [], staging: [], motion: [] };
   let texN = 0, texWord = '';
   // Ref DNA is written in the 7-layer format, and one of its layer headers is
@@ -497,8 +561,8 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
   // 'texture' family" — a sentence that eats itself and drops the actual texture. Skip
   // the category word and take the first concrete family the pool names.
   DNA_MAP.forEach((m) => {
-    if (!m[0].test(pool)) return;
-    if (m[1] === 'texture') { if (!texWord) texWord = textureFamilyOf(pool, m[0]); texN++; return; }
+    if (!fires(m[0])) return;
+    if (m[1] === 'texture') { if (!texWord) texWord = textureFamilyOf(matchUnits.join(' '), m[0]); texN++; return; }
     if (out[m[1]].length < 2 && out[m[1]].indexOf(m[2]) < 0) out[m[1]].push(m[2]);
   });
   const tex = texN
@@ -531,7 +595,18 @@ export function dnaDirectives(refs: SurgeryRef[], register: Register): DnaDirect
     .filter(Boolean)
     .join('; ');
   const getFallback = (channel: string, oldGeneric: string) => {
-    if (refs.length > 0) return `apply the ${channel} character of ${names}${anchors ? ` (${anchors})` : ''} — no generic default`;
+    // Bu metin PROMPT'a giriyor, brief'e değil — yani boş-sıfat yasağı burada da geçerli.
+    // Ref ADLARI o yasağın dışında kalmıştı: `cinedna_handheld`ın adı "Cinematic
+    // Observational Handheld" ve fallback onu motora POZİTİF emir olarak yazıyordu
+    // ("apply the staging character of … Cinematic Observational Handheld"). Kusur
+    // görünmüyordu çünkü kanallar yanlış-ateşlemeyle doluyordu ve fallback hiç
+    // çalışmıyordu; kablolama düzelince ortaya çıktı. `scrubEmptyAdjectives` paletin
+    // görünen adına aynı gerekçeyle zaten uygulanıyor — kanal onu atlamış.
+    if (refs.length > 0) {
+      const temizAd = scrubEmptyAdjectives(names);
+      const temizAnchor = scrubEmptyAdjectives(anchors);
+      return `apply the ${channel} character of ${temizAd}${temizAnchor ? ` (${temizAnchor})` : ''} — no generic default`;
+    }
     return oldGeneric;
   };
 
@@ -1775,7 +1850,17 @@ export function scrubHumanTokens(text: string): string {
     .replace(/\bpore[- ]level\b/gi, 'micro-detail')
     .replace(/\bpores?\b/gi, 'micro-texture')
     .replace(/\bsubsurface scattering\b/gi, 'subsurface-style translucency')
-    .replace(/\bSSS\b/g, 'subsurface-style sheen')
+    // İki satır aynı fiziği çeviriyordu, iki AYRI kelimeyle: uzun form
+    // "translucency" (doğru), kısaltma ise "sheen" (yanlış). Ölçüm (2026-07-26,
+    // gerçek generateBatch · pixar_3d_edu): cast DOLU promptta "sheen" ×2 ve
+    // ikisi de dünyanın meşru malzeme dili (ahşabın satin-varnish'i, lastiğin
+    // soft-diffuse'ü). Cast BOŞ olunca bu satır her `SSS`'i sheen'e çevirip
+    // sayıyı ×8'e çıkarıyor ve "subsurface-style sheen surface" bir IMPERATIVE
+    // olarak basılıyor — yani "cilt parlaklığı" emri. Mami'nin defalarca elle
+    // temizlediği "plastik cilt" kusurunun kaynağı dünya verisi değil, BU
+    // çeviriydi: sheen yüzeyden YANSIYAN parlaklıktır, SSS ise yüzeyin İÇİNDEN
+    // geçen ışık. Üst satır zaten doğru kelimeyi biliyor; kısaltma da onu kullanır.
+    .replace(/\bSSS\b/g, 'subsurface-style translucency')
     .replace(/\bskin\b/gi, 'surface')
     // (4) Residual person-antecedents OUTSIDE dermal grammar. The composition / lens /
     // physics clauses still order a "character" into a frame whose closing note says
@@ -2445,7 +2530,12 @@ export function buildAgentBrief(ctx: AgentBriefCtx, scenes: AgentBriefScene[]): 
     `- **Path:** ${T(ctx.productionPath)}`,
     `- **Register:** ${regLabel}`,
     `- **World:** ${T(world.name)}`,
-    `- **Cast:** ${T(ctx.cast)}`,
+    // Bir satır aşağıdaki `location` bu korumayı ZATEN almış, gerekçesi de orada
+    // yazılı: boş alan ajanı uydurmaya davet ediyor. `cast` aynı listede,
+    // korumasız duruyordu ve üç bitmiş videonun ÜÇÜNDE de site tarafında cast
+    // boştu (@mira/@efe tag'lerini ajan yazdı) — yani her üretimde "- **Cast:** "
+    // boş basıldı. Boş alan bilgi değildir; ya cast vardır ya satır yoktur.
+    ...(T(ctx.cast) ? [`- **Cast:** ${T(ctx.cast)}`] : []),
     // Reçetenin Location alanı buraya kadar hiç gelmiyordu: Mami "İstanbul, sınıf" yazıyor,
     // brief hiç mekân görmüyor, ajan mekânı UYDURUYORDU. Boşken satır basılmaz.
     ...(T(ctx.location) ? [`- **Location:** ${T(ctx.location)} — the real place this shoot happens in; the frame is staged HERE, never in an invented elsewhere.`] : []),
@@ -2599,7 +2689,10 @@ export function primePacket(
   const regLabel = register === 'REAL' ? 'PHOTOREAL / LIVE ACTION' : register === 'EDU' ? 'ANIMATION / EDUCATION' : 'STYLIZED PREMIUM';
   const rLock = reconcileAspectRatio(renderLock(world, register, ctx.material), ctx.contract?.required);
 
-  const head = `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}\nCast: ${T(ctx.cast)}`;
+  // Cast satırı yalnız cast VARSA basılır — buildAgentBrief'teki aynı yasa
+  // (boş alan ajanı uydurmaya davet eder). İki yüzey ayrı düşerse drift olur.
+  const head = `Project: ${T(ctx.projectTopic)} · Path: ${T(ctx.productionPath)} · Register: ${regLabel} · World: ${T(world.name)}`
+    + (T(ctx.cast) ? `\nCast: ${T(ctx.cast)}` : '');
 
   const header = `MAMILAS ${id === 'motion' ? 'MOTION DIRECTOR — i2v' : id === 'suno' ? 'SUNO DIRECTOR — Custom Mode' : id.toUpperCase() + ' DIRECTOR'}`;
 

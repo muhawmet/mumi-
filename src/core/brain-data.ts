@@ -46,7 +46,11 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/portrait|\bface\b.*light|dignified.*hold|gentle.*\bface\b|intimate.*still/i,'motion','anchored stillness: subject holds position with one breath-scale micro-settle, no mechanical movement'],
  // Painterly / volume-lit: Arcane, Ghibli, stylized with real DNA
  [/painted.*volume|volume.*light|painterly.*cinematic|angular.*silhouette|fortiche/i,'camera','dramatic locked angle: low-to-mid architectural frame, one motivated push into the composition depth'],
- [/warm.*cold.*value|value.*war|colour.*tension|painted.*texture.*cinematic/i,'motion','weighted colour settle: motion ends with a material sense of gravity, warm/cold shift confirms the beat'],
+ // `value[- ]tension` kütüphanenin KENDİ kelimesi (`arcane_zaun_dna` → "Undercity
+ // Value-Tension Grammar"). Eşleştirme ref/cümle sınırına çekilince bu kural düştü:
+ // eskiden 2749 karakterlik bir köprüyle ("value" bir ref'te, "war" bambaşka yerde)
+ // ateşliyordu — doğru satırı yanlış sebeple veriyordu. Token gerçek terimi yakalar.
+ [/warm.*cold.*value|value.*war|colour.*tension|value[- ]tension|painted.*texture.*cinematic/i,'motion','weighted colour settle: motion ends with a material sense of gravity, warm/cold shift confirms the beat'],
  // Fashion / luxury / textile
  [/luxury.*pose|sculpted.*light|textile.*authority|vogue|couture|fashion.*editorial/i,'camera','fashion vantage: neutral or elevated angle, frame edges razor-clean, one axis of movement only'],
  [/luxury|fashion.*quality|textile|pose.*turn|couture|editorial.*hold/i,'motion','held presence: subject achieves position and holds — one deliberate micro-settle confirms arrival, nothing mechanical'],
@@ -74,7 +78,14 @@ export const DNA_MAP: Array<[RegExp, string, string]> =[
  [/system|hierarchy|cause.*effect|explanatory|readable.*flow|information.*design/i,'staging','logical hierarchy: components spatially ranked by importance, reading line clear, negative space guides the eye'],
  // --- Standard cinematography entries ---
  [/kinetic|leap|fall|speed|chase|action|impact|rebellion/i,'camera','one bolder committed camera travel is allowed — never two moves'],
- [/handheld|documentary|observational|street/i,'camera','documentary handheld micro-drift at operator walking pace'],
+ // `street` token'ı SÖKÜLDÜ: sokak bir MEKÂNDIR, bir çekim yöntemi değil. Ölçüm
+ // (2026-07-26): "street" geçen 6 ref'in 4'ü belgesel değil — akira'nın sodyum sokak
+ // havuzları, ghost_shell'in ıslak sokak yansımaları, verse_miles'ın sokak-neonu ve
+ // auto_night_practical'ın Türk sokağı — dördü de "belgesel el kamerası" emri alıyordu,
+ // üstelik automotive dünyasının yasası "asla handheld shake" derken. Gerçek belgesel
+ // ref'leri `handheld|documentary|observational` ile zaten yakalanıyor (street_doc'un adı
+ // "Street Documentary Proximity", cinedna_handheld'inki "Cinematic Observational Handheld").
+ [/handheld|documentary|observational/i,'camera','documentary handheld micro-drift at operator walking pace'],
  // cinedna_handheld's unique token: without a motion-channel entry the ref is dead
  // weight in documentary combos whose camera slots are already full (KÖK 7d).
  [/real-place drift/i,'motion','unbroken observational take: the event breathes at real duration, operator sway legible, no cut-rhythm energy'],

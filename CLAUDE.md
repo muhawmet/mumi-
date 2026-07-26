@@ -21,6 +21,12 @@ Kodda yaşayan sayıları, motor listelerini veya durum bilgisini bu dosyaya kop
 
 ## Çalışma biçimi
 
+**MAKRO — Mami'nin birinci kuralı (2026-07-26, iki kez söylendi).** Kelime avlamak YASAK.
+Bir bulgu ancak **sistemin bir yeteneğini** açıklıyorsa raporlanır: "ref seçimi kareyi
+değiştirmiyor", "marka katmanı reçetenin vatandaşı değil" gibi. Kelimeler yalnız KANIT'tır,
+bulgu değildir — kelime tablosu sunma, tek cümlelik yetenek hükmü sun. Tek kelimelik bir
+kusur için tur açma; kusuru gördüğün yerde kaynağında düzelt ve geç.
+
 - Windows/PowerShell birincil yerel ortamdır; Mac launcher sözleşmesini koru.
 - Gerçek `generateBatch` çıktısını görmeden prompt kalitesi hakkında hüküm verme.
 - Kullanıcının metnini sessizce yeniden yazma; eksik gerçek varsa dur ve bildir.
