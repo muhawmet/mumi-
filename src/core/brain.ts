@@ -2046,6 +2046,62 @@ const SOURCE_DICTATING_RE = /motivated key with a named source/i;
 // density, "no warm fill anywhere" — is a different key, and the generic clause would
 // overrule the world it is supposed to serve.
 const WORLD_KEYS_OFF_WARM_PRACTICAL_RE = /\b(?:window (?:sun|shaft|light)|desk lamp|motivated (?:key|practical)|practical (?:or natural|key)|sun key|sun through|golden hour|overhead classroom)\b/i;
+/**
+ * MAKBUZ (KALP-G1d, 2026-07-26) — otorite çözümünün KAYBEDENİ.
+ *
+ * `resolveLightAuthority` gerçek bir çözücüdür: dünya ışık yasası kazandığında ref DNA'nın
+ * çelişen cümlelerini DÜŞÜRÜR. Ama yalnız kazananı döndürüyordu; düşen cümle hiçbir yere
+ * yazılmıyordu. Oysa ref bastırması için deterministik kayıt VAR
+ * (`pure.ts` → `SUPPRESSED_WORLD_MISMATCH`) — yani sistem bir yerde makbuz tutuyor, başka
+ * yerde tutmuyordu. Tutarsızlığın bedeli şu: sonraki oturum "bu dünyada rim light neden yok"
+ * sorusunu sıfırdan araştırır, çünkü kimse cevabı yazmamış.
+ *
+ * `AUTHORITY_HIERARCHY` bir liste sabitidir, çözücü değil; gerçek çözüm bunun gibi noktasal
+ * kapılarda yaşıyor. Kural (`.claude/rules/core-prompt-path.md`): **her ezilen directive
+ * makbuz bırakmalı.** Bu fonksiyon o kuralı ışık ekseninde uygular.
+ *
+ * `light` alanı eski davranışla BYTE-EŞİTtir — makbuz motor prompt'una girmez, kanıta girer.
+ * Makbuz bir KARAR değil, karardan TÜRETİLEN kanıttır; o yüzden kimliğe (`BaseDecision`)
+ * değil command paketine yazılır.
+ */
+export type LightAuthorityRule = 'NONE' | 'NO_WORLD_LAW' | 'WORLD_AGREES' | 'FLAT_WORLD_DROPS_DIRECTIONAL' | 'WORLD_LAW_GOVERNS_KEY';
+export interface LightAuthorityReceipt {
+  light: string;
+  /** Düşürülen ref DNA cümleleri — verbatim, kırpılmadan. Boşsa kimse ezilmedi. */
+  dropped: string[];
+  rule: LightAuthorityRule;
+  /** Kazanan otorite: hangi katman bu ekseni yönetti. */
+  winner: 'WORLD_LIGHT_LAW' | 'REF_DNA';
+}
+
+export function resolveLightAuthorityReceipt(dnaLight: string, world: SurgeryWorld): LightAuthorityReceipt {
+  const law = T(world.light_law);
+  const clauses = T(dnaLight).split(';').map((c) => c.trim()).filter(Boolean);
+
+  if (!law.trim()) {
+    return { light: dnaLight, dropped: [], rule: 'NO_WORLD_LAW', winner: 'REF_DNA' };
+  }
+  if (isFlatLightWorld(world)) {
+    const dropped = clauses.filter((c) => DIRECTIONAL_LIGHT_RE.test(c));
+    return {
+      light: resolveLightAuthority(dnaLight, world),
+      dropped,
+      rule: dropped.length ? 'FLAT_WORLD_DROPS_DIRECTIONAL' : 'NONE',
+      winner: 'WORLD_LIGHT_LAW',
+    };
+  }
+  if (WORLD_KEYS_OFF_WARM_PRACTICAL_RE.test(law)) {
+    return { light: dnaLight, dropped: [], rule: 'WORLD_AGREES', winner: 'REF_DNA' };
+  }
+  const dropped = clauses.filter((c) => SOURCE_DICTATING_RE.test(c));
+  return {
+    light: resolveLightAuthority(dnaLight, world),
+    dropped,
+    rule: dropped.length ? 'WORLD_LAW_GOVERNS_KEY' : 'NONE',
+    winner: 'WORLD_LIGHT_LAW',
+  };
+}
+
 export function resolveLightAuthority(dnaLight: string, world: SurgeryWorld): string {
   const law = T(world.light_law);
   // A world with no light law of its own leaves the ref DNA as the only authority.

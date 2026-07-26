@@ -191,11 +191,59 @@ Test sayısı 2075 → 2083 (+8 yeni taşıyıcı testi; hiçbir test silinmedi)
 ölçüldü: **yok** (0 dosya), yani geçiş maliyeti sıfır. Eski bir command dosyası elden
 gelirse bayat sayılacaktır — doğrusu bu.
 
+## ✅ YAPILDI — G1c: yutulan ölçüm ekrana çıktı (2026-07-26)
+
+`directorNotes()` hesaplanıyor ama `src/` içinde hiçbir yüzeyden çağrılmıyordu; tek çağıran
+kendi testiydi. Testler yeşildi çünkü test fonksiyonu doğrudan çağırıyordu — yani **yeşil
+test, görünmez bir yeteneği koruyordu.**
+
+- `RecipeStep` → **"Evren ölçümü"** paneli. `warn` kırmızı kenar, `info` amber. Alt başlık
+  sınırı söylüyor: *"Ölçülen uyumsuzluklar — öneri değil, gerçek. Yaratıcı kararı sen ve
+  yönetmen verir."* Reçete adımında durur çünkü uyumsuzluk BURADA doğar (dünya/palet/materyal/
+  DNA bu adımda seçilir); sonraki adımda haber vermek kararı geri sarmaktır.
+- **Yüzey kilidi** (`advisor.test.ts`, `agentsSync.test.ts` deseni): ölçümün bir kullanıcı
+  yüzeyinden import edilmesi, çağrılması ve render edilmesi testle zorunlu. İkinci test
+  çağrının `sceneCount` ve `phase0PresetId` dahil tüm girdileri taşıdığını kilitler — eksik
+  girdi, o kontrolün sessizce ölmesi demek.
+- Commit: `23ff18b`. Kapı: tsc 0 · vitest 2085/2085 (83 dosya) · build OK.
+
+## ✅ YAPILDI — G1d: ezilen directive makbuz bırakıyor (2026-07-26)
+
+**Ölçüm (gerçek `dnaDirectives` çıktısı, 4 ref · STY register):** `resolveLightAuthority`
+gerçek bir çözücüdür ve **46 dünyanın 31'inde** ref DNA'nın en az bir ışık cümlesini
+düşürüyor. Dağılım: `FLAT_WORLD_DROPS_DIRECTIONAL` (kurzgesagt_edu, whiteboard_explainer,
+motion_design_flat, ukiyo_e_print… — 2 cümle) ve `WORLD_LAW_GOVERNS_KEY` (paper_craft_popup,
+jjk_mappa, one_piece_toei, wes_anderson_symmetric, aot_wall_world, solo_leveling_gate… —
+1 cümle). **Hiçbiri kayıtlı değildi.**
+
+Tutarsızlık kanıtı: ref bastırması için deterministik makbuz VAR
+(`pure.ts` → `SUPPRESSED_WORLD_MISMATCH`), ışık için yoktu. Sistem bir eksende hesap veriyor,
+diğerinde vermiyordu. `AUTHORITY_HIERARCHY` ise liste sabiti; gerçek çözüm bunun gibi
+noktasal kapılarda yaşıyor.
+
+- `resolveLightAuthorityReceipt(dnaLight, world)` → `{ light, dropped[], rule, winner }`.
+  `rule`: `NO_WORLD_LAW` · `WORLD_AGREES` · `FLAT_WORLD_DROPS_DIRECTIONAL` ·
+  `WORLD_LAW_GOVERNS_KEY` · `NONE`. `dropped` **verbatim** — kırpılmaz.
+- **Prompt byte'ı değişmedi:** `light` alanı eski çözücüyle 46 dünyada parite testiyle
+  kilitli. Makbuz motor prompt'una değil **kanıta** girer.
+- Command paketine `authorityReceipts.light` — ve açıkça *deterministik*, ajanın
+  `directiveReceipts`/`suppressedContext` öz-beyanından ayrı. Ajan bunu okuyup "bu dünyada
+  rim light neden yok" sorusunu yeniden araştırmaz. **Kimliğe girmez:** karardan
+  türetilmiştir, karar değildir.
+- **Asıl yasa testle kalıcı:** *ışık metni değiştiyse makbuz kaybı listelemek ZORUNDA.*
+  46 dünya taranır; değişen her dünyada `dropped` dolu, `rule ≠ NONE`, `winner =
+  WORLD_LIGHT_LAW` olmalı. Yeni bir otorite kapısı makbuzsuz eklenirse bu test kırar.
+  Ayrıca ölçülen taban (≥20 dünya) kilitli — çözücü zayıflarsa fark edilir.
+- Kapı: tsc 0 · vitest **2090/2090 (84 dosya)** · build OK.
+
 ## Ledger (final convergence'a taşınan)
 
-1. **`directorNotes` ölçümü ekranda görünmüyor** — 125 satır uyumluluk zekâsı hesaplanıyor,
-   Mami görmüyor. Yüzeye taşınması ayrı iş; "site yön verir" yasası bugün fiilen çalışmıyor.
-2. **`AUTHORITY_HIERARCHY` çözücü değil** — kaybeden directive makbuzsuz eziliyor.
+1. **Diğer otorite eksenleri hâlâ makbuzsuz.** Işık ekseni kapandı; `.claude/rules/
+   core-prompt-path.md` başka ad-hoc ikili kapılar da işaret ediyor (prop/render-lock,
+   palet-hex, period). Aynı desen (`*Receipt` + parite testi) oralara da uygulanabilir.
+2. **`AUTHORITY_HIERARCHY` hâlâ liste sabiti** — tek gerçek çözücü ışıkta. Genel bir
+   çözücüye dönüşmesi ayrı iş; bugünkü kazanç, çözümün en yoğun olduğu eksende hesap
+   verebilirlik.
 
 ## Sıradaki tek adım
 

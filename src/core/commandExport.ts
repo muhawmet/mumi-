@@ -1,5 +1,5 @@
 import { CHARACTER_SHARE_DEFAULT, DATA, deriveProductionPath, effectiveMaterialId, normalizeHeroTags, refCompatibleWithWorld, worldPacketById } from './pure';
-import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, scrubRefFieldIP } from './brain';
+import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, resolveLightAuthorityReceipt, scrubRefFieldIP } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
 import { canonicalHash, lockDeliveryPromise, SCHEMA_IDS, sha256Hex } from './contract';
@@ -433,6 +433,24 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       refs,
       rule: 'Reference DNA is subordinate to source, production path, world, brand kit and explicit locks. Use it as direction, not as permission to copy IP or characters.',
     },
+    /**
+     * OTORİTE MAKBUZU (KALP-G1d, 2026-07-26) — DETERMİNİSTİK, ajanın öz-beyanı DEĞİL.
+     *
+     * `agentProtocol` içindeki `directiveReceipts` / `suppressedContext` ajanın kendi
+     * beyanıdır; bu blok kodun yaptığı işin kaydıdır. Ölçüm: 46 dünyanın **31'inde** ref
+     * DNA'nın en az bir ışık cümlesi düşüyordu ve hiçbiri kayıtlı değildi. Ref bastırması
+     * için makbuz vardı (`SUPPRESSED_WORLD_MISMATCH`), ışık için yoktu — sistem bir eksende
+     * hesap veriyor, diğerinde vermiyordu.
+     *
+     * Ajan bunu okur ve "bu dünyada rim light neden yok" sorusunu yeniden araştırmaz.
+     * Kanıt kimliğe girmez: karardan TÜRETİLMİŞTİR, karar değildir.
+     */
+    authorityReceipts: world
+      ? {
+          light: resolveLightAuthorityReceipt(dna.light, world),
+          rule: 'Deterministic code resolved this axis. `dropped` lists the ref-DNA clauses the world light law overruled, verbatim. Do not reintroduce a dropped clause: the world law already won that argument.',
+        }
+      : null,
     // WORLD PACKET (MACRO 2/3) — seçili dünyanın taşınabilir yaratıcı FİZİĞİ: render/figure/
     // environment/camera/light/material/motion/negative + palette-as-light + compatible ref +
     // vocab örneği. Bu bir PROMPT DEĞİLDİR; ajan final image prompt'unu BUNDAN yazar. Site
