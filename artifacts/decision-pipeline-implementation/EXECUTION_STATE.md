@@ -44,15 +44,15 @@ yerine geçen yetenek. Sonuç: yazıyı post'a bırakan tarif kabul edilmez · m
 dokunmaz (warp/parallax/üstünden kayan kamera yok) · yazı yanlışsa düzeltme yeri Premiere
 değil, kareyi yeniden üretmek.
 
-### ✅ AÇIK ÇATAL KAPANDI — **(A) Yönetmen tek yüzey** (Mami, 2026-07-26)
+### ✅ AÇIK ÇATAL KAPANDI — **konuşma ANA yol, ama silme YOK** (Mami, 2026-07-26)
 
-Mami'nin kararı: **konuşma ANA yol; site = karar + kütüphane + kanıt.** Sökülecekler
-(ölçülmüş, ~1050 satır): `advisor.ts` 411 · `productionPulse.ts` 100 ·
-`qa.ts→evaluateDirectorCabinet` + `QAStep` · hiç çağrılmayan `audit_full.ts` 542.
-Yasa bundan sonra **tek yerde** yaşar — bugünkü drift'in kaynağı yasanın iki yerde bakım
-istemesiydi. Silme başlamadan önce iki ön koşul: (1) çalışma ağacındaki kirli dosyalar
-çözülür, (2) her sökülen dosyanın site-UI importer'ı (RecipeStep / DashboardStep /
-RecipeRail / innerVoices) aynı turda kapatılır — yarım sökme yasak.
+Mami'nin kararı: **konuşma ANA yol; site = karar + kütüphane + kanıt.** İlk okuma bundan
+"~1050 satır sökülür" sonucunu çıkardı (`advisor.ts` 411 · `productionPulse.ts` 100 ·
+`qa.ts→evaluateDirectorCabinet` + `QAStep` · `audit_full.ts` 542). **Bu okuma Mami tarafından
+iki kez reddedildi:** *"zekâyı upgrade edecek hamleler yapıyoruz, downgrade varsa yapma"* →
+silme nötr bir hamledir. Sökülen tek şey **öneri/hüküm veren davranış** oldu (G1a), dosyalar
+değil. Aynı yasanın iki yerde bakım istemesi sorunu, kodu silerek değil **ölçüm/öneri sınırını
+tek yerde tanımlayarak** çözüldü.
 
 ### ✅ G1 TAMAM — reçete zekâsı (2026-07-26). Receipt: `receipts/KALP-G1.md`
 
@@ -88,18 +88,34 @@ Beş alt kapı, hepsi push'lu (`a3ac3a0..ee7d831`), her biri kapı yeşilken:
 **Kapı:** tsc 0 · vitest **2096/2096 (85 dosya)** · build OK.
 **Mami yetkisi (2026-07-26):** *"push her zaman açık"* — kapı yeşilken commit+push sorulmaz.
 
+### ✅ YÜZEY ÇATALI KAPANDI — silme YOK (Mami, 2026-07-26)
+
+Bu bölüm daha önce "yüzey cerrahisi" (sök: `QAStep` cabinet · `productionPulse.ts` ·
+`audit_full.ts`) diyordu ve `receipts/KALP-G1.md`'nin "Silinmeyecekler" kararıyla **çelişiyordu**
+— iki kaynak aynı gün zıt hüküm taşıdı. Mami çelişkiyi receipt lehine çözdü: ölçüt "zekâ artıyor
+mu"; 642 satır silmek en iyi ihtimalle nötr, `audit_full.ts` bilinçli bir teşhis yeteneği.
+
+**Kalıcı hüküm:** `advisor.ts`(→ artık `universeMeasure.ts`) · `productionPulse.ts` ·
+`audit_full.ts` · `QAStep` **kalıyor.** Yeniden açmak için yeni kanıt gerekir; "çağrılmıyor"
+tek başına kanıt değildir.
+
+**G1f `<pending>` — ad artık yeteneği söylüyor.** Çataldan geriye kalan tek gerçek kusur ucuzdu:
+`advisor.ts` → `universeMeasure.ts` (+ test dosyası, `AdvisorInput` → `UniverseMeasureInput`).
+G1a'da öneri yarısı söküldükten sonra ad **olmayan bir yeteneği iddia ediyordu**. Davranış
+değişmedi; iki importer (`RecipeStep`, `innerVoices`) + bir yorum atfı güncellendi.
+`AdvisorPortrait` portre bileşenine dokunulmadı. Kapı: tsc 0 · vitest **2096/2096 (85 dosya)**
+· build OK.
+
+**Yeni bakım kuralı (G0'ın nüksünden):** kickoff'a durum yazılmaz kuralı **receipt'ler için de
+geçerli** — karar `EXECUTION_STATE.md`'de, kanıt receipt'te. Bugünkü çelişki tam olarak kararın
+iki yere yazılmasından doğdu.
+
 ### ➡️ SIRADAKİ TEK ADIM
 
-**Yüzey cerrahisi** — Mami'nin kararı (A) tek yüzey, ama ölçüt "zekâ artıyor mu": **öneri/hüküm
-veren yüzeyler sökülür, ÖLÇÜM kalır.** Sökülecekler: `QAStep` cabinet ·
-`productionPulse.ts` (100) · çağrılmayan `audit_full.ts` (542). Kalan ölçüm (`refFit`,
-`dnaStrength`, `starterPackFor`, `directorNotes`'un ölçüm yarısı) **"advisor" adından
-çıkarılır** — isim öneri iddia ediyor, dosya `universeMeasure.ts` olur. Ön koşul: her sökülen
-dosyanın site-UI importer'ı (RecipeRail / innerVoices / QAStep) aynı turda kapatılır —
-yarım sökme yasak.
-
-Ardından **G2 — 46 dünyaya uygulanabilen ortak 5-kare sınav seti** (45 dünya hiç kare
-görmedi; darboğaz kelime kusuru değil doğrulama maliyeti).
+**G2 — 46 dünyaya uygulanabilen ortak 5-kare sınav seti** (45 dünya hiç kare görmedi; darboğaz
+kelime kusuru değil **doğrulama maliyeti**). Sınav prompt üretir, kare üretmez — kare Mami'nin
+elinde, API yok. Kapı kanıtı: iki dünyada gerçek çıktı — biri bilinen-iyi (Sürtünme referansı),
+biri hiç kare görmemiş bir dünya; fark okunabilir olmalı.
 
 ---
 

@@ -163,7 +163,7 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   // SUPPRESSED_WORLD_MISMATCH işaretleyip directive'ini boşaltır. Burası o kapıyı
   // atlıyordu: ham selectedRefIds doğrudan dnaDirectives'e gidiyordu, yani One Piece
   // güvertesi seçiliyken AJAN refDna'da "locked isometric orthographic diagram"
-  // grameri okuyordu. advisor.ts:287 de aynı kapıyı kullanır ("Same world gate as
+  // grameri okuyordu. universeMeasure.ts:287 de aynı kapıyı kullanır ("Same world gate as
   // production"). Uyumsuz ref command'e HİÇ girmez — susturulur, jenerikleştirilmez.
   const fullRefs = state.selectedRefIds
     .map((id) => DATA.refs.find((ref) => ref.id === id))

@@ -7,7 +7,7 @@ import { CanvasPreview } from '../../components/CanvasPreview';
 import { CHARACTER_SHARE_DEFAULT, DATA, isMaterialCompatibleWithWorld, paletteColors, worldRenderText } from '../../core/pure';
 import { downloadFile } from '../../core/exporters';
 import { recipeFileName, recipeJsonFileName, registerOf } from '../../core/brain';
-import { directorNotes, dnaStrength, refFit, starterPackFor } from '../../core/advisor';
+import { directorNotes, dnaStrength, refFit, starterPackFor } from '../../core/universeMeasure';
 import { WorldLawPanel } from '../../components/WorldLawPanel';
 import { RefDnaCards } from '../../components/RefDnaCards';
 import { WorldCover } from '../../components/WorldCover';

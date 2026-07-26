@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { directorNotes, starterPackFor } from './advisor';
+import { directorNotes, starterPackFor } from './universeMeasure';
 import { DATA } from './pure';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -119,7 +119,7 @@ describe('preset ↔ world tension (Faz 1 — 2026-07-02)', () => {
   it('PRESET_WORLD_SCOPE stays in sync with src/data/presets.ts', async () => {
     const { PHASE0_VIDEO } = await import('../data/presets');
     const { normalizeWorldId } = await import('./pure');
-    const { PRESET_WORLD_SCOPE } = await import('./advisor');
+    const { PRESET_WORLD_SCOPE } = await import('./universeMeasure');
     for (const preset of PHASE0_VIDEO) {
       const worlds = new Set<string>();
       if (preset.sets.selectedWorldId) worlds.add(normalizeWorldId(preset.sets.selectedWorldId));
@@ -129,10 +129,10 @@ describe('preset ↔ world tension (Faz 1 — 2026-07-02)', () => {
         }
       }
       const scopeList = PRESET_WORLD_SCOPE[preset.id];
-      expect(scopeList, `advisor PRESET_WORLD_SCOPE missing preset ${preset.id}`).toBeTruthy();
+      expect(scopeList, `universeMeasure PRESET_WORLD_SCOPE missing preset ${preset.id}`).toBeTruthy();
       const scoped = new Set(scopeList.map(normalizeWorldId));
       for (const w of worlds) {
-        expect(scoped.has(w), `preset ${preset.id}: world ${w} missing from advisor scope`).toBe(true);
+        expect(scoped.has(w), `preset ${preset.id}: world ${w} missing from universeMeasure scope`).toBe(true);
       }
     }
   });
@@ -140,10 +140,10 @@ describe('preset ↔ world tension (Faz 1 — 2026-07-02)', () => {
 
 describe('dnaStrength — world gate (KÖK 7c)', () => {
   it('a ref pinned to a different world contributes nothing and lands in zeroRefIds', async () => {
-    const { dnaStrength } = await import('./advisor');
+    const { dnaStrength } = await import('./universeMeasure');
     const arcaneRef = DATA.refs.find((r) => r.id === 'arcane_texture')!; // worldId: arcane_fortiche
     // Against a different world: production (pure.ts compatibleRefs) drops it,
-    // so the advisor must report zero contribution — UI must not lie.
+    // so the measurement must report zero contribution — UI must not lie.
     const gated = dnaStrength([arcaneRef], 'STY', 'pixar_3d_edu');
     expect(gated.filled).toBe(0);
     expect(gated.zeroRefIds).toContain('arcane_texture');
@@ -156,14 +156,14 @@ describe('dnaStrength — world gate (KÖK 7c)', () => {
 
 describe('dnaStrength — pinli ref yalnız kendi dünyasında (B1+B2 kök, 2026-07-17)', () => {
   it('kubrick ref (home: fincher_precision) deakins_naturalist\'te ZEROED (yabancı dünya)', async () => {
-    const { dnaStrength } = await import('./advisor');
+    const { dnaStrength } = await import('./universeMeasure');
     const { DATA } = await import('./pure');
     const kubrick = DATA.refs.find((r) => r.id === 'kubrick_one_point')!;
     const s = dnaStrength([kubrick], 'REAL', 'deakins_naturalist');
     expect(s.zeroRefIds).toContain('kubrick_one_point');
   });
   it('kubrick ref KENDİ dünyasında (fincher_precision) ZEROED DEĞİL', async () => {
-    const { dnaStrength } = await import('./advisor');
+    const { dnaStrength } = await import('./universeMeasure');
     const { DATA } = await import('./pure');
     const kubrick = DATA.refs.find((r) => r.id === 'kubrick_one_point')!;
     const s = dnaStrength([kubrick], 'REAL', 'fincher_precision');
@@ -171,7 +171,7 @@ describe('dnaStrength — pinli ref yalnız kendi dünyasında (B1+B2 kök, 2026
     expect(s.filled).toBeGreaterThan(0);
   });
   it('IP anime ref stays gated across sibling BOLD_CEL worlds', async () => {
-    const { dnaStrength } = await import('./advisor');
+    const { dnaStrength } = await import('./universeMeasure');
     const { DATA } = await import('./pure');
     const naruto = DATA.refs.find((r) => r.id === 'naruto_chakra_motion')!;
     const s = dnaStrength([naruto], 'STY', 'one_piece_toei');

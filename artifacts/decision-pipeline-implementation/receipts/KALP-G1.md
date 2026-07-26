@@ -236,6 +236,43 @@ noktasal kapılarda yaşıyor.
   Ayrıca ölçülen taban (≥20 dünya) kilitli — çözücü zayıflarsa fark edilir.
 - Kapı: tsc 0 · vitest **2090/2090 (84 dosya)** · build OK.
 
+## ✅ YAPILDI — G1e: SAHTE GÜNEŞ kapandı (2026-07-26, `ee7d831`)
+
+**Kaynak test değil, gerçek kare.** Mami'nin gözlemi: *"hep sahte bi ışık geliyor güneşten,
+odada bile."* Ölçüm bunu doğruladı: tek sahnede `motivated` **8×**, `window` **3×**, `sun` **3×**.
+Sebep yapısal — dünya yasası ışık kaynağı **MENÜSÜ** sayıyordu ve hiçbir sahne o menüden seçim
+yapmıyordu; her katman kendi kaynağını ekliyor, prompt üç güneşle motora gidiyordu.
+
+- **İki kol:** (1) dünya ↔ ref anlaşması artık **tekilleştirir** (`WORLD_AGREES_DEDUPED`) —
+  aynı ışık iki kez yazılmaz; (2) sahnenin `light_source` alanı menüyü **çözer** — sahne
+  kaynağını seçince diğerleri düşer. Sonuç ölçümü: 8/3/3 → **7/2/2**.
+- **Üç test politikası gerekçesiyle GÜNCELLENDİ, silinmedi.** Eski testler menü davranışını
+  kilitliyordu; menü kusurdu. Gerekçe dosyada yazılı. Yasa: **gerçek-kare hükmü test yeşilini ezer.**
+- **İki kendi kusuru ölçümle yakalandı:** nesne adlı yasak `window` sayısını 3→5 çıkarıyordu
+  (negatif cümle motorda pozitif sayılıyordu → pozitife çevrildi); `aperture` lens diyaframıyla
+  çakışıyordu (çıkarıldı). Kendi düzeltmesini ölçmeyen düzeltme, yeni kusurdur.
+
+## ✅ YAPILDI — G1f: ad artık yeteneği söylüyor (2026-07-26)
+
+**Çatal kapandı — Mami kararı (2026-07-26): silme yok, G2'ye geçilir.** `EXECUTION_STATE.md`'nin
+"yüzey cerrahisi" maddesi (`productionPulse.ts` + `audit_full.ts` sökülsün) bu receipt'in
+"Silinmeyecekler" kararıyla **çelişiyordu**; iki kaynak aynı gün zıt hüküm taşıyordu. Mami
+çelişkiyi receipt lehine çözdü: ölçüt "zekâ artıyor mu", 642 satır silmek en iyi ihtimalle nötr.
+
+Kalan tek gerçek kusur ucuzdu ve yapıldı: `advisor.ts` → **`universeMeasure.ts`**
+(+ `advisor.test.ts` → `universeMeasure.test.ts`, `AdvisorInput` → `UniverseMeasureInput`).
+G1a'da öneri yarısı söküldükten sonra dosyanın adı **olmayan bir yeteneği iddia ediyordu** —
+bir sonraki oturum adı okuyup "burada öneri motoru var" sanacaktı. Davranış değişmedi;
+import eden iki yüzey (`RecipeStep`, `innerVoices`) ve bir yorum atfı (`commandExport.ts:166`)
+güncellendi. `AdvisorPortrait` hattına **dokunulmadı** — o portre bileşeni, ölçüm değil.
+
+Kapı: tsc **0** · vitest **2096/2096 (85 dosya)** · build **OK**. Test sayısı düşmedi.
+
+**Sistem yeteneği hükmü (G0'ın nüksü):** G0'da kapattığımız kusur — durumun iki yerde yaşaması —
+G1'in kendi içinde yeniden doğdu: karar hem receipt'e hem state'e yazıldı, ikisi ayrıştı.
+Kickoff'un bakım kuralı receipt'ler için de geçerli olmalı: **karar state'te, kanıt receipt'te.**
+Bundan sonra receipt bir kararı tek başına taşımaz; state'e tek satır hüküm düşer.
+
 ## Ledger (final convergence'a taşınan)
 
 1. **Diğer otorite eksenleri hâlâ makbuzsuz.** Işık ekseni kapandı; `.claude/rules/
@@ -245,9 +282,11 @@ noktasal kapılarda yaşıyor.
    çözücüye dönüşmesi ayrı iş; bugünkü kazanç, çözümün en yoğun olduğu eksende hesap
    verebilirlik.
 
+3. **`productionPulse.ts` + `audit_full.ts` kalıyor** (Mami, 2026-07-26). Silme değil, gerekirse
+   büyütme masada. Yeniden açmak için yeni kanıt gerekir — "çağrılmıyor" tek başına kanıt değil.
+
 ## Sıradaki tek adım
 
-Üç taşıyıcıyı ekle — TDD: önce kırmızı test (reçete 50-50 oranını / @tag listesini / cast
-yaşını taşımıyor → prompt bunları içermiyor), sonra alanlar, sonra brief/prompt kablolaması,
-sonra kapı (`npx tsc --noEmit` → `npx vitest run` → `npm run build`). Ardından Codex bağımsız
-denetim.
+**G2 — 46 dünyaya uygulanabilen ortak 5-kare sınav seti.** Sınav prompt üretir, kare üretmez
+(API yok). Kapı kanıtı: iki dünyada gerçek çıktı — biri bilinen-iyi (Sürtünme referansı), biri
+hiç kare görmemiş bir dünya; fark okunabilir olmalı.

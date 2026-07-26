@@ -16,6 +16,9 @@
 // işi. `suggestRecipe()` 2026-07-26'da söküldü: konuyu kasten yok sayıp varsayılan
 // döndürüyordu — zekâ değil, zekâ kılığına girmiş bir sıfırlama düğmesiydi.
 //
+// Dosya adı 2026-07-26'da `advisor.ts` → `universeMeasure.ts` oldu: öneri yarısı söküldükten
+// sonra "advisor" adı olmayan bir yeteneği iddia ediyordu. Ad, dosyanın ne yaptığını söyler.
+//
 // No DOM, no LLM, deterministic.
 
 import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, refCompatibleWithWorld, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
@@ -25,7 +28,7 @@ import { worldCategory, type PreviewCategory } from './preview';
 export type NoteLevel = 'good' | 'info' | 'warn';
 export interface DirectorNote { level: NoteLevel; title: string; detail: string; }
 
-export interface AdvisorInput {
+export interface UniverseMeasureInput {
   projectClass: string;
   selectedWorldId: string;
   selectedPaletteId: string;
@@ -69,7 +72,7 @@ const PRESET_REGISTER_MAP: Record<string, Register[]> = {
 export const PRESET_WORLD_SCOPE: Record<string, string[]> = {
   // Reklam yolları (product/corp/event) amaca özel COMMERCIAL_REAL dünyalarına bağlıdır —
   // film-yönetmeni dünyaları (fincher/chivo/deakins) reklamda kullanılmaz. Bu liste
-  // presets.ts ile senkron kalmak ZORUNDA (advisor.test.ts kilitler).
+  // presets.ts ile senkron kalmak ZORUNDA (universeMeasure.test.ts kilitler).
   product_brand: ['product_brand_real', 'kurumsal_brand_film'],
   edu_explainer: ['pixar_3d_edu', 'paper_craft_popup'],
   cinematic_story: ['deakins_naturalist', 'chivo_naturalist_handheld'],
@@ -304,7 +307,7 @@ export function dnaStrength(refs: SurgeryRef[], register: Register = 'STY', worl
 }
 
 /** Whole-recipe directorial read. Ordered: blockers first, then polish, then praise. */
-export function directorNotes(input: AdvisorInput): DirectorNote[] {
+export function directorNotes(input: UniverseMeasureInput): DirectorNote[] {
   const notes: DirectorNote[] = [];
   const world = DATA.worlds.find((w) => w.id === input.selectedWorldId);
   const palette = DATA.palettes.find((p) => p.id === input.selectedPaletteId);
