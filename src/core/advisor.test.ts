@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { directorNotes, starterPackFor } from './advisor';
 import { DATA } from './pure';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 // `suggestRecipe` 2026-07-26'da söküldü (Mami: "site reçete önermesin, evreni tarif etsin").
 // Testi de onunla birlikte kalktı — fonksiyon yok, davranış yok. Yerine gelen yasa aşağıda
@@ -49,6 +54,35 @@ describe('directorNotes', () => {
     expect(normal.some((note) => /Uzun format|Sahne sayısı/.test(note.title))).toBe(false);
     const longForm = directorNotes({ ...full, sceneCount: 48 });
     expect(longForm.some((note) => note.level === 'info' && /Uzun format/.test(note.title))).toBe(true);
+  });
+});
+
+/**
+ * YÜZEY KİLİDİ (KALP-G1c, 2026-07-26).
+ *
+ * `directorNotes()` 125 satır uyumluluk ölçümü üretiyordu — register↔dünya çakışması,
+ * preset gerilimi, DNA/dünya uyumsuzluğu, uyumluluk kapısının BLOCKED'ı — ve `src/` içinde
+ * HİÇBİR yüzeyden çağrılmıyordu: tek çağıran kendi testiydi. Yani ölçüm hesaplanıp yutuluyordu
+ * ve testler yeşil kalmaya devam ediyordu, çünkü test fonksiyonu doğrudan çağırıyordu.
+ *
+ * Bu kilit o sessiz ölümü engeller: ölçüm bir kullanıcı yüzeyinden çağrılmak ZORUNDA.
+ * Mami'ye görünmeyen bir ölçüm, olmayan bir ölçümdür.
+ */
+describe('directorNotes yüzey kilidi — ölçüm ekrandan çağrılmak zorunda', () => {
+  it('bir sayfa yüzeyi directorNotes\'u import edip çağırır', () => {
+    const src = readFileSync(join(ROOT, 'src/pages/Recipe/RecipeStep.tsx'), 'utf8');
+    expect(src, 'RecipeStep directorNotes import etmiyor — ölçüm yine yutulmuş').toMatch(/directorNotes/);
+    expect(src, 'directorNotes import edilmiş ama çağrılmıyor').toMatch(/directorNotes\(\{/);
+    // Ölçümün gerçekten basıldığının kanıtı: render edilen kap.
+    expect(src, 'ölçüm hesaplanıyor ama render edilmiyor').toMatch(/data-testid="universe-measurement"/);
+  });
+
+  it('ölçüm eksik girdiyle sessizce daralmaz — sahne sayısı ve preset de geçilir', () => {
+    const src = readFileSync(join(ROOT, 'src/pages/Recipe/RecipeStep.tsx'), 'utf8');
+    const call = src.slice(src.indexOf('directorNotes({'), src.indexOf('directorNotes({') + 600);
+    for (const field of ['projectClass', 'selectedWorldId', 'selectedPaletteId', 'selectedRefIds', 'sceneCount', 'phase0PresetId']) {
+      expect(call, `directorNotes çağrısı ${field} taşımıyor — o kontrol sessizce ölür`).toContain(field);
+    }
   });
 });
 

@@ -7,7 +7,7 @@ import { CanvasPreview } from '../../components/CanvasPreview';
 import { CHARACTER_SHARE_DEFAULT, DATA, isMaterialCompatibleWithWorld, paletteColors, worldRenderText } from '../../core/pure';
 import { downloadFile } from '../../core/exporters';
 import { recipeFileName, recipeJsonFileName, registerOf } from '../../core/brain';
-import { dnaStrength, refFit, starterPackFor } from '../../core/advisor';
+import { directorNotes, dnaStrength, refFit, starterPackFor } from '../../core/advisor';
 import { WorldLawPanel } from '../../components/WorldLawPanel';
 import { RefDnaCards } from '../../components/RefDnaCards';
 import { WorldCover } from '../../components/WorldCover';
@@ -100,6 +100,23 @@ export const RecipeStep = () => {
     [previewWorld],
   );
   const dna = dnaStrength(selectedRefs, registerOf(projectClass), selectedWorldId);
+  // Yutulan ölçümü yüzeye çıkarır (KALP-G1c). `directorNotes` hesaplanıyordu ama hiçbir
+  // yüzeyden çağrılmıyordu; register/dünya çakışması, preset gerilimi ve uyumluluk kapısı
+  // Mami'ye hiç görünmüyordu. sceneCount ve preset de veriliyor — eksik girdi, ölçümün
+  // sessizce daralması demek.
+  const universeNotes = useMemo(
+    () => directorNotes({
+      projectClass,
+      selectedWorldId,
+      selectedPaletteId,
+      selectedRefIds,
+      selectedPropId,
+      sceneCount: store.sceneCount,
+      phase0PresetId: store.phase0PresetId,
+      rawSource: store.rawSource,
+    }),
+    [projectClass, selectedWorldId, selectedPaletteId, selectedRefIds, selectedPropId, store.sceneCount, store.phase0PresetId, store.rawSource],
+  );
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, subject, recipeScenes });
   const activeRef = DATA.refs.find((ref) => ref.id === (activePreviewRefId || selectedRefIds[0] || ''));
   const selectedColors = paletteColors(selectedPalette || undefined, previewWorld);
@@ -544,6 +561,42 @@ export const RecipeStep = () => {
         <div role="alert" style={{ padding: '10px 14px', borderRadius: 8, borderLeft: '3px solid var(--amber)', background: 'var(--embersoft)', color: 'var(--amber)', fontSize: 13, fontWeight: 700 }}>
           Eksik seçim: {readiness.missing.join(', ')}
         </div>
+      )}
+
+      {/*
+        EVREN ÖLÇÜMÜ (KALP-G1c, 2026-07-26).
+
+        `directorNotes()` 125 satır uyumluluk ölçümü üretiyordu — register↔dünya çakışması,
+        preset↔dünya gerilimi, DNA/dünya uyumsuzluğu, uyumluluk kapısının BLOCKED'ı — ve
+        `src/` içinde HİÇBİR yerden çağrılmıyordu: tek çağıran kendi testiydi. Yani site
+        yönü biliyor, söylemiyordu. Mami'nin yasası ("site dünyayı/ruhu/DNA'yı tarif etsin")
+        fiilen çalışmıyordu; sildiğimiz sahte zekânın (`suggestRecipe`) yerine konan şey bu.
+
+        Burada durur çünkü uyumsuzluk BURADA doğar: dünya, palet, materyal ve DNA bu adımda
+        seçiliyor. Bir sonraki adımda haber vermek, kararı geri sarmak demektir.
+      */}
+      {universeNotes.length > 0 && (
+        <Panel title="Evren ölçümü" subtitle="Ölçülen uyumsuzluklar — öneri değil, gerçek. Yaratıcı kararı sen ve yönetmen verir.">
+          <div style={{ display: 'grid', gap: 8 }} data-testid="universe-measurement">
+            {universeNotes.map((note, index) => (
+              <div
+                key={`${note.title}-${index}`}
+                role={note.level === 'warn' ? 'alert' : undefined}
+                style={{
+                  padding: '9px 13px',
+                  borderRadius: 8,
+                  borderLeft: `3px solid ${note.level === 'warn' ? 'var(--m2-danger)' : 'var(--m2-amber)'}`,
+                  background: 'var(--m2-amber-soft)',
+                }}
+              >
+                <div style={{ fontSize: 12.5, fontWeight: 700, color: note.level === 'warn' ? 'var(--m2-danger)' : 'var(--m2-amber)' }}>
+                  {note.title}
+                </div>
+                <div style={{ fontSize: 11.5, color: 'var(--m2-muted)', marginTop: 3, lineHeight: 1.5 }}>{note.detail}</div>
+              </div>
+            ))}
+          </div>
+        </Panel>
       )}
     </div>
   );
