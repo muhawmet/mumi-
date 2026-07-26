@@ -1,21 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { directorNotes, suggestRecipe, starterPackFor } from './advisor';
+import { directorNotes, starterPackFor } from './advisor';
 import { DATA } from './pure';
 
-describe('suggestRecipe', () => {
-  it.each([
-    'Su döngüsü dersi: buharlaşma ve yoğuşma',
-    'ürün reklamı, packshot, makro yüzey',
-    'One Piece Elbaf tarzı dev ada macerası',
-  ])('returns the same valid neutral starter without reading source/topic words: %s', (topic) => {
-    const suggestion = suggestRecipe(topic);
-    expect(suggestion).toEqual(suggestRecipe(''));
-    expect(DATA.worlds.some((world) => world.id === suggestion.worldId)).toBe(true);
-    expect(DATA.palettes.some((palette) => palette.id === suggestion.paletteId)).toBe(true);
-    expect(suggestion.refIds.length).toBeGreaterThan(0);
-    expect(suggestion.refIds.every((id) => DATA.refs.some((ref) => ref.id === id))).toBe(true);
-  });
-});
+// `suggestRecipe` 2026-07-26'da söküldü (Mami: "site reçete önermesin, evreni tarif etsin").
+// Testi de onunla birlikte kalktı — fonksiyon yok, davranış yok. Yerine gelen yasa aşağıda
+// `evren ölçümü` testiyle kilitli: uyumsuzluk yoksa site ÖLÇÜM bildirir, üretim sözü vermez.
 
 describe('directorNotes', () => {
   const full = {
@@ -25,9 +14,17 @@ describe('directorNotes', () => {
     selectedRefIds: [],
   };
 
-  it('praises a coherent v2 recipe even when reference DNA is optional', () => {
+  // Eski hâli `notes[0].level === 'good'` bekliyordu — "Reçete sağlam · üretime hazır" övgüsü.
+  // O cümle söküldü: uyumluluk yeşilliği üretim sözü değildir (PROJECT_CONTRACT — kare hükmü
+  // ayrı kapı). Testin NİYETİ korunuyor: tutarlı bir reçete uyarı üretmez. Artık ek olarak
+  // ölçüm satırının üretim sözü VERMEDİĞİ de kilitli.
+  it('tutarlı reçete uyarı üretmez; ölçüm bildirir ama üretim sözü vermez', () => {
     const notes = directorNotes(full);
-    expect(notes[0].level).toBe('good');
+    expect(notes.some((note) => note.level === 'warn')).toBe(false);
+    expect(notes[0].title).toBe('Evren ölçümü');
+    expect(notes[0].level).toBe('info');
+    expect(notes[0].detail).not.toMatch(/üretime hazır/);
+    expect(notes[0].detail).toMatch(/kare hükmü ayrı kapıdır/);
     expect(notes.some((note) => note.title === 'Referans DNA seçilmedi')).toBe(true);
   });
 

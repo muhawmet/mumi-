@@ -1,41 +1,26 @@
-// The MAMILAS "creative director" advisor — pure intelligence on top of the
-// existing decode + compatibility engine. Two jobs:
-//   suggestRecipe()  — turn a topic into a full world+palette+DNA recipe
-//   directorNotes()  — read the whole recipe and give directorial feedback
-// No DOM, no LLM, deterministic. Reuses decodeBrief / registerOf / worldCategory.
+// MAMILAS evren tarifi — decode + uyumluluk motorunun üstünde saf ÖLÇÜM.
+//
+// Mami'nin yasası (2026-07-26): "Site dünyayı, ruhu, DNA'yı, süreleri tarif etsin —
+// yazma kısmı bizde. Ben evreni orada tasarlayıp seninle yaratıyorum."
+//
+// Yani bu dosya iki şeyi YAPAR:
+//   refFit / dnaStrength / refContribution / starterPackFor — dünya ↔ DNA ölçümü
+//   directorNotes() — reçetenin ÖLÇÜLEBİLİR uyumsuzluklarını bildirir
+//
+// Ve iki şeyi YAPMAZ (sohbette doğar, sitede değil):
+//   • reçete/konu önermek — ikinci bir beyin kurar, yönetmenle çakışır
+//   • yaratıcı hüküm vermek ("doruk zayıf", "referanslar dağınık", "üretime hazır")
+//
+// Ölçüm ile öneri arasındaki sınır budur: ölçüm bir GERÇEĞİ bildirir (bu ref bu dünyada
+// hiçbir alanı doldurmuyor), öneri NE YAPILACAĞINI söyler. İkincisi Mami'nin ve yönetmenin
+// işi. `suggestRecipe()` 2026-07-26'da söküldü: konuyu kasten yok sayıp varsayılan
+// döndürüyordu — zekâ değil, zekâ kılığına girmiş bir sıfırlama düğmesiydi.
+//
+// No DOM, no LLM, deterministic.
 
-import { decodeBrief } from './source';
-import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, refCompatibleWithWorld, resolveRecipeDefaults, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
+import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, refCompatibleWithWorld, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
 import { dnaDirectives, registerOf, type DnaDirectives, type Register } from './brain';
 import { worldCategory, type PreviewCategory } from './preview';
-
-export interface RecipeSuggestion {
-  path: string;
-  worldId: string;
-  paletteId: string;
-  refIds: string[];
-  reason: string;
-  confidence: 'high' | 'medium' | 'fallback';
-}
-
-/**
- * Generic starter recipe. Raw source/topic is deliberately ignored: the site cannot infer
- * production intent from source words. Mami may explicitly apply this neutral starter, then
- * choose the real world/palette/ref; intelligent creative development belongs to the Director.
- */
-export function suggestRecipe(_topic: string): RecipeSuggestion {
-  const decoded = decodeBrief('');
-  const p = decoded.project;
-  const defaults = resolveRecipeDefaults(decoded.path, p.world);
-  return {
-    path: decoded.path,
-    worldId: p.world,
-    paletteId: p.palette,
-    refIds: p.ref ? [p.ref] : defaults.selectedRefIds,
-    reason: decoded.reason,
-    confidence: decoded.confidence,
-  };
-}
 
 export type NoteLevel = 'good' | 'info' | 'warn';
 export interface DirectorNote { level: NoteLevel; title: string; detail: string; }
@@ -49,7 +34,6 @@ export interface AdvisorInput {
   rawSource?: string;
   sourceCoverage?: number | null;
   sceneCount?: number;
-  intensities?: number[];
   phase0PresetId?: string;
 }
 
@@ -109,10 +93,6 @@ export const PRESET_WORLD_SCOPE: Record<string, string[]> = {
 // authority, but the palette can mislead downstream agents — worth a heads-up.
 const GRITTY_WORLD_IDS = new Set(['arcane', 'arcane_fortiche', 'painterly_shadow', 'graphic_comic']);
 const CLEAN_PALETTE_IDS = new Set(['vibrant_clean_education', 'vibrant_edu', 'pastel_soft', 'clinical_blue', 'cool_scientific']);
-
-function refFamily(cat: string): string {
-  return String(cat || '').split('/')[0].trim().toLowerCase();
-}
 
 export const REF_FIT_CONFLICT = 45;
 
@@ -408,16 +388,17 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     } catch { /* deriveTeachingRecipe is best-effort here */ }
   }
 
-  // reference coherence — too many distinct DNA families muddies the voice
-  if (refs.length > 3) {
-    const sorted = world ? [...refs].sort((a, b) => refFit(world, b) - refFit(world, a)) : refs;
-    const toRemove = sorted.slice(3).map((r) => r.name);
-    notes.push({ level: 'info', title: 'Çok fazla referans', detail: `${refs.length} DNA sesi karışır. Çıkar: ${toRemove.join(', ')}.` });
-  } else if (refs.length >= 2) {
-    const families = new Set(refs.map((r) => refFamily(r.cat)));
-    if (families.size === refs.length) {
-      notes.push({ level: 'info', title: 'Referanslar dağınık', detail: `Seçili DNA'lar ${families.size} ayrı aileden; ortak bir görsel dil seçersen sahneler tutarlı olur.` });
-    }
+  // Referans sayısı — ÖLÇÜM: dördüncü ve sonraki DNA'ların dünya-uyumu düşüktür, o yüzden
+  // hangi ref'in hangi uyumla durduğu bildirilir. Hangisinin çıkacağı Mami'nin kararı;
+  // bu satır "çıkar" demez, sıralamayı gösterir.
+  if (refs.length > 3 && world) {
+    const ranked = [...refs].sort((a, b) => refFit(world, b) - refFit(world, a));
+    const tail = ranked.slice(3).map((r) => `${r.name} %${refFit(world, r)}`);
+    notes.push({
+      level: 'info',
+      title: 'Referans sayısı',
+      detail: `${refs.length} DNA seçili. Dünya-uyumu en düşük olanlar: ${tail.join(' · ')}.`,
+    });
   }
 
   // scene-count note — long-form is allowed; this is a soft cost heads-up, not a block.
@@ -436,15 +417,18 @@ export function directorNotes(input: AdvisorInput): DirectorNote[] {
     notes.push({ level: 'info', title: 'Tek konu · çok sahne', detail: 'Çok-satırlı SOURCE vermezsen her sahne aynı beat\'i tekrarlar. Kaynağı satırlara böl.' });
   }
 
-  // pacing read
-  if (input.intensities && input.intensities.length >= 3) {
-    const peak = Math.max(...input.intensities);
-    if (peak < 60) notes.push({ level: 'info', title: 'Doruk zayıf', detail: `Pacing arcı düz (tepe %${Math.round(peak)}). Bir climax beat'ini yükselt.` });
-  }
-
+  // Uyumsuzluk yoksa ÖLÇÜM bildirilir, övgü verilmez. Eski hâli "Reçete sağlam — üretime
+  // hazır" diyordu: uyumluluk yeşilse üretim sözü veriyordu, oysa üretim hükmü yalnız gerçek
+  // kareyle verilir (PROJECT_CONTRACT: "test yeşili görsel PASS değildir"). Kalan cümle
+  // yalnız ölçülen şeyi söyler: register, dünya, ve DNA'nın hangi alanları doldurduğu.
   if (!blocking && world && palette && lowFitRefs.length === 0) {
     const strength = dnaStrength(refs, register, input.selectedWorldId);
-    notes.unshift({ level: 'good', title: 'Reçete sağlam', detail: `${REGISTER_LABEL[register]} register'ı ve "${world.name}" uyumlu; DNA gücü ${strength.filled}/${strength.total} — üretime hazır.` });
+    const filled = strength.roles.length ? strength.roles.join(' · ') : 'yalnız Render Lock';
+    notes.unshift({
+      level: 'info',
+      title: 'Evren ölçümü',
+      detail: `${REGISTER_LABEL[register]} · "${world.name}" · DNA ${strength.filled}/${strength.total} alan: ${filled}. Uyumsuzluk ölçülmedi — kare hükmü ayrı kapıdır.`,
+    });
   }
 
   return notes;

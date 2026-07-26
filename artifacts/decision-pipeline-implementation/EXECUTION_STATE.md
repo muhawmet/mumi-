@@ -1,5 +1,64 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+## 🫀 AKTİF OPERASYON — KALP NAKLİ (2026-07-26, CURRENT AUTHORITY)
+
+**Mami mandası:** üretim DURDU ("üretimi unut bi süre, sorma artık"); beyin adaptasyonu
+A'dan Z'ye. Aşağıdaki tüm bölümler tarihsel kanıttır ve bu bölümü ezemez.
+
+**Operasyon planı (tek gerçek):** `docs/superpowers/plans/2026-07-26-mamilas-kalp-nakli.md`
+— kapılar G0→G5, denetim bölüşümü (Codex ikinci göz), `/clear` kickoff metni, receipt biçimi.
+Çalışma biçimi: `/mamilas-buddy` (DEHB merkezde). Yürütme: `/mamilas-pipeline`.
+
+### ✅ G0 TAMAM — hafıza mührü (2026-07-26)
+
+**Ölçülen drift:** bu dosya 2026-07-17'de mühürlüydü, HEAD 07-26. Arada **24 commit,
+130 dosya, +95 011 / −5 311 satır** — hiçbiri durum kaydında yoktu. `/clear` atan ajan
+dokuz gün geriden başlıyordu. Kapatılan yetenek kusuru: sistem kendi durumunu taşıyamıyordu.
+
+**07-17 → 07-26 arasında ne oldu (commit özneleri, subject düzeyinde doğru):**
+
+- `e2dd283` (07-18) — **AÇIK LEDGER KAPANDI:** M1+M2 kök-B hash/verdict içerik-ankrajı.
+  Önceki mühürdeki iki açık madde (verifyProjectPack hash ankrajı KRİTİK + jüri verdict
+  öz-beyanı) artık açık değil.
+- `c07c010` + `4c0c79d` (07-19) — firewall/render P1/P2/P5 serbest-metin telif kapısı;
+  P3/P4 projectClass tek-kanon + P6.
+- `42c68f1` `166aeee` `c7f3e65` `69da490` `bd53eb1` `a98a4c8` `9865ce1` `4325d1b` (07-23/24)
+  — command onarım turu: render-lock bug, jüri izolasyonu, `--skip-image-jury` tüm yollara,
+  `motionCadence` IMAGE author context'ine, refs undefined TS↔mjs hash paritesi, CARRY OVER
+  yasası §7'de bir kez, launcher `--director` provider codex→claude, bayat inbox temizliği.
+- `6e3f955` `1102baf` `8a94bc9` (07-24) — **Konuşmalı Yönetmen**: tasarım → command standardı
+  → `mamilas-director` skill'i.
+- `37381ea` (07-24) — kalite kapısı tam yeşil (vitest koşum onarımı + drift senkronu).
+- `0affa7b` (07-25) — **on-screen text ADAPTİF**: AUTO artık yazıyı yasaklamıyor, ajan karar
+  veriyor.
+- `1ad7520` (07-25) — NIGHT BEAT "karanlık" kontaminasyonu: gölge ≠ gece.
+- `15b819f` (07-25) — yönetmen **revizyon fazı** + **start-frame yasası**; Sürtünme 31 ve
+  Bileşke 52 teslim seti.
+- `a3ac3a0` (07-26) — **ref seçimi gerçekten çalışıyor** + automotive imza refleri + kelime
+  tuzakları kaynakta.
+
+**Yeni ürün yasası (kaynağı Mami, 2026-07-26 mülakatı — koda değil çalışma biçimine ait):**
+Mami **After Effects bilmiyor**, Premiere öğreniyor → **post-prodüksiyonda yazı katmanı YOK.**
+On-screen text karede doğar, karede biter. "Yazıyı hiç bozmama" bir tercih değil, AE'nin
+yerine geçen yetenek. Sonuç: yazıyı post'a bırakan tarif kabul edilmez · motion yazı bölgesine
+dokunmaz (warp/parallax/üstünden kayan kamera yok) · yazı yanlışsa düzeltme yeri Premiere
+değil, kareyi yeniden üretmek.
+
+### ➡️ SIRADAKİ TEK ADIM (restart sonrası)
+
+**Mami'ye AÇIK ÇATALI yeniden sor** — plan dosyasındaki "AÇIK ÇATAL" bölümü: yönetmen tek
+yüzey mi (A), iki yüzey mi (B), önce tam envanter mi (C). Mami restart öncesi *"tekrar
+sorduracam, bekle"* dedi. **Cevap gelmeden `src/` içinde silme/taşıma YOK.** Ölçüm hazır:
+14.294 satır üç kümeye ayrıldı (canlı / yalnız-site-UI / hiç-çağrılmayan `audit_full` 542).
+
+Çatal kapanınca: **G1 — gerçek-kare hataları koda iniyor.** NB2 hata kataloğunun 10 maddesi tek tek ölçülecek:
+her biri için kodda kilit var mı · testle bağlı mı · yalnız ajan hafızasında mı. Ölçüm
+tablosu `receipts/KALP-G1.md`'ye girer, sonra yalnız hafızada olanlar koda iner.
+**Ön ölçüm (varsayım değil, sayım):** `src/core`'da ilgili konularda 13 dosyada 67 iz var —
+yani bir kısmı zaten kilitli. Hangisi olduğu ölçülmeden kilit yazılmaz.
+
+---
+
 > **✅ 2026-07-17 GECE — 3 FIX TURU TAMAM (24+ hata), CLEAR'A HAZIR.** Commit zinciri:
 > `416560e` (scan drift) → `c5680dd` (9 fix) → `df3bea4` (G1-G6 6 kök-fix) — hepsi origin/main'e
 > push'lu, çalışma ağacı TERTEMİZ. Garanti denetçiler: 9-fix turunda 2 bulgu (kapatıldı),

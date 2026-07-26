@@ -7,8 +7,6 @@ import { ArchetypeSlate } from '../../components/ArchetypeSlate';
 import { PHASE0_VIDEO, buildDirectorMandate, directorChoiceMap, directorDefaultSets, type Phase0Preset } from '../../data/presets';
 import { DATA, parseSourceInput } from '../../core/pure';
 import { decodeBrief } from '../../core/source';
-import { suggestRecipe } from '../../core/advisor';
-import { Wand2 } from 'lucide-react';
 
 const CLASS_OPTIONS = DATA.paths.map((path) => ({ id: path.id, label: path.name }));
 
@@ -22,16 +20,11 @@ export const DashboardStep = () => {
     vault, saveToVault, loadFromVault, deleteFromVault, importProjectPack,
   } = studioState;
   const [vaultName, setVaultName] = useState('');
-  const [autoRecipe, setAutoRecipe] = useState<{ reason: string; confidence: string } | null>(null);
 
-  const onAutoRecipe = () => {
-    const s = suggestRecipe('');
-    applyPreset({ projectClass: s.path, selectedWorldId: s.worldId, selectedPaletteId: s.paletteId, selectedRefIds: s.refIds });
-    setField('phase0PresetId', '');
-    setField('directorChoices', {});
-    setField('directorBrief', '');
-    setAutoRecipe({ reason: s.reason, confidence: s.confidence });
-  };
+  // "Genel başlangıç" düğmesi 2026-07-26'da söküldü. `suggestRecipe()` konuyu kasten yok
+  // sayıp varsayılan reçeteyi basıyordu — üstüne preset/directorChoices/directorBrief'i
+  // temizliyordu. Yani zekâ değil, zekâ kılığına girmiş bir sıfırlama. Mami'nin yasası:
+  // site evreni TARİF eder (dünya/ruh/DNA/süre), reçeteyi ÖNERMEZ — öneri sohbette doğar.
 
   const presets = PHASE0_VIDEO;
   const sourceParsed = useMemo(() => parseSourceInput(projectTopic), [projectTopic]);
@@ -199,38 +192,9 @@ export const DashboardStep = () => {
       </Panel>
 
       {/* Zone 3: AYRINTILAR */}
-      <Panel
-        style={{ order: 3 }}
-        title="Ayrıntılar"
-        aside={
-          <Button onClick={onAutoRecipe} style={{ padding: '9px 14px', fontSize: 12.5 }}>
-            <Wand2 size={14} /> Genel başlangıç
-          </Button>
-        }
-      >
+      <Panel style={{ order: 3 }} title="Ayrıntılar">
         {/* KONU & SINIF */}
         <div className="ml-v3-eyebrow" style={{ marginTop: 0, marginBottom: 14 }}>KONU &amp; SINIF</div>
-
-        <AnimatePresence>
-          {autoRecipe && (
-            <motion.div
-              initial={{ opacity: 0, y: -6, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              style={{ overflow: 'hidden', marginBottom: 16 }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--m2-amber)', background: 'var(--m2-amber-soft)' }}>
-                <Wand2 size={15} color="var(--m2-amber)" />
-                <div style={{ minWidth: 0 }}>
-                  <div style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--m2-amber)' }}>
-                    Reçete kuruldu · {autoRecipe.confidence === 'high' ? 'yüksek güven' : autoRecipe.confidence === 'medium' ? 'orta güven' : 'tahmini'}
-                  </div>
-                  <div style={{ fontSize: 11.5, color: 'var(--m2-muted)', marginTop: 2 }}>{autoRecipe.reason} → Reçete adımında ince ayar yapabilirsin.</div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         <div className="dashboard-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
           <Field label="Proje konusu" hint='Kanonik kaynak için "SOURCE:" ön ekiyle çoklu beat yazabilirsin.'>
