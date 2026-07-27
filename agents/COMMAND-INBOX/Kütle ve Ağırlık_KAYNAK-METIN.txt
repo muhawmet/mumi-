@@ -1,0 +1,51 @@
+KÜTLE VE AĞIRLIK — 5. SINIF · KAYNAK METİN (siteye yapıştırılacak)
+=========================================================================
+Anlatıcı: Mira (dış ses). TEK anlatıcı — ekranda kimse konuşmuyor, ağızlar kapalı.
+Kaynak: "Kütle ve Ağırlık video senaryosu 5. sınıf.docx" (sunucu senaryosu →
+tek-anlatıcı hikâyeye çevrildi; hiçbir kavram düşürülmedi).
+
+Kavram listesi (hepsi metinde geçiyor):
+  kütle = madde miktarı · eşit kollu terazi · kg ve g · yere göre DEĞİŞMEZ
+  yer çekimi = gök cisminin maddeyi merkezine çekmesi
+  ağırlık = kütleye etki eden yer çekimi kuvvetinin büyüklüğü
+  dinamometre · Newton (N) · yere göre DEĞİŞİR
+  Ay karşılaştırması: 60 kg → Dünya'da 600 N, Ay'da (çekimin 1/6'sı) 100 N; terazi yine 60 kg
+
+TON: parlak, meraklı, sıcak-eğitici. 5. sınıf temposu, hızlı ama net. İngilizce kelime yok.
+OKUMA: "60 kg" → "altmış kilogram" · "600 N" → "altı yüz Newton" · "1/6" → "altıda bir".
+=========================================================================
+
+
+>>>>> KAYNAK METİN BAŞLIYOR <<<<<
+
+
+Mira o akşam mutfakta annesine yardım ediyordu. Poşetten çıkardığı elmayı tartının üstüne koydu ve ekranda beliren sayıyı yüksek sesle okudu: "Bu elmanın ağırlığı iki yüz gram." Annesi gülümsedi ama Mira'nın kendi kafasında bir şey takıldı. Çünkü o gün fen dersinde tam da bunun üzerine konuşmuşlardı: kütle ve ağırlık, günlük hayatta durmadan karıştırdığımız, aslında bambaşka iki kavramdı. Mira elmayı avucunda çevirdi ve merakla düşünmeye başladı: ikisi gerçekten aynı şey değil miydi?
+
+İlk durağı kütleydi. Kütle, bir cismin içinde bulunan madde miktarıydı. Yani bu elmanın içinde ne kadar madde varsa, kütlesi tam olarak oydu. Kütleyi ölçmek için eşit kollu terazi kullanılıyordu; bir kefeye cisim, diğerine bilinen kütleler konuyor ve kollar dengelenene kadar ekleniyordu. Kütlenin birimi kilogramdı, daha küçük cisimler için gram kullanılıyordu. Ama Mira'yı asıl şaşırtan kuralı öğretmeni tahtaya çizerek anlatmıştı: kütle değişmeyen bir madde miktarıydı. Yani Mira bu elmayı alıp Dünya'nın kutuplarına götürse de, bir gün Ay'a çıkarsa da, hatta Mars'a yollasa da elmanın kütlesi asla değişmezdi. Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu.
+
+Sıra ikinci kavramdaydı. Mira elmayı parmaklarının arasından bıraktı; elma tezgâhın üstüne düştü. Hiç düşünmüş müydü, zıpladığında neden havada asılı kalmıyordu? Ya da elinden bıraktığı her şey neden hep aşağı gidiyordu? Çünkü Dünya, üzerindeki her şeyi merkezine doğru çekiyordu. Gök cisimlerinin maddelere uyguladığı bu çekim kuvvetine yer çekimi kuvveti deniyordu. İşte ağırlık da tam olarak buydu: kütleye etki eden yer çekimi kuvvetinin büyüklüğü. Ağırlık bir kuvvet olduğu için de teraziyle değil, dinamometreyle ölçülüyordu. Birimi Newton'dı ve kısaca N harfiyle gösteriliyordu. Ve en önemlisi, kütlenin tam tersine, ağırlık bulunduğumuz yere göre değişiyordu.
+
+Mira bunu gerçekten anlamak için hayalinde bir yolculuğa çıktı. Bir astronot düşündü; kütlesi Dünya'da tam 60 kg olan bir astronot. Astronot Dünya'da eşit kollu teraziye çıktığında terazi 60 kg gösteriyordu. Aynı astronot dinamometreye asıldığında ise ağırlığı yaklaşık 600 N ölçülüyordu. Sonra Mira astronotu Ay'a gönderdi. Ay'ın çekim kuvveti Dünya'nınkinin sadece 1/6'sı kadardı. Astronot Ay'da yine eşit kollu teraziye çıktı ve terazi yine 60 kg gösterdi; çünkü kütle değişmiyordu. Ama dinamometreye asıldığında ağırlığı altıda birine düştü ve yaklaşık 100 N ölçüldü. İşte bu yüzden astronotlar Ay'da kendilerini çok daha hafif hissediyor, dev adımlarla süzülerek zıplayabiliyorlardı.
+
+Mira gözlerini açtığında her şey yerine oturmuştu. Kütle maddenin kendisiydi; değişmezdi, eşit kollu teraziyle ölçülürdü ve birimi kilogramdı. Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi; dinamometreyle ölçülürdü, birimi Newton'dı ve bulunduğumuz yere göre değişirdi. Demek ki tartıya koyduğu elma için söylediği cümle eksikti: elmanın 200 gram olan şeyi ağırlığı değil, kütlesiydi.
+
+Mira elmayı bu kez bilerek ve isteyerek ısırdı. Artık biri ona kütle ile ağırlık arasındaki farkı sorarsa cevabı hazırdı. Bir sonraki keşifte görüşmek üzere. Merakla kalın, bilimle kalın!
+
+
+>>>>> KAYNAK METİN BİTTİ <<<<<
+
+=========================================================================
+ÜRETİM NOTLARI (siteye girmez — kesim masası için)
+
+• Tekrar eden kimlikler: @mira (kahraman) · @elma (hero-prop, açılış ve kapanışta) ·
+  @terazi (eşit kollu) · @dinamometre · @astronot. Terazi ile dinamometre yan yana
+  gösterilecek kareler var — ikisi de tag'lenmeli, yoksa alet sürüklenir.
+• Ekran yazısı adayları (terim ADLANDIRILDIĞI anda, sonucu gösterilirken değil):
+  KÜTLE · AĞIRLIK · YER ÇEKİMİ · terazi kadranında "60 kg" · dinamometre kadranında
+  "600 N" ve "100 N". Newton'ın N'si ile sayı arasında tek boşluk (NB2 kuralı).
+• 60/600/100 sayıları aynı karede terazi ve dinamometre kadranlarında okunacak —
+  bu üç kare yazı hassasiyeti yüksek; harf-sayısıyla tarif edilerek yazılmalı.
+• Ay bölümü split-screen İSTEMİYOR: docx "ekran ikiye bölünür" diyor, biz iki ayrı
+  tam-dekorlu kare üretiyoruz (Dünya laboratuvarı / Ay yüzeyi). Bölünmüş ekran
+  premium-show yasasına aykırı ve void doğuruyor.
+• Kaynak docx'teki özet TABLOSU anlatıya çevrildi; ekranda tablo basılmayacak.
