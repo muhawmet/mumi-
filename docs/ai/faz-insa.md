@@ -44,6 +44,7 @@ tutarsa bayatlar (G0'ın dersi: karar `EXECUTION_STATE`'te, kanıt receipt'te).
 | Araç | Ne yapar |
 |---|---|
 | `node scripts/prompt-lint.mjs <_PROMPTLAR.txt>` | 9 slot + tuzak kelime + STYLE tavanı, kare kare. `--all` · `--strict` |
+| `node scripts/kapanis-hasadi.mjs --all` | Biten video → karne + ders adayı + dünya kusuru + kit sapması. `--check` duvar |
 | `node scripts/motion-qc.mjs <klip>` | Klipten 4 kare çeker; yazı morph · yeni öğe · warp denetimi |
 | `node scripts/memory-sync.mjs` | Hafıza ↔ repo aynası. `--check` sapmada exit 1 |
 | `node scripts/agents-sync.mjs --check` | Kanon → iki yüzey parite denetimi |

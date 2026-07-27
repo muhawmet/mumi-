@@ -232,15 +232,49 @@ doğal boşluklar vardı (2108 testlik vitest, build, üç arka plan ajanı), hi
 
 **Kapı:** tsc 0 · vitest **2108/2108** · build OK · hafıza aynası güncel · kırık atıf 0.
 
+### ✅ KAPANIŞ HASADI TAMAM — biten video artık klasörde ölmüyor (2026-07-27)
+
+Mami'nin sorusu: *"her iş bittikten sonra böyle lootlayacak mısın? o denetimi sıkı yapıyor
+musun?"* Dürüst cevap hayırdı — 07-26 hasadı Mami istediği için oldu, alışkanlık değildi.
+
+- **`scripts/kapanis-hasadi.mjs`** — dört kanal tek koşumda: yapısal karne (`prompt-lint`
+  **import edilir**, ikinci kopya yazılmadı) · `revize.txt` → sınıflanmış **ders adayları** ·
+  dünya-yerel kusur → kütüphane adayı · kit biçim sapması (PROMPT-YASASI §5).
+  Çıktı `agents/lessons/CANDIDATES-<slug>.md`; `APPROVED.md`'ye yalnız Mami taşır (M7).
+- **Duvar OLAYA değil DURUMA bakar.** Mami klasörü Explorer'da sürüklüyor, `mv` yazmıyor —
+  komut metnine bakan bir hook bu makinede sessiz no-op olurdu (`gate.sh`'ın python3 kusurunun
+  aynısı). `--check` "taşındı mı" diye sormaz, "hasat edilmemiş proje var mı" diye sorar.
+  `.claude/hooks/hasat-gate.sh` SessionStart'ta ateşler; **iki durumda da test edildi.**
+
+**Ölçüm — 5 Biten proje hasat edildi:**
+
+- **Sabit Sürat** (ilk hasat): karne **38/44 temiz** · revize **8/44 = %18** · **5 ders adayı**.
+  Yetenek hükmü: revizenin **7/8'i tek sınıf** — arka plan yazı/sembol yüzeyi (tabela, poster,
+  pano, bayrak, kadran). Kazanan biçim tuttu; kalan kusurun tamamı **TEXT slotunun kapsam
+  sınırında** toplanıyor. Yeni ders: bayrak/arma ve ölçü aleti kadranı da TEXT slotuna girer.
+- **Sürtünme: karne 0/31 ama revize %0.** Linter **biçim uyumunu** ölçer, kaliteyi değil —
+  yasa Sabit Sürat biçiminden yazıldı, Sürtünme başka bir biçimle kazandı. Bu sınır yazılı
+  olmadan karne yanlış okunur.
+- **Bileşke'nin `Biten/` klasöründe yalnız 52 PNG var** — teslim kitinin tamamı hâlâ aktif
+  klasörde; kit 7/7 eksik raporlandı. "Biten" video yarım taşınmış, kimse görmemişti.
+  `Kuvvet MİRA`'da `_PROMPTLAR` hiç yok, MOTION `.md`.
+- **Ad↔sınıf uyuşmazlığı artık ölçülü:** Sabit Sürat'ın `locks.projectName = "Ultra Real
+  Commercial"`, `projectClass = ANIMATION_EDU`. FAZ 1.5 kapısının gerekçesi kanıtla duruyor.
+
+**Linter kendi kusurunu ilk koşumda iki yerde gösterdi ve düzeltildi:** çıplak `legible` 4
+arka-plan karesini "kavram yazısı" sandı (oysa `barely-legible` bunun TERSİ), ve `revize.txt`
+(ön ek yok) "YOK" raporlandı — **sapmış ad ile eksik dosya aynı hüküm değildir.**
+
+**Yeni çalışma yasası (Mami, 2026-07-27):** *"ultracode'u rutin haline getir, 6 ajana kadar
+kullanabilirsin — çünkü iş yapıyorsun, buddylik yapamıyorsun."* Ajan açmak lüks değil, buddy
+kalabilmenin şartı. `CLAUDE.md`'ye yazıldı; tavan **6**, bölüşüm birimi **sekans**.
+⚠️ Bu ultracode **workflow/ajan** içindir — `effortLevel` ayarı DEĞİL (denendi, Mami reddetti,
+geri alındı).
+
 ### ➡️ SIRADAKİ TEK ADIM
 
-**KAPANIŞ HASADI** (plandaki FAZ 3'ten öne çekildi — Mami: *"her iş bittikten sonra böyle
-lootlayacak mısın? o denetimi sıkı yapıyor musun?"*). Dürüst cevap: bugünkü hasat Mami istediği
-için oldu, **alışkanlık değil**; Sabit Sürat'ın revize turundan en az 3 genellenebilir ders
-çıkıyor ve hiçbiri yazılmadı. Kurulacak duvar: bir video `Biten/` altına taşındığında
-(1) `prompt-lint` final sete koşar → yapısal karne, (2) `revize.txt` → **ders adayları**,
-(3) dünya kusurları **kütüphaneye** yazılır, (4) kit biçim sapması işaretlenir.
-Çıktı **aday**; `APPROVED.md`'ye yalnız Mami taşır (M7: otomatik promote yok).
+**Mami ders adaylarını `APPROVED.md`'ye taşır** — banka hâlâ boş, artık **15 aday** bekliyor
+(10 Bileşke + 5 Sabit Sürat). Otomatik promote yok; bu adım Mami'nin.
 
 Sonra: **FAZ 1** — `PROMPT-YASASI` bugün dürüstçe bir `pixar_3d_edu` yasası (181 karenin 181'i o
 dünyadan). Ortak 9-slot iskelet kalır, üstüne **EDU/ANIMATION** ve **REAL** register katmanları

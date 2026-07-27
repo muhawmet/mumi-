@@ -13,13 +13,12 @@
 // Kanıtla sınanır: Bileşke Kuvvet'te temas 0/52 ve TEXT 0/52 bulmalı, Sabit Sürat'ta 44/44.
 // Bulamıyorsa linter yanlıştır, prompt değil.
 
+// `lintFile` / `SLOTS` dışa açıktır: kapanış hasadı (scripts/kapanis-hasadi.mjs) aynı ölçümü
+// kullanır. Yasa iki yerde ölçülmez — ikinci kopya bu fazda söktüğümüz hastalığın kendisi.
+
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-
-const ARGS = process.argv.slice(2);
-const STRICT = ARGS.includes('--strict');
-const ALL = ARGS.includes('--all');
-const files = ARGS.filter((a) => !a.startsWith('--'));
+import { pathToFileURL } from 'node:url';
 
 // ---------------------------------------------------------------------------
 // SLOT TANIMLARI — kaynağı agents/PROMPT-YASASI.md §2. Her kontrol bir YETENEĞİ ölçer,
@@ -143,7 +142,7 @@ function lintBlock(body) {
   return problems;
 }
 
-function lintFile(path) {
+export function lintFile(path) {
   const text = readFileSync(path, 'utf8');
   const blocks = parseBlocks(text);
   const rows = blocks.map((b) => ({ head: b.head, problems: lintBlock(b.body) }));
@@ -152,6 +151,8 @@ function lintFile(path) {
   for (const s of SLOTS) counts[s.key] = blocks.filter((b) => s.test(b.body)).length;
   return { path, total: blocks.length, rows, bad, counts };
 }
+
+export { SLOTS, TRAPS, parseBlocks, lintBlock };
 
 function report(r) {
   const name = r.path.split(/[\\/]/).pop();
@@ -167,33 +168,42 @@ function report(r) {
   console.log(`  ${r.bad.length}/${r.total} kare eksikli`);
 }
 
-const targets = [];
-if (ALL) {
-  const root = join(process.cwd(), 'agents', 'COMMAND-INBOX');
-  const walk = (dir) => {
-    for (const e of readdirSync(dir, { withFileTypes: true })) {
-      const p = join(dir, e.name);
-      if (e.isDirectory()) walk(p);
-      else if (/_PROMPTLAR\.(txt|md)$/i.test(e.name)) targets.push(p);
-    }
-  };
-  if (existsSync(root)) walk(root);
-} else {
-  targets.push(...files);
-}
+// CLI — yalnız doğrudan çalıştırıldığında. `import` edildiğinde (kapanış hasadı) sessiz kalır.
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isMain) {
+  const ARGS = process.argv.slice(2);
+  const STRICT = ARGS.includes('--strict');
+  const ALL = ARGS.includes('--all');
+  const files = ARGS.filter((a) => !a.startsWith('--'));
 
-if (!targets.length) {
-  console.error('kullanım: node scripts/prompt-lint.mjs <_PROMPTLAR.txt> [--strict]  ya da  --all');
-  process.exit(2);
-}
+  const targets = [];
+  if (ALL) {
+    const root = join(process.cwd(), 'agents', 'COMMAND-INBOX');
+    const walk = (dir) => {
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const p = join(dir, e.name);
+        if (e.isDirectory()) walk(p);
+        else if (/_PROMPTLAR\.(txt|md)$/i.test(e.name)) targets.push(p);
+      }
+    };
+    if (existsSync(root)) walk(root);
+  } else {
+    targets.push(...files);
+  }
 
-let bad = 0;
-for (const t of targets) {
-  if (!existsSync(t)) { console.error(`yok: ${t}`); bad++; continue; }
-  const r = lintFile(t);
-  report(r);
-  bad += r.bad.length;
-}
+  if (!targets.length) {
+    console.error('kullanım: node scripts/prompt-lint.mjs <_PROMPTLAR.txt> [--strict]  ya da  --all');
+    process.exit(2);
+  }
 
-console.log(`\n${bad ? '⚠️' : '✅'} toplam eksikli kare: ${bad}`);
-if (STRICT && bad) process.exit(1);
+  let bad = 0;
+  for (const t of targets) {
+    if (!existsSync(t)) { console.error(`yok: ${t}`); bad++; continue; }
+    const r = lintFile(t);
+    report(r);
+    bad += r.bad.length;
+  }
+
+  console.log(`\n${bad ? '⚠️' : '✅'} toplam eksikli kare: ${bad}`);
+  if (STRICT && bad) process.exit(1);
+}
