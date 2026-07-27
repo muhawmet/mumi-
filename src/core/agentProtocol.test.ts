@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, test } from 'vitest';
 import {
   createAgentArtifact, directivesFromDirectorBrief, nextLifecycleAction, protocolDescriptor,
@@ -107,4 +109,24 @@ describe('on-demand lifecycle — bir author, bir jury, en fazla bir revision', 
 test('MamiDirectives exact text taşır', () => {
   const raw = '4–5 sahneye anlamlı yazı koy; cümlemi değiştirme.';
   expect(directivesFromDirectorBrief(raw)[0].text).toBe(raw);
+});
+
+// TAŞINABİLİRLİK DUVARI — bu kusur İKİ KEZ döndü. Birincisinde `agentsSync.test.ts` platforma
+// bağlıydı (8faa9fc onardı, yalnız agents-sync yüzeyinde). İkincisinde 2026-07-27'de ölçüldü:
+// `protocolDescriptor()` ve runner'ın kendi doğrulayıcısı hâlâ HAM okuyordu → Windows'ta CRLF →
+// `protocolHash` içeriğin değil SATIR SONU GELENEĞİNİN hash'i (CRLF 4c2fa11c… / LF dc340024…),
+// yani runner Mami'nin birincil makinesinde HER command'i reddediyordu: hat baştan ölü.
+// Üç yüzey (TS · agents-sync · runner) aynı hash'i üretmek zorundadır.
+describe('protocolHash satır sonundan bağımsızdır', () => {
+  const diskText = readFileSync(resolve('agents/PROTOCOL.md'), 'utf8');
+  const lf = (s: string) => s.replace(/\r\n/g, '\n');
+
+  test('descriptor LF-normalize edilmiş içeriğin hash\'ini verir', () => {
+    expect(protocolDescriptor().contentHash).toBe(sha256Hex(lf(diskText)));
+  });
+
+  test('CRLF ile LF aynı hash\'i verir — kimlik içeriktir, gelenek değil', () => {
+    const body = lf(diskText);
+    expect(sha256Hex(body)).toBe(sha256Hex(lf(body.replace(/\n/g, '\r\n'))));
+  });
 });

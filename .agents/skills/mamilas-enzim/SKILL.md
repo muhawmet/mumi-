@@ -18,6 +18,14 @@ başta kilitlenmemiş bir karardan doğdu. Aşağıdaki kilitler o 21 karenin li
 motion ve referans template'leri. Kilitler o yasanın slotlarını doldurur; yasa okunmadan
 kilit sorulmaz.
 
+**Ders bankası — yalnız KİLİT seviyesi.** `agents/lessons/APPROVED.md`'yi (Mami-onaylı ders
+bankası) de aç, ama içinden sadece **üretim başlamadan karara bağlanan** dersleri al:
+tag'lenecek prop, gardırop/renk sahipliği, ekranda yazı politikası, teslim biçimi. Bunlar
+aşağıdaki kilitlerin **cevabına** girer, prompt cümlesine değil — kare-başına uygulanan
+dersler `mamilas-director`'ın işidir; aynı dersi iki yerde uygulama. Çelişki kuralı bankanın
+kendi başlığında yazılı, oradan oku. **Banka boşsa hiçbir şey olmaz** (boş banka normal
+durumdur; `APPROVED.md`'ye yalnız Mami yazar — sen aday taşımazsın).
+
 ---
 
 ## KİLİT 0 — JSON ön kontrolü (ilk prompt'tan önce, tek geçiş)

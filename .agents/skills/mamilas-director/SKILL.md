@@ -22,7 +22,23 @@ Skill çağrılınca tek hamlede context'i kur:
 
 1. **Kanon:** `CLAUDE.md` → `docs/ai/PROJECT_CONTRACT.md` → **`agents/PROMPT-YASASI.md`**
    (üretim yasası: daimi direktifler + start-frame/motion/referans template'leri — prompt
-   yazmadan ÖNCE oku, ezberden yazma) · `MEMORY.md` index · `.claude/rules/core-prompt-path.md`.
+   yazmadan ÖNCE oku, ezberden yazma) → **`agents/lessons/APPROVED.md`** (Mami-onaylı ders
+   bankası) · `MEMORY.md` index · `.claude/rules/core-prompt-path.md`.
+
+   **Ders bankası nasıl uygulanır.** Bankadaki her satır, biten bir üretimin revizesinden
+   Mami'nin onayladığı tek satırlık derstir — runner'ın author'larına `CONTEXT.json.approvedLessons`
+   olarak akan bilginin **aynısı**. Sen runner'sız çalıştığın için o kanal sana ulaşmaz: bankayı
+   burada elle okursun, yoksa Mami dersi onaylar ama üretim onu hiç görmez.
+   - **Nereye girer:** prompt yazarken `agents/promptQuality.mined.json` maddeleriyle **aynı
+     rafta** — sahneye uyanı uygula, §2'deki INLINE JÜRİ geçişinde de bunlara karşı bak
+     (ihlali oracıkta düzelt, "hata" yazıp geçme).
+   - **Öncelik:** çelişki kuralı bankanın **kendi başlığında** yazılı; boot'ta o dosyayı zaten
+     açıyorsun, hükmü oradan oku. Burada tekrar edilmiyor — ikinci kopya yasağı.
+   - **Kaç ders:** runner ile aynı tavan — `src/core/lessonBank.ts` → `APPROVED_LESSONS_CAP`
+     kadar, dosyanın **sonundan** (en yeni). Sayıyı koddan oku, buraya yazma.
+   - **Banka boşsa hiçbir şey olmaz:** uyarı basma, Mami'ye sorma, eksik sayma — boş banka
+     NORMAL durumdur. Adaylar (`agents/lessons/CANDIDATES-*.md`, `HASAT-*.md`) ders DEĞİLDİR;
+     `APPROVED.md`'ye yazmak **yalnız Mami'nin** işidir, sen aday taşımazsın (M7 yasası).
 2. **Hangi JSON?** `agents/COMMAND-INBOX/` içindeki `*_mamilas_command.json` dosyalarını **listele,
    Mami'ye HANGİSİNİ sor.** Birden fazla olabilir; sessiz seçme.
 3. **Seçilen JSON'u oku** (büyük dosya — `jq` ile hedefli çek, körü körüne context'e dökme):

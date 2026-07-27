@@ -1,4 +1,4 @@
-import { CHARACTER_SHARE_DEFAULT, DATA, deriveProductionPath, effectiveMaterialId, normalizeHeroTags, refCompatibleWithWorld, worldPacketById } from './pure';
+import { CHARACTER_SHARE_DEFAULT, DATA, deriveProductionPath, effectiveMaterialId, normalizeHeroTags, projectNameClassMismatch, refCompatibleWithWorld, worldPacketById } from './pure';
 import { COMMERCIAL_BRAND_RE, dnaDirectives, paletteLightPrompt, registerOf, resolveLightAuthorityReceipt, scrubRefFieldIP } from './brain';
 import { proofDoctor, qaScore } from './proof';
 import { sourceHash } from './source';
@@ -172,6 +172,10 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
   const productionPathId = deriveProductionPath(state.projectClass);
   const path = DATA.paths.find((item) => item.id === productionPathId) ?? null;
   const project = DATA.projects.find((item) => item.id === state.selectedProjectId) ?? null;
+  // AD ↔ SINIF: aynı SAF yüklem (pure.ts) runner duvarında da koşar — üçüncü kopya YOK.
+  // Girdiler `locks.projectName` ve `locks.productionPath` ile BYTE-AYNI türetimden gelir,
+  // yoksa iki yüzey aynı command hakkında iki farklı hüküm verirdi.
+  const nameClassMismatch = projectNameClassMismatch(project?.name ?? '', productionPathId);
   const refs = selectedRefs(state.selectedRefIds, world?.id ?? null);
   // Nöron-sync (T4): per-sahne authoring komisyonu için ref anchor·dna + palet
   // fiziksel ışık. Site özne UYDURMAZ — Claude bu çerçeveden dominant element'i yazar.
@@ -440,6 +444,36 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       videoModel: normalizeVideoModel(state.videoModel),
       brandKitLock: state.brandKitLock,
     },
+    /**
+     * AD ↔ SINIF BULGUSU (2026-07-27) — duvar runner'da, ama duvar ÜRETİMDEN SONRAYDI.
+     *
+     * `scripts/mamilas-command.mjs` uyuşmazlıkta `ok:false` verir ve hiçbir rol açılmaz; ne var
+     * ki Mami oraya 52 sahne yazdıktan SONRA varıyordu. Çelişki tam burada, JSON'un doğduğu
+     * yerde ölçülebiliyor — `locks.projectName` ile `locks.productionPath` yan yana yaşıyor.
+     * Bu alan BLOKE ETMEZ (Mami paketi indirebilmeli); yalnız çelişkiyi görünür yapar.
+     *
+     * Neden `authorityReceipts` değil (ölçüldü — commandExport'taki tek diğer bulgu taşıyıcısı):
+     * o blok `world` yoksa `null`'dır, oysa ad↔sınıf çelişkisinin dünyayla hiç ilgisi yok —
+     * dünyasız bir command'de bulgu sessizce düşerdi. Ayrıca kendi kuralı "deterministik kod
+     * bu ekseni ÇÖZDÜ ... dünya yasası o tartışmayı zaten kazandı" der; buradaki çelişki
+     * çözülmüş DEĞİL, kasten çözülmemiştir (kazananı kod seçmez, Mami seçer). O kutuya koymak
+     * kutunun kendi sözleşmesini yalan yapardı. Bu yüzden en küçük dürüst ekleme: kendi
+     * nullable kardeş alanı, runner'ın kullandığı KODLA aynı adı taşıyarak.
+     *
+     * HASH: hiçbir mühür yüzeyinde değil. `commandId` yalnız `baseDecision`'ı kapsar (bu alan
+     * orada değil), `storyboardHash` yalnız sahne dilimini, `sceneContextHash` yalnız
+     * `buildImageAuthorContext`'in ADIYLA okuduğu alanları — komutu topluca yayan hash yok.
+     */
+    projectNameClassMismatch: nameClassMismatch
+      ? {
+          code: 'PROJECT_NAME_CLASS_MISMATCH',
+          projectName: project?.name ?? null,
+          productionPath: productionPathId,
+          message: nameClassMismatch,
+          effect: 'Runner bu paketi ÇALIŞTIRMAZ (validateCommand ok:false — hiçbir rol açılmaz). '
+            + 'Ya proje adını ya da üretim sınıfını düzelt ve JSON\'u yeniden indir.',
+        }
+      : null,
     creativeControls: {
       mood: state.mood,
       cameraEnergy: state.cameraEnergy,

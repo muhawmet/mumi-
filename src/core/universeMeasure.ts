@@ -21,7 +21,7 @@
 //
 // No DOM, no LLM, deterministic.
 
-import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, refCompatibleWithWorld, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
+import { DATA, deriveProductionPath, deriveTeachingRecipe, normalizeWorldId, projectNameClassMismatch, refCompatibleWithWorld, validateBriefCompatibility, type SurgeryRef, type SurgeryWorld } from './pure';
 import { dnaDirectives, registerOf, type DnaDirectives, type Register } from './brain';
 import { worldCategory, type PreviewCategory } from './preview';
 
@@ -30,6 +30,12 @@ export interface DirectorNote { level: NoteLevel; title: string; detail: string;
 
 export interface UniverseMeasureInput {
   projectClass: string;
+  /**
+   * Ad ↔ sınıf ölçümünün girdisi. Ad taşınmıyorsa çelişki ölçülemez ve kontrol SESSİZCE ölür;
+   * `id` geçilir, `name` DEĞİL — `commandExport` de adı bu id'den türetir (`DATA.projects`),
+   * iki yüzey aynı command hakkında farklı ad okumasın diye.
+   */
+  selectedProjectId?: string;
   selectedWorldId: string;
   selectedPaletteId: string;
   selectedRefIds: string[];
@@ -323,6 +329,25 @@ export function directorNotes(input: UniverseMeasureInput): DirectorNote[] {
   if (!palette) { notes.push({ level: 'warn', title: 'Palet yok', detail: 'Işık davranışı tanımsız kalır. Bir palet seç (renkler ışık olarak okunur).' }); blocking = true; }
   if (refs.length === 0) {
     notes.push({ level: 'info', title: 'Referans DNA seçilmedi', detail: 'Render World tek başına çalışır; ama prodüksiyon seviyesi prompt için 1-3 uyumlu DNA kamera/ışık/hareket tarifini keskinleştirir.' });
+  }
+
+  // AD ↔ SINIF ÇELİŞKİSİ — üretimden ÖNCE. Ölçülen kusur: proje adı "Ultra Real Commercial",
+  // üretim yolu ANIMATION_EDU; 52 sahne eğitim üretildi ve çelişki ancak command JSON runner'a
+  // verildikten SONRA öttü. Duvar orada KALIR (bu dosya hiçbir şeyi bloke etmez, ölçüm bildirir),
+  // ama Mami artık aynı çelişkiyi reçete ekranında, tek sahne yazılmadan görür.
+  // Yüklem `pure.ts`'ten İTHAL edilir — ikinci kopya yazılmaz.
+  const projectName = DATA.projects.find((p) => p.id === input.selectedProjectId)?.name ?? '';
+  const nameClassMismatch = projectNameClassMismatch(projectName, path);
+  if (nameClassMismatch) {
+    notes.push({
+      level: 'warn',
+      title: 'Proje adı / sınıf çelişkisi',
+      detail: `${nameClassMismatch} Bu reçeteden doğan command JSON runner'da çalışmaz — kapı `
+        + 'PROJECT_NAME_CLASS_MISMATCH ile durdurur.',
+    });
+    // `blocking` yalnız aşağıdaki "uyumsuzluk ölçülmedi" özetini susturur. Ölçülmüş bir çelişki
+    // varken o cümleyi basmak yalan olurdu; kapatılan şey blok değil, yanlış özet.
+    blocking = true;
   }
 
   // register ↔ world coherence

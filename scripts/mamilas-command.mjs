@@ -337,7 +337,13 @@ export async function validateCommand(command) {
   if (command?.schema !== 'mamilas.command.v2026') problems.push('unsupported command schema');
   const expectedId = command?.baseDecision ? `mamilas-${canonicalHash(command.baseDecision)}` : null;
   if (!expectedId || command.commandId !== expectedId) problems.push('commandId/baseDecision hash uyuşmuyor');
-  const protocolText = await readFile(PROTOCOL_PATH, 'utf8');
+  // SATIR SONU NORMALİZASYONU — bu kusur bir kez onarıldı ve BU YÜZEYDE onarılmadı (8faa9fc,
+  // `agents-sync.mjs` → `lf()`). `core.autocrlf=true` + `.gitattributes` yok → `PROTOCOL.md`
+  // Windows'ta CRLF açılıyor ve ham hash İÇERİĞİN değil SATIR SONU GELENEĞİNİN hash'i oluyor
+  // (LF `dc340024…` / CRLF `4c2fa11c…`; sevk edilmiş her command LF olanı taşıyor).
+  // Sonuç ölçüldü: runner Mami'nin BİRİNCİL makinesinde her command'i `protocolHash
+  // stale/tampered` ile reddediyordu — yani hat baştan ölüydü. Taşınabilirlik bir kalite kuralıdır.
+  const protocolText = (await readFile(PROTOCOL_PATH, 'utf8')).replace(/\r\n/g, '\n');
   const protocolHash = sha256(protocolText);
   if (command?.lifecycle?.protocol?.version !== PROTOCOL_VERSION) problems.push('protocolVersion stale');
   if (command?.lifecycle?.protocol?.contentHash !== protocolHash) problems.push('protocolHash stale/tampered');
@@ -1323,7 +1329,9 @@ export async function runCommand(args = process.argv.slice(2)) {
   const file = resolveCommandFile(args);
   const command = JSON.parse(await readFile(file, 'utf8'));
   if (args.includes('--migrate-command-context')) {
-    const currentProtocolText = await readFile(PROTOCOL_PATH, 'utf8');
+    // Aynı satır-sonu yasası (yukarıdaki validateCommand notu): migrate ederken CRLF'le
+    // hash'lersek doğrulayıcının reddedeceği bir command üretirdik.
+    const currentProtocolText = (await readFile(PROTOCOL_PATH, 'utf8')).replace(/\r\n/g, '\n');
     const migrated = migrateCommandToCurrentContext(command, {
       version: PROTOCOL_VERSION,
       contentHash: sha256(currentProtocolText),

@@ -222,7 +222,14 @@ type ArtifactDraft<T> = Omit<AgentArtifact<T>, 'schema' | 'protocolVersion' | 'p
 export function protocolDescriptor() {
   return {
     version: AGENT_PROTOCOL_VERSION,
-    contentHash: sha256Hex(PROTOCOL_TEXT),
+    // SATIR SONU NORMALİZASYONU — protokolün KİMLİĞİ içeriğidir, satır sonu geleneği değil.
+    // `?raw` dosyayı diskteki haliyle okur; `core.autocrlf=true` + `.gitattributes` yok →
+    // Windows'ta CRLF gelir ve hash içeriğin değil geleneğin hash'i olur (CRLF `4c2fa11c…` /
+    // LF `dc340024…`). Sevk edilmiş her command LF olanı taşıyor, yani bu makinede üretilen
+    // her command runner tarafından `protocolHash stale/tampered` ile reddediliyordu.
+    // Aynı yasa `scripts/agents-sync.mjs` (lf) ve `scripts/mamilas-command.mjs`'te de var —
+    // üç yüzey aynı hash'i üretmek ZORUNDA, yoksa hat platforma göre ölür.
+    contentHash: sha256Hex(PROTOCOL_TEXT.replace(/\r\n/g, '\n')),
   } as const;
 }
 

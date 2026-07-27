@@ -109,6 +109,8 @@ export const RecipeStep = () => {
   const universeNotes = useMemo(
     () => directorNotes({
       projectClass,
+      // Ad ↔ sınıf çelişkisinin girdisi: adı taşımayan ölçüm o kontrolü sessizce düşürür.
+      selectedProjectId: store.selectedProjectId,
       selectedWorldId,
       selectedPaletteId,
       selectedRefIds,
@@ -118,7 +120,7 @@ export const RecipeStep = () => {
       rawSource: store.rawSource,
       brandKitLock,
     }),
-    [projectClass, selectedWorldId, selectedPaletteId, selectedRefIds, selectedPropId, store.sceneCount, store.phase0PresetId, store.rawSource, brandKitLock],
+    [projectClass, store.selectedProjectId, selectedWorldId, selectedPaletteId, selectedRefIds, selectedPropId, store.sceneCount, store.phase0PresetId, store.rawSource, brandKitLock],
   );
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, subject, recipeScenes });
   const activeRef = DATA.refs.find((ref) => ref.id === (activePreviewRefId || selectedRefIds[0] || ''));

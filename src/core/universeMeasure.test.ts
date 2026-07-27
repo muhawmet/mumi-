@@ -61,6 +61,27 @@ describe('directorNotes', () => {
     expect(directorNotes(full).some((n) => /Marka kilidi boş/.test(n.title))).toBe(false);
   });
 
+  // AD ↔ SINIF ÇELİŞKİSİ — ölçüm üretimden ÖNCE bildirir. Duvar runner'da (o command'i
+  // çalıştırmaz); burası yalnız Mami'nin tek sahne yazmadan görmesini sağlar.
+  it('proje adı sınıfıyla çelişince bildirir; tutarlı/belirsiz adda susar', () => {
+    const clash = directorNotes({ ...full, selectedProjectId: 'ultra_real_commercial' });
+    const note = clash.find((n) => /Proje adı \/ sınıf/.test(n.title));
+    expect(note?.level, 'runner bu paketi çalıştırmıyor — bu bir info değil').toBe('warn');
+    expect(note?.detail).toContain('Ultra Real Commercial');
+    expect(note?.detail).toContain('PROJECT_NAME_CLASS_MISMATCH');
+    // Ölçülmüş bir çelişki varken "Uyumsuzluk ölçülmedi" özeti basılamaz — o cümle yalan olurdu.
+    expect(clash.some((n) => n.title === 'Evren ölçümü')).toBe(false);
+    // Tutarlı ad: sessiz.
+    expect(directorNotes({ ...full, selectedProjectId: 'education' })
+      .some((n) => /Proje adı \/ sınıf/.test(n.title))).toBe(false);
+    // Ad hiç taşınmıyorsa hüküm verilmez (belirsiz ad kapıyı yalancı yapar).
+    expect(directorNotes(full).some((n) => /Proje adı \/ sınıf/.test(n.title))).toBe(false);
+    // Sevk edilmiş gerçek proje: "Anime Edu / Action Grammar" @ STYLIZED_PREMIUM — üslup
+    // register'ı REAL↔EDU çelişkisi DEĞİLDİR; katı kural bu projeyi duvara çarpardı.
+    expect(directorNotes({ ...full, projectClass: 'STYLIZED_PREMIUM', selectedProjectId: 'anime_action' })
+      .some((n) => /Proje adı \/ sınıf/.test(n.title))).toBe(false);
+  });
+
   it('flags long-form scene plans only as info', () => {
     const normal = directorNotes({ ...full, sceneCount: 24 });
     expect(normal.some((note) => /Uzun format|Sahne sayısı/.test(note.title))).toBe(false);
@@ -92,7 +113,7 @@ describe('directorNotes yüzey kilidi — ölçüm ekrandan çağrılmak zorunda
   it('ölçüm eksik girdiyle sessizce daralmaz — sahne sayısı ve preset de geçilir', () => {
     const src = readFileSync(join(ROOT, 'src/pages/Recipe/RecipeStep.tsx'), 'utf8');
     const call = src.slice(src.indexOf('directorNotes({'), src.indexOf('directorNotes({') + 600);
-    for (const field of ['projectClass', 'selectedWorldId', 'selectedPaletteId', 'selectedRefIds', 'sceneCount', 'phase0PresetId']) {
+    for (const field of ['projectClass', 'selectedProjectId', 'selectedWorldId', 'selectedPaletteId', 'selectedRefIds', 'sceneCount', 'phase0PresetId', 'brandKitLock']) {
       expect(call, `directorNotes çağrısı ${field} taşımıyor — o kontrol sessizce ölür`).toContain(field);
     }
   });

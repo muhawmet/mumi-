@@ -4,6 +4,7 @@ import { join, relative, resolve } from 'node:path';
 import { buildCommandJSON } from './commandExport';
 import { buildImageAuthorContext, storyboardHashOfScenes } from './agentProtocol';
 import { DATA, generateBatch, resolveRecipeDefaults, deriveProductionPath } from './pure';
+import { canonicalHash } from './contract';
 import { registerOf } from './brain';
 import { ingestSource, sourceIntegrity } from './source';
 
@@ -368,6 +369,91 @@ describe('P3/P4 — command register/path deriveProductionPath kanonunu izler', 
     expect(registerOf('REKLAM')).not.toBe(registerOf(deriveProductionPath('REKLAM')));
     const cmd = buildFuzzy('REKLAM');
     expect(cmd.locks.productionPath).toBe('ULTRAREAL_COMMERCIAL');
+  });
+});
+
+// AD ↔ SINIF — kapı üretimden ÖNCE ötmeli.
+//
+// DUVAR runner'dadır ve orada kalır (`commandRuntime.test.ts`: uyuşmazlıkta ok:false, hiçbir rol
+// açılmaz). Ama duvar üretimden SONRAYDI: Mami 52 sahneyi yazıp JSON'u hatta verdikten sonra
+// öğreniyordu. Burada kilitlenen iki şey: (1) çelişki JSON'un DOĞDUĞU anda görünür oluyor,
+// (2) görünürlük hiçbir mührü kırmıyor — export bloke edilmez, hash'ler oynamaz.
+describe('ad ↔ sınıf uyuşmazlığı command JSON\'da görünür (export bloke etmez)', () => {
+  const build = (projectId: string, projectClass = 'ANIMATION_EDU') => {
+    const batch = generateBatch({
+      projectTopic: 'Su Döngüsü', projectClass, sceneCount: 2, cast: '',
+      selectedWorldId: 'pixar_3d_edu', selectedPropId: 'native_world', selectedRefIds: [],
+      selectedPaletteId: 'pastel_soft', selectedMusicId: '',
+      imageModel: 'nano_banana_2', videoModel: 'kling_3',
+    } as never) as never as { status: string; scenes: unknown[] };
+    expect(batch.status, 'batch üretilemedi').toBe('GENERATED');
+    return buildCommandJSON({
+      selectedProjectId: projectId, projectTopic: 'Su Döngüsü', projectClass, sceneCount: 2,
+      cast: '', selectedWorldId: 'pixar_3d_edu', selectedPropId: 'native_world', selectedRefIds: [],
+      selectedPaletteId: 'pastel_soft', selectedMusicId: '',
+      imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '',
+      mood: '', cameraEnergy: '', timeLight: '', transition: '', musicVibe: '',
+      pov: '', signature: '', leitmotif: '', tempoCurve: '', directorBrief: '',
+      rawSource: '', sourceBeats: [], sourceReport: null,
+      beatMode: 'Dengeli', workingMode: 'Standart', beatKeeps: {}, beatAnalysis: null,
+      scenes: batch.scenes, agentBrief: '',
+      agentPackets: { idea: '', image: '', motion: '', suno: '', proof: '' },
+    } as never) as never as Record<string, never>;
+  };
+
+  it('uyuşmazlıklı state: bulgu JSON\'da, runner koduyla AYNI adla', () => {
+    // Ölçülen gerçek vakanın birebir şekli: reklam adı + eğitim üretim yolu.
+    const cmd = build('ultra_real_commercial') as never as {
+      locks: { projectName: string; productionPath: string };
+      projectNameClassMismatch: { code: string; projectName: string; productionPath: string; message: string; effect: string } | null;
+      scenes: unknown[];
+    };
+    expect(cmd.locks.projectName).toBe('Ultra Real Commercial');
+    const finding = cmd.projectNameClassMismatch;
+    expect(finding, 'çelişki JSON\'da görünmüyor — kapı yine üretimden SONRA öter').not.toBeNull();
+    // Runner'ın bastığı kodla aynı kelime: iki yüzey aynı olayı iki adla anlatmaz.
+    expect(finding?.code).toBe('PROJECT_NAME_CLASS_MISMATCH');
+    expect(finding?.projectName).toBe('Ultra Real Commercial');
+    expect(finding?.productionPath).toBe('ANIMATION_EDU');
+    expect(finding?.message).toContain('Ultra Real Commercial');
+    // BLOKE ETMEZ: paket eksiksiz üretilir, Mami indirebilir — duvar runner'da kalır.
+    expect(cmd.scenes.length).toBe(2);
+  });
+
+  it('tutarlı state: alan null — kapı ada göre değil ÇELİŞKİYE göre öter', () => {
+    const cmd = build('education') as never as { projectNameClassMismatch: unknown };
+    expect(cmd.projectNameClassMismatch).toBeNull();
+    // Sevk edilmiş gerçek proje: "Anime Edu / Action Grammar" @ STYLIZED_PREMIUM. Üslup
+    // register'ı (STY) REAL↔EDU çelişkisi değildir; katı kural bunu duvara çarpardı.
+    const styl = build('anime_action', 'STYLIZED_PREMIUM') as never as { projectNameClassMismatch: unknown };
+    expect(styl.projectNameClassMismatch).toBeNull();
+  });
+
+  it('HASH KIRMIZI ÇİZGİSİ: bulgu commandId / storyboardHash / sceneContextHash yüzeyinde DEĞİL', () => {
+    const cmd = build('ultra_real_commercial') as never as {
+      commandId: string;
+      baseDecision: unknown;
+      lifecycle: { storyboardHash: string; sceneContextHashes: Record<number, string> };
+      scenes: Array<{ id: number; phaseName: string; durationSec: number; architecture: unknown; sceneBrief: string; motionEngine: unknown }>;
+    };
+    // 1) Kimlik yalnız baseDecision'ı kapsar ve bulgu orada değil.
+    expect(JSON.stringify(cmd.baseDecision)).not.toContain('PROJECT_NAME_CLASS_MISMATCH');
+    expect(cmd.commandId).toBe(`mamilas-${canonicalHash(cmd.baseDecision)}`);
+    // 2) storyboardHash yalnız sahne dilimini kapsar.
+    expect(cmd.lifecycle.storyboardHash).toBe(storyboardHashOfScenes(cmd.scenes.map((scene) => ({
+      id: scene.id, phaseName: scene.phaseName, durationSec: scene.durationSec,
+      architecture: scene.architecture as never, sceneBrief: scene.sceneBrief,
+    }))));
+    // 3) sceneContextHash, alanı SÖKÜLMÜŞ bir komuttan yeniden hesaplanınca aynı çıkar —
+    //    yani `buildImageAuthorContext` bu alanı hiç okumuyor.
+    const stripped = { ...(cmd as unknown as Record<string, unknown>) };
+    delete stripped.projectNameClassMismatch;
+    for (const scene of cmd.scenes) {
+      expect(cmd.lifecycle.sceneContextHashes[scene.id]).toBe(canonicalHash({
+        imageAuthor: buildImageAuthorContext(stripped, scene.id),
+        motionEngine: scene.motionEngine,
+      }));
+    }
   });
 });
 
