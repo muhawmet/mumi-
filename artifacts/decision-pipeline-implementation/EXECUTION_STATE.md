@@ -334,16 +334,33 @@ girince basılması gereken `crossGuard` uyarısı REAL dünyaların hiçbirinde
 
 **Kapı:** tsc 0 · vitest **2117/2117** · build OK · agents-sync OK.
 
-**Açık kalan (bilinçli, Mami seçer):**
-- `prompts.motionDraft` 102 KB — `handoff.MOTION` ile **aynı yasayı ihlal ediyor** (kare
-  görülmeden yazılmış motion metni, sahne başına). Hash dışı, tek okuyucusu 4 test. Sökülürse
-  dosya ~670 KB'a iner ve motion kapısının son arka kapısı kapanır.
-- Ad↔sınıf duvarı **üretimden sonra** ötüyor. Site `buildCommandJSON` uyuşmazlıklı command'i hâlâ
-  üretiyor; kapı runner'da. Site export kapısına da bağlanırsa Mami hatayı 52 sahne yazıldıktan
-  sonra değil, JSON'u indirirken görür. (Plan "arayüze dokunmam" diyor — karar Mami'nin.)
-- `brandKitLock` ve `musicId`'nin **hiçbir giriş yüzeyi yok**, ikisi de kimliğe giriyor. Ölçülen
-  gerçek `product_brand_real` çıktısı müşterinin kendi logosunu **üç kez** yasaklıyor, çünkü kilit
-  boş. Reklam filmine geçmeden önce kapatılması gereken tek yapısal engel bu.
+### ✅ ÜÇ AÇIK KARAR DA KAPANDI (Mami: *"bitir onları da"*, 2026-07-27)
+
+- **`prompts.motionDraft` söküldü** — `handoff.MOTION` ile aynı ihlalin ikiziydi. Dosya
+  **773 → 670 KB**; üç hash birebir aynı. `prompts.motion: null` **kaldı** (yasaklı ≠ eksik).
+  Testler zayıflatılmadı, **sertleştirildi**: taslak başka bir ad altında dönerse de yakalanıyor
+  (`buildMotionPrompt`'un `Engine grammar (` imzası pakette hiç geçmemeli).
+- **`brandKitLock` + `musicId` giriş yüzeyi açıldı** (`RecipeStep`, `recipe-cast-age` deseninin
+  kopyası, `data-testid` — Türkçe `getByLabel` tuzağı). Kilit boşken `commandId` bugünküyle
+  **birebir aynı**: yüzey açmak eski kararların kimliğini kaydırmıyor. Evren ölçümü REAL'de boş
+  kilidi bildiriyor, EDU'da susuyor. `musicId` dürüstçe konumlandırıldı — hiçbir prompt'a
+  girmiyor, müziğin karakterini `musicVibe` yazıyor.
+- 🔴 **Yüzey açmak yetmedi — muafiyet negatif bandın dörtte birine ulaşıyordu.** Kilit doluyken
+  prompt kendi kendisiyle çelişiyordu: hem *"logoyu birebir bas"* hem *"NO real product-brand
+  logo"*. Kusur **kütüphanedeydi, kodda değil** (faz yasası): 6 ref + `kurumsal_brand_film`
+  negatif #1 muafiyetli yazıldı. **İlk yazım tutmadı ve sebebi öğreticiydi:** muafiyet cümlesi
+  virgülden sonra duruyordu, negatif bant ref metnini **virgülden bölüyor** ve muafiyeti
+  koparıyordu → virgülsüz tek parçaya çevrildi. Gerçek `generateBatch` kanıtı: kilit boş →
+  1 koşulsuz yasak (ürün markasız, doğru) · kilit dolu → **koşulsuz 0** + marka emri.
+- **Konuşan klip çatalı kapandı** (`PROMPT-YASASI` §3R): **EDU'da sessizlik bir KURAL, REAL'de bir
+  VARSAYILAN.** Konuşan klip yasak değil, **ölçülmemiş** — Kling'in Türkçe dudak senkronu bu
+  makinede hiç sınanmadı, ve ölçülmemiş motora yasa yazılmaz. Açılış yolu tek klip testi.
+
+**Açık kalan tek madde:** ad↔sınıf duvarı **üretimden sonra** ötüyor — site uyuşmazlıklı command'i
+hâlâ üretiyor, kapı runner'da. Site export kapısına da bağlanırsa Mami hatayı 52 sahne
+yazıldıktan sonra değil, JSON'u indirirken görür.
+
+**Kapı (final):** tsc 0 · vitest **2122/2122** · build OK · agents-sync OK.
 
 **Eski ölçüm (arşiv, doğrulandı):** dosya 2802 KB / 41 sahne; `commandId` yalnız 10.6 KB'lık
 `baseDecision`'dan doğuyor; hash-bağlı tek sahne alanı `handoff.IMAGE.negatives` + `motionEngine`.
@@ -391,9 +408,10 @@ reklam filmi bir deneme değil, portfolyo parçasıdır ve öyle seçilmelidir.
 yasa üç register'da konuşuyor, linter register'ı okuyor, JSON −%72, ad↔sınıf kapısı ötüyor,
 kapanış hasadı ateşliyor.
 
-**FAZ 2'den önce kapatılması gereken tek yapısal engel:** `brandKitLock`'un giriş yüzeyi yok —
-kilit boş kaldığı için ölçülen gerçek `product_brand_real` çıktısı müşterinin kendi logosunu üç
-kez yasaklıyor. Markasız bir demo çekilecekse engel değil; marka konacaksa **önce bu.**
+**Yapısal engel kalmadı.** `brandKitLock` doldurulabiliyor ve muafiyet gerçek çıktıda ölçüldü —
+marka konabilir. Sıradaki iş **üretim**: konu + marka seçimi (portfolyo ölçütüyle) →
+`npx tsx scripts/dunya-sinavi.ts product_brand_real --prompts` → enzim kilitleri + REAL register
+template'i → **sekans başına bir ajan** → `prompt-lint --register=real` → Mami basar.
 
 Paralel, Mami'nin elinde: **ders adaylarını `APPROVED.md`'ye taşımak** — banka hâlâ boş,
 **15 aday** bekliyor (10 Bileşke `CANDIDATES-2026-07-26.md` + 5 Sabit Sürat
