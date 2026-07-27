@@ -1,27 +1,4 @@
-5. Sürtünme — 5. SINIF · EDIT PLANI (Premiere)
-=========================================================================
-Klip ↔ VO ↔ süre. Kurgu sınırı: kesme/sıralama + VO ve müzik yerleşimi, seviye ve fade.
-Keyframe/overlay/grading/speed-ramp YOK. Ham Kling klibi ekran süresinden uzun → baştan/sondan trimle, cümleye yasla; cümle biterse klip de bitsin.
-SÜTUN: KARE(N.png=Sahne N) · KLİP(ham Kling) · EKRAN(hedef) · TIMELINE · VO
-=========================================================================
-YÖNTEM: önce VO'yu tek parça timeline'a koy, sonra klipleri cümlenin altına otur.
 
-##### SEKANS 1 — INTRO (Sahne 1–8) · enerji: sakin→merak→başlık zirvesi #####
-1.png Sahne 1     10s    8.5s  [0:00–0:09]  Efe bir sabah mutfakta ıslak fayansa basınca az kalsın kayıyordu; 
-2.png Sahne 2     10s    6.0s  [0:09–0:15]  'Neden buzda ya da ıslak zeminde kayarım da halıda kayamam?' diye 
-3.png Sahne 3     10s    8.0s  [0:15–0:23]  İşte Efe bugün hayatımızı hem kolaylaştıran hem de bazen zorlaştır
-4.png Sahne 4      5s    3.0s  [0:23–0:26]  Sürtünme kuvveti.  ◄BAŞLIK
-5.png Sahne 5      5s    4.0s  [0:26–0:30]  Efe önce sürtünmenin ne olduğunu öğrendi.
-6.png Sahne 6     10s    8.5s  [0:30–0:38]  Sürtünme kuvveti, birbirine temas eden iki yüzey arasında oluşan v
-7.png Sahne 7      5s    3.0s  [0:38–0:41]  Bunun iki önemli kuralı vardı.
-8.png Sahne 8      5s    5.0s  [0:41–0:46]  Birincisi, temas şarttır; yüzeyler birbirine değmek zorundadır.
-
-##### SEKANS 2 — BUILD-UP (Sahne 9–21) · enerji: ritim yükselir (int 48→77) #####
-9.png Sahne 9      5s    3.0s  [0:46–0:49]  İkincisi, sürtünme harekete zıt yönlüdür;
-10.png Sahne 10   10s    5.5s  [0:49–0:55]  Efe kutuyu sağa ittiğinde sürtünme onu sola doğru çekmeye çalışıyo
-11.png Sahne 11    5s    3.5s  [0:55–0:58]  Peki sürtünme her yerde aynı mıydı?
-12.png Sahne 12    5s    4.0s  [0:58–1:02]  Efe oyuncak arabasını iki farklı zeminde denedi.
-13.png Sahne 13    5s    3.5s  [1:02–1:06]  Pürüzlü asfaltta araba yavaş gitti; çünkü
 14.png Sahne 14   10s    9.0s  [1:06–1:15]  halı, çim, toprak ya da asfalt gibi pürüzlü yüzeylerde mikroskobik
 15.png Sahne 15    5s    3.5s  [1:15–1:18]  Buzlu zeminde ise araba hızla kaydı; çünkü
 16.png Sahne 16   10s    7.0s  [1:18–1:25]  buz, cam, fayans ya da mermer gibi pürüzsüz yüzeylerde pürüz azdır
