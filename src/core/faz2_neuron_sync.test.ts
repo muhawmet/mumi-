@@ -144,16 +144,22 @@ describe('T4-B — buildCommandJSON contract AUTHOR komisyonu + per-sahne alanla
     expect(contract, 'hâlâ copy-verbatim image varsayımı').not.toMatch(/copy[^.\n]*verbatim[^.\n]*(image|prompt)/i);
   });
 
+  // FAZ 1.5 — nöron-sync alanları KAYBOLMADI, TEKİLLEŞTİ: refDna/paletteLight batch-genelinde
+  // aynı olduğu için 41 kopya yerine üst düzeyde tek alan olarak yaşar. Okuma kanonu
+  // `scenes[i].<alan> ?? command.<alan>` — test de ajanla AYNI kanonu koşar, yoksa yeşil test
+  // ajanın gerçekten okuduğu yolu ölçmez.
   it('scenes[0] sceneBrief (verbatim kaynak) + refDna (anchor·dna) + paletteLight (hex yok) taşır', () => {
-    const cmd = buildCommandJSON(commandState());
+    const cmd = buildCommandJSON(commandState()) as any;
     const s0 = cmd.scenes[0] as any;
     expect(s0.sceneBrief, 'sceneBrief yok').toBeTruthy();
     expect(s0.sceneBrief).toBe(s0.prompts.voiceOver);
-    expect(typeof s0.refDna, 'refDna string değil').toBe('string');
+    const refDna = s0.refDna ?? cmd.refDna;
+    expect(typeof refDna, 'refDna string değil').toBe('string');
     const ref = DATA.refs.find((r) => r.id === 'pixar_dimensional')!;
-    expect(s0.refDna, 'refDna ref anchor taşımıyor').toContain(ref.anchor ?? '');
-    expect(s0.paletteLight, 'paletteLight yok').toBeTruthy();
-    expect(s0.paletteLight, 'paletteLight ham hex sızdırdı').not.toMatch(/#[0-9a-fA-F]{6}/);
+    expect(refDna, 'refDna ref anchor taşımıyor').toContain(ref.anchor ?? '');
+    const paletteLight = s0.paletteLight ?? cmd.paletteLight;
+    expect(paletteLight, 'paletteLight yok').toBeTruthy();
+    expect(paletteLight, 'paletteLight ham hex sızdırdı').not.toMatch(/#[0-9a-fA-F]{6}/);
   });
 });
 

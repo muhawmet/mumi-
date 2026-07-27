@@ -265,14 +265,17 @@ for (const r of RECIPES) {
 
   // referans DNA/anchor (nöron-sync) — .command scenes[0].refDna/paletteLight
   const s0 = command.scenes?.[0] as any;
+  const cmd = command as any;
+  // FAZ 1.5: batch-geneli alanlar üst düzeyde yaşar; sahne yalnız FARKINI taşır
+  // (gece/gündüz karışık projede paletteLight sahnede dolu gelir ve o kazanır).
   md.push(`## 2) NÖRON-SYNC — Referans DNA/anchor + Palet (fiziksel ışık) [.command'dan]\n`);
-  md.push('**refDna (verbatim, .command scenes[].refDna):**');
+  md.push('**refDna (verbatim, .command refDna):**');
   md.push('```');
-  md.push(s0?.refDna || '(refDna boş)');
+  md.push(cmd?.refDna || '(refDna boş)');
   md.push('```');
   md.push('**paletteLight (hex-siz fiziksel ışık dili):**');
   md.push('```');
-  md.push(s0?.paletteLight || '(paletteLight boş — native world)');
+  md.push(s0?.paletteLight || cmd?.paletteLight || '(paletteLight boş — native world)');
   md.push('```\n');
 
   md.push(`## 3) PER-SAHNE IMAGE + MOTION PROMPT (gerçek generateBatch çıktısı)\n`);

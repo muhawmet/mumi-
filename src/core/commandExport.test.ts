@@ -100,7 +100,14 @@ describe('buildCommandJSON', () => {
     expect(imageContext.promptQuality.referencePolicy).toContain(
       'Compatible references are subordinate visual grammar, never a source of plot, named identity, or location.',
     );
-    expect(command.scenes[0].handoff.IMAGE.packetVersion).toBe('1.0.0');
+    // FAZ 1.5 — handoff artık YALNIZ hash'e giren dilimi taşır. Eskiden bu satır
+    // `packetVersion`'ı ölçüyordu; ölçtüğü şey paketin VARLIĞIYDI, oysa paketin
+    // %99'unun (MOTION/SUNO ve IMAGE'in draft/world/refDNAs'ı) tek bir okuyucusu yoktu.
+    // Ölçülen artık taşınan kanal: `negatives` → buildImageAuthorContext.failureModes.
+    expect(command.scenes[0].handoff.IMAGE.negatives.length).toBeGreaterThan(0);
+    expect(imageContext.failureModes).toBe(command.scenes[0].handoff.IMAGE.negatives);
+    expect(Object.keys(command.scenes[0].handoff)).toEqual(['IMAGE']);
+    expect(Object.keys(command.scenes[0].handoff.IMAGE)).toEqual(['negatives']);
     expect(command.commands.roles.map((role) => role.role)).toEqual([
       'image_author', 'image_jury', 'frame_jury', 'motion_author', 'motion_jury',
     ]);
@@ -283,7 +290,10 @@ describe('command export world-lock: uyumsuz ref DNA sızmaz', () => {
       beatMode: 'Dengeli', workingMode: 'Standart', beatKeeps: {}, beatAnalysis: null,
       scenes: batch.scenes, agentBrief: '',
       agentPackets: { idea: '', image: '', motion: '', suno: '', proof: '' },
-    } as never) as never as { scenes: { refDna: string }[] };
+      // FAZ 1.5: `refDna` bir kez türetilir (dnaDirectives) — sahneden sahneye değişmesi
+      // mümkün değildi, o yüzden 41 kopya yerine ÜST DÜZEYDE tek alan olarak yaşar.
+      // World-lock sözleşmesi değişmedi: uyumsuz ref bu tek alana da giremez.
+    } as never) as never as { refDna: string };
   };
 
   // kurzgesagt_clarity native world'ü kurzgesagt_edu → one_piece_toei'de UYUMSUZ.
@@ -294,7 +304,7 @@ describe('command export world-lock: uyumsuz ref DNA sızmaz', () => {
     expect(ref.worldId, 'fixture varsayımı bozuldu').toBe('kurzgesagt_edu');
 
     const cmd = buildWith('one_piece_toei', [MISMATCHED_REF]);
-    const refDna = cmd.scenes[0]?.refDna ?? '';
+    const refDna = cmd.refDna ?? '';
     // Bu dünyanın grameri DEĞİL. Ajan bunu okursa One Piece güvertesine
     // izometrik diyagram kamerası kurar.
     expect(refDna, 'uyumsuz ref DNA\'sı command JSON\'a sızıyor — world-lock aşınır')
@@ -308,7 +318,7 @@ describe('command export world-lock: uyumsuz ref DNA sızmaz', () => {
     const native = DATA.refs.find((r) => r.worldId === 'kurzgesagt_edu' && r.dna);
     if (!native) return;
     const cmd = buildWith('kurzgesagt_edu', [native.id]);
-    const refDna = cmd.scenes[0]?.refDna ?? '';
+    const refDna = cmd.refDna ?? '';
     expect(refDna, 'uyumlu ref DNA\'sı kayboldu — fix fazla kesti').toContain(native.name);
   });
 });
@@ -606,5 +616,111 @@ describe('effectiveTopic — dokunulmamış varsayılan subject projeyi ezmez', 
     expect(effectiveTopic(undefined, 'Uzaya Giden Muhammet')).toBe('Uzaya Giden Muhammet');
     // Mami GERÇEKTEN subject yazdıysa o kazanır (eski meşru davranış korunur):
     expect(effectiveTopic('Fincher Uzay Filmi', 'Uzaya Giden Muhammet')).toBe('Fincher Uzay Filmi');
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FAZ 1.5 — BATCH-GENELİ ALAN TEKİLLEŞTİRMESİ, VE ONUN TEK KIRILGAN NOKTASI.
+//
+// Ölçüm (gerçek 41 sahnelik `Kutle-ve-Agirlik_mamilas_command.json`, 2782 KB): kütlenin
+// %72'si aynı metnin sahne başına byte-kopyasıydı — handoff.MOTION (470 KB, sıfır okuyucu
+// ve "kare görülmeden motion yazılmaz" yasasının arka kapısı), handoff.SUNO (385 KB, tek
+// müziğin 41 kopyası), handoff.IMAGE'in negatives dışındaki her şeyi (745 KB, prompts.image
+// ve worldPacket'in kopyası), refDna (183 KB) ve prompts.suno (20 KB).
+//
+// `refDna` ve `music.suno` KOŞULSUZ tekil: ikisi de sahne döngüsünün DIŞINDA bir kez
+// türetilir. `paletteLight` DEĞİL — gece/gündüz karışık bir projede sahneden sahneye
+// değişir ve frame gate pikselleri ona karşı ölçer. Körleme dedupe orada gece sahnesine
+// gündüz ışığı vaat ederdi: kare doğru üretilir, kendi kapısında düşer.
+//
+// Bu yüzden kural ÖLÇÜLÜR: tekilse taşınır, değilse sahnede kalır. Test o ölçümü kilitler.
+describe('FAZ 1.5 — batch-geneli alanlar tekilleşir, sahne-özel alan sahnede kalır', () => {
+  // ÖLÇÜLDÜ (46 dünya × tüm paletler): `isNight` paletteLight'ı yalnız palet GÜN IŞIĞI
+  // cümlesi taşıdığında değiştirir — 155 kombinasyonda değişir, geri kalanında gece ve
+  // gündüz AYNI metni üretir. Bu tam olarak dedupe'un neden ÖLÇÜLMESİ gerektiğidir:
+  // "gece sahnesi var → alan sahne-özeldir" varsayımı da yanlıştır. Fixture bilerek
+  // gerçekten ayrışan bir kombinasyonu seçer (pixar_3d_edu + golden_dust_epic).
+  const NIGHT_SENSITIVE_PALETTE = 'golden_dust_epic';
+  const buildMixed = (nightFlags: boolean[]) => {
+    const rawSource = 'Güneş suyu ısıtır. Buhar yükselir. Bulut oluşur. Yağmur düşer.';
+    const sourceBeats = ingestSource(rawSource);
+    const defaults = resolveRecipeDefaults('ANIMATION_EDU', 'pixar_3d_edu');
+    const generated = generateBatch({
+      rawSource,
+      sourceBeats,
+      projectTopic: 'Su Döngüsü',
+      projectClass: 'ANIMATION_EDU',
+      sceneCount: nightFlags.length,
+      cast: '',
+      selectedWorldId: 'pixar_3d_edu',
+      selectedPropId: 'native_world',
+      selectedRefIds: defaults.selectedRefIds,
+      selectedPaletteId: NIGHT_SENSITIVE_PALETTE,
+      selectedMusicId: '',
+      imageModel: 'nano_banana_2',
+      videoModel: 'kling_3',
+    });
+    expect(generated.status, 'fixture üretilemedi').toBe('GENERATED');
+    const scenes = generated.scenes.map((scene, index) => ({ ...scene, isNight: nightFlags[index] }));
+    return buildCommandJSON({
+      selectedProjectId: '', projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU',
+      sceneCount: scenes.length, cast: '', selectedWorldId: 'pixar_3d_edu', selectedPropId: 'native_world',
+      selectedRefIds: defaults.selectedRefIds, selectedPaletteId: NIGHT_SENSITIVE_PALETTE,
+      selectedMusicId: '', imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '',
+      mood: '', cameraEnergy: '', timeLight: '', transition: '', musicVibe: '',
+      pov: '', signature: '', leitmotif: '', tempoCurve: '', directorBrief: '',
+      rawSource, sourceBeats, sourceReport: sourceIntegrity(rawSource, sourceBeats),
+      beatMode: 'Dengeli', workingMode: 'Standart', beatKeeps: {}, beatAnalysis: null,
+      scenes, agentBrief: '',
+      agentPackets: { idea: '', image: '', motion: '', suno: '', proof: '' },
+    } as never) as never as {
+      refDna: string;
+      paletteLight: string | null;
+      music: { suno: string | null };
+      scenes: Array<{
+        paletteLight: string | null;
+        prompts: { suno: string | null };
+        handoff: { IMAGE: { negatives?: string[] } };
+      }>;
+    };
+  };
+
+  it('tek ışıklı proje: paletteLight ÜST DÜZEYDE tekilleşir, sahne null taşır', () => {
+    const cmd = buildMixed([false, false, false, false]);
+    expect(cmd.paletteLight, 'tekil paletteLight üst düzeye çıkmadı').toBeTruthy();
+    expect(cmd.scenes.every((scene) => scene.paletteLight === null), '41 kopya geri geldi').toBe(true);
+  });
+
+  it('gece/gündüz KARIŞIK proje: paletteLight sahnede KALIR, körleme silinmez', () => {
+    const cmd = buildMixed([false, true, false, true]);
+    // Karışıkken üst düzey null'dır — "tek değer" iddiası ortada yok.
+    expect(cmd.paletteLight, 'karışık projede sahte tekil değer ilan edildi').toBeNull();
+    const perScene = cmd.scenes.map((scene) => scene.paletteLight);
+    expect(perScene.every((value) => typeof value === 'string' && value.length > 0),
+      'karışık projede sahne kendi ışığını kaybetti — gece karesi gündüz kapısında düşer').toBe(true);
+    expect(new Set(perScene).size, 'gece ve gündüz aynı ışığı taşıyor — fixture ya da dedupe bozuk')
+      .toBeGreaterThan(1);
+  });
+
+  it('refDna ve music.suno KOŞULSUZ tekil (ikisi de sahne döngüsünün dışında türetilir)', () => {
+    const cmd = buildMixed([false, true, false, true]);
+    expect(typeof cmd.refDna, 'refDna üst düzeyde yok').toBe('string');
+    expect(cmd.music.suno, 'music.suno üst düzeyde yok').toBeTruthy();
+    expect(cmd.scenes.every((scene) => scene.prompts.suno === null), 'suno 41 kopya geri geldi').toBe(true);
+    expect(cmd.scenes.every((scene) => !('refDna' in scene)), 'refDna sahneye geri sızdı').toBe(true);
+  });
+
+  it('handoff YALNIZ hash\'e giren dilimi taşır — MOTION/SUNO geri büyüyemez', () => {
+    const cmd = buildMixed([false, false]);
+    for (const scene of cmd.scenes) {
+      expect(Object.keys(scene.handoff), 'handoff.MOTION/SUNO geri geldi — 855 KB ölü ağırlık ve motion yasası ihlali')
+        .toEqual(['IMAGE']);
+      expect(Object.keys(scene.handoff.IMAGE), 'IMAGE paketi negatives dışında alan taşıyor')
+        .toEqual(['negatives']);
+      // negatives hash-BAĞLIDIR (buildImageAuthorContext.failureModes): çıkarmak
+      // her sahnenin sceneContextHash'ini kırar, yani bekleyen her command'i stale eder.
+      expect(scene.handoff.IMAGE.negatives?.length, 'negatives boşaldı — sceneContextHash kırılır')
+        .toBeGreaterThan(0);
+    }
   });
 });

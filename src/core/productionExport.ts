@@ -73,8 +73,12 @@ export function buildProductionExport(state: ProductionState) {
       // Per-sahne authoring komisyonu (T4): image prompt bir BRIEF'tir; ajan dominant
       // element'i bunlardan yazar. Site özne UYDURMAZ.
       sceneBrief: (scene as { sceneBrief?: string }).sceneBrief ?? scene.prompts.voiceOver,
-      refDna: (scene as { refDna?: string }).refDna ?? '',
-      paletteLight: (scene as { paletteLight?: string }).paletteLight ?? '',
+      // FAZ 1.5 okuma kanonu: batch-geneli alan üst düzeyde yaşar, sahne yalnız FARKINI
+      // taşır. `refDna` tek türetimden gelir (hiç sahneye bağlı değil); `paletteLight`
+      // gece/gündüz karışık projede sahnede dolu gelir ve o sahnenin değeri kazanır.
+      // sceneIndex sahne-başına düz kalır — ajan burada tek bir yerden okur.
+      refDna: command.refDna ?? '',
+      paletteLight: (scene as { paletteLight?: string | null }).paletteLight ?? command.paletteLight ?? '',
     };
   });
 
@@ -143,7 +147,7 @@ export function buildProductionExport(state: ProductionState) {
           'LEDGER — every mustShow line in ledger/<id>.md is literally visible, and nothing listed under noMetaphorFor was replaced by a symbol, a chart or an abstraction. carryOver still matches the previous shot.',
           'WORLD / RENDER LOCK — the frame reads as locks.worldName under its render law. Generic 3D / generic anime / stock-render is a FAIL even when the subject is right.',
           'CAMERA & COMPOSITION — the vantage and the composition pattern the prompt named are the ones in frame. A different-but-nice framing is a fail: it breaks the cut against the neighbouring shots.',
-          'PALETTE & LIGHT — light behaves as locks.paletteName describes (scenes[].paletteLight). Check the behaviour of the light, not the hex: direction, temperature, what it does to skin/metal/edges.',
+          'PALETTE & LIGHT — light behaves as locks.paletteName describes (sceneIndex[].paletteLight, already resolved per shot). Check the behaviour of the light, not the hex: direction, temperature, what it does to skin/metal/edges.',
           'TEXT — scenes[].prompts.onScreenText is baked, legible and spelled EXACTLY; if it is null the plate is CLEAN. Garbled lettering is a fail — there is no editor downstream to fix it.',
           'IDENTITY — locks.cast / brand / product geometry is the same as in the approved neighbouring frames. Drifted face, drifted logo, drifted product = fail; continuity dies in the cut, not in the frame.',
           'IDENTITY REFERENCE — when locks.cast names people who recur, the SAME face must recur. If no approved identity reference exists in brand_refs/, say so: an identity invented from a text description drifts between shots and the continuity dies in the cut. Do not guess it into a PASS.',
@@ -165,7 +169,7 @@ export function buildProductionExport(state: ProductionState) {
         'CHECK THE INPUTS BEFORE AUTHORING ANYTHING. If locks.brandKitLock is set, brand_refs/ MUST contain the brand and product reference — the prompt will order "render it exactly, never from memory", and that is not something text can carry. If locks.cast names people who recur, brand_refs/ must carry a face reference per person. Missing either → write REFERENCE REQUIRED into report.md, name what is missing, and STOP. Do not invent a car. Do not invent a face.',
         'Create folders: ledger/, image_prompts/, images/, frame_checks/, motion/. brand_refs/ is MAMI\'s to fill — check it first (see below).',
         'For every shot write ledger/<id>.md FIRST — proves / mustShow / noMetaphorFor / carryOver, your own reading of scenes[].sceneBrief. Do not write an image prompt for a shot whose ledger is missing: an interpretation nobody declared is an interpretation nobody can break.',
-        'Write image_prompts/<id>.txt for every shot: AUTHOR the dominant element from scenes[].sceneBrief + your ledger + scenes[].refDna + scenes[].paletteLight + Render Lock (the site never invents the subject). This file is the promise the frame will be judged against.',
+        'Write image_prompts/<id>.txt for every shot: AUTHOR the dominant element from scenes[].sceneBrief + your ledger + sceneIndex[].refDna + sceneIndex[].paletteLight (already resolved per shot; the raw fields live once at the top level) + Render Lock (the site never invents the subject). This file is the promise the frame will be judged against.',
         'Write final_brief.md from agentBrief, and suno.txt from the SOUND direction + per-scene cues. Write RUN_MOTION_AGENT.md if it is absent. Then STOP — the frames are Mami\'s move.',
         'MAMI, per shot: generate from image_prompts/<id>.txt with locks.imageModel (Nano Banana 2), look at the frame — a wrong frame means a wrong prompt, so regenerate now rather than later — and save the one you approve as images/<id>.png. The motion engine takes it from there.',
         'When frames land in images/: run frameGate for each shot — open image_prompts/<id>.txt and images/<id>.png, answer every checklist row from the pixels, write FRAME_PASS or IMAGE_MISMATCH into frame_checks/<id>.md.',
@@ -179,7 +183,13 @@ export function buildProductionExport(state: ProductionState) {
         mode: 'single_track',
         file: 'suno.txt',
         controls: command.creativeControls,
-        perSceneCues: command.scenes.map((scene) => ({ id: scene.id, cue: scene.prompts.suno })),
+        // FAZ 1.5: müzik batch-genelidir (pure.ts `primeSuno` sahne döngüsünün dışında bir kez
+        // koşar) — command onu `music.suno`da tutar ve sahnede null bırakır. Cue yine sahne
+        // başına ilan edilir çünkü folderContract sahne sırasını konuşur; kaynağı tek.
+        perSceneCues: command.scenes.map((scene) => ({
+          id: scene.id,
+          cue: scene.prompts.suno ?? command.music.suno ?? '',
+        })),
         rule: 'One coherent track for the whole piece. Per-scene cues bias texture/intensity within that one track — they are not separate songs.',
       },
 
