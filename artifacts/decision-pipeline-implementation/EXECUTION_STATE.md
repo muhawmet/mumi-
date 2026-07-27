@@ -356,11 +356,44 @@ girince basılması gereken `crossGuard` uyarısı REAL dünyaların hiçbirinde
   VARSAYILAN.** Konuşan klip yasak değil, **ölçülmemiş** — Kling'in Türkçe dudak senkronu bu
   makinede hiç sınanmadı, ve ölçülmemiş motora yasa yazılmaz. Açılış yolu tek klip testi.
 
-**Açık kalan tek madde:** ad↔sınıf duvarı **üretimden sonra** ötüyor — site uyuşmazlıklı command'i
-hâlâ üretiyor, kapı runner'da. Site export kapısına da bağlanırsa Mami hatayı 52 sahne
-yazıldıktan sonra değil, JSON'u indirirken görür.
+**Ad↔sınıf kapısı artık JSON'un DOĞDUĞU anda da ötüyor** — `buildCommandJSON` top-level bulgu
+basıyor, Evren ölçümü paneli REAL'de bildiriyor. Export bloke edilmedi (duvar runner'da kalır),
+hash'ler byte-eşit, yüklem `pure.ts`'ten **import edildi** (üçüncü kopya yok).
 
-**Kapı (final):** tsc 0 · vitest **2122/2122** · build OK · agents-sync OK.
+### ✅ FAZ 3 TAMAM — ders bankası canlı üretime bağlandı (2026-07-27)
+
+Banka yalnız **runner** hattına ulaşıyordu; Mami üretimi **Konuşmalı Yönetmen**'le yapıyor.
+Yani banka dolsa bile canlı üretime hiç ulaşmıyordu. Artık Yönetmen skill'i `APPROVED.md`'yi boot
+listesinde okuyor ve **nasıl uygulanacağı yazılı** (mined ile aynı raf · inline jüri geçişinde de
+bakılır · çelişkide Mami'nin canlı direktifi kazanır — kural kopyalanmadı, bankanın kendi
+başlığına **atıf**). Enzim de okuyor ama **yalnız kilit seviyesindeki** satırları: 15 adayın 3'ü
+KİLİT 1'in cevabı. İkinci kopya değil — aynı dosya, **ayrılmış yargı yetkisi**. İki yüzey
+(`.claude` + `.agents`) birlikte güncellendi, parite yeşil.
+
+**Tavan kusuru bulundu ve yazıldı:** `slice(-20)` **konumsaldır**; `date` parse edilir ama
+sıralamada kullanılmaz. Yeni ders üste yazılırsa 20 aşılınca **en yeni dersler sessizce düşer.**
+`APPROVED.md` başlığına *"yeni ders dosyanın SONUNA eklenir"* yazıldı.
+
+### 🔴 RUNNER MAMİ'NİN MAKİNESİNDE BAŞTAN ÖLÜYMÜŞ — dirildi (2026-07-27)
+
+FAZ 3 sırasında ölçüldü: `protocolHash` üç yüzeyin **ikisinde HAM** okunuyordu. `core.autocrlf=true`
++ `.gitattributes` yok → `PROTOCOL.md` Windows'ta CRLF açılıyor ve hash **içeriğin değil satır sonu
+geleneğinin** hash'i oluyordu (CRLF `4c2fa11c…` / LF `dc340024…`). Sevk edilmiş **her** command LF
+olanı taşıyor → runner bu makinede **her command'i `protocolHash stale/tampered` ile reddediyordu.**
+
+**Bu kusur İKİNCİ KEZ döndü** — `8faa9fc` onu yalnız `agents-sync` yüzeyinde onarmıştı;
+`protocolDescriptor()` (Vite `?raw`) ve runner'ın kendi doğrulayıcısı ham okumaya devam etti.
+Üç yüzey de normalize edildi ve **duvar testi yazıldı** (`agentProtocol.test.ts`): kimlik
+içeriktir, gelenek değil. 38 test bu onarımla önce KIRILDI — çünkü fixture'lar da ham hash'liyordu,
+yani iki taraf birden yanlış olduğu için yeşildi. Kök nedene inilince 2128/2128.
+
+**Kapı (final):** tsc 0 · vitest **2128/2128** · build OK · agents-sync OK.
+
+### ⏸️ FAZ 4 — MOTOR KAPISI: AÇILAMAZ (erişim yok)
+
+`seedance_2` `ENGINE_USABLE`'da 12s ile duruyor ama **ölçülmemiş**. Faz yasası: *ölçülmemiş motora
+yasa yazılmaz.* Erişim gelince aynı onaylı start frame Kling ve Seedance'a verilir, fark gözle
+okunur, lehçe **gerçek çıktıdan** yazılır. Bu faz kod işi değil, **erişim** işidir — bekliyor.
 
 **Eski ölçüm (arşiv, doğrulandı):** dosya 2802 KB / 41 sahne; `commandId` yalnız 10.6 KB'lık
 `baseDecision`'dan doğuyor; hash-bağlı tek sahne alanı `handoff.IMAGE.negatives` + `motionEngine`.
