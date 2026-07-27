@@ -237,6 +237,50 @@ Bir ders şu dosyalarla kapanır (hepsi `.txt`, hepsi `agents/COMMAND-INBOX/<Ad>
 
 Biten ders `agents/COMMAND-INBOX/Biten/<Ad>/` altına taşınır. Kaynak command JSON'a dokunulmaz.
 
+**Kurgu kiti motion fazıyla BİRLİKTE gelir** (Mami direktifi 14). Motion tek başına teslim
+değildir. Aşağıdaki üç şablon, teslim edilmiş kitlerden madenlendi — en olgunu Sabit Sürat.
+
+### EDIT-PLAN — Premiere haritası
+
+Satır biçimi (sekans başlıkları arasında, kare numarasına göre sıralı):
+
+```
+<dosya>.png  K<nn>   <klip>s   <VO>s   [d:dd–d:dd]   <VO cümlesi>   (S<x>+<y>)   ◄<uyarı>
+```
+
+- **`(S40+41)`** — birleşen sahneler açıkça yazılır; Mami hangi iki cümlenin tek klipte
+  aktığını görmeden kesemez.
+- **`◄VO>10s`** — VO süresi klip penceresini aşıyorsa satırda **uyarı olarak durur** ve ne
+  yapılacağı yazılır: *"son kareyi ~1-2s dondur ya da VO'yu bir tık hızlı oku."* Bu, Premiere'de
+  fark edilecek bir sorunu kurgu masasına ÖNCE taşır — kitin en değerli tek satırı.
+- Sonda: **TOPLAM süre + klip sayısı**, sonra `MÜZİK` (SUNO dosyasına atıf + VO altında ~-18 dB
+  + sekans enerjisi + hangi reveal karelerinde müzik nefes alacak), `SES MİKS` (VO önde, klipler
+  sessiz üretildi, SFX minimal) ve varsa `NOT`.
+
+### SESLENDIRME — ElevenLabs okuma metni
+
+Kare numarası ↔ cümle eşlemesi kesintisiz. Mami VO'yu **tek seferde okutuyor**, o yüzden metin
+okunacak sırayla ve kesintisiz akar; kare numarası satır başında referans olarak durur.
+Telaffuz notu gerekiyorsa (sayı, birim, kısaltma) cümlenin yanında parantezle verilir.
+
+### SUNO — Simple kutusuna tek temiz prompt
+
+Mami direktifi 15: **tek paragraf, yapıştırılacak.** Biçim:
+
+```
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+<tek paragraf İngilizce: tür + duygu + görsel çağrışım + enstrüman listesi + ton/tempo +
+"plenty of room for a narrator" + "instrumental only, no vocals, no lyrics">
+```
+
+Sonra ayrı bir blokta **(opsiyonel — Custom mod)**: negatif satırı · sekans enerjisi ·
+miks notu. Simple kutusuna yalnız üstteki paragraf gider; structure/tag bloğu **yazılmaz**.
+
+**Neden tek paragraf:** structure/tag'li brief Suno Simple kutusunda çalışmıyor ve Mami'nin
+akışını bozuyor. Site `brain-data.ts` içindeki `SUNO_MAP` yapılandırılmış brief üretir — o
+**bu kuralın zıddıdır** ve kullanılmaz.
+
 ---
 
 ## 6. Bu yasa nasıl büyür

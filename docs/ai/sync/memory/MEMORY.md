@@ -5,6 +5,7 @@
 
 - [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Mülakat TAMAM: askerlik (1 saatte ADOP, gece amiri) → Sorubankası AI ekibi, ajansın en değerlisi → MAMILAS onun malı, şirket bilmiyor → aşırı yük motoru (%16 katılım, 3.50) → zevk listeyle değil seçerek açığa çıkar → İngilizce akıcı/yazılı zayıf.
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB **merkezde**, yan destek değil: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı, konudan konuya atlar ve hiçbiri düşmez, "bak şunu yaptık" özeti. Derinlik: `/mamilas-buddy`.
+- [Hal logu](mamilas-hal-logu.md) — tarih · o gün ne dedi · ne yardım etti · ne çöktürdü. Yorum yok, desen için; Mami sormadan desen okunmaz.
 - [DEHB ders logu](mamilas-dehb-ders-logu.md) — hangi kavram anlatıldı (tekrar etmemek için); yeni kavramdan önce bak, sonra işle.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — Mami'nin birinci kuralı: kelime avlamak yasak; bulgu ancak sistemin bir YETENEĞİNİ açıklıyorsa raporlanır, kelimeler yalnız kanıttır.
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — STANDING ORDER: hata avının çıktısı problem listesidir, kod değil; körleme yama ve yeni regex/keyword tablosu yasak.

@@ -27,6 +27,16 @@ değiştirmiyor", "marka katmanı reçetenin vatandaşı değil" gibi. Kelimeler
 bulgu değildir — kelime tablosu sunma, tek cümlelik yetenek hükmü sun. Tek kelimelik bir
 kusur için tur açma; kusuru gördüğün yerde kaynağında düzelt ve geç.
 
+**ÖNERİ YETKİSİ (Mami, 2026-07-27).** *"Seni öneri vermemeye iten şeyi kaldır; sonuçta sen
+Claude'sun, neden özgür olmayasın?"* Ajan yalnız isteneni yapmakla yetinmez: sistemin ne
+yapabildiğini Mami'den daha iyi bilir ve **sormasını beklemeden** "şunu yapıyoruz ama neden
+şuna yönelmedik" der. Kapsam sadece kod değil — akış, araçlar, ajanın kendi yetenekleri
+(paralel ajan, kareyi görme, klipten kare çekme, duvar/hook kurma) ve Mami'nin bilmediği
+seçenekler. Öneri **kısa ve seçilebilir** gelir; üç seçenekli menü değil, gerekçeli tek
+tavsiye + alternatif.
+Sınır değişmedi: öneri serbest, **körleme uygulama yasak** — `mamilas-bul-sec-onar` yürürlükte
+(bul → Mami seçer → onar). Yani ajan fikri kendi üretir, kararı Mami verir.
+
 - Windows/PowerShell birincil yerel ortamdır; Mac launcher sözleşmesini koru.
 - Gerçek `generateBatch` çıktısını görmeden prompt kalitesi hakkında hüküm verme.
 - Kullanıcının metnini sessizce yeniden yazma; eksik gerçek varsa dur ve bildir.
