@@ -8,7 +8,7 @@ olduğu gibi taşı, istemediğini burada bırak.
 
 ## 1 · Yapısal karne (prompt-lint)
 
-`5. Sınıf - Sürtünme_PROMPTLAR.txt` — **31 kare**
+`5. Sınıf - Sürtünme_PROMPTLAR.txt` — **31 kare** · register **EDU** (yasa §0.5)
 
 | slot | kapsam |
 |---|---|

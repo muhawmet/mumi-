@@ -8,7 +8,7 @@ olduğu gibi taşı, istemediğini burada bırak.
 
 ## 1 · Yapısal karne (prompt-lint)
 
-`Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md` — **58 kare**
+`Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md` — **58 kare** · register **EDU** (yasa §0.5)
 
 | slot | kapsam |
 |---|---|

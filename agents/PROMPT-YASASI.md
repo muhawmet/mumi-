@@ -33,6 +33,53 @@ ten kilidi yok → 2 karede yeşil cilt; kavram-ışığı isimlendirmesi yok (`
 
 ---
 
+## 0.5 REGISTER — bu yasa üç dilde konuşur
+
+**Dürüst durum:** yukarıdaki 181 karenin **181'i `pixar_3d_edu`**. Yani §1 ve §2'nin bir kısmı
+evrensel bir prompt yasası değil, **bir EDU yasası**. Reklam filmine geçerken bu ayrım yazılmazsa
+sistem sessizce okul videosu üretir — nitekim üretti (bkz. §0.6).
+
+Yeni kavram icat edilmiyor: **kod zaten üç kelimeyi söylüyor.** `src/core/brain.ts` →
+`type Register = 'REAL' | 'EDU' | 'STY'`, türetim `registerOf(productionPath)`. Yasa o kapıyla
+aynı dili konuşur.
+
+| Register | Ne | Dünya grubu |
+|---|---|---|
+| **EDU** | eğitim/anlatım — bugünkü içerik | `ANIMATION_EDU` |
+| **REAL** | reklam filmi, kurumsal, ürün, belgesel | `COMMERCIAL_REAL` · `CINEMATIC_REAL` (16 dünya) |
+| **STY** | stilize premium — anlatım değil, gösteri | kalan `ANIMATION_*` grupları |
+
+**Ortak olan ne:** §2'nin **9 slotluk iskeleti** (lens → özne → kimlik → mekân → ışık → kavram →
+canlı üçlü → derinlik → temas), `TEXT`/`NEGATIVE` ayrı slot disiplini, kare-özel negatifin
+global kuyruktan önce gelmesi, STYLE ≤90 kelime, @tag disiplini, "her kare VO cümlesiyle eş".
+Bunlar medium yasası değil, **kelimelerin kaça ait olduğu** yasası — ölçüm §0'da.
+
+**Register'a bağlı olan ne:** aşağıdaki maddeler `[EDU]` ya da `[REAL]` etiketiyle işaretli.
+Etiketsiz her madde üç register'da da geçerlidir.
+
+⚠️ **Kod tarafında register gerçekten davranış değiştiriyor** (kamera havuzu, malzeme cümlesi,
+ref cross-contamination kilidi, QA tempo eşiği) — ama jüri kartları, negatif bant ve palet
+çevirisi register'ı **hiç görmüyor**. Yani yasa metnini register'a ayırmak burada kozmetik
+değil: kodun göremediği yeri yasa tutuyor.
+
+## 0.6 Kanıt — yasa neden ikiye ayrılmak zorunda
+
+Ölçüldü (2026-07-27, gerçek command JSON + gerçek `generateBatch`):
+
+- **`locks.projectName = "Ultra Real Commercial"`, `locks.projectClass = ANIMATION_EDU`.**
+  Reklam projesi açılmış, sistem sessizce eğitim üretmiş. Sebep kod: sınıflandırılamayan her
+  proje `pure.ts` fallback'inde `ANIMATION_EDU` oluyor — `UNKNOWN` yok, blocker yok.
+- **REAL register'ın tek bir `rejectIf` maddesi yok** (`promptQuality.mined.json`): jüri REAL'de
+  plastik-ticari kareyi *reddedemez*, yalnız "kanıt bulamadım" diyebilir. Animasyonun karşı-kilidi
+  var, REAL'in yok.
+- **Motion sözleşmesinde register kavramı hiç yok** — `buildMotionPromptQualityContract` dünya
+  parametresi bile almıyor. REAL dünyada motion yazarı sıfır photoreal yasası alıyor.
+- **Gerçek `product_brand_real` çıktısında müşterinin kendi logosu üç kez yasaklanmış**
+  (`NO real product-brand logo…` ×3) — çünkü `brandKitLock` boştu ve **sitede o alanın giriş
+  yüzeyi yok.**
+
+---
+
 ## 1. DAİMİ DİREKTİFLER — Mami (2026-07-27, 34 maddelik transkriptten damıtıldı)
 
 Verbatim kaynak: `docs/ai/mami-direktif-transkript-2026-07-27.md`. Aşağıdakiler kuraldır;
@@ -50,10 +97,15 @@ Mami'nin canlı direktifi çelişkide her zaman kazanır.
 6. **START FRAME HER ŞEYİ TAŞIR.** Kling yeniden üretimde kötü — motion yeni karakter, nesne
    veya yazı doğurmaz. Sahnede ne olacaksa karede zaten vardır.
 7. **Her kare VO cümlesiyle birebir eş.** Bu birinci kıstas; teslimden önce sen denetle.
-8. **Sinematik güzel, öğreticilikte sıfır hata.** Premium show okula satılıyor — ama önce doğru.
-9. **Eğitim-önce oran:** anlatıcı karakter *gerekli* karelerde (~%50); kavram karesinde OLGU yıldızdır.
-10. **Formül/denklem sembolü ve grafik YOK** — kavram GÖSTERİLEREK öğretilir (gösterge,
-    kronometre, akıllı tahta, ışık objesi).
+8. **[EDU] Sinematik güzel, öğreticilikte sıfır hata.** Premium show okula satılıyor — ama önce
+   doğru. **[REAL] karşılığı:** sinematik güzel, **ürün gerçeğinde** sıfır hata — yüzey, oran ve
+   marka geometrisi uydurulmaz.
+9. **[EDU] Eğitim-önce oran:** anlatıcı karakter *gerekli* karelerde (~%50); kavram karesinde OLGU
+   yıldızdır. **[REAL] karşılığı:** hero-object önce — üründe/mekânda yıldız nesnedir, insan onu
+   *kullandığı* karede girer (el bir fiildir, dekor değil).
+10. **[EDU] Formül/denklem sembolü ve grafik YOK** — kavram GÖSTERİLEREK öğretilir (gösterge,
+    kronometre, akıllı tahta, ışık objesi). **[REAL]'de bu madde geçersiz:** reklamda anlatılacak
+    kavram yok; yerine **fayda gösterilir** (dökülüş, temas, kullanım anı).
 11. **Ekran yazısı özgün ve diegetik**: olgudan doğar, VO'nun tekrarı olan caption değildir.
     Yazı karede doğar, karede biter — post-prodüksiyonda yazı katmanı YOK (Mami AE bilmiyor).
 12. **Yeni karakter → önce ayrı REFERANS promptu**, sonra `@handle` ile sahnelerde kullan.
@@ -132,12 +184,16 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
 
 ### Kalıcı kilitler (her karede)
 
-- **Cast:** her çocuk — ana ve **arka plan dahil** — Türk/Anadolu; sınıf yaşı açık yazılır
+- **[EDU] Cast:** her çocuk — ana ve **arka plan dahil** — Türk/Anadolu; sınıf yaşı açık yazılır
   (*"6th-grade, around eleven or twelve, pre-teen"*). Bu bilgi command JSON'da **yok**, yönetmen yazar.
   ⚠️ Bu, `agents/PROTOCOL.md`'nin "kaynakta yoksa cast uydurma" kuralının bilinçli istisnasıdır:
   cast Mami'nin duran direktifidir, uydurma değildir. Yeni bir cast **icat edilmez**, duran direktif uygulanır.
-- **Ten:** sıcak mat ten, düşük specular; yeşil/gri cilt karenin reddi demektir. Palet "cool-green
-  highlight" diyorsa yeşil **yüzeylerde** kalır, tende asla.
+- **[EDU/STY] Ten:** sıcak mat ten, düşük specular; yeşil/gri cilt karenin reddi demektir. Palet
+  "cool-green highlight" diyorsa yeşil **yüzeylerde** kalır, tende asla.
+  🔴 **[REAL]'de bu slot TERSİNE çevrilir** — bkz. §2R. `pixar_3d_edu` negatifi *"NO photoreal or
+  real-human photographic skin"* der; `product_brand_real` negatifi *"NO plastic AI-smooth skin —
+  real pore and knuckle"* der. **Her birinin pozitifi ötekinin açık negatifidir.** "Sıcak mat ten"i
+  bir REAL karesine yazmak, o dünyanın kendi yasasını ihlal etmektir.
 - **Marka/telif:** stili çağır, stüdyoyu değil — *"premium-CG feature-animation 3D CGI,
   RenderMan-successor lineage"*. Franchise adı, gerçek kişi, logo yok.
 - **Türkçe metin ya da HİÇ.** İngilizce tabela/poster/rozet yok; okunmayacaksa yüzey boş kalsın.
@@ -152,6 +208,64 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
   üretmemekten kötüdür.
 - Karakteri **asla tarif etme**, handle yeter — görünüş yalnız referans promptunda tanımlanır.
 - Her ufak nesneye tag açma; yargıyla.
+
+---
+
+## 2R. REAL REGISTER — start-frame farkları
+
+**İskelet aynı, dolgu farklı.** Aşağıdakiler §2'nin slotlarını REAL'de değiştirir; değişmeyen
+slot §2'deki gibi kalır. Kaynak uydurma değil: `product_brand_real` ve `kurumsal_brand_film`'in
+`render_law`/`light_law` metinleri (`src/core/SURGERY_DATA.json`) ve `promptQuality.mined.json`
+`photoreal` maddesi.
+
+| Slot | EDU | **REAL** |
+|---|---|---|
+| [1 LENS] | 24-85mm, çocuk/göz hizası | **50mm bağlam · 85-100mm hero · 100mm macro** · f/4-f/8 ürün keskinliği, f/2.8 yumuşak bağlam, f/8 mimari derin |
+| [2 ÖZNE] | anlatıcı karakter + kavram | **hero-object**; insan onu kullandığı karede girer |
+| [3 KİMLİK] | sıcak mat ten, düşük specular | **gözenek seviyesi mikro-doku**; el yıpranması kredibilitedir. *NO plastic AI-smooth skin* |
+| [4 MEKÂN] | giydirilmiş sınıf/ev | **seamless sweep** (temiz izolasyon) · **dark field** (tek yontulmuş highlight) · **gerçek pencere ışığında Türk evi/masası** (lifestyle) |
+| [5 IŞIK] | motive key + bounce + rim | **stop cinsinden ölçülü**: softbox/gradyan key formu biçimler, fill key'in **1-2 stop altında**, rim/kicker nesneyi zeminden ayırır |
+| [6 KAVRAM] | kavram ışığı | **yok** — reklamda kavram ışığı yoktur; yerine **gerçek specular olay** (cam kırılması, metal anizotropi, sıvı viskozitesi) |
+| [9 TEMAS] | temas gölgesi | aynı — ama REAL'de temas **fizik**: yansımalar geometrik tutarlı olmak zorunda |
+| STYLE | dünya kilidi | aynı ≤90 kelime — ama **stil sıfatı malzemenin yerine geçemez**: "premium commercial look" / "Deakins lighting" yasak, fiziksel malzeme gerçeği yazılır |
+
+### REAL'in kendi zorunlu üçlüsü — motorun varsayılanını kıran karşı-terimler
+
+`promptQuality.mined.json` → `photoreal`, VERBATIM: *"negative fill, motivated light, subtle 35mm
+film grain, raw skin micro-texture"*. Bu madde **image yolunda canlı** ve `product_brand_real`
+seçilince prompta gerçekten giriyor — ama 181 karenin 181'i EDU olduğu için **bir kez bile
+ateşlemedi**. Motorun varsayılanı "parlak ticari plastik"tir; bu üçlü onu kıran tek şeydir.
+
+🔴 **Dünya yasasındaki gerçek boşluk:** REAL dünyalar **diyaframı ve stop farkını yazıyor ama
+karanlığı yazmıyor.** `negative fill`, kontrast oranı (4:1–6:1) ve **siyah noktası** dünya
+metninde yok; yalnız referanslarda yaşıyor (`corp_architectural_daylight` → *"negative fill from
+the room's own dark surfaces"*, `product_glass_refraction` → *"black flags stood close on both
+sides… deep true black in the flagged edges, never a lifted grey"*). **Ref seçilmezse REAL dünya
+gölgesini kaybeder.** Yazarın işi: bu üçünü kareye elle yazmak — ya da ref'i seçtiğinden emin olmak.
+
+### REAL'de TEXT slotu
+
+- Yazı **gerçek diegetik madde**: ambalajın üstüne basılmış, cama kazınmış, ekranda yanan.
+  Havada duran overlay/UI **yok** (her iki dünyanın negatif kilidinde açık madde).
+- **Türkçe etiket** — "NO English signage" iki dünyanın da 2. negatifi.
+- **Marka:** `brandKitLock` doluysa logo **onaylı referanstaki gibi tam oranla** basılır, asla
+  uydurulmaz; boşsa ürün ve ambalajı **özgün ve markasızdır**.
+
+### REAL'in kamera zarfı
+
+Kilitli ve hassas: tabletop + göz hizası hero açıları · birkaç santimlik slider ya da birkaç
+derecelik turntable, **tam durarak** · satan detaya inen macro push-in · gerçek el girip çıkabilir.
+Kurumsal: yavaş gimbal glide (yürüme temposu), mimari için kilitli simetri, karar anında yüze
+inip **tam duran** push-in. **Asla** handheld weave, whip pan, top-down flat-lay, drone-epik
+silüet.
+
+### 🔴 Kütüphane kusuru — kodda değil, dünyada düzeltilecek
+
+`kurumsal_brand_film`'in 1. negatifi koşulsuz: *"NO named real companies, banks, holdings, brands
+or logos"*. `product_brand_real`'inki ise muafiyetli: *"…OTHER than the client brand locked in the
+Brand Kit"*. **Bir kurumsal reklam filminde müşterinin kendi logosu kendi dünyasının 1. maddesiyle
+çakışıyor.** Düzeltme yeri kütüphanedir (`SURGERY_DATA.json`), kod değil — faz yasası: kod yasası
+genel, dünya kusuru yereldir.
 
 ---
 
@@ -172,7 +286,7 @@ KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta girmez>
 [2 ORTAM]   Karede zaten duran 2-3 öğenin küçük canlanması (yaprak iner, toz döner, gölge kayar).
 [3 KAMERA]  Camera: <tek hareket + gerekçesi>
 [4 KİLİT]   Kare-özel yasak: kim çerçeveden çıkmaz, ne yerinden oynamaz, ışık ne OLMAZ, yazı sabit kalır.
-[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.   ← [EDU] bkz. §3R
 [6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 ```
@@ -191,6 +305,25 @@ KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta girmez>
   negatif yığma. (İstisna: kamera-kaynaklı warp — orada kamera minimale çekilir.)
 - **Riskli klipleri önceden işaretle** (uzun VO, hızlı takip, geniş crane) — kredi yakmadan test edilsin.
 - Kling native ses: sesin **fiziğini** yaz, adını değil. VO ayrı ElevenLabs katmanı; ekranda kimse konuşmaz.
+
+### 3R. REAL register — motion farkları
+
+**Motion sözleşmesi kodda register görmüyor** (`buildMotionPromptQualityContract` dünya parametresi
+bile almıyor). Yani REAL'de motion yasasını taşıyan tek şey bu metindir.
+
+- **Kamera REAL'de daha kısıtlı:** slider birkaç santim, turntable birkaç derece, ikisi de **tam
+  durarak**. Push-in yalnız "satan detay"a ya da karar anındaki yüze. Handheld weave / whip pan /
+  drone-epik yok — bu bir üslup tercihi değil, iki REAL dünyanın `camera_grammar`'ında yazılı yasak.
+- **Yeni öğe doğurmama yasası aynen geçerli** ve REAL'de daha sert: yansımalar geometrik tutarlı
+  kalmak zorunda, motion bir yansımayı uyduramaz.
+- **Ürün karesi = katı nesne riski.** Cam, krom, metal + hızlı kamera = warp. §3'teki katı-nesne
+  kilidi REAL'de varsayılan: *"rigid solid, no deform/melt/morph/merge."*
+
+**🔴 AÇIK ÇATAL — Mami'nin kararı gerekiyor.** `[5 SESSİZ]` maddesi (still-lips, no-dialogue) bir
+**medium yasası değil, EDU iş akışı yasasıdır**: VO ayrı ElevenLabs katmanında okunduğu için ekranda
+kimse konuşmuyor. Reklam filminde konuşan sunucu/testimonial standarttır. REAL bu maddeyi olduğu
+gibi devralırsa **bir yeteneği kesiyoruz**. Karar verilene kadar REAL'de de sessiz klip
+varsayılandır — ama bu bir tercih olarak duruyor, yasa olarak değil.
 
 ---
 

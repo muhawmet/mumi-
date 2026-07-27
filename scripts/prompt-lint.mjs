@@ -44,7 +44,35 @@ const SLOTS = [
     test: (b) => /(matte\s+\w*\s*skin|never tinted green|low specular)/i.test(b),
     why: 'Yokluğunda yeşil/gri cilt çıkıyor (Bileşke K14, K39).',
     soft: true, // insansız karede gerekmez
+    // REAL'de bu slot TERSİNE döner (PROMPT-YASASI §2R): pixar_3d_edu "NO photoreal skin" der,
+    // product_brand_real "NO plastic AI-smooth skin — real pore" der. Register körü bir linter
+    // doğru REAL promptunu kırmızıya boyar — ölçüldü 2026-07-27, kusur linterin kendisindeydi.
+    registers: ['EDU', 'STY'],
     needsIf: (b) => /@[a-zçğıöşü]/i.test(b) || /\b(child|children|boy|girl|teacher|woman|man|hand|face)\b/i.test(b),
+  },
+  {
+    key: 'ten-real',
+    label: 'REAL ten/yüzey gerçeği (gözenek, mikro-doku)',
+    test: (b) => /(micro-?texture|pore|microtexture|real pore|skin micro)/i.test(b),
+    why: 'REAL negatifi "NO plastic AI-smooth skin" der; pozitifi yazılmazsa motor plastik cilt basıyor.',
+    soft: true,
+    registers: ['REAL'],
+    needsIf: (b) => /@[a-zçğıöşü]/i.test(b) || /\b(hand|hands|face|skin|person|woman|man|professional)\b/i.test(b),
+  },
+  {
+    key: 'fstop',
+    label: 'sayısal diyafram (f/x)',
+    test: (b) => /\bf\/\d/i.test(b),
+    why: 'REAL dünyaların render yasası diyaframı sayıyla yazar (f/4-f/8 ürün, f/2.8 bağlam, f/8 mimari).',
+    registers: ['REAL'],
+  },
+  {
+    key: 'karsi-terim',
+    label: 'photoreal karşı-terimleri (negative fill / motivated / grain)',
+    test: (b) => /(negative fill|motivated light|film grain|35\s*mm film|black flag|bounce card)/i.test(b),
+    why: 'Motorun varsayılanı "parlak ticari plastik"; mined `photoreal` maddesi onu kıran tek şey. '
+      + 'REAL dünyalar diyaframı yazıyor ama KARANLIĞI yazmıyor — negative fill yalnız ref\'lerde yaşıyor.',
+    registers: ['REAL'],
   },
   {
     key: 'canli',
@@ -88,9 +116,15 @@ const SLOTS = [
 const TRAPS = [
   { re: /\bsaffron\b/i, fix: 'warm golden — NB2 "saffron"u safran ÇİÇEĞİ çiziyor (7 kare)' },
   { re: /\bbloom\b/i, fix: '"soft round warm-golden glow of light" — NB2 "bloom"u çiçek çiziyor' },
-  { re: /\bsheen\b/i, fix: 'subsurface-style translucency — "sheen" plastik cilt doğuruyor' },
+  // `sheen` EDU'da plastik cilt emri; REAL'de ürün yüzeyinin gerçek finish'i meşru olabilir —
+  // bu yüzden REAL'de yalnız TENE yakınsa tuzaktır (§2R: ten tersine döner, malzeme dönmez).
+  { re: /\bsheen\b/i, fix: 'subsurface-style translucency — "sheen" plastik cilt doğuruyor', registers: ['EDU', 'STY'] },
+  { re: /\bskin\b[^.]{0,40}\bsheen\b|\bsheen\b[^.]{0,40}\bskin\b/i, fix: 'tende sheen = plastik cilt; yüzeyde serbest, tende asla', registers: ['REAL'] },
   { re: /\bnegative space\b/i, fix: 'pozitif dekor tarifi — "negative space" boş void doğuruyor' },
   { re: /\bclean table\b/i, fix: 'giydirilmiş yüzey — "clean table" void doğuruyor' },
+  // İki REAL dünyanın da negatif kilidinde açık madde: stil sıfatı/imza adı malzemenin yerine geçemez.
+  { re: /\b(teal[- ]orange|premium commercial look|deakins lighting|cinematic lens)\b/i,
+    fix: 'fiziksel malzeme gerçeği yaz — stil sıfatı ve imza adı REAL negatif kilidinde yasak', registers: ['REAL'] },
 ];
 
 // STYLE bloğu kelime tavanı (yasa §0: 269 kelime → %65 revize; 88 kelime → %14).
@@ -121,15 +155,20 @@ function parseBlocks(text) {
   return out;
 }
 
-function lintBlock(body) {
+// Bir kural bu register'da geçerli mi? `registers` yoksa üçünde de geçerlidir.
+const appliesTo = (rule, register) => !rule.registers || rule.registers.includes(register);
+
+function lintBlock(body, register = 'EDU') {
   const problems = [];
   for (const s of SLOTS) {
+    if (!appliesTo(s, register)) continue;
     if (s.test(body)) continue;
     if (s.soft && s.needsIf && !s.needsIf(body)) continue; // bu karede gerekmiyor
     if (s.soft && !s.needsIf) continue;
     problems.push({ kind: 'slot', key: s.key, msg: `${s.label} YOK`, why: s.why });
   }
   for (const t of TRAPS) {
+    if (!appliesTo(t, register)) continue;
     if (t.re.test(body)) problems.push({ kind: 'trap', key: 'tuzak', msg: `tuzak kelime: ${t.re.source.replace(/\\b/g, '')}`, why: `→ ${t.fix}` });
   }
   const style = body.match(/^STYLE:([\s\S]*?)(?=^\w[\w ]*:|\Z)/im);
@@ -142,23 +181,26 @@ function lintBlock(body) {
   return problems;
 }
 
-export function lintFile(path) {
+export function lintFile(path, register = 'EDU') {
   const text = readFileSync(path, 'utf8');
   const blocks = parseBlocks(text);
-  const rows = blocks.map((b) => ({ head: b.head, problems: lintBlock(b.body) }));
+  const rows = blocks.map((b) => ({ head: b.head, problems: lintBlock(b.body, register) }));
   const bad = rows.filter((r) => r.problems.length);
   const counts = {};
-  for (const s of SLOTS) counts[s.key] = blocks.filter((b) => s.test(b.body)).length;
-  return { path, total: blocks.length, rows, bad, counts };
+  for (const s of SLOTS) {
+    if (!appliesTo(s, register)) continue; // bu register'da ölçülmeyen slot karneye girmez
+    counts[s.key] = blocks.filter((b) => s.test(b.body)).length;
+  }
+  return { path, register, total: blocks.length, rows, bad, counts };
 }
 
 export { SLOTS, TRAPS, parseBlocks, lintBlock };
 
 function report(r) {
   const name = r.path.split(/[\\/]/).pop();
-  console.log(`\n━━ ${name} — ${r.total} kare`);
+  console.log(`\n━━ ${name} — ${r.total} kare · register ${r.register}`);
   if (!r.total) { console.log('  (blok bulunamadı: "### K.." başlığı + "-----" ayracı bekleniyor)'); return; }
-  const cov = SLOTS.map((s) => `${s.key} ${r.counts[s.key]}/${r.total}`).join(' · ');
+  const cov = Object.keys(r.counts).map((k) => `${k} ${r.counts[k]}/${r.total}`).join(' · ');
   console.log(`  kapsam: ${cov}`);
   if (!r.bad.length) { console.log('  ✅ eksik yok'); return; }
   for (const row of r.bad) {
@@ -174,6 +216,13 @@ if (isMain) {
   const ARGS = process.argv.slice(2);
   const STRICT = ARGS.includes('--strict');
   const ALL = ARGS.includes('--all');
+  // Varsayılan EDU: bugüne kadarki 181 karenin 181'i EDU. Varsayılanı sessizce REAL yapmak,
+  // ölçülmemiş bir yasayı ölçülmüş sanmak olurdu.
+  const REG = (ARGS.find((a) => a.startsWith('--register='))?.split('=')[1] ?? 'edu').toUpperCase();
+  if (!['REAL', 'EDU', 'STY'].includes(REG)) {
+    console.error(`bilinmeyen register: ${REG} (REAL | EDU | STY — src/core/brain.ts)`);
+    process.exit(2);
+  }
   const files = ARGS.filter((a) => !a.startsWith('--'));
 
   const targets = [];
@@ -192,14 +241,14 @@ if (isMain) {
   }
 
   if (!targets.length) {
-    console.error('kullanım: node scripts/prompt-lint.mjs <_PROMPTLAR.txt> [--strict]  ya da  --all');
+    console.error('kullanım: node scripts/prompt-lint.mjs <_PROMPTLAR.txt> [--strict] [--register=real|edu|sty]  ya da  --all');
     process.exit(2);
   }
 
   let bad = 0;
   for (const t of targets) {
     if (!existsSync(t)) { console.error(`yok: ${t}`); bad++; continue; }
-    const r = lintFile(t);
+    const r = lintFile(t, REG);
     report(r);
     bad += r.bad.length;
   }

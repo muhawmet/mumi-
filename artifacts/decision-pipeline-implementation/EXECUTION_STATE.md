@@ -271,6 +271,79 @@ kalabilmenin şartı. `CLAUDE.md`'ye yazıldı; tavan **6**, bölüşüm birimi 
 ⚠️ Bu ultracode **workflow/ajan** içindir — `effortLevel` ayarı DEĞİL (denendi, Mami reddetti,
 geri alındı).
 
+### ✅ FAZ 1 TAMAM — yasa üç register'a açıldı (2026-07-27)
+
+**Yeni kavram icat edilmedi:** kod zaten üç kelimeyi söylüyor — `brain.ts` → `type Register =
+'REAL' | 'EDU' | 'STY'`, türetim `registerOf(productionPath)`. Yasa o kapıyla aynı dili konuşuyor.
+
+- **`PROMPT-YASASI.md` §0.5** register haritası + ortak/ayrık sınır · **§0.6** kanıt bölümü ·
+  §1'de üç direktif `[EDU]`/`[REAL]` karşılığıyla ikiye ayrıldı · **§2R REAL start-frame katmanı**
+  (slot tablosu + karşı-terimler + REAL TEXT + kamera zarfı) · **§3R REAL motion farkları**.
+- **Linterin kendi register körlüğü kapandı** — kusur benimdi: `scripts/prompt-lint.mjs` "sıcak
+  mat ten"i her karede arıyordu ve **doğru bir REAL promptunu kırmızıya boyardı.** Artık
+  `--register=real|edu|sty`; REAL'de üç yeni slot ölçülüyor (mikro-doku · sayısal f/x · photoreal
+  karşı-terimleri) ve `sheen` yalnız TENE yakınsa tuzak. Hasat register'ı bayrakla sormaz,
+  command JSON'dan okur.
+
+**Dört ajanın ölçtüğü, yasaya giren gerçekler:**
+
+- **REAL register'ın tek bir `rejectIf` maddesi yok** (`promptQuality.mined.json` → `photoreal`
+  **1 madde**, hepsi pozitif). Jüri REAL'de plastik-ticari kareyi *reddedemiyor*. Animasyonun
+  karşı-kilidi var, REAL'in yok — asimetri.
+- **Motion sözleşmesi register görmüyor:** `buildMotionPromptQualityContract` dünya parametresi
+  bile almıyor. REAL'de motion yasasını taşıyan tek şey artık §3R metni.
+- **REAL dünyalar diyaframı yazıyor, KARANLIĞI yazmıyor.** `negative fill`, kontrast oranı ve
+  siyah noktası dünya metninde yok, yalnız referanslarda yaşıyor → **ref seçilmezse REAL dünya
+  gölgesini kaybediyor.**
+- **`pixar_3d_edu` ile `product_brand_real`'in ten yasası taban tabana zıt:** birinin pozitifi
+  ötekinin açık negatifi (*"NO photoreal skin"* ↔ *"NO plastic AI-smooth skin, real pore"*).
+- **Kütüphane kusuru (kodda değil, dünyada):** `kurumsal_brand_film` negatif #1 koşulsuz marka
+  yasağı taşıyor, `product_brand_real`'inki Brand Kit muafiyetli. Kurumsal reklamda müşterinin
+  kendi logosu kendi dünyasıyla çakışıyor.
+- 🔴 **AÇIK ÇATAL — Mami kararı:** `[5 SESSİZ]` (still-lips/no-dialogue) bir medium yasası değil,
+  **EDU iş akışı yasası** (VO ayrı ElevenLabs katmanı). Reklamda konuşan sunucu standarttır.
+  REAL bunu devralırsa bir yeteneği kesiyoruz. Karar gelene dek REAL'de de sessiz klip varsayılan.
+
+**Kapı:** tsc 0 · vitest **2108/2108** · build OK.
+
+### 📐 FAZ 1.5 — ÖLÇÜM TAMAM, UYGULAMA BEKLİYOR
+
+Ölçüm yapıldı ki sonraki oturum yeniden türetmesin (taşıma yasası). Kaynak: gerçek
+`Kutle-ve-Agirlik_mamilas_command.json`.
+
+**Dosya 2802 KB / 41 sahne (2553 değil). Hash'e dokunmadan çıkarılabilir: %65.3 → 972 KB.**
+
+Plandaki iki teşhis **yanlıştı**, düzeltmesi: `handoff.IMAGE` "sağlam, %90 sahneye özel" DEĞİL —
+755 KB'ın 750'si kopya/tekrar (`draft` = `prompts.image`'in byte-eşi, `refDNAs` 1 tekil ×41,
+`world` 5 tekil ×41). `prompts.image` (389 KB) ise **atılamaz** (41/41 tekil); atılacak olan ikizi.
+
+| Çıkarılacak | Kazanç | Neden güvenli |
+|---|---|---|
+| `handoff.MOTION` (tamamı) | 473 KB | sıfır okuyucu; ayrıca "kare görülmeden motion" yasa ihlali |
+| `handoff.IMAGE` — `negatives` HARİÇ | 750 KB | `draft` kopya, `refDNAs`/`world` tekrar, kalanı okunmuyor |
+| `handoff.SUNO` (tamamı) | 386 KB | sıfır okuyucu; `draft` tek tekil değer |
+| `scenes[].refDna` 40 fazla kopya | 183 KB | 1 tekil ×41; iki tüketici de tek kopyayla çalışıyor |
+| `prompts.suno` 40 kopya · `paletteLight` 40 kopya | 38 KB | ⚠️ `paletteLight` gece/gündüz karışık projede tekilleşmez — dedupe **koşullu** olmalı |
+
+**ÇIKARILAMAZ (hash-bağlı, ikisi de küçük):** `handoff.IMAGE.negatives` (5.6 KB →
+`sceneContextHash`'e `failureModes` olarak giriyor) ve `scenes[].motionEngine` (16.7 KB, doğrudan
+hash'te). `commandId` yalnız **10.6 KB'lık `baseDecision`**'dan doğuyor; `storyboardHash` yalnız
+beş sahne alanından.
+
+**Ad↔sınıf kapısı — kök neden bulundu:** `pure.ts` → sınıflandırılamayan her proje sessizce
+`return 'ANIMATION_EDU'`. `UNKNOWN` yok, blocker yok. Ayrıca `useStudioStore.ts` dünya seçiminde
+register çelişkisini **makbuzsuz düzeltiyor**; aynı çelişki `generateBatch`'te ise **bloke
+ediyor**. Yasa çatallı: aynı durum iki yerde iki farklı sonuç veriyor.
+
+**Site kusurları (plan "arayüze dokunmam" diyor — Mami kararı gerekiyor):** `brandKitLock` ve
+`musicId`'nin **hiçbir giriş yüzeyi yok**, ikisi de `baseDecision.locks` içinde yani kimliğe
+giriyor. Ölçülen gerçek `product_brand_real` çıktısı müşterinin kendi logosunu **üç kez**
+yasaklıyor, çünkü kilit boş.
+
+**Ek kusur (ucuz, FAZ 1.5'te kapanır):** `brain.ts:3261` `registerOf(world.id)` — dünya ID'sini
+path sanıyor, **46 dünyanın 15'inde yanlış cevap veriyor** (9 REAL dünya `STY` okunuyor → ref
+cross-register uyarısı REAL'de hiç basılmıyor).
+
 ### ➡️ SIRADAKİ TEK ADIM
 
 **Mami ders adaylarını `APPROVED.md`'ye taşır** — banka hâlâ boş, artık **15 aday** bekliyor

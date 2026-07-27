@@ -8,7 +8,7 @@ olduğu gibi taşı, istemediğini burada bırak.
 
 ## 1 · Yapısal karne (prompt-lint)
 
-`Sabit Sürat ve Hız_PROMPTLAR.txt` — **44 kare**
+`Sabit Sürat ve Hız_PROMPTLAR.txt` — **44 kare** · register **EDU** (yasa §0.5)
 
 | slot | kapsam |
 |---|---|

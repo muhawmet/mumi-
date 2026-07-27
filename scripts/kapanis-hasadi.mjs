@@ -182,6 +182,15 @@ function classify(rev) {
   return hits.length ? hits : null;
 }
 
+// `src/core/brain.ts` → `registerOf` aynası. Ayna olduğu için burada YASA yazılmaz; yeni bir
+// register kelimesi icat edilirse kaynak orasıdır, burası değil.
+function registerOf(productionPath) {
+  const p = String(productionPath ?? '').toUpperCase();
+  if (/REAL|COMMERCIAL|PRODUCT|LIVE|DOCUMENTARY|TESTIMONIAL|FOOD|FASHION|TOURISM|AUTOMOTIVE|TECH|ARCHITECTURE|SOCIAL|HEALTH/.test(p)) return 'REAL';
+  if (p === 'ANIMATION_EDU' || /EGITIM|EĞİTİM|EDU/.test(p)) return 'EDU';
+  return 'STY';
+}
+
 function findWorld(dir, files) {
   const cmd = files.find((f) => /_?command\.json$/i.test(f) || /mamilas_command\.json$/i.test(f));
   if (!cmd) return null;
@@ -206,9 +215,11 @@ function harvest(dir) {
   const files = projectFiles(dir);
   const world = findWorld(dir, files);
 
-  // 1 — yapısal karne
+  // 1 — yapısal karne. Register bayrakla sorulmaz, command JSON'dan okunur: yasa §0.5'te
+  // register'a bağlı, karneyi yanlış register'da okumak yanlış kusur raporlar.
+  const register = registerOf(world?.productionPath ?? world?.projectClass);
   const promptFile = files.find((f) => /_PROMPTLAR\.(txt|md)$/i.test(f));
-  const lint = promptFile ? lintFile(join(dir, promptFile)) : null;
+  const lint = promptFile ? lintFile(join(dir, promptFile), register) : null;
 
   // 2 — ders adayları
   const revFile = files.find((f) => /revize.*\.(txt|md)$/i.test(f) || /REV[İI]ZE.*\.(txt|md)$/i.test(f));
@@ -237,7 +248,7 @@ function harvest(dir) {
     return { ...k, exact, found: found ?? null };
   });
 
-  return { dir, name, files, world, promptFile, lint, revFile, revs, temiz, byClass, unclassified, kit };
+  return { dir, name, files, world, register, promptFile, lint, revFile, revs, temiz, byClass, unclassified, kit };
 }
 
 function render(h) {
@@ -261,7 +272,7 @@ function render(h) {
     L.push(`⚠️ \`${h.promptFile}\` içinde kare başlığı bulunamadı — parser çıpası tutmadı, elle bak.`);
   } else {
     const t = h.lint.total;
-    L.push(`\`${h.promptFile}\` — **${t} kare**`);
+    L.push(`\`${h.promptFile}\` — **${t} kare** · register **${h.register}** (yasa §0.5)`);
     L.push('');
     L.push('| slot | kapsam |');
     L.push('|---|---|');
