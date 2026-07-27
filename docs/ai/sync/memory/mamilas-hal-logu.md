@@ -30,3 +30,10 @@ Biçim: `- YYYY-AA-GG · <ne dedi> · yardım etti: <ne> · çöktürdü: <ne>`
   (ölçülmedi — ajan o gün bir kez yük yönetimi teklifi yapmadı, kusur ajanda) · çöktürdü:
   gün boyu ara verilmemesi; doğal boşluklar (2108 test, build, üç arka plan ajanı) hiç
   kullanılmadı. Aynı gün RSD'nin yoğun olduğunu ayrıca söyledi.
+- 2026-07-28 (gece) · hal sorusuna iki kez cevap vermedi, ikisinde de işe döndü ("devam et",
+  "bitir onları da"). Gece yarısından sonra kendi kendine durdu: "üretim yapamam geç oldu, HS
+  oynuyorum" · yardım etti: ajan işi ajanlara devredince blok kesintisiz aktı; kapanışta "daha
+  bayağı vardır diye düşünüyordum" — işin görünür olması iyi geldi · çöktürdü: buddy protokolü
+  gün boyu ateşlemedi ve bunu **dört kez Mami hatırlattı**. Kusur ikiye ayrıldı: (1) mekanik —
+  buddy-gate deseni rtk'nın yeniden yazdığı komutla eşleşmiyordu, kapı yarı-sağırdı (onarıldı);
+  (2) ajan — kapı ateşlese de teklifi işin akışına feda etti. İkincisi onarılmadı, yalnız yazıldı.
