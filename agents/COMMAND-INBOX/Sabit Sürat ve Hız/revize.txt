@@ -1,0 +1,31 @@
+SABİT SÜRAT VE HIZ — REVİZE (referans-edit · node "### dosya.png" ile çeker)
+Format: "Use this referenced image. Change ONLY <fix>. Keep everything else identical."
+KURAL: arka plandaki öğe bulanıksa, yerine koyulan da BULANIK istenir — NB2 netleştirmesin, odak kaymasın.
+Sorunsuz kareler revize edilmez.
+
+### 3.png
+Use this referenced image. Change ONLY two things: (1) the background greengrocer sign that reads "GROCER" — replace it with a soft, blurred, barely-legible Turkish "MANAV" or leave it blank; keep it exactly as out-of-focus as it is now, do NOT sharpen it or make the new text crisp; (2) the girl's backpack colour — make it warm mustard-yellow to match her other shots. Keep the two children, the greengrocer stall, the street, the composition and the lighting identical.
+
+### 16.png
+Use this referenced image. Change ONLY the garbled shop sign in the top-left background (the meaningless "SA…RAT" letters): replace it with a soft, blurred, barely-legible Turkish word or leave it blank; keep it exactly as out-of-focus as the original — do NOT sharpen it or bring it into focus. Keep the running girl, the glowing "SÜRAT" text, the motion streaks and everything else identical.
+
+### 31.png
+Use this referenced image. Change ONLY the flag on the flagpole in the background: replace the American flag with the Turkish flag (a red field with a white crescent moon and a white five-pointed star), rendered at the same distance and the same soft focus as it is now — do not sharpen or enlarge it. Keep the two children, the maple leaf, the school gate, the wall and everything else identical.
+
+### 35.png
+Use this referenced image. Change ONLY the glowing foreground text: make the whole phrase read "SABİT SÜRAT" (with a dotted-U, Ü) clearly, sharply and completely legible, and position it so the girl does not stand in front of any letter. (This is the concept term — it MUST be crisp and readable, unlike background text.) Keep the girl, the row of glowing marks, the setting and the lighting identical.
+
+### 41.png
+Use this referenced image. Change ONLY the notice-board text on the right wall (the garbled "TÜRKİSH KARL" and "KİOFETE NURURMU…"): replace it with soft, blurred, barely-legible Turkish text or leave the board blank; keep it exactly as out-of-focus as it is now — do NOT sharpen it or make it readable. Keep the two children, the brass bell, the tiled corridor and everything else identical.
+
+### 42.png
+Use this referenced image. Change ONLY the background wall posters that read "SCIENCE SYSTEM" and "SCIENCE": replace them with soft, blurred, barely-legible Turkish posters (or leave them blank); keep them exactly as out-of-focus as they are now — do NOT sharpen them or bring them into focus. Keep the smart-board with the crisp "SÜRAT" and "HIZ", the red winding path, the blue arrow, Mira and everything else identical.
+
+### 27.png
+Use this referenced image. Change ONLY the small compass-dial letters "W", "E" and "S" to Turkish "B", "D" and "G", kept at the same crispness as the existing dial. Keep the word "KUZEY", the needle, the hands and everything else identical. (opsiyonel)
+
+### 32.png
+Use this referenced image. Change ONLY the small flag by the gate in the background: make it the Turkish flag (red with a white crescent and star), at the same distance and same soft focus as now — do not sharpen it. Keep the two children, the stopwatch, the wall and everything else identical. (opsiyonel)
+
+--- SORUNSUZ (revize YOK) ---
+1 2 4 5 6 7 8 9 10 11 12 13 14 15 17 18 19 20 21 22 23 24 25 26 28 29 30 33 34 36 37 38 39 40 43 44

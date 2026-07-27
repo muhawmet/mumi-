@@ -1,0 +1,62 @@
+SABİT SÜRAT VE HIZ — MOTION PROMPT'LARI (Kling 3.0 · i2v)
+=========================================================================
+YASA: start frame ÇIPA — Kling yeni öğe DOĞURAMAZ, karede ne varsa onu canlandır.
+Sadece DEĞİŞENİ yaz, kareyi yeniden tarif etme (DoP gibi: hareketi zamanla anlat).
+KAMERA: gösterim gerektiğinde hareket eder; her yerde oynak/efektli kamera YOK.
+Push-in yalnız bir şey ANLAŞILDIĞI reveal anında. Şık + çok öğretici, sakin.
+Ses = fizik (native). VO ayrı (ElevenLabs); karede kimse konuşmaz.
+REVİZE kareleri (3,16,31,35,41,42): önce revize basılır, motion aynıdır.
+=========================================================================
+
+##### INTRO #####
+K01 · @mira eşikten kaldırıma iner ve yürüyüşe geçer; kapı menteşesinde birkaç derece savrulur. KAMERA: kilitli, ona doğru fısıltı-yavaş push (davet). Fizik: güneş huzmesinde toz, yumuşak sokak tonu. 5-6s
+K02 · @ali duvardan hafifçe itip doğrulur, Mira'yı görünce küçük el sallar; çınar yaprağı düşüşünü tamamlar. KAMERA: kilitli, çok hafif parallax. Fizik: yaprak, uzak kuş sesi. 5s
+K03 · ikisi adım uyumuyla ilerler, Ali el hareketiyle konuşur; kedi başıyla onları izler. KAMERA: yürüyüşe eşlik eden pürüzsüz yatay dolly. Fizik: taşta ayak sesi, uzak pazar uğultusu. 6s
+K04 · @mira'nın düşünceli bakışı derinleşir, gözü uzağa kayar (soru oluşur); @ali yanında yürür. KAMERA: yüzüne yavaş nazik push (düşünce oturur). Fizik: yaprak geçer, sessiz. 5s
+K05 · ayaklar yürür, her yeni basışta altın glow sırayla açar; parmak ucunda toz. KAMERA: ayaklarla alçak takip, adıma eşlik. Fizik: yumuşak adım + her glow'da hafif sıcak çınlama. 5s
+K06 · yavaş görkemli reveal: kamera çatıların üstünden nazikçe yükselir, okula giden bütün kıvrımlı rotayı alır; sis kayar, güvercinler döner. KAMERA: yavaş crane-up / vista üstünde nazik push (show hak ediyor). Fizik: uzak köy ambiyansı, hafif esinti. 7-8s
+K07 · @mira'nın meraklı bakışı sabit, küçük şaşkın nefes; @ali soft arkada. KAMERA: yüzüne çok yavaş push. Fizik: yaprak spiral iner, sessiz. 5s
+K08 · ikisi park kıvrımını döner, köpek arkada tıpış; benekli ışık üstlerinde oynar. KAMERA: virajda nazik takip. Fizik: ayak sesi, köpek tıpışı, yaprak. 5-6s
+K09 · çocuklar kıvrımlı S-yolda kameradan uzaklaşıp okula yürür; kedi önden geçer. KAMERA: kilitli geniş, yola doğru fısıltı push (kıvrım yönlendirsin). Fizik: sakin sabah. 5-6s
+K10 · yürümeye devam; kıvrımlı yol kadraj boyunca tutar. KAMERA: kıvrımı vurgulayan yavaş takip/push. Fizik: ayak sesi, ambiyans. 5s
+K11 · REVEAL: kırmızı ışık şeridi yolda arkalarında canlanıp parlar (zaten var, güçlenir), @mira dönüp hayranlıkla bakar; "YOL" ışığı sabitlenir. KAMERA: anlam otururken şerit+kelimeye yavaş push (reveal push'u hak eder). Fizik: şerit parlarken yumuşak sıcak uğultu, toz. 6s
+K12 · @mira'nın soru eli yükselir, faint kırmızı şerit arkada titrer; @ali izler. KAMERA: nazik, neredeyse kilitli, hafif push. Fizik: sessiz, glow titremesi. 4-5s
+K13 · REVEAL: mavi düz huzme ev↔okul çizilir/parlar, kırmızı kıvrım altta faint; @mira izler; "YER DEĞİŞTİRME" sabitlenir. KAMERA: vista üstünde huzmeye yavaş push/nazik crane. Fizik: huzme otururken serin yumuşak ton, sis. 7s
+
+##### BUILD-UP #####
+K14 · mavi huzme ev↔okul kapısı parlak tutar, kırmızı kıvrım altta faint atar; küçük figür izler. KAMERA: çatılar üstünde huzme boyunca yavaş push. Fizik: yumuşak ton, sis. 5-6s
+K15 · mavi ölçü çizgisinin işaretleri okula doğru sırayla yanar (zaten var, teker teker atar); Ali bakar. KAMERA: kilitli ya da çizgi boyunca yavaş dolly. Fizik: her mark yanınca yumuşak tik. 5s
+K16 · @mira koşar, altın hız-çizgileri uzayıp savrulur; "SÜRAT" tutar. KAMERA: koşusuna eşlik eden hızlı yatay takip (enerji). Fizik: uğuldayan rüzgâr, hızlı adım. 4-5s
+K17 · @mira'nın eli cep saatine konar; saniye ibresi süpürür; kırmızı sarmal nazik atar. KAMERA: kilitli makro, fısıltı push. Fizik: saatin yumuşak tik-takı. 4-5s
+K18 · @ali kronometre tepesine basar (klik), gözü onda; @mira arkada duvar boyu yürüyüşe geçer. KAMERA: kilitli, dikkat hafif rack (saat→Mira). Fizik: tek kronometre kliki, sonra başlayan ayak sesi. 5s
+K19 · @mira "1 METRE" işaretine adım basar (mark basışla açar); Ali arkada süre tutar. KAMERA: neredeyse kilitli, nazik. Fizik: yumuşak adım + hafif açılış tonu. 4s
+K20 · uzun eşit mark dizisi duvar boyunca ufka doğru sırayla atar; Ali uçta küçük. KAMERA: kilitli geniş, ölçü çizgisi boyunca yavaş push (eşitlik okunur). Fizik: yumuşak ritmik atışlar. 5s
+K21 · @mira ve @ali kronometreye eğilir; ibre durduğu yerde; "METRE / SANİYE" üstte parlak tutar. KAMERA: saat+yazıya yavaş push. Fizik: sessiz, glow uğultusu. 5s
+K22 · gösterge ibresi oturur; çocukların keyifli yüzleri cam kadranda yansır; "KİLOMETRE / SAAT" tutar. KAMERA: kadrana yavaş push. Fizik: yumuşak, hafif ibre tiki. 5s
+K23 · @mira'nın düşünceli hâli tutar, parmak çenede; @ali arkada. KAMERA: nazik yavaş push. Fizik: yaprak geçer, sessiz. 4-5s
+K24 · altın hız-çizgisi bükülüp yöne oturur, "YÖN" oku sabitlenir; çocuklar tepki verir. KAMERA: neredeyse kilitli, yön otururken hafif push. Fizik: çizgi kıvrılırken yumuşak whoosh. 5s
+K25 · @mira'nın parmağı parlak mavi yer-değiştirme huzmesine değer; saat süpürür; sönük kırmızı sarmal atar. KAMERA: kilitli makro, fısıltı push. Fizik: yumuşak saat tiki, dokunuşta hafif ton. 4-5s
+K26 · @mira'nın işaret parmağı fark-etme jestiyle yükselir; @ali dikkatli. KAMERA: nazik push. Fizik: yaprak, sessiz. 4s
+K27 · pusula ibresi titreyip KUZEY'de kesin oturur; çocuklar yakından izler. KAMERA: kilitli makro, fısıltı push (olay = ibrenin oturması). KATI ALET → kamera minimal. Fizik: hafif metalik oturuş. 4-5s
+K28 · @mira ilerler, mavi "KUZEY" yön-huzmesi önünde sabit projekte; @ali pusulayla yanında. KAMERA: yürüyüşüne nazik takip. Fizik: ayak sesi, yumuşak huzme tonu. 5s
+K29 · @mira yürür, mavi yön önde ve sıcak çizgiler arkada birlikte. KAMERA: nazik yatay takip. Fizik: ayak sesi, katmanlı yumuşak tonlar. 5s
+K30 · sönük kırmızı kıvrım ve parlak düz mavi huzme kontrastını tutar; Ali diz çökmüş izler. KAMERA: neredeyse kilitli, hafif push. Fizik: sessiz, yumuşak glow. 4-5s
+K31 · @mira yaprağı muzip göz-kırpışıyla indirir, kapıya döner; @ali gülümser. KAMERA: nazik push/oturuş. Fizik: yaprak, esinti. 5s
+K32 · @ali kronometreyi sabit tutar (çalışıyor); @mira arkada duvar boyu eşit yürür. KAMERA: kilitli, hafif rack (saat→Mira). Fizik: yumuşak tik, eşit ayak sesi. 5s
+
+##### CLIMAX #####
+K33 · @mira yürür, yuvarlak altın marklar ayak altında eşit aralıkla açar; Ali arkada süre tutar. KAMERA: eşit adıma nazik takip. Fizik: eşit adımlar + yumuşak açılışlar. 5s
+K34 · @mira eşit ölçü çizgisi boyunca kameraya doğru yürür, marklar ritimle atar. KAMERA: yavaş push / o yaklaşır (kilitli-ce). Fizik: ritmik yumuşak atışlar. 5s
+K35 · eşit marklar ufka dek kusursuz ritmini tutar; "SABİT SÜRAT" sabitlenir. KAMERA: çizgi boyunca ufka yavaş push ("hep sabit" hissi). Fizik: istikrarlı yumuşak atışlar. 5-6s
+K36 · @mira'nın muzip gülüşü oturur, bilmiş baş eğimi; faint mavi marklar arkada. KAMERA: nazik push. Fizik: yaprak, sessiz. 4s
+K37 · @mira köşeyi eşit adımla döner, altın marklar eşit aralıkla onunla bükülür. KAMERA: dönüşe eşlik eden takip. Fizik: eşit adımlar. 5s
+K38 · @mira yeni yönde yürür, marklar altta eşit ve mavi ok yeni yönü tutar. KAMERA: nazik takip. Fizik: ayak sesi, yumuşak ton. 5s
+K39 · @mira dümdüz yolda kameraya yürür, eşit marklar + sabit mavi yön tutar. KAMERA: yavaş kilitli push (düzlük okunur). Fizik: eşit adımlar. 5s
+K40 · iki yol yan yana tutar — düz mavi "SABİT HIZ", bükülen altın "SABİT SÜRAT" — markları atar; @mira ikisine bakar. KAMERA: yavaş geri push / iki yolu kadrajda tutan nazik reveal (kıyas = ödül, nefes alsın, oynaklık yok). Fizik: iki katmanlı yumuşak ton. 6-7s
+
+##### RESOLUTION #####
+K41 · @mira kapıdan koridora adım atar, üstteki pirinç zil titreyip çalar; @ali izler. KAMERA: kapıdan nazik takip. Fizik: tek sıcak zil, sonra sakin koridor. 5s
+K42 · @mira akıllı tahtayı gösterir; tahtada kırmızı kıvrım ve mavi düz ok saatlerin yanında nazik atar; "SÜRAT"/"HIZ" tutar. KAMERA: tahtaya yavaş push (ya da kilitli). Fizik: sakin sınıf, yumuşak glow. 5-6s
+K43 · @mira'nın yanında altın çizgi akar, mavi yön huzmesi sabit; o kameraya parlak öğretmen gülüşüyle döner. KAMERA: ona nazik push. Fizik: yumuşak katmanlı tonlar. 5s
+K44 · @mira kapanış selamını verir, faint kırmızı ve mavi ışıklar sıcak glow'a çözülür, perde pencerede kıpırdar. KAMERA: nazik, sıcak, yavaş push/oturuş (yumuşak veda). Fizik: hafif esinti, sıcak ambiyans. 5-6s
+=========================================================================
