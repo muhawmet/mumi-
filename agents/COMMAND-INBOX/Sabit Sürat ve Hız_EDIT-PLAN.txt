@@ -1,56 +1,35 @@
-SABİT SÜRAT VE HIZ — EDIT PLANI (kare ↔ VO ↔ odak)
-Intro: 13 sahne → 9 start-frame. Hiçbir VO cümlesi atılmadı; görsel beat birleşti.
+SABİT SÜRAT VE HIZ — EDIT PLANI (kare ↔ VO ↔ yazı)
+52 sahne → 44 kare. Sadece 8 AYNI-GÖRSEL çift birleşti; gerisi 1:1. Hiçbir VO cümlesi atılmadı.
 
-KARE  → VO SAHNELERİ        → ODAK / MİRA           → EKRAN YAZI
-F1    → S1                  → karakter · Mira belirgin   → —
-F2    → S2                  → karakter · Mira + Ali        → —
-F3    → S3 + S4             → karakter · Mira belirgin     → —
-F4    → S5 + S6             → KAVRAM rota · Mira küçük      → —
-F5    → S7                  → karakter · Mira belirgin      → —
-F6    → S8 + S9             → KAVRAM kıvrım · Mira orta/küçük→ —
-F7    → S10 + S11           → KAVRAM reveal · Mira küçük tanık→ "YOL"
-F8    → S12                 → karakter köprü · Mira belirgin  → —
-F9    → S13                 → KAVRAM reveal · Mira küçük tanık → "YER DEĞİŞTİRME"
+KARE  VO sahnesi      yazı              KARE  VO sahnesi      yazı
+K01   S1              —                 K23   S26+27 (merge)  —
+K02   S2              —                 K24   S28             "YÖN"
+K03   S3              —                 K25   S29             —
+K04   S4              —                 K26   S30             —
+K05   S5              —                 K27   S31             "KUZEY" (pusula)
+K06   S6              —                 K28   S32             "KUZEY" (ışık)
+K07   S7              —                 K29   S33             —
+K08   S8              —                 K30   S34             —
+K09   S9              —                 K31   S35             —
+K10   S10             —                 K32   S36             —
+K11   S11             "YOL"             K33   S37             —
+K12   S12             —                 K34   S38             —
+K13   S13             "YER DEĞİŞTİRME"  K35   S39             "SABİT SÜRAT"
+K14   S14             —                 K36   S40+41 (merge)  —
+K15   S15             "METRE"           K37   S42             —
+K16   S16+17 (merge)  "SÜRAT"           K38   S43+44 (merge)  —
+K17   S18             —                 K39   S45             —
+K18   S19+20 (merge)  —                 K40   S46             "SABİT HIZ"+"SABİT SÜRAT"
+K19   S21             "1 METRE"         K41   S47             —
+K20   S22             —                 K42   S48+49 (merge)  "SÜRAT"+"HIZ" (akıllı tahta)
+K21   S23+24 (merge)  "METRE / SANİYE"  K43   S50             —
+K22   S25             "KİLOMETRE / SAAT" K44  S51+52 (merge)  — (slogan VO'da)
 
-EĞİTİM DENGESİ: Mira belirgin 4-5 kare · kavram-lider 4 kare ≈ characterShare %50.
-Kavram karelerinde OLGU (rota/kıvrım/kırmızı iz/mavi huzme) yıldız; Mira tanık.
+BİRLEŞEN 8 ÇİFT (aynı görsel + tek klip): K16 K18 K21 K23 K36 K38 K42 K44.
 
-SÜREKLİLİK KİLİTLERİ: @mira çanta = hardal-sarı · @ali çanta = orman-yeşili
-(kırmızı/mavi kavram rengine çakışmasın) · KIRMIZI ışık şeridi = YOL · MAVİ ışık huzmesi = YER DEĞİŞTİRME.
-Yazı = ışığın kendi harfleri (uçan UI-caption değil), harf-sayısıyla tarif.
+YASALAR: Kling zayıf → HER ŞEY START FRAME'DE. Formül/denklem sembolü + grafik YOK
+(kavram gösterilerek). Yazı = özgün diegetik (kronometre/pusula/araba göstergesi/akıllı tahta/ışık harfleri).
+Cast Türk/Anadolu ~11-12. @mira + @ali (önce Ali_REFERANS bas). Kırmızı iz=yol, mavi huzme=yer değiştirme.
+Eğitim-önce: karakter beat'inde Mira belirgin, kavram karesinde olgu yıldız.
 
---- BUILD-UP (S14–S36 → BU1–BU13) ---
-BU1  S14+S15  mavi ok + ölçü ticks      "METRE"
-BU2  S16+S17  SÜRAT (hız-çizgisi)        "SÜRAT"
-BU3  S18      yol+saat (formülsüz)        —
-BU4  S19+S20  duvar boyu + kronometre     —
-BU5  S21+S22  1m/sn ışık adım-işaretleri  "1 METRE"
-BU6  S23+S24  sürat birimi                "METRE / SANİYE"
-BU7  S25      araba göstergesi            "KİLOMETRE / SAAT"
-BU8  S26+S27  hız? (soru)                 —
-BU9  S28      YÖN farkı                   "YÖN"
-BU10 S29      yer değiştirme÷zaman (mavi)  —
-BU11 S30+S31  pusula, ibre kuzey          "KUZEY"
-BU12 S32+S33+S34  kuzey yönlü hız         "KUZEY"
-BU13 S35+S36  sabit seri sorusu + kronometre —
-
---- CLIMAX (S37–S46 → C1–C6) ---
-C1  S37+S38  1m/sn eşit ışık işaretleri     —
-C2  S39      sabit süratli hareket           "SABİT SÜRAT"
-C3  S40+S41  aynı mı? (soru, twist)          —
-C4  S42+S43  köşe dönüşü, spacing aynı        —
-C5  S44      mavi yön ışığı savruluyor        —
-C6  S45+S46  düz(mavi)=sabit hız vs kıvrık(altın)=sabit sürat  "SABİT HIZ"+"SABİT SÜRAT"
-
---- RESOLUTION (S47–S52 → R1–R4) ---
-R1  S47      zil, okula giriş                —
-R2  S48+S49  AKILLI TAHTA özet (dünya-explain) "SÜRAT"+"HIZ"
-R3  S50      seri vs yön (özet)              —
-R4  S51+S52  kapanış (slogan VO'da)          —
-
-TOPLAM: 52 sahne → 33 kare (Intro 9 · Build-up 13 · Climax 6 · Resolution 4).
-
-SENARYO KURALI: formül/denklem sembolü ve grafik YOK — kavram günlük hayatla GÖSTERİLİR.
-On-screen yazı = özgün diegetik (kronometre/pusula/gösterge/ışık harfleri), stok caption değil.
-
-MOTION: kareler basılıp Read ile GÖRÜLDÜKTEN sonra yazılır (Kling zayıf → start frame kusursuz).
+MOTION: kareler basılıp Read ile görüldükten sonra sekans sekans yazılır.
