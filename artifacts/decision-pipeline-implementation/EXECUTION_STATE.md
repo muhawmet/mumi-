@@ -468,11 +468,59 @@ Gerekçe: doğrulanmış dünya sayısı **1/46**; bu üç dünya hiç kare gör
 çıkarsa pahalı — ilk iş küçük atılır, tutarsa ②③ büyütülür. Üçünün de kütüphanede hazır
 `render_law` ve **3'er referansı** var.
 
-**Yeni oturumun SORACAĞI TEK ŞEY:** ①'in konusu — hangi ürün. Boş sayfa değil, öneriyle gelinsin:
-sıcak içecek termosu (cam/metal/buhar → `product_liquid_physics` + `product_glass_refraction`
-birlikte çalışır) · cilt bakım şişesi (krem viskozitesi + `product_hand_intimacy`) · kablosuz
-kulaklık (fırçalanmış metal anizotropisi + dark-field). Üçü de dünyanın kendi referanslarını
-gerçekten kullanır — Mami seçer.
+**✅ ÜRÜN SEÇİLDİ (Mami, 2026-07-28 gece): ① = SERUM / cilt bakım şişesi.**
+
+Seçim ölçüyle geldi, zevkle değil. `product_brand_real`'in üç referansı kütüphaneden okundu —
+`product_liquid_physics` · `product_glass_refraction` · `product_hand_intimacy`. **Yetenek hükmü:
+REAL dünyalar diyaframı yazıyor ama karanlığı yazmıyor** (§2R'de ölçülü) — `negative fill`,
+kontrast oranı ve siyah noktası yalnız bu üç referansın DNA'sında yaşıyor. Yani ürün seçimi bir
+zevk meselesi değil, **kaç referansın ateşlediği** meselesi:
+
+| aday | ateşleyen ref | hüküm |
+|---|---|---|
+| **serum / cilt bakım şişesi** | **3/3** — cam damlalık · damla + viskoz akış · el süren | **seçildi**; REAL'in en sert maddesi (*"NO plastic AI-smooth skin, gerçek gözenek"*) `hand_intimacy`'de yazılı, yani dünyanın en zor sınavı gerçekten koşuyor |
+| termos | 2.5/3 | opak çelik gövde hiçbir şey göstermiyor → `glass_refraction` yarım ateşler |
+| kablosuz kulaklık | 1/3 | metal anizotropisi üç referansın hiçbirinde yok → ref'siz kalır, dünya gölgesini kaybeder |
+
+### ⏳ KİLİT 1 ÖNERİLDİ — Mami ONAYI BEKLİYOR (2026-07-28 gece, Mami yattı)
+
+Aşağıdakiler **öneri**, kilit değil. Mac'te açılan oturum bunları **onaylatmadan prompt yazmaz.**
+
+**Konsept: "Gece Serumu" — 10 kare, tek sekans, ~27 sn, set = DARK FIELD.**
+Dark field seçildi çünkü `product_glass_refraction` DNA'sı birebir onu istiyor (*"iki yandan yakın
+siyah bayrak, kalkık griye asla düşmeyen gerçek siyah"*) — yukarıdaki karanlık boşluğunu kapatan
+tek hamle, ayrıca jenerik parlak-beyaz cilt bakım reklamından ayırıyor.
+
+- **① Kare sayısı 10** — K01 hero (glass) · K02 macro cam+bilezik (glass) · K03 el damlalığı
+  kavrıyor (hand) · **K04 asılı damla, meniskus, arkadan ışık (liquid — para karesi)** · K05 damla
+  el sırtında viskoz yayılıyor · K06 parmak ucu tene yayıyor (gözenek) · K07 camın iç yüzünde akış
+  izi · K08 etiket net · K09 geniş, üç katman · K10 final hero, üst alan logo için **bilerek boş**.
+- **② Karakter oranı: yüz 0/10 · el 3/10.** Gerekçe üretim: 10 karede yüz kimliği sürükleniyor
+  (Bileşke: kitap 6 karede 6 kitap). §2R zaten *"el bir fiildir"* diyor. Yüz ②'nin işi.
+- **③ Tag listesi: `@sise`** (koyu amber cam + fırçalanmış alüminyum bilezikli cam damlalık —
+  8/10 karede, referans şart) · **`@el`** (kısa cilasız tırnak, gerçek gözenek, manikürsüz) ·
+  *koyu honlanmış taş zemin* = tarif kilidi, referans değil. **Prompt'tan önce 2 referans basılır.**
+- **④ Yazı planı: tek yer — etiket.** `"GECE SERUMU"` (iki kelime, on harf, diyakritik yok), cama
+  basılmış gerçek mürekkep; yalnız K08'de net, diğerlerinde odak dışı/dönük (aynı yazıyı 8 kez
+  bastırmak 8 bozulma şansıdır). Overlay yok, marka yazısı yok. VO K08'de aynı kelimeyi tekrar
+  etmez (caption yasağı).
+- **VO 7/10 karede, 3 kare bilerek sessiz.** Bu §1/7'nin ihlali değil: madde her karenin VO'suyla
+  *eş* olmasını ister, her karenin VO'su olmasını değil. Reklamda sessiz beat standarttır.
+
+**Açık öneri (Mami karar verecek): 10 kareyi tek seferde basma — önce K01 + K04.** Bu dünya
+46'nın hiç kare görmemiş 45'inden biri. K01 dark field hükmünü, K04 üç referansın en zorunu sınar.
+Tutmazsa 2 kare yanar, 10 değil.
+
+### 🔧 Bu oturumda ölçülen iki sistem kusuru (kod donuk — ledger)
+
+- **Enzim KİLİT 0 register körü.** "Çalışan preset" olarak `joy_curiosity · explore_pov ·
+  educational_arc` dayatıyor — bu bir **EDU** presetidir ve REAL spota uygulanırsa yanlıştır.
+  Ayrıca KİLİT 0 bir command JSON varsayıyor; serum spotunun JSON'u **yok ve gerekmiyor** (dünya
+  yasası `dunya-sinavi.ts`'ten birebir alındı). Kilit metni "JSON yoksa" dalını hiç tanımıyor.
+- **Sınav çıktısı castsiz koştuğu için yüz yasağı gibi okunuyor.** `brain.ts` → `CASTLESS_NOTE`
+  yalnız **cast boşken** basılıyor; dünya yasası yüzü yasaklamıyor. Sınav çıktısını üretim yasası
+  sanan bir okuma buradan yanlış hüküm çıkarır (bu oturumda çıkarıldı ve kaynağa inilerek
+  düzeltildi). `worldExam`'in `EXAM_CAST_AGE` uyarısıyla aynı sınıf kusur.
 
 **Sınav notu:** `npx tsx scripts/dunya-sinavi.ts product_brand_real --prompts` koşuldu, dünya
 **GENERATED** ve beş eksende **CARRIED** (fizik 9/9, ref 3→4/5 alan, TEXT diyejetik, START_FRAME

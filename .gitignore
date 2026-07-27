@@ -31,6 +31,7 @@ output/
 screenshots/
 .playwright-cli/
 .claude/settings.local.json
+.claude/.buddy-last-gap
 
 # Üretim koşusu artefaktları (proje-başına geçici; kalıcı ders agents/lessons/APPROVED.md'ye damıtılır)
 images/
