@@ -389,6 +389,20 @@ yani iki taraf birden yanlış olduğu için yeşildi. Kök nedene inilince 2128
 
 **Kapı (final):** tsc 0 · vitest **2128/2128** · build OK · agents-sync OK.
 
+**Kök neden de kapandı: `.gitattributes` YOKTU.** Üç yüzeyi normalize etmek semptomu kapatır;
+repo hangi satır sonunu taşıdığını söylemedikçe kusur üçüncü kez döner. Metin LF, `.bat`/`.cmd`
+**CRLF zorunlu** (`d366231`'de ölçülmüştü), ikili dosyalar dokunulmaz.
+
+**Motion yasasının ÜÇÜNCÜ yüzeyi de kapandı:** `faz5-pilot.ts` artık `motion/<id>.DRAFT.txt`
+yazmıyor. Üstüne "TASLAK" yazmak yasayı taşımıyor — yapıştırılabilir bir metin, uyarısı ne olursa
+olsun kapının arka kapısıdır. Yerine boş klasör + neden-yazısı.
+
+**FAZ 3 kanalının duvarı yazıldı** (`docsContract.test.ts`): bankanın iki ucu · hash-dışı katman
+olduğu · dört skill yüzeyinin bankayı okuduğu · iki yüzeyin **birlikte** güncellendiği. Kanal
+elle kanıtlanmıştı ama onu yaşatan test yoktu — biri skill'i yeniden yazsa **sessizce** kopardı.
+
+**Kapı (final):** tsc 0 · vitest **2135/2135** · build OK · agents-sync OK.
+
 ### ⏸️ FAZ 4 — MOTOR KAPISI: AÇILAMAZ (erişim yok)
 
 `seedance_2` `ENGINE_USABLE`'da 12s ile duruyor ama **ölçülmemiş**. Faz yasası: *ölçülmemiş motora
