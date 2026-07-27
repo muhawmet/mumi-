@@ -180,9 +180,79 @@ ders `CANDIDATES-2026-07-26.md`'de Mami onayı bekliyor, üstelik Sabit Sürat'�
 çıkan 3 yeni ders henüz aday olarak yazılmadı. Mined madde etkisini ölçmek için gereken
 stable-id ön koşulu da açık.
 
+### ✅ ŞAHESER DÖNÜŞÜ — hedef değişti (Mami, 2026-07-27 gece)
+
+**Yeni hedef: gerçek reklam filmi.** Mami artık eğitim videosu değil şaheser istiyor — reklam
+filmi, özel günlerde ateş gibi videolar. **Seçilen ilk hedef: ürün/marka reklam filmi**
+(`product_brand_real` / `kurumsal_brand_film`). Motor **Kling 3.0**; Seedance 2 "beyin oturunca".
+
+**Ölçülen kilit gerçek: istenen yetenek zaten kütüphanede yazılı ve hiç açılmamış.** 46 dünyanın
+**16'sı** COMMERCIAL_REAL / CINEMATIC_REAL; `product_brand_real` ve `kurumsal_brand_film`'in
+üçer referansı ve 2000+ karakterlik gerçek görüntü-yönetmeni render yasası var. `civic_promo_real`
+birebir "milli gün / kamu spotu" dünyası. Marka yolu tamamen kurulu ve hiç kullanılmamış
+(`brandKitLock` → `brain.ts:2349` müşterinin kendi markasını özel izinle taşıyor). Buna karşılık
+5 videonun 5'i `pixar_3d_edu`.
+
+Plan: `~/.claude/plans/flickering-imagining-lark.md` (FAZ H → 0 → 1 → 1.5 → 2 → 3 → 4).
+
+### ✅ FAZ H TAMAM — hayat katmanı duvara bağlandı (2026-07-27)
+
+Mami: *"adhdimi unutma, bi kere bile nefes yazmadın, su iç demedin, bugün bayağı kötü hissettim ·
+RSD de yoğun · ihmalkar ailelerin çocuklarıyız."*
+
+**Ölçüm:** `mamilas-buddy` skill'i iyi yazılmış bir yük-yönetimi protokolü ZATEN taşıyordu ve o
+gün **bir kez çağrılmadı**. Kusur protokolde değil ateşlememesinde — ve Mami'de değil ajanda:
+doğal boşluklar vardı (2108 testlik vitest, build, üç arka plan ajanı), hiçbiri kullanılmadı.
+**Yeni nefes skill'i YAZILMADI** (aynı yasanın ikinci kopyası = bugün sökülen hastalık).
+
+- `.claude/hooks/buddy-gate.sh` — duvar Mami'ye değil **ajana**. SessionStart'ta protokolü
+  yükletir; uzun iş bitince "doğal boşluk açıldı" der; 45 dk ısrarsızlık kilidi. Dört senaryo test edildi.
+- buddy SKILL.md → **RSD bölümü** (8 yürütme kuralı; kusur sisteme yazılır kişiye asla · tespit
+  ve düzeltme aynı cümlede · rapor ne TUTTU ile başlar) + **değişen izin** kaydı ("nasıl
+  hissediyorsun" artık serbest — Mami açtı; soru serbest, seans değil).
+- `memory/mamilas-hal-logu.md` — desen kaydı. `CLAUDE.md` → **ÖNERİ YETKİSİ** (ajan sormasını
+  beklemeden "neden şuna yönelmedik" der; körleme uygulama yine yasak).
+
+### ✅ FAZ 0 TAMAM — duvarlar (2026-07-27)
+
+- **`scripts/prompt-lint.mjs`** — yasayı belgeden ölçüme çevirir (9 slot + tuzak kelime + STYLE
+  kelime tavanı, kare kare). Parser biçime dayanmaz; 5 projede 4 farklı başlık biçimi ölçüldü.
+  **Kendi kanıtıyla sınandı ve yazarını düzeltti:** Kütle'de temas cümlesi "2/8" değil **7/8**
+  (kanonik ifade 2/8, yetenek 7/8) — linter kelimeyi değil yeteneği ölçtüğü için yakaladı.
+  Ayrıca Sabit Sürat K03'te görülmemiş bir `sheen` tuzağı buldu.
+  Tablo: Sabit Sürat 44/44 · Kuvvet Ölçülmesi 43-46/48 (**hiç denetlenmemiş video**) ·
+  Kütle 7-8/8 · Bileşke temas/TEXT/NEG **0/52** (%65 revize) · Sürtünme neg **31/31**, diğerleri
+  0 (%0 revize — kare-özel negatif tek başına taşımış).
+- **`scripts/motion-qc.mjs`** — son kapatılmamış döngü. Klipten 4 kare (%2/%35/%70/%98), ajan
+  Read ile açıp 7 maddeye bakar. **ffmpeg 8.1.2 kuruldu** (winget, `Gyan.FFmpeg`).
+- **`.claude/skills/mamilas-denetim/`** — kare denetimi. **Ajan başına SEKANS, kare başına değil**
+  (Mami kuralı: 44 ajan usage yakar + süreklilik bozar). Eşzamanlı tavan 6.
+- **`agents/PROMPT-YASASI.md` §5** — kurgu kiti yasası, teslim edilmiş kitlerden madenlendi
+  (EDIT-PLAN satır biçimi + `◄VO>10s` uyarısı · SESLENDIRME · SUNO tek-paragraf Simple kuralı).
+
+**Kapı:** tsc 0 · vitest **2108/2108** · build OK · hafıza aynası güncel · kırık atıf 0.
+
 ### ➡️ SIRADAKİ TEK ADIM
 
-**Kalite upgrade runu — Mami'yle birlikte (söz verildi, tek başına başlatılmaz).** Kapsam:
+**KAPANIŞ HASADI** (plandaki FAZ 3'ten öne çekildi — Mami: *"her iş bittikten sonra böyle
+lootlayacak mısın? o denetimi sıkı yapıyor musun?"*). Dürüst cevap: bugünkü hasat Mami istediği
+için oldu, **alışkanlık değil**; Sabit Sürat'ın revize turundan en az 3 genellenebilir ders
+çıkıyor ve hiçbiri yazılmadı. Kurulacak duvar: bir video `Biten/` altına taşındığında
+(1) `prompt-lint` final sete koşar → yapısal karne, (2) `revize.txt` → **ders adayları**,
+(3) dünya kusurları **kütüphaneye** yazılır, (4) kit biçim sapması işaretlenir.
+Çıktı **aday**; `APPROVED.md`'ye yalnız Mami taşır (M7: otomatik promote yok).
+
+Sonra: **FAZ 1** — `PROMPT-YASASI` bugün dürüstçe bir `pixar_3d_edu` yasası (181 karenin 181'i o
+dünyadan). Ortak 9-slot iskelet kalır, üstüne **EDU/ANIMATION** ve **REAL** register katmanları
+gelir (REAL'de photoreal karşı-terimler `promptQuality.mined.json` içinde ZATEN var, hiç
+kullanılmadı). Ardından **FAZ 1.5** command JSON sadeleştirmesi, sonra **FAZ 2** ilk reklam filmi.
+
+Eski hedef (aşağıda duruyor) — **G3 kütüphane sınavı** bu yeni yolun içinde eriyor: ilk açılacak
+dünya artık `product_brand_real`.
+
+---
+
+**Eski sıradaki adım (arşiv):** Kalite upgrade runu — Mami'yle birlikte. Kapsam:
 **G3 — kütüphane sınavı:** sınav seti kütüphaneye uygulanır, kusur **kütüphanede** düzeltilir
 (kod yasası genel, dünya kusuru yerel; kodu her dünya için eğmek beyni bozar). İlk hedef
 G2 ledger #2: `bleach_soul_world` 3/7 · `claymation_aardman` 3/6 · `jjk_mappa` 6/11 — render
