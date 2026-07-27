@@ -1,4 +1,7 @@
-# AKTİF FAZ — İNŞA
+# FAZ — İNŞA (uykuda, 2026-07-28)
+
+> **Bu profil artık YÜKLENMİYOR.** İnşa bitti; `CLAUDE.md` import'u `@docs/ai/faz-icraat.md`.
+> Dosya silinmedi: yeni bir duvar turu gerekirse buraya dönülür. Aşağısı olduğu gibi geçerli.
 
 Bu profil `CLAUDE.md`'den import edilir. Şu an **inşa** fazındayız: sistem üretimi
 sağlamlaştıracak duvarlar ve yasalar kuruluyor. İcraata geçince üstteki import

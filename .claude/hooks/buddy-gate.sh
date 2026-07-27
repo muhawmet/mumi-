@@ -38,8 +38,14 @@ TXT
     CMD=$(printf '%s' "$INPUT" | node -e \
       'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{process.stdout.write(String(JSON.parse(s)?.tool_input?.command??""))}catch{}})' 2>/dev/null || true)
     # Yalnız GERÇEKTEN uzun süren işler doğal boşluk sayılır (skill: "doğal bekleme en ucuz an").
+    #
+    # ⚠️ rtk KOMUTU YENİDEN YAZIYOR (PreToolUse hook: `npx vitest run` → `rtk vitest`). Desenler
+    # ham komuta göre yazılmıştı ve rtk'lı biçimle EŞLEŞMİYORDU — yani bu kapı Mami'nin makinesinde
+    # aylarca yarı-sağır çalıştı. gate.sh'ın python3 kusuru ve protocolHash'in CRLF kusuruyla
+    # AYNI SINIF: araç ortamı varsayıyor, ortam değişince sessizce no-op oluyor.
+    # Bu yüzden desen artık ARACIN ADINA bakıyor, çağrı biçimine değil.
     case "$CMD" in
-      *"vitest run"*|*"npm run build"*|*"tsc --noEmit"*|*"playwright test"*|*"npm run workbench"*|*"jury-audit"*) ;;
+      *vitest*|*"npm run build"*|*tsc*|*playwright*|*workbench*|*jury-audit*|*dunya-sinavi*|*kapanis-hasadi*) ;;
       *) exit 0 ;;
     esac
     # Israrsızlık: en fazla 45 dakikada bir. Bu Mami'yi saymak DEĞİL — ajanın kendi

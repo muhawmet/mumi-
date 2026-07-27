@@ -5,7 +5,7 @@ deterministik karar akışı doğruluk kaynağıdır.
 
 **Bu dosya yalnız her fazda geçerli olanı taşır.** Faza özel yürütme aşağıdaki import'tadır.
 
-@docs/ai/faz-insa.md
+@docs/ai/faz-icraat.md
 
 <!-- FAZ ANAHTARI: icraata geçerken üstteki satırı `@docs/ai/faz-icraat.md` yap.
      İki profil de repoda durur; hiçbir şey silinmez, sadece hangisinin yükleneceği değişir. -->
