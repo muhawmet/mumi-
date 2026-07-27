@@ -154,10 +154,16 @@ describe('buildCommandJSON', () => {
 
   // FRAME-AWARE bir VERİ kapısıdır, tavsiye değil. Site motion taslağını kare
   // görülmeden üretir (buildMotionPrompt kör çalışır); `.command` bunu üç yerde
-  // "TASLAK" diye etiketler ama alan `prompts.motion` adıyla, yapıştırmaya hazır
-  // durduğu sürece etiket yalnızca temennidir. Dikkatsiz bir tüketici (ajan ya da
-  // Mami) onu final sanıp motora verebilir → onaylı-upscale kare olmadan I2V.
-  // Kapı: `prompts.motion` kare gelene kadar NULL; taslak adıyla anılır.
+  // "TASLAK" diye etiketler ama alan yapıştırmaya hazır durduğu sürece etiket
+  // yalnızca temennidir. Dikkatsiz bir tüketici (ajan ya da Mami) onu final sanıp
+  // motora verebilir → onaylı-upscale kare olmadan I2V.
+  // Kapı iki parçalıdır ve ikisi de burada kilitli:
+  //  (1) `prompts.motion` kare gelene kadar NULL — YASAKLI alan, eksik alan değil.
+  //  (2) Yanında taslak YOK. `prompts.motionDraft` (2026-07-27'de söküldü) sökülen
+  //      `handoff.MOTION`'ın ikiziydi; adını değiştirmek metni yasal yapmıyordu.
+  // Sızıntı ölçütü alan adı DEĞİL, metnin imzası: buildMotionPrompt her motion
+  // metnine 'Engine grammar (' basar (brain.ts). Paketin hiçbir yerinde geçmemeli —
+  // yeni bir alan adı altında geri gelirse bu assert onu yakalar.
   it('ships no ready-to-paste motion prompt — the frame gate is data, not advice', () => {
     const rawSource = 'Su buharlaşır. Bulut olur.';
     const sourceBeats = ingestSource(rawSource);
@@ -209,14 +215,19 @@ describe('buildCommandJSON', () => {
     });
 
     for (const scene of command.scenes) {
-      // Kare yok → final motion yok. Kim `prompts.motion` okursa eli boş dönmeli.
+      // Kare yok → final motion yok. Kim `prompts.motion` okursa eli boş dönmeli:
+      // alan DURUR, değeri null'dır (yasaklı alan ≠ eksik alan).
+      expect(Object.keys(scene.prompts)).toContain('motion');
       expect(scene.prompts.motion).toBeNull();
       expect(scene.motionStatus).toBe('PENDING_IMAGE');
-      // Taslak KAYBOLMAZ — ajanın iskeleti (motor lehçesi, süre, split notu) burada,
-      // ama adı ne olduğunu söylüyor.
-      expect(scene.prompts.motionDraft).toBeTruthy();
-      expect(scene.prompts.motionDraft).toContain('Engine grammar');
+      // Taslak da yok: yanına konan "iskelet" kapının arka kapısıydı.
+      expect(Object.keys(scene.prompts)).not.toContain('motionDraft');
     }
+    // Ad değiştirerek geri gelemez: kör motion metninin imzası paketin HİÇBİR
+    // yerinde geçmez (sahne alanları, handoff, qa, sözleşme — tamamı taranır).
+    expect(JSON.stringify(command)).not.toContain('Engine grammar (');
+    // Sözleşme sessiz kalmaz: taslak verilmediğini ajana SÖYLER.
+    expect(command.commands.contract.join(' ')).toContain('MOTION ships no draft');
   });
 
   it('activeRoles always ships the full video pipeline', () => {

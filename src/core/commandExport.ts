@@ -517,11 +517,10 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       // `prompts.motion` ile aynı disiplindir: eksik alan ile yasaklı alan aynı şey değildir.
       paletteLight: sharedPaletteLight === null ? paletteLightByScene[index] : null,
       // FRAME-AWARE = VERİ kapısı, tavsiye değil. Site motion'ı kare görülmeden
-      // üretir (buildMotionPrompt kör çalışır). Bu taslak `prompts.motion` adıyla
+      // üretir (buildMotionPrompt kör çalışır). O kör metin `prompts.motion` adıyla
       // hazır dururken kapı yalnızca temenniydi: dikkatsiz bir tüketici onu final
-      // sanıp motora verebilirdi (= onaylı-upscale kare olmadan I2V). Artık final
-      // alan kare gelene kadar NULL; iskelet (motor lehçesi/süre/split notu) adıyla
-      // anılan taslakta yaşar, ajan onu Pass B'de kareye bakarak yeniden yazar.
+      // sanıp motora verebilirdi (= onaylı-upscale kare olmadan I2V). Final alan
+      // kare gelene kadar NULL, durum da bu alanda okunur.
       motionStatus: 'PENDING_IMAGE' as const,
       motionEngine: {
         model: normalizeVideoModel(state.videoModel),
@@ -530,8 +529,15 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
       },
       prompts: {
         image: scenePrompt(scene),
+        // `null` = YASAKLI alan, eksik alan değil: kim `prompts.motion` okursa eli boş
+        // dönmeli. Yanına taslak KOYULMAZ — `motionDraft` (102 KB, 41 sahne) sökülen
+        // `handoff.MOTION`'ın ikiziydi: kare görülmeden yazılmış, yapıştırmaya hazır bir
+        // motion metni, yani "motion prompt onaylı başlangıç karesi görülmeden yazılmaz"
+        // (agents/PROMPT-YASASI.md §3) yasasının ta kendisinin arka kapısı. İskelet
+        // sanıp taşımak da aynı kapıyı açıyordu: dolu görünen metin okunur, adı okunmaz.
+        // `scene.motionPrompt` site içi önizleme olarak yaşamaya devam eder; sökülen
+        // yalnız EXPORT alanıdır. Motion fazı onaylı kareden sonra açılır (commands.contract).
         motion: null,
-        motionDraft: scene.motionPrompt,
         voiceOver: scene.voiceOver,
         onScreenText: scene.onScreenText ?? null,
         // Tekil müzikte null — `command.music.suno` okunur (yukarıdaki paletteLight kanonu).
@@ -573,13 +579,15 @@ export function buildCommandJSON(state: CommandStateWithPersonal) {
         "MAMI DİREKTİFİ: creativeControls.directorBrief (ve Mami'nin o anki sohbet talimatı) onaylı bağlamdır. Mami 'şu sahnelere anlamlı yazı koy' / 'buraya şunu yaz' derse UYGULA — sitenin bunu tahmin etmesi, forma bağlaması veya bloklaması BEKLENMEZ. Metni kareye diegetik/baked olarak yaz (ON-SCREEN TEXT LAW).",
         'MOTION output may only animate the approved start frame; no new objects, no style drift, no logo/text/face morph.',
         'MOTION is frame-gated: never author a motion prompt before its approved start frame exists. Look at the frame, animate what it actually shows, and write frame-specific negatives naming the fragile elements visible in that frame.',
+        'MOTION ships no draft: prompts.motion is null and no skeleton travels beside it, because a motion text written before the frame is the same violation whatever it is named. The motion phase opens only after an approved start frame exists, and you author it there, from that frame.',
         'ON-SCREEN TEXT LAW: visible text is either baked into the start frame via prompts.image (diegetic or designed typography, tracked per scene in prompts.onScreenText) or it does not exist. Never plan post-production overlays — there is no editor downstream.',
         'PROOF is report.md — the file the runner already writes. State FAIL/FIX/PASS with exact scene IDs, and list every frame the package still expects (a split scene wants one frame per shot: 3a.png, 3b.png). A role that reports nowhere is a role nobody runs.',
       ],
       roles: commandRoles(),
       // These were three "examples", and two of them taught the agent to blind itself.
       // The jq slice dropped sceneBrief, refDna and paletteLight — every field that tells
-      // the agent what to author — and left it alone with a motionDraft that LOOKS finished.
+      // the agent what to author — and left it alone with a blind motion draft that LOOKED
+      // finished (that draft is no longer exported at all; see prompts.motion above).
       // Piping agentPackets.image straight in skipped the frame gate and the reference gate
       // entirely. An example printed inside the package is not an example; it is an
       // instruction. There is exactly one supported way to run a package — the runner —

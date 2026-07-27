@@ -319,11 +319,27 @@ bile almıyor). Yani REAL'de motion yasasını taşıyan tek şey bu metindir.
 - **Ürün karesi = katı nesne riski.** Cam, krom, metal + hızlı kamera = warp. §3'teki katı-nesne
   kilidi REAL'de varsayılan: *"rigid solid, no deform/melt/morph/merge."*
 
-**🔴 AÇIK ÇATAL — Mami'nin kararı gerekiyor.** `[5 SESSİZ]` maddesi (still-lips, no-dialogue) bir
-**medium yasası değil, EDU iş akışı yasasıdır**: VO ayrı ElevenLabs katmanında okunduğu için ekranda
-kimse konuşmuyor. Reklam filminde konuşan sunucu/testimonial standarttır. REAL bu maddeyi olduğu
-gibi devralırsa **bir yeteneği kesiyoruz**. Karar verilene kadar REAL'de de sessiz klip
-varsayılandır — ama bu bir tercih olarak duruyor, yasa olarak değil.
+### Konuşan klip — çatal kapandı (Mami, 2026-07-27)
+
+`[5 SESSİZ]` (still-lips, no-dialogue) bir **medium yasası değil, EDU iş akışı yasasıdır**: VO ayrı
+ElevenLabs katmanında okunduğu için ekranda kimse konuşmuyor. Reklam filminde konuşan
+sunucu/testimonial standarttır — REAL bu maddeyi olduğu gibi devralırsa bir yeteneği keseriz.
+
+**Hüküm — üç kademe:**
+
+1. **Varsayılan REAL'de de sessizdir.** Sebep iş akışı: VO tek seferde ElevenLabs'te okunuyor,
+   Premiere'de altına seriliyor. Konuşan klip bu akışı bozar — dudak senkronu tutmazsa kesim
+   masasında düzeltilemez (Mami AE bilmiyor; §1'in start-frame yasasıyla aynı gerekçe).
+2. **Konuşan klip REAL'de YASAK DEĞİL, ölçülmemiştir.** Kling 3.0'ın Türkçe dudak senkronu bu
+   makinede **hiç sınanmadı**, ve faz yasası açık: *ölçülmemiş motora yasa yazılmaz.* Bu yüzden
+   ne "yapılamaz" denir ne de seri üretime sokulur.
+3. **Açılış yolu bir tek klip testidir.** Konuşan sunucu gerekiyorsa: tek klip, kısa cümle,
+   `[5 SESSİZ]` kilidi o klipte **açıkça kaldırılır** ve klip §3'ün *riskli klip* işaretiyle
+   önce tek başına üretilir. Tutarsa yazılır ve yasa büyür; tutmazsa VO katmanına dönülür ve
+   kare **konuşmayan** bir beat'e çevrilir.
+
+Yani REAL'de fark şu: EDU'da sessizlik bir **kural**, REAL'de bir **varsayılan**. Kuralı kırmak
+kanıt ister; varsayılanı değiştirmek bir test klibi.
 
 ---
 

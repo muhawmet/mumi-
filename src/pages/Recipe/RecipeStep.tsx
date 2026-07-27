@@ -64,6 +64,8 @@ export const RecipeStep = () => {
     heroTags,
     location,
     subject,
+    brandKitLock,
+    selectedMusicId,
     recipeScenes,
     setField,
     setActivePreviewRefId,
@@ -114,8 +116,9 @@ export const RecipeStep = () => {
       sceneCount: store.sceneCount,
       phase0PresetId: store.phase0PresetId,
       rawSource: store.rawSource,
+      brandKitLock,
     }),
-    [projectClass, selectedWorldId, selectedPaletteId, selectedRefIds, selectedPropId, store.sceneCount, store.phase0PresetId, store.rawSource],
+    [projectClass, selectedWorldId, selectedPaletteId, selectedRefIds, selectedPropId, store.sceneCount, store.phase0PresetId, store.rawSource, brandKitLock],
   );
   const readiness = recipeReadiness({ selectedWorldId, selectedPaletteId, subject, recipeScenes });
   const activeRef = DATA.refs.find((ref) => ref.id === (activePreviewRefId || selectedRefIds[0] || ''));
@@ -467,7 +470,7 @@ export const RecipeStep = () => {
       </details>
 
       <details className="recipe-progressive">
-        <summary>Project Metadata · konu, cast, yaş, tag, lokasyon</summary>
+        <summary>Project Metadata · konu, cast, yaş, tag, lokasyon, marka kiti, müzik</summary>
         <Panel title="Konu, Cast, Lokasyon" subtitle="Ajan reçetesinin insan-okunabilir üst bloğu">
         <div className="recipe-meta-grid">
           <Field label="Subject / Konu">
@@ -510,6 +513,46 @@ export const RecipeStep = () => {
               onChange={(event) => setField('heroTags', event.target.value.split(','))}
               placeholder="@mira, @ali, @araba"
               data-testid="recipe-hero-tags"
+            />
+          </Field>
+          {/*
+            MARKA KİTİ (2026-07-27). Zincirin tamamı vardı — store alanı, `BaseDecision.locks`,
+            IP firewall muafiyeti, `brandPermissionClause`, `IP_GENERIC_NEG_BRANDED`, üretim
+            paketinin `brand_refs/` şartı — ama `grep brandKit src/ --include=*.tsx` SIFIR
+            veriyordu: kilidi dolduracak hiçbir ekran yoktu. Sonuç ölçüldü (SITE-02 baseline):
+            müşterinin KENDİ logosunu yasaklayan bir reklam prompt'u. Reklam filmi yolundaki
+            tek yapısal engel buydu; alan burada, `castAge`/`heroTags` gibi bir kez kilitlenir.
+          */}
+          <Field
+            label="Marka kiti (müşterinin kendi markası)"
+            hint="Doldurursan logo, wordmark ve ürün geometrisi ONAYLI REFERANSTAKİ gibi tam oranla basılır — uydurulmaz, elle harflendirilmez; üretim paketi bunun için brand_refs/ içine gerçek logoyu ZORUNLU tutar. Boş bırakırsan ürün markasız üretilir. Burası yalnız müşterinin kendi markasıdır: üçüncü-taraf franchise adı ve ham hex firewall'dan geçmez."
+          >
+            <input
+              className="meta-input"
+              value={brandKitLock}
+              onChange={(event) => setField('brandKitLock', event.target.value)}
+              placeholder="MAMILAS Thermo — mat siyah gövde, gümüş wordmark"
+              data-testid="recipe-brand-kit"
+            />
+          </Field>
+          {/*
+            MÜZİK KİMLİĞİ. ÖLÇÜLDÜ, uydurulmadı: `DATA` içinde müzik listesi YOK
+            (SURGERY_DATA anahtarları: paths·projects·worlds·materials·refs·palettes·agents·
+            golden·regression), o yüzden select değil serbest metin. Prompt'un müzik KARAKTERİ
+            ayrı bir alandan gelir (`musicVibe` → MUS_OPTS, Yönetmen adımında seçilir); bu alan
+            kararın KİMLİĞİdir — `locks.musicId` olarak commandId'ye ve command JSON'una girer,
+            yani aynı filmin aynı parçayla anıldığını sabitler.
+          */}
+          <Field
+            label="Müzik kimliği"
+            hint="Serbest metin — kütüphanede müzik listesi yok, ölçüldü. Parçanın adı/Suno id'si buraya yazılır ve karar kimliğine (locks.musicId) girer; ajan command JSON'unda görür. Müziğin KARAKTERİ bu alandan değil, Yönetmen adımındaki müzik hissinden gelir."
+          >
+            <input
+              className="meta-input"
+              value={selectedMusicId}
+              onChange={(event) => setField('selectedMusicId', event.target.value)}
+              placeholder="suno_thermo_v3 · sıcak motif"
+              data-testid="recipe-music-id"
             />
           </Field>
         </div>

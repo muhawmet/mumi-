@@ -192,7 +192,7 @@ describe('FAZ 1 · COMMAND', () => {
     const state = { ...base, scenes: generated.scenes, agentBrief: generated.agentBrief ?? '' };
     const pack = buildProductionExport(state as never) as unknown as {
       production: Record<string, unknown>;
-      scenes: Array<{ prompts: { motion: unknown; motionDraft: unknown } }>;
+      scenes: Array<{ prompts: Record<string, unknown> }>;
     };
     const gate = pack.production.frameGate as { checklist: string[]; blocks: string };
 
@@ -200,11 +200,18 @@ describe('FAZ 1 · COMMAND', () => {
     expect(gate.blocks).toMatch(/motion\/<id>\.txt/);
     expect(JSON.stringify(pack.production)).toContain('FRAME_PASS');
 
-    // Motion is a DATA gate, not a wish: a final motion prompt may not exist before a frame.
+    // Motion is a DATA gate, not a wish: NO motion text may exist before a frame — not a
+    // final one, not a "draft" beside it. The gate is the absence, plus a null that answers.
     for (const scene of pack.scenes) {
+      expect(Object.keys(scene.prompts), `${worldId}: prompts.motion silindi — yasaklı alan eksik alana döndü`)
+        .toContain('motion');
       expect(scene.prompts.motion, `${worldId}: motion shipped without an approved frame`).toBeNull();
-      expect(scene.prompts.motionDraft).toBeTruthy();
+      expect(Object.keys(scene.prompts), `${worldId}: blind motion draft shipped beside the gate`)
+        .not.toContain('motionDraft');
     }
+    // Ad değiştirerek dönemez: buildMotionPrompt imzası pakette hiç geçmez.
+    expect(JSON.stringify(pack), `${worldId}: blind motion text leaked into the package`)
+      .not.toContain('Engine grammar (');
   });
 
   it('the exported command never ships a work title as a positive instruction', () => {

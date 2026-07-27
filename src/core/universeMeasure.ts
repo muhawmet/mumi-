@@ -38,6 +38,8 @@ export interface UniverseMeasureInput {
   sourceCoverage?: number | null;
   sceneCount?: number;
   phase0PresetId?: string;
+  /** Müşterinin kendi markası. REAL register'da boşluğu ÖLÇÜLEBİLİR bir sonuç doğurur. */
+  brandKitLock?: string;
 }
 
 // Which preview categories sit honestly under each register.
@@ -357,6 +359,18 @@ export function directorNotes(input: UniverseMeasureInput): DirectorNote[] {
         detail: `"${input.phase0PresetId}" preset'inin Director Mandate metni kendi dünyalarını (${scope.join(', ')}) tarif eder, ama seçili dünya "${world.name}". Render Lock kazanır; yine de mandate'i bu dünyaya göre tazelemek agent karışıklığını önler.`,
       });
     }
+  }
+
+  // MARKA KİLİDİ BOŞ — yalnız REAL register'da bir ÖLÇÜM, EDU/STY'de değil (bir ders
+  // anlatımında marka kilidi boş olması normaldir, uyarı orada gürültü olur).
+  // Bu bir öneri değil sonucun bildirimi: kilit boşken `brandPermissionClause` hiç basılmaz
+  // ve negatif bant markayı koşulsuz yasaklar — yani müşterinin KENDİ logosu kareye giremez.
+  if (register === 'REAL' && !(input.brandKitLock || '').trim()) {
+    notes.push({
+      level: 'info',
+      title: 'Marka kilidi boş',
+      detail: 'Foto-gerçek/reklam path\'i seçili ama "Marka kiti" alanı boş. Sonuç ölçülü: prompt marka izni cümlesini hiç basmaz ve gerçek logoyu yasaklar — ürün markasız üretilir. Müşterinin kendi markası varsa Project Metadata altındaki alana yaz; yoksa bu satır doğru durumu bildiriyor.',
+    });
   }
 
   // palette ↔ world mood harmony (non-blocking: Render Lock has authority)

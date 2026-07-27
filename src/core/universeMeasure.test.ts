@@ -49,6 +49,18 @@ describe('directorNotes', () => {
     expect(notes.some((note) => note.level === 'warn' && /Preset \/ register/.test(note.title))).toBe(true);
   });
 
+  // Marka kilidi boşluğu ÖLÇÜLEBİLİR bir sonuç doğurur (prompt marka izni cümlesini hiç
+  // basmaz, negatif bant gerçek logoyu yasaklar) — ama YALNIZ reklam/foto-gerçek path'inde.
+  // EDU'da boş marka kilidi normaldir; orada satır gürültü olurdu.
+  it('REAL register\'da boş marka kilidini bildirir, EDU\'da bildirmez', () => {
+    const real = directorNotes({ ...full, projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'product_brand_real' });
+    const note = real.find((n) => /Marka kilidi boş/.test(n.title));
+    expect(note?.level, 'marka kilidi bloklamaz — ölçümdür, kapı değil').toBe('info');
+    expect(directorNotes({ ...full, projectClass: 'ULTRAREAL_COMMERCIAL', selectedWorldId: 'product_brand_real', brandKitLock: 'MAMILAS Thermo' })
+      .some((n) => /Marka kilidi boş/.test(n.title))).toBe(false);
+    expect(directorNotes(full).some((n) => /Marka kilidi boş/.test(n.title))).toBe(false);
+  });
+
   it('flags long-form scene plans only as info', () => {
     const normal = directorNotes({ ...full, sceneCount: 24 });
     expect(normal.some((note) => /Uzun format|Sahne sayısı/.test(note.title))).toBe(false);

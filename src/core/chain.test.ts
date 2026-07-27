@@ -177,14 +177,22 @@ describe('CHAIN — reçete → final brief → command (all 10 presets, real ou
       expect(JSON.stringify(prod)).toContain('FRAME_PASS');
     });
 
-    it('motion stays frame-gated — no final motion ships before a frame exists', () => {
+    it('motion stays frame-gated — no motion text of any kind ships before a frame exists', () => {
       const prod = (chain.production as unknown as {
-        scenes: Array<{ prompts: { motion: unknown; motionDraft: unknown } }>;
+        scenes: Array<{ prompts: Record<string, unknown> }>;
       }).scenes;
       for (const s of prod) {
+        // Alan DURUR, değeri null: kim okursa eli boş dönmeli (yasaklı ≠ eksik).
+        expect(Object.keys(s.prompts), `${id}: prompts.motion silinmiş — yasaklı alan eksik alana dönüştü`)
+          .toContain('motion');
         expect(s.prompts.motion, `${id}: a final motion prompt shipped without an approved frame`).toBeNull();
-        expect(s.prompts.motionDraft).toBeTruthy();
+        // Taslak da yok — ad değiştirmek kör metni yasal yapmıyordu.
+        expect(Object.keys(s.prompts), `${id}: blind motion draft shipped beside the gate`)
+          .not.toContain('motionDraft');
       }
+      // İmza taraması: buildMotionPrompt çıktısı hangi ad altında olursa olsun yakalanır.
+      expect(JSON.stringify(chain.production), `${id}: blind motion text leaked into the package`)
+        .not.toContain('Engine grammar (');
     });
   });
 });

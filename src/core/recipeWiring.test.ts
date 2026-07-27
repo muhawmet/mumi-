@@ -17,9 +17,16 @@
  *   · recipeScenes[] → vo · event · director_note · motion_seed · turkish_labels · avoid
  */
 import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { DATA, generateBatch, resolveRecipeDefaults, type BriefInput } from './pure';
 import { buildProductionExport } from './productionExport';
+import { buildCommandJSON } from './commandExport';
 import { ingestSource, sourceIntegrity } from './source';
+
+const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const RECIPE_STEP_SRC = readFileSync(join(REPO_ROOT, 'src/pages/Recipe/RecipeStep.tsx'), 'utf8');
 
 const RAW = 'Su buharlaşır. Bulut olur. Yağmur yağar.';
 const BEATS = ingestSource(RAW);
@@ -213,5 +220,83 @@ describe('T2 — project.json (export) reçeteyi taşır', () => {
     expect(p.agentBrief).toContain('Su ısınır.');
     expect(p.agentBrief).toContain('tencere merkezde');
     expect(p.agentBrief).toContain('insan yüzü');
+  });
+});
+
+/**
+ * MARKA KİTİ VE MÜZİK KİMLİĞİ — GİRİŞ YÜZEYİ (2026-07-27).
+ *
+ * Ölçülen kusur bu dosyanın kendi başlığında emsal olarak duruyordu ("kanıtlı emsal:
+ * brandKitLock") ama kusurun İKİNCİ yarısı hiç kapanmamıştı: kablo prompt'a bağlandı,
+ * kabloyu besleyecek EKRAN hiç açılmadı. `grep brandKit src/ --include=*.tsx` sıfır
+ * eşleşme veriyordu — yani zincirin tamamı (store · locks · IP muafiyeti ·
+ * brandPermissionClause · brand_refs/ şartı) doldurulamayan bir alana bağlıydı.
+ * Ölçülmüş sonuç: artifacts/baseline-frames/site-output/SITE-02-…image-prompt.txt —
+ * müşterinin kendi logosunu ÜÇ KEZ yasaklayan bir reklam prompt'u.
+ *
+ * `musicId` aynı sınıftaydı: `locks.musicId` kimliğe giriyordu, hiçbir ekran yazmıyordu.
+ *
+ * Bu blok yüzeyin varlığını VE kablosunu birlikte kilitler. Türkçe etiket tuzağı
+ * (getByLabel Türkçe'de sessizce tutmuyor) yüzünden yüzey `data-testid` ile kilitlenir.
+ */
+describe('marka kiti + müzik kimliği — giriş yüzeyi', () => {
+  it('RecipeStep her iki alanı da RENDER EDER ve setField\'e bağlar', () => {
+    for (const [testId, field] of [['recipe-brand-kit', 'brandKitLock'], ['recipe-music-id', 'selectedMusicId']] as const) {
+      expect(RECIPE_STEP_SRC, `${testId} yüzeyi yok — kilit yine doldurulamıyor`)
+        .toContain(`data-testid="${testId}"`);
+      expect(RECIPE_STEP_SRC, `${testId} render ediliyor ama setField('${field}') çağırmıyor — ölü giriş`)
+        .toContain(`setField('${field}'`);
+    }
+  });
+
+  it('brandKitLock GERÇEK image prompt\'a marka izni cümlesi olarak iner', () => {
+    const locked = briefText({ brandKitLock: 'MAMILAS Thermo — mat siyah gövde, gümüş wordmark' });
+    expect(locked).toContain('Brand: LOCKED and approved — MAMILAS Thermo');
+    expect(locked).toMatch(/Render its logo, wordmark and product geometry EXACTLY/);
+    // Boşken satır HİÇ basılmaz — boş alan motoru marka uydurmaya davet etmemeli.
+    expect(briefText({ brandKitLock: '' })).not.toContain('Brand: LOCKED and approved');
+    expect(decisionIsLive({ brandKitLock: '' }, { brandKitLock: 'MAMILAS Thermo' })).toBe(true);
+  });
+
+  it('marka kilidi doluyken jenerik IP yasağı muafiyetli hâline döner', () => {
+    // Firewall GEVŞEMEZ: yabancı franchise/gerçek kişi yasağı yerinde durur, yalnız
+    // "logo/marka" maddesi "kilitli müşteri markası HARİÇ" olarak yeniden yazılır.
+    const locked = briefText({ brandKitLock: 'MAMILAS Thermo' });
+    expect(locked).toContain('no logo or brand OTHER than the locked client brand named above');
+    expect(locked).toContain('no recognizable franchise or real-person characters');
+    expect(briefText({ brandKitLock: '' }))
+      .toContain('no recognizable franchise or real-person characters, logos, brand names');
+  });
+
+  it('her iki alan da BaseDecision.locks\'a ulaşır; BOŞKEN commandId değişmez', () => {
+    const state = (patch: { brandKitLock?: string; selectedMusicId?: string }) => ({
+      selectedProjectId: DATA.projects[0].id,
+      projectTopic: 'Su Döngüsü', projectClass: 'ANIMATION_EDU', sceneCount: 3, cast: '',
+      selectedWorldId: 'clay', selectedPropId: 'none',
+      selectedRefIds: DEFAULTS.selectedRefIds, selectedPaletteId: DEFAULTS.selectedPaletteId,
+      selectedMusicId: '', imageModel: 'nano_banana_2', videoModel: 'kling_3', brandKitLock: '',
+      mood: '', cameraEnergy: '', timeLight: '', transition: '', musicVibe: '',
+      pov: '', signature: '', leitmotif: '', tempoCurve: '', directorBrief: '',
+      rawSource: RAW, sourceBeats: BEATS, sourceReport: REPORT,
+      beatMode: 'Dengeli' as const, workingMode: 'Standart' as const,
+      beatKeeps: {}, beatAnalysis: null,
+      scenes: [], agentBrief: '', agentPackets: null,
+      ...patch,
+    });
+    const empty = buildCommandJSON(state({}) as never);
+    const branded = buildCommandJSON(state({ brandKitLock: 'MAMILAS Thermo' }) as never);
+    const musical = buildCommandJSON(state({ selectedMusicId: 'suno_thermo_v3' }) as never);
+
+    expect(empty.baseDecision.locks.brandKitLock).toBe('');
+    expect(empty.baseDecision.locks.musicId).toBe('');
+    expect(branded.baseDecision.locks.brandKitLock).toBe('MAMILAS Thermo');
+    expect(musical.baseDecision.locks.musicId).toBe('suno_thermo_v3');
+
+    // Yeni karar = yeni kimlik. Alan DOLDURULUNCA hash DEĞİŞMELİ...
+    expect(branded.commandId).not.toBe(empty.commandId);
+    expect(musical.commandId).not.toBe(empty.commandId);
+    // ...ama boş bırakılan yüzey bugünkü kimliği BOZMAMALI: yüzey açmak tek başına
+    // hiçbir eski kararın id'sini kaydırmaz (determinizm kırmızı çizgisi).
+    expect(buildCommandJSON(state({}) as never).commandId).toBe(empty.commandId);
   });
 });
