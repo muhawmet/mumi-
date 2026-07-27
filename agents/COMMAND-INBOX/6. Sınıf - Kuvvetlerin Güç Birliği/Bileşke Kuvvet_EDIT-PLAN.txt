@@ -1,0 +1,85 @@
+BİLEŞKE KUVVET — EDİT PLANI (Premiere kurgu haritası)
+=========================================================================
+Kanka mantık: VO kesintisiz akıyor, sen 52 klibi sırayla altına diziyorsun. Bir klip birden çok
+VO cümlesini kapsıyorsa (birleştirdiklerim) o cümleler o klip dururken arka arkaya okunur.
+Süreler kaynak beat'lerden — kesin değil, VO'nun gerçek uzunluğuna göre klibi uzat/kıs.
+Shot tipi: WORLD = insansız fizik/nesne | BODY = anonim gövde (arkadan/omuzdan kesik/eller) | SINIF/CAST = anonim grup.
+69 cümle -> 52 klip. Atılan cümle YOK, 17 yerde görüntü birleşti. Kaynak: -_mamilas_command.json (parity).
+=========================================================================
+
+
+##### INTRO (~98 sn) #####
+KLİP | VO CÜMLE | SHOT            | ~sn  | NOT
+K01  | 1        | MİRA            | 7.0  | @mira tanıtım, çanta, sabah sokağı
+K02  | 2        | MİRA            | 6.2  | @mira çanta omza + otobüse koşu
+K03  | 3        | WORLD-reveal    | 8.3  | görünmez güç KUVVET — hareketin arkasındaki güç açığa çıkıyor
+K04  | 4        | BODY-triptik    | 6.6  | kapı kolu / topa vuruş / market arabası — üç el aksiyonu
+K05  | 5 + 6    | MİRA            | 8.8  | @mira bloğu iter, "tek kuvvet mi?" -> "hayır"
+K06  | 7        | WORLD           | 5.8  | birden fazla kuvvet birleşiyor
+K07  | 8 + 9    | MİRA            | 9.9  | @mira okula girer (keşif) + "katılalım"
+K08  | 10 + 11  | MİRA/sınıf      | 9.4  | @mira sırada tahtayı izler (kutu+oklar)
+K09  | 12       | WORLD/tahta     | 6.6  | "dört şey lazım" — tahtada 1-2-3-4
+K10  | 13       | WORLD           | 5.3  | 1) uygulama noktası
+K11  | 14 + 15  | WORLD           | 8.6  | 2) doğrultu (D-B çizgi) + 3) yön (ok ucu) tek karede
+K12  | 16       | WORLD           | 6.2  | 4) büyüklük — dinamometre "5 N"
+K13  | 17       | MİRA            | 9.2  | @mira not alırken başını kaldırır, merak (askı)
+
+
+##### BUILD-UP (~205 sn) #####
+KLİP | VO CÜMLE | SHOT            | ~sn  | NOT
+K14  | 18       | SINIF/tahta     | 4.9  | öğretmen "sihirli tanım" — askı anı
+K15  | 19 + 20  | WORLD/tahta     | 14.0 | bileşke/net kuvvet tanımı + R harfi tek karede
+K16  | 21 + 22  | CAST/bahçe      | 11.5 | zil+teneffüs -> çamura saplı kırmızı araba, Ali+Can
+K17  | 23       | WORLD-eller     | 7.5  | Ali 10 N doğu, araba KIPIRDAMIYOR
+K18  | 24       | WORLD-eller     | 7.0  | Can +15 N aynı yön destek
+K19  | 25       | WORLD           | 7.9  | aynı doğrultu+yön -> yardımlaşma
+K20  | 26 + 27  | WORLD           | 14.1 | toplama kuralı + R = 10+15 = 25 N tek sürekli kare
+K21  | 28       | WORLD           | 6.6  | araba çamurdan fırlıyor (25 N doğu)
+K22  | 29       | BODY            | 4.9  | Mira gülümser (arkadan/sıcak)
+K23  | 30 + 31  | CAST            | 8.8  | beden dersi halat çekme, Mira kenarda
+K24  | 32       | WORLD-eller     | 8.3  | batı 30 N vs doğu 20 N
+K25  | 33       | WORLD           | 4.5  | kırmızı kurdele batıya kayıyor
+K26  | 34       | BODY            | 7.0  | Mira farkındalık: zıt yön
+K27  | 35       | WORLD           | 5.3  | "toplayamam, karşı çekiyorlar" — zıt çekiş görselleşir
+K28  | 36 + 37  | WORLD           | 14.9 | çıkarma kuralı + R = 30-20 = 10 N tek kare
+K29  | 38       | WORLD           | 4.1  | "halat hangi yöne?" — soru anı
+K30  | 39       | WORLD           | 4.5  | güçlünün yönüne -> batı
+K31  | 40       | WORLD           | 4.9  | bileşke: batı 10 N
+K32  | 41 + 42  | WORLD-eller     | 9.4  | kütüphane, masada durgun fen kitabı
+K33  | 43       | WORLD           | 5.8  | "durmuyor ama kuvvet etkiyor"
+K34  | 44       | WORLD           | 8.3  | yer çekimi asagi / masa yukari eşit
+K35  | 45 + 46  | WORLD           | 12.4 | eşit+zıt -> yok eder, R = 0 N tek kare
+K36  | 47       | BODY            | 4.5  | "dengelenmiş kuvvetler" öğrenildi
+K37  | 48       | WORLD           | 4.5  | HINGE: dengelenmiş != sadece durmak
+
+
+##### CLIMAX (~78 sn) #####
+KLİP | VO CÜMLE | SHOT            | ~sn  | NOT
+K38  | 49+50+51 | WORLD           | 14.8 | sabit süratli araba + süzülen paraşütçü aynı karede, "çünkü sürat/yön değişmiyor"
+K39  | 52       | BODY            | 4.5  | Mira pencereye bakar
+K40  | 53       | WORLD           | 5.8  | elma dalından kopar, HIZLANARAK düşer
+K41  | 54       | WORLD           | 7.5  | bisikletli kedi görünce fren, yavaşlar-durur
+K42  | 55       | BODY            | 5.8  | "bunlar dengelenmiş değil — hareket değişiyor"
+K43  | 56 + 57  | WORLD           | 11.1 | R!=0 -> dengelenmemiş -> hareket mutlaka değişir
+K44  | 58       | BODY            | 3.6  | "şu kuralı çıkardı"
+K45  | 59 + 60  | WORLD           | 9.8  | hızlanıyor/yavaşlıyor/yön değiştiriyor -> dengelenmemiş güç
+K46  | 61       | BODY            | 4.9  | akşam eve dönüş, düşünce
+K47  | 62       | WORLD           | 10.0 | büyük özet: birleşir / çekişir / denge — üç hâl tek karede
+
+
+##### RESOLUTION (~34 sn) #####
+KLİP | VO CÜMLE | SHOT            | ~sn  | NOT
+K48  | 63       | BODY/kutlama    | 4.1  | "jet hızıyla öğrendik"
+K49  | 64       | WORLD           | 5.3  | "ödüllü soru" giriş
+K50  | 65 + 66  | WORLD           | 13.3 | quiz kartı: kutu 15 N kuzey / 15 N güney -> dengelenmiş mi, R=?
+K51  | 67 + 68  | WORLD/imza      | 7.1  | "yorumlara bekliyoruz" + "bilimle kalın"
+K52  | 69       | WORLD/kapanış   | 4.1  | "bir sonraki keşifte görüşmek üzere"
+
+
+=========================================================================
+Toplam: 52 klip | ~395 sn (~6.6 dk) | VO = 69 cümle kesintisiz.
+Müzik (Suno): education_light, upbeat hummable — Intro yükselir, Build-up ritim,
+Climax'ta bir tık gerilim (elma/fren), Resolution çözülür.
+Kesme kuralı: VO cümlesi biterken kes; askıda biten cümlelerde (K05 "hayır", K13 merak, K29 soru)
+12-18 frame duygusal hold bırak, sonra kes.
+=========================================================================

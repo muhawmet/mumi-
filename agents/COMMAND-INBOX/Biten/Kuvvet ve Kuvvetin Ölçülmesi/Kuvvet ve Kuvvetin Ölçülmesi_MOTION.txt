@@ -1,0 +1,378 @@
+KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · MOTION PROMPT'LARI (Kling 3.0, i2v)
+=========================================================================
+Kullanım: o karenin görselini START FRAME ver, altındaki TEK promptu yapıştır.
+Başlık satırı senin için (Kling süresi · ekranda hedef · VO cümlesi) — prompta DAHİL DEĞİL.
+Node ayracı: "### " · Blok sınırı: "-----"
+
+YASA: start frame her şeyi taşır. Motion yeni karakter, nesne veya yazı DOĞURMAZ —
+yalnız karede zaten duranı canlandırır. Ekranda kimse konuşmaz, ağız kapalı.
+
+KAMERA İLKESİ: her klipte hareket sahnenin kendi fiziğinden çıkar. Push-in yalnız
+bir şeyin ANLAŞILDIĞI anda kullanılır; onun dışında kamera ya olayla birlikte gider,
+ya kilitli durup dünyayı yaşatır, ya da bırakır özne çerçeveyi terk etsin.
+Katı/mekanik nesne (oyuncak kamyonet, kilitli panel) + hızlı kamera = WARP → oralarda
+kamera ölçülü.
+
+LİMİT TESTİ (yalnız 2 klip, kredi yakmadan): K04 ve K10. İkisi de organik sahne,
+Kling'in güçlü olduğu yer. Bunlar bozuk gelirse sade versiyona döneriz, gerisi risksiz.
+=========================================================================
+
+
+##### SEKANS 1 — INTRO (K01–K14) #####
+
+
+### K01 | 5s · ekranda ~4s | VO1 "Mira'nın hikâyesi çok sıradan bir sabahta başladı."
+KAMERA NİYETİ: sıradan bir sabahın içine sessizce girmek — kamera yürümez, oda yaşar.
+-----
+The room breathes around her while she shifts her weight forward on the edge of the bed and begins to rise: the knitted blanket compresses and springs back where she lifted off, the backpack strap slides a little further onto her shoulder as it takes the load, and on the desk a loose pencil finishes its slow roll and comes to rest against the books. Morning dust turns lazily through the window beam and the warm bar of light creeps a hair across the floorboards. Camera: almost locked, only the faintest drift toward the bed — the frame holds and lets the morning move inside it. She stays in the room and does not walk out of frame; the pencil rolls a short distance and stops without falling; the framed leaves stay fixed; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K02 | 5s · ekranda ~3.5s | VO2a "Odasının kapısını açtı, çantasını sırtına aldı,"
+KAMERA NİYETİ: kamera kapının kendisine biner — açılan şey çerçeveyi de açar.
+-----
+The door swings further open on its hinge and its leading edge sweeps a widening band of shadow across the floorboards, the hallway opening up beyond it; her shoulder rises to seat the backpack strap and the fabric creases along her sleeve as it takes the weight, while the woven friendship band looped over the brass handle swings once and stills. Camera: it rides the door's arc, swinging with the panel as it opens so the hallway is revealed by the movement itself, easing as the strap seats. The door does not slam or detach and she does not step through it; the scarf stays on its hook; the framed photographs stay fixed and unchanged; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K03 | 5s · ekranda ~3.5s | VO2b "masadan kalemini alıp bir şeyler karaladı,"
+KAMERA NİYETİ: kalemin ucunu takip etmek — çocuğun dikkati neredeyse kamera orada.
+-----
+The pencil tip travels on across the page and the loose grey doodle grows by one more unhurried loop, graphite dust settling into the paper's tooth behind the moving point while the page corner lifts and curls further under the pressure of her wrist; the lamp beam holds steady and a single dust mote turns slowly through it. Camera: a slow lateral slide along the page, travelling with the pencil tip rather than closing on it, the desk clutter passing as soft parallax in the near foreground. The scribble stays a loose meaningless doodle and never resolves into letters or words; the notebook stays flat and open; the toy truck and the pencil jar stay exactly where they are; no new objects and no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K04 | 10s · ekranda ~6s | VO2c+3 "sonra bahçeye çıkıp ayağının ucundaki topa vurdu." + "Sıradan hareketlerdi bunlar."   ◄ LİMİT TESTİ
+KAMERA NİYETİ: vuruşun enerjisini kamerayla hissettirmek — düşüp savrulan bir hareket.
+-----
+The strike completes and follows through: the leather ball recovers from its squash and leaves the shoe low and fast across the grass, cut blades and a puff of dry soil kicking up and drifting behind it, her kicking leg swinging on through while her out-flung arms counterweight and then settle; the fig leaves overhead shift in the same breath of air and the towels on the line lift and fall once. Camera: it drops low with the strike and swings around with the follow-through in one continuous move, the foreground grass streaking past close to the lens as the stone wall and fig tree slide through the background as deep parallax, then the move decelerates and settles as her balance returns. She stays on her feet and does not fall or run out of frame; the ball stays low and does not clear the stone wall; the watering can, the terracotta pots and the wall stay exactly where they are; her face and body never distort or stretch during the move; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K05 | 10s · ekranda ~8s | VO4 "Ama Mira o sabah, farkında bile olmadan, doğanın en gizemli ama bir o kadar da hep gözümüzün önünde duran gücüne dokunmuştu: kuvvete."
+KAMERA NİYETİ: topu bırakmak — kamera peşinden gitmez, kalır ve onun yüzünü bulur.
+-----
+The ball carries on through the air and turns slowly on its own axis, the warm-golden glow clinging to its leather brightening and pulsing once — the invisible push made visible — then breathing back down as a thin spiral of soil motes and grass trails its path; behind it her raised follow-through leg lowers and her gaze travels up with the flight, her face opening into wonder. Camera: it lets the ball fly out through the top of the frame and stays behind, drifting gently down and around to find her watching face and holding there as the glow's last light fades. The glow stays soft golden light on the leather and never becomes a flower, petal, arrow or real fire, and it never touches her skin or face; the ball does not burst or change colour; the fig tree, the stone wall and the pots stay exactly where they are; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K06 | 5s · ekranda ~4s | VO5 "Bahçeden çıkarken bir çocuğun market arabasını ittiğini gördü."
+KAMERA NİYETİ: itmeyle birlikte yürümek — çabanın hızında kalmak.
+-----
+The boy drives the trolley on along the pavement and its front wheel spins up and judders once over a paving joint, the paper bags inside tipping and settling against the wire while his jacket creases across his shoulders under the push and his back foot drives off the stone; the golden glow on the handle brightens as he leans in, and the striped awning stirs in the morning air. Camera: a lateral tracking glide travelling at exactly the trolley's speed, the crates and the awning streaming past as foreground parallax so the effort reads as distance covered. The glow stays soft golden light on the metal handle only, never a flower, petal, arrow or flame, and never on skin; the trolley does not tip or spill; the crates stay stacked as they are; all shop signage stays blank and unchanged with no lettering appearing; no new people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K07 | 5s · ekranda ~3.5s | VO6 "Karşı kaldırımda biri köpeğinin tasmasını çekiyordu."
+KAMERA NİYETİ: gerilimi tutmak — kamera çekişmeye katılmaz, kilitlenir ve kayış gerilir.
+-----
+The pull deepens: the woman leans further back on her heels and the leather leash stretches tighter, its stitching drawing visibly at the clasp while the dog plants its front paws and its claws scrape and skid a few centimetres across the paving, dry leaves skittering in the drag; the golden glow riding the taut strap brightens along its length as the tension peaks and her cardigan creases across her shoulders. Camera: locked and still, holding the whole taut line of the leash across the frame — the only movement in the shot is the tension itself. The glow stays soft golden light on the leather strap only, never a flower, petal, arrow or flame, and never on skin or fur; the dog is never lifted off the ground or dragged violently and the leash does not snap; the bench, the litter bin and the plane tree stay exactly where they are; all shop signage stays blank and unchanged with no lettering appearing; no new people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K08 | 10s · ekranda ~6s | VO7 "Ve o an anladı ki her şey aslında bir itme ve bir çekme savaşıyla başlıyordu."
+KAMERA NİYETİ: iki karşıt kuvveti aynı kilitli çerçevede tutmak — seyirci karşılaştırır.
+-----
+Both actions run on together across the same street: on the left the trolley rolls forward as the boy drives his weight into the handle and its wheels spin up; on the right the dog's claws scrape backward as the woman leans away and the leash draws tighter — a push travelling one way and a pull travelling the other, in the same breath. The two golden glows brighten together in the same beat, one on the handle and one on the strap, while dust motes drift through the sunlit corridor of light between them and the laundry on the balconies stirs. Camera: locked and perfectly still, the frame held as a single stage so both forces are read against each other, with only the faintest settle at the end. Both glows stay soft golden light on metal and leather only, never flowers, petals, arrows or flame, and never on skin or fur; exactly two glows and no more appear; the trolley does not tip and the dog is never lifted off the ground; all shop signage stays blank and unchanged with no lettering appearing; no new people enter the frame. Silent clip, no audio, no dialogue, mouths closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K09 | 10s · ekranda ~9s | VO8+9+10 "Kuvvetin en basit tanımı da buydu işte: duran bir cismi hareket ettiren, hareket eden bir cismi durduran, cisimlerin yönünü veya şeklini değiştiren itme ya da çekme etkisi."
+KAMERA NİYETİ: üç panel bir ders — kamera hepsine eşit davranır, kimseyi kayırmaz.
+-----
+Inside the three locked panels each action completes in turn while the seams stay razor-sharp and perfectly still: on the left the fingertip presses on and the toy truck breaks into a roll, its wheels spinning up; in the middle the truck's nose stays pinned dead against the flat palm and its body rocks back once on its springs and settles; on the right the fingers squeeze deeper and the dough bulges and folds further out between them, one crumb breaking loose. Each panel's golden glow brightens with its own action. Camera: minimal and even — a barely perceptible shared push held equally across all three panels, nothing favoured, nothing accelerated. The three panels never blend, slide, reflow or exchange content; the wooden label card stays perfectly still and its lettering stays frozen, correctly spelled and unchanged with no new letters appearing; the glows stay soft golden light on the toy and the dough only, never flowers, petals, arrows or flame, and never on skin; the truck never leaves its panel and never deforms, melts or changes shape; no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K10 | 5s · ekranda ~3.5s | VO11 "Eve döndüğünde meraktan duramadı."   ◄ LİMİT TESTİ
+KAMERA NİYETİ: merakın hızı — kamera önünde geri çekilir, çocuk kameraya yetişir.
+-----
+She strides on down the hallway toward the lit bedroom doorway, the runner rug bunching into a deeper fold under her push-off foot while the backpack swings out and down on its loosening strap and her half-kicked shoe rocks to a stop behind her; the ivy leaves stir in the air she moves and the warm doorway light grows across her shoulder. Camera: it retreats ahead of her down the hallway, pulling back at her pace so the coat hooks and the shoe rack sweep past close on either side as parallax, the corridor compressing around her as she gains — then it eases as she reaches the doorway light. She stays inside the hallway and does not pass through the door; the backpack stays on her arm and never hits the floor; her face and body never distort, stretch or drift during the move; the scarf, the tote bag and the framed photographs stay fixed and unchanged; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K11 | 10s · ekranda ~5s | VO12 "Masasına bir oyuncak arabayla bir paket oyun hamuru koydu ve denemeye başladı."
+KAMERA NİYETİ: deneyin kurulduğu masaya alçaktan bakmak — nesneler kahraman olur.
+-----
+Her hands finish the setup and withdraw a little: the toy truck settles the last of its bounce on its springs, the peeled waxed wrapper uncurls slowly beside it revealing more of the red dough, and her fingertips lift clear of the wood and pause — the experiment ready. Warm lamp light holds steady across the desk and a fine dust turns through the beam above it. Camera: a slow low glide along the desktop at object height, the pencil jar passing close in the foreground, coming to rest with the truck and the dough held together in the frame. Both objects stay flat on the desk in contact and neither floats, slides off or is picked up again; the wrapper carries no lettering and none appears; the paper clip dish and the books stay exactly where they are; no new objects and no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K12 | 10s · ekranda ~7s | VO13 "Duran arabayı parmağıyla ittiğinde araba hareket etti; demek ki kuvvet duran bir cismi harekete geçirebiliyordu."
+KAMERA NİYETİ: hareketin doğuşu — kamera yetişemez, araba onu geride bırakır.
+-----
+The truck breaks fully into motion and rolls away from the fingertip across the wood, its wheels spinning up until the spokes smear and a thin trail of disturbed dust lifting behind it, its body rocking forward once on its springs as it takes off while the finger stays behind and lifts clear; the golden glow at the bumper brightens on the push and fades back as the contact is left behind. Camera: it starts with the truck and then deliberately falls behind, letting the toy pull ahead and gain ground across the frame so the departure is felt as distance. The truck stays flat on the desk with all four wheels in contact and never lifts, flies or falls off the edge; the truck stays a rigid solid object and never deforms, melts, stretches or changes shape; the glow stays soft golden light on the truck's body only, never a flower, petal, arrow or flame, and never on the skin of the finger; the lamp, the books and the pencil stay exactly where they are; no new objects and no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K13 | 10s · ekranda ~7s | VO14 "Arabayı tekrar hızlandırıp önüne elini koyduğunda araba durdu; demek ki hareket eden bir cismi durdurabiliyordu da."
+KAMERA NİYETİ: durmayı kamerayla da hissettirmek — hareket eden çerçeve arabayla birlikte kesilir.
+-----
+The stop resolves: the truck's front wheels spin down to a halt against the standing palm, its body pitching forward and its rear wheels touching back down as the weight settles, the palm's fingers splaying a fraction under the impact and then firming; the golden glow at the nose brightens on the moment of contact and eases as the truck comes to rest, the thin dust trail behind it drifting and settling on the wood. Camera: it is still gliding forward with the truck when the truck stops, and it arrests in the same beat — the movement of the frame dying exactly where the movement of the toy dies, then holding perfectly still. The truck stops and stays put — it never rebounds away, tips over, is crushed or thrown; the truck stays a rigid solid object and never deforms, melts or changes shape; the palm stays planted on the desk; the glow stays soft golden light on the truck's body only, never a flower, petal, arrow or flame, and never on the skin of the hand; the lamp, the pencil jar and the books stay exactly where they are; no new objects and no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K14 | 10s · ekranda ~7s | VO15 "Oyun hamurunu avucunda sıktığında hamurun şekli tamamen değişti; demek ki cisimlerin şeklini değiştirebiliyordu."
+KAMERA NİYETİ: biçimin değiştiğini görmek için etrafından dönmek — tek açıdan anlaşılmaz.
+-----
+The squeeze completes: the dough bulges further out between her closing fingers into a thick smooth tongue, its surface creasing deeper under the knuckle pressure and folding over on itself, while the loose crumb finishes its fall and lands on the desk below; her eyes stay down on her own hands and her expression settles into quiet discovery as the golden glow inside the squeezed mass brightens with the pressure. Camera: a slow short arc around her hands, travelling just far enough that the new shape of the dough is read from a second angle, with a soft rack from her absorbed face down onto the deforming mass as the arc completes. The dough stays in her hands and is never dropped, torn in two or thrown; the glow stays soft golden light inside the dough only, never a flower, petal, arrow or flame, and never on the skin of her hands; each hand keeps exactly five fingers throughout the arc and the fingers never merge, multiply or pass through the dough; the toy truck, the wrapper and the pencil jar stay exactly where they are; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 2 — BUILD-UP (K15–K28) #####
+
+>> BU SEKANSIN KAMERA MOTİFİ: kamera fiziği taklit eder. Yay uzarken kamera da
+>> aşağı iner; karşılaştırmada kamera kalın yaydan ince yaya kayar. Hareket süs
+>> değil, dersin görsel karşılığı.
+>> Cam/çelik/katı gövde çok — kamera ölçülü, "rigid solid, deforme olmaz" kilidi her klipte.
+
+
+### K15 | 10s · ekranda ~8s | VO16+17 "Ve o akşam izlediği maçta bir futbolcunun gelen topa kafasıyla vurup topu bambaşka bir yöne göndermesi geldi aklına; demek ki kuvvet cisimlerin yönünü de değiştirebiliyordu."
+KAMERA NİYETİ: fikir ekrandan ona doğru yolculuk eder — kamera da o yolu yürür.
+-----
+On the television the header completes: the ball leaves the player's forehead along a completely new line, its leather still recovering from the squash while the golden glow at the contact point flares once and fades; in the room the girl leans a touch further forward on the sofa edge, her eyes tracking the ball's new direction, steam curling up from the tea glass on the brass tray and the curtain edge stirring at the window. Camera: it begins held on the screen and then drifts slowly back and around to settle on her watching face, carrying the idea out of the television and into the room. The glow stays soft golden light on the ball only, never a flower, petal, arrow or flame, and never on skin; the player's kit stays plain red and white with no crest, badge, number or lettering appearing; the television image does not change channel, freeze or show any text or scoreboard; the tea glasses, the tray and the bookshelf stay exactly where they are; no new people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K16 | 5s · ekranda ~3s | VO18 "Ama Mira'nın kafasında yeni bir soru belirmişti."
+KAMERA NİYETİ: hiç kıpırdamamak — soru içeride oluşuyor, dışarıda değil.
+-----
+Her gaze drifts further off past the camera and settles into thought, her chin pressing a little deeper into the heel of her hand while the screen light shifts value slowly across the far side of her face as the unseen match plays on; the last thread of steam lifts from the cooling tea glass and a loose strand of hair drifts as she settles her weight. Camera: locked and completely still — nothing in the frame moves but the light, the steam and her thought. She does not turn back to the screen or stand up; her mouth stays closed and she does not speak; no thought bubble, question mark or floating symbol appears; the tea glasses, the tray, the radiator and the bookshelf stay exactly where they are; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K17 | 5s · ekranda ~4.5s | VO19 "Kuvvetin ne olduğunu anlamıştı, peki bir kuvvetin ne kadar güçlü olduğunu nasıl ölçecekti?"
+KAMERA NİYETİ: iki hamur arasında gidip gelmek — ölçemeyen bir bakışın hareketi.
+-----
+The crushed lump relaxes back a fraction at its creased edge while the barely dented one sits untouched beside it, and the two open hands hovering above them turn a little in the air, weighing something they have no way to measure; a loose crumb rocks to a stop on the wood between them and fine dust turns through the lamp beam. Camera: a slow arc travelling over the two lumps from one to the other and back a little, the comparison carried by the movement itself. No ruler, scale, dial or measuring instrument appears in the frame at any point; both lumps stay flat on the desk and neither is picked up; no numbers, letters or labels appear anywhere; each hand keeps exactly five fingers; the pencil jars, the toy truck and the books stay exactly where they are; no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K18 | 5s · ekranda ~4s | VO20+21 "'Çok güçlü vurdum' demek bilimsel bir ölçüm müydü? Tabii ki hayır."
+KAMERA NİYETİ: kilitli kalıp tahmini büyütmek — abartı elleriyle büyür, kamerayla değil.
+-----
+Her hands spread a little wider apart in the air as the guess grows, her shoulders lifting into the shrug and her expression sliding from confidence toward doubt, eyebrows tipping up as she hears herself; the lamp beam holds steady and dust turns slowly in the empty space between her spread hands. Camera: locked and still, the frame holding her whole gesture so the exaggeration plays entirely inside it. Nothing appears in the space between her hands — no glow, no object, no number, no floating symbol; she does not clap, lower her hands fully or stand up; her mouth stays closed and she does not speak; each hand keeps exactly five fingers; the lamp, the dough lumps, the pencil jar and the books stay exactly where they are; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K19 | 5s · ekranda ~4s | VO22 "Kuvveti ölçmek için dinamometre adı verilen bir araç kullanılıyordu."
+KAMERA NİYETİ: kamera aletle birlikte yükselir — kahraman nesnenin doğuşu.
+-----
+The instrument rises clear of its felt-lined case into the light, turning a few degrees as it lifts so the daylight runs down the transparent barrel and the fine coil inside catches its highlight; in the emptied case the felt lining still holds the pressed impression where the instrument lay, and the red pointer inside the barrel trembles a hair and stills. Camera: it rises with the instrument, lifting at the same pace so the object stays centred and the bench falls away below. The instrument stays whole and rigid — the barrel does not bend, the coil does not deform, melt or change shape; the burned lettering on the case lid stays frozen, correctly spelled and unchanged, and no new letters appear; nothing is dropped and nothing floats free; the beakers, the seed jars and the plant stay exactly where they are; no new objects enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K20 | 5s · ekranda ~3s | VO23 "Şeffaftı, içinde esnek bir yay vardı."
+KAMERA NİYETİ: yayı boydan boya taramak — şeffaflık ancak gezerek anlaşılır.
+-----
+A faint reflection of the window travels down the length of the barrel as the instrument is steadied, one bright specular point crawling from turn to turn along the steel coil so each separate loop is read in passing, while dust drifts slowly through the beam behind the glass. Camera: a slow vertical travel down the barrel, scanning the coil from top to bottom and easing at the base. The coil stays a real steel spring with countable separate turns — never a smooth tube, never a drawn line, never a diagram, and it does not stretch or compress in this shot; the wooden label card stays perfectly still and its lettering stays frozen, correctly spelled and unchanged with no new letters appearing; the scale numerals stay frozen and unchanged; no new objects enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K21 | 10s · ekranda ~8s | VO24 "Kancasına bir cisim asıldığında kuvvet yayı aşağı doğru çekiyor, yay uzuyordu; ne kadar büyük bir kuvvet uygulanırsa yay o kadar çok uzuyordu."
+KAMERA NİYETİ: kamera yayla birlikte iner — uzama hem nesnede hem çerçevede yaşanır.
+-----
+The hanging brass weight settles and the steel coil draws open beneath it, its turns separating into wider and wider even gaps as the load takes hold, while the red pointer travels down the scale and eases to rest at its mark; the weight turns a few degrees on its cord and stills, the lowest coil turn carrying the brightest tension highlight. Camera: it descends slowly with the stretch, dropping at the same rate the coil opens so the frame lengthens as the spring does, then settles as the pointer holds. The weight stays attached to the hook and never floats free or falls; the coil stretches but stays sound — no kink, no snapped turn, no tangle, and it never melts, merges or changes wire thickness; the stand stays upright and does not tip; the scale numerals stay frozen and unchanged and no new numbers or letters appear; the beakers, the jars and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K22 | 5s · ekranda ~4.5s | VO25+26 "Ölçtüğü sonucu yazarken de bir birime ihtiyacı vardı: o birim, ünlü bilim insanı Isaac Newton'ın anısına Newton'dı ve kısaca N harfiyle gösteriliyordu."
+KAMERA NİYETİ: sabit durup ışığın pirinç üstünde gezmesini izlemek — birim ağır ve kalıcı.
+-----
+The daylight shifts a fraction as a cloud passes the window and a bright band crawls slowly across the brushed faces of the brass letter, its warm reflected glow strengthening and then softening on the grain of the bench beneath it; fine dust settles along the letter's top face and the red pointer in the instrument behind trembles once and stills. Camera: locked and still, letting the light do all the travelling across the brass. The brass letter and the wooden card stay perfectly still and both stay frozen, correctly formed and unchanged — no new letters, no reversal, no mirroring; the notebook page stays blank and nothing is written on it; no portrait, bust, painting, photograph or likeness of any person appears anywhere at any point; nothing floats and nothing is picked up; the beakers, the weights and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K23 | 5s · ekranda ~4.5s | VO27 "Yani bir kuvvet ölçüldüğünde sonuç '5 Newton' ya da kısaca '5 N' diye söyleniyordu."
+KAMERA NİYETİ: göstergeyle birlikte durulmak — okuma anı kamerada da yerine oturur.
+-----
+The red pointer makes its last small movement and settles dead still against its mark on the scale, the coil above it holding its stretched even spacing, while a bright specular travels one turn of the steel and the raised numerals on the wooden card catch the light along their edges. Camera: it is drifting in a hair as the pointer moves and arrests in the same instant the pointer stops, then holds perfectly still. The pointer settles once and holds — it never swings back and forth, spins or drifts past its mark; the reading on the wooden card stays frozen and unchanged, the number and the letter never touching, merging or becoming another word, and no second label appears; the coil stays a rigid steel spring and never deforms or melts; the beaker, the brass weight and the shelves stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K24 | 5s · ekranda ~3s | VO28 "Derken Mira iki farklı dinamometre gördü."
+KAMERA NİYETİ: kilitli kalmak — iki alet eşit görünmeli, kamera birini kayırmamalı.
+-----
+Both instruments swing a few degrees in unison on the crossbar and settle back to plumb, their transparent barrels catching the same window light along their edges while inside them one coil sits thick and tightly packed and the other thin and openly spaced; both red pointers rest untouched at zero and dust drifts slowly through the beam behind them. Camera: locked and perfectly still, both instruments held at the same height and the same size in frame, neither favoured. Both instruments stay whole and rigid — no coil deforms, melts, merges or changes wire thickness, and neither pointer moves off zero; nothing hangs from either hook; the two barrels, caps, hooks and scales stay identical to each other; the scale numerals stay frozen and unchanged; the weights, the cloth and the jars stay exactly where they are; no people enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K25 | 10s · ekranda ~5s | VO29 "Birinin içinde kalın bir yay vardı, diğerinde incecik bir yay."
+KAMERA NİYETİ: karşılaştırmayı kamera yapar — kalından inceye kayarak farkı yazar.
+-----
+A bright specular crawls along one turn of the thick tightly packed coil and then, as the frame travels, along one turn of the thin openly spaced coil, the two barrels swaying a hair in unison and settling while dust drifts through the beam behind the glass. Camera: a slow lateral dolly travelling from the thick-coiled barrel across to the thin-coiled one, holding a beat on each, the difference between them written by the movement itself. Both coils stay real steel springs with countable separate turns and neither deforms, melts, merges or changes wire thickness; neither coil stretches or compresses in this shot and both pointers stay at zero; the two wooden label cards stay perfectly still and their lettering stays frozen, correctly spelled and unchanged, never swapped between the barrels and never mirrored; the jars, the weights and the shelves stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K26 | 5s · ekranda ~4.5s | VO30 "İkisi aynı hassaslıkta mı ölçüyordu? Hayır. İşin sırrı yayın özelliklerinde saklıydı."
+KAMERA NİYETİ: odağı onun gözünden yayın içine devretmek — sır camın ardında.
+-----
+She leans in a fraction further between the two instruments and her eyes narrow with concentration as the refracted band of daylight travels across her cheek, both barrels swaying a hair under her steadying fingertips while dust turns in the beam between her face and the glass. Camera: it holds still and racks focus off her eyes and through into the coil behind the barrel, handing the attention from the girl to the spring. The refracted light stays light on her cheek and never becomes a green or coloured tint on her skin; both coils stay rigid and neither deforms, melts or changes wire thickness; both pointers stay at zero and nothing hangs from either hook; her mouth stays closed and she does not speak; the jars, the weights and the plant stay exactly where they are; no new objects enter the frame. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K27 | 10s · ekranda ~9s | VO31 "Bir dinamometrenin ölçüm hassasiyeti; yayın kalınlığına, yani kesit alanına, yayın boyuna ve yapıldığı metalin, yani malzemenin cinsine bağlıydı."
+KAMERA NİYETİ: üç yayı sırayla ziyaret etmek — her biri kendi ışığını alsın.
+-----
+The copper spring finishes rocking where it was set down and stills, and the low raking light travels along the row so a bright highlight passes from the first steel coil to the second and then along the warm reddish turns of the copper one, each metal declaring itself in turn; the felt nap stays pressed flat in three troughs beneath them and dust drifts through the window beam. Camera: a slow travel along the row of three springs, pausing a beat over each before moving on, then easing to rest at the end of the row. All three stay real physical springs lying on cloth — never a labelled diagram, never a chart, never a technical illustration, and no arrows, callout lines or dimension markers appear; none of the springs deforms, melts, merges with another or changes metal; the wooden label card stays perfectly still and its lettering stays frozen, correctly spelled and unchanged with no new letters appearing; the hand stays at the frame edge with exactly five fingers; the instruments behind, the weights and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K28 | 10s · ekranda ~5s | VO32 "İnce yaylı olana hafif bir silgi astığında yay hemen esnedi."
+KAMERA NİYETİ: hafif bir yükün bile yayı açtığını görmek — kamera küçük hareketi büyütür.
+-----
+The eraser settles on the hook and turns a few degrees on its cord and stills, and beneath the small load the thin steel coil opens visibly, its turns separating into clear even gaps while the red pointer travels a short way down the scale and eases to rest at its mark; the lowest coil turn carries the brightest tension highlight and dust drifts through the window beam behind. Camera: a slow descent alongside the stretching coil, dropping just far enough to follow the pointer to its resting mark, then holding still. The eraser stays attached to the hook and never floats free or falls; the coil opens but stays sound — no kink, no snapped turn, no tangle, and it never melts, merges or changes wire thickness; the reading stays frozen and unchanged, the number and the letter never touching, merging or becoming another word, and no second label appears; the stand stays upright and does not tip; the weights, the flasks and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 3 — CLIMAX (K29–K42) #####
+
+>> BU SEKANSIN MOTİFİ: kamera yayla birlikte NEFES ALIR. Yük binince iner,
+>> yük kalkınca yükselir, yay bozulunca hiç kıpırdamaz. Hareketin miktarı
+>> kuvvetin miktarıdır — seyirci farkı kameradan da okur.
+
+
+### K29 | 5s · ekranda ~4s | VO33+34 "Demek ki hassas bir ölçüm yapmak istiyorsak... ince yaylı dinamometreleri tercih etmeliydik; çünkü ince yaylar küçük kuvvetlerde bile kolayca uzayabiliyordu."
+KAMERA NİYETİ: seçilen alet yukarı, seçilmeyen aşağıda kalır — kadraj kararı yazar.
+-----
+The lifted instrument steadies in the two hands and turns a few degrees so the daylight runs down its transparent barrel, the thin coil inside swaying a hair and settling into its even rest spacing, while below on the folded cloth the set-aside instrument stays exactly where it was left, untouched and dimmer. Camera: it lifts a little with the chosen instrument, leaving the discarded one lower in the frame, then holds. Both instruments stay whole and rigid — neither coil deforms, melts, merges or changes wire thickness; nothing is dropped, swapped or picked up again; the scale numerals stay frozen and unchanged and no new letters or numbers appear; the beakers, the seed jars and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K30 | 5s · ekranda ~4.5s | VO35 "Bir tüyü ya da küçük bir silgiyi ölçmek için tam da böyle hassas bir dinamometre gerekiyordu."
+KAMERA NİYETİ: en küçük kuvvet, en küçük kamera hareketi — ölçek dürüst olsun.
+-----
+The downy feather turns slowly on its almost invisible thread in the room's air, a single barb lifting and settling, and under that almost-nothing weight the thin coil holds its small opening while the red pointer stays lifted just off the zero mark, trembling once and holding. Camera: the smallest possible creep inward, barely perceptible, matching the smallness of the force itself. The feather stays attached to the thread and never floats free or falls; the coil neither stretches further nor closes back in this shot; the pointer does not swing, spin or drift past its mark; the scale numerals stay frozen and unchanged; the brass weights, the flasks and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K31 | 5s · ekranda ~3s | VO36a "Aynı silgiyi kalın yaylı olana astığındaysa yay hiç kıpırdamadı;"
+KAMERA NİYETİ: HİÇBİR ŞEY OLMAMASI — videonun tek hareketsiz klibi, ders orada.
+-----
+Nothing gives. The eraser hangs on the hook and turns a few degrees on its cord and stills, and the thick heavy-gauge coil above it stays exactly as it is — turns pressed tight together, not one gap opening, the red pointer holding dead at the top of the scale without moving a hair; only fine dust drifts through the window light and a faint highlight crawls along one packed turn. Camera: completely locked and motionless — the stillness of the shot is the lesson. The coil must NOT open, stretch, sag or separate at any point; the pointer must NOT move from its mark; the eraser stays attached to the hook and never falls; the reading stays frozen and unchanged, the zero and the letter never touching or merging into a word; the stand stays upright; the brass weights, the flasks and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K32 | 10s · ekranda ~5s | VO36b "ancak ağır bir taş astığında esnedi."
+KAMERA NİYETİ: az önce kıpırdamayan yay şimdi açılıyor — kamera inerek farkı yazar.
+-----
+The stone settles on the hook and turns slowly on its knotted cord, and this time the thick coil finally gives: its tightly packed turns separate into clear even gaps under the weight, the red pointer travelling down the scale and easing to rest at its mark while the stand's foot bites into the bench and its shadow deepens. Camera: it descends with the opening coil, dropping through the stretch and settling as the pointer holds — the same frame that refused to move a moment ago now travels. The stone stays attached to the hook and never floats free or falls; the coil opens but stays sound — no kink, no snapped turn, no tangle, and it never melts, merges or changes wire thickness; the reading stays frozen and unchanged, the number and the letter never touching or merging into a word; the stand does not tip; the eraser on the felt, the weights and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K33 | 5s · ekranda ~4.5s | VO37 "Çünkü ağır bir sırt çantasını ölçmeye kalksak ince yay kopabilir ya da bozulabilirdi."
+KAMERA NİYETİ: tutulan nefes — kamera da kıpırdamaz, çünkü henüz hiçbir şey olmadı.
+-----
+Her held hand trembles a fraction with the weight of the loaded backpack while her other hand hovers short of the empty hook and does not close the distance, her expression sliding further into careful second thought; the backpack's canvas creases and its handle stitching pulls a little tighter as the load settles, and dust drifts through the beam behind the untouched hook. Camera: locked and still, holding the gap between her hand and the hook — the tension of the shot is that nothing happens. The backpack is NOT hung on the hook at any point and the thin coil stays unloaded, unstretched and undamaged with the pointer at zero; nothing breaks, snaps or deforms; her mouth stays closed and she does not speak; the stand stays upright; the stone and eraser on the felt, the weights and the shelves stay exactly where they are. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K34 | 10s · ekranda ~9s | VO38+39 "İşte o zaman kalın ve sert yaylı dinamometreler kullanılıyordu. Kalın yaylı dinamometreler hassas değildi, küçük kuvvetlerde hiç esnemiyorlardı; ama çok daha büyük kuvvetleri güvenle ölçebiliyorlardı."
+KAMERA NİYETİ: güven — kamera iner, sonra durur ve BEKLER; gösterge tutunca rahatlar.
+-----
+The loaded backpack finishes swinging and hangs plumb and still from the hook, the thick coil drawn wide open under its weight but holding firm without a tremor, the red pointer settled far down the scale and staying there; the stand's cast foot bites into the bench and its shadow deepens, and behind it her shoulders drop a little as she sees the reading hold. Camera: it descends with the load and then stops early and simply waits, holding on the steady pointer while the shot breathes — the confidence is in the stillness after the move. The coil is stretched but sound — it must NOT break, snap, kink, tangle or deform permanently here; the backpack stays attached to the hook and never falls; the stand does not tip; the reading stays frozen and unchanged, the number and the letter never touching or merging into a word; her mouth stays closed; the shelves, the weights and the cloth stay exactly where they are. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K35 | 10s · ekranda ~9s | VO40+41 "Bir de yayın bakır mı, demir mi, yoksa çelik mi olduğu, yani yayın yapıldığı malzemenin cinsi, esnekliği doğrudan etkiliyordu. Çelik yaylar çok daha dayanıklı ve esnekti."
+KAMERA NİYETİ: üç malzemeyi gezip çelikte durmak — canlı olan sonuncusu.
+-----
+The low raking light travels along the row so a highlight passes over the copper turns and then the dull iron ones, and at the end of the row the steel spring drawn open between finger and thumb springs back and closes toward its rest spacing, alive with recovery while the other two lie completely inert beside it; the felt nap holds its three pressed troughs and the copper one rocks a fraction in the disturbance. Camera: a slow travel along the row that decelerates and settles on the recovering steel spring, the movement ending where the life is. All three stay real physical springs lying on cloth — never a labelled diagram, chart or technical illustration, and no arrows, callout lines or dimension markers appear; none of them deforms, melts, merges with another or changes metal; the copper stays warm reddish, the iron dull grey-brown, the steel bright and cool; the hand keeps exactly five fingers; the instruments behind and the weights stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K36 | 5s · ekranda ~3s | VO42 "Mira denemeye devam etti."
+KAMERA NİYETİ: kilitli — yeni bir deney başlıyor, tezgâh kendini hazırlıyor.
+-----
+She finishes rolling her sleeve back and her hands move in toward the stand, the empty instrument still swaying a hair from being rehung and settling to plumb, her cuff creasing back on itself at the elbow while the low afternoon light lays its warm bar across the bench and dust turns slowly through it. Camera: locked and still, the whole laid-out bench held in frame as she moves into it. Nothing is hung on the hook in this shot and the coil stays at rest with the pointer at zero; the instrument stays whole and rigid and never deforms; the stone and the eraser stay where they lie on the felt; the loose springs stay pushed to one side; her mouth stays closed; the shelves, the weights and the plant stay exactly where they are. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K37 | 10s · ekranda ~5s | VO43 "Kancaya önce küçük bir silgi astı, yay az uzadı;"
+KAMERA NİYETİ: kamera AZ iner — bir sonraki klipte çok inecek, fark oradan doğar.
+-----
+The eraser settles on the hook and turns a few degrees on its cord and stills, and the thin coil opens by a small but clearly visible amount, its turns separating into narrow even gaps while the red pointer travels a short way down the scale and eases to rest; her withdrawn hand stays open in the air where she let go, and dust drifts through the light behind. Camera: a short shallow descent alongside the coil — it drops only a little, matching the small stretch, then holds. The eraser stays attached to the hook and never floats free or falls; the coil opens only slightly and does not stretch to its limit; the pointer settles once and holds without swinging; the reading stays frozen and unchanged, the digit and the letter never touching or merging into a word; the coil never melts, merges or changes wire thickness; the stone on the felt, the weights and the shelves stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K38 | 10s · ekranda ~7s | VO44+45 "sonra ağır bir taş astı, yay çok daha fazla uzadı." + "Hafif cisimler yayı az uzatıyor, ağır cisimler daha çok uzatıyordu."
+KAMERA NİYETİ: kamera ÇOK iner — az önceki kısa inişin karşılığı, fark ölçülebilir olsun.
+-----
+The stone settles heavily on the hook and swings once on its knotted cord before stilling, and the thin coil draws far open beneath it, its turns separating into wide obvious gaps as the spring lengthens well past where the eraser took it, the red pointer travelling a long way down the scale and easing to rest near the lower end; the lowest coil turn carries the brightest tension highlight. Camera: a long slow descent alongside the stretching coil, travelling noticeably further than before and settling only when the pointer holds. The stone stays attached to the hook and never floats free or falls; the coil stretches far but stays sound — no kink, no snapped turn, no tangle, and it never melts, merges or changes wire thickness; the pointer settles once and holds without swinging past its mark; the reading stays frozen and unchanged, the number and the letter never touching or merging into a word; the stand stays upright and does not tip; the withdrawn hand stays open in the air; the weights and the shelves stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K39 | 10s · ekranda ~9s | VO46 "Çünkü dinamometrenin içindeki yay esnek bir maddeydi ve esnek maddeler, üzerlerindeki kuvvet kalktığında eski hâllerine geri dönüyorlardı."
+KAMERA NİYETİ: kamera bu kez YÜKSELİR — inişin tersi; esneklik geri dönüştür.
+-----
+With the hook empty the coil closes back on itself: its lower turns draw together and settle into their even rest spacing, the red pointer travelling back up the scale and easing to a stop on zero, while the freed cord loop swings and slows beneath the hook and the stone lies still on the felt where it was set down. Camera: it rises slowly with the closing coil, travelling back up the way it came down, and holds as the pointer reaches zero. The coil is recovering and SOUND — no kink, no permanent gap, no snapped turn, no tangle, and it never melts, merges or changes wire thickness; nothing hangs from the hook at any point and nothing is picked up; exactly one red pointer appears on the scale and no second one; exactly one stone lies on the bench and no duplicate appears; the wooden card stays perfectly still and its lettering stays frozen, correctly spelled and unchanged; the weights, the flasks and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K40 | 10s · ekranda ~7s | VO47 "Ama Mira bir şeyi merak etti: ya bu küçük dinamometreye kocaman bir okul çantası asarsa?"
+KAMERA NİYETİ: odağı minik aletten kocaman çantaya devretmek — tehlikeli fikir orada doğar.
+-----
+The small instrument turns slowly between her finger and thumb and the light passing through its barrel slides a bright caustic across her cheek, her expression tipping into the specific mischief of a dangerous idea, while in the near foreground the loaded backpack settles and one strained seam creases a fraction further. Camera: it holds still and racks focus off the tiny instrument down onto the huge backpack in the foreground, handing the shot from the small thing to the heavy one. The backpack is NOT hung on the instrument at any point and the coil stays unloaded and undamaged with the pointer at zero; nothing breaks or deforms; the caustic stays light on her cheek and never becomes a green or coloured tint on her skin; her mouth stays closed and she does not speak; the shelves, the flasks and the plant stay exactly where they are. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K41 | 10s · ekranda ~8s | VO48 "O zaman yay esneklik özelliğini kaybeder ve bozulurdu; bir daha eski hâline dönemezdi."
+KAMERA NİYETİ: ölü sessizlik — K39'da geri dönen yay burada dönmüyor, kamera da donuyor.
+-----
+Nothing comes back. The ruined coil lies exactly as it fell, its turns spread permanently and unevenly with a visible kink where one has splayed out of line, the red pointer stopped short below the zero mark and staying there, unable to travel; a hard bright specular sits unmoving on the splayed turn and only the finest dust drifts through the low light. Camera: completely locked and motionless, holding the wreck — where the spring recovered a moment ago, here neither the coil nor the camera moves. The coil must NOT close, recover, straighten or spring back at any point, and it must stay one continuous spring — never snapping into separate pieces, unravelling into loose wire or leaving the barrel; the barrel stays intact and unbroken with no shattered glass; nothing hangs from the hook; no tears, no drooping cartoon face, no sad symbol appears; the backpack, the weights and the shelves stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K42 | 5s · ekranda ~4.5s | VO49 "İşte bu yüzden her dinamometrenin üzerinde yazan maksimum ölçüm değerine dikkat etmek gerekiyordu."
+KAMERA NİYETİ: parmağın gösterdiği yere yaklaşmak — tek meşru push-in burada, çünkü uyarı.
+-----
+The fingertip presses the barrel a hair beside the largest numeral at the bottom of the scale and the instrument turns a few degrees on the stand and stills, a bright specular travelling along the raised edge of that numeral so it separates from the ones above it; dust drifts slowly through the low window light behind the glass. Camera: a small deliberate push toward the fingertip and the numeral it marks, easing to a stop — the one moment in the sequence where closing in is the point. The scale numerals stay frozen, correctly formed and unchanged, and no new numbers or letters appear; the fingertip stays beside the largest numeral and does not travel back up the scale; the red pointer stays where it is and does not move; the coil stays rigid and never deforms or melts; no warning triangle, exclamation mark or hazard symbol appears; the weights, the jars and the plant stay exactly where they are. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 4 — RESOLUTION (K43–K48) #####
+
+>> BU SEKANSIN MOTİFİ: gün kapanıyor. Kamera yavaşlar, ısınır ve sonunda
+>> açılıştaki kilitli çerçeveye geri döner — K47, K01'in akşam hali.
+
+
+### K43 | 5s · ekranda ~4s | VO50 "Günün sonunda Mira defterini açtı ve o gün öğrendiklerini yazdı:"
+KAMERA NİYETİ: günün nesneleriyle birlikte sayfaya inmek — hepsi masada, hepsi hatıra.
+-----
+The pencil tip settles onto the fresh cream page and begins to lay a line, graphite dust catching in the paper's tooth behind it while the page's inner curve lifts a little against the binding and the amber ribbon shifts where it trails over the edge; the lamp beam holds steady and one dust mote turns slowly above the paper. Camera: a slow low glide across the desk that passes the day's objects and comes to rest on the open page, the journey ending where the writing begins. The handwriting stays small, soft and unreadable — no legible words, no letters that resolve, no printed text or headings appear on the page in this shot; the notebook stays flat and open and is never closed or lifted; the instrument, the stone, the eraser and the toy truck stay exactly where they lie; her mouth stays closed. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K44 | 10s · ekranda ~9s | VO51+52 "kuvvet, cisimleri hareket ettiren, durduran, yönünü ve şeklini değiştiren itme ya da çekmeydi; dinamometre ile ölçülüyordu;"
+KAMERA NİYETİ: yazıdan gerçek nesnelere kaymak — tanım masada duruyor, sayfada değil.
+-----
+The lamp's warm pool breathes a fraction as the page settles, graphite dust catching along the freshest stroke beneath the heading, while beside the notebook the squeezed dough relaxes a hair at its creased edge and the toy truck sits still with one wheel turned; the amber ribbon shifts once against the paper. Camera: a slow lateral travel from the written heading across to the real objects arranged beside it, letting the word hand the meaning over to the matter. The heading stays frozen, correctly spelled and unchanged, reading horizontally left to right and never rotating, mirroring or gaining new letters; the looser handwriting stays small, soft and unreadable; no drawn diagram, sketch, arrow or labelled illustration appears on the page; the dough, the truck and the instrument stay exactly where they lie and nothing is picked up; no faces enter the frame. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K45 | 10s · ekranda ~8s | VO53+54 "birimi Newton, yani N'di; ve dinamometreler içlerindeki esnek yaylar sayesinde çalışıyordu."
+KAMERA NİYETİ: sabit durup ışığın pirinçten yaya geçmesini izlemek — birim ve mekanizma.
+-----
+The brass letter's warm reflected glow strengthens and shifts across the cream page beneath it as the lamp settles, and the light then travels on along the bare steel spring lying behind it so a bright specular runs from turn to turn down its length; a fine dust turns slowly through the lamp beam above them. Camera: locked and still, letting the light itself carry the eye from the brass letter to the spring — the unit and the mechanism handed over without a move. The brass letter stays perfectly still, correctly formed and never mirrored or reversed, and exactly one letter appears in frame; the spring stays a real steel coil with countable separate turns and never deforms, melts or straightens; the handwriting on the page stays small, soft and unreadable; no portrait, bust, painting or likeness of any person appears anywhere; the toy truck, the stone and the instrument stay exactly where they lie. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K46 | 5s · ekranda ~3.5s | VO55 "Sonra defterini kapattı ve gülümsedi."
+KAMERA NİYETİ: kapanışla birlikte yumuşamak — kitap iner, kamera da nefesini bırakır.
+-----
+The cover settles the last of the way down onto the page block and a small breath of air lifts from between the closing pages, the amber ribbon swinging once against the navy cloth and coming to rest, while her smile widens a fraction and she leans back a touch into the lamp light. Camera: it eases gently back and up as the cover closes, releasing the frame with her. The notebook cover stays blank — no title, no lettering appears on it at any point; the cover closes once and is not reopened; her mouth stays closed in a closed-lip smile and she does not speak; no human figurine, doll or small figure stands anywhere on the desk; the toy truck, the stone, the dough, the eraser and the instrument stay exactly where they lie. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K47 | 10s · ekranda ~7s | VO56 "Çünkü sıradan sandığı o sabah, aslında bir bilim macerasının ilk günüydü."
+KAMERA NİYETİ: K01'e dönüş — açılış gibi kilitli, ama oda artık dolu. Bookend.
+-----
+The room settles around her: she leans back in the chair with her arms loose and her gaze travelling over the desk she has filled, the lamp's warm pool breathing a fraction as the filament settles, the curtain edge stirring at the window and dust turning slowly through the beam above the day's objects. Outside, one distant street light comes up a little brighter in the blue. Camera: almost locked, only the faintest drift — the same held frame the morning opened on, now warm and full. She stays in the chair and does not stand or leave frame; nothing on the desk is picked up, moved or added; no human figurine, doll or small figure stands anywhere on the desk; her mouth stays closed and she does not speak; the room stays warm and glowing with only the window blue — it never darkens into night; the bed, the blanket, the framed leaves and the football stay exactly where they are. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K48 | 10s · ekranda ~8s | VO57+58 "Bir sonraki macerada görüşmek üzere." + "Merakla kalın, bilimle kalın!"
+KAMERA NİYETİ: son bir yaklaşma ve kapanış — sıcaklık en yüksekken bırakıyoruz.
+-----
+Her reaching fingers close the last of the distance to the lamp switch and rest there without turning it, her smile opening a little further toward the lens as the lamp's warm pool reaches its fullest and golden dust drifts thickly through the beam between her and the camera; the amber ribbon settles against the closed notebook and the window blue deepens a shade behind her. Camera: a slow warm push toward her that eases to a stop while the light is still at its brightest, holding on the smile. She does not turn the lamp off and the frame never goes dark; her mouth stays closed in a closed-lip smile and she does not speak, wave or perform to camera; no end card, title card, logo, subscribe graphic or lettering of any kind appears; no human figurine, doll or small figure stands anywhere on the desk; the notebook stays closed and blank; the toy truck, the stone, the eraser, the dough and the instrument stay exactly where they lie. Silent clip, no audio, no dialogue, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----

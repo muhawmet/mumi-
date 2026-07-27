@@ -1,62 +1,340 @@
-SABİT SÜRAT VE HIZ — MOTION PROMPT'LARI (Kling 3.0 · i2v)
+SABİT SÜRAT VE HIZ — 6. SINIF · MOTION PROMPT'LARI (Kling 3.0, i2v)
 =========================================================================
-YASA: start frame ÇIPA — Kling yeni öğe DOĞURAMAZ, karede ne varsa onu canlandır.
-Sadece DEĞİŞENİ yaz, kareyi yeniden tarif etme (DoP gibi: hareketi zamanla anlat).
-KAMERA: gösterim gerektiğinde hareket eder; her yerde oynak/efektli kamera YOK.
-Push-in yalnız bir şey ANLAŞILDIĞI reveal anında. Şık + çok öğretici, sakin.
-Ses = fizik (native). VO ayrı (ElevenLabs); karede kimse konuşmaz.
-REVİZE kareleri (3,16,31,35,41,42): önce revize basılır, motion aynıdır.
+Kullanım: o karenin görselini START FRAME ver, altındaki TEK İngilizce promptu yapıştır.
+Başlık satırı senin için (Kling süresi · ekranda hedef · VO cümlesi) — prompta DAHİL DEĞİL.
+Node ayracı: "### " · Blok sınırı: "-----"
+
+YASA: start frame her şeyi taşır. Motion yeni karakter, nesne veya yazı DOĞURMAZ —
+yalnız karede zaten duranı canlandırır. Ekranda kimse konuşmaz, ağız kapalı; klipler sessiz
+üretilir (ses = sonradan VO + müzik). Kavram ışıkları (kırmızı iz, mavi huzme, altın çizgi,
+ışık-harfler) IŞIK olarak kalır — çiçek/ok-ucu/gerçek ateş OLMAZ; yazılar aynen ve doğru kalır.
+
+KAMERA İLKESİ: her klipte hareket sahnenin kendi fiziğinden çıkar. Push-in yalnız bir şeyin
+ANLAŞILDIĞI reveal anında; onun dışında kamera ya olayla gider, ya kilitli durup dünyayı yaşatır,
+ya bırakır özne çerçeveyi terk etsin. Her yerde oynak/efektli kamera YOK — şık, sakin, öğretici.
+Katı/mekanik nesne (pusula, kronometre) + hızlı kamera = WARP → oralarda kamera minimal.
+
+RİSKLİ KLİPLER (kredi yakmadan önce bunları kısa/test et): K06 (crane vista), K16 (hızlı koşu takibi),
+K28 & K39 (uzun VO, 10s), K40 (iki-yol reveal). Bozuk gelirse sade kamera versiyonuna dön; gerisi güvenli.
 =========================================================================
 
-##### INTRO #####
-K01 · @mira eşikten kaldırıma iner ve yürüyüşe geçer; kapı menteşesinde birkaç derece savrulur. KAMERA: kilitli, ona doğru fısıltı-yavaş push (davet). Fizik: güneş huzmesinde toz, yumuşak sokak tonu. 5-6s
-K02 · @ali duvardan hafifçe itip doğrulur, Mira'yı görünce küçük el sallar; çınar yaprağı düşüşünü tamamlar. KAMERA: kilitli, çok hafif parallax. Fizik: yaprak, uzak kuş sesi. 5s
-K03 · ikisi adım uyumuyla ilerler, Ali el hareketiyle konuşur; kedi başıyla onları izler. KAMERA: yürüyüşe eşlik eden pürüzsüz yatay dolly. Fizik: taşta ayak sesi, uzak pazar uğultusu. 6s
-K04 · @mira'nın düşünceli bakışı derinleşir, gözü uzağa kayar (soru oluşur); @ali yanında yürür. KAMERA: yüzüne yavaş nazik push (düşünce oturur). Fizik: yaprak geçer, sessiz. 5s
-K05 · ayaklar yürür, her yeni basışta altın glow sırayla açar; parmak ucunda toz. KAMERA: ayaklarla alçak takip, adıma eşlik. Fizik: yumuşak adım + her glow'da hafif sıcak çınlama. 5s
-K06 · yavaş görkemli reveal: kamera çatıların üstünden nazikçe yükselir, okula giden bütün kıvrımlı rotayı alır; sis kayar, güvercinler döner. KAMERA: yavaş crane-up / vista üstünde nazik push (show hak ediyor). Fizik: uzak köy ambiyansı, hafif esinti. 7-8s
-K07 · @mira'nın meraklı bakışı sabit, küçük şaşkın nefes; @ali soft arkada. KAMERA: yüzüne çok yavaş push. Fizik: yaprak spiral iner, sessiz. 5s
-K08 · ikisi park kıvrımını döner, köpek arkada tıpış; benekli ışık üstlerinde oynar. KAMERA: virajda nazik takip. Fizik: ayak sesi, köpek tıpışı, yaprak. 5-6s
-K09 · çocuklar kıvrımlı S-yolda kameradan uzaklaşıp okula yürür; kedi önden geçer. KAMERA: kilitli geniş, yola doğru fısıltı push (kıvrım yönlendirsin). Fizik: sakin sabah. 5-6s
-K10 · yürümeye devam; kıvrımlı yol kadraj boyunca tutar. KAMERA: kıvrımı vurgulayan yavaş takip/push. Fizik: ayak sesi, ambiyans. 5s
-K11 · REVEAL: kırmızı ışık şeridi yolda arkalarında canlanıp parlar (zaten var, güçlenir), @mira dönüp hayranlıkla bakar; "YOL" ışığı sabitlenir. KAMERA: anlam otururken şerit+kelimeye yavaş push (reveal push'u hak eder). Fizik: şerit parlarken yumuşak sıcak uğultu, toz. 6s
-K12 · @mira'nın soru eli yükselir, faint kırmızı şerit arkada titrer; @ali izler. KAMERA: nazik, neredeyse kilitli, hafif push. Fizik: sessiz, glow titremesi. 4-5s
-K13 · REVEAL: mavi düz huzme ev↔okul çizilir/parlar, kırmızı kıvrım altta faint; @mira izler; "YER DEĞİŞTİRME" sabitlenir. KAMERA: vista üstünde huzmeye yavaş push/nazik crane. Fizik: huzme otururken serin yumuşak ton, sis. 7s
 
-##### BUILD-UP #####
-K14 · mavi huzme ev↔okul kapısı parlak tutar, kırmızı kıvrım altta faint atar; küçük figür izler. KAMERA: çatılar üstünde huzme boyunca yavaş push. Fizik: yumuşak ton, sis. 5-6s
-K15 · mavi ölçü çizgisinin işaretleri okula doğru sırayla yanar (zaten var, teker teker atar); Ali bakar. KAMERA: kilitli ya da çizgi boyunca yavaş dolly. Fizik: her mark yanınca yumuşak tik. 5s
-K16 · @mira koşar, altın hız-çizgileri uzayıp savrulur; "SÜRAT" tutar. KAMERA: koşusuna eşlik eden hızlı yatay takip (enerji). Fizik: uğuldayan rüzgâr, hızlı adım. 4-5s
-K17 · @mira'nın eli cep saatine konar; saniye ibresi süpürür; kırmızı sarmal nazik atar. KAMERA: kilitli makro, fısıltı push. Fizik: saatin yumuşak tik-takı. 4-5s
-K18 · @ali kronometre tepesine basar (klik), gözü onda; @mira arkada duvar boyu yürüyüşe geçer. KAMERA: kilitli, dikkat hafif rack (saat→Mira). Fizik: tek kronometre kliki, sonra başlayan ayak sesi. 5s
-K19 · @mira "1 METRE" işaretine adım basar (mark basışla açar); Ali arkada süre tutar. KAMERA: neredeyse kilitli, nazik. Fizik: yumuşak adım + hafif açılış tonu. 4s
-K20 · uzun eşit mark dizisi duvar boyunca ufka doğru sırayla atar; Ali uçta küçük. KAMERA: kilitli geniş, ölçü çizgisi boyunca yavaş push (eşitlik okunur). Fizik: yumuşak ritmik atışlar. 5s
-K21 · @mira ve @ali kronometreye eğilir; ibre durduğu yerde; "METRE / SANİYE" üstte parlak tutar. KAMERA: saat+yazıya yavaş push. Fizik: sessiz, glow uğultusu. 5s
-K22 · gösterge ibresi oturur; çocukların keyifli yüzleri cam kadranda yansır; "KİLOMETRE / SAAT" tutar. KAMERA: kadrana yavaş push. Fizik: yumuşak, hafif ibre tiki. 5s
-K23 · @mira'nın düşünceli hâli tutar, parmak çenede; @ali arkada. KAMERA: nazik yavaş push. Fizik: yaprak geçer, sessiz. 4-5s
-K24 · altın hız-çizgisi bükülüp yöne oturur, "YÖN" oku sabitlenir; çocuklar tepki verir. KAMERA: neredeyse kilitli, yön otururken hafif push. Fizik: çizgi kıvrılırken yumuşak whoosh. 5s
-K25 · @mira'nın parmağı parlak mavi yer-değiştirme huzmesine değer; saat süpürür; sönük kırmızı sarmal atar. KAMERA: kilitli makro, fısıltı push. Fizik: yumuşak saat tiki, dokunuşta hafif ton. 4-5s
-K26 · @mira'nın işaret parmağı fark-etme jestiyle yükselir; @ali dikkatli. KAMERA: nazik push. Fizik: yaprak, sessiz. 4s
-K27 · pusula ibresi titreyip KUZEY'de kesin oturur; çocuklar yakından izler. KAMERA: kilitli makro, fısıltı push (olay = ibrenin oturması). KATI ALET → kamera minimal. Fizik: hafif metalik oturuş. 4-5s
-K28 · @mira ilerler, mavi "KUZEY" yön-huzmesi önünde sabit projekte; @ali pusulayla yanında. KAMERA: yürüyüşüne nazik takip. Fizik: ayak sesi, yumuşak huzme tonu. 5s
-K29 · @mira yürür, mavi yön önde ve sıcak çizgiler arkada birlikte. KAMERA: nazik yatay takip. Fizik: ayak sesi, katmanlı yumuşak tonlar. 5s
-K30 · sönük kırmızı kıvrım ve parlak düz mavi huzme kontrastını tutar; Ali diz çökmüş izler. KAMERA: neredeyse kilitli, hafif push. Fizik: sessiz, yumuşak glow. 4-5s
-K31 · @mira yaprağı muzip göz-kırpışıyla indirir, kapıya döner; @ali gülümser. KAMERA: nazik push/oturuş. Fizik: yaprak, esinti. 5s
-K32 · @ali kronometreyi sabit tutar (çalışıyor); @mira arkada duvar boyu eşit yürür. KAMERA: kilitli, hafif rack (saat→Mira). Fizik: yumuşak tik, eşit ayak sesi. 5s
+##### SEKANS 1 — INTRO (K01–K13) #####
 
-##### CLIMAX #####
-K33 · @mira yürür, yuvarlak altın marklar ayak altında eşit aralıkla açar; Ali arkada süre tutar. KAMERA: eşit adıma nazik takip. Fizik: eşit adımlar + yumuşak açılışlar. 5s
-K34 · @mira eşit ölçü çizgisi boyunca kameraya doğru yürür, marklar ritimle atar. KAMERA: yavaş push / o yaklaşır (kilitli-ce). Fizik: ritmik yumuşak atışlar. 5s
-K35 · eşit marklar ufka dek kusursuz ritmini tutar; "SABİT SÜRAT" sabitlenir. KAMERA: çizgi boyunca ufka yavaş push ("hep sabit" hissi). Fizik: istikrarlı yumuşak atışlar. 5-6s
-K36 · @mira'nın muzip gülüşü oturur, bilmiş baş eğimi; faint mavi marklar arkada. KAMERA: nazik push. Fizik: yaprak, sessiz. 4s
-K37 · @mira köşeyi eşit adımla döner, altın marklar eşit aralıkla onunla bükülür. KAMERA: dönüşe eşlik eden takip. Fizik: eşit adımlar. 5s
-K38 · @mira yeni yönde yürür, marklar altta eşit ve mavi ok yeni yönü tutar. KAMERA: nazik takip. Fizik: ayak sesi, yumuşak ton. 5s
-K39 · @mira dümdüz yolda kameraya yürür, eşit marklar + sabit mavi yön tutar. KAMERA: yavaş kilitli push (düzlük okunur). Fizik: eşit adımlar. 5s
-K40 · iki yol yan yana tutar — düz mavi "SABİT HIZ", bükülen altın "SABİT SÜRAT" — markları atar; @mira ikisine bakar. KAMERA: yavaş geri push / iki yolu kadrajda tutan nazik reveal (kıyas = ödül, nefes alsın, oynaklık yok). Fizik: iki katmanlı yumuşak ton. 6-7s
 
-##### RESOLUTION #####
-K41 · @mira kapıdan koridora adım atar, üstteki pirinç zil titreyip çalar; @ali izler. KAMERA: kapıdan nazik takip. Fizik: tek sıcak zil, sonra sakin koridor. 5s
-K42 · @mira akıllı tahtayı gösterir; tahtada kırmızı kıvrım ve mavi düz ok saatlerin yanında nazik atar; "SÜRAT"/"HIZ" tutar. KAMERA: tahtaya yavaş push (ya da kilitli). Fizik: sakin sınıf, yumuşak glow. 5-6s
-K43 · @mira'nın yanında altın çizgi akar, mavi yön huzmesi sabit; o kameraya parlak öğretmen gülüşüyle döner. KAMERA: ona nazik push. Fizik: yumuşak katmanlı tonlar. 5s
-K44 · @mira kapanış selamını verir, faint kırmızı ve mavi ışıklar sıcak glow'a çözülür, perde pencerede kıpırdar. KAMERA: nazik, sıcak, yavaş push/oturuş (yumuşak veda). Fizik: hafif esinti, sıcak ambiyans. 5-6s
+### K01 | 5s · ekranda ~5.3s | VO1 "Mira o sabah çantasını sırtladı ve evin kapısından çıktı."
+KAMERA NİYETİ: sabahın içine sessizce girmek — kamera davet eder, kovalamaz.
+-----
+She completes her step down off the stone threshold onto the patterned pavement and settles into the beginning of a walk, her weight rolling forward onto the leading foot; behind her the pale-blue door drifts a few degrees on its hinge and its shadow eases across the tiles, while the mustard backpack strap settles a little further onto her shoulder and fine dust motes turn slowly through the low golden sun. Camera: almost locked, only the faintest slow push toward her as she steps out — the frame invites her into the morning rather than chasing her. She stays within the frame and does not walk fully out; the door drifts but does not slam or detach; the geranium pot, the corner awning and the far bicycle stay exactly where they are; no new objects and no other people enter the frame; her face and body never distort. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K02 | 5s · ekranda ~4.1s | VO2 "Sokağın başında arkadaşı Ali onu bekliyordu."
+KAMERA NİYETİ: küçük bir bekleyişin canlanması — kamera onunla birlikte doğrulur.
+-----
+Ali pushes gently off the low stone wall and straightens as he catches sight of her off to the side, lifting one hand in a small warm wave, his weight rocking from the wall onto his front foot; the broad çınar leaf finishes its slow fall past his shoulder and a faint breath fogs at his lips in the cool morning air. Camera: locked with only the barest parallax drift, letting his small rise and wave be the single motion in the frame. He stays by the corner and does not walk off; the green lamppost and the shuttered facades stay fixed; the leaf lands and stills; no new objects and no other people enter the frame; his face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K03 | 5s · ekranda ~4.1s | VO3 "İkisi birlikte okula doğru yürümeye başladılar."   ◄ TEST ÖNCE
+KAMERA NİYETİ: yürüyüşe eşlik — çabanın temposunda kalmak.
+-----
+The two settle into stride side by side and move forward together down the cobbled street, their long shadows sweeping ahead across the stones and both backpacks swaying gently out of step with each other; the tabby cat's head tracks them from the garden wall and the crates of tomatoes and oranges catch the light as they pass. Camera: a smooth lateral tracking dolly that keeps pace with their walk, the greengrocer stall and the "MANAV" awning sliding by as soft parallax. They stay walking within the frame and do not leave it; the cat stays on the wall; the fruit crates, the bicycle and the awning stay exactly where they are; no new people enter; their faces never distort. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K04 | 10s · ekranda ~6.6s | VO4 "Ama Mira o gün sıradan bir yürüyüş yapmıyordu; kafasında bir soru vardı."
+KAMERA NİYETİ: düşüncenin oturması — kamera yüzüne doğru yavaşça yaklaşır.
+-----
+Ali keeps walking and chatting with an easy open hand while Mira falls a half-step behind him, her cheerful expression slowly softening into thought as her eyes drift to the middle distance and a real question settles behind them; a single leaf spirals down past her shoulder and her fingers curl a little tighter on the mustard strap. Camera: a slow, gentle push toward Mira's face as the thought lands, Ali easing into soft focus in the foreground. They keep walking and no one exits the frame; the tree-lined street and its shopfronts stay fixed; no new objects and no other people enter; her face never stretches or warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K05 | 5s · ekranda ~6.2s | VO5 "Attıkları her adımın arkasında bir bilim gizliydi ve Mira o günü,"
+KAMERA NİYETİ: adımların ritmiyle gitmek — gizli bilimi ayakların altında sezmek.
+-----
+The feet stride on across the patterned stone and a fresh soft round warm-golden glow blooms under each new footfall in turn, a small puff of dust lifting at each toe-off before the light breathes softly back down; their two shadows pace the ground and a distant figure crosses in warm bokeh. Camera: a low tracking move travelling with the feet, matching the rhythm of the stride. The glow stays a soft round golden light and never becomes a flower, petal or flame and never climbs up the legs; the feet stay walking within the frame; the far figure stays soft and does not approach; no new objects and no sharp new people enter; nothing distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K06 | 5s · ekranda ~4.1s | VO6 "evden okula giden yolu çözerek geçirecekti."   ◄ RİSKLİ (crane)
+KAMERA NİYETİ: bütün rotayı bir nefeste açmak — tek gerçek kamera hareketi burada hak edilir.
+-----
+Thin morning mist drifts between the terracotta rooftops and a small flock of pigeons lifts off a distant roof, the two tiny figures setting off along the winding road as the whole route up to the hilltop school breathes in the low light; a far simit-cart sits still down the lane. Camera: a slow, gentle crane-up and forward over the rooftops, letting the winding road lead the eye up to the school — measured and smooth, never sweeping fast. The children stay small and stay on the road; the Turkish flag on the school stays a Turkish flag; the rooftops, the minaret and the water tanks stay fixed and do not warp or bend; no new objects and no other people enter. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K07 | 10s · ekranda ~9.2s | VO7 "Ne kadar yol almışlardı, ne kadar yer değiştirmişlerdi ve en önemlisi sürat ile hız neden aynı şey değildi?"
+KAMERA NİYETİ: üç sorunun sessizliği — dünya kısılır, kamera yüzünde durur.
+-----
+Mira slows and her curious gaze holds on the winding road ahead, a small wondering breath parting her lips as three questions turn behind her eyes, her hand resting loosely on the mustard strap; a single leaf spirals down past her shoulder while Ali drifts soft-focus a step behind and a soft round warm-golden glow of light hazes the park railing. Camera: a very slow push toward her face, the world going quiet around the thought. She stays in place and does not walk off; Ali stays soft behind her; the railing and the fountain stay fixed; no new objects and no other people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K08 | 5s · ekranda ~6.2s | VO8 "Mira ve Ali kaldırımdan yürüdüler, köşeyi döndüler ve parkın etrafından dolandılar."   ◄ TEST ÖNCE
+KAMERA NİYETİ: virajı onlarla dönmek — yolun kıvrımında kalmak.
+-----
+The two walk on around the curving edge of the small park, leaf-shadows sliding over their backs and the patterned paving as they go, the little brown dog trotting a few steps behind them and the low stone fountain catching a satin gleam as they pass. Camera: a gentle tracking follow that carries around the bend with them, the green park railing streaming past as soft parallax. They stay on the path within the frame; the dog stays behind them and does not overtake; the fountain, the benches and the plane trees stay fixed; no new people enter; faces never distort. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K09 | 5s · ekranda ~4.5s | VO9 "Yol dümdüz değildi; kıvrıla kıvrıla okula gidiyordu."
+KAMERA NİYETİ: kıvrım yönlendirsin — kamera yolu bırakır anlatsın.
+-----
+The children walk on down the winding S-curve away from camera toward the small schoolhouse, the road bending once and then again ahead of them; a cat slips across the far bend and dappled morning light shifts along the garden walls. Camera: a locked wide hold with only the faintest slow push down the road, letting the curve of the path itself lead the eye. They stay walking down the road and small in frame; the schoolhouse and its distant sign stay soft and unchanged; the walls and trees stay fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K10 | 5s · ekranda ~5.8s | VO10 "İşte adım attıkları bu bütün hattın uzunluğuna alınan yol deniyordu."
+KAMERA NİYETİ: bütün hattı göstermek — geri açılıp rotanın uzunluğunu sezdirmek.
+-----
+The pair walk on while the whole winding route sweeps back through the frame behind them, morning light raking along the curving road and a leaf tumbling across it, their shadows trailing back down the path they came. Camera: a slow tracking move that eases back a touch to reveal a little more of the winding route, emphasising its length. No red trace of light appears yet (that belongs to the next shot); they keep walking; the street furniture stays fixed; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K11 | 10s · ekranda ~8.7s | VO11 "Mira arkasına baktığında zihninde kırmızı bir iz gördü: parkın etrafından dolanan, sokakları takip eden, gerçekten yürüdükleri yol."
+KAMERA NİYETİ: anlam otururken içeri girmek — reveal push'unu hak eder.
+-----
+Behind them the warm-red ribbon of light settles and pulses brighter along the exact path they walked, curving around the park and threading back through the streets, its glow rippling on the wet morning paving while fine motes drift through it; Mira turns her head and looks back at it in dawning wonder, and the word "YOL" holds steady in the same red light. Camera: a slow, deliberate push in toward the ribbon and the word as the meaning lands. The red ribbon stays a glowing ribbon of light and never becomes a flat drawn line, an arrow, a hose or a flower; the glowing letters stay exactly "YOL" and do not change, garble or multiply; Mira stays mid-step and does not walk off; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K12 | 5s · ekranda ~3.6s | VO12 "Peki ya yer değiştirme neydi?"
+KAMERA NİYETİ: sorunun asılı kalması — kamera nazikçe yaklaşır, ışık söner.
+-----
+Mira's questioning hand rises a little higher and turns as her lips part on the unspoken question, while the warm-red ribbon dims to a faint ember shimmer along the ground behind her and Ali watches her, waiting. Camera: near-locked, only a faint drift toward her. The red ribbon only dims and does not vanish or redraw itself; the word does not reappear; the streetlamp glow stays soft; they stay in place; no new objects and no other people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K13 | 10s · ekranda ~8.3s | VO13 "Yer değiştirme, çıktıkları nokta olan ev ile vardıkları nokta olan okul arasındaki en kısa, dümdüz mesafeydi."
+KAMERA NİYETİ: vista üstünde huzmeyi izlemek — kısa yolun netliği.
+-----
+The straight cool-blue beam settles and brightens across the misty rooftops from the home node to the school node, the two endpoints pulsing softly while the faint red winding trace glimmers below it for contrast; Mira watches from the rooftop and the phrase "YER DEĞİŞTİRME" holds steady in the blue light. Camera: a slow push and gentle crane over the vista travelling along the beam, valley mist drifting beneath. The blue beam stays a clean straight beam of light with no arrowhead and never bends; the glowing letters stay exactly "YER DEĞİŞTİRME" and do not garble; the red trace stays faint and low; the rooftops do not warp; no new objects and no other people enter. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 2 — BUILD-UP (K14–K32) #####
+
+
+### K14 | 10s · ekranda ~9.6s | VO14 "Zihnindeki kırmızı izin üstüne bu kez düz mavi bir ok çizdi; ok evden başlıyor ve doğrudan okulun kapısına uzanıyordu."
+KAMERA NİYETİ: huzme boyunca okula doğru süzülmek.
+-----
+The straight blue beam holds bright across the rooftops from the home to the school door while the red winding trace pulses faintly below it, the small figure watching from the rooftop as valley mist drifts and the school-door node glows softly. Camera: a slow, steady push over the rooftops travelling along the beam toward the school door. The beam stays perfectly straight with no arrowhead and does not bend; the red trace stays faint; the rooftops stay fixed and do not warp; no new objects and no other people enter. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K15 | 5s · ekranda ~6.2s | VO15 "Mesafeleri ölçerken temel birim metreydi, daha uzun yollarda ise kilometre kullanılıyordu."
+KAMERA NİYETİ: ölçü çizgisi boyunca gitmek — birimin adımlarını görmek.
+-----
+Along the straight blue line the measured tick-marks light up one after another down the street toward the school, each pulse stepping off an equal interval as the blue glow ripples on the paving, while the boy watches; the word "METRE" holds steady beside the ticks. Camera: a slow dolly down the measured line as the ticks travel, the street sliding by. The tick-marks stay evenly spaced and the line stays straight; "METRE" stays spelled correctly and does not change; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K16 | 10s · ekranda ~8.5s | VO16+17 "Sonra Mira sürat kavramına geldi." + "Sürat, bir cismin ne kadar seri hareket ettiğiydi."   ◄ RİSKLİ (hızlı takip)
+KAMERA NİYETİ: hızın kendisini kamerayla hissettirmek — koşunun temposunda kalmak.
+-----
+Mira runs on and the warm-golden motion-streaks stretch and trail off her shoulders, backpack and heels, dry leaves lifting and tumbling in her slipstream while her shadow rushes to keep up, the "SÜRAT" light holding bright beside her. Camera: a fast, smooth lateral tracking move that keeps pace with her run, the shopfronts streaking past as motion-blurred parallax. "SÜRAT" stays spelled correctly and does not smear into the streaks; the "ÇARŞI" sign stays Turkish and soft; the motion-streaks stay soft light and never become solid objects; she stays running within the frame; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K17 | 10s · ekranda ~7.9s | VO18 "Hesaplaması da çok kolaydı: alınan toplam yolu, o yolu almak için harcanan toplam zamana bölüyordun."
+KAMERA NİYETİ: iki şeyi yan yana tutmak — yol ve zaman, sakin bir tezgâh planı.
+-----
+Her hand settles onto the brass pocket-watch and its second-hand sweeps steadily on, while the coiled red ribbon-light beside it on the sunlit wall pulses gently and a single dust mote turns in the low light. Camera: a locked macro hold with only the faintest push toward the watch and the coil of light. No numbers, digits or equations appear anywhere; the red coil stays a coil of light and never becomes a flower or a real hose; the market stall behind stays soft and fixed; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K18 | 10s · ekranda ~8.5s | VO19+20 "Mira bunu denemek istedi." + "Okulun düz duvarı boyunca yürüdü ve Ali kronometreyi başlattı."
+KAMERA NİYETİ: deneyin başlaması — dikkat saatten Mira'ya geçer.
+-----
+Ali's thumb presses the stopwatch crown with a single decisive click and his eyes fix on the glass face, while behind him Mira sets off along the long straight school wall, her leading foot landing into the first stride as their shadows stretch down the wall. Camera: locked on Ali and the stopwatch in the near foreground, with a soft rack of focus back to Mira as she begins to walk. The watch face shows only plain clock ticks with no spelled numbers; she stays walking along the wall; the gate and the plane trees stay fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K19 | 5s · ekranda ~4.5s | VO21 "Mira her saniyede tam 1 metre ilerledi."
+KAMERA NİYETİ: tek adımın ölçüsü — işaret ayak basınca doğar.
+-----
+Mira lands one measured stride and the warm-golden step-mark blooms bright under her foot at the instant it touches down, a small puff of dust lifting at the toe-off, while the "1 METRE" label holds glowing steady on the ground and Ali times in the background. Camera: near-locked, a gentle settle onto the blooming mark. "1 METRE" stays spelled correctly; the mark stays a round soft glow and never becomes a flower; she stays mid-stride within the frame; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K20 | 10s · ekranda ~7s | VO22 "100 metrelik yolu 100 saniyede yürüdüğünde alınan yolu zamana böldü ve süratini buldu."
+KAMERA NİYETİ: eşitliğin ufka gitmesi — bütün diziyi bir arada okumak.
+-----
+The long even row of glowing marks pulses in sequence down the whole length of the wall to the vanishing point, each light stepping off an identical interval, Ali small at the far end with the stopwatch as motes drift through the glow. Camera: a locked wide hold with a slow push down the measured line so the perfect evenness reads all the way to the horizon. The marks stay evenly spaced and identical to one another; no spelled numbers or equations appear; the wall stays fixed and does not warp; no new objects and no other people enter. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K21 | 10s · ekranda ~9.2s | VO23+24 "Süratin birimi neydi?" + "Yolu metre, zamanı saniye alırsak sürat birimi metre bölü saniye oluyordu."
+KAMERA NİYETİ: cevabın saatte belirmesi — iki merak yüzü ışıkla aydınlanır.
+-----
+Mira and Ali lean in together over the stopwatch and its glass face throws a soft glow up onto their curious faces, the second-hand resting where it stopped while one measured metre-mark still glimmers on the ground, and the "METRE / SANİYE" label holds glowing above the watch. Camera: a slow push toward the watch and the floating label. "METRE / SANİYE" stays correct with the dotted İ and does not change; no equation symbols appear; the stopwatch stays a stopwatch; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K22 | 10s · ekranda ~7.5s | VO25 "Tıpkı arabalarda olduğu gibi yolu kilometre, zamanı saat alırsak birim kilometre bölü saat oluyordu."
+KAMERA NİYETİ: gündelik hayata dokunmak — göstergenin ibresi oturur.
+-----
+The speedometer needle trembles and settles onto the dial, the two children's delighted faces curving in the reflection on the domed glass, a soft round warm-golden glow of light sitting on the dashboard while the "KİLOMETRE / SAAT" unit holds engraved on the dial. Camera: a slow push toward the speedometer. "KİLOMETRE / SAAT" stays correct and belongs to the dial; the dial numbers stay soft; no franchise badge, logo or brand appears on the car; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K23 | 10s · ekranda ~7.5s | VO26+27 "Ama Mira'nın kafasındaki asıl soru henüz cevaplanmamıştı." + "Peki hız neydi?"
+KAMERA NİYETİ: cevapsız sorunun ağırlığı — kamera düşünen yüze yaklaşır.
+-----
+Mira walks on with her brow gently furrowed, one finger tapping her chin as the real unanswered question turns inward, Ali soft-focus beside her and a single leaf drifting past in the warm morning haze. Camera: a slow, gentle push toward Mira's thinking face. No text appears anywhere; they keep walking within the frame; the tree-lined street stays fixed; no new objects and no other people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K24 | 10s · ekranda ~7.9s | VO28 "Günlük hayatta sürat ile hızı sürekli karıştırıyorduk, oysa hızın çok önemli bir farkı vardı: yön."
+KAMERA NİYETİ: yönün doğuşu — ışık bükülüp bir yere işaret eder.
+-----
+The warm-golden speed-streak beside Mira curves and gathers, bending into a single clean glowing arrow that settles pointing decisively one way, the "YÖN" light steadying with it as Mira's eyes widen in a dawning "aha" and Ali looks on. Camera: near-locked with a faint push as the direction lands. The arrow stays a clean glowing light-arrow and does not garble, break apart or multiply; "YÖN" stays correct with the dotted Ö; the Turkish courtyard decor stays fixed; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K25 | 10s · ekranda ~7s | VO29 "Mira hızı hesaplarken katettiği bütün yolu değil, yalnızca yer değiştirmeyi geçen zamana böldü."
+KAMERA NİYETİ: doğru büyüklüğü seçmek — parmak parlak mavi olana değer.
+-----
+Mira's fingertip touches the bright straight blue displacement beam and it pulses softly at the contact, the brass watch sweeping steadily beside it while the dimmed red coil glimmers low and a green leaf hangs in the foreground light. Camera: a locked macro hold with only the faintest push toward the blue beam and the watch. The blue beam stays bright and straight and the red coil stays dim and low; no numbers or equations appear; neither light becomes a flower; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K26 | 5s · ekranda ~6.2s | VO30 "Ve bir şey daha vardı: hız söylenirken mutlaka bir yön belirtilmeliydi."
+KAMERA NİYETİ: bir fark-etme jesti — parmak yükselir, kamera onu bulur.
+-----
+Mira's index finger rises in a small realising lift and her expression brightens on the thought that a direction must always be named, Ali attentive beside her while a leaf drifts past in the morning light. Camera: a gentle push toward her raised hand and face. No text appears; they stay in place within the frame; the sidewalk decor stays fixed; no new objects and no other people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K27 | 5s · ekranda ~4.5s | VO31 "Ali çantasından pusulasını çıkardı; ibre kuzeyi gösteriyordu."
+KAMERA NİYETİ: ibrenin oturması = olay. KATI ALET → kamera minimal (warp'a karşı).
+-----
+The brass compass needle quivers and settles, coming firmly to rest pointing toward "KUZEY" on the dial, the domed glass holding a soft warm glow while both children lean in close and Mira's breath just mists the glass. Camera: a locked macro hold with only a whisper of a push as the needle settles — the settling is the whole event, and the camera stays minimal because the metal instrument must not warp. "KUZEY" and the "B", "D", "G" dial letters stay correct; the needle settles and does not spin wildly or pass through the glass; the compass stays rigid and does not deform; no new objects and no other people enter. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp, no melt or morph of the compass.
+-----
+
+
+### K28 | 10s · ekranda ~10.9s | VO32 "...artık 'kuzeye doğru şu kadar hızla gidiyorum' demek zorundaydı."   ◄ RİSKLİ (uzun)
+KAMERA NİYETİ: yönlü hızla yürümek — mavi başlık önde, kamera onunla gider.
+-----
+Mira walks forward and the straight cool-blue heading-beam projects steadily ahead of her in the compass direction, the "KUZEY" light holding within the beam while Ali keeps pace beside her with the compass and their shadows track along the stone school wall. Camera: a gentle lateral tracking move with her walk, the beam leading ahead of her. The beam stays perfectly straight with no arrowhead; "KUZEY" stays correct within it; the school building stays fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K29 | 10s · ekranda ~7.5s | VO33 "Hızın birimi de tıpkı süratteki gibi metre bölü saniye ya da kilometre bölü saatti."
+KAMERA NİYETİ: iki ölçünün birlikte akması — yön önde, hız arkada.
+-----
+Mira walks steadily on, the blue heading-beam holding ahead of her and the faint warm speed-streaks trailing off her heels together, motes drifting through both lights as she moves down the Turkish village street. Camera: a gentle lateral tracking move with her stride. Both lights stay as they are and no new labels or numbers appear; the carpet on the wall and the copper pot stay fixed; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K30 | 10s · ekranda ~7.5s | VO34 "Yani birimler aynıydı; fark, hızın yer değiştirme üzerinden ve belirli bir yönle ifade edilmesiydi."
+KAMERA NİYETİ: iki ışığın kıyası — kamera ikisini bir arada tutar.
+-----
+The dim red winding trace and the bright straight blue beam hold their contrast on the village street, the blue holding steady and bright while the red glimmers low and dim, as the boy kneels watching and motes drift between the two lights. Camera: near-locked with only a faint push, holding both lights together in the frame. The red stays dim and winding and the blue stays bright and straight; no text appears; the decor stays fixed; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K31 | 10s · ekranda ~8.3s | VO35 "Okulun kapısına yaklaşırken Mira son bir şeyi merak etti: ya bir cisim hep aynı seride giderse?"
+KAMERA NİYETİ: son bir merak — kamera nazikçe Mira'da oturur.
+-----
+Mira lowers the maple leaf from her playful wink and turns toward the school gate as a last curiosity forms behind her eyes, Ali smiling beside her while a leaf drifts past the wall and the Turkish flag stirs gently on its pole in the background. Camera: a gentle push and settle toward Mira. The flag stays a Turkish flag; they stay by the wall within the frame; the gate stays fixed; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K32 | 5s · ekranda ~5.8s | VO36 "Ali kronometreyi tekrar başlattı ve Mira adımlarını hiç değiştirmeden yürüdü."
+KAMERA NİYETİ: eşit tempoya geçiş — dikkat saatten Mira'nın düzenli adımına.
+-----
+Ali's thumb clicks the stopwatch crown again and holds it steady as it runs, while behind him Mira walks the wall in an even, unchanging rhythm, the Turkish flag soft by the gate and their shadows pacing evenly along the wall. Camera: locked on the running stopwatch, with a soft rack of focus back to Mira's even walk. The watch shows plain ticks; the flag stays Turkish; she keeps a perfectly even stride; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 3 — CLIMAX (K33–K40) #####
+
+
+### K33 | 10s · ekranda ~7.5s | VO37 "Birinci saniyede 1 metre, ikinci saniyede yine 1 metre, üçüncü saniyede yine 1 metre."
+KAMERA NİYETİ: eşit ritmin canlanması — her adımda bir ışık.
+-----
+Mira walks and round golden step-marks bloom under her feet one after another at perfectly even intervals, each light breathing up as her foot lands, Ali timing behind her on the ivy-lined brick lane as motes drift through the glow. Camera: a gentle tracking move with her even stride. The marks stay round soft glows at identical spacing and never become flowers; no numbers appear; she keeps the steady rhythm; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K34 | 5s · ekranda ~5.8s | VO38 "Eşit zaman aralıklarında eşit yollar alıyordu ve sürati hiç değişmiyordu."
+KAMERA NİYETİ: eşitliğin yaklaşması — kamera kilitli, ritim okunur.
+-----
+The even row of golden marks pulses in a steady rhythm as Mira walks toward camera down the hedge-lined path, each interval identical to the last, warm light glazing the scene. Camera: a slow locked hold as she approaches, letting the even rhythm read clearly. The marks stay evenly spaced; no text appears; the hedges and buildings stay fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K35 | 5s · ekranda ~4.1s | VO39 "İşte buna sabit süratli hareket deniyordu."
+KAMERA NİYETİ: sonsuza giden eşit ritim — kavram adını alır.
+-----
+The long even row of golden marks holds its perfect rhythm all the way to the vanishing point and the "SABİT SÜRAT" light steadies fully legible beside Mira, motes drifting through the glow across the hazy plane. Camera: a slow push down the line toward the horizon, giving the sense of a rhythm that never changes. "SABİT SÜRAT" stays correct and completely legible with the girl not blocking any letter; the marks stay evenly spaced; nothing warps; no new objects or people enter. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K36 | 10s · ekranda ~7.5s | VO40+41 "Peki sabit hızlı hareket bunun aynısı mıydı?" + "Tam olarak değil."
+KAMERA NİYETİ: muzip bir es — kamera bilmiş gülüşe yaklaşır.
+-----
+Mira's knowing, playful smile settles with a small tilt of the head, a teasing "not quite" behind her eyes, while faint blue marks glimmer on the ground behind her and a leaf drifts past. Camera: a gentle push toward her face. No text appears; she stays in place within the frame; Ali stays soft-focus behind; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K37 | 10s · ekranda ~7s | VO42 "Mira aynı tempoyla yürümeye devam etti ama bu kez köşeyi dönüp yönünü değiştirdi."
+KAMERA NİYETİ: köşeyi onunla dönmek — eşit aralık bükülür ama korunur.
+-----
+Mira rounds the corner in the very same even stride, her body leaning into the turn as the row of golden marks bends with her around the corner while holding its equal spacing, the lamppost and the geraniums passing as soft parallax. Camera: a tracking follow that carries around the corner with her, matching the turn. The marks keep identical spacing around the bend; she keeps the even rhythm; the corner decor stays fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K38 | 10s · ekranda ~9s | VO43+44 "Sürati değişmemişti; yine her saniyede 1 metre gidiyordu." + "Ama yönü değiştiği için hızı değişmişti."
+KAMERA NİYETİ: aynı hız, yeni yön — kamera yeni yönde onunla akar.
+-----
+Mira walks on down the new direction, the golden marks continuing at identical spacing beneath her while the straight blue heading-arrow now points the new way, both holding steady through the Turkish market street of pottery and baskets. Camera: a gentle lateral tracking move with her walk. The golden mark-spacing stays identical and the blue arrow stays a clean straight light-arrow pointing the new heading; the market decor stays fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K39 | 10s · ekranda ~12.1s | VO45 "...cisim dümdüz bir doğru boyunca gitmeliydi."   ◄ RİSKLİ (en uzun VO)
+KAMERA NİYETİ: düzlüğün netliği — kamera kilitli, o yaklaşır. (Klip 10s; VO uzun, gerekirse son karede kısa hold.)
+-----
+Mira walks the dead-straight path toward camera, the even golden marks pulsing beneath her and the straight blue heading-beam holding one unchanging direction ahead of her, the school soft behind as motes drift. Camera: a slow locked push as she approaches, the straightness of the path reading clean and unbroken. Both the mark-spacing and the beam's heading stay perfectly constant; the beam stays straight with no arrowhead; no text appears; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K40 | 10s · ekranda ~9.2s | VO46 "Bu yüzden her sabit hızlı hareket aynı zamanda sabit süratliydi, ama her sabit süratli hareket sabit hızlı değildi."   ◄ RİSKLİ (iki-yol)
+KAMERA NİYETİ: kıyas nefes alsın — kamera ikisini birden tutar, oynaklık yok.
+-----
+The two luminous paths hold side by side — the straight blue "SABİT HIZ" path on one side and the bending golden "SABİT SÜRAT" path on the other — their marks pulsing in rhythm while Mira looks from one to the other between them on the village street. Camera: a slow, gentle push back that holds both paths together in the frame, letting the comparison breathe — no jitter and no snap. The blue path stays straight and the golden path stays bent, both keeping equal mark spacing; "SABİT HIZ" and "SABİT SÜRAT" stay correct and legible; no new objects and no other people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+##### SEKANS 4 — RESOLUTION (K41–K44) #####
+
+
+### K41 | 10s · ekranda ~7s | VO47 "Zil çaldığında Mira okulun kapısından içeri girdi ve o günün özetini kafasında topladı."
+KAMERA NİYETİ: okula girmek — kamera kapıdan içeri onunla süzülür.
+-----
+Mira steps through the doorway into the tiled corridor as the brass bell trembles and swings above her, warm light spilling across the threshold tiles, Ali following a step behind while her backpack settles as she moves inside. Camera: a gentle follow through the doorway into the corridor. The notice board stays blank and soft; the bell swings but does not fall or detach; the corridor stays fixed; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K42 | 10s · ekranda ~9.9s | VO48+49 "Yolu zamana bölersen sürati, yer değiştirmeyi zamana bölersen hızı buluyordun." + "İkisinin de birimi metre bölü saniyeydi."
+KAMERA NİYETİ: özetin tahtada oturması — kamera tahtaya yaklaşır.
+-----
+Mira gestures to the smart-board and on its glowing screen the red winding path and the blue straight arrow pulse gently beside their small clocks, the "SÜRAT" and "HIZ" labels holding steady, warm window light filling the classroom and dust turning in the beam. Camera: a slow push toward the board, the recap reading clearly. "SÜRAT" and "HIZ" stay correct; the background posters stay soft and Turkish; the board stays a smart-board and never a chalkboard; no new people enter; nothing warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K43 | 10s · ekranda ~7.5s | VO50 "Sürat sadece ne kadar seri gittiğini söylüyordu; hız ise nereye doğru gittiğini de söylüyordu."
+KAMERA NİYETİ: son kontrast — kamera öğretmen gülüşüne yaklaşır.
+-----
+Beside Mira the golden speed-streak rushes forward while the blue directional beam holds its heading, the contrast complete, as she turns to camera with a bright teaching smile and motes drift through both lights. Camera: a gentle push toward her. The streak stays forward-rushing and the beam stays clearly directional; no text appears; the classroom stays fixed; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K44 | 10s · ekranda ~6.8s | VO51+52 "Bir sonraki keşifte görüşmek üzere." + "Merakla kalın, bilimle kalın!"
+KAMERA NİYETİ: yumuşak veda — sıcak, yavaş bir kapanış.
+-----
+Mira gives her closing wave by the sunlit window, the faint red and blue lights dissolving into a soft warm glow in the air around her, the curtain stirring gently in the breeze while warm late-morning light fills the room. Camera: a gentle, warm, slow push and settle — a soft goodbye. No text appears; she stays by the window within the frame; the plants and desks stay fixed; the lights only fade and no new lights appear; no new people enter; her face never distorts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
 =========================================================================

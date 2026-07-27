@@ -1,0 +1,116 @@
+KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · EDIT PLANI (Premiere)
+=========================================================================
+Klip ↔ VO cümlesi ↔ süre haritası. Kurgu sınırı: kesme/sıralama + VO ve müzik
+yerleşimi, seviye ve fade. Keyframe, overlay, grading, speed-ramp yok.
+
+SÜTUNLAR
+  KARE   = dosya adı (1.png … 48.png) ve motion klibi (K01 … K48)
+  KLİP   = Kling'den çıkan ham süre (5s / 10s)
+  EKRAN  = Premiere'de kalacak hedef süre
+  VO     = seslendirme cümlesi (SESLENDIRME.txt'deki sıra)
+
+YÖNTEM: önce VO'yu tek parça timeline'a yerleştir, sonra klipleri cümlenin
+altına otur. Ham klip her zaman ekran süresinden uzun — baştan ve sondan
+trimleyip cümleye yasla. Cümle biterse klip de bitsin, sarkma bırakma.
+=========================================================================
+
+
+##### SEKANS 1 — INTRO · sıradan sabah → kuvvetin tanımı #####
+Enerji: sakin merak → sokakta uyanış → tanım netleşir
+
+  KARE          KLİP   EKRAN   VO   CÜMLE
+  1.png  K01     5s     4.0s    1   Mira'nın hikâyesi çok sıradan bir sabahta başladı.
+  2.png  K02     5s     3.5s    2   Odasının kapısını açtı, çantasını sırtına aldı,
+  3.png  K03     5s     3.5s    2   masadan kalemini alıp bir şeyler karaladı,
+  4.png  K04    10s     6.0s   2-3  sonra bahçeye çıkıp topa vurdu. + Sıradan hareketlerdi bunlar.
+  5.png  K05    10s     8.0s    4   Ama Mira o sabah… gücüne dokunmuştu: kuvvete.
+  6.png  K06     5s     4.0s    5   Bahçeden çıkarken bir çocuğun market arabasını ittiğini gördü.
+  7.png  K07     5s     3.5s    6   Karşı kaldırımda biri köpeğinin tasmasını çekiyordu.
+  8.png  K08    10s     6.0s    7   Ve o an anladı ki her şey bir itme ve bir çekme savaşıyla başlıyordu.
+  9.png  K09    10s     9.0s  8-10   Kuvvetin en basit tanımı da buydu işte: …itme ya da çekme etkisi.
+ 10.png  K10     5s     3.5s   11   Eve döndüğünde meraktan duramadı.
+ 11.png  K11    10s     5.0s   12   Masasına bir oyuncak arabayla bir paket oyun hamuru koydu…
+ 12.png  K12    10s     7.0s   13   Duran arabayı parmağıyla ittiğinde araba hareket etti;…
+ 13.png  K13    10s     7.0s   14   Arabayı tekrar hızlandırıp önüne elini koyduğunda araba durdu;…
+ 14.png  K14    10s     7.0s   15   Oyun hamurunu avucunda sıktığında hamurun şekli tamamen değişti;…
+                        -----
+              SEKANS 1  77.0s
+
+
+##### SEKANS 2 — BUILD-UP · ölçme sorusu → dinamometre → yay hassasiyeti #####
+Enerji: soru büyür → alet tanıtılır → karşılaştırma keskinleşir
+
+  KARE          KLİP   EKRAN   VO   CÜMLE
+ 15.png  K15    10s     8.0s  16-17  Ve o akşam izlediği maçta… kuvvet yönü de değiştirebiliyordu.
+ 16.png  K16     5s     3.0s   18   Ama Mira'nın kafasında yeni bir soru belirmişti.
+ 17.png  K17     5s     4.5s   19   …bir kuvvetin ne kadar güçlü olduğunu nasıl ölçecekti?
+ 18.png  K18     5s     4.0s  20-21  "Çok güçlü vurdum" demek bilimsel bir ölçüm müydü? Tabii ki hayır.
+ 19.png  K19     5s     4.0s   22   Kuvveti ölçmek için dinamometre adı verilen bir araç kullanılıyordu.
+ 20.png  K20     5s     3.0s   23   Şeffaftı, içinde esnek bir yay vardı.
+ 21.png  K21    10s     8.0s   24   Kancasına bir cisim asıldığında… yay o kadar çok uzuyordu.
+ 22.png  K22     5s     4.5s  25-26  …o birim, Isaac Newton'ın anısına Newton'dı ve kısaca N harfiyle…
+ 23.png  K23     5s     4.5s   27   Yani sonuç "beş Newton" ya da kısaca "beş N" diye söyleniyordu.
+ 24.png  K24     5s     3.0s   28   Derken Mira iki farklı dinamometre gördü.
+ 25.png  K25    10s     5.0s   29   Birinin içinde kalın bir yay vardı, diğerinde incecik bir yay.
+ 26.png  K26     5s     4.5s   30   İkisi aynı hassaslıkta mı ölçüyordu? Hayır. İşin sırrı yayın…
+ 27.png  K27    10s     9.0s   31   Bir dinamometrenin ölçüm hassasiyeti; yayın kalınlığına… bağlıydı.
+ 28.png  K28    10s     5.0s   32   İnce yaylı olana hafif bir silgi astığında yay hemen esnedi.
+                        -----
+              SEKANS 2  70.0s
+
+
+##### SEKANS 3 — CLIMAX · ağırlık farkı → esneklik → yayın bozulması #####
+Enerji: deney hızlanır → merak riske döner → kayıp ve uyarı
+
+  KARE          KLİP   EKRAN   VO   CÜMLE
+ 29.png  K29     5s     4.0s  33-34  …ince yaylı dinamometreleri tercih etmeliydik; çünkü ince yaylar…
+ 30.png  K30     5s     4.5s   35   Bir tüyü ya da küçük bir silgiyi ölçmek için… hassas bir dinamometre.
+ 31.png  K31     5s     3.0s   36   Aynı silgiyi kalın yaylı olana astığındaysa yay hiç kıpırdamadı;
+ 32.png  K32    10s     5.0s   36   ancak ağır bir taş astığında esnedi.
+ 33.png  K33     5s     4.5s   37   Çünkü ağır bir sırt çantasını ölçmeye kalksak ince yay kopabilir…
+ 34.png  K34    10s     9.0s  38-39  İşte o zaman kalın ve sert yaylı dinamometreler kullanılıyordu…
+ 35.png  K35    10s     9.0s  40-41  Bir de yayın bakır mı, demir mi… Çelik yaylar çok daha dayanıklı…
+ 36.png  K36     5s     3.0s   42   Mira denemeye devam etti.
+ 37.png  K37    10s     5.0s   43   Kancaya önce küçük bir silgi astı, yay az uzadı;
+ 38.png  K38    10s     7.0s  44-45  sonra ağır bir taş astı, yay çok daha fazla uzadı. + Hafif cisimler…
+ 39.png  K39    10s     9.0s   46   Çünkü dinamometrenin içindeki yay esnek bir maddeydi…
+ 40.png  K40    10s     7.0s   47   Ama Mira bir şeyi merak etti: ya kocaman bir okul çantası asarsa?
+ 41.png  K41    10s     8.0s   48   O zaman yay esneklik özelliğini kaybeder ve bozulurdu;…
+ 42.png  K42     5s     4.5s   49   İşte bu yüzden… maksimum ölçüm değerine dikkat etmek gerekiyordu.
+                        -----
+              SEKANS 3  82.5s
+
+
+##### SEKANS 4 — RESOLUTION · defter → kapanış #####
+Enerji: sakinleşme → toparlama → sıcak veda
+
+  KARE          KLİP   EKRAN   VO   CÜMLE
+ 43.png  K43     5s     4.0s   50   Günün sonunda Mira defterini açtı ve o gün öğrendiklerini yazdı:
+ 44.png  K44    10s     9.0s  51-52  kuvvet… itme ya da çekmeydi; dinamometre ile ölçülüyordu;
+ 45.png  K45    10s     8.0s  53-54  birimi Newton, yani N'di; ve dinamometreler… çalışıyordu.
+ 46.png  K46     5s     3.5s   55   Sonra defterini kapattı ve gülümsedi.
+ 47.png  K47    10s     7.0s   56   Çünkü sıradan sandığı o sabah, bir bilim macerasının ilk günüydü.
+ 48.png  K48    10s     8.0s  57-58  Bir sonraki macerada görüşmek üzere. + Merakla kalın, bilimle kalın!
+                        -----
+              SEKANS 4  39.5s
+
+=========================================================================
+TOPLAM: 48 klip · 58 VO cümlesi · ekranda ≈ 269 saniye (4 dk 29 sn)
+
+KESME NOTLARI
+• Sekans 1 → 2 geçişi (14.png → 15.png): oda gündüzden akşama geçiyor.
+  Burada yarım saniyelik bir nefes bırak, düz kesme yeterli.
+• 30.png → 31.png (tüy → kıpırdamayan kalın yay): iki klip de neredeyse durgun.
+  Arka arkaya sıkıcı olmasın diye 31'i kısa tut (3s), tempoyu 32 açsın.
+• 38.png → 39.png: taşın uzattığı yay, sonra boş kanca. Bu iki klibi sıkı kes,
+  aradaki fark hemen okunmalı.
+• 41.png (bozulan yay) sonrasında yarım saniye fazladan hold bırak — kayıp otursun.
+• 47.png → 48.png: son iki klip birbirine yaslansın, arada boşluk kalmasın.
+
+MÜZİK
+• Sekans 1: hafif, meraklı, tempolu.
+• Sekans 2'de tema aynı kalsın, enstrüman incelsin (deney odağı).
+• 41.png'de müzik bir an geri çekilsin (yay bozuluyor), 42'de geri gelsin.
+• Sekans 4'te sıcak ve yavaş; son iki klipte yükselerek bitir.
+• VO her yerde önde; müzik VO altında -18 dB civarı, klip başlarında fade.
+=========================================================================

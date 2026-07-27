@@ -1,0 +1,70 @@
+BİLEŞKE KUVVET — REVİZE (referans-edit)
+=========================================================================
+Yöntem: her karenin MEVCUT görselini Magnific'te REFERANS bağla, altındaki yönergeyi ver.
+"Use this referenced image, change ONLY … keep everything else identical." — SADECE yazan düzelir.
+Sahneyi baştan tarif ETME. Yalnız (ÇOK BOZUK) etiketliler baştan üretilir (tam prompt en altta).
+Temiz kareler (1,3,4,5,6,10,20,22,26,28,47,51 …) DOKUNULMAZ. Node ayracı: "### ".
+ÖNEMLİ (her düzeltmede): yazı/posteri Türkçeleştirirken ORİJİNAL odak/bulanıklık seviyesini KORU —
+arka plandaysa SOFT-FOCUS kalsın, netleştirip öne çekme; SADECE dili değiştir, derinlik bozulmasın.
+=========================================================================
+
+
+### 2.png
+Use this referenced image. Change ONLY: replace the English text on the bus ("SCHOOL BUS") and the shop ("CORNER bakery") with Turkish or leave them blank — Turkish signage only. Keep Mira, the street, the bus, the composition and lighting identical.
+
+### 7.png
+Use this referenced image. Change ONLY: make ALL background children Turkish/Anatolian and about 11–12 years old (Mira's age, pre-teen) — no Black or East-Asian child, none too little. Keep Mira, the "KEŞİF KAPISI" banner, the entrance and composition identical.
+
+### 9.png
+Use this referenced image. Change ONLY the language of the "Solar System" poster to Turkish "GÜNEŞ SİSTEMİ" — keep it at the SAME soft-focus blur as the original, do not sharpen or foreground it. Keep the board with "1 2 3 4", the box drawing and everything else identical.
+
+### 11.png
+Use this referenced image. Change ONLY: fill the empty white background with a soft-focus dressed science-lab (beakers, a magnet, shelves in warm bokeh) — no empty void. Keep the string, the block, the golden glow and the "DOĞRULTU / YÖN" labels exactly identical.
+
+### 12.png
+Use this referenced image. Change ONLY the language of the "SCIENCE CLARITY" poster to Turkish or leave it blank — keep it at the SAME soft-focus blur as the original, do NOT bring it into sharp focus. Keep Mira, the spring scale reading "5 N", and everything else identical.
+
+### 13.png
+Use this referenced image. Change ONLY: turn the notebook text into faint illegible pencil scribbles — remove the raised/garbled letters and any English. Keep Mira, her pose, the classroom and lighting identical.
+
+### 14.png
+Use this referenced image. Change THREE things only: (1) Mira's skin from green/grey to warm matte tan; (2) remove the garbled "KOLKALSIRI" hanging sign; (3) make background children Turkish/Anatolian ~11–12. Keep the desk, board, posters and composition identical.
+
+### 15.png
+Use this referenced image. Change ONLY the board drawing: the two saffron/crocus FLOWERS → two soft round warm-golden GLOWS of light merging into one (glows of light, NOT flowers). Keep the letter "R", the classroom, Mira and everything else identical.
+
+### 16.png
+Use this referenced image. Change ONLY the characters' identities/outfits: the child pushing in the middle is @ali in a GREEN hoodie (NOT Mira's red overalls); @can wears the mustard-yellow sweater; @mira (red hoodie + denim overalls, a girl) is the one arriving at the right. All three ~11–12 Turkish. Keep the red toy pickup, the mud and the garden identical.
+
+### 17.png
+Use this referenced image. Change ONLY: the pushing boy @ali wears a GREEN hoodie (not yellow); keep the golden glow on the TRUCK's side (never on his face). Keep the "10 N" label, the car, the mud identical.
+
+### 18.png
+Use this referenced image. Change ONLY: the two force glows on the truck from FLOWERS into soft round warm-golden GLOWS of light (glows, not flowers/petals). Keep the "10 N" and "15 N" labels, the car, the pusher and the garden identical.
+
+### 19.png
+Use this referenced image. Change TWO things only: (1) remove the yellow glow ON the child's face (a force glow belongs on the object, not a face); (2) remove the "BAŞARI!" wooden sign. Keep the car, the mud, the kids and composition identical.
+
+### 21.png
+Use this referenced image. Change TWO things only: (1) remove the glow ON the child's face; (2) remove the "NEŞELİ KURTULUŞ" wooden sign. Keep the car, the mud splash and the cheering kids identical.
+
+### 25.png
+Use this referenced image. Change ONLY: @mira is NOT pulling the rope — she stands watching at the side (frame-right); the two pullers are anonymous Turkish classmates. Keep the rope, the red ribbon, the golden glow, the playground and lighting identical.
+
+### 34.png
+Use this referenced image. Change TWO things only: (1) the two glows from ARROW shapes into soft round GLOWS of light (not arrows/arrowheads); (2) the book RESTS flat ON the table, not floating in mid-air. Keep the library and composition identical.
+
+### 35.png
+Use this referenced image. Change TWO things only: (1) correct the embossed text from "R = ON" to "R = 0 N" (the zero and the letter N separate and spaced); (2) the book RESTS flat ON the table, not floating. Keep the library and everything else identical.
+
+### 45.png
+Use this referenced image. Change ONLY the panel labels: fix the garbled/repeated "ETKİSİ ETKİSİ" text to clean labels — a small shared header "DENGELENMEMİŞ KUVVET", then "HIZLANMA / YAVAŞLAMA / YÖN DEĞİŞİMİ". Keep the three panel images and everything else identical.
+
+### 52.png
+Use this referenced image. Change ONLY: Mira's outfit from a yellow hoodie to her own red hoodie + denim overalls (Saturn pocket). Keep the sunset, the wave, the sparkles and composition identical.
+
+
+### 8.png   (sahne HOŞ — sadece tam öğretmen eksik; referans-edit)
+Use this referenced image (the nice classroom scene you liked). Change ONLY: replace the disembodied floating teacher's arm/hand with a FULL real teacher — a warm Turkish/Anatolian adult teacher standing beside the smart board, one hand drawing on it, the whole body and head visible in frame (not just an arm). Keep Mira at her desk, the board drawing ("KUTUYA UYGULANAN KUVVET" / "HAREKET YÖNÜ"), the classmates, the composition and lighting exactly identical; keep any soft-focus background at the same blur — do not sharpen it.
+
+=========================================================================

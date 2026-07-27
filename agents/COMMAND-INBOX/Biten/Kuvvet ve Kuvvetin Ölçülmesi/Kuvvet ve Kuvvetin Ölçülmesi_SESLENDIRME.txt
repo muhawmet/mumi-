@@ -1,0 +1,52 @@
+KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · SESLENDİRME METNİ (ElevenLabs)
+=========================================================================
+Anlatıcı: Mira (dış ses). Ekranda kimse konuşmuyor, ağızlar kapalı —
+bütün klipler sessiz üretildi, ses yalnız bu VO ve müzik.
+
+TON: parlak, meraklı, sıcak-eğitici. Hızlı ama net; 5. sınıf temposu.
+İngilizce kelime yok. Sayılar Türkçe okunur ("beş Newton", "beş N" → "beş N").
+Soru cümlelerinde tonu yukarı taşı, cevapta düşür ("Tabii ki hayır." — kısa, net).
+
+Kesintisiz oku. Cümle atlanmadı; 58 cümle 48 klipte taşınıyor
+(eşleşme: Kuvvet ve Kuvvetin Ölçülmesi_EDIT-PLAN.txt).
+=========================================================================
+
+
+>>>>> ELEVENLABS'E BUNU YAPIŞTIR <<<<<
+
+
+Mira'nın hikâyesi çok sıradan bir sabahta başladı. Odasının kapısını açtı, çantasını sırtına aldı, masadan kalemini alıp bir şeyler karaladı, sonra bahçeye çıkıp ayağının ucundaki topa vurdu. Sıradan hareketlerdi bunlar. Ama Mira o sabah, farkında bile olmadan, doğanın en gizemli ama bir o kadar da hep gözümüzün önünde duran gücüne dokunmuştu: kuvvete.
+
+Bahçeden çıkarken bir çocuğun market arabasını ittiğini gördü. Karşı kaldırımda biri köpeğinin tasmasını çekiyordu. Ve o an anladı ki her şey aslında bir itme ve bir çekme savaşıyla başlıyordu. Kuvvetin en basit tanımı da buydu işte: duran bir cismi hareket ettiren, hareket eden bir cismi durduran, cisimlerin yönünü veya şeklini değiştiren itme ya da çekme etkisi.
+
+Eve döndüğünde meraktan duramadı. Masasına bir oyuncak arabayla bir paket oyun hamuru koydu ve denemeye başladı. Duran arabayı parmağıyla ittiğinde araba hareket etti; demek ki kuvvet duran bir cismi harekete geçirebiliyordu. Arabayı tekrar hızlandırıp önüne elini koyduğunda araba durdu; demek ki hareket eden bir cismi durdurabiliyordu da. Oyun hamurunu avucunda sıktığında hamurun şekli tamamen değişti; demek ki cisimlerin şeklini değiştirebiliyordu. Ve o akşam izlediği maçta bir futbolcunun gelen topa kafasıyla vurup topu bambaşka bir yöne göndermesi geldi aklına; demek ki kuvvet cisimlerin yönünü de değiştirebiliyordu.
+
+Ama Mira'nın kafasında yeni bir soru belirmişti. Kuvvetin ne olduğunu anlamıştı, peki bir kuvvetin ne kadar güçlü olduğunu nasıl ölçecekti? "Çok güçlü vurdum" demek bilimsel bir ölçüm müydü? Tabii ki hayır. Kuvveti ölçmek için dinamometre adı verilen bir araç kullanılıyordu. Şeffaftı, içinde esnek bir yay vardı. Kancasına bir cisim asıldığında kuvvet yayı aşağı doğru çekiyor, yay uzuyordu; ne kadar büyük bir kuvvet uygulanırsa yay o kadar çok uzuyordu. Ölçtüğü sonucu yazarken de bir birime ihtiyacı vardı: o birim, ünlü bilim insanı Isaac Newton'ın anısına Newton'dı ve kısaca N harfiyle gösteriliyordu. Yani bir kuvvet ölçüldüğünde sonuç "beş Newton" ya da kısaca "beş N" diye söyleniyordu.
+
+Derken Mira iki farklı dinamometre gördü. Birinin içinde kalın bir yay vardı, diğerinde incecik bir yay. İkisi aynı hassaslıkta mı ölçüyordu? Hayır. İşin sırrı yayın özelliklerinde saklıydı. Bir dinamometrenin ölçüm hassasiyeti; yayın kalınlığına, yani kesit alanına, yayın boyuna ve yapıldığı metalin, yani malzemenin cinsine bağlıydı.
+
+İnce yaylı olana hafif bir silgi astığında yay hemen esnedi. Demek ki hassas bir ölçüm yapmak istiyorsak, yani çok küçük kuvvetleri bile ölçmek istiyorsak ince yaylı dinamometreleri tercih etmeliydik; çünkü ince yaylar küçük kuvvetlerde bile kolayca uzayabiliyordu. Bir tüyü ya da küçük bir silgiyi ölçmek için tam da böyle hassas bir dinamometre gerekiyordu. Aynı silgiyi kalın yaylı olana astığındaysa yay hiç kıpırdamadı; ancak ağır bir taş astığında esnedi. Çünkü ağır bir sırt çantasını ölçmeye kalksak ince yay kopabilir ya da bozulabilirdi. İşte o zaman kalın ve sert yaylı dinamometreler kullanılıyordu. Kalın yaylı dinamometreler hassas değildi, küçük kuvvetlerde hiç esnemiyorlardı; ama çok daha büyük kuvvetleri güvenle ölçebiliyorlardı. Bir de yayın bakır mı, demir mi, yoksa çelik mi olduğu, yani yayın yapıldığı malzemenin cinsi, esnekliği doğrudan etkiliyordu. Çelik yaylar çok daha dayanıklı ve esnekti.
+
+Mira denemeye devam etti. Kancaya önce küçük bir silgi astı, yay az uzadı; sonra ağır bir taş astı, yay çok daha fazla uzadı. Hafif cisimler yayı az uzatıyor, ağır cisimler daha çok uzatıyordu. Çünkü dinamometrenin içindeki yay esnek bir maddeydi ve esnek maddeler, üzerlerindeki kuvvet kalktığında eski hâllerine geri dönüyorlardı. Ama Mira bir şeyi merak etti: ya bu küçük dinamometreye kocaman bir okul çantası asarsa? O zaman yay esneklik özelliğini kaybeder ve bozulurdu; bir daha eski hâline dönemezdi. İşte bu yüzden her dinamometrenin üzerinde yazan maksimum ölçüm değerine dikkat etmek gerekiyordu.
+
+Günün sonunda Mira defterini açtı ve o gün öğrendiklerini yazdı: kuvvet, cisimleri hareket ettiren, durduran, yönünü ve şeklini değiştiren itme ya da çekmeydi; dinamometre ile ölçülüyordu; birimi Newton, yani N'di; ve dinamometreler içlerindeki esnek yaylar sayesinde çalışıyordu. Sonra defterini kapattı ve gülümsedi. Çünkü sıradan sandığı o sabah, aslında bir bilim macerasının ilk günüydü.
+
+Bir sonraki macerada görüşmek üzere. Merakla kalın, bilimle kalın!
+
+
+>>>>> YAPIŞTIRILACAK METİN BİTTİ <<<<<
+
+=========================================================================
+OKUMA NOTLARI (ElevenLabs'e girmez, senin için)
+
+• "kuvvete" (1. paragraf sonu) — iki nokta üst üsteden sonra kısa bir nefes,
+  sonra vurguyla. Başlık anı orası.
+• "Tabii ki hayır." — ayrı, kısa, kesin. Öncesindeki soruyla arasına boşluk bırak.
+• "dinamometre" ilk geçtiği yerde biraz yavaş ve net; terim orada öğreniliyor.
+• "beş Newton" ve "beş N" — ikisi de kelimeyle okunacak, rakam gibi değil.
+• "Isaac Newton" — sakin, saygılı bir tonda; hızlı geçme.
+• Son iki cümle ("Bir sonraki macerada… bilimle kalın!") tempoyu yukarı al,
+  gülümseyerek oku. Serinin imzası orası.
+
+TOPLAM: 58 cümle · 8 paragraf · ekranda yaklaşık 4 dakika 30 saniye.
+=========================================================================

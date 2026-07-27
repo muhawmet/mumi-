@@ -1,0 +1,116 @@
+BİLEŞKE KUVVET — REVİZE TUR-2 (referans-edit)
+=========================================================================
+"Use this referenced image. Change ONLY … keep everything else identical."
+Bulanık/okunmayan arka plan yazısına takılmıyoruz — sadece NET OKUNAN yanlışlar.
+Node ayracı: "### ".
+
+>> KRİTİK NOT: Magnific'e giden metinde "saffron" / "bloom" kelimeleri KALMASIN —
+   NB2 bunları SAFRAN ÇİÇEĞİ olarak çiziyor. Hep "soft round warm-golden GLOW of light" de.
+=========================================================================
+
+
+##### A) NET OKUNAN YANLIŞ YAZILAR #####
+
+### 30.png   (en kötüsü)
+Use this referenced image. Change ONLY the wall text: remove the garbled signs "TÜRKİSH LE OR ALUR" and "BHIN AGINLLAHI" completely — leave the wall clean/blank or one short correct Turkish word. No English, no invented letters. Keep the rope, the ribbon, the glow, the children and the composition identical.
+
+### 29.png
+Use this referenced image. Change ONLY the stone plaque on the building: replace the English "VILLAGE SCHOOL" text with Turkish ("KÖY OKULU") or leave the plaque blank. Keep the rope, the ribbon, the glow, the children and lighting identical.
+
+### 32.png
+Use this referenced image. Change ONLY the garbled "SCHOOL LIBRAYLI" poster at the top-left: make it Turkish "KÜTÜPHANE" or blank, at the same soft blur. Keep the book, the lamp, the desk and everything else identical.
+
+### 36.png
+Use this referenced image. Change ONLY the book-cover text: it is currently MIRRORED/reversed and unreadable — write it correctly and legibly as Turkish "DENGELENMİŞ KUVVETLER", reading left-to-right. Keep Mira, the lamp, the library and composition identical.
+
+### 35.png
+Use this referenced image. Change ONLY the embossed text on the book cover: "R = ON" is wrong — make it "R = 0 N" (a zero, then a space, then the letter N). Keep the book, the table, the library and lighting identical.
+
+### 24.png
+Use this referenced image. Change ONLY the labels: there are TWO "20 N" labels on the right side — delete the duplicate so only ONE "20 N" remains (and "30 N" on the left). Keep the rope, the ribbon, the glows and composition identical.
+
+### 8.png
+Use this referenced image. Change ONLY the notebook in the foreground: remove the English "Personal notes" and the garbled lines — leave faint illegible pencil scribbles only. Keep the teacher, the board text, the class and composition identical.
+
+### 9.png
+Use this referenced image. Change ONLY the poster text "Solar System" to Turkish "GÜNEŞ SİSTEMİ" — same soft blur, do not sharpen. Keep the board with "1 2 3 4" and everything else identical.
+
+### 2.png
+Use this referenced image. Change ONLY the round bakery badge reading "BAKERI": make it Turkish or blank. Keep "KIRTASİYE", "FIRIN", "OKUL TAŞITI", Mira, the street and composition identical.
+
+### 12.png
+Use this referenced image. Change ONLY the poster text "BİLİM AÇIKLIĞI" (meaningless) to "BİLİM KÖŞESİ" — same soft blur, do not sharpen. Keep Mira, the "5 N" spring scale and everything else identical.
+
+### 14.png
+Use this referenced image. Change TWO things only: (1) remove the garbled "KOLKALSIRI" sign on the wall; (2) Mira's skin is GREEN — make it warm matte tan like her other shots. Keep the desks, posters, board and composition identical.
+
+
+##### B) ÇİÇEK OLMUŞ GLOW'LAR (hepsi aynı düzeltme) #####
+Her birinde: "Change ONLY the glowing shapes: they are drawn as saffron-crocus FLOWERS with petals —
+replace each with a soft round warm-golden GLOW of light (a luminous energy aura, no petals, no stem,
+no flower, no arrow). Keep everything else identical."
+
+### 5.png    (blokta çiçek + sarı gölcük)
+### 6.png    (blokta kocaman lotus çiçeği)
+### 15.png   (tahtadaki çizim: iki safran çiçeği → iki glow birleşiyor)
+### 31.png   (halatın ortasında BİTMİŞ turuncu çiçek — tamamen kaldır, yerine glow)
+### 33.png   (kitabın üstünde/altında çiçek → glow)
+### 47.png   (üç panelde de çiçekler → yuvarlak glow'lar; "BİRLEŞİR/ÇEKİŞİR/DENGE" yazıları doğru, kalsın)
+
+
+##### C) DİĞER NET HATALAR #####
+
+### 39.png
+Use this referenced image. Change ONLY: Mira's skin is GREEN — make it warm matte tan like her other shots. Keep the window, the room, the apple tree and composition identical.
+
+### 33.png (ek)
+Also: the book must REST flat ON the table — it is floating in mid-air. Keep the library identical.
+
+### 50.png
+Use this referenced image. Change ONLY: the wooden box is floating in mid-air — place it RESTING flat on the desk. Keep "KUZEY 15 N", "GÜNEY 15 N", "R = ?", the glows and the library identical.
+
+### 38.png
+Use this referenced image. Change ONLY the yellow ARROWS (on the car and above/below the parachutist): replace each with a soft round warm-golden GLOW of light — no arrows, no arrowheads. Keep "SABİT SÜRAT", the car, the parachutist and the highway identical.
+
+### 19.png
+Use this referenced image. Change ONLY: remove the yellow glow ON the boy's face — a force glow belongs on the object, not on skin. Keep the mud splash, the car and composition identical.
+
+### 21.png
+Use this referenced image. Change ONLY: remove the yellow glow ON the boy's face and remove the "NEŞELİ KURTULUŞ" wooden sign. Keep the mud, the car and the cheering kids identical.
+
+### 18.png
+Use this referenced image. Change ONLY the pushing character: it must be @can (a boy in a MUSTARD-YELLOW sweater), not Mira in red overalls. Keep the truck, the "10 N" and "15 N" labels, the glows and the garden identical.
+
+### 23.png
+Use this referenced image. Change ONLY the child standing at the right watching: it must be @mira (girl, red hoodie + denim overalls), not a boy in a green hoodie. Keep the rope, the teams and composition identical.
+
+### 25.png
+Use this referenced image. Change ONLY: @mira must NOT hold or pull the rope — she stands at the side watching, hands free. The two pullers are the boys. Keep the rope, the ribbon, the glow and the playground identical.
+
+### 30.png (ek)
+Also: @mira must NOT pull the rope — she stands watching at the side, hands free.
+
+
+##### D) KÜTÜPHANE SEKANSI — @kitap SÜREKLİLİĞİ (K32–K37) #####
+Kitap her karede farklı çıkıyor (krem/bordo/lacivert…). ÖN KOŞUL: REFERANSLAR.txt'deki @kitap
+referansını bas → tag'le. Sonra AŞAĞIDAKİ FIX'LERİ mevcut görsellere uygula (referans-edit).
+
+### 32.png
+Use this referenced image. Change ONLY the book on the table: replace it with @kitap (the tagged reference book), lying flat in exactly the same position, same size, same angle. Keep the library, the lamp, the light, the hand and the whole composition identical.
+
+### 33.png
+Use this referenced image. Change TWO things only: (1) replace the book with @kitap in the same position and angle; (2) the book must REST flat ON the table — it is floating in mid-air. Keep the two faint glows, the library and the composition identical.
+
+### 34.png
+Use this referenced image. Change ONLY the book: replace it with @kitap, lying flat on the table in the same position and angle. Keep the two equal glows above and below, the library and the composition identical.
+
+### 35.png
+Use this referenced image. Change TWO things only: (1) replace the book with @kitap, lying flat on the table in the same position; (2) remove the embossed text from the book cover — instead place a clean dimensional raised Turkish label "R = 0 N" floating in the air beside the book (zero and N separate and clearly spaced). Keep the glows, the library and the composition identical.
+
+### 36.png
+Use this referenced image. Change ONLY the book: replace it with @kitap in the same position and angle — its cover title must read correctly left-to-right, never mirrored. Keep Mira, the lamp, the library and the composition identical.
+
+### 37.png
+Use this referenced image. Change ONLY the book: replace it with @kitap, lying flat on the table in the same position and angle. Keep the window, the view outside, the lamp, the library and the composition identical.
+
+=========================================================================

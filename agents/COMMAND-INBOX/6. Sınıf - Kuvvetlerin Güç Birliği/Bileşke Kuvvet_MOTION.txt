@@ -1,0 +1,179 @@
+BİLEŞKE KUVVET — MOTION PROMPT'LARI (Kling 3.0, i2v) · 52 klip
+=========================================================================
+Kullanım: o karenin görselini START FRAME ver, altındaki TEK promptu yapıştır.
+Başlık satırı = Kling süresi + hangi VO cümlesi (senin için, prompta dahil değil).
+Node ayracı: "### ".
+=========================================================================
+
+
+##### SEKANS 1 — INTRO (K01–K13) #####
+
+### K01 | 10s | VO1 "Bu Mira. Her sabah olduğu gibi bugün de okula gitmek için yola çıktı."
+She walks forward along the sunlit pavement with an easy morning stride, her backpack swaying and settling with each step, her head turning a touch toward the street with a small ready smile; morning light-shafts drift with floating pollen and leaf shadows shift gently across the path while the distant school bus idles softly in the bokeh. Camera: a gentle tracking dolly moving with her, easing as she passes the gate. She keeps walking normally — no running, no stumbling; the background street stays stable with no new people appearing; her hair moves naturally and her face never drifts or changes. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no lens flare, no camera warp.
+
+### K02 | 5s | VO2 "Kapıyı itti, ağır çantasını omzuna aldı ve otobüse yetişmek için koştu."
+She breaks into a run toward the bus, her backpack bouncing on the shoulder strap, hair and jacket streaming back, a dry leaf spinning up from her push-off while the street behind streaks with gentle speed-blur. Camera: a fast lateral tracking glide keeping pace with her run, the background streaming past as parallax. She must not trip or drop the bag; the bus stays parked and stable; all Turkish signage stays frozen, correctly spelled and unchanged; no new children enter frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no lens flare, no camera warp.
+
+### K03 | 10s | VO3 "…her hareketin arkasında görünmez bir güç vardı: Kuvvet!"
+The front door swings open a little further on its hinge and the warm golden glow at the handle blooms brighter and pulses once — the invisible push made visible — while a slow spiral of dust and light motes trails the door's arc through the sunbeam and the red coat sways gently on its hook. Camera: a slow push-in toward the glowing handle, easing as the glow peaks. The glow stays soft golden light — never a flower, petal, arrow or real fire; the door does not slam or detach; the hallway stays empty of people. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no lens flare, no camera warp.
+
+### K04 | 5s | VO4 "Kapıyı açarken, topa vururken ya da market arabasını iterken hep kuvvet uygularız."
+Inside the three locked panels each act completes its force-transfer — left, the hand turns the handle and the latch gives; middle, the foot strikes the ball and the ball squashes and smears off with follow-through; right, the hands push the cart and its wheels spin up and roll off — while the three panel seams stay razor-sharp and perfectly still. Camera: a very slow synchronized push shared across all three panels. Panels must not blend, slide or reflow; each action stays small and grounded; all Turkish package text stays frozen and unchanged; no faces enter frame. Silent clip, no audio. No whip-pan, no shake, no snap-zoom, no lens flare, no camera warp.
+
+### K05 | 10s | VO5+6 "Peki bir cismi her zaman tek bir kuvvet mi etkiler? Tabii ki hayır."
+She presses the wooden block with one testing fingertip and the single golden glow on its face brightens under her push, then as she tilts her head in curiosity three faint answering glows kindle and slowly rise on the block's other faces, quietly denying the idea of only one force; warm lamp light breathes and dust drifts through the bedroom. Camera: a slow push toward the block with a soft rack from her curious face down to the kindling glows. The glows stay soft round golden light — never petals, flowers or arrows; the block rocks only a hair and never slides away or lifts off the desk; her skin stays warm matte tan, never green or grey. Silent clip, no audio, no dialogue, mouth closed. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K06 | 5s | VO7 "Bazen birden fazla kuvvet bir araya gelir ve güçlerini birleştirir."
+The separate golden glows on the block's face slide together and merge into one broad brighter glow, and the block leans and slides across the desk with follow-through overshoot, a small dust-curl kicking up at its leading edge and a faint scuff trailing behind. Camera: a slow low push following the block's slide, easing as it settles. The glows merge as light — never flowers, petals, arrows or fire; the block slides a short distance and stays on the desk, it never flies off or falls; the room stays stable. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K07 | 10s | VO8+9 "Mira bugün bu gizemli gücü keşfedecek. Hazırsanız, biz de katılalım!"
+She steps up onto the threshold and lifts her hand into the warm doorway light, her eager smile widening as the golden glow washes over her face and rims her hair, while dust and pollen rise in the light shafts, classmates drift past softly in the bokeh and the banner sways a hair in the morning air. Camera: a slow push-in following her step through the threshold, easing on her lit face. The banner text stays frozen, correctly spelled and unchanged; the doorway glow must not blow out to white; classmates stay soft and anonymous; no speech and no lip movement. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K08 | 10s | VO10+11 "Mira'nın ilk dersi fendi. Öğretmeni tahtaya sevimli bir kutu çizdi ve üzerine oklar koydu."
+The teacher's hand finishes the last stroke on the smart board and the drawn line brightens as it is laid, while the girl at the front desk leans a touch further forward, her eyes tracking the drawing with an anticipatory tilt, and morning dust drifts in the window shafts over the rows of desks. Camera: a gentle push-in over her shoulder toward the board with a soft rack from her face to the drawing. All board text stays frozen, correctly spelled and unchanged — no morphing, no new words; the drawing does not animate beyond the brightening line; classmates stay seated and soft; nobody speaks and no mouths move. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K09 | 5s | VO12 "…bir kuvveti tam olarak tanımlamak için dört şeye ihtiyacımız olduğunu anlattı."
+On the board the four drawn numbers brighten one after another in sequence — one, then two, then three, then four — a soft warm halo blooming around the freshest one while projector dust drifts slowly through the beam and the classroom sits quiet. Camera: a slow push toward the board, easing as the fourth number reaches full brightness. The numerals stay exactly as they are — no extra digits, no morphing, no words appearing; the box drawing stays frozen; no people enter frame. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K10 | 5s | VO13 "Birincisi uygulama noktası, yani kuvvetin cisme etki ettiği yer."
+The single golden force-point on the block's face tightens and brightens to a precise concentrated spot — the exact place the push lands — the wood micro-dimpling faintly beneath it while a fine dust settles around the point. Camera: a slow macro push straight to the glowing point. The glow stays one tight round light — never a flower, arrow or spreading fire; the raised Turkish label stays frozen and unchanged; the block stays perfectly still on the desk. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K11 | 5s | VO14+15 "İkincisi doğrultu; doğu-batı gibi bir çizgi. Üçüncüsü yön; doğuya doğru olması."
+The golden glow on the block's left face brightens and the block begins to travel along the taut string toward the right end — moving strictly along that line in one clear direction — while the string holds its tight specular highlight, a small dust puff kicks at the block's leading edge and the red bead trembles. Camera: a slow lateral dolly along the string following the block's travel. The block must stay on the string's line with no drifting off and no lifting; both raised Turkish labels stay frozen and unchanged; the lab background stays soft and stable. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K12 | 5s | VO16 "Ve dördüncüsü büyüklük, yani kuvvetin Newton cinsinden değeri; mesela 5 N."
+The hanging block settles and the spring's coils stretch taut and even under its weight, the red pointer easing to its notch and holding steady at the reading while the girl's eyes follow the needle with a small satisfied nod. Camera: a slow macro push to the dial, easing as the pointer settles. The dial text stays frozen, correct and unchanged; the pointer settles once and holds — no swinging back and forth, no spinning; the block never falls off the hook. Silent clip, no audio, mouth closed. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K13 | 10s | VO17 "Mira defterine not aldıkça bir şeyi merak etti: Ya bir cisme aynı anda birden fazla kuvvet etki ederse?"
+Her pencil lifts off the page mid-stroke and her gaze rises from the notebook, her eyes widening a touch as a bigger question interrupts the note, her hand holding still on the page while classroom light drifts with dust. Camera: a slow push-in on her wondering face, holding on the look for a long beat. The notebook stays illegible scribbles — no readable words appear; her skin stays warm matte tan; no thought-bubble or floating text; mouth closed, no speech, no lip movement. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+
+##### SEKANS 2 — BUILD-UP (K14–K37) #####
+
+### K14 | 5s | VO18 "İşte tam o an öğretmeni sihirli tanımı söyledi:"
+She tips further forward at her desk with expectant eyes as at the front the board glow brightens a touch, the reveal beginning, while classmates settle and dust drifts in the window light. Camera: a slow push-in on her expectant lean. Her skin stays warm matte tan and never green; all wall posters stay frozen and correctly spelled with no garbled text appearing; no board text becomes readable; nobody speaks and no mouths move. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K15 | 10s | VO19+20 "…bileşke kuvvet, ya da net kuvvet diyoruz. Ve onu R harfiyle gösteriyoruz."
+On the board the two drawn golden glows slide toward each other and merge into one larger brighter glow, and beside them the letter R kindles and holds with a soft warm halo while the girl watches the merge and dust drifts through the classroom light. Camera: a slow push to the board, easing as the merge completes and the letter settles. The glows are round soft light — absolutely no flowers, petals or arrows; the letter stays frozen, single and correct with no extra letters or words appearing; the board drawing never redraws itself. Silent clip, no audio, mouth closed. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K16 | 10s | VO21+22 "Zil çaldı… Ali ile Can'ı çamura saplanmış kırmızı arabayı kurtarmaya çalışırken buldu."
+The two boys strain at the mud-stuck red toy truck, rocking it a hair while the wet mud grips the tires with a thick suck, and the girl steps in from the right, her eyes widening as she takes in the struggle; leaves and pollen drift in the warm garden air. Camera: a slow arc-parallax that lands on the stuck truck as she arrives. The truck stays stuck and never comes free in this shot; each character keeps their own outfit and design exactly — no swapping, no redesign; nobody falls; no speech and no lip movement. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K17 | 5s | VO23 "Ali arabayı doğu yönünde var gücüyle, 10 N ile itiyordu ama araba yerinden kıpırdamıyordu."
+The boy braces harder and pushes, his arms tensing, and the golden glow on the truck's side brightens with the effort — but the truck does not move, the mud holding its wheels fast, only a faint tremble travelling through the body. Camera: a slow push toward the glowing contact where his hands meet the cab. The truck must not move or come free; the glow stays on the truck and never on his face or skin; the number label stays frozen and unchanged; no fire, no flower, no arrow. Silent clip, no audio, mouth closed. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K18 | 5s | VO24 "Yetmedi! Can da yardıma koştu ve aynı yönde 15 N ile destek verdi."
+The second boy's hands land beside the first pair on the cab and a second golden glow kindles next to the first on the same face, the two glows sitting side by side and brightening together as the truck finally begins to strain forward a hair, the mud starting to yield with a wet creak. Camera: a slow push that takes in both glows together. The glows stay round light on the truck and never on faces; both number labels stay frozen and unchanged; the truck only strains and does not break free yet; each character keeps their own outfit exactly. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K19 | 5s | VO25 "İkisi de aynı doğrultuda ve aynı yönde kuvvet uyguladığı için bu kuvvetler birbirine yardım etti."
+The two golden glows on the truck's face slide together and merge into one broad much brighter glow, and the truck lurches forward as the mud finally releases with a wet spray of clods flying back. Camera: a low push following the truck's lurch forward. No glow appears anywhere on a face or skin; the glows merge as light, never as petals or flowers; the boys stay upright with nobody falling; the truck moves forward and never flips. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K20 | 10s | VO26+27 "Aynı yönlü kuvvetlerde toplarız. R = 10 N + 15 N = 25 N."
+The red toy truck rolls free along the garden path driven by the single big golden glow at its side, the glow holding bright and steady as the label settles beside it, mud flecks trailing off the spinning tires while the girl runs alongside with delight. Camera: a lateral tracking glide keeping pace with the rolling truck. All number labels stay frozen and correct with no digit changes; the glow stays one round light; the truck stays on the ground and never lifts. Silent clip, no audio, mouth closed. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K21 | 5s | VO28 "Ve araba, doğu yönündeki bu 25 N'luk güçle çamurdan bir anda kurtuldu!"
+The truck bursts fully clear of the mud and rolls off with a happy surge, clods arcing and spattering behind it, while the two boys throw their arms up cheering in the soft background. Camera: a smooth low tracking push following the break-free, easing as it rolls. No glow appears on any face; no child falls or slides into the mud; the truck stays upright on its wheels; no signs or text appear anywhere. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K22 | 5s | VO29 "Mira gülümsedi: Demek aynı yöndeki kuvvetler birleşince güçleniyordu."
+Her smile blooms wider with dawning delight, her eyes brightening as the understanding lands and the golden light between her hands fades softly while pollen drifts golden around her. Camera: a gentle push-in on her smile, holding on the beat of understanding. Her skin stays warm matte tan; the fading glow stays soft light and never becomes fire; she smiles but does not speak and her mouth stays closed; the background children stay soft. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K23 | 10s | VO30+31 "…halat çekme yarışı yaptılar. Mira kenardan izledi."
+The rope goes taut and quivers as both teams strain, the red ribbon trembling at the center, while the girl watches intently from the side, her head tracking the ribbon, and dust drifts in the warm afternoon light. Camera: a slow lateral dolly along the taut rope, settling on the ribbon. The watching girl only watches — her hands stay free and she never touches the rope; the ribbon stays near center in this shot; the teams stay anonymous and soft; nobody speaks. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K24 | 10s | VO32 "Batı tarafındaki arkadaşı halatı 30 N ile çekerken, doğu tarafındaki arkadaşı 20 N ile karşı koyuyordu."
+Both golden glows brighten along the rope — the west one clearly bigger and stronger, the east one smaller — and the rope quivers between them, fibers straining, the ribbon leaning a touch toward the west. Camera: a slow push to the ribbon between the two glows. The west glow must stay visibly bigger than the east one; every number label stays frozen, correct and unduplicated; the glows stay round light and never flowers; the gripping hands stay stable. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K25 | 5s | VO33 "Ortadaki kırmızı kurdele yavaşça batıya doğru kaydı."
+The red ribbon slides slowly and steadily toward the west, drawn by the bigger glow, the rope creeping with it and fibers stretching under the imbalance while the girl watches from the side with her hands free. Camera: a slow lateral dolly following the ribbon's westward slide. The watching girl never pulls the rope; the ribbon moves west only and never east; the movement stays slow and controlled with no snapping and no rope break. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K26 | 5s | VO34 "Mira bu sefer kuvvetlerin aynı doğrultuda ama zıt yönlerde olduğunu fark etti ve"
+Her eyes narrow with realization as she looks from one end of the rope to the other, her head turning a touch to follow the opposing pulls, a small understanding settling on her face. Camera: a slow push-in on her realizing look, holding on the beat. Her mouth stays closed as she thinks — no speech, no lip movement; her skin stays warm matte tan; the tug-of-war behind stays soft; no text appears. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K27 | 5s | VO35 "kendi kendine 'Bunları toplayamam, çünkü birbirlerine karşı çekiyorlar' dedi."
+The two opposing golden glows push head-on into each other at the ribbon, their light colliding and visibly dimming where they overlap — fighting rather than joining — while the ribbon strains between them and the rope fibers quiver. Camera: a slow macro push into the clashing point. The glows must not merge into one bigger glow because they are opposing; no flower, no arrow, no fire; the rope never snaps. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K28 | 10s | VO36+37 "…büyük kuvvetten küçük kuvveti çıkarırız. R = 30 N − 20 N = 10 N."
+The smaller east glow fades out as it cancels an equal part of the west glow, leaving one modest net glow pointing west that settles and holds steady, the label resolving beside it while the ribbon eases west and holds. Camera: a slow push easing onto the settled net glow. All labels stay frozen and correct; the remaining glow stays modest and clearly smaller than the original west glow; no new glows appear. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K29 | 5s | VO38 "Peki halat hangi yöne hareket etti?"
+Everything holds in a suspended question beat — the ribbon poised just west of center, the net glow pulsing once softly, dust hanging almost still in the light, the rope motionless under tension. Camera: an almost locked-off hold with the faintest breathing push. Nothing resolves in this shot — the ribbon must not travel; no text appears; any background plaque text stays frozen and correct. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K30 | 5s | VO39 "Tabii ki güçlü olanın yönüne, yani batıya!"
+The ribbon commits and slides decisively toward the west as the net glow brightens with the answer, the rope following clearly to the stronger side and dust streaming along its length. Camera: a confident lateral tracking move following the westward commit. The watching girl never pulls the rope and keeps her hands free; the walls stay clean with no garbled or invented text appearing; the ribbon moves west only. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K31 | 5s | VO40 "Mira'nın bulduğu bileşke kuvvet: batı yönünde 10 N."
+The ribbon settles west with a small overshoot and rest, the modest golden net glow holding steady beside the label as the teams relax and the rope goes slack, warm dust drifting calm. Camera: a slow push easing onto the settled result. The label stays frozen and correct; no flower appears anywhere; the glow holds one steady size; the rope never snaps back. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K32 | 10s | VO41+42 "Ders bitince Mira kütüphaneye uğradı. Masanın üzerinde sessizce duran bir fen kitabı gördü…"
+The library holds its quiet — the lamp glow breathing warm across the closed book's cover, dust motes drifting slowly through the light, her hand resting still at the table's edge as she considers the perfectly motionless book. Camera: a very slow push toward the still book, the stillness held. The book stays absolutely still and flat on the table — never floating, opening or sliding; all poster text stays frozen and correct; nobody speaks. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K33 | 5s | VO43 "'Bu kitap hareket etmiyor ama üzerine kuvvet etki ediyor olmalı.'"
+Two faint golden glows kindle and slowly rise into visibility — one pressing down from above the book, one rising from the table beneath it — while the book itself stays perfectly and stubbornly still between them. Camera: a slow macro push to the book, the two hints holding. The book rests flat on the table and must never float or lift; the glows are round soft light, never flowers or petals; nothing else in frame moves. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K34 | 10s | VO44 "…yer çekimi kitabı aşağı çekiyor, masa ise onu tam olarak aynı büyüklükte yukarı itiyordu."
+The two glows resolve to exactly equal size and brightness — one pressing down, one pushing up — matching each other precisely as they steady, the book held dead still on the table between them while dust drifts calm. Camera: a slow push that settles as the two glows equalize. The two glows must end exactly equal with neither bigger; the book stays flat on the table with no lift; no arrows and no flowers; nothing tips over. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K35 | 10s | VO45+46 "…birbirini yok ediyor, bileşke kuvvet tam olarak sıfır, yani R = 0 N oluyordu."
+The equal upward and downward glows fold into one another and cancel, softening into a calm even balanced light with nothing left over, while the embossed label settles and the book rests utterly serene and unmoving. Camera: a slow push easing into stillness as the glows cancel. The embossed label stays exactly as written and frozen — no morphing, no letters merging or changing; the book stays flat on the table; the light calms and never flares. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K36 | 5s | VO47 "İşte Mira buna dengelenmiş kuvvetler dendiğini öğrendi."
+She gives a small satisfied nod, her warm gaze settling on the book as the understanding lands, the lamp glow breathing while golden dust drifts slowly in the library air. Camera: a gentle push-in on her quiet understanding. The book-cover text stays frozen, correct and forward-reading — never mirrored or reversed; her skin stays warm matte tan; her mouth stays closed with no speech. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K37 | 5s | VO48 "Ama dengelenmiş olmak sadece durmak demek değildi."
+The book holds its balanced stillness in the warm lamplight while beyond the window in soft focus something glides past at a smooth constant speed — a quiet hint that balance can also move — the light bridging warm interior to cool daylight. Camera: a slow rack from the still book to the moving hint beyond the window. The book stays still and flat; the outside motion stays soft, smooth and distant with no sudden action; no text appears. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+
+##### SEKANS 3 — CLIMAX (K38–K47) #####
+
+### K38 | 10s | VO49+50+51 "Otobanda sabit süratle giden bir araba da, gökyüzünde süzülen bir paraşütçü de…"
+The car glides along the highway at a perfectly steady speed and the parachutist drifts down at an equally steady pace — neither speeding up nor slowing — their paired golden glows holding exactly balanced and unchanging while the road and clouds stream past at an even rate. Camera: a smooth even tracking move matching the car's constant speed. There must be no acceleration and no braking — the motion must read constant; the glows stay round light and never arrows; all sign text stays frozen and correct; the parachute never collapses. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K39 | 5s | VO52 "Tam o sırada Mira pencereden dışarı baktı."
+She turns her head toward the window and her gaze catches on something outside, her eyes tracking it with fresh curiosity while the curtain stirs faintly and dust drifts in the window light. Camera: a gentle push toward the window past her shoulder. Her skin stays warm matte tan and never green or grey; the room stays stable; her mouth stays closed with no speech. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K40 | 5s | VO53 "Bahçedeki ağaçtan bir elma koptu ve gitgide hızlanarak yere düştü."
+The apple separates from the branch and falls, visibly accelerating as it drops with its motion-smear lengthening the faster it goes, leaves fluttering in its wake while the single downward golden glow drives it with nothing opposing. Camera: a downward tilt and track following the accelerating fall. The apple must speed up as it falls and never float, drift or bounce back up; the sign text stays frozen and correct; no arrows appear. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K41 | 5s | VO54 "Biraz ötede bir bisikletli, önüne aniden bir kedi çıkınca frene bastı; yavaşladı ve durdu."
+The bike brakes hard and slows to a stop, the golden glow flaring backward against its forward motion, the front tire compressing as it grips and a small dust skid kicking up while the cat darts clear ahead. Camera: a tracking move that decelerates with the bike, settling as it stops. The rider must not fall or crash; the bike clearly slows and stops so the motion visibly changes; the glow drags backward and never forward, and never touches a face. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K42 | 5s | VO55 "Mira bunların dengelenmiş olamayacağını anladı, çünkü ikisinde de hareket değişiyordu."
+Her eyes sharpen with understanding at the window, a small decisive nod forming as she connects the falling apple and the braking bike, dust drifting in the light. Camera: a slow push-in on her understanding. Her skin stays warm matte tan; her mouth stays closed with no speech; the window view stays soft and stable. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K43 | 10s | VO56+57 "Eğer bileşke kuvvet sıfırdan farklıysa… cismin hareketi mutlaka değişir."
+The two opposing glows on the block hold visibly unequal with one clearly bigger, and the block breaks from stillness and begins to slide toward the stronger side, a faint scuff trailing as it accelerates from rest. Camera: a slow push following the block as it breaks into motion. The block must move because the forces are unbalanced, and it stays on the table; the label stays frozen and correct with a clear zero; the glows stay round light and never flowers. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K44 | 5s | VO58 "Kısacası Mira şu kuralı çıkardı:"
+She gives a bright decisive nod, her expression settling into the confidence of a conclusion, her eyes lit while warm light and drifting dust surround her. Camera: a small confident push-in, holding on the decisive beat. Her mouth stays closed with no speech; her skin stays warm matte tan; no text appears in this shot. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K45 | 10s | VO59+60 "Bir şey hızlanıyorsa, yavaşlıyorsa ya da yön değiştiriyorsa…"
+Within the three locked panels each motion plays its change — left speeds up with its trail lengthening, middle slows down with the trail compressing and its glow dragging back, right curves into a change of direction with the trail arcing — each driven by its unbalanced golden glow while the seams stay razor-sharp. Camera: a very slow synchronized push shared across the three panels. Panels must not blend or reflow; all Turkish labels stay frozen and correct; each change stays clear and modest; no arrows appear. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K46 | 5s | VO61 "Akşam eve dönerken Mira o gün öğrendiklerini düşündü."
+She walks home through the golden evening light with a steady reflective stride, the low sun rimming her hair warm, long shadows shifting slowly and pollen drifting gold around her. Camera: a slow tracking dolly beside her reflective walk. She keeps walking calmly with no running; her skin stays warm matte tan; the street stays stable; no speech. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K47 | 10s | VO62 "Artık kuvvetlerin bazen birleşip güçlendiğini, bazen çekişip azalttığını, bazen de denge kurduğunu biliyordu."
+Within the three locked panels the three truths play once — left, two golden glows merge into one brighter glow; middle, two glows clash and dim to a smaller net; right, two equal glows cancel into a calm even balance — each settling and holding. Camera: a very slow synchronized push across all three panels. The glows are soft round light with absolutely no flowers or petals; panels never blend; all Turkish labels stay frozen and correct. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+
+##### SEKANS 4 — RESOLUTION (K48–K52) #####
+
+### K48 | 5s | VO63 "Bugün bileşke kuvveti jet hızıyla öğrendik!"
+Her grin bursts into full triumphant joy, a small energetic bounce lifting her shoulders as warm sparkle motes rise and drift up around her. Camera: a lively but gentle push-in on her triumphant grin. The sparkles stay subtle with no fireworks or explosion; her skin stays warm matte tan; she smiles big but never speaks and her mouth stays closed; the background stays stable. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K49 | 5s | VO64 "Şimdi sıra sizde; işte Mira'dan küçük bir ödüllü soru:"
+She leans in with a playful inviting look and her gesturing hand opens toward the space where the question will appear, her eyes bright with challenge while dust drifts warm. Camera: a small push-in following her inviting lean. Her mouth stays closed with no speech; no text appears yet; her skin stays warm matte tan; the hand gesture stays clean with the correct number of fingers. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K50 | 10s | VO65+66 "Bir kutuyu kuzey yönünde 15 N, güney yönünde 15 N çekersek… bileşke kuvvet kaç olur?"
+The two equal golden glows — north above and south below — pulse gently in perfect unison while the box sits dead still on the desk between them, the question hanging in the calm library air as dust drifts slowly. Camera: a very slow push toward the box, holding the question. The box rests on the desk and must never float or lift; the two glows stay exactly equal; every Turkish label stays frozen and correct; nothing resolves — the question stays open. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K51 | 5s | VO67+68 "Cevaplarınızı yorumlara bekliyoruz. Bilimle kalın, kuvvetiniz hep dengede kalsın."
+She gives a warm friendly wave toward the lens while the glowing Turkish letters hold as frozen geometry — only their warm glow gently pulsing once — and sparkle motes drift up around them. Camera: a gentle push-in settling between her and the glowing text. The letters must never morph, re-spell, wobble or change, and every diacritic stays correct; the sparkles stay subtle; she waves and smiles but never speaks and her mouth stays closed. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+### K52 | 5s | VO69 "Mira'yla bir sonraki keşifte görüşmek üzere!"
+She waves brightly with a big warm goodbye smile, warm sparkle particles rising and drifting up around her on slow thermals while the golden sunset backlight blooms a warm rim along her hair and waving hand. Camera: a gentle push-in on her wave, easing into a warm final hold. She keeps her own outfit exactly as in the frame; her skin stays warm matte tan; sparkles stay subtle with no fireworks; the sunset stays stable; she waves and smiles but never speaks. Silent clip, no audio. No whip-pan, no shake, no lens flare, no camera warp.
+
+
+=========================================================================
+TAMAM — 52/52. Her blok tek parça yapıştırmaya hazır.
+=========================================================================

@@ -1,0 +1,20 @@
+5. Sürtünme — 5. SINIF · SESLENDİRME METNİ (ElevenLabs)
+=========================================================================
+Anlatıcı: @efe hikâyesinin dış sesi. Ekranda kimse konuşmuyor, ağızlar kapalı — klipler sessiz; ses = VO + müzik.
+TON: parlak, meraklı, sıcak-eğitici; 5. SINIF temposu. Hızlı ama net. İngilizce kelime yok; sayılar Türkçe okunur.
+Soru cümlelerinde ton yukarı, cevapta düşür. Kesintisiz oku; cümle atlanmadı (31 cümle).
+Eşleşme: 5. Sürtünme_EDIT-PLAN.txt
+=========================================================================
+
+
+>>>>> ELEVENLABS'E BUNU YAPIŞTIR <<<<<
+
+
+Efe bir sabah mutfakta ıslak fayansa basınca az kalsın kayıyordu; ama halıya adım atınca ayakları sapasağlam durdu. 'Neden buzda ya da ıslak zeminde kayarım da halıda kayamam?' diye düşündü. İşte Efe bugün hayatımızı hem kolaylaştıran hem de bazen zorlaştıran gizli bir kahramanla tanışacaktı: Sürtünme kuvveti. Efe önce sürtünmenin ne olduğunu öğrendi. Sürtünme kuvveti, birbirine temas eden iki yüzey arasında oluşan ve genellikle harekete karşı koyan kuvvettir. Bunun iki önemli kuralı vardı. Birincisi, temas şarttır; yüzeyler birbirine değmek zorundadır.
+
+İkincisi, sürtünme harekete zıt yönlüdür; Efe kutuyu sağa ittiğinde sürtünme onu sola doğru çekmeye çalışıyordu. Peki sürtünme her yerde aynı mıydı? Efe oyuncak arabasını iki farklı zeminde denedi. Pürüzlü asfaltta araba yavaş gitti; çünkü halı, çim, toprak ya da asfalt gibi pürüzlü yüzeylerde mikroskobik girinti ve çıkıntılar çoktur, bu yüzden sürtünme fazladır. Buzlu zeminde ise araba hızla kaydı; çünkü buz, cam, fayans ya da mermer gibi pürüzsüz yüzeylerde pürüz azdır, sürtünme de azdır. Efe güldü: buz pistine halı serseydik kimse kayamazdı! diye düşündü Sonra Efe sürtünmenin hayatındaki yerini fark etti. Aslında sürtünme olmasaydı yürüyemez, bardağı elinde tutamaz, hatta yazı bile yazamazdık. Ayakkabı tabanındaki dişler ve araç lastiklerinin pürüzlü yapısı sürtünmeyi artırır; böylece kaymadan yürür ve dururuz.
+
+Kışın üşüyünce ellerimizi birbirine sürttüğümüzde ısınmamız da sürtünme sayesindedir. Ama sürtünmenin zorlaştıran yönleri de vardı: makine parçaları birbirine sürtündükçe aşınır ve ısınır. İşte bu yüzden kapı menteşelerini ve makine parçalarını yağlarız ki sürtünme azalsın ve parçalar rahat çalışsın. Günün sonunda Efe öğrendiklerini topladı: Sürtünme kuvveti harekete zıt yönlüdür ve temas gerektirir.
+
+Pürüzlü yüzeylerde fazla, pürüzsüz ve kaygan yüzeylerde azdır. Sürtünme olmasaydı yürüyemez, cisimleri tutamazdık; ama fazlası da eşyalarımızı aşındırır. Bir sonraki fen macerasında görüşmek üzere; bilimle kalın!
+
