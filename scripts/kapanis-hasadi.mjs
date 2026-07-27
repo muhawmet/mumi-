@@ -144,7 +144,11 @@ const slugify = (s) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-const harvestPath = (dir) => join(LESSONS, `CANDIDATES-${slugify(basename(dir))}.md`);
+// Makine çıktısı `HASAT-*`, elle yazılan aday dosyaları `CANDIDATES-*`. Ayrım kozmetik değil:
+// tek bir `rm CANDIDATES-*` glob'u 2026-07-27'de Bileşke'nin 10 Mami-bekleyen dersini sildi
+// (git'ten geri geldi). Makine ürettiği dosyayı elle yazılandan ADIYLA ayırmak, o kazayı
+// yapısal olarak imkânsız kılar.
+const harvestPath = (dir) => join(LESSONS, `HASAT-${slugify(basename(dir))}.md`);
 
 function projectFiles(dir) {
   return readdirSync(dir, { withFileTypes: true }).filter((e) => e.isFile()).map((e) => e.name);
