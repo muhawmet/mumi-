@@ -7,8 +7,10 @@ deterministik karar akışı doğruluk kaynağıdır.
 
 @docs/ai/faz-icraat.md
 
-<!-- FAZ ANAHTARI: icraata geçerken üstteki satırı `@docs/ai/faz-icraat.md` yap.
-     İki profil de repoda durur; hiçbir şey silinmez, sadece hangisinin yükleneceği değişir. -->
+<!-- FAZ ANAHTARI (2026-07-28: İNŞA → İCRAAT çevrildi). Üstteki tek satır ajanın hangi yasayla
+     açılacağını belirler: `@docs/ai/faz-icraat.md` (video üret) ↔ `@docs/ai/faz-insa.md` (duvar kur).
+     İki profil de repoda durur; hiçbir şey silinmez, sadece hangisinin yükleneceği değişir.
+     BU DOSYA FAZA GÖRE YENİDEN YAZILMAZ — faz içeriğini buraya taşımak, split'in sebebini yok eder. -->
 
 ## Gerçek kaynaklar — kod kanoniktir
 
@@ -61,8 +63,12 @@ ve ilgisiz dosya değiştirme yok.
 
 ## Ortam ve kapı
 
-- **Windows/PowerShell birincil ortamdır.** Bir aracın POSIX varsayması (python3, zsh, LF) onu bu
-  makinede sessiz no-op yapar — ölçüldü. Mac launcher sözleşmesini yine de koru.
+- **Windows/PowerShell birincil ortamdır.** Bir aracın ortam varsayması onu bu makinede **sessiz
+  no-op** yapar. Dört kez ölçüldü, dördü de aynı sınıf: `gate.sh` python3 aradı (kapı her commit'te
+  sessizce geçti) · `protocolHash` ham okundu, CRLF çıktı (**runner her command'i reddetti**) ·
+  `buddy-gate` ham komut deseni aradı, **rtk komutu yeniden yazıyor** (kapı yarı-sağır kaldı) ·
+  `agentsSync` satır sonuna göre hash'ledi. **Kural: bir araç ortama dair varsayım yapıyorsa, o
+  varsayımı test et — "yazdım" çalışıyor demek değildir.** Mac launcher sözleşmesini yine de koru.
 - Kalite kapısı: `npx tsc --noEmit` → `npx vitest run` → `npm run build`.
   `.claude/hooks/gate.sh` bunu `git commit` öncesi **duvar** olarak koşar; kırmızıysa commit olmaz.
 - **Commit ve push:** kapı yeşilken commit + `main`'e push **sorulmaz** (private repo, çok-cihaz).

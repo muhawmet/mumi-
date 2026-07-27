@@ -449,9 +449,41 @@ Zincirin sonu belli: **Upwork için portfolyoluk demo videolar.** Reklam filmi y
 hedef değil, **satılabilir bir demo reeli**. Bu, FAZ 2'nin çıktısını doğrudan etkiler — ilk
 reklam filmi bir deneme değil, portfolyo parçasıdır ve öyle seçilmelidir.
 
-### ➡️ SIRADAKİ TEK ADIM
+### ➡️ SIRADAKİ TEK ADIM — FAZ 2 ÜRETİM, KİLİTLER MAMİ'DEN ALINDI (2026-07-28)
 
-**FAZ 2 — ilk reklam filmi (`product_brand_real`), Mami ile birlikte.** Duvarlar kuruldu:
+**Faz anahtarı çevrildi:** `CLAUDE.md` → `@docs/ai/faz-icraat.md`. İnşa uykuda.
+
+**Mami'nin kararı (2026-07-28, `/clear` öncesi alındı ki kaybolmasın):**
+
+| Kilit | Değer |
+|---|---|
+| **Set** | **Portfolyo üçlüsü** — üç farklı yetenek, üç benzer iş değil |
+| ① | `product_brand_real` — ürün hero (yüzey fiziği, macro, specular) |
+| ② | `kurumsal_brand_film` — kurumsal marka filmi (mimari ışık, insan, tempo) |
+| ③ | `civic_promo_real` — milli gün / kamu spotu (tören, kalabalık, ölçek) |
+| **İlk işin kapsamı** | **kısa spot, 8-12 kare, tek sekans, ~20-30 sn** |
+| **Marka** | **özgün ve markasız** — `brandKitLock` boş. İşveren kendi logosunu hayal eder. |
+
+Gerekçe: doğrulanmış dünya sayısı **1/46**; bu üç dünya hiç kare görmedi. 44 kare basıp yanlış
+çıkarsa pahalı — ilk iş küçük atılır, tutarsa ②③ büyütülür. Üçünün de kütüphanede hazır
+`render_law` ve **3'er referansı** var.
+
+**Yeni oturumun SORACAĞI TEK ŞEY:** ①'in konusu — hangi ürün. Boş sayfa değil, öneriyle gelinsin:
+sıcak içecek termosu (cam/metal/buhar → `product_liquid_physics` + `product_glass_refraction`
+birlikte çalışır) · cilt bakım şişesi (krem viskozitesi + `product_hand_intimacy`) · kablosuz
+kulaklık (fırçalanmış metal anizotropisi + dark-field). Üçü de dünyanın kendi referanslarını
+gerçekten kullanır — Mami seçer.
+
+**Sınav notu:** `npx tsx scripts/dunya-sinavi.ts product_brand_real --prompts` koşuldu, dünya
+**GENERATED** ve beş eksende **CARRIED** (fizik 9/9, ref 3→4/5 alan, TEXT diyejetik, START_FRAME
+motion-hazır). ⚠️ Ama `CAST` ekseni sınavın kendi kilidini gösteriyor: *"6. sınıf · 11-12 yaş"* —
+**sınav seti EDU cast'i ile koşuyor** (`worldExam.ts` `EXAM_CAST_AGE`), reklam dünyasında bu yanlış
+bir varsayım. Sınav yapısal taşımayı ölçer, cast doğruluğunu değil; üretimde cast **REAL**
+register'ından yazılır (`PROMPT-YASASI` §2R — çocuk göz hizası ve sınıf yaşı EDU maddesidir).
+
+---
+
+**Eski hedef (arşiv):** FAZ 2 — ilk reklam filmi (`product_brand_real`). Duvarlar kuruldu:
 yasa üç register'da konuşuyor, linter register'ı okuyor, JSON −%72, ad↔sınıf kapısı ötüyor,
 kapanış hasadı ateşliyor.
 
