@@ -8,6 +8,7 @@
 
 - [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru, İngilizce yazılı zayıf.
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB merkezde: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı. Derinlik: `mamilas-buddy` skill'i (RSD + yük yönetimi orada).
+- [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans. Bu "ultracode" workflow'dur, effort ayarı değil.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — sistemin tek hastalığı bilgiyi taşıyamamak; yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — hata avının çıktısı problem listesidir, kod değil. Körleme regex yasak.
