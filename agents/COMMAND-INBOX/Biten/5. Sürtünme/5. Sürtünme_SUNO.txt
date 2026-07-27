@@ -1,29 +1,12 @@
-5. SÜRTÜNME — MÜZİK (Suno v5.5) · ENSTRÜMANTAL FON SKORU
+5. SÜRTÜNME — MÜZİK (Suno v5.5)
 =========================================================================
-Amaç: 5. sınıf fen anlatısının ALTINDA yürüyen sıcak, meraklı, oynak-eğitici skor.
-VO önde; müzik -18 dB civarı, VO'yu boğmaz. Vokal YOK (ses = ElevenLabs VO ayrı).
-Hedef süre ~2:40 (Suno tek parça ~2-4dk verir; gerekirse "Extend" ile uzat, sonra
-Premiere'de edit-plan'daki sekans enerjilerine göre kırp/yerleştir).
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
 
->>>>> SUNO "STYLE / DESCRIPTION" KUTUSUNA <<<<<
+Warm, playful instrumental underscore for a children's educational science cartoon, bright, curious and full of everyday discovery. Cozy Pixar-style wonder — soft marimba and pizzicato strings, gentle glockenspiel and celesta sparkle, light clarinet and flute, soft hand percussion and warm upright bass. Major key, medium tempo, hummable and spacious with plenty of room for a narrator, uplifting but never busy. Instrumental only, no vocals, no lyrics.
 
-warm playful educational underscore for a children's science cartoon, light orchestral
-pop, soft marimba and pizzicato strings, gentle glockenspiel and celesta sparkle, soft
-woodwinds (clarinet, flute), light hand percussion and soft claps, warm upright bass,
-curious and bright, cozy Pixar-style wonder, hummable simple motif, major key, medium
-tempo ~100 bpm, clean modern production, spacious mix that leaves room for a narrator,
-dynamic but never busy. Instrumental only, no vocals, no lyrics, no drops, no EDM.
-
->>>>> [STRUCTURE] (opsiyonel, Suno'ya sekans enerjisini vermek için) <<<<<
-[Intro] soft curious marimba + glockenspiel, gentle rise, a little question in the melody
-[Build] add pizzicato rhythm and light percussion, playful forward motion, growing warmth
-[Peak] fuller warm orchestration for the discovery beat, bright but controlled
-[Outro] settle back to soft marimba and celesta, warm resolved cadence, gentle fade
-
->>>>> NEGATIF (Exclude styles) <<<<<
-no vocals, no singing, no rap, no lyrics, no aggressive drums, no distorted guitar,
-no dubstep, no dark/tense cinematic, no horror, no lo-fi hiss.
-
-NOT: education_light imzası — bütün MAMILAS pixar_3d_edu videoları bu aileden. Sürtünme
-için ekstra: "başlık" anında (Sürtünme Kuvveti) bir tık parlasın; "buz vs halı" ve
-"aha" anlarında melodi nefes alsın (Premiere'de otomasyonla da yapılabilir).
+=========================================================================
+(opsiyonel — Custom mod kullanırsan)
+• Negatif: no vocals, no singing, no rap, no aggressive drums, no dubstep, no dark cinematic.
+• Sekans enerjisi: Intro merak → başlık (Sürtünme Kuvveti) parlar · Build-up ritim (buz vs halı) ·
+  Climax vurgu · Resolution yumuşar.
+• Miks: VO altında ~-18 dB, klip başlarında fade. "Aha" anlarında müzik nefes alsın.

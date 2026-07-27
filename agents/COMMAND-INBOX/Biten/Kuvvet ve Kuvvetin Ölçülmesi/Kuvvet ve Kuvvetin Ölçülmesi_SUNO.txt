@@ -1,0 +1,10 @@
+KUVVET VE KUVVETİN ÖLÇÜLMESİ — MÜZİK (Suno v5.5)
+=========================================================================
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+Warm, playful instrumental underscore for a children's educational science cartoon, bright and curious with a light sense of experimenting and measuring. Cozy Pixar-style wonder — soft marimba and pizzicato strings, gentle glockenspiel and celesta sparkle, light clarinet and flute, soft hand percussion and warm upright bass. Major key, medium tempo, hummable and spacious with plenty of room for a narrator, uplifting but never busy. Instrumental only, no vocals, no lyrics.
+
+=========================================================================
+(opsiyonel — Custom mod) Negatif: no vocals, no aggressive drums, no dark cinematic.
+Sekans: Intro merak · Build-up ritim (deney) · Climax vurgu (dinamometre) · Resolution yumuşar.
+Miks: VO altında ~-18 dB, klip başlarında fade.

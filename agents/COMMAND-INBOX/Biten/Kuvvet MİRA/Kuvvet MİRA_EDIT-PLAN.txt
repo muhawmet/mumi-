@@ -1,0 +1,88 @@
+Kuvvet MİRA (Bileşke Kuvvet) — 6. SINIF · EDIT PLANI (Premiere)
+=========================================================================
+Klip ↔ VO ↔ süre. Kesme/sıralama + VO ve müzik yerleşimi; keyframe/overlay/grading YOK.
+Ham Kling klibi ekran süresinden uzun → trimle, cümleye yasla. SÜTUN: KARE(N.png=Kxx) · KLİP · EKRAN(VO) · TIMELINE · VO
+=========================================================================
+
+##### Intro #####
+1.png K01         10s    7.0s  [0:00–0:07]  Bu Mira. Her sabah olduğu gibi bugün de okula gitmek için yola
+2.png K02         10s    6.2s  [0:07–0:13]  Kapıyı itti, ağır çantasını omzuna aldı ve otobüse yetişmek iç
+3.png K03         10s    8.3s  [0:13–0:22]  Aslında Mira farkında değildi ama o sabah yaptığı her hareketi
+4.png K04         10s    6.6s  [0:22–0:28]  Kapıyı açarken, topa vururken ya da market arabasını iterken h
+5.png K05         10s    5.8s  [0:28–0:34]  Peki bir cismi her zaman tek bir kuvvet mi etkiler?
+6.png K06          5s    3.0s  [0:34–0:37]  Tabii ki hayır.
+7.png K07         10s    5.8s  [0:37–0:43]  Bazen birden fazla kuvvet bir araya gelir ve güçlerini birleşt
+8.png K08         10s    5.8s  [0:43–0:48]  Mira bugün işte bu gizemli gücü, yani bileşke kuvveti keşfedec
+9.png K09          5s    4.1s  [0:48–0:53]  Hazırsanız, Mira'nın yolculuğuna biz de katılalım!
+10.png K10         5s    3.2s  [0:53–0:56]  Mira'nın ilk dersi fendi.
+11.png K11        10s    6.2s  [0:56–1:02]  Öğretmeni tahtaya sevimli bir kutu çizdi ve kutunun üzerine ok
+12.png K12        10s    6.6s  [1:02–1:09]  Sonra bir kuvveti tam olarak tanımlamak için dört şeye ihtiyac
+13.png K13        10s    5.3s  [1:09–1:14]  Birincisi uygulama noktası, yani kuvvetin cisme etki ettiği ye
+14.png K14         5s    4.5s  [1:14–1:18]  İkincisi doğrultu; tıpkı doğu-batı gibi bir çizgi.
+15.png K15         5s    4.1s  [1:18–1:22]  Üçüncüsü yön; örneğin doğuya doğru olması.
+16.png K16        10s    6.2s  [1:22–1:29]  Ve dördüncüsü büyüklük, yani kuvvetin Newton cinsinden değeri;
+17.png K17        10s    9.2s  [1:29–1:38]  Mira defterine not aldıkça bir şeyi merak etti: Ya bir cisme a
+
+##### Build-up #####
+18.png K18         5s    4.9s  [1:38–1:43]  İşte tam o an öğretmeni sihirli tanımı söyledi:
+19.png K19        10s   10.4s  [1:43–1:53]  İki ya da daha fazla kuvvetin bir cisme yaptığı etkiyi, tek ba
+20.png K20         5s    3.6s  [1:53–1:57]  Ve onu R harfiyle gösteriyoruz.
+21.png K21         5s    3.2s  [1:57–2:00]  Zil çaldı, teneffüs başladı.
+22.png K22        10s    8.3s  [2:00–2:08]  Mira bahçeye çıktığında arkadaşları Ali ile Can'ı, çamura sapl
+23.png K23        10s    7.5s  [2:08–2:16]  Ali arabayı doğu yönünde var gücüyle, 10 N ile itiyordu ama ar
+24.png K24        10s    7.0s  [2:16–2:23]  Yetmedi! Can da yardıma koştu ve aynı yönde 15 N ile destek ve
+25.png K25        10s    7.9s  [2:23–2:31]  İkisi de aynı doğrultuda ve aynı yönde kuvvet uyguladığı için 
+26.png K26        10s    6.6s  [2:31–2:37]  Mira hemen hesapladı: Aynı yönlü kuvvetlerde bileşke kuvveti b
+27.png K27        10s    7.5s  [2:37–2:45]  R eşittir F1 artı F2; yani 10 N artı 15 N, eder 25 N.
+28.png K28        10s    6.6s  [2:45–2:51]  Ve araba, doğu yönündeki bu 25 N'luk güçle çamurdan bir anda k
+29.png K29         5s    4.9s  [2:51–2:56]  Mira gülümsedi: Demek aynı yöndeki kuvvetler birleşince güçlen
+30.png K30        10s    5.8s  [2:56–3:02]  Öğleden sonra beden eğitimi dersinde sınıfça halat çekme yarış
+31.png K31         5s    3.0s  [3:02–3:05]  Mira kenardan izledi.
+32.png K32        10s    8.3s  [3:05–3:13]  Batı tarafındaki arkadaşı halatı 30 N ile çekerken, doğu taraf
+33.png K33         5s    4.5s  [3:13–3:18]  Ortadaki kırmızı kurdele yavaşça batıya doğru kaydı.
+34.png K34        10s    7.0s  [3:18–3:25]  Mira bu sefer kuvvetlerin aynı doğrultuda ama zıt yönlerde old
+35.png K35        10s    5.3s  [3:25–3:30]  kendi kendine "Bunları toplayamam, çünkü birbirlerine karşı çe
+36.png K36        10s    6.6s  [3:30–3:37]  Zıt yönlü kuvvetlerde bileşke kuvveti bulmak için büyük kuvvet
+37.png K37        10s    8.3s  [3:37–3:45]  R eşittir büyük kuvvet eksi küçük kuvvet; yani 30 N eksi 20 N,
+38.png K38         5s    4.1s  [3:45–3:49]  Peki halat hangi yöne hareket etti?
+39.png K39         5s    4.5s  [3:49–3:54]  Tabii ki güçlü olanın yönüne, yani batıya!
+40.png K40         5s    4.9s  [3:54–3:59]  Mira'nın bulduğu bileşke kuvvet: batı yönünde 10 N.
+41.png K41         5s    3.6s  [3:59–4:02]  Ders bitince Mira kütüphaneye uğradı.
+42.png K42        10s    5.8s  [4:02–4:08]  Masanın üzerinde sessizce duran bir fen kitabı gördü ve düşünd
+43.png K43        10s    5.8s  [4:08–4:14]  "Bu kitap hareket etmiyor ama üzerine kuvvet etki ediyor olmal
+44.png K44        10s    8.3s  [4:14–4:22]  Gerçekten de yer çekimi kitabı aşağı çekiyor, masa ise onu tam
+45.png K45        10s    6.2s  [4:22–4:28]  İki kuvvet eşit ve zıt yönlü olduğu için birbirini yok ediyor,
+46.png K46        10s    6.2s  [4:28–4:35]  bileşke kuvvet tam olarak sıfır, yani R eşittir 0 N oluyordu.
+47.png K47         5s    4.5s  [4:35–4:39]  İşte Mira buna dengelenmiş kuvvetler dendiğini öğrendi.
+48.png K48         5s    4.5s  [4:39–4:44]  Ama dengelenmiş olmak sadece durmak demek değildi.
+
+##### Climax #####
+49.png K49         5s    4.5s  [4:44–4:48]  Otobanda sabit süratle giden bir araba da,
+50.png K50        10s    5.8s  [4:48–4:54]  gökyüzünde sabit süratle süzülen bir paraşütçü de dengelenmiş 
+51.png K51         5s    4.5s  [4:54–4:58]  çünkü onların da sürati ve yönü değişmiyordu.
+52.png K52         5s    4.5s  [4:58–5:03]  Tam o sırada Mira pencereden dışarı baktı.
+53.png K53        10s    5.8s  [5:03–5:09]  Bahçedeki ağaçtan bir elma koptu ve gitgide hızlanarak yere dü
+54.png K54        10s    7.5s  [5:09–5:16]  Biraz ötede bir bisikletli, önüne aniden bir kedi çıkınca fren
+55.png K55        10s    5.8s  [5:16–5:22]  Mira bunların dengelenmiş olamayacağını anladı, çünkü ikisinde
+56.png K56        10s    5.8s  [5:22–5:28]  Eğer bileşke kuvvet sıfırdan farklıysa, yani taraflardan biri 
+57.png K57        10s    5.3s  [5:28–5:33]  orada dengelenmemiş kuvvetler vardır ve cismin hareketi mutlak
+58.png K58         5s    3.6s  [5:33–5:37]  Kısacası Mira şu kuralı çıkardı:
+59.png K59         5s    4.9s  [5:37–5:42]  Bir şey hızlanıyorsa, yavaşlıyorsa ya da yön değiştiriyorsa,
+60.png K60         5s    4.9s  [5:42–5:46]  bilin ki orada dengelenmemiş bir güç iş başındadır!
+61.png K61         5s    4.9s  [5:46–5:51]  Akşam eve dönerken Mira o gün öğrendiklerini düşündü.
+62.png K62        10s   10.0s  [5:51–6:01]  Artık kuvvetlerin bazen birleşip güçlendiğini, bazen çekişip b
+
+##### Resolution #####
+63.png K63         5s    4.1s  [6:01–6:05]  Bugün bileşke kuvveti jet hızıyla öğrendik!
+64.png K64        10s    5.3s  [6:05–6:11]  Şimdi sıra sizde; işte Mira'dan küçük bir ödüllü soru:
+65.png K65        10s    7.5s  [6:11–6:18]  Bir kutuyu kuzey yönünde 15 N, güney yönünde ise yine 15 N kuv
+66.png K66        10s    5.8s  [6:18–6:24]  bu kutu dengelenmiş kuvvette midir ve bileşke kuvvet kaç olur?
+67.png K67         5s    3.0s  [6:24–6:27]  Cevaplarınızı yorumlara bekliyoruz.
+68.png K68         5s    4.1s  [6:27–6:31]  Bilimle kalın, kuvvetiniz hep dengede kalsın.
+69.png K69         5s    4.1s  [6:31–6:35]  Mira'yla bir sonraki keşifte görüşmek üzere!
+
+=========================================================================
+TOPLAM ~395.2s = 6:35  ·  69 klip
+
+MÜZİK: bkz Kuvvet MİRA_SUNO.txt (Suno v5.5). VO altında ~-18 dB, klip başlarında fade.
+SES MİKS: VO önde; klipler sessiz (Kling ses yok). Kavram-reveal ve "aha" anlarında müzik nefes alsın.

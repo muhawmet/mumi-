@@ -1,31 +1,12 @@
-SABİT SÜRAT VE HIZ — MÜZİK (Suno v5.5) · ENSTRÜMANTAL FON SKORU
+SABİT SÜRAT VE HIZ — MÜZİK (Suno v5.5)
 =========================================================================
-Amaç: 6. sınıf fen anlatısının ALTINDA yürüyen sıcak, meraklı, sabah-yürüyüşü hissi
-veren skor. VO önde; müzik ~-18 dB, VO'yu boğmaz. Vokal YOK (ses = ElevenLabs VO ayrı).
-Hedef ~5:12 (Suno tek parça ~2-4dk verir → "Extend" ile uzat; Premiere'de sekans
-enerjilerine göre kırp/yerleştir). Sabit-sürat teması için hafif DÜZENLİ/tık-tak nabız hoş.
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
 
->>>>> SUNO "STYLE / DESCRIPTION" KUTUSUNA <<<<<
+Warm, playful instrumental underscore for a children's educational science cartoon, with a bright morning walk-to-school feeling and a gentle steady tick-tock pulse like a soft metronome. Curious and cozy Pixar-style wonder — soft marimba and pizzicato strings, gentle glockenspiel and celesta sparkle, light clarinet and flute, soft hand percussion and warm upright bass. Major key, medium tempo, hummable and spacious with plenty of room for a narrator, uplifting but never busy. Instrumental only, no vocals, no lyrics.
 
-warm playful educational underscore for a children's science cartoon, a bright morning
-walk-to-school feeling, light orchestral pop, soft marimba and pizzicato strings, gentle
-glockenspiel and celesta sparkle, soft clarinet and flute, light hand percussion with a
-subtle steady tick-tock pulse (like a gentle metronome for constant speed), warm upright
-bass, curious and cozy Pixar-style wonder, hummable simple motif, major key, medium tempo
-~100 bpm, clean modern production, spacious mix that leaves room for a narrator, dynamic
-but never busy. Instrumental only, no vocals, no lyrics, no drops, no EDM.
-
->>>>> [STRUCTURE] (opsiyonel, sekans enerjisi) <<<<<
-[Intro] soft curious marimba + glockenspiel, a walking pulse begins, gentle question in the melody
-[Build] add pizzicato rhythm and light percussion, steady playful forward motion (measuring/stopwatch feel), growing warmth
-[Peak] fuller warm orchestration for the "sabit sürat / sabit hız" discovery, bright but controlled, the tick-tock pulse clear and even
-[Outro] settle back to soft marimba and celesta, warm resolved cadence, gentle fade
-
->>>>> NEGATİF (Exclude styles) <<<<<
-no vocals, no singing, no rap, no lyrics, no aggressive drums, no distorted guitar,
-no dubstep, no dark/tense cinematic, no horror, no lo-fi hiss.
-
-NOT: education_light imzası (tüm MAMILAS pixar_3d_edu ailesi). Reveal anlarında melodi
-nefes alsın: K11 "YOL" (kırmızı iz), K13 "YER DEĞİŞTİRME" (mavi huzme), K35 "SABİT SÜRAT",
-K40 iki-yol kıyası — buralarda müzik bir an geri çekilip VO/görsel öne çıksın (Premiere
-otomasyonuyla da yapılabilir). Sabit-tempo demoları (K19-K20, K33-K34) tık-tak nabızla eşleşir.
+=========================================================================
+(opsiyonel — Custom mod kullanırsan)
+• Negatif: no vocals, no singing, no rap, no aggressive drums, no dubstep, no dark cinematic.
+• Sekans enerjisi: Intro merak yükselir · Build-up ritim (ölçüm/kronometre) · Climax vurgu
+  (SABİT SÜRAT/HIZ reveal) · Resolution yumuşar.
+• Miks: VO altında ~-18 dB, klip başlarında fade. Reveal anlarında (K11/K13/K35/K40) nefes alsın.
