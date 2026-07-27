@@ -8,6 +8,12 @@ import { checkAgents, GENERATED_BANNER_PREFIX } from '../../scripts/agents-sync.
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
+// Satır sonu normalizasyonu: repo `core.autocrlf=true` ile checkout ediliyor, `.gitattributes`
+// yok → aynı commit Windows'ta CRLF, Mac'te LF. Aşağıdaki bağımsız testler ham dosya okuyup
+// `\n` çıpalı regex/eşitlik uyguluyor; normalizasyon olmadan bu testler **platforma göre**
+// yeşil/kırmızı oluyordu (ölçüldü 2026-07-27). Kıyas içeriğe bakmalı, satır-sonu geleneğine değil.
+const read = (p: string) => readFileSync(p, 'utf8').replace(/\r\n/g, '\n');
+
 describe('canonical agent surface (M1 — tek kaynak → iki yüzey)', () => {
   it('generated .claude/.codex files are byte-identical to a fresh sync', () => {
     const { drift } = checkAgents();
@@ -38,7 +44,7 @@ describe('canonical agent surface (M1 — tek kaynak → iki yüzey)', () => {
     const manifest = JSON.parse(readFileSync(join(ROOT, 'agents/manifest.json'), 'utf8'));
     expect(manifest.studioAgents).toHaveLength(6);
     for (const entry of manifest.studioAgents) {
-      const body = readFileSync(join(ROOT, entry.source), 'utf8');
+      const body = read(join(ROOT, entry.source));
       expect(body.trim().length, `${entry.source} boş`).toBeGreaterThan(100);
     }
   });
@@ -46,14 +52,14 @@ describe('canonical agent surface (M1 — tek kaynak → iki yüzey)', () => {
   it('independent: both surfaces decode back to the exact canonical body (lossless round-trip)', () => {
     const manifest = JSON.parse(readFileSync(join(ROOT, 'agents/manifest.json'), 'utf8'));
     for (const entry of manifest.studioAgents) {
-      const canon = readFileSync(join(ROOT, entry.source), 'utf8').trimEnd();
+      const canon = read(join(ROOT, entry.source)).trimEnd();
 
-      const md = readFileSync(join(ROOT, `.claude/agents/${entry.name}.md`), 'utf8');
+      const md = read(join(ROOT, `.claude/agents/${entry.name}.md`));
       const mdMatch = md.match(/^<!-- GENERATED[^\n]*-->\n---\n[\s\S]*?\n---\n\n([\s\S]*)\n$/);
       expect(mdMatch, `${entry.name}.md biçimi bozuk`).toBeTruthy();
       expect(mdMatch![1]).toBe(canon);
 
-      const toml = readFileSync(join(ROOT, `.codex/agents/${entry.name}.toml`), 'utf8');
+      const toml = read(join(ROOT, `.codex/agents/${entry.name}.toml`));
       const tMatch = toml.match(/developer_instructions = """\n([\s\S]*)\n"""\n$/);
       expect(tMatch, `${entry.name}.toml biçimi bozuk`).toBeTruthy();
       // TOML basic string decode: kaçışlı backslash'ı geri çöz

@@ -11,9 +11,21 @@ const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 export const GENERATED_BANNER_PREFIX = 'GENERATED — DO NOT EDIT';
 
+/**
+ * Satır sonu normalizasyonu — hash ve byte karşılaştırması İÇERİĞE bakar, platformun
+ * satır-sonu geleneğine değil.
+ *
+ * Neden: repoda `core.autocrlf=true` ve `.gitattributes` yok → aynı commit Windows'ta CRLF,
+ * Mac'te LF olarak checkout ediliyor. Normalizasyon olmadan `protocolHash` platforma göre
+ * değişiyordu (ölçüldü 2026-07-27: LF `dc340024…`, CRLF `4c2fa11c…`) ve `agentsSync.test.ts`
+ * aynı commit'te **bir platformda yeşil, diğerinde kırmızı** oluyordu. Kalite kapısı da
+ * Windows'ta no-op olduğu için bu kırık iki gün görünmedi.
+ */
+const lf = (s) => s.replace(/\r\n/g, '\n');
+
 function loadManifest() {
   const manifest = JSON.parse(readFileSync(join(REPO_ROOT, 'agents', 'manifest.json'), 'utf8'));
-  const protocolText = readFileSync(join(REPO_ROOT, manifest.protocol), 'utf8');
+  const protocolText = lf(readFileSync(join(REPO_ROOT, manifest.protocol), 'utf8'));
   return { manifest, protocolHash: sha256(protocolText) };
 }
 
@@ -63,7 +75,7 @@ function expectedFiles() {
   const { manifest, protocolHash } = loadManifest();
   const out = [];
   for (const entry of manifest.studioAgents) {
-    const body = readFileSync(join(REPO_ROOT, entry.source), 'utf8');
+    const body = lf(readFileSync(join(REPO_ROOT, entry.source), 'utf8'));
     out.push({
       path: join(manifest.surfaces.claude, `${entry.name}.md`),
       content: renderClaudeMd(entry, body, protocolHash),
@@ -86,7 +98,7 @@ export function syncAgents() {
   for (const f of files) {
     const abs = join(REPO_ROOT, f.path);
     mkdirSync(dirname(abs), { recursive: true });
-    const current = existsSync(abs) ? readFileSync(abs, 'utf8') : null;
+    const current = existsSync(abs) ? lf(readFileSync(abs, 'utf8')) : null;
     if (current !== f.content) {
       writeFileSync(abs, f.content, 'utf8');
       written.push(f.path);
@@ -103,7 +115,7 @@ export function checkAgents() {
 
   for (const f of files) {
     const abs = join(REPO_ROOT, f.path);
-    const current = existsSync(abs) ? readFileSync(abs, 'utf8') : null;
+    const current = existsSync(abs) ? lf(readFileSync(abs, 'utf8')) : null;
     const hasBanner = current !== null && current.startsWith(f.banner);
     if (current === null) drift.push(`${f.path}: missing (run agents:sync)`);
     else if (current !== f.content) drift.push(`${f.path}: stale/hand-edited (byte mismatch vs fresh sync)`);

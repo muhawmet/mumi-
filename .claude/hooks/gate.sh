@@ -7,12 +7,41 @@
 #
 # FILTRE BURADA, settings.json'da DEGIL: `if: "Bash(git commit *)"` alanina
 # guvenildi ve o alan HER bash komutunda atesledi. Kapi kendi kapisini kendi tutar.
+#
+# TASINABILIRLIK (2026-07-27 zeka runu): kapi `/usr/bin/python3` ve `zsh` istiyordu.
+# Mami'nin BIRINCIL ortami Windows'ta ikisi de YOK → komut adi hic ayristirilamadi,
+# `case` eslesmedi ve kapi HER commit'te sessizce `exit 0` verdi. Kanit: .claude/test-baseline
+# 2026-07-25'ten beri 2062'de dondu, oysa test sayisi 2108'e cikmisti — yani kapi 46 test
+# boyunca hic atesnemedi. Duvar sandigimiz sey no-op'tu.
+#
+# Bu yuzden iki yasa: (1) araclar tasinabilir olacak, (2) kapi kendini dogrulayamiyorsa
+# SESSIZCE GECMEYECEK — yuksek sesle blokolayacak. Kor kapi, kapali kapidan tehlikelidir.
 set -uo pipefail
 
-# stdin'den tool girdisini oku; komut `git commit` degilse SESSIZCE gec.
+fail() {
+  printf '\n❌ GATE KIRMIZI — commit BLOKE edildi.\n\n%s\n' "$1" >&2
+  exit 2
+}
+
 INPUT=$(cat)
-CMD=$(printf '%s' "$INPUT" | /usr/bin/python3 -c \
-  'import json,sys; print(json.load(sys.stdin).get("tool_input",{}).get("command",""))' 2>/dev/null || true)
+
+# --- 0a. UCUZ ON-FILTRE ---
+# Ham girdide "git commit" hic gecmiyorsa bu bir commit degildir: node'u bile calistirma.
+# (Hook HER Bash cagrisinda atesleniyor; buradaki maliyet her komuta binecekti.)
+case "$INPUT" in
+  *"git commit"*) ;;
+  *) exit 0 ;;
+esac
+
+# --- 0b. KESIN AYRISTIRMA ---
+# On-filtre ham metne bakar; commit mesaji icinde "git commit" gecen bir `echo` da tutar.
+# Karari yalnizca tool_input.command alani verir. Ayristirici yoksa SESSIZ GECIS YOK.
+command -v node >/dev/null 2>&1 || fail "node bulunamadi — kapi girdiyi ayristiramiyor.
+Kapi kendini dogrulayamadigi icin commit'i bloke ediyor (sessiz gecis yasak)."
+
+CMD=$(printf '%s' "$INPUT" | node -e \
+  'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{process.stdout.write(String(JSON.parse(s)?.tool_input?.command??""))}catch{process.exit(3)}})' \
+  ) || fail "hook girdisi ayristirilamadi (bozuk JSON). Kapi kor kalamaz."
 
 case "$CMD" in
   *"git commit"*) ;;      # kapi burada acilir
@@ -22,11 +51,6 @@ esac
 cd "${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel)}" || exit 0
 
 BASELINE_FILE=".claude/test-baseline"
-
-fail() {
-  printf '\n❌ GATE KIRMIZI — commit BLOKE edildi.\n\n%s\n' "$1" >&2
-  exit 2
-}
 
 # --- 1. tip kontrolu ---
 if ! OUT=$(npx tsc --noEmit 2>&1); then
@@ -64,9 +88,26 @@ $(printf '%s' "$OUT" | tail -20)"
 fi
 
 # --- 5. launcher syntax (iki serit de) ---
-if ! OUT=$(zsh -n agents/MOTION-CALISTIR.command 2>&1 && zsh -n agents/production/MOTION-CALISTIR.command 2>&1); then
-  fail "launcher syntax hatasi:
+# zsh Mac'te var, Windows'ta yok. Yoklugunda `bash -n` ile sozdizimi yine denetlenir
+# (launcher'lar ince kabuk; zsh'e ozgu `print`/`read "?..."` calisma-zamani, sozdizimi degil).
+if command -v zsh >/dev/null 2>&1; then
+  SYNTAX="zsh -n"; SYNTAX_LABEL="zsh"
+elif command -v bash >/dev/null 2>&1; then
+  SYNTAX="bash -n"; SYNTAX_LABEL="bash (zsh yok — yedek denetim)"
+else
+  fail "ne zsh ne bash bulundu — launcher sozdizimi denetlenemiyor. Sessiz gecis yasak."
+fi
+
+if ! OUT=$($SYNTAX agents/MOTION-CALISTIR.command 2>&1 && $SYNTAX agents/production/MOTION-CALISTIR.command 2>&1); then
+  fail "launcher syntax hatasi ($SYNTAX_LABEL):
 $OUT"
+fi
+
+# --- 6. hafiza aynasi (UYARI — bloke etmez) ---
+# Sistemin akli repo disinda yasiyor; sapma commit aninda gorunur olsun diye burada.
+# Bloke ETMEZ: oturum icinde hafiza dogal olarak degisir, her commit'i durdurmak dogru degil.
+if ! node scripts/memory-sync.mjs --check >/dev/null 2>&1; then
+  printf '⚠️  hafiza aynasi sapmis — `node scripts/memory-sync.mjs` calistir.\n' >&2
 fi
 
 # Testler arttiysa baseline'i ilerlet — gate zamanla SIKILASIR, gevsemez.
@@ -75,5 +116,5 @@ if [ -n "$BASELINE" ] && [ "$COUNT" -gt "$BASELINE" ]; then
   printf '📈 baseline ilerledi: %s → %s\n' "$BASELINE" "$COUNT" >&2
 fi
 
-printf '✅ Gate yesil — tsc 0 · vitest %s · build OK · zsh OK\n' "$COUNT" >&2
+printf '✅ Gate yesil — tsc 0 · vitest %s · build OK · launcher OK (%s)\n' "$COUNT" "$SYNTAX_LABEL" >&2
 exit 0
