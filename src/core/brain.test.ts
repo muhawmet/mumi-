@@ -276,6 +276,29 @@ describe('recommendReason', () => {
     const reason = recommendReason(clayWorld, pixarRef);
     expect(reason).toContain(pixarRef.name);
   });
+
+  // ÖLÇÜLEN KUSUR (2026-07-27): register `registerOf(world.id)` ile okunuyordu. `registerOf`
+  // bir PRODUCTION PATH bekler (ANIMATION_EDU / ULTRAREAL_COMMERCIAL), dünya ID'si değil —
+  // 46 dünyanın 15'i yanlış cevap alıyordu ve dokuz REAL dünya (deakins/fincher/noir/wes/
+  // chivo/sci-fi/kurumsal/archival/period) `STY` okunduğu için crossGuard, TAM DA korumak
+  // için var olduğu REAL dünyalarda hiç basılmıyordu. Register artık dünyanın grubundan türer.
+  const CROSS_GUARD = 'Channel cinematography and light geometry only';
+
+  it('dünya ID bir production path DEĞİLDİR — eski okuma REAL dünyayı STY sanıyordu', () => {
+    expect(registerOf('deakins_naturalist')).toBe('STY');
+    expect(DATA.worlds.find((w) => w.id === 'deakins_naturalist')!.group).toBe('CINEMATIC_REAL');
+  });
+
+  it('REAL grubundaki HER dünyada stilize ref crossGuard uyarısını alır', () => {
+    const realWorlds = DATA.worlds.filter((w) => /real|cinematic/i.test(w.group));
+    expect(realWorlds.length).toBeGreaterThan(0);
+    const silent = realWorlds.filter((w) => !recommendReason(w, pixarRef).includes(CROSS_GUARD));
+    expect(silent.map((w) => w.id)).toEqual([]);
+  });
+
+  it('animasyon dünyasında crossGuard basılmaz — uyarı yalnız çapraz register içindir', () => {
+    expect(recommendReason(clayWorld, pixarRef)).not.toContain(CROSS_GUARD);
+  });
 });
 
 describe('buildRecipeMarkdown', () => {

@@ -8,7 +8,7 @@ import { deflateSync } from 'node:zlib';
 import sharp from 'sharp';
 import { buildCommandJSON } from './commandExport';
 import { buildImageAuthorContext } from './agentProtocol';
-import { generateBatch, resolveRecipeDefaults } from './pure';
+import { generateBatch, projectNameClassMismatch, projectNameRegisterClaim, resolveRecipeDefaults } from './pure';
 import { canonicalHash, sha256Hex } from './contract';
 
 function commandFixture(approved = true, sceneCount = 1, multilineVoiceOver = false) {
@@ -711,6 +711,62 @@ describe('interactive command runtime', () => {
       artifact('Continuous dimensional 3D CGI feature-animation shading; a student pushes a cart. No photoreal or live-action capture.'), command,
     );
     expect(locked.filter((item: string) => item.includes('3D animation render lock'))).toEqual([]);
+  });
+
+  // AD ↔ SINIF KAPISI (FAZ 1.5). Ölçülen kusur: sevk edilmiş
+  // `sabit-surat-ve-hiz_mamilas_command.json` içinde projectName "Ultra Real Commercial",
+  // productionPath "ANIMATION_EDU" — reklam projesi açılmış, 52 sahne eğitim üretilmiş,
+  // hiçbir kapı ötmemişti. Yüklem `src/core/pure.ts`'te saf; duvar runner'da. İki yüzey
+  // TS import edemeyen bir .mjs ile ayrıldığı için parite ELLE korunur — bu test onu sürer.
+  test('AD↔SINIF: TS yüklemi ile mjs aynası aynı girdilere aynı cevabı verir', async () => {
+    const runtime = await import(pathToFileURL(resolve('scripts/mamilas-command.mjs')).href);
+    const cases: Array<[string, string, boolean]> = [
+      // [projectName, productionPath, kapı ötmeli mi]
+      ['Ultra Real Commercial', 'ANIMATION_EDU', true],       // ÖLÇÜLEN KUSUR
+      ['Ultra Real Commercial', 'ULTRAREAL_COMMERCIAL', false],
+      ['5. Sınıf Sürtünme', 'ANIMATION_EDU', false],
+      ['Kütle ve Ağırlık', 'ANIMATION_EDU', false],           // belirsiz ad hüküm vermez
+      ['Kurumsal Tanıtım Filmi', 'ANIMATION_EDU', true],
+      // Türkçe büyük/küçük harf tuzağı: 'İ'.toLowerCase() = 'i'+U+0307, 'I'.toLowerCase() = 'i'.
+      ['EĞİTİM SETİ', 'ULTRAREAL_COMMERCIAL', true],
+      ['ÜRÜN TANITIMI', 'ANIMATION_EDU', true],
+      ['Otomotiv · Araç Reklamı', 'PRODUCT_HERO', false],
+      // STY ne doğrular ne yalanlar — SURGERY_DATA'da sevk edilmiş gerçek proje.
+      ['Anime Edu / Action Grammar', 'STYLIZED_PREMIUM', false],
+      ['Marka Filmi', 'STYLIZED_PREMIUM', false],
+      // Ad ikisini birden iddia ederse çelişkiyi kapı çözmez.
+      ['Eğitim Reklamı', 'ANIMATION_EDU', false],
+      ['', 'ANIMATION_EDU', false],
+    ];
+    for (const [projectName, productionPath, shouldFire] of cases) {
+      const label = `${projectName || '(boş)'} @ ${productionPath}`;
+      const ts = projectNameClassMismatch(projectName, productionPath);
+      const mjs = runtime.__testProjectNameClassMismatch(projectName, productionPath);
+      expect(mjs, `parite: ${label}`).toBe(ts);
+      expect(runtime.__testProjectNameRegisterClaim(projectName), `claim paritesi: ${label}`)
+        .toBe(projectNameRegisterClaim(projectName));
+      expect(Boolean(ts), `kapı: ${label}`).toBe(shouldFire);
+    }
+    // Kapı ötüyorsa mesaj insan-okur olmalı — kod adı tek başına Mami'ye hiçbir şey söylemez.
+    expect(projectNameClassMismatch('Ultra Real Commercial', 'ANIMATION_EDU'))
+      .toContain('Ultra Real Commercial');
+  });
+
+  test('AD↔SINIF uyuşmazlığı runner\'da DUVAR: command geçersiz, hiçbir rol açılmaz', () => {
+    const command = commandFixture() as any;
+    // `locks` projeksiyonu hiçbir hash'e girmez (commandId=baseDecision, sceneContextHash
+    // baseDecision.locks okur) — bu yüzden ad tek başına değiştirilebilir ve komut
+    // ESKİDEN sorunsuz koşardı. Ölçülen vakanın birebir şekli.
+    command.locks.projectName = 'Ultra Real Commercial';
+    const result = run(command);
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toContain('PROJECT_NAME_CLASS_MISMATCH');
+    // Aynı command, adı sınıfıyla uyumluyken geçer — kapı ada göre değil ÇELİŞKİYE göre öter.
+    const consistent = commandFixture() as any;
+    consistent.locks.projectName = '5. Sınıf Sürtünme';
+    const ok = run(consistent);
+    expect(ok.status, ok.stderr).toBe(0);
+    expect(JSON.parse(ok.stdout).validation).toBe('PASS');
   });
 
   test.each(['codex', 'claude'] as const)('%s interactive stub sonrası tam bir yeni role/provider artifact yeniden doğrulanır', (provider) => {

@@ -117,6 +117,61 @@ export function freeTextLeaksIn(text) {
   if (hex) for (const h of hex) hits.push(h);
   return Array.from(new Set(hits));
 }
+// ==================== AD ↔ SINIF DUVARI — runtime ikiz ====================
+// src/core/pure.ts projectNameRegisterClaim/projectNameClassMismatch (+ oradan çağrılan
+// brain.ts registerOf/FOLD_TR) ile BİREBİR aynı yüklem. Bu dosya TS import EDEMEZ, bu yüzden
+// aynalanır — aynı desen ipFirewall/promptQuality/lessonBank aynalarında da kurulu
+// (bkz. yukarıda: "src/core/pure.ts validateBriefCompatibility doctorText döngüsüyle BİREBİR
+// aynı"). Parite elle korunur; commandRuntime.test.ts iki yüzeyi AYNI girdilerle sürer.
+//
+// Kapının yeri neden BURASI: `BriefInput` projectName taşımaz — ad generateBatch katmanında
+// hiç görünmez. Ad ve sınıf yalnız command JSON'da buluşur (locks.projectName +
+// locks.productionPath), o yüzden duvar validateCommand'dedir.
+//
+// FOLD_TR brain.ts ile birebir. `İ` tuzağı: 'İ'.toLowerCase() === 'i' + U+0307 (nokta ayrı
+// birleşen olarak kalır) — burada ASCII kaçışıyla yazılır ki dosya kodlaması sessizce bozmasın.
+const FOLD_TR = (s) => String(s == null ? '' : s).toLowerCase()
+  .replace(/i\u0307/g, 'i').replace(/\u0131/g, 'i')
+  .replace(/\u011F/g, 'g').replace(/\u00FC/g, 'u')
+  .replace(/\u015F/g, 's').replace(/\u00F6/g, 'o')
+  .replace(/\u00E7/g, 'c');
+const NAME_CLAIMS_REAL_RE = /\b(?:reklam|commercial|brand|marka|urun|product|kurumsal|corporate|tanitim|spot)/;
+const NAME_CLAIMS_EDU_RE = /\b(?:egitim|edu|ders|lesson|okul|sinif|mufredat)/;
+
+// src/core/brain.ts registerOf aynası. Ayna olduğu için burada YASA yazılmaz; yeni bir
+// register kelimesi icat edilirse kaynak orasıdır, burası değil.
+function registerOf(productionPath) {
+  const p = String(productionPath ?? '').toUpperCase();
+  if (/REAL|COMMERCIAL|PRODUCT|LIVE|DOCUMENTARY|TESTIMONIAL|FOOD|FASHION|TOURISM|AUTOMOTIVE|TECH|ARCHITECTURE|SOCIAL|HEALTH/.test(p)) return 'REAL';
+  if (p === 'ANIMATION_EDU' || /EGITIM|EĞİTİM|EDU/.test(p)) return 'EDU';
+  return 'STY';
+}
+
+export function projectNameRegisterClaim(projectName) {
+  const folded = FOLD_TR(projectName);
+  const real = NAME_CLAIMS_REAL_RE.test(folded);
+  const edu = NAME_CLAIMS_EDU_RE.test(folded);
+  if (real === edu) return null; // belirsiz ad hüküm vermez
+  return real ? 'REAL' : 'EDU';
+}
+
+export function projectNameClassMismatch(projectName, productionPath) {
+  const claim = projectNameRegisterClaim(projectName);
+  if (!claim) return null;
+  const actual = registerOf(productionPath);
+  const contradicts = (claim === 'REAL' && actual === 'EDU') || (claim === 'EDU' && actual === 'REAL');
+  if (!contradicts) return null;
+  const claimLabel = claim === 'REAL' ? 'reklam/ticari (REAL)' : 'eğitim (EDU)';
+  const actualLabel = actual === 'REAL' ? 'reklam/ticari (REAL)' : 'eğitim (EDU)';
+  return `Proje adı "${String(projectName).trim()}" bunun ${claimLabel} bir iş olduğunu söylüyor, `
+    + `ama üretim yolu "${String(productionPath).trim()}" → ${actualLabel} üretiyor. `
+    + `Ad ile sınıf aynı şeyi söylemeli: ya proje adını ya da üretim sınıfını düzeltin.`;
+}
+
+// Parite kilidi için test-only export — commandRuntime.test.ts TS yüklemiyle karşılaştırır.
+export const __testProjectNameRegisterClaim = projectNameRegisterClaim;
+export const __testProjectNameClassMismatch = projectNameClassMismatch;
+
 // ==================== PROMPT SURGEON — runtime ikiz (M2) ====================
 // src/core/qa.ts scanPromptSurgeon'un runtime aynası. Jüri PASS'i (öz-beyan) author
 // prompt'unun kod-ölçülebilir bir rejectIf (AI-slop) taşımasını MEŞRULAŞTIRAMAZ:
@@ -324,6 +379,15 @@ export async function validateCommand(command) {
   if (directorBriefLeaks.length) problems.push(`directorBrief IP/hex sızıntısı: ${directorBriefLeaks.join(', ')}`);
   const brandKitLeaks = freeTextLeaksIn(command?.baseDecision?.locks?.brandKitLock ?? '');
   if (brandKitLeaks.length) problems.push(`brandKitLock IP/hex sızıntısı: ${brandKitLeaks.join(', ')}`);
+  // AD ↔ SINIF DUVARI. Ölçülen kusur: sevk edilmiş bir command'de projectName "Ultra Real
+  // Commercial", productionPath "ANIMATION_EDU" — reklam projesi açılmış, 52 sahne eğitim
+  // üretilmiş, hiçbir kapı ötmemişti. Ad yalnız `locks` projeksiyonunda yaşar (baseDecision
+  // taşımaz); sınıf ise hash-mühürlü baseDecision'dan okunur, projeksiyon yalnız yedektir.
+  const nameClassMismatch = projectNameClassMismatch(
+    command?.locks?.projectName ?? '',
+    command?.baseDecision?.locks?.productionPath ?? command?.locks?.productionPath ?? '',
+  );
+  if (nameClassMismatch) problems.push(`PROJECT_NAME_CLASS_MISMATCH: ${nameClassMismatch}`);
   if (!command?.lifecycle?.sceneContextHashes || typeof command.lifecycle.sceneContextHashes !== 'object') {
     problems.push('sceneContextHashes yok');
   } else if (Array.isArray(command?.scenes)) {

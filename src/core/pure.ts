@@ -4,7 +4,7 @@
 
 import SURGERY from './SURGERY_DATA.json';
 import {
-  registerOf, dnaDirectives, primeCamera, primeShotPattern, nightMap, clockMap, type Clock, buildImagePrompt as brainImagePrompt,
+  registerOf, FOLD_TR, dnaDirectives, primeCamera, primeShotPattern, nightMap, clockMap, type Clock, buildImagePrompt as brainImagePrompt,
   buildMotionPrompt, primeSuno, durationGuard, buildAgentBrief, primePacket, applyWorldCameraLaw, gateCameraLens, lightVariantFor,
   paletteLightPrompt,
   type Concept, type DurationVerdict, type AgentBriefScene, type Register, type RecipeSceneNote,
@@ -1072,6 +1072,67 @@ export function pathContract(pathId: string): PathContract | undefined {
     gate: Array.isArray(p.gate) ? p.gate.filter(Boolean) : [],
     requiresHuman: !!p.requiresHumanCast,
   };
+}
+
+// ============================================================
+// AD ↔ SINIF KAPISI
+//
+// ÖLÇÜLEN KUSUR (2026-07-27): sevk edilmiş bir command'de
+// `locks.projectName = "Ultra Real Commercial"` ile `locks.projectClass = "ANIMATION_EDU"`
+// yan yana duruyordu. Reklam projesi açılmış, sistem 52 sahne EĞİTİM üretmiş, hiçbir kapı
+// ötmemişti — kusuru ancak `scripts/kapanis-hasadi.mjs` hasat RAPORU söyledi, yani rica.
+//
+// Kapı neden `generateBatch`'te değil: `BriefInput` `projectName`/`selectedProjectId`
+// TAŞIMAZ — ad o katmanda hiç görünmez. Ad ve sınıf yalnız command JSON'da BULUŞUR
+// (`locks.projectName` + `locks.productionPath`). Bu yüzden yüklem burada SAF yaşar,
+// DUVAR ise runner'dadır: `scripts/mamilas-command.mjs` validateCommand →
+// `PROJECT_NAME_CLASS_MISMATCH` (parite testi `commandRuntime.test.ts`).
+// ============================================================
+
+/**
+ * Adın "bu bir reklam/ticari iştir" iddiası. `\b` yalnız BAŞA bağlıdır: Türkçe ekler
+ * kuyruktan gelir ("reklamı", "markası", "tanıtımı"), ama kelime İÇİNDE geçen kaza
+ * eşleşmesi ("meduza" içindeki "edu") tutmaz. Metin `FOLD_TR`'den geçmiş olarak beklenir.
+ */
+const NAME_CLAIMS_REAL_RE = /\b(?:reklam|commercial|brand|marka|urun|product|kurumsal|corporate|tanitim|spot)/;
+/** Adın "bu bir eğitim işidir" iddiası. Aynı prefix-bağlama kuralı. */
+const NAME_CLAIMS_EDU_RE = /\b(?:egitim|edu|ders|lesson|okul|sinif|mufredat)/;
+
+/**
+ * Proje adı AÇIKÇA bir register iddia ediyorsa onu döndürür, etmiyorsa `null`.
+ *
+ * BELİRSİZ AD HÜKÜM VERMEZ — bu bilinçli: "Kütle ve Ağırlık" ne reklam ne eğitim der,
+ * kapı isim TAHMİNİNDE ötmez. İkisi birden eşleşirse ("Eğitim Reklamı") de `null`:
+ * çelişkiyi adın kendi içinde çözmek kapının işi değildir.
+ */
+export function projectNameRegisterClaim(projectName: string): 'REAL' | 'EDU' | null {
+  const folded = FOLD_TR(projectName);
+  const real = NAME_CLAIMS_REAL_RE.test(folded);
+  const edu = NAME_CLAIMS_EDU_RE.test(folded);
+  if (real === edu) return null;
+  return real ? 'REAL' : 'EDU';
+}
+
+/**
+ * Ad bir register iddia ediyor ve üretim yolu ONU YALANLIYORSA insan-okur mesaj; yoksa `null`.
+ *
+ * Yalnız AÇIK çelişki öter: REAL↔EDU. `STY` üçüncü bir şey değil, iki register'ın da
+ * ORTOGONALİDİR (üslup register'ı) ve `registerOf`'un tanınmayan yol için düştüğü kova.
+ * "Anime Edu / Action Grammar" (`STYLIZED_PREMIUM`) SURGERY_DATA'da sevk edilmiş gerçek bir
+ * projedir: stilize üslupla eğitim. Onu duvara çarptırmak kapıyı yalancı yapardı — ölçülen
+ * kusur reklam adı + eğitim üretimidir, üslup seçimi değil.
+ */
+export function projectNameClassMismatch(projectName: string, productionPath: string): string | null {
+  const claim = projectNameRegisterClaim(projectName);
+  if (!claim) return null;
+  const actual = registerOf(productionPath);
+  const contradicts = (claim === 'REAL' && actual === 'EDU') || (claim === 'EDU' && actual === 'REAL');
+  if (!contradicts) return null;
+  const claimLabel = claim === 'REAL' ? 'reklam/ticari (REAL)' : 'eğitim (EDU)';
+  const actualLabel = actual === 'REAL' ? 'reklam/ticari (REAL)' : 'eğitim (EDU)';
+  return `Proje adı "${String(projectName).trim()}" bunun ${claimLabel} bir iş olduğunu söylüyor, `
+    + `ama üretim yolu "${String(productionPath).trim()}" → ${actualLabel} üretiyor. `
+    + `Ad ile sınıf aynı şeyi söylemeli: ya proje adını ya da üretim sınıfını düzeltin.`;
 }
 
 export function validateBriefCompatibility(args: {

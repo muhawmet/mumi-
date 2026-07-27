@@ -23,7 +23,13 @@ const T = (v: unknown): string => String(v == null ? '' : v);
 // the byte-exact source lives in scenes[].prompts.voiceOver / sourceIntegrity.
 const SRC_LINE = (s: unknown): string => T(s).replace(/\s+/g, ' ').trim();
 const LOW = (s: unknown): string => T(s).toLowerCase();
-const FOLD_TR = (s: unknown): string => LOW(s)
+/**
+ * Türkçe harf katlama — tek kaynak. `'İ'.toLowerCase()` JS'te `'i' + U+0307` verir (nokta
+ * ayrı bir birleşen olarak kalır), `'I'.toLowerCase()` ise `'ı'` değil `'i'` verir: iki tuzak
+ * da burada kapanır. Ad/register yüklemleri (`pure.ts` projectNameRegisterClaim) bu katlamayı
+ * ithal eder — ikinci bir kopya YAZILMAZ.
+ */
+export const FOLD_TR = (s: unknown): string => LOW(s)
   .replace(/i̇/g, 'i').replace(/ı/g, 'i')
   .replace(/ğ/g, 'g').replace(/ü/g, 'u')
   .replace(/ş/g, 's').replace(/ö/g, 'o')
@@ -3258,7 +3264,15 @@ export function buildRecipeMarkdown(input: RecipeExportInput): string {
 
 export function recommendReason(world: SurgeryWorld, ref: SurgeryRef): string {
   if (!world || !ref) return '';
-  const register = registerOf(world.id);
+  // ÖLÇÜLEN KUSUR (2026-07-27): burada `registerOf(world.id)` çağrılıyordu. `registerOf` bir
+  // PRODUCTION PATH bekler (ANIMATION_EDU / ULTRAREAL_COMMERCIAL), dünya ID'si değil — 46
+  // dünyanın 15'inde yanlış cevap veriyordu. `deakins_naturalist`, `fincher_precision`,
+  // `noir_high_contrast`, `wes_anderson_symmetric`, `chivo_naturalist_handheld`,
+  // `sci_fi_hard_surface`, `kurumsal_brand_film`, `archival_newsreel`, `period_reconstruction`
+  // — dokuz REAL dünya `STY` okunuyordu, yani crossGuard (stilize ref REAL dünyaya girince
+  // "yalnız sinematografi" uyarısı) tam da REAL dünyalarda HİÇ basılmıyordu. Register dünyanın
+  // kendi GRUBUNDAN türetilir; `pure.ts` validateBriefCompatibility ile aynı kanonik grup testi.
+  const realWorld = /real|cinematic/i.test(T(world.group));
   // First DNA clause (e.g. "soft rounded forms") is the most specific visual signal.
   const dnaCore = T(ref.dna).split(',')[0].trim().slice(0, 60).toLowerCase();
   // First two use clauses describe how to apply the ref.
@@ -3266,7 +3280,7 @@ export function recommendReason(world: SurgeryWorld, ref: SurgeryRef): string {
   const worldName = T(world.name);
   if (dnaCore && useCore) {
     // Cross-register guard: stylized/anime ref inside a REAL world — cinematography only.
-    const crossGuard = register === 'REAL' && /anime|3d animation|stylized/i.test(T(ref.cat))
+    const crossGuard = realWorld && /anime|3d animation|stylized/i.test(T(ref.cat))
       ? ` Channel cinematography and light geometry only — no ${T(ref.cat)} rendering inside ${worldName}.`
       : '';
     return `${ref.name} brings ${dnaCore} into ${worldName} — use for ${useCore}.${crossGuard}`;
