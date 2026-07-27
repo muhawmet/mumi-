@@ -306,12 +306,47 @@ geri alındı).
 
 **Kapı:** tsc 0 · vitest **2108/2108** · build OK.
 
-### 📐 FAZ 1.5 — ÖLÇÜM TAMAM, UYGULAMA BEKLİYOR
+### ✅ FAZ 1.5 TAMAM — JSON −%72 + ad↔sınıf duvarı (2026-07-27)
 
-Ölçüm yapıldı ki sonraki oturum yeniden türetmesin (taşıma yasası). Kaynak: gerçek
-`Kutle-ve-Agirlik_mamilas_command.json`.
+**Sonuç: 2765 KB → 773 KB (−%72).** Üç hash de **birebir aynı** — sevk edilmiş Kütle JSON'undan
+state geri kurulup yeniden export edilerek kanıtlandı (`commandId mamilas-244e553b…` ·
+`storyboardHash f6e03b0f…` · `sceneContextHashes 41/41`). Runner'a **tek satır gerekmedi**.
 
-**Dosya 2802 KB / 41 sahne (2553 değil). Hash'e dokunmadan çıkarılabilir: %65.3 → 972 KB.**
+Sökülenler: `handoff.MOTION` 470 KB (sıfır okuyucu — üstelik *"kare görülmeden motion yazılmaz"*
+yasasının **arka kapısıydı**) · `handoff.SUNO` 385 KB (tek müziğin 41 kopyası) · `handoff.IMAGE`'ın
+`negatives` dışındaki her şeyi 745 KB · `refDna` 40 kopya 182 KB · `paletteLight`/`prompts.suno`
+tekil kopyaları 38 KB. **Körleme dedupe yok:** `sharedAcrossScenes()` ölçer — `paletteLight`
+gece/gündüz karışık projede sahneden sahneye değişir ve frame gate pikselleri ona karşı ölçer.
+Alan silinmedi, **null'landı**: eksik alan ile yasaklı alan aynı şey değildir.
+
+**Ad↔sınıf duvarı kuruldu.** Kapının yeri `generateBatch` değildi — `BriefInput` `projectName`
+taşımıyor; ad ve sınıf **yalnız command JSON'da buluşuyor**. Saf yüklem `pure.ts`
+(`projectNameClassMismatch`), duvar runner'da: uyuşmazlıkta `validateCommand ok:false` → **hiçbir
+rol açılmaz.** Gerçek kanıt: sevk edilmiş Sabit Sürat command'i CLI'dan geçti → `exit 1` +
+`PROJECT_NAME_CLASS_MISMATCH`; adı tutarlı yapınca kapı susuyor.
+**Kapı yalnız REAL↔EDU açık çelişkisinde öter, `STY` çeliştirmez** — sevk edilmiş `anime_action`
+("Anime Edu / Action Grammar" @ `STYLIZED_PREMIUM`) gerçek bir projedir ve katı kural onu duvara
+çarpardı. 32 sevk projesinin tamamı geçirildi: **sıfır yanlış pozitif.** Belirsiz ad hüküm vermez.
+
+**`registerOf(world.id)` hatası kapandı:** `recommendReason` bir dünya ID'sini path sanıyordu —
+46 dünyanın 15'inde yanlış cevap, **9 REAL dünya `STY` okunuyordu**, yani stilize ref REAL dünyaya
+girince basılması gereken `crossGuard` uyarısı REAL dünyaların hiçbirinde basılmıyordu.
+
+**Kapı:** tsc 0 · vitest **2117/2117** · build OK · agents-sync OK.
+
+**Açık kalan (bilinçli, Mami seçer):**
+- `prompts.motionDraft` 102 KB — `handoff.MOTION` ile **aynı yasayı ihlal ediyor** (kare
+  görülmeden yazılmış motion metni, sahne başına). Hash dışı, tek okuyucusu 4 test. Sökülürse
+  dosya ~670 KB'a iner ve motion kapısının son arka kapısı kapanır.
+- Ad↔sınıf duvarı **üretimden sonra** ötüyor. Site `buildCommandJSON` uyuşmazlıklı command'i hâlâ
+  üretiyor; kapı runner'da. Site export kapısına da bağlanırsa Mami hatayı 52 sahne yazıldıktan
+  sonra değil, JSON'u indirirken görür. (Plan "arayüze dokunmam" diyor — karar Mami'nin.)
+- `brandKitLock` ve `musicId`'nin **hiçbir giriş yüzeyi yok**, ikisi de kimliğe giriyor. Ölçülen
+  gerçek `product_brand_real` çıktısı müşterinin kendi logosunu **üç kez** yasaklıyor, çünkü kilit
+  boş. Reklam filmine geçmeden önce kapatılması gereken tek yapısal engel bu.
+
+**Eski ölçüm (arşiv, doğrulandı):** dosya 2802 KB / 41 sahne; `commandId` yalnız 10.6 KB'lık
+`baseDecision`'dan doğuyor; hash-bağlı tek sahne alanı `handoff.IMAGE.negatives` + `motionEngine`.
 
 Plandaki iki teşhis **yanlıştı**, düzeltmesi: `handoff.IMAGE` "sağlam, %90 sahneye özel" DEĞİL —
 755 KB'ın 750'si kopya/tekrar (`draft` = `prompts.image`'in byte-eşi, `refDNAs` 1 tekil ×41,
@@ -344,15 +379,25 @@ yasaklıyor, çünkü kilit boş.
 path sanıyor, **46 dünyanın 15'inde yanlış cevap veriyor** (9 REAL dünya `STY` okunuyor → ref
 cross-register uyarısı REAL'de hiç basılmıyor).
 
+### 🎯 NİHAİ HEDEF — Upwork portfolyosu (Mami, 2026-07-27)
+
+Zincirin sonu belli: **Upwork için portfolyoluk demo videolar.** Reklam filmi yeteneği bir iç
+hedef değil, **satılabilir bir demo reeli**. Bu, FAZ 2'nin çıktısını doğrudan etkiler — ilk
+reklam filmi bir deneme değil, portfolyo parçasıdır ve öyle seçilmelidir.
+
 ### ➡️ SIRADAKİ TEK ADIM
 
-**Mami ders adaylarını `APPROVED.md`'ye taşır** — banka hâlâ boş, artık **15 aday** bekliyor
-(10 Bileşke + 5 Sabit Sürat). Otomatik promote yok; bu adım Mami'nin.
+**FAZ 2 — ilk reklam filmi (`product_brand_real`), Mami ile birlikte.** Duvarlar kuruldu:
+yasa üç register'da konuşuyor, linter register'ı okuyor, JSON −%72, ad↔sınıf kapısı ötüyor,
+kapanış hasadı ateşliyor.
 
-Sonra: **FAZ 1** — `PROMPT-YASASI` bugün dürüstçe bir `pixar_3d_edu` yasası (181 karenin 181'i o
-dünyadan). Ortak 9-slot iskelet kalır, üstüne **EDU/ANIMATION** ve **REAL** register katmanları
-gelir (REAL'de photoreal karşı-terimler `promptQuality.mined.json` içinde ZATEN var, hiç
-kullanılmadı). Ardından **FAZ 1.5** command JSON sadeleştirmesi, sonra **FAZ 2** ilk reklam filmi.
+**FAZ 2'den önce kapatılması gereken tek yapısal engel:** `brandKitLock`'un giriş yüzeyi yok —
+kilit boş kaldığı için ölçülen gerçek `product_brand_real` çıktısı müşterinin kendi logosunu üç
+kez yasaklıyor. Markasız bir demo çekilecekse engel değil; marka konacaksa **önce bu.**
+
+Paralel, Mami'nin elinde: **ders adaylarını `APPROVED.md`'ye taşımak** — banka hâlâ boş,
+**15 aday** bekliyor (10 Bileşke `CANDIDATES-2026-07-26.md` + 5 Sabit Sürat
+`HASAT-sabit-surat-ve-hiz.md`). Otomatik promote yok.
 
 Eski hedef (aşağıda duruyor) — **G3 kütüphane sınavı** bu yeni yolun içinde eriyor: ilk açılacak
 dünya artık `product_brand_real`.

@@ -50,6 +50,8 @@
 
 ## Aktif işler
 
+- [Upwork portfolyo hedefi](mamilas-upwork-portfolyo-hedefi.md) — zincirin sonu satılabilir demo reeli; ilk reklam filmi deney değil portfolyo parçası.
+
 - [Bileşke Kuvvet durumu](mamilas-bileske-kuvvet-world-explainer.md) — 52 kare + motion; @mira/@ali/@can/@araba/@kitap.
 - [Kuvvet brief kıstas değil](mamilas-kuvvet-brief-not-kistas.md) — gerçek referans Sürtünme, Kuvvet Ölçümleri brief'i değil.
 - [Command JSON blokajları](mamilas-command-json-blokajlari.md) — site JSON'unun Mami'nin istediğini engellediği 10 nokta.
