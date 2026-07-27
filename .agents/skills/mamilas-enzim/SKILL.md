@@ -14,6 +14,10 @@ başta kilitlenmemiş bir karardan doğdu. Aşağıdaki kilitler o 21 karenin li
 
 **Kural: bir kilit açık kaldıysa prompt yazmaya BAŞLAMA.** Mami'ye sor, cevabı yaz, sonra üret.
 
+**Ön okuma:** `agents/PROMPT-YASASI.md` — Mami'nin daimi direktifleri + ölçülmüş start-frame,
+motion ve referans template'leri. Kilitler o yasanın slotlarını doldurur; yasa okunmadan
+kilit sorulmaz.
+
 ---
 
 ## KİLİT 0 — JSON ön kontrolü (ilk prompt'tan önce, tek geçiş)
@@ -77,8 +81,10 @@ referans "ilk tarif"in yerine geçer. Bu yüzden:
 - **Negatif = firewall + karede gerçekten olan.** Sahnede olmayan nesneyi negatifte anmak
   NB2'de onu **çağırıyor**. Kalacaklar: photoreal/2D cel/clay, franchise/gerçek kişi/logo,
   ve karedeki kırılgan öğe (glow çiçeğe dönmesin, yay kopmasın, cilt yeşillenmesin, cast Türk kalsın).
-  Gidecekler: `no icon/chart/diagram/arrow`, `no empty void`, `no lens flare` — kare zaten
-  pozitif olarak dolu tarif edildiyse bunlar gereksiz.
+  Gidecekler: `no empty void`, `no lens flare` — kare zaten pozitif olarak dolu tarif edildiyse
+  bunlar gereksiz. **İstisna — kavram izi taşıyan kare:** Mami'nin direktifi izin ÇİZİLMESİ,
+  ama ışık objesi olarak. O karede negatif kalır ve kare-özel yazılır: *"the line is light,
+  never a drawn arrowhead, no flat diagram"* (yoksa NB2 ok ucu çiziyor).
 - **Sayı + birim:** basamaklar bitişik, birimden önce tek boşluk. *"the two-digit number twelve
   with its digits touching, then one clear space, then the capital letter N"*. Sadece
   "rakam, boşluk, N" dersen NB2 basamakları da ayırıyor ("1 2 N").

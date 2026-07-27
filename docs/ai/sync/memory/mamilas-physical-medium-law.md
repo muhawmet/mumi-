@@ -1,8 +1,11 @@
 ---
-name: ""
-metadata: 
+name: mamilas-physical-medium-law
+description: "Motor soyut üslubu değil FİZİKSEL MEDYUMU dinler — hangi boya, hangi yüzey, hangi doku, hangi film. '2D plastik' sorununun kareyle kanıtlı çözümü."
+metadata:
   node_type: memory
+  type: reference
   originSessionId: fefb2c9c-6fc2-4bcb-a9c1-d274cc79ea00
+  modified: 2026-07-27T17:44:04.947Z
 ---
 
 **"2D plastik" sorunu çözüldü (2026-07-12, KAREYLE kanıtlı).**

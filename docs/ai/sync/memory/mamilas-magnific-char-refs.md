@@ -13,4 +13,4 @@ Mami üretim öncesi tekrar eden karakterleri Magnific'te HAZIR tutuyor. Image p
 
 **How to apply:** Sahnede tanımlı bir tekrar-karakter varsa image prompt'a `@handle` göm; handle'ları Mami'den al/teyit et (tam yazım: @ogretmen no-2, @aras2, @defne2). [[mamilas-generation-routine]]
 
-İlgili: 1. sınıf eğitim dersinde **on-screen text AÇIK** — VO'daki rakam/kavram diegetik olarak KAREYE gömülür (tahtada tebeşir), overlay/post-prod YOK, text-protect negatifi şart. [[mamilas-production-export]]
+İlgili: 1. sınıf eğitim dersinde **on-screen text AÇIK** — VO'daki rakam/kavram diegetik olarak KAREYE gömülür (tahtada tebeşir), overlay/post-prod YOK, text-protect negatifi şart.

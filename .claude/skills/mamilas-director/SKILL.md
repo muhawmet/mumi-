@@ -20,8 +20,9 @@ Kaynak sayılar / motor listeleri / durum burada YAŞAMAZ — kanondan (kod + JS
 
 Skill çağrılınca tek hamlede context'i kur:
 
-1. **Kanon:** `CLAUDE.md` → `docs/ai/PROJECT_CONTRACT.md` · `MEMORY.md` index ·
-   `.claude/rules/core-prompt-path.md`.
+1. **Kanon:** `CLAUDE.md` → `docs/ai/PROJECT_CONTRACT.md` → **`agents/PROMPT-YASASI.md`**
+   (üretim yasası: daimi direktifler + start-frame/motion/referans template'leri — prompt
+   yazmadan ÖNCE oku, ezberden yazma) · `MEMORY.md` index · `.claude/rules/core-prompt-path.md`.
 2. **Hangi JSON?** `agents/COMMAND-INBOX/` içindeki `*_mamilas_command.json` dosyalarını **listele,
    Mami'ye HANGİSİNİ sor.** Birden fazla olabilir; sessiz seçme.
 3. **Seçilen JSON'u oku** (büyük dosya — `jq` ile hedefli çek, körü körüne context'e dökme):
@@ -30,7 +31,10 @@ Skill çağrılınca tek hamlede context'i kur:
    - `locks` → `worldId`, `paletteId`, `refIds`, **`imageModel`**, **`videoModel`**.
    - `creativeControls` → mood, cameraEnergy, timeLight, pov, signature, tempoCurve.
    - `scenes[]` → her sahnenin `phaseName`, `architecture.exactSourceBeat` + `imageVantage`,
-     `prompts.image` (STYLE SYSTEM + `[DIRECTOR TASK]`), `motionEngine.dialect`.
+     `prompts.image` (STYLE SYSTEM + `[DIRECTOR TASK]`), `motionEngine.dialect`,
+     **`paletteLight`** — sahne-başına ışık cümlesi. ⚠️ `worldPacket.paletteAsLight` **gündüz**
+     varsayar; gece/akşam sahnesinde sahnenin kendi `paletteLight`'ını kullan, yoksa gece karesi
+     gündüz paletiyle çıkar (sahte güneş).
 4. **Motor lehçesi:** imageModel/videoModel için `src/core/engine.ts` (ENGINE_DIALECTS) — ezberden yazma.
 5. **Precedent:** memory'de bu `worldId`/`refIds` için "geçen böyle yaptık" var mı? Varsa Mami'ye
    **SUN** ("geçen bu dünyada şunu şöyle yapmıştık, aynı yön mü?") — **dayatma.**
@@ -66,7 +70,7 @@ Her sahne için somut kareyi yaz. Teknik (temiz kaynaklardan — Google NB2 rehb
   **BOŞ/BEYAZ VOID YASAK.** "negative space / clean table" yazma → void doğuruyor. "clean plate" YALNIZ metin
   içindir, arka plan değil. Dominant öğe boşlukla değil odak+ışıkla öne çıkar. **Dekorlu arka planda
   tahta/poster = SOFT-FOCUS, okunaklı gövde metni YOK** (en fazla tek temiz kısa Türkçe başlık) —
-  yoksa NB2 garbled/İngilizce yazı doğuruyor. ([[mamilas-show-premium-yasasi]])
+  yoksa NB2 garbled/İngilizce yazı doğuruyor. (Tam show yasası: `agents/PROMPT-YASASI.md` §2.)
 - **KELİME TUZAKLARI — ikisi ARTIK KAYNAKTA kapandı, senin işin değil (2026-07-26):**
   `saffron` kütüphanede düzeltildi (`vibrant_edu.bias` → "warm golden") · `SSS`→`sheen` çevirisi
   `translucency` oldu (`brain.ts`). İkisi de `src/core/wordTraps.test.ts` ile kilitli — prompt'a
@@ -147,7 +151,7 @@ Bulanık/okunmayan arka plan yazısına takılma — sadece **net okunan** yanl�
 Her sekansın prompt'larını sohbette göster VE command'ın yanına **görünür bir dosya** yaz:
 `agents/COMMAND-INBOX/<Ad>_PROMPTLAR.txt`. **Windows'ta Mami `.txt` ister — `.md` uğraştırıyor;**
 prompt bloklarında ``` fence yerine düz ayraç (`-----`) kullan, kopyalaması kolay olsun
-([[mami-windows-txt-tercihi]]). Kaynak JSON'a **dokunma** (parity yasası: kaynak command mutasyona
+(tam teslim seti: `agents/PROMPT-YASASI.md` §5). Kaynak JSON'a **dokunma** (parity yasası: kaynak command mutasyona
 uğramaz). Sahne kapandıkça atomik güncelle. (VO metni + edit planı da ayrı `.txt` — Mami VO'yu kendi
 okutur, Premiere'de klip↔cümle haritasını takip eder.)
 

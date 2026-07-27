@@ -21,4 +21,4 @@ Private repo olduğu için görünürlük riski yok.
 
 **How to apply:** Anlamlı iş parçası bitince (kapı yeşilse) commit + push. Branch açmaya gerek yok,
 Mami main'de çalışıyor. Yine de zorla-push (force) ve geçmiş yeniden yazma Mami onayı ister.
-CLAUDE.md bunu yansıtıyor ("Commit'ler main'e push'lanır"). İlgili: [[mamilas-checkpoint]] rutini.
+CLAUDE.md bunu yansıtıyor ("Commit'ler main'e push'lanır").

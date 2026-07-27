@@ -2,8 +2,13 @@
 
 ## 🫀 AKTİF OPERASYON — KALP NAKLİ (2026-07-26, CURRENT AUTHORITY)
 
-**Mami mandası:** üretim DURDU ("üretimi unut bi süre, sorma artık"); beyin adaptasyonu
-A'dan Z'ye. Aşağıdaki tüm bölümler tarihsel kanıttır ve bu bölümü ezemez.
+**Mami mandası (2026-07-26):** beyin adaptasyonu A'dan Z'ye. Aşağıdaki tüm bölümler tarihsel
+kanıttır ve bu bölümü ezemez.
+
+> **⚠️ DÜZELTME (2026-07-27):** bu bölüm "üretim DURDU" diyordu — **artık doğru değil.**
+> 07-27'de üretim yeniden açıldı ve gün boyu **13 üretim commit'i** düştü (Sabit Sürat ve Hız
+> tam prompt seti + revize turu + kurgu kiti, arşivleme, Kütle ve Ağırlık'ın açılışı, günün
+> direktif transkripti). Beyin işi ile üretim işi **paralel** yürüyor; ikisi de canlı.
 
 **Operasyon planı (tek gerçek):** `docs/superpowers/plans/2026-07-26-mamilas-kalp-nakli.md`
 — kapılar G0→G5, denetim bölüşümü (Codex ikinci göz), `/clear` kickoff metni, receipt biçimi.
@@ -135,8 +140,49 @@ hâlâ **1** (`docs/KUTUPHANE-KARNESI.md`). Kazanç: yapısal kusur artık kare 
 **Kapı:** tsc 0 · vitest **2108/2108 (86 dosya)** · build OK. Kanıt: `g2-sinav/` (üç dünya +
 46-dünya tablosu).
 
+### ✅ ZEKÂ RUNU — taşıma katmanı (2026-07-27)
+
+**Ölçülen tek hastalık:** sistem bilgi ÜRETİYOR ama TAŞIYAMIYOR; taşıma katmanı Mami'ydi —
+"hep aynı şeyleri söylüyorum"un mekanik sebebi bu. Dört yerde aynı kusur ölçüldü:
+
+- **Kazanan biçim yazılmıyordu.** Sabit Sürat'ta bulunan dört slot (kare-özel `NEGATIVE`,
+  temas cümlesi, ayrı `TEXT:`, ten kilidi) hata oranını Bileşke'nin **%65**'inden **%14**'e
+  düşürdü ama hiçbir dosyada yazılı değildi. Kütle'de temas cümlesi 44/44 → **2/8**'e düşmüştü:
+  biçim gözle görülür şekilde çürüyordu. → `agents/PROMPT-YASASI.md` (tek kanon: daimi
+  direktifler + start-frame/motion/referans template'leri, 181 gerçek kareden madenlenmiş,
+  her slotun yanında kanıtı). Yönetmen ve enzim skill'leri boot listesinden okuyor.
+- **Akıl git'in dışındaydı.** Canlı auto-memory `~/.claude/...` altında; 07-26'da 34 dosyadan
+  16'ya düştü, git'te iz yok, kimse fark etmedi. Skill+hafıza grafiğindeki atıfların neredeyse
+  tamamı hedefsizdi. → 17 kalıcı hafıza geri getirildi (ölü proje defterleri **bilerek**
+  getirilmedi, arşivde), hedefsiz 11 atıf ya yasaya yönlendirildi ya kaldırıldı: **kırık atıf 0**.
+  `scripts/memory-sync.mjs` aynayı tek komuta bağladı — canlıdan düşen dosya artık silinmiyor,
+  `archive/` altına taşınıyor: kayıp sessiz değil, görünür bir git hareketi.
+- **Kalite kapısı Windows'ta no-op'tu.** `gate.sh` komut adını `/usr/bin/python3` ile ayıklıyordu;
+  Mami'nin birincil ortamında python3 ve zsh yok → filtre hiç eşleşmedi, kapı **her commit'te
+  sessizce `exit 0`** verdi. Kanıt: `.claude/test-baseline` 07-25'ten beri 2062'de donmuştu,
+  gerçek sayı 2108'di. → node ile ayrıştırma + `bash -n` yedeği; **ayrıştıramazsa artık sessizce
+  geçmiyor, bloke ediyor.** Kapı onarıldığı ilk atışta aşağıdaki kırığı yakaladı.
+- **`agentsSync.test.ts` platforma bağımlıydı.** `core.autocrlf=true` + `.gitattributes` yok →
+  `agents/PROTOCOL.md` Windows'ta CRLF açılıyor ve `protocolHash` **içeriğin değil satır-sonu
+  geleneğinin** hash'i oluyordu (LF `dc340024…` / CRLF `4c2fa11c…`). Aynı commit Mac'te yeşil,
+  Windows'ta kırmızıydı; kapı no-op olduğu için iki gün görünmedi. → `agents-sync.mjs` ve iki
+  bağımsız test artık satır sonunu normalize ediyor. **Üretilen tek bir dosya değişmedi** —
+  sapmanın tamamı satır sonuymuş.
+
+Ayrıca 07-23 zekâ runundan kalan **T1** kapandı: gece sahnelerinin ışığı `scenes[].paletteLight`
+olarak command JSON'da üretiliyordu ama hiçbir tüketici okumuyordu (`worldPacket.paletteAsLight`
+gündüz varsayar). Yönetmen skill'i artık sahne-başına değeri okuyor.
+
+**Kapı:** tsc 0 · vitest **2108/2108** · build OK · agents-sync --check OK · kırık atıf 0.
+
+**Açık ledger (07-23 runundan devralındı):** `agents/lessons/APPROVED.md` hâlâ boş — 10 kanıtlı
+ders `CANDIDATES-2026-07-26.md`'de Mami onayı bekliyor, üstelik Sabit Sürat'ın revize turundan
+çıkan 3 yeni ders henüz aday olarak yazılmadı. Mined madde etkisini ölçmek için gereken
+stable-id ön koşulu da açık.
+
 ### ➡️ SIRADAKİ TEK ADIM
 
+**Kalite upgrade runu — Mami'yle birlikte (söz verildi, tek başına başlatılmaz).** Kapsam:
 **G3 — kütüphane sınavı:** sınav seti kütüphaneye uygulanır, kusur **kütüphanede** düzeltilir
 (kod yasası genel, dünya kusuru yerel; kodu her dünya için eğmek beyni bozar). İlk hedef
 G2 ledger #2: `bleach_soul_world` 3/7 · `claymation_aardman` 3/6 · `jjk_mappa` 6/11 — render
