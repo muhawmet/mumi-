@@ -1,0 +1,25 @@
+KÜTLE VE AĞIRLIK — 5. SINIF · KARAKTER + PROP REFERANSLARI (Nano Banana 2)
+=========================================================================
+Dünya: pixar_3d_edu · Image: Nano Banana 2 · Yüzey: Magnific Spaces.
+Önce bu referansları bas → sahnelerde SADECE @handle kullanılır, görünüş bir daha TARİF EDİLMEZ.
+
+MEVCUT (sende hazır, yeniden basma):
+  @efe        — kahraman çocuk (Türk/Anadolu, ~11-12).
+  @efe_space  — Efe astronot giysili (Ay/Dünya doruğu). Kaskın camında Efe'nin yüzü okunur.
+
+ÜRETİLECEK (aşağıdaki iki prompt — dersin ölçüm aletleri, tutarlılık kritik):
+
+-----
+@terazi — EŞİT KOLLU TERAZİ (kütle ölçer · Dünya ve Ay'da BİREBİR aynı görünmeli)
+-----
+Full object reference of @terazi: an original classic equal-arm two-pan balance scale (eşit kollu terazi) for a 5th-grade science lesson — a sturdy vertical brushed-brass column rising from a rounded weighted base, a horizontal beam pivoting level at the very top, and from each end of the beam a shallow round polished-brass pan hangs by three fine chains; at the central pivot a slender pointer needle sits dead-centre against a small notched balance plate, reading perfect equilibrium. Warm brushed brass throughout with satin metal highlights, small visible pivot screws and a blank maker plaque, child-friendly rounded proportions, instantly readable as a mass-measuring balance at thumbnail size. Shot on an 85mm lens at f/4.0, three-quarter hero angle, full instrument centered, soft studio-style morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white void. Materials: brushed brass with anisotropic highlight, polished pan sheen, fine chain links. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — physically-motivated bounce fill, painted soft ambient occlusion in the folds and under the pans (never hard-black). An original instrument with no resemblance to any franchise; no logo, no photoreal, no flat 2D or cel, no English text.
+
+-----
+@dinamometre — YAYLI DİNAMOMETRE / KUVVET ÖLÇER (Newton · aynı alet, okuma sahneye göre değişir)
+-----
+Full object reference of @dinamometre: an original classic spring-scale force meter (dinamometre) for a 5th-grade science lesson — a slender upright cylindrical brushed-steel barrel with a clear glass window running down its front that reveals a coiled tension spring inside, a sturdy load hook at the bottom for hanging weights and a fixed suspension ring at the top, and along the barrel a cleanly engraved vertical scale of evenly-spaced tick marks graduated in newtons with the unit letter "N" marked once at the top of the scale, a bright red enamel indicator pointer riding beside the scale and resting near the top at rest. Child-friendly rounded proportions, instantly readable as a force-measuring spring gauge at thumbnail size. Shot on an 85mm lens at f/4.0, three-quarter hero angle, full instrument centered, soft studio-style morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white void. Materials: brushed steel barrel with anisotropic highlight, clear glass window, coiled spring metal, red enamel pointer. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — physically-motivated bounce fill, painted soft ambient occlusion (never hard-black). An original instrument with no resemblance to any franchise; no logo, no photoreal, no flat 2D or cel; only the unit letter "N" may appear on the scale, otherwise no English text.
+
+-----
+@elma — REFERANS YOK (tarif kilidi): sahnelerde daima "a single glossy deep-red apple with a short
+brown stem, one soft highlight" olarak tarif edilir; açılış tartısı ile kapanış ısırığı AYNI elma.
+=========================================================================
