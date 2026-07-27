@@ -164,3 +164,51 @@ describe('Windows and macOS launchers remain thin and equivalent', () => {
     },
   );
 });
+
+// FAZ 3 KANALI — Mami-onaylı ders bankası ÜRETİME ulaşmak zorundadır.
+//
+// Ölçülen kusur (2026-07-27): banka yalnız RUNNER hattına gidiyordu. Mami üretimi Konuşmalı
+// Yönetmen'le yapıyor — yani banka dolsa bile canlı üretime hiç ulaşmıyordu. Kanal açıldı,
+// ama kanalı yaşatan bir duvar yoktu: biri skill'i yeniden yazsa kanal SESSİZCE kopardı.
+// Bu blok kopmayı kırmızıya bağlar. İçerik denetlemez — yalnız bağlantının varlığını.
+describe('ders bankası kanalı — banka üretime bağlı kalır', () => {
+  const BANK = 'agents/lessons/APPROVED.md';
+  const SKILLS = [
+    '.claude/skills/mamilas-director/SKILL.md',
+    '.agents/skills/mamilas-director/SKILL.md',
+    '.claude/skills/mamilas-enzim/SKILL.md',
+    '.agents/skills/mamilas-enzim/SKILL.md',
+  ].filter((rel) => existsSync(resolve(REPO, rel)));
+
+  test('kanalın iki ucu da var: banka dosyası + runner okuması', () => {
+    expect(existsSync(resolve(REPO, BANK))).toBe(true);
+    const cmd = read('scripts/mamilas-command.mjs');
+    expect(cmd).toContain("'lessons', 'APPROVED.md'");
+    expect(cmd).toContain('approvedLessons');
+  });
+
+  test('approvedLessons HASH-DIŞI katmandır — banka büyüyünce command stale olmaz', () => {
+    const cmd = read('scripts/mamilas-command.mjs');
+    // sessionContext CONTEXT.json'a yazılır; sceneContextHash yalnız imageAuthor+motionEngine'i
+    // kapsar. Dersler karar değil atölye hafızasıdır — bu ayrım kaybolursa banka her satırda
+    // uçuştaki command'leri geçersiz kılardı.
+    expect(cmd).toMatch(/approvedLessons[\s\S]{0,400}sessionContext|sessionContext[\s\S]{0,400}approvedLessons/);
+    expect(cmd).toContain('CONTEXT.json');
+  });
+
+  test.each(SKILLS)('%s bankayı okur — Yönetmen hattı runner\'sız da beslenir', (rel) => {
+    expect(read(rel)).toContain(BANK);
+  });
+
+  test('skill yüzeyleri tek tek değil ÇİFT güncellenir (launcher-parity)', () => {
+    // `.claude/` ve `.agents/` kopyaları birlikte yaşar; biri güncellenip öteki unutulursa
+    // iki ajan iki farklı yasa okur. agents-sync --check bunu ayrıca ölçer.
+    for (const surface of ['mamilas-director', 'mamilas-enzim']) {
+      const a = resolve(REPO, `.claude/skills/${surface}/SKILL.md`);
+      const b = resolve(REPO, `.agents/skills/${surface}/SKILL.md`);
+      if (!existsSync(a) || !existsSync(b)) continue;
+      const lf = (s: string) => s.replace(/\r\n/g, '\n');
+      expect(lf(readFileSync(b, 'utf8')).includes(BANK)).toBe(lf(readFileSync(a, 'utf8')).includes(BANK));
+    }
+  });
+});

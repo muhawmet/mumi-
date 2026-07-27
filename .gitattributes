@@ -1,0 +1,43 @@
+# SATIR SONU KANONU — bu dosyanın yokluğu ölçülmüş bir kusur kaynağıydı, iki kez.
+#
+# `core.autocrlf=true` bir Windows checkout'unda metin dosyalarını CRLF'e çevirir. MAMILAS
+# içerik hash'i alıyor: `agents/PROTOCOL.md` üç yüzeyde hash'lenir (TS `protocolDescriptor`,
+# `scripts/agents-sync.mjs`, `scripts/mamilas-command.mjs`). Satır sonu değişince hash
+# İÇERİĞİN değil GELENEĞİN hash'i oluyor — LF `dc340024…` / CRLF `4c2fa11c…`.
+#
+# Ölçülen sonuç: aynı commit Mac'te yeşil, Windows'ta kırmızıydı; runner Mami'nin BİRİNCİL
+# makinesinde her command'i `protocolHash stale/tampered` ile reddediyordu — hat baştan ölüydü.
+# İlk onarım (8faa9fc) yalnız bir yüzeyi kapattı ve kusur geri döndü. Üç yüzey de artık
+# normalize ediyor, ama asıl kök neden burasıydı: repo hangi satır sonunu taşıdığını
+# söylemiyordu. Duvar, ricanın yerine geçer.
+#
+# Taşınabilirlik bir kalite kuralıdır (docs/ai/faz-insa.md).
+
+# Depoda her metin dosyası LF ile yaşar. Çalışma ağacında editör ne yaparsa yapsın,
+# git'in gördüğü içerik platformdan bağımsızdır.
+* text=auto eol=lf
+
+# Hash'lenen ve parite denetlenen dosyalar — burada tahmine yer yok.
+*.md   text eol=lf
+*.json text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.mjs  text eol=lf
+*.js   text eol=lf
+*.sh   text eol=lf
+
+# Windows launcher'ları CRLF ZORUNLU — `.bat`/`.cmd` LF ile bozulur (ölçüldü: `d366231`).
+# Mac/Windows launcher paritesi korunur (.claude/rules/launcher-parity.md).
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# İkili dosyalar — dokunulmaz.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.mp4  binary
+*.mov  binary
+*.docx binary
+*.zip  binary
+*.ico  binary

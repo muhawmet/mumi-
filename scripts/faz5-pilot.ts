@@ -330,11 +330,17 @@ for (const recipe of RECIPES) {
       + `# SONRA image_prompts/${scene.id}.txt'yi bundan AUTHOR eder. Kopyalamaz.\n\n${scene.imagePrompt}`,
       'utf-8',
     );
+    // MOTION TASLAĞI YAZILMAZ (2026-07-27). Bu, aynı yasanın SÖKÜLEN üçüncü yüzeyiydi:
+    // `handoff.MOTION` (470 KB) ve `prompts.motionDraft` (102 KB) command JSON'undan
+    // çıkarıldı, gerekçe `agents/PROMPT-YASASI.md` §3 — *görmediğin kareye motion yazma*.
+    // Üstüne "TASLAK" yazmak yasayı taşımıyor: yapıştırılabilir bir metin, uyarısı ne olursa
+    // olsun kapının arka kapısıdır. Kare onaylanınca motion O ANDA, O KAREDEN yazılır.
     fs.writeFileSync(
-      path.join(dir, 'motion', `${scene.id}.DRAFT.txt`),
-      `# TASLAK — final motion, images/${scene.id}.png GÖRÜLMEDEN yazılmaz (FRAME-AWARE yasa).\n`
-      + `# Ve frame_checks/${scene.id}.md FRAME_PASS demeden motion/${scene.id}.txt DOĞMAZ.\n`
-      + `# Bu dosya yalnızca Higgsfield deneme turu için bir reçetedir.\n\n${scene.motionPrompt}`,
+      path.join(dir, 'motion', `${scene.id}.README.txt`),
+      `# Bu klasör motion prompt'u için AYRILDI ve şu an BOŞ — bilerek.\n`
+      + `# Motion, images/${scene.id}.png onaylanmadan yazılmaz (FRAME-AWARE yasa,\n`
+      + `# agents/PROMPT-YASASI.md §3). frame_checks/${scene.id}.md FRAME_PASS dediğinde\n`
+      + `# motion/${scene.id}.txt O KAREDEN yazılır — hazır bir taslaktan kopyalanmaz.\n`,
       'utf-8',
     );
   }
