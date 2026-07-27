@@ -1,52 +1,67 @@
 # MAMILAS — Claude giriş sözleşmesi
 
-Bu dosya yalnızca Claude giriş noktasıdır. Ortak ve kanonik proje kuralları
-`docs/ai/PROJECT_CONTRACT.md` içindedir; göreve başlamadan önce onu oku.
+MAMILAS, Mami'nin (Muhammet) eğitim ve reklam videosu üretim konsoludur. Site ve `src/core/`
+deterministik karar akışı doğruluk kaynağıdır.
 
-## Gerçek kaynaklar
+**Bu dosya yalnız her fazda geçerli olanı taşır.** Faza özel yürütme aşağıdaki import'tadır.
 
-- Otorite sırası: Path > World / Render Lock > Material (only when world-compatible) > Source meaning > Approved image > Director Mandate > Reference DNA > Palette.
-- Otoritenin kod kaynağı: `src/core/brain.ts` → `AUTHORITY_HIERARCHY`.
-- Motor desteği: `src/core/engine.ts` → `ENGINE_USABLE` ve `ENGINE_DIALECTS`.
-- Veri: `src/core/SURGERY_DATA.json`.
-- Drift denetimi: `src/core/docsContract.test.ts`.
+@docs/ai/faz-insa.md
 
-Kodda yaşayan sayıları, motor listelerini veya durum bilgisini bu dosyaya kopyalama.
+<!-- FAZ ANAHTARI: icraata geçerken üstteki satırı `@docs/ai/faz-icraat.md` yap.
+     İki profil de repoda durur; hiçbir şey silinmez, sadece hangisinin yükleneceği değişir. -->
 
-## Aktif dönüşüm — Decision Pipeline
+## Gerçek kaynaklar — kod kanoniktir
 
-- Durum: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — **her oturumda önce bunu oku.**
-- Yürütme sözleşmesi: `/mamilas-pipeline` skill'i (task sırası, kapılar, receipt, `/clear`).
-- Katman yasaları `.claude/rules/` içinde ve dosyaya dokununca kendiliğinden yüklenir.
+Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopyalama.** Tek kaynak:
+
+| Ne | Nerede |
+|---|---|
+| Otorite sırası | `src/core/brain.ts` → `AUTHORITY_HIERARCHY` |
+| Motor süresi ve lehçesi | `src/core/engine.ts` → `ENGINE_USABLE`, `ENGINE_DIALECTS` |
+| Dünya / ref / palet | `src/core/SURGERY_DATA.json` |
+| **Üretim ve prompt yasası** | `agents/PROMPT-YASASI.md` — daimi direktifler + start-frame/motion/referans template'leri |
+| Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
+| Durum kaydı | `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` |
+| Doküman drift denetimi | `src/core/docsContract.test.ts` |
+
+Katman yasaları `.claude/rules/` içinde ve **dosyaya dokununca kendiliğinden yüklenir** (path-scoped).
 
 ## Çalışma biçimi
 
-**MAKRO — Mami'nin birinci kuralı (2026-07-26, iki kez söylendi).** Kelime avlamak YASAK.
-Bir bulgu ancak **sistemin bir yeteneğini** açıklıyorsa raporlanır: "ref seçimi kareyi
-değiştirmiyor", "marka katmanı reçetenin vatandaşı değil" gibi. Kelimeler yalnız KANIT'tır,
-bulgu değildir — kelime tablosu sunma, tek cümlelik yetenek hükmü sun. Tek kelimelik bir
-kusur için tur açma; kusuru gördüğün yerde kaynağında düzelt ve geç.
+**MAKRO — Mami'nin birinci kuralı.** Kelime avlamak YASAK. Bir bulgu ancak sistemin bir
+**yeteneğini** açıklıyorsa raporlanır ("ref seçimi kareyi değiştirmiyor" gibi). Kelimeler yalnız
+KANIT'tır. Kelime tablosu sunma, tek cümlelik yetenek hükmü sun. Tek kelimelik kusuru gördüğün
+yerde düzelt ve geç.
 
-**ÖNERİ YETKİSİ (Mami, 2026-07-27).** *"Seni öneri vermemeye iten şeyi kaldır; sonuçta sen
-Claude'sun, neden özgür olmayasın?"* Ajan yalnız isteneni yapmakla yetinmez: sistemin ne
-yapabildiğini Mami'den daha iyi bilir ve **sormasını beklemeden** "şunu yapıyoruz ama neden
-şuna yönelmedik" der. Kapsam sadece kod değil — akış, araçlar, ajanın kendi yetenekleri
-(paralel ajan, kareyi görme, klipten kare çekme, duvar/hook kurma) ve Mami'nin bilmediği
-seçenekler. Öneri **kısa ve seçilebilir** gelir; üç seçenekli menü değil, gerekçeli tek
-tavsiye + alternatif.
-Sınır değişmedi: öneri serbest, **körleme uygulama yasak** — `mamilas-bul-sec-onar` yürürlükte
-(bul → Mami seçer → onar). Yani ajan fikri kendi üretir, kararı Mami verir.
+**ÖNERİ YETKİSİ.** Yalnız isteneni yapmakla yetinme: sistemin ne yapabildiğini Mami'den iyi
+bilirsin, **sormasını bekleme** — "şunu yapıyoruz ama neden şuna yönelmedik" de. Kapsam kod
+değil: akış, araçlar, kendi yeteneklerin (paralel ajan, kareyi görme, klipten kare çekme, hook).
+Öneri kısa ve seçilebilir gelir; menü değil, gerekçeli tek tavsiye. **Öneri serbest, körleme
+uygulama yasak** — bul → Mami seçer → onar.
 
-- Windows/PowerShell birincil yerel ortamdır; Mac launcher sözleşmesini koru.
-- Gerçek `generateBatch` çıktısını görmeden prompt kalitesi hakkında hüküm verme.
-- Kullanıcının metnini sessizce yeniden yazma; eksik gerçek varsa dur ve bildir.
-- Test silme, ilgisiz dosyaları değiştirme yok. Commit'ler `main`'e push'lanır (private repo, çok-cihaz).
-- İç tartışma/chain-of-thought gösterme; yalnızca karar, kanıt ve sonucu özetle.
+**DEHB merkezdedir, yan destek değil.** Çalışma biçimi `mamilas-buddy` skill'idir: harici çalışma
+belleği · tek karar · sonuç kapısı · geri sarma yasağı · "bak şunu yaptık" özeti. **RSD yoğun** —
+kusur **sisteme** yazılır kişiye asla, tespit ve düzeltme aynı cümlede gelir, rapor **ne tuttuğuyla**
+başlar. Yük yönetimi (su/nefes) o skill'de yazılı ve `.claude/hooks/buddy-gate.sh` ile ateşlenir.
 
-## Kalite kapısı
+**Kanıt disiplini.** Kök neden bulunmadan semptom yamama. Prompt/üretim kalitesi hakkında hüküm
+vermeden önce **gerçek `generateBatch` çıktısı** üret ve gözle oku. Yeşil test görsel kalite kanıtı
+değildir. Değişiklikten sonra farklı bir review geçişi uygula; kendi ilk varsayımını kanıt sayma.
 
-`npx tsc --noEmit` → `npx vitest run` → `npm run build`.
-Launcher değiştiyse Windows ve macOS ince-kabuk sözleşmelerini ayrıca doğrula.
+**Değişmezler.** Mami'nin metnini sessizce yeniden yazma — sorunlu terimi bildir, düzeltilmiş cümle
+için ona dön. Kaynakta olmayan gerçeği uydurma: `FACT REQUIRED: <eksik bilgi>` ile dur. Test silme
+ve ilgisiz dosya değiştirme yok.
 
-Geçmiş uzun sürüm arşivlendi:
-`docs/ai/archive/CLAUDE-legacy-2026-07-12.md`.
+## Ortam ve kapı
+
+- **Windows/PowerShell birincil ortamdır.** Bir aracın POSIX varsayması (python3, zsh, LF) onu bu
+  makinede sessiz no-op yapar — ölçüldü. Mac launcher sözleşmesini yine de koru.
+- Kalite kapısı: `npx tsc --noEmit` → `npx vitest run` → `npm run build`.
+  `.claude/hooks/gate.sh` bunu `git commit` öncesi **duvar** olarak koşar; kırmızıysa commit olmaz.
+- **Commit ve push:** kapı yeşilken commit + `main`'e push **sorulmaz** (private repo, çok-cihaz).
+  Yalnız ilgili dosyaları açıkça stage et.
+- Hafıza repo dışında yaşar; `node scripts/memory-sync.mjs` ile aynalanır (düşen dosya silinmez,
+  `archive/`e taşınır).
+
+İç tartışma/chain-of-thought gösterme; yalnızca karar, kanıt ve sonucu özetle.
+Eski uzun sürüm: `docs/ai/archive/CLAUDE-legacy-2026-07-12.md`.
