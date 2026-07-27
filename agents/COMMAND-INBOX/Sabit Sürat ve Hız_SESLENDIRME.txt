@@ -1,0 +1,22 @@
+Sabit Sürat ve Hız — 6. SINIF · SESLENDİRME (ElevenLabs v3)
+=========================================================================
+SES: sıcak, parlak, meraklı bir Türk anlatıcı (Mira'nın dış sesi). Ekranda kimse konuşmaz.
+v3 AYARI: Stability "Natural" (~0.5), Similarity yüksek. İngilizce kelime yok; sayılar Türkçe
+okunur ("bir metre", "metre bölü saniye"). Soruda ton yukarı, cevapta düşer.
+v3 TAG (opsiyonel, azar azar): büyük sorularda [curiously], reveal'lerde [with wonder],
+kapanışta [warmly]/[brightly]. Aşağıdaki metin sade — istersen bu anlara tag serpiştir.
+Kesintisiz oku; 52 cümle 44 klibe taşınıyor (eşleşme: Sabit Sürat ve Hız_EDIT-PLAN.txt).
+=========================================================================
+
+
+>>>>> ELEVENLABS'E BUNU YAPIŞTIR <<<<<
+
+
+Mira o sabah çantasını sırtladı ve evin kapısından çıktı. Sokağın başında arkadaşı Ali onu bekliyordu. İkisi birlikte okula doğru yürümeye başladılar. Ama Mira o gün sıradan bir yürüyüş yapmıyordu; kafasında bir soru vardı. Attıkları her adımın arkasında bir bilim gizliydi ve Mira o günü, evden okula giden yolu çözerek geçirecekti. Ne kadar yol almışlardı, ne kadar yer değiştirmişlerdi ve en önemlisi sürat ile hız neden aynı şey değildi? Mira ve Ali kaldırımdan yürüdüler, köşeyi döndüler ve parkın etrafından dolandılar. Yol dümdüz değildi; kıvrıla kıvrıla okula gidiyordu. İşte adım attıkları bu bütün hattın uzunluğuna alınan yol deniyordu. Mira arkasına baktığında zihninde kırmızı bir iz gördü: parkın etrafından dolanan, sokakları takip eden, gerçekten yürüdükleri yol. Peki ya yer değiştirme neydi? Yer değiştirme, çıktıkları nokta olan ev ile vardıkları nokta olan okul arasındaki en kısa, dümdüz mesafeydi.
+
+Zihnindeki kırmızı izin üstüne bu kez düz mavi bir ok çizdi; ok evden başlıyor ve doğrudan okulun kapısına uzanıyordu. Mesafeleri ölçerken temel birim metreydi, daha uzun yollarda ise kilometre kullanılıyordu. Sonra Mira sürat kavramına geldi. Sürat, bir cismin ne kadar seri hareket ettiğiydi. Hesaplaması da çok kolaydı: alınan toplam yolu, o yolu almak için harcanan toplam zamana bölüyordun. Mira bunu denemek istedi. Okulun düz duvarı boyunca yürüdü ve Ali kronometreyi başlattı. Mira her saniyede tam 1 metre ilerledi. 100 metrelik yolu 100 saniyede yürüdüğünde alınan yolu zamana böldü ve süratini buldu. Süratin birimi neydi? Yolu metre, zamanı saniye alırsak sürat birimi metre bölü saniye oluyordu. Tıpkı arabalarda olduğu gibi yolu kilometre, zamanı saat alırsak birim kilometre bölü saat oluyordu. Ama Mira'nın kafasındaki asıl soru henüz cevaplanmamıştı. Peki hız neydi? Günlük hayatta sürat ile hızı sürekli karıştırıyorduk, oysa hızın çok önemli bir farkı vardı: yön. Mira hızı hesaplarken katettiği bütün yolu değil, yalnızca yer değiştirmeyi geçen zamana böldü. Ve bir şey daha vardı: hız söylenirken mutlaka bir yön belirtilmeliydi. Ali çantasından pusulasını çıkardı; ibre kuzeyi gösteriyordu. Mira yönünü kuzeye çevirip aynı tempoda yürüdüğünde artık sadece "şu kadar hızlı gidiyorum" diyemezdi; "kuzeye doğru şu kadar hızla gidiyorum" demek zorundaydı. Hızın birimi de tıpkı süratteki gibi metre bölü saniye ya da kilometre bölü saatti. Yani birimler aynıydı; fark, hızın yer değiştirme üzerinden ve belirli bir yönle ifade edilmesiydi. Okulun kapısına yaklaşırken Mira son bir şeyi merak etti: ya bir cisim hep aynı seride giderse? Ali kronometreyi tekrar başlattı ve Mira adımlarını hiç değiştirmeden yürüdü.
+
+Birinci saniyede 1 metre, ikinci saniyede yine 1 metre, üçüncü saniyede yine 1 metre. Eşit zaman aralıklarında eşit yollar alıyordu ve sürati hiç değişmiyordu. İşte buna sabit süratli hareket deniyordu. Peki sabit hızlı hareket bunun aynısı mıydı? Tam olarak değil. Mira aynı tempoyla yürümeye devam etti ama bu kez köşeyi dönüp yönünü değiştirdi. Sürati değişmemişti; yine her saniyede 1 metre gidiyordu. Ama yönü değiştiği için hızı değişmişti. Demek ki bir hareketin sabit hızlı olması için hem süratin sabit kalması hem de yönün hiç değişmemesi gerekiyordu; yani cisim dümdüz bir doğru boyunca gitmeliydi. Bu yüzden her sabit hızlı hareket aynı zamanda sabit süratliydi, ama her sabit süratli hareket sabit hızlı değildi.
+
+Zil çaldığında Mira okulun kapısından içeri girdi ve o günün özetini kafasında topladı. Yolu zamana bölersen sürati, yer değiştirmeyi zamana bölersen hızı buluyordun. İkisinin de birimi metre bölü saniyeydi. Sürat sadece ne kadar seri gittiğini söylüyordu; hız ise nereye doğru gittiğini de söylüyordu. Bir sonraki keşifte görüşmek üzere. Merakla kalın, bilimle kalın!
+
