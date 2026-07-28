@@ -1,0 +1,180 @@
+KÜTLE VE AĞIRLIK — EXTEND EDİLECEK KLİPLER (GÜNCELLENDİ 2026-07-28)
+=========================================================================
+⚠ LİSTE 11'DEN 3'E DÜŞTÜ. Sebep: "komşudan ödünç" eklendi — bir klip VO'suna
+yetmiyorsa ÖNCEKİ klibin kullanılmayan malzemesi devreye giriyor, önceki klip
+daha uzun oynuyor, bu klip geç başlıyor. Ses görüntüden önce girer; bu kusur
+değil, standart kurgu. Mami'nin K35 sezgisi ("34-35 arası ahenk yaparsın")
+sistemleştirildi ve 6 klibi daha kurtardı.
+
+ÜRET (hâlâ ağır):
+   K08  8.mp4   5s → 10s   %50 — EN KRİTİK, yazı yok, rahat bas
+   K32 32.mp4   6s → 10s   %60 — "AĞIRLIK" tabelası, son 2 sn yazıya bak
+   K23 23.mp4   5s → 10s   %61 — "60 kg" plakası, son 2 sn yazıya bak
+
+SINIRDA (Mami bilir):
+   K04  4.mp4   5s →  8s   %78 — ayrıca K04 ÇATALI hâlâ açık (mutfak mı sınıf mı)
+   K05  5.mp4   5s →  7s   %76
+
+GEREK YOK (ödünçle çözüldü, %100 hızda):  K07 · K31 · K11 · K15
+GEREK YOK (fark edilmez):                 K02 %95 · K35 %85
+
+=========================================================================
+KULLANIM: Kling 3.0'da klibi aç → SÜRE kutusunu HEDEF'e çek → aşağıdaki bloğu
+"Describe the video" kutusuna yapıştır → üret → aynı dosya adıyla klasöre koy.
+PROMPT DEĞİŞMEDİ — motion metni birebir aynı, yalnız süre artıyor.
+
+Bittiğinde tek komut:
+  node scripts/kaba-kurgu.mjs "agents/COMMAND-INBOX/5. Sınıf - Kütle ve Ağırlık" \
+    --klipler "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Kütle ve Ağırlık"
+
+
+
+=========================================================================
+K02   dosya: 2.mp4   ŞU AN 6s  →  ÜRET: 8s   (VO gerçekte 7.8s)
+NOT: "200 g" ekranı — son 2 sn yazıya bak
+VO02 "...ekranda beliren sayıyı yüksek sesle okudu: iki yüz gram."
+-------------------------------------------------------------------------
+MOVE: Efe's fingertips settle the apple onto the scale platform and his hand withdraws a few centimetres, his gaze dropping to the glowing display — one settling motion.
+AMBIENT: faint steam rises from the pot behind; a soft glint travels once across the apple skin; the lemons in the bowl catch a gentle warm shift.
+CAMERA: a very slow push-in toward the scale display — justified, the "200 g" reading is the thing being understood.
+LOCK: the display stays exactly "200 g" — do not morph, re-spell, wobble or add any text or extra digits; the apple keeps its single stem and highlight; skin warm matte tan, never green or grey; nobody leaves frame.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: changing digits, 200g becoming other numbers, extra digits, second display, blurry readout, text drift, apple rolling off the scale, hand re-entering, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K04   dosya: 4.mp4   ŞU AN 5s  →  ÜRET: 8s   (VO gerçekte 7.1s)
+NOT: ÇATAL: K04 kararı hâlâ açık (mutfak mı sınıf mı)
+VO04 "...kütle ve ağırlık, aslında bambaşka iki kavramdı."
+-------------------------------------------------------------------------
+MOVE: Efe, leaning against the counter, turns the apple a few degrees in his hand as the two ideas settle — one slow contemplative beat.
+AMBIENT: the warm and cool light pools breathe very slightly against each other on the counter; steam curls at the stove; dust motes drift through the divide.
+CAMERA: locked off — the split of warm and cool light does the work, no move.
+LOCK: the light stays split into two soft pools and never merges into one flat wash; the apple stays one dark-red apple; skin warm matte tan; no on-screen text, no arrows, no diagram, no measuring instruments.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: light pools merging into one flat wash, measuring instruments appearing, balance, dynamometer, arrows, diagram, title text, second person, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K05   dosya: 5.mp4   ŞU AN 5s  →  ÜRET: 7s   (VO gerçekte 6.6s)
+VO05 "...ikisi gerçekten aynı şey değil miydi?"
+-------------------------------------------------------------------------
+MOVE: Efe slowly rotates the apple in his palm about a quarter turn, his eyes following it with quiet curiosity — one continuous roll.
+AMBIENT: a soft highlight travels across the apple skin as it turns; the blurred fruit bowl behind catches a warm shift; faint steam at frame edge.
+CAMERA: a gentle slow drift toward the apple in his hand, following the curiosity.
+LOCK: the apple stays one glossy dark-red apple with a single highlight and short brown stem; skin warm matte tan, never green or grey; background stays soft-focus, do not sharpen; no text.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: apple deforming while turning, extra apple, second highlight, background sharpening, hand leaving frame, any text, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K07   dosya: 7.mp4   ŞU AN 6s  →  ÜRET: 8s   (VO gerçekte 8.0s)
+VO07 "...elmanın içinde ne kadar madde varsa kütlesi tam olarak oydu."
+-------------------------------------------------------------------------
+MOVE: the warm-gold matter-glow inside the apple slowly intensifies and settles from the core outward — a gentle swell, not a flicker.
+AMBIENT: fine motes drift in front of the lens; Efe's single visible eye behind shifts focus a hair; the kitchen bokeh lights breathe softly.
+CAMERA: an extremely slow push toward the apple, deepening the sense of looking inside it.
+LOCK: the inner glow stays a soft warm-golden matter-light and never becomes fire, embers, a flower or a diagram; the apple keeps its shape, no melt or morph; Efe stays soft-focus behind, do not sharpen; no text.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: inner glow becoming fire, embers, flames, flower, petal, cross-section diagram, cutaway lines, x-ray, apple melting or deforming, background sharpening, any text, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K08   dosya: 8.mp4   ŞU AN 5s  →  ÜRET: 10s   (VO gerçekte 10.2s)
+NOT: EN KRİTİK — birleşik beat, yazı yok, rahat bas
+VO08 "...kollar dengelenene kadar ekleniyordu."
+-------------------------------------------------------------------------
+MOVE: Efe sets the small brass weight he holds into the right pan and lifts his fingers away; the balance beam swings gently and eases toward level — one settling oscillation, no snap.
+AMBIENT: the chains of both pans sway a little as the beam moves; a warm glint runs along the polished brass; the window light shifts faintly.
+CAMERA: minimal, near-locked with only a hair of settle — the rigid brass balance must not warp.
+LOCK: the balance is a rigid solid — no deform, melt, morph, merge or pass-through; the apple stays in the left pan; the beam eases toward balance but pans and weights do not multiply or teleport; skin warm matte tan; no text.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: balance beam deforming, melting, bending, pans multiplying, weights teleporting, chains detaching, apple leaving the pan, snap swing, violent oscillation, any text or numbers, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K11   dosya: 11.mp4   ŞU AN 5s  →  ÜRET: 6s   (VO gerçekte 5.3s)
+VO11 "Elmanın kütlesi kutupta, Dünya'nın öbür ucunda ya da Mars'ta da değişmezdi."
+-------------------------------------------------------------------------
+MOVE: the balance pans settle millimetre by millimetre into balance, the pointer reaching dead centre.
+AMBIENT: dust motes drift inside the dome; the planet in the middle porthole turns very slowly; the red Mars sits calm at right.
+CAMERA: a very slow dolly-in centring the balance between the three portholes.
+LOCK: no split screen, no flag, no logo, no franchise; the three portholes and planets stay stable, do not morph or swap; the brass balance is rigid solid, no deform/melt/morph/merge.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: split screen, divided frame, flag, agency logo, franchise spacecraft, portholes swapping content, planets morphing, moon appearing, balance deforming, any text, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K15   dosya: 15.mp4   ŞU AN 5s  →  ÜRET: 6s   (VO gerçekte 5.5s)
+NOT: REVİZE bekliyor: alçak hop + temas gölgesi
+VO15 "Neden zıpladığında havada asılı kalmıyordu..."
+-------------------------------------------------------------------------
+MOVE: Efe comes down from a small hop, his shoes meeting the tiled floor and his knees softly absorbing the landing — he comes back DOWN, no rise, no float.
+AMBIENT: the mother continues a small calm task behind; the pendant lamp is steady; the apple on the counter stays still.
+CAMERA: locked, no travel — the downward landing is the whole beat.
+LOCK: no hovering or levitation, the boy must come down, the contact shadow under the shoes stays and meets the floor; body rigid, no stretch/morph.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: boy hovering, levitating, floating high, flying, feet leaving contact, missing contact shadow, body stretching, superhero pose, arrows, any text, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K23   dosya: 23.mp4   ŞU AN 5s  →  ÜRET: 10s   (VO gerçekte 9.9s)
+NOT: "60 kg" plakası — son 2 sn yazıya bak
+VO23 "...terazi altmış kilogram gösteriyordu."
+-------------------------------------------------------------------------
+MOVE: the balance beam gives one last small swing and settles level, the apple side steadying; @efe_space turns his head slightly toward the balance (two beats, overlapping).
+AMBIENT: the Earth in the window turns very slowly; the stars shimmer faintly.
+CAMERA: a very slow 3% push-in, locked — keep the "60 kg" plate legible.
+LOCK: the "60 kg" plate is frozen — do not morph/re-spell/wobble; the balance is rigid solid, no deform/morph; no flag, no agency logo, no franchise astronaut; the warm skin behind the visor is preserved.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: 60 kg plate morphing, re-spelling, becoming 60 66 or other digits, extra digits, balance deforming or melting, pans multiplying, flag, agency logo, franchise astronaut, NASA, helmet deforming, grey or green skin behind visor, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K31   dosya: 31.mp4   ŞU AN 6s  →  ÜRET: 8s   (VO gerçekte 7.6s)
+NOT: "KÜTLE" tabelası
+VO31 "Kütle maddenin kendisiydi; değişmezdi... birimi kilogramdı."
+-------------------------------------------------------------------------
+MOVE: the balance beam settles into balance with one last small swing, the pans steadying (apple one side, brass weights the other).
+AMBIENT: dust motes drift slowly in the window light; a glint slides on the globe surface; the pan chains damp to stillness.
+CAMERA: a slow push-in framing the balance and the "KÜTLE" plaque, calm.
+LOCK: the "KÜTLE" plaque is frozen — do not morph/re-spell/wobble, keep the Ü two dots; the brass balance is rigid solid, no deform/melt/morph; the apple stays one deep-red apple; the smart board stays a dark screen, never a chalkboard.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: KÜTLE plaque morphing, re-spelling, losing the umlaut dots, balance deforming or melting, pans multiplying, apple deforming, chalkboard appearing, checklist, chart, arrows, English word, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K32   dosya: 32.mp4   ŞU AN 6s  →  ÜRET: 10s   (VO gerçekte 10.1s)
+NOT: "AĞIRLIK" tabelası — son 2 sn yazıya bak
+VO32 "Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi..."
+-------------------------------------------------------------------------
+MOVE: the hanging apple sways a millimetre on the dynamometer hook and stops; the red indicator inside the spring settles one notch.
+AMBIENT: dust motes drift gently in the warm light; light slides slightly on the globe surface.
+CAMERA: a very slow, subtle push-in on the dynamometer; settles centred.
+LOCK: the "AĞIRLIK" plaque is frozen — do not morph/re-spell/wobble; the dynamometer is rigid solid, no deform/melt/morph/merge; the scale ticks are frozen.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement.
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: AĞIRLIK plaque morphing, re-spelling, losing the Ğ breve, scale ticks changing, dynamometer deforming or melting, apple detaching from hook, globe warping, chart, arrow, floating title, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin
+
+
+=========================================================================
+K35   dosya: 35.mp4   ŞU AN 7s  →  ÜRET: 10s   (VO gerçekte 9.9s)
+NOT: kapanış, yazı yok, rahat bas
+VO35 "...Merakla kalın, bilimle kalın!"
+-------------------------------------------------------------------------
+MOVE: Efe holds his backward glance; a warm closed-mouth smile settles a touch and he lifts the apple slightly.
+AMBIENT: steam curls from the copper pot; the lace curtain breathes; the mother continues at the counter with one quiet hand motion (same liveliness as the opening).
+CAMERA: a very slow, calm settle and hold — no push, a closing stillness.
+LOCK: no end card, no caption, no text appears; Efe's outfit and the bitten apple stay identical to K34; the mother stays consistent; skin tone warm matte.
+SILENT: silent clip, no audio, no dialogue, mouth closed, no lip movement (VO is a separate ElevenLabs layer).
+OPTICS: no whip-pan, no shake, no snap-zoom, no camera warp.
+NEGATIVE: end card, closing card, title card, caption appearing, text fading in, logo, apple becoming whole again, bite mark disappearing, outfit changing, mother disappearing, English sign, warped text, extra limbs, extra fingers, duplicate character, morphing face, melting object, flicker, strobe, jitter, camera shake, whip pan, snap zoom, lens warp, motion blur smear, ghosting, subtitle, caption, watermark, logo, new object appearing, scene change, cut, green or grey skin, plastic skin

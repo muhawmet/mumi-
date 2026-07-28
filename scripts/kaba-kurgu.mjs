@@ -335,6 +335,44 @@ const items = kareler.map((kr, i) => {
 });
 const toplamFr = cursor;
 
+// ---------- 5d. KOMŞUDAN ÖDÜNÇ — yavaşlatmadan önceki son çare ----------
+// Mami (2026-07-28): "35'i tekrar üretmeme gerek yok, boşa masraf — 34-35 arası ahenk yaparsın."
+// Klip VO'suna yetmiyorsa, ÖNCEKİ klibin artan malzemesi varsa sınır geriye kaydırılır:
+// önceki klip daha uzun oynar, bu klip geç başlar. Ses görüntüden önce girer — bu bir kusur
+// değil, standart kurgu (VO lead). Böylece ne yavaşlatma ne yeniden üretim gerekir.
+const klipSuresi = (it) => {
+  if (!it.dosya || !ffprobe) return it.klipSn;
+  const s = sureOf(it.dosya);
+  return s || it.klipSn;
+};
+for (let i = 1; i < items.length; i++) {
+  const it = items[i];
+  const kaynakSn = klipSuresi(it);
+  const slotSn = (it.end - it.start) / fps;
+  const acik = slotSn - kaynakSn;
+  if (acik <= 0.05) continue;                    // yetiyor
+  const onc = items[i - 1];
+  const oncKaynak = klipSuresi(onc);
+  const oncSlot = (onc.end - onc.start) / fps;
+  const oncArtan = oncKaynak - oncSlot;          // öncekinin kullanılmayan malzemesi
+  if (oncArtan <= 0.05) continue;                // öncekinde de yok
+  const odunc = Math.min(acik, oncArtan);
+  const oduncFr = Math.round(odunc * fps);
+  onc.end += oduncFr;                            // önceki daha uzun oynar
+  onc.outFr = Math.min(sn2fr(oncKaynak), onc.outFr + oduncFr);
+  it.start += oduncFr;                           // bu klip geç başlar (VO önden girer)
+  it.oduncAldi = odunc;
+}
+// ödünç sonrası hızları yeniden hesapla
+for (const it of items) {
+  const slotFr = it.end - it.start;
+  const kaynakFr2 = sn2fr(klipSuresi(it));
+  const gereken = (kaynakFr2 / slotFr) * 100;
+  it.hiz = gereken >= 99.5 ? 100 : Math.max(45, gereken);
+  it.outFr = Math.min(kaynakFr2, Math.round(slotFr * (it.hiz / 100)));
+  it.yavas = it.hiz < 99.5;
+}
+
 // ---------- 6. XML ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pathurl = (abs) => 'file://localhost' + abs.split('/').map((p, i) => (i === 0 ? p : encodeURIComponent(p))).join('/');
@@ -481,6 +519,8 @@ if (beklenen.length) console.log(`   🔴 SIRA BOŞLUĞU: K${beklenen.join(' K')
 if (kareler[0].k !== 1) console.log(`   🔴 plan K${kareler[0].k}'ten başlıyor — K01–K${kareler[0].k - 1} arası satır yok`);
 
 if (eksik.length) console.log(`   ⚠ klip yok: ${eksik.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} (XML'de boşluk bırakıldı)`);
+const oduncler = items.filter((it) => it.oduncAldi);
+if (oduncler.length) console.log(`   🤝 komşudan ödünç (yavaşlatma yerine): ${oduncler.map((e) => `K${String(e.k).padStart(2,'0')}+${e.oduncAldi.toFixed(1)}s`).join(' ')}`);
 const yavaslar = items.filter((it) => it.yavas && !it.tasma);
 if (yavaslar.length) console.log(`   ⏱ yavaşlatıldı (VO'ya sığsın diye): ${yavaslar.map((e) => `K${String(e.k).padStart(2,'0')}%${Math.round(e.hiz)}`).join(' ')}`);
 if (tasan.length) console.log(`   🔴 %35'te bile sığmadı: ${tasan.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} — burada boşluk kalır`);
