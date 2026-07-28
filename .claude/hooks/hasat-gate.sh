@@ -10,9 +10,10 @@
 # (M7). Blokesi olan bir kapı burada yanlış olurdu — ama sessiz geçen bir kapı daha yanlış.
 set -uo pipefail
 
-command -v node >/dev/null 2>&1 || exit 0
-cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
-[ -f scripts/kapanis-hasadi.mjs ] || exit 0
+# ÖLÇEMEDİ ≠ TEMİZ — bir ön koşul düşerse sessizce exit 0 verme (kapı yok sanılır); yüksek sesle söyle.
+command -v node >/dev/null 2>&1 || { printf '%s\n' "[hasat] node yok — kapı ÖLÇEMEDİ (temiz demek değil)." >&2; exit 0; }
+cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || { printf '%s\n' "[hasat] proje dizinine girilemedi — kapı ÖLÇEMEDİ." >&2; exit 0; }
+[ -f scripts/kapanis-hasadi.mjs ] || { printf '%s\n' "[hasat] scripts/kapanis-hasadi.mjs yok — kapı ÖLÇEMEDİ." >&2; exit 0; }
 
 OUT=$(node scripts/kapanis-hasadi.mjs --check 2>&1) || {
   printf '%s\n' "[hasat] $OUT"

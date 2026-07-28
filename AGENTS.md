@@ -3,16 +3,22 @@
 Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak kurallar
 `docs/ai/PROJECT_CONTRACT.md` içindedir; göreve başlamadan önce onu oku.
 
-## Aktif dönüşüm — Decision Pipeline
+## Faz anahtarı — hangi yasayla açılıyorsun
 
+<!-- FAZ ANAHTARI (CLAUDE.md ile AYNI import'u taşır — docsContract.test.ts kilitler). İNŞA →
+     İCRAAT 2026-07-28'de çevrildi; Codex de artık İCRAAT dünyasına açılır, İNŞA'ya değil. -->
+
+- **Aktif faz: İCRAAT** — yürütme profili `@docs/ai/faz-icraat.md` (video üret). İnşa uykuda:
+  `@docs/ai/faz-insa.md` (duvar kur). Hangi profil aktifse `CLAUDE.md`'nin ilk import satırı söyler;
+  iki giriş sözleşmesi **aynı** `docs/ai/faz-*.md`'ye işaret etmek zorunda.
 - Durum: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — **her oturumda önce bunu oku.**
-- Yürütme sözleşmesi: `.agents/skills/mamilas-pipeline/SKILL.md` (task sırası, kapılar, receipt, `/clear`).
 - Tamamlanmış task'ı yeniden yapma. Çelişki varsa `FACT REQUIRED` ile dur; sohbet hafızasından varsayma.
 - Claude ve Codex **aynı** state ve receipt dosyalarını yazar. İkinci bir gerçeklik üretme.
 
 ## Önce oku
 
 - `docs/ai/PROJECT_CONTRACT.md` — değişmez ürün ve çalışma kuralları.
+- `docs/ai/CODEX.md` — Codex'e özgü oturum, araç ve usage disiplini.
 - İlgili çekirdek dosyalar — gerçek davranışın kaynağı Markdown değil koddur.
 - Görev bir görsel üretimi, audit veya kalite kapısıysa `.agents/skills/` altındaki
   uygun skill'i kullan.

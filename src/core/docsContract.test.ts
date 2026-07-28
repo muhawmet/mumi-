@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, test } from 'vitest';
 import { AUTHORITY_HIERARCHY } from './brain';
@@ -210,5 +210,79 @@ describe('ders bankası kanalı — banka üretime bağlı kalır', () => {
       const lf = (s: string) => s.replace(/\r\n/g, '\n');
       expect(lf(readFileSync(b, 'utf8')).includes(BANK)).toBe(lf(readFileSync(a, 'utf8')).includes(BANK));
     }
+  });
+});
+
+// META-DUVAR — duvarları denetleyen duvar (2026-07-28 keşif turu, D-1).
+//
+// Ölçülen kusur: buddy-gate.sh + hasat-gate.sh git index'inde 100644'tü; Mac'te her SessionStart'ta
+// `permission denied` (exit 126) ile SESSİZCE ölüyordu. gate.sh'ın 07-27 python3 no-op'unun birebir
+// aynası — kusur türü farklı (biri filtre, biri exec-bit), KÖRLÜK aynı: sistem "duvar kuruldu" ile
+// "duvar ateşliyor"u ayırt edemiyordu. Bu blok o körlüğü kırmızıya bağlar: settings.json'da kayıtlı
+// her hook DOSYA olarak var VE çalıştırılabilir olmak zorunda. Windows'ta exec-bit taşınmaz, ama
+// index modu taşınır (git 100755) — bu yüzden test index modunu değil dosya sistemini ölçer ve
+// gate.sh'ın kendi 0b yasasını ("sessiz geçiş yasak") hook altyapısının kendisine uygular.
+describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşleşir', () => {
+  const settings = JSON.parse(read('.claude/settings.json')) as {
+    hooks?: Record<string, Array<{ hooks?: Array<{ type?: string; command?: string }> }>>;
+  };
+
+  function hookPaths(): string[] {
+    const paths: string[] = [];
+    for (const group of Object.values(settings.hooks ?? {})) {
+      for (const entry of group) {
+        for (const h of entry.hooks ?? []) {
+          if (h.type !== 'command' || !h.command) continue;
+          // "$CLAUDE_PROJECT_DIR"/... ya da bash "$CLAUDE_PROJECT_DIR"/... → repo-göreli yol
+          const m = h.command.match(/\.claude\/hooks\/[A-Za-z0-9._-]+\.sh/);
+          if (m) paths.push(m[0]);
+        }
+      }
+    }
+    return [...new Set(paths)];
+  }
+
+  test('en az bir SessionStart + bir PreToolUse hook kayıtlı (kayıt sessizce boşalmasın)', () => {
+    expect(Object.keys(settings.hooks ?? {})).toEqual(
+      expect.arrayContaining(['PreToolUse', 'SessionStart', 'PostToolUse']),
+    );
+    expect(hookPaths().length).toBeGreaterThanOrEqual(3);
+  });
+
+  test.each(hookPaths())('%s hem VAR hem ÇALIŞTIRILABİLİR (exit 126 bir daha saklanmaz)', (rel) => {
+    const abs = resolve(REPO, rel);
+    expect(existsSync(abs), `${rel} settings.json'da kayıtlı ama dosya yok`).toBe(true);
+    // Unix exec biti (owner/group/other herhangi biri). git index modu 100755 bunu taşır;
+    // 100644 (bugün ölen mod) burada kırmızı verir — testin var oluş sebebi tam bu.
+    const mode = statSync(abs).mode;
+    expect(Boolean(mode & 0o111), `${rel} çalıştırılabilir değil (mod ${(mode & 0o777).toString(8)}) — SessionStart'ta 126 ile ölür`).toBe(true);
+  });
+});
+
+// CODEX PARİTE — iki giriş sözleşmesi aynı dünyaya açılır (2026-07-28 keşif turu, T-4/T-5).
+//
+// Ölçülen kusur: faz anahtarı (İNŞA→İCRAAT) 07-28'de yalnız CLAUDE.md'ye yazıldı; AGENTS.md hâlâ
+// 13 gün önce kapanmış "Decision Pipeline / mamilas-pipeline" dünyasına açıyordu — Codex yanlış
+// yasayla başlıyordu ve hiçbir test bunu ölçmüyordu. Ayrıca İCRAAT'ın kare-denetim skill'i
+// (mamilas-denetim) yalnız .claude yüzeyinde doğmuştu. Bu blok ikisini de kilitler.
+describe('codex parite — AGENTS.md ile CLAUDE.md aynı faza açar', () => {
+  test('iki giriş sözleşmesi de AKTİF faz profiline işaret eder (Codex kapanmış faza açılmaz)', () => {
+    const claude = read('CLAUDE.md');
+    const agents = read('AGENTS.md');
+    const active = claude.match(/@(docs\/ai\/faz-[a-z]+\.md)/);
+    expect(active, 'CLAUDE.md faz import satırı yok').not.toBeNull();
+    const fazPath = active![1];
+    expect(agents.includes(fazPath), `AGENTS.md aktif faza (${fazPath}) işaret etmiyor — Codex yanlış yasayla açılır`).toBe(true);
+    // AGENTS.md kapanmış İNŞA yürütmesini birincil sözleşme olarak göstermemeli.
+    expect(agents).not.toMatch(/Yürütme sözleşmesi:\s*`?\.agents\/skills\/mamilas-pipeline/);
+  });
+
+  test('.claude/skills ile .agents/skills küme olarak eşit — yeni skill tek yüzeyde doğmaz', () => {
+    const dirs = (base: string) =>
+      readdirSync(resolve(REPO, base), { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name)
+        .sort();
+    expect(dirs('.agents/skills')).toEqual(dirs('.claude/skills'));
   });
 });

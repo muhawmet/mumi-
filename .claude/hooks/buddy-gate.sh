@@ -16,7 +16,8 @@
 set -uo pipefail
 
 INPUT=$(cat)
-command -v node >/dev/null 2>&1 || exit 0
+# ÖLÇEMEDİ ≠ TEMİZ — node yoksa buddy protokolü hiç yüklenmez; sessiz geçme, söyle.
+command -v node >/dev/null 2>&1 || { printf '%s\n' "[buddy] node yok — hayat katmanı YÜKLENEMEDİ (temiz demek değil)." >&2; exit 0; }
 
 EVENT=$(printf '%s' "$INPUT" | node -e \
   'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=JSON.parse(s);process.stdout.write(String(j.hook_event_name??""))}catch{}})' 2>/dev/null || true)
