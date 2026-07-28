@@ -105,6 +105,30 @@ const SLOTS = [
     why: 'Yokluğunda 11 karede bozuk/İngilizce tabela + "R = 0 N"→"R = ON" (Bileşke 0/52).',
   },
   {
+    // 2026-07-28 (Mami: "paso tahtaya çakıyorsun yazıyı"). Yasa §11a/§11b.
+    // Eski `text` kuralı yalnız satırın VAR olduğuna bakıyordu; tekdüzelik kapıya
+    // hiç görünmüyordu. Üreme'de 14 karenin 14'ü aynı hamleydi ve lint yeşildi.
+    key: 'textCarrier',
+    label: 'TEXT harf karakteri (malzeme ya da tasarım)',
+    test: (b) => {
+      const t = (b.match(/^TEXT:.*$/im) || [''])[0];
+      // Yazısız kare meşrudur — bu kural yalnız yazı VARSA konuşur.
+      if (!t || /\bnone\b|clean plate|no on-screen text/i.test(t)) return true;
+      // İki meşru yol (§11a): (a) sahnenin nesnesinde yaşayan yazı — o nesnenin baskı/
+      // el yazısı/damga malzemesi yazılır; (b) o ana yakışacak TASARLANMIŞ ekran yazısı —
+      // nesne şart değil ama harfin nasıl var olduğu yine yazılır. Ortak koşul: harf
+      // karakteri tarif edilmiş olmalı. Boş bırakılırsa ajan tek alışkanlığa düşüyor.
+      // Sözlük iki koldan bakar: (a) baskı/el işi terimleri, (b) "şu MALZEMEDEN yapılmış"
+      // kuruluşu — çünkü tasarlanmış yazının malzemesi bir yazı tipi adı değil, bir madde
+      // olur ("tide-worn damp sea-sand matter with pebbled grain"). Sözlük dar kaldığında
+      // doğru yazılmış kareyi kırmızı verdi (K21), o yüzden genişletildi.
+      return /\b(printed|offset|handwritten|hand-written|pencil|ink|stamped|embossed|engraved|chalked|serif|sans|typewriter|marker|felt-tip|letterpress|thermal|scrawl|painted|stencil|etched|woven|carved|typograph|letterform|typeface|glyph|strokes?|counters?|terminals?)\b/i.test(t)
+        || /\b(built|made|formed|cut|shaped|woven|wiped|drawn)\b[^.]{0,60}\b(as|of|from|out of|through)\b/i.test(t)
+        || /\b(matter|grain|texture|fibre|fiber|material)\b/i.test(t);
+    },
+    why: 'Yazı ya sahnenin kendi nesnesinde yaşar (o nesnenin baskısıyla) ya da o ana yakışacak biçimde tasarlanır — ikisi de serbest, ama harfin NASIL var olduğu yazılmazsa ajan boşluğu tek alışkanlıkla dolduruyor: "kabartma parlayan harfler masada".',
+  },
+  {
     key: 'neg',
     label: 'NEGATIVE: slotu (ayrı satır)',
     test: (b) => /^NEGATIVE:/im.test(b) || /FRAME NEGATIVE/i.test(b),
@@ -120,6 +144,8 @@ const TRAPS = [
   // bu yüzden REAL'de yalnız TENE yakınsa tuzaktır (§2R: ten tersine döner, malzeme dönmez).
   { re: /\bsheen\b/i, fix: 'subsurface-style translucency — "sheen" plastik cilt doğuruyor', registers: ['EDU', 'STY'] },
   { re: /\bskin\b[^.]{0,40}\bsheen\b|\bsheen\b[^.]{0,40}\bskin\b/i, fix: 'tende sheen = plastik cilt; yüzeyde serbest, tende asla', registers: ['REAL'] },
+  // Tekdüzelik imzası: Üreme'de yazılı 14 karenin 14'ünde birebir bu kalıp vardı.
+  { re: /blocky[^.]{0,80}\braised\b|\braised\b[^.]{0,40}\bdimensional\b/i, fix: 'sahneye ait TAŞIYICI seç (tohum paketi, fidan etiketi, defter sayfası, kavanoz kapağı) — "blocky raised dimensional" havada duran kavram kelimesidir, on dört karede aynı hamle çıktı' },
   { re: /\bnegative space\b/i, fix: 'pozitif dekor tarifi — "negative space" boş void doğuruyor' },
   { re: /\bclean table\b/i, fix: 'giydirilmiş yüzey — "clean table" void doğuruyor' },
   // İki REAL dünyanın da negatif kilidinde açık madde: stil sıfatı/imza adı malzemenin yerine geçemez.
@@ -167,9 +193,18 @@ function lintBlock(body, register = 'EDU') {
     if (s.soft && !s.needsIf) continue;
     problems.push({ kind: 'slot', key: s.key, msg: `${s.label} YOK`, why: s.why });
   }
+  // 2026-07-28: tuzak taraması NEGATIVE satırını atlar. Tuzak kelimeler motorun POZİTİF
+  // tarifte gördüğünde bozduğu kelimelerdir; NEGATIVE'de aynı kelime **yasak** olarak
+  // yazılır ve orada bulunması doğrudur. Eski hal ikisini ayırmıyordu: "no bare white or
+  // dark negative space" yazan bir kare, tam da doğru olanı yaptığı için kırmızı alıyordu.
+  // Yalancı kapı, okunmayan kapıdır.
+  // NEGATIVE son slottur (yasa §slot sırası), o yüzden sonuna kadar kesilir.
+  // ⚠ `\Z` KULLANMA: JavaScript'te yoktur, literal 'Z' harfine düşer ve kesme sessizce
+  // hiç çalışmaz — ilk yazımda tam bu oldu, kural yeşil görünüp çalışmıyordu.
+  const pozitif = body.replace(/^NEGATIVE:[\s\S]*/im, '');
   for (const t of TRAPS) {
     if (!appliesTo(t, register)) continue;
-    if (t.re.test(body)) problems.push({ kind: 'trap', key: 'tuzak', msg: `tuzak kelime: ${t.re.source.replace(/\\b/g, '')}`, why: `→ ${t.fix}` });
+    if (t.re.test(pozitif)) problems.push({ kind: 'trap', key: 'tuzak', msg: `tuzak kelime: ${t.re.source.replace(/\\b/g, '')}`, why: `→ ${t.fix}` });
   }
   const style = body.match(/^STYLE:([\s\S]*?)(?=^\w[\w ]*:|\Z)/im);
   if (style) {

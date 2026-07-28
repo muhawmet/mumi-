@@ -1,0 +1,8 @@
+### K8 | 10s · ekranda ~6s | VO "Üreme hücresi de yoktu. Ortada tek bir ata canlı vardı, hepsi bu."
+KAMERA NİYETİ: Kamera masa hizasında tek ışığın etrafında sola kavis çizsin — defter ve raf kadrajdan çıksın, sonda ortada yalnız o ışık ve arkasında çocuk kalsın.
+-----
+The camera orbits slowly leftward around the single glow at desk height, easing into the arc and easing out of it, so the notebook and the shelf swing off the right edge of frame and the wood opens up empty around the light — by the end the glow sits alone in the centre with the boy behind it and nothing beside it. At first the glow burns steady and low and he is watching it with his chin flat on his forearms. Then it swells once, gently, and its warm pool spreads further across the boards, reaching his face. Finally it draws back down to its original size and holds, and as it does his eyes lift off the light and go slightly unfocused, the small smile fading into something quieter — he began looking at it and ends thinking about it. Dust motes turn through the pool of light, the curtain stirs. Exactly one glow, no second light of any colour joins it; it stays a soft round light and never becomes a flower, petal, flame or arrowhead. Do NOT morph, re-spell, sharpen or add ANY text — the notebook label and every background book spine stay soft and out of focus. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+NOT: Defter kapağındaki isim etiketi ve arka raftaki kitap sırtları karede okunaksız — kamera bilerek sola, o bölgeden uzağa kavis atıyor ve prompt ikisini de yumuşak/odak dışı kilitliyor; kadrajın sonunda ikisi de çerçeve dışında kalır.

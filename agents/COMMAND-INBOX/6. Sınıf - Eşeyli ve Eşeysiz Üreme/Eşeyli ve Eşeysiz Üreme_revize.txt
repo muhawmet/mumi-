@@ -1,0 +1,200 @@
+EŞEYLİ VE EŞEYSİZ ÜREME — 6. SINIF · REVİZE LİSTESİ
+=========================================================================
+Tarama: 50/50 kare, dört bağımsız ajan, her yazı yüzeyi ffmpeg ile büyütülüp
+harf harf okundu. Tarih: 2026-07-28.
+
+MAKRO HÜKÜM — İMLA 50/50 TEMİZ.
+Harf harf doğrulanan yazılar: EŞEYSİZ ÜREME · BİTKİLER · BÖLÜNEREK ÜREME ·
+TOMURCUKLANMA · 15 NİSAN · BİRA MAYASI · REJENERASYON · ÜREME DEĞİL · FASULYE ·
+VEJETATİF ÜREME · PATATES/3 NİSAN · HİDRA · EŞEYLİ ÜREME · YUMURTA+SPERM ·
+DÖLLENME · ZİGOT · HAZİRAN · ÇEŞİTLİLİK(×2) · ATA SAYISI · ÜREME HÜCRESİ.
+Tek istisna K11'di ("BÖLÜNEK"), düzeltildi. Yazı yasası tuttu.
+
+KUSURUN TAMAMI SÜREKLİLİKTE ve dört sınıfta toplanıyor:
+  · KOSTÜM kayması — 5 kare (K8·K18·K29·K40·K46)
+  · DÜNYA kayması — balkondan Paris/İtalya/Fransa görünüyor, Anadolu hiç yok
+  · YAZI/NESNE gövde üstünde — 4 kare (K6·K21·K30·K46), dördünde de prompt
+    bunu NEGATİF olarak yasaklamıştı ve negatif tutmadı
+  · CAM/SU içinde KOPYA çoğalması — K18·K19
+
+KULLANIM: her blok bir kare. Türkçe satır sebeptir (yapıştırma), tırnak içindeki
+İngilizce cümle Magnific/NB2'ye referans-edit olarak yapıştırılır. Sahne baştan
+tarif EDİLMEZ — görsel zaten referans olarak bağlıdır.
+
+=========================================================================
+A · BASILAMAZ — bunlar ekranda görülür, ders bunlarla teslim edilmez
+=========================================================================
+
+### 3.png
+Kapı eşiğinde kimseye ait olmayan iki gri bacak + terlik duruyor (anatomi artefaktı).
+Use this referenced image, change ONLY: remove the pair of grey legs and slippers standing in the doorway so the threshold is completely empty — exactly two people in frame, no third figure and no detached limbs. Keep everything else identical.
+
+### 40.png
+Duvar takviminin gün başlıkları İNGİLİZCE ("SUN MON TUE WED") — Türkçe dersin ekranında.
+Use this referenced image, change ONLY: the calendar's weekday abbreviations to Turkish — PZT SAL ÇAR PER CUM CMT PAZ — keeping the month word HAZİRAN exactly as it is. Keep everything else identical.
+
+### 42.png
+Ortadaki yavru ve anne kedi PEMBE kürklü; yanındaki turuncu yavruya pembe hiç düşmemiş,
+yani renk lambadan değil kürkten geliyor. Biyoloji dersinde olmayan kedi rengi.
+Use this referenced image, change ONLY: the pink pendant lamp to a warm-white one, and the middle kitten's fur to natural cream-and-grey — no pink fur on any cat, the mother cat stays plain ginger tabby. Keep everything else identical.
+
+### 47.png
+Karede İKİ defter var: yazı ön plandaki neredeyse dik duran ayrı deftere yazılmış,
+çocuk ise arkadaki başka deftere yazıyor.
+Use this referenced image, change ONLY: keep exactly ONE notebook, lying flat and open on the desk, with the handwritten heading ÜREME HÜCRESİ on its page and the pencil tip resting at the end of that line. Keep everything else identical.
+
+### 49.png
+Sepette tek yavru var; VO "yavrular sepette" diyor, referans üç yavru.
+Use this referenced image, change ONLY: put all three kittens in the basket — one ginger with a blaze, one cream-and-grey, one chocolate — the mother cat sitting beside it. Keep everything else identical.
+
+### 50.png
+Sepette iki yavru var ve anne kedi hiç yok.
+Use this referenced image, change ONLY: the basket holds the mother cat and all three kittens together, softly out of focus behind his shoulder. Keep everything else identical.
+
+=========================================================================
+B · DÜNYA VE KOSTÜM — filmin kendisiyle çelişiyor
+=========================================================================
+
+### 1.png
+Balkon manzarası Anadolu kiremit çatı; K2 gökdelen, K3-K5 Paris mansart. Dünya üç ülke.
+Ayrıca prompt'un tek yazısı olan FESLEĞEN fidan etiketi karede hiç doğmamış.
+Use this referenced image, change ONLY: add a white plastic plant label pushed into the soil of the front basil pot, facing camera, heat-stamped FESLEĞEN in a thin condensed sans. Keep everything else identical.
+
+### 2.png
+Efe SOL elinde ikinci bir su bardağı tutuyor (hero bardak ayrıca ledge'de) ve hero
+bardaktaki gülün pembe tomurcuğu kayıp — sadece dikenli çubuk kalmış.
+Use this referenced image, change ONLY: both of @efe's hands empty with no second glass anywhere, and the rose cutting in the single hero glass carries its pink bud at the top of the stem. Keep everything else identical.
+
+### 3.png (ikinci fix — yukarıdakiyle birlikte istenebilir)
+Toprak torbasının SAKSI TOPRAĞI baskısı okunmaz kıvrım-yazı olmuş ve kadrajın altından kesilmiş.
+Use this referenced image, change ONLY: bring the soil bag's printed front panel fully inside the lower third of the frame, flat and unwrinkled, the words SAKSI TOPRAĞI set large on two lines in dark green offset serif. Keep everything else identical.
+
+### 5.png · 26.png · 27.png — DÜNYA KİLİDİ (üçü aynı cümleyle)
+Balkondan Paris mansart çatı (K5), Fransız arduvaz dam (K26), kemerli taş kapı +
+kahverengi ahşap korkuluk ve MOR saksı çiçekleri (K27) görünüyor. Hiçbiri Anadolu değil.
+Use this referenced image, change ONLY: the rooftops beyond the balcony to a low Anatolian city skyline — clay tile roofs, solar water heaters and white water tanks, plain rendered apartment blocks — and the balcony railing to the same black wrought iron as the other balcony frames. No mansard roof, no chimney cluster, no slate, no arched stone doorway, no wooden railing. Keep everything else identical.
+(K27 ayrıca: saksı çiçekleri MOR değil canlı KIRMIZI sardunya olmalı.)
+
+### 8.png · 18.png · 29.png · 40.png · 46.png — KOSTÜM KİLİDİ (beşi aynı cümleyle)
+Efe sırasıyla: siyah düz saç · zeytin yeşili tişört · lacivert tişört + 14-15 yaş ·
+hardal tişört · zeytin/bej kazak. Kilit: kırmızı kapüşonlu + kot tulum, güneş-ay rozeti.
+Use this referenced image, change ONLY: @efe wears his locked outfit — coral-red hooded sweatshirt under indigo denim dungarees with the small sun-and-moon badge — with mid-brown wavy hair and a round pre-teen face, clearly eleven or twelve. Keep everything else identical.
+(K8 ayrıca: defter etiketi FEN okunmalı, şu an kapalı gövdeli PEN gibi; raftaki kitap
+sırtlarındaki uydurma Latin kelimeler odak dışına alınmalı.)
+(K29 ayrıca: @anne kilidi — krem hırka, domates kırmızısı bluz, koyu indigo önlük.)
+
+### 34.png · 35.png · 36.png · 37.png · 38.png — @gul DURUM KİLİDİ
+K32'de gül saksıya dikiliyor (dersin dönüm noktası) ama bu beş karede BARDAĞA geri
+dönmüş; K38'de kökler suda görünüyor. Bitki kendi kendini söküyor.
+Use this referenced image, change ONLY: the rose is now PLANTED in its terracotta pot of dark soil — one open rose on a firm woody stem, no glass, no water, no visible roots — standing at the far corner of the desk. Keep everything else identical.
+
+### 44.png
+@anne kilidi kırık (kot pantolon + kırmızı bluz yok) ve yüzü K43'tekinden belirgin genç.
+Use this referenced image, change ONLY: @anne in her locked wardrobe — charcoal-grey trousers, tomato-red blouse — and the same face and age as she has in the corridor frame. Keep everything else identical.
+
+=========================================================================
+C · MOTION'I KIRAR — kamera hareket edince kompozit hatası gibi okunur
+=========================================================================
+Ortak sebep: dört karede de prompt "karakter hiçbir harfin önünde durmaz" diye
+NEGATİF yazmıştı ve tutmadı. Doğrusu konumu OLUMLU yazmak.
+
+### 6.png
+Üç kavram küresinin ikisi defterin sayfası üstünde değil, Efe'nin tulum göğsünde duruyor.
+Use this referenced image, change ONLY: the three glowing spheres hover a hand's width above the open notebook pages — one over the left page, two over the right — with clear empty air between every sphere and @efe's body. Keep everything else identical.
+
+### 21.png
+"REJENERASYON" harfleri çocuğun göğsünden geçiyor; ayrıca ağzı açık (ekranda kimse
+konuşmaz) ve parıltı tek harfte değil son üç harfte.
+Use this referenced image, change ONLY: the sand lettering sits entirely in the empty left half of the frame with clear space between the last letter and the boy, his mouth closed, and the warm glow confined to the final letter N alone. Keep everything else identical.
+
+### 30.png
+Fidan etiketi Efe'nin ağzı ve çenesi üstünden geçip yüzünü ikiye bölüyor.
+Use this referenced image, change ONLY: move the plant label to the LEFT of the pot, entirely clear of @efe's face, his mouth and chin fully visible. Keep everything else identical.
+
+### 31.png
+Ön plandaki korkuluk tek bulanık çubuk değil, kareyi baştan başa kesen 4-5 çubuklu siyah X.
+Use this referenced image, change ONLY: exactly ONE softly defocused iron railing bar grazing the lower-left corner, the strawberry runner and both plants completely unobstructed. Keep everything else identical.
+
+### 46.png
+Efe'nin saçı "S" ve "A" harflerinin altını kesiyor.
+Use this referenced image, change ONLY: raise the lettering one letter-height so the whole word sits clear above @efe's hair, no letter touched or crossed by his head. Keep everything else identical.
+
+=========================================================================
+D · SAHNE HÜKMÜ — ders kareyle kurulmuyor (Mami seçer, zorunlu değil)
+=========================================================================
+
+### 14.png
+VO "üçü de tam ortadan ikiye" diyor ama yalnız paramesyum bölünmüş; öglena ve bakteriler bölünmemiş.
+Use this referenced image, change ONLY: the euglena is pinched into two equal halves at its waist and the bacteria are shown as single rods split cleanly in two — all three organisms mid-division. Keep everything else identical.
+
+### 15.png
+Damlada 9-10 amip var (8 olmalı) ve boyları üç kata varan farkta — "birebir aynı" dersi çürüyor.
+Use this referenced image, change ONLY: exactly eight amoebae in the drop, every one the same diameter as the others, none larger or smaller. Keep everything else identical.
+
+### 17.png
+Hidranın tomurcuğu ebeveynin yeşim dokusunda değil, sert kehribar cam küre — tomurcuk okunmuyor.
+Use this referenced image, change ONLY: the bud on the hydra's side is made of the parent's own pale-jade translucent flesh, same tone and same softness, clearly part of its body and not a glass bead. Keep everything else identical.
+
+### 18.png · 19.png — CAM KOPYASI
+K18'de kavanoz camında üç Efe yüzü, K19'da gül bardağı üçe katlanmış, ayrıca suda
+iki serbest ışık topu yüzüyor.
+Use this referenced image, change ONLY: every object seen through the glass appears exactly once with no repeated or mirrored copy, and no free-floating glowing sphere inside the water. Keep everything else identical.
+
+### 20.png
+Denizanasında tomurcuk yok; "hepsi aynı şeyi yapıyor" hükmü kareyle kurulmuyor.
+Use this referenced image, change ONLY: a small second bell buds visibly from the rim of the jellyfish, made of the same translucent flesh. Keep everything else identical.
+
+### 24.png
+FASULYE etiketi kadrajın en büyük ikinci nesnesi — solucan karesinde en büyük yazı "FASULYE" diyor.
+Use this referenced image, change ONLY: the plant label at half its current size, pushed deeper into the soil and set back into the second plane so the worm pieces read as the subject. Keep everything else identical.
+
+### 25.png
+Cam kap değişmiş (K22/K23'te geniş sığ tabak, burada derin fanus) ve Efe defterine değil sağ üste bakıyor.
+Use this referenced image, change ONLY: the same wide shallow glass dish as the earlier frames, and @efe's gaze down on the pencil tip. Keep everything else identical.
+
+### 33.png
+Banttaki HİDRA'nın İ'si küçük harf boyunda; kavanozdaki hidra yeşil sap + kökçüklerle BİTKİ okuyor.
+Use this referenced image, change ONLY: the taped word reads HİDRA in full-height capitals with the dot clearly above a cap-height İ, and the hydra is a translucent pale-jade animal tube with a fine crown of tentacles, the jar visibly half-filled with water. Keep everything else identical.
+
+### 34.png (ikinci fix)
+Renk ayrımı harf harf değil kelime kelime olmuş: "EŞEY" kehribar, "ÜREME" mavi.
+Use this referenced image, change ONLY: every single letter split down its own vertical centre — left half warm amber, right half cool blue — including the final E, with no left-to-right gradient across the word. Keep everything else identical.
+
+### 37.png
+Raftaki "Uzay Rehberi" ve "Anadolu Efsaneleri" iki farklı rafta birebir tekrar ediyor;
+sırtlarda elma biçimli marka benzeri işaret var.
+Use this referenced image, change ONLY: every book on the shelf carries a different Turkish title with no title repeated anywhere, and no logo, emblem or brand mark on any spine. Keep everything else identical.
+
+### 38.png
+Promptun istediği tek yuvarlak menekşe ışık topu karede yok — VO'nun adını koyduğu "tek hücre" gövdesiz.
+Use this referenced image, change ONLY: one distinct soft round violet orb of light resting on the desktop beside the word, the word sitting half inside its pool. Keep everything else identical.
+
+### 39.png
+Işıktan siluet "türü okunmayan" değil, bacaklı-kulaklı bir ayı/hamster olarak okunuyor
+(promptun kendi negatifini ihlal ediyor); ayrıca defter kapalı, açık ve boş olmalıydı.
+Use this referenced image, change ONLY: the glowing silhouette is one smooth undivided mass of light with no legs, ears or limbs of any kind, and the notebook lies open and blank. Keep everything else identical.
+
+### 43.png
+Aynanın içi karşı duvarı değil, orada olmayan bir pencere + tabloyu yansıtıyor.
+Use this referenced image, change ONLY: the mirror reflects the corridor's own opposite wall with its coat hooks and scarf. Keep everything else identical.
+
+=========================================================================
+E · KARE KUSURU DEĞİL — VO ile kare çelişiyor, karar Mami'nin
+=========================================================================
+K5  — VO "gökteki kuş" diyor, kuş korkulukta tünemiş (uçmuyor).
+K44 — VO "insanlar, kediler, KÖPEKLER, kuşlar" diyor, karede köpek yok.
+      Ya kareye köpek girer ya VO'dan "köpekler" düşer.
+
+=========================================================================
+SİSTEM DERSİ — bu videoya özel değil, kütüphaneye yazılacak
+=========================================================================
+1. KAVRAM IŞIĞI ıslak/saydam dünyada SERT KÜRE basıyor. "soft round warm-golden
+   glow" cümlesi K17'de tomurcuk sanıldı, K19/K22/K23'te suda yüzen cisim oldu.
+   Yasaya eklenecek: "bu parıltı bir nesne değildir — gövdenin üstüne oturur,
+   kendi silueti ve kendi kenarı olmaz, suya batmaz."
+2. @handle DURUM TAŞIMIYOR. @gul "bardakta köklenmiş dal" diye kilitli ama ders
+   içinde saksıya dikiliyor; sonraki kareler @gul çağırınca bardağa geri dönüyor.
+   Hâl değiştiren nesne tek handle'la anlatılamaz — @gul-bardakta / @gul-saksıda.
+3. KONUM NEGATİFLE KORUNMUYOR. "karakter hiçbir harfin önünde durmaz" dört karede
+   yazıldı, dördünde de tutmadı. Doğrusu olumlu: "yazı sol yarıda, çocuk sağ
+   yarıda, aralarında boş masa."

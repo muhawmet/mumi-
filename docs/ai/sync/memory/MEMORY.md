@@ -58,6 +58,7 @@
 
 ## Aktif işler
 
+- [Üretim dersleri 2026-07-28](mamilas-uretim-dersleri-2026-07-28.md) — kusur üç kez ajanda değil YASADAYDI · kavram ışığı ıslak dünyada sert küre · `@handle` durum taşımıyor · konum negatifle korunmuyor · yasak saymak yanıltır.
 - [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — HOT STATE: aktif video yok, 5 işin diskteki gerçek durumu, açık Mami kararları.
 - [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Antigravity CLI; Claude klip izleyemez, Gemini izler. Claude ÖLÇER → agy İZLER → Claude hüküm verir. PATH tuzağı içeride.
 - [Makro bağlantı brief'i](mamilas-makro-baglanti-brief.md) — Mami'nin 7 P0 + M1/M3/M2 operasyonu. **Görev henüz verilmedi; kendiliğinden başlatma.**

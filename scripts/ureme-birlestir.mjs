@@ -6,7 +6,9 @@ import { join } from 'node:path';
 
 const DIR = 'agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme';
 const SRC = join(DIR, 'PROMPTLAR');
-const OUT = join(DIR, 'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md');
+// Teslim dosyaları `.txt` (PROMPT-YASASI §16 — Windows'ta `.md` uğraştırıyor).
+// Script `.md` yazıyordu; bir sonraki koşuda elle yapılan .txt dönüşümünü geri alırdı.
+const OUT = join(DIR, 'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.txt');
 
 const SEKANSLAR = [
   [1, 5, 'SEKANS 1 — AÇILIŞ: SORU'],

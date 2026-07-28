@@ -108,6 +108,41 @@ Mami'nin canlı direktifi çelişkide her zaman kazanır.
     kavram yok; yerine **fayda gösterilir** (dökülüş, temas, kullanım anı).
 11. **Ekran yazısı özgün ve diegetik**: olgudan doğar, VO'nun tekrarı olan caption değildir.
     Yazı karede doğar, karede biter — post-prodüksiyonda yazı katmanı YOK (Mami AE bilmiyor).
+
+    **11a. Yazı, sahnenin ZATEN İÇİNDE OLAN bir nesnede yaşar.** (2026-07-28 ölçümü: Üreme'nin
+    50 karesinin 36'sında yazı hiç yoktu, kalan 14'ünde **aynı hamle on dört kez** tekrarlanmıştı
+    — *"kabartma, boyutlu, parlayan harfler masanın üstünde duruyor."* Kedilerin yanındaki sehpaya
+    pirinç harflerle ÇEŞİTLİLİK dikilmişti. Bu tahta değil ama tahtadan farkı yok: **sahneye ait
+    olmayan bir etiket, sahnenin içine çakılmış.**) Kusur bir yasaktan değil, bu maddenin
+    yokluğundan doğdu: yasa "diegetik" diyordu ama *hangi nesnede* demiyordu, ajanlar boşluğu tek
+    alışkanlıkla doldurdu. **Yazının taşıyıcısı önce seçilir, sonra yazılır.**
+
+    **İki meşru yol vardır, ikisi de serbest** (Mami, aynı gün: *"illa nesneye olmak zorunda
+    değil, ekrana yakışır olsun"*):
+    - **(a) Sahnenin kendi nesnesinde yaşayan yazı** — tohum paketi · saksıya saplı fidan
+      etiketi · market etiketi · kavanoz kapağı · çocuğun defter sayfası · takvim · tabela ·
+      ambalaj · duvara tebeşirle yazılmış iz.
+    - **(b) O ana yakışacak biçimde TASARLANMIŞ ekran yazısı** — nesneye basılı olmak zorunda
+      değil; kareye ait, kompozisyona oturan, anın duygusunu taşıyan bir tipografi. Bölünme
+      sahnesinde ikiye ayrılan harf, tomurcuklanmada yandan filiz veren harf, çeşitlilikte her
+      harfi başka dokuda olan kelime. Karenin ışığını ve malzemesini alır, üstüne yapıştırılmış
+      durmaz.
+
+    Yasak olan bu ikisi değil, **tembel varsayılan**: her seferinde aynı jenerik hamle. Kusur
+    "nesnede değildi" değil, **on dört karede tek bir çözümün tekrarlanmasıydı.** Yazı
+    post-prodüksiyonda eklenmez — kareye basılır (Mami AE bilmiyor), ama kareye basılan yazı da
+    tasarlanabilir.
+
+    **11b. Harf karakteri o nesneye ve o ana ait olmalı.** Tek bir "kahraman yazı tipi" yoktur.
+    Tohum paketinde ofset basılmış eski moda serif, fidan etiketinde plastiğe damgalanmış ince
+    sans, market etiketinde termal yazıcı puntosu, defterde kurşun kalemle çocuk el yazısı,
+    tebeşirde kırık kenarlı iz. **Yazı tipi de sahnenin malzemesidir** — mürekkep kâğıda emer,
+    damga plastikte parlar, kalem kâğıdın dokusunda atlar. Bunu yaz.
+
+    **11c. Cimrilik de kusurdur.** Yazısız kare meşrudur ama **varsayılan değildir**. Kaba
+    hedef: bir derste karelerin **yaklaşık yarısı** sahnenin kendi yazısını taşır. Kalan yarı
+    bilerek temiz kalır — yoksa yazı gürültüye döner. İki uç da hatadır: 36/50 boş da,
+    50/50 dolu da.
 12. **Yeni karakter → önce ayrı REFERANS promptu**, sonra `@handle` ile sahnelerde kullan.
 
 ### Teslim
@@ -147,7 +182,9 @@ Slot sırası bağlayıcı. Başlık satırı yönetmen içindir, prompta girmez
 [9 TEMAS]     Every object rests in contact with its surface and casts a soft contact shadow.
 STYLE: <≤90 kelime dünya kilidi — malzeme spesifik, marka adı YOK>
 LIGHT AND PALETTE: <palet ışık DAVRANIŞI olarak, ham hex asla>
-TEXT: <kahraman yazı HARF HARF + konumu> · <arka plan: soft-focus, Türkçe ya da boş>
+TEXT: <TAŞIYICI NESNE — sahnede zaten var olan> · <HARF KARAKTERİ — o nesnenin malzemesi:
+      basılı/damgalı/el yazısı/tebeşir + nasıl davrandığı> · <yazının kendisi HARF HARF>
+      · <konumu> · <arka plan: soft-focus, Türkçe ya da boş>
 NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>
 -----
 ```
@@ -291,10 +328,65 @@ KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta girmez>
 -----
 ```
 
+### 3a. KLİPTE BİR ŞEY DEĞİŞMELİ — motion'ın §11'i
+
+> **2026-07-28 ölçümü.** Bileşke Kuvvet'in 52 klibinde **333 yasak** ("no X" / "never X") var,
+> buna karşılık zaman omurgası olan **3 klip**. Mami'nin hükmü: *"iğrenç animasyonlar."*
+> Örnek klip: *"yürüyor, çantası sallanıyor, ışık süzülüyor, otobüs uzakta duruyor, koşmuyor,
+> tökezlemiyor, yeni kimse gelmiyor, yüzü kaymıyor, ses yok, whip-pan yok, warp yok."*
+> Kusur bozukluk değil **ölülük**: klibin sonu başından farklı değil. Bu klipler **yönetmiyor,
+> savunuyor.**
+
+Kök sebep [1 DEVAM] slotunun yumuşaklığıydı: "tek fiil" diyor, *"yürüyor"* da tek fiildir ve
+hiçbir yay taşımaz. Bağlayıcı hale getirildi:
+
+1. **Klibin SONU BAŞINDAN FARKLI OLMALI ve fark YAZILMALI.** "Yürüyor" değişim değil,
+   **"varıyor"** değişimdir. "Bakıyor" değil, **"gördüğü an yüzü değişiyor"**. Klip bir
+   durumdan başlar, başka bir durumda biter; prompt ikisini de adlandırır.
+2. **Zaman omurgası zorunlu.** Tek yay üç parçalıdır ve sırası yazılır: *başlangıç durumu →
+   dönüm (tek olay) → yerleşme*. "Önce/sonra/o anda" kelimeleri kullanılır. Aynı anda olan
+   dört ambiyans hareketi bir yay değildir.
+3. **[4 KİLİT] kare-özel ve ZORUNLUDUR — asla atılmaz.** Kaldırılan şey genel-geçer korku
+   listesidir ("koşmasın, tökezlemesin, yeni kimse gelmesin"), o karede gerçekten olabilecek
+   bozulma değil: kavram ışığı çiçek olur, harf yeniden hecelenir, cam erir, özne kadrajdan
+   çıkar. Bunlar YAZILIR. [5]/[6] sabit kuyruktur, kare-özel sayılmaz.
+
+   **Kilidi tercihen OLUMLU yaz.** *"Nobody leaves and nothing new arrives: exactly one bird,
+   one cat and one seedling from first frame to last"* — bu, "no new animals" listesinden hem
+   daha nettir hem motorun anladığı dildedir; sayı, konum ve süre verir. Aynı sebeple kimlik
+   de olumlu tutulur (bkz. feragatname yasası). ⚠ Denetim notu: **yasak SAYMAK yanıltır** —
+   olumlu yazılmış bir kilit hiçbir "no" içermez ve sayaçta sıfır görünür. Kilit var mı diye
+   bakarken kelimeyi değil, **o karenin bozulma yolunun kapatılıp kapatılmadığını** ara.
+4. **Kimlik negatifle korunmaz** — *"yüzü kaymasın"* çalışmaz (bkz. feragatname yasası).
+   Kimlik olumlu tutulur: o yarım saniyede yüzün **ne yaptığı** yazılır.
+
+Kıstas tek cümle: **klibi okuyan biri "ne oldu?" sorusuna cevap verebiliyor mu.** Veremiyorsa
+o klip ambiyanstır, motion değil.
+
 - **Motion yeni öğe doğurmaz.** "Sonra bir çocuk gelir", "yazı belirir" YOK.
-- **Kamera sahnenin fizik hükmünden çıkar.** Push-in yalnız bir şeyin ANLAŞILDIĞI reveal anında.
-  Onun dışında kamera ya olayla gider, ya kilitli durup dünyayı yaşatır. Her yerde oynak/efektli
-  kamera yok — şık, sakin, öğretici.
+### 3b. KAMERA — "sıkıcı slowly push in" yasak
+
+> **Mami, 2026-07-28:** *"Sahneler yaşasın, canavar gibi start frame'lerin var, limit testing yap.
+> Öyle sıkıcı slowly push in istemiyorum — Disney filmi edasında kamera."*
+> Bu madde, aynı satırda duran eski **"şık, sakin, öğretici"** hükmünü **kaldırır.** O cümle iki
+> ayrı şeyi birbirine karıştırıyordu: motorun gerçek sınırı (hızlı kamera + katı nesne = warp)
+> ile bir zevk varsayılanı (sakin olsun). Birincisi fizik, kalır. İkincisi kimsenin istemediği
+> bir çekingenlikti, gider.
+
+- **Varsayılan sakin DEĞİL, gerekçeli ve canlıdır.** Kamera da bir oyuncudur: bir yerden başlar,
+  bir sebeple hareket eder, bir yere iner. Kameranın da yayı olur.
+- **"Slow push in" refleks olarak YASAK.** Yalnız push-in'in *kendisi* o anın olayı olduğunda
+  (anlama, fark etme, itiraf) meşrudur — ve o zaman bile hızlanıp yerleşir, sabit sürünmez.
+- **Uzun-metraj animasyon dili serbest ve teşvik edilir:** ön plan paralaksıyla dolly · özneyi
+  saran yavaş ark/orbit · kreyn ile inip göz hizasına oturma · aksiyonu takip edip bırakma ·
+  alçak açıdan kahraman kadrajı · rack focus'un *beat* olarak kullanılması · bir hareketin
+  içinde hızlanma-yavaşlama (ease) — düz sabit hız değil.
+- **Limit testing serbest.** Start frame güçlüyse kamera cesur olabilir; bozulan klip bilgidir,
+  kusur değil. Bozulursa o karede minimale in ve **nerede bozulduğunu ledger'a yaz.**
+- **Duran tek sınır fiziktir:** katı/mekanik nesne (dişli, pusula, kronometre, harf) + hızlı
+  kamera = warp. Böyle karelerde kamera minimal + `rigid solid, no deform/melt/morph/merge,
+  no pass-through`. Yazı taşıyan karede de kamera yazıyı **düzlemde** tutar.
+- Kamera **sahnenin fizik hükmünden** çıkar: neyi göstermek istiyorsan oradan başla, oraya git.
 - **Katı/mekanik nesne (dişli, pusula, kronometre) + hızlı kamera = WARP.** Böyle karelerde kamera
   minimal + *"rigid solid, no deform/melt/morph/merge, no pass-through"*. Uzun klip drift riski;
   bozulan karede 5s kullan.

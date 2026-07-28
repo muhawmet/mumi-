@@ -1,42 +1,48 @@
 ---
 name: mamilas-aktif-uretim-durumu
-description: "HOT STATE — aktif video hangisi, hangi aşamada, Mami'nin bekleyen kararı ne. Oturum açılışında ilk okunan üretim gerçeği (2026-07-28 mührü)."
+description: "HOT STATE — aktif video hangisi, hangi aşamada, Mami'nin bekleyen kararı ne. Oturum açılışında 1300 satırlık ledger'ı değil BUNU oku."
 metadata: 
   node_type: memory
   type: project
-  originSessionId: 651a452b-2f9e-43f9-aef5-0f4175d8c3db
-  modified: 2026-07-28T14:33:21.018Z
+  originSessionId: fbff88be-4a01-42c5-8144-26fb9e4d6996
+  modified: 2026-07-28T20:27:47.908Z
 ---
 
-# AKTİF ÜRETİM — 2026-07-28 mührü
+# ŞU AN — 2026-07-28 gece mührü
 
-**Aktif video: YOK.** Kütle ve Ağırlık **bitti ve arşivlendi** (`Biten/`), kapanış hasadı koştu
-(`agents/lessons/HASAT-5-sinif-kutle-ve-agirlik.md`, 6 ders adayı). Sistem **yeni iş bekliyor.**
+## Aktif iş: 6. Sınıf — EŞEYLİ VE EŞEYSİZ ÜREME
 
-**Mami'nin bekleyen iki cevabı** — ikisi sorulmadan yeni prodüksiyon açılmaz:
-1. Yeni iş hangisi? (07-28'de "yeni iş geldi" dedi, konusu tanımlanmadı)
-2. **Beğenmediği iş hangisi?** ("bir işi beğenmedim, konuşacağız")
+`agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme/`
 
-## Beş işin diskteki gerçek durumu
+| Ne | Durum |
+|---|---|
+| Start frame promptları | **50/50 bitti** — yazı yasası (§11a/b/c) uygulandı, 25 kare yazı taşıyor, 25'i bilerek temiz |
+| Kareler | **50/50 üretildi** — `Resimler/1..50`, 28 numaralı `.jpg`, diğerleri `.png` |
+| Kare denetimi | **50/50 tarandı** — 4 ajan, her yazı yüzeyi ffmpeg ile büyütülüp harf harf okundu |
+| Revize | Liste çıkarıldı (`_revize.txt`, beş kademe) — **Mami revizeleri YAPTI** |
+| Motion promptları | **50/50 yazıldı** — `MOTION/01..50.txt`, §3a + §3b ile |
+| Klipler | **Mami üretiyor** (Kling 3.0) |
+| Kurgu kiti | ❌ **YAZILMADI** — EDIT-PLAN · SESLENDIRME · SUNO · KABA-KURGU.xml |
 
-| İş | Kare | Kit | Durum |
-|---|---|---|---|
-| Sabit Sürat ve Hız | 44 | tam | ✅ EDİT BİTTİ (`.prproj` + mp4) |
-| Sürtünme | 31 | tam | ✅ EDİT BİTTİ |
-| Bileşke / Kuvvetlerin Güç Birliği | 52 | tam + 2 revize | 🟠 kurgu bekliyor |
-| Kuvvet ve Kuvvetin Ölçülmesi | 48 | tam (`.md`+`.txt` ikiz) | 🟠 kurgu bekliyor |
-| **Kütle ve Ağırlık** | **35/35 üretildi + klip + VO + 5/5 kit** | tam | ✅ Premiere'de, kapandı |
+**SIRADAKİ TEK ADIM:** klipler gelince kurgu kiti. Ses dosyası adları Mami'nin kuralı:
+**müzik `1.mp3` + `2.mp3`, seslendirme `3.mp3`** — kaba kurgu XML'i bunlarla kurulur.
 
-Kareler ve klipler repoda değil: `Desktop/6. Sınıf Animasyonlar/<proje>/`.
+**Birleştiriciler** (repo kökünden koş, alt dizinden çalışmaz):
+`node scripts/ureme-birlestir.mjs` (start frame → tek .txt) ·
+`node scripts/ureme-motion-birlestir.mjs` (motion → tek .txt).
 
-## Açık Mami kararları (üretim tarafı)
+## Beklemede
 
-- **K04 çatalı** (Kütle) — mutfak mı sınıf flashback'i mi; kapanmadan motion final sayılmaz.
-- **`agents/MAMI-ZEVKI.md`** — 32 maddelik zevk taslağı onay bekliyor; onaylanan PROMPT-YASASI'na
-  ya da APPROVED.md'ye taşınır, reddedilen silinir. Kazı özeti: [[mamilas-zevk-madeni]]
-- **`agents/lessons/APPROVED.md` hâlâ neredeyse boş** — 6 hasat dosyasında onlarca aday var,
-  Mami taşımadıkça her üretim boş ders bankasıyla başlıyor. Öğrenme halkası kopuk.
+- **Bileşke Kuvvet baştan yapılacak.** Mami ekran görüntüsünü atıp *"bundan nefret
+  ediyorum, iğrenç animasyonlar"* dedi. Ölçüldü: 52 karenin 52'sinde temas cümlesi,
+  `TEXT:` ve `NEGATIVE:` slotu YOK · `saffron`+`bloom` tuzağı 52/52 · STYLE 196-284
+  kelime (tavan 110) · motion'da **333 yasak / 3 zaman omurgası**. Sebep: sistemin
+  hiçbir şey bilmediği zamanda yapıldı. Kaynak duruyor (69 VO cümlesi, 52 klip planı,
+  @mira/@ali/@can/@araba/@kitap). **Mami'ye sorulan ve cevaplanmayan soru: VO'ya
+  dokunuyor muyuz?** Önerilen yol: 52'yi birden basma, önce INTRO sekansı.
+- **Gece Serumu** — `agents/COMMAND-INBOX/Gece Serumu/` hâlâ commit'siz.
+- **agy bağlandı** (Mami kendi hesabıyla girdi; öncesi hocasının hesabıydı) ama henüz
+  hiçbir akışta çağrılmıyor — klip izletme sırası kliplerden sonra.
+- **push blokajı:** `claude-sync` commit'i atıldı, push'u izin katmanı bloklamıştı.
 
-Derin tarih ve ledger: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
-(1300+ satır — **normal video oturumunda tamamını okuma**, bu dosya + ilgili receipt yeter).
-İlgili: [[mamilas-decision-pipeline]] · [[mamilas-kaba-kurgu-hatti]] · [[mamilas-insa-ledger-acik]]
+İlgili: [[mamilas-uretim-dersleri-2026-07-28]] · [[mamilas-claude-senkronu]] · [[mamilas-agy-video-gozu]]
