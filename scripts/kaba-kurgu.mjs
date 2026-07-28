@@ -14,7 +14,7 @@
 
 import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, resolve, basename, extname } from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 
 const argv = process.argv.slice(2);
 const flag = (name, def = null) => {
@@ -97,31 +97,85 @@ if (!fps) { fps = 25; fpsKaynak = 'varsayılan (klip yok / ffprobe yok)'; }
 const timebase = Math.round(fps);
 const ntsc = Math.abs(fps - timebase) > 0.01;
 
-// ---------- 5. Gerçek VO süresi (opsiyonel, tahmini ezer) ----------
-const voDosya = flag('vo', null);
-let voToplam = null;
-if (voDosya && existsSync(voDosya) && ffprobe) {
+// ---------- 5. Ses dosyalarını BUL (bayrak verilmediyse kendi ara) ----------
+const SES_EXT = ['.mp3', '.wav', '.m4a', '.aac', '.flac'];
+const sesAdaylari = [];
+for (const dir of [klipDir, PROJE]) {
+  if (!existsSync(dir)) continue;
+  for (const f of readdirSync(dir)) {
+    if (SES_EXT.includes(extname(f).toLowerCase())) sesAdaylari.push(join(dir, f));
+  }
+}
+const sureOf = (p) => {
+  if (!ffprobe) return null;
   try {
-    voToplam = parseFloat(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
-      '-of', 'default=nw=1:nk=1', resolve(voDosya)], { encoding: 'utf8' }).trim());
-  } catch { /* yut */ }
+    return parseFloat(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
+      '-of', 'default=nw=1:nk=1', p], { encoding: 'utf8' }).trim());
+  } catch { return null; }
+};
+// VO = adında elevenlabs/vo geçen, yoksa EN UZUN ses. Müzik = adında suno geçen, yoksa diğerlerinin en uzunu.
+let voDosya = flag('vo', null);
+let muzikDosya = flag('muzik', null);
+if (!voDosya) {
+  voDosya = sesAdaylari.find((p) => /elevenlabs|_vo\b|seslendirme|voice/i.test(basename(p)))
+    || sesAdaylari.slice().sort((a, b) => (sureOf(b) || 0) - (sureOf(a) || 0))[0] || null;
+}
+if (!muzikDosya) {
+  muzikDosya = sesAdaylari.find((p) => p !== voDosya && /suno|muzik|music|track/i.test(basename(p)))
+    || sesAdaylari.filter((p) => p !== voDosya).sort((a, b) => (sureOf(b) || 0) - (sureOf(a) || 0))[0] || null;
+}
+const voToplam = voDosya ? sureOf(resolve(voDosya)) : null;
+const muzikSure = muzikDosya ? sureOf(resolve(muzikDosya)) : null;
+
+// ---------- 5b. VO'yu CÜMLELERE böl (nefes boşluğundan) ----------
+// 2026-07-28 ölçümü: plan tahmini gerçek VO'dan sistematik olarak uzun çıkıyor
+// (Sabit Sürat 312→275, Kütle 213→180). Tahmin yerine SESİN KENDİSİ otorite olsun.
+// Yöntem: silencedetect tüm boşlukları verir (nefes + cümle karışık); cümle sınırı olarak
+// EN UZUN (kare sayısı-1) boşluk seçilir — böylece segment sayısı kare sayısına birebir oturur.
+let voSegment = null;
+if (voDosya && ffprobe && !has('tahmin')) {
+  try {
+    // ffmpeg silencedetect'i STDERR'e yazar — execFileSync yalnız stdout döner, o yüzden
+    // kabuk üzerinden 2>&1 ile birleştiriyoruz. (İlk yazımda bu kaçtı, hizalama sessizce düştü.)
+    const log = execSync(`ffmpeg -i ${JSON.stringify(resolve(voDosya))} -af silencedetect=noise=-35dB:d=0.25 -f null - 2>&1`,
+      { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
+    const bosluk = [];
+    const re = /silence_start:\s*([\d.]+)[\s\S]*?silence_end:\s*([\d.]+)/g;
+    let m;
+    while ((m = re.exec(log))) {
+      const s = parseFloat(m[1]), e = parseFloat(m[2]);
+      bosluk.push({ s, e, orta: (s + e) / 2, sure: e - s });
+    }
+    if (bosluk.length >= kareler.length - 1) {
+      // en uzun (N-1) boşluk = cümle sınırı; zamana göre sırala
+      const sinir = bosluk.slice().sort((a, b) => b.sure - a.sure)
+        .slice(0, kareler.length - 1).sort((a, b) => a.orta - b.orta);
+      voSegment = [];
+      let prev = 0;
+      for (const b of sinir) { voSegment.push({ bas: prev, son: b.orta }); prev = b.orta; }
+      voSegment.push({ bas: prev, son: voToplam });
+    }
+  } catch { /* yut — tahmine düş */ }
 }
 
-// Kesim boyu: klip uzunluğu ile VO uzunluğunun BÜYÜĞÜ (VO taşarsa son kare uzar).
+// ---------- 5c. Kesim boyları ----------
 const sn2fr = (s) => Math.max(1, Math.round(s * fps));
 let cursor = 0;
 const items = kareler.map((kr, i) => {
-  const hedefSn = Math.max(kr.klipSn, kr.voSn);
+  // Otorite sırası: gerçek VO segmenti > plan tahmini
+  const seg = voSegment ? voSegment[i] : null;
+  const hedefSn = seg ? (seg.son - seg.bas) : Math.max(kr.klipSn, kr.voSn);
   const durFr = sn2fr(hedefSn);
-  const kaynakFr = sn2fr(kr.klipSn); // üretilen klibin gerçek boyu
+  const kaynakFr = sn2fr(kr.klipSn);
   const it = {
     ...kr, i,
     start: cursor,
     end: cursor + durFr,
     inFr: 0,
-    outFr: Math.min(durFr, kaynakFr), // klipten fazlasını isteme; taşarsa Premiere'de freeze/uzat
+    outFr: Math.min(durFr, kaynakFr), // klipten fazlasını isteme; taşarsa Premiere'de dondur
     dosya: klipByK.get(kr.k) || null,
-    tasma: hedefSn > kr.klipSn + 0.01,
+    gercekSn: hedefSn,
+    tasma: hedefSn > kr.klipSn + 0.05,
   };
   cursor += durFr;
   return it;
@@ -156,28 +210,37 @@ const videoItems = items.map((it, n) => {
         </clipitem>`;
 }).join('\n');
 
-const sesTrack = (dosya, id, label) => {
+// Ses rayı. Kaynak videodan KISAYSA döngülenir (Suno parçası ~85s, video ~180s → 3 kopya).
+const sesTrack = (dosya, id, label, kaynakSure) => {
   if (!dosya || !existsSync(resolve(dosya))) return '';
   const abs = resolve(dosya);
-  return `      <track>
-        <clipitem id="${id}">
-          <name>${esc(basename(abs))}</name>
+  const kaynakFr = kaynakSure ? sn2fr(kaynakSure) : toplamFr;
+  const kopya = Math.max(1, Math.ceil(toplamFr / kaynakFr));
+  const parcalar = [];
+  for (let n = 0; n < kopya; n++) {
+    const bas = n * kaynakFr;
+    if (bas >= toplamFr) break;
+    const bit = Math.min(bas + kaynakFr, toplamFr);
+    parcalar.push(`        <clipitem id="${id}-${n}">
+          <name>${esc(basename(abs))}${kopya > 1 ? ` (${n + 1}/${kopya})` : ''}</name>
           <enabled>TRUE</enabled>
-          <duration>${toplamFr}</duration>
+          <duration>${kaynakFr}</duration>
           ${rate()}
-          <start>0</start>
-          <end>${toplamFr}</end>
+          <start>${bas}</start>
+          <end>${bit}</end>
           <in>0</in>
-          <out>${toplamFr}</out>
-          <file id="file-${id}">
+          <out>${bit - bas}</out>
+          <file id="file-${id}${n === 0 ? '' : `-ref${n}`}">${n === 0 ? `
             <name>${esc(basename(abs))}</name>
             <pathurl>${esc(pathurl(abs))}</pathurl>
             ${rate()}
-            <media><audio><channelcount>2</channelcount></audio></media>
+            <duration>${kaynakFr}</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>` : ''}
           </file>
-          <comments><mastercomment1>${esc(label)}</mastercomment1></comments>
-        </clipitem>
-      </track>`;
+          <comments><mastercomment1>${esc(label)}${kopya > 1 ? ` — döngü ${n + 1}/${kopya}` : ''}</mastercomment1></comments>
+        </clipitem>`);
+  }
+  return `      <track>\n${parcalar.join('\n')}\n      </track>`;
 };
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -198,8 +261,8 @@ ${videoItems}
         </track>
       </video>
       <audio>
-${sesTrack(flag('vo', null), 'vo-1', 'VO — ElevenLabs')}
-${sesTrack(flag('muzik', null), 'mzk-1', 'Müzik — Suno')}
+${sesTrack(voDosya, 'vo1', 'VO — ElevenLabs', voToplam)}
+${sesTrack(muzikDosya, 'mzk1', 'Müzik — Suno (VO altında ~-18 dB)', muzikSure)}
       </audio>
     </media>
   </sequence>
@@ -215,15 +278,18 @@ const eksik = items.filter((it) => !it.dosya);
 const tasan = items.filter((it) => it.tasma);
 const planToplam = items.reduce((n, it) => n + Math.max(it.klipSn, it.voSn), 0);
 
-const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+const mmss = (s) => { const t = Math.round(s); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
 console.log(`\n📼 ${projeAd}`);
 console.log(`   plan     : ${planDosya} → ${kareler.length} kare`);
 console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir})`);
 console.log(`   fps      : ${fps} — ${fpsKaynak}`);
-console.log(`   süre     : ${mmss(planToplam)} (${toplamFr} kare)`);
-if (voToplam) {
-  const fark = planToplam - voToplam;
-  console.log(`   GERÇEK VO: ${mmss(voToplam)} — plan ${fark > 0 ? '+' : ''}${fark.toFixed(1)}s sapıyor`);
+if (voDosya) console.log(`   VO       : ${basename(voDosya)} → ${voToplam ? mmss(voToplam) : '?'}`);
+if (muzikDosya) console.log(`   müzik    : ${basename(muzikDosya)} → ${muzikSure ? mmss(muzikSure) : '?'}${muzikSure && voToplam && muzikSure < voToplam ? ` (${Math.ceil(toplamFr / sn2fr(muzikSure))}× döngülendi)` : ''}`);
+if (voSegment) {
+  console.log(`   ✂ HİZALAMA: klip boyları GERÇEK VO cümlelerinden kesildi (tahmin değil)`);
+  console.log(`      plan tahmini ${mmss(planToplam)} → gerçek ${mmss(toplamFr / fps)} · ${(planToplam - toplamFr / fps).toFixed(1)}s fazla tahmin düzeltildi`);
+} else {
+  console.log(`   süre     : ${mmss(planToplam)} (${toplamFr} kare) — plan tahmininden${voDosya ? ' (VO cümlelere bölünemedi)' : ''}`);
 }
 // KAPSAM DENETİMİ — plan kendi iddiasını tutuyor mu?
 // 2026-07-28 ölçümü: Sabit Sürat'ın EDIT-PLAN'ı "44 klip" diyor ama yalnız 12 satır taşıyor
