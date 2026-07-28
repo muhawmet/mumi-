@@ -94,6 +94,20 @@ if (!fps && ffprobe && klipByK.size) {
   } catch { /* yut */ }
 }
 if (!fps) { fps = 25; fpsKaynak = 'varsayılan (klip yok / ffprobe yok)'; }
+
+// ---------- 4b. ÇÖZÜNÜRLÜK — tahmin etme, ÖLÇ ----------
+// 2026-07-28: 1920x1080 varsaymıştım, Kling klipleri 1924x1076 çıktı — Premiere medyayı
+// beyan edilen ölçüye zorlayınca görüntü esniyordu. Beyan artık ölçümden gelir.
+let EN = 1920, BOY = 1080, resKaynak = 'varsayılan';
+if (ffprobe && klipByK.size) {
+  const ilk = [...klipByK.values()][0];
+  try {
+    const out = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0',
+      '-show_entries', 'stream=width,height', '-of', 'csv=p=0', ilk], { encoding: 'utf8' }).trim();
+    const [w, h] = out.split(',').map(Number);
+    if (w && h) { EN = w; BOY = h; resKaynak = `klipten ölçüldü (${basename(ilk)})`; }
+  } catch { /* yut */ }
+}
 const timebase = Math.round(fps);
 const ntsc = Math.abs(fps - timebase) > 0.01;
 
@@ -133,6 +147,7 @@ const muzikSure = muzikDosya ? sureOf(resolve(muzikDosya)) : null;
 // Yöntem: silencedetect tüm boşlukları verir (nefes + cümle karışık); cümle sınırı olarak
 // EN UZUN (kare sayısı-1) boşluk seçilir — böylece segment sayısı kare sayısına birebir oturur.
 let voSegment = null;
+let voHizaKaynak = '';
 if (voDosya && ffprobe && !has('tahmin')) {
   try {
     // ffmpeg silencedetect'i STDERR'e yazar — execFileSync yalnız stdout döner, o yüzden
@@ -146,14 +161,36 @@ if (voDosya && ffprobe && !has('tahmin')) {
       const s = parseFloat(m[1]), e = parseFloat(m[2]);
       bosluk.push({ s, e, orta: (s + e) / 2, sure: e - s });
     }
-    if (bosluk.length >= kareler.length - 1) {
-      // en uzun (N-1) boşluk = cümle sınırı; zamana göre sırala
-      const sinir = bosluk.slice().sort((a, b) => b.sure - a.sure)
-        .slice(0, kareler.length - 1).sort((a, b) => a.orta - b.orta);
+    if (bosluk.length >= kareler.length - 1 && voToplam) {
+      // METİN + SES birlikte. "En uzun N-1 boşluk" kaba bir tahmindi: uzun cümlenin ortasındaki
+      // nefesi cümle sınırı sanabiliyordu. Doğrusu — her karenin VO metni ne kadar uzunsa o kadar
+      // süre alır: beklenen sınır metinden hesaplanır, sonra ORADAKİ gerçek sessizliğe yapıştırılır.
+      // Böylece ne metin tek başına (tempo bilmez) ne ses tek başına (hangi boşluk cümle bilmez).
+      // Ağırlık = planın VO süre tahmini (voSn). Karakter saymak yanlıştı: plandaki VO metinleri
+      // "..." ile kısaltılmış ve "(yazı 200 g)" gibi OKUNMAYAN notlar taşıyor — K34 bu yüzden
+      // 1.6s'ye düşmüştü. voSn zaten cümle başına süre tahmini; toplamı gerçek VO'ya ölçekliyoruz.
+      const uzunluk = kareler.map((kr) => (kr.voSn > 0 ? kr.voSn
+        : Math.max(8, (kr.vo || '').replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim().length / 14)));
+      const toplamUz = uzunluk.reduce((a, b) => a + b, 0);
+      const sinirlar = [];
+      let kum = 0;
+      for (let i = 0; i < kareler.length - 1; i++) {
+        kum += uzunluk[i];
+        const beklenen = voToplam * (kum / toplamUz);
+        // en yakın sessizliğe yapış; makul mesafede yoksa beklenen yerde kal
+        let en = null, enFark = Infinity;
+        for (const b of bosluk) {
+          const fark = Math.abs(b.orta - beklenen);
+          if (fark < enFark) { enFark = fark; en = b; }
+        }
+        const yer = (en && enFark <= 3.0) ? en.orta : beklenen;
+        sinirlar.push(Math.max(yer, (sinirlar[sinirlar.length - 1] || 0) + 0.4)); // monoton + asgari klip
+      }
       voSegment = [];
       let prev = 0;
-      for (const b of sinir) { voSegment.push({ bas: prev, son: b.orta }); prev = b.orta; }
+      for (const s of sinirlar) { voSegment.push({ bas: prev, son: s }); prev = s; }
       voSegment.push({ bas: prev, son: voToplam });
+      voHizaKaynak = `metin oranı + ${bosluk.length} sessizlik`;
     }
   } catch { /* yut — tahmine düş */ }
 }
@@ -204,7 +241,7 @@ const videoItems = items.map((it, n) => {
             <pathurl>${esc(pathurl(it.dosya))}</pathurl>
             ${rate()}
             <duration>${it.outFr}</duration>
-            <media><video><samplecharacteristics>${rate()}<width>1920</width><height>1080</height></samplecharacteristics></video></media>
+            <media><video><samplecharacteristics>${rate()}<width>${EN}</width><height>${BOY}</height></samplecharacteristics></video></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K${String(it.k).padStart(2, '0')} — ${esc(it.vo.slice(0, 90))}</mastercomment1></comments>
@@ -258,7 +295,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <timecode>${rate()}<string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
     <media>
       <video>
-        <format><samplecharacteristics>${rate()}<width>1920</width><height>1080</height></samplecharacteristics></format>
+        <format><samplecharacteristics>${rate()}<width>${EN}</width><height>${BOY}</height></samplecharacteristics></format>
         <track>
 ${videoItems}
         </track>
@@ -286,10 +323,11 @@ console.log(`\n📼 ${projeAd}`);
 console.log(`   plan     : ${planDosya} → ${kareler.length} kare`);
 console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir})`);
 console.log(`   fps      : ${fps} — ${fpsKaynak}`);
+console.log(`   çözünürlük: ${EN}x${BOY} — ${resKaynak}`);
 if (voDosya) console.log(`   VO       : ${basename(voDosya)} → ${voToplam ? mmss(voToplam) : '?'}`);
 if (muzikDosya) console.log(`   müzik    : ${basename(muzikDosya)} → ${muzikSure ? mmss(muzikSure) : '?'}${muzikSure && voToplam && muzikSure < voToplam ? ` (${Math.ceil(toplamFr / sn2fr(muzikSure))}× döngülendi)` : ''}`);
 if (voSegment) {
-  console.log(`   ✂ HİZALAMA: klip boyları GERÇEK VO cümlelerinden kesildi (tahmin değil)`);
+  console.log(`   ✂ HİZALAMA: ${voHizaKaynak} → klip boyları gerçek VO cümlelerinden kesildi`);
   console.log(`      plan tahmini ${mmss(planToplam)} → gerçek ${mmss(toplamFr / fps)} · ${(planToplam - toplamFr / fps).toFixed(1)}s fazla tahmin düzeltildi`);
 } else {
   console.log(`   süre     : ${mmss(planToplam)} (${toplamFr} kare) — plan tahmininden${voDosya ? ' (VO cümlelere bölünemedi)' : ''}`);
