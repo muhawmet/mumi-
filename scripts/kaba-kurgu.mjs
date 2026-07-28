@@ -206,6 +206,7 @@ const videoItems = items.map((it, n) => {
             <duration>${it.outFr}</duration>
             <media><video><samplecharacteristics>${rate()}<width>1920</width><height>1080</height></samplecharacteristics></video></media>
           </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K${String(it.k).padStart(2, '0')} — ${esc(it.vo.slice(0, 90))}</mastercomment1></comments>
         </clipitem>`;
 }).join('\n');
@@ -219,8 +220,9 @@ const sesTrack = (dosya, id, label, kaynakSure) => {
   const parcalar = [];
   for (let n = 0; n < kopya; n++) {
     const bas = n * kaynakFr;
-    if (bas >= toplamFr) break;
     const bit = Math.min(bas + kaynakFr, toplamFr);
+    // yuvarlamadan doğan kırıntıyı atla (yarım saniyeden kısa parça timeline'ı kirletir)
+    if (bas >= toplamFr || bit - bas < fps * 0.5) break;
     parcalar.push(`        <clipitem id="${id}-${n}">
           <name>${esc(basename(abs))}${kopya > 1 ? ` (${n + 1}/${kopya})` : ''}</name>
           <enabled>TRUE</enabled>
@@ -230,13 +232,14 @@ const sesTrack = (dosya, id, label, kaynakSure) => {
           <end>${bit}</end>
           <in>0</in>
           <out>${bit - bas}</out>
-          <file id="file-${id}${n === 0 ? '' : `-ref${n}`}">${n === 0 ? `
+          ${n === 0 ? `<file id="file-${id}">
             <name>${esc(basename(abs))}</name>
             <pathurl>${esc(pathurl(abs))}</pathurl>
             ${rate()}
             <duration>${kaynakFr}</duration>
-            <media><audio><channelcount>2</channelcount></audio></media>` : ''}
-          </file>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>` : `<file id="file-${id}"/>`}
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>${esc(label)}${kopya > 1 ? ` — döngü ${n + 1}/${kopya}` : ''}</mastercomment1></comments>
         </clipitem>`);
   }
