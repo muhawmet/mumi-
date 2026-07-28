@@ -66,6 +66,31 @@ if (!kareler.length) {
 }
 kareler.sort((a, b) => a.k - b.k);
 
+// ---------- 2b. TAM VO CÜMLESİ — plandaki metin kısaltılmış olabilir ----------
+// EDIT-PLAN satırları "...ekranda beliren sayıyı" gibi KISALTILMIŞ yazılır ve birleşik beat'lerin
+// (K04 = S4+S5) yalnız ikinci yarısını taşır. Metin eşleme bu yüzden kayıyordu: "O gün fen
+// dersinde..." cümlesi hiçbir kareye eşleşmeyip önceki karede kalıyordu.
+// Tam cümleler PROMPTLAR dosyalarının kare başlıklarında duruyor:
+//   `Kare 4 — "O gün fen dersinde ... bambaşka iki kavramdı." (start frame · B4+B5 merge)`
+//   `K09 | "Kütlenin birimi kilogramdı..." | yazı: "kg" ve "g"`
+const TIRNAK = /[«»"“”‘’]/;
+for (const f of readdirSync(PROJE)) {
+  if (!/PROMPTLAR|START-FRAME/i.test(f) || !/\.(txt|md)$/i.test(f)) continue;
+  let metin;
+  try { metin = readFileSync(join(PROJE, f), 'utf8'); } catch { continue; }
+  for (const ln of metin.replace(/\r\n/g, '\n').split('\n')) {
+    const km = ln.match(/^\s*(?:Kare\s*(\d+)|K(\d+))\s*[—\-|]/i);
+    if (!km) continue;
+    const no = parseInt(km[1] || km[2], 10);
+    const hedef = kareler.find((kr) => kr.k === no);
+    if (!hedef) continue;
+    // satırdaki ilk tırnaklı bloğu al (tırnak çeşidi ne olursa olsun)
+    const parca = ln.split(TIRNAK);
+    const aday = parca.length >= 3 ? parca[1].trim() : '';
+    if (aday.length > (hedef.vo || '').length) hedef.vo = aday;
+  }
+}
+
 // ---------- 3. Klipleri bul ----------
 const klipDir = resolve(flag('klipler', join(PROJE, 'klipler')));
 const VIDEO_EXT = ['.mp4', '.mov', '.m4v'];
@@ -98,14 +123,18 @@ if (!fps) { fps = 25; fpsKaynak = 'varsayılan (klip yok / ffprobe yok)'; }
 // ---------- 4b. ÇÖZÜNÜRLÜK — tahmin etme, ÖLÇ ----------
 // 2026-07-28: 1920x1080 varsaymıştım, Kling klipleri 1924x1076 çıktı — Premiere medyayı
 // beyan edilen ölçüye zorlayınca görüntü esniyordu. Beyan artık ölçümden gelir.
-let EN = 1920, BOY = 1080, resKaynak = 'varsayılan';
+// SEQUENCE standart 1920x1080. Klip boyutu BEYAN EDİLMEZ — Premiere gerçek medyadan okur;
+// beyan ettiğim an medyayı o ölçüye zorluyordu ve görüntü esniyordu (Mami'nin gördüğü kusur).
+// Mami: "sen çözünürlüğüne dokunma videoların, ben sonradan biraz büyütünce hepsi oturuyor."
+const EN = parseInt(flag('en', '1920'), 10);
+const BOY = parseInt(flag('boy', '1080'), 10);
+let klipEn = null, klipBoy = null;
 if (ffprobe && klipByK.size) {
-  const ilk = [...klipByK.values()][0];
   try {
     const out = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0',
-      '-show_entries', 'stream=width,height', '-of', 'csv=p=0', ilk], { encoding: 'utf8' }).trim();
+      '-show_entries', 'stream=width,height', '-of', 'csv=p=0', [...klipByK.values()][0]], { encoding: 'utf8' }).trim();
     const [w, h] = out.split(',').map(Number);
-    if (w && h) { EN = w; BOY = h; resKaynak = `klipten ölçüldü (${basename(ilk)})`; }
+    if (w && h) { klipEn = w; klipBoy = h; }
   } catch { /* yut */ }
 }
 const timebase = Math.round(fps);
@@ -148,6 +177,42 @@ const muzikSure = muzikDosya ? sureOf(resolve(muzikDosya)) : null;
 // EN UZUN (kare sayısı-1) boşluk seçilir — böylece segment sayısı kare sayısına birebir oturur.
 let voSegment = null;
 let voHizaKaynak = '';
+
+// ---------- 5a. WHISPER — sesi gerçekten yazıya dök (varsa) ----------
+// silencedetect yalnız "burada sessizlik var" der; nefes ile cümle sonunu ayırt edemez.
+// whisper CÜMLEYİ bilir — sınırları tahmin değil ölçüm olur. Yerel çalışır, internete gitmez.
+// Transkript proje klasörüne yazılır ve tekrar kullanılır (whisper yavaştır, bir kez koşsun).
+let whisperSinir = null;
+let whisperSeg = null;
+const whisperCli = (() => { try { execFileSync('whisper-cli', ['-h'], { stdio: 'ignore' }); return true; } catch { return false; } })();
+const MODEL = join(process.env.HOME || '', '.cache/whisper/ggml-medium.bin');
+if (voDosya && whisperCli && existsSync(MODEL) && !has('tahmin')) {
+  const trBase = join(PROJE, `${basename(projeArg || 'proje')}—VO-transkript`);
+  try {
+    if (!existsSync(trBase + '.srt')) {
+      console.log('   🎙  whisper VO\'yu yazıya döküyor (ilk sefer, birkaç dakika)...');
+      // 16 kHz mono wav'a çevir (whisper.cpp bunu ister)
+      const wav = join(PROJE, '.vo-16k.wav');
+      execSync(`ffmpeg -y -v error -i ${JSON.stringify(resolve(voDosya))} -ar 16000 -ac 1 -c:a pcm_s16le ${JSON.stringify(wav)}`);
+      execSync(`whisper-cli -m ${JSON.stringify(MODEL)} -f ${JSON.stringify(wav)} -l tr -osrt -of ${JSON.stringify(trBase)} 2>&1`,
+        { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
+      try { execSync(`rm -f ${JSON.stringify(wav)}`); } catch { /* yut */ }
+    }
+    const srt = readFileSync(trBase + '.srt', 'utf8');
+    // SRT zaman satırı: 00:00:03,660 --> 00:00:11,420
+    const t2s = (t) => { const [h, m, rest] = t.split(':'); const [s, ms] = rest.split(','); return (+h) * 3600 + (+m) * 60 + (+s) + (+ms) / 1000; };
+    const seg = [];
+    for (const m of srt.matchAll(/(\d\d:\d\d:\d\d,\d+)\s*-->\s*(\d\d:\d\d:\d\d,\d+)\s*\n([\s\S]*?)(?=\n\n|\n*$)/g)) {
+      seg.push({ bas: t2s(m[1]), son: t2s(m[2]), metin: m[3].replace(/\s+/g, ' ').trim() });
+    }
+    if (seg.length >= 2) {
+      whisperSeg = seg;
+      whisperSinir = [];
+      for (let i = 0; i < seg.length - 1; i++) whisperSinir.push({ orta: (seg[i].son + seg[i + 1].bas) / 2, sure: seg[i + 1].bas - seg[i].son });
+    }
+  } catch (e) { console.log(`   ⚠ whisper koşamadı (${String(e.message).slice(0, 60)}) — sessizlik ölçümüne düşülüyor`); }
+}
+
 if (voDosya && ffprobe && !has('tahmin')) {
   try {
     // ffmpeg silencedetect'i STDERR'e yazar — execFileSync yalnız stdout döner, o yüzden
@@ -161,36 +226,61 @@ if (voDosya && ffprobe && !has('tahmin')) {
       const s = parseFloat(m[1]), e = parseFloat(m[2]);
       bosluk.push({ s, e, orta: (s + e) / 2, sure: e - s });
     }
-    if (bosluk.length >= kareler.length - 1 && voToplam) {
-      // METİN + SES birlikte. "En uzun N-1 boşluk" kaba bir tahmindi: uzun cümlenin ortasındaki
-      // nefesi cümle sınırı sanabiliyordu. Doğrusu — her karenin VO metni ne kadar uzunsa o kadar
-      // süre alır: beklenen sınır metinden hesaplanır, sonra ORADAKİ gerçek sessizliğe yapıştırılır.
-      // Böylece ne metin tek başına (tempo bilmez) ne ses tek başına (hangi boşluk cümle bilmez).
-      // Ağırlık = planın VO süre tahmini (voSn). Karakter saymak yanlıştı: plandaki VO metinleri
-      // "..." ile kısaltılmış ve "(yazı 200 g)" gibi OKUNMAYAN notlar taşıyor — K34 bu yüzden
-      // 1.6s'ye düşmüştü. voSn zaten cümle başına süre tahmini; toplamı gerçek VO'ya ölçekliyoruz.
-      const uzunluk = kareler.map((kr) => (kr.voSn > 0 ? kr.voSn
-        : Math.max(8, (kr.vo || '').replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim().length / 14)));
-      const toplamUz = uzunluk.reduce((a, b) => a + b, 0);
-      const sinirlar = [];
-      let kum = 0;
-      for (let i = 0; i < kareler.length - 1; i++) {
-        kum += uzunluk[i];
-        const beklenen = voToplam * (kum / toplamUz);
-        // en yakın sessizliğe yapış; makul mesafede yoksa beklenen yerde kal
-        let en = null, enFark = Infinity;
-        for (const b of bosluk) {
-          const fark = Math.abs(b.orta - beklenen);
-          if (fark < enFark) { enFark = fark; en = b; }
+    // ═══ METİN EŞLEME — VO nokta atışı ═══
+    // Oranla tahmin kayıyordu (Mami: "6. video girdikten çok sonra 'kuvvet' diyor").
+    // Doğrusu: whisper'ın çıkardığı CÜMLE METNİNİ plandaki cümleyle eşleştir, klibi o cümlenin
+    // GERÇEK başlangıç saniyesine oturt. Artık tahmin değil, sesin kendisinden okuma.
+    const norm = (t) => (t || '').toLocaleLowerCase('tr')
+      .replace(/\([^)]*\)/g, ' ').replace(/[^\p{L}\p{N}\s]/gu, ' ')
+      .replace(/\s+/g, ' ').trim();
+    const tok = (t) => norm(t).split(' ').filter((w) => w.length >= 4);
+
+    if (whisperSeg && whisperSeg.length >= 2 && voToplam) {
+      // Her transkript CÜMLESİNİ bir kareye ata (ileri-monoton). Kare, kendisine atanan ilk
+      // cümlede başlar. Bu yön her iki birleşimi de doğru çözer: bir kare iki cümle taşıyorsa
+      // ikisi de ona düşer; plandaki metin kısaltılmışsa komşu cümle yanlış kareye kaymaz.
+      const segTok = whisperSeg.map((g) => new Set(tok(g.metin)));
+      const kareTok = kareler.map((kr) => tok(kr.vo));
+      const skor = (i, j) => {
+        const kt = kareTok[i];
+        if (!kt.length) return 0;
+        let ortak = 0;
+        for (const w of kt) if (segTok[j].has(w)) ortak++;
+        return ortak / kt.length;
+      };
+      const atama = new Array(whisperSeg.length).fill(0);
+      let cur = 0;
+      for (let j = 0; j < whisperSeg.length; j++) {
+        // kalan kare sayısı kalan cümleden fazlaysa ilerlemek zorunlu
+        const zorunlu = (kareler.length - 1 - cur) >= (whisperSeg.length - j);
+        let en = cur, enS = skor(cur, j);
+        for (let i = cur + 1; i < Math.min(kareler.length, cur + 4); i++) {
+          const sc = skor(i, j);
+          if (sc > enS + 0.05) { enS = sc; en = i; }
         }
-        const yer = (en && enFark <= 3.0) ? en.orta : beklenen;
-        sinirlar.push(Math.max(yer, (sinirlar[sinirlar.length - 1] || 0) + 0.4)); // monoton + asgari klip
+        if (zorunlu && en === cur) en = Math.min(cur + 1, kareler.length - 1);
+        cur = en;
+        atama[j] = cur;
+      }
+      const ilkSeg = new Array(kareler.length).fill(-1);
+      for (let j = whisperSeg.length - 1; j >= 0; j--) ilkSeg[atama[j]] = j;
+      const baslangic = kareler.map((_, i) => ({ t: ilkSeg[i] >= 0 ? whisperSeg[ilkSeg[i]].bas : null, kesin: ilkSeg[i] >= 0 }));
+      baslangic[0].t = 0;
+      for (let i = 0; i < baslangic.length; i++) {
+        if (baslangic[i].t !== null) continue;
+        let a2 = i - 1; while (a2 >= 0 && baslangic[a2].t === null) a2--;
+        let b2 = i + 1; while (b2 < baslangic.length && baslangic[b2].t === null) b2++;
+        const solT = a2 >= 0 ? baslangic[a2].t : 0;
+        const sagT = b2 < baslangic.length ? baslangic[b2].t : voToplam;
+        baslangic[i].t = solT + ((sagT - solT) * (i - a2)) / ((b2 < baslangic.length ? b2 : baslangic.length) - a2);
       }
       voSegment = [];
-      let prev = 0;
-      for (const s of sinirlar) { voSegment.push({ bas: prev, son: s }); prev = s; }
-      voSegment.push({ bas: prev, son: voToplam });
-      voHizaKaynak = `metin oranı + ${bosluk.length} sessizlik`;
+      for (let i = 0; i < kareler.length; i++) {
+        const bas = Math.max(0, baslangic[i].t);
+        const son = i + 1 < kareler.length ? Math.max(bas + 0.4, baslangic[i + 1].t) : voToplam;
+        voSegment.push({ bas, son });
+      }
+      voHizaKaynak = `whisper metin eşleme — ${baslangic.filter((x) => x.kesin).length}/${kareler.length} kare cümlesine oturdu`;
     }
   } catch { /* yut — tahmine düş */ }
 }
@@ -204,15 +294,24 @@ const items = kareler.map((kr, i) => {
   const hedefSn = seg ? (seg.son - seg.bas) : Math.max(kr.klipSn, kr.voSn);
   const durFr = sn2fr(hedefSn);
   const kaynakFr = sn2fr(kr.klipSn);
+  // Klip yere sığmıyorsa YAVAŞLAT. Eskiden `out`u kırpıyordum → Premiere kalan yeri
+  // "medya yok" çizgisiyle dolduruyordu ve orada görüntü donuyordu (Mami'nin gördüğü kusur).
+  // FCP7'de hız = (kaynak kare / timeline kare) × 100. Taban %35 — altında hareket sürünür.
+  // Mami (2026-07-28): "hiç yavaşlatmana gerek yok, süreleri fazladır bile."
+  // Klip normal hızda oynar; yere sığmıyorsa kaynaktan kırpılır, uzatma/yavaşlatma YOK.
+  const hiz = 100;
+  const kullanilanKaynak = Math.min(kaynakFr, durFr);
   const it = {
     ...kr, i,
     start: cursor,
     end: cursor + durFr,
     inFr: 0,
-    outFr: Math.min(durFr, kaynakFr), // klipten fazlasını isteme; taşarsa Premiere'de dondur
+    outFr: kullanilanKaynak,
+    hiz,
     dosya: klipByK.get(kr.k) || null,
     gercekSn: hedefSn,
-    tasma: hedefSn > kr.klipSn + 0.05,
+    tasma: hiz <= 35.001 && gerekenHiz < 35, // taban bile yetmedi → gerçek boşluk
+    yavas: hiz < 99.5,
   };
   cursor += durFr;
   return it;
@@ -223,6 +322,9 @@ const toplamFr = cursor;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pathurl = (abs) => 'file://localhost' + abs.split('/').map((p, i) => (i === 0 ? p : encodeURIComponent(p))).join('/');
 const rate = () => `<rate><timebase>${timebase}</timebase><ntsc>${ntsc ? 'TRUE' : 'FALSE'}</ntsc></rate>`;
+// KARE PİKSEL — Premiere 1924x1076'yı görünce "D1/DV PAL (1.0940)" sanıp pikselleri %9 geriyordu.
+// Kenarlardaki siyahın ve esnemenin gerçek sebebi buydu. Açıkça square beyan ediyoruz.
+const parBlok = '<pixelaspectratio>square</pixelaspectratio>';
 
 const projeAd = basename(PROJE);
 const videoItems = items.map((it, n) => {
@@ -241,9 +343,22 @@ const videoItems = items.map((it, n) => {
             <pathurl>${esc(pathurl(it.dosya))}</pathurl>
             ${rate()}
             <duration>${it.outFr}</duration>
-            <media><video><samplecharacteristics>${rate()}<width>${EN}</width><height>${BOY}</height></samplecharacteristics></video></media>
+            <media><video/></media>
           </file>
-          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>${it.hiz < 99.5 ? `
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>${it.hiz.toFixed(4)}</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>` : ''}
           <comments><mastercomment1>K${String(it.k).padStart(2, '0')} — ${esc(it.vo.slice(0, 90))}</mastercomment1></comments>
         </clipitem>`;
 }).join('\n');
@@ -295,7 +410,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <timecode>${rate()}<string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
     <media>
       <video>
-        <format><samplecharacteristics>${rate()}<width>${EN}</width><height>${BOY}</height></samplecharacteristics></format>
+        <format><samplecharacteristics>${rate()}<width>${EN}</width><height>${BOY}</height>${parBlok}<anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
         <track>
 ${videoItems}
         </track>
@@ -323,7 +438,7 @@ console.log(`\n📼 ${projeAd}`);
 console.log(`   plan     : ${planDosya} → ${kareler.length} kare`);
 console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir})`);
 console.log(`   fps      : ${fps} — ${fpsKaynak}`);
-console.log(`   çözünürlük: ${EN}x${BOY} — ${resKaynak}`);
+console.log(`   sequence : ${EN}x${BOY}${klipEn ? ` · klipler ${klipEn}x${klipBoy} (boyut BEYAN EDİLMEDİ — Premiere medyadan okur)` : ''}`);
 if (voDosya) console.log(`   VO       : ${basename(voDosya)} → ${voToplam ? mmss(voToplam) : '?'}`);
 if (muzikDosya) console.log(`   müzik    : ${basename(muzikDosya)} → ${muzikSure ? mmss(muzikSure) : '?'}${muzikSure && voToplam && muzikSure < voToplam ? ` (${Math.ceil(toplamFr / sn2fr(muzikSure))}× döngülendi)` : ''}`);
 if (voSegment) {
@@ -349,6 +464,8 @@ if (beklenen.length) console.log(`   🔴 SIRA BOŞLUĞU: K${beklenen.join(' K')
 if (kareler[0].k !== 1) console.log(`   🔴 plan K${kareler[0].k}'ten başlıyor — K01–K${kareler[0].k - 1} arası satır yok`);
 
 if (eksik.length) console.log(`   ⚠ klip yok: ${eksik.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} (XML'de boşluk bırakıldı)`);
-if (tasan.length) console.log(`   ⚠ VO klibi aşıyor: ${tasan.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} — Premiere'de son kareyi dondur`);
+const yavaslar = items.filter((it) => it.yavas && !it.tasma);
+if (yavaslar.length) console.log(`   ⏱ yavaşlatıldı (VO'ya sığsın diye): ${yavaslar.map((e) => `K${String(e.k).padStart(2,'0')}%${Math.round(e.hiz)}`).join(' ')}`);
+if (tasan.length) console.log(`   🔴 %35'te bile sığmadı: ${tasan.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} — burada boşluk kalır`);
 console.log(`\n✅ ${ciktiYol}`);
 console.log(`   Premiere: File → Import → bu .xml. Timeline kurulu gelir; kesim hükmü senin.\n`);
