@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: fbff88be-4a01-42c5-8144-26fb9e4d6996
-  modified: 2026-07-28T20:27:47.908Z
+  modified: 2026-07-28T20:41:25.061Z
 ---
 
 # ŞU AN — 2026-07-28 gece mührü
@@ -43,6 +43,11 @@ metadata:
 - **Gece Serumu** — `agents/COMMAND-INBOX/Gece Serumu/` hâlâ commit'siz.
 - **agy bağlandı** (Mami kendi hesabıyla girdi; öncesi hocasının hesabıydı) ama henüz
   hiçbir akışta çağrılmıyor — klip izletme sırası kliplerden sonra.
-- **push blokajı:** `claude-sync` commit'i atıldı, push'u izin katmanı bloklamıştı.
+- **push blokajı:** `claude-sync` ve `üreme` commit'leri atıldı, push'u izin katmanı bloklamıştı.
+- ⚠ **Codex'e geniş kanon taraması yaptırma denendi, SONUÇSUZ.** `codex-rescue` ajanı görevi
+  arka plan Codex sürecine devredip kendi bitti; o süreç 50 komut koşturup hüküm üretmeden
+  dondu, çıktı dosyası yalnız komut kaydı. Codex **dar ve tek soruluk** incelemede iş görüyor
+  (aynı gün `claude-sync`'te gerçek bir mantık kusuru buldu); geniş "her şeyi tara" görevinde
+  değil. Bir dahakine böyle bölme.
 
 İlgili: [[mamilas-uretim-dersleri-2026-07-28]] · [[mamilas-claude-senkronu]] · [[mamilas-agy-video-gozu]]

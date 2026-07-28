@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: fbff88be-4a01-42c5-8144-26fb9e4d6996
-  modified: 2026-07-28T20:28:37.744Z
+  modified: 2026-07-28T20:40:54.954Z
 ---
 
 # 2026-07-28 — 50 kare, dört bağımsız tarama, çıkan dersler
@@ -59,6 +59,19 @@ K36 ("YUMURTA"+"SPERM") üretimde safety flag yedi. Sebep terimler değil, iki �
 gelmesiydi: karede **yaşı yazılı bir çocuk** + NEGATIVE satırında koruma amaçlı
 *"no anatomy / no human reproductive organ / no nudity"*. Sınıflandırıcı olumsuzlamayı okumaz,
 **kelimeleri okur**. Onarım: çocuğu kareden çıkar, koruyucu negatifleri **sil**. Geçti.
+
+## Kurgu masasına — 50 klip tek tek iyi, arka arkaya monoton
+
+Üreme'nin 50 klibinin **50'si de yerleşerek bitiyor**: her biri kendi içinde kapanıyor,
+yumuşak iniyor. Tek tek mükemmel, ama dizilince kurguda hiç sivrilik kalmıyor — hepsi aynı
+nefesle biter. Uzun-metraj kurgusunun itici gücü bunun tersinden gelir: **bazı planlar
+hareketin ortasında kesilir**, tamamlanmadan; izleyici tamamlamayı kendi yapar ve ileri düşer.
+EDIT-PLAN yazarken hangi kliplerin **erken kesileceği** işaretlenmeli — bu yeniden üretim
+gerektirmez, kurgu masasında çözülür.
+
+İkinci tuzak: uzun VO yüzünden 10 saniyeye çıkan klipler. **Tek olay + 10 saniye = 7 saniye
+yerleşme** — hem sıkıcılık hem drift/warp riski tam orada doğar. Alternatif: 5 saniyelik klip
++ son kareyi dondurmak, ya da o VO cümlesini iki plana bölmek.
 
 ## Teknik: kareyi gerçekten okumanın yolu
 
