@@ -1,5 +1,52 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+## 🎬 ŞU AN — AKTİF ÜRETİM (2026-07-28 akşam · son ölçüm bu oturumda)
+
+**Model: Opus 5** (`claude-opus-5[1m]`, `~/.claude/settings.json`'da sabit — 4.8'e düşüren
+takma ad `opus[1m]` idi, değiştirildi).
+
+| Ne | Durum |
+|---|---|
+| **Aktif video** | **Kütle ve Ağırlık** (5. sınıf, pixar_3d_edu, EDU) — **KURGUDA** |
+| Kareler | 35/35 üretildi, denetlendi (29 temiz), diskte: `Desktop/6. Sınıf Animasyonlar/5. Sınıf - Kütle ve Ağırlık/` |
+| Klipler | 35/35 Kling 3.0 ile üretildi, aynı klasörde |
+| VO + müzik | ElevenLabs (3:00) + Suno "Paper Lantern Atlas" (1:35) — aynı klasörde |
+| Kurgu kiti | **5/5 tam**: MOTION · EDIT-PLAN · SESLENDIRME · SUNO · **KABA-KURGU.xml** |
+| Premiere | Timeline kurulu import edildi, Mami kurguyu yapıyor |
+
+**SIRADAKİ TEK ADIM:** Mami 11 klibi **extended** üretecek (`UZATILACAK-KLIPLER.txt` — hedef
+süreler whisper'la ölçülü). Sonra tek komut: `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>`
+→ yavaşlatma satırı kaybolur, hepsi %100 hızda.
+
+**AÇIK MAMİ KARARLARI:**
+1. **K04 çatalı** — teslim edilen kare sınıf flashback'i; VO'ya uyuyor ama K08 terazi ve K13+
+   dinamometre reveal'lerini erken harcıyor. Mutfak dersen sıfırdan üretilir, kalsın dersen PASS.
+2. **Kalan revizeler** — K06 (chibi + Ü noktaları), K12 (arka planda insan = firewall), K15
+   (havada asılı poz, VO'yu çürütüyor), K33 (LCD hayalet segment). Hepsi referans-edit, `revize.txt`.
+3. **`agents/MAMI-ZEVKI.md`** — 32 maddelik zevk taslağı Mami onayı bekliyor; onaylanan madde
+   PROMPT-YASASI'na ya da APPROVED.md'ye taşınır, reddedilen silinir.
+
+**BU OTURUMDA KAZANILAN YETENEKLER (hepsi commit'li):**
+- `mamilas-buddy` skill'i **yazıldı** — aylardır üç yerden çağrılıyordu, hiçbir yerde yoktu.
+- `scripts/kaba-kurgu.mjs` — EDIT-PLAN → Premiere FCP7 XML; whisper ile VO cümlelerine hizalı.
+  Duvar: `src/core/kabaKurgu.test.ts` (6 test, ikisi bozup-geri-alarak kanıtlandı).
+- `whisper-cpp` kuruldu (yerel, Türkçe medium model) — ses artık ölçülebiliyor.
+- Meta-duvar: settings.json'daki her hook var + çalıştırılabilir mi (exec-bit ölümünü yakalar).
+- Codex parite: AGENTS.md artık aktif faza açılıyor; skill kümeleri eşit.
+- `agents/MAMI-ZEVKI.md` — zevk 5 videoluk revize korpusundan madenlendi.
+- vitest 2135 → **2147**.
+
+**AÇIK KALAN MAKRO BULGULAR** (2026-07-28 Opus 5 denetimi, 6 kol · tam metin workflow journal
+`wf_bd2a8929-c27`): öğrenme halkası kopuk (hasat topluyor, terfi hiç çalışmıyor → her üretim BOŞ
+ders bankasıyla başlıyor) · enzim kilitleri hiçbir dosyaya yazılmıyor · `prompt-lint` dosya adına
+bağlı (Kütle'nin 35 karesinden 8'ini ölçtü) ve üretimden SONRA koşuyor, üstelik varsayılan EDU
+register'ıyla (REAL işinde kapı kör) · hasat kapısı içeriğe bakmıyor · Codex `.claude/rules/`
+yasalarını hiç görmüyor · 5 video ortak görsel imza taşımıyor (MAMILAS ident'i yok) · 17 bitmiş
+`.prproj` diskte okunmamış duruyor (Mami'nin gerçek kesim ritmi orada).
+
+---
+
+
 ## 🧾 İNŞA LEDGER — 2026-07-28 keşif turu (38 bulgu · Mami seçer, körleme onarım yasak)
 
 > **Bağlam:** Mami "burayı da inşa edelim" dedi, ultracode turu açıldı. Tur **tavansız** yazıldı

@@ -1,0 +1,42 @@
+KÜTLE VE AĞIRLIK — MÜZİK (Suno v5.5)
+=========================================================================
+"Hep aynı müzik" sıkıntısının sebebi: aynı jenerik prompt. Çözüm (araştırmadan): v5.5 formülü =
+TÜR+alt tür · RUH+enerji · 3-5 ADLI enstrüman (sıfatlı) · PRODÜKSİYON estetiği · BPM.
+8-15 hassas etiket, 20 belirsiz değil. Aşağıda ÜÇ FARKLI yön var — birini seç, ya da üçünü de
+üret, kulağına en iyi geleni al. Hepsi "SIMPLE" kutusuna yapıştırılır.
+
+-------------------------------------------------------------------------
+A) SICAK MASAL — güvenli, sıcak ev/merak tonu (varsayılan öneri)
+-------------------------------------------------------------------------
+warm storybook underscore, tender and curious, no vocals, fingerpicked nylon guitar, soft felt piano, glockenspiel sparkle, warm upright bass, light hand percussion, gentle string swell on the wonder moments, clean warm analog production, intimate chamber feel, 76 BPM, instrumental only
+
+-------------------------------------------------------------------------
+B) SİNEMATİK HAYRET — uzay/Ay bölümü için, daha büyük ama çocuksu (portfolyo için en iddialı)
+-------------------------------------------------------------------------
+cinematic storybook orchestral, gentle awe and discovery, no vocals, celesta, warm legato strings, mellow French horn, harp glissando shimmer, soft timpani swells, airy wordless choir pad far in the back for the moon section, film-score-quality warm mix, builds from quiet to bright, 82 BPM, instrumental only
+
+-------------------------------------------------------------------------
+C) MODERN SICAK — "aynı müzik" hissini kıran taze renk (Rhodes/marimba)
+-------------------------------------------------------------------------
+modern cozy underscore, bright and inquisitive, no vocals, warm Rhodes electric piano, marimba, muted guitar plucks, soft analog synth pad, brushed drums, subtle vinyl tape warmth, clean wide stereo with good instrument separation, playful and spacious, 90 BPM, instrumental only
+
+=========================================================================
+NEGATİF (Custom mod → Exclude Styles kutusu — jenerikliği ve bulanıklığı keser):
+no vocals, no singing, no rap, no autotune, no reverb wash, no aggressive drums, no dubstep,
+no dark cinematic, no sci-fi tension, no muddy mix
+
+ÇEŞİTLENDİRME KURALI (bir daha "hep aynı" olmasın): her yeni videoda TEK öğeyi değiştir —
+• lider enstrüman: piyano-merkezli ↔ gitar-merkezli ↔ Rhodes/marimba-merkezli
+• tempo: ±10 BPM (aynı tür bile başka hisseder)
+• doku: sıcak analog ↔ berrak/geniş ↔ tape/lo-fi
+Üçünü aynı anda değiştirme — kontrolü kaybedersin. Bir eksen döndür, gerisini sabit tut.
+
+MİKS/KURGU: VO altında ~-18 dB, klip başlarında fade. Reveal karelerinde (K06 KÜTLE / K13 AĞIRLIK
+/ K17 YER ÇEKİMİ) müzik bir an nefes alsın. Climax'ta (K25-29 Ay) B seçeneğinin choir-pad'i
+girerse şaşkınlık büyür; Resolution'da (K32-35) tekrar sıcak eve döner.
+
+İLERİSİ (v5.5 kişiselleştirme): beğendiğin 6+ parçayla "Custom Model" eğitip kendi MAMILAS
+imzanı çıkarabilirsin — o zaman müzik gerçekten "senin sesin" olur, jenerik değil.
+
+Kaynak: hookgenius.app/learn/suno-prompt-guide-2026 · jackrighteous.com (negatif prompt) ·
+suno.bi/blog (v5.5 yapısal şablonlar).

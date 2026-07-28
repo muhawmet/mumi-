@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Kütle ve Ağırlık_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>5. Sınıf - Kütle ve Ağırlık — kaba kurgu</name>
+    <duration>4309</duration>
+    <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>85</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>85</end>
+          <in>0</in>
+          <out>85</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/1.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>85</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Efe o akşam mutfakta annesine yardım ediyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>85</start>
+          <end>273</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/2.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>63.8298</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K02 — Poşetten çıkardığı elmayı tartının üstüne koydu ve ekranda beliren sayıyı yüksek sesle oku</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>106</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>273</start>
+          <end>379</end>
+          <in>0</in>
+          <out>106</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/3.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>106</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Annesi gülümsedi ama Efe'nin kafasında bir şey takıldı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>379</start>
+          <end>550</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/4.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>70.1754</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K04 — O gün fen dersinde tam da bunun üzerine konuşmuşlardı: kütle ve ağırlık, aslında bambaşka </mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>550</start>
+          <end>709</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/5.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>75.4717</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K05 — Efe elmayı avucunda çevirdi ve merakla düşündü: ikisi gerçekten aynı şey değil miydi?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>48</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>709</start>
+          <end>757</end>
+          <in>0</in>
+          <out>48</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/6.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>48</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — İlk durağı kütleydi. (yazı KÜTLE · reveal)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>757</start>
+          <end>948</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/7.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>62.8272</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K07 — Kütle, bir cismin içinde bulunan madde miktarıydı; elmanın içinde ne kadar madde varsa küt</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>948</start>
+          <end>1192</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/8.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>49.1803</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K08 — Kütleyi ölçmek için eşit kollu terazi kullanılıyordu; bir kefeye cisim, diğerine bilinen k</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>116</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1192</start>
+          <end>1308</end>
+          <in>0</in>
+          <out>116</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/9.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>116</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Kütlenin birimi kilogramdı, küçük cisimlerde gram... (yazı kg + g)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>72</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1308</start>
+          <end>1380</end>
+          <in>0</in>
+          <out>72</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/10.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>72</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Kütle değişmeyen bir madde miktarıydı. (yazı DEĞİŞMEZ)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1380</start>
+          <end>1507</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/11.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.4882</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K11 — Elmanın kütlesi kutupta, Dünya'nın öbür ucunda ya da Mars'ta... (S13+14)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>103</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1507</start>
+          <end>1610</end>
+          <in>0</in>
+          <out>103</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/12.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>103</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>60</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1610</start>
+          <end>1670</end>
+          <in>0</in>
+          <out>60</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/13.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>60</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Sıra ikinci kavramdaydı. (yazı AĞIRLIK · reveal)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>89</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1670</start>
+          <end>1759</end>
+          <in>0</in>
+          <out>89</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/14.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>89</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Efe elmayı bıraktı; elma tezgâhın üstüne düştü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1759</start>
+          <end>1891</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/15.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>90.9091</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K15 — Neden zıpladığında havada asılı kalmıyordu; her şey neden aşağı gidiyordu?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>86</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1891</start>
+          <end>1977</end>
+          <in>0</in>
+          <out>86</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/16.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>86</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — Dünya, üzerindeki her şeyi merkezine doğru çekiyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>80</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1977</start>
+          <end>2057</end>
+          <in>0</in>
+          <out>80</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/17.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>80</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Bu çekim kuvvetine yer çekimi deniyordu. (yazı YER ÇEKİMİ)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>99</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2057</start>
+          <end>2156</end>
+          <in>0</in>
+          <out>99</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/18.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>99</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K18 — Ağırlık, kütleye etki eden yer çekimi kuvvetinin büyüklüğüdür.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>86</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2156</start>
+          <end>2242</end>
+          <in>0</in>
+          <out>86</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/19.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>86</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — Ağırlık teraziyle değil, dinamometreyle ölçülürdü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>106</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2242</start>
+          <end>2348</end>
+          <in>0</in>
+          <out>106</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/20.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>106</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Birimi Newton'dı ve kısaca N harfiyle gösterilirdi. (yazı N)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>65</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2348</start>
+          <end>2413</end>
+          <in>0</in>
+          <out>65</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/21.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>65</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Ağırlık bulunduğumuz yere göre değişirdi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>84</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2413</start>
+          <end>2497</end>
+          <in>0</in>
+          <out>84</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/22.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>84</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Efe bunu anlamak için hayalinde bir yolculuğa çıktı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2497</start>
+          <end>2734</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/23.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>50.6329</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K23 — Bir astronotun kütlesi Dünya’da tam altmış kilogramdı. Astronot Dünya’da eşit kollu terazi</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>116</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2734</start>
+          <end>2850</end>
+          <in>0</in>
+          <out>116</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/24.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>116</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — Dünya'da dinamometrede ağırlığı yaklaşık altı yüz Newton... (yazı 600 N)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>84</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2850</start>
+          <end>2934</end>
+          <in>0</in>
+          <out>84</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/25.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>84</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Sonra Efe uzay yolculuğunda Ay'a vardı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>98</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2934</start>
+          <end>3032</end>
+          <in>0</in>
+          <out>98</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/26.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>98</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Ay'ın çekim kuvveti Dünya'nınkinin altıda biri kadardı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>117</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3032</start>
+          <end>3149</end>
+          <in>0</in>
+          <out>117</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/27.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>117</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Ay’da terazi yine altmış kilogram gösterdi; çünkü kütle değişmiyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>104</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3149</start>
+          <end>3253</end>
+          <in>0</in>
+          <out>104</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/28.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>104</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — Dinamometrede ağırlığı yaklaşık yüz Newton'a düştü. (yazı 100 N)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>116</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3253</start>
+          <end>3369</end>
+          <in>0</in>
+          <out>116</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/29.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>116</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — ...astronotlar Ay'da dev adımlarla daha hafif hisseder.  (RİSKLİ KLİP)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>88</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3369</start>
+          <end>3457</end>
+          <in>0</in>
+          <out>88</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/30.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>88</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Efe gözlerini açtığında her şey yerine oturmuştu. (sınıfa dönüş)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3457</start>
+          <end>3640</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/31.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>65.5738</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K31 — Kütle maddenin kendisiydi; değişmezdi, eşit kollu teraziyle ölçülürdü ve birimi kilogramdı</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3640</start>
+          <end>3883</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/32.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>49.3827</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K32 — Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi; dinamometreyle ölçülürdü, bir</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>107</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3883</start>
+          <end>3990</end>
+          <in>0</in>
+          <out>107</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/33.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>107</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Elmanın iki yüz gram olan şeyi ağırlığı değil, kütlesiydi. (yazı 200 g)</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>81</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3990</start>
+          <end>4071</end>
+          <in>0</in>
+          <out>81</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/34.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>81</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Efe elmayı bu kez bilerek ve isteyerek ısırdı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>120</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4071</start>
+          <end>4309</end>
+          <in>0</in>
+          <out>120</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/35.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>120</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>50.4202</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K35 — Artık biri ona kütle ile ağırlık arasındaki farkı sorarsa cevabı hazırdı. Bir sonraki keşi</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>ElevenLabs_2026-07-28T12_47_50_Mía Evans - Nuanced, Polished and Clear_pvc_sp78_s50_sb80_v3.mp3</name>
+          <enabled>TRUE</enabled>
+          <duration>4311</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>4309</end>
+          <in>0</in>
+          <out>4309</out>
+          <file id="file-vo1">
+            <name>ElevenLabs_2026-07-28T12_47_50_Mía Evans - Nuanced, Polished and Clear_pvc_sp78_s50_sb80_v3.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/ElevenLabs_2026-07-28T12_47_50_Mi%CC%81a%20Evans%20-%20Nuanced%2C%20Polished%20and%20Clear_pvc_sp78_s50_sb80_v3.mp3</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4311</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>Paper Lantern Atlas (1).wav (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>2272</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>2272</end>
+          <in>0</in>
+          <out>2272</out>
+          <file id="file-mzk1">
+            <name>Paper Lantern Atlas (1).wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/Paper%20Lantern%20Atlas%20(1).wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>2272</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="mzk1-1">
+          <name>Paper Lantern Atlas (1).wav (2/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>2272</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2272</start>
+          <end>4309</end>
+          <in>0</in>
+          <out>2037</out>
+          <file id="file-mzk1"/>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>

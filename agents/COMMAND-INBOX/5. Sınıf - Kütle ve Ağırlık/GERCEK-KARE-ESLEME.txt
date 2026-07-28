@@ -1,0 +1,20 @@
+KÜTLE VE AĞIRLIK — GERÇEK KARE EŞLEME LEDGER'I (DÜZELTİLDİ 2026-07-28)
+=========================================================================
+OTORİTE KLASÖR (start frame'ler):
+/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Kütle ve Ağırlık/
+
+⚠️ ÖNCEKİ LEDGER YANLIŞTI — DÜZELTME KANITI
+Önceki sürüm "K10=35.png, indirmede kayma var, dosya=K−1" diyordu. Bu HAYALETTİ.
+6 denetim ajanı + Mami'nin makinesinde açılan kareler içerikle çürüttü:
+  - 10.png = DEĞİŞMEZ sınıfı (K10) — ledger "35.png=K10" diyordu (yanlış)
+  - 13.png = AĞIRLIK harfleri (K13) — ledger "13.png=K14" diyordu (yanlış)
+  - 31.png = KÜTLE tabelası + terazi (K31) — ledger "K31 yok" ima ediyordu (yanlış)
+  - 35.png = holde ısırılmış elma (K35, final) — ledger "35.png=K10" diyordu (yanlış)
+
+GERÇEK EŞLEME: dosya adı = kare numarası, DÜZ, KAYMA YOK.
+  K01=1.png  K02=2.png  ...  K09=9.png  K10=10.png  ...  K35=35.png
+
+35/35 kare mevcut. Codex'in "indirme kayması" teorisinin ürettiği iki "eksik kare"
+(K24, K31) aslında tam yerinde: 24.png = K24 (600 N), 31.png = K31 (KÜTLE).
+
+Bu ledger motion ve Premiere eşlemesinin tek doğrusudur. N.png → KN.

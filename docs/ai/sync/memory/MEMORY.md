@@ -2,14 +2,16 @@
      Yasa buraya yazılmaz — prompt/üretim kanonu `agents/PROMPT-YASASI.md`, mimari kanon
      `docs/ai/PROJECT_CONTRACT.md`, durum `EXECUTION_STATE.md`. Hafıza onları tamamlar, ezmez. -->
 
-**Aktif faz: İCRAAT (2026-07-28).** İnşa bitti, iş artık VİDEO ÜRETMEK. Faz profili `docs/ai/faz-icraat.md`. İnşa profili uykuda: `docs/ai/faz-insa.md`.
+**Aktif faz: İCRAAT (2026-07-28).** İnşa bitti, iş artık VİDEO ÜRETMEK. **Model: Opus 5** (`claude-opus-5[1m]`, settings.json'da sabit). Faz profili `docs/ai/faz-icraat.md`. İnşa profili uykuda: `docs/ai/faz-insa.md`.
 
 ## Mami — kişi ve çalışma biçimi
 
 - [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru, İngilizce yazılı zayıf.
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB merkezde: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı. Derinlik: `mamilas-buddy` skill'i (RSD + yük yönetimi orada).
+- [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — Mami 2026-07-28: "sadece işlere bakıyorsun, destek görmedim." 29, atletik; yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
 - [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans. Bu "ultracode" workflow'dur, effort ayarı değil.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — sistemin tek hastalığı bilgiyi taşıyamamak; yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
+- [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Kavram ışığı devri = 0 revize. Tam metin `agents/MAMI-ZEVKI.md`.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — hata avının çıktısı problem listesidir, kod değil. Körleme regex yasak.
 - [Mami loop'ta](mamilas-mami-is-in-the-loop.md) — kapatmadan önce sor: "Mami bunu bir cümleyle düzeltir mi?" Aşırı mühendislik tuzağı.
@@ -24,6 +26,8 @@
 - [Enzim — hız yönergesi](mamilas-enzim-hiz-yonergesi.md) — sorun kalite değil geri sarma; 4 kilit kesim masasında kapanır.
 - [Üretim akışı](mamilas-uretim-akisi.md) — JSON→kesim→referans→prompt→üretim→tek-geçiş revizyon→motion→Premiere.
 - [Üretim rutini](mamilas-generation-routine.md) — Mami'nin gerçek rutini ve klip ekonomisi.
+- [Kaba kurgu hattı](mamilas-kaba-kurgu-hatti.md) — kitin BEŞİNCİ parçası KABA-KURGU.xml; Premiere timeline kurulu gelir, whisper'la VO cümlelerine hizalı. Dört Premiere tuzağı duvarda.
+- [Uzatılmış klip kararı](mamilas-uzatilmis-klip-karari.md) — klip VO'dan kısaysa YAVAŞLATILMAZ, uzun üretilir. Yavaşlatma acil tamir, varsayılan değil.
 - [Magnific @-referansları](mamilas-magnific-char-refs.md) — tekrar eden karakter `@handle` ile çağrılır, tarif edilmez.
 
 ## Motor kusurları (kareyle kanıtlı)

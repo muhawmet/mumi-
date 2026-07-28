@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:03,000
+ Efe o akşam mutfakta annesine yardım ediyordu.
+
+2
+00:00:03,560 --> 00:00:09,280
+ Poşetten çıkardığı elmayı tartının üstüne koydu ve ekranda beliren sayıyı yüksek sesle okudu.
+
+3
+00:00:09,840 --> 00:00:10,720
+ "200 gram."
+
+4
+00:00:11,400 --> 00:00:12,520
+ Annesi gülümsedi.
+
+5
+00:00:13,000 --> 00:00:15,040
+ Ama Efe'nin kafasında bir şey takıldı.
+
+6
+00:00:15,800 --> 00:00:18,800
+ O gün fen dersinde tam da bunun üzerine konuşmuşlardı.
+
+7
+00:00:19,200 --> 00:00:22,200
+ Kütle ve ağırlık aslında bambaşka iki kavramdı.
+
+8
+00:00:22,920 --> 00:00:25,960
+ Efe elmayı avcunda çevirdi ve merakla düşündü.
+
+9
+00:00:26,520 --> 00:00:28,680
+ İkisi gerçekten aynı şey değil miydi?
+
+10
+00:00:29,560 --> 00:00:31,040
+ İlk durağa kütleydi.
+
+11
+00:00:31,560 --> 00:00:34,560
+ Kütle, bir cismin içinde bulunan madde miktarıydı.
+
+12
+00:00:35,080 --> 00:00:38,880
+ Elmanın içinde ne kadar madde varsa kütlesi tam olarak oydu.
+
+13
+00:00:39,520 --> 00:00:42,720
+ Kütleyi ölçmek için eşit kollu terazi kullanılıyordu.
+
+14
+00:00:43,240 --> 00:00:48,960
+ Bir kefeye cisim, diğerine birinen kütleler konuyor ve kollar dengelenene kadar ekleniyordu.
+
+15
+00:00:49,680 --> 00:00:51,200
+ Kütlenin birimi kilogramdı.
+
+16
+00:00:51,680 --> 00:00:53,800
+ Küçük cisimlerde gram kullanılıyordu.
+
+17
+00:00:54,520 --> 00:00:56,880
+ Kütle değişmeyen bir madde miktarıydı.
+
+18
+00:00:57,520 --> 00:01:02,200
+ Elmanın kütlesi kutupta, dünyanın öbür ucunda ya da Mars'ta da değişmezdi.
+
+19
+00:01:02,800 --> 00:01:06,000
+ Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu.
+
+20
+00:01:07,080 --> 00:01:08,920
+ Sıra ikinci kavramdaydı.
+
+21
+00:01:09,600 --> 00:01:10,720
+ Efe elmayı bıraktı.
+
+22
+00:01:11,080 --> 00:01:12,640
+ Elma tezgahan üstüne düştü.
+
+23
+00:01:13,320 --> 00:01:15,680
+ Neden zıpladığında havada asılı kalmıyordu?
+
+24
+00:01:16,160 --> 00:01:17,840
+ Her şey neden aşağı gidiyordu?
+
+25
+00:01:18,840 --> 00:01:21,840
+ Dünya üzerindeki her şeyi merkezine doğru çekiyordu.
+
+26
+00:01:22,440 --> 00:01:25,080
+ Bu çekim kuvvetine yer çekimi deniyordu.
+
+27
+00:01:25,760 --> 00:01:29,240
+ Ağırlık kütleye etki eden yer çekimi kuvvetinin büyüklüğüdür.
+
+28
+00:01:29,880 --> 00:01:32,920
+ Ağırlık teraziyle değil, dinamometreyle ölçülürdü.
+
+29
+00:01:33,480 --> 00:01:37,160
+ Birimi newtondu ve kısaca "N" harfiyle gösterilirdi.
+
+30
+00:01:37,880 --> 00:01:40,000
+ Ağırlık bulunduğumuz yere göre değişirdi.
+
+31
+00:01:40,600 --> 00:01:43,400
+ Efe bunu anlamak için hayalinde bir yolculuğa çıktı.
+
+32
+00:01:44,120 --> 00:01:47,440
+ Bir astronotun kütlesi dünyada tam 60 kilogramdı.
+
+33
+00:01:48,120 --> 00:01:50,920
+ Astronot dünyada eşit kollu teraziye çıktığında,
+
+34
+00:01:51,120 --> 00:01:53,240
+ terazi 60 kilogram gösteriyordu.
+
+35
+00:01:54,000 --> 00:01:58,000
+ Dünya'da dinamometrede ağırlığı yaklaşık 600 newton ölçülüyordu.
+
+36
+00:01:58,840 --> 00:02:01,720
+ Sonra Efe, uzay yolculuğunda Ay'a vardı.
+
+37
+00:02:02,360 --> 00:02:05,720
+ Ay'ın çekim kuvveti, dünyanınkinin altıda biri kadardı.
+
+38
+00:02:06,440 --> 00:02:10,720
+ Ay'da terazi yine 60 kilogram gösterdi, çünkü kütle değişmiyordu.
+
+39
+00:02:11,320 --> 00:02:14,840
+ Dinamometrede ise ağırlığı yaklaşık 100 newtona düştü.
+
+40
+00:02:15,640 --> 00:02:19,360
+ Bu yüzden astronotlar Ay'da dev adımlarla daha hafif hisseder.
+
+41
+00:02:20,480 --> 00:02:23,480
+ Efe gözlerini açtığında, her şey yerine oturmuştu.
+
+42
+00:02:24,160 --> 00:02:27,200
+ Kütle maddenin kendisiydi, değişmezdi.
+
+43
+00:02:27,680 --> 00:02:31,040
+ Eşit kollu teraziyle ölçülürdü ve birimi kilogramdı.
+
+44
+00:02:31,800 --> 00:02:35,440
+ Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi.
+
+45
+00:02:36,080 --> 00:02:41,120
+ Dinamometre ile ölçülürdü, birimi newtondu ve bulunduğumuz yere göre değişirdi.
+
+46
+00:02:41,920 --> 00:02:45,640
+ Elmanın 200 gram olan şeyi ağırlığı değil, kütlesiydi.
+
+47
+00:02:46,360 --> 00:02:48,960
+ Efe elmayı bu kez bilerek ve isteyerek ısırdı.
+
+48
+00:02:49,720 --> 00:02:54,160
+ Artık biri ona kütle ile ağırlık arasındaki farkı sorarsa, cevabı hazırdı.
+
+49
+00:02:55,160 --> 00:02:57,040
+ Bir sonraki keşifte görüşmek üzere.
+
+50
+00:02:57,640 --> 00:02:59,640
+ Merakla kalın, bilimle kalın.
+

@@ -1,0 +1,36 @@
+Kütle ve Ağırlık — 5. SINIF · SESLENDİRME (ElevenLabs v3)
+=========================================================================
+SES: sıcak, parlak, meraklı bir Türk anlatıcı (Efe'nin dış sesi). Ekranda kimse konuşmaz.
+
+⚙️ v3 AYARLARI (araştırmadan — bkz. kaynaklar altta)
+• Stability: "Natural" — tag'lere tepki verir ama tutarlı kalır. (Creative daha ifadeli ama
+  cümleden cümleye ton kayar; 3.5 dk anlatıda tutarlılık şart → Natural.)
+• Similarity/Speaker boost: yüksek (~%75) — ses hep aynı anlatıcı kalsın.
+• Speed: normal. Sayılar TÜRKÇE okunur: "iki yüz gram", "altmış kilogram", "yüz Nyuton",
+  "altı yüz Nyuton". "Newton" → "Nyuton". İngilizce kelime yok.
+
+🎭 TAG YASASI (v3): köşeli parantez = PERFORMANS CÜMLESİ, okunmaz. Sakin anlatıcıda AZ kullan
+  (aşırı tag sesi bozar). Aşağıda yalnız dönüm anlarına serpildi (~10 tag / 3.5 dk).
+  Noktalama = tempo: virgül nefes · üç nokta (…) AĞIRLIK/bekleme · reveal'de tek düşünceli duruş.
+  BÜYÜK HARF kullanma (anlatıcıyı bağırtır) — vurgu tag ve … ile verilir.
+
+📼 YÖNTEM: her paragrafı 2-3 kez üret, en iyisini seç (v3 aynı metni her seferinde biraz farklı
+  okur). Paragraf araları doğal sekans sınırlarıdır (Intro / Build-up / Climax / Resolution).
+=========================================================================
+
+
+>>>>> ELEVENLABS'E BUNU YAPIŞTIR <<<<<
+
+
+[warmly] Efe o akşam mutfakta annesine yardım ediyordu. Poşetten çıkardığı elmayı tartının üstüne koydu ve ekranda beliren sayıyı yüksek sesle okudu: iki yüz gram. Annesi gülümsedi… ama Efe'nin kafasında bir şey takıldı. [curiously] O gün fen dersinde tam da bunun üzerine konuşmuşlardı: kütle ve ağırlık, aslında bambaşka iki kavramdı. Efe elmayı avucunda çevirdi ve merakla düşündü: ikisi gerçekten aynı şey değil miydi? [with wonder] İlk durağı… kütleydi. Kütle, bir cismin içinde bulunan madde miktarıydı; elmanın içinde ne kadar madde varsa, kütlesi tam olarak oydu. Kütleyi ölçmek için eşit kollu terazi kullanılıyordu; bir kefeye cisim, diğerine bilinen kütleler konuyor ve kollar dengelenene kadar ekleniyordu.
+
+Kütlenin birimi kilogramdı, küçük cisimlerde gram kullanılıyordu. Kütle, değişmeyen bir madde miktarıydı. Elmanın kütlesi kutupta, Dünya'nın öbür ucunda ya da Mars'ta da değişmezdi. Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu. [thoughtfully] Sıra… ikinci kavramdaydı. Efe elmayı bıraktı; elma tezgâhın üstüne düştü. Neden zıpladığında havada asılı kalmıyordu; her şey neden aşağı gidiyordu? Dünya, üzerindeki her şeyi merkezine doğru çekiyordu. [with wonder] Bu çekim kuvvetine… yer çekimi deniyordu. Ağırlık, kütleye etki eden yer çekimi kuvvetinin büyüklüğüdür. Ağırlık teraziyle değil, dinamometreyle ölçülürdü. Birimi Nyuton'du ve kısaca N harfiyle gösterilirdi. Ağırlık, bulunduğumuz yere göre değişirdi. [softly] Efe bunu anlamak için hayalinde bir yolculuğa çıktı. Bir astronotun kütlesi Dünya'da tam altmış kilogramdı. Astronot Dünya'da eşit kollu teraziye çıktığında, terazi altmış kilogram gösteriyordu. Dünya'da dinamometrede ağırlığı yaklaşık altı yüz Nyuton ölçülüyordu.
+
+[with awe] Sonra Efe, uzay yolculuğunda Ay'a vardı. Ay'ın çekim kuvveti, Dünya'nınkinin altıda biri kadardı. Ay'da terazi yine altmış kilogram gösterdi; çünkü kütle değişmiyordu. Dinamometrede ise ağırlığı yaklaşık yüz Nyuton'a düştü. [brightly] Bu yüzden astronotlar Ay'da dev adımlarla daha hafif hisseder. [warmly] Efe gözlerini açtığında, her şey yerine oturmuştu. Kütle, maddenin kendisiydi; değişmezdi, eşit kollu teraziyle ölçülürdü ve birimi kilogramdı.
+
+Ağırlık ise, gezegenin o maddeye uyguladığı çekim kuvvetiydi; dinamometreyle ölçülürdü, birimi Nyuton'du ve bulunduğumuz yere göre değişirdi. Elmanın iki yüz gram olan şeyi, ağırlığı değil… kütlesiydi. Efe elmayı bu kez bilerek ve isteyerek ısırdı. [warmly] Artık biri ona kütle ile ağırlık arasındaki farkı sorarsa, cevabı hazırdı. Bir sonraki keşifte görüşmek üzere. [brightly] Merakla kalın, bilimle kalın!
+
+=========================================================================
+Kaynak (v3 pratik): elevenlabs.io/docs best-practices · elevenlabs.io/blog/v3-audiotags
+Kullanılan tag'ler (hepsi v3 destekli): [warmly] [curiously] [with wonder] [thoughtfully]
+  [softly] [with awe] [brightly]. Tutmazsa çıkar — metin tag'siz de akıcı okunur.

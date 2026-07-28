@@ -1,0 +1,70 @@
+KÜTLE VE AĞIRLIK — REVİZE LİSTESİ (denetim 2026-07-28, 35/35 kare görüldü)
+=========================================================================
+35 karenin 29'u TEMİZ. 6 revize (aşağıda), + 5 opsiyonel/izle (Mami seçer).
+Referans-edit: kareyi baştan tarif etme — görsel zaten referans, yalnız ONLY kısmı değişir.
+Eşleme: dosya N.png = KN (düz). ⚠ Codex'in "K10=35.png" eşlemesi YANLIŞTI (bkz. GERCEK-KARE-ESLEME.txt).
+
+========================= ZORUNLU REVİZE (6) =========================
+
+### 4.png  (K04 — ÇATAL: Mami seçer)
+Teslim edilen kare brief'in mutfağı DEĞİL, bir SINIF flashback'i (öğretmen elmayı tutar, solda
+terazi + sağda dinamometre + 2 öğrenci + küre). İki ileri reveal'i harcıyor (K08 terazi, K13+
+ağırlık aletleri) ve K03→K05 mutfak sürekliliğini kesiyor. VO "fen dersinde" yan cümlesi sınıfı
+SAVUNABİLİR. İki yol:
+  (A) MUTFAK (tavsiye) → "Use this referenced image" DEĞİL, baştan: @efe tezgaha yaslanmış
+      düşünüyor, mutfak ışığı sıcak/soğuk iki havuza bölünmüş, elma elinde, yazı YOK, ölçüm aleti YOK.
+  (B) SINIF kalsın → kare olduğu gibi PASS; ama K08 terazi reveal'i ve K18 dinamometre ilk-görülme
+      anları zayıflar. Codex bu yolu seçip tam bir sınıf prompt'u yazmıştı; tercih Mami'nin.
+
+### 6.png  (K06)
+Use this referenced image, change ONLY: make the boy match @efe as an 11–12 year old (taller,
+less chibi head-to-body ratio, same face), and render the Ü umlaut as two clean solid dots
+keeping the word spelled exactly K-Ü-T-L-E. Keep the glowing KÜTLE sign, the pose, the kitchen
+and everything else identical.
+
+### 12.png  (K12 — FIREWALL: insan sızmış)
+Use this referenced image, change ONLY: remove the blurry person in the background (leave a clean
+warm soft-focus backdrop), remove the glass bell dome/cloche over the apple, and deepen the apple
+to a matte deep-red skin with one soft highlight and a short brown stem. Keep the brass balance,
+the pan, the table and the exact framing identical.
+
+### 15.png  (K15 — havada asılı poz, VO'yu çürütüyor)
+Use this referenced image, change ONLY: lower the boy so his shoes are just above the tiled floor
+(a small hop, not floating high), bend his knees into a shallow jump-crouch, and add a soft oval
+contact shadow on the tiles directly beneath his shoes. Keep everything else identical.
+
+### 23.png  (K23 — yazı garble "60 66")
+Use this referenced image, change ONLY: the balance beam plate text must read exactly "60 kg"
+with clean digits (not "60 66"). Keep everything else identical.
+
+### 33.png  (K33 — LCD hayalet segment)
+Use this referenced image, change ONLY: remove the faint ghost/extra segment digits to the left
+of "200 g" on the scale display so it reads a clean "200 g". Keep everything else identical.
+
+===================== OPSİYONEL / İZLE (Mami seçer) =====================
+
+### 11.png  (K11 — ✅ KAPANDI, revize GEREKMİYOR)
+Mami'nin kararı (2026-07-28): kare değil VO değişti. "Ay'da" → "Dünya'nın öbür ucunda".
+Üç lomboz artık cümleye birebir oturuyor: kutup-Dünya / Dünya / Mars. Bedava kazanç —
+Ay reveal'i climax'a (K25) saklandı, dramatik olarak daha güçlü. Kare OLDUĞU GİBİ kalır.
+
+### 19.png  (K19 — vurgu netliği)
+change ONLY: make the second hand at the right edge clearly point toward the dynamometer as the
+correct instrument. Keep everything else identical.
+
+### 20.png  (K20 — DOĞRULA)
+Ölçek tepesinde "N" harfi var mı gözle bak. Yoksa: change ONLY: add one large engraved letter N
+at the top of the vertical scale. Keep everything else identical.
+
+### 24.png  (K24 — izle)
+Arka planda sağda çok bulanık bir figür olabilir; brief "kişi YOK" der, baskın değil.
+İstenirse: change ONLY: remove the faint background figure, keep the workshop bokeh clean.
+
+### 31.png  (K31 — izle)
+Terazi kolu tam yatay dengede değil, hafif eğik. İstenirse: change ONLY: bring the balance beam
+to level (horizontal). Keep the KÜTLE plaque, apple, weights and everything else identical.
+
+=========================================================================
+NOT — tartı modeli sürüklenmesi: K02 (2.png, mavi-LCD sleek) ≠ K33 (33.png, gri-LCD boxy).
+Okuma ikisinde de "200 g" doğru; model farkı küçük süreklilik sapması. Portfolyo istersen
+K33 tartısını K02'ninkiyle eşleyen ayrı edit yazılabilir — zorunlu değil.

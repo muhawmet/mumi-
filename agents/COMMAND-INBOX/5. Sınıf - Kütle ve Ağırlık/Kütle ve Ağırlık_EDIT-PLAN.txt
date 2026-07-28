@@ -1,0 +1,62 @@
+KÜTLE VE AĞIRLIK — 5. SINIF · EDIT-PLAN (Premiere)
+=========================================================================
+Eşleme: dosya N.png = KN (düz — GERCEK-KARE-ESLEME.txt). Klip 5s üretilir (Kling i2v, drift az),
+Premiere'de VO süresine uzatılır/son kare dondurulur. VOdur = anlatım süresi (tahmini).
+Kolon: dosya · K## · klip · VOdur · [zaman] · VO cümlesi (+merge / ◄uyarı)
+=========================================================================
+
+##### INTRO (K01–K08) #####
+1.png   K01   5s   4.0s   [0:00–0:04]   Efe o akşam mutfakta annesine yardım ediyordu.
+2.png   K02   5s   8.0s   [0:04–0:12]   ...ekranda beliren sayıyı yüksek sesle okudu: iki yüz gram. (yazı 200 g)
+3.png   K03   5s   4.5s   [0:12–0:16]   Annesi gülümsedi ama Efe'nin kafasında bir şey takıldı.
+4.png   K04   5s   7.5s   [0:16–0:24]   ...kütle ve ağırlık, aslında bambaşka iki kavramdı. (S4+5)  ⚠REVİZE/ÇATAL
+5.png   K05   5s   6.0s   [0:24–0:30]   ...ikisi gerçekten aynı şey değil miydi?
+6.png   K06   5s   2.0s   [0:30–0:32]   İlk durağı kütleydi. (yazı KÜTLE · reveal)  ⚠REVİZE
+7.png   K07   5s   9.0s   [0:32–0:41]   ...elmanın içinde ne kadar madde varsa kütlesi tam olarak oydu. (S8+9)
+8.png   K08   5s  11.0s   [0:41–0:52]   ...kollar dengelenene kadar ekleniyordu. (@terazi girer)  ◄VO>10s: son kare ~1s dondur
+
+##### BUILD-UP (K09–K24) #####
+9.png   K09   5s   5.0s   [0:52–0:57]   Kütlenin birimi kilogramdı, küçük cisimlerde gram... (yazı kg + g)
+10.png  K10   5s   4.0s   [0:57–1:01]   Kütle değişmeyen bir madde miktarıydı. (yazı DEĞİŞMEZ)
+11.png  K11   5s   5.5s   [1:01–1:06]   Elmanın kütlesi kutupta, Dünya'nın öbür ucunda ya da Mars'ta... (S13+14)  ✓VO kareye uyduruldu
+12.png  K12   5s   5.0s   [1:06–1:11]   Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu.  ⚠REVİZE
+13.png  K13   5s   2.0s   [1:11–1:13]   Sıra ikinci kavramdaydı. (yazı AĞIRLIK · reveal)
+14.png  K14   5s   4.5s   [1:13–1:18]   Efe elmayı bıraktı; elma tezgâhın üstüne düştü.
+15.png  K15   5s   6.0s   [1:18–1:24]   Neden zıpladığında havada asılı kalmıyordu... (S18+19)  ⚠REVİZE
+16.png  K16   5s   4.5s   [1:24–1:28]   Dünya, üzerindeki her şeyi merkezine doğru çekiyordu.
+17.png  K17   5s   3.5s   [1:28–1:32]   Bu çekim kuvvetine yer çekimi deniyordu. (yazı YER ÇEKİMİ)
+18.png  K18   5s   5.0s   [1:32–1:37]   Ağırlık, kütleye etki eden yer çekimi kuvvetinin büyüklüğüdür.
+19.png  K19   5s   4.5s   [1:37–1:41]   Ağırlık teraziyle değil, dinamometreyle ölçülürdü.
+20.png  K20   5s   4.5s   [1:41–1:46]   Birimi Newton'dı ve kısaca N harfiyle gösterilirdi. (yazı N)
+21.png  K21   5s   3.5s   [1:46–1:49]   Ağırlık bulunduğumuz yere göre değişirdi.
+22.png  K22   5s   4.5s   [1:49–1:54]   Efe bunu anlamak için hayalinde bir yolculuğa çıktı.
+23.png  K23   5s  10.0s   [1:54–2:04]   ...terazi altmış kilogram gösteriyordu. (S27+28 · yazı 60 kg)  ⚠REVİZE · ◄VO>10s
+24.png  K24   5s   5.5s   [2:04–2:09]   Dünya'da dinamometrede ağırlığı yaklaşık altı yüz Newton... (yazı 600 N)
+
+##### CLIMAX — AY YOLCULUĞU (K25–K31) #####
+25.png  K25   5s   3.5s   [2:09–2:13]   Sonra Efe uzay yolculuğunda Ay'a vardı.
+26.png  K26   5s   5.0s   [2:13–2:18]   Ay'ın çekim kuvveti Dünya'nınkinin altıda biri kadardı.
+27.png  K27   5s   5.5s   [2:18–2:23]   Ay'da terazi yine altmış kilogram gösterdi... (yazı 60 kg)
+28.png  K28   5s   4.5s   [2:23–2:28]   Dinamometrede ağırlığı yaklaşık yüz Newton'a düştü. (yazı 100 N)
+29.png  K29   5s   5.0s   [2:28–2:33]   ...astronotlar Ay'da dev adımlarla daha hafif hisseder.  (RİSKLİ KLİP)
+30.png  K30   5s   4.5s   [2:33–2:37]   Efe gözlerini açtığında her şey yerine oturmuştu. (sınıfa dönüş)
+31.png  K31   5s   7.0s   [2:37–2:44]   Kütle maddenin kendisiydi; değişmezdi... birimi kilogramdı. (yazı KÜTLE)
+
+##### RESOLUTION (K32–K35) #####
+32.png  K32   5s  10.0s   [2:44–2:54]   Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi... (yazı AĞIRLIK)  ◄VO>10s
+33.png  K33   5s   5.5s   [2:54–3:00]   Elmanın iki yüz gram olan şeyi ağırlığı değil, kütlesiydi. (yazı 200 g)  ⚠REVİZE
+34.png  K34   5s   4.5s   [3:00–3:04]   Efe elmayı bu kez bilerek ve isteyerek ısırdı.
+35.png  K35   5s  11.0s   [3:04–3:15]   ...Merakla kalın, bilimle kalın! (S40+41)  ◄VO>10s: son kare hold
+
+=========================================================================
+TOPLAM ~3:15  ·  35 klip  ·  6 revize (K04-çatal/K06/K12/K15/K23/K33) — bkz. revize.txt
+
+MÜZİK: Kütle ve Ağırlık_SUNO.txt (Suno v5.5). VO altında ~-18 dB, klip başlarında fade.
+  Intro sıcak akşam merakı · Build-up ritim (ölçüm/terazi/dinamometre) · Climax uzay/Ay şaşkınlığı
+  (hafif kozmik ışıltı) · Resolution eve döner, yumuşar.
+  Kavram-reveal karelerinde (K06 KÜTLE, K13 AĞIRLIK, K17 YER ÇEKİMİ) müzik bir an nefes alsın.
+SES MİKS: VO her yerde önde. Klipler sessiz üretildi (Kling ses yok). SFX minimal
+  (elma tık, terazi zinciri, yay gıcırtısı, Ay'da boğuk/az).
+◄VO>10s KLİPLER: K08, K23, K32, K35 — Premiere'de son kareyi ~1-2s dondur ya da VO'yu bir tık hızlı oku.
+DÜNYA↔AY BİLİM KİLİDİ: K23 60kg/600N (Dünya) → K27 60kg (Ay, kütle sabit) + K28 100N (Ay, ağırlık 1/6).
+  Kurgu bu dört sayıyı yan yana okutmalı — dersin kalbi bu karşılaştırma.

@@ -1,0 +1,37 @@
+KÜTLE VE AĞIRLIK — UZATILACAK KLİPLER (Mami kararı 2026-07-28)
+=========================================================================
+KARAR: Yavaşlatma YOK. "Bölme olayı çok bozdu — bu video şaheser olabilirdi,
+extended üreteyim o sahneleri." Klip VO cümlesinden kısa kaldığında çare
+yavaşlatmak değil, o klibi Kling'de DAHA UZUN üretmektir.
+
+Aşağıdaki 11 klip VO cümlesinden kısa. "Hedef" sütunu o karenin gerçek VO
+süresidir (whisper transkriptinden ölçüldü, tahmin değil).
+Kling 3.0 klip boyu 3-15s destekliyor — hepsi tek üretimde çıkar.
+
+Motion promptu DEĞİŞMEZ — aynı prompt, yalnız süre artar.
+Kaynak: Kütle ve Ağırlık_MOTION.txt
+
+  KARE   ŞU AN   HEDEF    ÜRETİLECEK   NOT
+  K02     6.0s    7.8s      8s         "200 g" okuma — yazı kilidi kritik
+  K04     5.0s    7.1s      8s         iki kavram / sıcak-soğuk ışık (ÇATAL: K04 kararı hâlâ açık)
+  K05     5.0s    6.6s      7s         elma avuçta dönüyor
+  K07     6.0s    8.0s      8s         madde ışığı elmanın içinde
+  K08     5.0s   10.2s     10s  ⬅ EN KRİTİK  terazi dengeye oturuyor (birleşik beat)
+  K11     5.0s    5.3s      6s         üç lomboz — kutup/Dünya/Mars
+  K15     5.0s    5.5s      6s         zıplama (REVİZE bekliyor: alçak hop + temas gölgesi)
+  K23     5.0s    9.9s     10s  ⬅      astronot + terazi "60 kg" (birleşik beat)
+  K31     6.0s    7.6s      8s         KÜTLE tabelası + terazi özeti
+  K32     6.0s   10.1s     10s  ⬅      AĞIRLIK tabelası + dinamometre (birleşik beat)
+  K35     7.0s    9.9s     10s  ⬅      kapanış, uzun VO
+
+=========================================================================
+UZATILDIKTAN SONRA: klipleri aynı klasöre aynı adla koy, sonra tek komut —
+
+  node scripts/kaba-kurgu.mjs "agents/COMMAND-INBOX/5. Sınıf - Kütle ve Ağırlık" \
+    --klipler "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Kütle ve Ağırlık"
+
+Yavaşlatma satırı kaybolacak, tüm klipler %100 hızda oynayacak.
+
+DERS (bir sonraki videoya): 10 saniyelik VO beat'ine 5 saniyelik klip planlanmaz.
+İki yol var, ikisi de üretim ÖNCESİ karar: (a) beat'i iki kareye böl (merge etme),
+(b) o kareyi baştan uzun üret. Enzim kilitlerine yazılacak.
