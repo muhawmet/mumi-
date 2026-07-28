@@ -30,6 +30,7 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
 | Prompt yazıldıktan sonra | `node scripts/prompt-lint.mjs <dosya> --register=real|edu|sty` — eksik slot kalmasın |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |
 | Klip geldiğinde | `node scripts/motion-qc.mjs <klip>` — videonun kendisi denetlenir |
+| **Klipler + VO inince** | `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>` — **Premiere timeline'ı kurulu gelir** |
 | Yeni referans eklerken | `/mamilas-ref` |
 | Video bitince | `node scripts/kapanis-hasadi.mjs --all` — karne + ders adayı + dünya kusuru + kit sapması |
 
@@ -43,6 +44,12 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
 - **Ajan başına sekans, kare başına değil.** Eşzamanlı tavan 6.
 - **Tek geçiş denetimi.** Kareye bir kez bak; aynı geçişte motion + varsa revize.
 - **Kurgu kiti motion fazıyla birlikte gelir** — MOTION + EDIT-PLAN + SESLENDIRME + SUNO.
+- **Klipler ve VO indiği an kaba kurgu üretilir** (`kaba-kurgu.mjs`) ve kite **beşinci parça**
+  olarak girer: `KABA-KURGU.xml`. Mami Premiere'i açtığında timeline **kurulu** gelir — klipler
+  sırada, VO A1'de, müzik A2'de, kesimler gerçek VO cümlelerine oturmuş. İş "kurmak"tan
+  "rötuş"a düşer. Hüküm hâlâ Mami'nin: XML'i silmek `rm`, medyaya dokunmaz.
+  Ölçülen kazanç (Kütle, 2026-07-28): plan 3:33 tahmin ediyordu, gerçek VO 3:00 — 33 saniyelik
+  tahmin sapması kaynakta kapandı; 35 kesimin 35'i cümlesine nokta atışı oturdu.
 - **Kare kalitesinin son hükmü Mami'nindir.** Ajan hazırlar, karar vermez.
 
 ## Teslim seti

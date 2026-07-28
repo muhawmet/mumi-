@@ -73,11 +73,20 @@ kareler.sort((a, b) => a.k - b.k);
 // Tam cümleler PROMPTLAR dosyalarının kare başlıklarında duruyor:
 //   `Kare 4 — "O gün fen dersinde ... bambaşka iki kavramdı." (start frame · B4+B5 merge)`
 //   `K09 | "Kütlenin birimi kilogramdı..." | yazı: "kg" ve "g"`
-const TIRNAK = /[«»"“”‘’]/;
-for (const f of readdirSync(PROJE)) {
-  if (!/PROMPTLAR|START-FRAME/i.test(f) || !/\.(txt|md)$/i.test(f)) continue;
+// DİKKAT: ‘ ve ’ BURAYA GİRMEZ. Türkçede ’ kesme işaretidir (Dünya’da, Newton’dı) —
+// tırnak sayınca cümle oradan kırpılıyor, kısa kalıyor ve zenginleştirme sessizce düşüyordu.
+// Kanıt: K23 "Bir astronotun kütlesi Dünya" diye kesildi, K22 onun cümlelerini yuttu.
+const TIRNAK = /[«»"“”]/;
+// Proje klasörü VE bir üstü taranır: prompt dosyaları bazen COMMAND-INBOX kökünde kalıyor
+// (Kütle'de öyleydi). Elle symlink kurmak bir sonraki videoda unutulur — kendi bulsun.
+const promptAdaylari = [];
+for (const dir of [PROJE, resolve(PROJE, '..')]) {
+  let liste; try { liste = readdirSync(dir); } catch { continue; }
+  for (const f of liste) if (/PROMPTLAR|START-FRAME/i.test(f) && /\.(txt|md)$/i.test(f)) promptAdaylari.push(join(dir, f));
+}
+for (const yol of promptAdaylari) {
   let metin;
-  try { metin = readFileSync(join(PROJE, f), 'utf8'); } catch { continue; }
+  try { metin = readFileSync(yol, 'utf8'); } catch { continue; }
   for (const ln of metin.replace(/\r\n/g, '\n').split('\n')) {
     const km = ln.match(/^\s*(?:Kare\s*(\d+)|K(\d+))\s*[—\-|]/i);
     if (!km) continue;
@@ -280,6 +289,12 @@ if (voDosya && ffprobe && !has('tahmin')) {
         const son = i + 1 < kareler.length ? Math.max(bas + 0.4, baslangic[i + 1].t) : voToplam;
         voSegment.push({ bas, son });
       }
+      if (has('ayrinti')) {
+        for (let i = 0; i < kareler.length; i++) {
+          const segs = atama.map((a, j) => (a === i ? j : -1)).filter((x) => x >= 0);
+          console.log(`   K${String(kareler[i].k).padStart(2,'0')} ${voSegment[i].bas.toFixed(1)}-${voSegment[i].son.toFixed(1)} (${(voSegment[i].son-voSegment[i].bas).toFixed(1)}s) seg[${segs.join(',')}] ${(kareler[i].vo||'').slice(0,38)}`);
+        }
+      }
       voHizaKaynak = `whisper metin eşleme — ${baslangic.filter((x) => x.kesin).length}/${kareler.length} kare cümlesine oturdu`;
     }
   } catch { /* yut — tahmine düş */ }
@@ -297,10 +312,12 @@ const items = kareler.map((kr, i) => {
   // Klip yere sığmıyorsa YAVAŞLAT. Eskiden `out`u kırpıyordum → Premiere kalan yeri
   // "medya yok" çizgisiyle dolduruyordu ve orada görüntü donuyordu (Mami'nin gördüğü kusur).
   // FCP7'de hız = (kaynak kare / timeline kare) × 100. Taban %35 — altında hareket sürünür.
-  // Mami (2026-07-28): "hiç yavaşlatmana gerek yok, süreleri fazladır bile."
-  // Klip normal hızda oynar; yere sığmıyorsa kaynaktan kırpılır, uzatma/yavaşlatma YOK.
-  const hiz = 100;
-  const kullanilanKaynak = Math.min(kaynakFr, durFr);
+  // Klip yere sığıyorsa NORMAL HIZ (çoğu kare böyle). Sığmıyorsa yavaşlatılır — çünkü
+  // alternatifi tırtık, yani kararan ekran. Birleşik beat'lerde (K08 = S8+S9) cümle 10s,
+  // klip 5s: matematik başka çıkış bırakmıyor. Yalnız GEREKTİĞİ KADAR yavaşlatılır.
+  const gerekenHiz = (kaynakFr / durFr) * 100;
+  const hiz = gerekenHiz >= 99.5 ? 100 : Math.max(45, gerekenHiz);
+  const kullanilanKaynak = Math.min(kaynakFr, Math.round(durFr * (hiz / 100)));
   const it = {
     ...kr, i,
     start: cursor,
