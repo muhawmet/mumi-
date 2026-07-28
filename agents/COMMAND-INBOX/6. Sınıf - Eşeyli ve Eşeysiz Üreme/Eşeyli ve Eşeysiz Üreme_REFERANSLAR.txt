@@ -1,0 +1,179 @@
+EŞEYLİ VE EŞEYSİZ ÜREME — 6. SINIF · KARAKTER + PROP REFERANSLARI (Nano Banana 2)
+=========================================================================
+Dünya: pixar_3d_edu · Image: Nano Banana 2 · Yüzey: Magnific Spaces.
+Önce bu referansları bas → sahne promptlarında SADECE @handle kullanılır, görünüş bir daha TARİF EDİLMEZ.
+
+MEVCUT (sende hazır, yeniden basma):
+  @efe   — kahraman çocuk (Türk/Anadolu). ⚠ Bu ders 6. SINIF: sahne promptlarında yaş
+           "6th-grade, around eleven or twelve" olarak yazılır.
+  @anne  — Efe'nin annesi (Kütle ve Ağırlık'ta basıldı, aynı kişi). Prompt aşağıda arşiv
+           olarak duruyor; elinde varsa yeniden basma.
+
+ÜRETİLECEK — 6 adet. Hepsi 2+ karede tekrar ediyor, tag'siz bırakılırsa her karede
+başka çıkar (Bileşke'de @kitap böyle 6 kare toptan revize oldu).
+
+-------------------------------------------------------------------------
+@gul — BARDAKTAKİ KÖKLENMİŞ GÜL DALI (K1·K2·K3·K4·K32·K49 — dersin açılış ve kapanış nesnesi)
+-------------------------------------------------------------------------
+Full object reference of @gul: an original cutting of a garden rose stem standing upright in a plain
+clear drinking glass half-filled with water, for a 6th-grade science lesson — a single woody green
+stem about a hand's length with two healthy serrated leaves near the top and one small tight
+rose-pink bud just beginning to open, and below the waterline the lower end of the stem has put out
+a spray of fine white roots, delicate and clearly visible through the glass and the water. The glass
+is simple and unmarked, the water clear with one or two tiny bubbles clinging to the inside. Warm
+sunlit greens, a single vivid rose-pink accent in the bud, child-friendly rounded proportions,
+instantly readable at thumbnail size as "a cut branch that is growing its own roots". Shot on an
+85mm lens at f/4.0, three-quarter hero angle, the full glass and stem centred, soft studio-style
+morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey
+seamless gradient backdrop — not a story location and not an empty white void. Materials: clear
+glass with honest refraction, still water with a soft meniscus, waxy leaf surface with fine veining,
+fibrous pale root threads. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor
+lineage — physically-motivated bounce fill, painted soft ambient occlusion (never hard-black).
+An original plant with no resemblance to any franchise; no logo, no photoreal, no flat 2D or cel,
+no text, no label on the glass, no second flower, no vase, no hand.
+
+-------------------------------------------------------------------------
+@defter — EFE'NİN FEN DEFTERİ (K6·K25·K34·K45·K46·K47·K48 — dersin omurgası, 7 karede)
+-------------------------------------------------------------------------
+Full object reference of @defter: an original 6th-grade science notebook lying open flat, for a
+Turkish science lesson — a sturdy squared-paper exercise book with a soft matte deep-teal cover
+folded back, thick slightly-cream pages with a faint pale-blue grid, a stitched spine, one corner
+gently curled from use, and a chunky wooden pencil with a rounded graphite tip and a short stub of
+red coloured pencil resting in the gutter between the two open pages. The visible pages are BLANK —
+clean grid paper with no writing, no drawing and no letters anywhere. Child-friendly rounded
+proportions, instantly readable as a well-used school notebook at thumbnail size. Shot on an 85mm
+lens at f/4.0, three-quarter hero angle from slightly above, the whole open notebook centred, soft
+studio-style morning key light with cool bounce fill and a soft contact shadow under the cover,
+against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white
+void. Materials: matte board cover with a fine linen weave, soft paper fibre with a visible page
+edge, painted wood pencil, waxy red pencil core. Rendered as premium-CG feature-animation 3D CGI in
+a RenderMan-successor lineage — physically-motivated bounce fill, painted soft ambient occlusion
+(never hard-black). An original notebook; no logo, no brand, no photoreal, no flat 2D or cel,
+no franchise, and absolutely no letters, words or numbers on the pages.
+
+-------------------------------------------------------------------------
+@kedi — ANNE KEDİ (K40·K41·K42·K49 — eşeyli üremenin canlı kanıtı)
+-------------------------------------------------------------------------
+Full animal reference of @kedi: one original adult female house cat for a 6th-grade science lesson —
+a calm, gentle-faced tabby with a warm honey-and-amber striped coat, a soft cream chest and chin,
+four neat cream paws, round attentive green-gold eyes and a plush tail curled loosely around her
+own front feet as she sits upright in a relaxed hero pose, weight settled, ears forward, expression
+soft and patient. Appeal-led animal design with clear silhouette, believable fur grooming — short
+dense guard hair with a finer undercoat catching rim light, whisker detail, damp nose highlight.
+Instantly readable as "the mother cat" at thumbnail size, and clearly distinct in coat pattern from
+any kitten. Shot on an 85mm lens at f/4.0, three-quarter view, full body centred, soft studio-style
+morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey
+seamless gradient backdrop — not a story location and not an empty white void. Materials: layered
+groomed fur with rim translucency, soft leather nose and paw pads, wet catchlight in the eyes.
+Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — physically-
+motivated bounce fill, painted soft ambient occlusion (never hard-black). An original animal with no
+resemblance to any franchise character; no collar, no tag, no logo, no photoreal, no flat 2D or cel,
+no text, no basket, no kitten, no human.
+
+-------------------------------------------------------------------------
+@yavrular — ÜÇ YAVRU KEDİ (K40·K41·K42 — ÜÇÜ BİRBİRİNDEN FARKLI olmak ZORUNDA: ders bu)
+-------------------------------------------------------------------------
+Full animal reference of @yavrular: three original newborn-ish kittens of the same litter, shown
+side by side in one clean line-up for a 6th-grade science lesson — all three are unmistakably the
+children of a warm honey-amber tabby mother, yet no two of them are alike. The first kitten is a
+honey-amber tabby like the mother but with a bold white blaze running up its nose and two white
+front socks. The second is much paler, a soft cream-and-grey kitten with faint smoky stripes only on
+its tail and one grey ear. The third is the darkest, a rich chocolate-brown kitten with a small
+white chest patch and one white hind foot. All three share the same family traits — the same round
+head shape, the same green-gold eyes, the same soft chin — so the family resemblance is obvious at a
+glance while the three coats are clearly, deliberately different. Each sits in a slightly different
+sleepy pose. Appeal-led animal design, soft baby proportions, downy short fur with rim translucency,
+readable at thumbnail size. Shot on an 85mm lens at f/4.0, eye-level three-quarter view, all three
+kittens centred in one row with generous clean margin, soft studio-style morning key light with cool
+bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless gradient backdrop —
+not a story location and not an empty white void. Materials: downy layered kitten fur, soft leather
+nose and paw pads, wet catchlights. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-
+successor lineage — physically-motivated bounce fill, painted soft ambient occlusion (never hard-
+black). Original animals with no resemblance to any franchise; no fourth kitten, no adult cat, no
+collar, no logo, no photoreal, no flat 2D or cel, no text, no basket, no human.
+
+-------------------------------------------------------------------------
+@amip — AMİP / TEK HÜCRELİ CANLI (K12·K13·K14·K15 — bölünerek üremenin kahramanı)
+-------------------------------------------------------------------------
+Full object reference of @amip: one original single-celled amoeba as it would appear enlarged under
+a school microscope, for a 6th-grade science lesson — a soft irregular blob of translucent
+pale-jade cytoplasm with several rounded finger-like pseudopod lobes reaching gently outward, a
+visibly denser rounded nucleus glowing a slightly deeper jade near the centre, a small clear
+contractile vacuole and a few tiny granules suspended inside, and a thin bright membrane rim where
+the light wraps its edge. Jelly-like, wobbling, alive and appealing rather than clinical or
+diagrammatic; child-friendly rounded proportions, instantly readable as "one tiny living creature"
+at thumbnail size. Shot on an 85mm lens at f/4.0, straight-on hero view, the whole organism centred
+and floating in a shallow film of clear water, soft studio-style key light with cool bounce fill and
+a soft contact shadow beneath it, against a gentle warm-grey seamless gradient backdrop — not a
+story location and not an empty white void. Materials: translucent jelly cytoplasm with genuine
+subsurface scattering, thin refractive membrane, clear watery highlight. Rendered as premium-CG
+feature-animation 3D CGI in a RenderMan-successor lineage — physically-motivated bounce fill,
+painted soft ambient occlusion (never hard-black). An original organism; no textbook diagram, no
+labels, no leader lines, no arrows, no cross-section key, no scale bar, no letters, no logo, no
+photoreal microscopy photograph, no flat 2D or cel, no franchise, no face, no eyes, no cartoon mouth.
+
+-------------------------------------------------------------------------
+@mikroskop — OKUL MİKROSKOBU (K12·K13 — Efe'nin gözü)
+-------------------------------------------------------------------------
+Full object reference of @mikroskop: an original classic school compound microscope for a 6th-grade
+science lesson — a sturdy curved brushed-steel arm rising from a heavy rounded base, an angled
+eyepiece tube at the top, a rotating nosepiece carrying three objective lenses of different lengths,
+a flat stage with two small metal clips holding a clear glass slide, a round coarse focus knob on
+the side of the arm and a small mirror-lit condenser opening beneath the stage casting a soft pool
+of light up through the slide. Satin steel body with a few honest fingerprints of use, child-
+friendly rounded proportions, instantly readable as a microscope at thumbnail size. Shot on an 85mm
+lens at f/4.0, three-quarter hero angle, the full instrument centred, soft studio-style morning key
+light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless
+gradient backdrop — not a story location and not an empty white void. Materials: satin brushed steel
+with anisotropic highlight, black textured grip on the knob, clear glass slide and lens elements
+with honest refraction. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor
+lineage — physically-motivated bounce fill, painted soft ambient occlusion (never hard-black). An
+original instrument; no maker name, no logo, no letters or numbers on the body, no photoreal, no
+flat 2D or cel, no franchise, no hand, no person.
+
+=========================================================================
+ARŞİV — @anne (Kütle ve Ağırlık'ta basıldı; elinde varsa yeniden basma)
+=========================================================================
+Clean full-character reference for @anne only — one original Turkish/Anatolian mother, early
+thirties, full body visible head to shoes, standing in a relaxed three-quarter turn with both hands
+naturally resting together at waist level. Kind oval face, dark chestnut hair in one loose low bun,
+softly arched brows, calm brown eyes, small reassuring smile; warm matte tan skin, low specular,
+never green or grey. Wardrobe lock: cream knit cardigan, muted tomato-red cotton blouse, deep indigo
+apron tied at waist, charcoal straight-leg trousers, simple dark house slippers. Premium 3D CGI
+feature-animation character design, appeal-led silhouette, soft skin translucency, woven-fabric
+detail, no outline. Neutral warm-grey studio cyclorama only, soft morning key from front-left, cool
+bounce from right, soft floor contact shadow. 1:1 square, 85mm lens at f/4, full figure centred with
+generous clean margin. No kitchen, no counter, no food, no other person, no child, no classroom, no
+blackboard, no window, no sign, no letters, no logo, no props, no photoreal, no clay, no franchise
+resemblance.
+
+=========================================================================
+TARİF KİLİTLERİ — referans basılmaz, sahnede AYNEN bu kelimelerle çağrılır
+=========================================================================
+@patates   : "a single earthy-brown potato with three small pale sprouting eyes pushing out of its skin"
+@cilek     : "a strawberry plant with one ripe red berry and a slender runner stem creeping out over the soil"
+@hidra     : "a small translucent freshwater hydra — a slender pale-jade tube anchored at its base with fine tentacles at the top"
+@denizanasi: "a small translucent bell-shaped jellyfish with soft trailing tentacles"
+@maya      : "a cluster of round translucent golden yeast cells"
+@denizyildizi: "a five-armed coral-orange sea star with a pebbled surface and pale tube feet underneath"
+@solucan   : "a soft segmented earth-brown earthworm with a faint moist sheen"
+@kertenkele: "a small emerald-green lizard with a bright bead eye and fine scale texture"
+@oglena    : "a slender teardrop-shaped pale-green euglena with one long whip-like flagellum"
+@paramesyum: "an oval slipper-shaped translucent paramecium fringed with fine beating cilia"
+@bakteri   : "small translucent rod-shaped bacteria with a faint pearly sheen"
+
+=========================================================================
+KAVRAM IŞIĞI SİSTEMİ — bu dersin imzası (her karede AYNI kural)
+=========================================================================
+Kavram çizilmez, IŞIK olarak sahneye girer. Ok ucu, diyagram, çiçek, alev değil.
+
+  EŞEYSİZ  = TEK yuvarlak SICAK-ALTIN ışık. Bölünme/tomurcuk/rejenerasyon/vejetatif karelerinde
+             o tek ışık ikiye ayrılır ve ortaya çıkan iki ışık BİREBİR AYNI tondadır — aynılık.
+  EŞEYLİ   = İKİ FARKLI ışık: yumurta = yumuşak yuvarlak SICAK-AMBER · sperm = küçük yuvarlak
+             SERİN-MAVİ. Birleştiklerinde ikisi de kaybolur ve YENİ bir üçüncü ton doğar:
+             yumuşak yuvarlak MENEKŞE ışık (= zigot). Çeşitlilik karesinde üç yavrunun üstünde
+             birbirinden FARKLI üç ton belirir.
+
+Her kavram-ışığı karesinin NEGATIVE satırına kare-özel karşılığı yazılır:
+"the glow stays a soft round light and never becomes a flower, petal, flame or drawn arrowhead."
+=========================================================================
