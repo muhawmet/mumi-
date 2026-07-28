@@ -107,12 +107,20 @@ let klipler = [];
 if (existsSync(klipDir) && statSync(klipDir).isDirectory()) {
   klipler = readdirSync(klipDir).filter((f) => VIDEO_EXT.includes(extname(f).toLowerCase()));
 }
-// K numarasına göre eşle: dosya adındaki İLK sayı grubu = kare numarası
-const klipByK = new Map();
+// K numarasına göre eşle: dosya adındaki İLK sayı grubu = kare numarası.
+// Bir kareye BİRDEN FAZLA klip düşebilir: Mami uzattığı klipleri "8b.mp4" diye koyuyor
+// (b = yeni ve hedef süreli, normali eski). Hepsini topla — hangisinin kullanılacağına
+// slot süresi belli olduktan sonra karar verilir (bkz. 5d: en iyi oturanı seç).
+const klipAdaylari = new Map();
 for (const f of klipler) {
   const n = basename(f).match(/(\d+)/);
-  if (n) klipByK.set(parseInt(n[1], 10), join(klipDir, f));
+  if (!n) continue;
+  const k = parseInt(n[1], 10);
+  if (!klipAdaylari.has(k)) klipAdaylari.set(k, []);
+  klipAdaylari.get(k).push(join(klipDir, f));
 }
+// geriye dönük uyumluluk: tek dosya bekleyen yerler için ilk adayı veren görünüm
+const klipByK = new Map([...klipAdaylari].map(([k, v]) => [k, v[0]]));
 
 // ---------- 4. fps ----------
 const ffprobe = (() => { try { execFileSync('ffprobe', ['-version'], { stdio: 'ignore' }); return true; } catch { return false; } })();
@@ -340,11 +348,30 @@ const toplamFr = cursor;
 // Klip VO'suna yetmiyorsa, ÖNCEKİ klibin artan malzemesi varsa sınır geriye kaydırılır:
 // önceki klip daha uzun oynar, bu klip geç başlar. Ses görüntüden önce girer — bu bir kusur
 // değil, standart kurgu (VO lead). Böylece ne yavaşlatma ne yeniden üretim gerekir.
+const sureCache = new Map();
+const sureOfCached = (p) => {
+  if (!sureCache.has(p)) sureCache.set(p, sureOf(p) || 0);
+  return sureCache.get(p);
+};
 const klipSuresi = (it) => {
   if (!it.dosya || !ffprobe) return it.klipSn;
-  const s = sureOf(it.dosya);
-  return s || it.klipSn;
+  return sureOfCached(it.dosya) || it.klipSn;
 };
+
+// EN İYİ KLİBİ SEÇ — bir kareye birden fazla dosya düşmüşse (8.mp4 + 8b.mp4).
+// Kural: slot'u KARŞILAYAN adaylardan EN KISASI (fazla malzeme boşa gitmesin);
+// hiçbiri karşılamıyorsa EN UZUNU (en az yavaşlatma gerektiren).
+// Mami: "b'ler istediğin süreler, normalleri eski."
+for (const it of items) {
+  const adaylar = klipAdaylari.get(it.k);
+  if (!adaylar || adaylar.length < 2 || !ffprobe) continue;
+  const slotSn = (it.end - it.start) / fps;
+  const olculu = adaylar.map((p) => ({ p, s: sureOfCached(p) })).filter((x) => x.s > 0);
+  if (!olculu.length) continue;
+  const yeten = olculu.filter((x) => x.s >= slotSn - 0.05).sort((a, b) => a.s - b.s);
+  const secim = yeten.length ? yeten[0] : olculu.slice().sort((a, b) => b.s - a.s)[0];
+  if (secim.p !== it.dosya) { it.dosya = secim.p; it.klipSecildi = basename(secim.p); }
+}
 for (let i = 1; i < items.length; i++) {
   const it = items[i];
   const kaynakSn = klipSuresi(it);
@@ -519,6 +546,8 @@ if (beklenen.length) console.log(`   🔴 SIRA BOŞLUĞU: K${beklenen.join(' K')
 if (kareler[0].k !== 1) console.log(`   🔴 plan K${kareler[0].k}'ten başlıyor — K01–K${kareler[0].k - 1} arası satır yok`);
 
 if (eksik.length) console.log(`   ⚠ klip yok: ${eksik.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} (XML'de boşluk bırakıldı)`);
+const secilenler = items.filter((it) => it.klipSecildi);
+if (secilenler.length) console.log(`   🎬 uzatılmış klip seçildi: ${secilenler.map((e) => `K${String(e.k).padStart(2,'0')}→${e.klipSecildi}`).join(' ')}`);
 const oduncler = items.filter((it) => it.oduncAldi);
 if (oduncler.length) console.log(`   🤝 komşudan ödünç (yavaşlatma yerine): ${oduncler.map((e) => `K${String(e.k).padStart(2,'0')}+${e.oduncAldi.toFixed(1)}s`).join(' ')}`);
 const yavaslar = items.filter((it) => it.yavas && !it.tasma);
