@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 651a452b-2f9e-43f9-aef5-0f4175d8c3db
-  modified: 2026-07-28T15:34:07.484Z
+  modified: 2026-07-28T17:18:51.380Z
 ---
 
 # agy — Claude'un video gözü (2026-07-28'de ölçüldü)
@@ -17,17 +17,33 @@ oturuyor mu" sorularının gerçek cevabı oradan gelir.
 **İş bölümü:** Claude ÖLÇER (ffprobe/ffmpeg, sıfır token) → agy İZLER → Claude HÜKÜM verir.
 
 ```
-~/.local/bin/agy   (v1.1.8)
-export PATH="$HOME/.local/bin:$PATH"     # Claude'un PATH'inde YOK — şart
+Mac      ~/.local/bin/agy                              (v1.1.8)
+         export PATH="$HOME/.local/bin:$PATH"          # Claude'un PATH'inde YOK — şart
+Windows  %LOCALAPPDATA%\agy\bin\agy.exe                (v1.1.8, 2026-07-28'de kuruldu)
+         Kurulum: irm https://antigravity.google/cli/install.ps1 | iex
+         Installer user PATH'e kendi ekler; ama KOŞAN oturum onu görmez —
+         Claude'un her çağrısı TAM YOL ile yapılmalı (shell state çağrılar arası yaşamıyor).
+
 agy -p "<prompt>" --model <ad> --effort low|medium|high --add-dir <yol>
                   --dangerously-skip-permissions   --mode plan (salt-okur)
 ```
+
+⚠ **Oturum açmadan HİÇBİR şey çalışmaz** — `agy models` bile `Please sign in` ile düşer. Giriş
+**interaktif**: Mami bir terminalde çıplak `agy` yazar, tarayıcıdan Ultra hesabıyla imzalar.
+Claude bunu yapamaz (stdin yok). Yeni makinede ilk adım budur, PATH değil.
 
 **Ölçülen model filosu** (`agy models`): `gemini-3.6-flash-high/medium/low` ·
 `gemini-3.5-flash-*` · `gemini-3.1-pro-high/low` · `claude-sonnet-4-6` ·
 `claude-opus-4-6-thinking` · `gpt-oss-120b-medium`.
 
-Desen: ağır/toplu iş `gemini-3.6-flash` (ucuz+hızlı), derin hüküm `gemini-3.1-pro`.
+🔴 **Desen DÜZELTİLDİ (2026-07-28 akşam, ölçüldü):** ilk yazılan *"ağır iş 3.6-flash, derin hüküm
+3.1-pro"* kuralı BİZİM işimiz için yanlış. `gemini-3.6-flash` (21 Tem 2026) Google'ın yayımladığı
+her kodlama/ajan benchmark'ında 3.1-pro'yu geçiyor, çıktıda %58 ucuz, ~2 kat hızlı, zekâ endeksi
+50'ye 46 — ve **video liderlik tablosunda birinci: "sahnede zaman içinde ne olduğunu takip etmede
+test edilen en iyi model."** 3.1-pro yalnız iki yerde önde: GPQA Diamond (94.3 / 92.8) ve
+Humanity's Last Exam (44.4 / 38.3) — yani **doktora seviyesi akademik muhakeme.** Klip izlemekle
+ilgisi yok. Hüküm: **her iş için `gemini-3.6-flash-high`.** "Derin hüküm için pro'ya çık" bizim
+kullanımımızda yükseltme değil, DÜŞÜŞ.
 
 ## KANITLANDI — 2026-07-28, gerçek klip üstünde
 

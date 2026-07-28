@@ -73,8 +73,11 @@ ve ilgisiz dosya değiştirme yok.
   `.claude/hooks/gate.sh` bunu `git commit` öncesi **duvar** olarak koşar; kırmızıysa commit olmaz.
 - **Commit ve push:** kapı yeşilken commit + `main`'e push **sorulmaz** (private repo, çok-cihaz).
   Yalnız ilgili dosyaları açıkça stage et.
-- Hafıza repo dışında yaşar; `node scripts/memory-sync.mjs` ile aynalanır (düşen dosya silinmez,
-  `archive/`e taşınır).
+- **Claude'un aklı repo dışında yaşar** (`~/.claude`: hafıza, kullanıcı skill'leri, global
+  CLAUDE.md) — git onu taşımaz, o yüzden Mac ile Windows kendiliğinden ayrışır.
+  `node scripts/claude-sync.mjs` iki yönlü senkronlar: **hiçbir koşulda silmez**, yön tahmin
+  etmez, iki taraf da değiştiyse ÇATIŞMA der ve durur — hangi sürümün doğru olduğunu Mami seçer.
+  (`--check` kapıda koşar, `--dry-run` ne yapacağını yazar. Tek yönlü `memory-sync` emekli.)
 
 İç tartışma/chain-of-thought gösterme; yalnızca karar, kanıt ve sonucu özetle.
 Eski uzun sürüm: `docs/ai/archive/CLAUDE-legacy-2026-07-12.md`.

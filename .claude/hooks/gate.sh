@@ -103,11 +103,18 @@ if ! OUT=$($SYNTAX agents/MOTION-CALISTIR.command 2>&1 && $SYNTAX agents/product
 $OUT"
 fi
 
-# --- 6. hafiza aynasi (UYARI — bloke etmez) ---
-# Sistemin akli repo disinda yasiyor; sapma commit aninda gorunur olsun diye burada.
+# --- 6. claude senkronu (UYARI — bloke etmez) ---
+# Sistemin akli (hafiza, kullanici skill'leri, global CLAUDE.md) repo DISINDA, ~/.claude
+# altinda yasiyor; git onu tasimaz. Sapma commit aninda gorunur olsun diye burada.
 # Bloke ETMEZ: oturum icinde hafiza dogal olarak degisir, her commit'i durdurmak dogru degil.
-if ! node scripts/memory-sync.mjs --check >/dev/null 2>&1; then
-  printf '⚠️  hafiza aynasi sapmis — `node scripts/memory-sync.mjs` calistir.\n' >&2
+# CATISMA da bloke etmez ama farkli konusur — yon karari Mami'nindir, kapinin degil.
+if ! SYNC_OUT=$(node scripts/claude-sync.mjs --check 2>&1); then
+  if printf '%s' "$SYNC_OUT" | grep -q 'ÇATIŞMA'; then
+    printf '🔴 claude senkronu CATISMALI — iki makine ayni dosyayi ayri degistirmis.\n' >&2
+    printf '   `node scripts/claude-sync.mjs` calistir, hangi surum dogru MAMI secer.\n' >&2
+  else
+    printf '⚠️  claude senkronu sapmis — `node scripts/claude-sync.mjs` calistir.\n' >&2
+  fi
 fi
 
 # Testler arttiysa baseline'i ilerlet — gate zamanla SIKILASIR, gevsemez.

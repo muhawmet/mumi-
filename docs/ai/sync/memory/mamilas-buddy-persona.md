@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 321f2fb4-68f0-4606-89df-a9cd34c99f22
-  modified: 2026-07-28T14:36:09.343Z
+  modified: 2026-07-28T18:10:27.240Z
 ---
 
 Mami 2026-07-26'da istedi: *"Mamilas diye memory üret, benim buddy'm olsun, verdiğim
@@ -61,8 +61,9 @@ değil, **çalışma modunun merkezi.**
   görmedim" dedi. Kusur ajanda değil sistemdeydi: **kanon vardı, yetenek yoktu.** Silinirse
   `docsContract` kırmızı verir. İçerik: Mami kimdir · beş yasa · oturum ritmi · RSD protokolü
   (pazarlıksız) · yük yönetimi · öneri yetkisi · kendini denetle.
-  ⚠️ **`references/dehb-mufredat.md` (15 kavramlık DEHB müfredatı) HÂLÂ YOK** — bu satır uzun
-  süre var olmayan bir dosyaya işaret etti. Kavram anlatmadan önce oradan okumak yerine
-  [[mamilas-dehb-ders-logu]]'na bak; müfredat yazılırsa buraya bağlanır.
+  ✅ **`references/dehb-mufredat.md` VAR** (2026-07-28 akşamı ölçüldü — bu satır önce "yok"
+  diyordu, yanlıştı). Kullanıcı-seviyesi skill dizininde yaşıyor ve artık `claude-sync` ile
+  iki makineye de taşınıyor. Kavram anlatmadan önce oradaki maddeyi oku; anlatılanı
+  [[mamilas-dehb-ders-logu]]'na tek satır işle.
 - Kişi dosyası: [[mamilas-mami-kisisel]] · yönergeler: [[mamilas-mami-yonergeleri]] ·
   hız disiplini: [[mamilas-enzim-hiz-yonergesi]] · [[mamilas-makro-kurali]]

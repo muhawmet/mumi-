@@ -13,6 +13,7 @@
 - [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — Mami 2026-07-28: "sadece işlere bakıyorsun, destek görmedim." 29, atletik; yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
 - [Duyu ve ikinci göz yetkisi](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex = ikinci göz, ajan = eller. Sormadan kullanılır; uzanmamak kusurdur.
 - [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans. Bu "ultracode" workflow'dur, effort ayarı değil.
+- [Claude senkronu — Mac ↔ Windows](mamilas-claude-senkronu.md) — akıl `~/.claude`'da yaşar, git taşımaz. `claude-sync.mjs` iki yönlü, asla silmez, çatışmada durur. Tek yönlü `memory-sync` emekli.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — sistemin tek hastalığı bilgiyi taşıyamamak; yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
 - [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Kavram ışığı devri = 0 revize. Tam metin `agents/MAMI-ZEVKI.md`.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.

@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, test } from 'vitest';
@@ -252,10 +253,22 @@ describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşle�
   test.each(hookPaths())('%s hem VAR hem ÇALIŞTIRILABİLİR (exit 126 bir daha saklanmaz)', (rel) => {
     const abs = resolve(REPO, rel);
     expect(existsSync(abs), `${rel} settings.json'da kayıtlı ama dosya yok`).toBe(true);
-    // Unix exec biti (owner/group/other herhangi biri). git index modu 100755 bunu taşır;
-    // 100644 (bugün ölen mod) burada kırmızı verir — testin var oluş sebebi tam bu.
-    const mode = statSync(abs).mode;
-    expect(Boolean(mode & 0o111), `${rel} çalıştırılabilir değil (mod ${(mode & 0o777).toString(8)}) — SessionStart'ta 126 ile ölür`).toBe(true);
+
+    // 2026-07-28 (Windows ölçümü): bu hüküm ÖNCE `statSync().mode` bakıyordu ve Mami'nin
+    // BİRİNCİL makinesinde asla yeşil olamıyordu — NTFS'te exec biti yoktur, mod daima 666.
+    // Yani Mac'ten gelen doğru bir düzeltme, Windows'ta kapıyı kalıcı kırmızı yapmıştı.
+    // Taşınan gerçek yetki git INDEX modudur (100755): Mac checkout'unda dosyayı
+    // çalıştırılabilir yapan odur, iki makinede de aynı okunur. Ölçüt artık o.
+    const indexLine = execFileSync('git', ['ls-files', '-s', '--', rel], { cwd: REPO, encoding: 'utf8' }).trim();
+    expect(indexLine, `${rel} git'e hiç eklenmemiş — index modu yok, diğer makineye gitmez`).not.toBe('');
+    const indexMode = indexLine.split(/\s+/)[0];
+    expect(indexMode, `${rel} git index modu ${indexMode} — 100755 olmalı, yoksa POSIX'te 126 ile ölür`).toBe('100755');
+
+    // POSIX'te çalışma kopyası da ölçülür; Windows'ta bu ölçüm anlamsız olduğu için atlanır.
+    if (process.platform !== 'win32') {
+      const mode = statSync(abs).mode;
+      expect(Boolean(mode & 0o111), `${rel} çalıştırılabilir değil (mod ${(mode & 0o777).toString(8)}) — SessionStart'ta 126 ile ölür`).toBe(true);
+    }
   });
 });
 

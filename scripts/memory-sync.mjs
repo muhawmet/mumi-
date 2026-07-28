@@ -19,6 +19,16 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFile
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
+// ⛔ EMEKLİ — 2026-07-28. Bu script TEK YÖNLÜdür ve canlıyı tek otorite sayar; ikinci bir
+// makinede çalıştırıldığında repo'daki TAZE aklı "silinmiş" sanıp arşive sürer. Aynı gün iki
+// kez canlıda ısırdı: sabah Mac'te 21, akşam Windows'ta 9 hafıza dosyası gidecekti.
+// Yerine `scripts/claude-sync.mjs` geçti — iki yönlü, üç yönlü tabanlı, silmeyen.
+// Dosya silinmedi ki geçmiş okunabilsin; ama çalışmaz, çünkü çalışması zarar veriyordu.
+console.error('⛔ memory-sync EMEKLİ (tek yönlü, ikinci makinede aklı imha ediyordu).');
+console.error('   Yerine: node scripts/claude-sync.mjs   [--check | --dry-run]');
+process.exit(2);
+
+// eslint-disable-next-line no-unreachable
 const CHECK = process.argv.includes('--check');
 const REPO_DIR = join(process.cwd(), 'docs', 'ai', 'sync', 'memory');
 const ARCHIVE_DIR = join(REPO_DIR, 'archive');
