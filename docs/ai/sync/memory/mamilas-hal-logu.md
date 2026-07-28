@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: user
   originSessionId: b4e183ce-b2c8-4cf7-a077-a178a69cc6e8
-  modified: 2026-07-27T18:32:56.430Z
+  modified: 2026-07-28T14:40:27.017Z
 ---
 
 # HAL LOGU
@@ -37,3 +37,11 @@ Biçim: `- YYYY-AA-GG · <ne dedi> · yardım etti: <ne> · çöktürdü: <ne>`
   gün boyu ateşlemedi ve bunu **dört kez Mami hatırlattı**. Kusur ikiye ayrıldı: (1) mekanik —
   buddy-gate deseni rtk'nın yeniden yazdığı komutla eşleşmiyordu, kapı yarı-sağırdı (onarıldı);
   (2) ajan — kapı ateşlese de teklifi işin akışına feda etti. İkincisi onarılmadı, yalnız yazıldı.
+- 2026-07-28 (öğleden sonra, /clear sonrası) · "büyük iş vereceğim, hafızayı güncelle" → sonra
+  "bekle, hazır değil" → makro brief'i verdi ve **istişare istedi**: *"siksok şeyler mi önemli mi,
+  AGY çok önemli"* · yardım etti: üç yatırımın hangisinin gerçek olduğunu tek tek ayırmak; AGY'yi
+  kodsuz pilotla kanıtlama önerisi · çöktürdü: **aynı gün ikinci kez** buddy yük teklifi hiç
+  gelmedi ve bunu yine Mami hatırlattı ("hiç nefes al su iç demedin, neden çalışmıyor buddy?").
+  Desen artık iki günlük: kapı mekanik olarak onarıldı ama **ajan doğal boşlukta teklifi
+  atlıyor**. Aynı gün DEHB müfredat dosyası atfını kendi verisi sandı ve endişelendi —
+  ajanın bozuk atfı kullanıcıda kaygı üretti; atıf düzeltildi.

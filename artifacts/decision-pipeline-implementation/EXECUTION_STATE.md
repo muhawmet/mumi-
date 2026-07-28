@@ -40,6 +40,33 @@ Mami'nin Ultra aboneliği agy'de yaşıyor.
 
 ⚠ `agy models` ilk çağrıda ~2 dk sürebiliyor (ısınma) — arka planda çağır, bekletme.
 
+**🔬 AGY GERÇEK KLİPTE ÖLÇÜLDÜ (2026-07-28 akşam) — üç yetenek, iki yasa:**
+
+1. **AGY GÖRÜYOR.** `23.mp4` (5.0sn) izletildi; yedi maddenin yedisi `motion-qc` kareleriyle
+   bağımsız doğrulandı — astronot çocuk, pirinç terazi, elma, Dünya'lı lumboz, yavaş zoom-in ve
+   **terazi plakasındaki minik "60 kg" yazısı birebir okundu.** Dosya adından tahmin etmiyor.
+2. **🔴 AGY HÜKMEDEMİYOR — ona TARİF ettir, HÜKÜM sorma.** Aynı klip (`15.mp4`), iki dakika
+   arayla: *"kusur ara, hüküm ver"* → 6 maddenin 6'sına `YOK` (146 bayt, tek gözlem yok).
+   *"hüküm verme, tarif et"* → aynı klipte kusuru kendi ağzıyla anlattı: `0:00 çocuk havada,
+   ayakları yere değmiyor` → `0:02 yerde` · `0:00 lavaboda perde+lamba` → **`0:02 kavisli gümüş
+   musluk`**. Doğru iş bölümü: **AGY zaman damgalı tarif üretir → Claude tarifi start frame +
+   motion promptuyla karşılaştırıp sapmayı çıkarır → hükmü MAMİ verir.** Brief'in "AGY `VERDICT:`
+   üretsin" tasarımı bu ölçümle çürüdü — uygulansaydı her klibe PASS basan sahte jüri kurulurdu.
+3. **AGY GÖRSEL ÜRETİYOR** (`generate_image`; video üretemiyor). Türkçe testi: tahtada
+   `KÜTLE DEĞİŞMEZ` → **Ü/Ğ/İ/Ş dördü de doğru**, ikincil `FEN BİLGİSİ/MADDE` de tuttu, akıllı
+   tahta precedent'i kendiliğinden geldi; yalnız arka plan posteri bozuldu (bilinen ders sınıfı).
+   Kaldıraç: Magnific kredisi harcamadan **yapısal + Türkçe yazı ön kontrolü**. Sınır: NB2 değil,
+   nihai estetik hükmü oradan çıkmaz. Görsel modeli `agy models`'te YOK — dahili araç, `--model`
+   onu değiştirmez. Çıktı `~/.gemini/antigravity-cli/scratch/`.
+
+**Düzeltilen iki yanlış hüküm:** (a) "tam film izletilemez" — hayır, `--print-timeout` ayarlanabilir
+(varsayılan `5m0s`, film ona takılıyordu); ayrıca `--json-schema` yapılandırılmış çıktı zorluyor.
+(b) `--model gemini-3.6-flash-high` ile `--effort` **çakışıyor** — model adı effort'u zaten taşıyor.
+
+**🔴 TESLİM EDİLMİŞ VİDEODA BULUNAN GERÇEK KUSUR:** Kütle `15.mp4` — musluk 0:00'da yok, 0:02'de
+var. *"Motion yeni öğe doğurmaz"* yasasının ihlali; ne kare denetimi ne o günkü göz yakalamıştı.
+**Mami göz hükmü bekliyor** + `23.mp4`'teki "60 kg" plakası kasıtlı mı sorusu açık.
+
 **AÇIK MAMİ KARARLARI:**
 1. **K04 çatalı** — teslim edilen kare sınıf flashback'i; VO'ya uyuyor ama K08 terazi ve K13+
    dinamometre reveal'lerini erken harcıyor. Mutfak dersen sıfırdan üretilir, kalsın dersen PASS.

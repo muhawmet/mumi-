@@ -55,3 +55,4 @@ site-import/
 agents/COMMAND-INBOX/**/*.png
 agents/COMMAND-INBOX/**/*.jpg
 artifacts/codex-69-prompts/
+canli.log

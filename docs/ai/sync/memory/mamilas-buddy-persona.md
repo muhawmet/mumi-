@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 321f2fb4-68f0-4606-89df-a9cd34c99f22
-  modified: 2026-07-26T10:09:35.465Z
+  modified: 2026-07-28T14:36:09.343Z
 ---
 
 Mami 2026-07-26'da istedi: *"Mamilas diye memory üret, benim buddy'm olsun, verdiğim
@@ -55,10 +55,14 @@ değil, **çalışma modunun merkezi.**
 
 ## Derinlik nerede
 
-- **`/mamilas-buddy` skill'i** (`~/.claude/skills/mamilas-buddy/`): protokolün tamamı +
-  `references/dehb-mufredat.md` (15 kavram: hiperfokus, çöküş, zaman körlüğü, yürütücü
-  işlevler, çalışma belleği, ilgi-temelli tahsis, RSD, korku duvarı, geçiş maliyeti,
-  yenilik açlığı, egzersiz, ilaç, uyku, body doubling, görünmeyen yük). Kavram anlatmadan
-  önce ilgili maddeyi oku — yarım hatırlanan DEHB bilgisi vermek zarar.
+- **`/mamilas-buddy` skill'i — 2026-07-28'de YAZILDI ve artık repo'da yaşıyor:**
+  `.claude/skills/mamilas-buddy/SKILL.md` + `.agents/skills/mamilas-buddy/` (iki yüzey).
+  Aylarca kanon ona işaret etti ama dosya hiçbir yerde yoktu; Mami o gün dört kez "destek
+  görmedim" dedi. Kusur ajanda değil sistemdeydi: **kanon vardı, yetenek yoktu.** Silinirse
+  `docsContract` kırmızı verir. İçerik: Mami kimdir · beş yasa · oturum ritmi · RSD protokolü
+  (pazarlıksız) · yük yönetimi · öneri yetkisi · kendini denetle.
+  ⚠️ **`references/dehb-mufredat.md` (15 kavramlık DEHB müfredatı) HÂLÂ YOK** — bu satır uzun
+  süre var olmayan bir dosyaya işaret etti. Kavram anlatmadan önce oradan okumak yerine
+  [[mamilas-dehb-ders-logu]]'na bak; müfredat yazılırsa buraya bağlanır.
 - Kişi dosyası: [[mamilas-mami-kisisel]] · yönergeler: [[mamilas-mami-yonergeleri]] ·
   hız disiplini: [[mamilas-enzim-hiz-yonergesi]] · [[mamilas-makro-kurali]]

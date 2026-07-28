@@ -4,6 +4,8 @@
 
 **Aktif faz: İCRAAT (2026-07-28).** İnşa bitti, iş artık VİDEO ÜRETMEK. **Model: Opus 5** (`claude-opus-5[1m]`, settings.json'da sabit). Faz profili `docs/ai/faz-icraat.md`. İnşa profili uykuda: `docs/ai/faz-insa.md`.
 
+**HOT STATE → [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md)** — aktif video yok, Kütle kapandı, Mami'nin iki cevabı bekleniyor. Oturum açılışında 1300 satırlık ledger'ı değil BUNU oku.
+
 ## Mami — kişi ve çalışma biçimi
 
 - [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru, İngilizce yazılı zayıf.
@@ -54,6 +56,10 @@
 
 ## Aktif işler
 
+- [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — HOT STATE: aktif video yok, 5 işin diskteki gerçek durumu, açık Mami kararları.
+- [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Antigravity CLI; Claude klip izleyemez, Gemini izler. Claude ÖLÇER → agy İZLER → Claude hüküm verir. PATH tuzağı içeride.
+- [Makro bağlantı brief'i](mamilas-makro-baglanti-brief.md) — Mami'nin 7 P0 + M1/M3/M2 operasyonu. **Görev henüz verilmedi; kendiliğinden başlatma.**
+- [Açık İNŞA ledger'ı](mamilas-insa-ledger-acik.md) — 38 bulgu; öğrenme halkası kopuk, lint dörtte biri ölçüyor, 11 çöp betik. Kod donuk, Mami seçer.
 - [Upwork portfolyo hedefi](mamilas-upwork-portfolyo-hedefi.md) — zincirin sonu satılabilir demo reeli; ilk reklam filmi deney değil portfolyo parçası.
 
 - [Bileşke Kuvvet durumu](mamilas-bileske-kuvvet-world-explainer.md) — 52 kare + motion; @mira/@ali/@can/@araba/@kitap.
