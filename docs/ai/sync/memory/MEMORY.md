@@ -2,7 +2,7 @@
      Yasa buraya yazılmaz — prompt/üretim kanonu `agents/PROMPT-YASASI.md`, mimari kanon
      `docs/ai/PROJECT_CONTRACT.md`, durum `EXECUTION_STATE.md`. Hafıza onları tamamlar, ezmez. -->
 
-**Aktif faz: İNŞA.** Duvar kuruyoruz, video üretmiyoruz. Faz profili `docs/ai/faz-insa.md`.
+**Aktif faz: İCRAAT (2026-07-28).** İnşa bitti, iş artık VİDEO ÜRETMEK. Faz profili `docs/ai/faz-icraat.md`. İnşa profili uykuda: `docs/ai/faz-insa.md`.
 
 ## Mami — kişi ve çalışma biçimi
 
