@@ -1,0 +1,222 @@
+KÜTLE VE AĞIRLIK — CODEX · KALAN START FRAME'LER (K09–K35)
+=========================================================================
+Bu dosya yalnız Claude'un korunmuş K01–K08 Intro setinden SONRA gelir.
+35-kare planı korunur; kaynak JSON değişmez. Her blok Nano Banana 2 için tek parça start frame'dir.
+Süreklilik assetleri: @anne (mutfak), @ogretmen (sınıf), @efe_space (uzay), @terazi, @dinamometre.
+VO EŞLEME KİLİDİ: 41 voice-over beat'in tamamı görünür aksiyona çevrilir. Birleşimler yalnız K04=b4+b5, K07=b8+b9, K11=b13+b14, K15=b18+b19, K23=b27+b28 ve K35=b40+b41; diğer her K kare tek beat'tir.
+
+-----
+K09 | “Kütlenin birimi kilogramdı, küçük cisimlerde gram kullanılıyordu.” | yazı: “kg” ve “g”
+50mm lens at f/4, eye-level tabletop hero view of @terazi on the warm home science-corner table: a larger real brass mass engraved “kg”, a smaller mass engraved “g”, and the same glossy deep-red apple create a child-clear unit tableau without any person. Jars, a notebook and the evening window dress the room. Three things are alive: the balance chain settles, dust turns in the warm beam, the apple highlight shifts. Depth in three layers — blurred notebook edge, masses and @terazi sharp, amber room bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render, appeal-led silhouette, subsurface translucency, brushed brass, engraved metal, waxy apple and satin-varnish wood; motivated warm key, cool bounce, soft painted ambient occlusion, no outline.
+LIGHT AND PALETTE: deep cool-blue shadows, vivid warm amber midtones, one tomato-red apple accent, clean near-white cool-green surface edge.
+TEXT: real engraved “kg” on the larger mass and “g” on the smaller mass; diegetic metal, not overlay.
+NEGATIVE: no extra number, English label, chart, arrow, caption, 2D cel, clay, photoreal, logo, formula, graph or empty white void.
+
+-----
+K10 | “Kütle değişmeyen bir madde miktarıydı.” | yazı: “DEĞİŞMEZ”
+35mm lens at f/4, eye-level medium-wide view of @ogretmen in a fully dressed morning classroom placing the same apple on @terazi beside a real raised wooden plaque reading “DEĞİŞMEZ”. A wall-mounted Turkish-school smartboard, powered on with a calm text-free dark screen, globe, specimen jars and sunlit desks make a film scene, not a lesson card. Warm matte tan skin, low specular, never tinted green or grey. Three things are alive: the pointer settles, chalk dust turns in the window beam, the curtain edge moves. Depth in three layers — blurred desk foreground, @ogretmen, apple, balance and plaque sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, woven fabric, satin wood, brushed brass, waxy fruit and skin translucency; motivated morning window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, vivid warm amber midtones, tomato-red apple accent, restrained clean highlights.
+TEXT: “DEĞİŞMEZ” — eight letters, second letter capital Ğ; real raised Turkish plaque on the table.
+NEGATIVE: no equation, graph, arrow, floating title, English text, 2D cel, clay, photoreal, logo or white void.
+
+-----
+K11 | “Elmanın kütlesi kutupta, Ay’da ya da Mars’ta da değişmezdi.” | yazı: YOK
+50mm lens at f/4, cinematic object-led medium view inside an original clear research dome: the same apple rests beside @terazi on a real table; through three separate round portholes, a polar-white Earth landscape, blue Earth and small red Mars read as distant destinations without becoming split-screen. No human figure enters the frame. Three things are alive: the balance pointer settles, fine frost dust drifts near a porthole, a dome-light reflection shifts on the apple. Depth in three layers — blurred dome strut, apple and balance sharp, celestial portholes bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, textured suit fabric, true visor reflection, brushed brass, granular set detail and skin translucency; controlled dome key, cool bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: deep cool-blue shadows, warm amber suit fill, tomato-red apple accent, clean icy surface edges.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no split screen, flag, agency logo, franchise astronaut, arrow, 2D cel, clay, photoreal, formula, graph or void.
+
+-----
+K12 | “Çünkü elmanın içindeki madde miktarı hiçbir yere gitmiyordu.” | yazı: YOK
+85mm lens at f/2.8, close object view of the same apple resting in a shallow brass specimen cradle inside the dome, its short brown stem and unbroken red skin unmistakably intact while @terazi remains softly present behind. No human figure enters the frame. Three things are alive: a dome reflection travels, fine dust settles beyond the cradle, the apple’s highlight holds. Depth in three layers — blurred cradle edge, apple sharp, balance and dome bokeh behind. The apple presses into the brass cradle and the cradle rests on the table with real contact shadows.
+STYLE: Premium 3D CGI feature-animation, waxy apple, textured glove, brushed brass and skin translucency; controlled dome key, cool bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber detail light, tomato-red apple accent, clean rim edge.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no x-ray, particle diagram, arrow, caption, flag, logo, 2D cel, clay, photoreal, equation, graph or void.
+
+-----
+K13 | “Sıra ikinci kavramdaydı.” | yazı: “AĞIRLIK”
+35mm lens at f/4, low three-quarter object-led medium-wide view back in the warm kitchen: a solid raised Turkish word “AĞIRLIK” rests on a small brass base near the apple and @dinamometre, lighting the real copper pot, lace curtain and shelf jars rather than replacing them. No person enters the frame. Three things are alive: dust turns in the letter light, curtain fabric moves, the apple highlight shifts. Depth in three layers — blurred fruit bowl, lettering, apple and @dinamometre sharp, full kitchen bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, dimensional brushed brass lettering, waxy apple, satin wood and skin translucency; warm motivated letter key, cool window bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, vivid amber lettering, tomato-red apple accent, restrained clean edges.
+TEXT: “AĞIRLIK” — seven letters, second letter capital Ğ; solid raised Turkish lettering, correctly spelled and legible.
+NEGATIVE: no floating overlay, warped glyph, English word, diagram, arrow, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K14 | “Efe elmayı bıraktı; elma tezgâhın üstüne düştü.” | yazı: YOK
+50mm lens at f/4, eye-level medium view at the kitchen counter: @efe’s hand has just released the same apple a finger-width above satin wood, captured at the final instant before first contact. Warm matte tan skin, low specular, never tinted green or grey. His face watches; the pendant-lit pot and small scale anchor the familiar room. Three things are alive: the apple descends, a dust mote turns, steam curls behind. Depth in three layers — blurred fruit foreground, falling apple and @efe sharp, kitchen bokeh behind. Every resting object rests in contact with its surface and casts a soft contact shadow; the apple’s crisp oval contact shadow marks its exact landing point.
+STYLE: Premium 3D CGI feature-animation, waxy apple, satin wood, woven sleeve and skin translucency; warm key, cool bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber room, tomato-red apple accent, clean restrained highlight.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no levitation, slow-motion trail, arrow, caption, 2D cel, clay, photoreal, logo, equation, graph or void.
+
+-----
+K15 | “Neden zıpladığında havada asılı kalmıyordu; her şey neden aşağı gidiyordu?” | yazı: YOK
+35mm lens at f/4, medium-wide kitchen view of @efe making a small safe hop beside the counter, caught just above the tiled floor with bent knees and a soft contact shadow directly beneath his sneakers. Warm matte tan skin, low specular, never tinted green or grey. The apple sits safely on the counter; @anne watches softly in the distance. Three things are alive: his shirt hem lifts, the lace curtain moves, dust turns in the pendant beam. Depth in three layers — blurred chair edge, @efe sharp in midair, fully dressed kitchen bokeh behind. Every resting object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, woven cloth, tiled floor, satin wood and skin translucency; warm key, cool bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, amber midtones, one tomato-red apple accent, clean surface edges.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no hovering pose, arrow, diagram, caption, unsafe fall, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K16 | “Dünya, üzerindeki her şeyi merkezine doğru çekiyordu.” | yazı: YOK
+50mm lens at f/4, eye-level object-led medium view of a large tactile classroom globe on a low science table, the apple finishing its settle into a shallow circular brass cradle fixed to the globe’s surface while @terazi sits softly behind. No person enters the frame. Jars, a wall-mounted Turkish-school smartboard with a text-free dark screen, and real window light dress the room. Three things are alive: the apple finishes its tiny settle, dust turns in the window beam, a globe highlight shifts. Depth in three layers — blurred desk edge, globe and apple sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, matte globe paint, brushed brass, waxy apple, woven shirt and skin translucency; motivated window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple accent, clean pale surface edge.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no arrow, orbit line, diagram, caption, country label, 2D cel, clay, photoreal, logo, equation, graph or void.
+
+-----
+K17 | “Bu çekim kuvvetine yer çekimi deniyordu.” | yazı: “YER ÇEKİMİ”
+35mm lens at f/4, low three-quarter view of @ogretmen beside the tactile globe; her open teaching hand indicates the apple resting in its globe cradle while a real raised brass plaque reading “YER ÇEKİMİ” is fixed to the table edge. A wall-mounted Turkish-school smartboard with a text-free dark screen sits behind the science table. Warm matte tan skin, low specular, never tinted green or grey. Three things are alive: dust turns in sun, the apple settles, @ogretmen’s sleeve shifts. Depth in three layers — blurred notebook foreground, globe, apple, plaque and @ogretmen sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, matte globe, brushed brass, waxy apple, woven fabric and skin translucency; morning key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, vivid amber midtones, tomato-red apple accent, restrained clean highlights.
+TEXT: “YER ÇEKİMİ” — two words, second word begins with capital Ç; real raised Turkish plaque on the table.
+NEGATIVE: no arrow, grid, formula, floating title, English text, 2D cel, clay, photoreal, logo, graph or void.
+
+-----
+K18 | “Ağırlık, kütleye etki eden yer çekimi kuvvetinin büyüklüğüdür.” | yazı: YOK
+50mm lens at f/4, eye-level object-led medium view of @dinamometre suspended from a safe classroom lab rail as the apple hangs from its lower hook and gently stretches the visible spring. No person enters the frame. Globe, jars, a wall-mounted Turkish-school smartboard with a text-free dark screen and science table make a complete classroom set. Three things are alive: the spring lengthens slightly, red pointer settles, dust turns in window light. Depth in three layers — blurred desk ruler, @dinamometre and apple sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow; the apple’s hook connection is visibly secure.
+STYLE: Premium 3D CGI feature-animation, brushed steel, clear glass, coiled spring, red enamel pointer, waxy apple and skin translucency; window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple and pointer accents, clean steel highlights.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no force arrow, formula, caption, English text, 2D cel, clay, photoreal, logo, graph or void.
+
+-----
+K19 | “Ağırlık teraziyle değil, dinamometreyle ölçülürdü.” | yazı: YOK
+50mm lens at f/4, eye-level medium view of @dinamometre in the foreground carrying the hanging apple while @terazi sits clearly inactive behind with empty pans; @ogretmen’s open hand enters only at the frame edge to direct attention to the correct instrument. Warm matte tan skin, low specular, never tinted green or grey. Globe and a wall-mounted Turkish-school smartboard with a text-free dark screen stay soft environmental witnesses. Three things are alive: spring settles, red pointer eases to a reading, one balance chain makes a final tiny swing. Depth in three layers — blurred brass pan, @dinamometre, apple and @ogretmen’s hand sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed steel, brass, glass, coiled spring, waxy apple and skin translucency; morning key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple and pointer accents, restrained metal highlights.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no comparison chart, arrow, caption, English label, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K20 | “Birimi Newton’dı ve kısaca N harfiyle gösterilirdi.” | yazı: “N”
+85mm lens at f/4, close product-like view of @dinamometre mounted upright on a real classroom demonstration stand, its clear window revealing the coiled spring and a small engraved “N” at the top of its vertical scale. No person enters the frame. The apple hook, a wall-mounted Turkish-school smartboard with a text-free dark screen and classroom remain soft behind. Three things are alive: pointer settles, spring holds tension, dust crosses the window beam. Depth in three layers — blurred stand edge, instrument scale sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow; the apple hook hangs under real load.
+STYLE: Premium 3D CGI feature-animation, brushed steel, clear glass, engraved metal, red enamel and skin translucency; controlled window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red pointer accent, clean steel edges.
+TEXT: “N” — one capital letter, engraved once at the top of the real instrument scale.
+NEGATIVE: no extra digit, English word, floating label, diagram, arrow, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K21 | “Ağırlık bulunduğumuz yere göre değişirdi.” | yazı: YOK
+35mm lens at f/4, medium-wide object-led classroom view: a tactile globe and moon-diorama table occupy different depths of one decorated room while @dinamometre holds the apple from a central demonstration stand. No person enters the frame. A wall-mounted Turkish-school smartboard with a text-free dark screen completes the real classroom. Three things are alive: pointer quivers to rest, dust turns in sunlight, the diorama fabric moves slightly. Depth in three layers — blurred globe edge, @dinamometre and apple sharp, moon table bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, matte globe, brushed steel, waxy apple, fabric and skin translucency; window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple and pointer accent, clean edges.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no split screen, arrow, infographic, caption, flag, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K22 | “Efe bunu anlamak için hayalinde bir yolculuğa çıktı.” | yazı: YOK
+35mm lens at f/4, low three-quarter medium-wide view of @efe at his classroom desk closing his eyes over the apple, with an open science book, tactile globe, small astronaut helmet and a wall-mounted Turkish-school smartboard with a text-free dark screen making the real room feel ready for imagination. Warm matte tan skin, low specular, never tinted green or grey. Three things are alive: a page edge lifts in the window draft, dust floats in a sunbeam, the apple highlight shifts. Depth in three layers — blurred pencil cup, @efe with apple and desk objects sharp, classroom bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, paper grain, matte globe, waxy apple, woven shirt and skin translucency; morning key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple accent, restrained clean highlights.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no portal, rocket launch, caption, English sign, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K23 | “Bir astronotun kütlesi Dünya’da tam altmış kilogramdı. Astronot Dünya’da eşit kollu teraziye çıktığında terazi 60 kg gösteriyordu.” | yazı: “60 kg”
+50mm lens at f/4, eye-level medium view of @efe_space in an original school smartboard-equipped space-training bay beside @terazi, standing with a compact training backpack while the apple rests on a tray as continuity motif. Warm matte tan skin, low specular, never tinted green or grey, visible through his clear visor. The balance plate reads “60 kg”; padded wall panels, a wall-mounted Turkish-school smartboard with a text-free dark screen and a round blue-Earth window complete the scene. Three things are alive: pointer settles, visor reflection shifts, dust turns in the bay beam. Depth in three layers — blurred tool case, @efe_space and balance sharp, training bay bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, textured suit fabric, true visor reflection, brushed brass, satin panels and skin translucency; controlled warm key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber suit fill, tomato-red apple accent, clean cool surface edge.
+TEXT: “60 kg” — digits touching, one clear space, then lowercase kg; real engraved balance plate.
+NEGATIVE: no flag, agency logo, franchise astronaut, floating overlay, 2D cel, clay, photoreal, equation, graph or void.
+
+-----
+K24 | “Dünya’da dinamometrede ağırlığı yaklaşık altı yüz Newton ölçülüyordu.” | yazı: “600 N”
+50mm lens at f/4, eye-level object-led medium view in the same training bay: a training load hangs from @dinamometre, its clear window showing a stretched spring and its real scale reading “600 N”. No person enters the frame; @terazi stays soft behind as continuity. Three things are alive: red pointer settles, spring holds tension, a cool Earth-window reflection shifts across the instrument glass. Depth in three layers — blurred brass pan, @dinamometre and the hanging load sharp, training bay bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow; the load hangs straight from the hook.
+STYLE: Premium 3D CGI feature-animation, brushed steel, glass, spring metal, red enamel and suit fabric; controlled key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber fill, tomato-red pointer accent, clean steel highlights.
+TEXT: “600 N” — three digits touching, one clear space, capital N; real illuminated instrument reading.
+NEGATIVE: no extra number, English label, floating caption, flag, logo, 2D cel, clay, photoreal, formula, graph or void.
+
+-----
+K25 | “Sonra Efe uzay yolculuğunda Ay’a vardı.” | yazı: YOK
+35mm lens at f/4, medium-wide view of @efe_space stepping down a short ramp onto a believable moonlike research surface outside a compact original lander, carrying the apple in a sealed transparent sample pod. Warm matte tan skin, low specular, never tinted green or grey, visible through his clear visor. Granular ground, instrument crate, dome lights and distant blue Earth make a complete world. Three things are alive: dust settles around his boot, visor reflection shifts, the pod’s apple highlight moves. Depth in three layers — blurred rock foreground, @efe_space and pod sharp, lander and Earth bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, textured suit, true visor reflections, granular rock and clear sample pod; controlled lander key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: deep cool-blue shadows, warm amber suit fill, tomato-red apple accent in the pod, crisp icy edge.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no flag, agency logo, franchise astronaut, rocket launch, 2D cel, clay, photoreal, caption, formula, graph or void.
+
+-----
+K26 | “Ay’ın çekim kuvveti Dünya’nınkinin altıda biri kadardı.” | yazı: YOK
+50mm lens at f/4, eye-level object-led medium view on the lunar research surface: @dinamometre stands on a compact research rig while a small training weight hangs from it and the visibly relaxed spring makes the weaker pull tangible without a fraction graphic. No person enters the frame. The apple pod and lander remain in the real set. Three things are alive: spring relaxes slightly, dust settles in a gentle arc, an Earth reflection shifts across the instrument glass. Depth in three layers — blurred rock edge, @dinamometre and weight sharp, lander and Earth bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed steel, clear glass, spring metal, suit fabric and lunar grit; controlled lander key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber fill, tomato-red apple-pod accent, clean icy edges.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no “1/6” graphic, arrow, split screen, flag, logo, 2D cel, clay, photoreal, caption, formula, graph or void.
+
+-----
+K27 | “Ay’da terazi yine altmış kilogram gösterdi; çünkü kütle değişmiyordu.” | yazı: “60 kg”
+50mm lens at f/4, eye-level medium view of @efe_space beside @terazi planted on a lunar research table under a clear dome. Warm matte tan skin, low specular, never tinted green or grey, visible through his clear visor. The training load rests in one pan, known brass masses in the other, and the plate reads “60 kg”; apple pod waits on the table edge. Three things are alive: beam settles level, pointer eases to centre, fine dust slowly falls outside the dome. Depth in three layers — blurred dome strut, @efe_space and balance sharp, lunar terrain and Earth bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed brass, fine chains, textured suit, clear dome and lunar grit; dome key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber suit fill, tomato-red apple-pod accent, crisp clean metal highlights.
+TEXT: “60 kg” — digits touching, one clear space, lowercase kg; real engraved balance plate.
+NEGATIVE: no fraction graphic, split screen, flag, logo, 2D cel, clay, photoreal, caption, formula, graph or void.
+
+-----
+K28 | “Dinamometrede ağırlığı yaklaşık yüz Newton’a düştü.” | yazı: “100 N”
+50mm lens at f/4, eye-level object-led medium view under the lunar dome: @dinamometre stands upright on a secure research rig while the same training load hangs from its hook and the red pointer rests at a real “100 N” reading. No person enters the frame. @terazi remains level in the deeper background. Three things are alive: pointer makes a tiny settle, spring holds its shorter extension, dust turns at the dome floor. Depth in three layers — blurred brass pan, @dinamometre and training load sharp, balance and lunar bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed steel, clear glass, spring metal, suit fabric and skin translucency; controlled dome key, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber fill, tomato-red pointer accent, clean steel highlights.
+TEXT: “100 N” — three digits touching, one clear space, capital N; real instrument scale reading.
+NEGATIVE: no extra digit, fraction graphic, split screen, flag, logo, 2D cel, clay, photoreal, caption, formula, graph or void.
+
+-----
+K29 | “Bu yüzden astronotlar Ay’da dev adımlarla daha hafif hisseder.” | yazı: YOK
+35mm lens at f/4, medium-wide cinematic lunar view of @efe_space taking one long, graceful low-gravity step away from the dome, arms balanced and boot about to meet granular ground. Warm matte tan skin, low specular, never tinted green or grey, visible through his clear visor. The lander, apple pod and distant Earth make it a real world, not a superhero pose. Three things are alive: dust lifts and begins to settle, suit fabric shifts, visor reflection travels. Depth in three layers — blurred rock foreground, @efe_space sharp in stride, dome and Earth bokeh behind. Every resting object rests in contact with its surface and casts a soft contact shadow; his projected landing point is visibly grounded.
+STYLE: Premium 3D CGI feature-animation, textured suit, granular lunar ground and true visor reflections; lander light, cool Earth bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: deep cool-blue shadows, warm amber suit fill, tomato-red apple-pod accent, icy clean edge light.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no flying, superhero leap, flag, logo, franchise astronaut, 2D cel, clay, photoreal, caption, formula, graph or void.
+
+-----
+K30 | “Efe gözlerini açtığında her şey yerine oturmuştu.” | yazı: YOK
+85mm lens at f/2.8, close view of @efe at his classroom desk, eyes opening with quiet relief while the apple rests beside his notebook. Warm matte tan skin, low specular, never tinted green or grey. Globe, small astronaut helmet, @terazi, @dinamometre and a wall-mounted Turkish-school smartboard with a text-free dark screen are softly arranged behind as lived props, not a summary chart. Three things are alive: catchlight wakes in his eye, a page edge settles, dust floats through window light. Depth in three layers — blurred notebook corner, @efe and apple sharp, science room bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, woven shirt, waxy apple, paper grain, brass, steel and skin translucency; morning window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple accent, clean restrained highlights.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no flashback collage, chart, caption, English sign, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K31 | “Kütle maddenin kendisiydi; değişmezdi, eşit kollu teraziyle ölçülürdü ve birimi kilogramdı.” | yazı: “KÜTLE”
+50mm lens at f/4, eye-level object-led medium view of the apple on @terazi at the classroom science table, its beam arriving at level beside a real raised brass plaque reading “KÜTLE”. No person enters the frame. Morning window, jars, globe, wooden desks and a wall-mounted Turkish-school smartboard with a text-free dark screen create a final film scene without a summary board. Three things are alive: beam settles, pointer centres, sunlit dust turns. Depth in three layers — blurred desk edge, apple, balance and plaque sharp, room bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed brass, fine chains, waxy apple, satin wood and skin translucency; window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, vivid amber midtones, tomato-red apple accent, clean metal edges.
+TEXT: “KÜTLE” — five letters, second letter capital Ü with two dots; real raised Turkish plaque.
+NEGATIVE: no checklist, chart, arrow, floating overlay, English word, 2D cel, clay, photoreal, logo, equation, graph or void.
+
+-----
+K32 | “Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi; dinamometreyle ölçülürdü, birimi Newton’dı ve bulunduğumuz yere göre değişirdi.” | yazı: “AĞIRLIK”
+50mm lens at f/4, eye-level object-led medium view of @dinamometre on a secure science-table stand beside the globe, apple hanging from the hook while a real raised brass plaque reading “AĞIRLIK” sits at the instrument base. No person enters the frame. @terazi and a wall-mounted Turkish-school smartboard with a text-free dark screen remain soft in background continuity. Three things are alive: spring holds tension, red pointer settles, dust turns in morning light. Depth in three layers — blurred brass pan foreground, dynamometer, apple and plaque sharp, globe and room bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, brushed steel, clear glass, spring metal, brass plaque, waxy apple and skin translucency; window key, warm bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple and pointer accent, clean steel highlights.
+TEXT: “AĞIRLIK” — seven letters, second letter capital Ğ; real raised Turkish plaque at the instrument base.
+NEGATIVE: no chart, arrow, floating title, English label, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K33 | “Elmanın iki yüz gram olan şeyi ağırlığı değil, kütlesiydi.” | yazı: “200 g”
+85mm lens at f/2.8, close object view of the apple resting on the small kitchen scale in the original dusk kitchen as the real display settles at “200 g”; @anne remains a soft distant continuity silhouette, not the subject. Warm matte tan skin, low specular, never tinted green or grey. Copper pot, lace curtain and grocery bag complete the opening-world continuity. Three things are alive: display settles, steam curls, apple highlight shifts. Depth in three layers — blurred counter jar, apple and scale sharp, warm kitchen bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, matte-plastic scale, waxy apple, satin wood, woven fabric and skin translucency; warm pendant key, cool window bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, warm amber midtones, tomato-red apple accent, clean surface edge.
+TEXT: “200 g” — three digits touching, one clear space, lowercase g; only on the real kitchen-scale display.
+NEGATIVE: no “ağırlık” label, caption, English word, warped digit, 2D cel, clay, photoreal, logo, formula, graph or void.
+
+-----
+K34 | “Efe elmayı bu kez bilerek ve isteyerek ısırdı.” | yazı: YOK
+50mm lens at f/2.8, warm medium-close kitchen view of @efe taking one small satisfied bite from the same apple, understanding now visible in his face. Warm matte tan skin, low specular, never tinted green or grey. @anne smiles softly in bokeh; scale, copper pot and evening window preserve opening-room continuity. Three things are alive: a tiny crisp bite separates, steam curls behind, curtain fabric moves. Depth in three layers — blurred counter fruit foreground, @efe and apple sharp, kitchen bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, waxy apple skin, real bite texture, woven shirt, satin wood and skin translucency; warm pendant key, cool bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: cool-blue shadows, amber midtones, tomato-red apple accent, restrained clean highlight.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no exaggerated mouth, food mess, caption, English sign, 2D cel, clay, photoreal, logo, equation, graph or void.
+
+-----
+K35 | “Artık biri ona kütle ile ağırlık arasındaki farkı sorarsa cevabı hazırdı. Bir sonraki keşifte görüşmek üzere. Merakla kalın, bilimle kalın!” | yazı: YOK
+35mm lens at f/4, eye-level medium-wide final view of @efe leaving the warmly lit kitchen toward the hall with the bitten apple in hand, turning back for one quiet confident smile that visibly carries an answer ready to explain. Warm matte tan skin, low specular, never tinted green or grey. @anne continues dinner at the counter; copper pot, lace curtain, grocery bag and small scale remain as the complete familiar world where the question began. Three things are alive: steam rises, curtain breathes, dust turns through the pendant beam. Depth in three layers — blurred fruit bowl foreground, @efe sharp at the doorway, amber kitchen bokeh behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Premium 3D CGI feature-animation, woven fabric, satin wood, copper, waxy apple and skin translucency; warm key, cool window bounce, painted ambient occlusion, no outline.
+LIGHT AND PALETTE: deep cool-blue shadows, vivid warm amber midtones, tomato-red apple accent, near-white cool-green surface edge.
+TEXT: none — clean plate; background signs Turkish or blank and soft-focus.
+NEGATIVE: no end card, caption, English sign, logo, 2D cel, clay, photoreal, equation, graph or empty white void.

@@ -32,35 +32,22 @@
           <comments><mastercomment1>K01 — Efe o akşam mutfakta annesine yardım ediyordu.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-1">
-          <name>2.mp4</name>
+          <name>2b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>188</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>85</start>
           <end>273</end>
           <in>0</in>
-          <out>120</out>
+          <out>188</out>
           <file id="f-1">
-            <name>2.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/2.mp4</pathurl>
+            <name>2b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/2b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>188</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>63.8298</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K02 — Poşetten çıkardığı elmayı tartının üstüne koydu ve ekranda beliren sayıyı yüksek sesle oku</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-2">
@@ -83,67 +70,41 @@
           <comments><mastercomment1>K03 — Annesi gülümsedi ama Efe'nin kafasında bir şey takıldı.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-3">
-          <name>4.mp4</name>
+          <name>4b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>171</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>379</start>
           <end>550</end>
           <in>0</in>
-          <out>120</out>
+          <out>171</out>
           <file id="f-3">
-            <name>4.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/4.mp4</pathurl>
+            <name>4b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/4b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>171</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>70.1754</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K04 — O gün fen dersinde tam da bunun üzerine konuşmuşlardı: kütle ve ağırlık, aslında bambaşka </mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-4">
-          <name>5.mp4</name>
+          <name>5b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>159</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>550</start>
           <end>709</end>
           <in>0</in>
-          <out>120</out>
+          <out>159</out>
           <file id="f-4">
-            <name>5.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/5.mp4</pathurl>
+            <name>5b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/5b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>159</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>75.4717</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K05 — Efe elmayı avucunda çevirdi ve merakla düşündü: ikisi gerçekten aynı şey değil miydi?</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-5">
@@ -166,67 +127,41 @@
           <comments><mastercomment1>K06 — İlk durağı kütleydi. (yazı KÜTLE · reveal)</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-6">
-          <name>7.mp4</name>
+          <name>7b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>757</start>
-          <end>948</end>
+          <end>950</end>
           <in>0</in>
-          <out>120</out>
+          <out>193</out>
           <file id="f-6">
-            <name>7.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/7.mp4</pathurl>
+            <name>7b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/7b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>193</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>62.8272</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K07 — Kütle, bir cismin içinde bulunan madde miktarıydı; elmanın içinde ne kadar madde varsa küt</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-7">
-          <name>8.mp4</name>
+          <name>8b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>948</start>
+          <start>950</start>
           <end>1192</end>
           <in>0</in>
-          <out>120</out>
+          <out>241</out>
           <file id="f-7">
-            <name>8.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/8.mp4</pathurl>
+            <name>8b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/8b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>241</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>49.1803</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K08 — Kütleyi ölçmek için eşit kollu terazi kullanılıyordu; bir kefeye cisim, diğerine bilinen k</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-8">
@@ -270,33 +205,20 @@
         <clipitem id="ci-10">
           <name>11.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>127</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>1380</start>
           <end>1507</end>
           <in>0</in>
-          <out>120</out>
+          <out>127</out>
           <file id="f-10">
             <name>11.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/11.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>127</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.4882</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K11 — Elmanın kütlesi kutupta, Dünya'nın öbür ucunda ya da Mars'ta... (S13+14)</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-11">
@@ -340,17 +262,17 @@
         <clipitem id="ci-13">
           <name>14.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>89</duration>
+          <duration>100</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>1670</start>
-          <end>1759</end>
+          <end>1770</end>
           <in>0</in>
-          <out>89</out>
+          <out>100</out>
           <file id="f-13">
             <name>14.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/14.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>89</duration>
+            <duration>100</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
@@ -359,33 +281,20 @@
         <clipitem id="ci-14">
           <name>15.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1759</start>
+          <start>1770</start>
           <end>1891</end>
           <in>0</in>
-          <out>120</out>
+          <out>121</out>
           <file id="f-14">
             <name>15.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/15.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>121</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>90.9091</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K15 — Neden zıpladığında havada asılı kalmıyordu; her şey neden aşağı gidiyordu?</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-15">
@@ -522,35 +431,22 @@
           <comments><mastercomment1>K22 — Efe bunu anlamak için hayalinde bir yolculuğa çıktı.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-22">
-          <name>23.mp4</name>
+          <name>23b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>237</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>2497</start>
           <end>2734</end>
           <in>0</in>
-          <out>120</out>
+          <out>237</out>
           <file id="f-22">
-            <name>23.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/23.mp4</pathurl>
+            <name>23b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/23b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>237</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>50.6329</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K23 — Bir astronotun kütlesi Dünya’da tam altmış kilogramdı. Astronot Dünya’da eşit kollu terazi</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-23">
@@ -687,67 +583,41 @@
           <comments><mastercomment1>K30 — Efe gözlerini açtığında her şey yerine oturmuştu. (sınıfa dönüş)</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-30">
-          <name>31.mp4</name>
+          <name>31b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>185</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>3457</start>
-          <end>3640</end>
+          <end>3642</end>
           <in>0</in>
-          <out>120</out>
+          <out>185</out>
           <file id="f-30">
-            <name>31.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/31.mp4</pathurl>
+            <name>31b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/31b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>185</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>65.5738</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K31 — Kütle maddenin kendisiydi; değişmezdi, eşit kollu teraziyle ölçülürdü ve birimi kilogramdı</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-31">
-          <name>32.mp4</name>
+          <name>32b.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3640</start>
+          <start>3642</start>
           <end>3883</end>
           <in>0</in>
-          <out>120</out>
+          <out>241</out>
           <file id="f-31">
-            <name>32.mp4</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/32.mp4</pathurl>
+            <name>32b.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/32b.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>241</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>49.3827</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K32 — Ağırlık ise gezegenin o maddeye uyguladığı çekim kuvvetiydi; dinamometreyle ölçülürdü, bir</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-32">
@@ -772,17 +642,17 @@
         <clipitem id="ci-33">
           <name>34.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>81</duration>
+          <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>3990</start>
-          <end>4071</end>
+          <end>4111</end>
           <in>0</in>
-          <out>81</out>
+          <out>121</out>
           <file id="f-33">
             <name>34.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/34.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>81</duration>
+            <duration>121</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
@@ -791,17 +661,17 @@
         <clipitem id="ci-34">
           <name>35.mp4</name>
           <enabled>TRUE</enabled>
-          <duration>120</duration>
+          <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4071</start>
+          <start>4111</start>
           <end>4309</end>
           <in>0</in>
-          <out>120</out>
+          <out>169</out>
           <file id="f-34">
             <name>35.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/35.mp4</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>120</duration>
+            <duration>169</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
@@ -813,7 +683,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>50.4202</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>85.3535</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>

@@ -1,4 +1,4 @@
-KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · EDIT PLANI (Premiere)
+ KUVVET VE KUVVETİN ÖLÇÜLMESİ — 5. SINIF · EDIT PLANI (Premiere)
 =========================================================================
 Klip ↔ VO cümlesi ↔ süre haritası. Kurgu sınırı: kesme/sıralama + VO ve müzik
 yerleşimi, seviye ve fade. Keyframe, overlay, grading, speed-ramp yok.
@@ -49,7 +49,7 @@ Enerji: soru büyür → alet tanıtılır → karşılaştırma keskinleşir
  20.png  K20     5s     3.0s   23   Şeffaftı, içinde esnek bir yay vardı.
  21.png  K21    10s     8.0s   24   Kancasına bir cisim asıldığında… yay o kadar çok uzuyordu.
  22.png  K22     5s     4.5s  25-26  …o birim, Isaac Newton'ın anısına Newton'dı ve kısaca N harfiyle…
- 23.png  K23     5s     4.5s   27   Yani sonuç "beş Newton" ya da kısaca "beş N" diye söyleniyordu.
+ 23.png  K23     5s     4.5s   27   Yani so nuç "beş Newton" ya da kısaca "beş N" diye söyleniyordu.
  24.png  K24     5s     3.0s   28   Derken Mira iki farklı dinamometre gördü.
  25.png  K25    10s     5.0s   29   Birinin içinde kalın bir yay vardı, diğerinde incecik bir yay.
  26.png  K26     5s     4.5s   30   İkisi aynı hassaslıkta mı ölçüyordu? Hayır. İşin sırrı yayın…

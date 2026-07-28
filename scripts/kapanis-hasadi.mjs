@@ -433,7 +433,12 @@ if (isMain) {
       `✅ ${h.name} → ${out.replace(ROOT + '\\', '').replace(ROOT + '/', '')}  ` +
       `[karne ${h.lint ? `${h.lint.total - h.lint.bad.length}/${h.lint.total}` : '—'} · ` +
       `ders adayı ${dersler} · sınıflanamayan ${h.unclassified.length} · ` +
-      `kit eksik ${h.kit.filter((k) => !k.exact).length}/7]`);
+      // EKSİK = hiç bulunamayan. Ad sapması ayrı raporlanır — script kendi yorumunda bunu zaten
+      // emrediyordu ("Sapmayı YOK'tan ayır") ama özet satırı `exact`e bakıp sapmayı EKSİK sayıyordu.
+      // Kanıt (2026-07-28): Kütle'nin kiti 7/7 tamdı, klasör adı "5. Sınıf - Kütle ve Ağırlık",
+      // dosya ön eki "Kütle ve Ağırlık" → hasat "kit eksik 7/7" dedi. Yanlış hasat bankayı zehirler.
+      `kit eksik ${h.kit.filter((k) => !k.found).length}/7` +
+      `${h.kit.filter((k) => k.found && !k.exact).length ? ` · ad sapması ${h.kit.filter((k) => k.found && !k.exact).length}` : ''}]`);
   }
 }
 

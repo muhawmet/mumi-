@@ -7,16 +7,23 @@ takma ad `opus[1m]` idi, değiştirildi).
 
 | Ne | Durum |
 |---|---|
-| **Aktif video** | **Kütle ve Ağırlık** (5. sınıf, pixar_3d_edu, EDU) — **KURGUDA** |
+| **Aktif video** | **YOK — yeni iş bekliyor.** Kütle ve Ağırlık **BİTTİ**, `Biten/` altına arşivlendi, kapanış hasadı koştu (6 ders adayı → `agents/lessons/HASAT-5-sinif-kutle-ve-agirlik.md`) |
+| **Mami'nin sırada dediği** | ① yeni iş geldi (henüz tanımlanmadı) · ② **bir işi beğenmedi, konuşulacak** — hangisi olduğu sorulmalı · ③ `agy` (Antigravity CLI) ve Codex düzgün kullanılacak |
+| ~~Kütle~~ | ~~KURGUDA~~ → **kapandı** |
 | Kareler | 35/35 üretildi, denetlendi (29 temiz), diskte: `Desktop/6. Sınıf Animasyonlar/5. Sınıf - Kütle ve Ağırlık/` |
 | Klipler | 35/35 Kling 3.0 ile üretildi, aynı klasörde |
 | VO + müzik | ElevenLabs (3:00) + Suno "Paper Lantern Atlas" (1:35) — aynı klasörde |
 | Kurgu kiti | **5/5 tam**: MOTION · EDIT-PLAN · SESLENDIRME · SUNO · **KABA-KURGU.xml** |
 | Premiere | Timeline kurulu import edildi, Mami kurguyu yapıyor |
 
-**SIRADAKİ TEK ADIM:** Mami 11 klibi **extended** üretecek (`UZATILACAK-KLIPLER.txt` — hedef
-süreler whisper'la ölçülü). Sonra tek komut: `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>`
-→ yavaşlatma satırı kaybolur, hepsi %100 hızda.
+**SIRADAKİ TEK ADIM:** Mami'ye iki soru — (a) yeni iş hangisi, (b) beğenmediği iş hangisi.
+İkisi de sorulmadan yeni prodüksiyon açılmaz.
+
+**agy = Antigravity CLI, `~/.local/bin/agy` (sürüm 1.1.8, güncellendi).** Headless: `agy -p "..."`.
+Claude'un PATH'inde yok — `export PATH="$HOME/.local/bin:$PATH"` gerekir. Gerçek ajan CLI'ı
+(model/agent seçimi, --print, --dangerously-skip-permissions). ÖNEMLİ: `gemini` CLI ÖLDÜ —
+Google bireysel ücretsiz katmanı kapattı (`IneligibleTierError → migrate to Antigravity`).
+Video izletmek/özet almak için yol agy'dir, gemini değil. Mami'nin Ultra aboneliği agy'de.
 
 **AÇIK MAMİ KARARLARI:**
 1. **K04 çatalı** — teslim edilen kare sınıf flashback'i; VO'ya uyuyor ama K08 terazi ve K13+
