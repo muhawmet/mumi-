@@ -19,11 +19,26 @@ takma ad `opus[1m]` idi, değiştirildi).
 **SIRADAKİ TEK ADIM:** Mami'ye iki soru — (a) yeni iş hangisi, (b) beğenmediği iş hangisi.
 İkisi de sorulmadan yeni prodüksiyon açılmaz.
 
-**agy = Antigravity CLI, `~/.local/bin/agy` (sürüm 1.1.8, güncellendi).** Headless: `agy -p "..."`.
-Claude'un PATH'inde yok — `export PATH="$HOME/.local/bin:$PATH"` gerekir. Gerçek ajan CLI'ı
-(model/agent seçimi, --print, --dangerously-skip-permissions). ÖNEMLİ: `gemini` CLI ÖLDÜ —
-Google bireysel ücretsiz katmanı kapattı (`IneligibleTierError → migrate to Antigravity`).
-Video izletmek/özet almak için yol agy'dir, gemini değil. Mami'nin Ultra aboneliği agy'de.
+**agy = Antigravity CLI — Claude'un VİDEO GÖZÜ.** `~/.local/bin/agy` v1.1.8 (güncellendi).
+Claude'un PATH'inde YOK: `export PATH="$HOME/.local/bin:$PATH"` şart.
+Headless: `agy -p "<prompt>"` · `--model <ad>` · `--effort low|medium|high` · `--add-dir <yol>`
+· `--dangerously-skip-permissions` (onay sormaz) · `--mode plan` (salt-okur).
+
+ERİŞİLEN MODELLER (ölçüldü, `agy models`):
+  gemini-3.6-flash-high/medium/low · gemini-3.5-flash-* · gemini-3.1-pro-high/low
+  claude-sonnet-4-6 · claude-opus-4-6-thinking · gpt-oss-120b-medium
+
+**NEDEN KRİTİK:** Claude ses duyamaz, video izleyemez. Gemini modelleri izleyebilir.
+Yani agy, Claude'un yapısal körlüğünü kapatan araçtır — klip denetimi, motion doğrulama,
+"yazı bozuldu mu / hareket doğal mı" sorularının gerçek cevabı oradan gelir.
+Kullanım deseni: ağır/toplu iş `gemini-3.6-flash` (ucuz+hızlı), derin hüküm `gemini-3.1-pro`.
+Claude ÖLÇER (ffprobe/ffmpeg, sıfır token), agy İZLER, Claude hüküm verir.
+
+⚠ `gemini` CLI ÖLDÜ — Google bireysel ücretsiz katmanı kapattı
+(`IneligibleTierError: migrate to the Antigravity suite`). Yol agy'dir, gemini değil.
+Mami'nin Ultra aboneliği agy'de yaşıyor.
+
+⚠ `agy models` ilk çağrıda ~2 dk sürebiliyor (ısınma) — arka planda çağır, bekletme.
 
 **AÇIK MAMİ KARARLARI:**
 1. **K04 çatalı** — teslim edilen kare sınıf flashback'i; VO'ya uyuyor ama K08 terazi ve K13+
