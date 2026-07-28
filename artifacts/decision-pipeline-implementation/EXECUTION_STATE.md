@@ -1,5 +1,139 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
+## 🧾 İNŞA LEDGER — 2026-07-28 keşif turu (38 bulgu · Mami seçer, körleme onarım yasak)
+
+> **Bağlam:** Mami "burayı da inşa edelim" dedi, ultracode turu açıldı. Tur **tavansız** yazıldı
+> (benim kusurum — 6 ajan tavanı script'e DUVAR olarak konmadı, rica olarak okundu): 121 ajan,
+> 6.5M token, session limit 12:50'de (İstanbul) doldu. **Videolar İZLENMEDİ** — ffmpeg turdan
+> sonra kuruldu, Read `.mp4` açmaz; yakan şey her ajanın 1099 satırlık bu dosyayı tekrar okumasıydı.
+> Tur boşa gitmedi: aşağıdaki bulgular üç bağımsız hakemi geçti. **Kod donuk — bunlar ledger,
+> Mami tek tek seçer.** Bir bulgu = bir YETENEK hükmü (MAKRO). Tam kanıt: workflow journal
+> `wf_2bc59520-483/journal.jsonl`.
+
+**✅ BU TURDA ONARILAN (tek mekanik-kesin, 3 boyutta çıktı):** `buddy-gate.sh` + `hasat-gate.sh`
+git index'inde `100644`'tü → her SessionStart'ta **126 permission denied ile sessizce ölüyordu**
+(python3 no-op'unun Mac aynası: iki hayat/hasat duvarı hiç ateşlememiş). `git update-index
+--chmod=+x` ile 755'e alındı, ikisi de 126→0. gate.sh zaten 755'ti, sağlamdı.
+
+### 🔴 TAŞIMA — hafıza/kanon aynaları (en kritik: bugün CANLIDA başıma geldi)
+
+- **T-1 `memory-sync` tek yönlü, üstelik `--check`'in emrettiği tamir ikinci makinede aklı İMHA
+  ediyor.** `--check` "sapmış, `node scripts/memory-sync.mjs` çalıştır" der; çalıştırınca repo'daki
+  TAZE aklı `archive/`'e sürüp bayat aklı basar, sonra kendini YEŞİL ilan eder. **Bu sabah tam
+  bunu yaşadım** — script beni oraya yönlendirdi, 21 Windows dosyası arşive gitti, geri aldım.
+  Kök: `scripts/memory-sync.mjs:46-92` added/changed/dropped üçü de yalnız canlıyı otorite sayar.
+  Hamle (Mami seçer): repo-var/canlı-yok'u "dropped" sayma; `--adopt` (repo→canlı) yönü aç; arşive
+  taşıma yalnız açık `--archive-dropped` ile. **Yön kararını script veremez.**
+- **T-2 `--check` `archive/` alt ağacını hiç ölçmüyor** — `mdFiles()` (`:31-32`) alt dizine inmiyor.
+  `mamilas-video-daimi-direktifler.md` (8KB, MEMORY.md'nin "🔴 EN ÖNEMLİ ÇIKTI" dediği daimi
+  direktifler) **repoda 0 kopya**; kapı YEŞİL diyor. ⚠️ Bu dosyayı bu sabah "bayat Mac defteri"
+  diye canlı arşive ben taşıdım — **içeriği standing order, Mami bakmalı: geri mi gelsin.**
+- **T-3 Aynayı yazan hiçbir DUVAR yok** — `grep memory-sync src/` = 0 test. Tek tetik `gate.sh:106`
+  bloke etmeyen uyarı, yalnız `git commit`'te, yalnız POSIX kabukta (Windows'ta yok). Hamle:
+  `hasat-gate.sh` deseni — SessionStart'ta `--check`, sapmada yüksek sesle.
+- **T-4 `AGENTS.md`'de FAZ ANAHTARI yok — Codex 13 gün önce kapanmış İNŞA fazına açılıyor.**
+  Faz satırı 07-28'de yalnız `CLAUDE.md`'ye yazıldı; `AGENTS.md:8-11` hâlâ "Decision Pipeline /
+  mamilas-pipeline" diyor, parite testi yok. **("Codex tarafı cerrahi değil"in tam kanıtı.)**
+  Hamle: faz satırını iki dosyada tut + `docsContract.test.ts`'e tek satır kilit (Yasa 4: kopya
+  değil, kilit).
+- **T-5 `mamilas-denetim` skill'i tek yüzeyde** — `.claude/skills`'te var, `.agents/skills`'te yok
+  (İCRAAT'ın kare-denetim skill'i Codex'te görünmez). Parite testi (`docsContract.test.ts:203`)
+  yalnız 2 skill × 1 boolean bakıyor. Hamle: testi LİSTEYE bağla (`readdirSync` küme eşitliği).
+- **T-6 (düşük)** `docs/ai/sync/CLAUDE.global.md` + `RTK.md`: hiçbir script/test dokunmuyor, ölü
+  elle-kopya. Bugün tesadüfen aynı; sapma görünmez. Hamle: memory-sync kapsamına al ya da sil.
+
+### 🔴 DUVARLAR — Mac'te ateşliyor mu (kapının kendini ölçmemesi ORTAK kök)
+
+- **D-1 Duvarları denetleyen duvar YOK** — `grep .claude/hooks|settings.json src scripts` = 0.
+  2135 testin hiçbiri hook altyapısına dokunmuyor. Hem python3 no-op'unun hem bugünkü exec-bit
+  ölümünün ORTAK kökü: kusur türü değil, **körlük** aynı. Hamle: tek vitest — settings.json'daki
+  her `command` yolunu çöz, dosya var+`mod & 0111` mi, sentetik payload ile exit≠126/127 mi.
+- **D-2 İki hook "ölçemedi" ile "temiz"i ayırmıyor** — `hasat-gate.sh:13,15` + `buddy-gate.sh:19`
+  `command -v node || exit 0` / `[ -f script ] || exit 0`: script yoksa kapı "temiz" gibi exit 0.
+  Hamle: `|| exit 0` yerine stderr uyarısı. **Ölçemedi ≠ temiz.**
+- **D-3 `prompt-lint` duvar için yazıldı, rica bırakıldı** — `--strict` (`:11`) "hook/kapı için"
+  diyor ama hiçbir kapı çağırmıyor; `--all` şu an **159 eksikli kare** buluyor, teslim edilmiş
+  Sabit Sürat'ta bile 6/44. Ama önce D-4'ü çöz (yasa-öncesi korpus ayrımı) yoksa duvar her şeyi durdurur.
+
+### 🟠 DERS BANKASI — kanıtlanabilir boş boru
+
+- **B-1 Yeşil ışık içerikten bağımsız** — boş / dolu / bozuk-dolu banka **aynı 84 PASS**. Test
+  "dosya yolu yazıyor mu" bakar, "ders TAŞINDI mı" hiç sormaz (`docsContract.test.ts:186` ·
+  `lessonBank.test.ts:126`). Hamle: "APPROVED.md boş değilse `- ` satır sayısı = parse sayısı"
+  bloke etsin; gerçek runner koşumunda `approvedLessons` ölçen uçtan-uca test.
+- **B-2 `slice(-20)` konumsal tavanının duvarı yok** — `lessonBank.ts:46` tarihe göre sıralamıyor;
+  21. ders yazılınca en yeni SESSİZCE düşer, kusur yalnız APPROVED.md başlığında rica. Hamle (Mami
+  seçer): (a) kaynakta öldür — slice'tan önce date-sort; (b) tarih-artan doğrulayan test.
+- **B-3 Kanalı koruyan duvar buharlaşabiliyor** — dört skill yolu `.filter(existsSync)`'ten geçiyor;
+  liste boşalırsa `test.each` sıfır test koşup YEŞİL (`docsContract.test.ts:176`). Hamle: filter'ı
+  kaldır (dosya yoksa KIRIL) + `expect(SKILLS.length).toBe(4)`.
+- **B-4 Hasat `--check` VARLIĞA bakıyor, ÖLÇÜME değil** — boş hasadı gerçekten ayırmıyor, `--all`
+  zaten-hasat-edilmişi filtreleyince proje sonsuza dek ölçüm dışı. Kanıt: onaylanan hasat "7/7 ❌
+  YOK · _PROMPTLAR yok" diyor ama klasörde bugün 8 kit dosyası var. Hamle: tazelik+doluluk baksın.
+
+### 🟠 REGISTER & KÜTÜPHANE — yasa markdown'da çatallandı, kodda çatallanmadı
+
+- **R-1 Sınıflandırılamayan proje SESSİZCE EDU oluyor** — `pure.ts:986` EDU dalı ile catch-all aynı
+  değeri döner (EDU regex ölü kod). Gerçek koşum: **"Gece Serumu" → ANIMATION_EDU/EDU** (07-28'de
+  onaylanan REAL konsept!), "Milli Gün" → EDU. FAZ 1'in tüm REAL makinesi bu sessiz varsayılanın
+  üstünde. Hamle: `UNKNOWN` dönüşü + store'un sessiz düzeltmesini makbuza bağla.
+- **R-2 REAL register kodda yok** — `promptQuality.mined.json`: photoreal `rejectIf` **0** (jüri
+  REAL plastik-ticari kareyi reddedemiyor); `buildMotionPromptQualityContract` (`agentProtocol.ts:138`)
+  world/register parametresi bile almıyor (image sözleşmesi alıyor). Hamle: motion sözleşmesine
+  register geçir (image deseni), `motionUniversal[5]`→edu, photoreal rejectIf'i Mami'nin gerçek
+  kare hükmünden yaz (ölçmeden madde yazma).
+- **R-3 Dünya sınavı tek EDU profiliyle koşuyor** — `worldExam.ts:51` cast sabitleri register körü
+  ("6. sınıf 11-12 yaş" REAL dünyaya CARRIED diyor); yol register'a duyarlı, cast değil. Hamle:
+  EDU/REAL profili gruptan türet, bayrakla sorma.
+- **R-4 Sınav sayıyı hükme bağlamıyor + G3'ün ilk hedefi ölçümle çürüdü** — %43 ile %100 aynı yeşil
+  damga; fizik-cümlesi oranı kaliteyi AYIRT ETMİYOR (pixar %44, bleach %43, ikisi de CARRIED 5/5).
+  Hamle: G2 ledger #2'yi "reddedildi, ölçüldü" kapat; G3'ü Mami'nin gerçek kare gördüğü eksenden seç.
+
+### 🟡 ARAÇLAR & ÇÖPLÜK & BAYAT KAYIT
+
+- **A-1 `dunya-sinavi` BLOCKED bile exit 0** (`:92`) — kapıya bağlanamaz. Hamle: BLOCKED/MISSING/
+  CONFLICT'te exit 1.
+- **A-2 `kutuphane-karne` manşeti elle sabit** — `GERCEK_KARE={pixar_3d_edu:103}` (`:19`), 07-26'dan
+  beri donuk; o gün "koda gömülen sayı bayatlar" dersi burada uygulanmamış. Hamle: Biten/ taramasından türet.
+- **A-3 `motion-qc` Mac'te sıfır yetenek** — ama exit 2 ile BLOKE eden **tek dürüst araç** (yasa 2'ye
+  uyan tek örnek). ffmpeg bu turda kuruldu; klip yine repoda yok. Bu exit-2 desenini lint+sınava taşı.
+- **A-4 11 çöp betik = reddedilmiş biçim, madenlenmemiş zekâ DEĞİL** — çalıştırıldı: 953 kel/prompt,
+  kare-özel oran %9 (yasa STYLE %35 ister), üstelik 288 satır ırk-dışlama negatifi (yasa aynı kilidi
+  POZİTİFE çevirmişti) + 2 .py motion'ı kareye bakmadan Türkçe kelimeden türetiyor (regex-kill'in
+  öldürdüğü kalıp). Silme kanıtı üç ayaklı → **sil.** ⚠️ İSTİSNA: `SHOW_DIRECTIVE` (near/mid/far üç
+  düzlem canlı, "ölçek bir karakter") repoda hiç yok — silmeden önce 3 cümlesini al, "ölçülmemiş
+  aday" olarak sakla, yasaya yazma.
+- **A-5 Açık işin durum kaydı git'te değil** — `artifacts/regex-kill/STATE.md` (6 açık iş: B2 sırada)
+  + `artifacts/test-drive/` takipsiz, .gitignore izinli ama eklenmemiş. Windows oturumu bu işleri
+  göremez. Hamle: ikisini commit et.
+- **A-6 Durum kaydının "açık" bölümü kapanmışların deposu olmuş** — ⏸️ FAZ 4 (`:437,:442`) üç madde
+  KAPANMIŞ (brandKitLock/musicId yüzeyi açıldı, registerOf düzeldi) ama hâlâ 🔴 işaretli; `[5 SESSİZ]`
+  için iki zıt hüküm var. **Kayıt en çok danışıldığı yerde kendini yanlış biliyor.** Hamle: kapananı
+  ARŞİV başlığına taşı, ⏸️ yalnız gerçekten bekleyeni tutsun.
+- **A-7 Motor defteri iki parça, tutarlılık denetimi yok** — `engineDialect()` sessiz prefix fallback
+  (`engine.ts:99`): `kling_2_1`→"Kling 3.0" etiketi (yanlış sürüm), `seedance_2`→v1 grameri (FAZ 4'ün
+  ölçeceği motor şimdiden ölçülmemiş lehçeyle). Hamle: `measured/inheritedFrom` işaretle, etiketi modelden türet.
+- **A-8 (düşük) Mined maddelerin stable-id'si yok** — clause-etki ölçümü hâlâ imkânsız; ön koşul
+  yalnız `:181` + arşivlenmiş bir hafıza dosyasında. Hamle: her maddeye metinden-bağımsız `id`.
+
+### 5 İŞ TABLOSU (2026-07-28, diskten ölçüldü — kurgu kiti için)
+
+Mami: "2 bitirdim editini · 2 ürettim kurgu bekliyor · 1 başlamadı = 5 iş." Disk ölçümü:
+
+| İş | Kare | prompt-lint karne | Kit | Durum |
+|---|---|---|---|---|
+| Sabit Sürat ve Hız | 44 | **44/44 tam** | tam | ✅ EDİT BİTTİ (`.prproj`+tam mp4, `6. Sınıf Animasyonlar/`) |
+| 5. Sürtünme | 31 | 31/31 (başka biçim) | tam | ✅ EDİT BİTTİ (`.prproj`+`Sürtünmeyi Çözüyoruz.mp4`) |
+| Bileşke / Kuvvetlerin Güç Birliği | 52 | temas/TEXT/neg **0/52** | tam+2 revize | 🟠 KURGU BEKLİYOR (?) |
+| Kuvvet ve Kuvvetin Ölçülmesi | 48(.txt) | 43-46/48 | tam ama .md+.txt ikiz | 🟠 KURGU BEKLİYOR (?) · `_PROMPTLAR.md` 58 kare karnesi ~0 (eski, arşive) |
+| Kütle ve Ağırlık | 8 (Intro) | 7-8/8 | **hiç yok** | ⏳ BAŞLAMADI (aktif klasörde) |
+| Kuvvet MİRA | — | **_PROMPTLAR YOK** | MOTION `.md` | ⚠️ Ölçülmesi'nin eski adı olabilir — Mami doğrulamalı |
+
+**Kit yasası (motion):** kareler klasöre inince `/mamilas-denetim` sekans-sekans bakar, motion
+kare üstünden yazılır. **Kareyi görmeden motion yazılmaz** — Mami "diske indireceğim" dedi, bekliyor.
+
+---
+
 ## 🫀 AKTİF OPERASYON — KALP NAKLİ (2026-07-26, CURRENT AUTHORITY)
 
 **Mami mandası (2026-07-26):** beyin adaptasyonu A'dan Z'ye. Aşağıdaki tüm bölümler tarihsel
