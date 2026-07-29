@@ -1,0 +1,116 @@
+EŞEYLİ VE EŞEYSİZ ÜREME — SESLENDİRME METNİ (ElevenLabs)
+=========================================================================
+Konu: Eşeyli ve eşeysiz üreme | 6. sınıf Fen Bilimleri
+Anlatıcı: tek dış ses — Efe'nin hikâyesini ANLATIR, Efe konuşmaz. Ekranda kimse konuşmaz.
+Toplam: 50 cümle, kesintisiz akış | Görsel: 50 klipte tutuluyor (bkz. _EDIT-PLAN.txt)
+Kesim modu: 1:1 — hiçbir cümle atılmadı, hiçbir görüntü birleştirilmedi.
+
+TON: parlak, meraklı, sıcak-eğitici. Hızlı ama net. Hikâye anlatır gibi, ders verir gibi değil.
+DİL: yalnız Türkçe. İngilizce sözcük yok, İngilizce vurgu yok.
+
+>>> ELEVENLABS AYARI <<<
+  Model: Multilingual v2 · Dil: Türkçe
+  Stability ~45 · Similarity ~80 · Style ~35 · Speaker boost: açık
+  Tek seferde TAMAMINI okut (tek mp3). Bölüm bölüm okutma — ton kayar, whisper hizalaması bozulur.
+
+>>> TELAFFUZ KİLİTLERİ (yanlış okursa bu satırları ElevenLabs'e not düş) <<<
+  amip .......... a-MİP          öglena ........ ög-LE-na
+  paramesyum .... pa-ra-MES-yum  hidra ......... HİD-ra
+  zigot ......... zi-GOT         sperm ......... sperm (tek hece, "isperm" değil)
+  rejenerasyon .. re-je-ne-ras-YON             vejetatif ..... ve-je-ta-TİF
+  tomurcuk ...... to-MUR-cuk     stolon/gövde .. düz oku
+  "fotokopi" düz okunur, vurgusuz. "Efe" = E-fe (kısa e).
+
+>>> DURAKLAMA <<<
+  Her numaralı cümleden sonra kısa nefes (~0.35 sn).
+  Bölüm başlarında (1, 6, 11, 16, 21, 28, 34, 45, 49) biraz daha uzun dur (~0.6 sn).
+  25, 26, 27 UYARI bloğudur — tempo hafif düşer, ton ciddileşir.
+  50. cümlede enerji yükselir, kapanış imzası neşeli biter.
+=========================================================================
+
+
+===== S1 · AÇILIŞ: SORU =====
+1. Efe o sabah balkonda, annesinin yanındaydı. Elindeki bardakta kesilmiş bir gül dalı duruyordu.
+2. Dalın alt ucundan incecik beyaz kökler çıkmıştı. Efe bardağa iyice yaklaştı.
+3. Annesi, bu dalı toprağa dikeceklerini söyledi. Birkaç ay sonra yepyeni bir gül olacaktı.
+4. Efe şaşırdı. Bu dalın ne annesi vardı, ne babası. Peki nasıl yeni bir canlı oluyordu?
+5. Sonra çevresine baktı: bahçedeki kedi, gökteki kuş, taşın çatlağındaki filiz. Hepsi çoğalıyordu. Bunun bir adı vardı: üreme.
+
+
+===== S2 · EŞEYSİZ ÜREME: TANIM =====
+6. Efe fen defterini açtı. İlk sayfada iki büyük yol çizilmişti: eşeysiz üreme ve eşeyli üreme.
+7. Önce eşeysiz üreme. Burada anne baba gibi iki ayrı cinsiyet yoktu.
+8. Üreme hücresi de yoktu. Ortada tek bir ata canlı vardı, hepsi bu.
+9. Ondan oluşan yeni canlı, atasının birebir aynısıydı. Tıpkı fotokopi makinesinden çıkmış gibi.
+10. Eşeysiz üremenin dört ana çeşidi vardı. Efe birincisinden başladı.
+
+
+===== S3 · BÖLÜNEREK ÜREME =====
+11. Birincisi bölünerek üremeydi. En basit ve en hızlı olanı.
+12. Efe mikroskoba eğildi. Camın üstünde küçücük bir amip duruyordu.
+13. Amip tam ortadan ikiye ayrıldı. Bir canlıdan iki canlı olmuştu.
+14. Öglena, paramesyum ve bakteriler de böyle çoğalırdı: tam ortadan ikiye bölünerek.
+15. Efe saydı: bir, iki, dört, sekiz. Bölünerek üreme şaşırtıcı derecede hızlıydı.
+
+
+===== S4 · TOMURCUKLANMA =====
+16. İkincisi tomurcuklanmaydı. Bu kez ata canlı ikiye ayrılmıyordu.
+17. Vücudunun bir yerinde küçük bir çıkıntı oluşuyordu. Buna tomurcuk deniyordu.
+18. Efe hidranın gövdesindeki minik çıkıntıya baktı. Tomurcuk gün geçtikçe büyüyordu.
+19. Büyüyen tomurcuk ana canlıdan ayrıldı ve kendi başına yeni bir canlı oldu.
+20. Denizanası, hidra ve maya mantarları işte böyle çoğalırdı.
+
+
+===== S5 · REJENERASYON İLE ÜREME =====
+21. Üçüncüsü rejenerasyondu. Efe'nin en havalı bulduğu yöntem buydu.
+22. Canlıdan kopan bir parça, eksik kalan yerlerini kendi kendine tamamlıyordu.
+23. Deniz yıldızından kopan tek bir kol, yavaş yavaş yepyeni bir deniz yıldızına dönüştü.
+24. Toprak solucanı ikiye ayrıldığında da parçalarından yeni solucanlar oluşabiliyordu.
+25. Ama burada bir tuzak vardı. Efe bunu defterine kırmızı kalemle yazdı.
+26. Kertenkelenin kopan kuyruğu yeniden uzar, evet. Ama bu sadece bir yenilenmedir.
+27. Ortaya yeni bir kertenkele çıkmaz. Yani bu üreme değildir.
+
+
+===== S6 · VEJETATİF ÜREME =====
+28. Dördüncüsü vejetatif üremeydi. Bu yöntem yalnızca bitkilere özeldi.
+29. Efe mutfaktaki patatesi eline aldı. Üstünde küçük gözler filizlenmişti.
+30. Patatesin gözlenmesi, yeni bir patates bitkisinin başlangıcıydı.
+31. Çileğin toprak üstünde uzayan gövdesi, değdiği yerde kök salıp yeni çilek veriyordu.
+32. Ve Efe sabah gördüğü gül dalını hatırladı. Toprağa dikilen o dal, yeni bir gül tutuyordu.
+33. Dört yöntem de aynı kapıya çıkıyordu: tek ata, üreme hücresi yok, birebir aynı yeni canlı.
+
+
+===== S7 · EŞEYLİ ÜREME =====
+34. Sonra Efe defterindeki ikinci yola geçti: eşeyli üreme.
+35. Burada işin içine iki farklı cinsiyet giriyordu: dişi ve erkek.
+36. Dişinin üreme hücresine yumurta, erkeğin üreme hücresine sperm deniyordu.
+37. Yumurta ile sperm birleşti. Bu olayın adı döllenmeydi.
+38. Döllenme sonucu oluşan o tek hücreye zigot deniyordu.
+39. Zigot bölündü, büyüdü, gelişti ve yeni bir birey oluşturdu.
+40. Efe kedisinin sepetine baktı. İçinde üç yavru uyuyordu.
+41. Üçü de annelerine benziyordu ama hiçbiri onun birebir aynısı değildi.
+42. Hatta üç yavru birbirinden de farklıydı. İşte eşeyli üremenin en önemli özelliği buydu: çeşitlilik.
+43. Efe aynaya baktı. Annesine de babasına da benziyordu; ama tıpatıp ikisi de değildi.
+44. İnsanlar, kediler, köpekler, kuşlar ve çiçekli bitkiler, hepsi eşeyli üremeyle çoğalırdı.
+
+
+===== S8 · ÖZET VE KARŞILAŞTIRMA =====
+45. Efe defterin son sayfasına iki sütunlu bir tablo çizdi.
+46. Ata canlı sayısı: eşeysiz üremede tek ata. Eşeyli üremede dişi ve erkek, yani iki ata.
+47. Üreme hücresi: eşeysiz üremede yok. Eşeyli üremede var, sperm ve yumurta.
+48. Çeşitlilik: eşeysiz üremede yok, tıpkı fotokopi gibi. Eşeyli üremede var, her yavru farklı.
+
+
+===== S9 · KAPANIŞ =====
+49. Efe balkona döndü. Gül dalı bardakta, yavrular sepette, kuş daldaydı.
+50. Artık çevresine baktığında hangisinin nasıl çoğaldığını biliyordu. Merakla kalın, bilimle kalın!
+
+=========================================================================
+Tahmini süre: ~4:06 (50 cümle). Klipler baş kırpımı sonrası 5:04 — VO'dan uzun,
+yani her kesim cümle biterken düşer, klip sonu artar. Yavaşlatma gerekmez.
+
+VO mp3 hazır olunca proje klasörüne at ve şunu koş:
+  node scripts/kaba-kurgu.mjs "6. Sınıf - Eşeyli ve Eşeysiz Üreme" \
+       --klipler "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme"
+whisper transkripti kendi çıkarır (kurulu, ölçüldü) — senin transkript indirmene gerek yok.
+=========================================================================
