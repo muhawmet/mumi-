@@ -4,22 +4,22 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "34 karenin TAMAMI yazıldı ve birleştirildi (5 ajan, 50-50 oranı %50 tam), prompt-lint 0/34 kırmızı",
-  "nextAction": "Mami REF-1 ve REF-2'yi bassın (@efe1 @mira1), sonra K01-K34. İki karar bekliyor: tekrar eden prop tag'i + uzun ekran cümlelerinin yeri",
+  "lastCompleted": "34/34 denetlendi (6 ajan, gözle): 9 TEMİZ · 19 referans-edit · 6 baştan üret. Kök kusur bulundu: TEXT kuyruğundaki 'Turkish or blank' motorun yazdığı metne dönüşmüş (5 sekans, 14 kare) — 34 kareden söküldü. Kırmızı çizgi ihlali YOK.",
+  "nextAction": "Mami molada. Motion 9 temiz kare için yazılıyor. Mami dönünce: revize.txt'i bas (19 edit + 6 tam prompt), gelen kareler denetlenir, sonra onların motion'ı",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": false,
     "PROMPTLAR": true,
-    "revize": false,
+    "revize": true,
     "MOTION": false,
     "EDIT-PLAN": false,
-    "SESLENDIRME": false,
+    "SESLENDIRME": true,
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-29T11:41:34.626Z",
+  "updatedAt": "2026-07-29T12:33:31.293Z",
   "updatedBy": "claude",
-  "baseCommit": "19862bb"
+  "baseCommit": "16b274b"
 }
