@@ -324,6 +324,48 @@ if (voDosya && ffprobe && !has('tahmin')) {
         const son = i + 1 < kareler.length ? Math.max(bas + 0.4, baslangic[i + 1].t) : voToplam;
         voSegment.push({ bas, son });
       }
+
+      // ---------- NEFES BOŞLUĞUNDA KESİM ----------
+      // Mami (2026-07-29): "nefes boşluklarını güzel kes, video tırtıklanmış yine, süreleri
+      // yetmiyor diye — elimle düzeltemem."
+      //
+      // Kusur yukarıdaki `son` satırındaydı: yuva SONRAKİ CÜMLENİN BAŞLADIĞI yerde bitiyordu,
+      // yani her klip kendi cümlesinden sonraki nefesin TAMAMINI taşımak zorundaydı. Uzun nefes
+      // = şişmiş yuva = klip yetişemiyor = yavaşlatma ya da donuk kare.
+      //
+      // Oysa malzeme kıt değil: 50 klip toplamı 331s, VO 295s — 36 saniye FAZLA var, yanlış
+      // dağıtılmış. Nefes bir kimsenin malı değil; kesim onun İÇİNDE, iki klibi de doyuran
+      // yere kayabilir. Sınır yalnız nefes penceresinde oynar — konuşmanın üstüne asla binmez.
+      const KB = Math.max(0, parseFloat(flag('kirp-bas', '0.5')) || 0);
+      const konusmaSonu = new Array(kareler.length).fill(null);
+      for (let j = 0; j < whisperSeg.length; j++) {
+        const i = atama[j];
+        if (i >= 0 && (konusmaSonu[i] === null || whisperSeg[j].son > konusmaSonu[i])) konusmaSonu[i] = whisperSeg[j].son;
+      }
+      const kapasiteSn = (i) => {
+        const p = klipByK.get(kareler[i].k);
+        const s = (p && ffprobe) ? (sureOf(p) || 0) : 0;
+        return s > 0 ? Math.max(0.5, s - KB) : Infinity;   // ölçemediysen sınır koyma
+      };
+      let kaydi = 0;
+      for (let i = 0; i < kareler.length - 1; i++) {
+        const nefesBas = konusmaSonu[i];
+        if (nefesBas === null) continue;
+        const sinir = voSegment[i].son;
+        const pencere = sinir - nefesBas;
+        if (pencere <= 0.15) continue;                      // gerçek bir nefes yok
+        const kap = kapasiteSn(i);
+        if (!Number.isFinite(kap)) continue;
+        const gerek = voSegment[i].bas + kap;               // bu klibin doyduğu an
+        if (gerek >= sinir - 0.02) continue;                // zaten yetiyor, dokunma
+        // Konuşmanın hemen ardına 0.12s bırak — kesim hecenin üstüne düşmesin.
+        const yeni = Math.max(nefesBas + 0.12, Math.min(sinir, gerek));
+        if (sinir - yeni < 0.08) continue;                  // kazanç kırıntı, kesimi oynatma
+        voSegment[i].son = yeni;
+        voSegment[i + 1].bas = yeni;
+        kaydi++;
+      }
+      if (kaydi) console.log(`   🫁 nefes boşluğunda kesim: ${kaydi} sınır kaydırıldı — açık kalan klip komşusunun nefesinden besleniyor`);
       if (has('ayrinti')) {
         for (let i = 0; i < kareler.length; i++) {
           const segs = atama.map((a, j) => (a === i ? j : -1)).filter((x) => x >= 0);
@@ -422,31 +464,40 @@ for (const it of items) {
   const secim = yeten.length ? yeten[0] : olculu.slice().sort((a, b) => b.s - a.s)[0];
   if (secim.p !== it.dosya) { it.dosya = secim.p; it.klipSecildi = basename(secim.p); }
 }
+// Ödünç hesabı da KIRPMA SONRASI boya bakar — baş kırpma klibin malzemesini gerçekten azaltır.
+const kullanilabilirSn = (it) => Math.max(0, klipSuresi(it) - it.kirp / fps);
 for (let i = 1; i < items.length; i++) {
   const it = items[i];
-  const kaynakSn = klipSuresi(it);
+  const kaynakSn = kullanilabilirSn(it);
   const slotSn = (it.end - it.start) / fps;
   const acik = slotSn - kaynakSn;
   if (acik <= 0.05) continue;                    // yetiyor
   const onc = items[i - 1];
-  const oncKaynak = klipSuresi(onc);
+  const oncKaynak = kullanilabilirSn(onc);
   const oncSlot = (onc.end - onc.start) / fps;
   const oncArtan = oncKaynak - oncSlot;          // öncekinin kullanılmayan malzemesi
   if (oncArtan <= 0.05) continue;                // öncekinde de yok
   const odunc = Math.min(acik, oncArtan);
   const oduncFr = Math.round(odunc * fps);
   onc.end += oduncFr;                            // önceki daha uzun oynar
-  onc.outFr = Math.min(sn2fr(oncKaynak), onc.outFr + oduncFr);
+  onc.outFr = Math.min(onc.kirp + sn2fr(oncKaynak), onc.outFr + oduncFr);
   it.start += oduncFr;                           // bu klip geç başlar (VO önden girer)
   it.oduncAldi = odunc;
 }
 // ödünç sonrası hızları yeniden hesapla
+//
+// 🔴 KIRPMA BURADA DA SAYILIR. 2026-07-29'da bu döngü kırpmadan habersizdi: `outFr`u kırpmayı
+// EKLEMEDEN yazıyordu, `inFr` ise kirp'ti — yani her klip yuvasının tam olarak kirp kadarını boş
+// bırakıyordu. Mami'nin gördüğü kusur buydu: "video tırtıklanmış yine, süreleri yetmiyor."
+// 50 karenin 50'sinde birden, tam 0.5s. Ölçüm: yuva 6.5s / klip 6.0s, elli kez.
+// Ders: bir klibin KULLANILABİLİR boyu ham kaynak değil, ham kaynak eksi kırpmadır.
 for (const it of items) {
   const slotFr = it.end - it.start;
-  const kaynakFr2 = sn2fr(klipSuresi(it));
-  const gereken = (kaynakFr2 / slotFr) * 100;
+  const kullanilabilir = Math.max(1, sn2fr(klipSuresi(it)) - it.kirp);
+  const gereken = (kullanilabilir / slotFr) * 100;
   it.hiz = gereken >= 99.5 ? 100 : Math.max(45, gereken);
-  it.outFr = Math.min(kaynakFr2, Math.round(slotFr * (it.hiz / 100)));
+  it.outFr = it.kirp + Math.min(kullanilabilir, Math.round(slotFr * (it.hiz / 100)));
+  it.kuyrukHandle = it.srcFr - it.outFr;
   it.yavas = it.hiz < 99.5;
 }
 
