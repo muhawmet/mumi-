@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "FAZ 9 PROJECT LOOT KURULDU ve BU PROJE üzerinde doğrulandı: scripts/project-loot.mjs (kapat/sor/cevap/atla/aday/tasi/gor) + kapanis-hasadi.mjs loot görünümü + 22 kilit testi. Kapı yeşil: tsc temiz, 2342 test geçti, build OK. Loot'ta Mami'nin 3 hükmü AYNEN + 10 ders adayı, hepsi carry-forward:hayır. APPROVED.md byte-byte dokunulmadı. 4 ajan raporu: plastik=kadraj (ayak 7/7 kötü, 0/4 iyi) · morphing=el kavrama devri 7/7 + insanlı kadrajda yana kayan kamera 5/5 · transkript enzimi: kök neden /mamilas-enzim skill'i oturumda HİÇ yüklenmedi.",
-  "nextAction": "FAZ 9 KAPANDI, durduruldu (Mami'nin bağlayıcı sırası). Mami: (1) hangi ders adaylarını APPROVED'a taşıyayım — 'tasi --aday N', (2) FAZ 10 brief GÖVDESİ gelmedi, artifacts/iq-run/FAZ-10-KARAR-BUDDY-2.md FACT REQUIRED ile bekliyor.",
+  "lastCompleted": "AGY 34/34 klip ölçüldü: 12 morphing / 22 temiz. ORTA (yeniden üretim) 11 klip: K02 K03 K07 K09 K10 K12 K22 K23 K25 K30 K34 — en kötüsü K12 (6 kusur). BAŞ penceresi 1 klip: K29 (baş kırpımı 1.2s yeter). Desen: morphing temas noktasına + arka plandaki ikincil figüre çöküyor (7/12 el devri, 8/12 arka figür). Loot 12 aday taşıyor, APPROVED.md dokunulmadı.",
+  "nextAction": "FAZ 9 KAPALI — durdum. Mami: (1) hangi adayları APPROVED'a taşıyayım (tavsiyem #1 #2 #3 #4), (2) 11 klibi yeniden üretecek misin yoksa bu sürüm portfolyoya girmeyip enzim fixture'ı mı kalsın, (3) FAZ 10 brief gövdesi bekliyor.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-07-29T15:10:23.530Z",
+  "updatedAt": "2026-07-29T16:04:27.529Z",
   "updatedBy": "claude",
-  "baseCommit": "75f3625"
+  "baseCommit": "f5f162b"
 }
