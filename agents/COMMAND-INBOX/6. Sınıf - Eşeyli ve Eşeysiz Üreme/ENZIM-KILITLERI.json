@@ -43,6 +43,21 @@
     "@mikroskop": { "frames": 10, "kind": "prop", "status": "üretildi" }
   },
 
+  "kurguKilitleri": {
+    "klipBasKirpma": {
+      "saniye": 0.5,
+      "kural": "AI klibinin İLK YARIM SANİYESİ kesilir — her klipte, istisnasız.",
+      "neden": "Mami 2026-07-29: 'ai videolarının başlarındaki ilk yarım saniye sikten oluyor.' i2v motoru start frame'i ilk kare olarak basıyor; hareket henüz başlamadığı için o yarım saniye donuk ve yapay duruyor.",
+      "yanEtki": "Kırpma aynı zamanda geçiş için gereken HANDLE'ı üretir. Kırpmasız 50 klibin 2'sinde handle vardı; kırpmayla 50'sinde de var — yani dissolve ancak bu kuralla mümkün.",
+      "kapsam": "Kling 3.0 i2v çıktısı. Başka motor ölçülmedi; ölçülmeden genellenmez."
+    },
+    "ekranYazisi": {
+      "sonuc": "14 yazılı karenin 14'ü TEMİZ — sıfır bozulma.",
+      "neden": "PROMPT-YASASI §2 TEXT slotu: harf harf heceleme + diakritik sayımı + konum cümlesi. Motion tarafında yazı dondurma kilidi.",
+      "not": "Bu slot ÇALIŞIYOR. Yeni derste zayıflatılmaz."
+    }
+  },
+
   "tarifKilitleri": [
     "patates", "çilek", "hidra", "denizanası", "maya", "deniz yıldızı",
     "solucan", "kertenkele", "öglena", "paramesyum", "bakteri"

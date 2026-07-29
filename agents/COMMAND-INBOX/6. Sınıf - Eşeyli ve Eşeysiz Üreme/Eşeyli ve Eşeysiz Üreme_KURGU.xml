@@ -1,0 +1,1672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Eşeyli ve Eşeysiz Üreme_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>6. Sınıf - Eşeyli ve Eşeysiz Üreme — kaba kurgu</name>
+    <duration>7090</duration>
+    <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>156</end>
+          <in>12</in>
+          <out>156</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/1.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Efe o sabah balkonda, annesinin yanındaydı. Elindeki bardakta kesilmiş bir gül dalı duruyo</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>156</start>
+          <end>300</end>
+          <in>12</in>
+          <out>144</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/2.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — Dalın alt ucundan incecik beyaz kökler çıkmıştı. Efe bardağa iyice yaklaştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>300</start>
+          <end>446</end>
+          <in>12</in>
+          <out>146</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/3.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Annesi, bu dalı toprağa dikeceklerini söyledi. Birkaç ay sonra yepyeni bir gül olacaktı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>440</start>
+          <end>452</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>446</start>
+          <end>619</end>
+          <in>12</in>
+          <out>173</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/4.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K04 — Efe şaşırdı. Bu dalın ne annesi vardı, ne babası. Peki nasıl yeni bir canlı oluyordu?</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>613</start>
+          <end>625</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>241</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>619</start>
+          <end>860</end>
+          <in>12</in>
+          <out>241</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/5.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>241</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K05 — Sonra çevresine baktı: bahçedeki kedi, gökteki kuş, taşın çatlağındaki filiz. Hepsi çoğalı</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>860</start>
+          <end>1116</end>
+          <in>12</in>
+          <out>193</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/6.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>75.3906</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K06 — Efe fen defterini açtı. İlk sayfada iki büyük yol çizilmişti: eşeysiz üreme ve eşeyli ürem</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1116</start>
+          <end>1188</end>
+          <in>12</in>
+          <out>72</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/7.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K07 — Önce eşeysiz üreme. Burada anne baba gibi iki ayrı cinsiyet yoktu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>1182</start>
+          <end>1194</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1188</start>
+          <end>1310</end>
+          <in>12</in>
+          <out>122</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/8.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K08 — Üreme hücresi de yoktu. Ortada tek bir ata canlı vardı, hepsi bu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>1304</start>
+          <end>1316</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1310</start>
+          <end>1471</end>
+          <in>12</in>
+          <out>161</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/9.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Ondan oluşan yeni canlı, atasının birebir aynısıydı. Tıpkı fotokopi makinesinden çıkmış gi</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1471</start>
+          <end>1589</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/10.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Eşeysiz üremenin dört ana çeşidi vardı. Efe birincisinden başladı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1589</start>
+          <end>1704</end>
+          <in>12</in>
+          <out>115</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/11.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — Birincisi bölünerek üremeydi. En basit ve en hızlı olanı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1704</start>
+          <end>1819</end>
+          <in>12</in>
+          <out>115</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/12.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Efe mikroskoba eğildi. Camın üstünde küçücük bir amip duruyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1819</start>
+          <end>1944</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/13.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Amip tam ortadan ikiye ayrıldı. Bir canlıdan iki canlı olmuştu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>1938</start>
+          <end>1950</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1944</start>
+          <end>2090</end>
+          <in>12</in>
+          <out>146</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/14.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Öglena, paramesyum ve bakteriler de böyle çoğalırdı: tam ortadan ikiye bölünerek.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2084</start>
+          <end>2096</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2090</start>
+          <end>2277</end>
+          <in>12</in>
+          <out>187</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/15.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Efe saydı: bir, iki, dört, sekiz. Bölünerek üreme şaşırtıcı derecede hızlıydı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2277</start>
+          <end>2395</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/16.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — İkincisi tomurcuklanmaydı. Bu kez ata canlı ikiye ayrılmıyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2389</start>
+          <end>2401</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2395</start>
+          <end>2520</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/17.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Vücudunun bir yerinde küçük bir çıkıntı oluşuyordu. Buna tomurcuk deniyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2514</start>
+          <end>2526</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2520</start>
+          <end>2659</end>
+          <in>12</in>
+          <out>139</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/18.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K18 — Efe hidranın gövdesindeki minik çıkıntıya baktı. Tomurcuk gün geçtikçe büyüyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2653</start>
+          <end>2665</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2659</start>
+          <end>2784</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/19.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — Büyüyen tomurcuk ana canlıdan ayrıldı ve kendi başına yeni bir canlı oldu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2778</start>
+          <end>2790</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2784</start>
+          <end>2904</end>
+          <in>12</in>
+          <out>120</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/20.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Denizanası, hidra ve maya mantarları işte böyle çoğalırdı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2898</start>
+          <end>2910</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2904</start>
+          <end>3036</end>
+          <in>12</in>
+          <out>132</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/21.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Üçüncüsü rejenerasyondu. Efe'nin en havalı bulduğu yöntem buydu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3036</start>
+          <end>3161</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/22.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Canlıdan kopan bir parça, eksik kalan yerlerini kendi kendine tamamlıyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3155</start>
+          <end>3167</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3161</start>
+          <end>3300</end>
+          <in>12</in>
+          <out>139</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/23.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K23 — Deniz yıldızından kopan tek bir kol, yavaş yavaş yepyeni bir deniz yıldızına dönüştü.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3294</start>
+          <end>3306</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3300</start>
+          <end>3432</end>
+          <in>12</in>
+          <out>132</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/24.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — Toprak solucanı ikiye ayrıldığında da parçalarından yeni solucanlar oluşabiliyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3426</start>
+          <end>3438</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3432</start>
+          <end>3552</end>
+          <in>12</in>
+          <out>120</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/25.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Ama burada bir tuzak vardı. Efe bunu defterine kırmızı kalemle yazdı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3546</start>
+          <end>3558</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3552</start>
+          <end>3695</end>
+          <in>12</in>
+          <out>143</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/26.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Kertenkelenin kopan kuyruğu yeniden uzar, evet. Ama bu sadece bir yenilenmedir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3695</start>
+          <end>3816</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/27.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Ortaya yeni bir kertenkele çıkmaz. Yani bu üreme değildir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3816</start>
+          <end>3958</end>
+          <in>12</in>
+          <out>142</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/28.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — Dördüncüsü vejetatif üremeydi. Bu yöntem yalnızca bitkilere özeldi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3958</start>
+          <end>4083</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/29.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — Efe mutfaktaki patatesi eline aldı. Üstünde küçük gözler filizlenmişti.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4077</start>
+          <end>4089</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4083</start>
+          <end>4196</end>
+          <in>12</in>
+          <out>113</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/30.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Patatesin gözlenmesi, yeni bir patates bitkisinin başlangıcıydı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4190</start>
+          <end>4202</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4196</start>
+          <end>4335</end>
+          <in>12</in>
+          <out>139</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/31.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — Çileğin toprak üstünde uzayan gövdesi, değdiği yerde kök salıp yeni çilek veriyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4329</start>
+          <end>4341</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4335</start>
+          <end>4498</end>
+          <in>12</in>
+          <out>163</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/32.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Ve Efe sabah gördüğü gül dalını hatırladı. Toprağa dikilen o dal, yeni bir gül tutuyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4492</start>
+          <end>4504</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>217</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4498</start>
+          <end>4673</end>
+          <in>12</in>
+          <out>175</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/33.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>217</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Dört yöntem de aynı kapıya çıkıyordu: tek ata, üreme hücresi yok, birebir aynı yeni canlı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4667</start>
+          <end>4679</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4673</start>
+          <end>4707</end>
+          <in>12</in>
+          <out>34</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/34.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Sonra Efe defterindeki ikinci yola geçti: eşeyli üreme.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4701</start>
+          <end>4713</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4707</start>
+          <end>4852</end>
+          <in>12</in>
+          <out>145</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/35.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K35 — Burada işin içine iki farklı cinsiyet giriyordu: dişi ve erkek.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4846</start>
+          <end>4858</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-35">
+          <name>36.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4852</start>
+          <end>5027</end>
+          <in>12</in>
+          <out>169</out>
+          <file id="f-35">
+            <name>36.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/36.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>96.5714</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K36 — Dişinin üreme hücresine yumurta, erkeğin üreme hücresine sperm deniyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-36">
+          <name>37.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5027</start>
+          <end>5147</end>
+          <in>12</in>
+          <out>120</out>
+          <file id="f-36">
+            <name>37.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/37.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K37 — Yumurta ile sperm birleşti. Bu olayın adı döllenmeydi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5141</start>
+          <end>5153</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-37">
+          <name>38.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5147</start>
+          <end>5250</end>
+          <in>12</in>
+          <out>103</out>
+          <file id="f-37">
+            <name>38.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/38.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K38 — Döllenme sonucu oluşan o tek hücreye zigot deniyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5244</start>
+          <end>5256</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-38">
+          <name>39.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5250</start>
+          <end>5375</end>
+          <in>12</in>
+          <out>125</out>
+          <file id="f-38">
+            <name>39.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/39.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K39 — Zigot bölündü, büyüdü, gelişti ve yeni bir birey oluşturdu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5369</start>
+          <end>5381</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-39">
+          <name>40.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5375</start>
+          <end>5485</end>
+          <in>12</in>
+          <out>110</out>
+          <file id="f-39">
+            <name>40.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/40.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K40 — Efe kedisinin sepetine baktı. İçinde üç yavru uyuyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5479</start>
+          <end>5491</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-40">
+          <name>41.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5485</start>
+          <end>5598</end>
+          <in>12</in>
+          <out>113</out>
+          <file id="f-40">
+            <name>41.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/41.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K41 — Üçü de annelerine benziyordu ama hiçbiri onun birebir aynısı değildi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5592</start>
+          <end>5604</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-41">
+          <name>42.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>241</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5598</start>
+          <end>5795</end>
+          <in>12</in>
+          <out>197</out>
+          <file id="f-41">
+            <name>42.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/42.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>241</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K42 — Hatta üç yavru birbirinden de farklıydı. İşte eşeyli üremenin en önemli özelliği buydu: çe</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5789</start>
+          <end>5801</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-42">
+          <name>43.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5795</start>
+          <end>5951</end>
+          <in>12</in>
+          <out>156</out>
+          <file id="f-42">
+            <name>43.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/43.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K43 — Efe aynaya baktı. Annesine de babasına da benziyordu; ama tıpatıp ikisi de değildi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5945</start>
+          <end>5957</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-43">
+          <name>44.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>217</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5951</start>
+          <end>6126</end>
+          <in>12</in>
+          <out>175</out>
+          <file id="f-43">
+            <name>44.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/44.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>217</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K44 — İnsanlar, kediler, köpekler, kuşlar ve çiçekli bitkiler, hepsi eşeyli üremeyle çoğalırdı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>6120</start>
+          <end>6132</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-44">
+          <name>45.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6126</start>
+          <end>6227</end>
+          <in>12</in>
+          <out>101</out>
+          <file id="f-44">
+            <name>45.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/45.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K45 — Efe defterin son sayfasına iki sütunlu bir tablo çizdi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>6221</start>
+          <end>6233</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-45">
+          <name>46.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>241</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6227</start>
+          <end>6385</end>
+          <in>12</in>
+          <out>158</out>
+          <file id="f-45">
+            <name>46.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/46.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>241</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K46 — Ata canlı sayısı: eşeysiz üremede tek ata. Eşeyli üremede dişi ve erkek, yani iki ata.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>6379</start>
+          <end>6391</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-46">
+          <name>47.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6385</start>
+          <end>6578</end>
+          <in>12</in>
+          <out>193</out>
+          <file id="f-46">
+            <name>47.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/47.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K47 — Üreme hücresi: eşeysiz üremede yok. Eşeyli üremede var, sperm ve yumurta.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-47">
+          <name>48.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>241</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6578</start>
+          <end>6780</end>
+          <in>12</in>
+          <out>202</out>
+          <file id="f-47">
+            <name>48.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/48.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>241</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K48 — Çeşitlilik: eşeysiz üremede yok, tıpkı fotokopi gibi. Eşeyli üremede var, her yavru farklı</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>6774</start>
+          <end>6786</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-48">
+          <name>49.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6780</start>
+          <end>6926</end>
+          <in>12</in>
+          <out>146</out>
+          <file id="f-48">
+            <name>49.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/49.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K49 — Efe balkona döndü. Gül dalı bardakta, yavrular sepette, kuş daldaydı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>6920</start>
+          <end>6932</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-49">
+          <name>50.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>241</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6926</start>
+          <end>7090</end>
+          <in>12</in>
+          <out>164</out>
+          <file id="f-49">
+            <name>50.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/50.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>241</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K50 — Artık çevresine baktığında hangisinin nasıl çoğaldığını biliyordu. Merakla kalın, bilimle </mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo.mp3 (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>7088</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>7088</end>
+          <in>0</in>
+          <out>7088</out>
+          <file id="file-vo1">
+            <name>vo.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/vo.mp3</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>7088</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>ses2.wav</name>
+          <enabled>TRUE</enabled>
+          <duration>2126</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>2126</end>
+          <in>0</in>
+          <out>2126</out>
+          <file id="file-mzk1">
+            <name>ses2.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/ses2.wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>2126</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik 1/2 — Suno (VO altında ~-18 dB) — 0.0s'de tek kez (döngü YOK)</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk2-0">
+          <name>ses1.wav</name>
+          <enabled>TRUE</enabled>
+          <duration>3132</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3960</start>
+          <end>7090</end>
+          <in>0</in>
+          <out>3130</out>
+          <file id="file-mzk2">
+            <name>ses1.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/ses1.wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>3132</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik 2/2 — Suno (VO altında ~-18 dB) — 165.0s'de tek kez (döngü YOK)</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>
