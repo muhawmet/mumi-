@@ -736,7 +736,11 @@ function main() {
   if (notes.brandScrubbed.size) warn(`   ✓ marka/stüdyo adı söküldü: ${Array.from(notes.brandScrubbed).join(', ')}`);
   if (notes.realCounterTerms) warn(`   ✓ REAL karşı-terimleri eklendi: ${notes.realCounterTerms}`);
   if (notes.fallback) warn('   ⚠ dünyanın render_law/grammar metni BOŞ — register tabanı basıldı, dünya kilidi YOK');
-  if (props) warn(`   ℹ render_law prop envanteri STYLE dışında tutuldu (kareye sızardı): "${props.slice(0, 1).join(' ').slice(0, 90)}…"`);
+  // `props` boş bir dizi olduğunda da truthy — uyarı 46 dünyanın 46'sında basılıyor ve içi boş
+  // ("…"). Ölçüldü 2026-07-29: bu gürültü "her dünyada prop sızıntısı var" gibi YANLIŞ bir
+  // kütüphane karnesi doğurdu. Uyarı ancak gerçekten ayıklanan metin varsa basılır.
+  const propMetin = (props ?? []).join(' ').trim();
+  if (propMetin) warn(`   ℹ render_law prop envanteri STYLE dışında tutuldu (kareye sızardı): "${propMetin.slice(0, 90)}…"`);
   if (notes.temporalDropped.length) warn(`   ℹ ${notes.temporalDropped.length} kadans cümlesi STYLE dışında (MOTION'a ait)`);
   if (forbidden.length) warn(`   ℹ render_law'ın ${forbidden.length} yasak cümlesi NEGATIVE'e taşındı`);
 
