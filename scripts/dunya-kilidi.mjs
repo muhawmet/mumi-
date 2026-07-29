@@ -453,9 +453,14 @@ function scrubBrandTokens(text, tokens, report) {
 //
 // Kaynak cümleler dünyanın render_law fiziği + line_grammar + lens_grammar'ıdır.
 // (camera_grammar bilerek dışarıda: kamera hareketi MOTION'un işi, durağan karenin değil —
-//  renderLock() de onu almıyor.) Cümleler bileşenlerine ayrılır, her bileşen MALZEME/OPTİK
-// yoğunluğuna göre puanlanır, 90 kelimelik bütçeye en yüksek puanlılar alınır ve ORİJİNAL
-// SIRAYLA basılır. Hiçbir kelime yeniden yazılmaz — yalnız seçilir.
+//  renderLock() de onu almıyor.) Cümleler bileşenlerine ayrılır, her bileşen puanlanır,
+// 90 kelimelik bütçeye en yüksek puanlılar alınır ve ORİJİNAL SIRAYLA basılır. Hiçbir kelime
+// yeniden yazılmaz — yalnız seçilir.
+//
+// HANGİ 90 KELİME? Bu, sistemin en pahalı kararlarından biridir: 46 dünyanın 45'inde
+// medyan 30 bileşen bütçe dışında kalıyor. Karar ARTIK TAHMİNE DAYANMIYOR — ağırlıklar
+// Mami'nin onaylı iki işinin 94 gerçek STYLE bloğundan ölçülerek türetildi. Ölçümün
+// tamamı, yöntemi ve hâlâ kalibrasyon olan kısmı aşağıda: "ALTIN STANDART ÖLÇÜMÜ".
 
 const SPEC_RE = /\b(grain|sheen|varnish|matte|gloss|weave|woven|stitch|fiber|fibre|pore|anisotropic|specular|subsurface|sss|scatter\w*|translucen\w*|wood|fabric|metal|rubber|glass|clay|paper|ink|paint|painted|cel|emulsion|halation|film stock|vision3|kodak|silhouette|occlusion|bounce|rim|key|falloff|bokeh|aperture|focal|lens|f\/\d|mm\b|contrast|value|edge|texture|surface|shading|render|line|stroke|hatch|grade|highlight|shadow|skin|overscale|scale)\b/gi;
 // Sondaki `\b` bilerek YOK: "(10-15%)" içinde `%`den sonra `)` gelir, ikisi de word-dışıdır
@@ -693,9 +698,7 @@ function buildStyle(world, register, brandTokens, notes) {
   // sınıfları (SSS ten, overscale, imza) bütçe dışına itiyordu.
   //
   // Yeni yapı iki fazlı:
-  //  · GARANTİ TABAN — her kaynak grubuna küçük bir taban, ki hiçbir grup TAMAMEN susmasın.
-  //    lens tabanı 6'da tutuluyor SIFIR değil: bazı dünyalarda (deakins, fincher) karanlık
-  //    yasası lens_grammar'ın içinde yazılı ve o metin lens sınıfına GİRMEZ, ışığa girer.
+  //  · GARANTİ TABAN — ölçülen görünme oranı olan gruplara taban ayrılır (render, line).
   //  · SERBEST HAVUZ — kalan kelimeler tek sırada, kaynak grubu gözetmeden, PUANLA yarışır.
   //    Ölçüm bir sıralama verdi; bütçeyi o sıralamaya teslim eden yer burasıdır.
   // Taban toplamı 56, serbest havuz 34 kelime. (Bu bölünme kalibrasyon — ölçüm sıralamayı
@@ -901,7 +904,7 @@ function main() {
   const sigKept = kept.filter((u) => u.signature);
   const sigLost = dropped.filter((u) => u.signature);
   if (sigKept.length || sigLost.length) {
-    warn(`   ✓ imza beyanı: ${sigKept.length} bileşen STYLE'a girdi${sigLost.length ? ` · ${sigLost.length} tanesi bütçe dışı` : ''}`);
+    warn(`   ✓ imza beyanı: dünya ${notes.signatureSentences.length} cümlede kendi kilidini ilan ediyor → ${sigKept.length} bileşen STYLE'a girdi${sigLost.length ? ` · ${sigLost.length} tanesi bütçe dışı` : ''}`);
     for (const u of sigLost.slice(0, 3)) warn(`      ⚠ imza bütçe dışı: ${u.text.slice(0, 100)}`);
   }
   if (notes.realCounterTerms) warn(`   ✓ REAL karşı-terimleri eklendi: ${notes.realCounterTerms}`);
