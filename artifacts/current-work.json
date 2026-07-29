@@ -1,24 +1,14 @@
 {
   "version": 1,
-  "projectId": "6. Sınıf - Eşeyli ve Eşeysiz Üreme",
-  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
-  "phase": "kapandi",
-  "status": "kapandi",
-  "lastCompleted": "FAZ 8 kapandı (32 commit, 2320 test). FAZ 9 kararı ONAYLANDI ve yazıldı: artifacts/iq-run/FAZ-9-KARAR-PROJECT-LOOT.md — Project Loot halkası, dört Mami düzeltmesiyle.",
-  "nextAction": "ÜRETİM ÖNCE. Mami elinde .docx kaynak(lar) var. Sıra: docx'i agents/COMMAND-INBOX/ altına koy → baslat → /mamilas-enzim (4 kilit) → dunya-kilidi.mjs <worldId> (kuyruğu BAS) → prompt → prompt-lint (BASMADAN ÖNCE) → Mami basar → tek geçiş denetim. Video BİTİNCE: FAZ-9 kararını aç, Project Loot'u O PROJE üzerinde kur. ÖNCE KURMA.",
+  "projectId": "6. Sınıf - Bizi Bir Arada Tutan Değerler",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
+  "phase": "enzim",
+  "status": "aktif",
+  "lastCompleted": "iş açıldı — henüz ölçülmüş bir çıktı yok.",
+  "nextAction": "Enzim kilitlerini kapat (/mamilas-enzim).",
   "openMamiDecision": null,
   "blockedBy": null,
-  "requiredLocalMedia": [
-    {
-      "path": "~/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
-      "expect": {
-        "clips": 51,
-        "vo": 2,
-        "muzik": 4
-      },
-      "note": "repo dışı — git-ignore değil, hiç repoda değil"
-    }
-  ],
+  "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": false,
     "PROMPTLAR": false,
@@ -29,10 +19,7 @@
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "deliverablesOverride": {
-    "MOTION": false
-  },
-  "updatedAt": "2026-07-29T10:39:40.890Z",
+  "updatedAt": "2026-07-29T10:45:56.961Z",
   "updatedBy": "claude",
-  "baseCommit": "ac57d68"
+  "baseCommit": "a2fa12a"
 }
