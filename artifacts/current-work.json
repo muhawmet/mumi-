@@ -4,14 +4,14 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "iş açıldı — henüz ölçülmüş bir çıktı yok.",
-  "nextAction": "Enzim kilitlerini kapat (/mamilas-enzim).",
+  "lastCompleted": "Intro yazıldı: 2 yeni referans (@festival_alani, @kultur_haritasi) + K01-K05, prompt-lint 0/5 kırmızı",
+  "nextAction": "Mami REF-A ve REF-B'yi bassın, sonra K01-K05 — beğenirse gövde K06-K34 altı ajana bölünür",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": false,
-    "PROMPTLAR": false,
+    "PROMPTLAR": true,
     "revize": false,
     "MOTION": false,
     "EDIT-PLAN": false,
@@ -19,7 +19,7 @@
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-29T10:45:56.961Z",
+  "updatedAt": "2026-07-29T10:59:17.103Z",
   "updatedBy": "claude",
-  "baseCommit": "a2fa12a"
+  "baseCommit": "2048db3"
 }
