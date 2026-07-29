@@ -205,7 +205,7 @@ NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>
 | TEXT · arka plan kuyruğu | *"any background sign soft-focus, Turkish or blank"* — Sabit Sürat K01/K02'de VAR (temiz), K03'te YOK (GROCER tabelası çıktı), K16'da YOK (bozuk tabela). Bayrak/sembol de bu kuyruğa girer: Amerikan bayrağı K31/K32'yi bozdu çünkü hiçbir slot sembolü kapsamıyordu. |
 | TEXT · konum | Kavram yazısı bir figürün arkasında kalabiliyor. Konumu söyle: *"floating clearly in the mid-ground, position it so the figure does not stand in front of any letter."* |
 | NEGATIVE · kare-özel önce | Sürtünme 31/31 inline `FRAME NEGATIVE`, Kütle 8/8 kare-özel baş madde — ikisi de sıfır revize. Global kuyruk tek başına yetmiyor. |
-| STYLE ≤90 kelime | 269 kelimelik blok kare-özel oranı %35'e düşürdü ve %65 revize getirdi. |
+| STYLE ≤90 kelime | 269 kelimelik blok %65 revize getirdi. **Ölçülmüş dağılım (2026-07-29):** altın standart Üreme 86-116 · Sabit Sürat 68-116 · Sürtünme 125 · **Bileşke 148-243** (52 karenin 34'ü revize). 90 hedeftir; `prompt-lint` duvarı 110'da yanar — Üreme'nin çalışan işini kırmızıya boğmamak için. `scripts/dunya-kilidi.mjs` kuyruğu zaten ≤90 basıyor, elle yazma. |
 
 ### Kavram izi çizilir — ama ışık olarak
 

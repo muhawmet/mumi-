@@ -1,70 +1,59 @@
 <!-- İNDEKS. Satır başına tek giriş; detay konu dosyasında yaşar (onlar açılışta yüklenmez).
-     Yasa buraya yazılmaz — prompt/üretim kanonu `agents/PROMPT-YASASI.md`, mimari kanon
-     `docs/ai/PROJECT_CONTRACT.md`, durum `EXECUTION_STATE.md`. Hafıza onları tamamlar, ezmez. -->
+     Yasa buraya yazılmaz — prompt/üretim kanonu `agents/PROMPT-YASASI.md`, faz yürütmesi
+     `docs/ai/faz-icraat.md`, durum `artifacts/current-work.json`. Hafıza onları tamamlar, ezmez.
+     TAVAN 200 satır / 25KB — aşarsa sessizce kesilir. İNŞA fazının arkeolojisi `archive/`de. -->
 
-**Aktif faz: İCRAAT (2026-07-28).** İnşa bitti, iş artık VİDEO ÜRETMEK. **Model: Opus 5** (`claude-opus-5[1m]`, settings.json'da sabit). Faz profili `docs/ai/faz-icraat.md`. İnşa profili uykuda: `docs/ai/faz-insa.md`.
+**Aktif faz: İCRAAT — iş VİDEO ÜRETMEK.** Sistem inşa etmek değil. Model: Opus 5
+(`claude-opus-5[1m]`). Faz profili `docs/ai/faz-icraat.md`; inşa profili uykuda `docs/ai/faz-insa.md`.
 
-**HOT STATE → [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md)** — aktif video yok, Kütle kapandı, Mami'nin iki cevabı bekleniyor. Oturum açılışında 1300 satırlık ledger'ı değil BUNU oku.
+**HOT STATE — durumun otoritesi `artifacts/current-work.json`** (SessionStart hook'u basar;
+`node scripts/current-work.mjs` ile okunur). Sohbet hafızasıyla çelişirse KAYIT kazanır.
+Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş, biten işler, açık Mami kararları.
 
 ## Mami — kişi ve çalışma biçimi
 
 - [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru, İngilizce yazılı zayıf.
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB merkezde: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı. Derinlik: `mamilas-buddy` skill'i (RSD + yük yönetimi orada).
-- [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — Mami 2026-07-28: "sadece işlere bakıyorsun, destek görmedim." 29, atletik; yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
+- [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — "sadece işlere bakıyorsun, destek görmedim." Yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
 - [Duyu ve ikinci göz yetkisi](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex = ikinci göz, ajan = eller. Sormadan kullanılır; uzanmamak kusurdur.
-- [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans. Bu "ultracode" workflow'dur, effort ayarı değil.
-- [Claude senkronu — Mac ↔ Windows](mamilas-claude-senkronu.md) — akıl `~/.claude`'da yaşar, git taşımaz. `claude-sync.mjs` iki yönlü, asla silmez, çatışmada durur. Tek yönlü `memory-sync` emekli.
-- [Taşıma yasası](mamilas-tasima-yasasi.md) — sistemin tek hastalığı bilgiyi taşıyamamak; yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
-- [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Kavram ışığı devri = 0 revize. Tam metin `agents/MAMI-ZEVKI.md`.
-- [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
+- [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans.
+- [Mami loop'ta + İSTİŞARE](mamilas-mami-is-in-the-loop.md) — iş almak "hemen yapmak" değil; kısıtı teknikle aşmadan önce sor, 1000 videoluk deneyim masada.
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — hata avının çıktısı problem listesidir, kod değil. Körleme regex yasak.
-- [Mami loop'ta](mamilas-mami-is-in-the-loop.md) — kapatmadan önce sor: "Mami bunu bir cümleyle düzeltir mi?" Aşırı mühendislik tuzağı.
-- [Simülasyon döngüsü](mamilas-simulation-loop.md) — fabrikayı fabrikaya değil, onu KULLANAN ajana sor.
-- [Batch mandası](mamilas-batch-mode-mandate.md) — varsayılan TOPLU mod; sahne-sahne onay reddedildi.
+- [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
+- [Sürekli push emri](mamilas-surekli-push-emri.md) — her iş parçasından sonra commit+push, çöp dışarıda, sorulmaz.
+- [Taşıma yasası](mamilas-tasima-yasasi.md) — yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
+- [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Tam metin `agents/MAMI-ZEVKI.md`.
 - [Hal logu](mamilas-hal-logu.md) — tarih · ne dedi · ne yardım etti · ne çöktürdü. Sorulmadan desen okunmaz.
 - [DEHB ders logu](mamilas-dehb-ders-logu.md) — hangi kavram anlatıldı; yeni kavramdan önce bak.
 
-## Üretim — yönerge ve akış
+## Üretim — yasa ve akış
 
-- [Mami'nin yönergeleri](mamilas-mami-yonergeleri.md) — premium show, START FRAME her şeyi taşır, @tag, Türk cast + sınıf yaşı, Türkçe yazı, .txt teslim.
-- [Enzim — hız yönergesi](mamilas-enzim-hiz-yonergesi.md) — sorun kalite değil geri sarma; 4 kilit kesim masasında kapanır.
-- [Üretim akışı](mamilas-uretim-akisi.md) — JSON→kesim→referans→prompt→üretim→tek-geçiş revizyon→motion→Premiere.
-- [Üretim rutini](mamilas-generation-routine.md) — Mami'nin gerçek rutini ve klip ekonomisi.
-- [Kaba kurgu hattı](mamilas-kaba-kurgu-hatti.md) — kitin BEŞİNCİ parçası KABA-KURGU.xml; Premiere timeline kurulu gelir, whisper'la VO cümlelerine hizalı. Dört Premiere tuzağı duvarda.
+- [Mami'nin yönergeleri](mamilas-mami-yonergeleri.md) — premium show, START FRAME her şeyi taşır, @tag, Türk cast + sınıf yaşı, Türkçe yazı, tek geçiş, .txt teslim.
+- [Üretim akışı](mamilas-uretim-akisi.md) — JSON→kesim→referans→prompt→üretim→tek-geçiş revizyon→motion→Premiere; teslim dosyaları.
+- [Enzim — hız yönergesi](mamilas-enzim-hiz-yonergesi.md) — sorun kalite değil geri sarma; 4 kilit kesim masasında kapanır. Magnific önceki kareyi bilmez.
+- [Üretim rutini](mamilas-generation-routine.md) — NB2 + Kling 3.0, Magnific Spaces batch, klip ekonomisi (baş 0.5s + kuyruk 1.5s bozuk).
+- [Kaba kurgu hattı](mamilas-kaba-kurgu-hatti.md) — kitin BEŞİNCİ parçası KURGU.xml; whisper VO cümlelerine hizalar. Dört Premiere tuzağı duvarda.
 - [Uzatılmış klip kararı](mamilas-uzatilmis-klip-karari.md) — klip VO'dan kısaysa YAVAŞLATILMAZ, uzun üretilir. Yavaşlatma acil tamir, varsayılan değil.
 - [Magnific @-referansları](mamilas-magnific-char-refs.md) — tekrar eden karakter `@handle` ile çağrılır, tarif edilmez.
-
-## Motor kusurları (kareyle kanıtlı)
-
-- [NB2 hata kataloğu](mamilas-nb2-hata-katalogu.md) — 10 tekrar eden NB2 hatası + prompt anında kesen yazım.
-- [NB2 kalite runu](project-mamilas-nano-banana-kalite-2026-07-24.md) — hangi dünya metin-only kilitliyor, hangisi ref istiyor.
-- [Kling 3 yazı tricki](mamilas-kling3-text-trick.md) — baked-in yazı, kamera onu DÖNÜŞTÜRÜNCE bozulur; negatif tek başına yetmez.
-- [Fiziksel medyum yasası](mamilas-physical-medium-law.md) — motor üslubu değil MEDYUMU dinler: hangi boya, yüzey, doku, film.
-- [Force-glow viz](mamilas-force-bloom-viz.md) — kuvvet = yuvarlak sıcak-altın ışık; ok/çiçek değil.
+- [Referans envanteri ilk iştir](mamilas-referans-envanteri-ilk-is.md) — tekrar eden her şeyin referansı tek kare yazılmadan çıkarılır. Kanon `PROMPT-YASASI` §4a.
+- [Command JSON blokajları](mamilas-command-json-blokajlari.md) — site JSON'unun Mami'nin istediğini engellediği 10 nokta; üretimde elle aşılır.
 - [Türkçe metin + cast kilidi](mamilas-tr-text-and-cast-locks.md) — site emit etmiyor, ajan yazar.
-- [Feragatname çalışmıyor](mamilas-disclaimer-does-not-work.md) — motor somut şimdiki-zaman cümlesini dinler; yasa koşullu YAZILIR.
+- [Lint rolü görmüyor](mamilas-lint-rol-koru.md) — 50 karede 19 yanlış alarm. Lint kırmızıysa önce gerçek satırı oku.
+- [Upwork portfolyo hedefi](mamilas-upwork-portfolyo-hedefi.md) — kıstas "bunu bir müşteriye gösterir miyim"; ilk reklam filmi deney değil portfolyo parçası.
+
+## Prompt zekâsı ve motor kusurları (kareyle kanıtlı)
+
+- [Madenlenmiş prompt zekâsı](mamilas-brain-intelligence-mined.md) — image/motion/jüri için somut kısıtlar: 2D-plastik fix, prop-vs-fizik, palet=rejim, physics-first motion, banned empties.
+- [NB2 hata kataloğu](mamilas-nb2-hata-katalogu.md) — 10 tekrar eden NB2 hatası + prompt anında kesen yazım.
+- [NB2 kalite runu](project-mamilas-nano-banana-kalite-2026-07-24.md) — hangi dünya metin-only kilitliyor, hangisi ref istiyor; GPT Image 2 vs NB2 motor seçimi.
+- [Fiziksel medyum yasası](mamilas-physical-medium-law.md) — motor üslubu değil MEDYUMU dinler: hangi boya, yüzey, doku, film.
+- [Feragatname çalışmıyor](mamilas-disclaimer-does-not-work.md) — motor somut şimdiki-zaman cümlesini dinler; yasa koşullu YAZILIR, sarmalanmaz.
+- [Kling 3 yazı tricki](mamilas-kling3-text-trick.md) — baked-in yazı, kamera onu DÖNÜŞTÜRÜNCE bozulur; negatif tek başına yetmez.
+- [Force-glow viz](mamilas-force-bloom-viz.md) — kuvvet = yuvarlak sıcak-altın ışık; ok/çiçek değil.
 - [Akıllı tahta precedent'i](precedent-pixar-edu-akilli-tahta.md) — pixar_3d_edu sınıfında akıllı tahta, asla kara tahta.
+- [Üreme dersleri](mamilas-uretim-dersleri-2026-07-28.md) — ALTIN STANDART'ın 50 karesinden: kusur üç kez ajanda değil YASADAYDI · kavram ışığı ıslak dünyada sert küre · `@handle` durum taşımıyor · konum negatifle korunmuyor · yasak SAYMAK yanıltır.
 
-## Sistem — mimari ve tuzaklar
+## Araçlar
 
-- [MAMILAS Decision Pipeline](mamilas-decision-pipeline.md) — her oturumda önce EXECUTION_STATE okunur, sohbet hafızasına güvenilmez.
-- [Site tarif, ajan prompt](mamilas-site-tarif-ajan-prompt.md) — site TARİF üretir, motor prompt'unu AJAN yazar.
-- [Reçete zekâsı](mamilas-recete-zekasi.md) — enzim kilitlerinin çoğu BaseDecision'da yoktu; geri sarmanın kaynağı.
-- [V2 kütüphane — makro](mamilas-v2-kutuphane-makro.md) — 46 dünyanın 45'i hiç kare görmedi; darboğaz doğrulama maliyeti.
-- [Madenlenmiş prompt zekâsı](mamilas-brain-intelligence-mined.md) — `promptQuality.mined.json`'un 17 maddesinin doğduğu kazı.
-- [Bağlam ekonomisi](mamilas-context-economy.md) — Claude'un loop'a girmesinin mekanik sebebi ve kapatılışı.
-- [Test yüzeyi içi boş](mamilas-test-suite-is-hollow.md) — yeşil test yetenek kanıtı değildir. ⚠ sayılar 2026-07 başından, bayat; hüküm geçerli.
-- [getByLabel Türkçe tuzağı](mamilas-getbylabel-turkish-trap.md) — Türkçe etiketler e2e'de sessizce tutmuyor.
-
-## Aktif işler
-
-- [Üretim dersleri 2026-07-28](mamilas-uretim-dersleri-2026-07-28.md) — kusur üç kez ajanda değil YASADAYDI · kavram ışığı ıslak dünyada sert küre · `@handle` durum taşımıyor · konum negatifle korunmuyor · yasak saymak yanıltır.
-- [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — HOT STATE: aktif video yok, 5 işin diskteki gerçek durumu, açık Mami kararları.
-- [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Antigravity CLI; Claude klip izleyemez, Gemini izler. Claude ÖLÇER → agy İZLER → Claude hüküm verir. PATH tuzağı içeride.
-- [Makro bağlantı brief'i](mamilas-makro-baglanti-brief.md) — Mami'nin 7 P0 + M1/M3/M2 operasyonu. **Görev henüz verilmedi; kendiliğinden başlatma.**
-- [Açık İNŞA ledger'ı](mamilas-insa-ledger-acik.md) — 38 bulgu; öğrenme halkası kopuk, lint dörtte biri ölçüyor, 11 çöp betik. Kod donuk, Mami seçer.
-- [Upwork portfolyo hedefi](mamilas-upwork-portfolyo-hedefi.md) — zincirin sonu satılabilir demo reeli; ilk reklam filmi deney değil portfolyo parçası.
-
-- [Bileşke Kuvvet durumu](mamilas-bileske-kuvvet-world-explainer.md) — 52 kare + motion; @mira/@ali/@can/@araba/@kitap.
-- [Kuvvet brief kıstas değil](mamilas-kuvvet-brief-not-kistas.md) — gerçek referans Sürtünme, Kuvvet Ölçümleri brief'i değil.
-- [Command JSON blokajları](mamilas-command-json-blokajlari.md) — site JSON'unun Mami'nin istediğini engellediği 10 nokta.
+- [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Claude klip izleyemez, Gemini izler. AGY'ye HÜKÜM sordurma, TARİF ettir. PATH tuzağı içeride.
+- [Claude senkronu — Mac ↔ Windows](mamilas-claude-senkronu.md) — akıl `~/.claude`'da yaşar, git taşımaz. `claude-sync.mjs` iki yönlü/asla silmez/çatışmada durur; `memory-sync --adopt` tek yönlü repo→canlı. İkisi yan yana duruyor, kanon seçilmedi.

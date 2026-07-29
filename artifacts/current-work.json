@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "projectId": "6. Sınıf - Bizi Bir Arada Tutan Değerler",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
+  "phase": "enzim",
+  "status": "aktif",
+  "lastCompleted": "AGY 34/34 klip ölçüldü: 12 morphing / 22 temiz. ORTA (yeniden üretim) 11 klip: K02 K03 K07 K09 K10 K12 K22 K23 K25 K30 K34 — en kötüsü K12 (6 kusur). BAŞ penceresi 1 klip: K29 (baş kırpımı 1.2s yeter). Desen: morphing temas noktasına + arka plandaki ikincil figüre çöküyor (7/12 el devri, 8/12 arka figür). Loot 12 aday taşıyor, APPROVED.md dokunulmadı.",
+  "nextAction": "FAZ 9 KAPALI — durdum. Mami: (1) hangi adayları APPROVED'a taşıyayım (tavsiyem #1 #2 #3 #4), (2) 11 klibi yeniden üretecek misin yoksa bu sürüm portfolyoya girmeyip enzim fixture'ı mı kalsın, (3) FAZ 10 brief gövdesi bekliyor.",
+  "openMamiDecision": null,
+  "blockedBy": null,
+  "requiredLocalMedia": [],
+  "deliverables": {
+    "REFERANSLAR": false,
+    "PROMPTLAR": true,
+    "revize": true,
+    "MOTION": true,
+    "EDIT-PLAN": true,
+    "SESLENDIRME": true,
+    "SUNO": true,
+    "KABA-KURGU.xml": true
+  },
+  "updatedAt": "2026-07-29T16:04:27.529Z",
+  "updatedBy": "claude",
+  "baseCommit": "f5f162b"
+}

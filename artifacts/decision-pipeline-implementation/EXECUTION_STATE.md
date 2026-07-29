@@ -1,6 +1,15 @@
 # MAMILAS Decision Pipeline — EXECUTION STATE
 
-## 🎬 ŞU AN — AKTİF ÜRETİM (2026-07-28 akşam · son ölçüm bu oturumda)
+> **⛔ BU DOSYA OTORİTE DEĞİL — TARİHSEL ARŞİVDİR (2026-07-29'dan itibaren).**
+> Aktif işin tek doğruluk kaynağı: `artifacts/current-work.json` (SessionStart'ta
+> `.claude/hooks/oturum-durumu.mjs` basar). Aşağıdaki arşiv bloğu **dondurulmuştur**;
+> 07-28 akşamının fotoğrafıdır ve bilerek güncellenmez.
+> Ölçülen sebep: 07-29 sabahı Üreme projesinin 50 klibi üretildi, bu dosya hâlâ
+> "Aktif video: YOK" diyordu ve "Üreme" kelimesi 1328 satırın hiçbirinde geçmiyordu.
+> Elle güncellenen düzyazı bir gün bayatlar; makine okunur kayıt bayatlayınca test kırılır.
+> Buraya yalnız **kapanmış** iş yazılır, yürüyen iş asla.
+
+## 🗄️ ARŞİV — 2026-07-28 akşamı (donduruldu)
 
 **Model: Opus 5** (`claude-opus-5[1m]`, `~/.claude/settings.json`'da sabit — 4.8'e düşüren
 takma ad `opus[1m]` idi, değiştirildi).

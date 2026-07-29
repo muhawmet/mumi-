@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Bizi Bir Arada Tutan Değerler_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>6. Sınıf - Bizi Bir Arada Tutan Değerler — kaba kurgu</name>
+    <duration>5089</duration>
+    <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>201</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>164</end>
+          <in>13</in>
+          <out>177</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/1.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>201</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Bir toplumu millet yapan ve o toplumun bütünlüğünü sağlayan temel unsurlardan biri millî k</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>164</start>
+          <end>327</end>
+          <in>13</in>
+          <out>176</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/2.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — Dilimiz, tarihimiz, sanatımız, inançlarımız, gelenek ve göreneklerimiz geçmişle bugün aras</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>327</start>
+          <end>446</end>
+          <in>13</in>
+          <out>132</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/3.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Millî kültür, bir millete kimlik kazandıran maddi ve manevi değerlerin bütünüdür.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>201</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>446</start>
+          <end>622</end>
+          <in>13</in>
+          <out>189</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/4.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>201</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K04 — Millî kültürün dil, din, tarih, sanat, gelenek ve görenek gibi ögeleri kültürel bağlarımız</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>622</start>
+          <end>726</end>
+          <in>13</in>
+          <out>117</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/5.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K05 — Bu bağlar, aynı topluma ait bireyleri birbirine yakınlaştırır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>726</start>
+          <end>839</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/6.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — Kültürel bağlarımızın etkisiyle toplumda ortak değerler oluşur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>226</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>839</start>
+          <end>1091</end>
+          <in>13</in>
+          <out>226</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/7.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>226</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>84.5238</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K07 — Aile birliğine önem verme, adalet, dürüstlük, sevgi, saygı, hoşgörü, yardımlaşma, vatansev</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1091</start>
+          <end>1210</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/8.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.9580</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K08 — Bu değerler, davranışlarımızı yönlendirerek toplumsal ilişkileri düzenler.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1210</start>
+          <end>1323</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/9.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Dil, bir milletin duygu ve düşüncelerini yansıtır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>226</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1323</start>
+          <end>1539</end>
+          <in>13</in>
+          <out>226</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/10.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>226</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>98.6111</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K10 — Destanlar, masallar, türküler, ninniler, atasözleri ve yazılı eserler aracılığıyla kültüre</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1539</start>
+          <end>1669</end>
+          <in>13</in>
+          <out>143</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/11.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — Ortak dilimiz, millî kimliğimizin korunmasını ve aramızdaki iletişimin güçlenmesini sağlar</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1669</start>
+          <end>1832</end>
+          <in>13</in>
+          <out>176</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/12.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Dinî değerler; sevgi, hoşgörü, kardeşlik ve yardımlaşma duygularının güçlenmesine katkı sa</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1832</start>
+          <end>2001</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/13.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>81.6568</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K13 — Geçmişte kurulan vakıflar, aşevleri, kervansaraylar ve misafirhaneler ihtiyaç sahiplerine </mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>226</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2001</start>
+          <end>2171</end>
+          <in>13</in>
+          <out>183</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/14.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>226</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Yunus Emre, Mevlânâ ve Hacı Bektaş Veli gibi şahsiyetler de sevgi ve hoşgörü anlayışının y</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>101</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2171</start>
+          <end>2241</end>
+          <in>13</in>
+          <out>83</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/15.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>101</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Tarih, bir milletin ortak hafızasıdır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2241</start>
+          <end>2383</end>
+          <in>13</in>
+          <out>155</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/16.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — Milletimiz, Millî Mücadele yıllarında bağımsızlığını korumak için birlik içinde hareket et</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2383</start>
+          <end>2545</end>
+          <in>13</in>
+          <out>175</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/17.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Kadın, erkek, genç ve yaşlı demeden herkes imkânları ölçüsünde mücadeleye katkı sağlamıştı</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2545</start>
+          <end>2693</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/18.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>76.3514</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K18 — Bu ortak mücadele; vatanseverlik, fedakârlık ve bağımsızlık değerlerini güçlendirmiştir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2693</start>
+          <end>2815</end>
+          <in>13</in>
+          <out>135</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/19.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — Sanat eserleri bir milletin dilini, tarihini, inancını ve değerlerini yansıtır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>251</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2815</start>
+          <end>3043</end>
+          <in>13</in>
+          <out>241</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/20.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>251</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Geleneksel sanatlarda kullanılan renkler ve motifler yalnızca süsleme amacı taşımaz; sevgi</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3043</start>
+          <end>3153</end>
+          <in>13</in>
+          <out>123</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/21.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Bu sanatların yaşatılması, kültürel değerlerin geleceğe taşınmasını sağlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3153</start>
+          <end>3291</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/22.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Gelenek ve görenekler, eskiden beri sürdürülen ve kuşaktan kuşağa aktarılan davranışlardır</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>201</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3291</start>
+          <end>3473</end>
+          <in>13</in>
+          <out>195</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/23.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>201</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K23 — Düğünler, asker uğurlamaları, iftar sofraları, bayram ziyaretleri ve yardımlaşma gelenekle</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>201</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3473</start>
+          <end>3655</end>
+          <in>13</in>
+          <out>195</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/24.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>201</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — Zimem defteri geleneğinde olduğu gibi ihtiyaç sahiplerinin onuru korunarak yapılan yardıml</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3655</start>
+          <end>3805</end>
+          <in>13</in>
+          <out>163</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/25.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Millî ve dinî bayramlar, toplumun farklı kesimlerini ortak duygu ve değerler etrafında bul</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3805</start>
+          <end>3918</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/26.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Millî bayramlarda bağımsızlık mücadelemiz ve ortak başarılarımız hatırlanır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3918</start>
+          <end>4059</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/27.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>97.8723</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K27 — Dinî bayramlarda ise ziyaret, paylaşma, yardımlaşma ve barışma gelenekleri yaşatılır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>176</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4059</start>
+          <end>4204</end>
+          <in>13</in>
+          <out>158</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/28.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>176</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — Kültürel bağların ve millî değerlerin gücü, zor zamanlarda daha açık biçimde görülür.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>226</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4204</start>
+          <end>4417</end>
+          <in>13</in>
+          <out>226</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/29.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>226</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — Afetler karşısında devletin, kurumların ve vatandaşların el ele vermesi; yardımlaşma, daya</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4417</start>
+          <end>4551</end>
+          <in>13</in>
+          <out>147</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/30.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Ortak değerler etrafında birleşen toplumlar, karşılaştıkları güçlükleri daha kolay aşar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4551</start>
+          <end>4689</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/31.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — Dilimiz, dinimiz, tarihimiz, sanatımız, gelenek ve göreneklerimiz bizi geçmişimize bağlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4689</start>
+          <end>4821</end>
+          <in>13</in>
+          <out>145</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/32.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Bu kültürel bağlar aracılığıyla aktarılan millî değerlerimiz ise davranışlarımıza yön veri</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>201</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4821</start>
+          <end>4969</end>
+          <in>13</in>
+          <out>161</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/33.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>201</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Ortak kültürüne ve değerlerine sahip çıkan bir toplumda güven, dayanışma ve birlik duygusu</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4969</start>
+          <end>5089</end>
+          <in>13</in>
+          <out>133</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/34.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Peki sen, kültürel bağlarımızı ve millî değerlerimizi yaşatmak için neler yapabilirsin?</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo-nefesli.mp3</name>
+          <enabled>TRUE</enabled>
+          <duration>5089</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>5089</end>
+          <in>0</in>
+          <out>5089</out>
+          <file id="file-vo1">
+            <name>vo-nefesli.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/vo-nefesli.mp3</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>5089</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>muzik-uzun.wav</name>
+          <enabled>TRUE</enabled>
+          <duration>5128</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>5089</end>
+          <in>0</in>
+          <out>5089</out>
+          <file id="file-mzk1">
+            <name>muzik-uzun.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/muzik-uzun.wav</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>5128</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB)</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>

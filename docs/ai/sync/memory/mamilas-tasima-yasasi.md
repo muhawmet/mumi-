@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b4e183ce-b2c8-4cf7-a077-a178a69cc6e8
-  modified: 2026-07-27T17:55:28.190Z
+  modified: 2026-07-29T09:07:38.028Z
 ---
 
 # TAŞIMA YASASI (2026-07-27 zekâ runu)
@@ -33,5 +33,6 @@ Windows'ta hiç ateşlenmedi, `protocolHash` platforma göre değişti.
 Ölçüt: **bir sonraki videoda Mami kaç kez kendini tekrar etmek zorunda kaldı.** 2026-07-27
 başlangıç değeri 34 direktif; hedef 0.
 
-İlgili: `agents/PROMPT-YASASI.md` · [[mamilas-recete-zekasi]] · [[mamilas-v2-kutuphane-makro]] ·
-[[mamilas-test-suite-is-hollow]] · [[mamilas-context-economy]]
+İlgili: `agents/PROMPT-YASASI.md` · [[mamilas-surekli-push-emri]] · [[mamilas-lint-rol-koru]]
+(İNŞA turunun ölçümleri — reçete zekâsı, kütüphane makrosu, test yüzeyi, bağlam ekonomisi —
+`archive/` altında.)

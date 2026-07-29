@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 835110b6-4716-461b-9f6c-8102e5b1b841
-  modified: 2026-07-26T06:51:27.757Z
+  modified: 2026-07-29T09:07:40.379Z
 ---
 
 Mami 2026-07-26'da iki kez, sertçe: **"makro düşün, mikroya takılma"** ve
@@ -23,4 +23,4 @@ kelime tablosu yerine tek cümlelik yetenek hükmü ver, kanıtı altına küç�
 kusuru gördüğün yerde **kaynağında düzelt ve geç** — tur açma, rapor yazma.
 Proje kuralı olarak `CLAUDE.md` → "Çalışma biçimi" başlığına da yazıldı.
 
-İlgili: [[mamilas-v2-kutuphane-makro]] · [[mamilas-site-tarif-ajan-prompt]]
+İlgili: [[mamilas-bul-sec-onar]] · [[mamilas-mami-is-in-the-loop]]

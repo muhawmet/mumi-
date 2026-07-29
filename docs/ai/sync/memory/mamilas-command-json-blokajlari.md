@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 0b4a7c89-f6c0-4d85-8a52-503440509ec0
-  modified: 2026-07-25T11:06:14.974Z
+  modified: 2026-07-29T09:08:06.876Z
 ---
 
 2026-07-25 Bileşke Kuvvet (52 kare) + Sürtünme (31 kare) tam üretiminde ortaya çıktı: site'nin ürettiği `*_mamilas_command.json` bazı yerlerde Mami'nin istediğinin TERSİNİ dayatıyor. Yönetmen bunları elle aşıyor; site düzeltilirse bu iş kalkar.
@@ -30,4 +30,6 @@ metadata:
 
 **10. Boş alanlar:** `topic: "-"`, `cast: ""`, `location: ""`, `musicId: ""` → dosya adı bile `-_mamilas_command.json` oldu. Dosya adı/konu kimliği kayboluyor.
 
-İlişkili: [[mamilas-force-bloom-viz]] · `agents/PROMPT-YASASI.md` §2 (show/premium yasası) · `agents/PROMPT-YASASI.md` §2 (@tag disiplini) · [[mamilas-site-tarif-ajan-prompt]]
+İlişkili: [[mamilas-force-bloom-viz]] · [[mamilas-nb2-hata-katalogu]] · `agents/PROMPT-YASASI.md` §2 (show/premium yasası) · `agents/PROMPT-YASASI.md` §2 (@tag disiplini)
+
+**Rol ayrımı (değişmez):** site TARİF/brief üretir, motora giden FINAL prompt'u **ajan yazar** — `commandExport.ts:277`: *"prompts.image bir BRIEF'tir, bitmiş prompt DEĞİL"*. "Site deterministik prompt üretsin" çatalı reddedildi; bir daha sorulmaz.

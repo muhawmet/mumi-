@@ -11,9 +11,19 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
 - **Aktif faz: İCRAAT** — yürütme profili `@docs/ai/faz-icraat.md` (video üret). İnşa uykuda:
   `@docs/ai/faz-insa.md` (duvar kur). Hangi profil aktifse `CLAUDE.md`'nin ilk import satırı söyler;
   iki giriş sözleşmesi **aynı** `docs/ai/faz-*.md`'ye işaret etmek zorunda.
-- Durum: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — **her oturumda önce bunu oku.**
+- Durum: `artifacts/current-work.json` — aktif işin TEK makine gerçeği; `node scripts/current-work.mjs`
+  ile oku (SessionStart hook'u aynı metni basar). `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
+  (1337 satır) **arşivdir, otorite DEĞİL** — yalnız geçmişe dair bir cümle kurulacaksa açılır.
 - Tamamlanmış task'ı yeniden yapma. Çelişki varsa `FACT REQUIRED` ile dur; sohbet hafızasından varsayma.
 - Claude ve Codex **aynı** state ve receipt dosyalarını yazar. İkinci bir gerçeklik üretme.
+- **Site TARİF üretir; motora giden prompt'u AJAN yazar.** Ölçüm (2026-07-29): kodun ürettiği metin
+  ile teslim edilen kare arasında **%1-3** örtüşme, aktif projede %0. `src/core/` bir dünya/ref/palet
+  kütüphanesidir — prompt'un doğduğu yer değil. `generateBatch` çıktısı prompt kalitesi kanıtı DEĞİLDİR.
+- **Arşiv kıstas değil** (Mami): `agents/COMMAND-INBOX/Biten/` ne yapıldığının kaydıdır, kalite ölçütü
+  değil; çoğu iş çıkışında aceleyle üretildi. "Sıfır revize" kusursuz demek değildir. Altın standart
+  **Eşeyli ve Eşeysiz Üreme**.
+- **Harcamadan önce ölç:** `scripts/dunya-kilidi.mjs` ile dünya kuyruğunu bas (elle yazma),
+  `scripts/prompt-lint.mjs` ile yapıyı ölç — 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor.
 
 ## Önce oku
 

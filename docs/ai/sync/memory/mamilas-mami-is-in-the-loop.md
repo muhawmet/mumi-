@@ -5,6 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: e848cc8c-0163-4aa4-90b7-47ca221a0d2a
+  modified: 2026-07-29T09:08:18.562Z
 ---
 
 **Mami DÖNGÜDE. Otonom bir sistem kurmuyoruz.** API yok, olmayacak — o elle müdahale ediyor, prompt'a bakıyor, düzeltiyor.
@@ -37,5 +38,31 @@ Gece-5'te bunu unuttum ve saatlerce **onun bir cümleyle çözdüğü şeyleri k
 **KRİTİK KARIŞTIRMA:** *"ajan bu brief'e itaat edemiyor"* ≠ *"Mami bu prompt'u kullanamaz."*
 Denetçi ajan tam otonom bir robot gibi konuşur ve HER çelişkiyi bir bug olarak raporlar. Onun her itirazı bir bug DEĞİLDİR. Ajanın raporundaki **dramı da doğrulamadan aktarma** — gece-5'te "ödenmiş Kling kredisi giden kare" dedim, yanlıştı; frame gate onu zaten yakalardı.
 
-**Why:** Mami'nin zamanı ve usage'ı sınırlı. Onun 2 saniyede yaptığı şeyi kodla çözmek, gerçekten sessizce bozulan şeyleri bulmaktan çalınan zamandır.
-**How to apply:** Her denetim bulgusunu bu süzgeçten geçir. İlgili: [[mamilas-simulation-loop]]
+## İSTİŞARE — iş almak "hemen yapmak" demek değil (2026-07-29)
+
+> *"Sana ne iş yap desem direkt harıl harıl vermeye çalışıyorsun. **İstişare etsen zaten
+> öğreneceksin işi.** 1000 video yaptım ben, deneyimim var; sende de zekâ var."*
+
+Ölçülmüş örnek, aynı gün: Üreme kurgusunda K06'nın klibi VO'suna yetmedi. Ben yavaşlatma
+matematiğiyle uğraştım, %69'a indirdim, sonra nefes kısarak %80'e çektim ve raporda
+"bu bir üretim kararı" diye **bir satır not düştüm**. Mami'nin cevabı: *"kısa oldu video
+dediğinde aynı videoyu **extendli üretebilirim** ben."* Yani tek cümlelik bir soru saatlerce
+uğraşı bitirecekti — üstelik [[mamilas-uzatilmis-klip-karari]] bunu zaten yazıyordu ve ben
+onu commit mesajında **alıntılamıştım.** Bilgi vardı; eksik olan SORMAKtı.
+
+**Ayrım net:** rapora "bu Mami'nin kararı" yazmak istişare DEĞİLDİR — o, kararı sıraya koyup
+işi sürdürmektir. İstişare, **işi durdurup sormaktır.**
+
+**Kural:** İş geldiğinde ilk hamle üretmek değil, **birlikte düşünmek.** Özellikle şu üç anda dur ve sor:
+1. Bir kısıtı teknikle aşmaya çalışırken (yavaşlatma, doldurma, telafi) — *kısıt gerçek mi, yoksa
+   Mami bir üretimle kaldırır mı?*
+2. Bir şeyi "kabul edilebilir" ilan etmeden önce — *o eşiği koyan ben miyim, o mu?*
+3. Yeni bir işe başlarken — *nasıl yapılacağını 1000 videoluk deneyim mi söylemeli, benim varsayımım mı?*
+
+**Why:** Mami'nin elinde 1000 videoluk üretim deneyimi var; bende hız ve analiz var. Sormadan
+üretmek onun deneyimini masada bırakıyor ve benim aynı dersi tekrar tekrar keşfetmeme yol açıyor.
+İstişare bir gecikme değil, **öğrenme kanalı** — sorulmadıkça öğrenilmiyor.
+
+**How to apply:** Her denetim bulgusunu yukarıdaki süzgeçten geçir. İş aldığında önce bir tur
+konuş: ne yapacağını, nerede takılacağını, hangi varsayımı yaptığını söyle — sonra üret.
+İlgili: [[mamilas-uzatilmis-klip-karari]] · [[mamilas-bul-sec-onar]] · [[mamilas-makro-kurali]]

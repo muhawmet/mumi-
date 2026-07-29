@@ -12,23 +12,31 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
 
 ## Oturum açılışı — bu sırayla
 
-1. `agents/PROMPT-YASASI.md` — **birinci sırada.** Prompt yazmadan önce okunur; ezberden yazılmaz.
+0. **Hook `[durum]` bloğunu basar** — aktif iş, faz, biten, sıradaki tek adım, bloke, Mami'nin
+   açık sorusu, kit eksiği, medya sayımı. Kaynağı `artifacts/current-work.json`; **bu KAYITTIR,
+   tahmin değil.** Sohbet hafızası ile çelişirse KAYIT kazanır. Elle okumaya gerek yok, ama
+   güncellemek zorunlu: `node scripts/current-work.mjs ilerle --bitti "..." --sirada "..."`.
+1. `agents/PROMPT-YASASI.md` — prompt yazılacaksa **birinci sırada**; ezberden yazılmaz.
    **§0.5 register** (REAL/EDU/STY) · **§2R** REAL start-frame · **§3R** REAL motion.
    Hangi register'da çalıştığını bilmeden kare yazma — EDU'nun "sıcak mat ten"i REAL'de o
    dünyanın kendi negatifini ihlal eder.
-2. `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — hangi video nerede kaldı.
-3. `agents/lessons/APPROVED.md` — Mami-onaylı ders bankası. Boşsa hiçbir şey olmaz.
-4. `agents/COMMAND-INBOX/` — hangi command JSON'lar bekliyor. **Mami'ye hangisi diye sor**,
-   sessiz seçme.
+2. `agents/lessons/APPROVED.md` — Mami-onaylı ders bankası. Boşsa hiçbir şey olmaz.
+3. **Kayıtta aktif iş yoksa** `agents/COMMAND-INBOX/` — **Mami'ye hangisi diye sor**, sessiz
+   seçme. Hook bekleyenleri sayar ama **karar vermez**.
+
+Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` —
+**arşiv, otorite DEĞİL**, normal oturumda okunmaz.
 
 ## Bu fazın yürütmesi
 
 | Ne zaman | Ne çalışır |
 |---|---|
-| Yeni video başlarken | `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
+| **Her iş parçası bitince** | `node scripts/current-work.mjs ilerle --bitti "<ölçülmüş>" --sirada "<tek eylem>"` — kayıt bayatlarsa sonraki oturum sıfırdan başlar |
+| Yeni video başlarken | `node scripts/current-work.mjs baslat "<proje>"` + `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
 | **Kilitler kapanınca** | **Referans envanteri** (`PROMPT-YASASI` §4a) — tekrar eden her şey `_REFERANSLAR.txt`'e; tek kare yazılmadan önce |
+| **Prompt yazmadan ÖNCE** | `node scripts/dunya-kilidi.mjs <worldId>` — STYLE/LIGHT/NEGATIVE kuyruğunu **bas ve yapıştır**. Elle yazma: ölçüldü, aynı dünyada dört lehçe doğdu (Kütle'nin ilk 8 karesi 81-91 kelime, kalan 27'si 23-30; `overscale` 8/8 → 0/27) |
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
-| Prompt yazıldıktan sonra | `node scripts/prompt-lint.mjs <dosya> --register=real|edu|sty` — eksik slot kalmasın |
+| **Prompt yazıldıktan sonra, BASMADAN ÖNCE** | `node scripts/prompt-lint.mjs <dosya> --register=real\|edu\|sty` — 71 revizenin ~44-52'si burada, kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik · SARI = ajan baksın · KAPSAM = yeşilin kapsamadığı |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |
 | Klip geldiğinde | `node scripts/motion-qc.mjs <klip>` — videonun kendisi denetlenir |
 | **Klipler + VO inince** | `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>` — **Premiere timeline'ı kurulu gelir** |
@@ -52,6 +60,12 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
   Ölçülen kazanç (Kütle, 2026-07-28): plan 3:33 tahmin ediyordu, gerçek VO 3:00 — 33 saniyelik
   tahmin sapması kaynakta kapandı; 35 kesimin 35'i cümlesine nokta atışı oturdu.
 - **Kare kalitesinin son hükmü Mami'nindir.** Ajan hazırlar, karar vermez.
+- **Arşiv kıstas değil** (Mami, 2026-07-29). `Biten/` altındaki işler ne yapıldığının kaydıdır;
+  çoğu iş çıkışında aceleyle üretildi ve hatalı. "Sıfır revize" kusursuz demek değildir. Altın
+  standart **Eşeyli ve Eşeysiz Üreme**. Eski işe *"bunlar hatalı, ne bozuk?"* gözüyle bakılır —
+  iyi olan zaten göze çarpar.
+- **İş kapanışı ölçülür.** `current-work.mjs kapat` artık eksik kit, eksik medya, açık bloke ya da
+  açık Mami kararı varsa **kapatmaz**; kabul ediliyorsa `--zorla`. Kapanış bir iddia değil, bir kanıt.
 
 ## Teslim seti
 

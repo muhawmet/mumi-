@@ -1,10 +1,68 @@
+<!-- mamilas.harvest.v1
+{
+  "schema": "mamilas.harvest.v1",
+  "parserVersion": "kapanis-hasadi@3",
+  "promptLintVersion": "prompt-lint@b0249ceb",
+  "harvestedAt": "2026-07-29T07:21:19.586Z",
+  "project": {
+    "dir": "Sabit Sürat ve Hız",
+    "id": "dc5e8770946017cb"
+  },
+  "sources": {
+    "prompt": [
+      {
+        "file": "Sabit Sürat ve Hız_PROMPTLAR.txt",
+        "sha256": "e1874b27d1648d06105f2e30299242d7e39427b3386aa26c5c314626201e21a9",
+        "bytes": 115350,
+        "frames": 44
+      }
+    ],
+    "revize": [
+      {
+        "file": "revize.txt",
+        "sha256": "bba2d866910ee8f21f16a2bbff9634c6b1ccddf4e568598b80c89100430c8715",
+        "bytes": 3617,
+        "blocks": 8,
+        "uniqueFrames": 8
+      }
+    ],
+    "command": {
+      "file": "sabit-surat-ve-hiz_mamilas_command.json",
+      "sha256": "821460a90c6b83f0911590cacf12aa7af3e6761346f42b6a3d43f3f908cb5efd"
+    },
+    "manifest": null
+  },
+  "excluded": [],
+  "metrics": {
+    "frameTotal": 44,
+    "frameTotalSource": "prompt-parts",
+    "revisedBlocks": 8,
+    "revisedUniqueFrames": 8,
+    "cleanDeclared": 36,
+    "revizeRatio": 0.18181818181818182,
+    "multiRound": null
+  },
+  "status": "OK",
+  "errors": []
+}
+-->
+
 # KAPANIŞ HASADI — Sabit Sürat ve Hız
 
-Kaynak: `agents/COMMAND-INBOX/Biten/Sabit Sürat ve Hız/` · hasat: 2026-07-27
+Kaynak: `agents/COMMAND-INBOX/Biten/Sabit Sürat ve Hız/` · hasat: 2026-07-29 · parser: `kapanis-hasadi@3`
 
 **Bu dosya banka DEĞİL.** Her satır ADAY. `agents/lessons/APPROVED.md`'ye yalnız Mami taşır
 (M7 yasası: otomatik promote yok — çöp ders sistemi zehirler). Kabul ettiğin ders satırını
 olduğu gibi taşı, istemediğini burada bırak.
+
+## 0 · Ölçüm durumu — **OK**
+
+| kanal | seçilen kaynak |
+|---|---|
+| prompt (discovery) | `Sabit Sürat ve Hız_PROMPTLAR.txt` |
+| revize (discovery) | `revize.txt` |
+| command | `sabit-surat-ve-hiz_mamilas_command.json` |
+| manifest | — |
 
 ## 1 · Yapısal karne (prompt-lint)
 
@@ -33,16 +91,16 @@ olduğu gibi taşı, istemediğini burada bırak.
 
 ## 2 · Ders adayları (revize turundan)
 
-`revize.txt` — **8 kare revize** / 44 kare · revize oranı **18%**
+`revize.txt` — **8 revize bloğu**, **8 benzersiz kare** / 44 kare (payda kaynağı: prompt-parts) · revize oranı **18%**
 
 Sınıflanan kusurlar — her satır onaylanmaya hazır biçimde yazıldı:
 
 ```
-- Arka plandaki her yazı yüzeyi (tabela, poster, pano) yumuşak-bulanık ve Türkçe ya da BOŞ kalır; kare-özel yazılmazsa motor İngilizce ya da uydurma harf dizisi basıyor — kaynak: Sabit Sürat ve Hız · 2026-07-27 · Mami onayı
-- Karakterin gardırop rengi @referansta kilitlenir; sahne promptunda tarif edilirse aynı çanta kareden kareye renk değiştiriyor — kaynak: Sabit Sürat ve Hız · 2026-07-27 · Mami onayı
-- Bayrak, arma ve rozet YAZI slotunun kapsamındadır: mekânda bayrak direği varsa Türk bayrağı açıkça yazılır, yoksa motor Amerikan bayrağı basıyor — kaynak: Sabit Sürat ve Hız · 2026-07-27 · Mami onayı
-- Kavram yazısı NET ve tam okunur olur ve konumu yazılır — figür hiçbir harfin önünde durmaz; konum yazılmazsa yazı gövdenin arkasında kalıyor — kaynak: Sabit Sürat ve Hız · 2026-07-27 · Mami onayı
-- Ölçü aletinin kadranı da Türkçedir (pusula K/D/G/B, gösterge birimi Türkçe); TEXT slotu yalnız kahraman yazıyı kapsayınca alet üstündeki harfler İngilizce çıkıyor — kaynak: Sabit Sürat ve Hız · 2026-07-27 · Mami onayı
+- Arka plandaki her yazı yüzeyi (tabela, poster, pano) yumuşak-bulanık ve Türkçe ya da BOŞ kalır; kare-özel yazılmazsa motor İngilizce ya da uydurma harf dizisi basıyor — kaynak: Sabit Sürat ve Hız · 2026-07-29 · Mami onayı
+- Karakterin gardırop rengi @referansta kilitlenir; sahne promptunda tarif edilirse aynı çanta kareden kareye renk değiştiriyor — kaynak: Sabit Sürat ve Hız · 2026-07-29 · Mami onayı
+- Bayrak, arma ve rozet YAZI slotunun kapsamındadır: mekânda bayrak direği varsa Türk bayrağı açıkça yazılır, yoksa motor Amerikan bayrağı basıyor — kaynak: Sabit Sürat ve Hız · 2026-07-29 · Mami onayı
+- Kavram yazısı NET ve tam okunur olur ve konumu yazılır — figür hiçbir harfin önünde durmaz; konum yazılmazsa yazı gövdenin arkasında kalıyor — kaynak: Sabit Sürat ve Hız · 2026-07-29 · Mami onayı
+- Ölçü aletinin kadranı da Türkçedir (pusula K/D/G/B, gösterge birimi Türkçe); TEXT slotu yalnız kahraman yazıyı kapsayınca alet üstündeki harfler İngilizce çıkıyor — kaynak: Sabit Sürat ve Hız · 2026-07-29 · Mami onayı
 ```
 
 | sınıf | kare | nereye yazılır | slot |

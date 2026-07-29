@@ -1,0 +1,21 @@
+EŞEYLİ VE EŞEYSİZ ÜREME — MÜZİK (Suno v5.5)
+=========================================================================
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+Warm, gentle instrumental underscore for a children's educational science cartoon about how living things grow and multiply, tender and curious with a soft sense of life unfolding and quietly dividing. Cozy Pixar-style morning wonder — soft marimba and pizzicato strings, gentle glockenspiel and celesta sparkle, warm clarinet and flute, light hand percussion, soft nylon guitar and warm upright bass. Major key, medium-slow tempo, hummable and spacious with plenty of room for a narrator, tender and uplifting but never busy. Instrumental only, no vocals, no lyrics.
+
+=========================================================================
+(opsiyonel — Custom mod) Negatif: no vocals, no lyrics, no aggressive drums,
+no dark cinematic, no horror, no medical or clinical tension, no dubstep.
+
+Sekans (tek parçadan kesip kullan, ~5:10 hedef):
+  S1 açılış (0:00–0:35) ....... merak, tek marimba + sıcak sabah, seyrek
+  S2–S3 (0:35–1:40) .......... ritim girer, pizzicato "bölünme" nabzı — hafif tık-tık
+  S4–S6 (1:40–2:55) .......... akış sürer, çilek/patates bölümünde nylon gitar öne çıkar
+  S7 eşeyli (2:55–4:10) ...... EN SICAK yer — yavru kediler, ayna anı; yaylılar açılır
+  S8 tablo (4:10–4:40) ....... toparlayıcı, düzenli, net nabız
+  S9 kapanış (4:40–5:10) ..... çözülür, glockenspiel son parıltı, yumuşak biter
+
+Miks: VO altında ~-18 dB. Bölüm geçişlerinde 6-8 frame fade.
+25–27 UYARI bloğunda (kertenkele tuzağı) müziği ~-3 dB daha kıs — VO öne çıksın.
+=========================================================================

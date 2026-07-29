@@ -175,7 +175,15 @@ const sureOf = (p) => {
 };
 // VO = adında elevenlabs/vo geçen, yoksa EN UZUN ses. Müzik = adında suno geçen, yoksa diğerlerinin en uzunu.
 let voDosya = flag('vo', null);
-let muzikDosya = flag('muzik', null);
+// `--muzik "<dosya>@<sn>"` yerleşim biçimi de gelebilir — ham hâli diskte yok, `@`den önce kes.
+// Kesilmezse ffprobe var olmayan yola çağrılır ve karneye anlamsız bir hata satırı düşer.
+let muzikDosya = (() => {
+  const ham = flag('muzik', null);
+  if (!ham || existsSync(resolve(ham))) return ham;
+  const at = ham.lastIndexOf('@');
+  const kirpik = at > 0 ? ham.slice(0, at) : ham;
+  return existsSync(resolve(kirpik)) ? kirpik : null;
+})();
 if (!voDosya) {
   voDosya = sesAdaylari.find((p) => /elevenlabs|_vo\b|seslendirme|voice/i.test(basename(p)))
     || sesAdaylari.slice().sort((a, b) => (sureOf(b) || 0) - (sureOf(a) || 0))[0] || null;
@@ -186,6 +194,25 @@ if (!muzikDosya) {
 }
 const voToplam = voDosya ? sureOf(resolve(voDosya)) : null;
 const muzikSure = muzikDosya ? sureOf(resolve(muzikDosya)) : null;
+
+// ÇOK PARÇALI MÜZİK — `--muzik "<dosya>@<sn>"` birden fazla kez verilebilir.
+// Suno bir üretimde iki varyant döndürüyor; ikisi de kendi sonuyla biten TAM parçalar.
+// Döngülemek yerine her birini dramaturjiye göre yerleştirmek doğrusu (ölçüm: her iki parça da
+// "clear ending, not a seamless loop"). @ yoksa eski davranış (tek parça, gerekirse döngü) sürer.
+const muzikArgs = argv.reduce((acc, a, i) => {
+  if (a === '--muzik' && argv[i + 1] && !argv[i + 1].startsWith('--')) acc.push(argv[i + 1]);
+  return acc;
+}, []);
+const muzikYerlesim = muzikArgs
+  .map((s) => {
+    const at = s.lastIndexOf('@');
+    if (at < 1) return null;
+    const sn = parseFloat(s.slice(at + 1));
+    if (!Number.isFinite(sn)) return null;
+    const p = s.slice(0, at);
+    return existsSync(resolve(p)) ? { dosya: p, bas: sn, sure: sureOf(resolve(p)) } : null;
+  })
+  .filter(Boolean);
 
 // ---------- 5b. VO'yu CÜMLELERE böl (nefes boşluğundan) ----------
 // 2026-07-28 ölçümü: plan tahmini gerçek VO'dan sistematik olarak uzun çıkıyor
@@ -204,7 +231,19 @@ let whisperSeg = null;
 const whisperCli = (() => { try { execFileSync('whisper-cli', ['-h'], { stdio: 'ignore' }); return true; } catch { return false; } })();
 const MODEL = join(process.env.HOME || '', '.cache/whisper/ggml-medium.bin');
 if (voDosya && whisperCli && existsSync(MODEL) && !has('tahmin')) {
-  const trBase = join(PROJE, `${basename(projeArg || 'proje')}—VO-transkript`);
+  // 🔴 ÖNBELLEK ANAHTARI SESİN KENDİSİ OLMALI. 2026-07-29'da anahtar yalnız PROJE ADIydı:
+  // VO değiştirildi (nefesleri kısaltılmış yeni dosya verildi), whisper eski dökümü önbellekten
+  // okudu ve kurgu 4:34'lük sese 4:49'luk hizayla kuruldu — yavaşlatma listesi harfi harfine
+  // aynı kaldı, yani "düzelttim" denilen şey hiç ölçülmedi. Araç ortama dair varsayım yapıp
+  // sessizce no-op oldu; gate.sh'ın python3 kusuru ve buddy-gate'in rtk kusuruyla AYNI SINIF.
+  // Anahtar artık dosya kimliği (ad + boy + değişim zamanı) taşıyor: ses değişirse döküm yenilenir.
+  const voKimlik = (() => {
+    try {
+      const st = statSync(resolve(voDosya));
+      return `${basename(voDosya).replace(/\.[^.]+$/, '')}-${st.size}-${Math.round(st.mtimeMs)}`;
+    } catch { return basename(voDosya); }
+  })();
+  const trBase = join(PROJE, `${basename(projeArg || 'proje')}—VO-transkript-${voKimlik}`);
   try {
     if (!existsSync(trBase + '.srt')) {
       console.log('   🎙  whisper VO\'yu yazıya döküyor (ilk sefer, birkaç dakika)...');
@@ -297,6 +336,48 @@ if (voDosya && ffprobe && !has('tahmin')) {
         const son = i + 1 < kareler.length ? Math.max(bas + 0.4, baslangic[i + 1].t) : voToplam;
         voSegment.push({ bas, son });
       }
+
+      // ---------- NEFES BOŞLUĞUNDA KESİM ----------
+      // Mami (2026-07-29): "nefes boşluklarını güzel kes, video tırtıklanmış yine, süreleri
+      // yetmiyor diye — elimle düzeltemem."
+      //
+      // Kusur yukarıdaki `son` satırındaydı: yuva SONRAKİ CÜMLENİN BAŞLADIĞI yerde bitiyordu,
+      // yani her klip kendi cümlesinden sonraki nefesin TAMAMINI taşımak zorundaydı. Uzun nefes
+      // = şişmiş yuva = klip yetişemiyor = yavaşlatma ya da donuk kare.
+      //
+      // Oysa malzeme kıt değil: 50 klip toplamı 331s, VO 295s — 36 saniye FAZLA var, yanlış
+      // dağıtılmış. Nefes bir kimsenin malı değil; kesim onun İÇİNDE, iki klibi de doyuran
+      // yere kayabilir. Sınır yalnız nefes penceresinde oynar — konuşmanın üstüne asla binmez.
+      const KB = Math.max(0, parseFloat(flag('kirp-bas', '0.5')) || 0);
+      const konusmaSonu = new Array(kareler.length).fill(null);
+      for (let j = 0; j < whisperSeg.length; j++) {
+        const i = atama[j];
+        if (i >= 0 && (konusmaSonu[i] === null || whisperSeg[j].son > konusmaSonu[i])) konusmaSonu[i] = whisperSeg[j].son;
+      }
+      const kapasiteSn = (i) => {
+        const p = klipByK.get(kareler[i].k);
+        const s = (p && ffprobe) ? (sureOf(p) || 0) : 0;
+        return s > 0 ? Math.max(0.5, s - KB) : Infinity;   // ölçemediysen sınır koyma
+      };
+      let kaydi = 0;
+      for (let i = 0; i < kareler.length - 1; i++) {
+        const nefesBas = konusmaSonu[i];
+        if (nefesBas === null) continue;
+        const sinir = voSegment[i].son;
+        const pencere = sinir - nefesBas;
+        if (pencere <= 0.15) continue;                      // gerçek bir nefes yok
+        const kap = kapasiteSn(i);
+        if (!Number.isFinite(kap)) continue;
+        const gerek = voSegment[i].bas + kap;               // bu klibin doyduğu an
+        if (gerek >= sinir - 0.02) continue;                // zaten yetiyor, dokunma
+        // Konuşmanın hemen ardına 0.12s bırak — kesim hecenin üstüne düşmesin.
+        const yeni = Math.max(nefesBas + 0.12, Math.min(sinir, gerek));
+        if (sinir - yeni < 0.08) continue;                  // kazanç kırıntı, kesimi oynatma
+        voSegment[i].son = yeni;
+        voSegment[i + 1].bas = yeni;
+        kaydi++;
+      }
+      if (kaydi) console.log(`   🫁 nefes boşluğunda kesim: ${kaydi} sınır kaydırıldı — açık kalan klip komşusunun nefesinden besleniyor`);
       if (has('ayrinti')) {
         for (let i = 0; i < kareler.length; i++) {
           const segs = atama.map((a, j) => (a === i ? j : -1)).filter((x) => x >= 0);
@@ -310,13 +391,32 @@ if (voDosya && ffprobe && !has('tahmin')) {
 
 // ---------- 5c. Kesim boyları ----------
 const sn2fr = (s) => Math.max(1, Math.round(s * fps));
+
+// BAŞ KIRPMA — Mami yasası (2026-07-29): "ai videolarının başlarındaki ilk yarım saniye sikten
+// oluyor." i2v motoru start frame'i ilk kare olarak basıyor; hareket henüz başlamadığı için o
+// yarım saniye donuk duruyor. Her klipte kesilir.
+//
+// İKİNCİ KAZANÇ: kırpma geçiş için gereken HANDLE'ı üretir. Dissolve ancak klibin in noktasının
+// ÖNCESİNDE medya kalırsa mümkün; kırpmasız 50 klibin 2'sinde handle vardı, kırpmayla 50'sinde de var.
+const KIRP_BAS = Math.max(0, parseFloat(flag('kirp-bas', '0.5')) || 0);
+const kirpFr = sn2fr(KIRP_BAS) - (KIRP_BAS > 0 ? 0 : 1); // 0 istenirse gerçekten 0
+const GECIS = Math.max(0, parseFloat(flag('gecis', '0')) || 0);
+
 let cursor = 0;
 const items = kareler.map((kr, i) => {
   // Otorite sırası: gerçek VO segmenti > plan tahmini
   const seg = voSegment ? voSegment[i] : null;
   const hedefSn = seg ? (seg.son - seg.bas) : Math.max(kr.klipSn, kr.voSn);
   const durFr = sn2fr(hedefSn);
-  const kaynakFr = sn2fr(kr.klipSn);
+  // Kaynak boyu: ffprobe ile ÖLÇÜLEN gerçek > plandaki beyan. Kırpma matematiği tahminle yapılmaz.
+  const dosyaOn = klipByK.get(kr.k) || null;
+  const olculenSn = (ffprobe && dosyaOn) ? (sureOf(dosyaOn) || 0) : 0;
+  const srcFr = sn2fr(olculenSn || kr.klipSn);
+  // Kırpma ZORUNLU — Mami'nin yasası "her klipte, istisnasız". Yer açığını hız kapatır:
+  // 5s klip 5s yuvada %90 hızla oynar, göz bunu fark etmez; çirkin yarım saniyeyi fark eder.
+  // Tek sınır kaynağın kendisi — geriye en az 1 saniye kalmalı, yoksa kırpma klibi yer.
+  const kirp = Math.max(0, Math.min(kirpFr, srcFr - sn2fr(1)));
+  const kaynakFr = Math.max(1, srcFr - kirp);
   // Klip yere sığmıyorsa YAVAŞLAT. Eskiden `out`u kırpıyordum → Premiere kalan yeri
   // "medya yok" çizgisiyle dolduruyordu ve orada görüntü donuyordu (Mami'nin gördüğü kusur).
   // FCP7'de hız = (kaynak kare / timeline kare) × 100. Taban %35 — altında hareket sürünür.
@@ -330,10 +430,14 @@ const items = kareler.map((kr, i) => {
     ...kr, i,
     start: cursor,
     end: cursor + durFr,
-    inFr: 0,
-    outFr: kullanilanKaynak,
+    inFr: kirp,
+    outFr: kirp + kullanilanKaynak,
+    kirp,                                   // uygulanan baş kırpma (kare)
+    kirpIstendi: kirpFr,                    // istenen — sığmadıysa fark karneye düşer
+    srcFr,                                  // ölçülen kaynak boyu
+    kuyrukHandle: srcFr - (kirp + kullanilanKaynak),  // geçiş için sondaki artık
     hiz,
-    dosya: klipByK.get(kr.k) || null,
+    dosya: dosyaOn,
     gercekSn: hedefSn,
     tasma: hiz <= 35.001 && gerekenHiz < 35, // taban bile yetmedi → gerçek boşluk
     yavas: hiz < 99.5,
@@ -372,31 +476,40 @@ for (const it of items) {
   const secim = yeten.length ? yeten[0] : olculu.slice().sort((a, b) => b.s - a.s)[0];
   if (secim.p !== it.dosya) { it.dosya = secim.p; it.klipSecildi = basename(secim.p); }
 }
+// Ödünç hesabı da KIRPMA SONRASI boya bakar — baş kırpma klibin malzemesini gerçekten azaltır.
+const kullanilabilirSn = (it) => Math.max(0, klipSuresi(it) - it.kirp / fps);
 for (let i = 1; i < items.length; i++) {
   const it = items[i];
-  const kaynakSn = klipSuresi(it);
+  const kaynakSn = kullanilabilirSn(it);
   const slotSn = (it.end - it.start) / fps;
   const acik = slotSn - kaynakSn;
   if (acik <= 0.05) continue;                    // yetiyor
   const onc = items[i - 1];
-  const oncKaynak = klipSuresi(onc);
+  const oncKaynak = kullanilabilirSn(onc);
   const oncSlot = (onc.end - onc.start) / fps;
   const oncArtan = oncKaynak - oncSlot;          // öncekinin kullanılmayan malzemesi
   if (oncArtan <= 0.05) continue;                // öncekinde de yok
   const odunc = Math.min(acik, oncArtan);
   const oduncFr = Math.round(odunc * fps);
   onc.end += oduncFr;                            // önceki daha uzun oynar
-  onc.outFr = Math.min(sn2fr(oncKaynak), onc.outFr + oduncFr);
+  onc.outFr = Math.min(onc.kirp + sn2fr(oncKaynak), onc.outFr + oduncFr);
   it.start += oduncFr;                           // bu klip geç başlar (VO önden girer)
   it.oduncAldi = odunc;
 }
 // ödünç sonrası hızları yeniden hesapla
+//
+// 🔴 KIRPMA BURADA DA SAYILIR. 2026-07-29'da bu döngü kırpmadan habersizdi: `outFr`u kırpmayı
+// EKLEMEDEN yazıyordu, `inFr` ise kirp'ti — yani her klip yuvasının tam olarak kirp kadarını boş
+// bırakıyordu. Mami'nin gördüğü kusur buydu: "video tırtıklanmış yine, süreleri yetmiyor."
+// 50 karenin 50'sinde birden, tam 0.5s. Ölçüm: yuva 6.5s / klip 6.0s, elli kez.
+// Ders: bir klibin KULLANILABİLİR boyu ham kaynak değil, ham kaynak eksi kırpmadır.
 for (const it of items) {
   const slotFr = it.end - it.start;
-  const kaynakFr2 = sn2fr(klipSuresi(it));
-  const gereken = (kaynakFr2 / slotFr) * 100;
+  const kullanilabilir = Math.max(1, sn2fr(klipSuresi(it)) - it.kirp);
+  const gereken = (kullanilabilir / slotFr) * 100;
   it.hiz = gereken >= 99.5 ? 100 : Math.max(45, gereken);
-  it.outFr = Math.min(kaynakFr2, Math.round(slotFr * (it.hiz / 100)));
+  it.outFr = it.kirp + Math.min(kullanilabilir, Math.round(slotFr * (it.hiz / 100)));
+  it.kuyrukHandle = it.srcFr - it.outFr;
   it.yavas = it.hiz < 99.5;
 }
 
@@ -409,12 +522,12 @@ const rate = () => `<rate><timebase>${timebase}</timebase><ntsc>${ntsc ? 'TRUE' 
 const parBlok = '<pixelaspectratio>square</pixelaspectratio>';
 
 const projeAd = basename(PROJE);
-const videoItems = items.map((it, n) => {
+const videoParcalar = items.map((it, n) => {
   if (!it.dosya) return `        <!-- K${String(it.k).padStart(2, '0')} klip YOK (${esc(it.kareDosya)}) — ${(it.end - it.start)} kare boşluk -->`;
   return `        <clipitem id="ci-${n}">
           <name>${esc(basename(it.dosya))}</name>
           <enabled>TRUE</enabled>
-          <duration>${it.outFr}</duration>
+          <duration>${it.srcFr}</duration>
           ${rate()}
           <start>${it.start}</start>
           <end>${it.end}</end>
@@ -424,7 +537,7 @@ const videoItems = items.map((it, n) => {
             <name>${esc(basename(it.dosya))}</name>
             <pathurl>${esc(pathurl(it.dosya))}</pathurl>
             ${rate()}
-            <duration>${it.outFr}</duration>
+            <duration>${it.srcFr}</duration>
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>${it.hiz < 99.5 ? `
@@ -443,13 +556,95 @@ const videoItems = items.map((it, n) => {
           </filter>` : ''}
           <comments><mastercomment1>K${String(it.k).padStart(2, '0')} — ${esc(it.vo.slice(0, 90))}</mastercomment1></comments>
         </clipitem>`;
+});
+
+// ---------- 6b. GEÇİŞLER ----------
+// Mami (2026-07-29): "kaba kurgu değil güzel yap, geçişler falan."
+//
+// Dissolve BEDAVA DEĞİL: FCP7'de L karelik ortalanmış geçiş, giden klipten L/2 kuyruk ve gelen
+// klipten L/2 baş HANDLE ister. Handle yoksa Premiere ya geçişi düşürür ya donmuş kare gösterir.
+// Bu yüzden geçiş körlemesine serpilmez — iki tarafta da ÖLÇÜLMÜŞ handle varsa konur, yoksa
+// sert kesim kalır. Sert kesim bir kusur değil; yanlış yere konmuş dissolve kusurdur.
+//
+// Baş handle'ı KIRP_BAS üretiyor (Mami'nin ilk-yarım-saniye yasası). Yani iki yasa aynı yere
+// bakıyor: çirkin başlangıcı kesen kırpma, geçişin malzemesini de doğuruyor.
+const gecisFr = GECIS > 0 ? sn2fr(GECIS) : 0;
+const gecisler = [];
+if (gecisFr > 0) {
+  for (let n = 0; n < items.length - 1; n++) {
+    const a = items[n], b = items[n + 1];
+    if (!a.dosya || !b.dosya) continue;
+    const yari = Math.floor(gecisFr / 2);
+    // Ölçülmüş handle — tahmin değil.
+    const yer = Math.min(a.kuyrukHandle, b.kirp);
+    if (yer < yari || yari < 1) continue;
+    const cut = a.end;
+    gecisler.push({ n, cut, L: yari * 2, kA: a.k, kB: b.k });
+  }
+}
+const gecisXml = (g) => `        <transitionitem>
+          <start>${g.cut - g.L / 2}</start>
+          <end>${g.cut + g.L / 2}</end>
+          <alignment>center</alignment>
+          ${rate()}
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>`;
+const gecisByIdx = new Map(gecisler.map((g) => [g.n, g]));
+const videoItems = videoParcalar.map((s, n) => {
+  const g = gecisByIdx.get(n);
+  return g ? `${s}\n${gecisXml(g)}` : s;
 }).join('\n');
 
 // Ses rayı. Kaynak videodan KISAYSA döngülenir (Suno parçası ~85s, video ~180s → 3 kopya).
-const sesTrack = (dosya, id, label, kaynakSure) => {
+//
+// ⚠ DÖNGÜ HER PARÇAYA UYGUN DEĞİL. Suno parçaları sessizliğe inen NET bir sonla bitiyor
+// (2026-07-29 ölçümü: ses1 ve ses2'nin ikisi de "clear ending, not a seamless loop"). Böyle bir
+// parçayı 3× döngülemek üç kez sessizliğe inip üç kez yeniden başlamak demektir — duyulur hata.
+// Bu yüzden `--muzik "<dosya>@<başlangıç sn>"` biçimi var: parça ölçülen yerine BİR KEZ konur.
+// Birden fazla `--muzik` verilebilir; her biri kendi rayına düşer, döngü yapılmaz.
+const sesTrack = (dosya, id, label, kaynakSure, basSn = null) => {
   if (!dosya || !existsSync(resolve(dosya))) return '';
   const abs = resolve(dosya);
   const kaynakFr = kaynakSure ? sn2fr(kaynakSure) : toplamFr;
+  // Yerleşim verildiyse: TEK kopya, verilen yerde. Döngü yok.
+  if (basSn !== null) {
+    const bas = sn2fr(basSn) - (basSn > 0 ? 0 : 1);
+    const b0 = Math.max(0, basSn > 0 ? sn2fr(basSn) : 0);
+    const bit = Math.min(b0 + kaynakFr, toplamFr);
+    if (b0 >= toplamFr || bit - b0 < fps * 0.5) return '';
+    return `      <track>
+        <clipitem id="${id}-0">
+          <name>${esc(basename(abs))}</name>
+          <enabled>TRUE</enabled>
+          <duration>${kaynakFr}</duration>
+          ${rate()}
+          <start>${b0}</start>
+          <end>${bit}</end>
+          <in>0</in>
+          <out>${bit - b0}</out>
+          <file id="file-${id}">
+            <name>${esc(basename(abs))}</name>
+            <pathurl>${esc(pathurl(abs))}</pathurl>
+            ${rate()}
+            <duration>${kaynakFr}</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>${esc(label)} — ${(b0 / fps).toFixed(1)}s'de tek kez (döngü YOK)</mastercomment1></comments>
+        </clipitem>
+      </track>`;
+  }
   const kopya = Math.max(1, Math.ceil(toplamFr / kaynakFr));
   const parcalar = [];
   for (let n = 0; n < kopya; n++) {
@@ -499,7 +694,9 @@ ${videoItems}
       </video>
       <audio>
 ${sesTrack(voDosya, 'vo1', 'VO — ElevenLabs', voToplam)}
-${sesTrack(muzikDosya, 'mzk1', 'Müzik — Suno (VO altında ~-18 dB)', muzikSure)}
+${muzikYerlesim.length
+  ? muzikYerlesim.map((m, i) => sesTrack(m.dosya, `mzk${i + 1}`, `Müzik ${i + 1}/${muzikYerlesim.length} — Suno (VO altında ~-18 dB)`, m.sure, m.bas)).filter(Boolean).join('\n')
+  : sesTrack(muzikDosya, 'mzk1', 'Müzik — Suno (VO altında ~-18 dB)', muzikSure)}
       </audio>
     </media>
   </sequence>
@@ -522,7 +719,15 @@ console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir}
 console.log(`   fps      : ${fps} — ${fpsKaynak}`);
 console.log(`   sequence : ${EN}x${BOY}${klipEn ? ` · klipler ${klipEn}x${klipBoy} (boyut BEYAN EDİLMEDİ — Premiere medyadan okur)` : ''}`);
 if (voDosya) console.log(`   VO       : ${basename(voDosya)} → ${voToplam ? mmss(voToplam) : '?'}`);
-if (muzikDosya) console.log(`   müzik    : ${basename(muzikDosya)} → ${muzikSure ? mmss(muzikSure) : '?'}${muzikSure && voToplam && muzikSure < voToplam ? ` (${Math.ceil(toplamFr / sn2fr(muzikSure))}× döngülendi)` : ''}`);
+if (muzikYerlesim.length) {
+  for (const m of muzikYerlesim) {
+    const son = m.bas + (m.sure || 0);
+    console.log(`   müzik    : ${basename(m.dosya)} → ${mmss(m.bas)}–${mmss(son)} (${mmss(m.sure || 0)}, tek kez, döngü YOK)`);
+  }
+  const kapali = muzikYerlesim.reduce((n, m) => n + (m.sure || 0), 0);
+  const toplamSn = toplamFr / fps;
+  console.log(`      müziksiz nefes: ${mmss(Math.max(0, toplamSn - kapali))} — sessizlik kusur değil, kurgu kararı`);
+} else if (muzikDosya) console.log(`   müzik    : ${basename(muzikDosya)} → ${muzikSure ? mmss(muzikSure) : '?'}${muzikSure && voToplam && muzikSure < voToplam ? ` (${Math.ceil(toplamFr / sn2fr(muzikSure))}× döngülendi)` : ''}`);
 if (voSegment) {
   console.log(`   ✂ HİZALAMA: ${voHizaKaynak} → klip boyları gerçek VO cümlelerinden kesildi`);
   console.log(`      plan tahmini ${mmss(planToplam)} → gerçek ${mmss(toplamFr / fps)} · ${(planToplam - toplamFr / fps).toFixed(1)}s fazla tahmin düzeltildi`);
@@ -553,5 +758,16 @@ if (oduncler.length) console.log(`   🤝 komşudan ödünç (yavaşlatma yerine
 const yavaslar = items.filter((it) => it.yavas && !it.tasma);
 if (yavaslar.length) console.log(`   ⏱ yavaşlatıldı (VO'ya sığsın diye): ${yavaslar.map((e) => `K${String(e.k).padStart(2,'0')}%${Math.round(e.hiz)}`).join(' ')}`);
 if (tasan.length) console.log(`   🔴 %35'te bile sığmadı: ${tasan.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} — burada boşluk kalır`);
+// BAŞ KIRPMA + GEÇİŞ karnesi — sessiz kısıntı yasak, ne düştüyse söylenir.
+if (kirpFr > 0) {
+  const tam = items.filter((it) => it.dosya && it.kirp >= it.kirpIstendi).length;
+  const eksik = items.filter((it) => it.dosya && it.kirp < it.kirpIstendi);
+  console.log(`   ✂ baş kırpma ${KIRP_BAS}s (i2v ilk-kare yasası): ${tam}/${items.filter((it) => it.dosya).length} klip tam kırpıldı`);
+  if (eksik.length) console.log(`      ⚠ kaynağı yetmeyen: ${eksik.map((e) => `K${String(e.k).padStart(2,'0')}(${(e.kirp / fps).toFixed(2)}s)`).join(' ')}`);
+}
+if (gecisFr > 0) {
+  const olasi = items.length - 1;
+  console.log(`   🎞 geçiş ${GECIS}s dissolve: ${gecisler.length}/${olasi} kesime kondu — kalanı SERT kesim (iki tarafta handle yok)`);
+}
 console.log(`\n✅ ${ciktiYol}`);
 console.log(`   Premiere: File → Import → bu .xml. Timeline kurulu gelir; kesim hükmü senin.\n`);

@@ -5,13 +5,14 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 321f2fb4-68f0-4606-89df-a9cd34c99f22
-  modified: 2026-07-26T10:09:47.612Z
+  modified: 2026-07-29T09:07:33.535Z
 ---
 
 Mami DEHB'yi 2026'da yeni öğreniyor ve tekrar duymak onu boğar. Anlatılan her kavram buraya
-tek satırla işlenir: **tarih · kavram · hangi bağlamda anlatıldı**. Müfredat
-`~/.claude/skills/mamilas-buddy/references/dehb-mufredat.md` içinde; teslim kuralları
-[[mamilas-buddy-persona]].
+tek satırla işlenir: **tarih · kavram · hangi bağlamda anlatıldı**. ⚠️ Bir müfredat dosyası
+YOK (2026-07-29'da ölçüldü — `mamilas-buddy` skill'inde `references/` klasörü hiç açılmamış);
+bu log **tek kaynaktır**. Teslim kuralları [[mamilas-buddy-persona]]. Bozuk atıf bir kez
+Mami'de kaygı üretti — olmayan dosyaya işaret etme.
 
 ## Anlatılanlar
 

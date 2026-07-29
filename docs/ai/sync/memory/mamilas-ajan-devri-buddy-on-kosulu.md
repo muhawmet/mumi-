@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 97e409ef-fb0e-4fa2-82d7-310ae053a13f
-  modified: 2026-07-27T19:13:10.534Z
+  modified: 2026-07-29T09:08:13.898Z
 ---
 
 Mami (2026-07-27): *"ultracode'u rutin haline getir, 6 ajana kadar kullanabilirsin gerektikçe —
@@ -22,4 +22,4 @@ birimi kare değil **sekans**. ⚠️ Buradaki "ultracode" **workflow/ajan orkes
 `effortLevel` ayarı DEĞİL — bir kez ayara yazıldı, Mami hemen reddetti, geri alındı.
 
 Yazıldığı duvarlar: `CLAUDE.md` (AJAN KULLANIMI RUTİNDİR) + `mamilas-buddy` skill'i §0.
-İlgili: [[mamilas-context-economy]] · [[mamilas-tasima-yasasi]]
+İlgili: [[mamilas-buddy-destek-yoksa]] · [[mamilas-tasima-yasasi]]
