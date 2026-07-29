@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "project": {
+    "id": "6. Sınıf - Bizi Bir Arada Tutan Değerler",
+    "path": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
+    "closedAt": "2026-07-29T15:03:34.848Z",
+    "reclosedAt": "2026-07-29T15:04:13.806Z"
+  },
+  "status": "interview-partial",
+  "subjectiveVerdict": {
+    "overall": "iyi bir örnek olmadı video bir sürü yönlendirme yapmak zorunda kaldım sana / bu arada beğenmedim bunları üretelim videoyu da endgame bu değil haberin olsun",
+    "layerVerdicts": {
+      "startFrame": "Bak kötü olanlara hepsi plastik bozuk oyun hamuru gibi olmuş güzel dediklerime bak sanki biri eliyle özenle çizmiş gibi",
+      "motion": "videolarda morphing var",
+      "genel": "iyi bir örnek olmadı video bir sürü yönlendirme yapmak zorunda kaldım sana / bu arada beğenmedim bunları üretelim videoyu da endgame bu değil haberin olsun"
+    },
+    "recordedAt": "2026-07-29T15:03:51.313Z"
+  },
+  "objectiveMetrics": {
+    "measuredAt": "2026-07-29T15:04:13.806Z",
+    "parserVersion": "kapanis-hasadi@3",
+    "status": "OK",
+    "register": "EDU",
+    "registerSource": "override",
+    "world": null,
+    "lint": {
+      "total": 34,
+      "clean": 34,
+      "badCount": 0,
+      "counts": {
+        "lens": "033/33",
+        "handle": "016/33",
+        "ten": "026/26",
+        "canli": "033/33",
+        "derinlik": "033/33",
+        "temas": "033/33",
+        "style": "033/33",
+        "text": "033/33",
+        "text-hece": "010/10",
+        "neg": "033/33"
+      }
+    },
+    "frames": {
+      "total": 34,
+      "source": "prompt-parts"
+    },
+    "revize": {
+      "blocks": 26,
+      "uniqueFrames": 25,
+      "ratio": 0.7352941176470589,
+      "rounds": 1,
+      "carryOverRate": null
+    },
+    "kit": {
+      "missing": [
+        null
+      ],
+      "nameDrift": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "errors": [
+      "COMMAND_MISSING: Command JSON yok — hangi dünyanın sınandığı bilinmiyor"
+    ]
+  },
+  "lessonCandidates": [
+    {
+      "id": 1,
+      "text": "@tag çağıran her kare, kadrajın neyi DIŞARIDA bıraktığını yazar (nothing below the chest is visible gibi) — referans sayfası tam boy figürin taşıyor, kilit cümlesi yoksa o figürin kareye gelir",
+      "evidenceStrength": {
+        "framesCovered": 13,
+        "repeatCount": 7,
+        "beforeAfter": true
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 2,
+      "text": "Temas gölgesi örneği ASLA ayakkabıya yazılmaz; kepçeye kirkite kâseye kaleme yazılır — ayakkabı-zemin teması yazmak tam boy figürü mecbur eder",
+      "evidenceStrength": {
+        "framesCovered": 13,
+        "repeatCount": 5,
+        "beforeAfter": true
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 3,
+      "text": "El kavradığını klipte BIRAKMAZ: devir, tokalaşma, omuza el koyma, parmak kilitleme KAREDE bitmiş başlar, motion yalnız yerleşmeyi taşır — kavrama devri emredilen 7 klibin 7'sinde el/uzuv füzyona girdi, kavrayışı sabit 6 klipte 0",
+      "evidenceStrength": {
+        "framesCovered": 13,
+        "repeatCount": 7,
+        "beforeAfter": true
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 4,
+      "text": "İnsanlı kadrajda kamera EKSENDE ve BOOM olur: lateral track, geri çekilme ve ön-plan wipe yalnız insansız kadrajda kullanılır — yana kayan/geri çekilen 5 klibin 5'inde arka planda figür doğdu ya da kimlik değişti, eksende kalanlarda 1/8",
+      "evidenceStrength": {
+        "framesCovered": 13,
+        "repeatCount": 5,
+        "beforeAfter": true
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 5,
+      "text": "Kamera büyüklüğü SÖZLE tutulmuyor: dolly-in yazılan 6 klibin 5'i emredilen ölçüyü aştı (birkaç santim denildi yakın plana gitti), boom yazılan 2/2 ölçüsünde kaldı — push gerekiyorsa dolly in değil boom yazılır",
+      "evidenceStrength": {
+        "framesCovered": 13,
+        "repeatCount": 5,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 6,
+      "text": "Enzim bir tavsiye değil KAPI olmalı: current-work baslat bir ENZIM-KILITLERI.json üretmeden ilerle yazmayı reddetsin — Mami'nin en çok tekrarladığı üç şeyin üçü de enzim KİLİT 1-3'te zaten yazılıydı, skill oturumda hiç yüklenmedi",
+      "evidenceStrength": {
+        "framesCovered": null,
+        "repeatCount": 15,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 7,
+      "text": "VO nefes politikası: cümle İÇİ nefes korunur, yalnız cümle ARASI kırpılır, baş ve son sessizliğe dokunulmaz — toptan silme kadını durmadan konuşturuyor",
+      "evidenceStrength": {
+        "framesCovered": null,
+        "repeatCount": 1,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 8,
+      "text": "Denetim kıstaslarına 8. madde: figür ya da nesne geometrisi ahşaba zemine duvara kaynaşmış mı — 6 denetim ajanının 6'sı kaçırdı çünkü listede yoktu, kusur listede değil ajanda",
+      "evidenceStrength": {
+        "framesCovered": 34,
+        "repeatCount": 2,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 9,
+      "text": "Havada duran nesne referans-edit ile düzelmez: altındaki her yüzey kompozisyondan kaldırılır — K12'de iki referans-edit denemesi başarısız oldu, kompozisyon çözdü",
+      "evidenceStrength": {
+        "framesCovered": 1,
+        "repeatCount": 2,
+        "beforeAfter": true
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 10,
+      "text": "Reverse edilecek klip simetrik fizikle yazılır: buhar duman düşen yaprak nefes oturan toz YASAK; kamera hareketi reverse olur",
+      "evidenceStrength": {
+        "framesCovered": null,
+        "repeatCount": 2,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    }
+  ],
+  "interview": {
+    "answered": [
+      "startFrame",
+      "motion",
+      "genel"
+    ],
+    "skippedAt": null
+  }
+}

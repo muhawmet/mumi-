@@ -1,63 +1,74 @@
-# DERS ADAYI — PLASTİK BİR SHADER KUSURU DEĞİL, BİR MESAFE KUSURU
+# DERS ADAYI — PLASTİK, REFERANS SAYFASININ KADRAJINDAN SIZIYOR
 
 **Kaynak:** 6. Sınıf — Bizi Bir Arada Tutan Değerler (6.1.2), 2026-07-29.
-Mami 15 kareyi elle ayırdı: `İyi örnekler/` 6 kare · `Kötü örnekler/` 9 kare.
-Bu dosya o ayrımın ölçümüdür. **APPROVED'a yalnız Mami taşır.**
+Mami 15 dosyayı elle ayırdı. Hükmü aynen: kötüler **"hepsi plastik, bozuk oyun hamuru gibi"**,
+iyiler **"sanki biri eliyle özenle çizmiş gibi"**. **APPROVED'a yalnız Mami taşır.**
+
+**Eşleme kanıtı:** her PNG `Resimler/*.png` ile **md5 eşitliğiyle** kare numarasına bağlandı
+(dosya adına değil), 13 tekil görselin hepsi gözle açıldı.
 
 ---
 
 ## Bulgu — tek cümle
 
-Kötü karelerde shader, dünya kilidi, palet ve negatif listesi **iyi karelerle birebir aynıydı.**
-Değişen tek şey **kamera cümlesiydi.** Yani "plastik görünüyor" bir render sorunu değil, yazdığım
-**kadraj kararının** sonucudur — ve prompt'un tek satırında düzeltilir.
+Plastikliği shader üretmiyor: **STYLE ve LIGHT satırları 34 karede kelime kelime aynı.**
+Üreten şey **figürün kadrajdaki bütünlüğü** — ayak kadraja giren tam boy gövde motoru duran bir
+figürine çeviriyor. Ve bunu prompt'ta tetikleyen şey lens değil, **referans sayfasının kendi
+kadrajı**.
 
-## Ölçüm — 15/15 ayrım, istisnasız
+## Ölçüm — ne AYIRIYOR, ne AYIRMIYOR
 
-| | İyi (6) | Kötü (9) |
-|---|---|---|
-| Lens | 50mm f/2 · 65mm f/2 · 85mm f/2 | **35mm f/4** ×3 + türevleri |
-| Tam boy figür (ayak kadrajda) | **0/6** | **9/9** |
-| Beyaz spor ayakkabı görünür | **0/6** | **6/9** |
-| Kadrajdaki kişi ELİYLE iş yapıyor | 6/6 (kepçe, kirkit, kalem, haritaya eğilme) | 2/9 |
-| Arka plan odak dışı | 6/6 | 0/9 |
+| değişken | iyi | kötü | ayırıyor mu |
+|---|---|---|---|
+| **Ayak/ayakkabı teslim edilen karede görünür** | **0/4** | **7/7** | ✅ istisnasız |
+| **Kadraj kilidi cümlesi** (neyin DIŞARIDA kaldığı yazılı) | 3/4 | **0/7** | ✅ |
+| **Temas gölgesi örneği AYAKKABIYA yazılmış** | 0/4 | 5/7 | ✅ |
+| @efe1/@mira1 kadrajda | 1/4 | 6/7 | ✅ (kilitle birlikte) |
+| Lens (mm) | 50–85 | **50, 75, 85** ve 3× 35 | ❌ **ÇÜRÜTÜLDÜ** |
+| Diyafram | 4/4 f/2.8 | 4/7 f/2.8 | ❌ **ÇÜRÜTÜLDÜ** |
+| "Eli işte" | 4/6 | 2/7 | ❌ eğilim, desen değil |
+| Kişi sayısı · kelime sayısı | — | — | ❌ sinyal yok |
 
-Üç kötü kare (KOTU-2, KOTU-3, KOTU-8) **cepheden dizilmiş sıra** — "sınıf fotoğrafı" kompozisyonu.
-İkisinde (KOTU-6, KOTU-8) Efe+Mira sahnede hiçbir şey yapmıyor, sadece **seyirci** olarak duruyor.
+**İlk hipotezim yanlıştı.** "İyi = uzun lens + f/2" demiştim; ölçüm çürüttü: kötü setin
+**K17'si 85mm, K16'sı 75mm** — iyi setin tam aynı lensleri. `f/2` 34 promptun yalnız 1'inde var.
+Dosya adlarındaki lens korelasyonu gerçek değil, tesadüftü.
 
-## Mekanizma
+## Mekanizma — asıl bulgu
 
-1. **Tam boy + ayak = oyuncak.** Bir CG gövdeyi tepeden tırnağa gösterdiğin anda beyin onu
-   *vinil figür* olarak okur. Aynı asset beline kadar kadrajlandığında **karakter** olarak okunur.
-   İyi karelerde tek bir tam boy figür yok; kötü karelerin dokuzunda var.
-2. **Derin odak = diorama.** f/4-f/8'de tezgâh, kalabalık, fener ve yüz eşit keskinlikte gelir;
-   göz "maket masası" der. f/2'de arka plan düşer, sahne **çekilmiş** görünür.
-3. **Boşta duran gövde = manken.** Plastiklik yalnız yüzey değil **davranış** özelliğidir:
-   eli işte olmayan figürün fizik yükü yoktur, motor onu poz vermiş oyuncak gibi shade eder.
+**REF-1 ve REF-2'nin metni şu:** *"85mm lens at f/4.0 … **full figure centred and standing at
+rest**, soft studio-style … seamless gradient backdrop"*. Bu bir **karakter sayfası** kadrajıdır.
 
-## Kök neden — sistem nerede kopuyor
+Yani `@efe1` çağırdığın her karede motora **stüdyo ışığında ayakta duran tam boy bir figürin**
+yüklüyorsun. Sahnenin lensi ne olursa olsun bu ithalat geliyor.
 
-`agents/PROMPT-YASASI.md` start-frame template'i eski NB2 gramerini taşıyor:
-*"Locked 40mm camera at seated eye level, f/8 deep focus"* — bu gramer **foto-gerçek** bir dünyadan
-madenlendi ([[mamilas-brain-intelligence-mined]] IMAGE AUTHOR §1) ve `pixar_3d_edu` için tam olarak
-plastik üretecidir. Yasa "her prompt'ta sayısal lens+f-stop olsun" diyor — **doğru**; ama sayının
-**hangi aralıkta** olacağını hiçbir yerde sınırlamıyor.
+**Ölçülmüş kural: @tag var + kadraj kilidi cümlesi yok → 6/6 KÖTÜ.**
+Tek istisna K34: @tag'li ama İYİ — çünkü *"framed from mid-chest up … and nothing below the chest
+is visible"* cümlesi ithalatı **eziyor**.
 
-`scripts/prompt-lint.mjs:71` bu yüzden yalnız `\b\d{2,3}\s*mm\b` arıyor: **bir sayı var mı.**
-Uygun mu diye sormuyor. Sonuç: 34/34 kare KIRMIZI'sız geçti, dokuzu oyuncak çıktı.
-Bu, "yeşil ≠ temiz" satırının kanıtlı örneğidir.
+İkinci tetik: dünyanın *"her nesne yüzeyine değer"* temas gölgesi yasası. İyi karelerde bu kepçeye,
+kirkite, kaleme örneklenmiş; kötü karelerde **ayakkabıya**: *"both children's shoes press flat on
+the paving stone"* (5/7). O cümleyi yazmak ayağı kadraja **mecbur** eder.
 
-## Yasa teklifi — üç satır, ezberlenebilir
+## Yasa teklifi — iki satır, ezberlenebilir
 
-1. **Hero karakter kadrajdaysa lens ≥ 50mm ve diyafram f/1.4–f/2.8.**
-   35mm ve f/4+ **yalnız insansız dünya karesinde** kullanılır.
-2. **Hero karakterin ayağı kadraja girmez.** Kadraj beli, göğsü ya da omzu keser; tam boy figür
-   yasak. Tam boy gerekiyorsa o kare hero'suz çekilir.
-3. **Kadrajdaki karakterin eli işte olur.** Seyirci/boşta duran gövde yazılmaz — ya bir şey
-   yapıyor ya kadrajda değil.
+1. **`@tag` çağıran her kare, kadrajın neyi DIŞARIDA bıraktığını yazar.**
+   *"nothing below the chest is visible"* · *"no floor and no street visible"* gibi. Referans
+   sayfası tam boy figürin taşıyor; kilit cümlesi yoksa o figürin kareye gelir.
+2. **Temas gölgesi örneği ASLA ayakkabıya yazılmaz.** Kepçeye, kirkite, kâseye, kaleme yazılır —
+   ayağa değil. Ayakkabı-zemin teması yazmak tam boyu mecbur eder.
 
 ## Uygulanabilir kapı (Mami seçerse)
 
-`prompt-lint.mjs`'e tek kural: prompt `@efe1|@mira1` içeriyorsa → lens < 50mm **KIRMIZI**,
-`f/([3-9]|1[0-9])` **KIRMIZI**, `full body|head to toe|standing on|shoes visible` **KIRMIZI**.
-Bu üç desen bu projedeki 9 kötü karenin **9'unu** üretimden önce yakalardı.
+`prompt-lint.mjs`'e tek KIRMIZI: prompt `@efe1|@mira1` içeriyor **ve** kadrajın dışarıda
+bıraktığını söyleyen cümle (`nothing below|not visible|no floor|out of frame|fills the frame`)
+**yok** → KIRMIZI. Ayrıca `shoes?.{0,40}(press|rest|flat|on the (paving|ground|stone))` → KIRMIZI.
+Bu iki desen bu videodaki 7 kötü karenin **6'sını** kredi yakmadan yakalıyordu.
+
+## Dürüstlük kaydı
+
+İyi setin 3/4'ü (K12, K21, K34) **ikinci taslaktır** — kötü setin 0/7'si. Kadraj kilidi cümleleri
+tam o yeniden yazımda doğdu. Yani "iyi" kısmen "yeniden yazılmış" demek: asıl ders, **ilk taslakta
+kadraj kilidi yazılmıyor** olmasıdır.
+
+İki dosya (`_5x5A3bvKxe`=K04, `_ubu69joQLD`=K05) **iki klasörde de** duruyor — Mami'nin ayrımında
+sınır kare. Atama yapılmadı; K04 kurala uyar, K05 uymaz.

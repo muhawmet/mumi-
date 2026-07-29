@@ -284,6 +284,27 @@ function findWorld(dir, cmd) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// PROJECT LOOT — Faz 9. `PROJECT-LOOT.json` TEK KANONİK KAYNAKTIR; HASAT ondan
+// üretilen **deterministik görünümdür**. Bu yüzden burada loot YAZILMAZ, yalnız
+// OKUNUR (yazıcı: `scripts/project-loot.mjs`). İkinci gerçeklik kurmak bu repoda
+// ölçülmüş bir hastalık: `Kuvvet ve Kuvvetin Ölçülmesi` klasöründe iki rakip teslim
+// doğdu ve ancak `HASAT.json` beyanıyla çözüldü.
+// ---------------------------------------------------------------------------
+const LOOT_FILE = 'PROJECT-LOOT.json';
+
+/** Loot yok = eski proje; KIRILMAZ, `null` döner. Bozuk JSON = AÇIK hata, sessiz yutulmaz. */
+function readLoot(dir) {
+  const p = join(dir, LOOT_FILE);
+  if (!existsSync(p)) return null;
+  try {
+    const j = JSON.parse(readFileSync(p, 'utf8'));
+    return { ...j, _file: LOOT_FILE };
+  } catch (e) {
+    return { _file: LOOT_FILE, parseError: String(e.message ?? e) };
+  }
+}
+
 /**
  * Kare evreni invariantı. **%100'ü geçen bir yüzde ASLA yazılmaz.**
  * Ölçüldü (2026-07-28): revised=31 (MOTION dosyasından), total=8 (bölünmüş promptun 1. parçası)
@@ -306,7 +327,15 @@ function computeRatio({ frameTotal, frameTotalSource, revisedUnique }) {
   return { ratio: revisedUnique / frameTotal, errors: [], fatal: false };
 }
 
-function harvest(dir) {
+/**
+ * @param {string} dir
+ * @param {{registerOverride?: 'REAL'|'EDU'|'STY'|null}} [opts]
+ *   `registerOverride` — command JSON'u OLMAYAN projeler için. Ölçüldü (6.1.2, 2026-07-29):
+ *   promptlar `.docx` konusundan yazıldı, command JSON hiç doğmadı → `findWorld` null döndü →
+ *   register `STY`'ye düştü ve 34 EDU karesi YANLIŞ register'da lintlendi. Register yanlışsa
+ *   karne yanlış kusuru raporlar; yanlış hasat bankayı zehirler.
+ */
+function harvest(dir, opts = {}) {
   const name = basename(dir).normalize('NFC');
   const files = projectFiles(dir);
   const errors = [];
@@ -334,7 +363,18 @@ function harvest(dir) {
 
   // 1 — yapısal karne. Register bayrakla sorulmaz, command JSON'dan okunur: yasa §0.5'te
   // register'a bağlı, karneyi yanlış register'da okumak yanlış kusur raporlar.
-  const register = registerOf(world?.productionPath ?? world?.projectClass);
+  // Override yalnız GEÇERLİ bir register olabilir; çöp değer sessizce `STY`'ye düşmez.
+  const REGISTERS = new Set(['REAL', 'EDU', 'STY']);
+  const ovr = opts.registerOverride ? String(opts.registerOverride).toUpperCase() : null;
+  if (ovr && !REGISTERS.has(ovr)) errors.push(`REGISTER_OVERRIDE_INVALID: "${opts.registerOverride}" — REAL|EDU|STY bekleniyor`);
+  const registerFromWorld = world?.productionPath ?? world?.projectClass;
+  if (ovr && REGISTERS.has(ovr) && registerFromWorld) {
+    errors.push(`REGISTER_OVERRIDE_IGNORED: command JSON register taşıyor (${registerOf(registerFromWorld)}) — override "${ovr}" YOK sayıldı`);
+  }
+  const register = registerFromWorld
+    ? registerOf(registerFromWorld)
+    : (ovr && REGISTERS.has(ovr) ? ovr : registerOf(null));
+  const registerSource = registerFromWorld ? 'command JSON' : (ovr && REGISTERS.has(ovr) ? 'override' : 'varsayılan (STY)');
   // Bölünmüş teslim: her parça AYRI lintlenir, sonuçlar birleşir. Tek parçaya bakıp
   // "eksik yok" demek 35 karelik videonun 8'ine bakmaktı (ölçüldü).
   const lintParts = promptSel.parts.map((f) => ({ file: f, r: lintFile(join(dir, f), register) }));
@@ -444,12 +484,81 @@ function harvest(dir) {
   meta.status = errors.some((e) => FATAL.test(e)) ? 'ERROR' : 'OK';
 
   return {
-    dir, name, files, world, register,
+    dir, name, files, world, register, registerSource, loot: readLoot(dir),
     promptSel, revizeSel, cmdSel, manifest, manifestFile: mf.file,
     lint, lintParts, rounds, revs, uniqueFrames, temiz, multiRound,
     frameTotal, frameTotalSource, ratio: ratioCalc.ratio,
     byClass, unclassified, kit, meta, errors,
   };
+}
+
+/**
+ * PROJECT LOOT görünümü — **deterministik.** Buradaki hiçbir satır yorum üretmez:
+ * Mami'nin hükmü olduğu gibi basılır (yasa: metnini sessizce yeniden yazma), ders adayları
+ * loot'taki sırayla listelenir, `evidenceStrength` yoksa `—` yazılır. Loot yoksa bölüm
+ * hiç açılmaz — eski projeler kırılmaz.
+ */
+function renderLoot(h) {
+  const lo = h.loot;
+  if (!lo) return [];
+  const L = ['## L · PROJECT LOOT (kanonik kaynak)', ''];
+  if (lo.parseError) {
+    L.push(`🔴 **\`${lo._file}\` OKUNAMADI** — bozuk JSON sessizce yutulmadı: ${lo.parseError}`);
+    L.push('');
+    L.push('Bu bölüm boş DEĞİL, **ölçülemedi**. `node scripts/project-loot.mjs gor "<proje>"` ile doğrula.');
+    L.push('');
+    return L;
+  }
+  L.push(`Otorite \`${lo._file}\`. **Aşağıdakiler o dosyadan üretildi; bu dosya düzenlenirse kaybolur.**`);
+  L.push('');
+  L.push(`- statü: \`${lo.status ?? '—'}\``);
+  L.push(`- kapanış: ${lo.project?.closedAt ?? '—'}`);
+  L.push('');
+
+  const sv = lo.subjectiveVerdict ?? null;
+  L.push('### L.1 · Mami\'nin hükmü — DEĞİŞTİRİLMEDİ');
+  L.push('');
+  if (!sv || (sv.overall == null && sv.layerVerdicts == null)) {
+    L.push(lo.status === 'interview-skipped'
+      ? '_Röportaj atlandı (`layerVerdicts: null`). Teknik loot yine yazıldı — zorunlu röportaj angaryaya döner._'
+      : '_Hüküm henüz alınmadı. Sistem Mami adına hüküm TAHMİN ETMEZ._');
+    L.push('');
+  } else {
+    if (sv.overall) { L.push(`> ${String(sv.overall).split('\n').join('\n> ')}`); L.push(''); }
+    const lv = sv.layerVerdicts;
+    if (lv && Object.keys(lv).length) {
+      L.push('| katman | Mami\'nin cümlesi |');
+      L.push('|---|---|');
+      for (const [k, v] of Object.entries(lv)) {
+        if (v == null) continue;
+        L.push(`| ${k} | ${String(v).replace(/\|/g, '\\|').replace(/\n+/g, ' ')} |`);
+      }
+      L.push('');
+    }
+  }
+
+  L.push('### L.2 · Ders adayları — carry-forward ayrımı');
+  L.push('');
+  const cands = Array.isArray(lo.lessonCandidates) ? lo.lessonCandidates : [];
+  if (!cands.length) {
+    L.push('_Aday yok._');
+    L.push('');
+    return L;
+  }
+  L.push('| # | ders | kanıt gücü | carry-forward | APPROVED |');
+  L.push('|---|---|---|---|---|');
+  for (const c of cands) {
+    const es = c.evidenceStrength;
+    const esText = es == null ? '—'
+      : `kare ${es.framesCovered ?? '—'} · before/after ${es.beforeAfter ? '✓' : '✗'} · tekrar ${es.repeatCount ?? '—'}`;
+    L.push(`| ${c.id} | ${String(c.text ?? '').replace(/\|/g, '\\|').replace(/\n+/g, ' ')} | ${esText} | ` +
+      `${c.carryForward ? '**EVET** (Mami dedi)' : 'hayır — yalnız aday'} | ${c.approvedAt ?? '—'} |`);
+  }
+  L.push('');
+  L.push('`carry-forward: hayır` olan satır **global derse dönüşmez** — Mami açıkça "sonraki projelere taşı"');
+  L.push('demediyse aday olarak kalır (Faz 9 kararı, iki otorite seviyesi).');
+  L.push('');
+  return L;
 }
 
 function render(h) {
@@ -464,6 +573,7 @@ function render(h) {
   L.push('(M7 yasası: otomatik promote yok — çöp ders sistemi zehirler). Kabul ettiğin ders satırını');
   L.push('olduğu gibi taşı, istemediğini burada bırak.');
   L.push('');
+  L.push(...renderLoot(h));
 
   // 0 — ölçüm durumu. Önce bu: hatalı ölçümün altına ders dizmek 388%'lik raporu doğurdu.
   L.push(`## 0 · Ölçüm durumu — **${h.meta.status}**`);
@@ -805,10 +915,17 @@ if (isMain) {
     process.exit(2);
   }
 
+  // Register override bayrağı ELDE değil LOOT'ta yaşar: HASAT loot'un görünümüdür, ondan
+  // farklı bir register'da ölçerse İKİNCİ GERÇEKLİK doğar (Faz 9 düzeltme 3'ün yasakladığı şey).
+  const REG_FLAG = ARGS.find((a) => a.startsWith('--register='))?.split('=')[1] ?? null;
+
   let errored = 0;
   for (const d of targets) {
     if (!existsSync(d)) { console.error(`yok: ${d}`); process.exit(2); }
-    const h = harvest(d);
+    const lootPre = readLoot(d);
+    const lootReg = lootPre?.objectiveMetrics?.registerSource === 'override'
+      ? lootPre.objectiveMetrics.register : null;
+    const h = harvest(d, { registerOverride: REG_FLAG ?? lootReg });
     const tgt = harvestTarget(d);
     if (tgt.collision) {
       h.meta.status = 'ERROR';
@@ -840,7 +957,7 @@ if (isMain) {
 }
 
 export {
-  harvest, render, harvestPath, harvestTarget, bitenProjects,
+  harvest, render, renderLoot, readLoot, harvestPath, harvestTarget, bitenProjects,
   readHarvestMeta, checkProjects, computeRatio, parseRevize, parseTemiz,
-  CLASSES, KIT, PARSER_VERSION,
+  CLASSES, KIT, PARSER_VERSION, LOOT_FILE,
 };
