@@ -3,7 +3,7 @@
   "schema": "mamilas.harvest.v1",
   "parserVersion": "kapanis-hasadi@3",
   "promptLintVersion": "prompt-lint@51ffa6ff",
-  "harvestedAt": "2026-07-29T15:10:00.655Z",
+  "harvestedAt": "2026-07-29T16:03:05.212Z",
   "project": {
     "dir": "6. Sınıf - Bizi Bir Arada Tutan Değerler",
     "id": "938d7f9aa571a3db"
@@ -85,6 +85,8 @@ Otorite `PROJECT-LOOT.json`. **Aşağıdakiler o dosyadan üretildi; bu dosya d�
 | 8 | Denetim kıstaslarına 8. madde: figür ya da nesne geometrisi ahşaba zemine duvara kaynaşmış mı — 6 denetim ajanının 6'sı kaçırdı çünkü listede yoktu, kusur listede değil ajanda | kare 34 · before/after ✗ · tekrar 2 | hayır — yalnız aday | — |
 | 9 | Havada duran nesne referans-edit ile düzelmez: altındaki her yüzey kompozisyondan kaldırılır — K12'de iki referans-edit denemesi başarısız oldu, kompozisyon çözdü | kare 1 · before/after ✓ · tekrar 2 | hayır — yalnız aday | — |
 | 10 | Reverse edilecek klip simetrik fizikle yazılır: buhar duman düşen yaprak nefes oturan toz YASAK; kamera hareketi reverse olur | kare — · before/after ✗ · tekrar 2 | hayır — yalnız aday | — |
+| 11 | Kısa üretilen klipte KUYRUK TAMPONU yok: MOTION 10s klip + son 1.5s atılır varsayıyor ama teslim edilen klipler 4.04-10.04s — 5 saniyelik üretimde bozuk kuyruk ekranın %30'u olur. Süre kaynakta belirlenir, teslimde değil | kare 34 · before/after ✗ · tekrar 2 | hayır — yalnız aday | — |
+| 12 | Morphing özneye değil TEMAS NOKTASINA ve ARKA PLANDAKİ İKİNCİL FİGÜRE çöküyor: 12 bozuk klibin 7'sinde kusur el-ele nesne devri anında, 8'inde arka plandaki ikincil figürde — temiz 22 klibin 12'sinde sahnede ya hiç insan yok ya tek eylem sahibi var | kare 34 · before/after ✓ · tekrar 12 | hayır — yalnız aday | — |
 
 `carry-forward: hayır` olan satır **global derse dönüşmez** — Mami açıkça "sonraki projelere taşı"
 demediyse aday olarak kalır (Faz 9 kararı, iki otorite seviyesi).
