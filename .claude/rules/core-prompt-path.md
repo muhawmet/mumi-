@@ -12,9 +12,18 @@ paths:
 
 # Prompt yolu — bilinen kusurlar ve değişmez yasalar
 
-Bu dosyalar motor prompt'unu üretir. Aşağıdakiler **ölçülmüş** kusurlardır; tahmin değil.
-Bir tanesine dokunuyorsan önce `artifacts/decision-pipeline-implementation/receipts/TASK-00.md`
-oku.
+> **ÖNCE BUNU BİL (2026-07-29 ölçümü).** Bu dosyalar **motora giden prompt'u üretmiyor.**
+> Ürettikleri metin ile Mami'nin teslim ettiği kare arasındaki örtüşme **%1-3**; aktif projede
+> **%0** — site hiç koşulmadı. Semantik aday katmanı bir kez bilerek söküldü
+> (`pure.ts` → *"FAZ2: konsept motoru söküldü"*) ve devir tuttu: 71 revizenin **sıfırı** fikir kusuru.
+> **Burada yapacağın bir düzeltme, bugün teslim edilen hiçbir kareyi değiştirmez.**
+> Bu dosyaların gerçek işi: ajanın okuduğu **dünya/ref/palet/lehçe kütüphanesi** ve bir önizleme.
+> Kareyi düzeltmek istiyorsan yer burası değil — `agents/PROMPT-YASASI.md`, `scripts/dunya-kilidi.mjs`
+> ve `scripts/prompt-lint.mjs`.
+
+Aşağıdakiler **ölçülmüş** kusurlardır; tahmin değil. Satır numaraları kayabilir — sembolü ara,
+numaraya güvenme. Bir tanesine dokunuyorsan önce
+`artifacts/decision-pipeline-implementation/receipts/TASK-00.md` oku.
 
 ## Değişmez yasalar
 
@@ -70,6 +79,9 @@ Yeni blocker yazarken **bu deseni izle** — prompt'un içine "DUR" cümlesi yaz
 
 ## Kanıt disiplini
 
-Prompt kalitesi hakkında hüküm vermeden önce **gerçek `generateBatch` çıktısı** üret ve gözle oku.
-Fixture yardımcı kanıttır, gerçek üretim yolunun yerine geçmez. `npx vitest run` yeşil olması
-görsel kalite kanıtı **değildir**.
+Prompt kalitesi hakkında hüküm vermeden önce **gerçek TESLİM metnini** aç ve gözle oku
+(`agents/COMMAND-INBOX/<proje>/*_PROMPTLAR.*`). `generateBatch` çıktısı bu hükmün kanıtı
+**değildir** — o metin motora gitmiyor; yalnız bu dosyaların kendi davranışını kanıtlar.
+Fixture yardımcı kanıttır. `npx vitest run` yeşil olması görsel kalite kanıtı **değildir**.
+Yapısal kanıt için `node scripts/prompt-lint.mjs <teslim dosyası>` — ve onun KAPSAM satırını oku,
+yeşil ≠ temiz.
