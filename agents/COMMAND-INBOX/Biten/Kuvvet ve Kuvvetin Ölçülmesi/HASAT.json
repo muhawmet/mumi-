@@ -1,0 +1,11 @@
+{
+  "_not": "Bu klasörde iki rakip teslim var ve dosya adları onları ayırt etmiyor — hasat kapısı PROMPT_AMBIGUOUS verdi. Kod tahmin etmez, proje BEYAN eder.",
+  "_olculdu": "2026-07-29 · claude",
+  "_kanit": {
+    "final": "Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt — 48 kare, kahraman @mira ('efe' kelime sınırıyla 0 kez geçiyor). Yürürlükteki teslim bu.",
+    "terkedilmis": "Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md — 58 sahne, kahraman @efe (27 kez), ve içeriği START-FRAME DEĞİL: Kling MOTION promptları + VO + Suno + edit planı. `_PROMPTLAR` adını taşımasına rağmen tek bir start-frame promptu yok. Yanındaki `eski_command_53k.json` da bu terk edilmiş sürüme ait.",
+    "neden_silinmedi": "Mami'nin teslim dosyası sessizce silinmez ya da yeniden adlandırılmaz. Beyan yeterli."
+  },
+  "promptParts": ["Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt"],
+  "command": "Kuvvet ve Kuvvetin Ölçülmesi_mamilas_command.json"
+}

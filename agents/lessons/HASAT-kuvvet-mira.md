@@ -2,8 +2,8 @@
 {
   "schema": "mamilas.harvest.v1",
   "parserVersion": "kapanis-hasadi@3",
-  "promptLintVersion": "prompt-lint@b0249ceb",
-  "harvestedAt": "2026-07-29T07:21:19.563Z",
+  "promptLintVersion": "prompt-lint@9b263d16",
+  "harvestedAt": "2026-07-29T09:18:28.687Z",
   "project": {
     "dir": "Kuvvet MİRA",
     "id": "10ee1cdef997e30c"

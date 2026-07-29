@@ -291,10 +291,26 @@ describe('T12 · diskteki gerçek projeler', () => {
     expect(md).toMatch(/İki olasılık ayrılamıyor/);
   });
 
-  it('Kuvvet ve Kuvvetin Ölçülmesi: iki final aday → ERROR, ders adayı ÜRETİLMEZ', () => {
+  // 2026-07-29: bu test eskiden "iki final aday → ERROR" diye diskin O ANKİ halini kilitliyordu.
+  // Belirsizlik `HASAT.json` ile ÇÖZÜLDÜ (klasörde `_PROMPTLAR.md` aslında terk edilmiş @efe
+  // sürümünün MOTION dosyasıydı; `.txt` 48 kare @mira ile yürürlükteki teslim). Kod tahmin
+  // etmez, proje BEYAN eder — mekanizma `kapanis-hasadi.mjs:198`'de zaten yazılıydı.
+  // Test silinmedi: artık DURUMU değil MEKANİZMAYI ölçüyor — beyan varsa çözülür, yoksa ERROR.
+  it('Kuvvet ve Kuvvetin Ölçülmesi: HASAT.json beyanı belirsizliği çözer', () => {
     const h = harvest(join(BITEN, 'Kuvvet ve Kuvvetin Ölçülmesi'));
+    expect(h.meta.status).toBe('OK');
+    expect(h.errors.some((e) => e.startsWith('PROMPT_AMBIGUOUS'))).toBe(false);
+    expect(h.promptSel.parts).toEqual(['Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt']);
+  });
+
+  it('beyan YOKSA iki final aday hâlâ ERROR verir — kapı gevşetilmedi', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'hasat-ambig-'));
+    for (const f of ['X_PROMPTLAR.txt', 'X_PROMPTLAR.md']) {
+      writeFileSync(join(dir, f), '### K01\n35mm lens at f/4\nSTYLE: a\nNEGATIVE: b\n');
+    }
+    const h = harvest(dir);
     expect(h.meta.status).toBe('ERROR');
     expect(h.errors.some((e) => e.startsWith('PROMPT_AMBIGUOUS'))).toBe(true);
-    expect(render(h)).toMatch(/Ders adayı üretilmedi|hangisi final belli değil/);
+    rmSync(dir, { recursive: true, force: true });
   });
 });

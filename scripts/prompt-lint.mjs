@@ -514,9 +514,24 @@ function report(r, { kapsam = true } = {}) {
       + `STYLE ${r.metrics.styleVariants} sürüm (${r.metrics.styleMin}-${r.metrics.styleMax} kelime)`);
   }
 
+  // Tekrar eden kusuru 45 satıra dağıtmak sinyali gömer: okunmayan rapor olmayan rapordur.
+  // Aynı kusur sınıfı TEK satırda toplanır; kaç karede olduğu sayıyla verilir.
+  // Beş ya da daha az kareyi ilgilendiren kusur tek tek gösterilir — orada kare adı bilgidir.
+  const sinif = new Map();
   for (const row of r.bad) {
-    console.log(`  ▸ ${row.head}`);
-    for (const p of row.problems.filter((p) => p.level === 'kirmizi')) console.log(`      ✗ ${p.msg}\n        ${p.why}`);
+    for (const p of row.problems.filter((x) => x.level === 'kirmizi')) {
+      const k = p.key;
+      if (!sinif.has(k)) sinif.set(k, { why: p.why, msgs: new Set(), heads: [] });
+      const g = sinif.get(k);
+      g.msgs.add(p.msg);
+      g.heads.push(row.head);
+    }
+  }
+  for (const [, g] of [...sinif].sort((a, b) => b[1].heads.length - a[1].heads.length)) {
+    const msg = g.msgs.size === 1 ? [...g.msgs][0] : `${[...g.msgs][0]} (+${g.msgs.size - 1} varyant)`;
+    console.log(`  ✗ ${msg} — ${g.heads.length} kare`);
+    console.log(`    ${g.why}`);
+    if (g.heads.length <= 5) for (const h of g.heads) console.log(`      ▸ ${h.slice(0, 76)}`);
   }
   if (r.sari.length) {
     console.log(`  — sarı (${r.sari.length} blok · kusur iddiası DEĞİL, ajan tek geçişte baksın):`);
