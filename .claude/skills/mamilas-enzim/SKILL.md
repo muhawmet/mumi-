@@ -12,6 +12,10 @@ Sebep: kalite düşük olduğu için değil, aynı işi iki kez yaptığımız i
 yeniden yazıldı ya da yeniden basıldı. Hiçbiri yeni bir fikirden doğmadı — hepsi
 başta kilitlenmemiş bir karardan doğdu. Aşağıdaki kilitler o 21 karenin listesidir.
 
+**Kayıt önce.** `node scripts/current-work.mjs baslat "<proje>"` — kilitleri kapatmadan önce
+işi kayda geçir; bitince `... ilerle --bitti "..." --sirada "..."`. Kayıt bayatlarsa sonraki
+oturum sıfırdan başlar (ölçüldü: kayıt "VO hiç üretilmedi" derken diskte render duruyordu).
+
 **Kural: bir kilit açık kaldıysa prompt yazmaya BAŞLAMA.** Mami'ye sor, cevabı yaz, sonra üret.
 
 **Ön okuma:** `agents/PROMPT-YASASI.md` — Mami'nin daimi direktifleri + ölçülmüş start-frame,

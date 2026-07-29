@@ -20,6 +20,13 @@ Kaynak sayılar / motor listeleri / durum burada YAŞAMAZ — kanondan (kod + JS
 
 Skill çağrılınca tek hamlede context'i kur:
 
+0. **Kayıt önce:** `node scripts/current-work.mjs` — aktif iş, faz, blokaj, kit eksiği ve
+   Mami'nin açık kararı. **Otorite bu kayıttır, sohbet hafızası değil**; çelişirse kayıt kazanır,
+   kayıtla disk çelişirse DİSK kazanır. Her iş parçası bitince güncelle:
+   `node scripts/current-work.mjs ilerle --bitti "<ölçülmüş>" --sirada "<tek eylem>"`.
+   (2026-07-29 ölçümü: `faz-icraat.md` bu betiği emrediyordu ama **hiçbir skill ona atıf
+   yapmıyordu** — yasa vardı, kanal yoktu.)
+
 1. **Kanon:** `CLAUDE.md` → `docs/ai/PROJECT_CONTRACT.md` → **`agents/PROMPT-YASASI.md`**
    (üretim yasası: daimi direktifler + start-frame/motion/referans template'leri — prompt
    yazmadan ÖNCE oku, ezberden yazma) → **`agents/lessons/APPROVED.md`** (Mami-onaylı ders
