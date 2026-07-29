@@ -1,0 +1,69 @@
+{
+  "schema": "mamilas.enzim-locks.v1",
+  "projectId": "6. Sınıf - Eşeyli ve Eşeysiz Üreme",
+  "register": "EDU",
+  "worldId": "pixar_3d_edu",
+
+  "source": {
+    "file": "agents/COMMAND-INBOX/6. sınıf eşeyli ve eşeysiz üreme video senaryosu.docx",
+    "sha256": "4df7ade5b089d40d3bea7782b97961a14c48b6683d69994a87acf9c7f3828a2c",
+    "note": "Kaynak hash'i değişirse yalnız ETKİLENEN kilitler STALE olur; tamamı yeniden sorulmaz."
+  },
+
+  "locks": {
+    "sceneCount": 50,
+    "castAge": "6th-grade, around eleven or twelve, pre-teen",
+    "castOrigin": "Türk/Anadolu — ana ve arka plan dahil (PROMPT-YASASI §2 kalıcı kilit)",
+    "characterShare": {
+      "measured": 0.82,
+      "humanFrames": 41,
+      "totalFrames": 50,
+      "note": "ÖLÇÜLDÜ, hedef değil. PROMPT-YASASI §1/9 EDU için ~%50 anlatıcı-karakter önerir; bu ders %82 ile gitti ve Mami onayladı. Yeni EDU dersinde varsayılan alınmadan önce Mami'ye sorulur."
+    },
+    "textPolicy": {
+      "rule": "Türkçe ya da HİÇ — İngilizce tabela/poster/rozet yok",
+      "textBearingFrames": 14,
+      "note": "Yazı diegetik doğar (kabartma harf, plaket); post-prodüksiyonda yazı katmanı YOK."
+    },
+    "conceptLightSystem": {
+      "esesyiz": "tek yuvarlak SICAK-ALTIN ışık; bölününce iki ışık BİREBİR AYNI ton",
+      "eseyli": "SICAK-AMBER (yumurta) + SERİN-MAVİ (sperm) → birleşince YENİ bir MENEKŞE ışık (zigot)",
+      "note": "Dersin imzası. Işık ışık kalır — çiçek, taç yaprağı, ok ucu, alev olmaz."
+    }
+  },
+
+  "heroTags": {
+    "@efe": { "frames": 41, "kind": "karakter", "status": "mevcut" },
+    "@anne": { "frames": 7, "kind": "karakter", "status": "mevcut — Kütle ve Ağırlık'ta basıldı, aynı kişi" },
+    "@gul": { "frames": 36, "kind": "prop", "status": "üretildi" },
+    "@defter": { "frames": 25, "kind": "prop", "status": "üretildi" },
+    "@kedi": { "frames": 8, "kind": "karakter", "status": "üretildi" },
+    "@yavrular": { "frames": 7, "kind": "karakter", "status": "üretildi" },
+    "@amip": { "frames": 3, "kind": "prop", "status": "üretildi" },
+    "@mikroskop": { "frames": 10, "kind": "prop", "status": "üretildi" }
+  },
+
+  "tarifKilitleri": [
+    "patates", "çilek", "hidra", "denizanası", "maya", "deniz yıldızı",
+    "solucan", "kertenkele", "öglena", "paramesyum", "bakteri"
+  ],
+
+  "teslimAdlandirma": {
+    "kalip": "<Ad>_<PARÇA>.txt",
+    "gercek": "Eşeyli ve Eşeysiz Üreme_<PARÇA>",
+    "sapma": "PROMPTLAR .md olarak teslim edildi; yasa (Mami direktifi 16) .txt diyor — Windows'ta .md uğraştırıyor.",
+    "parcalar": ["REFERANSLAR", "PROMPTLAR", "revize", "MOTION", "EDIT-PLAN", "SESLENDIRME", "SUNO"]
+  },
+
+  "uygulananDersler": [],
+  "mamiOnayi": {
+    "durum": "beklemede",
+    "note": "Bu dosya ÖLÇÜMDÜR, onay değil. Kilitler Mami onaylayana kadar 'bu ders böyle gitti' kaydıdır — yeni derse otomatik devredilmez."
+  },
+
+  "olculdu": {
+    "tarih": "2026-07-29",
+    "kaynak": "Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md (50 blok) + _REFERANSLAR.txt",
+    "by": "claude"
+  }
+}

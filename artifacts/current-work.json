@@ -6,13 +6,17 @@
   "status": "bloke",
   "lastCompleted": "50/50 klip Kling 3.0 ile üretildi ve diske indi (~/Desktop/6. Sınıf Animasyonlar/... · 29 Tem 09:11–09:16).",
   "nextAction": "ElevenLabs kredisi gelince VO'nun 1:29 sonrası üretilir; sonra kaba-kurgu.mjs koşar ve KABA-KURGU.xml kite girer.",
-  "openMamiDecision": "ses1.wav ve ses2.wav BİREBİR AYNI dosya (md5 6bfbd9ac48df461dfd2a74d463e64129, ikisi de 88.6s). İkinci parça hiç inmedi mi, yoksa aynı dosya iki kez mi indi?",
-  "blockedBy": "ElevenLabs kredisi bitti — VO 88.6s'de kesiliyor (EDIT-PLAN cetvelinde K18 ortası), plan ~4:06.",
+  "openMamiDecision": null,
+  "blockedBy": "ElevenLabs kredisi bitti — VO HİÇ üretilmedi (diskte tek ses dosyası yok, plan ~4:06). Klipler ve Suno müziği hazır.",
   "requiredLocalMedia": [
     {
       "path": "~/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
-      "expect": { "clips": 50, "vo": 1, "muzik": 0 },
-      "note": "repo dışı — git-ignore değil, hiç repoda değil. Suno müziği henüz indirilmedi."
+      "expect": {
+        "clips": 50,
+        "vo": 0,
+        "muzik": 1
+      },
+      "note": "repo dışı — git-ignore değil, hiç repoda değil"
     }
   ],
   "deliverables": {
@@ -25,7 +29,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-29T09:40:00Z",
+  "updatedAt": "2026-07-29T07:29:18.358Z",
   "updatedBy": "claude",
-  "baseCommit": "4050088"
+  "baseCommit": "bf13f80"
 }
