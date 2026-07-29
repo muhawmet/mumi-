@@ -460,6 +460,34 @@ aksiyon yok poz var · yazı yönetilmez, yasaklanır.**
 - **Küçük prop istisnası:** referans basmaya değmeyen küçük obje için **tarif kilidi** kullan —
   sabit kelime öbeği her karede aynen tekrar edilir. Ucuz ve tutuyor.
 
+### §4a — REFERANS ENVANTERİ İLK İŞTİR (Mami, 2026-07-29)
+
+> *"Projelere başlarken tekrar eden şeylerin referanslarını oluştur, kural olsun bu sana."*
+
+**Tek kare yazılmadan önce** VO metni ve edit planı taranır; **iki ya da daha fazla klipte
+tekrar eden her şey** envantere girer: karakter, hero-prop, tekrar eden mekân.
+
+Envanter üç kovaya ayrılır ve `<Ad>_REFERANSLAR.txt` promptlardan **ÖNCE** yazılır:
+
+| Kova | Ne yapılır |
+|---|---|
+| **Zaten tag'li** | Basılmaz. Yalnız kullanım kuralı yazılır (kimlik handle'dan, hâl karede). |
+| **Basılacak** | Referans promptu yazılır + **ilk geçtiği kare** ve **aralığı** tabloya girer. |
+| **Tarif kilidi** | Referans basmaya değmeyen küçük obje — sabit kelime öbeği, her karede aynen. |
+
+Envanter tablosu **hangi sekans hangi referansı istiyor** bilgisini taşır. Kazancı somut:
+Bileşke'de bu tablo çıkınca INTRO'nun hiç yeni referans istemediği görüldü — Mami 16 kareyi
+referans beklemeden basabildi.
+
+**Neden ilk iş:** referans yolda kararlaştırılırsa aynı nesne her karede yeniden tarif edilir
+ve tarifler birbirini tutmaz — süreklilik kusurlarının kaynağı budur. Ölçüldü: 50 karelik bir
+derste imla 50/50 temiz çıkarken **kusurun tamamı süreklilikteydi.**
+
+⚠ **Referans dosyası klip numarası taşır — plan değişirse dosya da değişir.** Bileşke v1'in
+referansı `@kitap → K32-K37` diyordu; edit planı v2'de 52 klip 71 olunca o numaralar bambaşka
+kareleri gösterir hale geldi ve dosya sessizce yalan söylemeye başladı. Klip sayısına dokunan
+her düzenlemede referans dosyası yeniden numaralanır.
+
 ---
 
 ## 5. TESLİM SETİ — kurgu kiti

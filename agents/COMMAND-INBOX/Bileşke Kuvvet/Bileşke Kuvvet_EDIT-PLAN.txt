@@ -1,0 +1,217 @@
+BİLEŞKE KUVVET — EDİT PLANI v2 (yeniden yapım)
+=========================================================================
+Konu: Bileşke (net) kuvvet · 6. sınıf · Anlatıcı: Mira (yalnız VO)
+VO: 69 cümle — TEK KELİME DEĞİŞMEDİ. Seslendirme dosyası aynen kullanılır.
+Klip: 71 · tahmini süre ~4:51 (aşağıda gerekçesi)
+
+NEDEN v2 — v1'in kök kusuru
+-------------------------------------------------------------------------
+v1 planı 69 cümleyi 52 klibe **birleştirdi** (kendi başlığında yazıyor: "17 yerde
+görüntü birleşti"). Sonuç: 11 klip 10 saniyenin üstüne çıktı, en uzunu 14.9s.
+Tek olay + 14 saniye = 10 saniye yerleşme. Kling o boşluğu drift ve warp'la doldurur;
+izleyici sıkılır. Mami'nin "iğrenç animasyonlar" dediği şeyin kaynağı prompt değil,
+**bu tablo**.
+
+v2'nin tek kuralı: **BİR CÜMLE = BİR KLİP.**
+İki istisna, ikisi de dilbilgisel zorunluluk:
+  · C5+C6 — soru ve cevabı ("...tek bir kuvvet mi etkiler?" / "Tabii ki hayır.")
+  · C34+C35 — C34 "...fark etti **ve**" diye bitiyor, cümle C35'te tamamlanıyor.
+Ve üç yerde tersi: TEK cümle ÜÇ klibe bölünüyor (C59, C62) — cümlenin kendi içinde
+üç ayrı olay var, tek karede hiçbiri okunmuyor.
+
+Kazanç: ortalama klip 4.1 saniye. 71 klibin 57'si **5 saniyelik** üretim.
+On saniyelik üretim yalnız 14 klipte — hepsi diyagramın kurulduğu kavram kareleri.
+
+SÜRE TAHMİNİ — ve neden ölçülecek
+-------------------------------------------------------------------------
+Aşağıdaki saniyeler kelime sayısından hesaplandı (~2.8 kelime/sn, eğitici tempo).
+v1'in "~6.6 dk" tahmini şişikti; gerçek VO daha kısa çıkacak.
+Kütle dersinde ölçüldü: plan 3:33 dedi, gerçek VO 3:00 — %15 sapma.
+**VO indiği an `node scripts/kaba-kurgu.mjs` koşulur**, whisper gerçek cümle
+sınırlarını verir ve bu tablodaki saniyeler onunla değişir. Tahmine göre klip
+üretme; ÜRET tahminle, KES ölçümle.
+
+ÜRETİM UZUNLUĞU SÜTUNU (ÜRT)
+-------------------------------------------------------------------------
+5  = Kling'den 5 saniyelik üret, kurguda kısalt.
+10 = 5 saniyeye sığmıyor, 10 saniyelik üret.
+Bir klibin ekran süresi ÜRT'ten kısa olabilir — fazlası kurguda atılır, sorun değil.
+Ekran süresi ÜRT'ü AŞAMAZ.
+
+SHOT TİPLERİ
+-------------------------------------------------------------------------
+MİRA  = @mira ekranda (kahraman)      BODY = anonim gövde / eller / omuzdan kesik
+WORLD = insansız fizik, nesne, diyagram   CAST = anonim grup (sınıf, bahçe)
+
+"DEĞİŞİM" sütunu zorunludur — klipte ne başlar, ne döner, ne oturur.
+Boş bırakılan satır motion prompt'a girmez (PROMPT-YASASI §3a).
+=========================================================================
+
+
+##### SEKANS 1 — INTRO: MİRA VE GÖRÜNMEZ GÜÇ  ·  K01-K16  ·  ~68 sn
+=========================================================================
+KLİP | VO | SHOT  | sn  | ÜRT | DEĞİŞİM (klipte olan şey)
+K01  | 1  | MİRA  | 5.0 |  5  | kapı eşiğinden sokağa çıkış — iç mekândan sabah ışığına
+K02  | 2  | MİRA  | 4.3 |  5  | çanta omza biner, yürüyüş koşuya döner
+K03  | 3  | WORLD | 6.0 | 10  | hareket donar, ardındaki kuvvet açığa çıkar (reveal)
+K04  | 4  | BODY  | 4.5 |  5  | üç el aksiyonu arka arkaya: kapı kolu → top → market arabası
+K05  | 5+6| MİRA  | 5.5 | 10  | soru sorulur, askıda kalır, cevap düşer ("hayır")
+K06  | 7  | WORLD | 3.8 |  5  | iki ayrı kuvvet yaklaşır ve tek bir güce katılır
+K07  | 8  | MİRA  | 4.0 |  5  | @mira okul kapısından içeri — keşfe giriş
+K08  | 9  | MİRA  | 2.8 |  5  | dönüp bakar: izleyiciyi çağırma anı
+K09  | 10 | CAST  | 2.5 |  5  | sınıf oturur, ders başlar
+K10  | 11 | CAST  | 4.2 |  5  | kutu çizili, kalem ikinci okun başında — klip oku TAMAMLAR
+K11  | 12 | WORLD | 4.5 |  5  | dört madde yazılı, ışık 1'den 4'e YÜRÜR
+K12  | 13 | WORLD | 3.8 |  5  | 1) uygulama noktası — temas noktası işaretlenir
+K13  | 14 | WORLD | 3.5 |  5  | 2) doğrultu — doğu-batı çizgisi uzanır
+K14  | 15 | WORLD | 3.0 |  5  | 3) yön — çizginin bir ucuna ok başı oturur
+K15  | 16 | WORLD | 4.5 |  5  | 4) büyüklük — dinamometre yayı gerilir, ibre 5 N'a gelir
+K16  | 17 | MİRA  | 6.5 | 10  | not alan baş kalkar, merak yerleşir (SEKANS ASKISI)
+
+⚠ v1'de K08 iki cümleyi (10+11) tek karede taşıyordu. Ayrıldı: sınıf oturur / tahta
+çizilir iki farklı olay. Aynı şekilde 14+15 (doğrultu+yön) ayrıldı — ikisi ayrı kavram,
+tek karede üst üste binince ikisi de okunmuyor.
+
+⚠ DEĞİŞİM sütunu MOTION'ı tarif eder, start frame'i değil. Motion **yeni öğe DOĞURAMAZ**
+— özellikle yazı. "Sırayla yazılır" gibi bir not start-frame'e taşınırsa kare boş satır
+ister, NB2 de boş satırı uydurma kelimeyle doldurur (`R = 0 N` → `R = ON` kusurunun üst
+sınıfı). O yüzden yazı start frame'de TAM yazılıdır; klipte değişen şey ışık, kalem,
+işaret ya da kadrajdır. K10 ve K11 bu kurala göre yeniden yazıldı.
+
+
+##### SEKANS 2 — AYNI YÖNLÜ KUVVETLER: ARABA  ·  K17-K30  ·  ~65 sn
+=========================================================================
+KLİP | VO | SHOT       | sn  | ÜRT | DEĞİŞİM
+K17  | 18 | CAST/tahta | 3.2 |  5  | öğretmen döner, sınıf susar — tanım gelmeden önceki an
+K18  | 19 | WORLD      | 8.0 | 10  | tanım tahtada harf harf kurulur (KAVRAM KARESİ)
+K19  | 20 | WORLD      | 2.5 |  5  | boş alana tek bir R harfi düşer
+K20  | 21 | CAST       | 2.5 |  5  | zil — sınıf boşalır
+K21  | 22 | CAST       | 6.0 | 10  | bahçe: @ali ve @can çamura saplı @araba ile boğuşuyor
+K22  | 23 | WORLD      | 5.5 | 10  | @ali 10 N doğuya iter — araba KIPIRDAMIYOR (başarısız çaba)
+K23  | 24 | WORLD      | 5.0 |  5  | @can kadraja girer, ikinci el arabaya değer, 15 N eklenir
+K24  | 25 | WORLD      | 5.5 | 10  | iki ok yan yana gelir, aynı yöne bakar — yardımlaşma görünür
+K25  | 26 | WORLD      | 5.0 |  5  | toplama kuralı yazılır
+K26  | 27 | WORLD      | 6.5 | 10  | 10 N + 15 N birleşir, 25 N tek okta toplanır (KAVRAM KARESİ)
+K27  | 28 | WORLD      | 5.0 |  5  | araba çamurdan KOPAR — çamur sıçrar, tekerlek tutar
+K28  | 29 | BODY       | 4.0 |  5  | omuzdan kesik: gülümseme yerleşir
+K29  | 30 | CAST       | 4.2 |  5  | halat gerilir, iki taraf pozisyon alır
+K30  | 31 | BODY       | 2.5 |  5  | kenardan izleyen bakış — yarışa kilitlenir
+
+⚠ v1'de K20 (26+27) 14.1 saniyeydi: kural + hesap + sonuç tek karede. Üçe bölündü.
+
+
+##### SEKANS 3 — ZIT YÖNLÜ KUVVETLER: HALAT  ·  K31-K39  ·  ~40 sn
+=========================================================================
+KLİP  | VO    | SHOT  | sn  | ÜRT | DEĞİŞİM
+K31   | 32    | WORLD | 6.5 | 10  | batı 30 N ve doğu 20 N okları karşılıklı gerilir
+K32   | 33    | WORLD | 3.5 |  5  | kırmızı kurdele batıya doğru KAYAR (tek net olay)
+K33   | 34+35 | BODY  | 8.0 | 10  | fark ediş → itiraz: "toplayamam" (düşünce dönüşü)
+K34   | 36    | WORLD | 5.0 |  5  | çıkarma kuralı yazılır
+K35   | 37    | WORLD | 7.0 | 10  | 30 N eksi 20 N, geriye 10 N kalır (KAVRAM KARESİ)
+K36   | 38    | WORLD | 3.0 |  5  | soru askıda kalır — halat titrer, karar verilmemiş
+K37   | 39    | WORLD | 3.2 |  5  | cevap düşer: batı yönü kesinleşir
+K38   | 40    | WORLD | 4.0 |  5  | bileşke okunur: batı yönünde 10 N
+K39   | 41    | MİRA  | 2.8 |  5  | koridordan kütüphane kapısına geçiş
+
+⚠ v1'de 34+35 zaten birleşikti ve öyle KALMALI — C34 "fark etti ve" diye bitiyor,
+cümle C35'te tamamlanıyor. Buradaki tek birleşim dilbilgisel zorunluluk, tercih değil.
+
+
+##### SEKANS 4 — DENGELENMİŞ KUVVETLER: KİTAP  ·  K40-K46  ·  ~31 sn
+=========================================================================
+KLİP | VO | SHOT  | sn  | ÜRT | DEĞİŞİM
+K40  | 42 | WORLD | 4.0 |  5  | masadaki @kitap'a yaklaşma — hiçbir şey hareket etmiyor
+K41  | 43 | WORLD | 4.2 |  5  | durgunluğun içinde bir soru belirir
+K42  | 44 | WORLD | 6.5 | 10  | aşağı ve yukarı iki ok aynı anda büyür, eşitlenir
+K43  | 45 | WORLD | 4.0 |  5  | iki ok birbirine girer ve SÖNER
+K44  | 46 | WORLD | 4.8 |  5  | boşalan yere R = 0 N yazılır (KAVRAM KARESİ)
+K45  | 47 | WORLD | 3.5 |  5  | "dengelenmiş kuvvetler" terimi yerleşir
+K46  | 48 | WORLD | 3.5 |  5  | HINGE: kitap kararır, arkada hareketli bir şey belirir
+
+⚠ K46 bütün filmin dönüm noktası — "dengelenmiş olmak sadece durmak değildir".
+Kare durgunluktan harekete köprü kurmalı; burada kesme YUMUŞAK olmaz, sert olur.
+
+
+##### SEKANS 5 — DENGELENMEMİŞ KUVVETLER  ·  K47-K61  ·  ~58 sn
+=========================================================================
+KLİP | VO  | SHOT  | sn  | ÜRT | DEĞİŞİM
+K47  | 49  | WORLD | 3.0 |  5  | otobanda araba — sabit, hiçbir şey hızlanmıyor
+K48  | 50  | WORLD | 4.5 |  5  | gökyüzünde paraşüt — aynı sabitlik, başka ortam
+K49  | 51  | WORLD | 3.2 |  5  | ikisinin ortak sebebi görünür hale gelir
+K50  | 52  | BODY  | 3.0 |  5  | pencereye dönüş — dış dünya kadraja girer
+K51  | 53  | WORLD | 4.2 |  5  | elma KOPAR ve düşerken HIZLANIR (ivme okunur)
+K52  | 54  | WORLD | 5.5 | 10  | kedi çıkar → fren → yavaşlama → duruş (dört fazlı tek olay)
+K53  | 55  | BODY  | 4.5 |  5  | anlama anı: ikisinde de hareket değişti
+K54  | 56  | WORLD | 4.2 |  5  | terazi bozulur, bir taraf ağır basar
+K55  | 57  | WORLD | 4.2 |  5  | ağır basan taraf cismi HAREKET ETTİRİR
+K56  | 58  | BODY  | 2.5 |  5  | kural formüle ediliyor — kalem durur
+K57  | 59a | WORLD | 1.2 |  5  | HIZLANMA — tek hızlı vuruş
+K58  | 59b | WORLD | 1.0 |  5  | YAVAŞLAMA — tek hızlı vuruş
+K59  | 59c | WORLD | 1.5 |  5  | YÖN DEĞİŞİMİ — tek hızlı vuruş
+K60  | 60  | WORLD | 3.8 |  5  | üç vuruş tek hükümde toplanır (nefes geri gelir)
+K61  | 61  | MİRA  | 3.8 |  5  | akşam ışığı, eve dönüş — gün kapanıyor
+
+⚠ K57-K59 filmin TEK hızlı kesim yeri ve bilerek öyle. Üç klip toplam 3.7 saniye;
+her biri 5 saniye üretilir, en güçlü 1-1.5 saniyesi kullanılır. Bu israf değil,
+climax'ın hızlanması — ders boyunca 4-5 saniyede giden ritim burada üçe katlanır,
+sonra K60'ta nefes geri gelir. Aynı sahneyi tek karede toplarsan (v1'in yaptığı)
+üç kavramın üçü de okunmaz.
+
+
+##### SEKANS 6 — ÖZET  ·  K62-K64  ·  ~8 sn
+=========================================================================
+KLİP | VO  | SHOT  | sn  | ÜRT | DEĞİŞİM
+K62  | 62a | WORLD | 2.7 |  5  | BİRLEŞİR — iki ok tek güce katılır
+K63  | 62b | WORLD | 2.7 |  5  | ÇEKİŞİR — iki ok birbirini yer, biri baskın çıkar
+K64  | 62c | WORLD | 2.7 |  5  | DENGE — iki ok eşitlenir, her şey olduğu gibi kalır
+
+⚠ C62 TEK cümle ama içinde ÜÇ hâl var. v1 "üç hâl tek karede" diyordu — o kare
+donuk bir şema olurdu. Üç kısa vuruş dersin tamamını üç saniyede geri veriyor.
+Üçünün kadrajı, ışığı ve kamera mesafesi AYNI olmalı; değişen tek şey oklar —
+tekrar eden çerçeve karşılaştırmayı görünür kılar.
+
+
+##### SEKANS 7 — KAPANIŞ VE SORU  ·  K65-K71  ·  ~26 sn
+=========================================================================
+KLİP | VO | SHOT  | sn  | ÜRT | DEĞİŞİM
+K65  | 63 | BODY  | 3.0 |  5  | kutlama jesti — enerji yükselir
+K66  | 64 | WORLD | 3.8 |  5  | soru kartı kadraja girer
+K67  | 65 | WORLD | 6.0 | 10  | kutu + kuzey 15 N + güney 15 N okları kurulur
+K68  | 66 | WORLD | 4.5 |  5  | soru işareti belirir ve BEKLER (cevap verilmez)
+K69  | 67 | WORLD | 2.5 |  5  | yorum çağrısı
+K70  | 68 | WORLD | 3.0 |  5  | imza cümlesi — denge görseli
+K71  | 69 | WORLD | 3.0 |  5  | kapanış — kadraj açılır, sonraki keşfe bakış
+
+⚠ K68 cevap VERMEZ. Soru açık kalır, izleyici yoruma gider. v1 burada quiz kartını
+cevapla birlikte tek karede topluyordu — soru sorup cevabı aynı karede göstermek
+etkileşimi öldürür.
+
+
+=========================================================================
+TOPLAM: 71 klip · ~291 sn (~4:51 tahmin) · VO 69 cümle, DEĞİŞMEDİ
+Üretim: 57 klip × 5s + 14 klip × 10s
+=========================================================================
+
+KESME KURALI (v1'den devralınan, hâlâ geçerli)
+· VO cümlesi biterken kes.
+· Askıda biten cümlelerde 12-18 kare duygusal hold bırak, sonra kes:
+  K05 ("hayır"), K16 (merak), K36 (soru), K68 (cevapsız soru).
+
+YENİ KESME KURALI — Üreme dersinden çıktı
+· Her klip yerleşerek bitmemeli. Üreme'de 50 klibin 50'si de yumuşak indi;
+  tek tek kusursuz, arka arkaya monoton. Aşağıdaki klipler HAREKETİN ORTASINDA
+  kesilir, tamamlanmadan — izleyici tamamlamayı kendi yapar ve ileri düşer:
+  K22 (araba kıpırdamıyor — çaba sürerken kes) · K27 (araba fırlarken, oturmadan)
+  · K32 (kurdele kayarken) · K51 (elma düşerken, yere değmeden)
+  · K57/K58/K59 (üçü de vuruşun tepesinde) · K63 (baskın ok kazanmadan).
+  Bu yeniden üretim gerektirmez, kurgu masasında çözülür.
+
+MÜZİK (Suno)
+· education_light, upbeat hummable.
+· INTRO yükselir · SEKANS 2-4 sabit ritim · SEKANS 5'te bir tık gerilim
+  (elma/fren) ve K57-K59'da vuruşlar müziğe oturur · SEKANS 6-7 çözülür.
+
+SES DOSYALARI (Mami'nin kuralı)
+· müzik = 1.mp3 + 2.mp3  ·  seslendirme = 3.mp3
+· `node scripts/kaba-kurgu.mjs "Bileşke Kuvvet" --klipler <dir>` bunlarla kurar.
+=========================================================================

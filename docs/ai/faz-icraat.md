@@ -26,6 +26,7 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
 | Ne zaman | Ne çalışır |
 |---|---|
 | Yeni video başlarken | `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
+| **Kilitler kapanınca** | **Referans envanteri** (`PROMPT-YASASI` §4a) — tekrar eden her şey `_REFERANSLAR.txt`'e; tek kare yazılmadan önce |
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
 | Prompt yazıldıktan sonra | `node scripts/prompt-lint.mjs <dosya> --register=real|edu|sty` — eksik slot kalmasın |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |
