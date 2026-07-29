@@ -25,11 +25,17 @@
 // Sahte alarm ölçümün kendisini çöpe atar: Mami kırmızıya bakmayı bırakır ve gerçek kusur
 // gürültüye gömülür (`mamilas-lint-rol-koru`: Üreme'de 7 tuzak hitinin 7'si sahte).
 //
-// Buna karşılık eski linter, revizeyi en iyi öngören iki şeyi HİÇ ölçmüyordu:
-//   · **kare-özel oran** — Bileşke 52/52 karede birebir aynı 196-269 kelimelik STYLE bloğunu
-//     taşıyor, kare-özel oran ~%35 → %65 revize. Sürtünme %51 → çok daha az. Tek sayı, en güçlü sinyal.
-//   · **negatifin kare-özelliği** — Bileşke'nin 52 karesinin 52'sinde NEGATIVE VAR, ama
-//     kare-özel yalnız 2/52. Satırın varlığı ölçülüyordu, işi ölçülmüyordu.
+// Buna karşılık eski linter, revizeyi öngören iki şeyi HİÇ ölçmüyordu:
+//   · **negatifin KARE-ÖZELLİĞİ** — satırın varlığı ölçülüyordu, işi ölçülmüyordu. Ölçüldüğünde
+//     ayrım net: Üreme %100 · Sürtünme %100 · Sabit Sürat %23 · **Bileşke %0** (52/52 karede
+//     NEGATIVE var ama hepsi aynı) → K34/K38 ok ucu, K19/K21 yüze düşen ışık.
+//   · **STYLE kelime tavanı** — `\Z` JS'te yok (Perl kalıntısı), regex sessizce kırıktı ve tavan
+//     HİÇ ateşlemiyordu. Ölçüldüğünde: Üreme 86-116 · Sabit Sürat 68-116 · Sürtünme 125 ·
+//     **Bileşke 148-243**. Revize sırasıyla birebir aynı yönde.
+//
+// ÖLÇÜLDÜ VE DÜŞTÜ — `kare-özel oran` (Codex denetimi 2026-07-29): 52 revize alan Bileşke %97,
+// az revize alan Sürtünme %47 veriyor; yani TERS yönde. Ayrıca eşik dosya uzunluğuna duyarlı
+// (aynı dosya 10 karede %35, 52 karede %97). SARI'ya düşürüldü — doğrulanmamış metrik kırmızı yakmaz.
 //
 // YENİ SÖZLEŞME — üç kat, ve linter ne ölçemediğini SÖYLER:
 //   KIRMIZI  kanıtlı eksik — slot ailesinin hiçbir üyesi yok, ya da sayılabilir bir kural kırık.
@@ -37,9 +43,13 @@
 //   KAPSAM   ölçülmeyenlerin açık listesi. "Yeşil" demek "temiz" demek değildir; bu satır olmadan
 //            yeşil bir yalandır ("kapı kuruldu ≠ kapı ateşliyor" — dört taramada tekrar eden kök kusur).
 //
-// Kanıtla sınanır: Sürtünme'de `canlı üçlü` ve `sheen` SUSMALI (ikisi de sahteydi), ama
-// `temas` 26/31 ve `derinlik` 30/31 KIRMIZI kalmalı (ikisi de gerçekti). Bileşke'de
-// kare-özel oran ~%35 raporlanmalı. Bunlardan biri tutmuyorsa linter yanlıştır, prompt değil.
+// Kanıtla sınanır (2026-07-29 ölçümü):
+//   Sürtünme  → `canlı üçlü` 31/31 ve `sheen` SUSAR (ikisi de sahteydi); `derinlik` 1/31 ve
+//               `ten` 0/25 KIRMIZI kalır (ikisi de gerçekti); STYLE 125 kelime.
+//   Bileşke   → `neg` 52/52 GÖRÜLÜR (`FIREWALL NEGATIVE:` yazıyor) ama kare-özel %0; STYLE 148-243.
+//   Üreme     → temas 50/50 · text-hece 14/14 · NEGATIVE kare-özel %100 (altın standart).
+//   Kuvvet .md→ 58/58 MOTION olarak tanınır ve start-frame ölçütleriyle lintlenmez.
+// Bunlardan biri tutmuyorsa linter yanlıştır, prompt değil.
 // ---------------------------------------------------------------------------
 
 // `lintFile` / `SLOTS` dışa açıktır: kapanış hasadı (scripts/kapanis-hasadi.mjs) aynı ölçümü
@@ -130,7 +140,8 @@ const SLOTS = [
     //   "rests against the hand in real contact, not floating"   (Kuvvet K20)
     //   "rests on the page in contact with a soft weighted shadow — it does not float" (K45)
     //   "a firm short shadow anchors him to the ground"          (Sürtünme S21)
-    test: (b) => /(rests? in contact|contact shadow|rests? (on|against)[^.]{0,70}contact|(does not|doesn't) float|not floating|weighted shadow|anchors? (him|her|it|them|the [a-z]+)[^.]{0,50}to the (ground|floor|surface|table|desk))/i.test(b),
+    //   "their contact plane touching" · "the surfaces MUST touch"  (Sürtünme S8 — Codex yakaladı)
+    test: (b) => /(rests? in contact|contact shadow|contact seam|contact plane|rests? (on|against)[^.]{0,70}contact|surfaces? (must )?touch|touching seam|(does not|doesn't) float|not floating|weighted shadow|anchors? (him|her|it|them|the [a-z]+)[^.]{0,50}to the (ground|floor|surface|table|desk))/i.test(b),
     why: 'EN NET KANIT: Bileşke 0/52 → K33/34/35/50 havada yüzdü; revizede "floating in mid-air" tamiri.',
   },
   {
@@ -160,7 +171,9 @@ const SLOTS = [
   {
     key: 'neg',
     label: 'NEGATIVE slotu',
-    test: (b) => /^NEGATIVE:/im.test(b) || /FRAME NEGATIVE/i.test(b),
+    // Bileşke `FIREWALL NEGATIVE:` yazıyor — eski desen onu göremiyordu ve 52/52 karesi
+    // "NEGATIVE yok" diye kırmızı alıyordu; oysa hepsinde negatif VAR (Codex denetimi).
+    test: (b) => /^(FRAME |FIREWALL |GLOBAL |WORLD )?NEGATIVE\s*:/im.test(b) || /(FRAME|FIREWALL) NEGATIVE/i.test(b),
     why: 'İki temiz setin ortak paydası: Sürtünme 31/31 inline, Sabit Sürat 44/44.',
   },
 ];
@@ -169,7 +182,10 @@ const SLOTS = [
 // TUZAKLAR — artık BAĞLAMLI. Bir kelime tek başına kusur değildir; kusur onun nereye
 // yazıldığıdır. Eski linter bunu ayırmadığı için tek başına ~100 sahte alarm üretiyordu.
 // ---------------------------------------------------------------------------
-const SKIN = /(skin|cheek|face|complexion|forehead|nose|chin|hand)/i;
+// \b ZORUNLU: sınırsız `face` deseni **surface** kelimesinin içinde eşleşiyordu — yani ahşap/taş
+// YÜZEYİNİN sheen'ini TEN kusuru sayıyordu (Codex denetimi, 2026-07-29). Sessiz yanlış pozitif,
+// ölçümün kendisini çürüten sınıf. `hand` da `handle`/`handheld` içinde tutuyordu.
+const SKIN = /\b(skin|cheek|face|facial|complexion|forehead|chin|hands?)\b/i;
 
 // `w` kelimesi metinde SKIN'e `win` karakter içinde mi geçiyor?
 function nearSkin(body, w, win = 70) {
@@ -282,14 +298,20 @@ function styleBlock(b) {
     if (/^[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}\s*:/.test(lines[j].trim())) break;
     out.push(lines[j]);
   }
-  return out.join(' ').trim();
+  // Sürtünme STYLE / LIGHT AND PALETTE / NEGATIVE'i AYNI SATIRDA yazıyor. Satır tabanlı kesim
+  // tek başına kuyruğu da sayıyor ve STYLE'ı 126 yerine 199 kelime gösteriyordu — kelime tavanı
+  // ölçümü, ölçtüğünü sandığı şeyi ölçmüyordu. Satır İÇİNDEKİ etiketten de kesilir.
+  return out.join(' ').split(/\s(?=(?:LIGHT AND PALETTE|TEXT|NEGATIVE|FRAME NEGATIVE|FIREWALL NEGATIVE)\s*:)/)[0].trim();
 }
 
 // Kare ekranda yazı taşıyor mu? Tırnak içinde 2+ karakterlik BÜYÜK harfli öbek (Türkçe dahil)
 // ya da açık "on-screen text: <...>" talimatı. "no on-screen text" / "clean plate" taşımaz.
 function bearsText(b) {
   if (/(clean plate|no on-?screen text|no visible text|no caption)/i.test(b) && !/"[^"]{2,}"/.test(b)) return false;
-  return /"[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9 =.,:+\/-]{1,}"/.test(b);
+  // Yalnız TAMAMEN büyük harfli öbek aramak `"200 g"` gibi gerçek ekran yazılarını kaçırıyordu
+  // (Kütle K—, Codex denetimi). Sayı + küçük harfli birim de ekran yazısıdır ve hecelenmelidir.
+  return /"[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9 =.,:+\/-]{1,}"/.test(b)
+    || /"\s*\d+([.,]\d+)?\s*[a-zA-ZÇĞİÖŞÜçğıöşü]{1,4}\s*"/.test(b);
 }
 
 // Bir kural bu register'da geçerli mi? `registers` yoksa üçünde de geçerlidir.
@@ -304,13 +326,23 @@ const appliesTo = (rule, register) => !rule.registers || rule.registers.includes
 const REF_EDIT_RE = /(SIFIRDAN ÜRETİLMEYECEK|change ONLY|use this referenced image|referans[- ]edit|referansı ver|keep everything else identical)/i;
 
 // Motion bloğu: kamera hareketi fiilleri + "everything else stays" ailesi, STYLE yok.
-const MOTION_RE = /\b(dolly|push in|pull back|pan (left|right)|tilt (up|down)|orbit|handheld drift|settle into|hold on|slow zoom)\b/i;
-const MOTION_STAY_RE = /(everything else stays|only the [a-z ]+ changes|no re-render|identity change|do not alter)/i;
+const MOTION_RE = /\b(dolly|push in|pull back|pan (left|right)|tilt (up|down)|orbit|handheld drift|settle into|hold on|slow zoom|glid(e|ing)|drift(s|ing)? (in|across)|cran(e|ing)|track(s|ing) (left|right|with))\b/i;
+const MOTION_STAY_RE = /(everything else stays|only the [a-z@ ]+ changes|no re-render|identity change|do not alter|do not warp|stays exactly as the frame)/i;
 
-function blockKind(body) {
+// Blok tipi tek bloga bakarak kesin bilinemez — DOSYA tipi bilinir. Yasa §2 her start-frame'e
+// `STYLE:` kuyrugu koyar; bes gercek teslim dosyasinin hepsinde 100% karede var. Bir dosyada
+// HIC `STYLE:` yoksa o dosya start-frame dosyasi DEGILDIR. Blok-basina sezgi Kuvvet
+// `_PROMPTLAR.md` dosyasinda 58 blogun 51'ini kaciriyordu (Codex denetimi, 2026-07-29).
+export function fileKind(blocks) {
+  const withStyle = blocks.filter((b) => /^STYLE\s*:/im.test(b.body)).length;
+  return (blocks.length >= 3 && withStyle === 0) ? 'motion-dosyasi' : 'frame-dosyasi';
+}
+
+function blockKind(body, fk = 'frame-dosyasi') {
+  if (fk === 'motion-dosyasi') return 'motion';
   if (REF_EDIT_RE.test(body)) return 'ref-edit';
-  const hasStyle = /^STYLE:/im.test(body);
-  if (!hasStyle && MOTION_RE.test(body) && MOTION_STAY_RE.test(body)) return 'motion';
+  const hasStyle = /^STYLE\s*:/im.test(body);
+  if (!hasStyle && (MOTION_RE.test(body) || MOTION_STAY_RE.test(body))) return 'motion';
   return 'frame';
 }
 
@@ -459,7 +491,8 @@ const OLCULMEYEN = [
 export function lintFile(path, register = 'EDU') {
   const text = readFileSync(path, 'utf8');
   const parsed = parseBlocks(text);
-  const blocks = parsed.map((b) => ({ ...b, kind: blockKind(b.body) }));
+  const fk = fileKind(parsed);
+  const blocks = parsed.map((b) => ({ ...b, kind: blockKind(b.body, fk) }));
   const rows = blocks.map((b) => ({ head: b.head, kind: b.kind, problems: lintBlock(b.body, register) }));
 
   const kirmizi = rows.filter((r) => r.problems.some((p) => p.level === 'kirmizi'));
@@ -475,11 +508,16 @@ export function lintFile(path, register = 'EDU') {
   }
 
   const metrics = corpusMetrics(blocks);
+  // `kareOzelOran` KIRMIZI DEĞİL — bilgidir. Kanıtla sınandı ve DÜŞTÜ (Codex denetimi 2026-07-29):
+  // 52 revize alan Bileşke %97, az revize alan Sürtünme %47 veriyor — yani revizeyi TERS yönde
+  // "öngörüyor". Ayrıca eşik (cümlenin blokların %80'inde tekrarı) dosya uzunluğuna duyarlı:
+  // aynı dosya ilk 10 karede %35, 20 karede %62, 52 karede %97 çıkıyor. Doğrulanmamış bir metriği
+  // kırmızı yakmak, tam da bu linterde söktüğümüz hastalık olurdu. Ölçülüp basılır, hüküm vermez.
   if (metrics && metrics.kareOzelOran < KARE_OZEL_MIN) {
-    kirmizi.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{
-      kind: 'korpus', key: 'kare-ozel', level: 'kirmizi',
-      msg: `kare-özel oran %${Math.round(metrics.kareOzelOran * 100)} (alt sınır %${KARE_OZEL_MIN * 100})`,
-      why: 'Bileşke %35 → 52 karenin 34\'ü revize (%65). Boilerplate büyüdükçe kare kendi sahnesini anlatmayı bırakıyor.' }] });
+    sari.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{
+      kind: 'korpus', key: 'kare-ozel', level: 'sari',
+      msg: `kare-özel oran %${Math.round(metrics.kareOzelOran * 100)} — boilerplate ağır olabilir`,
+      why: 'DOĞRULANMAMIŞ metrik: revize sayısıyla korelasyonu ölçülmedi, dosya uzunluğuna duyarlı. Ajan gözle baksın.' }] });
   }
   if (metrics && metrics.negVar >= 3 && metrics.negOzel < 0.5) {
     kirmizi.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{

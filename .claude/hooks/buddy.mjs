@@ -199,7 +199,11 @@ const main = async () => {
   // daima >=3 prompt bulunur → guard SÜREKLİ kapalı kalır → teklif HİÇ doğmaz. Yani duvar,
   // yükün en yüksek olduğu tek durumda susuyordu. Guard mutlak değil ERTELEYİCİdir: bitişik
   // aktif süre yük tavanını aştıysa hiperfokusun KENDİSİ yük sinyalidir ve guard düşer.
-  // Israrsızlık düşmez — COOLDOWN ve gap tavanın üstünde de aynen geçerli, blok başına tek teklif.
+  // Israrsızlık düşmez — COOLDOWN ve gap tavanın üstünde de aynen geçerli.
+  // DÜRÜST SINIR (Codex denetimi 2026-07-29): garanti "blok başına tek teklif" DEĞİL, "45 dakikada
+  // en fazla bir teklif". Blok/ret/yanıtsızlık durumu tutulmuyor; 3 saatlik tek bir oturumda
+  // teorik olarak iki teklif doğabilir. Israrsızlığı blok düzeyinde garanti etmek `lastOfferMs`
+  // yanına ret sayacı ister — ölçülmeden eklenmez.
   const yukTavani = st.activeMs >= HARD_ACTIVE_MS;
   const ok =
     st.activeMs >= ACTIVE_THRESHOLD_MS && // 25dk aktif oturum doldu

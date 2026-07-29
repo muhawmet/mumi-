@@ -55,71 +55,125 @@ Eski linter **kalıbı** ölçüyordu, **işlevi** değil.
 | MOTION dosyası start-frame gibi lintlenmiyor | 58 karelik dosya |
 
 **Eklenen gerçek ölçümler (eskiden HİÇ yoktu):**
-- **kare-özel oran** — Bileşke %35 → 52 karenin 34'ü revize. Tek sayı, en güçlü sinyal.
-- **NEGATIVE kare-özelliği** — Bileşke 52/52'de NEGATIVE VAR ama kare-özel **%0**.
+- **NEGATIVE kare-özelliği** — satırın varlığı ölçülüyordu, işi ölçülmüyordu. Ayrım net:
+  Üreme %100 · Sürtünme %100 · Sabit Sürat %23 · **Bileşke %0**.
+- **STYLE kelime tavanı** — `\Z` JS'te yok, regex sessizce kırıktı, tavan HİÇ ateşlemiyordu.
+  Ölçüldüğünde: Üreme 86-116 · Sabit Sürat 68-116 · Sürtünme 125 · **Bileşke 148-243**.
 - **text-hece** — yazı taşıyan karede harf-harf + diakritik (revizenin %35'i bu sınıf).
-- **STYLE kelime tavanı** artık gerçekten ölçülüyor (`\Z` JS'te yok — regex sessizce kırıktı).
 - `--all` artık ADA değil **İÇERİĞE** bakıyor: sidecar ve tekil kare dosyaları da taranıyor.
 
 **Üç kat:** KIRMIZI (kanıtlı) · SARI (ajan baksın, iddia değil) · KAPSAM (ölçülmeyenler yazılı).
 
-**Ayırt etme kanıtı:**
+**Ayırt etme kanıtı (Codex denetimi sonrası düzeltilmiş sayılar):**
 | | Üreme (en iyi) | Bileşke (52 revize) |
 |---|---|---|
 | temas | 50/50 | 0/52 |
 | text-hece | 14/14 | 0/14 |
 | NEGATIVE kare-özel | %100 | %0 |
-| STYLE sürüm | 1 (20 kelime) | 7 (189-284 kelime) |
+| STYLE kelime | 86-116 | 148-243 |
 
 ### 6 · Beş giriş kapısı (commit `51f09e2`)
 1. `AGENTS.md`+`CODEX.md` 1337 satırlık arşivi "her oturumda oku" diyordu → `current-work.json`.
-2. `mamilas-director` ↔ `mamilas-uret` aynı tetikte çarpışıyordu → ayrıldı (director = İCRAAT varsayılanı).
-3. `current-work kapat` **sıfır ön koşulla** kapatıyordu → eksik kit/medya/bloke/açık karar varsa kapanmıyor (`--zorla` kaçışı).
+2. `mamilas-director` ↔ `mamilas-uret` aynı tetikte çarpışıyordu → ayrıldı.
+3. `current-work kapat` **sıfır ön koşulla** kapatıyordu → eksik kit/medya/bloke/açık karar varsa kapanmıyor.
 4. KİT matcher'ı yalnız `kaba-kurgu.xml` arıyordu; gerçek adlar `— kaba kurgu.xml` ve `_KURGU.xml`.
-5. `buddy.mjs` hiperfokus guard'ı **AND** olarak duruyordu: 3 saat kesintisiz çalışıp her 2-3 dk
-   prompt atınca pencerede daima ≥3 prompt bulunur → teklif **HİÇ** doğmaz. Duvar, yükün en yüksek
-   olduğu tek durumda susuyordu. Artık **erteleyici**: 120 dk bitişik aktif sürede guard düşer,
-   ısrarsızlık (45 dk) ve doğal boşluk düşmez.
+5. `buddy.mjs` hiperfokus guard'ı **AND** olarak duruyordu → yükün en yüksek olduğu tek durumda
+   susuyordu. Artık erteleyici: 120 dk bitişik aktif sürede guard düşer.
 
 **Sürpriz bulgu:** kayıt bayatmış — VO üretilmiş (10:32 · 11:13), `KURGU.xml` yazılmış (11:15),
 Premiere render alınmış (**Üreme.mp4 504 MB, 11:41**). Kayıt diske hizalandı.
 
-### 7 · Giriş sözleşmeleri üretime kuruldu (commit `80897c4`)
-`CLAUDE.md` · `AGENTS.md` · `faz-icraat.md`. Düzeltilen **yanlış** ifadeler:
+### 7 · Giriş sözleşmeleri üretime kuruldu (commit `80897c4`, `5f6c5aa`)
+`CLAUDE.md` · `AGENTS.md` · `faz-icraat.md` · `.claude/rules/core-prompt-path.md`.
+Düzeltilen **yanlış** ifadeler:
 - *"Site ve src/core deterministik karar akışı doğruluk kaynağıdır"* → **site TARİF üretir, prompt'u AJAN yazar.**
+- *"Bu dosyalar motor prompt'unu üretir"* (katman yasası) → üretmiyorlar; oradaki düzeltme bugün
+  teslim edilen hiçbir kareyi değiştirmez.
 - *"gerçek `generateBatch` çıktısı üret ve gözle oku"* → o metin motora gitmiyor; kanıt **teslim metnidir**.
 - Durum kaydı `EXECUTION_STATE` → `current-work.json`.
 
-Eklenen yasalar: arşiv kıstas değil · üretimden önce ölç (`dunya-kilidi` → yaz → `prompt-lint` → bas) ·
-yeşil ≠ temiz · kapanış ölçülür.
+### 8 · Hafıza üretime temizlendi (commit `b42ea6d`)
+13 inşa kaydı `archive/`e taşındı (silme yok), 13 bayat satır düzeltildi, MEMORY.md **71 → 56 satır**.
+11 dosyada arşive giden ölü `[[wikilink]]` canlı karşılığına çevrildi. İki depo eşit (35/35).
 
-**Kapı:** `tsc` 0 hata · `vitest` **2195 PASS / 0 FAIL** · `build` OK.
+### 9 · Öğrenme halkası — oy pusulası (commit `d947b01`)
+47 aday → **12 ders**. Bankanın neden boş kaldığı ortaya çıktı: adayların çoğu **ders değildi**,
+PROMPT-YASASI'nda zaten yazılıydı (elenen 10 maddenin 9'u bu sebeple). `agents/lessons/ONAY-BEKLEYEN.md`
+— Mami her satıra ✅/❌ koyar, ajan taşır. `APPROVED.md`'ye dokunulmadı.
+
+### 10 · Dünya kilidi emitter'ı (commit `3640aa1`)
+`node scripts/dunya-kilidi.mjs <worldId>` → yapıştırmaya hazır STYLE / LIGHT AND PALETTE / NEGATIVE.
+Süpürme: **46/46 dünya · çökme 0 · tavan aşan 0 · ham hex 0** · STYLE 68-90 kelime (ort. 86).
+Dürüst eksik: `overscale` kilidi 90 kelimelik bütçeye sığmıyor (kütüphanenin sorunu) · puanlama
+sezgisel · vitest yüzeyi yok.
+
+Aynı turda: lint raporu tekrar eden kusuru tek satırda topluyor (Kuvvet'te 45 satır → 1 mesaj) ·
+`Kuvvet ve Kuvvetin Ölçülmesi`'ndeki iki rakip teslim `HASAT.json` ile BEYAN edildi (dosya
+silinmedi), hasat 🔴 → ✅ · kapı bir testin diskin eski halini kilitlediğini yakaladı, test
+silinmedi, **mekanizmayı** ölçecek hale getirildi + yeni negatif test eklendi.
+
+### 11 · BAĞIMSIZ DENETİM — codex (ikinci göz)
+`codex exec -s read-only` ile bugünün tüm commit'leri denetlendi. **11 bulgu, 7'si gerçek.**
+Hepsi kapatıldı:
+
+| # | Bulgu | Sonuç |
+|---|---|---|
+| 1 | `dunya-kilidi.mjs` HEAD'de yok (untracked) | commit edildi |
+| 2 | MOTION tespiti dar — 58 bloğun 51'i hâlâ start-frame sayılıyordu | **dosya düzeyi** tespite geçildi: `STYLE:` taşımayan dosya start-frame dosyası değildir |
+| 3 | `kare-özel oran` dosya uzunluğuna duyarlı | **KIRMIZI'dan SARI'ya düşürüldü** — aşağıya bak |
+| 4 | Bileşke `FIREWALL NEGATIVE:` yazıyor, linter göremiyordu | desen genişletildi → neg 0/52 → **52/52** |
+| 5 | `face` deseni **`surface`** içinde eşleşiyor | `\b` eklendi — yüzey sheen'i artık ten kusuru sayılmıyor |
+| 6 | temas ailesi `contact plane touching` / `surfaces MUST touch` kabul etmiyordu | eklendi → Sürtünme 1/31 → 5/31 |
+| 7 | `bearsText` `"200 g"` gibi yazıyı kaçırıyordu | sayı+birim deseni eklendi |
+| 9 | kapanış kapısı `deliverablesOverride` ile `--zorla`sız atlatılabiliyordu | **kapıda override kaldırıldı** — kapı yalnız diski okur |
+| 10 | buddy "blok başına tek teklif" garantisi yanlış | yorum **dürüst sınıra** çekildi: 45 dakikada en fazla bir teklif |
+
+**En değerli bulgu — kendi metriğimi çürüttü.** `kare-özel oran` revizeyi **ters yönde**
+"öngörüyordu": 52 revize alan Bileşke %97, az revize alan Sürtünme %47. Doğrulanmamış bir metriği
+kırmızı yakmak, tam da bu linterde söktüğüm hastalık olurdu. SARI'ya düşürüldü ve dosya başlığındaki
+iddia silinmedi, **düzeltildi**. Gerçekten ayıran iki metrik kaldı: NEGATIVE kare-özelliği ve
+STYLE kelime tavanı — ikisi de revize sırasıyla aynı yönde.
+
+**Kapı:** `tsc` 0 hata · `vitest` **2196 PASS / 0 FAIL** · `build` OK.
 
 ---
 
 ## DÜRÜST SKOR — ölçüleni say, ölçülmeyeni sayma
 
 Puanlama kuralı: **kanıtı olmayan boyuta puan verilmez.** Yeşil test kalite kanıtı değildir.
+Puanlar rubriksizdir ve mühendislik hükmüdür — Codex bunu haklı olarak işaretledi; sayı değil
+yanındaki **kanıt sütunu** okunmalıdır.
 
 | Boyut | Önce | Şimdi | Kanıt |
 |---|---|---|---|
 | Oturum açılışı / durum doğruluğu | 25 | **88** | 1337 satır → 35 satırlık disk-ölçümlü kayıt; drift uyarıları sıfırlandı |
-| Ölçüm duvarı (prompt-lint) | 30 | **72** | ~200 sahte alarm sustu; 4 yeni gerçek ölçüm; Üreme↔Bileşke ayrımı net. **Magnific kalibrasyonu eksik** |
-| Kapanış dürüstlüğü | 10 | **90** | `kapat` sıfır koşuldan dört koşula; canlı test ⛔ verdi |
-| Yük duvarı (buddy) | 20 | **85** | Guard erteleyici; 20+ davranış testi yeşil |
+| Kapanış dürüstlüğü | 10 | **92** | sıfır koşuldan dört koşula; canlı test ⛔ verdi; override kaçağı kapatıldı |
+| Ölçüm duvarı (prompt-lint) | 30 | **78** | ~200 sahte alarm sustu · 7 bağımsız denetim bulgusu kapatıldı · Üreme↔Bileşke ayrımı net. **Magnific kalibrasyonu hâlâ eksik** |
+| Dünya kilidi tutarlılığı | 25 | **80** | 46/46 dünya süpürüldü, ham hex 0, STYLE ort. 86 kelime. `overscale` bütçeye sığmıyor, vitest yok |
+| Yük duvarı (buddy) | 20 | **85** | Guard erteleyici; 20+ davranış testi yeşil; garanti dürüst sınırına çekildi |
 | Skill tetik netliği | 40 | **85** | director/uret çakışması ayrıldı, ikizler eşit |
-| Dünya kilidi tutarlılığı | 25 | **ölçülmedi** | emitter yazılıyor, doğrulanmadı |
-| Öğrenme halkası | 10 | **10** | `APPROVED.md` hâlâ **sıfır ders**; 6 hasat dosyası bekliyor. **Dokunulmadı** |
+| Öğrenme halkası | 10 | **35** | 47 aday → 12 satırlık oy pusulası. Mekanizma açıldı, **halka kapanmadı** — Mami onaylayana kadar banka boş |
 | Kör tercih (A/B) | — | **KANIT YOK** | tek kör karşılaştırma yapılmadı |
-| Revize azalması | — | **KANIT YOK** | yeni gate'lerle tek video üretilmedi |
+| Revize azalması | — | **KANIT YOK** | yeni kapılarla tek video üretilmedi |
 | Cross-world | — | **KANIT YOK** | 46 dünyanın 45'i hâlâ kare görmedi |
 
-**Ölçülen 6 boyutun ortalaması: 71,7 / 100.**
-**Dürüst toplam hüküm: 72 / 100** — ve bu tavan, üç boyutta **sıfır kanıt** olduğu için
-yükseltilemez. 90-95 bandı, yeni kapılarla **gerçek bir video üretilip** revize sayısı ölçülmeden
-iddia edilemez; o iddiayı bugün yazmak "yeşil ama boş" kapısının kendisi olurdu.
+**Ölçülen 7 boyutun ortalaması: 77,6 / 100 → dürüst hüküm: 78 / 100.**
+(Oturum başı: 72. Bağımsız denetim + dünya kilidi + ders pusulası +6 getirdi.)
+
+Bu tavan üç boyutta **sıfır kanıt** olduğu için yükseltilemez. 90-95 bandı, yeni kapılarla
+**gerçek bir video üretilip** revize sayısı ölçülmeden iddia edilemez; o iddiayı bugün yazmak
+"yeşil ama boş" kapısının kendisi olurdu.
 
 **90-95'e giden üç şey, sırayla:**
-1. Magnific'teki Üreme promptları → lint kalibrasyonu kapanır (Mami'de).
-2. `APPROVED.md`'ye ders taşınması → öğrenme halkası kapanır (Mami onaylar, ajan taşır).
-3. Yeni kapılarla bir video → revize azalması ölçülür (4 video sırada).
+1. Magnific'teki Üreme promptları → lint kalibrasyonu kapanır *(Mami'de)*.
+2. `ONAY-BEKLEYEN.md`'ye ✅/❌ → öğrenme halkası kapanır *(Mami'de, 12 satır)*.
+3. Yeni kapılarla bir video → revize azalması ölçülür *(4 video sırada)*.
+
+## Mami döndüğünde bilmesi gerekenler
+
+- **Video bitmiş görünüyor:** Üreme render'ı alınmış (504 MB, 11:41). Kayıt "Mami onayı bekliyor" diyor.
+- **Kit'te MOTION eksik** — 50 klip üretilmiş ama `_MOTION.txt` hiç yazılmamış. Kapanış onda duruyor;
+  gerçekten kabul ediliyorsa `current-work.mjs kapat --zorla`.
+- **INBOX boş.** 4 video için 4 kaynak (senaryo/docx) getirmen gerekiyor.
+- **`Kuvvet MİRA` klasörü ERROR** — promptları kardeş klasörde (`Kuvvet ve Kuvvetin Ölçülmesi`).
+  İki klasör aynı videonun iki sürümü. Birleştirme senin kararın; ajan dosyanı taşımaz.

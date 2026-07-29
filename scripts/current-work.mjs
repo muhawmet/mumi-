@@ -514,7 +514,11 @@ function cmdKapat(root, argv = []) {
   // Kayıt iddia eder, DİSK kanıtlar: kit taraması ve medya sayımı ham dosyadan okunur.
   if (!hasFlag(argv, '--zorla')) {
     const engel = [];
-    const kit = { ...scanDeliverables(root, s.projectPath), ...(s.deliverablesOverride ?? {}) };
+    // KAPIDA OVERRIDE YOK. `deliverablesOverride` kayıt/görüntü içindir; onu buraya bindirmek
+    // kapıyı `kit MOTION=var` yazarak `--zorla`sız atlatılabilir yapıyordu (Codex denetimi
+    // 2026-07-29) — yani kapının kendi yorumu ("kayıt iddia eder, DİSK kanıtlar") yalandı.
+    // Kapı yalnız diski okur; kabul edilen eksik yalnız `--zorla` ile geçer ve o görünür kalır.
+    const kit = scanDeliverables(root, s.projectPath);
     const kosullu = new Set(KIT.filter((k) => k.kosullu).map((k) => k.key));
     const eksikKit = Object.entries(kit).filter(([k, v]) => !v && !kosullu.has(k)).map(([k]) => k);
     if (eksikKit.length) engel.push(`KİT eksik → ${eksikKit.join(' · ')}`);
