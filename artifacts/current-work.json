@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "34/34 denetlendi (6 ajan, gözle): 9 TEMİZ · 19 referans-edit · 6 baştan üret. Kök kusur bulundu: TEXT kuyruğundaki 'Turkish or blank' motorun yazdığı metne dönüşmüş (5 sekans, 14 kare) — 34 kareden söküldü. Kırmızı çizgi ihlali YOK.",
-  "nextAction": "Mami molada. Motion 9 temiz kare için yazılıyor. Mami dönünce: revize.txt'i bas (19 edit + 6 tam prompt), gelen kareler denetlenir, sonra onların motion'ı",
+  "lastCompleted": "MOTION yazıldı: 9 temiz karenin tamamı (K01 K08 K10 K13 K20 K24 K27 K28 K31), hepsi gözle açılıp doğrulandı. Mami'nin onayladığı kalıp: açılış hâli→eylem tutuyor→bitiş hâli→canlı katman→Camera→Frame lock→sessizlik kuyruğu",
+  "nextAction": "Mami dönünce: (1) revize.txt'i bas — 19 referans-edit + 6 tam prompt, (2) yeni kareler gelince denetim turu 2, (3) sonra kalan 25 karenin motion'ı. Açık 2 karar revize.txt başında: yama sağ göğüs+yuvarlak rozet · K13 bokeh silueti",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -13,13 +13,13 @@
     "REFERANSLAR": false,
     "PROMPTLAR": true,
     "revize": true,
-    "MOTION": false,
+    "MOTION": true,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-29T12:33:31.293Z",
+  "updatedAt": "2026-07-29T12:39:49.097Z",
   "updatedBy": "claude",
-  "baseCommit": "16b274b"
+  "baseCommit": "e57b973"
 }
