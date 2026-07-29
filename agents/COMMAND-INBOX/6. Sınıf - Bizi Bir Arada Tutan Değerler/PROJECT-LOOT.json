@@ -200,6 +200,28 @@
       },
       "carryForward": false,
       "approvedAt": null
+    },
+    {
+      "id": 13,
+      "text": "Motion'da slow/eased varsayılan olamaz: 34 kamera cümlesinin 34'ü slow ya da eased ya da locked, yalnız 2'sinde kararlı vuruş sözcüğü var. Her sekansta en az bir shot kararlı vuruş taşır, kesimler arası tempo değişir — vuruş arka planı kalabalık olmayan kadrajda yapılır",
+      "evidenceStrength": {
+        "framesCovered": 34,
+        "repeatCount": 34,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
+    },
+    {
+      "id": 14,
+      "text": "Morphing riskini düşürmek için hareketi kısmak bir TAKAS'tır ve Mami'ye söylenmelidir: temiz bulunan klipler kameranın kıpırdamadığı klipler, hareket edenlerde arka plan eridi — teknik güvenlik sessizce satın alınırsa Mami dull sonucu görür ve nedenini bilmez",
+      "evidenceStrength": {
+        "framesCovered": 34,
+        "repeatCount": 5,
+        "beforeAfter": false
+      },
+      "carryForward": false,
+      "approvedAt": null
     }
   ],
   "interview": {
