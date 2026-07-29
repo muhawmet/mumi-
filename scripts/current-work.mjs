@@ -51,7 +51,10 @@ export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
 export const KIT = [
   { key: 'REFERANSLAR', ends: ['_referanslar.txt'] },
   { key: 'PROMPTLAR', ends: ['_promptlar.txt', '_promptlar.md'] },
-  { key: 'revize', ends: ['_revize.txt'] },
+  // KOŞULLU: yasa (faz-icraat) *"sorunsuz kareye revize YOK — tek satırlık 'temiz' listesi yeter"*
+  // diyor. Sıfır revize alan bir set için dosya hiç doğmaz; onu kapanış şartı yapmak, temiz işi
+  // eksik ilan etmek olurdu. Karnede görünür, kapıyı tutmaz.
+  { key: 'revize', ends: ['_revize.txt'], kosullu: true },
   { key: 'MOTION', ends: ['_motion.txt', '_motion.md'] },
   { key: 'EDIT-PLAN', ends: ['_edit-plan.txt'] },
   { key: 'SESLENDIRME', ends: ['_seslendirme.txt'] },
@@ -512,7 +515,8 @@ function cmdKapat(root, argv = []) {
   if (!hasFlag(argv, '--zorla')) {
     const engel = [];
     const kit = { ...scanDeliverables(root, s.projectPath), ...(s.deliverablesOverride ?? {}) };
-    const eksikKit = Object.entries(kit).filter(([, v]) => !v).map(([k]) => k);
+    const kosullu = new Set(KIT.filter((k) => k.kosullu).map((k) => k.key));
+    const eksikKit = Object.entries(kit).filter(([k, v]) => !v && !kosullu.has(k)).map(([k]) => k);
     if (eksikKit.length) engel.push(`KİT eksik → ${eksikKit.join(' · ')}`);
     for (const m of (s.requiredLocalMedia ?? [])) {
       const sc = scanMedia(m);
