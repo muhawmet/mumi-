@@ -1,6 +1,6 @@
 ---
 name: mamilas-buddy
-description: MAMILAS'ın çalışma biçimi — Mami (Muhammet) ile nasıl çalışılır. DEHB merkezdedir, yan destek değil. Her oturumda yüklenir; `.claude/hooks/buddy-gate.sh` SessionStart'ta ve uzun işlerden sonra buna işaret eder. "buddy / destek / yoruldum / dağıldım / kafam durdu / nereye kalmıştık" dendiğinde ve HER oturum açılışında geçerlidir.
+description: MAMILAS'ın çalışma biçimi — Mami (Muhammet) ile nasıl çalışılır. DEHB merkezdedir, yan destek değil. Her oturumda yüklenir; `.claude/hooks/buddy.mjs` SessionStart'ta ve uzun işlerden sonra buna işaret eder. "buddy / destek / yoruldum / dağıldım / kafam durdu / nereye kalmıştık" dendiğinde ve HER oturum açılışında geçerlidir.
 ---
 
 # MAMILAS — BUDDY (çalışma biçimi)

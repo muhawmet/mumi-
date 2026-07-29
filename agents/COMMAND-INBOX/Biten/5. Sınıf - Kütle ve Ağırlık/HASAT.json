@@ -1,0 +1,10 @@
+{
+  "schema": "mamilas.harvest.manifest.v1",
+  "promptParts": [
+    "Kütle ve Ağırlık_PROMPTLAR.txt",
+    "Kütle ve Ağırlık_CODEX-KALAN-START-FRAMELER.txt"
+  ],
+  "revizeParts": ["revize.txt"],
+  "frameTotal": 35,
+  "not": "Prompt iki parça teslim edildi (K01-K08 Claude Intro seti + K09-K35 Codex). 8 kare projenin tamamı DEĞİLDİR — hasat 2026-07-28'de yalnız ilk parçaya bakıp '8 kare, eksik yok' yazmış, revize oranını da 8'e bölüp %388 üretmişti. Bölünmüş teslim koda tahmin ettirilmez, burada beyan edilir."
+}

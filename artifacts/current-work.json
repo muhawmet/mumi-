@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "projectId": "6. Sınıf - Eşeyli ve Eşeysiz Üreme",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
+  "phase": "kurgu",
+  "status": "bloke",
+  "lastCompleted": "50/50 klip Kling 3.0 ile üretildi ve diske indi (~/Desktop/6. Sınıf Animasyonlar/... · 29 Tem 09:11–09:16).",
+  "nextAction": "ElevenLabs kredisi gelince VO'nun 1:29 sonrası üretilir; sonra kaba-kurgu.mjs koşar ve KABA-KURGU.xml kite girer.",
+  "openMamiDecision": "ses1.wav ve ses2.wav BİREBİR AYNI dosya (md5 6bfbd9ac48df461dfd2a74d463e64129, ikisi de 88.6s). İkinci parça hiç inmedi mi, yoksa aynı dosya iki kez mi indi?",
+  "blockedBy": "ElevenLabs kredisi bitti — VO 88.6s'de kesiliyor (EDIT-PLAN cetvelinde K18 ortası), plan ~4:06.",
+  "requiredLocalMedia": [
+    {
+      "path": "~/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
+      "expect": { "clips": 50, "vo": 1, "muzik": 0 },
+      "note": "repo dışı — git-ignore değil, hiç repoda değil. Suno müziği henüz indirilmedi."
+    }
+  ],
+  "deliverables": {
+    "REFERANSLAR": true,
+    "PROMPTLAR": true,
+    "revize": false,
+    "MOTION": false,
+    "EDIT-PLAN": true,
+    "SESLENDIRME": true,
+    "SUNO": true,
+    "KABA-KURGU.xml": false
+  },
+  "updatedAt": "2026-07-29T09:40:00Z",
+  "updatedBy": "claude",
+  "baseCommit": "4050088"
+}

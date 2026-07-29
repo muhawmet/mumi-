@@ -1,10 +1,66 @@
+<!-- mamilas.harvest.v1
+{
+  "schema": "mamilas.harvest.v1",
+  "parserVersion": "kapanis-hasadi@3",
+  "promptLintVersion": "prompt-lint@b0249ceb",
+  "harvestedAt": "2026-07-29T07:21:19.531Z",
+  "project": {
+    "dir": "5. Sürtünme",
+    "id": "7ecefbc2fcd8103e"
+  },
+  "sources": {
+    "prompt": [
+      {
+        "file": "5. Sınıf - Sürtünme_PROMPTLAR.txt",
+        "sha256": "efea0b732506ca6ec4ee40e28fbb13fccdf5843369084aa973c44d1000caea8a",
+        "bytes": 89036,
+        "frames": 31
+      }
+    ],
+    "revize": [],
+    "command": {
+      "file": "5. Sınıf - Sürtünme_mamilas_command.json",
+      "sha256": "345d25f146827d01e176a66ce2ab64a7a46f1171f9cf8340e77c1b077d6bd04c"
+    },
+    "manifest": null
+  },
+  "excluded": [],
+  "metrics": {
+    "frameTotal": 31,
+    "frameTotalSource": "prompt-parts",
+    "revisedBlocks": 0,
+    "revisedUniqueFrames": 0,
+    "cleanDeclared": null,
+    "revizeRatio": null,
+    "multiRound": null
+  },
+  "status": "OK",
+  "errors": [
+    "REVIZE_NONE: Revize dosyası bulunamadı (bilgi — hata değil)"
+  ]
+}
+-->
+
 # KAPANIŞ HASADI — 5. Sürtünme
 
-Kaynak: `agents/COMMAND-INBOX/Biten/5. Sürtünme/` · hasat: 2026-07-27
+Kaynak: `agents/COMMAND-INBOX/Biten/5. Sürtünme/` · hasat: 2026-07-29 · parser: `kapanis-hasadi@3`
 
 **Bu dosya banka DEĞİL.** Her satır ADAY. `agents/lessons/APPROVED.md`'ye yalnız Mami taşır
 (M7 yasası: otomatik promote yok — çöp ders sistemi zehirler). Kabul ettiğin ders satırını
 olduğu gibi taşı, istemediğini burada bırak.
+
+## 0 · Ölçüm durumu — **OK**
+
+| kanal | seçilen kaynak |
+|---|---|
+| prompt (discovery) | `5. Sınıf - Sürtünme_PROMPTLAR.txt` |
+| revize (discovery) | **YOK** |
+| command | `5. Sınıf - Sürtünme_mamilas_command.json` |
+| manifest | — |
+
+**Notlar:**
+
+- REVIZE_NONE: Revize dosyası bulunamadı (bilgi — hata değil)
 
 ## 1 · Yapısal karne (prompt-lint)
 
@@ -58,8 +114,8 @@ olduğu gibi taşı, istemediğini burada bırak.
 
 ## 2 · Ders adayları (revize turundan)
 
-⚠️ Revize dosyası yok. **Bu revize turunun hiç yapılmadığı anlamına gelir** — kare
-denetimi geçilmemiş bir video "biten" sayılmıştır. Ders çıkmaz çünkü kanıt yok.
+⚠️ Revize dosyası bulunamadı. İki olasılık ayrılamıyor: **(a)** revize turu yapılmadı,
+**(b)** video sıfır revize aldı. Hüküm verilmiyor — Mami'ye soruluyor.
 
 ## 3 · Dünya kusuru → kütüphane
 

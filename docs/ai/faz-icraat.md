@@ -12,20 +12,27 @@ prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
 
 ## Oturum açılışı — bu sırayla
 
-1. `agents/PROMPT-YASASI.md` — **birinci sırada.** Prompt yazmadan önce okunur; ezberden yazılmaz.
+0. **Hook `[durum]` bloğunu basar** — aktif iş, faz, biten, sıradaki tek adım, bloke, Mami'nin
+   açık sorusu, kit eksiği, medya sayımı. Kaynağı `artifacts/current-work.json`; **bu KAYITTIR,
+   tahmin değil.** Sohbet hafızası ile çelişirse KAYIT kazanır. Elle okumaya gerek yok, ama
+   güncellemek zorunlu: `node scripts/current-work.mjs ilerle --bitti "..." --sirada "..."`.
+1. `agents/PROMPT-YASASI.md` — prompt yazılacaksa **birinci sırada**; ezberden yazılmaz.
    **§0.5 register** (REAL/EDU/STY) · **§2R** REAL start-frame · **§3R** REAL motion.
    Hangi register'da çalıştığını bilmeden kare yazma — EDU'nun "sıcak mat ten"i REAL'de o
    dünyanın kendi negatifini ihlal eder.
-2. `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — hangi video nerede kaldı.
-3. `agents/lessons/APPROVED.md` — Mami-onaylı ders bankası. Boşsa hiçbir şey olmaz.
-4. `agents/COMMAND-INBOX/` — hangi command JSON'lar bekliyor. **Mami'ye hangisi diye sor**,
-   sessiz seçme.
+2. `agents/lessons/APPROVED.md` — Mami-onaylı ders bankası. Boşsa hiçbir şey olmaz.
+3. **Kayıtta aktif iş yoksa** `agents/COMMAND-INBOX/` — **Mami'ye hangisi diye sor**, sessiz
+   seçme. Hook bekleyenleri sayar ama **karar vermez**.
+
+Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` —
+**arşiv, otorite DEĞİL**, normal oturumda okunmaz.
 
 ## Bu fazın yürütmesi
 
 | Ne zaman | Ne çalışır |
 |---|---|
-| Yeni video başlarken | `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
+| **Her iş parçası bitince** | `node scripts/current-work.mjs ilerle --bitti "<ölçülmüş>" --sirada "<tek eylem>"` — kayıt bayatlarsa sonraki oturum sıfırdan başlar |
+| Yeni video başlarken | `node scripts/current-work.mjs baslat "<proje>"` + `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
 | Prompt yazıldıktan sonra | `node scripts/prompt-lint.mjs <dosya> --register=real|edu|sty` — eksik slot kalmasın |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |

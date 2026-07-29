@@ -3,30 +3,21 @@
   "schema": "mamilas.harvest.v1",
   "parserVersion": "kapanis-hasadi@3",
   "promptLintVersion": "prompt-lint@b0249ceb",
-  "harvestedAt": "2026-07-29T07:21:19.573Z",
+  "harvestedAt": "2026-07-29T07:21:19.563Z",
   "project": {
-    "dir": "Kuvvet ve Kuvvetin Ölçülmesi",
-    "id": "9f1b701cab13a456"
+    "dir": "Kuvvet MİRA",
+    "id": "10ee1cdef997e30c"
   },
   "sources": {
     "prompt": [],
     "revize": [],
     "command": {
-      "file": "Kuvvet ve Kuvvetin Ölçülmesi_mamilas_command.json",
-      "sha256": "f1f0890b7d00faa75b2769eb5e9cc881f35b14cea0545145c34c7f6a11777ce1"
+      "file": "Kuvvet MİRA_mamilas_command.json",
+      "sha256": "ce5f6d91b830c4157753b7ab2f75a57c8f027b1591060105e41b8030cd60f0b3"
     },
     "manifest": null
   },
-  "excluded": [
-    {
-      "file": "Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md",
-      "why": "PROMPT_AMBIGUOUS: hangisi final belli değil — Mami kararı"
-    },
-    {
-      "file": "Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt",
-      "why": "PROMPT_AMBIGUOUS: hangisi final belli değil — Mami kararı"
-    }
-  ],
+  "excluded": [],
   "metrics": {
     "frameTotal": null,
     "frameTotalSource": null,
@@ -38,15 +29,15 @@
   },
   "status": "ERROR",
   "errors": [
-    "PROMPT_AMBIGUOUS: Birden çok aday final prompt dosyası var; hangisi final belli değil: Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md · Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt — HASAT.json ile bildir (promptParts)",
+    "PROMPT_MISSING: Final `_PROMPTLAR` dosyası yok — bu projenin yapısı ölçülemedi",
     "REVIZE_NONE: Revize dosyası bulunamadı (bilgi — hata değil)"
   ]
 }
 -->
 
-# KAPANIŞ HASADI — Kuvvet ve Kuvvetin Ölçülmesi
+# KAPANIŞ HASADI — Kuvvet MİRA
 
-Kaynak: `agents/COMMAND-INBOX/Biten/Kuvvet ve Kuvvetin Ölçülmesi/` · hasat: 2026-07-29 · parser: `kapanis-hasadi@3`
+Kaynak: `agents/COMMAND-INBOX/Biten/Kuvvet MİRA/` · hasat: 2026-07-29 · parser: `kapanis-hasadi@3`
 
 **Bu dosya banka DEĞİL.** Her satır ADAY. `agents/lessons/APPROVED.md`'ye yalnız Mami taşır
 (M7 yasası: otomatik promote yok — çöp ders sistemi zehirler). Kabul ettiğin ders satırını
@@ -58,22 +49,17 @@ olduğu gibi taşı, istemediğini burada bırak.
 |---|---|
 | prompt (discovery) | **YOK** |
 | revize (discovery) | **YOK** |
-| command | `Kuvvet ve Kuvvetin Ölçülmesi_mamilas_command.json` |
+| command | `Kuvvet MİRA_mamilas_command.json` |
 | manifest | — |
 
 🔴 **Ölçüm hataları — bu rapordan ders adayı ÜRETİLMEDİ:**
 
-- PROMPT_AMBIGUOUS: Birden çok aday final prompt dosyası var; hangisi final belli değil: Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md · Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt — HASAT.json ile bildir (promptParts)
+- PROMPT_MISSING: Final `_PROMPTLAR` dosyası yok — bu projenin yapısı ölçülemedi
 - REVIZE_NONE: Revize dosyası bulunamadı (bilgi — hata değil)
 
 ## 1 · Yapısal karne (prompt-lint)
 
-🔴 **İki aday final prompt dosyası var; hangisi final belli değil** — körleme seçim yapılmadı:
-
-- `Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md`
-- `Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.txt`
-
-Karar Mami'nin. Seçim `HASAT.json` içinde `promptParts` ile bildirilir.
+⚠️ `_PROMPTLAR` dosyası yok — bu projenin yapısı ölçülemedi. Ölçülmemiş, temiz değil.
 
 ## 2 · Ders adayları (revize turundan)
 
@@ -84,6 +70,8 @@ Karar Mami'nin. Seçim `HASAT.json` içinde `promptParts` ile bildirilir.
 
 Dünya: **pixar_3d_edu** — Pixar 3D — Education Tier · sınıf: ANIMATION_EDU · yol: ANIMATION_EDU
 
+🔴 **Ad↔sınıf uyuşmazlığı:** proje adı "Ultra Real Commercial" reklam diyor, sınıf `ANIMATION_EDU` eğitim diyor. Hiçbir kapı söylemiyor. (FAZ 1.5 kapısı.)
+
 Bu hasatta **dünya-yerel kusur çıkmadı** — bulunan kusurların hepsi yasa/ders katmanında.
 Kütüphaneye yazılacak bir şey yok; sessiz geçilmiyor, açıkça yazılıyor.
 
@@ -91,10 +79,10 @@ Kütüphaneye yazılacak bir şey yok; sessiz geçilmiyor, açıkça yazılıyor
 
 | beklenen | durum |
 |---|---|
-| `<Ad>_REFERANSLAR.txt` | ✅ |
-| `<Ad>_PROMPTLAR.txt` | ✅ |
+| `<Ad>_REFERANSLAR.txt` | ❌ YOK (prompt yazımından ÖNCE) |
+| `<Ad>_PROMPTLAR.txt` | ❌ YOK (sekans sekans) |
 | `<Ad>_revize.txt` | ❌ YOK (denetim geçişinde) |
-| `<Ad>_MOTION.txt` | ✅ |
+| `<Ad>_MOTION.txt` | ⚠️ ad sapması: `Kuvvet MİRA_MOTION.md` |
 | `<Ad>_EDIT-PLAN.txt` | ✅ |
 | `<Ad>_SESLENDIRME.txt` | ✅ |
 | `<Ad>_SUNO.txt` | ✅ |
