@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
   "phase": "kapandi",
   "status": "kapandi",
-  "lastCompleted": "FAZ 8 kapandı: 20 commit, 2320 test yeşil. Linter işlev ölçüyor (Üreme 13→2 sahte alarm), dunya-kilidi.mjs emit ediyor (46/46 dünya, One Piece imzası bütçede), giriş sözleşmeleri üretime kuruldu, hafıza temizlendi (71→56), capability duvarı kuruldu (83 vaka), memory-sync --adopt eklendi (çok-cihaz). Skor 23→81. Codex ve Sol denetimlerinin 10 bulgusu kapatıldı.",
-  "nextAction": "YENİ VİDEO — Mami konu/kaynak getirecek. Sıra: baslat → /mamilas-enzim (4 kilit) → node scripts/dunya-kilidi.mjs <worldId> (kuyruğu BAS, elle yazma) → prompt yaz → node scripts/prompt-lint.mjs <dosya> (Mami BASMADAN ÖNCE) → Mami basar → tek geçiş denetim.",
+  "lastCompleted": "FAZ 8 kapandı (32 commit, 2320 test). FAZ 9 kararı ONAYLANDI ve yazıldı: artifacts/iq-run/FAZ-9-KARAR-PROJECT-LOOT.md — Project Loot halkası, dört Mami düzeltmesiyle.",
+  "nextAction": "ÜRETİM ÖNCE. Mami elinde .docx kaynak(lar) var. Sıra: docx'i agents/COMMAND-INBOX/ altına koy → baslat → /mamilas-enzim (4 kilit) → dunya-kilidi.mjs <worldId> (kuyruğu BAS) → prompt → prompt-lint (BASMADAN ÖNCE) → Mami basar → tek geçiş denetim. Video BİTİNCE: FAZ-9 kararını aç, Project Loot'u O PROJE üzerinde kur. ÖNCE KURMA.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [
@@ -32,7 +32,7 @@
   "deliverablesOverride": {
     "MOTION": false
   },
-  "updatedAt": "2026-07-29T10:31:09.489Z",
+  "updatedAt": "2026-07-29T10:39:40.890Z",
   "updatedBy": "claude",
-  "baseCommit": "10af458"
+  "baseCommit": "ac57d68"
 }
