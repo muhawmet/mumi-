@@ -1,375 +1,111 @@
 BİZİ BİR ARADA TUTAN DEĞERLER — 6. Sınıf Sosyal Bilgiler (6.1.2)
-dünya: pixar_3d_edu · register: EDU · omurga: @efe + @mira'nın Kültür Yolu Festivali gezintisi
+dünya: pixar_3d_edu · register: EDU · omurga: @efe1 + @mira1'in Kültür Yolu Festivali gezintisi
 34 kare (1 VO cümlesi = 1 kare) · VO 392 kelime → 3:18 · kare başı ~5.8 sn ekranda
 
 BU DOSYA: SEKANS A — INTRO (Sahne 1 + Sahne 2) · K01-K05
-Mami basar, beğenirse gövde (K06-K34) altı ajana bölünür.
+----- ayraçlarının ARASI olduğu gibi kopyalanır. İçi tamamen İngilizce; Türkçe yalnız
+ekranda çıkacak kelimelerin kendisidir. Ayraç dışındaki her satır senin içindir, prompta girmez.
 
 
 ═══════════════════════════════════════════════════════════════
-YENİ REFERANSLAR — bu iki tag 2+ karede dönüyor, ÜRETİMDEN ÖNCE basılır
+BÖLÜM 1 — REFERANSLAR · sırayla bas, adlarını sen ver
 ═══════════════════════════════════════════════════════════════
 
-### REF-A | @festival_alani — K01, K02, K34'te döner
+REF-1 → bas, adını @efe1 ver        (K01, K03, K05 + gövdenin tamamı)
+REF-2 → bas, adını @mira1 ver       (K01-K05 + gövdenin tamamı)
+REF-3 → bas, adını @festival ver    (K01, K02, K34)
+REF-4 → bas, adını @harita ver      (K03, K04, K05)
+
+KOSTÜM YASASI — bir kez kurulur, sonra hiç tarif edilmez:
+tulumun SİLUETİ karakterin imzasıdır. Sonraki videolarda tulum aynı kalır, yalnız göğüs
+ambleminin işlemesi konuya göre değişir. O geçişin tek satırlık kalıbı bu dosyanın en altında.
+
+
+REF-1 · @efe1
 -----
-[1 LENS]      35mm lens at f/5.6, eye-level wide three-quarter view
-[2 ÖZNE]      — the entrance ground of an outdoor Turkish culture festival, empty of main cast
-[4 MEKÂN]     The setting is a late-afternoon festival ground on paved stone: a tall carved
-              wooden entrance arch spanning the path, rows of open craft stalls with striped
-              canvas awnings in warm red and cream, a raised low wooden stage at the far end,
-              strings of small round paper lanterns crossing overhead, plane trees on both sides
-[5 IŞIK]      low warm late-afternoon sun raking in from frame left through the plane-tree
-              leaves, dappled and motivated; cool indigo bounce fill from the shaded stone
-              underfoot at 30%; a warm rim along the top edge of the wooden arch
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: the striped awnings lifting in a light
-              breeze, the paper lanterns turning slowly on their string, dust motes in the
-              raking sun
-[8 DERİNLİK]  Depth in three layers — out-of-focus lantern string in the near foreground, the
-              sharp carved arch and stalls in the middle, soft bokeh of the far stage behind.
-[9 TEMAS]     Every object rests in contact with its surface and casts a soft contact shadow.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, subsurface scattering on character skin that carries the scene's light temperature,
-every prop has a deliberate overscale factor of 10-15% for child-safe readability, material
-specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows
-woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35%
-intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous
-physically-based shading. Silhouette reads entirely through lighting rim and value separation,
-ambient occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS
-dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range
-with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon,
-NO teal-orange Hollywood grade, NO desaturated grey anywhere. Render these as light behaviour,
-never flat fills.
-TEXT: the carved wooden arch carries the Turkish words "KÜLTÜR YOLU" (two words, ten letters,
-raised dimensional letterform cut into the wood, centred on the arch beam) · any other
-background sign soft-focus, Turkish or blank; no flag or emblem on any surface
-NEGATIVE: the arch is solid carved wood, never a flat printed banner; the ground is a dressed
-festival, never an empty plaza or white void ; NO hard-black shadow; NO 2D cel shading; NO hard
-black outlines; NO flat graphic fill; NO clay or plasticine surface texture; NO outlines; NO lens
-flare unless motivated by a visible practical light in frame; NO anamorphic streak; NO toon
-shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English
-signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human
-photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or
-real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow or
-infographic panel standing in for a real object; empty adjectives (cinematic, dynamic, stunning,
-4K); flat slide; warped or drifting text
+Full character reference of a 6th-grade Turkish Anatolian boy, around eleven or twelve, pre-teen — short dark-brown hair with a slight cowlick at the crown, warm dark-brown eyes, a round open face, sturdy build. He wears a one-piece work coverall in warm undyed bone-ecru heavy cotton canvas: a brass zip running the full front, two flat chest pockets, sleeves rolled to the elbow, madder-red topstitching along every seam, elasticated cuffs gathered at the ankle. Sewn onto the left chest at pocket height is a single embroidered oval patch worked in madder-red thread with an ivory-thread crescent and star, its edge finished in a raised satin-stitch border, loose thread ends visible and the seam slightly puckered where it is stitched down. Warm matte tan skin, low specular, never tinted green or grey. Shot on an 85mm lens at f/4.0, three-quarter hero angle, full figure centred and standing at rest, soft studio-style morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white void. Materials: heavy cotton canvas with visible woven twill diagonal and soft fiber fray at the cuff edges, brass zip with warm anisotropic highlight, embroidery thread with individual stitch relief. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — subsurface scattering on skin carrying the key's warm temperature, physically-motivated bounce fill, painted soft ambient occlusion in the seams and under the pockets, never raytraced-hard. An original character with no resemblance to any franchise or real person; no logo, no brand name, no photoreal or real-human photographic skin, no flat 2D or cel shading, no hard black outline, no clay or plasticine surface, no English text anywhere.
 -----
 
-### REF-B | @kultur_haritasi — K03, K04, K05'te döner
+REF-2 · @mira1
 -----
-[1 LENS]      50mm lens at f/4, slightly high three-quarter view looking down onto the table
-[2 ÖZNE]      — a large hand-built relief model of Türkiye standing on a heavy oak table
-[4 MEKÂN]     The setting is a shaded exhibition tent on the festival ground: the relief model
-              fills the table, its mountains sculpted in painted plaster with visible chisel
-              facets, its coastline cut clean at the table edge; small real objects sit ON the
-              model where their region is — a hand-painted blue-white ceramic bowl, a folded
-              woven kilim the size of a hand, a hammered copper coffee pot, a small carved wooden
-              spoon, a folded embroidered headscarf; a brass oil lamp at the table corner
-[5 IŞIK]      warm amber light from the brass lamp as the motivated key from frame right,
-              skimming across the plaster relief so every ridge casts its own shadow; cool indigo
-              bounce from the tent canvas above at 30%; a thin warm rim along the model's coastal
-              edge
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: the lamp flame breathing, the kilim's loose
-              fringe threads, a slow drift of dust over the plaster
-[8 DERİNLİK]  Depth in three layers — out-of-focus brass lamp in the near foreground, the sharp
-              relief model and its objects in the middle, soft bokeh of tent canvas behind.
-[9 TEMAS]     Every object rests in contact with the plaster surface and casts a soft contact
-              shadow, each one slightly sunk into the relief it stands on.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, every prop has a deliberate overscale factor of 10-15% for child-safe readability,
-material specificity is non-negotiable, painted plaster shows chisel facet and matte tooth,
-hammered copper shows dented anisotropic highlight, woven kilim shows individual warp thread and
-fiber fray, wood shows visible grain with satin-varnish sheen, complementary bounce fill at
-25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous
-physically-based shading, ambient occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — ceramic in
-saturated cobalt-and-cream, copper in warm red-brown with green-tarnish only in the crevices,
-kilim in madder red and indigo, plaster in warm bone. NO acid green, NO neon, NO teal-orange
-Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
+Full character reference of a 6th-grade Turkish Anatolian girl, around eleven or twelve, pre-teen — dark wavy hair gathered in a high ponytail with loose strands falling at the temples, warm dark-brown eyes, a slim build. She wears the same one-piece work coverall as @efe1 in warm undyed bone-ecru heavy cotton canvas: a brass zip running the full front, two flat chest pockets, sleeves rolled to the elbow, madder-red topstitching along every seam, elasticated cuffs gathered at the ankle. Sewn onto the left chest at pocket height is the identical embroidered oval patch worked in madder-red thread with an ivory-thread crescent and star, its edge finished in a raised satin-stitch border, loose thread ends visible and the seam slightly puckered where it is stitched down. Warm matte tan skin, low specular, never tinted green or grey. Shot on an 85mm lens at f/4.0, three-quarter hero angle, full figure centred and standing at rest, soft studio-style morning key light with cool bounce fill and a soft floor contact shadow, against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white void. Materials: heavy cotton canvas with visible woven twill diagonal and soft fiber fray at the cuff edges, brass zip with warm anisotropic highlight, embroidery thread with individual stitch relief. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — subsurface scattering on skin carrying the key's warm temperature, physically-motivated bounce fill, painted soft ambient occlusion in the seams and under the pockets, never raytraced-hard. An original character with no resemblance to any franchise or real person; no logo, no brand name, no photoreal or real-human photographic skin, no flat 2D or cel shading, no hard black outline, no clay or plasticine surface, no English text anywhere.
+-----
+
+REF-3 · @festival
+-----
+Full location reference of the entrance ground of an outdoor Turkish culture festival, empty of any people. Shot on a 35mm lens at f/5.6, eye-level wide three-quarter view. The setting is a late-afternoon festival ground on paved stone: a tall carved wooden entrance arch spanning the path, rows of open craft stalls with striped canvas awnings in warm red and cream, a raised low wooden stage at the far end, strings of small round paper lanterns crossing overhead, plane trees on both sides. Low warm late-afternoon sun rakes in from frame left through the plane-tree leaves, dappled and motivated; cool indigo bounce fill rises from the shaded stone underfoot at thirty percent; a warm rim runs along the top edge of the wooden arch. Three things are alive in the frame: the striped awnings lifting in a light breeze, the paper lanterns turning slowly on their string, dust motes in the raking sun. Depth in three layers — an out-of-focus lantern string in the near foreground, the sharp carved arch and stalls in the middle, soft bokeh of the far stage behind. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, canvas shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — wood tones in brown-ochre range with satin sheen, canvas in warm-saturated red and cream with fiber texture, paper lanterns glowing warm from within. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere. Render these as light behaviour, never flat fills.
+TEXT: the carved wooden arch carries the Turkish words "KÜLTÜR YOLU" (two words, ten letters, raised dimensional letterform cut into the wood, centred on the arch beam) · any other background sign soft-focus, Turkish or blank; no flag, crest or emblem on any stall, wall or banner
+NEGATIVE: the arch is solid carved wood, never a flat printed banner; the ground is a dressed festival, never an empty plaza or white void ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture; NO outlines; NO lens flare unless motivated by a visible practical light in frame; NO anamorphic streak; NO toon shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow or infographic panel standing in for a real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text
+-----
+
+REF-4 · @harita
+-----
+Full object reference of a large hand-built relief model of Türkiye standing on a heavy oak table. Shot on a 50mm lens at f/4.0, slightly high three-quarter view looking down onto the table. The setting is a shaded exhibition tent on a festival ground: the relief model fills the table, its mountains sculpted in painted plaster with visible chisel facets, its coastline cut clean at the table edge; small real objects sit ON the model where their region is — a hand-painted blue-and-cream ceramic bowl, a folded woven kilim the size of a hand, a hammered copper coffee pot, a small carved wooden spoon, a folded embroidered headscarf; a brass oil lamp burns at the table corner. Warm amber light from the brass lamp is the motivated key from frame right, skimming across the plaster relief so every ridge casts its own shadow; cool indigo bounce falls from the tent canvas above at thirty percent; a thin warm rim runs along the model's coastal edge. Three things are alive in the frame: the lamp flame breathing, the kilim's loose fringe threads, a slow drift of dust over the plaster. Depth in three layers — the out-of-focus brass lamp in the near foreground, the sharp relief model and its objects in the middle, soft bokeh of tent canvas behind. Every object rests in contact with the plaster surface and casts a soft contact shadow, each one slightly sunk into the relief it stands on.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, painted plaster shows chisel facet and matte tooth, hammered copper shows dented anisotropic highlight, woven kilim shows individual warp thread and fiber fray, oak shows visible grain with satin-varnish sheen, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — ceramic in saturated cobalt-and-cream, copper in warm red-brown with green tarnish only in the crevices, kilim in madder red and indigo, plaster in warm bone. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
 TEXT: no text anywhere on the model or table · any background sign soft-focus, Turkish or blank
-NEGATIVE: the model is sculpted physical plaster on a real table, never a printed flat map, never
-a glowing screen, never a projected image; the objects are solid matter resting on it, never
-icons or symbols or floating cutouts; no borders, no province lines, no place names, no pins, no
-arrows ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill;
-NO clay or plasticine character texture; NO outlines; NO lens flare unless motivated by the lamp;
-NO toon shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO
-English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human
-photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or
-real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or
-infographic panel standing in for the real object; empty adjectives (cinematic, dynamic,
-stunning, 4K); flat slide; warped or drifting text
+NEGATIVE: the model is sculpted physical plaster on a real table, never a printed flat map, never a glowing screen, never a projected image; the objects are solid matter resting on it, never icons or symbols or floating cutouts; no borders, no province lines, no place names, no pins, no arrows ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine character texture; NO outlines; NO lens flare unless motivated by the lamp; NO toon shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text
 -----
 
 
 ═══════════════════════════════════════════════════════════════
-SEKANS A — INTRO · K01-K05
+BÖLÜM 2 — SEKANS A · INTRO · K01-K05
 ═══════════════════════════════════════════════════════════════
 
-### K01 | VO1 "Bir toplumu millet yapan ve o toplumun bütünlüğünü sağlayan temel unsurlardan biri millî kültürdür." · yazı: "KÜLTÜR YOLU" · KARAKTER
+K01 · VO1 "Bir toplumu millet yapan ve o toplumun bütünlüğünü sağlayan temel unsurlardan biri millî kültürdür." · ekranda yazı: KÜLTÜR YOLU
 -----
-[1 LENS]      35mm lens at f/4, eye-level wide three-quarter view
-[2 ÖZNE]      — @efe and @mira step through the carved entrance arch of @festival_alani, both
-              slowing to look up at the arch as they pass beneath it
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. Both are 6th-grade,
-              around eleven or twelve, pre-teen, Turkish Anatolian children; @efe in a rust-orange
-              zip hoodie over a cream tee, @mira in a deep indigo denim jacket over a mustard
-              knit; every background child and adult is Turkish Anatolian as well
-[4 MEKÂN]     The setting is @festival_alani in late afternoon: the carved wooden arch overhead,
-              striped craft-stall awnings receding down the paved path, a ring of folk dancers
-              turning on the low wooden stage at the far end, paper lanterns strung across above
-[5 IŞIK]      low warm late-afternoon sun raking in from frame left through the plane-tree
-              leaves, dappled and motivated, catching both children's cheeks and the arch beam;
-              cool indigo bounce from the shaded stone underfoot at 30%; a warm rim outlining
-              @mira's shoulder against the darker stalls behind
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: the folk dancers' skirts flaring mid-turn,
-              the paper lanterns swinging on their string, dust motes drifting in the raking sun
-[8 DERİNLİK]  Depth in three layers — out-of-focus lantern string across the near foreground, the
-              two sharp children under the arch in the middle, soft bokeh of the dancing ring behind.
-[9 TEMAS]     Every object rests in contact with its surface and casts a soft contact shadow;
-              both children's shoes press flat on the paving stone.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, subsurface scattering on character skin that carries the scene's light temperature,
-every prop has a deliberate overscale factor of 10-15% for child-safe readability, material
-specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows
-woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35%
-intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous
-physically-based shading. Silhouette reads entirely through lighting rim and value separation,
-ambient occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS
-dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range
-with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon,
-NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render
-these as light behaviour, never flat fills.
-TEXT: the carved arch overhead carries the Turkish words "KÜLTÜR YOLU" (two words, ten letters,
-raised dimensional letterform cut into the wood beam), positioned high in frame so neither child
-stands in front of any letter · any other background sign soft-focus, Turkish or blank; no flag
-or emblem on any surface
-NEGATIVE: the arch letters are cut into solid wood, never a flat printed banner or floating
-caption; the dancers are full figures on the stage, never a painted backdrop ; NO hard-black
-shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine
-surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible
-practical light in frame; NO anamorphic streak; NO toon shader; NO anime-style eye geometry; NO
-teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only, NO
-English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human
-photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or
-real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or
-infographic panel standing in for the real object; empty adjectives (cinematic, dynamic,
-stunning, 4K); flat slide; warped or drifting text; character retyping
+Shot on a 35mm lens at f/4.0, eye-level wide three-quarter view. @efe1 and @mira1 step through the carved entrance arch of @festival, both slowing to look up at the arch as they pass beneath it. Warm matte tan skin, low specular, never tinted green or grey; every background child and adult is Turkish Anatolian as well, the children all 6th-grade age, around eleven or twelve. The setting is @festival in late afternoon: the carved wooden arch overhead, striped craft-stall awnings receding down the paved path, a ring of folk dancers turning on the low wooden stage at the far end, paper lanterns strung across above. Low warm late-afternoon sun rakes in from frame left through the plane-tree leaves, dappled and motivated, catching both children's cheeks and the arch beam; cool indigo bounce rises from the shaded stone underfoot at thirty percent; a warm rim outlines @mira1's shoulder against the darker stalls behind. Three things are alive in the frame: the folk dancers' skirts flaring mid-turn, the paper lanterns swinging on their string, dust motes drifting in the raking sun. Depth in three layers — an out-of-focus lantern string across the near foreground, the two sharp children under the arch in the middle, soft bokeh of the dancing ring behind. Every object rests in contact with its surface and casts a soft contact shadow; both children's shoes press flat on the paving stone.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS dominant on skin, complementary cool-violet bounce in shadow, wood tones in brown-ochre range with satin sheen, fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: the carved arch overhead carries the Turkish words "KÜLTÜR YOLU" (two words, ten letters, raised dimensional letterform cut into the wood beam), positioned high in frame so neither child stands in front of any letter · any other background sign soft-focus, Turkish or blank; no flag, crest or emblem on any stall, wall or banner
+NEGATIVE: the arch letters are cut into solid wood, never a flat printed banner or floating caption; the dancers are full figures on the stage, never a painted backdrop ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light in frame; NO anamorphic streak; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
-### K02 | VO2 "Dilimiz, tarihimiz, sanatımız, inançlarımız, gelenek ve göreneklerimiz geçmişle bugün arasında güçlü bağlar kurar." · yazı: YOK · KAVRAM
+K02 · VO2 "Dilimiz, tarihimiz, sanatımız, inançlarımız, gelenek ve göreneklerimiz geçmişle bugün arasında güçlü bağlar kurar." · ekranda yazı: YOK
 -----
-[1 LENS]      65mm lens at f/2.8, eye-level close three-quarter view
-[2 ÖZNE]      — @mira lays her hand on the neck of a long-necked saz while a white-bearded
-              Anatolian luthier's weathered hand already rests on the same neck, the two hands
-              touching wood a palm apart
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. @mira is 6th-grade,
-              around eleven or twelve, pre-teen, Turkish Anatolian, in a deep indigo denim jacket
-              over a mustard knit; the luthier is an elderly Turkish Anatolian man in a grey wool
-              waistcoat with rolled sleeves; @efe watches from just behind her shoulder
-[4 MEKÂN]     The setting is one open craft stall inside @festival_alani: three finished saz
-              hanging from a wooden rack, a low bench scattered with wood shavings, a shallow tin
-              of varnish with a soft brush laid across it, a coil of spare strings on a nail
-[5 IŞIK]      warm amber light from a single hanging bulb above the workbench as the motivated
-              key from frame right, pooling on the saz neck and both hands; cool indigo bounce
-              from the open stall mouth behind at 30%; a warm rim along the luthier's forearm
-[6 KAVRAM]    a soft round warm-golden glow of light rests on the saz neck exactly where the two
-              hands nearly meet, sitting on the varnished wood itself
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: a plucked string still shivering, wood
-              shavings stirring on the bench, the hanging bulb swaying a little on its cord
-[8 DERİNLİK]  Depth in three layers — out-of-focus hanging saz bodies in the near foreground, the
-              two sharp hands and the saz neck in the middle, soft bokeh of the stall mouth behind.
-[9 TEMAS]     Every object rests in contact with its surface and casts a soft contact shadow;
-              both hands press visibly into the wood rather than hovering above it.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, subsurface scattering on character skin that carries the scene's light temperature —
-the old hand's skin thin and translucent at the knuckle, the child's full and opaque, every prop
-has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is
-non-negotiable, varnished wood shows visible grain with satin sheen, wool shows woven stitch
-texture and slight fiber fray, complementary bounce fill at 25-35% intensity in the key's
-opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient
-occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS
-dominant on both skins; complementary cool-violet bounce in shadow; wood tones in brown-ochre
-range with satin sheen; wool in warm-saturated primaries. NO acid green, NO neon, NO teal-orange
-Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
+Shot on a 65mm lens at f/2.8, eye-level close three-quarter view. @mira1 lays her hand on the neck of a long-necked saz while a white-bearded Anatolian luthier's weathered hand already rests on the same neck, the two hands touching wood a palm apart. Warm matte tan skin on both, low specular, never tinted green or grey; @mira1 is 6th-grade age, around eleven or twelve, and the luthier is an elderly Turkish Anatolian man in a grey wool waistcoat with rolled sleeves; @efe1 watches from just behind her shoulder. The setting is one open craft stall inside @festival: three finished saz hanging from a wooden rack, a low bench scattered with wood shavings, a shallow tin of varnish with a soft brush laid across it, a coil of spare strings on a nail. Warm amber light from a single hanging bulb above the workbench is the motivated key from frame right, pooling on the saz neck and both hands; cool indigo bounce falls from the open stall mouth behind at thirty percent; a warm rim runs along the luthier's forearm. A soft round warm-golden glow of light rests on the saz neck exactly where the two hands nearly meet, sitting on the varnished wood itself. Three things are alive in the frame: a plucked string still shivering, wood shavings stirring on the bench, the hanging bulb swaying a little on its cord. Depth in three layers — out-of-focus hanging saz bodies in the near foreground, the two sharp hands and the saz neck in the middle, soft bokeh of the stall mouth behind. Every object rests in contact with its surface and casts a soft contact shadow; both hands press visibly into the wood rather than hovering above it.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature — the old hand's skin thin and translucent at the knuckle, the child's full and opaque, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, varnished wood shows visible grain with satin sheen, wool shows woven stitch texture and slight fiber fray, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS dominant on both skins, complementary cool-violet bounce in shadow, wood tones in brown-ochre range with satin sheen, wool in warm-saturated primaries. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
 TEXT: no text in frame · any background sign soft-focus, Turkish or blank
-NEGATIVE: the golden glow is light lying on the wood, never a drawn line, never a spark, never a
-flower or petal shape, and it never touches either face or hand ; NO hard-black shadow; NO 2D cel
-shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture on
-character skin; NO outlines; NO lens flare unless motivated by the hanging bulb; NO anamorphic
-streak; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO
-desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal
-or live-action capture, NO real-human photographic skin — continuous dimensional 3D
-feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no
-icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real
-object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text;
-character retyping
+NEGATIVE: the golden glow is light lying on the wood, never a drawn line, never a spark, never a flower or petal shape, and it never touches either face or hand ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by the hanging bulb; NO anamorphic streak; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
-### K03 | VO3 "Millî kültür, bir millete kimlik kazandıran maddi ve manevi değerlerin bütünüdür." · yazı: YOK · KAVRAM
+K03 · VO3 "Millî kültür, bir millete kimlik kazandıran maddi ve manevi değerlerin bütünüdür." · ekranda yazı: YOK
 -----
-[1 LENS]      40mm lens at f/4, slightly high medium three-quarter view across the table
-[2 ÖZNE]      — @efe and @mira lean over @kultur_haritasi from the far side, @efe reaching in to
-              set the small hammered copper coffee pot down onto the plaster relief
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. Both are 6th-grade,
-              around eleven or twelve, pre-teen, Turkish Anatolian; @efe in a rust-orange zip
-              hoodie over a cream tee, @mira in a deep indigo denim jacket over a mustard knit
-[4 MEKÂN]     The setting is the shaded exhibition tent of @kultur_haritasi: the sculpted plaster
-              relief of Türkiye filling the oak table, the ceramic bowl, folded kilim, carved
-              wooden spoon and embroidered headscarf already resting on their regions, the brass
-              oil lamp burning at the table corner
-[5 IŞIK]      warm amber light from the brass lamp as the motivated key from frame right,
-              skimming across the plaster so every sculpted ridge throws its own shadow and both
-              children's faces catch the low warm bounce off the relief; cool indigo bounce from
-              the tent canvas above at 30%; a warm rim along @mira's jaw
-[6 KAVRAM]    a soft round warm-golden glow of light sits on the plaster directly beneath the
-              copper pot as @efe lowers it into place
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: the lamp flame breathing, the kilim's loose
-              fringe threads, plaster dust lifting where the pot touches down
-[8 DERİNLİK]  Depth in three layers — out-of-focus brass lamp in the near foreground, the sharp
-              relief and both children's hands in the middle, soft bokeh of tent canvas behind.
-[9 TEMAS]     Every object rests in contact with the plaster and casts a soft contact shadow,
-              each one slightly sunk into the relief it stands on; nothing floats.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, subsurface scattering on character skin that carries the lamp's warm temperature, every
-prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity
-is non-negotiable, painted plaster shows chisel facet and matte tooth, hammered copper shows
-dented anisotropic highlight, woven kilim shows individual warp thread and fiber fray, oak shows
-visible grain with satin sheen, complementary bounce fill at 25-35% intensity in the key's
-opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient
-occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS
-dominant on skin; complementary cool-violet bounce in shadow; ceramic in saturated cobalt-and-
-cream, copper in warm red-brown, kilim in madder red and indigo, plaster in warm bone. NO acid
-green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light
-behaviour, never flat fills.
+Shot on a 40mm lens at f/4.0, slightly high medium three-quarter view across the table. @efe1 and @mira1 lean over @harita from the far side, @efe1 reaching in to set the small hammered copper coffee pot down onto the plaster relief. Warm matte tan skin, low specular, never tinted green or grey; both are 6th-grade age, around eleven or twelve, Turkish Anatolian. The setting is the shaded exhibition tent of @harita: the sculpted plaster relief of Türkiye filling the oak table, the ceramic bowl, folded kilim, carved wooden spoon and embroidered headscarf already resting on their regions, the brass oil lamp burning at the table corner. Warm amber light from the brass lamp is the motivated key from frame right, skimming across the plaster so every sculpted ridge throws its own shadow and both children's faces catch the low warm bounce off the relief; cool indigo bounce falls from the tent canvas above at thirty percent; a warm rim runs along @mira1's jaw. A soft round warm-golden glow of light sits on the plaster directly beneath the copper pot as @efe1 lowers it into place. Three things are alive in the frame: the lamp flame breathing, the kilim's loose fringe threads, plaster dust lifting where the pot touches down. Depth in three layers — the out-of-focus brass lamp in the near foreground, the sharp relief and both children's hands in the middle, soft bokeh of tent canvas behind. Every object rests in contact with the plaster and casts a soft contact shadow, each one slightly sunk into the relief it stands on; nothing floats.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the lamp's warm temperature, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, painted plaster shows chisel facet and matte tooth, hammered copper shows dented anisotropic highlight, woven kilim shows individual warp thread and fiber fray, oak shows visible grain with satin sheen, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS dominant on skin, complementary cool-violet bounce in shadow, ceramic in saturated cobalt-and-cream, copper in warm red-brown, kilim in madder red and indigo, plaster in warm bone. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
 TEXT: no text on the model or table · any background sign soft-focus, Turkish or blank
-NEGATIVE: the relief is sculpted physical plaster on a real table, never a printed flat map,
-never a glowing screen, never a projection; no borders, no province lines, no place names, no
-pins, no arrows anywhere on it; the golden glow is light on plaster, never a drawn ring or spark ;
-NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or
-plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by the
-lamp; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated
-look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or
-live-action capture, NO real-human photographic skin — continuous dimensional 3D
-feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no
-icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real
-object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text;
-character retyping
+NEGATIVE: the relief is sculpted physical plaster on a real table, never a printed flat map, never a glowing screen, never a projection; no borders, no province lines, no place names, no pins, no arrows anywhere on it; the golden glow is light on plaster, never a drawn ring or spark ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by the lamp; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
-### K04 | VO4 "Millî kültürün dil, din, tarih, sanat, gelenek ve görenek gibi ögeleri kültürel bağlarımızı oluşturur." · yazı: "DİL · DİN · TARİH · SANAT · GELENEK" · KAVRAM
+K04 · VO4 "Millî kültürün dil, din, tarih, sanat, gelenek ve görenek gibi ögeleri kültürel bağlarımızı oluşturur." · ekranda yazı: DİL · DİN · TARİH · SANAT · GELENEK
 -----
-[1 LENS]      85mm lens at f/2.8, low close three-quarter view along the surface of the relief
-[2 ÖZNE]      — five small carved oak name-plaques stand upright in the plaster of
-              @kultur_haritasi, each one planted beside the object it belongs to
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. @mira's hand only
-              enters at the frame edge, fingertips steadying the nearest plaque; she is 6th-grade,
-              around eleven or twelve, pre-teen, Turkish Anatolian
-[4 MEKÂN]     The setting is the surface of @kultur_haritasi seen almost at plaster level: an
-              open handwritten book beside the first plaque, a folded prayer rug beside the
-              second, a chipped stone fragment beside the third, the hand-painted ceramic bowl
-              beside the fourth, the folded kilim beside the fifth, the brass lamp burning beyond
-[5 IŞIK]      warm amber light from the brass lamp as the motivated key from frame right, raking
-              along the plaster so each upright plaque casts a long shadow across the relief; cool
-              indigo bounce from the tent canvas at 30%; a warm rim along the top edge of every
-              plaque
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: a page of the open book lifting at its
-              corner, the lamp flame breathing, plaster dust drifting low across the surface
-[8 DERİNLİK]  Depth in three layers — the out-of-focus ceramic bowl in the near foreground, the
-              five sharp plaques and their objects in the middle, soft bokeh of the brass lamp behind.
-[9 TEMAS]     Every plaque is planted into the plaster and casts a soft contact shadow; every
-              object rests in contact with the surface. Nothing floats.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, every prop has a deliberate overscale factor of 10-15% for child-safe readability,
-material specificity is non-negotiable, carved oak shows visible grain with satin-varnish sheen
-and tool marks on the letter edges, painted plaster shows chisel facet and matte tooth, paper
-shows fiber tooth and a soft translucent edge where light passes, woven kilim shows individual
-warp thread, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI
-FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in,
-never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — oak in brown-ochre
-with satin sheen, plaster in warm bone, ceramic in saturated cobalt-and-cream, kilim in madder red
-and indigo, paper in warm ivory. NO acid green, NO neon, NO teal-orange Hollywood grade, NO
-desaturated grey. Render these as light behaviour, never flat fills.
-TEXT: the five carved oak plaques read, left to right, "DİL" (three letters, the second a dotted
-capital İ), "DİN" (three letters, the second a dotted capital İ), "TARİH" (five letters, the
-fourth a dotted capital İ), "SANAT" (five letters), "GELENEK" (seven letters) — each cut into its
-own plaque as raised dimensional letterform, spaced so no object stands in front of any letter ·
-any background sign soft-focus, Turkish or blank
-NEGATIVE: the words are carved into solid oak plaques standing in the plaster, never floating
-captions, never a list panel, never a printed label sheet; the five plaques are five separate
-physical objects, never one graphic strip; no borders, place names, pins or arrows on the relief ;
-NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or
-plasticine surface texture; NO outlines; NO lens flare unless motivated by the lamp; NO toon
-shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English
-signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human
-photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or
-real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or
-infographic panel standing in for the real object; empty adjectives (cinematic, dynamic,
-stunning, 4K); flat slide; warped or drifting text; character retyping
+Shot on an 85mm lens at f/2.8, low close three-quarter view along the surface of the relief. Five small carved oak name-plaques stand upright in the plaster of @harita, each one planted beside the object it belongs to. @mira1's hand only enters at the frame edge, fingertips steadying the nearest plaque; warm matte tan skin, low specular, never tinted green or grey, and she is 6th-grade age, around eleven or twelve, Turkish Anatolian. The setting is the surface of @harita seen almost at plaster level: an open handwritten book beside the first plaque, a folded prayer rug beside the second, a chipped carved stone fragment beside the third, the hand-painted ceramic bowl beside the fourth, the folded kilim beside the fifth, the brass lamp burning beyond. Warm amber light from the brass lamp is the motivated key from frame right, raking along the plaster so each upright plaque casts a long shadow across the relief; cool indigo bounce falls from the tent canvas at thirty percent; a warm rim runs along the top edge of every plaque. Three things are alive in the frame: a page of the open book lifting at its corner, the lamp flame breathing, plaster dust drifting low across the surface. Depth in three layers — the out-of-focus ceramic bowl in the near foreground, the five sharp plaques and their objects in the middle, soft bokeh of the brass lamp behind. Every plaque is planted into the plaster and casts a soft contact shadow; every object rests in contact with the surface; nothing floats.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, carved oak shows visible grain with satin-varnish sheen and tool marks on the letter edges, painted plaster shows chisel facet and matte tooth, paper shows fiber tooth and a soft translucent edge where light passes, woven kilim shows individual warp thread, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — oak in brown-ochre with satin sheen, plaster in warm bone, ceramic in saturated cobalt-and-cream, kilim in madder red and indigo, paper in warm ivory. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
+TEXT: the five carved oak plaques read, left to right, "DİL" (three letters, the second a dotted capital İ), "DİN" (three letters, the second a dotted capital İ), "TARİH" (five letters, the fourth a dotted capital İ), "SANAT" (five letters), "GELENEK" (seven letters) — each cut into its own plaque as raised dimensional letterform, spaced so no object stands in front of any letter · any background sign soft-focus, Turkish or blank
+NEGATIVE: the words are carved into solid oak plaques standing in the plaster, never floating captions, never a list panel, never a printed label sheet; the five plaques are five separate physical objects, never one graphic strip; no borders, place names, pins or arrows on the relief ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture; NO outlines; NO lens flare unless motivated by the lamp; NO toon shader; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
-### K05 | VO5 "Bu bağlar, aynı topluma ait bireyleri birbirine yakınlaştırır." · yazı: YOK · KAVRAM
+K05 · VO5 "Bu bağlar, aynı topluma ait bireyleri birbirine yakınlaştırır." · ekranda yazı: DİL · DİN · TARİH · SANAT · GELENEK (devam)
 -----
-[1 LENS]      50mm lens at f/2.8, low medium three-quarter view across the relief toward the children
-[2 ÖZNE]      — @efe and @mira stand shoulder to shoulder behind @kultur_haritasi, both faces lit
-              from below as warm light runs along the relief between the five objects
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. Both are 6th-grade,
-              around eleven or twelve, pre-teen, Turkish Anatolian; @efe in a rust-orange zip
-              hoodie over a cream tee, @mira in a deep indigo denim jacket over a mustard knit
-[4 MEKÂN]     The setting is @kultur_haritasi in its shaded tent: the sculpted plaster relief
-              between the children and camera, the five carved oak plaques still standing, the open
-              book, prayer rug, stone fragment, ceramic bowl and folded kilim in their places, the
-              brass lamp at the corner
-[5 IŞIK]      warm amber light from the brass lamp as the motivated key from frame right; the
-              running light along the relief acts as a second low practical, throwing warm uplight
-              onto both children's chins and cheekbones; cool indigo bounce from the tent canvas
-              above at 30%; a warm rim along both children's outer shoulders
-[6 KAVRAM]    soft round warm-golden glows of light rest on the plaster between neighbouring
-              objects, each one a continuous low band of light lying along the sculpted surface
-              from one object to the next, linking all five in a closed loop across the relief
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: the lamp flame breathing, a page of the open
-              book lifting, plaster dust drifting through the running light
-[8 DERİNLİK]  Depth in three layers — the out-of-focus folded kilim in the near foreground, the
-              sharp lit relief and both children in the middle, soft bokeh of tent canvas behind.
-[9 TEMAS]     Every object rests in contact with the plaster and casts a soft contact shadow; the
-              bands of light lie on the sculpted surface and follow its ridges rather than
-              crossing above them.
-STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
-lineage, subsurface scattering on character skin that carries the warm uplight temperature, every
-prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity
-is non-negotiable, painted plaster shows chisel facet and matte tooth, carved oak shows visible
-grain with satin-varnish sheen, woven kilim shows individual warp thread and fiber fray, brass
-shows warm anisotropic highlight, complementary bounce fill at 25-35% intensity in the key's
-opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient
-occlusion painted in, never raytraced-hard.
-LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange,
-accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS
-dominant on skin; complementary cool-violet bounce in shadow; plaster in warm bone, oak in
-brown-ochre with satin sheen, kilim in madder red and indigo. NO acid green, NO neon, NO
-teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat
-fills.
-TEXT: the five carved oak plaques remain in frame carrying "DİL", "DİN", "TARİH", "SANAT",
-"GELENEK" in raised dimensional letterform, positioned so neither child stands in front of any
-letter · any background sign soft-focus, Turkish or blank
-NEGATIVE: the linking bands are light lying on the plaster, never drawn lines, never ribbons,
-never rope, never chain, never a glowing wire above the surface, and they carry no arrowheads;
-the relief is sculpted physical plaster, never a printed map, never a screen, never a projection;
-no borders, place names, pins or arrows on it ; NO hard-black shadow; NO 2D cel shading; NO hard
-black outlines; NO flat graphic fill; NO clay or plasticine surface texture on character skin; NO
-outlines; NO lens flare unless motivated by the lamp; NO anamorphic streak; NO toon shader; NO
-anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only,
-NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human
-photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or
-real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or
-infographic panel standing in for the real object; empty adjectives (cinematic, dynamic,
-stunning, 4K); flat slide; warped or drifting text; character retyping
+Shot on a 50mm lens at f/2.8, low medium three-quarter view across the relief toward the children. @efe1 and @mira1 stand shoulder to shoulder behind @harita, both faces lit from below as warm light runs along the relief between the five objects. Warm matte tan skin, low specular, never tinted green or grey; both are 6th-grade age, around eleven or twelve, Turkish Anatolian. The setting is @harita in its shaded tent: the sculpted plaster relief between the children and camera, the five carved oak plaques still standing, the open book, prayer rug, stone fragment, ceramic bowl and folded kilim in their places, the brass lamp at the corner. Warm amber light from the brass lamp is the motivated key from frame right; the running light along the relief acts as a second low practical, throwing warm uplight onto both children's chins and cheekbones; cool indigo bounce falls from the tent canvas above at thirty percent; a warm rim runs along both children's outer shoulders. Soft round warm-golden glows of light rest on the plaster between neighbouring objects, each one a continuous low band of light lying along the sculpted surface from one object to the next, linking all five in a closed loop across the relief. Three things are alive in the frame: the lamp flame breathing, a page of the open book lifting, plaster dust drifting through the running light. Depth in three layers — the out-of-focus folded kilim in the near foreground, the sharp lit relief and both children in the middle, soft bokeh of tent canvas behind. Every object rests in contact with the plaster and casts a soft contact shadow; the bands of light lie on the sculpted surface and follow its ridges rather than crossing above them.
+STYLE: Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the warm uplight temperature, every prop has a deliberate overscale factor of 10-15% for child-safe readability, material specificity is non-negotiable, painted plaster shows chisel facet and matte tooth, carved oak shows visible grain with satin-varnish sheen, woven kilim shows individual warp thread and fiber fray, brass shows warm anisotropic highlight, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — warm-honey SSS dominant on skin, complementary cool-violet bounce in shadow, plaster in warm bone, oak in brown-ochre with satin sheen, kilim in madder red and indigo. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey. Render these as light behaviour, never flat fills.
+TEXT: the five carved oak plaques remain in frame carrying "DİL", "DİN", "TARİH", "SANAT", "GELENEK" in raised dimensional letterform, positioned so neither child stands in front of any letter · any background sign soft-focus, Turkish or blank
+NEGATIVE: the linking bands are light lying on the plaster, never drawn lines, never ribbons, never rope, never chain, never a glowing wire above the surface, and they carry no arrowheads; the relief is sculpted physical plaster, never a printed map, never a screen, never a projection; no borders, place names, pins or arrows on it ; NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay or plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by the lamp; NO anamorphic streak; NO toon shader; NO anime-style eye geometry; NO teal-orange Hollywood grade, NO desaturated look; Turkish label only, NO English signage; NO octane-render aesthetic; NO photoreal or live-action capture, NO real-human photographic skin — continuous dimensional 3D feature-animation CGI; no recognizable franchise or real-person characters, logos, brand names; no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
+-----
+
+
+═══════════════════════════════════════════════════════════════
+BÖLÜM 3 — SONRAKİ VİDEOLAR İÇİN GİYSİ GEÇİŞİ (bu videoda kullanılmaz)
+═══════════════════════════════════════════════════════════════
+
+Tulum bir daha sıfırdan tarif edilmez. Yeni konuda @efe1'i referans ver, tek satır değiştir:
+
+-----
+Use this referenced image. Change ONLY the embroidered oval patch on the left chest to <YENİ AMBLEM — malzemesiyle: işleme ipliği, dokuma, dövme metal>, sewn at the same position and the same size with the same raised satin-stitch border, loose thread ends and slightly puckered seam. Keep everything else identical — the coverall's exact cut, collar, seam lines, zip, cuffs, hem, its exact colours, the character's face, hair and build, the lens, framing, lighting and backdrop all stay the same.
 -----
