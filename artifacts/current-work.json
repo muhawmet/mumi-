@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "MOTION TAMAMLANDI: 34/34 blok, hepsi gözle görülmüş kareden yazıldı. 34/34 kare de yerinde (numara kayması düzeltildi, K16+K20 geldi)",
-  "nextAction": "Mami motion kliplerini basıyor (34 klip, her biri 10s). Klipler inince: motion-qc.mjs → EDIT-PLAN + SUNO → kaba-kurgu.mjs ile Premiere timeline",
+  "lastCompleted": "KURGU KİTİ TAM (5 parça): MOTION 34/34 · EDIT-PLAN ölçümle · SESLENDIRME tek metin · SUNO · KURGU.xml. whisper 34/34 cümleye oturdu, 21.8sn tahmin sapması kapandı. 34 klibin 34'ü VO'sunu taşıyor, sıkışma yok.",
+  "nextAction": "Mami: (1) müziği 3:20'ye uzat (şimdi 9.35sn kısa, script 2x döngüledi), (2) Premiere'de XML'i import et, (3) AGY klip raporları gelince bozulan klipler listelenecek",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -14,12 +14,12 @@
     "PROMPTLAR": true,
     "revize": true,
     "MOTION": true,
-    "EDIT-PLAN": false,
+    "EDIT-PLAN": true,
     "SESLENDIRME": true,
-    "SUNO": false,
-    "KABA-KURGU.xml": false
+    "SUNO": true,
+    "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-07-29T13:44:21.894Z",
+  "updatedAt": "2026-07-29T14:20:43.887Z",
   "updatedBy": "claude",
-  "baseCommit": "09c2713"
+  "baseCommit": "5919059"
 }

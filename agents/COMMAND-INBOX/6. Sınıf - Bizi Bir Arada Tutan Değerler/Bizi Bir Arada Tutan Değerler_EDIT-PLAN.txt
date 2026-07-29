@@ -1,0 +1,149 @@
+BİZİ BİR ARADA TUTAN DEĞERLER — EDİT PLANI (Premiere kurgu haritası)
+=========================================================================
+6. Sınıf Sosyal Bilgiler (6.1.2) · 34 kare = 34 klip = 34 VO cümlesi · 1:1, atılan cümle YOK
+
+Kanka mantık: VO kesintisiz akıyor, 34 klip sırayla altına diziliyor.
+
+>>> BAŞ KIRPIMI — BU VİDEONUN KURALI <<<
+Kling'in ilk ~0.5 saniyesi bozuk çıkıyor. Her klibin BAŞINDAN 0.5 sn atılır.
+Aşağıdaki "klip" sütunu ZATEN kırpılmış süredir; ham süre en sağda parantezde.
+Premiere: klibi timeline'a al, In noktasını +0:12 (25 fps'de 12 kare) ileri sürükle.
+
+>>> ÖLÇÜM — tahmin değil <<<
+· Klip süreleri ffprobe ile ölçüldü. Ham toplam 229.4 sn.
+· VO dosyası ölçüldü: vo.mp3 = 189.07 sn (3:09).
+· Baş kırpımından sonra kullanılabilir klip toplamı 212.4 sn — VO'dan 23.3 sn FAZLA.
+· 34 klibin 34'ü kendi VO cümlesini taşıyor. Yetmeyen klip YOK, yavaşlatma GEREKMİYOR.
+  Her klipte +0.20 ile +1.24 sn arası pay var; kesim payı kuyruktan alınır.
+
+>>> VO SESSİZLİKLERİ — temizlik GEREKMİYOR <<<
+vo.mp3 tarandı (-30 dB eşik). 0.35 sn üstü yalnız 4 boşluk var: 99.3s · 116.2s · 149.9s · 184.3s
+(0.42 · 0.35 · 0.36 · 0.48 sn). Bunlar cümle sonu nefesleri, kusur değil — kesim noktası olarak
+İŞE YARARLAR. Baş ve son sessizliği yok, dosya konuşmayla başlıyor ve bitiyor. DOKUNMADIM.
+
+>>> MÜZİK — tek gerçek eksik <<<
+ses.wav = 179.72 sn (2:59.7). VO 189.07 sn. Müzik VO'dan 9.35 SANİYE KISA.
+Üç seçenek, sırayla tavsiye: (1) Suno'da Extend ile 3:20'ye uzat — en temizi.
+(2) Müziğin orta bölümünden 10 sn'lik bir pasajı çoğaltıp araya diklikle ekle.
+(3) Son akoru uzat: müziğin son 4 sn'sini Premiere'de %250 yavaşlat ve fade-out ile bitir.
+Müzik VO'nun ALTINDA ~-18 dB. Kapanış kliplerinde (K33-K34) müzik tek başına 2-3 sn taşabilir.
+
+Shot: EFE+MIRA = ikisi kadrajda | MAKRO = el/nesne yakın plan, tam figür yok
+      WORLD = insansız sahne | YETİŞKİN = yalnız yetişkin | TÖREN / TOPLULUK = kalabalık
+Klip kaynağı: ~/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Bizi Bir Arada Tutan Değerler/<K>.mp4
+Ses: vo.mp3 (A1) · ses.wav (A2, müzik)
+=========================================================================
+
+##### S1 — GİRİŞ: KÜLTÜR YOLCULUĞU  (K01–K02 · klip 0:14 · VO ~0:13) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+1.png   K01   7.5s   6.8s   [0:00–0:06]   Bir toplumu millet yapan ve o toplumun bütünlüğünü sağlayan temel unsurlardan biri millî kültürdür.
+        ↳ EFE+MIRA            kemerin altından geçiş — açılış   (ham 8.04s · baş -0.5s)
+2.png   K02   6.5s   6.3s   [0:06–0:13]   Dilimiz, tarihimiz, sanatımız, inançlarımız, gelenek ve göreneklerimiz geçmişle bugün arasında güçlü bağlar kurar.
+        ↳ MIRA+USTA           iki el aynı saz boynunda, aralarında altın ışık   (ham 7.04s · baş -0.5s)
+
+##### S2 — MİLLÎ KÜLTÜR VE KÜLTÜREL BAĞLAR  (K03–K05 · klip 0:18 · VO ~0:15) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+3.png   K03   6.5s   5.3s   [0:13–0:18]   Millî kültür, bir millete kimlik kazandıran maddi ve manevi değerlerin bütünüdür.
+        ↳ EFE+MIRA            cezve kabartma maketin üstüne bırakılıyor   (ham 7.04s · baş -0.5s)
+4.png   K04   7.5s   6.8s   [0:18–0:25]   Millî kültürün dil, din, tarih, sanat, gelenek ve görenek gibi ögeleri kültürel bağlarımızı oluşturur.
+        ↳ MAKRO               beş çini karo alçıda — DİL DİN TARİH SANAT GELENEK   (ham 8.04s · baş -0.5s)
+5.png   K05   4.5s   3.9s   [0:25–0:28]   Bu bağlar, aynı topluma ait bireyleri birbirine yakınlaştırır.
+        ↳ EFE+MIRA            alttan aydınlanan iki yüz, alçıda akan ışık bantları   (ham 5.04s · baş -0.5s)
+
+##### S3 — MİLLÎ DEĞERLERİMİZ  (K06–K08 · klip 0:17 · VO ~0:14) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+6.png   K06   4.5s   3.4s   [0:28–0:32]   Kültürel bağlarımızın etkisiyle toplumda ortak değerler oluşur.
+        ↳ YETİŞKİN            dört el aynı hasır sepetin kenarında   (ham 5.04s · baş -0.5s)
+7.png   K07   8.5s   8.2s   [0:32–0:40]   Aile birliğine önem verme, adalet, dürüstlük, sevgi, saygı, hoşgörü, yardımlaşma, vatanseverlik, özgürlük ve bağımsızlık millî değerlerimiz arasındadır.
+        ↳ EFE+MIRA+YETİŞKİN   cüzdan sahibine iade ediliyor — ADALET · SEVGİ   (ham 9.04s · baş -0.5s)
+8.png   K08   4.5s   3.4s   [0:40–0:43]   Bu değerler, davranışlarımızı yönlendirerek toplumsal ilişkileri düzenler.
+        ↳ EFE+MIRA+AİLE       üç kuşak aynı korkulukta, gönderde bayrak   (ham 5.04s · baş -0.5s)
+
+##### S4 — DİL: GEÇMİŞTEN GELECEĞE  (K09–K11 · klip 0:18 · VO ~0:16) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+9.png   K09   4.5s   3.4s   [0:43–0:47]   Dil, bir milletin duygu ve düşüncelerini yansıtır.
+        ↳ EFE+MIRA+DEDE       kilimde masal halkası, dedenin eli havada   (ham 5.04s · baş -0.5s)
+10.png   K10   8.5s   8.2s   [0:47–0:55]   Destanlar, masallar, türküler, ninniler, atasözleri ve yazılı eserler aracılığıyla kültürel birikimimiz ile millî değerlerimiz kuşaktan kuşağa aktarılır.
+        ↳ WORLD               dikilitaş + el yazmaları + DEDE KORKUT künyesi, insansız   (ham 9.04s · baş -0.5s)
+11.png   K11   5.5s   4.8s   [0:55–1:00]   Ortak dilimiz, millî kimliğimizin korunmasını ve aramızdaki iletişimin güçlenmesini sağlar.
+        ↳ YETİŞKİN            kilim yollukta akan ışık, saz çalan usta   (ham 6.04s · baş -0.5s)
+
+##### S5 — DİN: SEVGİ, HOŞGÖRÜ VE YARDIMLAŞMA  (K12–K14 · klip 0:20 · VO ~0:18) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+12.png   K12   6.5s   5.3s   [1:00–1:05]   Dinî değerler; sevgi, hoşgörü, kardeşlik ve yardımlaşma duygularının güçlenmesine katkı sağlar.
+        ↳ YETİŞKİN            aşevi — çorba iki elde tutulan kâseye dökülüyor   (ham 7.04s · baş -0.5s)
+13.png   K13   5.5s   5.3s   [1:05–1:10]   Geçmişte kurulan vakıflar, aşevleri, kervansaraylar ve misafirhaneler ihtiyaç sahiplerine destek olmuştur.
+        ↳ WORLD               vakıf çeşmesi akıyor, kimse yok   (ham 6.04s · baş -0.5s)
+14.png   K14   8.5s   8.2s   [1:10–1:19]   Yunus Emre, Mevlânâ ve Hacı Bektaş Veli gibi şahsiyetler de sevgi ve hoşgörü anlayışının yayılmasına öncülük etmiştir.
+        ↳ WORLD               hat + tezhip + taş kabartma — HOŞGÖRÜ, figürsüz   (ham 9.04s · baş -0.5s)
+
+##### S6 — TARİH: ORTAK HAFIZAMIZ  (K15–K18 · klip 0:21 · VO ~0:17) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+15.png   K15   3.5s   2.4s   [1:19–1:21]   Tarih, bir milletin ortak hafızasıdır.
+        ↳ WORLD               kürsüde deri cilt — TARİH   (ham 4.04s · baş -0.5s)
+16.png   K16   6.5s   5.3s   [1:21–1:26]   Milletimiz, Millî Mücadele yıllarında bağımsızlığını korumak için birlik içinde hareket etmiştir.
+        ↳ EFE+MIRA (TANIK)    durmuş öküz arabası, gergin halatlar   (ham 7.04s · baş -0.5s)
+17.png   K17   6.5s   5.8s   [1:26–1:32]   Kadın, erkek, genç ve yaşlı demeden herkes imkânları ölçüsünde mücadeleye katkı sağlamıştır.
+        ↳ EFE+MIRA (TANIK)    palto bohçası genç kadından yaşlı adama geçiyor   (ham 7.04s · baş -0.5s)
+18.png   K18   4.5s   4.3s   [1:32–1:36]   Bu ortak mücadele; vatanseverlik, fedakârlık ve bağımsızlık değerlerini güçlendirmiştir.
+        ↳ WORLD               bayrak göndere çıkıyor, çıplak taş kaide   (ham 5.04s · baş -0.5s)
+
+##### S7 — SANAT: KÜLTÜRÜN SESSİZ DİLİ  (K19–K21 · klip 0:19 · VO ~0:17) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+19.png   K19   5.5s   4.8s   [1:36–1:41]   Sanat eserleri bir milletin dilini, tarihini, inancını ve değerlerini yansıtır.
+        ↳ MAKRO               hattatın eli, ıslak mürekkep darbesi   (ham 6.04s · baş -0.5s)
+20.png   K20   9.5s   8.7s   [1:41–1:50]   Geleneksel sanatlarda kullanılan renkler ve motifler yalnızca süsleme amacı taşımaz; sevgi, çalışkanlık ve üretkenlik gibi anlamlar da aktarır.
+        ↳ EFE+MIRA+USTA       ebru tarağı suda — çini panoda sanat cümlesi   (ham 10.04s · baş -0.5s)
+21.png   K21   4.5s   3.9s   [1:50–1:54]   Bu sanatların yaşatılması, kültürel değerlerin geleceğe taşınmasını sağlar.
+        ↳ MAKRO               dik tezgâh, kirkit yüne batıyor, kilim motifleri   (ham 5.04s · baş -0.5s)
+
+##### S8 — GELENEK VE GÖRENEKLER  (K22–K24 · klip 0:20 · VO ~0:18) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+22.png   K22   5.5s   5.3s   [1:54–1:59]   Gelenek ve görenekler, eskiden beri sürdürülen ve kuşaktan kuşağa aktarılan davranışlardır.
+        ↳ EFE+MIRA+NİNE       serçe parmak kilidi — halay tutuşu öğretiliyor   (ham 6.04s · baş -0.5s)
+23.png   K23   7.5s   6.8s   [1:59–2:06]   Düğünler, asker uğurlamaları, iftar sofraları, bayram ziyaretleri ve yardımlaşma gelenekleri insanları bir araya getirir.
+        ↳ EFE+MIRA+KOMŞU      bakır tepsi dört elde masanın üstünden geçiyor   (ham 8.04s · baş -0.5s)
+24.png   K24   7.5s   6.8s   [2:06–2:13]   Zimem defteri geleneğinde olduğu gibi ihtiyaç sahiplerinin onuru korunarak yapılan yardımlar, toplumsal dayanışmayı güçlendirir.
+        ↳ MAKRO               zimem defteri — tek el banknotları bırakıp çıkıyor   (ham 8.04s · baş -0.5s)
+
+##### S9 — BAYRAMLARDA BİRLİK  (K25–K27 · klip 0:16 · VO ~0:14) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+25.png   K25   6.5s   6.3s   [2:13–2:19]   Millî ve dinî bayramlar, toplumun farklı kesimlerini ortak duygu ve değerler etrafında buluşturur.
+        ↳ EFE+MIRA+KALABALIK  çok yaşlı-genç kalabalık aynı yöne dönük   (ham 7.04s · baş -0.5s)
+26.png   K26   4.5s   3.9s   [2:19–2:23]   Millî bayramlarda bağımsızlık mücadelemiz ve ortak başarılarımız hatırlanır.
+        ↳ TÖREN               bayrak göndere çıkıyor — 23 NİSAN pankartı   (ham 5.04s · baş -0.5s)
+27.png   K27   5.5s   4.8s   [2:23–2:28]   Dinî bayramlarda ise ziyaret, paylaşma, yardımlaşma ve barışma gelenekleri yaşatılır.
+        ↳ EFE+MIRA+NİNE       el öpme, büyükannenin eli başında   (ham 6.04s · baş -0.5s)
+
+##### S10 — ZOR ZAMANLARDA TEK YÜREK  (K28–K30 · klip 0:20 · VO ~0:18) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+28.png   K28   6.5s   5.8s   [2:28–2:33]   Kültürel bağların ve millî değerlerin gücü, zor zamanlarda daha açık biçimde görülür.
+        ↳ YETİŞKİN            gece revak — battaniye yığına iniyor   (ham 7.04s · baş -0.5s)
+29.png   K29   8.5s   8.2s   [2:33–2:42]   Afetler karşısında devletin, kurumların ve vatandaşların el ele vermesi; yardımlaşma, dayanışma, fedakârlık ve sorumluluk değerlerinin bir sonucudur.
+        ↳ YETİŞKİN            çay bardağı kurtarma çalışanına geçiyor   (ham 9.04s · baş -0.5s)
+30.png   K30   5.5s   4.8s   [2:42–2:46]   Ortak değerler etrafında birleşen toplumlar, karşılaştıkları güçlükleri daha kolay aşar.
+        ↳ YETİŞKİN            şafakta sekiz kişilik zincir — DAYANIŞMA stensili   (ham 6.04s · baş -0.5s)
+
+##### S11 — KAPANIŞ VE MESAJ  (K31–K34 · klip 0:24 · VO ~0:22) #####
+kare    KLİP  klip    VO      [VO aralık]      VO cümlesi
+31.png   K31   5.5s   4.8s   [2:46–2:51]   Dilimiz, dinimiz, tarihimiz, sanatımız, gelenek ve göreneklerimiz bizi geçmişimize bağlar.
+        ↳ WORLD               kapanış masası — beş karo, kandil ışığı geziyor   (ham 6.04s · baş -0.5s)
+32.png   K32   5.5s   5.3s   [2:51–2:57]   Bu kültürel bağlar aracılığıyla aktarılan millî değerlerimiz ise davranışlarımıza yön verir.
+        ↳ WORLD               boşalmış sofra, beş nesneyi birleştiren ışık bandı   (ham 6.04s · baş -0.5s)
+33.png   K33   7.5s   6.8s   [2:57–3:03]   Ortak kültürüne ve değerlerine sahip çıkan bir toplumda güven, dayanışma ve birlik duygusu güçlenir.
+        ↳ TOPLULUK            on bir kişi omuz omuza, arkada bayrak   (ham 8.04s · baş -0.5s)
+34.png   K34   5.5s   5.3s   [3:03–3:09]   Peki sen, kültürel bağlarımızı ve millî değerlerimizi yaşatmak için neler yapabilirsin?
+        ↳ EFE+MIRA            lense bakan iki çocuk — kapanış sorusu   (ham 6.04s · baş -0.5s)
+
+=========================================================================
+TOPLAM: 34 klip · kullanılabilir 212.4 sn · VO 189.1 sn · hedef çıktı ~3:09
+
+SIRADAKİ ADIM — timeline'ı script kurar, elle dizmeye gerek yok:
+  node scripts/kaba-kurgu.mjs "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler" \
+    --klipler "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Bizi Bir Arada Tutan Değerler" \
+    --vo "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Bizi Bir Arada Tutan Değerler/vo.mp3" \
+    --muzik "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Bizi Bir Arada Tutan Değerler/ses.wav" \
+    --kirp-bas 0.5 --fps 25
+Çıktı: _KURGU.xml — Premiere'de File > Import ile açılır, klipler sırada, VO A1'de, müzik A2'de.
+kaba-kurgu whisper ile VO cümle sınırlarını ölçer ve kesimi gerçek cümlelere oturtur;
+yukarıdaki [VO aralık] sütunu kelime oranından hesaplanmış TAHMİNDİR, script onu düzeltir.
