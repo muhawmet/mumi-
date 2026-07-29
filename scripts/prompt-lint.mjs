@@ -319,6 +319,96 @@ function bearsText(b) {
     || /"\s*\d+([.,]\d+)?\s*[a-zA-ZÇĞİÖŞÜçğıöşü]{1,4}\s*"/.test(b);
 }
 
+// ---------------------------------------------------------------------------
+// HECELEME DOĞRULAMASI — talimatın KENDİSİ doğru mu?
+//
+// `text-hece` slotu hecelemenin VARLIĞINI ölçüyor. Ama yanlış heceleme yokluktan beterdir:
+// motoru aktif olarak yanlış yönlendirir. Ölçülmüş vaka — Kütle K10:
+//   TEXT: "DEĞİŞMEZ" — eight letters, second letter capital Ğ
+// D-E-Ğ-İ-Ş-M-E-Z → sekiz harf DOĞRU, ama Ğ **üçüncü** harf. Slot tam da glif hatasını önlemek
+// için var ve içindeki sayı denetlenmiyordu. Aynı dosyanın K13/K17/K31/K32 sayımları doğru —
+// yani hata sistematik değil, DENETİMSİZ. Bu deterministik olarak ölçülebilir; ölçülüyor.
+// ---------------------------------------------------------------------------
+const SAYI_KELIME = {
+  one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10,
+  eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17,
+  eighteen: 18, nineteen: 19, twenty: 20,
+};
+const SIRA_KELIME = {
+  first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8,
+  ninth: 9, tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14, fifteenth: 15,
+};
+const sayiya = (t) => (/^\d+$/.test(t) ? Number(t) : SAYI_KELIME[t.toLowerCase()]);
+
+/** Türkçe dahil harf sayısı — boşluk, tire ve noktalama sayılmaz.
+ *  NFC ZORUNLU: macOS dosya metni Türkçe harfleri ayrışık yazıyor (Ç = C + birleşen çengel),
+ *  normalize edilmezse `Ç` iki karakter sayılır ve linter kendi sahte alarmını üretir. */
+const harfler = (s) => [...s.normalize('NFC')].filter((c) => /[\p{L}\p{N}]/u.test(c));
+
+/**
+ * Tırnak içindeki her yazıyı bulur, ardından gelen ~220 karakterde harf sayısı ve sıralı harf
+ * iddialarını sınar. Çok kelimeli yazılarda ("VEJETATİF ÜREME — two words, the first a nine-letter
+ * word …") iddia TEK KELİMEYE ait olabilir; bu yüzden hem tam metin hem de kelimeler denenir ve
+ * HERHANGİ biri tutuyorsa iddia doğru sayılır. Yanlış alarm, ölçümü çöpe atar.
+ */
+function heceHatalari(body) {
+  const out = [];
+  const quoteRe = /"([^"]{2,60})"/g;
+  let q;
+  while ((q = quoteRe.exec(body))) {
+    const yazi = q[1];
+    if (!/[\p{L}]/u.test(yazi)) continue;
+    // Segment BİR SONRAKİ TIRNAĞA KADAR kesilir: yoksa bir yazının iddiası ötekine karışıyor
+    // ve linter kendi sahte alarmını üretiyor (ilk koşuda "KÜTLE" için başka bir kelimenin
+    // "second letter" iddiası okundu). Ölçümün kendisi de ölçülür.
+    const ham = body.slice(q.index + q[0].length, q.index + q[0].length + 220);
+    const seg = ham.split('"')[0];
+    const adaylar = [yazi, ...yazi.split(/[\s—–-]+/)].map((w) => w.normalize('NFC')).filter((w) => harfler(w).length);
+
+    // "<n> letters" / "<n>-letter word"
+    const cntRe = /\b(\d+|[a-z]+)[\s-]letters?\b/gi;
+    let m;
+    while ((m = cntRe.exec(seg))) {
+      const n = sayiya(m[1]);
+      if (!n) continue;
+      if (!adaylar.some((w) => harfler(w).length === n)) {
+        out.push(`"${yazi}" için "${m[0].trim()}" yazıyor — gerçek harf sayısı `
+          + adaylar.map((w) => `${w}=${harfler(w).length}`).join(', '));
+      }
+    }
+
+    // "the <sıra> letter ... <harf>"  (ör. "whose eighth letter is a capital İ")
+    const ordRe = /\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth)\s+letter\b([\s\S]{0,60})/gi;
+    while ((m = ordRe.exec(seg))) {
+      const k = SIRA_KELIME[m[1].toLowerCase()];
+      // Nitelik kelimesi ZORUNLU. Sınırsız `([\p{L}])\b` İngilizce "a" artikelini harf iddiası
+      // sanıyordu — ilk koşuda birinci sahte alarm buydu.
+      const m2 = m[2].normalize('NFC');
+      const harfM = m2.match(/\b(?:capital|uppercase|lowercase|small|dotted|dotless)\s+(?:capital\s+|letter\s+)?([\p{L}])/u)
+        ?? m2.match(/\bletter\s+"?([\p{Lu}])"?/u);
+      if (!k || !harfM) continue;
+      const iddia = harfM[1].normalize('NFC').toLocaleUpperCase('tr');
+      const tutuyor = adaylar.some((w) => {
+        const h = harfler(w);
+        return h.length >= k && h[k - 1].toLocaleUpperCase('tr') === iddia;
+      });
+      if (!tutuyor) {
+        // SARI: iddia yanlış OLABİLİR ama emin olamayız — yazarlar harfi sırasından ÖNCE de
+        // yazıyor ("SABİT carries a dotted capital İ as its **fourth letter**"), bu da ileri
+        // taramayı yanıltıyor. Ölçüldü: korpusta iki ordinal alarmın ikisi de sahteydi ve
+        // ikisi de Mami'nin ÇALIŞAN işindeydi. Bugünün dersi kendi kodumda geçerli —
+        // sahte alarm veren kontrol kırmızı yakmaz. Harf SAYISI kontrolü kırmızı kalır.
+        out.push(`SARI:"${yazi}" için "${m[1]} letter ... ${iddia}" yazıyor — gerçekte `
+          + adaylar.map((w) => {
+            const h = harfler(w);
+            return `${w}[${k}]=${h.length >= k ? h[k - 1] : '—'}`;
+          }).join(', '));
+      }
+    }
+  }
+  return out;
+}
+
 // Bir kural bu register'da geçerli mi? `registers` yoksa üçünde de geçerlidir.
 const appliesTo = (rule, register) => !rule.registers || rule.registers.includes(register);
 
@@ -426,9 +516,14 @@ function corpusMetrics(blocks) {
 // ---------------------------------------------------------------------------
 // BLOK LİNTİ
 // ---------------------------------------------------------------------------
-function lintBlock(body, register = 'EDU') {
+function lintBlock(body, register = 'EDU', fk = 'frame-dosyasi') {
   const problems = [];
-  const kind = blockKind(body);
+  // `fk` ZORUNLU olarak taşınır: lintFile dosyayı `motion-dosyasi` ilan etse bile bu çağrı onu
+  // geçirmediği sürece lintBlock kendi blok-başına sezgisine düşüyor ve MOTION_RE'ye takılmayan
+  // bloklar start-frame ölçütleriyle lintleniyordu. CLI'da görünmüyordu (report erken çıkıyor)
+  // ama `lintFile`'ı IMPORT eden kapanis-hasadi.mjs kirli `bad` sayısını görüyordu — yani
+  // "kapı kurulu, kapı sağır" sınıfının kendisi, hem de bu dosyanın içinde. (Ajan denetimi.)
+  const kind = blockKind(body, fk);
 
   // Referans-edit bloğu slot taşımaz — §1 madde 19 bunu EMREDİYOR. Tek kontrolü:
   // "change ONLY" gerçekten TEK şey mi değiştiriyor? (Kuvvet K31/K38 dört şeyi birden
@@ -470,6 +565,14 @@ function lintBlock(body, register = 'EDU') {
     if (t.hit(fb)) problems.push({ kind: 'trap', key: t.key, level: 'kirmizi', msg: `tuzak: ${t.key}`, why: `→ ${t.fix}` });
   }
 
+  // Heceleme talimatinin KENDISI dogru mu? Yanlis heceleme yokluktan beterdir.
+  for (const h of heceHatalari(frameBody(body) + '\n' + (body.match(/^TEXT:[\s\S]*?$/im)?.[0] ?? ''))) {
+    const sari = h.startsWith('SARI:');
+    problems.push({ kind: 'hece', key: sari ? 'hece-sira' : 'hece-sayi', level: sari ? 'sari' : 'kirmizi',
+      msg: `heceleme ${sari ? 'ŞÜPHELİ' : 'YANLIŞ'} — ${h.replace(/^SARI:/, '')}`,
+      why: 'Slot glif hatasını önlemek için var; içindeki sayı yanlışsa motoru AKTİF olarak yanlış yönlendirir (Kütle K10: "DEĞİŞMEZ — second letter Ğ", oysa Ğ üçüncü harf).' });
+  }
+
   const style = styleBlock(body);
   if (style) {
     const w = style.split(/\s+/).filter(Boolean).length;
@@ -498,7 +601,7 @@ export function lintFile(path, register = 'EDU') {
   const parsed = parseBlocks(text);
   const fk = fileKind(parsed);
   const blocks = parsed.map((b) => ({ ...b, kind: blockKind(b.body, fk) }));
-  const rows = blocks.map((b) => ({ head: b.head, kind: b.kind, problems: lintBlock(b.body, register) }));
+  const rows = blocks.map((b) => ({ head: b.head, kind: b.kind, problems: lintBlock(b.body, register, fk) }));
 
   const kirmizi = rows.filter((r) => r.problems.some((p) => p.level === 'kirmizi'));
   const sari = rows.filter((r) => !r.problems.some((p) => p.level === 'kirmizi') && r.problems.length);
