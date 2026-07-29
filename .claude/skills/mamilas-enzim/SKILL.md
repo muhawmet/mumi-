@@ -71,10 +71,21 @@ Yazdıktan sonra `grep -c '@karakter'` ile doğrula. Sonradan seyreltmek 8 kare 
 karakterler değil. Kaçırılırsa sürüklenir: bir üretimde kitap 6 karede 6 renk oldu, bir
 diğerinde çanta ile top kare ortasında değişti. Listeyi kesimle birlikte ver, üretimden önce bastır.
 
-**4. Ekranda yazı planı.** Hangi kavramlar ekranda yazacak? Kural:
-**yeni bir terim adlandırıldığında yazı var, terimin sonuçları gösterilirken yok.**
-Bu kararı burada ver — kare kare tartışılırsa iki tur gider (bir kez "hiç yazı yok"a,
-bir kez "her kavrama kart"a savrulduk).
+**4. Ekranda yazı POLİTİKASI** — kare listesi değil. *(Mami 2026-07-29: global yazı planı
+kilidi kaldırıldı; yazı artık sahneye göre adaptif yazılıyor.)*
+
+Burada kilitlenen tek şey politikadır: **Türkçe ya da HİÇ** · yazı **diegetik** doğar
+(kabartma harf, plaket, tabela — karede madde olarak) · **post-prodüksiyonda yazı katmanı YOK**
+(Mami AE bilmiyor) · yazı taşıyan her karede TEXT slotu **harf harf + diakritik + konum** yazılır
+(`PROMPT-YASASI.md` §2 TEXT satırı).
+
+**Hangi karede yazı olacağı kare kare, sahnenin kendisinden kararlaştırılır** — başlık satırında
+`yazı: <"KELİME" | YOK>` olarak beyan edilir. Önceden liste çıkarma; sahne yazıyı hak ediyorsa
+yazı vardır.
+
+**Kanıt:** Üreme'de 50 karenin 14'ü yazı taşıdı, karar kare kare verildi, **14/14 temiz** çıktı
+(`ENZIM-KILITLERI.json → kurguKilitleri.ekranYazisi`). Eski global-plan kilidi bu sonucu
+üretmedi; onu üreten TEXT slotunun kendisiydi.
 
 ---
 

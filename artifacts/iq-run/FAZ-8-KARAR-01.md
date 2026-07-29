@@ -66,7 +66,15 @@ Aynı 0/31'i 52 revize almış Bileşke de alıyor. **Ölçüm en iyi ile en kö
 | IQ7 kör tavan testi | **ERTELENDİ** | 24-40 eşleşmiş çift = gerçek kredi + 32-40 Mami saati. Ayrıca 46 dünyanın 45'i doğrulanmamış; cross-world PASS'in temeli yok. |
 | IQ0 baseline · IQ8 pilot | IQ4 bitince | Baseline zaten bu receipt'tir. |
 
-**IQ4'ün mimarisi — regex DEĞİL.** K3-KRİTİK gösteriyor ki slot eklemek kusuru büyütür:
+**IQ4'ün mimarisi — regex DEĞİL, ve API DEĞİL.**
+*(Mami 2026-07-29, doğrudan sınır: "otomasyon api falan yok, elle yapıyoruz unutma.")*
+Semantik geçişi bir script **otomatik olarak bir modele çağırmaz.** Geçişi **ajan** yapar —
+bugün prompt'u zaten ajan yazıyor (K2), denetimi de ajan yapıyor (`mamilas-denetim`).
+IQ4 bu yüzden iki parçalıdır: (a) deterministik script yalnız **gerçekten ölçebildiğini** ölçer
+ve ölçemediğini **açıkça beyan eder**; (b) semantik hüküm ajanın tek geçişinde, üretimden önce
+verilir. İkinci runner, provider çağrısı ya da otomatik generation yolu kurulmaz.
+
+K3-KRİTİK gösteriyor ki slot eklemek kusuru büyütür:
 her yeni regex yeni bir kelime tuzağıdır ve Mami'nin ölçüme güveni zaten kırık
 (Üreme'de 50 karede 19 sahte alarm; 7 tuzak hitinin 7'si sahte). Doğru kat:
 **prompt metnini okuyan semantik geçiş** — "bu karede temas ifade edilmiş mi?" sorusuna
