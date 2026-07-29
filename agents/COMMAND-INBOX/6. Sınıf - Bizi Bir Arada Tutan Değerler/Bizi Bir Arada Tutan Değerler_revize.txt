@@ -5,6 +5,12 @@ TEMİZ (dokunma): K01 K08 K10 K13 K20 K24 K27 K28 K31
   K20 ÖZEL: 47 harfin 47'si + 8 diakritiğin 8'i doğru. Geometri planımdan sapmış ama
   sette yazısı kusursuz çıkan tek yüzey orası — yeniden bastırmak yazıyı riske atar.
 
+DENETİM KISTASINDA EKSİK KALEM (Mami 2026-07-29, K16 ile ölçüldü): ajanlara verdiğim
+kıstas listesinde GEOMETRİ KAYNAŞMASI yoktu — figürün/nesnenin başka bir katı yüzeyin içine
+geçmesi. NB2 bunu sık yapıyor ve yazı/cast/ten/süreklilik kalemleri onu yakalamıyor. Sonraki
+denetim turunda kıstas sırasına 8. madde olarak girer: "katı yüzeye kaynaşmış beden/nesne,
+yüzen uzuv, tahtadan/taştan çıkan bacak".
+
 KIRMIZI ÇİZGİ İHLALİ: YOK. Hiçbir karede tarihî/dinî şahsiyet yüzü, komutan, rütbe, üniforma,
 silah yok. Afet karelerinde çocuk, yaralı, kan, ceset, enkaz yok. Grade griye kaçmamış.
 
@@ -53,8 +59,10 @@ Use this referenced image, change ONLY: remove the engraved lettering from the t
 ### 15.png
 Use this referenced image, change ONLY: remove both lettered banners in the background — the one over the left stall and the one at frame right — leaving blank cream canvas in their place. Keep everything else identical.
 
-### 16.png
-Use this referenced image, change ONLY: remove the lettering from the hanging wooden sign above the ox-cart so the board reads as bare weathered wood; leave the second, blurred sign untouched. Keep everything else identical.
+### 16.png   ⚠ MAMİ BULDU — ajan kaçırdı: figür ahşaba KAYNAŞMIŞ
+Use this referenced image, change ONLY: delete the standing figure whose legs and shoe emerge from underneath the left side of the ox-cart and whose body is merged into the cart timber, and delete the second stray leg and foot showing from behind the wheel — leave clean bare cart planks, clean paving stone and the cart own cast shadow in their place, with no body part intersecting or passing through any wooden surface; and remove all lettering from the pale board at the right of frame and from the small sign in the middle distance so both read as blank weathered wood. Keep everything else identical.
+Arabanın sol arkasındaki figür ahşabın İÇİNE geçmiş (bacak ve ayak gövdenin altından çıkıyor, beden tahtada kalıyor); tekerleğin sağında ikinci bir başıboş bacak var. Ayrıca sağ arka panoda İngilizceye benzer okunur yazı ve orta mesafede soluk harfli küçük tabela var.
+EDİT TUTMAZSA BAŞTAN ÜRET — kaynaşmış geometri referans-edit ile her zaman çözülmez.
 
 ### 17.png
 Use this referenced image, change ONLY: dress the boy standing behind the two pairs of hands in period villager clothing — a collarless coarse linen shirt with a woven sash, no zipper — give him warm tan Anatolian skin matching the others, and put the stoneware water jug into his two hands. Keep everything else identical.
