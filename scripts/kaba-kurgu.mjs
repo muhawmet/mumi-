@@ -231,7 +231,19 @@ let whisperSeg = null;
 const whisperCli = (() => { try { execFileSync('whisper-cli', ['-h'], { stdio: 'ignore' }); return true; } catch { return false; } })();
 const MODEL = join(process.env.HOME || '', '.cache/whisper/ggml-medium.bin');
 if (voDosya && whisperCli && existsSync(MODEL) && !has('tahmin')) {
-  const trBase = join(PROJE, `${basename(projeArg || 'proje')}—VO-transkript`);
+  // 🔴 ÖNBELLEK ANAHTARI SESİN KENDİSİ OLMALI. 2026-07-29'da anahtar yalnız PROJE ADIydı:
+  // VO değiştirildi (nefesleri kısaltılmış yeni dosya verildi), whisper eski dökümü önbellekten
+  // okudu ve kurgu 4:34'lük sese 4:49'luk hizayla kuruldu — yavaşlatma listesi harfi harfine
+  // aynı kaldı, yani "düzelttim" denilen şey hiç ölçülmedi. Araç ortama dair varsayım yapıp
+  // sessizce no-op oldu; gate.sh'ın python3 kusuru ve buddy-gate'in rtk kusuruyla AYNI SINIF.
+  // Anahtar artık dosya kimliği (ad + boy + değişim zamanı) taşıyor: ses değişirse döküm yenilenir.
+  const voKimlik = (() => {
+    try {
+      const st = statSync(resolve(voDosya));
+      return `${basename(voDosya).replace(/\.[^.]+$/, '')}-${st.size}-${Math.round(st.mtimeMs)}`;
+    } catch { return basename(voDosya); }
+  })();
+  const trBase = join(PROJE, `${basename(projeArg || 'proje')}—VO-transkript-${voKimlik}`);
   try {
     if (!existsSync(trBase + '.srt')) {
       console.log('   🎙  whisper VO\'yu yazıya döküyor (ilk sefer, birkaç dakika)...');

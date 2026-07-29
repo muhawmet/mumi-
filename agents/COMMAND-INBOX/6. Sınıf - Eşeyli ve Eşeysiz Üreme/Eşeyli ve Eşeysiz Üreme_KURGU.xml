@@ -5,7 +5,7 @@
 <xmeml version="5">
   <sequence id="seq-1">
     <name>6. Sınıf - Eşeyli ve Eşeysiz Üreme — kaba kurgu</name>
-    <duration>7088</duration>
+    <duration>6574</duration>
     <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
     <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
     <media>
@@ -18,9 +18,9 @@
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>156</end>
+          <end>152</end>
           <in>12</in>
-          <out>168</out>
+          <out>164</out>
           <file id="f-0">
             <name>1.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/1.mp4</pathurl>
@@ -36,8 +36,8 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>156</start>
-          <end>289</end>
+          <start>152</start>
+          <end>286</end>
           <in>12</in>
           <out>145</out>
           <file id="f-1">
@@ -48,6 +48,19 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2537</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
           <comments><mastercomment1>K02 — Dalın alt ucundan incecik beyaz kökler çıkmıştı. Efe bardağa iyice yaklaştı.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-2">
@@ -55,10 +68,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>289</start>
-          <end>446</end>
+          <start>286</start>
+          <end>423</end>
           <in>12</in>
-          <out>169</out>
+          <out>149</out>
           <file id="f-2">
             <name>3.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/3.mp4</pathurl>
@@ -70,8 +83,8 @@
           <comments><mastercomment1>K03 — Annesi, bu dalı toprağa dikeceklerini söyledi. Birkaç ay sonra yepyeni bir gül olacaktı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>440</start>
-          <end>452</end>
+          <start>417</start>
+          <end>429</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -92,10 +105,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>446</start>
-          <end>619</end>
+          <start>423</start>
+          <end>572</end>
           <in>12</in>
-          <out>185</out>
+          <out>161</out>
           <file id="f-3">
             <name>4.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/4.mp4</pathurl>
@@ -107,8 +120,8 @@
           <comments><mastercomment1>K04 — Efe şaşırdı. Bu dalın ne annesi vardı, ne babası. Peki nasıl yeni bir canlı oluyordu?</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>613</start>
-          <end>625</end>
+          <start>566</start>
+          <end>578</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -129,8 +142,8 @@
           <enabled>TRUE</enabled>
           <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>619</start>
-          <end>848</end>
+          <start>572</start>
+          <end>801</end>
           <in>12</in>
           <out>241</out>
           <file id="f-4">
@@ -148,8 +161,8 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>848</start>
-          <end>1109</end>
+          <start>801</start>
+          <end>1028</end>
           <in>12</in>
           <out>193</out>
           <file id="f-5">
@@ -168,7 +181,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>69.3487</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>79.7357</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>
@@ -180,10 +193,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1109</start>
-          <end>1188</end>
+          <start>1028</start>
+          <end>1098</end>
           <in>12</in>
-          <out>91</out>
+          <out>82</out>
           <file id="f-6">
             <name>7.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/7.mp4</pathurl>
@@ -195,8 +208,8 @@
           <comments><mastercomment1>K07 — Önce eşeysiz üreme. Burada anne baba gibi iki ayrı cinsiyet yoktu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>1182</start>
-          <end>1194</end>
+          <start>1092</start>
+          <end>1104</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -217,10 +230,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1188</start>
-          <end>1310</end>
+          <start>1098</start>
+          <end>1210</end>
           <in>12</in>
-          <out>134</out>
+          <out>124</out>
           <file id="f-7">
             <name>8.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/8.mp4</pathurl>
@@ -232,8 +245,8 @@
           <comments><mastercomment1>K08 — Üreme hücresi de yoktu. Ortada tek bir ata canlı vardı, hepsi bu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>1304</start>
-          <end>1316</end>
+          <start>1204</start>
+          <end>1216</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -254,10 +267,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1310</start>
-          <end>1467</end>
+          <start>1210</start>
+          <end>1363</end>
           <in>12</in>
-          <out>169</out>
+          <out>165</out>
           <file id="f-8">
             <name>9.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/9.mp4</pathurl>
@@ -273,8 +286,8 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1467</start>
-          <end>1577</end>
+          <start>1363</start>
+          <end>1472</end>
           <in>12</in>
           <out>121</out>
           <file id="f-9">
@@ -285,19 +298,6 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.0909</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K10 — Eşeysiz üremenin dört ana çeşidi vardı. Efe birincisinden başladı.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-10">
@@ -305,10 +305,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1577</start>
-          <end>1690</end>
+          <start>1472</start>
+          <end>1580</end>
           <in>12</in>
-          <out>121</out>
+          <out>120</out>
           <file id="f-10">
             <name>11.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/11.mp4</pathurl>
@@ -317,19 +317,6 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>96.4602</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K11 — Birincisi bölünerek üremeydi. En basit ve en hızlı olanı.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-11">
@@ -337,8 +324,8 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1690</start>
-          <end>1808</end>
+          <start>1580</start>
+          <end>1689</end>
           <in>12</in>
           <out>121</out>
           <file id="f-11">
@@ -349,19 +336,6 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>92.3729</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K12 — Efe mikroskoba eğildi. Camın üstünde küçücük bir amip duruyordu.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-12">
@@ -369,10 +343,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1808</start>
-          <end>1941</end>
+          <start>1689</start>
+          <end>1806</end>
           <in>12</in>
-          <out>145</out>
+          <out>129</out>
           <file id="f-12">
             <name>13.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/13.mp4</pathurl>
@@ -383,15 +357,33 @@
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K13 — Amip tam ortadan ikiye ayrıldı. Bir canlıdan iki canlı olmuştu.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>1800</start>
+          <end>1812</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-13">
           <name>14.mp4</name>
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1941</start>
-          <end>2091</end>
+          <start>1806</start>
+          <end>1942</end>
           <in>12</in>
-          <out>162</out>
+          <out>148</out>
           <file id="f-13">
             <name>14.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/14.mp4</pathurl>
@@ -403,8 +395,8 @@
           <comments><mastercomment1>K14 — Öglena, paramesyum ve bakteriler de böyle çoğalırdı: tam ortadan ikiye bölünerek.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2085</start>
-          <end>2097</end>
+          <start>1936</start>
+          <end>1948</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -425,10 +417,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2091</start>
-          <end>2272</end>
+          <start>1942</start>
+          <end>2115</end>
           <in>12</in>
-          <out>193</out>
+          <out>185</out>
           <file id="f-14">
             <name>15.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/15.mp4</pathurl>
@@ -439,15 +431,33 @@
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K15 — Efe saydı: bir, iki, dört, sekiz. Bölünerek üreme şaşırtıcı derecede hızlıydı.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>2109</start>
+          <end>2121</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-15">
           <name>16.mp4</name>
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2272</start>
-          <end>2396</end>
+          <start>2115</start>
+          <end>2226</end>
           <in>12</in>
-          <out>136</out>
+          <out>123</out>
           <file id="f-15">
             <name>16.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/16.mp4</pathurl>
@@ -459,8 +469,8 @@
           <comments><mastercomment1>K16 — İkincisi tomurcuklanmaydı. Bu kez ata canlı ikiye ayrılmıyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2390</start>
-          <end>2402</end>
+          <start>2220</start>
+          <end>2232</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -481,10 +491,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2396</start>
-          <end>2521</end>
+          <start>2226</start>
+          <end>2348</end>
           <in>12</in>
-          <out>137</out>
+          <out>134</out>
           <file id="f-16">
             <name>17.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/17.mp4</pathurl>
@@ -496,8 +506,8 @@
           <comments><mastercomment1>K17 — Vücudunun bir yerinde küçük bir çıkıntı oluşuyordu. Buna tomurcuk deniyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2515</start>
-          <end>2527</end>
+          <start>2342</start>
+          <end>2354</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -518,10 +528,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2521</start>
-          <end>2660</end>
+          <start>2348</start>
+          <end>2478</end>
           <in>12</in>
-          <out>151</out>
+          <out>142</out>
           <file id="f-17">
             <name>18.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/18.mp4</pathurl>
@@ -533,8 +543,8 @@
           <comments><mastercomment1>K18 — Efe hidranın gövdesindeki minik çıkıntıya baktı. Tomurcuk gün geçtikçe büyüyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2654</start>
-          <end>2666</end>
+          <start>2472</start>
+          <end>2484</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -555,10 +565,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2660</start>
-          <end>2785</end>
+          <start>2478</start>
+          <end>2598</end>
           <in>12</in>
-          <out>137</out>
+          <out>132</out>
           <file id="f-18">
             <name>19.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/19.mp4</pathurl>
@@ -570,8 +580,8 @@
           <comments><mastercomment1>K19 — Büyüyen tomurcuk ana canlıdan ayrıldı ve kendi başına yeni bir canlı oldu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2779</start>
-          <end>2791</end>
+          <start>2592</start>
+          <end>2604</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -592,10 +602,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2785</start>
-          <end>2905</end>
+          <start>2598</start>
+          <end>2706</end>
           <in>12</in>
-          <out>132</out>
+          <out>120</out>
           <file id="f-19">
             <name>20.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/20.mp4</pathurl>
@@ -607,8 +617,8 @@
           <comments><mastercomment1>K20 — Denizanası, hidra ve maya mantarları işte böyle çoğalırdı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>2899</start>
-          <end>2911</end>
+          <start>2700</start>
+          <end>2712</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -629,10 +639,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2905</start>
-          <end>3037</end>
+          <start>2706</start>
+          <end>2826</end>
           <in>12</in>
-          <out>144</out>
+          <out>132</out>
           <file id="f-20">
             <name>21.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/21.mp4</pathurl>
@@ -643,15 +653,33 @@
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K21 — Üçüncüsü rejenerasyondu. Efe'nin en havalı bulduğu yöntem buydu.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>2820</start>
+          <end>2832</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-21">
           <name>22.mp4</name>
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3037</start>
-          <end>3162</end>
+          <start>2826</start>
+          <end>2944</end>
           <in>12</in>
-          <out>137</out>
+          <out>130</out>
           <file id="f-21">
             <name>22.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/22.mp4</pathurl>
@@ -663,8 +691,8 @@
           <comments><mastercomment1>K22 — Canlıdan kopan bir parça, eksik kalan yerlerini kendi kendine tamamlıyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>3156</start>
-          <end>3168</end>
+          <start>2938</start>
+          <end>2950</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -685,10 +713,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3162</start>
-          <end>3301</end>
+          <start>2944</start>
+          <end>3079</end>
           <in>12</in>
-          <out>151</out>
+          <out>147</out>
           <file id="f-22">
             <name>23.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/23.mp4</pathurl>
@@ -700,8 +728,8 @@
           <comments><mastercomment1>K23 — Deniz yıldızından kopan tek bir kol, yavaş yavaş yepyeni bir deniz yıldızına dönüştü.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>3295</start>
-          <end>3307</end>
+          <start>3073</start>
+          <end>3085</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -722,10 +750,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3301</start>
-          <end>3433</end>
+          <start>3079</start>
+          <end>3204</end>
           <in>12</in>
-          <out>144</out>
+          <out>137</out>
           <file id="f-23">
             <name>24.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/24.mp4</pathurl>
@@ -737,8 +765,8 @@
           <comments><mastercomment1>K24 — Toprak solucanı ikiye ayrıldığında da parçalarından yeni solucanlar oluşabiliyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>3427</start>
-          <end>3439</end>
+          <start>3198</start>
+          <end>3210</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -759,10 +787,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3433</start>
-          <end>3555</end>
+          <start>3204</start>
+          <end>3317</end>
           <in>12</in>
-          <out>134</out>
+          <out>125</out>
           <file id="f-24">
             <name>25.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/25.mp4</pathurl>
@@ -774,8 +802,8 @@
           <comments><mastercomment1>K25 — Ama burada bir tuzak vardı. Efe bunu defterine kırmızı kalemle yazdı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>3549</start>
-          <end>3561</end>
+          <start>3311</start>
+          <end>3323</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -796,8 +824,8 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3555</start>
-          <end>3688</end>
+          <start>3317</start>
+          <end>3450</end>
           <in>12</in>
           <out>145</out>
           <file id="f-25">
@@ -815,10 +843,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3688</start>
-          <end>3798</end>
+          <start>3450</start>
+          <end>3556</end>
           <in>12</in>
-          <out>121</out>
+          <out>118</out>
           <file id="f-26">
             <name>27.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/27.mp4</pathurl>
@@ -827,19 +855,6 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.0909</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K27 — Ortaya yeni bir kertenkele çıkmaz. Yani bu üreme değildir.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-27">
@@ -847,10 +862,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3798</start>
-          <end>3949</end>
+          <start>3556</start>
+          <end>3683</end>
           <in>12</in>
-          <out>145</out>
+          <out>139</out>
           <file id="f-27">
             <name>28.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/28.mp4</pathurl>
@@ -859,30 +874,35 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>88.0795</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K28 — Dördüncüsü vejetatif üremeydi. Bu yöntem yalnızca bitkilere özeldi.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>3677</start>
+          <end>3689</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-28">
           <name>29.mp4</name>
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3949</start>
-          <end>4083</end>
+          <start>3683</start>
+          <end>3803</end>
           <in>12</in>
-          <out>145</out>
+          <out>132</out>
           <file id="f-28">
             <name>29.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/29.mp4</pathurl>
@@ -891,30 +911,35 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
-          <filter>
-            <effect>
-              <name>Time Remap</name>
-              <effectid>timeremap</effectid>
-              <effectcategory>motion</effectcategory>
-              <effecttype>motion</effecttype>
-              <mediatype>video</mediatype>
-              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2537</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
-            </effect>
-          </filter>
           <comments><mastercomment1>K29 — Efe mutfaktaki patatesi eline aldı. Üstünde küçük gözler filizlenmişti.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>3797</start>
+          <end>3809</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-29">
           <name>30.mp4</name>
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4083</start>
-          <end>4196</end>
+          <start>3803</start>
+          <end>3907</end>
           <in>12</in>
-          <out>125</out>
+          <out>116</out>
           <file id="f-29">
             <name>30.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/30.mp4</pathurl>
@@ -926,8 +951,8 @@
           <comments><mastercomment1>K30 — Patatesin gözlenmesi, yeni bir patates bitkisinin başlangıcıydı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>4190</start>
-          <end>4202</end>
+          <start>3901</start>
+          <end>3913</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -948,10 +973,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4196</start>
-          <end>4335</end>
+          <start>3907</start>
+          <end>4039</end>
           <in>12</in>
-          <out>151</out>
+          <out>144</out>
           <file id="f-30">
             <name>31.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/31.mp4</pathurl>
@@ -963,8 +988,8 @@
           <comments><mastercomment1>K31 — Çileğin toprak üstünde uzayan gövdesi, değdiği yerde kök salıp yeni çilek veriyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>4329</start>
-          <end>4341</end>
+          <start>4033</start>
+          <end>4045</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -985,10 +1010,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4335</start>
-          <end>4498</end>
+          <start>4039</start>
+          <end>4187</end>
           <in>12</in>
-          <out>175</out>
+          <out>160</out>
           <file id="f-31">
             <name>32.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/32.mp4</pathurl>
@@ -1000,8 +1025,8 @@
           <comments><mastercomment1>K32 — Ve Efe sabah gördüğü gül dalını hatırladı. Toprağa dikilen o dal, yeni bir gül tutuyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>4492</start>
-          <end>4504</end>
+          <start>4181</start>
+          <end>4193</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1022,10 +1047,10 @@
           <enabled>TRUE</enabled>
           <duration>217</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4498</start>
-          <end>4673</end>
+          <start>4187</start>
+          <end>4351</end>
           <in>12</in>
-          <out>187</out>
+          <out>176</out>
           <file id="f-32">
             <name>33.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/33.mp4</pathurl>
@@ -1037,8 +1062,8 @@
           <comments><mastercomment1>K33 — Dört yöntem de aynı kapıya çıkıyordu: tek ata, üreme hücresi yok, birebir aynı yeni canlı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>4667</start>
-          <end>4679</end>
+          <start>4345</start>
+          <end>4357</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1059,8 +1084,8 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4673</start>
-          <end>4707</end>
+          <start>4351</start>
+          <end>4385</end>
           <in>12</in>
           <out>46</out>
           <file id="f-33">
@@ -1074,8 +1099,8 @@
           <comments><mastercomment1>K34 — Sonra Efe defterindeki ikinci yola geçti: eşeyli üreme.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>4701</start>
-          <end>4713</end>
+          <start>4379</start>
+          <end>4391</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1096,8 +1121,8 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4707</start>
-          <end>4840</end>
+          <start>4385</start>
+          <end>4518</end>
           <in>12</in>
           <out>145</out>
           <file id="f-34">
@@ -1115,8 +1140,8 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4840</start>
-          <end>5017</end>
+          <start>4518</start>
+          <end>4684</end>
           <in>12</in>
           <out>169</out>
           <file id="f-35">
@@ -1135,7 +1160,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>88.7006</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.5783</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>
@@ -1147,10 +1172,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5017</start>
-          <end>5146</end>
+          <start>4684</start>
+          <end>4789</end>
           <in>12</in>
-          <out>141</out>
+          <out>117</out>
           <file id="f-36">
             <name>37.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/37.mp4</pathurl>
@@ -1161,15 +1186,33 @@
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>K37 — Yumurta ile sperm birleşti. Bu olayın adı döllenmeydi.</mastercomment1></comments>
         </clipitem>
+        <transitionitem>
+          <start>4783</start>
+          <end>4795</end>
+          <alignment>center</alignment>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
         <clipitem id="ci-37">
           <name>38.mp4</name>
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5146</start>
-          <end>5249</end>
+          <start>4789</start>
+          <end>4885</end>
           <in>12</in>
-          <out>115</out>
+          <out>108</out>
           <file id="f-37">
             <name>38.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/38.mp4</pathurl>
@@ -1181,8 +1224,8 @@
           <comments><mastercomment1>K38 — Döllenme sonucu oluşan o tek hücreye zigot deniyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5243</start>
-          <end>5255</end>
+          <start>4879</start>
+          <end>4891</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1203,10 +1246,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5249</start>
-          <end>5374</end>
+          <start>4885</start>
+          <end>5000</end>
           <in>12</in>
-          <out>137</out>
+          <out>127</out>
           <file id="f-38">
             <name>39.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/39.mp4</pathurl>
@@ -1218,8 +1261,8 @@
           <comments><mastercomment1>K39 — Zigot bölündü, büyüdü, gelişti ve yeni bir birey oluşturdu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5368</start>
-          <end>5380</end>
+          <start>4994</start>
+          <end>5006</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1240,10 +1283,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5374</start>
-          <end>5484</end>
+          <start>5000</start>
+          <end>5104</end>
           <in>12</in>
-          <out>122</out>
+          <out>116</out>
           <file id="f-39">
             <name>40.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/40.mp4</pathurl>
@@ -1255,8 +1298,8 @@
           <comments><mastercomment1>K40 — Efe kedisinin sepetine baktı. İçinde üç yavru uyuyordu.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5478</start>
-          <end>5490</end>
+          <start>5098</start>
+          <end>5110</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1277,10 +1320,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5484</start>
-          <end>5597</end>
+          <start>5104</start>
+          <end>5212</end>
           <in>12</in>
-          <out>125</out>
+          <out>120</out>
           <file id="f-40">
             <name>41.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/41.mp4</pathurl>
@@ -1292,8 +1335,8 @@
           <comments><mastercomment1>K41 — Üçü de annelerine benziyordu ama hiçbiri onun birebir aynısı değildi.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5591</start>
-          <end>5603</end>
+          <start>5206</start>
+          <end>5218</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1314,10 +1357,10 @@
           <enabled>TRUE</enabled>
           <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5597</start>
-          <end>5794</end>
+          <start>5212</start>
+          <end>5392</end>
           <in>12</in>
-          <out>209</out>
+          <out>192</out>
           <file id="f-41">
             <name>42.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/42.mp4</pathurl>
@@ -1329,8 +1372,8 @@
           <comments><mastercomment1>K42 — Hatta üç yavru birbirinden de farklıydı. İşte eşeyli üremenin en önemli özelliği buydu: çe</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5788</start>
-          <end>5800</end>
+          <start>5386</start>
+          <end>5398</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1351,10 +1394,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5794</start>
-          <end>5950</end>
+          <start>5392</start>
+          <end>5537</end>
           <in>12</in>
-          <out>168</out>
+          <out>157</out>
           <file id="f-42">
             <name>43.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/43.mp4</pathurl>
@@ -1366,8 +1409,8 @@
           <comments><mastercomment1>K43 — Efe aynaya baktı. Annesine de babasına da benziyordu; ama tıpatıp ikisi de değildi.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>5944</start>
-          <end>5956</end>
+          <start>5531</start>
+          <end>5543</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1388,10 +1431,10 @@
           <enabled>TRUE</enabled>
           <duration>217</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>5950</start>
-          <end>6125</end>
+          <start>5537</start>
+          <end>5700</end>
           <in>12</in>
-          <out>187</out>
+          <out>175</out>
           <file id="f-43">
             <name>44.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/44.mp4</pathurl>
@@ -1403,8 +1446,8 @@
           <comments><mastercomment1>K44 — İnsanlar, kediler, köpekler, kuşlar ve çiçekli bitkiler, hepsi eşeyli üremeyle çoğalırdı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>6119</start>
-          <end>6131</end>
+          <start>5694</start>
+          <end>5706</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1425,10 +1468,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6125</start>
-          <end>6226</end>
+          <start>5700</start>
+          <end>5792</end>
           <in>12</in>
-          <out>113</out>
+          <out>104</out>
           <file id="f-44">
             <name>45.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/45.mp4</pathurl>
@@ -1440,8 +1483,8 @@
           <comments><mastercomment1>K45 — Efe defterin son sayfasına iki sütunlu bir tablo çizdi.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>6220</start>
-          <end>6232</end>
+          <start>5786</start>
+          <end>5798</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1462,10 +1505,10 @@
           <enabled>TRUE</enabled>
           <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6226</start>
-          <end>6379</end>
+          <start>5792</start>
+          <end>5931</end>
           <in>12</in>
-          <out>165</out>
+          <out>151</out>
           <file id="f-45">
             <name>46.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/46.mp4</pathurl>
@@ -1477,8 +1520,8 @@
           <comments><mastercomment1>K46 — Ata canlı sayısı: eşeysiz üremede tek ata. Eşeyli üremede dişi ve erkek, yani iki ata.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>6373</start>
-          <end>6385</end>
+          <start>5925</start>
+          <end>5937</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1499,8 +1542,8 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6379</start>
-          <end>6560</end>
+          <start>5931</start>
+          <end>6112</end>
           <in>12</in>
           <out>193</out>
           <file id="f-46">
@@ -1518,10 +1561,10 @@
           <enabled>TRUE</enabled>
           <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6560</start>
-          <end>6778</end>
+          <start>6112</start>
+          <end>6286</end>
           <in>12</in>
-          <out>230</out>
+          <out>186</out>
           <file id="f-47">
             <name>48.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/48.mp4</pathurl>
@@ -1533,8 +1576,8 @@
           <comments><mastercomment1>K48 — Çeşitlilik: eşeysiz üremede yok, tıpkı fotokopi gibi. Eşeyli üremede var, her yavru farklı</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>6772</start>
-          <end>6784</end>
+          <start>6280</start>
+          <end>6292</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1555,10 +1598,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6778</start>
-          <end>6924</end>
+          <start>6286</start>
+          <end>6423</end>
           <in>12</in>
-          <out>158</out>
+          <out>149</out>
           <file id="f-48">
             <name>49.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/49.mp4</pathurl>
@@ -1570,8 +1613,8 @@
           <comments><mastercomment1>K49 — Efe balkona döndü. Gül dalı bardakta, yavrular sepette, kuş daldaydı.</mastercomment1></comments>
         </clipitem>
         <transitionitem>
-          <start>6918</start>
-          <end>6930</end>
+          <start>6417</start>
+          <end>6429</end>
           <alignment>center</alignment>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <cutPointTicks>0</cutPointTicks>
@@ -1592,10 +1635,10 @@
           <enabled>TRUE</enabled>
           <duration>241</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>6924</start>
-          <end>7088</end>
+          <start>6423</start>
+          <end>6574</end>
           <in>12</in>
-          <out>176</out>
+          <out>163</out>
           <file id="f-49">
             <name>50.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/50.mp4</pathurl>
@@ -1611,23 +1654,23 @@
       <audio>
       <track>
         <clipitem id="vo1-0">
-          <name>vo.mp3</name>
+          <name>vo-nefes-kisa.mp3 (1/2)</name>
           <enabled>TRUE</enabled>
-          <duration>7088</duration>
+          <duration>6573</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>7088</end>
+          <end>6573</end>
           <in>0</in>
-          <out>7088</out>
+          <out>6573</out>
           <file id="file-vo1">
-            <name>vo.mp3</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/vo.mp3</pathurl>
+            <name>vo-nefes-kisa.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/vo-nefes-kisa.mp3</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>7088</duration>
+            <duration>6573</duration>
             <media><audio><channelcount>2</channelcount></audio></media>
           </file>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
-          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
+          <comments><mastercomment1>VO — ElevenLabs — döngü 1/2</mastercomment1></comments>
         </clipitem>
       </track>
       <track>
@@ -1657,10 +1700,10 @@
           <enabled>TRUE</enabled>
           <duration>3132</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3960</start>
-          <end>7088</end>
+          <start>3600</start>
+          <end>6574</end>
           <in>0</in>
-          <out>3128</out>
+          <out>2974</out>
           <file id="file-mzk2">
             <name>ses1.wav</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/ses1.wav</pathurl>
@@ -1669,7 +1712,7 @@
             <media><audio><channelcount>2</channelcount></audio></media>
           </file>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
-          <comments><mastercomment1>Müzik 2/2 — Suno (VO altında ~-18 dB) — 165.0s'de tek kez (döngü YOK)</mastercomment1></comments>
+          <comments><mastercomment1>Müzik 2/2 — Suno (VO altında ~-18 dB) — 150.0s'de tek kez (döngü YOK)</mastercomment1></comments>
         </clipitem>
       </track>
       </audio>
