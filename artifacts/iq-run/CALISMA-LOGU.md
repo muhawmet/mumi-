@@ -146,19 +146,19 @@ yanındaki **kanıt sütunu** okunmalıdır.
 
 | Boyut | Önce | Şimdi | Kanıt |
 |---|---|---|---|
-| Oturum açılışı / durum doğruluğu | 25 | **88** | 1337 satır → 35 satırlık disk-ölçümlü kayıt; drift uyarıları sıfırlandı |
 | Kapanış dürüstlüğü | 10 | **92** | sıfır koşuldan dört koşula; canlı test ⛔ verdi; override kaçağı kapatıldı |
-| Ölçüm duvarı (prompt-lint) | 30 | **78** | ~200 sahte alarm sustu · 7 bağımsız denetim bulgusu kapatıldı · Üreme↔Bileşke ayrımı net. **Magnific kalibrasyonu hâlâ eksik** |
-| Dünya kilidi tutarlılığı | 25 | **80** | 46/46 dünya süpürüldü, ham hex 0, STYLE ort. 86 kelime. `overscale` bütçeye sığmıyor, vitest yok |
+| Skill / capability paritesi | 40 | **90** | **83 vaka**: içerik paritesi · frontmatter · atıflar gerçek mi · `node <x>.mjs` çalışıyor mu · hook hedefi + exec biti. `node`+args biçimindeki iki hook'un kör noktası kapandı |
+| Oturum açılışı / durum doğruluğu | 25 | **88** | 1337 satır → 35 satırlık disk-ölçümlü kayıt; drift uyarıları sıfırlandı |
+| Ölçüm duvarı (prompt-lint) | 30 | **85** | ~200 sahte alarm sustu · 7 bağımsız denetim bulgusu + 1 ajan bulgusu kapatıldı · **26 test** · heceleme doğrulaması eklendi. **Magnific kalibrasyonu hâlâ eksik** |
+| Dünya kilidi tutarlılığı | 25 | **85** | 46/46 dünya süpürüldü, ham hex 0, STYLE ort. 86 kelime, 5 test. `overscale` bütçeye sığmıyor |
 | Yük duvarı (buddy) | 20 | **85** | Guard erteleyici; 20+ davranış testi yeşil; garanti dürüst sınırına çekildi |
-| Skill tetik netliği | 40 | **85** | director/uret çakışması ayrıldı, ikizler eşit |
-| Öğrenme halkası | 10 | **35** | 47 aday → 12 satırlık oy pusulası. Mekanizma açıldı, **halka kapanmadı** — Mami onaylayana kadar banka boş |
+| Öğrenme halkası | 10 | **45** | 47 aday → 12 satırlık oy pusulası · okuma tarafı sağlam ölçüldü · sessiz kayıp duvara çevrildi (kanıtla sınandı). **Halka Mami ✅ koyana kadar kapanmaz** |
 | Kör tercih (A/B) | — | **KANIT YOK** | tek kör karşılaştırma yapılmadı |
 | Revize azalması | — | **KANIT YOK** | yeni kapılarla tek video üretilmedi |
 | Cross-world | — | **KANIT YOK** | 46 dünyanın 45'i hâlâ kare görmedi |
 
-**Ölçülen 7 boyutun ortalaması: 77,6 / 100 → dürüst hüküm: 78 / 100.**
-(Oturum başı: 72. Bağımsız denetim + dünya kilidi + ders pusulası +6 getirdi.)
+**Ölçülen 7 boyutun ortalaması: 81,4 / 100 → dürüst hüküm: 81 / 100.**
+(Oturum başı 72 → bağımsız denetim +6 → ölçüm testleri ve capability duvarı +3.)
 
 Bu tavan üç boyutta **sıfır kanıt** olduğu için yükseltilemez. 90-95 bandı, yeni kapılarla
 **gerçek bir video üretilip** revize sayısı ölçülmeden iddia edilemez; o iddiayı bugün yazmak
@@ -166,14 +166,15 @@ Bu tavan üç boyutta **sıfır kanıt** olduğu için yükseltilemez. 90-95 ban
 
 **90-95'e giden üç şey, sırayla:**
 1. Magnific'teki Üreme promptları → lint kalibrasyonu kapanır *(Mami'de)*.
-2. `ONAY-BEKLEYEN.md`'ye ✅/❌ → öğrenme halkası kapanır *(Mami'de, 12 satır)*.
+2. `agents/lessons/ONAY-BEKLEYEN.md`'ye 12 ✅/❌ → öğrenme halkası kapanır *(Mami'de)*.
 3. Yeni kapılarla bir video → revize azalması ölçülür *(4 video sırada)*.
 
 ## Mami döndüğünde bilmesi gerekenler
 
 - **Video bitmiş görünüyor:** Üreme render'ı alınmış (504 MB, 11:41). Kayıt "Mami onayı bekliyor" diyor.
 - **Kit'te MOTION eksik** — 50 klip üretilmiş ama `_MOTION.txt` hiç yazılmamış. Kapanış onda duruyor;
-  gerçekten kabul ediliyorsa `current-work.mjs kapat --zorla`.
+  gerçekten kabul ediliyorsa `node scripts/current-work.mjs kapat --zorla`.
 - **INBOX boş.** 4 video için 4 kaynak (senaryo/docx) getirmen gerekiyor.
 - **`Kuvvet MİRA` klasörü ERROR** — promptları kardeş klasörde (`Kuvvet ve Kuvvetin Ölçülmesi`).
   İki klasör aynı videonun iki sürümü. Birleştirme senin kararın; ajan dosyanı taşımaz.
+- **Yeni araç:** `node scripts/dunya-kilidi.mjs pixar_3d_edu` → STYLE kuyruğunu artık elle yazma.
