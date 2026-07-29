@@ -5,6 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: fefb2c9c-6fc2-4bcb-a9c1-d274cc79ea00
+  modified: 2026-07-29T09:08:15.876Z
 ---
 
 Bir prompt'a "bu bir üslup yasası, içindekiler listesi DEĞİL" diye uyarı eklemek **işe yaramaz**.
@@ -27,4 +28,4 @@ Aynı hata iki katmanda tekrar etti: `castAuthorityClause` dünyanın örnek Kİ
 "kadro emri değil" diye işaretliyordu — ama NESNE sınıfı kördü. İşaretleme zaten
 çalışmıyordu; nesne için de çalışmayacaktı.
 
-İlgili: [[mamilas-simulation-loop]] · [[mamilas-mami-is-in-the-loop]]
+İlgili: [[mamilas-physical-medium-law]] · [[mamilas-mami-is-in-the-loop]]

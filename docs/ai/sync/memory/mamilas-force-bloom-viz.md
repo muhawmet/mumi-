@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 0b4a7c89-f6c0-4d85-8a52-503440509ec0
-  modified: 2026-07-25T09:48:48.907Z
+  modified: 2026-07-29T09:07:52.715Z
 ---
 
 MAMILAS fizik-eğitim videolarında kuvvet/fizik görselleştirme sistemi. Dünya render law "no icon/arrow/diagram standing in for the real object" der → fiziği MADDEDE + IŞIKTA göster, sembolde değil.
@@ -35,4 +35,4 @@ MAMILAS fizik-eğitim videolarında kuvvet/fizik görselleştirme sistemi. Düny
 **CAST TUZAĞI:** NB2 arka plan çocuklarını default çeşitli/siyahi yapıyor. Sert kilitle:
 *"EVERY child in frame, main AND background, is Turkish/Anatolian — warm Mediterranean skin, dark hair; NO Black/African or East-Asian child anywhere."* Ayrıca "cool-green highlight" Mira'nın cildini yeşile boyayabiliyor → "warm matte skin, green only on edges not skin".
 
-Reusable: her pixar_3d_edu fizik-edu videosunda aynı sistem. İlişkili: [[mamilas-bileske-kuvvet-world-explainer]] · `agents/PROMPT-YASASI.md` §2 (show/premium yasası) · `agents/PROMPT-YASASI.md` §2 (ten kilidi)
+Reusable: her pixar_3d_edu fizik-edu videosunda aynı sistem. İlişkili: [[mamilas-nb2-hata-katalogu]] · `agents/PROMPT-YASASI.md` §2 (show/premium yasası) · `agents/PROMPT-YASASI.md` §2 (ten kilidi)

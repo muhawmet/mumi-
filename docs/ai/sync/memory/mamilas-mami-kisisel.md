@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: user
   originSessionId: 835110b6-4716-461b-9f6c-8102e5b1b841
-  modified: 2026-07-26T08:11:32.798Z
+  modified: 2026-07-29T09:07:55.378Z
 ---
 
 Mami (Muhammet) 2026-07-26'da kendi anlattı.
@@ -143,4 +143,4 @@ istekli — teklif açık bıraktı.
 
 Cevaplanmayan tek şey **şehir ve yaş** — süs, iş için gerekmiyor, tekrar sorma.
 
-İlgili: [[mamilas-makro-kurali]] · [[mamilas-mami-yonergeleri]] · [[mamilas-v2-kutuphane-makro]]
+İlgili: [[mamilas-makro-kurali]] · [[mamilas-mami-yonergeleri]] · [[mamilas-buddy-persona]]

@@ -1,42 +1,45 @@
 ---
 name: mamilas-aktif-uretim-durumu
-description: "HOT STATE — aktif video hangisi, hangi aşamada, Mami'nin bekleyen kararı ne. Oturum açılışında ilk okunan üretim gerçeği (2026-07-28 mührü)."
+description: "HOT STATE — aktif video hangisi, hangi aşamada, Mami'nin bekleyen kararı ne. Makine gerçeği artifacts/current-work.json; bu dosya onun bağlamını taşır."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 651a452b-2f9e-43f9-aef5-0f4175d8c3db
-  modified: 2026-07-28T14:33:21.018Z
+  modified: 2026-07-29T09:06:30.098Z
 ---
 
-# AKTİF ÜRETİM — 2026-07-28 mührü
+# AKTİF ÜRETİM — bağlam (2026-07-29)
 
-**Aktif video: YOK.** Kütle ve Ağırlık **bitti ve arşivlendi** (`Biten/`), kapanış hasadı koştu
-(`agents/lessons/HASAT-5-sinif-kutle-ve-agirlik.md`, 6 ders adayı). Sistem **yeni iş bekliyor.**
+> **⛔ Durumun makine gerçeği `artifacts/current-work.json`'dır.** SessionStart'ta
+> `.claude/hooks/oturum-durumu.mjs` basar; `node scripts/current-work.mjs` ile elle okunur.
+> **Bu dosya durum DEĞİL, bağlam taşır.** Çelişki olursa KAYIT kazanır — bir kez ters yaşandı:
+> 07-28 mührü "aktif video YOK" derken ertesi sabah 50 klip üretilmişti. Onun için bu dosya
+> sayı tutmaz, kaydın işaret ettiği işin arka planını tutar.
 
-**Mami'nin bekleyen iki cevabı** — ikisi sorulmadan yeni prodüksiyon açılmaz:
-1. Yeni iş hangisi? (07-28'de "yeni iş geldi" dedi, konusu tanımlanmadı)
-2. **Beğenmediği iş hangisi?** ("bir işi beğenmedim, konuşacağız")
+## Aktif iş
 
-## Beş işin diskteki gerçek durumu
+**6. Sınıf — Eşeyli ve Eşeysiz Üreme**, faz **kurgu**. 51 klip + VO + müzik diskte
+(`~/Desktop/6. Sınıf Animasyonlar/<proje>/`, repoda değil), `_KURGU.xml` yazıldı, Premiere
+render'ı alındı. Sıradaki tek adım Mami'nin render onayı; onay gelirse kapanış hasadı koşar.
+Kitte **revize + MOTION** eksik. Güncel sayılar için kayda bak, buraya yazma.
 
-| İş | Kare | Kit | Durum |
-|---|---|---|---|
-| Sabit Sürat ve Hız | 44 | tam | ✅ EDİT BİTTİ (`.prproj` + mp4) |
-| Sürtünme | 31 | tam | ✅ EDİT BİTTİ |
-| Bileşke / Kuvvetlerin Güç Birliği | 52 | tam + 2 revize | 🟠 kurgu bekliyor |
-| Kuvvet ve Kuvvetin Ölçülmesi | 48 | tam (`.md`+`.txt` ikiz) | 🟠 kurgu bekliyor |
-| **Kütle ve Ağırlık** | **35/35 üretildi + klip + VO + 5/5 kit** | tam | ✅ Premiere'de, kapandı |
+**ElevenLabs hattı emekli edildi (Mami, 2026-07-29).** VO artık orada üretilmiyor; "ElevenLabs
+kredisi" bir blokaj sınıfı değildir. Eski kayıtlarda geçen "VO ElevenLabs'i bekliyor" satırı
+ölüdür — VO diskte (`vo.mp3` + `vo-nefes-kisa.mp3`).
 
-Kareler ve klipler repoda değil: `Desktop/6. Sınıf Animasyonlar/<proje>/`.
+## Biten işler
+
+Sabit Sürat ve Hız · Sürtünme · Kütle ve Ağırlık edit'i bitti. Bileşke/Kuvvetlerin Güç Birliği
+ve Kuvvet ve Kuvvetin Ölçülmesi kit'i tam, kurgu bekliyor. Biten dersler
+`agents/COMMAND-INBOX/Biten/` altına taşınır, kapanış hasadı `agents/lessons/HASAT-*.md` bırakır.
 
 ## Açık Mami kararları (üretim tarafı)
 
-- **K04 çatalı** (Kütle) — mutfak mı sınıf flashback'i mi; kapanmadan motion final sayılmaz.
-- **`agents/MAMI-ZEVKI.md`** — 32 maddelik zevk taslağı onay bekliyor; onaylanan PROMPT-YASASI'na
+- **`agents/lessons/APPROVED.md` boş.** 6 hasat dosyasında onlarca aday var; APPROVED'a
+  **yalnız Mami taşır** (otomatik promote yok — çöp ders sistemi zehirler). Taşınmadıkça her
+  üretim boş ders bankasıyla başlıyor: öğrenme halkası burada kopuyor. Yeni video açarken
+  Mami'ye bir aday listesi sun.
+- **`agents/MAMI-ZEVKI.md`** — 32 maddelik zevk taslağı TASLAK; onaylanan `PROMPT-YASASI.md`'ye
   ya da APPROVED.md'ye taşınır, reddedilen silinir. Kazı özeti: [[mamilas-zevk-madeni]]
-- **`agents/lessons/APPROVED.md` hâlâ neredeyse boş** — 6 hasat dosyasında onlarca aday var,
-  Mami taşımadıkça her üretim boş ders bankasıyla başlıyor. Öğrenme halkası kopuk.
 
-Derin tarih ve ledger: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
-(1300+ satır — **normal video oturumunda tamamını okuma**, bu dosya + ilgili receipt yeter).
-İlgili: [[mamilas-decision-pipeline]] · [[mamilas-kaba-kurgu-hatti]] · [[mamilas-insa-ledger-acik]]
+İlgili: [[mamilas-kaba-kurgu-hatti]] · [[mamilas-uretim-akisi]] · [[mamilas-uzatilmis-klip-karari]]

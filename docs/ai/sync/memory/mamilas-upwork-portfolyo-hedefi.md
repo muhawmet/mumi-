@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 97e409ef-fb0e-4fa2-82d7-310ae053a13f
-  modified: 2026-07-27T20:20:56.939Z
+  modified: 2026-07-29T09:08:05.837Z
 ---
 
 Mami (2026-07-27): *"En sonunda da Upwork için portfolyoluk videolar yapalım, demoları oraya
@@ -19,4 +19,4 @@ filmi bir deney değil, portfolyo parçasıdır ve konu/marka seçimi buna göre
 **How to apply:** üretim kararlarını "bu kare bir müşteriye gösterilir mi" ölçütüyle ver. Demo
 markasız olabilir (o zaman `brandKitLock` engel değil); marka konacaksa önce kilidin giriş yüzeyi
 gerekir — kilit boşken ölçülen gerçek çıktı müşterinin kendi logosunu üç kez yasaklıyor.
-İlgili: [[mamilas-uretim-akisi]] · [[mamilas-v2-kutuphane-makro]]
+İlgili: [[mamilas-uretim-akisi]] · [[mamilas-uzatilmis-klip-karari]]
