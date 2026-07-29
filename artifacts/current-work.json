@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
   "phase": "kapandi",
   "status": "kapandi",
-  "lastCompleted": "Render alındı (Üreme.mp4 504 MB, 11:41). KİT EKSİĞİ: _MOTION.txt hiç yazılmadı — 50 klip Kling'de doğrudan üretildi, motion promptları diske düşmedi.",
-  "nextAction": "node scripts/kapanis-hasadi.mjs --all — karne + ders adayı.",
+  "lastCompleted": "FAZ 8 kapandı: 20 commit, 2320 test yeşil. Linter işlev ölçüyor (Üreme 13→2 sahte alarm), dunya-kilidi.mjs emit ediyor (46/46 dünya, One Piece imzası bütçede), giriş sözleşmeleri üretime kuruldu, hafıza temizlendi (71→56), capability duvarı kuruldu (83 vaka), memory-sync --adopt eklendi (çok-cihaz). Skor 23→81. Codex ve Sol denetimlerinin 10 bulgusu kapatıldı.",
+  "nextAction": "YENİ VİDEO — Mami konu/kaynak getirecek. Sıra: baslat → /mamilas-enzim (4 kilit) → node scripts/dunya-kilidi.mjs <worldId> (kuyruğu BAS, elle yazma) → prompt yaz → node scripts/prompt-lint.mjs <dosya> (Mami BASMADAN ÖNCE) → Mami basar → tek geçiş denetim.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [
@@ -20,19 +20,19 @@
     }
   ],
   "deliverables": {
-    "REFERANSLAR": true,
-    "PROMPTLAR": true,
+    "REFERANSLAR": false,
+    "PROMPTLAR": false,
     "revize": false,
     "MOTION": false,
-    "EDIT-PLAN": true,
-    "SESLENDIRME": true,
-    "SUNO": true,
-    "KABA-KURGU.xml": true
+    "EDIT-PLAN": false,
+    "SESLENDIRME": false,
+    "SUNO": false,
+    "KABA-KURGU.xml": false
   },
   "deliverablesOverride": {
     "MOTION": false
   },
-  "updatedAt": "2026-07-29T10:14:17.293Z",
+  "updatedAt": "2026-07-29T10:31:09.489Z",
   "updatedBy": "claude",
-  "baseCommit": "e79abfd"
+  "baseCommit": "10af458"
 }
