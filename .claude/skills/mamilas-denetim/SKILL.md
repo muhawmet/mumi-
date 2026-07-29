@@ -36,9 +36,21 @@ karenin VO cümlesi · dünya/palet/negatif kilitleri · `PROMPT-YASASI` §1 kı
 GÖRÜR** — dosya adına ya da prompta bakarak hüküm vermek yasak.
 
 **3. Kıstas sırası (sabit, yasa §1'den).**
+0. **FİKİR (yasa §2ø)** — kareyi VO olmadan gösterip "burada ne oluyor" diye sorsan cevap
+   verilebilir mi? Görünür bir gerilim ya da değişim var mı? Yoksa kare teknik olarak kusursuz
+   ama ölüdür ve teslim edilmez. Bu madde diğer sekizinin ÜSTÜNDEDİR: onlar kusuru ölçer,
+   bu bakılmaya değer olup olmadığını ölçer.
 1. **VO ↔ sahne uyumu (EN ÖNEMLİ)** — kare o cümlenin dediğini gösteriyor mu?
 2. Bozuk/garbled yazı · 3. Yanlış cast (Türk/Anadolu) · 4. Fazla/İngilizce yazı ·
 5. World/firewall ihlali · 6. Süreklilik (karakter, hero-prop, mekân) · 7. Void arka plan
+8. **Geometri kaynaşması** — figür/nesne başka bir katı yüzeyin içine geçmiş mi (Mami buldu,
+   ajan kaçırdı: K16 ahşaba kaynaşmış figür). Yazı/cast/ten/süreklilik kalemleri bunu yakalamıyor.
+9. **ÇEKİMİN KENDİSİ** — yasa §2a. Bu madde olmadan çirkin kare TEMİZ geçiyor (ölçüldü:
+   Değerler'in kemer karesi denetimden dokunulmadan çıktı, Mami rezil dedi). Dört soru:
+   · kahraman kim, kadrajın neyi kaplıyor?
+   · kaç NET insan var? (isimsiz her yüz ~30-40 pikselde lekeye dönüyor)
+   · ışık nereden geliyor ve NEREDE BİTİYOR? (hiçbir yer kararmıyorsa yüz modellenmiyor)
+   · özne zeminden değer/renkle ayrılıyor mu, yoksa aynı tonda mı eriyor?
 
 **4. Karar — basit.**
 *Sahne bozuksa* (kompozisyon/içerik yanlış, beat tutmuyor) → **baştan üret.**

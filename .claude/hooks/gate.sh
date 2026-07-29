@@ -117,6 +117,25 @@ if ! SYNC_OUT=$(node scripts/claude-sync.mjs --check 2>&1); then
   fi
 fi
 
+# GONDERILMEMIS IS — 2026-07-29'da olculdu, iki kez ve ikisi de pahaliya patladi.
+# 28 Tem gecesi yasaya §11a-c/§3a/§3b yazildi, commit edildi, PUSH EDILMEDI. Ertesi gun
+# Mac o yasalar olmadan bir videonun motion'ini yazdi: 13/34 klipte refleks yavas push-in
+# (§3b onu yasakliyordu), 141 saniye uretilmis video cope gitti, ve Mami sabaha sifirdan
+# basladi. Kapi o gece YESILDI — tsc, test, build hepsi geciyordu. Yesil kapi "is teslim
+# edildi" demek degilmis; bunu olcen hicbir satir yoktu.
+#
+# Bloke ETMEZ: yerel commit yigmak mesru (yarim is, deneme dali). Sadece GORUNUR kilar,
+# cunku sessiz kalan sey unutuluyor.
+# Ortam notu: upstream yoksa `@{u}` hata verir — bastirilir, kapi patlamaz (Windows/Git Bash'te
+# de ayni yol calisir, POSIX varsayimi yok).
+if UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null); then
+  AHEAD=$(git rev-list --count "$UPSTREAM"..HEAD 2>/dev/null || printf '0')
+  if [ "${AHEAD:-0}" -gt 0 ] 2>/dev/null; then
+    printf '📤 GONDERILMEMIS: %s commit bu makinede duruyor (%s ilerisi).\n' "$AHEAD" "$UPSTREAM" >&2
+    printf '   `git push` — yazilan yasa gonderilmezse obur makine onsuz calisiyor.\n' >&2
+  fi
+fi
+
 # Testler arttiysa baseline'i ilerlet — gate zamanla SIKILASIR, gevsemez.
 if [ -n "$BASELINE" ] && [ "$COUNT" -gt "$BASELINE" ]; then
   printf '%s\n' "$COUNT" > "$BASELINE_FILE"

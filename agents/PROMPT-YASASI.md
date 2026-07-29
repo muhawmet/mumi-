@@ -170,8 +170,11 @@ Slot sırası bağlayıcı. Başlık satırı yönetmen içindir, prompta girmez
 
 ```
 ### K<n> | VO<n> "<Türkçe cümle>" · yazı: <"KELİME" | YOK> · <KAVRAM | KARAKTER>
+FİKİR: <bu kareye neden bakılır — VO'suz okunan tek gerilim ya da tek değişim>
+PLAN:  <kahraman> · <kaç net insan> · <ışık nereden, nerede BİTİYOR> · <özne zeminden nasıl ayrılıyor>
 -----
 [1 LENS]      <24-85>mm lens at f/<x>, <göz hizası|yüksek|alçak> <yakın|orta|geniş> <üç-çeyrek> view
+              ⚠ eksenden ÇIK: ön planda kesilen bir çapa yoksa motor simetriye düşüyor (§2a)
 [2 ÖZNE]      — @handle <TEK fiil: VO cümlesinin birebir görsel karşılığı>
 [3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. <gardırop çıpası>
 [4 MEKÂN]     The setting is <spesifik, tam giydirilmiş mekân>: <3-5 isimli obje>
@@ -189,10 +192,82 @@ NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>
 -----
 ```
 
+### §2ø — FİKİR: yasanın geri kalanı TABANDIR, TAVAN DEĞİL (Mami, 2026-07-29)
+
+> *"En önemlisi fikir. Her sahne bir fikir diye boşuna mı şartladık her şeyi?"*
+
+Bu madde yasanın en başına yazılmalıydı; yazılmadığı için bir gün boyunca lint yeşil yanarken
+ölü kare üretildi. **Slotlar, lint, dünya kilidi ve register kusuru engeller — bakmaya değer
+bir sebep üretmez.** Yeşil lint "temiz" demektir, "iyi" demez.
+
+Yasada bu maddeye en yakın iki cümle ikisi de KISITTIR ve ikisi de sağlanırken kare ölü olabilir:
+§1.3 *"bir kareye iki kavram sıkıştırma"* (fazlasını koyma) ve §1.7 *"VO cümlesiyle birebir eş"*
+(cümleden sapma). Hiçbiri **"bu karenin fikri ne"** diye sormaz.
+
+**FİKİR SINAVI — kare yazılmadan, tek soru:**
+> Bu kareyi VO olmadan birine göstersen, *"burada ne oluyor"* diye sorduğunda cevap verebilir mi?
+
+Cevap için karede **bir gerilim ya da bir değişim** görünür olmalı. Ölçülmüş örnekler:
+
+| Fikri OLAN | Fikri OLMAYAN |
+|---|---|
+| Yaşlı bir el ile çocuk elinin aynı saz sapında bir karış kala durması | İki çocuk kemerin altında yan yana durup yukarı bakıyor |
+| Suyun içinde ilk kez görünen beyaz kökler, çocuk bardağa iyice yaklaşmış | Bina büyüklüğünde bir yaratık halatlarda asılı duruyor |
+| Kavanoz camında üç kez görünen aynı yüz | Tezgâhların arasında yürüyen iki figür |
+
+Sağ sütunun hepsi **teknik olarak kusursuzdu** — slot tam, lint yeşil, temas yazılı. Hiçbirinde
+gerilim yok, o yüzden hiçbiri bakılmaya değmiyor.
+
+⚠ **Tuzak — türün konfor alanı.** Fikir yazılmazsa ajan dünyanın kendi klişesine düşer:
+sci_fi'da paslı mavi hangar, EDU'da gülümseyen iki çocuk, REAL'de parlak stüdyo ürünü.
+Dünya kilidi bunu engellemez, çünkü kilit **doğru** olanı tarif eder, **ilginç** olanı değil.
+Uzaylılık yaratıktan gelmek zorunda değil — sıradan bir şeyin yanlış olması daha güçlüdür.
+
+### §2a — PLAN KARARI: slotlar dolu ama kare çirkin olabilir (2026-07-29, kareyle kanıtlı)
+
+Mami Değerler'in karelerine baktı ve *"bazı sahneler GPT'den çıkmış plastik düz imaj gibi"*
+dedi. Ölçüldü: o karelerde **lint sıfır kırmızı**, 34/34 temas cümlesi, 34/34 TEXT, 34/34
+NEGATIVE, STYLE 88-109. Yani **iskelet kusursuz, kare çirkin.** Eksik olan slot değil,
+slotların içine ne konacağını belirleyen karardı — ve o karar hiçbir yerde yazılı değildi.
+
+Aynı sahne (festival kemeri) dört karar değiştirilerek yeniden yazıldı ve Mami'nin hükmü
+tek kelimeyle döndü: *"inanılmaz"*. Değişen dört şey — **PLAN satırı bunları sorar:**
+
+| Karar | Çirkin kare | Onarılmış kare |
+|---|---|---|
+| **Kahraman kim** | iki çocuk, kadrajın ortasında, eşit boyda | oymalı direk kadrajın 1/3'ü; çocuk ölçek referansı |
+| **Kaç net insan** | iki çocuk + dansçılar + tezgâhçılar + "arka plandaki her çocuk ve yetişkin" | **bir**; gerisi çözünmez siluet, yüz/el tarif edilmez |
+| **Işık nerede BİTİYOR** | "geç öğleden sonra güneşi" — gökyüzü, her şeyi eşit yıkıyor | yatay raking key; sol direk ve tezgâh içleri *"güneşin hiç ulaşmadığı"* indigo gölge |
+| **Özne zeminden nasıl ayrılıyor** | krem tulum, krem tente, krem taş — aynı değer | sıcak rim + arkasında karanlık oyma |
+
+**Neden yasaya giriyor:** bunların hiçbiri lint'in ölçebileceği şey değil ve **denetim
+kıstasında da yoktu** — kemer karesi denetimden "TEMİZ, dokunma" diye geçmişti. Kıstas
+listesi yazı · cast · ten · süreklilik · dünya · geometri sorar; *"bu iyi bir plan mı"*
+diye sormaz. Bu yüzden PLAN satırı **başlıkta**, prompt yazılmadan önce doldurulur.
+
+Ölçülen iki mekanizma, ikisi de tekrar sınanabilir:
+
+1. **Simetri varsayılandır.** Kadrajda kesilen bir ön plan çapası yoksa motor tek nokta
+   perspektifine düşüyor: özne ortada, yol ortada, iki figür yan yana eşit. Aynı sahne iki
+   kez basıldı (kalabalıklı ve kalabalıksız), ikisinde de simetri aynen kaldı — yani sebep
+   kalabalık değil, **çapasızlık**. Çapa konunca kırıldı.
+2. **İsimsiz insan pahalıdır ve piksel sınırı tarifle aşılmaz.** Ekranda ~30-40 piksellik bir
+   yüzde kimlik taşınamaz; ne yazarsan yaz leke çıkar. Doğrusu tarif etmemek: *"unresolved
+   silhouettes in heavy defocus, no face, no hand, no costume detail"* — motor bunu dinliyor
+   (kanıtlandı). Kalabalık hissi **gövdeyle değil eşyayla** kurulur: asılı mal, istif çanak,
+   sarılı kilim, boş tabure.
+
+⚠ Ve bir uyarı: **yasak battaniyesi dünyayı öldürür.** Değerler'in 34/34 karesinde
+*"arka plandaki her tabela, afiş, pankart, tente ve levha yüzeyi tamamen boştur"* yazıyordu —
+korku haklıydı (motor uydurma İngilizce basıyor) ama sonuç yazısı kazınmış bir festival
+dekoruydu. Doğrusu yasaklamak değil **doldurmak**: yüzeyler malla giydirilir, uydurma
+tabelaya yer kalmaz.
+
 ### Slot kanıtları
 
 | Slot | Kanıt |
 |---|---|
+| 0 · PLAN satırı | §2a. Slotların hepsi doluyken kare çirkin çıkabiliyor; dört karar yazılmazsa motor güvenli olanı seçiyor ve güvenli olan hep geniş, simetrik, düz ışıklıdır. |
 | 1 · Lens en başta | 181/181 promptun tamamı lensle açıyor. NB2 sayısal lensi okur; "cinematic lens" okumaz. |
 | 2 · Tek fiil = VO | Sürtünme'nin başlığı "her kare VO cümlesiyle birebir" der; 31/31 kare sıfır revize aldı. |
 | 3 · Ten + gardırop | **Yokluk:** Bileşke K14/K39 yeşil-gri cilt, K17 yakın planda kapüşon rengi uyduruldu. **Varlık:** Sabit Sürat 43/44 + Kütle 8/8 → sıfır şikâyet. |
