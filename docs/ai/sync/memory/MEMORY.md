@@ -12,7 +12,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 
 ## Mami — kişi ve çalışma biçimi
 
-- [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru, İngilizce yazılı zayıf.
+- [Mami — kişisel](mamilas-mami-kisisel.md) — DOST, bakıcı değil. Askerlik → Sorubankası AI ekibi → ajansta creative-AI; MAMILAS onun malı, şirket bilmiyor. Aşırı yük motoru; İngilizcesi C1 — sohbet Türkçe çünkü öyle istiyor, yetersizlikten değil.
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB merkezde: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı. Derinlik: `mamilas-buddy` skill'i (RSD + yük yönetimi orada).
 - [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — "sadece işlere bakıyorsun, destek görmedim." Yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
 - [Nefes kapısı EMİRDİR](mamilas-nefes-kapisi-emirdir.md) — kapı ateşlediyse yazılır; rapor duvarına gömülen teklif olmamış sayılır. İzin değil zorunluluk.

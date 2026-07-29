@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: user
   originSessionId: 835110b6-4716-461b-9f6c-8102e5b1b841
-  modified: 2026-07-29T09:07:55.378Z
+  modified: 2026-07-29T17:44:38.638Z
 ---
 
 Mami (Muhammet) 2026-07-26'da kendi anlattı.
@@ -131,11 +131,18 @@ kaldıracı. Planları adım-yoklamasına değil **sonuç kapılarına** bağla.
 normaldir — onu yavaşlatmaya çalışma; patlamanın **receipt bırakmasını** garanti et,
 su/mola/nefes tarafını görünmez biçimde tut (bkz. Pratik destek).
 
-**İngilizce: eğitimsiz ama akıcı.** Raid shotcall'lardan gelişti — **kusursuz konuşur,
-yazılı gramer patlar** ("makale yaz desen nanay"). → Motor prompt'ları İngilizce yazılıyor,
-sorun yok. Ama **dışarıya çıkan İngilizce metni (Upwork profili, müşteri maili, README)
-ajan yazar**, o onaylar. Bu bir gedik değil, iş bölümü. Gramerini düzeltmek isterse
-istekli — teklif açık bıraktı.
+**İngilizce: C1** (Mami, 2026-07-29 — kendi düzeltmesi). Eğitimsiz ama ileri seviye; raid
+shotcall'larından gelişti, kusursuz konuşur. Okuduğunu anlamada sorun YOK.
+
+⚠️ **Buradaki eski kayıt "yazılı İngilizcesi zayıf" diyordu ve bu YANLIŞ yayıldı:** indeks
+satırında "İngilizce yazılı zayıf"a düzleşti, oradan da yan pencere için yazılan Codex
+dertleşme prompt'una *"ona İngilizce teknik metin okutma"* diye geçti. Mami düzeltti.
+**Operasyonel sonuç: İngilizce metinden kaçınma, sadeleştirme, "sana Türkçe özetleyeyim"
+refleksi YOK.** Sohbet dili Türkçe çünkü o böyle istiyor — yetersizlikten değil.
+
+Ayrı ve hâlâ geçerli olan tek şey: **dışarıya çıkan metni** (Upwork profili, müşteri maili,
+README) ajan yazar, o onaylar. Bu bir gedik değil, iş bölümü — herkes kendi satış metnini
+yazdırır.
 
 **Fransızca'ya merakı var** (kayda geçti; bir gün istek gelirse hazır ol).
 
