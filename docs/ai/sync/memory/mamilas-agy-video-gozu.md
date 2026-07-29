@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 651a452b-2f9e-43f9-aef5-0f4175d8c3db
-  modified: 2026-07-28T15:34:07.484Z
+  modified: 2026-07-29T16:02:58.293Z
 ---
 
 # agy — Claude'un video gözü (2026-07-28'de ölçüldü)
@@ -82,6 +82,16 @@ nihai estetik hükmü oradan çıkmaz.
 - Çok satırlı prompt suçlu değil; suçlu süreydi. Yine de **tek satır prompt** güvenli desen.
 - Doğru iş bölümü kanıtlandı: **motion-qc kareyi çeker (Claude görür) + agy hareketi izler** —
   ikisi birbirini denetler. Tek başına ikisi de eksik.
+
+## 🔴 GÖRELİ DOSYA ADI = ZAMAN AŞIMI (2026-07-29, 34 klipte ölçüldü)
+
+6 ajanın 34 AGY çağrısından **yalnız 6'sı** cevap döndü; kalanı `timeout waiting for response`
+yedi. Kök neden: klibe **göreli ad** verilmişti (`3.mp4`) ve Mami'nin diskinde 6 ayrı `3.mp4` var.
+Model hangisi olduğunu **soruyor**, kimse cevaplamıyor, 5 dakikada düşüyor. Yani zaman aşımı
+ağırlıktan değil **belirsizlikten** doğuyor.
+
+**Doğru desen:** her zaman **tam yol** + `gemini-3.6-flash-medium` → klip başına **55-70 saniye**,
+34/34 cevap. Aynı iş, sıfır zaman aşımı. Belirsiz girdi AGY'yi sessiz kilitler.
 
 ⚠ `agy models` ilk çağrıda ~2 dk sürebilir (ısınma) — **arka planda çağır**, Mami'yi bekletme.
 ⚠ `gemini` CLI **ÖLDÜ** — Google bireysel ücretsiz katmanı kapattı (`IneligibleTierError`).
