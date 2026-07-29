@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "MOTION yazıldı: 9 temiz karenin tamamı (K01 K08 K10 K13 K20 K24 K27 K28 K31), hepsi gözle açılıp doğrulandı. Mami'nin onayladığı kalıp: açılış hâli→eylem tutuyor→bitiş hâli→canlı katman→Camera→Frame lock→sessizlik kuyruğu",
-  "nextAction": "Mami dönünce: (1) revize.txt'i bas — 19 referans-edit + 6 tam prompt, (2) yeni kareler gelince denetim turu 2, (3) sonra kalan 25 karenin motion'ı. Açık 2 karar revize.txt başında: yama sağ göğüs+yuvarlak rozet · K13 bokeh silueti",
+  "lastCompleted": "MOTION TAMAMLANDI: 34/34 blok, hepsi gözle görülmüş kareden yazıldı. 34/34 kare de yerinde (numara kayması düzeltildi, K16+K20 geldi)",
+  "nextAction": "Mami motion kliplerini basıyor (34 klip, her biri 10s). Klipler inince: motion-qc.mjs → EDIT-PLAN + SUNO → kaba-kurgu.mjs ile Premiere timeline",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-29T12:39:49.097Z",
+  "updatedAt": "2026-07-29T13:44:21.894Z",
   "updatedBy": "claude",
-  "baseCommit": "e57b973"
+  "baseCommit": "09c2713"
 }
