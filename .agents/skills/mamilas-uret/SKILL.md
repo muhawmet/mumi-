@@ -1,6 +1,6 @@
 ---
 name: mamilas-uret
-description: MAMILAS manuel World Studio üretimini tek Yerleşik Yönetmen yüzeyi altında, hash-valid command artifact'leri ve batch-default author→jury fazlarıyla yürütür. Yeni video üretimi, "üret/prodüksiyon koş", command JSON'dan image prompt, gerçek-frame verdict'i sonrası motion veya yarım üretime devam istendiğinde kullan.
+description: MAMILAS runner/CLI hattı — YALNIZ `agents/runner.mjs` ya da `scripts/mamilas-command.mjs` açıkça koşturulacaksa. "runner koş / batch koş / --director koş / command hash kapısı / storyboard receipt / --import-frame / export-image-bundle / yarım runner koşusuna devam" dendiğinde kullan. Konuşarak prompt yazma işi BUNUN DEĞİL, mamilas-director'ındır; elle üretimde bu skill ÇAĞRILMAZ.
 ---
 
 # MAMILAS ÜRET — command akışı

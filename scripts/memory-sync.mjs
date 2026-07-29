@@ -13,7 +13,7 @@
 //   node scripts/memory-sync.mjs --check   # yazma yok; sapma varsa exit 1 (kapı için)
 //
 // Ayna TEK YÖNLÜDÜR. Repo kopyası bir yedektir, kanon değildir: prompt yazımının kanonu
-// `agents/PROMPT-YASASI.md`, durum kaydının kanonu EXECUTION_STATE.md'dir.
+// `agents/PROMPT-YASASI.md`, aktif iş kaydının kanonu `artifacts/current-work.json`dır.
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';

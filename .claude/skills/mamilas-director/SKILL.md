@@ -1,6 +1,6 @@
 ---
 name: mamilas-director
-description: MAMILAS Konuşmalı Yönetmen. "video üret / prodüksiyon / prompt yaz / start frame / motion / command JSON'dan üret / yönetmen / siteyi bitir" dendiğinde kullan. Tek çalıştırmada beyni + üretim yasalarını + engine lehçesini + COMMAND-INBOX JSON'unu yükler; Mami ile KONUŞARAK epik Nano Banana 2 image ve Kling motion prompt'ları yazar (inline jüri = tamir, rapor değil), öğrendiğini precedent olarak memory'ye düşer. Kırık jüri/orkestra makinesi kritik yolda DEĞİL.
+description: MAMILAS Yönetmen — İCRAAT fazında üretimin VARSAYILAN yüzeyi. "video üret / prodüksiyon / prompt yaz / start frame / motion / revize / command JSON'dan üret / yönetmen" dendiğinde BUNU çağır. Beyni + PROMPT-YASASI'nı + engine lehçesini + COMMAND-INBOX JSON'unu yükler; Mami ile KONUŞARAK Nano Banana 2 image ve Kling motion prompt'larını ELLE yazar (inline jüri = tamir) ve .txt teslim setini üretir. Hiçbir runner/CLI çalıştırmaz.
 ---
 
 # MAMILAS — Konuşmalı Yönetmen

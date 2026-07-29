@@ -11,7 +11,9 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
 - **Aktif faz: İCRAAT** — yürütme profili `@docs/ai/faz-icraat.md` (video üret). İnşa uykuda:
   `@docs/ai/faz-insa.md` (duvar kur). Hangi profil aktifse `CLAUDE.md`'nin ilk import satırı söyler;
   iki giriş sözleşmesi **aynı** `docs/ai/faz-*.md`'ye işaret etmek zorunda.
-- Durum: `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` — **her oturumda önce bunu oku.**
+- Durum: `artifacts/current-work.json` — aktif işin TEK makine gerçeği; `node scripts/current-work.mjs`
+  ile oku (SessionStart hook'u aynı metni basar). `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
+  (1337 satır) **arşivdir, otorite DEĞİL** — yalnız geçmişe dair bir cümle kurulacaksa açılır.
 - Tamamlanmış task'ı yeniden yapma. Çelişki varsa `FACT REQUIRED` ile dur; sohbet hafızasından varsayma.
 - Claude ve Codex **aynı** state ve receipt dosyalarını yazar. İkinci bir gerçeklik üretme.
 

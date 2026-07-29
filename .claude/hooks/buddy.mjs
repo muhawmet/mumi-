@@ -36,6 +36,7 @@ const IDLE_CUT_MS = N("BUDDY_IDLE_CUT_MS", 10 * 60 * 1000); // masadan kalkma s�
 const GAP_MIN_MS = N("BUDDY_GAP_MIN_MS", 45 * 1000); // "gerçek bekleme oldu" kanıtı
 const FLOW_WINDOW_MS = N("BUDDY_FLOW_WINDOW_MS", 10 * 60 * 1000); // hiperfokus penceresi
 const FLOW_PROMPTS = N("BUDDY_FLOW_PROMPTS", 3); // pencerede bu kadar prompt = akış
+const HARD_ACTIVE_MS = N("BUDDY_HARD_ACTIVE_MS", 120 * 60 * 1000); // yük tavanı: guard'ın ERTELEME sınırı
 const STATE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 // Teklif metni AJANA hitap eder, Mami'ye BASILMAZ. Maddeler mamilas-buddy SKILL §4 ile birebir.
@@ -189,14 +190,22 @@ const main = async () => {
   if (j.prompt_id && !st.prompts[j.prompt_id]) st.prompts[j.prompt_id] = now;
   const flow = flowCount(st, now);
 
-  // Dört koşul, hepsi AND. gap koşulu ARAÇ ADINDAN BAĞIMSIZDIR — eski kapı `*vitest*|*tsc*`
-  // deseni avlıyordu ve rtk komutu yeniden yazdığı için yarı-sağır kalmıştı.
+  // Üç ZORUNLU koşul + bir ERTELEYİCİ guard. gap koşulu ARAÇ ADINDAN BAĞIMSIZDIR — eski kapı
+  // `*vitest*|*tsc*` deseni avlıyordu ve rtk komutu yeniden yazdığı için yarı-sağır kalmıştı.
   // Duvar bir daha komut metnine bakmaz; DUVAR SAATE BAKAR.
+  //
+  // 2026-07-29 ölçümü: hiperfokus guard'ının AND olarak durması onu tam ters yöne çeviriyordu.
+  // Mami 3 saat kesintisiz çalışıp her 2-3 dakikada bir prompt attığında 10dk'lık pencerede
+  // daima >=3 prompt bulunur → guard SÜREKLİ kapalı kalır → teklif HİÇ doğmaz. Yani duvar,
+  // yükün en yüksek olduğu tek durumda susuyordu. Guard mutlak değil ERTELEYİCİdir: bitişik
+  // aktif süre yük tavanını aştıysa hiperfokusun KENDİSİ yük sinyalidir ve guard düşer.
+  // Israrsızlık düşmez — COOLDOWN ve gap tavanın üstünde de aynen geçerli, blok başına tek teklif.
+  const yukTavani = st.activeMs >= HARD_ACTIVE_MS;
   const ok =
     st.activeMs >= ACTIVE_THRESHOLD_MS && // 25dk aktif oturum doldu
-    now - (st.lastOfferMs || 0) >= COOLDOWN_MS && // 45dk ısrarsızlık
-    gap >= GAP_MIN_MS && // DOĞAL boşluk: Mami zaten bekliyordu
-    flow < FLOW_PROMPTS; // HİPERFOKUS GUARD: Mami klavyedeyse kesme
+    now - (st.lastOfferMs || 0) >= COOLDOWN_MS && // 45dk ısrarsızlık — ASLA atlanmaz
+    gap >= GAP_MIN_MS && // DOĞAL boşluk: Mami zaten bekliyordu — ASLA atlanmaz
+    (flow < FLOW_PROMPTS || yukTavani); // HİPERFOKUS GUARD: tavana kadar erteler, sonsuza kadar DEĞİL
 
   if (process.env.BUDDY_DEBUG) {
     try {

@@ -56,7 +56,10 @@ export const KIT = [
   { key: 'EDIT-PLAN', ends: ['_edit-plan.txt'] },
   { key: 'SESLENDIRME', ends: ['_seslendirme.txt'] },
   { key: 'SUNO', ends: ['_suno.txt'] },
-  { key: 'KABA-KURGU.xml', ends: ['kaba-kurgu.xml'] },
+  // kaba-kurgu.mjs varsayılanı `<proje> — kaba kurgu.xml` (tire DEĞİL boşluk); Mami `--cikti`
+  // ile `_KURGU.xml` de yazdırıyor (Üreme, 29 Tem). Tek desen aramak dosyayı diskte görmezden
+  // gelmek demekti — kit sonsuza dek "eksik" görünüyordu.
+  { key: 'KABA-KURGU.xml', ends: ['kaba-kurgu.xml', 'kaba kurgu.xml', '_kurgu.xml'] },
 ];
 
 const VIDEO_EXT = ['.mp4', '.mov', '.m4v'];
@@ -500,8 +503,39 @@ function cmdMedya(root, argv) {
   printState(root, writeState(root, s));
 }
 
-function cmdKapat(root) {
+function cmdKapat(root, argv = []) {
   const s = loadOrDie(root);
+
+  // KAPANIŞ KAPISI — "kapandı" demek "teslim edildi" demektir; eksik teslimde bu bir YALANDIR.
+  // driftOf zaten ölçüyordu ama yalnız RAPOR ediyordu; burada aynı ölçüm KARAR verir.
+  // Kayıt iddia eder, DİSK kanıtlar: kit taraması ve medya sayımı ham dosyadan okunur.
+  if (!hasFlag(argv, '--zorla')) {
+    const engel = [];
+    const kit = { ...scanDeliverables(root, s.projectPath), ...(s.deliverablesOverride ?? {}) };
+    const eksikKit = Object.entries(kit).filter(([, v]) => !v).map(([k]) => k);
+    if (eksikKit.length) engel.push(`KİT eksik → ${eksikKit.join(' · ')}`);
+    for (const m of (s.requiredLocalMedia ?? [])) {
+      const sc = scanMedia(m);
+      if (!sc.exists) { engel.push(`MEDYA yok → ${m.path}`); continue; }
+      const wantClips = m?.expect?.clips;
+      if (Number.isInteger(wantClips) && sc.clips < wantClips) {
+        engel.push(`MEDYA klip eksik (${sc.clips} < ${wantClips}) → ${m.path}`);
+      }
+      const wantAudio = (m?.expect?.vo ?? 0) + (m?.expect?.muzik ?? m?.expect?.music ?? 0);
+      if (wantAudio > 0 && sc.audio < wantAudio) {
+        engel.push(`MEDYA ses eksik (${sc.audio} < ${wantAudio}) → ${m.path}`);
+      }
+    }
+    if (s.blockedBy) engel.push(`BLOKE hâlâ açık → ${s.blockedBy}`);
+    if (s.openMamiDecision) engel.push(`Mami kararı hâlâ açık → ${s.openMamiDecision}`);
+    if (engel.length) {
+      process.stdout.write('[durum] ⛔ kapanmadı — eksik teslimde kapanış bir YALANDIR:\n');
+      for (const e of engel) process.stdout.write(`   - ${e}\n`);
+      process.stdout.write('   Eksik gerçekten kabul ediliyorsa: current-work.mjs kapat --zorla\n');
+      process.exit(1);
+    }
+  }
+
   s.status = 'kapandi';
   s.phase = 'kapandi';
   const bitenPath = `${INBOX_REL}/Biten/${s.projectId}`;
@@ -542,7 +576,7 @@ function main(argv) {
     case 'sor': return cmdSor(root, argv);
     case 'kit': return cmdKit(root, argv);
     case 'medya': return cmdMedya(root, argv);
-    case 'kapat': return cmdKapat(root);
+    case 'kapat': return cmdKapat(root, argv);
     default:
       process.stdout.write(`[durum] bilinmeyen komut: ${cmd}\n`);
       process.exit(1);

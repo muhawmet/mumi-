@@ -3,18 +3,18 @@
   "projectId": "6. Sınıf - Eşeyli ve Eşeysiz Üreme",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
   "phase": "kurgu",
-  "status": "bloke",
-  "lastCompleted": "50/50 klip Kling 3.0 ile üretildi ve diske indi (~/Desktop/6. Sınıf Animasyonlar/... · 29 Tem 09:11–09:16).",
-  "nextAction": "ElevenLabs kredisi gelince VO'nun 1:29 sonrası üretilir; sonra kaba-kurgu.mjs koşar ve KABA-KURGU.xml kite girer.",
+  "status": "aktif",
+  "lastCompleted": "VO üretildi (vo.mp3 10:32 + vo-nefes-kisa.mp3 11:13), KURGU.xml yazıldı 11:15, Premiere render alındı: Üreme.mp4 504 MB 11:41. ElevenLabs hattı Mami tarafından emekli edildi.",
+  "nextAction": "Mami render'ı onaylasın; onay gelirse kapat + kapanis-hasadi.mjs --all. Kitte revize + MOTION eksik.",
   "openMamiDecision": null,
-  "blockedBy": "ElevenLabs kredisi bitti — VO HİÇ üretilmedi (diskte tek ses dosyası yok, plan ~4:06). Klipler ve Suno müziği hazır.",
+  "blockedBy": null,
   "requiredLocalMedia": [
     {
       "path": "~/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
       "expect": {
-        "clips": 50,
-        "vo": 0,
-        "muzik": 1
+        "clips": 51,
+        "vo": 2,
+        "muzik": 4
       },
       "note": "repo dışı — git-ignore değil, hiç repoda değil"
     }
@@ -27,9 +27,9 @@
     "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
-    "KABA-KURGU.xml": false
+    "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-07-29T07:29:18.358Z",
+  "updatedAt": "2026-07-29T09:03:45.623Z",
   "updatedBy": "claude",
-  "baseCommit": "bf13f80"
+  "baseCommit": "5fa0982"
 }
