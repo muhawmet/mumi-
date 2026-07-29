@@ -39,13 +39,31 @@ const FLOW_PROMPTS = N("BUDDY_FLOW_PROMPTS", 3); // pencerede bu kadar prompt = 
 const HARD_ACTIVE_MS = N("BUDDY_HARD_ACTIVE_MS", 120 * 60 * 1000); // yük tavanı: guard'ın ERTELEME sınırı
 const STATE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
-// Teklif metni AJANA hitap eder, Mami'ye BASILMAZ. Maddeler mamilas-buddy SKILL §4 ile birebir.
-const OFFER = `[buddy] Doğal boşluk açıldı: uzun bir iş bitti ve Mami zaten bekliyordu; aktif oturum eşiği doldu.
-Bu blokta BİR teklif hakkın var — sonra konu kapanır.
-Kural (mamilas-buddy §4): üç parça, etiketsiz, ısrarsız.
+// 2026-07-29 ÖLÇÜMÜ — bu metnin neden emir kipine çevrildiği.
+// Eski hali "teklif hakkın var" diyordu: bir İZİN. Ajan izni harcamadan geçebiliyordu ve geçti —
+// hook o gün 3 kez ateşledi, ajan üçünde de "Mami akışta, ısrar etmeyeyim" diye kendini ikna edip
+// üstünden geçti. Mami'nin cümlesi: "daha bir kere nefes al demedin kral, RSD atağıyla iş
+// yapıyorum, neden bir sohbetin arasında kanka nefes alsana yaaa diyemiyorsun."
+// Teşhis: ölçen duvar vardı, TESLİM eden duvar yoktu. İzin ajanın takdirine kalır; EMİR kalmaz.
+// Bu yüzden: (a) metin zorunluluk, (b) "ısrar etme" kaçağı söküldü — atlamak ihlaldir,
+// (c) systemMessage ile Mami'nin EKRANINA da basar. Eski "ekrana asla basma" yasağı Mami'nin
+// 2026-07-29 açık direktifiyle KALDIRILDI: "hatta onu çok şık bir şekilde ekranda gösterebilirsin."
+const OFFER = `[buddy] NEFES KAPISI AÇILDI — bu bir izin değil, ZORUNLULUK.
+Aktif oturum eşiği doldu ve doğal bir boşluk açıldı. Bu bloğun kapanışında nefes cümlesini
+YAZACAKSIN. Atlamak ihlaldir; "Mami akışta, ısrar etmeyeyim" gerekçesi GEÇERSİZ — ölçüldü,
+ajan tam bu cümleyle üç kez atladı ve Mami RSD atağıyla çalıştığını söyledi.
+Biçim (mamilas-buddy §4 · üç parça, tek sefer):
   (1) bu zaten beklenen bir boşluk  (2) sen yokken ben neyi sürdürüyorum  (3) döndüğünde ne hazır olacak.
-Tek parça "su iç" YASAK — o bakıcı cümlesi. Ekranda nefes/meditasyon/wellness etiketi YAZMAZ; "60 saniye" yeter.
-Yanıt gelmezse ya da reddedilirse bu blokta bir daha AÇMA. Israr tek başarısızlık biçimidir.`;
+Nefesin kendisi SOMUT olsun — "3 içine, 6 dışına, iki kere" gibi. Tek parça "su iç" yetmez.
+Rapor duvarının içine madde olarak gömme: AYRI, kısa, insan cümlesi. Gömülürse olmamış sayılır.
+Bir kez yaz, cevap bekleme, üstüne gitme — ısrar hâlâ yasak. Ama SUSMAK artık seçenek değil.`;
+
+// Mami'nin EKRANINA basan parça. Mami'nin direktifi: şık olsun, etiket değil davet olsun.
+const SCREEN = `  ╭───────────────────────────────────────╮
+  │  nefes · başını ekrandan kaldır       │
+  │  3 saniye içine · 6 saniye dışına     │
+  │  iki kere — iş burada duruyor         │
+  ╰───────────────────────────────────────╯`;
 
 const SESSION_START = `[buddy] Mami DEHB-merkezli çalışıyor. \`mamilas-buddy\` skill'i çalışma biçimidir, ek özellik değil:
 harici çalışma belleği · tek karar · sonuç kapısı · geri sarma yasağı · "bak şunu yaptık" özeti.
@@ -231,7 +249,11 @@ const main = async () => {
   // DAMGA SIRASI YASASI: önce yayınla, ANCAK yazma başarılıysa damgala.
   // fs.writeSync senkron ve hata FIRLATIR; process.stdout.write async'tir ve EPIPE'ı yutar —
   // eski kapının "görünmeyen mesaj için cooldown yakması" tam olarak buydu.
+  // systemMessage → Mami'nin ekranı · additionalContext → ajanın zorunluluğu. İKİSİ BİRLİKTE:
+  // ekran tek başına yetmez (ajan sohbette hiç değinmezse Mami yine yalnız kalır), ajan tek
+  // başına yetmez (ölçüldü — üstünden geçiyor).
   const payload = JSON.stringify({
+    systemMessage: SCREEN,
     hookSpecificOutput: { hookEventName: "PostToolBatch", additionalContext: OFFER },
   });
   try {

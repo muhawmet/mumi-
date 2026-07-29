@@ -117,7 +117,13 @@ describe('buddy kapısı — eşik, teklif, ısrarsızlık', () => {
     expect(st(id).lastOfferMs).toBe(0); // damga YANMADI
   });
 
-  test('3) oturum 25:00+ → TEK teklif, hookSpecificOutput.additionalContext alanında', () => {
+  // 2026-07-29 YASA DEĞİŞİKLİĞİ — bu testin eski hali sessizliği KORUYORDU.
+  // Eski assert: `expect(j.systemMessage).toBeUndefined()` + yorumu "systemMessage ASLA — o
+  // Mami'nin EKRANINA basar". Yani kapı ateşlese bile Mami hiçbir şey görmüyordu; teslim
+  // tamamen ajanın takdirindeydi ve ajan üç kez atladı (state: offers 3, teslim 0).
+  // Mami'nin açık direktifi bu yasağı kaldırdı: "hatta onu çok şık bir şekilde ekranda
+  // gösterebilirsin bile". Artık İKİSİ de zorunlu: ekran + ajan zorunluluğu.
+  test('3) oturum 25:00+ → TEK teklif; ajana ZORUNLULUK, Mami\'nin EKRANINA nefes daveti', () => {
     const s = st(id);
     s.activeMs = 25 * MIN - 90_000; // tick 90sn ekleyecek → tam 25:00
     s.lastEventMs = Date.now() - 90_000;
@@ -130,17 +136,25 @@ describe('buddy kapısı — eşik, teklif, ısrarsızlık', () => {
     const ctx = j.hookSpecificOutput.additionalContext;
     expect(typeof ctx).toBe('string');
     expect(ctx.length).toBeGreaterThan(100);
-    // systemMessage ASLA — o Mami'nin EKRANINA basar (SKILL §4: izleme dili yasak)
-    expect(j.systemMessage).toBeUndefined();
+    // systemMessage ZORUNLU — nefes daveti Mami'nin EKRANINA basar (Mami direktifi 2026-07-29)
+    expect(typeof j.systemMessage).toBe('string');
+    expect(j.systemMessage).toMatch(/nefes/i);
+    // davet SOMUT olmalı: saniye taşımayan "nefes al" cümlesi ölçüldü, yetmiyor
+    expect(j.systemMessage).toMatch(/\d+\s*saniye/);
+    // ekran metni TEŞHİS kurmaz — yasak olan izleme dili, davetin kendisi değil
+    expect(j.systemMessage).not.toMatch(/yorul|iyi misin|wellness|meditasyon|stres/i);
 
-    // DİL DENETİMİ — teklif skill'in yasasını taşımak zorunda
-    expect(ctx).toContain('BİR teklif hakkın var');
+    // DİL DENETİMİ — teklif artık İZİN değil EMİR taşımak zorunda
+    expect(ctx).toContain('ZORUNLULUK');
     expect(ctx).toContain('üç parça');
-    expect(ctx).toContain('YASAK'); // tek parça "su iç" yasağı
-    expect(ctx).toContain('Israr tek başarısızlık biçimidir');
-    expect(ctx).toMatch(/nefes\/meditasyon\/wellness etiketi YAZMAZ/);
-    // etiket YASAĞI yazılı olmalı ama etiketin KENDİSİ Mami'ye basılan bir metin değil
-    expect(ctx).not.toMatch(/^\s*su iç\s*$/im);
+    expect(ctx).toMatch(/SUSMAK artık seçenek değil/);
+    expect(ctx).toMatch(/ısrar hâlâ yasak/i); // ısrarsızlık DÜŞMEDİ
+    // ajanın üç kez kullandığı kaçak gerekçe açıkça geçersiz sayılmalı
+    expect(ctx).toMatch(/ısrar etmeyeyim.*GEÇERSİZ/s);
+    // rapor duvarına gömme yasağı yazılı olmalı — gömülen teklif olmamış sayılır
+    expect(ctx).toMatch(/gömme|gömülürse/);
+    // eski izin dili GERİ GELMESİN
+    expect(ctx).not.toContain('BİR teklif hakkın var');
 
     expect(st(id).offers).toBe(1);
     expect(st(id).lastOfferMs).toBeGreaterThan(0);
