@@ -89,6 +89,25 @@ otomatik rewrite yok. Kabul testi bu receipt'te sabitlenmiştir:
 > **ve Bileşke'nin 52 karesindeki gerçek kusurların ≥%70'i yakalanmalı.**
 > İkisi aynı anda olmadan IQ4 PASS değildir.
 
+**SUPERSEDED (2026-07-29, Mami):**
+*"elimizdeki arşiv sadece şu anlık ne iş yaptığımın kanıtları olarak kalsın · Eşeyli-Eşeysiz Üreme
+[dışındaki] geri kalan senin için kıstas değil · eşeyliyi evde ürettim, Windows'takiler ben işten
+çıkarken ürettirdiklerim, yani onlarda hatalı · en iyi örnek şu an Windows'ta, o promptlar Magnific'te."*
+
+→ **Yeni kanıt:** `COMMAND-INBOX` arşivi kalite kıstası DEĞİL, iş kaydıdır. Arşivdeki revize
+sayıları kalite sinyali sayılamaz — "sıfır revize" o işin kusursuz olduğunu değil, o turda öyle
+gittiğini gösterir. Sürtünme'nin 31/31'i de bu sınıfa girer.
+
+→ **Yeni karar:** Altın standart **Eşeyli ve Eşeysiz Üreme**'dir (Mami'nin evde ürettiği en iyi iş).
+Kabul testi buna bağlanır:
+> **Üreme'nin 50 karesi sessiz geçmeli** (Mami'nin en iyi işi kırmızı almaz)
+> **ve bilerek bozulmuş kontrol karelerindeki kusurların ≥%70'i yakalanmalı.**
+> Arşiv projeleri yalnız *ikincil* örnek olarak okunur, PASS ölçütü değildir.
+
+→ **Beklenen girdi:** Magnific'teki gerçek Üreme prompt'ları (Mami gönderecek). Repo'daki
+`Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md` bu metnin aynısı mı yoksa erken sürümü mü — **doğrulanmadı**.
+Magnific kopyası gelmeden IQ4'ün kalibrasyonu kapanmaz.
+
 ## Ajan ve token özeti
 
 3 ajan · her biri tek soru, ayrık kapsam, salt-okuma · ~340k subagent token.
