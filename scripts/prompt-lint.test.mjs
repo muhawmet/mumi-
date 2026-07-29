@@ -41,7 +41,7 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     // "no face, eyes or cartoon mouth" diyen NEGATİF cümle "yüz var" sayılıyordu. Bu, Codex'in
     // `nearSkin`'de yakaladığı kusurun ikiziydi — biri onarılmış, öteki atlanmıştı.
     // Kalan 5'in beşinde de gerçekten insan var (@efe / hand) ve negatif ten kilidi gerçekten yok.
-    expect(r.bad.length).toBe(5);
+    expect(r.bad.length).toBe(2);
     expect(r.counts.temas).toBe('50/50');
     expect(r.counts['text-hece']).toBe('14/14');
     expect(r.metrics.negOzel).toBe(1);
@@ -138,6 +138,32 @@ describe('A2 · sahte alarm regresyonları', () => {
   it('temas ailesi: "contact plane" ve "surfaces MUST touch" kırmızı üretmez (Sürtünme S8)', () => {
     expect(kirmiziVar(lintBlock('their contact plane touching', 'EDU'), 'temas')).toBe(false);
     expect(kirmiziVar(lintBlock('the surfaces MUST touch', 'EDU'), 'temas')).toBe(false);
+  });
+
+  // Sol denetimi 2026-07-29 — dördü de Üreme'nin (altın standart) sahte kırmızısıydı.
+  // Ders: bu metinlerde bir kelimenin VARLIĞI hiçbir şey kanıtlamaz; NE YAPTIĞI kanıtlar.
+  it('"@efe\'s bedroom" MEKÂN sahipliğidir — insan varlığı DEĞİL (K20)', () => {
+    expect(kirmiziVar(lintBlock(
+      "quarter view along the wooden study desk in @efe's bedroom, where three plain glass vessels stand",
+      'EDU'), 'ten')).toBe(false);
+  });
+
+  it('"@efe\'s face" GÖVDE parçasıdır — insan VARDIR (K15, tek gerçek kırmızı)', () => {
+    expect(kirmiziVar(lintBlock(
+      "@efe's face is a very soft warm blur far behind the glass", 'EDU'), 'ten')).toBe(true);
+  });
+
+  it('"a hand\'s width" ÖLÇÜ birimidir, "hand-knitted" bileşik sıfattır — insan değil (K22/K41/K42)', () => {
+    expect(kirmiziVar(lintBlock("lies separately a hand's width off on the same sand", 'EDU'), 'ten')).toBe(false);
+    expect(kirmiziVar(lintBlock('an armchair with a hand-knitted blanket over its back', 'EDU'), 'ten')).toBe(false);
+  });
+
+  it('"child-safe" / "child-clear readability" bileşiktir — insan değil (K22, STYLE kuyruğu)', () => {
+    expect(kirmiziVar(lintBlock('healthy tissue simply ending, calm and child-safe', 'EDU'), 'ten')).toBe(false);
+  });
+
+  it('deniz yıldızının KOLU insan uzvu değildir — `arm`/`head` GÖVDE listesinde yok (K22)', () => {
+    expect(kirmiziVar(lintBlock('one single arm that has come away from it lies on the sand', 'EDU'), 'ten')).toBe(false);
   });
 
   it('heceleme YAZILMIŞSA text-hece susar — "200 g" küçük harfli birim de ekran yazısıdır', () => {

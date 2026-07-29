@@ -286,16 +286,56 @@ const INSANSIZ = /\bno (person|human|people|figure|one)\b[^.]{0,40}\b(enters?|in
 // her karede aynıdır ve meşru olarak "child-clear"/"never on skin" taşır, (3) olumsuzlanmış
 // bağlam ("no face", "without a face") insan saymaz.
 // @tag tek başına insan DEĞİLDİR: @mikroskop, @amip, @defter de tag'lidir.
-const INSAN_KELIME = /\b(child|children|boy|girl|teacher|woman|man|men|student|kid|kids|people|person|face|hand|hands)\b/i;
+const INSAN_KELIME = /\b(child|children|boy|girl|teacher|woman|man|men|student|kid|kids|people|person)\b/i;
 const OLUMSUZ_YUZ = /\bno (face|human|person|people)\b|\bwithout (a )?(face|person)\b/i;
+
+// Gövde parçası ≠ mekân. `@efe's face` KAREDE VAR demektir; `@efe's bedroom` yalnız mekânın
+// kime ait olduğunu söyler — Efe orada değildir. Sol denetimi 2026-07-29 bu ayrımı ölçtü.
+// `arm` ve `head` BİLEREK yok: deniz yıldızının kolu (K22), koltuğun kolu, masanın başı —
+// çok anlamlı sözcük insan varlığı kanıtlamaz. Ölçüldü, dördüncü turda çıktı.
+const GOVDE = /(face|cheek|skin|eyes?|hair|shoulders?|fingers?|hands?|gaze|smile|brow|chin)/i;
+
+// `hand` kelimesinin İNSAN ELİ OLMADIĞI kanıtlı bağlamlar — hepsi gerçek korpustan:
+//   "a hand's width off"      (ölçü birimi, K22)
+//   "hand-knitted blanket"    (bileşik sıfat, K41/K42)
+//   handheld · handle · handful · handmade · by hand
+// Bunlar taramadan ÖNCE silinir; yoksa insansız kare "insan var" sayılır.
+// `child` bileşikleri de insan DEĞİL: "child-safe" (yaranın görünümü), "child-clear readability"
+// (prop ölçeği), "child-eye height" / "child's eye-line" (kamera yüksekliği). Üçü de gerçek korpustan.
+const COCUK_DEGIL = /\bchild(?:['’]s)?[- ](?:safe|clear|eye|eyes|height|friendly|sized|scale|line)\b|\bchild-eye\b/gi;
+const EL_DEGIL = /\bhand(?:['’]s)?[- ](?:width|length|span|breadth|knitted|painted|made|held|woven|blown|carved|stitched)\b|\bhand(?:ful|held|le|les|ling|made|writing|written)\b|\bby hand\b/gi;
+
+/**
+ * Karede İNSAN var mı? Kelime avlamaz — VARLIK arar.
+ *
+ * Bu fonksiyon bugün ÜÇ KEZ yanlış çıktı ve üçünde de aynı sebeple: sınırsız kelime eşleştirme.
+ *   1. `face` → **surface** içinde eşleşti (Codex yakaladı, nearSkin'de onarıldı)
+ *   2. aynı kusur burada duruyordu — `\b` eklendi (Sol yakaladı)
+ *   3. `\b` yetmedi: `hand's width` · `hand-knitted` · `@efe's bedroom` hâlâ insan sayılıyordu
+ *      (Sol yine yakaladı — Üreme'nin 5 kırmızısının 4'ü sahteydi)
+ * Ders: bu metinlerde bir kelimenin VARLIĞI hiçbir şey kanıtlamaz; kanıtlayan şey NE YAPTIĞIDIR.
+ */
 const hasHuman = (b) => {
   const fb = frameBody(b);
   if (INSANSIZ.test(fb)) return false;
-  const temiz = fb.replace(OLUMSUZ_YUZ, ' ');
+  const temiz = fb.replace(OLUMSUZ_YUZ, ' ').replace(EL_DEGIL, ' ').replace(COCUK_DEGIL, ' ');
+
+  // (a) Çıplak insan ismi — "two children watch", "the teacher leans in".
   if (INSAN_KELIME.test(temiz)) return true;
-  // @tag'li varlık insan mı? Yalnız insan fiiliyle/uzvuyla birlikte geçiyorsa.
-  return /@[a-zçğıöşü][a-z0-9çğıöşü_-]*[^.]{0,80}\b(stands?|sits?|gazes?|looks?|smiles?|holds?|leans?|walks?|kneels?|reaches?|watches?|points?|whispers?|breathes?)\b/i.test(temiz);
+
+  // (b) @tag + insan fiili — "@efe stands", "@anne works at the counter".
+  // Pencere DAR ve araya virgül/yeni özne girmemeli: "@efe's bedroom, where three glass vessels
+  // **stand**" cümlesinde fiil vazolara aittir, Efe'ye değil — geniş pencere onu insan sayıyordu.
+  if (/@[a-zçğıöşü][a-z0-9çğıöşü_-]*(?:\s+(?:the|a|an|his|her|now|still|just|quietly|slowly)){0,3}\s+(?:stands?|sits?|gazes?|looks?|smiles?|holds?|leans?|walks?|kneels?|reaches?|watches?|points?|whispers?|breathes?|crouch(?:es)?|lifts?|pushes?|presses?|works?|turns?)\b/i.test(temiz)) return true;
+
+  // (c) @tag'in GÖVDE parçası — "@efe's face is a soft warm blur" (K15: gerçekten karede).
+  //     Mekân sahipliği ("@efe's bedroom") buraya GİRMEZ.
+  if (new RegExp("@[a-zçğıöşü][a-z0-9çğıöşü_-]*['’]s\\s+" + GOVDE.source, 'i').test(temiz)) return true;
+
+  // (d) Tag'siz çıplak gövde parçası — "a small hand presses the glass".
+  return new RegExp("\\b(?:a|the|his|her|their|one)\\s+(?:small\\s+|large\\s+|open\\s+)?" + GOVDE.source + "\\b", 'i').test(temiz);
 };
+
 
 // STYLE / LIGHT AND PALETTE / TEXT / NEGATIVE kuyruğu her karede AYNIDIR ve meşru olarak
 // "skin", "sheen", "negative space" gibi kelimeler taşır. Tuzaklar bu kuyrukta aranırsa

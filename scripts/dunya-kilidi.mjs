@@ -464,8 +464,79 @@ const NUMERIC_RE = /\b(\d+(?:\.\d+)?\s?(?:mm|%|°|k\b|stops?|nm)|f\/\d|\d+:\d+)/
 // META_RE bilerek DAR: "deliberate"/"signature" ilk sürümde buradaydı ve dünyanın en pahalı
 // ölçülmüş kilidini ("Every prop has a deliberate overscale factor (10-15%)" — Kütle'de 0/27)
 // bütçe dışına itti. Yalnız GERÇEK meta dili elenir: içeriği olmayan çerçeve cümleleri.
-const META_RE = /\b(non-negotiable|imperative|is NOT|philosophy|approach|never merely|specific formal grammar)\b/i;
+// ÖLÇÜMLE DARALTILDI (aşağıdaki ALTIN STANDART ÖLÇÜMÜ): `non-negotiable` ve `imperative`
+// buradaydı ve −6 yiyorlardı. Oysa 94 altın bloğun 94'ü bu dili TAŞIYOR ("Material specificity
+// is mandatory", "Full 3D CGI feature-animation render"). İkisi de META değil İMZA'dır ve
+// artık SIGNATURE_DECL_RE ile +8 alırlar. Meta kalan tek şey OLUMSUZLAMAYLA tanım yapan
+// çerçeve cümlesidir ("The signature is NOT 'cute 3D'" → altın standartta örtüşme %0).
+const META_RE = /\b(is NOT|philosophy|approach|never merely|not merely|specific formal grammar)\b/i;
 const FORBID_LEAD_RE = /^(?:strictly forbid|forbid|no|never|avoid)\b/i;
+
+// ============================================================================
+// ALTIN STANDART ÖLÇÜMÜ — puanlamanın DAYANAĞI
+// ============================================================================
+//
+// Ağırlıklar bir tahminden değil, Mami'nin onaylı iki işinin GERÇEK STYLE bloklarından
+// türetildi. Ölçüm (2026-07-29):
+//
+//   Kaynak  : agents/COMMAND-INBOX/Biten/6. Sınıf - Eşeyli ve Eşeysiz Üreme/
+//               Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md   → 50 kare, STYLE 86-116 kelime
+//             agents/COMMAND-INBOX/Biten/Sabit Sürat ve Hız/
+//               Sabit Sürat ve Hız_PROMPTLAR.txt       → 44 kare, STYLE 68-116 kelime
+//             (ikisi de pixar_3d_edu; toplam 94 elle yazılmış STYLE bloğu)
+//   Yöntem  : blok kesimi `prompt-lint.mjs` → `styleBlock()` (satır içi LIGHT/NEGATIVE
+//             kuyruğundan keser). `pixar_3d_edu`nun render/line/lens/camera/light_law
+//             metni bu script'in kendi `toUnits()`'i ile bileşenlere ayrıldı; her bileşen
+//             ↔ altın metin eşlemesi anahtar kelime örtüşmesiyle yapıldı (birebir string
+//             aramaz — yazarlar parafraz ediyor).
+//
+//   SINIF                     ALTIN BLOKTA GÖRÜNME   BİLEŞEN ÖRTÜŞMESİ (ort.)
+//   malzeme spesifikliği      94/94  · %100          %62
+//   ışık davranışı            94/94  · %100          %66
+//   ölçü / sayı kuralı        94/94  · %100          %59
+//   imza beyanı (olumlu)      94/94  · %100          — (aşağıya bak)
+//   siluet / çizgi            86/94  · %91           %60
+//   hareket fiziği            26/94  · %28           %40
+//   kadraj / kompozisyon       4/94  · %4            %25
+//   LENS / OPTİK               0/94  · %0            %25
+//
+// EN PAHALI BULGU: lens. 94 altın bloğun HİÇBİRİ odak uzunluğu, diyafram, film stoğu ya da
+// bokeh yazmıyor — yazarlar bunu KARE satırına koyuyor ("85mm lens at f/2.8, ..."), STYLE'a
+// değil. Eski pay lens'e 90 kelimenin 28'ini (%31) veriyordu. Ölçülen bedel `pixar_3d_edu`
+// çıktısında görüldü: "35mm to 50mm equivalent focal length, f/4 on mid-shots, f/2.8 on
+// character close-up, f/5.6 on environment establisher" 35 kelime yerken, altın standardın
+// HER bloğunda yazılı olan üç kilit — SSS'li ten (örtüşme %88), ıslak çift-nokta katchlight
+// (%75), %10-15 overscale (%63) — bütçe dışında kalıyordu.
+//
+// HÂLÂ TAHMİN OLAN: sayıların kendisi. Ölçüm bir SIRALAMA verdi (lens < kadraj < hareket <
+// siluet < malzeme/ışık/ölçü/imza); o sıralamayı puana çeviren `görünme × 10 − 4` eşlemesi
+// ve aşağıdaki pay dağılımı (40/10/6 + 34 serbest) kalibrasyondur, ölçüm değil. Ölçülen
+// tek şey sıra ve uçlardır (%100 ile %0). Yeni bir altın iş bitince ölçüm yenilenmeli.
+//
+// KAPSAM DIŞI (ölçüldü, bilerek kaynak yapılmadı):
+//  · camera_grammar — 14 bileşenin yalnız biri ("a child's eye-line") altın standartta,
+//    o da 4/94. Kaynak yapmak 13 ölü bileşeni bütçeye sokardı.
+//  · light_law — grup ortalaması %69 (en yüksek), ama `pixar_3d_edu`da içeriği render_law'ın
+//    ışık grameriyle örtüşüyor; ayrı kaynak yapmak yalnız tekrar üretiyor. Işık metnini
+//    SADECE light_law'da taşıyan dünyalar için AÇIK BULGU olarak duruyor.
+
+/** Sınıf: LENS/OPTİK — altın standartta 0/94. Bütçe yiyen ama kareye girmeyen tek sınıf. */
+const CLASS_LENS_RE = /\b(?:\d+(?:\.\d+)?\s?mm\b|f\/\d|focal length|focal plane|aperture|anamorphic|lens flare|depth of field|dof|bokeh|film curve|colou?r science|vision3)\b/i;
+/** Sınıf: KADRAJ/KOMPOZİSYON — 4/94. Kadraj KARE satırının işi, dünya kilidinin değil. */
+const CLASS_FRAMING_RE = /\b(?:frame at|stage in|foreground|background|near plane|falls? away|occupies the top|horizon (?:line )?(?:sits|low)|eye-?line|eye[- ]level|composition|establisher|close-up|mid-shots?)\b/i;
+/** Sınıf: HAREKET FİZİĞİ — 26/94. Durağan kare hareketi taşımaz; MOTION'un işi. */
+const CLASS_MOTION_RE = /\b(?:squash|stretch|anticipation|follow-through|overshoot|settle|smear|pickup|walk cycles?|physics govern)\b/i;
+/** Sınıf: SİLUET/ÇİZGİ — 86/94. */
+const CLASS_SILHOUETTE_RE = /\b(?:silhouette|outline|value separation|thumbnail|line weight|taper)\b/i;
+
+/** İMZA BEYANI — dünya kendi kilidini kendi ilan ediyor. Altın standartta 94/94.
+ *  Cümle düzeyinde okunur: "Sky is the emotional engine: <yük>" cümlesinde İLAN 5 kelimelik
+ *  boş bir baştır, DEĞER ondan sonraki yüktedir — bonus bu yüzden cümlenin BÜTÜN
+ *  bileşenlerine yayılır. One Piece'in gökyüzü tam bu yüzden bütçe dışında kalıyordu. */
+const SIGNATURE_DECL_RE = /\bIMPERATIVE\b|\b(?:is|are) the (?:emotional engine|signature|whole idea|defining|primary|governing|entire)\b|\bthe signature is\b|\bsignature is\b|\bis non-negotiable\b|\b(?:is|are) mandatory\b|\bMUST be (?:present|identical)\b|\bgoverns? everything\b|\bgoverning law\b|\bthe whole idea\b|\bwhat separates\b|\bmust be enough\b/;
+/** OLUMSUZLAMA MUAFİYETİ — kendini "X DEĞİLDİR" diye tanımlayan cümle imza değil metadır.
+ *  Ölçüldü: "The Pixar signature is NOT 'cute 3D'" → altın standartta örtüşme %0. */
+const SIGNATURE_NEGATED_RE = /\b(?:is|are) NOT\b|\bnever merely\b|\bnot merely\b/;
 /** Kendi başına duramayan karşıtlık kuyruğu: "…, not photo-random", "…, never hard-step".
  *  Ayrı bileşene bölünürse anlamsız kırıntı olur ve NEGATIVE'e yalancı madde yazar. */
 const CONTINUATION_RE = /^(?:not|nor|never|or|and|but)\b/i;
@@ -497,21 +568,63 @@ function toUnits(sentence) {
   return groups;
 }
 
-function scoreUnit(t) {
+/**
+ * Bir bileşenin bütçe hakkı. HER terimin dayanağı yukarıdaki ALTIN STANDART ÖLÇÜMÜ'dür;
+ * yorumda `<sınıf> <altın blokta görünme>` olarak yazılıdır.
+ *
+ * @param t         bileşen metni
+ * @param signature bileşenin geldiği CÜMLE kendini imza ilan ediyor mu (cümle düzeyi)
+ */
+function scoreUnit(t, signature = false) {
   let score = 0;
-  // Eş anlamlı yığını 4'te DOYAR, ÖLÇÜ ise ağır basar. Ölçüsüz sürüm "props drawn 10-15%
-  // overscale"i (Kütle'de 8/8 → 0/27 sapmasını doğuran tam cümle) bütçe dışına itiyordu:
-  // altı farklı malzeme kelimesi sayan bir cümle 18 alırken sayı taşıyan kural 7 alıyordu.
-  // Motor bir SAYIYA uyabilir; eş anlamlı yığınına uyamaz.
+  // MALZEME + IŞIK yoğunluğu — ikisi de 94/94 (%100). Eş anlamlı yığını 4'te DOYAR, ÖLÇÜ ise
+  // ağır basar. Ölçüsüz sürüm "props drawn 10-15% overscale"i (Kütle'de 8/8 → 0/27 sapmasını
+  // doğuran tam cümle) bütçe dışına itiyordu: altı farklı malzeme kelimesi sayan bir cümle 18
+  // alırken sayı taşıyan kural 7 alıyordu. Motor bir SAYIYA uyabilir; eş anlamlı yığınına uyamaz.
   score += Math.min(new Set((t.match(SPEC_RE) || []).map((w) => w.toLowerCase())).size, 4) * 3;
+  // ÖLÇÜ / SAYI KURALI — 94/94 (%100).
   if (NUMERIC_RE.test(t)) score += 6;
+  // SİLUET / ÇİZGİ — 86/94 (%91).
+  if (CLASS_SILHOUETTE_RE.test(t)) score += 5;
+  // HAREKET FİZİĞİ — 26/94 (%28). Durağan kare hareketi taşımaz.
+  if (CLASS_MOTION_RE.test(t)) score -= 3;
+  // KADRAJ / KOMPOZİSYON — 4/94 (%4). Kadrajı KARE satırı yazar.
+  if (CLASS_FRAMING_RE.test(t)) score -= 6;
+  // LENS / OPTİK — 0/94 (%0). 94 altın bloğun hiçbiri odak/diyafram/film stoğu taşımıyor.
+  if (CLASS_LENS_RE.test(t)) score -= 8;
+  // META ÇERÇEVE — olumsuzlamayla tanım yapan içeriksiz cümle (ölçülen örtüşme %0-33).
   if (META_RE.test(t)) score -= 6;
   const props = new Set((t.match(PROP_NOUN_RE) || []).map((n) => n.toLowerCase())).size;
   if (props > 1) score -= (props - 1) * 2;
   if (words(t) > 22) score -= 2;      // uzun bileşen bütçeyi yer, kilidi taşımaz
   if (words(t) < 3) score -= 3;       // tek kelimelik kırıntı ajanı yanıltır
+  // İMZA BEYANI — 94/94 (%100), ama TABAN olarak, TOPLANARAK değil.
+  // Toplamalı sürüm ölçüldü ve BOZUKTU: `pixar_3d_edu`da "Material specificity is
+  // non-negotiable:" cümlesinin dört malzeme maddesi zaten 12 alıyordu, +8 ile 20 olup 90
+  // kelimenin 40'ını tek başına yedi ve SSS'li ten (örtüşme %88) yine dışarıda kaldı.
+  // İmzanın çözdüğü gerçek sorun ZAYIF PUANLI ilan cümlesidir: "Sky is the emotional engine"
+  // 0 puan alıyordu. Taban 9 = altın standartta kanıtlanmış medyan bileşenin puanı
+  // (SSS ten 9 · overscale 9 · motivated key 9) — yani bir imza beyanı EN AZ ölçülmüş bir
+  // medyan bileşen kadar değerlidir, daha fazlası değil.
+  // 4 kelimeden kısa kırıntıya taban uygulanmaz ("SSS skin", "painterly AO" kilit değil, artık).
+  if (signature && words(t) >= 4) score = Math.max(score, SIGNATURE_FLOOR);
   return score;
 }
+const SIGNATURE_FLOOR = 9;
+
+/**
+ * KARDEŞ SÖNÜMÜ — bir cümle bütçeyi tek başına ele geçiremez.
+ *
+ * ÖLÇÜLDÜ (94 altın blok): yazılmış STYLE her seferinde YEDİ AYRI yasa cümlesinden
+ * besleniyor — lineage · siluet · SSS ten · göz spec'i · malzeme başı + 3-4 KISA madde ·
+ * overscale · ışık grameri · "no outlines". Hiçbir cümle bloğa dörtten fazla madde vermiyor
+ * ve verdikleri maddeler kısa (altın malzeme maddesi ortalama ~4.5 kelime; dünya metnindeki
+ * karşılıkları 7-11 kelime). Sönüm olmadan `pixar_3d_edu`da tek bir cümlenin (malzeme
+ * listesi) dört maddesi bütçenin yarısını alıyordu; sönümle blok, altın standardın yaptığı
+ * gibi, cümleler ARASINDA yayılıyor.
+ * Sönüm miktarı (kardeş başına 4) kalibrasyondur — ölçülen şey yayılmanın kendisidir.
+ */
+const SIBLING_DECAY = 4;
 
 function buildStyle(world, register, brandTokens, notes) {
   const { physics, props } = splitRenderLawPhysics(world.render_law || '');
@@ -541,6 +654,14 @@ function buildStyle(world, register, brandTokens, notes) {
 
   const units = [];
   sources.forEach(({ tag, sentence }, si) => {
+    // İMZA CÜMLE DÜZEYİNDE OKUNUR — "Sky is the emotional engine: hand-brush-painted cumulus
+    // masses in cream-gold over cobalt-marine, flaring amber-orange at climactic beats" tek
+    // cümledir ama toUnits onu ':' ve ',' üzerinden üç gruba böler. İlan tek başına 5 kelimelik
+    // boş bir baştır; DEĞER yükün kendisindedir. Bonus bu yüzden cümlenin bütün bileşenlerine
+    // yayılır — yoksa dünyanın kendi ilan ettiği imzası bütçe dışında kalır (ölçüldü: One
+    // Piece'in gökyüzü, gökyüzü One Piece'in imzası olduğu halde 0 puanla eleniyordu).
+    const signature = SIGNATURE_DECL_RE.test(sentence) && !SIGNATURE_NEGATED_RE.test(sentence);
+    if (signature) notes.signatureSentences.push(sentence);
     toUnits(sentence).forEach((group, gi) => {
       // KÖK KUSUR (ilk koşuda ölçüldü): "Strictly forbid 2D cel shading, hard black outlines,
       // flat graphic fill, clay/plasticine surface texture on character skin." cümlesinde yalnız
@@ -558,20 +679,36 @@ function buildStyle(world, register, brandTokens, notes) {
         const clean = scrubBrandTokens(raw, brandTokens, notes.brandScrubbed);
         if (!clean || words(clean) < 2) return;
         units.push({
-          tag, order: si * 10000 + gi * 100 + ui, text: clean, score: scoreUnit(clean),
-          mandatory: tag === 'render' && si === 0 && gi === 0 && ui === 0,
+          tag, si, order: si * 10000 + gi * 100 + ui, text: clean, score: scoreUnit(clean, signature),
+          signature, mandatory: tag === 'render' && si === 0 && gi === 0 && ui === 0,
         });
       });
     });
   });
 
-  // BÜTÇE PAYI — tek havuzda yarıştırınca render bileşenleri lens grameri­ni açlıktan öldürüyor
-  // ve kare film stoğunu/odak uzunluğunu kaybediyor (Sürtünme'nin elle yazılmış bloğunda
-  // dağılım ~62/10/30'du). Pay: render 50 · line 12 · lens 28 kelime; artan pay bir sonrakine akar.
-  const QUOTA = { render: 50, line: 12, lens: 28 };
+  // BÜTÇE — ÖLÇÜLMÜŞ PAY.
+  // Eski pay (render 50 · line 12 · lens 28) tek bir elle yazılmış bloğun (Sürtünme) kelime
+  // dağılımına bakılarak seçilmişti; lens'e %31 veriyordu. 94 altın STYLE bloğu ölçüldüğünde
+  // lens sınıfının görünme oranı 0/94 (%0) çıktı — o %31 tamamen israftı ve %100 görünen
+  // sınıfları (SSS ten, overscale, imza) bütçe dışına itiyordu.
+  //
+  // Yeni yapı iki fazlı:
+  //  · GARANTİ TABAN — her kaynak grubuna küçük bir taban, ki hiçbir grup TAMAMEN susmasın.
+  //    lens tabanı 6'da tutuluyor SIFIR değil: bazı dünyalarda (deakins, fincher) karanlık
+  //    yasası lens_grammar'ın içinde yazılı ve o metin lens sınıfına GİRMEZ, ışığa girer.
+  //  · SERBEST HAVUZ — kalan kelimeler tek sırada, kaynak grubu gözetmeden, PUANLA yarışır.
+  //    Ölçüm bir sıralama verdi; bütçeyi o sıralamaya teslim eden yer burasıdır.
+  // Taban toplamı 56, serbest havuz 34 kelime. (Bu bölünme kalibrasyon — ölçüm sıralamayı
+  // verdi, sayıları değil; bak: ALTIN STANDART ÖLÇÜMÜ → "HÂLÂ TAHMİN OLAN".)
+  //
+  // lens tabanı SIFIR — 0/94. Bu lens_grammar'ı susturmaz: o metin serbest havuzda kendi
+  // puanıyla yarışmaya devam eder. Susan tek şey, ölçülen karşılığı olmadığı halde lens'e
+  // ayrılmış GARANTİ paydır. deakins/fincher gibi karanlık yasasını lens_grammar'da yazan
+  // dünyalarda o cümleler LENS sınıfına değil IŞIK sınıfına düşer ve serbest havuzu kazanır.
+  const RESERVE = { render: 44, line: 12, lens: 0 };
   // REAL karşı-terimleri bloğa SONRADAN eklenir ama bütçeye ÖNCEDEN yazılır — yoksa tavan
   // sessizce aşılır (ilk REAL koşusunda 100/90 çıktı).
-  if (register === 'REAL' && realCounterTerms) QUOTA.render -= words(realCounterTerms);
+  let total = STYLE_WORD_CAP - (realCounterTerms ? words(realCounterTerms) : 0);
   const chosen = [];
   // Gruplar arası tekrar kilidi: `product_brand_real`'de "50mm for context" hem render_law'da
   // hem lens_grammar'da yazılı ve blok aynı emri iki kez veriyordu.
@@ -581,17 +718,42 @@ function buildStyle(world, register, brandTokens, notes) {
     const c = norm(u.text);
     return seen.some((s) => s === c || s.startsWith(c + ' ') || c.startsWith(s + ' '));
   };
-  let spill = 0;
+  const sentenceTaken = new Map();   // si → o cümleden kaç bileşen alındı (kardeş sönümü)
+  const take = (u) => {
+    chosen.push(u); seen.push(norm(u.text)); total -= words(u.text);
+    sentenceTaken.set(u.si, (sentenceTaken.get(u.si) || 0) + 1);
+  };
+  /** Anlık puan: taban puan − o cümleden ZATEN alınmış kardeş sayısı × sönüm. */
+  const live = (u) => u.score - SIBLING_DECAY * (sentenceTaken.get(u.si) || 0);
+  /** Aç gözlü seçim: her turda EN YÜKSEK anlık puanlı sığan bileşeni al, sonra yeniden bak.
+   *  Tek sıralama yetmez — sönüm her seçimden sonra sıralamayı değiştirir. */
+  const greedy = (pool, budgetOf) => {
+    for (;;) {
+      let best = null, bestScore = -Infinity;
+      for (const u of pool) {
+        if (chosen.includes(u)) continue;
+        const w = words(u.text);
+        if (w > total || w > budgetOf() || isDuplicate(u)) continue;
+        const s = live(u);
+        if (s > bestScore || (s === bestScore && best && u.order < best.order)) { best = u; bestScore = s; }
+      }
+      if (!best) return;
+      take(best);
+    }
+  };
+
+  // FAZ 1 — garanti taban
   for (const tag of ['render', 'line', 'lens']) {
     const pool = units.filter((u) => u.tag === tag);
-    let budget = QUOTA[tag] + spill;
-    const take = (u) => { chosen.push(u); seen.push(norm(u.text)); budget -= words(u.text); };
+    const startTotal = total;
     for (const u of pool.filter((x) => x.mandatory)) take(u);
-    for (const u of pool.filter((x) => !x.mandatory).sort((a, b) => b.score - a.score || a.order - b.order)) {
-      if (words(u.text) <= budget && !isDuplicate(u)) take(u);
-    }
-    spill = Math.max(0, budget);
+    // `total` her `take`te düşer; bu gruba harcanan = grubun başındaki total − şimdiki total.
+    // Zorunlu bileşen tabanı aşabilirse kalan negatif olur ve greedy hiçbir şey almaz —
+    // dünyanın kimlik cümlesi kesilmez, tabanın geri kalanı harcanmış sayılır.
+    greedy(pool.filter((x) => !x.mandatory), () => RESERVE[tag] - (startTotal - total));
   }
+  // FAZ 2 — serbest havuz: artan taban + 34 kelime, kaynak grubu gözetmeden puan sırasıyla.
+  greedy(units, () => total);
   chosen.sort((a, b) => a.order - b.order);
   const dropped = units.filter((u) => !chosen.includes(u));
 
@@ -690,7 +852,7 @@ function main() {
     }
   }
 
-  const notes = { brandScrubbed: new Set(), temporalDropped: [], fallback: false, realCounterTerms: '' };
+  const notes = { brandScrubbed: new Set(), temporalDropped: [], fallback: false, realCounterTerms: '', signatureSentences: [] };
   const brandTokens = brandTokensFor(world);
   const { style, forbidden, kept, dropped, props } = buildStyle(world, register, brandTokens, notes);
 
@@ -734,6 +896,14 @@ function main() {
   else warn('   ✓ ham hex yok (Palette Translation Law)');
 
   if (notes.brandScrubbed.size) warn(`   ✓ marka/stüdyo adı söküldü: ${Array.from(notes.brandScrubbed).join(', ')}`);
+  // İMZA KORUMASI — dünya kendi kilidini ilan ettiyse o bileşenler bütçede öncelik alır.
+  // Kaçan varsa SUSMAK yok: hangi imza cümlesi bütçe dışında kaldı, adıyla yazılır.
+  const sigKept = kept.filter((u) => u.signature);
+  const sigLost = dropped.filter((u) => u.signature);
+  if (sigKept.length || sigLost.length) {
+    warn(`   ✓ imza beyanı: ${sigKept.length} bileşen STYLE'a girdi${sigLost.length ? ` · ${sigLost.length} tanesi bütçe dışı` : ''}`);
+    for (const u of sigLost.slice(0, 3)) warn(`      ⚠ imza bütçe dışı: ${u.text.slice(0, 100)}`);
+  }
   if (notes.realCounterTerms) warn(`   ✓ REAL karşı-terimleri eklendi: ${notes.realCounterTerms}`);
   if (notes.fallback) warn('   ⚠ dünyanın render_law/grammar metni BOŞ — register tabanı basıldı, dünya kilidi YOK');
   // `props` boş bir dizi olduğunda da truthy — uyarı 46 dünyanın 46'sında basılıyor ve içi boş

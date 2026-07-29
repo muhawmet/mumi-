@@ -187,6 +187,41 @@ describe('buddy kapısı — eşik, teklif, ısrarsızlık', () => {
     expect(run(batch(id, { prompt_id: 'a' }))).toContain('additionalContext');
   });
 
+  // 2026-07-29 (Sol denetimi): guard'ı erteleyici yapan HARD_ACTIVE_MS eklendi ama kendi testi
+  // yoktu — "duvar var" sanılan ama ateşlemeyen sınıfın kendisi olurdu. Üç kilit:
+  // (1) tavanın ALTINDA guard hâlâ susturur, (2) tavanı AŞINCA hiperfokusun kendisi yük sinyali
+  // sayılır ve teklif doğar, (3) ısrarsızlık tavanın üstünde de DÜŞMEZ.
+  test('yük tavanı: 120dk bitişik aktif süre guard\'ı ERTELEYİCİ yapar, iptal etmez', () => {
+    const id3 = 's-yuk-tavani';
+    const now = Date.now();
+    run(batch(id3));
+
+    // (1) 99dk + 3 prompt → tavan ALTINDA, guard susturur.
+    let s = st(id3);
+    s.activeMs = 99 * MIN;
+    s.lastOfferMs = 0;
+    s.lastEventMs = now - 90_000;
+    s.prompts = { a: now - 60_000, b: now - 30_000, c: now - 10_000 };
+    put(id3, s);
+    expect(run(batch(id3, { prompt_id: 'c' })).trim()).toBe('');
+
+    // (2) AYNI hiperfokus, 121dk → tavan AŞILDI, teklif doğar. Mami 3 saat kesintisiz
+    //     çalışıp her 2-3 dk prompt attığında eski AND kapısı SONSUZA KADAR susuyordu.
+    s = st(id3);
+    s.activeMs = 121 * MIN;
+    s.lastOfferMs = 0;
+    s.lastEventMs = Date.now() - 90_000;
+    s.prompts = { a: Date.now() - 60_000, b: Date.now() - 30_000, c: Date.now() - 10_000 };
+    put(id3, s);
+    expect(run(batch(id3, { prompt_id: 'c' }))).toContain('additionalContext');
+
+    // (3) Israrsızlık tavanın üstünde de geçerli: teklif yeni verildi → hemen ikincisi YOK.
+    s = st(id3);
+    s.lastEventMs = Date.now() - 90_000;
+    put(id3, s);
+    expect(run(batch(id3, { prompt_id: 'd' })).trim()).toBe('');
+  });
+
   test('IDLE_CUT: 3 saatlik ara aktif süreye EKLENMEZ (Mami masada değildi)', () => {
     const id2 = 's-idle';
     run(batch(id2));
