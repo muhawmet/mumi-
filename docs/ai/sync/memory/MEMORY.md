@@ -40,6 +40,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Command JSON blokajları](mamilas-command-json-blokajlari.md) — site JSON'unun Mami'nin istediğini engellediği 10 nokta; üretimde elle aşılır.
 - [Türkçe metin + cast kilidi](mamilas-tr-text-and-cast-locks.md) — site emit etmiyor, ajan yazar.
 - [Lint rolü görmüyor](mamilas-lint-rol-koru.md) — 50 karede 19 yanlış alarm. Lint kırmızıysa önce gerçek satırı oku.
+- [Şaheser standardı](mamilas-saheser-standardi.md) — her prompt şaheser olacak, özel okullar para veriyor. EŞLİK ≠ TAŞIMA; yeşil lint tabandır, tavan değil.
 - [Upwork portfolyo hedefi](mamilas-upwork-portfolyo-hedefi.md) — kıstas "bunu bir müşteriye gösterir miyim"; ilk reklam filmi deney değil portfolyo parçası.
 
 ## Prompt zekâsı ve motor kusurları (kareyle kanıtlı)
