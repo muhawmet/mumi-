@@ -1,7 +1,13 @@
 # MAMILAS — Claude giriş sözleşmesi
 
-MAMILAS, Mami'nin (Muhammet) eğitim ve reklam videosu üretim konsoludur. Site ve `src/core/`
-deterministik karar akışı doğruluk kaynağıdır.
+MAMILAS, Mami'nin (Muhammet) eğitim ve reklam videosu üretim konsoludur.
+
+**Site TARİF üretir; motora giden prompt'u AJAN yazar.** Bu bir tercih değil, ölçüm (2026-07-29):
+kodun ürettiği metin ile teslim edilen kare arasındaki örtüşme **%1-3**, aktif projede **%0** —
+site hiç koşulmadı. Semantik aday katmanı bir kez bilerek söküldü (`pure.ts` → *"FAZ2: konsept
+motoru söküldü"*) ve devir tuttu: 71 revizenin **sıfırı** sahne fikri kusuru. `src/core/`
+kanonu **dünya/ref/palet/lehçe kütüphanesidir** — ajanın okuduğu doğruluk kaynağı orasıdır,
+prompt'un doğduğu yer değil.
 
 **Bu dosya yalnız her fazda geçerli olanı taşır.** Faza özel yürütme aşağıdaki import'tadır.
 
@@ -23,8 +29,13 @@ Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopya
 | Dünya / ref / palet | `src/core/SURGERY_DATA.json` |
 | **Üretim ve prompt yasası** | `agents/PROMPT-YASASI.md` — daimi direktifler + start-frame/motion/referans template'leri |
 | Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
-| Durum kaydı | `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` |
+| **Aktif iş kaydı** | `artifacts/current-work.json` → `node scripts/current-work.mjs` (SessionStart hook aynısını basar) |
+| **Prompt yapısı ölçümü** | `scripts/prompt-lint.mjs` — üretimden ÖNCE koşar; KIRMIZI/SARI/KAPSAM |
+| **Dünya kilidi (STYLE kuyruğu)** | `scripts/dunya-kilidi.mjs` — elle yazma, bunu bas ve yapıştır |
 | Doküman drift denetimi | `src/core/docsContract.test.ts` |
+
+`artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (1337 satır) **arşivdir, otorite
+DEĞİL** — normal üretim oturumunda açılmaz.
 
 Katman yasaları `.claude/rules/` içinde ve **dosyaya dokununca kendiliğinden yüklenir** (path-scoped).
 
@@ -53,9 +64,21 @@ belleği · tek karar · sonuç kapısı · geri sarma yasağı · "bak şunu ya
 kusur **sisteme** yazılır kişiye asla, tespit ve düzeltme aynı cümlede gelir, rapor **ne tuttuğuyla**
 başlar. Yük yönetimi (su/nefes) o skill'de yazılı ve `.claude/hooks/buddy-gate.sh` ile ateşlenir.
 
-**Kanıt disiplini.** Kök neden bulunmadan semptom yamama. Prompt/üretim kalitesi hakkında hüküm
-vermeden önce **gerçek `generateBatch` çıktısı** üret ve gözle oku. Yeşil test görsel kalite kanıtı
-değildir. Değişiklikten sonra farklı bir review geçişi uygula; kendi ilk varsayımını kanıt sayma.
+**Kanıt disiplini.** Kök neden bulunmadan semptom yamama. Prompt kalitesi hakkında hüküm vermeden
+önce **gerçek teslim metnini** aç ve gözle oku — `generateBatch` çıktısı kanıt değildir, o metin
+motora gitmiyor (%1-3). Yeşil test görsel kalite kanıtı değildir. Değişiklikten sonra farklı bir
+review geçişi uygula; kendi ilk varsayımını kanıt sayma.
+
+**Arşiv kıstas DEĞİL** (Mami, 2026-07-29). `agents/COMMAND-INBOX/Biten/` altındaki işler *ne
+yapıldığının kaydıdır*, kalite ölçütü değil — çoğu iş çıkışında aceleyle üretildi. **"Sıfır revize"
+kusursuz demek değil, o turda öyle gitti demektir.** Altın standart **Eşeyli ve Eşeysiz Üreme**'dir.
+Eski işe bakarken lens şudur: *"bunlar hatalı, ne bozuk?"* — kopyalanacak kalıp değil, kusur madeni.
+
+**Üretimden ÖNCE ölç, sonra harca.** Ölçüldü: 71 revizenin **~44-52'si** prompt metnine bakılarak,
+tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile kuyruğu bas → prompt'u yaz →
+`prompt-lint.mjs` koş → **sonra** Mami bassın. Lint'in KIRMIZI'sı kanıtlı eksiktir; SARI'sı kusur
+iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
+**yeşil ≠ temiz.**
 
 **Değişmezler.** Mami'nin metnini sessizce yeniden yazma — sorunlu terimi bildir, düzeltilmiş cümle
 için ona dön. Kaynakta olmayan gerçeği uydurma: `FACT REQUIRED: <eksik bilgi>` ile dur. Test silme

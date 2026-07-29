@@ -33,8 +33,9 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
 |---|---|
 | **Her iş parçası bitince** | `node scripts/current-work.mjs ilerle --bitti "<ölçülmüş>" --sirada "<tek eylem>"` — kayıt bayatlarsa sonraki oturum sıfırdan başlar |
 | Yeni video başlarken | `node scripts/current-work.mjs baslat "<proje>"` + `/mamilas-enzim` — 4 kilit kapanmadan prompt yazılmaz |
+| **Prompt yazmadan ÖNCE** | `node scripts/dunya-kilidi.mjs <worldId>` — STYLE/LIGHT/NEGATIVE kuyruğunu **bas ve yapıştır**. Elle yazma: ölçüldü, aynı dünyada dört lehçe doğdu (Kütle'nin ilk 8 karesi 81-91 kelime, kalan 27'si 23-30; `overscale` 8/8 → 0/27) |
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
-| Prompt yazıldıktan sonra | `node scripts/prompt-lint.mjs <dosya> --register=real|edu|sty` — eksik slot kalmasın |
+| **Prompt yazıldıktan sonra, BASMADAN ÖNCE** | `node scripts/prompt-lint.mjs <dosya> --register=real\|edu\|sty` — 71 revizenin ~44-52'si burada, kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik · SARI = ajan baksın · KAPSAM = yeşilin kapsamadığı |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |
 | Klip geldiğinde | `node scripts/motion-qc.mjs <klip>` — videonun kendisi denetlenir |
 | **Klipler + VO inince** | `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>` — **Premiere timeline'ı kurulu gelir** |
@@ -58,6 +59,12 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
   Ölçülen kazanç (Kütle, 2026-07-28): plan 3:33 tahmin ediyordu, gerçek VO 3:00 — 33 saniyelik
   tahmin sapması kaynakta kapandı; 35 kesimin 35'i cümlesine nokta atışı oturdu.
 - **Kare kalitesinin son hükmü Mami'nindir.** Ajan hazırlar, karar vermez.
+- **Arşiv kıstas değil** (Mami, 2026-07-29). `Biten/` altındaki işler ne yapıldığının kaydıdır;
+  çoğu iş çıkışında aceleyle üretildi ve hatalı. "Sıfır revize" kusursuz demek değildir. Altın
+  standart **Eşeyli ve Eşeysiz Üreme**. Eski işe *"bunlar hatalı, ne bozuk?"* gözüyle bakılır —
+  iyi olan zaten göze çarpar.
+- **İş kapanışı ölçülür.** `current-work.mjs kapat` artık eksik kit, eksik medya, açık bloke ya da
+  açık Mami kararı varsa **kapatmaz**; kabul ediliyorsa `--zorla`. Kapanış bir iddia değil, bir kanıt.
 
 ## Teslim seti
 
