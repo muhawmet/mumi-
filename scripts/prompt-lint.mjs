@@ -260,6 +260,11 @@ const TRAPS = [
 ];
 
 // STYLE bloğu kelime tavanı (yasa §0: 269 kelime → %65 revize; 88 kelime → %14).
+// Yasa (§2) ≤90 kelime der; linter 110'da kırmızı yakar. Fark BİLEREK var ve ölçüldü:
+// altın standart Üreme'nin STYLE'ı 86-116 kelime ve o iş tuttu. 90'da kırmızı yakmak Mami'nin
+// EN İYİ işini kırmızıya boğardı — sahte alarm ölçümü çöpe atar. 110 = yasanın hedefi + altın
+// standarttan ölçülmüş tolerans. Hedef hâlâ 90; 110 duvarın yeri.
+// Bu satırı 90'a çekmeden önce Üreme'yi lintle: kaç kare kırmızıya düşüyor, gör.
 const STYLE_MAX_WORDS = 110;
 // Kare-özel oran alt sınırı. Bileşke %35 → %65 revize. Sürtünme %51 → çok daha az.
 const KARE_OZEL_MIN = 0.45;
