@@ -171,7 +171,8 @@ Slot sırası bağlayıcı. Başlık satırı yönetmen içindir, prompta girmez
 ```
 ### K<n> | VO<n> "<Türkçe cümle>" · yazı: <"KELİME" | YOK> · <KAVRAM | KARAKTER>
 FİKİR: <bu kareye neden bakılır — VO'suz okunan tek gerilim ya da tek değişim>
-PLAN:  <kahraman> · <kaç net insan> · <ışık nereden, nerede BİTİYOR> · <özne zeminden nasıl ayrılıyor>
+PLAN:  <kahraman> · <kaç net insan> · <ışık NEYE DEĞİYOR, neye değmiyor — ton yazma, §2b> ·
+       <özne zeminden nasıl ayrılıyor> · <FEDA: bu karede ne okunmuyor, §2c>
 -----
 [1 LENS]      <24-85>mm lens at f/<x>, <göz hizası|yüksek|alçak> <yakın|orta|geniş> <üç-çeyrek> view
               ⚠ eksenden ÇIK: ön planda kesilen bir çapa yoksa motor simetriye düşüyor (§2a)
@@ -204,6 +205,16 @@ Yasada bu maddeye en yakın iki cümle ikisi de KISITTIR ve ikisi de sağlanırk
 §1.3 *"bir kareye iki kavram sıkıştırma"* (fazlasını koyma) ve §1.7 *"VO cümlesiyle birebir eş"*
 (cümleden sapma). Hiçbiri **"bu karenin fikri ne"** diye sormaz.
 
+**EŞLİK ≠ TAŞIMA (Mami, aynı gün).** §1.7 *"her kare VO cümlesiyle birebir eş"* der ve bu
+yanlış anlaşılmaya açıktır: **eşlik eden kare cümlenin TEKRARIDIR** — izleyici duyduğu şeyi
+bir de görür, kare bedavaya gelmiş olur. **Taşıyan kare cümlenin SÖYLEYEMEDİĞİNİ verir.**
+"Millî kültür bir milleti bir arada tutar" cümlesinin eşliği bir festival kapısıdır; taşıması,
+aynı tezgâhta yaşlı bir elin ve bir çocuk elinin dokuduğu tek kilimde eski ipin solmuş,
+yeni ipin parlak olmasıdır. Cümle kavramı söyler, kare **kanıtı** gösterir.
+
+Bu ticari bir zorunluluktur, estetik tercih değil: bu videolar özel okullara satılıyor.
+Cümlenin altına konmuş dolgu kare, parası ödenmiş bir saniyenin boşa gitmesidir.
+
 **FİKİR SINAVI — kare yazılmadan, tek soru:**
 > Bu kareyi VO olmadan birine göstersen, *"burada ne oluyor"* diye sorduğunda cevap verebilir mi?
 
@@ -222,6 +233,70 @@ gerilim yok, o yüzden hiçbiri bakılmaya değmiyor.
 sci_fi'da paslı mavi hangar, EDU'da gülümseyen iki çocuk, REAL'de parlak stüdyo ürünü.
 Dünya kilidi bunu engellemez, çünkü kilit **doğru** olanı tarif eder, **ilginç** olanı değil.
 Uzaylılık yaratıktan gelmek zorunda değil — sıradan bir şeyin yanlış olması daha güçlüdür.
+
+### §2b — MOTORUN ÖLÇÜLEN DAVRANIŞI (2026-07-29/30, 20 kare basıldı)
+
+Bir gün boyunca dört ayrı dünyada 20 kare basıldı ve motorun neyi dinlediği neyi dinlemediği
+ayrıştı. Bunlar tahmin değil; her satırın karşısında basılmış bir kare var.
+
+**1. Motor GEOMETRİYİ dinler, TONU dinlemez.** En pahalı bulgu.
+
+| Yazılan | Sonuç |
+|---|---|
+| *"şaft yalnız kasanın üstüne düşer, başka hiçbir şeye ulaşmaz"* | **TUTTU** — ışık gerçekten sadece kasada, iki yüz gölgede |
+| *"kasa boş ve açık, eller boş"* | **TUTTU** — hatta kapak katlandığı için yazı ters okundu, birebir |
+| *"aydınlık yarı, karanlık yarı mutlak siyah, çizgi burnundan iner"* | **OLMADI** — yüz baştan sona yumuşak ve eşit |
+| *"tepe güneşi, göz çukurları kapkara, dolgu yok"* | **OLMADI** — kapalı havada çekilmiş gibi |
+
+Motorun varsayılanı **"hoş ve dengeli pozlanmış fotoğraf"** ve tonla ilgili her cümle o
+varsayılana yeniliyor. Işık dışlaması **coğrafi** yazılır, fotometrik değil: *"ışık şuna,
+şuna ve şuna değer; başka hiçbir şeye değmez."* "Siyah kalır", "kontrast 6:1", "dolgu yok"
+cümleleri **ölçüldü ve çalışmıyor.**
+
+**2. Negatif korumaz — üçüncü kez ölçüldü.** Fideye *"asla parlamaz, ışık kaynağı olmaz"*
+yazıldı; fide parladı. Yasaklamak yerine **ne olduğunu** yaz: *"yaprakları donuk ve tozlu,
+ışığı geri vermiyor."*
+
+**3. İcat edilen canlı/nesnenin MALZEMESİ değil önce FORMU yazılır.** Yaratığa "plakalı kitin,
+büyüme bantları, mikro çukurlar" yazıldı — siluet, oran, plakaların nasıl eklemlendiği
+yazılmadı. Motor boşluğu doldurdu ve ortaya bir kurtçuk çıktı; ikinci karede de tanınmış bir
+film yaratığına yakınsadı. **Form yazılmayan yer, motorun en tanıdık formuyla dolar** — bu
+aynı zamanda telif riskidir. Yazılacaklar: siluet, oran, eklemlenme, neye benzemediği.
+
+**4. Motor gerçek insan tenini BİLİYOR.** REAL register'da gözenek, ter, güneş yanığı, göz
+kenarı çizgisi, kirli sakal — hepsi tuttu, plastik surat hiçbirinde çıkmadı. Bu artık sorulmaz;
+`ten-real` slotu doldurulduğu sürece ten sorun değil.
+
+**5. Türkçe yazı ve diakritik güvenilir.** `BASINÇ` · `TAHLİYE` · `İNİŞ 4` · `KÜLTÜR YOLU` ·
+`TOHUM` — beşi de doğru çıktı, Ç/Ş/İ/Ü yerinde. Koşul: harf harf heceleme + taşıyıcının
+malzemesi + yüzeyin sensöre paralel olması. Üçü birden yazılınca yazı **risk kalemi değil.**
+
+### §2c — FEDA: her şeyin okunduğu kare, AI karesidir (Mami, 2026-07-30)
+
+> *"Yani çok AI değil mi? Odyssey filmini izlesen böyle midir sahneler?"*
+
+Değildir, ve sebebi render kalitesi değil. Slotların hepsi doldurulduğunda ortaya çıkan şey bir
+film karesi değil, **reklam fotoğrafı**: özne üçte birde, ön planda çapa, arkada bokeh, her
+yüzey okunur, her doku görünür. Beş fark ölçüldü:
+
+1. **Her kare "en iyi an" olmuş.** Film karesi çoğu zaman tamamlanmamıştır — özne kadraja
+   giriyor ya da çıkıyor, sırtı dönük, yarısı kesik, ışığın dışında.
+2. **Her şey yerinde.** Odyssey'in kadrajları acımasızca geometrik **ve çoğu boş**: kocaman
+   hiçlik, minicik figür, bilerek kullanılmış simetri. "İyi kompoze" stok fotoğraf dilidir.
+3. **Işık kibar.** Gerçek işte ışık endüstriyel ve yüze yakışmaz: düz paneller, aşağıdan
+   aydınlanan yüz, patlamış pencere, tamamen siluete düşen kafa.
+4. **Hiçbir şeyden vazgeçilmemiş.** Prompt ten dokusunun, yazının, temas gölgesinin ve üç
+   katmanın **hepsinin okunmasını garanti ediyor.** Garanti, AI görüntüsünün ta kendisi.
+5. **Renk grade'den geliyor, eşyadan gelmiyor.** Palet satırı tutarlı bir grade üretiyor;
+   gerçek işte renk dekordan gelir — kırmızı koltuk, beyaz plastik, turuncu tulum.
+
+**YASA: her karede bir şey FEDA EDİLİR** ve neyin feda edildiği PLAN satırında yazılır.
+Bir yüz ışığın dışında kalır · bir yazının bir harfi elin altında kalır · bir kol kadraj
+tarafından kesilir · bir alan patlar · bir yüzey odağı kaybeder. Feda yoksa kare fotoğraf
+gibi durur; feda varsa **an** gibi durur.
+
+⚠ Lens bir SAYI olarak değil, bir CAM olarak yazılır: kenar bozulması, sıcak noktada halation,
+grain yapısı. "35mm film grain" yazmak bir etikettir, bir davranış değil.
 
 ### §2a — PLAN KARARI: slotlar dolu ama kare çirkin olabilir (2026-07-29, kareyle kanıtlı)
 

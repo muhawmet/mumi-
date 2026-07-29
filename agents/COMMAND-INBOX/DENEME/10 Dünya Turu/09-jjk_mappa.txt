@@ -1,0 +1,35 @@
+DÜNYA TURU — 09 · jjk_mappa (Jujutsu Kaisen — MAPPA) · register: STY
+STYLE / LIGHT AND PALETTE / NEGATIVE kuyruğu `node scripts/dunya-kilidi.mjs jjk_mappa` çıktısından AYNEN alındı.
+Telif: özgün karakter, özgün mekân. Yalnız çizim/render dili bu dünyanın.
+
+### K09 | Dünya turu · jjk_mappa · 1 karakter (kadın) · yazı: "GERİ"
+FİKİR: Nefesi yanlış yöne gidiyor — verdiği buğu öne değil, omzunun üstünden arkadaki karanlığa doğru ÇEKİLİYOR. İzleyici arkasında bir şeyin nefes aldığını görür, o görmez. Aksiyon değil, aksiyondan hemen ÖNCEKİ yarım saniye.
+PLAN:  Kahraman: yerdeki karpit lambası ve onun oyduğu yüz (kadın ölçek değil, konu) · NET insan: BİR, başka kimse yok · Işık: yerden, alttan-önden gelir; çene altında, elmacıkta ve alt dudakta yaşar, KÖPRÜCÜK KEMİĞİNDE BİTER — alın, saç üstü ve tüm tuğla kubbe dolgusuz mavi-siyah · Zeminden ayrışma: arkadaki dumandan gelen soğuk teal kenar, omzunun yalnız iki santimini çiziyor.
+
+-----
+Simulated 50mm portrait framing, camera held still at chest height, three-quarter medium close-up so her face fills roughly a third of the frame width; a slight compositional Dutch tilt of about six degrees for the dread beat; flat 2D, no physical depth of field — depth reads through atmospheric haze alone.
+
+She holds absolutely still and does not turn: she has just exhaled, and the fog of that breath is being drawn BACKWARD over her right shoulder into the dark behind her instead of drifting forward.
+
+Turkish, mid-twenties, blunt dark hair cut at the jaw with one strand stuck wet to her cheek, her eyes wide open and fixed straight ahead; matte flat-cel skin in a warm tan base value, low specular, never tinted green or grey; charcoal canvas work jacket with the collar turned up over a high-necked grey knit, a plain worn leather strap crossing her chest — ordinary field kit, deliberately not any school or academy uniform.
+
+The setting is a drained Ottoman-era stone cistern beneath a small Turkish town: shin-deep still water lying over flagstones, low brick barrel-vaulting overhead, a rusted iron ladder bolted to a squat brick pier, a row of burnt-out votive candle stubs on a wet ledge, a heavy chain hanging from an iron vault ring.
+
+One motivated source only: a fallen carbide lamp lying on the wet flagstone at her feet, throwing its light upward and forward. It carves the underside of her jaw, the ridge of her cheekbone and her lower lip, and then DIES at her collarbone — her forehead, the top of her head and every brick above her are unlit blue-black with no fill and no bounce anywhere in the frame. Behind her right shoulder a cold teal edge traces about two centimetres of her outline and stops there.
+
+One thin abstract fractal black-smoke tendril reaches in from the vault shadow at upper right; its core is a faint unsaturated teal glow, local and dim, never a second saturated event, and it stays an abstract shape — never a face, hand, mouth, mask or creature.
+
+Three things are alive in the frame: the breath fog bending backward over her shoulder, the carbide flame leaning the same way against its own draught, and a single ring of water spreading outward from her boot.
+
+Depth in three layers — a tarred hanging chain cropped hard by the lower-left frame edge and hazed to near-black; her lit face and the chalked brick pier sharp in the middle; the far vault dissolving into flat grey-blue atmospheric haze.
+
+Every object rests in contact with its surface: the carbide lamp rests in contact with the wet flagstone and casts a hard contact shadow, her boot breaks the water surface with a visible contact seam, the chain rests against the pier edge; nothing floats.
+
+STYLE: Contemporary MAPPA-style television-animation frame in the modern dark-shonen production lineage, 1-1.5 stops below standard cel, the subject is rim-lit rather than fill-lit, and the key light is frequently ABSENT, the form reads as a near-silhouette outlined by a cold edge, 3 steps, but the shadow value is push-crushed toward blue-black, (4) CURSED ENERGY, real photo reference under a painted cool overlay, teal-blue shadow lift, STRICT PURE 2D CEL. Confident 2-3px black line at rest with high interior detail, Shadow value crushes toward blue-black. Flat 2D, depth reads through atmospheric haze.
+
+LIGHT AND PALETTE: shadows read as near-black cool blue, midtones read as deep cool blue, accents read as vivid cool teal, highlights read as near-white warm ivory — palette character: cold blue-gray desaturation dominant — the frame lives below middle exposure; a single warm rim OR a cursed-teal accent is the only saturated event against the grey field. Blood, when present, is the one warm red permitted. NO earth-green, NO pastel, NO Ghibli-warm ambient, NO lifted flat midtone. Render these as light behaviour, never flat fills.
+
+TEXT: Carried by the brick pier itself — somebody chalked a warning here before she arrived. Soft white chalk dragged across damp brick, the strokes breaking wherever the brick face is pitted and the lower halves already washed pale by seepage: the word "GERİ" — four letters, G-E-R-İ, the fourth letter a dotted capital İ with its dot intact. It sits at shoulder height on the pier in the mid-ground to the left of her head, positioned so her silhouette does not stand in front of any letter. Every other brick, ledge and plate surface stays blank; any background lettering is soft-focus, Turkish or blank, never English.
+
+NEGATIVE: the breath fog must travel BACKWARD over her shoulder, never forward toward camera; the black tendril stays an abstract fractal smoke shape and never resolves into a face, hand, mouth, mask or creature; no light of any kind above her brow — the vault stays unlit; no named Jujutsu Kaisen character, no black academy uniform, no curse mark, technique icon or domain — this is an original character in an original Turkish cistern and only the drawing grammar belongs to this world ; NO named franchise curse; NO technique icon, or domain; NO any 3D; NO 2.5D; NO gradient-airbrush cel, or realistic light interpretation; NO warm-palette dominance; NO physical DOF; NO domain-expansion visual signature; NO 3D render, NO 2.5D hybrid, NO gradient-airbrush cel, NO realistic shading; NO pastel, NO lifted flat exposure; Turkish label only — brush kanji-inspired stroke weight allowed, NO English signage; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
+-----
