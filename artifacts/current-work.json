@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "AGY 34/34 klip ölçüldü: 12 morphing / 22 temiz. ORTA (yeniden üretim) 11 klip: K02 K03 K07 K09 K10 K12 K22 K23 K25 K30 K34 — en kötüsü K12 (6 kusur). BAŞ penceresi 1 klip: K29 (baş kırpımı 1.2s yeter). Desen: morphing temas noktasına + arka plandaki ikincil figüre çöküyor (7/12 el devri, 8/12 arka figür). Loot 12 aday taşıyor, APPROVED.md dokunulmadı.",
-  "nextAction": "FAZ 9 KAPALI — durdum. Mami: (1) hangi adayları APPROVED'a taşıyayım (tavsiyem #1 #2 #3 #4), (2) 11 klibi yeniden üretecek misin yoksa bu sürüm portfolyoya girmeyip enzim fixture'ı mı kalsın, (3) FAZ 10 brief gövdesi bekliyor.",
+  "lastCompleted": "Yasaya §2ø FİKİR + §2a PLAN + §2b motor davranışı + §2c FEDA yazıldı; 20 kare 4 dünyada ölçüldü (geometri tutuyor, ton tutmuyor); 10 dünya turu promptu hazır; Bileşke edit planı v2 + INTRO 16 kare; 56 commit'lik Mac↔Windows birleştirmesi ve 3 Windows kusuru (pathname, NFC, unpushed-gate)",
+  "nextAction": "FAZ 10 BUDDY 2.0 readback — brief okundu, readback yazılmadı, uygulama başlamadı",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-07-29T16:04:27.529Z",
+  "updatedAt": "2026-07-29T21:12:44.056Z",
   "updatedBy": "claude",
-  "baseCommit": "f5f162b"
+  "baseCommit": "649e163"
 }
