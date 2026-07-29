@@ -5,7 +5,7 @@
 <xmeml version="5">
   <sequence id="seq-1">
     <name>6. Sınıf - Bizi Bir Arada Tutan Değerler — kaba kurgu</name>
-    <duration>4730</duration>
+    <duration>5089</duration>
     <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
     <timecode><rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
     <media>
@@ -18,9 +18,9 @@
           <duration>201</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>138</end>
+          <end>164</end>
           <in>13</in>
-          <out>151</out>
+          <out>177</out>
           <file id="f-0">
             <name>1.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/1.mp4</pathurl>
@@ -36,8 +36,8 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>138</start>
-          <end>301</end>
+          <start>164</start>
+          <end>327</end>
           <in>13</in>
           <out>176</out>
           <file id="f-1">
@@ -55,10 +55,10 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>301</start>
-          <end>414</end>
+          <start>327</start>
+          <end>446</end>
           <in>13</in>
-          <out>126</out>
+          <out>132</out>
           <file id="f-2">
             <name>3.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/3.mp4</pathurl>
@@ -74,10 +74,10 @@
           <enabled>TRUE</enabled>
           <duration>201</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>414</start>
-          <end>581</end>
+          <start>446</start>
+          <end>622</end>
           <in>13</in>
-          <out>180</out>
+          <out>189</out>
           <file id="f-3">
             <name>4.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/4.mp4</pathurl>
@@ -93,10 +93,10 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>581</start>
-          <end>669</end>
+          <start>622</start>
+          <end>726</end>
           <in>13</in>
-          <out>101</out>
+          <out>117</out>
           <file id="f-4">
             <name>5.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/5.mp4</pathurl>
@@ -112,8 +112,8 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>669</start>
-          <end>782</end>
+          <start>726</start>
+          <end>839</end>
           <in>13</in>
           <out>126</out>
           <file id="f-5">
@@ -131,8 +131,8 @@
           <enabled>TRUE</enabled>
           <duration>226</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>782</start>
-          <end>1019</end>
+          <start>839</start>
+          <end>1091</end>
           <in>13</in>
           <out>226</out>
           <file id="f-6">
@@ -151,7 +151,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>89.8734</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>84.5238</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>
@@ -163,10 +163,10 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1019</start>
-          <end>1121</end>
+          <start>1091</start>
+          <end>1210</end>
           <in>13</in>
-          <out>115</out>
+          <out>126</out>
           <file id="f-7">
             <name>8.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/8.mp4</pathurl>
@@ -175,6 +175,19 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.9580</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
           <comments><mastercomment1>K08 — Bu değerler, davranışlarımızı yönlendirerek toplumsal ilişkileri düzenler.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-8">
@@ -182,10 +195,10 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1121</start>
-          <end>1206</end>
+          <start>1210</start>
+          <end>1323</end>
           <in>13</in>
-          <out>98</out>
+          <out>126</out>
           <file id="f-8">
             <name>9.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/9.mp4</pathurl>
@@ -201,8 +214,8 @@
           <enabled>TRUE</enabled>
           <duration>226</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1206</start>
-          <end>1419</end>
+          <start>1323</start>
+          <end>1539</end>
           <in>13</in>
           <out>226</out>
           <file id="f-9">
@@ -213,6 +226,19 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>98.6111</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
           <comments><mastercomment1>K10 — Destanlar, masallar, türküler, ninniler, atasözleri ve yazılı eserler aracılığıyla kültüre</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-10">
@@ -220,10 +246,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1419</start>
-          <end>1541</end>
+          <start>1539</start>
+          <end>1669</end>
           <in>13</in>
-          <out>135</out>
+          <out>143</out>
           <file id="f-10">
             <name>11.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/11.mp4</pathurl>
@@ -239,8 +265,8 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1541</start>
-          <end>1704</end>
+          <start>1669</start>
+          <end>1832</end>
           <in>13</in>
           <out>176</out>
           <file id="f-11">
@@ -258,8 +284,8 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1704</start>
-          <end>1848</end>
+          <start>1832</start>
+          <end>2001</end>
           <in>13</in>
           <out>151</out>
           <file id="f-12">
@@ -278,7 +304,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>95.8333</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>81.6568</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>
@@ -290,10 +316,10 @@
           <enabled>TRUE</enabled>
           <duration>226</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1848</start>
-          <end>2011</end>
+          <start>2001</start>
+          <end>2171</end>
           <in>13</in>
-          <out>176</out>
+          <out>183</out>
           <file id="f-13">
             <name>14.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/14.mp4</pathurl>
@@ -309,10 +335,10 @@
           <enabled>TRUE</enabled>
           <duration>101</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2011</start>
-          <end>2074</end>
+          <start>2171</start>
+          <end>2241</end>
           <in>13</in>
-          <out>76</out>
+          <out>83</out>
           <file id="f-14">
             <name>15.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/15.mp4</pathurl>
@@ -328,10 +354,10 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2074</start>
-          <end>2209</end>
+          <start>2241</start>
+          <end>2383</end>
           <in>13</in>
-          <out>148</out>
+          <out>155</out>
           <file id="f-15">
             <name>16.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/16.mp4</pathurl>
@@ -347,10 +373,10 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2209</start>
-          <end>2372</end>
+          <start>2383</start>
+          <end>2545</end>
           <in>13</in>
-          <out>176</out>
+          <out>175</out>
           <file id="f-16">
             <name>17.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/17.mp4</pathurl>
@@ -366,8 +392,8 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2372</start>
-          <end>2494</end>
+          <start>2545</start>
+          <end>2693</end>
           <in>13</in>
           <out>126</out>
           <file id="f-17">
@@ -386,7 +412,7 @@
               <effecttype>motion</effecttype>
               <mediatype>video</mediatype>
               <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
-              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>92.6230</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>76.3514</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
               <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
             </effect>
@@ -398,10 +424,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2494</start>
-          <end>2609</end>
+          <start>2693</start>
+          <end>2815</end>
           <in>13</in>
-          <out>128</out>
+          <out>135</out>
           <file id="f-18">
             <name>19.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/19.mp4</pathurl>
@@ -417,10 +443,10 @@
           <enabled>TRUE</enabled>
           <duration>251</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2609</start>
-          <end>2812</end>
+          <start>2815</start>
+          <end>3043</end>
           <in>13</in>
-          <out>216</out>
+          <out>241</out>
           <file id="f-19">
             <name>20.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/20.mp4</pathurl>
@@ -436,10 +462,10 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2812</start>
-          <end>2914</end>
+          <start>3043</start>
+          <end>3153</end>
           <in>13</in>
-          <out>115</out>
+          <out>123</out>
           <file id="f-20">
             <name>21.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/21.mp4</pathurl>
@@ -455,10 +481,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2914</start>
-          <end>3037</end>
+          <start>3153</start>
+          <end>3291</end>
           <in>13</in>
-          <out>136</out>
+          <out>151</out>
           <file id="f-21">
             <name>22.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/22.mp4</pathurl>
@@ -474,10 +500,10 @@
           <enabled>TRUE</enabled>
           <duration>201</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3037</start>
-          <end>3212</end>
+          <start>3291</start>
+          <end>3473</end>
           <in>13</in>
-          <out>188</out>
+          <out>195</out>
           <file id="f-22">
             <name>23.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/23.mp4</pathurl>
@@ -493,10 +519,10 @@
           <enabled>TRUE</enabled>
           <duration>201</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3212</start>
-          <end>3387</end>
+          <start>3473</start>
+          <end>3655</end>
           <in>13</in>
-          <out>188</out>
+          <out>195</out>
           <file id="f-23">
             <name>24.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/24.mp4</pathurl>
@@ -512,10 +538,10 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3387</start>
-          <end>3519</end>
+          <start>3655</start>
+          <end>3805</end>
           <in>13</in>
-          <out>145</out>
+          <out>163</out>
           <file id="f-24">
             <name>25.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/25.mp4</pathurl>
@@ -531,10 +557,10 @@
           <enabled>TRUE</enabled>
           <duration>126</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3519</start>
-          <end>3619</end>
+          <start>3805</start>
+          <end>3918</end>
           <in>13</in>
-          <out>113</out>
+          <out>126</out>
           <file id="f-25">
             <name>26.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/26.mp4</pathurl>
@@ -550,8 +576,8 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3619</start>
-          <end>3757</end>
+          <start>3918</start>
+          <end>4059</end>
           <in>13</in>
           <out>151</out>
           <file id="f-26">
@@ -562,6 +588,19 @@
             <media><video/></media>
           </file>
           <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>97.8723</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
           <comments><mastercomment1>K27 — Dinî bayramlarda ise ziyaret, paylaşma, yardımlaşma ve barışma gelenekleri yaşatılır.</mastercomment1></comments>
         </clipitem>
         <clipitem id="ci-27">
@@ -569,10 +608,10 @@
           <enabled>TRUE</enabled>
           <duration>176</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3757</start>
-          <end>3877</end>
+          <start>4059</start>
+          <end>4204</end>
           <in>13</in>
-          <out>133</out>
+          <out>158</out>
           <file id="f-27">
             <name>28.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/28.mp4</pathurl>
@@ -588,8 +627,8 @@
           <enabled>TRUE</enabled>
           <duration>226</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3877</start>
-          <end>4090</end>
+          <start>4204</start>
+          <end>4417</end>
           <in>13</in>
           <out>226</out>
           <file id="f-28">
@@ -607,10 +646,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4090</start>
-          <end>4212</end>
+          <start>4417</start>
+          <end>4551</end>
           <in>13</in>
-          <out>135</out>
+          <out>147</out>
           <file id="f-29">
             <name>30.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/30.mp4</pathurl>
@@ -626,8 +665,8 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4212</start>
-          <end>4350</end>
+          <start>4551</start>
+          <end>4689</end>
           <in>13</in>
           <out>151</out>
           <file id="f-30">
@@ -645,10 +684,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4350</start>
-          <end>4475</end>
+          <start>4689</start>
+          <end>4821</end>
           <in>13</in>
-          <out>138</out>
+          <out>145</out>
           <file id="f-31">
             <name>32.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/32.mp4</pathurl>
@@ -664,10 +703,10 @@
           <enabled>TRUE</enabled>
           <duration>201</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4475</start>
-          <end>4613</end>
+          <start>4821</start>
+          <end>4969</end>
           <in>13</in>
-          <out>151</out>
+          <out>161</out>
           <file id="f-32">
             <name>33.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/33.mp4</pathurl>
@@ -683,10 +722,10 @@
           <enabled>TRUE</enabled>
           <duration>151</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4613</start>
-          <end>4730</end>
+          <start>4969</start>
+          <end>5089</end>
           <in>13</in>
-          <out>130</out>
+          <out>133</out>
           <file id="f-33">
             <name>34.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/34.mp4</pathurl>
@@ -702,57 +741,44 @@
       <audio>
       <track>
         <clipitem id="vo1-0">
-          <name>vo.mp3 (1/2)</name>
+          <name>vo-nefesli.mp3</name>
           <enabled>TRUE</enabled>
-          <duration>4727</duration>
+          <duration>5089</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>4727</end>
+          <end>5089</end>
           <in>0</in>
-          <out>4727</out>
+          <out>5089</out>
           <file id="file-vo1">
-            <name>vo.mp3</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/vo.mp3</pathurl>
+            <name>vo-nefesli.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/vo-nefesli.mp3</pathurl>
             <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>4727</duration>
+            <duration>5089</duration>
             <media><audio><channelcount>2</channelcount></audio></media>
           </file>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
-          <comments><mastercomment1>VO — ElevenLabs — döngü 1/2</mastercomment1></comments>
+          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
         </clipitem>
       </track>
       <track>
         <clipitem id="mzk1-0">
-          <name>ses.wav (1/2)</name>
+          <name>muzik-uzun.wav</name>
           <enabled>TRUE</enabled>
-          <duration>4493</duration>
+          <duration>5128</duration>
           <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>4493</end>
+          <end>5089</end>
           <in>0</in>
-          <out>4493</out>
+          <out>5089</out>
           <file id="file-mzk1">
-            <name>ses.wav</name>
-            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/ses.wav</pathurl>
+            <name>muzik-uzun.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20De%C4%9Ferler/muzik-uzun.wav</pathurl>
             <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>4493</duration>
+            <duration>5128</duration>
             <media><audio><channelcount>2</channelcount></audio></media>
           </file>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
-          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 1/2</mastercomment1></comments>
-        </clipitem>
-        <clipitem id="mzk1-1">
-          <name>ses.wav (2/2)</name>
-          <enabled>TRUE</enabled>
-          <duration>4493</duration>
-          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4493</start>
-          <end>4730</end>
-          <in>0</in>
-          <out>237</out>
-          <file id="file-mzk1"/>
-          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
-          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/2</mastercomment1></comments>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB)</mastercomment1></comments>
         </clipitem>
       </track>
       </audio>
