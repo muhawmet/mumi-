@@ -136,4 +136,30 @@ describe('approvedLessons context slice — kısa, curated, tavanlı', () => {
     expect('approvedLessons' in ctx).toBe(false);
     expect((buildImageAuthorContext as any).length).toBe(2); // üçüncü lessons parametresi YOK
   });
+
+  // 2026-07-29: `parseApprovedLessons` format-dışı satırı SESSİZCE atlıyor ("banka opsiyonel").
+  // Sessizlik doğru varsayılan, ama gerçek dosyada TEHLİKE: Mami 12 dersi onaylar, taşıyan ajan
+  // em-dash yerine tire ya da `·` yerine `-` yazar → banka boş kalır ve KİMSE fark etmez.
+  // Öğrenme halkasının tam da bu noktada koptuğu ölçüldü (APPROVED.md bugün 0 ders taşıyor).
+  // Bu test sessiz kaybı DUVARA çevirir: gerçek dosyadaki her ders-görünümlü satır parse EDİLMELİ.
+  it('gerçek APPROVED.md: ders görünümlü hiçbir satır sessizce düşmez', async () => {
+    const { readFileSync } = await import('node:fs');
+    const path = new URL('../../agents/lessons/APPROVED.md', import.meta.url).pathname;
+    const md = readFileSync(decodeURIComponent(path), 'utf8');
+
+    // Ders ADAYI olan satırlar: "- " ile başlayan ve "kaynak:" geçen liste satırları.
+    // Biçim örneğinin kendisi ``` bloğunda ve `<...>` placeholder taşıyor — o örnek sayılmaz.
+    const dersGorunumlu = md.split('\n')
+      .map((l) => l.trim())
+      .filter((l) => /^-\s+/.test(l) && /kaynak:/i.test(l) && !/[<>]/.test(l));
+
+    const parsed = parseApprovedLessons(md);
+    const dusen = dersGorunumlu.length - parsed.length;
+
+    expect(dusen, dersGorunumlu.length
+      ? `APPROVED.md'de ${dusen} satır ders gibi duruyor ama PARSE EDİLMİYOR — sessizce düşüyor. `
+        + `Biçim: "- <ders> — kaynak: <proje> · YYYY-AA-GG · Mami onayı" (em-dash — ve orta nokta ·). `
+        + `Düşen satırlar:\n` + dersGorunumlu.filter((l) => !parseApprovedLessons(l).length).join('\n')
+      : 'banka boş — normal').toBe(0);
+  });
 });
