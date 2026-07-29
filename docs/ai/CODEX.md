@@ -1,8 +1,8 @@
 # MAMILAS — Codex çalışma profili
 
 Bu dosya Codex'in bu repodaki kalıcı çalışma biçimidir. Ortak ürün yasası
-`PROJECT_CONTRACT.md`, anlık gerçek `EXECUTION_STATE.md`, tekrar eden üretim işi ise
-ilgili skill'dir. Aynı kuralı buraya ikinci kez kopyalama.
+`PROJECT_CONTRACT.md`, **anlık gerçek `artifacts/current-work.json`** (`node scripts/current-work.mjs`),
+tekrar eden üretim işi ise ilgili skill'dir. Aynı kuralı buraya ikinci kez kopyalama.
 
 ## Rol
 
@@ -20,9 +20,11 @@ rapor üreten jüri veya kendi başına ürün kararı veren bir sistem değildi
 
 ## Oturum disiplini
 
-Her yeni işte önce `AGENTS.md` → `PROJECT_CONTRACT.md` → `EXECUTION_STATE.md` → bu dosya
-okunur; sonra yalnız aktif işin kodu, artifact'i ve skill'i açılır. Geçmiş sohbet,
-state veya gerçek çıktının yerine geçmez.
+Her yeni işte önce `AGENTS.md` → `PROJECT_CONTRACT.md` → **`node scripts/current-work.mjs`**
+(aktif iş kaydı) → bu dosya okunur; sonra yalnız aktif işin kodu, artifact'i ve skill'i açılır.
+Geçmiş sohbet, state veya gerçek çıktının yerine geçmez.
+`artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (1337 satır) **arşivdir, otorite
+DEĞİL** — yalnız TARİHSEL derinlik gerekince açılır.
 
 - Kod değişikliğinde: kök neden ve gerçek davranış kanıtı önce; uygun testler sonra.
 - Üretimde: aktif `faz-icraat.md` ve `PROMPT-YASASI.md` üstündür. `src/core/` donuktur;

@@ -276,9 +276,26 @@ const KARE_OZEL_MIN = 0.45;
 // "No person enters the frame" diyen kare ten kilidi istemez. Kütle CODEX'te 13 kare böyle;
 // eski linter on üçüne birden "ten kilidi YOK" basıyordu — on üçü de sahteydi.
 const INSANSIZ = /\bno (person|human|people|figure|one)\b[^.]{0,40}\b(enters?|in the frame|visible|present)|without any (person|human)/i;
-const hasHuman = (b) =>
-  INSANSIZ.test(b) ? false
-    : (/@[a-zçğıöşü]/i.test(b) || /\b(child|children|boy|girl|teacher|woman|man|hand|face|student|kid|people)\b/i.test(b));
+// 2026-07-29 (Sol denetimi): bu, Codex'in `nearSkin`'de yakaladığı kusurun İKİZİYDİ — orayı
+// `\b` ile onarıp burayı atlamışım. Ölçüldü, Üreme'nin (altın standart) 13 karesi bu yüzden
+// kırmızı alıyordu:
+//   · `face` → **surface** içinde eşleşiyordu ("rests in contact with its surface", ×3)
+//   · `face` → "**no face**, eyes or cartoon mouth" — yüz YOK diyen negatif, "yüz var" sayılıyordu
+//   · `child` → "**child-clear** readability" (prop ölçeği hakkında bir STYLE cümlesi)
+// Üç düzeltme: (1) kelime sınırı zorunlu, (2) yalnız KARE-ÖZEL gövde taranır — STYLE kuyruğu
+// her karede aynıdır ve meşru olarak "child-clear"/"never on skin" taşır, (3) olumsuzlanmış
+// bağlam ("no face", "without a face") insan saymaz.
+// @tag tek başına insan DEĞİLDİR: @mikroskop, @amip, @defter de tag'lidir.
+const INSAN_KELIME = /\b(child|children|boy|girl|teacher|woman|man|men|student|kid|kids|people|person|face|hand|hands)\b/i;
+const OLUMSUZ_YUZ = /\bno (face|human|person|people)\b|\bwithout (a )?(face|person)\b/i;
+const hasHuman = (b) => {
+  const fb = frameBody(b);
+  if (INSANSIZ.test(fb)) return false;
+  const temiz = fb.replace(OLUMSUZ_YUZ, ' ');
+  if (INSAN_KELIME.test(temiz)) return true;
+  // @tag'li varlık insan mı? Yalnız insan fiiliyle/uzvuyla birlikte geçiyorsa.
+  return /@[a-zçğıöşü][a-z0-9çğıöşü_-]*[^.]{0,80}\b(stands?|sits?|gazes?|looks?|smiles?|holds?|leans?|walks?|kneels?|reaches?|watches?|points?|whispers?|breathes?)\b/i.test(temiz);
+};
 
 // STYLE / LIGHT AND PALETTE / TEXT / NEGATIVE kuyruğu her karede AYNIDIR ve meşru olarak
 // "skin", "sheen", "negative space" gibi kelimeler taşır. Tuzaklar bu kuyrukta aranırsa

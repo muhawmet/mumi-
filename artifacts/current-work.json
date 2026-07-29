@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "6. Sınıf - Eşeyli ve Eşeysiz Üreme",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Eşeyli ve Eşeysiz Üreme",
-  "phase": "kurgu",
-  "status": "aktif",
-  "lastCompleted": "VO üretildi (vo.mp3 10:32 + vo-nefes-kisa.mp3 11:13), KURGU.xml yazıldı 11:15, Premiere render alındı: Üreme.mp4 504 MB 11:41. ElevenLabs hattı Mami tarafından emekli edildi.",
-  "nextAction": "Mami render'ı onaylasın; onay gelirse kapat + kapanis-hasadi.mjs --all. Kitte revize + MOTION eksik.",
+  "phase": "kapandi",
+  "status": "kapandi",
+  "lastCompleted": "Render alındı (Üreme.mp4 504 MB, 11:41). KİT EKSİĞİ: _MOTION.txt hiç yazılmadı — 50 klip Kling'de doğrudan üretildi, motion promptları diske düşmedi.",
+  "nextAction": "node scripts/kapanis-hasadi.mjs --all — karne + ders adayı.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [
@@ -29,7 +29,10 @@
     "SUNO": true,
     "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-07-29T09:03:45.623Z",
+  "deliverablesOverride": {
+    "MOTION": false
+  },
+  "updatedAt": "2026-07-29T10:14:17.293Z",
   "updatedBy": "claude",
-  "baseCommit": "5fa0982"
+  "baseCommit": "e79abfd"
 }

@@ -27,6 +27,16 @@ Skill çağrılınca tek hamlede context'i kur:
    (2026-07-29 ölçümü: `faz-icraat.md` bu betiği emrediyordu ama **hiçbir skill ona atıf
    yapmıyordu** — yasa vardı, kanal yoktu.)
 
+0.5 **Araçlar — elle yazma, bunları koş** *(2026-07-29'da eklendi; Sol denetimi: "nöron üretildi
+   ama sinapsa takılmadı")*:
+   - `node scripts/dunya-kilidi.mjs <worldId> [--register=] [--palet=]` → **STYLE / LIGHT AND
+     PALETTE / NEGATIVE kuyruğunu bas ve yapıştır.** Elle yazma: ölçüldü, aynı dünyada dört lehçe
+     doğdu (Kütle'nin ilk 8 karesi 81-91 kelime, kalan 27'si 23-30; `overscale` 8/8 → 0/27).
+     Çıktının stderr'i "bütçe dışı kalan bileşenler"i listeler — imza cümlesi düştüyse ELLE ekle.
+   - `node scripts/prompt-lint.mjs <teslim dosyası>` → **prompt yazıldıktan sonra, Mami BASMADAN
+     ÖNCE koş.** 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik ·
+     SARI = kusur iddiası DEĞİL, sen bak · KAPSAM satırı = yeşilin kapsamadığı. **Yeşil ≠ temiz.**
+
 1. **Kanon:** `CLAUDE.md` → `docs/ai/PROJECT_CONTRACT.md` → **`agents/PROMPT-YASASI.md`**
    (üretim yasası: daimi direktifler + start-frame/motion/referans template'leri — prompt
    yazmadan ÖNCE oku, ezberden yazma) → **`agents/lessons/APPROVED.md`** (Mami-onaylı ders
@@ -46,8 +56,16 @@ Skill çağrılınca tek hamlede context'i kur:
    - **Banka boşsa hiçbir şey olmaz:** uyarı basma, Mami'ye sorma, eksik sayma — boş banka
      NORMAL durumdur. Adaylar (`agents/lessons/CANDIDATES-*.md`, `HASAT-*.md`) ders DEĞİLDİR;
      `APPROVED.md`'ye yazmak **yalnız Mami'nin** işidir, sen aday taşımazsın (M7 yasası).
-2. **Hangi JSON?** `agents/COMMAND-INBOX/` içindeki `*_mamilas_command.json` dosyalarını **listele,
-   Mami'ye HANGİSİNİ sor.** Birden fazla olabilir; sessiz seçme.
+2. **Kaynak ne? — command JSON ZORUNLU DEĞİL.** *(2026-07-29 ölçümü: altın standart olan
+   "Eşeyli ve Eşeysiz Üreme" site/command OLMADAN üretildi — kaynak bir `.docx` senaryoydu ve
+   kilitler elle `ENZIM-KILITLERI.json`'a yazıldı. Bu akış 50/50 klip verdi. Site'in ürettiği
+   metinle teslim arasındaki örtüşme zaten %1-3.)*
+   İki meşru giriş var, Mami'ye **hangisi olduğunu sor**:
+   - **(a) Kaynak metin** (`.docx`, senaryo, sohbet) → `/mamilas-enzim` ile kilitleri kapat,
+     dünyayı `dunya-kilidi.mjs` ile bas, prompt'u yaz. Command JSON aranmaz, eksik sayılmaz.
+   - **(b) Command JSON** → `agents/COMMAND-INBOX/` içindeki `*_mamilas_command.json`'ları
+     **listele, Mami'ye HANGİSİNİ sor.** Birden fazla olabilir; sessiz seçme.
+   JSON yoksa bu bir engel DEĞİLDİR — (a) yolundan devam et.
 3. **Seçilen JSON'u oku** (büyük dosya — `jq` ile hedefli çek, körü körüne context'e dökme):
    - `worldPacket` → render-lock, `paletteAsLight`, `negativeLock`, `motionCadence`, `cameraEnvelope`.
    - `referenceDNA` → ref DNA + palette hex.

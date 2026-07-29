@@ -2,8 +2,8 @@
 {
   "schema": "mamilas.harvest.v1",
   "parserVersion": "kapanis-hasadi@3",
-  "promptLintVersion": "prompt-lint@9b263d16",
-  "harvestedAt": "2026-07-29T09:18:28.710Z",
+  "promptLintVersion": "prompt-lint@52f8795a",
+  "harvestedAt": "2026-07-29T10:14:22.691Z",
   "project": {
     "dir": "Kuvvet ve Kuvvetin Ölçülmesi",
     "id": "9f1b701cab13a456"

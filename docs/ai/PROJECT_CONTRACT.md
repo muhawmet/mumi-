@@ -4,7 +4,7 @@ Bu belge Claude, Codex ve diğer ajanların paylaştığı **mimari** kuralları
 
 **Kapsam sınırı (2026-07-27):** üretim ve prompt yasası artık burada yaşamıyor —
 tek kanonu `agents/PROMPT-YASASI.md`. Günlük ilerleme, aktif dal, model fiyatı veya
-olay günlüğü de burada tutulmaz (durum: `EXECUTION_STATE.md`). Bir kural iki dosyada
+olay günlüğü de burada tutulmaz (aktif iş kaydı: `artifacts/current-work.json` → `node scripts/current-work.mjs`; `EXECUTION_STATE.md` arşivdir, otorite DEĞİL). Bir kural iki dosyada
 durursa ajan hangisine uyacağını rastgele seçer; bu belge o yüzden dar tutulur.
 
 ## Ürün sınırı

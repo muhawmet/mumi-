@@ -33,10 +33,15 @@ const kirmiziVar = (problems, key) => kirmiziKeys(problems).includes(key);
 describe('A1 · gerçek korpus regresyon çıpası', () => {
   it('Üreme (50 kare): temas 50/50 · text-hece 14/14 · NEGATIVE kare-özel %100 — altın standart', () => {
     const r = lintFile(
-      join(INBOX, '6. Sınıf - Eşeyli ve Eşeysiz Üreme', 'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md'),
+      join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme', 'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md'),
       'EDU');
     expect(r.total).toBe(50);
-    expect(r.bad.length).toBe(13);
+    // 13 → 5 (2026-07-29, Sol denetimi): `hasHuman` insan kelimelerini SINIRSIZ arıyordu ve
+    // `face` **surface** içinde, `child` **child-clear readability** içinde eşleşiyordu; üstelik
+    // "no face, eyes or cartoon mouth" diyen NEGATİF cümle "yüz var" sayılıyordu. Bu, Codex'in
+    // `nearSkin`'de yakaladığı kusurun ikiziydi — biri onarılmış, öteki atlanmıştı.
+    // Kalan 5'in beşinde de gerçekten insan var (@efe / hand) ve negatif ten kilidi gerçekten yok.
+    expect(r.bad.length).toBe(5);
     expect(r.counts.temas).toBe('50/50');
     expect(r.counts['text-hece']).toBe('14/14');
     expect(r.metrics.negOzel).toBe(1);
@@ -71,7 +76,7 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     const r = lintFile(
       join(INBOX, 'Biten', 'Sabit Sürat ve Hız', 'Sabit Sürat ve Hız_PROMPTLAR.txt'), 'EDU');
     expect(r.total).toBe(44);
-    expect(r.bad.length).toBe(6);
+    expect(r.bad.length).toBe(5); // 6 → 5: aynı `hasHuman` düzeltmesi (bkz. Üreme çıpası)
   });
 });
 
@@ -180,7 +185,7 @@ describe('A3 · dosya tipi', () => {
       .toBe('frame-dosyasi');
     expect(kindOf(join(INBOX, 'Biten', 'Sabit Sürat ve Hız', 'Sabit Sürat ve Hız_PROMPTLAR.txt')))
       .toBe('frame-dosyasi');
-    expect(kindOf(join(INBOX, '6. Sınıf - Eşeyli ve Eşeysiz Üreme',
+    expect(kindOf(join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme',
       'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md'))).toBe('frame-dosyasi');
   });
 });
