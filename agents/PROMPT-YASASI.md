@@ -534,7 +534,10 @@ sette Mami hükmü *"hiç beğenmedim"*, paragraf formatıyla yazılan Eşeyli a
 ### K<n> | <süre>s · ekranda ~<x>s | VO "<Türkçe cümle>"
 KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta GİRMEZ>
 -----
-<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 170-210 kelime. İç sırası:>
+<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 210-250 kelime. İç sırası:>
+  ⚠ Sayı ölçüldü: altın standardın kendisi 224-233 kelime (Eşeyli 01/08/33.txt).
+    Daha kısa hedef koymak zorunlu kilitleri (dönem · yazı · sabit kuyruk ~60 kelime)
+    kesmeye zorluyor — kilit kesilmez, paragraf kanon aralığında kalır.
   1 KAMERA      nereden başlıyor · nasıl hareket ediyor · nereye oturuyor ("eases to rest")
   2 İNSANIN YAYI  zaman kelimeleriyle: "At first… then… half a second later… By the end…"
                   — klibin SONU BAŞINDAN farklı olmalı ve fark bu cümlelerde yazılı olmalı
