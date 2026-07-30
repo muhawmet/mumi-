@@ -1,0 +1,319 @@
+S3 — KURUMLAR VE GEÇMİŞ · K23-K34 DENETİM + MOTION
+=========================================================================
+Denetim lensi: bozuk anatomi/geometri · yazı · VO eşleşmesi · dünya (pixar 3D)
+· DÖNEM (K23-K29 bugün · K30-K32 Osmanlı · K33 bugün · K34 1920'ler)
+=========================================================================
+
+
+### 23.png | K23 | VO23 "Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı."
+HÜKÜM: REVİZE
+KUSUR: Pantolonlarda uydurma yazı. Öndeki adamın uyluk cebinde "AVNS/AFNS" gibi
+okunan bozuk bir kelime var, çömelen kadının diz cebinde de aynı sınıf bir bulanık
+harf öbeği. "AFAD" kolda doğru yazılmış; kusur yalnız pantolon cebindeki sahte metin.
+(Eller, yüzler, hortum, kepenkler temiz. Dönem doğru: bugün.)
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: erase the small garbled lettering printed on
+the thigh pocket of the front man's navy trousers and on the knee pocket of the
+crouching woman's trousers, leaving those pockets as plain unmarked navy fabric.
+Keep everything else identical — the "AFAD" on the sleeve stays exactly as it is.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera hortumun çekildiği yöne kayar; varış değil, işin başlamış olduğu okunur.
+-----
+[1 DEVAM]   The front man takes two more heavy strides against the weight of the lay-flat hose; the long slack curve lying behind him is dragged straight and the last loop lifts off the wet setts and snaps taut, and as it goes tight his shoulders drop and he stops pulling — the clip begins with a loose curved hose on the ground and ends with a straight loaded line and a man standing still over it.
+[2 ORTAM]   The thin sheet of water keeps sliding down the cobbled channel, the crouching woman rotates the pressure gauge a few degrees in her palm and leans a little closer to it, and the man's breath clouds once and thins away in the cold.
+[3 KAMERA]  Camera: a slow lateral dolly from right to left, low and parallel to the street, travelling with the direction of the pull so the open van door slides out of frame and the depth of the street opens up behind him.
+[4 KİLİT]   The "AFAD" lettering on the sleeve stays flat, sharp and identical for the whole clip and the reflective bands keep their exact width; do NOT morph, re-spell, wobble or add ANY text anywhere in the frame, and the closed roller shutters stay blank metal with no sign appearing.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 24.jpg | K24 | VO24 "AFAD görevlileri zarar gören binaları tek tek kontrol etti."
+HÜKÜM: REVİZE
+KUSUR: Sokağın ilerisindeki ikinci tebeşir izi yarı-okunur uydurma harflere dönmüş
+("ONTRS / EATSK" gibi). Yasa bu izlerin okunmaz kalmasını istiyordu; şimdi bozuk bir
+kelime gibi duruyor. Ön plandaki "KONTROL" doğru yazılmış, iki el de sağlam
+(başparmak + dört parmak, temas doğru). Yelekler "AFAD" doğru.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: turn the two pale chalk marks further down the
+street into soft illegible smudges of chalk with no letter shapes at all, so nothing
+there can be read as a word. Keep everything else identical — the foreground "KONTROL"
+stays exactly as written.
+
+MOTION: 5s · ekranda ~4s
+KAMERA NİYETİ: Yazı tamamlanır ve el ondan ayrılır; kamera duvarı yalayarak ikinci
+görevliye kadar açılır — "tek tek"in kanıtı sıradaki kapıdır.
+-----
+[1 DEVAM]   The officer drags the chalk down through the last stroke of the final letter, the tip crumbles and a small fall of chalk dust drops away, then she lifts the chalk clear of the plaster and lowers her hand to her side while her flat palm slides once across the damp wall and comes away — the clip begins with a hand still writing and ends with a finished word and both hands off the wall.
+[2 ORTAM]   A bead of water runs out of the mud tidemark and down the plaster, the torn notice at the right edge lifts and flutters at one corner, and far down the street the second officer completes his own raised stroke and steps toward the next doorway.
+[3 KAMERA]  Camera: a steady rightward pan that lets the wall run away from the finished word toward the second officer down the street, so the distance between the two marked doorways becomes the shot.
+[4 KİLİT]   The chalk word "KONTROL" keeps its exact seven letters, its exact spacing and its exact broken chalk texture for the whole clip and no letter is added, redrawn or straightened; do NOT morph, re-spell, wobble or add ANY text, and the distant chalk smudges stay illegible marks that never resolve into letters.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+### 25.png | K25 | VO25 "Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı."
+HÜKÜM: REVİZE
+KUSUR: İki gerçek kusur, ikisi de nesne/uzuv geometrisi.
+· ELLİ YER BOZUK: kadının kolunun altında, sıradaki adamın önünde HAVADA DURAN
+  deforme bir el var — parmakları birbirine erimiş, bileği hiçbir kola bağlanmıyor.
+· Kazanın kapağı kazana DEĞMİYOR; havada asılı duruyor ve kepçenin sapı kapağın
+  içinden geçiyor gibi görünüyor.
+"TÜRK KIZILAY" doğru yazılmış (Ü noktalı, I noktasız), hilal sade ve tek parça.
+NOT (kusur değil, MAKRO): bu kare komşularından (K23/K24/K26) belirgin biçimde daha
+karikatürize — gözler büyük, hatlar yumuşak. Kesimde üslup sıçraması olarak okunur;
+hüküm Mami'nin.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: remove the malformed floating hand hanging in
+the air beneath the receiving woman's arm so nothing is there but empty background, and
+rest the tipped-back urn lid physically on the rim of the urn so it touches metal and no
+longer hangs unsupported. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Isının aktarıldığı an — kepçe boşalır, kabı tutan eller kavrar; kamera
+kabın seviyesine iner ki dağıtılan şeyin yemek değil sıcaklık olduğu okunsun.
+-----
+[1 DEVAM]   The ladle tips through its last few degrees and the unbroken rope of soup thins, tapers and finally releases from the ladle's lip; as the last of it lands the surface in the shallow bowl swings once and settles flat, and the old woman's fingers tighten and slide further around the bowl's sides so both palms are flat against the hot metal — the clip begins with soup still pouring and ends with an empty ladle and two hands closed around a full bowl.
+[2 ORTAM]   Steam lifts off the settled soup and curls away from the urn, the cloth thrown over the bread crate lifts and drops at one corner, and the man waiting in the queue shifts his weight and looks down at the bowl.
+[3 KAMERA]  Camera: a slow descent from the server's eye level down to the height of the bowl, ending level with the woman's hands, so the shot lands on the holding rather than on the pouring.
+[4 KİLİT]   The white vehicle panel behind stays fixed and legible: the crescent keeps its exact shape and never rotates, fills or becomes another symbol, and "TÜRK KIZILAY" holds its exact two words with the dotted Ü and the undotted I — do NOT morph, re-spell, wobble or add ANY text; the bowl stays a plain unmarked metal bowl and both women's hands keep five fingers each throughout.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 26.png | K26 | VO26 "Belediye ekipleri sokakları temizledi ve geçici barınma alanları hazırladı."
+HÜKÜM: TEMİZ
+KUSUR: yok. "BELEDİYE" kamyonun kasasında doğru yazılmış (noktalı İ). Sol üstteki
+sokak tabelası Türkçe ("DAR SOKAK"). İki yüz de modellenmiş, dört el de eldivenli ve
+sağlam, çekpas suyu bir levha hâlinde önünde tutuyor, çadır tomarları bağlı duruyor.
+VO'nun iki yarısı da karede: temizlik solda, barınma sağda. Dönem doğru (bugün).
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Sınır ilerliyor — kamera çekpasla birlikte geri çekilir, temizlenen
+şeridin uzunluğu ortaya çıkar.
+-----
+[1 DEVAM]   The worker drives the squeegee two strides forward and the sheet of muddy water folds over itself and rolls ahead of the rubber blade, leaving a widening band of clean wet stone behind it; at the end of the stroke he straightens his back, lifts the blade a hand's width clear of the setts and lets the pushed water spill sideways into the channel — the clip begins with a loaded blade and dirty stone and ends with a lifted blade and a clean strip running back toward the camera.
+[2 ORTAM]   A thin runnel of silty water escapes sideways into the cobbled channel, the cut end of the orange webbing springs loose under the crouching woman's knife, and the awning further up the street stirs at its edge.
+[3 KAMERA]  Camera: a low backward dolly that retreats along the paving just ahead of the advancing blade, staying at stone height so the freshly cleared strip grows across the bottom of the frame.
+[4 KİLİT]   The word "BELEDİYE" on the truck flank stays flat to its panel, keeps all eight letters and the dotted İ, and never turns out of readability; do NOT morph, re-spell, wobble or add ANY text, and the street sign at the upper left keeps its exact Turkish wording.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+### 27.png | K27 | VO27 "Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır."
+HÜKÜM: REVİZE
+KUSUR: SEKANS ZAMANI GERİ SARMIŞ. K23-K26'da su çekilmiş, ekipler ıslak taşı
+temizliyordu; bu karede sokak yeniden BALDIR-BEL HİZASINDA suyla dolu. Prompt da
+sığ istiyordu ("wet setts", "kerbe sıkışmış yüzen kasa") — motor sokağı yeniden
+sel altına almış. Kesimde K26'dan K27'ye geçiş "su geri geldi" diye okunur.
+(Fikir ve kompozisyon doğru: üç ayrı kıyafet, tek gergin halat, aynı yöne çekiş.
+Üç yüz de modellenmiş, altı el de sağlam, yazı yok. Dönem doğru.)
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: drop the water level to a shallow sheet running
+just over the cobbles, so all three people stand on wet stone with their boots and calves
+clear of the water and the wooden door lies half in the shallow channel rather than
+floating. Keep everything else identical — same three people, same clothes, same rope,
+same poses, same light.
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Üç ayrı gövde tek bir hareketle senkronlanır; kamera halatın boyunca
+kayarak "kurum" yerine "çeken üç kişi" fikrini teslim eder.
+-----
+[1 DEVAM]   All three haul back on the same beat: the loaded hemp rope stretches another hand's width, its fibres flattening under the grips, the heavy wooden door breaks its suction on the channel and slides a full body-length toward them, and as it comes free the rope loses its extreme tension and all three rock back a half step and steady themselves — the clip begins with a jammed door and straining bodies and ends with the door moved and three people recovering their balance.
+[2 ORTAM]   Silt dust lifts where the rope drags across the top sandbag, the shallow sheet of water breaks into ripples around the moving door, and the older woman's headscarf end swings out as she leans.
+[3 KAMERA]  Camera: a slow track along the line of the rope from the first puller toward the third, so the three different garments pass through frame one after another and the shot itself counts them.
+[4 KİLİT]   The three garments stay exactly as they are — amber hi-vis vest, navy municipal coverall, brown knitted cardigan and headscarf — and no badge, patch, crest or lettering appears on any of them; do NOT morph, re-spell, wobble or add ANY text anywhere in the frame; each pair of hands keeps five fingers on the rope and the rope stays one continuous hemp line from end to end.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 28.png | K28 | VO28 "O akşam Mira dedesine gün boyunca gördüklerini anlattı."
+HÜKÜM: TEMİZ
+KUSUR: yok. @dede'nin eli çay bardağına giderken havada durmuş — fikrin kendisi
+karede. Mira oturmuş ve öne eğilmiş (kadraj kilidi tutmuş), iki el de beş parmaklı
+ve masaya doğru temas ediyor, dedenin eli de sağlam. Çay buharı, güve, sarkıt lamba
+adası, dantel örtü, radyo kadranı hepsi yerinde. Yazı yok — doğru. Dönem doğru (bugün).
+NOT (kusur değil): Mira'nın manşetinde promptun istediği kurumuş çamur izi yok;
+"gün onun üstünde" kanıtı düşmüş. Yeniden basılacaksa eklenir, tek başına revize
+ettirmeye değmez.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Dinlemenin bedeli — el çayı hiç almaz, geri döner. Kamera neredeyse
+durur; oda değil, dikkat hareket eder.
+-----
+[1 DEVAM]   @mira1 leans a little further in over the cloth and her forearms slide forward on the crochet; opposite her @dede's arrested hand hangs a beat longer, the fingers relax open, and instead of closing on the tea glass the hand comes back down and settles flat on the tablecloth beside the saucer — the clip begins with a hand suspended halfway to the glass and ends with the tea untouched and the hand laid down on the table.
+[2 ORTAM]   Steam keeps lifting from the untouched tea and bends as the hand withdraws, the low pendant sways a hair so both shadows shift together across the cloth, and the moth turns once under the lampshade.
+[3 KAMERA]  Camera: an almost imperceptible arc to the left around the corner of the table, just enough to open the space between the two of them, holding at the same height throughout.
+[4 KİLİT]   Both faces stay fully modelled inside the warm lamp island and the room beyond the table edge stays a deep unlit indigo that never fills with detail; the framed photograph, the folded newspaper and the wall clock stay soft and carry no readable word or numeral — do NOT morph, re-spell, wobble or add ANY text.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+### 29.png | K29 | VO29 "Dedesi bunun çok eski bir geleneğimiz olduğunu söyledi."
+HÜKÜM: REVİZE
+KUSUR: PROP KOPUKLUĞU — aynı masa, aynı akşam, ama çay artık ince belli bardakta
+değil: sağ kenarda kulplu beyaz porselen fincan ve tabağı duruyor (altında ikinci
+bir fincan daha). K28'de iki ince belli çay bardağı vardı; kesimde eşya değişiyor.
+(Dede'nin iki eli de sağlam ve beş parmaklı — tespihi tutan el de, sandalyeye asılan
+el de. Bakış Mira'nın omzunun üstünden geçiyor, tespih tanesi durmuş, perde çekili,
+yazı yok. Dönem doğru.)
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: replace the handled white porcelain teacup and
+the second cup at the right edge with slim-waisted Turkish tea glasses on small saucers,
+matching the glasses on this same table. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4s
+KAMERA NİYETİ: Oda kalır, bakış çıkar. Kamera Mira'nın omzunu bırakır ve dedenin
+yüzünde yalnız kalır — geçmişe geçiş kamerayla değil bakışla yapılır.
+-----
+[1 DEVAM]   @dede's thumb rolls one more prayer bead over and then stops dead against the next one; his gaze drifts a few more degrees further past @mira1's shoulder and loses its focus entirely, his shoulders drop back into the chair and his lips part on the first word — the clip begins with a thumb still moving and eyes near the room, and ends with a stopped thumb and eyes that have left the room.
+[2 ORTAM]   The stopped bead rocks twice against its neighbour and settles, steam drifts up past the frame edge from the tea, and the lamp cord sways a hair overhead so the light on his temple breathes.
+[3 KAMERA]  Camera: a slow drift to the right that lets @mira1's out-of-focus shoulder slide out of the left of frame, leaving @dede alone in the shot by the end.
+[4 KİLİT]   @dede's eyes stay unfocused past her shoulder and never meet hers and never find the lens; the prayer beads stay a plain wooden loop with no inscription, medallion or metal charm; the framed photograph and the drawn curtain stay soft and unreadable — do NOT morph, re-spell, wobble or add ANY text.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 30.png | K30 | VO30 "Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu."
+HÜKÜM: REVİZE
+KUSUR: DÖNEM VE DİL İHLALİ — sağ üstte, demir askıya asılı boyalı bir DÜKKÂN
+TABELASI var ve üstünde İNGİLİZCE "TURKISH" yazıyor. Hem yasanın "Türkçe metin,
+İngilizce tabela YOK" maddesini hem de Osmanlı dönem kilidini tek nesnede kırıyor.
+(Kalanı temiz ve dönem doğru: kesme taş, camsız ahşap kepenk, sırsız su testisi,
+panyerli eşek, saman yığını, kaldırımsız taş döşeme. Dördü de taşa bakmıyor —
+fikrin kendisi tutmuş. Eller sağlam, yüzler modellenmiş.)
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: remove the hanging painted shop sign and its
+iron bracket from the upper right wall entirely, leaving plain sunlit ashlar stone in
+its place with no lettering of any kind. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Sokak akıyor, taş duruyor. Kamera hiç ona yaklaşmaz — sıradanlığı
+kameranın ilgisizliğiyle kanıtlanır.
+-----
+[1 DEVAM]   The bent water carrier takes three more laboured steps and passes right beside the hollowed stone without a glance, his shoulder crossing in front of it and then clearing it entirely, and as he leaves the near ground the empty stone is left alone in the middle of the frame with the street still moving around it — the clip begins with the stone half-blocked by a passing body and ends with the stone fully exposed and still ignored.
+[2 ORTAM]   The shopkeeper's timber shutter swings the last of its arc upward and comes to rest against its prop, the tethered donkey turns one ear at the far corner, and a thread of dust lifts off the lip of the hollow in the low light.
+[3 KAMERA]  Camera: a slow rise from just above the stone's rim to a slightly higher vantage, so the three walking directions of the street open out around the stone and it stays exactly where it is in frame.
+[4 KİLİT]   No modern object appears at any point — no wire, pipe, glazed window, painted sign, kerbstone, vehicle or plastic — and every wall stays bare tooled ashlar; the window openings stay unglazed timber frames; do NOT morph, re-spell, wobble or add ANY text anywhere, in any script; the hollow of the stone stays empty and none of the four people looks at it.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+### 31.png | K31 | VO31 "İmkânı olan taşın oyuğuna parasını bırakır, ihtiyacı olan görünmeden alırdı."
+HÜKÜM: TEMİZ
+KUSUR: yok. Sikke havada ve dönmeye başlamış, veren el açılıp geri çekiliyor, kadının
+yüzü kasten sokağa dönük — vermenin nezaketi bakışın yönünde, fikir tutmuş. El beş
+parmaklı ve sağlam, sikkeler okunmaz-aşınmış metal, arkadaki üç figür yüzsüz ve
+yumuşak. Modern nesne yok, yazı yok. Dönem doğru (Osmanlı).
+NOT (kusur değil, MAKRO — ZİNCİR): sadaka taşının BİÇİMİ üç karede üç türlü.
+K30'da yuvarlak sütun + sığ çanak, burada geniş dikdörtgen blok, K32'de duvar
+çeşmesi. Bu karenin kadrajı dar olduğu için tek başına kurtarıyor; asıl kırılma
+K32'de. Zinciri K30'un sütunu üzerinden kilitlemek gerekir.
+
+MOTION: 5s · ekranda ~5.5s
+KAMERA NİYETİ: Bu bloğun VURUŞLU klibi. Kamera kadını bırakıp sikkenin peşine düşer;
+düşüş TAMAMLANIR ve ses fiziği taşa çarpma anında oturur.
+-----
+[1 DEVAM]   The released coin completes its fall: it turns twice edge over edge through the air, strikes the worn floor of the hollow with a single bright metallic snap, spins flat on its rim for a moment and drops still beside the two coins already lying there, while the giving hand finishes opening, withdraws upward and leaves the frame entirely — the clip begins with one coin in the air and a hand above the stone and ends with three coins settled in the hollow and no hand in shot.
+[2 ORTAM]   A grain of dust knocked loose from the lip of the hollow drifts down, the greens in the set-down basket settle a little, and one loose end of her headscarf lifts in the dawn air.
+[3 KAMERA]  Camera: locked and still while the coin falls, then a decisive short tilt down that abandons her face and lands square on the hollow at the instant of the strike, holding there.
+[4 KİLİT]   Her eyes stay turned up the street and she never looks down at the coin or the hollow and never turns toward the lens; all three coins stay blank worn metal and never gain readable script, numerals, star or portrait; no modern object appears at any point — no wire, pipe, glazed window, painted sign, vehicle or plastic; do NOT morph, re-spell, wobble or add ANY text.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 32.png | K32 | VO32 "Böylece yardım, ihtiyaç sahibinin onuru korunarak yapılırdı."
+HÜKÜM: REVİZE
+KUSUR: NESNE KİMLİĞİ DEĞİŞMİŞ — sol ön plandaki taş artık sadaka taşı değil, sivri
+kemerli DUVAR ÇEŞMESİ (niş + büyük yalak). K30'da taş, sokağın ortasında duran bel
+hizasında yuvarlak bir sütun ve üstü sığ bir çanaktı. Boşalan oyuğun bu karede aynı
+taş olması gerekiyor; şu hâliyle seyirci "çeşme" okuyor ve zincir kopuyor.
+(Kalanı doğru: yürüyen kişi hiç dönmüyor, yüzü hiç görünmüyor, adım temposu sakin,
+nemli koyu leke oyukta duruyor. Modern nesne yok, yazı yok. Dönem doğru.)
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: replace the arched wall fountain and its basin
+in the left foreground with the free-standing waist-high round limestone column whose
+top is hollowed into a shallow worn bowl, the same sadaka stone as in the establishing
+shot, still carrying the dark damp patch inside its empty hollow. Keep everything else
+identical — same street, same light, same departing figure, same donkey.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera da bakmıyor. Giden kişiyi takip etmez, boşalmış oyukta kalır —
+görmemek burada bir kamera kararıdır.
+-----
+[1 DEVAM]   The departing figure keeps an even unhurried stride and walks four more paces down the street, his coat hem swinging with each step and his silhouette shrinking against the cool shade, never once slowing, never once looking back; meanwhile the damp ring inside the emptied hollow visibly contracts as its outer edge dries pale — the clip begins with a close figure and a wet dark hollow and ends with a distant figure and a hollow almost dry.
+[2 ORTAM]   A dry leaf skids a hand's width along the paving, the scattered straw stirs where feet went through it, and the tethered donkey shifts one hoof at the far corner.
+[3 KAMERA]  Camera: holds absolutely still on the stone and lets the man walk out of the depth of frame by himself, refusing to follow him.
+[4 KİLİT]   The walking figure never turns, never looks back and never hurries, and stays a solid rendered body with readable wool weave rather than a flat dark shape; the hollow stays empty and no coin reappears; no modern object appears at any point — no wire, pipe, glazed window, painted sign, vehicle or plastic; do NOT morph, re-spell, wobble or add ANY text.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+### 33.png | K33 | VO33 "Dedesi sonra Millî Mücadele yıllarındaki büyük dayanışmayı anlattı."
+HÜKÜM: TEMİZ
+KUSUR: yok. Zamanın geçtiği çayda okunuyor — bardak dolu ama buharsız, üstünde ince
+bir kaymak var. Tespih artık elde değil, örtünün üstünde gevşek yatıyor; dedenin iki
+avucu da masaya basmış. Mira çenesini eline dayamış, uyanık. Gazete okunmaz gri,
+duvar saati yumuşak. Çay yine ince belli bardakta (K28 ile tutarlı) — K29'daki
+porselen fincanın yanlış olduğunu bu kare doğruluyor. Yazı yok, dönem doğru (bugün).
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Ağırlaşma. Hiçbir şey olmaz, her şey biraz daha aşağı iner —
+kamera da onlarla birlikte alçalır.
+-----
+[1 DEVAM]   @dede's flat palm slides a few centimetres forward across the crochet, dragging the cloth into a small ridge ahead of it, and comes to rest touching the slack loop of prayer beads without picking them up, while his shoulders sink back and his jaw loosens; opposite him @mira1's chin settles deeper into the heel of her hand and her eyelids close in one slow blink and open again — the clip begins with a hand apart from the beads and a girl propped upright and ends with the hand resting against the beads and the girl sunk lower into her own hand.
+[2 ORTAM]   The fine skin on the cold tea shifts very slightly without breaking, a thread of the crochet lifts where the palm dragged it, and the moth keeps turning under the lampshade.
+[3 KAMERA]  Camera: a very slow descent of a few centimetres, settling to just above the tabletop, so the frame sinks with the weight of what has been said.
+[4 KİLİT]   The tea stays cold and still with an unbroken skin and never steams again; the prayer beads stay slack on the cloth and are never picked up; the folded newspaper stays illegible grey print with no headline and the wall clock face stays soft — do NOT morph, re-spell, wobble or add ANY text; both faces stay fully modelled inside the lamp island.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 34.png | K34 | VO34 "Tekâlif-i Millîye Emirleri'yle halk yiyeceğini ve taşıtını ordusuyla paylaştı."
+HÜKÜM: TEMİZ
+KUSUR: yok. "UN" çuvalın yüzünde doğru, iki büyük harf, jüt dokuya oturmuş boya.
+Dönem kilidi tutmuş: ÖKÜZ YOK, ASKER YOK, TÜFEK YOK, ÜNİFORMA YOK — yalnız kağnı,
+boyunduruk, kerpiç duvar, fener, tavuk, çıplak ayaklı çocuk. Üç yüz de modellenmiş,
+altı el de sağlam, un tozu ters ışıkta duruyor. Kadının ifadesi kararlı, ağlamaklı
+değil. Sol öndeki un sandığı boş.
+NOT (kusur değil): sandık promptun istediği gibi DEVRİK değil, dik duruyor; "ne kadar
+verildiği kalanla ölçülür" karşıtlığı biraz zayıflamış ama boşluğu okunuyor.
+
+MOTION: 5s · ekranda ~5.5s
+KAMERA NİYETİ: Verilenin ağırlığı kağnıya biner. Kamera yükselir ve dolu kasa ile
+boş sandığı aynı karede karşı karşıya getirir.
+-----
+[1 DEVAM]   The woman swings the last flour sack up over the tailboard, her forearms straightening under it, and lets it drop onto the stacked load; the sack lands with its own weight, slumps into the shape of the sacks beneath it, and the whole cart bed settles a finger's width as the hemp tie pulls creaking tighter over the pile, while her emptied hands stay open in the air for a beat before she lowers them — the clip begins with a sack held at chest height and ends with the sack landed, the load tied down and her hands empty.
+[2 ORTAM]   Flour dust drifts off the seam of the landing sack and hangs backlit in the dawn air, the hen steps sideways through the spilled grain, and the open timber gate stirs a little on its hinge.
+[3 KAMERA]  Camera: a slow crane upward from the height of the cart bed, rising just enough to hold the loaded cart and the empty flour bin in the same frame by the end.
+[4 KİLİT]   The stencilled "UN" on the sack stays flat to the jute, keeps both capital letters and its bled fibrous edges through the whole lift, and no second word appears on any other sack; do NOT morph, re-spell, wobble or add ANY text; no ox, no soldier, no rifle and no uniform enters the frame at any point, and no modern object appears — every garment stays homespun with no zip, printed pattern or modern seam.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+=========================================================================
+BLOK KARNESİ — K23-K34 (12 kare)
+TEMİZ  : 5  (K26, K28, K31, K33, K34)
+REVİZE : 7  (K23, K24, K25, K27, K29, K30, K32)
+BAŞTAN : 0
+
+EN AĞIR KUSUR: K30'da Osmanlı sokağının duvarında İNGİLİZCE "TURKISH" yazan boyalı
+dükkân tabelası — tek nesnede hem dil yasası hem dönem kilidi kırılıyor.
+
+SEKANS ÇAPINDA İKİ ZİNCİR KUSURU (tek kare değil, blok sorunu):
+1. SU GERİ GELDİ. K23-K26 su çekilmiş sokağı gösteriyor, K27 yeniden bel hizasında
+   sel. Kesimde zaman geri sarıyor.
+2. SADAKA TAŞI ÜÇ KAREDE ÜÇ NESNE. K30 yuvarlak sütun + sığ çanak · K31 dikdörtgen
+   blok · K32 kemerli duvar çeşmesi. K30'un sütunu kanon alınıp K32 ona çekilmeli.
+
+ÜÇÜNCÜ GÖZLEM (hüküm Mami'nin): K25 komşularından belirgin biçimde daha karikatürize
+render edilmiş; K23/K24/K26/K27 yarı-gerçekçi CGI, K25 ile K28/K33 tam Pixar. Sokak
+sekansı içinde K25 üslup sıçraması yapıyor.
+=========================================================================

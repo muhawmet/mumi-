@@ -1,0 +1,255 @@
+S4 — KATKI / PROJE · KARE DENETİMİ + MOTION · K35-K44
+=========================================================================
+
+### 35.png | K35 | VO35 "Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı."
+HÜKÜM: REVİZE
+KUSUR: Hero yazı DOĞRU — kartta net "KIRTASİYE" okunuyor (noktalı İ dahil). Ama panodaki
+diğer kartlar boş kalmamış: üst sıradaki kartlarda okunabilir düzeyde UYDURMA harf
+dizileri var ("KONTOA", "HANTOM", "26BBOARS" gibi). Prompt "no second legible word"
+diyordu, motor dinlemedi. Pano kadrajın sol yarısını kaplıyor — kamera içeri girerse
+bu sahte yazılar görünür. Kompozisyon, ışık, üç yüz, boş raptiye sütunu TEMİZ.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: every pinned card except the one under the teacher's thumb becomes a blank white card with no writing at all — no letters, no scribble, no ink marks; the card under her thumb keeps its exact text "KIRTASİYE" unchanged. Keep everything else identical.
+
+MOTION: 5s · ekranda ~5.5s
+KAMERA NİYETİ: Kamera pano boyunca kayar ve cümlenin sonunda BOŞ raptiye sütununa varır — "hazırlandı" biterken eksik olan görünür.
+-----
+[1 DEVAM]   The teacher's thumb finishes pressing the pin home into the cork, the pin seats with a tiny final push and her hand withdraws down and out of the way, leaving the card hanging free; the card settles against the board and its lower corner curls a few degrees; as her arm clears, the girl's eyes travel from the newly pinned card along the row and come to rest on the bare pins at the end of the board, and her chin lowers slightly as she reads nothing there.
+[2 ORTAM]   The pinned cards further along the board lift and drop softly in the draught from the glazed door; the glove drying on the radiator sags a fraction; a coat further down the row of hooks swings gently on its hook.
+[3 KAMERA]  Camera: a slow lateral dolly to the right along the face of the noticeboard, keeping the board plane parallel to the lens, so the empty column of pins slides into frame at the end of the move — the camera performs the discovery instead of a zoom.
+[4 KİLİT]   The empty column of pins stays empty for the whole clip and no card, paper or object ever appears on those pins; the card under her thumb keeps the exact text "KIRTASİYE" in the exact same letters, in the frame plane at all times — do NOT morph, re-spell, wobble or add ANY text; every other card stays blank.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 36.png | K36 | VO36 "Katkı sağlamak için büyük imkânlara sahip olmak gerekmez."
+HÜKÜM: REVİZE
+KUSUR: Kızın yüzü ŞOK okuyor — gözler faltaşı, iç kaşlar yukarı kalkmış, ağız açık.
+Bu bir korku/irkilme yüzü; VO ise sakin ve ısıtıcı bir cümle. Kare "veriyor" demiyor,
+"kötü bir şey oldu" diyor — cümlenin karşılığı değil. Prompt "in the middle of
+deciding" istiyordu. El anatomisi, kalem, kutu, kalemlik, ışık ve dünya TEMİZ;
+karede okunur yazı yok.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the girl's expression — her eyes narrow to a normal soft gaze, her eyebrows come down level and her mouth closes into a thoughtful, slightly pressed line, so she reads as quietly deciding rather than shocked or alarmed. Keep her pose, her arms around the pencil case and everything else identical.
+
+MOTION: 5s · ekranda ~4s
+KAMERA NİYETİ: Bu blokun KARARLI VURUŞU — arka plan sade, olay net: kalem bırakılır, düşer ve kutuya çarpar; sesin fiziği kareye vurur.
+-----
+[1 DEVAM]   The boy's thumb lifts clear and the pencil is released; it drops fast, turning a quarter turn as it falls, and strikes the pencils already lying inside the box with a single hard knock — the pile shifts a centimetre and two loose pencils roll apart; on the impact the girl's arms tighten a fraction around her closed pencil case, then her grip loosens and her thumb finds the zip pull and stops there, not opening it.
+[2 ORTAM]   The curl of sharpener shaving on the desk rocks once from the knock; the open flap of the kraft box trembles and settles; a thread of dust turns in the corridor light above the box mouth.
+[3 KAMERA]  Camera: locked off and completely still for the fall, then a single short settle downward of a few centimetres on the impact, as if the camera itself felt the knock — the stillness is what makes the drop land.
+[4 KİLİT]   The boy's own pencil case keeps its remaining pencils and is never emptied; the girl's pencil case stays closed and zipped for the whole clip; every pencil barrel stays plain lacquered wood — no text, letter, brand or printing appears anywhere at any point.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 37.png | K37 | VO37 "Bir kişi kan bağışında bulunabilir, gönüllüler sokak hayvanlarını besleyebilir."
+HÜKÜM: TEMİZ
+KUSUR: Yok. Kırmızı çizgi tutuldu — kadrajda iğne, hortum, kan, kan torbası, hiçbir tıbbi
+aparat YOK; dirsek içinde yalnız bantlı pamuk var, ucu kalkık. Cümlenin ikinci yarısı
+pencere kenarındaki iki dolu kap ve camdaki kedi ile karşılanmış. Formlar okunmuyor,
+duvardaki tabela tamamen bulanık, iki yüz de modellenmiş. Eller ve el sayıları doğru.
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Kamera yerinde durur, odak dirsekten pencereye kayar — cümlenin iki yarısını tek klip içinde sırayla teslim eder.
+-----
+[1 DEVAM]   The lifted corner of the tape settles down onto the skin and stays flat, the man's forearm relaxes and his loosely curled fingers open a little further; his small tired smile widens by a fraction as, out on the sill, the cat that was only an ear at the glass lowers its head to the full water bowl and begins to drink, the surface breaking into rings; behind him the nurse presses the folded end of the used tape flat between her fingers, drops her hands and turns away from the chair.
+[2 ORTAM]   The water in the sill bowl trembles and then ripples outward; the folded blanket over the chair back sags one fold lower as his weight shifts; the surface of the juice in the paper cup on the side table settles level.
+[3 KAMERA]  Camera: the body stays completely locked off while the focus pulls slowly from the taped cotton in the elbow through to the window sill, so the two full bowls and the drinking cat come sharp as the elbow goes soft — the lens changes its mind, not its position.
+[4 KİLİT]   No needle, tube, cannula, blood, blood bag or medical apparatus of any kind exists or appears at any point in this clip — the only thing on the arm is the square of cotton wool under tape; no whole animal enters the room, the cat stays outside the glass; the stack of forms stays illegible and no line resolves into words.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 38.jpg | K38 | VO38 "Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir."
+HÜKÜM: REVİZE
+KUSUR: Yazı KUSURSUZ — etikette temiz "ÇINAR", Ç'nin çengeli ve noktasız I doğru. Fidan
+gerçekten desteksiz duruyor, kadının elleri toprakta, kızın eli havada bekliyor;
+kompozisyon isteneni tam veriyor, eller sağlam.
+Kusur YÜZDE: kızın ifadesi korku okuyor — kocaman açılmış gözler, endişeyle kalkmış
+kaşlar, aralık ağız. VO sıcak ve olağan bir cümle ("bir mahalle birlikte fidan
+dikebilir"); kare ise afet sonrası irkilmiş bir çocuk gösteriyor. Cümlenin karşılığı değil.
+İKİNCİ BULGU — MAMİ SEÇSİN: bu kare komşu karelerden (K35-K37) belirgin şekilde daha
+gri, daha soluk ve daha kirli render edilmiş; kıyafetler baştan aşağı çamurlu, cilt ve
+palet doygunluğunu kaybetmiş. Dünya yasası "NO desaturated grey" diyor. Kurguda bu kare
+yanındakilerden farklı bir filmden gelmiş gibi durabilir. Karar senin: dokunmazsan da
+kare çalışır, düzeltmek istersen ikinci geçiş promptu aşağıda.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the girl's expression — her eyes relax to a normal open gaze, her eyebrows come down out of the worried arch and her mouth softens into a quiet almost-smile, so she reads as watching hopefully whether the sapling will hold rather than frightened. Keep her pose, her hovering hand and everything else identical.
+İKİNCİ GEÇİŞ (yalnız Mami isterse):
+Use this referenced image, change ONLY: the colour grade and surface cleanliness — bring the midtones to vivid warm burnt orange, push the shadows to deep cool indigo, restore warm honey subsurface in both faces, and reduce the mud on the girl's coat and the woman's clothing to a few honest working smears instead of full soiling. Keep the composition, poses, sapling, tag text "ÇINAR" and everything else identical.
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Kamera toprak hizasından yavaşça yükselir ve fidanla birlikte doğrulur — klip biterken ağaç kadraja hâkim, el ise çekilmiş olur.
+-----
+[1 DEVAM]   The sapling's top leaves finish trembling and come to rest, the slender stem holding itself perfectly upright; the girl's hovering hand stays open a moment longer, then her fingers curl in and she draws the hand back and down to rest on her knee, leaving the tree standing entirely alone for the first time, and her chin lifts as she keeps her eyes on it; the woman gives the soil two last firm presses with both palms, then lifts her hands clear and shakes the loose earth from her fingers.
+[2 ORTAM]   Crumbs of soil roll off the woman's lifting palms and tumble down the mound; the nursery tag on its wire turns a few degrees on the stem and swings back; the swept pile of dry leaves stirs at its edge in the low breeze.
+[3 KAMERA]  Camera: a slow crane rise from soil level up to the height of the sapling's crown, tilting a touch downward as it climbs, so the frame stands up with the tree instead of pushing into it.
+[4 KİLİT]   The sapling stays unsupported for the entire clip — no hand, stake, wire or object ever touches or braces the stem, and the trunk stays a rigid solid that bends only at its leaves, with no deform, melt, morph or merge; the nursery tag keeps the exact text "ÇINAR" in the exact same letters and stays turned toward the lens throughout — do NOT morph, re-spell, wobble or add ANY text.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 39.png | K39 | VO39 "Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi."
+HÜKÜM: REVİZE
+KUSUR: Duvarda çerçeveli bir afiş var ve üstünde İNGİLİZCE "TURKİŞH" yazıyor. Türkçe
+5. sınıf dersinde, "Turkish text only, NO English signage" yasasının tam ortasında,
+kadrajın üst-orta noktasında. Bu kaçamayacak bir kusur.
+İkincil, aynı düzeltmeyle kapanır: kara tahtada okunur rakamlar duruyor ve toplama
+YANLIŞ — "12 + 4" altında "12" yazıyor. Prompt tahtanın silik kalmasını istiyordu.
+Geri kalan TEMİZ: sayfa gerçekten bomboş, kalem ucu kâğıda değmiyor, üç çocuk
+birbirine bakıyor, eller ve yüzler sağlam.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the framed poster on the wall becomes a completely blank sheet of paper with no letters or words of any kind on it, and the blackboard behind becomes an evenly half-rubbed grey chalk smear with no readable number, digit or letter surviving. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera masanın çevresinde sığ bir yay çizer, üç yüzü sırayla geçer ve boş sayfada durur — karar üç bakışın buluşmasıyla verilir.
+-----
+[1 DEVAM]   The ponytailed girl's tapping fingers slow and then stop flat on the desk edge; the grinning boy's chin lifts a centimetre off his stacked fists and his grin closes into a firm line; @mira1 draws a short breath, her raised eyebrows come down level and she lowers the poised pencil a centimetre closer to the sheet without letting it touch, and all three pairs of eyes meet over the paper at the same moment — the deciding is finished by the end of the clip.
+[2 ORTAM]   The corner of the blank sheet lifts a hair in the draught and lies back down; dust turns slowly in the light above the paper; the worn eraser rocks a few degrees where the desk takes the girl's stilled hand.
+[3 KAMERA]  Camera: a shallow arc dolly travelling right to left around the near side of the desk, passing across the three faces in turn and coming to rest looking down the length of the blank sheet — the camera goes around the table the way a decision goes around a table.
+[4 KİLİT]   The sheet stays absolutely blank for the whole clip; no mark, line, ruling, letter or drawing appears on it at any point, and the pencil tip never touches the paper; the poster on the wall stays a blank sheet and the blackboard stays an unreadable smear — no text appears anywhere in the frame at any time.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 40.png | K40 | VO40 "Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler."
+HÜKÜM: REVİZE
+KUSUR: Hero yazı BAŞ AŞAĞI. Çocuğun bastırdığı kapakta "SOSYAL BİLGİLER" doğru
+harflerle yazılmış ama 180 derece ters basılmış — seyirci beş saniye boyunca ters
+duran bir başlığa bakacak. Prompt "turned toward the lens and legible" istiyordu.
+Aynı anda ikinci kusur aynı yasadan: sağ ön plandaki İKİNCİ kitap büyük ve düz
+"SOSYA... BİLGİL..." taşıyor, üstelik kadraj kenarında YARIM kesilmiş — prompt o
+kitabın başlıksız kalmasını istiyordu. Yani yazı yanlış kitapta ve yanlış yönde.
+Geri kalan TEMİZ: el sağlam, çenedeki sıyrık ve lacivert kazak süreklilik çıpası
+olarak yerinde, kabaran sayfa dalgası ve ışık isteneni veriyor.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the printed title on the cover the boy is pressing is rotated so it reads the right way up toward the camera as "SOSYAL BİLGİLER", and the second warped book in the right foreground loses its printed title completely and becomes a plain unmarked cover. Keep everything else identical.
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Kamera alçakta ve kıpırdamadan durur, sonunda birkaç derece yukarı bakar — inatçı bir kitabın karşısında sabit bir göz.
+-----
+[1 DEVAM]   The boy leans a little more weight onto the flat of his hand and the stiff wave of pages compresses a few millimetres, the swollen block resisting; he holds the pressure for a beat, then the paper wins and pushes his palm upward, the cover riding open again; he lifts his hand clear, sits back a centimetre and lets his brow release, and the book stands further open at the end than it did at the start.
+[2 ORTAM]   The top page eases a hair further open against nothing; dust turns slowly in the hard window light above the fanned edges; a loose fibre lifts from a torn page edge and stays raised.
+[3 KAMERA]  Camera: locked off low at desktop height for the whole press, then a slow three-degree tilt up onto his face at the moment his hand lifts — the camera only moves once he stops trying.
+[4 KİLİT]   The book never closes flat no matter how hard he presses and ends the clip more open than it began; the swollen cover and page block stay a rigid warped solid with no melt, morph or merge; the cover keeps the exact text "SOSYAL BİLGİLER" in the exact same letters facing the lens, held in the frame plane — do NOT morph, re-spell, wobble or add ANY text, and no line of the inner pages becomes legible.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 41.png | K41 | VO41 "Sonra bir kitap kampanyası planlayıp aralarında görev dağılımı yaptılar."
+HÜKÜM: TEMİZ
+KUSUR: Yok. Başlıkta net "GÖREV" — Ö'nün iki noktası ve çift alt çizgi doğru; sütun
+girdileri okunmayan el yazısı olarak kalmış, dört farklı yazı aracı masada ayrı ayrı
+duruyor. Yazan çocuğun eli, kalem tutuşu ve dili kusursuz. DÖRT çocuk da kadrajda ve
+yüzleriyle. SÜREKLİLİK TUTUYOR: arkadaki kız K39'daki krem hırkalı filiz nakışlı
+@mira1'in aynısı — iki kare aynı çocuğu taşıyor.
+Not (revize değil): masadaki bisküvi paketinde okunmayan sahte marka yazısı var. Küçük
+ve arka planda; kesmeye değmez, bilgin olsun diye yazıyorum.
+
+MOTION: 5s · ekranda ~5s
+KAMERA NİYETİ: Kamera tepeden sayfaya doğru iner, açı yükseklikten göz hizasına düşer — plan bittiğinde masa artık yukarıdan bakılan bir şey değil, içinde olunan bir şey.
+-----
+[1 DEVAM]   The boy in glasses finishes the last line of his column with a short firm stroke, his tongue withdraws and his mouth closes, and he lifts the chewed ballpoint clear of the paper and sets it down across the sheet; as the pen leaves the page the taller boy tips his chair forward and its front legs drop onto the floor, the girl with the hair clip raises her head off her forearm, and @mira1's small satisfied set breaks into a proper closed-mouth smile — the sheet is finished by the end of the clip and every head has come up.
+[2 ORTAM]   The crumpled first attempt at the desk edge unfolds one fold further of its own accord; a bead of ink swells at the fountain pen's nib and stays hanging; two biscuit crumbs skip on the desktop when the chair legs land.
+[3 KAMERA]  Camera: a steady boom down from the high angle toward the desk, the lens levelling out as it descends so the frame finishes almost at page height — the camera comes down to the table instead of pushing at it.
+[4 KİLİT]   The four column entries stay soft and unreadable and never resolve into legible words, and no new writing appears in any column after the pen lifts; the page heading keeps the exact text "GÖREV" in the exact same blue block capitals with its double underline, held flat in the frame plane — do NOT morph, re-spell, wobble or add ANY text; the four writing tools stay four visibly different objects.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 42.png | K42 | VO42 "Okul yönetimi ve muhtarlıkla iş birliği kurdular."
+HÜKÜM: REVİZE
+KUSUR: Yazı yine ters. Kâğıttaki okunabilir mühür izi "MUHTARLIK" harflerini doğru
+taşıyor ama 180 derece dönük — seyirci ters bir mühür görecek. Üstelik hero olması
+gereken TAZE iz (mührün altındaki) okunmuyor: mor mürekkep boya gibi AKMIŞ, damlalar
+kâğıda sarkıyor. Lastik mühür damlamaz; bu iz fiziksel olarak yanlış ve yasa
+"the ink heavier at the left of the arc and starved at the right" diyordu, akıntı değil.
+Geri kalan TEMİZ: muhtarın iki eli de doğru (parmak sayısı ve kavrama sağlam), üç yüz
+de modellenmiş, mühürde arma/yıldız/nişan yok, @mira1 masada duruyor ve K39-K41'deki
+aynı krem hırka + filiz nakışıyla — SÜREKLİLİK TUTUYOR.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the stamped impression on the paper is rotated so its word "MUHTARLIK" reads the right way up toward the camera, and the wet impression under the stamp becomes a clean crisp violet ring with slightly ragged worn letterforms instead of dripping running ink — no ink drips, runs or pools anywhere on the sheet. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4s
+KAMERA NİYETİ: Mühür kalkar ve kamera geri çekilir — "iş birliği" cümlesi biterken üç kişi de aynı kadrajda durur.
+-----
+[1 DEVAM]   The muhtar's weight goes down through his shoulder one last time and the ink spreads a hair further from under the rubber, then he lifts the wooden handle straight up off the paper in one clean vertical motion, the sheet rising a millimetre with it and dropping back flat, leaving the fresh impression standing alone beside the dry one; he sets the stamp down beside the open ink pad, the school head unfolds her arms and lets them fall to her sides, and @mira1's chin lifts as the paper comes clear.
+[2 ORTAM]   The fabric tie of the stacked file slips a little further off the pile; the surface of the cold tea in its glass trembles once when the stamp lands on the blotter; the half-drawn blind stirs a fraction against the window.
+[3 KAMERA]  Camera: a slow dolly back and a small rise from the low desk-level start, opening the frame until all three figures stand inside it together at the end of the clip — the sentence is a partnership, so the camera finishes wide instead of close.
+[4 KİLİT]   The stamp goes down and comes up as one rigid solid wooden block with no deform, melt, morph or merge; the impression it leaves keeps the exact text "MUHTARLIK" in the exact same letters, upright and facing the lens, and the ink mark does not change, spread further, smear or re-spell after the stamp lifts — do NOT morph, re-spell, wobble or add ANY text; the stamp carries only letters and no crest, emblem, seal device, coat of arms or star; @mira1 touches nothing on the desk.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 43.png | K43 | VO43 "Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı."
+HÜKÜM: BAŞTAN
+KUSUR: Üç şey aynı anda kırık — tek bir referans-edit bunu toparlamaz.
+1) ELLER ERİMİŞ. Yetişkinin iki eli üst üste binmiş ve BİRBİRİNE KAYNAMIŞ: uzaktaki
+   elin bileği ve kolu yok, yakındaki elin avuç içinden çıkıyor gibi duruyor, parmaklar
+   birbirinin içinden geçiyor. Kadrajın sol-orta bölgesinde, tam boyutta.
+2) DEVİR ANI YOK. Koli "iki çift el arasında" değil — yetişkinin elleri koliye hiç
+   değmiyor, havada, koliyle aralarında görünür bir boşluk var. Sahnenin bütün fikri
+   ağırlığın el değiştirmesiydi; kare bunu göstermiyor, sadece havada duran iki el
+   gösteriyor.
+3) SÜREKLİLİK KIRIK — ve bu senin özellikle sorduğun şey. K43'ün çocuğu K40'ın çocuğu
+   DEĞİL. K40: jet siyah düz saç, uzun yüz, zeytin ten, kalın düz kaşlar, 12-13 yaş
+   duruyor. K43: kahverengi dağınık saç, yuvarlak yüz, pembe-çilli ten, kemerli kaşlar,
+   9-10 yaş duruyor. Lacivert kazak ve çenedeki sıyrık tutmuş ama YÜZ tutmamış —
+   yani çıpalar props'a düşmüş, kimliğe değil.
+TUTAN TEK ŞEY: kolideki "KİTAP" yazısı kusursuz — düz, noktalı İ doğru, eller hiçbir
+harfi kapatmıyor. Yeni üretimde bu yazı aynen korunmalı.
+BAŞTAN NOTU — yeni üretim şunları taşımalı: yetişkinin iki eli AYRI AYRI ve kolinin
+üst kenarına FİZİKSEL OLARAK DEĞMİŞ (parmaklar kartonun üstünde bastırıyor, gevşiyor),
+kolinin ağırlığı iki tarafta da okunuyor; çocuk K40'taki oğlanın AYNISI (jet siyah düz
+saç, uzun yüz, zeytin ten, kalın düz kaş) — referans olarak 40.png verilmeli;
+yetişkinin yüzü üst kadraj kenarında kesik kalmalı; koli yüzündeki "KİTAP" aynen.
+MOTION: baştan üretilecek.
+
+
+### 44.png | K44 | VO44 "Planlı hareket etmek, yardımın amacına ulaşmasını sağlar."
+HÜKÜM: TEMİZ
+KUSUR: Yok. Sağlam kitap dümdüz yatıyor, kabarma yok; kapanamayan eski kitap yanda
+lastikle bağlanmış ve kapağı ters dönük; parmak satırın altında, el anatomisi kusursuz
+(işaret parmağı açık, diğerleri kıvrık, başparmak yerinde); çocuğun gözleri üst kadraj
+kenarında kesik, lacivert kazak ve çenedeki sıyrık K40 ile aynı; arkadaki kız yumuşak
+ama katı bir gövde. Duvardaki iki afiş de TAMAMEN bulanık, tek harf okunmuyor; açık
+sayfada hiçbir satır okunmuyor. Karede okunur yazı yok — istendiği gibi.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera parmakla birlikte satır boyunca kayar — izleyici çocukla aynı satırı okur, kare bittiğinde bir satır bitmiş olur.
+-----
+[1 DEVAM]   The boy's index finger slides steadily along under the line of print from left to right, reaches the end of the line, lifts a few millimetres, drops back down at the start of the line below and settles there; as it lands his shoulders drop, his jaw loosens further and he lets out a slow breath through his nose with his lips staying closed — one whole line has been read by the end of the clip and the next one has been found.
+[2 ORTAM]   The outer corner of the open page eases up in the draught and holds there; dust turns slowly in the raking window light above the paper; the pencil lying parallel to the page edge rolls a hair against it and stops; behind him the girl at the next desk turns a page of her own book.
+[3 KAMERA]  Camera: a slow lateral track to the right at page height, travelling with the finger and holding it at the same point in frame, so the desk and the closed warped book slide past behind it — the camera reads the line with him.
+[4 KİLİT]   No line of body text on the open page becomes legible or resolves into words at any point; the sound book stays perfectly flat against the desktop with no warp, ripple or swelling appearing; the old warped book beside it stays closed under its rubber band with its cover turned away and no title appears on it; the boy's eyes stay outside the top frame edge for the whole clip.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+=========================================================================
+BLOK KARNESİ — K35-K44
+  TEMİZ  : 3  (K37, K41, K44)
+  REVİZE : 6  (K35, K36, K38, K39, K40, K42)
+  BAŞTAN : 1  (K43)
+EN AĞIR KUSUR: K43'te yetişkinin iki eli birbirine kaynamış, koliye hiç değmiyor ve
+çocuk K40'taki çocuk değil — devir anı hem fizik hem kimlik olarak çökmüş.
+TEKRAR EDEN DESEN — bu bir yetenek hükmü: motor Türkçe kelimeyi HARF HARF DOĞRU
+yazıyor (KIRTASİYE, ÇINAR, GÖREV, KİTAP, SOSYAL BİLGİLER, MUHTARLIK — altısı da
+doğru hecelendi, hiçbirinde yazım hatası yok) ama yazının YÖNÜNÜ ve hangi nesnede
+duracağını kontrol edemiyor: K40 ve K42'de hero kelime 180 derece TERS doğdu, K40'ta
+ayrıca yanlış kitaba sıçradı, K35'te "yazı yok" denen kartlara uydurma harfler doğdu,
+K39'da hiç istenmeyen yerde İngilizce "TURKİŞH" afişi doğdu. Yani kusur imlada değil
+YERLEŞİMDE. Bir sonraki turda TEXT slotuna iki cümle eklenmeli: "upright, reading
+direction toward the camera, never mirrored or rotated" ve "every other surface in
+the frame is physically blank paper — no faint, partial or background lettering".
+=========================================================================

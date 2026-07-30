@@ -1,0 +1,250 @@
+S2 — TANIM VE İŞ BİRLİĞİ · KARE DENETİMİ + MOTION · K12–K22
+Denetim tarihi: 2026-07-30
+Motion motoru: Kling 3.0 (i2v) · tüm klipler 5 saniye · ekranda kimse konuşmaz
+=========================================================================
+
+### 12.png | K12 | VO12 "Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu."
+HÜKÜM: BAŞTAN
+KUSUR: Karede İNSAN YOK — yalnız sağ kenardan giren kopuk kollar var. En az üç ayrı
+kol/el sayılıyor (üstte kapağa basan el, ortada yüzüklü el, sağ kenarda üçüncü bir kol
+parçası) ve hiçbiri bir gövdeye ya da yüze bağlanmıyor. Prompt İKİ kadını "ikisi de
+yüzüyle" istiyordu; teslim edilen kare "başkaları"nı hiç göstermiyor, VO'nun öznesi
+kareden düşmüş. Ayrıca arkadaki iki kapalı kolinin üstünde yarı-okunur uydurma harfler
+var ("TEKA/AM SIC ZIKILAK" gibi) — prompt oraya ikinci okunur kelime yasaklamıştı.
+NOT: "GIYECEK" yazısı DOĞRU ve temiz — kare baştan üretilirken bu yazı korunmalı.
+BAŞTAN GEREKÇE: Kadraj 50mm'de o kadar dar ki iki gövde+yüz referans-edit ile içeri
+sığmaz; kompozisyonun geri çekilmesi gerekiyor (35mm, yarım boy iki kadın).
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 13.png | K13 | VO13 "Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir."
+HÜKÜM: BAŞTAN
+KUSUR: K12 ile AYNI kusur — karede yüz yok, yalnız kollar var. Prompt "İKİ kadın, ikisi de
+yüzüyle, medium-close two-shot" istiyordu; teslim edilen kare iki kişiyi de kadraj dışında
+bırakmış. Üstüne anatomi kopuk: sol alttaki önkolun üzerinde duran "bırakmayan el"
+kimseye bağlı değil — veren kadın sağda ve iki eli de battaniyede, yani o el havada
+duran üçüncü bir el. Sol kenardaki mavi kol ile çıplak önkolun nereye bağlandığı okunmuyor.
+KAVRAM KAYBI: Bu karenin fikri "maddi = verilen şey, manevi = bırakmayan el ve iki yüz".
+Yüzler düştüğü için karenin manevi yarısı hiç görünmüyor — VO'nun ikinci yarısı karşılıksız.
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 14.png | K14 | VO14 "Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir."
+HÜKÜM: REVİZE
+KUSUR: Ortadaki kova havada asılı. Ekose gömlekli adamın İKİ eli de açık ve boş —
+hiçbir şeye değmiyor, parmaklar kovanın kulpunun bir karış önünde duruyor. Kovanın kulpu
+da tek parça tel yay değil, sağ ağzın üstünde buruşmuş/erimiş bir metal yumağı olarak
+render olmuş. Yani "iki çift el aynı anda tutuyor" kuralı kırılmış: kova kimsenin elinde
+değil. Beş yüz de okunuyor, dünya doğru, yazı yok — kusur tek bölgede.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the central galvanised bucket is now firmly gripped
+by both of the flannel-shirted man's hands closed around a single clean arched wire handle —
+his fingers wrap the handle and the crumpled metal tangle at the bucket's rim is replaced by
+one smooth galvanised wire arch. Keep everything else identical.
+
+MOTION: 5s · ekranda ~5.0s
+KAMERA NİYETİ: Kamera merdivenin dibinden bir basamak boyu yükselip zinciri boydan boya görsün — yük yukarı gidiyor, göz de onunla.
+-----
+[1 DEVAM]   At the start the flannel-shirted man in the middle holds the full bucket at chest height with both hands closed on the wire handle, his weight settled on his back foot. Over the next two seconds he straightens his knees and heaves the bucket upward and to his left in one continuous lift, the water inside surging and slapping against the far wall of the pail; at the turn, the girl in the navy tracksuit on the step above closes both of her hands over the handle beside his and takes the weight, so for one beat four hands share a single handle. He then releases and lets his empty arms drop to his sides on a long breath out, while the bucket settles higher up the flight in her grip — so by the last frame the load stands a full step further up the staircase than it did in the first. The woman in the wine-red cardigan in the foreground turns her head back from the left toward the chain and lifts her own bucket a few centimetres in readiness.
+[2 ORTAM]   The bare bulb on its twisted flex swings a few degrees so every shadow in the stairwell leans with it; a thin skin of water slops over one rim and runs down the outside of that pail into the shallow puddle dishing each worn tread; the shopping bag hung over the wrought-iron rail sways once and stills; the girl's loose hair strand falls forward across her cheek as she takes the load.
+[3 KAMERA]  Camera: a slow crane rise of about forty centimetres from the foot of the flight, tilting down a touch as it climbs so the whole five-person chain stays framed from bottom to top — the rise travels with the bucket's journey upward and gives the staircase real height instead of flattening it.
+[4 KİLİT]   Exactly five people from the first frame to the last — nobody enters and nobody leaves the stairwell, and every one of the five faces stays modelled and readable throughout with none flattening into a dark shape. The bucket being handed up stays one rigid galvanised solid, held by at least one pair of hands at every single moment, and never floats free, never deforms, never duplicates; its wire handle remains a single smooth arch. Every person keeps exactly two arms and two hands with five fingers each, and no extra limb enters from any frame edge.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+=========================================================================
+
+### 15.png | K15 | VO15 "Bu iki değer, toplumdaki insanları birbirine yakınlaştırır."
+HÜKÜM: REVİZE
+KUSUR: Genç kadın tebeşirle yazarken gözleri yazıya DEĞİL, sağa — kimsenin olmadığı bir
+yöne bakıyor, kaşları da endişeli. Yani hem fizik yanlış (90 derece başka yere bakarken
+düzgün harf yazamaz) hem de VO ile ters düşüyor: cümle "insanları birbirine yakınlaştırır"
+diyor, yaşlı kadının yüzü sıcak ama genç kadınınki tedirgin ve sahneden kopuk.
+Yazılar DOĞRU: "3. KAT" ve "1. KAT" — Türkçe, temiz, iki ayrı el. İki yüz de okunuyor,
+eller sayılabiliyor, dünya doğru.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the younger woman in the mustard cardigan now looks
+down at the chalk letters her own hand is writing, her eyes on the wall mark and her brow
+settled into quiet concentration instead of alarm. Keep everything else identical.
+
+MOTION: 5s · ekranda ~4.0s
+KAMERA NİYETİ: Kamera ön plandaki halı rulosunu yandan sıyırarak sağa kaysın — yazıdan iki yüze geçelim, iş bitiyor.
+-----
+[1 DEVAM]   At the start the younger woman's chalk is still pressed to the plaster at the tail of the final letter, her eyes down on the mark. In the first second she draws that last stroke to its end and the line thickens where she presses; then, at the turn, she lifts the chalk clear of the wall, sits back on her heels a few centimetres and lowers her writing hand to her side, rubbing the chalk dust off her thumb against her fingertips. As her hand comes down the older woman in the lilac cardigan raises her eyes from the fresh letters to the younger woman's face and her half-smile finishes into a full one, her chin dipping once in approval — so the shot begins on a hand writing and ends on two faces and a finished mark, the chalk no longer touching the wall.
+[2 ORTAM]   A fine veil of chalk dust sifts down the plaster beneath the fresh letters and settles on the skirting; the tangled fringe where the two rolled carpets touch lifts and drops one loose thread; the tape crossing the cracked windowpane catches a small tremble of light; the pencil pushed through the younger woman's hair shifts a hair's width as she sits back.
+[3 KAMERA]  Camera: a slow lateral dolly to the right of roughly half a metre, the near rolled carpet in the left foreground sweeping past the lens as parallax and revealing the depth of the landing, the move easing to a stop as both faces come level in frame — the camera arrives on the two women exactly as the chalk leaves the wall.
+[4 KİLİT]   The two chalk marks on the plaster stay exactly as they are — "3. KAT" and "1. KAT", the same letters in the same places, level and unmoved; do NOT morph, re-spell, wobble, brighten or add ANY text anywhere in the frame, and the camera keeps the wall close to its own plane so the writing never skews. Exactly two women from first frame to last, nobody enters and nobody leaves; both faces stay modelled and readable, four hands total and no fifth hand appears. The rolled carpets stay standing and leaning against each other and never slide, unroll or topple.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+=========================================================================
+
+### 16.png | K16 | VO16 "Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü."
+HÜKÜM: BAŞTAN
+KUSUR: DÜNYA DIŞINA DÜŞMÜŞ. Bu kare pixar/feature-animation değil, bir MİMARİ GÖRSELLEŞTİRME
+(arch-viz) — düz yayvan ambient ışık, gri-bej-mavi doygunluğu düşürülmüş palet, tepe
+pencerelerinden inen sert ışık dikdörtgenleri yok, ciltte warm-honey SSS yok. K14 ve K15
+yanına konduğunda başka bir filmden geliyor gibi duruyor; promptun kendi NEGATIVE'i
+"no desaturated look" diyordu, kare tam onu yapmış.
+İKİNCİL: Prompt "takım fotoğrafı battaniyelerle ÖRTÜLÜ kalır, şeref panosu duvara dönük"
+diyordu — sağda çerçeveli takım fotoğrafı tamamen açıkta ve içindeki yüzler görünüyor,
+duvardaki üç şeref levhası da yazılarıyla duruyor. Pota da katlanmamış, açık duruyor.
+NOT: "YARDIM MERKEZİ" yazısı DOĞRU ve temiz (iki satır, noktalı İ) — baştan üretimde korunmalı.
+BAŞTAN GEREKÇE: Render rejiminin kendisi yanlış; referans-edit ile tek şey değiştirilerek
+düzelmez, dünya kilidiyle (STYLE + LIGHT AND PALETTE kuyruğu) yeniden basılmalı.
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 17.png | K17 | VO17 "Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu."
+HÜKÜM: BAŞTAN
+KUSUR: K16 ile AYNI dünya kayması — arch-viz/foto-gerçekçi render rejimi, düz ambient ışık,
+doygunluğu düşürülmüş gri-bej-mavi palet. K14/K15 ile yan yana koyunca başka bir filmden
+geliyor. Promptun kendi NEGATIVE'i "no desaturated look" diyordu.
+İKİNCİL (fikir kaybı): Karenin FİKRİ "battaniye sırası neredeyse BOŞ, çünkü herkes gıda
+getirmiş — ayırmak eksiği görünür kılar" idi. Teslim edilen karede battaniye sırası uzun ve
+dolu; üç sıra kabaca eşit. Eksiği gösteren tek şey kalmamış, VO'nun altındaki ders düşmüş.
+NOT: "BATTANİYE" yazısı DOĞRU — noktalı İ dahil, dokuz harf, temiz. Arka duvardaki tabela
+bulanık ve okunmuyor (kural gereği öyle olmalı) — kusur değil. Üç yüz de okunuyor.
+MAMİ KARARI: Salonun daha soğuk/gerçekçi görünmesi kabul edilirse bu kare TEMİZ sayılır ve
+yalnız kısa battaniye sırası için REVİZE yeter. Hüküm senin.
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 18.png | K18 | VO18 "Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu."
+HÜKÜM: BAŞTAN
+KUSUR (dört ayrı kırık, hepsi tek karede):
+1) KOPUK EL / POV KAYMASI — panoyu ve kalemi tutan İKİ EL kadrajın alt kenarından giriyor ve
+   hiçbir gövdeye bağlı değil. Yani listeyi tutan kişi karede yok; kare bir birinci-şahıs
+   POV'a kaymış. Prompt "listeyi kızın kendisi tutuyor, yüzü panonun hemen üstünde" diyordu.
+2) KIZ LENSE BAKIYOR — prompt açıkça "gözleri sayfadan kalkar ve SAĞA, geçen istife gider,
+   lense bakmaz" diyordu. Teslimde kız fal taşı gibi açılmış gözlerle doğrudan kameraya
+   bakıyor, elinde de iş yok. VO'nun "kontrol ediyordu"su karşılıksız kalmış.
+3) HAREKET BULANIKLIĞI YOK — koli taşıyan gönüllü tamamen NET, duruyor ve kıza bakıyor.
+   Karenin tek fikri "arkada hız, önde durgunluk" idi; iki tempo da yok olmuş.
+4) UYDURMA YAZI — sağ kenardaki duvar ilanı NET ve OKUNUR ve Türkçe değil:
+   "KÜRİYA... / TUKUNT..." diye harf yığını. Arka plandaki ikinci tabela da aynı sınıfta.
+   Prompt "arka plandaki her tabela bulanık, Türkçe ya da boş" diyordu.
+NOT: "İHTİYAÇ" başlığı DOĞRU — noktalı İ ve çengelli Ç dahil, temiz kurşun kalem eli.
+Taşınan kolilerin üstündeki "GIYECEK" de doğru yazılmış.
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 19.png | K19 | VO19 "Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı."
+HÜKÜM: REVİZE
+KUSUR: Kolinin üstündeki kelime BAŞ AŞAĞI yazılmış. Harfler doğru ("GID", dördüncü harf
+kasıtlı olarak yok — bu KORUNMALI) ama 180 derece dönük: kameradan bakınca "ᗡI⅁" gibi
+okunuyor, yani yazı lense değil kolinin karşı tarafına bakıyor. Prompt "facing the lens,
+fully legible" diyordu. Karenin taşıdığı TEK yazı bu, dolayısıyla kare şu hâliyle kullanılamaz.
+İKİNCİL: Sağdaki üç bitmiş kolinin üstündeki yazılar NET ve OKUNUR — "TA...", "TÜRC...",
+"TÜRKİ..." diye içerik etiketi olmayan harf yığınları. Prompt "bitmiş kolilerin yazıları
+soft-focus kalır ve asla okunur olmaz" diyordu.
+TUTAN: Dünya doğru (K16/K17'nin aksine tam pixar feature-animation), Mira ve çocuğun yüzleri
+okunuyor, dili dişinin arasında, çocuğun göğsündeki yama boş — hepsi istendiği gibi.
+NOT: @mira1'in kimlik sürekliliği bu blokta çapraz doğrulanamadı — K12-K22 arasında Mira
+yalnız bu karede görünüyor, K1'de silüet hâlinde.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the hand-written marker word on the box lid is rotated
+to face the lens so it reads upright as "GID" from the camera — same three thick black letters,
+same incomplete word with no fourth letter and the marker tip resting where the fourth would
+begin; at the same time the lettering on the three finished boxes at the right goes soft-focus
+and illegible. Keep everything else identical.
+
+MOTION: 5s · ekranda ~5.0s
+KAMERA NİYETİ: Kamera masa hizasına inip sağa doğru kısa bir yay çizsin ve kraft yüzeyi tam karşısına alarak dursun — yazı hep düzlemde kalsın.
+-----
+[1 DEVAM]   At the start the marker tip rests on the kraft exactly where the fourth letter would begin, the last drawn stroke still wet and shining, @mira1 leaning over the box with her tongue at the corner of her mouth. In the first second she presses the tip down a fraction, then stops and does not draw — instead, at the turn, she lifts the marker a couple of centimetres clear of the cardboard and raises her eyes for the first time to the boy waiting behind her, giving him one short nod. On that nod the boy closes both of his out-held hands on the near edge of the box and draws it a hand's width toward himself across the trestle top, so the shot ends with the marker off the box, the box moved, and the two of them looking at each other — where it began with a pen down and neither of them looking up.
+[2 ORTAM]   The half-unwound roll of paper tape turns slowly on the trestle and lets a finger's length of tape unspool; the torn test-scribble card lifts its curled corner and settles back as the box slides past it; one of the two spare markers rolls a few centimetres and stops against the marker cap; a kraft fibre lifts where the tip dragged and catches the light.
+[3 KAMERA]  Camera: a short arc to the right of about twenty centimetres while descending to table height, coming to rest with the written face of the box square to the lens — the move ends exactly as the box slides, so the arc hands the frame from the writer to the carrier.
+[4 KİLİT]   The word on the box stays exactly "GID" — three thick black hand-drawn capitals, upright and facing the lens for the whole clip; the fourth letter is NEVER drawn, and the camera keeps the box face close to its own plane so the letters never skew. Do NOT morph, re-spell, wobble, thicken or add ANY text anywhere in the frame, and the boxes at the right stay soft and illegible. Exactly two children from first frame to last, nobody enters and nobody leaves; both faces stay modelled and readable; the carton stays one rigid cardboard solid and never bends, melts, merges or deforms as it is pulled.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+=========================================================================
+
+### 20.png | K20 | VO20 "Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir."
+HÜKÜM: BAŞTAN
+KUSUR: K16/K17 ile AYNI dünya kayması — foto-gerçekçi mimari render, soğuk ve doygunluğu
+düşük palet, feature-animation karakter dili yok. Dört kişi de salonun içinde noktalar kadar
+küçük kalmış; salon "tam kapasite çalışıyor" değil, neredeyse BOŞ görünüyor. VO "herkes bir
+görev üstlenir" derken kare bir boş spor salonu gösteriyor.
+İKİNCİL: Prompt "beyaz tahta lense sırtını döner, yüzü görünmez" diyordu — teslimde tahta
+tam karşıya bakıyor ve boş beyaz bir dikdörtgen olarak kadrajın sağını yiyor. Ayrıca fikrin
+omurgası olan "her istasyona bir tane, dört ayrı sert ışık dikdörtgeni" yok; tek yayvan ışık var.
+NOT: Yazı yok, uydurma harf yok — o taraf temiz.
+MOTION: baştan üretilecek.
+
+=========================================================================
+
+### 21.png | K21 | VO21 "Bir işi birlikte gerçekleştirmeye iş birliği denir."
+HÜKÜM: REVİZE
+KUSUR: Masanın geometrisi imkânsız. Tablanın altında tek bir katlanır masaya ait olamayacak
+kadar çok ince metal ayak var — en az üç ayrı ayak çerçevesi iç içe geçmiş, hiçbiri tablaya
+düzgün bağlanmıyor, ortada da bulanık bir gölge kütlesi duruyor. Katı bir nesnenin yapısı
+okunmuyor, göz "kaç bacak var" diye takılıyor.
+TUTAN: İki yüz de okunuyor ve iki uçtaki senkron jest doğru okunuyor; kimse ötekine bakmıyor
+(promptun istediği gibi); yazı yok, uydurma harf yok; iki insan da tam gövde.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: the trestle table becomes one clean rigid folding table
+with exactly two tubular steel leg frames, one under each end, clearly attached to a single
+laminate top — the tangle of extra legs and the dark smear beneath the table are gone. Keep
+everything else identical.
+
+MOTION: 5s · ekranda ~3.5s   ← BLOĞUN VURUŞLU KLİBİ (arka plan sakin, hareket keskin)
+KAMERA NİYETİ: Kamera neredeyse kilitli dursun; enerjiyi masanın kilitlenme sesi/sarsıntısı taşısın, kamera değil.
+-----
+[1 DEVAM]   At the start the laminate top is still tilted a couple of degrees off level, both people crouched at opposite ends with their hands closed on the steel braces, neither looking at the other. For the first second nothing moves but the strain in their forearms; then, in a single sharp beat, both braces snap flat at exactly the same instant and the top drops the last two degrees into level with a hard mechanical jolt that runs the whole length of the table. Afterwards the top rings and settles, both of them let go, straighten their knees a hand's width and let their arms fall — the woman rocking back on her heels, the old man putting one palm briefly on the levelled top to test it — so the clip ends with a table standing open and level and two pairs of empty hands, where it began with a tilted top and four hands gripping.
+[2 ORTAM]   A line of fine dust jumps off the laminate along its whole length at the moment of the snap and drifts down afterwards; the dust sheet on the stacked folded tables at the right slides a finger's width and stops; the crate of tea glasses on the floor rattles once, a faint tremor through the glass, and goes still; the leaning broom in the corner eases a centimetre down the wall.
+[3 KAMERA]  Camera: held almost locked off, with only a barely perceptible ten-centimetre drift to the left across the whole five seconds — the stillness of the frame is deliberate so that the snap of the two braces lands as the only sudden thing in the shot, and the camera never chases it.
+[4 KİLİT]   The table stays one rigid solid object from first frame to last with exactly two tubular steel leg frames and one laminate top — it never bends, melts, morphs, merges, grows extra legs or changes shape as it levels, and the camera stays slow enough that no part of it warps. Exactly two people from first frame to last, nobody enters and nobody leaves; both faces stay modelled and readable; neither of them looks at the other and neither looks at the lens. No text appears anywhere in the frame at any point.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+=========================================================================
+
+### 22.png | K22 | VO22 "Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür."
+HÜKÜM: BAŞTAN
+KUSUR:
+1) YAZI BOZUK — asılan kâğıtta "TAMAM" yazmıyor. Beş harf yerine altı karakter var ve
+   üçüncüsü kırık bir M/И melezi: kabaca "TAИIAM" diye okunuyor. Karenin taşıdığı tek yazı bu.
+2) İSTİFLER YANLIŞ İÇERİK — iki yandaki "kareye dizilmiş istifler" yardım malzemesi değil,
+   MAVİ JİMNASTİK MİNDERLERİ. Yani kare bir günün toplanmış yardımını değil, bir spor
+   salonunun minder deposunu gösteriyor. VO "bilgi, emek ve imkânlar birleşince" derken
+   karede birleşmiş hiçbir imkân yok — akşamki hasadın kanıtı düşmüş.
+3) DÜNYA — K16/K17/K20 ile aynı arch-viz kayması.
+TUTAN: Açılmış koridor kompozisyonu ve son tepe ışığı GÜÇLÜ; kadının kadraj içindeki yalnızlığı
+doğru okunuyor. Baştan üretimde bu kompozisyon korunmalı, yalnız istifler yardım kolisi/
+battaniye/giyecek istifine dönmeli ve yazı düzelmeli.
+MOTION: baştan üretilecek.
+
+=========================================================================
+KARNE — K12-K22
+=========================================================================
+TEMİZ  : 0
+REVİZE : 4  → K14, K15, K19, K21
+BAŞTAN : 7  → K12, K13, K16, K17, K18, K20, K22
+
+İKİ SİSTEMİK KUSUR (tek tek kare hatası değil, blok deseni):
+
+A) DÜNYA GENİŞ PLANDA ÇÖKÜYOR. @salon'un dört geniş karesi (K16, K17, K20, K22) pixar
+   feature-animation'dan çıkıp foto-gerçekçi MİMARİ GÖRSELLEŞTİRME'ye düşmüş: düz ambient
+   ışık, doygunluğu düşük gri-mavi palet, karakterler minicik. Aynı dünyanın YAKIN karesi
+   (K19) tam yerinde. Yani dünya kilidi yakın planda tutuyor, geniş planda kopuyor —
+   geniş salon karelerinde STYLE kuyruğu tek başına yetmiyor.
+
+B) YÜZ KAYBI / KOPUK EL. K12, K13 ve K18'de prompt yüzlü insan istemesine rağmen kadraja
+   yalnız gövdesiz KOLLAR girmiş. Üçünde de ortak sebep aynı: kadraj çok yakın (50-85mm,
+   "eller kahraman") ve motor gövdeyi kadraj dışında bırakmayı seçmiş. Bu blokta "kahraman
+   ellerdir" diye yazılan her karenin ÜÇÜ DE aynı şekilde düşmüş.
+
+EN AĞIR TEK KUSUR: Yazı taşıyan altı karenin ikisinde yazının kendisi bozuk — K19'da "GID"
+180 derece ters basılmış, K22'de "TAMAM" hiç doğru yazılamamış.
+=========================================================================

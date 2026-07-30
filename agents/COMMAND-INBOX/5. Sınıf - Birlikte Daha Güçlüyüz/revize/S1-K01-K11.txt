@@ -1,0 +1,247 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — REVİZE + MOTION TURU · S1 · K01-K11
+=============================================================
+Kaynak: Resimler/1.png … 11.png · PROMPTLAR/S1-INTRO.txt (K01-K09) · S2-TANIM-ISBIRLIGI.txt (K10-K11)
+Motor: Kling 3.0 (i2v) · tüm klipler 5s · ekranda kimse konuşmaz (VO ayrı katman)
+
+
+### 1.png | K01 | VO1 "Bu Mira; mahallenin dar bir sokağında, üçüncü kattaki evde oturuyor."
+HÜKÜM: BAŞTAN
+KUSUR: Kare Mira'yı GÖSTERMİYOR. Teslim edilen şey yağmurlu bir dış cephe planı; Mira yalnız
+perdenin arkasında bir karartı, yüzü yok, karşı komşu yok. VO "Bu Mira" diyor ama seyirci
+Mira'yı görmüyor — karakterin tanıtım karesi karakteri tanıtmıyor.
+İKİNCİ KUSUR (DÜNYA): kare pixar 3D feature-animation değil, fotoğrafik mimari-render gibi
+duruyor. K02 ile yan yana konunca fark açık — K02 karakter animasyonu, K01 archviz.
+TUTAN: "3. KAT" pirinç zil panelinde doğru, Türkçe ve okunur.
+MOTION: baştan üretilecek, Mami'nin yönetmeni yazacak.
+
+-----
+
+### 2.png | K02 | VO2 "O sabah perdesini açtı ve sokağı sular altında buldu."
+HÜKÜM: REVİZE
+KUSUR: Kalorifer üstündeki kitabın sırtında İNGİLİZCE yazı var — "...OOLBOOK" (SCHOOLBOOK) net
+okunuyor, kapakta da uydurma latin harf satırları duruyor. Prompt "kitap yüzükoyun dursun ki hiç
+yazı taşımasın" ve "Turkish text only, NO English signage" diyordu; motor tam tersini yaptı.
+Kare geri kalanında sağlam: Mira net ve pixar dünyasında, perde tutuşu ve dışarı bakışı doğru.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: remove all lettering from the book on the radiator — the
+spine and the cover must be completely blank, plain worn cloth binding with no words, no English
+text and no letterforms of any kind. Keep everything else identical, keep the same soft-focus and
+the same lighting, do not sharpen.
+
+MOTION: 5s · ekranda ~4.0s
+KAMERA NİYETİ: Camın düzleminde yana kayan kamera, ıslak pervazı bir silecek gibi geçirip Mira'yı
+temize çıkarır; Mira perdeyi bırakıp cama yaslandığı anda kamera da durur.
+-----
+[1 DEVAM]   At the start she is holding the heavy curtain bunched in one fist, stopped mid-look with her breath held; then her fingers open and release the fabric, and in the same motion she leans in and down until her forehead is a hand's width from the wet glass; by the last second she has settled there and a small pale patch of breath-fog now sits on the pane that was not there when the clip began.
+[2 ORTAM]   The released curtain swings once against the window frame and comes to rest with its lower hem still trembling; a bead of condensation already on the inside of the pane breaks loose and crawls down through the new fog patch; the collar of her cream jacket settles a half-beat after her shoulder does.
+[3 KAMERA]  Camera: a slow lateral dolly to the right along the plane of the window, so the beaded wet frame in the near foreground slides across and parts like a wipe and the parallax between the glass and her face opens up, delivering her cleanly; the move decelerates and comes to a full stop on the beat her forehead reaches the glass.
+[4 KİLİT]   The rain beads on the glass stay separate rigid droplets and never smear into streaks of light; the book on the radiator keeps a completely blank cover and spine and no lettering appears or resolves on it at any point in the clip; the dark hall doorway behind her stays empty and no figure appears in it; her hair keeps exactly the same black chin-length cut from the first frame to the last, and she is the only person in the shot throughout.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 3.png | K03 | VO3 "Gece yağan şiddetli yağmur alt sokakları tamamen doldurmuştu."
+HÜKÜM: TEMİZ
+NOT: "ÇÖP" doğru yazılmış — Ç sedilli, Ö noktalı, üç harf, hepsi büyük. Su aynası ve ters cephe
+geometrisi tutarlı. Prompt üç balkon komşusu istiyordu, kare boş — ama VO3 yalnız suyun sokağı
+doldurmasından bahsediyor ve kare onu tam veriyor; kusur değil, feda.
+
+MOTION: 5s · ekranda ~4.0s
+KAMERA NİYETİ: Kamera su hizasında neredeyse hiç kımıldamaz; hareketi konteynerin kendisi yapar,
+çünkü bu karede tek anlatı su yüzeyinin oynaması.
+-----
+[1 DEVAM]   At the start the green waste bin sits tilted and completely still, half sunk; then the water takes it and it settles a few centimetres deeper and begins a slow rotation around its own submerged corner, turning perhaps fifteen degrees; by the end it has come to rest at a visibly new angle with a fresh raised collar of displaced water standing all around its rim.
+[2 ORTAM]   A drip falls from the balcony downpipe and lands once, pushing a widening ring across the mirror so the inverted façades bend and then re-form behind it; the small red crate further down the street turns a few degrees in the same slow current; the hanging washing high above lifts once and drops.
+[3 KAMERA]  Camera: a very slow creep forward at water level, no more than a hand's width of travel over the whole clip, holding the bin's painted flank exactly parallel to the sensor so the word never skews or foreshortens, and easing to a stop before the ripple reaches the lower edge.
+[4 KİLİT]   The word on the bin stays exactly "ÇÖP" in the same stencilled paint, the same size and the same place from the first frame to the last — do NOT morph, re-spell, wobble or add ANY text, and no lettering forms in its mirrored reflection on the water either; the bin is a rigid solid polyethylene body, no deform, melt, morph or merge and no pass-through with the water; the building façades stay rigid and do not warp or bend as the ripple crosses their reflection; no person appears on any balcony and no figure enters the water.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 4.png | K04 | VO4 "Belediye ekipleri çamurla kaplanan yolu temizlemeye çoktan başlamıştı."
+HÜKÜM: REVİZE
+KUSUR: VO "belediye ekipleri" diyor — çoğul, kurumsal. Karede TEK adam var, sırtı dönük, üstünde
+lacivert bir kazak ve bere; hiçbir şey onu belediye görevlisi yapmıyor. Seyirci "belediye" değil
+"biri" görüyor. Hortum, pompa ve emme çukuru doğru ve güçlü; eksik olan tek şey kimlik.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: put a high-visibility municipal work vest with reflective
+bands over the man's jumper, so he clearly reads as a city cleaning crew worker. Keep his pose,
+his back-turned angle, the hose, the pump and the water exactly as they are, keep the same
+soft-focus background, do not sharpen, and add no text or logo to the vest.
+
+MOTION: 5s · ekranda ~4.2s
+KAMERA NİYETİ: Kamera emme ağzının etrafında alçak bir yay çizer; ön plandaki kasa kadrajdan
+kayarken çukur ortada kalır, adam yayın sonunda profilden okunur hâle gelir.
+-----
+[1 DEVAM]   At the start the water above the hose mouth is only dimpled; then over the middle of the clip the dimple opens into a full slow turning funnel and the single floating leaf is drawn around its rim and pulled under; at the same moment the worker straightens up from the pump and turns his head toward the wall to read the waterline, so by the last second his profile is readable where only his back was before and the surface has closed smoothly over the hose mouth again.
+[2 ORTAM]   The lay-flat delivery line twitches once along its length where the pressure travels through it; the floating yellow crate in the near foreground nudges against its rope and stops; a thin sheet of silty water slides off the kerb edge into the street.
+[3 KAMERA]  Camera: a low arc to the right around the hose mouth, starting almost at the waterline and rising a few centimetres as it travels, so the crate slides out of the left of frame while the funnel stays pinned at centre and the worker is carried into a clean profile; the arc slows and settles as his head turns.
+[4 KİLİT]   The suction hose, its galvanised metal collar, the pump housing and the crate are rigid solids — no deform, melt, morph or merge and no pass-through between hose and water; exactly one person is in the shot from the first frame to the last, nobody enters and nobody leaves; the leaf stays one single leaf and never multiplies; no text, dial or brand name appears on the pump, the hose or the vest; the funnel stays a smooth slow vortex and never breaks into foam, spray or whitewater.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 5.png | K05 | VO5 "Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu."
+HÜKÜM: REVİZE
+KUSUR: İki komşu HASARA BAKMIYOR — birbirlerine bakıyorlar; adam kollarını kavuşturmuş, profilden
+kadına dönük ve ifadesi rahat, neredeyse gülümser. VO'nun tek fiili "hasara bakıyordu"; karede o
+fiil yok. İkinci sorun aynı yerde: sokak kupkuru ve öğle güneşi almış, K03-K04'ün gri şafağıyla ve
+"su yeni çekildi" durumuyla çelişiyor.
+TUTAN: "KİTAP" doğru yazılmış, mürekkep suyla akmış, kutu ıslak halkasında oturuyor; asılı halının
+ucundan hâlâ su damlıyor. Kare bunlarla ayakta duruyor.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: both neighbours now look down at the ruined things instead
+of at each other — the woman turns her head down toward the pulped cardboard box and the dripping
+rug, and the man in the doorway drops his gaze to the wet step in front of him with his expression
+tired and flat, no smile. Keep their positions, clothing and the whole street exactly as they are,
+keep the same soft-focus background, do not sharpen, do not change the box or its writing.
+
+MOTION: 5s · ekranda ~4.3s
+KAMERA NİYETİ: Kamera kaldırım çizgisi boyunca içeri girer, ön plandaki sandalye kadrajdan sıyrılır
+ve kare kutuyla halı arasındaki hasar hattına oturur.
+-----
+[1 DEVAM]   At the start the woman is standing with her arms crossed hard, looking down at the ruined box; then the soaked lid of the cardboard box gives a little further under its own weight and sags with a slow collapse, and as it goes her shoulders drop and her chin comes down another degree; by the end she has settled lower and stiller than she began, and the box sits visibly more caved in than in the first frame.
+[2 ORTAM]   Water keeps running from the lower corner of the hanging rug in one thin unbroken thread that widens the dark ring on the stone; the man in the doorway shifts his weight once from one foot to the other without lifting his eyes; a single page edge on the pulped box curls upward as it dries.
+[3 KAMERA]  Camera: a slow dolly forward along the line of the kerb with the big polished chair sliding out of the left foreground as parallax opens, and in the last second a gentle rack focus off the woman and onto the collapsed box, so the shot ends on the damage rather than on the person.
+[4 KİLİT]   The word on the box stays exactly "KİTAP" in the same bled marker, the same size and the same place from the first frame to the last — do NOT morph, re-spell, wobble or add ANY text; exactly two people are in the shot throughout, nobody enters and nobody leaves and neither of them looks at the lens; the hanging rug keeps the same pattern and the same length and never re-designs itself; the wooden chair and the iron rail are rigid solids with no deform, melt, morph or merge.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 6.png | K06 | VO6 "Mira dışarı çıktı ve fark etti: kimse tek başına değildi."
+HÜKÜM: REVİZE
+KUSUR: SÜREKLİLİK — Mira'nın saçı değişmiş. K02'de siyah, düz, çene hizasında kısa bir kâkül;
+burada kahverengi, dalgalı ve daha uzun. İki kare arka arkaya kesilecek; seyirci aynı çocuğu
+göremez. Duruş, eşikte bekleme ve arkadaki çalışan sokak doğru.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: give the girl the same hair as her previous shot — jet
+black, straight, chin-length bob, flattened slightly on one side, not brown and not wavy. Keep her
+face, her pose on the threshold, her clothing and the entire street behind her identical, keep the
+same soft-focus on the background workers, do not sharpen.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera sokaktan eşiğe doğru alçak bir kaydırmayla yaklaşır ve tam Mira ilk adımını
+atarken durur — durmakla katılmak arasındaki geçiş kamerada da bitmelidir.
+-----
+[1 DEVAM]   At the start she is holding the doorframe with one flat hand, weight back on her heels, watching the workers without moving; then her fingers slide off the timber and her weight tips forward onto the front foot, and she takes the first step down off the stone threshold; by the last second she is standing one step lower and out of the doorway, hand no longer touching the frame, still looking down the street.
+[2 ORTAM]   A drip falls from the door lintel and lands on the wet step just behind her heel; the coiled hose against the wall settles a finger's width where its weight shifts; far down the street the shallow film of water keeps sliding toward the channel and dust lifts ahead of the sweeping broom.
+[3 KAMERA]  Camera: a low dolly in from the street toward the doorway with the heavy timber door sliding across the right foreground as parallax opens, rising very slightly to meet her eyeline, and easing to a complete stop on the beat her foot lands on the lower step.
+[4 KİLİT]   Her hair stays jet black, straight and chin-length for every frame of the clip and never changes colour, length or curl; exactly the same number of workers stays in the background from first frame to last, nobody new appears and nobody walks out of frame; the background figures keep their solid bodies and never smear, melt or dissolve as the camera moves; the timber door and the stacked crates are rigid solids with no deform or morph; no text appears anywhere in the frame.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 7.png | K07 | VO7 "İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir."
+HÜKÜM: BAŞTAN
+KUSUR: Karede insan yok — kadraja sağ üstten GÖVDESİZ iki kol giriyor, omuz yok, gövde yok, yüz
+yok. Prompt "BİR net insan, yüzüyle" istiyordu ve karenin tüm fikri kadının bakışının kalkmayan
+uzak uçta olmasıydı; yüz gidince fikir de gitti.
+İKİNCİ KUSUR (DÜNYA): kollar fotoğrafik insan teni — kılları, gözenekleri, tırnak yatağıyla gerçek
+bir fotoğraftan gelmiş gibi duruyor. Yasa açıkça "no real-human photographic skin" diyor; K02'deki
+Mira'nın yanına konamaz.
+NOT: K07 ve K08 aynı halının iki yarısı olmak zorunda; ikisi birden yeniden basılmalı.
+MOTION: baştan üretilecek, Mami'nin yönetmeni yazacak.
+
+-----
+
+### 8.png | K08 | VO8 "Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar."
+HÜKÜM: BAŞTAN
+KUSUR: Bloğun en ağır karesi. Kadrajın iki kenarından İKİ ÇİFT GÖVDESİZ KOL giriyor — dört kol,
+sıfır omuz, sıfır gövde, sıfır yüz. Halı iki kolun arasında imkânsız bir gerginlikte, kendi
+ağırlığını taşımayan sert bir levha gibi asılı duruyor.
+İKİNCİ KUSUR: süreklilik — K07'nin halısıyla aynı halı değil (desen ve boy başka) ve sokak burada
+kupkuru, K07'de ıslaktı.
+ÜÇÜNCÜ KUSUR (DÜNYA): yine fotoğrafik insan teni.
+NOT: Kavramın tamamı "iki kare arasındaki tek fark bir insandır" cümlesine bağlı; insan görünmediği
+için kavram hiç doğmuyor. K07 ile birlikte yeniden basılmalı, aynı halı ve aynı açı kilidiyle.
+MOTION: baştan üretilecek, Mami'nin yönetmeni yazacak.
+
+-----
+
+### 9.png | K09 | VO9 "İşte böyle günlerde yardımlaşma ve dayanışmanın önemi daha iyi anlaşılır."
+HÜKÜM: TEMİZ
+NOT: "AÇIĞIZ" harf harf doğru — A, sedilli Ç, noktasız I, brevli Ğ, noktasız I, Z. Çizgili defter
+kâğıdı, bant, kâğıdın kıvrılan alt köşesi hepsi oturmuş. Üç kişi sırtı dönük çalışıyor; prompt
+yüzleri istiyordu ama VO'nun anlattığı iş — süpüren, faraşa alan, kova taşıyan — karede net
+okunuyor. Kuru şerit / ıslak orta ayrımı da duruyor.
+
+MOTION: 5s · ekranda ~4.8s
+KAMERA NİYETİ: Kamera duvara asılı kâğıttan başlayıp sokağa iner; klip "burada bir söz var"dan
+"burada bir iş var"a geçer.
+-----
+[1 DEVAM]   At the start the crouching man in the flat cap is holding the dustpan against the stone with silt piled in it; then he lifts it and tips the whole load into the bucket the man beside him is holding, and the silt goes over the rim in one soft fall; by the end the dustpan is empty and back on the stone and the man has risen halfway out of his crouch, standing where he was kneeling at the start.
+[2 ORTAM]   The taped notebook sheet lifts at its one loose lower corner and slaps quietly back against the glass; fine dust hangs and turns in the low warm light along the swept dry strip; the man with the broom drives one more stroke of silt toward the channel and the wet line moves a hand's width.
+[3 KAMERA]  Camera: begins high and close on the taped sheet, then cranes down and swings right along the wall face, dropping to street level and coming to rest at working height on the three men, so the shot travels from the written promise to the work itself; the descent slows through its last third and settles.
+[4 KİLİT]   The sign stays exactly "AÇIĞIZ" on the same lined notebook paper, the same size and the same place from the first frame to the last — do NOT morph, re-spell, wobble or add ANY text, and no lettering appears on the roller shutters, the crates or the shopfronts as the camera moves; exactly three people stay in the shot throughout, nobody enters and nobody leaves and no new figure forms at the far end of the street; the crates, the brooms, the bucket and the plane tree are rigid solids with no deform, melt, morph or merge; the wet-to-dry boundary on the stone stays a single readable line.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 10.png | K10 | VO10 "Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı."
+HÜKÜM: REVİZE
+KUSUR: Su çizgisi su izi gibi değil, DÜZ LACİVERT BOYA BLOĞU gibi duruyor — duvar iki renge
+boyanmış bir iç mimari kararı gibi okunuyor, hasar gibi değil. Aynı düz blok düğün fotoğrafının
+camını da temiz bir dikdörtgen olarak kesiyor; bu grafik bir katman, ıslaklık değil. Yasa zaten
+"no flat graphic fill" diyor.
+TUTAN: Fikir yerinde — çizginin düğün fotoğrafının tam ortasından geçmesi hasarı mobilyayla değil
+o denk gelmeyle ölçüyor; su, kanepe, dönen dantel ve şişmiş sehpa doğru.
+REVİZE PROMPTU:
+Use this referenced image, change ONLY: turn the horizontal line on the wall into a real water
+tidemark instead of a flat block of navy paint — an uneven brown-grey silt stain with a feathered,
+slightly wavy upper edge, the plaster below it darker, swollen and blistered with the paint lifting
+in places, and the same stain crossing the picture glass as a thin dirty film rather than a clean
+rectangle. Keep the line at exactly the same height across the photograph, keep the room, the
+furniture, the standing water and the lighting identical, keep the same soft-focus, do not sharpen.
+
+MOTION: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Kamera camın önünde sağa doğru kayarken odaklanma ıslak pervazdan düğün
+fotoğrafına geçer — hasarın ölçüsü ancak fotoğraf netleşince anlaşılır.
+-----
+[1 DEVAM]   At the start the crocheted doily is floating free in the middle of the flooded floor, turning very slowly; then it drifts across and its edge comes up against the leg of the low table and stops dead there, and as it stops a single bead of water that has been standing on the picture glass releases and runs down the front of the photograph, crossing the tidemark; by the last second the doily is held against the table leg where it was free at the start and a wet track is left down the glass.
+[2 ORTAM]   The standing water holds one slow shallow swell that runs the length of the room and dies against the skirting; the lifted veneer on the low table settles a hair further open; the armchair's soaked lower fabric darkens another shade as it keeps drawing water up.
+[3 KAMERA]  Camera: a slow lateral drift to the right across the window opening with the wet reveal sliding out of the left foreground, carrying a rack focus from the beaded glass in the near plane onto the framed wedding photograph, which comes fully sharp exactly as the bead of water reaches the tidemark; the drift eases out and holds there.
+[4 KİLİT]   The tidemark stays a single fixed horizontal stain at exactly the same height on the wall and across the picture glass for every frame of the clip — it never rises, falls, moves or repaints itself; the two faces inside the wedding photograph stay the same two people and never morph, age or re-render into different faces; the standing water stays a flat still film with one slow swell and never breaks into waves, ripplesheets or foam; the armchair, sideboard, table and picture frame are rigid solids with no deform, melt, morph or merge; no person enters the room or appears at the window; no text appears anywhere.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-----
+
+### 11.png | K11 | VO11 "Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı."
+HÜKÜM: BAŞTAN
+KUSUR: Karede insan yok, DÖRT GÖVDESİZ KOL var. Soldan bir kol, dolabın arkasından iki kol, sağdan
+bir kol daha — hiçbirinin omzu, gövdesi ya da yüzü yok, ve sağdaki el hiçbir şeyi tutmuyor, boşluğa
+uzanıyor. VO açıkça "üç komşu geldi" diyor; seyirci üç komşu değil dört kopuk kol görüyor.
+İKİNCİ KUSUR: sayı da tutmuyor — dört kol üç kişiye bölünmüyor, kimin eli hangisi belli değil.
+NOT: Karenin fikri ("dolap o açıda tek başına tutulamaz, denge üç kişinin kanıtıdır") ancak üç
+gövde ve üç yüz göründüğünde doğar. Kadraj geriye açılıp üç kişiyi de içine almalı.
+MOTION: baştan üretilecek, Mami'nin yönetmeni yazacak.
+
+
+=============================================================
+BLOK ÖZETİ · K01-K11
+TEMİZ  : 2  (K03, K09)
+REVİZE : 5  (K02, K04, K05, K06, K10)
+BAŞTAN : 4  (K01, K07, K08, K11)
+
+EN AĞIR KUSUR — TEK CÜMLE:
+Motorun bu blokta dört kez yaptığı şey aynı: yakın plan istenen karede insanı çıkarıp yerine
+GÖVDESİZ KOL koyuyor (K07, K08, K11) ya da insanı hiç koymuyor (K01) — yani "insanın yetmediği,
+ikinci bir insanın geldiği" derse ait tüm kareler insansız teslim edilmiş.
+
+İKİNCİ SİSTEM BULGUSU:
+Karede yakın plan karakter olduğunda motor pixar 3D veriyor (K02, K06, K11'in dolabı), karakter
+olmadığında ya da yalnız uzuv olduğunda fotoğrafik render'a düşüyor (K01, K07, K08). Dünya kilidi
+karakteri tutuyor, çevreyi tutmuyor.
