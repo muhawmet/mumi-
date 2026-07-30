@@ -1,0 +1,443 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — TEK REVİZE DOSYASI
+=========================================================================
+Sırayla in. Her bloğun altındaki ----- arası metni kopyala, bas, indir.
+Yeni dosya adını kare numarasıyla kaydet (ör. 7.png) — eskisinin üstüne yaz.
+
+  ✅ DOKUNMA — 18 kare:  K03 K06 K09 K26 K28 K29 K31 K32 K33 K34 K37 K41 K44 K45 K48 K50 K53 K54
+
+  ♻️  REVİZE — 23 kare · mevcut kareyi REFERANS ver, tek satırı yapıştır
+  🔁 BAŞTAN — 13 kare · referans YOK, promptun tamamını yapıştır
+
+Kıstas: sahneyle uymuyor · bozuk yazı · yanlış şey. Başka hiçbir şey.
+=========================================================================
+
+
+=========================================================================
+🔁 K01  ·  BAŞTAN  ·  referans YOK
+   VO: "SU — sel, ıslak asfalt, çamur, yansıma. Fizik hatası burada görünür."
+-----
+[1 LENS]      35mm lens at f/2.0, low seated eye level, medium view taking her and the window behind her — the corner of a rumpled duvet cuts the lower left foreground and is sliced by the frame edge
+[2 SUBJECT]   — @mira1 sitting on the edge of her bed pulling a sock onto one raised foot, head turned toward the window because something outside has caught her ear
+[3 IDENTITY]  @mira1 seated on the bed edge, bent forward with one ankle across the opposite knee — deliberately not standing at rest, not centred and not in a full-figure studio pose. Her hair is flattened on one side from sleeping, her eyes still puffy, her mouth open on a yawn she has just interrupted, her attention pulled sideways to the glass. Across the narrow street on the opposite balcony, a Turkish/Anatolian woman of about fifty in a housecoat is gathering washing off a line in the half-dark, a peg between her lips, half her face behind a hanging sheet, close enough that her expression is readable. Warm matte tan skin on both, low specular, never tinted green or grey.
+[4 SETTING]   The setting is a small bedroom on the third floor: a single bed with a rumpled duvet, a bedside lamp still on, a school bag half packed on the floor, a chair with clothes over the back, a shelf with a jar of pencils and a football sticker album, a poster corner curled off the wall, and a window whose curtain is still drawn to one side showing the opposite façade only a few metres away — its balcony rail, its washing line and its own lit window at exactly the same height, so the narrowness of the street is unmistakable; beside the entrance downstairs a brass buzzer panel with paper name strips is just visible
+[5 LIGHT]     Two lights meet on her: a warm bedside lamp from the left takes her cheek, her shoulder and the raised foot, and a cold blue pre-dawn from the window takes the other side of her face and the edge of her jaw, and neither reaches the corners of the room, which stay deep cool indigo
+[7 THREE ALIVE] Three things are alive in the frame: a sheet swinging on the opposite balcony line, the curtain breathing where the window is cracked open, and the sock still half on her foot.
+[8 DEPTH]     Depth in three layers — the rumpled duvet blurred and cut at the lower left edge, @mira1 and her raised foot sharp, the opposite balcony, the neighbour and the buzzer panel below softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the half-packed school bag slumps against the bed leg with a dark seam where they meet, and the jar of pencils presses a ring into the shelf dust.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the paper name strip in the brass buzzer panel beside the entrance door, seen small at the bottom of the frame across the street · the letterform is a ballpoint hand, written small and slightly uphill on a narrow paper slip, the ink pooled at the start of each stroke and the paper faintly cockled with damp behind its scratched plastic window · it reads "3. KAT" — a numeral, a full stop and one word, three letters, all capitals · positioned low in frame and lit by the stairwell light, small but legible · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the sticker album, poster and shelf items stay soft and carry no legible word or recognisable image; the opposite neighbour never looks across at @mira1 and never at the lens; the street below stays unseen from this angle and no water is visible yet; both faces stay modelled and readable and neither flattens into a shape; the room keeps its clutter and no surface is cleared into emptiness; the bedside lamp stays the only warm source and no ceiling light comes on; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K02  ·  REVİZE  ·  referans: 2.png
+   VO: "KOORDİNELİ KALABALIK — 11, 17, 18, 46. cümleler çok kişinin AYNI işi yapması."
+-----
+Use this referenced image, change ONLY: remove all lettering from the book on the radiator — the spine and the cover must be completely blank, plain worn cloth binding with no words, no English text and no letterforms of any kind. Keep everything else identical, keep the same soft-focus and the same lighting, do not sharpen.
+-----
+
+
+=========================================================================
+♻️  K04  ·  REVİZE  ·  referans: 4.png
+   VO: "DÖNEM SIÇRAMASI — Osmanlı sadaka taşı ve Millî Mücadele, bugünkü mahallenin yanında."
+-----
+Use this referenced image, change ONLY: put a high-visibility municipal work vest with reflective bands over the man's jumper, so he clearly reads as a city cleaning crew worker. Keep his pose, his back-turned angle, the hose, the pump and the water exactly as they are, keep the same soft-focus background, do not sharpen, and add no text or logo to the vest.
+-----
+
+
+=========================================================================
+♻️  K05  ·  REVİZE  ·  referans: 5.png
+   VO: "Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu."
+-----
+Use this referenced image, change ONLY: both neighbours now look down at the ruined things instead of at each other — the woman turns her head down toward the pulped cardboard box and the dripping rug, and the man in the doorway drops his gaze to the wet step in front of him with his expression tired and flat, no smile. Keep their positions, clothing and the whole street exactly as they are, keep the same soft-focus background, do not sharpen, do not change the box or its writing.
+-----
+
+
+=========================================================================
+🔁 K07  ·  BAŞTAN  ·  referans YOK
+   VO: "İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir."
+-----
+[1 LENS]      50mm lens at f/2.8, low angle just above the water film with her face in the upper third, medium-close view along the length of the rug — a wet kerbstone cuts the lower left foreground and is sliced by the frame edge
+[2 SUBJECT]   — a woman gripping the near corner of a waterlogged rug and lifting it a hand's width, the knuckles blanched white with effort, while the far end of the rug lies exactly where it was, still under water
+[3 IDENTITY]  One Turkish/Anatolian woman of about forty-five, fully described and fully rendered: a quilted waistcoat over a long-sleeved tee with both sleeves soaked to the elbow, hair escaping a clip, a vein standing at her temple, her mouth pressed into a line and her eyes fixed not on her own hands but on the far end of the rug that will not move. Warm matte tan skin, low specular, never tinted green or grey; her face is modelled and readable.
+[4 SETTING]   The setting is @sokak with a shallow standing film of silty water: the mud tidemark on the plaster, the drying joints of the setts, a bucket tipped on its side, a mop leaning against a doorstep, a stack of sodden cushions already dragged out, and the far half of the rug still submerged and dark
+[5 LIGHT]     A soft morning light comes down the street; it takes the lifted near corner of the rug, the tops of the straining fingers and her face and throat, and it reaches nothing at the far end, which stays a flat cool indigo under the water
+[7 THREE ALIVE] Three things are alive in the frame: water pouring in a heavy sheet out of the lifted corner, the pile of the wool springing back where the grip bites, and a slow ring spreading from the unmoved far end.
+[8 DEPTH]     Depth in three layers — the wet kerbstone blurred and cut at the lower left edge, the gripping hands, the lifted corner and her face sharp, the submerged far end and the street softening into gentle bokeh.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the tipped bucket presses its rim into the silt and leaves a clean crescent where it has pushed the mud aside.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: No text anywhere in this frame — the beat is pure physical effort and a word would soften it. Every surface that could carry writing is dressed with matter instead: knotted wool pile, galvanised bucket, silt. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: the far end of the rug stays completely still and does not lift, shift or rise; no second person and no second pair of hands enters this frame; her eyes stay on the far end and never on her own hands or the lens; her face stays modelled and readable and never flattens into a shape; she does not grimace theatrically — the effort stays contained; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+🔁 K08  ·  BAŞTAN  ·  referans YOK
+   VO: "Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar."
+-----
+[1 LENS]      50mm lens at f/2.8, low angle just above the water film from the same side as the previous frame, medium-close view along the rug — the same wet kerbstone cuts the lower left foreground and is sliced by the frame edge
+[2 SUBJECT]   — the same waterlogged rug now clear of the water along its whole length, held at the near corner by the same woman and at the far corner by a second neighbour who has just taken hold
+[3 IDENTITY]  Two Turkish/Anatolian people, both fully described and fully rendered. The same woman of about forty-five from the previous frame, identical clothing and hair, knuckles still blanched, her mouth open now on a released breath and her eyes down on the middle of the rug. At the far end, a man of about sixty-five in a flat cap and a coat with the sleeves pushed back over a shirt, feet apart, both hands under the far corner, chin down, his face lined and calm — no words exchanged, he simply arrived. Warm matte tan skin on both, low specular, never tinted green or grey.
+[4 SETTING]   The setting is @sokak, the identical stretch as the previous frame: the same mud tidemark, the same drying joints, the same tipped bucket, the same mop and sodden cushions, and beneath the lifted rug a clean dark rectangle of stone where it had been lying
+[5 LIGHT]     The same soft morning light comes down the street; it now takes the entire raised back of the rug from end to end, both sets of gripping fingers and both faces, and it still reaches nothing above the elbows, so both pairs of arms run away into cool indigo
+[7 THREE ALIVE] Three things are alive in the frame: a curtain of water still falling from the whole lower edge of the rug, the wool pile flattening under the new grip, and the clean rectangle of wet stone drying at its edges.
+[8 DEPTH]     Depth in three layers — the wet kerbstone blurred and cut at the lower left edge, the lifted rug and both grips sharp across the middle, the street beyond softening into gentle bokeh.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the tipped bucket still presses its rim into the silt and holds the same clean crescent beside it.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: No text anywhere in this frame — it is the answering half of the previous frame and must stay identical to it except for the second person. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: the rug keeps the same pattern, colour and length as the previous frame and is never re-designed; the woman keeps the same clothing, hair and position as the previous frame; no third person and no third pair of hands enters the frame; the two never look at each other and neither looks at the lens; both faces stay modelled and readable and neither flattens into a shape; nobody smiles or performs gratitude; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K10  ·  REVİZE  ·  referans: 10.png
+   VO: "Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı."
+-----
+Use this referenced image, change ONLY: turn the horizontal line on the wall into a real water tidemark instead of a flat block of navy paint — an uneven brown-grey silt stain with a feathered, slightly wavy upper edge, the plaster below it darker, swollen and blistered with the paint lifting in places, and the same stain crossing the picture glass as a thin dirty film rather than a clean rectangle. Keep the line at exactly the same height across the photograph, keep the room, the furniture, the standing water and the lighting identical, keep the same soft-focus, do not sharpen.
+-----
+
+
+=========================================================================
+🔁 K11  ·  BAŞTAN  ·  referans YOK
+   VO: "Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı."
+-----
+[1 LENS]      35mm lens at f/2.8, low angle from the stair below, medium three-quarter view up onto the landing — the wrought-iron stair rail cuts the right foreground and is sliced by the frame edge
+[2 SUBJECT]   — a tall wooden wardrobe held tilted at an angle on the landing, gripped at three separate points by three people, none of whom could hold it alone
+[3 IDENTITY]  Three Turkish/Anatolian people, all fully described and fully rendered. Lowest on the stair, a man of about thirty-five in a rolled-sleeve shirt taking the bottom corner, arms locked, head turned up and away so his own forearm shadows his eyes, teeth showing with effort. In the middle, a woman of about fifty in a knitted wool sleeve pushed to the elbow, one hip braced against the wardrobe's side, cheek pressed to the wood, eyes shut. At the top, a young man of about twenty-two in a nylon jacket, both hands under the top edge, walking backwards, chin down and mouth open counting the steps. Warm matte tan skin on all three, low specular, never tinted green or grey; every face modelled and readable.
+[4 SETTING]   The setting is a narrow apartment stairwell in use: worn stone treads with metal nosing strips, a wrought-iron rail with two coats and a shopping bag hung over it, a bare bulb on a twisted flex, a folded moving blanket dropped on the landing, a rolled carpet already stood upright in the corner, a mirror turned face to the wall, a child's boot on a step, and muddy water pooled in the dish of every tread
+[5 LIGHT]     A single bare bulb hangs above the landing; it takes the top edge of the wardrobe, all three gripping hands, the metal nosing of the nearest tread and all three faces, and it reaches nothing down the stairwell, which falls away into deep cool indigo
+[7 THREE ALIVE] Three things are alive in the frame: the bare bulb swinging a hair on its flex so every shadow leans with it, dust turning in its light, and the folded blanket sliding a finger's width where it was dropped.
+[8 DEPTH]     Depth in three layers — the iron rail blurred and cut at the right edge, the wardrobe and the three grips sharp in the middle, the upper flight and the turned mirror softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the wardrobe's lower corner presses into the stone tread and holds a hard dark seam where the two meet.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: No text anywhere in this frame — the beat is a balance held by three grips and a word would give the eye somewhere else to rest. The mirror is turned to the wall and the coats carry no printed label. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: the wardrobe stays tilted and held and never rests flat or upright; no fourth hand and no additional person enters the frame; the mirror stays turned to the wall and never shows a reflection; all three faces stay modelled and readable and none flattens into a shape; the three grips stay at three clearly separate points on the wardrobe; nobody looks at the lens; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+🔁 K12  ·  BAŞTAN  ·  referans YOK
+   VO: "Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu."
+-----
+[1 LENS]      50mm lens at f/2.8, slightly high angle down onto the table, medium view taking both women and the box — the corner of a second stacked box cuts the left foreground and is sliced by the frame edge
+[2 SUBJECT]   — @koli filled to its brim with one flap being folded down while the last folded jumper presses up against it, a woman pushing the wool in with two fingers, and beside her a younger woman already levering open the next empty carton
+[3 IDENTITY]  Two Turkish/Anatolian people, both fully described and fully rendered. Closing the box, a woman of about fifty-five in a floral apron over a long-sleeved tee, hair under a scarf pushed back, a plain worn ring, lips pressed and one eyebrow up as she works the jumper under the flap. Opening the next carton, a girl of about eighteen in a denim jacket with a marker tucked behind her ear, both thumbs under the fresh box's flaps, already looking at the pile of clothing waiting rather than at the box she is opening. Warm matte tan skin on both, low specular, never tinted green or grey.
+[4 SETTING]   The setting is a covered doorway just off @sokak: a low stone step, a folding trestle table with a roll of brown paper tape, a black marker and a pair of scissors on it, three sealed boxes stacked against the wall, a flat-packed stack of empty cartons leaning, a pile of folded knitwear on a chair, a crate of tinned food underneath, and the wet street beyond in soft focus
+[5 LIGHT]     A soft indirect daylight comes from the open street to the left; it takes the upper face of the closing flap, the printed word on the box front, the raised fold of the last jumper and both faces, and it reaches nothing inside the box, which stays a deep cool indigo cavity
+[7 THREE ALIVE] Three things are alive in the frame: the compressed jumper springing back a hair against the flap, the loose end of the paper tape lifting on the table, and a wool fibre drifting free above the pile.
+[8 DEPTH]     Depth in three layers — the stacked box corner blurred and cut at the left edge, @koli, the closing hands and the older woman's face sharp, the younger woman and the waiting knitwear softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the roll of tape rests on the trestle top and holds a crisp dark crescent beneath its rim, and the crate of tins dents the folded blanket it stands on.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the bare kraft front face of @koli · the letterform is thick black marker written by hand directly on the paper, the ink bled very slightly into the fibre so each stroke has a soft edge, the letters uneven in height because the hand was leaning on the box as it wrote · it reads "GIYECEK" — one word, seven letters, all capitals, the first an undotted capital I · positioned across the front face, fully facing the lens and unobstructed by the folding hands · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the three sealed boxes behind stay soft-focus and carry no second legible word; the box interior stays an unlit dark and never fills with visible contents; the tins in the crate stay unbranded with plain labels; both faces stay modelled and readable and neither flattens into a shape; neither woman looks at the lens; the flap stays half folded and the box is not finally sealed in this frame; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+🔁 K13  ·  BAŞTAN  ·  referans YOK
+   VO: "Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir."
+-----
+[1 LENS]      85mm lens at f/2.0, chest height, medium-close two-shot on the exchange taking both faces and both pairs of hands — a doorframe edge cuts the right foreground and is sliced by the frame edge
+[2 SUBJECT]   — one woman holding out a thick folded blanket into another's waiting hands while her other hand rests flat on the receiver's forearm and has not let go, both of them looking at the blanket rather than at each other
+[3 IDENTITY]  Two Turkish/Anatolian women, both fully described and fully rendered. Giving, a woman of about forty in a maroon fleece with the sleeves shoved up, hair in a quick knot, a chapped knuckle, her mouth relaxed and her eyes down on the blanket, one eye shadowed by the doorframe. Receiving, a woman of about seventy-five in a headscarf and a thin cardigan over a nightdress, both hands under the blanket, thin skin over the tendons, her chin lifted just enough to look at what she is being given, eyes wet but not spilling. Warm matte tan skin on both, low specular, never tinted green or grey; both faces modelled and readable.
+[4 SETTING]   The setting is a doorway just off @sokak: a worn stone threshold, a stack of folded blankets on a stool beside it, a hung curtain pushed aside, a pair of dry slippers set ready on the step, a jug of water and two glasses on a shelf inside, a coat on a nail, and the wet street beyond in soft focus
+[5 LIGHT]     A soft warm light comes from inside the doorway; it takes the top fold of the blanket, the back of the hand resting on the forearm and both faces from the cheekbone down, and it reaches nothing out into the street, which stays cool indigo behind them
+[7 THREE ALIVE] Three things are alive in the frame: the loose top fold of the blanket settling as it changes hands, a loose wool fibre lifting from its edge, and the stack on the stool easing a finger's width lower.
+[8 DEPTH]     Depth in three layers — the doorframe blurred and cut at the right edge, the blanket, both pairs of hands and both faces sharp in the middle, the interior shelf and the wet street softening into gentle bokeh.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the stack of blankets presses into the woven stool seat and dips it visibly at the centre, and the ready slippers sit in their own dark pair of outlines on the step.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: No text anywhere in this frame — the whole meaning sits in one hand that has not let go, and any writing would divide the attention. The blanket carries no woven label or band. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: the resting hand stays on the forearm and does not withdraw; neither woman looks into the other's eyes and neither looks at the lens; nobody embraces, weeps or performs gratitude — the exchange stays plain; both faces stay modelled and readable and neither flattens into a shape; the blanket stays folded and is never opened out; the stack on the stool stays standing and does not topple; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K14  ·  REVİZE  ·  referans: 14.png
+   VO: "Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir."
+-----
+Use this referenced image, change ONLY: the central galvanised bucket is now firmly gripped by both of the flannel-shirted man's hands closed around a single clean arched wire handle — his fingers wrap the handle and the crumpled metal tangle at the bucket's rim is replaced by one smooth galvanised wire arch. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K15  ·  REVİZE  ·  referans: 15.png
+   VO: "Bu iki değer, toplumdaki insanları birbirine yakınlaştırır."
+-----
+Use this referenced image, change ONLY: the younger woman in the mustard cardigan now looks down at the chalk letters her own hand is writing, her eyes on the wall mark and her brow settled into quiet concentration instead of alarm. Keep everything else identical.
+-----
+
+
+=========================================================================
+🔁 K16  ·  BAŞTAN  ·  referans YOK
+   VO: "Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü."
+-----
+[1 LENS]      24mm lens at f/5.6, low angle just above the floor, wide view down the length of the hall — a trestle leg and the corner of a landed carton cut the right foreground and are sliced by the frame edge
+[2 SUBJECT]   — a painted court line running along the timber floor, passing under the row of trestle tables and out the other side, with three people working across it at three different heights
+[3 IDENTITY]  Three Turkish/Anatolian people, all fully described and fully rendered. Kneeling on the floor beside the line, a woman of about forty in a teal fleece with a school lanyard tucked into the collar, sorting with both hands, hair escaping a clip, lips parted in concentration. Standing at the middle table, a man of about twenty-five in a black t-shirt and an unbuttoned checked overshirt, sleeves rolled, writing on a carton with his weight on one arm, brow lowered. At the far double doors, a caretaker of about sixty in a navy work coat, one hand on the door edge, holding it open with his shoulder, face half in the door's shadow, moustache and heavy brows readable. Warm matte tan skin on all three, low specular, never tinted green or grey.
+[4 SETTING]   The setting is @salon caught mid-conversion: the trestle row set end to end down the centre with cartons landed unevenly along it, a wall-mounted honours board turned face to the wall, a basketball hoop folded up against the end wall with a stack of cartons directly beneath it, a rolled tumbling mat pushed along the wall bars, a folded pile of blankets set in front of a framed team photograph so it is covered, a stack of blue gym benches, two mop buckets by the door, and a sheet of paper taped to the open door leaf, and every wall surface in the hall is already dressed so no blank panel exists: wall bars along one side, a rolled tumbling mat stood on end, and the honours board turned face to the wall
+[5 LIGHT]     Midday light drops through the clerestory in hard rectangles; the nearest rectangle lands across the painted line and the kneeling woman's back and cheek, the second lands on the young man's forearms and the carton he is writing on, and none of it reaches the wall bars or the caretaker's chest, so the side wall holds one deep cool indigo band the whole length of the hall
+[7 THREE ALIVE] Three things are alive in the frame: dust turning through the clerestory shafts, the taped sheet on the door lifting at one corner in the draught the caretaker is holding open, and the top carton on the middle table settling a few degrees as it is written on.
+[8 DEPTH]     Depth in three layers — the trestle leg and landed carton blurred and cut at the right edge, the painted line, the kneeling woman and the writing man sharp along the middle, the caretaker and the doors softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — each trestle foot presses a small hard dark point into the timber, and the stack of cartons under the folded hoop leans into the wall with a dark seam all the way up.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is a single sheet of office paper taped at its four corners to the open door leaf · the letterform is a thick marker in a quick hand, the strokes squared off and slightly leaning, the paper cockled where the tape pulls at each corner so the word bends a little across it · it reads "YARDIM MERKEZİ" — two words, thirteen letters, all capitals, the last a dotted capital İ · positioned on the door at head height inside a clerestory light patch, facing the lens and fully legible · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the painted court line stays continuous and passes visibly under the tables rather than stopping at them; the honours board stays turned to the wall and the team photograph stays covered by the blankets, so neither shows any lettering; all three faces stay modelled and readable and none flattens into a shape; the folded hoop stays folded and no game equipment is in play; the clerestory rectangles stay hard-edged and separate and never merge into one flat wash; the hall keeps its half-converted clutter and no surface is cleared into emptiness; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+🔁 K17  ·  BAŞTAN  ·  referans YOK
+   VO: "Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu."
+-----
+[1 LENS]      35mm lens at f/4.0, high angle looking down across the floor, medium-wide view — the corner of a stacked carton cuts the lower left foreground and is sliced by the frame edge
+[2 SUBJECT]   — three parallel lines of sorted goods laid out on the gym floor at markedly different lengths, and a woman standing at the head of the shortest line holding a single folded blanket, looking down its almost empty length
+[3 IDENTITY]  Three Turkish/Anatolian people, all fully described and fully rendered. At the short line, a woman of about fifty in a long grey cardigan over a maroon jumper, reading glasses pushed up into her greying hair, one blanket held against her chest, her expression flat and thinking rather than sad. Halfway down the long line, a girl of about seventeen in a university hoodie with the sleeves over her hands, crouched, aligning tins into a row, tongue at the corner of her mouth. Behind, a young man of about twenty in a red football shirt carrying a carton at chest height so the box hides the upper half of his face, only his jaw and a grin showing. Warm matte tan skin on all three, low specular, never tinted green or grey.
+[4 SETTING]   The setting is @salon at full working pace: the timber floor with its painted court lines running under everything, three lines of sorted goods — a long dense line of tinned and packaged food, a medium line of clothing in soft heaps, and a short line of only four folded blankets — a folded card sign propped at the head of each line, a wall of flattened cartons leaned against the wall bars, a mop and bucket abandoned mid-floor, a child's drawing taped to a bench end, and two chairs pulled out of line, and every wall surface in the hall is already dressed so no blank panel exists: wall bars along one side, a rolled tumbling mat stood on end, and the honours board turned face to the wall
+[5 LIGHT]     A clerestory shaft crosses the floor diagonally; it lands along the top surfaces of the long food line, on the card sign at the head of the short line and on the woman's face and the blanket in her arms, and it reaches nothing along the rest of the short line, which lies in one cool indigo band all the way to the wall
+[7 THREE ALIVE] Three things are alive in the frame: dust turning in the diagonal shaft, the propped card sign tipping a few degrees where the floor is uneven, and the crouching girl's hoodie sleeve slipping back off her wrist as she reaches.
+[8 DEPTH]     Depth in three layers — the stacked carton corner blurred and cut at the lower left edge, the three lines and the standing woman sharp across the middle, the young man and the wall bars softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — each folded blanket presses its own soft dark seam into the timber, and the abandoned mop leans on the bucket rim with a hard dark point where the handle bites.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is a folded card sign propped at the head of the shortest line, cut from a flattened carton · the letterform is thick black marker on bare kraft, the ink absorbed unevenly so the strokes are dark at the start and dry at the finish, and one letter runs slightly downhill where the card bends at its fold · it reads "BATTANİYE" — one word, nine letters, all capitals, the sixth a dotted capital İ · positioned at the head of the short line inside the light shaft, angled toward the lens and fully legible · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the three lines stay clearly unequal in length and the blanket line stays visibly the shortest — it is never evened out or filled; the other two card signs stay soft-focus and carry no second legible word; the child's drawing on the bench stays soft and shows no readable letters; all three faces stay modelled and readable and none flattens into a shape; the goods stay unbranded with plain packaging and no product name appears; the tins stay a real stacked row and never become a repeating identical pattern; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+🔁 K18  ·  BAŞTAN  ·  referans YOK
+   VO: "Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu."
+-----
+[1 LENS]      85mm lens at f/2.0, chest height, close view onto a clipboard held at an angle, the girl's face just above it in the same plane — the edge of a trestle table cuts the lower right foreground and is sliced by the frame edge
+[2 SUBJECT]   — a girl holding a pencil dead still on a ruled list, halfway through a tick, her eyes lifted off the page and following the stack of boxes being carried past behind her
+[3 IDENTITY]  Two Turkish/Anatolian people, both fully rendered. In focus, a girl of about sixteen, hair pulled back into a low ponytail with a strand loose over one eye, a navy quilted gilet over a school shirt, a bitten thumbnail, faint pen marks on the side of her hand, her mouth slightly open and her eyes tracking to the right, off the page. Behind her a volunteer of about thirty in a grey sweatshirt with the sleeves pushed up carrying a stack of @koli boxes at chest height, his whole body smeared by motion but fully modelled — the fleece nap, the box corners and his forearms all readable through the blur, never a flat shape, his face out of frame above the top edge. Warm matte tan skin on both, low specular, never tinted green or grey.
+[4 SETTING]   The setting is @salon at working pace: a trestle table edge with a ruled clipboard, a second pencil, a chipped mug used as a paperweight on loose sheets, a half-drunk glass of tea, an open biscuit tin with two biscuits left, a roll of tape, and behind the table the lines of sorted goods and the passing traffic of the hall, and every wall surface in the hall is already dressed so no blank panel exists: wall bars along one side, a rolled tumbling mat stood on end, and the honours board turned face to the wall
+[5 LIGHT]     A clerestory shaft lands on the table; it takes the sheet of paper, the metal ferrule of the pencil, the rim of the mug and the right half of the girl's face and throat, and it reaches nothing behind the table, so the passing volunteer and his boxes stay entirely in cool indigo shade
+[7 THREE ALIVE] Three things are alive in the frame: the loose sheets lifting under the mug in the draught the volunteer drags past, a graphite crumb rolling off the paper, and the surface of the tea trembling in its glass.
+[8 DEPTH]     Depth in three layers — the trestle edge blurred and cut at the lower right edge, the pencil tip, the list and the girl's face sharp in the middle, the moving stack and its carrier dissolved into heavy motion blur while staying solid bodies.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the mug presses the loose papers flat and holds a tight dark ring beneath its base, and the biscuit tin's lid rests skewed on its rim with a thin dark line where it fails to seat.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the ruled sheet clipped to the board · the letterform is a fine pencil in a careful young hand written as the page heading, the graphite catching the light with a faint metallic sheen and the paper showing the pressure of the strokes from behind · it reads "İHTİYAÇ" — one word, seven letters, all capitals, the first a dotted capital İ and the fifth a capital Ç with its cedilla · positioned as the heading at the top of the sheet, facing the lens and clear of both the hand and the pencil · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the girl's eyes stay off the page and to the right — she is not looking at what she is writing; the ruled entries under the heading stay soft and unreadable and never resolve into legible lines; the pencil tip stays in contact with the paper and the tick stays half-finished; the moving volunteer stays a solid blurred body with readable fabric and never becomes a dark streak or a shape; the biscuit tin and the mug carry no printed brand; the tea stays in its glass and does not spill; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K19  ·  REVİZE  ·  referans: 19.png
+   VO: "Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı."
+-----
+Use this referenced image, change ONLY: the hand-written marker word on the box lid is rotated to face the lens so it reads upright as "GID" from the camera — same three thick black letters, same incomplete word with no fourth letter and the marker tip resting where the fourth would begin; at the same time the lettering on the three finished boxes at the right goes soft-focus and illegible. Keep everything else identical.
+-----
+
+
+=========================================================================
+🔁 K20  ·  BAŞTAN  ·  referans YOK
+   VO: "Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir."
+-----
+[1 LENS]      35mm lens at f/4.0, low angle across the floor, medium-wide view along the row of stations — a trestle leg and a leaning broom cut the left foreground and are sliced by the frame edge
+[2 SUBJECT]   — four people working at four separate stations down the hall, each absorbed in a different task and none of them looking at any of the others
+[3 IDENTITY]  Four Turkish/Anatolian people, all fully described and fully rendered. Nearest, a man of about thirty-five squatting on his heels taping a box shut, forearms braced on his knees, a pencil behind his ear, jaw tight. Next, a woman of about sixty standing at a table folding clothing into flat rectangles with practised speed, half-moon glasses low on her nose, a floral apron over a dark jumper. Next, a teenage boy of about fourteen sitting backwards on a gym bench sorting tins into a crate between his feet, headphone wire trailing from his collar, mouth moving on a song. Furthest, a man of about fifty in a caretaker's navy coat writing on a wall-mounted whiteboard turned away from the lens so its face is not visible, only his shoulder and half his face inside the light. Warm matte tan skin on all four, low specular, never tinted green or grey.
+[4 SETTING]   The setting is @salon fully in service: four working stations spaced down the hall, a leaning broom, a wheeled bin half full of flattened card, a stack of empty crates, two abandoned tea glasses on a bench, a coat thrown over the wall bars, a child's scooter parked against the wall, and the painted court lines running under all of it, and every wall surface in the hall is already dressed so no blank panel exists: wall bars along one side, a rolled tumbling mat stood on end, and the honours board turned face to the wall
+[5 LIGHT]     Four clerestory rectangles fall down the hall in a row, one on each station; each takes the worker's hands and the top of their task and nothing more, and the floor between the rectangles stays deep cool indigo so the four stations read as four separate lit islands
+[7 THREE ALIVE] Three things are alive in the frame: dust turning in all four shafts at once, the teenager's headphone wire swinging as he leans, and the taped box's loose tape end curling back on itself.
+[8 DEPTH]     Depth in three layers — the trestle leg and broom blurred and cut at the left edge, the two nearest workers sharp, the teenager and the caretaker softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the leaning broom presses its bristles flat against the floor with a dark line where they splay, and the parked scooter's wheels dent nothing but hold two small hard points on the timber.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: No text anywhere in this frame — four people who never look up already say that each one knows their job, and a written rota would explain what the bodies have shown. The whiteboard is deliberately turned away so its face carries nothing. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: none of the four looks at any of the others and no two of them share a glance; the whiteboard stays turned away and its face is never visible; the four light rectangles stay separate with dark floor between them and never merge into one wash; all four faces stay modelled and readable and none flattens into a shape; the four postures stay clearly different — no two bodies repeat the same pose; the tea glasses stay abandoned and nobody holds them; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K21  ·  REVİZE  ·  referans: 21.png
+   VO: "Bir işi birlikte gerçekleştirmeye iş birliği denir."
+-----
+Use this referenced image, change ONLY: the trestle table becomes one clean rigid folding table with exactly two tubular steel leg frames, one under each end, clearly attached to a single laminate top — the tangle of extra legs and the dark smear beneath the table are gone. Keep everything else identical.
+-----
+
+
+=========================================================================
+🔁 K22  ·  BAŞTAN  ·  referans YOK
+   VO: "Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür."
+-----
+[1 LENS]      24mm lens at f/5.6, low angle down the centre of the cleared lane, wide view — the corner of the last stack cuts the left foreground and is sliced by the frame edge
+[2 SUBJECT]   — a completely cleared lane of bare timber running the full length of the hall between two rows of squared-off stacks, and at the far end one woman reaching up to hang a finished list on a nail in the doorframe
+[3 IDENTITY]  One Turkish/Anatolian woman of about thirty, fully described and fully rendered: hair tied back with a pen still stuck through it, a grey hoodie with the sleeves shoved up, a smear of marker on the back of one hand, shoulders dropped with tiredness, chin lifted as she reaches for the nail, a small satisfied set to her mouth. Warm matte tan skin, low specular, never tinted green or grey; her face is modelled and readable even at this distance.
+[4 SETTING]   The setting is @salon at the end of the day: two rows of neatly squared stacks with a folded card number propped on each, the trestle tables folded and leaned against the wall bars, a broom stood upright in a corner, a bin bag knotted and set by the door, three tea glasses gathered on a bench, a coat still hanging on the wall bars, and the painted court line clean and unbroken down the cleared lane, and every wall surface in the hall is already dressed so no blank panel exists: wall bars along one side, a rolled tumbling mat stood on end, and the honours board turned face to the wall
+[5 LIGHT]     A last low clerestory light runs the length of the hall; it takes the bare floor of the cleared lane, the sheet being hung and the woman's raised forearm and face, and it reaches nothing on the flanking stacks, which stand as two deep cool indigo walls
+[7 THREE ALIVE] Three things are alive in the frame: dust settling slowly through the last shaft, the hanging sheet turning a few degrees as it takes the nail, and the upright broom easing a finger's width down the wall.
+[8 DEPTH]     Depth in three layers — the last stack corner blurred and cut at the left edge, the cleared lane sharp down the middle, the doorway and the reaching woman softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — each stack presses its weight into the timber with a firm dark seam all along its base, and the knotted bin bag slumps against the doorframe with a dark crease where it leans.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the clipboard sheet being hung on the nail at the end of the lane · the letterform is a tired pencil hand pressed hard at the bottom of a ruled page, the graphite thick and shining slightly, the paper embossed from behind by the pressure and one corner torn where it has gone onto the nail · it reads "TAMAM" — one word, five letters, all capitals · positioned at the far end of the cleared lane inside the last light patch, facing the lens and legible despite the distance · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the cleared lane stays completely empty end to end and nothing is left standing in it; the ruled entries above the final word stay soft and unreadable; the folded card numbers on the stacks stay soft-focus and no digit becomes legible; the woman's face stays modelled and readable and never flattens into a shape; the stacks stay squared and even and never collapse into a heap; the coat on the wall bars carries no printed label; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K23  ·  REVİZE  ·  referans: 23.png
+   VO: "Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı."
+-----
+Use this referenced image, change ONLY: erase the small garbled lettering printed on the thigh pocket of the front man's navy trousers and on the knee pocket of the crouching woman's trousers, leaving those pockets as plain unmarked navy fabric. Keep everything else identical — the "AFAD" on the sleeve stays exactly as it is.
+-----
+
+
+=========================================================================
+♻️  K24  ·  REVİZE  ·  referans: 24.png
+   VO: "AFAD görevlileri zarar gören binaları tek tek kontrol etti."
+-----
+Use this referenced image, change ONLY: turn the two pale chalk marks further down the street into soft illegible smudges of chalk with no letter shapes at all, so nothing there can be read as a word. Keep everything else identical — the foreground "KONTROL" stays exactly as written.
+-----
+
+
+=========================================================================
+♻️  K25  ·  REVİZE  ·  referans: 25.png
+   VO: "Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı."
+-----
+Use this referenced image, change ONLY: remove the malformed floating hand hanging in the air beneath the receiving woman's arm so nothing is there but empty background, and rest the tipped-back urn lid physically on the rim of the urn so it touches metal and no longer hangs unsupported. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K27  ·  REVİZE  ·  referans: 27.png
+   VO: "Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır."
+-----
+Use this referenced image, change ONLY: drop the water level to a shallow sheet running just over the cobbles, so all three people stand on wet stone with their boots and calves clear of the water and the wooden door lies half in the shallow channel rather than floating. Keep everything else identical — same three people, same clothes, same rope, same poses, same light.
+-----
+
+
+=========================================================================
+♻️  K30  ·  REVİZE  ·  referans: 30.png
+   VO: "Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu."
+-----
+Use this referenced image, change ONLY: remove the hanging painted shop sign and its iron bracket from the upper right wall entirely, leaving plain sunlit ashlar stone in its place with no lettering of any kind. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K35  ·  REVİZE  ·  referans: 35.png
+   VO: "Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı."
+-----
+Use this referenced image, change ONLY: every pinned card except the one under the teacher's thumb becomes a blank white card with no writing at all — no letters, no scribble, no ink marks; the card under her thumb keeps its exact text "KIRTASİYE" unchanged. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K36  ·  REVİZE  ·  referans: 36.png
+   VO: "Katkı sağlamak için büyük imkânlara sahip olmak gerekmez."
+-----
+Use this referenced image, change ONLY: the girl's expression — her eyes narrow to a normal soft gaze, her eyebrows come down level and her mouth closes into a thoughtful, slightly pressed line, so she reads as quietly deciding rather than shocked or alarmed. Keep her pose, her arms around the pencil case and everything else identical.
+-----
+
+
+=========================================================================
+♻️  K38  ·  REVİZE  ·  referans: 38.png
+   VO: "Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir."
+-----
+Use this referenced image, change ONLY: the girl's expression — her eyes relax to a normal open gaze, her eyebrows come down out of the worried arch and her mouth softens into a quiet almost-smile, so she reads as watching hopefully whether the sapling will hold rather than frightened. Keep her pose, her hovering hand and everything else identical.
+-----
+
+
+=========================================================================
+♻️  K39  ·  REVİZE  ·  referans: 39.png
+   VO: "Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi."
+-----
+Use this referenced image, change ONLY: the framed poster on the wall becomes a completely blank sheet of paper with no letters or words of any kind on it, and the blackboard behind becomes an evenly half-rubbed grey chalk smear with no readable number, digit or letter surviving. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K40  ·  REVİZE  ·  referans: 40.png
+   VO: "Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler."
+-----
+Use this referenced image, change ONLY: the printed title on the cover the boy is pressing is rotated so it reads the right way up toward the camera as "SOSYAL BİLGİLER", and the second warped book in the right foreground loses its printed title completely and becomes a plain unmarked cover. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K42  ·  REVİZE  ·  referans: 42.png
+   VO: "Okul yönetimi ve muhtarlıkla iş birliği kurdular."
+-----
+Use this referenced image, change ONLY: the stamped impression on the paper is rotated so its word "MUHTARLIK" reads the right way up toward the camera, and the wet impression under the stamp becomes a clean crisp violet ring with slightly ragged worn letterforms instead of dripping running ink — no ink drips, runs or pools anywhere on the sheet. Keep everything else identical.
+-----
+
+
+=========================================================================
+🔁 K43  ·  BAŞTAN  ·  referans YOK
+   VO: "Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı."
+-----
+[1 LENS]      85mm lens at f/2.0, chest height, medium-close view on the handover taking the boy's whole upper body and the adult's jaw and hands — a classroom doorframe cuts the left foreground and is sliced by the frame edge
+[2 SUBJECT]   — @koli held between two pairs of hands at the moment of transfer, the adult fingers already loosening while the boy takes the weight and swings a knee up under the box to help carry it
+[3 IDENTITY]  Two Turkish/Anatolian people, both fully described and fully rendered. The boy is about eleven, fifth grade, the same boy who could not close his ruined book: navy school jumper with the loose cuff thread, the graze still on his chin, cheeks flushed, mouth clamped shut with effort, eyes wide on the box rather than on the adult. The adult is a woman of about forty in a grey cardigan with a pen clipped to the neckline, only her jaw, mouth and hands inside the frame as the top edge cuts her face, her fingers spread and easing off deliberately slowly. Warm matte tan skin on both, low specular, never tinted green or grey.
+[4 SETTING]   The setting is a classroom doorway: a painted timber doorframe with a scuffed kick plate, a corridor of coat hooks behind, a desk just inside with a cleared top and a stack of exercise books, one more sealed box waiting on the floor with a folded blanket on top of it, a mop leaning in the corner, and a window at the corridor's end, and every wall surface in the room is already dressed so no blank board or poster panel exists anywhere: a pinned collage of children's paintings covers one wall, a rolled map hangs closed on its cord, and the noticeboard is layered edge to edge with overlapping papers turned so none reads
+[5 LIGHT]     Daylight comes from the classroom window past the doorway; it takes the upper face of the box, the marker word written on it, the taut knuckles of the boy's hands and his whole face, and it reaches nothing down the corridor, which stays a deep cool indigo
+[7 THREE ALIVE] Three things are alive in the frame: the box tipping a few degrees as the weight changes hands, a loose end of paper tape lifting from its seam, and a coat swinging on a hook behind.
+[8 DEPTH]     Depth in three layers — the doorframe blurred and cut at the left edge, @koli, both pairs of hands and the boy's face sharp, the corridor of hooks and the far window softening into gentle bokeh while staying fully modelled.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the waiting box on the floor presses into the tiles with a firm dark seam all along its base, and the boy's raised knee dents the box's lower face where it takes the load.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the bare kraft face of @koli · the letterform is a child's thick felt marker, the capitals large and a little uneven, the ink bled a hair into the paper fibre and darker where the tip paused at each corner — the same hand that wrote on the boxes in the gymnasium · it reads "KİTAP" — one word, five letters, all capitals, the second a dotted capital İ · positioned across the box face turned toward the lens, with both pairs of hands placed so no letter is covered · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the box stays held between both pairs of hands and is never fully released or set down in this frame; the waiting box on the floor stays soft-focus and carries no second legible word; the stack of exercise books stays closed and shows no title; the boy does not smile and does not look at the lens; both faces stay modelled and readable and neither flattens into a shape; the adult's face stays cut by the top frame edge and is never fully revealed; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K46  ·  REVİZE  ·  referans: 46.png
+   VO: "Komşular ortak alanda birlikte fidan dikip çevreyi temizledi."
+-----
+Use this referenced image, change ONLY these two things: (a) remove the curtain rod that floats horizontally in mid-air on the right together with the curtain hanging from it, and instead put a single straight wooden curtain rod upright in the old man's two hands with its foot planted in the soil against the last sapling, touching that sapling's stem — no rod, pole or cloth may hang in the air unsupported, and the two thin bent canes he currently holds are gone; (b) change the standing woman's facial expression from pained and grimacing to calm concentration, mouth closed with the lower lip caught between her teeth as she pulls the cloth knot tight. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K47  ·  REVİZE  ·  referans: 47.png
+   VO: "Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır."
+-----
+Use this referenced image, change ONLY the stacked cement sacks at the right edge: turn every sack so its printed side faces the wall and no letter, word or logo of any kind is visible on them — plain unprinted paper sacking only. Keep everything else identical.
+-----
+
+
+=========================================================================
+♻️  K49  ·  REVİZE  ·  referans: 49.png
+   VO: "Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir."
+-----
+Use this referenced image, change ONLY the tea tray: lower it so it rests completely flat on the woven seat of the stool directly below it with its whole underside in contact with the seat, and put both of the woman's hands on the tray rim with all fingers clearly visible and both arms ending in a hand — nothing may hover in the air. Keep everything else identical.
+-----
+
+
+=========================================================================
+🔁 K51  ·  BAŞTAN  ·  referans YOK
+   VO: "Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir."
+-----
+[1 LENS]      85mm lens at f/2.8, low angle at trunk height, medium view taking both trunks and the child between them — the exposed root of the old tree cuts the lower foreground and is sliced by the frame edge
+[2 SUBJECT]   — the thick mottled trunk of the mature plane tree and, a pace away, the pencil-thin trunk of the newly planted sapling carrying the same bark pattern at a fraction of the scale, with a girl standing back-to-back against the sapling to compare heights
+[3 IDENTITY]  One Turkish/Anatolian girl of about eight, fully described and fully rendered: two short plaits, a purple puffer jacket unzipped over a school jumper, one hand flat on top of her own head measuring across to the sapling's tip, chin tucked, eyes rolled up trying to see her own hand, mouth pursed in mock seriousness. Warm matte tan skin, low specular, never tinted green or grey; her face is modelled and readable.
+[4 SETTING]   The setting is the corner of @sokak: the old plane tree with its roots lifting the dry paving, the young sapling in its circle of turned earth with its cloth tie and curtain-rod support, a scatter of dry leaves, a chalked hopscotch grid faded on the paving, a bicycle leaned against the wall, and the plastered wall running away behind
+[5 LIGHT]     A warm low evening light comes across the corner; it takes the same face of both trunks, the small paper tag hanging on the sapling and the girl's cheek and measuring hand, and it reaches nothing in the canopy above, which stays a deep cool indigo mass
+[7 THREE ALIVE] Three things are alive in the frame: a flake of old bark lifting and dropping, the sapling's stem swaying a hair against its tie, and a dry leaf scraping past her heel.
+[8 DEPTH]     Depth in three layers — the exposed root blurred and cut at the lower edge, both trunks, the tag and the girl sharp in the middle, the bicycle and the plastered wall softening into gentle bokeh.
+[9 CONTACT]   Every object rests in contact with its surface and casts a soft contact shadow — the old root presses up under the paving and each lifted sett holds a hard dark wedge along its raised edge, and the leaned bicycle's tyre flattens slightly where it meets the wall.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+TEXT: The carrier is the same small nursery tag still tied to the sapling, now weathered by a few weeks outdoors · the letterform is the same pencil hand on soft grey card, but the graphite has silvered and the card has gone soft and fibrous at the punched hole where the wire has worked at it · it reads "ÇINAR" — one word, five letters, all capitals, the first a capital Ç with its cedilla · positioned hanging at the sapling's stem in the evening light, turned toward the lens and still legible · ORIENTATION: the word reads left-to-right in normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on this one named object and on no other surface in the frame · any background sign soft-focus, Turkish or blank.
+NEGATIVE: the two trunks stay clearly different in diameter and are never matched in size; the sapling stays shorter than the girl; the faded hopscotch chalk stays illegible and shows no numbers; the bicycle carries no brand name; she does not look at the lens; her face stays modelled and readable and never flattens into a shape; NO photoreal or live-action capture and no real-human photographic skin — continuous 3D feature-animation CGI throughout; NO 2D cel shading, hard black outline or toon shader; NO hard-black shadow, no flat graphic fill; NO teal-orange grade, no desaturated look; Turkish text only, NO English signage; no franchise character, real person, logo or brand name.
+-----
+
+
+=========================================================================
+♻️  K52  ·  REVİZE  ·  referans: 52.png
+   VO: "Paylaştıkça çoğalır, dayanıştıkça güçleniriz!"
+-----
+Use this referenced image, change ONLY the hand of the girl holding the paintbrush on the right: give her one clean, correctly formed hand with four fingers and a thumb wrapped around the brush handle, each finger separate and readable. Do not touch the wall, the paint or the lettering. Keep everything else identical. ⚠ Bu edit'i verirken motoru satırlara SOKMA: "the two painted lines of text stay pixel-identical and are not repainted, re-spelled or re-rendered" cümlesini edit'e ekle. Edit satırları bozarsa dur ve kareyi TEK BAŞINA yeniden üret — bu satırlar bir kez tuttu, ikinci kez tutacağının garantisi yok.
+-----

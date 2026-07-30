@@ -1,13 +1,11 @@
 S5 — SONUÇ / KAPANIŞ · K45-K54 DENETİM + MOTION
-================================================
+Kıstas: (1) sahneyle uymuyor · (2) bozuk yazı · (3) yanlış şey. Başka hiçbir şey revize sebebi değil.
+================================================================================
+
 
 ### 45.png | K45 | VO45 "Haftalar geçti ve mahalle yeniden eski hâline döndü."
 HÜKÜM: TEMİZ
-KUSUR: Yok. Süreklilik TUTTU — K03 ile aynı kadraj: aynı ahşap kapı solda, aynı çınar gövdesi sağ önde
-kadraj kenarınca kesilmiş, aynı sarı sol cephe / pembe sağ cephe, dipteki aynı pembe blok. Su gitmiş,
-yeşil konteyner dik ve kuru. Sokak birebir tanınıyor. "ÇÖP" doğru: Ç sedilli, Ö iki noktalı, P temiz.
-Üç insan da yüzüyle okunuyor (halı silkeleyen kadın, ekmekli adam, scooter'lı çocuk); el/parmak/uzuv
-bozukluğu yok, temas gölgeleri oturmuş.
+Sahne cümleyi karşılıyor · "ÇÖP" doğru yazılmış · bozuk uzuv, yüzen nesne yok.
 
 MOTION: 5s · ekranda ~3.5s
 KAMERA NİYETİ: Kamera suyun durduğu yerden yavaşça yükselsin — yeri terk etmek iyileşmenin kendisi.
@@ -23,23 +21,16 @@ KAMERA NİYETİ: Kamera suyun durduğu yerden yavaşça yükselsin — yeri terk
 
 ### 46.png | K46 | VO46 "Komşular ortak alanda birlikte fidan dikip çevreyi temizledi."
 HÜKÜM: REVİZE
-KUSUR: İKİ gerçek kusur.
- (1) HAVADA YÜZEN NESNE — sağ orta planda uzun bir perde kornişi, iki topuzlu ucuyla, kimsenin elinde
-     olmadan havada asılı duruyor ve ondan bir perde sarkıyor. Yaşlı adam onu tutmuyor; elinde toprağa
-     saplanmış, hiçbir fidana değmeyen İKİ ince, eğri bükülmüş çubuk var (makarna gibi kıvrılmış).
-     Bu karenin tek en ağır hatası ve tam ekranda göze çarpıyor.
- (2) Bağ bağlayan kadının yüzü AĞLIYOR/acı çekiyor gibi okunuyor — kaşlar çatık, ağız çarpık.
-     Dayanışma sahnesinde yanlış duygu; "dilini dişine sıkıştırmış konsantrasyon" değil.
-Not: geri kalan her şey sağlam — süpürgeci adam, sulayan kız, el/parmak sayıları doğru, dünya tutmuş.
+KUSUR: HAVADA YÜZEN NESNE. Sağ orta planda uzun bir perde kornişi, iki topuzlu ucuyla, kimsenin
+elinde olmadan havada asılı duruyor ve ondan bir perde sarkıyor. Yaşlı adam onu tutmuyor; elinde
+toprağa saplanmış, hiçbir fidana değmeyen iki ince eğri çubuk var.
 
 REVİZE PROMPTU:
-Use this referenced image, change ONLY these two things: (a) remove the curtain rod that floats
-horizontally in mid-air on the right together with the curtain hanging from it, and instead put a
-single straight wooden curtain rod upright in the old man's two hands with its foot planted in the
-soil against the last sapling, touching that sapling's stem — no rod, pole or cloth may hang in the
-air unsupported, and the two thin bent canes he currently holds are gone; (b) change the standing
-woman's facial expression from pained and grimacing to calm concentration, mouth closed with the
-lower lip caught between her teeth as she pulls the cloth knot tight. Keep everything else identical.
+Use this referenced image, change ONLY the curtain rod that floats horizontally in mid-air on the
+right together with the curtain hanging from it: remove them both, and instead put a single straight
+wooden curtain rod upright in the old man's two hands with its foot planted in the soil against the
+last sapling and touching that sapling's stem, replacing the two thin bent canes he now holds. Nothing
+may hang or hover in the air unsupported. Keep everything else identical.
 
 MOTION: 5s · ekranda ~4.0s
 KAMERA NİYETİ: Kamera sıra boyunca sağa kayarken izleyici "kim ne getirmiş"i tek nefeste saysın.
@@ -47,26 +38,16 @@ KAMERA NİYETİ: Kamera sıra boyunca sağa kayarken izleyici "kim ne getirmiş"
 [1 DEVAM]   The kneeling woman draws the torn cloth strip tight around the sapling's stem, her knuckles whitening for a moment, then she pulls the loop closed, lets her hands fall open and sits back a hand's width to look at the knot she has just tied; further along the row the man's broom completes its stroke and the leaf litter he is pushing gathers into a taller pile at the end of the sweep; the girl tips the watering can further, the stream thickens, then she brings the can level again and the pour thins to a last string of drops.
 [2 ORTAM]   The loose end of a cloth tie already knotted on the next sapling lifts and settles on the evening air; the thin sapling stems sway a hair against their supports; steam drifts from the open thermos on the folding chair; a few swept leaves skid ahead of the broom head and stop against the kerb.
 [3 KAMERA]  Camera: a slow lateral dolly to the right, travelling along the line of planted circles at soil level and letting each different improvised support pass through frame in turn, decelerating to a stop on the old man and the last sapling, so the shot counts the households instead of describing one of them.
-[4 KİLİT]   Every support stays a different household object and each one keeps its foot in the soil and its top held or tied — nothing floats, hovers or hangs unsupported in the air at any point; the number of people stays exactly the same from first frame to last, nobody enters and nobody leaves; every face stays fully modelled with hands keeping five fingers throughout; the swept pile stays on the ground and is never cleared away.
+[4 KİLİT]   Every support stays a different household object and each one keeps its foot in the soil and its top held or tied — nothing floats, hovers or hangs unsupported in the air at any point; the number of people stays exactly the same from first frame to last, nobody enters and nobody leaves; every hand keeps five fingers and every face stays fully modelled; the swept pile stays on the ground and is never cleared away.
 [5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
 [6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 
 
 ### 47.png | K47 | VO47 "Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır."
-HÜKÜM: REVİZE (düşük öncelik — kredi kısıtlıysa bu kare olduğu gibi de gider)
-KUSUR: Sağ kenardaki çimento torbalarında BASILI YAZI var ve latin harfli anlamsız İngilizce okunuyor
-("CEMEN…", "CEMBO…"). Prompt torbaların yazısı duvara dönük olsun diyordu; dünya yasası da yalnız
-Türkçe yazıya izin veriyor. Tam ekranda seçilebilir, 1x'te lekeye düşüyor — bu yüzden düşük öncelik.
-Geri kalanı sağlam: sokak sürekliliği tuttu (aynı kapı, aynı çınar, aynı pembe cephe, arkada aynı
-konteyner), bordür taşları kasten kusurlu ve derz elle yapılmış duruyor, iki yüz de okunuyor, mala
-tutan el beş parmak, diz altındaki çuval eziliyor. Çayı tutan el yumuşak modellenmiş ama kadrajda
-küçük ve deforme değil.
-
-REVİZE PROMPTU:
-Use this referenced image, change ONLY the stacked cement sacks at the right edge: turn every sack so
-its printed side faces the wall and no letter, word or logo of any kind is visible on them — plain
-unprinted paper sacking only. Keep everything else identical.
+HÜKÜM: TEMİZ
+Sahne cümleyi karşılıyor (elle örülmüş bordür + uzatılan çay) · karede kasıtlı yazı yok · eller,
+yüzler ve temaslar sağlam.
 
 MOTION: 5s · ekranda ~4.5s  ← BU SEKANSIN KARARLI VURUŞU BURADA
 KAMERA NİYETİ: Kamera derzden başlayıp bir yay çizerek çayı ve adamı aynı kadraja kilitlesin — devre kapansın.
@@ -74,7 +55,7 @@ KAMERA NİYETİ: Kamera derzden başlayıp bir yay çizerek çayı ve adamı ayn
 [1 DEVAM]   The kneeling man drags the trowel tip the last hand's width along the fresh joint and lifts it clear, a curl of mortar dust rising off the line behind the blade; he holds still for a beat looking at what he has finished, then sits back onto his heels, wipes the blade once across his thigh and finally raises his head — and only now does he see the tea; the standing woman, who has been waiting with her arm out, tips her chin and pushes the glass a few centimetres further toward him as his eyes reach it.
 [2 ORTAM]   Steam keeps curling off the tea glass and bends as the arm moves; a fine trickle of dry sand slips down the side of the sand heap; the broom leaning on the wall shifts a hair against the plaster; loose mortar dust drifts along the top of the new kerb.
 [3 KAMERA]  Camera: a firm, decisive arc — the lens starts low and tight on the trowel in the joint, then swings up and to the right in one confident committed move, faster than a drift and cleanly braked, arriving locked off on both figures in the same frame at the exact moment he looks up, so the shot itself closes the circuit between the work and the offered tea.
-[4 KİLİT]   The new kerb blocks stay visibly uneven with thumbed imperfect joints and never straighten, align or become machined; the tea glass stays full and upright in her hand and is never spilled or handed over within the clip; no printed word appears on any cement sack; both faces stay fully modelled and both hands keep five fingers throughout; the street geometry, the plane tree and the door hold their positions.
+[4 KİLİT]   The new kerb blocks stay visibly uneven with thumbed imperfect joints and never straighten, align or become machined; the tea glass stays full and upright in her hand and is never spilled or handed over within the clip; no printed word or lettering appears anywhere in frame; both faces stay fully modelled and both hands keep five fingers throughout; the street geometry, the plane tree and the door hold their positions.
 [5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
 [6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -82,10 +63,8 @@ KAMERA NİYETİ: Kamera derzden başlayıp bir yay çizerek çayı ve adamı ayn
 
 ### 48.png | K48 | VO48 "İnsanlar arasındaki güven, empati ve sosyal bağlar güçlenir."
 HÜKÜM: TEMİZ
-KUSUR: Yok. "KOMŞUDA" doğru yazılmış — yedi harf, Ş sedilli, kareli defter kâğıdı, tükenmez kalem izi,
-yırtık kenar. Anahtar kilitte, halka aşağı sarkmış; geçen kadın kapıya bakmıyor, yüzü okunuyor,
-ekmek ve file kolunda, elleri sağlam. Kapı eşiği, fesleğen saksısı, maydanozlu file, paspas hepsi
-zemine oturmuş. Arkada yeşil konteyner görünüyor — sokak sürekliliği devam ediyor.
+"KOMŞUDA" doğru — yedi harf, Ş sedilli, kareli defter kâğıdı. Anahtar kilitte, geçen kadın bakmıyor;
+sahne cümleyi karşılıyor, bozuk uzuv ya da yüzen nesne yok.
 
 MOTION: 5s · ekranda ~4.0s
 KAMERA NİYETİ: Kamera kımıldamasın; yalnız odak bir kez sokağa gitsin ve anahtara dönsün — güven duran şeydir.
@@ -101,20 +80,14 @@ KAMERA NİYETİ: Kamera kımıldamasın; yalnız odak bir kez sokağa gitsin ve 
 
 ### 49.png | K49 | VO49 "Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir."
 HÜKÜM: REVİZE
-KUSUR: ÇAY TEPSİSİ HAVADA DURUYOR. Kadın tepsiyi hasır taburenin üstüne bırakıyor olmalı; tepsi
-taburenin epey yukarısında, hiçbir yüzeye değmeden asılı ve altından sandalye ayakları geçiyor.
-Üstelik kadının sol kolu tepsinin arkasında EL OLMADAN bitiyor — tepsiyi tek elle, kenarından
-tutuyor gibi. Bardaklardan biri de arkadaki bardağın içine giriyor. Tam ekranda ilk göze çarpan yer.
-Not (kusur değil, fikir zayıflaması): soldaki üç ahşap sandalye neredeyse aynı model — "her sandalye
-başka bir evden" fikri o kümede erimiş. Kredi harcamaya değmez, kayda geçiyorum.
-Geri kalanı iyi: sandalyeyi başında taşıyan adamın yüzü ve elleri sağlam, kasadaki çocuk sağlam,
-ampul sönük (doğru), kedi duvarda, top kaldırımda, çember eksik (doğru).
+KUSUR: HAVADA YÜZEN NESNE + GÖVDESİZ KOL. Çay tepsisi hiçbir yüzeye değmeden havada asılı duruyor;
+altından sandalye ayakları geçiyor. Kadının sol kolu tepsinin arkasında EL OLMADAN bitiyor.
 
 REVİZE PROMPTU:
 Use this referenced image, change ONLY the tea tray: lower it so it rests completely flat on the woven
 seat of the stool directly below it with its whole underside in contact with the seat, and put both of
-the woman's hands on the tray rim with all fingers clearly visible and both arms ending in a hand —
-nothing may hover in the air. Keep everything else identical.
+the woman's hands on the tray rim with all fingers clearly visible so both arms end in a hand. Nothing
+may hover in the air. Keep everything else identical.
 
 MOTION: 5s · ekranda ~3.5s
 KAMERA NİYETİ: Kamera geri çekilsin; çember kadrajın sandığından büyük çıksın.
@@ -122,29 +95,17 @@ KAMERA NİYETİ: Kamera geri çekilsin; çember kadrajın sandığından büyük
 [1 DEVAM]   The man walks the last two steps to the gap in the circle, bends his knees and swings the upturned chair down off his head in one arc, lowering it toward the paving so that by the end of the clip he is holding it at waist height about to set it on its feet; the boy hauls the milk crate two more staggering steps and lets its bottom edge scrape the stones; the woman lifts her hands clear of the tray she has just set down and straightens her back, one hand going to her hip.
 [2 ORTAM]   Steam keeps rising from the glasses on the tray and leans as she moves away from it; a shirt on the washing line above turns on its peg; the cat on the wall shifts its paws and follows the moving chair with its eyes; the unlit bulb on its wire sways a hair.
 [3 KAMERA]  Camera: a smooth dolly backwards away from the circle at a steady unhurried rate, widening the view so more and more mismatched chairs slide in from the frame edges as the shot retreats, ending in a soft settle — the frame keeps finding another chair it did not know about.
-[4 KİLİT]   Nobody sits down at any point and the circle stays visibly unfinished from first frame to last; every chair stays a different object and none turns into a matching set; the tray stays flat on the stool seat with its glasses upright and full, and no object hovers unsupported at any moment; the strung bulb stays unlit; the number of people stays exactly three, nobody enters and nobody leaves.
+[4 KİLİT]   Nobody sits down at any point and the circle stays visibly unfinished from first frame to last; the tray stays flat on the stool seat with its glasses upright and full, and no object hovers unsupported at any moment; every arm ends in a hand with five fingers; the strung bulb stays unlit; the number of people stays exactly the same, nobody enters and nobody leaves.
 [5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
 [6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 
 
 ### 50.png | K50 | VO50 "Mira o dar sokağa bir kez daha baktı."
-HÜKÜM: TEMİZ  (bir MAMİ KARARI notu var, aşağıda)
-KUSUR: Yok. **Sekansın asıl testi geçti: IŞIK ARTIK YUKARIDAN.** Alın, elmacık kemikleri ve burun
-sırtı sıcak akşam ışığını alıyor, çene altı ve boyun serin indigoda — K02'nin birebir tersi. K02'de
-ışık aşağıdan, su yansımasıydı; burada su yok. Mira aynı karakter (çiller, kaş, kâkül, kırmızı
-kapüşonlu + krem ceket + kot tulum, aynı dokuma yama), yüzü yerleşmiş, lense bakmıyor, perdeyi aynı
-yumrukla tutuyor. Kalorifer, kavanozdaki kalemler, katlı kazak, aynadaki tavan ışığı, camdaki güve —
-hepsi promptta yazdığı gibi. Sol alttaki dükkân tabelası 7x'te bile okunmayan bulanık leke, yasa
-"soft-focus" diyordu; yazı kusuru DEĞİL.
-
-⚠ MAMİ KARARI (kusur diye üretime sokmadım, sen karar ver): kadraj K02 ile *birebir aynı değil*.
-K02 odanın İÇİNDEN, dar tek kişilik; pencere kanadı solda, perde ve Mira sağda. K50 camın DIŞINDAN,
-daha geniş; perde Mira'nın solunda. Yani plan aynalanmış ve açılmış. Bunu prompt'un kendisi
-doğurdu — [1 LENS] "identical framing" derken aynı satırda "from just outside the glass" diyor,
-K02 ise içeriden çekilmişti. Kurguda K02→K50 kesildiğinde ikili yine okunuyor (aynı kız, aynı
-pencere, aynı perde jesti, ters ışık) ve beatin anlamı ışıkta taşınıyor. Birebir kadraj istiyorsan
-bu BAŞTAN'dır: kamera odanın içine alınmalı. Ben tutmayı öneriyorum.
+HÜKÜM: TEMİZ
+Sahne cümleyi karşılıyor ve beatin asıl işi tutmuş: ışık artık YUKARIDAN — alın, elmacık kemikleri
+ve burun sırtı aydınlık, çene altı serin gölgede; K02'nin aşağıdan gelen ışığının tam tersi. Karede
+yazı yok (sol alttaki dükkân tabelası 7x'te bile okunmayan bulanık leke). Bozuk uzuv, yüzen nesne yok.
 
 MOTION: 5s · ekranda ~2.5s
 KAMERA NİYETİ: Camdaki yansıma kayıp gitsin ve yüzü açsın — sokak artık camda değil, dışarıda.
@@ -160,23 +121,17 @@ KAMERA NİYETİ: Camdaki yansıma kayıp gitsin ve yüzü açsın — sokak art�
 
 ### 51.png | K51 | VO51 "Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir."
 HÜKÜM: BAŞTAN
-KUSUR: Karenin FİKRİ teslim edilmemiş — üç ayrı kırık:
- (1) FİDAN YOK. Kızın yanında yalnız yapraksız, tepesi kadraj dışına çıkan çıplak bir sırık ve ince
-     bir demir çubuk var. Ne taze gövde, ne tepe, ne tek yaprak. "Yaşlı çınar ile genç fidan aynı
-     karede" fikrinin ikinci yarısı hiç doğmamış.
- (2) İKİ GÖVDE YAN YANA DEĞİL. Yaşlı çınar kadrajın SOL ucunda, sırık SAĞ ucunda — aralarında bütün
-     sokak var. "Bir adım ötesinde" karşılaştırması kurulmuyor; kız iki gövdenin arasında değil.
- (3) YAZI YANLIŞ. Etikette "ÇINAR" değil "CIИAR/CIHAR" okunuyor — Ç'nin sedillası YOK, N harfi
-     bozuk. Bu videonun ikinci yazı kusuru.
-Ayrıca sırık kızdan UZUN — promptun "fidan kızdan kısa" kilidi ters dönmüş, dolayısıyla "boyunu
-ölçüyor" jesti hiçbir şeyi ölçmüyor; kızın da tek örgüsü var (promptta iki).
-Sokak, ışık, bisiklet, silik seksek, konteyner ve kızın modeli iyi — sorun kompozisyonda, bu yüzden
-referans-edit değil yeniden üretim.
+KUSUR: İki ayrı kıstastan da düşüyor.
+ (1) SAHNEYLE UYMUYOR — karede FİDAN YOK. Kızın yanında yalnız yapraksız, tepesi kadraj dışına
+     çıkan çıplak bir sırık ve ince bir demir çubuk var. "Yaşlı çınar ile genç fidan yan yana,
+     emek zamanla gövdeye dönüşür" cümlesinin karşılığı karede hiç doğmamış; üstelik iki gövde
+     kadrajın iki ucunda, aralarında bütün sokak var.
+ (2) BOZUK YAZI — etikette "ÇINAR" değil "CIИAR/CIHAR" okunuyor; Ç'nin sedillası yok, N harfi bozuk.
 
 YENİDEN ÜRETİMDE KİLİTLENECEK ÜÇ ŞEY (prompt aynen kalsın, şunlar sıkılsın):
  · İki gövde kadrajın ORTASINDA, birbirine bir adım mesafede, aynı ışığı alacak şekilde yan yana.
  · Fidan gerçek bir genç ağaç: parmak kalınlığında gövde, tepesinde birkaç yaprak, boyu kızın
-   omzunu geçmiyor — kız elini başının üstüne koyunca eli fidanın tepesinin ÜSTÜNDE kalıyor.
+   omzunu geçmiyor.
  · Etiket tek kelime: Ç-I-N-A-R, Ç sedilli, beş harf, büyük harf, lense dönük ve okunur.
 
 MOTION: baştan üretilecek
@@ -185,34 +140,72 @@ MOTION: baştan üretilecek
 
 ### 52.png | K52 | VO52 "Paylaştıkça çoğalır, dayanıştıkça güçleniriz!"
 HÜKÜM: REVİZE
-✅ **İKİ SATIR DA DOĞRU ÇIKTI — harf harf kontrol edildi, 8x zoom:**
-  · Üst satır: **PAYLAŞTIKÇA ÇOĞALIR** — Ş sedilli (var, teyit ettim), Ç sedilli (iki kez), Ğ breveli,
-    ÇOĞALIR'daki I noktasız (doğru). 11 + 7 harf, promptla birebir.
-  · Alt satır: **DAYANIŞTIKÇA GÜÇLENİRİZ** — Ş sedilli, Ç sedilli (iki kez), Ü çift noktalı,
-    DAYANIŞTIKÇA'daki iki I noktasız (doğru), GÜÇLENİRİZ'deki iki İ NOKTALI (doğru). 12 + 10 harf.
-  Fazladan kelime, imza, tarih, ayna görüntüsü, tekrar YOK. Satırlar hizalı, badana dokusu gerçek.
-  Videonun en yüksek yazı riski TUTMUŞ.
-KUSUR: Fırçayı tutan kızın ELİ BOZUK — parmaklar okunmuyor, pembe yumrucuklardan oluşan erimiş bir
-küme; başparmak yok. Kapanış karesinin kahraman eylemi tam da o el ve tam ekranda görünüyor.
-Diğer iki çocuğun elleri, yüzleri ve temasları sağlam; ıslak son harften inen damla var; kutu, fırça,
-kova, gazete, örtü hepsi zemine oturmuş.
+✅ **İKİ SATIR DA DOĞRU ÇIKTI — harf harf, 8x zoom ile kontrol edildi:**
+  · Üst satır **PAYLAŞTIKÇA ÇOĞALIR** — Ş sedilli, iki Ç sedilli, Ğ breveli, ÇOĞALIR'ın I'sı
+    noktasız (doğru). 11 + 7 harf.
+  · Alt satır **DAYANIŞTIKÇA GÜÇLENİRİZ** — Ş sedilli, iki Ç sedilli, Ü çift noktalı,
+    DAYANIŞTIKÇA'nın iki I'sı noktasız (doğru), GÜÇLENİRİZ'in iki İ'si NOKTALI (doğru). 12 + 10 harf.
+  Fazladan kelime, imza, tarih, tekrar YOK. Videonun en yüksek yazı riski TUTMUŞ.
+KUSUR: ERİYEN EL — fırçayı tutan kızın eli bozuk; parmaklar okunmuyor, pembe yumrucuklardan oluşan
+bir küme, başparmak yok. Kapanış karesinin kahraman eylemi tam da o el.
 
 REVİZE PROMPTU:
 Use this referenced image, change ONLY the hand of the girl holding the paintbrush on the right: give
 her one clean, correctly formed hand with four fingers and a thumb wrapped around the brush handle,
-each finger separate and readable. Do not touch the wall, the paint or the lettering. Keep everything
-else identical.
-⚠ Bu edit'i verirken motoru satırlara SOKMA: "the two painted lines of text stay pixel-identical and
-are not repainted, re-spelled or re-rendered" cümlesini edit'e ekle. Edit satırları bozarsa dur ve
-kareyi TEK BAŞINA yeniden üret — bu satırlar bir kez tuttu, ikinci kez tutacağının garantisi yok.
+each finger separate and readable. The two painted lines of text stay pixel-identical and are not
+repainted, re-spelled or re-rendered. Keep everything else identical.
+⚠ Edit satırları bozarsa dur ve kareyi TEK BAŞINA yeniden üret — satırlar bir kez tuttu, ikinci kez
+tutacağının garantisi yok.
 
 MOTION: 5s · ekranda ~3.5s
-KAMERA NİYETİ: Kamera hiç kımıldamasın — yazı bir kez doğru çıktı, onu riske atmıyoruz; olay damla.
+KAMERA NİYETİ: Kamera hiç kımıldamasın — yazı bir kez doğru çıktı, riske atmıyoruz; olay damla.
 -----
 [1 DEVAM]   The single bead of whitewash hanging at the foot of the last wet letter swells, releases and runs down the plaster in one slow uneven line, slowing as the wall's tooth catches it, and comes to a full stop a hand's width below the letter where it thickens into a small drop and stays; the girl with the brush holds her lifted brush still and watches it go, then lowers the brush a little; the crouched boy underneath follows the drip down with his eyes and his grin widens as it stops.
 [2 ORTAM]   A loose corner of the folded dust sheet lifts and settles; a second bead of whitewash gathers at the tip of the raised bristles and hangs without falling; the raking evening light creeps a fraction warmer along the wall face.
 [3 KAMERA]  Camera: completely locked off with no move whatsoever, staying exactly parallel to the wall so the two painted lines never change their angle, size or plane — the drip is the whole event and the frame simply lets it happen.
 [4 KİLİT]   The two painted lines stay exactly as they are for every frame of the clip — PAYLAŞTIKÇA ÇOĞALIR above and DAYANIŞTIKÇA GÜÇLENİRİZ below — and they do NOT morph, re-spell, wobble, shift, extend, double or gain any new word, letter or mark; every Turkish diacritic stays in place; no new lettering is painted during the clip; exactly three children from first frame to last, nobody enters and nobody leaves; every hand stays a correctly formed hand with five fingers.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 53.png | K53 | VO53 "Peki sen çevrende hangi ihtiyaç için bir proje hazırlayabilirsin?"
+HÜKÜM: TEMİZ
+Soru karede duruyor: pano dolu, çocuğun elindeki kart tamamen BOŞ, kalem kâğıda değmiyor. Panodaki
+kartların yazısı 5x'te bile çözülmeyen bulanık satır dokusu — okunur kelime yok, uydurma İngilizce
+yok. Eller ve yüz sağlam, eriyen ya da yüzen bir şey yok.
+
+MOTION: 5s · ekranda ~4.0s
+KAMERA NİYETİ: Boş kart ile boş raptiye arasındaki mesafe kapansın — soru izleyiciye geçsin.
+-----
+[1 DEVAM]   The child's eyes travel from the single empty pin across to the blank card in her own hand and stay there; her fingers tighten a little on the card's edge and she lifts it a few centimetres higher, and the pencil comes up with it and hovers just clear of the paper without ever touching it; her teeth release her lower lip and her mouth closes into a decided line, so the clip ends on a child who has chosen to write rather than one who is hesitating.
+[2 ORTAM]   The corner of the blank card lifts a hair in the corridor draught; dust turns slowly in the band of late light coming from the glazed door; one of the two remaining bags swings gently on its hook; the pinned cards on the board breathe at their bottom edges.
+[3 KAMERA]  Camera: a slow, quiet dolly forward and a fraction to the left along the corridor, closing the gap between the blank card and the empty pin so the two of them end up together in the middle of frame — the shot puts the question and the empty place in the same breath.
+[4 KİLİT]   The held card stays absolutely blank for every frame and not one mark, line or letter ever appears on it; the pencil never touches the card; the pinned cards on the board stay soft and unreadable and never resolve into legible words; the empty pin stays empty and nothing is pinned to it; the child never looks at the lens; her hands stay fully modelled with five fingers.
+[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### 54.png | K54 | VO54 "Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!"
+HÜKÜM: REVİZE
+KUSUR: BOZUK YAZI — arkadaki duvarda koyu harflerle UYDURMA İNGİLİZCE okunuyor: "TURKISH IME YED…"
+ve altında ikinci bir satır. 1x'te bile seçiliyor. O duvarda ya K52'nin Türkçe sloganı soluk bir
+ritim olarak kalmalı ya da hiçbir harf olmamalı; "TURKISH" yazan bir duvar dersin kapanışını
+İngilizceye çeviriyor.
+
+REVİZE PROMPTU:
+Use this referenced image, change ONLY the wall behind the circle: remove every letter and word from
+it so it carries no lettering at all — plain whitewashed plaster with only faint uneven paint marks,
+no readable text of any kind and absolutely no English. Keep everything else identical.
+
+MOTION: 5s · ekranda ~5.0s
+KAMERA NİYETİ: Kamera sakin kalsın ve boş sandalyeyi usulca ortaya alsın — veda oradan yapılıyor.
+-----
+[1 DEVAM]   The man in the waistcoat finishes his laugh, his head coming back down, and he lifts his tea glass and takes a sip, then rests it on his knee; the old man with the tray leans a little further toward the woman beside him so she can lift a glass off it, and by the end of the clip one glass has left the tray and is in her hand; the teenage boy shifts his weight on his chair and turns his head an inch further into the circle to keep listening.
+[2 ORTAM]   Steam keeps lifting from the full glass waiting by the empty chair; the strung bulb above swings a hair on its wire so every shadow in the circle moves together, once, slowly; a moth circles under the bulb and passes across it; the cat under one of the chairs stretches a paw and settles again.
+[3 KAMERA]  Camera: an almost imperceptible slow lateral settle of a few centimetres and a breath of a rise, calm and unhurried with no acceleration anywhere, ending with the empty chair sitting dead centre of frame and holding there — the shot quietly hands the seat over.
+[4 KİLİT]   The empty chair stays completely empty for every frame and nobody sits in it, leans on it or moves it; the full tea glass beside it stays standing and is never picked up or spilled; the number of people in the circle stays exactly the same from first frame to last — nobody enters and nobody leaves and none of them looks at the lens; the wall behind carries no readable lettering at any moment and no word ever forms on it; every person stays a solid rendered body with visible cloth and nobody flattens into a cut-out.
 [5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
 [6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
