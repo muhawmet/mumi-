@@ -534,28 +534,68 @@ sette Mami hükmü *"hiç beğenmedim"*, paragraf formatıyla yazılan Eşeyli a
 ### K<n> | <süre>s · ekranda ~<x>s | VO "<Türkçe cümle>"
 KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta GİRMEZ>
 -----
-<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 210-250 kelime. İç sırası:>
-  ⚠ Sayı ölçüldü: altın standardın kendisi 224-233 kelime (Eşeyli 01/08/33.txt).
-    Daha kısa hedef koymak zorunlu kilitleri (dönem · yazı · sabit kuyruk ~60 kelime)
-    kesmeye zorluyor — kilit kesilmez, paragraf kanon aralığında kalır.
-  1 KAMERA      nereden başlıyor · nasıl hareket ediyor · nereye oturuyor ("eases to rest")
-  2 İNSANIN YAYI  zaman kelimeleriyle: "At first… then… half a second later… By the end…"
-                  — klibin SONU BAŞINDAN farklı olmalı ve fark bu cümlelerde yazılı olmalı
-  3 AMBİYANS    tek cümlede, karede ZATEN duran 2-3 öğe (buhar büker, toz döner, perde nefes alır)
-  4 KİLİTLER    cümle olarak ve OLUMLU — "the stem stays rooted in the glass and the water line
-                stays level; the stem is never lifted out, tipped or handed over"
-  5 SABİT KUYRUK  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
-                  No whip-pan, no shake, no snap-zoom, no camera warp.
+<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 210-260 kelime. Zorunlu iç sırası:>
+  1 ZATEN OLAN İŞ   klip devam eden bir işin ORTASINDA açılır:
+                    "The clip opens with @efe still hunting: his fingertips keep making
+                    tiny turns on the focus knob…" — durgun kare + tek olay DEĞİL.
+  2 SEBEPLİ TEK VURUŞ  bir şey o işi bitirir ("Then the image finds him — at that instant…")
+                    ve o an insanın yüzü değişir. Sebep yazılır; vuruş sebebe bağlanır.
+  3 ADI KONULMUŞ YAY  klip DUYGUSUNU cümle olarak söyler:
+                    "he begins comparing and ends having decided" · "the row begins alert
+                    and ends with one of them asleep under her" · "he works it out".
+                    Bu cümle yoksa klip mekaniktir — ruh tam olarak buradadır.
+  4 AMBİYANS        tek cümlede, karede ZATEN duran 2-3 öğe.
+  5 Camera:         KENDİ CÜMLESİ, "Camera:" ile açılır, paragrafın SONUNA yakın durur.
+                    Nereden başlar · neyi sıyırır · nerede tam durur.
+  6 KİLİT           **TEK cümle, en çok ~45 kelime.** O karenin gerçek bozulma yolu.
+  7 SABİT KUYRUK    Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+                    No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 DURUM: temiz
 REVİZE:
 ```
 
-Yukarıdaki beş numara **paragrafın içinde bulunması gereken şeylerin listesidir**, prompta
-yazılacak etiket DEĞİLDİR. Numara, köşeli parantez ya da satır başı madde motora gitmez.
+Yukarıdaki yedi numara **paragrafın içinde bulunması gereken şeylerin listesidir**, prompta
+yazılacak etiket DEĞİLDİR. Numara, köşeli parantez ya da satır başı madde motora gitmez —
+tek istisna `Camera:` sözcüğü, o altın standartta 28/50 dosyada aynen böyle geçiyor.
+
+🔴 **ÖLÇÜLEN ÜÇ KUSUR — Mami hükmü: *"hareketler çok ai, hiç duygu yok, ruh yok, aptalca ani
+hareketler"* (2026-07-30, Mira K01-K21 basıldı).** Altın standart 50 dosya ile kusurlu 54
+dosya sayıldı; fark şans değil, üç yapısal madde:
+
+| | Eşeyli (altın) | Mira (Mami reddetti) | hüküm |
+|---|---|---|---|
+| `Camera:` ayrı cümle, sonda | 28/50 | **0/54** | kamera paragrafın başına kaynatılınca gövde donuyor |
+| `@tag` ile kimlik | 24/50 | **6/54** | tagsız insan = motorun uydurduğu yüz = plastik |
+| `"half a second later"` | 1/50 | **16/54** | **ANİ HAREKETİN SEBEBİ BU** |
+| `"At first…"` iskeleti | 18/50 | **52/54** | aynı metronom 54 kez = tarif değil takvim |
+
+1. **`half a second later` YASAK.** Motor bunu takvim sanıyor ve o anda **snap** yapıyor.
+   Yerine sebep bağlacı: `Then… — at that instant…` · `when he arrives there` · `Finally`.
+   Hiçbir yere saniye yazılmaz; sıra sebeple kurulur.
+2. **Kilit bütçesi ~45 kelime.** Mira dosyalarında yasak cümleleri paragrafın ~%35'iydi.
+   Motora izin verilen alan kalmayınca **kendi hareketini uyduruyor.** Kısa kilit = sakin klip.
+3. **Tagsız insana motion yazılmaz.** Karede tekrar eden insan varsa `@tag`, yoksa **kimlik
+   olumlu ve tek cümlede sabitlenir** ("the same broad-faced man in the petrol-blue coat").
+   "the woman", "the front man" yazan klipte motor her frame'de yeni yüz çiziyor.
 
 **Teslim şekli:** klip başına ayrı dosya — `<Ad>/MOTION/01.txt … 54.txt`. Tek büyük dosya
 Mami'nin akışını bozuyor; o klip klip kopyalıyor.
+
+### 3ø. KLING 3.0'IN YAPAMADIĞI ÜÇ ŞEY (Mami, 2026-07-30 — kredi ölçümüyle)
+
+> *"Hiçbir kalemle yazı işini beceremiyor Kling 3.0, o yüzden yazmasın, karakterler
+> konuşmasın, yazı da sıçıp batırıyor hep."*
+
+- **KİMSE YAZMAZ.** Kalem, kurşun kalem, tebeşir, fırça — hiçbir el harf ÜRETMEZ. Karede
+  yazan bir el varsa motion'da o el **durur**: kalem kâğıda değmiş hâlde kalır ya da elden
+  bırakılmıştır. `writes`, `traces`, `signs`, `the tip moves along` → hepsi yasak fiil.
+- **KİMSE KONUŞMAZ.** Sabit kuyruk zaten yazıyor ama sebebi burası: ağzı oynayan Kling
+  klibi yüz morph'u üretiyor. Gülümseme serbest, **çene açılması yasak.**
+- **KAMERA YAZIYA YAKLAŞMAZ.** Yazı taşıyan kareye push-in, dolly-in ya da yazıya rack
+  focus YOK. Mesafe klip boyunca sabit kalır; kilit hem yaklaşmayı hem okunur hâle gelmeyi
+  ayrı ayrı yasaklar. Karedeki yazı bozuksa bu kilit onu **kurtarır** (Mira K22 böyle
+  kullanıldı: "TANAN" yazıyor, kamera hiç yaklaşmadı, kare kabul edildi).
 
 ### 3a. KLİPTE BİR ŞEY DEĞİŞMELİ — motion'ın §11'i
 
@@ -585,8 +625,17 @@ hiçbir yay taşımaz. Bağlayıcı hale getirildi:
    el-ayak temaslı ince motor iş (çorap çekmek, bağcık bağlamak) · yürüyüşe başlamak ·
    bir nesneyi alıp başka yere koymak. Bunlar beat değil **animasyondur** ve i2v gövdeyi
    yeniden eklemlendirmeye zorlandığında morph eder.
-   ⚠ Ve **iki dönüşüm aynı karede olmaz**: gövde değişiyorsa kamera durur, kamera
-   hareket ediyorsa gövde durur. K01'de ikisi birdendi — kusur buradaydı.
+   🔴 **DÜZELTME (2026-07-30, ölçümle çürütüldü).** Buraya bir kez *"iki dönüşüm aynı karede
+   olmaz: gövde değişiyorsa kamera durur"* yazıldı. **YANLIŞTI ve 54 klibi ölü yaptı.** Altın
+   standart tam tersini yapıyor: `35.txt` Efe başını çevirirken kamera masanın çevresinde ark
+   çiziyor · `41.txt` yavru dönüp annesinin böğrüne gömülürken kamera tüy hizasında kayıyor ·
+   `12.txt` parmaklar düğmeyi çevirirken dolly masa boyunca hızlanıyor. Kamera ve gövde
+   **aynı anda oynar** — altın standartta zaten böyle.
+   **Gerçek sınır şudur:** gövde **TEK sürekli doğal jest** yapar (baş çevirme, çeneyi indirme,
+   esneyip başını gömme, çeken kolun gerilip gevşemesi). Yasak olan hareket değil
+   **yeniden eklemlendirmedir** — motorun gövdeyi baştan kurmak zorunda kalması.
+   Gövdeyi tümden dondurmak da kusurdur: 5 saniye boyunca yalnız kaş oynayan klipte motor
+   boşluğu kendi uyduruyor ve **"aptalca ani hareket"** oradan doğuyor.
 
    **Negatif bunu kurtarmaz.** Kusur pozitif taraftadır: motora yapamayacağı bir şey
    söylenmiştir. Sahneye özel negatif doğru yazılmış olsa da klip ölür.
