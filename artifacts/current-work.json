@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "54 start frame yazıldı (S1-S5), SESLENDIRME 54 cümle/3610 karakter, REFERANSLAR (6 ref), SUNO hazır. prompt-lint: gerçek kırmızı 0 — kalan 18 kırmızı insansız karelerdeki yanlış alarm, K52 heceleme düzeltildi.",
-  "nextAction": "Mami @sokak + @salon + @afad_yelek referanslarını bassın, sonra INTRO (K01-K09) — INTRO hiç referans beklemiyor",
+  "lastCompleted": "İKİ PROJE: (1) Mira 5.1.3 kit TAMAM — 54 kare basıldı+revize edildi, MOTION 54/54 tek-paragraf formatında (MOTION/01-54.txt), seslendirme tek blok, SUNO, revize tek dosya. EDIT-PLAN bilerek yapılmadı (Mami: motion üretilmeden yapılmaz). Gerçek vo.mp3 = 4:11. (2) Efe 6.1.3 — seslendirme 57 cümle, referans envanteri (5 basılacak ref), K01-K22 yazıldı. Yasaya §2d (30 revizenin 8 dersi) + §3 motion tek-paragraf + §3a gövde-değişimi yasağı girdi.",
+  "nextAction": "Altı ajanın çıktısını topla: 16 motion onarımı (gövde fiili → ışık/bakış) ve Efe K23-K57. Sonra prompt-lint + gövde-fiili taraması. Bekleyen: VO nefes kırpma script'i (ölçüm hazır: 101 boşluk, 54.7 sn, üç kademe, 19 sn kazanç)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-30T07:20:07.211Z",
+  "updatedAt": "2026-07-30T11:28:06.401Z",
   "updatedBy": "claude",
-  "baseCommit": "577fe9c"
+  "baseCommit": "86214c8"
 }

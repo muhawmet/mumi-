@@ -572,6 +572,24 @@ hiçbir yay taşımaz. Bağlayıcı hale getirildi:
 1. **Klibin SONU BAŞINDAN FARKLI OLMALI ve fark YAZILMALI.** "Yürüyor" değişim değil,
    **"varıyor"** değişimdir. "Bakıyor" değil, **"gördüğü an yüzü değişiyor"**. Klip bir
    durumdan başlar, başka bir durumda biter; prompt ikisini de adlandırır.
+
+   🔴 **AMA DEĞİŞİM GÖVDEDE OLMAZ — bu madde bir kez yanlış okundu ve klip bok gibi çıktı**
+   (Mami, 2026-07-30, K01). Ölçüm, altın standardın üç kanon dosyasında aynı desen:
+   **büyük değişim IŞIĞA ya da NESNEYE verilir, insanda değişen tek şey bakış, kaş, göz
+   kapağı ya da küçük bir baş hareketidir.**
+   · `08.txt` → ışık bir kez şişip geri çekilir · *"his eyes lift off the light"*
+   · `33.txt` → dört ışık eşitlenir · *"his gaze travels along the row… one small closed-lip nod"*
+   · `21.txt` → ışık kelime boyunca ilerler · *"his gaze rises, his eyes widen, his brows lift"*
+
+   **YASAK — 5 saniyede istenmez:** oturmaktan doğrulmak · ayağa kalkmak · giysi giymek ·
+   el-ayak temaslı ince motor iş (çorap çekmek, bağcık bağlamak) · yürüyüşe başlamak ·
+   bir nesneyi alıp başka yere koymak. Bunlar beat değil **animasyondur** ve i2v gövdeyi
+   yeniden eklemlendirmeye zorlandığında morph eder.
+   ⚠ Ve **iki dönüşüm aynı karede olmaz**: gövde değişiyorsa kamera durur, kamera
+   hareket ediyorsa gövde durur. K01'de ikisi birdendi — kusur buradaydı.
+
+   **Negatif bunu kurtarmaz.** Kusur pozitif taraftadır: motora yapamayacağı bir şey
+   söylenmiştir. Sahneye özel negatif doğru yazılmış olsa da klip ölür.
 2. **Zaman omurgası zorunlu.** Tek yay üç parçalıdır ve sırası yazılır: *başlangıç durumu →
    dönüm (tek olay) → yerleşme*. "Önce/sonra/o anda" kelimeleri kullanılır. Aynı anda olan
    dört ambiyans hareketi bir yay değildir.
