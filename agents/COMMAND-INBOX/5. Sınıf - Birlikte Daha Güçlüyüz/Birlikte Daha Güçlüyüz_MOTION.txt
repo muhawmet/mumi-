@@ -4,13 +4,11 @@ BİRLİKTE DAHA GÜÇLÜYÜZ — MOTION (Kling 3.0 · i2v) · TEK DOSYA
 BİÇİM: tek akıcı paragraf (altın standart Eşeyli formatı). Slot YOK.
 KULLANIM: her bloğun ----- arası paragrafını kopyala, o karenin görselini
 (Resimler/<n>.png) referans ver, 5 saniye seç, üret.
-Başlık ve KAMERA NİYETİ satırı SENİN İÇİN — motora gitmez.
 Klip başına ayrı dosya da var: MOTION/01.txt … 54.txt
 =========================================================================
 
 
-### K01 | 5s · ekranda ~4,5s | VO "Bu Mira; mahallenin dar bir sokağında, üçüncü kattaki evde oturuyor."
-KAMERA NİYETİ: Yataktan doğrulur gibi kalkan kreyn — ön plandaki yorgan aşağı çöksün, karşı balkon arkasında açılsın; kamera onun oturur göz hizasında dursun ve bir daha kımıldamasın.
+### K01  ·  1.png  ·  5s clip  ·  VO1: "Bu Mira; mahallenin dar bir sokağında, üçüncü kattaki evde oturuyor."
 -----
 The clip opens low behind the rumpled duvet and the camera cranes up a hand's width, square to the wall, so the near pillow sinks out of frame and the opposite balcony opens behind her, the rise resting at her seated eye level as her foot reaches the floor. At first she is folded forward on the bed edge, both hands around her raised foot, her head already turned to the window. Then one short tug takes the sock over her heel. Half a second later her weight shifts back, that foot finds the floorboard and the mattress rises where she leaves it. By the end she sits upright, both feet down, hands on her knees, ready where she began half-dressed and folded over. The white sheet on the opposite balcony swings once and hangs slower, the curtain breathes inward, the lamp's warm pool creeps across the duvet. Exactly two people from first frame to last, the girl and the neighbour, who keeps working that same sheet facing her washing. The buzzer panel on the right wall stays a rigid plate at the same angle and its name strip keeps the characters it already has; the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -18,8 +16,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K02 | 5s · ekranda ~4,0s | VO "O sabah perdesini açtı ve sokağı sular altında buldu."
-KAMERA NİYETİ: Camın düzleminde yana kayan kamera, ıslak pervazı bir silecek gibi geçirip Mira'yı temize çıkarsın; alnı cama değdiği anda kamera da tam dursun.
+### K02  ·  2.png  ·  5s clip  ·  VO2: "O sabah perdesini açtı ve sokağı sular altında buldu."
 -----
 The camera dollies slowly to the right along the plane of the window, the beaded wet frame in the foreground sliding across like a wipe as the parallax opens between the glass and her face; the move decelerates and comes to a full stop on the beat her forehead reaches the pane. At first she holds the heavy curtain bunched in one fist, stopped mid-look with her breath held. Then her fingers open and release the fabric. Half a second later she leans in and down until her forehead is a hand's width from the wet glass. By the end she has settled there and a small pale patch of breath-fog sits on the pane that was not there when the clip began. The released curtain swings once against the frame and its hem keeps trembling, a bead inside the pane crawls down through the new fog, her jacket collar settles a half-beat after her shoulder. The rain beads stay separate rigid droplets and hold their own shapes rather than smearing into streaks of light. The book on the radiator keeps a blank cover and spine. The dark hall doorway behind her stays empty, her hair keeps the same black chin-length cut, and she is the only person in the shot from first frame to last. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -27,8 +24,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K03 | 5s · ekranda ~4,0s | VO "Gece yağan şiddetli yağmur alt sokakları tamamen doldurmuştu."
-KAMERA NİYETİ: Kamera su hizasında neredeyse hiç kımıldamasın — hareketi konteynerin kendisi yapsın; ÇÖP yazısı hep düzlemde, sensöre paralel kalsın.
+### K03  ·  3.png  ·  5s clip  ·  VO3: "Gece yağan şiddetli yağmur alt sokakları tamamen doldurmuştu."
 -----
 The camera sits at water level and barely moves — a creep forward of no more than a hand's width across the whole clip, holding the bin's painted flank exactly parallel to the sensor so the word never skews, and easing to a stop before the ripple reaches the lower edge. At first the green bin sits tilted and completely still, half sunk. Then the water takes it and it settles a few centimetres deeper. Half a second later it begins a slow rotation around its own submerged corner, turning perhaps fifteen degrees. By the end it rests at a visibly new angle with a fresh raised collar of displaced water standing all around its rim. A drip falls from the balcony downpipe and lands once, pushing a widening ring across the mirror so the inverted façades bend and re-form behind it, and the red crate further down the street turns in the same current. The word on the bin stays exactly ÇÖP in the same stencilled paint, the same size and the same place; the lettering does not morph, re-spell, wobble or gain any new word, and none forms in its mirrored reflection either. The bin stays a rigid solid polyethylene body with no deform, melt or morph and no pass-through with the water, and the street stays empty of people. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -36,8 +32,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K04 | 5s · ekranda ~4,2s | VO "Belediye ekipleri çamurla kaplanan yolu temizlemeye çoktan başlamıştı."
-KAMERA NİYETİ: Kamera emme ağzının etrafında alçak bir yay çizsin — ön plandaki kasa kadrajdan kaysın, çukur ortada kalsın, adam yayın sonunda profilden okunur hâle gelsin.
+### K04  ·  4.png  ·  5s clip  ·  VO4: "Belediye ekipleri çamurla kaplanan yolu temizlemeye çoktan başlamıştı."
 -----
 The camera arcs right around the hose mouth, starting almost at the waterline and rising a few centimetres as it travels, so the green crate slides out of the left of frame, the funnel stays pinned at centre, and the arc settles as the worker's head turns into profile. At first the water above the hose mouth is only dimpled and the man is bent over the pump with his back to us. Then the dimple opens into a slow turning funnel and the single floating leaf is drawn around its rim and pulled under. Half a second later he straightens and turns his head to read the waterline on the wall. By the end his profile is readable where only his back was before, and the surface has closed smoothly over the hose mouth. The delivery line twitches once where the pressure travels through it, the crate nudges against its rope and stops, a sheet of silty water slides off the kerb. The hose, its galvanised collar, the pump housing and the crate stay rigid solids with no deform, melt, morph or merge and no pass-through between hose and water. Exactly one person is in the frame from first to last. The leaf stays one single leaf, the hi-vis vest keeps its bare reflective bands and gains no badge or brand name, and the funnel stays a smooth vortex rather than breaking into foam. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -45,8 +40,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K05 | 5s · ekranda ~4,3s | VO "Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu."
-KAMERA NİYETİ: KARARLI VURUŞ — kamera neredeyse kilitli dursun; tek ani şey ıslak kolinin çökmesi olsun, sonda odak kadından hasara geçsin.
+### K05  ·  5.png  ·  5s clip  ·  VO5: "Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu."
 -----
 The camera holds almost locked at kerb height with only a few centimetres of drift — the stillness is deliberate, so the collapse is the only sudden thing in the shot — and in the last second a gentle rack focus travels off the old woman and onto the caved box. At first the old woman in the brown coat stands at the kerb with her head bowed over the wet stone, and the man in the dark doorway behind her has his arms folded hard. Then, in one sharp beat, the soaked lid of the cardboard box gives all at once and the whole top caves in a single quick collapse. Half a second later her chin comes down another degree and his shoulders drop with it. By the end she stands lower and stiller than she began and the box sits visibly more caved in than in the first frame. Water keeps running off the lower corner of the hanging rug in one thin thread that widens the dark ring on the stone, and a page edge curls upward. The word on the box stays exactly KİTAP in the same bled marker, the same size and the same place; the lettering does not morph, re-spell, wobble or gain any new word. Exactly two people from first frame to last and neither looks at the lens. The hanging rug keeps its pattern and length and the polished chair stays a rigid solid. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -54,8 +48,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K06 | 5s · ekranda ~4,5s | VO "Mira dışarı çıktı ve fark etti: kimse tek başına değildi."
-KAMERA NİYETİ: Kamera sokaktan eşiğe doğru alçak bir kaydırmayla yaklaşsın ve tam Mira ilk adımını atarken dursun — durmakla katılmak arasındaki geçiş kamerada da bitsin.
+### K06  ·  6.png  ·  5s clip  ·  VO6: "Mira dışarı çıktı ve fark etti: kimse tek başına değildi."
 -----
 The camera dollies in low from the street toward the doorway, the heavy timber door sliding across the right foreground as parallax opens, rising slightly to meet her eyeline and stopping completely on the beat her foot lands on the lower step. At first she holds the doorframe with one flat hand, her weight back on her heels, watching the workers without moving. Then her fingers slide off the timber and her weight tips forward onto the front foot. Half a second later she takes the first step down off the stone threshold. By the end she stands one step lower and out of the doorway, her hand no longer on the frame, still looking down the street. A drip falls from the lintel onto the wet step behind her heel, the coiled grey hose settles a finger's width, and far down the lane dust lifts ahead of the sweeper's broom. Her hair keeps exactly the same brown, wavy, chin-length cut for every frame. The same four workers stay in the background from first frame to last, nobody new appears and nobody walks out of frame, and each keeps a solid modelled body as the camera moves. The timber door and the stacked crates stay rigid solids, and no text appears anywhere in the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -63,8 +56,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K07 | 5s · ekranda ~4,5s | VO "İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir."
-KAMERA NİYETİ: KARARLI VURUŞ — kamera hamleyle birlikte hızlanıp yükselsin, halı geri çökünce onunla dursun, sonra kımıldamayan uzak uca yatsın. Başarısızlığı kamera da yaşasın.
+### K07  ·  7.png  ·  5s clip  ·  VO7: "İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir."
 -----
 From just above the water film the camera rises with the haul — a short, fast lift of about a foot that accelerates on her pull and stops dead the instant the rug drops, then tilts down the rug toward the far end still lying in the water. At first she has the near end lifted a hand's width, water sheeting out of the fold, her arms locked and her eyes fixed on the far end. Then she hauls once, hard and fast — the near end comes up another two hands' width in one accelerating pull, the falling water thickening into a heavy rope. Then the weight beats her: her forearms give, the end drops back almost to where it started and slaps the water flat, her shoulders coming down with it. By the end her jaw is set and the rug lies lower than it did — she ends having tried and failed where she began still trying. The falling water swells from a stream to a rope and back to a trickle, the standing water is punched into rings that widen and flatten. Exactly one person is in the frame from first to last and no second pair of hands enters from any edge. The far end of the rug stays exactly where it lies, with the same outline and the same submerged fold. Her two hands keep the same fingers on the same rug edge throughout; the grip does not change. The bucket, the broom and the sacks stay rigid solids. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -72,8 +64,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K08 | 5s · ekranda ~5,0s | VO "Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar."
-KAMERA NİYETİ: Kamera taşa doğru insin ve halının ıslak zemindeki yansımasını kadraja alsın — iki uçtaki iki kişi tek düzlemde birleşsin; halıya paralel kalsın ki desen çarpılmasın.
+### K08  ·  8.png  ·  5s clip  ·  VO8: "Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar."
 -----
 The camera cranes down about a foot toward the wet cobbles, staying parallel to the rug so its shape never skews, and as it drops the mirrored rug and the two figures rise out of the reflection in the lower third; the move stops the moment that reflection is fully in frame. At first the wet rug hangs in a deep sag between them, water running off its whole lower edge in a broken curtain, both of them leaning in over their own end. Then they step back one pace at the same moment, she on the left off the kerb and he on the right along the wet stone, and the sag pulls out. Half a second later the rug goes level and taut and the running water breaks apart into separate falling drops. By the end they stand straighter with their arms out and steady, both looking down at the middle of the stretched rug. The curtain of water thins into a countable handful of drops, the puddles open rings that run into one another, the fringe settles hanging straight. Exactly two people are in the frame from first to last, the woman in the headscarf on the left end and the old man in the flat cap on the right, and nobody enters between them. Each keeps their own end: the same fingers stay on the same edge throughout and the grips do not change. The rug keeps the same red medallion pattern, length, border and fringe. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -81,8 +72,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K09 | 5s · ekranda ~4,8s | VO "İşte böyle günlerde yardımlaşma ve dayanışmanın önemi daha iyi anlaşılır."
-KAMERA NİYETİ: Kamera duvara bantlanmış kâğıttan başlayıp sokağa insin; klip "burada bir söz var"dan "burada bir iş var"a geçsin.
+### K09  ·  9.png  ·  5s clip  ·  VO9: "İşte böyle günlerde yardımlaşma ve dayanışmanın önemi daha iyi anlaşılır."
 -----
 The camera begins high and close on the taped notebook sheet, then cranes down and swings right along the wall face, dropping to street level and coming to rest at working height on the three men, so the shot travels from the written promise to the work itself. At first the crouching man in the maroon jumper holds the dustpan against the stone with silt piled in it, and the man in the checked shirt beside him has the galvanised bucket down at his knees. Then the crouching man lifts the pan and tips the whole load over the rim in one soft fall. Half a second later the pan is empty and back on the stone. By the end he has risen halfway out of his crouch, standing where he was kneeling. The taped sheet lifts at its one loose lower corner and slaps quietly back against the glass, fine dust turns in the low warm light, and the man in blue overalls drives one more stroke of silt toward the channel. The sign stays exactly AÇIĞIZ on the same lined notebook paper, at the same size and in the same place; the lettering does not morph, re-spell, wobble or gain any new word, and the roller shutters and shopfronts stay blank as the camera moves. Exactly three people from first frame to last, and the crates, brooms and bucket stay rigid solids. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -90,8 +80,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K10 | 5s · ekranda ~4,5s | VO "Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı."
-KAMERA NİYETİ: Kamera camın önünde sağa doğru kaysın ve odak ıslak pervazdan düğün fotoğrafına geçsin — hasarın ölçüsü ancak fotoğraf netleşince anlaşılsın.
+### K10  ·  10.png  ·  5s clip  ·  VO10: "Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı."
 -----
 The camera drifts slowly right across the window opening with the wet reveal sliding out of the left foreground, carrying a rack focus from the beaded glass in the near plane onto the framed wedding photograph, which comes fully sharp exactly as the bead of water reaches the tidemark. At first the crocheted doily floats free in the middle of the flooded floor, turning very slowly. Then it drifts across, its edge comes up against the wooden runner of the armchair and stops dead there. At that same moment a bead standing on the picture glass releases and runs down the front of the photograph, crossing the tidemark. By the end the doily is held against the chair where it was free at the start and a wet track is left down the glass. The standing water holds one slow shallow swell that runs the length of the room and dies against the skirting, the lifted veneer on the low table settles a hair further open, the armchair's soaked fabric darkens a shade. The tidemark stays a single fixed horizontal stain at exactly the same height on the wall and across the picture glass for every frame. The two faces inside the wedding photograph stay the same two people and keep their features. The water stays a flat still film with one slow swell rather than breaking into waves, the furniture stays rigid, and the room stays empty of people. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -99,8 +88,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K11 | 5s · ekranda ~4,0s | VO "Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı."
-KAMERA NİYETİ: Kamera neredeyse dursun — asıl hareket odakta olsun; netlik alttaki adamdan yukarıdaki gence çıkarken seyirci de bir basamak yükselsin.
+### K11  ·  11.png  ·  5s clip  ·  VO11: "Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı."
 -----
 The camera is almost still — it rises only a few centimetres with the load, as if the operator had stepped up one tread with them — and the real move is a rack focus that starts on the straining man's face at the lower left and travels up the diagonal to the young man at the top. At first the tilted wardrobe is frozen at its angle with all three locked against it: the man low on the stair braced under the bottom corner, the woman in the orange knit with her hip against the side, the young man above with both hands under the upper edge. Then all three draw breath together and the load unsticks. Half a second later the young man takes one step backwards up the tread and the wardrobe rides up a step with him, its tilt easing toward upright. By the end they hold again one step higher with their shoulders down out of the strain. The bare bulb, knocked by the lift, swings a hair on its flex so every shadow in the stairwell leans slowly one way and back, and dust turns through the light. Exactly three people are in the frame from first to last and no fourth hand appears from any edge. Each keeps both hands on their own grip point, the same fingers on the same edge, and the grips do not change. The wardrobe stays a rigid solid whose doors, panels and cornice keep their exact shape, with no deform or morph and no pass-through of the rail or treads. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -108,8 +96,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K12 | 5s · ekranda ~4,5s | VO "Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu."
-KAMERA NİYETİ: Kamera masanın ekseninde düz ilerleyip kolinin yazılı yüzünün karşısında dursun — hareketin gerekçesi kelimenin kendisi, o yüzden yazı hep düzlemde kalsın.
+### K12  ·  12.png  ·  5s clip  ·  VO12: "Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu."
 -----
 The camera travels slowly straight forward along the axis of the trestle table, staying exactly square to the lettered front face of the box so the letters keep their shape and never lean; the move is motivated by the word itself and rests when the closed flap and the handwritten face sit in the lower centre of frame. At first the older woman in the headscarf and floral apron has two fingers pressing the last folded jumper down inside the near box, its flap standing half raised, and the girl in the denim jacket beside her holds the second carton open with both hands under its flaps. Then she works the wool down under the rim until the pile clears the edge. Half a second later she folds the flap over flat with the heel of her hand and the cardboard takes a soft crease. By the end her fingers are off the closed flap and both hands rest on the box's top edge. The compressed knitwear springs back a hair under the folded flap, the loose end of the paper tape lifts off the trestle and lies back down, a wool fibre drifts above the pile on the chair. The handwritten word on the front face stays exactly GİYECEK in the same marker hand, at the same size and in the same place on the kraft; the lettering does not morph, re-spell, wobble or gain any new word, and the stacked boxes stay blank. Exactly two people from first frame to last, and the girl's hands stay under the same two flaps; her grip does not change. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -117,8 +104,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K13 | 5s · ekranda ~4,5s | VO "Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir."
-KAMERA NİYETİ: Kapı sövesi paralaksla açılırken kamera içeri sokulsun — kadraj genişlerken jest kapansın, bırakmayan el merkeze otursun.
+### K13  ·  13.png  ·  5s clip  ·  VO13: "Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir."
 -----
 The camera drifts forward and to the left about a hand's width, using the door jamb in the right foreground as a parallax wipe that opens as the camera passes it, so the two of them stop being framed by the doorway and start sharing one space; it stops when the resting hand sits centre frame. At first the thick folded blanket is in mid-transfer — the woman in the maroon fleece has one flat hand pressing down on top of it and the elderly woman in the headscarf has both hands under it, both looking at the wool and not at each other. Then the elderly woman's forearms take the whole load and the blanket settles a centimetre lower against her. At that exact moment the giver's flat hand slides off the top, comes down and rests on the older woman's forearm, and stays there. By the end one of them carries the blanket and the other is still holding on. The loose top fold lifts and settles as the weight changes hands, a wool fibre drifts off its edge, the stack on the wooden stool eases a finger's width lower into the seat. Exactly two women are in the frame from first to last and nobody enters through the room behind, the doorway or the street. The resting hand stays on the forearm from the moment it lands to the last frame. The elderly woman's hands stay under the same folded blanket with the same fingers on the same edge; the grip does not change, and the carved door stays a rigid panel at the same angle. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -126,8 +112,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K14 | 5s · ekranda ~5,0s | VO "Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir."
-KAMERA NİYETİ: Kamera merdivenin dibinden bir basamak boyu yükselip beş kişilik zinciri boydan boya görsün — yükseliş küçük ve istikrarlı olsun, kalabalık kadraj çarpılmasın.
+### K14  ·  14.png  ·  5s clip  ·  VO14: "Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir."
 -----
 The camera cranes up about forty centimetres from the foot of the flight, tilting down a touch as it climbs so the whole five-person chain stays framed from bottom to top and the staircase keeps its real height; the rise is small and steady, so nothing in the crowded frame is dragged. At first the man in the checked shirt stands mid-flight with the full bucket at waist height, both hands closed on the wire handle, and the young man in the grey sweatshirt below him already has both hands out and open toward it. Then the young man closes both hands over the handle beside his, and for one beat four hands share one handle while the water surges and slaps the far wall of the pail. Half a second later the checked-shirt man releases and lets his empty arms drop. By the end the load stands a full step further down the stairs than it did in the first frame. The bare bulb swings a few degrees so every shadow leans with it, a thin skin of water slops over one rim and runs down the outside of that pail, the girl's loose strand falls across her cheek. Exactly five people are in the frame from first to last, nobody enters and nobody leaves, and all five faces stay modelled and readable. Every bucket stays a rigid galvanised solid held by at least one pair of hands at every moment, and each wire handle stays a single smooth arch. Everyone keeps two arms and two hands with five fingers each. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -135,8 +120,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K15 | 5s · ekranda ~4,0s | VO "Bu iki değer, toplumdaki insanları birbirine yakınlaştırır."
-KAMERA NİYETİ: Kamera ön plandaki halı rulosunu sıyırarak sağa kayar — yazıdan iki yüze geçilir; iş bitmiştir.
+### K15  ·  15.png  ·  5s clip  ·  VO15: "Bu iki değer, toplumdaki insanları birbirine yakınlaştırır."
 -----
 The camera dollies slowly right, the dark rolled carpet in the left foreground sweeping past the lens so the landing opens up behind it, easing to a full stop as both faces come level in frame. At first the chalk is still pressed to the plaster at the tail of the last letter, her eyes down on the mark; then she finishes the stroke, lifts the chalk clear and sits back on her heels, that hand falling to her side. Half a second later the older woman raises her eyes off the fresh letters to her face and her half-smile finishes into a full one. By the end the chalk is off the wall — a writing hand at the start, two faces and a finished mark at the close. Chalk dust sifts down onto the skirting, a thread lifts in the carpet fringe, and the tape across the cracked pane trembles with light. Both chalk marks stay exactly as they are, 3. KAT and 1. KAT unmoved, and the camera holds the wall in its own plane so the lettering does not morph, re-spell, wobble or gain any new word. Exactly two women are in frame throughout, nobody enters or leaves, the rolled carpets stay leaning against each other and the same fingers stay on the same edge of the red roll. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -144,8 +128,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K16 | 5s · ekranda ~4,5s | VO "Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü."
-KAMERA NİYETİ: Kamera hiç kıpırdamaz — salon kendi kendine dönüşür; kadrajı değiştiren tek şey masadan kalkan kolidir.
+### K16  ·  16.png  ·  5s clip  ·  VO16: "Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü."
 -----
 The camera is locked off at floor level down the length of the hall and never moves — no push, no pan, no tilt, no drift — so all the movement belongs to the people. At first the young man in the checked overshirt is bent over the carton on the middle trestle with his pen in the kraft; then he finishes the stroke, lifts the pen clear and straightens up, and half a second later he takes the carton from underneath and lifts it off the trestle. By the end the table top is bare and the box is against his chest, chin over its edge, while below him the kneeling woman folds one flap of her floor box flat. Dust turns through the clerestory rectangles on the timber, the taped sheet lifts at one corner, and the caretaker shifts his shoulder so the door leaf swings without leaving his hand. The sheet keeps its two words YARDIM MERKEZİ flat to the lens at the same size, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly three people are in this frame throughout and nobody enters through the open door or from any edge; the lifted carton is a rigid solid that never deforms, melts, morphs or passes through the table, and the stacked cartons and benches stay where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -154,8 +137,7 @@ REVİZE:
 NOT: Setin en sakin kamerası — tam kilitli. Arka plan kalabalık olduğu için hareket bilerek sıfırlandı; kadrajı değiştiren tek şey kalkan koli.
 
 
-### K17 | 5s · ekranda ~4,0s | VO "Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu."
-KAMERA NİYETİ: Kamera yüksek açısını korur ve yalnız birkaç derece aşağı yatar; kadraja dolan şey mal değil, battaniye sırasının boşluğudur.
+### K17  ·  17.png  ·  5s clip  ·  VO17: "Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu."
 -----
 The camera holds its high angle and makes one slow continuous tilt down of a few degrees — it starts the instant the blanket begins its descent and stops dead the instant it lands; the tilt is the whole camera performance. At first the woman in the long grey cardigan is on her feet at the right with a folded blanket against her chest, taking her last steps toward the head of the short line; then she bends from the knees and brings it down with both hands, and half a second later she lays it flat on the four already there and pushes it square with her palm. By the end she stands straight with both arms empty at her sides and the frame is weighted low with the empty length of a line one blanket longer. Dust turns in the diagonal shaft crossing the food line, the crouching girl slides one tin a thumb's width to true her row, and the boy in the red shirt walks two steps further along the wall behind. The kraft card at the head of the blanket line keeps its word BATTANİYE turned to the lens at the same size through the tilt, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly three people are in frame throughout and nobody enters or leaves; the three lines stay clearly unequal with the tinned food longest and the blankets still shortest, and the rows of tins keep their count and spacing and never multiply into a repeating pattern. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -163,8 +145,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K18 | 5s · ekranda ~4,2s | VO "Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu."
-KAMERA NİYETİ: Kamera geçen yükle birlikte birkaç santim geri çekilir; arka boşalınca kız gözünü kâğıda indirir — dikkatin geri dönüşü kadrajda görünür.
+### K18  ·  18.png  ·  5s clip  ·  VO18: "Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu."
 -----
 The camera eases back a few centimetres and does nothing else, stopping the instant the background is clear so the clipboard ends a fraction smaller and a great deal calmer, square to the lens with no pan, tilt or arc. At first the pencil is held dead still halfway through a tick and the girl in the navy vest has her eyes off the page, tracking the volunteer crossing behind her; then his blurred body and the box corners slide toward the right edge with her eyes, and half a second later the last corner clears and her gaze comes back down onto the paper in one movement. By the end the background is bare timber and light, her eyes are down and the tick is finished — the pencil tip travels the width of a fingernail and stops. The loose sheets under the chipped mug lift in the draught he drags past, the tea trembles in its glass, and a graphite crumb rolls down the sheet. The heading keeps its word İHTİYAÇ flat to the lens with the İ dotted and the Ç cedillaed, each carried box keeps the marker word it already has as it leaves frame, the ruled entries and the dark board behind stay soft and out of focus, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly two figures and one pair of foreground hands are in frame throughout and no third body or extra hand enters; the same fingers stay in the same place on the pencil, the hand keeps five fingers, and the carrier stays a solid blurred body rather than a dark streak. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -173,8 +154,7 @@ REVİZE:
 NOT: Arka tuğla duvardaki koyu levha karede İngilizce okunuyor — kamera geri çekildiği için küçülüyor; prompt onu yumuşak ve odak dışı kilitler, keskinleşmesini yasaklar.
 
 
-### K19 | 5s · ekranda ~5,0s | VO "Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı."
-KAMERA NİYETİ: Kamera masa hizasına inerken sağa doğru kısa bir yay çizer ve kraft yüzeyi tam karşısına alarak durur — yazı hep düzlemde kalır.
+### K19  ·  19.png  ·  5s clip  ·  VO19: "Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı."
 -----
 The camera makes a short arc to the right of about twenty centimetres while descending to table height, coming to rest with the written face of the box square to the lens, and the move ends exactly as the box begins to slide. At first the marker tip rests on the kraft where the next letter would begin, the last stroke still wet, @mira1 leaning over the box with her tongue at the corner of her mouth; then she presses the tip down a fraction and stops without drawing, lifting the marker clear, and half a second later she raises her eyes for the first time to the boy in the green fleece and gives one short nod. By the end he has closed both hands on the near edge and drawn the box a hand's width toward himself — the marker off the box, the box moved, and the two of them looking at each other. The paper tape roll lets a finger's length unspool, the torn scribble card lifts its curled corner as the box slides past, and one spare marker rolls and stops. The black capitals already on the kraft stay exactly as they are — the unfinished word GID, upside down to the lens as it is in the first frame — the fourth letter is never drawn, and the camera keeps the box face in its own plane so the lettering does not morph, re-spell, wobble, thicken or gain any new word. Exactly two children are in frame throughout, both faces stay modelled, the same fingers stay on the same edge of the box, and the carton stays one rigid cardboard solid that never bends, melts or merges as it is pulled. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -183,8 +163,7 @@ REVİZE:
 NOT: Karedeki kelime yarım ve ters basılı — motion onu tamamlamıyor; dördüncü harf klip boyunca yazılmıyor, yazı ilk karedeki hâlinde kilitli.
 
 
-### K20 | 5s · ekranda ~4,8s | VO "Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir."
-KAMERA NİYETİ: Kamera dört istasyonun önünden yürür gibi tek yönde kayar ve durur; kimse başını kaldırmaz — iş bölümü kesintisiz akar.
+### K20  ·  20.png  ·  5s clip  ·  VO20: "Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir."
 -----
 The camera makes one continuous even lateral track to the right along the row of stations at a slow walking pace, held low and square to the hall, never turning to follow anyone, and it decelerates to a full stop with the whiteboard station centred. At first the man nearest the lens squats on his heels with the tape roll in one hand and a strip already laid halfway along the box seam; then he draws the tape to the far corner in one even pull, and half a second later he snaps it off against the cutting edge with one sharp downward flick and both palms come down onto the seam and press it flat from the middle outward. By the end his hands rest on a sealed lid with the roll set on the timber beside his boot, and behind him the woman in the floral apron has laid one more folded garment on her pile. Dust turns in all four clerestory rectangles at once, the boy's headphone wire swings against his collar as he leans into his crate, and the leaning broom slides a finger's width down the wall. The whiteboard stays a blank white surface and gains no mark, and no text appears anywhere in this frame on any box, bench, wall or sign. Exactly four people are in this frame throughout, nobody enters or leaves and none of them looks at another or at the lens; the sealed box, the crates, the benches and the wheeled bin stay rigid solids in their exact positions, and the four light patches stay four separate rectangles fixed on their own stations rather than sliding with the camera. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -192,8 +171,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K21 | 5s · ekranda ~3,5s | VO "Bir işi birlikte gerçekleştirmeye iş birliği denir."
-KAMERA NİYETİ: Kamera neredeyse kilitli durur; enerjiyi masanın kilitlenme vuruşu taşır, kamera değil. ← BLOĞUN VURUŞLU KLİBİ (arka plan sakin)
+### K21  ·  21.png  ·  5s clip  ·  VO21: "Bir işi birlikte gerçekleştirmeye iş birliği denir."
 -----
 The camera is held almost locked off, with only a barely perceptible ten-centimetre drift to the left across the whole five seconds — the stillness is deliberate so the snap of the two braces is the only sudden thing in the shot, and the camera never chases it. At first the laminate top is still tilted a couple of degrees off level, both people crouched at opposite ends with their hands closed on the steel braces and nothing moving but the strain in their forearms; then, in a single sharp beat, both braces snap flat at exactly the same instant and the top drops the last two degrees into level with a hard mechanical jolt that runs the whole length of the table, and half a second later the top rings and settles, both let go and straighten their knees a hand's width. By the end the woman has rocked back on her heels and the old man has laid one palm on the levelled top to test it — four gripping hands at the start, two pairs of empty hands at the close. Fine dust jumps off the laminate at the moment of the snap, the sheet on the stacked tables slides a finger's width, and the crate of tea glasses rattles once and goes still. The table stays one rigid solid with exactly two tubular steel leg frames and one laminate top — rigid solid, no deform, melt, morph or merge — and the camera stays slow enough that no part of it warps as it levels. Exactly two people are in frame throughout, the same fingers stay on the same brace until the moment they open, and no text appears anywhere at any point. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -202,8 +180,7 @@ REVİZE:
 NOT: Vuruşlu klip 1/2. Katı mekanik nesne + sakin arka plan; kamera minimuma indirildi ki masa kilitlenirken warp doğmasın — enerji nesnenin kendisinde.
 
 
-### K22 | 5s · ekranda ~4,5s | VO "Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür."
-KAMERA NİYETİ: Kamera o kâğıda ASLA yaklaşmaz — boşalmış koridorun kendisi olaydır, kâğıt yalnız o koridorun ucundaki nokta.
+### K22  ·  22.png  ·  5s clip  ·  VO22: "Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür."
 -----
 The camera makes a very slow lateral drift of a few centimetres to the right along the cleared lane, just enough for the foreground mat stacks to slide past each other and open the depth of the hall, then eases to a full stop; it stays at exactly its starting distance and never moves forward or zooms. At first the woman at the far doorway is still reaching up with the sheet held against the wall, her weight on the balls of her feet; then, in one continuous movement, she presses the nail home and lets go, the same two fingers staying on the same corner until they open, and half a second later her arm comes down and her shoulders drop. By the end her heels have settled back onto the timber and she stands flat and still for the first time, arms at her sides, the sheet hanging by itself. Dust drifts down through the clerestory band crossing the brick wall, the hung sheet turns a few degrees on its nail and stops, and the two tea glasses on the far bench catch a faint tremble. The sheet stays exactly as unreadable as it is in the first frame; the camera never moves toward it; the lettering does not morph, re-spell, wobble or gain any new word, and the numbered cards on the stacks stay soft and unread. Exactly one person is in the frame from first frame to last and no second figure appears in the doorway or between the stacks; the stacked mats and folded benches stay rigid solids squared and even, and the cleared lane stays completely empty end to end. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp, no dolly-in of any kind.
 -----
@@ -212,8 +189,7 @@ REVİZE:
 NOT: Kâğıttaki kelime karede bozuk basılı — kamera mesafesini hiç değiştirmiyor, o uzaklıkta okunmuyor. Kare olduğu gibi kullanılır; prompt yaklaşmayı ve okunur hâle gelmeyi ayrı ayrı yasaklar.
 
 
-### K23 | 5s · ekranda ~4,5s | VO "Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı."
-KAMERA NİYETİ: Kamera hortumun çekildiği yöne kayar; varış değil, işin çoktan başlamış olduğu okunur.
+### K23  ·  23.png  ·  5s clip  ·  VO23: "Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı."
 -----
 The camera makes a slow lateral dolly from right to left, low and parallel to the wet setts, travelling with the direction of the pull so the open van door slides out of frame and the depth of the street opens up behind him, easing to a stop as the line goes tight. At first the front man is mid-stride against the weight of the lay-flat hose, a long slack curve of it lying behind him on the cobbles; then he takes two more heavy strides and that slack is dragged straight, the last loop lifting off the stones, and half a second later the loop snaps taut, the whole line loads, his shoulders drop and he stops pulling. By the end there is a straight loaded line where a loose curve was and a man standing still over it, his weight back on his heels. The thin sheet of water keeps sliding down the cobbled channel, the crouching woman rotates the pressure gauge a few degrees in her palm, and his breath clouds once and thins in the cold. The AFAD lettering on the sleeve stays flat, sharp and identical for the whole clip, the reflective bands keep their exact width, the closed roller shutters stay blank metal, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly three people are in frame throughout and nobody enters or leaves; the hose stays one continuous flat canvas line that never doubles or splits, the same fingers stay on the same length of hose, and the reel, the crates and the tools on the kerb stay exactly where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -221,8 +197,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K24 | 5s · ekranda ~4,0s | VO "AFAD görevlileri zarar gören binaları tek tek kontrol etti."
-KAMERA NİYETİ: Yazı tamamlanır ve el ondan ayrılır; kamera ancak ondan sonra duvarı yalayarak ikinci görevliye kadar açılır — "tek tek"in kanıtı sıradaki kapıdır.
+### K24  ·  24.png  ·  5s clip  ·  VO24: "AFAD görevlileri zarar gören binaları tek tek kontrol etti."
 -----
 The camera holds still while the word is being finished, keeping the wall close to its own plane, and only after the chalk has left the plaster does it begin a steady rightward pan that runs the wall away toward the second officer down the street, so the distance between the two marked doorways becomes the shot. At first the officer is dragging the chalk down through the last stroke of the final letter with her other palm flat on the damp plaster; then the tip crumbles and a small fall of chalk dust drops away, and half a second later she lifts the chalk clear and lowers that hand while her flat palm slides once across the wall and comes away. By the end both hands are off the wall and the frame has opened onto the second officer stepping toward the next doorway — a hand still writing at the start, a marked street at the close. A bead of water runs out of the mud tidemark and down the plaster, the torn notice at the right edge flutters at one corner, and the second officer completes his own raised stroke. The chalk word KONTROL keeps its exact seven letters, its spacing and its broken chalk texture with no letter added, redrawn or straightened, the AFAD panel on each vest keeps its four letters, the torn notice and the distant chalk smudges stay illegible and never resolve into letters, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly two people are in frame throughout, the same fingers stay on the same piece of chalk, and the ladder, the hanging bucket and the closed shutters stay exactly where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -230,8 +205,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K25 | 5s · ekranda ~4,5s | VO "Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı."
-KAMERA NİYETİ: Isının aktarıldığı an — kepçe boşalır, kabı tutan eller kavrar; kamera kabın seviyesine iner ki dağıtılan şeyin yemek değil sıcaklık olduğu okunsun.
+### K25  ·  25.png  ·  5s clip  ·  VO25: "Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı."
 -----
 The camera descends slowly from the server's eye level to the height of the bowl and comes to rest level with the old woman's hands, so the shot lands on the holding rather than the pouring; the descent is vertical with no yaw, so the white vehicle panel holds square in its own plane. At first the ladle is still tipping through its last few degrees with an unbroken rope of soup falling into the shallow metal bowl; then the rope thins, tapers and releases from the ladle's lip, and half a second later the last of it lands and the surface in the bowl swings once and settles flat. By the end the ladle is empty and lifted clear and her fingers have tightened and slid further around the bowl's sides so both palms are flat against the hot metal. Steam lifts off the settled soup and curls away from the urn, the cloth over the bread crate lifts and drops at one corner, and the man waiting behind shifts his weight and looks down at the bowl. The red crescent keeps its exact shape and never rotates, fills or becomes another symbol, TÜRK KIZILAY holds its exact two words with the dotted Ü and the undotted I, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly three people are in frame throughout and nobody enters or leaves; the bowl stays a plain unmarked metal bowl, the same fingers stay on the same rim, every hand keeps five fingers, the soup stays inside the bowl, and the urn and the bread crate stay rigid solids where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -239,8 +213,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K26 | 5s · ekranda ~5,0s | VO "Belediye ekipleri sokakları temizledi ve geçici barınma alanları hazırladı."
-KAMERA NİYETİ: Sınır ilerliyor — kamera çekpasla birlikte geri çekilir ve temizlenen şeridin uzunluğu ortaya çıkar.
+### K26  ·  26.png  ·  5s clip  ·  VO26: "Belediye ekipleri sokakları temizledi ve geçici barınma alanları hazırladı."
 -----
 The camera makes a low backward dolly that retreats along the paving just ahead of the advancing blade, staying at stone height so the cleared strip grows across the bottom of the frame, and it stops as the blade lifts; the retreat is straight with no yaw, so the truck flank holds square in its own plane. At first the squeegee is loaded and a sheet of muddy water is banked against its rubber; then he drives it two strides forward and the water folds over itself and rolls ahead of the blade, leaving a widening band of clean wet stone, and half a second later he straightens his back and lifts the blade a hand's width clear of the setts. By the end the pushed water has spilled sideways into the channel and a clean strip runs back toward the camera where dirty stone was. A runnel of silty water escapes into the channel, the cut end of the orange webbing springs loose under the crouching woman's knife, and the awning up the street stirs at its edge. The word BELEDİYE on the truck flank stays flat to its panel with all eight letters and the dotted İ and never turns out of readability, the street sign at the upper left keeps its exact two Turkish words, and the lettering does not morph, re-spell, wobble or gain any new word. Exactly two people are in frame throughout and nobody enters or leaves; the same fingers stay in the same place on the squeegee handle, and the strapped tarpaulin bundles, the water bottles on their pallet, the wheelbarrow and the truck stay rigid solids with no deform, melt, morph or merge. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -248,8 +221,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K27 | 5s · ekranda ~5,0s | VO "Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır."
-KAMERA NİYETİ: Üç ayrı gövde tek bir vuruşta senkronlanır; kamera halat boyunca yavaşça kayarak "kurum" yerine "çeken üç kişi" fikrini teslim eder. ← BLOĞUN VURUŞLU KLİBİ (arka plan sakin)
+### K27  ·  27.png  ·  5s clip  ·  VO27: "Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır."
 -----
 The camera tracks slowly along the rope from the first puller toward the third, low over the standing water and slow enough that nothing it passes distorts, so the three garments pass through frame one after another and the shot itself counts them, easing to a stop on the third pair of hands. At first all three are leaning back against a rope already at full tension with the heavy wooden door still stuck fast in the channel; then, on one shared beat, all three haul back together, the hemp stretching another hand's width as the door breaks its suction and slides a full body-length toward them in a single sudden movement, and half a second later the line loses its tension and all three rock back a half step. By the end they are steadying themselves on their heels with the door moved and the rope slack where it was rigid. Silt dust lifts where the rope drags across the top sandbag, the water breaks into ripples around the moving door, and the older woman's headscarf end swings out as she leans. The three garments stay exactly as they are — amber hi-vis vest, navy coverall with cap, brown knitted cardigan with headscarf — no badge, patch, crest or lettering appears on any of them, and no text appears anywhere in the frame at any point. Exactly three people are in frame throughout and nobody enters or leaves; each pair of hands keeps five fingers, the same fingers stay on the same length of rope, the rope stays one continuous hemp line, and the door stays one rigid slab with no deform, melt, morph or merge as it moves. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -258,8 +230,7 @@ REVİZE:
 NOT: Vuruşlu klip 2/2. Arka plan sakin (kapalı kepenk, boş sokak) olduğu için tek keskin vuruş güvenli; kapı katı gövde olduğundan kamera bilinçli yavaş tutuldu.
 
 
-### K28 | 5s · ekranda ~4,5s | VO "O akşam Mira dedesine gün boyunca gördüklerini anlattı."
-KAMERA NİYETİ: Dinlemenin bedeli — el çayı hiç almaz, geri döner. Kamera neredeyse durur; oda değil, dikkat hareket eder.
+### K28  ·  28.png  ·  5s clip  ·  VO28: "O akşam Mira dedesine gün boyunca gördüklerini anlattı."
 -----
 The camera makes an almost imperceptible arc to the left around the corner of the table, holding at the same height throughout and easing to a stop, just enough to open the space between the two of them without the room ever sliding. At first @mira1 is leaning in over the crochet cloth with her forearms forward and @dede's hand is arrested halfway to the tea glass, fingers half closed; then that hand hangs a beat longer and the fingers relax open, and half a second later, instead of closing on the glass, it comes back down and settles flat on the tablecloth beside the saucer while her forearms slide a little further forward. By the end the tea is untouched and his hand is laid down where it was suspended in the air — reaching at the start, listening at the close. Steam keeps lifting from the untouched tea and bends as the hand withdraws, the low pendant sways a hair so both shadows shift together across the cloth, and the moth turns once under the lampshade. Exactly two people are in frame throughout and nobody enters or leaves; both faces stay fully modelled inside the warm lamp island and the room beyond the table edge stays a deep unlit indigo that never fills with detail. The tea glass is never lifted and its level stays flat, the walnut bowl and the nutcracker stay exactly where they are, the wall clock keeps its exact face, numerals and hand positions, and the framed photograph and the radio dial stay soft and gain no readable word or numeral. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -267,8 +238,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K29 | 5s · ekranda ~4s | VO "Dedesi bunun çok eski bir geleneğimiz olduğunu söyledi."
-KAMERA NİYETİ: Oda kalır, bakış çıkar — kamera Mira'nın omzunu bırakıp dedenin yüzünde yalnız kalsın; geçmişe geçiş kamerayla değil bakışla yapılsın.
+### K29  ·  29.png  ·  5s clip  ·  VO29: "Dedesi bunun çok eski bir geleneğimiz olduğunu söyledi."
 -----
 The camera drifts steadily to the right at the same height, letting @mira1's out-of-focus shoulder slide off the left edge of frame, so by the end @dede sits alone in the shot with empty room either side of him. At first his thumb is still rolling a bead across and his eyes are aimed just past her shoulder, still near the room; then the thumb pushes one last bead over and stops dead against the next; half a second later his focus goes out entirely. By the end his shoulders have dropped back into the chair and he is looking through the wall rather than at his granddaughter — he began in the room and ends somewhere much older. The stopped bead rocks twice against its neighbour and settles, the tea steam at the right edge bends and thins, the lamp cord sways a hair so the light on his temple breathes. The same fingers stay on the same bead loop throughout and the strand stays plain wood with no medallion, tassel or charm; his eyes never meet hers and never find the lens; the framed photograph, the clock face and the drawn curtain stay soft, and the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -276,8 +246,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K30 | 5s · ekranda ~4,5s | VO "Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu."
-KAMERA NİYETİ: Sokak akar, taş durur. Kamera taşa hiç yaklaşmaz, yalnız taşın kenarı hizasından biraz yükselir — sıradanlık kameranın ilgisizliğiyle kanıtlanır.
+### K30  ·  30.png  ·  5s clip  ·  VO30: "Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu."
 -----
 The camera rises slowly from just above the hollowed stone's rim to a slightly higher vantage, so the three walking directions of the street open out around it while the stone holds its exact place in frame. At first the bent water carrier is close in the near ground and his shoulder crosses the stone's column; then he takes three more laboured steps and clears it entirely without a glance; meanwhile the shopkeeper's shutter swings the last of its arc upward and comes to rest against its prop. By the end the stone stands alone in the middle of the frame with the street still moving around it — it began half-blocked by a passing body and ends unobstructed and still ignored. Dust lifts off the lip of the hollow in the low raking light, the tethered donkey turns one ear at the far corner, the woman's long skirt swings once as she and the child walk on. Exactly four people are in the shot and no fifth figure enters; the hollow stays empty and not one of them looks at it. No modern object appears at any point — no wire, pipe, glazed window, painted sign, kerbstone, vehicle or plastic — every wall stays bare tooled ashlar, every window opening stays an unglazed timber frame, and no lettering appears anywhere in any script. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -285,8 +254,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K31 | 5s · ekranda ~5,5s | VO "İmkânı olan taşın oyuğuna parasını bırakır, ihtiyacı olan görünmeden alırdı."
-KAMERA NİYETİ: Kamera kadını bırakıp sikkenin peşine düşsün — düşüş TAMAMLANIR, ses fiziği taşa çarpma anında oturur, kadrajda üç sikke kalır.
+### K31  ·  31.png  ·  5s clip  ·  VO31: "İmkânı olan taşın oyuğuna parasını bırakır, ihtiyacı olan görünmeden alırdı."
 -----
 The coin completes its fall inside this clip: it turns twice edge over edge through the air, strikes the worn floor of the hollow with one bright metallic snap, spins flat on its rim for a beat and drops still beside the two coins already lying there — three coins settled, nothing still moving at the end. As it leaves her, the giving hand finishes opening, withdraws upward and clears the top of frame, so the clip begins with one coin airborne and a hand above the stone and ends with a filled hollow and no hand in shot. The camera stays locked and level while the coin drops, then makes one decisive short tilt down that abandons her face and lands square on the hollow exactly at the instant of the strike, holding there. A grain of dust knocked off the lip drifts down, the greens in the set-down basket settle lower, one loose end of her headscarf lifts in the dawn air. Her eyes stay turned up the street and she never looks down at the coin, the hollow or the lens; all three coins stay blank worn metal and never gain script, numerals, star or portrait; no modern object appears at any point — no wire, pipe, glazed window, painted sign, vehicle or plastic. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -294,8 +262,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K32 | 5s · ekranda ~4,5s | VO "Böylece yardım, ihtiyaç sahibinin onuru korunarak yapılırdı."
-KAMERA NİYETİ: Kamera da bakmıyor — giden kişiyi takip etmez, boşalmış oyukta kalır; odak taşa kilitli kalırken adam derinlikte yumuşayarak küçülür.
+### K32  ·  32.png  ·  5s clip  ·  VO32: "Böylece yardım, ihtiyaç sahibinin onuru korunarak yapılırdı."
 -----
 The camera holds absolutely still on the emptied stone and refuses to follow the man, and the focus stays welded to the dry basin so he softens as he shrinks — the lens declines the chase instead of losing it. At first he is close and his coat hem swings wide with each stride; then he walks four more even unhurried paces down the cobbles, his shoulders never once tightening; by the end he is a small soft figure deep in the cool shade, half swallowed by the lane. Alongside him the damp ring inside the hollow visibly contracts as its outer edge dries pale, so the clip begins with a near figure and a wet dark basin and ends with a distant figure and a basin almost dry. A leaf skids a hand's width along the paving, the scattered straw stirs where feet went through it, the tethered donkey shifts one hoof at the far corner. The walking figure never turns, never looks back, never slows and never hurries, and stays a solid rendered body with readable wool weave rather than a flat dark shape; the hollow stays empty and no coin reappears; no modern object appears at any point — no wire, pipe, glazed window, painted sign, vehicle or plastic, and no lettering appears anywhere. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -303,8 +270,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K33 | 5s · ekranda ~5s | VO "Dedesi sonra Millî Mücadele yıllarındaki büyük dayanışmayı anlattı."
-KAMERA NİYETİ: Ağırlaşma. Hiçbir şey olmaz, her şey biraz daha aşağı iner — kamera da onlarla birlikte alçalıp masa yüzeyinin hemen üstüne otursun.
+### K33  ·  33.png  ·  5s clip  ·  VO33: "Dedesi sonra Millî Mücadele yıllarındaki büyük dayanışmayı anlattı."
 -----
 The camera lowers a few centimetres in one very slow continuous descent and settles just above the tabletop, so the crochet cloth spreads wide across the bottom of frame and both of them are seen from lower than they began — the frame sinks with the weight of what is being said. At first @dede's flat palm rests apart from the beads and @mira1 is propped upright against her hand; then his palm slides forward across the crochet, dragging the cloth into a small ridge ahead of it, and comes to rest touching the slack strand without picking it up; half a second later his shoulders sink back and his jaw loosens. By the end her chin has settled deeper into the heel of her hand and her eyelids have closed in one slow blink and opened again, so she ends lower and softer than she started. The skin on the cooling tea shifts slightly without breaking, a crochet thread lifts where the palm dragged it, the moth keeps turning under the lampshade. The tea never steams again and its skin stays unbroken; the beads stay slack on the cloth and are never lifted; the folded newspaper stays illegible grey print with no headline and the clock face stays soft — the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -312,8 +278,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K34 | 5s · ekranda ~5,5s | VO "Tekâlif-i Millîye Emirleri'yle halk yiyeceğini ve taşıtını ordusuyla paylaştı."
-KAMERA NİYETİ: Verilenin ağırlığı kağnıya biner. Kamera kasa hizasından yükselip dolu yükle boş un sandığını klibin sonunda aynı karede karşı karşıya getirsin.
+### K34  ·  34.png  ·  5s clip  ·  VO34: "Tekâlif-i Millîye Emirleri'yle halk yiyeceğini ve taşıtını ordusuyla paylaştı."
 -----
 The camera cranes slowly upward from the height of the cart bed, so that by the end the loaded cart and the empty flour bin sit in the same frame facing each other. At first the woman holds the last sack against her chest; then she swings it up over the tailboard and lets go; it lands on the stacked load, slumps into the shape of the sacks beneath it, and the whole cart bed settles a finger's width while the hemp tie pulls creaking tighter. By the end her emptied hands stay open a beat before she lowers them — it began with a sack at chest height and ends with the load landed, tied down and her hands empty. Flour dust drifts off the seam of the landing sack and hangs backlit in the dawn air, the hen steps sideways through the spilled grain, the timber gate stirs on its hinge. The stencilled "UN" stays flat to the jute with both capitals and its bled fibrous edges intact, and the lettering does not morph, re-spell, wobble or gain any new word on any sack. Exactly three people are in the shot; no ox, no soldier, no rifle and no uniform enters the frame at any point, and no modern object appears — every garment stays homespun with no zip, print or seam. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -321,8 +286,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K35 | 5s · ekranda ~5,5s | VO "Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı."
-KAMERA NİYETİ: Kamera pano yüzeyi boyunca sağa kaysın ve cümlenin sonunda BOŞ raptiye sütununa varsın — keşfi zoom değil kayış yapar.
+### K35  ·  35.png  ·  5s clip  ·  VO35: "Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı."
 -----
 The camera dollies laterally to the right along the face of the noticeboard, keeping the cork plane parallel to the lens, so the bare column of pins at the far end slides into frame only at the close of the move. At first the teacher's thumb is still pressing the pin home; then the pin seats and her hand withdraws out of the way, leaving the card hanging free; half a second later the girl in the maroon sweater lets her eyes travel from that card along the row. By the end her eyes have come to rest on the empty pins and her chin has lowered slightly as she reads nothing there — it began on a hand fixing something and ends on a face finding a gap. The cards further along lift and drop in the draught from the glazed door, the glove on the radiator sags a fraction, a coat swings gently on its hook. The same fingers stay on the same edge of the card stack in her other hand throughout. Those pins stay empty and nothing ever appears on them; every other card stays blank; the handwritten "KIRTASİYE" stays in the frame plane in the exact same letters, and the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -330,8 +294,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K36 | 5s · ekranda ~4s | VO "Katkı sağlamak için büyük imkânlara sahip olmak gerekmez."
-KAMERA NİYETİ: BU BLOĞUN KARARLI VURUŞU — arka plan sade, olay net. Kamera kilitli durur, kalem düşer ve kutuya çarpar; kamera darbeyi hissedip bir kez birkaç santim aşağı oturur.
+### K36  ·  36.png  ·  5s clip  ·  VO36: "Katkı sağlamak için büyük imkânlara sahip olmak gerekmez."
 -----
 The camera is locked off and still for the whole fall, then takes one short settle downward of a few centimetres at the moment of impact, as if the camera itself felt the knock. At first the boy's pencil hangs pinched above the open box; then his thumb lifts clear and the pencil is released, dropping fast and turning a quarter turn as it goes; it strikes the pencils already lying inside with a single hard knock, the pile shifting a centimetre while two loose pencils roll apart. Half a second later the girl's arms tighten around her closed pencil case on the impact, then her grip loosens and her thumb finds the zip pull and stops there without pulling it. By the end his hand is empty and open above the box and hers has moved from holding to almost giving — she began clutching and ends hesitating. The curl of sharpener shaving rocks once from the knock, the kraft flap trembles and settles, dust turns in the light above the box mouth. The same fingers stay on the same edge of her pencil case throughout and it stays closed and zipped; his own case keeps its remaining pencils and is never emptied; every pencil barrel stays plain lacquered wood with no text, letter or brand appearing anywhere. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -339,8 +302,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K37 | 5s · ekranda ~5s | VO "Bir kişi kan bağışında bulunabilir, gönüllüler sokak hayvanlarını besleyebilir."
-KAMERA NİYETİ: Kamera gövdesi hiç oynamasın, odak dirsekten pencere denizliğine kaysın — cümlenin iki yarısı tek klip içinde sırayla teslim edilsin.
+### K37  ·  37.png  ·  5s clip  ·  VO37: "Bir kişi kan bağışında bulunabilir, gönüllüler sokak hayvanlarını besleyebilir."
 -----
 The camera body stays locked off while the focus pulls slowly from the taped cotton in the elbow out to the window sill, so the two full bowls and the cat come sharp as the elbow goes soft. At first the lifted corner of the tape is still settling onto the skin and the cat outside is only an ear at the glass; then the tape lies flat and his loosely curled fingers open a little further; half a second later, out on the sill, the cat lowers its head to the full water bowl and begins to drink, the surface breaking into rings. By the end his small tired smile has widened a fraction and the nurse has pressed the folded end of the used tape flat, dropped her hands and turned away from the chair — it began with attention on an arm and ends on a drinking animal. The water ripples outward, the blanket over the chair back sags one fold lower. The same fingers stay on the same edge of the tape roll throughout. No needle, tube, cannula, blood or blood bag appears at any point — the only thing on the arm is cotton wool under tape; the cat stays outside the glass and no animal enters the room; the stack of forms stays illegible and no line resolves into words. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -348,8 +310,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K38 | 5s · ekranda ~5s | VO "Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir."
-KAMERA NİYETİ: Kamera toprak hizasından yavaşça yükselip fidanla birlikte doğrulsun — klip biterken ağaç kadraja hâkim, iki el ise çekilmiş olsun.
+### K38  ·  38.png  ·  5s clip  ·  VO38: "Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir."
 -----
 The camera cranes slowly up from soil level to the height of the sapling's crown, so the frame stands up alongside the tree instead of pushing toward it. At first her open hand hovers a few centimetres from the stem and the top leaves are still trembling; then the leaves come to rest and the stem holds itself upright; half a second later her fingers curl in and she draws the hand back onto her knee, leaving the tree standing entirely unheld for the first time, her chin lifting as her eyes stay on it. Meanwhile the woman gives the soil two last firm presses and then lifts her hands clear — the same palms stay on the same patch of soil until they leave it together. By the end nothing at all touches the tree and both people have withdrawn. Crumbs of soil roll off her lifting palms and tumble down the mound, the nursery tag turns a few degrees on its wire and swings back. The sapling stays unsupported for the entire clip — no hand, stake or wire ever braces the stem, and the trunk stays a rigid solid bending only at its leaves; the tag keeps the exact word "ÇINAR" turned toward the lens, and the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -357,8 +318,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K39 | 5s · ekranda ~4,5s | VO "Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi."
-KAMERA NİYETİ: Kamera masanın yakın kenarı çevresinde sığ bir yay çizip üç yüzü sırayla geçsin ve boş sayfada dursun — karar masanın etrafında dolaşarak alınır.
+### K39  ·  39.png  ·  5s clip  ·  VO39: "Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi."
 -----
 The camera travels in a shallow arc dolly from right to left around the near side of the desk, crossing the three faces in turn and coming to rest looking down the blank sheet. At first the ponytailed girl's fingers are tapping the desk edge and the boy's chin rests on his stacked fists; then her tapping slows and stops flat on the wood, and his chin lifts a centimetre clear while his grin closes into a firm line; half a second later @mira1 draws a short breath, her raised eyebrows come down level and she lowers the poised pencil a centimetre nearer the paper without letting it touch. By the end all three pairs of eyes have met over the sheet at the same moment and the loose grins have gone — it began with three separate moods and ends with one shared one. The corner of the sheet lifts a hair in the draught and lies back down, dust turns in the light above it. The same fingers stay on the same barrel of the pencil throughout. The sheet stays absolutely blank; no mark, line or letter appears at any point and the pencil tip never touches the paper; the wall poster stays a blank sheet and the blackboard stays an unreadable smear, with no lettering anywhere at any time. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -366,8 +326,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K40 | 5s · ekranda ~5s | VO "Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler."
-KAMERA NİYETİ: BU BLOĞUN İKİNCİ KARARLI VURUŞU — kamera masa hizasında alçak ve kilitli durur, kâğıt eli yukarı ittiği anda birkaç derece yukarı bakar; inatçı bir kitabın karşısında sabit bir göz.
+### K40  ·  40.png  ·  5s clip  ·  VO40: "Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler."
 -----
 The camera stays locked off low at desktop height, then tilts three degrees up onto his face the moment his hand is pushed clear — the camera only moves once he stops trying. At first his palm is flat on the swollen wave of pages; then he leans more weight through his shoulder and the stiff block compresses a few millimetres, resisting, and he holds it there for a beat. Half a second later the paper wins and shoves his palm upward, the cover riding back open under his hand with a firm spring. By the end he has lifted the hand clear and sat back a centimetre, and the book stands further open than it did at the start — it never closes flat no matter how hard he presses. The top page eases a hair further open against nothing, dust turns in the hard window light above the fanned edges. The same palm stays on the same patch of the cover until the paper pushes it off. The swollen cover and page block stay a rigid warped solid with no melt, morph or merge; the cover keeps its exact "SOSYAL BİLGİLER" letters flat in the frame plane exactly as they already sit, and the lettering does not morph, re-spell, wobble or gain any new word; no inner line becomes legible. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -375,8 +334,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K41 | 5s · ekranda ~5s | VO "Sonra bir kitap kampanyası planlayıp aralarında görev dağılımı yaptılar."
-KAMERA NİYETİ: Kamera tepeden sayfaya doğru insin, açı yükseklikten kâğıt hizasına düşsün — plan bittiğinde masa yukarıdan bakılan bir şey değil, içinde olunan bir şey olsun.
+### K41  ·  41.png  ·  5s clip  ·  VO41: "Sonra bir kitap kampanyası planlayıp aralarında görev dağılımı yaptılar."
 -----
 The camera booms steadily down from the high angle toward the desk, levelling out as it descends so the frame finishes almost at page height. At first the boy in glasses is still writing and three heads around him are down or turned away; then he finishes the last line of his column and lifts the blue ballpoint clear of the paper, laying it down across the sheet. Half a second later the girl with the hair clip raises her head off her forearms, the boy at the back unfolds his crossed arms, and @mira1's small satisfied set breaks into a proper closed-mouth smile. By the end the sheet is finished, the pen is down and every head has come up — it began with one person working and ends with four people over the same page. The crumpled first attempt unfolds one fold further of its own accord. The same fingers stay on the same barrel of the ballpoint until it is set down. Exactly four children are in the shot. The column entries stay soft and unreadable and no new writing appears after the pen lifts; the heading keeps its exact "GÖREV" in the same blue block capitals with its double underline, flat in the frame plane, and the lettering does not morph, re-spell, wobble or gain any new word. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -384,8 +342,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K42 | 5s · ekranda ~4s | VO "Okul yönetimi ve muhtarlıkla iş birliği kurdular."
-KAMERA NİYETİ: Kamera masa hizasından dümdüz geriye çekilsin, tilt hiç değişmesin — mühür kalksın, üç baş kalksın, kare sonunda üçü de aynı havada dursun; mühür izi büyümez, küçülür.
+### K42  ·  42.png  ·  5s clip  ·  VO42: "Okul yönetimi ve muhtarlıkla iş birliği kurdular."
 -----
 The camera dollies straight back from its low desk-level start at the same height and with no change of tilt, opening the office until all three of them sit inside the frame with air around them, then brakes and settles. At first the muhtar's weight is still down through his shoulder on the stamp, the school head has her arms folded and the girl is watching his hand; then he lifts the wooden stamp straight up off the sheet in one clean vertical move and sets it beside the open ink pad; the school head unfolds her arms and lets them fall to her sides, and half a second later he raises his head, so by the end all three are looking at one another across the desk instead of down at the paper. The cold tea trembles once in its glass, the fabric tie of the stacked files slips a little further, the half-drawn blind stirs against the window. The stamp stays one rigid wooden block with no deform or melt, and the only ink mark on the sheet is the single purple ring already printed there — no second impression, ring or new mark appears anywhere on the paper. The sheet holds exactly the same plane to the lens and only grows smaller in frame; the lettering MUHTARLIK does not morph, re-spell, wobble or gain any new word, the stamp carries no crest, emblem or star, and the girl touches nothing on the desk. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -394,8 +351,7 @@ REVİZE:
 NOT: Karede tek mühür izi var ve doğru basılmış. Mühür kalkarken altında İKİNCİ bir iz doğması en büyük risk — o yüzden hem "no second impression appears" kilidi kondu hem kamera geri çekilerek iz kadrajda küçültüldü.
 
 
-### K43 | 5s · ekranda ~4,3s | VO "Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı."
-KAMERA NİYETİ: Kamera neredeyse dursun — ağırlık el değiştirdiği anda kutuyla birlikte bir parmak boyu çöksün ve orada kalsın; devir seyirciye kadrajın kendisinden geçsin.
+### K43  ·  43.png  ·  5s clip  ·  VO43: "Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı."
 -----
 At the start the box is held level between the two of them, the woman's flat palm on its top face and the boy's hand clamped on its right edge, his knee already half raised beneath it and his jaw tight. In the first second he brings that knee the rest of the way up until it meets the box's underside and takes contact. Then her fingertips lighten and lift a hair off the kraft while her palm stays resting in exactly the same place, and the box drops a couple of centimetres onto his knee and tips a few degrees toward him as the weight becomes his. By the end he is settled with the box resting on that raised knee and pressed against his chest, shoulders locked and lifted, cheeks a shade redder, breath going out through his nose — the clip begins with two people carrying one box and ends with its whole weight sitting on the boy. The loose end of paper tape on the top seam curls back on itself as the box tips, and the daylight edge running across the kraft slides a fingerbreadth. The camera is almost still: it dips a few centimetres with the box at the instant the weight lands and stops there, staying square to the written face the whole time so the box never skews, rotates or foreshortens. Exactly two people are in frame from first to last, no third person, hand or arm enters from any edge and her face stays cut by the top edge, never revealed. The same fingers stay on the same edge throughout — his five on the right edge, hers in the same place on the top face with only its pressure changing — the two hands never touch, merge or exchange fingers, and each keeps five fingers. The box is a rigid solid whose corners, flap and taped seam hold their shapes and it never passes through his knee, his chest or her hand. The marker word KİTAP keeps the same letterforms in the same place with its dotted İ, unobstructed by either hand, and the lettering does not morph, re-spell, wobble or gain any new word; the pinned paintings, the rolled map and the noticeboard stay soft and wordless. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -403,8 +359,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K44 | 5s · ekranda ~4,5s | VO "Planlı hareket etmek, yardımın amacına ulaşmasını sağlar."
-KAMERA NİYETİ: Kamera parmakla birlikte sayfa hizasında sağa kaysın — izleyici çocukla aynı satırı okusun; kare bittiğinde bir satır bitmiş ve bir sonrakine geçilmiş olsun.
+### K44  ·  44.png  ·  5s clip  ·  VO44: "Planlı hareket etmek, yardımın amacına ulaşmasını sağlar."
 -----
 The camera tracks slowly to the right at page height, travelling with the boy's finger and holding it at the same point in frame so the desktop and the rubber-banded old book slide past behind it, then eases to a stop as the line runs out — the camera reads the line with him. At first his index finger slides steadily along under the line of print from left to right, his eyes above the top frame edge following it; then it reaches the end of the line and lifts a few millimetres clear of the paper; half a second later it drops back down at the start of the line below and settles there. By the end his shoulders have come down, his jaw has loosened and a slow breath is going out through his nose — one whole line has been read and the next one has been found. The outer corner of the open page eases up in the draught and holds there, dust turns slowly in the raking window light above the paper, the pencil lying parallel to the page edge rolls a hair against it and stops, and behind him the girl at the next desk turns a page of her own. No line of body text on the open page ever becomes legible or resolves into words at any point; the page stays flat against the desktop with no warp, ripple or swelling; the old book beside it stays closed under its rubber band with its cover turned away and no title appears on it; and his eyes stay outside the top frame edge for the whole clip. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -412,8 +367,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K45 | 5s · ekranda ~3,5s | VO "Haftalar geçti ve mahalle yeniden eski hâline döndü."
-KAMERA NİYETİ: Kamera suyun bir zamanlar durduğu taşlardan dosdoğru yukarı, bir metre kadar yükselsin — yeri terk etmek iyileşmenin kendisi; yükseliş dikey, yaw yok, ÇÖP yazısı kendi düzleminde kalsın.
+### K45  ·  45.png  ·  5s clip  ·  VO45: "Haftalar geçti ve mahalle yeniden eski hâline döndü."
 -----
 The camera cranes slowly and steadily up about a metre from its low start over the setts, gliding straight off the stones where the flood water once stood and easing to a settled stop at standing height, so the street reads as a place people walk through again rather than a surface to be measured; the rise is vertical with no yaw, so the bin's painted flank holds its own plane to the lens throughout. At first the old man in the flat cap is walking unhurried toward the lens with the two loaves against his ribs while the woman on the balcony has the rug drawn back over the rail; then she snaps it, the cloth cracks taut and falls slack, and the dust she has beaten out of it blooms into the light. By the end that dust has spread, thinned and drifted sideways down the street, the old man is several strides closer with his weight rolling heel to toe, and the boy behind has pushed the scooter one more stride and is coasting over a joint. The strung washing turns and lifts on the same air, a dry plane leaf turns over and skitters a hand's width across the paving, the sleeping cat on the doorstep lifts its head, blinks once and lays it down again. The street geometry, the plane tree at the right edge, the wooden door and the green bin all hold their exact positions; the bin stays upright and dry on its wheels with the painted word ÇÖP sharp and level, and the lettering does not morph, re-spell, wobble or gain any new word; no water, puddle, reflection or mud appears at any point. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -421,8 +375,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K46 | 5s · ekranda ~4s | VO "Komşular ortak alanda birlikte fidan dikip çevreyi temizledi."
-KAMERA NİYETİ: Kamera toprak hizasında dikim çemberleri boyunca sağa kaysın ve son fidanla yaşlı adamda yavaşlayıp dursun — kadraj tek kişiyi anlatmaz, hane sayar.
+### K46  ·  46.png  ·  5s clip  ·  VO46: "Komşular ortak alanda birlikte fidan dikip çevreyi temizledi."
 -----
 The camera dollies slowly to the right at soil level along the line of planted circles, letting each improvised support pass through frame in turn, and decelerates to a stop on the old man and the last sapling, so the shot counts the households instead of describing one of them. At first the kneeling woman in the floral dress is drawing the torn cloth strip tight around the young stem with her knuckles whitening; then she pulls the loop closed, lets her hands fall open and sits back a hand's width to look at the knot she has just tied. Further along the row the man's broom completes its stroke and the leaf litter he is pushing gathers into a taller pile at the end of the sweep, while the girl tips the watering can further so the stream thickens, then brings it level again until the pour thins to a last string of drops. By the end the knot is tied, the swept pile is taller and the can is empty and level. A cloth tie already knotted on the next sapling lifts and settles on the evening air, the thin stems sway a hair against their supports, steam drifts from the open thermos on the folding chair, a few swept leaves skid ahead of the broom head and stop against the kerb. Every support stays a different household object and each keeps its foot in the soil and its top held or tied — nothing floats, hovers or hangs unsupported at any point; the number of people stays exactly the same from first frame to last, nobody enters and nobody leaves; every hand keeps five fingers and every face stays fully modelled; the swept pile stays on the ground and is never cleared away. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -430,8 +383,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K47 | 5s · ekranda ~4,5s | VO "Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır."
-KAMERA NİYETİ: ★ KARARLI VURUŞ — bu sekansın tempo kıran klibi. Kamera tek kararlı yayla yukarı-sağa savrulup keskin frenlesin; kalkan baş ile uzatılan çay aynı kadrajda kilitlensin, devre kapansın.
+### K47  ·  47.png  ·  5s clip  ·  VO47: "Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır."
 -----
 The camera makes one firm, decisive arc: it swings up and to the right in a single committed move, faster than a drift and cleanly braked, arriving locked off with the kneeling man's lifted face and the offered tea glass close together in the same frame at the exact moment his eyes reach it, so the shot itself closes the circuit between the work and the tea. At first he is dragging the trowel tip the last hand's width along the fresh joint, a curl of mortar dust rising off the line behind the blade; then he lifts it clear and holds still for a beat looking at what he has finished, sits back onto his heels and wipes the blade once across his thigh; and only now, half a second later, does he raise his head and see the tea. As his eyes reach it the standing woman tips her chin and pushes the glass a few centimetres further toward him. By the end the trowel is off the joint, his weight is back on his heels and he is looking at her instead of at the kerb. Steam keeps curling off the glass and bends as her arm moves, a fine trickle of dry sand slips down the side of the heap, loose mortar dust drifts along the top of the new kerb. The new kerb blocks stay visibly uneven with thumbed imperfect joints and never straighten, align or become machined; the tea glass stays full and upright in her hand and is never spilled or handed over within the clip; no printed word or lettering appears anywhere in frame; both faces stay fully modelled and every hand keeps five fingers; the street geometry, the plane tree and the wooden door hold their positions. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -439,8 +391,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K48 | 5s · ekranda ~4s | VO "İnsanlar arasındaki güven, empati ve sosyal bağlar güçlenir."
-KAMERA NİYETİ: Kamera hiç kımıldamasın; tek optik olay bir kez odağın sokağa gidip anahtara dönmesi olsun — sokak akar, güven durur.
+### K48  ·  48.png  ·  5s clip  ·  VO48: "İnsanlar arasındaki güven, empati ve sosyal bağlar güçlenir."
 -----
 The camera is entirely locked off with no move at all, and the only optical event is one single deliberate focus rack: the plane pulls back off the key to the woman as she crosses behind, holds her for a beat, then returns to the key and stays there as she goes, so the shot says the street moves on and the trust does not. At first the ring of keys hanging from the key in the lock is still finishing its last small swing; then it turns once on itself and comes to rest against the timber; meanwhile the woman with the loaf walks steadily down the street at her own unhurried pace with her eyes on the way ahead. By the end she has passed the doorway completely and is leaving frame, the keys hang dead still, and the step is exactly as it was — she never once glanced at the key, the note or the bag. The torn corner of the squared-paper note lifts and drops again in the draught coming down the street, a parsley leaf at the mouth of the folded cloth bag nods, one basil leaf in the pot on the step turns over, the late light shifts a hair warmer along the plaster. The brass key stays in the lock for the whole clip and no hand ever reaches for it, touches it or removes it; the door stays shut and the dark slot behind it never fills with visible interior; the handwritten word KOMŞUDA stays level and identical on its note, held flat in the frame plane, and the lettering does not morph, re-spell, wobble or gain any new word; the woman never turns her head toward the door and never breaks her stride. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -448,8 +399,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K49 | 5s · ekranda ~3,5s | VO "Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir."
-KAMERA NİYETİ: Kamera çemberden geriye çekilsin; kenarlardan habire yeni sandalyeler girsin — çember kadrajın sandığından büyük çıksın, ama kimse oturmasın.
+### K49  ·  49.png  ·  5s clip  ·  VO49: "Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir."
 -----
 The camera dollies backwards away from the circle at a steady unhurried rate, widening the view so more and more mismatched chairs slide in from the frame edges as the shot retreats, ending in a soft settle — the frame keeps finding another chair it did not know about. At first the man is still carrying the upturned chair overhead as he walks the last two steps to the gap in the circle; then he bends his knees and swings it down off his head in one arc, so that by the end he is holding it at waist height about to set it on its feet. Beside him the boy hauls the milk crate two more staggering steps and lets its bottom edge scrape the stones, and the woman lifts her hands clear of the tray she has just set down and straightens her back, one hand going to her hip. Steam keeps rising from the glasses on the tray and leans as she moves away from it, a shirt on the washing line above turns on its peg, the cat on the wall shifts its paws and follows the moving chair with its eyes, the unlit bulb on its wire sways a hair. Nobody sits down at any point and the circle stays visibly unfinished from first frame to last; the tray stays flat on the stool seat with its glasses upright and full, and no object hovers unsupported at any moment; every arm ends in a hand with five fingers; the strung bulb stays unlit; the number of people stays exactly the same, nobody enters and nobody leaves. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -457,8 +407,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K50 | 5s · ekranda ~2,5s | VO "Mira o dar sokağa bir kez daha baktı."
-KAMERA NİYETİ: Kamera camın dışında sağa doğru usulca kaysın — camdaki yansıyan çatılar kayıp gitsin, ahşap kayıt geçsin, Mira kadrajın ortasına doğru açılsın; sokak artık camda değil, dışarıda.
+### K50  ·  50.png  ·  5s clip  ·  VO50: "Mira o dar sokağa bir kez daha baktı."
 -----
 The camera drifts slowly sideways to the right along the outside of the glass, just far enough that the reflected rooftops sheeting across the pane slide off it and the wooden mullion crosses the frame, leaving her face clean and nearer the middle than it began, then the move eases out and holds — the street stops living in the window. At first Mira's eyes are tracking something moving down in the street, following it from one side to the other, her fist closed on the heavy curtain; then she lets the cloth slip out of her fingers so it falls and swings once against the reveal; and as her hand comes down to rest flat on the sill beside the folded jumper her chin lifts a fraction and the closed corners of her mouth lift with it. By the end the curtain is hanging free, her hand is settled on the sill and the clip closes on a small settled smile that was not there at the start. Dust turns slowly in the shaft of late sun crossing the glass, the moth resting on the outside of the pane fans its wings once and stays, the upper folds of the curtain breathe as the cloth falls, the small round mirror on the far wall holds its scrap of light and it slides a hair. The light stays coming from above the rooftops for the whole clip and never rises from below; no water, puddle or water reflection appears at any point; she never looks at the lens; her face and hands stay fully modelled with five fingers; the room behind stays the same room and no new object appears in it. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -466,8 +415,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K51 | 5s · ekranda ~4,6s | VO "Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir."
-KAMERA NİYETİ: ★ KARARLI VURUŞ — arka plan tek kişilik ve sakin, hızlı hamle burada güvenli. Kamera bir vuruş boyunca çakılı dursun, sonra tek kararlı adımla sola kayıp keskin dursun; duvara paralel kalsın, ÇINAR etiketi dönmesin.
+### K51  ·  51.png  ·  5s clip  ·  VO51: "Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir."
 -----
 The camera holds dead still for the first beat, then takes one short crisp lateral dolly to the left — it starts on the frame where her hand leaves her head, travels about a stride, and stops dead with no ease-out and no drift back. It is a single decisive step, not a glide, and nothing follows it; the camera stays at trunk height and square to the wall the whole time so the hanging tag never rotates or skews. At first the girl stands beside the young sapling with her palm flat on top of her own head, chin tucked, eyes rolled up trying to see her own hand against the thin stem, and she holds that measurement dead still, checking it. Then, all at once, the hand drops — one quick decisive fall from the top of her head down to her side, the puffer sleeve compressing as the arm lands — and in the same beat her chin comes up and her eyes travel up the stem, past the height she just measured. By the end she stands straight with both arms hanging down and her face tilted up: the measurement has been taken and the answer has landed. A dry leaf scrapes a hand's width past her heel across the setts and stops, a flake of pale bark on the old plane trunk lifts at one edge and drops, the sapling's stem sways a hair against its cloth tie and comes back to true. Exactly one person is in frame from first to last, with no second person, hand or arm entering from any edge; the sapling stands unsupported and nobody touches its stem, and it keeps exactly the same spot in its circle of turned earth, the same thin diameter, the same height, the same cloth tie and the same support rod without growing, thickening, bending or sliding; the paper tag keeps the word ÇINAR in the same pencil letterforms with its cedilla, at the same point on the stem, facing the lens and the same size, and the lettering does not morph, re-spell, wobble or gain any new word; the faded hopscotch chalk stays illegible with no number resolving; her two plaits stay two plaits and her measuring hand keeps five fingers. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -475,8 +423,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K52 | 5s · ekranda ~3,5s | VO "Paylaştıkça çoğalır, dayanıştıkça güçleniriz!"
-KAMERA NİYETİ: Kamera hiç kımıldamasın ve duvara TAM PARALEL kalsın — iki satır bir kez doğru çıktı, açı değiştirip riske atmıyoruz. Klibin tek olayı damladır: damla iner ve durur.
+### K52  ·  52.png  ·  5s clip  ·  VO52: "Paylaştıkça çoğalır, dayanıştıkça güçleniriz!"
 -----
 The camera is completely locked off with no move whatsoever and stays exactly parallel to the wall, never changing its angle, so the two painted lines hold the same plane, the same size and the same place for every frame — the drip is the whole event and the frame simply lets it happen. At first a single bead of whitewash hangs at the foot of the last wet letter while the girl on the right holds her lifted brush still against the plaster and watches it; then the bead swells, releases and runs down the wall in one slow uneven line, slowing where the wall's tooth catches it; and it comes to a full stop a hand's width below the letter, thickening into a small drop that stays. As it stops she lowers the brush a little, the crouched boy underneath, who has followed the run down with his eyes, widens his grin, and the kneeling girl with the paint tin lifts her look from the tin up to the wall. By the end the hanging bead has become a finished runnel with a still drop at its foot. A loose corner of the folded dust sheet lifts and settles, a second bead gathers at the tip of the raised bristles and hangs without falling, the raking evening light creeps a fraction warmer along the wall face. The camera stays parallel to the wall; the two painted lines do not morph, re-spell, wobble, extend or gain any new word, every Turkish diacritic stays exactly in place, and no new lettering is painted during the clip — the run of paint stays a plain round-tipped runnel below the line and never becomes a letter, stroke or word. Exactly three children are in frame from first to last, nobody enters and nobody leaves, and every hand keeps five fingers. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -485,8 +432,7 @@ REVİZE:
 NOT: Bu bloğun en yüksek riskli karesi — duvarda badanayla iki satır Türkçe ve ikisi de DOĞRU basılmış. Kamera bilerek tamamen kilitli ve duvara paralel; damlanın kendisi de "harf/kelime olmayan düz akıntı" olarak kilitlendi ki motor onu yeni bir harfe çevirmesin.
 
 
-### K53 | 5s · ekranda ~4s | VO "Peki sen çevrende hangi ihtiyaç için bir proje hazırlayabilirsin?"
-KAMERA NİYETİ: Kamera hedefi olan tek bir kısa hamle yapsın — öne ve bir tık sola gidip keskin durarak boş kart ile boş raptiye arasındaki mesafeyi kapatsın; soru izleyiciye geçsin.
+### K53  ·  53.png  ·  5s clip  ·  VO53: "Peki sen çevrende hangi ihtiyaç için bir proje hazırlayabilirsin?"
 -----
 The camera makes one short committed travel forward and a fraction to the left along the corridor — a move with a destination, not a drift — closing the gap between the blank card in her hand and the single empty pin on the board until the two of them sit together in the middle of frame, then braking to a clean stop and holding there, so the shot puts the question and the empty place in the same breath. At first the child's eyes are on the board and her teeth are on her lower lip; then her gaze travels from the empty pin across to the blank card in her own hand and stays there; her fingers tighten a little on the card's edge and she lifts it a few centimetres higher, the pencil coming up with it and hovering just clear of the paper without ever touching it. By the end her lip is released and her mouth has closed into a decided line — the clip ends on a child who has chosen to write rather than one who is hesitating. The corner of the blank card lifts a hair in the corridor draught, dust turns slowly in the band of late light coming from the glazed door, one of the two remaining bags swings gently on its hook, the pinned cards breathe at their bottom edges. The held card stays absolutely blank for every frame and not one mark, line or letter ever appears on it; the pencil never touches the card; the pinned cards on the board stay soft and unreadable and never resolve into legible words; the empty pin stays empty and nothing is pinned to it; she never looks at the lens and her hands stay fully modelled with five fingers. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -494,8 +440,7 @@ DURUM: temiz
 REVİZE:
 
 
-### K54 | 5s · ekranda ~5s | VO "Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!"
-KAMERA NİYETİ: Kalabalık kare — kamera sakin kalsın. Sağa doğru fark edilmez bir yerleşme ve bir nefeslik yükselme; öndeki boş sandalye kenardan ortaya doğru gelsin ve orada tutulsun — veda oradan yapılıyor.
+### K54  ·  54.png  ·  5s clip  ·  VO54: "Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!"
 -----
 The camera stays calm: an almost imperceptible lateral settle of a few centimetres to the right with a breath of a rise, unhurried and with no acceleration anywhere, so the empty foreground chair slides in off the right edge toward the middle of frame and the shot ends holding it there — the frame quietly hands the seat over. At first the man in the waistcoat is mid-laugh with his head back and his tea glass raised; then his head comes back down, he takes a sip and rests the glass on his knee. Meanwhile the old man with the tray leans a little further toward the woman beside him so she can lift a glass off it, and by the end one glass has left the tray and is in her hand, while the teenage boy shifts his weight on his chair and turns his head an inch further into the circle to keep listening. Steam keeps lifting from the full glass waiting beside the empty chair, the strung bulb above swings a hair on its wire so every shadow in the circle moves together, once, slowly, a moth circles under the bulb and passes across it, the cat under one of the chairs stretches a paw and settles again. The empty chair stays completely empty for every frame and nobody sits in it, leans on it or moves it; the full tea glass beside it stays standing and is never picked up or spilled; the number of people stays exactly the same from first frame to last — nobody enters and nobody leaves, no extra person, arm or face appears at any edge, and none of them looks at the lens; the wall behind carries no readable lettering at any moment and no word ever forms on it; every person stays a solid rendered body with visible cloth and nobody flattens into a cut-out. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
