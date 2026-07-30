@@ -338,6 +338,64 @@ korku haklıydı (motor uydurma İngilizce basıyor) ama sonuç yazısı kazınm
 dekoruydu. Doğrusu yasaklamak değil **doldurmak**: yüzeyler malla giydirilir, uydurma
 tabelaya yer kalmaz.
 
+### §2d — REVİZE MADENİ: 54 karenin 30'u geri geldi (2026-07-30, Birlikte Daha Güçlüyüz)
+
+Mami'nin hükmü: *"54 prompt verdin, 30'u revize. Aynı hatalara düşme."* 54 kare basıldı ve
+tek tek gözle denetlendi. Kusurlar dağınık değil, **sekiz sınıfta toplandı** — ve sekizi de
+prompt yazılırken kesilebilirdi. Sıradaki her derste bunlar kare yazılmadan uygulanır.
+
+**1. İNSAN KOY, KOL KOYMA — 7 kare.** "Kahraman ellerdir" diye yazılan her yakın kare
+gövdesiz kolla döndü: K07 iki kol, K08 dört kol, K11 dört kol, K12/K13/K18 aynı. Motor
+"hands" yazınca **gövdeyi ve yüzü hiç üretmiyor.** Kural: her karede **en az bir insan
+yüzüyle** — yaş, giysi malzemesi, ifade yazılır. El yakın planı isteniyorsa bile o elin
+sahibi karede vardır.
+
+**2. GENİŞ PLAN DÜNYAYI KAYBEDİYOR — 5 kare.** K16/K17/K18/K20 (salon geniş planları) ve
+K01 (sokak) `pixar_3d_edu`'dan çıkıp **fotoğrafik mimari görselleştirmeye** düştü: düz
+ambient ışık, doygunluğu düşük gri-mavi palet. Aynı dünyanın yakın karesi (K19) tam yerinde.
+**STYLE kuyruğu yakın planda tutuyor, geniş planda tek başına yetmiyor.** Kural: her geniş
+karede **yakın planda modellenmiş bir yüz** bulunur — dünyayı tutan şey karakterdir.
+
+**3. BOŞ YÜZEY = UYDURMA İNGİLİZCE — 6 kare.** `SCHOOLBOOK` · `TURKISH` · `TURKİŞH` ·
+`TURKISH IME YED` · çimento torbasında `CEMEN…` · pantolon cebinde `AVNS`. **Altısının da
+promptunda "No text anywhere in this frame" yazıyordu.** §2a'nın kendi cümlesi: yasak
+battaniyesi dünyayı öldürür, doğrusu **DOLDURMAK**. Kural: yazı istemediğin her yüzey
+**giydirilir** — kepenk indirilir, tente toplanır, pano üst üste kâğıtla kaplanır, çuval
+duvara döndürülür. Kadrajda tabelanın doğabileceği boş panel bırakılmaz.
+
+**4. YAZIM DEĞİL YERLEŞTİRME — 3 kare.** Motor Türkçeyi **doğru yazıyor**: KIRTASİYE, ÇINAR,
+GÖREV, KİTAP, SOSYAL BİLGİLER, MUHTARLIK, AFAD, BELEDİYE, TÜRK KIZILAY, ÇÖP, AÇIĞIZ ve
+K52'nin iki uzun satırı — hepsi harf harf tuttu, sedil/breve/nokta yerinde. Bozulan üç kare
+**180 derece ters** doğdu (K19, K40, K42) ve biri yanlış nesneye sıçradı. Kural: TEXT slotuna
+**ORIENTATION** cümlesi zorunlu — *"reads left-to-right, never mirrored, reversed or rotated;
+appears on this one named object and on no other surface."*
+
+**5. NESNEYİ TUTAN EL ÜRETİLMİYOR — 4 kare.** K14 kova havada ve iki el boş, K46 perde
+kornişi havada, K49 tepsi hiçbir yüzeye değmiyor ve kol elsiz bitiyor, K52 fırça tutan el
+yumru. Genel temas cümlesi bunu tutmuyor. Kural: taşınan/tutulan her nesne için **kavrama
+yazılır** — hangi parmak nerede, avuç mu parmak ucu mu, ağırlık hangi eklemde, nesne ele
+nereden bastırıyor.
+
+**6. `silhouette` KELİME TUZAĞIDIR.** Motor onu tarif değil **çizilecek nesne** olarak
+okuyor ve düz 2D kesme-kâğıt figür basıyor (K04'te lacivert bir insan ikonu çıktı).
+`saffron`→çiçek, `bloom`→çiçek ile aynı sınıf. Arka plandaki insan **sırtı dönük ama tam
+render** yazılır; "unresolved silhouette in heavy defocus" bir daha yazılmaz.
+
+**7. ARDIŞIK FİZİKSEL DURUM KARE KARE KİLİTLENİR.** K23-K26 suyu çekilmiş sokak gösterirken
+K27 sokağı yeniden sele boğdu — kesimde zaman geri sardı. Kural: bir sekans boyunca değişen
+fiziksel durum (su seviyesi, gün ışığı, hasar derecesi, kalabalık) **her karenin NEGATIVE
+satırında ayrı ayrı** yazılır: *"the water never rises above the kerb line anywhere in frame."*
+
+**8. TEKRAR EDEN İNSAN PROP'LA DEĞİL TAG'LE TUTULUR.** K40/K43/K44'ün çocuğu aynı kazak ve
+aynı çene sıyrığıyla yazılmıştı; kazak ve sıyrık tuttu ama **yüz tutmadı** — saç rengi, yüz
+biçimi ve ten değişti. Çıpa **kimliğe** konmalı, prop'a değil: 2+ karede görünen her insan
+`@tag`lenir (§4a). Tarif çıpası tekrar eden insanı taşımaz.
+
+⚠ Bu sekizin hiçbiri estetik tercih değil, **hepsi ölçülmüş üretim kaybıdır**: 54 karenin
+30'u geri geldi ve 13'ü baştan üretildi. Kıstas da Mami'nin: *"sahneyle uymuyor · bozuk yazı ·
+yanlış şey"* — **süreklilik, palet ve üslup farkı revize sebebi DEĞİLDİR**, Mami gerektiğinde
+kendisi söyler.
+
 ### Slot kanıtları
 
 | Slot | Kanıt |
