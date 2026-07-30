@@ -1,11 +1,11 @@
 BİRLİKTE DAHA GÜÇLÜYÜZ — TEK REVİZE DOSYASI
 =========================================================================
-Sırayla in. Her bloğun altındaki ----- arası metni kopyala, bas, indir.
-Yeni dosya adını kare numarasıyla kaydet (ör. 7.png) — eskisinin üstüne yaz.
+Sırayla in. Her bloğun ----- arası metnini kopyala, bas, indir.
+Yeni dosyayı AYNI numarayla kaydet (ör. 7.png), eskisinin üstüne yaz.
 
-  ✅ DOKUNMA — 18 kare:  K03 K06 K09 K26 K28 K29 K31 K32 K33 K34 K37 K41 K44 K45 K48 K50 K53 K54
+  ✅ DOKUNMA — 17 kare:  K03 K06 K09 K26 K28 K29 K31 K32 K33 K34 K37 K41 K44 K45 K48 K50 K53
 
-  ♻️  REVİZE — 23 kare · mevcut kareyi REFERANS ver, tek satırı yapıştır
+  ♻️  REVİZE — 24 kare · mevcut kareyi REFERANS ver, tek satırı yapıştır
   🔁 BAŞTAN — 13 kare · referans YOK, promptun tamamını yapıştır
 
 Kıstas: sahneyle uymuyor · bozuk yazı · yanlış şey. Başka hiçbir şey.
@@ -396,15 +396,18 @@ NEGATIVE: the box stays held between both pairs of hands and is never fully rele
 ♻️  K46  ·  REVİZE  ·  referans: 46.png
    VO: "Komşular ortak alanda birlikte fidan dikip çevreyi temizledi."
 -----
-Use this referenced image, change ONLY these two things: (a) remove the curtain rod that floats horizontally in mid-air on the right together with the curtain hanging from it, and instead put a single straight wooden curtain rod upright in the old man's two hands with its foot planted in the soil against the last sapling, touching that sapling's stem — no rod, pole or cloth may hang in the air unsupported, and the two thin bent canes he currently holds are gone; (b) change the standing woman's facial expression from pained and grimacing to calm concentration, mouth closed with the lower lip caught between her teeth as she pulls the cloth knot tight. Keep everything else identical.
+Use this referenced image, change ONLY the curtain rod that floats horizontally in mid-air on the right together with the curtain hanging from it: remove them both, and instead put a single straight wooden curtain rod upright in the old man's two hands with its foot planted in the soil against the last sapling and touching that sapling's stem, replacing the two thin bent canes he now holds. Nothing may hang or hover in the air unsupported. Keep everything else identical.
 -----
+
+
+=========================================================================
 
 
 =========================================================================
 ♻️  K47  ·  REVİZE  ·  referans: 47.png
    VO: "Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır."
 -----
-Use this referenced image, change ONLY the stacked cement sacks at the right edge: turn every sack so its printed side faces the wall and no letter, word or logo of any kind is visible on them — plain unprinted paper sacking only. Keep everything else identical.
+Use this referenced image, change ONLY: turn the two cement sacks so their printed faces lie against the wall and the plain unprinted paper side faces the lens — no lettering of any kind is visible on them, and no other text appears anywhere in the frame. Keep everything else identical.
 -----
 
 
@@ -412,7 +415,7 @@ Use this referenced image, change ONLY the stacked cement sacks at the right edg
 ♻️  K49  ·  REVİZE  ·  referans: 49.png
    VO: "Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir."
 -----
-Use this referenced image, change ONLY the tea tray: lower it so it rests completely flat on the woven seat of the stool directly below it with its whole underside in contact with the seat, and put both of the woman's hands on the tray rim with all fingers clearly visible and both arms ending in a hand — nothing may hover in the air. Keep everything else identical.
+Use this referenced image, change ONLY the tea tray: lower it so it rests completely flat on the woven seat of the stool directly below it with its whole underside in contact with the seat, and put both of the woman's hands on the tray rim with all fingers clearly visible so both arms end in a hand. Nothing may hover in the air. Keep everything else identical.
 -----
 
 
@@ -439,5 +442,13 @@ NEGATIVE: the two trunks stay clearly different in diameter and are never matche
 ♻️  K52  ·  REVİZE  ·  referans: 52.png
    VO: "Paylaştıkça çoğalır, dayanıştıkça güçleniriz!"
 -----
-Use this referenced image, change ONLY the hand of the girl holding the paintbrush on the right: give her one clean, correctly formed hand with four fingers and a thumb wrapped around the brush handle, each finger separate and readable. Do not touch the wall, the paint or the lettering. Keep everything else identical. ⚠ Bu edit'i verirken motoru satırlara SOKMA: "the two painted lines of text stay pixel-identical and are not repainted, re-spelled or re-rendered" cümlesini edit'e ekle. Edit satırları bozarsa dur ve kareyi TEK BAŞINA yeniden üret — bu satırlar bir kez tuttu, ikinci kez tutacağının garantisi yok.
+Use this referenced image, change ONLY the hand of the girl holding the paintbrush on the right: give her one clean, correctly formed hand with four fingers and a thumb wrapped around the brush handle, each finger separate and readable. The two painted lines of text stay pixel-identical and are not repainted, re-spelled or re-rendered. Keep everything else identical. ⚠ Edit satırları bozarsa dur ve kareyi TEK BAŞINA yeniden üret — satırlar bir kez tuttu, ikinci kez tutacağının garantisi yok.
+-----
+
+
+=========================================================================
+♻️  K54  ·  REVİZE  ·  referans: 54.png
+   VO: "Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!"
+-----
+Use this referenced image, change ONLY the wall behind the circle: remove every letter and word from it so it carries no lettering at all — plain whitewashed plaster with only faint uneven paint marks, no readable text of any kind and absolutely no English. Keep everything else identical.
 -----
