@@ -523,18 +523,36 @@ Kötü set ölçüsü (Mami: *"bok gibi duruyor"*): klip başına 61 kelime, kod
 69 klipte donmuş aynı kuyruk. İyi set: klip başına 114 kelime, düz metin, tam cümle ve
 **her klipte kare-özel kilit.**
 
+🔴 **BİÇİM: TEK PARAGRAF. SLOT YOK, KÖŞELİ PARANTEZ YOK.** (Mami, 2026-07-30:
+*"salak gibi image formatıyla yazmışsın, direkt morph."*) Bu maddenin eski hâli motion'ı
+image prompt'un slot iskeletiyle tarif ediyordu ve **altın standartla çelişiyordu** —
+Eşeyli'nin 50 motion dosyasının 50'si tek akıcı paragraf. Slot'a bölünen motion prompt'unda
+motor cümleler arası sürekliliği kaybediyor ve morph üretiyor. Ölçüm: slot formatıyla yazılan
+sette Mami hükmü *"hiç beğenmedim"*, paragraf formatıyla yazılan Eşeyli altın standart.
+
 ```
-### K<n> | <süre>s · ekranda ~<x>s | VO<n> "<cümle>"
-KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta girmez>
+### K<n> | <süre>s · ekranda ~<x>s | VO "<Türkçe cümle>"
+KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta GİRMEZ>
 -----
-[1 DEVAM]   Karedeki öznenin BİR SONRAKİ yarım saniyesi — tek fiil, tek yay (sebep-etki-yerleşme).
-[2 ORTAM]   Karede zaten duran 2-3 öğenin küçük canlanması (yaprak iner, toz döner, gölge kayar).
-[3 KAMERA]  Camera: <tek hareket + gerekçesi>
-[4 KİLİT]   Kare-özel yasak: kim çerçeveden çıkmaz, ne yerinden oynamaz, ışık ne OLMAZ, yazı sabit kalır.
-[5 SESSİZ]  Silent clip, no audio, no dialogue, mouth closed, no lip movement.   ← [EDU] bkz. §3R
-[6 OPTİK]   No whip-pan, no shake, no snap-zoom, no camera warp.
+<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 170-210 kelime. İç sırası:>
+  1 KAMERA      nereden başlıyor · nasıl hareket ediyor · nereye oturuyor ("eases to rest")
+  2 İNSANIN YAYI  zaman kelimeleriyle: "At first… then… half a second later… By the end…"
+                  — klibin SONU BAŞINDAN farklı olmalı ve fark bu cümlelerde yazılı olmalı
+  3 AMBİYANS    tek cümlede, karede ZATEN duran 2-3 öğe (buhar büker, toz döner, perde nefes alır)
+  4 KİLİTLER    cümle olarak ve OLUMLU — "the stem stays rooted in the glass and the water line
+                stays level; the stem is never lifted out, tipped or handed over"
+  5 SABİT KUYRUK  Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+                  No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
+DURUM: temiz
+REVİZE:
 ```
+
+Yukarıdaki beş numara **paragrafın içinde bulunması gereken şeylerin listesidir**, prompta
+yazılacak etiket DEĞİLDİR. Numara, köşeli parantez ya da satır başı madde motora gitmez.
+
+**Teslim şekli:** klip başına ayrı dosya — `<Ad>/MOTION/01.txt … 54.txt`. Tek büyük dosya
+Mami'nin akışını bozuyor; o klip klip kopyalıyor.
 
 ### 3a. KLİPTE BİR ŞEY DEĞİŞMELİ — motion'ın §11'i
 
