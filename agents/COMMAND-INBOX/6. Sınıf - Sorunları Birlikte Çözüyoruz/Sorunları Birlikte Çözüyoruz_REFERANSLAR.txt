@@ -30,9 +30,9 @@ ENVANTER TABLOSU
 
 | Handle / kilit         | Kova         | İlk kare | Aralık          | Kaç klip |
 |------------------------|--------------|----------|-----------------|----------|
-| @efe1                  | BASILACAK    | K01      | K01-K52         | ~16      |
-| @derin                 | BASILACAK    | K04      | K04-K53         | 6        |
-| @kose (mekân)          | BASILACAK    | K02      | K02-K53         | 9        |
+| @efe1                  | BASILACAK    | K01      | K01-K57         | ~20      |
+| @derin                 | BASILACAK    | K04      | K04-K57         | ~9       |
+| @kose (mekân)          | BASILACAK    | K02      | K02-K57         | ~13      |
 | @sinif (mekân)         | BASILACAK    | K34      | K34-K45         | 7        |
 | @kutu (geri dönüşüm)   | BASILACAK    | K39      | K39-K50         | 5        |
 | defter (gözlem)        | TARİF KİLİDİ | K18      | K18-K20         | 3        |
@@ -51,8 +51,11 @@ motorun sınırı. Çözüm yöntem: **ikinci kare referans-edit ile türetilir.
 Bu derste üç çift var:
   · K02 → K03   aynı köşe, araba duruyor; tek fark Efe'nin dolanması
   · K04 → K05   aynı köşe, aynı araba; tek fark Derin'in DURMAK ZORUNDA kalması
-  · K02 → K53   aynı köşe; tek fark rampanın BOŞ olması (dersin kapanış kanıtı)
-Bu üç kare (K03, K05, K53) sıfırdan basılmaz. Promptları "türetme" olarak yazıldı.
+  · K02 → K52   aynı köşe, aynı kadraj; tek fark rampanın BOŞ olması (kapanış kanıtı)
+  · K04 → K53   aynı tekerlek, aynı kaldırım; tek fark Derin'in eğimden YUKARI çıkması
+Bu dört kare (K03, K05, K52, K53) sıfırdan basılmaz — promptları "türetme" olarak yazıldı.
+⚠ K/VO numarası 1:1 — VO52 Efe'nin köşeye gelmesi, VO53 Derin'in çıkması. Eski satır
+  boşalmış rampayı K53'e yazıyordu; S6 yazılırken VO'ya göre düzeltildi.
 
 =========================================================================
 BASILACAK — 1 · @efe1   (bu derse özel gardırop varyantı)
