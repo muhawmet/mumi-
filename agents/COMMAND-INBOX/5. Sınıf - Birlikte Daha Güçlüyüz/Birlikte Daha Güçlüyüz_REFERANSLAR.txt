@@ -1,0 +1,259 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — REFERANS ENVANTERİ
+=========================================================================
+Dünya: pixar_3d_edu · register: EDU · 54 kare (bkz. _SESLENDIRME.txt)
+Yasa: PROMPT-YASASI §4 + §4a. Bu dosya PROMPTLAR'dan ÖNCE yazıldı.
+
+⚠ SAHNE PROMPTLARINDA @handle'ı ASLA TARİF ETME. Kimlik handle'dan gelir, hâl kareden.
+
+🔴 KADRAJ KİLİDİ — @tag çağıran HER kare bunu yazar (ölçüm: 6/6 plastik)
+   Referans sayfası "tam boy, ayakta, stüdyo" kadrajı taşır ve @tag onu kareye İTHAL EDER.
+   Ezmezsen figürin gelir. Her @tag karesinde kadrajın DIŞARIDA bıraktığı yazılır:
+     "framed from mid-chest up, nothing below the chest is visible"
+     "framed at knee height, no floor and no shoes visible"
+   VE: temas gölgesi örneği ASLA ayakkabıya yazılmaz — kepçeye, koliye, kaleme, kâseye yazılır.
+   "shoes press flat on the paving" cümlesi ayağı kadraja MECBUR eder. Yasak.
+
+=========================================================================
+ENVANTER TABLOSU — hangi sekans hangi referansı istiyor
+=========================================================================
+
+| Handle / kilit        | Kova          | İlk kare | Aralık            | Kaç klip |
+|-----------------------|---------------|----------|-------------------|----------|
+| @mira1                | ÜRETİLDİ ✓    | K01      | K01-K50 (dağınık) | ~14      |
+| @dede                 | ÜRETİLDİ ✓    | K28      | K28-K33           | 4        |
+| @koli                 | ÜRETİLDİ ✓    | K12      | K12-K43           | 4        |
+| @sokak (mekân)        | BASILACAK     | K01      | K01-K06, K45-K50  | 9        |
+| @salon (mekân)        | BASILACAK     | K16      | K16-K22           | 7        |
+| @afad_yelek           | BASILACAK     | K23      | K23-K24           | 2        |
+| sadaka taşı           | TARİF KİLİDİ  | K30      | K30-K31           | 2        |
+
+INTRO (K01-K09) yalnız @mira1 ister ve @mira1 ZATEN BASILI — INTRO hiç referans beklemez,
+şimdi basılabilir. @dede K28'e, @koli K12'ye kadar hazır olsun.
+
+⚠ Klip sayısına dokunan her düzenlemede bu tablo yeniden numaralanır (§4a).
+
+=========================================================================
+ÜRETİLDİ — @mira1  (basılmaz, yalnız kullanım kuralı)
+=========================================================================
+@mira1 mevcut referanstır (bu derse özel gardırop varyantı — ay/gezegen rozetleri YOK). Kimlik handle'dan gelir — sahne promptunda ASLA tarif edilmez:
+saç, ten, göz, yaş, gardırop yazılmaz. Karede yalnız HÂLİ yazılır (ne yapıyor, nereye bakıyor,
+eli nerede) ve KADRAJ KİLİDİ yazılır.
+
+⚠ Bu derste @mira1 yağmur sonrası bir sokakta: gardırobu tarif etme, ama ıslaklık/çamur gibi
+HÂL bilgisi karede meşrudur — "the shoulders of her jacket are dark with rain" gibi. Bu kimlik
+değil, o anın hâlidir.
+
+=========================================================================
+BASILACAK — 1 · @dede
+=========================================================================
+-----
+Full-body character reference of @dede:
+
+A Turkish/Anatolian grandfather, around seventy, lean and upright rather than frail. Warm matte
+tan skin with honey subsurface scattering, low specular, deep-set laugh lines carried as form,
+never tinted green or grey. Short silver hair, a full silver moustache, heavy grey brows.
+Dark brown eyes with wet dual-point specular. Expression settled and amused — a man in the middle
+of telling something, not posing for a portrait.
+
+Wardrobe: a warm brown knitted wool vest over a soft cream collarless shirt, sleeves rolled to
+the forearm. Deliberately brown-ochre — it sits inside the world's wood-tone range so he reads as
+belonging to the interior, never competing with @mira1's costume. Dark grey wool trousers, brown
+leather house slippers. A wooden prayer-bead loop resting in one hand.
+
+Pose: relaxed hero pose, weight on one foot, one hand at his side holding the beads — reads
+clearly at fifty-pixel thumbnail size.
+
+85mm lens at f/4.0, full body centered, soft studio key with cool bounce fill, warm-grey seamless
+gradient backdrop with a soft floor contact shadow — not a story location and not an empty white void.
+
+Materials: knitted wool vest with visible cable stitch and slight fiber fray at the hem; cotton
+shirt with a soft woven texture and natural creasing at the elbow; worn leather slippers with a
+satin sheen at the toe where the surface has been polished by use.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage,
+continuous physically-based shading, subsurface scattering on skin carrying the scene's light
+temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no logo, no brand name, no photoreal or real-human photographic skin, no flat 2D or cel
+shading, no hard black outline, no clay or plasticine surface, no franchise character, no text
+anywhere in the frame, no religious insignia, no desaturated grey in skin or costume.
+-----
+
+=========================================================================
+BASILACAK — 2 · @koli
+=========================================================================
+Gerekçe: Bileşke'nin en pahalı tek hatası buydu — tag'siz tekrar eden prop 6 ardışık karede 6
+farklı nesne çıktı ve 6 kare toptan revize oldu. Koli K12, K18, K19, K43'te var.
+-----
+Full object reference of @koli:
+
+A single relief-aid carton box, closed, standing upright.
+
+Unbleached kraft cardboard in a warm ochre-brown, corrugated edge visible as a real fluted layer
+along the cut rim, not a printed line. The top flaps are folded over one another in the
+interlocking square fold, one corner lifted slightly so the fold reads as physical. A band of
+wide brown paper tape runs across the seam, its edge slightly wrinkled where it was pressed down
+by hand. One lower corner is softened and scuffed pale from being set down repeatedly.
+
+On the front face, a hand-written Turkish label in thick black marker on the bare kraft surface —
+the ink has bled very slightly into the paper fibre and the strokes are uneven, clearly written
+by a person leaning on the box. The words read "GIYECEK" — one word, seven letters, all capitals.
+
+85mm lens at f/4.0, object centered, soft studio key with cool bounce fill, warm-grey seamless
+gradient backdrop with a soft contact shadow beneath the box — not a story location and not an
+empty white void.
+
+Materials: kraft paper with visible fibre grain and a dry matte finish that gives light back
+weakly; paper tape with a faint satin sheen along its centre; marker ink sitting slightly raised
+and absorbed at its edges.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage,
+continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no logo, no brand name, no barcode, no English signage, no printed shipping label,
+no photoreal capture, no flat 2D or cel shading, no hard black outline, no plastic sheen.
+-----
+
+=========================================================================
+BASILACAK — 3 · @sokak   (MEKÂN REFERANSI · 9 klip)
+=========================================================================
+Gerekçe: açılış sokağı (K01-K06) kapanışta (K45-K50) AYNEN geri dönüyor. Seyirci aynı köşeyi
+tanımazsa "önce/sonra" beyanı çöker. Ref yoksa 9 karede 9 farklı sokak çıkar.
+⚠ Mekân referansı da kendi kadrajını ithal eder — sahne karesinde kendi kadrajını YAZ.
+-----
+Full environment reference of @sokak:
+
+A narrow Turkish neighbourhood street, seen as a wide establishing view down its length.
+
+Three-storey plastered apartment blocks stand close on both sides, their render in warm ochre
+and faded rose, patched in places with a paler repair that never quite matched. Slim iron
+balcony rails run across the first and second floors, painted dark green and rusting at the
+weld points. Air-conditioning units and satellite dishes sit at irregular heights. A single
+mature plane tree stands at the near corner, its bark mottled cream and grey, its roots having
+lifted and cracked the paving around it.
+
+The ground is cobbled with worn grey setts, dipping toward a shallow central channel — the
+lowest point of the street, which is why water gathers here. A green municipal waste bin stands
+against one wall. A stone step and a heavy timber door with a brass number plate mark the near
+entrance on the left.
+
+35mm lens at f/5.6, eye level, wide establishing view straight down the street. Neutral overcast
+daylight, flat and even, no strong direction — this is a reference plate, not a lit scene; every
+surface is legible so the frame can be re-lit later. No people, no vehicles, no action.
+
+Materials: lime plaster with a chalky matte finish that gives light back weakly; cast-iron rail
+with satin paint and granular rust at the joints; granite setts with a fine worn polish on their
+crowns and dark grout between; plane bark in flaking dry plates.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent on street props for child-safe readability.
+
+NEGATIVE: no people, no cars, no water, no flood, no mud; no logo, no brand name, no English
+signage, no shop fascia text; no photoreal or live-action capture; no flat 2D or cel shading,
+no hard black outline, no clay surface; no teal-orange grade, no desaturated look.
+-----
+
+=========================================================================
+BASILACAK — 4 · @salon   (MEKÂN REFERANSI · 7 klip)
+=========================================================================
+Gerekçe: K16-K22 sekansının tamamı burada geçiyor. Yedi karede aynı salon.
+-----
+Full environment reference of @salon:
+
+A school gymnasium, seen as a wide establishing view from one end.
+
+Pale timber floor with painted court lines in faded blue and red, the varnish worn to matte in
+the centre traffic path and still satin at the edges. Wooden wall bars run the full length of
+one side wall, their rungs polished darker where hands have gripped them. High clerestory
+windows sit in a row near the ceiling, deep-set, throwing long rectangles down the far wall.
+Exposed steel roof trusses cross overhead. A folded-back basketball hoop is hinged up against
+the end wall. Along one side, a stack of blue plastic gym benches and a rolled tumbling mat.
+
+Down the centre of the floor stands a row of folding trestle tables with pale laminate tops and
+grey steel legs, set end to end, empty.
+
+35mm lens at f/5.6, eye level, wide establishing view down the length of the hall. Neutral even
+daylight from the clerestory, flat and legible — this is a reference plate, not a lit scene.
+No people, no boxes, no action.
+
+Materials: timber floor with visible grain under a worn satin varnish; wall bars in oiled beech
+with a soft sheen; laminate tabletop dry and matte, giving light back weakly; steel legs with a
+dull brushed finish and scuffs at the foot.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent on props for child-safe readability.
+
+NEGATIVE: no people, no relief boxes, no supplies, no clutter; no logo, no brand name, no English
+signage; no scoreboard text; no photoreal or live-action capture; no flat 2D or cel shading,
+no hard black outline, no clay surface; no teal-orange grade, no desaturated look.
+-----
+
+=========================================================================
+BASILACAK — 5 · @afad_yelek   (2 klip — logo BİREBİR istendiği için)
+=========================================================================
+Gerekçe: Mami'nin kararı — AFAD gerçek adıyla ekranda. Metin amblemi YAKLAŞTIRIR, referans
+BİREBİR taşır. Bu yüzden iki klip için bile basılıyor.
+⚠ Bu referansı üretirken amblemi promptla uydurma — elinde AFAD'ın gerçek görseli varsa
+referans üretiminde onu kullan. Prompt yalnız formu ve malzemeyi kuruyor.
+-----
+Full object reference of @afad_yelek:
+
+A high-visibility field vest worn over a dark navy work jacket, shown on a neutral mannequin
+torso, front and slightly turned so the shoulder reads.
+
+The vest is solid amber-orange, a heavy woven polyester with a visible twill texture, closed at
+the front with a wide black zip. Two horizontal retroreflective bands run across the chest and
+around the back, silver-grey and glass-beaded so they read as a different material from the
+fabric — they give light back sharply where the fabric gives it back softly. A radio loop is
+stitched at the left shoulder and a slim vertical pocket sits low on the right.
+
+Across the upper back, the letters "AFAD" — one word, four letters, all capitals — printed
+directly onto the vest fabric in matte black, the ink sitting into the weave rather than on top
+of it, each letter slightly softened at its edge by the fabric texture. The dark navy jacket
+beneath shows at the collar and the cuffs, its shell a tight ripstop with a faint diagonal grid.
+
+85mm lens at f/4.0, torso centered, soft studio key with cool bounce fill, warm-grey seamless
+gradient backdrop with a soft contact shadow — not a story location and not an empty white void.
+
+Materials: woven polyester with a dry matte finish; retroreflective band with a fine granular
+sparkle; ripstop nylon with a low satin sheen; black zip teeth in dulled metal.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no commercial or corporate brand logo; no English signage; no invented emblem, crest
+or shield of any kind; no photoreal or live-action capture; no flat 2D or cel shading, no hard
+black outline, no clay surface; no warped or re-spelled lettering.
+-----
+
+=========================================================================
+TARİF KİLİTLERİ — referans basılmaz, kelime öbeği HER karede AYNEN tekrarlanır
+=========================================================================
+
+SADAKA TAŞI (K30-K31)   — iki kare, ikisi de yan yana; ref basmaya değmez
+  "a weathered pale limestone column about waist height, its top hollowed into a shallow
+   worn bowl, standing at the corner of an Ottoman street wall"
+
+KIZILAY ARACI (K25)   — tek kare; kırmızı hilal basit geometri, metin doğru üretir
+  "a white relief vehicle with a single red crescent on its side panel, its opening facing
+   forward, and the words TÜRK KIZILAY beneath it"
+
+=========================================================================
+✅ MAMİ KARARI — AFAD ve KIZILAY EKRANDA, GERÇEK ADIYLA (2026-07-30)
+=========================================================================
+Mami'nin hükmü: "bu Starbucks mı, devletin kurumları." Kamu kurumu ticari marka değildir ve
+dünya kilidinin "no logos, no brand names" maddesi ticari marka için yazılmıştır.
+
+UYGULAMA — yalnız K23-K26'da:
+  · Global NEGATIVE kuyruğundan şu parça ÇIKARILIR:
+      "no recognizable franchise or real-person characters, logos, brand names"
+    yerine yalnız şu yazılır:  "no commercial or corporate brand logos"
+    Kuyruğun geri kalanı aynen kalır. K27-K54'te kuyruk DEĞİŞMEZ.
+  · AFAD: yalnız KELİME yazılır — "AFAD", four letters, all capitals. Grafik amblem prompttan
+    UYDURULMAZ; amblem @afad_yelek referansından gelir.
+  · Türk Kızılay: beyaz zemin üzerinde tek kırmızı hilal + "TÜRK KIZILAY" harf harf.
+  · Belediye: şehir adı uydurulmaz — yalnız "BELEDİYE", eight letters, all capitals.
+=========================================================================

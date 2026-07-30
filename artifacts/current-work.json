@@ -4,22 +4,22 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bizi Bir Arada Tutan Değerler",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "FAZ 10 ölçüm+readback: mevcut buddy altyapısı Windows-hazır ve skill kopyaları byte-aynı; PROBE SONUCU brief §1 ile §2 çakışıyor — run_in_background turn'ü BİTİRİYOR, yani background'a devredilen işte bekleme sırasında konuşmak İMKANSIZ (brief'in kendi FAIL tanımı). Konuşan tek iki yüzey: PostToolBatch+additionalContext (kurulu) ve Monitor (kanıtsız). Bileşke cast kusuru ders adayına yazıldı.",
-  "nextAction": "Mami A/B kararı: bekleme eşliği ön plan+PostToolBatch (A, bugün çalışıyor) mı yoksa background+Monitor (B, pilotla ölçülür) mü",
+  "lastCompleted": "54 start frame yazıldı (S1-S5), SESLENDIRME 54 cümle/3610 karakter, REFERANSLAR (6 ref), SUNO hazır. prompt-lint: gerçek kırmızı 0 — kalan 18 kırmızı insansız karelerdeki yanlış alarm, K52 heceleme düzeltildi.",
+  "nextAction": "Mami @sokak + @salon + @afad_yelek referanslarını bassın, sonra INTRO (K01-K09) — INTRO hiç referans beklemiyor",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": false,
-    "PROMPTLAR": true,
-    "revize": true,
-    "MOTION": true,
-    "EDIT-PLAN": true,
-    "SESLENDIRME": true,
-    "SUNO": true,
-    "KABA-KURGU.xml": true
+    "PROMPTLAR": false,
+    "revize": false,
+    "MOTION": false,
+    "EDIT-PLAN": false,
+    "SESLENDIRME": false,
+    "SUNO": false,
+    "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-30T05:26:03.027Z",
+  "updatedAt": "2026-07-30T07:20:07.211Z",
   "updatedBy": "claude",
-  "baseCommit": "0ec728d"
+  "baseCommit": "577fe9c"
 }

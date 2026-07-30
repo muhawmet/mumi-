@@ -1,0 +1,40 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — MÜZİK (SUNO)
+=========================================================================
+5. Sınıf Sosyal Bilgiler (5.1.3) · 54 klip · VO ~3:51
+Yasa: PROMPT-YASASI §5 — Simple kutusuna TEK paragraf. Structure/tag bloğu YAZILMAZ.
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A warm, patient orchestral-acoustic underscore for a children's documentary about a neighbourhood rebuilding itself after a flood — it opens grey and uncertain with a single soft felt piano and a low sustained cello, then gathers as more instruments join one at a time, the way neighbours arrive one by one, until a full warm string section and gentle acoustic guitar are carrying it together; mid-piece it steps back into something older and quieter, a lone plucked stringed instrument with a slight Anatolian modal colour, unhurried and dignified, before the strings return and lift into a hopeful, unforced resolution with soft mallet percussion and a light rhythmic pulse like hands working in time; tempo slow to moderate around eighty beats per minute, never triumphant, never sentimental, never epic trailer music; dynamics kept low and even with plenty of room for a narrator throughout, nothing competing in the midrange; instrumental only, no vocals, no lyrics, no choir, no vocal pads.
+
+
+=========================================================================
+AŞAĞISI KOPYALANMAZ — Custom moda geçersen ya da kurgu için not
+=========================================================================
+
+NEGATİF (Custom mod kullanırsan)
+  no vocals, no lyrics, no choir, no vocal pad, no epic trailer drums, no brass stabs,
+  no EDM synth, no drop, no bright pop production, no sad piano ballad cliché
+
+SEKANS ENERJİSİ — kurguda müzik nerede nefes alır
+  K01-K09  INTRO / sel sabahı ....... en düşük. Tek piyano + sürdürülen çello. Neredeyse yok.
+  K10-K15  yardımlaşma tanımı ....... ilk sıcaklık; ikinci enstrüman girer.
+  K16-K22  spor salonu / iş birliği .. ritim başlar — çalışan el temposu, hafif mallet.
+  K23-K27  kurumlar ................. dolgunlaşır, yaylılar açılır. Tepe değil, güven.
+  K28-K34  dede / geçmiş ............ ✂ GERİ ÇEKİLİR. Tek telli çalgı, modal renk. En sessiz an.
+           ⚠ K33-K34 (Millî Mücadele) ağırlaşır ama YÜRÜYÜŞ MARŞI OLMAZ. Ağırbaşlı, gürültüsüz.
+  K35-K44  katkı / proje ............ ritim geri gelir, tempo aynı kalır, katman artar.
+  K45-K52  toparlanma / kapanış ..... tam yaylı + gitar; çözülüş, zafer değil.
+  K53-K54  soru ve veda ............. son sekiz saniyede incelir, tek enstrümanda biter.
+
+MİKS NOTU
+  VO önde. Müzik VO altında ~-18 dB.
+  Klipler SESSİZ üretildi (Kling native ses yok) — SFX minimal, yalnız su ve kâğıt.
+  Müzik yalnız iki yerde öne çıkar: K09 (VO'nun ilk büyük durağı) ve K52 (kapanış yazısı).
+  Sesin geldiği süre VO'dan uzun olsun; kurguda kısaltmak kolay, uzatmak değil.
+
+⚠ Gerçek süre ölçülmedi. VO indiği an `node scripts/kaba-kurgu.mjs` whisper'la gerçek
+  cümle sınırlarını verir; bu tablo o zaman kesinleşir. ÜRET tahminle, KES ölçümle.
+=========================================================================
