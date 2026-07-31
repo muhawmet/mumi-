@@ -203,14 +203,30 @@ describe('ders bankası kanalı — banka üretime bağlı kalır', () => {
 
   test('skill yüzeyleri tek tek değil ÇİFT güncellenir (launcher-parity)', () => {
     // `.claude/` ve `.agents/` kopyaları birlikte yaşar; biri güncellenip öteki unutulursa
-    // iki ajan iki farklı yasa okur. agents-sync --check bunu ayrıca ölçer.
-    for (const surface of ['mamilas-director', 'mamilas-enzim']) {
+    // iki ajan iki farklı yasa okur.
+    //
+    // 2026-07-31 ölçümü: bu test ON skill'in İKİSİNE bakıyordu ve onlarda bile yalnız
+    // "banka geçiyor mu" diye kontrol ediyordu — yani sekiz skill sessizce sapabilirdi
+    // ve sapan biri zaten vardı (`mamilas-ref`). Kapı kör kalamaz: artık İKİ TARAFTA DA
+    // var olan HER skill'in TAM içeriği karşılaştırılıyor.
+    //
+    // Tek meşru fark ortam adıdır: Claude tarafı `CLAUDE.md` der, Codex tarafı `AGENTS.md`.
+    // Bu kasıtlı; karşılaştırmadan önce normalize edilir. Başka her fark SAPMADIR.
+    const lf = (s: string) => s.replace(/\r\n/g, '\n').replace(/AGENTS\.md/g, 'CLAUDE.md');
+    const claudeSkills = resolve(REPO, '.claude/skills');
+    const surfaces = existsSync(claudeSkills)
+      ? readdirSync(claudeSkills).filter((d) => existsSync(resolve(claudeSkills, d, 'SKILL.md')))
+      : [];
+    expect(surfaces.length).toBeGreaterThan(5); // testin kör kalmadığının kanıtı
+
+    const sapan: string[] = [];
+    for (const surface of surfaces) {
       const a = resolve(REPO, `.claude/skills/${surface}/SKILL.md`);
       const b = resolve(REPO, `.agents/skills/${surface}/SKILL.md`);
-      if (!existsSync(a) || !existsSync(b)) continue;
-      const lf = (s: string) => s.replace(/\r\n/g, '\n');
-      expect(lf(readFileSync(b, 'utf8')).includes(BANK)).toBe(lf(readFileSync(a, 'utf8')).includes(BANK));
+      if (!existsSync(b)) { sapan.push(`${surface} (.agents kopyası YOK)`); continue; }
+      if (lf(readFileSync(a, 'utf8')) !== lf(readFileSync(b, 'utf8'))) sapan.push(surface);
     }
+    expect(sapan, `skill kopyaları sapmış: ${sapan.join(', ')}`).toEqual([]);
   });
 });
 

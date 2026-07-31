@@ -157,6 +157,21 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
   done < <(git -c core.quotepath=false diff --cached --name-only --diff-filter=ACM -z 2>/dev/null)
 fi
 
+# --- 6b. DURUM KAYDI SAPMASI (UYARI — bloke etmez) ---
+# `scripts/current-work.mjs --check` diskle kaydı karsilastirir ve sapma varsa exit 1 verir.
+# Kendi yorumunda "kapiya BAGLANMAZ" yaziyordu ve hicbir sey onu cagirmiyordu — yani sapma
+# olcen bir arac vardi ve olcum hic okunmuyordu. 2026-07-31 arkeolojisi: dokuz hafiza sistemi
+# kuruldu, ortalama omru bir haftanin alti, ve HEPSI ayni sekilde oldu — kayit diskle koptu,
+# yalan soylemeye basladi, arsive atildi, yenisi kuruldu. Bunu goren tek sey bu satirdir.
+#
+# Bloke ETMEZ: yarim is sirasinda sapma dogaldir (kareler basiliyor, kit henuz eksik).
+# Kapi burada yon vermez, sadece KAYDIN YALAN SOYLEMEYE BASLADIGINI gorunur kilar.
+if ! WORK_OUT=$(node scripts/current-work.mjs --check 2>&1); then
+  printf '⚠️  DURUM KAYDI SAPMIS — artifacts/current-work.json diskle ortusmuyor.\n' >&2
+  printf '%s\n' "$WORK_OUT" | grep -E 'DRİFT|DRIFT|⚠' | head -4 >&2
+  printf '   `node scripts/current-work.mjs ilerle --bitti "..." --sirada "..."` ile guncelle.\n' >&2
+fi
+
 # --- 7. claude senkronu (UYARI — bloke etmez) ---
 # Sistemin akli (hafiza, kullanici skill'leri, global CLAUDE.md) repo DISINDA, ~/.claude
 # altinda yasiyor; git onu tasimaz. Sapma commit aninda gorunur olsun diye burada.

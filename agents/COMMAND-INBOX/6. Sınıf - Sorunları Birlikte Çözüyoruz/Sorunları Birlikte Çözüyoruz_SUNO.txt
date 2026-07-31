@@ -1,0 +1,56 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — SUNO
+=========================================================================
+6. Sınıf Sosyal Bilgiler · 6.1.3 Toplumsal Sorunlar · 57 klip · ~3:10-3:30
+Kullanım: aşağıdaki tek paragrafı Suno'nun **Simple** kutusuna yapıştır.
+Enstrümantal. Vokal YOK — VO'nun altında yaşayacak.
+=========================================================================
+
+
+SIMPLE KUTUSU — tek paragraf, olduğu gibi kopyala
+-------------------------------------------------------------------------
+Warm instrumental score for a children's animated short about a boy who finally notices
+something he walks past every morning. Solo felt piano carries the whole piece, close and
+slightly imperfect, with the pedal and the felt audible. A single cello enters underneath
+from the middle of the piece and stays low, never soaring. Light acoustic guitar harmonics
+and a soft marimba mark small moments of noticing. No drums for the first half; from the
+middle a quiet brushed kick and a soft shaker give a walking pulse, unhurried, the tempo of
+a child walking to school rather than a montage. The mood is curious and tender, never
+triumphant and never sad — this is a story about attention, not about pity. Around two
+thirds through, everything thins to almost nothing: piano alone, one note at a time, room
+tone audible. The ending is warm and open rather than a finish: the cello resolves but the
+piano leaves one note ringing, unresolved, as if the question is being handed to the
+listener. Modern children's-film scoring in the Pixar tradition, acoustic and human, wide
+and unhurried, mixed to sit far under a narrator's voice with the mid-range left open.
+Instrumental only, no vocals, no lyrics, no choir, no vocal pads.
+
+
+=========================================================================
+SEKANS ENERJİSİ — kurguda müziğin nerede ne yapacağı
+=========================================================================
+Suno tek parça verir; aşağıdaki eğri PREMIERE'de ses seviyesiyle kurulur.
+Müzik hiçbir yerde VO'nun önüne geçmez; anlatı katmanı VO'dur.
+
+K01-K06  INTRO           · piyano tek başına, çok sakin. Efe'nin sabahı.
+                           K06 (fark etme anı) — müzik BİR ANLIK durur, sonra tek nota.
+K07-K11  TANIM           · marimba girer, merak tonu. Ritim yok.
+K12-K22  FARK ETME       · gitar harmonikleri; her fark edişte tek bir vuruş.
+K23-K33  NEDEN-SONUÇ     · çello girer ve altta kalır. Burası videonun en ağır yeri —
+                           kirlilik, trafik, erişim. Müzik AĞLAMAZ, sadece ağırlaşır.
+K34-K43  ÇÖZÜM/KURUMLAR  · fırçalı kick ve shaker girer. Yürüyüş nabzı. İlk kez ilerleme
+                           hissi — ama coşku değil, iş yapma hissi.
+K44-K51  KATILIM         · nabız sürer, piyano açılır. K51'de (sorun sürüyorsa) müzik
+                           bir kademe geri çekilir — çözülmemişliği müzik de kabul eder.
+🔴 K52-K53 KAPANIŞ VURUŞU · **MÜZİK NEREDEYSE SUSAR.** Rampa boş, Derin tek başına çıkıyor.
+                           Yalnız oda tonu ve tek tek piyano notaları. Videonun tamamı bu
+                           iki klip için var; müziğin susması o yüzden.
+K54-K55  MESAJ           · çello ve piyano birlikte döner, sıcak ve açık. Zafer marşı DEĞİL.
+K56-K57  SORU/KAPANIŞ    · piyano tek nota bırakır, çözülmeden. Soru izleyiciye geçer.
+
+
+=========================================================================
+NEGATİF — Suno'ya YAZILMAZ, üretilen parça bunlardan birini yapıyorsa yeniden üret
+=========================================================================
+· vokal, koro, "ahh" pad'leri · epik trailer davulu · zafer marşı finali
+· hüzün pompalayan yaylı yığını (bu bir acıma videosu değil)
+· elektronik/EDM nabız · sürekli arpej (VO'nun altını kalabalıklaştırır)
+· mid-range'i dolduran her şey — VO oraya oturacak
