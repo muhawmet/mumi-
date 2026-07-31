@@ -12,6 +12,16 @@ Mami: *"referansı basıyor tekrar."* Aynı boyutta referans gösterilince NB2 k
 Kural: türetme ancak fark **kadrajın gözle görülür bir bölgesini** değiştiriyorsa kullanılır;
 mikro poz farkı için türetme yapılmaz. Gerekiyorsa fark hikâyede büyütülür.
 
+**2026-07-31 · Referans bozmuyor, MEKÂN referansı KAMERAYI sürüklüyor (şüphe · doğrulanacak).**
+K04 `@derin` + `@kose` ile temiz çıktı — karakter referansı stüdyo pozunu sürüklemedi.
+K05 aynı iki referansla bozuldu; tek fark K05'in **yeni bir kamera yüksekliği** istemesi
+(otur göz hizası, yükselen kaldırım, yürüyen insanlar). Şüphe: mekân referansı kendi bakış
+açısını da taşıyor ve prompt yeni açı isteyince çakışıyor. 5.png inince doğrulanacak.
+
+**2026-07-31 · SARI — cepheler İtalyan/Akdeniz'e kayıyor.** K04'te pembe-oker cephe + balkon
+kombinasyonu Avrupa'ya çalıyor. "Anadolu yerine Paris/İtalya" ölçülmüş red sebebi (22 vaka).
+Mami'yi rahatsız etmiyorsa geçilir; ediyorsa cephe malzemesi daha sert çivilenir.
+
 **2026-07-31 · Yüzsüz geniş plan Pixar'dan çıkıp mimari render'a düşüyor** (5 karede ölçüldü).
 Codex pilotunun K02'sinde sürücü yalnız palto eteği + eldi; bir yanak ve bir göz okunur
 hâle getirildi, vinç kadrajı ve "kötü adam yok" tonu bozulmadan.

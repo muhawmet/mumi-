@@ -1,0 +1,108 @@
+ÜRETİLECEK ÜÇ KARE — K05 · K10 · K11
+
+K05: 3-4 kez bozuk çıktı. Aşağıdaki metin BAĞIMSIZ kare tarifidir — referans GÖRSELİ
+     gösterilmez, yalnız @derin ve @kose handle'ı kullanılır. Metinde 'EDIT PROMPT' yoksa doğrusudur.
+K10 · K11: mouse kayması yüzünden hiç üretilmemiş.
+
+═══════════════════════════════════════════════════════════════
+#########################################################################
+### K05 | VO5
+### "Derin tekerlekli sandalyesiyle rampanın önünde durmak zorunda kaldı."
+### yazı: YOK · K04'TEN TÜRETİLİR (04.png referans verilir)
+#########################################################################
+
+FİKİR: Durmak, hareketsizlik değil — herkes akarken tek duran kişi olmaktır.
+
+PLAN: 🔴 TÜRETME İPTAL — bu kare SIFIRDAN basılır. Sebep ölçüldü (2026-07-31): K04 ile aradaki fark yalnız bir poz farkıydı, NB2 o kadar küçük farkı çizmeyip referansı kopyaladı. Fark hikâyede büyütüldü: kamera K04'ün tersine geçip yükseliyor, ve karede artık **yürüyen insanlar** var. Baskın geometri, kaldırımın üstünde soldan sağa akan bacak ve gölge nehri; Derin o nehrin altında, akıntıya karşı duran tek kütle. K04 yakın ve sıkışıktı, K05 geniş ve akıyor — iki kare yan yana kesildiğinde fark okunuyor.
+
+PROMPT:
+High-end theatrical feature-animation 3D. A 35mm lens stands on the roadway at @kose, low but no longer on the ground — roughly at the height of a seated girl's eyes, angled slightly up along the kerb line so the pavement becomes a raised stage running left to right across the upper two thirds of the frame. On that pavement the morning is moving: a woman with a bread bag strides out of the left edge, a man in a grey jacket passes behind her mid-step, and a pair of school shoes crosses at the far right, all of them cut by the frame and none of them looking down. Their legs and their long slanted shadows make a continuous horizontal current across the stone.
+
+Below that current, still on the roadway, @derin has stopped. She sits square to the kerb with both hands resting on the push-rims and no weight in them — palms lying along the chrome, thumbs over the upper edge, fingers loosely curled — the arms straight and the shoulders level. She is the only vertical, motionless mass in a frame full of horizontal motion, and the composition puts her low and slightly left of centre so the moving legs pass above and behind her head. Her face is fully readable in three-quarter view: a Turkish/Anatolian girl in the sixth grade, around eleven or twelve, chin level, eyes travelling along the pavement toward the sour-cherry car that lies across the dropped kerb further right; the expression is patient and calculating, a person waiting for a gap that is not going to open. Behind her the closed roller shutters carry their corrugated ribs and furled strapped awnings, and a stack of empty crates leans against one, so no blank fascia or empty panel exists anywhere in frame.
+
+Colour is built from cool open-sky blue on the roadway, warm sunlit ivory along the top of the kerb where the walkers are lit, dark sour-cherry paint at the right, and one clean chrome highlight on the near push-rim. Three movement beats belong to this exact minute: a shadow sweeps across her lap as the man passes, the bread bag swings once at the left edge, and a paper scrap turns over in the gutter beside her footplate. Depth in three layers — the near kerb corner blurred large in the bottom left, Derin sharp in the middle, the walkers and the blocked ramp softening into the street haze behind. Both castors and both rear tyres rest in contact with the asphalt with compressed contact patches and grounded shadows.
+
+STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen acting, sophisticated warm matte tan skin with low specular and no green or grey cast, luminous expressive eyes, believable manual-wheelchair mechanics, vivid sculpted daylight, tactile street materials, cinematic focus falloff and rich feature-film dimensionality without medical-display polish.
+
+TEXT: No readable text. The crates carry no stencil, the shutters no fascia, the car no plate.
+
+NEGATIVE: do not let any of the passing people look at her, stop, point or reach out to help; do not show their faces or make them characters — they are cut by the frame and continue walking; do not raise the chair onto the pavement or tilt it; do not fuse her hands into the push-rims or add extra fingers; do not turn the wheelchair into hospital equipment with straps, headrest, clinical white parts or oversized handles; do not make her cry, hang her head, smile bravely or look into the lens; do not empty the pavement of people, which would turn the shot into K04 again; no accessibility symbol, arrow, caption or pity-poster composition.
+
+
+
+═══════════════════════════════════════════════════════════════
+#########################################################################
+### K10 | VO10
+### "Bireysel sorun yalnız belirli kişileri etkiler; bozulan bir oyuncak gibi."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Kırık oyuncak yalnız bir çocuğu durduruyor; bütün sokak onun yanından akıp geçiyor — bireysel sorunun tanımı küçüklük değil, yalnızlıktır.
+
+PLAN: Baskın geometri kadrajı çapraz kesen uzun ve parlak kaldırım çizgisi; üzerindeki tek durağan kütle çocuktur, geri kalan her şey hareket hâlinde bulanıktır. Ön planı, tam o anda yanından geçen bir yetişkinin paltosu siler — örten şeyin kendisi ilgisizliktir. Işık yalnız çocuğun avucundaki iki kırık parçayı toplar.
+
+PROMPT:
+High-end theatrical feature-animation 3D at intimate scale, 85mm lens at low seated eye level on a pavement kerb at @kose. The worn granite kerb runs across the frame as a long bright diagonal, its crown polished and taking the low sun along its whole length, and one small motionless mass sits on it while everything else in the frame is in motion and soft. A passing adult's dark coat sweeps across the near left edge, large, blurred and cropped by the frame — the occlusion is the indifference itself. Light collects at one point only: the two broken halves of a toy car cupped in a boy's hands, the brightest thing in the image and no bigger than a fist.
+
+The boy is Turkish/Anatolian, about seven, in a red anorak with the zip half down, one sock slipped to the ankle and a scab on one knuckle. His grip is exact: the left thumb presses the snapped axle stub while the right fingers pinch the wheel plate, both hands cupped and careful, trying to fit two things that will not meet. His mouth is pressed shut, brows drawn low, entirely absorbed, and he never looks at the camera. Behind him two adults walk past in soft focus as solid rendered bodies, the weave of their coats readable, neither of them turning toward him. The sun takes the two broken halves, the backs of both hands and one side of his face, and reaches nothing behind him, so the passers-by and the traffic in the lane stay a cool indigo band. Colour is drawn from what is here: pillar-box red anorak, violet-grey granite, the toy's faded yellow wheel and one warm sun line along the kerb crown. A drain grate holds a caught leaf, the plane tree's root lifts a slab, and every shopfront is closed behind a corrugated roller shutter with its awning furled and strapped — no blank panel or empty fascia exists anywhere in frame.
+
+Three movement beats belong to this exact minute: the loose wheel still turns slowly on its stub, his slipped sock eases another finger's width down his ankle, and the passing coat's hem is still swinging at the near edge. Depth in three layers — the sweeping coat blurred and cut at the near left, his hands and the broken toy razor sharp in the middle, the passing adults and the traffic softening behind while remaining solid rendered bodies. The toy's loose wheel rests against his palm and dents the skin slightly where its rim presses; both heels rest in contact with the gutter and take his weight under their own contact shadows; nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing restrained child acting, sophisticated warm matte tan skin with low specular and no green or grey cast, luminous expressive eyes, tactile fabric and moulded-plastic materials, motivated raking morning sun, shallow cinematic focus, vivid scene-born colour separation and continuous physically based shading without miniature-diorama sheen.
+
+TEXT: No readable text. The toy carries no moulded brand or model name, the anorak no logo, the drain grate no cast lettering and the shutters no fascia.
+
+NEGATIVE: do not join, repair or complete the toy — it stays in two separate halves; do not let either passing adult stop, look at the boy or react in any way; do not make the boy cry, look up at the lens or hold the toy out toward camera; do not fill the pavement with evenly spaced props around him; do not let the passing adults become flat dark cut-outs; do not light the background so brightly that his hands stop being the brightest point; no printed brand on the toy, no caption, no sad-poster vignette.
+
+
+
+═══════════════════════════════════════════════════════════════
+#########################################################################
+### K11 | VO11
+### "Toplumsal sorun ise toplumun geniş bir bölümünü ilgilendirir."
+### yazı: YOK
+#########################################################################
+
+FİKİR: K10'un tam karşıtı ve aynı kaldırım: bu kez on kişi aynı noktada durmuş ve ışık hepsini tek bir kesintisiz çizgide birleştirip vişne rengi arabanın tekerleğinde bitiriyor.
+
+PLAN: Baskın geometri sıranın omuz-baş hattı boyunca uzanan tek kesintisiz güneş bandı; bu bant on kişiyi tek bir çizgi hâline getirir ve rampadaki tekerlekte biter — sebep ile sonuç aynı çizgiye dizilir. Ön planda devrilmiş alışveriş arabasının teli sol alt köşeye ızgara gölgesi düşürür. Zemin karanlık kalır; birikme yalnız ışıkta okunur.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold graphic staging, 35mm lens at chest height looking down the same pavement stretch at @kose as the previous frame — the same worn granite kerb, the same drain grate with its caught leaf, the same slab lifted by the plane tree's root. One unbroken band of low sun runs the whole length of a queue of ten people, taking their heads and shoulders in a single continuous line, and that line ends exactly on the sour-cherry car's front wheel still standing on the dropped-kerb ramp: cause and consequence strung on one thread of light. Nothing below waist height is lit, so paving, bags and wheels hold as one deep cool indigo mass and the queue reads only as that bright line. A tipped shopping trolley's mesh basket fills the lower left corner, soft and cropped, throwing a grid of shadow onto the kerb.
+
+Ten Turkish/Anatolian people are stopped at the same point, all facing the same way, all stationary, none looking at the camera. The front three are sharply modelled: a woman of about forty-five holds a tartan shopping trolley tipped back on its two wheels with both hands on the handle, looking down at the obstruction; a man of about thirty with a toolbag over one shoulder grips the kerb-side lamp post and leans out to see past; an old woman in a headscarf stands square on her stick, chin lifted, waiting rather than pushing. Behind them seven more of different ages wait with bags, a pram and a bicycle — solid rendered bodies with the weave and cut of their clothing readable, softening into the far haze but never becoming cut-outs. Colour is drawn from the queue itself: red-and-navy tartan on the trolley, ochre headscarf, chrome trolley handle and lamp post, violet-grey granite, and the sour-cherry car closing the chord at the far end. Every shopfront is closed behind a corrugated roller shutter with its awning furled and strapped, so no blank panel or empty fascia exists anywhere in frame.
+
+Three movement beats belong to this exact stall: the tipped trolley rocks a few degrees on its two wheels, a plastic bag turns on the bicycle's handlebar, and the caught leaf trembles in the drain grate. Depth in three layers — the trolley basket blurred and cut at the lower left, the front three sharp in the middle, the rest of the queue and the blocked ramp softening behind. The tipped trolley rests on two wheels only and holds two dark contact points on the paving, the stick's ferrule presses its own, and the toolbag pulls one shoulder visibly down; nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing individualised crowd acting under strict focal hierarchy, sophisticated warm matte tan skin with low specular and no green or grey cast, tactile street and fabric materials, motivated raking morning sun as a single continuous band, sculpted cool bounce, volumetric depth, vivid scene-born colour separation and continuous physically based shading.
+
+TEXT: No readable text. No bag, trolley, toolbag or garment carries printing; the car has no plate or badge; the shutters carry no fascia.
+
+NEGATIVE: do not break, tilt or interrupt the band of light along the queue, and do not let it end anywhere except on the wheel that stands on the ramp; do not let anyone get past the obstruction, turn around or walk in this frame; do not let any figure in the line flatten into a dark cut-out or a repeated copy of another; do not change the kerb, drain grate or lifted slab — the pavement must be recognisably the same place as the previous frame; do not let anyone look at the lens; do not clear the ramp or move the car; no number plate, badge, printed brand, protest placard or English lettering.
+
+=========================================================================
+S1 SONU — K01–K11 · V2
+=========================================================================
+
+
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S2 · FARK ETME VE NEDENLER · V2
+Kapsam: K12–K22 (VO12–VO22) · HIGH-END VIVID FEATURE-ANIMATION
+Motor: Nano Banana 2 · dünya: pixar_3d_edu · register: EDU
+=========================================================================
+Bu dosya CODEX-PILOT K01-K06 çıtasına göre yeniden yazıldı. Fikirler
+korundu; anlatım yükseltildi. Her karede tek dramatik fikir, tek baskın
+geometri, o sahnede gerçekten bulunan malzemelerden doğan renk akoru,
+üç katmanlı derinlik ve ön plan örtmesi vardır. NEGATIVE alanı hazır
+liste değildir — her karenin kendi muhtemel kötü üretimi engellenir.
+
+SEKANSIN OMURGASI: Efe'nin fark etmesi bir cümle değil, bir GÖZ
+YÜKSEKLİĞİ değişimidir. Derin'in göz hizası oturur yükseklikte, Efe'ninki
+ayakta. Bu sekansta kamera üç kez yetişkin-ayakta hizasının altına iner
+(kaldırım taşı · Derin'in oturur göz hizası · teker göbeği) ve Efe her
+seferinde kendini o hizaya indirir — çömelerek, başını arkaya atarak.
+Karşı-nota trafik karesidir: orada bir basamak YUKARI çıkar ve sıkışıklığı
+yukarıdan okur. Yükseklik bu sekansta bir cümle değil, bir argümandır.
+=========================================================================
+
+
+

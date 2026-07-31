@@ -1,0 +1,552 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — KARE KONTROL LİSTESİ (57 kare)
+Kaynak: _PROMPTLAR-V2.txt + _SESLENDIRME.txt · 6.1.3 · Efe + Derin
+=========================================================================
+KULLANIM: Kare indi → bu bloğu aç → FİİL satırındaki gövdeyi karede ARA.
+Yoksa revize. Sonra GÖRÜNMELİ'yi say, YAZI'yı harf harf karşılaştır.
+FİİL satırı en önemlisi: 139 revizenin 53'ü "VO'nun fiilini yapan gövde
+karede yok" yüzündendi.
+=========================================================================
+
+
+##### S1 · INTRO + TOPLUMSAL SORUN NEDİR · K01–K11 #####
+
+K01 ─────────────────────────────────────────────
+VO      : Bu Efe; altıncı sınıfa gidiyor ve okula her sabah yürüyerek gider.
+FİİL    : gider (yürür) → YAPAN: Efe — iki adım arasında yakalanmış, ayakları yerde
+GÖRÜNMELİ: Efe adım ortasında (tek ayak havada) · buğulu durak camı kadrajın sol üçte birini örtüyor · çantanın omzu aşağı çekmesi · simit arabası + ~60 yaş satıcı arkada
+YAZI    : YOK
+CAST    : Efe = Türk/Anadolulu, 6. sınıf, 11-12 yaş, ergen-öncesi oran · simitçi ~60 yaş
+TÜRETME : —
+RİSK    : Efe kadraj ortasında kahraman pozunda, karaktere-sayfası gibi baştan ayağa net durur — yürüyüş hissi ölür; ya da durak camı tertemiz çizilir ve ön plan örtmesi kaybolur.
+
+K02 ─────────────────────────────────────────────
+VO      : O sabah köşedeki kaldırım rampasının önünde bir araba duruyordu.
+FİİL    : duruyordu (kesiyor) → YAPAN: koyu vişne otomobil — gövdesi rampanın çaprazını ortasından kesiyor
+GÖRÜNMELİ: Ön tekerlek rampanın tırtıklı yüzeyine tırmanmış, lastik ezilmiş · rampanın açıkta kalan tırtıklı olukları (blokajın kanıtı) · üst kenarda ~45 yaş sürücü dükkân kapısını kapatıyor, yanağı+bir gözü okunur · anahtarlık sallanıyor
+YAZI    : YOK
+CAST    : Sürücü = Türk/Anadolulu erkek, ~45, gri fermuarlı mont
+TÜRETME : — (K03 ve K52 BU kareden türetilecek — bu kare bozuksa üçü birden bozulur)
+RİSK    : Yüksek açı düz haritaya/infografiğe düşer; ya da araba rampanın YANINA düzgünce park eder ve geçilebilir boşluk kalır — engel okunmaz.
+
+K03 ─────────────────────────────────────────────
+VO      : Efe arabanın etrafından dolandı ve yoluna devam etti.
+FİİL    : dolandı → YAPAN: Efe — arabanın dış ön köşesinden yolun içinde gevşek bir S çizerek geçiyor
+GÖRÜNMELİ: Efe adım ortasında, omuzları karşıt dönmüş · bir eli dengede araba gövdesine YAKIN ama DEĞMİYOR · gözü ileride açık yolda, rampaya bakmıyor · sürücü ve ekmek poşeti kadrajdan ÇIKMIŞ
+YAZI    : YOK
+CAST    : Efe = 11-12 yaş
+TÜRETME : K02 (02.png referans) — kamera, araba, ışık, yapraklar AYNI kalır
+RİSK    : NB2 türetmede insan eylemini değiştirmek yerine referansı kopyalar → Efe hiç eklenmez ya da rampaya bakar (fark ediş K06'ya kadar olmamalı).
+
+K04 ─────────────────────────────────────────────
+VO      : Arkasından gelen sınıf arkadaşı Derin ise dolanamadı.
+FİİL    : dolanamadı (durdu) → YAPAN: Derin — ön küçük tekerleği taşa bir parmak kala durmuş
+GÖRÜNMELİ: Ön castor ile granit taş arasındaki bir parmaklık koyu yarık (karenin en keskin izi) · Derin'in eli krom itme çemberinde gerçek ağırlıkla, başparmak üst kenarda dört parmak altta · yüzünün yalnız sağ üst çeyrekte görünen kısmı · rampa+vişne araba arkada yumuşak
+YAZI    : YOK
+CAST    : Derin = Türk/Anadolulu kız, 6. sınıf, 11-12 yaş
+TÜRETME : —
+RİSK    : Parmaklar itme çemberine kaynar/çoğalır; ya da yarık genişleyip "geçilebilir" olur ve engel yalanlanır. Sandalye hastane ekipmanına (kemer, beyaz plastik, kafalık) dönerse kare gider.
+
+K05 ─────────────────────────────────────────────
+VO      : Derin tekerlekli sandalyesiyle rampanın önünde durmak zorunda kaldı.
+FİİL    : durmak zorunda kaldı → YAPAN: Derin — yol üstünde, kolları düz, itme çemberlerinde AĞIRLIK YOK, tek hareketsiz dikey kütle
+GÖRÜNMELİ: Kaldırımın üstünde soldan sağa akan bacaklar + uzun eğik gölgeler (yatay akım) · Derin akımın ALTINDA, kadrajın solunda ve alçakta · yüzü dörtte üç açıdan tam okunur, çene düz, bakış sağdaki vişne arabaya gidiyor · yürüyenlerin hiçbiri ona bakmıyor
+YAZI    : YOK
+CAST    : Derin = 11-12 yaş · yürüyenler kadrajla kesik, karakterleşmiyor
+TÜRETME : — (SIFIRDAN basılır; K04 türetmesi iptal edildi)
+RİSK    : Kaldırım boşalır ve kare K04'ün tekrarı olur — fark yalnız poz farkına düşer, NB2 bunu ayırt edemez. İkinci risk: yürüyenlerden biri durup Derin'e bakar/yardım eder, acıma sahnesi doğar.
+
+K06 ─────────────────────────────────────────────
+VO      : Efe o sabah, her gün yanından geçtiği bir şeyi ilk kez gördü.
+FİİL    : gördü → YAPAN: Efe — yakın gözü tam olarak yan aynaya odaklanmış, geri dönmüş
+GÖRÜNMELİ: Tozlu yan ayna merkeze yakın, JİLET KESKİN, kalan her şey yumuşak · aynanın İÇİNDE Derin + kaldırıma kadar biten soluk rampa · Efe sağ kenarda yakın dörtte-üç profil, kadrajla kesik, ağzı kapalı · araba gövdesi geniş vişne alan olarak ikisini ayırıyor
+YAZI    : YOK
+CAST    : Efe 11-12 · Derin yalnız yansımada
+TÜRETME : —
+RİSK    : Derin aynanın yansıması yerine kadrajda ikinci kez (aynanın dışında) çizilir, ya da ayna portal/inset panele dönüşür. İkinci risk: Efe çizgi-film şok yüzü yapar veya lense bakar.
+
+K07 ─────────────────────────────────────────────
+VO      : İnsanlar yaşamlarını toplum içinde, ortak alanları paylaşarak sürdürür.
+FİİL    : paylaşarak sürdürür → YAPAN: beş kişi — üç metrelik durakta omuz omuza, hepsini TEK ışık şeridi kesiyor
+GÖRÜNMELİ: Tek yatay güneş bıçağı BEŞ yüzün de alt yarısını AYNI yükseklikten kesiyor, kesintisiz · beş ayrı iş: limon filesi taşıyan ~70 yaş kadın · kolunun altında koli olan ~30 kurye · bebek arabası + termos tutan ~35 kadın · sırt çantalı ~14 öğrenci · tasmalı köpekle ~50 erkek · kimse kimseye ve lense bakmıyor
+YAZI    : "DURAK" · durağın yakın direğine cıvatalanmış, mavi emaye üstüne beyaz emaye harfli çelik levha (köşesinde iki emaye çatlağı) — soldan sağa, aynalanmamış
+CAST    : Beş kişi de Türk/Anadolulu · yaşlar: ~70 · ~30 · ~35 · ~14 · ~50
+TÜRETME : —
+RİSK    : Işık şeridi kırılır/eğilir ve yalnız bazı yüzlere düşer — "tek ortak alan" argümanı çöker. İkinci risk: beşi lense dönük poz sırası olur; üçüncüsü tarife kutusunun sefer/hat yazısı çıkması (ikinci kelime yasak).
+
+K08 ─────────────────────────────────────────────
+VO      : Bu ortak yaşamda kirlilik, trafik ve erişim sorunlarıyla karşılaşılabilir.
+FİİL    : karşılaşılabilir → YAPAN: ~55 yaş sebze kasası taşıyan adam — üç sorunun kapandığı huninin İÇİNDE yürüyor
+GÖRÜNMELİ: Kapanan huni: solda taşan yeşil çöp kutusu + istiflenmiş poşetler, sağda burun buruna duran motor çalışır araba sırası, derinlikte ikisi hâlâ kapalı rampada birleşiyor · adam dirseğini burnu-ağzı üstüne kaldırmış, gözleri kısık/sulanmış · en yakın arabada ~40 yaş sürücü açık camdan, bir eli kornada, yüzü yandan aydınlık ve okunur · sol alt köşede şişmiş çöp poşeti bulanık
+YAZI    : YOK
+CAST    : Yürüyen adam = Türk/Anadolulu ~55, kasketli · sürücü ~40
+TÜRETME : —
+RİSK    : Üç sorun üç ayrı boş bölgeye dağılır ve ortada kimse kalmaz — "aynı adamı vuruyor" fikri ölür. İkinci risk: egzoz pusu duman/sis/gri yıkamaya dönüp sokağı yutar.
+
+K09 ─────────────────────────────────────────────
+VO      : Birçok insanı aynı anda etkileyen bu durumlara toplumsal sorun denir.
+FİİL    : etkileyen (durduran) → YAPAN: tek parlak kaldırım taşı çizgisi + duran araba şeridi — ALTI kişiyi aynı anda o çizginin arkasında tutuyor
+GÖRÜNMELİ: Kadrajı boydan boya geçen tek parlak granit kaldırım çizgisi, kimse üstüne basmamış · altı farklı iş: bebek arabalı ~40 kadın · avucunda pasta kutusu ~65 erkek · koltuk altında top olan 11-12 yaş çocuk · mavi forma ~25 hemşire · boya bulaşmış iş pantolonlu ~45 erkek · bastonlu yaşlı adam · altı baş AYNI yöne, duran araba şeridine dönük
+YAZI    : YOK
+CAST    : Altısı da Türk/Anadolulu · okullu çocuk 6. sınıf 11-12 yaş, ergen-öncesi oran
+TÜRETME : —
+RİSK    : Altı kişi eşit aralıklı poz sırasına ya da isimsiz kalabalığa düşer, "altı ayrı iş" ayırt edilemez olur. İkinci risk: biri parlak kaldırım çizgisini geçer/üstüne basar — engel yalanlanır.
+
+K10 ─────────────────────────────────────────────
+VO      : Bireysel sorun yalnız belirli kişileri etkiler; bozulan bir oyuncak gibi.
+FİİL    : etkiler (durdurur) → YAPAN: kırık oyuncak araba — YALNIZ ~7 yaşındaki çocuğu durduruyor, sokak yanından akıp geçiyor
+GÖRÜNMELİ: Avuçtaki İKİ AYRI kırık parça (karenin en parlak noktası, yumruk büyüklüğünde) · sol parmak kopmuş aks güdüğüne bastırıyor, sağ parmaklar tekerlek plakasını sıkıştırıyor · sol kenarda geçen yetişkinin koyu paltosu bulanık örtüyor · arkada iki yetişkin yumuşak odakta yürüyor, ikisi de dönüp BAKMIYOR
+YAZI    : YOK
+CAST    : Çocuk = Türk/Anadolulu, ~7 yaş, kırmızı mont
+TÜRETME : —
+RİSK    : Oyuncak birleşik/tamir edilmiş çizilir — "bozulan" gider. İkinci risk: geçen yetişkinlerden biri durup bakar (bireysellik ölür) ya da çocuk ağlayıp lense oyuncağı uzatır.
+
+K11 ─────────────────────────────────────────────
+VO      : Toplumsal sorun ise toplumun geniş bir bölümünü ilgilendirir.
+FİİL    : ilgilendirir (durdurur) → YAPAN: rampadaki vişne arabanın ön tekerleği — ON kişilik kuyruğu aynı noktada tutuyor
+GÖRÜNMELİ: Tek KESİNTİSİZ güneş bandı on kişinin baş-omuz hattı boyunca uzanıp tam olarak rampadaki ön tekerlekte bitiyor · bel altı tamamen karanlık, kuyruk yalnız o parlak çizgi olarak okunuyor · ön üçlü net: ekose file arabasını iki tekerde eğik tutan ~45 kadın · lamba direğine tutunup öne bakan ~30 alet çantalı adam · bastonuna dayanmış başörtülü yaşlı kadın · sol alt köşede devrilmiş market arabası teli ızgara gölgesi düşürüyor
+YAZI    : YOK
+CAST    : Onu da Türk/Anadolulu, karışık yaş · arkadaki yedisi gövdeli, silüet değil
+TÜRETME : — (K10 ile AYNI kaldırım: aynı granit, aynı mazgal + sıkışmış yaprak, çınar kökünün kaldırdığı aynı plaka)
+RİSK    : Işık bandı kırılır ya da tekerlekten başka bir yerde biter — neden-sonuç ipi kopar. İkinci risk: arkadaki yedi kişi düz karanlık kesme-şekle veya birbirinin kopyasına düşer; üçüncüsü kaldırımın K10'daki yerle aynı olmaması.
+
+
+##### S2 · SORUNU FARK ETMEK + NEDENLER · K12–K22 #####
+
+K12 ─────────────────────────────────────────────
+VO      : Efe o hafta mahallesine ilk kez dikkatle baktı.
+FİİL    : baktı → YAPAN: Efe — gözleri sokak boyunca YANA gidiyor (deftere DEĞİL), kalem sayfanın bir parmak üstünde asılı, henüz yazmıyor
+GÖRÜNMELİ: Kadrajı boydan boya kesen tek yatay hareket bandı (paltolar, çantalar, dirsekler bulanık ama kütleli) · Efe o bandı kesen TEK dik ve net durağan kütle, ayaklar ayrık, ağırlık geride · sol üçte biri kaplayan yabancı paltosu bulanık · açık defter göğüs hizasında iki elde
+YAZI    : YOK (defter sayfasında yalnız çizgi ritmi + kenarda çetele; hiçbir harf çözünmüyor)
+CAST    : Efe = 11-12 yaş, ergen-öncesi oran
+TÜRETME : —
+RİSK    : Yayalar donar — durağanlık/hareket karşıtlığı yok olur ve kare anlamsızlaşır. İkinci risk: Efe'nin gözü deftere düşer (bakmak yerine yazmak) ya da çetele çizgileri harfe/rakama çözünür.
+
+K13 ─────────────────────────────────────────────
+VO      : Kaldırım rampasının önünde her sabah başka bir araba duruyordu.
+FİİL    : duruyordu → YAPAN: soluk mint-yeşili küçük kamyonet — ön tekerleği rampanın tırtıklı oluklarına tırmanmış (vişne otomobil DEĞİL; farkın kendisi mesaj)
+GÖRÜNMELİ: Ezilmiş lastik + rampanın kırılan soluk çizgisi karenin en keskin izi · açıkta kalan tırtıklı oluklar · Efe tek dizi yerde ÇÖMELMİŞ, defter diğer dizinde, kalem kenar boşluğuna basıyor, gözü yana lastiğe kayıyor · kamera kaldırım taşı yüksekliğinde (oturan göz hizası)
+YAZI    : YOK (kamyonetin yan yüzeyi boyasız/yazısız; defterde yalnız çetele)
+CAST    : Efe = 11-12 yaş
+TÜRETME : —
+RİSK    : NB2 aracı yine vişne otomobil çizer → "başka bir araba" kanıtı düşer ve kare K02'nin tekrarı olur. İkinci risk: kamera yetişkin ayakta hizasına çıkar, Efe ayağa kalkar — sekansın göz-yüksekliği argümanı bozulur; üçüncüsü kamyonete firma adı/plaka gelmesi.
+
+K14 ─────────────────────────────────────────────
+VO      : Köşedeki çöp kutusu taşmış, poşetler kaldırıma yayılmıştı.
+FİİL    : taşmış / yayılmıştı → YAPAN: çöp kutusunun KAPANAMAYAN kapağı (altındaki şişkin poşet bir avuç açık tutuyor) + dibinde kaldırım boyunca yayılan dört düğümlü poşet
+GÖRÜNMELİ: Üst ortada eğik duran aydınlık kapak kaması — inemeyen bir ışık düzlemi · dibinde çökmüş koyu poşet kütlesi, biri yırtılmış ve içinden plastik şişe görünüyor · ~75 yaş başörtülü kadın kendi küçük poşetini düğümünden tutuyor, bilek aşağı çekik, gözleri yığını tarıyor (koyacak yer arıyor) · plastik gerilmiş ince film gibi, kauçuk heykel gibi değil
+YAZI    : "ÇÖP" · çöp kutusunun kalıplı yan yüzeyinde, dokulu polietilen üstüne şablon mat siyah boya, hava ile ağarmış, bir harfin üstünde kapağın sürttüğü çizik yayı — Ç harfi çengelli, soldan sağa, aynalanmamış
+CAST    : Kadın = Türk/Anadolulu, ~75, başörtülü, uzun düğmeli hırka
+TÜRETME : —
+RİSK    : Kapak kapanır/düz oturur — "taşmış" kanıtı yok olur. İkinci risk: kadın poşetini yere bırakır veya lense acındırıcı bakar; üçüncüsü Ç harfinin cedillasının düşmesi ya da yerine geri dönüşüm üçgeni/piktogram gelmesi.
+
+K15 ─────────────────────────────────────────────
+VO      : Sokak lambaları güpegündüz yanmaya devam ediyordu.
+FİİL    : yanmaya devam ediyordu → YAPAN: dökme demir direğin kirli camındaki filaman — öğle vakti tam güçte yanıyor ve HİÇBİR ŞEYİ aydınlatmıyor
+GÖRÜNMELİ: Kadrajı bölen tek neredeyse-siyah dikey sütun, arkasında ağarmış düz beyaz gök · camın içinde küçük donuk turuncu köz; kaldırımda ışık havuzu YOK, direkte sıcak leke YOK, çocuklarda kenar ışığı YOK · Derin lense en yakın, göz göze, çenesi kalkık, sağ eli krom itme çemberinde · Efe onun ötesinde, üst kadrajla kesilmiş uzun gövde, başı arkaya atılmış, bir eli gözünü gölgeliyor · çınar dalının yaprak gölge ağı kaldırımda (ışığı GÜNEŞ veriyor kanıtı)
+YAZI    : YOK
+CAST    : Derin 11-12 · Efe 11-12
+TÜRETME : —
+RİSK    : Motor "yanan lamba"yı ışık saçtırarak çizer — kaldırımda hale/parlama/lens flare çıkar ve "hiçbir şeyi aydınlatmıyor" argümanı çöker. İkinci risk: kamera yetişkin hizasına çıkıp Derin'e yukarıdan bakar — karşılaşma bakılan-nesneye döner. Not: VO çoğul ("lambaları"), kare tek direk gösteriyor.
+
+K16 ─────────────────────────────────────────────
+VO      : Okulun karşısındaki yolda güvenli bir yaya geçidi yoktu.
+FİİL    : yoktu (yokluk) → YAPAN: yolun kendisi — kadrajı dolduran geniş koyu asfalt bandında hiçbir zebra/flaşör/sinyal YOK; kanıtı üstünden geçmek zorunda kalan kız taşıyor
+GÖRÜNMELİ: Boş asfalt bandı, üzerinde tek soluk iz olarak lastikle ortasından silinmiş yol yazısı · bordo kazaklı 11-12 yaş kız iki adım arasında, çantası omzundan kayıyor, başı trafiği kontrol için sert dönmüş · yarım adım geride lacivert polarlı çocuk omzunun arkasında yarı gizli · okul korkuluğu + zincirli kapı karşı kaldırımda
+YAZI    : "YAVAŞ" · yakın şeridin asfaltına kalın yol boyasıyla yazılmış, her harfin ORTASI lastikle aşınıp agregaya inmiş (yalnız dış üçte birler ayakta), yol yazısı gibi uzatılmış — soldan sağa, aynalanmamış, son harf çengelli Ş
+CAST    : Kız = Türk/Anadolulu, 11-12 yaş, 6. sınıf oranı · çocuk aynı yaş
+TÜRETME : —
+RİSK    : Motor "güvenli geçit yoktu" cümlesini duyup ZEBRA ÇİZER — yokluk konusu olan şeyi kareye koyar ve kare kendini yalanlar. İkinci risk: aşınmış YAVAŞ'ın ortaları dolar, yazı sapasağlam çıkar; üçüncüsü Ş'nin çengelinin düşmesi.
+
+K17 ─────────────────────────────────────────────
+VO      : Bir sorunu çözmek, önce onu doğru fark etmekle başlar.
+FİİL    : fark etmek → YAPAN: Efe — dönük yüzü karedeki TEK tam modellenmiş şey, gözleri sokağı tek hareketle tarıyor
+GÖRÜNMELİ: Kameraya doğru gelen tek erimiş beyaz-altın ışık koridoru · o koridoru kesen DÖRT koyu siluet çentiği: rampadaki tekerlek · kapağı kalkmış çöp kutusu + poşetler · küçük ve sıcak yanan lamba başı · uzakta boş/silinmiş yollu asfalt · Efe sağ ön planda kendi omzu + kapalı defterle kadrajı örtüyor, gövdesi lensden dönük, yalnız başı geri gelmiş
+YAZI    : YOK
+CAST    : Efe = 11-12 yaş, tek başına (ikinci yaya/arkadaş/yetişkin yok)
+TÜRETME : —
+RİSK    : Dört sorunun biri ayrı ayrı aydınlatılıp detaylandırılır — "aynı anda görmek" argümanı dağılır ve kare dört ayrı prop listesine düşer. İkinci risk: siluetler malzemesiz düz ölü siyaha çöker; üçüncüsü kontre ışığın lens flare halkalarına dönmesi.
+
+K18 ─────────────────────────────────────────────
+VO      : Efe bir hafta boyunca defterine gözlemlerini yazdı.
+FİİL    : yazdı → YAPAN: Efe — sağ eli haftanın son satırını YAZARKEN, güdük kaleme kısa tutuş, eklem yerleri kâğıda değecek kadar yakın
+GÖRÜNMELİ: Bir haftanın kanıtı: KABARMIŞ sayfa bloğu (blok hizasız, ön kenar yelpazelenmiş) · güdükleşmiş kalem · yazan elin kenarı grafitten grileşmiş · masa lambasının tek sert kenarlı ışık adası, oda sıcak siyah · ön planda ders kitabı yığını sol kenarı bulanık örtüyor
+YAZI    : "GÖZLEM" · açık defter sayfasının ÜSTÜNDE, çocuk el yazısıyla blok büyük harf, kâğıdı kabartacak kadar bastırılmış, bir harf memnun kalınmayıp ikinci kez üstünden geçilmiş, altında tam paralel olmayan çift alt çizgi — soldan sağa, aynalanmamış, ikinci harf iki noktalı Ö
+CAST    : Efe = 11-12 yaş
+TÜRETME : —
+RİSK    : Başlığın ALTINDAKİ satırlar da harfe çözünür — tek okunur kelime kuralı kırılır ve NB2 uydurma Türkçe/İngilizce yazar. İkinci risk: defter tertemiz/ince çizilir (bir hafta kanıtı yok olur) ya da kalem tam boy döner; üçüncüsü ikinci ışık kaynağı (pencere/telefon/tavan lambası) eklenip tek-lamba düşüşü ölmesi.
+
+K19 ─────────────────────────────────────────────
+VO      : Komşulara sordu, muhtarlıktan bilgi aldı.
+FİİL    : sordu / bilgi aldı → YAPAN: Efe (masaya iki gergin kolla abanmış, ağzı sorduğu soruda açık) + muhtar (haritayı Efe'ye doğru ÇEVİRİYOR) · ⚠ VO'nun "komşulara" yarısının karşılığı bu karede YOK — komşu figürü hiç yok
+GÖRÜNMELİ: Dönmekte olan büyük kâğıt sokak haritası — kenarları masa kenarlarıyla HİZASIZ (dönüyor okunsun), karenin en aydınlık düzlemi · muhtarın sol avucu uzak köşede pivot, sağ elinin parmak uçları yakın kenarı çocuğa doğru yürütüyor · Efe'nin gözü adama değil dönen haritada · ~60 yaş muhtar, gri yelek, gür bıyık, gözlük alnına itilmiş
+YAZI    : "MUHTARLIK" · kapı kasasına vidalanmış emaye levha, koyu mavi zemin üstüne beyaz fırınlanmış emaye, iki ucunda vida başı, bir köşesinde çatlak — soldan sağa, aynalanmamış
+CAST    : Muhtar = Türk/Anadolulu erkek, ~60 · Efe 11-12
+TÜRETME : —
+RİSK    : Muhtar Efe'ye kâğıt/dosya/form UZATIR — "bilgi = sana çevrilen yüzey" fikri klişe evrak teslimine düşer. İkinci risk: harita masa kenarlarına düzgün hizalanır ve dönme okunmaz; üçüncüsü haritada sokak adı/rakam/lejant/pusula çözünüp ikinci yazı çıkması.
+
+K20 ─────────────────────────────────────────────
+VO      : Trafiğin tek bir nedeni olmadığını gördü.
+FİİL    : gördü → YAPAN: Efe — kapalı kepenkli dükkân eşiğinin BASAMAĞINDA, çenesi aşağı, gözleri sıkışıklığın boyunca gidiyor
+GÖRÜNMELİ: Duran metal ırmağı: uzun objektifle burun buruna sıkışmış tavanlar TEK kesintisiz parlak kurdele · o kurdelede ÜÇ kırık: (1) sıradan taşmış araba, sürücüsü kapısından yarı inmiş bir ayağı asfaltta, (2) beklemeden akışa burnunu sokmuş araba, (3) sonsuz tekrar pusa karışıyor · Efe'nin bir eli dengede dalgalı kepenge düz basıyor, kapalı defter diğer kolunun altında · basamakta teneke kutuda tek kırmızı sardunya
+YAZI    : YOK
+CAST    : Yakın sürücü = Türk/Anadolulu erkek ~35 (yumuşak odakta, portre değil) · Efe 11-12
+TÜRETME : —
+RİSK    : Şerit tek kütle olmaktan çıkıp ayrı ayrı aydınlatılmış detaylı arabalara bölünür — "tek neden yok" argümanı görsel karşılığını kaybeder. İkinci risk: kamera balkona/kuşbakışına çıkıp kare trafik şemasına dönmesi; üçüncüsü araçlara plaka/rota numarası gelmesi.
+
+K21 ─────────────────────────────────────────────
+VO      : Herkes kendi arabasıyla ve çoğu zaman tek başına gidiyordu.
+FİİL    : gidiyordu (tek başına) → YAPAN: her arabada TEK sürücü — ve asıl yapan BOŞ ARKA KOLTUKLAR: karedeki en karanlık şey onlar
+GÖRÜNMELİ: Derinliğe doğru tekrarlayan iki değer ritmi: parlak ön cam → arkasında kapkara boşluk → yine parlak cam → yine boşluk · her arka koltuk gözle görülür biçimde TAMAMEN boş (yolcu yok, çocuk koltuğu yok, çanta yok, palto yok) · en yakın ~45 yaş kadın direksiyonda yalnız, güneş gözlüğü saçına itilmiş · sol kenarda en yakın arabanın yan aynası bulanık örtüyor
+YAZI    : YOK
+CAST    : ~45 kadın (tam modellenmiş) · ~60 kasketli erkek (yarı net) · üçüncü sürücü yalnız aydınlık omuz + tıklayan parmak
+TÜRETME : —
+RİSK    : Arka kabinler aydınlanır ve boşluk dolar — "tek başına" kanıtı görünmez olur; ya da arka koltuğa çanta/palto/çocuk koltuğu konur. İkinci risk: kabin karanlığının malzemesiz düz grafik siyaha düşmesi.
+
+K22 ─────────────────────────────────────────────
+VO      : Toplu taşıma yetersizdi, hatalı park eden ise çoktu.
+FİİL    : yetersizdi / hatalı park etmişti → YAPAN: otobüs (kendi cebine giremeyip kaldırımdan TAM BİR ŞERİT açıkta durmuş) + cebin içine dümdüz park etmiş araba (sol ön planda arka tekeri, altından çıkan tebeşir beyazı cep çizgileri)
+GÖRÜNMELİ: Açık kapının altı ile olması gereken kaldırım arasındaki ÇIPLAK ASFALT KAMASI (karenin asıl konusu) · ~50 yaş kadın iki elinde poşetle o kamaya iniyor, bir ayağıyla yolu yokluyor çünkü indiği yerde kaldırım yok, ön ayağı henüz asfalta DEĞMEMİŞ · yanında cebi işgal edilmiş durak boş ve işlevsiz duruyor · sıra basamakta ve koridorda gövdeli bekliyor
+YAZI    : YOK (otobüste hat numarası/güzergâh ekranı/livery yazısı/plaka YOK)
+CAST    : İnen kadın = Türk/Anadolulu ~50, tek tam modellenmiş yüz · sıra karışık yaş, Türk/Anadolulu
+TÜRETME : —
+RİSK    : Otobüs kaldırıma yanaştırılır ya da boş kama kapatılır — kare konusuz kalır. İkinci risk: NB2 otobüse hat numarası/güzergâh yazısı basar (Kling'de kamera onu bozar). Not: VO "çoktu" diyor, karede hatalı park eden TEK araba var.
+
+
+##### S3 · NEDEN-SONUÇ VE ETKİLENENLER · K23–K33 #####
+
+K23 ─────────────────────────────────────────────
+VO      : Bir sorunun nedenleri ile sonuçları birbirine bağlıdır.
+FİİL    : bağlıdır → YAPAN: ızgarayı tıkayan poşet — tam suyun gideceği yerin ADININ üstünde yatıyor; Efe o bağı parmaklarıyla kaldırıp görünür kılıyor
+GÖRÜNMELİ: Alt kadrajı çapraz kesen İNCE su tabakası (madeni para derinliğinde, beyaz göğü geri veriyor) · onu enine kesen dökme demir ızgara siyah bar gibi · kesişme noktasında düğüm gibi yatan poşet · Efe iki topuğu üstünde çömelmiş, sol avucu ıslak taşta ağırlık taşıyor, sağ başparmak+işaret parmağı poşetin ıslanmış köşesini kenardan bir avuç içeriden sıkıştırıp kaldırmış, gözü YAZIDA (poşette değil) · arkada ~65 yaş başörtülü kadın suyun geldiği yerde durmuş, iki elinde poşet
+YAZI    : "YAĞMUR SUYU" · dökme demir ızgaranın düz kenarında, DÖKÜMDE kabartılmış çıplak metal (boya YOK), harf tepeleri ayakla parlatılmış, çevresi paslı — soldan sağa, aynalanmamış, üçüncü harf şapkalı Ğ; SON HARF poşetin ıslak kenarının altında yarım kalıyor
+CAST    : Efe 11-12 · kadın Türk/Anadolulu ~65, başörtülü, patlıcan moru hırka
+TÜRETME : —
+RİSK    : Su ince tabaka olmaktan çıkıp binaları yansıtan sel/gölete dönüşür — "tıkanma" değil "taşkın" okunur. İkinci risk: kabartma harfler boyalı çıkar ya da Ğ'nin şapkası düşer; üçüncüsü poşetin ızgaradan tamamen çekilmesi (neden ile sonuç arasındaki üst üste binme kaybolur).
+
+K24 ─────────────────────────────────────────────
+VO      : Egzoz gazları ve fosil yakıtlar havayı kirletir.
+FİİL    : kirletir → YAPAN: İKİ kaynak birlikte — bacaya dökülen kömür akışı (kendi gri tozunu kaldırıyor) + kaldırımda rölantideki minibüsün egzozu; ikisi AYNI ışık şeridinin içinde tek bulut oluyor
+GÖRÜNMELİ: İki bina arasından geçip kaldırıma düşen tek eğik güneş şeridi (kadrajın bütün geometrisi) · ~55 yaş kasketli adam jüt çuvalı bodrum kömürlüğüne deviriyor: sol eli çuvalın alt köşesinde kumaşı yumruklamış, sağ eli boyunda, başparmak katlanmış dikişe kancalanmış, ağırlık ön dizde ve sağ omuzda, gözler kasketin gölgesinde · minibüsün egzoz borusu ÇOCUK BOYUNDA · zemin kat penceresinde ~7 yaş kız camı iki eliyle KAPATIYOR, yüzü camdan okunur
+YAZI    : "KÖMÜR" · devrilen jüt çuvalın yan yüzünde, kaba jüte tek renk mürekkeple basılmış, boya iplik boyunca emilmiş (her harfin kenarı tüylü, dokuma kesiştiği yerde kırılıyor), çuvalın tutuştaki kıvrımı üstünden geçip kumaşla bükülüyor — soldan sağa, aynalanmamış, ikinci harf Ö iki noktalı, dördüncü harf Ü iki noktalı
+CAST    : Adam = Türk ~55, kasket, yakasız gömlek · kız = Türk ~7
+TÜRETME : —
+RİSK    : Kömür düşerken TUTUŞUR/kızarır/kıvılcım saçar — "fosil yakıt" cümlesi motoru ateşe çekiyor, oysa akış kuru ve siyah kalmalı. İkinci risk: istiflenmiş diğer çuvalların yüzü duvara dönük kalmayıp ikinci kez "KÖMÜR" yazması; üçüncüsü egzozun beyaz buhara/çizgi-film püskülüne dönmesi.
+
+K25 ─────────────────────────────────────────────
+VO      : Kirli hava insan sağlığını ve doğal yaşamı olumsuz etkiler.
+FİİL    : etkiler → YAPAN: çöken toz — İKİ gövdede birden: ~9 yaş kızın yavaş nefesinde (şeffaf plastik hazne) ve korkuluktaki serçenin donuklaşmış tüyünde
+GÖRÜNMELİ: Bankın üstündeki eşit gri toz tabakasında annenin kolunun açtığı TEK keskin kenarlı temiz şerit — altından şişe yeşili emaye canlı çıkıyor, karedeki en parlak şey o · kız arkaya yaslanmış, iki eliyle hazneyi tutuyor (başparmaklar altta, parmaklar üstte), ayakları yere DEĞMİYOR, gözleri yarı kapalı, omuzları yavaş kalkıyor · ~35 yaş anne önünde çömelmiş, okul çantası kendi göğsünde, yüzünün yarısı kızının omzunun arkasında, kızın YÜZÜNE değil OMUZLARINA bakıyor · üstteki çınar yapraklarının üst yüzeyleri de gri
+YAZI    : YOK (hazne şeffaf ve işaretsiz, tarife kutusu parlama-kör, çöp kutusunun şablonlu yüzü çevrilmiş)
+CAST    : Kız = Türk ~9, hardal hırka · anne ~35
+TÜRETME : —
+RİSK    : Kareye klinik unsur girer — maske, hortum, serum askısı, hastane beyazı — ve eğitim karesi hasta karesine döner. İkinci risk: silinen şerit tek kol genişliğinde kalmayıp bankın tamamı temizlenir (kanıt yok olur); üçüncüsü serçenin temiz/parlak çizilmesi ("doğal yaşam" yarısı düşer).
+
+K26 ─────────────────────────────────────────────
+VO      : Efe kirli bir günde okul bahçesinden ufka baktı.
+FİİL    : baktı → YAPAN: Efe — boyu yetmediği için parmaklığın alt borusuna basmış, çenesini üst boruya dayamış, gözleri kısık, arıyor
+GÖRÜNMELİ: Parmaklığın üst borusu kadrajı boydan boya kesen TEK yatay çelik çizgi; altı dokulu-dolu-yaşayan bahçe, üstü hiçbir şey · Efe'nin sağ ayakkabısı alt boruda (boya ayakla parlamış), iki eli boruyu kancalamış, parmaklar üstte başparmaklar altta, eklemler çelik baskısından beyazlamış · yanında yerde duran ~11 yaş bordo kazaklı çocuk topla, gözü UFKA DEĞİL EFE'NİN YÜZÜNDE · duyuru panoları üst üste kâğıtla kaplı, hiçbiri okunmuyor
+YAZI    : YOK
+CAST    : Efe 11-12 · diğer çocuk Türk ~11, bordo okul kazağı
+TÜRETME : —
+RİSK    : Parmaklığın ötesindeki soluk alanda bir tepe/sırt/çatı/direk/ufuk çizgisi çözünür ya da mavi gök açılır — "görünmüyordu" karesi kendini yalanlar (K27 ile aynı tuzak, art arda iki kez). İkinci risk: yanındaki çocuğun da ufka bakması, ikinci bakış fikrinin ölmesi.
+
+K27 ─────────────────────────────────────────────
+VO      : Her gün gördüğü karşı tepe o gün görünmüyordu.
+FİİL    : görünmüyordu (yokluk) → YAPAN: soluk boş alan — hiçbir tepe/sırt/çatı/direk çözünmüyor; kanıtı gösterilecek HİÇBİR ŞEYİ göstermeyen kızın gergin parmağı
+GÖRÜNMELİ: Beyaz hiçliğin üstüne yatırılmış tek koyu çubuk: kızın gergin kolu (sol kenarda, kadrajla kesik) · bileği kilitli, işaret parmağı uzatılmış, diğer üçü avuca katlanmış, başparmak üstlerine yatmış, el sırtında kiriş kabarık · parmak ucu tam borunun bir karış ÜSTÜNÜ gösteriyor · parmaklığın üst borusu karenin kalan TEK ufku · alt üçte bir yoğun-koyu-dolu, üst iki bölüm HİÇ detay yok · Efe ileride kolları borunun üstünde çapraz, başı yana eğik
+YAZI    : YOK
+CAST    : Kız = Türk 11-12, yeşil kapitone mont · Efe 11-12
+TÜRETME : —
+RİSK    : Motor kızın parmağından bir çizgi/ışın/ok çıkarır ya da boş alana bir şey koyar (bulut kenarı, kuş, tel, çatı) — yokluk dolar. İkinci risk: kolun düşmesi/parmağın kapanması; üçüncüsü üst boru çizgisinin bir gövdeyle kesilmesi.
+
+K28 ─────────────────────────────────────────────
+VO      : Toplumsal sorunlar herkesi aynı ölçüde etkilemez.
+FİİL    : etkilemez (aynı ölçüde) → YAPAN: bir-beden genişliğindeki yarık — ~25 yaş adam hiç yavaşlamadan omuz çevirip GEÇİYOR, ~35 yaş geniş kutu taşıyan kadın tam orada DURMUŞ
+GÖRÜNMELİ: İki koyu kütle arasında kalan TEK dikey parlak yarık: solda dört kat mavi kasa duvarı, sağda park etmiş arabanın gövdesi + çıkık yan aynası · adam yarığın yarısında, omuzları duvara dönük, bir kolu havada, adımı bozulmamış, yüzünün ÜST yarısı kadrajla kesik · kadın kare durmuş, geniş düz karton kutu göğsünde, önkolları alt kenarın altında, parmaklar karşı kenardan yukarı kancalanmış, çenesi kutunun üst kenarına değecek gibi, gözü kasa ile ayna arasında gidip geliyor
+YAZI    : "SEBZE" · en üstteki mavi polietilen kasanın uzun yüzünde, KALIPTA basılmış kabartma harfler (mürekkep/boya YOK), yalnız yalayan güneş her harfin bir kanadını doldurduğu için okunuyor, harf tepeleri sürtünmeden ağarmış — soldan sağa, aynalanmamış
+CAST    : Adam ~25 (yüzünün üst yarısı kadraj dışında) · kadın = Türk ~35, kiremit kırmızısı mont
+TÜRETME : —
+RİSK    : Yarık genişler ya da kadın kutuyu yan çevirip geçer — "aynı engel, farklı bedel" karşılaştırması çöker. İkinci risk: kabartma harflere boya/etiket gelmesi ya da kasalara ikinci kelime/kod/rakam basılması; üçüncüsü adamın durup kadına bakması.
+
+K29 ─────────────────────────────────────────────
+VO      : Çocuklar, yaşlılar ve özel gereksinimli bireyler daha çok etkilenir.
+FİİL    : etkilenir → YAPAN: ÜÇÜ birden aynı tıkaçta durmuş — ~80 yaş bastonlu kadın (yaşlı), ~5 yaş sarı yağmurluklu çocuk (çocuk), ~45 yaş beyaz bastonlu adam (özel gereksinimli)
+GÖRÜNMELİ: Kaldırım otuz metre boyunca parlak ve BOMBOŞ kaçıyor, kamera önünde iki tekerini kaldırıma çıkarmış arabanın koyu gövdesiyle tıkanıyor; araba ile sağır sıva duvar arasında BİR KARIŞ kanal · yaşlı kadının bastonu dikilmiş, ağırlık sapa binmiş, çene kalkık, genişliği ölçüyor · çocuğun dört parmağı kadının iki parmağını sarmış, başparmak dışta, bir ayağı yarı havada, gözü ARABAYA DEĞİL KADININ YÜZÜNDE · adamın beyaz bastonu kalem tutuşu, ucu arabanın lastiğini yeni bulmuş, başı dinlemek için birkaç derece dönmüş
+YAZI    : YOK
+CAST    : Üçü de Türk · ~80 kadın başörtülü erik moru kapitone manto · ~5 çocuk sarı yağmurluk · ~45 adam beyaz baston
+TÜRETME : —
+RİSK    : Araba ile duvar arasındaki kanal genişler ya da üçünden biri geçer — "yol var ama onlara kapalı" argümanı düşer. İkinci risk: yaşlı kadının acındırıcı çizilmesi (kambur, sönük); üçüncüsü uzaktaki boş kaldırıma yeni figür girip boşluğun bozulması.
+
+K30 ─────────────────────────────────────────────
+VO      : Efe kaldırımı bir kez de Derin'in yüksekliğinden gördü.
+FİİL    : gördü (o yükseklikten) → YAPAN: Efe — topuklarının üstüne tam çömelmiş, dizler göğse yakın, önkollar dizlerin üstünde, gözleri beton kenar boyunca gidiyor (Derin'e değil)
+GÖRÜNMELİ: Kamera EL HALKASI HİZASINDA (yerden ~60 cm) — karenin bütün kararı bu · kaldırımın üst kenarı kadrajı boydan boya kesen tek sert parlak yatay çizgi, basamak değil DUVAR; üst pahı iki çenenin hemen ALTINDAN geçiyor · iki baş tam onun üstünde ve BİRBİRİYLE AYNI SEVİYEDE · Derin öne eğilmiş, sağ eli el halkasının üstünde açık avuçla, krom parmak yastıklarına soluk çizgi bastırıyor · ön planda Derin'in arka tekerinin dev bulanık lastik kavsi + telleri
+YAZI    : YOK
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : Kamera yetişkin/ayakta hizasına çıkar ya da temiz profile döner — kaldırım tekrar "basamak" olur ve karenin tek argümanı yok olur. İkinci risk: acıma unsuru girmesi (omza konan el, eğik baş); üçüncüsü Efe'nin ayağa kalkıp baş hizasının bozulması.
+
+K31 ─────────────────────────────────────────────
+VO      : Bebek arabası süren bir anne aynı yerde durmak zorunda kaldı.
+FİİL    : durmak zorunda kaldı → YAPAN: ~30 yaş anne — iki eli sapta, avuç tabanları öne bastırmış, dirsekler KİLİTLİ, omuzlar bileklerinin önüne geçmiş; itme oldu ama hareket olmadı
+GÖRÜNMELİ: Kaldırımın DİK YÜZÜ kadrajı dolduran gri taş kayalık, iki ön teker ona dayanıp lastiği ezilmiş · karenin her şeyi dikey (taş, teker, sap, kilitli kollar), TEK çapraz: sapta öne savrulmuş ekmek poşeti (hareketin tek kanıtı) · annenin saçı alnına düşmüş, gözleri kendi saçının gölgesinde — karar ağızdan ve çeneden okunuyor · arabada ~1 yaşındaki çocuk tenteyi arkaya katlamış, iki eli emniyet barında, mercan bere yamuk, bir çıplak ayak battaniyeden kurtulmuş
+YAZI    : "EKMEK" · sapa asılı ince plastik ekmek poşetinin dış yüzünde, ince polietilen üstüne tek renk flekso baskı — o kadar hafif ki arkadan somunun kabuğu harflerin içinden görünüyor, somunun gerdiği yerde iki harf diğerlerinden geniş, eski bir kırışık boyunca mürekkep kılcal çatlamış — soldan sağa, aynalanmamış
+CAST    : Anne = Türk ~30, kot ceket · bebek ~1
+TÜRETME : —
+RİSK    : Poşete fırın adı/adres/telefon/fiyat/ikinci satır eklenir — tek kelime kuralı kırılır. İkinci risk: bebek arabasının kaldırıma çıkması ya da geri dönmesi (durma yok olur); üçüncüsü bebeğin oyuncak bebek/maske gibi düz yüze düşmesi.
+
+K32 ─────────────────────────────────────────────
+VO      : Bastonuyla yürüyen yaşlı bir adam yolun ortasından dolaştı.
+FİİL    : dolaştı (yolda yürüdü) → YAPAN: ~80 yaş adam — bastonunun lastik ucu ASFALTTA, solmuş şerit boyasının üstünde adım atıyor; kaldırım ona kapalı
+GÖRÜNMELİ: Adamın bastonunun altından kadrajın derinliğine uzanan solmuş beyaz şerit boyası (karenin baskın çizgisi) · sağ üstte iki tekerini kaldırıma çıkarmış araba, tam el yazması levhanın ALTINDA duruyor · adamın sağ eli bastonun kıvrımında, başparmak iç kavise kancalanmış, üç parmak sapın altında, bilek sert, tüm ağırlık uca iniyor; diğer kolu dengede savruluyor, gözü ARABAYA DEĞİL öndeki şeritte · birkaç metre geride ~40 yaş kadın sürücü onun için durmuş, yüzünün yarısı ön cam yansımasında, sabırlı
+YAZI    : "PARK ETMEYİN" · ağaç korkuluğunun üst borusuna iki telle bağlanmış küçük el yazması ahşap levhada, sararmış beyaz zemin üstüne kalın siyah yağlı boya fırça harfleri, kıl izleri boyada duruyor, bir harf tahta bitmek üzereyken sıkıştırılmış, bir harfin dibinden ince damla sarkıyor — İKİ SATIR: üstte PARK, altta ETMEYİN; soldan sağa, aynalanmamış, onuncu harf noktalı İ
+CAST    : Adam = Türk ~80, kasket, füme yün ceket · sürücü kadın ~40
+TÜRETME : —
+RİSK    : Levhaya üçüncü satır/ok/telefon eklenir ya da ikinci levha çıkar — tek yazı yüzeyi kuralı kırılır; "İ"nin noktası düşerse kelime Türkçe olmaktan çıkar. İkinci risk: şerit boyasının harfe/oka/geçide çözünmesi; üçüncüsü adamın kaldırıma geri çıkarılması (VO'nun fiili ölür).
+
+K33 ─────────────────────────────────────────────
+VO      : Çözüm üretilirken farklı ihtiyaçlar dikkate alınmalıdır.
+FİİL    : dikkate alınmalıdır → YAPAN: Efe — defteri TERS çevirip sayfayı Derin'e tutuyor (kendisi okuyamıyor ve okumaya çalışmıyor, gözü onun ELİNDE); Derin işaret parmağını sayfaya basmış, ağzı yarım kelimede
+GÖRÜNMELİ: Açık sayfa karenin en parlak dikdörtgeni, eğik, TUTANDAN UZAĞA bakıyor · Efe'nin iki başparmağı kapakların altında, kapaklar parmak uçlarında, bilekler tam çevrilmiş · Derin'in sol eli yakın el halkasında kilitli (kamber'e karşı sandalyeyi tutuyor), sağ işaret parmağı sayfayı hafifçe çukurlaştıracak kadar basıyor · iki baş yine AYNI SEVİYEDE (K30'un yüksekliği alışkanlığa dönmüş) · Efe'nin yüzünün yarısı kalkık defterin arkasında
+YAZI    : YOK (sayfada çocuk el yazısı ritmi + kenarda çetele var; hiçbir kelime/harf/başlık/rakam çözünmüyor)
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : NB2 açık sayfayı okunur yazıyla doldurur (sayfa karenin en parlak yüzeyi — motor oraya yazmak ister) ve tek-yazı yasası kırılır. İkinci risk: sayfanın Efe'ye geri dönmesi/kapanması — "farklı ihtiyaç dikkate alındı" jesti yok olur.
+
+
+##### S4 · ÇÖZÜM VE KURUMLAR · K34–K43 #####
+
+K34 ─────────────────────────────────────────────
+VO      : Efe ve arkadaşları sınıfta çözüm önerilerini yazdı.
+FİİL    : yazdı → YAPAN: Efe — sandalyeye TERS oturmuş (göğsü arkalıkta), iki kolu dikişin üstünde, kalem alçak ve eğik tutuşta, el ayası kartın üstünde kayıyor · "arkadaşları" = dikiş boyunca dizili YEDİ AYRI EL YAZISI kart
+GÖRÜNMELİ: İki tezgâhın birleştiği aydınlık DİKİŞ kadrajı boydan boya kesiyor, yedi kart o çizgiye dizili · masada YALNIZ ÜÇ kalem var · karşıda ~12 yaş örgülü kız sağ elini açık ve BOŞ tutuyor, parmak uçları vernikten kalkık — beklediği KALEME bakıyor, tutan çocuğa değil · akıllı tahta KAPKARANLIK ve kapalı · sıraların altı tek parça indigo mağara
+YAZI    : YOK (yedi kartta çocuk kalemi ritmi var, hiçbiri harfe çözünmüyor)
+CAST    : Hepsi Türk/Anadolulu, 6. sınıf, 11-12 yaş, ergen-öncesi
+TÜRETME : —
+RİSK    : Bekleyen kızın açık avucuna kalem konur ya da parmakları kapanır — "üç kalem yedi çocuk" argümanı ölür. İkinci risk: akıllı tahtanın yanması ya da kara tahtaya dönmesi (dünya yasası ihlali); üçüncüsü kareye ayrıştırmalı kutu girmesi (hikâyede kutular HENÜZ YOK).
+
+K35 ─────────────────────────────────────────────
+VO      : Bir çözüm önerisi, sorunun nedenine yönelik olmalıdır.
+FİİL    : nedene yönelik olmalıdır → YAPAN: DÜZ KART — sınıfın çizdiği planda, rampayı kapatan arabanın çizildiği blokun TAM ÜSTÜNE konmuş, nedene DOKUNUYOR; karşıtı buruşturulup top yapılmış öteki öneri, çıplak ahşapta, hâlâ açılmamış yumruğun içinde
+GÖRÜNMELİ: Kraft kâğıdın YIRTIK KENARI kadrajı kesen kıyı çizgisi — içeride sıcak kâğıt, dışarıda koyu çıplak vernik · düz kart sınırın İÇİNDE ve çizili arabanın üstünde · buruşuk top sınırın DIŞINDA, kızın kapalı yumruğunda (kâğıt avuca sıkışmış, orta ve yüzük parmağı en derine gömülmüş, bir yırtık köşe ilk iki boğum arasından çıkmış) · kadraj kızı ağzının hemen üstünden kesiyor, gözleri kadraj DIŞINDA · plan yumuşak kurşun kalem + tek mavi keçeli: kaldırım bandı, ağaç dairesi, kaldırım çizgisi, iki oluklu rampa, çöp kutusu karesi
+YAZI    : YOK (planda sokak adı/etiket/harf/rakam yok; çizili araba düz bir blok)
+CAST    : Kız (gözleri kadraj dışı) + ~11 yaş gri sweatshirt'lü çocuk, ikisi de Türk/Anadolulu 6. sınıf
+TÜRETME : —
+RİSK    : Buruşuk top açılır/yere bırakılır/kraft kâğıdın üstüne düşer — "nedene dokunan vs dokunmayan" karşılaştırması tek karede iki durum olarak okunamaz. İkinci risk: düz kartın çizili arabadan kayması; üçüncüsü planda harf/isim çözünmesi.
+
+K36 ─────────────────────────────────────────────
+VO      : Uygulanabilir ve toplum yararına olmalıdır.
+FİİL    : uygulanabilir olmalı (ölçülmeli) + toplum yararına → YAPAN: Efe (bir ayağı sandalyede, iki avucu kartı cama bastırıyor, ağzı okuduğu sayıda, gözü ŞERİTTE) + ~12 yaş hardal hırkalı kız (şerit metrenin kutusunu alttan tutuyor, başparmağı kilit düğmesinde, öbür eli şeridin kıvrılan ucunu kartın üstünde yürütüyor) · "toplum" = camın ötesinde bir kat aşağıda yürüyen DÖRT kişi
+GÖRÜNMELİ: Gerilmiş çelik şerit kadrajı kesen tek parlak yatay çubuk, kendi uzunluğu altında hafif bel vermiş · arkasında cama bastırılmış kart ARKADAN aydınlanmış, ışık dikdörtgeni gibi; kalem izleri kâğıdın içinden hayalet gibi görünüyor ama çözünmüyor · kartın kenarının hemen dışında, camın ötesinde ve bir kat aşağıda: kaldırım, park etmiş arabalar, YÜRÜYEN DÖRT KİŞİ (gövdeli, düz karanlık şekil değil) · iki yüzün de yalnız cama dönük yarısı aydınlık
+YAZI    : YOK (çelik şeritte YALNIZ tik ritmi — hiçbir rakam/birim çözünmüyor; kartın yazısı arkadan ters ve okunmaz)
+CAST    : Efe 11-12 · kız ~12, hardal hırka; ikisi de Türk/Anadolulu
+TÜRETME : —
+RİSK    : NB2 şerit metreye rakam basar — metre = sayı çağrışımı çok güçlü, tek-yazı yasası burada kırılır. İkinci risk: pencerede yürüyen insanların düz karanlık şekle inmesi ("toplum" kanıtı yok olur); üçüncüsü akıllı tahtanın yanması/kutu girmesi.
+
+K37 ─────────────────────────────────────────────
+VO      : İnsanların haklarını gözetmeli ve kalıcı sonuç üretmelidir.
+FİİL    : gözetmeli / kalıcı üretmeli → YAPAN: Derin — KALEM ARTIK ONUN ELİNDE; mavi tükenmez, kurşun kalemin izinin üstünden geçmiş (silinebilir olan kalıcı olmuş). İş BİTMİŞ: uç kâğıttan birkaç mm kalkmış ve kâğıttan çevrilmiş
+GÖRÜNMELİ: Öneri kartı koyu çizik ahşabın üstünde tek aydınlık düz düzlem, iki yandan birer el giriyor — köprü · Derin'in sol eli el halkasında kapalı (sandalye ölü gibi duruyor), gözü YAPTIĞI ŞEYDE, çocukta değil · Efe yan oturmuş, sağ eli karttan geri çekilmiş, AVUÇ YUKARI ve parmaklar gevşek kıvrık (devretmiş, bekliyor); kadraj onu yanağından kesiyor · sol alt ön planda mavi cetvel + silgi kırıntıları bulanık
+YAZI    : "HERKES" · kartın ORTASINDA, mavi tükenmez el yazısı, her çizginin ucunda küçük kabarık mürekkep boncuğu, dönüşlerde göllenmiş, altındaki grafit hayaleti mürekkebin bir kıl dışında hâlâ görünür, bir harf silinip yeniden yazıldığı için pürüzlenmiş life yayılmış — soldan sağa, aynalanmamış; nokta/çengel/şapka YOK, altı harf, hepsi büyük
+CAST    : Derin 11-12 (tam modellenmiş) · Efe 11-12 (yarım yüz)
+TÜRETME : —
+RİSK    : NB2 "yazıyor" sahnesi çizer — uç kâğıda iner, kalemden hareket izi/blur çıkar. KLING KİLİDİ: yazma eylemi BİTMİŞ hâlde donmalı, yoksa motion fazında kamera yazıyı bozar. İkinci risk: karta ikinci kelime yazılması; üçüncüsü grafit hayaletinin ikinci görünür kelimeye dönmesi.
+
+K38 ─────────────────────────────────────────────
+VO      : Rampanın önüne yaya önceliğini gösteren bir işaret istediler.
+FİİL    : istediler → YAPAN: Efe — tek dizinin üstünde, sol avucu kendi çizdiği kâğıdı dökme demir direğe, GERÇEK bir levhanın duracağı yükseklikte bastırıyor; bant rulosu sağ başparmağında, o el KULLANILMAMIŞ (henüz yapıştırmadı, hâlâ kontrol ediyor) · ⚠ VO çoğul "istediler" ama karede yalnız Efe var
+GÖRÜNMELİ: Direk kadrajı boydan boya kesen tek koyu dikey sütun, yivlerinde alçak güneşin tek dikey parlaklık şeridi · kâğıt yuvarlak metale binmiş, iki köşesi havada · Efe'nin başı okuma yüksekliğini ölçmek için geriye eğik, gözü KENDİ ÇİZİMİNDE değil kâğıdın ÜST KENARINDA · hemen arkasında park etmiş arabanın ön lastiği rampanın eğimine hâlâ binmiş, kauçuk ezilmiş · ileride ~50 yaş örgü yelekli adam kameraya sırtı dönük uzaklaşıyor
+YAZI    : "YAYA" · direğe tutulan kareli defter kâğıdında, kalın mavi keçeli çocuk el yazısı blok büyük harf, mürekkep life işleyip basılı karelerin çizgisi boyunca bir kıl yayılmış (her çizginin kenarı hafif basamaklı), elle çizilmiş mavi karenin köşeleri taşmış, iki yerde mürekkep kâğıdın arkasına vurmuş — soldan sağa, aynalanmamış; altında kaldırım ve rampa eğimi için iki basit cetvel çizgisi, başka HİÇBİR ŞEY çizili değil
+CAST    : Efe 11-12 · yürüyen adam ~50 (sırtı dönük, gövdeli)
+TÜRETME : —
+RİSK    : Motor "işaret" kelimesini duyup kâğıdı gerçek metal/plastik levhaya çevirir ya da kareye gerçek trafik levhası/dubası ekler — "istemek ile olmak arasındaki fark bir kâğıt kalınlığıdır" fikri çöker. İkinci risk: kâğıda insan figürü/ok/tekerlekli sandalye piktogramı çizilmesi; üçüncüsü köşenin temizlenmiş çıkması (hikâyede HENÜZ temiz değil).
+
+K39 ─────────────────────────────────────────────
+VO      : Köşeye ayrıştırmalı geri dönüşüm kutuları konulmasını önerdiler.
+FİİL    : önerdiler → YAPAN: Efe (okul bahçesindeki kutuların ağız BİÇİMLERİNİ kartına çiziyor — sağ işaret parmağı kahverengi kutunun yarığının alt kenarı boyunca yavaş yürüyor) + yanında ~11 yaş yeşil polarlı kız (kolunun altında yassılaştırılmış karton, gözü İZ SÜREN PARMAKTA)
+GÖRÜNMELİ: Yan yana duran üç kutunun kapakları TEK aydınlık yatay bant, içine ÜÇ FARKLI kapkara ağız oyulmuş: yuvarlak delik · yarık · geniş açıklık (üç biçim, üç iş) · Efe tek topuğunun üstünde çömelmiş, kart sol dizinde, başparmağı sağ alt köşeye bastırmış · sol alt ön planda galvaniz kızağın bükülmüş köşesi bulanık · parmaklığın ARDINDA, yolun karşısında köşe HİÇ KUTUSUZ duruyor: kapağı açık belediye kutusu + dibinde poşet yığını (iki durum tek karede)
+YAZI    : ÜÇ kelime, TEK taşıyıcı grubu (@kutu'nun üç ön yüzü), elle şablonlanmış mat siyah boya, dokulu polietilende kabartıya ince alçakta kalın, hava ile ağarmış, bir harfin üstünde kapağın sürttüğü soluk yay: mavi = "KAĞIT" (üçüncü harf şapkalı Ğ) · kahverengi = "CAM" · yeşil = "PLASTİK" (altıncı harf noktalı İ) — üçü de lense dönük, tam aydınlık, hiçbiri el/kart/gövde arkasında değil, soldan sağa, aynalanmamış
+CAST    : Efe 11-12 · kız ~11, yeşil polar; ikisi de Türk/Anadolulu
+TÜRETME : —
+RİSK    : Kutulara geri dönüşüm oku/üçgeni/piktogramı eklenir — üç kelime yasası kırılır ve "biçim kopyalanıyor" fikri simgeyle ezilir. İkinci risk: parmaklığın ötesindeki köşeye kutu kurulması ya da poşet yığınının temizlenmesi (hikâye zamanı bozulur); üçüncüsü Ğ'nin şapkasının ya da İ'nin noktasının düşmesi.
+
+K40 ─────────────────────────────────────────────
+VO      : Çözümde kurumlar ve vatandaşlar farklı sorumluluklar üstlenir.
+FİİL    : üstlenir (farklı) → YAPAN: iki zarf ve onları tutan iki çocuk — İNCE zarf Efe'nin iki elinde (odadan çıkacak olan, kurumdan istenen), KALIN zarf kızın tek elinde alttan (sınıfta kalan, kendilerinin yapacağı)
+GÖRÜNMELİ: İki zarfın üst kenarı boyunca uzanan TEK yalayıcı ışık çizgisi — kalın zarfa gelince BİR BASAMAK çıkıyor, ince zarfta düzleşiyor (karenin tamamı bu tek basamak) · Efe iki dirseğine yaslanmış, başparmakları ince zarfın alt köşelerinde ön ve arkada, zarf kendi hafifliğinden hafif bel veriyor · ~12 yaş kırpık saçlı kız kalın zarfı alttan tutuyor, parmakları kâğıdın kalınlığına gömülmüş, dolu kenarlar parmakların arasından hafif açılmış, önkolu gerçek yük taşıyor; yüzünün yarısı kendi kolunun arkasında · her iki zarf da KAPAK yüzü lense dönük
+YAZI    : YOK (zarfların yazı yüzü kameraya DÖNMÜYOR; kapaklar düz, mühür/pul/pencere/çizgi yok)
+CAST    : Efe 11-12 (tam modellenmiş) · kız ~12, kiremit hırka, yarım yüz
+TÜRETME : —
+RİSK    : Zarflardan biri ön yüzüne çevrilir ve adres/isim/pul çıkar — kalınlık farkı okunmadan yazı okunur, kare argümanını kaybeder. İkinci risk: iki kalınlığın eşitlenmesi; üçüncüsü akıllı tahtanın yanması ya da odaya ayrıştırmalı kutu girmesi.
+
+K41 ─────────────────────────────────────────────
+VO      : Belediye ekipleri kutuları yerleştirdi ve köşeyi temizledi.
+FİİL    : yerleştirdi + temizledi → YAPAN: ~30 yaş kadın işçi (üçüncü yeni kutuyu galvaniz kızağa İNDİRİYOR, parmakları kutunun alt kalıp dudağına kancalanmış, önkolları tüm yükü taşıyor — kutu henüz kızağa DEĞMEDİ) + ~45 yaş süpürgeci adam (iki eli sapta, kılları kendine doğru çekiyor, gözü suyun bıraktığı ÇİZGİDE)
+GÖRÜNMELİ: Islak temiz şerit ile kuru kirli şerit arasındaki SERT SINIR kadrajı ortadan boydan boya kesiyor — alçak güneş ıslak tarafı tek parça aynaya çeviriyor, kuru taraf mat ve çakıllı · üç yeni kutunun ÜÇ ÖN YÜZÜ DE DUVARA DÖNÜK (iş bitmedi), plastik fabrika temizliğinde, zincir henüz bağlanmamış · uzakta rampada bir lastik HÂLÂ duruyor · ön planda süpürgenin ıslak kılları bulanık
+YAZI    : "BELEDİYE" · İKİ taşıyıcı, başka hiçbir yerde yok: (1) süpüren işçinin turuncu-sarı fosforlu yeleğinin SIRTI — gri retroreflektif film blok büyük harf, cam boncuklu yüzey ışığı sert geri veriyor, bir harfin köşesi kalkmış, kürek kemiği boyunca kırışık kelimeyi kesiyor; (2) belediye kamyonunun ŞOFÖR KAPISI — sıcak oker panele düz beyaz fırça boyası, kenarları tırtıklı, harflerin alt yarısında yol tozu şeridi · soldan sağa, aynalanmamış, altıncı harf noktalı İ · yanına şehir/ilçe/birim adı, numara, ikinci kelime, arma GELMEZ
+CAST    : Süpürgeci = Türk/Anadolulu ~45 · kadın işçi ~30 · izleyen sakin ~60 (sırtı yarı dönük, gövdeli)
+TÜRETME : —
+RİSK    : Kutulardan biri ön yüzünü sokağa döner ve "KAĞIT/CAM/PLASTİK" yazıları açılır — kare TEK yazı kelimesi (BELEDİYE) taşımalı, dördü birden çıkarsa hem yasa hem hikâye zamanı kırılır. İkinci risk: süpürmenin bitirilmesi (sınır çizgisi = karenin tamamı) ya da uzaktaki arabanın rampadan kaldırılması; üçüncüsü yeleğe arma/numara/birim satırı eklenmesi.
+
+K42 ─────────────────────────────────────────────
+VO      : Bir sivil toplum kuruluşu okulda bilgilendirme çalışması yaptı.
+FİİL    : bilgilendirme çalışması yaptı → YAPAN: ~35 yaş gönüllü kadın — sınıfın önünde DEĞİL, YERDE iki dizinin üstünde, topukları üstüne oturmuş; bir elinde durulanmış cam kavanoz havada (başparmak kapağın kenarında, diğer parmaklar gövdeyi alttan taşıyor), öbür eli muşambada düz; solundaki çocuğa konuşuyor, gözü çocuğun YÜZÜNDE değil ELLERİNDE
+GÖRÜNMELİ: Geç öğleden sonra güneşinin YERDE uzattığı tek uzun ışık bandı iki sıra arasından geçiyor; şeffaf muşamba onun içinde parlıyor ve üstünde ÜÇ AYRI YIĞIN duruyor · ~11 yaş çocuk yassı kartonu parmaklarında bükerek eğilmiş · ~12 yaş kız avuçları dizlerinde çömelmiş, üç yığını okuyor · akıllı tahta KAPKARANLIK ve kapalı (bilgi anlatılmıyor, elden veriliyor) · yetişkin AŞAĞIDA, çocuklar YUKARIDA
+YAZI    : "GÖNÜLLÜ" · gönüllünün düz pamuklu tişörtünün SIRTINDA, mat beyaz ısı-baskı vinil blok büyük harf, vinil dokunun bir tık üstünde duruyor ve kumaşın kıvrımlarını takip etmek yerine üstünden kırılıyor, bir harfin köşesi kumaştan kalkmış, yıkamadan kılcal çatlamış (aralardan jarse görünüyor) — soldan sağa, aynalanmamış, ikinci harf Ö iki noktalı, dördüncü ve yedinci harfler Ü iki noktalı; kolun ve hiçbir çocuk elinin arkasında kalmıyor
+CAST    : Gönüllü = Türk/Anadolulu kadın ~35 · çocuklar 6. sınıf 11-12
+TÜRETME : —
+RİSK    : Tişörte kurum adı/logo/arma/slogan/web adresi eklenir — tek kelime yasası kırılır ("sivil toplum kuruluşu" ifadesi motoru marka üretmeye çok güçlü çekiyor). İkinci risk: gönüllünün ayağa kaldırılıp sınıfın önüne dikilmesi (karenin tek fikri ölür); üçüncüsü akıllı tahtanın yanması.
+
+K43 ─────────────────────────────────────────────
+VO      : Mahalle sakinleri atıklarını ayırarak kutulara atmaya başladı.
+FİİL    : ayırarak atmaya başladı (henüz atmadı — DURDU) → YAPAN: ÜÇ sakin, üç farklı yükseklikte: ~75 yaş kadın (katlanmış gazeteyi dört parmak+başparmakla kıstırmış, KÂĞIT yarığının hizasında tutuyor, gözü AÇIKLIKTA değil ŞABLON KELİMEDE) · ~40 yaş adam (durulanmış kavanozu alttan tutmuş, kolu HENÜZ KALKMAMIŞ, başı eğik, üç yüzü okuyor) · ~10 yaş çocuk (plastik şişeyi geniş ağza avucunun düzüyle itiyor)
+GÖRÜNMELİ: Üç elin çizdiği YÜKSELEN ÇAPRAZ çizgi (aşağıda avuç, ortada gazete, belde kavanoz) · aynı yaşlı kadın, aynı düğümlü poşet — ama poşet artık AÇIK (K14'ün karşıtı) · kaldırımda TEK BİR POŞET YOK, beton süpürülmüş; belediye çöp kutusunun kapağı TAM KAPALI ve düz · uzakta rampada bir lastik hâlâ duruyor (bir sorun çözüldü, öteki durur)
+YAZI    : ÜÇ kelime, tek taşıyıcı grubu (@kutu'nun üç ön yüzü), elle şablonlanmış mat siyah boya dokulu polietilende, artık hafif tebeşirleşmiş, bir harfin üstünde kapağın soluk sürtünme yayı: mavi = "KAĞIT" (üçüncü harf şapkalı Ğ) · kahverengi = "CAM" · yeşil = "PLASTİK" (altıncı harf noktalı İ) — üçü de kaldırıma dönük ve tam okunur, hiçbiri el/poşet/gövde arkasında değil, soldan sağa, aynalanmamış
+CAST    : Kadın = Türk/Anadolulu ~75, başörtülü (K14'ün AYNI kadını) · adam ~40 · çocuk ~10
+TÜRETME : — (K14 ile bilinçli karşıtlık; kadın ve poşet aynı olmalı)
+RİSK    : Gazete yarığa DÜŞÜRÜLÜR / kavanoz kaldırılır — "ayırmak, atmadan önce DURMAKTIR" fikri yok olur, kare sıradan bir çöp atma sahnesine iner. İkinci risk: kaldırıma poşet/çöp geri konması (hikâye geri sarar); üçüncüsü gazeteye manşet/başlık çıkması (dördüncü yazı yüzeyi).
+
+##### S5 · KATILIM VE DEĞERLENDİRME · K44–K51 #####
+
+K44 ─────────────────────────────────────────────
+VO      : Bireyler sorunlara duyarlı olmalı ve çözüme katılmalıdır.
+FİİL    : katılmalıdır → YAPAN: Efe — tek dizinin üstünde, gövdesi tekerin üstüne devrilmiş, İKİ ELİ bebek arabasının ön çatalının ALTINA kancalanmış (avuçlar yukarı, başparmaklar borunun üstünde), yük omuzlarında değil bileklerinde değil — kaldırıyor
+GÖRÜNMELİ: Çınar kökünün kaldırdığı kaldırım taşının kırık tebeşirli kenarı alt üçte biri çapraz kesiyor; altındaki KARA YARIK karenin en koyu değeri · bebek arabasının ön tekeri o yarığa düşmüş ve DURMUŞ · Efe'nin kapalı defteri dizinin yanında taşta, güdük kalem kapağa takılı (yazan çocuk kalemi bırakmış, işin altına girmiş) · ~30 yaş anne iki eli barda, eklemleri beyaz; yüzünün üst yarısı tentenin gölgesinde, teşekkür ağzından okunuyor · Derin bir adım geride, kamber'e karşı sandalyeyi tutuyor
+YAZI    : YOK
+CAST    : Efe 11-12 · Derin 11-12 · anne Türk ~30
+TÜRETME : —
+RİSK    : Teker KURTARILIR ya da Efe bebek arabasını komple havaya kaldırır — çaba fizik dışına çıkar. İkinci risk: sahnenin "kurtarma tablosu"na dönmesi (anne ellerini kavuşturur, ağlar, eğilir); üçüncüsü kaldırıma çöp/poşet geri gelmesi (bu noktada köşe temiz).
+
+K45 ─────────────────────────────────────────────
+VO      : Efe ve arkadaşları bir dilekçe yazdı.
+FİİL    : yazdı → YAPAN: bordo kazaklı 11-12 yaş kız — kalemi başparmak+iki parmakla kıstırmış ve arkada sert zemin OLMADIĞI için kâğıda neredeyse YATIK tutuyor, boş alt boşluğa imza atıyor, öbür eli Efe'nin önkolunda destek, ağırlığı çizgiye biniyor · Efe kâğıdı HAVADA iki eliyle tutuyor (taşıyıcı, yazan değil)
+GÖRÜNMELİ: Kadrajı çapraz kesen tek beyaz düzlem: havada, ALTINDA HİÇBİR ŞEY OLMADAN tutulan A4 · kalemin bastırdığı yerde kâğıt KUBBELENİYOR (her harf bir çukur açıyor) · ışık sayfanın yalnız üst üçte birine (yazılı dört satır) düşüyor, imzaların gireceği alt üçte bir sayfanın en karanlık yeri · Efe sandalyeye değil SIRANIN ÜSTÜNE çıkmış oturmuş, bir ayakkabısı alttaki oturağa basılı · arkada ~12 yaş çocuk kaleme uzanmak için sandalyesinden yarı kalkmış
+YAZI    : "DİLEKÇE" · A4'ün ÜSTÜNDE, dört satırın üstünde başlık olarak, çocuk el yazısı blok büyük harf, mavi tükenmez desteksiz kâğıda sert bastırılmış (her çizgi görünür bir oluk açıyor, köşelerde mürekkep göllenmiş), bir harf ikinci kez üstünden geçilmiş, altında düzgün olmayan tek alt çizgi — soldan sağa, aynalanmamış, ikinci harf noktalı İ, altıncı harf çengelli Ç
+CAST    : Efe 11-12 · imzalayan kız Türk/Anadolulu 6. sınıf 11-12, bordo kazak · sabırsız çocuk Türk ~12
+TÜRETME : —
+RİSK    : Kâğıdın altına sert bir şey girer (sıra, kitap, altlık) ya da kâğıt düzleşir — "havada yazılıyor" fikri ve kubbe kaybolur. İkinci risk: başlığın altındaki dört satırın harfe çözünmesi ya da imzanın okunur isme dönmesi; üçüncüsü kâğıda matbu dilekçe şablonu/antet/tarih alanı/imza çizgisi basılması.
+
+K46 ─────────────────────────────────────────────
+VO      : Dilekçeyi okul müdürüne ve muhtarlığa ulaştırdılar.
+FİİL    : ulaştırdılar → YAPAN: Efe + muhtar BİRLİKTE — kâğıt havada iki kenardan tutulmuş: Efe yakın kenarı iki eliyle (başparmaklar üstte alt köşelerde, parmaklar arkada), muhtarın eli uzak kenarı kavramış (başparmak üstte, iki parmak altta) ve AĞIRLIĞI ALMAYA BAŞLAMIŞ; ikisi de bırakmamış · "okul müdürüne" yarısı: sümende yatan İKİNCİ nüsha okulun mührünü çoktan almış (bu ikinci teslim)
+GÖRÜNMELİ: Masayı boydan boya kesen tek yatay beyaz levha (kamera kâğıtla aynı düzlemde) · sümende mühürlü ikinci nüsha: mor oval halka, iç yazısı mührün yuvarlanmasından bulaşmış ve çiftlenmiş, HİÇBİR harf çözünmüyor · muhtarın gözlüğü bu kez ALNINDA DEĞİL burnunda, gözü dört satırda · Derin sandalyeyi masanın yanına almış, sol avucu el halkasında, sağ eli masanın kenarında · sol ön planda kumaş bağlı dosya yığını bulanık
+YAZI    : YOK (kâğıt lense neredeyse kenarından bakıyor, satırlar mavi kabartılara sıkışıp çözünmüyor; mühür halkasının içi bulaşık)
+CAST    : Muhtar = Türk erkek ~60 (K19'un aynı adamı) · Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : İki elden biri kâğıdı BIRAKIR ya da kâğıt masaya yatırılır — "ulaştırmak" fiili el değiştirme anı olmaktan çıkar, kare bir belge okuma sahnesine iner. İkinci risk: mor mühür halkasının içinde harf/tarih/arma çözünmesi (ikinci yazı yüzeyi); üçüncüsü kareye dosya/zarf/altlık girmesi.
+
+K47 ─────────────────────────────────────────────
+VO      : Bozuk sokak lambasını ilgili birime bildirdiler.
+FİİL    : bildirdiler → YAPAN: Efe (düz koyu telefon kulağına yapışık, omzu ona gelmiş, ağzı tekrarladığı RAKAMDA, gözü Derin'in parmak ucunda) + Derin (sağ işaret parmağı künyenin alt satırının hemen altında, dudakları numarayı okurken hareket ediyor)
+GÖRÜNMELİ: Dökme demir direğin oluklu gövdesi kadrajı boydan boya kesen tek koyu dikey kütle · karenin TEK parlak levhası dibindeki perçinli alüminyum künye ve tam DERİN'İN OTURMA GÖZ HİZASINDA (sandalye kısıt değil, DOĞRU YÜKSEKLİK) · Derin dik duruşundan yana ve aşağı eğilmiş, başı demire bir karış · lamba başı ÜST KENARDA KESİK; filaman güpegündüz yanıyor ve ışığı HİÇBİR YERE düşmüyor (kaldırımda havuz, direkte leke, çocuklarda kenar ışığı YOK)
+YAZI    : "BELEDİYE" + "214" · TEK taşıyıcı: direğin dibine perçinlenmiş küçük dikdörtgen alüminyum künye. Harfler ince alüminyuma makineyle basılmış sonra siyah boyayla doldurulmuş — boya her çizginin kabaran çapağında incelmiş, basılan derinlikte kalınlaşmış; iki ucunda perçin başı, bir köşesi dökümden hafif kalkmış. İKİ SATIR, aralarında tam boş metal bandı: üstte "BELEDİYE" (sekiz harf, altıncı noktalı İ), altta "214" (üç rakam, harf yok) — soldan sağa, aynalanmamış
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : NB2 telefonun EKRANINI gösterir — arayüz/tuş takımı/çevrilen numara/bildirim çıkar ve hem ikinci yazı yüzeyi doğar hem Kling'de kamera onu bozar. İkinci risk: yanan lambanın ışık saçması (K15'in aynı tuzağı, ikinci kez); üçüncüsü Derin'in parmağının basılı karakterleri örtmesi ya da künyeye şehir adı/arma/barkod eklenmesi.
+
+K48 ─────────────────────────────────────────────
+VO      : Gönüllü olarak çevre temizliği çalışmasına katıldılar.
+FİİL    : katıldılar (iş bölüşülmüş) → YAPAN: Derin (çuvalın ağzını DİZLERİNİN üstünde iki eliyle gergin AÇIK tutuyor — her başparmak dokumanın içine kancalanmış, dört parmak dışta, dokuma başparmakların altında buruşuyor, bilekler geriye yatık, yük önkollarında; eller el halkalarında DEĞİL) + Efe (ayakta taraftan iyice eğilmiş, bir eli kendi dizinde destek, öbür eli yassılttığı şişeyi çuvalın ağzından AŞAĞI bastırıyor)
+GÖRÜNMELİ: Karenin ortasında TEK parlak halka: dizlerin üstünde gerilmiş çuval ağzının saman beyazı dokuma çemberi; en aydınlık yer o çember, en karanlık yer içi · Derin'in kucağı bu kaldırımdaki tek sabit tezgâh ve herkes onun yüksekliğine çalışıyor · sol ön planda düğümlenmiş dolu çuval bulanık · kaldırım boyunca üç düğümlü çuval daha, ağaç korkuluğuna dayalı süpürge, yerde düşmüş iş eldiveni
+YAZI    : "GÖNÜLLÜ" · TEK taşıyıcı: arkadaki ~20 yaş genç kadının düz pamuklu tişörtünün ÖN yüzü, kollarının uzanmasıyla göğsünde gerilmiş ve lense tam dönük; serigrafi mat siyah mürekkep pamuk dokunun ÜSTÜNDE duruyor, eski bir kırık çizgisi boyunca çatlamış ve aralardan lif görünüyor — soldan sağa, aynalanmamış, ikinci harf Ö iki noktalı, dördüncü ve yedinci harfler Ü iki noktalı; hiçbir kolun arkasında kalmıyor
+CAST    : Derin 11-12 (kiremit turuncu polar, üstünde baskılı giysi YOK) · Efe 11-12 · gönüllü Türk/Anadolulu kadın ~20 (yüzü ışık bandının ÜSTÜNDE açık gölgede)
+TÜRETME : —
+RİSK    : Biri çuvalı Derin'in dizlerinden ALIR / onun yerine tutar — "iş bölüşülmüş, kimse iyilik yapmıyor" fikri acıma sahnesine döner. İkinci risk: çocuklardan birine de baskılı tişört/yelek/kolluk giydirilmesi (ikinci yazı yüzeyi); üçüncüsü grup fotoğrafı/dizilme/yumruk pozu kurulması.
+
+K49 ─────────────────────────────────────────────
+VO      : Uygulanan çözüm, sonuçlarına bakılarak değerlendirilir.
+FİİL    : bakılarak değerlendirilir → YAPAN: Efe — açık defteri KOL MESAFESİNDE kaldırmış, gözü sayfada DEĞİL, sayfanın üst kenarını AŞIP aşağıdaki kutulara gidiyor; sağ eli dört maddeden YALNIZ BİRİNİN üstünü tek sert kalem darbesiyle çiziyor
+GÖRÜNMELİ: Kaldırılmış sayfanın soluk dikdörtgeni kadrajı yatay kesiyor, üst kenarı gerçek köşenin önünde SAHTE UFUK kuruyor ve alçak güneş tam o kenar boyunca yanıyor · kutulardan yalnız KAPAK ÜSTLERİ sayfanın kenarının üstünden görünüyor (plan sonucu örtüyor) · Efe'nin KAPÜŞONU ENSEYE DÜŞMÜŞ ve gözleri IŞIKTA — karar veren yüz okunuyor · Derin başını yukarı-yana sayfaya çevirmiş, yüzü tam aydınlık, gözü kalemi izliyor · sağ ön planda Derin'in el halkası ve omzu bulanık
+YAZI    : YOK (sayfada dört ayrı blok var, YALNIZ BİRİNİN ortasından tek sert çizgi geçiyor; hiçbir kelime çözünmüyor)
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : Sayfaya ya da kareye ölçüm grafiği girer — tik, çarpı, ok, kutu, yıldız, yüzde, rakam, bar, çizelge, gösterge. "Değerlendirme" kelimesi motoru infografiğe çekiyor; TEK kalem çizgisi bütün ölçümdür. İkinci risk: birden fazla maddenin çizilmesi; üçüncüsü kapüşonun kapatılıp gözlerin gölgeye düşmesi (eski karenin düzeltilen kusuru geri gelir).
+
+K50 ─────────────────────────────────────────────
+VO      : Bir ay sonra toplanan atık miktarı belirgin biçimde azalmıştı.
+FİİL    : azalmıştı (bir AĞIRLIK olarak) → YAPAN: yarı bile dolmamış GEVŞEK çuval + onu tek eliyle KOLAYCA kaldıran ~50 yaş temizlik görevlisi — dirsek kilitli DEĞİL, omuz DÜŞMEMİŞ, çuval olması gerekenden yükseğe çıkmış · ikinci kanıt: bir ay önce her sabah dört poşetin durduğu solmuş dikdörtgen artık BOMBOŞ
+GÖRÜNMELİ: Sağ üstten sol alta tek çapraz: gevşek yarım çuvalın tembel hilal gövdesi + taşıyan tek kol; o çapraz TAM boşalmış soluk dikdörtgenin üstünden geçiyor · ön planda o soluk leke bulanık, üstünde HİÇBİR ŞEY yok · @kutu kızağında, üç kapak kapalı, kapak yayları bir aylık elden PARLAMIŞ · görevlinin yüzü çınarın gölgesinde biçim olarak var ama ışıklı detayı yok; ışık kola, eldivene, çuvala ve lekeye gidiyor · Derin @kutu'nun yanına gelmiş, çenesi çuvalın yayını izliyor, ağzı gülümseme olmayan düz kısa çizgide
+YAZI    : İKİ kelime, @kutu'nun İKİ ön yüzü (üçüncüsü çevrik ve görevlinin bacağıyla yarı örtülü): mavi = "KAĞIT" (beş harf, üçüncü şapkalı Ğ) · yeşil = "PLASTİK" (yedi harf, altıncı noktalı İ) — elle şablonlanmış mat siyah boya, bir aylık hava ile daha da tebeşirleşmiş, bir harfin üstünde kapak sürtünme yayı; soldan sağa, aynalanmamış · görevlinin tulumunda HİÇBİR yazı/rozet yok
+CAST    : Temizlik görevlisi = Türk erkek ~50, düz arduvaz mavisi tulum (yazısız) · Derin 11-12
+TÜRETME : —
+RİSK    : Kaldırma AĞIR görünür (kilitli dirsek, düşmüş omuz, ikinci el destek, gergin şişkin çuval) — "azalma" kanıtı tersine döner. İkinci risk: kareye sayı/yüzde/grafik/terazi girmesi ya da eski poşet yığınının hayalet/öncesi-sonrası bölmesi olarak eklenmesi; üçüncüsü soluk lekenin üstüne bir şey konması.
+
+K51 ─────────────────────────────────────────────
+VO      : Sorun sürüyorsa plan yeniden gözden geçirilir ve geliştirilir.
+FİİL    : gözden geçirilir / geliştirilir → YAPAN: Efe — sol avucu defterin sırtını alttan taşıyor ve BAŞPARMAĞI önceki yazılı sayfayı geri katlayıp tutuyor (yazılı yüz arkaya bakıyor, yalnız TEMİZ BOŞ sayfa görünüyor); sağ elindeki kalemin ucu boş sayfanın ortasına DEĞMİŞ ama el DURMUŞ, yazmamış
+GÖRÜNMELİ: K02'nin bilinçli tekrarı: soluk rampa sol alttan çapraz giriyor ve koyu bir araba gövdesi onu YİNE ortasından kesiyor, ön tekerlek eğimin yarısında ezilmiş · DEĞİŞEN İKİ ŞEY: rampanın başında yeni galvaniz direkte reflektif levha (cıvata başları çapaksız, dipteki beton bilezik soluk ve yıpranmamış) ve arabanın yan aynası levhanın yüzüne bir karış · üstte dökme demir lamba İLK KEZ SÖNÜK, camı yeni temizlenmiş · Efe'nin KALEM TUTAN ELİ tamamen ışığın DIŞINDA, boş sayfa aydınlık · Efe'nin başı yeni levhadan çevrik, ARABAYA bakıyor · Derin rampanın dibinde durmuş, gözü levhada değil YAN AYNADA
+YAZI    : "YAYA YOLU" · TEK taşıyıcı: yeni levha yüzeyi. Beyaz retroreflektif folyo üstüne makineyle kesilmiş koyu mavi büyük harfler; folyonun ince cam boncuk dokusu sabah ışığını taneli parıltıyla geri veriyor, levha kenarları parlak ve çapaksız, üstte bir cıvata başı beyaz zemini kesiyor — İKİ kelime, sekiz harf, hepsi büyük, noktalı/şapkalı harf YOK; soldan sağa, aynalanmamış, arabanın aynasından açıkta
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : Boş sayfaya yazı düşer — kalem kâğıda değiyor ve NB2 "kalem varsa yazı vardır" der; oysa sayfa TAMAMEN boş kalmalı (VO'nun fiili "yeniden gözden geçirilir", henüz yazılmadı). İkinci risk: levhaya piktogram/yürüyen figür/ok/arma eklenmesi; üçüncüsü hikâyenin zafere çevrilmesi (rampanın boşaltılması, çekici/ceza/kilit eklenmesi, gülümseme).
+
+
+##### S6 · KAPANIŞ · K52–K57 #####
+
+K52 ─────────────────────────────────────────────
+VO      : Bir sabah Efe yine aynı köşeye geldi.
+FİİL    : geldi → YAPAN: Efe — rampanın TEPESİNE varmış ve TAM ESKİDEN EZİLMİŞ ÖN TEKERİN DURDUĞU YERDE duruyor, iki adım arasında, ağırlığı hâlâ arka ayakta
+GÖRÜNMELİ: Soluk rampa sol alttan sağ üste KESİNTİSİZ akıyor (K02'nin kesilen oku tamamlanmış) · K02'de arabanın altındaki kara oyuk kadrajda ARTIK HİÇ YOK; güneş eğimin dibine ve iki dokunsal oluğun içine kadar giriyor · vişne araba, sürücü parçaları (palto eteği, ekmek poşeti, el, sallanan anahtar, kapattığı dükkân kapısı) ve motor pusu GİTMİŞ · K02'de rampanın kenarına sıkışan üç yapraktan İKİSİ yerinde, ÜÇÜNCÜSÜ serbest kayıyor · Efe'ye tepeden bakılıyor, gövdesi kısalmış, yalnız yanağı ve yakın gözü okunuyor
+YAZI    : YOK
+CAST    : Efe 11-12
+TÜRETME : K02 (ikinci kat balkonundan dik inen 28mm vinç kadrajı KORUNUR) — kadraj kayarsa K02'nin kadrajıyla sıfırdan basılır, kararı Mami verir
+RİSK    : Türetme kamerayı göz hizasına indirir ya da düz kuşbakışına çevirir — "aynı köşe" beyanı çöker ve K02 ile yan yana kesilince fark okunmaz. İkinci risk: rampanın yenilenmiş/yeniden boyanmış çizilmesi (aynı çentikli beton kalmalı, yalnız üstü açılmalı); üçüncüsü Efe'nin kahraman pozuna geçmesi/kol kaldırması.
+
+K53 ─────────────────────────────────────────────
+VO      : Rampanın önü boştu ve Derin yukarı tek başına çıktı.
+FİİL    : çıktı (tek başına) → YAPAN: Derin — İTME kavramasıyla: iki avuç tabanı krom el halkalarının ÜSTÜNE aşağı ve ileri bastırıyor, başparmaklar her halkanın DIŞ yüzünde destek, sekiz parmağın hepsi altta kancalı, iki bilek öne yuvarlanmış, el sırtlarında kirişler kabarık; omuzlar alçak ve yüklü, önkollar gergin
+GÖRÜNMELİ: K04'ün dik granit taş duvarı yerinde artık RAMPANIN EĞİMİ var, iki dokunsal oluk eğimden yukarı koşuyor · K04'ün en keskin izi olan bir parmaklık kara yarık YOK; ön castor eğimin bir karış yukarısında, kauçuğu yakın oluğa ezilmiş · "tek başına" = arka tekerin arkasındaki kaldırımda HİÇBİR el, kol, kolluk ya da ikinci gölge yok · vişne araba kaldırımdan gitmiş, rampanın üstü tamamen açık · Derin'in yüzü K04'teki gibi odak dışında ve yarım
+YAZI    : YOK
+CAST    : Derin 11-12
+TÜRETME : K04 (65mm, yer hizası, granit taşın hemen ötesi KORUNUR) — zemin geometrisi değiştiği için türetmenin EN RİSKLİ karesi; tutmazsa K04 kadrajıyla sıfırdan basılır, kararı Mami verir
+RİSK    : Motorun en sık bozduğu yer nesneyi tutan el — dinlenme kavraması yerine itme kavraması çizilmezse "tek başına çıktı" fiili görünmez, kare K04'ün boşaltılmış hâline döner. İkinci risk: arkaya bir yardım eli/omuz girmesi; üçüncüsü rampanın hastane/havaalanı erişim rampasına dönmesi (korkuluk, sarı dokunsal kaplama, mavi erişilebilirlik simgesi).
+
+K54 ─────────────────────────────────────────────
+VO      : Toplumsal sorunların çözümü, onları fark etmekle başlar.
+FİİL    : fark etmekle başlar → YAPAN: Efe — bir haftalık açık gözlem defterini göğsünün önüne kaldırmış ama OKUMUYOR; çenesi sayfadan çevrilmiş ve kaldırım boyunca boş rampaya bakıyor
+GÖRÜNMELİ: Tek alçak güneş bandı önce ELDEKİ SAYFAYA düşüyor, arada gölgeli şeritle kesiliyor, uzakta AÇIK RAMPANIN eğiminde yeniden yanıyor (kâğıt ile rampa aynı çizginin iki aydınlık ucu) · Efe'nin sağ omzu bize dönük, kadrajın sol üçte birinde · tutuş: defter sol avuçta açık, sırt parmakların kıvrımında, sol başparmak yakın sayfanın alt köşesine düz bastırılmış, kalan dört parmak yumuşak kapağın arkasında yayılmış, güdük kalem hâlâ kapağa takılı · ileride Derin eğimin tepesinde, dörtte üç arkası dönük, iki eli el halkalarında · ön planda çınarın alçak demir bileziği bulanık, sağ altı kesiyor
+YAZI    : YOK (sayfada kalem çizgilerinin ritmi ve kenarda çetele sütunu var; hiçbir harf/rakam çözünmüyor)
+CAST    : Efe 11-12 · Derin 11-12
+TÜRETME : —
+RİSK    : Efe'nin gözü sayfaya düşer — "fark etmek" fiili okumaya döner ve karenin bütün fikri (kâğıt değil, kâğıdın ötesi) ölür. İkinci risk: sayfa ile rampa arasına ok/noktalı yol/bağlantı çizgisi çizilmesi; üçüncüsü rampaya araba/kutu/poşet geri konması.
+
+K55 ─────────────────────────────────────────────
+VO      : Sorunları fark eder, çözümleri birlikte üretiriz!
+FİİL    : üretiriz (BİRLİKTE) → YAPAN: DÖRT çocuk, dört el bezi duvara geriyor ve BİRİ DERİN'İN: Efe (iki kolu yukarı, ağırlık ayak parmaklarında, etek iki elde başparmak yastıkları ile işaret parmağı kıvrımı arasında kıstırılmış, pamuk iki küçük dikey kırışığa toplanmış) · Derin (sandalyeyi çeyrek sola çevirmiş, sağ eli bezin SOL ALT köşesinde — kumaş yumruğuna bir kez sarılmış, köşe serçe parmağının altına sıkışmış; sol eli el halkasında) · hardal hırkalı ~12 yaş kız (demir bileziğin üstüne çıkmış, bir eli tepede etekte, öbür eli sıvada düz) · yeşil polarlı ~11 yaş çocuk (sağ kenarda omzundan kesik, iki yumruğu sağ alt köşede, ağırlığını geriye veriyor)
+GÖRÜNMELİ: İki çizginin çarpışması: gerilmiş bezin dümdüz yatay bandı üst iki bölümü kesiyor, altından dört kol dikey sütun gibi ona yükseliyor · DUVAR DÜZLEMİ SENSÖRE TAM PARALEL, kamera eğik DEĞİL (keystone yok) · afişin ALT ÜÇTE BİRİ boyasız dikiş payı: başlar, kollar ve eller yalnız o boş beze biniyor, hiçbir harfin önünde durmuyor · sol kenarda rampa tamamen boş, iki dokunsal oluğu görünüyor
+YAZI    : "SORUNLARI FARK EDER, ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ" · TEK taşıyıcı: elle boyanmış ham krem pamuklu bez afiş, iki kordon halkasıyla iki eski duvar kancasına asılı, düz ve gergin. Geniş yassı fırçayla petrol mavisi poster boyası — çocuk işi: her harf biraz farklı ağırlık ve yükseklikte, boya her çizginin ortasında alçak bir sırt gibi kabarık, kenarlarda dokuya emilip liflerle tüylenmiş, bir çizgi fırça fazla yüklüyken şişkin başlıyor, bir harfin kuyruğu kuruyunca inceliyor; yalayan güneş her sırtın tepesini alıyor (yazı kumaşın ÜSTÜNE KONMUŞ MADDE, overlay değil).
+          İKİ SATIR, altı kelime, kırk iki harf, hepsi büyük:
+          1. satır: SORUNLARI FARK EDER,  → SORUNLARI = 9 harf, dokuzuncusu NOKTASIZ I · FARK = 4 · EDER = 4 + virgül
+          2. satır: ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ → ÇÖZÜMLERİ = 9 harf (1: çengelli Ç · 2: iki noktalı Ö · 4: iki noktalı Ü · 9: noktalı İ) · BİRLİKTE = 8 harf (2. ve 5. noktalı İ) · ÜRETİRİZ = 8 harf (1: iki noktalı Ü · 5. ve 7. noktalı İ)
+          Soldan sağa, düz ve lense kare, aynalanmamış, döndürülmemiş.
+CAST    : Efe 11-12 · Derin 11-12 · kız Türk ~12 hardal hırka · çocuk Türk ~11 yeşil polar
+TÜRETME : —
+RİSK    : KARENİN EN YÜKSEK YAZI RİSKİ — kırk iki harf tek yüzeyde. Bir baş/el/kol/kordon/ağaç gövdesi tek harfi bile örterse ya da bez bir harfin üstünde kıvrılır/sarkarsa kare gider. İkinci risk: kameranın yukarı eğilip satırların keystone yapması/aşağı kayması; üçüncüsü Derin'in köşesini bir başkasının tutması ("birlikte" yerine "ona yardım ediliyor" okunur).
+
+K56 ─────────────────────────────────────────────
+VO      : Peki sen çevrende hangi toplumsal sorunu fark ettin?
+FİİL    : fark ettin (SEN) → YAPAN: SEYİRCİ — ve bu KASITLI bir yokluktur, kusur değil: baktığı şey kadrajın DIŞINDA bırakılmıştır. Karedeki vekil gövde Efe: çınarın dibine çömelmiş, dirseği kalkık dizinde, başı tamamen sağa çevrilmiş, yolun karşısında kadrajın göstermediği bir şeye bakıyor
+GÖRÜNMELİ: Kadrajın SAĞ İKİ BÖLÜMÜ tek parça, üstünde HİÇBİR ŞEY olmayan güneşli kaldırım; tek koyu bant çınarın uzun gölgesi — o boşluk karenin konusu · tutuş iki ayrı: kapalı defter üst kol ile kaburga arasına sıkıştırılmış (tüylenmiş köşesi arkadan çıkıyor, güdük kalem kapak klipsinde) + sağ el kaldırıma DÜZ basılı, parmaklar açık, parmak uçları yükten beyazlamış · gözler yalayan güneşe karşı kısılmış, bir kaş öbüründen alçak · sol ön planda çınar gövdesi bulanık kesiyor
+YAZI    : YOK
+CAST    : Efe 11-12 (tam profil, lense asla dönmüyor)
+TÜRETME : —
+RİSK    : Kadrajın boş sağ tarafına BİR ŞEY girer — insan, çocuk, yetişkin, araç, hayvan, kutu, poşet, duba, bank — ve soru cevaplanmış olur; boşluk karenin tek argümanı. İkinci risk: bakılan şeyin gösterilmesi; üçüncüsü düşünce balonu/soru işareti/ok/ikon eklenmesi.
+
+K57 ─────────────────────────────────────────────
+VO      : Cevaplarınızı yorumlara bekliyoruz; meraklı kalın, çözüm üretmeye devam edin!
+FİİL    : bekliyoruz (davet) → YAPAN: Efe — defteri İLK KEZ çevirip BİZE kaldırmış, kalemin grafit ucu BOŞ DÖRDÜNCÜ SATIRIN sol başında kâğıda GERÇEKTEN değiyor (kâğıt hafifçe çukurlaşıyor), gözleri kâğıttan kalkıp doğrudan lense bakıyor; Derin de lense bakıyor
+GÖRÜNMELİ: Bize dönük açık sayfa karenin baskın kütlesi; içindeki BOŞ DÖRDÜNCÜ SATIR karenin en parlak yeri (üstünde grafit yok, üstteki üç satır grafitle kaplı ve yandan gelen ışıkta metalik parlıyor) · iki ayrı tutuş: sol avuç defteri açık taşıyor, sırt parmakların kıvrımında, sol başparmak yakın sayfanın DIŞ kenarına kancalı ve yazıdan uzakta, dört parmak arka kapağın altında yayılmış · sağ el normal üçlü yazı tutuşu, çiğnenmiş uç orta parmağın yastığında · Efe'nin gövdesi belden aşağı kadrajla kesik · Derin sandalyesini çeyrek ona çevirmiş, yüzünün yarısı kaldırılmış sayfanın kenarının arkasında · arkada rampa tamamen boş
+YAZI    : "RAMPA" · "ÇÖP" · "LAMBA" · TEK taşıyıcı: Efe'nin yumuşak kapaklı gözlem defterinin SOL sayfası (bütün hafta taşıdığı defter, köşeleri tüylenmiş). Oniki yaşındaki bir çocuğun kendi kalem el yazısı büyük harfleri, yumuşak grafit kâğıdın dokusuna bastırılmış — harf yükseklikleri eşit değil, aşağı çizgiler kâğıdı kabartacak kadar sert, çizgiler yalayan güneşte ince metalik parlıyor ve kâğıdın dokusunu geçerken atlıyor, bir kelime ilk seferde soluk çıktığı için ikinci kez üstünden geçilmiş.
+          ÜÇ çizgili satır, satır başına bir kelime, toplam on üç harf:
+          1. satır "RAMPA" (5 harf) · 2. satır "ÇÖP" (3 harf; 1: çengelli Ç, 2: iki noktalı Ö) · 3. satır "LAMBA" (5 harf)
+          Her kelimenin yanında kenar boşluğunda kısa çetele sütunu: dört dik çizgi, beşincisi üstlerinden çapraz.
+          DÖRDÜNCÜ çizgili satır TAMAMEN BOŞ — üstünde yalnız kalemin ucu duruyor.
+          Soldan sağa, her kelime kendi satırında düz, aynalanmamış; sayfa lense düz ve kare, üstünden hiçbir şey geçmiyor.
+CAST    : Efe 11-12 · Derin 11-12 (ikisi de lense BAKIYOR — bu karede serbest, tek istisna)
+TÜRETME : —
+RİSK    : Dördüncü satıra bir şey yazılır — harf, kelime, çetele, nokta ya da kaçak çizgi. Kalem kâğıda değdiği için NB2 "yazı var" varsayar; oysa o satırın boşluğu videonun kapanış argümanı. İkinci risk: sayfaya dördüncü kelime/İngilizce kelime/uydurma harf eklenmesi; üçüncüsü abone butonu/ok/konuşma balonu/parıltı gibi arayüz unsurunun girmesi.
+
+=========================================================================
+LİSTE SONU · 57/57 kare
+=========================================================================
+
