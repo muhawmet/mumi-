@@ -1,0 +1,108 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — ÖN KONTROL (basılmadan önce)
+=========================================================================
+Kapsam: 57 kare × 6 ölçüt (139 revizenin sebepleri). Başka kusur aranmadı.
+Ölçüt 4 (ÇİÇEĞE DÖNÜŞEN IŞIK) — bloom/saffron/blossom/petal/radiance:
+  57 karede SIFIR eşleşme. Bu kategori tamamen temiz, tek satır bile yok.
+=========================================================================
+
+
+### KIRMIZI — basmadan düzelt
+
+K01 | ANADOLU DIŞI MİMARİ | Filmin ilk karesi @kose ÇAĞIRMIYOR ve kepenklerin ÜSTÜNDEKİ cephe hiç tarif edilmemiş — simitçi Türk, bina değil; NB2 dökme demir lamba + kepenk + çınar kombinasyonunu Paris/Lizbon cephesiyle kapatır. | [4 SETTING] sonuna ekle: "Behind the pavement stand four-storey apartment blocks in warm ochre and faded rose lime render, their ground floors given over to shopfronts, with first-floor balconies on dark green iron rails, air-conditioning units and satellite dishes at irregular heights."
+
+K16 | BOZUK HARF RİSKİ | "YAVAŞ" hem KASTEN yarısı silinmiş (harflerin ortası aşınmış) hem de üç çocuğun AYAKLARININ ALTINDA — iki risk üst üste biniyor ve dosyanın kendi K55 disiplinini ("hiçbir harfin önünde ayak/el durmaz") çiğniyor. | [2 SUBJECT] ve TEXT konum cümlesini değiştir: "positioned across the near lane between the children and the lens, the whole word clear of every foot — the children cross the road a full stride beyond the last letter and no shoe touches, covers or clips any stroke."
+
+K19 | VO-KARE FİİL UYUMSUZLUĞU | VO'da İKİ fiil var — "komşulara SORDU" ve "muhtarlıktan bilgi ALDI" — karede yalnız ikincisi gövdeli; komşu diye biri yok, sorma eylemini yapan hiç kimse yok. | [3 IDENTITY] sonuna ekle: "In the office doorway a Turkish/Anatolian neighbour of about fifty-five in a headscarf and a cardigan stands half in and half out, one hand still on the door frame and her mouth open on the end of an answer she has just given him, her other hand pointing back up the street she has just come from — fully described and fully rendered, her face modelled and readable."
+
+K20 | VO-KARE FİİL UYUMSUZLUĞU | VO'nun fiili "GÖRDÜ" ve öznesi Efe — ama @efe1 karede hiç yok; dört sürücü var, gören kimse yok. | [3 IDENTITY] başına ekle: "@efe1 stands at the balcony rail in the near foreground with both forearms on the rail and his head down over it, looking straight into the stalled lane below — deliberately not standing at rest and not in a full-figure studio pose, his notebook closed under one forearm, his mouth closed and his eyes moving from vehicle to vehicle rather than resting on one."
+
+K22 | İNGİLİZCE TABELA RİSKİ | Dosyadaki EN BÜYÜK boş yüzey bir şehir otobüsünün yan flanşı ve o yüzey giydirilmemiş, YASAKLANMIŞ — referans dosyasının kendi 6. kuralı ("yazı istemediğin yüzey giydirilir, yasaklanmaz") altı karede ölçülmüş bir kusur olarak burada tekrar ediyor. | [4 SETTING] içinde otobüsü tarif eden yere ekle: "the bus's whole flank is covered by a broad band of dried road grime and rain streaking that runs the length of the panel and leaves no clean rectangle of paint anywhere on it, and its destination box above the windscreen is glazed and angled up so its glass returns only sky."
+
+K47 | VO-KARE FİİL UYUMSUZLUĞU | VO'nun fiili "BİLDİRDİLER" — karede bildirme eylemini yapan gövde yok; iki çocuk yalnız numarayı OKUYOR ve YAZIYOR, yani bildirimin ön koşulunu. | [3 IDENTITY] içinde @derin'in tarifine ekle: "her right hand holds a mobile phone flat against her ear with the thumb along its lower edge and the fingers wrapped up its back, the call already connected — her lips move on the number she is reading off the tag, and her left palm stays open on the push-rim holding the chair against the camber." (Bu değişiklikte sağ elin künyeye değme satırı Efe'ye kayar: künyenin altını Efe'nin işaret parmağı izler.)
+
+K55 | BOZUK HARF RİSKİ | Karede 42 harf, 8 diakritik ve 6 kelime var ve tam cümle prompt'ta HİÇBİR YERDE tek parça tırnak içinde geçmiyor — üç ayrı cümleye bölünüp harf harf tarif edilmiş; NB2 uzun dizgiyi tek bitişik string'ten kopyalar, tarif edilmiş harf listesinden kuramaz. | TEXT bloğunda letterform tarifinden HEMEN SONRA, harf-harf çözümlemeden ÖNCE tek satır olarak ekle: "The banner reads exactly, on two lines: \"SORUNLARI FARK EDER,\" / \"ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ\" — these forty-two letters in this exact order and no others." (Mevcut harf-harf çözümleme SİLİNMEZ, altında kalır.)
+
+
+### SARI — bakılsın
+
+K04 | VO-KARE FİİL | VO "dolanamadı" diyor ve kare bunu tutuyor, ama Derin dik granit taşın dibinde duruyor — rampa "further along"; VO2'nin kurduğu neden-sonuç (araba rampayı kapattı → Derin geçemedi) karede coğrafi olarak kopuyor.
+
+K05 | VO-KARE FİİL | VO açıkça "RAMPANIN ÖNÜNDE durmak zorunda kaldı" diyor; kare K04'ten türediği için Derin rampanın önünde değil, rampasız düz kaldırım kenarında duruyor — seyirci duyduğu yeri görmüyor.
+
+K14 | VO-KARE FİİL | VO "poşetler kaldırıma YAYILMIŞTI" diyor; kare poşetleri kutunun dibine DÜZGÜNCE İSTİFLİYOR ve negatif "nothing spills onto the pavement" ile yayılmayı ayrıca yasaklıyor — fiil ile görüntü ters yönde.
+
+K16 | ANADOLU DIŞI MİMARİ | Okul önü karesi @kose çağırmıyor; asfalt, parmaklık, kepenk ve park etmiş arabalardan ibaret — Anadolu cephesi (oker sıva, demir korkuluklu balkon, uydu anteni) hiç yazılmamış.
+
+K19 | İNGİLİZCE TABELA RİSKİ | Muhtarlık odasının duvarı giydirilmemiş: raf, rulo çizelge ve palto var ama masanın üstündeki duvar düzlemi boş — gerçek bir muhtarlıkta oranın dolu olduğunu motor "bilir" ve uydurur.
+
+K22 | VO-KARE FİİL | VO "hatalı park eden ise ÇOKtu" diyor; karede hatalı park eden TEK araç var (durak cebindeki) — çokluk iddiasının gövdesi yok.
+
+K23 | BOZUK HARF RİSKİ | "YAĞMUR SUYU" boyasız çıplak dökme demir kabartma olarak ve YALNIZ yalayan ışıkla okunacak biçimde isteniyor, üstelik son harfi kasten poşetin altında yarım — 10 harf + Ğ için üst üste üç zorluk.
+
+K24 | BOZUK HARF RİSKİ | "KÖMÜR" çuvalın KATLANDIĞI yere yazılmış ("bends with the cloth") ve iki diakritik (Ö, Ü) taşıyor — bükülmüş yüzeydeki diakritik motorun en sık kaydırdığı yer.
+
+K24 | İNGİLİZCE TABELA RİSKİ | Minibüsün yan panosu büyük ve boş; yalnız yasakla tutuluyor ("no livery lettering"), giydirilmemiş — çuvallar duvara çevrilerek doğru yapılmış, aynı yöntem minibüse uygulanmamış.
+
+K26 | ANADOLU DIŞI MİMARİ | Okul bahçesi @kose çağırmıyor ve "school's window wall" dışında hiçbir mimari çıpası yok; parmaklığın ötesi kasten boş olduğu için tek Anadolu sinyali de yok.
+
+K27 | ANADOLU DIŞI MİMARİ | Aynı bahçe, aynı boşluk; "nearest blocks" deniyor ama o blokların ne olduğu hiç yazılmamış — pus içindeki çatı hattı serbest.
+
+K32 | BOZUK HARF RİSKİ | "PARK ETMEYİN" iki satır, 11 harf, noktalı İ, ve KASTEN düzensiz fırça darbeleri + boya damlası + sıkıştırılmış bir harf isteniyor — düzensizlik emri ile okunurluk emri aynı cümlede yarışıyor.
+
+K38 | VO-KARE FİİL | VO "İSTEDİLER" (çoğul) diyor; karede yalnız Efe var, ikinci bir çocuk yok — isteyen topluluk tek bedene inmiş.
+
+K39 | BOZUK HARF RİSKİ | Tek karede ÜÇ ayrı yazı yüzeyi (KAĞIT/CAM/PLASTİK) ve üçü de "fully lit, none behind a hand" ile tam okunur isteniyor; KAĞIT'ta Ğ, PLASTİK'te İ var.
+
+K39 | İNGİLİZCE TABELA RİSKİ | Okul parmaklığı, zincirli kapı ve alçak duvar giydirilmemiş, yalnız yasaklanmış ("carry no board, banner, plate or lettering") — okul kapısı uydurma İngilizce tabelanın klasik doğum yeri.
+
+K40 | VO-KARE FİİL | VO "KURUMLAR ve vatandaşlar" diyor; karede kurum yalnız ince bir zarf olarak var ve negatif zarfın üstünde adres/ad olmasını yasaklıyor — seyircinin o zarfın kuruma gittiğini anlamasını sağlayan hiçbir işaret kalmıyor.
+
+K41 | BOZUK HARF RİSKİ | "BELEDİYE" İKİ ayrı yüzeyde (yelek sırtı + kamyon kapısı) ve yelekteki kelimenin ORTASINDAN kırışık geçmesi ayrıca isteniyor — 8 harf, noktalı İ, deforme yüzey.
+
+K41 | İNGİLİZCE TABELA RİSKİ | Kamyonun kapısı doğru şekilde kelimeyle giydirilmiş ama geri kalan panelleri ve kasa yanağı yalnız yasakla tutuluyor.
+
+K42 | VO-KARE FİİL | VO "bir SİVİL TOPLUM KURULUŞU" diyor; karedeki tek işaret "GÖNÜLLÜ" kelimesi ve negatif her türlü kurum adı/amblemini yasaklıyor — STK kimliğinin görsel taşıyıcısı hiç yok, seyirci yalnız bir gönüllü görüyor.
+
+K43 | BOZUK HARF RİSKİ | Üç yazı yüzeyi (KAĞIT/CAM/PLASTİK), Ğ ve İ dahil, üçü birden "fully read" isteniyor — K39/K50 ile aynı üçlü yük.
+
+K45 | CAST İHLALİ | Kalemi uzatan üçüncü çocuk için ("a boy of about twelve") Türk/Anadolu kimliği yazılmamış; yaşı var, kimliği yok — aynı karedeki kız için ikisi de yazılmış.
+
+K46 | VO-KARE FİİL | VO iki adres sayıyor ("okul müdürüne VE muhtarlığa"); karede yalnız muhtarlık var, okul yarısını taşıyan tek şey mühür izi ve o iz negatifte "resolves into nothing" olarak bulanıklaştırılmış — okul kısmı görünmez.
+
+K46 | İNGİLİZCE TABELA RİSKİ | K19 ile aynı oda, aynı açık duvar düzlemi; süreklilik notu var ama duvar giydirme notu yok.
+
+K50 | BOZUK HARF RİSKİ | Üç yazı yüzeyi (KAĞIT/CAM/PLASTİK) + bir aylık tebeşirleşme + bir harfin üstünden geçen sürtme yayı — okunurluk ile aşınma aynı cümlede isteniyor.
+
+K57 | BOZUK HARF RİSKİ | Tek sayfada üç kelime (RAMPA/ÇÖP/LAMBA), üç çetele sütunu ve BOŞ kalması gereken dördüncü satır birlikte isteniyor; ÇÖP iki diakritik taşıyor ve dördüncü satırın boş kalması motorun en sevmediği şey (boşluğu doldurur).
+
+
+### TEMİZ
+K02, K03, K06, K07, K08, K09, K10, K11, K12, K13, K15, K17, K18, K21, K25,
+K28, K29, K30, K31, K33, K34, K35, K36, K37, K44, K48, K49, K51, K52, K53,
+K54, K56
+
+
+=========================================================================
+EK — ölçüt 3'ün istediği listeler
+=========================================================================
+İKİDEN FAZLA YAZI TAŞIYAN YÜZEY (karede >2 ayrı okunur yazı):
+  K39 (3) · K43 (3) · K50 (3) · K55 (6 kelime, tek bez ama 42 harf) · K57 (3 kelime, tek sayfa)
+  Eşikte (tam 2 yüzey): K41 (yelek + kamyon kapısı) · K47 (tek künye, iki satır)
+
+TÜRKÇE DİAKRİTİKLİ YAZI TAŞIYAN KARELER:
+  K14 ÇÖP (Ç,Ö) · K16 YAVAŞ (Ş) · K18 GÖZLEM (Ö) · K23 YAĞMUR SUYU (Ğ)
+  K24 KÖMÜR (Ö,Ü) · K32 PARK ETMEYİN (İ) · K39 KAĞIT+PLASTİK (Ğ,İ)
+  K41 BELEDİYE (İ) · K42 GÖNÜLLÜ (Ö,Ü,Ü) · K43 KAĞIT+PLASTİK (Ğ,İ)
+  K45 DİLEKÇE (İ,Ç) · K47 BELEDİYE (İ) · K48 GÖNÜLLÜ (Ö,Ü,Ü)
+  K50 KAĞIT+PLASTİK (Ğ,İ) · K55 ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ (Ç,Ö,Ü,İ×5)
+  K57 ÇÖP (Ç,Ö)
+DİAKRİTİKSİZ (düşük risk) yazı kareleri:
+  K01 EFE · K07 DURAK · K28 SEBZE · K31 EKMEK · K37 HERKES · K38 YAYA
+  K51 YAYA YOLU · K39/K43/K50 içindeki CAM
+
+SİSTEM NOTU (kare değil, referans dosyası):
+  @efe1 referans sayfası "aynı karakter, gardırop varyantı" olarak yazılmış ve
+  içinde YAŞ ile TÜRK/ANADOLU kimliği hiç geçmiyor — @derin sayfasında ikisi de
+  var. Efe'nin kimliği yalnız önceki serideki temel referansa dayanıyor; o ref
+  kaymışsa 20 karede birden kayar. Tek satırla kapanır.
+=========================================================================

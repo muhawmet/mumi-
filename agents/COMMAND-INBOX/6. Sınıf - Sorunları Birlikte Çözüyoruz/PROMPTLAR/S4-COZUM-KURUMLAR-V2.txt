@@ -1,0 +1,918 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S4 · ÇÖZÜM VE KURUMLAR · K34-K43 · V2
+Pilot çıtası (K01-K06) uygulandı · dünya: pixar_3d_edu · register: EDU · motor: NB2
+=========================================================================
+
+
+#########################################################################
+### K34 | VO34
+### "Efe ve arkadaşları sınıfta çözüm önerilerini yazdı."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Ayrı sıralar tek masaya itilmiş ve o birleşme dikişi kadrajın omurgasıdır;
+yedi ayrı el yazısı o dikiş boyunca dizilidir ama masada yalnız üç kalem dolaşır,
+ve bir kız elini açık tutup sırasını bekler.
+
+PLAN: Geniş sınıf planı değil. İki tezgâhın birleştiği aydınlık dikiş, kadrajı boydan
+boya kesen tek baskın çizgidir; yedi kart o çizgiye dizilmiştir. Ön planda bir boğum
+ve en yakın kartın köşesi kadrajı örter. Işık yalnız üst düzleme iner; sıraların altı
+tek parça indigo mağaradır. Akıllı tahta kapkaranlıktır — ders tahtada değil dikişte olur.
+
+PROMPT:
+High-end cinematic feature-animation 3D still with the dimensional lighting, character
+appeal and finish of a theatrical animated film. A 35mm lens sits down at tabletop
+height at the near end of five desks pushed into one long table and looks along its
+length. The seam where two scratched desktops meet runs away from the lens as the
+dominant line of the frame — a lit fault carrying the whole depth of the image — and
+seven cut card strips are strung along it in seven different handwritings. A near
+knuckle and the corner of the closest strip fill the lower left, large and soft, sliced
+by the frame edge.
+
+@efe1 sits the wrong way round on his chair, chest against the backrest, both arms
+reaching over the seam, writing. The pencil is held low and slanted, pinched between
+thumb and first finger with the second finger braced under the shaft and the heel of
+his hand riding on the card. Only three pencils exist along the whole table. Across from
+him a girl of about twelve with a plait over one shoulder keeps her right hand open and
+empty on the wood, fingers slightly spread, fingertips lifted clear of the varnish — she
+watches the pencil she is waiting for, not the boy holding it, and the shoulder of the
+boy in front of her takes half her face while leaving the waiting hand entirely clear.
+That boy, about eleven in a maroon jumper, reads a strip that is not his. Two more
+children lean in further down the table as solid rendered bodies, the knit of their
+jumpers and the shape of their collars readable, faces soft but modelled and never
+flattened into dark shapes. All Turkish/Anatolian, sixth-grade, around eleven or twelve,
+pre-teen, warm matte tan skin with low specular and no green or grey cast.
+
+Late-morning light crosses from the window wall and lands on the upper plane only: the
+seam, the seven strips, the back of Efe's writing hand, the girl's open palm and the
+window-side half of three faces. It reaches nothing on the interactive smart board, dark
+and switched off on the front wall, and nothing under the joined desks, where the
+pushed-together steel frames hold a deep cool indigo cave. The colour chord is built from
+what is actually on this table — honey satin varnish, ivory card, graphite grey, one
+maroon sleeve — set against that indigo underside. The room is @sinif, fully dressed and blank
+nowhere: a pinned collage of children's paintings overlapping edge to edge, a wall map
+rolled closed and tied on its cord, a cork strip layered with papers turned face-in, box
+files with their spines to the wall, coat hooks carrying bags and a forgotten jacket, a
+crooked blind, a radiator with a glove drying on it, a waste bin full of paper.
+
+Three movement beats belong to this exact lesson: the outermost strip lifts a hair at its
+cut corner in the draught, graphite dust rises where the pencil drags, and the drying
+glove on the radiator sags a fraction further. Depth in three layers — the near knuckle
+and nearest strip large and soft at the lower edge, the seam with the writing hand and
+the waiting empty hand sharp in the middle, dark board and dressed wall dissolving into
+gentle bokeh while staying fully modelled. Every strip lies flat with a thin dark line
+under its cut edge, the two desktops meet in a join that does not quite align, and the
+waiting forearm presses a pale band into the varnish — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, tactile timber and paper, deliberate ten to fifteen percent prop overscale for
+child-safe readability, motivated window light, deep cool indigo shadow against warm
+honey midtones, continuous physically based shading, ambient occlusion painted in and
+never raytraced-hard, feature-film dimensionality rather than classroom-diorama sheen.
+
+TEXT: No readable text. Seven separate handwritings and three shared pencils are the
+whole argument; a legible word on any strip would make that strip the proposal and the
+other six decoration. Every strip carries the rhythm of a child's pencil lines and
+resolves into nothing. The smart board is dark and off. The pinned paintings, the tied
+map, the face-in cork papers and the spine-turned box files are dressed surfaces and
+carry no word.
+
+NEGATIVE: do not add an eighth card strip or let any handwriting resolve into a letter,
+word or number; do not put a pencil into the waiting girl's open hand or close her
+fingers; do not switch the smart board on, make it glow, or replace it with a blackboard;
+do not stand a teacher at the front of the room; do not straighten the desks into an even
+grid or shoot them as a flat top-down diagram; do not clear the walls into blank painted
+panels; do not place any separated-waste bin in this room — the bins do not exist yet at
+this point in the story; do not flatten the two farther children into dark silhouettes;
+nobody looks at the lens.
+
+
+#########################################################################
+### K35 | VO35
+### "Bir çözüm önerisi, sorunun nedenine yönelik olmalıdır."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Kraft kâğıdın yırtık kenarı kadrajı ikiye bölen bir kıyı çizgisidir: içeride,
+sınıfın çizdiği plan üstünde, rampayı kapatan arabanın tam üstüne konmuş düz bir kart
+var; dışarıda, çıplak ahşapta, buruşturulup top yapılmış öteki öneri duruyor ve onu
+buruşturan yumruk henüz açılmamış.
+
+PLAN: Baskın geometri kraft kâğıdın yırtık kenarıdır — sıcak açık kâğıt adası ile koyu
+çıplak ahşap arasındaki sert sınır. Düz kart sınırın içinde, buruşuk top dışında. Kamera
+yukarıdan bakar; kızın gözleri üst kenarda kesilir, kararı yalnız ağzından ve yumruğundan
+okunur. Işık tümsekli kâğıdı ve yumruğun sırtını alır, topun kıvrımlarına ve çıplak
+ahşaba girmez.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold visual storytelling and vivid
+production design. An 85mm lens at f/2.0 looks down onto the joined tabletop from just
+above head height, close. The dominant shape is the torn edge of a large kraft sheet
+taped down over the timber: it runs across the frame as a coastline, warm and buckled on
+one side, dark bare varnish on the other, and the whole comparison happens across that
+line. The torn kraft edge itself cuts the lower foreground, large and soft, sliced by the
+frame edge.
+
+Inside the line, on the class's own hand-drawn plan of the corner, one card lies
+absolutely flat — set down exactly over the car drawn as a plain block across the ramp,
+touching the cause. The plan is soft pencil and one blue felt-tip: the pavement band, the
+plane tree's circle inside its guard, the kerb line, the ramp with its two grooves, the
+square of the waste bin. Outside the line, on bare wood, the other proposal is crushed
+into a ball inside a girl's still-closed fist — the paper compressed into her palm with
+the middle and ring fingers driven deepest, one torn corner pushing out between the first
+and second knuckle, her wrist rolled inward so the fist rests on its own weight against
+the varnish. The frame cuts her just above the mouth so her eyes fall outside it; her
+lips are pressed flat and one corner is drawn in. She threw her own idea away. Across the
+plan a boy of about eleven in a grey sweatshirt has laid his cheek almost on the table to
+sight along the paper at the flat card and the drawn car beneath it, one eyebrow up, his
+face fully modelled and readable. Both Turkish/Anatolian, sixth grade, around eleven or
+twelve, pre-teen, warm matte tan skin with low specular and no green or grey cast.
+
+Late-morning window light comes down from high on the left. It takes the buckled upper
+surface of the kraft, the whole face of the flat card and the drawn car under it, and the
+back of the closed fist; it reaches nothing down inside the crushed ball's folds and
+nothing across the strip of bare wood the ball sits on, which stays a deep cool indigo
+band holding the two proposals apart. Colour is built from the materials actually here —
+warm kraft tan, soft graphite, one blue felt-tip line, ivory card, honey varnish — with
+that indigo band as the only cold note. Around the sheet the table is dressed and busy:
+a pencil sharpener with a pile of shavings, a plastic ruler chipped at one edge, a rubber
+worn to a wedge, three loose card strips; beyond it @sinif's dressed side wall with overlapping
+pinned paintings and the tied rolled map, all soft.
+
+Three movement beats belong to this exact decision: the kraft sheet lifts and settles
+between its tape anchors, a curl of sharpener shaving rocks beside the ruler, and the
+crushed ball eases a fraction open inside the fist as the paper tries to spring back.
+Depth in three layers — the torn kraft edge blurred and cut at the lower edge, the flat
+card on the drawn car and the closed fist sharp in the middle, the boy's face and the
+dressed wall softening into gentle bokeh while staying fully modelled. The flat card lies
+in full contact with the paper with a thin dark line under its whole edge, the crushed
+ball touches bare wood at three small points and holds three separate dark specks beneath
+it, and the sharpener presses a crisp dark line into the varnish — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; restrained pre-teen acting, sophisticated
+warm matte tan skin with low specular and no green or grey cast, tactile kraft paper,
+graphite and satin-varnished timber, deliberate ten to fifteen percent prop overscale for
+child-safe readability, motivated high window light, deep cool indigo shadow against warm
+tan midtones, continuous physically based shading, ambient occlusion painted in and never
+raytraced-hard, premium feature-film dimensionality.
+
+TEXT: No readable text. One proposal touching its cause and one touching nothing is the
+whole argument; a legible word would name one of them and end the comparison. The drawn
+plan stays lines, blocks and hatching with no street name, label, letter or number, and
+the drawn car stays a plain block. The handwriting on the flat card and the three loose
+strips stays soft and unresolved. Wall paintings, tied map and cork papers are dressed
+surfaces and carry no word.
+
+NEGATIVE: do not open, flatten, throw or set down the crushed ball — it stays inside her
+closed fist; do not slide the flat card off the kraft sheet or lift it away from the drawn
+car; do not let anything on the plan resolve into a word, street name, letter or number,
+and do not give the drawn car wheels, a badge or a plate; do not let the crushed ball
+touch the kraft paper — it stays on bare wood; do not bring her eyes back into the frame;
+do not flatten the boy's face into a shape; do not add a separated-waste bin anywhere —
+the bins do not exist yet at this point in the story; do not turn the tabletop into an
+even, evenly-lit flat-lay; neither child looks at the lens.
+
+
+#########################################################################
+### K36 | VO36
+### "Uygulanabilir ve toplum yararına olmalıdır."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Öneri kartı pencereye bastırılmış ve üstünden çelik şerit metre çekilmiş —
+kâğıt arkadan aydınlandığı için kalemin izleri ters yüzünden hayalet gibi görünüyor;
+kartın kenarının hemen dışında, camın ötesinde ve bir kat aşağıda, öneri kimin içinse
+o insanlar yürüyor.
+
+PLAN: Baskın geometri gerilmiş çelik şerittir — kadrajı kesen tek parlak yatay çubuk,
+kendi uzunluğu altında hafifçe bel vermiş. Arkasında arkadan aydınlanan kart bir ışık
+dikdörtgeni olarak asılı. Kamera sıraların arasından yukarı bakar; iki yüzün de yalnız
+cama dönük kenarı aydınlanır, sınıfa dönük yarıları indigo kalır. Şerit ölçüyü, kartın
+kenarı ise aşağıdaki sokağı gösterir.
+
+PROMPT:
+High-end theatrical feature-animation 3D at feature-film scale. A 35mm lens at f/2.8 sits
+low between two desk rows and looks up toward the tall window wall. The dominant shape is
+a steel tape blade pulled out taut across the frame as a single bright horizontal bar,
+bowing very slightly under its own length; everything else in the image hangs off that
+bar. Behind it a sheet of card is pressed flat to the window glass and lit clean through
+from the far side, so it reads as a rectangle of standing light. A desk corner and the
+back of a chair fill the lower foreground, large and soft, sliced by the frame edge.
+
+@efe1 has one foot up on a chair seat, his body turned to the window and canted sideways,
+both palms flat on the card pressing it to the glass, shoulders lifted with the effort of
+holding it still; his mouth is open on a number he is reading off and his eyes are on the
+blade, not on the street. Beside him a girl of about twelve in a mustard cardigan holds
+the tape's case low, her thumb on the lock button and her first finger hooked over the
+case's edge, while her other hand takes the curling end of the blade between two fingers
+and walks it across the card. Both Turkish/Anatolian, sixth grade, around eleven or
+twelve, pre-teen, warm matte tan skin with low specular and no green or grey cast; both
+faces modelled and readable with only their window-side halves lit.
+
+Daylight comes straight in behind the card and passes through the paper, so its fibres and
+the ghost of the pencil strokes glow from the far side without ever resolving. The same
+light takes the top face of the steel blade, the outer edge of both children's hands where
+they meet the glass, the sill, and the window-side edge of both profiles; it reaches
+nothing on the classroom side of either face and nothing down between the desks, which
+stay deep cool indigo. Just past the card's edge, through the glass and one floor down,
+the street is there in soft focus: a pavement, cars parked along the kerb, four people
+walking — solid rendered bodies with readable clothing, back-turned or side-on, never flat
+dark shapes. The colour chord is the light through the paper, the cold steel bar, the
+mustard cardigan and the indigo room. The window wall of @sinif is fully dressed: the crooked blind
+pushed up unevenly and hanging at an angle, the radiator beneath the sill with a glove
+drying on it, a chipped tile of paint on the sill, a dead plant in a tin; behind them the
+joined desks with the card strips still on them, the interactive smart board dark and
+switched off on the front wall, the overlapping pinned paintings, the tied rolled map, the
+shelf of box files with spines to the wall, coat hooks with bags.
+
+Three movement beats belong to this exact measurement: the steel blade flexes and bows
+under its own length, the crooked blind swings a few degrees where it hangs, and dust
+turns in the flat band of window light above the sill. Depth in three layers — the desk
+corner and chair back blurred and cut at the lower edge, the backlit card, the steel blade
+and both hands sharp in the middle, the street one floor down softening into gentle bokeh
+while its walking people stay fully modelled. The card meets the glass in full contact
+with no air behind it and both palms leave a faint warm smear of condensation on the pane,
+the tape's case rests on the sill with a hard dark line at its foot, and the chair's foot
+sits into the floor with a small dark point — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, translucent paper and cold rolled steel rendered as real materials, deliberate ten
+to fifteen percent prop overscale for child-safe readability, strong motivated backlight,
+deep cool indigo interior shadow, continuous physically based shading, ambient occlusion
+painted in and never raytraced-hard.
+
+TEXT: No readable text. A proposal measured against the real street below it is the whole
+argument; a legible word or number would turn a measurement into a caption. The steel
+blade shows only its own fine rhythm of ticks and long and short lines. The card's
+handwriting shows through the paper from behind as soft reversed strokes that never
+resolve. Shopfronts below stay closed behind corrugated roller shutters with awnings
+furled and strapped, so no sign panel or empty fascia exists anywhere.
+
+NEGATIVE: do not resolve any numeral, figure or unit anywhere along the steel blade — only
+the rhythm of its ticks; do not make the card's handwriting legible in either direction;
+do not lift, fold or drop the card, it stays pressed flat to the glass; do not put a
+sticker, notice, decal or lettering on the window glass; do not open a shopfront or expose
+a fascia panel below; do not reduce the walking people to flat dark shapes; do not light
+the classroom side of either face; do not put a separated-waste bin anywhere in this room
+— the bins do not exist yet at this point in the story; do not switch on the smart board
+or replace it with a blackboard; neither child looks at the lens.
+
+
+#########################################################################
+### K37 | VO37
+### "İnsanların haklarını gözetmeli ve kalıcı sonuç üretmelidir."
+### yazı: "HERKES"
+#########################################################################
+
+FİKİR: Kalem artık Derin'in elinde — bütün ders boyunca hakkında yazılan kişi, yazan
+kişi oldu; ve mavi tükenmez kurşun kalemin izinin üstünden geçmiş, silinebilir olanı
+kalıcı yapmış. İş BİTMİŞTİR: uç kâğıttan kalkmış, son harfin ucunda mürekkep hâlâ ıslak,
+silgi kırıntıları izin boyunca duruyor.
+
+PLAN: Baskın geometri kartın kendisidir — çizik koyu ahşabın üstüne dümdüz serilmiş tek
+aydınlık düzlem. Kadraja iki yandan birer el girer: biri az önce kaldırdığı tükenmezi hâlâ
+tutuyor, öteki avucu yukarı açık ve boş. Kart iki ucunda birer el olan bir köprü gibi
+okunur. Efe'nin yüzü sağ kenarda yanağından kesilir. KLING KİLİDİ: kimse yazmıyor, yazma
+eylemi tamamlanmış hâlde donmuş.
+
+PROMPT:
+High-end theatrical feature-animation 3D at its most emotionally precise. An 85mm lens at
+f/2.0 sits at desk height, level with the tabletop, close two-shot. The dominant shape is
+the proposal card: one lit white plane laid square across dark scratched timber, and a
+hand enters it from each side — the frame is a bridge with a hand at either end. The blue
+plastic ruler and a scatter of eraser crumbs fill the lower left foreground, large and
+soft, sliced by the frame edge.
+
+The writing is finished. @derin leans well forward in her chair, shoulder still turned
+toward the card, her right hand come to rest on the timber just beside it with the
+ballpoint still in her fingers — thumb and first finger on the lower third of the barrel,
+second finger braced beneath, the nib lifted a few millimetres clear of the paper and
+turned away from it. Her left hand stays closed on the push-rim, palm open, thumb along
+the rim's top edge, fingers curled beneath, holding the chair dead still against the
+floor. Her mouth is slightly open, her eyes are on what she has just made and not on the
+boy. @efe1 sits side-on at the far edge of the table, his right hand pulled back from the
+card, palm up and fingers loosely curled — he has given it over and is waiting; the frame
+cuts him through the cheek so half his face is outside it. Both Turkish/Anatolian, sixth
+grade, around eleven or twelve, pre-teen, warm matte tan skin with low specular and no
+green or grey cast; @derin's face is fully modelled and readable.
+
+Window light comes across low from the left. It takes the upper face of the card, one long
+specular streak down the pen's blue barrel, the back of @derin's resting hand and the top
+edge of her push-rim, and a band across both foreheads and cheekbones at eye height; it
+reaches nothing under the tabletop and nothing into the cup of @efe1's upturned palm,
+which holds a small deep cool indigo pocket. The colour chord is exactly what is on this
+table — white card, blue ink and blue barrel, graphite grey, her rust-orange fleece, honey
+varnish — against that indigo. The tabletop in @sinif is dressed and used: old initials cut into the
+varnish, a rubber worn to a wedge with its crumbs around it, the chipped blue ruler, a
+pencil lying with its point turned away from the card, two more card strips pushed aside;
+behind them the tubular steel chair frames, the interactive smart board dark and switched
+off on the front wall, the overlapping pinned paintings, the rolled map tied on its cord,
+the shelf of box files with spines to the wall, the crooked blind at the window.
+
+Three movement beats belong to the moment just after the last stroke: the final ink bead
+spreads a hair further into the paper fibre and holds a wet specular, eraser crumbs roll a
+little where her hand has stopped moving the air, and one loose strand of her hair swings
+clear of her cheek. Depth in three layers — ruler and eraser crumbs blurred and cut at the
+lower left edge, the inked word, the lifted nib and @derin's face razor sharp in the
+middle, @efe1's half-cut face and the dark board softening into gentle bokeh while staying
+fully modelled. The card lies flat with a thin dark line under its whole edge, the pencil
+beside it holds a fine dark line along its length, and @derin's rear tyre flattens against
+the classroom floor with a dark contact patch under it — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; restrained pre-teen acting, sophisticated
+warm matte tan skin with low specular and no green or grey cast, luminous expressive eyes,
+believable manual-wheelchair mechanics, wet ink and paper fibre rendered as real materials,
+deliberate ten to fifteen percent prop overscale for child-safe readability, motivated low
+window light, deep cool indigo shadow, continuous physically based shading, ambient
+occlusion painted in and never raytraced-hard.
+
+TEXT: Carrier — the proposal card lying flat on the table, and no other surface. Letterform — blue ballpoint ink, handwritten.
+The ink has been taken over a pencil line that was there first — it stands
+standing in a small raised bead at the end of every stroke and pooled where the nib turned
+a corner, the graphite ghost of the same letters still visible a hair outside the ink on
+one side, one letter rubbed out and rewritten so its ink sits on roughened fibre and has
+feathered slightly, eraser crumbs lying along the strokes. It reads "HERKES" — one word,
+six letters, all capitals, no dot, cedilla or breve among them. It sits in the middle of
+the card, the card square and flat with its face turned up to the lens, the whole word
+clear of both hands and clear of the pen. ORIENTATION: the word reads left-to-right in
+normal reading direction and is never mirrored, reversed, rotated or flipped; it appears
+on this one named object and on no other surface in the frame. Every other surface is
+dressed and wordless — the map stays rolled and tied, the cork papers are turned face-in,
+the box files show their spines, the smart board is dark.
+
+NEGATIVE: do not show anyone writing, do not put the nib down on the paper, and do not
+draw a motion streak, blur or trail from the pen — the stroke is already finished; do not
+ink a second word on the card, the rest of it stays soft pencil lines that never resolve;
+do not hand the pen over, set it down or take it out of @derin's right hand; do not open
+her left hand off the push-rim or move the chair; do not let @efe1's hand touch the card
+or the pen — it stays withdrawn, palm up; do not bring his whole face into the frame; do
+not turn the graphite ghost into a second visible word or a shadow copy; do not put a
+separated-waste bin anywhere in this room — the bins do not exist yet at this point in the
+story; do not switch on the smart board or replace it with a blackboard; do not make
+@derin brave, tearful or triumphant, and do not let either child look at the lens.
+
+
+#########################################################################
+### K38 | VO38
+### "Rampanın önüne yaya önceliğini gösteren bir işaret istediler."
+### yazı: "YAYA"
+#########################################################################
+
+FİKİR: Efe kendi çizdiği kâğıt işareti gerçek dökme demir direğe, gerçek bir levhanın
+duracağı yükseklikte bastırıyor — ve tam arkasında, rampanın eğimine binmiş bir lastik
+hâlâ duruyor. İstemek ile olmak arasındaki mesafe bir kâğıt kalınlığıdır.
+
+PLAN: Baskın geometri direktir — kadrajı boydan boya kesen tek koyu dikey sütun; alçak
+güneş ona tek bir dikey parlaklık şeridi çizer. Kâğıt o sütuna yapışmış küçük beyaz bir
+dikdörtgendir, bir avuçla tutulur. Kamera kaldırım hizasından yukarı bakar; arabanın
+gövdesinin üst yarısı üst kenarda kesilir, yalnız lastiği ve rampaya bindiği yer okunur.
+Ön planda rampanın kırık kenarı kadrajı örter.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold visual storytelling. A 50mm lens at
+f/2.0 sits at kerb height and looks up the cast-iron lamp post in close three-quarter
+view. The dominant shape is that post: one dark vertical column running the full height of
+the frame, its fluting catching a single bright vertical strip from a low sun coming
+horizontally along the street. Pinned to that column, small and white and human-made, is a
+sheet of squared exercise-book paper. The chipped near edge of the dropped-kerb ramp fills
+the lower foreground, large and soft, sliced by the frame edge.
+
+@efe1 is down on one knee, body turned to the post and stretched upward, his left palm
+flat on the sheet with the four fingers set a finger's width inside its edge and the
+centre of the palm bedded into the iron's curve, the paper bowing over the round metal so
+two of its corners stand clear. A roll of masking tape is pushed onto his right thumb and
+that hand hangs unused — he has not fixed it yet, he is still checking. His head is tipped
+back to read the height, mouth closed, eyes on the top edge of the paper rather than on
+his own drawing. Behind him, close enough to shame the paper, the front tyre of a parked
+car still stands up the slope of the ramp, the rubber visibly compressed where it grips.
+Further along the pavement a man of about fifty walks away from camera in a knitted
+waistcoat, back turned but fully rendered with the wale of the knit and the crease behind
+his knee readable, not looking at the boy. Turkish/Anatolian, sixth-grade, around eleven or
+twelve, pre-teen, warm matte tan skin with low specular and no green or grey cast; his
+face modelled and readable.
+
+The late-afternoon sun runs horizontally along the street from behind the post. It takes
+the whole face of the squared paper, that one vertical strip down the cast iron, the
+polished crown of the granite kerb and @efe1's profile from brow to jaw; it reaches
+nothing under the car and nothing into the ramp's two tactile grooves, which hold thin
+deep cool indigo lines across the pale concrete. Colour comes from the corner itself —
+white squared paper and one blue felt-tip, black iron with granular rust at its joint,
+chalky pale concrete, the knitted waistcoat's dull red — under a low warm sun. The corner
+is @kose, fully dressed and nothing is blank: the plane tree in its square of bare earth inside a
+low iron guard, the green municipal waste bin with its lid propped open on a bag and bags
+stacked at its foot, the bus-stop pole with its timetable case angled to the sky, a post
+box, a bicycle locked to the tree guard, and every shopfront closed behind a corrugated
+roller shutter with its awning furled and strapped to the frame.
+
+Three movement beats belong to this exact afternoon: the paper's free corner ticks up and
+down against the iron in the street draught, warm exhaust shimmer thins above the car's
+rear, and a plane leaf skates across the ramp's slope. Depth in three layers — the ramp's
+chipped edge blurred and cut at the lower edge, the pressed paper sign, the post and
+@efe1's face sharp in the middle, the car's tyre, the propped bin and the closed shutters
+softening into gentle bokeh while staying fully modelled. The paper meets the post in full
+contact under his palm with a dark seam where it wraps, the car's front tyre flattens
+visibly where it grips the ramp and holds a dark crescent under its contact patch, and his
+knee dents the grit on the paving — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, cast iron, chipped concrete and squared paper rendered as real materials, deliberate
+ten to fifteen percent prop overscale for child-safe readability, low motivated raking sun,
+deep cool indigo shadow, continuous physically based shading, ambient occlusion painted in
+and never raytraced-hard.
+
+TEXT: Carrier — the sheet of squared exercise-book paper held against the post, and no other surface. Letterform — thick blue felt-tip ink, handwritten on squared paper.
+The ink soaked into
+the fibre and crept a hair outward along the printed grid so every stroke has a faintly
+stepped edge, the strokes are a child's block capitals ruled inside a hand-drawn blue
+square whose corners overshoot, and the ink has struck through to the back of the sheet in
+two places where the pen stopped. It reads "YAYA" — one word, four letters, all capitals,
+no dot, cedilla or breve among them. It sits inside the drawn square in the middle of the
+sheet, the sheet held flat and square to the lens by his palm and fully lit; beneath the
+word two simple ruled lines stand for the kerb and the ramp's slope, and nothing else is
+drawn. ORIENTATION: the word reads left-to-right in normal reading direction and is never
+mirrored, reversed, rotated or flipped; it appears on this one named object and on no
+other surface in the frame. Every other surface is dressed and wordless — shutters closed,
+awnings furled, the timetable case angled to the sky so nothing inside reads.
+
+NEGATIVE: do not turn the sign into a metal or plastic plate and do not bolt, screw, tape
+or mount it — it stays a sheet of paper held flat by a hand; do not add a real traffic
+sign, beacon, bollard or signal anywhere in the frame; do not draw a human figure, arrow,
+wheelchair mark, pictogram or icon on the sheet — the word and two ruled lines are the
+whole drawing; do not move the car or take its tyre off the ramp, and do not give it a
+number plate, badge, sticker or lettering; do not clean the corner or clear the stacked
+bags — that has not happened yet at this point in the story; do not place any separated-
+waste bin here; do not open a roller shutter or expose a shop fascia; do not flatten the
+walking man into a dark shape; @efe1 does not look at the lens.
+
+
+#########################################################################
+### K39 | VO39
+### "Köşeye ayrıştırmalı geri dönüşüm kutuları konulmasını önerdiler."
+### yazı: "KAĞIT" · "CAM" · "PLASTİK" (tek taşıyıcı: @kutu'nun üç ön yüzü)
+#########################################################################
+
+FİKİR: Efe okulun bahçesindeki kutuların ağız BİÇİMLERİNİ kartına çiziyor — yuvarlak
+delik, yarık, geniş açıklık. Öneri bir isim değil, kopyalanabilir üç biçimdir; ve okul
+parmaklığının hemen ardında, aynı karede, kutusuz köşe poşetleriyle duruyor.
+
+PLAN: Baskın geometri üç kapağın oluşturduğu tek aydınlık yatay banttır — tepeden inen
+öğle güneşi bandı doldurur, içine üç kapkara ağız oyulmuştur. Ritim üçtür ve üçü ayrı
+biçimdir. Kamera kapak hizasından, alçaktan bakar. Ön planda çelik kızağın bükülmüş köşesi
+kadrajı örter. Parmaklığın ardındaki köşe tanınır ama hiçbir ayrıntısı okunmaz.
+
+PROMPT:
+High-end theatrical feature-animation 3D with vivid production design. A 50mm lens at
+f/2.8 sits low, level with the lids of a set of three bins standing side by side as one
+unit, close three-quarter so all three fronts read. The dominant shape is the row of lids:
+a single bright horizontal band under a high midday sun, with three black openings punched
+through it in a hard rhythm — a round hole, a slot, a wide opening. Three shapes, three
+different jobs. The galvanised cradle's bent corner fills the lower left foreground, large
+and soft, sliced by the frame edge.
+
+@efe1 is crouched side-on at @kutu with his weight on one heel, his card open on his left
+knee and held down by the thumb pressed into its lower right corner, his right index finger
+laid along the lower edge of the slot in the ochre-brown bin and drawing itself slowly
+along it — he is copying a shape, not a name. His mouth is closed and pushed to one side in
+concentration and his eyes go between the aperture and the card. Behind him a girl of about
+eleven in a green fleece stands with a flattened carton under one arm, watching the tracing
+finger rather than the boy, her face fully in frame. Both Turkish/Anatolian, sixth grade,
+around eleven or twelve, pre-teen, warm matte tan skin with low specular and no green or
+grey cast; both faces modelled and readable.
+
+The high midday sun comes almost straight down. It takes the upper faces of all three
+hinged lids, the cut edge thickness around all three apertures, the stencilled fronts and
+the open card on his knee; it reaches nothing down inside any of the three openings and
+nothing into the narrow gaps between the three bodies, which stay deep cool indigo slots.
+The colour chord is the plastic itself — deep blue, ochre-brown and muted green
+polyethylene, matte black stencil paint, dull spangled galvanised steel — over swept
+tarmac with a worn painted game grid under it. The yard is dressed: the tall school
+railing with its chained gate, a bicycle rack behind it, a plane tree's shadow across the
+tarmac, a low wall with two schoolbags dumped on it, a tap on a stub of pipe with a wet
+patch beneath it. Beyond the railing, across the road, @kose stands in
+soft focus with no bin of any kind — the green municipal waste bin propped open and bags
+stacked at its foot, the plane tree in its guard, every shopfront closed behind a
+corrugated roller shutter with its awning furled and strapped to the frame. Both states
+live in one frame: here it exists, there it does not.
+
+Three movement beats belong to this exact break: the blue bin's lid rocks a few degrees
+where it does not sit level in its hinge, a leaf turns over on the tarmac beside the
+cradle, and the girl's flattened carton flexes under her arm. Depth in three layers — the
+cradle's bent corner blurred and cut at the lower left edge, the three apertures, the
+tracing finger and the card sharp in the middle, the railing, the road and the binless
+corner beyond it dissolving into gentle bokeh while staying fully modelled. The cradle's
+flat foot plate sits down onto the tarmac with a hard dark line along its whole length,
+the tethering chain lies slack with a dark line under each link, and his heel presses grit
+into the tarmac — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, textured polyethylene, stencil paint and galvanised steel rendered as real
+materials, deliberate ten to fifteen percent prop overscale for child-safe readability,
+hard vertical midday sun, deep cool indigo shadow inside every opening, continuous
+physically based shading, ambient occlusion painted in and never raytraced-hard.
+
+TEXT: Carriers — the three moulded fronts of @kutu and no other surface in the frame. Letterform — hand-stencilled matte black paint on textured polyethylene.
+The pigment sits thin on the raised mould grain and thicker in the low spots, chalked by weather,
+with a pale scuff arc crossing one letter where a lid has been swung against it. The blue
+one reads "KAĞIT" — one word, five letters, all capitals, the third a capital Ğ with its
+breve. The ochre-brown one reads "CAM" — one word, three letters, all capitals. The muted
+green one reads "PLASTİK" — one word, seven letters, all capitals, the sixth a dotted
+capital İ. All three fronts are turned toward the lens and fully lit, none behind a hand,
+the card or a body. ORIENTATION: each word reads left-to-right in normal reading direction
+and is never mirrored, reversed, rotated or flipped; these three words appear on these
+three named fronts and on no other surface in the frame. Everything else is dressed and
+wordless — railing, gate, low wall, bicycle rack and the closed shutters across the road.
+
+NEGATIVE: do not add a recycling arrow, triangle symbol, pictogram or icon to any bin —
+the three words alone identify them; do not let the drawing on his card become a letter,
+word or number, it stays three outlined aperture shapes; do not put anything into any
+aperture and do not take the carton out from under the girl's arm; do not install a
+separated-waste bin at the street corner beyond the railing and do not clear its bag pile
+— that corner is untouched at this point in the story; do not put a board, banner, plate
+or lettering on the railing, the gate or the low wall; do not open a roller shutter or
+expose a fascia across the road; do not let the far corner resolve into readable detail —
+it is recognisable and soft; do not flatten either face into a shape; neither child looks
+at the lens.
+
+
+#########################################################################
+### K40 | VO40
+### "Çözümde kurumlar ve vatandaşlar farklı sorumluluklar üstlenir."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Masada iki zarf var ve kalınlıkları farklı — ince olan gönderilecek, kurumdan
+istenen; kalın olan sınıfta kalıyor, kendilerinin yapacağı. Sorumluluk paylaşımı bir
+cümle değil, iki elin arasındaki kalınlık farkıdır; ve kalın olan onlarda kalıyor.
+
+PLAN: Baskın geometri tek bir yalayıcı ışık çizgisidir: pencere ışığı iki zarfın üst
+kenarı boyunca kesintisiz uzanır ve kalın zarfa gelince bir basamak çıkar. Kadraj o tek
+basamağın üstüne kurulur. Kalın zarfın kenarındaki gölge derin, incenin kenarındaki
+neredeyse yok. Kalın zarfı tutan kızın yüzünün yarısı kendi kolunun arkasında kalır.
+
+PROMPT:
+High-end theatrical feature-animation 3D with premium production design. An 85mm lens at
+f/2.8 sits at chest height across the joined desks, close on two sealed envelopes held up
+side by side. The dominant shape is a single raking line of window light running along
+both top edges — one continuous bright line that has to step up where it crosses the thick
+envelope and drops flat again across the thin one. That one step is the whole image. A
+card strip and a rubber band fill the lower right foreground, large and soft, sliced by the
+frame edge.
+
+@efe1 leans on both elbows with his body tipped forward, holding the thin envelope upright
+between both hands — thumbs pressed on its lower corners front and back, first fingers
+along its long edges, the paper bowing gently between them under its own lack of weight.
+This is the one that leaves the room. Beside him a girl of about twelve with cropped hair
+and a rust cardigan holds the thick envelope in one hand from underneath, her fingers sunk
+into the paper's thickness so the packed edges splay a little between them, her forearm
+taking real load, her other hand flat on the table. Half her face is behind her own raised
+arm; the visible half is turned to the thin envelope, comparing. Both Turkish/Anatolian,
+sixth grade, around eleven or twelve, pre-teen, warm matte tan skin with low specular and
+no green or grey cast; @efe1's face is fully modelled and readable.
+
+Window light comes across from the left. It rakes the gap between the two envelopes so the
+difference in thickness reads as two different depths of shadow, takes the backs of both
+children's hands and a band across both foreheads, and reaches nothing under either flap
+and nothing beneath the tabletop, which stays a deep cool indigo cave. Colour is built from
+what is in their hands and on the wood — kraft-tan envelope paper, ivory card, the rust
+cardigan, honey satin varnish — against that indigo. The table is dressed and mid-work: the
+remaining card strips sorted into two unequal piles with a rubber band round the larger
+one, the kraft plan of the corner folded back on itself, a glue stick standing open, the
+pencil sharpener with its shavings, old initials cut into the varnish. Behind them the room
+@sinif carries no blank panel — the interactive smart board dark and switched off on the front
+wall, the pinned collage of overlapping paintings, the rolled map tied on its cord, the
+shelf of box files with spines to the wall, coat hooks with bags and a forgotten jacket,
+the crooked blind at the window wall.
+
+Three movement beats belong to this exact division of labour: the thin envelope flexes and
+settles between his thumbs, the packed edges of the thick envelope ease apart a fraction in
+her fingers, and the folded kraft plan springs a little at its crease. Depth in three layers — the card strip and rubber band blurred and cut at the lower right edge, both
+envelopes and both pairs of hands sharp in the middle, the dark board and the dressed side
+wall softening into gentle bokeh while staying fully modelled. The girl's flat hand presses
+a pale band into the varnish with a dark line at the wrist, the banded pile of strips sits
+with a dark seam under its lowest card, and the glue stick stands with a hard dark ring at
+its foot — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, envelope paper, knit and satin-varnished timber rendered as real materials,
+deliberate ten to fifteen percent prop overscale for child-safe readability, motivated
+raking window light, deep cool indigo shadow, continuous physically based shading, ambient
+occlusion painted in and never raytraced-hard.
+
+TEXT: No readable text. One thin envelope and one thick one held side by side is the whole
+argument; an address would tell the eye who each is for before the thickness does. Both
+envelopes are held flap-side to the lens so no written face is turned toward the camera,
+and both flaps are plain sealed paper with no line, stamp, window or marking. The sorted
+card strips keep the rhythm of children's handwriting and resolve into nothing. Map rolled
+and tied, cork papers turned face-in, box files spine-out, smart board dark.
+
+NEGATIVE: do not turn either envelope face-on or add an address, name, stamp, postmark,
+window or written line; do not equalise the two thicknesses, and do not open, exchange or
+set down either envelope; do not let the sorted handwriting resolve into words; do not
+switch on the smart board or replace it with a blackboard; do not clear the walls into
+blank painted panels; do not place a separated-waste bin anywhere in this room; do not
+flatten the girl's visible half-face into a shape or bring her whole face out from behind
+her arm; do not light under the tabletop; neither child looks at the lens.
+
+
+#########################################################################
+### K41 | VO41
+### "Belediye ekipleri kutuları yerleştirdi ve köşeyi temizledi."
+### yazı: "BELEDİYE" (iki taşıyıcı: yelek sırtı + kamyon kapısı)
+#########################################################################
+
+FİKİR: Değişim tek bir çizgide görünüyor — süpürgenin bıraktığı ıslak temiz şerit ile
+henüz süpürülmemiş kuru kirli şerit kadrajın tam ortasında sert bir sınırla buluşuyor.
+Kutuların üç yüzü hâlâ duvara dönük: iş bitmedi. Uzakta rampada bir lastik hâlâ duruyor:
+bir sorun çözülürken öteki yerinde duruyor.
+
+PLAN: Baskın geometri ıslak-kuru sınır çizgisidir — alçak sabah güneşi ıslak şeridi tek
+parça aynaya çevirir, kuru taraf mat ve çakıllı kalır; ikisi arasındaki sınır kadrajı
+boydan boya keser. Kamera kaldırımdan hafif yukarıdan bakar. Ön planda süpürgenin ıslak
+kılları kadrajı örter. Arabanın yalnız lastiği ve alt gövdesi kadrajda kalır.
+⚠ @kutu HÂL: bugün teslim edildi — plastik fabrika temizliğinde, kalıp dokusu keskin,
+stencil boya henüz tebeşirleşmemiş, üç ön yüz duvara dönük.
+
+PROMPT:
+High-end theatrical feature-animation 3D at full feature-film scale. A 35mm lens at f/5.6
+looks slightly down from the kerb over the corner in medium-wide three-quarter view. The
+dominant shape is a boundary: a stiff yard broom has left a wet, cleared strip of pavement
+that meets the unswept dry strip in one hard line running clean across the middle of the
+frame. A low early-morning sun coming horizontally up the street turns the wet side into a
+single long specular sheet and leaves the dry side matte, gritty and littered. The change
+is that line. The broom's wet bristle end fills the lower foreground, large and soft,
+sliced by the frame edge.
+
+Two municipal workers and one resident, all fully rendered. The sweeper is a man of about
+forty-five in a fluorescent orange-yellow hi-vis waistcoat over a work shirt, both hands on
+the broom handle — the lower hand wrapped at the middle of the shaft with the thumb over
+the top, the upper hand near the end with the palm cupped over it, the weight carried on
+his lower arm as he drags the bristles toward himself; his jaw is set and his eyes are on
+the line the water is leaving. Behind him a woman of about thirty in the same hi-vis
+crouches with the last of three new bins tipped toward her, her fingers hooked under its
+lower moulded lip and her forearms taking the whole weight as she settles it toward the
+galvanised cradle, her face turned up along the row to check the alignment. The set stands
+with all three fronts turned to the wall, plastic still factory-clean with its mould grain
+sharp and its stencil paint not yet chalked, one carrying scuff on the near corner, the
+cradle's chain not yet tethered. Further along a resident of about sixty stands in a
+doorway with a bag in his hand, back half turned but fully rendered with the weave of his
+jacket readable, watching. Turkish/Anatolian throughout, warm matte tan skin with low
+specular and no green or grey cast; both workers' faces modelled and readable.
+
+The low sun takes the wet strip as one sheet, the top edge of the broom's bristles, the
+upper face of the galvanised cradle, a bundle of new bin lids strapped on the flatbed
+truck at the kerb, and both workers' faces from brow to jaw; it reaches nothing into the
+narrow gaps between the three bin bodies and nothing under the distant car, which stays a
+deep cool indigo cavity at the end of the pavement. Colour is built from this morning's
+materials — dark mirrored wet concrete, pale dry grit, fluorescent orange-yellow hi-vis,
+new spangled galvanised steel and the truck's warm ochre panel. The corner is @kose, fully dressed
+and blank nowhere: the plane tree in its iron guard now clear of litter, the granite kerb,
+the cast-iron lamp, the bus-stop pole with its timetable case angled to the sky, the truck
+with its tailgate down, the dropped-kerb ramp far along the pavement with a car's front
+tyre still standing up its slope, and every shopfront closed behind a corrugated roller
+shutter with its awning furled and strapped to the frame.
+
+Three movement beats belong to this exact hour: the wet edge of the swept strip creeps a
+fraction further as water runs out of the bristles, thin steam lifts off the wet concrete
+where the low sun strikes it, and the strapped bundle of lids on the truck bed rocks as the
+bin settles. Depth in three layers — the broom's wet bristles blurred and cut at the lower
+edge, the wet-dry boundary, the new bin set and both workers sharp in the middle, the
+truck, the watching resident and the far ramp with its parked tyre softening into gentle
+bokeh while staying fully modelled. The cradle's flat foot plate sits down onto the concrete
+with a hard dark line along its whole length, the bin being lowered has not yet met the
+cradle so no shadow closes beneath it, and the truck's rear tyre flattens at the kerb with
+a dark crescent under its contact patch — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan skin with low
+specular and no green or grey cast, luminous eyes, wet and dry concrete, galvanised steel,
+new polyethylene and knitted hi-vis rendered as real materials, deliberate ten to fifteen
+percent prop overscale for child-safe readability, low motivated raking sun, deep cool
+indigo shadow, continuous physically based shading, ambient occlusion painted in and never
+raytraced-hard.
+
+TEXT: Two carriers and no others, one in heat-pressed retroreflective film and one in brushed painted letterform — the back of the sweeping worker's hi-vis waistcoat and
+the driver's door of the municipal flatbed truck at the kerb. On the waistcoat the
+letterform is block capitals cut from grey retroreflective transfer film heat-pressed onto
+fluorescent knitted fabric, the film's glass-beaded surface throwing the low sun back
+sharply where the knit gives it back softly, one letter's corner lifted where the film has
+begun to peel and a crease running through the word across his shoulder blade. On the truck
+door it is the same word in flat white paint brushed straight onto the warm ochre panel,
+stroke edges slightly ragged where the brush dragged, with a run of road dust across the
+lower half of the letters. Both read "BELEDİYE" — one word, eight letters, all capitals,
+the sixth a dotted capital İ. His back is turned toward the lens and fully lit; the truck
+door sits in the mid-ground, soft but legible. ORIENTATION: the word reads left-to-right in
+normal reading direction and is never mirrored, reversed, rotated or flipped; it appears on
+these two named surfaces and on no other surface in the frame, and no city name, district
+name, department name, number, second word or emblem appears with it anywhere. The three
+bin fronts face the wall, so their stencilled words are not visible here.
+
+NEGATIVE: do not turn any bin front toward the street — all three stay to the wall and no
+stencilled word is visible; do not finish the sweeping, the far half stays dry, gritty and
+littered and the boundary stays one hard line; do not land the lowered bin in the cradle,
+it stays held above it; do not move the distant car or take its tyre off the ramp — that
+problem is unsolved at this point in the story; do not add a plate, badge, model name,
+phone number, city name or second inscription to the truck; do not add an emblem, crest,
+number or department line to either waistcoat; do not make the hi-vis acid green or neon —
+it stays warm fluorescent orange-yellow; do not weather the new bins into old ones; do not
+flatten the watching resident into a dark shape; do not open a roller shutter or expose a
+fascia; nobody looks at the lens.
+
+
+#########################################################################
+### K42 | VO42
+### "Bir sivil toplum kuruluşu okulda bilgilendirme çalışması yaptı."
+### yazı: "GÖNÜLLÜ"
+#########################################################################
+
+FİKİR: Gönüllü sınıfın önünde durmuyor — yerde, sıraların arasında, iki dizinin üstünde.
+Getirdiği kasayı muşambaya boşaltmış ve çocuklar ayakta, elleriyle ayırıyor. Akıllı tahta
+hâlâ kapkaranlık: bilgi anlatılmıyor, elden veriliyor. Yetişkin aşağıda, çocuklar yukarıda.
+
+PLAN: Baskın geometri geç öğleden sonra güneşinin yerde uzattığı tek uzun ışık şeridir —
+iki sıra arasından boydan boya geçer, muşamba onun içinde parlar, üç yığın o şeridin
+üstünde durur. Kamera yer hizasından, çok alçaktan bakar. Ön planda muşambanın kenarı ve
+üstündeki eskimiş bir ayakkabı kadrajı örter. Gönüllünün yüzünün yarısı kendi omzunun
+arkasında kalır; söylediği şey elinden okunur.
+
+PROMPT:
+High-end theatrical feature-animation 3D with premium production design and emotionally
+precise acting. A 35mm lens at f/2.8 sits on the floor between two desk rows and looks
+along it. The dominant shape is a single long band of low late-afternoon sun lying flat
+across the floorboards from the window wall — the whole image is built inside that band. A
+sheet of clear plastic is spread down its length and shines, and three separate heaps stand
+on the shine. The sheeting's near edge and a scuffed shoe resting on it fill the lower
+foreground, large and soft, sliced by the frame edge.
+
+A Turkish/Anatolian woman of about thirty-five kneels on both knees with her weight settled
+back on her heels, sleeves pushed to the elbow, holding a rinsed glass jar up in one hand —
+thumb along the rim of its lid, the other fingers spread under the body of the jar taking
+its weight — while her other hand rests flat on the sheeting. Half her face is behind her
+own shoulder as she turns to speak to the child on her left; the visible half is open-
+mouthed and unhurried, her eyes on the child's hands rather than on the child's face. Above
+her a boy of about eleven leans down with a flattened carton bent between his fingers, the
+board creasing where his grip closes on it; beside him a girl of about twelve is crouched
+with her palms on her knees, face fully in frame, reading the three heaps. Two more children
+stand further back as solid rendered bodies with the knit of their jumpers readable, faces
+soft but modelled and never flattened into dark shapes. The children are sixth-grade, around
+eleven or twelve, pre-teen. Warm matte tan skin throughout, low specular, never tinted green
+or grey.
+
+The floor-level band takes the shining upper face of the sheeting, the top surfaces of all
+three heaps, the lettering across the volunteer's shoulder, the rim of the raised jar and
+all three near faces; it reaches nothing under the desks and nothing down inside the
+sheeting's folds, which hold deep cool indigo troughs. Colour comes from the material she
+brought — clear glass, brown flattened board, translucent bottle plastic, a warm cotton
+jersey — over the shine of the sheeting, against the indigo under the desks. The room is @sinif,
+fully dressed and blank nowhere: the emptied plastic crate on its side, scratched timber
+desks with old initials, chairs pushed in unevenly, the interactive smart board dark and
+switched off on the front wall with two markers and a felt eraser in its rail, the pinned
+collage of overlapping paintings, the rolled map tied on its cord, the cork strip layered
+with papers turned face-in, the shelf of box files with spines to the wall, coat hooks with
+bags and a forgotten jacket, the crooked blind, the radiator with a glove drying on it and
+the waste bin full of paper.
+
+Three movement beats belong to this exact afternoon: the plastic sheeting rustles and lifts
+where a knee shifts on it, dust turns in the low floor-level band of light, and the
+flattened carton springs back a little against the boy's fingers. Depth in three layers —
+the sheeting's near edge and the scuffed shoe blurred and cut at the lower edge, the raised
+jar, the three heaps and all three near faces sharp in the middle, the dark board and the
+dressed side wall softening into gentle bokeh while staying fully modelled. The tipped
+crate rests on its side with a dark seam where its rim meets the sheeting, every jar in the
+heaps holds a small dark ring under its base, and her knees press two dents into the plastic
+with dark creases running away from them — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions and
+believable adult acting, sophisticated warm matte tan skin with low specular and no green or
+grey cast, luminous eyes, glass, board, sheet plastic and washed cotton jersey rendered as
+real materials, deliberate ten to fifteen percent prop overscale for child-safe readability,
+low motivated floor-level sun, deep cool indigo shadow, continuous physically based shading,
+ambient occlusion painted in and never raytraced-hard.
+
+TEXT: Carrier — the back of the volunteer's plain cotton t-shirt, and no other surface. Letterform — block capitals in matte white heat-pressed vinyl on soft-washed cotton jersey.
+The print sits across the shoulder blade turned toward the lens; the vinyl sits slightly proud
+of the weave and creases across the fabric's folds instead of following them, one corner of
+one letter has lifted from the cloth, and the print is cracked in fine lines from washing so
+the jersey shows through the strokes in places. It reads "GÖNÜLLÜ" — one word, seven
+letters, all capitals, the second a capital Ö with its two dots and the fourth and seventh
+capital Ü each with its two dots. It sits across her upper back, lit by the floor-level band
+and fully legible, clear of her arm and of every child's hand. ORIENTATION: the word reads
+left-to-right in normal reading direction and is never mirrored, reversed, rotated or
+flipped; it appears on this one named object and on no other surface in the frame. Every
+other surface is dressed and wordless — the smart board dark, the map rolled and tied, the
+cork papers turned face-in, the box files spine-out.
+
+NEGATIVE: do not add an organisation name, emblem, crest, logo, slogan, second line or web
+address anywhere on her t-shirt — this one word and nothing else; do not label, print or
+brand any jar, bottle or carton on the sheeting, and do not put a word, barcode or symbol on
+any of them; do not add food, liquid or refuse — the material is clean and rinsed; do not
+stand the volunteer up and do not put any adult at the front of the room; do not switch on
+the smart board, make it glow, or replace it with a blackboard; do not clear the walls into
+blank painted panels; do not place a separated-waste bin in this room — this is the
+classroom, not the corner; do not flatten any of the three near faces into a shape; nobody
+looks at the lens.
+
+
+#########################################################################
+### K43 | VO43
+### "Mahalle sakinleri atıklarını ayırarak kutulara atmaya başladı."
+### yazı: "KAĞIT" · "CAM" · "PLASTİK" (tek taşıyıcı: @kutu'nun üç ön yüzü)
+#########################################################################
+
+FİKİR: Aynı köşe, aynı yaşlı kadın, aynı düğümlü poşet — ama poşet artık elinde bekliyor
+değil, AÇILMIŞ ve içinden katlanmış gazete çıkıyor. Yanındaki adam kavanozunu kaldırmadan
+durmuş, kelimeleri okuyor. Ayırmak, atmadan önce DURMAKTIR. Ve kaldırımda tek bir poşet yok.
+
+PLAN: Baskın geometri üç farklı yükseklikte durmuş üç elin çizdiği yükselen çapraz
+çizgidir: çocuğun avucu aşağıda geniş ağızda, kadının kıstırdığı gazete ortada yarığın
+hizasında, adamın kavanozu belinde ve henüz kalkmamış. Tek çizgi, üç karar. Kamera göğüs
+hizasından bakar. Ön planda gazetenin katlı köşesi ve kadının kolu kadrajı örter.
+⚠ @kutu HÂL: kutular haftalardır burada — üç ön yüz KALDIRIMA dönük ve okunuyor,
+kapaklarda ilk soluk sürtünme yayları çıkmış, zincir yer çapasına bağlanmış.
+
+PROMPT:
+High-end theatrical feature-animation 3D with vivid production design and warm, unsentimental
+acting. A 50mm lens at f/4.0 sits at chest height in medium three-quarter view so all three
+bin fronts read. The dominant shape is a rising diagonal drawn by three pairs of hands
+stopped at three different heights: a boy's flat palm low at the wide opening, a woman's
+pinched newspaper level in the middle with the paper slot, a man's rinsed jar still down at
+his waist and not yet raised. One line, three decisions, and all three of them are a pause
+before a throw. The folded newspaper's corner and the woman's forearm fill the lower left
+foreground, large and soft, sliced by the frame edge.
+
+Three Turkish/Anatolian residents, all fully rendered. The woman is about seventy-five in a
+headscarf and a long buttoned cardigan — the same woman who once stood at this corner with
+nowhere to put her bag. Her left hand holds the bag's knotted neck with the thumb over the
+knot and the fingers curled beneath, the weight pulling her wrist down; the bag is open at
+last. Her right hand pinches a folded newspaper between four fingers and thumb and holds it
+level with the slot, her mouth open on a breath and her eyes on the stencilled word rather
+than on the opening. Beside her a man of about forty has stopped short with a rinsed glass
+jar held from underneath — fingers spread under its base, thumb up its side — his arm not
+yet raised, his head tipped as he reads across the three fronts. Half behind her a boy of
+about ten pushes a plastic bottle at the wide opening with the flat of his palm, only half
+his face clear of her shoulder. Warm matte tan skin on all three, low specular, never tinted
+green or grey; all three faces modelled and readable.
+
+A low morning sun comes in from the side along the pavement. It takes the upper faces of all
+three hinged lids, the full face of all three stencilled words, the woman's cheek and the
+folded edge of the newspaper in her hand; it reaches nothing down inside any of the three
+openings and nothing into the narrow gaps between the three bodies, which stay deep cool
+indigo slots. Colour is built from the corner as it now is — swept pale concrete, weathered
+blue, ochre-brown and green polyethylene, the woman's dark headscarf and clear glass — with
+one warm morning edge along everything. The corner is @kose, fully dressed, clean and blank
+nowhere: @kutu standing in its galvanised cradle with the chain tethered to its ground
+anchor, lids carrying their first faint scuff arcs and the plastic lightly chalked by
+weather, the concrete swept bare with no bag or loose litter anywhere on it, the green
+municipal waste bin further along with its lid fully closed and level, the plane tree in its
+iron guard with clean bare earth in its square, the granite kerb, the cast-iron lamp unlit in
+the daylight, the bus-stop pole with its timetable case angled to the sky, a post box, a
+bicycle locked to the tree guard, the dropped-kerb ramp far along the pavement with a car's
+front tyre still standing up its slope, and every shopfront closed behind a corrugated roller
+shutter with its awning furled and strapped to the frame.
+
+Three movement beats belong to this exact morning: the green bin's lid rocks a few degrees
+where the boy's bottle has knocked it, the newspaper's outer sheet lifts a hair off its fold
+in the street air, and the tethering chain swings slightly against the cradle. Depth in three layers — the newspaper's folded corner and the woman's forearm blurred and cut at the lower
+left edge, the three stencilled fronts, the newspaper at the slot and the woman's face sharp
+in the middle, the reading man, the boy, the tree and the far ramp softening into gentle
+bokeh while staying fully modelled. The cradle's flat foot plate sits down onto the concrete
+with a hard dark line along its whole length, the tethering chain lies slack with a dark line
+under each link, and the newspaper has not yet entered the slot so no shadow closes between
+paper and plastic — every one of them rests in contact with its surface and casts a soft contact shadow, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; believable adult and elderly acting,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+eyes, weathered polyethylene, stencil paint, newsprint and clear glass rendered as real
+materials, deliberate ten to fifteen percent prop overscale for child-safe readability, low
+motivated side sun, deep cool indigo shadow inside every opening, continuous physically
+based shading, ambient occlusion painted in and never raytraced-hard.
+
+TEXT: Carriers — the three moulded fronts of @kutu and no other surface in the frame. Letterform — hand-stencilled matte black paint on textured polyethylene.
+The pigment sits thin on the raised mould grain and thicker in the low spots, now lightly chalked by weather,
+with a pale scuff arc crossing one letter where a lid has been swung against it. The blue one
+reads "KAĞIT" — one word, five letters, all capitals, the third a capital Ğ with its breve.
+The ochre-brown one reads "CAM" — one word, three letters, all capitals. The muted green one
+reads "PLASTİK" — one word, seven letters, all capitals, the sixth a dotted capital İ. All
+three fronts are turned to the pavement and square enough to the lens to be fully read, none
+behind a hand, a bag or a body. ORIENTATION: each word reads left-to-right in normal reading
+direction and is never mirrored, reversed, rotated or flipped; these three words appear on
+these three named fronts and on no other surface in the frame. Everything else is dressed and
+wordless — shutters closed, awnings furled, the timetable case angled to the sky so nothing
+inside reads, the newspaper folded so no printed side is turned up.
+
+NEGATIVE: do not put a bag, sack or any loose litter back on the pavement, and do not lift or
+tilt the green municipal waste bin's lid — it stays closed and level; do not return this
+corner to the state it was in earlier in the story; do not drop the newspaper into the slot —
+it stays pinched in her fingers outside it; do not set the knotted bag down or take it from
+her hand; do not raise the man's jar — he is still reading; do not give the folded newspaper a
+headline, masthead, photograph or legible line, and do not label the jar or the bottle; do not
+add a recycling arrow, triangle symbol, pictogram or icon to any bin — the three words alone
+identify them; do not move the distant car or take its tyre off the ramp — that problem is
+unsolved at this point in the story; do not open a roller shutter or expose a fascia; do not
+flatten any of the three faces into a shape; nobody looks at the lens.
+
+=========================================================================
+S4 · K34-K43 SONU — on kare
+

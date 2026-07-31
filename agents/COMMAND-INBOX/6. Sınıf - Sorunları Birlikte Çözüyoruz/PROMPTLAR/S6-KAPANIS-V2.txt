@@ -1,0 +1,632 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S6 KAPANIŞ · K52-K57 · V2
+Çıta: CODEX-PILOT K01-K06 · dünya pixar_3d_edu · register EDU · motor NB2
+=========================================================================
+Bu blok kapanıştır ve gücü TEKRARDAN gelir: K52 ile K53 sıfırdan sahne
+kurmaz, açılışın iki karesini (K02 · K04) referans alıp TEK farkı söyler.
+Seyirci farkı ancak aynı köşeyi tanırsa görür.
+
+⚠ TÜRETME KAYNAĞI = CODEX PİLOTU. Eski S6 dosyası K52'yi "kaldırım
+hizasında alçak açı" diye türetiyordu; pilot K02 ise ikinci kat
+balkonundan dik inen 28mm vinç kadrajıdır. Türetme kaynağın kadrajını
+korumazsa "aynı köşe" beyanı çöker — V2 pilot kadrajına çevrildi.
+
+Yazı taşıyan kare: K55 (bez afiş) ve K57 (defter sayfası). İkisinde de
+tek yüzey, ORIENTATION cümlesi yazılı. K52·K53·K54·K56 yazısız ve boş
+yüzey bırakmıyor.
+=========================================================================
+
+
+#########################################################################
+### K52 | VO52
+### "Bir sabah Efe yine aynı köşeye geldi."
+### yazı: YOK · 🔗 K02'DEN TÜRET
+#########################################################################
+
+FİKİR: K02'de kadrajı çapraz kesen ok koyu bir kütlenin altında kesiliyordu;
+aynı ok bu sabah baştan sona akıyor ve Efe tam tekerleğin durduğu yerde duruyor.
+
+PLAN: Kamera K02'nin ta kendisi — ikinci kat balkonundan dik inen 28mm vinç.
+Baskın geometri yine soluk rampanın köşegeni, ama bu kez tamamlanmış: sol alttan
+sağ üste kesintisiz. K02'de karenin en koyu yeri arabanın altındaki oyuktu; şimdi
+güneş eğimin dibine, iki dokunsal oluğun içine kadar giriyor ve o oyuk kadrajda
+hiç yok. K02'de rampanın kenarına sıkışan üç çınar yaprağının ikisi yerinde, üçü
+serbest kayıyor — engel kalkınca ilk hareket eden şey.
+FEDA: Efe'ye tepeden bakılıyor; gövdesi kısalıyor ve yalnız yanağı ile yakın gözü okunuyor.
+
+⚠ Bu türetme tek geçişte çok şey siliyor gibi görünür ama tek olaydır: araba gidince
+motor pusu ve sürücü parçaları onunla gider. Eklenen tek şey Efe, değişen tek şey
+yaprağın serbest kalması. Türetme kadrajı kaydırırsa kare K02'nin kadrajıyla sıfırdan
+basılır — kararı Mami verir.
+
+STYLE: K02'den devralınır — türetme karesine ayrı STYLE yazılmaz.
+
+EDIT PROMPT (K02 referans verilir):
+Use this referenced image, K02, and change ONLY what an empty ramp changes. The
+dark sour-cherry car is gone, and with it the last veil of warm engine shimmer and
+every fragment of the driver at the upper edge — coat hem, bread bag, hand, the
+swinging keys, the shop door he was pulling closed. The pale dropped-kerb ramp now
+runs unbroken from the lower left to the upper right as one continuous diagonal
+path, and the same low morning sun that reached only its upper half now runs all
+the way down the slope and into both tactile grooves, so the dark hollow that sat
+beneath the car no longer exists anywhere in the frame. @efe1 has arrived at the
+top of the ramp and stands exactly where the compressed front tyre used to sit,
+caught between two steps with his weight still back on one foot and his satchel
+pulling one shoulder lower; his head is tipped down along the clear slope so the
+raking sun crosses his cheekbone and his near eye reads clearly even from this
+steep angle, mouth closed, one thumb hooked under his dungaree strap and the other
+hand flat on the satchel at his hip. Of the three dry plane leaves that were
+trapped against the ramp's edge, two still lie where they were and the third is
+now skating free down the open concrete. Keep the crane position on the
+second-floor balcony, the steep oblique angle, the 28mm lens, the direction and
+warmth of the light, the chalky pavement, the chipped ramp lip, the granite kerb,
+the single tree-shadow and the whole corner of @kose exactly identical. Do not
+re-frame, do not relight, and do not tidy the street.
+
+TEXT: No readable text. The shopfront behind the driver's door stays closed behind
+its corrugated roller shutter with the awning furled and strapped to the frame, so
+no blank fascia is exposed by the car's removal; the timetable case still returns
+only sky.
+
+NEGATIVE: do not lower or move the camera toward eye level and do not straighten
+the oblique into a flat top-down map; do not repave, repaint or renew the ramp —
+it is the same chipped concrete, only uncovered; do not park a second vehicle
+anywhere in frame or leave a bin, bag or bollard standing on the slope; do not
+centre @efe1 as a hero, do not turn him toward the lens, and do not show him
+cleanly head to toe like a character sheet; do not have him raise an arm, cheer or
+smile broadly; do not remove all three leaves or add new debris; do not paint an
+accessibility symbol, arrow, crossing stripe or fresh road marking onto the clear
+ramp; do not split the frame into a before-and-after comparison; do not turn the
+street into a glossy miniature set; no shop lettering, licence plate or caption.
+
+-----
+
+
+#########################################################################
+### K53 | VO53
+### "Rampanın önü boştu ve Derin yukarı tek başına çıktı."
+### yazı: YOK · 🔗 K04'TEN TÜRET
+#########################################################################
+
+FİKİR: K04'te karenin en keskin işareti tekerlek ile taş arasındaki bir parmaklık
+kara yarıktı; o yarık artık yok ve aynı kavrama ilk kez iş görüyor.
+
+PLAN: Kamera K04'ün aynısı — 65mm, yer hizasında, granit taşın hemen ötesinde.
+Değişen tek şey zemin: kadrajın alt yarısını duvar gibi kapatan dik taş yüzün
+yerinde rampanın eğimi var, iki dokunsal oluk eğimden yukarı koşuyor. Baskın
+geometri dikey duvardan yükselen köşegene döndü. "Tek başına" bir cümle değil,
+arkasındaki kaldırımda hiç kimsenin eli, kolu ya da gölgesi olmamasıdır.
+FEDA: Derin'in yüzü K04'teki gibi odağın dışında ve yarım kalır — kahraman el ve tekerlek.
+
+🔴 KAVRAMA ZORUNLU: dinlenme kavraması ile itme kavraması ayrı şeydir; el halkasını
+nasıl İTTİĞİ yazılır. Motorun en sık bozduğu yer nesneyi tutan eldir.
+
+⚠ Bu türetmede zemin geometrisi değişiyor (dik taş → eğimli rampa) ve türetme
+riskin en yüksek olduğu yer burasıdır. Tutmazsa kare K04'ün kadrajıyla sıfırdan
+basılır — kararı Mami verir.
+
+STYLE: K04'ten devralınır — türetme karesine ayrı STYLE yazılmaz.
+
+EDIT PROMPT (K04 referans verilir):
+Use this referenced image, K04, and change ONLY the ground and what her hands are
+doing. The vertical granite kerb face that rose across the lower half of the frame
+like a weathered stone wall is replaced by the dropped-kerb ramp's pale sloping
+concrete, its two tactile grooves running up the slope and its chipped edge still
+reading at the same scale. The narrow dark seam that was the sharpest mark in the
+image is gone, because @derin's small front castor is now a hand's width up the
+slope with its rubber visibly flattened against the near groove and both wheels
+carrying her on the ramp. Her grip has changed from resting to driving: the heels
+of both palms press down and forward onto the top of the chrome push-rims, the
+thumbs brace along the outer face of each rim, all eight fingers hook underneath,
+both wrists are rolled forward and the tendons stand up on the backs of both hands.
+Her shoulders are low and loaded, her forearms are tight, her chin is up the slope
+and the part of her face still visible in the upper right shows effort that is
+working — eyes on the crest, jaw set, mouth closed, no triumph and no pity. The
+parked sour-cherry car is gone from the pavement beyond her and the rest of the
+ramp above her is completely clear. The paving behind her rear wheel is empty: no
+hand, arm, sleeve or second shadow reaches the chair from anywhere in frame. Keep
+the camera position, the wheel-height ground-level angle, the 65mm lens, the
+direction and colour of the light, the chair itself, her clothing, her face, the
+grit and road dust and every other street detail exactly identical.
+
+TEXT: No readable text. The shutters beyond her stay down with their awnings
+furled, and the timetable case is still angled to the sky so nothing inside reads.
+
+NEGATIVE: do not let either wheel leave the concrete, tip into a wheelie or float
+above the slope; do not put any hand, arm, glove or shoulder behind her chair and
+do not add a helper, parent, teacher or second child anywhere in frame; do not
+detach, duplicate, fuse or melt her fingers into the push-rim; do not turn the
+dropped kerb into a hospital or airport access ramp with handrails, yellow tactile
+paving, a painted blue accessibility symbol or a marked crossing; do not rebuild
+the chair as medical equipment with straps, headrest or clinical white parts; do
+not raise or move the camera to show her whole body or her whole face; do not add
+speed streaks, motion blur, dust plumes or a cheering crowd; do not make her smile
+at the lens or look triumphant; do not clean the grit and chips off the street;
+no arrow, caption, before-and-after split or accessibility icon.
+
+-----
+
+#########################################################################
+### K54 | VO54
+### "Toplumsal sorunların çözümü, onları fark etmekle başlar."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Bir haftalık gözlem sayfası ile boşalmış rampa aynı ışık şeridinin iki ucunda
+duruyor, ve Efe sayfaya değil sayfanın ötesindeki rampaya bakıyor.
+
+PLAN: Baskın geometri sabah güneşinin kaldırım boyunca uzattığı tek parlak şerit:
+şerit önde tutulan açık sayfanın üstünde yanıyor, aradaki gölgeli bantta kesiliyor,
+uzakta boş rampanın eğiminde yeniden yanıyor. Kamera 50mm, göğüs hizasında, Efe'nin
+sağ omzunun hemen arkasında; çınarın alçak demir bileziği ön planda bulanık, sağ altı
+kesiyor. Renk sahnenin kendi malzemesinden: kemik beyazı kâğıt, grafitin metalik
+parlağı, oker kireç sıva, demir bileziğin koyu yeşil-siyahı, el halkasında tek sıcak
+krom kıvılcımı.
+FEDA: Efe'nin gözleri kaşının gölgesinde kalır; çetele sütununun alt üç çizgisi
+başparmağının altında kaybolur.
+
+⚠ @efe1 KADRAJ KİLİDİ: referans sayfasının "tam boy, ayakta, dinlenme pozu" duruşu EZİLİR
+— sağ omzu bize dönük, kadrajın sol üçte birinde, defteri göğüs hizasında tek eliyle
+açık tutuyor, başı defterden rampaya çevrilmiş.
+🔴 KAVRAMA ZORUNLU: defteri tutan elin hangi parmağı nerede.
+
+PROMPT:
+High-end cinematic feature-animation 3D still with the dimensional lighting,
+character appeal and finish of a theatrical animated film. A 50mm lens at chest
+height sits just behind @efe1's right shoulder on the pavement at @kose; the plane
+tree's low iron guard crosses the lower right foreground, large and soft and sliced
+by the frame edge. He has stopped mid-walk with his open observation notebook
+brought up in front of his chest in one hand — and he is not reading it. His chin is
+turned off the page and down the pavement to the dropped-kerb ramp, completely clear
+this morning, where @derin is cresting the slope under her own hands.
+
+One band of low sun carries the whole frame: it lands first on the raised paper in
+his hand, is cut clean by a shaded strip of pavement between him and the ramp, and
+burns again on the pale concrete of the open slope. Paper and ramp are the two lit
+ends of a single line, and everything else in the corner is arranged below it. His
+hold is exact — the notebook lies open across his left palm with the spine in the
+crease of his fingers, his left thumb pressed flat on the lower corner of the near
+page to keep it from closing, the other four fingers spread behind the soft board
+cover, the pencil stub still clipped to it. The page is the book he has carried all
+week: a small soft-cover notebook opened flat, its left page filled with a boy's
+pencil handwriting in uneven lines and a column of tally marks down the margin, the
+paper embossed from behind by the pressure of the strokes. His mouth is closed, his
+brows are lifted, and he never turns toward the lens. Further up the pavement @derin
+is at the crest, turned three-quarters away, both hands still closed on the
+push-rims with palms open and thumbs along the top edge; her face falls into gentle
+defocus but stays fully modelled and readable. Both read clearly as sixth-graders,
+around eleven or twelve, pre-teen proportions, warm matte tan skin with low specular
+and no green or grey cast.
+
+The Anatolian corner is richly built and never competes with the two of them:
+four-storey warm ochre and faded-rose lime render, dark green iron balcony rails,
+a mature plane tree in its square of bare earth, a green municipal waste bin with
+its lid down, a cast-iron street lamp on a fluted base, a bus-stop pole whose
+timetable case is angled to the sky so nothing inside reads, a post box, a bicycle
+locked to the tree guard, and every shopfront closed behind a corrugated roller
+shutter with its awning furled and strapped to the frame, so no blank panel or empty
+fascia is left anywhere in frame. Colour is built from the materials actually
+present — bone-white paper, the fine metallic sheen of graphite, chalky ochre
+render, the dark green-black of cast iron and one warm chrome spark on the push-rim.
+
+Three movement beats belong to this exact morning: the notebook's free page lifts a
+finger's width against his thumb, a dry plane leaf turns over on the clear slope of
+the ramp, and dust drifts slowly through the raking light in the shaded strip
+between them. Depth in three layers — the iron tree guard blurred and cut at the
+lower right, the open page and his holding hand razor sharp in the middle plane,
+@derin and the clear ramp softening into gentle bokeh while staying fully modelled.
+His planted shoe rests in contact with the paving and compresses against it, the
+notebook's board cover presses a shallow dent into the pad of his thumb, and the
+locked bicycle's tyre flattens where it leans into the tree guard with a hard dark
+point of contact between them; nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+luminous expressive eyes, paper and graphite rendered as real matter with visible
+tooth and metallic stroke sheen, tactile weathered street materials, motivated low
+morning sun, strict focal hierarchy, volumetric depth, vivid colour separation from
+scene materials and continuous physically based shading without miniature-diorama
+sheen.
+
+TEXT: No readable text anywhere in this frame. The handwriting on the page stays
+soft and illegible so the eye travels past it to the clear ramp — only the rhythm of
+the pencil lines and the column of tally strokes read as shape. Every shopfront is
+dressed with a closed roller shutter and a furled strapped awning, the timetable
+case returns only sky, and the balcony rails, bin lid and post box carry no panel.
+
+NEGATIVE: do not let any line on the notebook page resolve into a letter, number or
+word; do not let @efe1's eyes drop to the page or turn to the lens — his gaze stays
+on the ramp; do not put a car, bin, bag, bollard or any object back on the ramp or
+in front of it; do not let anyone push, steady or accompany @derin; do not replace
+the soft-cover notebook with a printed book, clipboard, tablet or glowing screen;
+do not centre the two of them symmetrically or render page, faces and background
+equally sharp; do not open his mouth or make either of them speak; do not draw an
+arrow, dotted path or connecting line from the page to the ramp; do not add an
+accessibility icon, poster, banner or explanatory sign to any wall; do not lift the
+shutters or unfurl an awning to expose a blank fascia; no licence plate, shop
+lettering or caption.
+
+-----
+
+#########################################################################
+### K55 | VO55
+### "Sorunları fark eder, çözümleri birlikte üretiriz!"
+### yazı: "SORUNLARI FARK EDER, ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ" (tek yüzey: bez afiş)
+#########################################################################
+
+FİKİR: Cümle kareye tek başına gelmiyor — onu duvara geren dört elden biri Derin'in.
+
+PLAN: Baskın geometri iki çizginin çarpışması: gerilmiş bezin dümdüz yatay bandı
+kadrajın üst üçte ikisini kesiyor, altından dört kol dikey olarak ona yükseliyor.
+Duvar düzlemi sensöre TAM PARALEL, kamera eğilmiyor; 35mm, göğüs hizası. Bez elle
+boyanmış ham pamuklu — yazı basılmış değil, konmuş; ışık fırça kabartılarının
+tepesinde duruyor ve harfleri madde yapan şey bu. Renk sahneden doğuyor: ham krem
+pamuklu, petrol mavisi poster boyası, oker kireç sıva, hardal hırka, pas turuncusu
+polar, çınar gövdesinin gri kabuğu.
+FEDA: sağ kenardaki çocuk omzundan kadraj tarafından kesilir ve yüzünün yalnız
+aydınlık yarısı okunur; bezin alt sol köşesi kıvrılıp odaktan düşer.
+
+⚠ @efe1 / @derin KADRAJ KİLİDİ: ikisinin de referans duruşu EZİLİR — Efe iki kolunu
+yukarı uzatmış, ağırlığı ayak parmaklarında, başı afişe kalkık; Derin sandalyesinde
+gövdesini sola çevirmiş, bir eli bezin alt köşesinde, öbür eli el halkasında.
+🔴 KAVRAMA ZORUNLU: dört elin de bezi nasıl tuttuğu yazılır — kumaş tutan el, nesne
+tutan elden daha kolay bozulur.
+🔴 EN YÜKSEK YAZI RİSKİ: afişin alt üçte biri boyasız dikiş payıdır; başlar, kollar
+ve eller yalnız o boş beze biner, hiçbir harfin önünde durmaz.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold visual storytelling and vivid
+production design. A 35mm lens at chest height stands square to the corner's ochre
+render wall, the wall plane exactly parallel to the sensor with no upward tilt and
+no keystone; the plane tree's flaking trunk cuts the extreme right foreground, soft
+and sliced by the frame edge, well clear of the cloth. Four sixth-graders are
+pulling a hand-painted cloth banner taut and flat against the wall, and the whole
+class's sentence stands above their heads.
+
+The frame is built from two lines: the banner's straight painted band runs
+horizontally across the upper two thirds, and four raised arms rise vertically into
+it from below like columns holding a beam. Nearest the lens on the left, @efe1 has
+both arms lifted with his weight up on his toes and his head tipped back to the
+cloth — the hem is pinched between the pads of his thumbs and the crooks of his
+index fingers on both hands, the cotton bunched into two small vertical creases
+where he pulls down, his forearms tight. Beside him and slightly further off,
+@derin has turned her chair a quarter to the left; her right hand is closed on the
+banner's lower left corner with the cloth wrapped once around her fist and the
+corner tucked under her little finger, while her left hand stays on the push-rim
+with the palm open and the thumb along its top edge, holding the chair against the
+pavement's camber. Third along, a Turkish girl of about twelve, sixth-grade,
+pre-teen proportions, in a mustard cardigan with the sleeves shoved past her elbows,
+stands up on the low iron tree guard for reach with one hand overhead on the hem and
+the other braced flat on the render, her face turned up and squinting into the
+light. At the right edge a Turkish boy of about eleven, also sixth-grade, in a green
+fleece, cut through the shoulder by the frame, has both fists closed on the lower
+right corner and leans his weight back against it; only the lit half of his face
+reads, the upper half sitting inside the wall's shadow. Warm matte tan skin on all
+four, low specular, never tinted green or grey; all four faces modelled and
+readable, all four mouths closed, none of them looking at the lens.
+
+The corner is fully dressed and lavishly built: the four-storey block's warm ochre
+lime render carries the banner across its one plain panel, a closed corrugated
+roller shutter with its awning furled and strapped to the frame sits beside it, the
+plane tree stands in its low iron guard, a green municipal waste bin keeps its lid
+down, the cast-iron street lamp rises on its fluted base, the bus-stop pole's
+timetable case is angled to the sky so nothing inside reads, a bicycle is locked to
+the tree guard, and at the left edge the dropped-kerb ramp is completely clear with
+its two tactile grooves showing. A low morning sun rakes across the wall from the
+left, almost along its surface: it takes the top of every raised brush ridge in the
+paint, the individual threads standing off the cloth's weave, @efe1's lifted
+forearms and cheek, the girl's turned-up face and the chrome of @derin's push-rim,
+and it reaches nothing in the banner's lower right corner or the upper half of the
+boy's face at the right edge, which stay a deep cool indigo. Colour comes from the
+materials in front of the camera — unbleached cream cotton, deep petrol-blue poster
+paint, chalky ochre render, mustard wool, rust-orange fleece and grey plane bark.
+
+Three movement beats belong to this exact moment: the banner's unpainted bottom hem
+ripples once between two pairs of hands, a dry plane leaf spins down past the wall,
+and one of the two cord loops creaks tighter over its wall hook.
+Depth in three layers — the plane trunk blurred and cut at the extreme right, the
+taut painted cloth and @efe1's lifted hands sharp across the middle, the clear ramp
+and the closed shutter at the left softening into gentle bokeh while staying fully
+modelled. Every object rests in contact with its surface and casts a soft contact
+shadow: the cloth lies flat against the render with both cord loops biting visibly
+into its top corners and a thin dark contact shadow along its whole lower edge where
+it leaves the wall, each child's fingers dent the hem where they pull, @efe1's toes
+compress against the paving, the girl's shoe rolls slightly on the round iron guard
+rail, and @derin's rear tyre flattens on the pavement as she leans into her pull;
+nothing floats and nothing is left floating.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+luminous expressive eyes, cloth rendered as real woven cotton with thread relief and
+poster paint standing proud on the weave, chalky lime render and weathered cast
+iron, motivated raking morning sun, sculpted bounce fill, volumetric depth, vivid
+colour separation drawn from scene materials and continuous physically based
+shading.
+
+TEXT: The carrier is a hand-painted cloth banner the class made themselves — a wide
+length of unbleached cream cotton sheeting, hemmed along the bottom, hung flat and
+taut against the ochre render by two cord loops dropped over two old wall hooks.
+The letterform is wide flat-brush poster paint in deep petrol blue laid on by
+children: confident but not uniform, each letter a slightly different weight and
+height, the paint standing proud in a low ridge down the middle of every stroke and
+soaking into the weave at the edges so each outline is feathered by the threads, one
+stroke starting fat where the brush was overloaded and one letter's tail thinning
+where it ran dry; the raking sun catches the top of every ridge so the words read as
+material laid on cloth and never as an overlay. It reads on two lines, six words,
+forty-two letters, all capitals. The first line reads "SORUNLARI FARK EDER," —
+SORUNLARI is one word of nine letters whose ninth is a capital I with no dot; FARK
+is one word of four letters; EDER is one word of four letters followed by a comma.
+The second line reads "ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ" — ÇÖZÜMLERİ is one word of nine
+letters, its first a capital Ç with its cedilla, its second a capital Ö with its
+diaeresis, its fourth a capital Ü with its diaeresis and its ninth a dotted capital
+İ; BİRLİKTE is one word of eight letters whose second and fifth are both a dotted
+capital İ; ÜRETİRİZ is one word of eight letters, its first a capital Ü with its
+diaeresis and its fifth and seventh both a dotted capital İ. Both lines are
+positioned across the upper two thirds of the cloth, large and filling the frame's
+width, with the whole bottom third of the banner left as plain unpainted hem so the
+children's heads, arms and hands cross only blank cloth and no head, hand or arm
+stands in front of any letter. ORIENTATION: both lines read left-to-right in normal
+reading direction, sit level and square to the lens on a wall plane exactly parallel
+to the sensor, and are never mirrored, reversed or rotated; the words appear on this
+one cloth banner and on no other surface in the frame. Every other surface is
+dressed instead of lettered — the shutter is closed with its awning furled and
+strapped, the timetable case returns only sky, and the bin, lamp, post and bicycle
+carry no panel.
+
+NEGATIVE: do not cover, clip, crop or overlap a single one of the forty-two letters
+with a head, hand, arm, cord, hook or the tree trunk; do not let the cloth sag,
+billow, fold, curl or crease across any letter — it stays flat and taut; do not tilt
+the camera up or skew the wall so the lines keystone, bow or run downhill; do not
+add a third line, an extra word, an invented letter, an English word or a signature
+anywhere on the cloth; do not put a second banner, poster, placard, sticker or
+painted word on the wall, shutter, bin, lamp or post; do not turn the paint into
+printed, vinyl, digital, embossed, airbrushed or graffiti lettering; do not let
+anyone hold @derin's corner for her and do not lift, push or steady her chair; do
+not line the four children up evenly facing the lens like a poster or make them
+smile at the camera; do not open any mouth; do not put a car, bin or bag back on the
+clear ramp at the left; do not add confetti, balloons, bunting or an applauding
+crowd; do not add an adult, teacher or official to the frame; no accessibility icon,
+arrow, caption or explanatory sign.
+
+-----
+
+#########################################################################
+### K56 | VO56
+### "Peki sen çevrende hangi toplumsal sorunu fark ettin?"
+### yazı: YOK
+#########################################################################
+
+FİKİR: Efe kadrajın sol kenarında çömelmiş ve baktığı şey kadrajın DIŞINDA — sorunun
+cevabı karede yok, çünkü onu seyirci koyacak.
+
+PLAN: Baskın geometri tek parça boş kaldırım: sağ üçte iki, güneşin boydan boya
+yaladığı kesintisiz taraklı taş, üstünde tek bir koyu bant — çınarın uzun gölgesi.
+Kamera 35mm, çömelmiş göz hizasında, yakın omzu iki adım ötede; profil solda büyük ve
+keskin, sağ taraf bomboş. Bakılan yeri boş bırakmak, kameraya bakan bir çocuktan daha
+çok soru sorar. Renk sahneden: güneşte kavrulmuş fildişi taş, çınar gölgesinin mor-mavi
+bandı, oker ve solmuş gül cephe, petrol mavisi sweat, defter kapağının soluk kartonu.
+FEDA: kadrajın sağ yarısında hiçbir olay yok ve baktığı şey hiç görünmez; Efe'nin sol
+eli ve dizi sol kenarda kesilir.
+
+⚠ @efe1 KADRAJ KİLİDİ: referans duruşu EZİLİR — tam boy ayakta değil, tek dizi
+kaldırıma değecek kadar çömelmiş, dirseği dizinde, defteri KAPALI ve koltuk altında
+sıkışmış, başı sağa, sokağın karşısına çevrilmiş.
+🔴 KAVRAMA ZORUNLU: kapalı defterin nasıl sıkıştırıldığı ve yere basan elin yükü nasıl
+aldığı ayrı ayrı yazılır.
+
+PROMPT:
+High-end theatrical feature-animation 3D at its most cinematic and emotionally
+precise. A 35mm lens sits low at a crouched sixth-grader's eye level on the pavement
+at @kose, his near shoulder barely two paces away so his profile reads large and
+razor sharp in the left third; the plane tree's flaking trunk cuts the extreme left
+foreground, blurred and sliced by the frame edge. @efe1 has dropped into a low
+crouch at the foot of the tree, stopped mid-walk, weight forward, one elbow resting
+on his raised knee, and he is looking straight out across an empty run of pavement
+at something on the far corner that the frame never shows.
+
+The whole right two thirds of the frame is one unbroken stretch of sunlit paving
+with nothing standing on it, and a single long plane-tree shadow lies across it as
+the only dark bar — that emptiness is the subject. His hold is exact: the closed
+soft-cover notebook is clamped between his upper arm and his ribs with its furred
+corner poking out behind him and the pencil stub still on its cover clip, while his
+right hand is planted flat on the paving with the fingers spread and the fingertips
+blanched white where they carry part of his weight. His mouth is closed, his eyes
+are narrowed against the raking sun with one brow lower than the other, and his head
+is turned fully to the right, out of frame, at something across the road. He reads
+clearly as a sixth-grader, around eleven or twelve, pre-teen proportions, warm matte
+tan skin with low specular and no green or grey cast, his face modelled and readable
+in full profile and never turned toward the lens.
+
+The empty run is not bare set dressing but a real morning street: the combed brush
+texture of the paving slabs, one pale square of fresh new concrete where the
+root-lifted slab has been replaced, a drain grate with a leaf caught in it, the worn
+granite kerb polished on its crown, and at the far end the dropped-kerb ramp
+completely clear with its two tactile grooves showing. Behind the pavement the
+four-storey ochre and faded-rose lime render rises with dark green iron balcony
+rails, air-conditioning units and satellite dishes at irregular heights; the
+cast-iron street lamp stands on its fluted base, the green municipal waste bin keeps
+its lid down, the bus-stop pole's timetable case is angled to the sky so nothing
+inside reads, and every shopfront is closed behind a corrugated roller shutter with
+its awning furled and strapped to the frame, so no blank sign panel or empty fascia
+is left anywhere in frame. A low morning sun rakes straight up the length of the
+pavement from the far corner toward the lens: it takes his brow, the ridge of his
+nose, his upper lip and the front of his jaw, the board cover of the notebook under
+his arm, the combed surface of every slab and the crown of the kerb, and it reaches
+nothing inside the plane tree's long shadow and nothing on the far pavement across
+the road, which stay a deep cool indigo.
+
+Three movement beats belong to this exact morning: a dry plane leaf skates a hand's
+width across the empty paving, a thin thread of dust turns slowly in the raking
+light, and a sparrow lands on the bare kerb halfway down the empty stretch. Depth in
+three layers — the plane trunk blurred and cut at the extreme left, his crouched
+profile and the clamped notebook sharp in the near left third, the long empty
+pavement and the clear ramp at its far end softening into gentle bokeh while staying
+fully modelled. His spread right hand presses into the paving with the pads of the
+fingers flattening under the load and a close dark contact shadow beneath the heel
+of the hand, his crouched shoe rolls onto its ball and compresses against the stone,
+and the closed notebook dents the fleece of his sweatshirt where his arm clamps it;
+nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+luminous expressive eyes with painted-in iris depth, tactile weathered street
+materials, combed stone and dry bark rendered as real matter, motivated raking
+morning sun, sculpted bounce fill, volumetric depth, vivid colour separation drawn
+from scene materials and continuous physically based shading without diorama sheen.
+
+TEXT: No readable text anywhere in this frame — the question is the part of the frame
+that is missing, and any legible word would answer it before the viewer can. The
+notebook stays shut so no page shows, the square of replaced concrete stays plain,
+the roller shutters stay down with their awnings furled and strapped, the timetable
+case returns only sky, and the bin lid, lamp base and drain grate carry no panel.
+
+NEGATIVE: never show the thing he is looking at, and let nothing at all enter the
+empty right side of the frame — no person, child, adult, vehicle, animal, bin, bag,
+bollard, bench or bollard-like prop stands anywhere on that stretch, which stays one
+unbroken run of sunlit paving all the way to the far corner; do not line the
+pavement with evenly spaced lamps, bins, bicycles and shop props; do not put a car,
+bin or bag back on the clear ramp at the far end; do not let him open the notebook
+and do not show a page, line, tally or word; do not turn his head or eyes toward the
+lens and do not open his mouth; do not flatten his profile into a graphic shape; do
+not add a thought bubble, question mark, floating icon, arrow or caption; do not
+stamp a date, initials or lettering into the square of new concrete; do not lift a
+shutter or unfurl an awning to expose a blank fascia; do not centre him or make the
+composition symmetrical; no shop sign, licence plate or route number.
+
+-----
+
+#########################################################################
+### K57 | VO57
+### "Cevaplarınızı yorumlara bekliyoruz; meraklı kalın, çözüm üretmeye devam edin!"
+### yazı: "RAMPA" · "ÇÖP" · "LAMBA" (tek yüzey: defter sayfası)
+#########################################################################
+
+FİKİR: Defter ilk kez BİZE dönüyor; üç satır dolu, dördüncü satır boş ve kalemin ucu
+tam onun başında duruyor — video biterken sırada duran şey seyircinin yazacağı satırdır.
+
+PLAN: Baskın geometri, karenin ortasında bize dönmüş açık sayfanın aydınlık dikdörtgeni
+ve içindeki tek boş şerit: dördüncü satır karenin en parlak yeri, çünkü üstünde grafit
+yok. Kamera 50mm, göğüs hizasında, boşalmış rampanın tepesinde; sokak lambasının oluklu
+kaidesi sol ön planı kesiyor. Işık yandan geliyor ve grafiti metalik parlatıyor, o
+yüzden dolu satırlar gri parlıyor, boş satır bembeyaz duruyor. Renk sahneden: kâğıdın
+beyazı, grafitin metalik grisi, kalemin çıplak ahşap kesitleri, oker cephe, el
+halkasında krom kıvılcımı.
+FEDA: Efe'nin gövdesi göbeğinden aşağı kadraj tarafından kesilir; Derin'in yüzünün
+yarısı kaldırılmış sayfanın kenarının arkasında kalır.
+
+⚠ @efe1 / @derin KADRAJ KİLİDİ: ikisinin de referans duruşu EZİLİR — Efe rampanın
+tepesinde, ağırlığı tek kalçasında, gövdesi bize dörtte üç dönük, defteri döndürüp
+kaldırmış; Derin sandalyesini rampanın tepesinde çeyrek dönmüş, gövdesi eğime karşı
+hafif geriye yatık.
+🔴 KAVRAMA ZORUNLU: defteri tutan sol el ve kalemi tutan sağ el ayrı ayrı yazılır;
+kalemin ucu kâğıda GERÇEKTEN değer.
+
+PROMPT:
+High-end cinematic feature-animation 3D still with the dimensional lighting,
+character appeal and finish of a theatrical animated film. A 50mm lens at chest
+height stands close-medium at the top of the now-clear dropped-kerb ramp at @kose,
+three-quarters on; the cast-iron street lamp's fluted base cuts the left foreground,
+soft and sliced by the frame edge. @efe1 is at the crest with his weight on one hip
+and his torso turned three-quarters to us, and for the first time the notebook has
+been brought up and around so the page faces the lens — the pencil tip already
+resting at the start of an empty fourth ruled line, his eyes lifted off the paper
+straight into the lens. His body is cut by the frame below the waist and he is
+deliberately not standing in a full-figure resting pose.
+
+The bright open page is the frame's dominant mass and the empty line inside it is
+the brightest thing in the picture, because the three lines above it are covered in
+graphite and it is not. His hold is exact on both sides: the notebook lies open
+across his left palm with the spine in the crease of his fingers, his left thumb
+hooked over the outer edge of the near page to hold it flat and well clear of the
+writing, the other four fingers spread beneath the back cover; his right hand holds
+the pencil stub in an ordinary writing tripod, thumb and index on the shaft and the
+chewed end against the pad of his middle finger, and the graphite tip genuinely
+touches the paper at the left end of the empty line so the sheet dimples very
+slightly under it. His mouth is closed, one eyebrow is raised and one corner of his
+mouth is pulled in — an invitation, not a smile performed for a camera. Behind him
+at the crest of the ramp @derin has turned her chair a quarter toward him, her near
+hand still closed on the push-rim with the palm open and the thumb along its top
+edge, holding the chair against the slope; her face is lit down one side with the
+other half falling behind the raised page, and she is looking into the lens too.
+Both read clearly as sixth-graders, around eleven or twelve, pre-teen proportions,
+warm matte tan skin with low specular and no green or grey cast, both faces modelled
+and readable.
+
+The corner behind them is the same one the film opened on and it is completely
+clear: the ramp's pale concrete with its two tactile grooves running down behind
+them, the worn granite kerb, the plane tree in its low iron guard, a green municipal
+waste bin with its lid down, the cast-iron street lamp on its fluted base, the
+bus-stop pole whose timetable case is angled to the sky so nothing inside reads, a
+post box, a bicycle locked to the tree guard, and every shopfront closed behind a
+corrugated roller shutter with its awning furled and strapped to the frame, so no
+blank sign panel or empty fascia is left anywhere in frame. A low morning sun rakes
+in from the left along the pavement: it takes the tooth of the open paper and turns
+every graphite stroke on it to a fine metallic shine, the back of his writing hand,
+the exposed wood facets of the sharpened pencil, his cheekbone and the chrome of
+@derin's push-rim, and it reaches nothing below his waist and nothing on the
+pavement behind them, which stays a deep cool indigo band. Colour is built from what
+is actually there — white paper, metallic graphite grey, bare pencil wood, chalky
+ochre render and one warm chrome spark.
+
+Three movement beats belong to this exact moment: the free half of the page trembles
+against his thumb, a small curl of graphite dust shifts on the paper beside the
+pencil tip, and the plane tree's shadow eases a hand's width across the pavement
+behind them. Depth in three layers — the lamp's fluted base blurred and cut at the
+left edge, the open page and both his hands razor sharp in the middle, @derin and
+the clear ramp behind her softening into gentle bokeh while staying fully modelled.
+Every object rests in contact with its surface and casts a soft contact shadow: the
+pencil's graphite tip genuinely touches the paper and leaves one tiny dark point of
+contact with a hair of dust around it, the notebook's board cover presses a shallow
+dent into his palm and rests in contact with it, his weighted shoe compresses
+against the ramp's concrete, and @derin's rear tyre flattens where it holds her
+weight against the slope; nothing floats and nothing is left floating.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+luminous expressive eyes with painted-in iris depth, paper rendered as real matter
+with visible tooth and embossed stroke pressure, graphite carrying a fine metallic
+sheen, tactile weathered street materials, motivated raking morning sun, volumetric
+depth, vivid colour separation from scene materials and continuous physically based
+shading.
+
+TEXT: The letterform is a twelve-year-old's own handwritten pencil capitals in soft
+graphite, pressed into the tooth of paper — the carrier is the left page of @efe1's
+soft-cover observation notebook, the same book he has carried all week, its corners
+furred and its cover creased. The pencil capitals are drawn with uneven letter
+heights, the downstrokes pressed hard enough to emboss the paper so the back of each
+letter reads faintly through the sheet, the strokes catching the raking sun as a
+fine metallic sheen and skipping where the graphite has crossed the paper's tooth,
+one word gone over twice where the first pass came out too faint. Three ruled lines
+carry three words, one word per line, all capitals, thirteen letters in total: the
+first line reads "RAMPA" — one word, five letters; the second reads "ÇÖP" — one
+word, three letters, its first a capital Ç with its cedilla and its second a capital
+Ö with its diaeresis; the third reads "LAMBA" — one word, five letters. Beside each
+word, in the margin, stands a short column of pencil tally strokes, four uprights
+crossed by a fifth. Beneath the third word a fourth ruled line is left completely
+empty, with nothing on it but the pencil's graphite tip resting at its left end. The
+page sits in the middle of the frame turned flat and square to the lens, large
+enough that all three words, all three tally columns and the empty line read
+clearly, and nothing crosses it. ORIENTATION: every word reads left-to-right in
+normal reading direction, sits level along its own ruled line, and is never
+mirrored, reversed or rotated; the words appear on this one notebook page and on no
+other surface in the frame. Every other surface is dressed rather than lettered —
+the shutters are closed with their awnings furled and strapped, the timetable case
+returns only sky, and the notebook's own cover, the bin, the lamp and the post box
+carry no marking.
+
+NEGATIVE: keep the fourth ruled line completely empty — no letter, word, mark, tally,
+dot or stray stroke appears on it or anywhere below it; exactly three words appear on
+the page and no fourth word, invented letter, number or English word is added
+anywhere on the paper; only the left page carries writing and the facing page stays
+turned away and unreadable; do not print a title, logo or brand name on the notebook
+cover; do not lift the pencil off the paper, hover it in mid-air or replace it with a
+pen, marker or stylus; do not deform, duplicate or fuse the fingers of either hand and
+do not let the notebook float free of his palm; do not put a car, bin, bag or object
+back on the ramp behind them; do not let anyone push, steady or hold @derin's chair on
+the slope; do not open either mouth or make them speak, wave, wink or give a thumbs-up;
+do not flatten either face into a graphic shape; do not add a subscribe button, arrow,
+speech bubble, sparkle or interface element; do not lift a shutter or unfurl an awning
+to expose a blank fascia; no shop lettering, licence plate or caption.
+
+-----
+### S6 SONU · K52-K57 · 6/6
+

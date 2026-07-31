@@ -1,0 +1,163 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — YENİDEN ÜRETİLECEK REFERANSLAR
+=========================================================================
+
+MEVCUT VE KULLANILACAK
+  @efe   — Magnific'te mevcut, yeniden BASMA
+  @derin — Magnific'te mevcut, yeniden BASMA
+
+YENİDEN BASILACAK
+  1. @kose
+  2. @sinif
+  3. @kutu
+
+Her prompt ayrı basılır. Ürettikten sonra görseli yukarıdaki handle ile
+Magnific'e referans olarak kaydet. Bunlar sahne karesi değil; süreklilik
+çıpasıdır. Üçü de aynı high-end vivid uzun metraj animasyon render ailesindedir.
+
+
+#########################################################################
+### REFERANS 1 — @kose
+### Türk mahallesi sokak köşesi · ana hikâye mekânı
+#########################################################################
+
+35mm lens at f/5.6, eye-level wide three-quarter master view of one specific
+street corner in a Turkish neighbourhood, composed as a high-end theatrical
+feature-animation environment reference. The dropped-kerb pedestrian ramp is
+the unmistakable anchor: pale warm-grey concrete cutting diagonally through
+the granite kerb in the near third, two shallow tactile grooves crossing its
+surface, one chipped corner exposing small aggregate. The ramp is completely
+open and readable.
+
+A mature plane tree rises beside it from a square of dark soil inside a low
+weathered iron guard. Behind it, four-storey apartment buildings step around
+the corner in warm ochre, faded coral and dusty rose lime render. Their balconies
+have deep green iron rails, translucent laundry, terracotta flowerpots, irregular
+air-conditioning units and small satellite dishes. Ground-floor shops are
+closed behind aged corrugated shutters; fabric awnings are rolled and tied.
+The façades are richly built and inhabited, never a blank architectural shell.
+
+Street furniture is memorable but naturally placed: one deep-green municipal
+bin with its lid shut, one fluted cast-iron lamp, one red-brown post box, a
+bus-stop pole whose glass case reflects only sky, and one worn bicycle locked
+to the tree guard. The road carries a slightly sunken manhole cover, faded
+crossing paint and a narrow rain gutter. No people and no vehicles.
+
+Early-morning light enters from the street opening at left, laying a broad
+warm-golden band across the ramp and lower façades while cool lavender-blue
+open-sky bounce shapes the shaded walls. Balcony flowers, green rails and the
+coral render create vivid colour through real materials and light—not flat
+saturation. Fine haze catches between the buildings; leaf translucency and
+soft atmospheric depth give the scale of a premium animated feature. Concrete,
+granite, peeling lime render, oxidised iron, rubber and bark are materially
+distinct. Continuous physically based feature-animation shading, elegant
+appeal-driven forms, no universal prop overscale.
+
+TEXT: No readable text. Shutters have no shop names; the timetable case returns
+only sky.
+
+NEGATIVE: do not put a car, person or moving bicycle on the ramp; do not widen,
+relocate or hide the ramp; do not turn the corner into a spotless European
+tourist street, a suburban avenue or a flat architectural visualisation; do not
+make every building identical in colour or height; do not make the street props
+toy-sized, glossy or evenly spaced; no shop lettering, road sign, licence plate,
+logo or English text.
+
+
+#########################################################################
+### REFERANS 2 — @sinif
+### Altıncı sınıf dersliği · çözüm toplantısı mekânı
+#########################################################################
+
+32mm lens at f/5.6, standing eye height from the back-left corner of one specific
+Turkish sixth-grade classroom, a high-end theatrical feature-animation
+environment reference with vivid lived-in production design. The room has
+three staggered rows of scratched satin-varnish timber desks on dark tubular
+steel frames, chairs pushed in at slightly different angles, leaving a clear
+central path toward the front wall.
+
+The front wall is anchored by one large modern interactive smart board mounted
+flat and switched completely off, its dark graphite screen reflecting only a
+soft rectangle of window light. A narrow rail beneath it holds two capped
+markers and one felt eraser. Beside it stands a teacher's desk with a stack of
+dog-eared exercise books, a ceramic pencil cup, a stapler and a small potted
+plant leaning toward the windows.
+
+The long window wall is alive with high-end feature-film detail: tall panes,
+one slightly crooked cream blind, sun-warmed dust suspended in the light,
+a painted radiator with one knitted glove drying on it, and a deep teal curtain
+gathered at the end. The opposite wall is already dressed with overlapping
+children's paintings, a rolled wall map tied shut, a cork strip layered with
+papers turned away from the lens, low shelves of box files and handmade clay
+objects. Coat hooks by the door carry two school bags and one forgotten rust-
+orange jacket. Nothing looks arranged for a catalogue.
+
+Clear late-morning sun falls in broad soft bands across the desks, turning wood
+honey-gold and leaving sculpted violet-blue shade beneath the chair frames.
+Accents of teal curtain, coral jacket, yellow pencil cup and children's artwork
+make the room vivid without becoming rainbow noise. Chalky painted walls,
+worn wood grain, powder-coated metal, woven fabric and dark screen glass remain
+materially distinct. Deep three-layer space, gentle volumetric dust, continuous
+physically based feature-animation shading, rich theatrical animation finish.
+No people.
+
+TEXT: No readable text. The board is off; paintings and papers contain only
+soft non-semantic shapes.
+
+NEGATIVE: do not replace the smart board with a blackboard or chalkboard; do not
+turn on the screen or invent an interface; do not make the classroom empty,
+sterile, symmetrical or newly furnished; do not align every chair and desk
+perfectly; do not fill the walls with legible posters or random English words;
+do not make the room photorealistic, flat-lit, miniature-like or plastic-glossy;
+no students, teacher, school logo or institutional name.
+
+
+#########################################################################
+### REFERANS 3 — @kutu
+### Üçlü ayrıştırılmış atık kutusu · tekrar eden hero-prop
+#########################################################################
+
+70mm lens at f/5.6, waist-height three-quarter product-character view of one
+connected set of three municipal separated-waste bins, rendered as a high-end
+theatrical feature-animation hero prop rather than a sterile catalogue object.
+All three bins share exactly the same moulded body, height and lid geometry and
+stand side by side in one weathered galvanised-steel cradle.
+
+Left bin: deep vivid blue, with a narrow paper slot in its lid. Middle bin:
+warm ochre-brown, with a round glass-bottle opening. Right bin: muted rich green,
+with one broad plastic opening. Their polyethylene surfaces have fine mould
+grain, soft chalking from sun, pale scuff arcs beneath the lids and small dark
+handling marks around the apertures. The shared steel cradle has a dull spangled
+finish, one slightly bent foot plate and a short chain fixed to a ground anchor.
+All feet rest firmly on worn stone paving with convincing contact shadows.
+
+On each front, one hand-stencilled Turkish word is painted directly into the
+plastic grain in matte black. Blue reads "KAĞIT" — five capital letters,
+K-A-Ğ-I-T, with a breve above Ğ and no dot above the capital dotless I. Brown
+reads "CAM" — three capital letters, C-A-M. Green reads "PLASTİK" — seven capital
+letters, P-L-A-S-T-İ-K, with a dot above the capital İ. Each word reads normally
+left-to-right, one word per bin, large and unobstructed.
+
+The set stands in a small paved schoolyard service corner rather than a blank
+studio: a coral wall soft in the distance, one band of cobalt shadow, a few dry
+plane leaves near the cradle and warm late-afternoon light grazing the plastic
+grain. Blue, ochre and green remain rich but materially believable. Continuous
+physically based feature-animation shading, dimensional lid edges, tactile
+plastic and metal, premium animated-feature finish.
+
+TEXT: Only the three exact Turkish words "KAĞIT", "CAM" and "PLASTİK".
+
+NEGATIVE: do not generate more or fewer than three bins; do not change their
+shared body shape or relative size; do not swap the blue, brown and green order;
+do not add recycling arrows, triangular symbols, pictograms, barcodes or brand
+marks; do not misspell, mirror, duplicate or split any of the three words; do
+not add a dot above the dotless I in "KAĞIT" or remove the dot above İ in
+"PLASTİK"; do not make the bins pristine, translucent, wet, toy-like or
+high-gloss; no extra label, fourth colour or loose detached lid.
+
+=========================================================================
+ÜRETİM SONRASI
+1. İlk görseli @kose adıyla kaydet.
+2. İkinci görseli @sinif adıyla kaydet.
+3. Üçüncü görseli @kutu adıyla kaydet.
+4. Pilot karelerde yalnız bu handle'ları kullan; referansın görünüşünü sahne
+   promptunda yeniden tarif etme.

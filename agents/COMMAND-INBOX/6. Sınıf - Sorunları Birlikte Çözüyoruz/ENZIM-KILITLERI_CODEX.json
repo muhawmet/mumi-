@@ -1,0 +1,52 @@
+{
+  "project": "6. Sınıf - Sorunları Birlikte Çözüyoruz",
+  "scope": "K01-K57",
+  "pilot": "K01-K06",
+  "format": "high-end vivid theatrical feature-animation 3D",
+  "storyLocks": {
+    "voCount": 57,
+    "frameCount": 57,
+    "characters": [
+      "@efe",
+      "@derin"
+    ],
+    "locations": [
+      "@kose",
+      "@sinif"
+    ],
+    "objectReference": "@kutu",
+    "derivedFrames": {
+      "K03": "K02",
+      "K05": "K04",
+      "K52": "K02",
+      "K53": "K04"
+    }
+  },
+  "visualLocks": [
+    "Her kare tek bir dramatik fikir ve tek bir baskın geometri taşır.",
+    "Arka plan zengin ve yaşayan bir film dünyası kurar ama dramatik odağı çalmaz.",
+    "Aynı amber-indigo palet bütün karelere kopyalanmaz; renk sahnenin ışığından doğar.",
+    "Global yüzde 10-15 prop overscale uygulanmaz.",
+    "Her karede üç canlı unsur zorunluluğu yoktur.",
+    "Bütün yüzleri ve bütün materyalleri aynı anda okunur kılma zorunluluğu yoktur.",
+    "Asimetri, foreground occlusion, sinematik netlik ve uzun metraj animasyon filmi duygusu korunur.",
+    "Dünya zengin, yaşayan ve katmanlıdır; ayrıntılar güçlü odak hiyerarşisiyle yönetilir.",
+    "Vivid renk; kontrollü ışık, malzeme ve atmosfer ayrımı olarak kurulur, düz doygun boya olarak değil.",
+    "Belgesel, minimal 3D, infographic ve Fern-benzeri görsel dil bu projenin hedefi değildir.",
+    "Oyuncak şehir, katalog kadrajı ve figürin pozu reddedilir."
+  ],
+  "textPolicy": [
+    "Yazı yalnız hikayenin fiziksel olarak gerektirdiği karede vardır.",
+    "Karakteri tanıtmak için isim etiketi üretilmez.",
+    "Kalem tutan karakter okunabilir yazı yazmaz.",
+    "Motion sırasında yalnız anlamsız karalama veya çizgi izi oluşabilir; harf, kelime ve sayı oluşmaz."
+  ],
+  "negativePolicy": [
+    "NEGATIVE her kare için sıfırdan yazılır.",
+    "Önce karenin muhtemel kötü renderi tahayyül edilir.",
+    "Yalnız kompozisyonu, kimliği, eylemi veya anlamı gerçekten bozacak sahne-spesifik sapmalar engellenir.",
+    "Ezber genel negatif kuyruğu kopyalanmaz.",
+    "Bir karede gerekli olan negatif bir sonraki kareye otomatik taşınmaz."
+  ],
+  "status": "PILOT_AUTHORED_AWAITING_FRAME_VERDICT"
+}

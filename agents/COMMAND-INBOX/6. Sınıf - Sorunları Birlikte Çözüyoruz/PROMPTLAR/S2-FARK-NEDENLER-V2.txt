@@ -1,0 +1,857 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S2 · FARK ETME VE NEDENLER · V2
+Kapsam: K12–K22 (VO12–VO22) · HIGH-END VIVID FEATURE-ANIMATION
+Motor: Nano Banana 2 · dünya: pixar_3d_edu · register: EDU
+=========================================================================
+Bu dosya CODEX-PILOT K01-K06 çıtasına göre yeniden yazıldı. Fikirler
+korundu; anlatım yükseltildi. Her karede tek dramatik fikir, tek baskın
+geometri, o sahnede gerçekten bulunan malzemelerden doğan renk akoru,
+üç katmanlı derinlik ve ön plan örtmesi vardır. NEGATIVE alanı hazır
+liste değildir — her karenin kendi muhtemel kötü üretimi engellenir.
+
+SEKANSIN OMURGASI: Efe'nin fark etmesi bir cümle değil, bir GÖZ
+YÜKSEKLİĞİ değişimidir. Derin'in göz hizası oturur yükseklikte, Efe'ninki
+ayakta. Bu sekansta kamera üç kez yetişkin-ayakta hizasının altına iner
+(kaldırım taşı · Derin'in oturur göz hizası · teker göbeği) ve Efe her
+seferinde kendini o hizaya indirir — çömelerek, başını arkaya atarak.
+Karşı-nota trafik karesidir: orada bir basamak YUKARI çıkar ve sıkışıklığı
+yukarıdan okur. Yükseklik bu sekansta bir cümle değil, bir argümandır.
+=========================================================================
+
+
+#########################################################################
+### K12 | VO12
+### "Efe o hafta mahallesine ilk kez dikkatle baktı."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Efe kaldırımdaki tek DURAN gövdedir; dikkat, akışın içinde durmaktır.
+
+PLAN: Baskın geometri kaldırımı boydan boya kesen tek yatay hareket şeridi —
+gövdeler, çantalar, dirsekler tek bir bulanık banda kaynamış. Efe o bandı
+ortasından kesen tek dik ve net kütle. Ön planda bir yabancının paltosu
+kadrajın sol üçte birini bulanık kaplar. Renk sokağın kendi malzemesinden
+doğar: olive kepenk, tarçın-gül sıva, çınar yeşili, defterin soluk kartı.
+
+PROMPT:
+High-end cinematic feature-animation 3D still with the dimensional lighting and
+character appeal of a theatrical animated film. A 50mm lens sits down inside the
+pavement traffic at a sixth-grader's chest height. The dominant shape is one
+continuous horizontal band of movement crossing the whole frame: Turkish/Anatolian
+passers-by of mixed ages reduced to coats, bags, sleeves and elbows smeared into
+a single travelling smear that keeps its weight
+and cloth weave through the blur and never collapses into flat dark shapes.
+Cutting that band dead is one vertical still mass — @efe1, planted with his feet
+apart and his weight settled back, an open notebook held at chest height in both
+hands and the pencil hovering a finger's width above the page, not yet writing.
+This overrides any resting studio stance: his shoulders roll slightly forward,
+one heel is lifted a fraction off the slab, and his eyes travel sideways along
+the street instead of down at the paper. His mouth is closed and he never looks
+at the lens.
+
+A stranger's dark coat passes so near the lens on the left that its sleeve fills
+a third of the frame in soft blur. @kose's pavement is lavishly built behind him
+and simplified by that blur: uneven slabs with one lifted by the plane root, the
+green municipal bin, the fluted iron lamp, a bicycle chained to the tree guard,
+the shelter's glare-blank timetable case, crates leaning in a doorway, and every
+shopfront closed behind a corrugated roller shutter with its awning furled and
+strapped to the frame. Colour is taken only from what this corner actually owns:
+dull olive shutter ribs, cinnamon-rose render above them, plane-leaf green in the
+tree guard, and the notebook's pale card — the one still bright surface inside a
+moving frame — against his petrol-blue hood.
+
+Three movement beats belong to this exact week: the open page's outer corner
+lifts a hair in the draught of a passing body, a dry plane leaf skids past his
+shoe, and the stranger's coat hem is still swinging as it leaves the frame.
+Depth in three layers — the coat sleeve large and soft in the near plane, @efe1
+and the open notebook razor sharp in the middle, shelter and far pavement
+dissolving into gentle bokeh while staying fully modelled. His planted shoe
+rests in contact with the gritted slab and compresses against it; the notebook
+carries real downward weight into both wrists and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+luminous eyes, motion blur painted as smear that keeps mass and cloth weave,
+tactile street materials — chalky render, dry plane bark, worn denim, corrugated
+steel — motivated overhead daylight, volumetric depth, strict focal hierarchy
+holding one still figure sharp inside a moving world, ambient occlusion painted
+in and never raytraced-hard, continuous physically based shading.
+
+TEXT: No readable text. The notebook page shows only the rhythm of ruled lines
+and a column of pencil tally marks down its margin; no word or letter resolves.
+Every shopfront is closed behind its shutter and every awning is furled and
+strapped, so no blank sign panel or empty fascia exists anywhere in the frame,
+and the timetable case is angled to the sky and reads glare-blank.
+
+NEGATIVE: do not freeze the passing pedestrians so the contrast between his
+stillness and their movement disappears; do not reduce them to flat black
+silhouettes or featureless cut-outs; do not centre @efe1 in a hero pose or show
+him cleanly head to toe like a character sheet; do not let him walk, and do not
+let his eyes drop to the page or turn to the lens; do not resolve any pencil mark
+into a word, letter or numeral; do not space bins, lamps, bicycles and crates
+evenly along the pavement like a toy set; no shop lettering, no route board, no
+name label saying EFE.
+
+
+#########################################################################
+### K13 | VO13
+### "Kaldırım rampasının önünde her sabah başka bir araba duruyordu."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Rampanın üstünde bu sabah BAŞKA bir araç var; tekrarın kanıtı araç
+değil, Efe'nin kendini o rampanın hizasına indirmiş olmasıdır.
+
+PLAN: Baskın geometri soluk rampanın çapraz şeridi — K02'nin aynı oku, ama bu
+kez onu kesen kütle mint-yeşili bir kamyonet, vişne bir otomobil değil. Kamera
+kaldırım taşı yüksekliğinde, yani Derin'in göz hizasında; Efe çömelerek o hizaya
+kendini indirmiştir. Renk tebeşir beton, soluk mint sac, pas turuncusu ağaç
+korkuluğu ve grafit grisinden kurulur.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold visual storytelling and vivid
+production design. A 35mm lens rests at kerb height on the pavement, low enough
+that the world is read from a seated person's eye level. The pale dropped-kerb
+ramp enters from the lower left as a strong diagonal and should have run clear to
+the upper right, but a small faded mint-green delivery van lies across it with
+its front tyre climbed onto the tactile grooves; the compressed rubber and the
+broken pale line of the ramp are the sharpest marks in frame. The vehicle is not
+the same one as before, and that difference is the point.
+
+@efe1 is crouched low beside it on one knee with the notebook balanced on the
+other, the pencil pinched between thumb and first two fingers and pressed to the
+margin — this overrides any standing rest pose; he has put himself down at the
+height of the thing he is recording. His head is tipped down but his eyes flick
+sideways to the tyre, checking what he writes against what is in front of him,
+mouth closed and set. @kose is richly built and falls away around them: the
+granite kerb, the plane tree in its rust-flaked iron guard, the green bin, the
+fluted lamp, a bicycle locked to the guard, and every shopfront closed behind a
+corrugated roller shutter with its awning furled and strapped. Colour comes from
+this morning's own materials — chalky sun-warmed concrete, dusty mint sheet
+metal, granular orange rust on the tree guard, graphite grey on the side of his
+hand, and one violet-blue cast shadow running out of the wheel arch. The van's
+paint carries weather chalking and road dust beneath a dull finish, never
+showroom gloss.
+
+Three movement beats belong to this morning: graphite dust lifts where the pencil
+drags, a thin veil of warm exhaust shimmer thins above the tailpipe, and a plane
+leaf turns over on the ramp's slope. Depth in three layers — the ramp's chipped
+lip large and soft across the near plane, the climbed tyre and the open notebook
+sharp in the middle, tree, bin and shutters softening into gentle bokeh. The
+front tyre flattens visibly where it grips the slope and holds a dark crescent
+beneath it; his knee rests in contact with the gritted paving and dents it, and
+nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+believable vehicle mass and tyre deformation, weather-softened tactile materials,
+motivated low morning sun with sculpted bounce, deliberate ten to fifteen percent
+overscale on street props for child-safe readability, volumetric atmosphere,
+ambient occlusion painted in and never raytraced-hard, continuous physically
+based shading at feature-film scale rather than miniature-diorama sheen.
+
+TEXT: No readable text. The van's flanks stay unpainted and unlettered and carry
+no plate, badge, phone number or sticker. The notebook margin carries only short
+pencil tally strokes, the last still dark from the pressure of being made; they
+are counts, not writing. Every shutter is closed and every awning furled, so no
+blank sign panel exists anywhere in the frame.
+
+NEGATIVE: do not park the van neatly beside the ramp or leave a usable gap; do
+not bury the ramp so completely that the tactile grooves vanish — the exposed
+grooves are what prove the blockage; do not raise the camera to adult standing
+height; do not stand @efe1 up or turn him toward the lens; do not resolve any
+tally stroke into a letter, word or numeral; do not give the van a company name,
+plate, badge or livery; do not make the van glossy, oversized or toy-bright; no
+road arrow, accessibility icon, warning sign or shop lettering.
+
+
+#########################################################################
+### K14 | VO14
+### "Köşedeki çöp kutusu taşmış, poşetler kaldırıma yayılmıştı."
+### yazı: "ÇÖP"
+#########################################################################
+
+FİKİR: Taşma bir yığın değil, KAPANAMAYAN bir kapaktır — ve poşetini elinde
+tutup duran kadın onu bir kez daha kapatmaya çalışmayacak kadar geç kalmıştır.
+
+PLAN: Baskın geometri açık kalmış kapağın tek parlak kaması — kadrajın üst
+ortasında eğik duran aydınlık bir düzlem; altında poşetler kaldırım boyunca
+koyu, çökmüş bir kütle olarak yayılır. Kadın tek net insandır. Renk belediye
+yeşili emaye, düğümlü poşetlerin mürekkep mavisi-siyahı, morarmış gölge ve
+gergin poşetin üstündeki tek beyaz kenardan kurulur.
+
+PROMPT:
+High-end vivid feature-animation 3D at close range, 50mm lens at chest height on
+the corner. The frame's dominant shape is a single bright wedge: the municipal
+bin's hinged lid, forced a hand's width open by the bulging bag beneath it and
+tilted up into the light so it reads as a lit plane that cannot come down. Under
+it everything darkens — four knotted bags slumped around the bin's foot spread
+along the kerb line as one low collapsed mass, one of them split with a plastic
+bottle showing through the tear.
+
+Standing beside it, a Turkish/Anatolian woman of about seventy-five in a
+headscarf and a long buttoned cardigan holds her own small bag by its knotted
+neck: thumb over the knot, fingers curled beneath, the weight pulling her wrist
+down and her shoulder with it. Her mouth is pressed thin and her eyes travel the
+stacked bags, deciding — she is looking for somewhere to put it and there is
+nowhere. She is not appealing to the camera and never looks at it. @kose is fully
+dressed behind her: the plane tree in its iron guard with litter caught against
+the ironwork, the granite kerb, the fluted lamp, a bicycle locked to the guard,
+and every shopfront closed behind a corrugated roller shutter with its awning
+furled and strapped. Colour is built only from what is here — municipal enamel
+green chalked by weather, ink-blue and black knotted plastic, bruised violet in
+the pocket at the bin's foot, dusty plum in her cardigan, and one hard white edge
+running along the taut top of the bulging bag. Plastic reads as thin stretched
+film with strain sheen, not as sculpted rubber.
+
+Three movement beats belong to this afternoon: the propped lid rocks a few
+degrees on the bag beneath it, a loose sheet of plastic lifts at the pile's edge,
+and litter trembles against the tree guard's ironwork. Depth in three layers —
+the split bag large and soft across the lower left, the bin, the propped lid and
+the waiting woman sharp in the middle, the tree and the shutters softening into
+gentle bokeh while staying fully modelled. The stacked bags slump into one
+another with dark creases where they meet, the bin's two wheels rest in contact
+with the paving through two small hard points, and the knotted bag she holds
+pulls her wrist down with real weight — nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan
+skin with low specular and no green or grey cast, luminous restrained elderly
+acting without caricature, textured polyethylene and stretched thin film given
+true material behaviour, chalky render and granular rust nearby, motivated high
+daylight with sculpted bounce, volumetric depth, ambient occlusion painted in and
+never raytraced-hard, continuous physically based shading with feature-film
+dimensionality.
+
+TEXT: The carrier is the moulded flank of the municipal bin. The letterform is
+stencilled matte black paint on textured polyethylene, thin on the raised mould
+grain and thicker in the low spots, chalked by weather, one letter partly crossed
+by a scuff arc where the lid has swung against it. It reads "ÇÖP" — one word,
+three letters, all capitals, the first a capital Ç with its cedilla. ORIENTATION:
+the word reads left-to-right in normal reading direction, is never mirrored,
+reversed, rotated or flipped, and appears on this one named object and on no
+other surface in the frame. Every shutter is closed and every awning furled, so
+no other lettering-capable surface is left bare.
+
+NEGATIVE: do not let the lid close or sit flush; do not scatter loose rubbish
+across the whole pavement — the bags stay knotted and only the one already split
+shows its contents; do not print a label, brand or barcode on the plastic bottle;
+do not have the woman set her bag down, throw it, or turn to the camera for
+sympathy; do not make her frail, weeping or pitiable; do not add a second passer-
+by, a street cleaner or a municipal worker into this frame; do not render the
+bags as smooth sculpted lumps without film strain; no recycling triangle, arrow,
+pictogram or English word anywhere.
+
+
+#########################################################################
+### K15 | VO15
+### "Sokak lambaları güpegündüz yanmaya devam ediyordu."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Ampul öğle güneşinin içinde yanıyor ve HİÇBİR ŞEYİ aydınlatmıyor —
+israf bir fazlalık değil, yere hiç düşmeyen bir ışıktır.
+
+PLAN: Baskın geometri direğin tek dikey siyah sütunu; arkasında ağarmış beyaz
+gökyüzü düz bir alan olarak durur, sokak buharlaşır. Kamera DERİN'İN OTURUR
+GÖZ HİZASINDA: Derin'in yüzüyle göz göze gelinir, Efe ise yukarı doğru kesilen
+uzun bir gövde olur. Fark cümleyle değil kadrajla söylenir. Renk dökme demirin
+neredeyse siyahı, ağarmış gök, ampulün küçük donuk turuncu közü, Derin'in pas
+turuncusu poları ve Efe'nin petrol mavisi.
+
+PROMPT:
+High-end theatrical feature-animation 3D, 35mm lens placed at the eye height of
+someone seated in a wheelchair, tilted up the lamp post. The dominant shape is a
+single near-black vertical column splitting the frame — the cast-iron lamp on its
+fluted base, granular rust at the joint, its glass grimy — standing against a
+bleached flat field of white noon sky that burns the street out behind it. Inside
+that glass the filament glows at full strength in the middle of the day, a small
+dull orange coal, and its light lands on absolutely nothing: no pool on the
+paving, no warm patch on the post, no rim on either child. Its uselessness is the
+whole image.
+
+Because the camera sits low, @derin is met level, face to face, closest to the
+lens: her chin lifted, her eyes up into the sky light, her right hand closed on
+the chrome push-rim with the palm open, thumb along the rim's top edge and
+fingers curled beneath it, holding the chair still against the camber. @efe1
+stands beyond her and reads as a tall body cut by the upper frame, his head tipped
+right back, his weight on his heels, one hand shading his eyes, mouth open on a
+short breath — this overrides any resting studio stance for either of them, and
+neither looks at the lens. The plane tree's lowest branch crosses the upper right
+corner, large and out of focus, and drops a loose net of leaf shadow across the
+pavement — proof that the sun, not the lamp, is doing the lighting. @kose falls
+away in haze: the granite kerb, the green bin, the shelter with its glare-blank
+timetable case, a bicycle at the tree guard, and every shopfront closed behind a
+corrugated roller shutter with its awning furled and strapped.
+
+Three movement beats belong to this exact noon: the filament pulses very slightly
+inside the dirty glass, a plane leaf turns as it falls past the post, and one
+escaped strand of @derin's hair lifts across her cheek. Depth in three layers —
+the low branch large and soft across the near plane, the lamp head and @derin's
+upturned face sharp in the middle, @efe1 and the far pavement softening into the
+white haze. @derin's rear tyre rests in contact with the camber through a
+compressed patch that carries her weight, the lamp's fluted base meets the
+paving with a hard dark ring, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen
+acting, sophisticated warm matte tan skin with low specular and no green or grey
+cast, luminous expressive eyes, believable manual-wheelchair mechanics with no
+medical-display polish, cast iron with satin paint and granular rust, blown
+overcast-bright sky handled as luminance rather than white fill, motivated
+overhead sun, ambient occlusion painted in and never raytraced-hard, continuous
+physically based shading at feature-film scale.
+
+TEXT: No readable text anywhere. A lamp burning at noon and casting nothing is
+the entire argument, and a label would explain what the missing shadow already
+says. The lamp post carries no plate, number or municipal marking; the timetable
+case is angled to the sky and reads glare-blank; every shutter is closed and
+every awning furled, so no bare sign panel exists in the frame.
+
+NEGATIVE: do not let the lamp cast anything — no glow pool on the paving, no warm
+patch on the post, no rim light on either child, no lens flare, no visible beam;
+do not switch the lamp off; do not raise the camera to standing adult height, and
+do not tilt down at @derin from above; do not frame her as a subject being looked
+at rather than a person being met; do not detach, duplicate or melt her fingers
+into the push-rim, and do not let the chair roll; do not turn the wheelchair into
+hospital equipment with straps, headrest or clinical white parts; do not make
+either child smile bravely at the lens or look sad on cue; no plate, number or
+lettering on the post, no accessibility icon, no caption.
+
+
+#########################################################################
+### K16 | VO16
+### "Okulun karşısındaki yolda güvenli bir yaya geçidi yoktu."
+### yazı: "YAVAŞ"
+#########################################################################
+
+FİKİR: Yola yazılmış uyarı lastik altında ortasından silinmiş — önlem kâğıt
+üstünde alınmış, asfaltta alınmamıştır; çocuklar tam o silinmiş harfin
+üstünden geçiyor.
+
+PLAN: Baskın geometri yolun kendisi: kadrajı boydan boya dolduran, hiçbir beyaz
+şeridi olmayan geniş koyu bant. Onun içindeki tek soluk iz aşınmış yazıdır ve
+perspektifte uzaklaşarak kaçar — YOKLUK böyle görünür hale gelir. Kamera teker
+göbeği yüksekliğinde. Net insan bir; ikincisi omuz arkasında yumuşak. Renk
+lastikten gümüşleşmiş asfalt, kemik beyazı boya, bordo okul kazağı ve
+kaldırım korkuluğunun çentikli belediye mavisi.
+
+PROMPT:
+High-end vivid feature-animation 3D, 35mm lens set at the height of a wheel hub,
+just above the asphalt on the far side of the kerb. The road fills the frame as
+one broad dark band running from the lower edge into the distance, and it is
+conspicuously empty: no zebra bars, no beacon, no signal, nothing painted to make
+crossing safe. The single pale mark inside that darkness is a warning word laid
+down years ago in thick road paint and then destroyed by use — polished away to
+bare aggregate along both tyre tracks so the middle of every letter is gone,
+leaving only the outer thirds standing rough and chalk-pale, stretched long the
+way road lettering is, and running away from the lens in perspective.
+
+Straight over it comes a Turkish/Anatolian girl of about eleven or twelve in a
+maroon school jumper, sixth-grade proportions, caught between two steps with her
+bag sliding off one shoulder and her head turned hard to check the traffic, mouth
+open mid-word to whoever is behind her. She is not posed and never looks at the
+lens. Half a pace back, a Turkish/Anatolian boy of the same sixth-grade
+age in a navy fleece is mostly hidden behind her shoulder — only his forward hand, one strap and the lower half of his
+face read, soft. Behind them the school railing runs along the far pavement with
+a chained gate and a bicycle rack, parked cars sit nose to tail along both kerbs,
+and every shopfront on the near side is closed behind a corrugated roller shutter
+with its awning furled and strapped. Colour is scavenged from this road alone:
+asphalt silvered to pewter where tyres polish it and blued in the kerb shadow,
+bone-white worn paint, deep maroon wool, and the chipped municipal blue of the
+railing — one cool accent in a warm grey world.
+
+Three movement beats belong to this crossing: heat shimmer lifts off the asphalt
+further down the road, the girl's bag slides another finger's width off her
+shoulder, and a leaf trembles in the drain grate. Depth in three layers — a
+kerbstone and drain grate large and soft across the lower foreground, the ruined
+word and the leading girl sharp in the middle, railing and parked cars dissolving
+into gentle bokeh while staying fully modelled. Her leading shoe is still in the
+air and closes no shadow beneath it; her trailing foot rests in contact with the
+grit and flattens it, and the bicycle rack's feet press small hard dark points
+into the far pavement.
+
+STYLE: theatrical high-end feature-animation 3D; appealing sixth-grade
+proportions, sophisticated warm matte tan skin with low specular and no green or
+grey cast, luminous eyes, road-paint destruction rendered as real material loss
+down to exposed aggregate, asphalt with tyre-polish anisotropy, motivated high
+sun, deliberate ten to fifteen percent overscale on street props for child-safe
+readability, ambient occlusion painted in and never raytraced-hard, continuous
+physically based shading.
+
+TEXT: The carrier is the asphalt of the near lane itself. The letterform is thick
+road-marking paint in wide strokes, worn through in the middle of every letter by
+tyre polish so only the outer thirds survive, stretched long in road-lettering
+proportion. It reads "YAVAŞ" — one word, five letters, all capitals, the last a
+capital Ş with its cedilla. ORIENTATION: the word reads left-to-right in normal
+reading direction, is never mirrored, reversed, rotated or flipped, and appears
+on this one surface and on no other surface in the frame. The school railing
+carries no board or banner, the parked cars carry no plates or badges, and every
+shutter is closed with its awning furled.
+
+NEGATIVE: do not paint a zebra crossing, crossing beacon, traffic signal or
+pedestrian island anywhere in the frame — the absence is the subject; do not
+repaint the worn word whole, and do not let its missing middles fill back in; do
+not add a third or fourth child, a crossing guard or a waiting adult; do not
+raise the camera to standing height; do not let the leading girl look at the
+lens or smile; do not give the parked cars plates, badges or model names; no
+English road marking, no arrow, no school sign lettering.
+
+
+#########################################################################
+### K17 | VO17
+### "Bir sorunu çözmek, önce onu doğru fark etmekle başlar."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Efe yürüdüğü sokağa geri dönüp bakıyor ve dört ayrı sorun tek bir ışık
+koridorunun üstünde dört çentik olarak duruyor — fark etmek yeni bir şey
+görmek değil, aynı şeyleri bir arada görmektir.
+
+PLAN: Baskın geometri sokağın boyunca kameraya doğru gelen tek erimiş altın
+ışık koridoru. Dört sorun ayrı ayrı tarif edilen dört prop değil, o koridorun
+üstündeki dört koyu siluet çentiğidir. Karedeki tek tam modellenmiş şey Efe'nin
+dönük yüzü. Renk iki notaya iner: erimiş beyaz-altın koridor ve mavi-mor siluet.
+
+PROMPT:
+High-end theatrical feature-animation 3D at its most cinematic, 50mm lens at
+chest height from just behind and to one side of him, looking straight down the
+street into a low afternoon sun. The dominant shape is a single molten corridor
+of light running the full depth of the frame toward the lens — the street's wet-
+swept centre catching the sun end-on as one continuous white-gold band. The image
+is built on two notes only: that corridor, and everything standing in it reduced
+to blue-violet silhouette.
+
+Four notches interrupt the corridor at different depths and nothing else does: a
+parked wheel still climbed on the pale ramp at the near corner; the bin's propped
+lid with slumped bags at its foot further along; the lamp head burning small and
+hot above them; and beyond, the bare unmarked road with its ruined paint. None of
+them is described in detail and none is lit for its own sake — they are shapes
+cut out of one light. The only fully modelled thing in the frame is @efe1's face:
+his torso is turned away from the lens, his own near shoulder and the closed
+notebook under his hand crop the right foreground large and soft, and only his
+head and near shoulder come back into frame. This overrides any resting stance;
+he is off-centre, caught between two steps, jaw set, his eyes sweeping the street
+in one movement, mouth closed, never looking at the lens. The sun rakes the edge
+of his profile and one warm spark sits in his near eye. Behind everything, every
+shopfront is closed behind a corrugated roller shutter with its awning furled and
+strapped, dissolved to a dark ribbed band by the backlight.
+
+Three movement beats belong to this turn: the closed notebook's page edges lift
+under his thumb, a sheet of plastic moves at the bin pile's edge far down the
+band, and heat shimmer thins above the distant asphalt. Depth in three layers —
+his own shoulder and the closed notebook large and soft in the near plane, his
+turned face razor sharp in the middle, the four notches held together in one soft
+but legible band behind him. The parked wheel still rests in contact with the
+ramp's slope and flattens against it, the stacked bags slump into one another
+with dark creases, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan
+skin with low specular and no green or grey cast, luminous expressive eye
+shading, aggressive contre-jour handled as silhouette and edge rather than flat
+black, atmospheric haze carrying the sun down the street, volumetric depth,
+restrained premium character acting, ambient occlusion painted in and never
+raytraced-hard, continuous physically based shading at feature-film scale.
+
+TEXT: No readable text anywhere. Four problems held in one glance is the
+argument, and any legible word would pull the eye onto a single one of them. The
+worn road paint is too distant and too backlit to read, the notebook is closed,
+and every shopfront is shuttered with its awning furled so no bare sign panel
+exists in the frame.
+
+NEGATIVE: do not clear, clean or correct any of the four problems in this frame;
+do not light them individually or make any one of them sharp and detailed — they
+stay notches on one light corridor; do not break the backlight into several
+separate light sources; do not let the silhouettes go flat dead black without
+material or edge; do not open the notebook or make its pages legible; do not add
+a second pedestrian, a friend or an adult — the street is his to read alone; do
+not centre him or turn him to the lens; no lens flare rings, no arrows, no
+caption, no written moral.
+
+
+#########################################################################
+### K18 | VO18
+### "Efe bir hafta boyunca defterine gözlemlerini yazdı."
+### yazı: "GÖZLEM"
+#########################################################################
+
+FİKİR: Bir haftanın kanıtı defterin KALINLAŞMASIDIR — kabarmış sayfa bloğu,
+güdükleşmiş kalem, grafitten grileşmiş el kenarı. Emek görünür, anlatılmaz.
+
+PLAN: Baskın geometri masa lambasının tek sert kenarlı ışık adası — karanlık
+bir odanın içinde yüzen aydınlık bir kâğıt kütlesi; masanın kenarı o adayı
+çapraz keser. Ön planda ders kitabı yığını bulanık olarak sol kenarı örter.
+Renk üç notaya iner: tungsten tereyağı sarısı, grafit gümüşü, soğumuş çayın
+kehribar közü — geri kalan her şey sıcak siyahın içinde.
+
+PROMPT:
+High-end theatrical feature-animation 3D, 85mm lens at a slightly high angle down
+onto a desk at night. The dominant shape is one hard-edged island of light: the
+bendy-arm desk lamp lays a single warm pool over the open notebook and nothing
+else in the room survives it, so the page floats as a luminous raft in a warm
+black interior, cut on the diagonal by the desk's own edge.
+
+@efe1 is bent low over it, left forearm curled round the notebook, right hand
+writing the last line of a week's observations — this overrides any standing rest
+pose. The notebook is visibly swollen with used pages, its block no longer flush
+and its fore-edge fanned; the pencil has been worn down to a stub, pinched short
+between thumb and first two fingers so his knuckles nearly touch the paper, and
+the side of his writing hand is grey with graphite. The lamp reaches his lower
+lip, his chin, his knuckles and the lower lid of his near eye, and stops there —
+his brow and hair are in warm dark, and he does not look at the lens. The desk is
+richly dressed and mostly swallowed by shadow: a jar of pencils with three
+sharpened and two broken, a sharpener with a small drift of shavings, a stack of
+schoolbooks with a ruler slid between them, an empty tea glass on its saucer, the
+wall above already covered edge to edge with pinned football stickers and
+postcards turned at angles so none of them reads, and a curtain drawn across the
+window. Colour holds three notes only: tungsten butter-yellow on paper and skin,
+graphite silver on the stub and his hand, and the last kehribar ember caught in
+the tea glass — everything else is warm near-black.
+
+Three movement beats belong to this last night of the week: graphite dust lifts
+where the stub drags, a curl of sharpener shaving rocks on the desk, and the
+swollen page block eases a hair further open under his forearm.
+Depth in three layers — the stack of schoolbooks large and soft at the left
+edge, the page, the pencil stub and his writing hand razor sharp in the middle,
+the drawn curtain and the pinned collage dissolving into gentle bokeh. The tea
+glass rests in contact with its saucer through a thin dark ring, the sharpener
+presses a crisp dark line into the desk varnish, and the notebook's weight
+settles into the wood.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+single-source tungsten falloff carrying real inverse-square darkness, paper with
+fibre tooth and embossed strokes, graphite with soft metallic sheen, timber with
+visible grain under worn satin varnish, ambient occlusion painted in and never
+raytraced-hard, continuous physically based shading at feature-film scale.
+
+TEXT: The letterform is a boy's pencil hand in block capitals, carried on the
+top of the open notebook page as the heading written before the week's entries,
+pressed hard enough to emboss the sheet so the strokes stand proud on
+the back, the graphite shining faintly under the lamp, one letter gone over twice
+where he was not happy with it, and a double underline beneath that is not quite
+parallel. It reads "GÖZLEM" — one word, six letters, all capitals, the second a
+capital Ö with its two dots. ORIENTATION: the word reads left-to-right in normal
+reading direction, is never mirrored, reversed, rotated or flipped, and appears
+on this one page and on no other surface in the frame. It sits clear of his hand
+and the pencil. The ruled entries beneath it stay in the same hand but too soft
+to read, with seven separate blocks of tally marks down the margin.
+
+NEGATIVE: do not resolve any line of the entries into words, letters or numerals
+— only the heading is legible; do not let the pinned collage above the desk carry
+a readable word or a recognisable image; do not restore the pencil to full
+length; do not flatten the swollen page block back into a fresh flush notebook;
+do not add a second light source, a window glow, a phone screen or a ceiling
+lamp — one desk lamp and its falloff carry the frame; do not lift him upright or
+turn him to the lens; do not let the room fall to dead flat black without
+material; no brand name on the sharpener, glass, ruler or books.
+
+
+#########################################################################
+### K19 | VO19
+### "Komşulara sordu, muhtarlıktan bilgi aldı."
+### yazı: "MUHTARLIK"
+#########################################################################
+
+FİKİR: Muhtar Efe'ye bir şey UZATMIYOR — masadaki haritayı çevirip onun
+okuyabileceği yöne döndürüyor; bilgi almak bir kâğıt değil, birinin sana doğru
+çevirdiği bir yüzeydir.
+
+PLAN: Baskın geometri dönmekte olan haritanın tek soluk dörtgeni — masanın
+kenarlarıyla hizasız, eğik duran, karedeki en aydınlık düzlem. Ön planda kumaş
+bağlı bir dosya yığını sol kenarı bulanık olarak örter. Renk daire ofisin
+kendi malzemesinden: tütün kahvesi vernikli ahşap, kemik beyazı kâğıt, emaye
+levhanın derin kobaltı ve soğumuş çayın bakırı.
+
+PROMPT:
+High-end theatrical feature-animation 3D, 50mm lens at chest height across a
+timber desk in a small neighbourhood muhtarlık office. The dominant shape is a
+single pale quadrilateral: a large paper street map caught in mid-rotation, its
+edges deliberately out of line with the desk's edges so the sheet reads as
+turning, bowing very slightly along its centre, and standing as the brightest
+plane in the frame. Window light through a half-drawn blind lands almost entirely
+on it.
+
+A Turkish/Anatolian muhtar of about sixty in a grey waistcoat over an open-
+collared shirt, heavy moustache, reading glasses pushed up onto his forehead, has
+both hands flat on it — left palm spread near the far corner as a pivot, right
+hand's fingertips walking the near edge round toward the boy. Half his face is
+behind his own shoulder as he leans across; the visible half is patient and
+faintly amused. @efe1 is bent over the desk edge on both stiff arms with his
+weight carried in his elbows — this overrides any resting stance — mouth open on
+the question he has just asked, eyes already on the turning map rather than on
+the man, and he does not look at the lens. The office is fully dressed around
+them: a leather-cornered blotter, a rubber stamp standing on its wooden handle
+beside an open ink pad, a glass of tea gone cold on a saucer, a pot of pens, a
+shelf of box files with their spines to the wall, a rolled chart tied with tape,
+a coat on a hook, a spare chair with a folded newspaper on it. Colour is taken
+from the room's own materials — tobacco-brown varnished timber, bone-white paper,
+the deep cobalt of an enamel doorplate, cold tea's copper, and the grey wool of
+his waistcoat — with no amber wash laid over the whole.
+
+Three movement beats belong to this exchange: the map's far corner lifts and
+settles as the sheet turns, dust drifts through the blind's light band, and the
+fabric tie of the stacked file slips off the pile. Depth in three layers — the
+tied file stack large and soft at the left edge, the turning map and both pairs
+of hands razor sharp in the middle, the shelf of box files and the blind
+softening into gentle bokeh while staying fully modelled. Both his palms
+rest in contact with the paper and the paper with the desk, the rubber stamp
+stands on the blotter with a hard dark ring at its foot, and the cold tea glass
+holds a thin dark ring in its saucer.
+
+STYLE: theatrical high-end feature-animation 3D; appealing restrained adult and
+pre-teen acting, sophisticated warm matte tan skin with low specular and no green
+or grey cast, luminous eyes, paper with real bending stiffness and fibre tooth,
+baked enamel with a domed specular, timber with visible grain under worn satin
+varnish, motivated single-window light with sculpted bounce, ambient occlusion
+painted in and never raytraced-hard, continuous physically based shading.
+
+TEXT: The carrier is a painted enamel plate screwed to the office doorframe just
+inside the room, visible past the muhtar's shoulder in soft focus but still
+legible. The letterform is baked enamel, white on a deep blue ground, slightly
+domed so the window light catches its upper edge, with a screw head breaking the
+ground at each end and one small chip at a corner. It reads "MUHTARLIK" — one
+word, nine letters, all capitals. ORIENTATION: the word reads left-to-right in
+normal reading direction, is never mirrored, reversed, rotated or flipped, and
+appears on this one named object and on no other surface in the frame. The map
+stays a pattern of blocks, lines and blank paper with no legible name or number,
+the rolled chart stays tied, the newspaper stays folded with no headline, and the
+box files show only their spines to the wall.
+
+NEGATIVE: do not resolve any street name, number, label, legend or compass rose
+on the map; do not let the muhtar hand the boy a paper, a form or a folder — the
+information is the turning surface itself; do not lift the map off the desk or
+let it float; do not detach or duplicate his fingers where they press the sheet;
+do not use the stamp or leave an ink impression in this frame; do not straighten
+the map square to the desk edges — the skew is what makes it read as turning; do
+not stand @efe1 upright or turn either face to the lens; no flag, portrait,
+notice board, English signage or brand name anywhere.
+
+
+#########################################################################
+### K20 | VO20
+### "Trafiğin tek bir nedeni olmadığını gördü."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Sıkışıklık dört ayrı nesne değil, TEK bir metal nehridir — nedenler o
+nehrin üstündeki üç kırıktır; ve gören Efe, kendini bir basamak yukarı çıkarmış
+olan çocuktur.
+
+PLAN: Baskın geometri durmuş şeridin tek sürekli metal nehri — tavanlar sıcak
+öğleden sonra güneşiyle tek bir parlak kurdele olur. Nedenler ayrı ayrı tarif
+edilmez, o kurdelenin üç kırığı olarak okunur. Efe kapalı kepenkli bir dükkân
+eşiğinin basamağına çıkmıştır: K13'te kendini indirmişti, burada yükseltiyor.
+Ön planda kepengin dalgalı kenarı ile bir kasa yığını sağ kenarı örter. Renk
+ağartılmış gümüş-oker metal, inci egzoz pusu, kepengin neredeyse siyah koyu
+yeşili ve teneke kutudaki sardunyanın tek kırmızısı.
+
+PROMPT:
+High-end theatrical feature-animation 3D, 85mm lens looking along a stalled lane
+from one step above the pavement. The dominant shape is a single continuous river
+of stopped metal: roofs and bonnets compressed nose to tail by the long lens into
+one bright unbroken ribbon of sun-bleached silver-ochre that runs the whole depth
+of the frame. The lane is not read as many separate vehicles — it is read as one
+mass, and the causes are three kinks in it.
+
+The first kink is near: a car standing out from the line so the lane narrows
+round it, its driver — a Turkish/Anatolian man of about thirty-five — half out of
+his door with one leg down on the asphalt,
+turned back toward the queue he has made — a solid rendered body in soft focus,
+not a portrait. The second is midway: a car nosed across the flow without
+waiting, its front corner breaking the ribbon's edge. The third is the sheer
+repetition beyond, car after car after car dissolving into pearl exhaust haze
+until the ribbon ends in light. @efe1 stands sharp at the near right on the
+raised step of a shuttered shop doorway, one hand flat on the corrugated shutter
+for balance, the closed notebook clamped under his other forearm, chin down and
+eyes running the length of the jam — this overrides any resting stance, he is
+caught mid-lean and never looks at the lens. The doorway's ribbed shutter edge
+and a stack of crates crop the right foreground large and out of focus. Colour
+comes from this afternoon alone: bleached silver-ochre on the metal ribbon, pearl
+haze between the cars, the shutter's near-black bottle green, and one red
+pelargonium in a tin can on the step beside his foot.
+
+Three movement beats belong to this jam: exhaust shimmer rises in separate
+columns along the ribbon, one indicator lens gives back a single blink far down
+the line, and a plastic bag turns slowly along the kerb below him. Depth in three
+layers — the shutter edge and crate stack large and soft in the near plane,
+@efe1's face and the near kink razor sharp in the middle, the second kink and the
+endless repetition softening into pearl haze. His forward foot presses the worn
+stone step and takes his weight through a firm contact shadow, every visible tyre
+flattens at its contact patch, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing pre-teen proportions,
+sophisticated warm matte tan skin with low specular and no green or grey cast,
+long-lens compression that welds separate vehicles into one mass, automotive
+paint chalked by weather and road dust with no showroom gloss, corrugated steel
+with satin paint, volumetric exhaust haze, motivated low afternoon sun, ambient
+occlusion painted in and never raytraced-hard, continuous physically based
+shading.
+
+TEXT: No readable text anywhere. Causes standing inside one mass is the argument,
+and a label on any of them would rank it above the others. No vehicle carries a
+plate, badge, model name, route number or windscreen permit; the shutter is
+closed with its awning furled and strapped, so no bare sign panel exists in the
+frame.
+
+NEGATIVE: do not break the lane into separate, individually lit, individually
+detailed cars — the ribbon must read as one mass; do not give the near driver a
+sharp detailed portrait or an angry face; do not add a third, fourth and fifth
+described driver each in their own window; do not raise the camera onto a balcony
+or into a bird's-eye plan; do not turn the view into a flat traffic diagram; do
+not give any vehicle a plate, badge, route number or destination display; do not
+let @efe1 look at the lens or open the notebook; no arrows, no cause labels, no
+English signage.
+
+
+#########################################################################
+### K21 | VO21
+### "Herkes kendi arabasıyla ve çoğu zaman tek başına gidiyordu."
+### yazı: YOK
+#########################################################################
+
+FİKİR: Kanıt insanların çokluğu değil, KOLTUKLARIN BOŞLUĞUDUR — karedeki en
+karanlık şey arka koltuklardır.
+
+PLAN: Baskın geometri uzun objektifin üst üste bindirdiği ışık-boşluk ritmi:
+parlak ön cam, arkasında kapkara boş koltuk; yine parlak cam, yine kara boşluk.
+Kare bu iki değerin tekrarından ibarettir. Tam modellenmiş tek yüz en yakın
+sürücüdür; kalanlar ritmi tamamlar. Ön planda en yakın arabanın yan aynası sol
+kenarı bulanık olarak örter. Renk camdaki beyaz güneş parlaması, torpidonun
+bisküvi beji, boş arka koltukların erik-siyahı ve tek bir nane yeşili yaka.
+
+PROMPT:
+High-end vivid feature-animation 3D, 85mm lens at eye level from @kose's pavement,
+looking along a line of stopped cars in the lane so their long glass planes stack
+one behind another. The dominant shape is a rhythm of two values repeating into depth: a
+bright windscreen, then a black void behind it; another bright windscreen,
+another void. The low afternoon sun skims the glass and takes the upper edge of
+each screen and the driver behind it in one narrow band, and it reaches nothing
+into the rear of any car — so every empty back seat sits as the darkest thing in
+the frame. The emptiness, not the crowd, is the subject.
+
+Nearest and fully modelled, a Turkish/Anatolian woman of about forty-five with
+sunglasses pushed up into her hair sits alone with one hand loose on the wheel
+and her jaw slack with waiting, her eyes on the car ahead and never on the lens.
+Behind her, a Turkish/Anatolian man of about sixty in a flat cap reads at half
+sharpness with both hands low on his wheel. Beyond him a third driver is only a lit shoulder and a
+tapping finger, and past that the rhythm continues into haze with no further face
+described. Behind every one of them the rear seats and rear windows are visibly,
+completely empty — no passenger, no child seat, no bag, no coat. The near car's
+wing mirror crops the left foreground large and soft, and the plane canopy
+overhead breaks the light into a moving leaf pattern across the glass. Colour is
+taken from this lane alone: white sun flare on windscreen glass, biscuit-beige
+dashboard vinyl warmed through the screens, plum-black in the empty rear cabins,
+and one mint-green shirt collar on the second driver as the frame's single cool
+accent.
+
+Three movement beats belong to this stall: exhaust shimmer rises between the
+cars, a leaf shadow travels across the second windscreen as the canopy shifts,
+and the third driver's finger is still tapping the wheel rim.
+Depth in three layers — the wing mirror large and soft at the left edge, the
+nearest driver and the void behind her razor sharp in the middle, the remaining
+screens compressed and dissolving into gentle bokeh while staying fully
+modelled. Every tyre flattens at its contact patch with a dark crescent beneath
+it, the near driver's elbow rests in contact with the sill and carries real
+weight, and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan
+skin with low specular and no green or grey cast, luminous eyes, automotive glass
+with true grazing-angle reflectance and dust film, long-lens compression stacking
+planes into rhythm, deep interior falloff so cabins read as void rather than as
+fill black, motivated low afternoon sun through a broken canopy, ambient
+occlusion painted in and never raytraced-hard, continuous physically based
+shading.
+
+TEXT: No readable text anywhere. Full driver's seats above empty back seats is
+the argument, and a word would give the eye somewhere else to go. No vehicle
+carries a plate, badge, model name, sticker or windscreen permit, and the glass
+reflections stay soft and never resolve into a readable street or sign.
+
+NEGATIVE: do not place a passenger, child, child seat, bag, coat or box on any
+rear seat; do not light the rear cabins so the voids fill in — the darkness is
+the point; do not sharpen a fourth and fifth driver into individually described
+portraits; do not let the windscreen reflections resolve into a legible street,
+sign or second face; do not give any car a plate, badge, model name or permit; do
+not let the nearest driver look at the lens or smile; do not flatten the cabin
+darkness into dead graphic black without material; no English signage, no brand
+name, no franchise vehicle.
+
+
+#########################################################################
+### K22 | VO22
+### "Toplu taşıma yetersizdi, hatalı park eden ise çoktu."
+### yazı: YOK
+#########################################################################
+
+FİKİR: İki sorun tek nesnede kilitlenir — otobüs kendi cebine giremez çünkü
+cepte park etmiş bir araba vardır, ve kapı kaldırıma değil BOŞLUĞA açılır.
+
+PLAN: Baskın geometri otobüsün dev aydınlık yan duvarı — kadrajı çapraz kesip
+dışarı taşan tek kütle. Onun altında, açık kapı ile kaldırım arasında kalan boş
+asfalt kaması karenin ikinci ve asıl şeklidir: olması gereken kaldırımın
+yokluğu. Tam modellenmiş tek yüz inen kadındır; sıra yumuşak ama tam gövde.
+Ön planda cebe park etmiş arabanın arka tekeri sol alt köşeyi bulanık örter.
+Renk belediye krem-küllü mavisi flanş, tebeşir beyazı cep çizgileri, mavimsi
+kömür asfalt ve domates kırmızısı poşetler.
+
+PROMPT:
+High-end theatrical feature-animation 3D, 35mm lens at road level on the near
+side of @kose's lane, at the bus bay. The dominant mass is the bus's flank: a huge bright wall of
+municipal cream and ash-blue running diagonally across the frame and out past its
+edge, stopped a full lane away from the kerb. Beneath it lies the frame's second
+and decisive shape — a bare wedge of open asphalt between the bottom of the open
+door and the pavement that should have been there. That empty wedge is what the
+image is about. The reason sits low in the near foreground, large and out of
+focus: the rear wheel of a car parked squarely inside the painted bus bay, the
+chalk-white bay lines running out from under it.
+
+Stepping down into that wedge, a Turkish/Anatolian woman of about fifty with a
+shopping bag in each hand feels for the road with one foot because there is no
+kerb where she is getting off; her mouth is pressed, her eyes are down on her own
+footing, her shoulders are pulled by the two weights, and she never looks at the
+lens. She is the only fully modelled face. Behind her the rest of the queue — all Turkish/Anatolian, mixed ages — waits on
+the step and in the aisle as solid rendered bodies with readable coats and
+bags, faces turned down toward their footing and softened by focus, never
+flattened into a dark mass. The shelter stands empty and useless beside the
+occupied bay with its slatted bench and its glare-blank timetable case, and every
+shopfront behind it is closed behind a corrugated roller shutter with its awning
+furled and strapped. Colour is taken from this stop alone: cream and ash-blue on
+the bus flank, chalk white in the painted bay, blued charcoal asphalt in the
+door's shadow, and two tomato-red plastic bags as the one hot note in her hands.
+
+Three movement beats belong to this stop: the open door's rubber edge is still
+rebounding a hair from its stop, exhaust shimmer rises behind the bus, and one
+shopping bag swings as she shifts her weight forward. Depth in three layers — the
+parked car's rear wheel and the bay line large and soft across the lower left,
+the open door, the stepping woman and the empty wedge razor sharp in the middle,
+the queue and the empty shelter softening into gentle bokeh while staying solid
+bodies. The bus's tyres flatten at their contact patches with dark crescents, her
+trailing foot rests in contact with the step's metal nosing and takes all her
+weight, and her leading foot has not yet met the asphalt so no shadow closes
+beneath it.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan
+skin with low specular and no green or grey cast, restrained adult acting without
+melodrama, large-vehicle mass with panel weight and weather chalking, painted
+road markings worn into the aggregate, thin stretched carrier-bag film with
+strain sheen, motivated low afternoon sun with sculpted bounce, ambient occlusion
+painted in and never raytraced-hard, continuous physically based shading.
+
+TEXT: No readable text anywhere. A bus stopped a lane out from its own occupied
+bay is the argument, and a route number or destination would send the eye chasing
+information instead of geometry. The bus carries no route number, destination
+display, livery lettering or plate; the parked car carries no plate or badge; the
+timetable case is angled to the sky and reads glare-blank; every shutter is
+closed with its awning furled and strapped.
+
+NEGATIVE: do not pull the bus in against the kerb or close the empty wedge of
+asphalt — the gap between door and pavement is the subject; do not move the
+parked car out of the painted bay or let it sit only half inside; do not put
+people in the shelter, and do not fill the pavement with waiting passengers; do
+not give the bus a route number, destination display, livery text, advertisement
+or plate; do not sharpen and individually describe more queue members — one face
+carries the frame; do not let her leading foot land in this frame; do not let any
+waiting body flatten into a dark shape; nobody looks at the lens; no accessibility
+icon, no arrow, no English signage.
+
+=========================================================================
+S2 SONU · K12-K22 · 11 kare
+=========================================================================
