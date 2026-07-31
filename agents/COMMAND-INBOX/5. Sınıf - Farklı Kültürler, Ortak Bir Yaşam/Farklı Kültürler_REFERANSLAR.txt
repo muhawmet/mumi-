@@ -5,6 +5,17 @@ Yasa: PROMPT-YASASI §4 + §4a. Bu dosya PROMPTLAR'dan ÖNCE yazıldı.
 
 ⚠ SAHNE PROMPTLARINDA @handle'ı ASLA TARİF ETME. Kimlik handle'dan gelir, hâl kareden.
 
+🔴🔴🔴 SONRADAN DÜŞÜLEN NOT — 2026-07-31 akşamı. BU DOSYANIN ALTI ARTIK GEÇMİŞTİR.
+Aşağıdaki "BASILACAK" listesi UYGULANMADI: Mami hiçbir referans basmadan 53 karenin
+53ünü doğrudan üretti ve sonuç tuttu — kaval üç ayrı karede aynı imalat çıktı (K18/K19/K22,
+piksel piksel ölçüldü), Mira ve Dara 40+ karede kimliğini korudu.
+Yani bu derste referans envanteri bir ÖN KOŞUL değil, bir SİGORTA olduğu görüldü.
+Kimlik yalnız İKİ yerde kaydı ve ikisi de referans eksikliğinden değil, aynı karede iki
+tagli kişinin ROL karışmasından: K17 (kavalı yanlış kız çalıyor) ve K36 (kartı yanlış kız asıyor).
+Dosya SİLİNMEDİ çünkü ref promptları kaliteli ve bir sonraki derste hazır duruyor.
+Ama numaralara ve "şu inmeden şu basılamaz" satırlarına GÜVENME — onlar uygulanmadı.
+🔴🔴🔴
+
 🔴 KADRAJ KİLİDİ — @tag çağıran HER kare bunu yazar (ölçüm: 6/6 plastik)
    Referans sayfası "tam boy, ayakta, stüdyo" kadrajı taşır ve @tag onu kareye İTHAL EDER.
    Ezmezsen figürin gelir. Her @tag karesinde kadrajın DIŞARIDA bıraktığı yazılır:
