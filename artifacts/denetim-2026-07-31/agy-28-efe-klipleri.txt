@@ -1,0 +1,152 @@
+56 adet bitmiş klip (1.mp4 - 57.mp4, 45 eksik) Kling 3.0 üretimi üzerinden kare kare incelenmiş, 8 temel kusur parametresi ve Türkçe metin stabilitesi yönünden analiz edilmiştir. 
+
+Hazırlanan detaylı rapora ve veri dosyasına [klip_kusur_raporu.md](file:///Users/Muhammet/.gemini/antigravity-cli/brain/f77571c4-e2af-465b-aaba-b2a7f89ae013/klip_kusur_raporu.md) bağlantısından ulaşabilirsiniz.
+
+---
+
+### 56 Klip Ana Kusur Tablosu
+
+> **[SARI]**: Yanlış alarmın maliyete yol açmaması için tolerans sınırında veya şüpheli görülen durumları ifade eder.
+
+| Klip | Ani Sıçrama / Jump | Yüz / El Erimesi (Morph) | Donmuş İnsan | Uzuv / Obje İç İçer Geçme (Clipping) | Yazı / Metin Değişimi | Figür Belirme / Kaybolma | Ayak / Beden Kayması | Son ~0.5s Kullanılabilir mi? |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1.mp4** | Yok | Yok | Var (Simitçi donuk) | Yok | Bulanık tabela (Yok) | Var (5.5s'de sağda yeni figür beliriyor) | Hafif ayak kayması **[SARI]** | Bozuluyor (~5.2s sonrası bacak sıçraması ve figür) |
+| **2.mp4** | Yok | Yok | Yok | Yok | Yok | Var (3.5s-4.0s yürüyen adam kayboluyor, 5.0s yeni figür) | Var (Kırmızı araba geri kayıyor) | Bozuluyor |
+| **3.mp4** | Yok | Yok | Var (Çocuk 3.5s sonrası donuyor) | Yok | Araba plakası titriyor (Morphing) | Var (4.0s sağda figür beliriyor) | Yok | Bozuluyor (4.0s sonrası) |
+| **4.mp4** | Var (2.0s açı değişimi/sıçrama) | Yok | Var (Arkadaki yürüyen çift donuk) | Tekerlek kaldırıma giriyor (0.0s-1.5s) | Yok | Var (2.0s arka çift beliriyor) | Var (Arka çift adım atmadan kayıyor) | Kullanılabilir |
+| **5.mp4** **[SARI]** | Yok | Var (1.5s elde erime - **[SARI]**) | Yok | Yok | Yok | Yok | Yok | Kullanılabilir |
+| **6.mp4** | Yok | Var (2.0s adam/kahve bardağı erimesi) | Var (Duraktaki kadın donuk) | Yok | DUURAK (2.5s'de harf uzuyor - Morphing) | Var (2.5s'de kalabalık aniden beliriyor) | Yok | Bozuluyor |
+| **7.mp4** | Yok | Var (Adamın elleri kasayla eriyor) | Var (Duraktaki insanlar donuk) | Var (2.5s-4.5s mavi araba adamın içinden geçiyor) | Yok | Yok | Yok | Bozuluyor |
+| **8.mp4** | Yok | Var (Sol kol kasayla eriyor) | Yok | Var (Baston bacağın içinden geçiyor) | Yok | Var (4.0s arkada çocuk beliriyor) | Yok | Bozuluyor |
+| **9.mp4** | Yok | Var (0.0s-2.0s kadının vücudu eriyor) | Var (Arkadaki yaşlı adam donuk) | Var (Kadın bebek arabasının içine giriyor) | Yok | Var (1.5s-2.0s kadın eriyip kayboluyor) | Yok | Kullanılabilir (Kadın kaybolduktan sonra) |
+| **10.mp4** | Yok | Var (Çocuğun elleri arabayla eriyor) | Var (Arkadaki takım elbiseli adam donuk) | Var (Parmaklar arabanın içine giriyor) | Yok | Yok | Var (Arkadaki adam adım atmadan kayıyor) | Kullanılabilir |
+| **11.mp4** | Yok | Yok | Var (Kaldırımdaki sıradaki grubun tamamı donuk) | Var (2.0s kütle süzülüp ekranı kaplıyor) | Yok | Var (2.0s siyah kapı/kütle beliriyor) | Yok | Bozuluyor |
+| **12.mp4** **[SARI]** | Yok | Yok | Var (Çocuk çok az hareket ediyor - **[SARI]**) | Yok | Yok | Var (0.5s silüet geçişi - **[SARI]**) | Yok | Kullanılabilir |
+| **13.mp4** | Yok | Var (4.5s-5.0s defter/kalem bacakla eriyor) | Yok | Var (4.0s defter dize giriyor) | Yok | Yok | Yok | Bozuluyor |
+| **14.mp4** | Yok | Var (2.0s-3.5s poşet çöp kapağına eriyor) | Yok | Var (El poşet ve kapakla iç içe) | ÇÖP (Stable) | Yok | Yok | Kullanılabilir |
+| **15.mp4** | Yok | Yok | Yok | Yok | Yok | Yok | Yok | Kullanılabilir |
+| **16.mp4** | Yok | Var (0.5s-1.5s klonlanan figür eriyor) | Yok | Var (0.5s klonlar iç içe geçiyor) | YAVAŞ (Stable, Ş noktası hafif kıpırdıyor) | Var (0.5s ikincil kız belirip 1.5s kayboluyor) | Yok | Kullanılabilir |
+| **17.mp4** | Yok | Yok | Yok | Yok | Yok | Yok | Yok | Kullanılabilir |
+| **18.mp4** | Yok | Var (3.5s-5.0s el ve kalem eriyor) | Yok | Var (Parmaklar kaleme giriyor) | GÖZLEM (2.0s sonrası morphing/erime var) | Yok | Yok | Bozuluyor |
+| **19.mp4** **[SARI]** | Yok | Var (4.5s sol elde parmak morphing - **[SARI]**) | Yok | Yok | MUHTARLIK (Stable) | Yok | Yok | Kullanılabilir |
+| **20.mp4** | Yok | Yok | Var (Çocuk araçlar geçerken donuk) | Yok | Yok | Yok | Yok | Kullanılabilir |
+| **21.mp4** | Yok | Var (2.0s-5.0s arka araçtaki adam eriyor) | Yok | Yok | Yok | Var (0.5s arka koltukta 3. yüz belirip eriyor) | Yok | Bozuluyor |
+| **22.mp4** | Yok | Var (Poşetler ve arka kadın eriyor) | Yok | Var (1.0s-3.5s arka kadın otobüs/öndeki kadının içinden geçiyor) | Yok | Var (0.5s 2. kadın aniden belirip eriyerek kayboluyor) | Var (2. kadın adım atmadan kayıyor) | Bozuluyor |
+| **23.mp4** | Yok | Var (0.5s-2.0s sol el mazgalla eriyor) | Var (Arkadaki kadın donuk) | Var (El mazgala giriyor) | YAĞMUR SUYU (2.0s sonrası harfler şekil değiştiriyor) | Yok | Yok | Bozuluyor |
+| **24.mp4** | Yok | Yok | Var (Penceredeki kız donuk) | Yok | KÖMÜR (Çuvaldaki yazı titriyor ve harf bozuluyor) | Yok | Yok | Bozuluyor |
+| **25.mp4** | Yok | Var (Eller su şişesiyle eriyor) | Var (Öndeki kadın ve kuş donuk) | Var (Eller şişenin içinde) | Yok | Yok | Yok | Bozuluyor |
+| **26.mp4** | Yok | Var (Son 0.5s yüzde hafif form kaybı - **[SARI]**) | Var (Arkadaki çocuk tamamen donuk) | Yok | Yok | Yok | Yok | Bozuluyor |
+| **27.mp4** | Yok | Var (1.5s-2.5s işaret eden el parmakları eriyor) | Var (Sağdaki çocuk donuk) | Yok | Yok | Var (0.5s sol kişi eriyip kayboluyor, sadece havada kol kalıyor) | Yok | Bozuluyor |
+| **28.mp4** | Yok | Var (3.5s sonrası kadının yüzü eriyor) | Var (Arkadaki adam donuk) | Var (Eller kasanın içine giriyor) | SEBZE (Mavi kasadaki yazı şekil değiştiriyor) | Var (3.0s sağdan mavi kütle aniden kadraja giriyor) | Var (Arkadaki adam donuk kayıyor) | Bozuluyor |
+| **29.mp4** | Yok | Var (3.0s-4.0s el ve baston eriyor) | Var (Arkadaki adam donuk) | Var (Baston ve eller iç içe) | Yok | Yok | Yok | Bozuluyor |
+| **30.mp4** **[SARI]** | Yok | Var (Sağ el tekerlekle kaynaşmış - **[SARI]**) | Yok | Var (Sağ el demirin içine giriyor) | Yok | Yok | Yok | Kullanılabilir |
+| **31.mp4** | Yok | Var (1.0s sonrası bebeğin yüzü ve el eriyor) | Yok | Var (Poşet sapı ve el pusete giriyor) | EKMEK (Poşetteki yazı deforme oluyor) | Yok | Yok | Bozuluyor |
+| **32.mp4** | Yok | Yok | Var (Arabadaki kadın donuk) | Var (Baston zeminle uyumsuz - **[SARI]**) | PARK ETMEYİN (Tabeladaki harfler bozuluyor) | Yok | Var (2.5s-4.0s yaşlı adam kayarak yürüyor) | Bozuluyor |
+| **33.mp4** | Yok | Var (4.0s sonrası çocuğun yüzü deforme oluyor, kızın parmağı eriyor) | Yok | Var (Kızın kolu tekerleğe giriyor) | Kitaptaki yazılar anlamsız karalamaya dönüşüyor | Yok | Yok | Bozuluyor |
+| **34.mp4** | Yok | Var (Kağıtlar şekil değiştiriyor) | Var (Arka plandaki 3 çocuk tamamen donuk) | Yok | Masada okunaksız çizimler | Yok | Yok | Bozuluyor |
+| **35.mp4** | Yok | Var (Kağıt ve çizim sürekli eriyor) | Yok | Yok | Yok | Yok | Yok | Bozuluyor |
+| **36.mp4** | Yok | Var (Sol el ve cetvel eriyor) | Var (Sağdaki kız ve dışarıdakiler donuk) | Var (Cetvel duvara/bedene giriyor - **[SARI]**) | Camdaki kağıtta metin morphing yapıyor | Yok | Yok | Var (Sol el camda kayıyor) | Bozuluyor |
+| **37.mp4** | Yok | Yok | Var (Sağdaki çocuk donuk) | Yok | HERKES, (Stable) | Yok | Yok | Bozuluyor |
+| **38.mp4** | Yok | Var (Kağıdı tutan eller eriyor) | Var (Arkadaki yaşlı adam donuk) | Yok | YAYA (Stable) | Yok | Yok | Bozuluyor |
+| **39.mp4** | Yok | Var (Kağıt hafif şekil değiştiriyor - **[SARI]**) | Yok | Yok | KAĞIT (Stable) | Yok | Yok | Kullanılabilir |
+| **40.mp4** | Yok | Var (Eller ve paket sürekli eriyor) | Yok | Var (Eller paketin içinden geçiyor) | Yok | Yok | Yok | Bozuluyor |
+| **41.mp4** | Yok | Var (Süpürge ucu eriyor) | Var (Arka sağdaki adam donuk) | Var (Süpürge sapı kıyafete giriyor - **[SARI]**) | BELEDİYE (Stable) | Yok | Yok | Bozuluyor |
+| **42.mp4** | Yok | Var (4.5s sırt yazısı deforme oluyor) | Var (Arkadaki 2 çocuk tamamen donuk) | Yok | GÖNÜLLÜ (4.5s sonrası harfler bozulup morphing yapıyor) | Yok | Yok | Bozuluyor |
+| **43.mp4** | Yok | Var (Atılan kağıt eriyor) | Var (Arka sağdaki adam donuk) | Var (El kutu kapağına giriyor) | KAĞIT, PLASTİK (Stable). Sarı kutuda karalama beliriyor **[SARI]** | Yok | Yok | Bozuluyor |
+| **44.mp4** | Yok | Var (Bebek arabası tekeri ve eller eriyor) | Var (Tekerlekli sandalyedeki kız donuk) | Var (Eller teker mekanizmasına giriyor) | Yok | Yok | Yok | Bozuluyor |
+| **46.mp4** **[SARI]** | Yok | Var (Soldaki elde fazladan parmaklar/erime) | Yok | Yok | Okunaksız çizgiler (Stable) | Yok | Yok | Kullanılabilir |
+| **47.mp4** | Yok | Var (4.5s-5.0s telefon el ve yanağa eriyor) | Var (Tekerlekli sandalyedeki kız donuk - **[SARI]**) | Var (4.5s telefon yüzün içine giriyor) | BELEDİYE 214 (Stable) | Var (4.8s telefon eriyip kayboluyor) | Yok | Bozuluyor |
+| **48.mp4** **[SARI]** | Yok | Yok | Var (Arkadaki kız büyük ölçüde donuk - **[SARI]**) | Yok | GÖNÜLLÜ (Stable) | Yok | Yok | Kullanılabilir |
+| **49.mp4** | Var (0.0s-0.5s önden geçen obje sıçraması) | Var (1.0s elde hafif morphing - **[SARI]**) | Yok | Yok | 1. RAMPA 2. ÇÖP 3. LAMBA 4. BASAMAK 5. (Stable) | Var (0.0s önden geçen karartı/figür) | Yok | Kullanılabilir |
+| **50.mp4** | Yok | Var (1.0s-2.0s poşet adamın kafasına/boynuna eriyor) | Yok | Var (Poşet adamın gövdesinden geçiyor) | PLASTİK (Stable) | Var (Poşet eriyip yok oluyor) | Yok | Bozuluyor |
+| **51.mp4** | Yok | Yok | Var (Tekerlekli sandalyedeki kız tamamen donuk) | Yok | YAYA YOLU (Stable) | Yok | Yok | Kullanılabilir |
+| **52.mp4** | Yok | Yok | Yok | Yok | Yok | Yok | Var (4.5s-5.0s ayaklar geriye kayıyor) | Bozuluyor |
+| **53.mp4** **[SARI]** | Yok | Var (Tekerlekteki ellerde hafif erime - **[SARI]**) | Yok | Var (1.5s-2.5s tekerlek kaldırıma giriyor) | Yok | Yok | Yok | Kullanılabilir |
+| **54.mp4** | Yok | Var (0.0s-5.0s defter ve el sürekli eriyor) | Var (Arkadaki sandalyeli kız donuk) | Yok | Defterdeki karalamalar sürekli morphing yapıyor | Yok | Yok | Bozuluyor |
+| **55.mp4** | Yok | Var (0.5s-1.5s kalkan el eriyip kahverengi lekeye dönüşüyor) | Yok | Yok | SORUNLARI FARK EDER, ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ (Stable) | Var (El bir an kayboluyor) | Yok | Kullanılabilir |
+| **56.mp4** | Yok | Yok | Yok | Yok | Yok | Yok | Yok | Kullanılabilir |
+| **57.mp4** | Var (1.5s çocuğun yüzünde patlama/sıçrama) | Var (1.5s çocuğun yüzü tamamen eriyor) | Var (Arkadaki kız donuk) | Yok | RAMPA, ÇÖP, LAMBA (Çentikler ve yazılar sürekli morphing yapıyor) | Yok | Yok | Kullanılabilir |
+
+---
+
+### Kurgu ve Üretim Kararları İçin 5 Kritik Cevap
+
+#### 1. Sadece Son Saniyede Kusuru Olan Klipler (Kuyruk Kesilerek Kurtarılabilir - 8 Klip)
+Bu kliplerin başı ve ortası temizdir, sadece son saniyesindeki bozulma kesilerek kurguda doğrudan kullanılabilir:
+- **Klip 1.mp4**: Güvenli kesim noktası `t = 5.0s` (5.2s sonrası bacak sıçraması ve figür belirmesi öncesi).
+- **Klip 3.mp4**: Güvenli kesim noktası `t = 3.5s` (4.0s'deki figür belirmesi öncesi).
+- **Klip 6.mp4**: Güvenli kesim noktası `t = 2.0s` (2.5s'deki kalabalık belirmesi ve DURAK yazısı uzaması öncesi).
+- **Klip 13.mp4**: Güvenli kesim noktası `t = 4.0s` (4.5s'deki defter/bacak erimesi öncesi).
+- **Klip 18.mp4**: Güvenli kesim noktası `t = 3.0s` (3.5s sonrası el/kalem erimesi öncesi).
+- **Klip 33.mp4**: Güvenli kesim noktası `t = 3.5s` (4.0s sonrası yüz deformasyonu öncesi).
+- **Klip 47.mp4**: Güvenli kesim noktası `t = 4.0s` (4.5s telefon erimesi öncesi).
+- **Klip 52.mp4**: Güvenli kesim noktası `t = 4.0s` (4.5s ayak kayması öncesi).
+
+#### 2. İlk Yarım Saniyede / Girişte Kusuru Olan Klipler (Baş Tarafı Kesilerek Kurtarılabilir - 4 Klip)
+Bu kliplerin ilk 0.5s - 2.5s arası bozuktur; güvenli giriş noktası belirlenip başı kesilerek kullanılabilir:
+- **Klip 9.mp4**: Güvenli giriş noktası `t = 3.0s` (İlk 2.5s'de kadın eriyip yok oluyor, 3.0s sonrası temiz).
+- **Klip 16.mp4**: Güvenli giriş noktası `t = 1.5s` (0.5s-1.5s arası ikincil klon figür belirmesi bittikten sonra).
+- **Klip 49.mp4**: Güvenli giriş noktası `t = 1.0s` (İlk 0.5s'deki önden geçen siyah obje sıçraması bittikten sonra).
+- **Klip 55.mp4**: Güvenli giriş noktası `t = 2.0s` (İlk 1.5s'deki el erimesi ve lekeye dönüşme bittikten sonra).
+
+#### 3. Baştan Sona Kullanılamaz Olan ve Yeniden Üretilmesi Gereken Klipler (32 Klip)
+Kurgu müdahalesiyle kurtarılamayacak derece kusurlu olup baştan re-generate edilmesi gereken klipler ve nedenleri:
+- **2.mp4**: Yürüyen adamın kaybolması ve arabanın geri kayması.
+- **4.mp4**: Arka plandaki donuk/kayan çift ve ani kamera sıçraması.
+- **7.mp4**: Mavi arabanın adamın içinden geçmesi (clipping) ve donuk durak kalabalığı.
+- **8.mp4**: Kol/kasa erimesi, baston clipping'i ve sonradan beliren figür.
+- **10.mp4**: El/oyuncak araba erimesi ve arkada adım atmadan kayan donuk adam.
+- **11.mp4**: Sıradaki grubun tamamen donuk olması ve ekranı kaplayan yapay kütle.
+- **14.mp4**: Poşetin çöp kapağına erimesi ve el clipping'i.
+- **21.mp4**: Arka araçtaki adamın erimesi ve sonradan beliren hayalet yüz.
+- **22.mp4**: Otobüsten inen hayalet figür, clipping ve kayma.
+- **23.mp4**: El/mazgal ve metin erimesi, arkadaki donuk kadın.
+- **24.mp4**: KÖMÜR yazısının titreyip bozulması ve penceredeki donuk kız.
+- **25.mp4**: Ellerin su şişesiyle erimesi ve donuk insan/kuş.
+- **26.mp4**: Arka plandaki çocuğun tamamen donuk kalması.
+- **27.mp4**: Karakterin eriyip kaybolması ve havada asılı kalan kol.
+- **28.mp4**: Yüz ve yazı erimesi, donuk kayan adam, aniden kadraja giren kütle.
+- **29.mp4**: El/baston erimesi ve arkadaki donuk adam.
+- **31.mp4**: Bebeğin yüzünün şiddetle erimesi ve EKMEK yazısının bozulması.
+- **32.mp4**: Yaşlı adamın kayması, PARK ETMEYİN harf erimesi, donuk sürücü.
+- **34.mp4**: Arka plandaki 3 çocuğun tamamen donuk olması.
+- **35.mp4**: Eldeki kağıdın ve çizimin sürekli eriyip morphing yapması.
+- **36.mp4**: Sağdaki kızın donuk olması ve el/cetvel erimesi.
+- **37.mp4**: Sağdaki yeşil kapüşonlu çocuğun tamamen donuk kalması.
+- **38.mp4**: Arkadaki adamın tamamen donuk olması ve el erimesi.
+- **40.mp4**: Şiddetli el ve paket erimesi (clipping).
+- **41.mp4**: Arkadaki adamın donuk olması ve süpürge ucu erimesi.
+- **42.mp4**: Arkadaki 2 çocuğun donuk kalması ve GÖNÜLLÜ sırt yazısının erimesi.
+- **43.mp4**: Arkadaki donuk adam ve el/kutu kapağı clipping'i.
+- **44.mp4**: Sandalyeli kızın donuk kalması ve tekerlek/el erimesi.
+- **46.mp4**: Elde ciddi anatomik deformasyon ve fazladan parmaklar **[SARI]**.
+- **50.mp4**: Poşet fırlatma animasyonunda poşetin adamın kafasına/boynuna erimesi.
+- **54.mp4**: Defter/metnin sürekli erimesi ve arkadaki donuk kız.
+- **57.mp4**: Çocuğun yüzünün 1.5s'de şiddetle patlayıp erimesi ve metin morphing'i.
+
+#### 4. Türkçe Yazı ve Metin Analizi (27 Klip)
+- **Tüm klip boyunca tam stabil kalan metinler (14 Klip):**
+  `Klip 14` ("ÇÖP"), `Klip 16` ("YAVAŞ" - Ş noktası mikro titremeli **[SARI]**), `Klip 19` ("MUHTARLIK"), `Klip 37` ("HERKES,"), `Klip 38` ("YAYA"), `Klip 39` ("KAĞIT"), `Klip 41` ("BELEDİYE"), `Klip 43` ("KAĞIT", "PLASTİK"), `Klip 47` ("BELEDİYE 214"), `Klip 48` ("GÖNÜLLÜ"), `Klip 49` ("1. RAMPA 2. ÇÖP 3. LAMBA 4. BASAMAK 5."), `Klip 50` ("PLASTİK"), `Klip 51` ("YAYA YOLU"), `Klip 55` ("SORUNLARI FARK EDER, ÇÖZÜMLERİ BİRLİKTE ÜRETİRİZ").
+- **Harfi / Şekli Değişen ve Bozulan Metinler (13 Klip):**
+  `Klip 3` (Araba plakası titriyor), `Klip 6` ("DURAK" -> "DUURAK" harf uzaması), `Klip 18` ("GÖZLEM" eriyor), `Klip 23` ("YAĞMUR SUYU" eriyor), `Klip 24` ("KÖMÜR" titriyor/bozuluyor), `Klip 28` ("SEBZE" eriyor), `Klip 31` ("EKMEK" bozuluyor), `Klip 32` ("PARK ETMEYİN" harfler morphing yapıyor), `Klip 33` (Kitap sayfalarındaki metinler eriyor), `Klip 36` (Camdaki duyuru eriyor), `Klip 42` ("GÖNÜLLÜ" sırt yazısı eriyor), `Klip 54` (Defterdeki yazılar sürekli eriyor), `Klip 57` ("RAMPA, ÇÖP, LAMBA" çentikler ve yazılar morphing yapıyor).
+
+#### 5. İnsan Sayısı ile Kusur Korelasyonu
+- **1 İnsan İçeren Klipler (12 klip):** 2 tanesi kullanılamaz (**%16.7 kusur oranı**). Klipler: 12, 13, 14, 15, 16, 17, 18, 20, 35, 39, 52, 56.
+- **2 - 3 İnsan İçeren Klipler (35 klip):** 24 tanesi kullanılamaz (**%68.6 kusur oranı**).
+- **4 ve Üzeri İnsan İçeren Klipler (9 klip):** 6 tanesi kullanılamaz (**%66.7 kusur oranı**). Klipler: 6, 7, 8, 9, 11, 34, 36, 42, 55.
+> **Sonuç:** Kadrajdaki kişi sayısı 2 ve üzerine çıktığında donmuş beden (frozen body) ve el/nesne erimesi kusurları %68 gibi yüksek bir oranla patlama yapmaktadır. 1 kişilik sahneler en stabil üretimi sağlamıştır.
+
+---
+
+### Hareket Doktrini (Motion Doctrine) Değerlendirmesi
+
+Uygulanan doktrin (*kimse yazmıyor, kimse konuşmuyor, yazı içeren nesneler sabit duruyor, nesne devir-teslimi yok, donmuş beden yok*):
+
+1. **TUTAN (BAŞARILI) PRENSİPLER:**
+   - **Konuşmama & Yazmama:** Karakterler konuşturulmadığı için ağız/çene deformasyonları tamamen önlenmiştir. Yazma eylemi yapılmadığı için el-kalem kilitlenmeleri yaşanmamıştır.
+   - **Elden Ele Nesne Devir-Teslimi Olmaması:** Karakterler birbirine eşya vermediği için nesne transferi kaynaklı çöküşler oluşmamıştır.
+
+2. **PATLAYAN (İHLAL EDİLEN) PRENSİPLER:**
+   - **Donmuş Beden (Frozen Bodies):** Doktrinin en çok çöküş yaşadığı alandır. Kling 3.0, bir karaktere odaklandığında kadrajdaki 2. ve 3. kişileri hareket ettirmek yerine tamamen dondurmuştur (24 klipte donuk beden görülmüştür).
+   - **Yazılı Nesnelerin Sabitliği:** Nesne sabit dursa dahi kamera açısı geliştikçe model yazıyı yeniden ürettiği için 13 klipte harf erimesi/morphing gerçekleşmiştir.
+   - **Dokunma & Taşıma:** Eşya tutma, poşet taşıma veya çöp atma gibi temas gerektiren hareketlerde el ile nesne eriyerek birbirine karışmıştır (Clipping).

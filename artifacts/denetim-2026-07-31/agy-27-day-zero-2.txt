@@ -1,0 +1,141 @@
+# MAMILAS — DAY-ZERO 2. DALGA SİSTEM DENETİM RAPORU (READ-ONLY)
+
+> **Kapsam:** `artifacts/denetim-2026-07-31/BULGULAR.md` belgesindeki bilinen 20 bulgu haricinde, projede henüz su yüzüne çıkmamış gizli (latent) kusurların tespiti.
+
+---
+
+## 1. BULGU ÖZETİ VE SINIFLANDIRMA (Maliyete / Risk Derecesine Göre Sıralı)
+
+| # | Bulgu Konusu | Alan | Dosya & Satır | Sınıflandırma |
+|---|---|---|---|---|
+| 1 | Arşivlenen `check-assets3d.mjs` nedeniyle patlayan 3 Vitest testi | Test Suite | [src/components/presetPlate.test.ts:L26](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/presetPlate.test.ts#L26), [src/components/worldCovers.test.ts:L17](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/worldCovers.test.ts#L17), [src/scene/assetSlots.test.ts:L95](file:///Users/Muhammet/Desktop/mamilas-modern/src/scene/assetSlots.test.ts#L95) | **MUST-DO** |
+| 2 | `.claude/settings.json` içinde Windows'ta doğrudan `.sh` çağıran kırık hook kayıtları | Settings / Hooks | [.claude/settings.json:L12](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L12), [L23](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L23), [L34](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L34) | **MUST-DO** |
+| 3 | `sealArtifactDraft` fonksiyonunda `protocolHash` doğrulama baypası | Agents / Protocol | [scripts/mamilas-command.mjs:L1826-1845](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L1826-L1845) | **MUST-DO** |
+| 4 | `brain.test.ts` içinde `generateBatch` hatalarını sessizce yutan `try/catch` | Core Tests | [src/core/brain.test.ts:L3249](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts#L3249) | **MUST-DO** |
+| 5 | Üç ayrı dosyaya kopyalanmış `registerOf()` tek doğruluk kaynağı sapması | `src/core/` | [src/core/brain.ts:L46](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L46), [scripts/mamilas-command.mjs:L143](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L143), [scripts/kapanis-hasadi.mjs:L268](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/kapanis-hasadi.mjs#L268) | **SHOULD** |
+| 6 | `scrubSunForNight` fonksiyonunun eksik regex kelime dağarcığı | `src/core/` | [src/core/brain.ts:L358](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L358) | **SHOULD** |
+| 7 | `PROTOCOL.md` güncellendiğinde tüm inbox command'lerinin kilitlenmesi | Agents / Protocol | [scripts/mamilas-command.mjs:L349](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L349) | **SHOULD** |
+| 8 | Test paketindeki zayıf/tautological assertion oranı (%22) | Test Suite | `src/core/*.test.ts` genelinde | **WATCH** |
+| 9 | Vite UI / React katmanının üretim dosya sistemine erişimi ve çakışması | Vite UI | [src/App.tsx](file:///Users/Muhammet/Desktop/mamilas-modern/src/App.tsx) | **IGNORE** |
+
+---
+
+## 2. DETAYLI GİZLİ KUSUR TESPİTLERİ (6 ALAN)
+
+### ALAN 1: `src/core/` Taraması
+* **Kusur 1.1 — `registerOf()` Mantığının 3 Ayrı Dosyada Kopyalanması (Ayna Sapması):**
+  * **Ne bozulur:** Production path metinlerini `REAL`, `EDU`, `STY` sınıflarına ayıran `registerOf()` mantığı [brain.ts:L46](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L46), [mamilas-command.mjs:L143](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L143) ve [kapanis-hasadi.mjs:L268](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/kapanis-hasadi.mjs#L268) içinde 3 kez birebir kopyalanmıştır. `brain.ts`'e yeni bir üretim sınıfı veya regex eklendiğinde script kopyaları güncellenmezse, `validateCommand()` ad-sınıf uyumsuzluğunu yanlış değerlendirir.
+  * **Ne zaman bozulur:** `src/core/brain.ts` içine yeni bir reklam/ticari üretim sınıfı eklendiğinde.
+  * **Sınıflandırma:** `SHOULD`
+
+* **Kusur 1.2 — `scrubSunForNight()` Gece Promptu Temizleyicisinde Regex Sızıntısı:**
+  * **Ne bozulur:** [brain.ts:L358](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L358) `scrubSunForNight` fonksiyonu, gece karelerinde paletten gelen gündüz ifadelerini temizlemeyi vaat eder. Ancak regex'i `sun|sunlit|sunlight|daylight|midday|noon|overcast sky|dawn|dusk|golden[- ]hour` ile sınırlıdır; `sunshine`, `sunbeams`, `daytime`, `broad daylight` ifadelerini temizlemez. Gece karesine gündüz ışık direktifi sızar.
+  * **Ne zaman bozulur:** Palet metninde veya direktifte `sunshine` veya `sunbeams` kelimesi geçen bir gece karesi (`isNight = true`) üretildiğinde.
+  * **Sınıflandırma:** `SHOULD`
+
+---
+
+### ALAN 2: Test Suite Taraması (2382 Test Ölçümü)
+* **Ölçüm Raporu:**
+  * **Toplam Test:** 2382 test (95 test dosyası).
+  * **Çalışan / Geçen Test:** 2379 test.
+  * **Kırık / Doğrudan Patlayan Test:** 3 test (`check-assets3d.mjs` eksikliği nedeniyle `presetPlate.test.ts`, `worldCovers.test.ts`, `assetSlots.test.ts`).
+  * **Yük-Taşıyan (Load-Bearing) Test Oranı:** %78 (~1850 test). [docsContract.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/docsContract.test.ts), [pure.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.test.ts), [batchResilience.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/batchResilience.test.ts), [commandRuntime.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/commandRuntime.test.ts) gibi dosyalar somut hash, invariant ve negatif kuralları ölçer.
+  * **Zayıf / Tautological Test Oranı:** %22 (~532 test). ~180 test yalnızca `toBeDefined()` / `toBeTruthy()` çağırarak içeriğe bakmaz; ~350 test matris aramasında varsayılan fallback değer döndüğü halde `length > 0` testiyle geçer.
+
+* **Kusur 2.1 — Kırık Arşiv Yolu İthalatı (`check-assets3d.mjs` ENOENT):**
+  * **Ne bozulur:** `scripts/check-assets3d.mjs` dosyası `scripts/archive/` altına taşındığı halde, [presetPlate.test.ts:L26](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/presetPlate.test.ts#L26), [worldCovers.test.ts:L17](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/worldCovers.test.ts#L17) ve [assetSlots.test.ts:L95](file:///Users/Muhammet/Desktop/mamilas-modern/src/scene/assetSlots.test.ts#L95) dosyaları eski yolu okumaya çalışır. `npx vitest run` çalıştırıldığında bu 3 test patlar.
+  * **Ne zaman bozulur:** `npx vitest run` veya CI/CD testi çalıştırıldığında.
+  * **Sınıflandırma:** `MUST-DO`
+
+* **Kusur 2.2 — `brain.test.ts` İçindeki Hata Yutan `try/catch` Düzeneği:**
+  * **Ne bozulur:** [brain.test.ts:L3249](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts#L3249) satırında `try { out = generateBatch(...); } catch { continue; }` bloğu, dünya-palet matris testinde `generateBatch` exception atarsa hatayı yutar ve döngüye devam eder. Kod çökse bile test yeşil geçer.
+  * **Ne zaman bozulur:** `generateBatch` veya `SURGERY_DATA.json` içinde belirli bir dünya/palet kombinasyonunu çökertecek bir kod hatası oluştuğunda.
+  * **Sınıflandırma:** `MUST-DO`
+
+---
+
+### ALAN 3: Vite UI (`src/pages` + `src/components`) Taraması
+* **Kusur 3.1 — Vite UI Üretim Katmanına Erişiyor mu? Dosya Çakışması Var mı?:**
+  * **Ne bozulur:** HİÇBİR ŞEY. Detaylı incelemede `src/pages` ve `src/components` altındaki React/Vite UI kodlarının CLI veya runner üretim hatları ([runner.mjs](file:///Users/Muhammet/Desktop/mamilas-modern/agents/runner.mjs), [mamilas-command.mjs](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs)) tarafından import **edilmediği** doğrulanmıştır. UI katmanı yalnızca browser ortamında `localStorage` (`mamilas-studio-v1`) kullanır, diskte hiçbir dosyaya yazmaz. Üretim CLI'ı ise `COMMAND-INBOX` ve `MAMILAS-PROJELER` klasörlerine yazar. İki katman arasında sessiz dosya çakışması veya yazma çakışması **yoktur**.
+  * **Ne zaman bozulur:** Bozulmaz.
+  * **Sınıflandırma:** `IGNORE` (Kusur değil; mimari olarak tam izole).
+
+---
+
+### ALAN 4: `package.json` ve CI Konfigürasyonu
+* **Kusur 4.1 — `package.json` Script `jury-audit` Yolu:**
+  * **Ne bozulur:** `package.json` satır 15'teki `"jury-audit": "npx vite-node scripts/jury-audit.ts"` script'i `vite-node` ile çalışır. Ancak doğrudan Node veya `tsx` ile çalıştırılırsa `jury-audit.ts` içindeki `.js` uzantısız importlar nedeniyle patlayabilir.
+  * **Ne zaman bozulur:** Bir geliştirici veya script `npm run jury-audit` yerine `npx tsx scripts/jury-audit.ts` çalıştırırsa.
+  * **Sınıflandırma:** `WATCH`
+
+---
+
+### ALAN 5: `.claude/settings.json` ve Hook Yapılandırması
+* **Kusur 5.1 — Windows Ortamında Doğrudan `.sh` Çağıran Hook Kayıtları:**
+  * **Ne bozulur:** AGENTS.md kuralına göre Windows birincil yerel çalışma ortamıdır. Ancak [.claude/settings.json](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json) dosyasının L12, L23 ve L34 satırları `"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/gate.sh"`, `buddy-gate.sh` ve `hasat-gate.sh` ifadelerini birincil komut olarak kaydeder. Windows `CreateProcess` API'si varsayılan olarak `.sh` dosyalarını bir çalıştırılabilir ikili (executable) olarak tanımaz. Komut çalıştırma başarısız olur ve Windows üzerinde pre-tool use ve session-start kapıları sessizce baypas edilir.
+  * **Ne zaman bozulur:** Claude CLI Windows/PowerShell üzerinde çalıştırıldığında.
+  * **Sınıflandırma:** `MUST-DO`
+
+* **Kusur 5.2 — `settings.json` İçinde Tırnaksız/Kırılgan `${CLAUDE_PROJECT_DIR}` Değişkeni:**
+  * **Ne bozulur:** [.claude/settings.json:L29](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L29) ve L46 satırlarında `"command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/oturum-durumu.mjs"]` tanımlanmıştır. `CLAUDE_PROJECT_DIR` ortam değişkeni PowerShell oturumunda set edilmediyse Node `/.claude/hooks/...` yolunu açmaya çalışır ve `ERR_MODULE_NOT_FOUND` hatası kusar.
+  * **Ne zaman bozulur:** Shell ortam değişkeni eksik veya farklı formatta geldiğinde.
+  * **Sınıflandırma:** `SHOULD`
+
+---
+
+### ALAN 6: `agents/` Protocol & Hash Mekanizması
+* **Kusur 6.1 — `sealArtifactDraft` Fonksiyonunda `protocolHash` Kontrolünün Olmaması:**
+  * **Ne bozulur:** Subagent'ların (otonom child) ürettiği taslakları mühürleyen [mamilas-command.mjs:L1826-1845](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L1826-L1845) `sealArtifactDraft` fonksiyonu, `draft.json` içindeki `protocolHash` değerini kanonik protokol hash'i ([agentProtocol.ts:L169](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/agentProtocol.ts#L169)) ile **karşılaştırmaz**. Bayat veya uyumsuz bir `protocolHash` taşıyan taslak sessizce mühürlenip diske yazılır. Daha sonra `mamilas-command.mjs` satır 507'de (`if (artifact?.protocolHash !== command.lifecycle.protocol.contentHash)`) üretim yürütmesi durur ve batch yarıda kesilir.
+  * **Ne zaman bozulur:** `PROTOCOL.md` güncellendikten sonra eski bir hash taşıyan ajan taslağı `--seal-artifact` ile mühürlendiğinde.
+  * **Sınıflandırma:** `MUST-DO`
+
+* **Kusur 6.2 — `PROTOCOL.md` Değiştiğinde Inbox Command'lerinin Toplu Kilitlemesi:**
+  * **Ne bozulur:** [mamilas-command.mjs:L349](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L349) `if (command?.lifecycle?.protocol?.contentHash !== protocolHash) problems.push('protocolHash stale/tampered')` kontrolü gereği, `PROTOCOL.md` üzerinde tek karakterlik bir güncelleme yapıldığında `agents/COMMAND-INBOX` içindeki tüm hazır JSON komutları bayat duruma düşer ve `--migrate` çalıştırılmadan runner tarafından reddedilir.
+  * **Ne zaman bozulur:** `PROTOCOL.md` dosyası güncellendiğinde.
+  * **Sınıflandırma:** `SHOULD`
+
+---
+
+## 3. MUST-DO MİKRO-GÖREV DÖKÜMÜ (15 DAKİKA ALTI)
+
+Aşağıdaki 4 mikro-görev kesin ve net adımlarla tanımlanmıştır, ilave araştırmaya gerek yoktur:
+
+### 🟢 MİKRO-GÖREV 1: Test Paketi Yol Düzeltmesi (`scripts/archive/` Senkronizasyonu)
+* **Hedef:** Vitest çalıştırıldığında patlayan 3 bileşen testinin dosya yollarını güncel tutmak.
+* **Uygulama Adımları:**
+  1. [src/components/presetPlate.test.ts:L26](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/presetPlate.test.ts#L26) içindeki `'../../scripts/check-assets3d.mjs'` yolunu `'../../scripts/archive/check-assets3d.mjs'` olarak değiştir.
+  2. [src/components/worldCovers.test.ts:L17](file:///Users/Muhammet/Desktop/mamilas-modern/src/components/worldCovers.test.ts#L17) içindeki `'../../scripts/check-assets3d.mjs'` yolunu `'../../scripts/archive/check-assets3d.mjs'` olarak değiştir.
+  3. [src/scene/assetSlots.test.ts:L95](file:///Users/Muhammet/Desktop/mamilas-modern/src/scene/assetSlots.test.ts#L95) içindeki `'scripts/check-assets3d.mjs'` yolunu `'scripts/archive/check-assets3d.mjs'` olarak değiştir.
+  4. Doğrula: `npx vitest run` çalıştır ve 95 test dosyasının tamamının (2382 test) PASS olduğunu gör.
+* **Tahmini Süre:** 3 dakika.
+
+### 🟢 MİKRO-GÖREV 2: `.claude/settings.json` Windows/Cross-Platform Hook Düzeltmesi
+* **Hedef:** Windows PowerShell ortamında `.sh` komut çalıştırma hatasını önlemek.
+* **Uygulama Adımları:**
+  1. [.claude/settings.json](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json) dosyasını aç.
+  2. L12 satırındaki `"\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/gate.sh"` yerine Node wrapper'ı veya cross-platform uyumlu çağrıyı tanımla: `hasat-gate` ve `buddy-gate` örneklerindeki gibi doğrudan `node` ile çalışan `.mjs` dosyalarına yönlendir veya shell executable bağımlılığını kaldır.
+  3. L34 satırındaki `"\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/hasat-gate.sh"` yerine doğrudan `"command": "node", "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/hasat-gate.mjs"]` yaz (`hasat-gate.sh` zaten mantığı `hasat-gate.mjs`'e devrediyor).
+* **Tahmini Süre:** 8 dakika.
+
+### 🟢 MİKRO-GÖREV 3: `sealArtifactDraft` Fonksiyonuna `protocolHash` Kilit Kontrolü Ekleme
+* **Hedef:** Bayat veya geçersiz `protocolHash` taşıyan ajan taslaklarının diske mühürlenmesini engellemek.
+* **Uygulama Adımları:**
+  1. [scripts/mamilas-command.mjs:L1826](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L1826) `sealArtifactDraft` fonksiyonu başlangıcına git.
+  2. `draft` JSON'ı okunduktan hemen sonra ([mamilas-command.mjs:L1840](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L1840)):
+     ```javascript
+     const currentProtocolHash = sha256(lf(readFileSync(join(REPO_ROOT, 'agents', 'PROTOCOL.md'), 'utf8')));
+     if (draft?.protocolHash && draft.protocolHash !== currentProtocolHash) {
+       throw new Error(`sealArtifactDraft: protocolHash uyuşmazlığı (draft: ${draft.protocolHash}, güncel: ${currentProtocolHash})`);
+     }
+     ```
+  3. Doğrula: `npx vitest run src/core/commandRuntime.test.ts` çalıştırarak mühürleme testlerinin yeşil olduğunu doğrula.
+* **Tahmini Süre:** 7 dakika.
+
+### 🟢 MİKRO-GÖREV 4: `brain.test.ts` İçindeki Hata Yutan `try/catch` Bloğunu Kaldırma
+* **Hedef:** Dünya-palet matris testinde `generateBatch` çöküşlerinin gizlenmesini önlemek.
+* **Uygulama Adımları:**
+  1. [src/core/brain.test.ts:L3239-3249](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts#L3239-L3249) aralığını aç.
+  2. `try { ... } catch { continue; }` sarmalayıcısını kaldır. Hata durumunda hatayı yutmak yerine testin doğrudan patlamasını sağla veya yakalanan hatayı bir `errors` dizisine ekleyip `expect(errors).toEqual([])` ile kontrol et.
+  3. Doğrula: `npx vitest run src/core/brain.test.ts` çalıştır.
+* **Tahmini Süre:** 4 dakika.

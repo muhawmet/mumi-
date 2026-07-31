@@ -1,0 +1,135 @@
+# MAMILAS — KALAN YAPISAL KUSURLAR İÇİN MİKRO-GÖREV PLANI (DEĞER SIRALI)
+
+---
+
+### 1. `src/core/docsContract.test.ts` Skill İçerik Paritesi Testi
+* **NE:** `.claude/skills` ile `.agents/skills` arasındaki tüm skill'lerin yalnız isim klasör eşitliği değil, `SKILL.md` dosyalarının İÇERİK paritesinin de Vitest ile denetlenmesi. Şu anda sessizce sapan skill: `mamilas-ref`.
+* **NEREDE:** [docsContract.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/docsContract.test.ts#L293-L301)
+* **TAM DEĞİŞİKLİK:**
+```ts
+// src/core/docsContract.test.ts:293
+  test('.claude/skills ile .agents/skills küme ve içerik olarak eşit — yeni skill tek yüzeyde doğmaz veya sapamaz', () => {
+    const dirs = (base: string) =>
+      readdirSync(resolve(REPO, base), { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name)
+        .sort();
+    const claudeSkills = dirs('.claude/skills');
+    expect(dirs('.agents/skills')).toEqual(claudeSkills);
+
+    for (const skill of claudeSkills) {
+      const a = read(`.claude/skills/${skill}/SKILL.md`).replace(/\r\n/g, '\n');
+      const b = read(`.agents/skills/${skill}/SKILL.md`).replace(/\r\n/g, '\n');
+      expect(b, `Skill "${skill}" içerik olarak .claude ve .agents arasında sapmış`).toBe(a);
+    }
+  });
+```
+* **YANLIŞ YAPILIRSA RİSK:** Claude ve Codex iki farklı skill talimatı okur; bir yüzeyde yapılan kural güncellemesi (ör. `mamilas-ref` referans yükleme yasası) diğer yüzeyde uygulanmaz ve hatalı prompt üretilir.
+
+---
+
+### 2. `gate.sh` İçine `current-work.mjs --check` Drift Denetimi Eklenmesi
+* **NE:** `current-work.mjs --check` sapmayı tespit edip exit 1 veriyor fakat hiçbir kapı çağırmıyor. `gate.sh` içine `claude-sync` deseniyle birebir eşleşen uyarı (warn-only, bloke etmeyen) bloğu eklenmesi.
+* **NEREDE:** [.claude/hooks/gate.sh](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L173) (Section 7'nin hemen altına)
+* **TAM DEĞİŞİKLİK:**
+```bash
+# --- 8. oturum surekliligi (current-work drift — UYARI — bloke etmez) ---
+if ! WORK_OUT=$(node scripts/current-work.mjs --check 2>&1); then
+  printf '⚠️  current-work drift tespit edildi — `node scripts/current-work.mjs` ile durumu incele:\n' >&2
+  printf '%s\n' "$WORK_OUT" | grep '⚠' | head -10 >&2
+fi
+```
+* **YANLIŞ YAPILIRSA RİSK:** Aktif iş durumu (`artifacts/current-work.json`) ile disk gerçeği sapar, commit atılırken fark edilmez ve sonraki oturum bayat durumla açılır.
+
+---
+
+### 3. `.claude/hooks/hasat-gate.mjs` Uyarı Görünürlüğü
+* **NE:** `hasat-gate.mjs` kapısı BLOKE ETMEMELİDİR. Kendi yorumu haklıdır: Kapanış hasadı Mami onayına gidecek ADAY üretir, otomatik ders yazmaz. Bloke etmek oturum kapatmayı engeller. Ancak uyarının kaçırılmaz olması için `stderr` çıktısına belirgin görsel uyarı çerçevesi (ASCII banner) eklenmelidir.
+* **NEREDE:** [.claude/hooks/hasat-gate.mjs](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/hasat-gate.mjs#L46-L51)
+* **TAM DEĞİŞİKLİK:**
+```javascript
+// .claude/hooks/hasat-gate.mjs:46
+  say(`[hasat] 🚨 HASAT BEKLEYEN PROJELER VAR 🚨`);
+  say(`[hasat] ⚠️  ${res.rows.length - notOk.length}/${res.rows.length} proje güncel. Bekleyenler:`);
+  for (const r of notOk) say(`[hasat]    · ${r.project}  [${r.status}]  ${r.detail}`);
+  for (const o of res.orphans) say(`[hasat]    · (sahipsiz) ${o.file} — kaynak klasör "${o.dir}" yok`);
+  say('[hasat] ----------------------------------------------------------------------');
+  say('[hasat] Kapanış hasadı yapılmadan biten video sadece bir klasördür.');
+  say('[hasat]   node scripts/kapanis-hasadi.mjs --all    (ERROR verenler Mami kararı bekler)');
+  say("[hasat] Çıktı ADAY — APPROVED.md'ye yalnız Mami taşır.");
+  say('[hasat] ----------------------------------------------------------------------');
+```
+* **YANLIŞ YAPILIRSA RİSK:** Kapı bloke edilirse onay bekleyen adaylar oturumları kilitler; düz uyarında kalınırsa terminal kaydında kaybolur ve Mami onayına gidecek dersler toplanmaz.
+
+---
+
+### 4. `src/core/lessonBank.ts` / `scripts/mamilas-command.mjs` Kod Tekrarı Hükmü
+* **NE:** `src/core/lessonBank.ts` içinde tanımlı `parseApprovedLessons` fonksiyonu `scripts/mamilas-command.mjs` içinde inline kopyalanmıştır.
+* **NEREDE:** [mamilas-command.mjs](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L220-L230) & [lessonBank.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/lessonBank.ts#L33-L42)
+* **HÜKÜM & NEDENİ (YAPILMAMALIDIR):** Bu duplicate **SİLİNEMEZ**. `scripts/mamilas-command.mjs` yerel terminal/launcher ortamında transpiler adımı olmadan doğrudan `node` ile koşturulan saf ES Module (`.mjs`) betiğidir; `.ts` dosyalarını doğrudan `import` edemez. Repo derleme adımı (`dist/`) taşımadığı için JS ikizi zorunludur. Sapmayı önleme mekanizması zaten kurulmuştur: [lessonBank.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/lessonBank.test.ts#L79-L103) testi (satır 79-103) iki parser'ı her vitest koşusunda dinamik `import` ile byte-eşlik sınavına sokar.
+* **YANLIŞ YAPILIRSA RİSK:** Inline JS silinip `.ts` import edilmeye çalışılırsa `node scripts/mamilas-command.mjs` runtime'da çöker.
+
+---
+
+### 5. `SURGERY_DATA.json` vs `dunya-kilidi.mjs` Elenen 25 Bileşen Analizi (`pixar_3d_edu`)
+* **NE:** `SURGERY_DATA.json` render_law 36 bileşen içerir; `dunya-kilidi.mjs` 90 kelime bütçesine 11'ini alır, 25'ini bütçe dışı bırakır.
+* **NEREDE:** [dunya-kilidi.mjs](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/dunya-kilidi.mjs#L740-L760) / [SURGERY_DATA.json](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/SURGERY_DATA.json) (`pixar_3d_edu`)
+* **ELENEN 25 BİLEŞEN VE YÜK-TAŞIYAN (LOAD-BEARING) KUSUR TESPİTİ:**
+  1. `The signature is NOT 'cute 3D'` (puan: -6)
+  2. `it is a specific formal grammar` (puan: -6)
+  3. `appeal-driven silhouette design (shapes composed for emotional read at 50px thumbnail)` (puan: 8)
+  4. **`wet dual-point specular on eyes with painted-in iris depth, and physically-motivated bounce fill` (puan: 9) → 🔴 YÜK-TAŞIYAN (LOAD-BEARING EKSİK):** Bütçe dışı kalması, 3D karakter gözlerinin donuk çıkması ve video kliplerinde yüz/göz erimesi kusurunu (%76 recurring defect) doğrudan besler.
+  5. `a pencil is thumb-width` (puan: 0)
+  6. `a bowl is head-width` (puan: 0)
+  7. `metal shows anisotropic brushed highlight` (puan: 9)
+  8. `rubber has soft-diffuse sheen with slight translucency at thin edges` (puan: 9)
+  9. `Lighting grammar is art-directed, not photo-random` (puan: 0)
+  10. **`single motivated key (window sun at 45°, practical lamp at 60°, monitor glow from below)` (puan: 7) → 🔴 YÜK-TAŞIYAN (LOAD-BEARING EKSİK):** Bütçe dışı kalması, kadranda rastgele ışık kaynağı oluşmasına ve hareket esnasında yüz morfolojisinin bozulmasına yol açar.
+  11. `rim accent in palette's saturated accent color` (puan: 3)
+  12. `painted soft ambient occlusion in corner and fold pockets` (puan: 6)
+  13. `character at focal plane sharp at f/4 equivalent` (puan: 4)
+  14. `background falling into gentle focus falloff` (puan: -3)
+  15. `painterly AO` (puan: -3)
+  16. `SSS skin` (puan: 3)
+  17. `Shadow edges are soft, never hard-step` (puan: 3)
+  18. `The shape carries via appeal geometry, not line` (puan: 3)
+  19. `35mm to 50mm equivalent focal length` (puan: 1)
+  20. `f/4 on mid-shots` (puan: -5)
+  21. `f/2.8 on character close-up` (puan: -5)
+  22. `f/5.6 on environment establisher` (puan: -5)
+  23. `Vision3 250D color science` (puan: -5)
+  24. `neutral-warm film curve with fine grain (16mm-equivalent grain floor, mostly in shadow)` (puan: 4)
+  25. `Gentle racks on focal plane shifts` (puan: -5)
+* **HÜKÜM:** 90 kelimelik bütçe genel malzeme ve boru hattı tanımını korurken, göz içi specular detayını (#4) ve tekli motife bağlı key ışığı (#10) eliyor. Bu iki kural prompt yazılırken sahneye özel olarak ELLE eklenmelidir (`mamilas-director` kuralı).
+
+---
+
+### 6. 21 Öksüz Script Karar Haritası
+* **NE:** Yalnızca dokümanlarda adı geçen 21 script için DELETE / ARCHIVE / KEEP hükümleri.
+* **NEREDE:** `scripts/` dizini.
+* **HÜKÜMLER:**
+  * **DELETE (3 adet — repoda 0 referans, çöp denemeler):**
+    1. `scripts/path-bak.ts`
+    2. `scripts/prompt-bak.ts`
+    3. `scripts/take-screenshots.ts`
+  * **KEEP (1 adet — Windows ortamı launcher görevi):**
+    4. `scripts/start-codex.ps1` (PowerShell üzerinden Codex CLI başlatıcı kısayolu)
+  * **ARCHIVE (17 adet — tamamlanmış eski milestone/plan görsel kanıt ve tek seferlik analiz script'leri; `scripts/archive/` altına taşınır):**
+    5. `scripts/check-assets3d.mjs`
+    6. `scripts/design-tour-shots.mjs`
+    7. `scripts/dunya-sinavi.ts`
+    8. `scripts/faz5-pilot.ts`
+    9. `scripts/final-brief-matrix.ts`
+    10. `scripts/final-shots.mjs`
+    11. `scripts/goldenhour-shots.mjs`
+    12. `scripts/inspect-brief.ts`
+    13. `scripts/kutuphane-karne.ts`
+    14. `scripts/make-proof-textures.mjs`
+    15. `scripts/scene-proof.mjs`
+    16. `scripts/t3-brief-shots.mjs`
+    17. `scripts/t4-recipe-shots.mjs`
+    18. `scripts/t5-scenes-shots.mjs`
+    19. `scripts/t6-shots.mjs`
+    20. `scripts/ureme-birlestir.mjs`
+    21. `scripts/ureme-motion-birlestir.mjs`
+* **YANLIŞ YAPILIRSA RİSK:** Canlı `scripts/` klasöründe kafa karışıklığı sürer; aktif iş için yazılmış betikler ile eski plan kalıntıları birbirine karışır.

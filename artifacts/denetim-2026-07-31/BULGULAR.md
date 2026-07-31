@@ -203,6 +203,31 @@ katmanında değil.
 
 ---
 
+# 🔴 OKUNMAMIŞ RAPORLAR — YENİ OTURUM BUNLARLA BAŞLASIN
+
+Bu dosyanın üstündeki her şey okundu, doğrulandı ve çoğu onarıldı. **Aşağıdaki altı rapor
+HİÇ AÇILMADI** (2026-07-31 oturumu üretime öncelik verdi). İçlerinde kanıtlı kusur var;
+sıfırdan araştırma yapmadan önce bunlar okunur.
+
+| rapor | ne var — başlıklarından ölçüldü | neden önemli |
+|---|---|---|
+| `agy-12-nb2-arastirmasi.txt` (169 satır) | Google/Imagen resmi rehberi · **görsel içi metin ilkesi** · **Türkçe diakritik (ç ş ğ ı ö ü) davranışı** · karakter tutarlılığı | **En yüksek üretim değeri.** 139 revizenin 42+38'i yazı kaynaklı ve bu rapor motorun kendi kuralını taşıyor. |
+| `agy-11-en-iyi-proje.txt` (99 satır) | Sabit Sürat (%18 red) ile en kötü projelerin **sayısal** karşılaştırması · ayırt eden 5 ölçülebilir özellik · **ayırt ETMEYEN özellikler** | Altın standardı yanlış seçmiştik; gerçek en iyi proje burada çözümlenmiş. Negatif sonuçlar da yazılı. |
+| `agy-13-kontrol-sartnamesi.txt` (186 satır) | Üretim öncesi denetim katmanı şartnamesi · **eksik veri tanımları** (VO↔kare bağı makine-okunur değil) | `prompt-lint` kapıya bağlandı ama VO-fiil kontrolü hâlâ yok; bu şartname onun nasıl kurulacağını yazıyor. |
+| `agy-17-skill-denetimi.txt` (280 satır) | 10 skill'in tek tek denetimi: tetikleyici, uzunluk, **yasayla çelişki ve tekrar** | Skill'ler yasayı başka kelimelerle tekrar ediyorsa ikinci bir doğruluk sürümü var demektir. |
+| `agy-16-icra-gercekligi.txt` (53 satır) | Hook/betik yürütme matrisi · **sıralı sessiz başarısızlıklar** | Bugün üç sessiz no-op bulundu; bu rapor kalanları listeliyor. |
+| `agy-27-day-zero-2.txt` (141 satır) | İkinci day-zero turu — `src/core`, test paketi, UI, settings.json, PROTOCOL hash | **Üç somut bulgu:** settings.json Windows'ta doğrudan `.sh` çağırıyor · `sealArtifactDraft`'ta protocolHash doğrulama baypası · `brain.test.ts` `generateBatch` hatalarını try/catch ile yutuyor. |
+
+⚠ `agy-23-kare-seti-carpitma.txt` yalnız **ilk iki bulgusu** okundu (ikisi de yanlış alarm
+çıktı: tagsız arka plan figürünü tag'li karakter sanmıştı). Gerisi okunmadı.
+⚠ `agy-24-kare-eslestirme.txt` boş — o iş elle yapıldı (altı görsel bakışla harita çıkarıldı).
+
+**Ders:** bu altı rapor okunmadı çünkü gün üretimle geçti. Aynı şey tekrar olursa rapor
+üretmek ölçüm değil, **ölçüm biriktirmek** olur — bugün 1.858 satır ders adayının başına
+gelen şeyin aynısı.
+
+---
+
 # RAPOR DİZİNİ
 | dosya | ne arar |
 |---|---|

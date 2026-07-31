@@ -1,0 +1,34 @@
+# MAMILAS ADVERSARIAL AUDIT — PROMPTLAR-V2 (57 KARE)
+
+**Hedef Dosya:** [`agents/COMMAND-INBOX/6. Sınıf - Sorunları Birlikte Çözüyoruz/Sorunları Birlikte Çözüyoruz_PROMPTLAR-V2.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/6.%20S%C4%B1n%C4%B1f%20-%20Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz/Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz_PROMPTLAR-V2.txt)  
+**Çapraz İnceleme:** [`_REFERANSLAR.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/6.%20S%C4%B1n%C4%B1f%20-%20Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz/Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz_REFERANSLAR.txt), [`_SESLENDIRME.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/6.%20S%C4%B1n%C4%B1f%20-%20Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz/Sorunlar%C4%B1%20Birlikte%20%C3%87%C3%B6z%C3%BCyoruz_SESLENDIRME.txt), [`artifacts/denetim-2026-07-31/BULGULAR.md`](file:///Users/Muhammet/Desktop/mamilas-modern/artifacts/denetim-2026-07-31/BULGULAR.md)  
+**Kapsam:** 6 ayrı yazar bloğunda üretilen 57 Nano Banana 2 start-frame prompt'unun finansal/üretim riski yaratan hataları. *(İyi yanlar ve bilinen kusur sınıfları ayıklanmıştır.)*
+
+---
+
+## MALİYET VE RİSK SIRALAMASINA GÖRE BULGULAR
+
+---
+
+### 1. EN PAHALI: Yazar Blokları Arası Kimlik ve Evren Çöküşü (Cross-Block Inconsistency)
+*Altı yazar aynı evreni yazarken referans kilitlerini yıktı. Model her blokta farklı karakter ve nesne üretecek, görsel tutarlılık çökecektir.*
+
+#### 🔴 1.1. Tekerlekli Sandalyeli Karakter Derin Ayakta Duruyor ve Diz Çöküyor
+- **Kilit (`_REFERANSLAR.txt:L90-115`):** `@derin` tekerlekli sandalye kullanan, 11-12 yaşlarında (6. sınıf) bir kız çocuğudur.
+- **İhlal (Satır 2641 - K39, Blok S4):** 
+  > `"A girl of about eleven in a green fleece STANDS with a flattened carton under one arm..."`
+  
+  **Çelişki:** Yazar 4, tekerlekli sandalyedeki Derin'i (veya onun yerindeki kilit figürü) **ayakta dururken** resmetmiştir.
+- **İhlal (Satır 2915 - K42, Blok S4):** 
+  > `"A girl of about twelve is CROUCHED with her palms on her knees, face fully in frame, reading the three heaps."`
+  
+  **Çelişki:** Yazar 4, aynı karakteri sınıfta **dizlerinin üzerinde çömelmiş** halde resmetmiştir.
+- **İhlal (Satır 601 - K16, Blok S2):** 
+  > `"A girl of about eleven or twelve in a maroon school jumper... caught between two steps with her bag sliding off one shoulder..."`
+  
+  **Çelişki:** Yazar 2, karakteri yaya olarak **adımlar arasında** resmetmiştir.
+- **İhlal (Satır 159 - K07, Blok S1) ve (Satır 1246 - K24, Blok S3):** K07'de *"girl of about fourteen"* (14 yaşında lise öğrencisi), K24'te *"girl of about seven"* (7 yaşında ilkokul 1. sınıf öğrencisi) olarak yazılmıştır.
+
+#### 🔴 1.2. Efe'nin Gardırobunun Parçalanması
+- **Kilit (`_REFERANSLAR.txt:L61-87`):** `@efe1` tulum (denim dungarees) + petrol mavisi kapüşonlu sweatshirt (petrol blue hooded sweatshirt) giyer. Fermuarlı ceket, gri sweatshirt veya yeşil polar GİYDİRİLMEZ.
+- **İhlal (Satır 2197 - K34,

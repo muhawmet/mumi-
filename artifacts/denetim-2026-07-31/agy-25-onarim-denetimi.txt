@@ -1,0 +1,57 @@
+İşte 2026-07-31 düzeltmelerinin gerçek kullanımda patlama olasılığına göre sıralanmış saldırı analizi:
+
+---
+
+### 1. `scripts/kaba-kurgu.mjs:521` — `pathurl` (BROKEN)
+* **Durum:** **BROKEN**
+* **Hata Konumu:** [`scripts/kaba-kurgu.mjs:521-523`](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/kaba-kurgu.mjs#L521-L523)
+* **Saldırı Senaryosu (Windows Sürücü Harfleri):**
+  Windows'ta mutlak yol `C:\klipler\1.mp4` olduğunda, `abs.replace(/\\/g, '/')` metni `C:/klipler/1.mp4` yapar. `.split('/')` çıktısı `['C:', 'klipler', '1.mp4']` olur. İlk eleman (`i === 0`) `C:` olduğu için `encodeURIComponent`'ten muaf tutulup `/` ile tekrar birleştirilince `C:/klipler/1.mp4` üretilir. Başına `'file://localhost'` eklendiğinde sonuç:
+  `file://localhostC:/klipler/1.mp4`
+  Sürücü harfi öncesindeki `/` bölüsü unutulduğu için Premiere XML'i okuyamaz ve tüm klipler **Media Offline** olur.
+* **Saldırı Senaryosu (UNC Yolları):**
+  `\\server\share\1.mp4` yolu `file://localhost//server/share/1.mp4` şeklinde hatalı çift bölülü URL yapısına dönüşür.
+
+---
+
+### 2. `.claude/hooks/gate.sh:124` — `prompt-lint` PreToolUse Git Hook (LEAKS)
+* **Durum:** **LEAKS**
+* **Hata Konumu:** [`.claude/hooks/gate.sh:124-157`](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L124-L157)
+* **Saldırı Senaryoları:**
+  1. **`git commit -a` veya `git commit <dosya>`:** pre-commit/PreToolUse hook anında dosyalar henüz `git index`'e eklenmemiştir (`git commit` çalışırken ekler). `git diff --cached` boş döner, kilit **sessizce baypas edilir**.
+  2. **Yeniden Adlandırma (`git mv` / Staged Renames):** `--diff-filter=ACM` kullanılmıştır. Git ad değiştirmeyi `R` (Renamed) olarak işaretlediğinde filter bunu süzerek dışarıda bırakır; yeniden adlandırılan prompt dosyaları denetlenmeden geçer.
+  3. **Bilinmeyen / Eksik `register:` Başlığı (L130-135):** Dosya içinde `register: real|sty|edu` regex'ine uymayan bir ifade varsa (ör. `register: STY_ANIMATION` veya yazım hatası), script ekrana `⚠️` uyarısı basıp `continue` ile sonraki dosyaya geçer. **Commit bloke edilmez, kirmizi kontrolu atlanir.**
+  4. **`MAMILAS_LINT_SKIP=1` İz Bırakma:** `MAMILAS_LINT_SKIP=1` verildiğinde `while` döngüsü tamamen atlanır ve `✅ Gate yesil` basılır; git commit logunda veya state kaydında hiçbir kalıcı iz bırakmaz.
+
+---
+
+### 3. `agents/runner.mjs:144` ve `agents/production/runner.mjs:144` — Path Prefix Normalizasyonu (LEAKS)
+* **Durum:** **LEAKS**
+* **Hata Konumu:** [`agents/runner.mjs:144`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/runner.mjs#L144) & [`agents/production/runner.mjs:144`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/production/runner.mjs#L144)
+* **İki Dosya İkizliği:** İki dosya **birebir aynıdır** (313 satır, 14773 byte).
+* **Saldırı Senaryosu (Türkçe `İ` ve Unicode NFC Sıralaması):**
+  `nfc = (s) => s.normalize('NFC').toLowerCase()` deseni hatalıdır. Standard JS `.toLowerCase()`, Türkçe büyük `İ` (`U+0130`) karakterini `i` + birleşen üst nokta (`U+0069 U+0307` - Decomposed) dizisine çevirir. `normalize('NFC')` çağrısı `.toLowerCase()` işleminden **ÖNCE** yapıldığı için, fonksiyonun döndürdüğü string **NFC formunda değildir**. macOS/Windows dosya yollarında Türkçe `İ` içeren klasör adlarında prefix eşleşmesi (`startsWith`) çakışarak sahte güvenlik hatası fırlatabilir.
+
+---
+
+### 4. `scripts/birlestir.mjs:80` (ve `ureme-birlestir.mjs`) — Çakışan Numaralandırma (LEAKS)
+* **Durum:** **LEAKS**
+* **Hata Konumu:** [`scripts/birlestir.mjs:80-82`](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/birlestir.mjs#L80-L82)
+* **Saldırı Senaryosu (`01.txt` vs `1.txt` Çakışması):**
+  `mevcut.set(Number(m[1]), ...)` ifadesi string dosya adını sayıya dönüştürür. Klasörde hem `01.txt` hem `1.txt` bulunursa `Number("01") === Number("1") === 1` olduğu için `Map` üzerindeki `1` anahtarı ikinci okunan dosya tarafından **sessizce ezilir** ve bir dosyanın içeriği kaybolur.
+* **Sayısal Sıralama:** `(a, b) => a - b` kullanıldığı için 1 ve 2 basamaklı sayıların karışık sıralaması sorunsuz çalışır.
+
+---
+
+### 5. `scripts/current-work.mjs:365` — Atomik Dosya Yazımı Fallback (LEAKS)
+* **Durum:** **LEAKS**
+* **Hata Konumu:** [`scripts/current-work.mjs:365-375`](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/current-work.mjs#L365-L375)
+* **Saldırı Senaryoları:**
+  1. **Artık Temizlenmeyen `.tmp` Dosyası (L369-370):** 3. denemede `copyFileSync(tmp, abs)` çalıştırılırken bir I/O hatası oluşursa `catch { throw e; }` bloğuna düşülür. `unlinkSync(tmp)` satırına ulaşılamadığı için diske yazılmış olan `.tmp` geçici dosyası silinmez ve çöplük olarak kalır.
+  2. **Event Loop Kilitleme (L372):** `while (Date.now() < bekle)` döngüsü Node.js event loop'unu senkron olarak 50ms-100ms boyunca tamamen dondurur.
+
+---
+
+### 6. `scripts/mamilas-command.mjs:672` — `parseImageDimensions`
+* **Durum:** **HOLDS**
+* **Değerlendirme:** [`scripts/mamilas-command.mjs:672-694`](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L672-L694) kodunda `resize({width:8})` ve `failOn:'error'` kullanımı bozuk/yarım resim gövdelerini doğru şekilde yakalar; EXIF orientation 5, 6, 7, 8 için en/boy takas mantığı sorunsuzdur.
