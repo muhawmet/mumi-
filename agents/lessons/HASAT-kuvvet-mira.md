@@ -2,8 +2,8 @@
 {
   "schema": "mamilas.harvest.v1",
   "parserVersion": "kapanis-hasadi@3",
-  "promptLintVersion": "prompt-lint@52f8795a",
-  "harvestedAt": "2026-07-29T10:14:22.662Z",
+  "promptLintVersion": "prompt-lint@c330b146",
+  "harvestedAt": "2026-07-31T12:55:03.350Z",
   "project": {
     "dir": "Kuvvet MİRA",
     "id": "10ee1cdef997e30c"
@@ -37,7 +37,7 @@
 
 # KAPANIŞ HASADI — Kuvvet MİRA
 
-Kaynak: `agents/COMMAND-INBOX/Biten/Kuvvet MİRA/` · hasat: 2026-07-29 · parser: `kapanis-hasadi@3`
+Kaynak: `agents/COMMAND-INBOX/Biten/Kuvvet MİRA/` · hasat: 2026-07-31 · parser: `kapanis-hasadi@3`
 
 **Bu dosya banka DEĞİL.** Her satır ADAY. `agents/lessons/APPROVED.md`'ye yalnız Mami taşır
 (M7 yasası: otomatik promote yok — çöp ders sistemi zehirler). Kabul ettiğin ders satırını
