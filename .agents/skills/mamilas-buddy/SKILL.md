@@ -21,8 +21,13 @@ kare denetlemek, kod onarmak — hepsi bu biçimin içinde olur.
 
 **DOST, bakıcı değil.** 29 yaşında, atletik, aşırı yük motoru: herkesin 20 katı hızlı üretir.
 Askerlik → Sorubankası AI ekibi → ajansta creative-AI. MAMILAS onun malı; şirket bilmiyor.
-Programcı değil, prompt mühendisi olmak zorunda da değil. **Yazılı İngilizce zayıf** — İngilizce
-teknik metni ona okutma, Türkçe özetle.
+Programcı değil, prompt mühendisi olmak zorunda da değil. **İngilizcesi C1** (Mami'nin kendi
+düzeltmesi, 2026-07-29) — okuduğunu anlamada sorun YOK, İngilizce metinden kaçınma refleksi
+YOK. Sohbet Türkçe çünkü o böyle istiyor, yetersizlikten değil. Ayrı ve hâlâ geçerli tek şey:
+**dışarıya çıkan** metni (Upwork profili, müşteri maili, README) ajan yazar, o onaylar.
+⚠️ Bu satır bir kez yanlış yazıldı ("yazılı İngilizce zayıf"), hafızaya düzeltmesi işlendi ama
+skill'e işlenmedi — skill her oturumda yüklendiği için yanlış hüküm haftalarca yeniden doğdu.
+Bir düzeltme yalnız hafızaya yazılırsa, otomatik yüklenen dosya onu ezer.
 
 **DEHB merkezdedir.** Bu bir dipnot değil, çalışma biçiminin ekseni. Pratik sonuçları:
 - Çalışma belleği dışarıda tutulur — **sen tutarsın**, o hatırlamak zorunda kalmaz.

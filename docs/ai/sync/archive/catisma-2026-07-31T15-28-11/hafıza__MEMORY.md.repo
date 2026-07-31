@@ -18,8 +18,6 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Nefes kapısı EMİRDİR](mamilas-nefes-kapisi-emirdir.md) — kapı ateşlediyse yazılır; rapor duvarına gömülen teklif olmamış sayılır. İzin değil zorunluluk.
 - [Duyu ve ikinci göz yetkisi](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex = ikinci göz, ajan = eller. Sormadan kullanılır; uzanmamak kusurdur.
 - [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans.
-- [Interrupt ajanı öldürüyor](mamilas-interrupt-ajani-olduruyor.md) — her mesaj arka plandaki BÜTÜN ajanları kesiyor (`stoppedByUser`); uzun tek-parça iş ajana verilmez.
-- [ADHD skill araştırması](mamilas-adhd-skill-arastirmasi.md) — cevabı kısaltan aile bize uyar, işi bölen aile task-initiation için; kapı sekans sınırında, durum statusline'a.
 - [Mami loop'ta + İSTİŞARE](mamilas-mami-is-in-the-loop.md) — iş almak "hemen yapmak" değil; kısıtı teknikle aşmadan önce sor, 1000 videoluk deneyim masada.
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — hata avının çıktısı problem listesidir, kod değil. Körleme regex yasak.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
@@ -35,7 +33,6 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Üretim akışı](mamilas-uretim-akisi.md) — JSON→kesim→referans→prompt→üretim→tek-geçiş revizyon→motion→Premiere; teslim dosyaları.
 - [Enzim — hız yönergesi](mamilas-enzim-hiz-yonergesi.md) — sorun kalite değil geri sarma; 4 kilit kesim masasında kapanır. Magnific önceki kareyi bilmez.
 - [Üretim rutini](mamilas-generation-routine.md) — NB2 + Kling 3.0, Magnific Spaces batch, klip ekonomisi (baş 0.5s + kuyruk 1.5s bozuk).
-- [Üretim medyası masaüstünde](mamilas-uretim-medyasi-masaustunde.md) — klip ve ses repo'da DEĞİL: `~/Desktop/6. Sınıf Animasyonlar/<proje>`. Kareler repo'da `Resimler/`de kalır.
 - [Kaba kurgu hattı](mamilas-kaba-kurgu-hatti.md) — kitin BEŞİNCİ parçası KURGU.xml; whisper VO cümlelerine hizalar. Dört Premiere tuzağı duvarda.
 - [Uzatılmış klip kararı](mamilas-uzatilmis-klip-karari.md) — klip VO'dan kısaysa YAVAŞLATILMAZ, uzun üretilir. Yavaşlatma acil tamir, varsayılan değil.
 - [Magnific @-referansları](mamilas-magnific-char-refs.md) — tekrar eden karakter `@handle` ile çağrılır, tarif edilmez.
@@ -61,6 +58,4 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 ## Araçlar
 
 - [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Claude klip izleyemez, Gemini izler. AGY'ye HÜKÜM sordurma, TARİF ettir. PATH tuzağı içeride.
-- [Üç katman hükmü](mamilas-uc-katman-hukmu.md) — 13 kollu denetim: sahne tasarımı > kontrol > kelime. Kling 45 kelime ister, biz 260 yazıyoruz. Ham raporlar `artifacts/denetim-2026-07-31/`.
-- [Proje enzimi rutini](mamilas-proje-enzimi-rutini.md) — her videoda `_ENZIM.md` açılır; "bunu kaydet" → tek satır, "bitti" → ölçülebilen kontrole gider, yasaya düzyazı EKLENMEZ.
 - [Claude senkronu — Mac ↔ Windows](mamilas-claude-senkronu.md) — akıl `~/.claude`'da yaşar, git taşımaz. `claude-sync.mjs` iki yönlü/asla silmez/çatışmada durur; `memory-sync --adopt` tek yönlü repo→canlı. İkisi yan yana duruyor, kanon seçilmedi.
