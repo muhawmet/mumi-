@@ -1,0 +1,40 @@
+═══════════════════════════════════════════════════════════════════════════
+YENİ OTURUMA YAPIŞTIR — 5.1.2 "Farklı Kültürler, Ortak Bir Yaşam"
+═══════════════════════════════════════════════════════════════════════════
+(clear/compact sonrası ilk mesaj olarak gönder. Aşağısı olduğu gibi kopyalanır.)
+
+
+Yeni video: **5. Sınıf Sosyal Bilgiler · 5.1.2 — "Farklı Kültürler, Ortak Bir Yaşam"**
+(Kültürel Zenginliklerin Birlikte Yaşamaya Katkısı). Kaynak döküman:
+`agents/COMMAND-INBOX/Bekleyen/5.sosyal 1.ünite 2.konu video senaryo.docx`
+
+Kahraman **Mira** (5. sınıf, 5.1.3'te kullandığımız karakter). Gardırobu bu derse göre
+varyantlanacak — Efe'de yaptığımız gibi.
+
+BENDEN İSTENEN, bu sırayla:
+1. Kaynak dökümanı oku ve **hikâyeleştir** — döküman kuru, omurga yok. Bir kişi, bir
+   fark ediş, ve kapanışta açılışın aynı kadrajı tek farkla. (6.1.3'te bu tuttu.)
+2. `_SESLENDIRME.txt` — numaralı, cümle başına bir klip, hiçbir cümle 12 kelimeyi aşmaz.
+   Ve `node scripts/seslendirme-tek-blok.mjs` ile **tek blok** sürümü de üret.
+3. `_REFERANSLAR.txt` — basılacak referanslar + türetilecek kare tablosu.
+4. `_PROMPTLAR.txt` — bütün start frame'ler, tek dosyada, tek seferde.
+5. Sonra bekle: ben referansları ve kareleri basarım.
+
+DAHA SONRA (ben kareleri attıktan sonra): revize + motion + kaba kurgu.
+
+KURALLAR — hepsi ölçülmüş, `agents/PROMPT-YASASI.md` ve `artifacts/denetim-2026-07-31/`:
+· Klip **6 saniye** üretilecek şekilde tasarla (5s sığmıyor, baş 0.5s kırpılıyor).
+· Sahne başına yazı yüzeyi **en fazla bir**; yazı **duran** yüzeye konur (çuval/poşet/sırt
+  gibi hareketli taşıyıcıda harf eriyor — ölçüldü).
+· Karede tek dramatik fikir + adı konulmuş baskın geometri; generic ışık/palet bloğu YOK.
+· Üç katmanlı derinlik + ön plan örtmesi; karakter kameraya poz vermez.
+· Kadrajdan kesik figür YAZILMAZ — kalabalığı azaltmak için figür sayısı azaltılır.
+· Start frame'e **motion kısıtı şimdiden yazılır** (kimse okunabilir yazı yazmaz).
+· Referansta bir nesne varsa üstündeki beden parçası da yazılır.
+· `prompt-lint` artık `gate.sh`'a bağlı — teslim dosyası kırmızıysa commit olmuyor.
+
+BENİM KISTASIM (denetimde başka şeye takılma): **sahneyle uymuyor · bozuk yazı · yanlış şey.**
+Süreklilik, palet, üslup ve "arka planda biri donuk" revize sebebi DEĞİL.
+
+Çalışma biçimi: ajanları rutin kullan (tavan 6, birim sekans), AGY'yi salt-okur analize
+yolla, ben yazınca ajanlar ölüyor — her adımda dosyaya yazsınlar.

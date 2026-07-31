@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:04,200
+ Bu Efe, 6. sınıfa gidiyor ve okula her sabah yürüyerek gider.
+
+2
+00:00:04,700 --> 00:00:08,500
+ O sabah, köşedeki kaldırım rampasının önünde bir araba duruyordu.
+
+3
+00:00:09,000 --> 00:00:12,400
+ Efe, arabanın etrafından dolandı ve yoluna devam etti.
+
+4
+00:00:13,000 --> 00:00:16,000
+ Arkasından gelen sınıf arkadaşı derinse dolanamadı.
+
+5
+00:00:16,600 --> 00:00:20,300
+ Derin tekerlekli sandalyesiyle rampanın önünde durmak zorunda kaldı.
+
+6
+00:00:21,000 --> 00:00:24,800
+ Efe, o sabah her gün yanından geçtiği bir şeyi ilk kez gördü.
+
+7
+00:00:25,500 --> 00:00:29,800
+ İnsanlar yaşamlarını toplum içinde, orta kalanları paylaşarak sürdürür.
+
+8
+00:00:30,400 --> 00:00:35,200
+ Bu ortak yaşamda kirlilik, trafik ve erişim sorunlarıyla karşılaşılabilir.
+
+9
+00:00:36,000 --> 00:00:39,900
+ Birçok insanı aynı anda etkileyen bu durumlara toplumsal sorun denir.
+
+10
+00:00:40,600 --> 00:00:43,300
+ Bireysel sorun, yalnız belirli kişileri etkiler.
+
+11
+00:00:43,700 --> 00:00:45,100
+ Bozulan bir oyuncak gibi.
+
+12
+00:00:45,800 --> 00:00:49,400
+ Toplumsal sorunsa, toplumun geniş bir bölümünü ilgilendirir.
+
+13
+00:00:50,200 --> 00:00:53,000
+ Efe, o hafta mahallesine ilk kez dikkatle baktı.
+
+14
+00:00:53,600 --> 00:00:57,000
+ Kaldırım rampasının önünde her sabah başka bir araba duruyordu.
+
+15
+00:00:57,800 --> 00:01:01,400
+ Köşedeki çöp kutusu taşmış, poşetler kaldırıma yayılmıştı.
+
+16
+00:01:02,100 --> 00:01:05,000
+ Sokak lambaları güpegündüz yanmaya devam ediyordu.
+
+17
+00:01:05,700 --> 00:01:09,100
+ Okulun karşısındaki yolda güvenli bir yaya geçidi yoktu.
+
+18
+00:01:10,100 --> 00:01:13,500
+ Bir sorunu çözmek, önce onu doğru fark etmekle başlar.
+
+19
+00:01:14,200 --> 00:01:17,000
+ Efe bir hafta boyunca defterine gözlemlerini yazdı.
+
+20
+00:01:17,300 --> 00:01:19,900
+ Komşulara sordu, muhtarlıktan bilgi aldı.
+
+21
+00:01:20,600 --> 00:01:22,900
+ Trafiğin tek bir nedeni olmadığını gördü.
+
+22
+00:01:23,600 --> 00:01:27,400
+ Herkes kendi arabasıyla ve çoğu zaman tek başına gidiyordu.
+
+23
+00:01:28,000 --> 00:01:31,600
+ Toplu taşıma yetersizdi, hatalı park edense çoktu.
+
+24
+00:01:32,300 --> 00:01:35,400
+ Bir sorunun nedenleriyle sonuçları birbirine bağlıdır.
+
+25
+00:01:36,000 --> 00:01:38,900
+ Egzoz gazları ve pusil yakıtlar havayı kirletir.
+
+26
+00:01:39,400 --> 00:01:42,900
+ Kirli hava insan sağlığını ve doğal yaşamı olumsuz etkiler.
+
+27
+00:01:43,800 --> 00:01:46,900
+ Efe kirli bir günde okul bahçesinden ufka baktı.
+
+28
+00:01:47,500 --> 00:01:50,600
+ Her gün gördüğü karşı tepe, o gün görünmüyordu.
+
+29
+00:01:51,400 --> 00:01:54,400
+ Toplumsal sorunlar herkesi aynı ölçüde etkilemez.
+
+30
+00:01:54,900 --> 00:01:59,300
+ Çocuklar, yaşlılar ve özel gereksinimli bireyler daha çok etkilenir.
+
+31
+00:02:00,200 --> 00:02:03,500
+ Efe kaldırımı bir kez de derinin yüksekliğinden gördü.
+
+32
+00:02:04,200 --> 00:02:07,600
+ Bebek arabası süren bir anne aynı yerde durmak zorunda kaldı.
+
+33
+00:02:08,300 --> 00:02:11,900
+ Bastonuyla yürüyen yaşlı bir adam yolun ortasından dolaştı.
+
+34
+00:02:12,800 --> 00:02:16,200
+ Çözüm üretilirken farklı ihtiyaçlar dikkate alınmalıdır.
+
+35
+00:02:16,700 --> 00:02:19,700
+ Efe ve arkadaşları sınıfta çözüm önerilerini yazdı.
+
+36
+00:02:20,500 --> 00:02:27,100
+ Bir çözüm önerisi sorunun nedenine yönelik olmalıdır, uygulanabilir ve toplum yararına olmalıdır.
+
+37
+00:02:27,800 --> 00:02:31,500
+ İnsanların haklarını gözetmeli ve kalıcı sonuç üretmelidir.
+
+38
+00:02:32,200 --> 00:02:35,800
+ Rampanın önüne yaya önceliğini gösteren bir işaret istediler.
+
+39
+00:02:36,500 --> 00:02:40,100
+ Köşeye ayrıştırmalı geri dönüşüm kutuları konulmasını önerdiler.
+
+40
+00:02:40,900 --> 00:02:44,700
+ Çözümde kurumlar ve vatandaşlar farklı sorumluluklar üstlenir.
+
+41
+00:02:45,400 --> 00:02:49,000
+ Belediye ekipleri kutuları yerleştirdi ve köşeyi temizledi.
+
+42
+00:02:49,700 --> 00:02:53,300
+ Bir sivir toplum kuruluşu okulda bildilendirme çalışması yaptı.
+
+43
+00:02:53,900 --> 00:02:57,600
+ Mahalle sakinleri atıklarını ayırarak kutulara atmaya başladı.
+
+44
+00:02:58,400 --> 00:03:01,800
+ Bireyler sorunlara duyarlı olmalı ve çözüme katılmalıdır.
+
+45
+00:03:02,500 --> 00:03:04,700
+ Efe ve arkadaşları bir dilekçe yazdı.
+
+46
+00:03:05,400 --> 00:03:08,500
+ Dilekçeyi okul müdürüne ve muhtarlığa ulaştırdılar.
+
+47
+00:03:09,200 --> 00:03:12,000
+ Bozuk sokak lambasını ilgili birime bildirdiler.
+
+48
+00:03:12,700 --> 00:03:15,600
+ Gönüllü olarak çevre temizliği çalışmasına katıldılar.
+
+49
+00:03:16,300 --> 00:03:19,600
+ Uygulanan çözüm sonuçlarına bakılarak değerlendirilir.
+
+50
+00:03:20,400 --> 00:03:24,300
+ Bir ay sonra toplanan atık miktarı belirgin biçimde azalmıştı.
+
+51
+00:03:24,900 --> 00:03:29,300
+ Sorun sürüyorsa plan yeniden gözden geçirilir ve geliştirilir.
+
+52
+00:03:30,200 --> 00:03:32,600
+ Bir sabah Efe yine aynı köşeye geldi.
+
+53
+00:03:33,100 --> 00:03:36,400
+ Rampanın önü boştu ve derin yukarı tek başına çıktı.
+
+54
+00:03:37,300 --> 00:03:40,700
+ Toplumsal sorunların çözümü onları fark etmekle başlar.
+
+55
+00:03:41,100 --> 00:03:44,100
+ Sorunları fark eder, çözümleri birlikte üretiriz.
+
+56
+00:03:45,000 --> 00:03:48,400
+ Peki sen çevrende hangi toplumsal sorunu fark ettin?
+
+57
+00:03:49,100 --> 00:03:53,940
+ Cevaplarınızı yorumlara bekliyoruz. Meraklı kalın. Çözüm üretmeye devam edin.
+

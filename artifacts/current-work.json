@@ -1,11 +1,11 @@
 {
   "version": 1,
   "projectId": "6. Sınıf - Sorunları Birlikte Çözüyoruz",
-  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Sorunları Birlikte Çözüyoruz",
-  "phase": "motion",
-  "status": "aktif",
+  "projectPath": "agents/COMMAND-INBOX/Biten/6. Sınıf - Sorunları Birlikte Çözüyoruz",
+  "phase": "kapandi",
+  "status": "kapandi",
   "lastCompleted": "57/57 kare basıldı ve revize edildi · 57/57 motion yazıldı (203-215 kelime, yasak kalıp 0) · yazı fix'leri yeniden yazıldı (sil→ne yazacağını söyle)",
-  "nextAction": "Mami riskli üç klipten başlar: K32 (kameraya doğru yürüyen figür) · K04 (el+push-rim+krom) · K55 (bez pankartta 42 harf)",
+  "nextAction": "node scripts/kapanis-hasadi.mjs --all — karne + ders adayı.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -14,17 +14,17 @@
     "PROMPTLAR": true,
     "revize": true,
     "MOTION": true,
-    "EDIT-PLAN": false,
+    "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
-    "KABA-KURGU.xml": false
+    "KABA-KURGU.xml": true
   },
   "deliverablesOverride": {
     "SUNO": true,
     "revize": true,
     "MOTION": true
   },
-  "updatedAt": "2026-07-31T11:37:09.938Z",
+  "updatedAt": "2026-07-31T12:55:14.559Z",
   "updatedBy": "claude",
-  "baseCommit": "061e537"
+  "baseCommit": "f7b996e"
 }

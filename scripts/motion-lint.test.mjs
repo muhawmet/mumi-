@@ -13,7 +13,7 @@
 // NOT: `src/core/` DONUK — bu dosya bilerek `scripts/` altında (icraat fazı yasası).
 
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -24,7 +24,13 @@ import {
 // ⚠ `.pathname` KULLANMA — Windows'ta `file:///C:/…` → `/C:/…` verir ve `join` onu
 // `C:\C:\…` yapar. (prompt-lint.test.mjs'de 21 test tek bir sebeple kırmızıydı.)
 const INBOX = fileURLToPath(new URL('../agents/COMMAND-INBOX/', import.meta.url));
-const EFE = join(INBOX, '6. Sınıf - Sorunları Birlikte Çözüyoruz', 'MOTION');
+// Proje BİTİNCE `Biten/` altına taşınıyor — sabit yol yazmak testi taşınma anında kırar
+// (2026-07-31: kapanışta tam bu oldu ve kapı commit'i bloke etti, doğru davrandı).
+// Korpus nerede duruyorsa oradan okunur; ikisi de yoksa test yüksek sesle söyler.
+const EFE = [
+  join(INBOX, '6. Sınıf - Sorunları Birlikte Çözüyoruz', 'MOTION'),
+  join(INBOX, 'Biten', '6. Sınıf - Sorunları Birlikte Çözüyoruz', 'MOTION'),
+].find((p) => existsSync(p)) ?? join(INBOX, 'Biten', '6. Sınıf - Sorunları Birlikte Çözüyoruz', 'MOTION');
 const ALTIN = join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme', 'MOTION');
 
 const kirmiziKeys = (ps) => ps.filter((p) => p.level === 'kirmizi').map((p) => p.key);
@@ -72,8 +78,8 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
   });
 
   it('birleştirilmiş `*_MOTION.txt` tek klip dosyalarıyla AYNI sonucu verir', () => {
-    const r = lintMotionFile(join(INBOX, '6. Sınıf - Sorunları Birlikte Çözüyoruz',
-      'Sorunları Birlikte Çözüyoruz_MOTION.txt'));
+    // EFE zaten proje klasörünün MOTION alt dizini — birleşik dosya bir üst klasörde.
+    const r = lintMotionFile(join(EFE, '..', 'Sorunları Birlikte Çözüyoruz_MOTION.txt'));
     expect(r.total).toBe(57);
     expect(r.bad.length).toBe(0);
     // Kelime ölçümü de aynı kalmalı: ayraç/başlık artığı paragrafa karışırsa burada patlar.

@@ -1,0 +1,68 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — EDIT-PLAN
+=========================================================================
+Klip: 56/57 · VO: 234.0s (3:53) · FPS 25
+VO süreleri cümle uzunluğuna göre DAĞITILMIŞ tahmindir; kaba-kurgu.mjs --vo ile
+gerçek sesten yeniden türetilir. Klip süresi ffprobe ile ÖLÇÜLDÜ.
+
+kare      K    klip    VO      [başlangıç]   cümle
+-------------------------------------------------------------------------
+1.png	K01	6.04s	4.8s	[0:00]	Bu Efe; altıncı sınıfa gidiyor ve okula her sabah yürüyerek gider.
+2.png	K02	6.04s	4.7s	[0:04]	O sabah köşedeki kaldırım rampasının önünde bir araba duruyordu.
+3.png	K03	5.04s	3.9s	[0:09]	Efe arabanın etrafından dolandı ve yoluna devam etti.
+4.png	K04	5.04s	3.9s	[0:13]	Arkasından gelen sınıf arkadaşı Derin ise dolanamadı.
+5.png	K05	5.04s	4.9s	[0:17]	Derin tekerlekli sandalyesiyle rampanın önünde durmak zorunda kaldı.
+6.png	K06	5.04s	4.4s	[0:22]	Efe o sabah, her gün yanından geçtiği bir şeyi ilk kez gördü.
+7.png	K07	5.04s	5.2s	[0:26]	İnsanlar yaşamlarını toplum içinde, ortak alanları paylaşarak sürdürür.
+8.png	K08	5.04s	5.4s	[0:31]	Bu ortak yaşamda kirlilik, trafik ve erişim sorunlarıyla karşılaşılabilir.
+9.png	K09	5.04s	5s	[0:37]	Birçok insanı aynı anda etkileyen bu durumlara toplumsal sorun denir.
+10.png	K10	5.04s	5.3s	[0:42]	Bireysel sorun yalnız belirli kişileri etkiler; bozulan bir oyuncak gibi.
+11.png	K11	5.04s	4.4s	[0:47]	Toplumsal sorun ise toplumun geniş bir bölümünü ilgilendirir.
+12.png	K12	5.04s	3.4s	[0:51]	Efe o hafta mahallesine ilk kez dikkatle baktı.
+13.png	K13	5.04s	4.6s	[0:55]	Kaldırım rampasının önünde her sabah başka bir araba duruyordu.
+14.png	K14	5.04s	4.2s	[0:59]	Köşedeki çöp kutusu taşmış, poşetler kaldırıma yayılmıştı.
+15.png	K15	5.04s	3.6s	[1:04]	Sokak lambaları güpegündüz yanmaya devam ediyordu.
+16.png	K16	5.04s	4.1s	[1:07]	Okulun karşısındaki yolda güvenli bir yaya geçidi yoktu.
+17.png	K17	5.04s	3.9s	[1:11]	Bir sorunu çözmek, önce onu doğru fark etmekle başlar.
+18.png	K18	5.04s	3.7s	[1:15]	Efe bir hafta boyunca defterine gözlemlerini yazdı.
+19.png	K19	5.04s	3s	[1:19]	Komşulara sordu, muhtarlıktan bilgi aldı.
+20.png	K20	5.04s	3s	[1:22]	Trafiğin tek bir nedeni olmadığını gördü.
+21.png	K21	5.04s	4.3s	[1:25]	Herkes kendi arabasıyla ve çoğu zaman tek başına gidiyordu.
+22.png	K22	5.04s	3.8s	[1:29]	Toplu taşıma yetersizdi, hatalı park eden ise çoktu.
+23.png	K23	5.04s	4s	[1:33]	Bir sorunun nedenleri ile sonuçları birbirine bağlıdır.
+24.png	K24	5.04s	3.5s	[1:37]	Egzoz gazları ve fosil yakıtlar havayı kirletir.
+25.png	K25	5.04s	4.3s	[1:40]	Kirli hava insan sağlığını ve doğal yaşamı olumsuz etkiler.
+26.png	K26	5.04s	3.5s	[1:45]	Efe kirli bir günde okul bahçesinden ufka baktı.
+27.png	K27	5.04s	3.3s	[1:48]	Her gün gördüğü karşı tepe o gün görünmüyordu.
+28.png	K28	5.04s	3.6s	[1:52]	Toplumsal sorunlar herkesi aynı ölçüde etkilemez.
+29.png	K29	5.04s	4.9s	[1:55]	Çocuklar, yaşlılar ve özel gereksinimli bireyler daha çok etkilenir.
+30.png	K30	5.04s	4s	[2:00]	Efe kaldırımı bir kez de Derin'in yüksekliğinden gördü.
+31.png	K31	5.04s	4.4s	[2:04]	Bebek arabası süren bir anne aynı yerde durmak zorunda kaldı.
+32.png	K32	5.04s	4.3s	[2:08]	Bastonuyla yürüyen yaşlı bir adam yolun ortasından dolaştı.
+33.png	K33	5.04s	4.1s	[2:13]	Çözüm üretilirken farklı ihtiyaçlar dikkate alınmalıdır.
+34.png	K34	5.04s	3.7s	[2:17]	Efe ve arkadaşları sınıfta çözüm önerilerini yazdı.
+35.png	K35	5.04s	3.9s	[2:21]	Bir çözüm önerisi, sorunun nedenine yönelik olmalıdır.
+36.png	K36	5.04s	3.1s	[2:24]	Uygulanabilir ve toplum yararına olmalıdır.
+37.png	K37	5.04s	4.3s	[2:28]	İnsanların haklarını gözetmeli ve kalıcı sonuç üretmelidir.
+38.png	K38	5.04s	4.4s	[2:32]	Rampanın önüne yaya önceliğini gösteren bir işaret istediler.
+39.png	K39	5.04s	4.7s	[2:36]	Köşeye ayrıştırmalı geri dönüşüm kutuları konulmasını önerdiler.
+40.png	K40	5.04s	4.5s	[2:41]	Çözümde kurumlar ve vatandaşlar farklı sorumluluklar üstlenir.
+41.png	K41	5.04s	4.3s	[2:45]	Belediye ekipleri kutuları yerleştirdi ve köşeyi temizledi.
+42.png	K42	5.04s	4.6s	[2:50]	Bir sivil toplum kuruluşu okulda bilgilendirme çalışması yaptı.
+43.png	K43	5.04s	4.5s	[2:54]	Mahalle sakinleri atıklarını ayırarak kutulara atmaya başladı.
+44.png	K44	5.04s	4.1s	[2:59]	Bireyler sorunlara duyarlı olmalı ve çözüme katılmalıdır.
+45.png	K45	  YOK	2.7s	[3:03]	Efe ve arkadaşları bir dilekçe yazdı.
+46.png	K46	5.04s	3.7s	[3:06]	Dilekçeyi okul müdürüne ve muhtarlığa ulaştırdılar.
+47.png	K47	5.04s	3.5s	[3:09]	Bozuk sokak lambasını ilgili birime bildirdiler.
+48.png	K48	5.04s	3.9s	[3:13]	Gönüllü olarak çevre temizliği çalışmasına katıldılar.
+49.png	K49	5.04s	4s	[3:17]	Uygulanan çözüm, sonuçlarına bakılarak değerlendirilir.
+50.png	K50	5.04s	4.5s	[3:21]	Bir ay sonra toplanan atık miktarı belirgin biçimde azalmıştı.
+51.png	K51	5.04s	4.5s	[3:25]	Sorun sürüyorsa plan yeniden gözden geçirilir ve geliştirilir.
+52.png	K52	5.04s	2.7s	[3:30]	Bir sabah Efe yine aynı köşeye geldi.
+53.png	K53	5.04s	3.8s	[3:32]	Rampanın önü boştu ve Derin yukarı tek başına çıktı.
+54.png	K54	5.04s	4.1s	[3:36]	Toplumsal sorunların çözümü, onları fark etmekle başlar.
+55.png	K55	5.04s	3.6s	[3:40]	Sorunları fark eder, çözümleri birlikte üretiriz!
+56.png	K56	5.04s	3.8s	[3:44]	Peki sen çevrende hangi toplumsal sorunu fark ettin?
+57.png	K57	6.04s	5.6s	[3:48]	Cevaplarınızı yorumlara bekliyoruz; meraklı kalın, çözüm üretmeye devam edin!
+
+TOPLAM VO: 233.9s · toplam klip: 285.3s
+⛔ EKSİK KLİP: K45
