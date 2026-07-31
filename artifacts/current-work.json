@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "46/53 kare temiz ve motion yazılı · 16 revize basıldı, 13'ü doğrulandı · numara kayması onarıldı · kit REFERANSLAR/PROMPTLAR/revize/EDIT-PLAN/SESLENDIRME/SUNO tam",
-  "nextAction": "Mami 7 kareyi bassın: Farklı Kültürler_KALAN-URETIM.txt (K03 K08 K12 K17 K32 K46 K49 · K49 EN ÖNEMLİSİ, referansa 2.png bağlanır)",
+  "lastCompleted": "teslim denetimi koşuldu: 53/53 sayım tutarlı · EDIT-PLAN↔VO 53/53 birebir · MOTION↔VO 46/46 birebir · motion-lint KIRMIZI 0/46 · K02 kamera kilidi yerinde · sessiz yalan yok",
+  "nextAction": "Mami 7 kareyi bassın (Farklı Kültürler_KALAN-URETIM.txt) — K49 EN ÖNEMLİSİ, referansa 2.png bağlanır",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-31T15:28:11.355Z",
+  "updatedAt": "2026-07-31T15:37:37.449Z",
   "updatedBy": "claude",
-  "baseCommit": "9cf1a40"
+  "baseCommit": "b697747"
 }
