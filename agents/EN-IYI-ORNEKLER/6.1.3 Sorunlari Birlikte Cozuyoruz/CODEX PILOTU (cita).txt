@@ -1,0 +1,334 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — CODEX YÖNETMEN PİLOTU
+Pilot kapsamı: 01–06 · HIGH-END VIVID FEATURE-ANIMATION
+=========================================================================
+
+AMAÇ
+Bu pilot mevcut Claude paketinin üstüne yazmaz. Aynı VO ve aynı karakter
+referanslarını korur; fakat “her şeyi eşit anlatan oyuncak şehir” görünüşünü
+terk eder. Hedef gerçek bir uzun metraj animasyon filminin açılış sekansıdır:
+zengin ve yaşayan dünya, yüksek prodüksiyonlu ışık, güçlü sinema kadrajı,
+duygusal oyunculuk ve vivid fakat kontrollü renk. Her karede tek bir dramatik
+fikir ve baskın geometri vardır. Renk sahneden doğar; bütün karelere aynı
+amber/indigo reçetesi uygulanmaz.
+
+NEGATİF YASASI
+NEGATIVE alanı hazır bir render yasakları listesi değildir. Önce o karenin
+muhtemel kötü üretimi tahayyül edilir; sonra yalnız o kareyi bozan somut
+sapmalar engellenir. Bir sonraki kareye otomatik taşınmaz.
+
+MOTION İÇİN ŞİMDİDEN KİLİT
+Kalem ve defter görünse bile hiç kimse okunabilir yazı yazmaz. İleride el
+hareketi gerekirse yalnız anlamsız karalama veya çizgi izi oluşur.
+
+
+#########################################################################
+### K01 | VO1
+### “Bu Efe; altıncı sınıfa gidiyor ve okula her sabah yürüyerek gider.”
+### yazı: YOK
+#########################################################################
+
+FİKİR: Uzun metraj filmin açılış karesi. Efe’yi adı değil, her sabah geçtiği
+sokağın canlı ritmi içindeki kendine özgü yürüyüşü tanıtır.
+
+PLAN: Sokağın uzun perspektifi değil, yağmur oluğundan sıçrayan sabah ışığının
+çizdiği dar şerit baskın geometridir. Efe bu ışık şeridini çapraz keser. Ön
+plandaki buğulu otobüs camı kadrajın üçte birini örter; şehir hazır dekor değil,
+gözlenen gerçek bir yer gibi hissedilir.
+
+PROMPT:
+High-end cinematic feature-animation 3D still with the dimensional lighting,
+character appeal and finish of a theatrical animated film. A 40mm lens at a
+sixth-grader’s shoulder height looks through the
+fogged lower corner of a city-bus shelter; the translucent glass occupies the
+entire left third of frame and catches soft fingerprints and a pale reflection
+of the waking street. Beyond it, @efe crosses a narrow blade of clean morning
+sun on his walk to school, caught between two steps, satchel pulling one
+shoulder slightly lower. He is not presenting himself and never looks at the
+camera. His small worn notebook remains tucked in the bib pocket, only its
+rounded cover visible.
+
+The Turkish neighbourhood feels lavishly built and alive without competing
+with him: stacked ochre and faded-rose façades catch first sun, balcony laundry
+turns translucent, a simit cart rolls partly out of frame, rainwater glitters
+in the gutter, and a cobalt school bus recedes into pearly haze. Foreground
+glass and shadow simplify this richness around Efe instead of removing it.
+A vivid petrol-blue patch on his clothing, copper sesame crusts, coral façades
+and a thin lemon-white sun edge form a luminous colour chord. Surfaces are
+tactile—damp stone, worn denim, fogged glass, brushed metal—while skin and eyes
+carry sophisticated subsurface light. Efe’s face receives a brief soft
+reflection from the shelter, thoughtful and alive, mouth closed. Asymmetrical
+blockbuster composition, graceful foreground occlusion, deep cinematic
+atmosphere, frozen at the most appealing instant of premium character acting.
+
+Three movement beats belong to this exact morning: the loose satchel strap
+finishes a backward swing, condensation gathers into one slow bead on the
+shelter glass, and the departing bus exhales a faint ribbon into the haze.
+Depth in three layers—finger-marked shelter glass large and soft in the near
+plane, @efe sharp in the middle plane, bus and shutter dissolving in the far
+haze. His planted shoe rests in contact with the paving and compresses slightly
+against it; the satchel has visible downward weight and nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; expressive and appealing
+pre-teen proportions, sophisticated warm matte tan skin with low specular and
+no green or grey cast, luminous eyes, rich tactile materials, lush environmental
+world-building under strict focal hierarchy, motivated natural light,
+volumetric depth, elegant vivid colour separation and continuous physically
+based shading.
+
+TEXT: No readable text. The notebook is closed; the bus and shops carry no
+legible markings.
+
+NEGATIVE: do not turn Efe toward the lens or place him in a centred hero pose;
+do not show his full body cleanly from head to toe like a character sheet; do
+not fill the pavement with evenly spaced bins, lamps, bicycles and shop props;
+do not make the shelter glass crystal-clear or remove its fog and fingerprints;
+do not turn the street into a glossy miniature set; no name label saying EFE;
+no readable notebook page, bus route, shop sign or licence plate.
+
+
+#########################################################################
+### K02 | VO2
+### “O sabah köşedeki kaldırım rampasının önünde bir araba duruyordu.”
+### yazı: YOK
+#########################################################################
+
+FİKİR: Araba yalnız yanlış park etmiş bir araç değil; açık renkli yaya yolunu
+tek hamlede kesen ağır, koyu bir kütle.
+
+PLAN: Neredeyse kuşbakışı, büyük bir animasyon filminin cesur vinç kadrajı. Soluk beton
+rampa kadrajı çapraz geçen bir ok gibi başlar; koyu vişne renkli otomobil onu
+tam ortasında keser. İnsan yüzü gerekmiyor; düşüncesizlik, aceleyle kapanan
+kapıda ve hâlâ sallanan anahtarlıkta görülür.
+
+PROMPT:
+High-end theatrical feature-animation 3D with bold visual storytelling and
+vivid production design. A 28mm lens cranes from a second-floor balcony over
+@kose, looking steeply down without
+becoming a flat diagram. The pale dropped-kerb ramp enters from the lower left
+as a strong diagonal path and should have continued toward the upper right,
+but a dark sour-cherry compact car lies across it like a heavy bar. Its front
+tyre has climbed onto the tactile grooves; the compressed rubber and the
+broken line of the ramp are the sharpest details in frame.
+
+Only the driver’s coat hem, bread bag and hand are visible at the extreme upper
+edge as he pulls a shop door closed; his keys hang low and catch one hard spark
+of sun. This is unthinking haste, not villainy. A gust has pushed three dry
+plane leaves against the trapped edge of the ramp. Everything else falls away:
+chalky pavement, one tree-shadow, the car roof carrying a soft rectangle of
+sky. Colour is built from sun-warmed ivory concrete, deep sour-cherry paint,
+violet-blue cast shadow, fresh green plane leaves and one glowing kraft-paper
+accent. Balcony flowers add tiny distant colour notes without stealing focus.
+The car paint carries pearlescent depth beneath road dust and a dull roof,
+never showroom gloss. Strong graphic readability comes from real objects,
+theatrical lighting and scale—not arrows or labels. Every surface has the
+dimensional finish and material richness of a premium animated feature.
+
+Three movement beats belong to the interruption: keys finish a small swing at
+the upper edge, three trapped plane leaves scrape against the ramp, and a last
+veil of warm engine shimmer thins behind the car. Depth in three layers—the
+chipped ramp lip cuts the near plane, tyre and broken path are sharp in the
+middle, driver fragments and shop door fall soft at the far edge.
+The compressed tyre and car chassis remain visibly anchored to the sloped
+concrete with firm contact shadows; nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; bold appeal-driven geometry,
+rich but controlled neighbourhood world-building, luminous vivid colour,
+weather-softened tactile materials, motivated morning sun, sculpted bounce
+light, volumetric atmosphere, continuous physically based shading and
+unmistakable feature-film scale rather than miniature-diorama sheen.
+
+TEXT: No readable text on any surface.
+
+NEGATIVE: do not place the car neatly beside the ramp or leave a usable gap;
+do not make the ramp disappear completely beneath the car—the exposed tactile
+grooves must prove what is blocked; do not show an angry, guilty or threatening
+driver; do not turn the overhead view into a flat map, infographic or perfect
+top-down orthographic image; do not make the car pristine, oversized like a toy,
+or brightly heroic; no road arrows, accessibility icon, warning sign, licence
+plate, badge or shop lettering.
+
+
+#########################################################################
+### K03 | VO3
+### “Efe arabanın etrafından dolandı ve yoluna devam etti.”
+### yazı: YOK · K02’DEN TÜRET
+#########################################################################
+
+FİKİR: Efe’nin geçebilmesi sorunu görünmez yapıyor. Bedeninin çizdiği kıvrım,
+kesilmiş rampanın etrafından akar; gözü rampaya hiç değmez.
+
+EDIT PROMPT:
+Use this referenced image, K02, and change ONLY the human action: preserve the
+same high oblique camera,
+street corner, sour-cherry car, trapped pale ramp, leaf cluster, light direction
+and colour relationships. Add @efe already curving around the car’s outer
+front corner in the road, his path forming a loose S around the blocked ramp.
+Catch him mid-step with his shoulders naturally counter-rotated, one hand
+briefly near the car body for balance but not touching it, eyes fixed on the
+open street ahead. Remove the driver fragments and bread bag. The blocked
+ramp remains clearly visible below and behind Efe, but he does not notice it.
+Keep the moment cinematic, asymmetrical and physically weighted.
+
+TEXT: No readable text.
+
+NEGATIVE: do not make Efe climb over the ramp, squeeze between car and kerb,
+touch or damage the car, or look down at the obstruction; do not rotate the
+camera, move the car, clear the ramp, change the street, relight the scene or
+replace the trapped leaves; do not add a second child or pedestrian; do not
+draw a path line, footprints or arrow to explain his detour.
+
+
+#########################################################################
+### K04 | VO4
+### “Arkasından gelen sınıf arkadaşı Derin ise dolanamadı.”
+### yazı: YOK
+#########################################################################
+
+FİKİR: Bir santimetrelik fiziksel gerçek, bütün sokağın soyut “erişilebilirlik”
+lafından daha güçlü. Kaldırım taşı kadrajda duvar gibi yükselir.
+
+PLAN: Kamera Derin’in diz hizasında, kaldırımın hemen karşısında. Ön teker ile
+taş arasındaki ince gölge yarığı baskın odak. Derin’in yüzü krom el halkasının
+eğri yansımasında değil, sağ üstte kısmen görünür; insan kalır, sandalye sergi
+nesnesine dönüşmez.
+
+PROMPT:
+High-end vivid feature-animation close-up from ground level, using a 65mm lens
+placed just beyond the granite kerb at @kose. The kerb rises across the lower
+half of the frame like a weathered stone wall. On the far side, @derin’s small
+front castor has stopped a finger-width before it; that narrow dark seam is the
+sharpest and most important mark in the image. Her near rear wheel enters as a
+large arc from the right edge, with her hand bearing real weight on the chrome
+push-rim—palm against the rim, thumb following the upper edge, fingers curled
+beneath.
+
+Derin leans forward from the shoulder with contained effort. Only part of her
+face appears in the upper-right quadrant, framed between wheel and car body:
+eyes measuring the kerb, jaw set, mouth closed; neither sadness nor performance.
+The blocked ramp and car are present only as soft, recognisable shapes further
+along the pavement. Light is cooler here: open-sky blue on the stone and chair,
+with a fierce warm reflection running around one short section of chrome and
+catching her cheek. Grit, road dust and tiny chips give scale. The image should
+feel like the emotionally precise turning point of a theatrical animated film,
+captured at the exact instant movement became impossible—premium character
+appeal, bold depth, sophisticated facial restraint and no sentimental poster
+illustration.
+
+Three movement beats carry only her effort: road dust is still settling beside
+the stopped castor, one escaped hair crosses her cheek, and the short warm glint
+on the chrome rim tightens under her grip. Depth in three layers—the chipped
+kerb face dominates the near plane, castor, hand and push-rim are sharp in the
+middle, Derin’s partial face and the blocked car recede softly behind. Both
+tyres rest in contact with the street, carrying her weight through compressed
+contact patches and grounded shadows; no component floats.
+
+STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen
+acting, sophisticated warm matte tan skin with low specular and no green or grey
+cast, luminous expressive eyes, believable manual-wheelchair mechanics, vivid
+sculpted daylight, tactile street materials, cinematic focus falloff and rich
+feature-film dimensionality without medical-display polish.
+
+TEXT: No readable text.
+
+NEGATIVE: do not let the castor climb, touch or float above the kerb; do not
+widen the gap into an easy-to-cross space; do not detach, duplicate or melt
+Derin’s fingers into the push-rim; do not turn the wheelchair into hospital
+equipment with straps, headrest, clinical white parts or oversized handles;
+do not make Derin cry, lower her head, smile bravely at camera or appear helpless;
+do not hide the blocked car so completely that the cause becomes mysterious;
+no accessibility symbol, caption, arrow or pity-poster composition.
+
+
+#########################################################################
+### K05 | VO5
+### “Derin tekerlekli sandalyesiyle rampanın önünde durmak zorunda kaldı.”
+### yazı: YOK · K04’TEN TÜRET
+#########################################################################
+
+FİKİR: Hareket çabası biter; engel büyür. Aynı karede yalnız bedenin enerjisi
+değişerek “zorunda kaldı” görünür olur.
+
+EDIT PROMPT:
+Use this as the referenced image. Keep the camera, kerb-wall geometry, car,
+blocked ramp, castor position, wheelchair model, street details and lighting
+identical. Change only Derin’s held moment after the failed push: her hand has
+relaxed around the same push-rim without leaving it, shoulders have lowered a
+few centimetres, and her head has turned toward the ramp further along where
+the car blocks it. Her expression is alert and assessing, not defeated. Let
+the warm chrome reflection fade slightly while the narrow dark seam between
+castor and kerb remains the visual anchor. Nothing else changes.
+
+TEXT: No readable text.
+
+NEGATIVE: do not move the chair backward or forward; do not place either wheel
+on top of the kerb; do not remove her hand from the rim or invent extra fingers;
+do not turn the head so far that her face or identity changes; do not make her
+collapse, cry, plead or look into the lens; do not shift the camera, car, ramp,
+leaves, shadows or colour grade; do not add a helper, speech bubble or explanatory
+sign.
+
+
+#########################################################################
+### K06 | VO6
+### “Efe o sabah, her gün yanından geçtiği bir şeyi ilk kez gördü.”
+### yazı: YOK
+#########################################################################
+
+FİKİR: Efe, Derin’i doğrudan değil önce otomobil aynasında görür. Gündelik
+nesne bir anda tanıklık aracına dönüşür; “ilk kez görmek” görsel olarak olur.
+
+PLAN: Ayna kadrajın merkezinde küçük ama keskin bir pencere. Aynanın içinde
+Derin ve kapalı rampa; aynanın dışında Efe’nin yakın yüzü ve arabanın dev,
+bulanık gövdesi. İki mekân değil, aynı sokağın tek optik yansıması.
+
+PROMPT:
+High-end theatrical feature-animation 3D at its most cinematic and emotionally
+precise, 85mm lens at shallow depth of field beside the parked sour-cherry car
+at @kose. The car’s dusty wing
+mirror sits just left of centre, small but razor sharp. Inside its correctly
+oriented reflection, @derin is stopped at the kerb with one hand on her
+push-rim; the pale ramp visibly ends beneath the same parked car. The reflection
+is compressed but physically plausible, the visual heart of the reveal.
+
+Outside the mirror, @efe occupies the near right edge in close three-quarter
+profile, partly cropped by frame. He has just turned back. His face is softly
+out of focus except for the near eye, whose gaze lands precisely on the mirror;
+his mouth stays closed and his expression is the quiet jolt of recognition,
+not theatrical shock. The car body becomes a broad sour-cherry field separating
+him from the reflected scene. A narrow band of white morning sky crosses the
+mirror, a muted blue shadow wraps Efe’s cheek, and one warm glint joins his eye
+to the chrome rim inside the reflection. Dust on glass, fine scratches on mirror
+housing and road grit prevent polished toy perfection. The sour-cherry body,
+petrol-blue clothing, ivory sky band and warm chrome spark form a vivid
+four-note palette. Bold feature-film framing, foreground obstruction, selective
+clarity, luminous eye acting and emotionally restrained premium 3D.
+
+Three movement beats sharpen recognition without spectacle: Efe’s near eye
+finishes its turn toward the mirror, a dust mote crosses the white sky-band in
+the reflection, and the reflected chrome rim gives back one brief warm glint.
+Depth in three layers—the sour-cherry door and Efe’s cropped cheek occupy the
+soft near plane, the dusty mirror is razor sharp in the middle, Derin and the
+ramp remain compressed inside its far reflection. The mirror housing rests in contact
+with the car door through a firm mounting seam, and every wheel in the
+reflection meets the street with plausible contact; nothing floats.
+
+STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan
+skin with low specular and no green or grey cast, luminous expressive eye
+shading, optically plausible reflection, richly weathered surfaces, vivid
+colour separation, sculpted morning light, shallow cinematic focus and
+emotionally precise feature-film acting without showroom polish.
+
+TEXT: No readable text.
+
+NEGATIVE: do not place Derin physically inside or behind the mirror housing;
+do not create a portal, split screen, inset panel or second floating image;
+do not duplicate Derin outside the reflection; do not mirror her wheelchair
+into impossible geometry or reverse the street layout; do not make Efe stare
+at the lens, gape, point dramatically or produce a cartoon shock face; do not
+make every object equally sharp; do not clean the dust and scratches from the
+mirror; no thought bubble, written moral, accessibility icon or caption.
+
+=========================================================================
+PİLOT SONU
+Bu altı kare basılıp görülmeden K07’ye geçilmez. Görsel hüküm prompt metninden
+üstündür; Mami’nin kare verdict’i sonraki sekansın gerçek kalibrasyonudur.

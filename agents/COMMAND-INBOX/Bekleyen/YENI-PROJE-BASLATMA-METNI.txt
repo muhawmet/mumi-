@@ -68,3 +68,15 @@ En büyük tek red sebebi (139 revizenin 53'ü): **VO'nun fiilini yapan gövde k
   Bugün beş kez yanlış alarm verdi.
 · `gate.sh` artık prompt-lint'i koşuyor: teslim dosyası kırmızıysa commit olmuyor.
 · Ve buddy'liği işin arasına sıkıştırma — Mami'nin yükü işin kendisi kadar önemli.
+
+🔴 **KAPANIŞTA ONAY HALKASI — bugün kopuk olduğu ölçüldü.** Video bitince
+`node scripts/kapanis-hasadi.mjs "<Biten/Proje>"` koşulur VE ders adayları **Mami'ye
+GÖSTERİLİR**, "hepsini al mı, eleyecek misin" diye SORULUR. Yasa "APPROVED.md'ye yalnız
+Mami taşır" diyor ama kimse ona sormuyordu: 1.858 satır aday birikti, onaylı ders SIFIR
+kaldı. Beş ders doğru biçimde yazılmış hâlde hasat dosyasında bekliyordu; eksik olan tek
+şey soruydu. **Halkanın kopuk yeri araç değil, soru sormamaktı.**
+
+⚠ Ve `kapanis-hasadi.mjs`'in kendi kusuru var (2026-07-31'de ölçüldü, henüz onarılmadı):
+revize ayrıştırıcısı `### <dosya>` başlığı arıyor, bizim revize dosyalarımız `K19 · REVİZE`
+biçiminde → 29 revizeli projeye **%0 revize oranı** yazdı. Karneye körü körüne güvenme.
+Ayrıntı: `agents/lessons/CANDIDATES-2026-07-31-sorunlari-birlikte-cozuyoruz.md` bölüm D.

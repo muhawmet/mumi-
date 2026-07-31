@@ -1,0 +1,215 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — REFERANS ENVANTERİ
+=========================================================================
+Dünya: pixar_3d_edu · register: EDU · 57 kare (bkz. _SESLENDIRME.txt)
+Yasa: PROMPT-YASASI §4 + §4a + §2d. Bu dosya PROMPTLAR'dan ÖNCE yazıldı.
+
+⚠ SAHNE PROMPTLARINDA @handle'ı ASLA TARİF ETME. Kimlik handle'dan, hâl kareden.
+
+=========================================================================
+GEÇEN DERSTEN ÖĞRENİLEN VE BURADA BAŞTAN UYGULANAN ALTI KURAL (§2d)
+=========================================================================
+1. TEKRAR EDEN İNSAN TAG'LENİR, prop'la tutulmaz. Geçen derste bir çocuk aynı
+   kazak ve aynı çene sıyrığıyla yazıldı; kazak tuttu, YÜZ tutmadı. Çıpa kimliğe
+   konur. Bu derste 2+ karede görünen her insan referanstır.
+2. KADRAJ KİLİDİ — @tag çağıran her kare referans sayfasının "tam boy, ayakta,
+   dinlenme pozunda" duruşunu EZER: çömelmiş, oturmuş, eğilmiş, yana dönük.
+   Yazılmazsa figürin gelir (ölçüldü: 6/6 plastik).
+3. HER KAREDE EN AZ BİR İNSAN YÜZÜYLE. "Kahraman ellerdir" diye yazılan yedi
+   kare gövdesiz kolla döndü. El yakın planı isteniyorsa bile sahibi karededir.
+4. GENİŞ PLANDA YAKIN BİR YÜZ ZORUNLU. İnsansız geniş planlar pixar'dan çıkıp
+   fotoğrafik mimari render'a düşüyor (5 kare ölçüldü). Dünyayı karakter tutuyor.
+5. YAZI İSTEMEDİĞİN YÜZEY GİYDİRİLİR, yasaklanmaz. Altı karede uydurma İngilizce
+   çıktı ve altısının promptunda "no text anywhere" yazılıydı.
+6. NESNEYİ TUTAN EL YAZILIR — hangi parmak nerede, avuç mu uç mu, ağırlık nerede.
+   Dört karede nesne havada kaldı, tutan el üretilmedi.
+   ⚠ Bu dersin en riskli yeri: DERİN'in tekerleği. Her karede kavrama yazılacak.
+
+=========================================================================
+ENVANTER TABLOSU
+=========================================================================
+
+| Handle / kilit         | Kova         | İlk kare | Aralık          | Kaç klip |
+|------------------------|--------------|----------|-----------------|----------|
+| @efe1                  | BASILACAK    | K01      | K01-K57         | ~20      |
+| @derin                 | BASILACAK    | K04      | K04-K57         | ~9       |
+| @kose (mekân)          | BASILACAK    | K02      | K02-K57         | ~13      |
+| @sinif (mekân)         | BASILACAK    | K34      | K34-K45         | 7        |
+| @kutu (geri dönüşüm)   | BASILACAK    | K39      | K39-K50         | 5        |
+| defter (gözlem)        | TARİF KİLİDİ | K18      | K18-K20         | 3        |
+| dilekçe                | TARİF KİLİDİ | K45      | K45-K46         | 2        |
+
+⚠ Klip sayısına dokunan her düzenlemede bu tablo yeniden numaralanır (§4a).
+
+=========================================================================
+🔗 TÜRETİLECEK İKİLİLER — ikinci kare ÜRETİLMEZ, birincisinden türetilir
+=========================================================================
+Geçen derste ölçüldü: NB2 iki ardışık kareyi "aynı sahne" olarak TUTAMIYOR.
+K07/K08 çifti için negatifte kelimesi kelimesine "aynı halı, aynı kadın, aynı
+sokak" yazılıydı; halı da kadın da sokak da değişti. Bu bir metin kusuru değil,
+motorun sınırı. Çözüm yöntem: **ikinci kare referans-edit ile türetilir.**
+
+Bu derste üç çift var:
+  · K02 → K03   aynı köşe, araba duruyor; tek fark Efe'nin dolanması
+  · K04 → K05   aynı köşe, aynı araba; tek fark Derin'in DURMAK ZORUNDA kalması
+  · K02 → K52   aynı köşe, aynı kadraj; tek fark rampanın BOŞ olması (kapanış kanıtı)
+  · K04 → K53   aynı tekerlek, aynı kaldırım; tek fark Derin'in eğimden YUKARI çıkması
+Bu dört kare (K03, K05, K52, K53) sıfırdan basılmaz — promptları "türetme" olarak yazıldı.
+⚠ K/VO numarası 1:1 — VO52 Efe'nin köşeye gelmesi, VO53 Derin'in çıkması. Eski satır
+  boşalmış rampayı K53'e yazıyordu; S6 yazılırken VO'ya göre düzeltildi.
+
+=========================================================================
+BASILACAK — 1 · @efe1   (bu derse özel gardırop varyantı)
+=========================================================================
+Gerekçe: Efe seride mevcut karakter ama gardırobu FEN dersinin rozetlerini
+taşıyor (ay, gezegen, hilal). Bu ders sosyal bilgiler — o rozetler burada yalan
+söyler. Silüet korunur (tulum + kapüşonlu sweat = serideki kimliği), üstündeki
+üç şey konuya göre değişir.
+-----
+Full-body character reference of @efe1, wardrobe variant for the civic-problems lesson:
+
+A Turkish Anatolian boy in the sixth grade, around eleven or twelve, clearly pre-teen and not a small child: dark brown hair cut short and thick with a cowlick at the crown, dark brown eyes, warm matte tan skin with low specular and no green or grey cast, a light scatter of freckles across the nose. Sturdy build, shoulders already squaring up, hands still a child's.
+
+Same character, same denim dungarees and hooded sweatshirt. The celestial patches are gone — no star, no planet, no crescent, no moon anywhere on the garment.
+
+In their place, three things that belong to this story. In the bib pocket a small soft-cover notebook stands upright with a stub of pencil clipped to its cover, worn at the corners and clearly used — this is the boy who writes down what he sees. Sewn along one dungaree strap, a narrow band of grey retroreflective tape, the kind stitched onto school bags for roadside safety, its glass-beaded surface giving light back sharply where the denim gives it back softly. Low on one leg, a square patch of a different denim — visibly a repair, not a decoration, its edge frayed and the thread a shade too light.
+
+The hooded sweatshirt is a deep petrol blue, deliberately not red and not amber so he never reads as a municipal worker or a safety officer in the street scenes.
+
+Pose: relaxed hero pose, weight on one foot, one thumb hooked under a dungaree strap, the notebook visible in the bib pocket.
+
+85mm lens at f/4.0, full body centered, soft studio key with cool bounce fill, warm-grey seamless gradient backdrop with a soft floor contact shadow — not a story location and not an empty white void.
+
+Materials: denim with visible twill diagonal and pale wear at the knee; the reflective band with a fine granular sparkle; the notebook cover in soft board with rounded, furred corners; brushed cotton fleece on the hood's inner face.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, continuous physically-based shading, subsurface scattering on skin carrying the scene's light temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no star, planet, crescent, moon or celestial motif of any kind; no logo, brand name or readable text anywhere on the garment or the notebook; no photoreal or real-human photographic skin; no flat 2D or cel shading, no hard black outline, no clay surface; no franchise character.
+-----
+
+=========================================================================
+BASILACAK — 2 · @derin
+=========================================================================
+Gerekçe: Derin altı karede var ve dersin duygusal omurgası onun geçemeyişi.
+Tarif çıpası bu yükü taşımaz — tag zorunlu. Sandalye de aynı referansta,
+çünkü ayrı basılırsa iki nesne iki karede iki model olur (ölçüldü: @kitap).
+⚠ Sahne promptlarında Derin'in TEKERLEĞİ TUTAN ELİ her karede yazılır —
+   motorun en sık bozduğu yer nesneyi tutan el (4 kare ölçüldü).
+-----
+Full-body character reference of @derin, seated in her own manual wheelchair:
+
+A Turkish/Anatolian girl in the sixth grade, around eleven or twelve, pre-teen proportions. Warm matte tan skin with honey subsurface scattering, low specular, never tinted green or grey. Dark hair cut to the jaw and tucked behind one ear, a few strands escaped. Dark brown eyes with wet dual-point specular and painted-in iris depth. Expression direct and unsentimental — a girl who is used to being looked at and would rather be talked to; not brave, not sad, just present.
+
+Wardrobe: a rust-orange zip-up fleece over a plain cream long-sleeved tee, sleeves pushed to the forearm, and dark grey trousers. A canvas satchel hangs from the back of the chair by its strap.
+
+The chair is a real manual wheelchair, not medical equipment on display: a slim matte-black tubular frame, two large rear wheels with a chrome push-rim standing a finger's width clear of the tyre, spokes with a little road grime, small castors at the front, a plain grey woven seat and back sling with a slight sag from use, and a scuffed footplate. 🔴 Both of her feet rest squarely on that footplate, side by side, in worn white canvas trainers with the laces tied and the toes turned slightly outward; her trouser legs run unbroken from the knee down to the shoe and the ankles are visible above the shoe collar — the footplate is never empty and the legs never stop short. Both her hands rest on the push-rims — palms open, thumbs along the top of the rim, fingers curled under it — the natural resting grip of someone about to push.
+
+Pose: seated upright and relaxed, shoulders square, head level, hands on the rims — reads clearly at fifty-pixel thumbnail size.
+
+85mm lens at f/4.0, full figure centered, soft studio key with cool bounce fill, warm-grey seamless gradient backdrop with a soft floor contact shadow under both wheels and both castors — not a story location and not an empty white void.
+
+Materials: brushed fleece with a visible nap and a slightly pilled cuff; matte powder-coated tube with fine handling scratches near the rims; chrome push-rim with a soft anisotropic streak; rubber tyre with a dry matte finish and a shallow tread.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, continuous physically-based shading, subsurface scattering on skin carrying the scene's light temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no medical or hospital styling — no drip stand, no straps, no headrest, no clinical white; no pity framing, no downcast head, no wilting posture; no logo, brand name or readable text on the chair, the fleece or the satchel; no photoreal or real-human photographic skin; no flat 2D or cel shading, no hard black outline, no clay surface; no franchise character.
+-----
+
+=========================================================================
+BASILACAK — 3 · @kose   (MEKÂN REFERANSI · 9 klip)
+=========================================================================
+Gerekçe: Dersin bütün omurgası tek köşede geçiyor — açılışta araba rampayı
+kapatıyor, kapanışta rampa boş. Seyirci aynı köşeyi tanımazsa "önce/sonra"
+beyanı çöker. Ref yoksa 9 karede 9 farklı köşe çıkar.
+⚠ Mekân referansı da kendi kadrajını ithal eder — sahne karesinde kendi kadrajını YAZ.
+-----
+Full environment reference of @kose:
+
+A city street corner in a Turkish neighbourhood, seen as a wide establishing view from the pavement.
+
+A pedestrian dropped-kerb ramp cuts down through the kerb at the corner, its concrete a paler grey than the surrounding paving and its edges chipped, with two shallow tactile grooves running across it. The pavement is mid-width, its slabs uneven and one lifted by a tree root. On the corner stands a mature plane tree in a square of bare earth ringed by a low iron guard. Behind the pavement, four-storey apartment blocks in warm ochre and faded rose render, ground floors given over to shopfronts, first-floor balconies with dark green iron rails, air-conditioning units and satellite dishes at irregular heights.
+
+Street furniture, all of it dressed: a green municipal waste bin with its lid down, a cast-iron street lamp on a fluted base, a bus-stop pole with a timetable case whose glass is angled to the sky so nothing inside reads, a post box, and a bicycle locked to the tree guard. Every shopfront is closed behind a corrugated roller shutter with its awning furled and strapped to the frame, so no blank sign panel or empty fascia is left anywhere in the frame.
+
+The road beyond the kerb has faded lane paint, a manhole cover set slightly low, and a painted crossing that stops short of the corner.
+
+35mm lens at f/5.6, eye level, wide establishing view of the corner with the ramp in the near third. Neutral overcast daylight, flat and even, no strong direction — this is a reference plate, not a lit scene; every surface is legible so the frame can be re-lit later. No people, no vehicles, no action.
+
+Materials: concrete ramp with exposed aggregate at the chipped edge; granite kerb polished on its crown by feet; lime render with a chalky matte finish; cast iron with satin paint and granular rust at the joints; plane bark in flaking dry plates.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard. Deliberate overscale of ten to fifteen percent on street props for child-safe readability.
+
+NEGATIVE: no people, no cars, no bicycles in motion; no logo, brand name, shop fascia text or English signage anywhere; the timetable case stays glare-blank and carries no legible schedule; no photoreal or live-action capture; no flat 2D or cel shading, no hard black outline, no clay surface; no teal-orange grade, no desaturated look.
+-----
+
+=========================================================================
+BASILACAK — 4 · @sinif   (MEKÂN REFERANSI · 7 klip)
+=========================================================================
+Gerekçe: Çözüm önerileri, görev dağılımı ve dilekçe sahneleri burada geçiyor.
+⚠ Sınıf duvarları GİYDİRİLDİ — geçen derste boş duvara motor İngilizce afiş bastı.
+-----
+Full environment reference of @sinif:
+
+A Turkish sixth-grade classroom, seen as a wide establishing view from the back.
+
+Rows of scratched timber desks with tubular steel frames, chairs pushed in unevenly. At the front, an interactive smart board mounted flat on the wall, its screen dark and off, with a narrow whiteboard rail beneath it holding two markers and a felt eraser. Beside it a teacher's desk with a stack of exercise books weighted by a stapler.
+
+Every wall surface is already dressed so no blank panel exists anywhere: one side wall carries a pinned collage of children's paintings overlapping edge to edge, a rolled wall map hangs closed and tied on its cord, a cork strip is layered with papers turned so none reads, and a shelf holds stacked box files with their spines to the wall. Coat hooks by the door carry bags and a forgotten jacket. A tall window wall on one side with a crooked blind, a radiator beneath it with a glove drying, and a waste bin overflowing with paper.
+
+35mm lens at f/5.6, eye level, wide establishing view down the rows toward the board. Neutral even daylight from the window wall, flat and legible — this is a reference plate, not a lit scene. No people, no action.
+
+Materials: timber desktops with visible grain under a worn satin varnish and old initials scratched in; powder-coated steel frames with scuffs at the foot; painted block wall with a slightly chalky finish; the smart board's dark screen giving a soft grey sheen, never a mirror.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard. Deliberate overscale of ten to fifteen percent on props for child-safe readability.
+
+NEGATIVE: no people; no blackboard — the front wall carries an interactive smart board and nothing else; the screen stays dark and shows no image, interface or text; no logo, brand name or English signage anywhere; the paintings, map and pinned papers stay soft and carry no legible word; no photoreal or live-action capture; no flat 2D or cel shading, no hard black outline, no clay surface.
+-----
+
+=========================================================================
+BASILACAK — 5 · @kutu   (geri dönüşüm kutusu seti · 5 klip)
+=========================================================================
+Gerekçe: Çözümün fiziksel kanıtı bu kutular ve beş karede geçiyor. Tag'siz
+tekrar eden prop korpusun en pahalı hatasıydı — bir kitap altı karede altı
+farklı kitap çıktı ve altı kare toptan revize oldu.
+-----
+Full object reference of @kutu:
+
+A set of three municipal separated-waste bins standing side by side as one unit.
+
+Three moulded polyethylene bins of identical shape and size, waist height, each with a hinged lid and a shaped aperture cut into it — a round hole, a slot, and a wide opening — so the three are told apart by the shape of the opening and by colour: one deep blue, one warm ochre-brown, one muted green. The plastic is textured with a fine mould grain, chalked slightly by weather, with pale scuff arcs where lids have been swung. They sit in a shared galvanised steel cradle with a flat foot plate, one corner of which is bent up a little. A short chain tethers the cradle to a ground anchor.
+
+On the front of each bin, a hand-stencilled Turkish word in matte black on the moulded surface, the pigment thin on the raised grain and thicker in the low spots: the blue one reads "KAĞIT" — one word, five letters, all capitals, the third a capital Ğ with its breve; the brown one reads "CAM" — one word, three letters, all capitals; the green one reads "PLASTİK" — one word, seven letters, all capitals, the sixth a dotted capital İ. Each word reads left-to-right in normal reading direction and is never mirrored, reversed or rotated.
+
+85mm lens at f/4.0, the set centered and seen slightly from one side so all three fronts read, soft studio key with cool bounce fill, warm-grey seamless gradient backdrop with a soft contact shadow under the cradle — not a story location and not an empty white void.
+
+Materials: textured polyethylene with a dry matte finish giving light back weakly; galvanised steel with a dull spangled surface; stencil paint sitting into the mould grain.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard. Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no recycling arrows, triangle symbol, pictogram or icon of any kind — the words alone identify the bins; no logo, brand name, barcode or English text; no photoreal capture; no flat 2D or cel shading, no hard black outline, no plastic gloss.
+-----
+
+=========================================================================
+TARİF KİLİTLERİ — referans basılmaz, kelime öbeği HER karede AYNEN tekrarlanır
+=========================================================================
+
+GÖZLEM DEFTERİ (K18-K20)
+  "a small soft-cover notebook opened flat, its left page filled with a boy's
+   pencil handwriting in uneven lines and a column of tally marks down the margin,
+   the paper embossed from behind by the pressure of the strokes"
+  ⚠ Sayfadaki yazı OKUNMAZ kalır — yalnız satır ritmi ve çetele görünür.
+
+DİLEKÇE (K45-K46)
+  "a single sheet of white A4 held in both hands, its upper third carrying four
+   short handwritten lines in blue ballpoint and a wide empty space beneath them,
+   the sheet slightly cockled where a thumb has pressed it"
+
+=========================================================================
+🔴 MAMİ'NİN KARARI GEREKEN TEK ŞEY
+=========================================================================
+Dersin S8 sahnesi kurumları sayıyor: belediye, sivil toplum kuruluşu, vatandaş.
+Geçen derste AFAD ve Kızılay'ı **gerçek adıyla** basmaya karar verdin (kamu
+kurumu ticari marka değildir). Burada da aynı yolu tutuyorum:
+  · belediye aracında ve yeleğinde "BELEDİYE" (şehir adı uydurulmaz)
+  · sivil toplum kuruluşu için gerçek bir ad YOK — tişörtte "GÖNÜLLÜ" yazar
+Farklı istersen söyle, kareler yazılırken değiştiririm.
+=========================================================================
