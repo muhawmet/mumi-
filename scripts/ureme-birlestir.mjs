@@ -24,7 +24,7 @@ const SEKANSLAR = [
 
 const mevcut = new Map();
 for (const f of readdirSync(SRC)) {
-  const m = /^(\d{2})\.md$/.exec(f);
+  const m = /^(\d{1,4})\.md$/.exec(f);
   if (m) mevcut.set(Number(m[1]), readFileSync(join(SRC, f), 'utf8').trim());
 }
 

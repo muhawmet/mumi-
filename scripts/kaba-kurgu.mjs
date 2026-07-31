@@ -515,7 +515,12 @@ for (const it of items) {
 
 // ---------- 6. XML ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const pathurl = (abs) => 'file://localhost' + abs.split('/').map((p, i) => (i === 0 ? p : encodeURIComponent(p))).join('/');
+// WINDOWS: yol ayracı ters bölü gelirse Premiere hiçbir medyayı bulamaz ve TÜM klipler
+// "Media Offline" olur. Birincil ortam Windows; bu hat orada hiç koşmadı, ilk koşuda
+// bir kurgu oturumunu yakardı. Ayraç POSIX'e çevrilmeden URL kurulmaz.
+const pathurl = (abs) =>
+  'file://localhost' +
+  String(abs).replace(/\\/g, '/').split('/').map((p, i) => (i === 0 ? p : encodeURIComponent(p))).join('/');
 const rate = () => `<rate><timebase>${timebase}</timebase><ntsc>${ntsc ? 'TRUE' : 'FALSE'}</ntsc></rate>`;
 // KARE PİKSEL — Premiere 1924x1076'yı görünce "D1/DV PAL (1.0940)" sanıp pikselleri %9 geriyordu.
 // Kenarlardaki siyahın ve esnemenin gerçek sebebi buydu. Açıkça square beyan ediyoruz.

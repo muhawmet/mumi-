@@ -41,7 +41,7 @@ if (!existsSync(SRC)) {
 
 /** .md → .txt. Git izliyorsa `git mv` (geçmiş korunur), izlemiyorsa düz rename. */
 const cevir = () => {
-  const mdler = readdirSync(SRC).filter((f) => /^\d{2}\.md$/.test(f));
+  const mdler = readdirSync(SRC).filter((f) => /^\d{1,4}\.md$/.test(f));
   for (const f of mdler) {
     const eski = join(SRC, f);
     const yeni = join(SRC, f.replace(/\.md$/, '.txt'));
@@ -77,7 +77,7 @@ if (md2txt) {
 
 const mevcut = new Map();
 for (const f of readdirSync(SRC)) {
-  const m = /^(\d{2})\.txt$/.exec(f);
+  const m = /^(\d{1,4})\.txt$/.exec(f);
   if (m) mevcut.set(Number(m[1]), readFileSync(join(SRC, f), 'utf8').trim());
 }
 

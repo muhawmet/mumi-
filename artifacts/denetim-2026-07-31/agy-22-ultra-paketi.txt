@@ -1,0 +1,107 @@
+### Google AI Ultra (2026) ve Antigravity IDE / CLI (`agy`) Teknik İncelemesi
+
+*Tarih Referansı: Temmuz 2026*  
+*Bilgi Kaynakları ve Sınıflandırma Etiketleri: **[DOCUMENTED]** (Resmi Google/Antigravity dokümantasyonları), **[COMMUNITY]** (Açık kaynak/topluluk araçları ve gözlemleri), **[INFERENCE]** (Sistem mimarisinden türetilen teknik çıkarımlar).*
+
+---
+
+### BÖLÜM 1: GOOGLE AI ULTRA PAKETİ KAPSAMI VE ARABİRİM ERİŞİMİ
+
+Google I/O 2026 güncellemesi sonrasında yenilenen **Google AI Ultra** planı, Google'ın en üst düzey geliştirici ve güç kullanıcısı aboneliğidir. Aşağıda pakete dahil olan tüm servisler, limitleri ve **Komut Satırı / Programatik (API/CLI)** ile **Yalnızca Web/Mobil Arayüz (UI)** ayrımı listelenmiştir:
+
+#### 1. Gemini Modelleri ve Kullanım Kotaları **[DOCUMENTED]**
+* **Kapsam & Limitler:** Gemini 3.1 Pro, Gemini 3.5 Pro ve Gemini 3.6 Flash modellerine tam erişim. Context window (bağlam penceresi) boyutu model türüne göre **1M ile 2M token** arasındadır. AI Pro planına kıyasla **5x – 20x kat daha yüksek kullanım kotası** sunar.
+* **Erişim Türü:** **CLI / API / Programatik (EVET)** & **Web/Mobil UI (EVET)**.
+* **Ayrıntı:** Gemini API, Vertex AI API ve Antigravity CLI/IDE üzerinden doğrudan erişilebilir.
+
+#### 2. Deep Think (Gelişmiş Mantık Yürütme Modu) **[DOCUMENTED]**
+* **Kapsam & Tanım:** Karmaşık matematik, mühendislik ve kodlama problemleri için adım adım düşünme zinciri (Chain-of-Thought / reasoning) oluşturan özel mantık yürütme modudur.
+* **Erişim Türü:** **Web UI (EVET)** & **API/Programatik (EVET)**.
+* **Ayrıntı:** Gemini web/mobil uygulamasında bir anahtar (toggle) olarak sunulurken; Gemini API ve Antigravity alt ajanlarında (subagents) `pro` akıl yürütme katmanı veya `thinking_budget` parametresiyle komut satırından tetiklenebilir.
+
+#### 3. Veo (Veo 3.1 Video Üretim Modeli) **[DOCUMENTED]**
+* **Kapsam & Limitler:** Veo 3.1 sürümü; **4K çözünürlük**, yerel ses/diyalog sentezi ve sinematik efekt üretimi içerir. Ultra paketi aylık ortalama **50–100 yüksek kaliteli video üretimi** (veya AI kredisi karşılığı) sunar.
+* **Erişim Türü:** **Web UI (EVET)** & **API/Programatik (EVET)**.
+* **Ayrıntı:** Gemini Web ve Google Flow web arayüzünden doğrudan kullanılır. Resmi hazır bir terminal CLI'ı olmasa da Gemini Video API / Vertex AI SDK üzerinden Python/`curl` betikleriyle komut satırından çağrılabilir.
+
+#### 4. Google Flow (AI Kreatif Film Stüdyosu) **[DOCUMENTED]**
+* **Kapsam:** Görsel ve video üreten film yapımcılarına yönelik dijital AI stüdyosu (`labs.google`).
+* **Erişim Türü:** **YALNIZCA WEB UI**. (Komut satırı arayüzü yoktur; ancak ürettiği Veo altyapısı API ile erişilebilir).
+
+#### 5. Whisk (Görsel Harmanlama) **[DOCUMENTED]**
+* **Kapsam:** Özne (subject), sahne (scene) ve stil (style) girdilerini birleştirerek yeni görseller üreten Google Labs aracı.
+* **Erişim Türü:** **YALNIZCA WEB UI**.
+
+#### 6. Imagen (Imagen 3 / 4 Görsel Üretimi) **[DOCUMENTED]**
+* **Kapsam:** Yüksek çözünürlüklü fotogerçekçi görsel sentezi.
+* **Erişim Türü:** **Web UI (EVET)** & **API/Programatik (EVET)**.
+* **Ayrıntı:** Gemini App ve Whisk üzerinden arayüzle; Vertex AI ve Gemini API ile terminal/kod üzerinden erişilebilir.
+
+#### 7. Jules (Asenkron AI Kodlama Ajanı) **[DOCUMENTED]**
+* **Kapsam:** GitHub/GitLab depolarıyla entegre çalışan, arka planda bağımsız olarak hata çözen ve PR oluşturan otonom ajan (`jules.google`).
+* **Erişim Türü:** **Web UI (EVET)** & **API/Webhook (EVET)**.
+* **Ayrıntı:** Web paneli dışında sunulan Jules API sayesinde CI/CD hatlarından veya terminal betiklerinden tetiklenebilir.
+
+#### 8. NotebookLM / Gemini Notebook **[DOCUMENTED / COMMUNITY]**
+* **Kapsam:** Doküman analizi, not alma ve Audio Overview (sesli podcast özetleri) oluşturma servisi.
+* **Erişim Türü:** **Web UI (EVET)** & **API/CLI (EVET - Topluluk & Enterprise)**.
+* **Ayrıntı:** Resmi web sitesi (`notebooklm.google`) yanında Enterprise Notebook API bulunur. Ayrıca açık kaynak **`notebooklm-cli`** ve **`notebooklm-mcp-cli`** araçlarıyla komut satırından kaynak yükleme ve ses özeti alma mümkündür.
+
+#### 9. YouTube Premium & Google One Depolama **[DOCUMENTED]**
+* **Kapsam:** Bireysel YouTube Premium paketi ve **20 TB / 30 TB** Google One bulut depolama alanı.
+* **Erişim Türü:** Depolama için **Web UI + CLI (`gcloud storage` / `rclone`)**; YouTube için **Yalınca Web/App UI**.
+
+#### 10. Project Mariner / Tarayıcı Ajanı Modu **[DOCUMENTED]**
+* **Kapsam:** Ekranı görerek form dolduran ve web görevlerini yerine getiren tarayıcı ajanı (Mayıs 2026 itibarıyla bağımsız proje kapatılıp Chrome & Gemini arayüzüne entegre edilmiştir).
+* **Erişim Türü:** **YALNIZCA WEB / CHROME UI**.
+
+#### 11. Gemini in Chrome & Workspace **[DOCUMENTED]**
+* **Kapsam:** Gmail, Docs, Drive, Slides ve Chrome yan panel entegrasyonu.
+* **Erişim Türü:** **YALNIZCA WEB UI**.
+
+---
+
+### BÖLÜM 2: ANTIGRAVITY IDE VE `agy` CLI MEKANİKLERİ
+
+#### 1. Sunulan Modeller ve İşletim Modları **[DOCUMENTED]**
+[Antigravity CLI Reference](file:///Users/Muhammet/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/cli.md) ve IDE mimarisine göre platform şu seçenekleri sunar:
+* **Modeller:** Gemini 3.6 Flash (High), Gemini 3.5 Pro, Flash Lite, Claude Sonnet/Opus ve açık kaynak modeller.
+* **Çalışma Modları:**
+  1. *Interactive Chat / Agent Mode:* Doğrudan terminal TUI veya IDE sohbet kanvası.
+  2. *Subagent Execution Mode:* `invoke_subagent` ile arka planda çalışan ayrık alt ajanlar (`pro`, `flash`, `flash_lite`).
+  3. *Sandboxed Execution Mode:* Yerel/konteynırlı güvenli komut çalıştırma.
+
+#### 2. Deep Think / Extended-Thinking Desteği ve CLI Yönlendirmesi **[DOCUMENTED / INFERENCE]**
+* **Deep Think Varlığı:** `agy` CLI içinde web uygulamasındaki gibi tek bir "Deep Think" butonu bulunmaz. Ancak yüksek mantık yürütme (reasoning) katmanı **Pro model ve Subagent mimarisi** üzerinden sağlanır.
+* **CLI'dan Yüksek Mantık Katmanına Yönlendirme:** **EVET, MÜMKÜNDÜR.**
+  - Terminal içindeyken `/model` komutu ile modeli `Gemini 3.5 Pro` veya ilgili Pro seviyeye geçirebilirsiniz.
+  - Alternatif olarak `agy --model pro` bayrağı kullanabilir veya `~/.gemini/antigravity-cli/settings.json` içerisinden varsayılan modeli değiştirebilirsiniz.
+  - Komut satırından çalışan bir alt ajana görev verirken `Model: "pro"` parametresi atayarak isteği yüksek akıl yürütme katmanına yönlendirebilirsiniz.
+
+#### 3. Kota Mekanizması (Quota Mechanics) **[DOCUMENTED]**
+* **Çift Katmanlı Limit:** Kullanım kotaları **5 Saatlik Kayan Pencere (Rolling 5-Hour Limit)** ve **7 Günlük Haftalık Limit** olarak yönetilir.
+* **Maliyet/Token Orantılı Tüketim:** Kota, basit istek sayısıyla değil, **tüketilen işlem gücü ve token maliyetiyle orantılı** eksilir. Örneğin, Pro model kullanımı veya geniş bağlamlı (large context) istekler, Flash modele kıyasla kotayı 5-10 kat daha hızlı tüketir.
+* **Fallback (Otomatik Mod Düşürme):** 5 saatlik limit dolduğunda sistem işlemi tamamen engellemek yerine kullanıcıyı otomatik olarak alt seviye/hafif modele (`Flash`) düşürür.
+
+#### 4. Sunucu Tarafı Saklama, Senkronizasyon ve Silme **[DOCUMENTED / COMMUNITY]**
+* **Sunucuda Ne Saklanır?:** Hesap bazlı oturum istemleri (prompts), ajan araç çağrıları, cloud workspace metadata'ları ve senkronize edilen proje transcript logları Google/Antigravity cloud sunucularında saklanır.
+* **Başka Makineden Görünürlük:** Aynı Google hesabı ile farklı bir cihazdan giriş yapıldığında, **Antigravity Cloud Paneli ve IDE Workspace senkronizasyonu üzerinden geçmiş projeler ve konuşmalar GÖRÜLEBİLİR.** Ancak yerel cihazdaki loglar (`~/.gemini/antigravity-cli/brain/...`) sadece o makinede kalır.
+* **Silme İşlemleri:**
+  - CLI içerisindeki `/clear` komutu yalnızca **yerel terminal ekranını ve anlık oturum belleğini** siler.
+  - Sunucudaki verileri kalıcı olarak silmek için **Antigravity Cloud Dashboard** veya Google Hesabı *Gizlilik ve Etkinlik Kontrolleri* paneli üzerinden cloud geçmişinin silinmesi gerekir.
+
+---
+
+### BU PAKETLE YAPILABİLENLERİ KARŞILAŞTIRMA TABLOSU
+
+| Özellik / Servis | Komut Satırından / Programatik Yapılabilenler (CLI / API) | Yalnızca Arayüzden Yapılabilenler (Web / App UI) |
+| :--- | :--- | :--- |
+| **Gemini 3.x Modelleri** | `agy` CLI, Gemini API ve Vertex AI ile kod yazma, analiz ve ajan görevleri çalıştırma. | Gemini Web/Mobil uygulamasında sohbet etme. |
+| **Deep Think / Reasoning** | CLI'da `/model` veya Subagent `Model: "pro"` atayarak karmaşık mantık yürütme. | Gemini Web UI üzerindeki "Deep Think" anahtarını (toggle) açıp kapatma. |
+| **Veo Video Üretimi** | Gemini Video API / Vertex AI SDK ile Python/`curl` betikleri üzerinden video sentezleme. | Google Flow stüdyosu veya Gemini Web görsel-video paneli üzerinden butonlarla üretme. |
+| **Jules Kod Ajanı** | Jules API ve Webhook entegrasyonları ile CI/CD veya terminal betiklerinden görev tetikleme. | `jules.google` web arayüzünden depo bağlama ve PR inceleme. |
+| **NotebookLM** | Enterprise API veya topluluk `notebooklm-cli` / `notebooklm-mcp-cli` ile kaynak yükleme ve Audio Overview alma. | `notebooklm.google` arayüzünden etkileşimli not düzenleme ve zihin haritası çıkarma. |
+| **Imagen Görsel Üretimi** | API üzerinden komut satırından görsel oluşturma betikleri çalıştırma. | Whisk stüdyosu ve Gemini Web sohbet arayüzünden görsel üretme. |
+| **Google Storage (Drive)** | `gcloud storage` ve `rclone` CLI araçları ile 20-30 TB alana dosya yükleme/yönetme. | Google Drive web/mobil arayüzü. |
+| **Google Flow & Whisk** | *(Doğrudan CLI desteği yok; arkadaki Veo/Imagen API'leri bağımsız kullanılır).* | Stüdyo arayüzlerinde görsel harmanlama ve sinematik sahne tasarlama. |
+| **Project Mariner & Workspace** | *(CLI desteği yok).* | Chrome tarayıcı ajanı kullanımı, Gmail/Docs yan panelleri ve YouTube Premium izleme. |

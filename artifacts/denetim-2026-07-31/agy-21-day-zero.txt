@@ -1,0 +1,88 @@
+[BULGULAR.md](file:///Users/Muhammet/Desktop/mamilas-modern/artifacts/denetim-2026-07-31/BULGULAR.md) incelendi ve rapordaki bilinen tüm maddeler süzüldü. Aşağıdaki bulguların **hiçbiri o raporda yoktur** ve repo genelindeki gizli zaman bombalarıdır.
+
+Maliyet beklentisine göre sıralanmış gizli kusur haritası aşağıdadır:
+
+---
+
+### 1. macOS NFD vs Windows NFC Yol Karşılaştırma Çökmesi
+* **Ne kırılıyor:** `node agents/runner.mjs --project "<Ad>"` komutu çalıştırıldığında proje adı veya ana yol Türkçe karakter (`Ş, Ç, Ğ, Ö, Ü, İ, ı`) içeriyorsa `"Proje klasörü izin verilen kökün dışına çıkamaz."` hatası atarak işlemi keser.
+* **Tetikleyici:** macOS (APFS/HFS+) ortamında `readdir` diskten NFD ayrıştırılmış Unicode yolları döndürürken `resolve` ve `projectIdentity` NFC birleştirmesi kullanır. `toLowerCase()` sonrası `Ş` (NFC: `ş`, NFD: `s\u0327`) karakterleri uyuşmaz ve `.startsWith()` kontrolü `false` döner.
+* **Dosya ve Satır:** [runner.mjs:141-142](file:///Users/Muhammet/Desktop/mamilas-modern/agents/runner.mjs#L141-L142) ve [runner.mjs:141-142](file:///Users/Muhammet/Desktop/mamilas-modern/agents/production/runner.mjs#L141-L142)
+* **Sınıf:** **MUST-DO**
+* **Mikro-Görev:** `agents/runner.mjs` ve `agents/production/runner.mjs` içinde `.startsWith()` kontrolünden önce hem `projectDir` hem de `expectedPrefix` değişkenlerini `.normalize('NFC')` ile normalize et.
+
+---
+
+### 2. Windows Ters Bölü (`\`) Sebebiyle Premiere Pro XML Yol Bozulması
+* **Ne kırılıyor:** Windows üzerinde `KABA-KURGU.xml` üretildiğinde `pathurl` yardımcısı klip yollarını `file://localhostC%3A%5CUsers%5CMuhammet%5C...` şeklinde üretir. Premiere Pro XML'i içe aktardığında hiçbir medyayı bulamaz ve tüm klipler "Media Offline" hatası verir.
+* **Tetikleyici:** Windows üzerinde `node scripts/kaba-kurgu.mjs "<Proje>"` çalıştırılması.
+* **Dosya ve Satır:** [kaba-kurgu.mjs:518](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/kaba-kurgu.mjs#L518)
+* **Sınıf:** **MUST-DO**
+* **Mikro-Görev:** [kaba-kurgu.mjs:518](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/kaba-kurgu.mjs#L518) adresindeki `pathurl` fonksiyonunda `abs.split('/')` ifadesinden önce `abs.replace(/\\/g, '/')` ekleyerek Windows yol ayraçlarını temizle.
+
+---
+
+### 3. Tek Haneli ve 100+ Haneli Kare Dosyalarının Sessizce Silinmesi/Atlanması
+* **Ne kırılıyor:** Teslim birleştiricilerindeki `/^\d{2}\.(txt|md)$/` regex'i katı bir şekilde tam 2 haneli kare isimlerini (`01.txt`...`99.txt`) zorunlu kılar. Elle üretilmiş tek haneli (`1.txt`) veya 100 kareden uzun projelerdeki 3 haneli (`100.txt`) dosyalar hiçbir hata vermeden teslim dosyasından **sessizce atlanır ve kaybolur**.
+* **Tetikleyici:** Projede başında sıfır olmayan kare dosyası bulunması veya 100+ karelik bir projenin birleştirilmeye çalışılması.
+* **Dosya ve Satır:** [birlestir.mjs:44,80](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/birlestir.mjs#L44), [ureme-birlestir.mjs:27](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/ureme-birlestir.mjs#L27), [ureme-motion-birlestir.mjs:31](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/ureme-motion-birlestir.mjs#L31)
+* **Sınıf:** **MUST-DO**
+* **Mikro-Görev:** `birlestir.mjs`, `ureme-birlestir.mjs` ve `ureme-motion-birlestir.mjs` dosyalarındaki `/^\d{2}\.` regex kalıplarını `/^\d{1,4}\.` olarak güncelle.
+
+---
+
+### 4. Windows NTFS Kilitlenme (`EBUSY`) Nedeniyle Atomik Yazma Çökmesi
+* **Ne kırılıyor:** Windows'ta `artifacts/current-work.json` veya `PROJECT-LOOT.json` dosyası bir editör, IDE watcher veya arka plan süreci tarafından açık tutuluyorsa `fs.renameSync(tmp, abs)` atomik değiştirme adımı `EBUSY: resource busy or locked` fırlatarak betiği çökerdir.
+* **Tetikleyici:** Durum güncelleyen bir komut çalışırken `current-work.json` dosyasının harici bir programda açık olması.
+* **Dosya ve Satır:** [current-work.mjs:361](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/current-work.mjs#L361), [project-loot.mjs:91](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/project-loot.mjs#L91)
+* **Sınıf:** **MUST-DO**
+* **Mikro-Görev:** `current-work.mjs` ve `project-loot.mjs` içindeki `renameSync(tmp, abs)` çağrılarını `try/catch` içine alıp `EBUSY` durumunda 50ms gecikmeli 3 deneme döngüsü veya fallback `copyFileSync` ekle.
+
+---
+
+### 5. Görsel Boyutu Doğrulamasında Ham Piksel Açımı Sebebiyle RAM Çökmesi (OOM)
+* **Ne kırılıyor:** `parseImageDimensions` fonksiyonu her görsel doğrulamasında `sharp(bytes).clone().rotate().raw().toBuffer()` çağırarak Sharp'ı bellek içinde ham uncompressed RGBA piksel dizisi açmaya zorlar (4K kare başına ~33MB RAM). 40-50 karelik projelerde toplam bellek kullanımı birkaç gigabaytı aşar ve Node.js bellek taşması (Out-Of-Memory) çökmesi yaşanır.
+* **Tetikleyici:** 40+ yüksek çözünürlüklü karesi olan bir projede görsel boyut denetiminin koşulması.
+* **Dosya ve Satır:** [mamilas-command.mjs:678](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L678)
+* **Sınıf:** **MUST-DO**
+* **Mikro-Görev:** [mamilas-command.mjs:678](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/mamilas-command.mjs#L678) adresindeki `.clone().rotate().raw().toBuffer()` çağrısını kaldırarak doğrudan `metadata.width` ve `metadata.height` değerlerini doğrula.
+
+---
+
+### 6. Claude Hafıza Yolu İsimlendirme Uyumsuzluğu (`claude-sync.mjs`)
+* **Ne kırılıyor:** `claude-sync.mjs` proje dizini slug'ını `REPO.replace(/[^a-zA-Z0-9]/g, '-')` ile üretir (örn. `-Users-Muhammet-Desktop-mamilas-modern`). Claude Code CLI bağımsız ortamlarda bu klasör ismini küçük harfle (`-users-...`) oluşturduğunda `walk` fonksiyonu boş dizi döner ve `claude-sync` hiçbir şey eşitlemeden sessizce "✅ claude senkronu güncel" raporu verir.
+* **Tetikleyici:** Claude Code CLI hafızasının farklı harf büyüklüğündeki bir proje slug klasörüne yazılması.
+* **Dosya ve Satır:** [claude-sync.mjs:57](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/claude-sync.mjs#L57)
+* **Sınıf:** **SHOULD**
+
+---
+
+### 7. Metin Eşleşmesine Dayalı Yanıltıcı Yeşil Unit Testler (`kabaKurgu.test.ts`)
+* **Ne kırılıyor:** `kabaKurgu.test.ts` test betiği `kaba-kurgu.mjs` dosyasını çalıştırmak ve çıktısını doğrulamak yerine dosya içeriğini string olarak okuyup `expect(src()).toContain(...)` şeklinde kontrol eder. Bu durum koddaki çalışma zamanı mantık hatalarının (örn. bozuk Windows URL'leri) testlerde %100 yeşil görünmesine sebep olur.
+* **Tetikleyici:** `kaba-kurgu.mjs` içindeki çalışma mantığının bozulması ancak aranan metin sabitlerinin kodda kalması.
+* **Dosya ve Satır:** [kabaKurgu.test.ts:13-58](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/kabaKurgu.test.ts#L13-L58)
+* **Sınıf:** **SHOULD**
+
+---
+
+### 8. `ureme-birlestir.mjs` ve `ureme-motion-birlestir.mjs` Arasındaki Çift Sekans Tanım Senkronu
+* **Ne kırılıyor:** `SEKANSLAR` dizisi iki ayrı dosyada bağımsız olarak hardcode edilmiştir. Bir dosyada sekans sınırları güncellendiğinde diğer dosya eski sekans sınırlarında kalır ve kurgu çıktılarında start-frame ile motion sıralaması kayar.
+* **Tetikleyici:** Sekans sınırlarının iki dosyadan yalnızca birinde güncellenmesi.
+* **Dosya ve Satır:** [ureme-birlestir.mjs:13-23](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/ureme-birlestir.mjs#L13-L23), [ureme-motion-birlestir.mjs:17-27](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/ureme-motion-birlestir.mjs#L17-L27)
+* **Sınıf:** **SHOULD**
+
+---
+
+### 9. `start-codex.ps1` İçinde Platform Ortam Değişkeni Eksikliği
+* **Ne kırılıyor:** `start-codex.ps1` betiği `$env:APPDATA` ve `$env:LOCALAPPDATA` değişkenlerinin varlığını varsayar. Windows dışı sistemlerde PowerShell (`pwsh`) ile çalıştırıldığında bu değerler `$null` döner ve betik hata verir.
+* **Tetikleyici:** `start-codex.ps1` dosyasının macOS/Linux ortamında PowerShell Core ile koşturulması.
+* **Dosya ve Satır:** [start-codex.ps1:14,19](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/start-codex.ps1#L14)
+* **Sınıf:** **WATCH**
+
+---
+
+### 10. 600KB Tekparça `SURGERY_DATA.json` V8 Parse Maliyeti
+* **Ne kırılıyor:** 595 KB büyüklüğündeki statik veri dosyasının her çekirdek modül başlangıcında yeniden parse edilmesi kısa süreli GC (Garbage Collection) duraklamalarına sebep olur.
+* **Tetikleyici:** Çoklu subagent veya paralel vitest suite koşturulması.
+* **Dosya ve Satır:** [SURGERY_DATA.json](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/SURGERY_DATA.json)
+* **Sınıf:** **IGNORE** (Modern Node.js V8 motorunda tek seferlik JSON parse süresi ~5-8ms düzeyindedir; pratikte bloklayıcı değildir).
