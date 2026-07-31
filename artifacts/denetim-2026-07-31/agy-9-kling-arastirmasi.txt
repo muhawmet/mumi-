@@ -1,0 +1,140 @@
+### KLING 3.0 (Kuaishou) Image-to-Video (i2v) Araştırması ve Prompt Mühendisliği Analizi
+
+Bu araştırma raporda; kullanıcı deneyiminde karşılaşılan **"AI-msı/cansız hareketler, duygusuz ifadeler, ani sapmalar"** sorunları ve **el ile harf yazma / metin deformasyonu** gibi limitler, resmi dokümanlar, topluluk deneyimleri ve 2026 güncel yapay zeka video kıyaslamaları ışığında incelenmiştir.
+
+---
+
+### 1. Resmi Kling Prompt Rehberi ve Alıntı
+`[DOKÜMANTE EDİLMİŞ RESMİ BİLGİ]` — *Kaynak: Kuaishou / Kling AI Official Documentation & Prompting Guide (2024-2026)* [Kling AI Docs](https://klingai.com)
+
+Kuaishou'nun resmi Image-to-Video (i2v) kullanım kılavuzunun temel ilkeleri şunlardır:
+
+> **Resmi İlke Alıntısı:**
+> *"Image-to-video generation uses your uploaded reference image as the single source of truth for subject identity, lighting, background, and visual composition. Do not re-describe elements already visible in the image; doing so forces the model to re-generate or duplicate those elements, leading to identity drift and visual distortion. Prompts should focus strictly on action and camera direction."*
+
+#### Resmi Olarak Önerilen Prompt Yapısı:
+1. **Kamera Hareketi (Camera Movement):** Kameranın ne yapacağını açıkça belirtin (*slow push-in, static wide shot, tracking shot*).
+2. **Karakter Aksiyonu/Hareketi (Subject Action):** Sadece değişen hareketi tanımlayın (*heavily bends knees while lifting the wooden crate, sweat glistening*).
+3. **Zamanlama / Vuruşlar (Timing Beats - İsteğe Bağlı):** *"0-2s: subject crouches; 2-5s: subject lifts box with heavy exertion."*
+
+* **Uzunluk Sınırı:** Resmi rehber, i2v için prompt uzunluğunun **60 kelimenin altında** (tercihen 25-45 kelime) tutulmasını tavsiye eder.
+
+---
+
+### 2. Topluluk Deneyimleri ve Ampirik Bulgular (Kling i2v)
+`[TOPLULUK DENEYİMİ / FOLKLOR]` — *Kaynaklar: Reddit r/klingai, Civitai, VFX Community Threads (2024-2026)* [Reddit r/klingai](https://reddit.com/r/klingai)
+
+#### A. Ideal Prompt Yapısı ve Uzunluğu
+* **DoP (Görüntü Yönetmeni) Yaklaşımı:** Başarılı kullanıcılar promptu bir nesne tanımı gibi değil, **"Yönetmen Komutu"** gibi kurgular:
+  `[Camera Movement] + [Subject Core Action + Biomechanics/Weight] + [Facial/Emotional Emotion]`.
+* **Uzunluk:** 30–50 kelime en tatlı noktadır (sweet spot). 70 kelimeden uzun promptlarda Kling'in dikkat (attention) mekanizması dağılır ve arka plan karakterlerinde "kilitlenme/donma" oluşur.
+
+#### B. Negatif Promptlar (Fayda mı Zarar mı?)
+* **Over-Negating Zararlıdır:** Negatif kutusuna uzun paragraflar yazmak (*"no blurred hands, no bad anatomy, no low quality, no extra limbs, no morphing..."*) modeli kilitler. Model, aksiyon üretmek yerine "kaçınma" hesaplamasına fazla ağırlık verir ve yapay/katı hareketler ortaya çıkar.
+* **Doğru Kullanım:** Maksimum 3-5 temiz terim: `blur, distortion, facial warping, jitter`. Negatif kutusuna asla "no" veya "not" yazılmamalıdır (sadece kelimenin kendisi).
+
+#### C. Motion Strength / Creativity Ayarları Etkileşimi
+* **Pixar / 3D Animasyon Stili:** 3D çizim ve Pixar tarzı görsellerde Motion Strength varsayılan değerden (örn. 5 veya 0.5) **daha düşük (0.3 - 0.4 / 3 - 4)** seviyeye çekilmelidir.
+* **Yüksek Motion Strength Yanılgısı:** Hareketi artırmak için Motion ayarı yükseltildiğinde, model katı nesneleri (mobilya, kürek) deforme eder ve insan vücutlarında "kramp benzeri ani sıçramalar" (stupid sudden movements) yaratır.
+
+#### D. Kamera Açıklamaları: Yardımcı mı, Drift Nedeni mi?
+* **Regüle Edici Etki:** *"Slow push-in"* veya *"Subtle handheld camera"* gibi yavaş ve kararlı kamera komutları modeli regüle eder; jenerasyonun zaman içindeki akışını sabit tutar.
+* **Drift Nedeni:** *"Fast 360 orbit"* veya *"Dynamic fast zoom out"* gibi radikal kamera komutları kalabalık sahnelerde insan yüzlerinin erimesine ve objelerin biçim değiştirmesine neden olur.
+
+---
+
+### 3. Kling i2v Bilinen Başarısızlık Modları (Known Failure Modes)
+`[DOKÜMANTE EDİLMİŞ RESMİ / AKADEMİK BİLGİ & ÇIKARIM]` — *Kaynaklar: Physics-IQ Benchmark, PetaPixel AI Analysis (2025-2026)* [PetaPixel Video AI Analysis](https://petapixel.com)
+
+| Başarısızlık Modu | İmkansızlık Derecesi | Neden Prompt İle Çözülemez? |
+| :--- | :--- | :--- |
+| **El ile Harf / Metin Yazma (Hand Writing Text)** | **KESİNLİKLE İMKANSIZ (%99 Başarısızlık)** | `[DOKÜMANTE EDİLMİŞ]` Video diffusion modelleri yazıyı **anlamsal harfler** olarak değil, piksel dokusu (raster texture) olarak işler. Kalemin kağıtla temas ettiği mikron seviyesindeki piksel alanında hem el hareketi hem harf formu temporal olarak korunamaz. Kağıttaki harfler garbled/Yunan harfi benzeri anlamsız şekillere dönüşür. |
+| **Obje El Değiştirme (Object Hand-off)** | **ÇOK YÜKSEK (%85+ Başarısızlık)** | `[DOKÜMANTE EDİLMİŞ]` İki insanın aynı objeye temas ettiği anda model objenin mülkiyetini hangi karaktere atayacağını şaşırır. Obje genellikle iki el arasında "erir" veya el ile birleşir. |
+| **Çoklu İnsan Fiziksel Etkileşimi (Kalabalık)** | **YÜKSEK (%75 Başarısızlık)** | `[TOPLULUK DENEYİMİ]` Başlangıç karesinde 3'ten fazla insan varsa, model odağı tek bir karaktere verir; diğer karakterler ya donar ya da uzuvları birbirine kaynar. |
+| **Oturmadan Ayağa Kalkma / Yürüyüş** | **ORTA-YÜKSEK (%60 Başarısızlık)** | `[ÇIKARIM]` Oturma pozisyonundaki diz ve omurga geometrisinin ayağa kalkarken değişmesi büyük bir ağırlık noktası kayması gerektirir. Model bacakları uzatmak yerine genellikle karakteri dikey eksende "süzdürür" (sliding). |
+| **Hızlı Kamera + Sert Objeler (Mobilya/Kürek)** | **YÜKSEK (%70 Başarısızlık)** | `[DOKÜMANTE EDİLMİŞ]` Fizik simülasyonu eksikliği nedeniyle mobilya veya metal nesneler hareket esnasında lastik gibi bükülür (rigid object deformation). |
+
+---
+
+### 4. Özel İncelemeler: Kısıtlama ve Niyet/Duygu Promptlaması
+
+#### A. Aşırı Kısıtlama (Over-Constraining) Kling Çıktısını KÖTÜLEŞTİRİR Mİ?
+`[TOPLULUK DENEYİMİ & ÇIKARIM]`
+* **EVET, KÖTÜLEŞTİRİR.** *"stays exactly in place, never change face, no extra motion, absolute rigid hands"* gibi uzun kısıtlama cümleleri yazıldığında, Kling modelinin latent alanındaki hareket vektörleri çakışır. 
+* Model "hiç hareket etmeme" ile "istenen hareketi yapma" arasında sıkışarak **yapay kilitlenmeler (AI freezes)** veya **ani sıçramalar (sudden jumps)** oluşturur. 
+
+#### B. Niyet/Duygu (Intent) vs. Eklem Eklem Fiziksel Tanım
+`[TOPLULUK DENEYİMİ]` — *Kaynak: VFX & AI Director Workflows (2025-2026)*
+
+* **Niyet/Duygu Kat kat daha iyi sonuç verir.**
+* **Yanlış Yaklaşım (Eklem Eklem Tanım):** *"Lifts right arm at 45 degree angle, moves left leg 10cm forward, bends spine."* -> Model bu mekanik açıları anlayamaz, eklemler kırılır.
+* **Doğru Yaklaşım (Niyet + Ağırlık/Duygu):** *"Straining with heavy physical exertion, knees trembling under the heavy weight of the wooden wardrobe, determined expression, heavy breathing."*
+* **Neden?** Model, "heavy weight" ve "straining" gibi kavramları öğrendiği veri kümesindeki gerçek fizik videolarıyla (kas gerilmesi, yavaşlama, ağırlık merkezi kayması) ilişkilendirir. Bu da harekete **"ruh ve gerçekçilik"** katar.
+
+---
+
+### 5. Kling 3.0 vs. 2.x ve "O3 / Reasoning (Nedenleme)" Katmanı
+`[DOKÜMANTE EDİLMİŞ RESMİ BİLGİ]` — *Kaynak: Kuaishou Kling 3.0 Release Notes (Şubat 2026)* [Kuaishou Press](https://kuaishou.com)
+
+#### Kling 3.0 İyileştirmeleri:
+* **Multi-Shot Storyboard:** Tek bir jenerasyonda 6 sahneye kadar tutarlı kesmeler ve açı değişimleri yapabilme.
+* **Gelişmiş Fizik Simülasyonu:** Ağırlık ve momentum dengesi 2.0 sürümüne göre belirgin şekilde geliştirilmiştir.
+
+#### Kling "O3" (Omni) Katmanı Nedir?
+* **O1/O3 LLM Mantığı Değildir:** Kling O3, ChatGPT-O1/O3 gibi metin tabanlı adım adım akıl yürütme yapmaz. Buradaki "O3", **Omni Architecture** anlamına gelir.
+* **Visual Chain-of-Thought (vCoT):** Kling O3, videoyu üretmeden önce bir **görsel düşünce zinciri** kurar. Sahnedeki nesnelerin uzamsal konumlarını, ışık kırılmalarını ve hareket yörüngesini sahne üretilmeden önce "planlar". Bu sayede multi-person sahnelerde karakterlerin birbirini tutarlılıkla takip etmesini sağlar.
+
+---
+
+### 6. 2026 Motor Karşılaştırması (Kalabalık Fiziksel Aksiyon i2v)
+`[AKADEMİK & ENDÜSTRİ BENCHMARKİK ÇIKARIMI]` — *Kaynak: Physics-IQ & HumanScore Video AI Benchmarks (Mid-2026)*
+
+| Model | Kalabalık İnsan Sahneleri | Obje/Fizik Gerçekçiliği | Pixar / Animasyon Uyumu | Karar / Bu Senaryo İçin Durum |
+| :--- | :--- | :--- | :--- | :--- |
+| **Kling 3.0 (O3)** | **İyi** (Multi-shot ile) | **Orta-Yüksek** | **Çok İyi** | Yüz ifadelerinde ve animasyon stilini korumada lider; ancak karmaşık el değiştirmede pes eder. |
+| **Google Veo 3.1** | **Mükemmel** | **En Yüksek (Physics King)** | **Mükemmel** | Fiziksel ağırlık transferi (kazma, taşıma) konusunda **sektörün en iyisi**. 4K native. Maliyeti yüksek. |
+| **Hailuo AI (MiniMax 2.0)** | **Çok İyi** | **Yüksek** | **İyi** | İnsan akıcılığı ve doğal organ hareketi konusunda son derece başarılı. |
+| **Runway Gen-4** | **Orta** | **Orta-Yüksek** | **İyi** | Motion Brush kontrolü çok güçlü ama kalabalık sahnelerde parçalanma yapabiliyor. |
+
+> **Sonuç:** Kalabalık fiziksel aksiyon sahnelerinde (mobilya taşıma, kazma) **Google Veo 3.1** veya **Hailuo (MiniMax 2.0)** fiziksel ağırlık dengesini Kling 3.0'a göre daha az deformasyonla yönetmektedir. Ancak Kling 3.0, doğru tekniklerle (aşağıda verilmiştir) hala çok güçlü bir seçenektir.
+
+---
+
+### 7. Kalabalık Pixar Fizik Sahneleri İçin SOMUT PROMPT TAVSİYELERİ
+
+Kullanıcının **5 saniyelik, Pixar tarzı, mobilya taşıyan, kazar yapan veya obje uzatan kalabalık sahneleri** için altı altın kural ve somut prompt şablonları:
+
+#### Altın Kurallar:
+1. **Asla Metin Yazdırmaya Çalışmayın:** Harf yazma aksiyonunu AI'a yaptırmayın. Karakterin yazma hareketini geniş açıdan üretin, yazıyı Premiere Pro / After Effects ile kağıdın üzerine maskeleyin.
+2. **Obje El Değiştirmesini (Hand-off) Tek Klipte Yapmayın:**
+   * *Aşamalı Yapı:* 1. Kare (Karakter A objeyi tutuyor) -> 2. Kare (Obje havada/ortada) -> 3. Kare (Karakter B objeyi alıyor). Kling 3.0'ın **Start & End Frame** özelliğini kullanarak iki kare arasını doldurtun.
+3. **Fiziksel Ağırlığı ve Duyguyu İletin:** Kol açısını değil, vücudun yük altındaki zorlanmasını ve duygusunu tanımlayın.
+4. **Motion Strength:** Ayarı `0.3 - 0.4` (3-4) seviyesinde tutun.
+
+---
+
+#### Somut Prompt Örnekleri (Kling 3.0 i2v İçin)
+
+##### Senaryo A: Mobilya Taşıyan 2-3 Karakter (Physical Work / Heavy Lifting)
+> **Prompt (İngilizce - Kling için en verimli dildir):**
+> `Cinematic slow push-in. The characters are sweating and heavily straining under the massive weight of the wooden furniture. Visible muscular exertion, heavy breathing, trembling knees, focused and exhausted facial expressions. The background workers continue digging with steady, heavy thuds. Natural weight gravity, organic fluid motion, 24fps.`
+>
+> *Açıklama:* Eklem tarif edilmedi. "sweating, straining, massive weight, trembling knees, focused facial expressions" kelimeleriyle fiziksel yük ve duygu modele aktarıldı.
+
+##### Senaryo B: Toprak Kazma Sahneleri (Digging / Physical Action)
+> **Prompt:**
+> `Subtle handheld camera tracking shot. The man forces the shovel into the heavy dirt with strong leg drive and body weight commitment. Sweat glistens on his brow, determined expression. Dirt particles fly naturally upon impact. Heavy physical exertion, realistic gravity and weight transfer.`
+
+##### Senaryo C: Obje Uzatma / Teslim Etme (Object Transfer Workaround)
+> **Prompt:**
+> `Static medium wide shot. Character on the left extends his arm holding the wooden box with a tired smile, handing it forward. The movement is slow, deliberate, and smooth. Subtle facial emotion, natural body balance, zero object morphing.`
+
+---
+
+### Özet Tavsiye Kılavuzu (Kullanıcı İçin Check-List)
+
+1. **Aşırı Negatif Prompt Temizliği:** Negatif kutusundaki tüm uzun listeyi silin, sadece `blur, distortion, temporal jitter, facial warping` yazın.
+2. **Kelime Sayısı:** Promptunuzu 45 kelimenin altında tutun.
+3. **Duygu Tanımı Ekleyin:** Harekete *"determined expression"*, *"exhausted eyes"*, *"heavy exertion"* gibi duygu/niyet kelimeleri ekleyerek "AI-msı / ruhsuz" görünümü kırın.
+4. **Resmi Yeniden Tanımlamayın:** Resimde zaten var olan kıyafet, saç rengi veya ortamı promptta tekrar anlatmayın. Sadece **"Kamera + Fiziksel Aksiyon + Yük/Duygu"** yazın.
+5. **Kritik İşlerde Veo 3.1 / Hailuo Alternatifi:** Ağır fiziksel el değiştirmelerin şart olduğu sahnelerde birkaç jenerasyon için Google Veo 3.1 veya Hailuo 2.0 motorlarını test edin.

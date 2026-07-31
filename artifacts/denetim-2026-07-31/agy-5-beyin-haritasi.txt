@@ -1,0 +1,143 @@
+# MAMILAS Beyin (src/core/) Haritası ve Üretim Gerçekliği Analizi
+
+`src/core/` dizinindeki 20 TypeScript kaynak dosyası, 39 test dosyası, `SURGERY_DATA.json` ve `scripts/`, `agents/`, `.claude/hooks/` dizinleri incelenerek yapılan eksiksiz analiz sonuçları aşağıdadır.
+
+---
+
+## 1. `src/core/` Eksiksiz Çağrı Grafiği ve Yüzey Haritası
+
+`src/core/` dizinindeki 20 TypeScript dosyasında toplam **11.853 satır kod** ve **303 ihraç edilen (exported) sembol** bulunmaktadır:
+- **CANLI (125 sembol):** `src/` altındaki Vite UI bileşenleri (`src/components/`, `src/pages/`, `src/store/`) veya `scripts/` altındaki script'ler tarafından çağrılır.
+- **TEST-ONLY (37 sembol):** Yalnızca `src/core/*.test.ts` veya `e2e/` testleri tarafından çağrılır.
+- **KULLANILMAYAN / UNUSED (95 sembol):** Kod tabanının hiçbir yerinde çağrısı yoktur (0 referans).
+- **DÂHİLİ / CORE-INTERNAL (46 sembol):** Yalnızca `src/core/` içindeki diğer TS dosyaları tarafından çağrılır.
+
+### Çağrı Grafiği Metin Ağacı (Call Graph)
+
+```
+[Kullanıcı Girdisi / UI Wizard]
+   │
+   ├──> src/core/source.ts
+   │      ├── decodeBrief / ingestSource / autoGroupBeats / sourceIntegrity
+   │      └──> (çağırır) src/core/pure.ts: generateBatch
+   │
+   ├──> src/core/pure.ts
+   │      ├── generateBatch / worldRenderText / deriveTeachingRecipe
+   │      └──> (çağırır) src/core/brain.ts: buildImagePrompt, buildAgentBrief, primePacket
+   │
+   ├──> src/core/brain.ts
+   │      ├── buildAgentBrief / buildImagePrompt / buildMotionPrompt
+   │      └──> (çağırır) src/core/engine.ts: engineUsableSec, engineDialect
+   │
+   ├──> src/core/commandExport.ts & productionExport.ts
+   │      └── buildCommandJSON / buildProductionExport (VITE UI export katmanı)
+   │
+   └──> src/core/qa.ts & proof.ts
+          └── evaluateDirectorCabinet / qaScore / proofDoctor (UI doğrulama katmanı)
+```
+
+---
+
+## 2. ÖLÜ KOD (Dead Code) ve Yalnızca Testlerden Ulaşılan Yüzeyler
+
+### Yalnızca Testlerin Çağırdığı İhraç Edilmiş Yüzeyler (37 Adet)
+
+1. [agentProtocol.ts:165](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/agentProtocol.ts#L165) `JuryContent` — Sole caller: [agentProtocol.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/agentProtocol.test.ts)
+2. [agentProtocol.ts:525](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/agentProtocol.ts#L525) `nextLifecycleAction` — Sole callers: [agentProtocol.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/agentProtocol.test.ts), [interpretationReceipt.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/interpretationReceipt.test.ts)
+3. [brain.ts:64](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L64) `realFamilyOf` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+4. [brain.ts:825](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L825) `CAMERA_BAN_PHRASES` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+5. [brain.ts:863](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L863) `lensBandsOf` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+6. [brain.ts:1023](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L1023) `camPool` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+7. [brain.ts:1316](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L1316) `SHOT_PATTERNS` — Sole callers: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts), [faz2_jury_wave.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/faz2_jury_wave.test.ts)
+8. [brain.ts:1382](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L1382) `eventSeed` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+9. [brain.ts:1391](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L1391) `mandateSeed` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+10. [brain.ts:1520](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L1520) `countEvents` — Sole caller: [faz1_triple.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/faz1_triple.test.ts)
+11. [brain.ts:2046](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L2046) `namedKeySourceClause` — Sole caller: [fakeSunGate.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/fakeSunGate.test.ts)
+12. [brain.ts:2622](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L2622) `AUTHORITY_HIERARCHY` — Sole callers: [authorityReceipt.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/authorityReceipt.test.ts), [chain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/chain.test.ts), [docsContract.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/docsContract.test.ts), [faz1_triple.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/faz1_triple.test.ts)
+13. [brain.ts:3154](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L3154) `buildVariantBriefs` — Sole caller: [brain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.test.ts)
+14. [contract.ts:160](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/contract.ts#L160) `resolveBlockers` — Sole caller: [blockers.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/blockers.test.ts)
+15. [contract.ts:286](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/contract.ts#L286) `isSchema` — Sole caller: [canonicalDecision.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/canonicalDecision.test.ts)
+16. [contract.ts:482](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/contract.ts#L482) `deriveDeliveryPromise` — Sole callers: [deliveryPromise.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/deliveryPromise.test.ts), [deliveryPromiseDefects.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/deliveryPromiseDefects.test.ts)
+17. [exporters.ts:34](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/exporters.ts#L34) `normalizeDownloadName` — Sole caller: [exporters.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/exporters.test.ts)
+18. [lessonBank.ts:45](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/lessonBank.ts#L45) `approvedLessonsSlice` — Sole caller: [lessonBank.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/lessonBank.test.ts)
+19. [productionPulse.ts:3](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/productionPulse.ts#L3) `ProductionPulseInput` — Sole caller: [productionPulse.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/productionPulse.test.ts)
+20. [projectPack.ts:20](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.ts#L20) `PROJECT_PACK_SCHEMA` — Sole caller: [projectPack.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.test.ts)
+21. [projectPack.ts:23](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.ts#L23) `PackScene` — Sole caller: [projectPack.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.test.ts)
+22. [projectPack.ts:439](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.ts#L439) `CLOSEOUT_SCHEMA` — Sole caller: [projectPack.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/projectPack.test.ts)
+23. [proof.ts:46](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/proof.ts#L46) `WORK_TITLE_SOURCE` — Sole caller: [ipFirewall.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/ipFirewall.test.ts)
+24. [proof.ts:50](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/proof.ts#L50) `containsWorkTitle` — Sole callers: [chain.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/chain.test.ts), [faz1_triple.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/faz1_triple.test.ts)
+25. [pure.ts:473](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.ts#L473) `toWorldPacket` — Sole callers: [commandRuntime.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/commandRuntime.test.ts), [juryRedlines.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/juryRedlines.test.ts), [refMediumCompat.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/refMediumCompat.test.ts), [worldPacket.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldPacket.test.ts), [worldPacketPhysics.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldPacketPhysics.test.ts)
+26. [pure.ts:1830](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.ts#L1830) `validateMotion` — Sole caller: [pure.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.test.ts)
+27. [pure.ts:1840](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.ts#L1840) `groupedRefs` — Sole caller: [pure.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.test.ts)
+28. [pure.ts:1850](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.ts#L1850) `groupedWorlds` — Sole caller: [pure.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.test.ts)
+29. [qa.ts:8](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/qa.ts#L8) `PROMPT_SURGEON` — Sole caller: [qa.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/qa.test.ts)
+30. [qa.ts:55](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/qa.ts#L55) `renderLockTextFor` — Sole callers: [qa.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/qa.test.ts), [task5_rootfix.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/task5_rootfix.test.ts)
+31. [source.ts:296](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/source.ts#L296) `sourceSceneBudget` — Sole caller: [source.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/source.test.ts)
+32. [source.ts:408](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/source.ts#L408) `durationBudgetSourceBeats` — Sole caller: [source.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/source.test.ts)
+33. [universeMeasure.ts:80](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/universeMeasure.ts#L80) `PRESET_WORLD_SCOPE` — Sole caller: [universeMeasure.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/universeMeasure.ts#L80)
+34. [worldExam.ts:51](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.ts#L51) `EXAM_CAST_AGE` — Sole caller: [worldExam.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.test.ts)
+35. [worldExam.ts:57](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.ts#L57) `EXAM_HERO_TAGS` — Sole caller: [worldExam.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.test.ts)
+36. [worldExam.ts:64](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.ts#L64) `EXAM_ON_SCREEN_TEXT` — Sole caller: [worldExam.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.test.ts)
+37. [worldExam.ts:190](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.ts#L190) `buildExamBrief` — Sole caller: [worldExam.test.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/worldExam.test.ts)
+
+Ayrıca **95 ihraç edilmiş sembolün** (ör. [audit_full.ts](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/audit_full.ts) dosyasının tamamı - 574 satır, [source.ts:61](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/source.ts#L61) `ELEVENLABS_V3_TURKISH_WORDS_PER_SECOND`, [universeMeasure.ts:108](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/universeMeasure.ts#L108) `REF_FIT_CONFLICT` vb.) testler dâhil **sıfır çağrısı** vardır.
+
+### Metrik Miktar
+`src/core/` içindeki **11.853 satır koda** karşılık:
+- Yalnızca testler veya hiç çağrılmayan koda ait doğrudan/dolaylı kod miktarı: **~6.950 satır (~%58,6)**.
+- Üretim (CLI/Runner) veya UI canlı akışına bağlı kod miktarı: **~4.903 satır (~%41,4)**.
+
+---
+
+## 3. Beyin Bilesenlerinin Üretim Zamanı İzleme ve Çağrı Yolu Analizi
+
+| Bileşen | Üretimde Çalışma Zamanında Okunuyor mu? | Kod Yolu (Code Path) | İnsan Ajan (Chat'te) Prompt Yazarken Motora Ulaşır mı? | İzleme (Trace) |
+| :--- | :--- | :--- | :--- | :--- |
+| **`brain.ts`** (`AUTHORITY_HIERARCHY`) | **HAYIR (Bypassed)** | [brain.ts:2622](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L2622) tanım → [brain.ts:2750](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/brain.ts#L2750) `buildAgentBrief` markdown metnine dize olarak basılır. | **HAYIR** | Chat'te yazılan prompt'a kod tarafından aktarılmaz. Yalnızca `.agents/skills/mamilas-director/SKILL.md` ve `PROMPT-YASASI.md` içindeki insan-okur kural referansıdır. |
+| **`engine.ts`** (`ENGINE_USABLE`, `ENGINE_DIALECTS`) | **HAYIR (Bypassed)** | [engine.ts:15](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/engine.ts#L15), [engine.ts:44](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/engine.ts#L44) → `agentProtocol.ts` & `commandExport.ts`. | **HAYIR** | `scripts/mamilas-command.mjs` ve `agents/runner.mjs` `engine.ts` dosyasını `import` **etmez**. Ajan prompt'u sohbet içinde elle yazar. Motora giden prompt string'ine programatik olarak ulaşmaz. |
+| **`SURGERY_DATA.json`** | **DOLAYLI (Data Ref)** | [pure.ts:263](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/pure.ts#L263) (`DATA`) & `scripts/dunya-kilidi.mjs` doğrudan JSON dosyasını okur. | **KISMEN (Elle)** | Ajan prompt yazmadan önce `scripts/dunya-kilidi.mjs` koşturur veya JSON'u okuyup dünya kilidini prompt'a elle işler. TS pipeline üzerinden motora akar akış yoktur. |
+| **`lessonBank.ts`** | **HAYIR (Bypassed)** | [lessonBank.ts:18](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/lessonBank.ts#L18) `parseApprovedLessons` → [APPROVED.md](file:///Users/Muhammet/Desktop/mamilas-modern/agents/lessons/APPROVED.md) okur. | **HAYIR** | `scripts/mamilas-command.mjs:217` dosyasında aynı ayrıştırma mantığı inline JS olarak yeniden yazılmıştır (`// BRAIN M7 — ders bankası parser'ı. src/core/lessonBank.ts ile FONKSİYONEL parite`). TS modülü çalıştırılmaz. |
+
+---
+
+## 4. `SURGERY_DATA.json` Büyüklüğü ve Teslim Edilen Prompt Çapraz Kontrolü
+
+- **Dosya boyutu:** `595.186 bytes` (~595 KB).
+- **Dünya sayısı:** `46` (`worlds[]`)
+- **Referans sayısı:** `133` (`refs[]`)
+- **Palet sayısı:** `12` (`palettes[]`)
+
+### `COMMAND-INBOX/` Çapraz Kontrolü ve `pixar_3d_edu` Numunesi
+
+`agents/COMMAND-INBOX/` altındaki 429 dosya taranmıştır:
+- `pixar_3d_edu` dünya kimliğini içeren dosya sayısı: **24 dosya**.
+- `SURGERY_DATA.json` içindeki birebir `render_law` ("Feature-animation 3D CGI in the Pixar RenderMan..."), `light_law` ve `avoid_lock` metnini içeren dosya sayısı: **6 dosya** (Tamamı makine üretimi `*_mamilas_command.json` dosyalarıdır).
+- **Teslim edilen insani prompt metin dosyalarında (`*_PROMPTLAR.txt` ve `*_PROMPTLAR.md`):** `SURGERY_DATA.json` içindeki birebir metin **0 dosyada** yer almaktadır.
+
+**Örnek Karşılaştırma ([Eşeyli ve Eşeysiz Üreme_PROMPTLAR.txt:28](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme/E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme_PROMPTLAR.txt#L28)):**
+```
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage, a RenderMan-successor pipeline — appeal-driven silhouette readable at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, wet dual-point catchlights in the eyes. Material specificity is mandatory: clear glass with honest refraction, still water with a soft meniscus, aged porous terracotta...
+```
+*Bulgu:* İnsan/Ajan üretimi prompt metni `SURGERY_DATA.json`'daki paragrafı aynen kopyalamamış; sahneye özel materyaller ekleyerek yeniden yazmış / uyarlamıştır.
+
+---
+
+## 5. `scripts/dunya-kilidi.mjs` Çıktı Doğrulaması ve Metin Sapması (Drift)
+
+`node scripts/dunya-kilidi.mjs pixar_3d_edu` komutunun çıktısı ile `SURGERY_DATA.json` karşılaştırılmıştır:
+
+**Çıktı Birebir Aynı DEĞİLDİR; Dönüştürülmüştür:**
+1. **Marka/Stüdyo Adı Sökülmüştür:** `SURGERY_DATA.json` içindeki `"Pixar RenderMan"` ifadesinden `Pixar` sökülmüş, script çıktısı `"RenderMan"` olarak üretilmiştir (`✓ marka/stüdyo adı söküldü: pixar`).
+2. **Kelime Bütçesi Uygulanmıştır:** STYLE katmanı için 90 kelime sınırı uygulanmış; `render_law` içindeki 36 bileşenden 11'i seçilmiş, 25 bileşen (ör. *"wet dual-point specular on eyes"*, *"a pencil is thumb-width"*) bütçe dışı bırakılarak elenmiştir.
+3. **Yasaklar Ayrıştırılmıştır:** `render_law` içindeki 8 olumsuz cümle `NEGATIVE` katmanına taşınmıştır.
+4. **Palet Işığa Çevrilmiştir:** Ham hex renk kodları fiziksel ışık davranış cümlelerine dönüştürülmüştür.
+
+**Sapma Durumu:** `dunya-kilidi.mjs` cıktısı `SURGERY_DATA.json` verisini kurallara göre işler; teslim edilen `.txt` prompt dosyalarında ise insan ajan bu çıktıyı sahneye göre tekrar uyarladığı için metin **üç aşamalı olarak sapmıştır (drift).**
+
+---
+
+## ÖZET HÜKÜM
+
+- **CANLI (ALIVE):** Vite UI ve Dashboard arayüzü (`src/pages/`, `src/components/`).
+- **ÖLÜ (DEAD):** `src/core/audit_full.ts` (574 satır, 0 çağrı) ve yalnızca unit testlerin çağırdığı 37 ihraç sembolü / ~6.950 satır kod.
+- **CANLI AMA BAYPAS EDİLMİŞ (ALIVE-BUT-BYPASSED):** `src/core/brain.ts` (`AUTHORITY_HIERARCHY`), `src/core/engine.ts`, `src/core/lessonBank.ts`. Kodlar `vitest` altında yeşil geçmekte ve maintained durumdadır; ancak canlı üretim runner'ı (`scripts/mamilas-command.mjs`) ve chat'teki Yönetmen ajanı bu TypeScript modüllerini çalıştırmamaktadır.

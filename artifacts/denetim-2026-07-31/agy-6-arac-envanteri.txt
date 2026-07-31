@@ -1,0 +1,188 @@
+# ARAÇ ENVANTERİ (`scripts/` ve `.claude/hooks/`)
+
+## 1. Betik Haritası Tablosu
+
+| Dosya Yolu | Tek Cümlede Görevi | Arayan/Çağıran Yapı | Çağrı Tipi | Çalıştırılmazsa Ne Olur? | Son Çalışma / Git Kaydı (Yazılan Çıktı) |
+|---|---|---|---|---|---|
+| `scripts/agents-sync.d.mts` | `agents-sync.mjs` için TypeScript tip tanım dosyası | TypeScript Derleyicisi (`tsc`) | Otomatik (`npx tsc`) | Tip denetimi yapılamaz | 2026-07-28 (`ee65395`) |
+| `scripts/agents-sync.mjs` | `.claude/agents/*.json` ajan tanımlarını günceller ve manifest hash'ini üretir | `package.json:16`, `src/core/skillCapability.test.ts:25` | Otomatik (`npm test`) / Manuel (`npm run agents:sync`) | Ajan manifest/hash'i bayatlar, testler kalır | 2026-07-28 (`ee65395`) (`.claude/agents/*.json`) |
+| `scripts/birlestir.mjs` | `COMMAND-INBOX` altındaki teslim parçalarını tek bir `.txt` dosyasında birleştirir | `docs/ai/sync/memory/archive/mamilas-fable-scan4-2026-07-26.md:25` (doküman) | Manuel | Metin teslim seti tek dosyada birleştirilmez | 2026-07-28 (`d16ada7`) (`agents/COMMAND-INBOX/BIRLESTIRILMIS-URETIM.txt`) |
+| `scripts/brain-workbench.ts` | Beyin ve prompt motoru kıyaslama (benchmark) deneylerini koşturur | `package.json:14` | Manuel (`npm run workbench`) | Beyin performans ölçümleri alınamaz | 2026-07-15 (`6419433`) (`artifacts/brain-bench/`) |
+| `scripts/buddy-hook.test.mjs` | `buddy.mjs` ve `buddy-gate.sh` hook mantığının Vitest testleri | Vitest (`npm test`) | Otomatik (`npx vitest run`) | Buddy hook bozulmaları test katmanında yakalanamaz | 2026-07-29 (`cc2505c`) |
+| `scripts/check-assets3d.mjs` | 3D asset ve doku eksiksizliğini denetleyen doğrulama betiği | `docs/superpowers/plans/2026-07-03-3d-diorama-shell-m4.md:483` (doküman) | Manuel | 3D asset eksikleri otomatik raporlanmaz | 2026-07-15 (`6419433`) |
+| `scripts/claude-sync.mjs` | `~/.claude` ile repo arasındaki kural, hafıza ve ayarları çift yönlü senkronize eder | `.claude/hooks/gate.sh:111` (`--check`), `CLAUDE.md:100` | Otomatik (`gate.sh` uyarısı) / Manuel | İki cihaz arasındaki Claude hafıza ve kuralları sapar | 2026-07-28 (`8cf58d7`) (`.claude/rules/*.md`, `CLAUDE.md`) |
+| `scripts/current-work.mjs` | `artifacts/current-work.json` aktif iş durumunu yönetir ve okur | `.claude/hooks/oturum-durumu.mjs:22`, `docs/ai/faz-icraat.md:18`, `AGENTS.md:18` | Otomatik (`oturum-durumu.mjs`) / Manuel | Aktif iş durumu bayatlar, oturum açılışında okunamaz | 2026-07-29 (`acd4035`) (`artifacts/current-work.json`) |
+| `scripts/design-tour-shots.mjs` | Tasarım turu kanıt ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-07-tasarim-turu.md:15` (doküman) | Manuel | Tasarım turu kanıt görselleri üretilmez | 2026-07-15 (`6419433`) (`reports/design-tour-*.png`) |
+| `scripts/dunya-kilidi.mjs` | Dünya stil, ışık ve negatif kurallarını sıralı olarak basar | `docs/ai/faz-icraat.md:37`, `CLAUDE.md:34,78` (doküman) | Manuel | Dünya stilleri elle yazılır, kelime sapmaları yaşanır | 2026-07-29 (`ac57d68`) |
+| `scripts/dunya-kilidi.test.mjs` | `dunya-kilidi.mjs` mantığının ve sıralamasının Vitest testleri | Vitest (`npm test`) | Otomatik (`npx vitest run`) | Dünya kilidi puanlama mantığı hataları yakalanamaz | 2026-07-29 (`f3a883a`) |
+| `scripts/dunya-sinavi.ts` | 46 dünya için 5 kareden oluşan sınav setini koşturan denetim betiği | `docs/ai/sync/memory/archive/mamilas-dunya-sinavi-run1.md` (doküman) | Manuel | Dünyalardaki sessiz talimat düşmeleri tespit edilemez | 2026-07-26 (`b3111e1`) |
+| `scripts/faz5-pilot.ts` | Faz 5 pilot brief ve karar akışı denemelerini koşturur | `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (doküman) | Manuel | Faz 5 pilot denemeleri çalıştırılmaz | 2026-07-28 (`e560a8f`) (`artifacts/faz5/`) |
+| `scripts/final-brief-matrix.ts` | Final brief matris raporunu üreten analiz betiği | `docs/superpowers/plans/2026-07-04-t6-final-brief-birlestirme.md:25` (doküman) | Manuel | Brief matris raporu oluşturulmaz | 2026-07-15 (`6419433`) (`reports/final-brief-matrix.md`) |
+| `scripts/final-shots.mjs` | Final ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-04-t6-final-brief-birlestirme.md:329` (doküman) | Manuel | Final kanıt görselleri üretilmez | 2026-07-15 (`6419433`) (`reports/final-*.png`) |
+| `scripts/goldenhour-shots.mjs` | Goldenhour ışık kanıt görsellerini alan Playwright betiği | `docs/superpowers/plans/2026-07-07-goldenhour.md:12` (doküman) | Manuel | Goldenhour ekran görüntüleri üretilmez | 2026-07-15 (`6419433`) (`reports/goldenhour-*.png`) |
+| `scripts/inspect-brief.ts` | Brief yapısını ve şablon uyumunu inceleyen yardımcı betik | `docs/ai/sync/memory/archive/mamilas-fable-scan2-2026-07-16.md` (doküman) | Manuel | Brief detayları terminalde incelenemez | 2026-07-16 (`3c660df`) |
+| `scripts/jury-audit.ts` | Jüri audit ve command JSON boyut/hash denetimi yapar | `package.json:15` | Manuel (`npm run jury-audit`) | Command JSON jüri doğrulama raporu alınamaz | 2026-07-27 (`7e19e8d`) (`artifacts/jury-audit/`) |
+| `scripts/kaba-kurgu.mjs` | İnen klipler ve VO seslerinden Premiere uyumlu XML timeline'ı üretir | `docs/ai/faz-icraat.md:42,57` (doküman) | Manuel | Kaba kurgu XML timeline'ı otomatik oluşturulmaz | 2026-07-29 (`1c9f743`) (`artifacts/kaba-kurgu-timeline.txt`, XML) |
+| `scripts/kapanis-hasadi.mjs` | Biten projelerin kapanış hasadını yapar, karne ve ders adayı toplar | `.claude/hooks/hasat-gate.mjs:37`, `docs/ai/faz-icraat.md:44` | Otomatik (`hasat-gate.mjs`) / Manuel | Proje kapanış karneleri ve ders adayları üretilmez | 2026-07-29 (`f3a883a`) (`artifacts/kapanis-hasadi-rapor.json`) |
+| `scripts/kapanis-hasadi.test.mjs` | `kapanis-hasadi.mjs` ayrıştırma mantığının Vitest testleri | Vitest (`npm test`) | Otomatik (`npx vitest run`) | Kapanış hasat hataları test anında yakalanamaz | 2026-07-29 (`f3a883a`) |
+| `scripts/kutuphane-karne.ts` | Referans kütüphanesinin kullanım ve kapsama karnesini çıkarır | `docs/ai/sync/memory/archive/mamilas-kutuphane-karne-run1.md` (doküman) | Manuel | Kütüphane referans performans karnesi ölçülemez | 2026-07-26 (`a3ac3a0`) |
+| `scripts/lib/harvest-meta.mjs` | `kapanis-hasadi.mjs` için meta veri ayrıştırma alt modülü | `scripts/kapanis-hasadi.mjs:27` | Otomatik (`kapanis-hasadi.mjs`) | Hasat meta verileri okunamaz | 2026-07-29 (`bf13f80`) |
+| `scripts/lib/harvest-sources.mjs` | `kapanis-hasadi.mjs` için kaynak dosyaları tarama alt modülü | `scripts/kapanis-hasadi.mjs:28` | Otomatik (`kapanis-hasadi.mjs`) | Hasat için kaynak klasörler taranamaz | 2026-07-29 (`bf13f80`) |
+| `scripts/lib/sync-karar.mjs` | `claude-sync.mjs` için dosya karşılaştırma ve karar alt modülü | `scripts/claude-sync.mjs:16` | Otomatik (`claude-sync.mjs`) | Claude senkronizasyon kararları verilemez | 2026-07-28 (`8cf58d7`) |
+| `scripts/make-proof-textures.mjs` | 3D sahne ispatı için geçici test dokuları oluşturan betik | `docs/superpowers/plans/2026-07-03-3d-diorama-shell-m4.md` (doküman) | Manuel | Sahne doku ispat testleri gerçekleştirilemez | 2026-07-15 (`6419433`) (`public/assets3d/*.webp`) |
+| `scripts/mamilas-command.mjs` | Command JSON işleme, storyboard receipt üretme ve runner CLI motoru | `.agents/skills/mamilas-uret/SKILL.md:20`, `.agents/skills/mamilas-director/SKILL.md:15` | Manuel | Command JSON'dan storyboard ve receipt üretilemez | 2026-07-28 (`ee65395`) (`artifacts/storyboard-receipt.json`) |
+| `scripts/memory-sync.mjs` | Eski tek yönlü hafıza senkronizasyon betiği (Emekli) | `src/core/claudeSync.test.ts:110`, `CLAUDE.md:103` | Otomatik (`claudeSync.test.ts`) / Manuel | Eski hafıza kopyalaması yapılmaz | 2026-07-29 (`e79abfd`) (`docs/ai/sync/memory/*.md`) |
+| `scripts/motion-qc.mjs` | Üretilen video kliplerinin motion metni ve süre uyumunu denetler | `docs/ai/faz-icraat.md:41` (doküman) | Manuel | Klip hareket kusurları otomatik denetlenmez | 2026-07-27 (`b2b2e3d`) |
+| `scripts/path-bak.ts` | Yol yapılarını kontrol etmek için yazılmış yetim betik | Hiç kimseden çağrılmıyor (0 referans) | Yetim | Hiçbir şey olmaz | 2026-07-15 (`6419433`) |
+| `scripts/project-loot.mjs` | Tamamlanan projelerden onaylı bankaya ders ve kalıp toplar | `scripts/project-loot.test.mjs:10` | Otomatik (Test) / Manuel | Proje dersleri onaylı bankaya taşınamaz | 2026-07-29 (`1fec343`) (`APPROVED-BANK.txt`) |
+| `scripts/project-loot.test.mjs` | `project-loot.mjs` onaylı banka mantığının Vitest testleri | Vitest (`npm test`) | Otomatik (`npx vitest run`) | Loot bankası bozulmaları yakalanamaz | 2026-07-29 (`f3a883a`) |
+| `scripts/prompt-bak.ts` | Prompt inceleme/yedekleme amaçlı yetim betik | Hiç kimseden çağrılmıyor (0 referans) | Yetim | Hiçbir şey olmaz | 2026-07-15 (`6419433`) |
+| `scripts/prompt-lint.mjs` | Prompt dosyalarını REAL/EDU/STY kurallarına göre denetler | `docs/ai/faz-icraat.md:39`, `CLAUDE.md:33,79`, `src/core/docsContract.test.ts:25` | Otomatik (`docsContract.test.ts`) / Manuel | Prompt kusurları jeneratöre basılmadan kesilemez | 2026-07-29 (`f3a883a`) |
+| `scripts/prompt-lint.test.mjs` | `prompt-lint.mjs` linter mantığının Vitest testleri | Vitest (`npm test`) | Otomatik (`npx vitest run`) | Linter kural bozulmaları test edilemez | 2026-07-29 (`f3a883a`) |
+| `scripts/scene-proof.mjs` | Sahne ışık (Slenderman %4-%12 luminance) ve kadraj test betiği | `docs/DESIGN_LANGUAGE_V3.md:241` (doküman) | Manuel | Slenderman luminance bandı ölçülemez | 2026-07-15 (`6419433`) (`reports/t1-*.jpg`) |
+| `scripts/start-codex.ps1` | Windows PowerShell ortamında Codex CLI oturumu başlatan betik | `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md:1295` (doküman) | Manuel | PowerShell üzerinden Codex başlatma kısayolu çalışmaz | 2026-07-15 (`6419433`) |
+| `scripts/t3-brief-shots.mjs` | T3 Onboarding ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-04-t3-brief-sadelesmesi.md:386` (doküman) | Manuel | T3 görsel kanıtları üretilmez | 2026-07-15 (`6419433`) (`reports/t3-*.png`) |
+| `scripts/t4-recipe-shots.mjs` | T4 Reçete ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-04-t4-recete-galeri-duvari.md:27` (doküman) | Manuel | T4 görsel kanıtları üretilmez | 2026-07-15 (`6419433`) (`reports/t4-*.png`) |
+| `scripts/t5-scenes-shots.mjs` | T5 Sahneler ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-04-t5-sahneler-timeline-soleni.md:22` (doküman) | Manuel | T5 görsel kanıtları üretilmez | 2026-07-15 (`6419433`) (`reports/t5-*.png`) |
+| `scripts/t6-shots.mjs` | T6 Yönetmen QA ekran görüntülerini alan Playwright betiği | `docs/superpowers/plans/2026-07-05-t6-yonetmen-qa-yerlesimi.md:66` (doküman) | Manuel | T6 görsel kanıtları üretilmez | 2026-07-15 (`6419433`) (`reports/t6-*.jpg`) |
+| `scripts/take-screenshots.ts` | Eski React arayüzü ekran görüntüsü alma betiği | Hiç kimseden çağrılmıyor (0 referans) | Yetim | Hiçbir şey olmaz | 2026-06-22 (`e39818c`) |
+| `scripts/ureme-birlestir.mjs` | 50 adet üreme start-frame metnini tek dosyada birleştirir | `scripts/birlestir.mjs:9` (yorum) | Manuel | 50 kare tek dosyada toplanamaz | 2026-07-28 (`d16ada7`) (`agents/COMMAND-INBOX/UREME-50-KARE.txt`) |
+| `scripts/ureme-motion-birlestir.mjs` | 50 adet üreme motion metnini tek dosyada birleştirir | `scripts/birlestir.mjs:9` (yorum) | Manuel | 50 motion tek dosyada toplanamaz | 2026-07-28 (`d16ada7`) (`agents/COMMAND-INBOX/UREME-50-MOTION.txt`) |
+| `.claude/hooks/buddy-gate.sh` | `buddy.mjs` betiğini çağıran kabuk köprüsü | `.claude/settings.json:23,58` | Otomatik | PostToolUse ve SessionStart'ta buddy katmanı çağrılamaz | 2026-07-29 (`bf13f80`) |
+| `.claude/hooks/buddy.mjs` | Mami DEHB yük ve nefes protokolünü yöneten Node hook'u | `.claude/settings.json:46`, `.claude/hooks/buddy-gate.sh:24` | Otomatik | Nefes uyarısı ve buddy yük yönetimi çalışmaz | 2026-07-29 (`cc2505c`) (`.claude/.buddy-state/`) |
+| `.claude/hooks/gate.sh` | PreToolUse aşamasında `tsc`, `vitest` ve `build` duvara bağlayan kalite kapısı | `.claude/settings.json:12` | Otomatik (`git commit` öncesi) | Kırık kod veya batan testler commit edilebilir | 2026-07-29 (`5a8fb30`) |
+| `.claude/hooks/hasat-gate.mjs` | `kapanis-hasadi.mjs` durumunu kontrol eden Node betiği | `.claude/hooks/hasat-gate.sh:16` | Otomatik (SessionStart) | Hasat bekleyen projeler SessionStart'ta bildirilmez | 2026-07-29 (`bf13f80`) |
+| `.claude/hooks/hasat-gate.sh` | `hasat-gate.mjs` betiğini çağıran kabuk köprüsü | `.claude/settings.json:34` | Otomatik | SessionStart'ta kapanış hasadı denetimi tetiklenmez | 2026-07-29 (`bf13f80`) |
+| `.claude/hooks/oturum-durumu.mjs` | SessionStart anında `artifacts/current-work.json` dosyasını okunup basar | `.claude/settings.json:29` | Otomatik | Model oturum açılışında aktif iş durumunu göremez | 2026-07-29 (`bf13f80`) |
+
+---
+
+## 2. Özel Soruların Yanıtları
+
+### 1. Yetim (Orphan) Betikler
+
+Repoda hiçbir kod, hook, skill veya paket komutu tarafından çağrılmayan; yalnızca dokümanlarda/arşivlerde geçen veya 0 referansı bulunan **21 betik** şunlardır:
+
+1. `scripts/check-assets3d.mjs` — `docs/superpowers/plans/2026-07-03-3d-diorama-shell-m4.md:483`, `docs/superpowers/specs/ASSET_GOAL_T1_ATOLYE.md:20` (yalnızca doküman).
+2. `scripts/design-tour-shots.mjs` — `docs/superpowers/plans/2026-07-07-tasarim-turu.md:15` (yalnızca doküman).
+3. `scripts/dunya-sinavi.ts` — `docs/ai/sync/memory/archive/mamilas-dunya-sinavi-run1.md` (yalnızca arşiv dokümanı).
+4. `scripts/faz5-pilot.ts` — `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`, `docs/ai/sync/memory/archive/mamilas-faz5-pilot.md` (yalnızca arşiv).
+5. `scripts/final-brief-matrix.ts` — `docs/superpowers/plans/2026-07-04-t6-final-brief-birlestirme.md:25` (yalnızca doküman).
+6. `scripts/final-shots.mjs` — `docs/superpowers/plans/2026-07-04-t6-final-brief-birlestirme.md:329` (yalnızca doküman).
+7. `scripts/goldenhour-shots.mjs` — `docs/superpowers/plans/2026-07-07-goldenhour.md:12` (yalnızca doküman).
+8. `scripts/inspect-brief.ts` — `docs/ai/sync/memory/archive/mamilas-fable-scan2-2026-07-16.md` (yalnızca arşiv).
+9. `scripts/kutuphane-karne.ts` — `docs/ai/sync/memory/archive/mamilas-kutuphane-karne-run1.md` (yalnızca arşiv).
+10. `scripts/make-proof-textures.mjs` — `docs/superpowers/plans/2026-07-03-3d-diorama-shell-m4.md` (yalnızca doküman).
+11. `scripts/path-bak.ts` — Repoda 0 referans.
+12. `scripts/prompt-bak.ts` — Repoda 0 referans.
+13. `scripts/scene-proof.mjs` — `docs/DESIGN_LANGUAGE_V3.md:241`, `docs/superpowers/plans/2026-07-03-isikli-atolye-t1-diorama.md` (yalnızca doküman).
+14. `scripts/start-codex.ps1` — `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md:1295` (yalnızca arşiv).
+15. `scripts/t3-brief-shots.mjs` — `docs/superpowers/plans/2026-07-04-t3-brief-sadelesmesi.md:386` (yalnızca doküman).
+16. `scripts/t4-recipe-shots.mjs` — `docs/superpowers/plans/2026-07-04-t4-recete-galeri-duvari.md:27` (yalnızca doküman).
+17. `scripts/t5-scenes-shots.mjs` — `docs/superpowers/plans/2026-07-04-t5-sahneler-timeline-soleni.md:22` (yalnızca doküman).
+18. `scripts/t6-shots.mjs` — `docs/superpowers/plans/2026-07-05-t6-yonetmen-qa-yerlesimi.md:66` (yalnızca doküman).
+19. `scripts/take-screenshots.ts` — Repoda 0 referans.
+20. `scripts/ureme-birlestir.mjs` — `scripts/birlestir.mjs:9` (yalnızca betik içi açıklama yorumu).
+21. `scripts/ureme-motion-birlestir.mjs` — `scripts/birlestir.mjs:9` (yalnızca betik içi açıklama yorumu).
+
+---
+
+### 2. Çıktı Üreten Ancak Kod/Hook Tarafından Okunmayan Betikler
+
+Yazılan dosyaların tüketici takibi:
+
+- **Yazılım tüketicisi OLMAYAN (yalnızca insan/harici motor veya visual kanıt olan) çıktılar:**
+  - `scripts/birlestir.mjs` → `agents/COMMAND-INBOX/BIRLESTIRILMIS-URETIM.txt` (Okuyucu kod yok; dış video üretici motor ve insan okur).
+  - `scripts/ureme-birlestir.mjs` → `agents/COMMAND-INBOX/UREME-50-KARE.txt` (Okuyucu kod yok; insan/dış motor).
+  - `scripts/ureme-motion-birlestir.mjs` → `agents/COMMAND-INBOX/UREME-50-MOTION.txt` (Okuyucu kod yok; insan/dış motor).
+  - `scripts/brain-workbench.ts` → `artifacts/brain-bench/bench-*.json` (Okuyucu kod yok; insan incelemesi).
+  - `scripts/faz5-pilot.ts` → `artifacts/faz5/` (Okuyucu kod yok; insan incelemesi).
+  - `scripts/final-brief-matrix.ts` → `reports/final-brief-matrix.md` (Okuyucu kod yok; insan incelemesi).
+  - `scripts/jury-audit.ts` → `artifacts/jury-audit/*.json` (Okuyucu kod yok; insan incelemesi).
+  - `scripts/kaba-kurgu.mjs` → `KABA-KURGU.xml` (Okuyucu kod yok; Premiere / DaVinci arayüzü içeri aktarır).
+  - Görsel Kanıt Betikleri (`make-proof-textures.mjs`, `scene-proof.mjs`, `t3-brief-shots.mjs`, `t4-recipe-shots.mjs`, `t5-scenes-shots.mjs`, `t6-shots.mjs`, `design-tour-shots.mjs`, `goldenhour-shots.mjs`, `final-shots.mjs`) → `reports/` ve `public/assets3d/*.webp` görselleri (Okuyucu kod yok; PR ve insan denetimi).
+
+- **Yazılım tüketicisi OLAN çıktılar:**
+  - `scripts/current-work.mjs` → `artifacts/current-work.json` (Okuyucu: `.claude/hooks/oturum-durumu.mjs:23`).
+  - `scripts/kapanis-hasadi.mjs` → `artifacts/kapanis-hasadi-rapor.json` (Okuyucu: `.claude/hooks/hasat-gate.mjs:38`).
+  - `scripts/mamilas-command.mjs` → `artifacts/storyboard-receipt.json` (Okuyucu: `mamilas-uret` skill, `birlestir.mjs`, `kaba-kurgu.mjs`).
+  - `scripts/memory-sync.mjs` / `scripts/claude-sync.mjs` → `docs/ai/sync/memory/*.md`, `.claude/rules/*.md`, `CLAUDE.md` (Okuyucu: Claude Code / AGY oturum başlatıcı ve path-scoped kural yükleyici).
+  - `scripts/agents-sync.mjs` → `.claude/agents/*.json` (Okuyucu: `src/core/skillCapability.test.ts:25`).
+  - `scripts/project-loot.mjs` → `APPROVED-BANK.txt` (Okuyucu: `scripts/project-loot.mjs:89` sonraki çalıştırmalarında banka okuması ve `src/core/brain.ts`).
+
+---
+
+### 3. Dokümanlarda "Şu Anda Çalışır" Sözü Verildiği Halde `.claude/settings.json` Kaydı Bulunmayan Betikler
+
+`docs/ai/faz-icraat.md` ve `CLAUDE.md` dokümanlarında belirli çalışma anlarında koşturulacağı taahhüt edilmesine rağmen `.claude/settings.json` altında bir hook kaydıyla Otomatik Bağlanmamış betikler:
+
+1. `scripts/dunya-kilidi.mjs`:
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:37` ("Prompt yazmadan ÖNCE: node scripts/dunya-kilidi.mjs <worldId>"), `CLAUDE.md:34,78` ("Üretimden ÖNCE ölç").
+   - Kayıt durumu: `.claude/settings.json` içinde kaydı YOKTUR.
+2. `scripts/prompt-lint.mjs`:
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:39` ("Prompt yazıldıktan sonra, BASMADAN ÖNCE: node scripts/prompt-lint.mjs"), `CLAUDE.md:33,79` ("üretimden ÖNCE koşar").
+   - Kayıt durumu: `.claude/settings.json` içinde kaydı YOKTUR.
+3. `scripts/motion-qc.mjs`:
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:41` ("Klip geldiğinde: node scripts/motion-qc.mjs <klip>").
+   - Kayıt durumu: `.claude/settings.json` içinde kaydı YOKTUR.
+4. `scripts/kaba-kurgu.mjs`:
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:42,57` ("Klipler + VO inince: node scripts/kaba-kurgu.mjs").
+   - Kayıt durumu: `.claude/settings.json` içinde kaydı YOKTUR.
+5. `scripts/current-work.mjs` (İlerle/Başlat/Kapat durum güncellemeleri):
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:34,35,68` ("Her iş parçası bitince node scripts/current-work.mjs ilerle", "Yeni video başlarken node scripts/current-work.mjs baslat").
+   - Kayıt durumu: `.claude/settings.json` içinde doğrudan durum değiştiren `current-work.mjs` komut kaydı YOKTUR (`SessionStart` hook'u yalnızca `oturum-durumu.mjs` üzerinden salt-okunur basar).
+6. `scripts/kapanis-hasadi.mjs` (`--all` çalıştırması):
+   - Doküman taahhüdü: `docs/ai/faz-icraat.md:44` ("Video bitince: node scripts/kapanis-hasadi.mjs --all").
+   - Kayıt durumu: `.claude/settings.json` içinde `--all` parametresiyle çalışan bir hook kaydı YOKTUR (`SessionStart` hook'u olan `hasat-gate.sh` -> `hasat-gate.mjs` salt-okunur kontrol yapar).
+
+---
+
+### 4. Aynı İşi Yapan Örtüşen Betikler
+
+1. `scripts/claude-sync.mjs` ↔ `scripts/memory-sync.mjs`:
+   - İki betik de repo ile `.claude` / `~/.claude` arasındaki dosyaları senkronize eder. `CLAUDE.md:103` satırı `"Tek yönlü memory-sync emekli"` ifadesiyle `claude-sync.mjs`'in onun yerini aldığını belirtir, ancak `memory-sync.mjs` hâlâ repoda yer almakta ve `src/core/claudeSync.test.ts:110` tarafından çağrılmaktadır.
+2. `scripts/birlestir.mjs` ↔ `scripts/ureme-birlestir.mjs` ↔ `scripts/ureme-motion-birlestir.mjs`:
+   - Üç betik de prompt parçalarını `agents/COMMAND-INBOX/` altında `.txt` dosyalarında birleştirir. `scripts/birlestir.mjs:9` satırı `ureme-birlestir.mjs` ve `ureme-motion-birlestir.mjs`'in genel `birlestir.mjs` betiğinin özelleşmiş sürümleri olduğunu doğrular.
+3. `.claude/hooks/buddy-gate.sh` ↔ `.claude/hooks/buddy.mjs`:
+   - `.claude/hooks/buddy-gate.sh:24` satırı kendi başına bir mantık çalıştırmaz; yalnızca `node .claude/hooks/buddy.mjs` çağrısını delege eder.
+4. `.claude/hooks/hasat-gate.sh` ↔ `.claude/hooks/hasat-gate.mjs`:
+   - `.claude/hooks/hasat-gate.sh:16` satırı kendi başına bir mantık çalışmaz; yalnızca `node .claude/hooks/hasat-gate.mjs` çağrısını delege eder.
+5. `prompt-lint.mjs` / `motion-qc.mjs` / `kapanis-hasadi.mjs` / `hasat-gate.*`:
+   - `prompt-lint.mjs` metin prompt'larını denetler.
+   - `motion-qc.mjs` video kliplerini denetler.
+   - `kapanis-hasadi.mjs` proje bitiminde karne ve ders çıkarır.
+   - `hasat-gate.mjs` (`hasat-gate.sh` aracılığıyla), `kapanis-hasadi.mjs` dosyasını `import` ederek (`hasat-gate.mjs:37`) onun `checkProjects()` metodunu çalıştırır; bağımsız bir denetim algoritması yürütmez.
+
+---
+
+### 5. `.claude/hooks/` İçindeki Betiklerin Durum Analizi
+
+1. `.claude/hooks/gate.sh`:
+   - `settings.json` Kaydı: **VAR** (`.claude/settings.json:12` - `PreToolUse`, `matcher: Bash`).
+   - Sıfır-Dışı Exit Verir mi: **EVET** (`.claude/hooks/gate.sh:23` `fail()` fonksiyonu üzerinden `exit 2` verir).
+   - Çıktısını Model Okur mu: **EVET** (`PreToolUse` engelleyici çıktısı terminal / agent komut bağlamına yansır).
+
+2. `.claude/hooks/buddy-gate.sh`:
+   - `settings.json` Kaydı: **VAR** (`.claude/settings.json:23` - `SessionStart`, `:58` - `PostToolUse`).
+   - Sıfır-Dışı Exit Verir mi: **HAYIR** (`.claude/hooks/buddy-gate.sh:13,22` doğrudan `exit 0` döner).
+   - Çıktısını Model Okur mu: **HAYIR** (`PostToolUse` ve `SessionStart` kabuk çıktısı doğrudan enjekte edilmez; `buddy.mjs`'e `exec` eder).
+
+3. `.claude/hooks/buddy.mjs`:
+   - `settings.json` Kaydı: **VAR** (`.claude/settings.json:46` - `PostToolBatch`). (`buddy-gate.sh` üzerinden de çağrılır).
+   - Sıfır-Dışı Exit Verir mi: **HAYIR** (`.claude/hooks/buddy.mjs:272-273` `process.exit(0)` ile sonlanır).
+   - Çıktısını Model Okur mu: **EVET** (`SessionStart` anında `SESSION_START` stdout metni modele ulaşır; `PostToolBatch` anında `hookSpecificOutput.additionalContext` JSON zarfı model bağlamına enjekte edilir).
+
+4. `.claude/hooks/oturum-durumu.mjs`:
+   - `settings.json` Kaydı: **VAR** (`.claude/settings.json:29` - `SessionStart`).
+   - Sıfır-Dışı Exit Verir mi: **HAYIR** (`.claude/hooks/oturum-durumu.mjs:37` `process.exit(0)` ile sonlanır).
+   - Çıktısını Model Okur mu: **EVET** (`SessionStart` anında düz stdout metni modelin açılış bağlamına enjekte edilir).
+
+5. `.claude/hooks/hasat-gate.sh`:
+   - `settings.json` Kaydı: **VAR** (`.claude/settings.json:34` - `SessionStart`).
+   - Sıfır-Dışı Exit Verir mi: **HAYIR** (`.claude/hooks/hasat-gate.sh:17` `exit 0` ile sonlanır).
+   - Çıktısını Model Okur mu: **HAYIR** (Çıktıyı `hasat-gate.mjs` üretir ve `stderr`'e yazar; `SessionStart` kanalında `stderr` modele enjekte edilmez).
+
+6. `.claude/hooks/hasat-gate.mjs`:
+   - `settings.json` Kaydı: **DOLAYLI** (`.claude/hooks/hasat-gate.sh` aracılığıyla `SessionStart`'ta çağrılır).
+   - Sıfır-Dışı Exit Verir mi: **HAYIR** (`.claude/hooks/hasat-gate.mjs:33,43,57` `process.exit(0)` ile sonlanır).
+   - Çıktısını Model Okur mu: **HAYIR** (`.claude/hooks/hasat-gate.mjs:23` `process.stderr.write` kullanır; `stderr` model bağlamına aktarılmaz).

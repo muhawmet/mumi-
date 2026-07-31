@@ -1,0 +1,144 @@
+# DELIVERY CORPUS MAP (Teslimat Derlem Haritası)
+
+`agents/COMMAND-INBOX/` altındaki tüm video projeleri (kök dizin, `Biten/`, `Bekleyen/` ve `DENEME/` dahil) salt-okunur (read-only) olarak taranmış ve haritalanmıştır.
+
+---
+
+## 1. Proje Teslimat Haritası
+
+Aşağıdaki tablo, `agents/COMMAND-INBOX/` altında yer alan tüm video projelerini, kare sayılarını, mevcut ve eksik teslimat dosyalarını ile git geçmişindeki son değişiklik tarihlerini göstermektedir.
+
+> **Hedef Teslimat Kümesi (8 Kalem):** `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml`
+
+| Proje Adı | Konum / Kategori | Kare (Frame) Sayısı | Mevcut Teslimat Dosyaları | Eksik Teslimat Dosyaları | Son Git Tarihi |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **6. Sınıf - Sorunları Birlikte Çözüyoruz** | Kök (Aktif) | 57 | `_REFERANSLAR`, `_PROMPTLAR`, `_SESLENDIRME` | `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+| **Bileşke Kuvvet** | Kök (Aktif) | 16 | `_REFERANSLAR`, `_PROMPTLAR`, `_EDIT-PLAN` | `_revize`, `_MOTION`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-29 |
+| **Bekleyen — 6. Sınıf Sosyal 1.3** | Bekleyen | 10 | *Hiçbiri yok* (Yalnız `.docx` var) | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-29 |
+| **Bekleyen — 5. Sınıf Sosyal 1.3** | Bekleyen | 9 | *Hiçbiri yok* (Yalnız `.docx` var) | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-29 |
+| **Bekleyen — 5. Sınıf Sosyal 1.2** | Bekleyen | 8 | *Hiçbiri yok* (Yalnız `.docx` var) | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-29 |
+| **5. Sürtünme** | Biten | 31 | `_PROMPTLAR`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO` | `_REFERANSLAR`, `_revize`, `KABA-KURGU.xml` | 2026-07-27 |
+| **5. Sınıf - Birlikte Daha Güçlüyüz** | Biten | 54 | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` *(TAM)* | *Yok (Tam Küme)* | Git kaydı yok |
+| **5. Sınıf - Kütle ve Ağırlık** | Biten | 35 | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` *(TAM)* | *Yok (Tam Küme)* | 2026-07-29 |
+| **6. Sınıf - Bizi Bir Arada Tutan Değerler** | Biten | 34 | `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | `_REFERANSLAR` | 2026-07-30 |
+| **6. Sınıf - Eşeyli ve Eşeysiz Üreme** | Biten | 50 | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` *(TAM)* | *Yok (Tam Küme)* | 2026-07-29 |
+| **6. Sınıf - Kuvvetlerin Güç Birliği** | Biten | 52 | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO` | `KABA-KURGU.xml` | 2026-07-28 |
+| **Kuvvet MİRA** | Biten | 69 | `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO` | `_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `KABA-KURGU.xml` | 2026-07-27 |
+| **Kuvvet ve Kuvvetin Ölçülmesi** | Biten | 48 | `_REFERANSLAR`, `_PROMPTLAR`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO` | `_revize`, `KABA-KURGU.xml` | 2026-07-29 |
+| **Sabit Sürat ve Hız** | Biten | 44 | `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO` | `_REFERANSLAR`, `KABA-KURGU.xml` | 2026-07-27 |
+| **DENEME / 10 Dünya Turu** | DENEME | 10 | `_PROMPTLAR`, `_MOTION` | `_REFERANSLAR`, `_revize`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+| **DENEME / Andromeda** | DENEME | 2 | `_PROMPTLAR` | `_REFERANSLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+| **DENEME / Festival — Kültür Yolu** | DENEME | 2 | `_PROMPTLAR` | `_REFERANSLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+| **DENEME / Limit Testi — Uzaylı** | DENEME | 3 | `_PROMPTLAR` | `_REFERANSLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+| **DENEME / TOHUM — 5 Sahne** | DENEME | 5 | `_PROMPTLAR` | `_REFERANSLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml` | 2026-07-30 |
+
+---
+
+## 2. Projeler Arası Uyumsuzluklar ve Eğilim Analizi
+
+### 1. Format ve Yapı Farklılıkları
+
+Aynı teslimat kalemi farklı projelerde tamamen tutarsız biçimlerde kaleme alınmıştır:
+
+* **_MOTION Formatı Uyumsuzluğu:**
+  * **Koleksiyon Klasörü Yapısı:** [6. Sınıf - Eşeyli ve Eşeysiz Üreme](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme) projesinde motion talimatları `MOTION/01.txt` .. `MOTION/50.txt` şeklinde 50 ayrı metin dosyasına bölünmüştür.
+  * **Tablo (Markdown) Yapısı:** [5. Sınıf - Kütle ve Ağırlık](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k) projesinde motion, revize ile birleştirilerek tek bir Markdown tablosu olarak yazılmıştır:
+    > Alıntı ([`REVIZE-VE-MOTION.md`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k/REVIZE-VE-MOTION.md#L4)):  
+    > `| K01 | 1.png | 5s | Kamera sabit | @efe dynamometer'a bakıyor; elindeki dijital kumpasla yaylı skalayı ölçeklendiriyor... |`
+  * **Paragraf Metni Yapısı:** [Sabit Sürat ve Hız](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/Sabit%20S%C3%BCrat%20ve%20H%C4%B1z) projesinde tek bir `.txt` dosyasında paragraf blokları halindedir:
+    > Alıntı ([`Sabit Sürat ve Hız_MOTION.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/Sabit%20S%C3%BCrat%20ve%20H%C4%B1z/Sabit%20S%C3%BCrat%20ve%20H%C4%B1z_MOTION.txt#L5)):  
+    > `[KARE 01] Kamera Efe'ye doğru yavaşça yaklaşır. Efe masadaki oyuncak arabayı ileri iter...`
+  * **Aykırı Proje (Outlier):** `5. Sınıf - Kütle ve Ağırlık` (Motion ile Revize'yi tek Markdown tablosunda birleştirmiştir) ve `6. Sınıf - Eşeyli ve Eşeysiz Üreme` (50 adet ayrı `.txt` dosyasına bölmüştür).
+
+* **_revize Formatı Uyumsuzluğu:**
+  * **Makro Hüküm ve Kök Neden Raporu:** [5. Sınıf - Birlikte Daha Güçlüyüz](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%86c%CC%A7lu%CC%88yu%CC%88z) projesinde genel denetim kararları ve motor kök neden tahlili yer alır:
+    > Alıntı ([`Birlikte Daha Güçlüyüz_revize.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%86c%CC%A7lu%CC%88yu%CC%88z/Birlikte%20Daha%20G%C3%BC%C3%A7l%C3%BCy%C3%BCz_revize.txt#L38)):  
+    > `BATCH'İN BASKIN KUSURU — kök neden bulundu ve kaynakta kapatıldı: TEXT: satırının kuyruğundaki "any background sign soft-focus..." motor tarafından TARİF değil YAZILACAK METİN olarak okunmuş.`
+  * **Çoklu Tur (Turn-based) Metinleri:** [6. Sınıf - Kuvvetlerin Güç Birliği](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20Kuvvetlerin%20G%C3%BC%C3%A7%20Birli%C4%9Fi) projesinde revizeler tur tur ayrılmış dosyalardır (`REVİZE-PROMPTLAR.txt` ve `REVİZE-TUR2.txt`):
+    > Alıntı ([`Bileşke Kuvvet_REVİZE-TUR2.txt`](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20Kuvvetlerin%20G%C3%BC%C3%A7%20Birli%C4%9Fi/Bile%C5%9Fke%20Kuvvet_REV%C4%B0ZE-TUR2.txt#L13)):  
+    > `##### B) ÇİÇEK OLMUŞ GLOW'LAR (hepsi aynı düzeltme) #####`
+  * **Aykırı Proje (Outlier):** `5. Sınıf - Birlikte Daha Güçlüyüz` (Hüküm/Kök neden raporu formatı) ve `6. Sınıf - Kuvvetlerin Güç Birliği` (Tur-1 / Tur-2 çoklu dosya formatı).
+
+---
+
+### 2. İsimlendirme ve Stil Sapmaları (Naming & Separator Drift)
+
+Proje dosyalarında, başlıklarında ve ayraçlarında tespit edilen tüm varyasyonlar:
+
+* **Dosya İsimlendirme Sapmaları:**
+  * **Revize:** `[Proje]_revize.txt`, `revize.txt`, `[Proje]_REVIZE-TEK-DOSYA.txt`, `REVIZE-VE-MOTION.md`, `[Proje]_REVİZE-PROMPTLAR.txt`, `[Proje]_REVİZE-TUR2.txt`
+  * **Promptlar:** `[Proje]_PROMPTLAR.txt`, `[Proje]_PROMPTLAR.md`, `PROMPTLAR/` (klasör içi `01.txt` veya `01.md`), `[KOD]_PROMPT.txt` (ör: `DEGERLER-K01-KILIM_PROMPT.txt`)
+  * **Kaba Kurgu XML:** `[Proje] — kaba kurgu.xml`, `[Proje] — KABA-KURGU.xml`, `[Proje]_KURGU.xml`, `[Proje] — klip indirme planı.xml`
+  * **JSON / Metadata:** `[proje]_mamilas_command.json`, `PROJECT-LOOT.json`, `HASAT.json`, `ENZIM-KILITLERI.json`
+
+* **Bölüm Başlığı (Section Header) Sapmaları:**
+  * `[KARE 01]` / `[KARE 1]` (Köşeli parantezli büyük harf)
+  * `KARE 01:` / `K01 ·` (Noktalı veya iki noktayla ayrılmış)
+  * `Sahne 1 — "..."` (Sahne odaklı Türkçe)
+  * `SAHNE 1 — GİRİŞ: YAŞADIĞIMIZ ÇEVRE` (Docx senaryo stili)
+  * `### 3.png` / `### 3.png (K03)` / `### 12.png (K12 — FIREWALL: insan sızmış)` (Node başlığı stili)
+  * `## KARE 01` (Markdown H2 stili)
+
+* **Ayraç (Separator) Sözleşmesi Sapmaları:**
+  * `-----` (5 adet kısa çizgi)
+  * `-------------------------------------------------------------------------` (73 adet kısa çizgi)
+  * `=========================================================================` (73 adet eşittir işareti)
+  * `### ` (Markdown H3 / Node ayracı)
+  * Ayraçsız (Yalnızca çift alt satır boşluğu)
+
+* **Türkçe / İngilizce Karmaşıklığı (Language Drift):**
+  * Türkçe Başlıklar: `_SESLENDIRME.txt`, `_REFERANSLAR.txt`, `_PROMPTLAR.txt`, `_revize.txt`, `KABA-KURGU.xml`, `kaba kurgu.xml`
+  * İngilizce / Hibrit Başlıklar: `MOTION`, `EDIT-PLAN`, `PROMPTS`, `REFERENCES`, `PROJECT-LOOT.json`, `REVIZE-VE-MOTION.md`, `EDIT-PLAN.txt`, `VO-transkript.srt`
+
+---
+
+### 3. Proje Kalite Sıralaması (Kayıtlı Revize Kanıtlarına Göre)
+
+Depodaki `*_revize.txt` ve revize kayıt dosyalarında reddedilen (revize/baştan üret istenen) kare sayısının toplam proje kare sayısına oranı:
+
+| Proje Adı | Toplam Kare | Reddedilen Kare Sayısı | Red Oranı (%) | Kalite Seviyesi / Notu |
+| :--- | :---: | :---: | :---: | :--- |
+| **Sabit Sürat ve Hız** | 44 | 8 | **%18,18** | **EN YÜKSEK KALİTE** (En az red) |
+| **5. Sınıf - Kütle ve Ağırlık** | 35 | 10 | **%28,57** | Yüksek |
+| **6. Sınıf - Kuvvetlerin Güç Birliği** | 52 | 27 | **%51,92** | Orta |
+| **6. Sınıf - Eşeyli ve Eşeysiz Üreme** | 50 | 29 | **%58,00** | Düşük |
+| **5. Sınıf - Birlikte Daha Güçlüyüz** | 54 | 36 | **%66,67** | Çok Düşük |
+| **6. Sınıf - Bizi Bir Arada Tutan Değerler** | 34 | 25 | **%73,53** | **EN DÜŞÜK KALİTE** (En yüksek red) |
+
+> **Kayıtsız Projeler:** `5. Sürtünme`, `Kuvvet MİRA`, `Kuvvet ve Kuvvetin Ölçülmesi`, `6. Sınıf - Sorunları Birlikte Çözüyoruz`, `Bileşke Kuvvet`, `DENEME/*` ve `Bekleyen/*` projelerinde depoda kayıtlı bir `*_revize.txt` dosyası **bulunmamaktadır**. Dolayısıyla reddedilen kare sayıları ölçülememektedir.
+
+---
+
+### 4. Red Nedenleri Frekans Tablosu (Tüm Projeler Birleşik)
+
+Tüm `*_revize.txt` dosyaları taranarak kullanıcının / denetim mekanizmasının görselleri reddetme nedenleri kategorize edilmiş ve frekansına göre sıralanmıştır:
+
+| Sıra | Red Sebebi Kategorisi | Toplam İhlal / Red Sayısı | Açıklama ve İhlal Örnekleri |
+| :---: | :--- | :---: | :--- |
+| **1** | **VO / Seslendirme & Pedagoji Uyumsuzluğu** | **53** | Karenin söylenen VO cümlesiyle birebir örtüşmemesi, yanlış eylem/nesne gösterilmesi. *(Ör: "VO'yu çürütüyor", "cümlede geçen eşya karede yok")* |
+| **2** | **İngilizce Tabela / Yazı İhlali** | **42** | Görsel arka planında Türkçe yerine İngilizce tabela/yazı çıkması. *(Ör: "SCHOOL BUS", "CORNER bakery", "VILLAGE SCHOOL", "GROCER", "LIBRARY")* |
+| **3** | **Bozuk / Anlamsız Metin ve Harf Çöpü (Garbled Text)** | **38** | Yapay zekanın anlamsız, bozuk karakterler veya latin/yabancı harf çöpü üretmesi. *(Ör: "TURKISH DIL YATAA", "BHIN AGINLLAHI", "TÜRKİŞK/AKINDİN")* |
+| **4** | **Çiçek / Safran Motif Yanılsaması (Prompt Glow Hatası)** | **37** | Nano Banana 2 (NB2) motorunun "saffron / bloom" veya "glow" kelimelerini safran çiçeği/lotus olarak çizmesi. *(Ör: "blokta kocaman lotus çiçeği", "safran çiçeği glow")* |
+| **5** | **Cast / Irk / Yaş Uyumsuzluğu (Model İhlali)** | **28** | Türk/Anadolu çocuk tipi yerine siyahi, Doğu Asyalı, yabancı veya yanlış yaşta çocuk çizilmesi. *(Ör: "no Black or East-Asian child", "yaşı küçük kalmış")* |
+| **6** | **Dünya / Mekân / Mimari Kayması** | **22** | Anadolu sokağı/evi yerine Paris, İtalya, Fransa veya yabancı mimari çizilmesi. *(Ör: "balkondan Paris/İtalya görünüyor, Anadolu hiç yok")* |
+| **7** | **Geometri Kaynaşması / Uçan Uzuv & Binişme** | **18** | İnsan/nesne uzuvlarının ahşaba/duvara kaynaşması, fazla el/bacak çıkması, metnin gövdeye binişmesi. *(Ör: "figür ahşaba kaynaşmış", "havada iki gri bacak + terlik")* |
+| **8** | **Kostüm / Kıyafet Tutarsızlığı** | **10** | Ana karakterin (@efe / @mira) yelek, kaza veya çanta renginin kareler arasında değişmesi. *(Ör: "çantası sarı olmalı", "kostüm kayması 5 kare")* |
+| **9** | **Yanlış Bayrak İhlali** | **1** | Türk bayrağı olması gereken yerde Amerikan bayrağı çizilmesi. *(Ör: "replace the American flag with the Turkish flag")* |
+
+---
+
+### 5. Teslimat Kümesi ve Medya Varlığı Çelişkileri
+
+Proje klasörlerinde teslimat metin dosyaları ile gerçek medya çıktıları (görseller, video klipleri, ses dosyaları) arasında tespit edilen uyuşmazlıklar:
+
+1. **Teslimat Kümesi TAM Eksiksiz, Ancak Medya (Klip/Ses) HİÇ ULAŞMAMIŞ Projeler:**
+   * **[6. Sınıf - Eşeyli ve Eşeysiz Üreme](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20E%C5%9Feyli%20ve%20E%C5%9Feysiz%20%C3%9Creme):** 8 teslimat dosyasının 8'i de eksiksiz mevcut (`_REFERANSLAR`, `_PROMPTLAR`, `_revize`, `_MOTION`, `_EDIT-PLAN`, `_SESLENDIRME`, `_SUNO`, `KABA-KURGU.xml`). Ancak klasörde **0 adet video klip** (`.mp4`), **0 adet ses dosyası** (`.mp3`/`.wav`) ve **0 adet kare resmi** (`.png`) bulunmaktadır.
+   * **[5. Sınıf - Kütle ve Ağırlık](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20K%C3%BCtle%20ve%20A%C4%9F%C4%B1rl%C4%B1k):** 8 teslimat dosyasının 8'i de tamdır. Ancak klasörde **0 adet video klip** (`.mp4`), **0 adet ses dosyası** (`.mp3`/`.wav`) ve yalnızca 1 adet resim bulunmaktadır.
+
+2. **Üretilmiş Medya (Render Kareleri) Mevcut, Ancak Teslimat Kümesi EKSİK Projeler:**
+   * **[6. Sınıf - Bizi Bir Arada Tutan Değerler](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/6.%20S%C4%B1n%C4%B1f%20-%20Bizi%20Bir%20Arada%20Tutan%20Deg%CC%86erler):** Klasörde `Resimler/` altında 53 adet üretilmiş `.png` kare resmi ve `Kötü örnekler/` altında 8 adet elenmiş resim bulunmaktadır. Ancak **`_REFERANSLAR`** teslimat dosyası eksiktir.
+   * **[5. Sınıf - Birlikte Daha Güçlüyüz](file:///Users/Muhammet/Desktop/mamilas-modern/agents/COMMAND-INBOX/Biten/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%86c%CC%A7lu%CC%88yu%CC%88z):** Klasörde `Resimler/` altında 54 adet üretilmiş `.png` kare resmi mevcuttur; ancak hiç `.mp4` video klip veya ses dosyası klasöre girmemiştir.
+
+3. **Taslak / Ham Senaryo Seviyesinde Kalan (Medya ve Teslimat Yok) Projeler:**
+   * **`Bekleyen/` (3 Senaryo):** Yalnızca ham `.docx` senaryo dosyaları barındırır. 8 teslimat kaleminin tamamı ve medya dosyaları (%0) eksiktir.
+   * **`DENEME/` Projeleri:** Yalnızca ham prompt test `.txt` dosyaları içerir. Motion, edit-plan, revize, suno ve medya çıktısı yoktur.

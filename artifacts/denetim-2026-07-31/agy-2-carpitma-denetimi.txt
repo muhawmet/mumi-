@@ -1,0 +1,49 @@
+# AGY HAFIZA VE SÜREKLİLİK DENETİM RAPORU ÇÜRÜTME & VERİFİKASYONİ
+
+Rapor, kod tablosundaki doğrudan yorumları ve geçmiş kararları bağımsız "keşif" gibi sunmuş, sahte satır numaraları içermiş ve belgelerin prosedürel bağlamını çarpıtmıştır.
+
+---
+
+## Part A: Rapor İddiaları Verifikasyon Tablosu
+
+| İddia No & Adı | Alıntılanan Dosya ve Satır | Verilen Hüküm | Kanıt ve Çürütme |
+|---|---|---|---|
+| **1. Ders Sisteminin İcraattan Kopuk Olması** | `agents/lessons/APPROVED.md:L3`, `L22`<br>`docs/ai/faz-icraat.md:L23` | **ABARTI / KENDİ KENDİNİ BELGELEME** | • `APPROVED.md:L22` (`<!-- İlk gerçek dersler... -->`), `APPROVED.md:L3` ve `faz-icraat.md:L23` satır/alıntıları **tam uyuşmaktadır**.<br>• Sistem `src/core/lessonBank.ts` ve `mamilas-director` üzerinden `APPROVED.md`'yi okuyacak şekilde bağlıdır. Otomatik promote'un olmaması `APPROVED.md:L3-4`'te açıkça gerekçelendirilmiş bilinçli bir tasarım kısıtıdır ("*Otomatik promote YOK — çöp ders sistemi zehirler*"). Dosyanın boş olması altyapının kopukluğundan değil, insan onayının beklenmesindendir. |
+| **2. Sohbet Hafızası ve Memory Dosyalarının Okunmaması** | `memory/MEMORY.md:L1-L2`<br>`CLAUDE.md:L14`<br>`docs/ai/faz-icraat.md:L13-L28` | **ABARTI / KENDİ KENDİNİ BELGELEME** | • Alıntılar ve satır numaraları **tam uyuşmaktadır**.<br>• `MEMORY.md:L1` başlık yorumunda bu durum açıkça belgelenmiştir: `(...onlar açılışta yüklenmez)`. 40 markdown dosyasının açılışta basılması token penceresini tükenmeye zorlayacağı için yükleme isteğe bağlıdır; ilgili skill (`mamilas-director`, `mamilas-enzim`) çağrıldığında veya path-scoped `.claude/rules/` tetiklendiğinde gerekli kurallar bağlama girer. Rapor mimari tasarımı "bilgi gizleme" olarak çarpıtmaktadır. |
+| **3. Kural Dokümanları Arasındaki Çelişkiler** | `agents/PROMPT-YASASI.md:L526`, `L537-L551`, `L648`, `L628`, `L677`, `L673`<br>`CLAUDE.md:L55`<br>`AGENTS.md:L26` | **YANLIŞ SATIR / ABARTI** | • `PROMPT-YASASI.md:L677` **YANLIŞ SATIRDIR**: Alıntılanan katı nesne/warp metni **685-686. satırlardadır**.<br>• `AGENTS.md:L26` **YANLIŞ SATIRDIR**: Alıntılanan ajan kullanım metni **53-54. satırlardadır** (26. satır `prompt-lint.mjs` hakkındadır).<br>• Paragraf vs Slot: `PROMPT-YASASI.md:L558` açıkça `Yukarıdaki yedi numara... prompta yazılacak etiket DEĞİLDİR` der. L648'deki `[4 KİLİT]` ifadesi düz metin içi göndermedir, çıktı formatı zorunluluğu değildir.<br>• Kamera/Gövde: L628 geçmiş bir hatanın düzeltmesidir (`🔴 DÜZELTME... YANLIŞTI...`). L685 ise insan gövdesi için değil, dişli/pusula gibi katı nesneler için geçerlidir.<br>• Ajan Tavanı: `CLAUDE.md:L55` (tavan 6) ile `AGENTS.md:L53` (büyük işte çoklu, küçük işte tek) çelişki değil, genel yetki ile görev ölçeği kurallarıdır. |
+| **4. Otomatize Edilmemiş Manuel Adımlar** | `docs/ai/faz-icraat.md:L34-L44`<br>`.claude/settings.json:L5-L64` | **EKSİK** | • Dosya ve satır alıntıları **doğrudur**.<br>• `prompt-lint.mjs` ve `dunya-kilidi.mjs` için dosya kaydetme öncesi `PreToolUse` hook'u bulunmamaktadır. Ancak iddia **EKSİK**tir: Asıl sistemik boşluk `src/core/brain.ts` ve `scripts/mamilas-command.mjs` CLI/üretim katmanının IDE linter'larından tamamen bağımsız çalışmasıdır. Ayrıca `faz-icraat.md:L34-44` tablosu interaktif Yönetmen (`mamilas-director`) yürütmesi için tasarlanmış bir rehberdir. |
+| **5. Durum Dosyalarının Bayatlaması (State Drift)** | `scripts/current-work.mjs:L4-L8`, `L256-L270`<br>`artifacts/current-work.json:L7` | **ABARTI / KENDİ KENDİNİ BELGELEME** | • Alıntılar ve satır numaraları **tam uyuşmaktadır**.<br>• `current-work.mjs:L4-L8` yorumu, script yazarının `EXECUTION_STATE.md` dosyasının neden rafa kaldırıldığını açıklayan kendi notudur.<br>• `current-work.json:L7` üzerindeki `lastCompleted` alanının serbest metin olması dosyanın ayrıştırılamaz olduğu anlamına gelmez; `projectId`, `phase`, `status`, `deliverables` ve `requiredLocalMedia` alanları makine tarafından kesin olarak ayrıştırılan JSON yapısındadır. |
+| **6. Bloke Etmeyen Kalite Kapıları** | `.claude/hooks/hasat-gate.mjs:L57`<br>`.claude/hooks/gate.sh:L106-L118`, `L120-L126`, `L131-L137`<br>`CLAUDE.md:L83-L85` | **DOĞRU / EKSİK / KENDİ KENDİNİ BELGELEME** | • Alıntılanan satırlar ve kod davranışları **doğrudur** (`hasat-gate.mjs` exit 0 verir; `gate.sh` senkron ve push uyarısı basar ama engellemez).<br>• Ancak bu durum kodun kendi yorumlarında gerekçelendirilmiştir (`hasat-gate.mjs:L13-15`: *hasat Mami'nin onayına giden ADAY üretir... blokesi olan kapı burada yanlış olurdu*).<br>• İddia **EKSİK**tir: Asıl açık, `gate.sh`'ın YALNIZCA `git commit` anında çalışmasıdır; commit edilmeyen prompt yazımları ve script değişiklikleri hiçbir kapıdan geçmemektedir. |
+| **B1 - B6 (Genel LLM Ajan Başarısızlık Modları)** | *Hiçbir dosya/satır verilmemiştir* | **ABARTI / KANITSIZ HÜKÜM** | • Raporun B bölümündeki 6 madde (Dynamic Memory, Event-Driven Hooks, Self-Editing Instructions, Few-Shot Canon, Static Gates, RAG) projenin kod tablosundan **sıfır kanıt/satır** göstermektedir.<br>• Genel LLM literatüründen kopyalanmış teorik metinlerdir. |
+
+---
+
+## Kendi Kendini Belgeleyen (Self-Description) İddialar
+
+Rapor, sistemin kod ve doküman yorumlarında kendi zayıflıklarını ve mimari tercihlerini açıkça beyan ettiği noktaları bağımsız birer açık gibi sunmuştur:
+
+1. **Ders Bankası Otomasyonu (İddia 1):** `agents/lessons/APPROVED.md:L3-4` satırlarında otomatik aktarımın neden yapılmadığı (*"Otomatik promote YOK — çöp ders sistemi zehirler"*) açıkça yazılıdır.
+2. **Soğuk Hafıza Tasarımı (İddia 2):** `memory/MEMORY.md:L1` satırındaki `(...onlar açılışta yüklenmez)` notu sistemin bilinçli context yönetimidir.
+3. **Eski Durum Dosyası Sapması (İddia 5):** `scripts/current-work.mjs:L4-L8` satırları, geliştiricinin `EXECUTION_STATE.md` sapmasını çözmek için `current-work.json` mimarisine geçtiğini açıklayan çalışma notudur.
+4. **Bloke Etmeyen Uyarılara İlişkin Kararlar (İddia 6):** `.claude/hooks/hasat-gate.mjs:L13-15` satırlarında aday üretiminin neden blocking yapılmadığı ve `.claude/hooks/gate.sh:L109, L127` satırlarında senkronize edilmemiş commit'lerin neden geliştiriciyi durdurmadığı açıkça açıklanmıştır.
+
+---
+
+## RAPORUN KAÇIRDIKLARI
+
+Raporun tespit edemediği, kod tablosunda var olan gerçek süreklilik ve kapı kopuklukları:
+
+1. **Durum Sapması Denetleyicisinin Kapıdan Kopuk Olması:**
+   - [scripts/current-work.mjs:L22](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/current-work.mjs#L22): Script içi yorum `--check` bayrağının çalışmasını `drift varsa exit 1 (kapıya BAĞLANMAZ)` şeklinde tanımlar. `scripts/current-work.mjs --check` komutu `.claude/hooks/gate.sh` duvarına bağlanmamıştır. Durum dosyası diskle çelişse bile `git commit` engellenmez.
+
+2. **Prompt Lint'in IDE Hook ve Commit Kapısından Tamamen İzolasyonu:**
+   - [scripts/prompt-lint.mjs:L1-L847](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/prompt-lint.mjs#L1-L847) & [.claude/settings.json:L5-L64](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L5-L64): `prompt-lint.mjs` scripti ne `.claude/settings.json` altındaki bir `PreToolUse` hook'una ne de `.claude/hooks/gate.sh:L56-L88` adımlarına eklenmiştir. `COMMAND-INBOX/` altındaki prompt dosyaları lint edilmeden commit edilebilir.
+
+3. **Claude ve Codex Skill İçeriklerinin Sessizce Sapabilmesi (Parity Gap):**
+   - [src/core/docsContract.test.ts:L293-L300](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/docsContract.test.ts#L293-L300): Test dosyası `.claude/skills` ile `.agents/skills` klasör isimlerinin eşitliğini kontrol eder; ancak dosya içeriklerinin birebir eşitliğini yalnızca `mamilas-director` ve `mamilas-enzim` için doğrular ([L205-L214](file:///Users/Muhammet/Desktop/mamilas-modern/src/core/docsContract.test.ts#L205-L214)). Diğer 7 skill (`mamilas-audit`, `mamilas-denetim`, `mamilas-gate`, `mamilas-imagegen`, `mamilas-pipeline`, `mamilas-ref`, `mamilas-uret`) iki ortam arasında değişse bile test `PASS` verir.
+
+4. **Oturum Başlangıç Hatalarının Sessiz Yutulması:**
+   - [.claude/hooks/oturum-durumu.mjs:L31-L37](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/oturum-durumu.mjs#L31-L37): `current-work.mjs` okunurken oluşan bir hata catch bloğuna düşer, stdout'a uyarı basar ve `process.exit(0)` ile sonlanır. Oturum durumu script'i çöktüğünde bile geliştirme ortamına hata kodu dönmez.
+
+5. **Windows Ortamında Shell Hook Bağımlılık Riski:**
+   - [.claude/hooks/buddy-gate.sh:L18-L24](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/buddy-gate.sh#L18-L24) & [.claude/settings.json:L23, L58](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L23#L58): `AGENTS.md:L48` uyarınca birincil ortam Windows/PowerShell'dir; ancak `settings.json` `SessionStart` ve `PostToolUse` adımlarında doğrudan `.sh` uzantılı kabuk betiklerini çağırır. Node tabanlı doğrudan yürütme yerine bash katmanına bağımlı kalınmıştır.

@@ -1,0 +1,129 @@
+MAMILAS talimat kurgusundaki tüm **çelişkiler, mükerrer kurallar, aşırı uyarlanmış (over-fitted) maddeler, ölçümsüz düzyazılar ve desteklenmeyen araç iddiaları** ajanın yazım davranışını etkileme riskine göre sıralanarak aşağıda listelenmiştir.
+
+---
+
+### 1. AÇIK ÇELİŞKİLER (Outright Contradictions)
+*Ajanın hangi kurala uyacağını kestiremediği ve kararsız kaldığı doğrudan zıtlıklar.*
+
+#### 1.1 Motion Klipinde Gövde Hareketi Çelişkisi (§3a.1 Kendi İçinde)
+- [PROMPT-YASASI.md:L619](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L619): `🔴 AMA DEĞİŞİM GÖVDEDE OLMAZ... insanda değişen tek şey bakış, kaş, göz kapağı ya da küçük bir baş hareketidir.`
+- [PROMPT-YASASI.md:L628](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L628): `🔴 DÜZELTME (2026-07-30)... Gövdeyi tümden dondurmak da kusurdur: 5 saniye boyunca yalnız kaş oynayan klipte motor boşluğu kendi uyduruyor ve 'aptalca ani hareket' oradan doğuyor. Kamera ve gövde aynı anda oynar...`
+- **Etki**: L619 gövde hareketini açıkça yasaklayıp sadece kaş/göz hareketine izin verirken, hemen altındaki L628 düzeltmesi sadece kaş/göz hareket ettirmeyi kusur ve "aptalca ani hareket" nedeni saymaktadır.
+
+#### 1.2 Karakter Tarifi ve `@handle` Kullanım Çelişkisi
+- [PROMPT-YASASI.md:L454](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L454) & [mamilas-director/SKILL.md:L98](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L98): `Karakteri asla tarif etme, handle yeter / ASLA görünüş tarifi yazma.`
+- [PROMPT-YASASI.md:L432](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L432) & [mamilas-director/SKILL.md:L121](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L121): `[EDU] Cast: her çocuk — ana ve arka plan dahil — Türk/Anadolu; sınıf yaşı açık yazılır ('6th-grade, around eleven or twelve, pre-teen').`
+- [PROMPT-YASASI.md:L578](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L578): `Tagsız insana motion yazılmaz... kimlik olumlu ve tek cümlede sabitlenir ('the same broad-faced man in the petrol-blue coat').`
+- **Etki**: Ajan bir taraftan görünüşü asla tarif etmeyip sadece `@handle` yazma emri alırken, diğer taraftan her prompta etnik köken, yaş, kıyafet ve yüz hatları ekleme emri almaktadır.
+
+#### 1.3 Yazı Taşıyıcı Nesnesi ve Boş Yüzey Çelişkisi
+- [PROMPT-YASASI.md:L188](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L188): `TEXT: <TAŞIYICI NESNE — sahnede zaten var olan>` (Şablonda taşıyıcı nesne zorunludur).
+- [PROMPT-YASASI.md:L121](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L121): `(b) O ana yakışacak biçimde TASARLANMIŞ ekran yazısı — nesneye basılı olmak zorunda değil...`
+- [PROMPT-YASASI.md:L366](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L366): `BOŞ YÜZEY = UYDURMA İNGİLİZCE... Kural: yazı istemediğin her yüzey giydirilir... Kadrajda tabelanın doğabileceği boş panel bırakılmaz.`
+- [PROMPT-YASASI.md:L440](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L440): `okunmayacaksa yüzey boş kalsın.`
+- **Etki**: L188 yazıyı sahnedeki nesneye bağlarken L121 nesne zorunluluğunu kaldırır. L366 boş yüzeyleri İngilizce tabela riskiyle yasaklarken L440 okunmayan yüzeylerin boş bırakılmasını emreder.
+
+#### 1.4 Negatif Prompt Yığını vs. Pozitif Çerçeveleme Çelişkisi
+- [PROMPT-YASASI.md:L256](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L256) & [L445](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L445) & [mamilas-director/SKILL.md:L100](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L100): `Negatif korumaz... Pozitif çerçevele. NB2 negatif yığınını zayıf okur; sadece firewall negatifleri kalır.`
+- [PROMPT-YASASI.md:L191](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L191) & [L387](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L387): `NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>`
+- **Etki**: Ajan negatif kelimelerin motora zarar verdiğini okur ancak şablon gereği devasa global negatif listesini her promptun sonuna eklemeye zorlanır.
+
+#### 1.5 REAL Register Ten Kuralı Çelişkisi (§2 vs §2R)
+- [PROMPT-YASASI.md:L180](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L180): `Warm matte tan skin, low specular, never tinted green or grey.`
+- [PROMPT-YASASI.md:L438](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L438): `🔴 [REAL]'de bu slot TERSİNE çevrilir... 'Sıcak mat ten'i bir REAL karesine yazmak, o dünyanın kendi yasasını ihlal etmektir.`
+- **Etki**: Ajan §2 ana şablonunu doğrudan takip ettiğinde 3. slota "Warm matte tan skin" ekleyerek REAL dünyaların yasasını ihlal etmiş olur.
+
+---
+
+### 2. AYNIDAN BİREBİR / FARKLI EŞİK VE İFADELİ KURALLAR (Duplicates with Different Thresholds/Wording)
+*Farklı dosyalarda veya aynı metin içinde çelişen kelime limitleri ve parametreler.*
+
+#### 2.1 Motion Prompt Kelime Sayısı Eşiği (114 kelime vs 210-260 kelime)
+- [PROMPT-YASASI.md:L525](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L525): `İyi set: klip başına 114 kelime, düz metin...`
+- [PROMPT-YASASI.md:L536](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L536): `<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 210-260 kelime.>`
+- **Baskın uyanış**: Ajan şablon kalıbını taklit ettiği için L536'daki 210-260 kelimeye uyar; L525'teki 114 kelime tespitini yok sayar.
+
+#### 2.2 STYLE Kuyruğu Kelime Limiti (≤90 kelime vs ≤110 kelime)
+- [PROMPT-YASASI.md:L32](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L32) & [L187](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L187) & [L470](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L470): `STYLE'ı 90 kelimenin altında tut / STYLE: <≤90 kelime dünya kilidi>`
+- [PROMPT-YASASI.md:L416](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L416): `90 hedeftir; prompt-lint duvarı 110'da yanar — Üreme'nin çalışan işini kırmızıya boğmamak için.`
+- [scripts/prompt-lint.mjs:L168](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/prompt-lint.mjs#L168): (Lint eşiği 110 kelimedir).
+- **Baskın uyanış**: Ajan `prompt-lint.mjs` kırmızı yakmadığı sürece L416 uyarınca 110 kelimeye kadar esner, 90 kelime sınırını aşar.
+
+#### 2.3 Kamera Push-in Zarfı (Geniş Yasak vs. REAL İstisnası)
+- [PROMPT-YASASI.md:L674](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L674) & [mamilas-enzim/SKILL.md:L147](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-enzim/SKILL.md#L147): `🔴 'Slow push in' refleks olarak YASAK.`
+- [PROMPT-YASASI.md:L500](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L500) & [L703](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L703): `Tabletop + göz hizası... satan detaya inen macro push-in... karar anında yüze inip tam duran push-in.`
+- **Baskın uyanış**: L674'teki kırmızı renkli genel yasağı gören ajan, REAL projelerde geçerli olan meşru macro push-in hareketlerini yazmaktan çekinir.
+
+#### 2.4 Skill Kopyaları Arasındaki Çatallanma / Drift (.claude/skills vs .agents/skills)
+- [.claude/skills/mamilas-ref/SKILL.md:L40-L42](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L40-L42): `CLAUDE.md: cinedna_ ref'leri kasten kompakt... (CLAUDE.md)`
+- [.agents/skills/mamilas-ref/SKILL.md:L40-L42](file:///Users/Muhammet/Desktop/mamilas-modern/.agents/skills/mamilas-ref/SKILL.md#L40-L42): `AGENTS.md: cinedna_ ref'leri kasten kompakt... (AGENTS.md)`
+- [.claude/rules/launcher-parity.md:L23-L24](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/rules/launcher-parity.md#L23-L24): `Update both .agents/skills/ and .claude/skills/ copies together.`
+- **Baskın uyanış**: Ajan hangi dizinden çağrıldıysa oradaki dosyayı okur; iki skill dizininin birebir senkronize olduğu kuralı ihlal edilmiştir.
+
+---
+
+### 3. GEÇMİŞ OLAYA AŞIRI UYARLANMIŞ KURALLAR (Symptom Over-Fitting)
+*Geçmişte tek bir hatalı üretim çıktısını (Bileşke, Mira, Üreme) düzeltmek için yazılıp genel yasa yapılan kurallar.*
+
+1. **`saffron` ve `bloom` Kelimelerinin Evrensel Yasaklanması**
+   - [PROMPT-YASASI.md:L30](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L30), [L118-120](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L118-120), [L408](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L408), [mamilas-director/SKILL.md:L118](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L118):
+     > `saffron ve bloom kelimelerini NB2 çiçek çiziyor; Bileşke'de 7 kare böyle gitti. Doğrusu: soft round warm-golden glow of light...`
+   - *Aşırı Uyarım*: Bileşke projesinde modelin safran çiçeği üretmesi üzerine `bloom` kelimesi evrensel olarak yasaklanmış ve tüm parlamalar için "soft round warm-golden glow of light" şablonu zorunlu kılınmıştır.
+
+2. **Üreme Dersi Masadaki Pirinç Harfler Olayı**
+   - [PROMPT-YASASI.md:L112-L116](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L112-L116):
+     > `(2026-07-28 ölçümü: Üreme'nin 50 karesinin 36'sında yazı hiç yoktu, kalan 14'ünde aynı hamle on dört kez tekrarlanmıştı — 'kabartma, boyutlu, parlayan harfler masanın üstünde duruyor.'...)`
+   - *Aşırı Uyarım*: Tek bir videodaki kompozisyon hatası 30 satırlık evrensel bir yasa maddesine dönüştürülmüştür.
+
+3. **Makro El Çekimlerinde Yüz Yazma Zorunluluğu ("İnsan Koy, Kol Koyma")**
+   - [PROMPT-YASASI.md:L349](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L349):
+     > `1. İNSAN KOY, KOL KOYMA — 7 kare. 'Kahraman ellerdir' diye yazılan her yakın kare gövdesiz kolla döndü... Kural: her karede en az bir insan yüzüyle — yaş, giysi malzemesi, ifade yazılır.`
+   - *Aşırı Uyarım*: Birlikte Daha Güçlüyüz projesinde "hands" yazılınca gövdesiz kol çıkması sebebiyle tüm yakın el/obje çekimlerinde ekrana yüz ve ifade yazılması zorunlu tutulmuştur.
+
+4. **`silhouette` Sözcüğünün Kelime Tuzağı İlan Edilmesi**
+   - [PROMPT-YASASI.md:L380](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L380):
+     > `6. silhouette KELİME TUZAĞIDIR. Motor onu tarif değil çizilecek nesne olarak okuyor ve düz 2D kesme-kâğıt figür basıyor...`
+   - *Aşırı Uyarım*: Tek bir karedeki (K04) hatalı render nedeniyle `silhouette` kelimesi tüm prompt külliyatında yasaklanmıştır.
+
+5. **TEXT Slotuna 25 Kelimelik Yön Cümlesi Zorunluluğu**
+   - [PROMPT-YASASI.md:L368](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L368):
+     > `Bozulan üç kare 180 derece ters doğdu... Kural: TEXT slotuna ORIENTATION cümlesi zorunlu — 'reads left-to-right, never mirrored, reversed or rotated; appears on this one named object and on no other surface.'`
+   - *Aşırı Uyarım*: 54 kareden 3'ünün ters dönmesi nedeniyle her TEXT slotuna 25 kelimelik sabit İngilizce basmak zorunlu kılınmıştır.
+
+6. **`half a second later` Zaman Bağlacı Yasağı**
+   - [PROMPT-YASASI.md:L574](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L574):
+     > `1. half a second later YASAK. Motor bunu takvim sanıyor ve o anda snap yapıyor.`
+   - *Aşırı Uyarım*: Mira testindeki bir takılma nedeniyle zaman bildiren bu ifade evrensel olarak engellenmiştir.
+
+7. **Kling 3.0'ın Yazı Yazamaması, Konuşamaması ve Yazıya Yaklaşamaması**
+   - [PROMPT-YASASI.md:L586-L599](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L586-L599):
+     > `KİMSE YAZMAZ... KİMSE KONUŞMAZ... KAMERA YAZIYA YAKLAŞMAZ.`
+   - *Aşırı Uyarım*: Motorun önceki testlerdeki yetersizliği sebebiyle kurgudaki elin yazı yazması, dudak senkronu ve metne yaklaşan kamera hareketleri külliyen yasaklanmıştır.
+
+---
+
+### 4. ARAÇ / BETİK TARAFINDAN DESTEKLENMEYEN EMİRLER (Unsupported Claims)
+- [core-prompt-path.md:L15-L20](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/rules/core-prompt-path.md#L15-L20) & [mamilas-director/SKILL.md:L84](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L84): `Bu dosyalar motora giden prompt'u üretmiyor. Örtüşme %1-3; aktif projede %0 / CLI'ın author agent'ı burayı dolduramadı; hiç çalışmadı.`
+  - `src/core/brain.ts` ve `pure.ts` içindeki devasa `generateBatch` ve `buildImagePrompt` kod hattı prompt ürettiklerini iddia eder ancak gerçekte hiçbir araç bu kodun çıktısını kullanmamaktadır.
+- [mamilas-director/SKILL.md:L124](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L124): `INLINE JÜRİ = TAMİR: prompt'u agents/promptQuality.mined.json... karşı geç`
+  - "Inline Jüri" adı altında çalışan otomatik bir betik/araç yoktur; süreç tamamen ajanın gözle kontrolüne bırakılmıştır.
+- [site-gates.md:L54](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/rules/site-gates.md#L54): `personalMode yalan söylüyor. UI 'IP guard kapalı' derken evaluateDirectorCabinet ve contractGate personalMode'u hiç okumuyor...`
+  - Arayüzde kişisel mod seçeneği olmasına rağmen kod tarafında IP firewall devre dışı bırakılamamaktadır.
+- [site-gates.md:L56](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/rules/site-gates.md#L56): `Shot kavramı UI'da YOK... Mami site içinde hiçbir kareye onay veremiyor.`
+  - Dokümanlarda siteden onay verme emredilse de arayüzde Shot Approval bileşeni yoktur.
+- [PROMPT-YASASI.md:L509-L513](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L509-L513): `kurumsal_brand_film'in 1. negatifi koşulsuz... Bir kurumsal reklam filminde müşterinin kendi logosu kendi dünyasının 1. maddesiyle çakışıyor.`
+  - Sitede `brandKitLock` alanını dolduracak bir giriş yüzeyi bulunmamaktadır (L79).
+- [PROMPT-YASASI.md:L847](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L847): `Site brain-data.ts içindeki SUNO_MAP yapılandırılmış brief üretir — o bu kuralın zıddıdır ve kullanılmaz.`
+  - Sitedeki müzik brief üreticisi Suno Simple kutusunu bozan format üretmektedir.
+
+---
+
+### 5. ÖLÇÜMSÜZ SAF DÜZYAZI BÖLÜMLERİ (Pure Prose with No Metrics)
+*İçinde hiç veri, kare sayısı veya klip ölçümü bulunmayan silinecek felsefi metinler.*
+
+1. [PROMPT-YASASI.md:L273-L295](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L273-L295) (`§2c — FEDA: her şeyin okunduğu kare, AI karesidir`) — Odyssey filmi ile stok fotoğraf karşılaştırması ve estetik felsefesi.
+2. [PROMPT-YASASI.md:L664-L673](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L664-L673) (`§3b — KAMERA "sıkıcı slowly push in" yasak giriş bölümü`) — "Disney filmi edasında kamera", "Kamera da bir oyuncudur" temalı anlatı düzyazısı.
+3. [PROMPT-YASASI.md:L851-L861](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L851-L861) (`§6 — Bu yasa nasıl büyür`) — "Çöp ders sistemi zehirler" gibi metot öğütleri.
+4. [docs/ai/faz-icraat.md:L1-L11](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L1-L11) — "Nihai hedef Upwork portfolyosu" temalı giriş anlatısı.
+5. [CLAUDE.md:L43-L53](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L43-L53) ve [AGENTS.md:L47-L55](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L47-L55) — "MAKRO Mami'nin birinci kuralı", "Öneri kısa ve seçilebilir gelir" davranım söylemleri.
+6. [mamilas-director/SKILL.md:L87-L90](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L87-L90) (`1. VİZYON SOHBETİ`) — "Mami anlatır... Toplu onay al" adımlı sohbet metni.

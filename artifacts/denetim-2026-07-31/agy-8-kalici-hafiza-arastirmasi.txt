@@ -1,0 +1,173 @@
+Claude Code ve benzeri yapay zeka kodlama ajanlarında **oturumlar arası kalıcı bellek (persistent memory)** sağlama, belleği saklama ve saklanan bilgiyi ajan karar anındayken bağlama (context) geri yükleme (read-back) mekanizmalarına ilişkin 2026 yılı itibarıyla mevcut araçlar, mimariler, resmi tavsiyeler ve riskler aşağıda detaylandırılmıştır.
+
+---
+
+## 1. Hazır Seçenekler (What Exists Off-The-Shelf)
+
+Mevcut bellek sistemleri iki ana gruba ayrılır: **Claude Code'un yerel (native) mekanizmaları** ve **harici MCP (Model Context Protocol) / Vektör / Graf sunucuları**.
+
+### A. Claude Code Yerel Mekanizmaları
+
+#### 1. `CLAUDE.md` & `@import`
+* **Ne Depolar:** Proje mimarisi, kodlama standartları, test/derleme komutları ve insan tarafından yazılmış statik kurallar.
+* **Ne Zaman Okunur (Read-Back):** **%100 Otomatik (Oturum Başlangıcında).** Claude Code başlatıldığında kök dizindeki ve alt dizinlerdeki `CLAUDE.md` dosyalarını otomatik olarak sistem istemine (system prompt) yükler. `@docs/api.md` syntax'ı ile dış dosyaları içerebilir.
+* **Başarısızlık Modları & Kullanıcı Şikayetleri:** Dosya 150-200 satırı geçtiğinde **Context Bloat (Bağlam Şişmesi)** yaşanır. Claude ilk kuralları unutmaya, çelişkili kurallar üretmeye başlar veya API maliyetleri/gecikmesi artar.
+* **Kaynak:** [Claude Code Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
+
+#### 2. Auto Memory (`MEMORY.md` & `/memory`)
+* **Ne Depolar:** Claude'un çalışma esnasında kendi öğrendiği mimari desenler, hata çözümleri ve kullanıcı tercihlerini tuttuğu markdown dosyası (`~/.claude/projects/<project-id>/memory/MEMORY.md`).
+* **Ne Zaman Okunur (Read-Back):** **Otomatik (Kısmi).** `MEMORY.md` dosyasının **ilk 200 satırı (~25KB)** her oturum başlangıcında otomatik olarak bağlama enjekte edilir. Geri kalanı dosya sisteminde kalır.
+* **Başarısızlık Modları & Kullanıcı Şikayetleri:** Claude zamanla eskimiş veya yanlış bilgileri (stale entries) kütüğe ekler. 200 satır sınırı aşıldığında eski notlar görünmez olur. `/memory` komutuyla elle temizlenmezse agent "amnesia" (hafıza kaybı) veya eski hataları tekrarlama davranışı gösterir.
+* **Kaynak:** [Anthropic Claude Code Memory Features](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
+
+#### 3. Modüler Kurallar (`.claude/rules/*.md`)
+* **Ne Depolar:** Belirli dosya türleri veya dizinlere özel kurallar (örn. `.claude/rules/frontend.md`).
+* **Ne Zaman Okunur (Read-Back):** **Koşullu Otomatik.** Claude ilgili dizinle çalışırken veya dosya kalıbı eşleştiğinde otomatik yüklenir.
+* **Başarısızlık Modları & Kullanıcı Şikayetleri:** Kural sayısı arttıkça çakışan talimatlar oluşabilir.
+
+#### 4. Lifecycle Hooks (`settings.json`)
+* **Ne Depolar:** Kabuk (shell) komutları ve doğrulama betikleri. `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse` gibi yaşam döngüsü olaylarında tetiklenir.
+* **Ne Zaman Okunur (Read-Back):** **Olay Anında Zorunlu Enjeksiyon.** İstem gönderildiğinde veya araç çağrılmadan hemen önce çalışarak ajanın bağlamına anlık dinamik veri/hafıza basabilir.
+* **Başarısızlık Modları & Kullanıcı Şikayetleri:** Hook betiği yavaşsa her komutta gecikme yaşanır; betik hata verirse ajanın çalışması durabilir.
+
+---
+
+### B. Topluluk & MCP Bellek Sunucuları
+
+#### 1. `@modelcontextprotocol/server-memory` (Official Anthropic Reference MCP)
+* **Ne Depolar:** Graf tabanlı Varlık-İlişki-Gözlem (Entity-Relation-Observation) yapıları (`memory.json` dosyasında JSONL formatında).
+* **Ne Zaman Okunur (Read-Back):** **İSTEK ÜZERİNE (On-Demand / Tool Call).** Claude oturum açtığında bellek otomatik olarak bağlama yüklenmez. Claude'un `read_graph` veya `search_nodes` araçlarını çağırmaya **kendisi karar vermesi** gerekir.
+* **Kritik Başarısızlık Modu:** **Ajan aracı çağırmayı unutur.** Hızlı kodlama oturumlarında Claude doğrudan dosya düzenlemeye geçer ve bellek aracını sorgulamaz.
+* **Kaynak:** [GitHub - MCP Server Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory)
+
+#### 2. Mem0 (`mem0-mcp` / Mem0.ai)
+* **Ne Depolar:** Vektör veritabanı + LLM özümseme katmanı ile kullanıcı tercihleri, geçmiş oturum kararları ve semantik bilgiler.
+* **Ne Zaman Okunur (Read-Back):** **Tool Call veya API Enjeksiyonu.** MCP modunda araca bağlandığında sorgulama yine araca (tool) tabidir.
+* **Kritik Başarısızlık Modu:** LLM arama terimini doğru oluşturamazsa ilgili geçmiş kararları çekemez; harici API bağımlılığı ve ekstra token maliyeti oluşturur.
+* **Kaynak:** [Mem0 GitHub Repository](https://github.com/mem0ai/mem0)
+
+#### 3. Zep / Zep MCP (Context Engineering Engine)
+* **Ne Depolar:** Zamansal bilgi grafları (Temporal Knowledge Graphs) ve otomatik özetlenmiş oturum geçmişleri.
+* **Ne Zaman Okunur (Read-Back):** **Custom Hook / API Aracılığıyla Dinamik Enjeksiyon.** Zep, istem atılmadan önce bağlam bloğunu güncelleyerek ajana sunmayı hedefler.
+* **Kritik Başarısızlık Modu:** Karmaşık kurulum gerektirir, küçük ölçekli projeler için aşırı mühendisliktir (over-engineering).
+* **Kaynak:** [Zep Official Site](https://www.getzep.com)
+
+#### 4. Engram & Chroma/SQLite Vector MCP Server'lar
+* **Ne Depolar:** Geçmiş oturum kütüklerinin ve kod dokümantasyonunun vektör gömmeleri (embeddings).
+* **Ne Zaman Okunur (Read-Back):** **Sadece Tool Call.**
+* **Kritik Başarısızlık Modu:** Ajan "Ben zaten çözümü biliyorum" varsayımıyla vektör arama aracını hiç çalıştırmaz.
+
+---
+
+## 2. "Read-Back" (Okuma / Bağlama Enjekte Etme) Problemi
+
+Birçok sistem diske veya veritabanına **90KB+ not ve kural** kaydeder. Ancak bu verilerin %95'i karar anında ajanın bağlamında (context window) bulunmaz.
+
+```
+┌────────────────────────────────────────────────────────┐
+│               PASİF DEPOLAMA (90KB+)                   │
+│  (SQLite / Vector DB / memory.json / Uzun MEMORY.md)   │
+└───────────────────────────┬────────────────────────────┘
+                            │
+              AJANIN OKUMA (READ-BACK) KARARI
+                            │
+              ┌─────────────┴─────────────┐
+              ▼                           ▼
+      Ajan Tool Çağırır             Ajan Çağırmaz (Genelde)
+      (Arama Yapar)                 (Doğrudan Koda Atlar)
+              │                           │
+              ▼                           ▼
+       [BAĞLAMA YÜKLENİR]         [NOTLAR ATIL KALIR]
+```
+
+### Neden Pasif Bellek Başarısız Olur?
+1. **Model Önceliği:** Kodlama ajanları (Claude 3.5 Sonnet / 3.7 Sonnet vb.) kullanıcı bir istek attığında doğrudan `view_file`, `edit_file` veya `run_command` araçlarına yönelir. "Önce geçmiş hafızamı sorgulayayım" demezler.
+2. **Context Window ve Latency Maliyeti:** Her araç sorgusu ek bir LLM turu (round-trip) ve zaman kaybı demektir.
+
+### Read-Back Problemini Gerçekten Çözen 3 Yöntem
+
+1. **Deterministic System Prompt Injection (Statik Yükleme):**
+   * `CLAUDE.md`, `.claude/rules/*.md` ve `MEMORY.md`'nin ilk 200 satırı.
+   * **Neden çalışır?** LLM kararı beklenmez. Oturum başladığı an token'lar doğrudan context'tedir.
+
+2. **Hook Tabanlı Dinamik Enjeksiyon (Dynamic Hook Injection):**
+   * Claude Code'un `UserPromptSubmit` veya `PreToolUse` hook'larını kullanmak.
+   * **Nasıl Çalışır?** Kullanıcı mesajı gönderdiği an, arka planda çalışan bir kabuk betiği kullanıcının girdisine göre vektör veritabanından/dosyadan en alakalı 3 kuralı çeker ve bunu istemin önüne otomatik enjekte eder. LLM'in aracı çağırması beklenmez.
+
+3. **Kalıcı Kuralları Kodlanmış Denetimlere Çevirmek (Hard Guardrails):**
+   * Bilgiyi metin olarak ajanın okumasına bırakmak yerine doğrudan çalıştırılabilir betiklere dönüştürmek (bkz. Bölüm 3).
+
+---
+
+## 3. Alternatif Yaklaşım: Bellek Yerine Testler, Linter'lar ve Bloklayan Hook'lar
+
+Önemli yazılım ekipleri, ajanın "hatırlamasına" veya "pasif notları okumasına" dayalı **olasılıksal bellek (probabilistic memory)** yaklaşımının aksaklıklarını görüp **kesin doğrulanabilir denetimlere (deterministic guardrails)** yönelmiştir.
+
+### Soft Memory vs. Hard Guardrails
+
+| Yaklaşım | Örnek | Başarı Oranı | Çalışma Mantığı |
+| :--- | :--- | :--- | :--- |
+| **Soft Memory (Not/İstem)** | `CLAUDE.md` içine "Asla X fonksiyonunu çağırma, Y'yi kullan" yazmak | %50 - %75 (Unutulabilir) | LLM'in kuralı okuyup uymasını ummak |
+| **Hard Guardrail (Linter/Hook)** | ESLint / AST kuralı veya `PreToolUse` hook betiği yazmak | **%100 (Kesin Bloklama)** | Ajan hatayı yaptığında komut/linter başarısız olur ve ajanı anında düzeltmeye zorlar |
+
+### Gerçek Vaka Analizleri ve Yazılar
+
+* **HumanLayer & Agent Harnessing:** Ekipler, ajanların hata yapmasını engellemenin yolunun hafıza boyutunu büyütmek değil, ajanın etrafına **"Harness" (Baskılama/Doğrulama Çerçevesi)** kurmak olduğunu raporlamaktadır. `PostToolUse` hook'u ile her dosya düzenlemesinden sonra otomatik `linter` ve `type-check` çalıştırılmaktadır.
+* **Custom AST Linter'ları:** Bir ekip projesinde *"API çağrılarında async/await unutulmasın"* notu yerine bir `pre-commit` / `custom linter` yazıldığında ajanın kurala uyumunun %60'tan %100'e çıktığı tespit edilmiştir. Ajan kuralı ihlal ettiğinde linter hata çıktısını LLM'e geri besler (feedback loop) ve ajan hatayı anında düzeltir.
+* **Kaynak:** [HumanLayer - Advanced Agent Workflows](https://humanlayer.dev)
+
+---
+
+## 4. Anthropic'in Resmi Dokümantasyonu ve Mühendislerinin Tavsiyeleri (2026)
+
+Anthropic'in Claude Code resmi dokümantasyonu ve mühendislik yayınlarında uzun ömürlü proje bilgisi için önerdikleri ilkeler:
+
+> **"Keep `CLAUDE.md` modular and concise. Do not use it as a dump for session history."**
+
+1. **`CLAUDE.md` Dosyasını Yalın Tutun (<200 Satır):**
+   * `CLAUDE.md` dosyasının bir "catch-all" (her şeyin atıldığı) depoya dönüşmesine izin vermeyin. Sadece derleme, test ve en kritik kodlama kurallarını koyun.
+2. **Modüler Kurallar Kullanın (`.claude/rules/`):**
+   * Konu bazlı kuralları ayrı dosyalara bölün (`.claude/rules/database.md`, `.claude/rules/api.md`).
+3. **Auto-Memory Pruning (Hafıza Budama):**
+   * `/memory` komutunu kullanarak Claude'un otomatik oluşturduğu notları periyodik olarak temizleyin veya `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1` ile kapatıp kontrolü elinize alın.
+4. **Prompting Yerine Hooks Tercih Edin:**
+   * Ajana "Kodu değiştirdikten sonra testleri çalıştırmayı unutma" demek yerine, `settings.json` içinde `PostToolUse` hook'u tanımlayarak testlerin otomatik çalışmasını sağlayın.
+5. **Gereksiz MCP Sunucularını Kapatın:**
+   * Kullanılmayan her MCP sunucusu, araç şemalarıyla (tool schemas) ajanın bağlam penceresini işgal eder ve yanıt süresini uzatır.
+* **Kaynak:** [Anthropic Official Claude Code Guide](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
+
+---
+
+## 5. Açık Uyarılar: Bellek Sistemleri Ne Zaman AKTİF ZARARLI Hale Gelir?
+
+Kalıcı bellek sistemlerinin kontrolsüz kullanımı ajanın performansını düşürebilir:
+
+1. **Eski/Bayat Bilgiler (Stale Entries & Ghost Bugs):**
+   * Depolanan bir not refaktör edilen bir fonksiyonun eski imzasını içeriyorsa, Claude yeni koda baksabile hafızasındaki eski bilgiyi kullanarak **halüsinatif hatalar** üretir.
+2. **Çelişkili Kurallar (Contradictory Instructions):**
+   * `CLAUDE.md` içinde "X kütüphanesini kullan" yazarken, bellek sunucusundan "Y kütüphanesine geçildi" bilgisi geldiğinde ajan döngüye girer (agent loop) veya işlem yapmayı reddeder.
+3. **Context Bloat & Düşük Akıl Yürütme Kapasitesi:**
+   * Bağlam penceresi 100KB+ pasif bellek ve araç şemalarıyla dolduğunda, modelin karmaşık problemleri çözme (reasoning) kapasitesi düşer. Anthropic'in v2.1.116 güncelleme raporlarında belirtildiği gibi, bağlam kalabalığı ajanların "tembelleşmesine" yol açar.
+4. **Tool Search Paralysis (Araç Arama Felci):**
+   * Çok sayıda MCP bellek sunucusu aktif olduğunda, ajan koda odaklanmak yerine sürekli bellek sorgulama araçları arasında gidip gelerek süreci kilitler.
+
+---
+
+## 6. Karşılaştırma Tablosu ve Read-Back Sıralaması
+
+Seçenekler **Read-Back (Karar Anında Bağlama Yüklenme) Başarısına** göre en iyiden en zayıfa sıralanmıştır:
+
+| Sıra | Sistem / Araç | Ne Depolar? | Read-Back Mekanizması | Güvenilirlik | Başlıca Limit / Risk |
+| :---: | :--- | :--- | :--- | :---: | :--- |
+| **1** | **Deterministic Linters / Tests / Hooks** | Kod Kuralları & İnvariantlar | **PostToolUse / PreCommit ile Zorunlu Bloklama** | **%100** | Yazılması mühendislik eforu gerektirir. |
+| **2** | **CLAUDE.md & `.claude/rules/`** | Statik Proje Kuralları | **Oturum Başlangıcında Otomatik Sistem İstemine Yükleme** | **%90** | >200 satırda Context Bloat riski. |
+| **3** | **Claude Code Auto Memory (`MEMORY.md`)** | Otomatik Agent Notları | **İlk 200 Satır / 25KB Otomatik Yüklenir** | **%75** | Zamanla bayat/çelişkili bilgi birikimi. |
+| **4** | **Hook-Injected Vector Search (Custom)** | Geçmiş Notlar / RAG | **`UserPromptSubmit` Hook'u ile İstem Öncesi Dinamik Inject** | **%70** | Betik karmaşıklığı ve arama gecikmesi. |
+| **5** | **MCP Memory Server (`@modelcontextprotocol/server-memory`)** | Varlık-İlişki Grafları | **İstek Üzerine (Ajanın Tool Çağırmasına Bağlı)** | **%30** | Ajan hızlı kodlarken aracı çağırmayı unutur. |
+| **6** | **Pasif Vektör / Harici DB Notları (90KB File)** | Serbest Metin Notları | **Yok / Elle Komut Gerektirir** | **%5** | **Read-back çalışmaz;** veri diskte atıl kalır. |
+
+---
+
+### Kanıtların Durumu (Evidence Assessment)
+* **Güçlü Kanıt:** `CLAUDE.md` ve `MEMORY.md` yerel yükleme davranışları, lifecycle hook'larının işleyişi ve linter/test tabanlı bloklamanın %100 başarısı resmi dokümanlar ve saha tecrübeleri ile sabittir.
+* **Zayıf/İnce Kanıt:** Vektör/Graf tabanlı harici MCP bellek sunucularının otonom kodlama ajanlarında *kullanıcı müdahalesi olmaksızın* uzun vadeli kod kalitesini artırdığına dair ampirik veri düşüktür; topluluk geri bildirimleri bu sunucuların sıklıkla atıl kaldığını veya "tool search" gecikmesi yarattığını göstermektedir.

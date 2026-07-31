@@ -1,0 +1,99 @@
+`agents/COMMAND-INBOX/Biten/` dizinindeki 2 EN İYİ proje (**Sabit Sürat ve Hız** [%18 revize] ve **5. Sınıf - Kütle ve Ağırlık** [%29 revize]) ile 2 EN KÖTÜ proje (**6. Sınıf - Bizi Bir Arada Tutan Değerler** [%74 revize] ve **5. Sınıf - Birlikte Daha Güçlüyüz** [%67 revize]) doğrudan metin analizine tabi tutulmuş ve veriler sayılmıştır.
+
+---
+
+### 1. Karşılaştırmalı Ölçüm Tablosu (Observable & Countable Data)
+
+| Ölçülen Metrik | Sabit Sürat ve Hız (EN İYİ 1, %18 Revize) | Kütle ve Ağırlık (EN İYİ 2, %29 Revize) | Bizi Bir Arada Tutan Değerler (EN KÖTÜ 1, %74 Revize) | Birlikte Daha Güçlüyüz (EN KÖTÜ 2, %67 Revize) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Toplam Kare Sayısı** | 44 kare | 35 kare | 34 kare | 54 kare |
+| **Kare Başı Ort. Kelime (Tüm Prompt)** | **397.9** (StDev: 32.2) | **244.6** (StDev: 109.5) | **845.4** (StDev: 68.5) | **894.8** (StDev: 82.1) |
+| **Kare Başı Ort. Kelime (Ana Sahne)** | **160.0** (StDev: 18.9) | **131.2** (StDev: 39.9) | **398.2** (StDev: 43.7) | **476.3** (StDev: 46.1) |
+| **İnsan Dağılımı: 0 İnsan** | 0 kare (%0.0) | 5 kare (%14.3) | 2 kare (%5.9) | 3 kare (%5.6) |
+| **İnsan Dağılımı: 1 İnsan** | 18 kare (%40.9) | 24 kare (%68.6) | 9 kare (%26.5) | 13 kare (%24.1) |
+| **İnsan Dağılımı: 2 İnsan** | 26 kare (%59.1) | 6 kare (%17.1) | 13 kare (%38.2) | 3 kare (%5.6) |
+| **İnsan Dağılımı: 3+ İnsan / Kalabalık** | **0 kare (%0.0)** | **0 kare (%0.0)** | **10 kare (%29.4)** | **35 kare (%64.8)** |
+| **Ekranda Yazılı Kare Sayısı** | 13 kare (%29.5) | 14 kare (%40.0) | 10 kare (%29.4) | 26 kare (%48.1) |
+| **Yazı Konumu: Nesneye Gömülü (Diegetic)** | 7 kare (%53.8) | **14 kare (%100.0)** | 10 kare (%100.0) | 24 kare (%92.3) |
+| **Yazı Konumu: Yüzen 3D / Başlık** | 4 kare (%30.8) | 0 kare (%0.0) | 0 kare (%0.0) | 1 kare (%3.8) |
+| **Yazı Konumu: Arka Plan Tabelası** | 2 kare (%15.4) | 0 kare (%0.0) | 0 kare (%0.0) | 1 kare (%3.8) |
+| **Kamera Açısı: Yakın / Macro** | 1 kare (%2.3) | 2 kare (%5.7) | 0 kare (%0.0) | 0 kare (%0.0) |
+| **Kamera Açısı: Orta (Medium)** | 42 kare (%95.5) | 22 kare (%62.9) | 34 kare (%100.0) | 54 kare (%100.0) |
+| **Kamera Açısı: Geniş / Genel (Wide)** | 1 kare (%2.3) | 11 kare (%31.4) | 0 kare (%0.0) | 0 kare (%0.0) |
+| **Aksiyon İçi (Action) vs Statik Pose** | 41 aksiyon / 3 statik | 28 aksiyon / 7 statik | 33 aksiyon / 1 statik | 52 aksiyon / 2 statik |
+| **Negative Prompt Kelime Sayısı** | Ort. **49.2** kelime | Ort. **27.9** kelime | Ort. **228.1** kelime | Ort. **136.3** kelime |
+| **Negative Prompt Öğe Sayısı (Toplam)**| Ort. 14.5 öğe | Ort. 11.8 öğe | Ort. 50.8 öğe | Ort. 19.3 öğe |
+| **Negative: Standart Şablon (Boilerplate)**| Ort. 14.0 öğe | Ort. 5.2 öğe | Ort. 9.1 öğe | Ort. 7.2 öğe |
+| **Negative: Sahneye Özel Özgün Öğe** | Ort. **0.5** öğe | Ort. **6.6** öğe | Ort. **41.6** öğe | Ort. **12.1** öğe |
+| **@tag Kullanımı (Kare başı ortalama)**| **3.0 tag** (134 toplam) | **2.8 tag** (98 toplam) | **2.5 tag** (84 toplam) | **1.7 tag** (91 toplam) |
+| **STYLE Bloğu Kelime Sayısı** | Ort. 95.8 kelime | Ort. 42.6 kelime | Ort. 103.9 kelime | Ort. 103.0 kelime |
+| **STYLE Bloğu Farklılık / Varyasyon** | **41 özgün blok** (44 kare) | **35 özgün blok** (35 kare) | 12 özgün blok (34 kare) | **1 özgün blok** (%100 aynı) |
+
+---
+
+### 2. En İyi Projelerin Hata Analizi (`*_revize.txt` İncelemesi)
+
+En iyi iki projenin revize kayıtları incelendiğinde, reddedilen karelerin sayıları ve kök nedenleri şunlardır:
+
+#### A. Sabit Sürat ve Hız (44 Kare → 36 İLK ÜRETİMDE TEMİZ, 8 REVİZE — %81.8 İlk Geçiş Başarısı)
+- **Arka Planda Halüsinasyon Yazı / İngilizce Sızıntısı (6 kare: 3, 16, 31, 32, 41, 42):** 
+  - *Örnek:* 3.png'de "GROCER" kelimesinin "MANAV" yapılması; 31.png ve 32.png'de Amerikan bayrağının Türk bayrağına çevrilmesi; 41.png'de arka plandaki "TÜRKİSH KARL" yazısının silinmesi/bulanıklaştırılması.
+- **Kavram Yazısının Konumu (1 kare: 35):** "SABİT SÜRAT" kelimesinin net okunacak şekilde karaktere temas etmeden hizalanması.
+- **Teknik Kadran Ayrıntısı (1 kare: 27):** Pusula kadranındaki "W, E, S" harflerinin "B, D, G" olarak düzeltilmesi.
+
+#### B. Kütle ve Ağırlık (35 Kare → 29 İLK ÜRETİMDE TEMİZ, 6 REVİZE — %82.9 İlk Geçiş Başarısı)
+- **Mekân Flashback Uyumsuzluğu (1 kare: 4):** Senaryodaki mutfak akışı yerine modelin sınıf üretmesi.
+- **Yazı / Rakam Bozulması (3 kare: 6, 23, 33):** "KÜTLE" üzerindeki "Ü" noktaları (K06); terazideki "60 66" harflerinin "60 kg" yapılması (K23); dijital ekrandaki hayalet segment rakamının silinip net "200 g" yapılması (K33).
+- **Nesne Odaklı Kareye İnsan Sızması (1 kare: 12):** İnsansız olması gereken deney karesinin arka planına bulanık insan sızması.
+- **Fiziksel Duruş / Temas Gölgesi Kusuru (1 kare: 15):** Havada zıplayan çocuğun havada asılı kalması ve temas gölgesinin eksikliği.
+
+> **Özet:** En iyi projelerde kusurlar modelin fiziği veya sahneyi anlamamasından değil; arka plan tabela halüsinasyonlarından (%75) ve küçük dijital karakter/harf çapaklarından kaynaklanmıştır.
+
+---
+
+### 3. En İyi ve En Kötü Projeleri Ayıran EN BELİRGİN 5 ÖLÇÜLEBİLİR ÖZELLİK
+
+#### 1. Prompt Metin Şişkinliği (Prompt Length Bloat)
+- **En İyi:** Ort. **244.6 – 397.9 kelime** (Ana sahne tarifi: 131.2 – 160.0 kelime)
+- **En Kötü:** Ort. **845.4 – 894.8 kelime** (Ana sahne tarifi: 398.2 – 476.3 kelime)
+- *Fark:* En kötü projelerin promptları en iyilere kıyasla **2.5 kat ile 3.6 kat daha uzundur**. Aşırı kelime yükü difüzyon dikkat mekanizmasını (attention) dağıtmıştır.
+
+#### 2. Kalabalık / 3+ İnsan Yüklemesi (Crowd Overload)
+- **En İyi:** **0 kare (%0.0)** 3 ve üzeri insan içerir. Kareler kesinlikle 1 veya 2 ana karakterle sınırlandırılmıştır.
+- **En Kötü:** **10 kare (%29.4)** (Bizi Bir Arada Tutan Değerler) ve **35 kare (%64.8)** (Birlikte Daha Güçlüyüz) 3+ insan/kalabalık içerir.
+- *Fark:* En kötü projelerde karelerin **%29.4 ile %64.8'i kalabalık insan gruplarından** oluşurken, en iyi projelerde bu oran **sıfırdır**.
+
+#### 3. Negative Prompt Parazitliği ve Boyutu (Negative Prompt Noise)
+- **En İyi:** Ort. **27.9 – 49.2 kelime** (Sahneye özel negatif kelime sayısı: **0.5 – 6.6**)
+- **En Kötü:** Ort. **136.3 – 228.1 kelime** (Sahneye özel negatif kelime sayısı: **12.1 – 41.6**)
+- *Fark:* En kötü projelerde negative prompt kısmına sahneye özel 40'tan fazla yasak cümle yığılmış, bu durum difüzyon kalitesini bozmuştur.
+
+#### 4. Kadraj ve Plan Açısı Monotonluğu (Shot Variety vs Monotony)
+- **En İyi:** **%4.5 – %37.1** oranında Yakın/Macro ve Geniş (Establishing Wide) açı çeşitliliği.
+- **En Kötü:** **%0.0 (0 kare)** Yakın veya Geniş açı; karelerin **%100.0'ı tekdüze Medium (Orta)** açıyla yazılmıştır.
+- *Fark:* En kötü projeler 0 açı çeşitliliğine sahiptir (%100 Medium); en iyi projeler detay ve mekân için bilinçli açı değişimi yapmıştır.
+
+#### 5. STYLE Bloğunun Sahneye Özel Materyal Özelleştirmesi (Style Customization)
+- **En İyi:** Karelerin **%93.2 – %100'ünde** STYLE bloğu o karedeki nesnelere özel materyal dokuları barındırır (44 karenin 41'i, 35 karenin 35'i özgün).
+- **En Kötü:** Birlikte Daha Güçlüyüz'de 54 karenin 54'ünde de (**%100.0**) birebir aynı kopyala-yapıştır STYLE bloğu kullanılmıştır (**1 tek varyasyon**).
+
+---
+
+### 4. AYIRT ETMEYEN ÖZELLİKLER (Negatif Sonuçlar)
+
+Aşağıdaki ölçülebilir parametreler en iyi ve en kötü projelerde **fark yaratmamıştır**:
+
+1. **Aksiyon İçi (In-Progress Action) Tanımlama Oranı:**
+   - En İyiler: %80.0 – %93.2 aksiyon tanımı.
+   - En Kötüler: %96.3 – %97.1 aksiyon tanımı.
+   - *Sonuç:* Her iki grup da yüksek oranda hareket içeren fiiller kullanmıştır; eylemlilik oranı başarıyı doğrudan belirlememiştir.
+
+2. **Şablon Üretim Cümleleri ("Three things are alive", "Depth in three layers", "Contact shadow"):**
+   - En İyiler: 44/44 (%100) ve 35/35 (%100).
+   - En Kötüler: 34/34 (%100) ve 54/54 (%100).
+   - *Sonuç:* Bu 3 formül satırı incelenen tüm projelerin **tüm karelerinde (%100)** harfiyen mevcuttur. Başarıyı ayırt edici bir parametre değildir.
+
+3. **Ekranda Yazı Barındırma Oranı:**
+   - En İyiler: %29.5 – %40.0.
+   - En Kötüler: %29.4 – %48.1.
+   - *Sonuç:* Karede yazı bulunup bulunmaması ayırt edici değildir. (Ancak *Kütle ve Ağırlık* projesinde yazının %100 oranında fiziksel nesne üzerine işlenmiş [diegetic] olması kaliteyi doğrudan etkilemiştir).

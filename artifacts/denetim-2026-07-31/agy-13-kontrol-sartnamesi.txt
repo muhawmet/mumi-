@@ -1,0 +1,186 @@
+# MAMILAS — Üretim Öncesi Denetim Katmanı (Pre-Production Check Layer) Teknik Şartnamesi
+
+Bu doküman, projede kaydedilmiş **139 görsel/sahne reddinin** kök nedenlerini ortadan kaldırmak amacıyla tasarlanmış **Üretim Öncesi Denetim Katmanı'nın (Pre-Production Check Layer)** mimari ve teknik şartnamesidir.
+
+Mevcut `scripts/prompt-lint.mjs` (yapısal slot ve format denetimi) ve `scripts/motion-qc.mjs` (üretilmiş video klibi denetimi) araçlarını tamamlar; onların görevini tekrar etmez. Bu katmanın amacı, **tek bir görsel üretimi (start frame) veya video kredisi harcanmadan ÖNCE**, `agents/COMMAND-INBOX/<proje>/` altındaki teslim `.txt` dosyalarını doğrudan metin düzeyinde doğrulamaktır.
+
+---
+
+## 1. MİMARİ YAKLAŞIM VE VERİ BAĞLANTISI (EKSİK VERİ GEREKSİNİMLERİ)
+
+139 reddin **%100'ü**, estetik tercihlerden değil; prompt metnindeki sayılabilir, somut dilsel ve mantıksal kusurlardan kaynaklanmaktadır. Bu katmanın çalışabilmesi için en kritik konu **henüz dosyalarımızda bulunmayan makine-okunabilir veri bağlantılarının (binding)** tanımlanmasıdır.
+
+### Eksik Veri Tanımları (Missing Inputs)
+
+Metin tabanlı linter'ların sahte alarm vermesini önlemek ve kesin ölçüm yapabilmek için `.txt` teslim yapısına aşağıdaki üç makine-okunabilir veri bloğu eklenmelidir:
+
+1. **VO — Prompt Eylemsel Bağlantı Etiketi (`VO_BINDING`)**:
+   - *Mevcut Durum*: Başlıkta yalnız metinsel VO duruyor: `### K01 | VO1 "Bu Mira... yola çıktı."`.
+   - *Gerekli Veri*: VO cümlesinden türetilen etken fiil ve beklenen özne deklarasyonu.
+   - *Format*: Prompt bloğu başlığına veya üst notuna `ACTOR: @mira | ACTION: walking_to_school` etiketi.
+2. **Karakter & Etnisite / Yaş Matrisi (`CAST_REGISTRY`)**:
+   - *Mevcut Durum*: Etnisite bilgisi prompt metinlerinin içine serbest metin olarak dağıtılmış.
+   - *Gerekli Veri*: Projenin başında ilan edilen etnisite ve yaş kilidi sözlüğü.
+   - *Format*: `PROJECT_CAST: { @mira: "Turkish sixth-grader, 11-12 years old, Anatolian" }`.
+3. **Mekân & Mimari Sözleşmesi (`SETTING_CONTRACT`)**:
+   - *Mevcut Durum*: Mimari kurallar `STYLE` veya `NEGATIVE` içinde serbest metin.
+   - *Gerekli Veri*: Yasaklı ve zorunlu mimari terimler listesi.
+   - *Format*: `ALLOWED_ARCH: ["Anatolian residential", "Turkish public school"]` / `FORBIDDEN_ARCH: ["Victorian", "red brick", "Haussmann", "gothic"]`.
+
+---
+
+## 2. ÜRETİM ÖNCESİ KONTROL LİSTESİ (CHECK SPECIFICATIONS)
+
+---
+
+### KONTROL 1: `VO_PERFORMER_ALIGNMENT` (VO Eylem-Özne ve Sahne İcraatçısı Uyumu)
+
+> **Ret Payı**: 45 Ret (%32 — En büyük kategori). Durum doğru render ediliyor ancak VO'daki fiilin prompt'ta bedensel karşılığı/icraatçısı yok (Credibility kaybı).
+
+* **Okuduğu Dosyalar**: `agents/COMMAND-INBOX/<proje>/<proje>_PROMPTLAR.txt`
+* **Ne Ölçer (Kesin Formül)**:
+  VO satırındaki Türkçe etken fiil (ör. *"koştu"*, *"itti"*, *"açarken"*) ile prompt gövdesindeki özne (`@handle` veya insan bedeni parçası) ve aktif fiil (`running`, `pushing`, `opening`, `walking`) arasındaki örtüşme skoru.
+  $$\text{Formül}: S = \begin{cases} 1, & \text{VO etken fiili prompt'taki özne + eylem/duraksama tanımı ile eşleşiyorsa} \\ 0, & \text{VO'da etken fiil var fakat prompt'ta özne veya eylem tanımı yoksa} \end{cases}$$
+* **Gereken Eksik Veri**:
+  VO Türkçe fiil root'u ile Prompt İngilizce fiil/duraksama (frozen moment) haritası. Metin analizinin tek başına zayıf kaldığı durumlarda başlığa eklenecek `ACTOR: @mira | ACTION: running` deklarasyonu.
+* **Metin Analizi Yaklaşımı ve Zayıflığı**:
+  * *Yaklaşım*: VO'daki Türkçe fiil kökleri (`koş-`, `it-`, `aç-`, `tut-`) tespit edilir. Prompt gövdesinde özne (`@mira`, `hand`, `foot`) ve ilgili İngilizce fiiller taranır.
+  * *Dürüst Zayıflık Değerlendirmesi*: Projemizde "dondurulmuş an" (frozen moment) tekniği kullanılmaktadır. Yönetmen notu *"koşu henüz başlamadı, adım ortasında asılı"* derken prompt `foot lifting toward sunlit street` yazabilir. Yalın kelime eşleme bu duraksamayı "koşmuyor" sanıp sahte alarm verir.
+  * *Güçlü Hale Getirmek İçin*: VO altına zorunlu `ACTION_STATE: mid-stride / initiating` gibi durum etiketi koymak.
+* **Hata Mesajı**:
+  `⛔ RED: [KareID] VO cümlesindeki eylem ("koştu") için prompt gövdesinde icra eden özne veya eylem durumu tespiti başarısız. VO'daki fiilin sahnede bedensel icraatçısı yok.`
+* **KIRMIZI vs SARI Kararı**: **SARI (Metin Tahmini İle)** / **KIRMIZI (Zorunlu Meta-Etiket Varsa)**.
+  * *Gerekçe*: Duraksama anlarında sahte kırmızılar üretip ajanı engellememek için meta-etiketsiz taramada SARI kalmalıdır.
+* **Yanlış Pozitif Riski & Sessiz Kalma**:
+  Kare "kavram karesi" (`KAVRAM`, insansız/anonim panel) olarak etiketlenmişse bu kontrol otomatık olarak **SUSAR**.
+
+---
+
+### KONTROL 2: `ENGLISH_SIGNAGE_LEAK` (İngilizce Tabela ve Çevre Yazısı Sızıntısı)
+
+> **Ret Payı**: 42 Ret (%30). Sahne arka planındaki binalarda, tabelalarda veya ürünlerde İngilizce kelimelerin ("School", "Bus", "Market", "Bakery", "Exit") görünmesi.
+
+* **Okuduğu Dosyalar**: `agents/COMMAND-INBOX/<proje>/<proje>_PROMPTLAR.txt`
+* **Ne Ölçer (Kesin Formül)**:
+  Prompt gövdesindeki (özellikle mekân, dükkan, sokak, tabela tanımlarında) tırnak dışı metinlerde İngilizce tabela/etiket isimlerinin bulunma sayısı.
+  $$\text{Formül}: N_{\text{eng\_sign}} = \sum \text{matches}(\text{ForbiddenEnglishSignageWords}) \quad (\text{NEGATIVE bloğu haricinde})$$
+* **Gereken Eksik Veri**:
+  Mekân isimleri kara listesi (Sözlük: `School`, `Bus`, `Market`, `Library`, `Store`, `Street`, `Post Office`, `Police`).
+* **Hata Mesajı**:
+  `⛔ RED: [KareID] Sahne çevre tanımında İngilizce tabela/yazı riski tespit edildi: "{Kelime}". Arka plan yazıları Türkçe, soft-focus veya yazısız (blank) olarak tanımlanmalıdır.`
+* **KIRMIZI vs SARI Kararı**: **KIRMIZI**.
+  * *Gerekçe*: 42 reddin nedeni doğrudan prompt metnine giren İngilizce nesne adlarıdır. Tamamen sayısal ve deterministiktir.
+* **Yanlış Pozitif Riski & Sessiz Kalma**:
+  `NEGATIVE:` veya `STYLE:` bloğu içindeki olumsuzlamalar (*"no English signage"*) ve teknik prompt parametreleri (*"RenderMan"*, *"35mm lens"*) tarama dışı tutulur. Kontrol yalnızca `SETTING` ve nesne betimleme cümlelerinde çalışır.
+
+---
+
+### KONTROL 3: `ETHNICITY_AGE_LOCK` (Etnisite ve Yaş Kilidi Denetimi)
+
+> **Ret Payı**: 28 Ret (%20). Görselde Türkiye/Anadolu dokusu yerine Batılı/Kafkas tiplerin veya yanlış yaş grubunun çıkması.
+
+* **Okuduğu Dosyalar**: `agents/COMMAND-INBOX/<proje>/<proje>_PROMPTLAR.txt`
+* **Ne Ölçer (Kesin Formül)**:
+  Prompt gövdesinde insan/karakter (`@handle`, `child`, `boy`, `girl`, `man`, `woman`, `student`) geçen karelerde pozitif etnisite beyanının varlığı ve negatif (yasaklı) etnisite kelimelerinin yokluğu.
+  $$\text{Formül}: \text{HumanPresent} \implies (\text{HasLocalEthnicity} \land \neg \text{HasForbiddenEthnicity})$$
+  * Pozitif Şart: `Turkish` veya `Anatolian` kelimesinin bulunması.
+  * Negatif Şart: `blond`, `blue-eyed`, `caucasian`, `western`, `nordic` kelimelerinin 0 olması.
+* **Gereken Eksik Veri**: Proje seviyesinde `PROJECT_CAST_CONTRACT`.
+* **Hata Mesajı**:
+  `⛔ RED: [KareID] Karakter içeren karede etnisite/yaş kilidi ("Turkish / Anatolian") eksik veya yasaklı kelime ("{Kelime}") tespit edildi.`
+* **KIRMIZI vs SARI Kararı**: **KIRMIZI**.
+  * *Gerekçe*: Motorlar etnisite yazılmadığında varsayılan olarak Batılı karakter üretir. 28 reddin doğrudan sebebidir.
+* **Yanlış Pozitif Riski & Sessiz Kalma**:
+  `INSANSIZ` veya `no person in frame` olarak işaretlenmiş karelerde kontrol **SUSAR**.
+
+---
+
+### KONTROL 4: `ARCHITECTURE_REGIONAL_LOCK` (Mimari ve Mekan Yerelliği Denetimi)
+
+> **Ret Payı**: 22 Ret (%16). Anadolu sokağı/okulu yerine Viktorya dönemi, Batı Avrupa veya Amerikan mimari unsurlarının görünmesi.
+
+* **Okuduğu Dosyalar**: `agents/COMMAND-INBOX/<proje>/<proje>_PROMPTLAR.txt`
+* **Ne Ölçer (Kesin Formül)**:
+  Dış ve iç mekan betimlemelerinde yasaklı Batı mimari terimlerinin bulunma sayısı.
+  $$\text{Formül}: N_{\text{west\_arch}} = \sum \text{matches}(\text{ForbiddenArchitectureTerms})$$
+  * Yasaklı Kelimeler: `Victorian`, `gothic`, `Haussmann`, `red brick British`, `cobblestone Europe`, `suburban America`, `English cottage`.
+* **Gereken Eksik Veri**: Proje mimari kara listesi.
+* **Hata Mesajı**:
+  `⛔ RED: [KareID] Mekan betimlemesinde yasaklı mimari stil tespit edildi: "{MimariTerim}". Anadolu/Türkiye mimari dokusuna uygun ifadelere dönüştürün.`
+* **KIRMIZI vs SARI Kararı**: **KIRMIZI**.
+  * *Gerekçe*: Sayısal metin kontrolüdür, sahte mimari render'larını doğrudan engeller.
+* **Yanlış Pozitif Riski & Sessiz Kalma**:
+  Stüdyo/soyut zemin içeren veya mimari arka planı bulunmayan yakın çekimlerde (close-up) kontrol **SUSAR**.
+
+---
+
+### KONTROL 5: `VISUAL_METAPHOR_MUTATION` (Görsel Metafor Çiçekleşme / Saffron-Bloom Tuzağı)
+
+> **Ret Payı**: 37 Ret (%27). 'Saffron' veya 'bloom' kelimelerinin 3D CGI sahnesinde ışık/kavram yerine gerçek çiçek/taç yaprağı üretmesi.
+
+* **Okuduğu Dosyalar**: `agents/COMMAND-INBOX/<proje>/<proje>_PROMPTLAR.txt`
+* **Ne Ölçer (Kesin Formül)**:
+  `saffron` kelimesinin varlığı VEYA `bloom` kelimesinin kanonik ışık kalıbı dışındaki kullanımı.
+  $$\text{Formül}: \text{HasSaffron} \lor (\text{HasBloom} \land \neg \text{IsCanonicalBloomGlow})$$
+  * Kanonik Kalıp: `blooms into a soft round warm-golden glow of light`.
+* **Gereken Eksik Veri**: Yok (Mevcut `prompt-lint.mjs` mantığı üretim öncesi sert kapısına çekilir).
+* **Hata Mesajı**:
+  `⛔ RED: [KareID] Yasaklı görsel metafor kullanımı: "{Kelime}". Çiçekleşmeyi önlemek için isim olarak bloom yerine "warm golden glow of light" kullanın.`
+* **KIRMIZI vs SARI Kararı**: **KIRMIZI**.
+  * *Gerekçe*: 37 reddin doğrudan nedenidir, sıfır toleranslı kuraldır.
+* **Yanlış Pozitif Riski & Sessiz Kalma**:
+  Kanonik ışık cümlesi tam olarak eşleştiğinde kontrol **SUSAR**.
+
+---
+
+## 3. YAPILMAYACAK / İPTAL EDİLEN KONTROL (FLAGGED AS NOT WORTH BUILDING)
+
+* **İptal Edilen Kontrol**: `AUTOMATED_AESTHETIC_TASTE_SCORE` (Görsel Estetik ve Sanatsal Kalite Otomatik Skorlaması)
+* **Neden Yapılmamalı?**:
+  139 ret vakasının analizi göstermiştir ki, retlerin **%100'ü** metindeki somut, sayılabilir çelişkilerden (tabela, mimari, etnisite, fiil-özne uyumsuzluğu, harf hatası, çiçekleşme) kaynaklanmaktadır. Sanatsal "güzellik", "atmosfer derinliği" veya "sinematik his" gibi soyut kavramları metin analizi ile ölçmeye çalışmak yüksek oranda sahte alarm üretecek ve ajanın linter'a olan güvenini yok edecektir (`AGENTS.md`: *"Sahte alarm ölçümün kendisini çöpe atar"*). Estetik takdir ajanın inline jürisine ve Mami'ye bırakılmalıdır.
+
+---
+
+## 4. ÇALIŞMA ZAMANI VE TETİKLEME STRATEJİSİ (EXECUTION TIMING)
+
+Repomuzun çalışma geçmişi açıkça göstermektedir ki: **Manuel komut adımları insan/ajan tarafından ATLANMAKTADIR.** Bu nedenle denetim katmanı insan iradesine bırakılamaz.
+
+```
+[ Ajan Dosya Yazar / Günceller ]
+             │
+             ▼
+ 1. Claude Code PreToolUse Hook ──► (Dosya kaydedilmeden ANINDA engeller)
+             │
+             ▼
+ 2. Git pre-commit Gate (Husky) ──► (Commit anında staging alanını korur)
+             │
+             ▼
+ 3. Manuel CLI / CI Pipeline    ──► (Yedek toplu tarama aracı)
+```
+
+### 1. Claude Code PreToolUse Hook (`.claude/hooks/pre-tool-use.mjs`)
+* **Ne Zaman Çalışır**: Ajan `write_to_file` veya `replace_file_content` araçlarıyla `agents/COMMAND-INBOX/` altında bir `.txt` dosyasına dokunduğu AN.
+* **Çalışma Şekli**: Araç çalıştırılmadan hemen önce senkron olarak linter'ı tetikler. Hata varsa tool call reddedilir ve ajan uyarılır.
+* **Gerekçe**: En erken müdahale noktasıdır. Hatalı prompt dosyaya dahi yazılmadan engellenir.
+
+### 2. Git pre-commit Gate (`.husky/pre-commit` veya `.git/hooks/pre-commit`)
+* **Ne Zaman Çalışır**: `git commit` komutu çalıştırıldığında.
+* **Çalışma Şekli**: Staging alanındaki `agents/COMMAND-INBOX/**/*.txt` dosyalarını tarar. KIRMIZI hata varsa commit'i kırar ve durdurur.
+* **Gerekçe**: PreToolUse hook'unu bypass eden manuel düzenlemelerin depoya girmesini ve prodüksiyon hattına geçmesini kesin olarak engeller.
+
+### 3. Manuel Çalıştırma Komutu (`node scripts/preprod-check.mjs`)
+* **Ne Zaman Çalışır**: Ajan veya insan elle çalıştırmak istediğinde veya CI/CD hattında.
+* **Gerekçe**: Sadece toplu tarama ve raporlama için yedek bir araçtır; ana güvenlik mekanizması değildir.
+
+---
+
+## 5. ÖZET UYGULAMA TABLOSU
+
+| Kontrol Adı | Hedef Dosya | Ölçtüğü Parametre | Hata Seviyesi | Tetikleyici Katman |
+| :--- | :--- | :--- | :--- | :--- |
+| **`VO_PERFORMER_ALIGNMENT`** | `*_PROMPTLAR.txt` | VO fiili — Prompt öznesi ve eylemsel icraatçı uyumu | **SARI / KIRMIZI** | PreToolUse / pre-commit |
+| **`ENGLISH_SIGNAGE_LEAK`** | `*_PROMPTLAR.txt` | Çevre ve tabelalardaki İngilizce kelime sızıntısı | **KIRMIZI** | PreToolUse / pre-commit |
+| **`ETHNICITY_AGE_LOCK`** | `*_PROMPTLAR.txt` | Karakter geçen karelerde etnisite/yaş kilidi | **KIRMIZI** | PreToolUse / pre-commit |
+| **`ARCHITECTURE_REGIONAL_LOCK`** | `*_PROMPTLAR.txt` | Mekanda yerel Anadolu dokusu — Batı mimari yasağı | **KIRMIZI** | PreToolUse / pre-commit |
+| **`GLYPH_SPELLING_CONSISTENCY`** | `*_PROMPTLAR.txt` | TEXT metni ile heceleme/diakritik uyumu | **KIRMIZI** | PreToolUse / pre-commit |
+| **`VISUAL_METAPHOR_MUTATION`** | `*_PROMPTLAR.txt` | Saffron/bloom kelimelerinin çiçekleşme riski | **KIRMIZI** | PreToolUse / pre-commit |

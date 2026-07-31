@@ -1,0 +1,110 @@
+# PART A — UYGULAMADAKİ SÜREKLİLİK VE HAFIZA ÇÖKÜŞLERİ (KAZANILAN/KAYBEDİLEN ÜRETİM SÜRESİNE GÖRE SIRALANMIŞTIR)
+
+---
+
+### 1. DERS SİSTEMİNİN İCRAATTAN TAMAMEN KOPUK OLMASI (EN YÜKSEK MALİYET: ~%50+ REVİZE ORANI / SIFIRDAN BAŞLAMA)
+
+- **Kanıt (Dosya & Satır):**
+  - [APPROVED.md:L22](file:///Users/Muhammet/Desktop/mamilas-modern/agents/lessons/APPROVED.md#L22): `<!-- İlk gerçek dersler biten projelerin closeout'undan Mami onayıyla gelecek. -->` (Bankada **0** adet onaylı ders var).
+  - [APPROVED.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/agents/lessons/APPROVED.md#L3): `Bu dosyaya YALNIZ Mami yazar (veya Mami'nin açık onayıyla yazılır). Otomatik promote YOK...`
+  - [faz-icraat.md:L23](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L23): `2. agents/lessons/APPROVED.md — Mami-onaylı ders bankası. Boşsa hiçbir şey olmaz.`
+  - `agents/lessons/` klasöründe 17 dosyada 1858+ satır ders adayı ve hasat verisi (`HASAT-6-sinif-kuvvetlerin-guc-birligi.md` [28.6KB], `HASAT-5-surtunme.md` [12.8KB], `CANDIDATES-transkript-enzimi-6-1-2.md` [7.7KB]) bulunmasına rağmen, manuel insan onayı darboğazı nedeniyle `APPROVED.md` boş kalmaktadır.
+- **Mekanizma Çöküşü:** `APPROVED.md` haricindeki 1858 satırlık candidate ve hasat dosyalarını hiçbir hook, script veya prompt yüklememektedir. Oturum açılışında model sıfır dersle başlar. Üretilen hatalar (gövde fiili morph'ları, diakritik harf kaymaları, tagsız insan kırılmaları) her projede tekrarlanmakta ve 8 saatlik üretim sürelerinin 30/54 revize oranlarıyla çöpe gitmesine yol açmaktadır.
+
+---
+
+### 2. SOHBET HAFIZASI VE MEMORY DOSYALARININ KARAR ANINDA OKUNMAMASI (İZOLE SOĞUK HAFIZA)
+
+- **Kanıt (Dosya & Satır):**
+  - [MEMORY.md:L1-L2](file:///Users/Muhammet/.claude/projects/-Users-Muhammet-Desktop-mamilas-modern/memory/MEMORY.md#L1-L2): `<!-- İNDEKS. Satır başına tek giriş; detay konu dosyasında yaşar (onlar açılışta yüklenmez). -->`
+  - [CLAUDE.md:L14](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L14): Sadece `@docs/ai/faz-icraat.md` import edilir. `memory/` altındaki 40 adet markdown dosyası için hiç `import` yoktur.
+  - [faz-icraat.md:L13-L28](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L13-L28): Oturum açılış rutininde sadece `current-work.json`, `PROMPT-YASASI.md`, `APPROVED.md` ve `COMMAND-INBOX` okunur.
+- **Mekanizma Çöküşü:** `memory/` klasöründeki ~40 adet spesifik kural dosyası (`mamilas-nb2-hata-katalogu.md`, `mamilas-command-json-blokajlari.md`, `mamilas-kling3-text-trick.md` vb. ~90KB metin), açılışta veya karar anında model bağlamına **asla otomatik yüklenmez**. Bilgi saklanmaktadır ancak karar anında modeli bağlayan bir okuma mekanizması yoktur.
+
+---
+
+### 3. KURAL DOKÜMANLARI ARASINDAKİ ÇELİŞKİLER VE KENDİ İÇİNDE EZİLEN YASALAR
+
+- **Kanıt (Dosya & Satır):**
+  - **Motion Formatı Çelişkisi:**
+    - [PROMPT-YASASI.md:L526](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L526): `🔴 BİÇİM: TEK PARAGRAF. SLOT YOK, KÖŞELİ PARANTEZ YOK.`
+    - [PROMPT-YASASI.md:L537-L551](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L537-L551): Aynı dosya alt satırlarda `1 ZATEN OLAN İŞ`, `2 SEBEPLİ TEK VURUŞ`, `5 Camera:`, `6 KİLİT`, `7 SABİT KUYRUK` şeklinde numaralı slot listesi tanımlar.
+    - [PROMPT-YASASI.md:L648](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L648): `3. [4 KİLİT] kare-özel ve ZORUNLUDUR... [5]/[6] sabit kuyruktur` ifadeleriyle yasaklanan köşeli parantez slot formatını metin içinde şart koşar.
+  - **Kamera ve Gövde Hareketi Çelişkisi:**
+    - [PROMPT-YASASI.md:L628](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L628): `gövde değişiyorsa kamera durur... YANLIŞTI... Kamera ve gövde aynı anda oynar.`
+    - [PROMPT-YASASI.md:L677](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L677): `Katı/mekanik nesne + hızlı kamera = WARP. Böyle karelerde kamera minimal...`
+    - [PROMPT-YASASI.md:L673](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L673): `"Slow push in" refleks olarak YASAK.`
+  - **Ajan Kullanım Politikası Çelişkisi:**
+    - [CLAUDE.md:L55](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L55): `AJAN KULLANIMI RUTİNDİR — tavan 6.`
+    - [AGENTS.md:L26](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L26): `Büyük işte bağımsız araştırma kolları gerçekten varsa çoklu ajan kullan; küçük görevlerde tek ajanla ilerle.`
+- **Mekanizma Çöküşü:** Model, aynı dosya veya farklı giriş dosyaları içinde çelişen talimatlarla karşılaştığında rastgele birini seçer; jüri / lint geçse bile motordan reddedilen ve morph eden çıktılar doğar.
+
+---
+
+### 4. OTOMATİZE EDİLMEMİŞ, İNSAN/AJAN İNSİYATİFİNE BIRAKILMIŞ ADIMLAR (MANUEL KOŞU SIZINTISI)
+
+- **Kanıt (Dosya & Satır):**
+  - [faz-icraat.md:L34-L44](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L34-L44): 11 adet kritikler tablosunda (`current-work.mjs ilerle`, `dunya-kilidi.mjs`, `prompt-lint.mjs`, `kapanis-hasadi.mjs`) komutların elle çalıştırılması beklenir.
+  - [settings.json:L5-L64](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L5-L64): IDE hook konfigürasyonunda `write_to_file` veya `replace_file_content` öncesinde `prompt-lint.mjs` veya `dunya-kilidi.mjs` tetikleyen bir `PreToolUse` hook'u **yoktur**. Yalnızca `git commit` anında `gate.sh` ve `PostToolBatch` anında `buddy.mjs` çalışır.
+- **Mekanizma Çöküşü:** Model prompt yazarken `dunya-kilidi.mjs` çalıştırmayı unuttuğunda aynı dünyada 4 ayrı üslup doğmakta (bkz. [PROMPT-YASASI.md:L37](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L37)), yazım bittikten sonra `prompt-lint.mjs` unutup görsele basıldığında 71 revizenin ~44-52'si kredi ve zaman yakıldıktan sonra fark edilmektedir.
+
+---
+
+### 5. DURUM DOSYALARININ BAYATLAMASI VE İNDEKS SAPIŞTIRMASI (STATE DRIFT)
+
+- **Kanıt (Dosya & Satır):**
+  - [current-work.mjs:L4-L8](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/current-work.mjs#L4-L8): `Neden var (2026-07-29 ölçümü): oturum açılış otoritesi EXECUTION_STATE.md "Aktif video: YOK" diyordu; aynı sabah diskte 50 klip üretilmişti... Mami'nin "her işte yeniden başlıyoruz" şikâyetinin mekanizması budur.`
+  - [current-work.json:L7](file:///Users/Muhammet/Desktop/mamilas-modern/artifacts/current-work.json#L7): `"lastCompleted": "İKİ PROJE: (1) Mira 5.1.3 kit TAMAM — 54 kare basıldı... (2) Efe 6.1.3 — seslendirme 57 cümle..."` (Makine tarafından ayrıştırılamayan, serbest metin olarak yazılmış devasa yapısız döküm).
+  - [current-work.mjs:L256-L270](file:///Users/Muhammet/Desktop/mamilas-modern/scripts/current-work.mjs#L256-L270): `driftOf` fonksiyonu `current-work.json` içerisindeki durum iddiaları ile diskteki ham dosyalar arasında sürekli uyumsuzluk (`KİT kayıtta var ama diskte YOK`, `baseCommit repoda yok`) tespit etmektedir.
+- **Mekanizma Çöküşü:** Makine-okunur durum dosyaları yapısal veriler yerine LLM anlatısı ile doldurulduğu ve disk gerçeğiyle senkronize edilmediği için her yeni oturum açılışında ajan aktif işin nerede kaldığını yanlış yorumlamakta ve tamamlanmış adımları tekrarlamaktadır.
+
+---
+
+### 6. BLOKE ETMEYEN (DİŞSİZ) KALİTE KAPILARI VE SÖZDE KURALLAR
+
+- **Kanıt (Dosya & Satır):**
+  - [hasat-gate.mjs:L57](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/hasat-gate.mjs#L57): `process.exit(0);` (Eksik hasat veya güncel olmayan proje durumunda bile asla çıkış kodunu 1/2 yapmaz, komutu bloke etmez).
+  - [gate.sh:L106-L118](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L106-L118): `claude-sync` senkronizasyon hatası tespit ettiğinde commit'i durdurmaz (`Bloke ETMEZ`).
+  - [gate.sh:L131-L137](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L131-L137): `PUSH EDİLMEMİŞ` lokal commit'ler tespit edildiğinde uyarı basar fakat commit veya push işlemini engellemez (`Bloke ETMEZ`).
+  - [CLAUDE.md:L83-L85](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L83-L85): `FACT REQUIRED: <eksik bilgi> ile dur.` kuralının kod düzeyinde hiçbir linte veya linter kontrolüne bağlı karşılığı yoktur.
+- **Mekanizma Çöküşü:** Sistem kapı gibi görünen yapıların çoğunu sadece stderr uyarısı olarak tasarlamıştır. Oturum sırasında uyarılar model tarafından göz ardı edilir; gönderilmemiş yasalar lokalde kalır ve diğer makineye geçildiğinde eski yasalarla video üretilip saatler kaybedilir (bkz. [gate.sh:L120-L126](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L120-L126)).
+
+---
+
+# PART B — LLM KODLAMA AJANLARINDA OTURUMLAR ARASI ÖĞRENME PATTERNLERİ VE BİLİNEN BAŞARISIZLIK MODLARI (FAILURE MODES)
+
+---
+
+### 1. Dynamic Memory Tools (Dinamik Hafıza Araçları - Read/Write Memory APIs)
+- **Başarısızlık Modu (Failure Mode):** *Memory Bloat & Context Poisoning (Hafıza Şişmesi ve Bağlam Zehirlenmesi).*
+  Ajanlar her oturumda karşılaştıkları anlık durumları, geçici çözümleri veya hatalı varsayımları hafıza dosyalarına yazarlar. Zamanla hafıza deposu birbiriyle çelişen yüzlerce kuralla dolar. Model karar anında bu geniş ve tutarsız hafızayı okuduğunda "kararsızlık felcine" (attention dilution) uğrar veya eski/yanlış kuralı uygulayarak üretimi bozar.
+
+---
+
+### 2. Event-Driven Hooks (Olay Güdümlü Kancalar - SessionStart, PreToolUse, PostToolUse)
+- **Başarısızlık Modu (Failure Mode):** *Silent Failure & Execution Context Disconnect (Sessiz Başarısızlık ve Yürütme Bağlamı Kopukluğu).*
+  Hook'lar modelin iç muhakeme döngüsünün dışında çalışır. Hook script'i çöktüğünde veya `exit 0` verip sadece stderr'e yazdığında model bunu "başarılı/temiz" kabul eder. Ayrıca Hook ile basılan uzun metinler modelin sistem prompt alanını doldurur fakat o an yapılan spesifik araç çağrısına (örneğin dosya yazma) doğrudan müdahale edemez.
+
+---
+
+### 3. Self-Editing Instruction Files (Kendi Talimat Dosyalarını Düzenleyen Ajanlar - Auto CLAUDE.md)
+- **Başarısızlık Modu (Failure Mode):** *Reactive Over-fitting & Instruction Inflation (Reaktif Aşırı Uyum ve Talimat Şişmesi).*
+  Bir hata sonrası kendi kural dosyasını güncelleyen LLM, hatanın kök nedenini çözmek yerine o anki spesifik semptoma aşırı uyum sağlayan kurallar yazar (Örn: "X sahnesinde Y kelimesini kullanma"). Bu durum talimat dosyalarını binlerce satırlık okunamaz metin yığınlarına dönüştürür. Modelin genel akıl yürütme yeteneği çöker ve kurallar birbiriyle çelişmeye başlar.
+
+---
+
+### 4. Few-Shot Example Canon vs. Prose Rulebooks (Altın Örnek Kanonu vs. Düz Yazı Kural Kitapları)
+- **Başarısızlık Modu (Failure Mode):** *Pattern Overfitting & Token Window Exhaustion (Kalıp Aşırı Uyumu ve Token Penceresi Tükenmesi).*
+  Düz yazı kural kitapları (prose) model tarafından zayıf takip edilirken, few-shot örnekleri güçlü takip edilir. Ancak karmaşık üretimlerde birkaç örnek sunulduğunda model sadece o örneklerdeki kalıpları (trope) tekrarlar (örneğin 50 sahnenin tamamında aynı nesne üzerine yazı çakma). Örnek kümesi büyütüldüğünde ise token sınırları aşılır ve girdi bağlamı daralır.
+
+---
+
+### 5. Linting / Deterministic Code Gates (Sentaktik/Statik Kod Kapıları)
+- **Başarısızlık Modu (Failure Mode):** *Syntax-Semantics Gap / "Green Lint, Bad Output" (Sözdizimi-Anlam Uçurumu).*
+  Linter'lar kelime sayılarını, regex kalıplarını ve slot varlıklarını kesin olarak doğrular ancak semantik ve estetik kaliteyi ölçemez. Ajan, linte %100 uyan ve "yeşil" çıkan fakat görsel/anlamsal açıdan tamamen ruhsuz, ruhsuz veya hatalı içerikler üretir (örneğin lint'i yeşil yanan ama 30/54 karesi reddedilen prompt seti).
+
+---
+
+### 6. Retrieval Over Notes (RAG / Semantik Vektör Arama)
+- **Başarısızlık Modu (Failure Mode):** *Precision-Recall Mismatch & Out-of-Context Fragment Retrieval (Hassasiyet Uyumsuzluğu ve Bağlam Dışı Parça Getirme).*
+  RAG, mevcut görevin mantıksal durumuna göre değil, sorgu kelimelerinin vektör benzerliğine göre parça getirir. Eski projelerden kalmış, miadı dolmuş veya belirli kısıtlar altında geçerli olan not parçalarını bağlamından kopararak getirdiğinde model yanlış yönlendirilir ve hatalı kararlar kalıcılaşır.
