@@ -72,7 +72,7 @@ const GROUP_CLASS: Record<string, string> = {
 
 // ── REAL raw-source narratives (one per GROUP_TOPIC value) ──────────────────
 // Wired to the ACTUAL ingest chain (ingestRawSource's sibling: autoGroupBeats →
-// sourceIntegrity — same pair scripts/faz5-pilot.ts uses). Never a stub: every
+// sourceIntegrity — same pair scripts/archive/faz5-pilot.ts uses). Never a stub: every
 // topic used anywhere below resolves to real multi-sentence Turkish narrative
 // text, so sourceReport.ok/coverage reflect a genuine ingest, not a fixture.
 const TOPIC_RAW_SOURCE: Record<string, string> = {
@@ -100,7 +100,7 @@ const TOPIC_RAW_SOURCE: Record<string, string> = {
 };
 const DEFAULT_TOPIC = 'Su Döngüsü';
 
-// ── ingest helper: mirrors scripts/faz5-pilot.ts's rawSource → autoGroupBeats
+// ── ingest helper: mirrors scripts/archive/faz5-pilot.ts's rawSource → autoGroupBeats
 // → sourceIntegrity chain (the REAL chain the site's wizard uses), not a fixture.
 function ingestTopic(topic: string, videoModel: string): { rawSource: string; beats: SourceBeat[] } {
   const rawSource = TOPIC_RAW_SOURCE[topic] ?? TOPIC_RAW_SOURCE[DEFAULT_TOPIC];
@@ -318,7 +318,7 @@ for (const world of DATA.worlds) {
       lines.push('');
     }
 
-    // Real sourceReport — same ingest chain as scripts/faz5-pilot.ts, so
+    // Real sourceReport — same ingest chain as scripts/archive/faz5-pilot.ts, so
     // Encyclopedia/Volition below read a genuine integrity verdict, not a stub.
     const sourceReport = sourceIntegrity(rawSource, result.scenes);
     lines.push(sourceReportLine(sourceReport));

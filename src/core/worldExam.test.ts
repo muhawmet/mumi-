@@ -11,7 +11,7 @@ import { DATA } from './pure';
 
 const WORLDS = DATA.worlds as Array<{ id: string; group: string }>;
 
-/** Bilinen-iyi taban: 103 gerçek kare verdi (kutuphane-karne.ts GERCEK_KARE). */
+/** Bilinen-iyi taban: 103 gerçek kare verdi (archive/kutuphane-karne.ts GERCEK_KARE). */
 const KNOWN_GOOD = 'pixar_3d_edu';
 
 describe('worldExam — sınav setinin kimliği', () => {

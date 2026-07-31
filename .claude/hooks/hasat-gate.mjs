@@ -43,6 +43,13 @@ try {
     process.exit(0);
   }
 
+  // BU KAPI BİLEREK BLOKE ETMEZ ve bu doğru: hasat, Mami onayına gidecek ADAY üretir.
+  // Bloke etmek onay bekleyen adayların oturumu kilitlemesi demek olurdu.
+  // Ama 2026-07-31 ölçümü: uyarı düz metin olduğu için terminal kaydında kayboluyordu —
+  // 1.858 satır ders adayı biriktiği hâlde APPROVED.md sıfır. Kaçırılmaz hâle getiriliyor.
+  say('[hasat] ══════════════════════════════════════════════════════════════');
+  say('[hasat] 🚨 HASAT BEKLEYEN PROJE VAR — biten iş henüz derse dönüşmedi');
+  say('[hasat] ══════════════════════════════════════════════════════════════');
   say(`[hasat] ⚠️ ${res.rows.length - notOk.length}/${res.rows.length} proje güncel. Bekleyenler:`);
   for (const r of notOk) say(`[hasat]    · ${r.project}  [${r.status}]  ${r.detail}`);
   for (const o of res.orphans) say(`[hasat]    · (sahipsiz) ${o.file} — kaynak klasör "${o.dir}" yok`);
