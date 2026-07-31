@@ -1,0 +1,84 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — 5. SINIF · EDIT-PLAN (PREMIERE)
+=========================================================================
+Eşleme: N.png = KN · indirilecek video adı N.mp4 · Kling i2v kaynak süresi 5s.
+VO otoritesi: /Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Birlikte Daha Güçlüyüz/vo.mp3
+Kolon: dosya · K## · klip · VOdur · [plan zamanı] · VO cümlesi
+=========================================================================
+
+##### S1 — SEL VE İLK DAYANIŞMA (K01–K09) #####
+1.png   K01   5s   4.5s   [0:00–0:05]   Bu Mira; mahallenin dar bir sokağında, üçüncü kattaki evde oturuyor.
+2.png   K02   5s   4.0s   [0:05–0:09]   O sabah perdesini açtı ve sokağı sular altında buldu.
+3.png   K03   5s   4.0s   [0:09–0:13]   Gece yağan şiddetli yağmur alt sokakları tamamen doldurmuştu.
+4.png   K04   5s   4.2s   [0:13–0:17]   Belediye ekipleri çamurla kaplanan yolu temizlemeye çoktan başlamıştı.
+5.png   K05   5s   4.3s   [0:17–0:21]   Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu.
+6.png   K06   5s   4.5s   [0:21–0:26]   Mira dışarı çıktı ve fark etti: kimse tek başına değildi.
+7.png   K07   5s   4.5s   [0:26–0:30]   İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir.
+8.png   K08   5s   5.0s   [0:30–0:35]   Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar.
+9.png   K09   5s   4.8s   [0:35–0:40]   İşte böyle günlerde yardımlaşma ve dayanışmanın önemi daha iyi anlaşılır.
+
+##### S2 — YARDIMLAŞMA, DAYANIŞMA VE İŞ BİRLİĞİ (K10–K22) #####
+10.png   K10   5s   4.5s   [0:40–0:44]   Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı.
+11.png   K11   5s   4.0s   [0:44–0:48]   Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı.
+12.png   K12   5s   4.5s   [0:48–0:53]   Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu.
+13.png   K13   5s   4.5s   [0:53–0:57]   Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir.
+14.png   K14   5s   5.0s   [0:57–1:02]   Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir.
+15.png   K15   5s   4.0s   [1:02–1:06]   Bu iki değer, toplumdaki insanları birbirine yakınlaştırır.
+16.png   K16   5s   4.5s   [1:06–1:11]   Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü.
+17.png   K17   5s   4.0s   [1:11–1:15]   Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu.
+18.png   K18   5s   4.2s   [1:15–1:19]   Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu.
+19.png   K19   5s   5.0s   [1:19–1:24]   Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı.
+20.png   K20   5s   4.8s   [1:24–1:29]   Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir.
+21.png   K21   5s   3.5s   [1:29–1:32]   Bir işi birlikte gerçekleştirmeye iş birliği denir.
+22.png   K22   5s   4.5s   [1:32–1:37]   Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür.
+
+##### S3 — KURUMLAR VE TOPLUMSAL DESTEK (K23–K27) #####
+23.png   K23   5s   4.5s   [1:37–1:41]   Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı.
+24.png   K24   5s   4.0s   [1:41–1:45]   AFAD görevlileri zarar gören binaları tek tek kontrol etti.
+25.png   K25   5s   4.5s   [1:45–1:50]   Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı.
+26.png   K26   5s   5.0s   [1:50–1:55]   Belediye ekipleri sokakları temizledi ve geçici barınma alanları hazırladı.
+27.png   K27   5s   5.0s   [1:55–2:00]   Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır.
+
+##### S4 — GEÇMİŞTEN DAYANIŞMA (K28–K34) #####
+28.png   K28   5s   4.5s   [2:00–2:04]   O akşam Mira dedesine gün boyunca gördüklerini anlattı.
+29.png   K29   5s   4.0s   [2:04–2:08]   Dedesi bunun çok eski bir geleneğimiz olduğunu söyledi.
+30.png   K30   5s   4.5s   [2:08–2:13]   Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu.
+31.png   K31   5s   5.5s   [2:13–2:18]   İmkânı olan taşın oyuğuna parasını bırakır, ihtiyacı olan görünmeden alırdı.
+32.png   K32   5s   4.5s   [2:18–2:23]   Böylece yardım, ihtiyaç sahibinin onuru korunarak yapılırdı.
+33.png   K33   5s   5.0s   [2:23–2:28]   Dedesi sonra Millî Mücadele yıllarındaki büyük dayanışmayı anlattı.
+34.png   K34   5s   5.5s   [2:28–2:33]   Tekâlif-i Millîye Emirleri'yle halk yiyeceğini ve taşıtını ordusuyla paylaştı.
+
+##### S5 — KATKI VE DAYANIŞMA PROJESİ (K35–K44) #####
+35.png   K35   5s   5.5s   [2:33–2:39]   Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı.
+36.png   K36   5s   4.0s   [2:39–2:43]   Katkı sağlamak için büyük imkânlara sahip olmak gerekmez.
+37.png   K37   5s   5.0s   [2:43–2:48]   Bir kişi kan bağışında bulunabilir, gönüllüler sokak hayvanlarını besleyebilir.
+38.png   K38   5s   5.0s   [2:48–2:53]   Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir.
+39.png   K39   5s   4.5s   [2:53–2:57]   Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi.
+40.png   K40   5s   5.0s   [2:57–3:02]   Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler.
+41.png   K41   5s   5.0s   [3:02–3:07]   Sonra bir kitap kampanyası planlayıp aralarında görev dağılımı yaptılar.
+42.png   K42   5s   4.0s   [3:07–3:11]   Okul yönetimi ve muhtarlıkla iş birliği kurdular.
+43.png   K43   5s   4.3s   [3:11–3:16]   Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı.
+44.png   K44   5s   4.5s   [3:16–3:20]   Planlı hareket etmek, yardımın amacına ulaşmasını sağlar.
+
+##### S6 — SONUÇ VE KAPANIŞ (K45–K54) #####
+45.png   K45   5s   3.5s   [3:20–3:24]   Haftalar geçti ve mahalle yeniden eski hâline döndü.
+46.png   K46   5s   4.0s   [3:24–3:28]   Komşular ortak alanda birlikte fidan dikip çevreyi temizledi.
+47.png   K47   5s   4.5s   [3:28–3:32]   Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır.
+48.png   K48   5s   4.0s   [3:32–3:36]   İnsanlar arasındaki güven, empati ve sosyal bağlar güçlenir.
+49.png   K49   5s   3.5s   [3:36–3:40]   Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir.
+50.png   K50   5s   2.5s   [3:40–3:42]   Mira o dar sokağa bir kez daha baktı.
+51.png   K51   5s   4.6s   [3:42–3:47]   Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir.
+52.png   K52   5s   3.5s   [3:47–3:50]   Paylaştıkça çoğalır, dayanıştıkça güçleniriz!
+53.png   K53   5s   4.0s   [3:50–3:54]   Peki sen çevrende hangi ihtiyaç için bir proje hazırlayabilirsin?
+54.png   K54   5s   5.0s   [3:54–3:59]   Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!
+
+=========================================================================
+PLAN TAHMİNİ ~3:59 · GERÇEK VO 4:11 · 54 KLİP
+
+İNDİRME ADLARI: 1.mp4–54.mp4. Her klibi kendi numarasıyla kaydet.
+UZUN KLİP: XML gerçek VO cümle sınırlarını ölçtükten sonra işaretlenecek; gerekirse Kling'den
+aynı kareyi uzatıp N-b.mp4 adıyla indir. `kaba-kurgu.mjs` aynı K için en iyi süreyi seçer.
+
+MÜZİK: Birlikte Daha Güçlüyüz_SUNO.txt. VO altında yaklaşık -18 dB; bölüm geçişlerinde nefes.
+SES MİKS: VO her yerde önde. Klipler sessiz. SFX yalnız anlatımı destekleyen fiziksel ayrıntılarda.
+NOT: XML ilk aşamada gerçek VO + 54 boş video yuvası taşır. Klipler indirildiğinde aynı araç
+yeniden çalıştırılır; 0,5s i2v başlangıç kırpması, gerçek süre, hız ve güvenli geçişler ölçülür.

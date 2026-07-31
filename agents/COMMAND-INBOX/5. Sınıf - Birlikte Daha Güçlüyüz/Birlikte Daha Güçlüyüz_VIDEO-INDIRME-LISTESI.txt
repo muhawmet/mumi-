@@ -1,0 +1,70 @@
+BİRLİKTE DAHA GÜÇLÜYÜZ — VİDEO İNDİRME LİSTESİ
+=========================================================================
+Hedef klasör:
+/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Birlikte Daha Güçlüyüz
+
+Dosya kuralı: KN için N.mp4. Örnek: K06 → 6.mp4, K38 → 38.mp4.
+Gerçek VO: 4:11.089 · 54/54 cümle Whisper ile kareye oturdu.
+=========================================================================
+
+HAZIR — TEKRAR İNDİRME (19):
+1.mp4  2.mp4  3.mp4  4.mp4  5.mp4
+7.mp4  8.mp4  9.mp4  10.mp4  11.mp4
+13.mp4  14.mp4  16.mp4  17.mp4
+19.mp4  20.mp4  21.mp4  23.mp4  24.mp4
+
+İNDİRİLECEK (35):
+6.mp4
+12.mp4
+15.mp4
+18.mp4
+22.mp4
+25.mp4
+26.mp4
+27.mp4
+28.mp4
+29.mp4
+30.mp4
+31.mp4
+32.mp4
+33.mp4
+34.mp4
+35.mp4
+36.mp4
+37.mp4
+38.mp4
+39.mp4
+40.mp4
+41.mp4
+42.mp4
+43.mp4
+44.mp4
+45.mp4
+46.mp4
+47.mp4
+48.mp4
+49.mp4
+50.mp4
+51.mp4
+52.mp4
+53.mp4
+54.mp4
+
+UZUN YUVA — ÖNCELİKLİ UZATMA ADAYI:
+27.mp4   K27   gerçek yuva 5.6s   standart 5s kaynak yaklaşık %80 hız ister
+34.mp4   K34   gerçek yuva 5.8s   standart 5s kaynak yaklaşık %79 hız ister
+38.mp4   K38   gerçek yuva 5.9s   standart 5s kaynak yaklaşık %76 hız ister
+
+Bu üç klibin 10s/extended sürümü zaten üretilmişse N-b.mp4 adıyla indir:
+27-b.mp4 · 34-b.mp4 · 38-b.mp4
+Araç aynı K numarasındaki adaylardan yuvaya en iyi oturanı otomatik seçer.
+Extended sürüm yoksa standart 5s dosyayı indir; XML yalnız gerektiği kadar yavaşlatır.
+
+DİĞER SINIRA YAKIN YUVALAR:
+22 (5.5s) · 31 (5.5s) · 35 (5.4s) · 40 (5.1s) · 51 (5.1s) · 54 (5.0s)
+Bunlar için önce standart sürüm yeterli; kaba kurgu nefes sınırını ve komşu klip artığını kullanır.
+
+SONRAKİ TEK İŞ:
+35 eksik video bu klasöre indikten sonra kaba-kurgu aracı yeniden çalıştırılır.
+XML gerçek klip sürelerini ölçer, her klibin çirkin ilk 0.5 saniyesini keser, güvenli yerlerde
+geçiş kurar ve Premiere timeline'ını boşluksuz teslim eder.

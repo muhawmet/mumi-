@@ -1,0 +1,1769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Birlikte Daha Güçlüyüz_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>5. Sınıf - Birlikte Daha Güçlüyüz — kaba kurgu</name>
+    <duration>6283</duration>
+    <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>126</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/1.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>89.6825</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K01 — Bu Mira; mahallenin dar bir sokağında, üçüncü kattaki evde oturuyor.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>126</start>
+          <end>234</end>
+          <in>13</in>
+          <out>121</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/2.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — O sabah perdesini açtı ve sokağı sular altında buldu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>229</start>
+          <end>239</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>234</start>
+          <end>346</end>
+          <in>13</in>
+          <out>125</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/3.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Gece yağan şiddetli yağmur alt sokakları tamamen doldurmuştu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>346</start>
+          <end>460</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/4.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K04 — Belediye ekipleri çamurla kaplanan yolu temizlemeye çoktan başlamıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>460</start>
+          <end>574</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/5.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K05 — Komşular kapılarının önünde durmuş, suyun bıraktığı hasara bakıyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>574</start>
+          <end>699</end>
+          <in>13</in>
+          <out>138</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/6.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — Mira dışarı çıktı ve fark etti: kimse tek başına değildi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>694</start>
+          <end>704</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>699</start>
+          <end>827</end>
+          <in>13</in>
+          <out>141</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/7.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K07 — İnsanlar bazı ihtiyaçlarını yaşamları boyunca tek başlarına karşılayamayabilir.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>822</start>
+          <end>832</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>827</start>
+          <end>966</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/8.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2806</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K08 — Afetler ve ekonomik güçlükler karşısında başkalarının desteğine ihtiyaç duyarlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>966</start>
+          <end>1105</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/9.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2806</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K09 — İşte böyle günlerde yardımlaşma ve dayanışmanın önemi daha iyi anlaşılır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1105</start>
+          <end>1215</end>
+          <in>13</in>
+          <out>123</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/10.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Karşı komşusu yaşlı bir çiftin evinin alt katını su basmıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1215</start>
+          <end>1318</end>
+          <in>13</in>
+          <out>116</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/11.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — Üç komşu geldi ve eşyaları hep birlikte üst kata taşıdı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>1313</start>
+          <end>1323</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1318</start>
+          <end>1432</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/12.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K12 — Biraz ötede başkaları yiyecek ve giyecekleri kolilere yerleştiriyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1432</start>
+          <end>1568</end>
+          <in>13</in>
+          <out>149</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/13.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Yardımlaşma, ihtiyacı olan kişilere maddi veya manevi destek vermektir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1568</start>
+          <end>1705</end>
+          <in>13</in>
+          <out>150</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/14.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Dayanışma ise ortak amaç çevresinde birleşenlerin birbirine güç vermesidir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1705</start>
+          <end>1803</end>
+          <in>13</in>
+          <out>111</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/15.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Bu iki değer, toplumdaki insanları birbirine yakınlaştırır.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>1798</start>
+          <end>1808</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1803</start>
+          <end>1917</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/16.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K16 — Öğleye doğru okulun spor salonu geçici bir yardım merkezine dönüştü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1917</start>
+          <end>2021</end>
+          <in>13</in>
+          <out>117</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/17.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Gönüllüler gelen malzemeleri türlerine göre ayırıp diziyordu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2016</start>
+          <end>2026</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2021</start>
+          <end>2135</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/18.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K18 — Bir grup kolileri taşırken diğeri ihtiyaç listesini kontrol ediyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2135</start>
+          <end>2255</end>
+          <in>13</in>
+          <out>133</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/19.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — Mira'nın görevi kolilerin üstüne içindekini büyük harflerle yazmaktı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2250</start>
+          <end>2260</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2255</start>
+          <end>2382</end>
+          <in>13</in>
+          <out>140</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/20.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Düzenli çalışabilmek için iş bölümü yapılır; herkes bir görev üstlenir.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2377</start>
+          <end>2387</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2382</start>
+          <end>2464</end>
+          <in>13</in>
+          <out>95</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/21.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Bir işi birlikte gerçekleştirmeye iş birliği denir.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>2459</start>
+          <end>2469</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2464</start>
+          <end>2578</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/22.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K22 — Bilgi, emek ve imkânlar birleşince sorunlar çok daha hızlı çözülür.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2578</start>
+          <end>2716</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/23.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>81.8841</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K23 — Ertesi sabah mahalleye yelekli ekipler geldi ve hemen çalışmaya başladı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2716</start>
+          <end>2830</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/24.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K24 — AFAD görevlileri zarar gören binaları tek tek kontrol etti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2830</start>
+          <end>2944</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/25.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K25 — Türk Kızılay sokağın başına kurulup sıcak yemek dağıtmaya başladı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2944</start>
+          <end>3073</end>
+          <in>13</in>
+          <out>142</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/26.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Belediye ekipleri sokakları temizledi ve geçici barınma alanları hazırladı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3068</start>
+          <end>3078</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3073</start>
+          <end>3186</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/27.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Kamu kurumları, belediyeler ve sivil toplum kuruluşları da toplum için çalışır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3186</start>
+          <end>3309</end>
+          <in>13</in>
+          <out>136</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/28.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — O akşam Mira dedesine gün boyunca gördüklerini anlattı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3304</start>
+          <end>3314</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3309</start>
+          <end>3393</end>
+          <in>13</in>
+          <out>97</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/29.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — Dedesi bunun çok eski bir geleneğimiz olduğunu söyledi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3388</start>
+          <end>3398</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3393</start>
+          <end>3491</end>
+          <in>13</in>
+          <out>111</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/30.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Osmanlı döneminde sokak köşelerinde sadaka taşları bulunurdu.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3486</start>
+          <end>3496</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3491</start>
+          <end>3629</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/31.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — İmkânı olan taşın oyuğuna parasını bırakır, ihtiyacı olan görünmeden alırdı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3629</start>
+          <end>3738</end>
+          <in>13</in>
+          <out>122</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/32.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Böylece yardım, ihtiyaç sahibinin onuru korunarak yapılırdı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3738</start>
+          <end>3847</end>
+          <in>13</in>
+          <out>122</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/33.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Dedesi sonra Millî Mücadele yıllarındaki büyük dayanışmayı anlattı.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>3842</start>
+          <end>3852</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3847</start>
+          <end>3986</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/34.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2806</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K34 — Tekâlif-i Millîye Emirleri'yle halk yiyeceğini ve taşıtını ordusuyla paylaştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3986</start>
+          <end>4125</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/35.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2806</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K35 — Ertesi hafta okulun girişinde karşılanmamış ihtiyaçların yazıldığı bir pano hazırlandı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-35">
+          <name>36.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4125</start>
+          <end>4227</end>
+          <in>13</in>
+          <out>115</out>
+          <file id="f-35">
+            <name>36.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/36.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K36 — Katkı sağlamak için büyük imkânlara sahip olmak gerekmez.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4222</start>
+          <end>4232</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-36">
+          <name>37.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4227</start>
+          <end>4352</end>
+          <in>13</in>
+          <out>138</out>
+          <file id="f-36">
+            <name>37.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/37.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K37 — Bir kişi kan bağışında bulunabilir, gönüllüler sokak hayvanlarını besleyebilir.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4347</start>
+          <end>4357</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-37">
+          <name>38.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4352</start>
+          <end>4491</end>
+          <in>13</in>
+          <out>151</out>
+          <file id="f-37">
+            <name>38.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/38.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.2806</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K38 — Öğrenciler kitaplarını paylaşabilir, bir mahalle birlikte fidan dikebilir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-38">
+          <name>39.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4491</start>
+          <end>4605</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-38">
+            <name>39.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/39.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K39 — Mira ve arkadaşları kendi dayanışma projelerini kurmaya karar verdi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-39">
+          <name>40.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4605</start>
+          <end>4739</end>
+          <in>13</in>
+          <out>147</out>
+          <file id="f-39">
+            <name>40.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/40.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K40 — Önce ihtiyacı belirlediler: kitapları sudan zarar gören öğrenciler.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-40">
+          <name>41.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4739</start>
+          <end>4856</end>
+          <in>13</in>
+          <out>130</out>
+          <file id="f-40">
+            <name>41.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/41.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K41 — Sonra bir kitap kampanyası planlayıp aralarında görev dağılımı yaptılar.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4851</start>
+          <end>4861</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-41">
+          <name>42.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4856</start>
+          <end>4939</end>
+          <in>13</in>
+          <out>96</out>
+          <file id="f-41">
+            <name>42.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/42.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K42 — Okul yönetimi ve muhtarlıkla iş birliği kurdular.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>4934</start>
+          <end>4944</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-42">
+          <name>43.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4939</start>
+          <end>5053</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-42">
+            <name>43.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/43.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K43 — Toplanan malzemeler kontrol edilip ihtiyaç sahibi öğrencilere ulaştırıldı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-43">
+          <name>44.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5053</start>
+          <end>5162</end>
+          <in>13</in>
+          <out>122</out>
+          <file id="f-43">
+            <name>44.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/44.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K44 — Planlı hareket etmek, yardımın amacına ulaşmasını sağlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-44">
+          <name>45.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5162</start>
+          <end>5266</end>
+          <in>13</in>
+          <out>117</out>
+          <file id="f-44">
+            <name>45.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/45.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K45 — Haftalar geçti ve mahalle yeniden eski hâline döndü.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5261</start>
+          <end>5271</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-45">
+          <name>46.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5266</start>
+          <end>5371</end>
+          <in>13</in>
+          <out>118</out>
+          <file id="f-45">
+            <name>46.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/46.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K46 — Komşular ortak alanda birlikte fidan dikip çevreyi temizledi.</mastercomment1></comments>
+        </clipitem>
+        <transitionitem>
+          <start>5366</start>
+          <end>5376</end>
+          <alignment>center</alignment>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <cutPointTicks>0</cutPointTicks>
+          <effect>
+            <name>Cross Dissolve</name>
+            <effectid>Cross Dissolve</effectid>
+            <effectcategory>Dissolve</effectcategory>
+            <effecttype>transition</effecttype>
+            <mediatype>video</mediatype>
+            <wipecode>0</wipecode>
+            <startratio>0</startratio>
+            <endratio>1</endratio>
+            <reverse>FALSE</reverse>
+          </effect>
+        </transitionitem>
+        <clipitem id="ci-46">
+          <name>47.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5371</start>
+          <end>5485</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-46">
+            <name>47.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/47.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K47 — Dayanışma sayesinde ihtiyaçlar karşılanır, güçlükler daha kolay aşılır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-47">
+          <name>48.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5485</start>
+          <end>5599</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-47">
+            <name>48.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/48.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K48 — İnsanlar arasındaki güven, empati ve sosyal bağlar güçlenir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-48">
+          <name>49.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5599</start>
+          <end>5720</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-48">
+            <name>49.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/49.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>93.3884</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K49 — Böylece toplumda birlik, beraberlik ve huzur ortamı gelişir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-49">
+          <name>50.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>101</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5720</start>
+          <end>5808</end>
+          <in>13</in>
+          <out>101</out>
+          <file id="f-49">
+            <name>50.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/50.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>101</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K50 — Mira o dar sokağa bir kez daha baktı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-50">
+          <name>51.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5808</start>
+          <end>5922</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-50">
+            <name>51.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/51.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K51 — Paylaşılan her imkân ve verilen her emek toplumsal birliği güçlendirir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-51">
+          <name>52.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>5922</start>
+          <end>6036</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-51">
+            <name>52.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/52.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K52 — Paylaştıkça çoğalır, dayanıştıkça güçleniriz!</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-52">
+          <name>53.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>126</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6036</start>
+          <end>6150</end>
+          <in>13</in>
+          <out>126</out>
+          <file id="f-52">
+            <name>53.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/53.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>126</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>99.1228</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K53 — Peki sen çevrende hangi ihtiyaç için bir proje hazırlayabilirsin?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-53">
+          <name>54.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>151</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>6150</start>
+          <end>6283</end>
+          <in>13</in>
+          <out>146</out>
+          <file id="f-53">
+            <name>54.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/54.mp4</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>151</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K54 — Cevaplarınızı yorumlara bekliyoruz; dayanışmayla kalın, birlikte güçlü kalın!</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo.mp3 (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>6277</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>6277</end>
+          <in>0</in>
+          <out>6277</out>
+          <file id="file-vo1">
+            <name>vo.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/vo.mp3</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>6277</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>ses1.wav</name>
+          <enabled>TRUE</enabled>
+          <duration>4440</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>4440</end>
+          <in>0</in>
+          <out>4440</out>
+          <file id="file-mzk1">
+            <name>ses1.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/ses1.wav</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4440</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik 1/2 — Suno (VO altında ~-18 dB) — 0.0s'de tek kez (döngü YOK)</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk2-0">
+          <name>ses2.wav</name>
+          <enabled>TRUE</enabled>
+          <duration>4338</duration>
+          <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4440</start>
+          <end>6283</end>
+          <in>0</in>
+          <out>1843</out>
+          <file id="file-mzk2">
+            <name>ses2.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Birlikte%20Daha%20Gu%CC%88c%CC%A7lu%CC%88yu%CC%88z/ses2.wav</pathurl>
+            <rate><timebase>25</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4338</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik 2/2 — Suno (VO altında ~-18 dB) — 177.6s'de tek kez (döngü YOK)</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>
