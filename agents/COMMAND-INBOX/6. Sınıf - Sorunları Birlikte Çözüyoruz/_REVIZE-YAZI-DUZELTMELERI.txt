@@ -1,0 +1,71 @@
+YAZI FIX'LERİ — YENİDEN YAZILDI (2026-07-31)
+=========================================================================
+NEDEN: K49'un fix'i çalışmadı. Sebep ölçüldü — "şu yazıyı KALDIR" demek motorda
+işlemiyor, üstelik kaldırılacak kelimeyi ADIYLA anmak onu bir kez daha çağırıyor.
+K49'da "remove the English word 'plastic'" dendi; yeni basımda Plastic yerinde
+kaldı ve üstüne Mayan + Hard doğdu.
+
+MEKANİZMA: motor KELİME ARASI BOŞLUKLARI görünce oraya kelime koyuyor. "Okunmaz
+karalama" dendiğinde bile ayrı öbekler çiziyor ve her öbek kelime adayı oluyor.
+
+KURAL: kaldırma yok. Yüzeyin NE OLDUĞU olumlu tarif edilir, ve boşluk yasaklanır.
+Silinecek kelime prompt'ta HİÇ anılmaz.
+
+Aşağıdaki beş fix bu kurala göre yeniden yazıldı. Eskilerini kullanma.
+=========================================================================
+
+
+K49 · defter sayfası
+-------------------------------------------------------------------------
+On the open notebook page, each list line is ONE single unbroken continuous graphite
+wave running from the number straight to the right edge of the column — a single
+stroke with no gaps, no separations, no clusters, no ascenders and no descenders
+anywhere along it. There are no word shapes and no letter shapes of any kind on the
+page. Keep the numerals 1 to 5 down the left margin and the one hard pencil
+strike-through across item 4 exactly as they are, and keep the loose scribble block
+in the lower right as it is. This is handwriting seen from too far away to read.
+
+
+K45 · dilekçe gövde metni
+-------------------------------------------------------------------------
+Under the DİLEKÇE heading, each body line is ONE single unbroken continuous blue
+ballpoint wave running the full width of the paragraph block — one stroke per line,
+no gaps between groups, no clusters, no ascenders, no descenders, no letter shapes.
+Keep the DİLEKÇE heading exactly as it is, sharp and unchanged. Keep the signature
+line and the date line as two short single strokes. This is a filled form seen from
+too far away to read.
+
+
+K18 · kitap kapağındaki beyaz etiket
+-------------------------------------------------------------------------
+The white rectangular label on the dark book cover is bare paper: a plain matte
+sticker showing its own fibre grain, one softly lifted corner, a faint grey scuff
+across the middle and a thin shadow along its lower edge. Its surface carries texture
+only — no marks, no strokes, no lines, no symbols, nothing pen-made or printed
+anywhere on it. Keep the book, the cover colour and the composition exactly as they are.
+
+
+K24 · çuvallardaki baskı
+-------------------------------------------------------------------------
+The stacked sacks in the lower-left pile show only woven jute: a coarse over-under
+weave with visible slubs, a few loose fibre ends, dark stitching along the folded
+seams, coal dust caught in the weave and one damp stain low on the nearest sack.
+Their surfaces carry texture only — no marks, no strokes, no lines, no symbols,
+nothing printed or stencilled anywhere on them. Keep the single printed KÖMÜR face
+on the carried sack exactly as it is.
+
+
+K32 · araç plakaları
+-------------------------------------------------------------------------
+Both number plates are dulled and unreadable by dirt: a film of road grime and dried
+mud covers each plate edge to edge so the surface reads as one uniform grey-brown
+tone with a few clean streaks where a wiper or a hand has passed. Their surfaces
+carry texture only — no marks, no strokes, no lines, no symbols, nothing stamped or
+printed anywhere on them, and no coloured band at either edge. Keep the cars, their
+paint and their positions exactly as they are.
+
+
+=========================================================================
+NOT: Bu beş fix'in ortak yapısı — (1) yüzeyin ne OLDUĞU somut malzemeyle yazılır,
+(2) "yalnız doku taşır" denir, (3) boşluk/öbek/çıkıntı açıkça yasaklanır,
+(4) korunacak şey ayrıca adlandırılır, (5) silinecek kelime hiç anılmaz.

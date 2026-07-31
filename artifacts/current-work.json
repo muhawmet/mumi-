@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "6. Sınıf - Sorunları Birlikte Çözüyoruz",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Sorunları Birlikte Çözüyoruz",
-  "phase": "denetim",
+  "phase": "motion",
   "status": "aktif",
-  "lastCompleted": "57 kare V2 yazıldı (lint 0/57) · 54'ü basıldı ve denetlendi: 25 dokunma / 21 revize / 8 baştan · 8 BAŞTAN karesi yeniden yazıldı · @derin referansına ayak eklendi · prompt-lint gate.sh'a bağlandı",
-  "nextAction": "Mami 11 kareyi basar (_URETILECEK-KARELER.txt: K05 K06 K10 K11 K28 K29 K30 K37 K39 K43 K47) + 21 revizeyi uygular (_REVIZE-TEK-DOSYA.txt)",
+  "lastCompleted": "57/57 kare basıldı ve revize edildi · 57/57 motion yazıldı (203-215 kelime, yasak kalıp 0) · yazı fix'leri yeniden yazıldı (sil→ne yazacağını söyle)",
+  "nextAction": "Mami riskli üç klipten başlar: K32 (kameraya doğru yürüyen figür) · K04 (el+push-rim+krom) · K55 (bez pankartta 42 harf)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -13,13 +13,13 @@
     "REFERANSLAR": true,
     "PROMPTLAR": true,
     "revize": false,
-    "MOTION": false,
+    "MOTION": true,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-31T09:52:06.883Z",
+  "updatedAt": "2026-07-31T11:16:30.409Z",
   "updatedBy": "claude",
-  "baseCommit": "1b81df1"
+  "baseCommit": "6553c55"
 }
