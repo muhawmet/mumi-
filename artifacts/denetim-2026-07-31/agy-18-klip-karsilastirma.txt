@@ -1,0 +1,248 @@
+Aşağıda, belirtilen 14 video klip (Kling 3.0, 5 saniyelik image-to-video üretimi) üzerinde gerçekleştirilen saniye saniye doğrudan gözlem ve detaylı analiz sonuçları yer almaktadır. Değerlendirme tamamen betimleyici (descriptive) olarak yapılmış; hiçbir yargı veya tavsiye içermemektedir.
+
+---
+
+# 1. İYİ KÜME (GOOD SET) ANALİZİ
+**Klasör:** `/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Eşeyli ve Eşeysiz Üreme`
+
+### **Klip 8 (`8.mp4` - 6 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Ahşap masa üzerindeki sarı ışık küresi sağa ve öne doğru yavaşça süzülmeye başlar. Çocuğun gözleri ve kafası kürenin hareket yönüne doğru aşağı/öne eğilir.
+  - `00:01 - 00:02`: Küre masanın sağ tarafına doğru kayar; çocuğun başı ve bakışları küreyi kesintisiz takip eder.
+  - `00:02 - 00:03`: Kamera sağa kayarken küre masanın ortasından sağa ilerler. Çocuğun baş açısı kürenin arkasında kalacak şekilde döner.
+  - `00:03 - 00:04`: Küre masanın sağındaki lambanın altına yaklaşır. Çocuğun sol profili kadrajın solunda kalır.
+  - `00:04 - 00:05`: Küre masanın sağ ucunda yavaşlar, ahşap yüzeydeki ışık yansıması hareket eder.
+  - `00:05 - 00:06`: Küre masanın sağ tarafında durur, ışık şiddeti yumuşar. Kamera takibi durur.
+- **(b) Kamera:** Sağa doğru yatay kaydırma (dolly/pan right) ve hafif yakınlaşma. Yaklaşık yarım masa genişliği kadar ilerler. Akıcı hızla hareket eder, `00:05`'te yavaşlayarak durur (ease out).
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun boyun eklemi (flexion/rotasyon) ve göz küresi hareket eder. Hareket tamamen kesintisizdir; **hiçbir ani sıçrama (SNAP) yoktur**.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Çocuğun masaya dayalı kolları, omuzları, gövdesi, masa lambası, kitap, kalem, vazodaki gül ve arka plandaki kitaplık/perde sabittir.
+- **(e) Artefaktlar:** `00:02 - 00:04` arasında ışık küresi kayarken halesinde hafif boyut değişimi olur. Erime, kopuk uzuv, yüz değişimi veya iç içe geçme artefaktı gözlenmemiştir.
+- **(f) Son Kare vs İlk Kare:** İlk karede çocuk kadrajın ortasında ışık küresine bakarken, son karede kamera sağa kaydığı için çocuk kadrajın en sol kenarında kalmış ve ışık küresi masanın sağ tarafına yerleşmiştir.
+
+---
+
+### **Klip 12 (`12.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Çocuk mikroskobun okülerine bakar haldedir. Sağ işaret parmağı mikroskop lamının üzerindeki ışıklı nesneye doğru durur.
+  - `00:01 - 00:02`: Çocuk işaret parmağı ile lam üzerindeki parlak nesneyi ayarlar.
+  - `00:02 - 00:03`: Plan değişimi (cut) gerçekleşir; kamera mikroskop tablasına ve lam üzerindeki parlayan yapıya yakın çekim odaklanır.
+  - `00:03 - 00:04`: Yakın çekimde lam üzerindeki yeşilimsi amorf biyolojik nesne kendi içinde şekil değiştirerek ışık saçar.
+  - `00:04 - 00:05`: Biyolojik yapı lam üzerinde hafif kıpırdar, kamera sabit kalır.
+- **(b) Kamera:** `00:00 - 00:02` arasında genel çekimde yavaş öne ilerleme; `00:02.5`'te makro odağa (close-up) geçiş yapar ve `00:03 - 00:05` arasında makro planda sabit kalır.
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun sağ el parmak eklemleri (interfalangeal) ve omuz/dirsek eklemi (`00:01`). Hareket akıcıdır, eklem bazında **ani sıçrama (SNAP) yoktur** (`00:02.5` kurgu plan değişimi hariç).
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Genel çekimde çocuğun sol kolu, gövdesi, mikroskop metal aksamı, vazodaki gül sabittir; yakın çekimde mikroskop metal klipsleri ve tablası donmuştur.
+- **(e) Artefaktlar:** `00:03 - 00:05` arasında lam üzerindeki ışıklı biyolojik numunede hücresel animasyon gösterimi amaçlı biçim değişimi (organik morphing) vardır. Yapay uzuv/yüz bozulması yoktur.
+- **(f) Son Kare vs İlk Kare:** İlk karede çocuğun mikroskop başında oturduğu genel-orta çekim varken, son karede mikroskop tablasındaki parlayan biyolojik numunenin makro yakın çekimi bulunmaktadır.
+
+---
+
+### **Klip 21 (`21.mp4` - 6 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: "REJENERASYON" 3D harfleri havada süzülür, "YON" harflerinin etrafında sarı ışık pırıltıları saçılır. Çocuk arka planda sağa bakmaktadır.
+  - `00:01 - 00:02`: Kamera sağa kayar. Çocuğun bakışları hafifçe yukarı kalkar, ağzı hafifçe açılır.
+  - `00:02 - 00:03`: Harfler ışıltı yayarak süzülmeye devam eder. Çocuk başını yavaşça döndürür.
+  - `00:03 - 00:04`: Kamera sağa kaymayı sürdürür, çocuk harflerin arkasından ışıldayan kısma bakmayı sürdürür.
+  - `00:04 - 00:05`: Çocuk kaşlarını ve gözlerini hafif yukarı kaldırır, gülümsemesi derinleşir.
+  - `00:05 - 00:06`: Kamera durur, çocuk sabitlenir, harfler hafif süzülmeye devam eder.
+- **(b) Kamera:** Sağa doğru kesintisiz yatay kaydırma (dolly right). Yaklaşık 25 cm ilerler. Sabit hızla hareket edip `00:05`'te yavaşlayarak durur.
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun boyun eklemi ve mimik/göz kasları. Hareket tamamen kesintisizdir; **hiçbir ani sıçrama (SNAP) yoktur**.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Çocuğun omuzları, askılı pantolonu, masadaki elleri, akvaryumdaki denizyıldızı, vazodaki gül ve defter sabittir.
+- **(e) Artefaktlar:** "REJENERASYON" yazısının harf formları ve tipografisi 6 saniye boyunca tamamen sabittir; harflerde erime veya bozulma (lettering degrading) yoktur.
+- **(f) Son Kare vs İlk Kare:** İlk karede "REJENERASYON" yazısının tamamı kadrajın ortasındayken, son karede kamera sağa kaydığı için "R" harfi sol kenardan dışarı çıkmış, çocuk ve "YON" harfleri kadrajın merkezine oturmuştur.
+
+---
+
+### **Klip 27 (`27.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Ön plandaki yeşil kertenkele başını hafifçe sağa/yukarı kaldırır ve gözünü kırpar.
+  - `00:01 - 00:02`: Kertenkele başını sabit tutar, solundaki kopmuş kuyruk parçası hafifçe kıpırdar/kıvrılır.
+  - `00:02 - 00:03`: Kertenkelenin göğsünde nefes alma hareketi görülür. Çocuğun gözleri aşağı kertenkeleye odaklanır.
+  - `00:03 - 00:04`: Kamera hafifçe aşağı/ileri süzülür. Kopuk kuyruk hafif kıpırdar.
+  - `00:04 - 00:05`: Kertenkele başını ve gözlerini sabit tutar. Kamera kayması tamamlanır.
+- **(b) Kamera:** Mikro düzeyde öne ve aşağı doğru yaklaşma (dolly in/down). Son saniyede yumuşakça durur.
+- **(c) Eklemler ve Hareket Tipi:** Kertenkelenin boyun eklemi ve kopuk kuyruğun kas hareketi. **Ani sıçrama (SNAP) yoktur**, hareketler akıcıdır.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Ayakta duran çocuk (kolları, bacakları, gövdesi), saksıdaki çiçekler, kapı kemeri ve arka plandaki korkuluklar tamamen donmuştur.
+- **(e) Artefaktlar:** Herhangi bir morphing, erime, fazla uzuv, kayan ayak veya iç içe geçme artefaktı gözlenmemiştir.
+- **(f) Son Kare vs İlk Kare:** İlk kareye kıyasla kamera kertenkeleye çok hafif yakınlaşmış, kertenkelenin başı 1-2 derece yukarı kalkmış ve kopuk kuyruğun kıvrımı hafif değişmiştir.
+
+---
+
+### **Klip 33 (`33.mp4` - 9 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:02`: Havada süzülen 3 adet sarı ışık küresi yavaşça yukarı-aşağı salınır. Çocuk kasedeki denizyıldızına bakmaktadır.
+  - `00:02 - 00:04`: Çocuk gözlerini kırpar ve başını hafif yukarı kaldırır. Işık küreleri süzülmeye devam eder.
+  - `00:04 - 00:06`: Çocuk gülümser, gözlerini sağdaki güle kaydırır. Işık kürelerinin parlaklığı dalgalanır.
+  - `00:06 - 00:08`: Işık küreleri yavaşça sönümlenir/kaybolur. Çocuk gözlerini kapatır/aşağı indirir.
+  - `00:08 - 00:09`: Işık küreleri tamamen kaybolur, ortam ışığı hafifçe düşer, çocuk başını hafifçe öne eğer.
+- **(b) Kamera:** Tamamen sabit (static shot). Kamera hareketi yoktur.
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun boyun ve göz kapağı eklemleri. Hareket yumuşak ve kesintisizdir; **SNAP yoktur**.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Çocuğun masaya dayalı kolları, gövdesi, HİDRA yazılı kavanoz, denizyıldızı tabağı, saksı gül ve arka plandaki kitaplık donmuştur.
+- **(e) Artefaktlar:** `00:06 - 00:08` arasında ışık küreleri kademeli sönerek kaybolur (efekt amaçlı sönümlenme). "HİDRA" yazısı sabittir.
+- **(f) Son Kare vs İlk Kare:** İlk karede havada parlayan 3 sarı ışık küresi ve açık gözlü çocuk varken, son karede ışık küreleri tamamen kaybolmuş ve çocuğun gözleri kapanmıştır.
+
+---
+
+### **Klip 35 (`35.mp4` - 6 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Çocuğun bakışları soldaki sarı küreden sağdaki mavi küreye kayar.
+  - `00:01 - 00:02`: Çocuk başını hafifçe sağa çevirir, yüzünde merak ifadesi oluşur.
+  - `00:02 - 00:03`: Kamera sağa kayarken çocuk bakışlarını mavi küreye sabitler.
+  - `00:03 - 00:04`: Çocuk başını yavaşça sol kolunun üstüne doğru eğer, bakışlarını tekrar sarı küreye çevirir.
+  - `00:04 - 00:05`: Çocuk başını hafifçe aşağı bırakır, gözleri sarı küreye yönelir.
+  - `00:05 - 00:06`: Çocuk sabit pozisyonda küreye bakmaya devam eder.
+- **(b) Kamera:** Yavaşça sağa ve hafif öne kayar (dolly right/in). `00:04`'te durur.
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun boyun eklemi (rotasyon ve yanal eğilme) ve göz hareketleri. Akıcı ve kesintisizdir, **SNAP yoktur**.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Çocuğun masadaki kolları, açık kitap, sarı ve mavi küreler, sağdaki kitaplık ve vazodaki gül tamamen donmuştur.
+- **(e) Artefaktlar:** Artefakt gözlemlenmemiştir.
+- **(f) Son Kare vs İlk Kare:** İlk karede çocuk dikleşip sağa bakarken, son karede başını sol koluna doğru eğmiş ve bakışları aşağı yönelmiştir.
+
+---
+
+### **Klip 41 (`41.mp4` - 7 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Ortadaki beyaz yavru kedi ağzını açarak esnemeye başlar. Anne kedi sola bakar.
+  - `00:01 - 00:03`: Beyaz kedi genişçe esner, kafasını hafif geriye atar. Turuncu ve kahverengi yavrular hafifçe kıpırdar.
+  - `00:03 - 00:04`: Beyaz kedi esnemeyi bitirir, kafasını öne eğerek sepetin içine doğru yatar/büzülür.
+  - `00:04 - 00:05`: Beyaz kedi sepetin tabanına yatar. Anne kedi kafasını aşağı çevirip yavrularını yalamak üzere eğer.
+  - `00:05 - 00:07`: Anne kedi kafasını solundaki turuncu yavruya yaklaştırır ve başını yalar/dokundurur.
+- **(b) Kamera:** Çok hafif sağa/aşağı doğru kaydırma (subtle tracking pan). Kesintisiz ve yavaş.
+- **(c) Eklemler ve Hareket Tipi:** Beyaz kedinin çene eklemi (mandible expansion) ve boyun eklemi; anne kedinin boyun ve kulak eklemleri. Tamamen organik ve kesintisizdir, **SNAP yoktur**.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Hasır sepetin örgü yapısı, halı, arka plandaki berjer ve sehpa sabittir.
+- **(e) Artefaktlar:** `00:04 - 00:06` arasında beyaz kedi sepetin içine yatarken gövdesi sepetin iç kısmında kalır, yapay erime veya uzuv kopması yoktur.
+- **(f) Son Kare vs İlk Kare:** İlk karede 3 yavru da dik oturup karşıya bakarken, son karede beyaz yavru sepetin içine yatmış, anne kedi başını aşağı eğip turuncu yavruyu koklamaktadır.
+
+---
+
+# 2. KÖTÜ KÜME (BAD SET) ANALİZİ
+**Klasör:** `/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Birlikte Daha Güçlüyüz`
+
+### **Klip 1 (`1.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Kız çocuğu yatakta oturmaktadır. Başını pencereye doğru kaldırır.
+  - `00:01 - 00:02`: Çocuğun başı yavaşça aşağı düşer. Penceredeki kadının kolu çamaşır asarken hareket eder.
+  - `00:02 - 00:03`: Çocuğun gövdesi ve başı aniden yukarı fırlayarak kalkar.
+  - `00:03 - 00:04`: Çocuğun bakışları karşıya kilitlenir, duruşu kaskatı kalır.
+  - `00:04 - 00:05`: Çocuğun başı hafifçe donuk şekilde sağa sarkar, vücudu hareketsizleşir.
+- **(b) Kamera:** Tamamen sabit (static shot). Kamera hareketi yoktur.
+- **(c) Eklemler ve Hareket Tipi:** Çocuğun boyun ve omurga eklemleri. **[SNAP Zaman Damgası: 00:02.2s]**: Çocuğun başı ve üst gövdesi yumuşak bir ivmelenme olmaksızın aniden yukarı sıçrama/atlama yapar.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Çocuğun elleri ve tuttuğu bacak/çorap bölgesi `00:01 - 00:05` arasında tamamen heykel gibi donmuştur (parmaklar kıpırdamaz, çorap çekilmez). Odadaki lamba, yatak, poster ve çanta sabittir.
+- **(e) Artefaktlar:**
+  - `00:01 - 00:05`: Çocuğun tuttuğu ayağı ve elleri birbirine donmuş/yapışmış haldedir (frozen limb artifact).
+  - `00:02.2`: Gövde ani yukarı sıçrarken boyunda robotik atlama (snapping artifact).
+- **(f) Son Kare vs İlk Kare:** İlk karede kız çocuğu başı hafif eğik ayağına bakarken, son karede başı dikleşmiş ve pencereye bakmaktadır ancak elleri ve ayağı tamamen ilk karedeki pozisyonda kilitli kalmıştır.
+
+---
+
+### **Klip 4 (`4.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Hortumun ucundaki su yüzeyinde girdap oluşur. Sarı yelekli işçi arkası dönük durur.
+  - `00:01 - 00:02`: Su girdabı genişler, suyun üzerindeki yaprak dönerek hortuma yaklaşır.
+  - `00:02 - 00:03`: Yaprak girdabın içine çekilir ve kaybolur. Hortum ucu suda hareket eder.
+  - `00:03 - 00:04`: Hortumun yeşil gövdesi suda garip bir şekilde şişer/dalgalanır. İşçi hafifçe kımıldar.
+  - `00:04 - 00:05`: Su yüzeyindeki dalgalanma devam eder, hortum başlığı suda kayar.
+- **(b) Kamera:** Hafif sol öne doğru kayma (dolly in/left).
+- **(c) Eklemler ve Hareket Tipi:** İşçinin omurga eklemi. **[SNAP Zaman Damgası: 00:03.8s]**: Su yüzeyinde ve hortum ucu titreşiminde ani mikro atlama (snap).
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Soldaki sarı plastik kasa ve ona bağlı ip suyun üstünde olmasına rağmen su dalgalarından HİÇ etkilenmez, tamamen sabittir. Binalar ve kepenkler donmuştur.
+- **(e) Artefaktlar:**
+  - `00:02.4`: Suyun üzerindeki yaprak yok olurken eriyerek kaybolur (disappearing item artifact).
+  - `00:03.0 - 00:05.0`: Yeşil hortum suyun dalgasıyla jöle gibi esneyip biçim değiştirir (morphing/melting hose artifact).
+- **(f) Son Kare vs İlk Kare:** İlk karede su yüzeyinde yaprak ve sakin girdap varken, son karede yaprak kaybolmuş, su yüzeyi köpürmüş ve hortumun metal ucu hafif sola kaymıştır.
+
+---
+
+### **Klip 5 (`5.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:02`: Kapı önündeki yaşlı kadın yavaşça kapıdaki adama doğru dönmeye çalışır.
+  - `00:02 - 00:03`: Yaşlı kadının başı aniden arkaya/kameraya doğru döner.
+  - `00:03 - 00:04`: Sağ alttaki karton koli ve üzerindeki "KİTAP" yazısı hiç yoktan aniden devrilir/yırtılır.
+  - `00:04 - 00:05`: Karton kutunun üst kapağı deforme olarak açılır, içinden kağıtlar fırlamış gibi bozulur.
+- **(b) Kamera:** Tamamen sabit (static shot).
+- **(c) Eklemler ve Hareket Tipi:** Yaşlı kadının boyun eklemi. **[SNAP Zaman Damgası: 00:02.8s]**: Kadının kafası tek bir karede aniden 90 derece dönerek kameraya bakar. **[SNAP Zaman Damgası: 00:03.6s]**: Sağdaki karton kutu fizik kurallarına aykırı şekilde aniden içten çöker/patlar.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Kapı eşiğinde duran kolları bağlı adam 5 saniye boyunca tek bir milimetre bile kıpırdamaz (donmuş heykel). En öndeki ahşap sandalye sabittir.
+- **(e) Artefaktlar:**
+  - `00:02.8`: Yaşlı kadının yüzü dönerken kırışıklıklar ve yüz hatları eriyip deforme olur (face morphing artifact).
+  - `00:03.6 - 00:04.5`: "KİTAP" yazılı koli çökerken üzerindeki harfler erir ve bozulur (lettering degrading / object melting artifact).
+- **(f) Son Kare vs İlk Kare:** İlk karede dik duran "KİTAP" yazılı koli, son karede tamamen ezilmiş ve yazısı bozulmuş durumdadır; yaşlı kadının başı da kapıya bakarken kameraya dönmüştür.
+
+---
+
+### **Klip 11 (`11.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Soldaki adam dolabı kaldırır gibi yapar. Kadın dolaba omzuyla yüklenir.
+  - `00:01 - 00:02`: Soldaki adamın başı ve omzu geriye kayar.
+  - `00:02 - 00:03`: Tüm karakterler ve dolap aniden kilitlenip donar.
+  - `00:03 - 00:05`: Sahnedeki tüm hareket tamamen durur, video fotoğrafa dönüşür.
+- **(b) Kamera:** Tamamen sabit (static shot).
+- **(c) Eklemler ve Hareket Tipi:** Adamın ve kadının omuz/boyun eklemleri. **[SNAP Zaman Damgası: 00:02.2s]**: 2.2. saniyede hareket aniden kilitlenir (motion snap/freeze).
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** `00:02.2 - 00:05` arasında dolap, 3 insan, merdivenler ve tavandaki ampul tamamen kaskatı donmuştur.
+- **(e) Artefaktlar:**
+  - `00:00 - 00:02`: Soldaki adamın dolabı tutan eli ve parmakları ahşap kaplamanın içinden geçer (pass-through artifact).
+  - `00:01.5`: Kadının kazağının sırt dokusunda erime (texture melting).
+- **(f) Son Kare vs İlk Kare:** `00:02.2` sonrasında hareket olmadığı için son kare ile 2. saniyedeki kare aynıdır; ilk kareye göre sadece soldaki adamın başı 2-3 cm geriye kaymıştır.
+
+---
+
+### **Klip 14 (`14.mp4` - 6 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Ön plandaki kadın kovayı sağa uzatır. Arkadaki adam kovayı tutar. Merdivendeki çocuk yukarısını hedefler.
+  - `00:01 - 00:02`: Ön plandaki kadın aniden kadrajın soluna doğru fırlayıp kameranın önünden geçer.
+  - `00:02 - 00:03`: Kadın kadrajın önünden geçerken devasa bir siluet oluşturup kaybolur.
+  - `00:03 - 00:04`: Ortadaki adamın başı ani bir sıçramayla açı değiştirir. Merdivendeki kız çocuğu adımlar.
+  - `00:04 - 00:06`: Kız çocuğu merdivende kalır, arkadaki yaşlı adam kovayı tutarak donar.
+- **(b) Kamera:** Sağa doğru hızlı ve kontrolsüz pan / savrulma hareketi.
+- **(c) Eklemler ve Hareket Tipi:** Ön plandaki kadının omuz/omurga eklemi (**[SNAP Zaman Damgası: 00:01.8s]**), ortadaki adamın boyun eklemi (**[SNAP Zaman Damgası: 00:03.5s]**).
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** En üstteki yaşlı adamın üst gövdesi ve elleri neredeyse tamamen sabittir. Merdiven basamakları donmuştur.
+- **(e) Artefaktlar:**
+  - `00:01.8`: Kadın kameraya yaklaşırken başı ve yüzü aşırı büyüyüp deforme olur (face & head morphing).
+  - `00:03.2`: Merdivendeki kız çocuğunun bacakları basamaklarda kayar ve pantolon çizgisi erir (sliding feet & leg morphing).
+  - `00:03.8`: Ortadaki adamın tırabzana dayalı el parmakları metal tırabzan borusunun içinden geçer (pass-through artifact).
+- **(f) Son Kare vs İlk Kare:** İlk karede sol ön planda kovayı tutan gülümseyen kadın varken, son karede o kadın kadrajdan tamamen çıkmış, ortadaki adamın yüzü sola dönmüş ve kız çocuğu merdiven üstüne çıkmıştır.
+
+---
+
+### **Klip 19 (`19.mp4` - 6 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Kız çocuğu koli üzerine "GİDA" yazısını yazar. Yanındaki erkek çocuk bakar.
+  - `00:01 - 00:02`: Kız çocuğu kalemi indirir, elini kolinin üstüne koyar.
+  - `00:02 - 00:03`: Kız çocuğunun başı aniden yukarı fırlayarak öndeki büyük koliye bakar.
+  - `00:03 - 00:04`: Kamera sola kayarken ön plana devasa bir karton koli girer ve kızın vücudunu kapatır.
+  - `00:04 - 00:05`: Kız çocuğu öndeki kolinin arkasından tekrar belirirken yüzü ve gözleri tamamen deforme bir hal alır.
+  - `00:05 - 00:06`: Deforme olmuş yüz ifadesiyle kız kameraya bakmaya devam eder.
+- **(b) Kamera:** Sağa/öne kayıp ardından sola doğru pan/truck kayması.
+- **(c) Eklemler ve Hareket Tipi:** Kız çocuğunun boyun eklemi (**[SNAP Zaman Damgası: 00:02.4s]**). Dirsek ve el bileği eklemleri.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** Yanındaki yeşil kazaklı erkek çocuk `00:02 - 00:06` arasında tamamen donmuş heykel gibidir. Masadaki markörler ve bant ruloları sabittir.
+- **(e) Artefaktlar:**
+  - `00:00 - 00:02`: Kolinin üzerindeki "GİDA" yazısındaki harfler el hareket ettikçe titrer/şekil değiştirir (lettering degrading artifact).
+  - `00:04.8 - 00:06`: Kızın yüzü büyük kolinin arkasından çıktığı anda gözleri, burnu ve ağzı kayar/erir (severe face morphing / feature distortion artifact).
+- **(f) Son Kare vs İlk Kare:** İlk karede koliye "GİDA" yazan normal yüzlü kız çocuğu varken, son karede büyük kolinin arkasından çıkan yüzü deforme olmuş/erimiş kız çocuğu görünmektedir.
+
+---
+
+### **Klip 21 (`21.mp4` - 5 sn)**
+- **(a) Saniye Saniye Hareket Eden Ögeler:**
+  - `00:00 - 00:01`: Kadın ve adam masanın kenarlarından tutmuş durumdadır. Kadının gövdesi hafifçe yaylanır.
+  - `00:01 - 00:02`: Kadının bel ve kalça açısı aniden sarsılır.
+  - `00:02 - 00:03`: Sahnedeki tüm hareket tam anlamıyla kilitlenir ve durur.
+  - `00:03 - 00:05`: Kadın, adam ve masa videonun sonuna kadar tamamen donmuş kalır.
+- **(b) Kamera:** Tamamen sabit (static shot).
+- **(c) Eklemler ve Hareket Tipi:** Kadının diz ve bel eklemleri. **[SNAP Zaman Damgası: 00:01.6s]**: Kadının kalça pozisyonunda ani titreme/sıçrama. **[SNAP Zaman Damgası: 00:02.3s]**: Hareketin aniden kilitlenip donması.
+- **(d) Tamamen Donmuş (Frozen) Ögeler:** `00:02.3 - 00:05` arasında kadın, adam, masa, arka plandaki merdivenler, pencereler ve yerdeki kasa tamamen donmuştur.
+- **(e) Artefaktlar:**
+  - `00:00 - 00:02`: Kadının masayı tutan elleri ve parmakları ahşap masanın içine gömülüdür (pass-through artifact).
+  - `00:01.6`: Kadının bacaklarındaki pantolon kıvrımlarında yapay doku kayması (texture sliding artifact).
+- **(f) Son Kare vs İlk Kare:** `00:02.3` sonrasında hareket durduğu için son kare ile 2. saniyedeki kare tamamen aynıdır; ilk kareye göre kadının kalçası 2 cm aşağı çökmüştür.
+
+---
+
+# 3. KÜMELER ARASI GÖZLEMLENEBİLİR FARK KARSILASTIRMA TABLOSU
+
+| İnceleme Kategorisi | İYİ KÜME (GOOD SET) Gözlemleri (Kıt kanıt Klip No) | KÖTÜ KÜME (BAD SET) Gözlemleri (Kıt kanıt Klip No) | Doğrudan Fark / Değişim Durumu |
+| :--- | :--- | :--- | :--- |
+| **Eklem Hareket Sürekliliği & Sıçramalar (Snap / Jump)** | Tüm kliplerde (`8, 12, 21, 27, 33, 35, 41`) baş, göz, çene ve kol eklem hareketleri ivmelenerek akıcı ilerler. **Hiçbir sıçrama (SNAP) yoktur.** | Kliplerde ani açı değiştirme, sarsılma veya fırlama şeklinde sıçramalar mevcuttur. **[Kanıt: Bad Klip 1 (`00:02.2s`), Bad Klip 5 (`00:02.8s`), Bad Klip 14 (`00:01.8s`, `00:03.5s`), Bad Klip 19 (`00:02.4s`), Bad Klip 21 (`00:01.6s`)]** | **Belirgin Farklılık Var:** Kötü kümede zaman damgalı ani ivmesiz eklem atlamaları ve sıçramalar mevcuttur. |
+| **Karakter & Hareket Kilitlenmesi (Full Motion Freeze)** | İnsan/hayvan figürleri klip boyunca mikro düzeyde de olsa nefes alma veya bakış kaydırma hareketini sürdürür (`8, 27, 33, 41`). | Videonun ortasında tüm hareket tamamen kilitlenir ve sahne donmuş fotoğrafa dönüşür. **[Kanıt: Bad Klip 11 (`00:02.2s - 00:05`), Bad Klip 21 (`00:02.3s - 00:05`)]** | **Belirgin Farklılık Var:** Kötü kümede 2. saniyeden sonra tam donma (freeze) gerçekleşmektedir. |
+| **Yüz Deformasyonu & Erime (Face Morphing / Distortion)** | Yüz hatları, mimikler ve göz yapısı klip boyunca formunu korur (`8, 21, 33, 35`). | Hareket veya kadraj örtüşmesi esnasında yüz hatları erir, gözler şaşılaşır ve deforme olur. **[Kanıt: Bad Klip 5 (`00:02.8s`), Bad Klip 14 (`00:01.8s`), Bad Klip 19 (`00:04.8s`)]** | **Belirgin Farklılık Var:** Kötü kümede şiddetli yüz erimesi ve deformasyon artefaktları gözlenmektedir. |
+| **Fiziksel İçi Çe Geçme (Pass-Through Artifacts)** | Karakterler ve nesneler katı formlarını korur (`8, 12, 21, 27, 33, 35`). | El, parmak ve bacaklar ahşap masa, tırabzan borusu veya mobilyaların içinden geçer. **[Kanıt: Bad Klip 11 (`00:01s`), Bad Klip 14 (`00:03.8s`), Bad Klip 21 (`00:01s`)]** | **Belirgin Farklılık Var:** Kötü kümede nesne katılığı ihlalleri (pass-through) mevcuttur. |
+| **Yazı / Tipografi Korunumu (Lettering Integrity)** | "REJENERASYON" ve "HİDRA" yazıları 3D formunu ve font netliğini aynen korur (`Good Klip 21, Good Klip 33`). | Kolideki "KİTAP" yazısı kutu çökerken erir; "GİDA" yazısının harfleri titreyip bozulur. **[Kanıt: Bad Klip 5 (`00:03.6s`), Bad Klip 19 (`00:01s`)]** | **Belirgin Farklılık Var:** Kötü kümede nesne hareketiyle tipografik bozulma (lettering degrading) yaşanmaktadır. |
+| **Donmuş Yan Ögeler (Frozen Background / Static Limbs)** | Hareket etmeyen ikincil ögeler arka planda sabit durur (`8, 21, 27, 33, 35, 41`). | Aktif olması beklenen uzuvlar donmuştur (çorabı tutan elle ayak donuk kalır: `Bad Klip 1`; suda duran kasa hiç dalgalanmaz: `Bad Klip 4`; adam kapıda kaskatı kalır: `Bad Klip 5`; yeşil kazaklı çocuk donar: `Bad Klip 19`). | **Belirgin Farklılık Var:** Kötü kümede aktif odak dışındaki etkileşimli nesne ve uzuvlarda yapay dondurma vardır. |
+| **Nesne Erimesi & Kaybolması (Disappearing / Melting Objects)** | Büyülü sarı küreler kasıtlı ışık efektiyle sönümlenir (`Good Klip 33`). | Su üzerindeki yaprak aniden eriyerek yok olur (`Bad Klip 4`, `00:02.4s`); yeşil hortum jöle gibi şekil değiştirir (`Bad Klip 4`, `00:03s`). | **Belirgin Farklılık Var:** Kötü kümede fizik dışı materyal erimeleri mevcuttur. |
+| **Gözlemlenebilir Fark Olmayan Alanlar (Areas with NO Observable Difference)** | Durğan arka plan yapıları (binalar, pencereler, duvarlar, raflar, halılar) her iki kümede de sabit kalmaktadır (`Good 8, 27, 41` vs `Bad 1, 4, 11, 21`). | Durğan arka plan yapıları (binalar, pencereler, duvarlar, raflar, halılar) her iki kümede de sabit kalmaktadır (`Good 8, 27, 41` vs `Bad 1, 4, 11, 21`). | **Açıkça Fark Yoktur:** Cansız mimari arka plan ögelerinin sabitliğinde iki küme arasında gözlemlenebilir bir fark bulunmamaktadır. |

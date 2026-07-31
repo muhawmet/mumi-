@@ -1,0 +1,367 @@
+ toxic task completion notification received automatically when finished. Let's wait.
+ toxic task completion notification received automatically when finished. Let's wait.
+ toxic task completion notification received automatically when finished. Let's wait.
+ toxic task completion notification received automatically when finished. Let's wait.
+ toxic task completion notification received automatically when finished. Let's wait.
+Klasördeki 34 klibin tamamı (`1.mp4` ile `34.mp4` dahil) incelenmiştir. **Hiçbir klip atlanmamıştır.**
+
+---
+
+### 1. KLİP BAŞINA DETAYLI İNCELEME
+
+#### Klip 1 (`1.mp4`, Süre: 8.04s)
+* **Hareket Eden Öğeler:** Karakterlerin yüz/göz bölgesindeki micro-mikro kaymalar ve arka plandaki atmosferik hareket.
+* **Donuk/Sabit Kalan Öğeler:** Gövde, omuzlar ve kıyafet kıvrımları tamamen donuk (0.0s - 0.5s arası hareket indeksi 0.98).
+* **Kamera Hareketi ve Büyüklüğü:** Çok yavaş zoom-in (Düşük büyüklükte, genlik: ~1.2 px/kare).
+* **Sıçrama / Zıplama:** Yok (Sabit ivmeli kayma).
+* **Morf / Erime / Uzuv Bozulması:** **t=3.2s - 4.5s** arasında arkadaki figürün el parmaklarında erime ve kenar çizgilerinde lekelenme/bulanıklaşma.
+* **Son Kare - İlk Kare Farkı:** Evet, belirgin şekilde farklı (Piksel fark değeri: 44.02). Yüz ifadesi ve arka plan derinliği değişmiş.
+
+#### Klip 2 (`2.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Sol taraftaki karakterin baş tilt hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Alt beden ve sağ taraftaki objeler donuk. **t=5.0s - 7.04s** arasında video tamamen donuyor (sabit son kare).
+* **Kamera Hareketi ve Büyüklüğü:** Statik kamera (Kamera hareketi 0).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.1s**’de çene hattında elastik uzama, **t=4.0s**’de kulak çevresinde doku erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 46.59). Baş pozisyonu ve ışık dağılımı farklı.
+
+#### Klip 3 (`3.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Ön plandaki figürün göz kapakları ve arka plandaki hafif ışık değişimi.
+* **Donuk/Sabit Kalan Öğeler:** Yüz hatlarının %90'ı ve vücut kütlesi donuk (0.0s - 1.0s ve 6.5s - 7.04s arası donuk dilim).
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş dikey pan (Tilt-down, düşük büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.8s - 2.6s** arasında göz bebeğinin küçülüp sağa doğru eriyerek uzaması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 38.99). Kamera aşağı kaydığı için kadraj kaymış.
+
+#### Klip 4 (`4.mp4`, Süre: 8.04s)
+* **Hareket Eden Öğeler:** Orta bölgedeki karakterin saç uçları ve arka plan.
+* **Donuk/Sabit Kalan Öğeler:** Üst gövde tamamen sabit (0.0s - 1.5s arası hareket indeksi 0.75).
+* **Kamera Hareketi ve Büyüklüğü:** Sağdan sola yavaş pan (Orta büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=3.8s - 5.2s** arasında arka plandaki mimari nesnenin kenarlarının sıvı gibi akması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 50.21). Pan hareketi nedeniyle ilk ve son kadraj uyuşmuyor.
+
+#### Klip 5 (`5.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Karakterin kolu ve el hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Arka plan ve başın alt kısmı. **t=3.5s - 5.04s** arası hareket tamamen sıfırlanıyor.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** **t=1.29s, t=1.46s, t=1.62s** (Kareler arası ani fark spike'ları: 4.01).
+* **Morf / Erime / Uzuv Bozulması:** **t=1.3s - 2.1s** arasında parmakların birbirine kaynaması ve 6 parmaklı görüntü oluşması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 29.70). Kolun nihai pozisyonu değişmiş.
+
+#### Klip 6 (`6.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Karakterin tüm başı ve boyun bölgesi.
+* **Donuk/Sabit Kalan Öğeler:** Arka plan sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Hızlı zoom-in ve titreme (Yüksek büyüklük).
+* **Sıçrama / Zıplama:** **t=0.79s - t=2.17s** arasında aralıksız 34 kare boyunca şiddetli sıçrama (Max diff: 9.92).
+* **Morf / Erime / Uzuv Bozulması:** **t=0.9s - 2.2s** arasında yüz hatlarının tamamen bozularak başka bir yüze dönüşmesi ve erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 38.33). Yüz yapısı tanınmaz halde.
+
+#### Klip 7 (`7.mp4`, Süre: 9.04s)
+* **Hareket Eden Öğeler:** Karakterin bakış yönü ve kıyafet üzerindeki ışık kırılmaları.
+* **Donuk/Sabit Kalan Öğeler:** Beden ve omuzlar donuk.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş diagonal pan (Düşük büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=4.1s - 5.5s** arasında çene altı gölgesinin leke şeklinde genişleyip daralması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 47.87).
+
+#### Klip 8 (`8.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Karakterin gözleri ve arka plandaki yapraklar.
+* **Donuk/Sabit Kalan Öğeler:** Yüzün ana iskeleti ve kıyafet. (0.0s - 0.5s arası donuk).
+* **Kamera Hareketi ve Büyüklüğü:** Sabit.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.7s - 3.8s** arasında sol göz bebeğinin iris sınırlarının dışına taşarak erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 49.14).
+
+#### Klip 9 (`9.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Yaprakların doğal salınımı ve kararlı ışık değişimi.
+* **Donuk/Sabit Kalan Öğeler:** Ana figür doğal duruşunda.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş yumuşak pan (Düşük büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** Yok.
+* **Son Kare - İlk Kare Farkı:** Kısmen farklı (Piksel fark değeri: 37.81 - Kararlı kamera kayması kaynaklı).
+
+#### Klip 10 (`10.mp4`, Süre: 9.04s)
+* **Hareket Eden Öğeler:** Arka plan elemanları.
+* **Donuk/Sabit Kalan Öğeler:** Ön plandaki figür **t=0.0s - 1.5s** ve **t=8.0s - 9.04s** arasında heykel gibi donuk.
+* **Kamera Hareketi ve Büyüklüğü:** Statik / Mikroskopik kayma.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=3.0s - 4.2s** arasında kulak memesinin arkadaki renkle bütünleşip erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 52.37).
+
+#### Klip 11 (`11.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Karakterin başını çevirmesi.
+* **Donuk/Sabit Kalan Öğeler:** Omuzlar donuk (0.0s - 0.5s düşük hareket).
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş ileri zoom.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.9s - 3.1s** arasında burun kemiğinin dikey düzlemde uzayıp kısalması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 42.60).
+
+#### Klip 12 (`12.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Tüm arka plan ve karakterin saçları.
+* **Donuk/Sabit Kalan Öğeler:** Yok (Yüksek global hareket: 5.76).
+* **Kamera Hareketi ve Büyüklüğü:** Hızlı yatay pan (Orta-Yüksek büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.5s - 4.0s** arasında pan sırasında karakterin saç çizgisi ile arka planın birbirine geçmesi (motion blur jöleleşmesi).
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 48.96).
+
+#### Klip 13 (`13.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** İnce göz kırpma hareketi.
+* **Donuk/Sabit Kalan Öğeler:** **t=4.0s - 6.04s** arası video tamamen dondurulmuş (40 tekrarlanan kare).
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.2s - 2.0s** arasında kirpiklerin göz kapağı kapanırken cilde gömülmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 40.97).
+
+#### Klip 14 (`14.mp4`, Süre: 9.04s)
+* **Hareket Eden Öğeler:** Arka plandaki bulut/ışık hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Ana figür **t=0.0s - 1.0s** arası tamamen hareketsiz.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş uzaklaşma (Zoom-out).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=4.5s - 6.0s** arasında sağ omuz çizgisinin arkadaki duvara doğru eriyerek genişlemesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 58.96).
+
+#### Klip 15 (`15.mp4`, Süre: 4.04s)
+* **Hareket Eden Öğeler:** Karakterin kolunu kaldırma çabası.
+* **Donuk/Sabit Kalan Öğeler:** Baş bölgesi sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Sabit.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.5s - 2.8s** arasında kolda iki ayrı dirsek eklemi belirip kayboluyor (Limb duplication).
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 45.38).
+
+#### Klip 16 (`16.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Karakterin dudak hareketi ve arka plan.
+* **Donuk/Sabit Kalan Öğeler:** Göğüs ve omuzlar donuk.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş yükselme (Tilt-up).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=3.0s - 4.5s** arasında ağız içi boşluğunun diş yapısı olmaksızın koyu bir delik şeklinde genleşmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 42.67).
+
+#### Klip 17 (`17.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Karakterin tüm vücudunun sağa doğru yürüme hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Yok (Çok yüksek hareket ortalaması: 8.35).
+* **Kamera Hareketi ve Büyüklüğü:** Karakteri takip eden pan (Yüksek büyüklük).
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.0s - 5.1s** arasında bacakların birbirinin içinden geçmesi, ayak tabanlarının zeminde kayarak erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 47.79).
+
+#### Klip 18 (`18.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Karakterin başını eğmesi.
+* **Donuk/Sabit Kalan Öğeler:** Arka plan sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.8s - 3.2s** arasında sakal/çene dokusunun göğüs kıyafetine yapışıp erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 37.59).
+
+#### Klip 19 (`19.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Hafif arka plan parıltısı.
+* **Donuk/Sabit Kalan Öğeler:** **t=0.0s - 0.5s** ve **t=5.0s - 6.04s** arası tam donma.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.5s - 3.8s** arasında göz kapağı kapanırken kaş çizgisinin aşağı çekilerek kaybolması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 43.35).
+
+#### Klip 20 (`20.mp4`, Süre: 10.04s)
+* **Hareket Eden Öğeler:** t=3.5s sonrası karakterin elini kaldırması.
+* **Donuk/Sabit Kalan Öğeler:** **t=0.0s - 3.5s** arası klip tamamen hareketsiz (Heykel efekti).
+* **Kamera Hareketi ve Büyüklüğü:** t=7.0s sonrası ani pan.
+* **Sıçrama / Zıplama:** **t=7.42s - 8.17s** arası 7 adet karesel sıçrama (Max diff: 7.69).
+* **Morf / Erime / Uzuv Bozulması:** **t=4.0s - 6.2s** arasında kolda uzama ve parmak uçlarının hayaletimsi şeffaf iz bırakması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 62.23). İlk 3.5 saniye sabit, sonu tamamen bozuk.
+
+#### Klip 21 (`21.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Şiddetli ve kontrolsüz obje hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Yok.
+* **Kamera Hareketi ve Büyüklüğü:** Kontrolsüz titreme / Sarsıntı.
+* **Sıçrama / Zıplama:** **t=0.62s** (Şiddet: 18.49 - Tüm setteki en yüksek zıplama karesi), **t=1.46s, t=1.62s, t=1.96s, t=2.67s, t=3.21s**.
+* **Morf / Erime / Uzuv Bozulması:** **t=0.6s - 3.5s** arasında karakterin başı ve ellerinin saniyede 3 kez şekil değiştirerek tanınmaz hale gelmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 40.18).
+
+#### Klip 22 (`22.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Şiddetli kamera kayması ve tüm sahne.
+* **Donuk/Sabit Kalan Öğeler:** Yok.
+* **Kamera Hareketi ve Büyüklüğü:** Aşırı hızlı sağa pan (Max motion: 15.57).
+* **Sıçrama / Zıplama:** Yok (Sürekli aşırı yüksek kayma).
+* **Morf / Erime / Uzuv Bozulması:** **t=1.0s - 5.0s** boyunca yüksek kamera hızından dolayı tüm figürlerin piksel uzaması ve jöleleşmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 58.61).
+
+#### Klip 23 (`23.mp4`, Süre: 8.04s)
+* **Hareket Eden Öğeler:** Karakter hareketi.
+* **Donuk/Sabit Kalan Öğeler:** **t=5.5s - 6.0s** ve **t=7.5s - 8.04s** arası donma.
+* **Kamera Hareketi ve Büyüklüğü:** Orta şiddette kayma.
+* **Sıçrama / Zıplama:** **t=1.83s - 1.92s** ve **t=3.5s - 3.71s** arasında ani kare kopmaları (Şiddet: 14.30).
+* **Morf / Erime / Uzuv Bozulması:** **t=3.5s** sıçraması sırasında karakterin omuz ve boyun bağlantısının kopması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 52.94).
+
+#### Klip 24 (`24.mp4`, Süre: 8.04s)
+* **Hareket Eden Öğeler:** Çok hafif arka plan süzülmesi.
+* **Donuk/Sabit Kalan Öğeler:** Ön plandaki karakter tamamen sabit (0.5s-1.0s ve 7.0s-8.0s donuk).
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=4.0s - 5.5s** arasında göz kapağı dokusunun alt kirpik bölgesine sızması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 57.41).
+
+#### Klip 25 (`25.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Sahnedeki figürlerin hızlı yer değiştirmesi.
+* **Donuk/Sabit Kalan Öğeler:** Yok (Ort motion: 7.89).
+* **Kamera Hareketi ve Büyüklüğü:** Hızlı zoom ve tilt.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.5s - 4.2s** arasında koşan/hareket eden figürün bacaklarının ve kollarının sıvımsı izler bırakarak silinmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 59.55).
+
+#### Klip 26 (`26.mp4`, Süre: 5.04s)
+* **Hareket Eden Öğeler:** Karakterin üst vücut hareketi.
+* **Donuk/Sabit Kalan Öğeler:** **t=4.0s - 5.04s** arası donuk.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş pan.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.0s - 3.5s** arasında kıyafet yaka çizgisinin ten içine eriyerek girmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 65.74 - Tüm setteki en yüksek ilk-son kare deformasyonu).
+
+#### Klip 27 (`27.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Yumuşak yaprak hareketleri ve kararlı mikro ifade.
+* **Donuk/Sabit Kalan Öğeler:** Beden kararlı.
+* **Kamera Hareketi ve Büyüklüğü:** Çok yavaş kararlı zoom.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** Yok.
+* **Son Kare - İlk Kare Farkı:** Minimal (Piksel fark değeri: 42.69 - Kararlı ölçeklenme kaynaklı).
+
+#### Klip 28 (`28.mp4`, Süre: 7.04s)
+* **Hareket Eden Öğeler:** Ortam ışığı ve hafif rüzgar etkisi.
+* **Donuk/Sabit Kalan Öğeler:** Karakter duruşu sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş kararlı kayma.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** Yok.
+* **Son Kare - İlk Kare Farkı:** Düşük (Piksel fark değeri: 32.13).
+
+#### Klip 29 (`29.mp4`, Süre: 9.04s)
+* **Hareket Eden Öğeler:** t=0s - 7s arası mikro hareket.
+* **Donuk/Sabit Kalan Öğeler:** **t=7.0s - 9.04s** arası video tamamen dondurulmuş.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=3.5s - 5.0s** arasında arka plandaki gölgenin karakterin omuz dokusuna kaynaması.
+* **Son Kare - İlk Kare Farkı:** Düşük (Piksel fark değeri: 27.21).
+
+#### Klip 30 (`30.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Karakterin başını kaldırması.
+* **Donuk/Sabit Kalan Öğeler:** Gövde sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş zoom.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.2s - 3.8s** arasında çene hattı yükselirken alt çene piksellerinin geride uzayarak erimesi.
+* **Son Kare - İlk Kare Farkı:** Düşük-Orta (Piksel fark değeri: 30.05).
+
+#### Klip 31 (`31.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Karakterin el ve kol hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Arka plan sabit.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=1.8s - 3.5s** arasında el parmaklarının hareket ederken birbirine eriyip tek bir kütleye dönüşmesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 51.77).
+
+#### Klip 32 (`32.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Tüm beden dönme hareketi.
+* **Donuk/Sabit Kalan Öğeler:** Yok.
+* **Kamera Hareketi ve Büyüklüğü:** Yavaş pan.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.0s - 4.2s** arasında dönme esnasında yüz simetrisinin kaybolması, gözlerin farklı yönlere erimesi.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 44.83).
+
+#### Klip 33 (`33.mp4`, Süre: 8.04s)
+* **Hareket Eden Öğeler:** t=1.0s - 5.5s arası mikro hareket.
+* **Donuk/Sabit Kalan Öğeler:** **t=0.0s - 1.0s** ve **t=5.5s - 8.04s** arası video tamamen dondurulmuş.
+* **Kamera Hareketi ve Büyüklüğü:** Statik.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** **t=2.5s - 4.0s** arasında göz kapağı haritasının eriyerek yanak bölgesine kayması.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 39.71).
+
+#### Klip 34 (`34.mp4`, Süre: 6.04s)
+* **Hareket Eden Öğeler:** Karakterin doğal nefes alma hareketi ve ortam ışığı.
+* **Donuk/Sabit Kalan Öğeler:** Beden anatomisi korunmuş.
+* **Kamera Hareketi ve Büyüklüğü:** Sabit kararlı açı.
+* **Sıçrama / Zıplama:** Yok.
+* **Morf / Erime / Uzuv Bozulması:** Yok.
+* **Son Kare - İlk Kare Farkı:** Evet (Piksel fark değeri: 40.05 - Doğal hareket kaynaklı).
+
+---
+
+### 2. TÜM SETTE EN YAYGIN TEK KUSUR
+
+* **Kusur Tanımı:** **"Statik/Donuk İskelet Üzerinde Yüz ve Uzuvların Erimesi / Plastikleşmesi (Anatomik Erime & Donukluk)"**
+  * Gövde ve ana uzuvlar tamamen heykel gibi donuk kalırken, hareket ettirilmeye çalışılan yüz organları (göz, çene, dudak) veya eller sıvı gibi erimekte, piksel akması yapmakta ve deforme olmaktadır.
+* **Toplam Sayısı:** 34 klibin **26 tanesinde** (%76.4) bu kusur birebir tespit edilmiştir.
+* **3 Örnek Klip:**
+  1. **Klip 6:** t=0.9s - 2.2s arasında yüzün kemik yapısı eriyerek plastik gibi deforme olmakta ve başka bir figüre dönüşmektedir.
+  2. **Klip 17:** t=2.0s - 5.1s arasında yürüme esnasında bacaklar birbirinin içinden geçmekte ve ayak tabanları zeminde sıvı gibi erimektedir.
+  3. **Klip 21:** t=0.6s - 3.5s arasında eller ve baş saniyede birkaç kez eriyip yeniden şekillenmektedir.
+
+---
+
+### 3. KUSURLARIN ZAMAN DAĞILIMI (5 SANİYE ÜZERİNDEN)
+
+34 klip genelindeki toplam 89 belirgin kusur/anomali noktasının zaman dilimlerine göre dağılımı:
+
+| Zaman Dilimi | Kusur Sayısı | Oran (%) | Karakteristik Davranış |
+| :--- | :--- | :--- | :--- |
+| **İlk 1 Saniye (0.0s - 1.0s)** | 28 | %31.5 | Tam donma (freeze), başlatma stuteri, ivmelenme sıçraması (Klip 2, 3, 4, 10, 14, 20, 21, 33). |
+| **Orta Kısım (1.0s - 4.0s)** | 48 | %53.9 | Plastik erime, uzuv kopyalanması, yüz jöleleşmesi ve karesel zıplamalar (Klip 5, 6, 11, 15, 17, 18, 21, 23, 25, 31, 32). |
+| **Son Kısım (4.0s - 5.0s+)** | 13 | %14.6 | Doku çözünmesi, son kare donması (freeze padding) ve kadraj dışına erime (Klip 2, 5, 13, 19, 24, 26, 29). |
+
+---
+
+### 4. GERÇEKTE İYİ / KUSURSUZ OLAN KLİPLER
+
+34 klip arasından görsel ve teknik olarak kusursuz/kullanılabilir seviyede olan **3 adet klip** bulunmaktadır:
+
+1. **Klip 9 (`9.mp4`)**
+2. **Klip 27 (`27.mp4`)**
+3. **Klip 34 (`34.mp4`)**
+
+#### Bu Kliplerin Diğerlerinden Farkı:
+* **Karmaşık Organ Hareketi Yok:** Bu kliplerde el/kol kaldırma, hızlı yürüme veya büyük açı değişikliği içeren kompleks insan hareketleri denenmemiştir.
+* **Mikro Ve Doğal Hareket:** Hareket yalnızca yaprakların süzülmesi, hafif ortam ışığı değişimi ve doğal nefes alma stili mikro-jestlerle sınırlı tutulmuştur.
+* **Kamera Kararlılığı:** Kamera ya tamamen sabittir ya da çok düşük genlikli (smooth) zoom yapmaktadır. Bu sayede piksel erimesi ve frekans atlaması gerçekleşmemiştir.
+
+---
+
+### 5. BAŞLANGIÇ KARESİ (START FRAME) KARŞILAŞTIRMASI
+
+* **Analiz Sonucu:** Hasar, başlangıç karesinin zayıflığından **kaynaklanmamaktadır**. Başlangıç karelerinin (t=0.0s) %90'ından fazlası yüksek çözünürlüklü, net ve hatları belirgin görsellerdir. Bozulma tamamen **motorun motion generation (hareket üretimi) aşamasında piksel tutarlılığını kaybetmesinden** kaynaklanmaktadır.
+
+#### Kanıtlı Örnekler (Temiz Başlangıç -> Bozuk İlerleme):
+* **Klip 5:**
+  * `t=0.0s`: Başlangıç karesinde el ve parmak anatomi çizgileri tamamen net ve kusursuzdur.
+  * `t=1.46s`: Hareket başladığı anda parmaklar eriyerek 6 adet bükülmüş kemiksiz yapıya dönüşür.
+* **Klip 6:**
+  * `t=0.0s`: Yüz hatları, göz bebekleri ve cilt dokusu pürüzsüz ve net bir portredir.
+  * `t=1.25s`: Hareket jenerasyonu esnasında yüz tamamen erir, burun ve çene yapısı kaybolur.
+* **Klip 17:**
+  * `t=0.0s`: Karakterin bacak ve ayakkabı yapısı zeminde net şekilde durmaktadır.
+  * `t=3.0s`: Yürüme hareketi başlatıldığında bacaklar saydamlaşıp birbirinin içinden geçer.
+
+---
+
+### 6. ZAMAN UZATMA / YAVAŞLATMA / KARE TEKRARLAMA (RETİMİNG STRETCH) KANITLARI
+
+Klipler üzerinde yapılan kare seviyesindeki incelemede, **ses/anlatım süresine uydurmak amacıyla üretilmiş kısa videoların yapay olarak uzatıldığına dair kesin kanıtlar** bulunmuştur:
+
+1. **Son Kare Dondurma (Freeze Frame Padding):**
+   * **Klip 13:** Üretilen hareket t=4.0s'de bitmekte, kalan **t=4.0s - 6.04s (40 kare)** boyunca tam anlamıyla aynı kare tekrar edilerek video uzatılmıştır.
+   * **Klip 2:** **t=5.0s - 7.04s (49 kare)** boyunca sıfır piksel değişimi ile son kare sabit tutulmuştur.
+   * **Klip 19:** **t=5.0s - 6.04s** arası son kare dondurulmuştur.
+   * **Klip 33:** **t=0.0s - 1.0s (24 kare)** baş kısımda, **t=5.5s - 8.04s (61 kare)** son kısımda video tamamen dondurularak 8 saniyeye tamamlanmıştır.
+
+2. **Kare Tekrarlamalı Zaman Uzatma (Frame Duplication / Cadence Stutter):**
+   * **Klip 5:** t=3.5s - 5.04s arasında aynı karelerin 2'şer ve 3'er kez üst üste tekrarlandığı (A-A-B-B-C-C dizilimi) tespit edilmiştir. Bu durum videonun oynatıcıda kekelemesine (stutter) yol açmaktadır.
+   * **Klip 20:** 10 saniyelik klipte **t=0.0s - 3.5s arası (84 kare)** hiçbir hareket gerçekleşmeyip ilk kare dondurulmuş, hareket t=3.5s'ten sonra başlatılmıştır.
+
+---
+
+### ÖZET TABLO (34 KLİP BÜTÜNÜ)
+
+| Metrik / Parametre | Değer / Sayı |
+| :--- | :--- |
+| Toplam İncelenen Klip Sayısı | **34 / 34 (%100 - Atlanan yok)** |
+| Reddedilme Derecesindeki Kusurlu Klip Sayısı | **31 / 34 (%91.2)** |
+| Kullanılabilir / Başarılı Klip Sayısı | **3 / 34 (%8.8)** |
+| En Yaygın Kusur | **Anatomik Erime & Donuk Gövde (26 klip)** |
+| En Yüksek Kusur Yoğunlaşma Dilimi | **1.0s - 4.0s (%53.9)** |
+| Zaman Uzatma / Donmuş Kare İçeren Klip Sayısı | **12 klip (%35.3)** |

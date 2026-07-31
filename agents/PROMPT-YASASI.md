@@ -596,6 +596,16 @@ Mami'nin akışını bozuyor; o klip klip kopyalıyor.
   focus YOK. Mesafe klip boyunca sabit kalır; kilit hem yaklaşmayı hem okunur hâle gelmeyi
   ayrı ayrı yasaklar. Karedeki yazı bozuksa bu kilit onu **kurtarır** (Mira K22 böyle
   kullanıldı: "TANAN" yazıyor, kamera hiç yaklaşmadı, kare kabul edildi).
+- 🔴 **YAZIYI TAŞIYAN NESNE DE KIPIRDAMAZ** (2026-07-31, klip karşılaştırmasıyla ölçüldü).
+  Kamerayı uzak tutmak yetmiyor: **taşıyıcı hareket ettiği an harf eriyor.** Kanıt — kolideki
+  `KİTAP` kutu çökerken eriyor (`3.6s`), `GİDA` harfleri titreyip bozuluyor (`1.0s`). Buna
+  karşılık altın standartta `REJENERASYON` ve `HİDRA` klip boyunca formunu ve font netliğini
+  koruyor, çünkü taşıyıcıları hiç oynamıyor. **Kural: yazı taşıyan nesne motion'da sabit
+  kütledir** — devrilmez, çökmez, açılmaz, elden ele geçmez, rüzgârda kıpırdamaz.
+
+**Sıçramanın zamanı da ölçüldü:** kötü kliplerde eklem sıçramaları `1.6s`-`3.5s` arasında
+kümeleniyor, yani klibin ortasında. İyi kümenin yedi klibinde sıçrama **sıfır**. Sıçrama
+rastgele değil, **prompt'un o ana bir şey sıkıştırmasından** doğuyor.
 
 ### 3a. KLİPTE BİR ŞEY DEĞİŞMELİ — motion'ın §11'i
 
@@ -613,29 +623,39 @@ hiçbir yay taşımaz. Bağlayıcı hale getirildi:
    **"varıyor"** değişimdir. "Bakıyor" değil, **"gördüğü an yüzü değişiyor"**. Klip bir
    durumdan başlar, başka bir durumda biter; prompt ikisini de adlandırır.
 
-   🔴 **AMA DEĞİŞİM GÖVDEDE OLMAZ — bu madde bir kez yanlış okundu ve klip bok gibi çıktı**
-   (Mami, 2026-07-30, K01). Ölçüm, altın standardın üç kanon dosyasında aynı desen:
-   **büyük değişim IŞIĞA ya da NESNEYE verilir, insanda değişen tek şey bakış, kaş, göz
-   kapağı ya da küçük bir baş hareketidir.**
-   · `08.txt` → ışık bir kez şişip geri çekilir · *"his eyes lift off the light"*
-   · `33.txt` → dört ışık eşitlenir · *"his gaze travels along the row… one small closed-lip nod"*
-   · `21.txt` → ışık kelime boyunca ilerler · *"his gaze rises, his eyes widen, his brows lift"*
+   🔴 **GÖVDE: TEK SÜREKLİ DOĞAL JEST — ne donar, ne yeniden eklemlenir.**
+   > Bu madde iki kez yanlış yazıldı, ikisi de kliple ölçüldü. Önce *"değişim gövdede olmaz,
+   > insanda yalnız kaş ve bakış oynar"* yazıldı; sonra *"iki dönüşüm aynı karede olmaz,
+   > gövde oynarsa kamera durur"* eklendi. **İkisi de yanlıştı ve 54 klibi ölü yaptı.**
+   > Altın standart ikisini de çiğniyor: `35.txt` Efe başını çevirirken kamera masanın
+   > çevresinde ark çiziyor · `41.txt` yavru dönüp annesinin böğrüne gömülürken kamera tüy
+   > hizasında kayıyor · `12.txt` parmaklar düğmeyi çevirirken dolly masa boyunca hızlanıyor.
+   > **Kamera ve gövde aynı anda oynar.**
+
+   Gövde **tek sürekli doğal jest** yapar: baş çevirme, çeneyi indirme, esneyip başını gömme,
+   çeken kolun gerilip gevşemesi, oturduğu yerde öne yaslanma, elin bir yüzeye yerleşmesi.
+
+   **İki uçtan biri kadar öteki de kusurdur:**
+   · **Dondurmak** — 5 saniye boyunca yalnız kaş oynatan klipte motor boşluğu kendi uyduruyor.
+   · **Yeniden eklemlendirmek** — motorun gövdeyi baştan kurmak zorunda kalması.
+
+   🔴 **KLİPLE ÖLÇÜLDÜ (2026-07-31, 34 klip izlendi).** Dondurmanın bedeli tahmin değil:
+   **34 klibin 26'sında (%76) aynı kusur — "donuk iskelet üzerinde eriyen yüz ve eller."**
+   Gövde heykel gibi kıpırdamıyor, buna karşılık göz, çene, dudak ve eller sıvı gibi akıyor.
+   Klip 6: yüz `0.0s`'de pürüzsüz, `1.25s`'de burun ve çene yok. Klip 5: parmaklar `0.0s`'de
+   kusursuz, `1.46s`'de altı kemiksiz yapı. **Başlangıç karelerinin %90'ından fazlası temizdi**
+   — hasar karede değil, hareket isteğinde. *"Ruh yok"* ile *"aptalca ani hareket"* aynı
+   kusurun iki yüzüdür: motora bir şey yapması yasaklanınca yapabildiği tek şeyi yapıyor.
 
    **YASAK — 5 saniyede istenmez:** oturmaktan doğrulmak · ayağa kalkmak · giysi giymek ·
    el-ayak temaslı ince motor iş (çorap çekmek, bağcık bağlamak) · yürüyüşe başlamak ·
-   bir nesneyi alıp başka yere koymak. Bunlar beat değil **animasyondur** ve i2v gövdeyi
-   yeniden eklemlendirmeye zorlandığında morph eder.
-   🔴 **DÜZELTME (2026-07-30, ölçümle çürütüldü).** Buraya bir kez *"iki dönüşüm aynı karede
-   olmaz: gövde değişiyorsa kamera durur"* yazıldı. **YANLIŞTI ve 54 klibi ölü yaptı.** Altın
-   standart tam tersini yapıyor: `35.txt` Efe başını çevirirken kamera masanın çevresinde ark
-   çiziyor · `41.txt` yavru dönüp annesinin böğrüne gömülürken kamera tüy hizasında kayıyor ·
-   `12.txt` parmaklar düğmeyi çevirirken dolly masa boyunca hızlanıyor. Kamera ve gövde
-   **aynı anda oynar** — altın standartta zaten böyle.
-   **Gerçek sınır şudur:** gövde **TEK sürekli doğal jest** yapar (baş çevirme, çeneyi indirme,
-   esneyip başını gömme, çeken kolun gerilip gevşemesi). Yasak olan hareket değil
-   **yeniden eklemlendirmedir** — motorun gövdeyi baştan kurmak zorunda kalması.
-   Gövdeyi tümden dondurmak da kusurdur: 5 saniye boyunca yalnız kaş oynayan klipte motor
-   boşluğu kendi uyduruyor ve **"aptalca ani hareket"** oradan doğuyor.
+   bir nesneyi alıp başka yere koymak · **nesnenin el değiştirmesi.** Bunlar beat değil
+   **animasyondur.** El değiştirme gerekiyorsa tek klipte yapılmaz — başlangıç+bitiş karesi
+   kullanılır.
+
+   **TEMİZ ÇIKAN KLİPLERİN ORTAK YANI** (34 klipten 3'ü, ölçüldü): karmaşık uzuv hareketi
+   denenmemiş · hareket mikro jestle sınırlı (yaprak süzülmesi, ışık kayması, nefes) ·
+   kamera ya sabit ya çok düşük genlikli. Reçete budur.
 
    **Negatif bunu kurtarmaz.** Kusur pozitif taraftadır: motora yapamayacağı bir şey
    söylenmiştir. Sahneye özel negatif doğru yazılmış olsa da klip ölür.
