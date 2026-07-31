@@ -4,22 +4,22 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "53/53 start frame yazıldı (6 ajan, sekans başına) · prompt-lint --register=edu KIRMIZI 0/53, sarı 1 (K06 tag'siz, kasıtlı) · kare-özel %83, NEGATIVE kare-özel %100, STYLE tek sürüm 90 kelime · K02↔K49 lens ve ışık cümlesi birebir eş",
-  "nextAction": "Mami 5 referansı bassın (@mira2 → @dara → @bahce → @kaval → @sinif), sonra S1 kareleri",
+  "lastCompleted": "53/53 kare basıldı · numara kayması bulunup onarıldı (17-52 bir yukarı, yedek alındı) · 6 ajan tek geçişte denetledi: 37 temiz + motion (190-215 kelime), 16 revize · K02 motion'ı yazıldı, K49↔K02 kamera kilidi sıfır genlikte",
+  "nextAction": "Mami 16 revizeyi bassın (kritik üçlü: K49 bilek takası ters · K17 kimlik kayması · K12 gövdesiz kol); inen karelere motion yazılacak",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
-    "revize": false,
+    "revize": true,
     "MOTION": false,
     "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-31T14:10:07.756Z",
+  "updatedAt": "2026-07-31T14:53:16.849Z",
   "updatedBy": "claude",
-  "baseCommit": "93fb026"
+  "baseCommit": "c5be52c"
 }
