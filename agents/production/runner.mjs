@@ -138,8 +138,12 @@ function prepareProject(commandFile, rawName) {
   const projectsRoot = resolve(argValue('--projects-dir')
     ?? join(repoRoot ? join(repoRoot, 'agents') : HERE, 'MAMILAS-PROJELER'));
   const projectDir = resolve(projectsRoot, identity.folder);
-  const expectedPrefix = `${projectsRoot}${sep}`.toLowerCase();
-  if (!`${projectDir}${sep}`.toLowerCase().startsWith(expectedPrefix)) {
+  // TÜRKÇE KLASÖR ADI TUZAĞI: macOS diskten NFD ayrıştırılmış yol döndürür (ş = s + U+0327),
+  // resolve() ise NFC birleştirir. Karşılaştırma normalize edilmezse Ş/Ç/Ğ/İ içeren her proje
+  // adı "izin verilen kökün dışına çıkamaz" hatası alır — bizim TÜM proje adlarımız Türkçe.
+  const nfc = (s) => s.normalize('NFC').toLowerCase();
+  const expectedPrefix = nfc(`${projectsRoot}${sep}`);
+  if (!nfc(`${projectDir}${sep}`).startsWith(expectedPrefix)) {
     throw new Error('Proje klasörü izin verilen kökün dışına çıkamaz.');
   }
   const manifestPath = join(projectDir, 'PROJECT.json');

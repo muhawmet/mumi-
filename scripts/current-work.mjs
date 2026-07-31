@@ -29,7 +29,7 @@
 // Türkçe klasör adları NFC normalize edilerek karşılaştırılır (macOS NFD diskte yaşar).
 
 import {
-  readFileSync, writeFileSync, existsSync, readdirSync, renameSync, statSync,
+  readFileSync, writeFileSync, existsSync, readdirSync, renameSync, statSync, copyFileSync, unlinkSync,
 } from 'node:fs';
 import { join, resolve, dirname, sep } from 'node:path';
 import { homedir } from 'node:os';
@@ -358,7 +358,21 @@ export function writeState(root, state) {
   const abs = toPlatformPath(root, STATE_REL);
   const tmp = `${abs}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(ordered, null, 2)}\n`, 'utf8'); // LF, BOM yok
-  renameSync(tmp, abs);
+  // WINDOWS EBUSY: dosya bir editörde/IDE watcher'da açıksa rename kilide takılıp betiği
+  // çökertiyor ve durum kaydı GÜNCELLENMİYOR — sonraki oturum bayat kayıtla açılıyor.
+  // Birincil ortam Windows; üç deneme, sonra kopyayla yaz.
+  let renamed = false;
+  for (let deneme = 0; deneme < 3 && !renamed; deneme++) {
+    try { renameSync(tmp, abs); renamed = true; }
+    catch (e) {
+      if (deneme === 2) {
+        try { copyFileSync(tmp, abs); unlinkSync(tmp); renamed = true; }
+        catch { throw e; }
+      } else {
+        const bekle = Date.now() + 50; while (Date.now() < bekle) { /* 50ms */ }
+      }
+    }
+  }
   if (ordered.baseCommit === '?') {
     process.stdout.write('[durum] uyarı: git bulunamadı ya da repo değil — baseCommit "?" yazıldı.\n');
   }

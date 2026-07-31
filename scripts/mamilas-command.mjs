@@ -674,12 +674,20 @@ async function parseImageDimensions(bytes) {
     const decoder = sharp(bytes, { failOn: 'error', limitInputPixels: 100_000_000 });
     const metadata = await decoder.metadata();
     if (!['png', 'jpeg', 'webp'].includes(metadata.format)) throw new Error('desteklenmeyen format');
-    // metadata() only parses headers. raw().toBuffer() forces a complete pixel decode.
-    const { info } = await decoder.clone().rotate().raw().toBuffer({ resolveWithObject: true });
-    if (!Number.isInteger(info.width) || info.width <= 0 || !Number.isInteger(info.height) || info.height <= 0) {
+    // metadata() yalnız başlığı okur — bozuk gövdeli bir dosya oradan geçer. O yüzden tam
+    // decode ZORUNLU. Ama `raw().toBuffer()` ham RGBA'yı belleğe açıyordu: 4K kare başına
+    // ~33 MB, 57 karelik bir projede birkaç GB ve Node OOM. Aynı garantiyi veren ucuz yol:
+    // çıktıyı 8 piksele indir — libvips girdiyi yine baştan sona decode eder (bozuksa
+    // burada patlar), fakat elde tutulan tampon birkaç yüz bayt kalır.
+    await decoder.clone().rotate().resize({ width: 8 }).toBuffer();
+    // Boyut, döndürme sonrası mantıksal boyuttur; EXIF orientation 5-8'de en/boy yer değişir.
+    const rotated = metadata.orientation !== undefined && metadata.orientation >= 5;
+    const width = rotated ? metadata.height : metadata.width;
+    const height = rotated ? metadata.width : metadata.height;
+    if (!Number.isInteger(width) || width <= 0 || !Number.isInteger(height) || height <= 0) {
       throw new Error('pixel dimensions geçersiz');
     }
-    return { width: info.width, height: info.height, format: metadata.format };
+    return { width, height, format: metadata.format };
   } catch (error) {
     throw new Error(`frame tam decode edilebilir PNG/JPEG/WebP değil: ${error instanceof Error ? error.message : String(error)}`);
   }
