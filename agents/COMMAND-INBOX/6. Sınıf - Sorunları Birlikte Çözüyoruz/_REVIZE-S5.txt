@@ -1,0 +1,52 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — REVİZE KARNESİ
+BLOK: S5 · KATILIM VE DEĞERLENDİRME · K44–K51 (8 kare)
+Kıstas: SAHNEYLE UYMUYOR · BOZUK YAZI · YANLIŞ ŞEY. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K44 · DOKUNMA
+
+K45 · REVİZE
+  kusur: BOZUK YAZI — A4'ün gövde metni okunur Latin "Lorem ipsum dolor sit amet…" olarak
+         çözünüyor, ön plandaki sıranın üstüne de İngilizce "initial" kazınmış (başlık
+         "DİLEKÇE" harf harf doğru: D-İ-L-E-K-Ç-E, noktalı İ + çengelli Ç yerinde).
+  düzeltme: Replace the four lines of Latin "Lorem ipsum" body text under the DİLEKÇE heading
+            with soft blue ballpoint squiggles that never resolve into letters, and erase the
+            carved English word "initial" from the wooden desk in the lower right foreground,
+            keeping the handwritten title DİLEKÇE exactly as it is.
+
+K46 · DOKUNMA
+
+K47 · BAŞTAN
+  kusur: Künye direğin DİBİNDE — ayakta duran birinin diz hizasında — ve kamera ayakta
+         yetişkin göz hizasında; Derin künyeyi okumak için sandalyeden neredeyse yatay
+         eğilmek zorunda kalmış. Karenin fikri (sandalye kısıt değil DOĞRU yükseklik,
+         künyeyi okuyan Derin) ters dönmüş: sandalye kısıt gibi okunuyor. Künye yüksekliği,
+         Derin'in duruşu ve kamera yüksekliği birbirine bağlı üç şey — hiçbiri tek yamayla
+         düzelmez. (Not: "BELEDİYE" + "214" harf harf DOĞRU, telefonda ekran/arayüz YOK —
+         yeni prompt'ta bu ikisi korunmalı.)
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K48 · DOKUNMA
+
+K49 · REVİZE
+  kusur: BOZUK YAZI — defter sayfasındaki el yazısı kelimelere çözünüyor; 2. maddede
+         İngilizce "plastic" okunuyor, diğerleri uydurma kelime ("Mayan", "fadan", "Hooda").
+         Yasa "hiçbir kelime çözünmüyor" diyordu. (Kapüşon/göz kontrolü TEMİZ: Efe'nin iki
+         gözü de tam ışıkta, gölgede değil; tek sert kalem çizgisi yalnız TEK maddenin
+         üstünden geçiyor.)
+  düzeltme: Replace the handwritten words on the open notebook page with unreadable graphite
+            squiggles that never resolve into any word — in particular remove the English word
+            "plastic" — while keeping the numerals 1 to 5 and the single hard pencil
+            strike-through across item 4 exactly as they are.
+
+K50 · REVİZE
+  kusur: SAHNEYLE UYMUYOR — VO "azalmıştı" derken kare tersini gösteriyor: çuval adam
+         boyunda, şişkin ve dibi tamamen kaldırıma dayalı, görevlinin kolu dümdüz aşağıda;
+         yük hafif değil, kaldırılmıyor bile. ("PLASTİK" harf harf doğru, tulumda yazı yok,
+         boşalmış soluk dikdörtgen yerinde — bunlar kalsın.)
+  düzeltme: Replace the huge bulging sack resting on the pavement with a small, loose,
+            less-than-half-full sack lifted clear of the ground by the worker's single gloved
+            hand with the elbow bent and the sack raised to waist height so the load reads
+            light, and fill the freed area behind it with plain empty sidewalk.
+
+K51 · DOKUNMA

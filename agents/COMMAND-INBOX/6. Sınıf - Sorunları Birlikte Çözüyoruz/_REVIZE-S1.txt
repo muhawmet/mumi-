@@ -1,0 +1,26 @@
+S1 — KARE DENETİMİ · K01-K09 (K05 elde yok, atlandı)
+Kıstas: SAHNEYLE UYMUYOR · BOZUK YAZI · YANLIŞ ŞEY. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K01 · DOKUNMA
+K02 · REVİZE
+  kusur: YANLIŞ ŞEY — sürücü karede İKİ KEZ var: dükkân kapısında ekmek poşeti+anahtarla duran ~45 yaş adamın aynısı direksiyonun başında oturuyor; ayrıca içinde adam oturan araba "park etmiş engel" değil "az sonra gidecek araç" okunuyor.
+  düzeltme: Remove the man sitting behind the steering wheel; leave the driver's seat completely empty with the seat and headrest visible through the side window, keep everything else identical.
+K03 · REVİZE
+  kusur: YANLIŞ ŞEY (cast) — Efe burada 11-12 değil ~7 yaş okunuyor: baş/gövde oranı büyümüş, yüz yuvarlaklaşmış, uzuvlar tombullaşmış; K01'deki ergen-öncesi oran kaybolmuş.
+  düzeltme: Age the boy to a 11-12 year old sixth grader: reduce the head-to-body ratio, lengthen the face and limbs, slim the cheeks and jaw, keep his pose, clothing, position and the whole background unchanged.
+K04 · REVİZE
+  kusur: YANLIŞ ŞEY — Derin'in yüzü 11-12 yaş kız değil geç-ergen/yetişkin okunuyor (uzamış orta yüz, belirgin çene) ve kaşını ile yanağını çapraz kesen iki başıboş saç teli yüzde çizik/karalama gibi duruyor.
+  düzeltme: Rejuvenate the girl's face to a 11-12 year old sixth grader with a shorter rounder face and larger eyes, and delete the two stray hair strands that cross her eyebrow and cheek so the skin is clean.
+K06 · BAŞTAN
+  kusur: Üç kusur aynı anda ve hepsi kadrajın kurgusundan doğuyor — Efe kaldırımda DEĞİL arabanın İÇİNDE oturuyor (önünde gösterge paneli ve iki kalorifer ızgarası, yanında A-direği), yan ayna bir yansıma değil üst kenarına düz beyaz boş bant yapışmış "inset panel" olmuş, aynadaki arabanın gövdesi yarı mavi yarı vişne; hiçbiri tek bir bölgesel edit ile onarılmaz.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+K07 · DOKUNMA
+  not: "DURAK" plakası harf harf doğru — D-U-R-A-K, beş harf, soldan sağa, aynalanmamış, mavi emaye üstüne beyaz harf, köşede emaye çatlağı; fazla/eksik harf ve ikinci kelime yok.
+K08 · REVİZE
+  kusur: YANLIŞ ŞEY — açık camdaki ~40 yaş sürücüde tek koldan İKİ el çıkıyor: kolun ucundaki el kapının dışında sarkıyor, aynı ön kolun ortasından ikinci bir el bitip direksiyonu kavrıyor.
+  düzeltme: Fix the driver's anatomy: give him one left arm resting on the window sill with a single hand hanging outside, and a separate right arm reaching in to the steering wheel — remove the extra hand growing out of the forearm.
+K09 · DOKUNMA
+
+=========================================================================
+SONUÇ: 3 DOKUNMA (K01 K07 K09) · 4 REVİZE (K02 K03 K04 K08) · 1 BAŞTAN (K06)

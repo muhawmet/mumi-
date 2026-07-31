@@ -1,0 +1,103 @@
+S3 · NEDEN-SONUÇ VE ETKİLENENLER · K23–K33 — KARE DENETİMİ
+Kıstas: (1) sahneyle uymuyor (2) bozuk yazı (3) yanlış şey. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K23 · DOKUNMA
+  YAZI: "YAĞMUR SUYU" harf harf sayıldı — Y-A-Ğ-M-U-R S-U-Y-U, 10 harf, Ğ şapkalı,
+  aynalanmamış, dökümde kabartma, boyasız. Son U taş bordürün altında yarım kalıyor
+  (tarifte "poşetin altında yarım" deniyordu; okunurluk bozulmadı).
+  Poşet ızgaranın üstünde, Efe çömelmiş, sol avuç ıslak taşta, sağ el poşetin köşesinde.
+  ~65 başörtülü kadın arkada iki poşetle duruyor.
+
+K24 · REVİZE
+  kusur: Yanlış şey — "KÖMÜR" karede İKİ kez yazıyor; devrilen çuvalın yanında sol alttaki
+  istif çuvalının yüzü de kameraya dönük ve aynı kelimeyi basıyor (tek yazı yüzeyi kırıldı;
+  Kling kamerayı çevirince ikisinden biri mutlaka bozulur).
+  düzeltme: Remove all printed lettering from the stacked burlap sacks in the lower-left pile,
+  leaving their jute faces plain and unmarked, and keep the word KÖMÜR only on the sack the
+  man is tipping.
+  (Not: devrilen çuvaldaki KÖMÜR doğru — K-Ö-M-Ü-R, Ö ve Ü iki noktalı, aynalanmamış.
+  Kömür akışı kuru ve siyah, tutuşmamış. Egzoz borusuna bağlı, beyaz püskül değil.)
+
+K25 · REVİZE
+  kusur: Sahneyle uymuyor — VO "kirli hava sağlığı etkiler" diyor ama kızın elindeki şeffaf
+  hazne SU BARDAĞINA dönmüş ve kız su içiyor; "yavaş nefes" gövdesi karede yok, kare
+  susamış çocuk okunuyor (tutuş, kapalı gözler, baş açısı zaten doğru — yalnız nesne yanlış).
+  düzeltme: Replace the clear drinking cup at the girl's lips with a clear plastic asthma
+  spacer chamber sealed by a white mouthpiece at her mouth, remove the water inside it, and
+  keep her hands, closed eyes and head angle exactly as they are.
+
+K26 · REVİZE
+  kusur: Yanlış cast — Efe'nin yüzü bu karede 14-15 yaş okunuyor (kalın düz yetişkin kaşları,
+  uzamış çene, incelmiş yanak); aynı çocuk K30'da 11-12 yaşında ve tarif 11-12 diyor.
+  düzeltme: Make the boy's face read as an 11-year-old sixth grader — rounder cheeks and
+  jaw, softer and thinner eyebrows, slightly larger eyes — without changing his pose, hair,
+  clothing or the framing.
+  (Parmaklığın ötesindeki beyaz boşluk temiz: tepe/çatı/direk/mavi gök çözünmemiş — yokluk
+  korunmuş. Alt boruya basan ayak, boruyu kancalayan iki el, topla bekleyen bordo kazaklı
+  çocuğun Efe'ye bakışı doğru.)
+
+K27 · REVİZE
+  kusur: Yanlış şey — kızın kolunun boyunca uzanan ve tam bileğinde biten SİYAH ÇUBUK
+  (sahipsiz, parmaklık değil, kolu deliyor gibi duruyor) + boş beyaz alanın ortasına
+  yapıştırılmış düz yaprak; ikisi de "gösterilecek hiçbir şey yok" karesini dolduruyor.
+  düzeltme: Erase the black rod that runs across the girl's green sleeve and ends at her
+  wrist, and erase the floating leaf in the empty white sky, leaving both areas as clean
+  featureless pale void.
+  (Yokluğun geri kalanı doğru: parmak boş alanı gösteriyor, tepe/çatı/kuş/tel çözünmemiş,
+  üst boru tek ufuk olarak duruyor, Efe kolları borunun üstünde çapraz.)
+
+K28 · BAŞTAN
+  kusur: Karenin tek argümanı olan "bir-beden genişliğindeki yarık" karede YOK — mavi kasa
+  duvarı ile arabanın arası neredeyse kadraj kadar geniş, kadın açık kaldırımda hiçbir şeye
+  tıkanmadan duruyor, genç adam ise yarıktan değil arabanın ötesinden yürüyor ve yüzü
+  kesilmeden tam görünüyor; "aynı engel, farklı bedel" karşılaştırması yamayla kurulamaz
+  çünkü iki kütlenin de yeri değişmeli.
+  (YAZI doğru: "SEBZE" — S-E-B-Z-E, kalıpta kabartma, boyasız, aynalanmamış, tek kelime.)
+
+K29 · BAŞTAN
+  kusur: Kaldırım tıkalı DEĞİL — araba iki tekerini kaldırıma çıkarmamış, yol kenarında
+  duruyor; araba ile duvar arasında "bir karış kanal" yerine üç kişinin rahatça yürüyeceği
+  metrelerce boşluk var, dolayısıyla yaşlı kadın-çocuk-beyaz bastonlu adam üçlüsü
+  "etkilenir" fiilini yapmıyor, sadece duruyor. Engelin geometrisi değişmeden kare kurtulmaz.
+  (Üç gövde doğru kurulmuş: baston dikilmiş yaşlı kadın, kadının elini tutan sarı yağmurluklu
+  çocuk gözü kadının yüzünde, beyaz bastonun ucu lastiği bulmuş — bunlar yeni prompt'ta korunur.)
+
+K30 · BAŞTAN
+  kusur: Kamera EL HALKASI HİZASINDA DEĞİL — kaldırımın üst yüzeyi geniş bir düzlem olarak
+  yukarıdan görünüyor, bordür çizgisi iki çenenin altından değil çocukların AYAK BİLEĞİNDEN
+  geçiyor, ve iki baş aynı seviyede değil (Derin'in başı Efe'nin bir kafa boyu üstünde);
+  kaldırım yine "duvar" değil "basamak" okunuyor — karenin tek fikri ölmüş.
+  Ayrıca ön planda Derin'in tekeri değil, yolda duran İKİNCİ ve BOŞ bir tekerlekli sandalye
+  var (net, bulanık değil) — Derin'in kendi sandalyesi arka planda ayrıca duruyor.
+
+K31 · DOKUNMA
+  YAZI: "EKMEK" — E-K-M-E-K, 5 harf, aynalanmamış, ince poşette tek renk baskı, arkadan
+  somunun kabuğu görünüyor; fırın adı/adres/telefon/ikinci satır YOK.
+  Bebek arabası kaldırımın kenarında, ön teker rampasız bordür taşında takılı; anne iki eli
+  sapta arkasında; bebek iki eli emniyet barında, mercan bere, çıplak ayaklar battaniyeden
+  kurtulmuş. Bebek oyuncak bebek yüzüne düşmemiş.
+
+K32 · REVİZE
+  kusur: Yanlış şey / ikinci yazı yüzeyi — gümüş arabanın ön tamponunda okunaklı AB mavi
+  bantlı plaka "A1S 6X 003" duruyor (hem Anadolu dışı bir işaret, hem el yazması levhanın
+  yanında ikinci bir yazı yüzeyi; kamera hareketinde bozulacak ilk şey o).
+  düzeltme: Delete the number plates from both cars — remove the blue EU band and all
+  characters from the silver car's front plate and from the parked car's plate, leaving plain
+  blank plate panels with no letters, digits or coloured strip.
+  (YAZI doğru: levhada İKİ SATIR — üstte PARK, altta ETMEYİN; 11 harf sayıldı, ONUNCU harf İ
+  ve NOKTASI YERİNDE; üçüncü satır/ok/telefon yok, ikinci levha yok. Adamın bastonunun ucu
+  asfaltta, yolda yürüyor; kadın sürücü birkaç metre geride durmuş.)
+
+K33 · REVİZE
+  kusur: Yanlış şey — Derin'in gösteren işaret parmağı gövdesiz bir çubuk gibi uzamış
+  (diğer parmakların iki katı, uçta eklem yok, ikinci bir parmakla kaynaşmış görünüyor) ve
+  sayfaya basmıyor, üstünde havada duruyor.
+  düzeltme: Redraw the girl's pointing hand with a normal child index finger of natural
+  length and a visible knuckle, its fingertip actually touching and slightly denting the
+  notebook page, with the other three fingers folded into the palm and the thumb resting on them.
+  (YAZI yasası tutuyor: açık sayfada yalnız çocuk el yazısı ritmi var, hiçbir kelime/harf/
+  rakam çözünmüyor. Defter ters çevrilmiş, sayfa Derin'e bakıyor, Efe okumaya çalışmıyor.)
+
+=========================================================================
+SONUÇ: 2 DOKUNMA · 6 REVİZE · 3 BAŞTAN

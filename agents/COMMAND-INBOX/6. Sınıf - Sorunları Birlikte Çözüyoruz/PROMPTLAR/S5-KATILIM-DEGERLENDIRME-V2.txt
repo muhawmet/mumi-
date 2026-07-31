@@ -269,85 +269,78 @@ date field or signature line on any sheet.
 #########################################################################
 ### K47 | VO47
 ### "Bozuk sokak lambasını ilgili birime bildirdiler."
-### yazı: "BELEDİYE" + "214"
+### yazı: "BELEDİYE 214"
 #########################################################################
 
-FİKİR: Bir lambayı bildiremezsin, bir numarayı bildirebilirsin — Derin direğin
-dibindeki künyeyi okuyor, Efe telefonu kulağında o rakamları tekrarlıyor ve
-bildirim tam bu karede yapılıyor.
+FİKİR: Künye tam Derin'in oturur göz hizasındadır — bu kare sandalyeyi kısıt değil, o
+numarayı okuyabilen tek doğru yükseklik yapar; ve kimse bunu söylemek zorunda kalmaz.
 
-PLAN: Baskın geometri kadrajı boydan boya kesen tek dikey kütledir: dökme demir
-direğin oluklu gövdesi, koyu ve neredeyse siyah. Karedeki tek parlak levha o
-gövdenin dibindeki alüminyum künyedir ve tam Derin'in oturma göz hizasındadır —
-sandalye burada bir kısıt değil, DOĞRU YÜKSEKLİKTİR; künyeyi ayakta okuyacak
-kimse yoktur. İkinci hat çapraz gelir ve rakamı taşır: Derin'in parmak ucu →
-Derin'in ağzı → Efe'nin kulağındaki telefon. Lamba güpegündüz yanar ve ışığı
-hiçbir yere düşmez; fener başı üst kenarda kesilir, yani bildirilen şeyin
-kendisi kadrajda tam görünmez.
+PLAN: 🔴 BAŞTAN (ilk basımda fikir tersine döndü: künye direğin dibine, ayakta duranın diz
+hizasına kondu ve kamera yetişkin göz hizasından baktı — Derin künyeyi okumak için sandalyeden
+neredeyse yatay eğildi, sandalye kısıt gibi okundu). Düzeltmenin tamamı **yükseklik**:
+künye yerden bir metre on, yani oturan bir çocuğun gözüyle aynı hizada; kamera da tam o
+hizada. Ayakta duran Efe kadrajda **künyeden yukarıda** kalır ve okumak için o eğilir.
+Baskın geometri, kadrajı dikine bölen dökme demir direk; künye onun üstünde kadrajın tam
+göz hattında duran tek parlak dikdörtgen.
 
 PROMPT:
-High-end theatrical feature-animation 3D, 85mm lens at seated eye height on the
-corner at @kose, close on the fluted base of the cast-iron street lamp. A
-plane-tree root breaking up the paving fills the lower foreground, soft and
-sliced by the frame edge. The lamp's fluted column rises through the whole
-frame as one dark near-black vertical mass with granular rust at its joints; the
-only bright plate in the picture is a small riveted aluminium inventory tag
-flat on its base, and that tag sits exactly at @derin's seated eye height. She
-has leaned down and sideways out of her upright posture to bring her head within
-a hand's span of the iron — her left palm open on the push-rim, thumb along its
-top edge and fingers curled beneath, holding the chair against the pavement's
-camber; her right index fingertip rests on the metal just below the lower line
-of stamped characters, middle finger braced on the casting, and her lips are
-moving on the number as she reads it out.
+High-end theatrical feature-animation 3D, 50mm lens set exactly at the eye height of a seated
+child — roughly one metre ten above the pavement — so the lens, the girl's eyes and the small
+enamelled plate on the post all sit on one horizontal line across the middle of the frame.
+A cast-iron lamp post divides the frame vertically just left of centre, its paint chipped to
+grey primer at shoulder height, and the plate bolted to it is the one bright rectangle in the
+shot and the only thing in perfect focus.
 
-@efe1 is crouched on one knee beside her, a plain dark phone pressed flat to
-his ear with his shoulder come up to meet it, his free hand splayed on the
-paving for balance, his mouth open on a digit he is repeating into the call and
-his eyes on her fingertip rather than on her face; he is caught mid-sentence and
-never presents himself to the camera. Both are Turkish/Anatolian sixth-graders,
-around eleven or twelve, pre-teen proportions; both faces carry warm matte tan skin with low specular, never tinted green or grey, and stay modelled and readable. The corner is richly built and swept clean around them: the granite
-kerb polished on its crown by feet, the plane tree in its low iron guard with a
-bicycle chained to it, the green municipal bin standing with its lid down and
-nothing at its foot, and every shopfront behind the post shut behind a
-corrugated roller shutter with its awning furled and strapped to the frame, so
-no blank fascia is left anywhere. High in the upper corner the lamp head is cut
-by the frame edge; the filament inside its grimy glass is burning at full
-strength in broad daylight and its light lands on absolutely nothing — no pool
-on the paving, no warm patch on the post, no rim on either child. The real
-light is a high midday sun dropping between the buildings: it takes the flat
-aluminium face of the tag, the crown of her cheek and the bridge of her nose,
-the back of his phone hand and one edge of his jaw, and it reaches nothing
-across the corrugated shutters behind the post, which stay a deep cool indigo
-wall. The colour chord is metal and rust — bare aluminium white-grey, the dirty
-yellow of the trapped filament, iron the colour of wet slate, her rust-orange
-fleece and one green-black band of shutter shadow.
+@derin sits square to the post at reading distance, close enough that her knees almost touch
+it, a Turkish Anatolian girl in the sixth grade, around eleven or twelve. Both her feet rest
+squarely on the footplate in worn white canvas trainers and her trouser legs run unbroken from
+knee to shoe. Her back is upright and easy — she is not straining, not leaning, not craning;
+the plate has simply come to her. One hand rests on the push-rim, the other lifts to point at
+the plate without touching it, and her lips move only as far as a closed-mouth read. Her eyes
+are level with the numbers.
 
-Three movement beats belong to this exact minute: the filament pulses very
-slightly inside the dirty glass, a dry plane leaf turns over as it falls past
-the column, and a bead of her breath fogs and clears on the cold metal a
-finger's width from her mouth. Depth in three layers — the broken paving and
-tree root huge and blurred at the lower edge, the riveted tag, her fingertip and
-her reading mouth razor sharp in the middle, the shuttered fronts and the tree
-dissolving into gentle bokeh while staying fully modelled. The lamp's base
-meets the paving with a hard dark ring, her front castor sits in a small dark
-dimple on the slab, both her rear tyres flatten under her lean, and his knee
-dents the grit; every object rests in contact with its surface and nothing floats.
+@efe1 stands a step behind her right shoulder, complete from head to shoe and fully inside the
+frame, a mobile phone held to his ear. He is not looking at the plate — he is looking off down
+the street at the dead lamp head above them while he repeats what she is reading; his free hand
+is open at his side. The two of them are one action split across two people, and neither looks
+at the lens.
 
-STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+Above and behind, the lamp head is unlit in full morning sun, its glass milky and one bracket
+bolt weeping a rust stain down the post. The street beyond is dressed to its last surface:
+shutters down with awnings furled and strapped, a bicycle locked to a railing, a shallow
+puddle holding the sky. Colour is built from what is here — bare grey primer, ultramarine
+enamel, oxide-orange rust, the rust-orange of Derin's fleece and the petrol blue of Efe's hood.
+Three movement beats belong to this exact minute: a bead of water leaves the puddle's edge, the
+rust stain's lower tip catches sun as a cloud edge passes, and one strand of Derin's hair
+crosses her cheek. Depth in three layers — a blurred railing cuts the lower right, post, plate
+and Derin razor sharp in the middle, Efe and the dead lamp softening behind while staying fully
+modelled. Her castors and rear tyres and both his shoes rest in contact with the paving under
+their own contact shadows; nothing floats.
 
-TEXT: The carrier is one small rectangular aluminium inventory tag riveted flat to the fluted base of the cast-iron lamp post, its face turned squarely to the lens · the letterform is machine-stamped into thin aluminium and then filled with black paint, the paint worn thin on the raised burr of every stroke and thicker down in the pressed depth, the metal chalked by weather, a rivet head at each end and one corner lifted a little from the casting · it carries two lines with a full band of blank metal between them: the upper line reads "BELEDİYE" — one word, eight letters, all capitals, the sixth a dotted capital İ; the lower line reads "214" — three digits only, no letters · positioned low on the base at seated eye height, flat to the lens and fully legible · ORIENTATION: both lines read left-to-right, never mirrored, reversed or rotated; they appear on this one riveted tag and on no other surface in the frame. Every other surface is dressed instead of lettered: shutters down, awnings furled and strapped, the bin turned so its stencilled flank faces away, the phone held screen-in against his ear.
+STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen acting,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+expressive eyes, believable manual-wheelchair mechanics, tactile weathered street materials,
+motivated morning sun, sculpted cool bounce in shadow, volumetric depth, vivid scene-born
+colour separation and continuous physically based shading.
 
-NEGATIVE: do not let the burning lamp cast any light — no glow pool on the
-paving, no warm patch on the post, no rim on either child, no flare of any
-kind; do not switch the lamp off in this frame; do not show the phone's screen,
-an interface, an app, a keypad, a dialled number or a notification; do not let
-her pointing finger cover the stamped characters; do not add a city name, crest,
-emblem, barcode or extra numeral anywhere on the tag or the post; do not let
-her sit upright and neat, and do not put anyone standing where they would have
-to stoop to read the tag; do not let a passing adult, workman or municipal van
-enter the frame; do not litter the swept pavement; nobody looks at the lens; no
-accessibility symbol, arrow, speech bubble or caption.
+TEXT: One text surface only, and the letters are white vitreous enamel fused into a deep blue
+enamelled ground on a small steel plate — material, not overlay, with two chips at one corner
+where the enamel has flaked to bare metal. It reads "BELEDİYE 214" on two lines: BELEDİYE is
+one word of eight letters whose sixth letter is a capital İ carrying its dot, and beneath it
+the three digits 2 1 4. Nothing else is written on the plate. ORIENTATION: it reads
+left-to-right, never mirrored, reversed or rotated; it appears on this one plate and on no
+other surface in the frame. Everything else is dressed and wordless: the phone screen is dark
+and turned away so no interface is visible, the shutters carry no fascia, the bicycle no
+branding, the lamp head no maker's mark.
 
+NEGATIVE: do not put the plate low on the post at standing knee height, and do not raise the
+camera to a standing adult's eye level — the whole shot dies if the plate is not level with her
+eyes; do not make Derin bend, stoop, crane, twist or reach up to read it; do not show any
+interface, app, keypad, screen glow or number pad on the phone; do not light the lamp head; do
+not crop or cut either child at a frame edge; do not let either of them look into the lens or
+open the mouth wide; do not add a third person or an adult helper; do not put a second word,
+digit, arrow or logo anywhere in frame; do not turn the wheelchair into hospital equipment with
+straps, headrest or clinical white parts; no accessibility symbol, no caption.
 
 #########################################################################
 ### K48 | VO48

@@ -1,0 +1,75 @@
+S6 · KAPANIŞ · K52–K57 — KARE DENETİMİ
+=========================================================================
+
+K52 · DOKUNMA
+  K02 ile kadraj birebir aynı (ikinci kat, dik inen vinç açısı korunmuş; ağaç
+  ızgarası, bisiklet, kepenkler, posta kutusu, ilan panosu, direk, saksı, yeşil
+  korkuluk hepsi aynı yerde). Vişne araba, sürücü ve motor pusu gitmiş; rampa
+  BOŞ, iki dokunsal oluk baştan sona güneş alıyor, K02'deki kara oyuk yok.
+  Efe iki elli, iki ayaklı, uzuv kusuru yok. Yazı yok. "Aynı köşe" iddiası ayakta.
+
+K53 · DOKUNMA
+  K04 ile kadraj birebir aynı (65mm, yer hizası). K04'ün granit bloğu yerine
+  oluklu rampa var; ön castor rampanın üstüne çıkmış, arka teker hâlâ asfaltta —
+  "yukarı çıkıyor" fiili okunuyor. El halkasında itme kavraması var (avuç
+  halkanın üstünde, parmaklar altta kancalı), parmak sayısı doğru.
+  Arkada HİÇBİR el, kol ya da ikinci gölge yok — "tek başına" tutuyor.
+  K04'te arka planda görünen vişne araba bu karede yok. Yazı yok.
+
+K54 · REVİZE
+  kusur: YANLIŞ ŞEY — Derin'in iki ayağı da yok; pantolon paçaları baldır
+         kayışının arkasında kesiliyor, ayaklığın üstünde ayakkabı/ayak
+         bulunmuyor, boşluktan zemin görünüyor.
+  düzeltme: Add both of Derin's feet wearing sneakers, resting flat and side by
+            side on the wheelchair footplate, trouser cuffs falling over the shoe
+            tops, feet fully supported by the plate.
+  (not: defter sayfasında hiçbir harf/rakam çözünmüyor — kalem ritmi ve çetele
+   sütunu doğru, YAZI YOK şartı tutuyor. Efe gözünü sayfadan kaldırmış, boş
+   rampaya bakıyor — "fark etmek" fiili doğru oynuyor.)
+
+K55 · REVİZE
+  YAZI TEMİZ — harf harf sayıldı, kırk iki harfin kırk ikisi doğru:
+    1. satır  SORUNLARI (9, dokuzuncusu NOKTASIZ I) · FARK (4) · EDER (4) + virgül
+    2. satır  ÇÖZÜMLERİ (9; çengelli Ç, iki noktalı Ö, iki noktalı Ü, noktalı İ) ·
+              BİRLİKTE (8; 2. ve 5. noktalı İ) · ÜRETİRİZ (8; iki noktalı Ü,
+              5. ve 7. noktalı İ)
+    Soldan sağa, aynalanmamış, döndürülmemiş, uydurma/İngilizce kelime yok.
+    Hiçbir baş, kol, el, kordon ya da ağaç harfin önünde DEĞİL — afişin alt üçte
+    biri boş ve dört kol yalnız o boş beze biniyor.
+    Dört el bezi tutuyor ve biri Derin'in: Efe iki el (alt kenarı kıstırmış) +
+    Derin bir el (alt kenarda, parmak uçları kumaşta) + hardal hırkalı kız bir el.
+  kusur: YANLIŞ ŞEY — hardal hırkalı kızın İKİ GÖZÜ DE KAPALI, başı geriye
+         devrik ve yüzü gevşek; videonun zafer karesinde uyuyor/yüzünü buruşturuyor
+         gibi duruyor. (Ayrıca yüzü 11-12 değil, 15-16 okuyor.)
+  düzeltme: Open the mustard-cardigan girl's eyes wide and have her look up at the
+            banner with a bright smile, and make her face read as an 11-12 year old
+            child; keep her hands, pose and the banner exactly as they are.
+
+K56 · DOKUNMA
+  Kadrajın sağ iki bölümü tek parça boş güneşli kaldırım — insan, çocuk, yetişkin,
+  araç, hayvan, kutu, poşet, duba, bank HİÇBİRİ girmemiş; boşluk korunmuş.
+  Fiilin öznesi seyirci olduğu için karede kimsenin olmaması KASITLI, eksik değil.
+  Efe çınarın dibine çömelmiş, başı tamamen sağa çevrik, kadrajın göstermediği bir
+  şeye bakıyor. Kapalı defter üst kol ile kaburga arasında sıkışık (tüylenmiş
+  köşesi ve güdük kalem arkadan çıkıyor), sağ el kaldırıma düz basılı — beş parmak,
+  uçları yükten beyazlamış. Düşünce balonu/soru işareti/ok/ikon yok. Yazı yok.
+
+K57 · REVİZE
+  YAZI TEMİZ — harf harf sayıldı, on üç harfin on üçü doğru:
+    1. satır RAMPA (5) + çetele (dört dik, beşincisi çapraz)
+    2. satır ÇÖP (3; çengelli Ç, iki noktalı Ö) + çetele
+    3. satır LAMBA (5) + çetele
+    DÖRDÜNCÜ SATIR TAMAMEN BOŞ — harf, kelime, çetele, nokta ya da kaçak çizgi yok;
+    üstünde yalnız kalemin grafit ucu kâğıda değiyor. Sağ sayfa da boş.
+    Sayfa lense düz ve kare, aynalanmamış, üstünden hiçbir şey geçmiyor; tutan el
+    sayfanın üst kenarında, hiçbir harfi örtmüyor. Efe ve Derin lense bakıyor.
+  kusur: YANLIŞ ŞEY — K54'ün aynı kusuru: Derin'in iki ayağı da yok; pantolon
+         paçaları baldır kayışının arkasında bitiyor, ayaklık çıplak bir çubuk,
+         ayak konması gereken yerden gün ışığı görünüyor.
+  düzeltme: Add both of Derin's feet wearing sneakers, resting flat and side by
+            side on the wheelchair footplate, trouser cuffs falling over the shoe
+            tops, feet fully supported by the plate.
+
+=========================================================================
+S6 SONUÇ: 3 DOKUNMA (K52, K53, K56) · 3 REVİZE (K54, K55, K57) · 0 BAŞTAN
+=========================================================================

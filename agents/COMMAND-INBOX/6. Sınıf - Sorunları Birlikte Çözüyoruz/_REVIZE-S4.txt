@@ -1,0 +1,38 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S4 DENETİMİ (K34–K43)
+Kıstas: sahneyle uymuyor · bozuk yazı · yanlış şey. Süreklilik/palet/üslup YAZILMADI.
+=========================================================================
+
+K34 · DOKUNMA
+K35 · DOKUNMA
+K36 · DOKUNMA
+
+K37 · BAŞTAN
+  kusur: Karenin tek fikri (kalem Derin'in elinde, uç kâğıttan birkaç mm kalkmış) yok — kalem kartın çok uzağında, boş masanın üstünde dik tutuluyor; kartla teması hiç kurulmamış, ayrıca "HERKES"in sonuna fazladan virgül basılmış ve Efe'nin eli avuç AŞAĞI, altında açıklanamayan siyah bir cisimle duruyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K38 · REVİZE
+  kusur: Efe'nin avucu kâğıdın ortasına oturmuş ve "YAYA"nın ortadaki iki harfini örtüyor — kelime okunmuyor, "işaret istemek" fikri yazı olmadan taşınmıyor.
+  düzeltme: Move the boy's flat palm down onto the blank lower half of the graph-paper sheet so the full hand-drawn blue word YAYA inside its box is completely unobstructed and readable; keep the same four block capitals Y-A-Y-A, no extra letters or symbols.
+
+K39 · BAŞTAN
+  kusur: VO'nun fiili (kutuların ağız biçimlerini kartına çiziyor) karede yok — Efe'nin elinde kalem değil matbu bir broşür var ve avucu kapağın üstünde düz duruyor; üstelik dört kutu var, "KAĞIT" tamamen kolun arkasında, "PLASTİK" kutu kenarında kesik — üç kelimeden yalnız CAM okunuyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K40 · REVİZE
+  kusur: Sağdaki çocuğun kalkık eli yüzüne kaynaşmış — parmaklar burnun ve yanağın içinde eriyip kaybolmuş, bilek doğrudan yüzden çıkıyor.
+  düzeltme: Redraw the right child's raised hand as a normal hand with five clearly separated fingers gripping the top edge of the thick envelope, completely detached from the face — no fingers merging into the nose, cheek or mouth, and keep the envelope flap facing the lens.
+
+K41 · REVİZE
+  kusur: Kamyon kapısındaki kelime "BELEDİYE" değil — harfler bozuk (D yok, İ noktasız, sonda uydurma harfler) ve üstüne ikinci bir küçük yazı satırı basılmış; işçi kameraya dönük olduğu için yeleğin sırt yazısı da yok, yani karede doğru okunan tek BELEDİYE yüzeyi kalmamış.
+  düzeltme: Repaint the text on the truck's driver door as exactly the single Turkish word BELEDİYE in plain white brush capitals, eight letters B-E-L-E-D-İ-Y-E with the dot on the İ, and delete the smaller second line of text above it — no other word, number, emblem or district name anywhere on the truck.
+
+K42 · REVİZE
+  kusur: Tişörtün sırtındaki kelime "ÖNÜLLÜ" okunuyor — baştaki G harfi omuz kıvrımının içinde kaybolmuş (Ö, Ü ve Ü'nün noktaları doğru, yalnız ilk harf eksik).
+  düzeltme: Shift the heat-transfer print slightly toward the centre of the volunteer's back and restore the first letter so the full Turkish word GÖNÜLLÜ reads as eight block capitals G-Ö-N-Ü-L-L-Ü, all letters flat on the fabric and none swallowed by the shoulder fold or the arm.
+
+K43 · BAŞTAN
+  kusur: VO'nun üç sakini üç yükseklikte durdurma fikri çökmüş — gazete yaşlı kadının elinde değil, ön planda gövdesiz bulanık bir kolda ve kutuya hiç yaklaşmıyor; ayrıca mavi kutunun ön yüzüne "KAĞIT" iki kez basılmış (karede dört kelime var) ve şişeyi atan çocuk yeşil kutunun içinden çıkıyor gibi duruyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+=========================================================================
+SAYIM: 3 DOKUNMA · 4 REVİZE · 3 BAŞTAN

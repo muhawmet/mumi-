@@ -24,6 +24,14 @@ hizasından itibaren **bütün** tarif edilir, ayakları zemine basar ve temas g
 üretiyor. Referans dosyasının kendi ölçümü de aynıydı (7 karede gövdesiz kol).
 Kalabalığı azaltmak için figür kesmek yerine **figür sayısını azalt.**
 
+**2026-07-31 · Referansta tarif edilmeyen şey karede DOĞMUYOR — "Derin'in ayakları yok" dersi.**
+K15, K54, K57'de aynı kusur: paçalar baldır kayışının arkasında bitiyor, ayaklık boş.
+Sebep referansta bulundu: sandalye ayrıntısıyla tarif edilmiş (`scuffed footplate` dahil)
+ama **ayaklardan hiç söz edilmemiş.** Motor tarif edilmeyeni çizmiyor, boş bırakıyor.
+🔴 **Kural: referansta bir nesne varsa, onun üstünde/içinde olması gereken BEDEN PARÇASI da
+yazılır.** Sandalye tarif ediliyorsa ayak, masa tarif ediliyorsa el, çanta tarif ediliyorsa
+omuz. Referans düzeltildi; üç karede tek cümlelik Magnific yaması yeterli.
+
 **2026-07-31 · SARI — cepheler İtalyan/Akdeniz'e kayıyor.** K04'te pembe-oker cephe + balkon
 kombinasyonu Avrupa'ya çalıyor. "Anadolu yerine Paris/İtalya" ölçülmüş red sebebi (22 vaka).
 Mami'yi rahatsız etmiyorsa geçilir; ediyorsa cephe malzemesi daha sert çivilenir.

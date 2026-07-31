@@ -128,23 +128,63 @@ NEGATIVE: 🔴 do not crop, cut or truncate any walking person at the frame edge
 ### yazı: YOK
 #########################################################################
 
-FİKİR: Efe, Derin'i doğrudan değil önce arabanın yan aynasında görür — gündelik bir nesne bir anda tanıklık aracına dönüşür.
+FİKİR: Fark etmek bir bakış değil, bir DURUŞTUR — ayakları hâlâ gitmekte olduğu yöne
+bakarken gövdesi ve başı geri dönmüştür; beden ikiye bölünür ve o bölünme "ilk kez"i söyler.
 
-PLAN: Baskın geometri kadrajın merkezine yakın duran küçük ama jilet keskinliğinde ayna penceresi; onun dışındaki her şey yumuşar. Aynanın içinde Derin ve kapalı rampa, dışında Efe'nin yakın yüzü ve arabanın dev vişne gövdesi. İki mekân değil, aynı sokağın tek optik yansıması.
+PLAN: 🔴 BAŞTAN (ilk basımda motora imkânsız iş verildi: içinde ayrı bir sahne olan yan ayna
+yansıması istendi, NB2 onu araba içi paneline çevirdi. Negatif engellemedi — pozitif ne
+isterse o oluyor). Yansıma tamamen kaldırıldı, bakış hattı doğrudan. Baskın geometri,
+kaldırımın Efe'nin ayaklarından uzaklaşan uzun çizgisi; gövdesi o çizgiye ters dönmüş.
+Derin ve kapalı rampa arka planda, yumuşak ama okunur.
 
 PROMPT:
-High-end theatrical feature-animation 3D at its most cinematic and emotionally precise, 85mm lens at shallow depth of field beside the parked sour-cherry car at @kose. The car's dusty wing mirror sits just left of centre, small but razor sharp. Inside its correctly oriented reflection, @derin is stopped at the kerb with one hand on her push-rim, palm on the rim and thumb along its upper edge; the pale ramp visibly ends beneath the same parked car. The reflection is compressed but physically plausible, the visual heart of the reveal.
+High-end theatrical feature-animation 3D, 40mm lens at a sixth-grader's chest height on the
+pavement at @kose, set low enough that the kerb line runs away from the lens as one long
+diagonal toward the upper right. @efe1 stands whole in the middle ground, complete from head
+to shoe and fully inside the frame, caught in the position of someone who had already gone
+past: his feet and hips still point up the street the way he was walking, his front shoe
+mid-roll with the heel just lifting, while his shoulders, chest and head have turned back
+over his left shoulder. That twist through the body is the whole picture — half of him is
+still leaving, half of him has stopped.
 
-Outside the mirror, @efe1 — a Turkish/Anatolian boy in the sixth grade, around eleven or twelve — occupies the near right edge in close three-quarter profile, partly cropped by the frame. He has just turned back. His face is softly out of focus except for the near eye, whose gaze lands precisely on the mirror; his mouth stays closed and his expression is the quiet jolt of recognition, not theatrical shock. The car body becomes a broad sour-cherry field separating him from the reflected scene. A narrow band of white morning sky crosses the mirror, a muted blue shadow wraps Efe's cheek, and one warm glint joins his eye to the chrome rim inside the reflection. Behind them the corner stays dressed to its last surface: shopfronts closed behind corrugated roller shutters with awnings furled and strapped, the timetable case angled to the sky, so no blank panel or empty fascia exists even in the soft background. Dust on glass, fine scratches on the mirror housing and road grit prevent polished toy perfection. The sour-cherry body, petrol-blue clothing, ivory sky band and warm chrome spark form a vivid four-note palette. Bold feature-film framing, foreground obstruction, selective clarity, luminous eye acting and emotionally restrained premium 3D.
+His face is three-quarters to the lens and never toward it, eyes level and steady on the
+corner behind him, brows drawn a little together, mouth closed. This is recognition, not
+shock: no wide eyes, no open mouth, no theatrical gasp. The satchel strap has swung out from
+his ribs and hangs at an angle because his torso turned faster than the bag did.
 
-Three movement beats sharpen recognition without spectacle: Efe's near eye finishes its turn toward the mirror, a dust mote crosses the white sky-band in the reflection, and the reflected chrome rim gives back one brief warm glint. Depth in three layers — the sour-cherry door and Efe's cropped cheek occupy the soft near plane, the dusty mirror is razor sharp in the middle, Derin and the ramp remain compressed inside its far reflection. The mirror housing rests in contact with the car door through a firm mounting seam, and every wheel in the reflection meets the street with plausible contact; nothing floats.
+Behind him, softer but plainly readable, @derin waits at the kerb in her chair with both
+hands resting on the push-rims and both feet on the footplate, and the dark sour-cherry car
+lies across the pale dropped kerb ramp beside her, its front tyre up on the tactile grooves.
+She is not looking at him and he is not calling to her. Two people in frame and nobody else.
 
-STYLE: theatrical high-end feature-animation 3D; sophisticated warm matte tan skin with low specular and no green or grey cast, luminous expressive eye shading, optically plausible reflection, richly weathered surfaces, vivid colour separation, sculpted morning light, shallow cinematic focus and emotionally precise feature-film acting without showroom polish.
+The corner is dressed to its last surface: shopfronts closed behind corrugated roller
+shutters with awnings furled and strapped, a stack of empty crates against one, the
+timetable case angled to the sky so nothing inside reads. Colour comes from sun-warmed ivory
+concrete, deep sour-cherry paint, the petrol blue of his hood, the rust-orange of her fleece
+and one cool violet shadow. Three movement beats belong to this exact second: the loose
+satchel strap finishes its swing, a dry plane leaf turns over in the gutter between them,
+and warm light slides along the top of the kerb as a cloud edge passes. Depth in three
+layers — a blurred foreground bollard cuts the lower left, Efe razor sharp in the middle,
+Derin and the blocked ramp soft behind while staying fully modelled. His lifting heel and
+planted forefoot rest in contact with the pavement under one continuous contact shadow, and
+her castors and rear tyres each hold their own; nothing floats.
 
-TEXT: No readable text. The car has no plate or badge, the mirror housing no maker's mark, the shutters no fascia and the timetable glass returns only sky.
+STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen acting,
+sophisticated warm matte tan skin with low specular and no green or grey cast, luminous
+expressive eyes, believable manual-wheelchair mechanics, tactile weathered street materials,
+motivated morning sun, sculpted cool bounce in shadow, volumetric depth, vivid scene-born
+colour separation and continuous physically based shading.
 
-NEGATIVE: do not place Derin physically inside or behind the mirror housing; do not create a portal, split screen, inset panel or second floating image; do not duplicate Derin outside the reflection; do not mirror her wheelchair into impossible geometry or reverse the street layout; do not make Efe stare at the lens, gape, point dramatically or produce a cartoon shock face; do not make every object equally sharp; do not clean the dust and scratches from the mirror; no thought bubble, written moral, accessibility icon or caption.
+TEXT: No readable text anywhere. The car has no plate or badge, the shutters no fascia, the
+crates no stencil, the timetable glass returns only sky.
 
+NEGATIVE: do not put a mirror, reflection, window pane, screen, inset panel, split screen or
+any second framed image anywhere in the shot; do not crop or cut Efe at any frame edge — he
+stands complete from head to shoe; do not let him look at the lens, gasp, raise a hand, point
+or pull a cartoon shock face; do not straighten his hips to face the same way as his head,
+which would delete the whole idea; do not let Derin look at him or reach toward him; do not
+add a third person; do not clear the car off the ramp; no accessibility symbol, arrow,
+caption or thought bubble.
 
 #########################################################################
 ### K07 | VO7
