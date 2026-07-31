@@ -518,9 +518,24 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 // WINDOWS: yol ayracı ters bölü gelirse Premiere hiçbir medyayı bulamaz ve TÜM klipler
 // "Media Offline" olur. Birincil ortam Windows; bu hat orada hiç koşmadı, ilk koşuda
 // bir kurgu oturumunu yakardı. Ayraç POSIX'e çevrilmeden URL kurulmaz.
-const pathurl = (abs) =>
-  'file://localhost' +
-  String(abs).replace(/\\/g, '/').split('/').map((p, i) => (i === 0 ? p : encodeURIComponent(p))).join('/');
+const pathurl = (abs) => {
+  // POSIX ayraca cevir (Windows ters bolu Premiere'i Media Offline yapiyordu).
+  let p = String(abs).replace(/\\/g, '/');
+  // UNC: //server/share → file://localhost//server/share (cift bolu KORUNUR, ana bilgisayar odur).
+  const unc = p.startsWith('//');
+  // Windows surucu harfi: "C:/klipler" split edilince ilk parca "C:" olur ve basa bolu
+  // GELMEZ → `file://localhostC:/...` cikar, Premiere okuyamaz. Mac'te abs zaten "/" ile
+  // basladigi icin ilk parca bos string ve sorun gorunmez — bu yuzden Mac'te test edilen
+  // duzeltme Windows'ta kirik kaliyordu.
+  if (!p.startsWith('/')) p = `/${p}`;
+  const parcalar = p.split('/').map((seg, i) => {
+    if (i === 0) return seg;                    // bas bos string
+    if (unc && i === 1) return seg;             // UNC'nin ikinci bos parcasi
+    if (/^[A-Za-z]:$/.test(seg)) return seg;    // surucu harfi kodlanmaz (C%3A olmamali)
+    return encodeURIComponent(seg);
+  });
+  return `file://localhost${parcalar.join('/')}`;
+};
 const rate = () => `<rate><timebase>${timebase}</timebase><ntsc>${ntsc ? 'TRUE' : 'FALSE'}</ntsc></rate>`;
 // KARE PİKSEL — Premiere 1924x1076'yı görünce "D1/DV PAL (1.0940)" sanıp pikselleri %9 geriyordu.
 // Kenarlardaki siyahın ve esnemenin gerçek sebebi buydu. Açıkça square beyan ediyoruz.

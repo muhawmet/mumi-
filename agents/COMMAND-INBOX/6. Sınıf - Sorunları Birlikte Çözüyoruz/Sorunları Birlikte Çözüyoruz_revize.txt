@@ -1,0 +1,407 @@
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — REVİZE TEK DOSYA
+6. Sınıf · 6.1.3 · 54 kare denetlendi (K05 K10 K11 henüz basılmadı)
+
+KISTAS: sahneyle uymuyor · bozuk yazı · yanlış şey. Süreklilik/palet/üslup DEĞİL.
+
+REVİZE = karenin üstüne tek cümlelik düzeltme ver, yeniden bas.
+BAŞTAN = yeni prompt yazıldı, sıfırdan bas (ayrı dosyada).
+
+═══════════════════════════════════════════════════ SEKANS 1
+S1 — KARE DENETİMİ · K01-K09 (K05 elde yok, atlandı)
+Kıstas: SAHNEYLE UYMUYOR · BOZUK YAZI · YANLIŞ ŞEY. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K01 · DOKUNMA
+K02 · REVİZE
+  kusur: YANLIŞ ŞEY — sürücü karede İKİ KEZ var: dükkân kapısında ekmek poşeti+anahtarla duran ~45 yaş adamın aynısı direksiyonun başında oturuyor; ayrıca içinde adam oturan araba "park etmiş engel" değil "az sonra gidecek araç" okunuyor.
+  düzeltme: Remove the man sitting behind the steering wheel; leave the driver's seat completely empty with the seat and headrest visible through the side window, keep everything else identical.
+K03 · REVİZE
+  kusur: YANLIŞ ŞEY (cast) — Efe burada 11-12 değil ~7 yaş okunuyor: baş/gövde oranı büyümüş, yüz yuvarlaklaşmış, uzuvlar tombullaşmış; K01'deki ergen-öncesi oran kaybolmuş.
+  düzeltme: Age the boy to a 11-12 year old sixth grader: reduce the head-to-body ratio, lengthen the face and limbs, slim the cheeks and jaw, keep his pose, clothing, position and the whole background unchanged.
+K04 · REVİZE
+  kusur: YANLIŞ ŞEY — Derin'in yüzü 11-12 yaş kız değil geç-ergen/yetişkin okunuyor (uzamış orta yüz, belirgin çene) ve kaşını ile yanağını çapraz kesen iki başıboş saç teli yüzde çizik/karalama gibi duruyor.
+  düzeltme: Rejuvenate the girl's face to a 11-12 year old sixth grader with a shorter rounder face and larger eyes, and delete the two stray hair strands that cross her eyebrow and cheek so the skin is clean.
+K06 · BAŞTAN
+  kusur: Üç kusur aynı anda ve hepsi kadrajın kurgusundan doğuyor — Efe kaldırımda DEĞİL arabanın İÇİNDE oturuyor (önünde gösterge paneli ve iki kalorifer ızgarası, yanında A-direği), yan ayna bir yansıma değil üst kenarına düz beyaz boş bant yapışmış "inset panel" olmuş, aynadaki arabanın gövdesi yarı mavi yarı vişne; hiçbiri tek bir bölgesel edit ile onarılmaz.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+K07 · DOKUNMA
+  not: "DURAK" plakası harf harf doğru — D-U-R-A-K, beş harf, soldan sağa, aynalanmamış, mavi emaye üstüne beyaz harf, köşede emaye çatlağı; fazla/eksik harf ve ikinci kelime yok.
+K08 · REVİZE
+  kusur: YANLIŞ ŞEY — açık camdaki ~40 yaş sürücüde tek koldan İKİ el çıkıyor: kolun ucundaki el kapının dışında sarkıyor, aynı ön kolun ortasından ikinci bir el bitip direksiyonu kavrıyor.
+  düzeltme: Fix the driver's anatomy: give him one left arm resting on the window sill with a single hand hanging outside, and a separate right arm reaching in to the steering wheel — remove the extra hand growing out of the forearm.
+K09 · DOKUNMA
+
+=========================================================================
+SONUÇ: 3 DOKUNMA (K01 K07 K09) · 4 REVİZE (K02 K03 K04 K08) · 1 BAŞTAN (K06)
+
+═══════════════════════════════════════════════════ SEKANS 2
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S2 DENETİM (K12–K22)
+Kıstas: sahneyle uymuyor · bozuk yazı · yanlış şey. Süreklilik/palet/üslup YAZILMADI.
+=========================================================================
+
+K12 · DOKUNMA
+  Gözü sokakta (deftere değil), kalem sayfanın üstünde asılı, yazmıyor. Yayalar bulanık
+  yatay bant, Efe tek net dik kütle, sol üçte bir yabancı paltosuyla örtülü. Defterde
+  yalnız çetele — hiçbir harf çözünmemiş.
+
+K13 · DOKUNMA
+  Araç mint-yeşili kamyonet (vişne otomobil DEĞİL) — "başka bir araba" kanıtı ayakta.
+  Ön tekerlek rampanın tırtıklı oluklarının üstünde, oluklar açıkta. Kamera kaldırım
+  taşı hizasında, Efe tek dizi yerde. Kamyonette yazı/plaka yok.
+
+K14 · DOKUNMA
+  "ÇÖP" birebir doğru: Ç çengelli, Ö iki noktalı, P — soldan sağa, aynalanmamış,
+  üstünde kapak çiziği. Kapak şişkin poşetle açık kalmış, dibinde dört düğümlü poşet,
+  birinde plastik şişe. Yaşlı başörtülü kadın kendi poşetini düğümünden tutuyor,
+  gözü yığında — lense bakmıyor, poşeti bırakmamış.
+
+K15 · REVİZE
+  kusur: YANLIŞ ŞEY — Derin'in AYAKLARI YOK; pantolon paçaları baldır kayışının
+  arkasında bitiyor ve tekerlekli sandalyenin ayaklıkları tamamen boş duruyor.
+  düzeltme: Give the girl in the wheelchair her missing feet: her dark trousers must
+  continue into visible ankles and dark low-top shoes resting flat and squarely on the
+  black footplates, so the footplates are no longer empty and the legs no longer end at
+  the calf strap; change nothing else in the frame.
+  (Kalan her şey temiz: lambanın camında donuk turuncu köz var, kaldırımda ışık havuzu/
+  hale/flare YOK, gök ağarmış, güneş gölgeleri duruyor. VO çoğul "lambaları" ama karede
+  tek direk — bu kare tek direk yakın planı, cümleyi taşıyor, revize sebebi değil.)
+
+K16 · DOKUNMA
+  YOKLUK KORUNDU: asfaltta zebra/flaşör/sinyal YOK — motor cümledeki geçidi kareye
+  koymamış. Alttaki paralel çubuklar yağmur ızgarası, zebra değil.
+  "YAVAŞ" birebir doğru: Y-A-V-A-Ş, beş harf, son harf çengelli Ş, soldan sağa,
+  aynalanmamış (4. harfin üstünden kızın bacağı geçiyor). Bordo kazaklı kız iki adım
+  arasında, başı trafik kontrolü için dönmüş, arkasında lacivert polarlı çocuk yarı
+  gizli, karşıda okul korkuluğu + zincir.
+
+K17 · DOKUNMA
+  Dört siluet çentiğinin dördü de tek ışık koridorunda: rampadaki tekerlek · kapağı
+  kalkmış çöp kutusu + poşetler · sıcak yanan lamba başı · uzakta boş asfalt.
+  Efe sağ ön planda, gövdesi dönük yalnız başı geri gelmiş, kapalı defter kolunda,
+  tek başına. Flare halkası yok, siluetler malzemeli. Yüz yakın planda 11-13 aralığında
+  okunuyor — yaş kusuru saymadım.
+
+K18 · REVİZE
+  kusur: BOZUK YAZI — sol ön plandaki kitabın beyaz etiketinde İngilizce/uydurma
+  "SCHOOLC" yazıyor; tek okunur kelime kuralı kırılmış, ikinci yazı çıkmış.
+  düzeltme: Erase all lettering from the white rectangular label on the dark book cover
+  at the lower-left corner of the desk — leave it as a completely blank, plain, unprinted
+  paper label with no text, letters or symbols of any kind; keep everything else identical.
+  (Defterdeki "GÖZLEM" birebir DOĞRU: G-Ö-Z-L-E-M, Ö iki noktalı, çift alt çizgi,
+  soldan sağa, aynalanmamış. Başlığın altındaki satırlar harfe çözünmemiş, karalama
+  kalmış. Tek ışık kaynağı korunmuş, sayfa bloğu kabarık.)
+
+K19 · DOKUNMA
+  "MUHTARLIK" birebir doğru: M-U-H-T-A-R-L-I-K, I NOKTASIZ, soldan sağa, aynalanmamış,
+  koyu mavi emaye, iki ucunda vida başı. Harita masa kenarlarıyla hizasız duruyor —
+  dönme okunuyor; muhtarın bir avucu uzak köşede pivot, öbür eli yakın kenarı çocuğa
+  yürütüyor; kâğıt/dosya/form UZATMIYOR. Haritada sokak adı/rakam/lejant/pusula yok,
+  duvardaki belge ve sandalyedeki gazete okunmayan karalama.
+  ⚠ hükmü: "komşulara" yarısında komşu figürü gerçekten yok — ama Efe iki gergin kolla
+  masaya abanmış, ağzı SORDUĞU soruda açık; muhtarlık yarısı cümlenin tamamını taşıyor.
+  Tek karede iki mekân zorlaması kareyi bozar. DOKUNMA.
+
+K20 · DOKUNMA
+  Duran metal ırmağı tek kesintisiz kurdele, üç kırığı da var: kapısından yarı inmiş
+  sürücü (bir ayağı asfaltta, gövdesi kapıyla örtülü — kopuk uzuv değil) · yandan
+  burnunu sokan araba · pusa karışan sonsuz tekrar. Efe eşik basamağında, eli kepenge
+  düz basıyor, kapalı defter kolunun altında, teneke kutuda kırmızı sardunya yerinde.
+  Araçlarda plaka/rota numarası yok; sağ kenardaki tabela ve kasa etiketi kadraj dışına
+  taşıp bulanıklaşmış, okunur harf çıkmıyor.
+
+K21 · DOKUNMA
+  Parlak ön cam → kapkara boşluk ritmi duruyor; her arka koltuk tamamen boş (yolcu yok,
+  çocuk koltuğu yok, çanta/palto yok), kabin karanlığı malzemeli. En yakın ~45 kadın
+  direksiyonda yalnız, güneş gözlüğü saçına itilmiş; kasketli erkek yarı net; üçüncü
+  sürücü uzakta. Gazetede okunur harf yok. Direksiyondaki elde fazla parmak yok.
+
+K22 · DOKUNMA
+  Kare konusu ayakta: açık kapının altı ile kaldırım arasında ÇIPLAK ASFALT KAMASI var,
+  otobüs cebine giremeyip tam bir şerit açıkta durmuş, cebi işgal eden araba sol ön
+  planda (arka tekeri + altından çıkan tebeşir beyazı cep çizgileri), durak boş ve
+  işlevsiz. Sıra basamakta ve koridorda gövdeli bekliyor; kapıdaki kadının ön ayağı
+  boşluğa iniyor, asfalta değmemiş. Otobüste hat numarası/güzergâh ekranı/livery/plaka
+  YOK, durak panosu boş.
+  ⚠ hükmü: VO "çoktu" diyor, karede hatalı park eden tek araba var — ama alçak yakın
+  kadrajda tek örnek genel hükmü taşıyor ve fiili yapan gövde (otobüs + cepteki araba)
+  karede. Revize sebebi değil.
+
+=========================================================================
+S2 SONUÇ: 9 DOKUNMA · 2 REVİZE (K15, K18) · 0 BAŞTAN
+
+═══════════════════════════════════════════════════ SEKANS 3
+S3 · NEDEN-SONUÇ VE ETKİLENENLER · K23–K33 — KARE DENETİMİ
+Kıstas: (1) sahneyle uymuyor (2) bozuk yazı (3) yanlış şey. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K23 · DOKUNMA
+  YAZI: "YAĞMUR SUYU" harf harf sayıldı — Y-A-Ğ-M-U-R S-U-Y-U, 10 harf, Ğ şapkalı,
+  aynalanmamış, dökümde kabartma, boyasız. Son U taş bordürün altında yarım kalıyor
+  (tarifte "poşetin altında yarım" deniyordu; okunurluk bozulmadı).
+  Poşet ızgaranın üstünde, Efe çömelmiş, sol avuç ıslak taşta, sağ el poşetin köşesinde.
+  ~65 başörtülü kadın arkada iki poşetle duruyor.
+
+K24 · REVİZE
+  kusur: Yanlış şey — "KÖMÜR" karede İKİ kez yazıyor; devrilen çuvalın yanında sol alttaki
+  istif çuvalının yüzü de kameraya dönük ve aynı kelimeyi basıyor (tek yazı yüzeyi kırıldı;
+  Kling kamerayı çevirince ikisinden biri mutlaka bozulur).
+  düzeltme: Remove all printed lettering from the stacked burlap sacks in the lower-left pile,
+  leaving their jute faces plain and unmarked, and keep the word KÖMÜR only on the sack the
+  man is tipping.
+  (Not: devrilen çuvaldaki KÖMÜR doğru — K-Ö-M-Ü-R, Ö ve Ü iki noktalı, aynalanmamış.
+  Kömür akışı kuru ve siyah, tutuşmamış. Egzoz borusuna bağlı, beyaz püskül değil.)
+
+K25 · REVİZE
+  kusur: Sahneyle uymuyor — VO "kirli hava sağlığı etkiler" diyor ama kızın elindeki şeffaf
+  hazne SU BARDAĞINA dönmüş ve kız su içiyor; "yavaş nefes" gövdesi karede yok, kare
+  susamış çocuk okunuyor (tutuş, kapalı gözler, baş açısı zaten doğru — yalnız nesne yanlış).
+  düzeltme: Replace the clear drinking cup at the girl's lips with a clear plastic asthma
+  spacer chamber sealed by a white mouthpiece at her mouth, remove the water inside it, and
+  keep her hands, closed eyes and head angle exactly as they are.
+
+K26 · REVİZE
+  kusur: Yanlış cast — Efe'nin yüzü bu karede 14-15 yaş okunuyor (kalın düz yetişkin kaşları,
+  uzamış çene, incelmiş yanak); aynı çocuk K30'da 11-12 yaşında ve tarif 11-12 diyor.
+  düzeltme: Make the boy's face read as an 11-year-old sixth grader — rounder cheeks and
+  jaw, softer and thinner eyebrows, slightly larger eyes — without changing his pose, hair,
+  clothing or the framing.
+  (Parmaklığın ötesindeki beyaz boşluk temiz: tepe/çatı/direk/mavi gök çözünmemiş — yokluk
+  korunmuş. Alt boruya basan ayak, boruyu kancalayan iki el, topla bekleyen bordo kazaklı
+  çocuğun Efe'ye bakışı doğru.)
+
+K27 · REVİZE
+  kusur: Yanlış şey — kızın kolunun boyunca uzanan ve tam bileğinde biten SİYAH ÇUBUK
+  (sahipsiz, parmaklık değil, kolu deliyor gibi duruyor) + boş beyaz alanın ortasına
+  yapıştırılmış düz yaprak; ikisi de "gösterilecek hiçbir şey yok" karesini dolduruyor.
+  düzeltme: Erase the black rod that runs across the girl's green sleeve and ends at her
+  wrist, and erase the floating leaf in the empty white sky, leaving both areas as clean
+  featureless pale void.
+  (Yokluğun geri kalanı doğru: parmak boş alanı gösteriyor, tepe/çatı/kuş/tel çözünmemiş,
+  üst boru tek ufuk olarak duruyor, Efe kolları borunun üstünde çapraz.)
+
+K28 · BAŞTAN
+  kusur: Karenin tek argümanı olan "bir-beden genişliğindeki yarık" karede YOK — mavi kasa
+  duvarı ile arabanın arası neredeyse kadraj kadar geniş, kadın açık kaldırımda hiçbir şeye
+  tıkanmadan duruyor, genç adam ise yarıktan değil arabanın ötesinden yürüyor ve yüzü
+  kesilmeden tam görünüyor; "aynı engel, farklı bedel" karşılaştırması yamayla kurulamaz
+  çünkü iki kütlenin de yeri değişmeli.
+  (YAZI doğru: "SEBZE" — S-E-B-Z-E, kalıpta kabartma, boyasız, aynalanmamış, tek kelime.)
+
+K29 · BAŞTAN
+  kusur: Kaldırım tıkalı DEĞİL — araba iki tekerini kaldırıma çıkarmamış, yol kenarında
+  duruyor; araba ile duvar arasında "bir karış kanal" yerine üç kişinin rahatça yürüyeceği
+  metrelerce boşluk var, dolayısıyla yaşlı kadın-çocuk-beyaz bastonlu adam üçlüsü
+  "etkilenir" fiilini yapmıyor, sadece duruyor. Engelin geometrisi değişmeden kare kurtulmaz.
+  (Üç gövde doğru kurulmuş: baston dikilmiş yaşlı kadın, kadının elini tutan sarı yağmurluklu
+  çocuk gözü kadının yüzünde, beyaz bastonun ucu lastiği bulmuş — bunlar yeni prompt'ta korunur.)
+
+K30 · BAŞTAN
+  kusur: Kamera EL HALKASI HİZASINDA DEĞİL — kaldırımın üst yüzeyi geniş bir düzlem olarak
+  yukarıdan görünüyor, bordür çizgisi iki çenenin altından değil çocukların AYAK BİLEĞİNDEN
+  geçiyor, ve iki baş aynı seviyede değil (Derin'in başı Efe'nin bir kafa boyu üstünde);
+  kaldırım yine "duvar" değil "basamak" okunuyor — karenin tek fikri ölmüş.
+  Ayrıca ön planda Derin'in tekeri değil, yolda duran İKİNCİ ve BOŞ bir tekerlekli sandalye
+  var (net, bulanık değil) — Derin'in kendi sandalyesi arka planda ayrıca duruyor.
+
+K31 · DOKUNMA
+  YAZI: "EKMEK" — E-K-M-E-K, 5 harf, aynalanmamış, ince poşette tek renk baskı, arkadan
+  somunun kabuğu görünüyor; fırın adı/adres/telefon/ikinci satır YOK.
+  Bebek arabası kaldırımın kenarında, ön teker rampasız bordür taşında takılı; anne iki eli
+  sapta arkasında; bebek iki eli emniyet barında, mercan bere, çıplak ayaklar battaniyeden
+  kurtulmuş. Bebek oyuncak bebek yüzüne düşmemiş.
+
+K32 · REVİZE
+  kusur: Yanlış şey / ikinci yazı yüzeyi — gümüş arabanın ön tamponunda okunaklı AB mavi
+  bantlı plaka "A1S 6X 003" duruyor (hem Anadolu dışı bir işaret, hem el yazması levhanın
+  yanında ikinci bir yazı yüzeyi; kamera hareketinde bozulacak ilk şey o).
+  düzeltme: Delete the number plates from both cars — remove the blue EU band and all
+  characters from the silver car's front plate and from the parked car's plate, leaving plain
+  blank plate panels with no letters, digits or coloured strip.
+  (YAZI doğru: levhada İKİ SATIR — üstte PARK, altta ETMEYİN; 11 harf sayıldı, ONUNCU harf İ
+  ve NOKTASI YERİNDE; üçüncü satır/ok/telefon yok, ikinci levha yok. Adamın bastonunun ucu
+  asfaltta, yolda yürüyor; kadın sürücü birkaç metre geride durmuş.)
+
+K33 · REVİZE
+  kusur: Yanlış şey — Derin'in gösteren işaret parmağı gövdesiz bir çubuk gibi uzamış
+  (diğer parmakların iki katı, uçta eklem yok, ikinci bir parmakla kaynaşmış görünüyor) ve
+  sayfaya basmıyor, üstünde havada duruyor.
+  düzeltme: Redraw the girl's pointing hand with a normal child index finger of natural
+  length and a visible knuckle, its fingertip actually touching and slightly denting the
+  notebook page, with the other three fingers folded into the palm and the thumb resting on them.
+  (YAZI yasası tutuyor: açık sayfada yalnız çocuk el yazısı ritmi var, hiçbir kelime/harf/
+  rakam çözünmüyor. Defter ters çevrilmiş, sayfa Derin'e bakıyor, Efe okumaya çalışmıyor.)
+
+=========================================================================
+SONUÇ: 2 DOKUNMA · 6 REVİZE · 3 BAŞTAN
+
+═══════════════════════════════════════════════════ SEKANS 4
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S4 DENETİMİ (K34–K43)
+Kıstas: sahneyle uymuyor · bozuk yazı · yanlış şey. Süreklilik/palet/üslup YAZILMADI.
+=========================================================================
+
+K34 · DOKUNMA
+K35 · DOKUNMA
+K36 · DOKUNMA
+
+K37 · BAŞTAN
+  kusur: Karenin tek fikri (kalem Derin'in elinde, uç kâğıttan birkaç mm kalkmış) yok — kalem kartın çok uzağında, boş masanın üstünde dik tutuluyor; kartla teması hiç kurulmamış, ayrıca "HERKES"in sonuna fazladan virgül basılmış ve Efe'nin eli avuç AŞAĞI, altında açıklanamayan siyah bir cisimle duruyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K38 · REVİZE
+  kusur: Efe'nin avucu kâğıdın ortasına oturmuş ve "YAYA"nın ortadaki iki harfini örtüyor — kelime okunmuyor, "işaret istemek" fikri yazı olmadan taşınmıyor.
+  düzeltme: Move the boy's flat palm down onto the blank lower half of the graph-paper sheet so the full hand-drawn blue word YAYA inside its box is completely unobstructed and readable; keep the same four block capitals Y-A-Y-A, no extra letters or symbols.
+
+K39 · BAŞTAN
+  kusur: VO'nun fiili (kutuların ağız biçimlerini kartına çiziyor) karede yok — Efe'nin elinde kalem değil matbu bir broşür var ve avucu kapağın üstünde düz duruyor; üstelik dört kutu var, "KAĞIT" tamamen kolun arkasında, "PLASTİK" kutu kenarında kesik — üç kelimeden yalnız CAM okunuyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K40 · REVİZE
+  kusur: Sağdaki çocuğun kalkık eli yüzüne kaynaşmış — parmaklar burnun ve yanağın içinde eriyip kaybolmuş, bilek doğrudan yüzden çıkıyor.
+  düzeltme: Redraw the right child's raised hand as a normal hand with five clearly separated fingers gripping the top edge of the thick envelope, completely detached from the face — no fingers merging into the nose, cheek or mouth, and keep the envelope flap facing the lens.
+
+K41 · REVİZE
+  kusur: Kamyon kapısındaki kelime "BELEDİYE" değil — harfler bozuk (D yok, İ noktasız, sonda uydurma harfler) ve üstüne ikinci bir küçük yazı satırı basılmış; işçi kameraya dönük olduğu için yeleğin sırt yazısı da yok, yani karede doğru okunan tek BELEDİYE yüzeyi kalmamış.
+  düzeltme: Repaint the text on the truck's driver door as exactly the single Turkish word BELEDİYE in plain white brush capitals, eight letters B-E-L-E-D-İ-Y-E with the dot on the İ, and delete the smaller second line of text above it — no other word, number, emblem or district name anywhere on the truck.
+
+K42 · REVİZE
+  kusur: Tişörtün sırtındaki kelime "ÖNÜLLÜ" okunuyor — baştaki G harfi omuz kıvrımının içinde kaybolmuş (Ö, Ü ve Ü'nün noktaları doğru, yalnız ilk harf eksik).
+  düzeltme: Shift the heat-transfer print slightly toward the centre of the volunteer's back and restore the first letter so the full Turkish word GÖNÜLLÜ reads as eight block capitals G-Ö-N-Ü-L-L-Ü, all letters flat on the fabric and none swallowed by the shoulder fold or the arm.
+
+K43 · BAŞTAN
+  kusur: VO'nun üç sakini üç yükseklikte durdurma fikri çökmüş — gazete yaşlı kadının elinde değil, ön planda gövdesiz bulanık bir kolda ve kutuya hiç yaklaşmıyor; ayrıca mavi kutunun ön yüzüne "KAĞIT" iki kez basılmış (karede dört kelime var) ve şişeyi atan çocuk yeşil kutunun içinden çıkıyor gibi duruyor.
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+=========================================================================
+SAYIM: 3 DOKUNMA · 4 REVİZE · 3 BAŞTAN
+
+═══════════════════════════════════════════════════ SEKANS 5
+SORUNLARI BİRLİKTE ÇÖZÜYORUZ — REVİZE KARNESİ
+BLOK: S5 · KATILIM VE DEĞERLENDİRME · K44–K51 (8 kare)
+Kıstas: SAHNEYLE UYMUYOR · BOZUK YAZI · YANLIŞ ŞEY. Süreklilik/palet/üslup yazılmadı.
+=========================================================================
+
+K44 · DOKUNMA
+
+K45 · REVİZE
+  kusur: BOZUK YAZI — A4'ün gövde metni okunur Latin "Lorem ipsum dolor sit amet…" olarak
+         çözünüyor, ön plandaki sıranın üstüne de İngilizce "initial" kazınmış (başlık
+         "DİLEKÇE" harf harf doğru: D-İ-L-E-K-Ç-E, noktalı İ + çengelli Ç yerinde).
+  düzeltme: Replace the four lines of Latin "Lorem ipsum" body text under the DİLEKÇE heading
+            with soft blue ballpoint squiggles that never resolve into letters, and erase the
+            carved English word "initial" from the wooden desk in the lower right foreground,
+            keeping the handwritten title DİLEKÇE exactly as it is.
+
+K46 · DOKUNMA
+
+K47 · BAŞTAN
+  kusur: Künye direğin DİBİNDE — ayakta duran birinin diz hizasında — ve kamera ayakta
+         yetişkin göz hizasında; Derin künyeyi okumak için sandalyeden neredeyse yatay
+         eğilmek zorunda kalmış. Karenin fikri (sandalye kısıt değil DOĞRU yükseklik,
+         künyeyi okuyan Derin) ters dönmüş: sandalye kısıt gibi okunuyor. Künye yüksekliği,
+         Derin'in duruşu ve kamera yüksekliği birbirine bağlı üç şey — hiçbiri tek yamayla
+         düzelmez. (Not: "BELEDİYE" + "214" harf harf DOĞRU, telefonda ekran/arayüz YOK —
+         yeni prompt'ta bu ikisi korunmalı.)
+  (yeni prompt'u BEN yazacağım, sen yazma)
+
+K48 · DOKUNMA
+
+K49 · REVİZE
+  kusur: BOZUK YAZI — defter sayfasındaki el yazısı kelimelere çözünüyor; 2. maddede
+         İngilizce "plastic" okunuyor, diğerleri uydurma kelime ("Mayan", "fadan", "Hooda").
+         Yasa "hiçbir kelime çözünmüyor" diyordu. (Kapüşon/göz kontrolü TEMİZ: Efe'nin iki
+         gözü de tam ışıkta, gölgede değil; tek sert kalem çizgisi yalnız TEK maddenin
+         üstünden geçiyor.)
+  düzeltme: Replace the handwritten words on the open notebook page with unreadable graphite
+            squiggles that never resolve into any word — in particular remove the English word
+            "plastic" — while keeping the numerals 1 to 5 and the single hard pencil
+            strike-through across item 4 exactly as they are.
+
+K50 · REVİZE
+  kusur: SAHNEYLE UYMUYOR — VO "azalmıştı" derken kare tersini gösteriyor: çuval adam
+         boyunda, şişkin ve dibi tamamen kaldırıma dayalı, görevlinin kolu dümdüz aşağıda;
+         yük hafif değil, kaldırılmıyor bile. ("PLASTİK" harf harf doğru, tulumda yazı yok,
+         boşalmış soluk dikdörtgen yerinde — bunlar kalsın.)
+  düzeltme: Replace the huge bulging sack resting on the pavement with a small, loose,
+            less-than-half-full sack lifted clear of the ground by the worker's single gloved
+            hand with the elbow bent and the sack raised to waist height so the load reads
+            light, and fill the freed area behind it with plain empty sidewalk.
+
+K51 · DOKUNMA
+
+═══════════════════════════════════════════════════ SEKANS 6
+S6 · KAPANIŞ · K52–K57 — KARE DENETİMİ
+=========================================================================
+
+K52 · DOKUNMA
+  K02 ile kadraj birebir aynı (ikinci kat, dik inen vinç açısı korunmuş; ağaç
+  ızgarası, bisiklet, kepenkler, posta kutusu, ilan panosu, direk, saksı, yeşil
+  korkuluk hepsi aynı yerde). Vişne araba, sürücü ve motor pusu gitmiş; rampa
+  BOŞ, iki dokunsal oluk baştan sona güneş alıyor, K02'deki kara oyuk yok.
+  Efe iki elli, iki ayaklı, uzuv kusuru yok. Yazı yok. "Aynı köşe" iddiası ayakta.
+
+K53 · DOKUNMA
+  K04 ile kadraj birebir aynı (65mm, yer hizası). K04'ün granit bloğu yerine
+  oluklu rampa var; ön castor rampanın üstüne çıkmış, arka teker hâlâ asfaltta —
+  "yukarı çıkıyor" fiili okunuyor. El halkasında itme kavraması var (avuç
+  halkanın üstünde, parmaklar altta kancalı), parmak sayısı doğru.
+  Arkada HİÇBİR el, kol ya da ikinci gölge yok — "tek başına" tutuyor.
+  K04'te arka planda görünen vişne araba bu karede yok. Yazı yok.
+
+K54 · REVİZE
+  kusur: YANLIŞ ŞEY — Derin'in iki ayağı da yok; pantolon paçaları baldır
+         kayışının arkasında kesiliyor, ayaklığın üstünde ayakkabı/ayak
+         bulunmuyor, boşluktan zemin görünüyor.
+  düzeltme: Add both of Derin's feet wearing sneakers, resting flat and side by
+            side on the wheelchair footplate, trouser cuffs falling over the shoe
+            tops, feet fully supported by the plate.
+  (not: defter sayfasında hiçbir harf/rakam çözünmüyor — kalem ritmi ve çetele
+   sütunu doğru, YAZI YOK şartı tutuyor. Efe gözünü sayfadan kaldırmış, boş
+   rampaya bakıyor — "fark etmek" fiili doğru oynuyor.)
+
+K55 · REVİZE
+  YAZI TEMİZ — harf harf sayıldı, kırk iki harfin kırk ikisi doğru:
+    1. satır  SORUNLARI (9, dokuzuncusu NOKTASIZ I) · FARK (4) · EDER (4) + virgül
+    2. satır  ÇÖZÜMLERİ (9; çengelli Ç, iki noktalı Ö, iki noktalı Ü, noktalı İ) ·
+              BİRLİKTE (8; 2. ve 5. noktalı İ) · ÜRETİRİZ (8; iki noktalı Ü,
+              5. ve 7. noktalı İ)
+    Soldan sağa, aynalanmamış, döndürülmemiş, uydurma/İngilizce kelime yok.
+    Hiçbir baş, kol, el, kordon ya da ağaç harfin önünde DEĞİL — afişin alt üçte
+    biri boş ve dört kol yalnız o boş beze biniyor.
+    Dört el bezi tutuyor ve biri Derin'in: Efe iki el (alt kenarı kıstırmış) +
+    Derin bir el (alt kenarda, parmak uçları kumaşta) + hardal hırkalı kız bir el.
+  kusur: YANLIŞ ŞEY — hardal hırkalı kızın İKİ GÖZÜ DE KAPALI, başı geriye
+         devrik ve yüzü gevşek; videonun zafer karesinde uyuyor/yüzünü buruşturuyor
+         gibi duruyor. (Ayrıca yüzü 11-12 değil, 15-16 okuyor.)
+  düzeltme: Open the mustard-cardigan girl's eyes wide and have her look up at the
+            banner with a bright smile, and make her face read as an 11-12 year old
+            child; keep her hands, pose and the banner exactly as they are.
+
+K56 · DOKUNMA
+  Kadrajın sağ iki bölümü tek parça boş güneşli kaldırım — insan, çocuk, yetişkin,
+  araç, hayvan, kutu, poşet, duba, bank HİÇBİRİ girmemiş; boşluk korunmuş.
+  Fiilin öznesi seyirci olduğu için karede kimsenin olmaması KASITLI, eksik değil.
+  Efe çınarın dibine çömelmiş, başı tamamen sağa çevrik, kadrajın göstermediği bir
+  şeye bakıyor. Kapalı defter üst kol ile kaburga arasında sıkışık (tüylenmiş
+  köşesi ve güdük kalem arkadan çıkıyor), sağ el kaldırıma düz basılı — beş parmak,
+  uçları yükten beyazlamış. Düşünce balonu/soru işareti/ok/ikon yok. Yazı yok.
+
+K57 · REVİZE
+  YAZI TEMİZ — harf harf sayıldı, on üç harfin on üçü doğru:
+    1. satır RAMPA (5) + çetele (dört dik, beşincisi çapraz)
+    2. satır ÇÖP (3; çengelli Ç, iki noktalı Ö) + çetele
+    3. satır LAMBA (5) + çetele
+    DÖRDÜNCÜ SATIR TAMAMEN BOŞ — harf, kelime, çetele, nokta ya da kaçak çizgi yok;
+    üstünde yalnız kalemin grafit ucu kâğıda değiyor. Sağ sayfa da boş.
+    Sayfa lense düz ve kare, aynalanmamış, üstünden hiçbir şey geçmiyor; tutan el
+    sayfanın üst kenarında, hiçbir harfi örtmüyor. Efe ve Derin lense bakıyor.
+  kusur: YANLIŞ ŞEY — K54'ün aynı kusuru: Derin'in iki ayağı da yok; pantolon
+         paçaları baldır kayışının arkasında bitiyor, ayaklık çıplak bir çubuk,
+         ayak konması gereken yerden gün ışığı görünüyor.
+  düzeltme: Add both of Derin's feet wearing sneakers, resting flat and side by
+            side on the wheelchair footplate, trouser cuffs falling over the shoe
+            tops, feet fully supported by the plate.
+
+=========================================================================
+S6 SONUÇ: 3 DOKUNMA (K52, K53, K56) · 3 REVİZE (K54, K55, K57) · 0 BAŞTAN
+=========================================================================
+

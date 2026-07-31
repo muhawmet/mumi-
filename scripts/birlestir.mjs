@@ -76,9 +76,21 @@ if (md2txt) {
 }
 
 const mevcut = new Map();
+const kaynak = new Map(); // hangi numarayı hangi dosya doldurdu — çakışma kanıtı için
 for (const f of readdirSync(SRC)) {
   const m = /^(\d{1,4})\.txt$/.exec(f);
-  if (m) mevcut.set(Number(m[1]), readFileSync(join(SRC, f), 'utf8').trim());
+  if (!m) continue;
+  const no = Number(m[1]);
+  // SESSİZ VERİ KAYBI: `01.txt` ve `1.txt` aynı anahtara düşer (Number("01")===Number("1"))
+  // ve ikincisi birincisini hiçbir uyarı vermeden ezerdi. Bir kare teslimden yok olur ve
+  // kimse fark etmez. Regex 2 haneden 1-4 haneye açılınca bu kapı da açılmış oldu.
+  if (kaynak.has(no)) {
+    console.error(`⛔ ÇAKIŞMA: ${kaynak.get(no)} ile ${f} aynı kare numarasına (${no}) düşüyor.`);
+    console.error('   İkisinden biri sessizce kaybolurdu. Fazla dosyayı sil ya da yeniden adlandır.');
+    process.exit(2);
+  }
+  kaynak.set(no, f);
+  mevcut.set(no, readFileSync(join(SRC, f), 'utf8').trim());
 }
 
 if (!mevcut.size) {

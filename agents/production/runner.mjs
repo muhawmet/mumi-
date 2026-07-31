@@ -141,7 +141,10 @@ function prepareProject(commandFile, rawName) {
   // TÜRKÇE KLASÖR ADI TUZAĞI: macOS diskten NFD ayrıştırılmış yol döndürür (ş = s + U+0327),
   // resolve() ise NFC birleştirir. Karşılaştırma normalize edilmezse Ş/Ç/Ğ/İ içeren her proje
   // adı "izin verilen kökün dışına çıkamaz" hatası alır — bizim TÜM proje adlarımız Türkçe.
-  const nfc = (s) => s.normalize('NFC').toLowerCase();
+  // ⚠ SIRA ONEMLI: `toLowerCase()` Turkce buyuk İ'yi (U+0130) `i` + birlesen ust nokta
+  // (U+0069 U+0307) dizisine ayirir. NFC'yi ONCE uygularsan sonuc NFC olmaktan cikar ve
+  // iki taraf yine eslesmez. O yuzden once kucult, SONRA normalize et.
+  const nfc = (s) => s.toLowerCase().normalize('NFC');
   const expectedPrefix = nfc(`${projectsRoot}${sep}`);
   if (!nfc(`${projectDir}${sep}`).startsWith(expectedPrefix)) {
     throw new Error('Proje klasörü izin verilen kökün dışına çıkamaz.');

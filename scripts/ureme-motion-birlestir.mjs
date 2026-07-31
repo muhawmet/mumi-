@@ -29,7 +29,16 @@ const SEKANSLAR = [
 const mevcut = new Map();
 for (const f of readdirSync(SRC)) {
   const m = /^(\d{1,4})\.txt$/.exec(f);
-  if (m) mevcut.set(Number(m[1]), readFileSync(join(SRC, f), 'utf8').trim());
+  if (m) {
+    const no = Number(m[1]);
+    // SESSİZ VERİ KAYBI: `01.txt` ve `1.txt` aynı anahtara düşer ve ikincisi birincisini
+    // hiçbir uyarı vermeden ezer — bir klip teslimden yok olur.
+    if (mevcut.has(no)) {
+      console.error(`⛔ ÇAKIŞMA: ${no} numarasına iki dosya düşüyor (${f}). Biri sessizce kaybolurdu.`);
+      process.exit(2);
+    }
+    mevcut.set(no, readFileSync(join(SRC, f), 'utf8').trim());
+  }
 }
 
 /** Başlık satırından süreyi çeker: "### K5 | 10s · ekranda ~9s | VO ..." */

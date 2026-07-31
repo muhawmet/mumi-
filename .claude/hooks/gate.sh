@@ -115,7 +115,14 @@ fi
 # Register dosyanin kendi basligindan okunur; okunamazsa UYARIR ama bloke ETMEZ (kor olcum
 # yanlis kirmizi uretir, o da kapiyi guvenilmez yapar).
 # Acil kacis: MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesi commit mesajina yazilir)
-if [ "${MAMILAS_LINT_SKIP:-0}" != "1" ]; then
+if [ "${MAMILAS_LINT_SKIP:-0}" = "1" ]; then
+  # Kacisin IZ BIRAKMAMASI kabul edilemez: sessizce atlanan kapi, olmayan kapidir.
+  printf '\n🟡 PROMPT LINT ATLANDI — MAMILAS_LINT_SKIP=1 verildi.\n' >&2
+  printf '   Atlanan teslim dosyalari:\n' >&2
+  git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null \
+    | tr '\0' '\n' | grep -E 'COMMAND-INBOX/.*_PROMPTLAR.*\.txt$' | sed 's/^/     · /' >&2
+  printf '   Gerekcesi commit mesajina YAZILMALI.\n\n' >&2
+else
   # TURKCE YOL TUZAGI (2026-07-31, kapi kurulurken kapinin KENDISINDE yakalandi):
   # `git diff --cached --name-only` Turkce karakterli yolu TIRNAK icinde ve \304\261 gibi
   # kacis dizisiyle basar. Satir basinda `agents/` arayan bir grep hicbir sey bulamaz ve
@@ -131,8 +138,16 @@ if [ "${MAMILAS_LINT_SKIP:-0}" != "1" ]; then
     elif grep -qiE 'register:[[:space:]]*sty' "$PF"; then REG=sty
     elif grep -qiE 'register:[[:space:]]*edu' "$PF"; then REG=edu
     else
-      printf '⚠️  %s — register okunamadi, lint atlandi. Basliga `register: EDU` yaz.\n' "$PF" >&2
-      continue
+      # KOR KAPI YASAGI: register okunamiyorsa olcum yapilamaz, ve olculemeyen sey
+      # SESSIZCE GECMEZ. Eskiden burada `continue` vardi — yani basligi bozuk her dosya
+      # kapidan hic denetlenmeden geciyordu. Tek satirlik duzeltmesi olan bir sey icin
+      # kapinin kor kalmasi kabul edilemez.
+      fail "TESLIM DOSYASININ REGISTER'I OKUNAMADI — $PF
+
+Dosyanin ilk satirlarinda su ifadelerden biri gecmeli:
+  register: EDU   |   register: REAL   |   register: STY
+
+Olculemeyen dosya basilirsa eksigi krediyle odenir. Basliga tek satir ekle."
     fi
     # ⚠ `prompt-lint.mjs` KIRMIZI bulsa da `exit 0` verir — bir raporlayicidir, kapi degil.
     # Kapiyi cikis koduna baglamak, kapiyi doguran gun no-op yapardi (2026-07-31'de tam bu
@@ -154,7 +169,19 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
   MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesini commit mesajina yaz)"
     fi
     printf '✅ prompt-lint yesil: %s (register: %s)\n' "$PF" "$REG" >&2
-  done < <(git -c core.quotepath=false diff --cached --name-only --diff-filter=ACM -z 2>/dev/null)
+  done < <(
+    # ÜÇ SIZINTI birden kapatiliyor:
+    # (a) --diff-filter'a R eklendi: `git mv` ile yeniden adlandirilan teslim dosyasi
+    #     eskiden filtreden dusuyor ve hic denetlenmiyordu.
+    # (b) `git commit -a` ve `git commit <dosya>` hook ANINDA index'i doldurmamis olur;
+    #     `diff --cached` bos doner ve kapi sessizce baypas edilirdi. O yuzden calisma
+    #     agacindaki degismis izlenen dosyalar da listeye giriyor.
+    # (c) ikisi birlestiginde ayni dosya iki kez gelebilir → sort -u -z ile tekillestirilir.
+    {
+      git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null
+      git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
+    } | sort -z -u
+  )
 fi
 
 # --- 6b. DURUM KAYDI SAPMASI (UYARI — bloke etmez) ---

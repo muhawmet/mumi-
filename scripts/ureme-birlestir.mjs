@@ -25,7 +25,16 @@ const SEKANSLAR = [
 const mevcut = new Map();
 for (const f of readdirSync(SRC)) {
   const m = /^(\d{1,4})\.md$/.exec(f);
-  if (m) mevcut.set(Number(m[1]), readFileSync(join(SRC, f), 'utf8').trim());
+  if (m) {
+    const no = Number(m[1]);
+    // SESSİZ VERİ KAYBI: `01.md` ve `1.md` aynı anahtara düşer (Number eşit) ve ikincisi
+    // birincisini hiçbir uyarı vermeden ezer — bir kare teslimden yok olur.
+    if (mevcut.has(no)) {
+      console.error(`⛔ ÇAKIŞMA: ${no} numarasına iki dosya düşüyor (${f}). Biri sessizce kaybolurdu.`);
+      process.exit(2);
+    }
+    mevcut.set(no, readFileSync(join(SRC, f), 'utf8').trim());
+  }
 }
 
 const parcalar = [`EŞEYLİ VE EŞEYSİZ ÜREME — 6. SINIF · PRODÜKSİYON PROMPT'LARI (@efe)

@@ -12,14 +12,19 @@
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
-    "revize": false,
+    "revize": true,
     "MOTION": true,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
-    "SUNO": false,
+    "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-31T11:16:30.409Z",
+  "deliverablesOverride": {
+    "SUNO": true,
+    "revize": true,
+    "MOTION": true
+  },
+  "updatedAt": "2026-07-31T11:37:09.938Z",
   "updatedBy": "claude",
-  "baseCommit": "6553c55"
+  "baseCommit": "061e537"
 }
