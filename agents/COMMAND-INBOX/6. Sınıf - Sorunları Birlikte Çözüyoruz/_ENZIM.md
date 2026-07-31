@@ -12,11 +12,17 @@ Mami: *"referansı basıyor tekrar."* Aynı boyutta referans gösterilince NB2 k
 Kural: türetme ancak fark **kadrajın gözle görülür bir bölgesini** değiştiriyorsa kullanılır;
 mikro poz farkı için türetme yapılmaz. Gerekiyorsa fark hikâyede büyütülür.
 
-**2026-07-31 · Referans bozmuyor, MEKÂN referansı KAMERAYI sürüklüyor (şüphe · doğrulanacak).**
-K04 `@derin` + `@kose` ile temiz çıktı — karakter referansı stüdyo pozunu sürüklemedi.
-K05 aynı iki referansla bozuldu; tek fark K05'in **yeni bir kamera yüksekliği** istemesi
-(otur göz hizası, yükselen kaldırım, yürüyen insanlar). Şüphe: mekân referansı kendi bakış
-açısını da taşıyor ve prompt yeni açı isteyince çakışıyor. 5.png inince doğrulanacak.
+**2026-07-31 · ~~Mekân referansı kamerayı sürüklüyor~~ — ŞÜPHE YANLIŞ ÇIKTI, kareyle çürütüldü.**
+K05 üç dört kez bozuk çıktı, sebep referans değil **prompt'un kendisiydi.** Metinde
+*"a pair of school shoes crosses at the far right, all of them cut by the frame"* yazıyordu —
+yani kadrajdan kesilmiş bacaklar istendi. NB2 tam onu çizdi: sağ üstte **havada uçan bir çift
+ayakkabı, bacak ve evrak çantası, gövde yok.**
+
+🔴 **KURAL: "kadrajdan kesik figür" YAZILMAZ.** Yürüyen/geçen her insan en az bel ya da diz
+hizasından itibaren **bütün** tarif edilir, ayakları zemine basar ve temas gölgesi taşır.
+`cut by the frame`, `a pair of shoes`, `legs entering the frame` → hepsi gövdesiz uzuv
+üretiyor. Referans dosyasının kendi ölçümü de aynıydı (7 karede gövdesiz kol).
+Kalabalığı azaltmak için figür kesmek yerine **figür sayısını azalt.**
 
 **2026-07-31 · SARI — cepheler İtalyan/Akdeniz'e kayıyor.** K04'te pembe-oker cephe + balkon
 kombinasyonu Avrupa'ya çalıyor. "Anadolu yerine Paris/İtalya" ölçülmüş red sebebi (22 vaka).

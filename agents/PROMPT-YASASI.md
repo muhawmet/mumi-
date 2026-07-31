@@ -441,8 +441,19 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
   bir REAL karesine yazmak, o dünyanın kendi yasasını ihlal etmektir.
 - **Marka/telif:** stili çağır, stüdyoyu değil — *"premium-CG feature-animation 3D CGI,
   RenderMan-successor lineage"*. Franchise adı, gerçek kişi, logo yok.
-- **Türkçe metin ya da HİÇ.** İngilizce tabela/poster/rozet yok; okunmayacaksa yüzey boş kalsın.
+- **Türkçe metin ya da HİÇ.** İngilizce tabela/poster/rozet yok.
+  🔴 **AMA "yüzey boş kalsın" YANLIŞTIR ve buradan kaldırıldı.** Ölçüldü: **boş yüzey =
+  uydurma İngilizce** (42 revize İngilizce tabela, 38 revize bozuk harf). Motor boş panel
+  görünce oraya yazı uyduruyor — yasak onu durdurmuyor. Doğrusu: **yazı istemediğin her
+  yüzey GİYDİRİLİR** — kapalı kepenk, sarılı tente, doku, malzeme, gökyüzüne eğik cam,
+  ters çevrilmiş kâğıt, duvara dönük dosya sırtı. Kadrajda tabelanın doğabileceği boş
+  panel bırakılmaz. (§2d ile aynı hüküm — iki yerde çelişiyordu, burası düzeltildi.)
 - **Pozitif çerçevele.** NB2 negatif yığınını zayıf okur: "boş sıcak duvar" yaz, "dağınıklık yok" değil.
+  ⚠ **Bu, NEGATIVE slotunun gereksiz olduğu anlamına GELMEZ** — iki madde birbiriyle
+  çelişiyor sanılıyordu, ayrımı burada duruyor: **kimliği, güvenliği ve varlığı negatif
+  kuramaz** (onlar pozitif yazılır), ama **o karenin bilinen tek bozulma yolunu negatif
+  kapatır.** Zararlı olan hazır banka listesidir; kare-özel negatif değildir. Ölçüm:
+  kare-özel negatifle yazılan sette NEGATIVE oranı %100 ve lint kırmızısı 0.
 
 ### @tag disiplini
 
@@ -451,7 +462,17 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
   toptan revize oldu. **Korpusun en pahalı tek hatası** — üstelik `@kitap` referansı yazılmıştı
   ama promptlarda hiç kullanılmadı. Referans üretip handle'ı çağırmamak, referansı hiç
   üretmemekten kötüdür.
-- Karakteri **asla tarif etme**, handle yeter — görünüş yalnız referans promptunda tanımlanır.
+- **TAG'Lİ karakteri asla tarif etme**, handle yeter — görünüş yalnız referans promptunda
+  tanımlanır. `@efe1` yazdıktan sonra saçını, kıyafetini, boyunu yazmak referansla yarışır.
+- 🔴 **TAGSIZ insan ise MUTLAKA tarif edilir** — ve bu çelişki değil, aynı kuralın öteki yüzü:
+  tag'li kimliği referans taşır, tagsızı taşıyan hiçbir şey yoktur. Tagsız bırakılan her
+  figürde motor kendi kastını kuruyor (ölçüldü: cast ihlali 28 revize). Tagsız insan için
+  **yaş + Türk/Anadolu + giysi malzemesi + ifade** tek cümlede yazılır.
+- 🔴 **KADRAJDAN KESİK FİGÜR YAZILMAZ** (2026-07-31, K05 ile kanıtlandı). *"a pair of school
+  shoes crosses at the far right, cut by the frame"* yazıldı, NB2 **havada uçan bir çift
+  ayakkabı, bacak ve çanta** çizdi — gövde yok. Aynı sınıf daha önce 7 karede ölçülmüştü.
+  Her insan en az diz ya da bel hizasından itibaren **bütün** tarif edilir, ayağı zemine basar,
+  temas gölgesi taşır. **Kalabalığı azaltmak için figür KESİLMEZ, figür SAYISI azaltılır.**
 - Her ufak nesneye tag açma; yargıyla.
 
 ---
@@ -520,8 +541,11 @@ genel, dünya kusuru yereldir.
 Revize edilmiş kare de dahil.
 
 Kötü set ölçüsü (Mami: *"bok gibi duruyor"*): klip başına 61 kelime, kod bloğu, virgül listesi,
-69 klipte donmuş aynı kuyruk. İyi set: klip başına 114 kelime, düz metin, tam cümle ve
-**her klipte kare-özel kilit.**
+69 klipte donmuş aynı kuyruk. İyi set: düz metin, tam cümle ve **her klipte kare-özel kilit.**
+⚠ Buraya bir zamanlar *"iyi set 114 kelime"* yazılıydı ve aşağıdaki 190-215 hedefiyle
+çelişiyordu. Sayı ölçümle güncellendi — geçerli tek rakam §3'teki **190-215**'tir
+(altın standart Eşeyli 202; Kling'in resmi kılavuzu 60 altını öneriyor, aradaki fark
+sınanmadı). 114 rakamı eski ve farklı bir setin ölçüsüydü, kaldırıldı.
 
 🔴 **BİÇİM: TEK PARAGRAF. SLOT YOK, KÖŞELİ PARANTEZ YOK.** (Mami, 2026-07-30:
 *"salak gibi image formatıyla yazmışsın, direkt morph."*) Bu maddenin eski hâli motion'ı

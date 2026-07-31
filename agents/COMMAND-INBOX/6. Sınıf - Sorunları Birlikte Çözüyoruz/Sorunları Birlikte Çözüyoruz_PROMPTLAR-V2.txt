@@ -1,10 +1,8 @@
 SORUNLARI BİRLİKTE ÇÖZÜYORUZ — START FRAME PROMPTLARI (V2)
-6. Sınıf Sosyal Bilgiler · 6.1.3 Toplumsal Sorunlar · Efe + Derin
-Motor: Nano Banana 2 · 57 kare · çıta: high-end feature-animation
+6. Sınıf Sosyal Bilgiler · 6.1.3 · Efe + Derin · Nano Banana 2 · 57 kare
 
 BASILACAK 5 REFERANS: @efe1 · @derin · @kose · @sinif · @kutu
-TÜRETİLEN: K03←K02 · K52←K02 · K53←K04   (K05 türetmeden ÇIKARILDI, sıfırdan basılır)
-
+TÜRETİLEN: K03←K02 · K52←K02 · K53←K04   (K05 türetmeden ÇIKARILDI)
 KLING ÖN KİLİDİ: kimse okunabilir yazı yazmaz · kimse konuşmaz · kamera yazıya yaklaşmaz.
 
 SORUNLARI BİRLİKTE ÇÖZÜYORUZ — S1 · K01–K11 · V2 (YÜKSELTİLMİŞ ÇITA)
@@ -118,7 +116,7 @@ FİKİR: Durmak, hareketsizlik değil — herkes akarken tek duran kişi olmakt�
 PLAN: 🔴 TÜRETME İPTAL — bu kare SIFIRDAN basılır. Sebep ölçüldü (2026-07-31): K04 ile aradaki fark yalnız bir poz farkıydı, NB2 o kadar küçük farkı çizmeyip referansı kopyaladı. Fark hikâyede büyütüldü: kamera K04'ün tersine geçip yükseliyor, ve karede artık **yürüyen insanlar** var. Baskın geometri, kaldırımın üstünde soldan sağa akan bacak ve gölge nehri; Derin o nehrin altında, akıntıya karşı duran tek kütle. K04 yakın ve sıkışıktı, K05 geniş ve akıyor — iki kare yan yana kesildiğinde fark okunuyor.
 
 PROMPT:
-High-end theatrical feature-animation 3D. A 35mm lens stands on the roadway at @kose, low but no longer on the ground — roughly at the height of a seated girl's eyes, angled slightly up along the kerb line so the pavement becomes a raised stage running left to right across the upper two thirds of the frame. On that pavement the morning is moving: a woman with a bread bag strides out of the left edge, a man in a grey jacket passes behind her mid-step, and a pair of school shoes crosses at the far right, all of them cut by the frame and none of them looking down. Their legs and their long slanted shadows make a continuous horizontal current across the stone.
+High-end theatrical feature-animation 3D. A 35mm lens stands on the roadway at @kose, low but no longer on the ground — roughly at the height of a seated girl's eyes, angled slightly up along the kerb line so the pavement becomes a raised stage running left to right across the upper two thirds of the frame. On that pavement the morning is moving: exactly two adults walk it, each of them a complete figure visible from the knees up and standing fully inside the frame — a woman of about thirty-five in a mustard cardigan carrying a paper bread bag against her hip, and a man of about fifty in a grey jacket a few steps behind her, both mid-stride, both looking ahead down the street, neither of them glancing down. Their shoes press into the stone with clear dark contact shadows, and their long slanted shadows join into one continuous horizontal current across the pavement.
 
 Below that current, still on the roadway, @derin has stopped. She sits square to the kerb with both hands resting on the push-rims and no weight in them — palms lying along the chrome, thumbs over the upper edge, fingers loosely curled — the arms straight and the shoulders level. She is the only vertical, motionless mass in a frame full of horizontal motion, and the composition puts her low and slightly left of centre so the moving legs pass above and behind her head. Her face is fully readable in three-quarter view: a Turkish/Anatolian girl in the sixth grade, around eleven or twelve, chin level, eyes travelling along the pavement toward the sour-cherry car that lies across the dropped kerb further right; the expression is patient and calculating, a person waiting for a gap that is not going to open. Behind her the closed roller shutters carry their corrugated ribs and furled strapped awnings, and a stack of empty crates leans against one, so no blank fascia or empty panel exists anywhere in frame.
 
@@ -128,7 +126,7 @@ STYLE: theatrical high-end feature-animation 3D; appealing restrained pre-teen a
 
 TEXT: No readable text. The crates carry no stencil, the shutters no fascia, the car no plate.
 
-NEGATIVE: do not let any of the passing people look at her, stop, point or reach out to help; do not show their faces or make them characters — they are cut by the frame and continue walking; do not raise the chair onto the pavement or tilt it; do not fuse her hands into the push-rims or add extra fingers; do not turn the wheelchair into hospital equipment with straps, headrest, clinical white parts or oversized handles; do not make her cry, hang her head, smile bravely or look into the lens; do not empty the pavement of people, which would turn the shot into K04 again; no accessibility symbol, arrow, caption or pity-poster composition.
+NEGATIVE: 🔴 do not crop, cut or truncate any walking person at the frame edge, and never render a disembodied pair of legs, shoes, hands or a floating bag — every person in frame is one whole connected body standing on the pavement; do not add a third walker or any figure at the top-right corner; do not let any of the passing people look at her, stop, point or reach out to help; do not raise the chair onto the pavement or tilt it; do not fuse her hands into the push-rims or add extra fingers; do not turn the wheelchair into hospital equipment with straps, headrest, clinical white parts or oversized handles; do not make her cry, hang her head, smile bravely or look into the lens; do not empty the pavement of people, which would turn the shot into K04 again; no accessibility symbol, arrow, caption or pity-poster composition.
 
 
 #########################################################################
