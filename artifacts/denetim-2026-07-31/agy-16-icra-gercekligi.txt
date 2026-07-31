@@ -1,0 +1,53 @@
+Yürütme gerçekliği denetimi (Execution Reality Audit) sonuçları aşağıdadır. Çözüm önerisi verilmemiş, yalnızca **çalışan gerçeklik ve problemler** dosya:satır kanıtlarıyla raporlanmıştır.
+
+---
+
+### 1. Hook ve Betik Yürütme Tablosu (Execution Reality Matrix)
+
+| Bitiş / Dosya | Karar (Verdict) | Çalışma Şekli / Tetikleyici | Gerçek Davranış ve Kanıt |
+|---|---|---|---|
+| `.claude/hooks/gate.sh` | **ÇALIŞIYOR (KISMİ / KÖR NOKTALI)** | `PreToolUse` (Matcher: `Bash`, komut `git commit` içerirse) | `settings.json:8` ve `gate.sh:31` gereği yalnızca `git commit` içeren `Bash` çağrılarında tetiklenir. `tsc`, `vitest`, `build` ve launcher syntax hatalarında commit'i engeller (`gate.sh:56-104`). Ancak unpushed commit ve sync çatışmalarını engellemez (`gate.sh:106-137`). `prompt-lint`, `dunya-kilidi`, `motion-qc` denetimleri yürütülmez. |
+| `.claude/hooks/buddy-gate.sh` | **ÇALIŞIYOR AMA FAYDASIZ** | `SessionStart`, `PostToolUse` (Matcher: `Bash`) | `settings.json:23,58` üzerinde kayıtlı bash wrapper'dır (`buddy-gate.sh:24`). `PostToolUse` olayında `buddy.mjs:193` olayı yakalayıp hiçbir çıktı vermeden `exit 0` döner. Her Bash komutunda gereksiz node süreci başlatır. Windows'ta `.sh` doğrudan çalıştırılamaz; node yoksa `exit 0` ile sessizce geçer (`buddy-gate.sh:13`). |
+| `.claude/hooks/buddy.mjs` | **ÇALIŞIYOR** | `PostToolBatch` | `settings.json:45` içinde doğrudan `node` ile kayıtlıdır. Oturum zamanlayıcılarını hesaplar; `PostToolBatch` aşamasında `stdout` JSON zarfı (`additionalContext` / `systemMessage`) ile modele mesaj iletir (`buddy.mjs:255`). |
+| `.claude/hooks/oturum-durumu.mjs` | **ÇALIŞIYOR** | `SessionStart` | `settings.json:28` içinde `node` ile kayıtlıdır. `scripts/current-work.mjs` dosyasını içe aktarır (`oturum-durumu.mjs:22`), aktif iş durumunu `stdout` üzerinden SessionStart bağlamına yazar. |
+| `.claude/hooks/hasat-gate.sh` | **ÇALIŞIYOR AMA FAYDASIZ** | `SessionStart` | `settings.json:34` üzerinde kayıtlıdır. `hasat-gate.mjs` için bash wrapper'dır (`hasat-gate.sh:16`). Windows'ta `.sh` doğrudan çalışmaz; node yoksa `exit 0` ile sessizce geçer (`hasat-gate.sh:13`). |
+| `.claude/hooks/hasat-gate.mjs` | **ÇALIŞIYOR AMA FAYDASIZ** | (`hasat-gate.sh` vasıtasıyla) | `settings.json` içinde **doğrudan kayıtlı değildir**. `SessionStart`'ta çalışır ancak tüm çıktısını `process.stderr.write` (`say`) ile basar (`hasat-gate.mjs:23`). `SessionStart`'ta model yalnızca `stdout` okuduğu için bu çıktıyı **asla göremez**. Daima `exit 0` verir (`hasat-gate.mjs:57`). |
+| `.git/hooks/*` (14 dosya) | **ÇALIŞMIYOR** | Git Hook | `.git/hooks/` altındaki 14 dosyanın tamamı `.sample` uzantılıdır. Aktif çalışan git hook yoktur. |
+| CI Konfigürasyonları | **ÇALIŞMIYOR** | CI/CD | Depoda hiçbir `.github/workflows` veya CI/CD konfigürasyon dosyası bulunmamaktadır. |
+| `scripts/claude-sync.mjs` | **ÇALIŞIYOR (KISMİ)** | `gate.sh:106` | `git commit` anında `gate.sh` tarafından çalıştırılır (`gate.sh:106`). Çatışma durumunda uyarı verir ancak commit'i engellemez. |
+| `scripts/current-work.mjs` | **ÇALIŞIYOR** | `oturum-durumu.mjs:22` | `SessionStart` anında `.claude/hooks/oturum-durumu.mjs` tarafından çağrılarak yürütülür. |
+| `scripts/kapanis-hasadi.mjs` | **ÇALIŞIYOR AMA FAYDASIZ** | `hasat-gate.mjs:37` | `SessionStart`'ta `hasat-gate.mjs` tarafından çağrılır, ancak çıktısı `stderr`'e gittiği için model tarafından okunamaz. |
+| `scripts/*.test.mjs` (5 test betiği) | **ÇALIŞIYOR** | `gate.sh:61` | `gate.sh` içindeki `npx vitest run` adımında veya `npm test` ile otomatik yürütülür. |
+| `scripts/*` (Kalan 33 betik: `prompt-lint.mjs`, `dunya-kilidi.mjs`, `motion-qc.mjs`, `mamilas-command.mjs` vb.) | **ÇALIŞMIYOR (OTOMATİK)** | Manuel Komut | Hiçbir hook veya otomatik sistem tarafından tetiklenmez. Yalnızca bir insanın terminalde elle çalıştırmasıyla yürütülür. |
+
+---
+
+### 2. Sessiz Başarısızlıkların Sıralı Listesi (Ranked Silent Failures)
+
+#### 1. `hasat-gate.mjs` Çıktısının `stderr`'e Basılması ve Model Tarafından Okunamaması (Boşluğa Bağıran Uyarı)
+- **Dosya / Satır:** [hasat-gate.mjs:23, 46-51, 57](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/hasat-gate.mjs#L23)
+- **Gerçeklik:** `SessionStart` olayında Claude/AI modellerine yalnızca `stdout` akışı aktarılır. `hasat-gate.mjs` tüm durum raporlarını ve bekleyen proje uyarılarını `process.stderr.write` (`say`) ile basar. Model açılışta kapanış hasadı durumunu **göremez**. Betik her durumda `exit 0` döner.
+
+#### 2. Windows / PowerShell Ortamında `.sh` Hook'larının Doğrudan Çalıştırılamaması ve Sessiz `exit 0` Yutması
+- **Dosya / Satır:** [.claude/settings.json:12, 23, 34, 58](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L12), [buddy-gate.sh:13](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/buddy-gate.sh#L13), [hasat-gate.sh:13](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/hasat-gate.sh#L13)
+- **Gerçeklik:** `settings.json` içinde `.sh` dosyaları executable olarak (`"$CLAUDE_PROJECT_DIR"/.claude/hooks/gate.sh`) tanımlanmıştır (Node betikleri gibi `"command": "node"` wrapper'ı kullanılmamıştır). Windows yerel kabuğunda (PowerShell/CMD) `.sh` uzantıları doğrudan yürütülemez. Ayrıca `buddy-gate.sh` ve `hasat-gate.sh` `node` bulamazsa hata fırlatmak yerine `exit 0` ile sessizce geçer.
+
+#### 3. `gate.sh` Kalite Duvarının Kritik Üretim Betiklerini (`prompt-lint`, `dunya-kilidi`, `motion-qc`) Kapsamaması
+- **Dosya / Satır:** [.claude/hooks/gate.sh:56-104](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L56), [AGENTS.md:31-32](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L31)
+- **Gerçeklik:** `AGENTS.md` "harcamadan önce `prompt-lint.mjs` ve `dunya-kilidi.mjs` ile ölç" şartı koşar. Ancak `gate.sh` yalnızca `tsc`, `vitest` ve `build` denetler. Prompt hataları, dünya kilit uyumsuzlukları ve motion QC ihlalleri commit anında otomatik denetimden kaçar.
+
+#### 4. `gate.sh` İçindeki Gönderilmemiş İş (`git push`) ve Claude Senkron Çatışması Kontrollerinin Bloklamaması
+- **Dosya / Satır:** [.claude/hooks/gate.sh:106-137](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L106)
+- **Gerçeklik:** `gate.sh` unpushed commit'leri ve `claude-sync.mjs` çatışmalarını tespit eder; fakat `fail` (exit 2) çağırmak yerine stderr'e `printf` basıp `exit 0` ile geçer. Çatışmalı veya push edilmemiş iş commit edilmeye devam eder.
+
+#### 5. `PostToolUse` Üzerinde Her Komutta Çalışan `buddy-gate.sh` Latans Yükü ve Sıfır Çıktı
+- **Dosya / Satır:** [.claude/settings.json:58](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L58), [buddy.mjs:193-200](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/buddy.mjs#L193)
+- **Gerçeklik:** `PostToolUse` (Bash matcher) her komut çalışmasında `buddy-gate.sh` üzerinden `node buddy.mjs` başlatır. Ancak `buddy.mjs:193` kodu `ev === "PostToolUse"` durumunda doğrudan `return 0` vererek hiç çıktı üretmez. Her komutta gereksiz Node.js süreç başlatma maliyeti ödenir.
+
+#### 6. `hasat-gate.mjs` Betiğinin `settings.json` Dosyasında Doğrudan Kayıtlı Olmaması
+- **Dosya / Satır:** [.claude/settings.json:34](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/settings.json#L34), [hasat-gate.sh:16](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/hasat-gate.sh#L16)
+- **Gerçeklik:** `settings.json` içinde `hasat-gate.sh` kayıtlıdır. `hasat-gate.mjs` diskte mevcuttur ancak doğrudan `settings.json` hook yapısında yer almaz, kabuk betiği üzerinden dolaylı tetiklenir.
+
+#### 7. Zamanlama Mantık Hatası (`gate.sh` PreToolUse unpushed kontrolü)
+- **Dosya / Satır:** [.claude/hooks/gate.sh:131-137](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/hooks/gate.sh#L131)
+- **Gerçeklik:** `gate.sh`, `PreToolUse` aşamasında `git commit` çalıştırılmadan *önce* tetiklenir. Yapılmakta olan commit henüz oluşmadığı için kontrol edilen durum, mevcut commit öncesindeki geçmiş commit'lerdir.

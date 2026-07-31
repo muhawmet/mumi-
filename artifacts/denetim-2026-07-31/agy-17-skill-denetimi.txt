@@ -1,0 +1,280 @@
+# MAMILAS SKILL VE İŞ AKIŞI DENETİM RAPORU (Sadece Problemler)
+
+---
+
+## 1. BECERİ BAZINDA İNCELEME (Tetikleyici, Uzunluk, Çelişki ve Tekrarlar)
+
+### 1. `mamilas-audit`
+* **Tetikleyici Tanımı:** `MAMILAS beyin/prompt/üretim kalitesini, gerçek generateBatch çıktısını ve üretim gününde kötü kare doğuracak kusurları denetlemek istendiğinde kullan.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-audit/SKILL.md#L3))
+* **Uzunluk:** 21 satır, 134 kelime.
+* **Çelişki / Çift Gerçeklik:**
+  * **[mamilas-audit/SKILL.md:L11](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-audit/SKILL.md#L11):** `1. Gerçek generateBatch yolunu çalıştır; mümkün olan en temsilî girdileri seç.`
+  * **Çeliştiği Yer ([CLAUDE.md:L5-6](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L5-L6) & [AGENTS.md:L12](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L12)):** `Site TARİF üretir; motora giden prompt'u AJAN yazar. ... generateBatch çıktısı prompt kalitesi kanıtı DEĞİLDİR.`
+  * **Analiz:** `mamilas-audit`, ajana prompt kalitesini ölçmek için `generateBatch` çalıştırmasını söyler. Ancak `CLAUDE.md` ve `AGENTS.md`, `generateBatch` çıktısının motora gitmediğini (%1-3 örtüşme, aktif projede %0) ve prompt kalitesi kanıtı olmadığını açıkça söyler. Beceri, ana sözleşmeyle tamamen çelişen bir denetim yöntemi emretmektedir.
+
+---
+
+### 2. `mamilas-buddy`
+* **Tetikleyici Tanımı:** `MAMILAS'ın çalışma biçimi — Mami (Muhammet) ile nasıl çalışılır. DEHB merkezdedir, yan destek değil. Her oturumda yüklenir; .claude/hooks/buddy.mjs SessionStart'ta ve uzun işlerden sonra buna işaret eder. "buddy / destek / yoruldum / dağıldım / kafam durdu / nereye kalmıştık" dendiğinde ve HER oturum açılışında geçerlidir.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-buddy/SKILL.md#L3))
+* **Uzunluk:** 174 satır, 1263 kelime.
+* **Çelişki ve Tekrar:**
+  * **Tekrar ([CLAUDE.md:L55-65](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L55-L65)):** DEHB kuralları, RSD protokolü, tavan 6 ajan kullanımı, harici çalışma belleği, su/nefel yük yönetimi `CLAUDE.md` içinde zaten 10 satırda özetlenmiştir.
+  * **Çelişki ([mamilas-buddy/SKILL.md:L78](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-buddy/SKILL.md#L78)):** `Cevap memory/mamilas-hal-logu.md'ye düşer.`
+  * **Çeliştiği Yer ([CLAUDE.md:L32](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L32) & [faz-icraat.md:L16-18](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L16-L18)):** `artifacts/current-work.json -> node scripts/current-work.mjs`.
+  * **Analiz:** `mamilas-buddy`, aktif iş yanıtının disktede var olmayan hayalet `memory/mamilas-hal-logu.md` dosyasına yazılacağını söylerken, ana kanon `artifacts/current-work.json` dosyasını tek makine gerçeği ilan etmiştir.
+
+---
+
+### 3. `mamilas-denetim`
+* **Tetikleyici Tanımı:** `MAMILAS kare denetimi — Mami üretilmiş start frame'leri klasöre attığında kullan. "kareleri attım / denetle / revize / tarayacaksın / bunlara bak / 44 resmi indirdim" dendiğinde çalıştır. Sekans başına bir ajanla tek geçişte VO-eşliği denetler, revize ve motion'ı birlikte yazar. Kare görmeden motion yazmaz.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-denetim/SKILL.md#L3))
+* **Uzunluk:** 87 satır, 703 kelime.
+* **Çelişki ve Tekrar:**
+  * **Tekrar ([PROMPT-YASASI.md:L157-164](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L157-L164) & [faz-icraat.md:L40](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L40)):** Sekans başına 1 ajan, tek geçiş denetimi, kare görmeden motion yazmama ve `revize.txt` formatı `PROMPT-YASASI.md` ve `faz-icraat.md` içerisinde kelimesi kelimesine tekrarlanmaktadır.
+  * **Çelişki ([mamilas-denetim/SKILL.md:L35](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-denetim/SKILL.md#L35)):** `memory/mamilas-nb2-hata-katalogu bilinen hata kalıpları.` -> Diskte `memory/` dizini ve `mamilas-nb2-hata-katalogu` dosyası yoktur!
+  * **Çelişki ([mamilas-denetim/SKILL.md:L39-53](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-denetim/SKILL.md#L39-L53)):** 0-9 arası kıstas sırası tanımlar. Ancak `PROMPT-YASASI.md:L341-397` içinde 1-8 arası bambaşka revize sınıfları (insan koy-kol koyma, geniş plan, boş yüzey, orientation, kavrama vb.) tanımlanmıştır. İki belge denetim yaparken farklı kontrol listeleri dayatır.
+
+---
+
+### 4. `mamilas-director`
+* **Tetikleyici Tanımı:** `MAMILAS Yönetmen — İCRAAT fazında üretimin VARSAYILAN yüzeyi. "video üret / prodüksiyon / prompt yaz / start frame / motion / revize / command JSON'dan üret / yönetmen" dendiğinde BUNU çağır. Beyni + PROMPT-YASASI'nı + engine lehçesini + COMMAND-INBOX JSON'unu yükler; Mami ile KONUŞARAK Nano Banana 2 image ve Kling motion prompt'larını ELLE yazar (inline jüri = tamir) ve .txt teslim setini üretir. Hiçbir runner/CLI çalıştırmaz.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L3))
+* **Uzunluk:** 218 satır, 2116 kelime.
+* **Çelişki ve Tekrar:**
+  * **Tekrar ([PROMPT-YASASI.md:L1-862](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L1-L862)):** Nano Banana 2 şablonu, Kling 3.0 kuralları, referans template'leri, slot sırası ve jüri tamir mantığı `PROMPT-YASASI.md`'nin %80'ini özetleyerek devasa bir ikinci gerçeklik oluşturur.
+  * **Kritik Motion Format Çelişkisi ([mamilas-director/SKILL.md:L139-140](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L139-L140)):** `dialect ritmi (attack ilk saniye, event ~%70'te çözülür, kalan hold); worldPacket.motionCadence disiplini.`
+  * **Çeliştiği Yer ([PROMPT-YASASI.md:L529-532](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L529-L532)):** `BİÇİM: TEK PARAGRAF. SLOT YOK, KÖŞELİ PARANTEZ YOK. ... Slot'a bölünen motion prompt'unda motor cümleler arası sürekliliği kaybediyor ... Mami hükmü 'hiç beğenmedim'.`
+  * **Analiz:** `mamilas-director`, ajanlara motion yazarken eski kod spekinden kalma dialect ritmi ve cadence bloğu kullanmasını söyler. Ancak yasa kanonu `PROMPT-YASASI.md`, slotlu ve bloklu yapıyı kesin olarak yasaklamış ve tek paragraf zorunluluğu getirmiştir.
+  * **Teslimat Format Çelişkisi ([mamilas-director/SKILL.md:L196](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L196)):** `<Ad>_MOTION.txt` tek dosya teslimi ister.
+  * **Çeliştiği Yer ([PROMPT-YASASI.md:L583-584](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L583-L584)):** `Teslim şekli: klip başına ayrı dosya — <Ad>/MOTION/01.txt … 54.txt. Tek büyük dosya Mami'nin akışını bozuyor.`
+
+---
+
+### 5. `mamilas-enzim`
+* **Tetikleyici Tanımı:** `MAMILAS üretimini hızlandıran kilit disiplini. Yönetmen prompt yazmadan ÖNCE kararları kilitler, üretim sırasında geri sarmayı önler. "enzim / enzimle / hızlandıralım / bu videoyu hızlı bitirelim / kilitleri sıkalım" dendiğinde ve HER yeni video başlarken mamilas-director ile birlikte çalıştır.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-enzim/SKILL.md#L3))
+* **Uzunluk:** 156 satır, 1095 kelime.
+* **Çelişki ve Tekrar:**
+  * **Tekrar ([PROMPT-YASASI.md:L440-457](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L440-L457) & [faz-icraat.md:L36](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L36)):** Referans envanteri çıkarma, kilit 1-4 kontrolleri `PROMPT-YASASI.md` §4a ve `faz-icraat.md` ile birebir aynıdır.
+  * **Çelişki ([mamilas-enzim/SKILL.md:L118](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-enzim/SKILL.md#L118)):** `Bilinen NB2 hata kalıpları: memory/mamilas-nb2-hata-katalogu.md`. (Diskte yok).
+  * **Çelişki ([mamilas-enzim/SKILL.md:L46](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-enzim/SKILL.md#L46)):** Tek satırlık script ile `saffron` ve `sheen` aratır. Ancak `mamilas-director/SKILL.md:L115-116`, bu kelimelerin `brain.ts` ve `vibrant_edu.bias` içinde söküldüğünü ve `wordTraps.test.ts` ile kilitlendiğini belirtir. `mamilas-enzim` eski kod borçlarını taramaya devam eder.
+
+---
+
+### 6. `mamilas-gate`
+* **Tetikleyici Tanımı:** `MAMILAS değişikliğini bitmeden, commit etmeden veya hazır ilan etmeden önce kalite kapısını çalıştırmak ve yeni kırıkları ayırmak için kullan.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-gate/SKILL.md#L3))
+* **Uzunluk:** 16 satır, 84 kelime.
+* **Çelişki ve Tekrar:**
+  * **%100 Tekrar ([CLAUDE.md:L95](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L95) & [AGENTS.md:L40-44](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L40-L44)):** `npx tsc --noEmit` -> `npx vitest run` -> `npm run build` adımlarını hiçbir ek değer üretmeden tekrar eder.
+
+---
+
+### 7. `mamilas-imagegen`
+* **Tetikleyici Tanımı:** `MAMILAS için yeni raster görsel, dünya önizlemesi, konsept kare, kapak veya mevcut görsel düzenlemesi istendiğinde kullan. Yerleşik imagegen aracını proje sözleşmesi ve MAMILAS görsel yasalarıyla çalıştırır.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-imagegen/SKILL.md#L3))
+* **Uzunluk:** 31 satır, 221 kelime.
+* **Çelişki / Çift Gerçeklik:**
+  * **[mamilas-imagegen/SKILL.md:L18](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-imagegen/SKILL.md#L18):** `Varsayılan olarak yerleşik imagegen aracını kullan. API anahtarı isteme.`
+  * **Çeliştiği Yer ([CLAUDE.md:L5](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L5), [faz-icraat.md:L7](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L7) & [mamilas-director/SKILL.md:L209](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L209)):** `Harici image/video API, otomatik generation, batch ... YOK`, `Mami Magnific'e basar`, `Hiçbir runner/CLI çalıştırmaz.`
+  * **Analiz:** İCRAAT fazında görseller Mami tarafından Magnific/fal.ai üzerinde elle basılır. `mamilas-imagegen` ise ajana yerel `imagegen` aracını çalıştırmasını söyleyerek ortamda otomatik görsel üretimi yapmaya kalkışır.
+
+---
+
+### 8. `mamilas-pipeline`
+* **Tetikleyici Tanımı:** `MAMILAS'ı üç odaklı kapanış fazında yürütür. Mami "execute", "devam et", "phase/faz", "pipeline", "siteyi bitir" veya Core/Studio/Command fazlarından birini kapat dediğinde kullan. Sol'a ürün invariantları içinde yüksek mimari özgürlük, serbest iç ajan koordinasyonu, faz-sonu bağımsız denetim ve final convergence teslim akışı verir.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-pipeline/SKILL.md#L3))
+* **Uzunluk:** 70 satır, 466 kelime.
+* **Çelişki / Uykudaki Faz:**
+  * **[mamilas-pipeline/SKILL.md:L57-60](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-pipeline/SKILL.md#L57-L560):** Sistem inşasını (Core, Studio, Command fazları) yürütmeyi emreder.
+  * **Çeliştiği Yer ([CLAUDE.md:L14-19](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L14-L19) & [faz-icraat.md:L1-5](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L1-L5)):** `Aktif faz: İCRAAT ... İnşa uykuda: docs/ai/faz-insa.md ... İcraat fazında iş video üretmektir, sistem inşa etmek değil.`
+  * **[mamilas-pipeline/SKILL.md:L13](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-pipeline/SKILL.md#L13):** `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` dosyasının okunmasını emreder.
+  * **Çeliştiği Yer ([CLAUDE.md:L37](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L37) & [AGENTS.md:L13](file:///Users/Muhammet/Desktop/mamilas-modern/AGENTS.md#L13)):** `EXECUTION_STATE.md (1337 satır) arşivdir, otorite DEĞİL — normal üretim oturumunda açılmaz.`
+
+---
+
+### 9. `mamilas-ref`
+* **Tetikleyici Tanımı:** `MAMILAS'a yeni referans (ref) eklerken/yüklerken kullan — referansın SURGERY_DATA.json'da tam nereye, hangi worldId'ye, hangi 7-katman alanlarla gireceğini ve pipeline'da (brain.ts dnaDirectives→perRef→buildImagePrompt) nasıl işlendiğini bilir; körleme eklemez. Mami "referans ekleyeceğiz / referans yükleyeceğiz / şu dünyaya ref" dediğinde çalıştır.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L3))
+* **Uzunluk:** 61 satır, 586 kelime.
+* **Çelişki / Olmayan Beceri Referansı:**
+  * **[mamilas-ref/SKILL.md:L8](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L8):** `yazım kalitesi için ayrıca mamilas-world disiplinini ...` -> Diskte `mamilas-world` adında bir skill **YOKTUR**.
+  * **[mamilas-ref/SKILL.md:L63](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L63):** `... -> mamilas-checkpoint.` -> Diskte `mamilas-checkpoint` adında bir skill veya script **YOKTUR**.
+
+---
+
+### 10. `mamilas-uret`
+* **Tetikleyici Tanımı:** `MAMILAS runner/CLI hattı — YALNIZ agents/runner.mjs ya da scripts/mamilas-command.mjs açıkça koşturulacaksa. "runner koş / batch koş / --director koş / command hash kapısı / storyboard receipt / --import-frame / export-image-bundle / yarım runner koşusuna devam" dendiğinde kullan. Konuşarak prompt yazma işi BUNUN DEĞİL, mamilas-director'ındır; elle üretimde bu skill ÇAĞRILMAZ.` ([SKILL.md:L3](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-uret/SKILL.md#L3))
+* **Uzunluk:** 79 satır, 643 kelime.
+* **Çelişki / Emekli İş Akışı:**
+  * **[mamilas-uret/SKILL.md:L14](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-uret/SKILL.md#L14):** `node agents/runner.mjs --project "<Ad>" --director --provider claude` komutunu varsayılan üretim hattı olarak tanımlar.
+  * **Çeliştiği Yer ([CLAUDE.md:L5-6](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L5-L6), [faz-icraat.md:L38](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L38) & [mamilas-director/SKILL.md:L4 & L209](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L4)):** `Hiçbir runner/CLI çalıştırmaz. Jüri/orkestra spawn YOK. İkinci runner / otomatik generation / API YOK — elle üretim.`
+  * **Analiz:** `mamilas-uret`, tamamen emekliye ayrılmış olan otomatize `runner.mjs` ve `mamilas-command.mjs` CLI akışını çalıştırmayı emreder. İcraat fazındaki elle prompt yazma mantığıyla doğrudan çelişir.
+
+---
+
+## 2. ARTIK VAR OLMAYAN İŞ AKIŞLARI VE HAYALET YOLLAR (Disk Doğrulaması)
+
+Aşağıdaki dosya yolları, betikler ve beceri referansları ilgili becerilerde **zorunlu adım** olarak geçmektedir ancak diske bakıldığında silinmiş, emekli edilmiş veya hiç var olmamıştır:
+
+1. **`memory/` Dizini ve Altındaki Dosyalar (HAYALET DİZİN):**
+   * `memory/mamilas-hal-logu.md` ([mamilas-buddy/SKILL.md:L78](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-buddy/SKILL.md#L78)) -> **Diskte Yok.** (`memory/` dizini projede hiç mevcut değil).
+   * `memory/mamilas-nb2-hata-katalogu.md` ([mamilas-denetim/SKILL.md:L35](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-denetim/SKILL.md#L35), [mamilas-enzim/SKILL.md:L118](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-enzim/SKILL.md#L118)) -> **Diskte Yok.**
+   * `MEMORY.md` index / `memory/` pointer ([mamilas-director/SKILL.md:L43 & L206](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L43)) -> **Diskte Yok.**
+   * `scripts/memory-sync.mjs` ([CLAUDE.md:L102](file:///Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md#L102)): `Tek yönlü memory-sync emekli.` (Emekli edilmiş betik).
+
+2. **Hayalet Beceri (Skill) Referansları:**
+   * `mamilas-world` ([mamilas-ref/SKILL.md:L8](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L8)) -> `.claude/skills/` ve `.agents/skills/` altında **YOK**.
+   * `mamilas-studio` (Sözleşme metinlerinde ve promptta geçen) -> `.claude/skills/` ve `.agents/skills/` altında **YOK**.
+   * `mamilas-checkpoint` ([mamilas-ref/SKILL.md:L63](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L63)) -> `.claude/skills/` ve `.agents/skills/` altında **YOK**.
+
+3. **Emekli Edilmiş Runner / CLI İş Akışı Betikleri:**
+   * `agents/runner.mjs` ([mamilas-uret/SKILL.md:L14](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-uret/SKILL.md#L14)) ve `scripts/mamilas-command.mjs` ([mamilas-uret/SKILL.md:L46](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-uret/SKILL.md#L46)): Fiziksel `.mjs` dosyaları diskte durmasına rağmen, iş akışı olarak **emeklidir**. `CLAUDE.md:L5-7` ve `mamilas-director:L4` uyarınca bu betikler aktif video üretiminde Koşulmaz.
+
+4. **Emekli / Arşivleşmiş Durum Belgesi Referansları:**
+   * `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` ([mamilas-pipeline/SKILL.md:L13](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-pipeline/SKILL.md#L13)) -> `CLAUDE.md:L37` ve `AGENTS.md:L13` uyarınca: `1337 satırlık arşivdir, otorite DEĞİL — normal üretim oturumunda açılmaz.`
+   * `public/refs/` dizini ([mamilas-ref/SKILL.md:L44](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-ref/SKILL.md#L44)) -> Diskte `public/refs/` klasörü **YOK**.
+
+---
+
+## 3. HİÇ TETİKLENMEYECEK VEYA TETİK ÇATIŞMASI YAŞAYAN BECERİLER
+
+1. **`mamilas-pipeline` (Uykudaki Faz):**
+   * **Neden Tetiklenmez:** Sistem inşasını (Core, Studio, Command) kapatmak için yazılmıştır. Aktif faz **İCRAAT** olduğu için (`CLAUDE.md:L14`), inşa moduna geçmek ve duvar kurmak `faz-icraat.md:L4` gereği açıkça yasaktır.
+
+2. **`mamilas-uret` vs `mamilas-director` (Doğrudan Tetik Çatışması):**
+   * `mamilas-uret` tetikleyicisi: `"runner koş / batch koş / --director koş / command JSON'dan üret"`
+   * `mamilas-director` tetikleyicisi: `"video üret / prodüksiyon / prompt yaz / command JSON'dan üret / yönetmen"`
+   * **Çatışma:** Kullanıcı "command JSON'dan üret" veya "video üret" dediğinde iki beceri de tetik koşulunu karşılar. Ancak `mamilas-director:L4` *"Hiçbir runner/CLI çalıştırmaz"* derken, `mamilas-uret:L14` *"runner.mjs'i çalıştır"* der. Ajan hangisini seçeceği konusunda tam kilitlenmeye düşer.
+
+3. **`mamilas-denetim` vs `mamilas-director` (Revize / Denetim Çatışması):**
+   * `mamilas-denetim` tetikleyicisi: `"kareleri attım / denetle / revize / tarayacaksın"`
+   * `mamilas-director` bölüm §3.5: `"REVİZYON FAZI — Mami renderları klasöre indirir... revize.txt yaz"`
+   * **Çatışma:** Üretilen kareleri klasörden okuyup `revize.txt` yazma adımı iki ayrı beceride iki farklı yöntem ve kontrol listesiyle tanımlanmıştır.
+
+4. **`mamilas-imagegen` (Yanlış Araç Tetiklemesi):**
+   * Tetikleyici: `"MAMILAS için yeni raster görsel ... istendiğinde kullan"`
+   * İcraat fazında ajan yerel `imagegen` aracını kullanmaz; görseller Magnific üzerinde Mami tarafından basılır. Beceri, ajanı yerel çizim aracına yönlendirerek bağlamı bozar.
+
+---
+
+## 4. TOPLAM TOKEN YÜKÜ VE TEKRAR ORANI
+
+### Sözcük Sayımı (Word Counts)
+
+| Beceri / Belge | Satır Sayısı | Sözcük Sayısı |
+|---|---|---|
+| `mamilas-audit` | 20 | 134 |
+| `mamilas-buddy` | 173 | 1263 |
+| `mamilas-denetim` | 86 | 703 |
+| `mamilas-director` | 217 | 2116 |
+| `mamilas-enzim` | 156 | 1095 |
+| `mamilas-gate` | 16 | 84 |
+| `mamilas-imagegen` | 31 | 221 |
+| `mamilas-pipeline` | 70 | 466 |
+| `mamilas-ref` | 61 | 586 |
+| `mamilas-uret` | 79 | 643 |
+| **TOPLAM (10 Beceri)** | **909 Satır** | **7,311 Sözcük** (~9,800 Token) |
+
+### Daimi Yüklü Belgelerin Hacmi
+* `CLAUDE.md`: 106 satır, 915 sözcük.
+* `docs/ai/faz-icraat.md`: 82 satır, 779 sözcük.
+* `agents/PROMPT-YASASI.md`: 861 satır, 7,897 sözcük.
+
+### Gereksiz Tekrar (Redundancy) Analizi
+* Becerilerdeki 7,311 sözcüğün yaklaşık **4,800 - 5,200 sözcüğü (%65 - %70'i)**, daima oturumda yüklü olan `CLAUDE.md`, `faz-icraat.md` veya `PROMPT-YASASI.md` metinlerinin yeniden ifade edilmiş kopyalarıdır.
+* Örneğin `mamilas-director` (2,116 sözcük), `PROMPT-YASASI.md` içindeki slot şablonlarını, Kling motion kurallarını ve jüri ilkelerini %80 oranında özetleyerek tekrarlamaktadır.
+
+---
+
+## 5. COMMAND-INBOX TESLİMAT DENETİMİ (Yazılı Spec ↔ Gerçek Saha Sapması)
+
+Yazılı şartnameler ([mamilas-director:L193-197](file:///Users/Muhammet/Desktop/mamilas-modern/.claude/skills/mamilas-director/SKILL.md#L193-L197), [PROMPT-YASASI:L153 & L583](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L153) ve [faz-icraat.md:L72-74](file:///Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md#L72-L74)) ile `agents/COMMAND-INBOX/Biten/` altındaki 3 gerçek projenin çıktıları karşılaştırıldığında tespit edilen sapmalar:
+
+```
+Yazılı Şartname Standart Dosya Listesi:
+  - <Ad>_REFERANSLAR.txt
+  - <Ad>_PROMPTLAR.txt
+  - <Ad>_revize.txt
+  - <Ad>_MOTION.txt (veya MOTION/01.txt..54.txt)
+  - <Ad>_EDIT-PLAN.txt
+  - <Ad>_SESLENDIRME.txt
+  - <Ad>_SUNO.txt
+  - KABA-KURGU.xml
+```
+
+### Proje 1: `6. Sınıf - Eşeyli ve Eşeysiz Üreme`
+* **Uzantı İhlali:** `Eşeyli ve Eşeysiz Üreme_PROMPTLAR.md` (200 KB) dosyası mevcuttur. ([PROMPT-YASASI.md:L153](file:///Users/Muhammet/Desktop/mamilas-modern/agents/PROMPT-YASASI.md#L153) ve `mamilas-director:L193` açıkça `"Windows'ta .md uğraştırıyor, hepsi .txt olacak"` emrini verir).
+* **Çift Sürüm Kirliliği:** Klasörde hem `_PROMPTLAR.md` hem de `_PROMPTLAR.txt` (239 KB) bir arada bulunmaktadır.
+* **Motion Yapı Çelişkisi:** `mamilas-director`'ın emrettiği `_MOTION.txt` tek dosyası **yoktur**; bunun yerine `PROMPT-YASASI.md:L583` uyarınca `MOTION/` dizini açılmıştır.
+* **Standart Dışı Dosyalar:** Şartnamede olmayan `Eşeyli ve Eşeysiz Üreme_VO-KARE-BOLUM.txt` ve `PROMPTLAR/` dizini klasöre bırakılmıştır.
+
+### Proje 2: `5. Sınıf - Kütle ve Ağırlık`
+* **Format ve Dosya Birleştirme İhlali:** `REVIZE-VE-MOTION.md` (21 KB) adlı `.md` uzantılı birleştirilmiş dosya üretilmiştir. Hem `.md` kullanılmış hem de `revize` ile `motion` tek dosyada toplanmıştır.
+* **Motion Yapı Çelişkisi:** Projede `MOTION/` klasörü **yoktur**; bunun yerine tek parça `Kütle ve Ağırlık_MOTION.txt` (48 KB) teslim edilmiştir (`Eşeyli` projesinin tam zıddı).
+* **Rastgele Çöp Dosya Yığılması:** Klasörde şartname dışı `EXTEND-KLIPLER.txt`, `UZATILACAK-KLIPLER.txt`, `GERCEK-KARE-ESLEME.txt`, `Kütle ve Ağırlık_CODEX-KALAN-START-FRAMELER.txt`, ham `23.png` görseli ve `.docx` senaryo dosyası bırakılmıştır.
+
+### Proje 3: `5. Sınıf - Birlikte Daha Güçlüyüz`
+* **Mükerrer Dosya Kaosu:** Hem `Birlikte Daha Güçlüyüz_REVIZE-TEK-DOSYA.txt` hem `Birlikte Daha Güçlüyüz_revize.txt` (84 KB) mevcuttur. Hem `_SESLENDIRME-TEK-BLOK.txt` hem `_SESLENDIRME.txt` mevcuttur.
+* **İki Motion Formatının Aynı Anda Teslimi:** Hem `MOTION/` dizini hem de `Birlikte Daha Güçlüyüz_MOTION.txt` (111 KB) aynı klasördedir. `mamilas-director` ve `PROMPT-YASASI` çelişkisinin ikisi birden diske basılmıştır.
+
+---
+
+## 6. ÜÇLÜ TEKRAR VEREN İŞ AKIŞ ADIMLARI (CLAUDE.md ↔ faz-icraat.md ↔ Beceri)
+
+Aynı iş akış adımı 3 ayrı yerde tarif edildiğinde oluşan durum ve çalışma anında hangisinin okunduğu:
+
+### Trio 1: Oturum Durum Kaydı (`current-work.mjs`)
+1. `CLAUDE.md:L32`: `Aktif iş kaydı | artifacts/current-work.json -> node scripts/current-work.mjs`
+2. `faz-icraat.md:L16-18`: `0. Hook [durum] bloğunu basar ... node scripts/current-work.mjs ilerle`
+3. `mamilas-director/SKILL.md:L23-26` & `mamilas-enzim/SKILL.md:L15`: `node scripts/current-work.mjs -- aktif iş...`
+* **Hangi Anda Okunur:** Oturum açılır açılmaz `.claude/hooks/oturum-durumu.mjs` hook'u otomatik çalıştığı için ajan beceriyi yüklemeden önce bu bilgiye **`faz-icraat.md` / Hook** seviyesinde maruz kalır. Becerideki talimat %100 gereksiz tekrardır.
+
+### Trio 2: Dünya Kilidi (STYLE Kuyruğu Oluşturma) (`dunya-kilidi.mjs`)
+1. `CLAUDE.md:L34 & L78`: `Dünya kilidi (STYLE kuyruğu) | scripts/dunya-kilidi.mjs — elle yazma, bunu bas ve yapıştır`
+2. `faz-icraat.md:L37`: `Prompt yazmadan ÖNCE | node scripts/dunya-kilidi.mjs <worldId> — STYLE/LIGHT/NEGATIVE kuyruğunu bas ve yapıştır`
+3. `mamilas-director/SKILL.md:L32-36` & `mamilas-enzim/SKILL.md:L64`: `node scripts/dunya-kilidi.mjs <worldId> ... bas ve yapıştır`
+* **Hangi Anda Okunur:** Prompt yazım anında ajanın aktif olarak işletildiği yer **`mamilas-director`** becerisidir. `CLAUDE.md` ve `faz-icraat.md` içindeki tekrarlar sadece token yatar.
+
+### Trio 3: Yapısal Prompt Denetimi (`prompt-lint.mjs`)
+1. `CLAUDE.md:L33 & L79`: `Prompt yapısı ölçümü | scripts/prompt-lint.mjs — üretimden ÖNCE koşar`
+2. `faz-icraat.md:L39`: `Prompt yazıldıktan sonra, BASMADAN ÖNCE | node scripts/prompt-lint.mjs <dosya>`
+3. `mamilas-director/SKILL.md:L36-38` & `mamilas-denetim/SKILL.md:L31`: `node scripts/prompt-lint.mjs <teslim dosyası>`
+* **Hangi Anda Okunur:** Prompt yazılıp dosyaya döküldüğü an **`mamilas-director`** veya **`mamilas-denetim`** okunur.
+
+### Trio 4: Kalite Kapısı (`gate.sh` / `tsc` -> `vitest` -> `build`)
+1. `CLAUDE.md:L95`: `npx tsc --noEmit -> npx vitest run -> npm run build`
+2. `faz-icraat.md`: (Sözleşme referansı)
+3. `mamilas-gate/SKILL.md:L8-10`: `1. npx tsc --noEmit 2. npx vitest run 3. npm run build`
+* **Hangi Anda Okunur:** Commit öncesi `.claude/hooks/gate.sh` otomatik çalıştığı veya doğrudan **`CLAUDE.md`** okunduğu için `mamilas-gate` becerisi pratikte hiç çağrılmaz.
+
+---
+
+## 7. BÜTÜNSEL SIRALAMA (Ajan İçin Karmaşa Derecesine Göre Derecelendirme)
+
+Tüm bu kusurlar, taze bir oturum açan ajanın kafasını ne kadar karıştıracağına göre en kritik olandan hafif olana doğru sıralanmıştır:
+
+### 1. [DERECE 1 - KRİTİK SIRALAMA] Emekli Edilmiş CLI/Runner Akışı ile Elle Yönetmen Çatışması
+* **Dosya/Satır:** `mamilas-uret/SKILL.md:L14` ↔ `mamilas-director/SKILL.md:L4 & L209` ↔ `CLAUDE.md:L5`
+* **Etki:** Ajan, `mamilas-uret` tetiklendiğinde emekliye ayrılmış `runner.mjs` veya `mamilas-command.mjs` betiklerini çalıştırmaya kalkar. Ancak `mamilas-director` ve `CLAUDE.md` runner çalıştırılmasını kesin olarak yasaklamıştır. Ajan oturum başında iki zıt çalışma mantığı arasında kalır.
+
+### 2. [DERECE 2 - KRİTİK SIRALAMA] Motion Prompt Yapısında Sözleşme İhlali
+* **Dosya/Satır:** `mamilas-director/SKILL.md:L139-140` ↔ `PROMPT-YASASI.md:L529-532`
+* **Etki:** `mamilas-director`, ajana motion yazarken dialect ritimleri ve cadence blokları emreder. Ancak `PROMPT-YASASI.md`, köşeli parantez, slot ve blok kullanımını açıkça reddetmiş, tek akıcı paragraf zorunluluğu getirmiştir. Ajanın üreteceği motion prompt'ları doğrudan reddedilir.
+
+### 3. [DERECE 3 - YÜKSEK SIRALAMA] Uykudaki Faz ve Arşiv Dosyası Çağrısı
+* **Dosya/Satır:** `mamilas-pipeline/SKILL.md:L13 & L57` ↔ `CLAUDE.md:L14 & L37`
+* **Etki:** `mamilas-pipeline`, uykuda olan İNŞA fazına ait sistem duvarı kurma adımlarını ve normal oturumda okunması yasaklanan 1337 satırlık arşiv dosyası `EXECUTION_STATE.md`'yi açmaya çalışır.
+
+### 4. [DERECE 4 - YÜKSEK SIRALAMA] Diskte Var Olmayan Hayalet Yollar ve Olmayan Beceriler
+* **Dosya/Satır:** `mamilas-buddy:L78`, `mamilas-denetim:L35`, `mamilas-enzim:L118`, `mamilas-ref:L8 & L63`
+* **Etki:** Ajan, `memory/mamilas-hal-logu.md`, `memory/mamilas-nb2-hata-katalogu.md` gibi var olmayan dosyalara okuma/yazma yapmaya çalışır; `mamilas-world`, `mamilas-studio` ve `mamilas-checkpoint` gibi var olmayan becerileri çağırmaya kalkarak hataya düşer.
+
+### 5. [DERECE 5 - ORTA SIRALAMA] Otomatik Görsel Çizim Aracına Yanlış Yönlendirme
+* **Dosya/Satır:** `mamilas-imagegen/SKILL.md:L18` ↔ `CLAUDE.md:L5` ↔ `mamilas-director:L209`
+* **Etki:** İcraat fazında görseller Magnific üzerinde Mami tarafından basılırken, `mamilas-imagegen` ajanı yerel `imagegen` aracını kullanmaya yönlendirir.
+
+### 6. [DERECE 6 - ORTA SIRALAMA] Yanlış Audit Metodu Yönlendirmesi
+* **Dosya/Satır:** `mamilas-audit/SKILL.md:L11` ↔ `CLAUDE.md:L5-6` ↔ `AGENTS.md:L12`
+* **Etki:** `mamilas-audit`, ajana prompt kalitesini denetlemek için motora gitmeyen `generateBatch` çıktısını baz almasını emreder.
+
+### 7. [DERECE 7 - ORTA SIRALAMA] Teslimat Klasörü ve Format Kaosu
+* **Dosya/Satır:** `mamilas-director:L196` ↔ `PROMPT-YASASI:L583` ↔ Real Inbox Deliveries (`COMMAND-INBOX/Biten/`)
+* **Etki:** Kimi belgede `.txt`, kimi projede `.md` üretilmiş; bir yerde tek dosya `_MOTION.txt`, diğerinde `MOTION/` klasörü istenmiş ve sahada her iki çelişki de çöp dosyalarla birlikte diske bıkakılmıştır.
+
+### 8. [DERECE 8 - DÜŞÜK SIRALAMA] %65-70 Oranında Sözcük İsrafı ve Üçlü Tekrarlar
+* **Dosya/Satır:** Tüm beceri dosyaları ↔ `CLAUDE.md` ↔ `faz-icraat.md` ↔ `PROMPT-YASASI.md`
+* **Etki:** Becerilerdeki ~7,311 sözcüğün 4,800+'ü daimi yüklü ana kanonların tekrarıdır. Ajanın bağlam penceresini (context window) gereksiz yere doldurur.

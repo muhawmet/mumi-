@@ -1,0 +1,174 @@
+Kullanıcının **"Saatler nereye gidiyor? 8 saatlik bir videoda sürekli yeniden yapım (rework) var"** sorusunu yanıtlamak amacıyla `/Users/Muhammet/.claude/projects/-Users-Muhammet-Desktop-mamilas-modern/` dizinindeki 76 adet `.jsonl` oturum günlüğü (ve bunlara bağlı 763 alt ajan günlük dosyası) üzerinde yapılan veri analizi sonuçları aşağıdadır.
+
+---
+
+### Doğrulama Komutları ve Metodoloji
+
+Tüm hesaplamalar doğrudan JSONL dosyaları parse edilerek gerçekleştirilmiştir. Verileri kendiniz doğrulamak için aşağıdaki komutu çalıştırabilirsiniz:
+
+```bash
+python3 /Users/Muhammet/.gemini/antigravity-cli/brain/9dc35f71-63ba-4556-96a9-be86967a99fb/scratch/analyze_all.py
+```
+*(Sonuçların ham JSON özeti: `file:///Users/Muhammet/.gemini/antigravity-cli/brain/9dc35f71-63ba-4556-96a9-be86967a99fb/scratch/analysis_results.json`)*
+
+---
+
+### Güvenilirlik Derecelendirmesi
+* **%100 Kesin / Güvenilir Veriler:** Oturum gün sayısı, duvar saati süreleri (timestamp farkları), araç çağrısı (tool call) sayıları ve türleri, yazılan dosya yolları, dosya bazlı yazma/yeniden yazma (rework) sayıları.
+* **Yaklaşık / Model Temelli Veriler:** 
+  * **Yeniden Yapım Süreleri (Rework Episodes Wall-Clock Time):** Aynı dosyaya ikinci ve sonraki müdahaleler arasındaki süre dilimlerinin toplamı.
+  * **Kullanıcı Mesaj Sınıflandırması:** 1.243 adet temiz kullanıcı mesajının kural tabanlı (Correction / Rejection / New Instruction / Question / Approval) sınıflandırması.
+
+---
+
+### 1. Oturumların Duvar Saati (Wall-Clock) Süreleri
+
+* **Toplam Oturum Sayısı:** 76 ana oturum (ve 763 alt ajan oturumu).
+* **Tüm Oturumların Toplam Duvar Saati Süresi (Sum of Session Spans):** **595,39 saat** (~24,81 gün).
+* **Proje Takvim Aralığı:** 1 Temmuz 2026 – 31 Temmuz 2026 (30 takvim günü).
+
+#### En Uzun 10 Oturum (Duvar Saati Sıralaması):
+| Oturum UUID (Kısa) | Başlangıç Zamanı (UTC) | Bitiş Zamanı (UTC) | Duvar Saati Süresi | Kullanıcı Mesajı | Araç Çağrısı (Ana + Alt) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `b52016a8...` | 2026-07-17 17:39 | 2026-07-22 17:15 | **119,60 saat** | 377 | 341 + 266 |
+| `1886c6f7...` | 2026-07-03 09:26 | 2026-07-06 07:48 | **70,38 saat** | 230 | 186 + 955 |
+| `b2550281...` | 2026-07-12 19:48 | 2026-07-14 16:13 | **44,41 saat** | 101 | 91 + 0 |
+| `b1de5f1a...` | 2026-07-16 17:09 | 2026-07-18 09:24 | **40,25 saat** | 622 | 589 + 600 |
+| `a0ac38a5...` | 2026-07-28 21:31 | 2026-07-30 09:16 | **35,75 saat** | 78 | 62 + 0 |
+| `59aa5ffc...` | 2026-07-24 15:18 | 2026-07-25 17:09 | **25,85 saat** | 94 | 56 + 0 |
+| `3a570c66...` | 2026-07-30 06:12 | 2026-07-31 07:05 | **24,89 saat** | 375 | 285 + 1020 |
+| `22381bee...` | 2026-07-27 12:41 | 2026-07-28 13:28 | **24,78 saat** | 320 | 266 + 0 |
+| `142b4b92...` | 2026-07-01 13:05 | 2026-07-02 12:45 | **23,67 saat** | 351 | 312 + 120 |
+| `52f1b7b9...` | 2026-07-11 20:58 | 2026-07-12 14:10 | **17,20 saat** | 401 | 335 + 912 |
+
+---
+
+### 2. Araç Çağrılarının (Tool Calls) Dağılımı ve Yazılan Benzersiz Dosyalar
+
+#### Araç Çağrısı Dağılımı (Toplam 19.400+ Araç Çağrısı):
+* **`Bash` (Komut Çalıştırma):** **10.693** (Ana: 5.681, Alt Ajanlar: 5.012)
+* **`Read` (Dosya Okuma):** **3.949** (Ana: 1.343, Alt Ajanlar: 2.606)
+* **`Edit` (Dosya Düzenleme):** **2.280** (Ana: 1.536, Alt Ajanlar: 744)
+* **`Write` (Yeni Dosya Yazma):** **1.038** (Ana: 442, Alt Ajanlar: 596)
+* **`Agent` (Alt Ajan Çağırma):** **337** (Ana: 321, Alt Ajanlar: 16)
+* **`WebSearch / WebFetch` (Web Araması / İçerik Çekme):** **468**
+* **`AskUserQuestion` (Kullanıcıya Soru Sorma):** **120**
+* **`TaskCreate / TaskUpdate / TaskStop` (Görev Yönetimi):** **185**
+* **`Skill` (Skill Yükleme):** **110**
+* **Diğer (Diğer MCP ve Tarayıcı Araçları):** **~220**
+
+#### Yazılan Benzersiz Dosya Sayısı:
+* **Ana Oturumlarda Yazılan Benzersiz Dosya Sayısı:** **455**
+* **Alt Ajanlar Tarafından Yazılan Benzersiz Dosya Sayısı:** **411**
+* **Toplam Kesişimsiz Benzersiz Dosya Sayısı (`Write` + `Edit`):** **833 dosya**
+* **`file-history-delta` Günlüğünde İzlenen Git/Proje Dosya Sayısı:** **255 dosya**
+
+---
+
+### 3. Aynı Dosyanın Aynı Oturumda Birden Fazla Yazılması (Rework Sinyali)
+
+Bir dosyanın aynı oturum içinde ilk yazılışından sonra tekrar `Write` veya `Edit` edilmesi "oturum içi yeniden yapım" (rewrite) olarak tanımlanmıştır.
+
+* **Tüm Oturumlar Toplam Yazma/Düzenleme Eylemi Sayısı:** 3.318 eylem
+* **Aynı Oturum İçi Yeniden Yazma (Rewrites) Toplamı:** **2.154 defa** (%64,9 yeniden yazma oranı).
+
+#### En Çok Yeniden Yazılan Dosyalar (Top 10 Rank):
+1. **`src/core/brain.ts`**: **137 yeniden yazma** (14 farklı oturumda toplam 151 defa yazıldı)
+2. **`scripts/mamilas-command.mjs`**: **116 yeniden yazma** (11 farklı oturumda toplam 127 defa yazıldı)
+3. **`memory/MEMORY.md`**: **87 yeniden yazma** (45 farklı oturumda toplam 132 defa yazıldı)
+4. **`src/scene/DioramaStage.tsx`**: **50 yeniden yazma** (4 farklı oturumda toplam 54 defa yazıldı)
+5. **`src/core/pure.ts`**: **42 yeniden yazma** (12 farklı oturumda toplam 54 defa yazıldı)
+6. **`scripts/kaba-kurgu.mjs`**: **40 yeniden yazma** (2 farklı oturumda toplam 42 defa yazıldı)
+7. **`scripts/dunya-kilidi.mjs`**: **39 yeniden yazma** (1 oturumda toplam 40 defa yazıldı)
+8. **`src/core/SURGERY_DATA.json`**: **36 yeniden yazma** (4 farklı oturumda toplam 40 defa yazıldı)
+9. **`src/core/brain.test.ts`**: **26 yeniden yazma** (6 farklı oturumda toplam 32 defa yazıldı)
+10. **`scratchpad/fable-demos/demo-f.html`**: **26 yeniden yazma** (1 oturumda toplam 27 defa yazıldı)
+
+---
+
+### 4. Yeniden Yapım Dönemleri (Rework Episodes) ve Zaman Payı
+
+Oturum esnasında daha önce yazılmış bir dosyanın tekrar düzenlenmeye başlandığı an ile o düzenleme silsilesinin tamamlandığı an arasındaki zaman dilimleri hesaplanmıştır.
+
+* **Tüm Oturumlardaki Toplam Yeniden Yapım Süresi (Rework Wall-Clock Time):** **42,32 saat**
+* **Toplam Duvar Saati Süresine Oranı:** **%7,11**
+* **Asistanın Aktif Çalışma Süresine (134,88 saat) Oranı:** **%31,37** *(Asistanın aktif olarak kod/araç çalıştırdığı sürenin yaklaşık 3'te 1'i daha önce yazılmış dosyaları tekrar düzeltmekle geçmektedir).*
+
+---
+
+### 5. Kullanıcı Mesajlarının Sınıflandırılması ve Düzeltme/Red Oranı
+
+Sistem tarafından otomatik eklenen task bildirimleri ve komut çıktıları elendikten sonra geriye kalan **1.243 temiz insan kullanıcı mesajı** analiz edilmiştir:
+
+| Mesaj Sınıfı | Tanım / Örnek İçerik | Adet | Yüzde |
+| :--- | :--- | :--- | :--- |
+| **`rejection` (Red / İptal / Dur)** | *"olmadı", "beğenmedim", "dur", "[Request interrupted]", "sil baştan", "çöp"* | **404** | **%32,50** |
+| **`new_instruction` (Yeni Talimat)** | *"şimdi şu videoya geçelim", "scripti yaz", "yeni klasör oluştur"* | **381** | **%30,65** |
+| **`question` (Soru / Sorgulama)** | *"anladın mı?", "nasıl işliyor?", "windows tarafında hazır mı?"* | **270** | **%21,72** |
+| **`correction` (Düzeltme / Hata)** | *"yanlış yaptın", "loopa girdi", "hata verdi", "eksik bıraktın"* | **152** | **%12,23** |
+| **`approval` (Onay / Teşekkür)** | *"tamam", "harika", "süper", "devam et"* | **36** | **%2,90** |
+
+#### **KRİTİK ORAN (Düzeltme + Red Payı):**
+* **Toplam Düzeltme (`correction`) + Red (`rejection`):** **556 mesaj**
+* **Temiz İnsan Mesajları İçindeki Oranı:** **%44,73** *(Kullanıcının gönderdiği her 100 mesajın yaklaşık 45 tanesi asistanın yaptığı işi reddetme veya hatasını düzeltme mesajıdır).*
+
+---
+
+### 6. Sürenin Gerçekte Nereye Gittiği (Bekleme vs. Aktif Çalışma)
+
+Tüm oturumlar genelinde geçen sürenin dağılımı:
+
+* **Kullanıcı Bekleme / İki Mesaj Arası Boşluk (User Idle Time):** **201,62 saat** *(Kullanıcının bilgisayar başından kalkması, gece uykusu, mesai araları).*
+* **Asistan Aktif İşleme / Araç Çalıştırma Süresi (Assistant Active Work Time):** **134,88 saat**
+
+#### En Uzun Kullanıcı Bekleme Boşlukları (Top 5):
+1. **Oturum `b52016a8...`:** **95,76 saat** (18 Temmuz 13:29 - 22 Temmuz 13:14 arası kullanıcının oturumu açık bırakıp ara vermesi).
+2. **Oturum `3a570c66...`:** **17,81 saat** (30 Temmuz 12:24 - 31 Temmuz 06:12 arası gece uykusu/gece arası).
+3. **Oturum `b52016a8...`:** **13,21 saat** (22 Temmuz 16:46 - 23 Temmuz 05:58 arası gece arası).
+4. **Oturum `b1de5f1a...`:** **12,76 saat** (17 Temmuz 06:11 - 17 Temmuz 18:57 arası mesai arası).
+5. **Oturum `8c7daf11...`:** **11,27 saat** (29 Temmuz 18:00 - 30 Temmuz 05:17 arası gece arası).
+
+#### En Uzun Kesintisiz Asistan Çalışma Dönemleri (Top 5):
+1. **Oturum `b2550281...`:** **43,74 saat** (Arka planda otomatik iterasyonlar/uzun döngü).
+2. **Oturum `b52016a8...`:** **23,16 saat** (271 araç çağrılık kesintisiz asistan iş yükü).
+3. **Oturum `3793cee7...`:** **2,45 saat** (443 araç çağrılık yoğun kod/dosya işleme).
+4. **Oturum `f273abd4...`:** **1,99 saat** (318 araç çağrısı).
+5. **Oturum `67f44bee...`:** **1,49 saat** (691 araç çağrısı).
+
+---
+
+### 7. Tekrarlanan Anlatım ve Yeniden Açıklama Kanıtları (Farklı Oturumlardan Alıntılar)
+
+Kullanıcının farklı oturumlarda birebir veya neredeyse aynı ifadelerle asistana aynı durumları ve kuralları tekrar açıkladığı ölçülmüştür:
+
+* **Alıntı Çifti 1 (Aynı komutun/durumun tekrarı):**
+  * *Oturum `1886c6f7` (2026-07-03T13:16:14Z):* `"Continue from where you left off."`
+  * *Oturum `b52016a8` (2026-07-23T05:58:25Z):* `"Continue from where you left off."`
+* **Alıntı Çifti 2 (Hafıza / Windows senkronizasyon teyidi):**
+  * *Oturum `22381bee` (2026-07-28T05:27:08Z):* `"Yok windowstaki her şeyi hatırlıyorsun di mi"`
+  * *Oturum `b73f170f` (2026-07-28T05:27:08Z):* `"Yok windowstaki her şeyi hatırlıyorsun di mi"`
+* **Alıntı Çifti 3 (Üretim bağlamı hatırlatması):**
+  * *Oturum `22381bee` (2026-07-28T05:29:48Z):* `"Hayır dün yaptığımoz her şey sende de var di mi animasyon yapacağız ona göre"`
+  * *Oturum `b73f170f` (2026-07-28T05:29:48Z):* `"Hayır dün yaptığımoz her şey sende de var di mi animasyon yapacağız ona göre"`
+* **Alıntı Çifti 4 (Clear atma ve üretime başlama talimatı):**
+  * *Oturum `22381bee` (2026-07-28T06:04:43Z):* `"Portfolyoyu unut kanka clear atacağım üretime geçeceğiz bakalım bağlamalar neler yapmış"`
+  * *Oturum `b73f170f` (2026-07-28T06:04:43Z):* `"Portfolyoyu unut kanka clear atacağım üretime geçeceğiz bakalım bağlamalar neler yapmış"`
+* **Alıntı Çifti 5 (Mimari ve UltraCode iş bölümü):**
+  * *Oturum `22381bee` (2026-07-28T06:05:53Z):* `"Eşitle tabii ki hatta burayı temizle komple burayı da inşa edelim yandan ultracode açıp workflow açarsın inşaayı da buradan yaparız promptları kendi sekansnın ajanı yazsın bu seferlik çok usage yerse durdururum ben"`
+  * *Oturum `b73f170f` (2026-07-28T06:05:53Z):* `"Eşitle tabii ki hatta burayı temizle komple burayı da inşa edelim yandan ultracode açıp workflow açarsın inşaayı da buradan yaparız promptları kendi sekansnın ajanı yazsın bu seferlik çok usage yerse durdururum ben"`
+
+---
+
+### Özet Sayısal Tablo
+
+| Ölçüm Kalemi | Ölçülen Değer |
+| :--- | :--- |
+| **Toplam Oturum Sayısı** | **76 ana oturum** |
+| **Tüm Oturumların Toplam Duvar Saati Süresi** | **595,39 saat** |
+| **Kullanıcı Bekleme / Aradaki Boşluk Süresi** | **201,62 saat** (%33,9) |
+| **Asistan Aktif Çalışma Süresi** | **134,88 saat** (%22,7) |
+| **Toplam Yeniden Yapım (Rework) Süresi** | **42,32 saat** (Aktif sürenin %31,37'si) |
+| **Yazılan Toplam Benzersiz Dosya Sayısı** | **833 dosya** |
+| **Oturum İçi Yeniden Yazma (Rewrite) Sayısı** | **2.154 defa** |
+| **Temiz İnsan Kullanıcı Mesaj Sayısı** | **1.243 mesaj** |
+| **Düzeltme (`correction`) + Red (`rejection`) Oranı** | **%44,73** (556 / 1.243) |

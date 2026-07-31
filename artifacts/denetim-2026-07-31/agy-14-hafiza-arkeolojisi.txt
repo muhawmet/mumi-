@@ -1,0 +1,165 @@
+# MAMILAS — ARKEOLOJİ RAPORU: HAFIZA VE SÜREKLİLİK SİSTEMLERİ ÇÖKÜŞ TARİHÇESİ
+
+Bu rapor, projenin başından (`2026-06-21`) bugüne (`2026-07-31`) git geçmişinde inşa edilen, yıkılan, terk edilen ve yeniden yazılan tüm **hafıza / durum / süreklilik / ders (lesson)** sistemlerinin anatomisidir.
+
+---
+
+## 1. ZAMAN ÇİZELGESİ (TIMELINE TABLE)
+
+Hafıza, durum, senkronizasyon ve ders sistemlerini oluşturan, tamir eden veya yürürlükten kaldıran ana commit'lerin kronolojisi:
+
+| Tarih | Commit Hash | Mesaj / Başlık | Ne Yerine Geldi / Ne Yapıldı? |
+| :--- | :--- | :--- | :--- |
+| **2026-06-21** | `1937b8b` | `chore: clean up dirty scripts and add HANDOFF_CLAUDE.md` | İlk oturum devir dosyası (`HANDOFF_CLAUDE.md`) kuruldu. |
+| **2026-06-21** | `049e9aa` | `feat: Phase 0 presets, handoff packets, persistence` | Proje durumu handoff paketlerine ve `persistence` katmanına bağlandı. |
+| **2026-06-22** | `6b0d584` | `feat(parity): Proje Kasası — multi-project named vault` | Eski state kaybını önlemek için çoklu proje kasası (`vault`) yazıldı. |
+| **2026-06-23** | `9e189f3` | `docs: CODEX_DIRECTIVE — staged night-shift orders` | Gece vardiyası ve ajan emri için statik direktif dosyası açıldı. |
+| **2026-06-23** | `9276405` | `docs: document Luffy and Violet in CODEX_LOG` | Manuel ders kaydı için `CODEX_LOG.md` kullanılmaya başlandı. |
+| **2026-06-26** | `d0cdd13` | `docs: session handoff log (gece turu — 6 commit özeti)` | Serbest metin oturum handoff jurnalleri tutuldu. |
+| **2026-06-27** | `df0bcfe` | `docs: remove completed implementation handoff (superseded)` | Handoff dosyası çöpe atıldı, yerine `CLAUDE_SESSION_LOG.md` getirildi. |
+| **2026-06-28** | `f15b618` | `docs: handoff note 2026-06-28` | Tekrar elle handoff notu yazıldı. |
+| **2026-06-29** | `e4d8c9e` | `chore: delete stale handoff and session docs` | **TEMİZLİK:** Tüm bayat handoff ve oturum dökümanları repo'dan silindi. |
+| **2026-07-15** | `6419433` | `feat: checkpoint verified decision pipeline` | `EXECUTION_STATE.md` (1337 satır) projenin **"TEK MAKİNE GERÇEĞİ"** ilan edildi. |
+| **2026-07-16** | `a924b34`..`3572357` | `docs(state): seal BRAIN-M0 to M7 receipts` | Karar makbuzları (receipts) ile durum kilitleme dönemi başlatıldı. |
+| **2026-07-16** | `e6372fc` | `feat(brain): M5 motion + M6 QA + M7 lesson bank` | Otomatik ders biriktirme mekanizması (`lessonBank`, `agents/lessons/APPROVED.md`) eklendi. |
+| **2026-07-16** | `3d1b3bb` | `docs(state): hard-fix run mühürlendi — EXECUTION_STATE üst blok` | Durum `EXECUTION_STATE.md` dosyasının header'ına elle mühürlendi. |
+| **2026-07-24** | `6b8145f` | `chore(sync): beyin ortak çalışsın — CLAUDE.md + memory` | `docs/ai/sync/memory/MEMORY.md` ve Claude auto-memory dosyaları repo senkronuna girdi. |
+| **2026-07-27** | `fa9e637` | `feat(yasa+hafıza): akıl git'in içine taşındı` | `scripts/memory-sync.mjs` yazıldı; hafıza git ile versiyonlanmaya çalışıldı. |
+| **2026-07-27** | `9298aa0` | `docs(kanon): CLAUDE.md + memory Anthropic yasasına göre kuruldu` | Hafıza kuralı Anthropic auto-memory formatına yeniden hizalandı. |
+| **2026-07-27** | `03d5f14` | `docs(hafıza): ajan devri buddy'nin ön koşulu` | Ajan devir hafızası buddy talimatlarına eklendi. |
+| **2026-07-28** | `ee65395` | `feat(faz-3): ders bankası canlı üretime bağlandı` | Ders bankasının üretime bağlanması için 2. deneme yapıldı. |
+| **2026-07-28** | `8cf58d7` | `feat(senkron): Mac ↔ Windows tek komutla` | Cihazlar arası hafıza senkronu için `scripts/claude-sync.mjs` yazıldı. |
+| **2026-07-28** | `3c9f998` | `feat(faz): İCRAAT'a geçildi + buddy duvarı rtk yüzünden sağırdı` | Faz anahtarı eklendi (İNŞA → İCRAAT); buddy hook'unun sağır olduğu anlaşıldı. |
+| **2026-07-28** | `2627742` | `feat(buddy): hayalet bağımlılık bitti` | Buddy skill'i sıfırdan yazıldı. |
+| **2026-07-29** | `bf13f80` | `fix(onarım): buddy ateşlemesi · oturum sürekliliği` | `EXECUTION_STATE.md`'nin **YALAN SÖYLEMEKTE OLDUĞU** tespit edildi; `current-work.json` ve `current-work.mjs` doğdu. |
+| **2026-07-29** | `b42ea6d` | `chore(hafiza): 13 inşa kaydı arşive, MEMORY.md 71→56 satır` | Hafıza dosyası tekrar şiştiği için 13 dosya `archive/` dizinine atıldı. |
+| **2026-07-29** | `5f6c5aa` | `docs(rules): katman yasası üretime kuruldu` | `.claude/rules/` altındaki kural dosyalarının gerçekte prompt üretmediği ölçüldü. |
+| **2026-07-29** | `d947b01` | `feat(dersler): 47 aday → 12 satırlık oy pusulası` | Ders bankasının (47 aday) çürümekte olduğu ve prompt'a ulaşamadığı kabul edildi. |
+| **2026-07-29** | `c50b36f` | `test(dersler): sessiz kayıp duvara çevrildi` | Onaylanan derslerin sessizce kaybolduğu testle kanıtlandı. |
+| **2026-07-29** | `e79abfd` | `feat(hafıza): --adopt eklendi — çok-cihaz boşluğu kapandı` | `memory-sync.mjs` aracının repo'daki hafızayı canlıya yazamadığı anlaşıldı, `--adopt` eklendi. |
+| **2026-07-29** | `1fec343` | `feat(faz-9): PROJECT LOOT halkası kuruldu` | Eski projelerden ders toplama mekanizması yeniden tasarlandı. |
+| **2026-07-30** | `0ec728d` | `docs(hafıza): şaheser standardı — EŞLİK ≠ TAŞIMA` | Hafıza kuralı tekrar düzenlendi. |
+| **2026-07-30** | `d7a0d69` | `feat(yasa+6.1.3): §2d REVİZE MADENİ` | Revizelerden öğrenme adı altında yeni bir yasa maddesi yazıldı. |
+
+---
+
+## 2. TERK EDİLMİŞ ARTEFAKT ENVANTERİ (ABANDONED ARTEFACTS)
+
+`docs/ai/sync/memory/archive/`, `docs/ai/archive/` ve `artifacts/` dizinlerinde biriken terk edilmiş hafıza kalıntıları:
+
+1. **`HANDOFF_CLAUDE.md` / `HANDOFF-2026-07-11-*.md` / `CLAUDE_SESSION_LOG.md`**
+   - **Türü:** Serbest metin oturum devir kayıtları.
+   - **Doğum:** `2026-06-21`
+   - **Son Güncelleme / Ölüm:** `2026-06-29` (Commit: `e4d8c9e`)
+   - **Akıbeti:** Silindi. Manuel tutulduğu için oturumlar arası bayatlayıp güncelliğini kaybetti.
+2. **`docs/ai/sync/memory/archive/` (21 Adet Markdown Dosyası)**
+   - **İçerik:** `mamilas-3d-shell-progress.md`, `mamilas-batch-mode-mandate.md`, `mamilas-context-economy.md`, `mamilas-decision-pipeline.md`, `mamilas-recete-zekasi.md` vb.
+   - **Doğum:** `2026-07-24` (Commit: `6b8145f`)
+   - **Son Güncelleme / Terk:** `2026-07-29` (Commit: `b42ea6d`)
+   - **Yerine Ne Geçti:** Hiçbir şey. `MEMORY.md` satır sınırını (71 satır) aştığı için topluca arşive atıldılar ve bir daha okunmadılar.
+3. **`artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (1337 Satır)**
+   - **Türü:** Karar ve durum takip defteri (Ledger).
+   - **Doğum:** `2026-07-15` (Commit: `6419433`)
+   - **Son Güncelleme / Ölüm:** `2026-07-29` (Commit: `bf13f80`)
+   - **Yerine Ne Geçti:** `artifacts/current-work.json` ve `scripts/current-work.mjs`. Dosya silinmedi fakat "arşiv" ilan edilerek yetkisi elinden alındı.
+4. **`artifacts/antigravity-makro-scan-2026-07-28/` ve `PASS-A/B/C/D` Dokümanları**
+   - **Türü:** Hafıza ve tarama tespit raporları.
+   - **Doğum:** `2026-07-28`
+   - **Son Güncelleme / Terk:** `2026-07-29`
+   - **Yerine Ne Geçti:** Taramalar bittikten sonra pasif arşiv klasörüne dönüştü.
+5. **`agents/lessons/archive/` ve Eski `CANDIDATES-*.md` Dosyaları**
+   - **Türü:** Üretimden çıkarılan ham ders adayları.
+   - **Doğum:** `2026-07-16`
+   - **Son Güncelleme / Terk:** `2026-07-29` (Commit: `d947b01`)
+   - **Yerine Ne Geçti:** `ONAY-BEKLEYEN.md` ve `APPROVED.md`.
+
+---
+
+## 3. BİRBİRİNDEN AYRI BELLEK/DURUM MEKANİZMALARI SAYIMI
+
+Bu projenin yaşam döngüsünde toplam **9 FARKLI** hafıza / durum mekanizması kurulmuş ve denenmiştir:
+
+| # | Mekanizma Adı | Doğum Tarihi | Ölüm Tarihi (Son Gerçek Yazım) | Ömrü (Gün) | Terk Edilme / Çöküş Nedeni (Commit & Kod Beyanı) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | **Session Handoff Docs** (`HANDOFF_*.md`) | `2026-06-21` | `2026-06-29` | **8 gün** | Manuel tutulduğu için oturum geçişlerinde güncellenmeyi unutuldu (`e4d8c9e`: *"delete stale handoff and session docs"*). |
+| **2** | **Codex Directives & Logs** (`CODEX_LOG.md`) | `2026-06-23` | `2026-06-25` | **2 gün** | Statik metin emri olarak kaldı, ajanlar hızlı kodlamada dosyayı görmezden geldi (`e5f3bc8`). |
+| **3** | **Execution State Ledger** (`EXECUTION_STATE.md`) | `2026-07-15` | `2026-07-29` | **14 gün** | 1337 satıra ulaştı. Ajanlar güncellemeyi bıraktı. `current-work.mjs:L4`: *"EXECUTION_STATE.md 'Aktif video: YOK' derken diskte 50 klip üretilmişti. Otorite değil ARŞİV ilan edildi."* |
+| **4** | **Lesson Bank** (`agents/lessons/*`) | `2026-07-16` | `2026-07-29` | **13 gün** | Dersler dosyalarda birikti ama prompt motoruna akmadı. (`d947b01`: *"47 aday... öğrenme halkasının kopuk yeri buydu"*, `c50b36f`: *"onaylanan ders sessizce düşüyordu"*). |
+| **5** | **Memory Sync Mirror** (`scripts/memory-sync.mjs`) | `2026-07-24` | `2026-07-29` | **5 gün** | Cihazlar arası uyumsuzluk; canlı hafıza repo'yu ezdi veya tersine aktaramadı (`e79abfd`: *"--adopt eklendi — çok-cihaz boşluğu kapandı"*). |
+| **6** | **Two-Way Device Sync** (`scripts/claude-sync.mjs`) | `2026-07-28` | `2026-07-28` | **<1 gün** | Repo'da var ama yerelde yok olan dosyaları "silindi" zannedip kullanıcının dosyalarını arşivledi (`claude-sync.mjs:L10`: *"repo'da olup canlıda olmayan dosyayı silinmiş sanıp arşive atıyor"*). |
+| **7** | **Rulebooks & Layer Laws** (`.claude/rules/*`) | `2026-07-15` | `2026-07-29` | **14 gün** | Dosyaların prompt ürettiği iddiası ölçümle çürütüldü (`5f6c5aa`: *"katman yasası... 'bu dosyalar prompt üretir' ölçümle yanlışlandı"*). |
+| **8** | **Session Hooks & Buddy** (`.claude/hooks/oturum-durumu.mjs`) | `2026-07-28` | `2026-07-29` | **1 gün** | Hook Mac'te izin hatasından (`126`) sessizce çöktü (`1c170a1`), uyarılar stderr'de kayboldu, model durmadı. |
+| **9** | **Current Work Machine State** (`artifacts/current-work.json`) | `2026-07-29` | *Aktif* (2026-07-30) | **2 gün** | `EXECUTION_STATE.md` çöktüğü için aceleyle yazıldı. Serbest metin gürültüsüyle dolmaya başladı (`current-work.mjs:L256`). |
+
+---
+
+## 4. TEKRARLAYAN BOZULMA PATTERNI VE KANITLAR (THE KEY QUESTION)
+
+**EVET, SİSTEMLER HER SEFERİNDE BİREBİR AYNI MEKANİZMAYLA ÖLMEKTEDİR.**
+
+Projedeki hafıza sistemlerinin çöküşü 4 kronik aşamada tekrarlanır:
+1. **İllüzyon Katmanı Kurulur:** "Artık hafıza halloldu, tek makine gerçeği bu dosyadır" denilerek yeni bir `.md` veya `.json` yazılır.
+2. **Diskle Senkronizasyon Kopar:** Kod değişir veya video üretilir, fakat hafıza dosyası güncellenmeyi unutulur.
+3. **Çelişki ve Yalan Başlar:** Hafıza dosyası "Aktif iş yok" veya "Faz 1 bitti" derken disk gerçeği 50 klip üretildiğini gösterir.
+4. **Sessiz İnfaz veya Arşivleme:** Ajan çelişkiyi fark eder, eski dosyayı bayat ilan eder, `archive/` klasörüne atar ve 1. adıma dönerek **YENİ BİR HAFIZA SİSTEMİ** kurar.
+
+### KOD VE COMMIT KANITLARI:
+
+- **Hafızanın Gerçekle Çelişmesi (Yalan Söylemesi):**
+  > `scripts/current-work.mjs:L4-L8`:
+  > *"Neden var (2026-07-29 ölçümü): oturum açılış otoritesi EXECUTION_STATE.md 'Aktif video: YOK' diyordu; aynı sabah diskte 50 klip üretilmişti... Mami'nin 'her işte yeniden başlıyoruz' şikâyetinin mekanizması budur."*
+
+- **Derslerin Klasörde Çürümesi ve Prompt'a Ulaşmaması:**
+  > Commit `d947b01`: *"feat(dersler): 47 aday → 12 satırlık oy pusulası — öğrenme halkasının kopuk yeri buydu"*
+  > Commit `c50b36f`: *"test(dersler): sessiz kayıp duvara çevrildi — onaylanan ders artık sessizce düşemez"*
+
+- **Kural Dosyalarının Yalan Söylemesi (Ölçümle Çürütülme):**
+  > Commit `5f6c5aa`: *"docs(rules): katman yasası da üretime kuruldu — 'bu dosyalar prompt üretir' ölçümle yanlışlandı"*
+
+- **Cihaz Sync Betiğinin Kullanıcı Dosyalarını Silmesi:**
+  > `scripts/claude-sync.mjs:L10`:
+  > *"otorite sayıyor — repo'da olup canlıda olmayan bir dosyayı 'silinmiş' sanıp arşive atıyor."*
+
+- **Hafızanın Şişmesi ve Arşive Atılması:**
+  > Commit `b42ea6d`: *"chore(hafiza): üretim fazına temizlendi — 13 inşa kaydı arşive, MEMORY.md 71→56 satır"*
+
+- **Sentaktik Yeşil Lint Yalancılığı:**
+  > Commit `5a8fb30`: *"feat(yasa): §2ø FİKİR + §2a PLAN KARARI — yeşil lint 'temiz' demektir, 'iyi' demez"*
+
+---
+
+## 5. HARCANAN TOPLAM EMEK METRİKLERİ (MEMORY VS. PRODUCTION)
+
+Git commit ve diff boyutlarının karşılaştırmalı analizi:
+
+| Kategori | Commit Sayısı | Eklenen Satır (+) | Silinen Satır (-) | **Toplam Satır Değişimi (Churn)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hafıza / Durum / Sync / Ders Sistemleri** | **84 commit** | +86.100 | -169.946 | **256.046 satır** |
+| **Gerçek Video ve Prompt Üretimi** | **74 commit** | +163.431 | -5.461 | **168.892 satır** |
+| **DİĞER (Çekirdek Kod / UI / Engine)** | **175 commit** | +302.114 | -96.155 | **398.269 satır** |
+
+### ÖZET ORAN:
+Hafıza ve süreklilik sistemleri kurmak, silmek, taşımak ve tamir etmek için harcanan kod/doküman churn'ü (**256.046 satır**), projenin ürettiği **TÜM GERÇEK VİDEO PROMPT VE SENARYOLARINDAN** (**168.892 satır**) **1.51 KAT DAHA FAZLA** emek tüketmiştir.
+
+Commit adetlerinde de hafıza tamiri (**84 commit**), video üretimini (**74 commit**) geride bırakmıştır.
+
+---
+
+## 6. "TEK MAKİNE GERÇEĞİ / TEK DOĞRU" (SSOT) UNVANINI TALEP EDEN DOSYALARIN LİSTESİ
+
+Projenin tarihi boyunca sırayla tam **14 FARKLI DOSYA/MODÜL** kendisini *"Tek Doğruluk Kaynağı / Tek Makine Gerçeği / Single Source of Truth / Tek Kanon"* ilan etmiştir:
+
+1. `README.md` (`2026-06-21` - `6d16df2`): *"consolidate all documentation into a single README.md"*
+2. `project.json` / `mamilas.production.v2026` (`2026-07-11`): *"project.json tek doğruluk kaynağı"*
+3. `agents/MOTION-CALISTIR.command` (`2026-07-14`): *"JSON dosyası tek doğruluk kaynağı."*
+4. `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (`2026-07-15` - `6419433`): *"TEK MAKİNE GERÇEĞİ"*
+5. `src/scene/assetSlots.ts` (`2026-07-15`): *"M4 slot sözleşmesi — TEK doğruluk kaynağı."*
+6. `src/styles/tokens.css` (`2026-07-16`): *"Single source of truth for every surface in the app."*
+7. `src/core/proof.ts` (`2026-07-16` - `0fcf7e9`): *"Single source of truth — HARD-FIX"*
+8. `agents/ipFirewall.json` (`2026-07-16` - `1495`): *"marka listesi TEK KANON"*
+9. `agents/promptQuality.mined.json` (`2026-07-16` - `e6372fc`): *"TEK KANON: agents/promptQuality.mined.json"*
+10. `docs/ai/sync/memory/MEMORY.md` (`2026-07-24` - `6b8145f`): *"tek makine gerçeği / Anthropic kalıcı hafıza"*
+11. `scripts/memory-sync.mjs` (`2026-07-27` - `fa9e637`): *"canlı hafıza -> docs/ai/sync/memory/ TEK KANON"*
+12. `scripts/project-loot.mjs` (`2026-07-29` - `1fec343`): *"PROJECT-LOOT.json TEK KANONİK KAYNAKTIR"*
+13. `scripts/current-work.mjs` & `current-work.json` (`2026-07-29` - `bf13f80`): *"aktif işin tek makine-okunur gerçeği / otorite bu kayıt"*
+14. `AGENTS.md` (`2026-07-29` - `80897c4`): *"Aktif işin TEK makine gerçeği; node scripts/current-work.mjs ile oku."*
