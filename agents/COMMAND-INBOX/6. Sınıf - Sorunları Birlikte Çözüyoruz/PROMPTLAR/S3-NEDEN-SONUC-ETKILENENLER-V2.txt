@@ -558,11 +558,11 @@ bounce light, vivid produce-born colour separation, continuous physically based 
 ambient occlusion painted in and never raytraced-hard, ten to fifteen percent prop
 overscale for child-safe readability.
 
-TEXT: One text surface only. The carrier is a single crate that has been lifted off the
-top of the stack and set down turned ninety degrees at the pinch point, its long side
-square to the lens at box height beside her. The letterform is capitals moulded into the
-polyethylene when the crate was made, carrying no ink and no paint at all — each letter
-stands a couple of millimetres proud with rounded edges and a faint mould seam across its
+TEXT: One text surface only, and the letterform is capitals moulded into the polyethylene
+itself when the crate was made, carrying no ink and no paint at all. The carrier is a
+single crate that has been lifted off the top of the stack and set down turned ninety
+degrees at the pinch point, its long side square to the lens at box height beside her.
+Each letter stands a couple of millimetres proud with rounded edges and a faint mould seam across its
 top, legible only because the raking sun fills one flank of every stroke and leaves the
 other in shadow, the plastic chalked pale on the letter crowns where other crates have
 rubbed them. It reads "SEBZE" — one word, five letters, all capitals: S E B Z E.
@@ -659,10 +659,11 @@ from the lens to the iron guard.
 
 Three movement beats belong to this exact halt: the boy's undone lace end swings under
 his half-raised foot, the white cane's tip trembles against the tyre's sidewall, and a
-plastic bag caught under the car's mudguard flaps once in a draught. Depth in three
-layers — the car's rear wheel arch large and soft at the lower left and cut by the frame
-edge, her face and the planted ferrule razor sharp in the middle, the iron guard and the
-shuttered fronts beyond dissolving into gentle bokeh while staying fully modelled. The
+plastic bag caught under the car's mudguard flaps once in a draught.
+Depth in three layers — the car's rear wheel arch large and soft at the lower left and
+cut by the frame edge, her face and the planted ferrule razor sharp in the middle, the
+iron guard and the shuttered fronts beyond dissolving into gentle bokeh while staying
+fully modelled. The
 car's near tyre is up on the slabs with its sidewall deformed over the kerb edge and a
 dark crescent beneath it, the stick's ferrule presses a small hard dark dot into the
 stone, the boy's raised foot has not landed so no shadow closes under it, and the man's

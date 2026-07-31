@@ -103,7 +103,61 @@ if ! OUT=$($SYNTAX agents/MOTION-CALISTIR.command 2>&1 && $SYNTAX agents/product
 $OUT"
 fi
 
-# --- 6. claude senkronu (UYARI — bloke etmez) ---
+# --- 6. TESLIM PROMPTLARI (BLOKE EDER) ---
+# 2026-07-31 olcumu: `scripts/prompt-lint.mjs` 48 KB'lik bir olcen ve HICBIR kapiya bagli
+# degildi. COMMAND-INBOX altindaki prompt dosyalari lint gormeden commit ediliyordu; lint
+# elle cagrilan bir sey kaldigi surece unutuluyor. Ayni gun olculdu: emilen uc dersin
+# ucunde de bir OLCEN vardi (STYLE tavani, kirmizi cizgiler, Turkce hero imlasi); duzyazi
+# kalan bes ders tekrar etti — motion tempo dersi 29 Tem yazildi, 30 Tem 54 klibin
+# 54'unde tekrar etti. Olculen ders emiliyor, yazilan ders buharlasiyor. Kapi bu yuzden var.
+#
+# Yalniz TESLIM dosyasina bakar (`*_PROMPTLAR*.txt`) — calisma dosyalari serbest kalir.
+# Register dosyanin kendi basligindan okunur; okunamazsa UYARIR ama bloke ETMEZ (kor olcum
+# yanlis kirmizi uretir, o da kapiyi guvenilmez yapar).
+# Acil kacis: MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesi commit mesajina yazilir)
+if [ "${MAMILAS_LINT_SKIP:-0}" != "1" ]; then
+  # TURKCE YOL TUZAGI (2026-07-31, kapi kurulurken kapinin KENDISINDE yakalandi):
+  # `git diff --cached --name-only` Turkce karakterli yolu TIRNAK icinde ve \304\261 gibi
+  # kacis dizisiyle basar. Satir basinda `agents/` arayan bir grep hicbir sey bulamaz ve
+  # kapi SESSIZCE gecer — butun proje adlarimiz Turkce oldugu icin her seferinde.
+  # `-c core.quotepath=false` ham UTF-8 verir; `-z` ile NUL ayrac, bosluklu ad da bolunmez.
+  while IFS= read -r -d '' PF; do
+    case "$PF" in
+      agents/COMMAND-INBOX/*_PROMPTLAR*.txt) : ;;
+      *) continue ;;
+    esac
+    [ -f "$PF" ] || continue
+    if grep -qiE 'register:[[:space:]]*real' "$PF"; then REG=real
+    elif grep -qiE 'register:[[:space:]]*sty' "$PF"; then REG=sty
+    elif grep -qiE 'register:[[:space:]]*edu' "$PF"; then REG=edu
+    else
+      printf '⚠️  %s — register okunamadi, lint atlandi. Basliga `register: EDU` yaz.\n' "$PF" >&2
+      continue
+    fi
+    # ⚠ `prompt-lint.mjs` KIRMIZI bulsa da `exit 0` verir — bir raporlayicidir, kapi degil.
+    # Kapiyi cikis koduna baglamak, kapiyi doguran gun no-op yapardi (2026-07-31'de tam bu
+    # oldu: bilerek bozuk bir dosyaya kapi "yesil" dedi). Hukum CIKTIDAN okunur.
+    LINT_OUT=$(node scripts/prompt-lint.mjs "$PF" --register="$REG" 2>&1) || true
+    KIRMIZI=$(printf '%s' "$LINT_OUT" | grep -oE 'kırmızı: [0-9]+' | grep -oE '[0-9]+' | head -1)
+    if [ -z "$KIRMIZI" ]; then
+      fail "PROMPT LINT OKUNAMADI — $PF
+Cikti 'kırmızı: N' satirini icermiyor; lint ciktisi degismis olabilir.
+Kapi kor kalamaz (2026-07 dersi: dogrulanamayan kapi sessizce gecmez, bloke eder)."
+    fi
+    if [ "$KIRMIZI" -gt 0 ] 2>/dev/null; then
+      fail "PROMPT LINT KIRMIZI ($KIRMIZI kare) — $PF (register: $REG)
+
+$(printf '%s' "$LINT_OUT" | grep -E '✗|▸|kırmızı' | head -30)
+
+Kirmizi = KANITLI eksik, zevk meselesi degil. Bu dosyayla kare basilirsa
+o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
+  MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesini commit mesajina yaz)"
+    fi
+    printf '✅ prompt-lint yesil: %s (register: %s)\n' "$PF" "$REG" >&2
+  done < <(git -c core.quotepath=false diff --cached --name-only --diff-filter=ACM -z 2>/dev/null)
+fi
+
+# --- 7. claude senkronu (UYARI — bloke etmez) ---
 # Sistemin akli (hafiza, kullanici skill'leri, global CLAUDE.md) repo DISINDA, ~/.claude
 # altinda yasiyor; git onu tasimaz. Sapma commit aninda gorunur olsun diye burada.
 # Bloke ETMEZ: oturum icinde hafiza dogal olarak degisir, her commit'i durdurmak dogru degil.
