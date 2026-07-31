@@ -872,6 +872,18 @@ Kare numarası ↔ cümle eşlemesi kesintisiz. Mami VO'yu **tek seferde okutuyo
 okunacak sırayla ve kesintisiz akar; kare numarası satır başında referans olarak durur.
 Telaffuz notu gerekiyorsa (sayı, birim, kısaltma) cümlenin yanında parantezle verilir.
 
+🔴 **İKİ DOSYA ZORUNLU — numaralı sürüm ÇALIŞMA dosyası, tek blok TESLİM dosyasıdır.**
+(Mami, 2026-07-31: *"tek metin olarak ver ve bunu kural yap, parça parça nasıl üreteyim,
+tekte üreteceğim."*) ElevenLabs'e numaralı metin yapıştırılamaz — numarayı da başlığı da
+**okur.** Teslimde `<Ad>_SESLENDIRME-TEK-BLOK.txt` bulunur: numara yok, başlık yok, yönerge
+yok; bölüm başlıkları boş satıra (nefes) dönüşür.
+
+**Elle çıkarma YASAK, araç var:** `node scripts/seslendirme-tek-blok.mjs "<proje klasörü>"`.
+Sebep ölçüldü: elle yapılan ilk çıkarımda `AŞAĞISI KOPYALANMAZ` bölümündeki bir okuma
+yönergesi metnin sonuna sızdı — o satır da `NN.` deseniyle başlıyordu ve göz onu ayırmadı.
+Araç o sınırı tanır, ayrıca karakter sayısını basar ve **5000'i aşarsa uyarır** (ElevenLabs
+tek seferde o kadar alıyor).
+
 ### SUNO — Simple kutusuna tek temiz prompt
 
 Mami direktifi 15: **tek paragraf, yapıştırılacak.** Biçim:
