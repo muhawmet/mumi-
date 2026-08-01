@@ -41,8 +41,8 @@ ENVANTER TABLOSU — hangi sekans hangi referansı istiyor
 | @usta                 | BASILACAK    | K01      | K01-K04, K51                        | 5    |
 | @bahce   (mekân)      | BASILACAK    | K01      | K01-K08, K51-K53                    | 11   |
 | @mutfak  (mekân)      | BASILACAK    | K09      | K09-K15, K22, K39-K42, K49-K50      | 14   |
-| @sogan                | BASILACAK    | K09      | K09-K12, K15, K43, K45, K48         | 8    |
-| @mikroskop            | BASILACAK    | K13      | K13-K15, K22, K39, K41-K42, K49     | 8    |
+| @sogan                | BASILACAK    | K09      | K09-K12, K15, K43, K45, K48, K52    | 9    |
+| @mikroskop            | BASILACAK    | K13      | K13-K15, K22, K39, K41-K42, K49-K50 | 9    |
 | @hucreici  (ÇEVRE)    | BASILACAK    | K15      | K15-K38, K43, K45, K48              | 27   |
 | @hayvanhucre (ÇEVRE)  | BASILACAK    | K42      | K42, K44, K46-K48                   | 5    |
 | @mira2                | ÖNCEDEN VAR  | —        | @mira3'ün EDIT KAYNAĞI, sahnede yok | —    |

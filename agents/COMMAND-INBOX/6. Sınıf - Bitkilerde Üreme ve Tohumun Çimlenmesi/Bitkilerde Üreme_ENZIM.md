@@ -91,8 +91,15 @@ ince sans) · `FASULYE` (tohum paketi, ofset serif, kâğıda emmiş) · `SAKSI 
 Önerilen taşıyıcı: Efe'nin kavanoza yapıştırdığı beyaz maskeleme bandı, kurşun kalemle yazılmış.
 ⚠ Motion'da **kimse yazmaz** — bant K44'te zaten yapıştırılmış ve yazılmış olarak durur.
 
-🔴 Harf harf hecele + diakritiği adıyla an: `TOZLAŞMA` — sekiz harf, altıncısı şapkasız büyük A,
-beşincisi sedilli Ş. `DÖLLENME` — sekiz harf, ikincisi çift noktalı Ö.
+🔴 Harf harf hecele + diakritiği adıyla an. Doğru sayımlar (makineyle doğrulandı 2026-08-01):
+`TOZLAŞMA` — sekiz harf, **altıncısı sedilli Ş**, beşincisi düz A.
+`DÖLLENME` — sekiz harf, ikincisi çift noktalı Ö.
+`TOHUM` — beş harf, diakritik yok. `SOS` — üç harf, diakritik yok, harf harf okunur.
+
+⚠ **DÜZELTİLDİ.** Bu satır önce "altıncısı A, beşincisi Ş" diyordu ve **yanlıştı** (T-O-Z-L-A-Ş-M-A).
+K30-K42 ajanı hem bu kilidi hem iş brifingini denetleyip ikisinin de yanlış olduğunu bildirdi ve
+metne doğru sayımı yazdı. Yasanın kanıtlı hatası tam bu sınıfta (Kütle K10: "second letter Ğ"
+yazılmış, oysa Ğ üçüncü harfti) — **harf sayımı elle doğrulanmadan prompta girmez.**
 🔴 ORIENTATION cümlesi zorunlu. 🔴 Yazı istemediğin yüzey **giydirilir**, yasaklanmaz.
 
 ## 5. KİLİT 6 — MEKÂN VE REFERANS
