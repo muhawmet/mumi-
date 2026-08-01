@@ -34,9 +34,22 @@ tozla kaplı, kalkıp iki saksı ötekine konuyor. **Efe o tozun yolculuğunu me
 → karanlık dolap sürprizi.
 **Kapanış (K54):** Aynı balkon, aynı lens, aynı saat.
 
-🔴 **AYNA KARE — K01 ↔ K54.** Açılışta saksıda **yalnız sardunya** var. Kapanışta yanında
-**fasulye fidesi** duruyor. Arı iki karede de **aynı çiçeğe, aynı noktaya** konar. Aynı lens,
-aynı yükseklik, aynı ışık. Bu iki kareyi yazan ajan ötekinin metnini okur.
+🔴 **AYNA KARE — K01 ↔ K54.** Aynı lens, aynı yükseklik, aynı saat, aynı ışık.
+Bu iki kareyi yazan ajan ötekinin metnini okur.
+
+⚠ **DÜZELTİLDİ (2026-08-01).** Bu madde önce "arı iki karede de aynı yere konar" diyordu ve
+**yanlıştı** — VO 2 arının *geldiğini* söylüyor, yani K01'de arı henüz YOKTUR. K01 ajanı
+çelişkiyi yakaladı ve VO'yu esas aldı; doğrusu şudur:
+
+| | K01 (açılış) | K54 (kapanış) |
+|---|---|---|
+| sardunya | ilk çiçeğini açmış | aynı çiçek, aynı yer |
+| arı | **YOK** — kadrajda hiç arı yok | **VAR** — aynı çiçeğe, aynı noktaya konmuş (VO 54: "arı yeniden geldi") |
+| yanındaki taş | **BOŞ** — kışlamış bir saksının bıraktığı kuru halka, kompozisyonda görünür | **fasulye fidesi** o halkanın tam üstünde duruyor |
+
+Yani ayna **iki farkla** kapanır: gelen fide ve dönen arı. İkisi de VO'nun sözüdür, ikisi de
+kadrajda aynı yere oturur. K01 ajanı boş taş halkasını sağ üçte bire yerleştirdi ve NEGATIVE'e
+"arı yok" kilidini yazdı — K54 o yuvayı doldurur.
 
 🔴 **DERSİN EN İYİ FİKRİ K48-K51'dir** — karanlık dolaba konan tohumun da çimlenmesi. Bu
 sekans dersin sürprizidir; kare o gerilimi taşımalı (kapalı dolap kapağı, sonra aralanan kapak
