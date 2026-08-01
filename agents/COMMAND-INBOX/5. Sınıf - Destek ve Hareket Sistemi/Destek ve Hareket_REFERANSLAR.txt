@@ -1,0 +1,554 @@
+DESTEK VE HAREKET SİSTEMİ — REFERANS ENVANTERİ
+=========================================================================
+5. Sınıf Fen Bilimleri · Dünya: pixar_3d_edu · register: EDU
+Image: Nano Banana 2 · Motion: Kling 3.0 · Yüzey: Magnific Spaces
+52 kare (bkz. _SESLENDIRME.txt) · Kilitler: _ENZIM.md
+Yasa: PROMPT-YASASI §4 + §4a. Bu dosya PROMPTLAR'dan ÖNCE yazıldı.
+
+⚠ SAHNE PROMPTLARINDA @handle'ı ASLA TARİF ETME.
+   Kimlik handle'dan gelir, HÂL kareden. @mira4 yazdıktan sonra saçını, tenini, boyunu,
+   kıyafetini yazmak referansla yarışır ve referansı bozar. @kukla yazdıktan sonra ahşabı,
+   eklemi, oranı yazmak da aynı hatadır.
+
+🔴 KADRAJ KİLİDİ — @tag çağıran HER kare kadrajın DIŞARIDA bıraktığını yazar
+   (ENZIM §1'den birebir). Referans sayfası "tam boy, ayakta, stüdyo" kadrajı taşır ve @tag
+   onu kareye İTHAL EDER. Ezmezsen referansın stüdyo tam-boy kadrajı gelir ve figürin doğar.
+   Her @tag karesinde kadrajın dışarıda bıraktığı yazılır:
+     "framed from mid-chest up, nothing below the chest is visible"
+     "framed at knee height, no floor and no shoes visible"
+   VE: temas gölgesi örneği ASLA ayakkabıya yazılmaz — KUKLAYA, KEMİĞE, MASAYA, MENTEŞEYE
+   yazılır. "shoes press flat on the floor" cümlesi ayağı kadraja MECBUR eder. Yasak.
+
+🔴 KADRAJDAN KESİK FİGÜR YAZILMAZ. "cut by the frame", "a pair of shoes crosses at the edge"
+   gibi her cümle havada uçan uzuv üretiyor (2026-07-31, K05 kanıtı). Her insan en az diz ya
+   da bel hizasından itibaren BÜTÜN tarif edilir. Kalabalığı azaltmak için figür KESİLMEZ,
+   figür SAYISI azaltılır.
+
+⚠ BU DERS TEK KİŞİLİKTİR. İkinci çocuk, öğretmen, sınıf kalabalığı YOK — ve mekân
+   referanslarının hiçbirinde insan yok. Boşluk EŞYAYLA doldurulur, gövdeyle değil.
+
+=========================================================================
+ENVANTER TABLOSU — hangi sekans hangi referansı istiyor
+=========================================================================
+
+| Handle / kilit      | Kova         | İlk kare | Aralık                              | Kaç klip |
+|---------------------|--------------|----------|-------------------------------------|----------|
+| @mira4              | BASILACAK    | K02      | K02-K09, K15, K21, K23, K29,        |   22     |
+|                     |              |          | K34-K39, K49-K52                    |          |
+| @kukla              | BASILACAK    | K01      | K01-K05, K08, K34-K35, K52          |    9     |
+| @atolye  (MEKÂN)    | BASILACAK    | K01      | K01-K07, K23-K24, K52               |   10     |
+| @iskelet            | BASILACAK    | K09      | K09-K21, K25, K32-K33               |   16     |
+| @fensinif (MEKÂN)   | BASILACAK    | K08      | K08-K21, K25-K48                    |   38     |
+| uyluk kemiği        | TARİF KİLİDİ | K15      | K15, K17, K21                       |    3     |
+| bilek kemikleri     | TARİF KİLİDİ | K18      | K18, K19, K21                       |    3     |
+| kapı menteşesi      | TARİF KİLİDİ | K23      | K23, K24, K26                       |    3     |
+| lastik bant         | TARİF KİLİDİ | K38      | K38, K39                            |    2     |
+| süt kutusu          | TARİF KİLİDİ | K50      | K50                                 |    1     |
+| fen defteri         | TARİF KİLİDİ | —        | yazı planının istediği kare(ler)     |   1-2    |
+
+Kaynak: ENZIM §5. SESLENDIRME sekans dağılımıyla cümle cümle doğrulandı; iki yerde
+ENZIM §5 ile sekans tablosu arasında NUMARA BOŞLUĞU var, ikisi de yeni referans doğurmuyor:
+
+  · K22 ("Peki bu kadar kemik birbirine nasıl bağlanıyordu?") ne @fensinif (K08-K21,
+    K25-K48) ne @atolye (K23-K24) aralığında. Sekans tablosu S3'ü @atolye ile açıyor.
+    Kareyi yazan ajan K22'yi ya @fensinif'in son karesi ya @atolye'nin ilki olarak seçer —
+    ikisi de zaten basılmış bir mekân referansıdır.
+  · K49-K51 (sağlık üçlüsü) @fensinif aralığının (…K48) hemen dışında. Sekans tablosu
+    S5'i @fensinif'te açıp @atolye'de (K52) kapatıyor. Üç kare @fensinif'te yazılır.
+
+⚠ Klip sayısına dokunan her düzenlemede bu tablo yeniden numaralanır (§4a). Referans dosyası
+  klip numarası taşır; plan değişirse dosya sessizce yalan söylemeye başlar.
+
+=========================================================================
+BASMA SIRASI — bu sırayla, atlanmaz
+=========================================================================
+
+  1) @mira4      2) @kukla      3) @atolye      4) @iskelet      5) @fensinif
+
+  · İlk ÜÇÜ inince S1 (K01-K07) tamamen basılabilir — S1 başka hiçbir şey istemiyor.
+  · @iskelet + @fensinif inince S2 (K08-K21), S3 (K22-K33) ve S4 (K34-K48) açılır.
+  · S5 (K49-K52) yeni referans İSTEMİYOR — @mira4, @kukla, @fensinif, @atolye zaten elde.
+  · Yani beş referans indikten sonra 52 karenin 52'si referans beklemeden yazılabilir.
+
+🔴 @mira4 ÖNCE basılır çünkü BU BİR REFERANS-EDIT'TİR (aşağıda) — Magnific'te @mira2
+   düğümüne bağlanır. Diğer dördü sıfırdan üretilir ve birbirini beklemez; istenirse 2-5
+   arası aynı oturumda paralel basılır.
+
+=========================================================================
+✅ KAPANDI — K35'İN "İPLERİ" (2026-08-01, VO düzeltildi)
+=========================================================================
+Bu blok bir açık karardı ve KAPANDI. Bulguyu referans ajanı yakaladı, hükmü doğruydu:
+@kukla bir TAHTA EKLEMLİ ÇİZİM MANKENİDİR ve çizim mankeninin ipi yoktur.
+
+Kusur nesnede değil, VO cümlesindeydi — ve o cümleyi Mami değil ajan yazmıştı.
+Bu yüzden çözüm nesneyi bükmek değil, cümleyi doğrultmak oldu:
+
+  ESKİ  35: "Kuklanın ipleri vardı; Mira'nın ipi yoktu."
+  YENİ  35: "Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu."
+  YENİ  34: "Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?"
+
+Ders açısından yeni cümle ESKİSİNDEN DOĞRU: konu "ip yokluğu" değil, kasın yokluğu.
+Kuklada eklem var, kemik karşılığı var — eksik olan tek şey ÇEKEN kuvvettir, yani kas.
+K36 ("kolunun üstü sertleşip kabardı") bu cümlenin doğrudan cevabı hâline geldi.
+
+🔴 Uygulama sonucu: @kukla'ya İP YAZILMAZ. Referans promptunda ip, kanca ipi, marionet
+   teli, kontrol çubuğu YOKTUR. Kuklanın SIRTINDA, iki omzun arasına gömülü tek bir pirinç
+   halka vardır; dolabın çelik kancasına doğrudan o halkadan asılır. K01, K35 ve K52 bu
+   hâliyle çekilir. Kukla bir yüzeye bırakıldığında yığılır — onu ayakta tutan hiçbir şey yok,
+   dersin sorusu da tam olarak budur.
+`_SESLENDIRME.txt` ve `-TEK-BLOK.txt` güncellendi (52 cümle, 2638 karakter).
+
+=========================================================================
+RENK GEREKÇESİ — dersin kavram ışığı SICAK-AMBER'dir
+=========================================================================
+Kavram ışığı zincir boyunca tek bir SICAK-AMBER ışıktır (ENZIM §3). Bu yüzden bu derste
+amber bir DEKOR rengi değil, bir OLAY rengidir — ve kadrajda amberden başka amber olamaz.
+Beş referansın rengi bu tek kısıta göre seçildi ve gerekçe her promptun İÇİNE yazıldı:
+
+  @mira4   → petrol-teal + çivit + koyu erik. Amberin doğrudan tümleyeni; ışık üstüne
+             düştüğü nesneden ayrılsın diye. (@mira2'nin HARDAL tişörtü bu derste
+             kullanılamaz — hardal, kavram ışığının tonudur.)
+  @kukla   → soğuk eğilimli soluk kayın/dişbudak. Bal-amber ahşap YAZILMAZ, yoksa amber
+             ışık kuklanın içinde erir.
+  @iskelet → sıcak fildişi kemik + GRAFİT koyu kaide. Karanlık kaide, ışığın zemini.
+  @atolye  → tebeşirimsi adaçayı yeşili duvar + derin petrol dolaplar; sıcaklık yalnız
+             yıpranmış ahşap masalarda.
+  @fensinif→ soğuk fıstık-kril duvar + petrol sandalye + derin teal dolap kapağı.
+             🔴 Altın standarttaki "muted amber plastic sandalye" bu derste YASAK.
+
+Palet ihlali değil: dünyanın kendi paleti amberi ACCENT/HIGHLIGHT olarak tanımlıyor,
+büyük yüzey olarak değil. Referanslar bunu birebir uyguluyor. Doygunluk korunur —
+dünya negatifi "NO desaturated grey anywhere in character or environment" der.
+
+=========================================================================
+BASILACAK — 1 · @mira4   (KARAKTER · 22 klip · İLK BASILACAK · REFERANS-EDIT)
+=========================================================================
+Gerekçe: @mira2 / @mira3 ile AYNI KIZ. Yüz sıfırdan üretilirse süreklilik kırılır —
+ölçüldü: tarif çıpası yüzü taşımıyor, saç rengi ve yüz biçimi kayıyor (§2d madde 8).
+⚠ Magnific'te @mira2 düğümünü BAĞLA, aşağıdaki metni ver. Değişen tek şey GARDIROPTUR.
+⚠ Gardırop iki İŞE göre seçildi, sadece renge göre değil:
+   · K36-K39 kolun ÜSTÜ kabaracak → kol yeni bir kostüme geçmeden çıplak kalabilmeli.
+   · K29 diz bükülecek → diz, etek eteği ile çorap ağzı arasında AÇIKTA okunmalı.
+-----
+Use the referenced @mira2 image. Keep the face, the hair, the skin tone, the eye colour and
+the body proportions IDENTICAL — this is the same girl. Change ONLY the wardrobe and the
+framing described below. Do not restyle the face, do not age her up or down.
+
+Full-body character reference of @mira4:
+
+A Turkish/Anatolian schoolgirl, fifth grade, around ten or eleven, pre-teen. Warm matte tan
+skin with honey subsurface scattering, low specular, never tinted green or grey. Dark wavy
+hair as in the reference, gathered back off the face so the shoulder line stays readable.
+Expression: alert and curious, the face of a girl who has just noticed that something does
+not add up — attentive, not posing, not grinning.
+
+Wardrobe for this lesson: a deep petrol-teal ribbed cotton jumper with wide sleeves already
+pushed up clear above the elbow, and underneath it a short-sleeved plain deep-indigo cotton
+tee so her bare upper arm can be shown later in the lesson without any change of costume. A
+charcoal-indigo cotton twill skirt cut to just above the knee, and dark petrol ribbed socks
+that stop a hand's width BELOW the knee, leaving the knee itself bare and clearly readable
+when she bends it. Scuffed dark-slate canvas shoes with a worn charcoal rubber toe cap.
+Deliberately petrol, indigo and charcoal — never amber, gold, mustard, honey, ochre, cream or
+bone-ivory — because this lesson's single concept light is a warm-amber glow that must never
+dissolve into her clothing, and because she stands beside a honey-toned wooden figure and an
+ivory bone model that she has to separate from in every frame. No badges, no prints, no bag,
+no apron, no jewellery.
+
+Pose: relaxed hero pose, weight on one foot, one arm loose at her side and the other hand
+half-open as if she has just let go of something — reads clearly at fifty-pixel thumbnail size.
+
+85mm lens at f/4.0, full body centered, soft studio key with cool bounce fill, warm-grey
+seamless gradient backdrop with a soft floor contact shadow — not a story location and not an
+empty white void.
+
+Materials: ribbed cotton knit with visible wale and a dry matte finish that gives light back
+weakly; cotton jersey with a soft knit texture and honest creasing at the inner elbow; brushed
+twill with a fine diagonal weave; ribbed sock knit that bunches slightly at the ankle; canvas
+shoe with a scuffed rubber toe cap.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, subsurface scattering on skin carrying the
+scene's light temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no change to the face or hair from the reference; no amber, mustard, gold, ochre,
+cream or ivory garment anywhere on her; no logo, no brand name, no badge, no printed motif;
+no photoreal or real-human photographic skin, no flat 2D or cel shading, no hard black
+outline, no clay or plasticine surface, no franchise character, no text anywhere in the
+frame, no desaturated grey in skin or costume, no exposed midriff, no adult styling.
+-----
+
+=========================================================================
+BASILACAK — 2 · @kukla   (NESNE · 9 klip · DERSİN AÇILIŞ VE KAPANIŞ NESNESİ)
+=========================================================================
+Gerekçe: K01'de asılı, K03-K04'te yığılan, K34-K35'te dersin karşı-kanıtı, K52'de aynanın
+öteki yarısı. Tag'siz kalırsa dokuz karede dokuz farklı oyuncak çıkar — korpusun en pahalı
+hatasının (kitap, 6 kare toptan revize) birebir tekrarı olur.
+🔴 Bu bir ÇİZİM MANKENİDİR. İnsan değil, oyuncak değil, iskelet değil, robot değil.
+🔴 YÜZÜ YOKTUR — yazılmazsa motor yüz çizer. Negatife de, gövdeye de yazıldı.
+🔴 Kaide YOK: kaidesi olsaydı masada yığılmazdı, dersin açılış fikri çökerdi.
+-----
+Full object reference of @kukla: an original wooden artist's articulated mannequin — the small
+jointed drawing figure kept in a school art room — standing upright in a neutral rest pose,
+seen in three-quarter view.
+
+About thirty centimetres tall, roughly a hand and a half. Its head is a smooth plain OVAL block
+with NO FACE AT ALL — no eyes, no nose, no mouth, no ears, no carved or painted features of any
+kind, only bare turned wood and its grain. The torso is made of TWO separate pieces: a rounded
+upper chest block that tapers toward the waist, and a smaller wedge-shaped pelvis block beneath
+it, the two joined by a single exposed ball at the waist. The arms and legs are plain smooth
+CYLINDERS, each limb broken into an upper and a lower segment. Every articulation is a visible
+ball-and-socket: neck, waist, both shoulders, both elbows, both wrists, both hips, both knees,
+both ankles — twelve balls in all, each sitting slightly proud of its cup with a fine seam ring
+around it and a faint darker wear mark where it has been turned many times. The hands are simple
+rounded paddles with one separate thumb block each; the feet are plain wedge blocks. Proportions
+are stylised and child-friendly, the head a touch large, the silhouette instantly readable at
+thumbnail size as "a little wooden figure that can be posed".
+
+A single small brass ring is set flush into the BACK of the upper chest block, between the
+shoulders — a plain dulled loop about a fingernail wide, screwed in and slightly recessed, the
+wood around it worn pale and smooth from being lifted on and off a hook. It is a hanging point
+and nothing more. There are NO cords, NO strings and NO threads of any kind on this figure.
+
+There is NO base, NO stand and NO support rod — nothing under the feet. Nothing holds this
+figure upright: stood on a surface and released, it collapses. That is the whole point of it.
+
+The wood is a pale beech-ash blonde, cool-leaning and lightly desaturated, its straight grain
+running visibly along each cylinder and darkening a little at the joint seams. Deliberately pale
+and cool rather than honey-amber, so the lesson's warm-amber concept light never dissolves into
+the figure it is placed on.
+
+85mm lens at f/4.0, the whole figure centred with generous clean margin, soft studio key with
+cool bounce fill, warm-grey seamless gradient backdrop with a soft floor contact shadow beneath
+the feet — not a story location and not an empty white void.
+
+Materials: close-grained pale hardwood under a thin matte varnish that gives light back softly
+along the length of each limb and goes flat inside the joint seams; one dulled brass ring in a
+soft ochre with fine scratches, recessed into the wood. Deliberate overscale
+of ten to fifteen percent on the joint balls for child-safe readability.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no face, no eyes, no nose, no mouth, no painted or carved features, no hair, no
+clothing, no shoes; no bones, no skull, no ribcage, no skeleton of any kind; no robot panels,
+no screws, no metal skeleton, no action figure, no doll, no teddy, no nutcracker; NO cord,
+string, thread, wire or twine anywhere on or near the figure, no marionette control bar or
+cross, no puppet strings to the head, hands or feet — the single brass ring in the back is the
+only fitting; no base, no stand, no support rod, no plaque, no label; no logo, no brand name, no text,
+numbers or letters anywhere; no photoreal capture, no flat 2D or cel shading, no hard black
+outline, no plastic sheen, no franchise resemblance.
+-----
+
+=========================================================================
+BASILACAK — 3 · @atolye   (MEKÂN REFERANSI · 10 klip · AÇILIŞ = KAPANIŞ)
+=========================================================================
+Gerekçe: K01-K07 ile K52 AYNI KADRAJDIR (ENZIM §2, ayna kare). Seyirci aynı dolabı, aynı
+kancayı ve aynı ışığı tanımazsa dersin tek fikri — "bu sefer hareket eden Mira" — çöker.
+🔴 DOLABIN KENARINDAKİ KANCA referansta VARDIR ve boştur: K01'de kukla oradan iner,
+   K52'de oraya geri asılır. Kanca yoksa iki uç kare birbirini tutmaz.
+🔴 KARA TAHTA YOK. Akıllı tahta precedent'i geçerlidir. Tebeşir/füzen yazısı için ayrı bir
+   taşıyıcı kondu: şövaledeki gri astarlı resim panosu — bu bir ders tahtası değil, atölyenin
+   kendi malzemesidir. ENZIM §4'ün "tebeşirle yazılmış tek kelime" kilidi orada yaşar.
+🔴 DUVARDAKİ HER YÜZEY GİYDİRİLDİ. Boş panel bırakılmadı — motor boş panele uydurma
+   İngilizce basıyor (ölçüldü: 6 kare).
+⚠ Mekân referansı da kendi kadrajını ithal eder — sahne karesinde kendi kadrajını YAZ.
+-----
+Full environment reference of @atolye: the art workshop of a Turkish state secondary school,
+seen as a wide establishing view from the doorway.
+
+The room is long and daylit. The upper walls are a chalky sage-green distemper with a low sheen,
+and a waist-high wainscot of deep petrol-blue painted timber runs the length of them — the room's
+own colour is deliberately cool and green so that the lesson's single warm-amber glow is the only
+amber event in any frame shot here. Tall steel-framed windows fill the left wall, their lower
+panes frosted, their upper panes clear, real morning daylight coming through them at a shallow
+angle and laying long soft rectangles across the floor. Wide plank floorboards in worn honey
+timber, waxed to a low satin in the traffic path and flecked with dried spots of paint that have
+been walked in for years.
+
+Down the middle stand four heavy wooden work tables in scarred pale timber, their tops ringed
+with old paint and ink and cut by scalpel scores, each with four plain timber stools tucked under.
+
+Against the right wall stands a tall double-door cupboard in deep petrol-blue, its doors closed,
+its panels showing honest brush drag. On the outer edge of that cupboard, screwed into the side
+panel at adult shoulder height, is a single plain steel hook — empty, its paint worn bright where
+something has hung from it for a long time. Beside the cupboard, an open shelving unit is packed
+solid: stacked stoneware bowls, jam jars bristling with brushes handle-down, rolled cartridge
+paper standing on end, folded dust cloths, stacked tins with their lids on, plaster casts of a
+hand and an ear. Nothing on these shelves is a flat empty face.
+
+The back wall carries a full-width pinboard in a plain timber frame, its surface densely covered
+edge to edge with overlapping children's paintings, colour studies and folded card pinned in
+layers so that not one bare panel of board is left showing anywhere. To its left a wall-mounted
+interactive smart board sits in a slim dark frame, its screen dark and dormant. To its right a
+tall wooden easel holds a large grey primed painting board, its surface bare grey gesso with a
+faint chalk dust bloom along the lower edge. Under the window wall runs a deep ceramic sink with
+two taps and a splashback of small square tiles in mixed muted teals, the rim stained with
+generations of pigment; above it hangs a coil of rubber hose and a row of aprons on pegs, hanging
+thick enough that no wall shows between them.
+
+The doorway is at the near right. Bolted to the timber door at eye height is a small rectangular
+enamel plate, cream ground with a dark green border, its surface flat and facing straight into
+the room, reading exactly "RESİM ATÖLYESİ" — two words, thirteen letters, the fourth letter of
+the first word a dotted capital İ, the third letter of the second word a capital O with a
+diaeresis Ö, the last letter a dotted capital İ. The plate reads left-to-right, never mirrored,
+reversed or rotated, and this is the ONLY lettering anywhere in the frame.
+
+35mm lens at f/5.6, eye level, wide establishing view down the room from the doorway with the
+petrol cupboard and its hook in the near right third. Neutral even daylight from the window wall,
+flat and legible — this is a reference plate, not a lit scene; every surface stays readable so
+the frame can be re-lit later. NO PEOPLE, no hands, no action, no wooden mannequin on the hook.
+
+Materials: distemper wall with a chalky matte finish that gives light back weakly; painted timber
+wainscot with visible brush drag and chipped edges showing bare wood; table tops in dry scarred
+hardwood with paint sunk into the grain; floorboards with a waxed satin crown and matte in the
+gaps; glazed ceramic sink with a hard specular rim; enamel plate with a glassy vitreous surface
+and a fine chip at one corner.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent on room props for child-safe readability.
+
+NEGATIVE: no people, no hands, no mannequin, no skeleton; no chalkboard, no blackboard, no
+slate, no chalk trough; no bare empty wall panel, no blank pinboard, no empty shelf face, no
+clean unused table — every surface is dressed; no English signage, no lettering on any poster,
+shelf, tin, jar or wall — every pinned sheet is a colour and a texture, never a legible word,
+and the enamel door plate is the only text in the frame; no logo, no brand name; no European or
+Parisian studio architecture, no loft, no gallery — this is a contemporary Anatolian state
+school; no photoreal or live-action capture; no flat 2D or cel shading, no hard black outline,
+no clay surface; no teal-orange grade, no desaturated grey look; no amber, gold or ochre paint
+on walls, cupboards or stools.
+-----
+
+=========================================================================
+BASILACAK — 4 · @iskelet   (NESNE · 16 klip · S2 VE S3'ÜN KAHRAMANI)
+=========================================================================
+Gerekçe: K09-K21 boyunca kadrajın merkezinde, K25 ve K32-K33'te geri geliyor. On altı karede
+aynı model olmak zorunda; tag'siz on altı farklı iskelet çıkar.
+🔴 EĞİTİM MAKETİDİR. Dekor iskeleti, korku öğesi, Cadılar Bayramı props'u DEĞİLDİR.
+   Kafatası oranı çocuk için yumuşatıldı, dişler abartılmadı, göz çukuru kapkara değil.
+🔴 UYLUK KEMİĞİ ÇIKARILABİLİR (K15). Uzun kemikler pirinç pimle tutulur — pim yazılmazsa
+   K15'te kemiği çıkarma hareketi fiziksel olarak yalan olur.
+🔴 KAİDEDEKİ "206" — rakam İKİNCİ KEZ kilitleniyor: kelime tutuyor, rakam tutmuyor (ENZIM §4).
+   Rakam harf harf değil, BASAMAK BASAMAK hecelendi ve ORIENTATION cümlesi kondu.
+🔴 KEMİK ETİKETLERİ REFERANSA GİRMEDİ. KAFATASI / KABURGA / UYLUK pirinç etiketleri sahne
+   promptunda tek tek takılır — üçünü referansa gömmek üçünü de her kareye mecbur ederdi.
+   Referansta o noktalarda etiket YOK, boş etiket yuvası da YOK (boş yüzey = uydurma yazı).
+-----
+Full object reference of @iskelet: an original human skeleton teaching model of the kind kept in
+a school science room, standing on its stand, seen in three-quarter view.
+
+The skeleton is about the height of a ten-year-old child, roughly one hundred and forty
+centimetres, hanging from a small polished hook that enters the crown of the skull and rises to a
+slim vertical steel post. The post is set into a heavy solid round base in dark graphite metal,
+its top face lightly brushed, its edge softened — a deliberately dark base so the ivory bone
+separates cleanly from whatever floor it stands on and so the lesson's warm-amber glow always has
+a dark ground beneath it.
+
+Every bone is cast in a warm ivory-cream polymer with a fine even matte and a faint honey
+subsurface warmth, a barely visible moulding seam along each long bone, and a slightly deeper
+cream where hands have handled it. The skull is rounded and gentle, its cranium a touch large in
+the child-friendly way, its brow soft; the jaw is hinged on a small brass pin and closed; the
+teeth are a soft, even, blunt row with no gaps, no points and no exaggeration; the eye sockets
+are deep but soft-edged and filled with a warm shadow, never a hollow black void. The spine is
+threaded on a flexible internal cable so it curves naturally; twelve pairs of ribs form an open
+cage around empty space; the pelvis is broad and smoothly finished; the shoulder blades, collar
+bones, arms, hands, legs and feet are all present and correctly counted, the small wrist and
+ankle bones strung on fine wire so they hang in their proper order.
+
+The long bones of the arms and legs are held to their joints by small brass pins with knurled
+heads, clearly visible, so that a single bone — most obviously the long thigh bone — can be lifted
+straight out of the model and put back.
+
+Fixed to the front face of the graphite base is a small rectangular brass plate, flat and facing
+straight forward, engraved with the number "206" — exactly three characters, the numeral two,
+then the numeral zero, then the numeral six, in that order and nothing else. It reads
+left-to-right, never mirrored, reversed or rotated, appears on this one brass plate and on no
+other surface of the model, and no other number, letter or word appears anywhere on the skeleton,
+the post or the base.
+
+The whole object reads at thumbnail size as a friendly, well-kept classroom instrument.
+
+85mm lens at f/4.0, the full model centred head to foot with generous clean margin, soft studio
+key with cool bounce fill, warm-grey seamless gradient backdrop with a soft floor contact shadow
+under the base — not a story location and not an empty white void.
+
+Materials: matte cast polymer with gentle subsurface warmth and a fine mould seam; brushed
+graphite metal base with an anisotropic highlight along the brush direction; brass pins and
+plate dulled to a soft ochre with fine scratches; thin bright steel post and wire.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent on the joint ends for child-safe readability.
+
+NEGATIVE: not a horror prop, not a Halloween decoration, not a pirate flag skull, not a medical
+cadaver — nothing frightening; no hollow black eye sockets, no bared or pointed teeth, no
+grinning expression, no cracks, no dirt, no cobwebs, no candlelight; no blood, no muscle, no
+organs, no skin, no hair, no clothing, no hat; no arrows, no leader lines, no labels, no
+diagram overlay, no colour-coded bone regions, no anatomical chart behind it; no letters or
+words anywhere, and no number other than the three characters on the brass plate; no logo, no
+brand name, no maker mark; no photoreal medical photograph, no flat 2D or cel shading, no hard
+black outline, no plastic sheen, no franchise resemblance; no person, no hand.
+-----
+
+=========================================================================
+BASILACAK — 5 · @fensinif   (MEKÂN REFERANSI · 38 klip · DERSİN ANA MEKÂNI)
+=========================================================================
+Gerekçe: 52 karenin 38'i bu odada. Ref yoksa otuz sekiz karede otuz sekiz farklı sınıf çıkar.
+🔴 AKILLI TAHTA — kara tahta DEĞİL. Precedent: pixar_3d_edu sınıfında Türkiye'nin bugünkü
+   devlet okulu vardır.
+🔴 SANDALYELER PETROL, AMBER DEĞİL. Altın standarttaki "muted amber plastic" bu derste
+   yasak — kavram ışığı amberdir, oturma grubu onunla yarışamaz.
+🔴 İSKELETİN KÖŞESİ BOŞ BIRAKILDI: @iskelet bu referansa GİRMEZ, sahnede birleştirilir.
+   İki referans aynı nesneyi iki kez tanımlarsa ikisi de kayar.
+🔴 ERTELENMİŞ YAZI TAŞIYICILARI REFERANSA GİRMEDİ (duvardaki emaye levha, ilk yardım
+   dolabının etiketi). Sebep: ya boş panel bırakırdım (uydurma İngilizce) ya da metni her
+   kareye mecbur ederdim. İlk yardım dolabı VAR ama yüzünde YAZI değil BEYAZ HAÇ var;
+   levha gerektiği karede sahne promptu tarafından duvara asılır.
+-----
+Full environment reference of @fensinif: the science classroom of a contemporary Turkish state
+school, fifth grade, seen as a wide establishing view from the back of the room.
+
+Tall steel-framed windows run the length of the left wall with half-open pale linen blinds, real
+morning daylight coming through them across the room; the wide sills carry four clay pots of
+spider plants and a row of glass jars holding pine cones, shells and pebbles. The walls are a
+soft cool putty-green with a low chalky sheen, and a shoulder-high run of cabinetry in deep teal
+lacquer lines the right wall. The floor is a warm grey speckled vinyl waxed to a low satin in
+the traffic path, honestly scuffed along the aisle. Nowhere in this room is there an amber,
+gold, ochre or mustard surface — the room is deliberately cool and green so that the lesson's
+single warm-amber concept light is the only warm event in any frame.
+
+Six pale birch double desks with slim dark steel frames stand in three short rows, their tops
+scuffed and pencil-marked, each paired with two moulded chairs in a muted petrol blue. At the
+front of the room a large wall-mounted interactive smart board sits in a slim dark frame, its
+screen dark and dormant, with a narrow marker rail beneath it holding four capped markers and a
+felt eraser. Below and to one side stands a plain teacher's desk in the same birch, its top
+carrying a stack of exercise books laid squarely face-down, a stoneware mug of pencils and a
+folded cloth.
+
+The teal cabinetry along the right wall has glass upper doors and is packed solid behind them:
+a plastic torso model with its front half lifted off, a small terrestrial globe, a stack of
+petri dishes, a rack of test tubes in a wooden block, three graduated beakers nested inside one
+another, a set of brass weights in a fitted case, and a bundle of rolled charts standing on end
+with their printed faces turned inward to the cabinet. The lower doors are closed. Nothing
+behind that glass is a flat empty face.
+
+The back wall carries a full-width cork noticeboard in a plain timber frame, its surface densely
+covered edge to edge with overlapping sheets of coloured paper, folded card and children's
+painted work pinned in layers so that no bare cork shows anywhere. Beside it, mounted at adult
+height, is a shallow wall cabinet in signal green bearing a single plain white cross and no
+lettering of any kind. In the far corner, between the cabinetry and the window wall, a clear
+bay of open floor waits beside a low timber plinth — nothing stands in it.
+
+35mm lens at f/5.6, eye level, wide establishing view from the back of the room toward the smart
+board, the window wall falling away to the left and the teal cabinetry to the right. Neutral even
+daylight from the window wall, flat and legible — this is a reference plate, not a lit scene.
+NO PEOPLE, no hands, no action, no skeleton model, no wooden mannequin.
+
+Materials: birch laminate with a visible pale grain under a worn satin finish; moulded plastic
+chairs with a soft-diffuse sheen and slight translucency at the thin rim; teal lacquer with a
+smooth low-gloss reflection and fine wear at the handle edges; cork board with a granular matte
+face; vinyl floor with a low satin waxed sheen and fine scuffing; window glass with honest
+refraction at its edge.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never raytraced-hard.
+Deliberate overscale of ten to fifteen percent on props for child-safe readability.
+
+NEGATIVE: no people, no hands, no skeleton, no mannequin; no chalkboard, no blackboard, no
+chalk; no bare empty wall panel, no blank noticeboard, no empty shelf face, no clean unused
+desk — every surface is dressed; no readable writing anywhere — every pinned sheet, chart and
+book spine is a colour and a texture, never a legible word — no English signage, no lettering
+on the green cabinet, the smart board, the desks or the walls; no anatomical poster, no
+labelled diagram, no arrows, no leader lines; no logo, no brand name; no laboratory gas taps,
+no fume hood, no beakers of coloured liquid — this is a primary science classroom, not a
+chemistry lab; no photoreal or live-action capture; no flat 2D or cel shading, no hard black
+outline, no clay surface; no teal-orange grade, no desaturated grey look; no amber, gold, ochre
+or mustard furniture, wall or chair anywhere in the room.
+-----
+
+=========================================================================
+TARİF KİLİTLERİ — referans BASILMAZ, sahnede AYNEN bu kelimelerle çağrılır
+=========================================================================
+Kural: aşağıdaki öbek, geçtiği HER karede kelimesi kelimesine AYNEN tekrar edilir.
+Kısaltma, özetleme, eş anlamlı sözcük yok — öbek değişirse nesne değişir.
+
+UYLUK KEMİĞİ (K15, K17, K21)
+  "a single ivory thigh bone lifted out of the model — one long straight shaft with a rounded
+   ball head on a short angled neck at the top end and two smooth rounded condyle knobs at the
+   bottom, matte cast polymer with a faint moulding seam, longer than a child's forearm"
+
+BİLEK KEMİKLERİ (K18, K19, K21)
+  "a small loose group of ivory wrist bones, each one roughly as wide as it is long, chunky and
+   rounded like worn river pebbles with smooth waisted faces where they seat against one
+   another, the same matte cast polymer as the model"
+
+KAPI MENTEŞESİ (K23, K24, K26)
+  "a plain steel butt hinge on the workshop door — two rectangular leaves screwed flat into the
+   painted timber and joined by a knuckle of interlocking barrels turning on one pin, the paint
+   worn thin and bright metal showing along the barrel where it has turned for years"
+
+LASTİK BANT (K38, K39)
+  "a wide flat exercise band of dull beige rubber, matte and slightly floury on the surface,
+   lying in loose slack folds and showing a faint stretch sheen only along the part that is
+   pulled taut"
+
+SÜT KUTUSU (K50)
+  "a plain gable-top milk carton in matte white board with a dull green plastic screw cap and a
+   crisp folded ridge along its top, the printed face flat and perfectly parallel to the camera"
+  ⚠ "SÜT" kelimesi bu öbeğe GİRMEZ — karenin TEXT slotunda harf harf yazılır. Kutu sabit
+    kütledir, sallanan taşıyıcıya yazı konmaz (ENZIM §7).
+
+FEN DEFTERİ (yazı planının istediği kare(ler))
+  "a slim squared-paper school notebook with a soft matte deep-plum cover folded flat, a
+   stitched spine and one corner curled from use, lying square and still on the desk"
+  ⚠ ENZIM §5 tablosunda YOK, ENZIM §4 yazı planında VAR ("FEN BİLİMLERİ — Mira'nın defter
+    kapağı"). Referans basmaya değmeyecek kadar küçük ve nadir, ama tarifsiz bırakılırsa
+    geçtiği her karede başka bir defter çıkar — o yüzden kilide alındı. Kapak deliberately
+    erik: amber ışıkla da, ahşapla da, kemikle de çakışmıyor.
+
+=========================================================================
+KAVRAM IŞIĞI SİSTEMİ — bu dersin imzası (ENZIM §3, her karede AYNI kural)
+=========================================================================
+TEK bir SICAK-AMBER ışık, 52 kare boyunca yol alır. Sıfırdan doğan ışık YOK — her kare bir
+öncekinin ışığını DURUMUYLA devralır.
+
+  KEMİKTE  : ışık kemiğin içinde durgun bir çekirdek gibi durur — yumuşak, yayılmış, hareketsiz.
+  EKLEMDE  : aynı ışık eklemin dönme ekseninde HALKA olur; menteşe döndükçe halka döner.
+  KASTA    : aynı ışık kas boyunca uzanır; kas kasılınca KISALIR ve parlaklığı artar,
+             gevşeyince uzar ve söner. Bu, kasılmanın kendisidir — ok değil, ışık.
+
+  · Işık daima YUVARLAK/HATLI sıcak-altın bir IŞIK OLAYIDIR. Çiçek, taç yaprağı, alev,
+    ok ucu, ikon, diyagram olmaz.
+  · Işık NESNENİN üstündedir — tenin ya da yüzün üstünde ASLA.
+  · Işık GEOMETRİK yazılır, fotometrik değil: "ışık yalnız uyluk kemiğinin gövdesine değer,
+    modelin kalanına ulaşmaz" TUTAR; "kontrast yüksek", "dolgu yok" TUTMAZ (§2b, ölçüldü).
+
+Her kavram-ışığı karesinin NEGATIVE satırına kare-özel karşılığı yazılır:
+  "the glow stays a soft warm-golden light and never becomes a flower, petal, flame or drawn
+   arrowhead."
+Ve şema yasağı kare kare tekrarlanır (ENZIM §6):
+  "no diagram, no arrow, no leader line, no label, no chart, no equation and no plus or equals
+   sign anywhere in the frame."
+
+=========================================================================
+GLOBAL YAZI KUYRUĞU — yazı taşıyan HER karenin TEXT slotuna girer
+=========================================================================
+· Yazı TEK yüzeyde durur. İkinci bir yüzeye dağıtılırsa ikisi de bozuluyor.
+· Yazı harf harf hecelenir ve çift tırnak içinde verilir, diakritik ADIYLA anılır:
+  "KEMİK" (one word, five letters, the fourth a dotted capital İ)
+· 🔴 RAKAM HARFTEN ZOR: "206" gibi her sayı basamak basamak yazılır — "the numeral two, then
+  the numeral zero, then the numeral six" — ve sayı ile birim AYRI, aralıklı durur.
+· ORIENTATION zorunlu: "reads left-to-right, never mirrored, reversed or rotated; appears on
+  this one named object and on no other surface."
+· Yazı DURAN, SABİT KÜTLELİ yüzeye konur — emaye plaka, pirinç etiket, kaide, süt kutusu,
+  defter kapağı, astarlı pano. Sallanan/eğilen/bükülen taşıyıcıda harf eriyor (ENZIM §7).
+· Arka plan kuyruğu: "any background sign is soft-focus, Turkish or blank."
+· 🔴 Yazı istemediğin yüzey YASAKLANMAZ, GİYDİRİLİR — pano üst üste kâğıtla kaplanır, raf
+  malla doldurulur, rulo kâğıdın basılı yüzü dolaba döndürülür, kitaplar yüzükoyun konur.
+  Boş panel bırakılan yerde motor İngilizce uyduruyor (ölçüldü: 6 kare).
+· Hedef: 52 karenin ~26'sı sahnenin kendi yazısını taşır. Aynı çözüm İKİDEN FAZLA
+  tekrarlanmaz — on dört karede tek çözüm tekrarı ölçülmüş kusurdur (§11a).
+· Tasarlanmış ekran yazısı yalnız ÜÇ kez, üçü de farklı malzemede: "KEMİK" harfleri kemik
+  maddesinden (gözenekli, mat) · "EKLEM" harfleri menteşe pirinci gibi dönerek yerine oturmuş
+  · "KAS" harfleri lif dokusunda, kasılınca sıkışmış.
+=========================================================================

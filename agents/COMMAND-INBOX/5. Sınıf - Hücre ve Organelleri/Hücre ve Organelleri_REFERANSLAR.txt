@@ -1,0 +1,683 @@
+HÜCRE VE ORGANELLERİ — REFERANS ENVANTERİ
+=========================================================================
+Dünya: pixar_3d_edu · register: EDU · 53 kare (bkz. _SESLENDIRME.txt)
+Image: Nano Banana 2 · Motion: Kling 3.0 · Yüzey: Magnific Spaces
+Yasa: PROMPT-YASASI §4 (REFERANS TEMPLATE) + §4a (ENVANTER İLK İŞTİR) + §2 @tag disiplini
+Kilit kaynağı: Hücre ve Organelleri_ENZIM.md — çelişkide ENZIM kazanır.
+
+Bu dosya _PROMPTLAR'dan ÖNCE yazıldı. Önce referanslar basılır, sonra sekans açılır.
+
+=========================================================================
+🔴 SAHNE PROMPTLARINDA @handle'ı ASLA TARİF ETME
+=========================================================================
+Kimlik handle'dan gelir, hâl kareden. @mira3 yazdıktan sonra saçını, yüzünü, tenini,
+gardırobunu bir daha yazmak referansla YARIŞIR ve ikisi de kaybeder (§2 @tag disiplini).
+Karede ne yazılır: ne yaptığı, nereye baktığı, ışığın ona nereden değdiği, kadraj.
+
+🔴 KADRAJ KİLİDİ — @tag çağıran HER kare bunu yazar (ENZIM §1'den birebir)
+   Referans sayfası "tam boy, ayakta, stüdyo" kadrajı taşır ve tag onu kareye İTHAL EDER;
+   ezmezsen figürin gelir. Her tag'li karede kadrajın DIŞARIDA bıraktığı açıkça yazılır:
+     "framed from mid-chest up, nothing below the chest is visible"
+     "framed at counter height, no floor and no shoes visible"
+   Temas gölgesi örneği ASLA ayakkabıya yazılmaz — ayağı kadraja MECBUR eder.
+   Temas gölgesi bardağa, cam lama, tuğlaya, mikroskop tabanına, kaşığa yazılır.
+
+🔴 KADRAJDAN KESİK FİGÜR YAZILMAZ (2026-07-31, K05 kanıtı). "kadrajın kestiği bir çift
+   ayakkabı" yazıldı, motor havada uçan bacak çizdi. Her insan en az bel hizasından
+   itibaren BÜTÜN tarif edilir. Kalabalığı azaltmak için figür KESİLMEZ, figür SAYISI
+   azaltılır — ENZIM §1: bu derste kadraja giren tagsız insan YOKTUR.
+
+🔴 ÇEVRE REFERANSI DA KENDİ KADRAJINI İTHAL EDER. @bahce, @mutfak, @hucreici ve
+   @hayvanhucre "geniş, düz ışıklı plaka" olarak basılır. Sahne karesi kendi lensini,
+   kendi yüksekliğini ve kendi ışığını YAZAR — yoksa 27 kare aynı geniş plakaya döner.
+
+=========================================================================
+ENVANTER TABLOSU — hangi sekans hangi referansı istiyor
+=========================================================================
+
+| Handle / kilit        | Kova         | İlk kare | Aralık                              | Klip |
+|-----------------------|--------------|----------|-------------------------------------|------|
+| @mira3                | BASILACAK    | K01      | K01-K15, K22, K39-K42, K49-K53      | ~25  |
+| @usta                 | BASILACAK    | K01      | K01-K04, K51                        | 5    |
+| @bahce   (mekân)      | BASILACAK    | K01      | K01-K08, K51-K53                    | 11   |
+| @mutfak  (mekân)      | BASILACAK    | K09      | K09-K15, K22, K39-K42, K49-K50      | 14   |
+| @sogan                | BASILACAK    | K09      | K09-K12, K15, K43, K45, K48         | 8    |
+| @mikroskop            | BASILACAK    | K13      | K13-K15, K22, K39, K41-K42, K49     | 8    |
+| @hucreici  (ÇEVRE)    | BASILACAK    | K15      | K15-K38, K43, K45, K48              | 27   |
+| @hayvanhucre (ÇEVRE)  | BASILACAK    | K42      | K42, K44, K46-K48                   | 5    |
+| @mira2                | ÖNCEDEN VAR  | —        | @mira3'ün EDIT KAYNAĞI, sahnede yok | —    |
+| cam lam + lamel       | TARİF KİLİDİ | K12      | K12-K15, K22, K41-K42, K49          | 8    |
+| çay kaşığı            | TARİF KİLİDİ | K40      | K40, K41                            | 2    |
+| tuğla ve mala         | TARİF KİLİDİ | K02      | K02, K04, K51                       | 3    |
+| harç kovası           | TARİF KİLİDİ | K03      | K01, K03                            | 2    |
+| maydanoz yaprağı      | TARİF KİLİDİ | K37      | K37-K38 (+ tezgâhta K09-K15 dekor)  | 2    |
+| 8 organel maddesi     | TARİF KİLİDİ | K23      | K23-K38, K43-K48                    | ~22  |
+
+Toplam: **8 BASILACAK referans · 6 TARİF KİLİDİ · 1 önceden var (kaynak düğüm).**
+
+⚠ Klip sayısına dokunan her düzenlemede bu tablo yeniden numaralanır (§4a). Bileşke'de
+  bu yapılmadı ve referans dosyası sessizce yalan söylemeye başladı.
+
+=========================================================================
+BASMA SIRASI — hangi referans inmeden hangi sekans basılamaz
+=========================================================================
+
+  1. @mira3      ─┐
+  2. @usta        ├─ üçü inmeden S1 (K01-K08) BASILAMAZ
+  3. @bahce      ─┘
+  4. @mutfak     ─┐
+  5. @sogan       ├─ üçü inmeden S2 (K09-K15) BASILAMAZ
+  6. @mikroskop  ─┘
+  7. @hucreici   ─── inmeden S3 (K16-K22) ve S4 (K23-K38) BASILAMAZ
+  8. @hayvanhucre ── inmeden S5'in K42-K48'i BASILAMAZ
+
+S6 (K49-K53) HİÇ YENİ REFERANS İSTEMEZ — kapanış tamamen 1-8'in üstünde kurulur.
+S5'in ilk üç karesi (K39-K41) de yeni referans istemez: @mutfak + @mikroskop + @mira3.
+
+🔴 EN PAHALI BAĞIMLILIK @hucreici'dir: tek başına 27 klip taşıyor, yani dersin yarısı.
+   O referans yanlış inerse S3+S4 toptan çöper. Önce O basılır, Mami bakar, sonra
+   K16 yazılır — 24 kare üretildikten sonra "hücre şeması gibi olmuş" demek çok geç.
+
+=========================================================================
+🔴 MAMİ KARARI GEREKEN İKİ ŞEY — körleme uygulanmadı, seçim senin
+=========================================================================
+
+1) **@bahce HANDLE ÇAKIŞMASI.** "Farklı Kültürler" dersinde `@bahce` = OKUL bahçesi
+   (çınar, bank, bayrak direği, okul binası). Bu derste @bahce = MİRA'NIN EV bahçesi
+   (örülen taş duvar). Aynı isimde iki ayrı yer. Magnific'te eski düğüm duruyorsa
+   yeni plaka onu ezer ya da karışır. Seçenek: (a) bu dosyadaki adı `@evbahce` yap,
+   (b) eski düğümü sil ve @bahce'yi bu derse devret. ENZIM `@bahce` diyor, ben
+   ENZIM'in dışına çıkmadım — karar senin.
+
+2) **@mikroskop YENİDEN BASILMAK ZORUNDA.** "Eşeyli ve Eşeysiz Üreme"deki @mikroskop
+   referansı iki noktada bu dersi TUTMUYOR: (i) negatifi açıkça *"no letters or numbers
+   on the body"* diyor, oysa bu derste objektif bileziğindeki `10x` ve `40x` dersin yazı
+   planının parçası (ENZIM §4); (ii) o mikroskop AYNA ile aydınlanıyor, bu dersin tek
+   kavram ışığı ise gerçek bir LAMBA — K13'te Mira onu YAKIYOR (VO13). Aynayı yakamazsın.
+   Bu yüzden aşağıdaki prompt yeni bir basımdır, eski düğümün kopyası değil.
+
+=========================================================================
+BASILACAK — 1 · @mira3   (KARAKTER · ~25 klip · İLK BASILACAK)
+=========================================================================
+Gerekçe: kahraman. 25 karede geçiyor; tag'siz bırakılan tekrar eden insanda saç rengi,
+yüz biçimi ve ten kayıyor (§2d madde 8 — prop çıpası yüzü taşımaz, kimlik çıpası taşır).
+
+⚠ BU BİR REFERANS-EDIT'TİR. Magnific'te **@mira2** düğümünü bağla ve aşağıdaki metni ver.
+@mira3 = @mira2 ile AYNI KIZDIR (ENZIM §1): aynı yüz, aynı saç, aynı ten, aynı yaş.
+Yüz sıfırdan üretilirse süreklilik kırılır. Değişen TEK şey gardıroptur.
+
+⚠ Gardırop rengi GEREKÇELİ değişti — bu dersin zorunlu kıldığı tek değişiklik bu.
+@mira2'nin gardırobu **orman yeşili fitilli kadife + hardal** idi. Bu derste yeşil =
+KLOROPLAST, hardal-krem = GOLGİ. Yani eski gardırop dersin iki organel rengini
+üstünde taşıyordu; Mira'nın omzu bir mikroskop karesine girdiğinde numunenin parçası
+gibi okunurdu. Yeni palet **derin çivit + solmuş kök-boya kırmızısı**: sekiz organelin
+(kehribar · gri-mor · mavi-gri · krem-sarı · pembe · berrak · yeşil · mat beyaz)
+hiçbiri bu iki renk değildir, kavram ışığı da serin-beyazdır.
+-----
+Use the referenced @mira2 image. Keep the face, hair, skin tone, eye colour and body
+proportions IDENTICAL — this is the same girl in a later lesson. Change ONLY the wardrobe
+described below. Do not restyle the face, do not age her up or down, do not recut her hair.
+
+Full-body character reference of @mira3:
+
+A Turkish/Anatolian schoolgirl, fifth grade, around ten or eleven, pre-teen. Warm matte tan
+skin with honey subsurface scattering, low specular, never tinted green or grey. Dark wavy
+hair as in the reference, one strand escaping near the temple. Expression: attentive and a
+little reserved — a girl in the middle of noticing something, not posing for a portrait.
+
+Wardrobe for this lesson: a deep indigo cotton-denim pinafore dress, soft with washing and
+faded slightly at the seams, worn over a faded madder-red long-sleeve cotton tee with the
+cuffs pushed up to mid-forearm. Deliberately indigo and madder-red — not green, not mustard,
+not amber, not violet, not pink, not glassy white — because this lesson's whole colour
+vocabulary lives inside a cell (amber, grey-violet, blue-grey, cream-yellow, pink, clear
+glass, green) under a cool-white lamp, and when her shoulder or her hand enters one of those
+frames she must never read as part of the specimen. Dark brown canvas shoes with pale rubber
+toes. A thin plain hair elastic on her left wrist. No badges, no motifs, no prints.
+
+Pose: relaxed hero pose, weight on one foot, one hand loosely at her side, the other turned
+slightly palm-up as if she has just been looking at it — reads clearly at fifty-pixel
+thumbnail size.
+
+85mm lens at f/4.0, full body centred, soft studio key with cool bounce fill, warm-grey
+seamless gradient backdrop with a soft floor contact shadow — not a story location and not
+an empty white void.
+
+Materials: washed cotton denim with a dry matte finish, visible twill diagonal and pale
+thread at the stitched seams, giving light back weakly; cotton jersey with a soft knit
+texture and natural creasing at the elbow; canvas shoes with a slightly scuffed rubber
+toe cap.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, subsurface scattering on skin carrying the
+scene's light temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no change to the face, hair or skin tone from the reference; no green, mustard,
+amber, violet, pink or white garment; no logo, no brand name, no photoreal or real-human
+photographic skin, no flat 2D or cel shading, no hard black outline, no clay or plasticine
+surface, no franchise character, no text or lettering anywhere in the frame, no lab coat,
+no safety goggles, no props in her hands.
+-----
+
+=========================================================================
+BASILACAK — 2 · @usta   (KARAKTER · 5 klip)
+=========================================================================
+Gerekçe: K01-K04 ve K51'de geçiyor. K51, K01'in AYNI KADRAJIDIR (ENZIM §2) — açılıştaki
+adamla kapanıştaki adam aynı adam olmazsa filmin tek fikri ("değişen tek şey Mira'nın
+bakabildiği yer") çöker. Beş kare tag'siz taşınmaz.
+
+⚠ Renk gerekçesi: bahçedeki TEK doygun renk Mira'dır. Usta kömür grisi, kahve ve tozdan
+kurulur ki duvar, harç ve elindeki TEK TUĞLA karenin en parlak şeyi olarak kalsın —
+dersin ilk görsel önermesi budur (VO2: "her seferinde tek bir tuğla").
+-----
+Full-body character reference of @usta:
+
+A Turkish/Anatolian master mason, early fifties, for a fifth-grade science lesson — a solid
+broad-shouldered man of average height with thick forearms and large square-fingered hands,
+pale dried mortar in the creases of his knuckles and under his short nails. Weathered face
+with deep lines at the outer corners of the eyes, a thick close-trimmed grey moustache,
+black hair cropped short and going grey at the temples. Warm matte tan skin with honey
+subsurface scattering, low specular, never tinted green or grey. Calm brown eyes with wet
+dual-point specular. Expression: unhurried and steady, the patience of a man who has laid a
+thousand bricks and is in no rush about the next one. Appeal-led, child-safe silhouette.
+
+Wardrobe: a charcoal-grey cotton work shirt with the sleeves rolled above the elbow, a plain
+oat-coloured undershirt showing at the open collar, dark chocolate-brown canvas work
+trousers, a heavy dark leather belt, scuffed dark brown work boots, and a soft dust-grey
+flat cap. Deliberately charcoal, brown and dust-grey — no green, no amber, no cream-yellow,
+no violet, no pink — so that the pale stone of the wall, the wet grey mortar and the single
+brick in his hands stay the brightest, most saturated objects wherever he appears, and so
+that he never competes with the one saturated colour in the garden, which belongs to the
+girl.
+
+Pose: relaxed hero pose, weight on one foot, one hand hanging open at his side, the other
+raised a little as though about to set something down — reads clearly at fifty-pixel
+thumbnail size.
+
+85mm lens at f/4.0, full body centred, soft studio key with cool bounce fill, warm-grey
+seamless gradient backdrop with a soft floor contact shadow — not a story location and not
+an empty white void.
+
+Materials: heavy brushed cotton twill with a dry matte weave and visible fibre at the rolled
+cuff; canvas trousers with pale abrasion at the knee; oiled leather boots with dulled
+scuffing at the toe; fine pale mortar dust sitting on the shoulders and forearms as real
+powder, not as a painted texture.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, subsurface scattering on skin carrying the
+scene's light temperature, ambient occlusion painted in, never raytraced-hard.
+
+NEGATIVE: no logo, no brand name, no text or lettering anywhere in the frame, no photoreal
+or real-human photographic skin, no flat 2D or cel shading, no hard black outline, no clay
+or plasticine surface, no franchise character; no hard hat, no high-visibility vest, no
+modern site PPE — this is a neighbourhood mason working in a home garden; no tools in hand
+in the reference; no child, no second person, no wall behind him.
+-----
+
+=========================================================================
+BASILACAK — 3 · @bahce   (ÇEVRE REFERANSI · 11 klip · MİRA'NIN EV BAHÇESİ)
+=========================================================================
+Gerekçe: K01 ile K51 AYNI KADRAJDIR (ENZIM §2) — aynı lens, aynı yükseklik, aynı yön,
+aynı ışık. Tek fark duvardaki boşluktur. Seyirci aynı duvarı, aynı ağacı ve aynı yolu
+tanımazsa kapanış bir mahalle değil, ikinci bir bahçe olur. Ref yoksa on bir karede
+on bir farklı bahçe çıkar.
+
+🔴 DUVARDAKİ BOŞLUK REFERANSTA VARDIR — plaka AÇILIŞ hâlini taşır: üst sırada tam bir
+   tuğlalık boşluk. K51'de o boşluk KAPALIDIR ve bunu K51'in kendi metni yazar:
+   *"the top course is now unbroken — the gap is filled by one last brick."*
+
+⚠ Bu plaka DÜZ IŞIKLIDIR, sahne ışığı değildir. K01/K51 kendi sabah ışığını yazar.
+-----
+Full environment reference of @bahce:
+
+The back garden of a modest Turkish family house in an Anatolian town, seen as a wide
+establishing view from the kitchen door side.
+
+Along the near right runs a low garden wall being built by hand — roughly waist high,
+laid in warm sand-coloured cut stone and pale clay brick in staggered courses, the wet
+grey mortar squeezed out and struck flat between them, the finished courses darker where
+the mortar is still damp. In the top course, at about the middle of the run, there is one
+clean brick-sized gap: a single missing unit with mortar already buttered on both faces of
+the opening. This gap is the anchor of the whole lesson and must be unmistakable.
+
+Behind the wall the house wall rises in warm cream render with a plain white-framed kitchen
+window set into it. The ground is part worn concrete path, part dry packed earth, with a low
+run of tomato stakes tied with pale twine along the far side and a knee-high clump of white
+ox-eye daisies leaning over the path edge. One mature fig tree stands at the far left, its
+bark smooth pale grey, its broad leaves matte and dusty. Against the house sits a stack of
+spare bricks on a wooden pallet, a rolled sheet of plastic, and a galvanised bucket. An old
+wooden chair with a woven seat stands beside the door.
+
+35mm lens at f/5.6, eye level, wide establishing view with the unfinished wall in the near
+right third and the fig tree beyond. Neutral overcast daylight, flat and even, no strong
+direction — this is a reference plate, not a lit scene; every surface is legible so the
+frame can be re-lit later. No people, no animals, no action.
+
+Materials: cut stone with a granular sawn face and a chalky matte finish that gives light
+back weakly; clay brick with a fine sandy grain and faint firing mottle; wet mortar with a
+dull damp sheen going pale and powdery as it dries; house render with a fine float texture;
+fig bark smooth with pale lenticel marks; weathered timber with a raised silvered grain.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent on garden props for
+child-safe readability.
+
+NEGATIVE: no people, no cat, no bird, no cars, no bunting, no washing line; no logo, no
+brand name, no English signage, no lettering on any surface; no swimming pool, no manicured
+lawn, no suburban American or Mediterranean-villa architecture — this is a modest
+contemporary Anatolian family garden; no scaffolding, no cement mixer, no construction site;
+no photoreal or live-action capture; no flat 2D or cel shading, no hard black outline, no
+clay surface; no teal-orange grade, no desaturated look; and the brick-sized gap in the top
+course is never filled, never closed and never omitted.
+-----
+
+=========================================================================
+BASILACAK — 4 · @mutfak   (ÇEVRE REFERANSI · 14 klip · DERSİN İŞ MASASI)
+=========================================================================
+Gerekçe: dersin gerçek-dünya karelerinin tamamı burada geçiyor ve K50 kapanışın
+"mutfak aynıydı" cümlesini taşıyor — aynılık ancak referansla kanıtlanır.
+
+🔴 PENCEREDEN GÖRÜNEN YER @bahce'DİR. Bu bir süs değil, filmin bağıdır: K49-K50'de
+   Mira mercekten başını kaldırınca aynı duvarı camdan görür, K51'de dışarı çıkar.
+   Pencere kadrajına giren her karede *"through the window, the unfinished garden wall"*
+   yazılır.
+
+🔴 YAZI TAŞIYAN NESNELER BU PLAKADA YOKTUR. Süt kartonu, mutfak takvimi ve terazi kadranı
+   (ENZIM §4 yazı planı) referansta değil, onları isteyen KARENİN kendi metninde doğar ve
+   orada harf harf hecelenir. Plakanın işi mimariyi kilitlemek, yazıyı değil.
+   Buna karşılık plakadaki hiçbir yüzey BOŞ bırakılmadı — boş panel = uydurma İngilizce.
+-----
+Full environment reference of @mutfak:
+
+The kitchen of a modest Turkish family house, seen as a wide establishing view from the
+doorway toward the window wall.
+
+A continuous worktop in warm beech runs the length of the far wall under a deep window, its
+surface scrubbed pale with fine knife scoring near the middle. A shallow stainless sink with
+a simple swan-neck tap sits under the window; beside it a folded striped cotton cloth and a
+wooden draining rack holding three upturned glasses. Above the worktop the wall is faced in
+small square oat-cream tiles with narrow pale grout, a few of them faintly crazed with age.
+A single open shelf carries glass jars of rice, bulgur and dried beans, packed close so no
+empty shelf face remains, and a chipped white enamel jug holding a standing bunch of
+flat-leaf parsley. Below the worktop, plain white-painted cupboard doors with round wooden
+knobs. In the near corner stands a short refrigerator, its door covered edge to edge with
+overlapping plain-coloured magnets and folded sheets of coloured paper so that no bare panel
+is left showing anywhere. The floor is warm terracotta tile, worn to a low satin in the
+traffic path. The window is a plain white-framed casement, half open, and through it the
+back garden is visible: an unfinished stone-and-brick garden wall, a fig tree, and a white
+clump of daisies, all held in soft focus.
+
+35mm lens at f/5.6, eye level, wide establishing view from the doorway toward the window.
+Neutral even daylight from the window, flat and legible — this is a reference plate, not a
+lit scene; every surface reads so the frame can be re-lit later. No people, no food being
+prepared, no action.
+
+Materials: beech worktop with open grain and a dry satin wax finish; ceramic tile with a
+soft glaze sheen and fine crazing; brushed stainless with a low anisotropic highlight;
+painted cupboard doors with a fine brush texture; blown glass jars with honest refraction;
+terracotta floor tile with a matte porous body and darker grout.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent on kitchen props for
+child-safe readability.
+
+NEGATIVE: no people, no hands, no logo, no brand name, no English signage, no lettering,
+no printed label, no calendar, no packaging and no numbers on any surface in this plate;
+no laboratory bench, no clinical white lab surface, no fume hood — this is a family kitchen;
+no American or Scandinavian showroom kitchen, no marble island, no open-plan living room;
+no photoreal or live-action capture; no flat 2D or cel shading, no hard black outline, no
+clay surface; no teal-orange grade, no desaturated look; no bare blank wall panel anywhere.
+-----
+
+=========================================================================
+BASILACAK — 5 · @sogan   (NESNE REFERANSI · 8 klip · DERSİN İLK KANITI)
+=========================================================================
+Gerekçe: K09-K12'de kesiliyor, K15'te mikroskop altında, K43/K45/K48'de karşılaştırmanın
+bitki tarafı. Sekiz karede tag'siz bırakılırsa her karede başka bir soğan çıkar —
+korpusun en pahalı tek hatası bu sınıftandı (@kitap, 6 kare toptan revize).
+
+⚠ YAZI İSTİSNASI: file etiketi. §4 "yazı yönetilmez, yasaklanır" der; bu referansta TEK
+istisna soğan filesinin etiketidir (ENZIM §4 yazı planı) ve harf harf hecelenir.
+-----
+Full object reference of @sogan: one ordinary yellow cooking onion cut cleanly in half
+through the middle, both halves resting cut-face-up side by side, for a fifth-grade science
+lesson. The papery outer skin is warm golden-brown, dry and crackling, half peeled back from
+one half and curling away from itself. The exposed cut faces show concentric rings of pale
+ivory flesh, crisp and slightly translucent at their edges, faintly wet where the knife
+passed, with the small pale root plate at the base and a dry tuft of fine roots beneath it.
+Between two of the outer rings on the left half, one thin transparent membrane has been
+lifted free and stands up in a soft loose curl, almost as clear as glass, catching light at
+its folded edge — the single most important detail in this reference. Beside the halves lies
+a small deep-red plastic mesh produce net, empty and slack, its printed paper band showing a
+single Turkish word.
+
+TEXT: on the paper band of the mesh net, printed in a plain narrow thermal-printer sans
+face, ink sitting slightly grey and dotted on the cheap paper: the word "SOĞAN" — one word,
+five capital letters, the third a capital G carrying a breve. It reads left-to-right, never
+mirrored, reversed or rotated, sits flat and parallel to the sensor, and appears on this one
+paper band and on no other surface in the frame.
+
+85mm lens at f/4.0, three-quarter hero angle from slightly above, both onion halves centred,
+soft studio-style key light with cool bounce fill and a soft contact shadow under each half,
+against a gentle warm-grey seamless gradient backdrop — not a story location and not an
+empty white void.
+
+Materials: dry papery skin with a brittle crackle and translucency at the thinnest flakes;
+crisp onion flesh with genuine subsurface scattering and a faint wet sheen on the cut face;
+the lifted membrane as a near-clear refractive film with visible thickness at its curled
+edge; extruded plastic mesh with a hard specular; cheap uncoated paper band.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no knife, no board, no hand, no plate, no second vegetable; no logo, no brand
+name, no barcode, no English word, no number and no lettering other than the single word on
+the paper band; no textbook diagram, no label, no leader line, no arrow, no cross-section
+key, no scale bar; no photoreal or live-action capture, no macro photograph; no flat 2D or
+cel shading, no hard black outline, no clay surface; no red onion, no spring onion, no
+garlic; no tears, no face, no eyes.
+-----
+
+=========================================================================
+BASILACAK — 6 · @mikroskop   (NESNE REFERANSI · 8 klip · DERSİN KAVRAM IŞIĞI BURADA)
+=========================================================================
+Gerekçe: ENZIM §3 — mikroskop lambası bu dersin TEK kavram ışığıdır. İcat edilmiş bir
+glow yok; sahnede gerçekten duran bir lamba var ve 27 hücre-içi karesinin ışığı fiziksel
+olarak ONDAN gelir. Lamba yanlış tasarlanırsa dersin yarısının ışığı yanlış olur.
+
+⚠ Eski @mikroskop düğümü KULLANILMAZ (yukarıdaki Mami kararı 2): o ayna aydınlatmalı ve
+rakamsız. Bu ders LAMBA ve `10x`/`40x` istiyor.
+⚠ Yazı istisnası: objektif bilezikleri. Sahnede tutarlı çıksın diye referansta yazılır.
+⚠ ENZIM §8: mikroskop gövdesi katı-mekanik nesnedir, motion'da hızlı kamera onu WARP eder.
+  Bunu şimdiden kareye yaz — mikroskop karelerinde kompozisyon minimal kamerayla kurulur.
+-----
+Full object reference of @mikroskop: an original classic school compound light microscope
+for a fifth-grade science lesson — a sturdy curved satin-steel arm rising from a heavy
+rounded cast base, an angled monocular eyepiece tube at the top with a knurled black rubber
+grip, and a rotating nosepiece beneath it carrying two objective lenses of clearly different
+lengths. A flat rectangular stage with two small sprung metal clips sits below the nosepiece,
+and directly under the stage aperture is a small built-in illuminator: a recessed cool-white
+lamp behind a plain frosted glass disc, switched off in this reference but visibly a real
+electric lamp with a short cable leaving the back of the base. Two focus knobs stand on the
+side of the arm, a large coarse wheel with a milled rim and a smaller fine wheel behind it.
+The steel carries a few honest fingerprints and one shallow scuff on the base. Child-friendly
+rounded proportions, instantly readable as a school microscope at thumbnail size.
+
+TEXT: on the metal collar of each objective barrel, engraved into the satin steel and filled
+with thin white paint so the strokes sit slightly below the surface, two magnification marks
+and nothing else. On the short objective: "10x" — the numeral one, then the numeral zero,
+then a lowercase letter x. On the long objective: "40x" — the numeral four, then the numeral
+zero, then a lowercase letter x. Both read left-to-right, never mirrored, reversed or
+rotated, and appear on these two objective collars and on no other surface of the instrument.
+
+85mm lens at f/4.0, three-quarter hero angle, the full instrument centred, soft studio-style
+key light with cool bounce fill and a soft floor contact shadow under the base, against a
+gentle warm-grey seamless gradient backdrop — not a story location and not an empty white
+void.
+
+Materials: satin brushed steel with a low anisotropic highlight; black textured rubber grip
+on the knobs and eyepiece; frosted glass illuminator disc with soft internal scatter; clear
+lens elements with honest refraction; matte enamel on the cast base.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no maker name, no logo, no brand, no serial number, no English word and no
+lettering anywhere other than the two magnification marks on the objective collars; no
+mirror under the stage — this instrument has an electric lamp; no binocular head, no
+research or laboratory instrument, no digital display, no camera port; no hand, no person,
+no slide on the stage in this reference; no photoreal or live-action capture; no flat 2D or
+cel shading, no hard black outline, no clay surface; no glow, no light beam and no lens
+flare in this reference — the lamp is off.
+-----
+
+=========================================================================
+BASILACAK — 7 · @hucreici   (ÇEVRE REFERANSI · 27 klip · DERSİN EN AĞIR REFERANSI)
+=========================================================================
+🔴 BU BİR KARAKTER DEĞİL, BİR YERDİR. Karakter slotları yerine mekân slotları kullanıldı.
+Hücrenin içi bir ŞEMA değil, GERÇEK BİR MEKÂN olarak render edilir: ışığın içinden geçtiği,
+sınırları olan, derinliği olan bir oda. Diyagram, etiket, ok, çıkma çizgisi, kesit anahtarı,
+ölçek çubuğu, callout dairesi ASLA. Ders kitabı sayfası değil, bir yer.
+
+🔴 BU BİR BİTKİ (SOĞAN ZARI) HÜCRESİDİR — öğretim doğruluğu güzellikten önce gelir
+   (ENZIM §6). Kilitli farklar, kelimesi kelimesine referansa yazıldı:
+     · hücre DUVARI VAR — kalın, köşeli, hücreye köşeli biçimini veren şey odur
+     · zar duvarın hemen içinde AYRI bir katman olarak durur
+     · TEK ve BÜYÜK koful, hücrenin ortasını kaplar
+     · KLOROPLAST YOKTUR — soğan zarı ışık görmez. K37-K38'in kloroplastı bu plakadan
+       değil, MAYDANOZ YAPRAĞINDAN gelir; o iki kare kloroplastı KENDİ metninde yazar
+     · komşu hücreler duvar boyunca DUVAR ÖRGÜSÜ gibi şaşırtmalı dizilir — filmin tek
+       fikri budur (VO15: "ve duvarı yeniden gördü, bu sefer soğanın içinde")
+
+🔴 IŞIK ALTTAN GELİR ve GEOMETRİK YAZILIR (ENZIM §3). "Kontrast yüksek, dolgu yok"
+   ölçüldü ve TUTMUYOR. "Işık alttaki cam diskten yukarı geçer, her yapıyı alttan
+   aydınlatır, üst yüzeylerini gölgede bırakır" tutuyor.
+   Büyütme arttıkça şaft DARALIR ve sertleşir — her hücre-içi kare bir öncekinin
+   ışığını durumuyla devralır, sıfırdan doğan ışık yok.
+-----
+Full environment reference of @hucreici:
+
+The inside of a single onion-skin plant cell, rendered as a real physical place rather than
+as an illustration — a wide establishing view from within the cell looking across it, at the
+scale of a room.
+
+The cell is angular and box-like, not round. Its outer boundary is a thick cell wall of pale
+straw-cream fibrous material, slightly translucent, with a visible grain running through it
+and a soft rounded chamfer where two walls meet. Just inside the wall, separated from it by
+a thin gap, lies the cell membrane: a distinct thinner film with a faint iridescent sheen,
+following the wall's angles loosely and dipping inward here and there. Beyond the walls, on
+every side, the neighbouring cells repeat away into soft focus in a staggered, offset,
+brick-like tiling — the same angular boxes shoulder to shoulder, courses shifted by half a
+cell, so the whole field unmistakably reads as coursed masonry made of living matter.
+
+The interior is filled, not empty: a clear jelly-like cytoplasm, faintly cool-tinted,
+holding suspended fine granules and slow soft flow lines, with genuine subsurface scattering
+and a gentle refractive shift where it thickens. Set slightly off-centre floats the nucleus:
+a dense rounded sphere a little darker than everything around it, its surface a fine double
+membrane with a soft pitted texture and a denser core just readable inside, drawing light in
+rather than throwing it back. Filling most of the cell's middle is one single large vacuole
+— a vast smooth-walled clear sac of watery fluid, its own thin membrane visible as a bright
+refracting rim, pressing the cytoplasm out toward the walls. A scatter of small soft bodies
+drifts in the cytoplasm, close to focus but not yet resolved into named shapes.
+
+The light comes entirely from below: a cool-white transmitted shaft rises through the floor
+of the frame, passes up through the clear cytoplasm and the vacuole, lights the underside of
+the wall, the underside of the nucleus and the underside of every suspended body, and leaves
+their upper surfaces in soft shadow. The shaft touches the cell floor, the vacuole and the
+lower half of the nucleus, and reaches nothing above them.
+
+35mm lens at f/5.6, eye level within the cell, wide establishing view across the interior
+with one wall corner in the near third. Even legible exposure — this is a reference plate;
+the frame can be re-lit later, but the light always comes from below.
+
+Materials: fibrous translucent cell wall with a visible directional grain; thin iridescent
+membrane film with real thickness at its folds; clear jelly cytoplasm with genuine
+subsurface scattering; watery vacuole fluid with honest refraction and a soft meniscus at
+its rim; dense granular nucleus surface.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no chloroplast and no green body anywhere — this is onion skin and it never sees
+sunlight; no centriole and no centrosome; no second large vacuole; no textbook diagram, no
+label, no leader line, no arrow, no callout circle, no cross-section key, no scale bar, no
+grid, no legend; no letters, no numbers, no words on any surface; no outline drawing, no
+flat infographic, no schematic colour-coding; no photoreal microscopy photograph, no
+brightfield or phase-contrast capture; no flat 2D or cel shading, no hard black outline, no
+clay surface; no face, no eyes, no mouth, no cartoon creature; no round or soft-cornered
+cell shape — these cells are angular; no light coming from above.
+-----
+
+=========================================================================
+BASILACAK — 8 · @hayvanhucre   (ÇEVRE REFERANSI · 5 klip · KARŞILAŞTIRMANIN ÖTEKİ YARISI)
+=========================================================================
+🔴 BU DA BİR YERDİR, ŞEMA DEĞİL. @hucreici ile aynı disiplin: gerçek mekân, alttan ışık,
+diyagram yok.
+
+🔴 ÖĞRETİM FARKLARI KİLİTLİ (ENZIM §6) — dersin S5'i tamamen bu farkların üstüne kurulu,
+   yani buradaki tek bir hata dokuz karede birden okunur:
+     · hücre DUVARI YOK — dış sınır yalnızca ince, esnek zardır; hücre bu yüzden YUVARLAK
+       ve yumuşak köşelidir, komşularıyla gevşek durur, örgü DİZİLMEZ (bitkinin tersi)
+     · KLOROPLAST YOK
+     · SENTROZOM VAR — çekirdeğin yanında birbirine dik duran iki mat beyaz kısa çubuk
+     · KOFUL KÜÇÜK ve ÇOK SAYIDA — tek büyük koful yok (bitkinin tersi)
+     · Lizozom bu hücrede bulunur; "sadece hayvanda" denmez, mutlak dil kullanılmaz
+-----
+Full environment reference of @hayvanhucre:
+
+The inside of a single human cheek cell, rendered as a real physical place rather than as an
+illustration — a wide establishing view from within the cell looking across it, at the scale
+of a room.
+
+The cell is round and soft-edged, a flattened irregular dome with no corners anywhere. Its
+only boundary is a single thin flexible membrane: a supple film with a faint iridescent
+sheen and real visible thickness, gently rippling, dimpling inward where something presses
+against it from inside and bulging where the cytoplasm pushes out. There is no wall of any
+kind outside it. Through the membrane, in soft focus beyond, a few neighbouring cells of the
+same kind lie loosely and unevenly scattered, overlapping at their edges, drifting rather
+than stacked — no tiling, no courses, no repeating pattern.
+
+The interior is filled, not empty: a clear jelly-like cytoplasm, faintly cool-tinted, holding
+suspended fine granules and slow soft flow lines, with genuine subsurface scattering. Set
+near the middle floats the nucleus: a dense rounded sphere a little darker than everything
+around it, its surface a fine double membrane with a soft pitted texture, drawing light in
+rather than throwing it back. Close beside the nucleus stand two short matte-white rods, held
+at right angles to one another — dull, chalky, non-reflective, clearly a pair, and clearly
+the only opaque solid in an interior otherwise made of jelly and water. Several small clear
+watery sacs of different sizes drift through the cytoplasm, none of them large, each with its
+own bright refracting rim. One or two soft pinkish rounded sacs sit lower in the frame.
+
+The light comes entirely from below: a cool-white transmitted shaft rises through the floor
+of the frame, passes up through the clear cytoplasm, lights the underside of the membrane,
+the underside of the nucleus, the underside of the two white rods and the underside of every
+small sac, and leaves their upper surfaces in soft shadow. The shaft touches the cell floor,
+the small sacs and the lower half of the nucleus, and reaches nothing above them.
+
+35mm lens at f/5.6, eye level within the cell, wide establishing view across the interior
+with the membrane's near edge in the lower third. Even legible exposure — this is a
+reference plate; the frame can be re-lit later, but the light always comes from below.
+
+Materials: thin iridescent membrane film with real thickness and a supple rippling surface;
+clear jelly cytoplasm with genuine subsurface scattering; watery sac fluid with honest
+refraction and a soft meniscus; dense granular nucleus surface; chalky matte mineral surface
+on the two rods, absorbing light rather than returning it.
+
+Feature-animation 3D CGI in the RenderMan-successor premium-CG feature-animation pipeline
+lineage, continuous physically-based shading, ambient occlusion painted in, never
+raytraced-hard. Deliberate overscale of ten to fifteen percent for child-safe readability.
+
+NEGATIVE: no cell wall of any kind — the outer boundary is a membrane only; no chloroplast
+and no green body anywhere; no single large central vacuole — the sacs are small and several;
+no angular or box-like cell shape and no brick-like tiling of neighbouring cells; no textbook
+diagram, no label, no leader line, no arrow, no callout circle, no cross-section key, no
+scale bar, no grid, no legend; no letters, no numbers, no words on any surface; no outline
+drawing, no flat infographic, no schematic colour-coding; no photoreal microscopy photograph,
+no stained slide capture; no flat 2D or cel shading, no hard black outline, no clay surface;
+no face, no eyes, no mouth, no cartoon creature; no blood cell, no virus, no bacterium;
+no light coming from above.
+-----
+
+=========================================================================
+TARİF KİLİTLERİ — referans BASILMAZ, geçtiği her karede AYNEN tekrar edilir
+=========================================================================
+Referans basmaya değmeyen küçük nesne (§4). Kural tek: aşağıdaki öbek KOPYALANIR,
+yeniden yazılmaz. Yeniden yazılan öbek yeni bir nesne doğurur — süreklilik kusurunun
+kaynağı budur.
+
+cam lam + lamel  (K12-K15, K22, K41-K42, K49 — 8 kare)
+  "a plain rectangular glass microscope slide with one chipped corner, a second thinner
+   cover glass laid over its middle"
+
+çay kaşığı  (K40, K41 — 2 kare)
+  "a small plain stainless teaspoon with a slightly flattened oval bowl and a short
+   unpatterned handle, dulled to a satin finish by years of washing"
+
+tuğla ve mala  (K02, K04, K51 — 3 kare)
+  "one pale clay brick with a fine sandy grain and a chipped lower edge, and a
+   diamond-shaped steel trowel with a worn wooden handle and grey mortar drying on
+   its blade"
+
+harç kovası  (K01, K03 — 2 kare)
+  "a battered galvanised bucket half full of wet grey mortar, the mortar mounded and
+   scored by the trowel, a pale crust drying where it meets the rim"
+
+maydanoz yaprağı  (K37-K38 — 2 kare · ENZIM §6'dan türetildi: kloroplast SOĞANDA DEĞİL,
+                   Mira'nın tezgâhtaki ikinci örneğinde geçer)
+  "a single flat-leaf parsley leaf, deep green with a slightly crinkled surface and pale
+   veins branching from a firm central rib, one edge still wet from the jug"
+
+-------------------------------------------------------------------------
+ORGANEL MADDE KİLİTLERİ — 8 organel, her biri BİR KEZ tanıtılır, sonra AYNEN tekrar
+-------------------------------------------------------------------------
+ENZIM §3: **organel rengi ışıktan değil MALZEMEDEN gelir.** Her biri kendi maddesi olarak
+render edilir, boyanmış ikon olarak değil. Aşağıdaki sekiz öbek K23-K38 ve K43-K48
+boyunca değişmez — organel ikinci kez göründüğünde tarifi YENİDEN YAZILMAZ, bu öbek
+yapıştırılır.
+
+mitokondri (K24-K26)
+  "a bean-shaped body with a warm amber-orange outer membrane, translucent enough to show
+   the tightly folded inner membrane packed in ridges along its length"
+
+ribozom (K27-K28)
+  "tiny dull grey-violet granules, matte and non-reflective, the smallest bodies here and
+   by far the most numerous"
+
+endoplazmik retikulum (K29-K30)
+  "a branching network of pale blue-grey folded membrane sheets, stacked and channelled
+   like a system of narrow roads running away through the cytoplasm"
+
+golgi cisimciği (K31-K32)
+  "a short stack of flattened cream-yellow sacs laid one over another, each slightly
+   curved, their swollen rims rounding off at the ends"
+
+lizozom (K33-K34)
+  "a small rounded sac with a soft pinkish membrane, its contents faintly cloudy"
+
+koful (K35-K36)
+  "a clear glassy sac of watery fluid with a bright refracting rim and a soft meniscus
+   where the fluid meets its membrane"
+
+kloroplast (K37-K38, K45 — YALNIZ maydanoz yaprağında, soğan zarında ASLA)
+  "a lens-shaped body in saturated green, its interior showing fine stacked green discs
+   held in a paler matrix"
+
+sentrozom (K46-K47 — YALNIZ hayvan hücresinde)
+  "two short matte-white rods held at right angles to one another, chalky and opaque,
+   absorbing light rather than returning it"
+
+=========================================================================
+KAVRAM IŞIĞI SİSTEMİ — bu dersin imzası (ENZIM §3, her karede AYNI kural)
+=========================================================================
+Bu derste İCAT EDİLMİŞ bir glow YOKTUR. Kavram ışığı sahnede gerçekten duran bir
+nesnedir: @mikroskop'un tabanındaki serin-beyaz lamba.
+
+  K13   lamba YANAR — serin-beyaz şaft, cam lamın ALTINDAN yukarı vurur
+  K16-K38, K42-K48   hücre içi kareleri O ŞAFTIN İÇİNDEDİR: ışık aşağıdan yukarı gelir,
+        her yapıyı alttan aydınlatır, üst yüzeyleri gölgede bırakır
+  Büyütme arttıkça şaft DARALIR ve SERTLEŞİR. Sıfırdan doğan ışık yok — her kare bir
+  öncekinin ışığını durumuyla devralır.
+
+🔴 Işık GEOMETRİK yazılır, fotometrik değil (ölçüldü, üç kez):
+   TUTAR   : "the shaft passes only through the disc under the slide and reaches nothing
+              else on the bench"
+   TUTMAZ  : "high contrast, no fill, deep blacks"
+
+Her hücre-içi karenin NEGATIVE satırına kare-özel karşılığı yazılır:
+  "the light enters only from beneath the frame and never from above; no diagram, no
+   label, no leader line, no arrow, no callout circle."
+
+=========================================================================
+KULLANIM KURALI — bu dosya PROMPTLAR yazılırken açık durur
+=========================================================================
+· Kimlik handle'dan, hâl kareden. Tag'liyi tarif etme.
+· Tagsız insan bu derste YOK — gerekirse insan koyma (ENZIM §1).
+· Her tag'li karede KADRAJ KİLİDİ cümlesi yazılır.
+· Çevre referansı kendi kadrajını ithal eder — sahne kendi lensini ve ışığını yazar.
+· Yazı istemediğin yüzey GİYDİRİLİR, yasaklanmaz. Boş panel = uydurma İngilizce.
+· ORIENTATION cümlesi yazı taşıyan her karede zorunlu.
+· Klip sayısına dokunan her düzenlemeden sonra buradaki numaralar yeniden yazılır (§4a).
+=========================================================================
