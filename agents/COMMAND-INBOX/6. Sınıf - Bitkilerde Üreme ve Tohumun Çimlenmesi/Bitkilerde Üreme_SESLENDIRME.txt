@@ -1,0 +1,99 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — SESLENDİRME METNİ (ElevenLabs)
+=========================================================================
+Konu: Çiçekli Bitkilerde Üreme ve Tohumun Çimlenmesi · 6. Sınıf Fen Bilimleri
+Anlatıcı: dış ses (Efe ekranda GÖRÜNÜR ama KONUŞMAZ, ağız hareketi yok)
+BİR CÜMLE = BİR KLİP. Hiçbir cümle 12 kelimeyi aşmaz.
+Ton: meraklı, sakin, çocuğa yukarıdan bakmayan. Anlatan; sunucu değil.
+İngilizce yok. Terimler Türkçe okunur.
+Kare: 54 · Tahmini süre: ~4:30
+=========================================================================
+
+
+===== SEKANS 1 — BALKON: ARI NEREYE GİDİYOR =====
+1. Efe'nin balkonundaki sardunya, o sabah ilk çiçeğini açmıştı.
+2. Bir arı geldi ve çiçeğin tam ortasına kondu.
+3. Efe eğildi; arının bacakları sarı tozla kaplanmıştı.
+4. Arı kalktı ve iki saksı ötedeki çiçeğe kondu.
+5. Efe, bir yerden alınıp başka yere bırakılan o tozu merak etti.
+6. Çiçekli bitkilerin üreme organı çiçeğin kendisidir.
+7. Efe bir çiçeği dikkatle incelemeye karar verdi.
+
+
+===== SEKANS 2 — ÇİÇEĞİN BÖLÜMLERİ =====
+8. Elindeki çiçeği sapından tutarak kaldırdı.
+9. Çiçek sapı, çiçeği bitkinin gövdesine bağlayan kısımdır.
+10. Bitkiden gelen suyu ve besini çiçeğe o taşır.
+11. En dışta yeşil, küçük yapraklar vardı.
+12. Bunlara çanak yaprak diyoruz.
+13. Çiçek tomurcukken onu sararak korurlar; ayrıca fotosentez yaparlar.
+14. Onların içinde renkli ve kokulu yapraklar duruyordu.
+15. Bunlar taç yaprak. Çiçeğe rengini ve kokusunu veren kısım.
+16. Renk ve koku boşuna değil; böcekleri ve kuşları çağırırlar.
+17. Efe taç yaprakları usulca aralayınca içerideki organları gördü.
+18. Ortadaki kalın yapının çevresinde ince saplı olanlar diziliydi.
+19. İnce saplı olanlar erkek organ; iki kısımdan oluşuyorlardı.
+20. Uçlarındaki keseciğe başçık denir.
+21. Polenler, yani erkek üreme hücreleri başçıkta üretilir.
+22. Başçığı taşıyan ince sapa da sapçık diyoruz.
+23. Ortadaki kalın yapı ise dişi organdı; üç kısımdan oluşuyordu.
+24. En üstteki geniş uç dişicik tepesidir.
+25. Yüzeyi yapışkandır; konan polen oraya tutunur.
+26. Altındaki uzun boruya dişicik borusu denir.
+27. Polenin aşağı ilerlediği kanal budur.
+28. En dipteki şişkin bölüm yumurtalıktır.
+29. İçinde dişi üreme hücresi, yani yumurta bulunur.
+
+
+===== SEKANS 3 — TOZLAŞMA VE DÖLLENME =====
+30. Efe arının bıraktığı sarı tozu şimdi anlamıştı.
+31. Polenlerin başçıktan dişicik tepesine taşınmasına tozlaşma denir.
+32. Bu taşımayı rüzgâr, su ya da böcekler yapar.
+33. Bir polen dişicik tepesinin yapışkan yüzeyine tutundu.
+34. Oradan dişicik borusunun içine doğru yol aldı.
+35. Yumurtalığa ulaştı ve yumurtayla birleşti.
+36. Bu birleşmenin adı döllenmedir.
+37. Döllenme sonucunda tohum oluşur.
+38. Yumurtalık da gelişerek tohumun etrafında meyveyi oluşturur.
+39. Efe saksının dibinde geçen yılın kurumuş meyvesini buldu.
+40. Meyveyi ikiye ayırdı; içinden bir tohum düştü.
+
+
+===== SEKANS 4 — TOHUMUN ÇİMLENMESİ: SOS =====
+41. Şimdi sıra o tohumun yeni bir bitkiye dönüşmesindeydi. Çimlenme.
+42. Efe iki kavanoza ıslak pamuk serdi ve birer fasulye yerleştirdi.
+43. Tohumun çimlenmesi için üç temel şart vardır.
+44. Unutmamak için parolamız: SOS.
+45. S, sıcaklık demek. Ortam ne çok soğuk ne çok sıcak olmalı.
+46. O, oksijen demek. Tohumun hava alması gerekir.
+47. İkinci S, su demek. Tohum şişip kabuğunu ancak suyla açar.
+48. Efe kavanozlardan birini karanlık dolaba koydu.
+49. Üç gün sonra dolabı açtı.
+50. Karanlıktaki tohum da çimlenmişti.
+51. Çünkü çimlenme için ışık ve fotosentez gerekmez.
+52. Tohum ilk besinini kendi içindeki depodan karşılar.
+53. Işık, ancak yeşil yapraklar çıktıktan sonra gerekli olur.
+
+
+===== SEKANS 5 — KAPANIŞ: AYNI SAKSI =====
+54. Efe fideyi sardunyanın yanına dikti; arı yeniden geldi.
+
+
+=========================================================================
+AŞAĞISI KOPYALANMAZ — ÜRETİM YÖNERGESİ
+=========================================================================
+ElevenLabs: numarasız tek blok sürüm `Bitkilerde Üreme_SESLENDIRME-TEK-BLOK.txt`
+dosyasındadır. ElevenLabs'e YALNIZ o dosya yapıştırılır.
+
+Telaffuz notları:
+· 44. cümle: "SOS" — harf harf okunur: "se-o-se". Kelime gibi okunmaz.
+· 45-47: "S", "O", "İkinci S" — harf adı olarak okunur, kısa duraklamayla.
+· "Dişicik" — di-şi-cik. "Başçık" — baş-çık.
+· "Tozlaşma" ve "döllenme" ilk duyulduğu yerlerde (31, 36) kısa nefes bırakılır.
+
+Ritim: 1-7 sessiz, meraklı · 8-29 dersin en yoğun terim bölümü, acele YOK,
+her terim ismiyle nefes alır · 30-40 hikâye yeniden hareketlenir · 41-53 deney
+temposu, 50-51 dersin sürprizi — oraya hafif bir vurgu · 54 tek cümle, yavaş.
+
+Kapanış notu (kurgu için): 54. cümle K01'in aynasıdır — aynı balkon, aynı lens,
+aynı saat. Açılışta saksıda yalnız sardunya vardı; kapanışta yanında fasulye
+fidesi duruyor. Arı iki karede de aynı yere konar.

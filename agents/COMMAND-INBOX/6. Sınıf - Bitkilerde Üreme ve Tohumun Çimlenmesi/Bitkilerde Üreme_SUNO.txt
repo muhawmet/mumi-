@@ -1,0 +1,48 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — MÜZİK BRIEF (Suno)
+=========================================================================
+Süre hedefi: ~4:35 · Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A tender, patient orchestral underscore for a children's science film about a flower, a
+bee and a bean seed — the feeling of a slow spring morning on a balcony where something
+very small is quietly working. Opens with warm nylon-string guitar and a single sustained
+cello note, unhurried, almost still; a soft flute line drifts in like the first sun. A
+gentle harp figure carries the middle of the film, circling and returning, patient rather
+than pretty. Strings gather slowly and warmly at the emotional centre, one long rising
+line that resolves without ever becoming grand. The last section is the quietest and the
+most hopeful: solo piano over held low strings, and the nylon guitar from the opening
+comes back one last time. Tempo slow and breathing, around 72 BPM, gentle 4/4 with no
+drums beyond an occasional soft mallet. Plenty of room for a narrator — the mid-range is
+deliberately kept clear and nothing competes with a speaking voice. Instrumental only,
+no vocals, no lyrics.
+
+
+=========================================================================
+OPSİYONEL — SUNO "CUSTOM" MODU KULLANILIRSA
+=========================================================================
+
+NEGATİF SATIRI:
+no vocals, no lyrics, no choir, no vocal pads, no drum machine, no trap hi-hats,
+no EDM build or drop, no epic trailer percussion, no sound effects, no whimsical
+"cute" pizzicato cliché, no nature-documentary grandeur, no minor-key sadness
+
+SEKANS ENERJİSİ (kurgu için):
+· K01-K07  (arı ve sarı toz)      — en sade. Nylon gitar ve cello. Müzik geride, hava var.
+· K08-K29  (çiçeğin bölümleri)    — 🔴 dersin en terim yoğun yeri. Müzik BURADA EN SESSİZDİR:
+                                    yalnız arp figürü, sabit, VO'ya tam yer bırakır.
+                                    Bu bölümde hiçbir yükselme YOK — kelimeler önde.
+· K30-K38  (tozlaşma, döllenme)   — yaylılar yavaşça toplanır. K36-K37'de (döllenme) tek uzun
+                                    yükselen çizgi; görkemli olmadan çözülür. 🔴 Filmin duygu merkezi.
+· K39-K47  (tohum, deney, SOS)    — tempo hafif toparlanır, mallet girer, iş yapılıyor hissi.
+· K48-K51  (karanlık dolap)       — 🔴 dersin sürprizi. Dolap kapanınca müzik neredeyse SUSAR;
+                                    K50'de (karanlıktaki tohum da çimlenmiş) tek piyano notasıyla döner.
+· K52-K54  (kapanış)              — solo piyano + tutulan bas yaylılar; açılışın nylon gitarı geri gelir.
+
+SES MİKS:
+VO önde ve daima üstte (A1). Müzik A2'de ~-18 dB; K37 ve K50'de 2-3 dB açılır,
+K08-K29 boyunca ~-21 dB'ye kısılır (terim yoğunluğu). Klipler sessiz üretildi.
+SFX minimal: yalnız kavanoz kapağının cam sesi (K42) ve dolap kapağının tıkırtısı (K48/K49),
+ikisi de çok kısık.

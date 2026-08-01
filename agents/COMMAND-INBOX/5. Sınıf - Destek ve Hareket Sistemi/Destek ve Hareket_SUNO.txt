@@ -1,0 +1,44 @@
+DESTEK VE HAREKET SİSTEMİ — MÜZİK BRIEF (Suno)
+=========================================================================
+Süre hedefi: ~4:25 · Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A light, mechanical-but-warm orchestral underscore for a children's science film about
+how a body stands up and moves — the feeling of a wooden puppet that collapses and a
+child who does not. Opens with dry wooden percussion: soft woodblock and temple block
+ticking like joints, a plucked double bass walking slowly underneath, a single clarinet
+line curling above it, a little comic and a little tender. Strings enter warm and low as
+the film moves into discovery. Through the middle the rhythm becomes more articulated and
+springy — pizzicato strings, bassoon, muted marimba, everything hinged and jointed, the
+sound of things fitting together and turning. The final section lifts into an open,
+generous string melody with a light snare pulse, unmistakably in motion, still gentle.
+Tempo relaxed and springy, around 96 BPM, 4/4, no heavy drums. Plenty of room for a
+narrator — the mid-range is deliberately kept clear and nothing competes with a speaking
+voice. Instrumental only, no vocals, no lyrics.
+
+
+=========================================================================
+OPSİYONEL — SUNO "CUSTOM" MODU KULLANILIRSA
+=========================================================================
+
+NEGATİF SATIRI:
+no vocals, no lyrics, no choir, no vocal pads, no drum machine, no trap hi-hats,
+no EDM build or drop, no epic trailer percussion, no rock guitar, no sound effects,
+no eerie or horror tone (there is a skeleton model on screen — the music must stay
+warm and friendly, never spooky), no minor-key dread
+
+SEKANS ENERJİSİ (kurgu için):
+· K01-K07  (kukla yığılır)        — dry woodblock ve klarnet. Komik değil, meraklı.
+· K04      (kukla yığıldığı an)   — 🔴 müzik BİR NEFES ALIR: yarım saniye boşluk, sonra bas girer.
+· K08-K21  (iskelet, kemikler)    — yaylılar girer, sıcak ve dost. 🔴 Ürkütücü tona ASLA kaymaz.
+· K22-K33  (menteşe, eklemler)    — en ritmik yer. Pizzicato ve marimba menteşe gibi çalışır.
+· K34-K48  (kaslar)               — yay gerilir; tempo aynı kalır ama enerji artar.
+· K49-K52  (kapanış)              — açık, cömert yaylı melodi. K52'de (Mira zıplarken) tepe nokta.
+
+SES MİKS:
+VO önde ve daima üstte (A1). Müzik A2'de ~-18 dB; K04 ve K52'de 2-3 dB açılır.
+Klipler sessiz üretildi. SFX minimal: yalnız kapı menteşesinin gıcırtısı (K24) ve
+kuklanın tahta tıkırtısı (K02), ikisi de çok kısık.

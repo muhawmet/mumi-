@@ -1,0 +1,97 @@
+DESTEK VE HAREKET SİSTEMİ — SESLENDİRME METNİ (ElevenLabs)
+=========================================================================
+Konu: Destek ve Hareket Sistemi — Kemikler, Eklemler, Kaslar · 5. Sınıf Fen Bilimleri
+Anlatıcı: dış ses (Mira ekranda GÖRÜNÜR ama KONUŞMAZ, ağız hareketi yok)
+BİR CÜMLE = BİR KLİP. Hiçbir cümle 12 kelimeyi aşmaz.
+Ton: meraklı, sakin, çocuğa yukarıdan bakmayan. Anlatan; sunucu değil.
+İngilizce yok. Terimler Türkçe okunur.
+Kare: 52 · Tahmini süre: ~4:20
+=========================================================================
+
+
+===== SEKANS 1 — KUKLA: DİK DURAMAYAN ŞEY =====
+1. Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı.
+2. Mira onu indirdi; kolu tıkırdayarak büküldü.
+3. Kuklayı masaya oturttu ve elini çekti.
+4. Kukla olduğu yerde yığıldı.
+5. Mira ise sabahtan beri ayaktaydı ve yığılmamıştı.
+6. Peki insanı ayakta tutan şey neydi?
+7. Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar.
+
+
+===== SEKANS 2 — İSKELET VE KEMİKLER =====
+8. Mira kuklayı alıp fen sınıfına geçti.
+9. Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu.
+10. Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur.
+11. Kemikler vücuda şeklini verir ve onu ayakta tutar.
+12. Bir de en önemlisi: yumuşak organları korurlar.
+13. Kafatası beyni sert bir kutu gibi çevreler.
+14. Kaburgalar kalbin ve akciğerlerin önünde kafes kurar.
+15. Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu.
+16. Kemikleri şekillerine göre üç gruba ayırıyoruz.
+17. Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur.
+18. Kısa kemiklerin eni ve boyu birbirine yakındır.
+19. El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır.
+20. Yassı kemikler levha gibidir; kafatası ve kaburgalar böyledir.
+21. Mira üç kemiği yan yana dizdi; hiçbiri diğerine benzemiyordu.
+
+
+===== SEKANS 3 — EKLEMLER: BAĞLANTI NOKTALARI =====
+22. Peki bu kadar kemik birbirine nasıl bağlanıyordu?
+23. Mira atölyenin kapısını yavaşça itti.
+24. Kapı, menteşesinin üstünde sessizce döndü.
+25. Kemiklerin birleştiği yerlere eklem diyoruz.
+26. Eklemler tıpkı bir menteşe gibi çalışır.
+27. Onları hareket yeteneklerine göre üçe ayırırız.
+28. Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler.
+29. Mira dizini bükünce eklem menteşe gibi açılıp kapandı.
+30. Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır.
+31. Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz.
+32. Oynamaz eklemler kafatasındadır ve asla hareket etmezler.
+33. Oradaki kemikler birbirine adeta kaynamıştır.
+
+
+===== SEKANS 4 — KASLAR: HAREKETİN MOTORU =====
+34. Kemikler ve eklemler tamamdı. Ama kuklayı kim çekecekti?
+35. Kuklanın ipleri vardı; Mira'nın ipi yoktu.
+36. Mira kolunu büktü ve kolunun üstü sertleşip kabardı.
+37. İşte motor buydu: kaslar.
+38. Kaslar kasılırken kısalır ve bağlı olduğu kemiği kendine çeker.
+39. Gevşediğinde kemik eski yerine döner.
+40. Vücudumuzda üç çeşit kas vardır.
+41. Çizgili kaslar isteğimizle çalışır; kollarda ve bacaklardadır.
+42. Hızlıdırlar ama çabuk yorulurlar.
+43. Düz kaslar isteğimiz dışında, kendiliğinden çalışır.
+44. Mide ve bağırsak gibi iç organlarımızda bulunurlar.
+45. Yavaştırlar ama yorulmazlar.
+46. Kalp kası ise yalnızca kalpte bulunur.
+47. Şekli çizgili kasa benzer, çalışması düz kasa.
+48. Ömrümüz boyunca hiç durmadan çalışır.
+
+
+===== SEKANS 5 — KAPANIŞ: AYNI ATÖLYE =====
+49. Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz.
+50. Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir.
+51. Bir de bol bol hareket etmek gerekir.
+52. Mira kuklayı yerine astı; bu sefer hareket eden oydu.
+
+
+=========================================================================
+AŞAĞISI KOPYALANMAZ — ÜRETİM YÖNERGESİ
+=========================================================================
+ElevenLabs: numarasız tek blok sürüm `Destek ve Hareket_SESLENDIRME-TEK-BLOK.txt`
+dosyasındadır. ElevenLabs'e YALNIZ o dosya yapıştırılır.
+
+Telaffuz notları:
+· 10. cümle: "iki yüz altı" — rakam DEĞİL, yazıyla okunur.
+· "Menteşe" — men-te-şe, üç hece net.
+· "Kalsiyum" — kal-si-yum.
+· 25, 37, 40 numaralı cümleler terimin ilk duyulduğu yerdir; kısa nefes bırakılır.
+
+Ritim: 1-7 sessiz ve meraklı · 8-21 keşif, düzenli · 22-33 el işi temposu,
+menteşe sesiyle birlikte biraz canlanır · 34-48 dersin en enerjik yeri
+· 49-52 yavaşlar, son cümle açılışın aynası.
+
+Kapanış notu (kurgu için): 52. cümle açılış kadrajının aynasıdır — K01'de hareket
+eden kukla, Mira duruyordu; K52'de Mira hareket ediyor, kukla asılı ve hareketsiz.
+Bu iki kare aynı lens, aynı yer, aynı ışıkla kurulur.
