@@ -1,0 +1,493 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — 6. SINIF · REFERANS ENVANTERİ (Nano Banana 2)
+=========================================================================================
+Dünya: pixar_3d_edu · Register: EDU · Image: Nano Banana 2 · Motion: Kling 3.0 · Yüzey: Magnific Spaces.
+Kare sayısı: 54 (VO 54 cümle, bire bir). Kaynak kilit: Bitkilerde Üreme_ENZIM.md · yasa: agents/PROMPT-YASASI.md §4 · §4a.
+
+Bu dosya PROMPTLARDAN ÖNCE yazıldı. Önce aşağıdaki referanslar basılır → sahne promptlarında
+SADECE @handle çağrılır.
+
+🔴 @handle'ı ASLA TARİF ETME. Görünüş yalnız bu dosyadaki referans promptunda tanımlanır.
+   Sahnede "@cicek, beyaz taç yapraklı..." yazmak referansla YARIŞIR ve onu bozar. Handle yeter;
+   karede yazılan tek şey o nesnenin O ANKİ HÂLİdir (nerede duruyor, neye değiyor, ne oluyor).
+   Referans üretip handle'ı çağırmamak, referansı hiç üretmemekten KÖTÜDÜR (Bileşke: @kitap
+   yazıldı, hiç çağrılmadı, 6 kare toptan revize oldu).
+
+🔴 KADRAJ KİLİDİ (ENZIM §1'den birebir):
+   `@tag` çağıran her kare kadrajın dışarıda bıraktığını yazar. Temas gölgesi örneği asla
+   ayakkabıya yazılmaz — saksıya, kavanoza, çiçek sapına, korkuluğa yazılır.
+   🔴 Kadrajdan kesik figür YAZILMAZ. Her insan en az diz ya da bel hizasından itibaren BÜTÜN
+   tarif edilir, ayağı zemine basar, temas gölgesi taşır. Kalabalığı azaltmak için figür
+   KESİLMEZ, figür SAYISI azaltılır. (Bu ders zaten tek kişilik: @efe. İkinci çocuk, yetişkin,
+   kalabalık YOK.)
+
+🔴 TAGSIZ insan bu derste YOKTUR. Karede insan varsa o @efe'dir.
+
+
+=========================================================================================
+ENVANTER TABLOSU
+=========================================================================================
+Aralıklar ENZIM §5'ten alındı ve SESLENDIRME sekans dağılımıyla cümle cümle doğrulandı.
+
+ handle      | kova         | ilk kare | aralık                              | kaç kare
+-------------+--------------+----------+-------------------------------------+---------
+ @efe        | ÖNCEDEN VAR  | K03      | K03-K08 · K17 · K30 · K39-K42 ·     |   19
+             |              |          | K48-K54                             |
+ @defter     | ÖNCEDEN VAR  | K43      | K43-K47                             |    5
+ @cicek      | BASILACAK    | K07      | K07-K29 · K33-K38                   |   29  ⚠ EN KRİTİK
+ @sardunya   | BASILACAK    | K01      | K01-K05 · K39 · K54                 |    7
+ @balkon     | BASILACAK    | K01      | K01-K08 · K39-K42 · K54             |   13
+ @ari        | BASILACAK    | K02      | K02-K05 · K30-K33 · K54             |    9
+ @kavanoz    | BASILACAK    | K42      | K42 · K48-K53                       |    7
+ tarif kilidi| TARİF KİLİDİ | dağınık  | fasulye tohumu · kurumuş meyve      |    —
+             |              |          | kapsülü · karanlık mutfak dolabı ·  |
+             |              |          | maskeleme bandı · ıslak pamuk       |
+
+SEKANS ↔ REFERANS (hangi sekans neyi bekliyor):
+  S1  K01-K07  @balkon + @sardunya + @ari + @efe            → S1 başlamadan 3 referans basılmalı
+  S2  K08-K29  @cicek (+ @balkon K08, @efe K08/K17)         → S2 tamamen @cicek'e bağlı
+  S3  K30-K40  @cicek + @ari (+ @sardunya K39, @efe K30/K39-K40)
+  S4  K41-K53  @kavanoz + @defter (+ @balkon K41-K42, @efe)
+  S5  K54      @balkon + @sardunya + @ari + @efe            → YENİ REFERANS İSTEMİYOR
+
+⚠ ENZIM aralığında bir BOŞLUK var, sessiz kapatılmadı: `@cicek` K30-K32'de listelenmiyor,
+  ama VO31 ("polenlerin başçıktan dişicik tepesine taşınması") ve VO32 doğrudan çiçeğin
+  organlarını gösteriyor. K30-K32'de çiçek kadrajdaysa **@cicek çağrılır** — tag'siz
+  bırakılmaz. Aynı şey K33 için @ari'de geçerli (arı ve çiçek aynı karede).
+
+⚠ Bu dosya kare numarası taşır. Kesim planı değişir ve klip sayısı 54'ten kayarsa bu tablo
+  YENİDEN NUMARALANIR — yoksa dosya sessizce yalan söylemeye başlar (Bileşke v1 kusuru).
+
+
+=========================================================================================
+BASMA SIRASI — bu sırayla basılır
+=========================================================================================
+1. @cicek     — ÖNCE. 29 karenin omurgası ve tek riskli referans; birinci tur tutmazsa
+                yeniden basılacak zaman kalsın diye en başa alındı. S2'nin tamamı buna bağlı.
+2. @sardunya  — K01 açılış karesi bunu istiyor; ayrıca dersin TEK yazı taşıyan referansı.
+3. @balkon    — K01-K08 mekân sabiti; K01↔K54 ayna karesi bunun aynı kalmasına bağlı.
+4. @ari       — K02'de giriyor; S1 seti bununla tamamlanır.
+5. @kavanoz   — K42'ye kadar zaman var, en sona bırakıldı. İki kavanoz TEK referansta,
+                yan yana basılır — "aynılık" bu referansın kendisidir.
+
+@efe ve @defter BASILMAZ. İkisi de elde hazır (aşağıda ÖNCEDEN VAR kovası).
+
+
+=========================================================================================
+ÖNCEDEN VAR — YENİDEN BASMA, YENİDEN TARİF ETME
+=========================================================================================
+
+@efe — KAHRAMAN ÇOCUK (K03-K08 · K17 · K30 · K39-K42 · K48-K54)
+-----------------------------------------------------------------------------------------
+"Eşeyli ve Eşeysiz Üreme" ve "Kütle ve Ağırlık"ta basıldı — AYNI çocuk, sende hazır.
+Türk/Anadolu. Sahne promptlarında yaş şöyle yazılır ve başka hiçbir görünüş bilgisi yazılmaz:
+    "6th-grade, around eleven or twelve, pre-teen"
+Ten kilidi karede yazılır (dünya yasası, kimlik değil):
+    "Warm matte tan skin, low specular, never tinted green or grey."
+Bu ders TEK KİŞİLİKTİR: ikinci çocuk, yetişkin, kalabalık YOK. Karedeki tek insan @efe'dir.
+
+
+@defter — EFE'NİN FEN DEFTERİ (K43-K47) · arşiv promptu, aynen taşındı
+-----------------------------------------------------------------------------------------
+Eşeyli ve Eşeysiz Üreme'de basıldı (orada K6·K25·K34·K45·K46·K47·K48). Elinde varsa YENİDEN
+BASMA. Arşiv promptu birebir aşağıdadır — yalnız kaybolduysa yeniden basmak için durur.
+
+-----
+Full object reference of @defter: an original 6th-grade science notebook lying open flat, for a
+Turkish science lesson — a sturdy squared-paper exercise book with a soft matte deep-teal cover
+folded back, thick slightly-cream pages with a faint pale-blue grid, a stitched spine, one corner
+gently curled from use, and a chunky wooden pencil with a rounded graphite tip and a short stub of
+red coloured pencil resting in the gutter between the two open pages. The visible pages are BLANK —
+clean grid paper with no writing, no drawing and no letters anywhere. Child-friendly rounded
+proportions, instantly readable as a well-used school notebook at thumbnail size. Shot on an 85mm
+lens at f/4.0, three-quarter hero angle from slightly above, the whole open notebook centred, soft
+studio-style morning key light with cool bounce fill and a soft contact shadow under the cover,
+against a gentle warm-grey seamless gradient backdrop — not a story location and not an empty white
+void. Materials: matte board cover with a fine linen weave, soft paper fibre with a visible page
+edge, painted wood pencil, waxy red pencil core. Rendered as premium-CG feature-animation 3D CGI in
+a RenderMan-successor lineage — physically-motivated bounce fill, painted soft ambient occlusion
+(never hard-black). An original notebook; no logo, no brand, no photoreal, no flat 2D or cel,
+no franchise, and absolutely no letters, words or numbers on the pages.
+-----
+
+⚠ @defter'in kapağı DERİN PETROL-YEŞİLİ (deep teal). Bu renk bu derste bilinçli olarak
+  korunuyor: kehribar, serin-mavi ve menekşe kavram ışıklarının hiçbiriyle çakışmıyor —
+  teal serin ama MAT bir YÜZEY, kavram ışığı ise YUVARLAK BİR IŞIK OLAYI. K43-K47'de
+  kavram ışığı zaten yoktur (çimlenme sekansı, ENZIM §3).
+⚠ Defterin sayfaları arşivde BOŞ. K43-K47'de sayfaya yazı gerekiyorsa o yazı SAHNE
+  promptunun TEXT slotunda tanımlanır, referansta değil. Ve motion'da KİMSE YAZMAZ.
+
+
+=========================================================================================
+BASILACAK — 5 REFERANS
+=========================================================================================
+
+
+-----------------------------------------------------------------------------------------
+@cicek — İNCELENEN TEK ÇİÇEK (K07-K29 · K33-K38 · 29 kare) 🔴 DOSYANIN EN KRİTİK PARÇASI
+-----------------------------------------------------------------------------------------
+NEDEN TAG ZORUNLU: 29 karede geçiyor. Tag'siz bırakılırsa her karede BAŞKA bir çiçek çıkar
+ve dersin bütün terim bölümü (S2, 22 kare) çöker. Ölçüldü: Bileşke'de @kitap 6 ardışık karede
+6 farklı kitap oldu, 6 kare toptan revize edildi — korpusun en pahalı tek hatası.
+
+🔴 GEOMETRİ ÖĞRETİM DOĞRULUĞUDUR, SÜS DEĞİL:
+   · erkek organ ÇOK sayıda ve İNCE saplı (sapçık + ucunda başçık),
+   · dişi organ TEK, KALIN ve TAM ORTADA (dişicik tepesi + dişicik borusu + dipte şişkin
+     yumurtalık),
+   · dıştan içe sıra: çiçek sapı → yeşil çanak yapraklar → renkli taç yapraklar → erkek
+     organlar halkası → merkezde tek dişi organ.
+   Yanlış kurulursa DERS YANLIŞTIR. Bu yüzden referans metninde sayı ve konum açıkça yazıldı.
+
+🔴 Çiçek YARIYA KADAR ARALANMIŞ basılır — kâse gibi yarı açık, içi tam görünüyor. Tam açık
+   düz bir çiçekte organlar üstten bakışta üst üste biner; kapalı tomurcukta hiç görünmez.
+
+🔴 DİYAGRAM DEĞİL. Ok, etiket çizgisi, kılavuz çizgi, kesit çizimi, ölçek çubuğu, harf ASLA
+   yok. Bu GERÇEK bir çiçek olarak render edilir.
+
+TÜR SEÇİMİ VE GEREKÇESİ — tek tür: **LADEN (Cistus, Akdeniz makisinin yabani ladeni)**
+   Beş şart aynı anda sağlanmak zorundaydı ve bu türü seçen şey bunlardır:
+   1. AYRI YEŞİL ÇANAK YAPRAK — VO11-13 "en dışta yeşil, küçük yapraklar" diyor. Laden'de
+      5 çanak yaprak ayrı, yeşil ve dıştadır.
+      ⚠ Bu yüzden LALE ve ZAMBAK ELENDİ: ikisinde de çanak yaprak YOKTUR (hepsi tepal).
+      Lale/zambak organları en iri ve en okunaklı olanlardır, ama K11-K13'ü GÖRSEL OLARAK
+      YALANLARDI — üç karede ders yanlış olurdu. Öneri bilerek uygulanmadı, gerekçe budur.
+   2. AYRI, RENKLİ, SERBEST TAÇ YAPRAK — 5 adet, birbirinden ayrı (açelya/petunya/kahkaha
+      çiçeğinde taç yapraklar birleşiktir, VO14 "renkli yapraklar" çoğulunu bozar).
+   3. ÇOK SAYIDA, İNCE, SERBEST ERKEK ORGAN — laden'de onlarca ayrı ipliksi sapçık, her
+      birinin ucunda ayrı başçık. (Ebegümeci/hatmi/japongülü ELENDİ: erkek organları tek bir
+      sütuna kaynamıştır — "çok ve ince ayrı organ" okunmaz.)
+   4. TEK, KALIN, MERKEZDE DİŞİ ORGAN + GÖRÜNÜR ŞİŞKİN YUMURTALIK — laden'de tek dişicik
+      borusu, tek geniş dişicik tepesi, dipte tek yuvarlak yumurtalık. (Gül, düğün çiçeği,
+      çilek ELENDİ: ortada onlarca dişi organ var, "TEK" ihlal edilir. Elma/armut/kiraz
+      ELENDİ: yumurtalık çanağın içine gömülüdür, dipte görünmez.)
+   5. KURU, İKİYE AYRILAN MEYVE — laden'in meyvesi kuru bir kapsüldür, kurur ve dikişlerinden
+      yarılır. K39-K40'ın "kurumuş meyve · ikiye ayırdı · içinden tohum düştü" beat'i bu
+      meyveyle doğrudur; etli meyvede (erik, kiraz) o beat yalan olurdu.
+   Ek olarak laden Türkiye makisinin kendi bitkisidir ve saksıda yetişir — balkon hikâyesine
+   uydurma bir tür sokmuyoruz.
+
+RENK GEREKÇESİ — taç yaprak TERTEMİZ BEYAZ, bilerek:
+   Ders üç kavram ışığı kullanıyor: KEHRİBAR (polen) · SERİN-MAVİ (yumurta) · MENEKŞE (tohum).
+   · Sarı/altın taç yaprak KEHRİBAR polen ışığıyla çakışırdı.
+   · Mavi taç yaprak SERİN-MAVİ yumurta ışığıyla çakışırdı.
+   · Pembe/mor taç yaprak MENEKŞE tohum ışığıyla çakışırdı — ve tam da menekşenin doğduğu
+     K35-K38'de @cicek kadrajdadır, yani bu çakışma kesin olurdu.
+   · Kırmızı @sardunya'ya aittir (aşağıda), iki çiçek birbirine karışmasın.
+   Geriye BEYAZ kalıyor: üç ışığın üçü de beyaz taç yaprağın üstünde temiz okunur.
+   Başçıklardaki polen ise BİLEREK kehribar-sarıdır — kavram ışığı zaten o gerçek tozun
+   soyutlamasıdır (ENZIM §3). Aynı aile olmaları kusur değil, dersin kendisidir.
+
+-----
+Full object reference of @cicek: one single wild Cistus flower — the aromatic white "laden" of the
+Turkish Mediterranean maquis — shown alone as a botanical hero object for a 6th-grade science
+lesson, opened only about halfway into a shallow cup so that every organ inside is completely
+visible. The construction reads outward-in and must be exact. At the bottom, one short sturdy green
+pedicel about a finger long, faintly ridged, running straight down out of the flower. Around the
+outside of the flower, five separate small pointed GREEN sepals, slightly leathery and gently
+reflexed away from the petals, clearly green and clearly outermost. Inside them, five separate
+broad clean-WHITE petals, softly crumpled like tissue, each free from its neighbours, tilted up
+into a half-open bowl rather than laid flat. Inside the bowl, arranged in an open ring, ABOUT
+TWENTY-FOUR slender free stamens — each one a hair-thin pale filament standing on its own, each
+tipped with its own small oval anther loaded with fine warm golden pollen grains, a few loose
+grains dusted on the petals beneath. And at the exact centre, standing clear of the ring and
+UNMISTAKABLY SINGLE, one thick pistil: a broad flat glistening sticky stigma head on top, a
+straight noticeably THICKER pale-green style beneath it, and at the very base a rounded swollen
+pale-green ovary where every part meets. The whole design must read at a single glance as MANY THIN
+ONES ARRANGED AROUND ONE THICK ONE IN THE MIDDLE — the thick central pistil is taller and several
+times wider than any single stamen. Child-friendly rounded proportions, instantly readable at
+thumbnail size as "one real flower opened enough to see inside". Shot on an 85mm lens at f/4.0,
+three-quarter hero angle from slightly above so the interior ring and the central pistil are both
+fully visible, the whole flower centred, soft studio-style morning key light with cool bounce fill
+and a soft floor contact shadow beneath the pedicel, against a gentle warm-grey seamless gradient
+backdrop — not a story location and not an empty white void. Materials: fine translucent petal
+tissue with visible veining and genuine subsurface scattering, matte green sepal skin with a faint
+resinous sheen, dry granular pollen on the anthers, wet glossy film on the stigma. Rendered as
+premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — physically-motivated bounce
+fill, painted soft ambient occlusion (never hard-black). An original plant with no resemblance to
+any franchise; one flower only, no second bloom, no bud, no bouquet, no vase, no hand, no insect;
+no garden rose and no dense many-petalled double bloom; no textbook diagram, no labels, no leader
+lines, no arrows, no cross-section, no cutaway, no scale bar, no letters or numbers anywhere; no
+logo, no photoreal macro photograph, no flat 2D or cel.
+-----
+
+SAHNEDE KULLANIM:
+· Organ adları KARENİN kendi metnine yazılır (hangi organa bakılıyor, ışık nereye değiyor),
+  çiçeğin GÖRÜNÜŞÜ bir daha yazılmaz.
+· K17'de "Efe taç yaprakları usulca aralayınca" — taç yapraklar zaten yarı aralık; K17'de
+  değişen şey KADRAJ ve @efe'nin parmaklarının nereye değdiğidir, çiçeğin tarifi değil.
+· K35-K37 döllenme: menekşe ışık YUMURTALIĞIN İÇİNDE doğar. Kare-özel NEGATIVE zorunlu:
+  "the glow stays a soft round light and never becomes a flower, petal, flame, seed-shape
+  or drawn arrowhead."
+
+
+-----------------------------------------------------------------------------------------
+@sardunya — ÇİÇEK AÇMIŞ SARDUNYA SAKSISI (K01-K05 · K39 · K54 · 7 kare)
+-----------------------------------------------------------------------------------------
+Dersin açılış ve kapanış nesnesi. K01↔K54 AYNA KARESİ bunun birebir aynı kalmasına bağlı:
+açılışta saksıda YALNIZ sardunya var, kapanışta yanında fasulye fidesi duruyor. Aynı saksı,
+aynı çiçek, aynı etiket.
+
+🔴 Bu, dosyanın YAZI TAŞIYAN TEK referansıdır (§4'ün "referansta yazı yasaklanır" kuralının
+   tek istisnası): saksıya saplı plastik fidan etiketi. Harf harf hecelendi.
+
+RENK GEREKÇESİ: taç yapraklar KIRMIZI (crimson). Kehribar polen ışığından uzak durmak için
+bilerek turuncu-altın DEĞİL; menekşe tohum ışığından uzak durmak için bilerek pembe-mor DEĞİL;
+serin-mavi yumurta ışığından zaten uzak. @cicek beyaz, @sardunya kırmızı — iki çiçek asla
+birbirine karışmaz. Saksı, kanıtlanmış olduğu için eskitilmiş terrakotadır (aynı dünyada aynı
+kavram ışıklarıyla birlikte çalıştığı ölçüldü), ama mat, tozlu ve kireç çiçeklenmiş yazılır:
+ışığı geri vermeyen bir YÜZEYDİR, ışık YAYAN bir nesne değil.
+
+-----
+Full object reference of @sardunya: one original potted geranium in full first bloom, for a
+6th-grade science lesson — a single healthy pelargonium plant in an aged unglazed terracotta pot,
+its rounded scalloped leaves a soft dusty green with a darker ring band across each leaf, and one
+umbel of open crimson flowers held up on a long bare stalk above the foliage, with two smaller
+buds still closed beside it. The pot is old and honest: porous unglazed terracotta gone chalky and
+pale with a bloom of dried mineral salt, matte and dusty so it never returns a highlight, a small
+chip on the rim, damp dark potting soil crumbed across the top with two fallen petals on it, and a
+plain terracotta saucer beneath. Pushed upright into the soil at the front edge of the pot, leaning
+a few degrees toward camera, stands one weathered white plastic nursery label carrying the plant's
+Turkish name. Child-friendly rounded proportions, props drawn slightly overscale for child-clear
+readability, instantly recognisable at thumbnail size as "a geranium in a clay pot". Shot on an 85mm
+lens at f/4.0, three-quarter hero angle at pot height, the whole plant and pot centred with the
+label fully legible, soft studio-style morning key light with cool bounce fill and a soft floor
+contact shadow under the saucer, against a gentle warm-grey seamless gradient backdrop — not a
+story location and not an empty white void. Materials: porous chalk-bloomed terracotta, waxy
+scalloped leaf surface with fine veining, thin crimson petal tissue with subsurface translucency,
+sun-bleached matte plastic with heat-stamped letter troughs holding dark potting dirt. Rendered as
+premium-CG feature-animation 3D CGI in a RenderMan-successor lineage — physically-motivated bounce
+fill, painted soft ambient occlusion (never hard-black). TEXT: one Turkish word only, the nursery
+wording on that white plastic label — SARDUNYA, eight letters, all capitals, and none of the eight
+carries any diacritic mark — no dot, no breve, no cedilla, no circumflex anywhere in the word. The
+letterforms are a thin condensed sans, heat-stamped down INTO the plastic rather than printed on
+top of it, so every stroke is a shallow trough whose upper edge catches the key light as a thin
+bright line while its bottom holds a thread of dark potting dirt. The label is sun-bleached almost
+to cream, one corner scuffed, the wording sitting a little low and slightly off-centre the way a
+real nursery tag does. It reads left-to-right, never mirrored, reversed or rotated, and it appears
+on this one plastic label and on no other surface in the frame. An original plant; no second pot,
+no second label, no price tag, no barcode, no caption or overlay, no floating or embossed lettering,
+no English text, no misspelling, no logo or brand, no hand, no person, no insect, no seedling, no
+photoreal, no flat 2D or cel, no franchise.
+-----
+
+SAHNEDE KULLANIM:
+· K54'te @sardunya'nın YANINDA fasulye fidesi durur — fide saksının İÇİNE değil, yanına
+  dikilmiştir; @sardunya'nın kendisi K01'deki gibi kalır.
+· K39'da kurumuş meyve kapsülü bu saksının DİBİNDE bulunur (tarif kilidi aşağıda).
+
+
+-----------------------------------------------------------------------------------------
+@balkon — EFE'NİN BALKONU (K01-K08 · K39-K42 · K54 · 13 kare)
+-----------------------------------------------------------------------------------------
+"Eşeyli ve Eşeysiz Üreme"de kurulan AYNI balkondur — orada referans basılmamış, her karede
+yeniden tarif edilmişti. Bu derste basılıyor, çünkü K01↔K54 ayna karesi mekânın birebir aynı
+olmasını istiyor ve 13 karede tekrar eden bir mekân §4a'ya göre envantere girer.
+
+⚠ §4 SAPMASI, bilerek ve gerekçeli: mekân referansı stüdyo fonuna basılamaz — bir mekânın
+  "seamless backdrop"u yoktur. Slot 5 yerine TEMİZ KURULUŞ PLAKASI kullanıldı: insansız,
+  aksiyonsuz, sabit lens, sabit saat. Geri kalan yedi slot §4'teki gibi.
+
+RENK GEREKÇESİ: balkonun bütün paleti taş grisi, dövme demir, yeşil ve terrakotadır —
+kehribar, serin-mavi ve menekşe kavram ışıklarının hiçbiri mekânda bir yüzey rengi olarak
+YOKTUR, böylece bir kavram ışığı sahneye girdiğinde tek başına okunur.
+
+-----
+Location plate reference of @balkon: a fully-dressed Anatolian apartment balcony in the first hour
+of morning, empty of people, for a 6th-grade science lesson — a painted wrought-iron railing with
+chipped dark-green paint along the front, a wide grey stone ledge running the width of the balcony,
+a row of aged unglazed terracotta pots of basil and geranium standing along that ledge, a small
+worn wooden stool with a tulip-shaped tea glass on it, a green metal watering can leaning in the
+far corner, a coiled length of garden twine on the ledge, and behind it all the low rooftops of
+the city falling away into soft morning haze. Behind the balcony, a half-open glazed balcony door
+with a pale lace curtain breathing at it. The floor is plain grey cement tile, swept, with one
+faint water stain. Every surface is dressed with real objects and material, leaving no blank panel
+anywhere that could grow an invented sign. Motivated key light is the low early sun raking in from
+the left across the stone ledge, cool open-sky bounce filling the shadow side, a bright rim tracing
+the top edge of the iron railing. Three things are alive in the plate: dust motes turn slowly
+through the low golden sun beam, a thin ribbon of steam lifts from the tea glass on the stool, the
+lace curtain breathes at the half-open door. Depth in three layers — a soft out-of-focus terracotta
+pot rim at the near ledge edge, the ledge and railing sharp in the middle plane, the hazed city
+rooftops in cool bokeh behind. Every object rests in contact with its surface and casts a soft
+contact shadow. Shot on a 35mm lens at f/4.0, eye-level medium-wide three-quarter view, held as a
+clean empty establishing plate. Materials: chipped enamel paint over pitted cast iron, porous
+chalk-bloomed terracotta, worn grey cement tile, clear tulip glass with honest refraction, soft
+open-weave lace. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor lineage
+— physically-motivated bounce fill, painted soft ambient occlusion (never hard-black). An original
+location; no person, no child, no hand, no animal, no insect, no letters, numbers, sign, label,
+price tag, poster or caption on any surface, no logo or brand, no photoreal, no flat 2D or cel,
+no franchise, no empty white void.
+-----
+
+SAHNEDE KULLANIM:
+· 🔴 AYNA KARE — K01 ↔ K54: aynı lens, aynı yükseklik, aynı saat, aynı ışık. Bu iki kareyi
+  yazan ajan ötekinin metnini OKUR. K54'te tek fark saksının yanındaki fasulye fidesidir.
+· Balkon kapısının cam üstündeki emaye numara (yazı planı) SAHNE promptunun TEXT slotunda
+  tanımlanır — referans plakası yazısızdır.
+· Balkonun kalabalığı EŞYAYLA kurulur, gövdeyle değil. Yazı istenmeyen yüzey GİYDİRİLİR,
+  yasaklanmaz: boş panel bırakılırsa motor oraya uydurma İngilizce basar (6 karede ölçüldü).
+
+
+-----------------------------------------------------------------------------------------
+@ari — BAL ARISI (K02-K05 · K30-K33 · K54 · 9 kare)
+-----------------------------------------------------------------------------------------
+🔴 Bu dersin GÖRSEL KANITI arka bacaklardaki polen sepetinde duran SARI TOZ TOPAĞIDIR.
+   VO3 "arının bacakları sarı tozla kaplanmıştı" doğrudan buna bakıyor; referansta yoksa
+   ders kanıtını kaybeder.
+🔴 GERÇEK bir bal arısıdır: tüylü göğüs, dört zar kanat, bileşik göz. Çizgi film arısı,
+   gülümseyen yüz, insan gözü, büyük gözlük, kirpik, şapka, kollar YOK.
+🔴 Arı bir canlıdır ve 5 saniyede uçuş yolu çizemez (ENZIM §7): karede ya KONMUŞ ya HAVADA
+   ASILI durur. Referans bu yüzden konmuş bir pozda basılır — kanatlar yarı açık, ayaklar
+   yüzeye basmış.
+
+RENK GEREKÇESİ: arının kehribar-siyah bantlı gövdesi ve altın polen topağı BİLEREK kehribar
+ailesindedir — kavram ışığı zaten bu gerçek tozun soyutlamasıdır (ENZIM §3). Ama arı bir
+MALZEMEDİR (tüy, kitin, toz), kavram ışığı ise bir IŞIK OLAYIDIR; ikisi karışmasın diye
+arının hiçbir yeri parlamaz, ışık yaymaz, hâle taşımaz.
+
+-----
+Full animal reference of @ari: one original honeybee for a 6th-grade science lesson, shown settled
+and at rest — a true worker honeybee with a densely furred thorax in warm tawny amber, a banded
+abdomen of amber and matte black, four clear veined membranous wings folded half-open along her
+back, a small neat head with dark compound eyes and short bent antennae, and six jointed legs
+planted on the surface beneath her. On the outer face of each HIND leg sits the pollen basket, and
+in each basket is packed a rounded lump of bright golden-yellow pollen the size of a small bead,
+compacted and slightly damp-looking, with a fine dusting of loose pollen grains caught in the fur
+of her thorax and front legs. Believable insect anatomy at a slightly generous overscale so the
+pollen loads read clearly at thumbnail size; appeal-led but honest — not a cartoon. Shot on a 100mm
+macro lens at f/4.0, three-quarter hero angle from slightly above and to the side so both hind
+legs and both pollen loads are visible, the whole bee centred, soft studio-style morning key light
+with cool bounce fill and a soft contact shadow beneath her feet, against a gentle warm-grey
+seamless gradient backdrop — not a story location and not an empty white void. Materials: dense
+branched body fur catching rim light, semi-gloss chitin plates on the abdomen, thin iridescent wing
+membrane with visible veins, dry granular compacted pollen. Rendered as premium-CG feature-animation
+3D CGI in a RenderMan-successor lineage — physically-motivated bounce fill, painted soft ambient
+occlusion (never hard-black). An original insect with no resemblance to any franchise character; no
+smiling face, no human eyes, no eyelashes, no eyebrows, no mouth, no goggles, no hat, no clothing,
+no arms, no held object; no second bee, no hive, no flower, no hand, no person; no motion blur, no
+flight trail, no glow, no halo, no sparkle; no logo, no letters, no photoreal macro photograph, no
+flat 2D or cel.
+-----
+
+
+-----------------------------------------------------------------------------------------
+@kavanoz — İKİ CAM KAVANOZ, BİRBİRİNİN AYNI (K42 · K48-K53 · 7 kare)
+-----------------------------------------------------------------------------------------
+🔴 İKİSİNİN AYNI OLMASI DERSİN DENEYİDİR. Biri aydınlıkta kalır, biri karanlık dolaba
+   konur (K48); K50'de ikisi de çimlenmiştir. Deneyin tek değişkeni IŞIKTIR — bu yüzden
+   kavanoz, pamuk miktarı, su seviyesi, tohumun boyu ve duruşu birebir aynı olmak zorunda.
+   Fark görünürse ders çöker. Bu yüzden ikisi TEK referansta yan yana basılır.
+
+🔴 Referansta BANT YOK ve YAZI YOK. K44'ün "SOS" yazan maskeleme bandı sahne düzeyinde
+   eklenir (tarif kilidi aşağıda) — böylece K42-K43 bantsız, K44+ bantlı olur ve motion'da
+   kimse bant yapıştırmaz, kimse yazmaz.
+
+RENK GEREKÇESİ: kavanoz camı renksiz, pamuk beyaz, kapak mat çinko grisi — üçü de bilerek
+NÖTR. Kehribar, serin-mavi ve menekşe ışıkların hiçbiri bu nesnede yüzey rengi olarak
+bulunmaz. Fasulyenin kabuğu krem-bej: K40'ta menekşenin son izi bu nötr kabukta okunabilsin
+diye (ENZIM §3).
+
+-----
+Full object reference of @kavanoz: two identical clear glass jars standing side by side for a
+6th-grade science germination experiment — the two jars are the SAME jar twice over, matched in
+every detail: the same short straight-sided clear glass jar with a slightly thickened rolled rim
+and a plain matte zinc-grey screw lid resting unscrewed and upside-down beside each jar. Inside
+each jar, the same loose bed of clean white cotton wool, pressed down to the same depth and
+visibly damp, darker where the water has soaked in, with the same shallow film of clear water
+pooled at the very bottom of the glass. Lying on the cotton in each jar, pressed lightly against
+the inside of the glass so it is fully visible from outside, one single plump dry kidney bean —
+cream-beige with a fine chestnut-brown seed coat and one pale oval scar along its edge — and the
+two beans are the same size, the same colour and lying at the same angle. A few tiny bubbles cling
+to the inside of each glass. The two jars stand level, the same distance apart as their own width,
+and nothing distinguishes the left one from the right one. Child-friendly rounded proportions,
+instantly readable at thumbnail size as "the same experiment set up twice". Shot on an 85mm lens
+at f/4.0, straight-on eye-level view so both jars are seen equally with no perspective favouring
+either, both jars centred together, soft studio-style morning key light with cool bounce fill and
+a soft floor contact shadow under each jar, against a gentle warm-grey seamless gradient backdrop
+— not a story location and not an empty white void. Materials: clear glass with honest refraction
+and a soft meniscus at the water line, soft fibrous damp cotton wool, matte brushed zinc lid, dry
+papery bean seed coat. Rendered as premium-CG feature-animation 3D CGI in a RenderMan-successor
+lineage — physically-motivated bounce fill, painted soft ambient occlusion (never hard-black).
+Original objects; exactly two jars and exactly two beans, no third jar, no sprout, no root, no
+shoot yet, no soil, no tape, no sticker, no label, no letters or numbers on the glass or the lids,
+no logo or brand, no hand, no person, no photoreal, no flat 2D or cel, no franchise.
+-----
+
+SAHNEDE KULLANIM:
+· K42 kuruluş (bantsız) → K44 bant ve SOS yazısı → K48 biri dolaba → K49 dolap açılıyor →
+  K50 karanlıktaki de çimlenmiş → K51-K53 gerekçe.
+· K50-K53'te filiz VARDIR; referans filizsiz basıldı çünkü ilk hâl budur. Filiz KARENİN
+  kendi metnine yazılır: karanlıktakinin filizi SOLGUN ve UZUN, aydınlıktakinin filizi
+  YEŞİL ve KISA — ama ikisi de çimlenmiştir. Bu fark dersin hükmüdür (ışık çimlenme için
+  gerekli değil, yeşillenme için gerekli).
+· 🔴 Cam ve dolap kapağı KATI NESNEDİR → hızlı kamera warp üretir. Bu karelerde kompozisyon
+  kamerayı minimalde tutacak şekilde kurulur (ENZIM §7).
+
+
+=========================================================================================
+TARİF KİLİTLERİ — referans BASILMAZ, sahnede AYNEN bu kelimelerle çağrılır
+=========================================================================================
+Aşağıdaki öbekler her geçtikleri karede BİREBİR, kelimesi kelimesine tekrar edilir.
+Değiştirilmez, kısaltılmaz, yeniden yazılmaz — tutan şey tekrarın kendisidir.
+
+fasulye tohumu (K40 · K42 · K48-K53 · K54):
+  "a single plump dry kidney bean, cream-beige with a fine chestnut-brown seed coat and one
+   pale oval scar along its edge"
+
+kurumuş meyve kapsülü (K39 · K40):
+  "last year's dried seed capsule from the same plant — a small five-ribbed papery brown pod,
+   dry and brittle, its seams already starting to split open"
+
+karanlık mutfak dolabı (K48 · K49):
+  "a plain matte grey-green kitchen wall cupboard with one simple panelled wooden door and a
+   single worn brass knob"
+
+maskeleme bandı (K44 ve sonrası):
+  "a short strip of white masking tape pressed flat onto the glass, its cut ends slightly
+   frayed and one corner lifting"
+
+ıslak pamuk (K42 · K48-K53):
+  "a loose bed of clean white cotton wool, visibly damp and darker where the water has soaked in"
+
+fasulye fidesi (K54):
+  "a young bean seedling with one pale straight stem and two broad seed leaves just unfolded"
+
+⚠ Yeni bir tarif kilidi icat etme. Gereken bir nesne burada yoksa `FACT REQUIRED: <eksik>`
+  yaz ve dur.
+
+
+=========================================================================================
+KAVRAM IŞIĞI SİSTEMİ — bu dersin imzası (ENZIM §3 · her karede AYNI kural)
+=========================================================================================
+Kavram çizilmez, IŞIK olarak sahneye girer. Ok ucu, diyagram, çiçek, alev değil.
+Işık daima YUVARLAK bir ışık olayıdır ve NESNENİN üstündedir — tenin/yüzün üstünde ASLA.
+
+  POLEN    = yuvarlak SICAK-KEHRİBAR ışık (erkek üreme hücresi).
+  YUMURTA  = yuvarlak SERİN-MAVİ ışık (dişi üreme hücresi).
+  DÖLLENME = ikisi birleşir, ikisi de kaybolur ve YENİ bir üçüncü ton doğar:
+             yuvarlak MENEKŞE ışık = tohum. (K35-K37)
+  Menekşe K37'den sonra SÖNEREK tohumun kendi maddesine geçer — K40'ta düşen gerçek fasulye
+  tohumunun kabuğunda son izi bir kez daha görünür, sonra biter.
+  🔴 ÇİMLENME SEKANSINDA (K41-K53) KAVRAM IŞIĞI YOKTUR. Orada olan şey gerçek fiziktir:
+     ıslak pamuk, şişen kabuk, çıkan kök. Işığı oraya taşımak dersi yalanlar.
+
+Her kavram-ışığı karesinin NEGATIVE satırına kare-özel karşılığı YAZILIR:
+  "the glow stays a soft round light and never becomes a flower, petal, flame, seed-shape or
+   drawn arrowhead."
+⚠ Bu derste bu kilit KRİTİKTİR: konu çiçek olduğu için motorun glow'u çiçeğe çevirme eğilimi
+  en yüksek burada (saffron/bloom sınıfı kusur, 7 karede ölçüldü).
+
+
+=========================================================================================
+ÖĞRETİM DOĞRULUĞU — referans seviyesinde kilitlenen üç şey
+=========================================================================================
+1. Erkek organ ÇOK ve İNCE, dişi organ TEK ve KALIN, dişi organ ORTADA. @cicek referansı
+   bunu taşır; sahnede bu geometri bozulacak bir kadraj kurulmaz.
+2. Tozlaşma = polenin BAŞÇIKTAN DİŞİCİK TEPESİNE taşınması. Döllenme = polen ile yumurtanın
+   birleşmesi, YUMURTALIĞIN İÇİNDE. Tohum döllenmeden, meyve yumurtalığın gelişmesinden.
+3. Çimlenme şartları SOS: Sıcaklık, Oksijen, Su. 🔴 IŞIK VE FOTOSENTEZ ÇİMLENME İÇİN GEREKLİ
+   DEĞİLDİR — tohum ilk besinini kendi deposundan alır; ışık ancak yeşil yapraklar çıktıktan
+   sonra gerekir. Dersin en sık yanlış bilinen maddesi budur.
+
+🔴 Ok, etiket çizgisi, kılavuz çizgi, kesit diyagramı, aşama şeması ve "Polen + Yumurta →
+   Tohum" denklemi YASAK — her kavram GÖSTERİLEREK anlatılır. Bu, her karenin NEGATIVE
+   satırına ayrı ayrı yazılır; referanslarda zaten yazılı.
+=========================================================================================
