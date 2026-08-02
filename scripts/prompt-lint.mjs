@@ -297,13 +297,43 @@ const TRAPS = [
   },
 ];
 
-// STYLE bloğu kelime tavanı (yasa §0: 269 kelime → %65 revize; 88 kelime → %14).
-// Yasa (§2) ≤90 kelime der; linter 110'da kırmızı yakar. Fark BİLEREK var ve ölçüldü:
-// altın standart Üreme'nin STYLE'ı 86-116 kelime ve o iş tuttu. 90'da kırmızı yakmak Mami'nin
-// EN İYİ işini kırmızıya boğardı — sahte alarm ölçümü çöpe atar. 110 = yasanın hedefi + altın
-// standarttan ölçülmüş tolerans. Hedef hâlâ 90; 110 duvarın yeri.
-// Bu satırı 90'a çekmeden önce Üreme'yi lintle: kaç kare kırmızıya düşüyor, gör.
+// STYLE bloğu kelime tavanı — ARTIK SARI (2026-08-02, yön ölçümü).
+//
+// Neden düştü: duvar yanlış sayıya kalibreydi ve ölçümün YÖNÜNÜ ters çeviriyordu.
+// Yorumda "altın standart Üreme 86-116" yazıyordu; diskteki gerçek dosya **86-152**.
+// Sonuç ölçüldü: Üreme'nin (0 revize) 14 kırmızısının **13'ü** yalnız bu duvardan geliyordu,
+// buna karşılık Birlikte (30/54 revize) 90 kelimede sabit durduğu için **0 kırmızı** alıyordu.
+// Yani uzunluk, revize ile TERS korelasyon veriyordu — `kareOzelOran` ile aynı sınıf, aynı
+// hüküm: doğrulanmamış (burada: ters doğrulanmış) metrik kırmızı yakmaz. Ölçülür, basılır, SARI.
 const STYLE_MAX_WORDS = 110;
+
+// STYLE TEKRARI — bu duvarın YERİNE geçen ölçüm (2026-08-02).
+//
+// Kanıt (diskten, 146 teslim dosyası tarandı): aynı STYLE bloğunun kaç karede BİREBİR
+// tekrar ettiği revizeyle aynı yönde gidiyor ve arada TEMİZ BİR BOŞLUK var —
+//   ≤2 tekrar : Üreme 50 karede maxRep **2** (0 revize) · Sabit Sürat 44'te 2 · Kütle 27'de 1 ·
+//               Hücre/Destek/Bitkiler (aktif iş) hepsinde 1
+//   ≥4 tekrar : Birlikte **54/54** (30 revize) · Farklı Kültürler 53/53 · Sorunları V1 53/53 ·
+//               Sürtünme 31/31 · Bileşke 24/52 · Bizi Bir Arada 22/33
+// Korpusta maxRep=3 olan tek dosya var (Kuvvet, 45 karenin 3'ü) — yani eşiği 3 ya da 4 yapmak
+// tek bir projeyi bile yer değiştirmiyor. Eşik bu boşluğun içine kuruldu, sayıya değil.
+//
+// `styleVariants` 2026-07-29'dan beri HESAPLANIYORDU ama hiçbir kural okumuyordu: ölçülen ama
+// hüküm vermeyen sinyal, hüküm veren yanlış sinyalden daha pahalıdır — çünkü doğrusu elinizdeyken
+// yanlışına bakıyorsunuz demektir.
+//
+// Ayarlanabilir: `MAMILAS_STYLE_TEKRAR=<n>` ortam değişkeni eşiği değiştirir (n<2 → kural kapanır).
+const STYLE_TEKRAR_MIN = (() => {
+  const n = Number.parseInt(process.env.MAMILAS_STYLE_TEKRAR ?? '', 10);
+  return Number.isFinite(n) && n >= 2 ? n : 3;
+})();
+const STYLE_TEKRAR_KAPALI = Number.parseInt(process.env.MAMILAS_STYLE_TEKRAR ?? '', 10) < 2;
+const STYLE_TEKRAR_NEDEN =
+  'Her kare kendi malzemesini taşır — `dunya-kilidi.mjs` çıktısını olduğu gibi yapıştırma. '
+  + 'O kuyruk bir BAŞLANGIÇTIR: o karenin ışığı, yüzeyi ve paleti karenin kendi cümlesiyle yazılır. '
+  + 'Ölçüldü: STYLE tek sürümde donan üç iş (Birlikte 54/54 → 30 revize, Farklı Kültürler 53/53, '
+  + 'Sürtünme 31/31) ile karesi kendi STYLE\'ını taşıyan altın standart (Üreme 49 sürüm / 50 kare → '
+  + '0 revize) arasındaki tek yapısal fark budur.';
 // Kare-özel oran alt sınırı. Bileşke %35 → %65 revize. Sürtünme %51 → çok daha az.
 const KARE_OZEL_MIN = 0.45;
 
@@ -464,6 +494,14 @@ function heceHatalari(body) {
     const cntRe = /\b(\d+|[a-z]+)[\s-]letters?\b/gi;
     let m;
     while ((m = cntRe.exec(seg))) {
+      // OLUMSUZLANMIŞ SAYI İDDİA DEĞİLDİR (2026-08-02, ölçüldü). Altın standart Üreme'nin
+      // K48/K50'sinde şu cümle var: "**no two letters** are made of the same substance" —
+      // bu bir harf SAYIMI değil, bir tasarım kuralı. Linter onu "ÇEŞİTLİLİK iki harf" iddiası
+      // sanıp KIRMIZI basıyordu: 0 revize almış işin STYLE dışındaki TEK kırmızısı buydu ve
+      // sahteydi. `nearSkin`/`hasHuman` derslerinin üçüncü tekrarı — kelimenin VARLIĞI değil
+      // NE YAPTIĞI ölçülür.
+      const once = seg.slice(Math.max(0, m.index - 14), m.index);
+      if (/\b(no|not|neither|nor)\s+$/i.test(once)) continue;
       const n = sayiya(m[1]);
       if (!n) continue;
       if (!adaylar.some((w) => harfler(w).length === n)) {
@@ -597,6 +635,18 @@ function corpusMetrics(blocks) {
   const styleWordCounts = styles.map((s) => s.split(/\s+/).length);
   const styleVariants = new Set(styles.map((s) => s.replace(/\s+/g, ' '))).size;
 
+  // 3b) STYLE TEKRARI — `styleVariants` bir SAYIYDI ve hiçbir kural onu okumuyordu. Sayı tek
+  //     başına hüküm veremez (49 sürüm / 50 kare ile 46 / 54 aynı sağlıkta değil); hüküm veren
+  //     şey AYNI bloğun kaç karede tekrar ettiğidir. Kare kare bilinmesi gerekir, çünkü kırmızı
+  //     dosyaya değil KAREYE yazılır — 54/54 ile 3/45 aynı rapor satırı olamaz.
+  const styleSayim = new Map();
+  for (const s of styles.map((x) => x.replace(/\s+/g, ' ').trim())) {
+    if (s) styleSayim.set(s, (styleSayim.get(s) ?? 0) + 1);
+  }
+  const styleTekrar = new Map([...styleSayim].filter(([, n]) => n >= STYLE_TEKRAR_MIN));
+  const styleMaxRepeat = styleSayim.size ? Math.max(...styleSayim.values()) : 0;
+  const styleTekrarKare = [...styleTekrar.values()].reduce((a, b) => a + b, 0);
+
   return {
     frames: frames.length,
     kareOzelOran,
@@ -605,6 +655,10 @@ function corpusMetrics(blocks) {
     styleVariants,
     styleMin: styleWordCounts.length ? Math.min(...styleWordCounts) : 0,
     styleMax: styleWordCounts.length ? Math.max(...styleWordCounts) : 0,
+    styleTekrar,          // Map<normalize edilmiş STYLE, kaç karede>
+    styleMaxRepeat,       // en çok tekrar eden STYLE kaç karede
+    styleTekrarKare,      // eşiği aşan bloklara ait toplam kare sayısı
+    styleTekrarEsik: STYLE_TEKRAR_MIN,
   };
 }
 
@@ -672,9 +726,13 @@ function lintBlock(body, register = 'EDU', fk = 'frame-dosyasi') {
   if (style) {
     const w = style.split(/\s+/).filter(Boolean).length;
     if (w > STYLE_MAX_WORDS) {
-      problems.push({ kind: 'style', key: 'style-uzun', level: 'kirmizi',
-        msg: `STYLE ${w} kelime (tavan ${STYLE_MAX_WORDS})`,
-        why: 'Kalıp büyüdükçe kare-özel oran düşüyor; %35 oran → %65 revize (Bileşke, ölçüldü).' });
+      // SARI, kırmızı DEĞİL (2026-08-02). Bkz. STYLE_MAX_WORDS yorumu: uzunluk revizeyle ters
+      // korelasyon veriyor — altın standart 86-152 kelime yazıp 0 revize aldı, 90 kelimede donan
+      // iş 30 revize aldı. Uzunluk bir bakılacak yerdir, kanıtlı eksik değildir.
+      problems.push({ kind: 'style', key: 'style-uzun', level: 'sari',
+        msg: `STYLE ${w} kelime (hedef ≤${STYLE_MAX_WORDS})`,
+        why: 'DOĞRULANMAMIŞ metrik: altın standart 86-152 kelimeyle 0 revize aldı. Uzunluk tek başına '
+          + 'kusur değil — uzunluğun İÇİ boilerplate ise kusur. Ajan gözle baksın; hüküm `style-tekrar`da.' });
     }
   }
   return problems;
@@ -698,6 +756,26 @@ export function lintFile(path, register = 'EDU') {
   const blocks = parsed.map((b) => ({ ...b, kind: blockKind(b.body, fk) }));
   const rows = blocks.map((b) => ({ head: b.head, kind: b.kind, problems: lintBlock(b.body, register, fk) }));
 
+  const metrics = corpusMetrics(blocks);
+
+  // STYLE TEKRARI — korpus ölçümü, ama hüküm KAREYE yazılır. Tek "(DOSYA GENELİ)" satırı
+  // 54/54 ile 3/45'i aynı gösterirdi; sayı burada bilginin kendisidir.
+  // Bu blok kirmizi/sari ayrımından ÖNCE koşmak ZORUNDA: sonra koşarsa yalnız sarı listesinde
+  // duran bir kare kırmızı problem alır ama kırmızı listesine hiç girmez — sessizce kaybolur.
+  if (metrics && !STYLE_TEKRAR_KAPALI && metrics.styleTekrar.size) {
+    blocks.forEach((b, i) => {
+      if (rows[i].kind !== 'frame') return;
+      const s = (styleBlock(b.body) ?? '').replace(/\s+/g, ' ').trim();
+      const n = s ? metrics.styleTekrar.get(s) : undefined;
+      if (!n) return;
+      rows[i].problems.push({
+        kind: 'korpus', key: 'style-tekrar', level: 'kirmizi',
+        msg: `STYLE bloğu ${n} karede BİREBİR aynı (eşik ${STYLE_TEKRAR_MIN}+)`,
+        why: STYLE_TEKRAR_NEDEN,
+      });
+    });
+  }
+
   const kirmizi = rows.filter((r) => r.problems.some((p) => p.level === 'kirmizi'));
   const sari = rows.filter((r) => !r.problems.some((p) => p.level === 'kirmizi') && r.problems.length);
 
@@ -710,7 +788,6 @@ export function lintFile(path, register = 'EDU') {
     counts[s.key] = `${uygulanan.filter((b) => s.test(b.body)).length}/${uygulanan.length}`;
   }
 
-  const metrics = corpusMetrics(blocks);
   // `kareOzelOran` KIRMIZI DEĞİL — bilgidir. Kanıtla sınandı ve DÜŞTÜ (Codex denetimi 2026-07-29):
   // 52 revize alan Bileşke %97, az revize alan Sürtünme %47 veriyor — yani revizeyi TERS yönde
   // "öngörüyor". Ayrıca eşik (cümlenin blokların %80'inde tekrarı) dosya uzunluğuna duyarlı:
@@ -733,7 +810,10 @@ export function lintFile(path, register = 'EDU') {
   return { path, register, total: blocks.length, rows, bad: kirmizi, sari, counts, metrics, olculmeyen: OLCULMEYEN };
 }
 
-export { SLOTS, TRAPS, parseBlocks, lintBlock, blockKind, corpusMetrics, OLCULMEYEN };
+export {
+  SLOTS, TRAPS, parseBlocks, lintBlock, blockKind, corpusMetrics, styleBlock, OLCULMEYEN,
+  STYLE_MAX_WORDS, STYLE_TEKRAR_MIN,
+};
 
 function report(r, { kapsam = true } = {}) {
   const name = r.path.split(/[\\/]/).pop();
@@ -752,7 +832,8 @@ function report(r, { kapsam = true } = {}) {
   if (r.metrics) {
     console.log(`  korpus: kare-özel %${Math.round(r.metrics.kareOzelOran * 100)} · `
       + `NEGATIVE kare-özel %${Math.round(r.metrics.negOzel * 100)} · `
-      + `STYLE ${r.metrics.styleVariants} sürüm (${r.metrics.styleMin}-${r.metrics.styleMax} kelime)`);
+      + `STYLE ${r.metrics.styleVariants} sürüm (${r.metrics.styleMin}-${r.metrics.styleMax} kelime) · `
+      + `en çok tekrar ${r.metrics.styleMaxRepeat} kare`);
   }
 
   // Tekrar eden kusuru 45 satıra dağıtmak sinyali gömer: okunmayan rapor olmayan rapordur.

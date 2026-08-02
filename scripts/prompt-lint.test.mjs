@@ -14,11 +14,15 @@
 // NOT: `src/core/` DONUK — bu dosya bilerek `scripts/` altında (icraat fazı yasası).
 
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { lintFile, lintBlock, parseBlocks, fileKind } from './prompt-lint.mjs';
+import { lintFile, lintBlock, parseBlocks, fileKind, STYLE_TEKRAR_MIN } from './prompt-lint.mjs';
+
+// Sentetik kare dosyaları için — repo'ya dosya bırakmaz.
+const TMP = mkdtempSync(join(tmpdir(), 'prompt-lint-'));
 
 // ⚠ `.pathname` KULLANMA. Windows'ta `file:///C:/...` → `/C:/Mamilas/...` verir (baştaki
 // eğik çizgiyle) ve `join` bunu `C:\C:\Mamilas\...` yapar — 21 test tek bir sebeple
@@ -53,7 +57,18 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     // 2 → 14: sayı ARTTI ama iş İYİLEŞTİ — çünkü ölçülen dosya değişti. Yeniden yazımda
     // yazı taşıyan kare 14'ten 25'e çıktı (§11c: cimrilik de kusurdur), yani lintin sorduğu
     // soru sayısı da arttı. Kapsam satırı bunu gösteriyor: text-hece 25/25 · tasiyici 25/25.
-    expect(r.bad.length).toBe(14);
+    //
+    // 14 → 0 (2026-08-02, YÖN ONARIMI). Bu çıpanın kendisi kusurun kanıtıydı: **0 revize** almış
+    // altın standart, en çok revize alan işten (Birlikte, 30/54 revize, 0 kırmızı) DAHA KÖTÜ
+    // ölçülüyordu. 14'ün 13'ü `style-uzun` duvarındandı — o duvar yanlış sayıya kalibreydi
+    // (yasa "86-116" diyordu, diskteki gerçek dosya 86-152) ve SARI'ya indi. Kalan 1'i
+    // `hece-sayi` SAHTE ALARMIYDI: "**no two** letters are made of the same substance" bir
+    // tasarım kuralı, harf sayımı değil. Sıfır burada "ölçülmedi" demek değil — kapsam satırı
+    // 11 slotun 11'inde tam ve `sarı: 16` duruyor.
+    expect(r.bad.length).toBe(0);
+    // Ve kırmızıyı ne verdiyse ONUN sebebi ölçülmüş olmalı: altın standardın hiçbir karesi
+    // STYLE'ını üç kez tekrar etmiyor (49 sürüm / 50 kare, en çok tekrar 2).
+    expect(r.metrics.styleMaxRepeat).toBe(2);
     expect(r.counts.temas).toBe('50/50');
     expect(r.counts['text-hece']).toBe('25/25');
     expect(r.counts['text-tasiyici']).toBe('25/25');
@@ -86,13 +101,163 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
   });
 
   it('Sabit Sürat (44 kare): 6 kırmızı blok — temiz setin tabanı', () => {
+    // 7 → 6 (2026-08-02): `style-uzun` SARI'ya indi; 116 kelimelik tek karesi kırmızıdan düştü.
+    // Kalan 6 gerçek: `text-tasiyici` 5 kare + NEGATIVE kare-özel %23. Sabit Sürat'ın STYLE'ı
+    // 41 sürüm / 44 kare — yeni `style-tekrar` kuralı burada ATEŞLEMEZ, ve etmemeli.
     const r = lintFile(
       join(INBOX, 'Biten', 'Sabit Sürat ve Hız', 'Sabit Sürat ve Hız_PROMPTLAR.txt'), 'EDU');
     expect(r.total).toBe(44);
     // 6 → 5: `hasHuman` düzeltmesi (bkz. Üreme çıpası). 5 → 7: yeni `text-tasiyici` slotu
     // iki karede gerçekten eksik — Sabit Sürat §11b'den (harf, taşıdığı nesnenin malzemesidir)
     // önce yazıldı, yazı VAR ama harfin nasıl var olduğu yazılmamış. Sahte alarm değil, çağ farkı.
-    expect(r.bad.length).toBe(7);
+    expect(r.bad.length).toBe(6);
+    expect(r.metrics.styleMaxRepeat).toBe(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A5 · ÖLÇÜMÜN YÖNÜ — bu linterin varlık sebebi (2026-08-02).
+//
+// Bir duvarın "kurulu" olması onu doğru yapmaz. 2026-08-02'de ölçüldü ki prompt-lint kaliteyi
+// değil `dunya-kilidi.mjs`'in yapıştırdığı KUYRUĞA UYUMU ölçüyordu — yani araç kendi
+// yapıştırdığını ölçüyordu. Sonuç ters bir sıralamaydı ve tersliği kimse görmüyordu, çünkü
+// hiçbir test iki işi YAN YANA koymuyordu. Bu blok tam olarak onu yapar: yön bir hükümdür ve
+// hüküm çivilenir. Bu testler kırmızıysa lint yanlıştır, prompt değil.
+// ---------------------------------------------------------------------------
+describe('A5 · ölçümün yönü — altın standart EN AZ, en çok revize alan iş EN ÇOK kırmızı', () => {
+  const UREME = join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme',
+    'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.txt');                       // 50 kare · 0 revize
+  const BIRLIKTE = join(INBOX, 'Biten', '5. Sınıf - Birlikte Daha Güçlüyüz',
+    'Birlikte Daha Güçlüyüz_PROMPTLAR.txt');                        // 54 kare · 30 revize
+  const KULTURLER = join(INBOX, '5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
+    'Farklı Kültürler_PROMPTLAR.txt');                              // 53 kare
+
+  it('YÖN: Üreme (0 revize) < Farklı Kültürler ≤ Birlikte (30/54 revize)', () => {
+    const ureme = lintFile(UREME, 'EDU');
+    const birlikte = lintFile(BIRLIKTE, 'EDU');
+    const kulturler = lintFile(KULTURLER, 'EDU');
+    // Oran karşılaştırılır, ham sayı değil: dosyalar 50/53/54 kare, eşit uzunlukta değil.
+    const oran = (r) => r.bad.length / r.total;
+    expect(oran(ureme)).toBeLessThan(oran(kulturler));
+    expect(oran(kulturler)).toBeLessThanOrEqual(oran(birlikte));
+    // Ölçülmüş değerler — sapması bilinmek istenen şeydir.
+    expect(ureme.bad.length).toBe(0);
+    expect(kulturler.bad.length).toBe(53);
+    expect(birlikte.bad.length).toBe(54);
+  });
+
+  it('style-tekrar: Birlikte 54/54 karede BİREBİR aynı STYLE → hepsi kırmızı', () => {
+    const r = lintFile(BIRLIKTE, 'EDU');
+    expect(r.metrics.styleVariants).toBe(1);
+    expect(r.metrics.styleMaxRepeat).toBe(54);
+    const tekrar = r.bad.filter((row) =>
+      row.problems.some((p) => p.key === 'style-tekrar' && p.level === 'kirmizi'));
+    expect(tekrar.length).toBe(54);
+  });
+
+  it('style-uzun artık KIRMIZI DEĞİL — yasa 86-116 diyordu, altın standart 86-152 yazıp 0 revize aldı', () => {
+    const r = lintFile(UREME, 'EDU');
+    expect(r.metrics.styleMax).toBe(152);
+    const kirmiziKeyler = r.bad.flatMap((row) => kirmiziKeys(row.problems));
+    expect(kirmiziKeyler).not.toContain('style-uzun');
+    // Ama ÖLÇÜLMEYE devam ediyor — sarıdan da düşerse duvar körleşir, ölçüm kaybolur.
+    const sariKeyler = r.sari.flatMap((row) => row.problems.map((p) => p.key));
+    expect(sariKeyler).toContain('style-uzun');
+  });
+
+  it('DOĞAL KONTROL: aynı projenin iki sürümü — tek STYLE 53/57, kare-özel STYLE 7/57', () => {
+    // Sorunları Birlikte Çözüyoruz iki sürüm halinde diskte duruyor (ikisi de aynı commit'te
+    // eklendi, git sıra vermiyor — iddia edilen tek şey ÖLÇÜM). İçerik, kare sayısı ve dünya
+    // aynı; değişen tek yapısal şey STYLE'ın kare-özel yazılıp yazılmadığı. Lint bunu görmek
+    // ZORUNDA — iki sürümü aynı gösteriyorsa ölçtüğü şey kalite değildir.
+    const v1 = lintFile(join(INBOX, 'Biten', '6. Sınıf - Sorunları Birlikte Çözüyoruz',
+      'Sorunları Birlikte Çözüyoruz_PROMPTLAR.txt'), 'EDU');
+    const v2 = lintFile(join(INBOX, 'Biten', '6. Sınıf - Sorunları Birlikte Çözüyoruz',
+      'Sorunları Birlikte Çözüyoruz_PROMPTLAR-V2.txt'), 'EDU');
+    expect(v1.metrics.styleMaxRepeat).toBe(53);
+    expect(v2.metrics.styleMaxRepeat).toBe(7);
+    expect(v2.bad.length).toBeLessThan(v1.bad.length);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A6 · style-tekrar SAHTE ALARM VERMEZ.
+//
+// "Yanlış alarm bu duvarı çöpe çevirir" — ölçüldü, prompt-lint 50 karede 19 sahte alarm verince
+// insan lint'e bakmayı bıraktı. Yeni kural o riski taşıyamaz. Kural regex sezgisi DEĞİL, birebir
+// eşitlik sayımı; ve eşik, korpusta ölçülmüş bir BOŞLUĞUN içine kuruldu: 146 teslim dosyasında
+// en çok tekrar ya **≤2** ya **≥4** — arada tek dosya var (Kuvvet, 45 karenin 3'ü). Yani eşiği
+// 3 ya da 4 yapmak hiçbir projeyi yer değiştirmiyor.
+// ---------------------------------------------------------------------------
+describe('A6 · style-tekrar sahte alarm regresyonları', () => {
+  const tekrarKirmizi = (r) => r.bad.filter((row) =>
+    row.problems.some((p) => p.key === 'style-tekrar')).length;
+
+  it('AKTİF ÜRETİM (Hücre · Destek · Bitkiler — 106 kare) tek bir sahte alarm almaz', () => {
+    // Bunlar bugünkü yasayla yazılmış, henüz basılmamış kareler. Yeni kuralın onlara kırmızı
+    // basması, kuralın kendisinin yanlış olduğu anlamına gelirdi.
+    const dosyalar = [
+      ['5. Sınıf - Hücre ve Organelleri', 'A-K01-K15.txt'],
+      ['5. Sınıf - Hücre ve Organelleri', 'B-K16-K30.txt'],
+      ['5. Sınıf - Hücre ve Organelleri', 'C-K31-K44.txt'],
+      ['5. Sınıf - Hücre ve Organelleri', 'D-K45-K53.txt'],
+      ['5. Sınıf - Destek ve Hareket Sistemi', 'A-K01-K14.txt'],
+      ['5. Sınıf - Destek ve Hareket Sistemi', 'B-K15-K28.txt'],
+      ['5. Sınıf - Destek ve Hareket Sistemi', 'C-K29-K41.txt'],
+      ['6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi', 'A-K01-K14.txt'],
+    ];
+    for (const [proje, dosya] of dosyalar) {
+      const r = lintFile(join(INBOX, proje, 'PROMPTLAR', dosya), 'EDU');
+      expect(`${proje}/${dosya}: ${tekrarKirmizi(r)}`).toBe(`${proje}/${dosya}: 0`);
+    }
+  });
+
+  it('EŞİK ALTI susar: aynı STYLE 2 karede varsa kırmızı YOK', () => {
+    const kare = (n, style) => `### K0${n}\n50mm lens, a hand rests in contact with the table, `
+      + `depth in three layers — near plane soft. Three things are alive in the frame.\n`
+      + `STYLE: ${style}\nNEGATIVE: no text.\n`;
+    const p = join(TMP, 'esik-alti.txt');
+    writeFileSync(p, kare(1, 'aynı kuyruk') + kare(2, 'aynı kuyruk') + kare(3, 'başka kuyruk'));
+    const r = lintFile(p, 'EDU');
+    expect(r.metrics.styleMaxRepeat).toBe(2);
+    expect(tekrarKirmizi(r)).toBe(0);
+  });
+
+  it('EŞİKTE ateşler: aynı STYLE 3 karede varsa üçü de kırmızı', () => {
+    const kare = (n, style) => `### K0${n}\n50mm lens, a hand rests in contact with the table, `
+      + `depth in three layers — near plane soft. Three things are alive in the frame.\n`
+      + `STYLE: ${style}\nNEGATIVE: no text.\n`;
+    const p = join(TMP, 'esikte.txt');
+    writeFileSync(p, kare(1, 'aynı kuyruk') + kare(2, 'aynı kuyruk') + kare(3, 'aynı kuyruk'));
+    const r = lintFile(p, 'EDU');
+    expect(tekrarKirmizi(r)).toBe(3);
+  });
+
+  it('MOTION dosyasında ATEŞLEMEZ — motion bloğunun STYLE\'ı yoktur, kural onu görmemeli', () => {
+    const r = lintFile(join(INBOX, 'Biten', 'Kuvvet ve Kuvvetin Ölçülmesi',
+      'Kuvvet ve Kuvvetin Ölçülmesi_PROMPTLAR.md'), 'EDU');
+    expect(r.bad.length).toBe(0);
+  });
+
+  it('EŞİK AYARLANABİLİR olmalı — sabit sayı bir hüküm, ayar bir seçenek', () => {
+    expect(STYLE_TEKRAR_MIN).toBe(3);   // varsayılan; MAMILAS_STYLE_TEKRAR ile değişir
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A7 · heceleme sahte alarmı — altın standardın STYLE dışındaki tek kırmızısıydı ve sahteydi.
+// ---------------------------------------------------------------------------
+describe('A7 · heceleme sayımı: olumsuzlanmış sayı iddia değildir', () => {
+  it('"no two letters are made of the same substance" KIRMIZI VERMEZ (Üreme K48/K50)', () => {
+    expect(kirmiziVar(lintBlock(
+      'TEXT: the word "ÇEŞİTLİLİK" — a ten-letter word; no two letters are made of the same '
+      + 'substance, and each letter stands one clear space apart.', 'EDU'), 'hece-sayi')).toBe(false);
+  });
+
+  it('gerçek YANLIŞ sayım hâlâ KIRMIZI — guard kuralı köreltmedi', () => {
+    expect(kirmiziVar(lintBlock(
+      'TEXT: "KÜTLE" — two letters, one clear space between each letter', 'EDU'),
+    'hece-sayi')).toBe(true);
   });
 });
 
