@@ -119,8 +119,13 @@ if [ "${MAMILAS_LINT_SKIP:-0}" = "1" ]; then
   # Kacisin IZ BIRAKMAMASI kabul edilemez: sessizce atlanan kapi, olmayan kapidir.
   printf '\n🟡 PROMPT LINT ATLANDI — MAMILAS_LINT_SKIP=1 verildi.\n' >&2
   printf '   Atlanan teslim dosyalari:\n' >&2
-  git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null \
-    | tr '\0' '\n' | grep -E 'COMMAND-INBOX/.*_PROMPTLAR.*\.txt$' | sed 's/^/     · /' >&2
+  # Makbuz calisma agacini DA sayar: `git commit -a` ile atlandiginda index bos olur ve
+  # makbuz eskiden BOS satir basardi — yani atlanan dosya kayitsiz kalirdi (2026-08-02).
+  {
+    git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null
+    git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
+  } | sort -z -u | tr '\0' '\n' \
+    | grep -E 'COMMAND-INBOX/.*(_PROMPTLAR.*|_MOTION.*)\.(txt|md)$' | sed 's/^/     · /' >&2
   printf '   Gerekcesi commit mesajina YAZILMALI.\n\n' >&2
 else
   # TURKCE YOL TUZAGI (2026-07-31, kapi kurulurken kapinin KENDISINDE yakalandi):
@@ -129,8 +134,12 @@ else
   # kapi SESSIZCE gecer — butun proje adlarimiz Turkce oldugu icin her seferinde.
   # `-c core.quotepath=false` ham UTF-8 verir; `-z` ile NUL ayrac, bosluklu ad da bolunmez.
   while IFS= read -r -d '' PF; do
+    # `.md` DE olculur (2026-08-02): desen yalnizca `.txt` iken `current-work.mjs:53`
+    # ayni hatti `['_promptlar.txt','_promptlar.md']` diye taniyordu — iki dosya ayni
+    # sozlesmeyi iki farkli uzanti kumesiyle okuyordu ve `.md` yazan oturum kapidan hic
+    # olculmeden geciyordu. Biten/ altinda iki teslim boyle gecmis.
     case "$PF" in
-      agents/COMMAND-INBOX/*_PROMPTLAR*.txt) : ;;
+      agents/COMMAND-INBOX/*_PROMPTLAR*.txt|agents/COMMAND-INBOX/*_PROMPTLAR*.md) : ;;
       *) continue ;;
     esac
     [ -f "$PF" ] || continue
@@ -177,6 +186,49 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
     #     `diff --cached` bos doner ve kapi sessizce baypas edilirdi. O yuzden calisma
     #     agacindaki degismis izlenen dosyalar da listeye giriyor.
     # (c) ikisi birlestiginde ayni dosya iki kez gelebilir → sort -u -z ile tekillestirilir.
+    {
+      git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null
+      git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
+    } | sort -z -u
+  )
+
+  # --- 6a. MOTION LINT — prompt-lint dongusunun IKIZI ---
+  #
+  # 2026-08-02 olcumu: `motion-lint.mjs` 490 satir, 14 kural, kendi testi VAR — ve
+  # HICBIR KAPIYA BAGLI DEGILDI. `grep motion-lint .claude/hooks/gate.sh` → 0 eslesme.
+  # Dahasi `motion-lint.mjs:403` yorumu "kırmızı: N/M satirini gate.sh parse ediyor" diyordu;
+  # yorum var olmayan bir bagi anlatiyordu. Hattin yarisi olculuyor, yarisi olculmuyordu —
+  # ve olculmeyen yari KLIP KREDISI yakan yari: start-frame hatasi bir kareyi bozar,
+  # motion hatasi bir klibi.
+  #
+  # Register YOK ve bu bilerek: motion-lint register parametresi almiyor (§3R olculemiyor,
+  # yasa bunu :743'te kendisi soyluyor). Uydurma bir bayrak eklemek kapiyi yalanci yapardi.
+  while IFS= read -r -d '' MF; do
+    case "$MF" in
+      agents/COMMAND-INBOX/*_MOTION*.txt|agents/COMMAND-INBOX/*_MOTION*.md) : ;;
+      agents/COMMAND-INBOX/*/MOTION/*.txt) : ;;
+      *) continue ;;
+    esac
+    [ -f "$MF" ] || continue
+    # prompt-lint ile ayni gerekce: hukum CIKIS KODUNDAN degil CIKTIDAN okunur.
+    MOUT=$(node scripts/motion-lint.mjs "$MF" 2>&1) || true
+    MKIRMIZI=$(printf '%s' "$MOUT" | grep -oE 'kırmızı: [0-9]+' | grep -oE '[0-9]+' | head -1)
+    if [ -z "$MKIRMIZI" ]; then
+      fail "MOTION LINT OKUNAMADI — $MF
+Cikti 'kırmızı: N' satirini icermiyor; lint ciktisi degismis olabilir.
+Kapi kor kalamaz — dogrulanamayan kapi sessizce gecmez, bloke eder."
+    fi
+    if [ "$MKIRMIZI" -gt 0 ] 2>/dev/null; then
+      fail "MOTION LINT KIRMIZI ($MKIRMIZI klip) — $MF
+
+$(printf '%s' "$MOUT" | grep -E '✗|▸|kırmızı' | head -30)
+
+Kirmizi = KANITLI eksik. Bu dosyayla klip basilirsa o eksik krediyle odenir.
+Duzelt, ya da bilerek geciyorsan:
+  MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesini commit mesajina yaz)"
+    fi
+    printf '✅ motion-lint yesil: %s\n' "$MF" >&2
+  done < <(
     {
       git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null
       git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
