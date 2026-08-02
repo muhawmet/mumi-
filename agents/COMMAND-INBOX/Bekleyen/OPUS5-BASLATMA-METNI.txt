@@ -5,6 +5,68 @@ YENİ OTURUMA YAPIŞTIR — "OPUS 5" · SİSTEMİ STANDARDA ÇEKME TURU
 ───────────────────────────────────────────────────────────────────────────
 
 
+🔴🔴🔴 **İCRA PROTOKOLÜ — ÖNCE BUNU OKU, SONRA GERİSİNİ** 🔴🔴🔴
+
+Mami telefonda, okumayacak, kopabilir. **Tam kontrol sende.** Bu bir tartışma turu değil,
+bir İCRA turu. Kural:
+
+**1. VARSAYILAN EYLEMDİR.** Soru sorma, onay bekleme, seçenek sunma. Ölç → karar ver →
+   uygula → kapıyı yeşile getir → commit → sıradaki. Mami "dur" demedikçe akıtacaksın.
+
+**2. TEK BLOKE EDİCİ SORU HAKKIN VAR, O DA ŞU:** *"Sol 5.6 ve Terra 5.6 nasıl çağrılıyor?"*
+   Cevap gelmezse **o kadro olmadan devam et** — bekleme. Başka hiçbir şey için durma.
+
+**3. KARARSIZ KALIRSAN GERİ ALINABİLİRİ SEÇ** ve seçtiğini commit mesajına yaz.
+   İki seçenek eşit görünüyorsa bu bir karar değil, bir yazı tura — at ve devam et.
+   Karar verildiyse KAPANMIŞTIR; geri sarma yasak.
+
+**4. GERİ ALINAMAZ İŞ MAMİ'YE BIRAKILIR.** Silme · yasa metnini yeniden yazma ·
+   `APPROVED.md`'ye ders taşıma · izin/güvenlik ayarı açma · uzak repo geçmişini değiştirme.
+   Bunları YAPMA, listeye yaz, geç. Kalan her şeyi yap.
+
+**5. HER İŞ PARÇASI KENDİ COMMIT'İNİ ALIR.** Kapı yeşil olmadan commit yok. Toplu commit yok.
+   Commit mesajı ne ölçüldüğünü ve neyin değiştiğini söyler.
+
+**6. HER ŞEYİ SEN DOĞRULA, SONRA SOL'A DENETLET.** Kendi ilk varsayımın kanıt değildir.
+   Yeşil test görsel/kalite kanıtı değildir. AGY avangarttır — önden tarar, TARİF eder;
+   HÜKÜM senindir ve her iddiası grep ile doğrulanır.
+
+**7. USAGE EN KRİTİK KAYNAK.** 200 satırdan uzun her okuma ajana gider. Ajan tavanı **6**,
+   birim İŞ PARÇASI. Her ajanın çıktı biçimi ÖNCEDEN şart koşulur — yoksa iş ana bağlama
+   geri döner ve iki kez ödenir. (Ölçüldü: bir oturum çok ajana dağılıp usage'ı bitirdi.)
+
+**8. LOOP YASAK.** Aynı dosyayı ikinci kez açıyorsan, aynı soruyu ikinci kez soruyorsan ya da
+   bir maddeyi "biraz daha iyileştireyim" diye geri açıyorsan DUR ve sıradakine geç.
+   Mükemmel madde yok, kapanmış madde var.
+
+───────── CLEAR DURAKLARI — bağlam dolmadan, İŞ SINIRINDA kes ─────────
+
+Her durakta sırayla: (i) kapı yeşil + commit + push · (ii) `node scripts/current-work.mjs
+ilerle` ile kaydı güncelle · (iii) o durağın devir dosyasını yaz · (iv) Mami'ye **üç satır**
+özet · (v) *"clear atabilirsin"* de. Devir dosyası yoksa clear atma.
+
+  **DURAK 1 — HARİTA BİTİNCE.** Devir: `docs/ai/SISTEM-HARITASI.md`
+     Sistemin ne olduğu ölçülmüş hâlde: katman katman, dosya+satır kanıtlı, yorumsuz.
+  **DURAK 2 — TAVSİYELER YAZILINCA.** Devir: `docs/ai/OPUS5-TAVSIYELER.md`
+     Her tavsiye: şu an nasıl · kusuru · şöyle yapardık · maliyet · kazanç (ÖLÇÜLMÜŞ sayı) ·
+     geri alınabilir mi. Geri alınabilir olanları BEKLETME, uygula. Ötekiler Mami'ye kalır.
+  **DURAK 3 — HER P0 BİTİNCE (dörder kez).** Devir: iş listesindeki maddeyi ✅ işaretle,
+     kabul kriterinin nasıl kanıtlandığını maddenin altına yaz.
+  **DURAK 4 — GÜN SONU.** Devir: `docs/ai/GUN-SONU-<tarih>.md` — ne tuttu, ne kaldı,
+     sıradaki tek adım.
+
+───────── KALİTE ÇITASI — Mami'nin kendi cümlesi ─────────
+
+> *"Biz hâlâ en iyi animasyonu yapıyoruz, onu da unutma — ama bize yakışanı da yapmıyoruz.
+> Şu an sistem çok karışık ve kirli. Kaliteden ödün verme, üstüne ekle."*
+
+Bu iki şeyi aynı anda söylüyor ve ikisi de doğru: **çıktı iyi, hat kirli.** Yani bu turda
+hiçbir şey "sadeleştirme" adına ucuzlatılmaz. Ölçülmüş bir yasa, karmaşık diye silinmez —
+kanıtı olmayan alışkanlık silinir. Bir şeyi kaldırıyorsan gerekçesi ÖLÇÜM olur.
+"Çağrılmıyor" tek başına kanıt değildir.
+
+═══════════════════════════════════════════════════════════════════════════
+
 **Bu turda hedef verilmiyor. Mimari sende. Sen orkestratörsün.**
 
 Mami'nin sözü (2026-08-02): *"bu sefer hedef falan vermiyorum, büyük düşün, bana tavsiyeler
