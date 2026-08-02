@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "T9 KAPANDI: üç skill'in dört-yüzey nüshası tek kanonda (git) birleştirildi; iptal edilmiş nefes yasağı düşürüldü, dehb-mufredat.md kurtarıldı, tek-yüzey duvarı kapıya bağlandı (24 test), baglar.mjs .command yanlış alarmı onarıldı",
-  "nextAction": "Mami'nin kalan 3 kararı: T6 motion kelime bandı · T7 ajan brief kıstas sırası · T8 yasaya makine-okur etiket",
+  "lastCompleted": "OPUS5 PLANI İŞ1-2-3 bitti: lint yönü düzeltildi (uzunluk→TEKRAR duvarı) · kapı gerçek teslim biçimini görüyor (128 kare dosyası ölçülmeden geçiyordu) · kıstas sırası PROMPT-YASASI §1a'da tek kaynak + director'a FİKİR/PLAN kapısı",
+  "nextAction": "İŞ 4 öğrenme musluğu (2524 aday satır → banka 7'de duruyor) — sonra İŞ5 dünya dönüş hattı, İŞ6 kadro yeteneği",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -13,13 +13,13 @@
     "REFERANSLAR": true,
     "PROMPTLAR": true,
     "revize": true,
-    "MOTION": false,
+    "MOTION": true,
     "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-02T12:59:47.295Z",
+  "updatedAt": "2026-08-02T15:14:31.254Z",
   "updatedBy": "claude",
-  "baseCommit": "ce40542"
+  "baseCommit": "4f2837f"
 }
