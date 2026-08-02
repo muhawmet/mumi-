@@ -290,15 +290,22 @@ revize.txt + motion, tek geçiş). Ayrışma ölçüldü:
 
 ### 4.5 Hafıza ↔ skill kayması (tez (b)'nin ölçümü)
 
-Mami'nin İngilizce seviyesi hükmü:
-- hafıza `mami-kisisel.md:134` = "C1, okuduğunu anlamada sorun yok" ✓
-- **proje** `.claude/skills/mamilas-buddy/SKILL.md:22-24` = aynı ✓
-- **yüklenen** `~/.claude/skills/mamilas-buddy/SKILL.md` (324 satır) = **hüküm YOK**
-  (grep "C1/İngiliz/seviye" → 0 isabet); `:20-23` işi memory'ye devrediyor ve
-  "çakışırsa memory kazanır" diyor.
+> **KAPANDI — 2026-08-02.** Aşağıdaki ölçüm o günün sabahına aittir ve artık tarihseldir.
+> Nüshalar birleştirildi, canlı yüzeydeki ikizler silindi, `skillSurface.test.ts` teklik
+> duvarını commit kapısına bağladı. Ölçüm burada duruyor çünkü kusur **sınıfı** duruyor:
+> bir hüküm yalnız hafızaya yazılırsa, otomatik yüklenen dosya onu ezer.
 
-Yani düzeltilmiş hüküm (a) hafızada ve (b) **gölgelenen** proje skill'inde yaşıyor;
-her oturumda yüklenen dosyada yok. **Kusurun yapısal koşulu duruyor.**
+Mami'nin İngilizce seviyesi hükmü (o günkü hâl):
+- hafıza `mami-kisisel.md:134` = "C1, okuduğunu anlamada sorun yok" ✓
+- **proje** `.claude/skills/mamilas-buddy/SKILL.md` = aynı ✓
+- **yüklenen** canlı nüsha (324 satır, `~/.claude/skills` altında) = **hüküm YOK**
+  (grep "C1/İngiliz/seviye" → 0 isabet); işi memory'ye devredip "çakışırsa memory
+  kazanır" diyordu.
+
+Yani düzeltilmiş hüküm (a) hafızada ve (b) **gölgelenen** proje skill'inde yaşıyordu;
+her oturumda yüklenen dosyada yoktu. Aynı yapısal koşul aynı gün ikinci bir hükmü de
+vurdu: Mami'nin 2026-07-29'da kaldırdığı "etiketsiz nefes" yasağı, koşan nüshada
+diriliyordu. Birleştirmede o hüküm de kanona alındı — `SKILL.md` §0 ve §4.
 
 ---
 
