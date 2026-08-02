@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "OPUS5 PLANI İŞ1-2-3 bitti: lint yönü düzeltildi (uzunluk→TEKRAR duvarı) · kapı gerçek teslim biçimini görüyor (128 kare dosyası ölçülmeden geçiyordu) · kıstas sırası PROMPT-YASASI §1a'da tek kaynak + director'a FİKİR/PLAN kapısı",
-  "nextAction": "İŞ 4 öğrenme musluğu (2524 aday satır → banka 7'de duruyor) — sonra İŞ5 dünya dönüş hattı, İŞ6 kadro yeteneği",
+  "lastCompleted": "OPUS5 PLANI İŞ1-2-3-4-5 bitti (İŞ6 kadro kartları kaldı). Lint yönü · kapı gerçek teslimi görüyor · FİKİR/PLAN kapısı · onay debisi ölçülüyor · dünya kusuru adrese dönüyor. Onay kuyruğu hazır: 75 aday → 13 satır, 12 proje.",
+  "nextAction": "Mami 13 dersi seçer (agents/lessons/ONAY-KUYRUGU-2026-08-03.md) → APPROVED.md'ye ekler; sonra İŞ6 kadro kartları + AGY izni",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-02T15:14:31.254Z",
+  "updatedAt": "2026-08-02T22:09:28.857Z",
   "updatedBy": "claude",
-  "baseCommit": "4f2837f"
+  "baseCommit": "14c280d"
 }
