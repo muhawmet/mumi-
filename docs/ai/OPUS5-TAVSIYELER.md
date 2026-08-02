@@ -44,7 +44,7 @@ alışkanlıktır**, ve "çağrılmıyor" tek başına kaldırma gerekçesi say�
 
 ## 1. TAVSİYELER — sıralı, bedeli yazılı
 
-### T1 · Teslim sözleşmesi ve doğrulayıcısı — **P0** ✅ UYGULANDI
+### T1 · Teslim sözleşmesi ve doğrulayıcısı — **P0** ✅ UYGULANDI (`65ac364`)
 
 **Şu an nasıl:** Teslim biçimi bir gelenek. Aynı sistem aynı hafta iki biçim üretti:
 `### K01 | VO…` birleşik dosya (Farklı Kültürler, Bileşke Kuvvet) ve `# K01 — "VO"` blok
@@ -66,7 +66,7 @@ Bu doğrulayıcı o gün koşsaydı iki proje eksik teslim edilmezdi.
 
 ---
 
-### T2 · Kanal onarımı — bulgular stderr'de ölüyor — **P0** ✅ UYGULANDI
+### T2 · Kanal onarımı — bulgular stderr'de ölüyor — **P0** ✅ UYGULANDI (`962074a`)
 
 **Şu an nasıl:** `hasat-gate.mjs:23` `const say = s => process.stderr.write(...)` — 12 çağrının
 12'si stderr. SessionStart'ta **yalnız stdout modele girer**. `gate.sh` exit 0 yolundaki 16
@@ -86,7 +86,7 @@ bassın (uyarılar dahil). Desen `buddy.mjs`'ten kopyalanır, icat edilmez.
 
 ---
 
-### T3 · Motion kapıya bağlı değil — **P0** ✅ UYGULANDI
+### T3 · Motion kapıya bağlı değil — **P0** ✅ UYGULANDI (`ce0e7a0`)
 
 **Şu an nasıl:** `prompt-lint` `gate.sh:155`'te commit duvarında. `motion-lint` (490 satır,
 14 kural, testi var) **hiçbir kapıya bağlı değil** — `grep "motion-lint" .claude/hooks/gate.sh`
@@ -104,7 +104,7 @@ yakan** yarı. Start-frame hatası bir kareyi bozar, motion hatası bir klibi.
 
 ---
 
-### T4 · `.md` teslim dosyaları linti atlıyor — **P0** ✅ UYGULANDI
+### T4 · `.md` teslim dosyaları linti atlıyor — **P0** ✅ UYGULANDI (`ce0e7a0`)
 
 **Şu an nasıl:** `gate.sh:123,133` deseni `*_PROMPTLAR*.txt`. `current-work.mjs:53` ise
 `['_promptlar.txt','_promptlar.md']` — **iki dosya aynı hattı iki farklı uzantı kümesiyle
@@ -119,7 +119,7 @@ kapı yine "✅ Gate yesil" der.
 
 ---
 
-### T5 · Model yönlendirme politikası — Mami'nin açıkça istediği ✅ UYGULANDI (belge)
+### T5 · Model yönlendirme politikası — Mami'nin açıkça istediği ✅ UYGULANDI (`b42056f`)
 
 **Şu an nasıl:** 8 model var (Sol 5.6 · Terra 5.6 High · Gemini 3.6 Flash High · Gemini 3.1 Pro
 High · Opus 5 · Sonnet 5 · AGY · Claude Max), pratikte **2'si** kullanıldı. Her iş Claude'un ana
@@ -299,11 +299,48 @@ dizisini de görüyor (`:259`).
 
 ---
 
+### T13 · Belge bağ denetçisi — **P0** ✅ UYGULANDI (`b42056f`)
+
+*Tavsiye listesine sonradan girdi çünkü kusuru harita değil, haritayı YAZARKEN yapılan hata
+gösterdi.*
+
+**Şu an nasıldı:** Belgeler birbirine `dosya:satır` ile atıfta bulunuyor ve bu atıfların
+hiçbiri doğrulanmıyordu. Tek bir katmanda (skill parkı) elle bakınca 10 kırık çıktı.
+
+**Kusuru:** K1 ihlali, ve tek yönlü kayan bir kusur: kod taşınır, atıf donar, okuyan ajan
+yanlış yere bakar. Ölçülen sınıflar: taşınmış script (5) · silinmiş yapı (6) · silinmiş dosya
+(2) · donmuş satır numarası (1) · yazım hatası (3) · **hiç yazılmamış belge (1)**.
+
+**En keskin kanıt:** denetçi **kendi yazarının yalanını** yakaladı — bu belgenin T5 maddesi
+"✅ UYGULANDI (belge)" diyordu ama `docs/ai/MODEL-YONLENDIRME.md` yazılmamıştı. Aynı geçişte
+T1/T3/T4 de erken işaretlenmiş bulundu ve o üçü de gerçekten yapıldı.
+
+**Kazanç:** 28 kırık → **0**, 0.06 saniyede, commit duvarında.
+
+**Kapsam açıkça yazılı (K6):** atfın ANLAMI doğrulanmaz, yalnız varlığı ve satır sınırı.
+Tarihli kayıtlar arşiv sayılır ve atlananların tamamı adıyla basılır. Bilerek var olmayan
+hedefe atıf için `<!-- bag-yok: neden -->` yazılır — **gerekçesiz istisna kabul edilmez**,
+gerekçeliler ayrı sayılır ve her koşuda listelenir (şu an 8).
+
+---
+
 ## 3. SIRA
 
-**Bu turda uygulandı (geri alınabilir, beklemedi):** T1 · T2 · T3 · T4 · T5.
+**Bu turda uygulandı (geri alınabilir, beklemedi):** T1 · T2 · T3 · T4 · T5 · T12 · T13.
 **Mami seçer:** T6 (kanonik kelime bandı) · T7 (ajan üslubu) · T8 (yasaya etiket) ·
 T9 (hangi skill yüzeyi kanon) · T10 (silme) · T11 (Stop kaydı).
+
+### Bu turda ÜRETİMDE bulunan, Mami'nin bakması gereken üç şey
+
+Bunlar tavsiye değil **bulgu** — kod değil, iş:
+
+1. **`5. Sınıf - Destek ve Hareket Sistemi` — 10 kare hiç yazılmamış.** VO 52 cümle, prompt
+   41 kare; K43-K52'nin karesi yok. Aktif bir iş, bu hâliyle eksik teslim edilecekti.
+2. **`Biten/5. Sınıf - Kütle ve Ağırlık` — 35 motion, 8 kare prompt'u.** Prompt setinin 27'si
+   teslim dosyasında yok. "Biten" işaretli.
+3. **`Biten/6. Sınıf - Kuvvetlerin Güç Birliği` — 69 VO cümlesinin 17'sinin karesi yok.**
+
+Üçü de bugüne kadar hiçbir ölçüm tarafından görülmemişti; doğrulayıcı yanlış projeyi ölçüyordu.
 
 Sıralama gerekçesi: uygulananların hepsi **sessiz yalan** üreten kusurlardı — sistem yanlış cevap
 veriyor ve bunu söylemiyordu. Bekletilenlerin hepsi **kalite tercihi** içeriyor; onları ben
