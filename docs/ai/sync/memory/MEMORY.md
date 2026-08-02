@@ -9,6 +9,7 @@
 **HOT STATE — durumun otoritesi `artifacts/current-work.json`** (SessionStart hook'u basar;
 `node scripts/current-work.mjs` ile okunur). Sohbet hafızasıyla çelişirse KAYIT kazanır.
 Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş, biten işler, açık Mami kararları.
+- [OPUS5 turu 2026-08-02](mamilas-opus5-turu-2026-08-02.md) — yeni doğrulayıcılar (`teslim-denetim`, `baglar`), 🔴 Destek ve Hareket K43-K52 hiç yazılmamış, Mami'nin bekleyen 4 kararı. Devir: `docs/ai/GUN-SONU-2026-08-02.md`.
 
 ## Mami — kişi ve çalışma biçimi
 

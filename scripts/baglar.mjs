@@ -69,7 +69,10 @@ export const ISTISNA_TAVAN = 6;   // bir markörün örtebileceği en çok satı
 
 const MD_LINK = /\[[^\]]*\]\(([^)\s]+)\)/g;          // [ad](yol)
 const KOD_YOL = /`([^`\n]+?)`/g;                      // `yol` ya da `yol:123`
-const CIPLAK = /(?:^|[\s(])((?:\.{1,2}\/|~\/)?(?:[A-Za-z0-9._-]+\/)+[A-Za-z0-9._-]+\.[A-Za-z0-9]{1,5}(?::\d{1,6})?)/g;
+// Uzantı tavanı 8: `.command` (7) bu repoda Mac/Windows launcher sözleşmesinin
+// merkezinde duruyor. Tavan 5 iken `agents/MOTION-CALISTIR.command` `.comma` diye
+// kesiliyor ve VAR OLAN dosya "kırık" raporlanıyordu — denetçinin kendi yanlış alarmı.
+const CIPLAK = /(?:^|[\s(])((?:\.{1,2}\/|~\/)?(?:[A-Za-z0-9._-]+\/)+[A-Za-z0-9._-]+\.[A-Za-z0-9]{1,8}(?::\d{1,6})?)/g;
 
 // Repo kökündeki gerçek girişler — "yol mu, laf mı" ayrımının ÇAPASI budur.
 // Neden böyle: ilk koşuda 100 "kırık"ın ~70'i yanlış alarmdı — `f/2.8` diyaframdı,
