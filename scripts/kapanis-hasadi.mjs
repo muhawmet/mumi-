@@ -26,6 +26,7 @@ import { join, basename, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { lintFile } from './prompt-lint.mjs';
 import { dersleriAyikla } from './ders-bankasi-durumu.mjs';
+import { dunyaOnerisi, onerimarkdown } from './dunya-onerisi.mjs';
 import {
   PARSER_VERSION,
   slugify,
@@ -739,7 +740,17 @@ function render(h) {
     if (libraryHits.length) {
       L.push(`\`${w.worldId}\` için kütüphane adayları (\`src/core/SURGERY_DATA.json\` — **kod eğilmez**):`);
       L.push('');
-      for (const { cls, frames } of libraryHits) L.push(`- ${cls.lesson} (kare: ${frames.join(', ')})`);
+      // 2026-08-02 ölçümü: burası eskiden yalnız konserve cümleyi basıyordu — worldId yok,
+      // alan adı yok, mevcut metin yok. Rapor DOĞRUYDU ve UYGULANAMAZDI: 12 hasat, 0 kütüphane
+      // düzenlemesi. Artık kusur bir ADRESE çevriliyor: hangi alan, o alan bugün ne diyor.
+      for (const { cls, frames } of libraryHits) {
+        L.push(`### ${cls.lesson}`);
+        L.push('');
+        for (const satir of onerimarkdown(
+          dunyaOnerisi({ worldId: w.worldId, kusurKey: cls.key, kusur: cls.lesson, frames, kareler: frames }),
+        )) L.push(satir);
+        L.push('');
+      }
     } else {
       L.push('Bu hasatta **dünya-yerel kusur çıkmadı** — bulunan kusurların hepsi yasa/ders katmanında.');
       L.push('Kütüphaneye yazılacak bir şey yok; sessiz geçilmiyor, açıkça yazılıyor.');
