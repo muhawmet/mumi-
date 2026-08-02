@@ -31,7 +31,8 @@
           },
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/hasat-gate.sh",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/hasat-gate.mjs"],
             "timeout": 30
           }
         ]

@@ -241,18 +241,24 @@ describe('ders bankası kanalı — banka üretime bağlı kalır', () => {
 // gate.sh'ın kendi 0b yasasını ("sessiz geçiş yasak") hook altyapısının kendisine uygular.
 describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşleşir', () => {
   const settings = JSON.parse(read('.claude/settings.json')) as {
-    hooks?: Record<string, Array<{ hooks?: Array<{ type?: string; command?: string }> }>>;
+    hooks?: Record<string, Array<{ hooks?: Array<{ type?: string; command?: string; args?: string[] }> }>>;
   };
 
+  // 2026-08-02 ölçümü: bu tarama YALNIZ `.sh` eşliyordu. Yani modele gerçekten ULAŞAN iki
+  // hook — buddy.mjs ve oturum-durumu.mjs — meta-duvarda hiç doğrulanmıyordu; silinseler ya da
+  // yeniden adlandırılsalar testler yeşil kalırdı. Duvarın kendi kör noktası, tam olarak
+  // duvarın kapattığı kusur sınıfı. Tarama artık `.mjs`'i ve exec-form `args` dizisini de görür.
   function hookPaths(): string[] {
     const paths: string[] = [];
     for (const group of Object.values(settings.hooks ?? {})) {
       for (const entry of group) {
         for (const h of entry.hooks ?? []) {
-          if (h.type !== 'command' || !h.command) continue;
-          // "$CLAUDE_PROJECT_DIR"/... ya da bash "$CLAUDE_PROJECT_DIR"/... → repo-göreli yol
-          const m = h.command.match(/\.claude\/hooks\/[A-Za-z0-9._-]+\.sh/);
-          if (m) paths.push(m[0]);
+          if (h.type !== 'command') continue;
+          // "$CLAUDE_PROJECT_DIR"/x.sh · bash "$CLAUDE_PROJECT_DIR"/x.sh · node + args:[".../x.mjs"]
+          for (const s of [h.command ?? '', ...(h.args ?? [])]) {
+            const m = s.match(/\.claude\/hooks\/[A-Za-z0-9._-]+\.(?:sh|mjs)/);
+            if (m) paths.push(m[0]);
+          }
         }
       }
     }
@@ -263,12 +269,16 @@ describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşle�
     expect(Object.keys(settings.hooks ?? {})).toEqual(
       expect.arrayContaining(['PreToolUse', 'SessionStart', 'PostToolUse']),
     );
-    expect(hookPaths().length).toBeGreaterThanOrEqual(3);
+    expect(hookPaths().length).toBeGreaterThanOrEqual(4);
   });
 
   test.each(hookPaths())('%s hem VAR hem ÇALIŞTIRILABİLİR (exit 126 bir daha saklanmaz)', (rel) => {
     const abs = resolve(REPO, rel);
     expect(existsSync(abs), `${rel} settings.json'da kayıtlı ama dosya yok`).toBe(true);
+
+    // `.mjs` hook'ları `node <yol>` ile çağrılır — exec bitine İHTİYAÇ DUYMAZ (oturum-durumu.mjs:8-9).
+    // Onlarda 100755 aramak Windows'ta kapıyı kalıcı kırmızı yapardı; ölçülen tek şart VAR olmaları.
+    if (rel.endsWith('.mjs')) return;
 
     // 2026-07-28 (Windows ölçümü): bu hüküm ÖNCE `statSync().mode` bakıyordu ve Mami'nin
     // BİRİNCİL makinesinde asla yeşil olamıyordu — NTFS'te exec biti yoktur, mod daima 666.

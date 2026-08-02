@@ -11,8 +11,13 @@
 // "hasat GÜNCEL mi" diye sorar. Taşıma biçimi önemsiz.
 //
 // Neden bloke etmez: hasat Mami'nin onayına giden ADAY üretir, otomatik ders yazmaz (M7).
-// Blokesi olan kapı burada yanlış olurdu — ama sessiz geçen kapı daha yanlış. Her zaman
-// exit 0, çıktı stderr'e.
+// Blokesi olan kapı burada yanlış olurdu — ama sessiz geçen kapı daha yanlış. Her zaman exit 0.
+//
+// Neden stdout, stderr DEĞİL (2026-08-02 ölçümü): SessionStart'ta modele YALNIZ stdout girer.
+// Bu dosya 12 çıktı çağrısının 12'sini stderr'e yazıyordu → canlı ölçüm stdout 0 bayt /
+// stderr 1692 bayt. Yani kapı doğru ölçüyor, sonucu kimse görmüyordu; stderr'de üç gerçek
+// bekleyen iş duruyordu. "1.858 satır aday / 7 onaylı ders" olayının mekanizması budur.
+// Doğru desen repoda zaten vardı ve uygulanmamıştı: oturum-durumu.mjs:4-6 ve :11-13.
 //
 // ÖLÇEMEDİ ≠ TEMİZ: ön koşul düşerse sessizce geçmez, yüksek sesle "ÖLÇEMEDİ" der.
 
@@ -20,7 +25,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const say = (s) => process.stderr.write(`${s}\n`);
+const say = (s) => process.stdout.write(`${s}\n`);
 
 // Proje kökü: önce kendi yerinden (.claude/hooks/ → ../..), sonra CLAUDE_PROJECT_DIR.
 // cwd'ye GÜVENİLMEZ — hook'un hangi dizinden çağrıldığı sözleşme değil.
