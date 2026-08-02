@@ -25,6 +25,7 @@ import { readFileSync, existsSync, readdirSync, writeFileSync, statSync } from '
 import { join, basename, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { lintFile } from './prompt-lint.mjs';
+import { dersleriAyikla } from './ders-bankasi-durumu.mjs';
 import {
   PARSER_VERSION,
   slugify,
@@ -866,12 +867,30 @@ function checkProjects() {
     rows.push(row);
   }
   // Sahipsiz hasat dosyaları: klasörü artık olmayan raporlar. Sessiz atlanmaz.
+  //
+  // AMA: çok-projeli SENTEZ sahipsiz değildir. Ölçüldü (2026-08-02) — repodaki en iyi
+  // öğrenme belgesi (birden çok projenin adaylarını tekilleştirip kanıtlayan sentez) kapıda
+  // "kaynak klasör yok" diye HATA olarak listeleniyordu. Kapı biçimi tanıyordu, değeri
+  // tanımıyordu. Ayrım ADA göre değil İÇERİĞE göre yapılır (bu repoda ada bakan her
+  // doğrulayıcı kör çıktı): banka-biçimli satırları İKİDEN ÇOK projeye atıf yapıyorsa sentezdir.
   const claimed = new Set(rows.map((r) => r.harvest).filter(Boolean));
-  const orphans = [...byId.values(), ...legacy]
-    .filter((x) => !claimed.has(x.file))
-    .map((x) => ({ file: x.file, dir: x.meta?.project?.dir ?? '(metadata yok)' }));
+  const unclaimed = [...byId.values(), ...legacy].filter((x) => !claimed.has(x.file));
 
-  return { rows, orphans, ok: rows.every((r) => r.status === 'OK') };
+  const orphans = [];
+  const syntheses = [];
+  for (const x of unclaimed) {
+    let projeler = 0;
+    let ders = 0;
+    try {
+      const dersler = dersleriAyikla(readFileSync(x.path, 'utf8'));
+      ders = dersler.length;
+      projeler = new Set(dersler.map((d) => d.proje)).size;
+    } catch { /* okunamayan dosya sentez sayılmaz; aşağıda sahipsiz olarak raporlanır */ }
+    if (projeler > 1) syntheses.push({ file: x.file, ders, projeler });
+    else orphans.push({ file: x.file, dir: x.meta?.project?.dir ?? '(metadata yok)' });
+  }
+
+  return { rows, orphans, syntheses, ok: rows.every((r) => r.status === 'OK') };
 }
 
 // ---------------------------------------------------------------------------
@@ -902,6 +921,9 @@ if (isMain) {
     }
     for (const o of res.orphans) {
       console.log(`   · (sahipsiz hasat) ${o.file}  — kaynak klasör "${o.dir}" Biten/ altında yok`);
+    }
+    for (const s of res.syntheses) {
+      console.log(`   · (sentez) ${s.file}  — ${s.ders} aday ders, ${s.projeler} proje · hata değil, ONAY bekliyor`);
     }
     console.log(`\n   ${res.rows.filter((r) => r.status === 'OK').length}/${res.rows.length} güncel.`);
     console.log('   node scripts/kapanis-hasadi.mjs --all   (çıktı ADAY; APPROVED.md\'ye yalnız Mami taşır)');

@@ -38,6 +38,20 @@ if (!root) {
   process.exit(0);
 }
 
+// Ders bankası debisi — hasat tazeliğinden AYRI ölçüm ve her dalda basılır.
+// Sebep (2026-08-02): bu kapı yalnız "hasat edildi mi" diye soruyordu ve hepsi hasat
+// edilmişse "✅ güncel" deyip çıkıyordu. Ama döngü orada kopmuyor, ONAY adımında kopuyor:
+// 43 kopyala-yapıştır hazır aday beklerken banka 7 satırda duruyor ve yedisi de tek projeden.
+// Yani kapı, döngünün tam koptuğu noktada yeşil rapor veriyordu.
+async function dersSatirlari() {
+  try {
+    const m = await import(pathToFileURL(join(root, 'scripts', 'ders-bankasi-durumu.mjs')).href);
+    return m.durumSatirlari(m.dersBankasiDurumu(root));
+  } catch (e) {
+    return [`[hasat] ders bankası ÖLÇEMEDİ (temiz demek değil): ${e?.message ?? e}`];
+  }
+}
+
 try {
   const mod = await import(pathToFileURL(join(root, 'scripts', 'kapanis-hasadi.mjs')).href);
   const res = mod.checkProjects();
@@ -45,6 +59,10 @@ try {
 
   if (!notOk.length && !res.orphans.length) {
     say(`[hasat] ✅ ${res.rows.length} biten projenin hepsi güncel (${mod.PARSER_VERSION}).`);
+    for (const s of res.syntheses ?? []) {
+      say(`[hasat]    · (sentez) ${s.file} — ${s.ders} aday ders, ${s.projeler} proje · ONAY bekliyor`);
+    }
+    for (const s of await dersSatirlari()) say(s);
     process.exit(0);
   }
 
@@ -58,9 +76,13 @@ try {
   say(`[hasat] ⚠️ ${res.rows.length - notOk.length}/${res.rows.length} proje güncel. Bekleyenler:`);
   for (const r of notOk) say(`[hasat]    · ${r.project}  [${r.status}]  ${r.detail}`);
   for (const o of res.orphans) say(`[hasat]    · (sahipsiz) ${o.file} — kaynak klasör "${o.dir}" yok`);
+  for (const s of res.syntheses ?? []) {
+    say(`[hasat]    · (sentez) ${s.file} — ${s.ders} aday ders, ${s.projeler} proje · hata değil, ONAY bekliyor`);
+  }
   say('[hasat] Kapanış hasadı yapılmadan biten video sadece bir klasördür.');
   say('[hasat]   node scripts/kapanis-hasadi.mjs --all    (ERROR verenler Mami kararı bekler)');
   say("[hasat] Çıktı ADAY — APPROVED.md'ye yalnız Mami taşır.");
+  for (const s of await dersSatirlari()) say(s);
 } catch (e) {
   // Kapının kendi çöküşü sessiz geçmez: ölçemediğini SÖYLER.
   say(`[hasat] kapı ÖLÇEMEDİ (temiz demek değil): ${e?.message ?? e}`);
