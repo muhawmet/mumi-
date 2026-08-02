@@ -26,6 +26,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [BUL → Mami SEÇER → onar](mamilas-bul-sec-onar.md) — hata avının çıktısı problem listesidir, kod değil. Körleme regex yasak.
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
 - [Sürekli push emri](mamilas-surekli-push-emri.md) — her iş parçasından sonra commit+push, çöp dışarıda, sorulmaz.
+- [Skill kanonu GİT](mamilas-skill-kanonu-git.md) — bir skill adı yalnız `.claude/skills`'te yaşar; canlı yüzeydeki ikiz repo nüshasını gölgeler ve yazdığın kuralı öldürür. Duvar: `skillSurface.test.ts`.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
 - [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Tam metin `agents/MAMI-ZEVKI.md`.
 - [Hal logu](mamilas-hal-logu.md) — tarih · ne dedi · ne yardım etti · ne çöktürdü. Sorulmadan desen okunmaz.
