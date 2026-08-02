@@ -135,10 +135,13 @@ Bilinen NB2 hata kalıpları: `memory/mamilas-nb2-hata-katalogu.md`.
 
 ## KİLİT 4 — Denetim (tek geçiş, sabit kıstas)
 
-Kareye **bir kez** bak. O geçişte hem motion hem varsa revize yazılır. Kıstas sırası:
+Kareye **bir kez** bak. O geçişte hem motion hem varsa revize yazılır.
 
-1. VO ↔ sahne uyumu  2. bozuk/garbled yazı  3. yanlış cast  4. fazla/İngilizce yazı
-5. world/firewall ihlali  6. süreklilik (karakter, hero-prop, mekân)  7. void arka plan
+**Kıstas sırası:** `agents/PROMPT-YASASI.md` **§1a** — on madde, sıra bağlayıcı, tek kaynak.
+Buradaki eski yedi maddelik kopya kaldırıldı (2026-08-02): bayatlamıştı ve yasanın en pahalı
+iki maddesini — **0 FİKİR** (§2ø) ile **9 ÇEKİMİN KENDİSİ** (§2a) — hiç taşımıyordu.
+Kilit fazında senin işin listeyi saymak değil, kilitlerin o listeyi **karşılayabilir**
+kıldığından emin olmak (tag listesi 6. maddeyi, yazı politikası 2. ve 4. maddeyi besler).
 
 **Karar:** sahne bozuksa (mekân/kompozisyon yanlış, beat tutmuyor) → **baştan üret**.
 Küçük şey değişecekse (yazı, sayı, renk, tek nesne) → **referans-edit**.

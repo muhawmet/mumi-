@@ -8,8 +8,8 @@ description: MAMILAS kare denetimi — Mami üretilmiş start frame'leri klasör
 Mami kareleri üretip klasöre atar. Bu skill onları **tek geçişte** denetler: her kare kendi VO
 cümlesiyle karşılaştırılır, sorunluya revize yazılır, sorunsuza motion yazılır.
 
-Yasa kaynağı: `agents/PROMPT-YASASI.md` (§1 daimi direktifler · §3 motion · §5 teslim seti).
-Ezberden denetleme — kıstas sırası oradan okunur.
+Yasa kaynağı: `agents/PROMPT-YASASI.md` (§1 daimi direktifler · **§1a kıstas sırası** ·
+§3 motion · §5 teslim seti). Ezberden denetleme — kıstas sırası oradan okunur.
 
 ## Ajan mimarisi — Mami'nin kuralı
 
@@ -31,26 +31,19 @@ bozar: ayrı ajanlar birbirinin kadrajını görmez, aynı prop'un iki karede de
 - `node scripts/prompt-lint.mjs <_PROMPTLAR.txt>` koş — yapısal eksikler ajanlara girdi olsun.
 
 **2. Sekans ajanları (paralel).** Her ajana verilecekler: kendi karelerinin dosya yolları · her
-karenin VO cümlesi · dünya/palet/negatif kilitleri · `PROMPT-YASASI` §1 kıstas sırası ·
+karenin VO cümlesi · dünya/palet/negatif kilitleri · `PROMPT-YASASI` §1a kıstas sırası ·
 `memory/mamilas-nb2-hata-katalogu` bilinen hata kalıpları. Her ajan kareleri **Read ile açıp
 GÖRÜR** — dosya adına ya da prompta bakarak hüküm vermek yasak.
 
-**3. Kıstas sırası (sabit, yasa §1'den).**
-0. **FİKİR (yasa §2ø)** — kareyi VO olmadan gösterip "burada ne oluyor" diye sorsan cevap
-   verilebilir mi? Görünür bir gerilim ya da değişim var mı? Yoksa kare teknik olarak kusursuz
-   ama ölüdür ve teslim edilmez. Bu madde diğer sekizinin ÜSTÜNDEDİR: onlar kusuru ölçer,
-   bu bakılmaya değer olup olmadığını ölçer.
-1. **VO ↔ sahne uyumu (EN ÖNEMLİ)** — kare o cümlenin dediğini gösteriyor mu?
-2. Bozuk/garbled yazı · 3. Yanlış cast (Türk/Anadolu) · 4. Fazla/İngilizce yazı ·
-5. World/firewall ihlali · 6. Süreklilik (karakter, hero-prop, mekân) · 7. Void arka plan
-8. **Geometri kaynaşması** — figür/nesne başka bir katı yüzeyin içine geçmiş mi (Mami buldu,
-   ajan kaçırdı: K16 ahşaba kaynaşmış figür). Yazı/cast/ten/süreklilik kalemleri bunu yakalamıyor.
-9. **ÇEKİMİN KENDİSİ** — yasa §2a. Bu madde olmadan çirkin kare TEMİZ geçiyor (ölçüldü:
-   Değerler'in kemer karesi denetimden dokunulmadan çıktı, Mami rezil dedi). Dört soru:
-   · kahraman kim, kadrajın neyi kaplıyor?
-   · kaç NET insan var? (isimsiz her yüz ~30-40 pikselde lekeye dönüyor)
-   · ışık nereden geliyor ve NEREDE BİTİYOR? (hiçbir yer kararmıyorsa yüz modellenmiyor)
-   · özne zeminden değer/renkle ayrılıyor mu, yoksa aynı tonda mı eriyor?
+**3. Kıstas sırası — `agents/PROMPT-YASASI.md` §1a.** On madde (0 FİKİR … 9 ÇEKİMİN KENDİSİ),
+sıra bağlayıcı, üstteki alttakini iptal eder. **Liste buraya kopyalanmıyor:** eskiden burada
+tam, `mamilas-director` ve `mamilas-enzim`'de eksik yaşıyordu — aynı kareye iki yüzey iki farklı
+kıstasla bakıyordu. Ajana verilen brief'te §1a'ya atıf yapılır, madde metni ezberden yazılmaz.
+
+İki madde denetimin varlık sebebidir, sekans ajanına **ayrıca** hatırlatılır: **0 FİKİR**
+(§2ø — teknik olarak kusursuz ama ölü kare teslim edilmez) ve **9 ÇEKİMİN KENDİSİ**
+(§2a — bu madde olmadan çirkin kare TEMİZ geçiyor; ölçüldü: Değerler'in kemer karesi
+denetimden dokunulmadan çıktı, Mami rezil dedi).
 
 **4. Karar — basit.**
 *Sahne bozuksa* (kompozisyon/içerik yanlış, beat tutmuyor) → **baştan üret.**

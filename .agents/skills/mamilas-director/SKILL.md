@@ -89,6 +89,46 @@ Skill çağrılınca tek hamlede context'i kur:
 Mami anlatır ya da JSON'un `exactSourceBeat`'leri script'tir. Storyboard'u öner (beat'ler JSON'da).
 **Toplu onay al.** Sonra üretime geç.
 
+## 1.5 FİKİR + PLAN KAPISI — kare yazılmadan ÖNCE, zorunlu
+
+Yasa: `agents/PROMPT-YASASI.md` **§2ø (FİKİR)** ve **§2a (PLAN)** — start-frame template'inin
+başlık bloğundaki iki satır bunlar. **Bu kapı boşken prompt yazılmaz.** Ölçüldü: Değerler'in
+34 karesinde lint sıfır kırmızı, 34/34 temas, 34/34 TEXT — Mami *"GPT'den çıkmış plastik düz
+imaj gibi"* dedi. Eksik olan slot değil, slotların içine ne konacağını belirleyen karardı.
+**Yeşil lint "temiz" demektir, "iyi" demez.**
+
+**FİKİR — tek soru (§2ø).** Bu kareyi VO olmadan birine göstersen, *"burada ne oluyor"* diye
+sorduğunda cevap verebilir mi? Cevap için karede **bir gerilim ya da bir değişim** görünür
+olmalı. Cevap yoksa kare ölüdür; başlıktaki `FİKİR:` satırı doldurulamıyorsa **kareyi yazma,
+sahneyi yeniden düşün.** EŞLİK ≠ TAŞIMA: cümlenin tekrarı olan kare bedavaya gelmiştir —
+cümle kavramı söyler, kare **kanıtı** gösterir.
+⚠ Fikir yazılmazsa ajan türün konfor alanına düşer (EDU'da gülümseyen iki çocuk, REAL'de
+parlak stüdyo ürünü). Dünya kilidi bunu engellemez: kilit **doğru** olanı tarif eder,
+**ilginç** olanı değil.
+
+**PLAN — dört soru (§2a), dördü de yazıyla cevaplanır:**
+1. **Kahraman kim** — kadrajın neyini kaplıyor? (iki çocuk ortada eşit boyda → çirkin;
+   oymalı direk kadrajın 1/3'ü, çocuk ölçek referansı → "inanılmaz")
+2. **Kaç NET insan var** — sayı yazılır. Fazlası pahalıdır: ~30-40 piksellik yüzde kimlik
+   taşınamaz. Kalabalık **gövdeyle değil eşyayla** kurulur (asılı mal, istif çanak, boş tabure).
+   ⚠ Ama `silhouette`/`unresolved silhouette` YAZILMAZ (§2d.6 — motor onu düz 2D kesme-kâğıt
+   figür çiziyor) ve **figür kadrajdan kesilmez, figür SAYISI azaltılır.**
+3. **Işık nerede BİTİYOR** — ton değil **coğrafya** yazılır (§2b.1): *"ışık şuna, şuna ve şuna
+   değer; başka hiçbir şeye değmez."* "Geç öğleden sonra güneşi" her şeyi eşit yıkar;
+   "kontrast 6:1 / dolgu yok / siyah kalır" ölçüldü ve **çalışmıyor.**
+4. **Özne zeminden nasıl ayrılıyor** — krem tulum + krem tente + krem taş aynı değerdir ve
+   özne kaybolur. Sıcak rim + arkasında karanlık oyma gibi somut bir ayrım yazılır.
+
+**+ FEDA (§2c):** her karede bir şey feda edilir ve ne olduğu PLAN satırına yazılır — bir yüz
+ışığın dışında, bir harf elin altında, bir kol kadrajla kesik, bir alan patlamış. Feda yoksa
+kare fotoğraf gibi durur; feda varsa **an** gibi durur.
+
+**+ ÇAPA (§2a mekanizma 1):** ön planda kesilen bir çapa yoksa motor tek nokta perspektifine
+düşer — özne ortada, yol ortada, iki figür yan yana eşit. Simetri **varsayılandır**, çapa onu kırar.
+
+Cevaplar prompt başlığındaki `FİKİR:` ve `PLAN:` satırlarına yazılır (`PROMPT-YASASI.md` §2
+template'i). Kapı **kare kare** işler, sekans başında bir kez değil.
+
 ## 2. EPİK IMAGE PROMPT — `imageModel` (Nano Banana 2)
 
 Her sahne için somut kareyi yaz. Teknik (temiz kaynaklardan — Google NB2 rehberi, doğrulandı):
@@ -153,14 +193,10 @@ Mami renderları bir klasöre indirir (ör. `agents/COMMAND-INBOX/<Ad>/`). Her k
 (Read ile görsel) ve **cümlesiyle (VO) karşılaştır**. Sorunlu kareye `revize.txt` yaz; **sorunsuza
 revize YOK** (Mami bunu node ile çeker).
 
-**Tarama kıstasları (öncelik sırası):**
-1. **VO ↔ sahne uyumu (EN ÖNEMLİ)** — kare, o cümlenin dediğini gösteriyor mu?
-2. **Bozuk/garbled yazı** (tahta, etiket) — okunmayan/yanlış harf.
-3. **Yanlış cast** — siyahi/asyalı YOK; Türk/Anadolu (Türkiye okulları böyle).
-4. **Gereksiz/fazla yazı**, İngilizce tabela.
-5. **World/firewall ihlali** — kara tahta→akıllı tahta, ok/ikon/diyagram, photoreal, franchise.
-6. **Süreklilik** — karakter/hero-prop drift (araba modeli değişmesi; saat/yüzük gibi anomali).
-7. **Boş/void arka plan** (premium-show ihlali).
+**Tarama kıstasları:** `agents/PROMPT-YASASI.md` **§1a** — on madde (0 FİKİR … 9 ÇEKİM),
+sıra bağlayıcı. **Buraya kopyalanmıyor:** liste bir zamanlar üç skill'de üç ayrı kopya
+halinde yaşadı, ikisi bayat kaldı ve FİKİR ile ÇEKİM maddelerini hiç almadı. Ezberden sayma,
+yasadan oku — yazarken uyguladığın kapı (§1.5) ile denetlerken uyguladığın kıstas aynı listedir.
 
 **`revize.txt` biçimi:** her blok `### dosya.png` ile başlar (node parse eder). İçerik =
 *"Use this referenced image, change ONLY: <fix>. Keep everything else identical."* Sahneyi **baştan

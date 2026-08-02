@@ -162,6 +162,50 @@ Mami'nin canlı direktifi çelişkide her zaman kazanır.
     *"keep same soft-focus, do not sharpen."* İstisna: ön plandaki kavram yazısı net olmalı.
 21. **Sorunsuz kareye revize YOK** — tek satır "temiz" listesi yeter.
 
+### §1a — KISTAS SIRASI (tek kaynak)
+
+Bu bölüm **yeni hüküm getirmez**; §18-21'in hangi sırayla uygulandığını tek yere toplar.
+Neden toplandı (2026-08-02 ölçümü): aynı liste üç skill'de üç ayrı kopya halinde yaşıyordu —
+`mamilas-director` 7 madde, `mamilas-enzim` aynı eski 7, `mamilas-denetim` 10. Yeni iki madde
+(FİKİR ve ÇEKİM) yalnız denetim kopyasına girmişti, yani **yasanın en pahalı iki maddesi yazma
+yüzeyinde yoktu, sadece denetim yüzeyinde vardı** — kusur ancak kredi yandıktan sonra
+yakalanıyordu. Maddelerin kendisi zaten yasadaydı: 0 → §2ø, 9 → §2a, 2/3/4/6 → §2d.
+
+**Sıra bağlayıcıdır: üstteki madde alttakini iptal eder.** Liste hem KARE YAZILIRKEN
+(`mamilas-director`, yazmadan önce) hem KARE DENETLENİRKEN (`mamilas-denetim`) aynen geçerlidir.
+
+0. **FİKİR** (§2ø) — kareyi VO olmadan gösterip *"burada ne oluyor"* diye sorsan cevap
+   verilebilir mi? Görünür bir **gerilim ya da değişim** var mı? Yoksa kare teknik olarak
+   kusursuz ama ölüdür ve teslim edilmez. Bu madde diğer dokuzunun ÜSTÜNDEDİR: onlar kusuru
+   ölçer, bu **bakılmaya değer olup olmadığını** ölçer.
+1. **VO ↔ sahne uyumu** (§1.7) — kare o cümlenin dediğini gösteriyor mu? EŞLİK ≠ TAŞIMA
+   (§2ø): cümlenin tekrarı olan kare bedavaya gelmiştir.
+2. **Bozuk/garbled yazı** — okunmayan/yanlış/ters harf. Yazım değil **yerleştirme** bozuluyor
+   (§2d.4): TEXT slotunda ORIENTATION cümlesi zorunlu.
+3. **Yanlış cast** — [EDU] Türk/Anadolu, ana ve arka plan dahil, sınıf yaşı açık.
+4. **Fazla ya da İngilizce yazı** — boş yüzey uydurma İngilizce doğurur (§2d.3); çözüm
+   yasaklamak değil **giydirmek**.
+5. **World / firewall ihlali** — kara tahta→akıllı tahta, ok/ikon/düz diyagram, photoreal,
+   franchise, gerçek marka.
+6. **Süreklilik** — karakter, hero-prop, mekân ve ardışık fiziksel durum (§2d.7). Çıpa
+   kimliğe konur, prop'a değil (§2d.8).
+7. **Void / boş arka plan** — premium-show ihlali.
+8. **Geometri kaynaşması** — figür ya da nesne başka bir katı yüzeyin içine geçmiş mi.
+   (Mami buldu, ajan kaçırdı: ahşaba kaynaşmış figür. Yazı/cast/ten/süreklilik kalemlerinin
+   hiçbiri bunu yakalamıyor.)
+9. **ÇEKİMİN KENDİSİ** (§2a) — dört soru, kare yazılmadan önce de denetimde de aynı:
+   · **kahraman kim**, kadrajın neyini kaplıyor?
+   · **kaç NET insan** var? (isimsiz her yüz ~30-40 pikselde lekeye dönüyor)
+   · **ışık nereden geliyor ve NEREDE BİTİYOR?** (hiçbir yer kararmıyorsa yüz modellenmiyor)
+   · **özne zeminden nasıl ayrılıyor** — değer/renk farkı mı, yoksa aynı tonda mı eriyor?
+   Bu madde olmadan çirkin kare TEMİZ geçiyor (ölçüldü: Değerler'in kemer karesi denetimden
+   dokunulmadan çıktı, Mami rezil dedi).
+
+⚠ **Kıstas ihlali otomatik revize DEĞİLDİR.** Mami'nin revize kıstası üç kalemdir (§2d):
+*"sahneyle uymuyor · bozuk yazı · yanlış şey"* — **süreklilik, palet ve üslup farkı tek başına
+revize sebebi değildir**, Mami gerektiğinde kendisi söyler. 6. madde bu yüzden *bildirilir*,
+kendiliğinden revizeye çevrilmez.
+
 ---
 
 ## 2. START-FRAME TEMPLATE — Nano Banana 2
