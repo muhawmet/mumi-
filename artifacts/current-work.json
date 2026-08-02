@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "teslim denetimi koşuldu: 53/53 sayım tutarlı · EDIT-PLAN↔VO 53/53 birebir · MOTION↔VO 46/46 birebir · motion-lint KIRMIZI 0/46 · K02 kamera kilidi yerinde · sessiz yalan yok",
-  "nextAction": "Mami 7 kareyi bassın (Farklı Kültürler_KALAN-URETIM.txt) — K49 EN ÖNEMLİSİ, referansa 2.png bağlanır",
+  "lastCompleted": "5.1.2 yarım bırakıldı bilerek: 46/53 motion yazılı, 7 kare Mami de. Faz TEMEL GÜÇLENDİRMEye çevrildi — kaynak AGY hata avı (17 kırık, 4 P0)",
+  "nextAction": "docs/ai/TEMEL-IS-LISTESI.md ile başla; birinci madde hasat hook stderr→stdout (kanıt: stdout 0 bayt / stderr 1692 bayt)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-07-31T15:37:37.449Z",
+  "updatedAt": "2026-08-02T08:38:12.898Z",
   "updatedBy": "claude",
-  "baseCommit": "b697747"
+  "baseCommit": "b650386"
 }

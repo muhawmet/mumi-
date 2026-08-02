@@ -18,6 +18,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Nefes kapısı EMİRDİR](mamilas-nefes-kapisi-emirdir.md) — kapı ateşlediyse yazılır; rapor duvarına gömülen teklif olmamış sayılır. İzin değil zorunluluk.
 - [Duyu ve ikinci göz yetkisi](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex = ikinci göz, ajan = eller. Sormadan kullanılır; uzanmamak kusurdur.
 - [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans.
+- [Büyük okuma AGY de](mamilas-buyuk-okuma-agy-de.md) — usage en kritik kaynak; 200 satır üstü okuma AGY ya da ajana, Claude doğrular. AGY headless kırık, kök neden yazılı.
 - [Interrupt ajanı öldürüyor](mamilas-interrupt-ajani-olduruyor.md) — her mesaj arka plandaki BÜTÜN ajanları kesiyor (`stoppedByUser`); uzun tek-parça iş ajana verilmez.
 - [ADHD skill araştırması](mamilas-adhd-skill-arastirmasi.md) — cevabı kısaltan aile bize uyar, işi bölen aile task-initiation için; kapı sekans sınırında, durum statusline'a.
 - [Mami loop'ta + İSTİŞARE](mamilas-mami-is-in-the-loop.md) — iş almak "hemen yapmak" değil; kısıtı teknikle aşmadan önce sor, 1000 videoluk deneyim masada.

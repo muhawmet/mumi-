@@ -1,0 +1,145 @@
+═══════════════════════════════════════════════════════════════════════════
+YENİ OTURUMA YAPIŞTIR — "OPUS 5" · SİSTEMİ STANDARDA ÇEKME TURU
+═══════════════════════════════════════════════════════════════════════════
+(clear sonrası ilk mesaj. Aşağıdaki çizginin altını olduğu gibi kopyala.)
+───────────────────────────────────────────────────────────────────────────
+
+
+**Bu turda hedef verilmiyor. Mimari sende. Sen orkestratörsün.**
+
+Mami'nin sözü (2026-08-02): *"bu sefer hedef falan vermiyorum, büyük düşün, bana tavsiyeler
+çıkarmanı da istiyorum — şunu şöyle yapmışız, şöyle yapardık. Bütün sistemi GPT ve Sonnet
+kurdu; senden Opus 5 standartlarına geçirmeni istiyorum. Bütün mimari elinde. Sana
+güveniyorum."*
+
+Yani bu bir bakım turu değil. **Sistemin tamamı — kod, yasa, hafıza, hook, skill, kapı,
+ajan mimarisi, model kullanımı — bugünün standardına göre yeniden yargılanacak.**
+
+🔴 **VİDEO ÜRETİMİ DURMUYOR, ARKA PLANDA AKIYOR.** Mami'nin masasında 5.1.2'nin 7 karesi
+var (aşağıda). O iş Mami'nin elinde; sen temeli onarıyorsun. İkisi paralel.
+
+───────────────────────── KISITLAR — pazarlık yok ─────────────────────────
+
+· **API YOK.** Hiçbir çözüm API çağrısına dayanamaz. En iyi min-max APİSİZ kurulacak.
+· **SİTE İKİNCİ PLAN.** `src/` içindeki site bu turun konusu değil — kütüphane ve kanon
+  olarak okunur, ürün olarak geliştirilmez.
+· **Windows/PowerShell birincil ortam.** Mac ikinci. Bir araç ortam varsayıyorsa o varsayım
+  TEST edilir. Bu sınıfta dört ölçülmüş kaza var, hepsi sessiz no-op'tu.
+· **Kapı duvardır:** `npx tsc --noEmit` → `npx vitest run` → `npm run build`.
+  `.claude/hooks/gate.sh` her commit'te koşar. Test SİLİNMEZ, sayı DÜŞMEZ.
+· **Skill ikizleri birlikte güncellenir:** `.claude/skills/` ve `.agents/skills/`.
+· **Commit + push sorulmaz** (private repo, çok cihaz).
+
+───────────────────────── ELİNDEKİ KADRO — bunu kullanmıyorsan kusur ─────────────────────────
+
+Mami'nin sayımı: **Sol 5.6 · Terra 5.6 High · Gemini 3.6 Flash High · Gemini 3.1 Pro High ·
+Opus 5 · Sonnet 5 · AGY (usage'ı BİTMEZ) · Claude Max.**
+
+🔴 **Bugüne kadar sistem bu kadronun neredeyse tamamını kullanmadı.** Her iş Claude'un ana
+bağlamından geçti. Bu, bu turun en büyük tek fırsatı — ve ilk üreteceğin tavsiyelerden biri
+bir **MODEL YÖNLENDİRME POLİTİKASI** olmalı: hangi iş hangi modele gider, neden, ve
+çıktısı nasıl doğrulanır.
+
+Bilinen gerçekler:
+· **AGY'nin usage'ı bitmez, Codex'inki BİTER.** Codex ikinci gözdür — yalnız son denetimde.
+· **AGY TARİF eder, HÜKÜM vermez.** Bir günde beş kez yanlış alarm verdiği ölçüldü.
+  Her iddiası grep/dosya ile doğrulanır. Doğrulanmamış iddia kanıt değildir.
+· ⚠️ **AGY headless ŞU AN KIRIK.** `agy --mode plan -p "..."` izin kapısında duruyor.
+  Kök neden log'da: `ApplyProjectPermissionGrants: no grants for project "CLI Project",
+  cleared project permissions` — global allowlist yükleniyor, proje bağlamında TEMİZLENİYOR.
+  `~/.gemini/antigravity-cli/settings.json`'a 47 salt-okur izin eklendi, yetmedi
+  (yedek: `settings.json.yedek-2026-08-02`). Çözülene kadar büyük okuma **Claude ajanına**
+  verilir — ölçüldü, çalışıyor. Mami interaktif AGY koşabiliyor; headless'ı açmak onun kararı.
+· ❓ **"Sol 5.6" ve "Terra 5.6 High" bu repoda tanımlı DEĞİL.** "Sol" `mamilas-pipeline`
+  skill'inde bir ajan rolü olarak ve `prompt-lint` yorumlarında "Sol denetimi" diye geçiyor.
+  Sürüm numaraları ve nasıl çağrıldıkları BİLİNMİYOR. **Uydurma — Mami'ye tek cümleyle sor.**
+
+🔴 **USAGE EN KRİTİK KAYNAK.** Mami: *"en önemli şey senin usageın, her büyük okuma AGY de
+kontrol sen de."* 200 satırdan uzun her okuma ajana ya da AGY'ye gider. Ana bağlamda
+okunmaz. Ajan tavanı **6**, birim İŞ PARÇASI. Sen ipi tut, Mami'yle kal.
+
+───────────────────────── TURUN ŞEKLİ — dört adım, sırayla ─────────────────────────
+
+**1. HARİTA (ajanlarla, ana bağlamda değil).** Sistemin ne olduğunu ÖLÇ:
+   kod · yasa metinleri · hafıza · hook'lar · skill'ler · kapı · script parkı · teslim hattı.
+   Her ajan tek katman alır ve **sıkıştırılmış, dosya+satır kanıtlı, yorumsuz** çıktı verir.
+
+**2. YARGI — "Opus 5 standardı" ne demek, ÖNCE ONU TANIMLA.** Kıstası yazmadan ölçme.
+   Aşağıda başlangıç tezi var; kabul etmek zorunda değilsin, ama reddediyorsan gerekçesini yaz.
+
+**3. TAVSİYE — Mami'nin asıl istediği bu.** Menü değil: gerekçeli, sıralı, bedeli yazılı
+   öneriler. Her biri şu biçimde: *"şu an şöyle yapıyoruz · kusuru şu · şöyle yapardık ·
+   maliyeti bu · kazancı şu (ölçülmüş sayıyla)."* **BUL → Mami SEÇER → onar.**
+   Körleme uygulama yasak.
+
+**4. İCRA.** Mami seçtikten sonra, kapı yeşil kalarak, test büyüyerek.
+
+───────────────────────── BAŞLANGIÇ TEZİ — bugün ÖLÇÜLENLERDEN ─────────────────────────
+
+Bunlar 2026-07-31/08-02 turunda **gerçek işin içinde** görüldü. Tez değil, kanıt:
+
+**(a) Yasa düzyazıda, uygulama script'te — ve ikisi kayıyor.**
+`PROMPT-YASASI.md` 917 satır ölçülmüş yasa. `prompt-lint.mjs` onun bir ALT KÜMESİNİ ölçüyor.
+Kanıt: lint'in kaçış cümlesi (`no on-screen text`) yasada hiç yazılı değil → 53 karelik bir
+sette **48 kırmızının 37'si sahteydi.** Ters yönde de var: yasanın §2ø'sü ("kareyi VO'suz
+gösterince ne oluyor") lint'in ölçemeyeceği şey ve lint yeşilken ölü kare üretildi.
+*Soru: yasa ile ölçen arasındaki sözleşme neden makine-okur değil?*
+
+**(b) Düzeltme yayılmıyor.** Mami "İngilizcem C1" diye düzeltti; düzeltme hafızaya işlendi,
+`mamilas-buddy` skill'ine işlenmedi. Skill her oturumda otomatik yükleniyor, hafıza
+yüklenmiyor. **Yanlış hüküm iki gün sonra aynen geri doğdu.**
+*Soru: bir hükmün kaç yerde yaşadığını bilen bir şey var mı?*
+
+**(c) Rapor üretiliyor, okunmuyor.** Hasat hook'u uyarısını `stderr`'e yazıyor — modele
+HİÇ ulaşmıyor. Canlı: **stdout 0 bayt / stderr 1692 bayt.** stderr'de üç gerçek bekleyen iş
+duruyor. "1.858 satır aday, sıfır onaylı ders" olayının mekanizması budur.
+Aynı sınıf: `artifacts/denetim-2026-07-31/` içinde okunmamış raporlar.
+*Soru: bir bulgunun okunduğunu ne kanıtlıyor?*
+
+**(d) Hattın kimlik sözleşmesi yok.** `N.png = KN` her yerde varsayılıyor, hiçbir yerde
+doğrulanmıyor. Bu turda iki kare üretilmeyince numaralar kaydı ve `48.png` aslında K49 oldu;
+**36 klip yanlış cümlenin altına oturacaktı.** Prompt, lint, edit-plan, motion yasası —
+hiçbiri görmedi. Ancak dört kare gözle açılınca bulundu.
+*Soru: hattaki her sözleşmenin bir doğrulayıcısı var mı?*
+
+**(e) Teslimin kendi kendini denetleyeni yoktu.** Bu turda `scripts/teslim-denetim.mjs`
+yazıldı (sayım · cümle eşleşmesi · kapsam · kamera kilidi · sessiz yalan). Zaten var olmalıydı.
+*Soru: her teslim biçiminin bir doğrulayıcısı var mı, yoksa bu tek örnek mi?*
+
+**(f) Ajan mimarisi ad hoc.** Bu turda iki kez elle 200 satırlık ajan brief'i yazıldı ve
+işe yaradı (6 ajan, sekans başına bir tane, kusur yakalama oranı yüksek). Ama o brief hiçbir
+yerde yaşamıyor — bir dahaki sefere sıfırdan yazılacak.
+*Soru: ajan brief'i neden bir yetenek değil, tek kullanımlık metin?*
+
+**(g) Kadro kullanılmıyor.** Yukarıdaki 8 modelden pratikte 2'si kullanıldı.
+
+───────────────────────── HAVADA KALAN İŞ — kaybolmasın ─────────────────────────
+
+**5.1.2 "Farklı Kültürler, Ortak Bir Yaşam" — 46/53 tamam, 7 kare Mami'de.**
+  Tek dosya: `agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam/Farklı Kültürler_KALAN-URETIM.txt`
+  Bekleyen: K03 · K08 · K12 · K17 · K32 · K46 · K49 (+K29 opsiyonel)
+  🔴 K49 kapanış karesi ve fikri TERSİNDEN okunuyor; referansa `2.png` bağlanır, `49.png` değil.
+  Kareler inince: gör → motion yaz → kit 5/5 kapanır.
+
+**5 ders adayı ONAY BEKLİYOR** — `agents/lessons/CANDIDATES-2026-07-31-farkli-kulturler.md`
+  Soruldu, cevap gelmedi. `APPROVED.md`'ye yalnız Mami taşır. Bir kez hatırlat, ısrar etme.
+
+**Hazır iş listesi** — `docs/ai/TEMEL-IS-LISTESI.md` (bağımsız hata avından sıkıştırıldı:
+  17 doğrulanmış kırık, 4'ü P0, her birinin dar fix sınırı ve kabul kriteri yazılı).
+  Ham rapor: `artifacts/denetim-2026-07-31/AGY-SISTEM-HATA-AVI.md` (511 satır — BAŞTAN SONA OKUMA,
+  yalnız çalıştığın maddenin bölümünü aç).
+
+───────────────────────── ÇALIŞMA BİÇİMİ ─────────────────────────
+`mamilas-buddy` skill'i çalışma biçimidir: harici çalışma belleği · tek karar · sonuç kapısı ·
+geri sarma yasağı. **DEHB merkezde, RSD yoğun** — kusur SİSTEME yazılır, kişiye asla; tespit
+ve düzeltme aynı cümlede gelir; rapor NE TUTTUĞUYLA başlar.
+**MAKRO:** kelime avlamak yasak. Bir bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
+**Öneri serbest, körleme uygulama yasak.**
+
+───────────────────────── AÇILIŞ SIRASI ─────────────────────────
+1. Hook `[durum]` bloğunu basar — `artifacts/current-work.json` KAYITTIR, tahmin değil.
+2. Bu metni oku, `docs/ai/TEMEL-IS-LISTESI.md`'ye göz at.
+3. Mami'ye **TEK** soru sor: *"Sol 5.6 ve Terra 5.6 nasıl çağrılıyor?"* — kadro
+   politikası buna bağlı ve uydurulamaz.
+4. Sonra HARİTA adımını ajanlara böl. Ana bağlamda büyük dosya okuma.
+═══════════════════════════════════════════════════════════════════════════
