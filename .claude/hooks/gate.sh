@@ -236,6 +236,24 @@ Duzelt, ya da bilerek geciyorsan:
   )
 fi
 
+# --- 6c. BELGE BAG DENETIMI (BLOKE EDER) ---
+#
+# Neden bloke ediyor: bir belgedeki `dosya:satir` atfi bir SOZLESMEDIR ve tek yonlu kayar —
+# kod tasinir, atif donar, okuyan ajan yanlis yere bakar. Olculdu (2026-08-02): tek bir
+# katmanda 10 kirik atif, canli taramada 28. Ikisi de kimseye gorunmuyordu.
+# 0.06 saniye suruyor; ucuz ve deterministik, o yuzden uyari degil DUVAR.
+# Bilerek var olmayan hedef gosteren atif icin gerekce yazilir:  <!-- bag-yok: neden -->
+# Gerekcesiz istisna kabul edilmez, gerekceliler ayri sayilir ve basilir.
+if ! BAG_OUT=$(node scripts/baglar.mjs --strict --kisa 2>&1); then
+  fail "BELGE BAGLARI KIRIK
+
+$BAG_OUT
+
+Bir belge var olmayan bir dosyaya ya da olmayan bir satira atifta bulunuyor.
+Duzelt, ya da bilerek gosteriyorsan o satirin ustune gerekce yaz:
+  <!-- bag-yok: neden var olmayan bir seyi gosteriyor -->"
+fi
+
 # --- 6b. DURUM KAYDI SAPMASI (UYARI — bloke etmez) ---
 # `scripts/current-work.mjs --check` diskle kaydı karsilastirir ve sapma varsa exit 1 verir.
 # Kendi yorumunda "kapiya BAGLANMAZ" yaziyordu ve hicbir sey onu cagirmiyordu — yani sapma

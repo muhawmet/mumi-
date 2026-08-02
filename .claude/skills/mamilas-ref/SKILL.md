@@ -41,8 +41,9 @@ Referans buraya bir obje olarak girer. Başka HİÇBİR yere ref listesi yazılm
 | Simetri-kilitli bir ref (nadir) | — | id'yi `brain.ts:971` `SYMMETRY_LOCK_REFS` set'ine ekle (yalnız gerçekten simetri dayatıyorsa) |
 | One Piece dünyası ref'i | one_piece_toei | dünya materialId **'none'** (CLAUDE.md) |
 
+<!-- bag-yok: public/refs/ dizini hiç yok; cümlenin söylediği şey tam da bu -->
 ## 3. Preview (opsiyonel prosedürel önizleme)
-`preview` bir dosya yolu DEĞİL (`public/refs/` boş). `src/components/refScenes.ts` → `REF_SCENES` (satır ~904) içindeki prosedürel çizim anahtarıdır; `hasRefScene(id)` guard'lar, tanımsızsa galeri default'a düşer (crash yok).
+`preview` bir dosya yolu DEĞİL — `public/refs/` diye bir dizin hiç yok (2026-08-02 ölçümü: "boş" değil, MEVCUT DEĞİL). `src/components/refScenes.ts` → `REF_SCENES` (satır ~904) içindeki prosedürel çizim anahtarıdır; `hasRefScene(id)` guard'lar, tanımsızsa galeri default'a düşer (crash yok).
 - **Default yeter** → `preview`'i mevcut yakın bir REF_SCENES anahtarına ver ya da bırak.
 - **Bespoke önizleme istiyorsan** → `refScenes.ts` `REF_SCENES`'e `<preview-id>: SceneFn` ekle (prosedürel, asset değil).
 

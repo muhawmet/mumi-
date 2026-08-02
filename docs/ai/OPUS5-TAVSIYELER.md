@@ -151,6 +151,7 @@ hafızaya ve **proje** buddy skill'ine yazıldı — ama runtime'da `~/.claude/s
 (324 satır) yükleniyor ve **o dosyada hüküm hiç yok**. Yanlış hüküm iki gün sonra aynen geri doğdu.
 **Bu kusurun yapısal koşulu şu an duruyor.**
 
+<!-- bag-yok: T6 henüz uygulanmadı; bu belge Mami kararından sonra doğar -->
 **Şöyle yapardık:** `docs/ai/HUKUMLER.md` — her hüküm bir satır: `hüküm · kanonik yer · yaşadığı
 diğer yüzeyler`. Yanına bir test: her yüzeyi grep'ler, metin kaymışsa kırmızı. Sayısal hükümler
 (kelime bandı gibi) **tek yerden türetilir**, ikinci nüsha yazılmaz.

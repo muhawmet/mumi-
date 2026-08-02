@@ -121,7 +121,58 @@ describe('denetle — bütün', () => {
   });
 });
 
+describe('gerekçeli istisna — susturma değil, kayıt', () => {
+  test('markör PARAGRAFI kapsar, boş satırda DÜŞER', () => {
+    const kok = sahneKur();
+    try {
+      const md = join(kok, 'docs', 'g.md');
+      writeFileSync(md,
+        '<!-- bag-yok: bu dosya bilerek yok -->\n' +
+        'birinci satır `scripts/yok1.mjs`\n' +
+        'ikinci satır `scripts/yok2.mjs`\n' +
+        '\n' +                                   // ← gerekçe burada düşer
+        'gerekçesiz `scripts/yok3.mjs`\n');
+      const r = denetle([md], kok);
+      expect(r.gerekceli.map((k) => k.yol).sort()).toEqual(['scripts/yok1.mjs', 'scripts/yok2.mjs']);
+      expect(r.kirik.map((k) => k.yol)).toEqual(['scripts/yok3.mjs']);
+      expect(r.gerekceli[0].gerekce).toBe('bu dosya bilerek yok');
+    } finally {
+      rmSync(kok, { recursive: true, force: true });
+    }
+  });
+
+  test('gerekçe sayfanın kalanına sızmaz (iki paragraf arası)', () => {
+    const kok = sahneKur();
+    try {
+      const md = join(kok, 'docs', 'h.md');
+      writeFileSync(md, '<!-- bag-yok: sebep -->\na `scripts/yok1.mjs`\n\nb\n\nc `scripts/yok2.mjs`\n');
+      const r = denetle([md], kok);
+      expect(r.kirik.map((k) => k.yol)).toEqual(['scripts/yok2.mjs']);
+    } finally {
+      rmSync(kok, { recursive: true, force: true });
+    }
+  });
+});
+
+describe('tarihli kayıt — arşiv sınıfı taranmaz', () => {
+  test('adında tarih olan dosya ve CANDIDATES-/HASAT- atlanır, atlananlar SAYILIR', async () => {
+    const { TARIHLI } = await import('./baglar.mjs');
+    expect(TARIHLI.test('/docs/DEGISIM-GUNLUGU-2026-07-10.md')).toBe(true);
+    expect(TARIHLI.test('/agents/lessons/CANDIDATES-plastik.md')).toBe(true);
+    expect(TARIHLI.test('/agents/lessons/HASAT-5-surtunme.md')).toBe(true);
+    expect(TARIHLI.test('/docs/ai/faz-icraat.md')).toBe(false);
+    expect(TARIHLI.test('/CLAUDE.md')).toBe(false);
+  });
+});
+
 describe('canlı repo — ölçüm gerçekten koşuyor', () => {
+  test('canlı belgelerde KIRIK atıf YOK (kapı bu satıra bağlı)', async () => {
+    const { mdDosyalari, denetle: d, ROOT } = await import('./baglar.mjs');
+    const r = d(mdDosyalari(ROOT), ROOT);
+    const liste = r.kirik.map((k) => `${k.kaynak}:${k.satir} → ${k.yol} [${k.durum}]`).join('\n');
+    expect(r.kirik, `kırık atıf:\n${liste}`).toHaveLength(0);
+  });
+
   test('canlı belgeler taranıyor ve atıf sayısı sıfır değil (tarama sessizce boşalmasın)', async () => {
     const { mdDosyalari, denetle: d, ROOT } = await import('./baglar.mjs');
     const dosyalar = mdDosyalari(ROOT);

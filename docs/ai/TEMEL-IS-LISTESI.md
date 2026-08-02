@@ -36,7 +36,24 @@ Git sync makbuzu ölçülmeden 'çözüldü' deme."
 
 ## P0 — 4 madde
 
-### 1. Kapanış-hasat uyarısı SessionStart'ta Claude bağlamına girmiyor
+### 1. ✅ KAPANDI (2026-08-02, `962074a` + kanal testi) — Kapanış-hasat uyarısı SessionStart'ta Claude bağlamına girmiyor
+
+> **Kabul kriteri nasıl kanıtlandı:**
+> 1. `hasat-gate.mjs:23` artık `process.stdout.write`. Canlı ölçüm: **stdout 1692 bayt /
+>    stderr 0** (önce tam tersiydi).
+> 2. `settings.json:32-36` hook'u `node` + `args` exec-form ile çağırıyor; `.sh` launcher
+>    yolundan çıkıldı (dosya silinmedi, launcher paritesi duruyor).
+> 3. Test yazıldı: `scripts/hasat-hook.test.mjs` — **6 test**, exit code'a değil KANALA bakıyor:
+>    kaynakta `process.stderr.write` yok · stdout dolu ve stderr boş · her hâlde bir hüküm
+>    basılıyor (🚨 / ✅ / ÖLÇEMEDİ) · bekleyen varsa `[hasat] 🚨` stdout'ta · kapı bloke etmiyor ·
+>    settings.json kaydı `.sh`'a bağlı değil.
+> 4. Canlı SessionStart makbuzu: kapı açılır açılmaz **üç gerçek bekleyen iş** bildirdi —
+>    `Eşeyli ve Eşeysiz Üreme [ERROR]`, `Kuvvet MİRA [ERROR]`,
+>    `Kuvvet ve Kuvvetin Ölçülmesi [STALE_N]`. Yani raporun iddia ettiği kayıp gerçekti.
+>
+> Yasak çözüme dokunulmadı: `APPROVED.md`'ye otomatik promote yok.
+
+**Aşağısı kusurun ölçüm anındaki kaydıdır — tarihsel, artık geçerli değil.**
 
 - **Kırık:** `hasat-gate.mjs` bütün SessionStart mesajlarını `process.stderr.write` ile yazıyor;
   Claude'a ulaşan kanal düz `stdout`.
@@ -64,10 +81,12 @@ Git sync makbuzu ölçülmeden 'çözüldü' deme."
   makbuzu alınmalı.
 - **Yasak çözüm:** Adayları otomatik `APPROVED.md`ye taşımak. Bu Mami onayı kapısını delerek
   bankayı zehirler.
-- **İlgili kanıt dosyaları (raporda geçtiği gibi):** `/.claude/settings.json:34`,
-  `/.claude/hooks/hasat-gate.sh:16`, `/.claude/hooks/hasat-gate.mjs:23`, `:31-61`,
+- **İlgili kanıt dosyaları:** `.claude/settings.json:34`,
+  `.claude/hooks/hasat-gate.sh:16`, `.claude/hooks/hasat-gate.mjs:23`, `:31-61`,
   `.claude/hooks/oturum-durumu.mjs:4-13`, `scripts/buddy-hook.test.mjs:64-71`,
-  `docsContract.test.ts:247-288`.
+  `src/core/docsContract.test.ts:247-288`.
+  *(Yolların başındaki fazladan eğik çizgi rapordan kopyalanmıştı ve onları mutlak yol yapıyordu —
+  `scripts/baglar.mjs` yakaladı.)*
 - **Rapor satırı:** 33
 
 ### 2. `kapandı` durumu, klasör taşınması ve hasat birbirinden kopuk
@@ -185,7 +204,7 @@ Git sync makbuzu ölçülmeden 'çözüldü' deme."
 
 ### 7. Dünya×palet matrix testi `generateBatch` istisnalarını yutuyor
 
-- **Kırık:** `src/core/brain.test.ts:3239-3277` tüm dünya×palet kombinasyonlarında
+- **Kırık:** `src/core/brain.test.ts:3249` tüm dünya×palet kombinasyonlarında
   `generateBatch()` çağırıyor ama `try { out = generateBatch(...); } catch { continue; }` ile
   sarıyor.
 - **Zarar:** Belirli bir world/palette verisi `generateBatch`i çökertirse `continue` o

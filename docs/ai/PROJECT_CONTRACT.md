@@ -59,7 +59,7 @@ ayarlar; kullanıcı seçimi her zaman üstündür. Çoklu ajan yalnız bağıms
 kullanılır.
 
 Raster görsel üretimi/düzenlemesi istenirse yerleşik `imagegen` akışı tercih edilir; seçilmiş
-çıktı `artifacts/imagegen/` altına kopyalanır. Yerel hedef görsel düzenlenecekse önce görseli
+çıktı `artifacts/imagegen/` altına kopyalanır. <!-- bag-yok: ilk imagegen koşusunda oluşan hedef dizin, repoda boş durmaz --> Yerel hedef görsel düzenlenecekse önce görseli
 incele ve değişmemesi gereken özellikleri açıkça kilitle.
 
 ## Kalite kapısı

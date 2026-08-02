@@ -54,43 +54,28 @@ Agents should read these packets; they should not reinvent the site.
 
 ## Agent Setup
 
-Use the three-part setup:
+<!-- bag-yok: silinmiş eski yapı bilerek anılıyor, okuyan neyin kalktığını bilsin -->
+The three-part `GLOBAL_BRAIN` + `agents/gpt/` + `knowledge/` layout described here until
+2026-08-02 no longer exists; those paths were removed and the README was never updated.
+The current contract is two files plus a thin provider adapter:
 
-1. `agents/GLOBAL_BRAIN.md`
-2. the role/provider adapter from `agents/gpt/` or `agents/claude/`
-3. the matching file from `knowledge/`
+1. `agents/PROTOCOL.md` — the only agent decision law, content-hashed into every command
+2. `agents/PROMPT-YASASI.md` — the production and prompt law (start-frame / motion / reference)
+3. the provider adapter: `agents/adapters/claude.md` or `agents/adapters/codex.md` — provider I/O only
 
-Example IMAGE GPT setup:
+Entry contracts: `CLAUDE.md` (Claude) and `AGENTS.md` (Codex). Both import the active phase
+profile `docs/ai/faz-icraat.md`. Per-directory laws live in `.claude/rules/` and load on touch.
 
-```text
-Instructions:
-- agents/GLOBAL_BRAIN.md
-- agents/gpt/02_IMAGE_GPT.md
-
-Knowledge:
-- knowledge/02_IMAGE_KNOWLEDGE.md
-```
-
-Example IMAGE Claude setup:
-
-```text
-Project Instructions:
-- agents/GLOBAL_BRAIN.md
-- agents/claude/02_IMAGE_CLAUDE.md
-
-Project Knowledge:
-- knowledge/02_IMAGE_KNOWLEDGE.md
-```
-
-See `agents/README.md` for the full table.
+See `agents/README.md` for the role table.
 
 ## Project Structure
 
 ```text
 src/                 React app, store and deterministic production brain
-agents/              Global brain plus GPT/Claude role adapters
-knowledge/           Role craft references for external agents
-scripts/             Command/export and screenshot helpers
+agents/              PROTOCOL + PROMPT-YASASI, roles, adapters, COMMAND-INBOX deliveries
+docs/ai/             Phase profiles, system map, model routing, work list
+scripts/             Measurement and delivery tooling (prompt-lint, baglar, kaba-kurgu, …)
+.claude/             Hooks, skills, path-scoped rules, settings
 e2e/                 Playwright smoke and screenshot flows
 public/              Static browser assets
 start-mamilas.command Double-click launcher for macOS

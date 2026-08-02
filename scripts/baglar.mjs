@@ -50,6 +50,17 @@ export const TARANMAYAN = [
 // Kök dizindeki tek tek dosyalar da kanondur.
 export const KOK_DOSYALAR = ['CLAUDE.md', 'AGENTS.md', 'README.md'];
 
+// TARİHLİ KAYIT = arşiv sınıfı. Adında tarih taşıyan bir belge bir ANI anlatır; oradaki atfın
+// bugün kırık olması kusur DEĞİLDİR — dosya taşınmış olabilir ve kayıt doğru kalmalıdır.
+// Aynı gerekçe ders adayları ve hasat çıktıları için de geçerli: ikisi de o günün fotoğrafı.
+// Bu bir susturma değil ayrım — kaç dosyanın bu yüzden atlandığı KAPSAM satırında basılır.
+export const TARIHLI = /(?:^|[-_/])(?:20\d\d-\d\d-\d\d)|\/(?:CANDIDATES|HASAT)-/;
+
+// GEREKÇELİ İSTİSNA — bir atıf bilerek var olmayan bir hedefi gösteriyorsa (üretimde oluşan
+// çıktı dizini gibi) satırın kendisine gerekçe yazılır: <!-- bag-yok: neden -->
+// Sessiz susturma YOK: gerekçesiz istisna kabul edilmez, gerekçeliler ayrı sayılır ve listelenir.
+export const ISTISNA = /<!--\s*bag-yok:\s*([^>]*?)\s*-->/;
+
 // ── ATIF ÇIKARIMI ────────────────────────────────────────────────────────────
 // Üç desen. Hepsi tutucu: bir şey yol GÖRÜNMÜYORSA atıf sayılmaz. Yanlış alarm,
 // hiç ölçmemekten daha zararlıdır (ölçüldü: prompt-lint 50 karede 19 yanlış alarm
@@ -95,25 +106,40 @@ export function yolMu(s, root = ROOT) {
 }
 
 export function atiflariCikar(metin) {
-  const bulunan = new Map();   // yol → ilk görüldüğü satır
+  const bulunan = new Map();   // yol → { satir, gerekce }
   const satirlar = metin.split(/\r?\n/);
 
   // Kod bloklarının İÇİ de taranır: yasa ve skill metinleri örnek komutları ``` içine
   // koyuyor ve o komutlar gerçek yol taşıyor (ölçüldü: mamilas-ref'in kırık atıflarının
   // ikisi kod bloğundaydı).
+  // Gerekçe markörü PARAGRAFI kapsar: yazıldığı satırdan sonraki BOŞ SATIRA kadar.
+  // Tek satırlık pencere yetmiyordu — bir hüküm üç satıra yayıldığında markör yalnız ilk
+  // satırı örtüyor, ikinci satırdaki atıf kırık sayılıyordu. Kapsam paragraftır çünkü
+  // gerekçe cümleye değil HÜKME yazılır. Boş satır geçilince gerekçe DÜŞER — sessizce
+  // sayfanın kalanına yayılmaz.
+  const gerekceler = new Array(satirlar.length).fill(null);
+  let aktif = null;
+  satirlar.forEach((satir, i) => {
+    const m = satir.match(ISTISNA);
+    if (m) { aktif = m[1]; gerekceler[i] = aktif; return; }
+    if (!satir.trim()) { aktif = null; return; }
+    gerekceler[i] = aktif;
+  });
+
   satirlar.forEach((satir, i) => {
     const no = i + 1;
+    const g = gerekceler[i];
     const ekle = (ham) => {
       const t = ham.trim().replace(/[.,;:)]+$/, (son) => (/^:\d+$/.test(son) ? son : ''));
       if (!yolMu(t)) return;
-      if (!bulunan.has(t)) bulunan.set(t, no);
+      if (!bulunan.has(t)) bulunan.set(t, { satir: no, gerekce: g });
     };
     for (const m of satir.matchAll(MD_LINK)) ekle(m[1]);
     for (const m of satir.matchAll(KOD_YOL)) ekle(m[1]);
     for (const m of satir.matchAll(CIPLAK)) ekle(m[1]);
   });
 
-  return [...bulunan.entries()].map(([yol, satir]) => ({ yol, satir }));
+  return [...bulunan.entries()].map(([yol, v]) => ({ yol, satir: v.satir, gerekce: v.gerekce }));
 }
 
 // ── ÇÖZÜMLEME ────────────────────────────────────────────────────────────────
@@ -161,8 +187,11 @@ export function ayir(s) {
 }
 
 // ── YÜRÜYÜCÜ ─────────────────────────────────────────────────────────────────
+export const atlananTarihli = [];
+
 export function mdDosyalari(root = ROOT) {
   const cikti = [];
+  atlananTarihli.length = 0;
   const disla = (rel) => TARANMAYAN.some((d) => rel === d || rel.startsWith(`${d}/`));
 
   const yuru = (dizin) => {
@@ -173,7 +202,10 @@ export function mdDosyalari(root = ROOT) {
       const rel = relative(root, mutlak).split('\\').join('/');
       if (disla(rel)) continue;
       if (g.isDirectory()) yuru(mutlak);
-      else if (g.name.toLowerCase().endsWith('.md')) cikti.push(mutlak);
+      else if (g.name.toLowerCase().endsWith('.md')) {
+        if (TARIHLI.test(`/${rel}`)) { atlananTarihli.push(rel); continue; }
+        cikti.push(mutlak);
+      }
     }
   };
 
@@ -190,6 +222,7 @@ export function mdDosyalari(root = ROOT) {
 
 export function denetle(dosyalar, root = ROOT) {
   const kirik = [];
+  const gerekceli = [];
   let toplamAtif = 0;
   for (const d of dosyalar) {
     let metin;
@@ -197,10 +230,13 @@ export function denetle(dosyalar, root = ROOT) {
     for (const a of atiflariCikar(metin)) {
       toplamAtif++;
       const r = cozumle(a, d, root);
-      if (r.durum !== 'OK') kirik.push({ ...r, kaynak: relative(root, d).split('\\').join('/') });
+      if (r.durum === 'OK') continue;
+      const kayit = { ...r, kaynak: relative(root, d).split('\\').join('/') };
+      // Gerekçeli istisna KIRIK sayılmaz ama SAKLANMAZ — ayrı listede, gerekçesiyle basılır.
+      (a.gerekce ? gerekceli : kirik).push(kayit);
     }
   }
-  return { kirik, toplamAtif, dosyaSayisi: dosyalar.length };
+  return { kirik, gerekceli, toplamAtif, dosyaSayisi: dosyalar.length };
 }
 
 // ── CLI ──────────────────────────────────────────────────────────────────────
@@ -212,12 +248,12 @@ if (calistirilan) {
   const hedefler = argv.filter((a) => !a.startsWith('--'));
 
   const dosyalar = hedefler.length ? hedefler.map((h) => resolve(h)) : mdDosyalari();
-  const { kirik, toplamAtif, dosyaSayisi } = denetle(dosyalar);
+  const { kirik, gerekceli, toplamAtif, dosyaSayisi } = denetle(dosyalar);
 
   const sinif = (d) => kirik.filter((k) => k.durum === d);
   const yaz = (s) => process.stdout.write(`${s}\n`);
 
-  yaz(`[bag] ${dosyaSayisi} md dosyası · ${toplamAtif} atıf · KIRIK ${kirik.length}`);
+  yaz(`[bag] ${dosyaSayisi} md dosyası · ${toplamAtif} atıf · KIRIK ${kirik.length} · gerekçeli ${gerekceli.length}`);
 
   for (const d of ['YOK', 'SATIR-YOK', 'BOŞ-DİZİN']) {
     const grup = sinif(d);
@@ -229,12 +265,20 @@ if (calistirilan) {
     }
   }
 
+  if (gerekceli.length) {
+    yaz(`\n  ── GEREKÇELİ İSTİSNA (${gerekceli.length}) — kırık değil, ama saklanmıyor ──`);
+    for (const k of gerekceli) yaz(`  ${k.kaynak}:${k.satir}  →  ${k.yol}  ·  ${k.gerekce}`);
+  }
+
   if (!kisa) {
     yaz('');
     yaz('  KAPSAM — bu ölçümün GÖRMEDİĞİ şeyler (yeşil ≠ temiz):');
     yaz('    · atfın ANLAMI doğrulanmaz — brain.ts:506 var olabilir ama orada o fonksiyon olmayabilir.');
     yaz('    · taranmayan yüzeyler: ' + TARANMAYAN.join(' · '));
+    yaz(`    · tarihli kayıt olduğu için atlanan ${atlananTarihli.length} dosya (arşiv sınıfı — bir ANI anlatır):`);
+    for (const a of atlananTarihli) yaz(`        ${a}`);
     yaz('    · http bağları, sayfa içi çapalar ve şablon/glob içeren yollar atıf sayılmaz.');
+    yaz('    · ilk parçası repo kökünde olmayan yol atıf sayılmaz (yanlış alarm kıstası).');
     yaz('    · yalnız .md taranır; .ts/.mjs yorumlarındaki atıflar kapsam dışı.');
   }
 

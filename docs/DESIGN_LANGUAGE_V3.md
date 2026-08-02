@@ -215,7 +215,7 @@ Painterly dokular geldiğinde şöyle entegre olacak:
 
 **Placeholder'dan geçiş kriteri** — üçü birden sağlanmadan gerçek asset canlıya bağlanmaz:
 1. Gate script yeşil: dosya var, format/boyut doğru, eksik slot raporlanıyor.
-2. `scripts/final-shots.mjs` ekran kanıtında kimlik korunuyor: altın tek ışık okunuyor, panel camı arkasında doku seçiliyor, bloom patlaması yok.
+2. `scripts/archive/final-shots.mjs` ekran kanıtında kimlik korunuyor: altın tek ışık okunuyor, panel camı arkasında doku seçiliyor, bloom patlaması yok.
 3. Görsel fark "daha güzel placeholder" değil "boyanmış dünya" — kart yüzünde plate içeriği, zeminde fırça dokusu ayırt ediliyor.
 
 **Tek zemin otoritesi:** Gerçek zemin dokusu bağlandığında DOM'daki `.ml-v3-floor` perspektif grid'i sahne AÇIKKEN kaldırılır — iki zemin aynı anda yaşamaz. Grid yalnız WebGL fallback'inde (2D modda) kalır.
@@ -238,6 +238,6 @@ Mami hükmü: karanlık "Slenderman" değil "gece yarısı hâlâ çalışan at�
 
 **Geçiş:** stage değişiminde cross-fade (`AnimatePresence mode="popLayout"` + adım-içi Suspense) — eski içerik yenisi gelene dek camda kalır; boş bulanık cam yasak.
 
-**Slenderman testi (yeni kabul kriteri):** establish/akvaryum kadrajında zemin + duvar + ≥3 nesne ışıkta seçilir; kare ortalama luminance %4-%12 bandı — `scripts/scene-proof.mjs` ölçer ve bandın dışında exit 1 döner.
+**Slenderman testi (yeni kabul kriteri):** establish/akvaryum kadrajında zemin + duvar + ≥3 nesne ışıkta seçilir; kare ortalama luminance %4-%12 bandı — `scripts/archive/scene-proof.mjs` ölçer ve bandın dışında exit 1 döner.
 
 **§8 revizyonu:** "Luminance > 0.72 alan payı %4'ü geçemez" tavanı **%10**'a çıkar (atölye ışık gölleri meşru; bloom eşiği 0.72 sabit kaldığından patlama scene-proof'ta denetlenir). §8'deki `FloatingCard` referansı artık `FramedPlate` (duvar çerçeveleri) olarak okunur; slot adları ve format kuralları AYNEN geçerli + `wall-plaster` (2048² seamless, 4×1.6 tile) eklendi.

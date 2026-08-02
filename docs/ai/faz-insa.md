@@ -13,7 +13,9 @@ sağlamlaştıracak duvarlar ve yasalar kuruluyor. İcraata geçince üstteki im
    Sohbet hafızasından varsayım yapılmaz. Çelişki varsa `FACT REQUIRED` ile durulur.
 2. `agents/PROMPT-YASASI.md` — üretim ve prompt yasası (bu fazda da geçerli: yasayı değiştiriyorsak
    önce ne dediğini bilmemiz gerekir).
-3. Yürütme planı: `~/.claude/plans/flickering-imagining-lark.md` (FAZ H → 0 → 1 → 1.5 → 2 → 3 → 4).
+<!-- bag-yok: plan dosyası silinmiş; adı bilerek anılıyor ki uyandıran kişi aramasın -->
+3. Yürütme planı: ~~`~/.claude/plans/flickering-imagining-lark.md`~~ — **dosya artık YOK** (2026-08-02
+   ölçümü). Bu faz uykuda; uyandırılırsa plan yeniden yazılır, aranmaz.
 
 ## Bu fazın amacı
 
@@ -51,8 +53,8 @@ tutarsa bayatlar (G0'ın dersi: karar `EXECUTION_STATE`'te, kanıt receipt'te).
 | `node scripts/motion-qc.mjs <klip>` | Klipten 4 kare çeker; yazı morph · yeni öğe · warp denetimi |
 | `node scripts/memory-sync.mjs` | Hafıza ↔ repo aynası. `--check` sapmada exit 1 |
 | `node scripts/agents-sync.mjs --check` | Kanon → iki yüzey parite denetimi |
-| `npx tsx scripts/dunya-sinavi.ts <worldId> --prompts` | Kare üretmeden dünya sınavı |
-| `npx tsx scripts/kutuphane-karne.ts` | Kütüphane karnesi (`GERCEK_KARE` elle bakımlı) |
+| `npx tsx scripts/archive/dunya-sinavi.ts <worldId> --prompts` | Kare üretmeden dünya sınavı |
+| `npx tsx scripts/archive/kutuphane-karne.ts` | Kütüphane karnesi (`GERCEK_KARE` elle bakımlı) |
 
 ## Faz kapanışı
 

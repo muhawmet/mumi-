@@ -1,6 +1,6 @@
 # MAMILAS KÜTÜPHANE KARNESİ
 
-**Elle yazma — üret:** `npx tsx scripts/kutuphane-karne.ts > docs/KUTUPHANE-KARNESI.md`
+**Elle yazma — üret:** `npx tsx scripts/archive/kutuphane-karne.ts > docs/KUTUPHANE-KARNESI.md`
 
 ## Tek cümle
 

@@ -56,10 +56,11 @@ ve `contractGate` `personalMode`'u **hiç okumuyor** — firewall aslında açı
 **Shot kavramı UI'da YOK.** `grep shot` → `src/pages/` altında sıfır eşleşme.
 Shot yalnız export JSON'unda yaşıyor. **Mami site içinde hiçbir kareye onay veremiyor.**
 
-**Ölü kod:** `src/components/Advisors.ts` — world'e göre **IP karakter adları** döndürüyor
-(`sanji`, `zoro`, `rengoku`). Hiçbir yerden import edilmiyor, ama projenin kendi IP
-firewall'unun (`proof.ts:11`) yasakladığı isimleri taşıyor. `src/components/Sidebar/Sidebar.tsx`
-tamamen **boş dosya**.
+<!-- bag-yok: iki dosya da SİLİNDİ; adları bilerek anılıyor, kusur sınıfı kayda geçsin -->
+**Ölü kod (KAPANDI):** `src/components/Advisors.ts` world'e göre IP karakter adları
+(`sanji`, `zoro`, `rengoku`) döndürüyordu ve `src/components/Sidebar/Sidebar.tsx` boş dosyaydı.
+**İkisi de silinmiş.** Kayıt duruyor çünkü kusur sınıfı duruyor: IP firewall'un (`proof.ts:11`)
+yasakladığı isimleri taşıyan bir dosya, hiçbir yerden import edilmediği için gözden kaçmıştı.
 
 ## Disco QA katmanı
 
