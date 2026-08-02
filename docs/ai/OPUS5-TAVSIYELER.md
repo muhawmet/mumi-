@@ -33,8 +33,8 @@ Okuyucunun bakmadığı kanala yazılan bulgu üretilmemiş sayılır.
 *Kanıt: 8 modelin 2'si kullanıldı; üç ders üretilirken iş çok ajana dağıldı ve usage bitti.*
 
 **K6 — Yeşil ≠ temiz. Bir ölçüm neyi ÖLÇMEDİĞİNİ söylemek zorundadır.**
-*Kanıt: `prompt-lint` yeşilken §2ø ölü kare üretti; `teslim-denetim` 16 projeye yanlış sayı
-bastı ve hiç uyarmadı.*
+*Kanıt: `prompt-lint` yeşilken §2ø ölü kare üretti; `teslim-denetim` 20 proje dizininin 19'una
+yanlış sayı bastı ve hiç uyarmadı.*
 
 **Bu turda hiçbir şey "sadeleştirme" adına silinmedi.** 917 satırlık yasa karmaşık diye
 kısaltılmadı — ölçülmüş bir yasa karmaşık olabilir. Kaldırılan tek şey **kanıtı olmayan
@@ -52,7 +52,7 @@ dosyaları (Hücre, Bitkilerde Üreme, Destek). Doğrulayıcı `teslim-denetim.m
 (`grep -c process.argv` = 0), hedefi `:4`'te hardcode, regexi `^### K\d+`.
 
 **Kusuru:** Doğrulayıcı üreticiyle aynı sözleşmeyi konuşmuyor ve **sessizce yanlış cevap
-veriyor**. 17 projenin 16'sına "53 kare" diyor. Bu K1 + K6 ihlali aynı anda.
+veriyor**. 20 proje dizininin 19'una "53 kare" diyor. Bu K1 + K6 ihlali aynı anda.
 
 **Şöyle yapardık:** `teslim-denetim.mjs` argv alsın, `--all` ile her projeyi yürüsün, **iki
 biçimi de** tanısın, tanımadığı biçimde **0 demek yerine "BİÇİM TANINMADI" desin**, ve
@@ -60,9 +60,13 @@ kare sayısı ↔ VO cümle sayısı uyuşmazlığında kırmızı versin. Testi
 
 **Maliyeti:** ~1 saat, 1 script + 1 test dosyası.
 
-**Kazancı (ölçülmüş):** Destek ve Hareket'te **41 kare yazılmış, VO 52 cümle — K42-K52 hiç yok**
+**Kazancı (ölçülmüş):** Destek ve Hareket'te **41 kare yazılmış, VO 52 cümle — K43-K52 hiç yok**
 ve bunu bugüne kadar hiçbir şey söylemedi. Bitkilerde Üreme'de gerçek 54, denetim 53 diyordu.
-Bu doğrulayıcı o gün koşsaydı iki proje eksik teslim edilmezdi.
+
+**Ama bedeli de ölçüldü:** ilk yazımı İKİ YANLIŞ BULGU üretti (Kütle ve Kuvvetlerin) ve ikisi
+de Mami'ye rapor edildi. Terra 5.6 ikinci gözü çürüttü, kök nedenler onarıldı (`8d36764`).
+Yeni bir doğrulayıcı, eskisinin kusur sınıfını yeniden üretebiliyor — farkı ikinci göz yaptı,
+yeşil test değil.
 
 ---
 
@@ -334,13 +338,20 @@ T9 (hangi skill yüzeyi kanon) · T10 (silme) · T11 (Stop kaydı).
 
 Bunlar tavsiye değil **bulgu** — kod değil, iş:
 
-1. **`5. Sınıf - Destek ve Hareket Sistemi` — 10 kare hiç yazılmamış.** VO 52 cümle, prompt
-   41 kare; K43-K52'nin karesi yok. Aktif bir iş, bu hâliyle eksik teslim edilecekti.
-2. **`Biten/5. Sınıf - Kütle ve Ağırlık` — 35 motion, 8 kare prompt'u.** Prompt setinin 27'si
-   teslim dosyasında yok. "Biten" işaretli.
-3. **`Biten/6. Sınıf - Kuvvetlerin Güç Birliği` — 69 VO cümlesinin 17'sinin karesi yok.**
+**`5. Sınıf - Destek ve Hareket Sistemi` — 10 kare hiç yazılmamış.** VO 52 cümle, prompt
+41 kare; K43-K52'nin karesi yok. Dizinde A/B/C blok dosyaları var, D bloğu hiç yazılmamış.
+Aktif bir iş, bu hâliyle eksik teslim edilecekti. Terra 5.6 bağımsız olarak doğruladı.
 
-Üçü de bugüne kadar hiçbir ölçüm tarafından görülmemişti; doğrulayıcı yanlış projeyi ölçüyordu.
+**İki bulgu daha bildirilmişti ve İKİSİ DE YANLIŞTI — Terra çürüttü, geri alındı:**
+· *Kütle ve Ağırlık'ta 27 kare eksik* denmişti; kalan kareler
+  `_CODEX-KALAN-START-FRAMELER.txt` adlı ayrı dosyada duruyor (8+27=35, tam).
+  Denetçi prompt dosyasını ADINDAN arıyordu; artık İÇERİĞİNDEN buluyor.
+· *Kuvvetlerin Güç Birliği'nde 17 cümlenin karesi yok* denmişti; o projede 16 başlık
+  `VO 5+6` biçiminde iki cümleyi birleştiriyor ve regex `+` işaretini okumuyordu.
+
+Bu iki yanlış bulgu bu turun en öğretici ölçümüdür: **yeni yazılmış bir doğrulayıcı, tam da
+eskisinin kusur sınıfını yeniden üretti** — hattı kendi varsaydığı sözleşmeyle okudu.
+Farkı ikinci göz yaptı, yeşil test değil.
 
 Sıralama gerekçesi: uygulananların hepsi **sessiz yalan** üreten kusurlardı — sistem yanlış cevap
 veriyor ve bunu söylemiyordu. Bekletilenlerin hepsi **kalite tercihi** içeriyor; onları ben
