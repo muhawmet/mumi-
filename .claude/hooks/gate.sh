@@ -127,7 +127,8 @@ if [ "${MAMILAS_LINT_SKIP:-0}" = "1" ]; then
     git -c core.quotepath=false diff --cached --name-only --diff-filter=ACMR -z 2>/dev/null
     git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
   } | sort -z -u | tr '\0' '\n' \
-    | grep -E 'COMMAND-INBOX/.*(_PROMPTLAR.*|_MOTION.*)\.(txt|md)$' | sed 's/^/     · /' >&2
+    | grep -E 'COMMAND-INBOX/.*(_PROMPTLAR.*|_MOTION.*)\.(txt|md)$|COMMAND-INBOX/.*/(PROMPTLAR|MOTION)/[^/]*\.(txt|md)$' \
+    | sed 's/^/     · /' >&2
   printf '   Gerekcesi commit mesajina YAZILMALI.\n\n' >&2
 else
   # TURKCE YOL TUZAGI (2026-07-31, kapi kurulurken kapinin KENDISINDE yakalandi):
@@ -136,19 +137,41 @@ else
   # kapi SESSIZCE gecer — butun proje adlarimiz Turkce oldugu icin her seferinde.
   # `-c core.quotepath=false` ham UTF-8 verir; `-z` ile NUL ayrac, bosluklu ad da bolunmez.
   while IFS= read -r -d '' PF; do
-    # `.md` DE olculur (2026-08-02): desen yalnizca `.txt` iken `current-work.mjs:53`
-    # ayni hatti `['_promptlar.txt','_promptlar.md']` diye taniyordu — iki dosya ayni
-    # sozlesmeyi iki farkli uzanti kumesiyle okuyordu ve `.md` yazan oturum kapidan hic
-    # olculmeden geciyordu. Biten/ altinda iki teslim boyle gecmis.
+    # SECIM ARTIK ADA DEGIL ICERIGE BAKAR (2026-08-02, olculdu).
+    # Eski desen `agents/COMMAND-INBOX/*_PROMPTLAR*.(txt|md)` idi ve teslimin GERCEK
+    # yerlesimini gormuyordu: 146 prompt dosyasinin yalniz 18'i o ada uyuyor, kalan 128'i
+    # `<proje>/PROMPTLAR/01.txt` ya da `PROMPTLAR/A-K01-K14.txt` biciminde yasiyor.
+    # Yani Destek ve Hareket'in 41, Eseyli'nin 50 karesi duvardan HIC olculmeden geciyordu
+    # ve kapi her seferinde "✅ Gate yesil" yaziyordu. MOTION dali (asagisi) klasor bicimini
+    # 2026-08-02'de almisti, prompt dali almamisti — ayni hata iki dosyada iki kez.
+    # Imza `prompt-lint.mjs:813-826` walk()'un AYNISI: ^STYLE: / ^NEGATIVE: / FRAME NEGATIVE.
+    # Ikinci kopya yazilmiyor, ayni sozlesme okunuyor — iki yerde olculen yasa iki gercek uretir.
     case "$PF" in
-      agents/COMMAND-INBOX/*_PROMPTLAR*.txt|agents/COMMAND-INBOX/*_PROMPTLAR*.md) : ;;
+      agents/COMMAND-INBOX/*.txt|agents/COMMAND-INBOX/*.md) : ;;
       *) continue ;;
     esac
     [ -f "$PF" ] || continue
-    if grep -qiE 'register:[[:space:]]*real' "$PF"; then REG=real
-    elif grep -qiE 'register:[[:space:]]*sty' "$PF"; then REG=sty
-    elif grep -qiE 'register:[[:space:]]*edu' "$PF"; then REG=edu
-    else
+    # Teslim setinin PROMPT OLMAYAN parcalari (prompt-lint walk'un ad elemesiyle ayni liste).
+    # `MOTION/` klasoru de burada elenir: o dosyalar asagidaki motion dalinin isidir, iki
+    # dal ayni dosyaya iki farkli lehceyle hukum vermez.
+    case "$PF" in
+      *_MOTION*|*_EDIT-PLAN*|*_SESLENDIRME*|*_SUNO*|*_REFERANSLAR*|*/MOTION/*) continue ;;
+    esac
+    # `*_PROMPTLAR*` ADIYLA sozlesmeyi ustlenmis dosyadir; digerleri ICERIKLE secilir.
+    ADLI=0
+    case "$PF" in
+      agents/COMMAND-INBOX/*_PROMPTLAR*.txt|agents/COMMAND-INBOX/*_PROMPTLAR*.md) ADLI=1 ;;
+    esac
+    if [ "$ADLI" = 0 ]; then
+      grep -qiE '^STYLE:|^NEGATIVE:|FRAME NEGATIVE' "$PF" || continue
+    fi
+    # Register ayraci ARTIK iki nokta ZORUNLU DEGIL: canli olcum (2026-08-02) teslim
+    # basliklarinin `Dunya: pixar_3d_edu · register EDU · Image: ...` diye yazildigini
+    # gosterdi — iki nokta arayan desen o dosyalarin hicbirini okuyamiyordu.
+    if grep -qiE 'register[[:space:]:]+real' "$PF"; then REG=real
+    elif grep -qiE 'register[[:space:]:]+sty' "$PF"; then REG=sty
+    elif grep -qiE 'register[[:space:]:]+edu' "$PF"; then REG=edu
+    elif [ "$ADLI" = 1 ]; then
       # KOR KAPI YASAGI: register okunamiyorsa olcum yapilamaz, ve olculemeyen sey
       # SESSIZCE GECMEZ. Eskiden burada `continue` vardi — yani basligi bozuk her dosya
       # kapidan hic denetlenmeden geciyordu. Tek satirlik duzeltmesi olan bir sey icin
@@ -159,6 +182,14 @@ Dosyanin ilk satirlarinda su ifadelerden biri gecmeli:
   register: EDU   |   register: REAL   |   register: STY
 
 Olculemeyen dosya basilirsa eksigi krediyle odenir. Basliga tek satir ekle."
+    else
+      # ICERIKLE secilen dosyada register YOKSA: olcum EDU ile yapilir ve bu SOYLENIR.
+      # Neden fail degil: canli repoda icerikle secilen 146 dosyanin 111'inde register satiri
+      # hic yok. Onlari hard-fail yapmak, korlugu kaldirirken commit'i tamamen kilitlerdi —
+      # yani olcmemekten daha kotu bir sonuc. EDU varsayimi uydurma degil, `prompt-lint.mjs`
+      # kendi belgelenmis varsayilani (bugune kadarki 181 karenin 181'i EDU).
+      REG=edu
+      printf '🟡 register satiri yok, EDU varsayildi: %s\n' "$PF" >&2
     fi
     # ⚠ `prompt-lint.mjs` KIRMIZI bulsa da `exit 0` verir — bir raporlayicidir, kapi degil.
     # Kapiyi cikis koduna baglamak, kapiyi doguran gun no-op yapardi (2026-07-31'de tam bu
@@ -272,6 +303,24 @@ if ! WORK_OUT=$(node scripts/current-work.mjs --check 2>&1); then
   printf '⚠️  DURUM KAYDI SAPMIS — artifacts/current-work.json diskle ortusmuyor.\n' >&2
   printf '%s\n' "$WORK_OUT" | grep -E 'DRİFT|DRIFT|⚠' | head -4 >&2
   printf '   `node scripts/current-work.mjs ilerle --bitti "..." --sirada "..."` ile guncelle.\n' >&2
+fi
+
+# --- 6d. TESLIM BICIM DENETIMI (UYARI — bloke etmez) ---
+# `scripts/teslim-denetim.mjs` 463 satirlik bir olcen ve HICBIR KAPIYA BAGLI DEGILDI
+# (`grep -rl teslim-denetim .claude/` → 0). Prompt-lint ve motion-lint ile ayni sinif:
+# olcen var, olcum okunmuyor. Bu olcum digerlerinin gormedigini gorur — kare SAYISI ile VO
+# cumle sayisi ortusuyor mu. Ornek: Destek ve Hareket'te 41 kare yazilmis, VO 52 cumleydi;
+# K42-K52 hic yoktu ve prompt-lint bunu goremez (var olan kareyi olcer, OLMAYANI degil).
+#
+# Neden UYARI, neden duvar degil: 2026-08-02 canli olcumu — 20 projenin 1'i KIRMIZI
+# (Destek ve Hareket, VO ortulmemis). Var olan kirmiziyi duvara cevirmek HER commit'i
+# kilitlerdi; kapinin isi isi durdurmak degil, korlugu bitirmek. Kirmizi 0'a inince duvara
+# cevirmek tek satir — ama o karar Mami'nin, kapinin kendi kendine sikilastirmasi degil.
+# 0.1 saniye suruyor.
+if ! TESLIM_OUT=$(node scripts/teslim-denetim.mjs --all --strict 2>&1); then
+  printf '⚠️  TESLIM BICIMI KIRMIZI — teslim seti kendi sozlesmesine uymuyor.\n' >&2
+  printf '%s\n' "$TESLIM_OUT" | grep -E '^\[teslim\]|🔴' | head -8 >&2
+  printf '   `node scripts/teslim-denetim.mjs --all` ile tam raporu gor.\n' >&2
 fi
 
 # --- 7. claude senkronu (UYARI — bloke etmez) ---

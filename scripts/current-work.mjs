@@ -48,14 +48,30 @@ export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
 
 // PROMPT-YASASI §5 teslim seti + kaba kurgu (kitin beşinci parçası).
 // Anahtar = kayıtta görünen ad, matcher = dosya adı son eki (küçük harfe indirgenmiş).
+//
+// AD YETMEZ — 2026-08-02 ölçümü. Bu liste teslimi yalnız AD SONEKİYLE arıyordu ve üretimin
+// gerçek yerleşimini görmüyordu: 146 prompt dosyasının yalnız 18'i `*_PROMPTLAR.*` adını
+// taşıyor, kalan 128'i `<proje>/PROMPTLAR/A-K01-K14.txt` biçiminde yaşıyor. Sonuç ölçüldü:
+// `5. Sınıf - Destek ve Hareket Sistemi`in 41 karesi diskte DURURKEN kayıtta PROMPTLAR:false
+// görünüyordu — ve bu kaydı SessionStart `[durum]` bloğu ile `kapat` kapısı okuyor. Yani kayıt
+// var olan işi eksik ilan ediyordu; oturum açılışında "prompt yok" diyen bir gerçek üretiliyordu.
+//
+// Bu yüzden her parça üç yoldan tanınır ve BİRİ yeterlidir:
+//   1. `ends` — dosya adı soneki (eski sözleşme, aynen korunur)
+//   2. `dir`  — o adı taşıyan alt klasörde imzayı taşıyan en az bir dosya
+//   3. `sig`  — proje kökündeki, BAŞKA bir parçanın adına uymayan bir dosyanın İÇERİĞİ
+// `sig` imzaları başka araçlarla aynıdır (ikinci kopya yazılmaz): prompt imzası
+// `prompt-lint.mjs:813-826` walk()'un, motion imzası `motion-lint.mjs:81` KAMERA NİYETİ'nin.
 export const KIT = [
   { key: 'REFERANSLAR', ends: ['_referanslar.txt'] },
-  { key: 'PROMPTLAR', ends: ['_promptlar.txt', '_promptlar.md'] },
+  { key: 'PROMPTLAR', ends: ['_promptlar.txt', '_promptlar.md'], dir: 'PROMPTLAR', sig: /^STYLE:|^NEGATIVE:|FRAME NEGATIVE/im },
   // KOŞULLU: yasa (faz-icraat) *"sorunsuz kareye revize YOK — tek satırlık 'temiz' listesi yeter"*
   // diyor. Sıfır revize alan bir set için dosya hiç doğmaz; onu kapanış şartı yapmak, temiz işi
   // eksik ilan etmek olurdu. Karnede görünür, kapıyı tutmaz.
-  { key: 'revize', ends: ['_revize.txt'], kosullu: true },
-  { key: 'MOTION', ends: ['_motion.txt', '_motion.md'] },
+  // `revize/` klasör biçimi canlıda var (Farklı Kültürler, Birlikte Daha Güçlüyüz); kök `sig`
+  // YOK, çünkü revize dosyası prompt imzasının aynısını taşır ve ikisi ayırt edilemez.
+  { key: 'revize', ends: ['_revize.txt'], dir: 'revize', kosullu: true },
+  { key: 'MOTION', ends: ['_motion.txt', '_motion.md'], dir: 'MOTION', sig: /^KAMERA NİYETİ:/im },
   { key: 'EDIT-PLAN', ends: ['_edit-plan.txt'] },
   { key: 'SESLENDIRME', ends: ['_seslendirme.txt'] },
   { key: 'SUNO', ends: ['_suno.txt'] },
@@ -166,17 +182,52 @@ export function validateState(state) {
 // DİSK TARAMASI — kayıt iddia eder, disk kanıtlar.
 // ---------------------------------------------------------------------------
 
+/** Bir dosyanın içeriği imzayı taşıyor mu. Okunamayan dosya "hayır"dır, çökme değil. */
+function icerikTasiyor(abs, sig) {
+  try {
+    return sig.test(readTextSafe(abs));
+  } catch { return false; }
+}
+
+/** Alt klasörde imzayı taşıyan (imza yoksa: herhangi bir .txt/.md) dosya var mı. */
+function altKlasordeVar(parent, entries, dirAd, sig) {
+  const hedef = entries.find((e) => e.isDirectory() && nfc(e.name).toLowerCase() === dirAd.toLowerCase());
+  if (!hedef) return false;
+  const sub = join(parent, hedef.name);
+  let names = [];
+  try { names = readdirSync(sub); } catch { return false; }
+  return names.some((n) => {
+    if (!/\.(txt|md)$/i.test(n)) return false;
+    return sig ? icerikTasiyor(join(sub, n), sig) : true;
+  });
+}
+
 /** Teslim setini projectPath'i TARAYARAK hesaplar (elle iddia değil). */
 export function scanDeliverables(root, projectPathPosix) {
   const dir = toPlatformPath(root, projectPathPosix);
   const out = {};
   for (const k of KIT) out[k.key] = false;
   if (!existsSync(dir)) return out;
-  let names = [];
+  let entries = [];
   try {
-    names = readdirSync(dir).map((n) => nfc(n).toLowerCase());
+    entries = readdirSync(dir, { withFileTypes: true });
   } catch { return out; }
-  for (const k of KIT) out[k.key] = names.some((n) => k.ends.some((e) => n.endsWith(e)));
+  const files = entries.filter((e) => !e.isDirectory()).map((e) => e.name);
+  const low = files.map((n) => nfc(n).toLowerCase());
+  // Kök dosya BAŞKA bir parçanın adını taşıyorsa içerik yoluyla sahiplenilmez:
+  // `<proje>_revize.txt` prompt imzasını taşır ve onu PROMPTLAR sayarsak kayıt yine yalan söyler.
+  const baskaninAdi = (n, self) => KIT.some((k) => k.key !== self && k.ends.some((e) => n.endsWith(e)));
+
+  for (const k of KIT) {
+    // 1. ad soneki — eski sözleşme, olduğu gibi
+    if (low.some((n) => k.ends.some((e) => n.endsWith(e)))) { out[k.key] = true; continue; }
+    // 2. klasör biçimi
+    if (k.dir && altKlasordeVar(dir, entries, k.dir, k.sig)) { out[k.key] = true; continue; }
+    // 3. kökteki adsız/sidecar dosyanın içeriği (`*_CODEX-KALAN-START-FRAMELER.txt` gibi)
+    if (k.sig && files.some((n, i) => /\.(txt|md)$/i.test(n)
+      && !baskaninAdi(low[i], k.key)
+      && icerikTasiyor(join(dir, n), k.sig))) { out[k.key] = true; }
+  }
   return out;
 }
 
