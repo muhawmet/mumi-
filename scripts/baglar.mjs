@@ -60,6 +60,7 @@ export const TARIHLI = /(?:^|[-_/])(?:20\d\d-\d\d-\d\d)|\/(?:CANDIDATES|HASAT)-/
 // çıktı dizini gibi) satırın kendisine gerekçe yazılır: <!-- bag-yok: neden -->
 // Sessiz susturma YOK: gerekçesiz istisna kabul edilmez, gerekçeliler ayrı sayılır ve listelenir.
 export const ISTISNA = /<!--\s*bag-yok:\s*([^>]*?)\s*-->/;
+export const ISTISNA_TAVAN = 6;   // bir markörün örtebileceği en çok satır (sömürü kapısı)
 
 // ── ATIF ÇIKARIMI ────────────────────────────────────────────────────────────
 // Üç desen. Hepsi tutucu: bir şey yol GÖRÜNMÜYORSA atıf sayılmaz. Yanlış alarm,
@@ -101,9 +102,19 @@ export function yolMu(s, root = ROOT) {
 
   // ÇAPA: mutlak / ev / göreli ön ek, ya da ilk parça repo kökünde var.
   if (yol.startsWith('~/') || yol.startsWith('/') || yol.startsWith('./') || yol.startsWith('../')) return true;
+  if (yol.startsWith('memory/')) return true;              // aşağıdaki HAFIZA_KOK'e çözülür
   const ilk = yol.split('/')[0];
   return kokGirisleri(root).has(ilk);
 }
+
+// `memory/...` REPODA DEĞİL, canlı hafızada yaşar.
+// Terra 5.6 ikinci gözde yakaladı: skill metinleri `memory/mamilas-nb2-hata-katalogu.md`
+// diye atıfta bulunuyor, repoda `memory/` diye bir dizin YOK, ve çapa kuralı bu atıfları
+// "yol bile değil" diye eleyip **sessizce kapsam dışına atıyordu**. Yani "KIRIK 0" o
+// atıfları hiç ölçmemişti. Kapsamın dışında kalan şey temiz sayılmaz (K6) — çözülür.
+export const HAFIZA_KOK = join(
+  homedir(), '.claude', 'projects', '-Users-Muhammet-Desktop-mamilas-modern', 'memory',
+);
 
 export function atiflariCikar(metin) {
   const bulunan = new Map();   // yol → { satir, gerekce }
@@ -117,12 +128,17 @@ export function atiflariCikar(metin) {
   // satırı örtüyor, ikinci satırdaki atıf kırık sayılıyordu. Kapsam paragraftır çünkü
   // gerekçe cümleye değil HÜKME yazılır. Boş satır geçilince gerekçe DÜŞER — sessizce
   // sayfanın kalanına yayılmaz.
+  // TAVAN VAR: bir markör en çok ISTISNA_TAVAN satır örtebilir. Terra 5.6 sömürü yolunu
+  // gösterdi — boş satır koymadan uzun bir blok yazıp onlarca kırık atfı tek gerekçeyle
+  // susturmak mümkündü. Gerekçe bir HÜKME yazılır, bir sayfaya değil.
   const gerekceler = new Array(satirlar.length).fill(null);
   let aktif = null;
+  let kalan = 0;
   satirlar.forEach((satir, i) => {
     const m = satir.match(ISTISNA);
-    if (m) { aktif = m[1]; gerekceler[i] = aktif; return; }
-    if (!satir.trim()) { aktif = null; return; }
+    if (m) { aktif = m[1]; kalan = ISTISNA_TAVAN; gerekceler[i] = aktif; return; }
+    if (!satir.trim() || kalan <= 0) { aktif = null; return; }
+    kalan--;
     gerekceler[i] = aktif;
   });
 
@@ -148,7 +164,9 @@ export function cozumle(atif, mdDosyaMutlak, root = ROOT) {
   const satirNo = hamSatir ? Number(hamSatir) : null;
 
   const adaylar = [];
-  if (hamYol.startsWith('~/')) {
+  if (hamYol.startsWith('memory/')) {
+    adaylar.push(join(HAFIZA_KOK, hamYol.slice('memory/'.length)));
+  } else if (hamYol.startsWith('~/')) {
     adaylar.push(join(homedir(), hamYol.slice(2)));
   } else if (isAbsolute(hamYol)) {
     adaylar.push(hamYol);

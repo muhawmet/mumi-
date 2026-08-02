@@ -154,6 +154,31 @@ describe('gerekçeli istisna — susturma değil, kayıt', () => {
   });
 });
 
+describe('sömürü kapıları — Terra 5.6 ikinci gözünün gösterdikleri', () => {
+  test('tek markör sınırsız susturamaz: tavan aşılınca gerekçe DÜŞER', async () => {
+    const { ISTISNA_TAVAN } = await import('./baglar.mjs');
+    const kok = sahneKur();
+    try {
+      const md = join(kok, 'docs', 'somuru.md');
+      const satirlar = ['<!-- bag-yok: tek gerekçe -->'];
+      for (let i = 1; i <= ISTISNA_TAVAN + 3; i++) satirlar.push(`satır \`scripts/yok${i}.mjs\``);
+      writeFileSync(md, `${satirlar.join('\n')}\n`);
+      const r = denetle([md], kok);
+      expect(r.gerekceli).toHaveLength(ISTISNA_TAVAN);
+      expect(r.kirik).toHaveLength(3);          // tavandan sonrakiler KIRIK sayılır
+    } finally {
+      rmSync(kok, { recursive: true, force: true });
+    }
+  });
+
+  test('memory/ atıfları artık ÖLÇÜLÜYOR — çapa kuralı onları eleyip saklıyordu', async () => {
+    const { yolMu } = await import('./baglar.mjs');
+    // Repoda `memory/` diye bir dizin YOK; çapa kuralı bu atıfları "yol bile değil" diye
+    // atıyordu, yani KIRIK 0 onları hiç ölçmemişti. Kapsam dışı ≠ temiz.
+    expect(yolMu('memory/mamilas-hal-logu.md')).toBe(true);
+  });
+});
+
 describe('tarihli kayıt — arşiv sınıfı taranmaz', () => {
   test('adında tarih olan dosya ve CANDIDATES-/HASAT- atlanır, atlananlar SAYILIR', async () => {
     const { TARIHLI } = await import('./baglar.mjs');

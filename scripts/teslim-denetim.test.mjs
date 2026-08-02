@@ -178,6 +178,63 @@ describe('projeyiOlc — kusurları gerçekten yakalıyor mu', () => {
   });
 });
 
+describe('Terra 5.6 ikinci gözünün yakaladığı YANLIŞ BULGU sınıfları', () => {
+  test('`VO 5+6` birleşim yazımı okunur — okunmayınca 17 sahte "örtülmemiş" doğmuştu', () => {
+    const d = proje((x) => {
+      yaz(x, 'A_SESLENDIRME.txt', VO_NUMARALI(6));
+      yaz(x, 'A_PROMPTLAR.txt',
+        'K01 | VO 1+2: "x"\nSTYLE: s\nK02 | VO 3+4: "y"\nSTYLE: s\nK03 | VO 5+6: "z"\nSTYLE: s\n');
+    });
+    const r = projeyiOlc(d);
+    expect(r.bulgu.filter((b) => b.renk === 'KIRMIZI'), JSON.stringify(r.bulgu)).toHaveLength(0);
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  test('prompt dosyası ADIYLA değil İÇERİĞİYLE bulunur — farklı adlı kare dosyası sayılır', () => {
+    const d = proje((x) => {
+      yaz(x, 'A_SESLENDIRME.txt', VO_NUMARALI(6));
+      yaz(x, 'A_PROMPTLAR.txt', '# K01 — "Bu 1 numaralı cümledir ve yeterince uzundur."\nSTYLE: s\nNEGATIVE: n\n');
+      // Kalan kareler BAŞKA ADLI bir dosyada — Kütle ve Ağırlık'ta tam olarak bu vardı.
+      yaz(x, 'A_CODEX-KALAN-START-FRAMELER.txt', Array.from({ length: 5 }, (_, i) =>
+        `# K0${i + 2} — "Bu ${i + 2} numaralı cümledir ve yeterince uzundur."\nSTYLE: s\nNEGATIVE: n\n`).join('\n'));
+    });
+    const r = projeyiOlc(d);
+    expect(r.nKare).toBe(6);
+    expect(r.bulgu.filter((b) => b.renk === 'KIRMIZI'), JSON.stringify(r.bulgu)).toHaveLength(0);
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  test('MOTION/SESLENDIRME/EDIT-PLAN prompt kaynağı SAYILMAZ (içerik kuralı fazla açılmasın)', () => {
+    const d = proje((x) => {
+      yaz(x, 'A_PROMPTLAR.txt', '# K01 — "a"\nSTYLE: s\n');
+      yaz(x, 'A_MOTION.txt', '# K99 — "sahte"\nSTYLE: s\nNEGATIVE: n\n');
+    });
+    expect(projeyiOlc(d).nKare).toBe(1);
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  test('tek kareye "VO 1-19" yazıp bütün VO\'yu örtmek SESSİZ geçmez', () => {
+    const d = proje((x) => {
+      yaz(x, 'A_SESLENDIRME.txt', VO_NUMARALI(19));
+      yaz(x, 'A_PROMPTLAR.txt', 'K01 | VO 1-19: "hepsi"\nSTYLE: s\n');
+    });
+    const r = projeyiOlc(d);
+    // Geniş aralık örtmez (tavan 8) → açık cümleler kırmızı olur.
+    expect(r.bulgu.some((b) => b.renk === 'KIRMIZI' && /ÖRTÜLMEMİŞ/.test(b.s))).toBe(true);
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  test('lehçe etiketi BASKIN olanı gösterir, ilk rastlananı değil', () => {
+    const d = proje((x) => {
+      yaz(x, 'A_ilk.txt', 'Sahne 1 — "a" (start frame)\nSTYLE: s\n');
+      yaz(x, 'B_govde.txt', Array.from({ length: 8 }, (_, i) =>
+        `### K0${i + 2} | VO${i + 2} "x"\nSTYLE: s\n`).join(''));
+    });
+    expect(projeyiOlc(d).lehce).toMatch(/^B1/);
+    rmSync(d, { recursive: true, force: true });
+  });
+});
+
 describe('hedef argümandan gelir — koda gömülü proje YOK', () => {
   test('kaynakta mutlak /Users/ yolu geçmiyor', () => {
     const src = readFileSync(new URL('./teslim-denetim.mjs', import.meta.url), 'utf8');

@@ -117,8 +117,10 @@ fi
 # Acil kacis: MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesi commit mesajina yazilir)
 if [ "${MAMILAS_LINT_SKIP:-0}" = "1" ]; then
   # Kacisin IZ BIRAKMAMASI kabul edilemez: sessizce atlanan kapi, olmayan kapidir.
-  printf '\n🟡 PROMPT LINT ATLANDI — MAMILAS_LINT_SKIP=1 verildi.\n' >&2
-  printf '   Atlanan teslim dosyalari:\n' >&2
+  # Mesaj PROMPT + MOTION der: bayrak ikisini birden atliyor ama metin yalniz prompt diyordu,
+  # yani makbuz eksik bilgi veriyordu (Terra 5.6 ikinci goz).
+  printf '\n🟡 PROMPT VE MOTION LINT ATLANDI — MAMILAS_LINT_SKIP=1 verildi.\n' >&2
+  printf '   Atlanan teslim dosyalari (prompt + motion):\n' >&2
   # Makbuz calisma agacini DA sayar: `git commit -a` ile atlandiginda index bos olur ve
   # makbuz eskiden BOS satir basardi — yani atlanan dosya kayitsiz kalirdi (2026-08-02).
   {
@@ -206,9 +208,12 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
   while IFS= read -r -d '' MF; do
     case "$MF" in
       agents/COMMAND-INBOX/*_MOTION*.txt|agents/COMMAND-INBOX/*_MOTION*.md) : ;;
-      agents/COMMAND-INBOX/*/MOTION/*.txt) : ;;
+      agents/COMMAND-INBOX/*/MOTION/*.txt|agents/COMMAND-INBOX/*/MOTION/*.md) : ;;
       *) continue ;;
     esac
+    # `.md` de sayilir: ilk yazimda MOTION/ dali yalnizca `.txt` esliyordu ve degismis bir
+    # `MOTION/01.md` lint gormeden geciyordu (Terra 5.6 ikinci goz, KRITIK). Ayni sinif
+    # md.3'un motion tarafiydi — ayni hata iki dosyada iki kez yapildi.
     [ -f "$MF" ] || continue
     # prompt-lint ile ayni gerekce: hukum CIKIS KODUNDAN degil CIKTIDAN okunur.
     MOUT=$(node scripts/motion-lint.mjs "$MF" 2>&1) || true

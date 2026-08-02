@@ -96,6 +96,26 @@ export function kanonikSec(dosyalar, ad) {
       ?? dosyalar[0] ?? null;
 }
 
+// PROMPT DOSYASI ADIYLA DEĞİL İÇERİĞİYLE BULUNUR.
+//
+// Terra 5.6 ikinci gözde ölçtü ve haklıydı: ada bakan arama YANLIŞ BULGU üretti.
+// `Kütle ve Ağırlık`'ta `_PROMPTLAR.txt` 8 kare taşıyor, kalan 27 kare
+// `_CODEX-KALAN-START-FRAMELER.txt` adlı AYRI dosyada. Ada bakan denetçi "prompt setinin
+// 27'si yok" dedi ve bu Mami'ye YANLIŞ BULGU olarak bildirildi. Kayıp yoktu, ad farklıydı.
+// Doğru kıstas `prompt-lint.mjs:815-824`'te zaten vardı: dosyayı ADINDAN değil İÇERİĞİNDEN
+// tanı — `STYLE:` / `NEGATIVE:` / `FRAME NEGATIVE` taşıyan her dosya bir prompt kaynağıdır.
+// Teslim ve motion dosyaları elenir, çünkü onlar başka bir sözleşmenin parçası.
+const PROMPT_ICERIK = /^STYLE:|^NEGATIVE:|FRAME NEGATIVE/m;
+const PROMPT_DEGIL = /_MOTION|_EDIT-PLAN|_SESLENDIRME|_SUNO|_REFERANSLAR|_ENZIM|KAYNAK-METIN/i;
+
+export function promptTasiyanlar(proje, promptDizin) {
+  const adaylar = [...bul(proje, /\.(txt|md)$/i), ...(promptDizin ? bul(promptDizin, /\.(txt|md)$/i) : [])];
+  return adaylar.filter((f) => {
+    if (PROMPT_DEGIL.test(basename(f))) return false;
+    try { return PROMPT_ICERIK.test(readFileSync(f, 'utf8')); } catch { return false; }
+  });
+}
+
 export function tesliminParcalari(proje) {
   const promptDizin = altDizin(proje, ['PROMPTLAR']);
   const motionDizin = altDizin(proje, ['MOTION']);
@@ -111,6 +131,7 @@ export function tesliminParcalari(proje) {
     editPlan: kanonikSec(bul(proje, /_EDIT-PLAN.*\.(txt|md)$/i), 'EDIT-PLAN'),
     promptBirlesik: promptKanonik ? [promptKanonik] : [],
     promptTurev: promptHepsi.filter((f) => f !== promptKanonik).map((f) => basename(f)),
+    promptKaynaklari: promptTasiyanlar(proje, promptDizin),
     promptBlok: promptDizin ? bul(promptDizin, /\.(txt|md)$/i) : [],
     motionBirlesik: (() => { const k = kanonikSec(bul(proje, /_MOTION.*\.(txt|md)$/i), 'MOTION'); return k ? [k] : []; })(),
     motionBlok: motionDizin ? bul(motionDizin, /\.(txt|md)$/i) : [],
@@ -161,17 +182,27 @@ export function projeyiOlc(proje) {
   const { bicim: voBicim, cumleler } = voBicimi(p.vo);
   const nVO = Object.keys(cumleler).length;
 
-  // Kareler: birleşik dosya varsa o, yoksa blok dosyalarının birleşimi.
-  const promptDosyalar = p.promptBirlesik.length ? p.promptBirlesik : p.promptBlok;
-  let lehce = null;
+  // Kareler: İÇERİĞİNDEN tanınan HER prompt kaynağı sayılır — adı ne olursa olsun.
+  // (Adına bakan önceki sürüm Kütle ve Ağırlık'ta 27 kareyi "yok" sandı; kalan kareler
+  // `_CODEX-KALAN-START-FRAMELER.txt` adlı dosyadaydı.)
+  const promptDosyalar = p.promptKaynaklari.length
+    ? p.promptKaynaklari
+    : (p.promptBirlesik.length ? p.promptBirlesik : p.promptBlok);
   const kareNo = new Set();
   let promptMetniVar = false;
+  // Lehçe etiketi BASKIN olanı gösterir, ilk rastlananı değil — çok dosyalı projede ilk
+  // dosyanın lehçesi setin tamamını temsil etmiyor ve rapor yanıltıcı oluyordu.
+  const lehceSayac = new Map();
   for (const f of promptDosyalar) {
     const t = readFileSync(f, 'utf8');
-    if (/^STYLE:|^NEGATIVE:|FRAME NEGATIVE/m.test(t)) promptMetniVar = true;
+    if (PROMPT_ICERIK.test(t)) promptMetniVar = true;
     const r = kareleriSay(t);
-    if (r.lehce) { lehce ??= r.lehce; r.nolar.forEach((n) => kareNo.add(n)); }
+    if (r.lehce) {
+      lehceSayac.set(r.lehce, (lehceSayac.get(r.lehce) ?? 0) + r.nolar.length);
+      r.nolar.forEach((n) => kareNo.add(n));
+    }
   }
+  const lehce = [...lehceSayac.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
   const nKare = kareNo.size;
 
   // ── K1: ölçemediğini SÖYLE ────────────────────────────────────────────────
@@ -212,14 +243,27 @@ export function projeyiOlc(proje) {
     //     devre dışı kaldı ve 53 karelik sağlam bir set "50 cümle örtülmemiş" diye kırmızıya döndü.
     //   · Kuvvetlerin Güç Birliği'nde `VO 32-34` gibi ARALIK yazımı tek numara sanıldı.
     // Kanıtın azı yanlış hüküm verir; ikisini de topla, birleşimi kullan.
+    // VO BEYANI ÜÇ YAZIMDA GELİYOR ve üçü de okunmalı:
+    //   `VO 32`    tek cümle
+    //   `VO 32-34` aralık  (tire / en-dash)
+    //   `VO 5+6`   birleşim (+ / & / virgül) — Kuvvetlerin Güç Birliği'nde 16 başlık böyle
+    // Terra 5.6 bunu KRİTİK olarak bildirdi ve haklıydı: `+` okunmadığı için o projede
+    // "17/69 cümlenin karesi yok" denmişti ve bu Mami'ye YANLIŞ BULGU olarak gitti.
+    // Açık 17, tam olarak `+` çiftlerinin ikinci üyeleriydi. Kayıp yoktu.
     const beyanVO = new Set();
     for (const f of promptDosyalar) {
       const t = readFileSync(f, 'utf8');
-      for (const m of t.matchAll(/\bVO\s*(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?/g)) {
+      for (const m of t.matchAll(/\bVO\s*(\d{1,3})((?:\s*[-–—+&,]\s*\d{1,3})*)/g)) {
         const bas = Number(m[1]);
-        const son = m[2] ? Number(m[2]) : bas;
-        if (son >= bas && son - bas < 20) for (let i = bas; i <= son; i++) beyanVO.add(i);
-        else beyanVO.add(bas);
+        beyanVO.add(bas);
+        for (const p2 of (m[2] ?? '').matchAll(/([-–—+&,])\s*(\d{1,3})/g)) {
+          const n = Number(p2[2]);
+          // Aralık yalnız TİRE ile açılır; `+`/`&`/`,` yalnız o tek numarayı ekler.
+          // Ayrıca aralık genişliği 8'le sınırlı: Terra'nın gösterdiği sömürü yolu tek kareye
+          // `VO 1-19` yazıp bütün VO'yu örtülmüş göstermekti. Geniş aralık artık ÖRTMEZ, UYARIR.
+          if (p2[1].match(/[-–—]/) && n > bas && n - bas <= 8) { for (let i = bas; i <= n; i++) beyanVO.add(i); }
+          else beyanVO.add(n);
+        }
       }
     }
     const sadeles = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
@@ -243,6 +287,12 @@ export function projeyiOlc(proje) {
       for (let i = 1; i <= nVO; i++) if (!ortulen.has(i)) acik.push(i);
       if (acik.length) {
         kirmizi(`VO ÖRTÜLMEMİŞ — ${acik.length}/${nVO} cümlenin karesi yok: ${ozetAralik(acik)}  (kanıt: ${kanitlar.join(' + ')}, ${nKare} kare)`);
+      }
+      // ÖRTME SÖMÜRÜSÜ KAPISI (Terra 5.6): tek kareye "VO 1-19 · VO 20-38" yazarak bütün
+      // VO'yu örtülmüş göstermek mümkündü. Kare başına ortalama 3'ten çok VO düşüyorsa bu
+      // bir teslim değil bir iddiadır — kırmızı vermeyiz (meşru olabilir) ama SÖYLERİZ.
+      if (nKare && ortulen.size / nKare > 3) {
+        sari(`kare başına ${(ortulen.size / nKare).toFixed(1)} VO örtülüyor — örtme iddiası kareyle orantısız, gözle bak`);
       }
     } else if (nKare !== nVO) {
       sari(`kare ${nKare} / VO ${nVO} — başlıklar VO numarası ya da metni taşımadığı için ÖRTME kanıtlanamadı, yalnız sayı karşılaştırıldı`);
