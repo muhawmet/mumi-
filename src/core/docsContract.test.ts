@@ -269,7 +269,11 @@ describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşle�
     expect(Object.keys(settings.hooks ?? {})).toEqual(
       expect.arrayContaining(['PreToolUse', 'SessionStart', 'PostToolUse']),
     );
-    expect(hookPaths().length).toBeGreaterThanOrEqual(4);
+    // Eşik GERÇEK kayıt sayısıdır, altında bir sayı değil. Terra 5.6 ikinci gözde ölçtü:
+    // 5 kayıt varken ">= 4" demek, bir hook sessizce silindiğinde testin yeşil kalması demek —
+    // yani sayaç tam olarak koruması gereken kaybı kaçırır. Yeni hook eklenince bu sayı ARTAR;
+    // düşürmek için gerekçe yazılır.
+    expect(hookPaths().length).toBeGreaterThanOrEqual(5);
   });
 
   test.each(hookPaths())('%s hem VAR hem ÇALIŞTIRILABİLİR (exit 126 bir daha saklanmaz)', (rel) => {
@@ -277,8 +281,17 @@ describe('meta-duvar — settings.json hook kaydı ile çalışan gerçek eşle�
     expect(existsSync(abs), `${rel} settings.json'da kayıtlı ama dosya yok`).toBe(true);
 
     // `.mjs` hook'ları `node <yol>` ile çağrılır — exec bitine İHTİYAÇ DUYMAZ (oturum-durumu.mjs:8-9).
-    // Onlarda 100755 aramak Windows'ta kapıyı kalıcı kırmızı yapardı; ölçülen tek şart VAR olmaları.
-    if (rel.endsWith('.mjs')) return;
+    // Onlarda 100755 aramak Windows'ta kapıyı kalıcı kırmızı yapardı.
+    // Ama VAR olmak yetmez: bozuk sözdizimli bir .mjs SessionStart'ı sessizce öldürür ve
+    // "kapı ölçtü ve temiz" ile "kapı hiç ateşlemedi" yine ayırt edilemez — hasat-gate'in
+    // bugün onarılan kusurunun aynısı. Node'un kendi ayrıştırıcısı ölçer (Terra 5.6 riski).
+    if (rel.endsWith('.mjs')) {
+      expect(
+        () => execFileSync(process.execPath, ['--check', abs], { stdio: 'pipe' }),
+        `${rel} sözdizimi bozuk — SessionStart'ta sessizce ölür`,
+      ).not.toThrow();
+      return;
+    }
 
     // 2026-07-28 (Windows ölçümü): bu hüküm ÖNCE `statSync().mode` bakıyordu ve Mami'nin
     // BİRİNCİL makinesinde asla yeşil olamıyordu — NTFS'te exec biti yoktur, mod daima 666.

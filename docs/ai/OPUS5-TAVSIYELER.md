@@ -269,12 +269,17 @@ Kaydı eklemek ucuz ama **davranış değiştirir** (kapı daha sık ateşler) �
 
 ---
 
-### T12 · Meta-duvarın kör noktası — **P2**
+### T12 · Meta-duvarın kör noktası — **P2** ✅ UYGULANDI (`962074a`)
 
-`docsContract.test.ts:254` regexi yalnız `.claude/hooks/*.sh` eşliyor. `buddy.mjs` ve
+`docsContract.test.ts:254` regexi yalnız `.claude/hooks/*.sh` eşliyordu. `buddy.mjs` ve
 `oturum-durumu.mjs` — yani **modele ulaşan iki hook'un ikisi de** — meta-duvarda hiç
-doğrulanmıyor. Silinseler ya da yeniden adlandırılsalar testler yeşil kalır.
-Regexi `.mjs`'i de kapsayacak şekilde genişletmek ucuz ve geri alınabilir; T2 ile birlikte gider.
+doğrulanmıyordu; silinseler testler yeşil kalırdı. Tarama artık `.mjs` ve exec-form `args`
+dizisini de görüyor (`:259`).
+
+**Terra 5.6 ikinci gözde iki artçı risk buldu, ikisi de haklı ve ikisi de kapatıldı:**
+(i) eşik 4'e çıkarılmıştı ama gerçek kayıt 5 — bir hook sessizce silinse test yeşil kalırdı;
+(ii) `.mjs` kolu yalnız dosyanın VAR olduğunu ölçüyordu, **çalıştığını değil** — bozuk bir
+`.mjs` SessionStart'ı öldürür ve duvar bunu görmezdi.
 
 ---
 

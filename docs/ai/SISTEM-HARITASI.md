@@ -6,6 +6,13 @@
 >
 > Ölçüm yöntemi: 6 paralel ajan, her biri tek katman, çıktı biçimi önceden şart koşulmuş.
 > Ana bağlamda büyük dosya okunmadı.
+>
+> **ÖLÇÜM ANI: `b89862c` (2026-08-02, sabah).** Bu tarih boş bir tören değil — bu belge
+> yazıldıktan **bir commit sonra bayatladı**: `962074a` hasat kanalını onardı ve §3.1'in
+> "modele ulaşmıyor" satırı o an yanlış oldu. Terra 5.6 ikinci göz turunda bunu KRİTİK olarak
+> bildirdi ve haklıydı. Onarılmış satırlar artık **✅ ONARILDI (commit)** ile işaretli;
+> işaretsiz her satır ölçüm anındaki hâli anlatır. Haritanın kendisi de haritaladığı kusurdan
+> muaf değil (K3: hüküm tek yerde yaşamalı, kopyası donuyor).
 
 ---
 
@@ -19,7 +26,7 @@
 | Skill | 10 proje ikizi + 6 kullanıcı skill'i | proje 914 satır · kullanıcı 491 satır |
 | Hafıza | 48 dosya | 2179 satır, `~/.claude/projects/-Users-…-mamilas-modern/memory/` |
 | Ders | `APPROVED.md` 7 ders · 10 CANDIDATES + 10 HASAT | ~1.858 satır aday |
-| Teslim | 17 proje dizini | `COMMAND-INBOX/` — 5 aktif, 10 biten, 5 deneme |
+| Teslim | **20 proje dizini** | `COMMAND-INBOX/` — 5 aktif + 10 `Biten/` + 5 `DENEME/` (sayıldı: `ls -d`) |
 | Arşiv | `artifacts/` 12 dizin | 31.297 satır |
 
 ---
@@ -100,10 +107,14 @@ ajan tavanı 6.
 `brain-workbench` · `jury-audit` · `seslendirme-tek-blok` · `motion-qc` (yalnız belge) ·
 `memory-sync` (yalnız belge) · `motion-lint` (yalnız README).
 
-**Hiçbir yerden çağrılmayan (10):** `teslim-denetim.mjs` · `birlestir.mjs` ·
-`ureme-birlestir.mjs` · `ureme-motion-birlestir.mjs` · `t4-recipe-shots.mjs` ·
+**Üretim hattında hiçbir hook / skill / yasa tarafından çağrılmayan (10):** `teslim-denetim.mjs` ·
+`birlestir.mjs` · `ureme-birlestir.mjs` · `ureme-motion-birlestir.mjs` · `t4-recipe-shots.mjs` ·
 `t5-scenes-shots.mjs` · `t6-shots.mjs` · `check-assets3d.mjs` · `project-loot.mjs` ·
 `vo-nefes-kirp.mjs`.
+
+*Kıstas "üretim hattı çağırıcısı"dır, "hiç import edilmiyor" değil* — Terra 5.6 ikinci gözde
+haklı olarak ayrımı zorladı: `project-loot.mjs`'i kendi testi dinamik import ediyor, yani
+ölü değil ama **hatta yeri yok**. Testi olmak bir script'i hatta bağlamaz.
 
 **Testi olmayan (14/24):** brain-workbench · jury-audit · birlestir · memory-sync ·
 vo-nefes-kirp · t4/t5/t6-shots · check-assets3d · motion-qc · teslim-denetim ·
@@ -160,14 +171,17 @@ o üç derste 0 dönerdi.
 | Hook | Event | stdout | stderr | Modele ulaşır mı |
 |---|---|---|---|---|
 | `gate.sh` | PreToolUse/Bash | **0** | **16** | **exit 2'de EVET · exit 0'da HAYIR** |
-| `hasat-gate.mjs` | SessionStart | **0** | **12 çağrı** | **HAYIR — hiçbiri** |
+| `hasat-gate.mjs` | SessionStart | ~~0~~ → **1692 bayt** | ~~12 çağrı~~ → **0** | ✅ **ONARILDI (`962074a`)** — ölçüm anında HAYIR'dı |
 | `buddy.mjs` | SessionStart | 2 | 0 | EVET |
 | `buddy.mjs` | PostToolUse | 0 | 0 | tasarım gereği sessiz muhasebe |
 | `oturum-durumu.mjs` | SessionStart | 5 | 0 | EVET |
 
 **Ölçülen sonuç:** kapı yeşilken ürettiği her şey — `✅ Gate yesil` (`:241`), doküman drift
 uyarısı (`:197-199`), sync uyarısı (`:209-212`), push uyarısı (`:230-231`), lint-skip makbuzu
-(`:120-124`) — **modele hiç ulaşmıyor.** Hasat kapısının 12 çıktı çağrısının tamamı da öyle.
+(`:120-124`) — **modele hiç ulaşmıyor.** `gate.sh` için bu **hâlâ geçerli**.
+
+Hasat kapısının 12 çıktı çağrısı da öyleydi; **`962074a` ile onarıldı**, canlı ölçüm
+stdout 1692 bayt / stderr 0 ve kapı açılır açılmaz üç gerçek bekleyen iş bildirdi.
 
 ### 3.2 `Stop` hook'u kayıtlı değil
 
@@ -200,8 +214,9 @@ gate.sh:123    `.md` teslim dosyası → desen `*_PROMPTLAR*.txt`, .md hiç gör
 hasat-gate.*   node/mjs yok → stderr + exit 0 → tamamen görünmez
 buddy.mjs:167  j.agent_id dolu (alt ajan) → return 0; alt ajanlar buddy katmanını hiç görmez
 buddy.mjs:108  state yazımı başarısız → catch boş, sayaç ilerlemez, teklif eşiği asla dolmaz
-docsContract.test.ts:254  regex yalnız `.claude/hooks/*.sh` eşliyor → buddy.mjs ve
-               oturum-durumu.mjs meta-duvarda HİÇ doğrulanmıyor, silinseler testler yeşil kalır
+docsContract.test.ts:254  regex yalnız `.claude/hooks/*.sh` eşliyordu → buddy.mjs ve
+               oturum-durumu.mjs meta-duvarda HİÇ doğrulanmıyordu, silinseler testler yeşil kalırdı
+               ✅ ONARILDI (962074a) — tarama artık :259'da `sh|mjs` eşliyor
 ```
 
 ### 3.5 Windows kaydı
@@ -230,15 +245,20 @@ settings.json:45  "node" + args ["${CLAUDE_PROJECT_DIR}/.claude/hooks/buddy.mjs"
 
 Üç ad iki yüzeyde birden yaşıyor ve içerikleri ayrı:
 
-| Skill | proje | `~/.claude` | diff | Runtime'da yüklenen |
-|---|---|---|---|---|
-| mamilas-buddy | 178 | **324** | 504 satır | `~/.claude` sürümü |
-| mamilas-gate | 16 | 53 | 71 satır | `~/.claude` sürümü |
-| mamilas-audit | 20 | 17 | 39 satır | `~/.claude` sürümü |
+| Skill | proje satır | `~/.claude` satır | Runtime'da yüklenen |
+|---|---|---|---|
+| mamilas-buddy | 178 | **324** | `~/.claude` sürümü |
+| mamilas-gate | 16 | 53 | `~/.claude` sürümü |
+| mamilas-audit | 20 | 17 | `~/.claude` sürümü |
+
+*(Önceki sürüm burada bir "diff satır sayısı" veriyordu; Terra 5.6 ikinci gözde haklı olarak
+çürüttü — `diff -u` 455, çıplak `diff` başka sayı verir, yani komut yazılmadan o sayı bir şey
+söylemiyor. Belirsiz sayı yerine iki dosyanın kendi satır sayısı yazıldı.)*
 
 Kanıt: runtime skill listesindeki description'lar `~/.claude/skills` sürümüyle bire bir eşleşiyor.
 `mamilas-checkpoint · mamilas-studio · mamilas-world` yalnız kullanıcı seviyesinde var;
-`docsContract.test.ts:309` ikiz kuralı bunları **hiç görmüyor**.
+`docsContract.test.ts:319-326` ikiz kuralı yalnız `.claude` ↔ `.agents` küme eşitliğine bakıyor,
+`~/.claude`'u **hiç görmüyor**.
 
 **Zıt hüküm örneği:** proje `mamilas-gate:3` *"commit etmeden önce kapıyı çalıştırmak için
 kullan"* ↔ global `mamilas-gate:3` *"Do NOT use it merely to run the four commands"*.
