@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "5.1.2 yarım bırakıldı bilerek: 46/53 motion yazılı, 7 kare Mami de. Faz TEMEL GÜÇLENDİRMEye çevrildi — kaynak AGY hata avı (17 kırık, 4 P0)",
-  "nextAction": "docs/ai/TEMEL-IS-LISTESI.md ile başla; birinci madde hasat hook stderr→stdout (kanıt: stdout 0 bayt / stderr 1692 bayt)",
+  "lastCompleted": "OPUS 5 turu için clear metni yazıldı · AGY hata avı 17 maddeye sıkıştırıldı · masaüstüne tam yedek alındı (repo+kareler+Claude beyni, 1.6GB) · uzaktan 9 commit rebase edildi (3 yeni ders)",
+  "nextAction": "Clear sonrası: agents/COMMAND-INBOX/Bekleyen/OPUS5-BASLATMA-METNI.txt yapıştırılır — harita→yargı→tavsiye→icra",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-02T08:38:12.898Z",
+  "updatedAt": "2026-08-02T08:45:06.076Z",
   "updatedBy": "claude",
-  "baseCommit": "b650386"
+  "baseCommit": "6d2938a"
 }

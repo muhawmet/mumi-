@@ -113,7 +113,57 @@ yerde yaşamıyor — bir dahaki sefere sıfırdan yazılacak.
 
 **(g) Kadro kullanılmıyor.** Yukarıdaki 8 modelden pratikte 2'si kullanıldı.
 
+───────────────────────── KAPSAM — Mami'nin TEK TEK saydığı yüzeyler ─────────────────────────
+
+Mami (2026-08-02): *"senkron, ajanların beyni, yazma şekilleri, enzim, özümseme, her şeye bak
+— her şey, pipeline'ı, yasaları. Bütün gün çalışacağız."* Hiçbiri kapsam dışı değil:
+
+| Yüzey | Nerede yaşıyor | Bilinen soru |
+|---|---|---|
+| **Senkron** | `scripts/claude-sync.mjs` · `docs/ai/sync/` | Bu turda 4 çatışma çıktı ve ELLE birleştirildi. Çatışma normal mi, yoksa yön belirlemenin eksikliği mi? Git beyni taşımıyor — yedek taşıyor. |
+| **Ajanların beyni** | ajan brief'leri — hiçbir yerde YAŞAMIYOR | Bu turda iki kez 200 satırlık brief elle yazıldı, işe yaradı, sonra buharlaştı. Neden yetenek değil? |
+| **Ajanların yazma şekli** | teslim `.txt`'leri · MOTION · revize | Altı ajan aynı işi altı üslupla yazdı. Biçim şart koşuldu, ÜSLUP koşulmadı. |
+| **Enzim** | `mamilas-enzim` skill · `_ENZIM.md` | Kapanış hasadı `_ENZIM.md` okumuyor (iş listesi md.12/16). Enzim kilitleri üretimde tutuyor mu, ölçülmedi. |
+| **Özümseme** | hafıza · `APPROVED.md` · skill'ler | Ölçülen kırık: düzeltme hafızaya yazılıyor, otomatik yüklenen skill onu EZİYOR. Ders bankası kanalı stderr'e akıyor. |
+| **Pipeline** | `agents/PROTOCOL.md` · runner · command JSON | Site JSON'u üretimde baypas ediliyor (%1-3 örtüşme). Hattın gerçek şekli ile yazılı şekli aynı mı? |
+| **Yasalar** | `PROMPT-YASASI.md` 917 satır · `CLAUDE.md` · `faz-icraat.md` · `.claude/rules/` | Yasa düzyazıda, ölçen script'te — ikisi kayıyor (tez (a)). |
+| **Kapı ve hook'lar** | `.claude/hooks/` · `settings.json` | stderr kanalı · Windows `.sh` kaydı · lint bypass makbuzsuz. |
+| **Skill parkı** | `.claude/skills/` + `.agents/skills/` ikizleri | Ölü skill adlarına yönlendirme var (md.9). İkizler elle senkronlanıyor. |
+
+**ÇALIŞMA KURALI — Mami'nin emri:** *"her işi sen commitleyeceksin, kontrol edip Sol'la
+kendini denetleteceksin."*
+  · **Her iş parçası kendi commit'ini alır** — toplu commit yok. Kapı yeşil, mesaj kanıtlı.
+  · **Kendi işini kendin doğrula, sonra Sol'a denetlet.** Kendi ilk varsayımın kanıt değildir.
+  · **AGY avangarttır** — önden gider, tarar, tarif eder. Hüküm senindir.
+
 ───────────────────────── HAVADA KALAN İŞ — kaybolmasın ─────────────────────────
+
+🔴 **BAŞKA BİR OTURUMDA ÜÇ DERS DAHA ÜRETİLDİ — SİSTEMİN SON İŞLERİ, ÖRNEK PROMPT KORPUSU.**
+(uzaktan 9 commit, 2026-08-02'de rebase edildi. Mami: *"onları da al, örnek prompt olur,
+sistemin son işleri onlar."*)
+
+  · `5. Sınıf - Hücre ve Organelleri` — VO 53 cümle · 53 kare · lint kırmızı 0
+  · `6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi` — VO 54 cümle · 54 kare · lint kırmızı 0
+  · `5. Sınıf - Destek ve Hareket Sistemi` — VO 52 cümle · 3 blok dosyası
+
+  **Bu üçü bu turun ALTIN ÖRNEĞİDİR** — en yeni, en olgun prompt yazımı burada.
+  Yeni bir kıstas yazarken önce bunlara bak. Ama **arşiv kıstas değildir**: lens
+  *"bunlar hatalı, ne bozuk?"* olarak kalır.
+
+  ⚠️ **Mami'nin ölçümü: bu üç ders üretilirken iş ÇOK AJANA dağıldı ve USAGE BİTTİ.**
+  Bu bir başarı hikâyesi değil, bir **orkestrasyon kusuru**. Ajan sayısı bir yetenek değil
+  bir maliyet kalemidir. Bu turun kendi kuralı buradan doğuyor: **ajan tavanı 6, birim İŞ
+  PARÇASI, ve her ajanın çıktı biçimi ÖNCEDEN şart koşulur** — yoksa çıktı ana bağlama
+  geri döner ve iki kez ödenir.
+
+  🔴 **VE ORADA ÖLÇÜLEN İLK KUSUR: TESLİM BİÇİMİ PROJELER ARASINDA KAYIYOR.**
+  5.1.2 promptları `### K<n>` başlığıyla ve tek birleşik `_PROMPTLAR.txt` olarak yazıldı.
+  Bu üç ders `PROMPTLAR/A-K01-K15.txt` gibi BLOK dosyalarıyla, `### K` başlığı OLMADAN
+  yazıldı ve birleşik `_PROMPTLAR.txt` ile `_EDIT-PLAN.txt` hiç üretilmedi.
+  Sonuç: `scripts/teslim-denetim.mjs` bu üç derste **0 kare** sayıyor — yani doğrulayıcı,
+  üreticiyle aynı sözleşmeyi konuşmuyor ve sessizce yanlış cevap veriyor.
+  Aynı sistem, aynı hafta, iki ayrı biçim. **Biçim bir gelenek, sözleşme değil** —
+  ve bu, tez (a)'nın teslim hattındaki karşılığıdır.
 
 **5.1.2 "Farklı Kültürler, Ortak Bir Yaşam" — 46/53 tamam, 7 kare Mami'de.**
   Tek dosya: `agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam/Farklı Kültürler_KALAN-URETIM.txt`
