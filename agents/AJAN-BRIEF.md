@@ -94,10 +94,20 @@ listesini o karenin gerçek maddesine göre KENDİN yaz. Omurga 53/53 aynı, mal
 K01-K16 kuyruk dosyasından farklı bir omurga taşıyor, ve o omurga 71/71 tutarlı) ajan **onaylı
 komşu kareye uyar** ve durumu raporlar — iki lehçeli bir film, bayat bir kuyruk dosyasından kötüdür.
 
-⚠ **`prompt-lint`'in `style` kuralı bugün satırın TAMAMINI karşılaştırıyor**, yani "malzeme
-değişti" (sağlıklı) ile "omurga sürüklendi" (kusur) ayrımını yapamıyor. Kırmızısı bu yüzden hem
-doğru hem eksik okunabilir. Ölçüm ayrıştırılana kadar hüküm şudur: **omurga tekrarı SAĞLIKTIR,
-malzeme tekrarı KUSURDUR.**
+🔴 **MALZEME CÜMLESİ `STYLE` SATIRINA YAZILIR, GÖVDEYE DEĞİL.** Bu, gecenin sonunda duvarın
+Claude'u düzelttiği yerdir ve kayda geçer: `style-tekrar` kuralı bir kez *"kuyruk yapıştırılıyorsa
+STYLE aynı olur, kural gevşesin"* diye SARI'ya indirilmek istendi; `prompt-lint.test.mjs` A5
+duvarı bunu **çürüttü**. Ölçüm: **Birlikte Daha Güçlüyüz 54/54 karede birebir aynı STYLE →
+30/54 revize**; **Eşeyli 49/50 FARKLI STYLE → 0 revize.** Yani aynılık gerçekten kötü sonuçla
+ilişkili ve kural doğru.
+
+Çelişki sanılan şey bir **uygulama hatasıydı**: omurgayı yapıştırıp malzemeyi **STYLE satırına
+eklersen** satırlar zaten farklı çıkar ve iki kural birden sağlanır. Malzemeyi gövdeye koyup
+STYLE'ı çıplak bırakmak kuralı ihlal eder — ve etmelidir.
+
+> **Doğru yazım:** `STYLE: <omurga birebir> Materials here: <o karenin 2-4 maddesi>.`
+> Denetleyici A bloğunda böyle yapıldı → 14 sürüm, yeşil. B bloğunda malzeme gövdeye kondu →
+> 20/20 aynı, kırmızı. Aynı yasa, iki uygulama, iki sonuç.
 
 ### A6 · Ajanın göremeyeceği şey — brief bunu söyler
 

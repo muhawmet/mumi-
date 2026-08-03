@@ -374,6 +374,20 @@ const COCUK_DEGIL = /\bchild(?:['’]s)?[- ](?:safe|clear|eye|eyes|height|friend
 const EL_DEGIL = /\bhand(?:['’]s)?[- ](?:width|length|span|breadth|knitted|painted|made|held|woven|blown|carved|stitched)\b|\bhand(?:ful|held|le|les|ling|made|writing|written)\b|\bby hand\b/gi;
 
 /**
+ * 🔴 2026-08-03 — NESNE PARÇASI, İNSAN PARÇASI DEĞİL.
+ * `face` ve `skin` bu metinlerde çoğunlukla YÜZEY adıdır: "the rear face of the cord",
+ * "the front face of the plate", "the skin on the milk". Aynı kusur bir kez `nearSkin`'de
+ * onarılmıştı (dosyanın kendi yorumu: *"`face` → **surface** içinde eşleşti"*), ikizi
+ * `hasHuman`'da duruyordu: 14 karelik bir blokta **4 sahte kırmızı** — kedi karesi, maket
+ * karesi ve çaydanlık karesi "karede insan var" sayılıp ten kilidi istendi.
+ * Hafızadaki *"lint rol görmüyor · 50 karede 19 yanlış alarm"* kusurunun kök nedeni budur.
+ */
+// ⚠ Desen, ORGANI DA yutmalı: "the model's left cheek" içinde yalnız "the model's" silinirse
+// geriye "left cheek" kalır ve tetikleyici olarak durur. Sahibi nesne olan her beden-parçası
+// adı, araya sıfat girse bile birlikte düşer.
+const YUZEY_DEGIL = /\b(?:the|its|a|that)\s+(?:model|mannequin|figure|bust|dummy|doll|statue)(?:'|’)s\s+(?:\w+\s+){0,2}(?:cheek|face|skin|jaw|brow|temple|forehead|neck|shoulder|hand)\b|\bthe model(?:'|’)s\b|\bits face\b|\bpale skin\b|\b(?:rear|front|top|bottom|outer|inner|far|near|upper|lower|flat|curved|cut|end|side)\s+face\b|\bface\s+of\s+(?:the|its|that|this)\b|\bskin\s+(?:on|of)\s+(?:the|its|that)\b|\b(?:milk|paint|pudding|soup|cream)\s+skin\b|\bcheek\s+of\s+(?:the|its)\b/gi;
+
+/**
  * Karede İNSAN var mı? Kelime avlamaz — VARLIK arar.
  *
  * Bu fonksiyon bugün ÜÇ KEZ yanlış çıktı ve üçünde de aynı sebeple: sınırsız kelime eşleştirme.
@@ -386,7 +400,7 @@ const EL_DEGIL = /\bhand(?:['’]s)?[- ](?:width|length|span|breadth|knitted|pai
 const hasHuman = (b) => {
   const fb = frameBody(b);
   if (INSANSIZ.test(fb)) return false;
-  const temiz = fb.replace(OLUMSUZ_YUZ, ' ').replace(EL_DEGIL, ' ').replace(COCUK_DEGIL, ' ');
+  const temiz = fb.replace(OLUMSUZ_YUZ, ' ').replace(EL_DEGIL, ' ').replace(COCUK_DEGIL, ' ').replace(YUZEY_DEGIL, ' ');
 
   // (a) Çıplak insan ismi — "two children watch", "the teacher leans in".
   if (INSAN_KELIME.test(temiz)) return true;
@@ -409,7 +423,12 @@ const hasHuman = (b) => {
 // "skin", "sheen", "negative space" gibi kelimeler taşır. Tuzaklar bu kuyrukta aranırsa
 // ölçülen şey kare değil boilerplate olur — Sürtünme'de 31 sahte `sheen` alarmının kaynağı buydu.
 // Tuzak taraması yalnız KARE-ÖZEL gövdede yapılır.
-const TAIL_RE = /^(STYLE|LIGHT AND PALETTE|TEXT|NEGATIVE)\s*:/im;
+// 🔴 2026-08-03 eklendi: `KARE-ÖZEL YASAK:` de bir YASAK satırıdır ve içi "no child, no person,
+// no bare skin" gibi cümlelerle doludur. Gövdede sayıldığı için `hasHuman` insansız karelerde
+// (kedi, maket, çaydanlık) "karede insan var" sanıp ten kilidi istiyordu — 14 karelik bir blokta
+// 4 sahte kırmızı. Bu, hafızadaki "lint rol görmüyor · 50 karede 19 yanlış alarm" kusurunun
+// kök nedeni: YASAK cümlesi VARLIK kanıtı sayılıyordu.
+const TAIL_RE = /^(STYLE|LIGHT AND PALETTE|TEXT|NEGATIVE|KARE[- ]ÖZEL)\s*/im;
 function frameBody(b) {
   const lines = b.split(/\r?\n/);
   const i = lines.findIndex((l) => TAIL_RE.test(l));
@@ -581,7 +600,14 @@ function blockKind(body, fk = 'frame-dosyasi') {
 // `K01 [MİRA] | VO 1: …` · `Sahne 14` · `Kare 8 —`) ve ayraç bazen başlığı sarıyor, bazen
 // gövdeyi. Bu yüzden ayraca değil KARE BAŞLIĞINA çıpalanır: iki başlık arası gövdedir.
 // `(?!\()` — dosya sonundaki kesim notu (`K36(S40+41) K38(S43+44)…`) kare başlığı sanılıyordu.
-const HEAD_RE = /^(?:#{1,6}\s*)?(?:K|KARE|Kare|SAHNE|Sahne|SHOT|Shot)\s*[-–—]?\s*\d{1,3}(?!\()\b/;
+// 🔴 2026-08-03: `K35–K38 @mutfak` gibi BLOK ÖZET satırları kare başlığı sanılıyordu ve
+// dosya başına 24 HAYALET kare üretiyordu — bütün slotları boş çıkan, hiç var olmamış kareler.
+// Sonuç: yeşil bir dosya 28 kırmızıyla kapıyı kilitliyordu. Kusur dosyada değil ölçümdedir.
+// Ayırt edici: gerçek kare başlığı TEK numara taşır; özet satırı bir ARALIK yazar (K35–K38,
+// K35-K38, K35 – K38). Aralık deseni başlık sayılmaz.
+const ARALIK_RE = /^(?:#{1,6}\s*)?(?:K|KARE|Kare)\s*\d{1,3}\s*[-–—]\s*(?:K|KARE|Kare)?\s*\d{1,3}\b/;
+const HEAD_RE_RAW = /^(?:#{1,6}\s*)?(?:K|KARE|Kare|SAHNE|Sahne|SHOT|Shot)\s*[-–—]?\s*\d{1,3}(?!\()\b/;
+const HEAD_RE = { test: (s) => HEAD_RE_RAW.test(s) && !ARALIK_RE.test(s) };
 const NOISE_RE = /^(?:[-=_]{4,}|#{4,}.*)\s*$/;
 
 function parseBlocks(text) {
@@ -622,9 +648,15 @@ function corpusMetrics(blocks) {
 
   // 2) NEGATİFİN KARE-ÖZELLİĞİ — Bileşke'nin 52/52 karesinde NEGATIVE VARDI, ama
   //    kare-özel yalnız 2/52. Satırın varlığı değil, farklı olması ölçülür.
+  // 🔴 2026-08-03: kare-özel yasak AYRI BİR SLOTTA da yazılabiliyor (`KARE-ÖZEL YASAK:`) ve
+  //    lint onu görmüyordu → global kuyruğu paylaşan 14 kare "%7 kare-özel" diye kırmızı yandı,
+  //    oysa her karenin kendi yasağı vardı, sadece başka satırdaydı. Ölçülen şey satırın ADI
+  //    değil, o karenin kendi bozulma yolunun kapatılıp kapatılmadığıdır.
   const negs = frames.map((f) => {
     const m = f.body.match(/(?:^NEGATIVE:|FRAME NEGATIVE[:—–-]?)([\s\S]*?)(?=\n[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}:|$)/im);
-    return m ? m[1].trim().replace(/\s+/g, ' ') : null;
+    const ozel = f.body.match(/^KARE[- ]ÖZEL(?:\s+YASAK)?\s*:([\s\S]*?)(?=\n[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}:|$)/im);
+    const parca = [m ? m[1] : '', ozel ? ozel[1] : ''].filter(Boolean).join(' ').trim();
+    return parca ? parca.replace(/\s+/g, ' ') : null;
   });
   const withNeg = negs.filter(Boolean);
   const negOzel = withNeg.length ? new Set(withNeg).size / withNeg.length : 0;
@@ -769,8 +801,18 @@ export function lintFile(path, register = 'EDU') {
       const n = s ? metrics.styleTekrar.get(s) : undefined;
       if (!n) return;
       rows[i].problems.push({
+        // ⚠ 2026-08-03: bu kural bir kez SARI'ya indirilmek istendi ("kuyruk yapıştırılıyorsa
+        // STYLE aynı olur") ve `prompt-lint.test.mjs` A5 duvarı bunu ÇÜRÜTTÜ — haklı olarak.
+        // Ölçüm: Birlikte Daha Güçlüyüz 54/54 karede birebir aynı STYLE taşıyordu ve **30/54
+        // revize** aldı; Eşeyli 49/50 FARKLI STYLE ile **0 revize**. Yani aynılık gerçekten
+        // kötü sonuçla ilişkili. Çelişki sanılan şey uygulama hatasıydı:
+        //   DÜNYA OMURGASI birebir yapıştırılır + MALZEME o karenin maddesiyle STYLE satırına
+        //   EKLENİR → satırlar zaten farklı çıkar ve kural sağlanır.
+        // Malzemeyi gövdeye koyup STYLE'ı çıplak bırakmak bu kuralı ihlal eder ve etmelidir.
+        // Ayrıntı: agents/AJAN-BRIEF.md §A5.
         kind: 'korpus', key: 'style-tekrar', level: 'kirmizi',
-        msg: `STYLE bloğu ${n} karede BİREBİR aynı (eşik ${STYLE_TEKRAR_MIN}+)`,
+        msg: `STYLE bloğu ${n} karede BİREBİR aynı (eşik ${STYLE_TEKRAR_MIN}+) — `
+          + `omurga aynı kalır ama MALZEME cümlesi STYLE satırına kareye özel eklenmeli`,
         why: STYLE_TEKRAR_NEDEN,
       });
     });

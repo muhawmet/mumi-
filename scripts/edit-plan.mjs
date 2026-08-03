@@ -78,6 +78,15 @@ const kareOf = (n) => kareler.find((f) => f.replace(/\.(png|jpg|jpeg)$/i, '') ==
 // --- VO süre tahmini: Türkçe hece ≈ ünlü sayısı, sakin anlatım 4.35 hece/sn + nefes ---
 const V = /[aeıioöuüâîû]/gi;
 const voSure = (t) => Math.max(1.4, (t.match(V) || []).length / 4.35 + 0.35);
+
+// 🔴 KALİBRASYON — ham tahmin ölçülmüş biçimde YÜKSEK çıkıyor:
+//    Kütle    plan 3:33 → gerçek 3:00  (oran 0.845)
+//    Bitkilerde plan 4:32 → gerçek 3:29 (oran 0.768)
+// Ortalama ≈ 0.80. Uyarı ham tahmine göre verilirse her ikinci satır kırmızı yanar ve
+// GERÇEK taşmalar gürültüde kaybolur — ölçüldü: 53 klipte 11 sahte uyarı.
+// Bu yüzden pencere karşılaştırması kalibre edilmiş süreyle yapılır; tabloda HAM tahmin
+// gösterilir (dürüstlük), uyarı KALİBRE tahminle verilir (isabet).
+const VO_KALIBRASYON = 0.80;
 const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
 const kova = (uret) => (uret <= 3 ? 'GEÇİŞ' : uret >= 8 ? 'VURUŞ' : 'TAŞIYICI');
@@ -101,8 +110,8 @@ for (const k of klipler) {
   const bayrak = [];
   if (k.uret >= 8) { bayrak.push(`🔴 ${k.uret}s ÜRET`); uzunUret.push(k.n); }
   if (k.ekran > k.uret) bayrak.push(`son kare ${(k.ekran - k.uret).toFixed(0)}s dondur`);
-  if (v > k.ekran + 0.25) bayrak.push(`◄VO ${v.toFixed(1)}s > pencere ${k.ekran}s`);
-  if (k.uret <= 3 && v > k.uret) bayrak.push('◄L-kesim: görüntü cümleden önce biter');
+  if (v * VO_KALIBRASYON > k.ekran + 0.15) bayrak.push(`◄VO ${v.toFixed(1)}s (kalibre ${(v * VO_KALIBRASYON).toFixed(1)}s) > pencere ${k.ekran}s`);
+  if (k.uret <= 3 && v * VO_KALIBRASYON > k.uret) bayrak.push("◄L-kesim: görüntü cümleden önce biter");
 
   satirlar.push({
     l: `${kareOf(k.n).padEnd(9)} K${String(k.n).padStart(2, '0')}  ${kova(k.uret).padEnd(8)} `
