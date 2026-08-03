@@ -5,8 +5,8 @@ Kaynak kare: images/1.png … images/14.png (1.png = K01). Her kare Read ile AÇ
 Yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b. Kelime bandı 190-215 (§3'ün en dar bandı).
 VO eşlemesi: Bitkilerde Üreme_SESLENDIRME.txt (K01 = 1. cümle … K14 = 14. cümle).
 
-⚠ BU DOSYADA 10 KLİP VAR, 14 DEĞİL. K03 · K09 · K12 · K14 REVİZE'dedir — kare değişeceği için
-motion YAZILMADI. Yeni kareler basıldıktan sonra o dördü bu dosyaya eklenir.
+✅ 14/14 KLİP TAM. Kabul edilen kusurlar (kamera kilidiyle küçültüldü): 03, 09 ve 12.
+Yeniden basılıp düzelen: 14 — taç yaprak ucu artık beyaz.
 
 Kalıcı: kimse konuşmaz, ağız hareketi yok · 5 saniyede oturmaktan doğrulma, ayağa kalkma,
 yürüyüşe başlama, nesnenin el değiştirmesi YOK · yazı taşıyan nesne sabit kütledir, kamera
@@ -112,3 +112,11 @@ The clip opens with the bead of dew already moving: it has been sitting in the s
 BLOK A MOTION BİTTİ — 10 klip (K01·K02·K04·K05·K06·K07·K08·K10·K11·K13).
 BEKLEYEN: K03 · K09 · K12 · K14 — kare revizede, motion yazılmadı.
 =========================================================================
+
+-------------------------------------------------------------------------
+# K14 — "Onların içinde renkli ve kokulu yapraklar duruyordu." · 5s
+DURUM: temiz (revize sonrası — taç yaprak ucu artık beyaz)
+KAMERA NİYETİ: Tomurcuk hizasında tam kilitli duruş; tek hareket ucun kendi kıvrımını bırakması. Kamera hiçbir yere gitmez, tomurcuk açılmaz.
+-----
+The clip opens with the bud already broken at one point only: two of its five sepals parted a little way at the top and one tightly rolled white petal tip already pushed up out of that gap and curled over, the low sun already standing behind so the thin tip is lit through from within. Then the emerging tip relaxes a fraction and its very edge unrolls by a hair — and at that instant the down along the two parted sepal edges flares as the light climbs the hairs, and the one white tongue reads clearly against the wholly green bud. The clip begins with a green bud and ends with the first colour standing clear of it. Three things are alive: the emerging tip unrolling a hair and stopping, the down flaring along the two lit sepal edges, and dust motes drifting through the backlight. Camera: fully locked — no push, no tilt, no drift, the focus plane fixed on the parted gap for the whole clip. The bud opens no further: the sepals stay closed everywhere except that one narrow gap, exactly one petal tip is out and no second tip appears anywhere, and no fully open flower head enters the frame. The white tip stays white, never turning coral, pink or red. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----

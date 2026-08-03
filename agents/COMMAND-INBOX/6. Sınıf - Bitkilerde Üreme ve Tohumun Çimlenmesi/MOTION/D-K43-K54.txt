@@ -4,9 +4,8 @@ Motor: Kling 3.0 (i2v) · Register: EDU · Kaynak kare: images/43.png … images
 Yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b — tek paragraf, slot yok, köşeli parantez yok.
 Kelime bandı: 190–215 (§3'ün "geçerli tek rakam" satırı — üç sayının en darı).
 
-BU DOSYADA YALNIZ GÖRÜLMÜŞ VE TEMİZ HÜKMÜ ALMIŞ KARELER VAR: K43 · K44 · K47 · K50 · K51 · K52 · K53.
-REVİZE bekleyen kareler (motion YAZILMADI): K45 · K46 · K48 · K49 · K54.
-Revize kareler basıldıktan sonra motion'ları bu dosyanın sonuna eklenir.
+✅ 12/12 KLİP TAM. Kabul edilen kusurlar (kamera kilidiyle küçültüldü): 45 ve 46.
+Yeniden basılıp düzelenler: 48, 49 ve 54 — özellikle 49'da filiz artık IŞIK VERMİYOR.
 
 BLOK GENELİ (her klipte geçerli, hiçbir kliple çelişmez):
 · Kimse konuşmaz, kimse yazmaz, kimse bant yapıştırmaz, hiçbir nesne el değiştirmez.
@@ -61,6 +60,22 @@ DURUM: temiz
 REVİZE:
 
 
+# K48 — "Efe kavanozlardan birini karanlık dolaba koydu." · 5s
+DURUM: temiz (revize sonrası — fasulyeler artık duran suyun altında değil)
+KAMERA NİYETİ: Mutfak hizasında sabit duruş, tek hareket dolap kapağının kapanmaya başlaması. Tezgâhtaki kavanoza yaklaşma yok — iki kavanoz aynı kalmalı.
+-----
+The clip opens with @efe already at the open cupboard, one hand flat on the door's edge, the second jar already standing on the shelf inside beside the preserve jars, the first jar still out on the worktop behind him in the window light. Then he pushes the door a hand's width toward closing — and at that instant the daylight falling on the shelved jar narrows to a thin wedge across its glass, the cotton inside going grey while the jar on the worktop stays bright, and the two identical jars are for the first time in two different worlds. The clip begins with two jars in the same light and ends with one of them in the dark. Three things are alive: the wedge of light narrowing across the shelved jar, steam lifting from the tea glass on the worktop, and the checked cloth on the oven rail swinging a finger's width. Camera: locked at kitchen height with no push, no drift and no reframe; the jar on the worktop keeps exactly the same size and the same focus it has now and is never approached. The door keeps moving in one direction only and never closes fully; neither bean is submerged and no standing water appears in either jar. Silent clip, no audio, no dialogue, mouth closed. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
+# K49 — "Üç gün sonra dolabı açtı." · 5s
+DURUM: temiz (revize sonrası — filiz artık IŞIK VERMİYOR)
+KAMERA NİYETİ: Kapı aralığı hizasında tam kilitli duruş; tek hareket ışık kamasının bir parmak genişlemesi. Filize yaklaşma yok — büyütmek onu yeniden parlatır.
+-----
+The clip opens with the cupboard door already held a hand's width open and completely still, the wedge of kitchen daylight already reaching in across the shelf, the pale shoot already curved up out of the jar and leaning toward the opening, @efe's cheek almost against the door's edge and one eye directly in the light. Then his hand eases the door a finger's width further — and at that instant the wedge widens across the shelf and one more centimetre of the shoot's stem comes out of the dark, the blanched tissue reading dull and matte as it enters the light. The clip begins with a boy looking into a dark cupboard and ends with the thing inside made visible by daylight alone. Three things are alive: the wedge of light widening across the shelf, dust turning slowly inside that light, and the shoot's lit tip holding without moving. Camera: fully locked — no push, no tilt, no drift, the focus plane fixed at the gap. The shoot emits nothing: it casts no light onto the shelf, the jar or his face, throws no glow into the dark interior and carries no sparkle, mote or halo, and it stays the darkest lit thing in frame while the brightest remains the daylight edge on the door. Silent clip, no audio, no dialogue, mouth closed. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
 # K50 — "Karanlıktaki tohum da çimlenmişti."
 KAMERA NİYETİ: Solgun filizin boyunca yukarıdan aşağı iner — iki çenek yaprağından başlayıp yarılmış kabuğun üstünde durur.
 -----
@@ -139,3 +154,11 @@ Her madde: kusur → prompt'ta DEĞİŞTİRİLECEK satır (kalanına dokunulmaz)
   ring never appears on the balcony floor, no seedling stands on the floor, and no extra
   foreground pot, rim or object enters the near edge that is not in the opening shot."
 =========================================================================================
+
+-------------------------------------------------------------------------
+# K54 — "Efe fideyi sardunyanın yanına dikti; arı yeniden geldi." · 5s
+DURUM: temiz (revize sonrası — fazla saksı kalktı, kadraj toparlandı; fide zeminde kabul edildi)
+KAMERA NİYETİ: Açılış karesiyle aynı yükseklik, aynı saat, tam kilitli duruş. Tek hareket arının çiçekte ağırlığını değiştirmesi. Kamera hiçbir yere gitmez.
+-----
+The clip opens on the same ledge at the same hour as the film's opening: @sardunya in its terracotta pot with the nursery label upright beside it, the row of pots receding along the stone, the rooftops burning white beyond the railing — and two things that were not there at the start, @ari settled on the open head and the young seedling standing in its own small pot below. Then the bee shifts its grip on the petal — and at that instant the head dips a few degrees under the weight and the seedling's two leaves lift a hair in the same draught, the beginning and the end of the same story moving together. The clip begins as the opening frame returned and ends with what has arrived in it. Three things are alive: the flower head dipping under the bee, the seedling's leaves lifting in the draught, and steam turning off the tea glass. Camera: fully locked — the same height, the same distance and the same framing as the opening frame, no push, no drift, no tilt and no reframe, so only what is in the scene has changed. @ari stays in contact with the petal and never lifts off; the label's wording never re-spells or wobbles. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
