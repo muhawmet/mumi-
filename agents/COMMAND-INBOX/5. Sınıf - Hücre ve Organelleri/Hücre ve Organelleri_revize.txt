@@ -1,75 +1,192 @@
 HÜCRE VE ORGANELLERİ — DENETİM SONUCU
 =========================================================================
-Denetim: 2026-08-03 · 6 sekans ajanı, ajan başına bir sekans, TEK GEÇİŞ
-Her kare Read ile açıldı ve GÖRÜLDÜ. 53 karenin 53'ü denetlendi.
+Denetim: 2026-08-03 · iki geçiş
+  1. geçiş — 6 sekans ajanı, motion + revize birlikte → "53/53 temiz" dedi. YANLIŞTI.
+  2. geçiş — 3 ajan, DAR MERCEK (güvenlik · VO-ekran · dünya kopması · kadraj) → 16 kusur.
 
-SONUÇ: 53/53 TEMİZ — revize edilecek kare YOK, yeniden üretilecek kare YOK.
+SONUÇ: 53 karenin 37'si temiz · 16 kare revize/yeniden üret.
 
-Revize eşiği (Mami kararı, 2026-08-03 — bu iş için, yasa değil):
-  1. sahne sıfırdan üretilmeli   2. bozuk sahne ya da bozuk yazı
-  3. ekran VO cümlesiyle uyuşmuyor
-Bu üçünün dışındaki hiçbir şey revize sayılmadı; süreklilik ve malzeme farkları
-motion tarafında kadraj ve kamera yönüyle çözüldü.
-
-=========================================================================
-SEKANS SEKANS
-=========================================================================
-S1  K01–K08   8/8 temiz
-S2  K09–K15   7/7 temiz
-S3  K16–K22   7/7 temiz
-S4a K23–K30   8/8 temiz
-S4b K31–K38   8/8 temiz
-S5  K39–K48   10/10 temiz
-S6  K49–K53   5/5 temiz
-
-YAZI DENETİMİ — 21 kare ekranda yazı taşıyor, 21'i de kareye BAKARAK hecelendi:
-  gerçek dünya : K01 ÇİMENTO · K03 "180" · K08 FEN BİLİMLERİ · K09 SOĞAN · K12 LAM
-                 K13 10x/40x · K39 TUZ · K41 MUTFAK · K50 SÜT · K51 ÇİMENTO
-  hücre içi    : K21 ÇEKİRDEK · K22 40x · K25 MİTOKONDRİ · K28 RİBOZOM
-                 K30 ENDOPLAZMİK RETİKULUM · K32 GOLGİ CİSİMCİĞİ · K34 LİZOZOM
-                 K36 KOFUL · K38 KLOROPLAST · K43 HÜCRE DUVARI · K46 SENTROZOM
-  Eksik nokta, sedilla/breve hatası, ters harf, ayna, uydurma glif: SIFIR.
-
-ÖĞRETİM DOĞRULUĞU: 53/53 tutuyor. Soğan (bitki) hücresi köşeli + hücre duvarı var +
-kloroplast yok; kloroplast maydanoz yaprağı örneğinde (K37-K38). Hayvan (yanak)
-hücresi yuvarlak + duvar yok + kloroplast yok + sentrozom var + koful küçük ve çok.
+🔴 BİRİNCİ GEÇİŞİN NEDEN KÖR KALDIĞI — bu dosyanın en değerli satırı.
+Brief'e "revize eşiği YÜKSEK, varsayılan hüküm temiz, minimale takılma" yazıldı.
+Bu cümle raporlamayı değil BAKMAYI kıstı: aynı ajanlar, aynı kareler, dar mercek ve
+yüksek-eşik cümlesi olmadan 16 kusur buldu. Ayrıca eşiğin üç sınıfı (sıfırdan üretim ·
+bozuk sahne-yazı · VO uyuşmazlığı) ÇOCUK GÜVENLİĞİNİ ve DÜNYA KOPMASINI hiç saymıyordu —
+bıçak tutan bir çocuk üç sınıfın da dışında kalıyor ve kurala göre "temiz" geçiyor.
+DERS: eşik daraltılırken hangi kusur sınıflarının kapsam dışı kaldığı AÇIKÇA yazılır;
+"minimale takılma" bir bakma yasağına dönüşmemelidir.
 
 =========================================================================
-EŞİĞİN ALTINDA KALAN, REVİZE YAZILMAYAN GÖZLEMLER (kayıt için)
+A. ÇOCUK GÜVENLİĞİ — en yüksek öncelik, ders okullara gidiyor
 =========================================================================
-· Duvar malzemesi K02/K04/K52/K53'te kaba yonu kireçtaşı yerine düzgün fabrika
-  tuğlası geldi (K01/K05/K51 doğru). Mami kabul etti. Telafi motion'da: dört klipte
-  de kamera duvar yüzeyini taramıyor, ilgi ele/soğana/tuğla yığınına bağlı.
-· Mitokondri K24-K26'da ve kloroplast K37-K38'de KESİTLİ geldi; prompt'un NEGATIVE'i
-  kesiti yasaklıyordu. Öğretim açısından doğru (krista ve granum yerinde), o yüzden
-  temiz sayıldı. Kilitlerde "kesit bu hâliyle donar, yeniden kesilmez" yazıldı.
-· K46 SENTROZOM harfleri istenen mat tebeşirimsi çubuk maddesi yerine camsı geldi;
-  kilide "hiçbir akan sıvı harfleri bükmez, kırmaz, yüzdürmez" eklendi.
-· K49'da prompt'un istediği lastik göz siperi halka izi render edilmemiş; motion yeni
-  öğe doğuramayacağı için vuruş gözbebeği ve çeneye bağlandı.
-· K09/K12 ile K11/K13 arasında mutfak seti hafif kayıyor; her karede kamera düşük
-  genlikli tutuldu ve ilgi tezgâh üstündeki hero-prop'a bağlandı.
+
+### 10.png
+K10 · GÜVENLİK · 10-11 yaşındaki çocuk elini büyük bir şef bıçağının üstünde tutuyor;
+üstelik bıçak iki kez render edilmiş (soğanın önünde ve arkasında ayrı ağız).
+Use this referenced image, change ONLY: remove the knife entirely — both the held knife
+and the second floating blade — so nothing sharp remains anywhere in frame or on the
+board; the onion is already halved and both of Mira's hands rest flat, palm-down, on the
+board beside the two halves. Keep everything else identical.
+
+### 9.png
+K09 · GÜVENLİK (arka plan, temas yok) · Tezgâhta şef bıçağı ağzı açıkta, ucu tezgâh
+kenarından dışarı taşıyor. Mira odanın öbür ucunda, dokunmuyor.
+Use this referenced image, change ONLY: remove the chef's knife from the counter, leaving
+the cutting board and the onion exactly as they are. Keep everything else identical.
+
+### 40.png
+K40 · GÜVENLİK + KADRAJ + DÜNYA · Kaşığın ucu dudakların ARASINDA, ağzın içinde; kadraj
+bir çocuğun ağzına makro yakınlıkta; ayrıca ten foto-gerçekçi (gözenek, ince tüy) ve
+dersin pixar_3d_edu dilinden kopuk. VO "yanağının içine hafifçe sürdü" diyor.
+YENİDEN ÜRET — göğüs hizasından dörtte üç kadraj (makro değil), kaşığın ucu yanağın
+dıştan görünen şişkinliğine hafifçe değmiş, dudaklar kaşıktan ayrı; render dersin
+pixar_3d_edu dilinde: mat yumuşak gölgeleme, sadeleştirilmiş çil, gözenek ve tüy YOK,
+K39/K41/K49 ile aynı yüz dili.
+
+=========================================================================
+B. DÜNYA KOPMASI — kare başka bir yapımdan gelmiş gibi duruyor
+=========================================================================
+
+### 2.png
+K02 · DÜNYA · Ustanın teni ve sakalı ile tuğla dokusu foto-gerçekçi/oyun-motoru render'ı;
+K01'in yumuşak Pixar stilizasyonundan kopuk.
+Use this referenced image, change ONLY: re-render the mason and the brick wall in the same
+stylized Pixar-CG language as the wide garden shot — soft simplified skin shading, no
+photoreal pores or stubble detail, stylized brick texture. Keep everything else identical.
+
+### 4.png
+K04 · DÜNYA · Aynı kayma: usta ve duvar foto-gerçekçi. Ek olarak gökyüzü kapalı-gri
+(K01 altın saat) ve duvarın ortasına gri bir taş yaması girmiş.
+Use this referenced image, change ONLY: re-render the mason and the wall surface in the
+stylized Pixar-CG language of the sequence — simplified skin shading and stylized brick,
+no photoreal micro-detail — and restore the warm low golden-hour sky of the opening shot.
+Keep everything else identical.
+
+### 23.png
+K23 · DÜNYA · Hücrenin içine soldan uzun, sivri uçlu, METALİK MAVİ bir neşter/cımbız ucu
+giriyor. Hücre içinde alet yok; yabancı cisim.
+Use this referenced image, change ONLY: replace the sharp metallic blade-like form with a
+soft, rounded translucent membrane sheet with organic edges — no pointed tip, no metal
+sheen. Keep everything else identical.
+
+=========================================================================
+C. VO-EKRAN UYUŞMAZLIĞI — kare cümleyi taşımıyor
+=========================================================================
+
+### 11.png
+K11 · VO "Zarı tırnağının ucuyla kaldırdı" · Tuttuğu zar A4 kâğıdı boyunda, kendi
+kafasından büyük, sert bir levha — plastik poşet gibi okunuyor. Ölçek on kat yanlış.
+Use this referenced image, change ONLY: shrink the transparent onion membrane to a
+fingernail-sized wet sliver pinched and drooping between her thumb and index fingertip.
+Keep everything else identical.
+
+### 16.png
+K16 · VO "Her tuğlanın kendi sınırı vardı. Buna hücre zarı diyoruz." · Görünen şey ahşap
+damarı gibi soyut kıvrımlı bir yüzey; sınırı olan bir hücre ya da zar okunmuyor.
+YENİDEN ÜRET — tek bir soğan hücresi net çerçevede, kendi parlayan sınır zarıyla çevrili,
+komşu hücrelerden açıkça ayrılmış; ışık ENZİM kilidine göre alttan.
+
+### 19.png
+K19 · VO "Bütün organeller onun içinde yüzer" · Yüzen yalnız bir baloncuk, bir koyu küre
+ve bir kırıntı var; çokluk yok, sitoplazma boş duruyor.
+Use this referenced image, change ONLY: populate the mid and background cytoplasm with
+several more clearly readable floating organelle shapes — a few orange bean-shaped
+mitochondria and small vesicles at varying depths. Keep everything else identical.
+
+### 20.png
+K20 · VO "Ortada, ışığı içine çeken koyu bir küre duruyordu" · Koyu küre kadrajın sağında
+ve küçük; kareyi ortadaki şeffaf kese yönetiyor.
+Use this referenced image, change ONLY: move the dark textured sphere to the center of the
+frame and make it the largest, most strongly lit element, pushing the transparent sac
+behind it. Keep everything else identical.
+
+### 26.png
+K26 · VO "Koşarken, uyurken, hatta şu an bile enerjiyi o üretiyor" · Mitokondriler düz bir
+su yüzeyine oturmuş, cansız; ayrıca K19'un "içinde yüzer" kuralını bozuyor.
+Use this referenced image, change ONLY: lift the mitochondria off the flat surface so they
+float suspended in the fluid, and add a warm golden glow pulsing out from the cristae of
+the nearest one. Keep everything else identical.
+
+### 35.png
+K35 · VO "İçi sıvı dolu şeffaf bir kese kabarıyordu" · Kese boş bir cam kubbe gibi; içinde
+sıvı görünmüyor, şişkinlik yok.
+Use this referenced image, change ONLY: fill the transparent sac with visible pale liquid
+up to near the top and round out its silhouette so it reads as swelling under internal
+pressure. Keep everything else identical.
+
+### 45.png
+K45 · VO "Soğanda yeşil kloroplastlar vardı; Mira'nın hücresinde hiç yoktu" · Cümle iki
+taraflı, kare tek taraflı: yalnız kloroplast dolu soğan hücresi var, "yoktu" tarafı yok.
+Use this referenced image, change ONLY: split the frame into a side-by-side comparison —
+left half the existing chloroplast-filled onion cell, right half a rounded animal cell
+with zero green bodies. Keep everything else identical.
+
+### 48.png
+K48 · VO "Soğanda tek büyük koful vardı; Mira'nınkinde küçük küçük birkaç tane" · Aynı
+kusurun aynası: yalnız Mira'nın küçük kofulları var, "soğanda tek büyük" tarafı yok.
+Use this referenced image, change ONLY: split the frame into a side-by-side comparison —
+left half an onion cell dominated by one single large vacuole, right half the existing
+several small vacuoles. Keep everything else identical.
+
+=========================================================================
+D. MAMİ KARARI BEKLEYEN İKİ KARE — ajanlar ve Claude aynı fikirde değil
+=========================================================================
+
+K15 (15.png) — 2. geçiş ajanı "dünya kopması" dedi: soğuk mavi-gri, foto-gerçekçi tıbbi
+görselleştirme dili, stok mikroskop görüntüsü gibi. CLAUDE KATILMIYOR: ENZİM §3 kavram
+ışığını "serin-beyaz şaft" olarak KİLİTLİYOR, yani soğukluk tasarım gereği; ayrıca bu kare
+dersin belkemiği (soğan hücreleri tuğla dizilimi olarak geliyor, açılış duvarının aynası).
+Sıcaklaştırmak kavram ışığı kilidini bozar. HÜKÜM MAMİ'NİN.
+
+K44 (44.png) — 1. geçiş ajanı "taşıyor" dedi, 2. geçiş ajanı "kadraj çok sıkı, yuvarlaklık
+ve duvarsızlık okunmuyor" dedi. Claude ilk bakışta soyut buldu. İki okuma üçe karşı bir
+değil, gerçek bir anlaşmazlık. Açılırsa öneri:
+Use this referenced image, change ONLY: zoom out to show four or five complete rounded,
+wall-free animal cells side by side with visible full outlines. Keep everything else
+identical.
+
+=========================================================================
+E. TEMİZ — 37 kare
+=========================================================================
+K01 K03 K05 K06 K07 K08 K12 K13 K14 K17 K18 K21 K22 K24 K25 K27 K28 K29 K30 K31
+K32 K33 K34 K36 K37 K38 K39 K41 K42 K43 K46 K47 K49 K50 K51 K52 K53
+
+YAZI DENETİMİ — 21 kare ekranda yazı taşıyor, 21'i de kareye bakılarak hecelendi:
+K01 ÇİMENTO · K03 "180" · K08 FEN BİLİMLERİ · K09 SOĞAN · K12 LAM · K13 10x/40x
+K21 ÇEKİRDEK · K22 40x · K25 MİTOKONDRİ · K28 RİBOZOM · K30 ENDOPLAZMİK RETİKULUM
+K32 GOLGİ CİSİMCİĞİ · K34 LİZOZOM · K36 KOFUL · K38 KLOROPLAST · K39 TUZ · K41 MUTFAK
+K43 HÜCRE DUVARI · K46 SENTROZOM · K50 SÜT · K51 ÇİMENTO
+Eksik nokta, sedilla/breve hatası, ters harf, ayna, uydurma glif: SIFIR.
+
+EŞİĞİN ALTINDA KALAN, REVİZE YAZILMAYAN (kayıt için)
+· Duvar malzemesi K02/K04/K52/K53'te kaba yonu kireçtaşı yerine düzgün fabrika tuğlası
+  (K01/K05/K51 doğru). K02/K04 zaten yeniden render edilecek — o turda malzeme de düzelir.
+  K52/K53 için Mami revize istemedi; motion'da kamera duvar yüzeyini taramıyor.
+· Mitokondri K24-K26 ve kloroplast K37-K38 kesitli geldi; öğretim açısından doğru.
+
+=========================================================================
+MOTION DURUMU
+=========================================================================
+53/53 motion yazılı ve yapı olarak temiz. Revize edilen 16 karenin motion'ı YENİ KARE
+BASILDIKTAN SONRA doğrulanacak — "görmediğin kareye motion yazma" yasası revize edilmiş
+kare için de geçerlidir. Yapısı korunacak, yalnız kare-özel kilit ve kamera niyeti
+yeni kareye göre teyit edilecek.
 
 =========================================================================
 DERS ADAYLARI — kapanış hasadına girer, APPROVED'a yalnız Mami taşır
 =========================================================================
-1. Bir organelin KANONİK ÇİZİM GELENEĞİ negatifle iptal edilemiyor. "never cut open,
-   never sectioned, no cutaway" beş karenin beşinde yok sayıldı; motorun "mitokondri"
-   ve "kloroplast" için varsayılanı ders kitabı kesitidir. Kapalı kabuk isteniyorsa
-   OLUMLU yazılmalı: "an unbroken amber shell whose folds are read through the
-   translucent wall." — "yasak SAYMAK yanıltır" sınıfının yeni örneği.
-2. Yazı-kilidi haritası KARE NUMARASIYLA değil "bu karede harf var mı" sorusuyla
-   kurulur. Denetim brief'i yazı taşıyan kareleri ENZİM'in organel-adı tablosundan
-   aldı ve 21 kareden 7'sini saydı; gerçek kaynak her PROMPTLAR bloğunun kendi YAZI
-   beyanıdır. İki ajan kusuru bağımsız olarak yakalayıp kapattı — yani kusur brief'te,
-   ajanda değil. (Bu, repoda ölçülen "doğrulayıcı yerleşimi varsayıyor" sınıfının
-   9. örneği.)
-3. i2v'de ÖN PLAN ÇAPASI bir nesne değil bir KAMERA GÖREVİdir. K14'te motor "bulanık
-   odak düğmesi" isteğini ikinci bir mikroskop gövdesi olarak render etti; kamera onu
-   çözerse klip iki alete bölünür. Kilit olumlu yazılmalı: "blurred instrument mass
-   holds the near right and never resolves."
-4. Yazı taşıyan karede kamera hareketi tamamen yasaklanmak zorunda değil: SABİT
-   YARIÇAPLI YAY kullanılırsa kamera hareket eder ama kelimenin ekrandaki boyu hiç
-   değişmez (K46). "Kamera yazıya yaklaşmaz" kuralı böylece ölü kadraj üretmez.
-5. Harfin ZAR ÜZERİNDEKİ YANSIMASI ikinci bir yazı yüzeyidir (K32, K34) ve motor onu
-   ana harften bağımsız bozabilir. Yansıma da kilitlenir: "düz ayna kalır."
+1. "Revize eşiğini yükselt / minimale takılma" talimatı bir BAKMA YASAĞINA dönüşüyor.
+   Aynı ajanlar aynı karelerde, dar mercek verilince 16 kusur buldu. Eşik daraltılırken
+   kapsam dışı kalan kusur SINIFLARI açıkça sayılmalı — özellikle çocuk güvenliği.
+2. Denetim brief'inde ÇOCUK GÜVENLİĞİ hiç yoktu. Eğitim videosunda bu bir kalite maddesi
+   değil, yayın engeli: bıçak tutan bir çocuk okula gidemez. Dördüncü zorunlu madde olarak
+   her denetim brief'ine girer.
+3. DÜNYA KOPMASI kare kare ölçülmüyor. K02/K04/K40 foto-gerçekçi render'a kaymış ve üçü de
+   birinci geçişte "temiz" geçmiş; süreklilik denetimi kıyafet ve prop bakıyor, RENDER
+   DİLİNE bakmıyor. Sekans ajanı komşu karelerle üslup karşılaştırması yapmalı.
+4. KARŞILAŞTIRMA CÜMLESİNE TEK TARAFLI KARE veriliyor (K45, K48). "X'te vardı, Y'de yoktu"
+   diyen bir VO cümlesi, ekranda iki tarafı da göstermek zorundadır — yoksa cümle
+   ekranda yalnız yarısını buluyor.
+5. Bir organelin kanonik çizim geleneği negatifle iptal edilemiyor ("kesit yasak" beş
+   karede yok sayıldı); kapalı kabuk isteniyorsa olumlu yazılır.
+6. Yazı-kilidi haritası kare numarasıyla değil "bu karede harf var mı" sorusuyla kurulur.
+7. i2v'de ön plan çapası bir nesne değil bir KAMERA GÖREVİdir (K14).

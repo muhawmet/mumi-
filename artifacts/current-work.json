@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "53/53 motion (6 sekans ajanı, tek geçiş, tamamı DURUM temiz) + EDIT-PLAN + revize raporu teslim; kit 7/7",
-  "nextAction": "Mami klipleri Kling'de üretsin — klipler+VO inince kaba-kurgu.mjs",
+  "lastCompleted": "Hücre denetimi 2. geçiş: 16 kusur bulundu (37/53 temiz) — 3 güvenlik, 3 dünya kopması, 9 VO-ekran, 2 Mami kararı. 1. geçişin körlüğünün kök nedeni yazıldı",
+  "nextAction": "Mami 16 kareyi yeniden bassın; yeni kareler gelince motion teyidi",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-03T13:27:20.433Z",
+  "updatedAt": "2026-08-03T14:16:44.899Z",
   "updatedBy": "claude",
-  "baseCommit": "4768e48"
+  "baseCommit": "f98ac8b"
 }
