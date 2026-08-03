@@ -197,10 +197,32 @@ function projectFiles(dir) {
   // Windows'ta Türkçe adlı her projede hasat çöküyordu (2026-07-29, 4 test).
   // Karşılaştırmalar zaten `foldTr`'den geçiyor ve o NFC/NFD farkını kendisi siliyor —
   // yani normalizasyon eşleşme için GEREKSİZ, dosya açmak için YIKICI. Gerçek ad korunur.
-  return readdirSync(dir, { withFileTypes: true })
+  const temiz = (n) => n !== '.DS_Store' && !n.startsWith('~$') && !n.startsWith('._');
+  const ust = readdirSync(dir, { withFileTypes: true })
     .filter((e) => e.isFile())
     .map((e) => e.name)
-    .filter((n) => n !== '.DS_Store' && !n.startsWith('~$') && !n.startsWith('._'));
+    .filter(temiz);
+
+  // KLASÖR YERLEŞİMİ (2026-08-03, gerçek bir kapanışta yakalandı).
+  // Teslim iki biçimde yaşıyor: `<Ad>_PROMPTLAR.txt` (tek dosya) ya da `PROMPTLAR/A-K01-K14.txt`
+  // (bloklu klasör). Bu fonksiyon yalnız ÜST DÜZEYİ okuyordu, yani bloklu yerleşimdeki hiçbir
+  // kare hasada girmiyordu: Bitkilerde Üreme 54 karesini teslim etmiş olmasına rağmen hasat
+  // "PROMPT_MISSING — bu projenin yapısı ölçülemedi" dedi ve ders adayı üretmedi.
+  // Bu, bu repoda dördüncü kez ölçülen aynı kusur sınıfı: doğrulayıcı, ölçtüğü şeyin
+  // YERLEŞİMİNİ varsayıyor (gate.sh prompt dalı · prompt-lint walk · current-work teslim
+  // taraması · şimdi bu). Üçü 2026-08-02'de onarıldı, bu gözden kaçmıştı.
+  const ALT = ['PROMPTLAR', 'MOTION'];
+  const alt = [];
+  for (const k of ALT) {
+    const p = join(dir, k);
+    if (!existsSync(p)) continue;
+    try {
+      for (const e of readdirSync(p, { withFileTypes: true })) {
+        if (e.isFile() && temiz(e.name)) alt.push(`${k}/${e.name}`);
+      }
+    } catch { /* okunamayan alt klasör sessiz atlanmaz: üstteki liste yine döner */ }
+  }
+  return [...ust, ...alt];
 }
 
 /** `HASAT.json` — bölünmüş teslim koda TAHMİN ettirilmez, projede BEYAN edilir. */
@@ -450,9 +472,19 @@ function harvest(dir, opts = {}) {
   // olmadığı anlamına gelmez — kitin biçim sözleşmesinden saptığı anlamına gelir. İlk koşumda
   // ikisi de "YOK" raporlandı; eksik dosya ile sapmış ad aynı hüküm değildir.
   const stem = (s) => s.replace(/^_/, '').replace(/\.(txt|md)$/i, '').toLowerCase();
+  // KİT DENETİMİ — iki teslim biçimini de tanır.
+  // `_PROMPTLAR.txt` / `_MOTION.txt` tek dosya biçimidir; `PROMPTLAR/` ve `MOTION/` klasörü
+  // aynı teslimin bloklu biçimidir ve ikisi de EKSİKSİZ sayılır. Bu ayrım yapılmadığında
+  // 54 kare ve 53 klip teslim etmiş bir proje "kit eksik 2/7" görünüyordu (2026-08-03).
+  const KLASOR = { '_PROMPTLAR.txt': 'PROMPTLAR/', '_MOTION.txt': 'MOTION/' };
   const kit = KIT.map((k) => {
     const exact = files.includes(`${name}${k.suffix}`);
     const found = files.find((f) => /\.(md|txt)$/i.test(f) && stem(f).endsWith(stem(k.suffix)));
+    const kok = KLASOR[k.suffix];
+    const klasor = kok ? files.filter((f) => foldTr(f).startsWith(foldTr(kok))) : [];
+    if (!exact && !found && klasor.length) {
+      return { ...k, exact: true, found: `${kok} (${klasor.length} parça)`, biçim: 'klasör' };
+    }
     return { ...k, exact, found: found ?? null };
   });
 

@@ -220,10 +220,28 @@ describe('A6 · style-tekrar sahte alarm regresyonları', () => {
       ['5. Sınıf - Destek ve Hareket Sistemi', 'C-K29-K41.txt'],
       ['6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi', 'A-K01-K14.txt'],
     ];
+    // ⚠ YOL GÖMÜLMEZ. Bu blok bir kez gömdü ve 2026-08-03'te kırıldı: Mami "Bitkilerde Üreme"yi
+    // bitirip `Biten/` altına aldı, dosya aynı yerde durmadı, test ENOENT verdi. Aynı kusur
+    // A5'te bir gün önce onarılmıştı ve buraya taşınmamıştı — bu repoda beşinci tekrar.
+    // Proje NEREDEYSE orada aranır; hiçbir yerde yoksa bu bir kusur DEĞİL, iş kapanmış olabilir —
+    // o dosya atlanır ama en az bir dosya ölçülmüş olmalı, yoksa test sahte yeşile döner.
+    const bul = (proje, dosya) => {
+      for (const aday of [join(INBOX, proje, 'PROMPTLAR', dosya),
+                          join(INBOX, 'Biten', proje, 'PROMPTLAR', dosya)]) {
+        if (existsSync(aday)) return aday;
+      }
+      return null;
+    };
+    let olculen = 0;
     for (const [proje, dosya] of dosyalar) {
-      const r = lintFile(join(INBOX, proje, 'PROMPTLAR', dosya), 'EDU');
+      const yol = bul(proje, dosya);
+      if (!yol) continue;                     // proje silinmiş/yeniden adlandırılmış olabilir
+      olculen += 1;
+      const r = lintFile(yol, 'EDU');
       expect(`${proje}/${dosya}: ${tekrarKirmizi(r)}`).toBe(`${proje}/${dosya}: 0`);
     }
+    expect(olculen, 'hiçbir aktif üretim dosyası bulunamadı — ölçüm körelmiş olabilir')
+      .toBeGreaterThan(3);
   });
 
   it('EŞİK ALTI susar: aynı STYLE 2 karede varsa kırmızı YOK', () => {

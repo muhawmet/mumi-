@@ -62,6 +62,18 @@ const TXT_MD = /\.(txt|md)$/;
 export function pickPromptSources(files, manifest) {
   if (manifest?.promptParts?.length) return { parts: [...manifest.promptParts], via: 'manifest' };
   const c = files.filter((f) => /_promptlar\.(txt|md)$/.test(foldTr(f)));
+
+  // KLASÖR YERLEŞİMİ — `PROMPTLAR/A-K01-K14.txt` gibi bloklu teslim.
+  // Bu dal ADIN İKİNCİ BİÇİMİDİR, rakip aday DEĞİL: klasördeki her blok teslimin bir PARÇASI,
+  // yani birden çok dosya belirsizlik değil bütünlüktür. Üst düzeyde `_PROMPTLAR` varsa o
+  // kazanır (eski sözleşme aynen korunur); yoksa klasöre bakılır.
+  // Ölçüldü 2026-08-03: Bitkilerde Üreme 54 karesini bloklu yerleşimde teslim etmişti ve
+  // hasat "PROMPT_MISSING" deyip ders adayı üretmedi — teslim tamdı, ölçüm kördü.
+  const blok = files
+    .filter((f) => /^promptlar\//.test(foldTr(f)) && TXT_MD.test(foldTr(f)))
+    .sort();
+
+  if (c.length === 0 && blok.length > 0) return { parts: blok, via: 'folder' };
   if (c.length === 0) return { parts: [], via: 'discovery', error: 'PROMPT_MISSING' };
   if (c.length === 1) return { parts: c, via: 'discovery' };
   // >1: ASLA readdir sırasına bırakma. Ölçüldü: aynı klasörde .txt (48 kare / 10 eksikli)
