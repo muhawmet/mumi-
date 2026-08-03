@@ -1,8 +1,19 @@
-# DÜNYA KUYRUĞU — pixar_3d_edu · register EDU
-# 🔴 BU ÜÇ SATIR HER KAREYE BİREBİR YAPIŞTIRILIR. YENİDEN YAZILMAZ, PARAFRAZ EDİLMEZ.
-# Ölçüldü (2026-08-03, Hücre): elle yazılınca 53 karede 53 farklı sürüm doğdu,
-# negatif iskeleti bloktan bloğa 151→295 kelimeye şişti ve 3 kare foto-gerçekçiye kaydı.
-# Kaynak: node scripts/dunya-kilidi.mjs pixar_3d_edu --register=edu
+# ⚠️ BU DOSYA BU PROJEDE OTORİTE DEĞİL — 2026-08-03 gecesi ölçüldü.
+#
+# Üç ajan bağımsız olarak aynı şeyi bildirdi: aşağıdaki dunya-kilidi.mjs ham çıktısı
+# Bileşke Kuvvet'in 71 karesinin HİÇBİRİNDE kullanılmıyor. Proje kendi 'ev sürümünü'
+# taşıyor ve o sürüm tutarlı: STYLE 3 yerleşik varyant, LIGHT 2, NEGATIVE 2 — omurga
+# sabit, kareye özel ayrıntı değişiyor. Ölçüm: 71 karede STYLE 63 sürüm, LIGHT 55,
+# NEGATIVE 71 — yani MALZEME ve SAHNE değişiyor, omurga değişmiyor. Bu DOĞRU davranış.
+#
+# 🔴 MAMİ KARARI BEKLİYOR — iki seçenek:
+#   (a) bu dosya ev sürümüyle yeniden yazılır ve kuyruk yeniden otorite olur
+#   (b) bu projede kuyruğun otorite olmadığı yazılır, kanon onaylı karelerdir
+# Karar verilene kadar: YENİ KARE YAZAN AJAN ONAYLI KOMŞU KAREYE UYAR, bu dosyaya değil.
+# İki lehçeli bir film, bayat bir kuyruk dosyasından kötüdür.
+#
+# STYLE'ın iki parçası ve ters kuralları: agents/AJAN-BRIEF.md §A5
+# ---------------------------------------------------------------------------
 
 STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
 LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
