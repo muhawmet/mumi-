@@ -142,3 +142,49 @@ Kare, motion'ın onu bozamayacağı şekilde tasarlanır:
 | S4 | K23-K38 | @hucreici | 8 organel |
 | S5 | K39-K48 | @mutfak + @hayvanhucre | yanak hücresi · karşılaştırma |
 | S6 | K49-K53 | @mutfak → @bahce | kapanış, açılışın aynası |
+
+---
+
+## KAPANIŞ ENZİMİ — 2026-08-03 (motion turu, 16 kusur sonrası)
+
+> Bunlar düzyazı ders değil, **bir sonraki işte koşulacak kontrol**. Kaynağı bu projenin
+> ikinci denetim geçişi: birinci geçiş "53/53 temiz" dedi, dar mercekli ikinci geçiş
+> aynı karelerde 16 kusur buldu.
+
+**E1 · ÇOCUK GÜVENLİĞİ her denetim brief'inin ZORUNLU maddesidir.**
+Kontrol: brief'te "çocuğun tuttuğu/dokunduğu/yakınında net duran kesici alet, ocak, kaynar
+sıvı, ağza giren nesne" cümlesi var mı? Yoksa brief eksiktir.
+Kanıt: K10'da 10-11 yaşındaki çocuk şef bıçağı tutuyordu ve eşiğin üç sınıfına da girmediği
+için "temiz" geçti. Bu bir kalite maddesi değil, **yayın engelidir** — ders okula gidiyor.
+
+**E2 · "Eşiği yükselt / minimale takılma" bir BAKMA yasağına dönüşmez.**
+Kontrol: eşik daraltılırken kapsam DIŞINDA kalan kusur sınıfları brief'te tek tek sayılır.
+Kanıt: "revize eşiği YÜKSEK, varsayılan hüküm temiz" cümlesi raporlamayı değil bakmayı kıstı;
+aynı ajanlar dar mercek verilince aynı karelerde 16 kusur buldu.
+
+**E3 · Karşılaştırma cümlesine tek taraflı kare verilmez.**
+Kontrol: VO cümlesi "X'te vardı, Y'de yoktu" kalıbındaysa kare **iki tarafı da** gösterir.
+Kanıt: K45 ve K48 yalnız bir tarafı gösteriyordu; cümle ekranda yarısını buluyordu.
+
+**E4 · VO bir ÖLÇEK adı geçiriyorsa prompt o ölçüyü açıkça yazar.**
+Kontrol: cümlede "tırnağının ucuyla", "avucunda", "parmak kadar" geçiyorsa prompt'ta nesnenin
+boyu o uzva göre yazılmış mı?
+Kanıt: K11'de zar A4 boyunda geldi, VO "tırnağının ucuyla kaldırdı" diyordu.
+
+**E5 · Sekans ajanı komşu karelerle RENDER DİLİ karşılaştırması yapar.**
+Kontrol: süreklilik denetimi kıyafet/prop/ışık dışında **üslup** da bakar — foto-gerçekçi
+ten/gözenek, oyun-motoru dokusu, farklı render dili.
+Kanıt: K02, K04 ve K40 foto-gerçekçiye kaymıştı ve üçü de birinci geçişte temiz geçti.
+
+**E6 · Hücre içi karelerde alet/metal cisim yok.**
+Kontrol: mikro karelerin negatifine "no instrument, no blade, no tweezers, no metallic
+man-made object" girer.
+Kanıt: K23'te hücrenin içine metalik mavi neşter ucu girmişti.
+
+**E7 · Bir organelin kanonik çizim geleneği negatifle iptal edilemiyor.**
+Kontrol: kesitsiz isteniyorsa OLUMLU yazılır ("saydam zardan okunan istif"), yasakla değil.
+Kanıt: "never cut open / no cutaway" beş karenin beşinde yok sayıldı (mitokondri, kloroplast).
+
+**E8 · Yazı-kilidi haritası kare numarasıyla değil "bu karede harf var mı" sorusuyla kurulur.**
+Kanıt: brief 7 kare saydı, gerçek 21'di; kaynak ENZİM'in organel tablosu değil, her PROMPTLAR
+bloğunun kendi YAZI beyanıdır.
