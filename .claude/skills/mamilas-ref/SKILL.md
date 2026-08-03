@@ -1,6 +1,6 @@
 ---
 name: mamilas-ref
-description: MAMILAS'a yeni referans (ref) eklerken/yüklerken kullan — referansın SURGERY_DATA.json'da tam nereye, hangi worldId'ye, hangi 7-katman alanlarla gireceğini ve pipeline'da (brain.ts dnaDirectives→perRef→buildImagePrompt) nasıl işlendiğini bilir; körleme eklemez. Mami "referans ekleyeceğiz / referans yükleyeceğiz / şu dünyaya ref" dediğinde çalıştır.
+description: "KOD FAZI SKILL'İ — src/core/SURGERY_DATA.json'a yeni referans (ref) EKLEMEK içindir: hangi worldId'ye, hangi 7-katman alanlarla gireceğini ve brain.ts'te (dnaDirectives→perRef→buildImagePrompt) nasıl işlendiğini bilir. ⚠ İCRAAT fazında src/core/ DONMUŞTUR; bu skill yalnız açık bir inşa turunda çağrılır. ⚠ ÜRETİM SIRASINDAKİ 'referans ekleyeceğiz' BAŞKA BİR ŞEYDİR — o, projenin _REFERANSLAR.txt envanteridir ve kanonu agents/PROMPT-YASASI.md §4a'dır, bu skill değil."
 ---
 
 # MAMILAS — Referans Ekleme Router'ı

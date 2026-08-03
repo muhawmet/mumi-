@@ -1,6 +1,6 @@
 ---
 name: mamilas-gate
-description: Use when the MAMILAS quality gate has gone red and blocked a commit, when a test count drops, when the build breaks, when you need to diagnose why the gate is refusing, or before declaring a change finished/ready. Also use before a large refactor to establish a clean baseline. Do NOT use it merely to run the four commands — the PreToolUse hook already runs them on every commit.
+description: "MAMILAS kalite kapısı kırmızı yandığında ve commit'i bloke ettiğinde kullan. Mami'nin cümleleri: 'kapı kırmızı', 'commit olmuyor', 'commit bloke oldu', 'build patladı', 'test kırmızı', 'testler düştü', 'neden geçmiyor', 'kapı neden reddediyor'. Ayrıca bir değişikliği bitti/hazır ilan etmeden önce ve büyük bir refactor öncesi temiz taban kurmak için. Use when the quality gate blocks a commit, a test count drops, or the build breaks. ⚠ Dört komutu koşmak için ÇAĞRILMAZ — PreToolUse hook'u zaten her commit'te koşuyor; bu skill kapının NEDEN reddettiğini teşhis eder."
 ---
 
 # MAMILAS Gate — teşhis

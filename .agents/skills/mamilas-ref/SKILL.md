@@ -1,6 +1,6 @@
 ---
 name: mamilas-ref
-description: MAMILAS'a yeni referans (ref) eklerken/yüklerken kullan — referansın SURGERY_DATA.json'da tam nereye, hangi worldId'ye, hangi 7-katman alanlarla gireceğini ve pipeline'da (brain.ts dnaDirectives→perRef→buildImagePrompt) nasıl işlendiğini bilir; körleme eklemez. Mami "referans ekleyeceğiz / referans yükleyeceğiz / şu dünyaya ref" dediğinde çalıştır.
+description: "KOD FAZI SKILL'İ — src/core/SURGERY_DATA.json'a yeni referans (ref) EKLEMEK içindir: hangi worldId'ye, hangi 7-katman alanlarla gireceğini ve brain.ts'te (dnaDirectives→perRef→buildImagePrompt) nasıl işlendiğini bilir. ⚠ İCRAAT fazında src/core/ DONMUŞTUR; bu skill yalnız açık bir inşa turunda çağrılır. ⚠ ÜRETİM SIRASINDAKİ 'referans ekleyeceğiz' BAŞKA BİR ŞEYDİR — o, projenin _REFERANSLAR.txt envanteridir ve kanonu agents/PROMPT-YASASI.md §4a'dır, bu skill değil."
 ---
 
 # MAMILAS — Referans Ekleme Router'ı
@@ -37,9 +37,9 @@ Referans buraya bir obje olarak girer. Başka HİÇBİR yere ref listesi yazılm
 | Durum | worldId | Nasıl |
 |---|---|---|
 | Bir dünyaya özgü grameri güçlendiren ref | O dünyanın id'si | Tam 7-katman dna + anchor/use/avoid; `refs[]`'e ekle |
-| Dünyalar-arası sinematografi (deep-focus, one-light…) | **YOK** | `cinedna_*` id; **KOMPAKT** yaz (kısa dna+anchor) — AGENTS.md: cinedna_ ref'leri kasten kompakt, **genişletme/dokunma** |
+| Dünyalar-arası sinematografi (deep-focus, one-light…) | **YOK** | `cinedna_*` id; **KOMPAKT** yaz (kısa dna+anchor) — CLAUDE.md: cinedna_ ref'leri kasten kompakt, **genişletme/dokunma** |
 | Simetri-kilitli bir ref (nadir) | — | id'yi `brain.ts:971` `SYMMETRY_LOCK_REFS` set'ine ekle (yalnız gerçekten simetri dayatıyorsa) |
-| One Piece dünyası ref'i | one_piece_toei | dünya materialId **'none'** (AGENTS.md) |
+| One Piece dünyası ref'i | one_piece_toei | dünya materialId **'none'** (CLAUDE.md) |
 
 <!-- bag-yok: public/refs/ dizini hiç yok; cümlenin söylediği şey tam da bu -->
 ## 3. Preview (opsiyonel prosedürel önizleme)

@@ -1,6 +1,6 @@
 ---
 name: mamilas-audit
-description: MAMILAS beyin çıktısını alıcı gözüyle denetle — gerçek generateBatch çıktısı üret, motor lehçesi/kadraj kalıbı/cerrah kontrolü yap, üretim gününde kötü kare doğuracak kusurları ve prompt kalitesini gözle oku. "Prompt kalitesi nasıl?" sorusunun cevabı budur.
+description: "KOD FAZI SKILL'İ — src/core/ değiştirildikten sonra beyin çıktısında regresyon var mı diye bakar: gerçek generateBatch çıktısı üretilir, motor lehçesi/kadraj kalıbı/cerrah kontrolü yapılır. ⚠ İCRAAT fazında çağrılmaz ve TESLİM EDİLEN PROMPT KALİTESİNİN ÖLÇÜSÜ DEĞİLDİR — CLAUDE.md'de yazılı: generateBatch çıktısı kanıt değildir, o metin motora gitmiyor (%1-3 örtüşme). Teslim edilen prompt'un kalitesi gerçek .txt dosyaları gözle okunarak ve mamilas-denetim ile ölçülür."
 ---
 
 # MAMILAS Audit — Gerçek Çıktı Denetimi
