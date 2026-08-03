@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Bitkilerde Üreme_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi — kaba kurgu</name>
+    <duration>5013</duration>
+    <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>109</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/1.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Efe'nin balkonundaki sardunya, o sabah ilk çiçeğini açmıştı.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>109</start>
+          <end>204</end>
+          <in>12</in>
+          <out>107</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/2.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — Bir arı geldi ve çiçeğin tam ortasına kondu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>204</start>
+          <end>310</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/3.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Efe eğildi; arının bacakları sarı tozla kaplanmıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>310</start>
+          <end>403</end>
+          <in>12</in>
+          <out>105</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/4.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K04 — Arı kalktı ve iki saksı ötedeki çiçeğe kondu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>403</start>
+          <end>512</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/5.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K05 — Efe, bir yerden alınıp başka yere bırakılan o tozu merak etti.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>512</start>
+          <end>619</end>
+          <in>12</in>
+          <out>119</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/6.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — Çiçekli bitkilerin üreme organı çiçeğin kendisidir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>619</start>
+          <end>703</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/7.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K07 — Efe bir çiçeği dikkatle incelemeye karar verdi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>703</start>
+          <end>781</end>
+          <in>12</in>
+          <out>90</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/8.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K08 — Elindeki çiçeği sapından tutarak kaldırdı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>781</start>
+          <end>881</end>
+          <in>12</in>
+          <out>112</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/9.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Çiçek sapı, çiçeği bitkinin gövdesine bağlayan kısımdır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>881</start>
+          <end>965</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/10.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Bitkiden gelen suyu ve besini çiçeğe o taşır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>965</start>
+          <end>1038</end>
+          <in>12</in>
+          <out>85</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/11.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — En dışta yeşil, küçük yapraklar vardı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1038</start>
+          <end>1098</end>
+          <in>12</in>
+          <out>72</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/12.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Bunlara çanak yaprak diyoruz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1098</start>
+          <end>1207</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/13.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Çiçek tomurcukken onu sararak korurlar; ayrıca fotosentez yaparlar.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1207</start>
+          <end>1300</end>
+          <in>12</in>
+          <out>105</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/14.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Onların içinde renkli ve kokulu yapraklar duruyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1300</start>
+          <end>1409</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/15.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Bunlar taç yaprak. Çiçeğe rengini ve kokusunu veren kısım.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1409</start>
+          <end>1518</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/16.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — Renk ve koku boşuna değil; böcekleri ve kuşları çağırırlar.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1518</start>
+          <end>1627</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/17.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Efe taç yaprakları usulca aralayınca içerideki organları gördü.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1627</start>
+          <end>1736</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/18.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K18 — Ortadaki kalın yapının çevresinde ince saplı olanlar diziliydi.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1736</start>
+          <end>1845</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/19.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — İnce saplı olanlar erkek organ; iki kısımdan oluşuyorlardı.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1845</start>
+          <end>1923</end>
+          <in>12</in>
+          <out>90</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/20.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Uçlarındaki keseciğe başçık denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1923</start>
+          <end>2030</end>
+          <in>12</in>
+          <out>119</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/21.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Polenler, yani erkek üreme hücreleri başçıkta üretilir.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2030</start>
+          <end>2117</end>
+          <in>12</in>
+          <out>99</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/22.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Başçığı taşıyan ince sapa da sapçık diyoruz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2117</start>
+          <end>2226</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/23.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K23 — Ortadaki kalın yapı ise dişi organdı; üç kısımdan oluşuyordu.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2226</start>
+          <end>2307</end>
+          <in>12</in>
+          <out>93</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/24.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — En üstteki geniş uç dişicik tepesidir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2307</start>
+          <end>2398</end>
+          <in>12</in>
+          <out>103</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/25.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Yüzeyi yapışkandır; konan polen oraya tutunur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2398</start>
+          <end>2481</end>
+          <in>12</in>
+          <out>95</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/26.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Altındaki uzun boruya dişicik borusu denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2481</start>
+          <end>2555</end>
+          <in>12</in>
+          <out>86</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/27.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Polenin aşağı ilerlediği kanal budur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2555</start>
+          <end>2627</end>
+          <in>12</in>
+          <out>84</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/28.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — En dipteki şişkin bölüm yumurtalıktır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2627</start>
+          <end>2724</end>
+          <in>12</in>
+          <out>109</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/29.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — İçinde dişi üreme hücresi, yani yumurta bulunur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2724</start>
+          <end>2803</end>
+          <in>12</in>
+          <out>91</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/30.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Efe arının bıraktığı sarı tozu şimdi anlamıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2803</start>
+          <end>2912</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/31.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — Polenlerin başçıktan dişicik tepesine taşınmasına tozlaşma denir.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2912</start>
+          <end>3000</end>
+          <in>12</in>
+          <out>100</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/32.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Bu taşımayı rüzgâr, su ya da böcekler yapar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3000</start>
+          <end>3086</end>
+          <in>12</in>
+          <out>98</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/33.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Bir polen dişicik tepesinin yapışkan yüzeyine tutundu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3086</start>
+          <end>3163</end>
+          <in>12</in>
+          <out>89</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/34.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Oradan dişicik borusunun içine doğru yol aldı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3163</start>
+          <end>3245</end>
+          <in>12</in>
+          <out>94</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/35.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K35 — Yumurtalığa ulaştı ve yumurtayla birleşti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-35">
+          <name>36.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3245</start>
+          <end>3312</end>
+          <in>12</in>
+          <out>79</out>
+          <file id="f-35">
+            <name>36.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/36.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K36 — Bu birleşmenin adı döllenmedir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-36">
+          <name>37.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3312</start>
+          <end>3380</end>
+          <in>12</in>
+          <out>80</out>
+          <file id="f-36">
+            <name>37.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/37.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K37 — Döllenme sonucunda tohum oluşur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-37">
+          <name>38.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3380</start>
+          <end>3486</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-37">
+            <name>38.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/38.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K38 — Yumurtalık da gelişerek tohumun etrafında meyveyi oluşturur.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-38">
+          <name>39.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3486</start>
+          <end>3572</end>
+          <in>12</in>
+          <out>98</out>
+          <file id="f-38">
+            <name>39.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/39.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K39 — Efe saksının dibinde geçen yılın kurumuş meyvesini buldu.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-39">
+          <name>40.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3572</start>
+          <end>3666</end>
+          <in>12</in>
+          <out>106</out>
+          <file id="f-39">
+            <name>40.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/40.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K40 — Meyveyi ikiye ayırdı; içinden bir tohum düştü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-40">
+          <name>41.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3666</start>
+          <end>3775</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-40">
+            <name>41.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/41.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K41 — Şimdi sıra o tohumun yeni bir bitkiye dönüşmesindeydi. Çimlenme.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-41">
+          <name>42.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3775</start>
+          <end>3890</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-41">
+            <name>42.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/42.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>94.7826</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K42 — Efe iki kavanoza ıslak pamuk serdi ve birer fasulye yerleştirdi.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-42">
+          <name>43.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3890</start>
+          <end>3987</end>
+          <in>12</in>
+          <out>109</out>
+          <file id="f-42">
+            <name>43.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/43.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K43 — Tohumun çimlenmesi için üç temel şart vardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-43">
+          <name>44.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3987</start>
+          <end>4093</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-43">
+            <name>44.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/44.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K44 — Unutmamak için parolamız: SOS.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-44">
+          <name>45.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4093</start>
+          <end>4202</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-44">
+            <name>45.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/45.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K45 — S, sıcaklık demek. Ortam ne çok soğuk ne çok sıcak olmalı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-45">
+          <name>46.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4202</start>
+          <end>4311</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-45">
+            <name>46.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/46.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K46 — O, oksijen demek. Tohumun hava alması gerekir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-46">
+          <name>47.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4311</start>
+          <end>4431</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-46">
+            <name>47.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/47.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>90.8333</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K47 — İkinci S, su demek. Tohum şişip kabuğunu ancak suyla açar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-47">
+          <name>48.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4431</start>
+          <end>4527</end>
+          <in>12</in>
+          <out>108</out>
+          <file id="f-47">
+            <name>48.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/48.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K48 — Efe kavanozlardan birini karanlık dolaba koydu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-48">
+          <name>49.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4527</start>
+          <end>4577</end>
+          <in>12</in>
+          <out>62</out>
+          <file id="f-48">
+            <name>49.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/49.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K49 — Üç gün sonra dolabı açtı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-49">
+          <name>50.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4577</start>
+          <end>4638</end>
+          <in>12</in>
+          <out>73</out>
+          <file id="f-49">
+            <name>50.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/50.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K50 — Karanlıktaki tohum da çimlenmişti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-50">
+          <name>51.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4638</start>
+          <end>4729</end>
+          <in>12</in>
+          <out>103</out>
+          <file id="f-50">
+            <name>51.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/51.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K51 — Çünkü çimlenme için ışık ve fotosentez gerekmez.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-51">
+          <name>52.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4729</start>
+          <end>4819</end>
+          <in>12</in>
+          <out>102</out>
+          <file id="f-51">
+            <name>52.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/52.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K52 — Tohum ilk besinini kendi içindeki depodan karşılar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-52">
+          <name>53.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4819</start>
+          <end>4924</end>
+          <in>12</in>
+          <out>117</out>
+          <file id="f-52">
+            <name>53.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/53.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K53 — Işık, ancak yeşil yapraklar çıktıktan sonra gerekli olur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-53">
+          <name>54.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4924</start>
+          <end>5013</end>
+          <in>12</in>
+          <out>101</out>
+          <file id="f-53">
+            <name>54.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/54.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K54 — Efe fideyi sardunyanın yanına dikti; arı yeniden geldi.   🔴 UZUN ÜRET</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo.mp3</name>
+          <enabled>TRUE</enabled>
+          <duration>5014</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>5013</end>
+          <in>0</in>
+          <out>5013</out>
+          <file id="file-vo1">
+            <name>vo.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/vo.mp3</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>5014</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>ses1.wav (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>4307</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>4307</end>
+          <in>0</in>
+          <out>4307</out>
+          <file id="file-mzk1">
+            <name>ses1.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/6.%20S%C4%B1n%C4%B1f%20-%20Bitkilerde%20%C3%9Creme%20Tohumun%20%C3%87imlenmesi/ses1.wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4307</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="mzk1-1">
+          <name>ses1.wav (2/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>4307</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4307</start>
+          <end>5013</end>
+          <in>0</in>
+          <out>706</out>
+          <file id="file-mzk1"/>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>

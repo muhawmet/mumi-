@@ -1,0 +1,127 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — REFERANS ENVANTERİ
+=========================================================================
+PROMPT-YASASI §4a. Tek kare yazılmadan ÖNCE çıkarıldı.
+Kural: ikiden fazla karede dönen her şey referanstır. Tekrar eden şey TARİF EDİLMEZ, ÇAĞRILIR.
+Tag'li olan bir daha tarif edilirse referans ezilir ve kare kayar.
+Kare sayısı 56. ⚠ Kare sayısına dokunan her düzenlemede bu dosya yeniden numaralanır.
+=========================================================================
+
+
+===== 1 · KİŞİ =====
+
+@efe
+  ÖNCEDEN VAR — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık", "Bitkilerde Üreme" ve
+  "Hayvanlarda Üreme"de basıldı. AYNI çocuk: aynı yüz, aynı saç. Gardırop bu derse
+  varyantlandı (kış sabahı, ev içi: kalın örgü kazak, yakası açık, kollar hafif uzun).
+  Yaş yazımı: "sixth-grade, around eleven or twelve, pre-teen"
+  🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten TONU, göz, yaş ve gardırop yazılmaz — yalnız @efe
+     çağrılır. (Mami, 2026-08-03: "efeyi tarif etme, başka birini çıkartıyor, sadece
+     etiketlemen yeterli.") Tarif edilirse referans EZİLİR ve motor başka çocuk üretir.
+
+  ⚠ AMA ten cümlesinin iki yarısı vardır ve yalnız BİRİ silinir:
+     · "Warm matte tan skin" → KİMLİK İDDİASI (ton). SİLİNİR.
+     · "low specular, never tinted green or grey" → ÖLÇÜLMÜŞ NEGATİF KİLİT. KALIR.
+       Yokluğunda motor yeşil/gri cilt basıyor (duvarı `scripts/prompt-lint.mjs` "ten kilidi").
+     Doğru yazım, tonsuz: "Skin stays matte with low specular and is never tinted green or grey."
+  🔴 KADRAJ KİLİDİ zorunlu: @efe geçen her karede kadrajın neyi DIŞARIDA bıraktığı yazılır.
+     Örn: "framed from mid-chest up, nothing below the chest is visible"
+     Yazılmazsa referans sayfasının stüdyo tam-boy kadrajı ithal olur ve figürin gelir.
+  🔴 Hiçbir kavram ışığı Efe'nin tenine, yüzüne ya da bedenine değmez.
+  Kareler: K01, K05-K07, K15, K19, K22, K27, K29, K32, K41, K49, K56
+
+  ⚠ Bu derste BAŞKA İNSAN YOK. Ev bir yetişkinin izini taşır — kapıda büyük çizme, askıda
+    kalın palto, pervazda yıllar önce çekilmiş boy çizgileri — ama kimse kadrajda değildir.
+    İkinci figür yazma. Belgedeki "Sunucu" bu hatta üretilmez (bkz. ENZIM KİLİT 3).
+
+
+===== 2 · HAYVAN (tag'li — tür kilidi tarife bırakılmaz) =====
+
+@kedi
+  Evin kedisi. Anadolu tekiri, gri-kahve çizgili, orta boy, sakin. Her karede TEK kedi.
+  Mutfak rafının kenarında oturur; K49'da yerdeki tencerenin sebebi odur — ama ATLAMA ANI
+  kadrajda yoktur, kedi rafta durur ve tencere zaten yerdedir.
+  🔴 Kediye kavram ışığı değmez; ışık nesnelerdedir.
+  Kareler: K03, K46, K47-K49
+
+
+===== 3 · NESNE (tag'li — dersin taşıyıcısı) =====
+
+@maket
+  Okul tipi plastik SİNİR SİSTEMİ maketi. Dersin en çok dönen nesnesi (14 kare) — bu yüzden
+  tag'li: tarife bırakılırsa parça geometrisi her karede kayar.
+  · Biçim: BÜST — baş ve boyun. Gövde YOK, iç organ YOK, kesit YOK, damar YOK.
+  · Kafatasının sol yarısı açılabilir kapak hâlinde ayrılmış; içeride boyalı plastik BEYİN
+    (büyük, üstte, kıvrımlı), arka altta daha küçük ve çizgili BEYİNCİK, beyinciğin önünde
+    ince ve silindirik OMURİLİK SOĞANI, oradan boyunun arkasından aşağı inen OMURİLİK.
+  · Malzeme: sert, mat, hafif çizilmiş okul plastiği. Boya katmanı ince; kenarlarda aşınma.
+  · Taban: cilalı ahşap, damarı görünür. Tabana vidalı KAZINMIŞ PİRİNÇ PLAKA:
+    "İNSAN SİNİR SİSTEMİ" — harfler pirincin İÇİNE kazınmış, dip kısmı kararmış.
+  🔴 MAKET ÖLÜDÜR. Dönmez, açılmaz, parçaları sırayla yanmaz. Işık yerinde başlar, yerinde kalır.
+  🔴 TEK SEFERDE TEK PARÇA IŞIKLI. Kalan parçalar tamamen nötr plastik kalır.
+  Kareler: K09-K14, K16-K18, K20-K21, K24-K26, K30-K31, K34, K53
+
+
+===== 4 · MEKÂN =====
+
+@mutfak
+  Kış sabahı Anadolu ev mutfağı. Koyu taş tezgâh, üstünde un izi. Ocakta ÇİFT KATLI
+  ÇAYDANLIK (altta geniş su kabı, üstte daha küçük demlik — demliğin gövdesi cam ya da
+  emaye, içindeki suyun rengi GÖRÜNÜR). Yanında emaye süt tenceresi. Duvarda çalışan
+  ahşap kasalı saat. Rafta sırlı seramik kavanozlar ve emaye kutular. Pencere KIŞ SABAHINDA
+  BUĞULU — dışarısı görünmez. Masada ince belli cam bardak.
+  Işık: alçak kış güneşi buğulu camdan geçip mutfağa dağınık, yumuşak, sıcak bir dolgu
+  bırakır; sobanın ağzından gelen ikinci ve daha sıcak bir kaynak alttan yükselir.
+  🔴 SÜREKLİLİK — DEMLİK SAATİ: K01'de demlikteki su RENKSİZ; ders boyunca her mutfak
+     karesinde bir tık daha amber; K56'da dipten tepeye koyu amber. Kare yazan ajan
+     kendi karesinin zincirde nerede olduğunu yazar.
+  🔴 SÜREKLİLİK — CAM: K01'de cam TAMAMEN buğulu. K33'te üstünde "REFLEKS" harfleri
+     silinmiş. K56'da alt yarısı açılmış, karlı bahçe berrak görünür.
+  Kareler: K01-K08, K19, K27-K34, K37-K38, K44-K50, K53-K56
+
+@koridor
+  Mutfağa açılan dar koridor. KAPI PERVAZI dersin ikinci taşıyıcısıdır: ahşap pervazın
+  üstünde yıllar boyunca çekilmiş kalem boy çizgileri, her birinin yanında yıl yazılı
+  ("2019", "2021", "2023"), en üsttekinin mürekkebi en taze. Askıda kalın palto, kapının
+  yanında ayakkabılar — biri belirgin şekilde KÜÇÜK GELMİŞ eski ayakkabı, yanında yenisi.
+  Duvara dayalı bisiklet (🔴 DURUR, sürülmez).
+  Işık: mutfaktan sızan tek yanal hüzme; koridorun geri kalanı serin ve sakin.
+  Kareler: K01, K23, K39-K43, K51-K52
+
+
+===== 5 · TARİF KİLİDİ (tag'siz ama HER SEFERİNDE aynı yazılır) =====
+
+emaye            : fırınlanmış, sert parlak, kenarda çipleme ve altta koyu metal görünüyor;
+                   harfler yüzeyin İÇİNDE, üstüne yapıştırılmış değil.
+metal (çaydanlık,
+soba, pirinç)    : ışıkta anisotropik fırça parlaması, tek yönde uzayan highlight
+                   (🔴 bu imza dünya kuyruğunun bütçe dışında — gereken kareye ELLE eklenir)
+buğulu cam       : mat, saçıcı, ışığı geçirir ama görüntüyü geçirmez; silinmiş yerde
+                   BERRAK ve yansıtıcı; sınırda irili ufaklı su damlacıkları toplanmış.
+bal              : kalın, viskoz, koyu amber; ışığı içinden geçirir, yüzeyi sürekli parlak;
+                   kütlesi kendi ağırlığıyla yavaşça çöker, kenarı hiçbir zaman keskin değil.
+un               : kuru, mat, tozlu; koyu taşın üstünde her tanesi ayrı okunur, kütle olarak
+                   değil; kenarları hafif dağılmış.
+plastik maket    : sert, mat, ince boya katmanı, kenarlarda aşınma ve ince çizikler;
+                   canlı doku değil — nemli, kanlı ya da etli görünmez.
+ahşap damar      : açık damarlı, satin cilalı; damar çizgisi ışığı damar boyunca taşır.
+kalem çizgisi    : grafit, ince, üstüne bastırılmış; yıllara göre farklı solmuşluk.
+çay              : suyun İÇİNDE renk; kenarı yok, dipte koyu, yukarı doğru zayıflıyor.
+
+
+===== 6 · YASAK — HER KAREDE GEÇERLİ =====
+
+🔴 BEDEN İÇİ GÖSTERİLMEZ. Tek istisna @maket (plastik, baş-boyun, yalnız sinir sistemi).
+   Kesit, cutaway, iç organ, damar, kalp, akciğer, mide, kan YOK.
+🔴 EŞEYSEL BEZLER ORGAN OLARAK ÇİZİLMEZ. VO isimlendirir, kadraj göstermez. Ergenlik
+   görselleştirilmez — karşılığı pervazdaki boy çizgileri ve küçük gelmiş ayakkabıdır.
+🔴 ORKESTRA, ŞEF, BAGET, NOTA, ENSTRÜMAN hiçbir karede YOK. Metafor müziğe taşındı (_SUNO.txt).
+🔴 Şema, ok, etiket çizgisi, karşılaştırma tablosu, iki sütunlu özet, zaman-atlamalı şerit,
+   büyüteç halkası, inset panel, infografik YOK.
+🔴 İngilizce yazı YOK. Kadrajdaki her okunur yüzey Türkçedir ya da bilinçli olarak boştur.
+🔴 İkinci insan YOK — çocuk, yetişkin, sunucu, öğretmen, el sahibi olmayan uzuv.
+🔴 Kadrajdan kesik figür yazılmaz; kalabalık figür SAYISI azaltılarak çözülür.
+🔴 Kavram ışığı asla kalp, yıldız, ok ucu, alev, şimşek ya da ikon olmaz — yuvarlak sıcak-altın ışık.
+🔴 Işık tenin/yüzün üstünde değil, NESNENİN üstündedir.
+🔴 Hormon ışığı için kanal, boru, hat, damar ya da akış çizgisi çizilmez — ışık malzemenin
+   İÇİNDEN yayılır.
+🔴 Işık maketin iki parçasına birden değmez; refleks karesinde beyin parçasına hiç değmez.

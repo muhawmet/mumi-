@@ -1,0 +1,80 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — 6. SINIF · EDIT-PLAN (PREMIERE)
+=========================================================================
+Eşleme: N.png = KN · indirilen video adı N.mp4
+🔴 KLİP SÜRESİ 5 SANİYE. i2v başından 0.5s kırpılır → kullanılabilir 4.5s.
+   VOdur sütunu bunu aşan karelerde 🔴 ile işaretli — o klipler UZUN üretilmeli.
+VO otoritesi: /Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Bitkilerde Üreme Tohumun Çimlenmesi/vo.mp3
+Kolon: dosya · K## · klip · VOdur(tahmin) · [plan zamanı] · VO cümlesi
+⚠ VOdur HECE SAYIMINDAN TÜRETİLMİŞ TAHMİNDİR, ölçüm değil. Gerçek VO indiği an
+  `node scripts/kaba-kurgu.mjs` gerçeğini verir. ÜRET tahminle, KES ölçümle.
+=========================================================================
+
+
+##### SEKANS 1 — BALKON: ARI NEREYE GİDİYOR (K01–K07) #####
+1.png    K01   5s   4.8s   [0:00–0:04]   Efe'nin balkonundaki sardunya, o sabah ilk çiçeğini açmıştı.   🔴 UZUN ÜRET
+2.png    K02   5s   3.5s   [0:04–0:08]   Bir arı geldi ve çiçeğin tam ortasına kondu.
+3.png    K03   5s   4.3s   [0:08–0:12]   Efe eğildi; arının bacakları sarı tozla kaplanmıştı.
+4.png    K04   5s   3.9s   [0:12–0:16]   Arı kalktı ve iki saksı ötedeki çiçeğe kondu.
+5.png    K05   5s   5.0s   [0:16–0:21]   Efe, bir yerden alınıp başka yere bırakılan o tozu merak etti.   🔴 UZUN ÜRET
+6.png    K06   5s   4.3s   [0:21–0:25]   Çiçekli bitkilerin üreme organı çiçeğin kendisidir.
+7.png    K07   5s   3.9s   [0:25–0:29]   Efe bir çiçeği dikkatle incelemeye karar verdi.
+
+##### SEKANS 2 — ÇİÇEĞİN BÖLÜMLERİ (K08–K29) #####
+8.png    K08   5s   3.5s   [0:29–0:33]   Elindeki çiçeği sapından tutarak kaldırdı.
+9.png    K09   5s   4.3s   [0:33–0:37]   Çiçek sapı, çiçeği bitkinin gövdesine bağlayan kısımdır.
+10.png   K10   5s   3.7s   [0:37–0:41]   Bitkiden gelen suyu ve besini çiçeğe o taşır.
+11.png   K11   5s   2.6s   [0:41–0:43]   En dışta yeşil, küçük yapraklar vardı.
+12.png   K12   5s   2.2s   [0:43–0:46]   Bunlara çanak yaprak diyoruz.
+13.png   K13   5s   5.2s   [0:46–0:51]   Çiçek tomurcukken onu sararak korurlar; ayrıca fotosentez yaparlar.   🔴 UZUN ÜRET
+14.png   K14   5s   4.1s   [0:51–0:55]   Onların içinde renkli ve kokulu yapraklar duruyordu.
+15.png   K15   5s   4.3s   [0:55–0:59]   Bunlar taç yaprak. Çiçeğe rengini ve kokusunu veren kısım.
+16.png   K16   5s   4.6s   [0:59–1:04]   Renk ve koku boşuna değil; böcekleri ve kuşları çağırırlar.   🔴 UZUN ÜRET
+17.png   K17   5s   5.7s   [1:04–1:09]   Efe taç yaprakları usulca aralayınca içerideki organları gördü.   🔴 UZUN ÜRET
+18.png   K18   5s   5.2s   [1:09–1:15]   Ortadaki kalın yapının çevresinde ince saplı olanlar diziliydi.   🔴 UZUN ÜRET
+19.png   K19   5s   4.8s   [1:15–1:19]   İnce saplı olanlar erkek organ; iki kısımdan oluşuyorlardı.   🔴 UZUN ÜRET
+20.png   K20   5s   2.8s   [1:19–1:22]   Uçlarındaki keseciğe başçık denir.
+21.png   K21   5s   4.6s   [1:22–1:27]   Polenler, yani erkek üreme hücreleri başçıkta üretilir.   🔴 UZUN ÜRET
+22.png   K22   5s   3.5s   [1:27–1:30]   Başçığı taşıyan ince sapa da sapçık diyoruz.
+23.png   K23   5s   5.2s   [1:30–1:36]   Ortadaki kalın yapı ise dişi organdı; üç kısımdan oluşuyordu.   🔴 UZUN ÜRET
+24.png   K24   5s   3.0s   [1:36–1:39]   En üstteki geniş uç dişicik tepesidir.
+25.png   K25   5s   3.7s   [1:39–1:42]   Yüzeyi yapışkandır; konan polen oraya tutunur.
+26.png   K26   5s   3.7s   [1:42–1:46]   Altındaki uzun boruya dişicik borusu denir.
+27.png   K27   5s   3.3s   [1:46–1:49]   Polenin aşağı ilerlediği kanal budur.
+28.png   K28   5s   2.8s   [1:49–1:52]   En dipteki şişkin bölüm yumurtalıktır.
+29.png   K29   5s   4.1s   [1:52–1:56]   İçinde dişi üreme hücresi, yani yumurta bulunur.
+
+##### SEKANS 3 — TOZLAŞMA VE DÖLLENME (K30–K40) #####
+30.png   K30   5s   4.1s   [1:56–2:00]   Efe arının bıraktığı sarı tozu şimdi anlamıştı.
+31.png   K31   5s   5.2s   [2:00–2:05]   Polenlerin başçıktan dişicik tepesine taşınmasına tozlaşma denir.   🔴 UZUN ÜRET
+32.png   K32   5s   3.0s   [2:05–2:08]   Bu taşımayı rüzgâr, su ya da böcekler yapar.
+33.png   K33   5s   4.3s   [2:08–2:13]   Bir polen dişicik tepesinin yapışkan yüzeyine tutundu.
+34.png   K34   5s   3.9s   [2:13–2:17]   Oradan dişicik borusunun içine doğru yol aldı.
+35.png   K35   5s   3.5s   [2:17–2:20]   Yumurtalığa ulaştı ve yumurtayla birleşti.
+36.png   K36   5s   2.4s   [2:20–2:23]   Bu birleşmenin adı döllenmedir.
+37.png   K37   5s   2.6s   [2:23–2:25]   Döllenme sonucunda tohum oluşur.
+38.png   K38   5s   5.0s   [2:25–2:30]   Yumurtalık da gelişerek tohumun etrafında meyveyi oluşturur.   🔴 UZUN ÜRET
+39.png   K39   5s   4.6s   [2:30–2:35]   Efe saksının dibinde geçen yılın kurumuş meyvesini buldu.   🔴 UZUN ÜRET
+40.png   K40   5s   3.7s   [2:35–2:38]   Meyveyi ikiye ayırdı; içinden bir tohum düştü.
+
+##### SEKANS 4 — TOHUMUN ÇİMLENMESİ: SOS (K41–K53) #####
+41.png   K41   5s   5.0s   [2:38–2:43]   Şimdi sıra o tohumun yeni bir bitkiye dönüşmesindeydi. Çimlenme.   🔴 UZUN ÜRET
+42.png   K42   5s   5.2s   [2:43–2:49]   Efe iki kavanoza ıslak pamuk serdi ve birer fasulye yerleştirdi.   🔴 UZUN ÜRET
+43.png   K43   5s   3.3s   [2:49–2:52]   Tohumun çimlenmesi için üç temel şart vardır.
+44.png   K44   5s   2.4s   [2:52–2:54]   Unutmamak için parolamız: SOS.
+45.png   K45   5s   3.9s   [2:54–2:58]   S, sıcaklık demek. Ortam ne çok soğuk ne çok sıcak olmalı.
+46.png   K46   5s   3.7s   [2:58–3:02]   O, oksijen demek. Tohumun hava alması gerekir.
+47.png   K47   5s   4.3s   [3:02–3:06]   İkinci S, su demek. Tohum şişip kabuğunu ancak suyla açar.
+48.png   K48   5s   3.9s   [3:06–3:10]   Efe kavanozlardan birini karanlık dolaba koydu.
+49.png   K49   5s   2.0s   [3:10–3:12]   Üç gün sonra dolabı açtı.
+50.png   K50   5s   2.6s   [3:12–3:15]   Karanlıktaki tohum da çimlenmişti.
+51.png   K51   5s   3.7s   [3:15–3:18]   Çünkü çimlenme için ışık ve fotosentez gerekmez.
+52.png   K52   5s   4.1s   [3:18–3:22]   Tohum ilk besinini kendi içindeki depodan karşılar.
+53.png   K53   5s   4.1s   [3:22–3:27]   Işık, ancak yeşil yapraklar çıktıktan sonra gerekli olur.
+
+##### SEKANS 5 — KAPANIŞ: AYNI SAKSI (K54–K54) #####
+54.png   K54   5s   4.6s   [3:27–3:31]   Efe fideyi sardunyanın yanına dikti; arı yeniden geldi.   🔴 UZUN ÜRET
+
+=========================================================================
+TOPLAM (tahmin): 3:31 · 54 klip
+🔴 UZUN ÜRETİLECEK: 15 klip — K01 (4.8s) · K05 (5.0s) · K13 (5.2s) · K16 (4.6s) · K17 (5.7s) · K18 (5.2s) · K19 (4.8s) · K21 (4.6s) · K23 (5.2s) · K31 (5.2s) · K38 (5.0s) · K39 (4.6s) · K41 (5.0s) · K42 (5.2s) · K54 (4.6s)
+Gerçek süre VO ile ölçülür; bu tablo üretim içindir, kesim için değil.

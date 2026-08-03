@@ -1,0 +1,53 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — MÜZİK BRIEF (Suno)
+=========================================================================
+Süre hedefi: ~4:25 · Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+🔴 BU DOSYA DERSİN METAFORUNU TAŞIYOR. Kaynak belge açılışta bir ORKESTRA görseli istiyordu;
+   orkestra kadrajdan çıkarıldı ve MÜZİĞE taşındı (ENZIM KİLİT 3). Görüntüde tek bir çocuk ve
+   bir kış sabahı mutfağı var; "onlarca ses, tek düzen" fikri buradan gelecek.
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A warm, unhurried orchestral underscore for a children's science film set in a village kitchen
+on a winter morning — a kettle warming on the stove, a clock keeping time on the wall, a fogged
+window, a boy alone and paying attention. The feeling is many small voices staying perfectly in
+time with one another: separate woodwind and string lines enter one after another, each keeping
+its own shape, none of them colliding, all of them held by the same steady pulse. Two ideas run
+through the piece and must sound different: short bright pizzicato and celesta points that land
+and stop instantly, and long sustained warm strings that swell slowly and keep ringing under
+everything else. The middle grows patient and wide as the warmth spreads. Near the end one sharp
+plucked accent cuts through and vanishes while a long string swell underneath refuses to fade,
+then the opening theme returns exactly as it began — same key, same tempo — because we end where
+we started. No drum kit, no percussion hits, no electronic elements, no vocals, no lyrics.
+Nothing triumphant, nothing sad, nothing tense. Plenty of room for a narrator throughout.
+
+=========================================================================
+AYAR — Suno kutusunun dışındaki alanlar
+=========================================================================
+Instrumental        : AÇIK (vokal yok)
+Süre                : 4:35 hedef (VO ~4:25 + kuyruk pay)
+Stil etiketleri     : orchestral, gentle, warm, children's film score, chamber, patient
+Kaçınılacak (exclude): drums, percussion, vocals, choir, synth, electronic, epic, trailer,
+                       tension, dark, lo-fi, jazz, marching, fanfare
+
+=========================================================================
+KURGUDA KULLANIM
+=========================================================================
+· A2 kanalına, VO'nun (A1) altına serilir · ~-18 dB
+· K01-K08 (mutfak / soru)        : bütün hatlar sırayla girer — metafor burada duyulur,
+                                    "onlarca ses, tek düzen". En kalabalık ama en sakin yer.
+· K09-K34 (sinir sistemi)        : pizzicato ve celesta noktaları öne çıkar; her nokta
+                                    KISA ve KESKİN. Kavram anlarına denk gelir.
+· K35-K46 (iç salgı bezleri)     : yaylılar uzun ve sürekli; nokta vuruş yok, hat kesilmez.
+                                    Sinir bölümünün zıddı olarak duyulmalı.
+· K47-K50 (adrenalin, iki ışık)  : 🔴 DERSİN TEPESİ — tek keskin pizzicato aniden girer ve
+                                    biter, altındaki uzun yaylı yükseliş devam eder.
+                                    Görüntüdeki iki ışığın ses karşılığı budur.
+· K51-K52 (ergenlik)             : yumuşar ve alçalır, süslemesiz.
+· K53-K56 (fark + ayna kapanış)  : açılışın teması birebir döner, aynı tonda, aynı tempoda.
+
+⚠ Müzik VO cümlesinin üstüne çıkmaz. Kesimler VO'nun kendi cümle sınırlarına oturur;
+  müzik onlara uydurulur, tersi değil.
+⚠ K47-K50'de müzik bir nefes alır — o dört karede VO ile müzik arasındaki mesafe açılır,
+  görüntü kendi başına konuşsun.
