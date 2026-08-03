@@ -12,7 +12,17 @@ Tag'li olan bir daha tarif edilirse referans ezilir ve kare kayar.
   ÖNCEDEN VAR — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık" ve "Bitkilerde Üreme"de
   basıldı. AYNI çocuk: aynı yüz, aynı saç. Gardırop bu derse varyantlandı (köy sabahı).
   Yaş yazımı: "sixth-grade, around eleven or twelve, pre-teen"
-  🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten, göz yazılmaz — yalnız @efe çağrılır.
+  🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten TONU, göz, yaş ve gardırop yazılmaz — yalnız @efe
+     çağrılır. (Mami, 2026-08-03: "efeyi tarif etme, başka birini çıkartıyor, sadece
+     etiketlemen yeterli.") Tarif edilirse referans EZİLİR ve motor başka çocuk üretir.
+
+  ⚠ AMA ten cümlesinin iki yarısı vardır ve yalnız BİRİ silinir:
+     · "Warm matte tan skin" → KİMLİK İDDİASI (ton). SİLİNİR.
+     · "low specular, never tinted green or grey" → ÖLÇÜLMÜŞ NEGATİF KİLİT. KALIR.
+       Yokluğunda motor yeşil/gri cilt basıyor (Bileşke K14 ve K39 revizesinde birebir yazılı;
+       duvarı `scripts/prompt-lint.mjs:87-93` "ten kilidi").
+     Doğru yazım, tonsuz: "Skin stays matte with low specular and is never tinted green or grey."
+     🔴 Bu ayrım bir kez kaçırıldı ve 78 karede kilit birden düştü — kapı yakaladı.
   🔴 KADRAJ KİLİDİ zorunlu: @efe geçen her karede kadrajın neyi DIŞARIDA bıraktığı yazılır.
      Örn: "framed from mid-chest up, nothing below the chest is visible"
      Yazılmazsa referans sayfasının stüdyo tam-boy kadrajı ithal olur ve figürin gelir.
