@@ -4,9 +4,11 @@ Motor: Kling 3.0 (i2v) · Register: EDU · Kaynak kare: images/<n>.png (13/13 G�
 Kelime bandı: 190-215 (motion-lint'in tek geçerli hedefi; §3'ün 210-260'ı ve emekli 114
 rakamı değil — en dar band bu, `scripts/motion-lint.mjs` satır 134'te duvarla birlikte yazılı).
 
-DENETİM HÜKMÜ — 13 kare görüldü:
-  TEMİZ (7): K30 · K31 · K32 · K36 · K38 · K39 · K40   → motion aşağıda
-  REVİZE (6): K33 · K34 · K35 · K37 · K41 · K42        → motion YOK, kusurlar raporda
+DENETİM HÜKMÜ — 13 kare görüldü · Mami hükmüyle güncellendi:
+  TEMİZ (7): K30 · K31 · K32 · K36 · K38 · K39 · K40           → motion aşağıda
+  KUSUR KABUL EDİLDİ (4): K34 · K35 · K37 · K41                → kare basılmıyor, motion aşağıda;
+    her birinde kusuru kadrajda KÜÇÜK ve SABİT tutan ek bir kilit var (kamera onu büyütmez).
+  REVİZEDE KALAN (2): K33 · K42                                → motion YOK, düzeltilmiş satır sonda
 
 BU BLOĞUN MOTION KİLİTLERİ (§3ø + ENZIM §7):
  · Kimse konuşmaz, kimse yazmaz, hiçbir el harf üretmez.
@@ -33,7 +35,7 @@ REVİZE:
 SÜRE: 5s · ekranda ~5s
 KAMERA NİYETİ: Yüklü başçığın çevresinde birkaç derece döner, boşluğu sıyırır ve ıslak tepe tam karşıya gelince durur.
 -----
-The clip opens on work under way with no one doing it. The overloaded anther head is settling under its own load, tipping by degrees on its thread-thin stalk the way it has since before the shot, while the wet head across the gap keeps its glisten. Then the stalk gives a fraction more, and at that instant one grain at the anther's lower edge loses its grip and drops straight down under its own weight — heavy, no drift and no float — and lands dead on the stone below. The clip begins with a load being held and ends with the first of it given up to gravity. Around them dust motes turn through the narrow band of sun, the railing stands unmoving beyond, the flower's long shadow keeps its edge. Camera: begins square on the loaded anther, turns a few degrees around it at the same distance so the empty gap sweeps past, and stops with the wet head centred. The eight gathered letters below hold their exact shapes, no grain inside any stroke moves and no letter re-spells, lifts or scatters, and nothing at all crosses the air between the two organs. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+The clip opens on work under way with no one doing it. The overloaded anther head is settling under its own load, tipping by degrees on its thread-thin stalk the way it has since before the shot, while the wet head across the gap keeps its glisten. Then the stalk gives a fraction more, and at that instant one grain at the anther's lower edge loses its grip and drops straight down under its own weight — heavy, no drift and no float — and lands dead on the stone below. The clip begins with a load being held and ends with the first of it given up to gravity. Dust motes turn through the narrow band of sun, the railing stands unmoving beyond, the flower's long shadow keeps its edge. Camera: begins square on the loaded anther, turns a few degrees around it at the same distance so the empty gap sweeps past, and stops with the wet head centred. The eight gathered letters below hold their exact shapes, no grain inside any stroke moves and no letter re-spells, lifts or scatters, and nothing at all crosses the air between the two organs. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 DURUM: temiz
 REVİZE:
@@ -49,6 +51,28 @@ DURUM: temiz
 REVİZE:
 
 
+# K34 — "Oradan dişicik borusunun içine doğru yol aldı."
+SÜRE: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Tepe hizasından gövde yüzü boyunca birkaç santim aşağı iner; mesafe ve odak düzlemi sabit, arka plana hiç açılmaz.
+KABUL EDİLEN KUSUR: arkadaki okunur çay bardağı + buhar (Mami kabul etti) — kilit onu bulanık ve sabit tutar.
+-----
+The clip opens with the amber on its way down: it has been sinking inside the thick green stalk since before the shot, the tissue above it cooled back to opaque green, the tissue below still dense. Then the descent brings the light level with the clear resin bead clinging outside, and when it arrives there the bead fills through with the warm colour and hangs heavier. The clip begins with a light passing through a body and ends having reached the one thing outside. The fine down on the stalk's edge lifts in the morning air, the dark anthers stand unmoving, the thread of sun on the far contour keeps its line. Camera: begins level with the unlit head, descends a few centimetres down the stalk's face at an unchanged distance with the focus locked on the near tissue, and stops with the amber centred. The background is held as formless dark blur throughout — the camera never widens, never pulls back and never re-focuses past the stalk, and every shape behind it stays as soft and unreadable as now. The amber stays a soft round light inside the tissue and never becomes a flower, petal or flame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz (kusur kabul edildi, kilitlendi)
+REVİZE:
+
+
+# K35 — "Yumurtalığa ulaştı ve yumurtayla birleşti."
+SÜRE: 5s · ekranda ~4s
+KAMERA NİYETİ: Kamera hiç kıpırdamaz — menekşe şerit sabit boyalı bir iz, en küçük parallax onu çizilmiş gösterir.
+KABUL EDİLEN KUSUR: menekşe düz çizgi olmuş (Mami kabul etti) — kilit onu ilk karedeki boyutta dondurur.
+-----
+The clip opens with the amber already sinking through the swollen body, its lower boundary softening where it lies against the cool blue below, both lights read from outside through the pale wall. Then the amber's lower edge gives out entirely, and at that instant the two stop being two — the border between them dissolves and one continuous field fills the widest part of the body. The clip begins with two lights that can still be told apart and ends with one that cannot. Nothing else moves: the pale stalk feet keep their arch around the foot, the dark filament at the left edge stands still, the thread-fine sun rim on the upper curve holds its line. Camera: holds one locked position square on the swollen body for the whole clip, never rising, falling, tracking, arcing or changing distance, so the last frame is framed exactly like the first. The narrow violet stays the width, length, place and brightness it has in the first frame and never grows, spreads, lengthens, slides, brightens or travels, and no new violet appears anywhere. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz (kusur kabul edildi, kilitlendi)
+REVİZE:
+
+
 # K36 — "Bu birleşmenin adı döllenmedir."
 SÜRE: 5s · ekranda ~4s
 KAMERA NİYETİ: Harf üstü hizasına birkaç santim iner, mesafesini bozmadan yatay kayar ve ışık dengelenince durur.
@@ -56,6 +80,17 @@ KAMERA NİYETİ: Harf üstü hizasına birkaç santim iner, mesafesini bozmadan 
 The clip opens on a colour that has just arrived and has not settled: the round violet inside the swollen body is still finding its level, swelling and easing back, and the dark balcony is taking the last of that first surge. Then the light finds its strength, and at that moment everything stops flickering — the violet holds steady, and one bead of clear resin on the flower's dark flank catches the colour and keeps it. The clip begins with a new colour still being born and ends with it settled, holding, belonging to the place. Nothing else moves in the dark: the terracotta pots stand where they stand, the lace curtain breathes at the half-open door, the city holds its blue-black beyond the railing. Camera: begins low across the grey stone, descends a few centimetres to the height of the letter tops and slides sideways at an unchanged distance, then stops. The eight carved blocks stay solid opaque stone that only receives the violet — they never light from inside, never move and never re-spell — and the round violet stays a soft round light that never becomes a flower, petal or flame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 DURUM: temiz
+REVİZE:
+
+
+# K37 — "Döllenme sonucunda tohum oluşur."
+SÜRE: 5s · ekranda ~4s
+KAMERA NİYETİ: Kilitli kadraj — halka ve nokta boyanmış gibidir, kamera dönerse ya da yaklaşırsa çizilmiş oldukları görünür.
+KABUL EDİLEN KUSUR: menekşe halka + asılı nokta (Mami kabul etti) — kilit ikisini de sabit kütle yapar.
+-----
+The clip opens with the green case already under strain: its rind has been drawing tighter since before the shot, and the clear drop of moisture on its right flank has been swelling and hanging heavier the whole time. Then the rind draws tight one notch further, and at that instant the drop loses its grip and slides a short way down the smooth green flank before coming to a stop. The clip begins with a swelling still under strain and ends with that strain given away in one small release. Around it the pale anthers on their fine filaments sway a hair in the morning air at the frame's edges, the city behind stays a soft warm haze, the white flower under the case keeps its shape. Camera: holds a single locked position level with the widest part of the case for the whole clip, never advancing, retreating, rising or arcing, so nothing in frame shifts against anything behind it. The faint violet inside the case holds its exact shape, size, place and brightness from first frame to last, never brightening, dimming, moving, spreading or redrawing itself, and nothing new appears inside the case. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz (kusur kabul edildi, kilitlendi)
 REVİZE:
 
 
@@ -89,8 +124,19 @@ DURUM: temiz
 REVİZE:
 
 
+# K41 — "Şimdi sıra o tohumun yeni bir bitkiye dönüşmesindeydi. Çimlenme."
+SÜRE: 5s · ekranda ~5s
+KAMERA NİYETİ: Yükseklik ve mesafe sabit, yalnız taş boyunca birkaç santim yanal kayış — gövdeye inilmez, kıyafet büyümez.
+KABUL EDİLEN KUSUR: @efe'nin kapüşonlu üstü ve tulumu (Mami kabul etti) — kilit onu klip boyunca aynı ölçekte tutar.
+-----
+The clip opens with @efe already looking past the seed: his eyes have been on the empty jar and the jug of water on the stool behind since before the shot, measuring what he will need, both hands flat and open on the stone. Then the measuring finishes, and when it does his look comes back down to the bean in one unbroken move — chin lowering, brows settling, mouth going firm. He begins weighing what the thing will need and ends having decided where it starts. A thread of chalk dust lifts off the dry ring, the lace curtain breathes at the half-open door, the bean's small hard shadow sharpens on the stone. Camera: keeps its height and its distance for the whole clip, drifting only a few centimetres sideways along the stone and easing to a stop, so his upper body fills the same amount of frame at the end as at the start. He never rises, never straightens out of his lean and never comes any closer to the lens. The seed stays whole, dry and closed with no split, swelling, root or shoot, and the stone under it stays completely dry. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz (kusur kabul edildi, kilitlendi)
+REVİZE:
+
+
 =========================================================================================
-REVİZE EDİLECEK KARELER — MOTION YAZILMADI (görmediğin kareye motion yazma; bozuk kareye de yazılmaz)
+REVİZEDE KALAN KARELER — MOTION YAZILMADI (görmediğin kareye motion yazma; bozuk kareye de yazılmaz)
 -----------------------------------------------------------------------------------------
 REV-K33 — Dişicik tepesi BİTKİ değil, TAŞ oldu: karedeki yüzey mavi-gri taş bir plaka ve üstünde
  dalgalanan duran su var; K31'de aynı organ yeşil, kubbeli, canlı doku olarak basılmıştı.
@@ -102,7 +148,7 @@ REV-K33 — Dişicik tepesi BİTKİ değil, TAŞ oldu: karedeki yüzey mavi-gri 
  front edge curves away as soft swollen tissue, never as a cut stone block or a mineral slab,
  and no stone, rock, concrete or masonry surface appears anywhere in the frame."
 
-REV-K34 — Makro ölçek çöktü: kadranın ortasında, gövdenin hemen arkasında OKUNUR bir çay bardağı ve
+KABUL-K34 (Mami kabul etti, kare basılmadı — kayıt için tutuluyor) — Makro ölçek çöktü: kadranın ortasında, gövdenin hemen arkasında OKUNUR bir çay bardağı ve
  tabağı duruyor (buharıyla birlikte). 1 cm'lik bir organın arkasında 9 cm'lik bir bardak aynı
  boyda görününce sahne "dev çiçek + normal bardak" olarak okunuyor.
  DÜZELTİLMİŞ SATIR (NEGATIVE'in başına):
@@ -110,7 +156,7 @@ REV-K34 — Makro ölçek çöktü: kadranın ortasında, gövdenin hemen arkas�
  glass, saucer, cup, stool, jar, bottle or any other household object of human scale is
  visible or recognisable anywhere behind the stalk, and no steam rises anywhere in frame."
 
-REV-K35 — Menekşe DAMAR değil, ÇİZİLMİŞ ÇİZGİ oldu: gövdenin sağından tepeden dibe inen ve gövdenin
+KABUL-K35 (Mami kabul etti, kare basılmadı — kayıt için tutuluyor) — Menekşe DAMAR değil, ÇİZİLMİŞ ÇİZGİ oldu: gövdenin sağından tepeden dibe inen ve gövdenin
  dışına, alttaki dokuya taşan ince düz bir mor şerit var. Üstelik kehribar (sol üst) ile
  mavinin (alt orta) DEĞDİĞİ yerde değil, ikisinin de sağında duruyor — yasanın "no drawn
  route" kilidini kare bizzat çiğniyor.
@@ -121,7 +167,7 @@ REV-K35 — Menekşe DAMAR değil, ÇİZİLMİŞ ÇİZGİ oldu: gövdenin sağı
  runs the length of the body, and not one trace of violet appears outside the two lights or
  outside the swollen body."
 
-REV-K37 — "Oluşan tohum" okunmuyor: koyu cisim yeşil duvarla neredeyse aynı değerde, onu çevreleyen
+KABUL-K37 (Mami kabul etti, kare basılmadı — kayıt için tutuluyor) — "Oluşan tohum" okunmuyor: koyu cisim yeşil duvarla neredeyse aynı değerde, onu çevreleyen
  ince menekşe halka çizilmiş bir DAİRE gibi duruyor ve ortasında havada asılı tek bir menekşe
  NOKTA var — ikisi de "callout circle / işaretçi" sınıfına düşüyor.
  DÜZELTİLMİŞ SATIR (kahraman cümlesinin yerine):
@@ -131,7 +177,7 @@ REV-K37 — "Oluşan tohum" okunmuyor: koyu cisim yeşil duvarla neredeyse aynı
  outlined disc and no separate floating dot of light exists anywhere; the only violet is the
  broad soft field the mass is blocking."
 
-REV-K41 — @efe'nin KİMLİĞİ kırıldı: bu karede yeşil-mavi kapüşonlu + kot bahçıvan tulumu (göğüs
+KABUL-K41 (Mami kabul etti, kare basılmadı — kayıt için tutuluyor) — @efe'nin KİMLİĞİ kırıldı: bu karede yeşil-mavi kapüşonlu + kot bahçıvan tulumu (göğüs
  cebinde kalem ve kâğıt) giyiyor ve yüzü yuvarlaklaşmış; K30·K32·K39·K40 ve K42'nin hepsinde
  aynı sabahta yumuşak yıkanmış açık mavi pamuklu TİŞÖRT var. Kesimde iki komşu kare arasında
  kıyafet değişiyor. İkincil: kuru halka iki keskin eşmerkezli daire olarak, çizilmiş bir hedef

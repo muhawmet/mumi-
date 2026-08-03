@@ -36,6 +36,22 @@ DURUM: temiz
 REVİZE:
 
 
+# K45 — "S, sıcaklık demek. Ortam ne çok soğuk ne çok sıcak olmalı." · 5s
+DURUM: temiz (kusur kabul edildi, kilitlendi — takvimdeki İngilizce gün adları satırı)
+KAMERA NİYETİ: Sabit kamera, iki kavanoz ve altındaki radyatör aynı çerçevede tutulur. Sağ duvara doğru kayma ve yaklaşma yasak.
+-----
+The clip opens with both jars already standing on the sill in the grey window light, the misted glass behind them holding its condensation, the ribbed radiator directly beneath the sill and @efe already low at the counter's end with his eyes on the two jars. Then the warm air rising off the radiator reaches the cold pane — and at that instant a thin clear track opens downward through the mist directly above the jars while the rest of the glass stays fogged, and @efe's gaze steadies as the warmth becomes something he can see. The clip begins with two jars in a cold window and ends with the warmth made visible. Three things are alive: the clear track creeps down through the condensation, steam lifts from the tea glass on the counter, one lemon in the bowl catches the light as the room brightens a fraction. Camera: locked off, no push, no drift, no reframe; the wall at the right of frame keeps exactly its current share of the picture. The calendar sheet stays at the same distance, the same scale and the same softness throughout, is never approached, never sharpened and never lit more strongly; nothing printed on it becomes more legible than it is now. Silent clip, no audio, no dialogue, mouth closed. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
+# K46 — "O, oksijen demek. Tohumun hava alması gerekir." · 5s
+DURUM: temiz (kusur kabul edildi, kilitlendi — @efe'nin yüzü kavanozun içinde okunuyor, kabarcıklar yanağında)
+KAMERA NİYETİ: TAMAMEN kilitli kamera. Yanal kayma ve parallax yasak — örtüşmeyi değiştirir ve kusuru büyütür.
+-----
+The clip opens with the open jar standing on the table, its lid lying flat and separate beside it, the wad of cotton inside holding one pale bean against the glass, and @efe already still behind it with his forearms resting on the wood. Then the warm kitchen air moves through the jar's open mouth — and at that instant the faint mist that had gathered on the inside of the upper glass thins and clears from the rim downward, leaving the bean and the cotton reading sharply through clean glass while the lid stays where it lies. The clip begins with a sealed-looking jar and ends with an open one that is breathing. Three things are alive: the mist retreats down the inner glass, steam lifts from the tea glass at the right, the paper note on the wall lifts a hair at one corner. Camera: fully locked — no push, no lateral move, no tilt, no rack focus, no parallax of any kind; the jar's silhouette and everything seen through it keep exactly the same alignment from first frame to last. Nothing on the far side of the glass shifts, brightens or moves; the small droplets already on the glass stay exactly where they are and never run, slide or fall. Silent clip, no audio, no dialogue, mouth closed. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
 # K47 — "İkinci S, su demek. Tohum şişip kabuğunu ancak suyla açar."
 KAMERA NİYETİ: Kostiğin yolculuğunu takip eden kısa bir yanal kayış — şişmiş kabuğun hizasında durur.
 -----

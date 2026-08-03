@@ -29,6 +29,14 @@ The clip opens with @ari already at work in the middle of the one open head on @
 -----
 
 -------------------------------------------------------------------------
+# K03 — "Efe eğildi; arının bacakları sarı tozla kaplanmıştı." · 5s
+DURUM: temiz (kusur kabul edildi, kilitlendi — taburenin arkasındaki gövdesiz ayak)
+KAMERA NİYETİ: Tamamen sabit kamera, tek hareket arının bacağını ışığa çevirmesi. Zemin bölgesi ne büyür ne netleşir.
+-----
+The clip opens with @ari already down on the stone ledge, every foot in contact, its loaded rear leg tucked under the body so the yellow clot on it sits half in shadow, while @efe is already low behind it with his forearms flat on the ledge and both eyes wide on the insect. Then the bee shifts its weight and swings that rear leg outward into the raking sun — and at that instant the packed yellow mass reads as dry granular powder rather than a colour, and @efe's eyes narrow a fraction as the thing resolves. The clip begins with a boy looking at an insect and ends with him seeing what is stuck to it. Three things are alive: the pollen clot takes the light as the leg turns, one antenna sweeps a short arc, steam lifts from the tea glass on the stool. Camera: locked off entirely — no push, no drift, no reframe, the focal length and the focus plane both fixed for the whole clip. The stone floor behind and beside the stool stays exactly as framed, never enlarges, never sharpens and is never approached; the depth of field there does not change. @ari stays settled and never leaves the ledge. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
 # K04 — "Arı kalktı ve iki saksı ötedeki çiçeğe kondu." · 5s
 KAMERA NİYETİ: Saksı sırası boyunca sabit mesafede yavaş kayış, ikinci saksıda tam durma — etiket hep aynı büyüklükte kalır.
 -----
@@ -64,6 +72,14 @@ The clip opens with the flower already lifted: @efe has the stalk of @cicek pinc
 -----
 
 -------------------------------------------------------------------------
+# K09 — "Çiçek sapı, çiçeği bitkinin gövdesine bağlayan kısımdır." · 5s
+DURUM: temiz (kusur kabul edildi, kilitlendi — üstteki odak dışı çiçek başı mercan)
+KAMERA NİYETİ: Sabit kamera, tek eksende milimetrik yaklaşma yok. Yukarı tilt yasak; üst bölge klip boyunca aynı bulanıklıkta kalır.
+-----
+The clip opens on the junction itself: the ribbed green stalk running down into the swollen tan knuckle where it meets the woody stem, a single water drop already hanging at the underside of that knuckle and holding, the light raking across the ridges from the left. Then the drop's weight finishes gathering and its lower curve lengthens by a hair without releasing — and at that instant the raking sun finds the wet meniscus and the whole junction reads as one continuous living piece rather than two parts touching. The clip begins with a stalk resting on a stem and ends with the two reading as joined. Three things are alive: the hanging drop lengthens and holds, dust motes cross the sunbeam behind, a blade of the near leaf lifts a hair in the draught. Camera: fully locked — no push, no tilt, no drift, no rack. The focus plane stays exactly on the knuckle for the whole clip and nothing behind or above it is ever brought into focus; the out-of-focus flower head at the top edge keeps its identical softness and size and is never approached, resolved or lit differently. The drop never falls. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
 # K10 — "Bitkiden gelen suyu ve besini çiçeğe o taşır." · 5s
 KAMERA NİYETİ: Sapı takip eden çok yavaş dikey yükseliş; çiçek başının hemen altında tam durur — taşıma işini kameranın kendisi yapar.
 -----
@@ -75,6 +91,14 @@ The clip opens with the light already climbing the backlit stalk of @cicek: the 
 KAMERA NİYETİ: Başın arkasında birkaç derecelik yavaş orbit — kenarlar birbirinden ayrılınca beş parça sayılabilir hâle gelir ve kamera durur.
 -----
 The clip opens with the morning air already working across the back of @cicek: the fine pale down along every sepal edge is shivering, and one sepal tip is still easing outward a fraction from the one it overlaps. The flower's open side stays turned completely away from camera. Then the sun climbs enough to carry its rim right around the outermost tip — and at that instant the five edges separate from one another and what read as a single green cap reads instead as five distinct pieces. The clip begins with one closed green shape and ends with five countable parts. Dust drifts through the low beam behind, the terracotta pots sit soft along the ledge, the watering can holds its dull green in the shade. Camera: a slow orbit travels a few degrees around the back of the head, sliding the lit edges apart from one another, and comes to a full stop. Exactly five sepals stay in frame from first frame to last — none added, none lost, none fusing into its neighbour — not one petal ever comes into view, and no number, tick or badge appears beside them. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+-------------------------------------------------------------------------
+# K12 — "Bunlara çanak yaprak diyoruz." · 5s
+DURUM: temiz (kusur kabul edildi, kilitlendi — üst kenardaki taç yapraklar mercan)
+KAMERA NİYETİ: Sabit kamera, çanak yaprak ekseninde tutulur. Yukarı tilt ve üst kenara doğru yeniden çerçeveleme yasak.
+-----
+The clip opens with the five green sepals already spread back from the base of the flower, their fine pale down standing up along every edge and catching the low sun, the ribbed stalk running straight down out of frame below them. Then the draught coming along the balcony reaches the plant — and at that instant the down on the two nearest sepal edges flares as the light climbs their hairs, one sepal tip flexes a millimetre and settles, and the green cup reads as a set of separate protective leaves rather than one collar. The clip begins with a green base under a flower and ends with five distinct sepals. Three things are alive: the down flares along the two lit edges, one sepal tip flexes and settles, the coiled hose behind holds still while dust turns in the beam above it. Camera: locked off, height and distance unchanged for the whole clip, no tilt of any kind and no reframe toward the top edge. The focus plane stays on the sepals; the petals crossing the upper edge keep exactly the same softness, the same scale and the same share of frame from first to last, and are never approached or resolved. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 
 -------------------------------------------------------------------------
