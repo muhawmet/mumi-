@@ -55,5 +55,13 @@ site-import/
 # üretilmiş medya + deneysel çöp — beyin değil, sync'lenmez (2026-07-24)
 agents/COMMAND-INBOX/**/*.png
 agents/COMMAND-INBOX/**/*.jpg
+
+# START FRAME RUTİNİ (2026-08-03) — her projede `images/` klasörü, kareler oraya iner.
+# Yukarıdaki `images/` kuralı (satır 38) runner'ın geçici koşu çıktısı içindi ve COMMAND-INBOX'ı
+# da vuruyordu: klasörün kendisi hariç tutulunca git içine HİÇ inmiyor, `.gitkeep` bile
+# izlenemiyordu — yani "klasör rutini kurdum" sessiz no-op olurdu. Klasörü geri alıyoruz ki
+# iskelet repo ile taşınsın; İÇERİĞİ (png/jpg) hâlâ yukarıdaki iki kural tutuyor.
+!agents/COMMAND-INBOX/**/images/
+!agents/COMMAND-INBOX/**/images/.gitkeep
 artifacts/codex-69-prompts/
 canli.log

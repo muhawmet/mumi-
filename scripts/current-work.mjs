@@ -30,6 +30,7 @@
 
 import {
   readFileSync, writeFileSync, existsSync, readdirSync, renameSync, statSync, copyFileSync, unlinkSync,
+  mkdirSync,
 } from 'node:fs';
 import { join, resolve, dirname, sep } from 'node:path';
 import { homedir } from 'node:os';
@@ -42,6 +43,30 @@ const REPO_DEFAULT = resolve(HERE, '..');
 export const SCHEMA_VERSION = 1;
 export const STATE_REL = 'artifacts/current-work.json';
 export const INBOX_REL = 'agents/COMMAND-INBOX';
+
+// START FRAME KLASÖRÜ — rutin, tercih değil (Mami, 2026-08-03).
+// Ölçüldü: aynı iş için diskte ÜÇ ad yaşıyordu (`resimler`, `Resimler`, hiç). Ad tahmin edilince
+// doğrulayıcı yanlış klasöre bakar ve "görsel yok" der; bu, olmayan bir kusuru rapor etmektir.
+// Bundan sonra kanonik ad TEK: `images`. Eski iki ad OKUNMAYA devam eder (mevcut kareler orada
+// duruyor, taşınmıyor) ama YENİ proje `images` ile doğar.
+export const IMAGES_DIR = 'images';
+// Okuma sırası: kanonik önce, eski adlar geriye dönük. Sıra ÖNEMLİ — bkz. teslim-denetim.mjs,
+// boş `images` dolu `resimler`i gölgelemesin diye orada "dolu olanı seç" kuralı var.
+export const IMAGE_DIR_ALIASES = [IMAGES_DIR, 'resimler', 'Resimler'];
+
+/**
+ * Projenin start-frame klasörünü VAR EDER (idempotent) ve yolunu döner.
+ * `.gitkeep` şart: git boş klasör taşımaz, iskelet diğer makinede doğmaz.
+ * .gitignore `images/` klasörünü COMMAND-INBOX altında ayrıca geri alır — yoksa bu satır
+ * sessiz no-op olurdu (klasör diskte var, repoda yok).
+ */
+export function ensureImagesDir(projectAbs) {
+  const dir = join(projectAbs, IMAGES_DIR);
+  mkdirSync(dir, { recursive: true });
+  const keep = join(dir, '.gitkeep');
+  if (!existsSync(keep)) writeFileSync(keep, '', 'utf8');
+  return dir;
+}
 
 export const PHASES = ['enzim', 'prompt', 'denetim', 'motion', 'uretim', 'kurgu', 'kapandi'];
 export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
@@ -476,6 +501,9 @@ function cmdBaslat(root, argv) {
     process.exit(1);
   }
   const name = cand[0];
+  // İSKELET — proje `images/` ile DOĞAR. Sonradan elle açılan klasör açılmıyor: üç farklı ad
+  // (resimler/Resimler/hiç) tam da bu yüzden doğdu.
+  ensureImagesDir(join(inbox, name));
   const state = {
     version: SCHEMA_VERSION,
     projectId: nfc(name),

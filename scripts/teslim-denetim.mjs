@@ -29,6 +29,8 @@
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { join, resolve, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+// Klasör adı yasası TEK yerde yaşar. İkinci kopya yazılırsa iki gerçek doğar.
+import { IMAGE_DIR_ALIASES } from './current-work.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const ROOT = resolve(HERE, '..');
@@ -70,6 +72,39 @@ const dizinMi = (p) => existsSync(p) && statSync(p).isDirectory();
 
 function bul(dizin, desen) {
   return listele(dizin).filter((f) => desen.test(f)).map((f) => join(dizin, f)).filter(dosyaMi);
+}
+
+/** Klasördeki numaralı start frame'ler: `12.png` → 12. Sıralı, tekrarsız değil (ham). */
+export function kareNumaralari(dizin) {
+  return listele(dizin)
+    .filter((f) => /^\d+\.(png|jpe?g)$/i.test(f))
+    .map((f) => parseInt(f, 10))
+    .sort((a, b) => a - b);
+}
+
+/**
+ * START FRAME KLASÖRÜ — kanonik ad `images` (current-work.mjs IMAGES_DIR), eski adlar okunur.
+ *
+ * TUZAK (bu yorum silinmiyor): yeni rutin HER projeye BOŞ bir `images/` açar. Ada göre ilk
+ * eşleşmeyi alan eski kod o boş klasörü seçip 53 karelik `resimler/`i gölgeler ve
+ * "görsel yok: 1-53" derdi — yani doğrulayıcı OLMAYAN bir kusuru Mami'ye bildirirdi.
+ * Kıstas ad değil İÇERİK: numaralı kare taşıyan klasör kazanır.
+ *
+ * BOŞ İSKELET ≠ KUSUR: hiçbir adayda kare yoksa `null` döner, "0 kare" DEĞİL. Ölçüldü —
+ * `[]` dönmek `if (p.resimler)` dalını açıyor ve prompt fazındaki üç projeye
+ * "🟡 görsel yok: K1-K52" basıyordu. Rutin gereği klasör kare inmeden ÖNCE doğar; onun
+ * boşluğunu bulgu saymak, sistemin kendi iskeletini kusur diye Mami'ye bildirmektir.
+ * Kısmi kapsama (10 kare inmiş, 52 gerekiyor) hâlâ SARI — orası gerçek eksik.
+ */
+export function resimDizinSec(proje) {
+  const adaylar = [];
+  for (const ad of IMAGE_DIR_ALIASES) {
+    const d = altDizin(proje, [ad]);           // altDizin büyük/küçük harf duyarsız
+    if (d && !adaylar.includes(d)) adaylar.push(d); // `resimler` ve `Resimler` aynı diski gösterir
+  }
+  if (!adaylar.length) return null;
+  const iyi = adaylar.reduce((a, d) => (kareNumaralari(d).length > kareNumaralari(a).length ? d : a));
+  return kareNumaralari(iyi).length ? iyi : null;
 }
 
 function altDizin(dizin, adlar) {
@@ -119,7 +154,7 @@ export function promptTasiyanlar(proje, promptDizin) {
 export function tesliminParcalari(proje) {
   const promptDizin = altDizin(proje, ['PROMPTLAR']);
   const motionDizin = altDizin(proje, ['MOTION']);
-  const resimDizin = altDizin(proje, ['resimler', 'Resimler']);
+  const resimDizin = resimDizinSec(proje);
   const promptHepsi = bul(proje, /_PROMPTLAR.*\.(txt|md)$/i);
   const promptKanonik = kanonikSec(promptHepsi, 'PROMPTLAR');
   return {
@@ -135,9 +170,7 @@ export function tesliminParcalari(proje) {
     promptBlok: promptDizin ? bul(promptDizin, /\.(txt|md)$/i) : [],
     motionBirlesik: (() => { const k = kanonikSec(bul(proje, /_MOTION.*\.(txt|md)$/i), 'MOTION'); return k ? [k] : []; })(),
     motionBlok: motionDizin ? bul(motionDizin, /\.(txt|md)$/i) : [],
-    resimler: resimDizin
-      ? listele(resimDizin).filter((f) => /^\d+\.(png|jpe?g)$/i.test(f)).map((f) => parseInt(f, 10)).sort((a, b) => a - b)
-      : null,
+    resimler: resimDizin ? kareNumaralari(resimDizin) : null,
     suno: bul(proje, /_SUNO.*\.(txt|md)$/i)[0] ?? null,
     referanslar: bul(proje, /_REFERANSLAR.*\.(txt|md)$/i)[0] ?? null,
     kabaKurgu: bul(proje, /KABA-KURGU.*\.xml$/i)[0] ?? null,

@@ -11,6 +11,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
   kareleriSay, kanonikSec, voBicimi, ozetAralik, projeyiOlc, projeleriBul, LEHCELER,
+  resimDizinSec, kareNumaralari,
 } from './teslim-denetim.mjs';
 
 function proje(kur) {
@@ -249,6 +250,50 @@ describe('hedef argümandan gelir — koda gömülü proje YOK', () => {
     expect(projeyiOlc(b).nKare).toBe(3);
     rmSync(a, { recursive: true, force: true });
     rmSync(b, { recursive: true, force: true });
+  });
+});
+
+// START FRAME KLASÖR RUTİNİ (2026-08-03) — kanonik ad `images`, eski adlar okunmaya devam eder.
+// Kilitlenen kusur sınıfı: rutin HER projeye boş bir `images/` açar. Ada göre ilk eşleşmeyi alan
+// denetçi o boşluğu seçip dolu `resimler/`i gölgeler ve OLMAYAN bir kusuru Mami'ye bildirirdi.
+describe('resimDizinSec — kıstas ad değil İÇERİK', () => {
+  const kare = (d, ad, n) => {
+    mkdirSync(join(d, ad), { recursive: true });
+    for (let i = 1; i <= n; i++) writeFileSync(join(d, ad, `${i}.png`), '');
+  };
+
+  test('kanonik `images` okunur', () => {
+    const p = proje((d) => kare(d, 'images', 3));
+    expect(kareNumaralari(resimDizinSec(p))).toEqual([1, 2, 3]);
+    rmSync(p, { recursive: true, force: true });
+  });
+
+  test('eski `resimler` / `Resimler` hâlâ okunur — mevcut kareler taşınmadı', () => {
+    for (const ad of ['resimler', 'Resimler']) {
+      const p = proje((d) => kare(d, ad, 2));
+      expect(kareNumaralari(resimDizinSec(p))).toEqual([1, 2]);
+      rmSync(p, { recursive: true, force: true });
+    }
+  });
+
+  test('BOŞ `images` dolu `resimler`i GÖLGELEMEZ', () => {
+    const p = proje((d) => { mkdirSync(join(d, 'images'), { recursive: true }); kare(d, 'resimler', 53); });
+    expect(resimDizinSec(p)).toBe(join(p, 'resimler'));
+    expect(kareNumaralari(resimDizinSec(p))).toHaveLength(53);
+    rmSync(p, { recursive: true, force: true });
+  });
+
+  test('boş iskelet KUSUR DEĞİL — null döner, "0 kare" demez', () => {
+    const p = proje((d) => { mkdirSync(join(d, 'images'), { recursive: true }); writeFileSync(join(d, 'images', '.gitkeep'), ''); });
+    expect(resimDizinSec(p)).toBeNull();
+    expect(projeyiOlc(p).resim).toBeNull();
+    rmSync(p, { recursive: true, force: true });
+  });
+
+  test('klasör hiç yoksa null', () => {
+    const p = proje(() => {});
+    expect(resimDizinSec(p)).toBeNull();
+    rmSync(p, { recursive: true, force: true });
   });
 });
 

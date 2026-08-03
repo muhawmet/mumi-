@@ -13,7 +13,8 @@ import { describe, expect, it } from 'vitest';
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
-import { KIT, scanDeliverables } from './current-work.mjs';
+import { KIT, scanDeliverables, ensureImagesDir, IMAGES_DIR, IMAGE_DIR_ALIASES } from './current-work.mjs';
+import { readFileSync } from 'node:fs';
 
 const REPO = resolve(import.meta.dirname, '..');
 
@@ -89,8 +90,52 @@ describe('scanDeliverables — teslim ADA değil İÇERİĞE göre bulunur', () 
   });
 });
 
+// START FRAME KLASÖR RUTİNİ (Mami, 2026-08-03) — proje `images/` ile DOĞAR.
+// Sonradan elle açılan klasör açılmıyor: diskte üç ad (resimler/Resimler/hiç) tam bu yüzden doğdu.
+describe('ensureImagesDir — iskelet rutini', () => {
+  it('klasörü ve .gitkeep\'i açar (git boş klasör taşımaz)', () => {
+    const d = mkdtempSync(join(tmpdir(), 'cw-img-'));
+    const dir = ensureImagesDir(d);
+    expect(dir).toBe(join(d, IMAGES_DIR));
+    expect(existsSync(join(dir, '.gitkeep'))).toBe(true);
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  it('idempotent — ikinci çağrı mevcut kareleri SİLMEZ', () => {
+    const d = mkdtempSync(join(tmpdir(), 'cw-img-'));
+    const dir = ensureImagesDir(d);
+    writeFileSync(join(dir, '1.png'), 'kare');
+    ensureImagesDir(d);
+    expect(readFileSync(join(dir, '1.png'), 'utf8')).toBe('kare');
+    rmSync(d, { recursive: true, force: true });
+  });
+
+  it('kanonik ad `images`, eski adlar okuma listesinde kalır', () => {
+    expect(IMAGES_DIR).toBe('images');
+    expect(IMAGE_DIR_ALIASES[0]).toBe('images');
+    expect(IMAGE_DIR_ALIASES).toContain('resimler');
+    expect(IMAGE_DIR_ALIASES).toContain('Resimler');
+  });
+});
+
 describe('canlı repo — ölçülmüş kusur geri gelmesin', () => {
   const DESTEK = 'agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi';
+
+  // Rutin ancak DİSKTE varsa rutindir. Aktif projelerin hepsinde `images/` olmalı.
+  const AKTIF = [
+    '5. Sınıf - Destek ve Hareket Sistemi',
+    '5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
+    '5. Sınıf - Hücre ve Organelleri',
+    '6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi',
+    'Bileşke Kuvvet',
+  ];
+  for (const ad of AKTIF) {
+    const p = join(REPO, 'agents/COMMAND-INBOX', ad);
+    it.skipIf(!existsSync(p))(`${ad}: images/ + .gitkeep var`, () => {
+      expect(existsSync(join(p, IMAGES_DIR, '.gitkeep'))).toBe(true);
+    });
+  }
+
 
   it.skipIf(!existsSync(join(REPO, DESTEK)))(
     'Destek ve Hareket: 41 kare PROMPTLAR/ altında ve kayıt onu GÖRÜR',
