@@ -1,0 +1,164 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — 6. SINIF · MOTION BLOĞU C (K30–K42)
+=========================================================================================
+Motor: Kling 3.0 (i2v) · Register: EDU · Kaynak kare: images/<n>.png (13/13 GÖZLE açıldı)
+Kelime bandı: 190-215 (motion-lint'in tek geçerli hedefi; §3'ün 210-260'ı ve emekli 114
+rakamı değil — en dar band bu, `scripts/motion-lint.mjs` satır 134'te duvarla birlikte yazılı).
+
+DENETİM HÜKMÜ — 13 kare görüldü:
+  TEMİZ (7): K30 · K31 · K32 · K36 · K38 · K39 · K40   → motion aşağıda
+  REVİZE (6): K33 · K34 · K35 · K37 · K41 · K42        → motion YOK, kusurlar raporda
+
+BU BLOĞUN MOTION KİLİTLERİ (§3ø + ENZIM §7):
+ · Kimse konuşmaz, kimse yazmaz, hiçbir el harf üretmez.
+ · Yazı taşıyan nesne SABİT KÜTLEDİR ve kamera ona YAKLAŞMAZ — bu beş klipte geçerli:
+   taştaki polen harfleri (31) · sulama kabı (32) · menekşe bloklar (36) · teneke kapak ve
+   fidan etiketi (39) · tohum kabuğu bloklar (40). Kamera mesafesini korur, yanal gider.
+ · Arı UÇMAZ. Konduğu/asılı durduğu yeri klip boyunca korur — 5 saniyede uçuş yolu yok.
+ · Sarı toz GERÇEK KURU MAT TOZDUR: ağır, yerçekimli, düşer. Süzülmez, parlamaz, havalanmaz.
+ · Kavram ışığı yalnız K36 ve K38'de var ve ikisinde de yuvarlak ışık kalır.
+=========================================================================================
+
+
+# K30 — "Efe arının bıraktığı sarı tozu şimdi anlamıştı."
+SÜRE: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Tanelerin üstünden başlayıp taş boyunca sağa kayarken yükselir ve yüzü çiçeğin üstüne çıkarıp durur.
+-----
+The clip opens with @efe already halfway through a comparison he began before the shot: his eyes travel from the yellow smear on the pad of his thumb down to the loose golden grains on the white flower, then back, his flat hand resting where he laid it. Then his look carries past the flower to the bee two pots along, and when it arrives there the comparison closes — his brows lift, his chin rises, and the searching leaves his face for knowing. He begins hunting a resemblance and ends having understood that all three yellows are one substance. Nothing else changes: dust motes turn through the low beam, the lace curtain breathes at the half-open door, the tea glass holds its thread of steam. Camera: begins low over the scattered grains, eases a few centimetres right along the stone while rising just enough to lift his face clear above the flower, and stops. The yellow is real dry matte powder everywhere it appears and never glows, sparks or lifts off a surface, and the bee holds her place on the far flower and never takes off. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K31 — "Polenlerin başçıktan dişicik tepesine taşınmasına tozlaşma denir."
+SÜRE: 5s · ekranda ~5s
+KAMERA NİYETİ: Yüklü başçığın çevresinde birkaç derece döner, boşluğu sıyırır ve ıslak tepe tam karşıya gelince durur.
+-----
+The clip opens on work under way with no one doing it. The overloaded anther head is settling under its own load, tipping by degrees on its thread-thin stalk the way it has since before the shot, while the wet head across the gap keeps its glisten. Then the stalk gives a fraction more, and at that instant one grain at the anther's lower edge loses its grip and drops straight down under its own weight — heavy, no drift and no float — and lands dead on the stone below. The clip begins with a load being held and ends with the first of it given up to gravity. Around them dust motes turn through the narrow band of sun, the railing stands unmoving beyond, the flower's long shadow keeps its edge. Camera: begins square on the loaded anther, turns a few degrees around it at the same distance so the empty gap sweeps past, and stops with the wet head centred. The eight gathered letters below hold their exact shapes, no grain inside any stroke moves and no letter re-spells, lifts or scatters, and nothing at all crosses the air between the two organs. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K32 — "Bu taşımayı rüzgâr, su ya da böcekler yapar."
+SÜRE: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Sedir hizasında toz perdesiyle birlikte bir karış sola kayar, damla düşünce yavaşlayıp durur.
+-----
+The clip opens with the drop losing: it has been stretching from the lip of the green can since before the shot, its neck thinning, the dark wet ring waiting on the stone under it, while @efe keeps his fingers hooked over the handle and his head turned toward the bee. Then the neck finally parts, and at that instant the drop falls and strikes the stone inside its own ring — and his head comes round and down to it in one unbroken turn, chin lowering, brows drawing in. The frame begins with three carriers ignoring each other and ends with one of them having acted where he can see it. The dust veil drifts on along the ledge, the lace curtain breathes at the half-open door, the tea glass sits untouched on its stool. Camera: begins at ledge height on the hanging drop, tracks a hand's width left with the drifting dust at an unchanged distance, and eases to a stop as it lands. The stencilled wording on the can holds its shape and spacing, the can never tips, slides or turns, and the bee keeps every foot planted and never takes off. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K36 — "Bu birleşmenin adı döllenmedir."
+SÜRE: 5s · ekranda ~4s
+KAMERA NİYETİ: Harf üstü hizasına birkaç santim iner, mesafesini bozmadan yatay kayar ve ışık dengelenince durur.
+-----
+The clip opens on a colour that has just arrived and has not settled: the round violet inside the swollen body is still finding its level, swelling and easing back, and the dark balcony is taking the last of that first surge. Then the light finds its strength, and at that moment everything stops flickering — the violet holds steady, and one bead of clear resin on the flower's dark flank catches the colour and keeps it. The clip begins with a new colour still being born and ends with it settled, holding, belonging to the place. Nothing else moves in the dark: the terracotta pots stand where they stand, the lace curtain breathes at the half-open door, the city holds its blue-black beyond the railing. Camera: begins low across the grey stone, descends a few centimetres to the height of the letter tops and slides sideways at an unchanged distance, then stops. The eight carved blocks stay solid opaque stone that only receives the violet — they never light from inside, never move and never re-spell — and the round violet stays a soft round light that never becomes a flower, petal or flame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K38 — "Yumurtalık da gelişerek tohumun etrafında meyveyi oluşturur."
+SÜRE: 5s · ekranda ~5s
+KAMERA NİYETİ: Kapsülün çevresinde birkaç derece ark çizip aydınlık kaburgalara tam karşıdan oturur.
+-----
+The clip opens with the case already swelling: its five ribs are tightening by fractions as it fills, and the last brown withered strap still hooked to its foot is being drawn slowly taut, creaking at its final point of attachment the way it has since before the shot. Then that attachment gives, and at that instant the strap lets go and drops away out of the light, and the case is left standing clear with nothing hanging on it. The clip begins with the dead flower still holding on and ends with the fruit alone. Around it the blackened threads keep their bent shapes against the rind, one dust mote crosses the lit ridge, the rim of morning sun keeps its line along the upper ribs. Camera: begins three-quarter on the ribbed case, arcs a few degrees around it at the same distance so the light travels along the ribs, and settles square on them. The case stays whole, closed and opaque with nothing shown inside it and never splits, and the faint violet in its wall only dims further, never leaving the case and never becoming a spark, flame or drawn shape. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K39 — "Efe saksının dibinde geçen yılın kurumuş meyvesini buldu."
+SÜRE: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Yüz hizasından kapsülün hizasına iner, mesafesini bozmadan; teneke kapağa hiç yaklaşmaz.
+-----
+The clip opens with @efe already turning the find over: he has the dry brown pod between his thumb pad and his first knuckle and is rolling it a few degrees, examining the split down its flank, his other hand flat on the tile taking his weight. Then the turn brings the split around into the sun, and when it arrives there one dry fibre springs up off the parted seam — and his eyes widen, his head tilts a little, and the whole face goes from idly turning something dead to recognising a container. He begins handling a leftover and ends having found what it is. The balcony stays as it is: spilled soil dark on the tile, the ball of twine unmoving, the lace curtain breathing far behind at the half-open door. Camera: begins on his face, descends to the height of the held pod without closing any distance on the printed tin lid, and stops there. The tin lid and the label in the pot hold their wording exactly and neither moves, slides or re-spells, and the pod stays whole with its seams only parting a hair so no seed leaves it. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K40 — "Meyveyi ikiye ayırdı; içinden bir tohum düştü."
+SÜRE: 5s · ekranda ~4.5s
+KAMERA NİYETİ: Taşın üstünde sağa doğru bir karış kayar, fasulye yatınca durur; harflere mesafe sabit.
+-----
+The clip opens with the fall not over. The bean is still up on one edge on the stone between the two opened halves, rocking smaller from the drop it made before the shot, while @efe holds both hands flat and open on the stone, touching nothing. Then the last of the rocking runs out, and at that instant the bean tips off its edge and lies down flat on the stone — and his chin lowers to follow it down, his shoulders easing as it stops. The clip begins with something still moving from a fall and ends with it at rest and looked at. Nothing else stirs: one fibre lifts from the torn seam of the near half, dust motes turn through the raking beam, the hollow halves keep their shadows. Camera: begins low over the stone at the bean, eases a hand's width right along the ledge at an unchanged distance from the carved letters, and stops as it lands. The five carved blocks stay a still seated mass, never sliding, tipping, re-spelling or lighting from within, and exactly one bean is on the stone with no second seed leaving either half. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================================
+REVİZE EDİLECEK KARELER — MOTION YAZILMADI (görmediğin kareye motion yazma; bozuk kareye de yazılmaz)
+-----------------------------------------------------------------------------------------
+REV-K33 — Dişicik tepesi BİTKİ değil, TAŞ oldu: karedeki yüzey mavi-gri taş bir plaka ve üstünde
+ dalgalanan duran su var; K31'de aynı organ yeşil, kubbeli, canlı doku olarak basılmıştı.
+ "Yapışkan yüzey" durgun su gibi okunuyor, tane tutunmuş değil YÜZÜYOR.
+ DÜZELTİLMİŞ SATIR (prompt gövdesindeki ilk cümlenin devamına):
+ "…the broad head is living plant tissue and reads as such: a pale-green domed organ whose
+ whole visible surface is a thin sticky glaze — tacky, syrupy and completely motionless, with
+ no ripples, no waves, no standing water, no pooled liquid and no reflection of a sky; its
+ front edge curves away as soft swollen tissue, never as a cut stone block or a mineral slab,
+ and no stone, rock, concrete or masonry surface appears anywhere in the frame."
+
+REV-K34 — Makro ölçek çöktü: kadranın ortasında, gövdenin hemen arkasında OKUNUR bir çay bardağı ve
+ tabağı duruyor (buharıyla birlikte). 1 cm'lik bir organın arkasında 9 cm'lik bir bardak aynı
+ boyda görününce sahne "dev çiçek + normal bardak" olarak okunuyor.
+ DÜZELTİLMİŞ SATIR (NEGATIVE'in başına):
+ "the background is nothing but unreadable dark bokeh at extreme macro magnification — no tea
+ glass, saucer, cup, stool, jar, bottle or any other household object of human scale is
+ visible or recognisable anywhere behind the stalk, and no steam rises anywhere in frame."
+
+REV-K35 — Menekşe DAMAR değil, ÇİZİLMİŞ ÇİZGİ oldu: gövdenin sağından tepeden dibe inen ve gövdenin
+ dışına, alttaki dokuya taşan ince düz bir mor şerit var. Üstelik kehribar (sol üst) ile
+ mavinin (alt orta) DEĞDİĞİ yerde değil, ikisinin de sağında duruyor — yasanın "no drawn
+ route" kilidini kare bizzat çiğniyor.
+ DÜZELTİLMİŞ SATIR ("Their edges have just met" cümlesinin yerine):
+ "The amber sits high and the cool blue sits low and their two round bodies overlap each other
+ directly, and the violet exists ONLY inside that overlap as a soft lens-shaped patch of new
+ colour with no hard edge — it is never a line, stripe, vein, band, seam or stroke, it never
+ runs the length of the body, and not one trace of violet appears outside the two lights or
+ outside the swollen body."
+
+REV-K37 — "Oluşan tohum" okunmuyor: koyu cisim yeşil duvarla neredeyse aynı değerde, onu çevreleyen
+ ince menekşe halka çizilmiş bir DAİRE gibi duruyor ve ortasında havada asılı tek bir menekşe
+ NOKTA var — ikisi de "callout circle / işaretçi" sınıfına düşüyor.
+ DÜZELTİLMİŞ SATIR (kahraman cümlesinin yerine):
+ "The dimming violet fills the whole lower half of the body from behind, and the formed thing
+ reads as a hard black silhouette against it — a plump kidney-shaped mass with an unmistakable
+ opaque outline, several values darker than the surrounding tissue. No even circular ring, no
+ outlined disc and no separate floating dot of light exists anywhere; the only violet is the
+ broad soft field the mass is blocking."
+
+REV-K41 — @efe'nin KİMLİĞİ kırıldı: bu karede yeşil-mavi kapüşonlu + kot bahçıvan tulumu (göğüs
+ cebinde kalem ve kâğıt) giyiyor ve yüzü yuvarlaklaşmış; K30·K32·K39·K40 ve K42'nin hepsinde
+ aynı sabahta yumuşak yıkanmış açık mavi pamuklu TİŞÖRT var. Kesimde iki komşu kare arasında
+ kıyafet değişiyor. İkincil: kuru halka iki keskin eşmerkezli daire olarak, çizilmiş bir hedef
+ gibi basılmış.
+ DÜZELTİLMİŞ SATIR (@efe cümlesinin içine):
+ "@efe is behind the ledge wearing the same soft washed pale-blue cotton t-shirt with short
+ sleeves he has worn in every frame of this morning — no hoodie, no hood, no sweatshirt, no
+ dungarees, no overalls, no bib, no straps, no chest pocket and nothing carried on his
+ clothing; and the pot ring on the stone is one soft chalky irregular mineral stain worn into
+ the limestone, never two clean concentric drawn circles and never a target."
+
+REV-K42 — ÜÇ kusur birden, ikisi bu karenin BÜTÜN fikrini yıkıyor:
+ (1) Yazı bozuk — pakette "FASULYE" yerine harfleri birbirine geçmiş, Y ile E'nin kaynadığı
+     okunmaz bir dizi basılmış.
+ (2) İki kavanoz AYNI DEĞİL — soldaki alçak ve geniş, sağdaki uzun; pamuk yatakları farklı
+     kalınlıkta; soldaki fasulye böbrek biçimli, sağdaki kaju biçimli ve daha küçük.
+     Karenin tek konusu AYNILIK'tı, kare tam onu kaybetti.
+ (3) Pamuk ISLAK değil — bembeyaz, kabarık ve kuru okunuyor, su filmi yok; oysa VO 42
+     "ıslak pamuk" diyor ve SOS'un S'si buradan doğacak.
+ DÜZELTİLMİŞ SATIR (TEXT slotunun ilk cümlesinin yerine + gövdeye):
+ "the packet carries one Turkish word only, F-A-S-U-L-Y-E, seven separate capital letters set
+ with clear even spacing so that no two letters touch, overlap, merge or share a stroke, each
+ letter fully formed and plainly legible, and no eighth letter, no extra stroke and no partial
+ glyph appears anywhere on the packet; and the two jars are the same jar photographed twice —
+ identical height, identical rim diameter, identical body width, the same depth of cotton and
+ the same water line, and the two beans are the same kidney bean twice over, the same size,
+ the same outline and the same angle; the cotton in both is visibly SOAKED — grey-translucent
+ where the water has taken it, matted flat rather than fluffy, glossy at its upper face, with
+ a clear shallow film of water standing under it and a wet meniscus against the glass."
+=========================================================================================

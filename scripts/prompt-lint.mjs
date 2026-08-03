@@ -898,7 +898,16 @@ if (isMain) {
         const p = join(dir, e.name);
         if (e.isDirectory()) { walk(p); continue; }
         if (!/\.(txt|md)$/i.test(e.name)) continue;
-        if (/_(MOTION|EDIT-PLAN|SESLENDIRME|SUNO|REFERANSLAR)\b/i.test(e.name)) continue;
+        // Teslim setinin prompt OLMAYAN parçaları. Bu liste ad-tabanlıdır ve olması gereken
+        // budur: burada ad bir TAHMİN değil, teslim biçiminin kendi sözleşmesidir
+        // (PROMPT-YASASI §5 slot adları). Yerleşim tahmini yapan seçici kör olur — o ayrı şey.
+        //
+        // KALAN-URETIM / YAPILACAK-REVIZE / revize: üretim çeteleleri. İçlerinde prompt
+        // ALINTISI geçtiği için içerik tarayıcısı bunları kare dosyası sanıyordu; 2026-08-03'te
+        // "Farklı Kültürler" Biten/ altına taşınınca kapı bir NOT satırını ("K44 — TEMİZ.
+        // İstenen düzeltme oldu…") kare sanıp yedi slotu birden eksik buldu ve commit'i bloke
+        // etti. Çete dosyası kare basmaz; ölçülmesi yanlış alarmdır.
+        if (/_(MOTION|EDIT-PLAN|SESLENDIRME|SUNO|REFERANSLAR|KALAN-URETIM|YAPILACAK-REVIZE|revize)\b/i.test(e.name)) continue;
         let head = '';
         try { head = readFileSync(p, 'utf8'); } catch { continue; }
         if (/^STYLE:/im.test(head) || /^NEGATIVE:/im.test(head) || /FRAME NEGATIVE/i.test(head)) targets.push(p);

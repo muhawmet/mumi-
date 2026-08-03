@@ -1,0 +1,125 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — 6. SINIF · MOTION BLOĞU D (K43–K54)
+=========================================================================================
+Motor: Kling 3.0 (i2v) · Register: EDU · Kaynak kare: images/43.png … images/54.png
+Yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b — tek paragraf, slot yok, köşeli parantez yok.
+Kelime bandı: 190–215 (§3'ün "geçerli tek rakam" satırı — üç sayının en darı).
+
+BU DOSYADA YALNIZ GÖRÜLMÜŞ VE TEMİZ HÜKMÜ ALMIŞ KARELER VAR: K43 · K44 · K47 · K50 · K51 · K52 · K53.
+REVİZE bekleyen kareler (motion YAZILMADI): K45 · K46 · K48 · K49 · K54.
+Revize kareler basıldıktan sonra motion'ları bu dosyanın sonuna eklenir.
+
+BLOK GENELİ (her klipte geçerli, hiçbir kliple çelişmez):
+· Kimse konuşmaz, kimse yazmaz, kimse bant yapıştırmaz, hiçbir nesne el değiştirmez.
+· Yazı taşıyan nesne (defter etiketi, kavanoz bandı, tohum paketi) SABİT KÜTLEDİR — devrilmez,
+  kaymaz, açılmaz, kıpırdamaz; kamera ona hiçbir klipte yaklaşmaz, mesafe klip boyunca sabittir.
+· Kavanoz ve cam katı nesnedir → kamera düşük genlikli ve daima TAM DURARAK biter.
+· Bu blokta kavram ışığı YOKTUR. Filiz gerçek bitki maddesidir; ışık vermez, parlamaz, hâle
+  yapmaz. (K49 tam bu kusurdan revizeye düştü — kilitler her klipte bu yüzden yazılı.)
+=========================================================================================
+
+
+# K43 — "Tohumun çimlenmesi için üç temel şart vardır."
+KAMERA NİYETİ: Defterin yanından başlayıp tezgâh boyunca sola kayar ve iki kavanozu ortalayarak durur — yazıdan uzaklaşan tek yön.
+-----
+The clip opens mid-inspection: @efe is already reading the two jars, his eyes travelling from the left glass to the right and back, his chin resting where it is on his folded forearms. Two things behind him are already underway — the hard edge of condensation on the window creeps a hair lower as the radiator works beneath it, and a thin ribbon of steam lifts off the tea glass. Then his eyes stop travelling and settle on the nearer jar. At that instant his chin lifts a fraction clear of his forearms and his brows come level: he begins the clip checking and ends it certain that nothing is missing. Nothing else in the kitchen moves. Camera: the lens begins beside the propped notebook, eases left along the run of the worktop with the out-of-focus enamel bowl rim sliding through the near foreground, and comes to a full stop with both jars centred. Both jars stay rigid solid on the timber, the beans whole and dry-coated, and the paper label holds its exact lettering while the camera never comes closer to it. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K44 — "Unutmamak için parolamız: SOS."
+KAMERA NİYETİ: Mesafe hiç değişmez — kamera bantla arasındaki uzaklığı koruyarak birkaç santim yana süzülür ve durur.
+-----
+The clip opens with the job already half done: @efe's fingertip is pressed onto the lifting corner of the masking tape, still easing it down against the curve of the glass, his other forearm braced flat on the timber and his head brought close in behind the jar. The kitchen holds around him with only its own small life — a bead of condensation runs a short way down the inside of the glass behind the tape, and a thin thread of steam lifts from the tea at the back of the worktop. Then the corner finishes seating under his finger. At that instant he lifts the fingertip a few millimetres clear and leaves it hovering, his raised eyebrow settling: he begins the clip fixing something down and ends it having named it for good. Camera: holding its distance exactly, the lens drifts a few centimetres to the left across the taped face of the glass and stops fully, square on. The jar is rigid solid and never rocks, slides or fogs; the three pencilled letters hold their exact shape, spacing and grain, nothing is written, traced or added, and the camera never moves nearer. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K47 — "İkinci S, su demek. Tohum şişip kabuğunu ancak suyla açar."
+KAMERA NİYETİ: Kostiğin yolculuğunu takip eden kısa bir yanal kayış — şişmiş kabuğun hizasında durur.
+-----
+The clip opens with the water already at work: the caustic thrown by the window sun through the shallow film at the bottom of the jar is rippling slowly across the timber, and the dark wet ring in the cotton beneath the bean is creeping outward a fibre at a time. @efe is behind the glass on his folded forearms with his eye brought almost to it, watching, lips closed. Then the travelling caustic sweeps up onto the taut wet crown of the swollen coat and runs along the lip of the single split. At that instant the dark inside of the split reads for the first time and his brows lift and stay lifted: he begins the clip waiting and ends it having seen the coat give. Camera: the lens tracks a short way to the right along the glass wall, letting the caustic overtake it, and settles fully stopped level with the split. Exactly one short crack, and nothing comes out of it — no root, no root hair, no shoot, no leaf; the coat opens no further and the bean stays opaque and whole. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K50 — "Karanlıktaki tohum da çimlenmişti."
+KAMERA NİYETİ: Solgun filizin boyunca yukarıdan aşağı iner — iki çenek yaprağından başlayıp yarılmış kabuğun üstünde durur.
+-----
+The clip opens with @efe already leant in through the cupboard door, both hands braced on the shelf's front lip, his face a hand's width from the glass and his eyes running the whole length of the pale shoot. The shelf keeps its own quiet life — dust turns slowly in the daylight at the cupboard's mouth, and a bead of condensation runs down the inside of the glass past the roots. Then his eyes reach the split coat down in the cotton and find the white roots spread out of it. At that instant his head draws back a couple of centimetres and his eyebrows climb: he begins the clip looking at a strange pale thing and ends it understanding that it is alive. His hands stay where they are. Camera: starting level with the two pale seed leaves, the lens cranes slowly down the arch of the stem, the out-of-focus second jar sliding up through the near foreground, and comes to a full stop over the rooted cotton. The shoot stays dull blanched cream-yellow plant matter that gives no light back, never glows, never greens and never unfurls further; it lengthens by nothing. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K51 — "Çünkü çimlenme için ışık ve fotosentez gerekmez."
+KAMERA NİYETİ: Renk farkından başlayıp pamuğun altına iner ve iki eşit kök kütlesinin üstünde durur — cevabın olduğu yerde.
+-----
+The clip opens with @efe already comparing: his head is turning between the two jars from where it rests above his folded arms, going from the waxy cream shoot on the left to the short dark-green one on the right and back. The worktop keeps its own small life — the pale shoot's tip leans a hair toward the window while the green one holds upright, and a bead of condensation runs down the inside of the left glass. Then his head stops midway between the two and his eyes drop below the cotton line. At that instant the small frown clears off his face and his chin settles: he begins the clip weighing two different plants and ends it having worked out that they are the same. Camera: the lens begins level with the two shoots, cranes slowly down past the rims and settles fully stopped on the two white root masses spread through the cotton. Both shoots keep the exact colour they start with, neither one glows or brightens, and the two root masses stay equal in thickness and spread from first frame to last. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K52 — "Tohum ilk besinini kendi içindeki depodan karşılar."
+KAMERA NİYETİ: Pakete olan mesafe hiç kısalmaz — kamera yalnız camın boyunca birkaç santim yana süzülür ve buruşan yarımın üstünde durur.
+-----
+The clip opens with the store already being spent: the shrunken half of the seed is drawing in on itself, one fine fold along its inner face deepening as the frame runs. The plump half beside it stays taut and full, and the thick base of the shoot braces between them. @efe is crouched behind the glass with one eye close to it, watching, lips closed, while a bead of condensation slides down the inside of the glass past the split coat. Then the deepening fold reaches the edge of the half and the whole shrunken side gives a little. At that instant his eye widens and his head tips a degree: he begins the clip watching two halves and ends it seeing that one of them is being used up. Camera: keeping its distance from the printed packet exactly as it is, the lens drifts a few centimetres along the glass toward the seed and stops fully. The papery coat stays open exactly as far as it starts, the shoot does not lengthen, and the packet is rigid solid with its printed word unchanged and no nearer. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+# K53 — "Işık, ancak yeşil yapraklar çıktıktan sonra gerekli olur."
+KAMERA NİYETİ: Gölgede kalan krem gövdeden yukarı, ışıktaki yeşil yaprakların hizasına tırmanır ve orada durur.
+-----
+The clip opens with the light already moving: the hard shadow line the window frame lays across the sill is creeping downward as the sun climbs, and one green seed leaf is tilting a fraction further toward the glass. @efe stands at the sill just outside the light with both hands on its edge, reading the join where the cream stem becomes green. Then the descending shadow line clears a thread more of the cream lower stem and the sun lands on it. At that instant his chin lifts and the corner of his closed mouth pulls: he begins the clip studying a mark on a stem and ends it watching the light arrive at it. His hands stay flat on the sill. Camera: the lens begins low on the shadowed cream stem, cranes slowly up its length past the join, and comes to a full stop level with the two lit green leaves. The join between cream and green stays exactly where it is — no part of the stem changes colour, the leaves do not unfurl or grow, and the green is real lit pigment that never glows, sparkles or emits. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================================
+MOTION BLOĞU D — 7/12 KLİP YAZILDI.
+
+REVİZE BEKLEYENLER (kare basılmadan motion yazılmaz — §3 mutlak yasa).
+Her madde: kusur → prompt'ta DEĞİŞTİRİLECEK satır (kalanına dokunulmaz).
+
+· K45 — takvimin gün adı satırı İngilizce basıldı (SUN MON MON WED THU FRI SAT), tam okunur;
+  üstelik Nisan 29 günle bitiyor. TEXT satırının sonuna eklenir:
+  "Beneath the month name the calendar carries only a soft-focus block of day numbers with NO
+  row of weekday names at all — that row is absent from the sheet; the numbers are unreadable
+  at this scale and no English word, abbreviation or letter appears anywhere on the calendar."
+
+· K46 — @efe'nin başı kavanozun İÇİNDE okunuyor, pamuk boynundan kesiyor ve kabarcıklar
+  yanağına gözyaşı gibi oturmuş. Sahne satırındaki kadraj cümlesi şununla değiştirilir:
+  "85mm lens at f/2.8, brought down almost to the timber and turned three-quarter onto the open
+  mouth of the near jar of @kavanoz, so the jar stands in the LEFT half of frame and @efe's head
+  is well clear of it in the right half, his face never seen through the glass and never
+  overlapping the jar's silhouette at any point."
+
+· K48 — iki fasulye de duran suyun ALTINDA (bir kare önce anlatılan oksijen şartını yalanlar) ve
+  iki kabuk da bütün/kuru — K47'de açılan çatlak geri alınmış. NEGATIVE'in ilgili maddesi
+  şununla değiştirilir:
+  "in both jars the water is only a shallow film at the very bottom and the cotton stands above
+  it — neither bean is submerged, floating or under a water line at any point; both beans show
+  exactly the same stage as one another, the coat split along one short crack with a stub of
+  white root just emerging, and neither coat is whole, dry or unbroken."
+
+· K49 — filiz IŞIK VERİYOR; karenin tek ışık kaynağı o, çevresinde parıltı zerreleri var.
+  Çimlenme bir ışık olayı değildir (ENZIM §3). NEGATIVE'in ilgili maddesi şununla değiştirilir:
+  "the pale curve is dull blanched plant tissue lit ONLY by the wedge of daylight falling on it
+  from outside the cupboard — it emits nothing, casts no light onto the shelf, the jar or his
+  face, has no halo, no bloom, no glowing tip and no sparkle, glint or floating particle around
+  it, and it is the darkest lit thing in frame rather than the brightest."
+
+· K54 — ayna tutmuyor. NEGATIVE'in ilk maddesi şununla değiştirilir:
+  "the framing is exactly that of the opening shot and nothing about it changes — same 50mm at
+  ledge height, same distance, and the pot fills the left third at exactly the size it does
+  there; the pale dry ring is printed into the STONE LEDGE immediately right of the pot, in the
+  right third, and the bean seedling's small clay pot stands inside THAT ring on the ledge — the
+  ring never appears on the balcony floor, no seedling stands on the floor, and no extra
+  foreground pot, rim or object enters the near edge that is not in the opening shot."
+=========================================================================================

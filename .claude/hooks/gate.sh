@@ -115,6 +115,20 @@ fi
 # Register dosyanin kendi basligindan okunur; okunamazsa UYARIR ama bloke ETMEZ (kor olcum
 # yanlis kirmizi uretir, o da kapiyi guvenilmez yapar).
 # Acil kacis: MAMILAS_LINT_SKIP=1 git commit ...  (gerekcesi commit mesajina yazilir)
+# SAF TASIMA LISTESI — dongunun ONUNDE, bir kez.
+# Neden burada: git bir rename'i ancak TUM diff'e bakarken eslestirir. `-- <tek yol>` verilirse
+# esini goremez ve saf tasimayi "999 satir eklendi" diye raporlar — bu satir once o yanlisla
+# yazildi ve elemedi. Numstat'in `0 0` satirlari icerigi degismeyen dosyalardir.
+# Bicim iki turlu gelir: `dir/{eski => yeni}/ad` ya da `eski => yeni`; ikisi de yeni yola indirilir.
+# Rename+DUZENLEME bu listeye GIRMEZ (numstat sifirdan buyuk cikar) — gercek duzenleme olculmeye
+# devam eder. Olcut ad degil SAYI.
+MOVED_ONLY="|$(
+  git -c core.quotepath=false diff --cached -M --numstat 2>/dev/null \
+    | awk -F'\t' '$1 == "0" && $2 == "0" { print $3 }' \
+    | sed -e 's/{[^}]* => \([^}]*\)}/\1/g' -e 's/.* => //' \
+    | tr '\n' '|'
+)"
+
 if [ "${MAMILAS_LINT_SKIP:-0}" = "1" ]; then
   # Kacisin IZ BIRAKMAMASI kabul edilemez: sessizce atlanan kapi, olmayan kapidir.
   # Mesaj PROMPT + MOTION der: bayrak ikisini birden atliyor ama metin yalniz prompt diyordu,
@@ -151,11 +165,23 @@ else
       *) continue ;;
     esac
     [ -f "$PF" ] || continue
+    # SAF TASIMA OLCULMEZ (2026-08-03, kapinin kendisinde yakalandi).
+    # `MOVED_ONLY` listesi dongunun ONUNDE bir kez hesaplanir (bkz. yukarisi): git rename'i
+    # ancak TUM diff'e bakarken eslestirebilir; `-- <tek yol>` verilirse esini goremez ve saf
+    # tasimayi "999 satir eklendi" diye raporlar. Bu satir once o yanlisla yazildi ve elemedi.
+    case "$MOVED_ONLY" in
+      *"|$PF|"*) continue ;;
+    esac
     # Teslim setinin PROMPT OLMAYAN parcalari (prompt-lint walk'un ad elemesiyle ayni liste).
     # `MOTION/` klasoru de burada elenir: o dosyalar asagidaki motion dalinin isidir, iki
     # dal ayni dosyaya iki farkli lehceyle hukum vermez.
     case "$PF" in
       *_MOTION*|*_EDIT-PLAN*|*_SESLENDIRME*|*_SUNO*|*_REFERANSLAR*|*/MOTION/*) continue ;;
+      # Uretim ceteleleri: icinde prompt ALINTISI gecer ama kare basmazlar. 2026-08-03'te
+      # "Farkli Kulturler" Biten/ altina tasininca kapi bir NOT satirini kare sanip commit'i
+      # bloke etti. `prompt-lint.mjs:901` walk() ile AYNI liste — iki yerde ayrisirsa iki
+      # gercek dogar; degistiren ikisini birden degistirir.
+      *_KALAN-URETIM*|*_YAPILACAK-REVIZE*|*_revize*) continue ;;
     esac
     # `*_PROMPTLAR*` ADIYLA sozlesmeyi ustlenmis dosyadir; digerleri ICERIKLE secilir.
     ADLI=0

@@ -1,0 +1,191 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — REVİZE LİSTESİ
+=========================================================================
+Denetim: 54/54 kare gözle açıldı (sekans başına bir ajan, tek geçiş).
+TEMİZ 39 · REVİZE 15. Temiz karelerin motion'ları YAZILDI (MOTION/, lint kırmızı 0/39).
+Revize alan karelere motion YAZILMADI — kare değişecek.
+
+Aşağıdaki her blokta düzeltilmiş satır KOPYALANMAYA HAZIR. Kareyi yeniden basarken
+prompt'un o satırını bununla değiştir, kalanına dokunma.
+=========================================================================
+
+
+########################  EN PAHALI ÜÇ  ########################
+
+### 49.png  🔴 DERSİN BİLGİSİNİ YALANLIYOR
+Filiz IŞIK VERİYOR: karenin tek ışık kaynağı o, çevresinde parıltı zerreleri var.
+ENZIM "çimlenme sekansında kavram ışığı YOKTUR" diyordu; prompt'un NEGATIVE'i bunu birebir
+yasaklamıştı ("gives no light back, never glowing") ve motor dinlemedi.
+Kök neden: yasak TARİF ediyordu, KISITLAMIYORDU. Feragatname çalışmıyor — motoru olumsuzla
+değil, somut bir SIRALAMAYLA bağla.
+
+NEGATIVE satırına:
+  the pale shoot is dull blanched plant tissue lit ONLY by the wedge of daylight coming from
+  outside the cupboard — it emits nothing, casts no light onto the shelf, the jar or his face,
+  throws no glow into the dark interior, carries no sparkle, mote, dust glitter or halo of any
+  kind, and it is the DARKEST lit thing in frame rather than the brightest; the brightest thing
+  in frame is the daylight edge on the door itself.
+
+⚠ Aynı yazım K50'nin motion kilidine de kondu — aynı filiz, aynı yoldan bozulabilir.
+
+
+### 42.png  🔴 ZİNCİRİN TAŞIYICI HALKASI
+Karenin TEK işi iki kavanozun birbirinin aynısı olduğunu göstermekti — deneyin kontrol grubu
+fikri ve K48-K53'ün "karanlık dolap sürprizi" bu aynılığa yaslanıyor. Üç kusur birden:
+  (1) paketteki "FASULYE" harfleri kaynamış/bozuk
+  (2) iki kavanoz AYNI DEĞİL — yükseklik, pamuk kalınlığı, fasulye biçimi farklı
+  (3) pamuk ISLAK değil, kuru okunuyor (VO "ıslak pamuk" diyor; SOS'un S'si oradan doğar)
+
+Kare satırına:
+  The two jars are the SAME jar twice — identical height, identical glass, identical rim,
+  identical wad of cotton wool filling them to the same depth, and one bean of identical size
+  and identical shape resting against the glass in each at the same height. The cotton in both
+  is visibly WET: darkened, matted, heavy, with a thin bright water film along the glass where
+  it touches and a shallow film of water at the very bottom of each jar.
+TEXT satırına:
+  the paper packet on the timber carries the Turkish word FASULYE spelled letter by letter,
+  F-A-S-U-L-Y-E, seven letters, no diacritic on any of them, printed flat in blocky offset ink
+  on the packet's fixed front face, the packet lying square to the sensor and not curling.
+
+
+### 54.png  🔴 AYNA KIRIK
+K01 ile karşılaştırıldı. İki hikâye gerçeği TUTMUŞ: arı dönmüş ✓, fide gelmiş ✓.
+Kompozisyon tutmamış — beş fark var, oysa üç olmalıydı:
+  · K01'de kuru halka TAŞ SAHANLIKTA, saksının hemen sağında; K54'te halka ZEMİNE taşınmış
+  · fide o yanlış halkanın içine dikilmiş
+  · sol alt köşeye K01'de olmayan bir ön plan saksısı girmiş
+  · kadraj genişlemiş (dört tabure ayağı + kovanın tabanı)
+
+Kare satırına:
+  Same lens, same height, same hour and the same framing as the opening frame — the near edge
+  cuts exactly where it cut there, with no extra pot entering the near left corner and the
+  stool's legs no more visible than they were. The pale dry ring is printed into the STONE
+  LEDGE immediately right of the geranium pot, exactly where it sat in the opening frame, and
+  the seedling's small terracotta pot stands INSIDE that ring on the ledge; the ring never
+  appears on the balcony floor.
+
+
+########################  A BLOĞU  ########################
+
+### 3.png
+Taburenin arkasında GÖVDESİZ ÇIPLAK AYAK duruyor (parmaklar net, bacak yok) — oysa @efe
+dirsekleri sahanlıkta, belden yukarısı kadrajda.
+  Keep everything else identical. The floor behind and around the stool is completely empty
+  stone: no foot, no toes, no bare skin, no hand, no arm and no limb of any kind anywhere on
+  the floor — the only parts of @efe in frame are his head, shoulders and both forearms on the
+  ledge, and nothing of him appears past the stool.
+
+### 9.png · 12.png · 14.png  ⚠ ÜÇÜ AYNI KÖK NEDEN
+Kusur karede değil, prompt dosyasının LIGHT satırında: K09-K14'ün beşine
+"one vivid warm-CORAL accent" yazılmış. Ama mercan @sardunya'nındır; @cicek referansı üç kavram
+ışığı temiz okunsun diye BİLEREK beyaz seçilmiş. Sonuç: omurga çiçeği K07-K08'de beyaz,
+K09/K12/K14'te mercan. Accent'i çiçekten ÇEKEN tek kare K11 ve blokta en temiz çıkan kare de o.
+
+  9.png  → LIGHT AND PALETTE: … the frame's one vivid warm accent withheld from the flower and
+           given instead to the sunlit ridges of the swollen knuckle; the out-of-focus head of
+           @cicek above dissolves into a clean warm-WHITE smear, never coral, pink or red.
+  12.png → LIGHT AND PALETTE: … one vivid warm accent withheld from the flower and given to the
+           sunlit down along the sepal edges; the petals cut by the top edge read as a soft
+           clean warm-WHITE ceiling — @cicek's petals are white, never coral, pink or red.
+  14.png → …one single tightly rolled clean-WHITE petal tip has pushed up out of the gap and
+           curled over — one narrow tongue of backlit white standing clear of an otherwise
+           wholly green bud… + LIGHT: one vivid warm accent on the sunlit down of the two
+           parted sepal edges; the emerging petal tip stays clean white lit through from
+           behind, never coral, pink or red.
+
+🔴 SONRAKİ BLOKLAR YAZILMADAN ÖNCE: @cicek geçen her karenin LIGHT satırından "coral" kelimesi
+   kaldırılmalı. Bu, Bileşke'nin @kitap kusurunun aynısı — bu kez tag'in değil PALETİN elinden.
+
+
+########################  C BLOĞU  ########################
+
+### 33.png
+Dişicik tepesi bitki değil TAŞ olmuş: mavi-gri plaka + dalgalı DURAN SU, tane tutunmuş değil
+yüzüyor. K31'de aynı organ yeşil canlı doku basılmıştı.
+  the broad head is living plant tissue — soft, faintly ridged, warm green with a thin sticky
+  glaze that clings as a film, no ripples, no standing water, no pooled liquid, and it is never
+  a cut stone block, tile or slab of any kind.
+
+### 34.png
+Makro ölçek çökmüş: gövdenin arkasında OKUNUR çay bardağı + tabak + buhar var.
+  NEGATIVE'e ekle: no tea glass, saucer, cup, plate or any object of human scale is readable
+  anywhere in this frame, and no steam of any kind rises behind the stem — the background is
+  unreadable soft plant matter and sunlight only.
+
+### 35.png
+Menekşe "damar" değil ÇİZİLMİŞ DÜZ ÇİZGİ; gövdenin dışına taşıyor ve kehribar ile mavinin
+değdiği yerde değil.
+  the violet exists ONLY inside that overlap as a soft lens-shaped patch with no edge of its
+  own, entirely contained within the stem's silhouette, and it is never a line, stripe, vein,
+  band, stroke or drawn mark of any kind.
+
+### 37.png
+Oluşan tohum okunmuyor: ince menekşe halka ÇİZİLMİŞ DAİRE, ortasında asılı tek NOKTA
+(callout sınıfı).
+  the forming seed reads as a hard dense silhouette of real seed matter with a matte coat and
+  a visible hilum scar — no even circular ring, no outlined disc, no concentric halo and no
+  separate floating dot anywhere near it.
+
+### 41.png
+@efe'nin kimliği kırılmış: kapüşonlu + kot bahçıvan tulumu (cepte kalem). K30/32/39/40/42'de
+aynı sabah TİŞÖRT var.
+  @efe wears the same soft washed pale-blue cotton t-shirt he wears in every other frame of
+  this morning — no hoodie, no dungarees, no bib, no straps, no apron and no pen in any pocket.
+
+
+########################  D BLOĞU  ########################
+
+### 45.png
+Takvimin gün adı satırı İNGİLİZCE basılmış ("SUN MON MON WED THU FRI SAT") — kırpınca tam
+okunuyor; üstelik Nisan 29 günle bitiyor.
+  TEXT satırına: the calendar carries only a soft-focus block of day numbers with NO row of
+  weekday names at all, no English word, abbreviation or letter appears anywhere on the
+  calendar, and no month name is legible.
+
+### 46.png
+@efe'nin BAŞI kavanozun içinde okunuyor, pamuk boynundan kesiyor, hava kabarcıkları yanağına
+gözyaşı gibi oturmuş.
+  the jar stands in the LEFT half of frame and @efe's head is well clear of it in the right
+  half, his face never seen through the glass and never overlapping the jar's silhouette at
+  any point.
+
+### 48.png
+İki fasulye de DURAN SUYUN ALTINDA — bir kare önce anlatılan oksijen şartını yalanlıyor.
+Ayrıca iki kabuk da bütün/kuru; K47'de açılan çatlak geri alınmış.
+  NEGATIVE'e: the water is only a shallow film at the very bottom and the cotton stands above
+  it — neither bean is submerged, neither sits in standing water, and both beans show the coat
+  split along one short crack with a stub of white root already through it.
+
+
+=========================================================================
+BİLDİRİM — revize DEĞİL, hüküm Mami'nin (§1a md.6 + §2d: süreklilik tek başına revize sebebi değil)
+=========================================================================
+
+· **@efe'nin gardırobu ders boyunca dört kez değişiyor.** Düz açık gri tişört (K03, K08, K30,
+  K32, K39, K40, K42, K43-K48, K50, K52) · gri EKOSE uzun kollu gömlek (K17) · yeşil sweatshirt
+  (K49) · kot tulum (K41, K51) · petrol mavisi tişört (K53). Aynı sabah, aynı balkon.
+  Yüz kimliği tutuyor, kıyafet tutmuyor.
+  İstenirse hazır satır: "Same frame, same composition, same light — change only his clothing:
+  he wears a plain light-grey short-sleeved crew-neck T-shirt exactly as in the earlier balcony
+  frames. Everything else identical."
+
+· **@cicek'in dişicik TEPESİ beş karede beş farklı biçim.** K23 düz yeşil topuz · K24 kubbeli
+  disk · K25 ortası delik huni · K26 açılan trompet · K27 üç loblu örs. Ders yanlış olmuyor
+  (hepsi "geniş yassı uç" okunuyor) ama referans organ biçimini taşımıyor.
+  🔴 Kusur karede değil KÜTÜPHANEDE: @cicek referansına "broad flat slightly domed sticky head"
+  tek biçim olarak yazılmalı.
+
+· **K44'te ikinci kavanoz boş görünüyor** (odak dışı ve kadrajla kesik); K43 ve K45 ikisini de
+  dolu gösteriyor. Motion'da kilitlendi: kamera o tarafa gitmiyor, mesafe sabit.
+
+
+=========================================================================
+DÜNYAYA ADAY — kütüphane kusuru (kod değil)
+=========================================================================
+
+Kavram ışığı sekansının üç karesinde (K33 · K35 · K37) aynı YETENEK kusuru var:
+**motor "ışık" istendiğinde onu ÇİZGİYE, HALKAYA ya da NOKTAYA çeviriyor — yuvarlak hacimli
+ışığa değil.** Kaynak, prompt'un ışığı hep bir YERE bağlaması (temas noktası, kanal, çekirdek):
+motor konumu geometriyle işaretliyor.
+İşe yarayan tek biçim K36 ve K38'inki — ışığın DOKUNUN İÇİNDEN okunduğu, hiçbir kenarı olmayan
+yumuşak alan.
+**Aday kural:** ışık tarif edilirken "nerede" değil "hangi dokudan görünüyor" yazılır.

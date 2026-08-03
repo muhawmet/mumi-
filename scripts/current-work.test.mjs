@@ -10,7 +10,7 @@
 // sentetik fixture birlikte duruyor: fixture mekanizmayı, canlı repo GERÇEĞİ ölçer.
 
 import { describe, expect, it } from 'vitest';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { KIT, scanDeliverables, ensureImagesDir, IMAGES_DIR, IMAGE_DIR_ALIASES } from './current-work.mjs';
@@ -122,19 +122,32 @@ describe('canlı repo — ölçülmüş kusur geri gelmesin', () => {
   const DESTEK = 'agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi';
 
   // Rutin ancak DİSKTE varsa rutindir. Aktif projelerin hepsinde `images/` olmalı.
-  const AKTIF = [
-    '5. Sınıf - Destek ve Hareket Sistemi',
-    '5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
-    '5. Sınıf - Hücre ve Organelleri',
-    '6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi',
-    'Bileşke Kuvvet',
-  ];
-  for (const ad of AKTIF) {
-    const p = join(REPO, 'agents/COMMAND-INBOX', ad);
-    it.skipIf(!existsSync(p))(`${ad}: images/ + .gitkeep var`, () => {
-      expect(existsSync(join(p, IMAGES_DIR, '.gitkeep'))).toBe(true);
-    });
-  }
+  //
+  // ⚠ Bu blok önce SABİT bir proje listesi taşıyordu ve proje BAŞINA bir test üretiyordu.
+  // 2026-08-03'te kırıldı: Mami "Farklı Kültürler"i bitirip `Biten/` altına sürükledi, o
+  // projenin testi `skipIf` ile atlandı ve kapı yalnız GEÇEN testi saydığı için toplam düştü
+  // (gate.sh:70) → commit BLOKE oldu. Yani duvar, işin BİTMESİNİ kusur sayıyordu.
+  // Doğrusu: liste diskten okunur ve TEK test içinde dönülür — proje sayısı değişince test
+  // sayısı oynamaz, ama kapsam aynı kalır. Yeni proje açıldığında da kendiliğinden kapsanır.
+  const AKTIF_DISI = new Set(['Biten', 'Bekleyen', 'DENEME']);
+  const aktifProjeler = () => {
+    const kok = join(REPO, 'agents/COMMAND-INBOX');
+    if (!existsSync(kok)) return [];
+    return readdirSync(kok, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !AKTIF_DISI.has(d.name) && !d.name.startsWith('.'))
+      .map((d) => d.name)
+      .sort();
+  };
+
+  it('her AKTİF projede images/ + .gitkeep var (liste diskten okunur, gömülmez)', () => {
+    const projeler = aktifProjeler();
+    // Ölçüm gerçekten koşuyor mu — boş liste sahte yeşil üretmesin.
+    expect(projeler.length).toBeGreaterThan(0);
+    const eksik = projeler.filter(
+      (ad) => !existsSync(join(REPO, 'agents/COMMAND-INBOX', ad, IMAGES_DIR, '.gitkeep')),
+    );
+    expect(eksik, `images/.gitkeep eksik: ${eksik.join(' · ')}`).toEqual([]);
+  });
 
 
   it.skipIf(!existsSync(join(REPO, DESTEK)))(

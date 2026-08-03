@@ -1,0 +1,137 @@
+BİTKİLERDE ÜREME VE TOHUMUN ÇİMLENMESİ — 6. SINIF · MOTION BLOĞU B (K15–K29)
+=========================================================================================
+Motor: Kling 3.0 (i2v) · Kaynak kare: images/15.png … images/29.png — 15 karenin 15'i GÖRÜLDÜ.
+Kelime bandı: 190-215 (PROMPT-YASASI §3'ün geçerli tek rakamı; 210-260 template satırı ve
+emekli 114 rakamı arasından EN DAR olan). motion-lint SARI bandı 180-225 bunu kapsar.
+Register EDU · kimse konuşmaz · VO ayrı ElevenLabs katmanı.
+
+BU BLOĞUN ORTAK MOTION KISITI (her klipte geçerli, kare-özel kilide EK DEĞİL):
+ · 13 kare makro. Çiçek dokusu hızlı kamerada warp üretiyor → kamera genliği santim/derece
+   ölçeğinde, her hareket TAM DURARAK biter.
+ · Yeni öğe doğmaz: arı, ikinci çiçek, ikinci el, yeni tanecik yağmuru YOK.
+ · Yazı taşıyan üç nesne (K16 kraft torba · K17 emaye numara · K23 fidan etiketi) SABİT
+   KÜTLEDİR — devrilmez, dönmez, kamera onlara yaklaşmaz.
+ · Kavram ışığı bu blokta YOKTUR. Sarı polen gerçek kuru tozdur; hiçbir klipte parıltı,
+   hâle, ateş böceği ya da sihir taneciğine dönmez.
+=========================================================================================
+
+
+# K15 — "Bunlar taç yaprak. Çiçeğe rengini ve kokusunu veren kısım."
+SÜRE: 5s
+KAMERA NİYETİ: Sedirin üstünde birkaç santimlik alçak kayış; ışığı geçiren dokuya oturarak durur.
+-----
+The clip opens with the flower already at work: the low sun stands behind its nearest white tissue and lights it from the far side, so the fine veins hold as darker threads and the ring of organs inside the cup prints onto that wall as a soft grey shadow-drawing. Then the sun lifts a hair higher over the rooftops, and that is what changes the shot — the drawing tightens and darkens until the many thin stalks and the one thick central stalk can be told apart inside the lit tissue. The clip begins as a beautiful blur and ends as something legible. The morning keeps going: dust motes turn through the low beam, the clear resin bead holds its one bright point, a loose golden grain rocks on the stone beside the stem. Camera: a slow low slide of a few centimetres along the grey stone ledge, skimming the near edge of the stone and coming to a full stop square to the lit wall. The white tissue is a solid body that never melts or morphs, and it is lit through by real sunlight and never emits light of its own. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K16 — "Renk ve koku boşuna değil; böcekleri ve kuşları çağırırlar."
+SÜRE: 5s
+KAMERA NİYETİ: Sedir boyunca bir karışlık yavaş dolly; serçe ile çiçeği aynı eksene getirip durur.
+-----
+The clip opens with the sparrow already interested: perched on the top rail with its head held in clean profile toward the small white flower on the stone, its weight shifting from foot to foot as it keeps checking it. Then it commits — the small brown bird lowers its head and leans its whole body a few degrees down toward the flower, wings folded, feet still on the rail, and holds there. The clip begins with a bird merely looking and ends with a bird that has decided. The balcony keeps breathing: the lace curtain moves at the half-open door behind, thin steam curls off the tea glass on the wooden stool, the basil leaves lift once in the morning air. Camera: a slow dolly of about a hand's width along the ledge, letting the near terracotta rim pass through the foreground, easing to a full stop with bird and flower on one line. The kraft soil sack is fixed dead weight throughout — it never slumps, tips or shifts, its printed Turkish wording never re-spells or wobbles, and the camera never travels toward it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K17 — "Efe taç yaprakları usulca aralayınca içerideki organları gördü."
+SÜRE: 5s
+KAMERA NİYETİ: Sedirin ucundan birkaç derecelik alçak ark; @efe'nin bakış hattına oturup durur.
+-----
+The clip opens with @efe still working at it: his fingertips already hold two white leaves of the flower a finger's width apart while his other hand steadies the green stem against the stone, both forearms weighted on the ledge, his eyes down inside the cup. Then the sun finds the inside of the flower — and at that instant the coin of warm light drops onto the ring of thin organs inside, and his face changes: his brows lift, his chin comes down a couple of centimetres in one continuous settle, and the catchlight low in his looking eye sharpens. He begins the shot hunting and ends having found the thing. Around him the morning stays alive: the two eased leaves press back against his fingertips, dust motes turn through the beam over his shoulder, the curtain moves at the glazed door. Camera: a low arc of only a few degrees around the near end of the ledge, sliding past his forearm and stopping level with his eyeline. His fingertips keep unbroken contact with the flower and never re-articulate, and the light in the cup is plain sunlight that never becomes a glow. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K18 — "Ortadaki kalın yapının çevresinde ince saplı olanlar diziliydi."
+SÜRE: 5s
+KAMERA NİYETİ: Kâsenin tam üstünde bir-iki santimlik yükselme, dönme yok; gölge yelpazesi açılınca durur.
+-----
+The clip opens with the shadows already in motion: the many hair-thin stalks ringing the cup are swaying a fraction out of phase with one another, so the fan of twenty-odd fine shadow lines they throw across the white floor keeps crossing and uncrossing, while the single broad heavy shadow-bar from the thick central organ lies still underneath them all. Then the morning air steadies, and as it does the thin shadows drift apart and separate, so what was a shivering tangle resolves into something countable. The clip begins as a shimmer and ends as a count. Small things stay alive: one loose golden grain rolls a short way down the lit floor and stops, dust motes turn in the low light above the cup, the far white rim breathes once. Camera: a very slow vertical rise of a centimetre or two directly above the open cup with no rotation at all, easing to a full stop looking straight down. Exactly one thick organ holds the middle throughout, the ring around it remains many separate hair-fine stalks, and every shadow stays a cast shadow and never becomes a drawn line or arrow. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K19 — "İnce saplı olanlar erkek organ; iki kısımdan oluşuyorlardı."
+SÜRE: 5s
+KAMERA NİYETİ: Birleşme noktası çevresinde birkaç derecelik turntable; iplik-kese ayrımı ortaya oturunca durur.
+-----
+The clip opens with the leaning organ already under strain: the long smooth hair-fine pale thread flexes slowly under the weight of the dusty oval sac at its tip, dipping and recovering in the morning air while the horizontal light slides along it as one thin unbroken bright line. Then the load lets go — one loose grain of golden dust slides off the sac's shoulder and drops away, and at that instant the thread lifts a hair and steadies, its arc shallower than it was. The clip begins carrying and ends having given something up. Behind it the shot keeps living: the unlit ring of other stalks shifts softly as the air moves, a second grain rocks on the sac without leaving it, the hazed city bokeh holds its cool wash. Camera: a turntable of only a few degrees around the join between the smooth thread and the dusty sac, drifting just far enough to open the two parts from each other, then stopping dead with the join centred. The golden dust is real dry powder that receives shadow and never turns into sparkle, ember or light. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K20 — "Uçlarındaki keseciğe başçık denir."
+SÜRE: 5s
+KAMERA NİYETİ: Neredeyse sabit; milimetrik bir kayışla kapalı dikiş çizgisine oturur ve durur.
+-----
+The clip opens with the sac already loaded and straining: its dry matte pitted skin is domed tight over what is packed inside, the shut seam running the whole length of its body, and a faint tremor keeps travelling up the pale stalk into it so the small body trembles very slightly on its stem. Then one grain works loose — the single golden grain on the upper shoulder tips, rolls a short way along the curve and comes to rest at the lip of the seam, and the tremor dies out behind it. The clip begins as a full closed thing and ends with something on the edge of leaving it. The frame keeps moving: another loose grain drifts through the warm bokeh behind, the neighbouring stalk at the near edge sways once, the light along the shoulder shifts. Camera: an almost still hold with a drift of a millimetre or two toward the seam, settling square to it and stopping completely. The seam is shut and unbroken for the entire clip — it never splits, gapes or spills, and the grains are real dry dust with no glow or sparkle. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K21 — "Polenler, yani erkek üreme hücreleri başçıkta üretilir."
+SÜRE: 5s
+KAMERA NİYETİ: Birikintiye doğru birkaç santimlik yanal kayış; dökülen toz yerleşince tam durur.
+-----
+The clip opens mid-spill: the split sac hangs open above with its two dry walls curled back, and six or seven golden grains are already falling straight and slowly through the raking light between it and the small heap of warm dry dust lying on the white tissue below. Then the fall finishes — the last suspended grains touch down one after another, and at that moment the heap answers: its outer edge creeps a grain wider and settles with a soft dark seam where it meets the tissue. The clip begins as something emptying and ends as something emptied. Around it the frame stays alive: the split walls flex a little further open as they dry, a line of grains caught in the veining shifts, the darkened ring behind moves once. Camera: a lateral slide of a few centimetres across the white floor toward the heap, letting the out-of-focus stalk pass the near edge, then stopping fully above it. The pollen is real dry matter that casts and receives shadow, never sparkle, glitter, ember or firefly, and the grains fall straight down and never spiral or trail. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K22 — "Başçığı taşıyan ince sapa da sapçık diyoruz."
+SÜRE: 5s
+KAMERA NİYETİ: Yay boyunca bir santimlik yavaş iniş; ipliğin dokuya bastığı dibe oturup durur.
+-----
+The clip opens with the thread already loaded: the pale hair-fine stalk holds its soft even arc under the weight of the sac at its top. It is backlit so the light seems to travel up inside it, and the arc flexes minutely as the morning air crosses the ledge. Then the weight shifts — one loose grain slides down the underside of the leaning sac and drops away, and when it goes the arc eases upward a fraction and locks, steadier than it began. The clip begins bending under a load and ends holding it comfortably. The frame keeps breathing: the thin shadow line curving from the stalk's foot slides across the white tissue, a dust mote crosses the backlight behind the thread, the defocused railing beyond shifts once. Camera: a slow crane down of about a centimetre following the curve of the thread from the sac toward its foot, ending at a full stop where the stalk seats into the tissue. The thread is lit through by real sunlight and never becomes a glowing wire, neon line or drawn stroke, and its bend is a natural sag under weight. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K23 — "Ortadaki kalın yapı ise dişi organdı; üç kısımdan oluşuyordu."
+SÜRE: 5s
+KAMERA NİYETİ: Sola birkaç santimlik yanal dolly — saksı paralaksla geri düşerken kalın organ ortaya oturur ve durur.
+-----
+The clip opens with the ring already moving: the many slender stalks sway gently as one soft pale field, out of focus and out of step with each other, while the single thick organ at the exact centre holds still throughout. Then the sun climbs a little — and at that instant the wet broad head at its top catches one small hard specular point, and the three steps of that one body separate clearly: wet head, straight thick stalk, rounded swollen base. The clip begins as a crowd and ends as one thing named out of the crowd. The balcony keeps living behind: the lace curtain moves at the far door, the basil leaves lift once, the hazed rooftops hold their cool wash. Camera: a slow lateral dolly of a few centimetres to the left along the stone, letting the terracotta pot fall back in parallax behind the flower, easing to a full stop with the thick central organ centred. The white plastic plant label is fixed dead weight pushed into the soil — it never tips, rotates or re-spells, and the camera never travels toward it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K24 — "En üstteki geniş uç dişicik tepesidir."
+SÜRE: 5s
+KAMERA NİYETİ: Tepenin üstünde birkaç derecelik turntable; serin yansıma yassı yüze oturunca durur.
+-----
+The clip opens with the wet head already carrying the sky: the broad domed disc atop the thick organ is covered in an unbroken film of clear stickiness, and the cool mirror-like reflection across it slides slowly as the flower settles a fraction on the stone. Then the settling stops — and at that moment the reflection comes to rest as one clean broad sheet across the film, so the difference between this wet surface and every dry thing around it becomes the only fact in the shot. The clip begins as a shifting shine and ends as a still mirror. Everything else is dry and alive: the matte pitted sacs leaning in from the edges sway once, a golden grain on the tissue behind rocks, a dust mote crosses above the head. Camera: a turntable of only a couple of degrees above the disc, drifting just enough to let the reflection travel across it, then stopping fully with the head square in frame. The film is real sticky wetness and never a glow, sparkle or dew-jewel, and the head is one closed solid surface that never opens into a cup or funnel. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K25 — "Yüzeyi yapışkandır; konan polen oraya tutunur."
+SÜRE: 5s
+KAMERA NİYETİ: İki tanecik arasında birkaç santimlik kısa kayış; ikisini de tutan açıda durur.
+-----
+The clip opens with the catch already happening: the golden grain sitting off-centre on the wet head is being drawn in, the clear sticky film pulled up into a small collar around it and two fine glistening threads of tack stretching from its flank back down to the surface. Then it is held for good — the grain sinks a fraction deeper into the dimple it has made, one tack thread lets go and springs back into the film, and after that the grain is going nowhere. The clip begins with a grain arriving and ends with a grain caught. Below and to the side the other grain answers: lying loose on the dry white tissue, it trembles without leaving its place, the surface hairs around it shiver, a dust mote passes above. Camera: a short slide of a few centimetres from the loose grain toward the held one, ending at a full stop in the position that holds both at once. Exactly two grains are in frame from first to last with no drift arriving, and the tack threads are wet stickiness that never read as drawn lines. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K26 — "Altındaki uzun boruya dişicik borusu denir."
+SÜRE: 5s
+KAMERA NİYETİ: Bir santimlik yavaş yükselme; koyu ince organların arasındaki aralık açılınca durur.
+-----
+The clip opens with the dark fence already shifting: the many thin stalks between the lens and the middle of the flower are unlit on their near faces and sway softly as one dark uneven row, and the backlit thick column behind them brightens and dims as they cross the low sun. Then two of them drift apart — and when they do the lit column comes clear between them and holds, its pale-green tissue carrying light down its whole length so it finally reads as a solid filled body rather than a thread. The clip begins with something half-hidden and ends with it plainly visible. The rest moves quietly: one golden grain clings high on the column's flank, a dust mote drifts up through a gap, the far white wall breathes once. Camera: a very slow vertical lift of about a centimetre that widens the gap between the dark stalks, easing to a complete stop with the lit column centred. The column is lit through by real sunlight and never becomes a glowing tube, neon rod or energy channel; it is opaque and solid, and nothing travels inside it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K27 — "Polenin aşağı ilerlediği kanal budur."
+SÜRE: 5s
+KAMERA NİYETİ: Gövde boyunca bir-iki santimlik yavaş iniş; dipteki şişkin bölümde tam durur.
+-----
+The clip opens with gravity already at work: a clear thread of resin hangs from the rim of the broad head and stretches slowly down the pale-green body under its own weight, thinning as it goes, while the one golden grain at the edge of the head sits where the flat surface breaks into the fall. Then the grain follows the pull — it shifts a hair toward the drop and settles again on the shoulder, and after that every line in the shot leans the same way, down toward the rounded swollen base. The clip begins with one thing hanging and ends with the whole frame pointing downward. Around it the flower keeps moving: the out-of-focus stalk in the upper corner sways once, a dark sac at the frame edge lifts and falls, the blue shaded wall behind shifts. Camera: a slow crane down of a centimetre or two along the thick body, ending at a full stop on the swollen base. Direction is carried only by real gravity and real sunlight — no arrow, dotted path, streak or glowing route appears, and the body is opaque with nothing travelling inside it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K28 — "En dipteki şişkin bölüm yumurtalıktır."
+SÜRE: 5s
+KAMERA NİYETİ: Taban hizasından bir santimlik alçak yükselme; gergin kubbe ortaya oturunca durur.
+-----
+The clip opens with the ring of feet already flexing: the many fine stalks spring outward from the base of the swollen body and their feet work as the stalks above them move in the air, so the whole ring shifts around the one green dome. Then the movement drains downward — a single golden grain slides a short way down the taut lit curve of the dome and stops against the tissue floor, and at that instant the eye lands on the body rather than the crowd around it. The clip begins as a ring of moving parts and ends as one loaded shape everything is attached to. The frame stays alive underneath: the grains lodged where the curve meets the floor shift a little, one foot flexes as its stalk sways, a dust mote drifts across the lit belly. Camera: a slow low rise of about a centimetre from floor level, ending at a complete stop with the dome centred and the ring of feet still readable. The swollen body is completely closed and opaque throughout — no cutaway, cross-section, transparent shell or window, and nothing is ever shown inside it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+# K29 — "İçinde dişi üreme hücresi, yani yumurta bulunur."
+SÜRE: 5s
+KAMERA NİYETİ: Birkaç derecelik ark; koyu çekirdek kadrajın ortasında kalırken ışıyan kenar genişler ve durur.
+-----
+The clip opens with the light already pushing through: the low sun stands directly behind the rounded green body and the thin tissue at its edges transmits a clear luminous green, while its thick middle remains completely opaque. The boundary between the two keeps breathing softly as the flower settles on the stone. Then the sun clears a rooftop — and at that instant the transmitting rim widens and brightens while the middle holds as dark as it began, so the dense core inside becomes the plainest thing in the shot. The clip begins as a bright green shape and ends as one with something solid held inside it. The dark keeps moving: the golden grain on the lit rim shifts on the curve, a dust mote crosses the shade behind, the defocused railing bar at the right edge sways. Camera: an arc of only a few degrees around the body, holding the opaque core dead centre and stopping fully. The green is real sunlight passing through real tissue and never a glow, halo, aura or lantern. The body is closed, and no egg, ovule, sphere or embryo is ever shown inside it. Silent clip, no audio, no dialogue, no lip movement — nobody is in frame. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz

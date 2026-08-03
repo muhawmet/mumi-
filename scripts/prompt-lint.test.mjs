@@ -14,7 +14,7 @@
 // NOT: `src/core/` DONUK — bu dosya bilerek `scripts/` altında (icraat fazı yasası).
 
 import { describe, it, expect } from 'vitest';
-import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdtempSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -125,11 +125,25 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
 // hüküm çivilenir. Bu testler kırmızıysa lint yanlıştır, prompt değil.
 // ---------------------------------------------------------------------------
 describe('A5 · ölçümün yönü — altın standart EN AZ, en çok revize alan iş EN ÇOK kırmızı', () => {
-  const UREME = join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme',
+  // ⚠ Yol KODA GÖMÜLMEZ. Bu satır bir kez gömüldü ve 2026-08-03'te kapıyı kırmızıya düşürdü:
+  // Mami "Farklı Kültürler"i bitirip `Biten/` altına SÜRÜKLEDİ ve test o anda kırıldı. Yani
+  // duvar, işin bitmesini kusur sayıyordu. Bu, bu repoda tekrar eden kusur sınıfının aynısı —
+  // doğrulayıcı, ölçtüğü şeyin YERLEŞİMİNİ varsayıyor (teslim-denetim adla arıyordu,
+  // baglar uzantıyı kesiyordu, gate.sh prompt dalı desenle arıyordu).
+  // Doğrusu: proje NEREDEYSE orada bulunur — aktif klasörde de, Biten/ altında da.
+  const bul = (proje, dosya) => {
+    for (const aday of [join(INBOX, proje, dosya), join(INBOX, 'Biten', proje, dosya)]) {
+      if (existsSync(aday)) return aday;
+    }
+    throw new Error(`A5: "${proje}/${dosya}" ne aktif klasörde ne Biten/ altında bulunamadı — ` +
+      'proje silinmiş ya da adı değişmiş olabilir; testi güncelle, yolu gömme.');
+  };
+
+  const UREME = bul('6. Sınıf - Eşeyli ve Eşeysiz Üreme',
     'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.txt');                       // 50 kare · 0 revize
-  const BIRLIKTE = join(INBOX, 'Biten', '5. Sınıf - Birlikte Daha Güçlüyüz',
+  const BIRLIKTE = bul('5. Sınıf - Birlikte Daha Güçlüyüz',
     'Birlikte Daha Güçlüyüz_PROMPTLAR.txt');                        // 54 kare · 30 revize
-  const KULTURLER = join(INBOX, '5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
+  const KULTURLER = bul('5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
     'Farklı Kültürler_PROMPTLAR.txt');                              // 53 kare
 
   it('YÖN: Üreme (0 revize) < Farklı Kültürler ≤ Birlikte (30/54 revize)', () => {
