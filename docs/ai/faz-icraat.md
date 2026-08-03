@@ -61,9 +61,19 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
   tahmin sapması kaynakta kapandı; 35 kesimin 35'i cümlesine nokta atışı oturdu.
 - **Kare kalitesinin son hükmü Mami'nindir.** Ajan hazırlar, karar vermez.
 - **Arşiv kıstas değil** (Mami, 2026-07-29). `Biten/` altındaki işler ne yapıldığının kaydıdır;
-  çoğu iş çıkışında aceleyle üretildi ve hatalı. "Sıfır revize" kusursuz demek değildir. Altın
-  standart **Eşeyli ve Eşeysiz Üreme**. Eski işe *"bunlar hatalı, ne bozuk?"* gözüyle bakılır —
-  iyi olan zaten göze çarpar.
+  çoğu iş çıkışında aceleyle üretildi ve hatalı. "Sıfır revize" kusursuz demek değildir.
+  Eski işe *"bunlar hatalı, ne bozuk?"* gözüyle bakılır — iyi olan zaten göze çarpar.
+- 🔴 **ALTIN STANDART DEĞİŞTİ** (Mami, 2026-08-03): *"Eşeyli artık eskidi bu arada, daha iyi
+  şeyler çıkardık. Son mitokondrili olan şaheser."* Yeni tavan **5. Sınıf - Hücre ve Organelleri**,
+  ondan önceki iş de çok iyi. Eşeyli hâlâ **motion biçiminin** referansıdır (tek paragraf,
+  `Camera:` sonda) ama **kalite tavanı değildir** — yasadaki "altın standart" atıfları biçim
+  içindir, kalite için değil. ⚠ Mami'nin aynı cümledeki kaydı: Hücre'de **bazı Mira sahneleri
+  plastik ve AI gibi**, buna karşılık **bazı yerler motionda duygusal** — tavan da kusur da
+  aynı işin içinde.
+- **Video hükmü TAM VİDEO izlenerek verilir, klip klip değil** (Mami, 2026-08-03):
+  *"tam videoları izlesene teker teker izleteceğine, hem kurgu da çok basic onu da anlarsın."*
+  Kurgu ritmi, akış, tempo ve duygu ancak bütünde görünür. Klip klip bakmak yalnız kusur haritası
+  çıkarır. Araç: AGY + `--print-timeout 25m` (3-4 dakikalık film varsayılan 5 dk limite takılıyor).
 - **İş kapanışı ölçülür.** `current-work.mjs kapat` artık eksik kit, eksik medya, açık bloke ya da
   açık Mami kararı varsa **kapatmaz**; kabul ediliyorsa `--zorla`. Kapanış bir iddia değil, bir kanıt.
 

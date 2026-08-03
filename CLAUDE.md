@@ -90,7 +90,12 @@ review geçişi uygula; kendi ilk varsayımını kanıt sayma.
 
 **Arşiv kıstas DEĞİL** (Mami, 2026-07-29). `agents/COMMAND-INBOX/Biten/` altındaki işler *ne
 yapıldığının kaydıdır*, kalite ölçütü değil — çoğu iş çıkışında aceleyle üretildi. **"Sıfır revize"
-kusursuz demek değil, o turda öyle gitti demektir.** Altın standart **Eşeyli ve Eşeysiz Üreme**'dir.
+kusursuz demek değil, o turda öyle gitti demektir.**
+🔴 **Altın standart 2026-08-03'te DEĞİŞTİ** — Mami: *"Eşeyli artık eskidi, daha iyi şeyler
+çıkardık; son mitokondrili olan şaheser."* Kalite tavanı artık **5. Sınıf - Hücre ve Organelleri**.
+Eşeyli yalnız **motion BİÇİMİNİN** referansı olarak kalır (tek paragraf, `Camera:` sonda).
+Ayrıca **hüküm tam video izlenerek verilir, klip klip değil** — kurgu, akış ve duygu ancak
+bütünde görünür. Yalnız **5-6. sınıf** işlerine bakılır; öncekiler eskidir.
 Eski işe bakarken lens şudur: *"bunlar hatalı, ne bozuk?"* — kopyalanacak kalıp değil, kusur madeni.
 
 **Üretimden ÖNCE ölç, sonra harca.** Ölçüldü: 71 revizenin **~44-52'si** prompt metnine bakılarak,
