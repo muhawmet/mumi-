@@ -10,6 +10,11 @@ sitesinin ürettiği command JSON'u getirir; sen beyinle **epik** prompt yazars�
 ("daha epik, şunu abart"), birlikte teslim edersiniz. Otorite spec:
 `docs/superpowers/specs/2026-07-24-conversational-director-design.md` (özellikle §8).
 
+🔴 **ALT-AJAN AÇILACAKSA BRIEF DOĞAÇLANMAZ: `agents/AJAN-BRIEF.md`.** Ölçüldü (2026-08-03):
+elle yazılan brief'ten üç kusur sınıfı düştü (çocuk güvenliği · render dili kopması · VO
+nicelik/ölçek) ve o gün 16 kusur kaçtı. Ajanlar brief'i doğru uyguladı, **brief eksikti.**
+O dosyanın ZORUNLU BLOK'u birebir girer; üstüne yalnız işe özel olan eklenir.
+
 **İki değişmez (her sahnede):**
 1. **Jüri sadece rapor etmez — TAMİR eder.** Hata bulunca oracıkta düzeltilmiş prompt yaz.
 2. **Storyboard TOPLU onaylanır**, tek tek CLI onayı yok.

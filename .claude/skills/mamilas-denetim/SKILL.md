@@ -11,6 +11,13 @@ cümlesiyle karşılaştırılır, sorunluya revize yazılır, sorunsuza motion 
 Yasa kaynağı: `agents/PROMPT-YASASI.md` (§1 daimi direktifler · **§1a kıstas sırası** ·
 §3 motion · §5 teslim seti). Ezberden denetleme — kıstas sırası oradan okunur.
 
+🔴 **AJAN BRIEF'İ DOĞAÇLANMAZ: `agents/AJAN-BRIEF.md`.** Ölçüldü (2026-08-03): bir günde
+kaçırılan 16 kusurun üç sınıfı — çocuk güvenliği, render dili kopması, VO nicelik/ölçek —
+doğrudan brief'in elle yazılmasından doğdu. Ajanlar verilen brief'i doğru uyguladı, **brief
+eksikti.** O dosyanın **ZORUNLU BLOK**'u (kaynak yolları · yazı haritasının kaynağı · on kusur
+sınıfı · eşik daraltma kuralı · kanon yapıştırma · ajanın göremeyeceği) her brief'e birebir
+girer; üstüne yalnız işe özel olan eklenir. Brief gönderilmeden önce oradaki **üç soru** sorulur.
+
 ## Ajan mimarisi — Mami'nin kuralı
 
 **Ajan başına KARE değil, ajan başına SEKANS.** 44 kare için 44 ajan usage yakar ve süreklilik
