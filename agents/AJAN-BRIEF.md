@@ -75,15 +75,29 @@ Bir denetim ya da yazım ajanı **en az** şu sınıfları taşır. Eşik daralt
 Ölçüldü: bu iki cümle olmadan verilen bir eşik, aynı ajanların aynı karelerde **16 kusurun
 16'sını** kaçırmasına yol açtı; dar mercek verilince aynı ajanlar hepsini buldu.
 
-### A5 · Kanon yazılmaz, YAPIŞTIRILIR
+### A5 · Kanon yazılmaz YAPIŞTIRILIR — ama STYLE'ın İKİ PARÇASI VAR ve kuralları TERS
 
-Dünya kuyruğu (STYLE / LIGHT / NEGATIVE), kimlik cümlesi ve tarif kilitleri **birebir** geçer.
-Ölçüldü (Hücre): elle yazılınca 53 karede **53 farklı sürüm** doğdu, negatif iskeleti bloktan
-bloğa **151→295 kelimeye** şişti, kimlik cümlesi 12 dosyada **dört ayrı** biçimde yazıldı ve
-üç kare foto-gerçekçiye kaydı.
+🔴 Bu madde 2026-08-03 gecesi düzeltildi. Önceki hâli *"kuyruğu birebir yapıştır"* diyordu ve
+**eksikti**: ajanlar kuyruğun tamamını yapıştırınca 14 karenin STYLE satırı birebir aynı oldu,
+`prompt-lint` haklı olarak kırmızı yandı ve iki ölçülmüş yasa çakışıyor göründü. Çakışma yoktu —
+**metrik ve brief kabaydı.**
+
+| parça | ne | kural | ölçüm |
+|---|---|---|---|
+| **DÜNYA OMURGASI** | render dili beyanı: RenderMan soyu · subsurface · palet yasası · `no photoreal` · `no cel` | 🔴 **BİREBİR AYNI.** Bu dünyanın kimliğidir; sürüklenirse dünya kayar. | Hücre: omurga 3 sürüme bölündü, negatif 151→295 kelimeye şişti, **3 kare foto-gerçekçiye kaydı** |
+| **MALZEME LİSTESİ** | o karenin maddesi: gözenekli pişmiş tuğla · ıslak gri harç · kehribar zar · fırçalanmış pirinç | 🔴 **KAREYE GÖRE DEĞİŞİR.** Yasanın kendi maddesi: *"material specificity is non-negotiable"*. | Eşeyli: 50 karede **49 farklı** STYLE → **0 revize**. Değişen şey malzemeydi. |
+
+**Yani doğru talimat:** *"Dünya omurgasını `_DUNYA-KUYRUGU.txt`'ten birebir yapıştır; malzeme
+listesini o karenin gerçek maddesine göre KENDİN yaz. Omurga 53/53 aynı, malzeme 53/53 farklı."*
+
 ⚠ **Kuyruk dosyası projenin gerçek lehçesini taşımıyorsa** (Bileşke'de böyle çıktı: onaylı
-K01-K16 kuyruk dosyasından farklı bir lehçe taşıyor) ajan **onaylı komşu kareye uyar** ve
-durumu raporlar — iki lehçeli bir film, bayat bir kuyruk dosyasından kötüdür.
+K01-K16 kuyruk dosyasından farklı bir omurga taşıyor, ve o omurga 71/71 tutarlı) ajan **onaylı
+komşu kareye uyar** ve durumu raporlar — iki lehçeli bir film, bayat bir kuyruk dosyasından kötüdür.
+
+⚠ **`prompt-lint`'in `style` kuralı bugün satırın TAMAMINI karşılaştırıyor**, yani "malzeme
+değişti" (sağlıklı) ile "omurga sürüklendi" (kusur) ayrımını yapamıyor. Kırmızısı bu yüzden hem
+doğru hem eksik okunabilir. Ölçüm ayrıştırılana kadar hüküm şudur: **omurga tekrarı SAĞLIKTIR,
+malzeme tekrarı KUSURDUR.**
 
 ### A6 · Ajanın göremeyeceği şey — brief bunu söyler
 
