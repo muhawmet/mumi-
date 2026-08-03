@@ -126,6 +126,18 @@ const SAAT_RE = /\bhalf a (second|beat)\b|\b(a|one|two|three|four|five|\d+)\s+se
 // Sabit kuyruğun İKİ ÇEKİRDEĞİ. İkisi de iki korpusta 107/107 — yani gerçekten sabit.
 const KUYRUK_SES = /Silent clip,\s*no audio,\s*no dialogue/i;
 const KUYRUK_KAMERA = /No whip-pan,\s*no shake,\s*no snap-zoom,\s*no camera warp\s*\./i;
+
+/**
+ * Kamera kilidi KOŞULLUDUR (2026-08-03). Yalnız iki sınıfta zorunlu:
+ *  · ekranda okunan HARF var — taşıyıcı ya da kamera oynayınca harf eriyor (ölçüldü)
+ *  · KATI/MEKANİK gövde kadrajda — mikroskop, vida, dişli, cam lam: hızlı kamera = warp
+ * Organik, yazısız, insansız karede kilit yoktur; orada kamera akıp geçebilir.
+ */
+const YAZI_IZI = /\b(letters?|lettering|word|words|spell|re-spell|respell|printed|stamped|engraved|typeface|glif|caption)\b/i;
+// ⚠ "rigid solid" BURAYA GİRMEZ: o bir kilit cümlesidir, nesne işareti değil — bir tuğla ya da
+// bir soğan için de yazılıyor. Aranan şey OPTİK/MEKANİK aygıt: warp riski oradan doğuyor.
+const KATI_IZI = /\b(instrument|microscope|eyepiece|objective (collar|ring)|turret|nosepiece|focus (wheel|knob)|knob|screw|gear|cog|glass slide|slide glass|cover glass)\b/i;
+const kameraKilidiGerekli = (p) => YAZI_IZI.test(p) || KATI_IZI.test(p);
 // Ağız/dudak kaydı AİLEDİR ve kırmızı DEĞİL: altın 7 dosyada hiç yazmamış, Efe 19 bilerek
 // "no lip movement, jaw held" yazmış (karede ağız açık; "mouth closed" yazmak §3ø morph riski).
 const KUYRUK_AGIZ = /(mouths? closed|no lip movement|lips? stay|never (move to speak|form a word)|no speech shapes|jaw held)/i;
@@ -174,13 +186,23 @@ const KIRMIZI_KURALLAR = [
   },
   {
     key: 'kuyruk',
-    hit: (p) => !KUYRUK_SES.test(p) || !KUYRUK_KAMERA.test(p),
+    // 🔴 2026-08-03'te DARALDI. Eskiden kamera kilidi 53/53 klipte zorunluydu; iki bitmiş film
+    // baştan sona ölçüldü ve bedeli çıktı: kilit her klibi DURDURARAK bitiriyor, yani film klip
+    // sayısı kadar kez duruyor — Mami'nin "kurgu çok basic" hükmünün kök nedeni bu.
+    // Kilit yazıyı ve katı gövdeyi gerçekten kurtarıyor (21/21 Türkçe yazı kusursuz çıktı),
+    // ama o kareler ~12 tane; kalan 41'de bedava değil, filmin akışına mal oluyor.
+    // Sessizlik yarısı HER klipte kalır — o EDU iş akışı yasasıdır, kamera tercihi değil.
+    hit: (p) => !KUYRUK_SES.test(p) || (kameraKilidiGerekli(p) && !KUYRUK_KAMERA.test(p)),
     msg: (p) => 'sabit kuyruk bozuk — '
       + [!KUYRUK_SES.test(p) && '"Silent clip, no audio, no dialogue" yok',
-         !KUYRUK_KAMERA.test(p) && '"No whip-pan, no shake, no snap-zoom, no camera warp." yok']
+         kameraKilidiGerekli(p) && !KUYRUK_KAMERA.test(p)
+           && 'bu klip ekranda YAZI ya da KATI/MEKANİK gövde taşıyor, "No whip-pan, no shake, '
+              + 'no snap-zoom, no camera warp." zorunlu']
         .filter(Boolean).join(' · '),
-    why: 'İki çekirdek de iki korpusun 107/107 dosyasında var — gerçekten sabit olan tek şey bu. '
-      + 'Sessizlik EDU iş akışı yasası (VO ayrı ElevenLabs katmanı); whip-pan cümlesi warp duvarı.',
+    why: 'Sessizlik iki korpusun 107/107 dosyasında var ve EDU iş akışı yasasıdır (VO ayrı '
+      + 'ElevenLabs katmanı). Kamera kilidi ise KOŞULLU: yalnız harf ya da katı/mekanik gövde '
+      + 'taşıyan karede warp duvarıdır; yazısız organik karede kamera kesimin içinden akıp '
+      + 'geçebilir ve klip hareket hâlinde bitebilir.',
   },
   {
     key: 'kelime-bandi',

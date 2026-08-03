@@ -1,120 +1,87 @@
-HÜCRE VE ORGANELLERİ — EDIT PLAN (Premiere haritası)
+5. SINIF - HÜCRE VE ORGANELLERI — EDIT PLAN
 =========================================================================
-Konu: Hücre ve Organelleri · 5. Sınıf Fen Bilimleri
-53 kare · 53 klip · BİR CÜMLE = BİR KLİP (tek istisna yok, birleşen sahne yok)
-Klipler: Kling 3.0 i2v, hepsi 5s, sessiz üretildi
-VO: ElevenLabs tek blok — `Hücre ve Organelleri_SESLENDIRME-TEK-BLOK.txt`
-Müzik: `Hücre ve Organelleri_SUNO.txt`
-Motion: `MOTION/01.txt … 53.txt` (klip başına bir dosya)
+🔴 BU DOSYA ELLE YAZILMAZ — MOTION başlıklarından türetilir:
+   node scripts/edit-plan.mjs "5. Sınıf - Hücre ve Organelleri" --yaz
+   Süreyi değiştirmek istiyorsan MOTION/NN.txt başlık satırını değiştir, sonra bunu koş.
+   Sebep ölçüldü: elle tutulan plan aynı gün bayatlıyor ve "UZUN ÜRET" bayrağı üretime geçmiyor.
 
-SÜTUNLAR: dosya · kare · klip süresi · VO tahmini · zaman penceresi · cümle · uyarı
+53 klip · toplam görüntü 4:50 · VO tahmini 4:18
+süre dağılımı: 3s×4 · 5s×37 · 8s×12
+✓ ritim: 3 farklı süre — metronom kırılmış.
 
-⚠ VO SÜRELERİ TAHMİNDİR, ÖLÇÜM DEĞİL. Bu hatta tahmin tarihsel olarak yüksek
-çıkıyor (Bitkilerde: plan 4:32 dedi, gerçek VO 3:29 — 62.8s sapma). Aşağıdaki
-pencereler bu yüzden PLANLAMA içindir, kesim noktası değil. Gerçek VO indiği an
-`node scripts/kaba-kurgu.mjs "5. Sınıf - Hücre ve Organelleri" --klipler <dir>`
-koşulur; o araç kesimleri whisper ile GERÇEK cümle sınırlarına oturtur ve
-`KABA-KURGU.xml` üretir. Bu tablodaki sapma orada kaynağında kapanır.
-
+SÜTUNLAR: kare · klip · kova · ÜRETİM süresi · VO tahmini · pencere · cümle · bayrak
+⚠ VO süreleri TAHMİNDİR. Bu hatta tahmin tarihsel olarak yüksek çıkıyor (Kütle plan 3:33 →
+  gerçek 3:00 · Bitkilerde plan 4:32 → gerçek 3:29). Gerçek VO inince kaba-kurgu.mjs
+  kesimleri whisper ile GERÇEK cümle sınırlarına oturtur; buradaki pencereler planlamadır.
 =========================================================================
 
 ##### SEKANS 1 — DUVAR: HER BÜYÜK ŞEY KÜÇÜK PARÇALARDAN #####
-1.png    K01   5s   5.2s   [0:00–0:05]   Mira'nın bahçesinde usta, sabahtan beri bir duvar örüyordu.
-2.png    K02   5s   5.6s   [0:05–0:10]   Duvar kocamandı; ama usta her seferinde tek bir tuğla koyuyordu.   ◄VO 5.6s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-3.png    K03   5s   5.2s   [0:10–0:15]   Mira yaklaştı ve elini taze harcın soğukluğuna değdirdi.
-4.png    K04   5s   4.7s   [0:15–0:20]   Bu duvar, üst üste dizilmiş küçük parçalardan yapılmıştı.
-5.png    K05   5s   3.8s   [0:20–0:25]   Peki ya biz? Kedi, papatya, Mira'nın kendisi?
-6.png    K06   5s   4.9s   [0:25–0:30]   Mira avucuna baktı; hiçbir yerinde tuğla göremiyordu.
-7.png    K07   5s   4.9s   [0:30–0:35]   Ama vardı. Sadece gözle görülemeyecek kadar küçüktü.
-8.png    K08   5s   4.5s   [0:35–0:40]   Canlıların en küçük yapı taşının bir adı var: hücre.
+1.png     K01  VURUŞ    8s  5.2s  [0:00–0:07]  Mira'nın bahçesinde usta, sabahtan beri bir duvar örüyordu.   🔴 8s ÜRET
+2.png     K02  VURUŞ    8s  5.6s  [0:07–0:13]  Duvar kocamandı; ama usta her seferinde tek bir tuğla koyuyordu.   🔴 8s ÜRET
+3.png     K03  TAŞIYICI 5s  5.2s  [0:13–0:18]  Mira yaklaştı ve elini taze harcın soğukluğuna değdirdi.
+4.png     K04  TAŞIYICI 5s  4.7s  [0:18–0:23]  Bu duvar, üst üste dizilmiş küçük parçalardan yapılmıştı.
+5.png     K05  TAŞIYICI 5s  3.8s  [0:23–0:27]  Peki ya biz? Kedi, papatya, Mira'nın kendisi?
+6.png     K06  TAŞIYICI 5s  4.9s  [0:27–0:32]  Mira avucuna baktı; hiçbir yerinde tuğla göremiyordu.
+7.png     K07  VURUŞ    8s  4.9s  [0:32–0:38]  Ama vardı. Sadece gözle görülemeyecek kadar küçüktü.   🔴 8s ÜRET
+8.png     K08  VURUŞ    8s  4.5s  [0:38–0:44]  Canlıların en küçük yapı taşının bir adı var: hücre.   🔴 8s ÜRET
 
 ##### SEKANS 2 — MUTFAK: SOĞANIN İÇİNDEKİ ZAR #####
-9.png    K09   5s   4.9s   [0:40–0:45]   Mira mutfağa girdi; masanın üstünde bir soğan duruyordu.
-10.png   K10   5s   5.9s   [0:45–0:51]   Soğanı ikiye böldü. Katmanların arasında ince, ıslak bir zar vardı.
-11.png   K11   5s   5.4s   [0:51–0:56]   Zarı tırnağının ucuyla kaldırdı; neredeyse cam kadar saydamdı.   ◄VO 5.4s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-12.png   K12   5s   4.7s   [0:56–1:01]   Zarı bir cam lamın üstüne yatırdı ve üstünü kapattı.
-13.png   K13   5s   5.4s   [1:01–1:06]   Mikroskobun lambasını yaktı; ışık camın altından yukarı vurdu.   ◄VO 5.4s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-14.png   K14   5s   2.9s   [1:06–1:11]   Mira gözünü merceğe yasladı.
-15.png   K15   5s   4.5s   [1:11–1:17]   Ve duvarı yeniden gördü. Bu sefer soğanın içinde.
+9.png     K09  TAŞIYICI 5s  4.9s  [0:44–0:49]  Mira mutfağa girdi; masanın üstünde bir soğan duruyordu.
+10.png    K10  TAŞIYICI 5s  5.9s  [0:49–0:55]  Soğanı ikiye böldü. Katmanların arasında ince, ıslak bir zar vardı.   son kare 1s dondur
+11.png    K11  TAŞIYICI 5s  5.4s  [0:55–1:00]  Zarı tırnağının ucuyla kaldırdı; neredeyse cam kadar saydamdı.   ◄VO 5.4s > pencere 5s
+12.png    K12  TAŞIYICI 5s  4.7s  [1:00–1:05]  Zarı bir cam lamın üstüne yatırdı ve üstünü kapattı.
+13.png    K13  TAŞIYICI 5s  5.4s  [1:05–1:10]  Mikroskobun lambasını yaktı; ışık camın altından yukarı vurdu.   ◄VO 5.4s > pencere 5s
+14.png    K14  GEÇİŞ    3s  2.9s  [1:10–1:13]  Mira gözünü merceğe yasladı.
+15.png    K15  VURUŞ    8s  4.5s  [1:13–1:21]  Ve duvarı yeniden gördü. Bu sefer soğanın içinde.   🔴 8s ÜRET
 
 ##### SEKANS 3 — HÜCRENİN ÜÇ ANA KISMI #####
-16.png   K16   5s   4.9s   [1:17–1:22]   Her tuğlanın kendi sınırı vardı. Buna hücre zarı diyoruz.
-17.png   K17   5s   5.4s   [1:22–1:27]   Zar hücrenin kapısıdır; neyin girip çıkacağına o karar verir.   ◄VO 5.4s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-18.png   K18   5s   5.2s   [1:27–1:33]   Zarın içi boş değildi; jöle gibi berrak bir sıvıyla doluydu.
-19.png   K19   5s   5.6s   [1:33–1:38]   Bu sıvının adı sitoplazma. Bütün organeller onun içinde yüzer.   ◄VO 5.6s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-20.png   K20   5s   4.9s   [1:38–1:43]   Ortada, ışığı içine çeken koyu bir küre duruyordu.
-21.png   K21   5s   5.4s   [1:43–1:49]   Çekirdek. Hücrenin yönetim merkezi; bütün emirler oradan çıkar.
-22.png   K22   5s   4.5s   [1:49–1:54]   Mira vidayı çevirdi ve büyütme bir kat daha arttı.
+16.png    K16  TAŞIYICI 5s  4.9s  [1:21–1:26]  Her tuğlanın kendi sınırı vardı. Buna hücre zarı diyoruz.
+17.png    K17  TAŞIYICI 5s  5.4s  [1:26–1:31]  Zar hücrenin kapısıdır; neyin girip çıkacağına o karar verir.   ◄VO 5.4s > pencere 5s
+18.png    K18  TAŞIYICI 5s  5.2s  [1:31–1:37]  Zarın içi boş değildi; jöle gibi berrak bir sıvıyla doluydu.   son kare 1s dondur
+19.png    K19  TAŞIYICI 5s  5.6s  [1:37–1:42]  Bu sıvının adı sitoplazma. Bütün organeller onun içinde yüzer.   ◄VO 5.6s > pencere 5s
+20.png    K20  TAŞIYICI 5s  4.9s  [1:42–1:47]  Ortada, ışığı içine çeken koyu bir küre duruyordu.
+21.png    K21  VURUŞ    8s  5.4s  [1:47–1:55]  Çekirdek. Hücrenin yönetim merkezi; bütün emirler oradan çıkar.   🔴 8s ÜRET
+22.png    K22  TAŞIYICI 5s  4.5s  [1:55–2:00]  Mira vidayı çevirdi ve büyütme bir kat daha arttı.
 
 ##### SEKANS 4 — ORGANELLER: HÜCRENİN ÇALIŞAN EKİBİ #####
-23.png   K23   5s   5.6s   [1:54–1:59]   Sitoplazmanın içinde çalışan minik yapılar belirdi. Organeller.   ◄VO 5.6s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-24.png   K24   5s   4.5s   [1:59–2:04]   İlki fasulye biçimliydi; içi kıvrım kıvrım katlanmıştı.
-25.png   K25   5s   3.3s   [2:04–2:10]   Mitokondri. Hücrenin enerji santrali.
-26.png   K26   5s   5.2s   [2:10–2:15]   Koşarken, uyurken, hatta şu an bile enerjiyi o üretiyor.
-27.png   K27   5s   6.1s   [2:15–2:20]   Yanında noktacıklar vardı; hepsinden küçüktüler ama sayıları en çoktu.   ◄VO 6.1s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-28.png   K28   5s   4.9s   [2:20–2:26]   Ribozom. Büyümemiz için gereken proteinleri üretir.
-29.jpg   K29   5s   5.2s   [2:26–2:31]   Onların ardından katlanmış zarlardan bir yol ağı uzanıyordu.
-30.png   K30   5s   5.2s   [2:31–2:37]   Endoplazmik retikulum. Hücrenin içindeki taşıma yolları.
-31.png   K31   5s   4.9s   [2:37–2:42]   Yolun ucunda üst üste dizilmiş yassı keseler duruyordu.
-32.png   K32   5s   5.9s   [2:42–2:48]   Golgi cisimciği. Üretileni paketler ve gideceği yere gönderir.
-33.png   K33   5s   4.9s   [2:48–2:53]   Bir kese, içine aldığı iri parçayı yavaşça eritti.
-34.png   K34   5s   4.7s   [2:53–2:58]   Lizozom. Hücrenin temizlikçisi; atıkları o sindirir.
-35.png   K35   5s   4.7s   [2:58–3:03]   Kenarda, içi sıvı dolu şeffaf bir kese kabarıyordu.
-36.png   K36   5s   4.9s   [3:03–3:09]   Koful. Hücrenin deposu; su, besin ve atık orada saklanır.
-37.jpg   K37   5s   5.4s   [3:09–3:14]   Zarın hemen altında yeşil, mercek biçimli yapılar sıralanmıştı.   ◄VO 5.4s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-38.png   K38   5s   5.4s   [3:14–3:20]   Kloroplast. Güneş ışığıyla besin üretir; yeşil renk de ondan gelir.
+23.png    K23  TAŞIYICI 5s  5.6s  [2:00–2:05]  Sitoplazmanın içinde çalışan minik yapılar belirdi. Organeller.   ◄VO 5.6s > pencere 5s
+24.png    K24  TAŞIYICI 5s  4.5s  [2:05–2:10]  İlki fasulye biçimliydi; içi kıvrım kıvrım katlanmıştı.
+25.png    K25  VURUŞ    8s  3.3s  [2:10–2:18]  Mitokondri. Hücrenin enerji santrali.   🔴 8s ÜRET
+26.png    K26  TAŞIYICI 5s  5.2s  [2:18–2:23]  Koşarken, uyurken, hatta şu an bile enerjiyi o üretiyor.
+27.png    K27  TAŞIYICI 5s  6.1s  [2:23–2:28]  Yanında noktacıklar vardı; hepsinden küçüktüler ama sayıları en çoktu.   ◄VO 6.1s > pencere 5s
+28.png    K28  TAŞIYICI 5s  4.9s  [2:28–2:34]  Ribozom. Büyümemiz için gereken proteinleri üretir.   son kare 1s dondur
+29.jpg    K29  TAŞIYICI 5s  5.2s  [2:34–2:39]  Onların ardından katlanmış zarlardan bir yol ağı uzanıyordu.
+30.png    K30  TAŞIYICI 5s  5.2s  [2:39–2:45]  Endoplazmik retikulum. Hücrenin içindeki taşıma yolları.   son kare 1s dondur
+31.png    K31  TAŞIYICI 5s  4.9s  [2:45–2:50]  Yolun ucunda üst üste dizilmiş yassı keseler duruyordu.
+32.png    K32  TAŞIYICI 5s  5.9s  [2:50–2:56]  Golgi cisimciği. Üretileni paketler ve gideceği yere gönderir.   son kare 1s dondur
+33.png    K33  TAŞIYICI 5s  4.9s  [2:56–3:01]  Bir kese, içine aldığı iri parçayı yavaşça eritti.
+34.png    K34  TAŞIYICI 5s  4.7s  [3:01–3:06]  Lizozom. Hücrenin temizlikçisi; atıkları o sindirir.
+35.png    K35  TAŞIYICI 5s  4.7s  [3:06–3:11]  Kenarda, içi sıvı dolu şeffaf bir kese kabarıyordu.
+36.png    K36  TAŞIYICI 5s  4.9s  [3:11–3:17]  Koful. Hücrenin deposu; su, besin ve atık orada saklanır.   son kare 1s dondur
+37.jpg    K37  TAŞIYICI 5s  5.4s  [3:17–3:22]  Zarın hemen altında yeşil, mercek biçimli yapılar sıralanmıştı.   ◄VO 5.4s > pencere 5s
+38.png    K38  VURUŞ    8s  5.4s  [3:22–3:30]  Kloroplast. Güneş ışığıyla besin üretir; yeşil renk de ondan gelir.   🔴 8s ÜRET
 
 ##### SEKANS 5 — BİTKİ Mİ, HAYVAN MI #####
-39.png   K39   5s   4.3s   [3:20–3:25]   Mira başını kaldırdı. Bu soğandı. Peki kendisi?
-40.png   K40   5s   5.2s   [3:25–3:30]   Temiz bir kaşığın ucunu yanağının içine hafifçe sürdü.
-41.png   K41   5s   3.8s   [3:30–3:35]   Kaşıktakini ikinci bir cam lama aktardı.
-42.png   K42   5s   3.6s   [3:35–3:40]   Merceğin altında bu sefer hiç köşe yoktu.
-43.png   K43   5s   6.3s   [3:40–3:46]   Soğanın hücreleri köşeliydi; çünkü dışlarında sert bir hücre duvarı vardı.   ◄VO 6.3s > pencere 6s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-44.png   K44   5s   4.7s   [3:46–3:51]   Mira'nınkiler yuvarlaktı; onlarda hücre duvarı yoktu.
-45.jpg   K45   5s   5.2s   [3:51–3:57]   Soğanda yeşil kloroplastlar vardı; Mira'nın hücresinde hiç yoktu.
-46.png   K46   5s   5.2s   [3:57–4:02]   Buna karşılık Mira'nınkinde iki minik çubuk vardı: sentrozom.
-47.png   K47   5s   5.6s   [4:02–4:07]   Hücre bölüneceği zaman devreye girer ve çoğalmaya yardım eder.   ◄VO 5.6s > pencere 5s — son kareyi ~1s dondur ya da VO bir tık hızlı okunsun
-48.png   K48   5s   5.6s   [4:07–4:13]   Soğanda tek büyük koful vardı; Mira'nınkinde küçük küçük birkaç tane.
+39.png    K39  TAŞIYICI 5s  4.3s  [3:30–3:35]  Mira başını kaldırdı. Bu soğandı. Peki kendisi?
+40.png    K40  TAŞIYICI 5s  5.2s  [3:35–3:40]  Temiz bir kaşığın ucunu yanağının içine hafifçe sürdü.
+41.png    K41  GEÇİŞ    3s  3.8s  [3:40–3:43]  Kaşıktakini ikinci bir cam lama aktardı.   ◄VO 3.8s > pencere 3s · ◄L-kesim: görüntü cümleden önce biter
+42.png    K42  GEÇİŞ    3s  3.6s  [3:43–3:46]  Merceğin altında bu sefer hiç köşe yoktu.   ◄VO 3.6s > pencere 3s · ◄L-kesim: görüntü cümleden önce biter
+43.png    K43  TAŞIYICI 5s  6.3s  [3:46–3:52]  Soğanın hücreleri köşeliydi; çünkü dışlarında sert bir hücre duvarı vardı.   son kare 1s dondur · ◄VO 6.3s > pencere 6s
+44.png    K44  VURUŞ    8s  4.7s  [3:52–4:00]  Mira'nınkiler yuvarlaktı; onlarda hücre duvarı yoktu.   🔴 8s ÜRET
+45.jpg    K45  TAŞIYICI 5s  5.2s  [4:00–4:06]  Soğanda yeşil kloroplastlar vardı; Mira'nın hücresinde hiç yoktu.   son kare 1s dondur
+46.png    K46  TAŞIYICI 5s  5.2s  [4:06–4:11]  Buna karşılık Mira'nınkinde iki minik çubuk vardı: sentrozom.
+47.png    K47  TAŞIYICI 5s  5.6s  [4:11–4:16]  Hücre bölüneceği zaman devreye girer ve çoğalmaya yardım eder.   ◄VO 5.6s > pencere 5s
+48.png    K48  VURUŞ    8s  5.6s  [4:16–4:24]  Soğanda tek büyük koful vardı; Mira'nınkinde küçük küçük birkaç tane.   🔴 8s ÜRET
 
 ##### SEKANS 6 — KAPANIŞ: AYNI DUVAR #####
-49.png   K49   5s   2.9s   [4:13–4:18]   Mira gözünü mercekten ayırdı.
-50.png   K50   5s   4.9s   [4:18–4:23]   Mutfak aynıydı. Değişen tek şey, Mira'nın bakabildiği yerdi.
-51.png   K51   5s   4.3s   [4:23–4:28]   Bahçeye döndü; usta son tuğlayı yerine koymuştu.
-52.png   K52   5s   4.3s   [4:28–4:33]   Duvar da, soğan da, Mira da aynı şeyden yapılmıştı.
-53.png   K53   5s   3.1s   [4:33–4:39]   Küçük parçalardan. Yani hücrelerden.
+49.png    K49  GEÇİŞ    3s  2.9s  [4:24–4:27]  Mira gözünü mercekten ayırdı.
+50.png    K50  TAŞIYICI 5s  4.9s  [4:27–4:32]  Mutfak aynıydı. Değişen tek şey, Mira'nın bakabildiği yerdi.
+51.png    K51  VURUŞ    8s  4.3s  [4:32–4:39]  Bahçeye döndü; usta son tuğlayı yerine koymuştu.   🔴 8s ÜRET
+52.png    K52  TAŞIYICI 5s  4.3s  [4:39–4:44]  Duvar da, soğan da, Mira da aynı şeyden yapılmıştı.
+53.png    K53  VURUŞ    8s  3.1s  [4:44–4:50]  Küçük parçalardan. Yani hücrelerden.   🔴 8s ÜRET
 
 =========================================================================
-TOPLAM: 4:39 görüntü (279s) · 53 klip · VO tahmini 4:18 (259s)
-UYARILI SATIR: 10 (K02 · K11 · K13 · K17 · K19 · K23 · K27 · K37 · K43 · K47)
-=========================================================================
-
-MÜZİK
-`Hücre ve Organelleri_SUNO.txt` — Suno "Simple" kutusuna tek paragraf.
-· VO altında ~-18 dB, anlatım boyunca sabit; ducking VO cümlesinin başında değil,
-  cümleler ARASINDAKİ nefeste açılır.
-· Sekans enerjisi: S1 sakin ve merak eden (bahçe, sabah) · S2 el işi, tempo hafif
-  yükselir · S3 keşif, ilk gerçek açılma · S4 dersin gövdesi, düzenli ve sabit —
-  organel adları arasında ritim değişmez, yoksa liste hissi doğar · S5 karşılaştırma,
-  biraz daha canlı · S6 yavaşlar ve S1'in tonuna döner (aynı motif, tam çözülmüş hâli).
-· MÜZİK NEFES ALACAK REVEAL KARELERİ — bu üçünde müzik geri çekilir, görüntü tek başına dursun:
-    K15  soğan hücreleri duvar dizilimi olarak görünür (dersin belkemiği)
-    K21  ÇEKİRDEK — ışığı içine çeken koyu küre
-    K51  usta son tuğlayı yerine koyar (açılışın kapanışı)
-
-SES MİKS
-· VO önde ve kuru; klipler Kling'de SESSİZ üretildi, ses yatağı yalnız müzik + SFX.
-· SFX minimal ve yalnız üç yerde: K01-K04 mala/harç dokunuşu (çok kısık, ambiyans),
-  K13 mikroskop lambası anahtarının tek klik'i, K51 son tuğlanın oturması.
-  Hücre içi kareler (K15-K48) SFX ALMAZ — mikroskopta ses yoktur, sessizlik burada bilgidir.
-· Ekranda kimse konuşmaz, ağız hareketi yok; dudak senkronu sorunu bu hatta yapısal olarak yok.
-
-NOT — kurgu masasına taşınan üç şey
-1. **K01 ↔ K51 aynadır.** İki klibin `Camera:` cümlesi motion dosyalarında harfi harfine
-   aynı yazıldı (aynı yön, aynı ölçek, aynı ön plan, aynı duruş noktası); fark yalnız yayda —
-   K01 süren iş, K51 biten iş. Kesimde bu iki klibin hızını EŞİT tut, biri hızlanırsa ayna kırılır.
-2. **Duvar malzemesi K02/K04/K52/K53'te kaba yonu kireçtaşı yerine düzgün tuğla geldi.**
-   Kare revizesi istenmedi (Mami kararı); motion tarafında dört klipte de kamera duvar yüzeyini
-   taramıyor. Kurguda da bu karelerden duvar dokusuna yakın kesim yapma.
-3. **14 klipte son kare ~1s donacak** şekilde motion yazıldı (`ekranda ~6s`). Bu, kaba kurgu
-   XML'inde otomatik uygulanır; elle kesiyorsan motion dosyasının başlık satırındaki
-   `ekranda ~Xs` değeri bağlayıcıdır.
+🔴 UZUN ÜRETİLECEK 12 KLİP: K01 · K02 · K07 · K08 · K15 · K21 · K25 · K38 · K44 · K48 · K51 · K53
+   Bu klipler motorda O SÜREDE üretilir — 5 saniyelik klipten kırpılmaz.
+   Ölçüldü (Bitkilerde): plan 15 klibi uzun işaretlemişti, üretimde yalnız 1'i uzun üretildi;
+   filmde 13 plan tam 4.54s çıktı, yani kırpılmamış klip boyu. Bayrak planda kalırsa hiçbir şey değişmiyor.

@@ -174,12 +174,35 @@ yakalanıyordu. Maddelerin kendisi zaten yasadaydı: 0 → §2ø, 9 → §2a, 2/
 **Sıra bağlayıcıdır: üstteki madde alttakini iptal eder.** Liste hem KARE YAZILIRKEN
 (`mamilas-director`, yazmadan önce) hem KARE DENETLENİRKEN (`mamilas-denetim`) aynen geçerlidir.
 
+🔴 **−1. ÇOCUK GÜVENLİĞİ — bu madde FİKİR'in de üstündedir ve bir kalite kalemi DEĞİL, bir
+yayın engelidir.** Kadrajda çocuk varsa: kesici alet, açık ateş, kaynar sıvı, kimyasal ve
+**ağza giren nesne** yazılmaz; iş **bitmiş** gösterilir (soğan çoktan ikiye ayrılmış, eller
+tahtada düz). Çocuğun yüzüne/ağzına makro yakınlık da bu maddededir.
+*Ölçüldü (2026-08-03, Hücre):* K10 prompt'u birebir *"the right still holding the knife"*
+yazıyordu, K40 kaşığı ağzın içine koyuyordu, K09 tezgâhta açık bıçak bırakıyordu — **üçü de
+denetimden "temiz" geçti**, çünkü aşağıdaki on maddenin hiçbiri onları sormuyordu. Ders okula
+gidiyor ve portfolyoya giriyor: bu kare üretilmez, üretildiyse teslim edilmez.
+
 0. **FİKİR** (§2ø) — kareyi VO olmadan gösterip *"burada ne oluyor"* diye sorsan cevap
    verilebilir mi? Görünür bir **gerilim ya da değişim** var mı? Yoksa kare teknik olarak
-   kusursuz ama ölüdür ve teslim edilmez. Bu madde diğer dokuzunun ÜSTÜNDEDİR: onlar kusuru
+   kusursuz ama ölüdür ve teslim edilmez. Bu madde diğerlerinin ÜSTÜNDEDİR: onlar kusuru
    ölçer, bu **bakılmaya değer olup olmadığını** ölçer.
 1. **VO ↔ sahne uyumu** (§1.7) — kare o cümlenin dediğini gösteriyor mu? EŞLİK ≠ TAŞIMA
    (§2ø): cümlenin tekrarı olan kare bedavaya gelmiştir.
+   🔴 **VO'nun her NİCELİK, KONUM, ÖLÇEK ve KARŞITLIK sözcüğü bir KOMPOZİSYON EMRİDİR ve
+   prompt'a sayıyla geçer** (2026-08-03'te ölçüldü, 16 kusurun 6'sı buradan doğdu):
+   · *"hepsi/bütün … içinde yüzer"* → kaç adet, hangi derinliklerde. (K19: VO "bütün organeller",
+     prompt **"three"** yazmış.)
+   · *"ortada duruyordu"* → kadrajın merkezinde ve en büyük. (K20: prompt **"well off centre in
+     the right third"** yazmış — VO'nun tam tersi.)
+   · *"içi sıvı dolu"* → sıvının görünür seviyesi yazılır. (K35: yalnız dış yüzey tarif edilmiş,
+     kese boş cam kubbe gelmiş.)
+   · *"tırnağının ucuyla / avucunda / parmak kadar"* → nesnenin boyu **o uzva göre** yazılır,
+     yoksa motor nesneyi hikâye önemine göre büyütüyor. (K11: zar A4 boyunda geldi. Doğru yazım
+     korpusta kanıtlı: K40 *"a soft dome the width of a coin"* → tam o ölçüde geldi.)
+   · *"X'te vardı, Y'de yoktu"* → kare **iki tarafı birden** gösterir. (K45 ve K48 tek taraflı
+     geldi — üstelik o karelerin NEGATIVE'i çözümü *"no split screen and no side-by-side
+     comparison panel"* diye **kendisi yasaklamıştı**.)
 2. **Bozuk/garbled yazı** — okunmayan/yanlış/ters harf. Yazım değil **yerleştirme** bozuluyor
    (§2d.4): TEXT slotunda ORIENTATION cümlesi zorunlu.
 3. **Yanlış cast** — [EDU] Türk/Anadolu, ana ve arka plan dahil, sınıf yaşı açık.
@@ -187,6 +210,14 @@ yakalanıyordu. Maddelerin kendisi zaten yasadaydı: 0 → §2ø, 9 → §2a, 2/
    yasaklamak değil **giydirmek**.
 5. **World / firewall ihlali** — kara tahta→akıllı tahta, ok/ikon/düz diyagram, photoreal,
    franchise, gerçek marka.
+   🔴 **RENDER DİLİ KOPMASI bu maddeye girer ve TEK BAŞINA revize sebebidir** (2026-08-03).
+   EDU karesinde foto-gerçekçi ten, gözenek, sakal kılı ya da oyun-motoru dokusu görülürse kare
+   komşularının diliyle yeniden render edilir. *Ölçüldü:* K02, K04, K40 üçü de foto-gerçekçiye
+   kaymıştı ve **53/53 karede `no photoreal` negatifi yazılıyken** oldu — yani negatif bunu
+   tutmuyor. Süreklilik denetimi kıyafet ve prop bakıyor, **render diline bakmıyor**: sekans
+   ajanı her kareyi **komşusuyla üslup açısından** kıyaslar.
+   ⚠ Bu satır aşağıdaki ⚠ notunun *"üslup farkı tek başına revize sebebi değildir"* hükmünü
+   **render dili için iptal eder**; palet ve süreklilik için o hüküm geçerli kalır.
 6. **Süreklilik** — karakter, hero-prop, mekân ve ardışık fiziksel durum (§2d.7). Çıpa
    kimliğe konur, prop'a değil (§2d.8).
 7. **Void / boş arka plan** — premium-show ihlali.
@@ -201,10 +232,31 @@ yakalanıyordu. Maddelerin kendisi zaten yasadaydı: 0 → §2ø, 9 → §2a, 2/
    Bu madde olmadan çirkin kare TEMİZ geçiyor (ölçüldü: Değerler'in kemer karesi denetimden
    dokunulmadan çıktı, Mami rezil dedi).
 
+   🔴 **PLASTİKLİĞİN İKİ YASASI — Mami'nin *"bazı sahneler plastik ve AI gibi"* hükmünün
+   ölçülmüş cevabı** (2026-08-03, iki bitmiş film baştan sona izlenerek):
+   · **IŞIK VE AÇI.** Karakter kadraja **dik** bakıp **iki gözü birden aydınlıkken** ve yüzünü
+     kesen hiçbir gölge yokken **plastik** okunuyor. Profil ya da dörtte üç durup **sert yan ya
+     da arka ışıkla yüzünün bir yanı karanlığa düştüğünde doğal** okunuyor. Aynı karakter,
+     30 saniye ara: biri gerçek, biri oyuncak. Yani insan yüzü taşıyan her karede ışığın
+     **YÖNÜ** ve yüzün hangi yanının gölgede kaldığı **yazılır**.
+   · **EYLEM.** Doğal okunan 11 anın **11'inde** karakter *bir şey yapıyor* (uzanmak, çevirmek,
+     yaslanmak, yazmak, avucu açmak); plastik okunan 12 anın **12'sinde** karakter yalnızca
+     *bakıyor*. **Yalnız bakan karaktere kare yazılmaz** — karede zaten mümkün olan bir eylem
+     bulunur ve o yazılır.
+   İkisi aynı kusurun iki yüzüdür: **doğal kare = eylem + sert yönlü ışık + eksen dışı açı.**
+
 ⚠ **Kıstas ihlali otomatik revize DEĞİLDİR.** Mami'nin revize kıstası üç kalemdir (§2d):
-*"sahneyle uymuyor · bozuk yazı · yanlış şey"* — **süreklilik, palet ve üslup farkı tek başına
-revize sebebi değildir**, Mami gerektiğinde kendisi söyler. 6. madde bu yüzden *bildirilir*,
+*"sahneyle uymuyor · bozuk yazı · yanlış şey"* — **süreklilik ve palet farkı tek başına revize
+sebebi değildir**, Mami gerektiğinde kendisi söyler. 6. madde bu yüzden *bildirilir*,
 kendiliğinden revizeye çevrilmez.
+
+🔴 **AMA BU CÜMLE BİR KEZ KÖRLÜK ÜRETTİ — sınırı yazılı** (2026-08-03). Denetim brief'i bu üç
+kalemi eşik olarak aldı ve **16 kusurun 16'sını kaçırdı**; üçü çocuk güvenliği, üçü render dili
+kopmasıydı ve hiçbiri "üç kalem"in içine girmiyordu. Ders şudur: **bir eşik daraltıldığında
+kapsam DIŞINDA kalan kusur sınıfları açıkça sayılır.** Üç kalem hâlâ geçerlidir, ama
+**−1 (çocuk güvenliği) ve 5'teki render dili kopması eşiğin ÜSTÜNDEDİR** — onlar bildirilmez,
+doğrudan revize olur. Ayrıca *"minimale takılma"* türü bir talimat **raporlamayı** kısar,
+**bakmayı** kısmaz: ajan her şeyi görür, filtre Mami'ye giden özette uygulanır.
 
 ---
 

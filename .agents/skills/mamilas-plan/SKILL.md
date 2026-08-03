@@ -49,6 +49,12 @@ düzeltmeydi** ama tek başına metronom üretiyor. Plan modunda her cümle üç
 | **VURUŞ** | fark ediş, dönüm, kapanış — izleyicinin durduğu an | 8-10s, ya da 5s + son kare donması |
 | **GEÇİŞ** | mekân/ölçek değiştiren bağ cümlesi | 3-4s, hızlı kesilir |
 
+🔴 **GEÇİŞ, ANLATI ROLÜNE GÖRE DEĞİL CÜMLE UZUNLUĞUNA GÖRE SEÇİLİR** (2026-08-03, Claude'un
+kendi hatası, `edit-plan.mjs` yakaladı): beş kare "bağ cümlesi" diye 3 saniyeye indirildi, sonra
+plan üretilince görüldü ki birinin VO'su **6.1 saniye** — 3 saniyelik pencereye sığmıyor.
+**Kural: bir cümle ancak VO tahmini ≤3.5 saniyeyse GEÇİŞ olabilir.** Rol ikinci ölçüttür,
+uzunluk birincidir. `edit-plan.mjs` bunu her koşuda `◄VO … > pencere …` diye basar.
+
 🔴 **Bir cümle iki klibe BÖLÜNEBİLİR** — özellikle "önce şu oldu, sonra bu" yapısındaki cümleler.
 Ve **iki kısa cümle tek klipte BİRLEŞEBİLİR.** Bunlar plan kararıdır, prompt yazarken
 doğaçlanmaz. Birleşen sahneler EDIT-PLAN'a `(S40+41)` biçiminde yazılır.

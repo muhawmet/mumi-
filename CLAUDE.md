@@ -63,10 +63,35 @@ uygulama yasak** — bul → Mami seçer → onar.
   **çürütülebilir biçimde** verilir. Ölçüldü (2026-08-03): iki iddiadan birini DOĞRULADI,
   birini KISMEN'e düşürdü — ikinci göz tam olarak bunun için var.
 - **AGY = GERÇEK GÖZ.** Claude video izleyemez, ses duyamaz; bu yapısal körlük.
-  `agy -p "<tek satır>" --model gemini-3.6-flash-medium --mode plan --print-timeout 25m`,
-  **her zaman tam yol** (göreli ad = belirsizlik = sessiz zaman aşımı, 34 klipte ölçüldü).
-  Görüntüyü de okur, klibi de. 🔴 **AGY'ye HÜKÜM sordurma, TARİF ettir** — hüküm sorulunca
-  her şeye "YOK" basıyor, tarif istenince kusurun kendisini anlatıyor.
+  🔴 **DOĞRU ÇAĞRI (2026-08-03'te ölçülerek bulundu, öncesi yanlıştı):**
+  ```
+  agy --dangerously-skip-permissions --model gemini-3.6-flash-high \
+      --output-format json --print-timeout 20m -p "<tek satır, TAM YOLLARLA>"
+  ```
+  **Sessiz zaman aşımının sebebi göreli dosya adı DEĞİLMİŞ.** Gerçek sebep: `read_file`
+  workspace dışında varsayılan "Ask", headless'ta soracak kimse yok, **otomatik reddediliyor**
+  ve agy buna `status:SUCCESS, response:""` diyor — kapı sessizce geçiyor. Medya
+  `~/Desktop/6. Sınıf Animasyonlar/` altında, repo dışında; her klip okuması buna çarpıyordu.
+  `--add-dir`, cwd taşımak ve `settings.json` allow kuralı **denendi, hiçbiri açmadı.**
+  ⚠ İzin bayrağı agy'nin kendi onay kapısını kapatır; **salt-okur tarif işlerinde** kullanılır.
+  `--output-format json` zorunlu: text modunda başarısızlık boş satır, JSON'da `status`+`error`.
+  **Kapasite:** 1M bağlam · video 1 FPS örnekleniyor, ~300 token/sn · **istek başına 10 videoya
+  kadar** · varsayılan çözünürlükte 1 saat video sığıyor. Yani 3-4 dakikalık **tam film**
+  rahat izlenir ve **sekans başına 8-10 klip TEK çağrıda** verilebilir — klip klip izletmek hem
+  pahalı hem de süreklilik kusurunu (K12'deki gömlek K13'te değişti) yapısal olarak göremez.
+  🔴 **AGY'ye HÜKÜM sordurma, TARİF ettir** — hüküm sorulunca her şeye "YOK" basıyor.
+- **Codex sınırları — kanona yazılan sayı 1M DEĞİL.** CLI bağlam penceresi **272.000**
+  (kullanılabilir ~258k), API'nin ilan ettiği 1.05M değil; ayrıca **tek dosya okuması 10.000
+  token'da kesiliyor.** Yani Codex'e "repoyu ver" denmez — **adı verilmiş 5-15 dosyalık,
+  toplamı 200k altında bir küme** verilir. **Codex video GÖREMEZ** (`text`, `image`) — klip
+  AGY'nin işi, prompt metni ve kod Codex'in.
+  **Model seçimi maliyet kararıdır:** üçünün de bağlamı aynı, fark muhakeme ve fiyat.
+  1M girdi başına kredi — **Sol 125 · Terra 50 · Luna 5.** Mekanik denetim (tutarlılık taraması,
+  çapraz kontrol) → **Terra/Luna**; tek-atış kök-neden teşhisi → **Sol + `xhigh`**.
+  ```
+  codex exec -m gpt-5.6-terra -c model_reasoning_effort='"high"' \
+    -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
+  ```
 - **İş bölümü değişmez:** Claude ÖLÇER → AGY GÖRÜR → Codex ÇÜRÜTÜR → **hükmü MAMİ verir.**
 - **Uzanmamak kusurdur.** Bir hüküm gözle ya da ikinci gözle doğrulanabiliyorsa ve
   doğrulanmadıysa, o hüküm eksik teslim edilmiştir.
