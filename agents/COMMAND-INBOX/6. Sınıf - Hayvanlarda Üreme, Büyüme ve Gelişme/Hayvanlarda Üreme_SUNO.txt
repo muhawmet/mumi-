@@ -1,0 +1,40 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MÜZİK BRIEF (Suno)
+=========================================================================
+Süre hedefi: ~4:20 · Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A warm, unhurried orchestral underscore for a children's science film set in a village
+garden at early morning — a hen sitting on her eggs, kittens asleep in the barn corner,
+a shallow pond further down the slope. The feeling is patient attention: something is
+quietly happening inside things that look still. Small woodwind figures carry curiosity,
+low strings hold the ground, a single soft celesta note marks each small discovery.
+The middle opens outward for the pond, then draws back close and tender for the nest.
+Near the end one long sustained string swell for the transformation, then the theme
+returns exactly as it began — same key, same tempo — because we end where we started.
+No drums kit, no percussion hits, no electronic elements, no vocals, no lyrics.
+Nothing triumphant, nothing sad, nothing tense.
+
+=========================================================================
+AYAR — Suno kutusunun dışındaki alanlar
+=========================================================================
+Instrumental        : AÇIK (vokal yok)
+Süre                : 4:30 hedef (VO 4:20 + kuyruk pay)
+Stil etiketleri     : orchestral, gentle, pastoral, children's film score, warm
+Kaçınılacak (exclude): drums, percussion, vocals, choir, synth, electronic, epic, trailer,
+                       tension, dark, lo-fi, jazz
+
+=========================================================================
+KURGUDA KULLANIM
+=========================================================================
+· A2 kanalına, VO'nun (A1) altına serilir · ~-18 dB
+· K01-K08 (kümes/soru)      : yalnız yaylı yatak, woodwind girmez
+· K09-K22 (gölet)           : açılım — burada müzik en geniş yerindedir
+· K23-K46 (kümes/ahır/üç yol): orta yoğunluk, celesta noktaları kavram anlarına denk gelir
+· K47-K52 (başkalaşım)      : uzun yaylı yükseliş — dersin fikri burada
+· K53-K54 (ayna kapanış)    : açılışın teması birebir döner, aynı tonda, aynı tempoda
+
+⚠ Müzik VO cümlesinin üstüne çıkmaz. Kesimler VO'nun kendi cümle sınırlarına oturur;
+  müzik onlara uydurulur, tersi değil.
