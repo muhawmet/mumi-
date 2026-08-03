@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "projectId": "5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
-  "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam",
+  "projectId": "6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "OPUS5 PLANI İŞ1-2-3-4-5 bitti (İŞ6 kadro kartları kaldı). Lint yönü · kapı gerçek teslimi görüyor · FİKİR/PLAN kapısı · onay debisi ölçülüyor · dünya kusuru adrese dönüyor. Onay kuyruğu hazır: 75 aday → 13 satır, 12 proje.",
-  "nextAction": "Mami 13 dersi seçer (agents/lessons/ONAY-KUYRUGU-2026-08-03.md) → APPROVED.md'ye ekler; sonra İŞ6 kadro kartları + AGY izni",
+  "lastCompleted": "Bitkilerde Üreme 54/54 kare gözle denetlendi: 39 TEMİZ (motion yazıldı, motion-lint 0 kırmızı) · 15 REVİZE adreslendi, düzeltilmiş satırlar hazır. Farklı Kültürler kapandı ve Biten'e taşındı.",
+  "nextAction": "Mami 15 revize karesini yeniden basar (Bitkilerde Üreme_revize.txt) → kareler images/ altına → kalan 15 motion + EDIT-PLAN yazılır",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -14,12 +14,12 @@
     "PROMPTLAR": true,
     "revize": true,
     "MOTION": true,
-    "EDIT-PLAN": true,
+    "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-02T22:09:28.857Z",
+  "updatedAt": "2026-08-03T07:14:27.367Z",
   "updatedBy": "claude",
-  "baseCommit": "14c280d"
+  "baseCommit": "aa425c6"
 }
