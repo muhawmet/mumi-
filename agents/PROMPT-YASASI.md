@@ -627,6 +627,27 @@ Yukarıdaki yedi numara **paragrafın içinde bulunması gereken şeylerin liste
 yazılacak etiket DEĞİLDİR. Numara, köşeli parantez ya da satır başı madde motora gitmez —
 tek istisna `Camera:` sözcüğü, o altın standartta 28/50 dosyada aynen böyle geçiyor.
 
+> 🔴 **ÖLÇÜLDÜ — 7 SABİT KUYRUK FİLMİ DURDURUYOR. MAMİ KARARI BEKLİYOR, kural HENÜZ değişmedi.**
+> (2026-08-03, `Bitkilerde Üreme` bitmiş filmi baştan sona izlendi ve dosyadan ölçüldü.)
+>
+> Mami'nin hükmü *"kurgu çok basic"* idi ve sebebi kesim değil, **bu kuyruk** çıktı:
+> 53 `KAMERA NİYETİ` satırının **45'i** durma/sabitlik/yaklaşmama emri içeriyor ve
+> 53 klibin **53'ünde** `No whip-pan, no shake, no snap-zoom, no camera warp` yazılı.
+> Sonuç: **her klip durarak bitiyor, yani film 54 kez duruyor.**
+> Yan ölçüm — metronom: 54 plan · ortalama 3.84s · medyan 3.83s · **standart sapma 0.68s** ·
+> 2.09s'den kısa ve 5.00s'den uzun **tek bir plan yok**. Ayrıca 53 kesimin 47'si cümle
+> sınırına oturuyor, **tek bir L/J kesim yok**, ve en uzun sessizlik **1.13 saniye**.
+>
+> Kuyruk bir işe yarıyor: **ekranda yazı taşıyan karede harfi kurtarıyor** (ölçüldü, 21/21
+> Türkçe yazı kusursuz çıktı). Ama o karelerin sayısı ~12; kalan 42 klipte kuyruk bedava
+> değil, **filmin akışına mal oluyor.**
+>
+> **Önerilen değişiklik (Mami onaylarsa):** sabit kuyruğun kamera yarısı
+> (`No whip-pan, no shake, no snap-zoom, no camera warp`) **yalnız yazı taşıyan ve katı/mekanik
+> nesne taşıyan karelere** yazılır; kalan kliplerde kamera kesimin içinden akıp geçebilsin.
+> Sessizlik yarısı (`Silent clip, no audio, no dialogue, mouth closed, no lip movement`)
+> **her karede kalır** — o EDU iş akışı yasasıdır, kamera tercihi değil.
+
 🔴 **ÖLÇÜLEN ÜÇ KUSUR — Mami hükmü: *"hareketler çok ai, hiç duygu yok, ruh yok, aptalca ani
 hareketler"* (2026-07-30, Mira K01-K21 basıldı).** Altın standart 50 dosya ile kusurlu 54
 dosya sayıldı; fark şans değil, üç yapısal madde:
