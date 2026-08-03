@@ -1,0 +1,75 @@
+HÜCRE VE ORGANELLERİ — DENETİM SONUCU
+=========================================================================
+Denetim: 2026-08-03 · 6 sekans ajanı, ajan başına bir sekans, TEK GEÇİŞ
+Her kare Read ile açıldı ve GÖRÜLDÜ. 53 karenin 53'ü denetlendi.
+
+SONUÇ: 53/53 TEMİZ — revize edilecek kare YOK, yeniden üretilecek kare YOK.
+
+Revize eşiği (Mami kararı, 2026-08-03 — bu iş için, yasa değil):
+  1. sahne sıfırdan üretilmeli   2. bozuk sahne ya da bozuk yazı
+  3. ekran VO cümlesiyle uyuşmuyor
+Bu üçünün dışındaki hiçbir şey revize sayılmadı; süreklilik ve malzeme farkları
+motion tarafında kadraj ve kamera yönüyle çözüldü.
+
+=========================================================================
+SEKANS SEKANS
+=========================================================================
+S1  K01–K08   8/8 temiz
+S2  K09–K15   7/7 temiz
+S3  K16–K22   7/7 temiz
+S4a K23–K30   8/8 temiz
+S4b K31–K38   8/8 temiz
+S5  K39–K48   10/10 temiz
+S6  K49–K53   5/5 temiz
+
+YAZI DENETİMİ — 21 kare ekranda yazı taşıyor, 21'i de kareye BAKARAK hecelendi:
+  gerçek dünya : K01 ÇİMENTO · K03 "180" · K08 FEN BİLİMLERİ · K09 SOĞAN · K12 LAM
+                 K13 10x/40x · K39 TUZ · K41 MUTFAK · K50 SÜT · K51 ÇİMENTO
+  hücre içi    : K21 ÇEKİRDEK · K22 40x · K25 MİTOKONDRİ · K28 RİBOZOM
+                 K30 ENDOPLAZMİK RETİKULUM · K32 GOLGİ CİSİMCİĞİ · K34 LİZOZOM
+                 K36 KOFUL · K38 KLOROPLAST · K43 HÜCRE DUVARI · K46 SENTROZOM
+  Eksik nokta, sedilla/breve hatası, ters harf, ayna, uydurma glif: SIFIR.
+
+ÖĞRETİM DOĞRULUĞU: 53/53 tutuyor. Soğan (bitki) hücresi köşeli + hücre duvarı var +
+kloroplast yok; kloroplast maydanoz yaprağı örneğinde (K37-K38). Hayvan (yanak)
+hücresi yuvarlak + duvar yok + kloroplast yok + sentrozom var + koful küçük ve çok.
+
+=========================================================================
+EŞİĞİN ALTINDA KALAN, REVİZE YAZILMAYAN GÖZLEMLER (kayıt için)
+=========================================================================
+· Duvar malzemesi K02/K04/K52/K53'te kaba yonu kireçtaşı yerine düzgün fabrika
+  tuğlası geldi (K01/K05/K51 doğru). Mami kabul etti. Telafi motion'da: dört klipte
+  de kamera duvar yüzeyini taramıyor, ilgi ele/soğana/tuğla yığınına bağlı.
+· Mitokondri K24-K26'da ve kloroplast K37-K38'de KESİTLİ geldi; prompt'un NEGATIVE'i
+  kesiti yasaklıyordu. Öğretim açısından doğru (krista ve granum yerinde), o yüzden
+  temiz sayıldı. Kilitlerde "kesit bu hâliyle donar, yeniden kesilmez" yazıldı.
+· K46 SENTROZOM harfleri istenen mat tebeşirimsi çubuk maddesi yerine camsı geldi;
+  kilide "hiçbir akan sıvı harfleri bükmez, kırmaz, yüzdürmez" eklendi.
+· K49'da prompt'un istediği lastik göz siperi halka izi render edilmemiş; motion yeni
+  öğe doğuramayacağı için vuruş gözbebeği ve çeneye bağlandı.
+· K09/K12 ile K11/K13 arasında mutfak seti hafif kayıyor; her karede kamera düşük
+  genlikli tutuldu ve ilgi tezgâh üstündeki hero-prop'a bağlandı.
+
+=========================================================================
+DERS ADAYLARI — kapanış hasadına girer, APPROVED'a yalnız Mami taşır
+=========================================================================
+1. Bir organelin KANONİK ÇİZİM GELENEĞİ negatifle iptal edilemiyor. "never cut open,
+   never sectioned, no cutaway" beş karenin beşinde yok sayıldı; motorun "mitokondri"
+   ve "kloroplast" için varsayılanı ders kitabı kesitidir. Kapalı kabuk isteniyorsa
+   OLUMLU yazılmalı: "an unbroken amber shell whose folds are read through the
+   translucent wall." — "yasak SAYMAK yanıltır" sınıfının yeni örneği.
+2. Yazı-kilidi haritası KARE NUMARASIYLA değil "bu karede harf var mı" sorusuyla
+   kurulur. Denetim brief'i yazı taşıyan kareleri ENZİM'in organel-adı tablosundan
+   aldı ve 21 kareden 7'sini saydı; gerçek kaynak her PROMPTLAR bloğunun kendi YAZI
+   beyanıdır. İki ajan kusuru bağımsız olarak yakalayıp kapattı — yani kusur brief'te,
+   ajanda değil. (Bu, repoda ölçülen "doğrulayıcı yerleşimi varsayıyor" sınıfının
+   9. örneği.)
+3. i2v'de ÖN PLAN ÇAPASI bir nesne değil bir KAMERA GÖREVİdir. K14'te motor "bulanık
+   odak düğmesi" isteğini ikinci bir mikroskop gövdesi olarak render etti; kamera onu
+   çözerse klip iki alete bölünür. Kilit olumlu yazılmalı: "blurred instrument mass
+   holds the near right and never resolves."
+4. Yazı taşıyan karede kamera hareketi tamamen yasaklanmak zorunda değil: SABİT
+   YARIÇAPLI YAY kullanılırsa kamera hareket eder ama kelimenin ekrandaki boyu hiç
+   değişmez (K46). "Kamera yazıya yaklaşmaz" kuralı böylece ölü kadraj üretmez.
+5. Harfin ZAR ÜZERİNDEKİ YANSIMASI ikinci bir yazı yüzeyidir (K32, K34) ve motor onu
+   ana harften bağımsız bozabilir. Yansıma da kilitlenir: "düz ayna kalır."
