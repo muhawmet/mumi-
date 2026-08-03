@@ -224,3 +224,63 @@ Liste kurulduktan sonra ikinci bir geçiş yapıldı. **Dört şey değişti:**
 - **13. sıra tek projeden** geliyor; iç kontrolü var ama ikinci proje doğrulaması yok.
 - 🔴 **Çözülmemiş çelişki — bankaya girmeden önce Mami'nin kararı gerekiyor.** Yazı yükü hakkında üç hüküm aynı anda doğru olamaz: yasa §11c *"karelerin ~yarısı yazı taşır, 36/50 boş da hatadır"* · Mami (6.1.2 transkripti) *"4 dakikalık videoda 2 kere de yazı istemiyorum"* · ölçüm (`sorunlari` A8) *"altı yazı yüzeyli blok 3 baştan, düşük yüklü blok 0 baştan"*. 6. sıra bu çelişkinin **yüzey** eksenini çözüyor, **sıklık** eksenini çözmüyor.
 - **18. sıradaki klip süresi de çelişkili:** bir kaynak 6 saniye diyor, diğeri teslim edilen kliplerin 4.04–10.04s olduğunu ölçüyor. Karar verilmeden banka satırı yazılmamalı.
+
+---
+---
+
+# GÜNCELLEME — 2026-08-03 akşam (Hücre ve Organelleri turu)
+
+> Yukarıdaki 13 dün seçildi. Bugün Hücre ve Organelleri'nde **16 gerçek kusur** ölçüldü ve
+> 91 aday bu kusurlara karşı tarandı. Sonuç sıralamayı yine bozdu — aşağısı gerekçesi.
+
+## A. BUGÜN BAĞIMSIZ İKİNCİ KANITINI ALANLAR (yukarıdaki listeden — öncelikleri arttı)
+
+| # | ders | bugünkü ikinci kanıt |
+|---|---|---|
+| **1** | referans-edit yarı ömürlü, düzeltme NEGATIVE'e de yazılır | bugün yazılan **12 "change ONLY" edit'inin 12'sinde de NEGATIVE satırı yok**; Bileşke'nin `carryOverRate 0.63`'üne göre ~8'i geri dönecekti. Ajan bunu bağımsız olarak yeniden türetti. |
+| **2** | @tag çağıran kare kadrajın neyi dışarıda bıraktığını yazar | Hücre ENZİM'i bu cümleyi yazdı → **53 karede plastikleşme kusuru sıfır.** Artık iki yönlü kanıt (ihlal edilince kötü, uygulanınca temiz). |
+| **7** | @tag kimliği taşır, DURUMU taşımaz | dördüncü proje: K26'da mitokondriler K19'da kurulan "sıvıda asılı" rejimini bozup düz yüzeye oturdu. |
+| **10** | kavram ışığı bir süreklilik karakteridir | aynı projede iki yönlü: kavram ışığı devrettirildi → 30+ hücre-içi karede sıfır ışık kusuru; **ortam ışığı devrettirilmedi → K04'te K01'in altın saati gri kapalı gökyüzüne kaydı.** Ders bu yüzden "ortam ışığı da dahil" diye genişletilmeli. |
+| **12** | temas gölgesi örneği asla ayakkabıya yazılmaz | ENZİM istisnayı yazdı, kusur çıkmadı — ikinci yönlü kanıt. |
+
+## B. YENİ — bugün doğdu, yukarıdaki 13'te ve 91 adayın hiçbirinde YOK
+
+🔴 **B1 · ÇOCUK GÜVENLİĞİ** — 91 adayda ve `PROMPT-YASASI.md`'de karşılığı **sıfır**.
+- [ ] `- Çocuk kadrajdaysa kesici alet, açık ateş, kaynar sıvı ve ağza giren nesne YAZILMAZ; iş bitmiş gösterilir (soğan çoktan ikiye ayrılmış, eller tahtada düz duruyor) — ders okula gidiyor, bu bir kalite maddesi değil yayın engelidir — kaynak: 5. Sınıf - Hücre ve Organelleri · 2026-08-03 · Mami onayı`
+  kanıt: K10 prompt'u birebir *"the right still holding the knife"* yazıyordu; K09, K40 aynı sınıf. Üçü de birinci denetim geçişinden "temiz" çıktı çünkü hiçbir kıstas onları sormuyordu.
+
+🔴 **B2 · RENDER DİLİ KAYMASI BİR DÜNYA İHLALİDİR**
+- [ ] `- Render dili farkı bir süreklilik kusuru değil DÜNYA İHLALİDİR ve tek başına revize sebebidir: EDU karesinde foto-gerçekçi ten, gözenek, sakal kılı ya da oyun-motoru dokusu görülürse kare komşularının diliyle yeniden render edilir — kaynak: 5. Sınıf - Hücre ve Organelleri · 2026-08-03 · Mami onayı`
+  kanıt: K02, K04, K40 foto-gerçekçiye kaydı, üçü de "temiz" geçti.
+  ⚠ **Bu satır onaylanırsa `PROMPT-YASASI.md` 204-207 ve 438-441 düzeltilmeli** — orada
+  *"üslup farkı tek başına revize sebebi DEĞİLDİR"* yazıyor ve bugünkü körlüğü doğrudan o üretti.
+
+🔴 **B3 · VO'NUN NİCELİK VE KONUM SIFATLARI KOMPOZİSYON EMRİDİR**
+- [ ] `- VO cümlesindeki her nicelik ve konum sıfatı bir KOMPOZİSYON emridir ve sayıyla yazılır: "hepsi içinde yüzer" → kaç adet ve hangi derinlikte, "ortada duruyordu" → kadrajın merkezinde ve en büyük, "içi sıvı dolu" → sıvının görünür seviyesi; yazılmazsa motor tek örnek koyup gerisini boş bırakıyor — kaynak: 5. Sınıf - Hücre ve Organelleri · 2026-08-03 · Mami onayı`
+  kanıt: K19 (VO "bütün organeller" → prompt "three"), K20 (VO "ortada" → prompt "well off centre in the right third"), K35.
+
+🔴 **B4 · KARŞILAŞTIRMA CÜMLESİ İKİ TARAF İSTER**
+- [ ] `- "X'te vardı, Y'de yoktu" kalıbındaki her VO cümlesi kadrajda İKİ TARAFI birden ister (bölünmüş kare ya da yan yana iki örnek); tek taraflı kare verilirse cümle ekranda yalnız yarısını buluyor — kaynak: 5. Sınıf - Hücre ve Organelleri · 2026-08-03 · Mami onayı`
+  kanıt: K45 ve K48 — üstelik o karelerin NEGATIVE'i çözümü **açıkça yasaklıyordu**
+  (*"no split screen and no side-by-side comparison panel"*). Prompt kendi cevabını kapatmış.
+
+🔴 **B5 · VO'NUN UZUV-ÖLÇEĞİ PROMPT'A GEÇER**
+- [ ] `- VO bir uzva göre ölçü veriyorsa (tırnağının ucuyla, avucunda, parmak kadar) nesnenin boyu prompt'ta o uzva göre yazılır — yazılmazsa motor nesneyi hikâye önemine göre büyütüyor ve ölçek on kat kayıyor — kaynak: 5. Sınıf - Hücre ve Organelleri · 2026-08-03 · Mami onayı`
+  kanıt: K11 — VO "tırnağının ucuyla kaldırdı", gelen kare A4 boyunda sert bir levha.
+  Doğru yazım korpusta zaten kanıtlı: K40 *"a soft dome the width of a coin"* → tam o ölçüde geldi.
+
+## C. YER AÇMAK İÇİN DÜŞMESİ ÖNERİLENLER — tavan 13, yukarıya 5 yeni giriyor
+
+Banka bugün **7 ders taşıyor ve 6'sı "kareye yazı nasıl konur"un dersi.** Bugün 21 yazılı karenin
+21'i kusursuz çıktı — yani o katman **çözülmüş** durumda. Buna karşılık bugünkü 16 kusurun
+**hiçbiri yazı değildi.** Öneri: yazı ailesinden üç satır ve iki dar satır düşsün.
+
+- **#8 üçüncü yazı sınıfı** — bugün 21 karede uygulandı, 0 kusur; artık proje ENZİM'i taşıyor.
+- **#6 yazı sınırı yüzey sayısıdır** — aynı aile, bankada zaten 6 yazı dersi var.
+- **#9 yazı yüzeye sabitlenir** — aynı aile.
+- **#13 NB2 darlık üretmez** — tek projeye özel, dar.
+- **#11 iki tag'li karakterde gardırop çıpası** — bugünkü teslimde tek tag'li karakter vardı, sınanmadı.
+
+**Önerilen son 13:** 1 · 2 · 3 · 4 · 5 · 7 · 10 · 12 · B1 · B2 · B3 · B4 · B5
+
+Hüküm Mami'nin: kutucukları o işaretler, otomatik promote yok.
