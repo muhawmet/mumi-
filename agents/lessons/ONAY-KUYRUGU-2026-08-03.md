@@ -347,3 +347,69 @@ Buna karşılık filmin en iyi 40 saniyesi (2:44-3:27) karakterin neredeyse her 
 - **Showreel kesiti hazır (56 sn):** `0:00-0:13` + `2:44-3:27`. İki parça arka arkaya
   kesildiğinde filmin kendisinden belirgin biçimde daha iyi — çünkü tam da eksik olan iki şeyi
   içeriyor: **kahraman ve olay.**
+
+---
+
+# EK 2 — ESKİ ALTIN STANDART İZLENDİ (Eşeyli, 4:32) · 2026-08-03 gece
+
+> İki bitmiş film baştan sona ölçüldü ve **aynı yere çıktılar.** Mami'nin *"Eşeyli eskidi"*
+> hükmünün ölçülmüş karşılığı: **fark kare değil, ZAMAN.**
+
+## 🔴 B11 · YAZILAN KAMERA NİYETİ MOTORA GEÇMİYOR
+
+- [ ] `- Motion metnindeki cesur kamera hareketi (kreyn, orbit, takip) teslimde push-in'e düşüyorsa kusur metinde değil motordadır; kamera niyeti yazıldıktan sonra klip izlenip TESLİM EDİLEN hareket doğrulanır, yoksa yasa yazdığını sandığı şeyi hiç almamış olur — kaynak: 6. Sınıf - Eşeyli ve Eşeysiz Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: 50 planın **34'ü yavaş push-in** · 10 sabit · 3 tilt · 2 geri çekiliş · **tüm filmde
+tek bir pan**, sıfır kreyn, sıfır orbit, sıfır takip. `MOTION/30.txt` *"kamera tezgâh tahtasının
+altından kreynle yükselip ön plandaki kavanozu sıyırarak"* diyor; 2:36'da teslim edilen şey
+nazik bir push-in.
+
+## 🔴 B12 · PLASTİKLİĞİN İKİNCİ YASASI — çocuk BAKARKEN plastik, YAPARKEN doğal
+
+- [ ] `- İnsan karesinde karaktere daima bir EYLEM verilir (uzanmak, çevirmek, yaslanmak, yazmak); yalnız bakan/izleyen karakter plastik okunuyor, elinde ya da gövdesinde iş olan karakter canlı okunuyor — kaynak: 6. Sınıf - Eşeyli ve Eşeysiz Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: doğal okunan **11 anın 11'inde** elde/gövdede bir eylem var (öne eğilme, küreye uzanma,
+vidayı çevirme, kalemle yazma, çeneyi kollara yaslama); plastik okunan **12 anın 12'sinde**
+karakter yalnızca izliyor. **B9 (ışık ve açı) ile birlikte okunur — ikisi aynı kusurun iki yüzü:
+doğal kare = eylem + sert yönlü ışık + eksen dışı açı.**
+
+## 🔴 B13 · REVİZE TESLİME TAŞINMIYOR — denetim değil, TAŞIMA kusuru
+
+- [ ] `- Onaylanan her revize maddesinin teslim edilmiş kareye GERÇEKTEN girdiği tek tek doğrulanır; revize dosyasında yazılı olması uygulandığı anlamına gelmiyor — kaynak: 6. Sınıf - Eşeyli ve Eşeysiz Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: `revize.txt` kostüm kilidi kusurunu **zaten yakalamış** (K8·K18·K29·K40·K46). Aynı
+listedeki takvim düzeltmesi (PZT SAL ÇAR…) teslime **girmiş**, kostüm düzeltmesi **girmemiş**:
+teslimde çocuk 2:30'da lacivert, 3:24'te haki, geri kalanda turuncu kapüşonlu. Dahası 2:32'deki
+yüz **başka bir çocuk** — uzun çene, yetişkin burun, 8 değil 13 yaş.
+
+## 🔴 B14 · MÜZİK FİLMDEN KISA — sessizlik kaza eseri doğuyor
+
+- [ ] `- Müzik dosyasının toplam süresi filmin süresinden kısaysa kurgu ortada sessizliğe düşüyor; kaba kurgu teslim edilmeden önce müzik süresi ile film süresi karşılaştırılır — kaynak: 6. Sınıf - Eşeyli ve Eşeysiz Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: `ses1.wav` (130.5s) + `ses2.wav` (88.6s) = **219 saniye müzik**, film **272 saniye**.
+Sonuç: **1:27-2:26 arası 59 saniye müzik YOK** ve o aralık zaten filmin görsel olarak en düz
+yeri (73 saniyede sıfır sert kesim). Görüntü ve ses aynı anda düşüyor.
+
+## Ölçülen ama ders adayı olmayan — iki filmin ORTAK deseni
+
+| ölçüm | Eşeyli (4:32) | Bitkilerde (3:27) |
+|---|---|---|
+| plan sayısı / ortalama | 50 / 5.4s | 54 / 3.84s |
+| plan boyu dağılımı | 35'i 4-5s | 48'i 3-5s, sapma 0.68s |
+| baskın kamera | 34/50 push-in | 45/53 niyette durma emri |
+| en uzun VO nefesi | **0.509 s** | **1.13 s** |
+| ışık rejimi | 272s'nin 256'sı (%94) kehribar | tek altın saat |
+| kesim-cümle ilişkisi | 50/50 birebir | 47/53 cümle sınırında |
+| L/J kesim | 0 | 0 |
+| müzik | 59 saniye boşluk | ödeme anında düşüyor |
+
+**HÜKÜM — günün sonucu:** İki film de **fikir katmanında güçlü** (kavramı görüntüye çevirme,
+Türkçe yazı, sanat yönetimi) ve **zaman katmanında zayıf**: tek kamera hareketi, tek plan boyu,
+tek ışık rejimi, yarım saniyelik tek nefes, hiç L/J kesim. Mami *"daha iyisini yaptık"* derken
+kastettiği fark **ritim**, kare değil. Ve ritim kurguda düzeltilemez — **kare yazılmadan önce
+tasarlanır.** Bu yüzden bu oturumda doğan `mamilas-plan` skill'i bir süs değil, iki filmde
+ölçülmüş bir boşluğun karşılığıdır.
+
+**Showreel aralıkları hazır (ikisi de ölçümle seçildi):**
+· Eşeyli — `0:00-0:34` + `4:12-4:32` (54 sn)
+· Bitkilerde — `0:00-0:13` + `2:44-3:27` (56 sn)
