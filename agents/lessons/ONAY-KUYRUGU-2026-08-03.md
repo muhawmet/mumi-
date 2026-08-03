@@ -284,3 +284,66 @@ Banka bugün **7 ders taşıyor ve 6'sı "kareye yazı nasıl konur"un dersi.** 
 **Önerilen son 13:** 1 · 2 · 3 · 4 · 5 · 7 · 10 · 12 · B1 · B2 · B3 · B4 · B5
 
 Hüküm Mami'nin: kutucukları o işaretler, otomatik promote yok.
+
+---
+
+# EK — TAM VİDEO İZLENDİ (Bitkilerde, 3:27) · 2026-08-03 gece
+
+> Mami: *"tam videoları izlesene teker teker izleteceğine, hem kurgu da çok basic onu da
+> anlarsın."* İzlendi ve **kurgunun neden basic olduğu sayıyla çıktı.** Aşağıdakiler
+> tahmin değil, dosyadan ölçüm.
+
+## 🔴 B6 · SABİT KUYRUK FİLMİ 54 KEZ DURDURUYOR — en pahalı tek bulgu
+
+- [ ] `- "No whip-pan, no shake, no snap-zoom, no camera warp" kuyruğu YALNIZ ekranda yazı taşıyan karelere yazılır; her klibe yazılınca her klip DURARAK biter ve film klip sayısı kadar kez durur — kurgunun "basic" hissettirmesinin kök nedeni budur, kesim değil — kaynak: 6. Sınıf - Bitkilerde Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: 53 `KAMERA NİYETİ` satırının **45'i** durma/sabitlik/yaklaşmama emri içeriyor ve
+53 klibin **53'ünde** sabit kuyruk var. Bedeli: her klip durarak bitiyor, film 54 kez duruyor.
+Kilit yazıyı korumak için var ve **~12 klipte gerçekten gerekli**; kalan 42'de bedava değil,
+filmin akışına mal oluyor.
+
+## 🔴 B7 · METRONOM SAYIYLA KANITLANDI
+
+- [ ] `- Bir sekansta plan süreleri BİLEREK farklılaştırılır: tanım/isim planları 1.5-2 saniyeye iner, ödeme planı 8-9 saniye tutulur; bütün planlar aynı bantta kalırsa ritim değil metronom doğar — kaynak: 6. Sınıf - Bitkilerde Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: 54 plan · ortalama **3.84s** · medyan 3.83s · standart sapma **0.68s** · 48'i 3-5 saniye
+arasında · **2.09s'den kısa ve 5.00s'den uzun tek bir plan yok.**
+
+## 🔴 B8 · "UZUN ÜRET" BAYRAĞI PLANDA KALIYOR, ÜRETİME GEÇMİYOR
+
+- [ ] `- EDIT-PLAN'da "UZUN ÜRET" işaretli klip, üretim anında motor tarafında da uzun üretilir; plan dosyasında kalan bayrak hiçbir şey değiştirmiyor ve kurgu kırpılmamış klip boyuna mahkûm oluyor — kaynak: 6. Sınıf - Bitkilerde Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: 54 kaynak klibin **51'i tam 5.04 saniye**. EDIT-PLAN 15 klibi `🔴 UZUN ÜRET` diye
+işaretlemiş; o 15'ten **yalnız 1'i** gerçekten uzun üretilmiş. Filmde **13 plan tam 4.54 saniye**
+— yani kırpılmamış klip boyu.
+
+## 🔴 B9 · PLASTİKLİĞİN SEBEBİ MODEL DEĞİL, IŞIK VE AÇI — Mami'nin sorusunun cevabı
+
+- [ ] `- Karakter kadraja DİK bakıp iki gözü birden aydınlıkken ve yüzünü kesen hiçbir gölge yokken plastik okunuyor; profil ya da dörtte üç durup sert yan/arka ışıkla yüzünün bir yanı karanlığa düştüğünde doğal okunuyor — kare prompt'unda insan yüzü için ışık YÖNÜ ve kadraj AÇISI yazılır — kaynak: 6. Sınıf - Bitkilerde Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: plastik okuyanlar 1:02.2 · 2:42.7 · 2:56.1 · 3:13.9 · 0:10.7 (hepsi cepheden, düz dolgu);
+doğal okuyanlar 0:27.5 · 0:30.9 · 2:29.5 · 3:05.3 · **3:08.4 (filmin en iyi karesi — kapı
+arkasından, yüzün yarısı karanlıkta)**. Aynı karakter, 30 saniye ara: 0:30.9 gerçek, 1:02.2 oyuncak.
+**Mami'nin "bazı sahneler plastik ve AI gibi" sorusunun ölçülmüş cevabı budur.**
+
+## 🔴 B10 · KAHRAMAN KADRAJDAN 80 SANİYE ÇIKAMAZ
+
+- [ ] `- Kahraman kadrajdan 20 saniyeden uzun süre çıkmaz; bilgi anlatılırken KİME anlatıldığı ekranda kalır, yoksa video anlatıya eşlik eden bir slayt gösterisine düşer — kaynak: 6. Sınıf - Bitkilerde Üreme · 2026-08-03 · Mami onayı`
+
+kanıt: 0:32.5 → 1:52.2 arası **80 saniye**, filmin **%38'i**, 21 ardışık makro plan, kahraman yok.
+Buna karşılık filmin en iyi 40 saniyesi (2:44-3:27) karakterin neredeyse her planda olduğu bölüm.
+
+## Ek gözlemler — ders adayı değil, doğrudan onarım
+
+- **Kapanış planı anlatıyı yalanlıyor:** VO *"Efe fideyi dikti; arı yeniden geldi"* diyor,
+  kadrajda **ne Efe var ne arı** (3:22.9-3:27.4, boş saksı natürmortu). Tek klip yeniden
+  üretilecekse bu.
+- **Filmin nefesi yok:** anlatı sürenin **%77'sini** kaplıyor, en uzun sessizlik **1.13 saniye**,
+  film 0.3. saniyede anlatıyla başlayıp son karede anlatıyla bitiyor.
+- **Müzik ters kurgulanmış:** 0:44-2:07 arası en yüksek (−13.7 LUFS), ödeme anında **düşüyor**
+  (son bölüm −23.7). Build'in tersi.
+- **Tek bir L/J kesim yok** — 53 kesimin 47'si cümle sınırına oturuyor.
+- **Süreklilik:** Efe 0:30.9'da düz gri tişört, 1:02.2'de ekose gömlek — aynı sabah, aynı balkon.
+- **Showreel kesiti hazır (56 sn):** `0:00-0:13` + `2:44-3:27`. İki parça arka arkaya
+  kesildiğinde filmin kendisinden belirgin biçimde daha iyi — çünkü tam da eksik olan iki şeyi
+  içeriyor: **kahraman ve olay.**

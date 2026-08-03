@@ -115,7 +115,8 @@ referans "ilk tarif"in yerine geçer. Bu yüzden:
   edilmiş** (*"eleven letters, the second one a dotted capital İ"*) · tırnak içinde. Üçü birden
   olduğunda NB2 hata yapmıyor; biri eksikse garbled çıkıyor.
 
-Bilinen NB2 hata kalıpları: `memory/mamilas-nb2-hata-katalogu.md`.
+Bilinen NB2 hata kalıpları: `docs/ai/sync/memory/mamilas-nb2-hata-katalogu.md`
+(⚠ repo kökünde `memory/` diye bir dizin YOKTUR — alt-ajana verilecek yol budur).
 
 ---
 

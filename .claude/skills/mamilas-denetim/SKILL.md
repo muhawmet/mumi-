@@ -32,7 +32,10 @@ bozar: ayrı ajanlar birbirinin kadrajını görmez, aynı prop'un iki karede de
 
 **2. Sekans ajanları (paralel).** Her ajana verilecekler: kendi karelerinin dosya yolları · her
 karenin VO cümlesi · dünya/palet/negatif kilitleri · `PROMPT-YASASI` §1a kıstas sırası ·
-`memory/mamilas-nb2-hata-katalogu` bilinen hata kalıpları. Her ajan kareleri **Read ile açıp
+`docs/ai/sync/memory/mamilas-nb2-hata-katalogu.md` bilinen 10 NB2 hata kalıbı — 🔴 **yolu
+brief'e BİREBİR yaz, "hafızandaki katalog" deme: alt-ajan üst ajanın hafızasını ALMAZ.**
+Ölçüldü (2026-08-03): bu yol `memory/...` diye yazılıydı, o dizin repo'da yok, ve katalog
+bugüne kadar hiçbir denetim ajanının eline geçmedi. Her ajan kareleri **Read ile açıp
 GÖRÜR** — dosya adına ya da prompta bakarak hüküm vermek yasak.
 
 **3. Kıstas sırası — `agents/PROMPT-YASASI.md` §1a.** On madde (0 FİKİR … 9 ÇEKİMİN KENDİSİ),
