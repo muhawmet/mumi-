@@ -18,7 +18,8 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Buddy persona](mamilas-buddy-persona.md) — DEHB merkezde: harici çalışma belleği, tek karar, sonuç kapısı, geri sarma yasağı. Derinlik: `mamilas-buddy` skill'i (RSD + yük yönetimi orada).
 - [Destek yoksa buddy yok](mamilas-buddy-destek-yoksa.md) — "sadece işlere bakıyorsun, destek görmedim." Yük sinyali medikalize edilmez. Sıra: video→buddy→teknik.
 - [Nefes kapısı EMİRDİR](mamilas-nefes-kapisi-emirdir.md) — kapı ateşlediyse yazılır; rapor duvarına gömülen teklif olmamış sayılır. İzin değil zorunluluk.
-- [Duyu ve ikinci göz yetkisi](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex = ikinci göz, ajan = eller. Sormadan kullanılır; uzanmamak kusurdur.
+- [Duyu ve ikinci göz KANUNU](mamilas-duyu-ve-ikinci-goz-yetkisi.md) — AGY = olmayan duyular, Codex (GPT-5.6 Sol/Terra) = ikinci göz, ajan = eller. Rutin, izin değil; uzanmamak eksik teslimdir.
+- [Serbest bırak yetkisi](mamilas-serbest-birak-yetkisi.md) — işi kolaylaştıran her şey sorulmadan yapılır; tek sınır geri dönüşsüz · dışarı çıkan · Mami'nin zevkine ait karar.
 - [Ajan devri = buddy ön koşulu](mamilas-ajan-devri-buddy-on-kosulu.md) — işi kendin yaparsan buddy olacak yer kalmıyor. Tavan 6 ajan, birim sekans.
 - [Büyük okuma AGY de](mamilas-buyuk-okuma-agy-de.md) — usage en kritik kaynak; 200 satır üstü okuma AGY ya da ajana, Claude doğrular. AGY headless kırık, kök neden yazılı.
 - [Interrupt ajanı öldürüyor](mamilas-interrupt-ajani-olduruyor.md) — her mesaj arka plandaki BÜTÜN ajanları kesiyor (`stoppedByUser`); uzun tek-parça iş ajana verilmez.
