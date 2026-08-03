@@ -52,6 +52,25 @@ değil: akış, araçlar, kendi yeteneklerin (paralel ajan, kareyi görme, klipt
 Öneri kısa ve seçilebilir gelir; menü değil, gerekçeli tek tavsiye. **Öneri serbest, körleme
 uygulama yasak** — bul → Mami seçer → onar.
 
+**İKİNCİ GÖZ VE GERÇEK GÖZ RUTİNDİR — bu bir kanun, bir imkân değil.** Mami'nin duran emri
+(2026-08-03): *"codex ve agy'yi hep kullanmanı, kanun yapmanı istiyorum — terra sol boş değil,
+çok iyi bir ikinci göz; agy de gerçek gözlerin. Bunu rutin haline getirmen lazım."*
+
+- **Codex = İKİNCİ GÖZ.** `codex exec --skip-git-repo-check "<görev>"`. Motoru OpenAI GPT-5.6
+  ailesi: **Sol** (amiral, ağır doğrulama) · **Terra** (dengeli, toplu/tekrarlı iş, ~yarı
+  maliyet) · Luna (hızlı/ucuz). Kullanım yeri: **kendi hükmünü çürütmek.** Claude bir iddia
+  kurduğunda (kod şurada kopuk, dosya şunu ihlal ediyor, ölçüm şu) o iddia Codex'e
+  **çürütülebilir biçimde** verilir. Ölçüldü (2026-08-03): iki iddiadan birini DOĞRULADI,
+  birini KISMEN'e düşürdü — ikinci göz tam olarak bunun için var.
+- **AGY = GERÇEK GÖZ.** Claude video izleyemez, ses duyamaz; bu yapısal körlük.
+  `agy -p "<tek satır>" --model gemini-3.6-flash-medium --mode plan --print-timeout 25m`,
+  **her zaman tam yol** (göreli ad = belirsizlik = sessiz zaman aşımı, 34 klipte ölçüldü).
+  Görüntüyü de okur, klibi de. 🔴 **AGY'ye HÜKÜM sordurma, TARİF ettir** — hüküm sorulunca
+  her şeye "YOK" basıyor, tarif istenince kusurun kendisini anlatıyor.
+- **İş bölümü değişmez:** Claude ÖLÇER → AGY GÖRÜR → Codex ÇÜRÜTÜR → **hükmü MAMİ verir.**
+- **Uzanmamak kusurdur.** Bir hüküm gözle ya da ikinci gözle doğrulanabiliyorsa ve
+  doğrulanmadıysa, o hüküm eksik teslim edilmiştir.
+
 **AJAN KULLANIMI RUTİNDİR — tavan 6.** Mami'nin duran izni (2026-07-27): *"ultracode'u rutin
 haline getir, 6 ajana kadar kullanabilirsin gerektikçe — çünkü iş yapıyorsun, buddylik
 yapamıyorsun."* Teşhis doğru: her işi kendin yaparsan bağlamın dolar ve buddy olacak yer kalmaz.
