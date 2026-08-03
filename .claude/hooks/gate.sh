@@ -120,12 +120,16 @@ fi
 # esini goremez ve saf tasimayi "999 satir eklendi" diye raporlar — bu satir once o yanlisla
 # yazildi ve elemedi. Numstat'in `0 0` satirlari icerigi degismeyen dosyalardir.
 # Bicim iki turlu gelir: `dir/{eski => yeni}/ad` ya da `eski => yeni`; ikisi de yeni yola indirilir.
+# ⚠ TERS YON: `{Biten => }` gibi BOS yeni segment cift egik cizgi birakir
+# (`COMMAND-INBOX//5. Sinif...`) ve eslesme kacar. Bu satir once yalniz ileri yonu (dosya
+# Biten/ altina giderken) onardi; is Biten'den GERI alinunca ayni kapi yeniden kirmizi verdi.
+# Son sed cift egik cizgiyi tekile indirir — iki yon de ayni yola cikar.
 # Rename+DUZENLEME bu listeye GIRMEZ (numstat sifirdan buyuk cikar) — gercek duzenleme olculmeye
 # devam eder. Olcut ad degil SAYI.
 MOVED_ONLY="|$(
   git -c core.quotepath=false diff --cached -M --numstat 2>/dev/null \
     | awk -F'\t' '$1 == "0" && $2 == "0" { print $3 }' \
-    | sed -e 's/{[^}]* => \([^}]*\)}/\1/g' -e 's/.* => //' \
+    | sed -e 's/{[^}]* => \([^}]*\)}/\1/g' -e 's/.* => //' -e 's|//*|/|g' \
     | tr '\n' '|'
 )"
 
