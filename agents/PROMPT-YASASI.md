@@ -94,8 +94,45 @@ Mami'nin canlı direktifi çelişkide her zaman kazanır.
 5. **Sekans sekans teslim:** önce Intro; Mami basar, beğenirse devam. Tek geçişte 50 kare basma.
 
 ### Kare içeriği
-6. **START FRAME HER ŞEYİ TAŞIR.** Kling yeniden üretimde kötü — motion yeni karakter, nesne
-   veya yazı doğurmaz. Sahnede ne olacaksa karede zaten vardır.
+
+🔴 **5ø. KAYNAĞIN TONU KİLİTTİR — ÇATIŞMA İCAT EDİLMEZ.** (Müşteri revizesi, 2026-08-04.
+Bu maddenin yeri bilerek en üsttedir: altındaki her madde bunun içinde geçerlidir.)
+
+> Müşterinin sorusu birebir: *"senaryoyu dümdüz açtılar, sen neden duygusal video yönüne
+> döndün? Materyalde hüzün, zenofobi falan yok."* Haklıydı.
+
+**Ölçülen sapma — `Farklı Kültürler` (5. Sınıf Sosyal Bilgiler):**
+
+| kaynak senaryo ne diyor | teslim ne yazdı |
+|---|---|
+| *"Öğrenciler birbirlerini **gülümseyerek karşılar**"* | *"Yeni gelen bir kız **tek başına** oturuyor… Mira ona bakıyor ama **yanına gitmiyor**"* |
+| *"İlk anda etkinliğe **uzaktan bakan bir öğrenci** … sonra arkadaşlarının yanına gider"* (utangaçlık → katılım) | *"Tanımadan karar vermişti; **o karar ona ait bile değildi**"* (miras alınmış ön yargıyla yüzleşme) |
+| Türk–Bulgar kültürü bir **karşılaştırma örneği** (kaval, zurna, kalaycılık) | **Bulgaristan'dan geçen ay taşınmış, adı olan bir göçmen çocuk** ve onun dışlanması |
+
+**Kural:** kaynak senaryonun **duygusal rejimi** dünya kilidi kadar bağlayıcıdır.
+Kaynak olumlu ve çatışmasızsa **teslim de olumlu ve çatışmasızdır.** Yalnızlık, dışlanma,
+ön yargı, suçluluk, uzlaşma yayı — hiçbiri kaynakta yoksa **eklenmez.** Bir karaktere
+kaynakta olmayan bir kusur (ön yargı, kayıtsızlık, korku) **yüklenemez**; hele o kusurun
+nesnesi kimliği belirli bir grupsa (göçmen, yabancı, azınlık) asla.
+Kaynak "gülümseyerek karşılıyor" diyorsa, teslim de gülümseyerek karşılar.
+
+🔴 **KÖK NEDEN — bu yasanın kendi ürettiği sapma, o yüzden düzeltmesi de burada:**
+§2ø *"görünür bir **gerilim** var mı, yoksa kare ölüdür"* diyor ve §3a *"klibin sonu başından
+farklı olmalı"* diyor. Kaynakta gerilim yoksa ajan onu **imal ediyor** — ve imal edilen
+gerilimin en ucuz biçimi **çatışmadır**: biri dışlanır, biri yargılar, sonra barışır.
+
+**Eksik olan yarısı şudur: GERİLİM ÇATIŞMADAN DEĞİL, MERAKTAN DA DOĞAR.**
+Çatışmasız bir kaynakta FİKİR kıstası şu beş kaynaktan biriyle karşılanır:
+· **merak** — görülmemiş bir şeye ilk bakış (mikroskop, ilk ses, açılan kutu)
+· **fark ediş** — tanıdık bir şeyin başka türlü göründüğü an (soğanın içindeki duvar)
+· **ölçek** — küçük olanın büyük çıkması, uzak olanın yakın çıkması
+· **dönüşüm** — malzemenin hâl değiştirmesi (su → buhar, iplik → kumaş, boya → ebru)
+· **yankı** — iki ayrı şeyin aynı olduğunun görülmesi (kaval ile kaval, iki masa aynı hizada)
+Bunların hiçbiri kimseyi yalnız bırakmaz, kimseyi yargılamaz ve kimseye kusur yüklemez.
+
+**Denetim sorusu (her kare ve her VO cümlesi için):** *"Bu cümle/kare kaynakta var mı, yoksa
+ben mi ekledim? Eklediysem duygusal rejimi değiştiriyor mu?"* Değiştiriyorsa **çıkarılır** —
+güzel olsa bile. Teslim kaynağın filmidir, ajanın filmi değil.
 7. **Her kare VO cümlesiyle birebir eş.** Bu birinci kıstas; teslimden önce sen denetle.
 8. **[EDU] Sinematik güzel, öğreticilikte sıfır hata.** Premium show okula satılıyor — ama önce
    doğru. **[REAL] karşılığı:** sinematik güzel, **ürün gerçeğinde** sıfır hata — yüzey, oran ve

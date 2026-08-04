@@ -413,3 +413,49 @@ tasarlanır.** Bu yüzden bu oturumda doğan `mamilas-plan` skill'i bir süs de�
 **Showreel aralıkları hazır (ikisi de ölçümle seçildi):**
 · Eşeyli — `0:00-0:34` + `4:12-4:32` (54 sn)
 · Bitkilerde — `0:00-0:13` + `2:44-3:27` (56 sn)
+
+---
+
+# EK 3 — MÜŞTERİ REVİZESİ · 2026-08-04
+
+> Bu, **müşteriden gelen ilk doğrudan revize** ve bugüne kadarki en pahalı sınıf: ders içeriği
+> doğruydu, prompt'lar temizdi, lint yeşildi — ve iş yine reddedildi. Kusur kalitede değil
+> **SADAKATTE**.
+
+## 🔴 B15 · KAYNAĞIN DUYGUSAL REJİMİ KİLİTTİR
+
+- [ ] `- Kaynak senaryonun duygusal rejimi dünya kilidi kadar bağlayıcıdır: kaynak olumlu ve çatışmasızsa teslim de olumlu ve çatışmasız olur; yalnızlık, dışlanma, ön yargı ve uzlaşma yayı kaynakta yoksa EKLENMEZ, ve bir karaktere kaynakta olmayan kusur yüklenmez — nesnesi kimliği belirli bir grupsa (göçmen, yabancı, azınlık) asla — kaynak: 5. Sınıf - Farklı Kültürler · 2026-08-04 · Mami onayı`
+
+**Müşterinin cümlesi:** *"senaryoyu dümdüz açtılar, sen neden duygusal video yönüne döndün?
+Materyalde hüzün, zenofobi falan yok."*
+
+**Kanıt — kaynak ile teslim yan yana:**
+
+| kaynak senaryo (`Bekleyen/5.sosyal 1.ünite 2.konu video senaryo.docx`) | teslim (`Farklı Kültürler_SESLENDIRME.txt`) |
+|---|---|
+| Sahne 1: *"Öğrenciler birbirlerini **gülümseyerek karşılar**."* | K02-K04: *"Bahçenin ucundaki bankta, sınıfa yeni gelen bir kız **tek başına** oturuyor… Mira ona bakıyor ama **yanına gitmiyor**; nedenini kendisi de bilmiyor."* |
+| Sahne 5: *"İlk anda etkinliğe **uzaktan bakan bir öğrenci** gösterilir. Öğrenci daha sonra arkadaşlarının yanına gider."* — utangaçlık → katılım | K31-K32: *"Mira dün neden uzakta durduğunu şimdi anlıyordu. **Tanımadan karar vermişti; o karar ona ait bile değildi.**"* — miras alınmış ön yargıyla yüzleşme |
+| Türk–Bulgar kültürü bir **karşılaştırma örneği** (kaval · zurna · kalaycılık) | **Bulgaristan'dan geçen ay taşınmış, adı Dara olan bir göçmen çocuk** ve onun dışlanması |
+
+Kaynakta **hiçbir çatışma yok.** Ders içeriğinin 20 küsur cümlesi doğru aktarılmış; etrafına
+kurulan dramın tamamı ajan icadı.
+
+## 🔴 B16 · GERİLİM ÇATIŞMADAN DEĞİL, MERAKTAN DA DOĞAR
+
+- [ ] `- Çatışmasız bir kaynakta FİKİR kıstası beş kaynaktan biriyle karşılanır — merak (görülmemişe ilk bakış), fark ediş (tanıdığın başka türlü görünmesi), ölçek, dönüşüm (malzemenin hâl değiştirmesi), yankı (iki ayrı şeyin aynı çıkması); hiçbiri kimseyi yalnız bırakmaz, yargılamaz ya da kusurlu göstermez — kaynak: 5. Sınıf - Farklı Kültürler · 2026-08-04 · Mami onayı`
+
+**Kök neden yasanın kendisiydi ve bu maddenin varlık sebebi budur.** §2ø *"görünür bir gerilim
+var mı, yoksa kare ölüdür"* ve §3a *"klibin sonu başından farklı olmalı"* diyor. Kaynakta
+gerilim yoksa ajan onu **imal ediyor**, ve imal edilen gerilimin en ucuz biçimi **çatışma**:
+biri dışlanır, biri yargılar, sonra barışır. Kural yanlış değil, **yarımdı** — ikinci yarısı
+şimdi yazıldı.
+
+⚠ İronik kanıt: aynı yasanın uygulandığı `Hücre ve Organelleri` **çatışmasız** ve Mami onu
+*"şaheser"* ilan etti. Orada gerilim **meraktan** geliyordu (soğanın içinde duvarı görmek).
+Yani doğru yol zaten korpusta vardı, adı konmamıştı.
+
+## Denetime giren yeni soru
+
+Her kare ve her VO cümlesi için: **"Bu kaynakta var mı, yoksa ben mi ekledim? Eklediysem
+duygusal rejimi değiştiriyor mu?"** Değiştiriyorsa **çıkarılır — güzel olsa bile.**
+Teslim kaynağın filmidir, ajanın filmi değil.

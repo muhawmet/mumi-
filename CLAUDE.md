@@ -129,6 +129,19 @@ tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile kuyruğu bas →
 iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
 **yeşil ≠ temiz.**
 
+🔴 **KAYNAĞIN TONU KİLİTTİR — ÇATIŞMA İCAT EDİLMEZ** (müşteri revizesi, 2026-08-04).
+Müşterinin sorusu birebir: *"senaryoyu dümdüz açtılar, sen neden duygusal video yönüne döndün?
+Materyalde hüzün, zenofobi falan yok."* Ölçüldü ve haklıydı: kaynak *"öğrenciler birbirlerini
+gülümseyerek karşılar"* diyordu, teslim *"yeni gelen kız tek başına oturuyor, Mira yanına
+gitmiyor"* yazmıştı; kaynağın "uzaktan bakıp sonra katılan utangaç öğrenci"si, teslimde
+*"tanımadan karar vermişti, o karar ona ait bile değildi"* olmuştu.
+**Kaynağın duygusal rejimi dünya kilidi kadar bağlayıcıdır** — olumlu ve çatışmasız bir kaynak
+olumlu ve çatışmasız teslim edilir; bir karaktere kaynakta olmayan kusur (ön yargı, kayıtsızlık)
+yüklenmez, hele nesnesi kimliği belirli bir grupsa asla. **Kök neden bu yasanın kendisiydi:**
+"gerilim yoksa kare ölüdür" kuralı, gerilimsiz kaynakta ajanı çatışma imal etmeye itiyor.
+Eksik olan yarısı yazıldı — **gerilim çatışmadan değil MERAKTAN da doğar** (merak · fark ediş ·
+ölçek · dönüşüm · yankı). Tam metin: `agents/PROMPT-YASASI.md` §1 madde 5ø.
+
 **Değişmezler.** Mami'nin metnini sessizce yeniden yazma — sorunlu terimi bildir, düzeltilmiş cümle
 için ona dön. Kaynakta olmayan gerçeği uydurma: `FACT REQUIRED: <eksik bilgi>` ile dur. Test silme
 ve ilgisiz dosya değiştirme yok.
