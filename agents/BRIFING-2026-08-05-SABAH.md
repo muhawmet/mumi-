@@ -129,6 +129,67 @@ Bu, senin "tarlada çit çektik" teşhisinin **nedenini** söylüyor.
 
 ---
 
+---
+
+# 🔴 EK — GECENİN İKİNCİ YARISI: YARIN BASACAĞIN SET KUSURLUYMUŞ
+
+## Bulgu: kök MOTION dosyan hâlâ ESKİ sürüm
+
+`Destek ve Hareket Sistemi_MOTION.txt`, `ESKI-cansiz-yedek.txt` ile **byte-byte aynı.**
+Yedek alınmış, **asıl dosya yenilenmemiş.** Yeni motion'lar yalnız `MOTION/` altındaki
+`S*-YENI` ve `M-*` dosyalarında yaşıyor. Sabah kök dosyadan bassaydın eski seti yakacaktın.
+
+## Daha kötüsü: "YENİ" set de aynı kusuru taşıyor
+
+|  | blok | `already` ile açılan | durarak biten |
+|---|---|---|---|
+| **Sabit Sürat** (çalışan korpus) | 44 | **0 (%0)** | **0** |
+| Destek — ESKİ set | 52 | 42 (%81) | 14 |
+| Destek — "YENİ" set | 51 | ~41 (%80) | 13 |
+
+Yeniden yazım bu iki kusura **hiç dokunmamış.** Yani 52 klibi basmak, ölçülen tek çalışan
+setten yapısal olarak ayrışan bir seti yakmak olurdu.
+
+## Ne hazırladım
+
+**① `_BASIM-LISTESI.txt`** — 53 blok, K sırasında, her blokta kaynağı yazılı.
+Sürüm çakışmaları çözüldü, **K24/K32/K49** yalnız eski sürümde olduğu için işaretlendi.
+Üreten araç: `scripts/basim-listesi.mjs` (7 projede de koşar).
+
+**② `_CANARY-MOTION.txt` — 3 klip, yeni lehçeyle.** Codex'in gece tavsiyesi buydu:
+52'yi yakmadan hipotezi sına. K1 (açılış/dünya) · K29 (katı eklem fiziği) · K36 (karakter).
+**Üç karenin üçünü de açtım ve gözle okudum** — görmediğim kareye motion yazmadım.
+`motion-lint`: **kırmızı 0/3, sarı 0.**
+
+Bastıktan sonra üç soru: (1) klip başlarken bir şey oluyor mu? (2) biterken bir şey sürüyor mu?
+(3) "ne oldu" VO'suz okunuyor mu? Üçü EVET ise kalan 49 klip aynı lehçeye çevrilir.
+
+**③ Bir kare kusuru yakalandı — bu gece kurduğum `YÜKÜM` slotu ilk gerçek malzemede çalıştı.**
+K29'un VO'su *"Mira **dizini** bükünce"* diyor ama karede Mira'nın dizi yok — tepside kemik,
+menteşe ve "DİZ" kartı var. Cümlenin öznesi kareye girmemiş. Motion bunu kapatamaz;
+**start-frame kusuru.** Canary dosyasında işaretli.
+
+## Gecenin ikinci yarısında kurulan upgrade'ler
+
+| Ne | Ölçü |
+|---|---|
+| **`yasa-fisi.mjs`** — 1216 satırlık yasadan kare-başı okuma planı | start-frame **%35**, motion **%28**. Tek kanon kalır, ikinci kanon doğmaz. Başlık eşleşmezse **sessiz geçmez, durur** |
+| **`AYRICALIK` + `YÜKÜM` slotları** — kapının SORDUĞU soru değişti | Hücre'de FİKİR/PLAN/FEDA 53/53 doluydu ve 16 kusur geçti; 8'i YÜKÜM'le kesilirdi |
+| **`basim-listesi.mjs`** — sürüm çözücü | İçerik kimliği kuralı: yedekle byte-eş dosya, tarihi yeni olsa bile düşer |
+
+## Bekleyen 7 projenin durumu
+
+| proje | kare | eldekiler |
+|---|---|---|
+| Destek ve Hareket | 52 | PROMPT · MOTION · REF · ENZİM · VO · REVİZE |
+| Hücre ve Organelleri | 53 | tam kit + EDIT |
+| Farklı Kültürler | 0 | PROMPT · MOTION · REF · VO · EDIT · REVİZE |
+| Denetleyici ve Düzenleyici Sistem | 0 | PROMPT · REF · ENZİM · VO |
+| Hayvanlarda Üreme | 0 | PROMPT · REF · ENZİM · VO |
+| Bileşke Kuvvet | 0 | PROMPT · REF · VO · EDIT |
+
+---
+
 ## 8. SIRADAKİ TEK ADIM
 
 Sen uyanınca **tek soru**: yukarıdaki 3 karardan hangisini önce açıyoruz?
