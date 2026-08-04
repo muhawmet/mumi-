@@ -1,0 +1,82 @@
+SABİT SÜRAT VE HIZ — MÜŞTERİ REVİZESİ (2026-08-04)
+=========================================================================
+2 KARE ÜRET · 1 KARE SİL · 1 opsiyonel referans-edit
+Kaynak: müşteri notları + AGY'nin tam video izlemesi (6 zaman kodunun 6'sı tarif edildi)
+=========================================================================
+
+MÜŞTERİ NOTU              → HÜKÜM
+00:21 yol ve çevre        → K06 YENİDEN ÜRET  (aşağıda tam prompt)
+00:36 kaldırım            → dokunma — AGY: "çevre modern, düzenli ve yeşillikli". Kusur burada değil.
+00:41 çantalar yok oldu   → opsiyonel tek edit (aşağıda) — tam süreklilik çok kareye mal olur
+01:00 çevre daha modern   → dokunma — AGY: burası ZATEN modern. Kopukluk 00:49'daki ESKİ pazardan
+                             geliyor; onu da değiştirmek 3. kare demek, müşteri oraya not düşmemiş.
+01:15 okula mesafe        → K06 ile kapanıyor (aşağıya bak)
+02:54 anlamsız olmuş      → K29 SİL + K30 YENİDEN ÜRET
+
+-------------------------------------------------------------------------
+1) K06 — YENİDEN ÜRET      (müşteri: "00.21 yol ve çevre tamamen değişmeli")
+-------------------------------------------------------------------------
+NEDEN: Eski kare "Anadolu yamacı" yazıyordu — kiremit çatılar, minare, çatı su depoları,
+vadide sis, simit arabası. Müşterinin "daha modern" dediği tam bu. Ayrıca AGY iki şey daha
+buldu: çocukların sırtında ÇANTA YOK (oysa VO1 "çantasını sırtladı" diyor) ve okul tepenin
+ta üstünde — 01:15'te okulun dibinde oldukları için "mesafe kısalmış" itirazı buradan doğuyor.
+Üçü de bu tek karede kapanıyor: modern mahalle + çantalar sırtta + okul MAKUL uzaklıkta.
+
+-----
+24mm lens at f/5.6, high wide establishing view, deep focus — a winding residential street curves and climbs from the foreground up to a low modern school building with a Turkish flag on a slim pole at the top of the rise, the whole route legible as one continuous ribbon of road; the school sits perhaps four or five streets away, close enough that its entrance and railings read clearly, not a distant speck on a far hill. @mira and @ali are two small figures near the bottom just setting off along it, both with their backpacks clearly on their shoulders — @mira's warm mustard-yellow satchel and @ali's beige pack both plainly visible from behind. The winding road itself is the hero of the frame. The neighbourhood is a well-kept contemporary Turkish suburb, fully dressed: clean rendered low-rise apartment blocks in warm off-white and pale sand with glazed balconies and slim steel railings, mature plane trees lining both kerbs, tidy grey concrete pavements with cast kerbstones, low clipped hedges and planted beds behind painted metal railings, parked cars along one side, a modern bus shelter with a clean glass panel, contemporary street lamps on tapered poles. Everything is maintained and cared for — no rubble, no bare breeze block, no corrugated sheet, no unfinished structure, no rooftop water tanks, no minaret, no market cart. Mid-morning sun rakes warm across the rooftops and lies in broad window-shaped patches on the road, the beams visible in the clear air, the valley beyond bright and open rather than misted. Three things are alive in the frame: a car moves slowly down one lane far below, two plane-tree crowns stir together in the breeze, a small flock of pigeons lifts from a flat roof. Depth in three layers — a blurred balcony rail in the near foreground, the winding road sharp through the mid-ground, the modern school in warm bokeh at the top. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: smooth painted render on block facades, powder-coated steel railings, cast concrete kerbstones with clean arrises, glazed balcony panels, plane-tree bark with pale plating. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed, never photo-random: one motivated key, complementary bounce fill at a third of key strength in the opposing hue, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark and always legible, never cold-black. No outlines; silhouette carries through lighting rim. Frame at a child's eye-line.
+LIGHT AND PALETTE: shadows settle into an open luminous blue that stays airy and full of detail, midtones glow vivid warm amber across the rendered facades and the road, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Overall exposure is bright and open — a sunlit mid-morning neighbourhood, high-key overall with a directional accent, never a dim or misted view. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: no text anywhere in this frame — a clean plate. No English signage, no floating captions, no equations; any background sign soft-focus, Turkish or blank.
+NEGATIVE: no terracotta pantile roofs, no minaret, no rooftop water tanks, no simit cart, no market stall, no crated produce, no striped awning, no unrendered breeze block, no corrugated sheet, no rubble, no washing lines, no valley mist — this is a maintained modern suburb and never a traditional Anatolian hillside; both children keep their backpacks on their shoulders and neither is empty-shouldered; the school is a low contemporary building at a walkable distance, never a tiny pale speck on a far hilltop; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.
+-----
+
+
+-------------------------------------------------------------------------
+2) K29 — SİL. ÜRETME. VO CÜMLESİNİ DE KES.
+-------------------------------------------------------------------------
+NEDEN: VO33 "Hızın birimi de tıpkı süratteki gibi metre bölü saniye ya da kilometre bölü
+saatti." Bu cümle ÜÇÜNCÜ tekrar: K22 zaten "birim kilometre bölü saat oluyordu" dedi, K30 da
+"yani birimler aynıydı" diye açıyor. Aynı bilgi üç kez. Canonic değil, filler.
+Kesince akış: K28 → K30. "…kuzeye doğru şu kadar hızla gidiyorum demek zorundaydı."
+→ "Yani birimler aynıydı; fark, hızın yer değiştirme üzerinden ve belirli bir yönle ifade
+edilmesiydi." Cümle zaten "yani" ile bağlanıyor, boşluk hissedilmiyor.
+Video ~4 saniye kısalır.
+
+
+-------------------------------------------------------------------------
+3) K30 — YENİDEN ÜRET     (müşteri: "02.54 anlamsız olmuş")
+-------------------------------------------------------------------------
+NEDEN: Müşteri haklı ve sebebi tek kelime. AGY ölçtü: mavi ok GÖKYÜZÜNE, 90 derece DİKEY
+bakıyor — oysa VO yatay düzlemde yer değiştirmeyi ve yönü anlatıyor. Eski prompt "straight
+cool-blue heading-beam" demiş ama "yatay, sokak boyunca, yer hizasında" dememiş; motor
+"straight"i dikey okumuş. Bir de Ali diz çökmüş, Mira kadrajdan çıkmış.
+
+-----
+35mm lens at f/4, eye-level medium view along the street — @mira stands in the middle of the frame with two ideas laid out beside her on the ground, both running HORIZONTALLY away from her along the road and never rising into the air: the faint warm-red winding path traces the whole route she walked, curving with the kerb and dimmed to one side, while the bright straight cool-blue heading-beam lies flat along the pavement from her feet toward the far end of the street, level with the ground, parallel to the road surface, its arrowhead pointing forward down the street at eye height and never upward at the sky. Both lights stay at ground level and travel outward through the frame, never tilting up, never standing vertical, never pointing at the roofline or the clouds. @mira stands upright and looks from the dim red curve to the straight blue beam, her weight settled, her lips closed; @ali stands a little behind her, also upright and on both feet, watching the same two lights. Warm matte tan skin on both, low specular, never tinted green or grey. The setting is a well-kept contemporary Turkish street in mid-morning light — clean rendered low-rise facades, plane trees along the kerb, tidy grey concrete pavement, painted metal railings, parked cars along one side. Three things are alive in the frame: the dim red path glimmers low along the kerb while the blue beam holds bright and steady down the road, motes drift through both lights, a plane-tree crown stirs overhead. Depth in three layers — a blurred railing in the near foreground, @mira and the two ground-level lights sharp in the middle plane, the street receding into warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: cast concrete pavement with clean arrises, powder-coated railing steel, plane-tree bark with pale plating, smooth painted render on facades. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated key, complementary bounce at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark and always legible, never cold-black. No outlines; silhouette carries through lighting rim. Frame at a child's eye-line.
+LIGHT AND PALETTE: shadows settle into an open luminous blue that stays airy and full of detail, midtones glow vivid warm amber along the pavement and the facades, one vivid tomato-red accent punctuates the frame, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin. Overall exposure is bright and open — a sunlit mid-morning street, high-key overall with a directional accent. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: no text anywhere in this frame — a clean plate. No English signage, no floating captions, no equations; any background sign soft-focus, Turkish or blank.
+NEGATIVE: neither light ever leaves the ground plane — no vertical beam, no upward arrow, no shaft rising into the sky, no light pointing at the roofline, the clouds or the top of frame, and no arrowhead aimed anywhere but forward along the street; the blue beam stays a single straight horizontal line and never bends, forks, coils or becomes a ring; @mira and @ali both stand upright on both feet — neither kneels, crouches, sits or leaves the frame; no third child, no adult; no terracotta pantile roofs, no minaret, no market stall, no traditional stone street with timber bay windows; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.
+-----
+
+
+-------------------------------------------------------------------------
+4) OPSİYONEL — çanta sürekliliği (müşteri: "00.41'de çantalar yok oldu")
+-------------------------------------------------------------------------
+DÜRÜST HÜKÜM: Çantalar videonun ÇOĞUNDA yok, birkaç karede var. Tam sürekliliği kurmak
+tek tek çok kareyi yeniden üretmek demek — senin istediğin 2-3 kare değil. Müşterinin
+gördüğü ZIPLAMA tek yerde: çantalı kareden hemen sonra çantasız kareye kesiliyor.
+En ucuz kapanış: çantanın GÖRÜNDÜĞÜ o kareden çantayı çıkarmak (tek referans-edit).
+Karar senin — çantayı hikâye açısından tutmak istersen bu maddeyi atla.
+
+Use this referenced image. Change ONLY this: remove both children's backpacks completely — their shoulders and backs are clear, no strap, no pack, no bag of any kind on either child. Keep both children, their poses, their clothing, the pavement, the wall, the cat, the trees, the composition and the lighting exactly identical.
+
+=========================================================================
+DERS (bir sonraki videoya, bu videoya değil)
+=========================================================================
+· "daha modern" itirazı bugün İKİNCİ kez geldi (Destek'te "milyonerlerin çocukları").
+  Sebep kare değil DÜNYA METNİ: bu projede 44 karenin 31'i "Anatolian street" yazıyor.
+  Kanon: agents/worlds/pixar_3d_edu.md → SOSYOEKONOMİK REJİM.
+· "straight" kelimesi motora YÖN söylemiyor. Yatay isteniyorsa "lies flat along the ground,
+  parallel to the road surface, never rising" yazılır. K30'un tek kelimelik kusuru buydu.
+· Taşınan prop (çanta) her karede AYRICA yazılır — @handle durumu taşımıyor (ölçülmüş yasa).
