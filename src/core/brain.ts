@@ -1841,8 +1841,19 @@ export function scrubHumanTokens(text: string): string {
     // cannot be materialised onto a surface — it must be DROPPED, together with a
     // bounding separator, so no orphaned connector ("…, and …") survives to contradict
     // the CASTLESS_NOTE ("No human subject in this frame"). Longest forms first.
+    // ⚠ BU LİSTE `SURGERY_DATA.json` CÜMLELERİNE BİREBİR BAĞLIDIR — kütüphane metnini
+    // değiştiren, bu deseni de değiştirmek zorundadır. Ölçüldü (2026-08-05): plastik teni
+    // üreten `wet dual-point specular on eyes with painted-in iris depth` cümlesi
+    // kütüphanede düzeltildi ve YENİ cümle bu scrubber'ın altından kaçtı — castless kareye
+    // "iris" sızdı, `faz2_rejuri_seam.test.ts` yakaladı. Kütüphane ↔ regex bağı sessizdir;
+    // tek görünür kılan şey bu yorum ve o testtir.
     .replace(/,?\s*wet dual-point specular on eyes with painted-in iris depth/gi, '')
     .replace(/,?\s*wet expressive eyes with painted(?:-in)? iris depth/gi, '')
+    // 2026-08-05 plastik-ten onarımının yeni cümlesi (aynı slot, aynı yasak):
+    .replace(/,?\s*a single small catchlight in the lit eye only with the shadow-side eye holding none and painted-in iris depth/gi, '')
+    .replace(/,?\s*dry matte skin that takes light only on the planes turned into it with a clean terminator and no broad specular on forehead, nose tip or chin/gi, '')
+    .replace(/,?\s*subsurface-scatter skin with a clean terminator and no broad facial specular/gi, '')
+    .replace(/,?\s*a single catchlight in the lit eye only/gi, '')
     .replace(/,?\s*wet dual-point specular on eyes/gi, '')
     .replace(/,?\s*expressive painted eyes/gi, '')
     .replace(/,?\s*the eyes dart(?:\s+before the action)?/gi, '')

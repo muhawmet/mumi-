@@ -394,16 +394,38 @@ const TRAPS = [
 
   {
     key: 'islak-goz',
-    // SARI: altın standart Üreme korpusunda (0 revize almış iş) 50 karenin 1'inde bu
-    // ifade VAR. Yani tek geçiş ölümcül değil — kusur YOĞUNLUKTA doğuyor (Hücre'de
-    // karakter karelerinin 18/20'sinde vardı ve Mami iki tur "plastik" dedi).
-    // Kırmızıya çekmek altın standardı yalancı çıkarırdı; bu, doğrulayıcının kendi
-    // kanıtını çürütmesi olurdu.
-    level: 'sari',
+    // 🔴 2026-08-05: SARI → KIRMIZI. Eski gerekçe birebir şuydu: *"altın standart Üreme
+    // (0 revize almış iş) 50 karenin 1'inde bu ifadeyi taşıyor; kırmızıya çekmek altın
+    // standardı yalancı çıkarırdı."* O gerekçenin dayandığı ÇIPA ÇÜRÜK ÇIKTI — Üreme'nin
+    // `_revize.txt`'i diskte **31 revize bloğu** taşıyor. Yani kural, olmayan bir
+    // kusursuzluğu korumak için gevşetilmişti.
+    //
+    // KIRMIZI'yı hak eden kanıt: ifade Hücre'nin karakter karelerinin 18/20'sinde vardı
+    // (organel karelerinde 4/33) ve Mami İKİ TUR "plastik" dedi; sonra teslim metninden
+    // 77 yerden söküldü. Bu gece kaynağı da kapatıldı (`SURGERY_DATA.json` render_law +
+    // dna), yani yeni prompt'lar bu cümleyi artık miras ALMIYOR — kırmızı yalnız elle
+    // yazılan nüksü yakalar.
+    // ⚠ Bilinen tek karşı-örnek: Üreme'de 1/50 kare. O karenin teni gözle denetlenmedi;
+    // "temiz karşı-örnek" değil, "bakılmamış kare" sayılır. Geri alınabilir tek satır.
     // Ölçüldü (Hücre madeni, 2026-08-04): "wet dual-point catchlights in the eyes"
     // karakter karelerinin 18/20'sinde, organel karelerinde 4/33. Mami'nin iki tur
     // boyunca "plastik" dediği şeyin kaynağı bu tek cümleydi; 77 yerden söküldü.
-    hit: (b) => /\bwet\b[^.]{0,30}\bcatchlights?\b|\bcatchlights?\b[^.]{0,20}\bwet\b|\bdual-?point catchlights?\b/i.test(b),
+    // ⚠ DARALTILDI (2026-08-05, KIRMIZI'ya çekilirken ölçüldü). Eski desen `wet … catchlight`
+    // ikilisini her yerde arıyordu ve Üreme K11'de YANLIŞ ALARM verdi: cümle gözle değil
+    // SU/CAM harfleriyle ilgiliydi — *"jade-tinted water-matter … with wet catchlights
+    // running along the strokes"*. Islak parlama camda, suda, seramikte MEŞRUDUR; kusur
+    // yalnız GÖZDE doğar. Bu, bu dosyanın iki kez yaşadığı sınıfın aynısı (`surface`
+    // içindeki `face`, `sheen-free`). Kural artık göz komşuluğu istiyor.
+    hit: (b) => {
+      if (/\bdual-?point catchlights?\b/i.test(b)) return true;  // bu kalıp yalnız göz için yazılır
+      const re = /\bcatchlights?\b/gi; let m;
+      while ((m = re.exec(b))) {
+        const seg = b.slice(Math.max(0, m.index - 90), m.index + 90);
+        if (!/\bwet\b/i.test(seg)) continue;
+        if (/\b(eyes?|iris|pupils?|gaze|eyeball)\b/i.test(seg)) return true;
+      }
+      return false;
+    },
     fix: 'PLASTİK TEN buradan geliyor (18/20 karakter karesi vs 4/33 organel karesi). '
       + 'Yerine: "a single soft catchlight in the eyes only and never a wet sheen over '
       + 'the face — skin stays matte with low specular"',
@@ -424,14 +446,33 @@ const TRAPS = [
     // "dışlama cümlesi var mı" diye değil, "dışlama var ama karanlık ÇAPASI yok mu"
     // diye soruyor: terminatör, sıçrama, negative fill, gölge tarafı yazılmışsa TEMİZ.
     //
+    // ⚠ §5øø İLE ÇELİŞMEZ — KELİME ÇAKIŞMASI VAR, OKUMADAN ÖNCE BUNU OKU.
+    // `agents/worlds/pixar_3d_edu.md` "çocuğun yüzü hiçbir karede gölgeye atılmaz" diyor
+    // ve `reaches nothing else` kalıbını bu dünyada yasaklıyor. Bu kural ONA KARŞI DEĞİL:
+    //   YASAK  = yüz OKUNMAZ hale gelir (siluet, kapalı siyah, düz ambiyans)
+    //   ZORUNLU = yüz MODELLENİR (terminatör + ADLANDIRILMIŞ sıçrama; yüz okunur kalır)
+    // Altın kanıt K07'nin kendi cümlesi ikisini birden söylüyor: "Her face turns dark
+    // against the sun but stays fully modelled, three-dimensional and readable... carried
+    // entirely by the warm bounce coming back off the sunlit wall." İki yasa da aynı
+    // düşmanı hedefliyor: DÜZ, GRADYANSIZ YÜZ. Bu kural asla "yüzü karart" demez.
+    //
     // KORPUS KALİBRASYONU (2026-08-04, gerçek `lintBlock` yolundan ölçüldü — 247 kare):
-    //   Üreme (ALTIN STANDART, 0 revize)   0/50  %0
+    //   Üreme                              0/50  %0   ⚠ "0 revize" DEĞİL — bkz. aşağıda
     //   Sabit Sürat                        0/44  %0
     //   Sürtünme                           0/31  %0
     //   Hücre A (karakter ağırlıklı)       8/15  %53   ← Mami iki tur "plastik" dedi
     //   Farklı Kültürler                  35/53  %66   ← müşteri revizesi
     //   Birlikte Daha Güçlüyüz            48/54  %89   ← 30/54 revize
     // Eşik bu boşluğun içine kuruldu (%0 ile %53 arası boş), sayıya değil.
+    //
+    // 🔴 ÇIPA DÜZELTİLDİ (2026-08-05). Bu dosyanın altı yerinde "Üreme = 0 revize almış
+    // altın standart" yazıyordu ve YANLIŞTI: diskteki `Eşeyli ve Eşeysiz Üreme_revize.txt`
+    // **31 revize bloğu** taşıyor. Ama kalibrasyon ÇÖKMÜYOR, çünkü o 31 revizenin sınıfı
+    // ölçüldü: süreklilik · kostüm kilidi · dünya kilidi · cam kopyası · @gul durum kilidi —
+    // **hiçbiri ışık ya da ten sınıfında değil.** Bu tuzağın ölçtüğü kusur sınıfında Üreme
+    // gerçekten temiz; ateşlediği üç proje ise tam da "plastik"/"düz imaj" şikâyeti alanlar.
+    // Ders: bir eşiği kalibre ederken çıpanın SAYISI değil, çıpanın O KUSUR SINIFINDAKİ
+    // durumu ölçülür. "Sıfır revize" hiçbir zaman kalite etiketi değildi (CLAUDE.md).
     //
     // İKİ YÖN DE DOĞRULANDI — korelasyon değil, mekanizma:
     //   Üreme   : dışlama cümlesi  0/50 · karanlık çapası 28/50
@@ -440,7 +481,7 @@ const TRAPS = [
     // sayısı gibi ters dönen bir metrik değil (bkz. STYLE_MAX_WORDS'ün SARI'ya düşüşü).
     //
     // ⚠ KAPSAM: "insan yüzü var + hiç karanlık çapası yok" kuralı KURULMADI — Üreme'nin
-    // 50 karesinin 22'sinde de çapa yok ve o iş 0 revize aldı. Yani çapa her karede
+    // 50 karesinin 22'sinde de çapa yok ve o iş ten/ışık sınıfında sıfır revize aldı. Yani çapa her karede
     // zorunlu değil; kusur yalnız DIŞLAMA ile birlikte doğuyor.
     hit: (b) => {
       // 1) Karede insan yüzü var mı? (@handle ya da açık yüz sözcüğü)
@@ -487,7 +528,7 @@ const TRAPS = [
 //
 // Neden düştü: duvar yanlış sayıya kalibreydi ve ölçümün YÖNÜNÜ ters çeviriyordu.
 // Yorumda "altın standart Üreme 86-116" yazıyordu; diskteki gerçek dosya **86-152**.
-// Sonuç ölçüldü: Üreme'nin (0 revize) 14 kırmızısının **13'ü** yalnız bu duvardan geliyordu,
+// Sonuç ölçüldü: Üreme'nin (31 revize · süreklilik sınıfı) 14 kırmızısının **13'ü** yalnız bu duvardan geliyordu,
 // buna karşılık Birlikte (30/54 revize) 90 kelimede sabit durduğu için **0 kırmızı** alıyordu.
 // Yani uzunluk, revize ile TERS korelasyon veriyordu — `kareOzelOran` ile aynı sınıf, aynı
 // hüküm: doğrulanmamış (burada: ters doğrulanmış) metrik kırmızı yakmaz. Ölçülür, basılır, SARI.
@@ -497,7 +538,7 @@ const STYLE_MAX_WORDS = 110;
 //
 // Kanıt (diskten, 146 teslim dosyası tarandı): aynı STYLE bloğunun kaç karede BİREBİR
 // tekrar ettiği revizeyle aynı yönde gidiyor ve arada TEMİZ BİR BOŞLUK var —
-//   ≤2 tekrar : Üreme 50 karede maxRep **2** (0 revize) · Sabit Sürat 44'te 2 · Kütle 27'de 1 ·
+//   ≤2 tekrar : Üreme 50 karede maxRep **2** (31 revize · süreklilik sınıfı) · Sabit Sürat 44'te 2 · Kütle 27'de 1 ·
 //               Hücre/Destek/Bitkiler (aktif iş) hepsinde 1
 //   ≥4 tekrar : Birlikte **54/54** (30 revize) · Farklı Kültürler 53/53 · Sorunları V1 53/53 ·
 //               Sürtünme 31/31 · Bileşke 24/52 · Bizi Bir Arada 22/33
@@ -519,7 +560,7 @@ const STYLE_TEKRAR_NEDEN =
   + 'O kuyruk bir BAŞLANGIÇTIR: o karenin ışığı, yüzeyi ve paleti karenin kendi cümlesiyle yazılır. '
   + 'Ölçüldü: STYLE tek sürümde donan üç iş (Birlikte 54/54 → 30 revize, Farklı Kültürler 53/53, '
   + 'Sürtünme 31/31) ile karesi kendi STYLE\'ını taşıyan altın standart (Üreme 49 sürüm / 50 kare → '
-  + '0 revize) arasındaki tek yapısal fark budur.';
+  + 'ten/ışık sınıfında sıfır revize) arasındaki tek yapısal fark budur.';
 // Kare-özel oran alt sınırı. Bileşke %35 → %65 revize. Sürtünme %51 → çok daha az.
 const KARE_OZEL_MIN = 0.45;
 
@@ -702,7 +743,7 @@ function heceHatalari(body) {
       // OLUMSUZLANMIŞ SAYI İDDİA DEĞİLDİR (2026-08-02, ölçüldü). Altın standart Üreme'nin
       // K48/K50'sinde şu cümle var: "**no two letters** are made of the same substance" —
       // bu bir harf SAYIMI değil, bir tasarım kuralı. Linter onu "ÇEŞİTLİLİK iki harf" iddiası
-      // sanıp KIRMIZI basıyordu: 0 revize almış işin STYLE dışındaki TEK kırmızısı buydu ve
+      // sanıp KIRMIZI basıyordu: ten/ışık sınıfında temiz işin STYLE dışındaki TEK kırmızısı buydu ve
       // sahteydi. `nearSkin`/`hasHuman` derslerinin üçüncü tekrarı — kelimenin VARLIĞI değil
       // NE YAPTIĞI ölçülür.
       const once = seg.slice(Math.max(0, m.index - 14), m.index);
@@ -945,11 +986,11 @@ function lintBlock(body, register = 'EDU', fk = 'frame-dosyasi') {
     const w = style.split(/\s+/).filter(Boolean).length;
     if (w > STYLE_MAX_WORDS) {
       // SARI, kırmızı DEĞİL (2026-08-02). Bkz. STYLE_MAX_WORDS yorumu: uzunluk revizeyle ters
-      // korelasyon veriyor — altın standart 86-152 kelime yazıp 0 revize aldı, 90 kelimede donan
+      // korelasyon veriyor — altın standart 86-152 kelime yazıp ten/ışık sınıfında sıfır revize aldı, 90 kelimede donan
       // iş 30 revize aldı. Uzunluk bir bakılacak yerdir, kanıtlı eksik değildir.
       problems.push({ kind: 'style', key: 'style-uzun', level: 'sari',
         msg: `STYLE ${w} kelime (hedef ≤${STYLE_MAX_WORDS})`,
-        why: 'DOĞRULANMAMIŞ metrik: altın standart 86-152 kelimeyle 0 revize aldı. Uzunluk tek başına '
+        why: 'DOĞRULANMAMIŞ metrik: altın standart 86-152 kelimeyle ten/ışık sınıfında sıfır revize aldı (toplamda 31 revize bloğu — süreklilik sınıfı). Uzunluk tek başına '
           + 'kusur değil — uzunluğun İÇİ boilerplate ise kusur. Ajan gözle baksın; hüküm `style-tekrar`da.' });
     }
   }
@@ -990,7 +1031,7 @@ export function lintFile(path, register = 'EDU') {
         // ⚠ 2026-08-03: bu kural bir kez SARI'ya indirilmek istendi ("kuyruk yapıştırılıyorsa
         // STYLE aynı olur") ve `prompt-lint.test.mjs` A5 duvarı bunu ÇÜRÜTTÜ — haklı olarak.
         // Ölçüm: Birlikte Daha Güçlüyüz 54/54 karede birebir aynı STYLE taşıyordu ve **30/54
-        // revize** aldı; Eşeyli 49/50 FARKLI STYLE ile **0 revize**. Yani aynılık gerçekten
+        // revize** aldı; Eşeyli 49/50 FARKLI STYLE ile ten/ışık sınıfında sıfır revize. Yani aynılık gerçekten
         // kötü sonuçla ilişkili. Çelişki sanılan şey uygulama hatasıydı:
         //   DÜNYA OMURGASI birebir yapıştırılır + MALZEME o karenin maddesiyle STYLE satırına
         //   EKLENİR → satırlar zaten farklı çıkar ve kural sağlanır.

@@ -85,7 +85,7 @@ Bir denetim ya da yazım ajanı **en az** şu sınıfları taşır. Eşik daralt
 | parça | ne | kural | ölçüm |
 |---|---|---|---|
 | **DÜNYA OMURGASI** | render dili beyanı: RenderMan soyu · subsurface · palet yasası · `no photoreal` · `no cel` | 🔴 **BİREBİR AYNI.** Bu dünyanın kimliğidir; sürüklenirse dünya kayar. | Hücre: omurga 3 sürüme bölündü, negatif 151→295 kelimeye şişti, **3 kare foto-gerçekçiye kaydı** |
-| **MALZEME LİSTESİ** | o karenin maddesi: gözenekli pişmiş tuğla · ıslak gri harç · kehribar zar · fırçalanmış pirinç | 🔴 **KAREYE GÖRE DEĞİŞİR.** Yasanın kendi maddesi: *"material specificity is non-negotiable"*. | Eşeyli: 50 karede **49 farklı** STYLE → **0 revize**. Değişen şey malzemeydi. |
+| **MALZEME LİSTESİ** | o karenin maddesi: gözenekli pişmiş tuğla · ıslak gri harç · kehribar zar · fırçalanmış pirinç | 🔴 **KAREYE GÖRE DEĞİŞİR.** Yasanın kendi maddesi: *"material specificity is non-negotiable"*. | Eşeyli: 50 karede **49 farklı** STYLE → ten/ışık sınıfında **sıfır** revize (toplam 31 revize bloğu, hepsi süreklilik/kostüm/yazı). Değişen şey malzemeydi. |
 
 **Yani doğru talimat:** *"Dünya omurgasını `_DUNYA-KUYRUGU.txt`'ten birebir yapıştır; malzeme
 listesini o karenin gerçek maddesine göre KENDİN yaz. Omurga 53/53 aynı, malzeme 53/53 farklı."*
@@ -98,7 +98,7 @@ komşu kareye uyar** ve durumu raporlar — iki lehçeli bir film, bayat bir kuy
 Claude'u düzelttiği yerdir ve kayda geçer: `style-tekrar` kuralı bir kez *"kuyruk yapıştırılıyorsa
 STYLE aynı olur, kural gevşesin"* diye SARI'ya indirilmek istendi; `prompt-lint.test.mjs` A5
 duvarı bunu **çürüttü**. Ölçüm: **Birlikte Daha Güçlüyüz 54/54 karede birebir aynı STYLE →
-30/54 revize**; **Eşeyli 49/50 FARKLI STYLE → 0 revize.** Yani aynılık gerçekten kötü sonuçla
+30/54 revize**; **Eşeyli 49/50 FARKLI STYLE → ten/ışık sınıfında sıfır revize** (toplam 31 revize bloğu — süreklilik sınıfı; "0 revize" iddiası 2026-08-05 ölçümüyle düzeltildi). Yani aynılık gerçekten kötü sonuçla
 ilişkili ve kural doğru.
 
 Çelişki sanılan şey bir **uygulama hatasıydı**: omurgayı yapıştırıp malzemeyi **STYLE satırına
