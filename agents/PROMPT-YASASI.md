@@ -95,6 +95,37 @@ Mami'nin canlı direktifi çelişkide her zaman kazanır.
 
 ### Kare içeriği
 
+🔴 **5øø. SİLUET OKUMASI — ÇOCUK MATERYALİNDE OKUMA İZLEYİCİNİNDİR, NİYET SAVUNULMAZ.**
+(Müşteri revizesi, 2026-08-04. `-1 ÇOCUK GÜVENLİĞİ`'nin kardeşidir: o **nesneyi** kısıtlar,
+bu **biçimi**.)
+
+> Müşteri: *"videonun başında sandalyeye çıkmış ip bağlıyor — pedagojik olarak intiharı bile
+> çıkarabilirler."* Mami katılmadı ama cevap veremedi. **Kare açıldığında müşteri haklıydı.**
+
+**Ölçülen kare** — `Farklı Kültürler` K01: *"sandalyenin üstünde, ağırlığı parmak uçlarında,
+**iki kolu başının üstünde**, gözü **ipin çaprazında**, yüzünün üst yarısı **gölgede**"*;
+motion: *"**ipin serbest ucu** kalkık elinden sarkarken ağırlığı kaydıkça **bir kez sallanıyor**"*.
+VO'da bunun 23 Nisan bayrak süsü olduğu yazılı — **ama kare bunu söylemiyor.**
+
+**Kural: bir karenin SİLUETİ tek anlama gelmelidir.** Niyet bir savunma değildir; çocuk
+materyalinde anlamı izleyici kurar. Sınama tek cümle:
+> *"Bu kareyi VO'yu duymayan birine tarif etsem, cümlem iki türlü okunabilir mi — ve
+> okumalardan biri zararlı mı?"* Evetse **kare yeniden kurulur**, güzel olsa bile.
+
+**Somut yasaklar (çocuk kadrajdayken):**
+- **Yükseltilmiş figür + baş hizası üstünde ip/kordon/kayış** yazılmaz. Sandalye, tabure,
+  merdiven, sıra — hiçbirinin üstünde kollar yukarıda ipe uzanan figür olmaz.
+- **Serbest ucu sarkan ve sallanan ip** bir insanın baş/boyun hizasında kadraja girmez.
+- Bayrak dizisi / süs ipi ya **iki sabit nokta arasına göğüs hizasında gerilmiş** gösterilir,
+  ya **çoktan asılmış** gösterilir; asma eylemi gerekiyorsa **iki ayak yerde** ve **elde bayrak
+  dizisi görünür** olur.
+- **Boyna dolanan** hiçbir şey (atkı, kordon, kamera askısı, düdük ipi) gergin yazılmaz.
+- **Birleşme kuralı:** *yükseklik · yüz gölgesi · yalnızlık · sarkan ip* — bunlardan **ikisi bir
+  arada** olan kare yeniden kurulur. K01'de dördü birdeydi.
+
+⚠ Bu madde **§2a ÇEKİMİN KENDİSİ**'nin içinde de sorulur: kahraman kim, ışık nereden geliyor
+sorularının yanına *"siluet ne söylüyor"* eklenir.
+
 🔴 **5ø. KAYNAĞIN TONU KİLİTTİR — ÇATIŞMA İCAT EDİLMEZ.** (Müşteri revizesi, 2026-08-04.
 Bu maddenin yeri bilerek en üsttedir: altındaki her madde bunun içinde geçerlidir.)
 

@@ -129,6 +129,15 @@ tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile kuyruğu bas →
 iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
 **yeşil ≠ temiz.**
 
+🔴 **SİLUET OKUMASI — ÇOCUK MATERYALİNDE OKUMA İZLEYİCİNİNDİR** (müşteri revizesi, 2026-08-04).
+Müşteri: *"başında sandalyeye çıkmış ip bağlıyor — pedagojik olarak intiharı bile çıkarabilirler."*
+Kare açıldı, haklıydı: `Farklı Kültürler` K01'de çocuk sandalyede, **iki kol başının üstünde**,
+dala bağlı ipte, **serbest uç sarkıp sallanıyor**, yüz gölgede, yalnız. VO "23 Nisan süsü" diyor
+ama **kare bunu söylemiyor.** **Niyet savunulmaz** — sınama: *"VO'yu duymayan birine bu kareyi
+tarif etsem, cümlem iki türlü okunabilir mi ve biri zararlı mı?"* Evetse kare yeniden kurulur.
+Yasaklar ve birleşme kuralı (yükseklik · yüz gölgesi · yalnızlık · sarkan ip → ikisi bir arada
+olamaz): `agents/PROMPT-YASASI.md` §1 madde **5øø**.
+
 🔴 **KAYNAĞIN TONU KİLİTTİR — ÇATIŞMA İCAT EDİLMEZ** (müşteri revizesi, 2026-08-04).
 Müşterinin sorusu birebir: *"senaryoyu dümdüz açtılar, sen neden duygusal video yönüne döndün?
 Materyalde hüzün, zenofobi falan yok."* Ölçüldü ve haklıydı: kaynak *"öğrenciler birbirlerini
