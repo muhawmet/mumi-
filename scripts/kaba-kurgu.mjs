@@ -44,9 +44,14 @@ if (!planDosya) {
 const plan = readFileSync(join(PROJE, planDosya), 'utf8').replace(/\r\n/g, '\n');
 
 // ---------- 2. Satırları ayrıştır ----------
-// Biçim: "1.png   K01   5s   4.0s   [0:00–0:04]   VO cümlesi"
+// Biçim: "1.png   K01   [KOVA]   5s   4.0s   [0:00–0:04]   VO cümlesi"
 // Parser biçime dayanmaz: dosya adı + K numarası + iki süre yakalar, gerisini VO sayar.
-const SATIR = /^\s*(\S+\.(?:png|jpg|jpeg))\s+K(\d+)\s+(\d+(?:\.\d+)?)s\s+(\d+(?:\.\d+)?)s\s*(?:\[[^\]]*\])?\s*(.*)$/i;
+// 🔴 KOVA SÜTUNU İSTEĞE BAĞLI (2026-08-04): `edit-plan.mjs` K numarasından sonra
+// TAŞIYICI/VURUŞ/GEÇİŞ kovasını basıyor ama bu okuyucu onu tanımıyordu ve Hücre'nin
+// 53 satırının 53'ünü sessizce atlayıp "kare satırı bulunamadı" diyordu. Bu, bu repoda
+// defalarca ölçülen "doğrulayıcı ölçtüğü şeyin YERLEŞİMİNİ varsayıyor" sınıfının bir örneği:
+// iki araç aynı dosyayı farklı biçimde okuyup yazıyordu. Kova artık isteğe bağlı olarak yenir.
+const SATIR = /^\s*(\S+\.(?:png|jpg|jpeg))\s+K(\d+)\s+(?:[A-ZÇĞİÖŞÜ]{3,}\s+)?(\d+(?:\.\d+)?)s\s+(\d+(?:\.\d+)?)s\s*(?:\[[^\]]*\])?\s*(.*)$/i;
 const kareler = [];
 for (const ln of plan.split('\n')) {
   const m = ln.match(SATIR);

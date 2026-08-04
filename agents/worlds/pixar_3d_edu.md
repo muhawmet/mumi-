@@ -106,6 +106,29 @@ kedi kuyruğu). Konfeti, ışık patlaması, parıltı efekti değil.
 
 ---
 
+## İMZA DETAYI — dünyaya ait ama KÜMELENMEZ (Mami, 2026-08-04)
+
+Mami: *"neden her sahnede çay oluyor, onu da bi gözet — güzel detay ama 1-2 sahnede olunca
+iyi, full çay ekstra gibi."*
+
+**Ölçüldü (Hücre, 53 kare):** çay 8 karede — ama dağınık değil, **K09-K14 arası altı kare
+ARKA ARKAYA**. Toplam %15, ama izleyicinin gördüğü *"her sahnede çay var"*. Kusur sayıda
+değil **kümelenmede**.
+
+İmza detayı (çay bardağı · kedi · sardunya · kuş sesi · demlik) dünyaya aittir ve tekrar
+etmesi doğrudur — dünyayı o kurar. Kural:
+
+- **Aynı imza detayı ardışık üç karenin en fazla BİRİNDE** görünür.
+- Toplamda kare sayısının **%15'ini geçmez**.
+- **Açılış ve kapanış ayrıcalıklıdır** — bookend kafiyesi kümelenme sayılmaz (Hücre'de K01 ve
+  K51 doğruydu, arada kalan altı kare kusurdu).
+- Bir sekans tek mekânda geçiyorsa detay **o mekânın kendi eşyasıyla** değişir; aynı bardak
+  altı kare üst üste durmaz.
+
+**Sınama:** *"Ardışık üç kareyi yan yana koysam aynı nesne üçünde de var mı?"*
+
+---
+
 ## DUYGUSAL REJİM
 
 **Kaynağın tonu kilittir** (§5ø). Olumlu ve çatışmasız bir kaynak, olumlu ve çatışmasız teslim
