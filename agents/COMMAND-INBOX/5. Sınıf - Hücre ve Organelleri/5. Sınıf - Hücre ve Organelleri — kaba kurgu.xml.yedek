@@ -265,9 +265,9 @@
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>1329</start>
-          <end>1413</end>
+          <end>1423</end>
           <in>12</in>
-          <out>96</out>
+          <out>106</out>
           <file id="f-13">
             <name>14.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20H%C3%BCcre%20ve%20Organelleri/14.mp4</pathurl>
@@ -283,9 +283,9 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1413</start>
+          <start>1423</start>
           <end>1474</end>
-          <in>2</in>
+          <in>12</in>
           <out>63</out>
           <file id="f-14">
             <name>15.mp4</name>
