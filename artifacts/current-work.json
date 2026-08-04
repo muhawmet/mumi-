@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "MOTION KUSURU BULUNDU ve ölçüldü: 52 klibin 44'ü (%84) tam durarak bitiyor, 39'u 'already' ile açılıyor; çalışan Sürat korpusunda ikisi de 0/14. Kök neden bende: motion'ı karenin devamı gibi yazdım, kamera kilidini genelledim, ambiyansı olay yerine koydum. Doğru tarif agents/DEVIR-MOTION-KUSURU.md'de. Kareler 52/52 onaylı, prompt-lint 0/52.",
-  "nextAction": "YARIN İLK İŞ: agents/DEVIR-MOTION-KUSURU.md oku, sonra 52 motion'ı §4 tarifiyle YENİDEN YAZ (dört ajan, 13'er kare). Önce motion-lint kelime bandını ölç: 190-215 mi doğru, Sürat'ın 143 ortalaması mı.",
+  "lastCompleted": "GECE İNŞA TURU: plastik tenin MEMBASI kapandı (SURGERY_DATA 3 satır) · yeni KIRMIZI kapı isik-yuzu-disliyor (korpus: altın 0/50, Birlikte 89%) · islak-goz SARI→KIRMIZI + daraltıldı · 'Eşeyli 0 revize' çıpası yalanmış, 8 yerde düzeltildi (gerçek: 31 revize, hiçbiri ten/ışık sınıfında) · ders bankası tavanı konusallaştı. Kapı: 2541 PASS 0 FAIL.",
+  "nextAction": "Mami BRIFING-2026-08-05-SABAH.md'yi okusun ve 3 karardan birini seçsin (§5øø ayrım hükmü / 8 baskılık motor deneyi / 6 kliplik motion canary)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T20:39:12.514Z",
+  "updatedAt": "2026-08-04T21:11:45.623Z",
   "updatedBy": "claude",
-  "baseCommit": "25eaef9"
+  "baseCommit": "3f39296"
 }
