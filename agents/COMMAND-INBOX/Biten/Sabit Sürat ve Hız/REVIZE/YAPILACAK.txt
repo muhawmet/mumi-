@@ -1,6 +1,22 @@
 SABİT SÜRAT VE HIZ — MÜŞTERİ REVİZESİ (2026-08-04)
 =========================================================================
 2 KARE ÜRET · 1 KARE SİL · 1 opsiyonel referans-edit
+
+📁 BU KLASÖRDE HAZIR — aramana gerek yok:
+   · K06-MEVCUT.png / .mp4   ← 00:21'deki kare ve klibi (referans olarak besleyebilirsin)
+   · K30-MEVCUT.png / .mp4   ← 02:54'teki kare ve klibi
+   · K29-MEVCUT.png / .mp4   ← SİLİNECEK olan (bakmak istersen)
+
+✅ İKİ KARE DE GÖZLE DOĞRULANDI:
+   · K06 → kiremit çatı, minare, çatı su deposu, sis, yolun ortasında simit arabası,
+         çocuklar yolun ORTASINDA ve ÇANTASIZ. Müşterinin itirazı birebir bu.
+   · K30 → Ali taş sokakta DİZ ÇÖKMÜŞ, mavi ışın ÇAPRAZ YUKARI gökyüzüne gidiyor,
+         MİRA KADRAJDA YOK (oysa VO Mira'yı anlatıyor), sokak eski ahşap cumbalı.
+         "Anlamsız olmuş" hükmü sonuna kadar haklı.
+
+⚠ NOT — modern yapmak süreklilik BOZMUYOR, düzeltiyor: AGY ölçtü, sokak seviyesindeki
+   karelerin çoğu (00:36, 00:41, 01:00) ZATEN modern. Eski duran iki yer K06 ve K30.
+   Yani bu ikisini modernleştirmek videoyu kendi içinde TUTARLI hale getiriyor.
 Kaynak: müşteri notları + AGY'nin tam video izlemesi (6 zaman kodunun 6'sı tarif edildi)
 =========================================================================
 
@@ -14,7 +30,7 @@ MÜŞTERİ NOTU              → HÜKÜM
 02:54 anlamsız olmuş      → K29 SİL + K30 YENİDEN ÜRET
 
 -------------------------------------------------------------------------
-1) K06 — YENİDEN ÜRET      (müşteri: "00.21 yol ve çevre tamamen değişmeli")
+### K06.png — YENİDEN ÜRET   (müşteri: "00.21 yol ve çevre tamamen değişmeli")
 -------------------------------------------------------------------------
 NEDEN: Eski kare "Anadolu yamacı" yazıyordu — kiremit çatılar, minare, çatı su depoları,
 vadide sis, simit arabası. Müşterinin "daha modern" dediği tam bu. Ayrıca AGY iki şey daha
@@ -32,7 +48,7 @@ NEGATIVE: no terracotta pantile roofs, no minaret, no rooftop water tanks, no si
 
 
 -------------------------------------------------------------------------
-2) K29 — SİL. ÜRETME. VO CÜMLESİNİ DE KES.
+SİLİNECEK KARE (K29) — ÜRETME, VO CÜMLESİNİ DE KES
 -------------------------------------------------------------------------
 NEDEN: VO33 "Hızın birimi de tıpkı süratteki gibi metre bölü saniye ya da kilometre bölü
 saatti." Bu cümle ÜÇÜNCÜ tekrar: K22 zaten "birim kilometre bölü saat oluyordu" dedi, K30 da
@@ -44,7 +60,7 @@ Video ~4 saniye kısalır.
 
 
 -------------------------------------------------------------------------
-3) K30 — YENİDEN ÜRET     (müşteri: "02.54 anlamsız olmuş")
+### K30.png — YENİDEN ÜRET   (müşteri: "02.54 anlamsız olmuş")
 -------------------------------------------------------------------------
 NEDEN: Müşteri haklı ve sebebi tek kelime. AGY ölçtü: mavi ok GÖKYÜZÜNE, 90 derece DİKEY
 bakıyor — oysa VO yatay düzlemde yer değiştirmeyi ve yönü anlatıyor. Eski prompt "straight
