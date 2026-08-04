@@ -1,0 +1,37 @@
+· K44 — KARE REVİZE  ·  "04:00 yazılar anlamsız"
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "04:00 yazıalr anlamsız"
+· HAKLI MI        : Evet, gözle doğrulandı ve düşündüğünden kötü.
+·                   Defterin başlığı "KUVVET" bozuk yazılmış (V harfleri
+·                   birbirine girmiş), ALTINDAKİ dört satır ise tamamen
+·                   uydurma harf dizisi: "Hurgel dodlca der / vor. Sum
+·                   Soil olona / turget dosbla der / Sock Sunet algombe".
+·                   Türkçe değil, hiçbir dil değil.
+· NEDEN OLDU      : Prompt yalnız "KUVVET" başlığını tarif etmiş,
+·                   sayfanın geri kalanını boş bırakmış. Bu repoda
+·                   ölçülmüş sınıf: adı konmayan yüzeyi motor kendi
+·                   kütüphanesinden dolduruyor. Sayfa boş bırakıldı,
+·                   motor da uydurma el yazısıyla doldurdu.
+· NE YAPIYORUZ    : Sayfada TEK okunaklı kelime kalıyor: KUVVET.
+·                   Altındaki satırlar tamamen kalkıyor — sayfa temiz
+·                   çizgili kâğıt, Mira başlığı yeni yazmış oluyor.
+·                   Uydurma yazının doğabileceği hiçbir boşluk kalmıyor.
+·
+· NASIL           : 1) K44-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Recreate the reference image exactly as it is — identical camera, identical lens and framing, identical composition, identical warm desk-lamp light falling from the upper right, identical cool blue window behind, identical colour grade, identical open hardback notebook lying on the pale desk, identical hand and forearm resting along its left edge with the pencil held in the fingers, identical brass desk lamp, identical dynamometer lying on the desk, identical red toy truck, identical disc of terracotta modelling dough and identical jar of pencils at the lower left. Change ONLY the writing on the notebook page. The page now carries exactly one word and nothing else: KUVVET, written by hand in soft graphite as a heading across the upper third of the right-hand page, the letters upright and evenly spaced in a careful child's hand, each letter separate and cleanly formed with the two V strokes of the word standing apart and never merging into a W or crossing one another. Directly beneath the heading runs a single straight ruled pencil underline and nothing more. Every other part of both pages is clean, empty, unwritten paper — the faint printed ruling of the notebook visible across it and not one further mark, letter, word, line of handwriting, scribble, doodle, smudge or stray stroke anywhere on either page. The pencil tip rests just past the final letter as though she has this second finished writing the heading. Nothing else in the frame moves, changes size, changes colour or is re-lit.
+
+STYLE: Full 3D CGI feature-animation render, RenderMan-successor pipeline — appeal-driven form readable at thumbnail size, subsurface translucency in skin carrying the scene's light temperature. A single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: soft off-white ruled paper with a visible fibre tooth, soft graphite sitting in that tooth with a faint silver sheen where the lamp rakes it, cloth-bound hardback board with brass corner caps, brushed brass lamp, painted die-cast toy metal, matte terracotta modelling dough. Props drawn 10–15% overscale for child-clear readability. Art-directed light unchanged from the reference: motivated warm desk lamp as key from the upper right, complementary cool window bounce, soft painted ambient occlusion, shadow warm-dark never cold-black. No outlines; form reads through lighting rim and value separation.
+
+LIGHT AND PALETTE: unchanged from the reference — shadows settle into deep cool indigo, midtones glow vivid warm amber, one clean warm-white accent in the lamp's pool on the page, highlights lift toward a near-white warm ivory with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: one Turkish word only in the entire frame — KUVVET, a seven-letter word carrying no diacritical marks at all, whose third and fourth letters are two separate capital V forms standing side by side without touching, and whose last letter is a capital T. It is written by hand in soft graphite on the ruled page, the strokes slightly uneven the way a real child's careful capitals are, darker where the pencil pressed at the start of each stroke and thinning at the ends. It sits square to camera and fully legible at page scale, reading left-to-right, never mirrored, reversed or rotated, and it appears on this one page and on no other surface in the frame. A single straight ruled pencil line runs beneath it. No other word, letter, numeral or mark appears on the page or anywhere else in the frame.
+
+NEGATIVE: the notebook page carries the single word KUVVET and one underline and absolutely nothing else — no body text, no sentences, no paragraphs, no second heading, no bullet points, no list, no date, no page number, no margin note, no diagram, no sketch, no scribble, no doodle and no stray pencil mark on either page; no invented, meaningless, garbled or pseudo-Latin lettering anywhere — every visible character belongs to the word KUVVET and no other characters exist in the frame; the two V letters stay separate and never merge, overlap or read as a W, and no letter is doubled, warped, mirrored or malformed; no English text and no misspelling of the Turkish word; the hand, the fingers, the pencil, the notebook, the lamp, the dynamometer, the toy truck, the dough and the pencil jar are unchanged from the reference and nothing is moved, resized, recoloured, re-lit or redrawn; the camera does not move and the framing does not change; no glowing orb, no coloured concept light and no halo; no arrow, leader line, label, callout ring, inset panel, cross-section or cutaway diagram; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no recognisable franchise character, real person, logo, badge or brand; no formula symbols, equations or graphs; no empty white void.

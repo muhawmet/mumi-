@@ -1,0 +1,20 @@
+· K13 — MOTION REVİZE  ·  "01:09 araba durmalı, tekerler dönüyor"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K13-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· MÜŞTERİ NE DEDİ : "01:09 araba durmalı, tekerler dönüyor"
+· BULGU           : Araba avuca çarpıp duruyor ama tekerlekleri dönmeye devam ediyor. Duran bir arabanın tekerleği dönemez — bu, dersin tam o cümlede anlattığı şeyi ('hareket eden bir cismi durdurabiliyordu') gözle yalanlıyor.
+· NE YAPIYORUZ    : Tekerlek dönüşü arabanın yol hızıyla kilitleniyor. Araba yavaşlarken tekerlek de yavaşlıyor, araba durduğu an tekerlek de TAM DURUYOR ve klibin sonuna kadar hiç kıpırdamıyor.
+·
+· NASIL           : 1) K13-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (214 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+The truck runs the last of its travel into the standing palm and the stop resolves: its speed bleeds away and the wheels slow in exact step with it, each wheel turning only as fast as the wood passes beneath it, so that at the instant the body stops moving the wheels stop turning too and stay dead still for the whole remainder of the shot. The body pitches forward against the palm and its rear wheels touch back down as the weight settles, the fingers splaying a fraction under the impact and then firming, the thin dust trail behind it drifting forward and settling on the wood. Once the truck is at rest nothing on it rotates, creeps, jitters or spins — it sits as a single motionless solid against the hand. Camera: it is still gliding forward with the truck when the truck stops and it arrests in the same beat, the movement of the frame dying exactly where the movement of the toy dies, then holding perfectly still. The wheels never rotate while the truck is stationary and never spin freely in the air; the truck stays put and never rebounds, tips or deforms; the palm stays planted; the lamp, the pencil jar and the books stay exactly where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

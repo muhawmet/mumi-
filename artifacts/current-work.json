@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "Müşteri revizesi 2 proje: Bitkilerde 10 kare + Hücre 5 kare klasörleri kurulu, 15 prompt lint yeşil, 2 yeni SUNO. 8 şikâyetin 8'i AGY+prompt taramasıyla doğrulandı. gate.sh prompt-lint parser kusuru onarıldı.",
-  "nextAction": "Mami 15 kareyi bassın; kareler gelince motion yazılacak (K54 8 sn olacak)",
+  "lastCompleted": "Destek ve Hareket MOTION 52/52 TAMAM (motion-lint KIRMIZI 0/52). Ayrıca prompt-lint'e beş ölçülmüş anlam tuzağı eklendi: gövde-ışık çelişkisi, siluet alt gövde, adsız nesne (KIRMIZI) + ıslak göz, yönsüz ışın (SARI). Kapı yeşil: vitest 2533 PASS.",
+  "nextAction": "Mami 52 klibi bassın. Klipler inince kaba-kurgu.mjs ile timeline kurulacak.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T13:32:37.530Z",
+  "updatedAt": "2026-08-04T14:33:02.429Z",
   "updatedBy": "claude",
-  "baseCommit": "ed6855b"
+  "baseCommit": "3278d64"
 }

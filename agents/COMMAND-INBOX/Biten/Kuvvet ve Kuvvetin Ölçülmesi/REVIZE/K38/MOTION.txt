@@ -1,0 +1,26 @@
+· K38 — MOTION REVİZE  ·  "03:34 yay uzamıyor"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K38-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· ⚠ 03:34 iki karenin sınırına düşüyor. K38 ile K39'un İKİSİ de
+·   hazırlandı — ikisi de aynı sınıf (yayın hareketi görünmüyor).
+·   Hangisini kastettiğini videoda gördüğünde anlarsın; ikisini de
+·   basmak da doğru olur, ders ikisinde de kanıtsız kalmış.
+·
+· VO CÜMLESİ      : "sonra ağır bir taş astı, yay çok daha fazla uzadı. · Hafif cisimler yayı az uzatıyor, ağır cisimler daha çok uzatıyordu."
+· MÜŞTERİ NE DEDİ : "03:34 yay uzamıyor"
+· BULGU           : Bu karenin TEK işi 'çok daha fazla uzadı' cümlesini göstermek — bir önceki karede (K37, silgi) yay AZ uzamıştı, buradaki fark dersin kanıtı. Yay gözle görülür biçimde uzamayınca karşılaştırma çöküyor ve iki kare aynı görünüyor.
+· NE YAPIYORUZ    : Uzama karenin en büyük olayı yapılıyor: sarımlar tek tek açılıyor, yayın boyu K37'dekinin belirgin biçimde KATI kadar uzuyor, ibre skalada uzun bir yol yürüyor. Taş havada serbest sarkıyor, hiçbir yüzeye değmiyor.
+·
+· NASIL           : 1) K38-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (229 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+The heavy stone settles onto the hook and the coil gives at once and gives far more than before: its tightly packed turns pull apart one after another from the top downward, each gap opening into a clear even space wide enough to see daylight through, and the coil grows dramatically longer down the barrel — its lower end travelling most of the length of the tube while its upper end stays anchored, so the stretched coil ends up visibly several times the length it held at rest. The red pointer rides down the scale with it, passing mark after mark after mark before easing to rest low on the scale, and the stone hanging beneath descends the same distance and swings gently to a stop. The stand foot bites into the bench and its shadow deepens under the load. Camera: it descends steadily alongside the opening coil, travelling a long way down through the stretch and settling as the pointer holds, so the length of the camera move is itself the measurement. The coil visibly and continuously lengthens through the whole shot and never stays the same length, never snaps back and never rebounds; the stone hangs freely in the air below the hook and never touches the bench or any surface; the coil stays sound with no kink, snapped turn or tangle; the stand does not tip. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

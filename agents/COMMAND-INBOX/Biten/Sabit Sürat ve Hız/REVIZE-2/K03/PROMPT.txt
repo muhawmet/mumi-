@@ -1,0 +1,30 @@
+· K03  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Kaldırım büyük, düzensiz, aşınmış taş plakalarla döşeli · bordür kaba kesme
+·                   taş · arkada eski pastel sıvalı yığma dükkânlar ve tenteler · sokak arası
+·                   açık manav sergisi, kaba tahta kasalar · yosunlu beton saksı duvarı ·
+·                   arka planda bulanık "MANAV" tabelası · eski model bisiklet.
+· YÖNTEM          : baştan kuruluyor — geniş iki kişilik plan, kaldırım ve dükkân sırası
+·                   kadrajın büyük kısmını kaplıyor, arka planı yamamak yetmez.
+· NE DEĞİŞMİYOR   : @ali (yeşil kapüşonlu, beyaz tişört, kot, hardal bağcıklı beyaz ayakkabı,
+·                   hardal çanta) ve @mira (mercan kırmızısı kapüşonlu, gezegen yamalı kot
+·                   tulum, hardal çanta, sarı yıldız toka) · yan yana adım atışları ve
+·                   birbirlerine bakışları · kedi ve bisiklet · uzun altın sabah gölgeleri ·
+·                   VO'nun anlattığı olay: ikisi birlikte okula doğru yürümeye başlıyor.
+·
+· NASIL           : 1) K03-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Rebuild this referenced frame with the same 35mm lens at f/2.8 and the same three-quarter front tracking view: the composition, the crop, both characters, their stride, their glance at each other and the light are taken from the reference exactly; the environment itself is rebuilt. @ali and @mira walk side by side into the low morning sun, feet mid-stride and in step, hands on their backpack straps, easy and cheerful. Their look does not change: @ali in a green zip-up hoodie over a white tee, blue jeans with rolled cuffs, white sneakers with mustard laces, tan textured backpack; @mira in a coral-red hooded top under dark denim dungarees with a round planet patch, a small yellow star clip in her dark bob, white sneakers with mustard laces, tan textured backpack. Warm matte tan skin on both, low specular, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face. The sun keeps its exact low angle from ahead-left, raking their two long shadows back across the ground toward camera. The street is now a modern, well-kept Turkish residential district: they walk on a wide pavement of light-grey concrete slabs in an even running-bond grid, joints tight and level, edged by a chamfered granite kerb and a mown grass verge; young trees stand in round steel grates; a clean white bicycle is parked upright in a slim steel rack beside a tidy litter bin and a slim grey lamp post; behind them rise four-storey contemporary apartment blocks in warm off-white and light grey render with large windows and steel-and-glass balcony railings, and at street level one modern neighbourhood market with a flat pale canopy over a tidy tiered display of crates. The road beyond is new dark-grey asphalt with crisp white lane markings. Three things are alive in the frame: their shadows rake forward over the slabs, a tabby cat watches from the low rendered planter wall, both backpacks sway with their first steps. Depth in three layers — the blurred kerb in the near foreground, the two children sharp in the middle plane, the modern street in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the light temperature. Material specificity is mandatory: sandblasted concrete slab, honed granite kerb, powder-coated steel rack, brushed aluminium window frame, woven backpack canvas with slight fibre fray, satin-leather sneakers, fresh matte asphalt. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated key, complementary bounce at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (crates of tomatoes at the market display), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the market canopy is plain matte white with no writing, its display is filled edge to edge with fruit and crates; the apartment facades carry only glass, render and balcony steel; the litter bin, lamp post and bike rack are plain unmarked metal. Any distant sign stays soft-focus and blank or Turkish. No English signage, no floating caption, no equations.
+NEGATIVE: no worn irregular stone-slab paving, no striped market awning, no rough crate-and-trestle street stall, no mossy planter; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

@@ -1,0 +1,32 @@
+· K10  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern" · ayrıca "00:41 de çantalar yok oldu"
+· BU KAREDE NE VAR: solda ve sağda yıpranmış pastel sıvalı köy evleri, üstte eski ahşap cumba
+·                   çıkması, dar ve solgun asfalt, düzensiz taş kaldırım kenarı, sağda eski
+·                   demir park korkuluğu ve tek ahşap bank. ÇANTA DOĞRULANDI: iki çocuğun da
+·                   sırtında çanta YOK — K09'da (bir önceki kare) ikisinde de mardağ-hardal
+·                   rengi dokuma kanvas okul çantası var, K10'da yok olmuş.
+· ÇANTA KAYNAĞI    : K09-MEVCUT.png ile birebir eşlendi — sıcak hardal-tan dokuma kanvas,
+·                   önde fermuarlı cep, koyu dokuma askı, iki omuzda. ⚠ K02-MEVCUT.png'de
+·                   Ali'nin çantası LACİVERT uzay desenli görünüyor; K02 de bu revize turunda,
+·                   seri kanonu (revize.txt madde 3.png "warm mustard-yellow") ve K10'un hemen
+·                   öncesi olan K09 hardal-tan diyor. Süreklilik K09'a bağlandı.
+· YÖNTEM          : baştan kuruluyor — çevre kadrajın yaklaşık dörtte üçünü kaplıyor, geniş plan.
+· NE DEĞİŞMİYOR   : kompozisyon, kadraj, iki çocuk, kıyafetleri, saçları, yürüme pozları,
+·                   altın sabah ışığının yönü ve saati, kıvrılan yolun formu, VO'nun anlattığı
+·                   "yürünen bütün hattın uzunluğu" fikri, yazı yok.
+·
+· NASIL           : 1) K10-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+28mm lens at f/4, slightly high three-quarter view, deep focus — the composition, framing, characters, poses and lighting are taken from the reference image exactly; the environment itself is rebuilt. @mira in her red hooded top and denim dungarees and @ali in his green zip hoodie, white tee and blue jeans walk on side by side in the middle of the frame while the whole winding route they have already taken sweeps back through the frame behind them — pavement, corner, the loop around the park — the entire length of that path readable as one continuous line. Each child wears their own warm mustard-tan woven canvas school backpack on both shoulders, front zip pocket and dark webbing straps, the same bag carried in the previous shot; no child is without a backpack. Warm matte tan skin, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. The setting is a modern, well-kept Turkish new-development neighbourhood in the morning: wide, freshly laid smooth dark-grey asphalt with crisp new white lane lines and no pothole, patch or crack; a wide even pavement of light-grey concrete pavers with a straight granite kerb; low three-to-five storey contemporary apartment blocks in clean warm off-white and light-grey render with large windows, glass-and-slim-steel balcony railings and flat roofs; a mown grass strip with young trees in round grated beds and low clipped hedges; slim grey lamp posts, a steel bicycle rack, a tidy litter bin and two clean new compact cars parked neatly at the kerb. Three things are alive in the frame: low morning light rakes along the curving asphalt, one dry leaf tumbles across the white lane line, their two shadows trail back along the route behind them. Depth in three layers — the blurred granite kerb in the near foreground, the two children and the near roadway sharp in the middle plane, the far curving street in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face; skin stays matte with low specular. Material specificity is mandatory: fine-grain fresh asphalt, matte cast concrete pavers, honed granite kerb, smooth troweled render, brushed steel railing, woven canvas backpack fibre. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated low morning key, complementary bounce fill in the opposing hue, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark and open, never cold-black. No outlines; silhouette carries through lighting rim.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame in Mira's hooded top, highlights lift toward a clean warm ivory with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. There is no lettering anywhere in this frame: the street sign is blank or soft-focus, the shopfronts carry no wording, the parked cars carry no plate text, no floating caption, no numerals. (Kırmızı iz ve "YOL" bir sonraki karede, K11.)
+NEGATIVE: both children are seen wearing their own school backpack, no child without a backpack; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no weathered peeling or cracked render, no narrow broken muddy road, no hillside village skyline, no misty valley, no tangle of overhead cables, no old timber oriel bay window, no shanty house; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

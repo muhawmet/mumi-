@@ -1,0 +1,28 @@
+· K11  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: solda dökülen sıvalı, kepenkli, eski bir yığma bina cephesi; önünde
+·                   çürümüş ahşap latalı eski bank; kaldırım koyu kırmızımsı, düzensiz
+·                   desenli baskı beton; kenar bordürü kaba ve kırık; arkada karanlık, eski
+·                   dükkân alınlıkları. Kısaca: eski mahalle imzası.
+· YÖNTEM          : change ONLY — kahraman kırmızı ışık kurdelesi ve "YOL" harfleri kadrajın
+·                   merkezini tutuyor, çocuklar sağda net; çevre yalnız çevrede kalıyor,
+·                   dolayısıyla kare yeniden kurulmaz, sadece çevre değiştirilir.
+· NE DEĞİŞMİYOR   : kırmızı ışık kurdelesinin birebir kıvrım geometrisi, "YOL" yazısının
+·                   yeri-boyu-yazımı, @mira ve @ali'nin kıyafeti-saçı-duruşu ve bakış yönü,
+·                   ışığın rejimi (kurdele sahnenin kaynağı), ıslak zemin yansıması.
+·
+· NASIL           : 1) K11-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+28mm lens at f/4, slightly high vantage — recreate the reference image exactly and change ONLY the surrounding environment. Keep identical: the warm-red luminous ribbon of light tracing the exact winding path they walked, its every curve, thickness and taper; the glowing Turkish word "YOL" floating over the path; @mira in her red hooded top and denim dungarees with the star clip in her hair and @ali in his green zip hoodie and blue jeans standing at the right, mid-step, glancing back at the ribbon in wonder; the camera height, the framing and the light regime, in which the red ribbon is the motivated glowing source and the blue pre-dawn morning air is the ambient. Warm matte tan skin, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Change the environment to a modern, well-kept Turkish new-development neighbourhood: the path underfoot becomes wide, even light-grey concrete pavers laid in a regular pattern with a straight honed granite kerb, damp and satin-reflective; the building on the left becomes a low contemporary apartment block in clean warm off-white render with large windows, a glass-and-slim-steel balcony railing and a flat roof; the old bench becomes a clean modern bench of pale timber slats on a slim grey steel frame; add a slim grey lamp post, a steel bicycle rack and a tidy litter bin; keep the plane trees but set them in round grated beds beside a mown grass strip and a low clipped hedge. Three things are alive in the frame: the ribbon's glow reflects in the damp pavers, fine motes drift through its light, its far end tapers into warm bokeh down the street. Depth in three layers — the bright near end of the ribbon in the foreground, its curving body sharp in the mid-ground, the far street in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency where skin appears, a single soft catchlight in the eyes only and never a wet sheen over the face; skin stays matte with low specular. Material specificity is mandatory: the red ribbon reads as soft volumetric luminous energy, damp cast-concrete pavers with satin reflection, honed granite kerb, smooth troweled render, brushed steel bench frame, dappled plane-tree bark. Lighting is art-directed: the red ribbon a motivated glowing source casting warm bounce onto the pavers, cool open ambient in the shade, soft painted ambient occlusion — shadow reads open and detailed, never cold-black. No outlines; forms carry through lighting and value.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow warm amber where the ribbon reaches, the luminous ribbon carries the frame's vivid tomato-red accent, highlights lift toward a clean warm ivory with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: the only lettering is the single Turkish word "YOL" (three capital letters, Y then O then L) formed from the same warm-red luminous light as the ribbon, floating just above the path in its existing position and size — soft dimensional light-letters, not a flat caption. Every other surface is wordless: the new building carries no sign, the litter bin and bicycle rack carry no wording, no English, no numerals, no other text.
+NEGATIVE: no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no weathered peeling or cracked render, no narrow broken muddy road, no hillside village skyline, no misty valley, no tangle of overhead cables, no old timber oriel bay window, no shanty house, no rotten wooden bench, no closed rusted shutters; the red trace is light, never a drawn arrowhead or diagram line; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

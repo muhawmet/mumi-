@@ -1,0 +1,20 @@
+· K12 — MOTION REVİZE  ·  "00:56 araba durmalı, tekerler dönmemeli, itince hareket etmeli"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K12-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· MÜŞTERİ NE DEDİ : "00:56 araba durmalı, tekerler dönmemeli, itince hareket etmeli"
+· BULGU           : Klip arabanın zaten hareket ettiği yerden başlıyor — mevcut motion arabayı doğrudan harekete sokuyor, duruş anı hiç yok. İzleyici parmağın ittiğini göremiyor. Dersin cümlesi tam da 'duran cismi harekete geçirir' diyor, kare bunu göstermiyor.
+· NE YAPIYORUZ    : Klip TAM DURUŞLA başlıyor: araba kıpırdamıyor, tekerlek dönmüyor. Parmak değene kadar hiçbir şey olmuyor. Değdiği an hareket doğuyor ve tekerlek dönüşü yol hızıyla birebir eşleşiyor.
+·
+· NASIL           : 1) K12-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (229 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+The truck stands completely still on the desk with all four wheels locked and motionless, and nothing about it moves at all while the fingertip travels the last of the distance toward its rear panel — the toy is inert, not even rocking on its springs. The moment the fingertip makes contact the body begins to move, and it begins slowly: the truck creeps forward from rest and its wheels start to turn at exactly the rate the ground passes beneath them, each wheel rolling in true contact with the wood so the tyre never slips and never spins faster than the truck travels. As the push continues the truck gathers speed and the wheels turn faster in the same locked ratio, the body rocking back once on its springs, a thin trail of disturbed dust lifting behind it as the finger stays behind and lifts clear. Camera: it holds locked on the standing truck through the whole still opening, and only once the toy is properly under way does it ease into a gentle follow that falls a little behind. The wheels never turn while the truck is standing still and never turn at a rate that does not match the ground; the truck stays flat with all four wheels touching and never lifts or deforms; the lamp, the books and the pencil stay exactly where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

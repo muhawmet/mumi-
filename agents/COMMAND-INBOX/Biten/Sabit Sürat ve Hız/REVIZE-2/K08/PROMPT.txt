@@ -1,0 +1,31 @@
+· K08  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Kaldırım baştan sona eski küp taş (arnavut kaldırımı), köşede aşınmış
+·                   beton bordür · park sınırı süslü yeşil dökme demir parmaklık · ağır süslü
+·                   dökme demir sokak lambası · eski oymalı taş çeşme · yosunlu zemin ·
+·                   arkada yıpranmış sıvalı yığma yapı ve kırmızı ahşap kapı.
+· YÖNTEM          : baştan kuruluyor — zemin, parmaklık, çeşme ve banklar orta planda ve
+·                   kadrajın çoğunu kaplıyor; köy imzası arka planda değil, ayaklarının altında.
+· NE DEĞİŞMİYOR   : @ali önde, @mira arkada, ikisi de profilden sola yürüyor, başları hafif
+·                   dönük, sırtlarında hardal çantalar · kıyafetleri (yeşil kapüşonlu + kot ·
+·                   mercan kapüşonlu + kot tulum) · peşlerinden gelen kahverengi küçük köpek ·
+·                   ağaç yapraklarından süzülen benekli sabah ışığı ve yönü · kırmızı bank
+·                   aksanı · köşeyi dönüş hareketi · VO'nun anlattığı olay: kaldırımdan
+·                   yürüdüler, köşeyi döndüler, parkın etrafından dolandılar.
+·
+· NASIL           : 1) K08-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Rebuild this referenced frame with the same 35mm lens at f/2.8 and the same slightly high three-quarter following view: the composition, the crop, both children, their walking poses, the dog and the light are taken from the reference exactly; the street and the park edge are rebuilt. @ali leads and @mira follows a step behind, both in profile moving to frame left along the rounded corner of the pavement, heads turned a little toward each other, tan textured backpacks on their shoulders. Their look does not change: @ali in a green zip-up hoodie over a white tee, blue jeans with rolled cuffs, white sneakers with mustard laces; @mira in a coral-red hooded top and dark denim dungarees with rolled cuffs, a small yellow star clip in her dark bob, white sneakers with mustard laces. Warm matte tan skin on both, low specular, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face. The morning sun keeps its exact direction, falling through the canopy in the same shifting coins of gold, so leaf-shadow slides across their backs while the shaded side of each face stays open, detailed blue-indigo. The setting is now a modern, well-kept Turkish residential district: they walk on a wide pavement of light-grey concrete pavers laid in a tight even running-bond grid, sweeping around the corner in a clean arc, edged by a chamfered light granite kerb with a crisp shadow line and a new dark-grey asphalt road below it. The park behind them is contemporary and cared for: a slim dark-grey steel railing of plain vertical bars on a low render plinth, a mown lawn strip, young trees in round steel grates, a low clipped hedge, benches of pale timber slats on slim dark steel frames — one of them in bright tomato red — and a modern circular water feature, a flush granite basin with a single low jet. A slim dark-grey lamp post stands at the corner with a plain litter bin beside it. Three things are alive in the frame: leaf-shadows slide over their backs and the pavers, a small brown dog trots a few steps behind them, the water feature's low jet ripples the basin. Depth in three layers — a blurred railing post in the near foreground, the children sharp in the middle plane, the park in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature. Material specificity is mandatory: sandblasted concrete paver, honed granite kerb and basin rim, powder-coated dark-grey steel railing, oiled pale timber slat, satin water surface, woven backpack canvas, fresh matte asphalt. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated dappled key, complementary cool bounce in shade, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines; silhouette carries through lighting rim.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (the red bench), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the railing is plain bar steel, the benches carry only timber slats, the litter bin and lamp post are plain unmarked metal, the basin rim is bare granite, and the building behind is soft-focus render and glass with no board. No English signage, no floating caption, no equations.
+NEGATIVE: no cobblestone or stone-sett paving, no ornate cast-iron lamppost, no ornate carved stone fountain, no scrolled cast-iron bench end, no mossy or stained ground; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

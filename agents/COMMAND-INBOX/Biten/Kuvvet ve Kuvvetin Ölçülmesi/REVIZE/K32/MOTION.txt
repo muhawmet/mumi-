@@ -1,0 +1,20 @@
+· K32 — MOTION REVİZE  ·  "02:56 yay esnemiyor"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K32-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· MÜŞTERİ NE DEDİ : "02:56 yay esnemiyor"
+· BULGU           : VO tam bu cümlede 'ancak ağır bir taş astığında esnedi' diyor — yani bu karenin TEK işi yayın açılmasını göstermek. Klipte yay gözle görülür biçimde açılmıyor, ders kanıtsız kalıyor.
+· NE YAPIYORUZ    : Yayın uzaması karenin en büyük olayı yapılıyor: sarımlar tek tek açılıyor, yay boyu gözle sayılabilir kadar uzuyor, kırmızı ibre skalada aşağı yürüyor. Taş havada serbest sarkıyor, hiçbir yüzeye değmiyor.
+·
+· NASIL           : 1) K32-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (213 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+The stone settles onto the hook and turns slowly on its knotted cord, and the thick coil gives visibly and unmistakably: the tightly packed turns pull apart one after another from the top of the coil downward, the gap between each pair opening into a clear even space wide enough to see daylight through, and the whole coil grows markedly longer down the barrel — its lower end travelling a long visible distance down the tube while its upper end stays anchored. The red pointer rides down the scale with the stretching coil, passing mark after mark before easing to rest, and the stone hanging beneath descends with it and swings gently to a stop. The stand foot bites into the bench and its shadow deepens under the added load. Camera: it descends slowly alongside the opening coil, travelling down through the stretch and settling as the pointer holds, so the lens itself measures the extension. The coil visibly and continuously lengthens through the shot and never stays the same length, never snaps back and never rebounds; the stone hangs freely in the air below the hook and never touches the bench or any surface; the coil opens but stays sound with no kink, snapped turn or tangle; the stand does not tip. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

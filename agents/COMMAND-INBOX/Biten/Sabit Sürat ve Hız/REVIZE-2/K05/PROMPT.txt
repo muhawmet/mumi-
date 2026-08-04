@@ -1,0 +1,29 @@
+· K05  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Zemin oymalı, yıpranmış, düzensiz eski taş döşeme — karenin yarısı bu ·
+·                   arkada eski çarşı: taş kemerler, ahşap cumbalı yığma evler, dar sokak,
+·                   başörtülü/eski kıyafetli bulanık figürler, toprak testiler.
+· YÖNTEM          : baştan kuruluyor — kahraman yüzey ZEMİNİN KENDİSİ; ışık patlaması da
+·                   onun üstünde doğuyor, sadece arka planı değiştirmek kareyi kurtarmaz.
+· NE DEĞİŞMİYOR   : Alçak açı ve yakın plan · adım atan iki ayak, hardal bağcıklı beyaz spor
+·                   ayakkabılar (referanstaki ayakkabı ve bacaklar birebir) · yere basan
+·                   ayağın altında doğan yumuşak yuvarlak sıcak-altın ışık halkası · burun
+·                   ucundaki toz bulutu · uzun altın sabah gölgeleri · VO'nun anlattığı olay:
+·                   attıkları her adımın arkasında gizli bir bilim var.
+·
+· NASIL           : 1) K05-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Rebuild this referenced frame with the same 35mm lens at f/2.8 and the same low three-quarter close view of the striding feet: the composition, the crop, the two feet, the shoes, the legs, the stride phase and the light are taken from the reference exactly; the ground and the street behind are rebuilt. The rear shoe is planted flat and a soft round warm-golden glow of light blooms from under its sole in a low ring on the ground — luminous energy, no petals, no stem, no flower, no arrow — while the front shoe rolls off its toe. The shoes do not change: white low sneakers with mustard laces, satin leather with a faint scuff, the same legs and the same skin, warm matte tan with low specular, never tinted green or grey. The sun keeps its exact low angle from the left, raking the long shadows of both feet and of the kerb away to the right. The setting is now a modern, well-kept Turkish residential district: the pavement is wide, paved in large light-grey concrete slabs, sandblasted matte, laid in an even running-bond grid with tight straight joints and no crack, chip or missing corner; a chamfered light granite kerbstone runs along the bottom left of frame with a crisp shadow line under its lip, and beyond it lies new dark-grey asphalt with a fresh white edge line. Behind, in warm bokeh, a mown grass verge, a young tree in a round steel grate, a slim grey lamp post and the render-and-glass ground floors of contemporary apartment blocks; two unresolved adult silhouettes in heavy defocus walk away down the pavement, no face, no hand, no costume detail. Three things are alive in the frame: the golden ring blooms under the landing shoe, a small puff of fine dust lifts at the toe-off, the shadows of both feet swing across the slabs. Depth in three layers — the blurred kerbstone in the near foreground, the striding feet and the glow sharp in the middle plane, the modern street in warm bokeh. Every object rests in contact with the ground and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven composition that reads at thumbnail size, subsurface translucency where skin appears. Material specificity is mandatory: sandblasted concrete slab with fine aggregate, honed granite kerb, fresh matte asphalt, satin-leather sneaker with cotton lace fibre; the glow reads as soft luminous energy sitting on the ground, never on skin. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated low morning key plus the ground glow, complementary bounce, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (a red compact car parked in the far bokeh), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the pavement carries only slab joints and the light ring, the kerb carries only its chamfer, the asphalt carries only a plain white edge line, and every shopfront behind is soft-focus glass and render with no board. No numerals, no equations, no captions, no English signage.
+NEGATIVE: no carved, patterned, ornamented or worn stone paving, no cobble setts, no old bazaar street, no stone arch, no earthenware jars; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

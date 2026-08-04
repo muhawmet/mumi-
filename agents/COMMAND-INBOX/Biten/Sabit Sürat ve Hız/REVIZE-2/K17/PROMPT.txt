@@ -1,0 +1,29 @@
+· K17  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: arka planda eski bir çarşı/pazar tezgâhı — bez tenteli sundurma, yerde ve
+·                   raflarda pişmiş toprak testiler ve küpler, ipe asılı renkli dokuma
+·                   kilim/kumaşlar, dökülen kireç sıvalı duvar, toprak zemin. Ön plandaki
+·                   duvar kendisi kaba dökme beton.
+· YÖNTEM          : change ONLY — kadrajın ön planı yakın plan bir masa üstü kompozisyonu
+·                   (kordon hâlinde sarılı kırmızı ışık + pirinç köstekli saat + Mira'nın eli);
+·                   çevre yalnız bulanık arka planda kalıyor, o yüzden kare yeniden kurulmaz.
+· NE DEĞİŞMİYOR   : kadraj, lens, alçak duvar üstündeki iki nesnenin yeri ve boyutu, sarılı
+·                   kırmızı kurdele ile pirinç köstekli saatin tasarımı, Mira'nın kırmızı
+·                   sweatshirt kollu eli ve el pozu, ön plandaki yaprak, sıcak sabah ışığının
+·                   yönü ve saati, temas gölgeleri, arka planın bulanıklık derecesi.
+·
+· NASIL           : 1) K17-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+50mm lens at f/2.8, medium tabletop-style vantage on a low sunlit garden wall — recreate the reference image exactly and change ONLY the out-of-focus environment behind the wall. Keep identical: the coiled length of warm-red glowing ribbon-light lying on the wall, its coil count, size and position; the old brass pocket-watch beside it, its worn case, its ring crown and its dial; Mira's hand entering from the right in its red sweatshirt cuff, fingers spread in the same gesture; the leaf blurred in the near foreground; the granular pale stone of the wall itself; the low warm morning key from the left, the same shadow direction and the same soft contact shadows under both objects; and the same shallow depth of field, so whatever replaces the background stays exactly as out of focus as it is now and is never sharpened. Warm matte tan skin on her hand, never tinted green or grey, low specular and no wet sheen. Change the background to a modern, well-kept Turkish new-development street corner, held in warm bokeh: a low three-storey contemporary apartment block in clean warm off-white render with large windows and a glass-and-slim-steel balcony railing; a wide pavement of light-grey concrete pavers with a straight granite kerb; a mown grass strip with a young tree in a round grated bed and a low clipped hedge; a slim grey lamp post, a steel bicycle rack and a tidy litter bin; one clean new compact car parked neatly at the kerb; and beyond them a wide, freshly laid smooth dark-grey asphalt road with a crisp white lane line. Three things are alive in the frame: the brass watch's second hand sweeps, the coiled red ribbon-light pulses gently, a dust mote turns in the low sun. Depth in three layers — the blurred leaf in the near foreground, the watch and the coiled ribbon sharp in the middle plane, the modern street corner in warm bokeh. Every object rests in contact with the wall and casts a soft contact shadow.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven composition that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight where the eyes appear and never a wet sheen over skin; skin stays matte with low specular. Material specificity is mandatory: brass with anisotropic brushed highlight and worn edges, the red ribbon as soft luminous energy rather than plastic, granular matte stone, matte cast-concrete pavers, smooth troweled render, clear glass balcony panels. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated low morning key, complementary bounce, a saturated rim accent, soft painted ambient occlusion — shadow reads open and detailed, never cold-black. No outlines; forms carry through lighting and value.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, the red ribbon carries the frame's vivid tomato-red accent, highlights lift toward a clean warm ivory with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. There is no lettering anywhere: the pocket-watch dial carries no numerals and no maker's name, the wall is bare, the new background building, the parked car, the litter bin and the lamp post carry no wording or signage. No formula symbols, no equations, no captions.
+NEGATIVE: no market or bazaar stall, no canvas awning, no terracotta pots, jugs or urns, no hanging woven rugs or textiles, no dirt ground; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no weathered peeling or cracked render, no narrow broken muddy road, no hillside village skyline, no misty valley, no tangle of overhead cables, no old timber oriel bay window, no shanty house; the replaced background stays exactly as blurred as the original and is never sharpened; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

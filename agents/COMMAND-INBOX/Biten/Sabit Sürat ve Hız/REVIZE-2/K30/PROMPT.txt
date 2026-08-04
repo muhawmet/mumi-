@@ -1,0 +1,44 @@
+· K30  ·  kare anlamı taşımıyor — baştan kuruluyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "02:54 anlamsız olmuş"
+· BU KAREDE NE VAR: Kusur (a) — kare VO'nun anlattığı şeyi HİÇ göstermiyor. VO34 "birimler
+·                   aynıydı; fark, hızın yer değiştirme üzerinden ve belirli bir yönle ifade
+·                   edilmesiydi" diyor, yani karede İKİ ŞEYİN KARŞILAŞTIRMASI olmalı.
+·                   Karede olan: @ali tek başına, arnavut kaldırımına DİZ ÇÖKMÜŞ, boşluğa
+·                   sırıtıyor — @MİRA KADRAJDA YOK, oysa cümle onun kavrayışını anlatıyor.
+·                   Mavi ışık kalın bir çubuk gibi ÇAPRAZ YUKARI kadrajdan çıkıyor: yerden
+·                   ayrıldığı için ne yol ne yön okunuyor. Kırmızı "bütün yol" ise arkada,
+·                   başka ölçekte, sönük bir karalama; iki ışığın ortak başlangıcı da ortak
+·                   bitişi de yok. Karşılaştırma kadrajda hiç kurulmamış.
+·                   Sonucu (c): VO olmadan bakan biri "burada ne oluyor" sorusuna cevap
+·                   veremiyor. Kök kusur (a), (c) onun sonucu.
+· YÖNTEM          : baştan kuruluyor — hem kare fikri hem çevre yeniden kuruluyor.
+· YENİ FİKİR      : İki ışık AYNI NOKTADAN (Mira'nın ayağının altındaki tek izden) çıkıyor
+·                   ve AYNI NOKTADA (okul kapısında) bitiyor. Altın olan yolu izleyip
+·                   kaldırım boyunca dolanıyor (alınan yol), mavi olan dümdüz gidiyor (yer
+·                   değiştirme). İkisinin üstünde de BİRBİRİNİN AYNI eşit aralıklı ışık
+·                   boncukları var — "birimler aynıydı" tam olarak bu. Yön ise ok değil:
+·                   yalnız mavi olan okul kapısına serin bir ışık havuzu döküyor, altın olan
+·                   kapıya hiç değmiyor. Ok, şema, sayı yok — kavram ışığın kendisi.
+· NE DEĞİŞMİYOR   : VO cümlesi ve anlattığı olay · @mira ve @ali'nin kimliği, kıyafeti,
+·                   saçı · sabah ışığı · yazı yok (mevcut karede de yoktu).
+·
+· NASIL           : 1) K30-MEVCUT.png dosyasını referans olarak yükle (yalnız karakter
+·                      kimliği ve ışık saati için — kompozisyon yeniden kuruluyor)
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+35mm lens at f/4, eye-level medium view looking down a straight street — @mira stands upright on both feet just left of centre at the near end of the pavement, her body turned three-quarter away from camera, her open right palm held low and flat as it follows a line of light leaving from under her shoe. From that single point beneath her shoe two lights set off together, both lying flat on the ground and running away into the depth of the frame, never rising into the air: a warm-golden ribbon that follows the road, curving out along the kerb and around the planted island in a long wandering loop, and a clean cool-blue ribbon that lies dead straight across the pavement toward the far end of the street. Both ribbons are beaded along their whole length with identical small glowing marks at exactly the same spacing, the same size and the same rhythm on each. Both ribbons arrive at the very same place — the entrance gate of the school at the end of the street — and only the blue one spills a pool of cool light across that gate, while the golden one runs alongside without touching it. @ali stands a step behind @mira, upright, watching the same two lights, his face soft in focus. Warm matte tan skin on both, low specular, never tinted green or grey. The setting is a modern, well-kept Turkish new-build neighbourhood in bright morning light: a wide pavement of evenly laid pale grey concrete pavers on a clean granite kerb, a freshly laid smooth dark-grey asphalt road with crisp fresh white lane markings, low-rise contemporary apartment blocks of three to five storeys in warm off-white and pale grey render with large windows and slim glass-and-steel balcony railings, a mown grass strip with young trees in round grated beds, low clipped shrub rows, slim grey lamp posts, a bicycle stand, a tidy bin, two clean late-model compact cars parked neatly, and a contemporary school building with clean lines, wide windows and coloured facade panels at the end. Low morning sun rakes hard from the left, so the left side of @mira's face is lit and the right side falls into open luminous blue shadow. Three things are alive in the frame: motes drift through both ribbons of light, a young tree's leaves stir over the golden loop, @mira's shadow lies long across the pavers. Depth in three layers — the blurred grey railing in the near foreground, @mira and the two ground-level ribbons sharp in the middle plane, the school gate in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: both ribbons as soft volumetric luminous energy, cast concrete pavers with clean arrises, powder-coated railing steel, smooth painted render on facades, fine asphalt grain. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed, never photo-random: one motivated hard morning key from the left plus the two ribbons as motivated glows, complementary bounce at a third of key strength, soft painted ambient occlusion — shadow reads warm-dark and always legible, never cold-black. No outlines; silhouette carries through lighting rim. Frame at a child's eye-line.
+
+LIGHT AND PALETTE: shadows settle into an open luminous blue that stays airy and full of detail, midtones glow vivid warm amber across the pavers and the render, one vivid tomato-red accent punctuates the frame in @mira's hoodie, the winding ribbon carries the warm-golden accent and the straight ribbon one clean cool-blue accent, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Overall exposure is bright and open — a sunlit morning street, high-key overall with one hard directional key. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: none — clean plate. No numerals, no captions, no equations, and no lettering on the light ribbons. Every surface in frame is dressed so that no blank panel invites invented text: the apartment fronts are plain render and glass, the school facade is glass and coloured panel, the bin and bicycle stand are plain painted metal, the parked cars carry no badge or plate lettering, the ground plane is filled by pavers, grass strip and clipped shrub rows — there is no signboard, banner, shutter or awning anywhere in the frame.
+
+NEGATIVE: neither ribbon ever leaves the ground plane — no vertical beam, no diagonal shaft rising out of frame, no light pointing at the roofline, the clouds or the top of frame; both ribbons begin at the same single point under @mira's shoe and end at the same school gate, and neither is a floating bar detached from the ground; the glowing beads keep identical spacing on both ribbons and are never numbered; @mira is in frame, nearest to camera and the largest figure, and both children stand upright on both feet — neither kneels, crouches or sits; no third child and no adult; no cobblestone alley, no old timber bay window or cumba, no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked or flaking render, no narrow broken muddy lane, no hillside village skyline, no misted valley, no overhead cable clutter, no shanty or gecekondu, no market stall; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations, graphs, dotted measuring lines or callouts; the paths are light, never drawn arrowheads; no empty white void.

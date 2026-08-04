@@ -1,0 +1,33 @@
+· K09  ·  çevre modernleşiyor  ·  🔴 MÜŞTERİNİN BİREBİR İŞARET ETTİĞİ KARE (00:36)
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "00:36 kaldırım değişmeli"
+· BU KAREDE NE VAR: Kaldırım dökme, derzsiz, kirli bej mozaik-beton bir şerit; bordür yuvarlak
+·                   ve aşınmış, yer yer zemine karışıyor · iki yanda yıpranmış, lekeli, sıvası
+·                   dökülmüş bahçe duvarları ve payandalar · sonda kiremit çatılı, kaba taş,
+·                   kasaba mescidi/köy okulu görünümlü küçük yapı · arkada çıplak sarı-kavruk
+·                   tepe · dar bozuk asfalt.
+· YÖNTEM          : baştan kuruluyor — kahraman KALDIRIMIN KENDİSİ; müşterinin işaret ettiği
+·                   yüzey kadrajın yarısı, arka planı değiştirmek talebi karşılamaz.
+· NE DEĞİŞMİYOR   : Yolun iki kez kıvrılan S hattının kadrajı baştan sona kesen LİDER ŞEKİL
+·                   olması · sırtı dönük yürüyen @mira (solda, mercan kapüşonlu, kot tulum,
+·                   sarı yıldız toka, hardal çanta) ve @ali (sağda, yeşil kapüşonlu, kot,
+·                   hardal çanta), ikisi de yolun kıvrımından küçük · yolu kesip geçen tekir
+·                   kedi · sol ön plandaki bulanık yaprak çerçevesi · benekli altın sabah
+·                   ışığının yönü · uzakta, kıvrımın sonundaki okul · VO'nun anlattığı olay:
+·                   yol dümdüz değil, kıvrıla kıvrıla okula gidiyor.
+·
+· NASIL           : 1) K09-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Rebuild this referenced frame with the same 35mm lens at f/4 and the same following three-quarter-rear view: the composition, the crop, both children, their walking poses, the cat and the light are taken from the reference exactly; the pavement, the road and the whole street are rebuilt. The sidewalk bends once and then again toward the school and stays the lead shape sweeping through the entire frame; @mira and @ali walk it in the mid-ground with their backs to camera, smaller than the arc of the path. The pavement is the hero and it is described piece by piece: it is broad and paved with rectangular light warm-grey concrete pavers laid in a herringbone pattern, every paver level with its neighbour, joints tight, fine and evenly sanded; along both edges of the walk runs a double soldier course of the same pavers turned end-on, drawing a clean double line that follows the curve; the outer edge is finished with a straight-cut light granite kerbstone, its top face chamfered, its lip casting a crisp thin shadow onto the road; the surface is dry, swept and unbroken, with no chip, crack, patch, weed or stain. Beyond the kerb the road is new dark-grey asphalt, smooth and freshly laid, with a crisp fresh white edge line curving with the bend. Both sides are a modern, well-kept Turkish residential district: low garden walls of smooth pale render capped with light granite coping, topped by slim vertical timber slat screens and clipped hedges; young trees in round steel grates; mown grass strips; slim dark-grey lamp posts. At the end of the curve stands a contemporary school — clean horizontal lines, wide window bands, warm coloured facade panels, a low entrance canopy and a straight flagpole — with soft wooded green rising behind it. Their look does not change: @ali in a green hoodie, blue jeans with rolled cuffs and white sneakers with mustard laces; @mira in a coral-red hooded top, dark denim dungarees and white sneakers; both with tan textured backpacks. Warm matte tan skin, low specular, never tinted green or grey. Three things are alive in the frame: the bends of the walk lead the eye toward the far school, a tabby cat crosses the curve ahead of them, their shadows swing across the pavers with each bend. Depth in three layers — blurred foliage in the near foreground left, the curving pavement and the children sharp in the middle plane, the far bend and the school in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven composition that reads at thumbnail size, subsurface translucency where skin appears. Material specificity is mandatory: fine sandblasted concrete paver with a soft chamfer on each edge, honed granite kerb, fresh matte asphalt, smooth clean render, oiled timber slat, brushed aluminium window frame, dimensional foliage. Structures drawn with clear child-readable scale. Lighting is art-directed: one motivated dappled morning key, complementary cool bounce in the shade, a saturated rim accent along the kerb, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines; forms carry through lighting and value.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (a red facade panel on the school), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the school facade carries window bands and coloured panels instead of a name board, the garden walls carry granite coping and timber slats, the lamp posts are plain unmarked metal, the pavement carries only its herringbone pattern and soldier-course border. Any distant sign stays soft-focus and blank or Turkish. No English signage, no floating caption, no equations.
+NEGATIVE: no poured seamless terrazzo or aggregate footpath, no rounded worn kerb, no stained or patched pavement, no rubble-stone or rough-cut stone building at the end of the road; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building, no bare scorched brown hill; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

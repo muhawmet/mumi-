@@ -1,0 +1,29 @@
+· K04  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Arkada bulanık da olsa eski cadde imzası — kenarı bozuk dar asfalt,
+·                   çukurlu toprak-taş bordür, sağda dökülmüş beton kaldırım kenarı, arka
+·                   planda karışık düşük yapı silueti ve yığma duvar; hiçbir modern sokak
+·                   donanımı yok.
+· YÖNTEM          : change ONLY — yakın-orta iki kişilik plan; kadrajın çoğunu iki yüz
+·                   kaplıyor, çevre yalnız bokeh arka planda kalıyor.
+· NE DEĞİŞMİYOR   : İki yüz, ifadeler, saçlar, sarı yıldız toka, mercan kapüşonlu + gezegen
+·                   yamalı kot tulum, yeşil kapüşonlu + beyaz tişört, hardal çanta askısı ·
+·                   düşen yaprak · lens, kadraj, altın sabah ışığının yönü · VO'nun anlattığı
+·                   olay: Mira yarım adım geriye düşüp düşünceye dalıyor, aklında bir soru var.
+·
+· NASIL           : 1) K04-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Use this referenced image and rebuild it identically — same 50mm lens at f/2.0, same medium close three-quarter view, same two children at the same size and position, same faces, expressions, hair, clothes and hands, same falling leaf, same golden morning light, same soft bokeh strength. Change ONLY the street behind them, which is now a modern, well-kept Turkish residential district instead of an old one. @mira stays half a step behind @ali on the right of frame, her cheerful look softened into thought, her eyes drifting past camera to the middle distance, her fingers curled loosely around the mustard backpack strap; her coral-red hooded top, dark denim dungarees with the round planet patch, the small yellow star clip in her dark bob and her tan backpack are unchanged. @ali stays on the left in his green zip-up hoodie over a white tee, glancing lightly ahead. Warm matte tan skin on both, low specular, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face. The sun keeps its exact direction, warm and low from behind them down the avenue, rimming their hair while the near side of each face stays in open, detailed blue-indigo shade. Behind them, out of focus but readable in shape and colour, the avenue is rebuilt: a wide pavement of even light-grey concrete slabs edged by a chamfered granite kerb and a mown grass verge; a receding row of young trees in round steel grates; slim dark-grey lamp posts at even spacing; a broad new dark-grey asphalt road with crisp fresh white lane markings; beyond it four-storey contemporary apartment blocks in warm off-white and light grey render with large windows, slim steel-and-glass balcony railings and flat roofs. Keep the same soft-focus depth, do not sharpen the background. Three things are alive in the frame: the leaf drifts down between their shoulders, her fingers tighten a little on the strap, dappled tree-shadow slides over the pavement behind them. Depth in three layers — a blurred foreground branch, the two children sharp in the middle plane, the modern avenue in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the light temperature. Material specificity is mandatory: woven strap fibre, soft denim twill with visible stitching, warm subsurface skin, leaf translucency, sandblasted concrete slab and honed granite kerb in the bokeh. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated key, complementary bounce at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (her coral-red hood), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the apartment facades in the bokeh carry only glass, render and balcony steel; the lamp posts are plain unmarked metal; the pavement carries only slab joints and tree grates. No English signage, no floating caption, no equations; keep every background surface soft-focus and unlettered.
+NEGATIVE: no crumbling kerb or broken pavement edge behind them, no sharpening of the background, no change to either face, pose, hairstyle or garment; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

@@ -1,0 +1,20 @@
+· K02 — MOTION REVİZE  ·  "kapı açılışı çok tuhaf"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K02-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· MÜŞTERİ NE DEDİ : "kapı açılışı çok tuhaf"
+· BULGU           : Kapının pirinç kolu SOL kenarda, yani menteşeler SAĞ kenarda — Mira elini tam menteşe hattına koymuş ve oradan itiyor. Gerçek bir kapı orada itilince açılmaz. Üstüne mevcut motion kamerayı kapı kanadına bindiriyor, tuhaflığı ikiye katlıyor.
+· NE YAPIYORUZ    : El menteşeden uzağa, kolun yanına taşınıyor; kapı oradan itilince açılıyor. Kamera kapıya binmiyor, kilitli duruyor ve koridor kapının açılmasıyla ortaya çıkıyor.
+·
+· NASIL           : 1) K02-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (212 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+Her flat palm slides across the door panel away from the hinge stile and comes to rest against the door's outer edge just beside the brass lever, and only then does the door begin to travel: it swings away from her on its hinges in one smooth unhurried arc, its leading edge sweeping a widening band of shadow across the floorboards as the hallway opens up beyond it, her arm extending after it and her shoulder following the push while the backpack settles lower on her back. The friendship band looped over the lever swings once and stills, and the warm hallway light spreads further across the floor as the gap widens. Camera: locked off and completely still on its own axis, letting the door swing away inside a frame that never moves, so the hallway is revealed by the door and not by the lens. The door swings only away from her, never slams, never rebounds and never leaves its hinges; her hand stays beside the lever and never returns to the hinge side; her fingers rest on the surface and never pass through the wood; she does not step through the doorway; the scarf and the framed photographs stay fixed; no new objects and no other people enter the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

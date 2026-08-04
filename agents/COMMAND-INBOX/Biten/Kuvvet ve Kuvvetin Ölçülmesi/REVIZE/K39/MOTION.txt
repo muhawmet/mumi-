@@ -1,0 +1,26 @@
+· K39 — MOTION REVİZE  ·  "03:34 yay uzamıyor"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K39-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· ⚠ 03:34 iki karenin sınırına düşüyor. K38 ile K39'un İKİSİ de
+·   hazırlandı — ikisi de aynı sınıf (yayın hareketi görünmüyor).
+·   Hangisini kastettiğini videoda gördüğünde anlarsın; ikisini de
+·   basmak da doğru olur, ders ikisinde de kanıtsız kalmış.
+·
+· VO CÜMLESİ      : "Çünkü dinamometrenin içindeki yay esnek bir maddeydi ve esnek maddeler, üzerlerindeki kuvvet kalktığında eski hâllerine geri dönüyorlardı."
+· MÜŞTERİ NE DEDİ : "03:34 yay uzamıyor"
+· BULGU           : Bu kare 'geri dönüyorlardı' cümlesini taşıyor — yani yayın ESKİ HÂLİNE toplanması görülmeli. Klipte yay kıpırdamayınca esneklik kavramının kanıtı hiç ekrana gelmiyor. K38'in komşusu olduğu için müşterinin 03:34 notu bu kareye de düşebilir; ikisi birlikte onarılıyor.
+· NE YAPIYORUZ    : Yük kalkıyor ve yay gözle görülür biçimde TOPLANIYOR: açılmış sarımlar yukarıdan aşağı tek tek kapanıyor, yay eski kısa boyuna dönüyor, ibre skalada yukarı yürüyüp sıfıra oturuyor.
+·
+· NASIL           : 1) K39-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (211 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+The stone lifts clear of the hook and the load comes off, and the coil answers immediately and visibly: its separated turns close back together one after another from the top downward, each open gap narrowing and shutting until the turns sit packed tight against one another again, and the whole coil draws up the barrel and returns to exactly the short resting length it held before the weight was ever added. The red pointer travels back up the scale with it, passing mark after mark and settling precisely on zero, where it stops and stays. The empty hook swings once beneath the barrel and stills, and the stand's shadow lightens as the load leaves it. Camera: it rises slowly alongside the closing coil, travelling back up through the contraction and settling as the pointer reaches zero, so the lens undoes its own earlier descent. The coil visibly and continuously shortens through the shot and never stays the same length, never stretches further and never overshoots; it returns fully to its original packed length and stays sound with no kink, permanent gap, snapped turn or tangle; the pointer comes to rest on zero and nowhere else; the stand does not tip; the weights and the plant stay exactly where they are. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

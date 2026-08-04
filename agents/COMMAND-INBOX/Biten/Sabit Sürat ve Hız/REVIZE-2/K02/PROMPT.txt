@@ -1,0 +1,28 @@
+· K02  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Ali'nin elini dayadığı alçak duvar yosun tutmuş, kaba yontma taş · zemin
+·                   düzensiz eski küp taş · arkada eski pastel sıvalı, ahşap panjurlu yığma
+·                   yapılar · süslü dökme demir sokak lambası · dar, kenarı bozuk yol.
+· YÖNTEM          : baştan kuruluyor — Ali'nin elini dayadığı yosunlu taş duvar ve zemin
+·                   orta planda ve TEMAS noktası; sadece arka planı değiştirmek onları bırakır.
+· NE DEĞİŞMİYOR   : @ali'nin yüzü, saçı, yeşil kapüşonlu + beyaz tişört + kıvrık paçalı kot +
+·                   hardal bağcıklı beyaz spor ayakkabı + hardal sırt çantası · duvara dayalı
+·                   eli ve gülümsemesi · kadraj ve lens · altın sabah ışığının yönü ve saati ·
+·                   VO'nun anlattığı olay: Ali sokağın başında Mira'yı bekliyor.
+·
+· NASIL           : 1) K02-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Rebuild this referenced frame with the same 40mm lens at f/2.8 and the same eye-level medium three-quarter framing: the composition, the crop, the character, his pose and the light are taken from the reference exactly; only the neighbourhood around him is rebuilt. @ali stands right of centre on the corner pavement, backpack on, his right hand flat on the low wall beside him, weight off one hip, breaking into the same warm gap-tooth grin toward frame left. His look does not change: dark curly black hair, green zip-up hoodie over a white tee, blue jeans with rolled cuffs, white sneakers with mustard laces, tan textured backpack. Warm matte tan skin, low specular, never tinted green or grey, a single soft catchlight in the eyes only and never a wet sheen over the face. The sun keeps its exact direction, low and warm from behind his right shoulder, rimming his hair while the left side of his face sits in open, detailed blue-indigo shade. The corner is now a modern, well-kept Turkish residential district: he leans on a low planter wall of smooth pale render capped with straight light-grey granite coping, no moss and no chipping; the pavement is wide, laid in even light-grey concrete slabs with tight joints, edged by a chamfered granite kerb and a mown grass verge; a young maple stands in a round steel grate, a plain bike rack and a tidy litter bin at the kerb; across the new dark-grey asphalt road with its crisp white lane markings rise four-storey contemporary apartment blocks in warm off-white and light grey render, large windows, slim steel-and-glass balcony railings, flat roofs. A slim grey lamp post is cut by the frame edge in the near foreground, out of focus. Three things are alive in the frame: one broad plane leaf spins down beside him, his weight shifts off the wall as he straightens, a clean compact silver car sits neatly parked far down the block. Depth in three layers — the blurred lamp post near, @ali sharp in the middle plane, the modern street in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the light temperature. Material specificity is mandatory: sandblasted concrete slab, honed granite coping, powder-coated grey steel post, brushed aluminium window frame, soft woven hoodie pile, fresh matte asphalt. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed: one motivated key, complementary bounce at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark, never cold-black. No outlines.
+LIGHT AND PALETTE: shadows settle into an open luminous blue-indigo, midtones glow vivid warm amber, one vivid tomato-red accent punctuates the frame (a red cushion on a balcony chair), highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+TEXT: none — clean plate. The surfaces that could invent lettering are already dressed and full: the apartment facades carry only glass, render and balcony steel; the low wall carries granite coping and a clipped hedge behind it; the lamp post, the bike rack and the litter bin are plain unmarked metal. Any distant sign stays soft-focus and blank or Turkish. No English signage, no floating caption, no equations.
+NEGATIVE: no mossy, chipped or rubble-stone wall under his hand, no uneven cobble paving, no ornate cast-iron lamppost; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no cracked peeling weathered plaster, no narrow broken muddy road, no hillside village skyline, no fog-filled valley, no tangle of overhead cables, no old timber bay window, no shanty or gecekondu building; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

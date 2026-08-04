@@ -1,0 +1,32 @@
+· K37  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Kaba moloz taşlı, sıvası kabarmış alçak bahçe duvarı · eski dökme demir
+·                   sokak lambası · yol yıpranmış, koyu lekeli, çizgisiz dar asfalt · ön
+·                   planda eskimiş taş bordür, kenarında ot · sağda eski sıvalı yapı ve toprak
+·                   saksı. Kaldırım da bordür de bakımsız.
+· YÖNTEM          : baştan kuruluyor — köşe planı; yol, bordür, duvar ve lamba kadrajın
+·                   neredeyse tamamı ve dördü de eski.
+· NE DEĞİŞMİYOR   : @mira aynı adımda, aynı profil yürüyüşünde, aynı kırmızı kapüşonlu ve
+·                   kot tulumda, gövdesi dönüşe yatık · yerdeki eşit aralıklı sıcak-altın
+·                   ışık izleri, aynı sayıda ve AYNI ARALIKTA, köşeyi aynı şekilde dönüyor ·
+·                   sağdan gelen alçak altın ışık ve uzun gölge.
+·
+· NASIL           : 1) K37-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+28mm lens at f/4, three-quarter view at a street corner — the composition, framing, character, pose and lighting are taken from the referenced image exactly: @mira walks in mid-stride in profile, keeping the very same even pace, her body leaning into the turn as she rounds the corner, and the row of warm-golden glowing step-marks on the ground bends with her around the bend while holding exactly the same equal spacing it had on the straight. The evenly spaced marks turning the corner stay the hero of the frame and keep their number, size, spacing and position. Only the world around them is rebuilt. The corner is now a modern, well-kept Turkish new-build neighbourhood in the same low golden light: a wide freshly laid smooth dark-grey asphalt road with crisp fresh white lane markings and no pothole, patch or crack, a clean granite kerb, and a broad pavement of evenly laid pale grey concrete pavers running around the corner. Behind the pavement stands a smooth pale grey rendered low wall capped with clean coping and topped by a slim powder-coated grey railing; a slim grey modern tapered lamp post rises at the corner; a mown grass strip carries young trees in round grated beds and low clipped shrub rows, with one long planter of vivid red flowers at the wall foot. A tidy bin and a bicycle stand sit further along, and one clean late-model compact car is parked neatly beyond the bend, all in warm bokeh. Warm matte tan skin, low specular, never tinted green or grey. Three things are alive in the frame: the glowing marks hold their identical spacing around the bend, the young tree's leaves stir above the wall, her long shadow swings with the corner. Depth in three layers — the blurred granite kerb in the near foreground, @mira and the bending even marks sharp in the middle plane, the new street in warm bokeh. Every object rests in contact with the ground and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: the glowing marks as soft luminous energy, fine fresh asphalt grain, cast concrete pavers with clean arrises, smooth painted render, powder-coated steel railing, denim twill. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed, never photo-random: one motivated low golden key plus the glowing marks, complementary bounce at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark and always legible, never cold-black. No outlines; silhouette carries through lighting rim. Frame at a child's eye-line.
+
+LIGHT AND PALETTE: shadows settle into an open luminous blue that stays airy and full of detail, midtones glow vivid warm amber across the asphalt and the pavers, the step-marks carry warm-golden light, one vivid tomato-red accent punctuates the frame in @mira's hoodie and the planted flowers, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Overall exposure is bright and open — the same golden hour and the same light direction as the reference. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: none — clean plate; the equal spacing carries the idea. No numerals, no captions, no equations. Every surface in frame is dressed so that no blank panel invites invented text: the wall is smooth render capped with coping, the railing and lamp post are plain painted metal, the bin and bicycle stand are unmarked, the road carries only crisp white lane markings and no words, the parked car carries no badge or plate lettering — there is no signboard, banner, shutter or awning anywhere in the frame.
+
+NEGATIVE: no rubble or fieldstone wall, no blistered, cracked or flaking plaster, no old ornate cast-iron lamp post, no worn stained narrow asphalt and no crumbling stone kerb with weeds — the road is freshly laid and the wall is smoothly rendered; no terracotta or clay pantile roof, no rooftop water tank or solar tank, no minaret or mosque, no hillside village skyline, no misted valley, no overhead cable clutter, no old timber bay window or cumba, no shanty or gecekondu, no market stall; the step-marks never change their spacing, never bunch up and never spread apart around the bend; no second row of marks; no other child and no adult; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no franchise character, real person, logo or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

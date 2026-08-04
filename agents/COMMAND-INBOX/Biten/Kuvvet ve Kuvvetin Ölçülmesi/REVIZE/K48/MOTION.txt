@@ -1,0 +1,20 @@
+· K48 — MOTION REVİZE  ·  "04:25 ya ışığı kapatsın ya da eli kapatmaya gitmesin"
+· ============================================================
+·
+· ⚠ BU BİR KARE İŞİ DEĞİL. Kare doğru, kusur HAREKETTE.
+·   Yeni kare basmıyorsun — mevcut K48-MEVCUT.png start frame olarak
+·   verilir, aşağıdaki motion yapıştırılır, klip yeniden üretilir.
+·
+· MÜŞTERİ NE DEDİ : "04:25 ya ışığı kapatsın ya da eli kapatmaya gitmesin"
+· BULGU           : El lamba düğmesine gidiyor ama düğmeye basılmıyor, ışık da sönmüyor. Başlayan hareket bitmiyor; izleyici tamamlanmamış bir eylem görüyor ve film o eksiklikle kapanıyor.
+· NE YAPIYORUZ    : El artık düğmeye hiç gitmiyor. Mira elini defterin üstünde bırakıyor, kapanış ışığın en sıcak anında gülümsemeyle geliyor. Lamba açık kalıyor ve kimse ona uzanmıyor.
+·
+· NASIL           : 1) K48-MEVCUT.png dosyasını START FRAME olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır (Kling 3.0, i2v)
+·                   3) Yeni klibi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR   (216 kelime + sabit kuyruk)
+· ------------------------------------------------------------
+
+Her hand comes to rest flat on the closed notebook in front of her and stays there for the whole shot, her fingers spreading once and settling, and it never travels toward the lamp or its switch at any point. Her smile opens a little further toward the lens as the lamp's warm pool reaches its fullest and golden dust drifts thickly through the beam between her and the camera; the amber ribbon of light settles across the notebook cover and the window blue deepens a shade behind her, and her shoulders drop a fraction as she settles into the moment. Camera: a slow warm push toward her that eases to a stop while the light is still at its brightest, holding on the smile and letting it be the last thing in the film. Neither hand reaches for, touches or approaches the lamp, its switch, its cord or its base at any moment, and the lamp stays on at full brightness throughout — the light never dims, flickers or goes out and the frame never goes dark; she does not speak, wave or perform to camera; no end card, title card, logo or lettering of any kind appears; the notebook stays closed; the toy truck, the stone and the dough stay exactly where they lie. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.

@@ -1,0 +1,32 @@
+· K22  ·  çevre modernleşiyor
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çevre tamamen değişmeli daha modern"
+· BU KAREDE NE VAR: Arabanın tam arkasında MİNARE ve kubbe siluetti · iki yanda kiremit
+·                   çatılı eski ahşap dükkânlar, çizgili tente, üstte kablo · çocukların
+·                   yaslandığı bahçe duvarı yer yer ÇATLAMIŞ ve sıvası dökülmüş kaba taş.
+·                   (Ayrıca gösterge camının içinde bir surat belirmiş — motor artefaktı,
+·                   aynı geçişte kesiyorum.)
+· YÖNTEM          : change ONLY — kahraman gösterge, araba ve iki çocuk kadrajın ortasını
+·                   dolduruyor; kusur yalnız arkadaki sokakta ve duvarın malzemesinde.
+· NE DEĞİŞMİYOR   : @mira ve @ali'nin duruşu, kıyafeti, ifadesi · duvara yaslanmış eller ·
+·                   pastel araba · yuvarlak kadranlı hız göstergesi ve "KİLOMETRE / SAAT"
+·                   yazısı · altın sabah ışığının yönü ve saati.
+·
+· NASIL           : 1) K22-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+50mm lens at f/2.8, eye-level medium view over a low garden wall onto a quiet street — rebuild the referenced image exactly: the same framing, the same two children in the same poses, the same clothing, hair and delighted expressions, both leaning on the wall on either side of the same round chrome-bezelled analogue speedometer, the same immaculately kept rounded pastel car parked behind them, the same golden morning sunlight arriving from the same side at the same hour. Change ONLY the environment around them. The street behind is now a modern, well-kept Turkish new-build neighbourhood: low-rise contemporary apartment blocks of three to five storeys in clean warm off-white and pale grey render, large windows, slim glass-and-steel balcony railings, flat or very shallow roofs; a wide freshly laid smooth dark-grey asphalt road with crisp fresh white lane markings; a broad pavement of evenly laid pale grey concrete pavers on a clean granite kerb; a mown grass strip with young trees in round grated beds and low clipped shrub rows; slim grey modern lamp posts and one tidy bin; two clean late-model compact cars parked neatly further down — all of it held in warm bokeh behind the car. The garden wall the children lean on is rebuilt as smooth pale grey rendered concrete capped with a clean granite coping, sound and unbroken and cared for, with the same planting at its foot. Warm matte tan skin on both, low specular, never tinted green or grey. The curved dial glass carries only a soft sweep of window reflection. Three things are alive in the frame: the needle trembles gently on the dial, dust motes turn in the slanted sun, the clipped shrub leaves stir along the wall foot. Depth in three layers — the blurred window frame in the near foreground, the speedometer and both faces sharp in the middle plane, the modern street in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow.
+
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage — appeal-driven silhouette that reads at thumbnail size, subsurface translucency in skin carrying the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: chromed dial bezel with anisotropic brushed highlight, curved dashboard glass with satin reflection, smooth painted render on facades, cast concrete pavers with clean arrises. Props drawn 10-15% overscale for child-clear readability. Lighting is art-directed, never photo-random: one motivated key, complementary bounce fill at a third of key strength, a saturated rim accent, soft painted ambient occlusion — shadow reads warm-dark and always legible, never cold-black. No outlines; silhouette carries through lighting rim. Frame at a child's eye-line.
+
+LIGHT AND PALETTE: shadows settle into an open luminous blue that stays airy and full of detail, midtones glow vivid warm amber across the render and the road, the car body carries one vivid tomato-red accent, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin; all skin stays warm matte tan with low specular. Overall exposure is bright and open — the same golden morning hour and the same light direction as the reference. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: the only lettering in the frame is the small Turkish unit label "KİLOMETRE / SAAT" engraved on the speedometer dial — spelled K, İ with its dot, L, O, M, E, T, R, E, then a space, a slash, a space, then S, A, A, T — reading left to right, never mirrored, reversed or rotated, appearing on this one dial and on no other surface, belonging to the instrument and never a floating caption. Exactly ONE such label. The dial numerals stay soft-focus. Every other surface in frame is dressed and carries no writing: the apartment facades are plain render and glass, the bin and the bicycle stand are plain painted metal, the parked cars carry no badge or plate lettering, the shrubs and grass fill the ground plane — no blank signboard, panel or awning is left anywhere for invented text to appear on.
+
+NEGATIVE: no minaret, mosque, dome or hillside village skyline behind the car; no terracotta or clay pantile roof; no rooftop water tank or solar tank; no timber shopfront, striped market awning, crated produce or hanging carpet; no overhead cable clutter; no cracked, flaking or crumbling plaster and no broken kerb — the garden wall is smooth, sound and freshly rendered; no misted valley; no old timber bay window or cumba; no shanty or gecekondu; no face, portrait or eyes reflected or drawn inside the speedometer dial; no second dial and no duplicated unit label; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no recognisable franchise car, real person, logo, badge or brand; no warped, mirrored or invented lettering; no formula symbols, equations or graphs; no empty white void.

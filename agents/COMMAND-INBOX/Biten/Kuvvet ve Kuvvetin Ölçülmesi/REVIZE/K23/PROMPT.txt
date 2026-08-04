@@ -1,0 +1,30 @@
+· K23 — KARE REVİZE  ·  "02:09 5 N diyor ama 10 N gösteriyor"
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "02.09 5 n diyor ama 10 n gösteriyor"
+· HAKLI MI        : Evet, gözle doğrulandı. Tahta bloklar "5 N" yazıyor,
+·                   VO da "beş N" diyor — ama dinamometrenin kırmızı
+·                   ibresi 10 çizgisinin hemen üstünde duruyor.
+·                   Skala yukarıdan aşağı 0 · 5 · 10 · 15.
+· NEDEN OLDU      : Prompt ibrenin hangi rakama oturacağını söylememiş;
+·                   motor ibreyi kendi seçtiği yere koymuş.
+· NE YAPIYORUZ    : İbre tam 5 çizgisine oturuyor. Başka hiçbir şey
+·                   değişmiyor — bloklar, el, tezgâh, arka plan aynı.
+·
+· NASIL           : 1) K23-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Recreate the reference image exactly as it is — identical camera, identical lens and framing, identical composition, identical light from the same direction, identical colour grade, identical glass-barrelled dynamometer standing on the worn timber bench, identical steel coil inside it, identical brushed metal scale strip carrying the numerals 0, 5, 10 and 15 running from top to bottom with the unit letter N above the zero, identical pair of wooden blocks reading 5 and N held by an identical hand at the right, identical brass weight at the lower left, identical laboratory shelving and glassware softened behind. Change ONLY ONE thing: the flat red pointer band that crosses the barrel is moved so that it sits exactly on the 5 mark of the scale, its upper and lower edges centred on that numeral so a child reading the instrument reads five and nothing else. The steel coil above the pointer is correspondingly less stretched than in the reference — its turns sit closer together in the upper half of the barrel, consistent with a pointer resting at 5 rather than near 10 — and the coil below the pointer hangs looser. The pointer stays the same width, the same flat matte red and the same slight downward tilt across the barrel, and it catches the same small highlight along its top edge. Nothing else in the frame moves, changes size, changes colour or is re-lit.
+
+STYLE: Full 3D CGI feature-animation render, RenderMan-successor pipeline — appeal-driven form readable at thumbnail size. A single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: clear glass barrel with honest refraction and a faint green edge at its rim, brushed stainless coil with fine machining marks, brushed metal scale strip with numerals stamped in relief, worn oiled timber bench, polished brass. Props drawn 10–15% overscale for child-clear readability. Art-directed light unchanged from the reference: motivated window daylight as key from the left, complementary cool sky bounce, soft painted ambient occlusion, shadow warm-dark never cold-black. No outlines; form reads through lighting rim and value separation.
+
+LIGHT AND PALETTE: unchanged from the reference — shadows settle into deep cool indigo, midtones glow vivid warm amber, one clean red accent on the pointer band, highlights lift toward a near-white with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: the scale numerals stay exactly as in the reference and are not redrawn — the capital letter N at the top, then 0, then 5, then 10, then 15, reading in that order from top to bottom, each stamped in relief into the brushed metal strip and catching a thin bright line along its upper edge. The two wooden blocks at the right stay exactly as in the reference, the first carrying the numeral 5 and the second the capital letter N, each carved in relief into pale timber. Every character reads left-to-right, never mirrored, reversed or rotated, and no character is warped, doubled or invented. No other writing appears anywhere in the frame.
+
+NEGATIVE: the red pointer sits on the 5 mark and nowhere else — never on 10, never between two marks, never on 0 and never below 5; exactly one red pointer band in the whole frame and no second pointer, no needle, no arrow and no marker of any kind; the numerals on the scale keep their existing order 0, 5, 10, 15 from top to bottom and are not renumbered, reordered, reversed or respaced; the wooden blocks keep reading 5 and N and are not changed, moved or re-lettered; the hand, its fingers, the bench, the brass weight, the shelving and the background glassware are unchanged from the reference and nothing is moved, resized, recoloured, re-lit or redrawn; the camera does not move and the framing does not change; no glow, halo, sparkle or coloured concept light on the pointer, the coil or the scale; no arrow, leader line, label, callout ring, magnifying-glass circle, inset panel, cross-section or cutaway diagram; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no recognisable franchise character, real person, logo, badge or brand; no warped or invented lettering and no English text; no formula symbols, equations or graphs; no empty white void.

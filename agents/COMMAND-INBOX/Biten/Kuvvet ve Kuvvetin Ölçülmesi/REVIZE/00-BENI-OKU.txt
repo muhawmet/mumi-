@@ -1,0 +1,93 @@
+· KUVVET VE KUVVETİN ÖLÇÜLMESİ — REVİZE
+· ==========================================================
+· 🔴 İYİ HABER: 9 notun 7'si KARE değil MOTION kusuru.
+·    O yediye yeni kare BASMIYORSUN — eldeki kare start frame
+·    olarak veriliyor, yeni motion yapıştırılıyor, klip yeniden
+·    üretiliyor. Sadece 2 karede görsel basacaksın.
+·
+· Zaman kodu → kare eşlemesi ölçülerek yapıldı: render'ın 48 kesimi
+· 48 klibin ilk karesiyle tek tek karşılaştırıldı, 47'si birebir tuttu.
+·
+·
+· A) MOTION İŞİ — 7 klip  (klasörde MOTION.txt var)
+· ----------------------------------------------------------
+· K02   "kapı açılışı çok tuhaf"
+·       Kapının kolu SOL kenarda → menteşeler SAĞDA. Mira elini tam
+·       menteşeye koymuş, oradan itiyor. O kapı gerçekte açılmaz.
+·       Üstüne kamera kapı kanadına binmiş, sallanıyor.
+·       → El kola yakın tarafa gidiyor, kamera kilitleniyor.
+·
+· K12   "00:56 araba durmalı, tekerler dönmemeli, itince hareket etmeli"
+·       Klip arabanın zaten gittiği yerden başlıyor, duruş anı yok.
+·       → Klip tam duruşla açılıyor, parmak değince hareket doğuyor.
+·
+· K13   "01:09 araba durmalı, tekerler dönüyor"
+·       Araba duruyor ama tekerlek dönmeye devam ediyor.
+·       → Tekerlek dönüşü yol hızına kilitlendi, araba durunca duruyor.
+·
+· K32   "02:56 yay esnemiyor"
+·       VO "ağır bir taş astığında esnedi" diyor, yay kıpırdamıyor.
+·       → Uzama karenin en büyük olayı yapıldı.
+·
+· K38   "03:34 yay uzamıyor"          ⎫ 03:34 tam iki karenin sınırında.
+· K39   "03:34 yay uzamıyor"          ⎭ İKİSİ de hazırlandı, ikisi de
+·       aynı sınıf. K38'de yay ÇOK uzamalı, K39'da eski hâline
+·       GERİ DÖNMELİ. İkisini de basmak doğru olur.
+·
+· K48   "04:25 ya ışığı kapatsın ya da eli kapatmaya gitmesin"
+·       El düğmeye gidiyor ama basmıyor, ışık sönmüyor. Yarım kalan
+·       hareketle kapanıyor film.
+·       → El defterin üstünde kalıyor, lamba açık, kapanış gülümsemede.
+·
+·
+· B) KARE İŞİ — 2 kare  (klasörde PROMPT.txt var)
+· ----------------------------------------------------------
+· K23   "02:09 5 N diyor ama 10 N gösteriyor"
+·       Doğrulandı: tahta bloklar 5 N yazıyor, VO "beş N" diyor,
+·       kırmızı ibre 10'un üstünde duruyor.
+·       → İbre tam 5 çizgisine oturuyor, başka hiçbir şey değişmiyor.
+·
+· K44   "04:00 yazılar anlamsız"
+·       Doğrulandı ve sandığından kötü. Başlık KUVVET bozuk yazılmış,
+·       ALTINDAKİ dört satır tamamen uydurma: "Hurgel dodlca der /
+·       vor. Sum Soil olona / turget dosbla der / Sock Sunet algombe".
+·       Sebep: prompt sayfanın geri kalanını hiç tarif etmemiş, motor
+·       da boş bıraktığımız yeri kendi uydurmasıyla doldurmuş.
+·       → Sayfada tek okunaklı kelime kalıyor: KUVVET. Altı temiz.
+·
+·
+· C) SANA SORUM VAR — K42, tek açık madde
+· ----------------------------------------------------------
+· "03.50 max ölçü tam tersi olmuş büyükten küçüğe inmeli"
+·
+· Kareye baktım: skala yukarıdan aşağı  N · 0 · 5 · 10 · 15.
+· Yani küçükten büyüğe iniyor, sen tersini istiyorsun.
+·
+· Şunu söylemem lazım: asılan dinamometrede ibre yay uzadıkça
+· AŞAĞI iner, o yüzden 0 üstte olur ve sayılar aşağı doğru büyür.
+· Ekrandaki hâli fiziksel olarak DOĞRU. Ters çevirirsek çocuğa
+· yanlış bir alet öğretmiş oluruz — bu yüzden körlemesine yapmadım.
+·
+· İki ihtimal var, hangisi:
+·   1) Gerçekten skala ters olsun istiyorsun → söyle, çeviririm.
+·   2) Aslında "maksimum değer görünmüyor" demek istedin →
+·      o zaman doğrusu şu: VO zaten "üzerinde yazan maksimum ölçüm
+·      değeri" diyor. Alete ayrı bir "MAKS. 15 N" plakası koyarım,
+·      parmak ona gider, skalaya hiç dokunmayız. Bence doğrusu bu.
+· Sabah tek kelime yaz, o dosyayı 10 dakikada hazırlarım.
+·
+·
+· D) "dinamometrelere takılan eşyalar aşağı sarkmalı"
+· ----------------------------------------------------------
+· 48 karenin hepsi taranıyor — hangi karelerde cisim kancaya bağlı
+· ama masaya dayalı duruyor, listesi çıkıyor. Sabah burada olacak.
+· K32 · K38 · K39 motion'larına "cisim havada serbest sarkar,
+· hiçbir yüzeye değmez" kilidi şimdiden yazıldı.
+·
+·
+· NASIL ÇALIŞACAKSIN
+· ----------------------------------------------------------
+· Her klasörde o karenin MEVCUT hali var.
+·   MOTION.txt varsa → kareyi START FRAME ver, metni yapıştır, KLİP üret
+·   PROMPT.txt varsa → kareyi referans ver, metni yapıştır, KARE üret
+· Çizginin altındaki her şeyi kopyala. Yeni dosyayı aynı klasöre indir.
