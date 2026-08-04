@@ -15,6 +15,55 @@ description: Bir video üretilmeden ÖNCE şeklini kilitler — VO'nun kaç klib
 > İkisinin ortak dersi: **kurgu, kare yazılmadan önce tasarlanır.** Sonra tasarlanamaz —
 > çünkü klipler zaten yanmıştır.
 
+## 0. PLAN DÜNYA ÜZERİNE KURULUR — video üzerine değil (Mami, 2026-08-04)
+
+Mami: *"planı dünya üzerine kur."* Bu bir düzen tercihi değil, **o gün ölçülen bir kusurun
+cevabı.**
+
+**KANIT — 2026-08-04, 233 kare tek günde revize edildi ve kusurların HİÇBİRİ karede değildi:**
+- `@fensinif` referansının kendi metninde şu yazıyordu: *"the room is **deliberately cool and
+  green** so that the lesson's single warm-amber concept light is the only warm event."*
+  52 karenin 38'i o odadaydı. Müşteri *"neden ucuz gariban işi takılıyorsun"* dedi, Mami
+  *"Fern'ün uyuşturucu baronu videolarına döndü, karanlıkta"* dedi. **İkisi de tek bir referans
+  cümlesinden geliyordu.**
+- `"reaches nothing else / stays in unlit deep indigo"` kalıbı dört projede **123 kez** vardı —
+  kimse yazmaya karar vermedi, ilk kareden kopyalana kopyalana dünyanın kuralı oldu.
+- Yoksulluk sözlüğü (`worn linoleum` · `murky water` · `paint-crusted pine`) STYLE'ın malzeme
+  cümlesinde yaşıyordu, yani **her karede**.
+
+🔴 **Ders: dünyanın kuralları hiçbir yerde tek parça yazılı değildi.** 233 karenin içine dağılmış
+ve bir daha okunmayan bir referansın içine gömülmüştü. Kare kare bakan hiç kimse göremez.
+
+**Bu yüzden plan modunun İLK çıktısı şekil değil, DÜNYA KARTIDIR.**
+
+### Dünya kartı — `agents/worlds/<worldId>.md`, tek sayfa, videolar arası KALICI
+
+```
+# <worldId> — DÜNYA KARTI
+son güncelleme: <tarih> · kullanan videolar: <liste>
+
+IŞIK REJİMİ      kaynak nerede · kadrajda görünür mü · partikül var mı · genel pozlama
+                 (§4c: kaynak görünür · ışık nesne gibi görünür · partikül zorunlu)
+MALZEME REJİMİ   hangi malzemeler · hangi yasak (§4b: kullanım izi kalır, yoksulluk izi gider)
+SOSYOEKONOMİK    kim bu okulun/evin sahibi — "parası olan ailenin çocuğu" mu, devlet mi
+PALET            hangi renk nerede · neyin RENGİ değil neyin IŞIĞI
+IŞIYAN vs IŞIK ALAN   kavram ışığı neyle ayrışıyor (yalnızlıkla mı, kendi ışığını yaymakla mı)
+ATMOSFER         havada ne var: toz, buhar, polen, kar
+DUYGUSAL REJİM   kaynağın tonu (§5ø) — çatışmalı mı, pozitif mi
+NEGATİF          bu dünyada asla olmayan şey
+```
+
+**Kural: dünya kartı yoksa plan başlamaz.** Kart varsa ve video aynı dünyadaysa **yeniden
+yazılmaz, okunur** — o kart aynı dünyadaki bütün videoların ortak sözleşmesidir.
+
+⚠ **Kartla referans çelişirse KART kazanır** ve referans yeniden basılır. 2026-08-04'te tam
+tersi oldu: referans sessizce kanun kesildi ve 233 kareyi karanlıkta bıraktı.
+
+**Sınama, kare yazılmadan önce:** *"Bu dünyada güneşin nereden girdiğini gösterebilir miyim,
+havada bir şey uçuşuyor mu, ve buradaki eşyanın sahibi kim?"* Üçüne de cevap yoksa kart eksik.
+
+---
+
 ## SIRA — plan nereye oturur
 
 ```
@@ -22,11 +71,13 @@ konu / command JSON
       ↓
 SESLENDİRME METNİ            (cümleler yazılır)
       ↓
-🔵 PLAN MODU  ←── burası     (şekil kilitlenir · MAMİ ONAYLAR)
+🌍 DÜNYA KARTI  ←── ÖNCE     (ışık · malzeme · palet · atmosfer · rejim — VİDEOLAR ARASI KALICI)
       ↓
-ENZİM                        (dünya · cast · omurga · kavram ışığı kilitlenir)
+🔵 PLAN MODU                 (şekil kilitlenir · MAMİ ONAYLAR)
       ↓
-REFERANS ENVANTERİ           (§4a — tekrar eden her şey)
+ENZİM                        (cast · omurga · kavram ışığı — dünyaya özel olmayanlar)
+      ↓
+REFERANS ENVANTERİ           (§4a — tekrar eden her şey · KARTA UYGUNLUK DENETLENİR)
       ↓
 dünya-kilidi.mjs → PROMPT'LAR → kareler → motion → kaba kurgu
 ```
