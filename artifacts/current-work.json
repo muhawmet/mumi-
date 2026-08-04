@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "basim-kuyrugu.mjs eklendi — 233 kare basım sırası tek komutla türetiliyor, bayatlayamaz. Klasör adı varsayımı kusuru (images/resimler) daha araç doğarken yakalanıp kapatıldı.",
-  "nextAction": "MAMİ BASIYOR: Bileşke K17-K30 (14 kare) ilk batch — yeni yasa tuttu mu görülecek; sonra kalan 219",
+  "lastCompleted": "MÜŞTERİ REVİZESİ alındı ve düstur yazıldı: kaynağın duygusal rejimi kilittir, çatışma icat edilmez (PROMPT-YASASI §1 5ø + CLAUDE.md). Kök neden yasanın kendisiydi — 'gerilim yoksa kare ölü' kuralı gerilimsiz kaynakta çatışma imal ettiriyordu; eksik yarısı yazıldı (merak/fark ediş/ölçek/dönüşüm/yankı).",
+  "nextAction": "MAMİ BASIYOR: Bileşke K17-K30 ilk batch. AÇIK KARAR: Farklı Kültürler kaynağa sadık hâle getirilecek mi, ne zaman? Ve 127 yeni kare bu düsturdan ÖNCE yazıldı — taranmadı.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T06:11:08.029Z",
+  "updatedAt": "2026-08-04T07:34:38.632Z",
   "updatedBy": "claude",
-  "baseCommit": "b1aa15c"
+  "baseCommit": "786fd4c"
 }
