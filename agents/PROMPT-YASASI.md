@@ -419,6 +419,8 @@ Slot sırası bağlayıcı. Başlık satırı yönetmen içindir, prompta girmez
 ```
 ### K<n> | VO<n> "<Türkçe cümle>" · yazı: <"KELİME" | YOK> · <KAVRAM | KARAKTER>
 FİKİR: <bu kareye neden bakılır — VO'suz okunan tek gerilim ya da tek değişim>
+YÜKÜM: <VO'daki HER nicelik/konum/ölçek/karşıtlık/sahiplik sözcüğü → karede nerede karşılanıyor>
+AYRICALIK: <bunu neden ANİMASYON anlatıyor — ya da "taşıyıcı kare, ayrıcalık K<n>'de">
 PLAN:  <kahraman> · <kaç net insan> · <ışık NEYE DEĞİYOR, neye değmiyor — ton yazma, §2b> ·
        <özne zeminden nasıl ayrılıyor> · <FEDA: bu karede ne okunmuyor, §2c>
 -----
@@ -440,6 +442,33 @@ TEXT: <TAŞIYICI NESNE — sahnede zaten var olan> · <HARF KARAKTERİ — o nes
 NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>
 -----
 ```
+
+### §2ø⁺ — YÜKÜM ve AYRICALIK: kapının NE SORDUĞU (2026-08-05, ölçülmüş)
+
+Hücre'de `FİKİR:` 53/53 doluydu, `PLAN:` 53/53, `FEDA:` 53/53 — **kapı eksiksiz doluydu ve
+16 kusur yine geçti.** Doluluk hiçbir şey açıklamıyor; açıklayan tek şey kapının ne sorduğu.
+İki soru eklendi. İkisi de **yasak değil, üretici**.
+
+**YÜKÜM — FİKİR bir sezgidir, bu bir SAYIMdır.** 16 kusurun **8'i** VO cümlesinin bir
+yan-cümlesinin karede karşılığı olmamasından doğdu. Ölçülmüş vaka K45: VO *"soğanda vardı;
+Mira'nın hücresinde **hiç yoktu**"* diyor, FİKİR satırı cümlenin ikinci yarısını hiç anmıyor,
+kare tek taraflı geliyor. Yazım:
+> `YÜKÜM: "soğanda vardı" → sol yarı, mercekler sayılabilir · "Mira'nınkinde hiç yoktu" → sağ yarı, sıfır yeşil cisim · aynı ışık ikisinden de geçiyor`
+
+**AYRICALIK — §0'ın kapısı.** §0 (Animasyonun Ruhu) bugüne kadar düzyazı bir ricaydı; ölçüldü
+ki çit yönetmenin yerine geçiyor (23 Nisan'ı anlatmak için kareye **takvim yaprağı** konmuş —
+kamerayla çekilebilecek bir nesne aramak). Sınama §0'ınkiyle aynı: *"Bu kareyi gerçek kamerayla
+çekebilir miydim? EVET ise, animasyon olduğu için yapabileceğim daha iyi bir şey var mı?"*
+Yazım — altın örnek Hücre K24'ün kendi mantığı:
+> `AYRICALIK: kavramı görmek için cisim KESİLMİYOR — ışık kehribar zarın içinden geçiriliyor, katlar dışarıdan koyu bant / parlak aralık olarak okunuyor. Gerçek kamerada bu kesit ister; animasyonda maddenin kendisi saydamlaşır.`
+
+⚠ **Her karede bağırmak gerekmez.** `AYRICALIK: taşıyıcı kare — ayrıcalık K24'te` meşru bir
+cevaptır. Zorunlu olan **yazılmasıdır**: yazılmayan ayrıcalık düşünülmemiştir. Film her saniye
+bağırmaz ama belgesel düzlüğüne de düşmez — açılış · kavramı görünür kılan orta · kapanış kafiyesi.
+
+⚠ İkisi de bugün **SARI**. Terfi ölçütü yazılı: sonraki videoda bu satırları taşıyan karelerle
+taşımayanların revize oranı karşılaştırılır. Yön doğruysa KIRMIZI olur; fark yoksa **satır
+silinir** — çünkü o zaman yalnız bir tören.
 
 ### §2ø — FİKİR: yasanın geri kalanı TABANDIR, TAVAN DEĞİL (Mami, 2026-07-29)
 

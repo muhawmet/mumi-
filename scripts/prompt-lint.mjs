@@ -144,6 +144,63 @@ const SLOTS = [
     test: (b) => /(rests? in contact|contact shadow|contact seam|contact plane|rests? (on|against)[^.]{0,70}contact|surfaces? (must )?touch|touching seam|(does not|doesn't) float|not floating|weighted shadow|anchors? (him|her|it|them|the [a-z]+)[^.]{0,50}to the (ground|floor|surface|table|desk))/i.test(b),
     why: 'EN NET KANIT: Bileşke 0/52 → K33/34/35/50 havada yüzdü; revizede "floating in mid-air" tamiri.',
   },
+  // ═══ İKİ POZİTİF SLOT (2026-08-05) — kapının NE SORDUĞUNU değiştirir ═════════════
+  //
+  // Ölçülmüş sebep: Hücre'de `FİKİR:` 53/53, `PLAN:` 53/53, `FEDA:` 53/53 — kapı EKSİKSİZ
+  // dolu ve yine 16 kusur geçti (8'i VO uyuşmazlığı). Yani kapının DOLULUĞU hiçbir şey
+  // açıklamıyor; açıklayan tek şey kapının NE SORDUĞU. §2ø bugün "bu kareye neden bakılır"
+  // diye soruyor — "bu kare cümlenin kaç yükümlülüğünü taşıyor" ve "bunu neden animasyon
+  // yapıyor" diye sormuyor.
+  //
+  // Bu iki slot YASAK DEĞİL, ÜRETİCİ. Mami'nin teşhisi (2026-08-04): "özgür olduğumuz
+  // tarlada çit çektik". Codex'in teşhisi: "sistem iyi film üretmek için değil, ölçülmüş
+  // hatalara yakalanmamak için optimize olmuş — çit yönetmenin yerine geçti." Bir sistemin
+  // yasak sayısını artırmak onu iyileştirmiyor; SORDUĞU SORUYU değiştirmek iyileştiriyor.
+  //
+  // KAPSAM: yalnız `FİKİR:` taşıyan blokta aranır. Ölçüldü — Hücre 15/15, Birlikte 54/54,
+  // Üreme 0/50, Sabit Sürat 0/44. Yani yeni şablon ailesi zorunlu tutulur, eski teslimler
+  // olmayan bir satır yüzünden kırmızıya boğulmaz.
+  // ⚠ İKİSİ DE SARI — ve bu cesaretsizlik değil, bu deponun kendi kuralı: KIRMIZI
+  // "kanıtlı eksik" demektir. Bu satırlar korpusta HİÇ yok, dolayısıyla "yokluğu kusur
+  // üretiyor" henüz ÖLÇÜLMEDİ. Kırmızıya çekmek, ölçülmemiş bir metriği duvar yapmak olurdu
+  // (STYLE_MAX_WORDS tam olarak böyle düşürüldü).
+  // Ayrıca ölçüldü: KIRMIZI yapınca A5 doğal kontrolü ters döndü — aynı projenin ZENGİN
+  // şablonlu iyi sürümü (V2, kare-özel STYLE 7/57) cezalanıp kötü sürümün (V1, tek STYLE
+  // 53/57) altına düştü. Yeni bir satırı zorunlu tutmak, o satırı kullanan şablonu
+  // cezalandırıyorsa ölçüm yönü bozulmuş demektir.
+  //
+  // 🔴 TERFİ ÖLÇÜTÜ (yazılı, unutulmasın): sonraki videonun AYRICALIK/YÜKÜM taşıyan
+  // kareleri ile taşımayanları arasında revize oranı farkı ölçülür. Fark yönü doğruysa
+  // ikisi de KIRMIZI'ya çıkar. Fark yoksa satır SİLİNİR — çünkü o zaman yalnız bir tören.
+  {
+    key: 'ayricalik',
+    label: 'AYRICALIK satırı (bunu neden ANİMASYON anlatıyor)',
+    warnOnly: true,
+    needsIf: (b) => /^\s*FİKİR\s*:/im.test(b),
+    test: (b) => /^\s*AYRICALIK\s*:\s*\S{12,}/im.test(b),
+    why: 'ANİMASYONUN RUHU (§0) bugün düzyazı bir ricadır, kapısı yoktur — ve ölçüldü ki '
+      + 'çit yönetmenin yerine geçiyor (23 Nisan\'ı anlatmak için kareye takvim yaprağı '
+      + 'konmuş: kamerayla çekilebilecek nesne aramak). Sınama: "Bu kareyi gerçek kamerayla '
+      + 'çekebilir miydim? EVET ise, animasyon olduğu için yapabileceğim daha iyi bir şey '
+      + 'var mı?" AYRICALIK satırı o daha iyi şeyi ADIYLA yazar — imkânsız kamera, ölçek '
+      + 'yalanı, madde geçişi, zamanın esnemesi, kavramın kendi maddesinden doğması. '
+      + 'Her karede bağırmak gerekmez: "bu kare taşıyıcıdır, ayrıcalık K__\'de" de meşru bir '
+      + 'cevaptır — ama YAZILMASI zorunludur, çünkü yazılmayan ayrıcalık düşünülmemiştir.',
+  },
+  {
+    key: 'yukum',
+    label: 'YÜKÜM satırı (VO\'nun her yükümlülüğü karede nerede)',
+    warnOnly: true,
+    needsIf: (b) => /^\s*FİKİR\s*:/im.test(b),
+    test: (b) => /^\s*YÜKÜM\s*:\s*\S{12,}/im.test(b),
+    why: 'Hücre\'nin 16 kusurunun 8\'i (yarısı) VO cümlesinin bir yan-cümlesinin karede '
+      + 'karşılığı olmamasından doğdu. Örnek ölçüldü — K45 VO\'su "soğanda vardı, MİRA\'NIN '
+      + 'HÜCRESİNDE HİÇ YOKTU" diyor; FİKİR satırı cümlenin ikinci yarısını hiç anmıyor ve '
+      + 'kare tek taraflı geldi. FİKİR bir SEZGİdir; YÜKÜM bir SAYIMdır: VO\'daki her '
+      + 'nicelik / konum / ölçek / karşıtlık / sahiplik sözcüğü tek tek karede nerede '
+      + 'karşılandığıyla eşleşir. Yazım: `YÜKÜM: "soğanda vardı" → sol yarı, mercekler '
+      + 'sayılabilir · "Mira\'nınkinde hiç yoktu" → sağ yarı, sıfır yeşil cisim`',
+  },
   {
     key: 'style',
     label: 'STYLE kuyruğu',
