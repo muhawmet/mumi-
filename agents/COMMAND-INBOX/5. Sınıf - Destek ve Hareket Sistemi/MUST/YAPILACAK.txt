@@ -1,0 +1,285 @@
+DESTEK VE HAREKET — MUST REVİZE (9 kare)
+======================================================================
+ELENENLER (AI gözü, göz ardı edildi — motion'ları YAZILDI, basılabilir):
+  K14 · K24 · K32 · K49  → kapı rengi sürekliliği, simetrik yüz, halka biçimi, ışığın
+  kaburgaya taşması. Hiçbiri izleyicide okunmuyor.
+
+Her karenin MEVCUT görseli bu klasörde: K<n>-MEVCUT.png
+======================================================================
+
+
+### K04  —  görsel: K04-MEVCUT.png
+
+
+
+GEREKÇE (§5øø + §2ø): istenen "öne katlanmış yığın" yerine kadrajda BOYDAN BOYA
+UZANMIŞ bir gövde doğdu — göğüs kavisli ve yukarı, kalça kalkık, baş solda,
+bacaklar sağda. Bu, revizenin NEGATIVE'inin birebir yasakladığı okuma:
+"never lying on its back, never reclining, never posed with a hip raised, never
+reads as a resting, lounging or sleeping body". İkinci kez aynı yere düştü.
+İkinci kalem: Mira'nın "boş el"i avuç KAMERAYA dönük ve parmaklar yukarı — bu
+"DUR" işareti okuyor, oysa istenen avuç AŞAĞI dönük, omzun biçimini tutan bir el.
+Üçüncü kalem (§5ø): yüzü endişeli/üzgün; VO nötr anlatı, kaynakta hüzün yok.
+
+KÖK NEDEN — yasa değil, YAZIM: "lies collapsed" + "arms flung forward past the
+head" + "one leg splayed sideways" üç ayrı uzuv talimatıdır ve motor bunları
+UZATARAK çözüyor. Bu sefer poz UZATILMIYOR, KAPATILIYOR: yüzüstü, uzuvlar gövdeye
+yatık. Ayrıca kuklanın CANSIZ NESNE olduğu tek bir imkânsız eklem açısıyla
+kilitleniyor — bir insan kolunun yapamayacağı yarım tur. Bu, §5øø okumasını
+kaynağında kesiyor: gördüğün şey bir gövde değil, dağılmış bir tahta parçası.
+⚠ K05 ve K06 ön planındaki bulanık kütle YATAY'dır — bu yüzden kukla bu karede de
+   yatay kalır, yalnız yığılma biçimi düzelir; süreklilik korunur.
+-----
+35mm lens at f/4, camera just above tabletop height, three-quarter medium view down the paint table, matching the previous shot's height and angle so the two frames cut together. @kukla has gone down onto its front exactly where it was sitting, and the collapse reads at a glance because everything has closed inward instead of opening out: it has folded straight forward over its waist ball, its plain oval head-block resting flat on the boards a hand's width in front of its own hip block with the rounded crown turned up to the light, the spine bowed over into one long arc above it, both arms folded in tight against its own ribs with the paddle hands tucked half under the chest, and both legs lying straight out behind it, close together and flat on the wood, the ankles slack. Every joint has given up at once. One forearm has rotated a half-turn at its elbow ball so that its paddle hand lies palm-up while the shoulder above it lies palm-down — a twist no living arm could make — and that one impossible angle tells the whole frame that this is a wooden thing that has come apart, not a body at rest. The small dulled brass ring in the middle of its back is turned up to the sun. Directly above it @mira4's right hand is still open in the air, the palm turned DOWN toward the boards with the fingers curved in the shape of a shoulder that is no longer under them, held a hand's width above the empty place where that shoulder was. She stands beyond the table at the back of the middle plane, upright and dead still, framed from the waist up with nothing below the waist visible, her chin level, her lips closed, her face fully lit and calm and attentive as she looks at what has happened — interested, not distressed. Skin stays matte with low specular and is never tinted green or grey. The setting is @atolye, dressed and close: the hand-waxed solid-oak work table, heavy glass jars of brushes standing bristle-up in clean water, a folded linen cloth, a squat stoneware pigment jar with a brass screw lid, the tall deep petrol-blue painted double-door cupboard behind her with its honest brush drag and its empty steel hook, thick natural-linen aprons on their turned-wood pegs, the chalky sage-green wall above its deep petrol-blue wainscot, the tall east window blowing out white at the far end of the table. Motivated key is the morning sun bar landing along the bowed spine, across the fallen head-block, on the empty downturned palm above it and on @mira4's shoulder and jaw; the far half of the table burns out into the window's white glare and the bar's warmth bounces off the oak and carries into the left side of the room, so the cupboard and the aprons read a stop and a half down and cooler but stay completely legible, with an open north-sky fill reaching every corner. Nothing here is unlit. Three things are alive in the frame: dust turns through the bar in the space between the empty hand and the fallen head-block, the water in a brush jar still rocks, one curl of dried pigment trembles at the table edge in the warm air. Depth in three layers — the stoneware pigment jar sits large and out of focus across the near bottom-left edge, the folded puppet and the empty downturned hand razor-sharp in the middle plane, @mira4 standing upright and the blown window behind her in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow — the head-block and the near shoulder pressed hard into the boards with a dark weighted shadow tight beneath them, the jars ringed on the wood. Clean plate — no on-screen text; the fallen thing, the empty hand and the standing girl carry the whole line. Clean motion-ready start frame, the collapse already complete and held.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage, a RenderMan-successor pipeline — form carried entirely by lighting rim and value separation, subsurface translucency in skin holding the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: turned beech with fine lathe rings and polished brass ball joints gone slack, one dulled brass ring recessed into the back block, hand-waxed solid oak boards with open grain and paint sunk into it, deep petrol-blue painted timber with honest brush drag, glazed stoneware with a brass screw lid, heavy natural linen. Props drawn 10–15% overscale for child-clear readability. Lighting is art-directed: motivated low morning sun through the east window as key — beams visible as soft volumetric shafts with dust suspended in them, laying warm window-shaped patches on the oak table and floor; open sky fill at half key reaching every corner, painted AO — shadow stays warm and legible, never black. Daylight is real and directional, never a flat wash, never artificial bloom. No outlines.
+LIGHT AND PALETTE: colour lives everywhere the light reaches, and the light reaches everything — shadows settle into an open luminous blue-indigo that stays airy and full of detail, midtones glow a full warm burnt-orange across the fallen beech body and the waxed oak boards and carry that warmth into the petrol cupboard and the linen behind, vivid warm amber runs along the bowed spine and the rim of the empty downturned palm and returns as a softer amber bounce under the table edge, highlights blow past ivory into clean white in the far window, and a cool-violet sky bounce opens the underside of the table without draining it. Saturation comes from real material and real light, never from a filter — rich and sunlit, never pale, never neon. Overall exposure is bright and open — a sunlit mid-morning room, high-key overall with a directional accent, never a dark interior with a beam in it. Render as light behaviour, never flat colour fills. No acid green, no neon, no teal-orange grade, no desaturated grey, no washed-out or milky low-contrast look.
+TEXT: none — clean plate. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: @kukla is FACE-DOWN and FOLDED SHUT, with its head-block, its chest and its folded arms all pressed down onto the boards — it is never lying on its back, never lying on its side, never reclining, never stretched out at full length across the table, never arched with its chest raised, never posed with a hip, a knee, a shoulder or an elbow lifted off the wood, never has an arm flung out or thrown above its head, and it never reads as a resting, lounging, sleeping or posed body of any kind; its limbs stay folded in against its own body and are never opened out or spread; the plain oval head-block is clearly identifiable as a head, it is the lowest point of the whole figure, it touches the boards, and it lies in front of the hips and never level with them or behind them; exactly two arms and two legs are present and every one of them is countable and accounted for — no lost limb, no duplicated limb, no extra joint, no unreadable pile of parts; @kukla has no face — no eyes, no nose, no mouth, no drawn features — and it does not look sad, sleeping, hurt or alive; the puppet stays a rigid solid, no deform, melt, morph or merge — a heap of hard wooden parts, never a soft or rubbery body; it is already fully collapsed and stays collapsed, never half-standing, never propped, never sitting, never caught in the middle of falling; no cord, string, thread or wire anywhere; @mira4's open hand has its palm turned DOWN toward the table with the fingers softly curved — it is never a flat palm turned toward camera, never raised beside her head, never a stop, halt, wave, greeting or push gesture, and it never reads as a signal of any kind; her expression is calm, level and attentive — never sad, never worried, never anxious, never alarmed, never frightened, never on the verge of tears, and her mouth stays closed; the open hand belongs to @mira4 and she stands in the same frame with her face visible — no disembodied hand, no floating arm; no second child, no teacher; no lettering on any surface; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine skin; no photoreal or live-action, no real-human photographic skin; no recognisable franchise character, real person, logo, badge or brand; no English text anywhere; no arrows, leader lines, callout circles, labels, charts, diagrams, gauges or infographic panels; no formula symbols or equations; no lens flare unless motivated by a practical light in frame; no teal-orange grade, no desaturated grey look, no hard-black shadow; no empty white void.
+
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K16  —  görsel: K16-MEVCUT.png
+
+
+
+GEREKÇE (üç kalem, hepsi masa yüzeyinde): istenen düzeltme TUTTU — kemik artık simetrik
+köpek kemiği değil, bir ucunda tek yuvarlak baş ve kısa eğik boyun, öbür ucunda iki condyle
+topuzu olan gerçek bir uyluk kemiği. Ama kare üç ayrı yerden düşüyor:
+ 1) 🔴 KEMİK ÜÇ YERİN HİÇBİRİNİN İÇİNDE DEĞİL — süpürülmüş yerlerin epeyce solunda, çıplak
+    kirli tahtanın üstünde duruyor. Karenin tek fikri "birinci yer DOLU, ikinci ve üçüncü
+    BOŞ" idi; şu an üçü de boş ve fikir ters okunuyor.
+ 2) 🔴 ÜÇ YER İKİ DEV DAİREYE DÜŞTÜ — masanın yarısını kaplayan, keskin kenarlı iki büyük
+    disk. Bu tam olarak NEGATIVE'in yasakladığı "callout dairesi / laid-on grafik" görüntüsü;
+    ayrıca üçüncü yer kadrajın sağ kenarında yarım kalmış, sıra sayılamıyor.
+ 3) KAVRAM IŞIĞI YOK — kemiğin gövdesinde kor yok. K15'te var, K17'de var, arada K16 sönük.
+Not (revize DEĞİL, gözlem): bu karede panjurlar İNİK ve oda gri; dünya kartı "blinds drawn
+fully up" diyor. Kadraj her yerde okunur olduğu için kusur saymadım — istersen tek cümle
+eklenir.
+
+Use this referenced image, change ONLY: the three places on the desk and where the bone lies — the three swept dust-free places become three modest oval patches of clean wood in one straight evenly spaced row running away down the desk, each one only a little larger than the bone itself and each with a soft feathered edge in the pencil grime rather than a hard rim, so none of them reads as a drawn circle, a laid-on disc or a callout ring; the thigh bone now lies squarely INSIDE the first and nearest of those three places, its shaft following the run of the row and its two condyle knobs seated within that patch, so the first place is plainly filled while the second and third stay completely empty with nothing in them; and the lesson's warm-golden light returns as a still spread core deep inside the bone's shaft, glowing the polymer from within and reaching neither the desk, her forearms nor any skin. Keep everything else identical.
+
+=========================================================================
+NOT — Mami'ye, revize DEĞİL, gözlem (ölçülerek bulundu):
+· PLASTİKLİK KAPANDI. Ten mat, çilleri ve gözenek dokusu var, gözde tek yumuşak
+  catchlight — bu bloğun 14 karesinin 14'ünde. "wet dual-point catchlights" sökümü tuttu;
+  Hücre'deki "plastik Mira" kusuru bu sette görünmüyor.
+· KARANLIK KAPANDI. Ölçülen ortalama parlaklık: K08 54→142 · K13 66→104 · K14 61→121.
+  60 altı piksel oranı K08'de %67'den %8.9'a düştü. Panjurlar açık, güneş içeride.
+· AKILLI TAHTA: K09/K11/K12/K13/K14/K19'da ölü siyah panel bitti. K12 ve K14'te yüzey artık
+  beyaz tahta + kalemlik olarak doğuyor (akıllı tahta değil). Kara tahta değil, parlak ve
+  temiz — kusur saymadım; precedent "asla kara tahta" diyor, o tutuldu.
+· K10'da sol ayakkabısının burnu kaidenin kenarından görünüyor (prompt "hiçbir ayak
+  görünmez" diyordu). Alt gövde okuması doğmuyor, kadraj güvenli — kusur saymadım.
+=========================================================================
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K22  —  görsel: K22-MEVCUT.png
+
+
+DÜZELDİ: eklem boşlukları artık açık karanlık — mor-mavi macun kütlesi gitti.
+TUTMADI: "kopmuş kol" okuması "kopmuş GÖVDE" okumasına döndü. Kaburga kafesi geldi ama
+kendisi de havada duruyor: altında kaide, direk ya da gövde yok, üstünde boyun yok. Kafesin
+tepesinde omurganın TESTEREYLE KESİLMİŞ gözenekli kesiti duruyor — boynun olması gereken
+yerde açık bir kesit yüzü. Çocuk materyalinde bu kare "kesilmiş gövde" olarak da okunabilir.
+Ayrıca kürek kemiği ile köprücük kafesin SOLUNDA, aralarında hava var — omuz kafese değmiyor.
+🔴 Çözümün özü: karenin içinde HİÇBİR ŞEY kesilmiş bitmeyecek. Kesen şey KADRAJ olacak.
+-----
+Use this referenced image, change ONLY: nothing in the picture ends in a cut any more — the spine runs up out of the neck bones and leaves through the top edge of frame and the lower ribs continue down and leave through the bottom edge, so the ribcage is plainly the middle of a whole standing teaching skeleton that the frame is cropping, and the sawn, porous cut face at the top of the spine is gone. The shoulder blade and collarbone move across into contact with the ribcage so the arm visibly hangs off the cage with no air between them. Keep the joint gaps as open unlit shadow, keep the amber cores inside the shafts, and keep everything else identical.
+-----
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K29  —  görsel: K29-MEVCUT.png
+
+
+DÜZELDİ 🔴: oturma gitti — ayakta, ayağı kaideye basıyor, etek dik iniyor ve uyluk kapalı,
+kamera hizada. Siluet riski kapandı. Bu tur bunun için değerdi.
+TUTMADI:
+ 1) 🔴 BOZUK YAZI: künyede "DIZ" yazıyor — İ'nin NOKTASI YOK. Net okunuyor, tartışmasız kusur.
+ 2) FİKİR HÂLÂ ÖLÜ: kemik çifti neredeyse DÜMDÜZ (yaklaşık 165°), Mira'nın dizi ise yaklaşık
+    90°. Karenin tek fikri "aynı açıda iki diz"di; iki açı birbirini tutmuyor.
+ 3) SAYIM: tezgâhta üç-dört kemik var. Prompt "tam olarak iki kemik" diyordu.
+ 4) KAVRAM IŞIĞI YOK: pirinç pimde amber halka görünmüyor, yalnız pirincin kendi parlaması
+    var. Zincir K28'in iki tam halkasından K30'un yirmi halkasına bu kareden geçiyor.
+ 5) İFADE: yüzü hâlâ endişeli/telaşlı — istenen "parlak, meraklı, sakin" gelmedi (§5ø).
+-----
+Use this referenced image, change ONLY these five things and leave her pose, the camera, the room and the light exactly as they are: the word on the khaki card tag becomes "DİZ" with a clear separate dot standing above the stem of its middle letter, a capital D then a dotted capital İ then a capital Z, in the same graphite block handwriting; the two bones on the plinth close up until the pair is bent to the very same right angle as her own bent knee, the shorter bone swinging up so the pair mirrors her leg in the same plane and at the same height; every extra bone is removed so exactly two bones lie there, one long and one short, joined by one brass pin; a soft round warm-golden ring of light rides the axis of that brass pin, clearly luminous and clearly the brightest thing on the plinth, reaching nothing beyond the pin and a thumb's width of bone on either side, never touching her skin, the timber or the bench; and her expression becomes bright, curious and calm with her brows level and unlifted, her eyes interested rather than wide, her mouth closed — never worried, never startled, never anxious, never sad.
+-----
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K36  —  görsel: K36-MEVCUT.png
+
+
+
+KUSUR: Tam yeni prompt yazıldı ve NEGATIVE satırı "her two arms never cross, never form an X,
+no stop gesture, no refusal gesture" diye açıkça yasakladı. Kare yine iki kolu göğüs önünde
+ÇAPRAZ, kaşları çatık bir çocuk getirdi — evrensel "HAYIR / DUR" işareti. Üstelik kolun
+üstünde kabartı YOK: dersin bütün S4 zinciri (K37→K41) bu tek kabartıya bağlı ve ekranda yok.
+KÖK NEDEN: yasak çalışmıyor çünkü kollara VERİLEN İŞ yok — motor "iki kol + göğüs" görünce
+en sık gördüğü kalıba düşüyor. Yasa zaten yazıyor: istemediğin şey yasaklanmaz, yeri GİYDİRİLİR.
+KANIT ELDE VAR: aynı pozu motor bu derste bir kez DOĞRU üretti — 41.png'de kol yukarı katlı,
+yumruk omuz hizasında, öbür el pazının üstünde, kabartı net, çapraz yok. Aynı geometri isteniyor.
+
+Use this referenced image, change ONLY: her right arm rises into the one pose that shows a hardened muscle — the elbow folds up and out to her own right side with the fist closed at about shoulder height, the sleeve pushed thick and clear above the elbow so the bare upper arm reads unbroken from shoulder to joint, and along the top of that upper arm a firm rounded swell stands proud with the skin drawn tight and smooth over it, a shallow crease where it drops into the elbow; her left hand comes up from below and lies flat across the top of that swell with the fingers spread and the heel of the palm pressed into it, her left forearm travelling upward on the outside of her body so that the two arms never touch one another, never cross, never overlap in front of her chest and never make an X, and neither palm ever turns out toward camera; and her brows unknit so her face reads easy, curious and interested rather than cross or refusing, her chin turned down toward her own arm. Keep everything else identical: same lens, same camera height, same three-quarter turn away from the lens, same teal ribbed knit, same @kukla lying on the bench with its arm bent at the brass elbow ball and its upper arm a bare smooth straight-sided cylinder carrying nothing along it, same dying amber trace on that brass ball and no glow anywhere on her skin, same light, same background.
+
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K45  —  görsel: K45-MEVCUT.png
+
+
+
+TUTTU: halter ve et parçası kadrajdan çıktı; oda griden çıkıp sıcak ve gün ışıklı oldu.
+TUTMADI, üç kalem:
+ 1) 🔴 KAVRAM IŞIĞI YOK. Karenin tek fikri "değişmeyen tek şey" — yani iki kapalı gövdenin
+    üstünde K44'ten devralınan, aynı boyda ve aynı güçte duran amber çizgi. Karede hiç amber
+    yok. Işık zinciri K44'ten K46'ya burada kopuyor; bu kare bu hâliyle hiçbir şey öğretmiyor.
+    (Bu, motion'la kapatılamayan tek sınıf: "hiç değişmedi" diyen bir ışık, klip içinde
+    doğarak gösterilemez — ilk karede zaten orada olmalı.)
+ 2) SÜREKLİLİK: boru maketi K43 ve K44'te YATAY duruyordu, bu karede DİKEY. Arka arkaya
+    kesilen üç karede aynı nesne yatıp kalkıyor.
+ 3) YABANCI CİSİM: tepsinin sol ucunda iki renkli disk (sarı ve kiremit) duruyor — prompt'ta
+    yok, dünyada yok, ne oldukları okunmuyor.
+
+Use this referenced image, change ONLY: three things. First, the pale closed tube is laid back down HORIZONTALLY on its turned base exactly as it stood in the two frames before, its long axis running across the tray and its two flat blind end caps square to the sides. Second, the warm-golden line comes back across both closed bodies and lies exactly where it lay before — running the whole length of the horizontal tube, crossing the short gap of bare birch between the two bases without breaking, and carrying on along the whole curve of the closed stomach form to its blind stub, one single unbroken line of one steady even strength sitting down into the pale rubber as light lying on a surface, catching the crown of each form and falling away into its shadow side, never a neon tube, never a drawn stripe and never glowing out into the air. Third, the yellow disc and the terracotta disc lying on the tray beside them are cleared out of the frame completely, leaving bare birch there. Keep everything else identical: same lens, same bench-top camera, same warm sunlit room, same slack beige band coiled at the near edge, same @mira4 with her chin on her folded forearm turned three-quarters away, same light, same background.
+
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K47  —  görsel: K47-MEVCUT.png
+
+
+
+KUSUR, üç kalem:
+ 1) 🔴 Kalbin üstündeki enine bantlanma tam olarak NEGATIVE'in yasakladığı şey oldu:
+    "never gift wrap, never candy stripe" yazılıydı, kare şeker ambalajı gibi çapraz beyaz
+    şerit getirdi; soldaki kol maketi de baştan aşağı beyaz bantla SARILMIŞ bir uzuv gibi
+    duruyor (sargılı/mumyalanmış kol okuması). Karşılaştırmanın öğrettiği şey "kalp bir
+    süs paketi" oluyor.
+    KÖK NEDEN: "pale bands crossing the red" ifadesi. Kaslı gövdede ince çizgi olarak
+    okunuyor (K41, K43 doğru geldi), ama PÜRÜZSÜZ bir kalp yüzeyinde üstüne YAPIŞTIRILMIŞ
+    şerit oluyor. Kalpte bantlanma AYNI RENKTE OYUK olmalı, açık renk şerit değil.
+ 2) 🔴 Amber çizgi hiç yok — oysa karenin fikri "yüzeyi çizgili der, ışığı düz der";
+    ışık yoksa cümlenin yarısı ekranda yok.
+ 3) KADRAJ: sağdaki kapalı boru tam @mira4'ün önünde duruyor ve yüzünün/gövdesinin sağ
+    yarısını kesiyor. ENZIM kadraj kilidi kesik figürü yasaklıyor.
+
+Use this referenced image, change ONLY: three things. First, the banding on the heart model stops being applied stripes and becomes the material's own texture — fine parallel grooves moulded into the deep brick-red rubber, the same colour as the body all the way through, catching the raking light only as a shallow ridge and a shallow trough, so no pale band, tape, ribbon, wrapping or candy stripe crosses the surface anywhere; the arm model at the left is corrected the same way, its white encircling bands replaced by that same fine same-colour grooving so it no longer reads as a bandaged or wrapped limb. Second, the warm-golden line comes onto the heart model and lies along its grooved front curve alone, unbroken from one end to the other at one single steady strength, reaching neither neighbour, neither the tray nor her skin. Third, the pale closed tube is moved further to the right along the tray so that it stands clear of @mira4 entirely and no object crosses her face, her shoulder or her body, her whole head and both shoulders reading unbroken inside the frame. Keep everything else identical: same lens, same bench height, same three models in one line at the same height on the birch tray, same turned bases, same true organ shape of the heart with its stubs sealed flat, same three-quarter turn of her head away from the lens, same light, same background.
+
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K48  —  görsel: K48-MEVCUT.png
+
+
+
+🔴 ÖLÇÜLDÜ: 48.png ortalama parlaklık 56, piksellerin %63'ü 60'ın altında. Bu blokta bir
+sonraki en karanlık kare 82 (K42), sekansın ortalaması 100–116. Yani kare bu blokta yalnız
+"biraz koyu" değil, ölçülerek AYKIRI. Kıyas: K08 bu projede tam olarak bu sebeple reddedildi
+(mean 54, %67) — aynı sınıf kusur ikinci kez, aynı derste.
+İKİNCİ KUSUR (§5øø): kadrajın solunda bir çocuk, loşta, tek başına, taburede oturuyor;
+yüzü okunmuyor, bacakları çıplak ve alt gövdesi tamamen kadrajda. VO'yu duymayan biri için
+bu kare "ömrümüz boyunca hiç durmadan çalışır" demiyor — terk edilmişlik diyor.
+KÖK NEDEN: prompt'un gövdesindeki "nearly dark" ifadesi bu turda söküldü, ama karenin
+KURGUSU hâlâ karanlığı çağırıyor: geniş plan + "her şey durdu" + "odadaki içeriden gelen
+tek ışık". Motor bunu akşam olarak çözüyor. Durgunluk karartmayla değil ODAKLA yapılır.
+
+Use this referenced image, change ONLY: two things. First, the whole room is lifted to a bright sunlit mid-morning science classroom — mid-morning sun comes through the high windows and lays broad warm window-shaped patches across the bench and the floor, the teal cabinetry, the noticeboard, the smart board, the far wall and every corner reading open, warm and completely legible at half a stop under the lit model, with luminous blue-indigo shadows that keep their detail and no part of the frame falling into blackness, no evening, no dusk, no lamp light and no blue-grey grade anywhere. Second, @mira4 comes forward to the near end of the bench, close enough that her calm face reads clearly and fully lit with the daylight cutting it along the nose and only the far half in open shadow, her chin resting on her folded arms on the bench top so that the bench crosses in front of her below the chest and nothing below the chest is visible, her expression easy and content, her eyes open and on the model, her lips closed — never small, never distant, never a silhouette, never hunched, never asleep and never sitting alone in the dark. Keep everything else identical: same lens, same bench-height camera, same closed brick-red heart model on its turned base at the far end of the birch tray with the unbroken warm-golden line along its curve, same empty glass case standing on the bench, same slack band hanging over the bench edge, same stillness — nothing in the room moving except that light.
+
+=========================================================================
+MAMİ'YE — bu turun tek yapısal bulgusu
+
+Dördünün de ortak kusuru aynı yerde: **kavram ışığı, karenin geri kalanı düzeltilirken
+düşüyor.** K40, K42, K45 ve K47'de amber ya hiç doğmadı ya söndü — yani zincirin dört
+halkasında ışık yok. Bunun dördünden ikisi (K40, K42) motion'da ışık OLAYI olarak kapatıldı
+ve yeni kare gerektirmiyor; K45 ve K47 kapatılamadı, çünkü onların cümlesi ışığın
+DEĞİŞMEMESİ üstüne kurulu — değişmeyen bir şey klip içinde doğurulamaz.
+
+Kalem: bir karede hem sahne hem ışık düzeltiliyorsa, referans-edit'te ışık BİRİNCİ cümle
+olarak yazılmalı; sahne düzeltmesi kuyruğa alındığında motor ışığı düşürüyor.
+=========================================================================
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+### K52  —  görsel: K52-MEVCUT.png
+
+
+
+GEREKÇE (Mami için, prompt'a girmez):
+· TUTTU ve büyük tuttu: ODA. 1.png ile 52.png yan yana konduğunda aynı oda — düz sıcak
+  kırık-beyaz duvar (yeşil sıva ve teal lambri gitti), aynı mumlu meşe tezgâh, aynı iki fırça
+  kavanozu solda, aynı kurutma rafı, aynı keten önlükler, aynı dolap, aynı kanca, aynı ışık
+  yönü, aynı ön plan alçı küresi. Geçen turun ana kusuru kapandı.
+· TUTTU: @kukla ipinde dik, yüzsüz, hareketsiz, gölgesi dolap kapağında. Aynanın tersine
+  çevrilen tek şeyi doğru.
+· TUTTU: kavram ışığı sönük — kadrajda tek bir amber çekirdek, halka ya da çizgi yok.
+· TUTMADI — DİZ KİLİDİ. Prompt "dizden yukarısı kadrajda, dizin altı görünmez, hiçbir yeri
+  tezgâh yüzeyinin üstünde değil" diyordu. Teslim edilen karede iki diz de, baldırların bir
+  kısmı da görünüyor ve meşe tezgâhın yüzey çizgisinin ÜSTÜNDE kalıyor. VO'yu duymayan biri
+  için okuma değişmedi: "kız masanın üstünde." Aynı kusur ikinci kez düştü.
+· TUTMADI — PLASTİKLİK. Mami'nin hükmü ikinci kez doğrulandı ve sebebi yine ölçülebilir:
+  Mira'nın kadrajın HİÇBİR YERİNDE gölgesi yok — arkasındaki duvar bomboş, temiz ve düz.
+  Yüzünde yön yok, iki kaynak yok, sıcak rim yok; ten parlak, saç tek parça kalıp gibi. Düz
+  dolgu + gölgesizlik = sahneye yapıştırılmış çıkartma (§7a birebir). Prompt bunu üç maddede
+  istemişti, üçü de gelmedi — yani bu bir prompt eksiği değil, motor bu üç şeyi ancak
+  ayrı ayrı ve somut yazıldığında koyuyor. Yeni metin üçünü de tek tek yazıyor.
+· Pozun kendisi de değişti: "havada, yakalanmış" değil, iki dizi bükük çömelmiş bir adım.
+  Diz kilidi geri konunca bu tartışma zaten kapanıyor — hareket üst gövdede okunacak, tıpkı
+  · K01'de duruşun üst gövdede okunduğu gibi.
+· 🔴 MAMİ KARARI GEREKİYOR (bu revizede DEĞİŞTİRİLMİYOR): emaye oda plakasındaki "ATÖLYESİ"
+  kelimesinde Ö harfinin iki noktası yerine tek yatay çizgi var — "ATŌLYESİ" okunuyor. Kusur
+  · K52'ye ait değil: 1.png'de, yani AÇILIŞ KARESİNDE de birebir aynı. İki kare de aynı hatayı
+  taşıyor, yani ayna bu noktada kusursuz. Seçenek iki: (a) ikisi de böyle kalır, kimse fark
+  etmez (plaka odak dışında, videoda ~5 saniye görünür), (b) K01 ve K52 birlikte yeniden
+  basılır. Tek başına K52'yi düzeltmek aynayı kırar — o yüzden bu revizede dokunulmadı.
+
+-------------------------------------------------------------------------
+
+
+🔴 ÜRETİM NOTU: bu düzeltme **images/1.png (K01'in teslim edilen karesi) yine referans olarak
+beslenerek** basılır — oda artık tuttu, kırılmasın.
+
+
+Use this referenced image, change ONLY: @mira4 is brought forward and reframed so that the oak
+tabletop crosses her at hip height exactly as it crosses her in the opening frame — no legs, no
+knees, no shins, no ankles, no feet and no shoes appear anywhere in the picture, and no part of
+her body is ever above the table surface — while her upper body keeps exactly the movement it
+already has, her torso turned away from the cabinet and leaning into the turn, both arms swept
+back behind her, her hair thrown back off her shoulders; and she is lit as part of this room
+instead of laid over it, in three specific ways: the warm bounce coming up off the waxed oak
+wraps under her chin and along the undersides of her forearms and lays a warm rim down her near
+cheek, her jaw and her near shoulder, her far cheek falls half a stop into cool open-sky bounce
+so her face is shaped by two different lights and is never evenly flat, and her own soft
+warm-edged shadow falls clearly onto the pale wall behind her and down onto the floor. Her skin
+is matte with low specular and one single soft catchlight in the eye, never a wet sheen over the
+face, and her hair reads as separate clumped strands with a few loose ones catching the sun bar
+instead of one moulded shell. Keep everything else identical.
+
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+----------------------------------------------------------------------

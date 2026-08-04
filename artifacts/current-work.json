@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "S3 (K22-K33) ikinci geçiş denetimi: 12 kare açıldı; 8 kare TUTTU ve motion yazıldı (MOTION/S3-YENI.txt, motion-lint 0 kırmızı, 207-215 kelime); K22/K24/K29/K32 TUTMADI, revize REVIZE/S3-YENI.txt",
-  "nextAction": "Mami K22 · K24 · K29 · K32 karelerini yeniden bassın",
+  "lastCompleted": "Destek revize turu 2: 52/52 kare yeniden denetlendi. TUTTU 39 → motion yazıldı (motion-lint KIRMIZI 0/39). TUTMADI 13 → ikinci revize turu tek dosyada. Ölçülerek kapandı: karanlık (K08 54→142), plastik ten (14/14 mat), K08 terzi mankeni, K38 ters öğretim, K51 kasap eti, K52 ayna odası.",
+  "nextAction": "Mami 13 kareyi bassın: Destek ve Hareket Sistemi_revize-TUR2.txt. MOTION 39 kare hazır ve teslim edildi.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T12:34:59.163Z",
+  "updatedAt": "2026-08-04T12:41:10.256Z",
   "updatedBy": "claude",
-  "baseCommit": "4836d5b"
+  "baseCommit": "13a18bb"
 }
