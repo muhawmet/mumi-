@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "Üç düstur yazıldı: §0 ANİMASYONUN RUHU (fizik çiti kalır, zihniyet çiti sökülür) · 5ø KAYNAĞIN TONU + ham senaryoda varsayılan POZİTİF · 5øø SİLUET OKUMASI. Kapsam netleşti: dördü de YALNIZ EDU, özgün işte sınır yok. Çocuk güvenliği daraltıldı (nesne değil TEMAS). agents/CANLI-EVREN.md revize brief'i hazır.",
-  "nextAction": "SIRADAKİ İŞ: 233 bekleyen kareyi agents/CANLI-EVREN.md ile revize et — proje başına bir ajan (Bileşke 71, Denetleyici 56, Hayvanlarda 54, Destek 52). Ayrıca eğitim tasarımı araştırması arka planda koşuyordu.",
+  "lastCompleted": "233 karenin tamamı hazır (4 proje, lint KIRMIZI 0/233). @fensinif referansı yeniden yazıldı. Plan modu DÜNYA üzerine kuruldu (mamilas-plan §0, iki nüsha) ve agents/worlds/pixar_3d_edu.md dünya kartı açıldı — videolar arası kalıcı, 8 başlık, yasak cümle listesiyle. Kapı yeşil: vitest 2533 PASS.",
+  "nextAction": "Mami üretimde. Döndüğünde: @fensinif yeni metniyle basılacak, sonra Destek K08+. Bekleyen: 4 sohbet/4 proje eşzamanlı çalışma düzeni kurulacak.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T07:52:05.932Z",
+  "updatedAt": "2026-08-04T10:16:37.322Z",
   "updatedBy": "claude",
-  "baseCommit": "acbd9d7"
+  "baseCommit": "1f1a887"
 }

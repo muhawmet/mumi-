@@ -65,3 +65,5 @@ agents/COMMAND-INBOX/**/*.jpg
 !agents/COMMAND-INBOX/**/images/.gitkeep
 artifacts/codex-69-prompts/
 canli.log
+agents/COMMAND-INBOX/*/REVIZE/S*.txt
+agents/COMMAND-INBOX/*/MOTION/S*.txt
