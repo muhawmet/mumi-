@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "MÜŞTERİ REVİZESİ alındı ve düstur yazıldı: kaynağın duygusal rejimi kilittir, çatışma icat edilmez (PROMPT-YASASI §1 5ø + CLAUDE.md). Kök neden yasanın kendisiydi — 'gerilim yoksa kare ölü' kuralı gerilimsiz kaynakta çatışma imal ettiriyordu; eksik yarısı yazıldı (merak/fark ediş/ölçek/dönüşüm/yankı).",
-  "nextAction": "MAMİ BASIYOR: Bileşke K17-K30 ilk batch. AÇIK KARAR: Farklı Kültürler kaynağa sadık hâle getirilecek mi, ne zaman? Ve 127 yeni kare bu düsturdan ÖNCE yazıldı — taranmadı.",
+  "lastCompleted": "Üç düstur yazıldı: §0 ANİMASYONUN RUHU (fizik çiti kalır, zihniyet çiti sökülür) · 5ø KAYNAĞIN TONU + ham senaryoda varsayılan POZİTİF · 5øø SİLUET OKUMASI. Kapsam netleşti: dördü de YALNIZ EDU, özgün işte sınır yok. Çocuk güvenliği daraltıldı (nesne değil TEMAS). agents/CANLI-EVREN.md revize brief'i hazır.",
+  "nextAction": "SIRADAKİ İŞ: 233 bekleyen kareyi agents/CANLI-EVREN.md ile revize et — proje başına bir ajan (Bileşke 71, Denetleyici 56, Hayvanlarda 54, Destek 52). Ayrıca eğitim tasarımı araştırması arka planda koşuyordu.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T07:34:38.632Z",
+  "updatedAt": "2026-08-04T07:52:05.932Z",
   "updatedBy": "claude",
-  "baseCommit": "786fd4c"
+  "baseCommit": "acbd9d7"
 }
