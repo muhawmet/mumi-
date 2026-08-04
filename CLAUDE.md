@@ -129,6 +129,18 @@ tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile kuyruğu bas →
 iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
 **yeşil ≠ temiz.**
 
+🔴 **ANİMASYONUN RUHU — yasanın üstündeki tek madde** (Mami, 2026-08-04): *"doku ve dünya oturdu
+ama sen animasyonun ruhunu unuttun, **gerçek video kafasına girdin**; özgür olduğumuz tarlada
+**çit çektik, içinde takılıyoruz**."* Kanıt: 23 Nisan'ı anlatmak için kareye **takvim yaprağı**
+konmuş — kamerayla çekilebilecek bir nesne aramak, yani gerçek-video refleksi.
+**Kusur bu yasanın kendisinde:** her ölçüm bir yasak bıraktı, toplamı çit oldu.
+**İki tür çit ayrılır — FİZİK ÇİTİ kalır** (warp, eriyen harf, eriyen el: ölçüldü),
+**ZİHNİYET ÇİTİ sökülür** ("kavram bir nesne olmalı", "ekrandaki şey çekilebilir olmalı",
+"dönüşüm = yeni öğe"). Bir yasak yazmadan önce: *bu motorun sınırı mı, benim alışkanlığım mı?*
+Sınama: *"Bu kareyi gerçek kamerayla çekebilir miydim? EVET ise, animasyon olduğu için
+yapabileceğim daha iyi bir şey var mı?"* ⚠ Özgürlük **biçimdedir** — sadakat, güvenlik ve
+§1a kıstasları gevşemez. Tam metin: `agents/PROMPT-YASASI.md` **§0 ANİMASYONUN RUHU**.
+
 🔴 **SİLUET OKUMASI — ÇOCUK MATERYALİNDE OKUMA İZLEYİCİNİNDİR** (müşteri revizesi, 2026-08-04).
 Müşteri: *"başında sandalyeye çıkmış ip bağlıyor — pedagojik olarak intiharı bile çıkarabilirler."*
 Kare açıldı, haklıydı: `Farklı Kültürler` K01'de çocuk sandalyede, **iki kol başının üstünde**,

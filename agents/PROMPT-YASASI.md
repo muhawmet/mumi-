@@ -85,6 +85,56 @@ değil: kodun göremediği yeri yasa tutuyor.
 Verbatim kaynak: `docs/ai/mami-direktif-transkript-2026-07-27.md`. Aşağıdakiler kuraldır;
 Mami'nin canlı direktifi çelişkide her zaman kazanır.
 
+---
+
+# 🔴 0. ANİMASYONUN RUHU — bu yasanın ÜSTÜNDEKİ tek madde
+
+> **Mami, 2026-08-04:** *"doku, dünya oturdu da sen animasyonun ruhunu unuttun — **gerçek video
+> kafasına girdin**. Özgür olduğumuz tarlada **çit çektik, içinde takılıyoruz çitin.**"*
+> Örnek: 23 Nisan'ı anlatmak için kareye **takvim yaprağı** kondu. Bu bir gerçek-video
+> çözümüdür: kamerayla çekilebilecek bir nesne bulup kadraja koymak.
+
+**Teşhis doğru ve kusur bu dosyanın kendisinde.** Yasa ölçümle büyüdü ve her ölçüm bir yasak
+bıraktı: `rigid solid` · `no deform, melt, morph or merge` · *"motion yeni öğe doğurmaz"* ·
+*"kamera minimal"* · *"kavram ışık kalır, çiçek olmaz"* · *"ok, diyagram, ikon yok"*.
+Tek tek hepsi bir kareyi kurtardı. **Toplamı bir çit oldu** ve içinde animasyon motoruyla
+**çekilmiş gerçeklik** üretiyoruz.
+
+## İKİ TÜR ÇİT VAR VE KARIŞTIRILMAMALIDIR
+
+| **FİZİK ÇİTİ — kalır** | **ZİHNİYET ÇİTİ — sökülür** |
+|---|---|
+| Katı/mekanik nesne + hızlı kamera = **warp**. Ölçüldü. | *"Kavram bir NESNE olmalı"* — ölçülmedi, biz varsaydık. |
+| Yazı taşıyan nesne oynayınca **harf erir**. Ölçüldü (KİTAP 3.6s, GİDA 1.0s). | *"Ekrandaki şey kamerayla çekilebilir olmalı"* — hiçbir yerde yazmıyor, ama her kareyi öyle yazdık. |
+| 5 saniyede el-ayak temaslı ince motor iş **eriyor**. 34 klipte 26 kusur. | *"Motion yeni öğe doğurmaz"* → **dönüşüm de doğurmaz** sanıldı. Doğru olan: *yeni ÖZNE doğmaz*; bir maddenin **hâl değiştirmesi** yeni özne değildir. |
+| Tagsız insan = motorun uydurduğu yüz. Ölçüldü. | *"Kamera minimal"* — yalnız katı nesne ve yazı karesinde fizik; kalanında **zevk varsayımıydı** ve dün sökülmeye başlandı. |
+
+**Kural: bir yasağı yazmadan önce sor — bu MOTORUN sınırı mı, benim alışkanlığım mı?**
+Motorun sınırıysa kalır ve gerekçesi ölçümle yazılır. Alışkanlıksa **yazılmaz.**
+
+## ANİMASYONUN İZİN VERDİĞİ VE BİZİM KULLANMADIĞIMIZ BEŞ ŞEY
+
+1. **Nesne kavramın KENDİSİ olur** — kavramı taşıyan bir prop aramak yerine. *Zaten yaptık ve
+   en iyi işimiz o:* MİTOKONDRİ harfleri mitokondrinin **kendi kıvrımlı zarından**, KLOROPLAST
+   yaprağın **damar dokusundan**, KOFUL harflerinin **içi sıvı dolu**. Hiçbiri "yazıyı nereye
+   koyayım" değil, **"yazı neyden yapılsın"**dı.
+2. **Ölçek yalan söyleyebilir** — soğan hücreleri **duvar** olarak göründü ve Mami ona
+   *"dersin belkemiği"* dedi. Gerçek videoda o kare çekilemez.
+3. **Malzeme hâl değiştirir** — boya suda ebru olur, iplik kumaş olur, buhar yazı olur.
+   Bu **yeni özne değildir**, aynı maddenin başka hâlidir; `motion yeni öğe doğurmaz` bunu
+   yasaklamaz ve yasaklamamalıdır.
+4. **Mekân kendini yeniden dizer** — bahçe 23 Nisan'ı bayrak dizisiyle **yazabilir**, yaprak
+   gölgeleri yere rakamı düşürebilir. Takvim yaprağı aramak gerekmez.
+5. **Kadraj fiziğe borçlu değil** — kesit, üstten bakış, imkânsız açı, aynı anda iki ölçek.
+   Yasak olan **diyagram**dır (ok, etiket çizgisi, callout), **hayal gücü değil.**
+
+⚠ Ayrım net olsun: **§1a'nın kıstasları ve `-1 ÇOCUK GÜVENLİĞİ` · `5øø SİLUET` · `5ø KAYNAĞIN
+TONU` maddeleri bu maddenin dışındadır ve gevşemez.** Özgürlük **biçimde**dir — içerikte,
+sadakatte ve güvenlikte değil.
+
+**Denetim sorusu:** *"Bu kareyi gerçek bir kamerayla çekebilir miydim? Cevap EVET ise, animasyon
+olduğu için yapabileceğim daha iyi bir şey var mı?"*
+
 ### Yapı ve kesim
 1. **JSON sadece DÜNYA'dır** (render yasası). Konuyu ve kareyi yönetmen kurar.
 2. **Kesim = ÖNER, Mami SEÇER.** Kendi başına aşırı merge yapma. Senaryo bilerek granüler
