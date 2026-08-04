@@ -1,0 +1,32 @@
+· ADIM 02 — K39  ·  "çay kutusu değişecek normal kutu olsun"
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "çay kutusu değişecek normal kutu olsun"
+· HAKLI MI        : Evet. Sağ ön planda paslı, litografi baskılı eski
+·                   teneke duruyor ve üstünde İKİ yerde "ÇAY" yazıyor —
+·                   yan yüzünde ve yerde duran kapağında. Kadrajın en
+·                   büyük ikinci nesnesi ve dersle hiç ilgisi yok.
+· NEDEN OLDU      : Bu karenin YAZI slotu "ÇAY" olarak yazılmıştı;
+·                   kutu, Türkçe kelime taşısın diye çay kutusu
+·                   seçilmişti. Ders için gereksiz.
+· NE YAPIYORUZ    : Sade ahşap tohum kutusu yapıyoruz — hiç yazı yok.
+·                   İçindeki ip yumağı ve tohumlar aynen kalıyor.
+·                   Bu karede yazı olmayacak, o slot kapanıyor.
+·
+· NASIL           : 1) K39-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Recreate the reference image exactly as it is — identical camera, identical lens and framing, identical composition, identical low warm morning sunlight from the left, identical colour grade, identical boy with an identical face, identical hair, identical light blue t-shirt and identical crouching pose with the same hand holding the same dried seed capsule and the same hand flat on the stone, identical geranium in its terracotta pot with the identical SARDUNYA label, identical railing, identical watering can, identical scattered soil crumbs and identical stone floor. Change ONLY ONE object: the old lithographed metal tea tin standing open in the right foreground, and its separate lid lying flat on the stone in front of it, are both replaced by a plain wooden seed box and its plain wooden lid. The box is an ordinary rectangular box of plain untreated pale timber, its corners simply butt-jointed with small dark nail heads showing, its faces sanded smooth and completely bare — no paint, no varnish, no lithography, no rust, no printing, no label, no writing and no decoration on any surface. Its loose plain wooden lid lies flat on the stone in front of it exactly where the metal lid lay, face up and equally bare. The box stands in exactly the same place, at exactly the same size and angle in frame and at the same distance from camera as the tin it replaces, and holds exactly the same contents in exactly the same arrangement: the same ball of natural jute twine and the same loose scatter of pale flat seeds resting in its bottom corner. The same low morning sun from the left lands on its near face and its top edge, and it casts the same soft contact shadow onto the stone. Nothing else in the frame moves, changes size, changes colour or is re-lit.
+
+STYLE: Full 3D CGI feature-animation render, RenderMan-successor pipeline — appeal-driven form readable at thumbnail size, subsurface translucency in skin carrying the scene's light temperature. A single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: plain sanded softwood with an open straight grain and a few small dark nail heads, faintly furred cut edges, natural jute twine fibre, dry matte seed coats, pitted limestone, aged porous terracotta. Props drawn 10–15% overscale for child-clear readability. Art-directed light unchanged from the reference: motivated low morning sun as key from the left, complementary cool sky bounce, soft painted ambient occlusion, shadow warm-dark never cold-black. No outlines; form reads through lighting rim and value separation.
+
+LIGHT AND PALETTE: unchanged from the reference — shadows settle into deep cool indigo, midtones glow vivid warm amber, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+TEXT: there is no writing anywhere on the wooden box or its lid. The only writing left anywhere in the frame is the existing SARDUNYA nursery label standing in the terracotta pot, unchanged from the reference in every particular — same word, same position, same lettering, same wear.
+
+NEGATIVE: the word ÇAY appears nowhere in the frame, on the box, on its lid, on the stone or on any other surface; no tea anywhere in the frame — no tea tin, no tea packet, no tea glass, no tea cup, no saucer, no teapot and no samovar; the wooden box carries absolutely no lettering, no logo, no stencil, no brand, no printed pattern, no lithographed image, no painted panel, no gilt line and no decorative border of any kind, and it is never metal, never tin, never enamelled, never rusted and never painted; exactly one box and one loose lid in the frame, nothing added beside them; the boy, his face, his pose, both his hands, the dried seed capsule he holds, the geranium, the SARDUNYA label, the railing, the watering can and the stone floor are unchanged from the reference and nothing is moved, resized, recoloured, re-lit or redrawn; the camera does not move and the framing does not change; no arrow, leader line, label, callout ring, inset panel, cross-section or cutaway diagram; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no recognisable franchise character, real person, logo, badge or brand; no warped or invented lettering and no English text; no formula symbols, equations or graphs; no empty white void.

@@ -1,0 +1,23 @@
+· BİTKİLERDE ÜREME — REVİZE
+· ==========================================================
+· Klasörleri sırayla aç. Her klasörde 2 dosya var:
+·   K<nn>-MEVCUT.png  → referans olarak yükle
+·   PROMPT.txt        → çizginin altını kopyala, yapıştır, bas
+· Yeni kareyi aynı klasöre indir. Sonraki klasöre geç.
+·
+· 01-K23   fesleğen yok      → saksıya fesleğen
+· 02-K39   ÇAY tenekesi      → sade ahşap kutu
+· 03-K01   çay bardağı       → su
+· 04-K02   çay bardağı       → su
+· 05-K03   çay bardağı       → su
+· 06-K04   çay bardağı       → su
+· 07-K45   çay bardağı       → su
+· 08-K46   çay bardağı       → su
+· 09-K48   çay + teneke      → su + ahşap kutu
+· 10-K54   çay bardağı       → su
+·
+· 12-MUZIK/SUNO.txt → Suno'ya yapıştır, yeni müzik.
+·
+· Bitince "kareler hazır" de. Motion'ları ben yazarım.
+· "Video birden bitiyor" notunu K54 motion'ında hallediyorum,
+· sana 3 tıklık Premiere işi kalacak, o zaman söylerim.

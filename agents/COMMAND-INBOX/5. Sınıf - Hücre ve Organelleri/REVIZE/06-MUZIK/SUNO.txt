@@ -1,0 +1,58 @@
+· ADIM 06 — MÜZİK  ·  "müzik değişmeli tamamen"
+· ====================================================================
+· Eskisi: yumuşak orkestra + nylon gitar + arp ailesi. Müşteri reddetti.
+· Yenisi: MODERN MİNİMAL — piyano + sıcak analog elektronik doku.
+· Yön tamamen değişti; eski müziğe hiç bakma.
+·
+· Süre hedefi: 3:40
+· Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+·
+· Bu dersin şekli ötekinden farklı: dışarıda taş ve harç ile başlıyor,
+· ortada mikroskobun içine iniyor, sonda bahçeye dönüyor. Müzik bu üç
+· bölgeyi DOKUYLA ayırır — dışarısı akustik ve odalı, içerisi elektronik
+· ve geniş, dönüş ikisinin birleşimi.
+·
+·
+· >>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+· --------------------------------------------------------------------
+
+A clean modern minimalist underscore for a premium children's science film about a garden wall, an onion and the cells everything is built from. Felt piano leads: a short repeating motif of four notes, close-mic'd and intimate, with the felt dampers and the soft mechanical action of the keys audible in the room. The piece moves through three textures. It opens outdoors and acoustic — the felt piano almost alone, dry and close, with a single low sustained string note underneath and a very quiet sense of open air around it. In the middle it goes inward and electronic: the room disappears, a warm analog synth pad opens wide and slow, a soft filtered arpeggiated pulse begins to circle underneath, and the piano motif is answered by a single clean sine tone, weightless and suspended, as though the listener has shrunk into something very small. Toward the end the two worlds join — the pad stays but the dry close piano returns over it, a low sustained cello comes in warmly, and the motif from the opening resolves upward one last time. Built on space and patience rather than melody, contemporary Scandinavian neoclassical crossed with a modern product film: elegant, uncluttered, never sentimental. Tempo unhurried, around 74 BPM, gentle 4/4, no drum kit — only the soft filtered pulse and occasional low sub notes. The mid-range is deliberately kept clear so a narrator sits on top of it with nothing competing. The last fifteen seconds thin back to the felt piano alone over one held pad note and fade slowly to silence. Instrumental only, no vocals, no lyrics.
+
+
+· ====================================================================
+· OPSİYONEL — SUNO "CUSTOM" MODU KULLANILIRSA
+· ====================================================================
+·
+· NEGATİF SATIRI:
+· no vocals, no lyrics, no choir, no vocal pads, no nylon guitar, no acoustic
+· guitar, no harp, no flute, no folk instruments, no ethnic percussion, no drum
+· machine, no trap hi-hats, no EDM build or drop, no epic trailer percussion,
+· no orchestral swell, no sound effects, no whimsical "cute" pizzicato cliché,
+· no sci-fi bleeps, no medical-documentary tension, no minor-key sadness
+·
+· 🔴 nylon gitar, arp ve flüt açıkça YASAK — eski müziğin imzasıydı,
+·    müşteri onu reddetti. Geri gelirse müzik değişmemiş sayılır.
+·
+·
+· SEKANS ENERJİSİ (kurgu için):
+· · K01-K08  (bahçe, duvar, usta) — DIŞARISI. Kuru ve yakın felt piyano, tek uzun
+·                                   bas yaylı. Oda hissi var, elektronik yok.
+·                                   Metafor burada kuruluyor: duvar = tuğla.
+· · K09-K15  (mutfak, soğan, LAM) — geçiş. Piyano seyrelir, pad ilk kez usulca
+·                                   açılır. Mikroskoba bakışla birlikte oda kaybolur.
+· · K16-K30  (zar, sitoplazma)    — İÇERİSİ. Pad geniş ve yavaş, filtreli nabız
+·                                   döngüye girer. Piyano geride, ders önde.
+· · K31-K44  (çekirdek, organeller)— dersin en terim yoğun yeri. Müzik BURADA EN
+·                                   SESSİZ: nabız sabit, hiç yükselme yok.
+·                                   Temiz sinüs tonu piyanoya cevap verir.
+· · K45-K50  (sentrozom, koful)   — nabız hafif belirginleşir, karşılaştırma
+·                                   ritmi (soğan ↔ Mira) müzikte de duyulur.
+· · K51-K53  (bahçeye dönüş)      — İKİSİ BİRLEŞİR. Pad kalır ama kuru yakın piyano
+·                                   üstüne döner, cello sıcak girer, açılış motifi
+·                                   son kez yukarı çözülür. 🔴 Filmin duygu tepesi burada.
+·
+·
+· SES MİKS:
+· VO önde ve daima üstte (A1). Müzik A2'de ~-18 dB.
+· K51'de 3 dB açılır (bahçeye dönüş). Son 15 saniyede müzik öne gelir (-12 dB),
+· son 4 saniyede sıfıra iner.

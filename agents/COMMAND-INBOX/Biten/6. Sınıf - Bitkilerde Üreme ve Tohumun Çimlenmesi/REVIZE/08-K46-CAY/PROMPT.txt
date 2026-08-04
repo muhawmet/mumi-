@@ -1,0 +1,32 @@
+· ADIM 08 — K46  ·  "her yerde çay var"
+· ============================================================
+·
+· MÜŞTERİ NE DEDİ : "her yerde çay var"
+· HAKLI MI        : Evet. 53 karenin 14ünde çay bardağı görünüyor,
+·                   6sında göze batacak kadar net. Aynı ince belli
+·                   bardak balkonda taburede, mutfakta tezgâhta,
+·                   sahne dekorunun sabit parçası olarak duruyor.
+· NEDEN OLDU      : Çay bardağı @balkon ve mutfak dekorunun içine
+·                   yazılmıştı; her karede prompt gövdesinde tekrar
+·                   ediyordu. Kare kusuru değil, DEKOR kusuru.
+· BU KAREDE NEREDE: sağ ön planda, masanın üstünde, kavanozun sağındaki uzun çay bardağı
+· NE YAPIYORUZ    : Çay bardağını SADE CAM BARDAKTA SU ile
+·                   değiştiriyoruz. Tek kural, bütün karelerde aynı.
+·                   Su dersin kendi konusu — "İkinci S, su demek".
+·                   Başka hiçbir şeye dokunulmuyor.
+·
+· NASIL           : 1) K46-MEVCUT.png dosyasını referans olarak yükle
+·                   2) Aşağıdaki metni olduğu gibi yapıştır
+·                   3) Üret, yeni kareyi bu klasöre indir
+·
+· ------------------------------------------------------------
+· AŞAĞIDAN İTİBAREN YAPIŞTIR
+· ------------------------------------------------------------
+
+Recreate the reference image exactly as it is — identical camera, identical lens and framing, identical composition, identical light direction and time of day, identical colour grade, identical characters with identical faces, clothing and poses, identical plants, identical props and identical background. Change ONLY ONE object: the tall Turkish tea glass of dark red tea standing on the table in the right foreground, to the right of the jar, together with its saucer and any spoon is replaced by a plain clear drinking glass of water. The new glass is a simple straight-sided clear tumbler of ordinary household glass standing directly on the same surface with no saucer under it and no spoon anywhere near it, filled a little over halfway with clean still water that is completely colourless and transparent, so the surface behind the glass is visible straight through it, slightly displaced by refraction. The water is still — no steam, no vapour, no heat, no bubbles, no condensation running down the outside. The glass sits in exactly the same place, at exactly the same scale in frame and at exactly the same distance from camera as the object it replaces, receives exactly the same light from the same direction, and casts the same soft contact shadow onto the surface it stands on. Nothing else in the frame moves, changes size, changes colour or is re-lit.
+
+STYLE: Full 3D CGI feature-animation render, RenderMan-successor pipeline — appeal-driven form readable at thumbnail size, subsurface translucency in skin carrying the scene’s light temperature. A single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: clear household glass with honest refraction and a slightly thicker base that bends the light passing through it, still colourless water with a clean meniscus at its rim. Props drawn 10–15% overscale for child-clear readability. Art-directed light unchanged from the reference: the same motivated key from the same direction, complementary cool sky bounce, soft painted ambient occlusion, shadow warm-dark never cold-black. No outlines; form reads through lighting rim and value separation.
+
+LIGHT AND PALETTE: unchanged from the reference — shadows settle into deep cool indigo, midtones glow vivid warm amber, highlights lift toward a clean near-white with a cool green edge on surfaces only, never on skin. Render as light behaviour, never flat colour fills. No muddy midtone, no teal-orange grade, no noir contrast.
+
+NEGATIVE: no tea anywhere in the frame — no tulip-shaped Turkish tea glass, no ince belli glass, no tea cup, no mug, no saucer, no teaspoon, no teapot, no çaydanlık, no samovar, no tea tin, no tea packet and nothing containing any brown, amber, red or coloured liquid; the water in the new glass is clear and colourless and is never tinted amber, brown, red, yellow or green; no steam, no vapour and no rising heat anywhere near the glass; the glass carries no lettering, no logo, no gilt rim, no pattern and no decoration of any kind; exactly one glass stands there and nothing else is added beside it; every other object, character, plant, surface, text and background element is unchanged from the reference and nothing is moved, resized, recoloured, re-lit or redrawn; the camera does not move and the framing does not change; no arrow, leader line, label, callout ring, inset panel, cross-section or cutaway diagram; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine; no photoreal or live-action; no recognisable franchise character, real person, logo, badge or brand; no warped or invented lettering and no English text; no formula symbols, equations or graphs; no empty white void.

@@ -225,7 +225,12 @@ Olculemeyen dosya basilirsa eksigi krediyle odenir. Basliga tek satir ekle."
     # Kapiyi cikis koduna baglamak, kapiyi doguran gun no-op yapardi (2026-07-31'de tam bu
     # oldu: bilerek bozuk bir dosyaya kapi "yesil" dedi). Hukum CIKTIDAN okunur.
     LINT_OUT=$(node scripts/prompt-lint.mjs "$PF" --register="$REG" 2>&1) || true
-    KIRMIZI=$(printf '%s' "$LINT_OUT" | grep -oE 'kırmızı: [0-9]+' | grep -oE '[0-9]+' | head -1)
+    # 2026-08-04 olcumu: `prompt-lint.mjs` ozet satirini `toplam kırmızı blok: N` diye basiyor;
+    # bu parser yalnizca `kırmızı: N` ariyordu ve ARADAKI "blok" kelimesi yuzunden HICBIR prompt
+    # dosyasinda eslesmiyordu — yani kapi bu daldan her zaman KIRMIZI veriyordu. Fark edilmemesinin
+    # sebebi son commit'lerin MOTION stage etmesi (motion-lint `kırmızı: 0/43` basiyor, o esliyor).
+    # Iki bicim de kabul edilir; parser tek bir lint bicimine bagli kalmaz.
+    KIRMIZI=$(printf '%s' "$LINT_OUT" | grep -oE 'kırmızı( blok)?: [0-9]+' | grep -oE '[0-9]+' | head -1)
     if [ -z "$KIRMIZI" ]; then
       fail "PROMPT LINT OKUNAMADI — $PF
 Cikti 'kırmızı: N' satirini icermiyor; lint ciktisi degismis olabilir.
