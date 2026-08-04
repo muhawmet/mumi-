@@ -279,7 +279,8 @@ hand and an ear. Nothing on these shelves is a flat empty face.
 The back wall carries a full-width pinboard in a plain timber frame, its surface densely covered
 edge to edge with overlapping children's paintings, colour studies and folded card pinned in
 layers so that not one bare panel of board is left showing anywhere. To its left a wall-mounted
-interactive smart board sits in a slim dark frame, its screen dark and dormant. To its right a
+interactive smart board sits in a slim dark frame, its screen switched off but holding the
+window wall's daylight across its glass as a bright pale sheet, never a dark panel. To its right a
 tall wooden easel holds a large grey primed painting board, its surface bare grey gesso with a
 faint chalk dust bloom along the lower edge. Under the window wall runs a deep ceramic sink with
 two taps and a splashback of small square tiles in mixed muted teals, the rim stained with
@@ -408,19 +409,30 @@ Gerekçe: 52 karenin 38'i bu odada. Ref yoksa otuz sekiz karede otuz sekiz farkl
 Full environment reference of @fensinif: the science classroom of a contemporary Turkish state
 school, fifth grade, seen as a wide establishing view from the back of the room.
 
-Tall steel-framed windows run the length of the left wall with half-open pale linen blinds, real
-morning daylight coming through them across the room; the wide sills carry four clay pots of
-spider plants and a row of glass jars holding pine cones, shells and pebbles. The walls are a
-soft cool putty-green with a low chalky sheen, and a shoulder-high run of cabinetry in deep teal
-lacquer lines the right wall. The floor is a warm grey speckled vinyl waxed to a low satin in
-the traffic path, honestly scuffed along the aisle. Nowhere in this room is there an amber,
-gold, ochre or mustard surface — the room is deliberately cool and green so that the lesson's
-single warm-amber concept light is the only warm event in any frame.
+Tall steel-framed windows run the length of the left wall, their pale linen blinds drawn fully
+up and the sashes open onto a clear bright sky, so mid-morning sun comes straight in and lies
+across the room in broad warm window-shaped patches on the desk tops and the floor, the beams
+themselves visible as soft volumetric shafts with dust turning slowly inside them; the wide
+sills carry four clay pots of spider plants and a row of glass jars holding pine cones, shells
+and pebbles, all of them lit through. The walls are a warm chalky off-white that takes the sun
+and throws it back into the room, with one gable wall in a soft sage-green; a shoulder-high run
+of cabinetry in deep teal lacquer lines the right wall and catches a warm rim along its top
+edge. The floor is a warm grey speckled vinyl waxed to a low satin in the traffic path, honestly
+scuffed along the aisle, bright where the sun reaches it. This is a bright, airy, sunlit room —
+never dim, never gloomy, never a dark interior with a beam in it.
+
+🔴 SICAKLIK YÜZEYDEN DEĞİL IŞIKTAN GELİR. No amber, gold, ochre or mustard SURFACE exists in
+this room — no such paint, plastic, fabric or lacquer anywhere — but the room is filled with
+warm daylight, warm bounce off the birch and the off-white walls, and warm sun patches. The
+lesson's concept light is distinguished not by being the only warm thing in frame but by being
+the only thing that EMITS its own light: everything else is lit BY the sun, the concept glow
+shines FROM inside an object and breathes.
 
 Six pale birch double desks with slim dark steel frames stand in three short rows, their tops
 scuffed and pencil-marked, each paired with two moulded chairs in a muted petrol blue. At the
 front of the room a large wall-mounted interactive smart board sits in a slim dark frame, its
-screen dark and dormant, with a narrow marker rail beneath it holding four capped markers and a
+screen switched off but carrying the daylight of the window wall across its glass as a bright
+pale sheet, never a dark panel, with a narrow marker rail beneath it holding four capped markers and a
 felt eraser. Below and to one side stands a plain teacher's desk in the same birch, its top
 carrying a stack of exercise books laid squarely face-down, a stoneware mug of pencils and a
 folded cloth.
@@ -440,8 +452,10 @@ lettering of any kind. In the far corner, between the cabinetry and the window w
 bay of open floor waits beside a low timber plinth — nothing stands in it.
 
 35mm lens at f/5.6, eye level, wide establishing view from the back of the room toward the smart
-board, the window wall falling away to the left and the teal cabinetry to the right. Neutral even
-daylight from the window wall, flat and legible — this is a reference plate, not a lit scene.
+board, the window wall falling away to the left and the teal cabinetry to the right. Bright motivated
+mid-morning daylight from the window wall with its beams and sun patches visible in the room —
+open, airy and fully legible everywhere; this is a reference plate, so the light is generous and
+even-handed rather than dramatic, but it is never flat, never dim and never grey.
 NO PEOPLE, no hands, no action, no skeleton model, no wooden mannequin.
 
 Materials: birch laminate with a visible pale grain under a worn satin finish; moulded plastic

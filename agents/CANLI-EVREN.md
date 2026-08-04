@@ -112,6 +112,41 @@ ailenin çocuğunu gönderdiği okul"*, *"villanın içi"* değil.
 
 ---
 
+## 4c. GÜN IŞIĞI KADRAJDA GÖRÜNÜR — ışık bir OLAYDIR, bir sonuç değil (Mami, 2026-08-04)
+
+Mami, ilk revize edilmiş kareleri bastıktan sonra: *"biraz daha vivid yaz kalanı — vivid demek
+aptal suni parlaklık değil, **gün ışığını görelim, partiküller olsun.** Temiz yapacağız diye
+Fern'ün uyuşturucu baronu videolarına döndü; evet çok öğretici ama **karanlıkta.**"*
+
+**Kanıt (Destek K08, @fensinif):** kare "fully dressed and **dim**" diye açılıyor · pencerelerde
+**panjurlar yarı inik** · akıllı tahta *"kapalı, düz koyu bir ayna"* · *"sıraların, dolapların ve
+odanın bütün köşesi unlit deep indigo'da kalır."* Sonuç: petrol mavisi dolap + petrol mavisi
+sandalye + gri zemin bir arada, ısıtacak tek şey güneşti ve **kadrajda hiç yok.**
+
+🔴 **Kök neden:** ışığın SONUCUNU yazıyoruz (şu nesne aydınlık), ışığın KENDİSİNİ değil.
+Işık kadrajda görünmeyince oda kendi soğuk malzemesine düşüyor.
+
+**Her iç mekân karesinde zorunlu üçlü:**
+1. **Kaynak görünür** — panjur/perde AÇIK, pencere kadrajdaysa gökyüzü ve dışarısı okunur;
+   ışığın nereden girdiği gözle bulunabilir.
+2. **Işığın kendisi bir nesne gibi görünür** — havada hacimli sabah şaftı, zeminde ve sıraların
+   üstünde pencerenin şeklini taşıyan sıcak güneş lekeleri, duvara düşen pervaz gölgesi.
+3. **PARTİKÜL zorunlu** — şaftın içinde dönen toz, havada asılı zerre, ışığa madde veren bir şey.
+   Kadrajdaki "yaşayan üçlü"nün en az biri bu olabilir.
+
+**Soğuk malzemeli mekân kuralı:** teal/petrol mavisi/gri linolyum gibi soğuk bir palette
+**sıcak güneş lekesi ZORUNLUDUR** — soğuk oda ancak kadrajın içindeki sıcak ışıkla dengeye gelir,
+palet satırıyla değil. Kapalı ekran (akıllı tahta, monitör) kadrajın ortasında **siyah delik
+olamaz**: ya penceresinin ışığını taşır ya açıktır — "düz koyu ayna" yazılmaz.
+
+⚠ **Vivid ≠ suni.** Yasak: HDR bloom, sahte lens flare, "magical/ethereal glow", doygunluk
+kaydırması, her yeri eşit aydınlatan düz ışık. Kaynak **gerçek güneştir**; canlılık ışığın
+yönünden, hacminden ve içindeki tozdan gelir.
+
+**Sınama:** *"Bu karede güneşin nereden girdiğini gösterebilir miyim, ve havada bir şey uçuşuyor mu?"*
+
+---
+
 ## 5. DOKUNULMAYACAKLAR
 
 - **Dünya kuyruğunun STYLE omurgası, LIGHT AND PALETTE ve NEGATIVE satırları** — birebir kalır.
