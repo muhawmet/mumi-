@@ -128,7 +128,7 @@ Motorun sınırıysa kalır ve gerekçesi ölçümle yazılır. Alışkanlıksa 
 5. **Kadraj fiziğe borçlu değil** — kesit, üstten bakış, imkânsız açı, aynı anda iki ölçek.
    Yasak olan **diyagram**dır (ok, etiket çizgisi, callout), **hayal gücü değil.**
 
-⚠ Ayrım net olsun: **§1a'nın kıstasları ve `-1 ÇOCUK GÜVENLİĞİ` · `5øø SİLUET` · `5ø KAYNAĞIN
+⚠ Ayrım net olsun (ve bu yalnız EDU register'ında geçerlidir — özgün/REAL işte sınır yok): **§1a'nın kıstasları ve `-1 ÇOCUK GÜVENLİĞİ` · `5øø SİLUET` · `5ø KAYNAĞIN
 TONU` maddeleri bu maddenin dışındadır ve gevşemez.** Özgürlük **biçimde**dir — içerikte,
 sadakatte ve güvenlikte değil.
 
@@ -292,10 +292,42 @@ yakalanıyordu. Maddelerin kendisi zaten yasadaydı: 0 → §2ø, 9 → §2a, 2/
 **Sıra bağlayıcıdır: üstteki madde alttakini iptal eder.** Liste hem KARE YAZILIRKEN
 (`mamilas-director`, yazmadan önce) hem KARE DENETLENİRKEN (`mamilas-denetim`) aynen geçerlidir.
 
-🔴 **−1. ÇOCUK GÜVENLİĞİ — bu madde FİKİR'in de üstündedir ve bir kalite kalemi DEĞİL, bir
-yayın engelidir.** Kadrajda çocuk varsa: kesici alet, açık ateş, kaynar sıvı, kimyasal ve
-**ağza giren nesne** yazılmaz; iş **bitmiş** gösterilir (soğan çoktan ikiye ayrılmış, eller
-tahtada düz). Çocuğun yüzüne/ağzına makro yakınlık da bu maddededir.
+## 🔴 KAPSAM — bu bölümdeki dört kısıt YALNIZ EDU REGISTER'INDA geçerlidir
+
+> **Mami, 2026-08-04:** *"Bu sadece eğitim videolarında. Özgün videolarda sınırsızız zaten."*
+
+**`−1 ÇOCUK GÜVENLİĞİ` · `5øø SİLUET OKUMASI` · `5ø KAYNAĞIN TONU` · `1a KISTAS SIRASI`** —
+dördü de **müfredat işine** aittir: akıllı tahtada, özel okulda, 5-6. sınıfa, öğretmenin
+yönettiği bir derste izleniyor. Kısıtın sebebi zevk değil **teslim edilen yer**.
+
+**REAL ve STY register'ında bu dört madde GEÇERLİ DEĞİLDİR.** Reklam filminde, özgün işte,
+portfolyo parçasında sınır başkadır ve daha dardır: **ürün gerçeği** ve **marka doğruluğu**
+(§2R). Orada gerilim, çatışma, karanlık, tehlike ve dram **araçtır** — ve kaynağa sadakat
+diye bir şey yoktur, çünkü kaynak Mami'nin kendisidir.
+
+⚠ Karıştırma ölçüldü ve pahalı: EDU kısıtını özgün işe taşımak **hattın en güçlü tarafını
+budar**; özgün işin serbestliğini EDU'ya taşımak **müşteriyi kaybettirir.** Register her işin
+başında `_ENZIM.md` KİLİT 1'de yazılıdır — önce o okunur.
+
+---
+
+🔴 **−1. ÇOCUK GÜVENLİĞİ — FİKİR'in de üstünde, kalite kalemi DEĞİL yayın engeli.**
+
+⚠ **Bu madde 2026-08-04'te DARALTILDI — ilk yazımı fazla genişti** (Mami: *"bir sahnede bıçak
+var, hata değil bence"* — haklıydı). Yasaklanan **NESNE değil, TEMAS ve KADRAJDIR.** Mutfakta
+bıçak, ocakta ateş, tezgâhta makas bulunması bir kusur değildir; bunlar o mekânın doğal
+envanteridir ve silinmesi sahneyi yalanlar.
+
+**Kısıtlanan üç şey:**
+1. **TEMAS** — çocuğun eli/ağzı tehlikeli nesneyle **temas hâlinde** yazılmaz. İş **bitmiş**
+   gösterilir: soğan çoktan ikiye ayrılmış, eller tahtada düz. (Ölçülen kusur K10'du: prompt
+   birebir *"the right still holding the knife"* yazıyordu — nesne değil **tutuş** kusurdu.)
+2. **ÖN PLAN + NETLİK** — tehlikeli nesne çocukla aynı karede ön planda ve net durmaz; arkada,
+   gölgede, odak dışında olması sorun değildir.
+3. **AĞZA GİREN NESNE** ve çocuğun yüzüne/ağzına **makro yakınlık** — bu ikisi koşulsuz.
+
+**Sınama:** *"Bu karede çocuk tehlikeli olan şeyle TEMAS hâlinde mi, yoksa o şey sahnenin
+mobilyası mı?"* Mobilyaysa kalır.
 *Ölçüldü (2026-08-03, Hücre):* K10 prompt'u birebir *"the right still holding the knife"*
 yazıyordu, K40 kaşığı ağzın içine koyuyordu, K09 tezgâhta açık bıçak bırakıyordu — **üçü de
 denetimden "temiz" geçti**, çünkü aşağıdaki on maddenin hiçbiri onları sormuyordu. Ders okula
