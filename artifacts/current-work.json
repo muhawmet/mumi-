@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "Destek revize turu 2: 52/52 kare yeniden denetlendi. TUTTU 39 → motion yazıldı (motion-lint KIRMIZI 0/39). TUTMADI 13 → ikinci revize turu tek dosyada. Ölçülerek kapandı: karanlık (K08 54→142), plastik ten (14/14 mat), K08 terzi mankeni, K38 ters öğretim, K51 kasap eti, K52 ayna odası.",
-  "nextAction": "Mami 13 kareyi bassın: Destek ve Hareket Sistemi_revize-TUR2.txt. MOTION 39 kare hazır ve teslim edildi.",
+  "lastCompleted": "Müşteri revizesi 2 proje: Bitkilerde 10 kare + Hücre 5 kare klasörleri kurulu, 15 prompt lint yeşil, 2 yeni SUNO. 8 şikâyetin 8'i AGY+prompt taramasıyla doğrulandı. gate.sh prompt-lint parser kusuru onarıldı.",
+  "nextAction": "Mami 15 kareyi bassın; kareler gelince motion yazılacak (K54 8 sn olacak)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T12:41:10.256Z",
+  "updatedAt": "2026-08-04T13:32:37.530Z",
   "updatedBy": "claude",
-  "baseCommit": "13a18bb"
+  "baseCommit": "ed6855b"
 }

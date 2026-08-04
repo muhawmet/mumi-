@@ -1,0 +1,49 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · MOTION · PARTİ B (K29 · K36 · K45)
+=========================================================================
+Motor: Kling 3.0 (i2v) · 5s · kaynak kareler: images/29.png · images/36.png · images/45.png
+Her blok kareye BAKILARAK yazıldı; karede olmayan nesne ya da ışık klip içinde doğurulmadı.
+Paragraflar: K29 213 kelime · K45 214 · K45-ALT 212 (hepsi 190-215 bandında).
+
+🔴 DOSYA DURUMU — MAMİ'NİN KARARI GEREKİYOR
+ images/36.png bir K36 karesi DEĞİL. Açıp baktım: huş tepsi, YATAY boru maketi, kapalı mide
+ maketi, çenesini kollarına dayamış Mira, ön kenarda tozlu lastik bant — bu K45'in kadrajı,
+ üstelik K45 revizesinin istediği hâli (boru yatırılmış, iki renkli disk temizlenmiş).
+ Kanıt: images/45.png ile MUST/K45-MEVCUT.png byte-byte AYNI (md5 f628bd22…), yani K45 hiç
+ değişmemiş; images/36.png ise 16:59'da üretilmiş yeni bir dosya ve MUST/K36-MEVCUT.png'deki
+ kollarını çapraz yapmış çocuk karesiyle hiçbir ilgisi yok.
+ SONUÇ: kolun üstündeki kabartıyı gösteren K36 karesi diskte YOK; "görmediğin kareye motion
+ yazma" gereği K36 bloğu uydurulmadı. K45 için İKİ blok var — biri 45.png (Mami'nin bıraktığı
+ kare), biri 36.png (düzeltilmiş kare). Hangisi videoya girerse öteki silinir.
+
+
+-------------------------------------------------------------------------
+
+### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+-----
+
+The clip opens with two hinges standing still: @mira4 leans over the bench and in the tray the long bone and the short one beneath it rest open on their brass pin, the card square to camera. Then she bends her near knee: it folds a few degrees behind the bench and her body dips with it, her skirt hanging straight and still. On the same beat the short bone swings up on the brass pin like a workshop hinge, closing to her angle, and a soft warm-golden ring wakes on that pin's axis and carries one slow turn. She straightens and the pair opens back exactly where it began, the ring thinning to a trace. The clip begins with a bend she makes and ends with the same bend made of bone. Camera: locked off on sticks at bench height, absolutely still from first frame to last, no dolly, no pan, no tilt, no zoom, never dropping below the bench line. Lock: the card stays flat and dead still, its word never warping or leaving frame; the bones stay rigid solids turning only about the pin; the amber never reaches her skin. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+
+-------------------------------------------------------------------------
+
+### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+-----
+
+BLOKE — kare yok. images/36.png bu cümlenin karesi değil (yukarıdaki DOSYA DURUMU).
+Kolun üstündeki kabartıyı taşıyan kare üretildiğinde bu blok tek geçişte yazılır; S4 zincirinin
+tamamı (K37→K41) o tek kabartıya bağlı olduğu için tahminle doldurulmadı.
+
+-------------------------------------------------------------------------
+
+### K45 | 5s · VO "Yavaştırlar ama yorulmazlar."   [kaynak: images/45.png — bırakılan kare]
+-----
+
+The clip opens with the room already spending itself: window light lies across the birch plank, the beige band coiled and dusty at the near edge, and the upright tube and the closed stomach form each carrying one steady warm-golden crown. Then time passes over everything except those two: the bar of light creeps a hand's width along the plank leaving a duller strip behind, one loop of the slack band sinks lower under its own weight, motes come down through the light, and @mira4 blinks slowly and lets her shoulders drop on one breath, her eyes never leaving the tube. Through all of it the crown on the two closed bodies holds the exact length and strength it had at the first frame, never brightening, dimming or flickering. The clip begins as a room running down and ends with two bodies that have spent nothing. Camera: locked off at bench-top level, absolutely still from first frame to last, no dolly, no pan, no tilt, no zoom. Lock: both closed forms stay sealed rigid solids that never deform, melt or open, and the crown never travels onto the tray, her arm or her skin. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+
+-------------------------------------------------------------------------
+
+### K45-ALT | 5s · VO "Yavaştırlar ama yorulmazlar."   [kaynak: images/36.png — düzeltilmiş kare]
+-----
+
+The clip opens with the room already spending itself: window light lies along the birch plank, the beige band coiled and dusty at the near edge, and the warm-golden line running unbroken along the horizontal tube and on over the closed stomach form. Then time passes over everything except that line: the bar of light creeps a hand's width down the plank leaving a duller strip behind, one loop of the slack band sinks lower under its own weight, motes come down through the light, and @mira4 blinks slowly and lets her shoulders drop on one breath, her eyes never leaving the tube. Through all of it the line holds the exact length and strength it had at the first frame, never brightening, dimming or breaking. The clip begins as a room running down and ends with two bodies that have spent nothing. Camera: locked off at bench-top level, absolutely still from first frame to last, no dolly, no pan, no tilt, no zoom. Lock: both closed forms stay sealed rigid solids that never deform, melt, roll or open, and the line never travels onto the tray, her arm or her skin. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+
+-------------------------------------------------------------------------
