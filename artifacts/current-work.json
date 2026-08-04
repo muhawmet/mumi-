@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "projectId": "5. Sınıf - Hücre ve Organelleri",
-  "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri",
+  "projectId": "5. Sınıf - Destek ve Hareket Sistemi",
+  "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "233 karenin tamamı hazır (4 proje, lint KIRMIZI 0/233). @fensinif referansı yeniden yazıldı. Plan modu DÜNYA üzerine kuruldu (mamilas-plan §0, iki nüsha) ve agents/worlds/pixar_3d_edu.md dünya kartı açıldı — videolar arası kalıcı, 8 başlık, yasak cümle listesiyle. Kapı yeşil: vitest 2533 PASS.",
-  "nextAction": "Mami üretimde. Döndüğünde: @fensinif yeni metniyle basılacak, sonra Destek K08+. Bekleyen: 4 sohbet/4 proje eşzamanlı çalışma düzeni kurulacak.",
+  "lastCompleted": "S3 (K22-K33) ikinci geçiş denetimi: 12 kare açıldı; 8 kare TUTTU ve motion yazıldı (MOTION/S3-YENI.txt, motion-lint 0 kırmızı, 207-215 kelime); K22/K24/K29/K32 TUTMADI, revize REVIZE/S3-YENI.txt",
+  "nextAction": "Mami K22 · K24 · K29 · K32 karelerini yeniden bassın",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -14,12 +14,12 @@
     "PROMPTLAR": true,
     "revize": true,
     "MOTION": true,
-    "EDIT-PLAN": true,
+    "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T10:16:37.322Z",
+  "updatedAt": "2026-08-04T12:34:59.163Z",
   "updatedBy": "claude",
-  "baseCommit": "1f1a887"
+  "baseCommit": "4836d5b"
 }
