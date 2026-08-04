@@ -58,6 +58,7 @@ describe('APPROVED.md parse — yalnız Mami-onaylı dersler', () => {
       sourceProject: 'X projesi',
       date: '2026-07-14',
       status: 'APPROVED',
+      topic: 'genel', // konu etiketi yazılmamış eski satır — 2026-08-04 konusal tavan
     });
   });
 
@@ -74,6 +75,55 @@ describe('approvedLessons context slice — kısa, curated, tavanlı', () => {
     const slice = approvedLessonsSlice(parseApprovedLessons(many));
     expect(slice.length).toBeLessThanOrEqual(20);
     expect(slice.every((l) => l.status === 'APPROVED')).toBe(true);
+  });
+
+  // ═══ KONUSAL TAVAN (2026-08-04) ═════════════════════════════════════════════
+  // Ölçüm: bankadaki 7 dersin 7'si TEK projeden ve TEK konudan (yüzeydeki Türkçe yazı);
+  // bekleyen 107 aday 16 projeden. Eski tavan `slice(-20)` KONUMSALDI — yani banka
+  // dolduğunda hayatta kalanı DEĞER değil YAZILMA SIRASI belirliyordu. Sonuç: son
+  // projenin takıntısı bankayı tek başına doldurabilir, tek başına duran bir motion
+  // dersi hiç görülmeden düşer. Aşağıdaki ilk test ESKİ KODDA DÜŞER — kapının
+  // kırmızı yanabildiğinin kanıtı budur.
+
+  it('KIRMIZI KANITI: 25 yazı dersi arasındaki TEK motion dersi tavanda hayatta kalır', () => {
+    // Eski `slice(-20)`: motion dersi en başta olduğu için ilk düşenlerden olurdu.
+    const satirlar = [
+      '- motion dersi — kaynak: Destek · 2026-08-01 · Mami onayı · konu: motion',
+      ...Array.from({ length: 25 }, (_, i) =>
+        `- yazı dersi ${i} — kaynak: Birlikte · 2026-07-31 · Mami onayı · konu: yazı`),
+    ].join('\n');
+    const hepsi = parseApprovedLessons(satirlar);
+
+    // (1) ESKİ DAVRANIŞIN KUSURU ÖLÇÜLÜYOR — bu satır olmadan "onardım" iddiası sözde kalır.
+    // Konumsal tavan motion dersini düşürüyordu; kapının kırmızı yanabildiğinin kanıtı budur.
+    expect(hepsi.slice(-20).some((l) => l.topic === 'motion'),
+      'konumsal tavan motion dersini DÜŞÜRÜRDÜ — kusur buydu').toBe(false);
+
+    // (2) YENİ DAVRANIŞ onu kurtarıyor.
+    const slice = approvedLessonsSlice(hepsi);
+    expect(slice.length).toBe(20);
+    expect(slice.some((l) => l.topic === 'motion'), 'tek motion dersi düşmemeli').toBe(true);
+    // ve yazı dersleri arasından EN YENİLERİ değil — hepsi aynı tarihte; sayı korunuyor
+    expect(slice.filter((l) => l.topic === 'yazı')).toHaveLength(19);
+  });
+
+  it('GERİYE UYUM: konu etiketi olmayan eski satırlar aynen parse olur (topic = genel)', () => {
+    const eski = '- eski ders — kaynak: P · 2026-07-16 · Mami onayı';
+    const [l] = parseApprovedLessons(eski);
+    expect(l.lesson).toBe('eski ders');
+    expect(l.topic).toBe('genel');
+  });
+
+  it('EŞDEĞERLİK: tek konu varsa davranış eski slice(-20) ile birebir aynı', () => {
+    const md = Array.from({ length: 30 }, (_, i) =>
+      `- ders ${i} — kaynak: P${i} · 2026-07-16 · Mami onayı`).join('\n');
+    const hepsi = parseApprovedLessons(md);
+    expect(approvedLessonsSlice(hepsi)).toEqual(hepsi.slice(-20));
+  });
+
+  it('konu etiketi büyük/küçük harf ve boşluktan bağımsız normalize olur', () => {
+    const md = '- d — kaynak: P · 2026-07-16 · Mami onayı · konu:   IŞIK  ';
+    expect(parseApprovedLessons(md)[0].topic).toBe('ışık');
   });
 
   it('parser FONKSİYONEL PARİTE: TS ve runner parser\'ı aynı girdilerde byte-eş çıktı verir', async () => {
@@ -95,6 +145,19 @@ describe('approvedLessons context slice — kısa, curated, tavanlı', () => {
       '-boşluksuz ders — kaynak: P · 2026-07-16 · Mami onayı',             // "- " yok → atlanır
       Array.from({ length: 30 }, (_, i) => `- ders ${i} — kaynak: P${i} · 2026-07-16 · Mami onayı`).join('\n'), // cap 20
       '- sondaki boşluk — kaynak: P · 2026-07-16 · Mami onayı   ',
+      // 2026-08-04 konusal tavan — parite YENİ davranışta da ölçülmeli, yoksa ikizler
+      // eski girdilerde eş görünüp gerçek bankada ayrışır (bu depoda 8 kez ölçülen sınıf).
+      '- konulu ders — kaynak: P · 2026-07-16 · Mami onayı · konu: ışık',
+      '- KONU normalize — kaynak: P · 2026-07-16 · Mami onayı · konu:  IŞIK  ',
+      [
+        '- motion tek — kaynak: D · 2026-08-01 · Mami onayı · konu: motion',
+        ...Array.from({ length: 25 }, (_, i) => `- yazı ${i} — kaynak: B · 2026-07-31 · Mami onayı · konu: yazı`),
+      ].join('\n'),
+      // karışık: etiketli + etiketsiz aynı dosyada
+      [
+        '- etiketsiz — kaynak: P · 2026-07-16 · Mami onayı',
+        '- etiketli — kaynak: P · 2026-07-16 · Mami onayı · konu: motion',
+      ].join('\n'),
     ];
     for (const md of cases) {
       expect(JSON.stringify(runner.__testParseApprovedLessons(md)), md.slice(0, 40))

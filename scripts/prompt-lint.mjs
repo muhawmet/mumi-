@@ -408,6 +408,79 @@ const TRAPS = [
       + 'Yerine: "a single soft catchlight in the eyes only and never a wet sheen over '
       + 'the face — skin stays matte with low specular"',
   },
+
+  {
+    key: 'isik-yuzu-disliyor',
+    // PLASTİK TENİN İKİNCİ VE DAHA BÜYÜK SEBEBİ (Hücre madeni, 2026-08-04).
+    //
+    // Ölçüm 5/5 tutarlı: kavram ışığını yüzün DIŞINDA bırakan üç kare (K12 K13 K49)
+    // plastik okundu; yüzü ışığın İÇİNE sokan iki kare (K07 K14) doğal okundu.
+    //
+    // Mekanizma: "ışık yüzüne ULAŞMAZ" bir NEGATİFTİR. Motor negatiften karanlık
+    // üretmiyor — yüzü ortam dolgusuna bırakıyor, ortam dolgusunun da gradyanı,
+    // terminatörü ve yönü yok. Yani "yüzü ışıktan koru" cümlesi teni plastikleştiriyor.
+    //
+    // Kusur ışığın azlığında değil, karanlığın YAZILMAMASINDA. Bu yüzden kural
+    // "dışlama cümlesi var mı" diye değil, "dışlama var ama karanlık ÇAPASI yok mu"
+    // diye soruyor: terminatör, sıçrama, negative fill, gölge tarafı yazılmışsa TEMİZ.
+    //
+    // KORPUS KALİBRASYONU (2026-08-04, gerçek `lintBlock` yolundan ölçüldü — 247 kare):
+    //   Üreme (ALTIN STANDART, 0 revize)   0/50  %0
+    //   Sabit Sürat                        0/44  %0
+    //   Sürtünme                           0/31  %0
+    //   Hücre A (karakter ağırlıklı)       8/15  %53   ← Mami iki tur "plastik" dedi
+    //   Farklı Kültürler                  35/53  %66   ← müşteri revizesi
+    //   Birlikte Daha Güçlüyüz            48/54  %89   ← 30/54 revize
+    // Eşik bu boşluğun içine kuruldu (%0 ile %53 arası boş), sayıya değil.
+    //
+    // İKİ YÖN DE DOĞRULANDI — korelasyon değil, mekanizma:
+    //   Üreme   : dışlama cümlesi  0/50 · karanlık çapası 28/50
+    //   Birlikte: dışlama cümlesi 49/54 · karanlık çapası  0/54
+    // Yani altın standart karanlığı YAZIYOR, 30 revize alan iş ışığı DIŞLIYOR. Bu, kelime
+    // sayısı gibi ters dönen bir metrik değil (bkz. STYLE_MAX_WORDS'ün SARI'ya düşüşü).
+    //
+    // ⚠ KAPSAM: "insan yüzü var + hiç karanlık çapası yok" kuralı KURULMADI — Üreme'nin
+    // 50 karesinin 22'sinde de çapa yok ve o iş 0 revize aldı. Yani çapa her karede
+    // zorunlu değil; kusur yalnız DIŞLAMA ile birlikte doğuyor.
+    hit: (b) => {
+      // 1) Karede insan yüzü var mı? (@handle ya da açık yüz sözcüğü)
+      const insanVar = /@[a-zçğıöşü]+\d*/i.test(b)
+        || /\b(her|his|their) (face|cheek|cheekbone|brow|jaw|profile)\b/i.test(b)
+        || /\b(girl|boy|child|teacher|student|woman|man)\b/i.test(b);
+      if (!insanVar) return false;
+
+      // 2) Işığı yüzten DIŞLAYAN cümle var mı?
+      const disla = [
+        /\b(reaches|touches|lifts|falls on|catches)\s+(nothing|none)\b/i,
+        /\b(not|never)\s+@[a-zçğıöşü]+\d*'?s?\s+(face|skin|cheek)\b/i,
+        /\b(face|cheek|skin|features?)\b[^.]{0,70}\b(is|are|stays?|remains?|sits?|kept?)\b[^.]{0,40}\b(out of|outside|beyond|clear of|away from)\b[^.]{0,30}\blight\b/i,
+        /\b(out of|outside of|beyond)\s+the\s+[\w-]{0,24}\s*light\b[^.]{0,60}\b(face|cheek|eyes?|features?)\b/i,
+        /\b(face|features?|eyes?)\b[^.]{0,60}\b(stays?|remains?|sits?)\s+in\s+the\s+[^.]{0,40}\b(shade|ambient|fill)\b/i,
+        /\bno light (falls|reaches|lands)\b[^.]{0,50}\b(face|cheek|skin)\b/i,
+        /\bdoes not reach\b[^.]{0,50}\b(face|cheek|skin)\b/i,
+      ].some((re) => re.test(b));
+      if (!disla) return false;
+
+      // 3) KARANLIK ÇAPASI yazılmış mı? Yazılmışsa kusur yok — karanlık modellenmiş demektir.
+      const capa = /\bterminator\b/i.test(b)
+        || /\b(bounce|bounced) (light|back|off)\b/i.test(b)
+        || /\bcarried (only )?by\b[^.]{0,60}\b(bounce|reflect|wall|surface|floor)\b/i.test(b)
+        || /\bnegative fill\b|\bblack flag\b/i.test(b)
+        || /\b(shadow|dark) side\b/i.test(b)
+        || /\bfalls? into (shadow|its own dark)\b/i.test(b)
+        || /\bdarkest value\b/i.test(b)
+        || /\bstop against each other\b/i.test(b)
+        || /\bcatchlight[^.]{0,40}\blit eye only\b/i.test(b);
+      return !capa;
+    },
+    fix: 'PLASTİK TENİN ASIL SEBEBİ (5/5 ölçüldü: K12 K13 K49 plastik · K07 K14 doğal). '
+      + 'Işığın nereye ULAŞMADIĞINI yazma — karanlığın nerede DURDUĞUNU yaz. '
+      + 'Motor negatiften karanlık üretmiyor, yüzü gradyansız ortam dolgusuna bırakıyor. '
+      + 'YAZMA: "the light reaches nothing of her face" · '
+      + 'YAZ: "the terminator falls as one soft curved line down her cheek so the near side '
+      + 'sits well under, carried only by warm bounce off the sunlit wall and never lifted by '
+      + 'any fill" — terminatör / sıçrama / gölge tarafı / negative fill terimlerinden biri geçsin',
+  },
 ];
 
 // STYLE bloğu kelime tavanı — ARTIK SARI (2026-08-02, yön ölçümü).

@@ -1,0 +1,87 @@
+Sen MAMILAS'ın ikinci gözüsün. Bu görev MOTOR STRATEJİSİ — hangi işi hangi modele vermek.
+
+## Bağlam
+
+MAMILAS tek kişilik (Mami) eğitim animasyonu prodüksiyonudur. Zincir:
+start-frame prompt (metin) → Mami elle görsel motorda basar → kare seçimi →
+motion prompt → Mami elle video motorunda basar → VO → kurgu.
+
+API YOK ve olmayacak. Mami her kareyi elle basar. Yani "motor değiştirmek" bir kod değişikliği
+değil, **bir prompt lehçesi ve bir iş akışı değişikliğidir.** Deney maliyeti = Mami'nin
+kredisi + Mami'nin zamanı. Bu yüzden "deneyelim bakalım" ucuz değildir.
+
+## Bugünkü kurulum
+
+- Start frame: **Nano Banana 2 (NB2)** — birincil
+- Referans/karakter kimliği ve upscale: **Magnific** (`@handle` ile karakter çağrılıyor)
+- Motion: **Kling 3.0**
+- Alternatif olarak elde bulunan ama sistemli kullanılmayan: **GPT Image 2**
+
+Mami'nin bu geceki sorusu birebir: *"multi motor mesela gpt 2 belki daha iyidir"*.
+
+## Repo'da okunacak dosyalar (yalnız bunlar)
+
+- src/core/engine.ts               → ENGINE_USABLE, ENGINE_DIALECTS (motor lehçeleri burada)
+- agents/PROMPT-YASASI.md          → ⚠ TAMAMINI OKUMA. §2R (REAL start-frame) ve §3R (REAL
+                                     motion) template'lerini ve motor lehçesinden bahseden
+                                     yerleri örnekle
+- agents/lessons/HASAT-HUCRE-MIHENK-2026-08-04.md → bugün ölçülen kalite teşhisi; NB2'nin
+                                     neyi iyi yaptığı (geçirgen madde, malzemeden kesilmiş
+                                     yazı) ve neyi kötü yaptığı (insan teni) kareyle kanıtlı
+- agents/lessons/APPROVED.md
+- scripts/prompt-lint.mjs          → ⚠ 66K, tamamını okuma; TRAPS dizisini ve register
+                                     kavramını (real/edu/sty) örnekle
+
+## ÖLÇÜLMÜŞ GERÇEKLER (bunlar sayım)
+
+- NB2 aynı projede hem şaheser hem kusur üretiyor: geçirgen maddeden yapılmış organeller
+  "HIGH END" (Mami'nin sözü), aynı projedeki insan yüzleri "çok plastik".
+- Kök neden ölçüldü ve MOTOR DEĞİL PROMPT çıktı: karakter karelerinin 18/20'sinde
+  "wet dual-point catchlights in the eyes" boilerplate'i vardı (organel karelerinde 4/33);
+  ayrıca "ışık yüzüne ulaşmaz" biçiminde NEGATİF yazılan ışık, yüzü gradyansız ortam
+  dolgusuna bırakıyor. Yüzü ışığın dışında bırakan 3 kare plastik, içine sokan 2 kare doğal.
+- Türkçe yazı: 21 yazılı karenin 21'i doğru hecelendi (sıfır bozuk glif) — NB2 bu işi,
+  harf "bir malzemeden kesilmiş" diye tarif edildiğinde yapabiliyor.
+- Foto-gerçekçilik plastikliği çözüyor ama DÜNYAYI ÖLDÜRÜYOR: iki kare foto-gerçekçi geldi,
+  plastik okunmadı, ama denetim ikisini de "dünya kopması" diye revizeye yazdı.
+
+## SORULAR
+
+### 1. MOTOR SEÇİMİ BİR ÖLÇÜM MÜ, BİR ZEVK Mİ?
+Bugün motor seçimi alışkanlıkla yapılıyor (NB2 varsayılan). Bunu bir ÖLÇÜME çevirmenin yolu
+nedir? "Hangi motor daha iyi" sorusu yanlış soru olabilir — doğru soruyu sen kur.
+
+### 2. MOTOR YÖNLENDİRME DOKTRİNİ
+Kare sınıflarını çıkar (insan yüzü taşıyan kare · geçirgen madde/kavram karesi · Türkçe yazı
+taşıyan kare · geniş mekân kurulum karesi · kalabalık sahne · karakter kimliği tekrarı ·
+motion'a girecek kare) ve her sınıf için hangi motorun hangi GEREKÇEYLE tercih edilmesi
+gerektiğini yaz. Bilmediğin yerde "bilinmiyor — şu deneyle ölçülür" de, uydurma.
+
+### 3. LEHÇE MALİYETİ
+Motor değiştirmek prompt lehçesi değiştirmek demektir. NB2 için yazılmış bir prompt
+GPT Image 2'ye verilince ne bozulur? İki motorun talimat felsefesi arasındaki YAPISAL
+farkı yaz (uzunluk toleransı, negatif ele alışı, referans/karakter tutarlılığı, metin
+render'ı, kompozisyon kontrolü, malzeme/ışık tarifine tepki). Bu farkı bilmeden motor
+değiştirmek revize üretir — nerede üretir?
+
+### 4. EN UCUZ AYIRT EDİCİ DENEY
+Mami'nin kredisi ve zamanı sınırlı. Motor sorusunu cevaplayacak EN UCUZ deneyi tasarla:
+kaç kare, hangi kareler, hangi kontrol değişkeni sabit, sonuç nasıl okunur. Bu deney
+"güzel mi" diye sormamalı — Mami'nin zevki tek hakemdir ama deney ona KARŞILAŞTIRILABİLİR
+bir şey göstermeli. Somut: "şu 4 kare, aynı prompt, iki motor, şu sırayla bakılır."
+
+### 5. ÇOK MOTORLU BİR HAT NEYİ KIRAR?
+Bugün tek motorlu hattın verdiği bir garanti var: dünya tutarlılığı (bütün kareler aynı
+motordan çıktığı için aynı görünüyor). İki motor karıştırılırsa bu garanti gider — nerede,
+ne kadar, ve nasıl telafi edilir? (Not: aynı projede foto-gerçekçi gelen iki kare "dünya
+kopması" diye revizeye girdi — yani bu risk ölçülmüş bir risk.)
+
+### 6. MOTION TARAFI
+Kling 3.0 tek seçenek olarak duruyor ve motion tarafı sistemin EN AZ ÖLÇÜLEN yarısı:
+52 motion prompt yazıldı, ders bankasında SIFIR motion dersi var, klipler hiç
+toplu izlenmedi. Motion tarafında motor/yaklaşım sorusu ne olmalı? Görsel tarafta
+sorduğumuz soruların motion karşılığını kur.
+
+## BİÇİM
+Türkçe. Altı başlık. Bilmediğini "bilinmiyor" diye yaz — bu soruda uydurma bilgi
+doğrudan Mami'nin kredisini yakar. Her tavsiyeye bir MALİYET ve bir RİSK satırı ekle.

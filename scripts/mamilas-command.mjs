@@ -216,16 +216,48 @@ const CONTRACT_OVERRIDE_POLICY =
 
 // BRAIN M7 — ders bankası parser'ı. src/core/lessonBank.ts ile FONKSİYONEL parite
 // zorunlu (lessonBank.test.ts iki parser'ı aynı girdilerle çalıştırıp çıktı karşılaştırır).
-const LESSON_LINE_RE = /^-\s+(.+?)\s+—\s+kaynak:\s*(.+?)\s*·\s*(\d{4}-\d{2}-\d{2})\s*·\s*Mami onayı\s*$/u;
+// ⚠ ANAHTAR SIRASI DA PARİTEYE DAHİL: parite testi JSON.stringify karşılaştırıyor, yani
+// {lesson, sourceProject, date, status, topic} sırası lessonBank.ts ile birebir aynı olmalı.
+const VARSAYILAN_KONU = 'genel';
+const LESSON_LINE_RE = /^-\s+(.+?)\s+—\s+kaynak:\s*(.+?)\s*·\s*(\d{4}-\d{2}-\d{2})\s*·\s*Mami onayı\s*(?:·\s*konu:\s*([^·]+?)\s*)?$/u;
 function parseApprovedLessons(markdown) {
   if (!markdown?.trim()) return [];
   const lessons = [];
   for (const line of markdown.split('\n')) {
     const match = LESSON_LINE_RE.exec(line.trim());
     if (!match) continue;
-    lessons.push({ lesson: match[1], sourceProject: match[2], date: match[3], status: 'APPROVED' });
+    lessons.push({
+      lesson: match[1],
+      sourceProject: match[2],
+      date: match[3],
+      status: 'APPROVED',
+      topic: (match[4] ?? VARSAYILAN_KONU).trim().toLocaleLowerCase('tr') || VARSAYILAN_KONU,
+    });
   }
-  return lessons.slice(-20); // lessonBank.ts APPROVED_LESSONS_CAP ile aynı tavan
+  // KONUSAL TAVAN — lessonBank.ts `approvedLessonsSlice` ile birebir aynı algoritma.
+  // Eski `slice(-20)` konumsaldı: 8. yazı dersi 1. motion dersini yalnız daha yeni
+  // yazıldığı için düşürüyordu. Artık konular arasında sırayla, konu içinde en yeniden.
+  if (lessons.length <= 20) return lessons;
+  const kovalar = new Map();
+  for (const l of lessons) {
+    const kova = kovalar.get(l.topic);
+    if (kova) kova.unshift(l);
+    else kovalar.set(l.topic, [l]);
+  }
+  const secilen = new Set();
+  const siralar = [...kovalar.values()];
+  for (let tur = 0; secilen.size < 20; tur += 1) {
+    let turdaEklenen = 0;
+    for (const kova of siralar) {
+      if (secilen.size >= 20) break;
+      const aday = kova[tur];
+      if (!aday) continue;
+      secilen.add(aday);
+      turdaEklenen += 1;
+    }
+    if (turdaEklenen === 0) break;
+  }
+  return lessons.filter((l) => secilen.has(l));
 }
 export const __testParseApprovedLessons = parseApprovedLessons;
 

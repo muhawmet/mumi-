@@ -1,0 +1,103 @@
+Sen MAMILAS'ın ikinci gözüsün. Görevin övmek ya da yeni kural yazmak DEĞİL — bu sistemi
+1'den 100'e çıkaracak MERDİVENİ adlandırmak ve benim tezimi çürütmek.
+
+## Sistem nedir
+
+MAMILAS tek kişilik (Mami) bir eğitim animasyonu prodüksiyon konsoludur. Zincir:
+command JSON → start-frame prompt'ları (metin) → Mami elle Nano Banana 2'de basar →
+kare denetimi → motion prompt'ları → Mami elle Kling'de basar → VO → kaba kurgu (Premiere XML)
+→ teslim. 11 video bitmiş, 12.si üretimde.
+
+## DEĞİŞMEZ KISITLAR (bunları aşan cevap geçersizdir)
+
+1. API YOK. Otomatik görsel/video üretim döngüsü YOK. İkinci runner YOK. Mami'den gizli
+   otomatik karar YOK. Her kareyi ve her klibi Mami eliyle basar; bu bir tercih değil, yasa.
+2. Mami RAPOR OKUMUYOR. Ölçüldü ve kendi söylüyor: "ben ellerim, beyin değil." Uzun doküman
+   üretmek onu bilgilendirmiyor. DEHB — okuma maliyeti gerçek bir maliyet.
+3. Claude'un bağlamı /clear ile sıfırlanır. Yazılmayan her şey ölür. Ayrıca Mac ve Windows
+   arasında geçiş var; ~/.claude git'e girmez.
+4. Claude video/ses göremez (AGY = Gemini o işi yapar, salt-okur, yalnız TARİF eder).
+   Sen video göremezsin, yalnız metin ve kod okursun.
+5. src/core/ üretim sırasında DONMUŞ. Kusur kütüphane metninde düzeltilir, kodda değil.
+6. Site'nin ürettiği metin ile teslim edilen prompt arasındaki örtüşme %1-3 — yani "sistem"
+   fiilen: yasalar + skill'ler + prompt'u ELLE yazan ajan.
+
+## ÖLÇÜLMÜŞ GERÇEK DURUM (spekülasyon yapma, bunlar sayım)
+
+- 71 revize yaşandı. SIFIRI sahne fikri kusuru — hepsi icra/zevk. prompt-lint bunların
+  ~44-52'sini kredi yakmadan kesiyor. Yani en yüksek getirili organ: üretimden ÖNCE ölçen kapı.
+- Ders bankası `agents/lessons/APPROVED.md`: kapasite 20 satır (lessonBank.ts → slice(-20)),
+  içinde 7 ders, 7'si de TEK projeden ve TEK konudan (yüzeydeki Türkçe yazı).
+  Bekleyen aday: 107, 16 projeden, 11 dosyada. Bu banka runner CONTEXT'ine + Yönetmen
+  skill'ine + enzime akıyor — yani "üretim zekâsı" fiilen tek projenin tek konusu.
+- 28 AGY raporunun 6'sı hiç açılmadı. 11 HASAT dosyası, 10 CANDIDATES dosyası üretildi.
+  Üretime dönen: 7 satır.
+- `artifacts/current-work.json` içindeki `phase` alanı ölü: serbest metin "motion 52/52 bitti"
+  derken faz hâlâ "enzim" ve hiçbir şeyi kapıya çevirmiyor.
+- PROMPT-YASASI.md 81.8K ve büyüyor. Son bir haftada eklenen üç madde (§0 animasyonun ruhu,
+  5ø kaynağın tonu, 5øø siluet okuması) için MAKİNE KAPISI YOK — yalnız ajanın o gün okumuş
+  olmasına bağlılar. Mami'nin kendi teşhisi: "çit çektik, içinde takılıyoruz."
+- Bugün ölçülen somut örnek: karakter karelerinin 18/20'sinde STYLE boilerplate'i
+  "wet dual-point catchlights in the eyes" yazıyor ve motora plastik ten ürettiriyor.
+  Ayrıca "ışık yüzüne ulaşmaz" biçimindeki NEGATİF cümle yüzü ortam dolgusuna bırakıyor
+  (gradyansız → plastik). Yüzü ışığın dışında bırakan 3 kare plastik, içine sokan 2 kare doğal:
+  5/5 tutarlı. Bu teşhis bir dosyaya yazıldı ve HİÇ TÜKETİLMEDİ.
+
+## BENİM TEZİM — bunu çürütmeni istiyorum
+
+"MAMILAS'ın darboğazı ÖLÇÜM değil TÜKETİM. Sistem mükemmel ölçüyor ve hiçbir şey sindirmiyor.
+Kök neden mimari bir yanlış varsayım: ders bankası Mami'nin onayını şart koşuyor, onay okumayı
+şart koşuyor, ama Mami okuyucu değil. Koruma ('çöp ders sistemi zehirler') organı öldürdü:
+sıfır zehir, sıfır besin. Çözüm: dersleri ikiye ayır — ÖLÇÜLMÜŞ (kare numarası + sayılmış iddia
++ çürütme turu geçmiş) kendi girsin, ZEVK yalnız Mami'ye kalsın; tavan konusal olsun; ve her
+ders bir DOSYA değil bir KAPI (prompt-lint kuralı) olsun."
+
+Bu tezi ciddiye al ve SALDIR. Özellikle şunlara cevap ver:
+- "Ölçülmüş ders otomatik girsin" fikri, Mami'nin otoritesini gizlice aşındırır mı? Hangi
+  somut senaryoda kötü bir ders kendini "ölçülmüş" gösterip bankaya girer?
+- Tüketim darboğazı gerçekten kök neden mi, yoksa daha derin bir şeyin semptomu mu?
+- Ders → lint kuralı dönüşümü hangi ders sınıfında YAPILAMAZ? Sınırı nerede?
+
+## ASIL SORU — gecenin sorusu
+
+Bu sistem bugün 100 üzerinden ~40. **APİSİZ, otomatik üretim döngüsü olmadan, Mami her kareyi
+elle basmaya devam ederken 100'e nasıl çıkar?**
+
+Bana "daha çok kural yaz" deme. MERDİVENİ ver: 40→60, 60→80, 80→100.
+Her basamak için tam olarak şunu yaz:
+  (a) O basamakta sistemin kazandığı, BUGÜN OLMAYAN yetenek nedir? (tek cümle, yetenek dili)
+  (b) O yeteneği doğuran EN UCUZ şey nedir? (dosya/kapı/ritüel — kod olmak zorunda değil)
+  (c) O basamağın atlanmadığını NASIL ÖLÇERİZ? (yeşil test değil — gerçek kanıt)
+  (d) O basamak hangi mevcut şeyi ÇÖPE ATAR? (her ilerleme bir şeyi emekli etmeli)
+
+## SANA ÖZEL İKİ SORU
+
+1. Bizim ikimizin de düşünmediği şey ne? Bu repoyu okuyup "asıl mesele burada değil, ŞURADA"
+   diyebileceğin bir yer var mı? En cesur teşhisini yaz — yanlış olma riskini al.
+2. 100/100 bir MAMILAS'ta bir üretim oturumu SAAT SAAT nasıl geçer? Somut anlat: Mami sabah
+   oturuyor, ne oluyor, ne yazıyor, ne basıyor, sistem ona ne söylüyor, akşam ne teslim ediyor.
+   Bugünkü oturumdan farkını göster. Bu tarif merdivenin hedef fotoğrafıdır.
+
+## OKUMANI İSTEDİĞİM DOSYALAR (bunlar, repoyu tarama)
+
+- CLAUDE.md ve docs/ai/faz-icraat.md         (giriş sözleşmesi + aktif faz yürütmesi)
+- agents/CLAUDE-KARSI-BRIF.md                (benim brifim — asıl saldıracağın metin)
+- agents/lessons/APPROVED.md                 (7 satırlık ders bankası)
+- src/core/lessonBank.ts                     (bankanın kod tarafı, 1.9K)
+- agents/lessons/HASAT-HUCRE-MIHENK-2026-08-04.md  (bugünkü plastik teşhisi + çürütme turu)
+- scripts/current-work.mjs                   (durum makinesi — phase alanı burada)
+- docs/ai/PROJECT_CONTRACT.md                (ortak kanon)
+
+PROMPT-YASASI.md 81.8K — TAMAMINI OKUMA, yalnız başlık haritasını çıkar ve büyüklüğü hakkında
+hüküm ver.
+
+## BİÇİM
+
+Türkçe yaz. Övgü yok, giriş cümlesi yok. Doğrudan:
+  1) TEZİME SALDIRI (nerede haklıyım, nerede yanılıyorum — açıkça)
+  2) MERDİVEN (40→60→80→100, her basamak a/b/c/d ile)
+  3) EN CESUR TEŞHİS (ikimizin de görmediği)
+  4) 100/100 BİR GÜN (saat saat)
+  5) BU GECE YAPILACAK TEK ŞEY (eğer bir tek şey yapılacaksa, hangisi ve neden)
+
+Uzun yaz ama şişirme. Her cümle ya bir iddia ya bir kanıt olsun.

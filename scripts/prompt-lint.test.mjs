@@ -441,3 +441,64 @@ describe('A4 · kapsam beyanı', () => {
     expect(r.olculmeyen.length).toBeGreaterThan(0);
   });
 });
+
+// ---------------------------------------------------------------------------
+// A5 · IŞIK YÜZÜ DIŞLIYOR — plastik tenin ölçülmüş İKİNCİ sebebi (2026-08-04).
+//
+// Hücre madeni: kavram ışığını yüzün DIŞINDA bırakan üç kare (K12 K13 K49) plastik,
+// yüzü ışığın İÇİNE sokan iki kare (K07 K14) doğal — 5/5. Mekanizma: "ışık yüzüne
+// ulaşmaz" bir NEGATİFTİR, motor negatiften karanlık üretmiyor, yüzü gradyansız
+// ortam dolgusuna bırakıyor.
+//
+// ⚠ İLK ÖLÇÜMÜM SAHTE ÇIKTI: `parseBlocks` {head, body} nesnesi döndürürken onu string
+// sandım ve regex "[object Object]" üzerinde koştu → 0/289 diye yanlış bir YEŞİL verdi.
+// Bu testler o yüzden GERÇEK `lintBlock` yolundan geçer; kuralın kopyası yeniden yazılmaz.
+// ---------------------------------------------------------------------------
+describe('A5 · isik-yuzu-disliyor', () => {
+  const govde = (ic) => [
+    'A wide morning kitchen, @mira3 at the counter with the window behind her.',
+    ic,
+    'STYLE: soft matte gouache surfaces, warm morning palette.',
+    'LIGHT AND PALETTE: one window key, warm bounce off the plaster wall.',
+    'TEXT: YOK',
+    'NEGATIVE: no extra people, no lettering anywhere.',
+  ].join('\n');
+
+  const anahtarlar = (b) => {
+    const r = lintBlock(b, 'edu');
+    return (Array.isArray(r) ? r : (r?.problems ?? [])).map((p) => p.key);
+  };
+
+  it('KIRMIZI KANITI: dışlama cümlesi var + karanlık çapası YOK → ateşler', () => {
+    const b = govde('The key reaches nothing else — not @mira3\'s face, which stays in the '
+      + 'room\'s warm morning shade while she looks down at the board.');
+    expect(anahtarlar(b)).toContain('isik-yuzu-disliyor');
+  });
+
+  it('SUSMA KANITI: aynı dışlama + terminatör yazılmışsa ateşlemez', () => {
+    const b = govde('The key reaches nothing else — not @mira3\'s face; the terminator falls '
+      + 'as one soft curved line down her cheek so the near side sits well under, carried only '
+      + 'by warm bounce off the sunlit wall and never lifted by any fill.');
+    expect(anahtarlar(b)).not.toContain('isik-yuzu-disliyor');
+  });
+
+  it('SUSMA KANITI: insan yoksa hiç bakmaz (organel karesi dışlama yazabilir)', () => {
+    const b = [
+      'A single amber mitochondrion fills the frame, the light rising through its wall.',
+      'The shaft reaches nothing else in the field — the slide edge stays unlit.',
+      'STYLE: translucent amber membrane, matte grey-violet granules.',
+      'LIGHT AND PALETTE: cool-white transmitted shaft from beneath.',
+      'TEXT: YOK',
+      'NEGATIVE: never cut open, never sectioned.',
+    ].join('\n');
+    expect(anahtarlar(b)).not.toContain('isik-yuzu-disliyor');
+  });
+
+  it('KORPUS AYRIMI: altın standart (Üreme) bu tuzaktan TEMİZ geçer', () => {
+    const r = lintFile(join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme',
+      'Eşeyli ve Eşeysiz Üreme_PROMPTLAR.txt'), 'EDU');
+    const hepsi = JSON.stringify(r);
+    expect(hepsi.includes('isik-yuzu-disliyor'),
+      'ALTIN STANDART bu tuzağı ateşlerse tuzak yanlıştır, prompt değil').toBe(false);
+  });
+});

@@ -1,0 +1,81 @@
+Sen MAMILAS'ın ikinci gözüsün. Bu görev TEK KİŞİLİK BİR STÜDYONUN İŞLETİM SİSTEMİNİ denetlemek.
+
+## Bağlam
+
+MAMILAS tek kişilik (Mami) eğitim animasyonu prodüksiyonudur. API yok, otomatik üretim
+döngüsü yok — Mami her kareyi ve her klibi elle basar. "Sistem" fiilen şudur: bir yasa
+külliyatı + skill'ler + prompt'u elle yazan bir ajan (Claude). Kod (src/core) üretim
+sırasında donmuştur ve ürettiği metnin teslim edilen prompt'la örtüşmesi %1-3'tür.
+
+Yani bu sistemin ASIL KODU, İNGİLİZCE/TÜRKÇE YAZILMIŞ TALİMATLARDIR. Denetlemeni istediğim
+şey bu: bir yazılım deposu değil, bir **işletim sistemi olarak talimat külliyatı**.
+
+## Denetlenecek külliyat (yalnız bunlar — repoyu tarama)
+
+- CLAUDE.md                        (giriş sözleşmesi, her oturumda yüklenir)
+- docs/ai/faz-icraat.md            (aktif faz yürütmesi, CLAUDE.md'ye import edilir)
+- agents/PROMPT-YASASI.md          (81.8K — ⚠ TAMAMINI OKUMA. Başlık haritasını çıkar,
+                                    §0 · §1 · §1a · §2R · §3R gibi anahtar bölümlerden
+                                    ÖRNEKLEME yap, ve BÜYÜKLÜĞÜ hakkında hüküm ver)
+- .claude/skills/mamilas-director/ (prompt yazma yüzeyi)
+- .claude/skills/mamilas-enzim/    (video başı kilit disiplini)
+- .claude/skills/mamilas-plan/     (film şekli)
+- .claude/skills/mamilas-denetim/  (kare denetimi)
+- docs/ai/PROJECT_CONTRACT.md
+
+## ÖLÇÜLMÜŞ DURUM (bunlar sayım, spekülasyon değil)
+
+- 11 video bitti, 71 revize yaşandı. 71'in SIFIRI sahne fikri kusuru — hepsi icra/zevk.
+- Yasa sürekli büyüyor: son bir haftada §0 (Animasyonun Ruhu), 5ø (kaynağın tonu),
+  5øø (siluet okuması) eklendi. Üçünün de MAKİNE KAPISI YOK.
+- prompt-lint.mjs (66K) yapısal+anlamsal kapıdır ve 71 revizenin ~44-52'sini kredi yakmadan
+  kesiyor. Yasadaki her madde için kapı YOK — kapı yasanın küçük bir alt kümesini ölçüyor.
+- Mami'nin kendi teşhisi (2026-08-04, birebir): "doku ve dünya oturdu ama sen animasyonun
+  ruhunu unuttun, gerçek video kafasına girdin; özgür olduğumuz tarlada ÇİT ÇEKTİK, içinde
+  takılıyoruz." Kanıt: 23 Nisan'ı anlatmak için kareye takvim yaprağı konmuş.
+- Yasanın kendisi bu teşhisi kabul edip içine yazdı ("FİZİK ÇİTİ kalır, ZİHNİYET ÇİTİ sökülür")
+  — yani yasa kendi şişkinliğini bir madde daha ekleyerek çözmeye çalıştı.
+
+## SORULAR — sırayla ve açıkça cevapla
+
+### 1. ÇİT SAYIMI
+Külliyattaki direktifleri iki kovaya ayır ve SAY:
+  (A) YETKİLENDİREN — ajana yeni bir şey YAPMAYI öğreten ("ışığı maddenin içinden geçir")
+  (B) YASAKLAYAN — bir şeyi yapmamayı söyleyen ("şunu yazma", "şu yasak")
+Oranı ver. Mami'nin "çit" teşhisi bu oranla doğrulanıyor mu, çürütülüyor mu?
+Eğer (B) baskınsa: hangi 10 yasak SİLİNİRSE sistem hiçbir şey kaybetmez? Adlarıyla yaz.
+
+### 2. OKUNAMAYAN YASA PROBLEMİ
+81.8K'lık bir yasa her kare yazılmadan önce okunamaz. Bugünkü çözüm ajanın "o gün okumuş
+olmasına" güveniyor — yani yasanın uygulanması RASTLANTISAL.
+Üç seçenek var ve üçü de kötü görünüyor:
+  (i) Yasayı böl → drift riski (iki kanon doğar, biri bayatlar)
+  (ii) Yasayı kısalt → ölçülmüş bilgi kaybı
+  (iii) Yasayı olduğu gibi bırak → uygulanma rastlantısal kalır
+DÖRDÜNCÜ SEÇENEĞİ bul. Tek kanonu koruyan ama uygulanmayı rastlantıdan çıkaran bir mimari
+öner. Somut ol: hangi dosya, hangi an, hangi mekanizma.
+
+### 3. TALİMATIN DOĞRU BİÇİMİ
+Bu külliyat çoğunlukla DÜZYAZI KURAL biçiminde yazılmış. Ölçülmüş bir gerçek var:
+plastik ten sorununun çözümü bir kural değil, KOPYALANABİLİR BİR PROMPT SATIRIYDI
+("The key strikes her far cheekbone… the terminator falls as one soft curved line…").
+Bir başka ölçüm: yasak SAYMAK yanıltıyor, ÖRNEK gösteren madde tutuyor.
+Soru: bir üretim talimatı ne zaman KURAL, ne zaman ÖRNEK, ne zaman KAPI (makine kontrolü)
+olmalı? Bir karar ağacı ver. Sonra külliyattan 5 gerçek maddeyi bu ağaçtan geçirip
+"bu yanlış biçimde yazılmış, şu biçimde olmalıydı" de.
+
+### 4. AJANIN PROMPT YAZMA YÜZEYİ
+`mamilas-director` skill'i prompt'un doğduğu yerdir. Onu oku ve sor: bu skill bir ajanı
+ŞAHESER yazmaya götürüyor mu, yoksa yalnız KUSURSUZ (=kusursuz ama sıradan) yazmaya mı?
+Aradaki farkı üreten şey nedir ve skill'de eksik olan nedir? Somut ekleme öner.
+
+### 5. SİLİNECEKLER
+Külliyatta artık YANLIŞ ya da ÖLÜ olan ne var? Çelişen iki kanon, bayat sayı, uygulanmayan
+ritüel, adı geçen ama olmayan dosya. Liste ver — her satır için neden öldüğünü tek cümleyle
+yaz. (⚠ Silme önerisi verirken çağrı haritasını dikkate al: bir şey test tarafından
+korunuyorsa söyle.)
+
+## BİÇİM
+Türkçe. Övgü ve giriş cümlesi yok. Beş başlık, her biri altında somut ve sayılı. Her iddian
+ya bir dosya+satır göstersin ya da bir sayım versin. "Şunu iyileştirebiliriz" gibi genel
+cümle yazma — hangi satır, ne olacak, neden.
