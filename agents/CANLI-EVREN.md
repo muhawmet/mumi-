@@ -77,9 +77,46 @@ değil.**
 
 ---
 
+## 4b. PREMIUM REJİMİ — "gariban iş" kusuru (müşteri, 2026-08-04)
+
+Müşteri birebir: *"bunlar milyonerlerin çocukları, neden ucuz gariban işi takılıyorsun."*
+**Akıllı tahta revizesi de aynı yerden gelmişti** — kara tahta reddedilmedi çünkü yanlıştı,
+**fakir göründüğü için** reddedildi.
+Mami: *"film gibi yapıyoruz, sonuçta satıyoruz — bu devletin sunduğu hizmet değil, ücret ödeyip
+aldıkları bir hizmet. Üretebiliyorsak en premiumu üretelim."*
+
+**Ölçüldü (4 fen projesi, 2026-08-04):** kusur tek tük nesnede değil, **STYLE satırının
+`Materials here:` cümlesinde** — yani her karede tekrarlanan malzeme sözlüğünde. 305 geçiş:
+`worn dark linoleum` · `dusty plate glass` · `dull beige exercise rubber gone grey with dust` ·
+`limp khaki pulp card` · `paint-crusted pine boards` · `brushes in murky water` ·
+`cast-iron end frames rusting at the bolts`. Bu bir **Anadolu devlet okulu** tarifidir.
+
+🔴 **Ayrım — kullanım izi KALIR, yoksulluk izi GİDER.** Premium *yeni ve steril* demek değildir;
+sefil olmayan iyi malzeme demektir. Sıcaklık, patina ve yaşanmışlık **korunur**.
+
+| KALIR — bakılmış, kullanılmış | GİDER — bakımsız, yoksul |
+|---|---|
+| bakımlı meşe tezgâh, mumu tazelenmiş, kenarı elden parlamış | çatlak boyalı çam, cilası kalkmış, boya kabuğu bağlamış |
+| kalın dövme cam, üstünde bir parmak izi | tozlu ince cam, is tutmuş pencere |
+| yün keçe, kalın keten, dokusu görünen kâğıt | limp khaki pulp card, ezik mukavva, sararmış fotokopi |
+| fırçalanmış çelik, pirincin kendi patinası | cıvatası paslanmış döküm, oksitlenmiş metal |
+| yağı çekilmiş ceviz, elden aşınmış tutamak | tel dolanmış, bantla tutturulmuş, çatlağı yamanmış |
+| temiz suda duran fırçalar, cam kavanoz | murky/bulanık su, lekeli kavanoz |
+
+**Mekân da aynı yasaya tabidir.** Sınıf, atölye, ev ve bahçe **iyi bakılan, ödeme yapılmış bir
+okulun** mekânıdır: bütün cam, düzgün asılmış pano, sağlam mobilya, canlı bakımlı bitki.
+⚠ Bu **lüks gösterişi değildir** — mermer, avize, altın, marka yok. Ölçü: *"parası olan bir
+ailenin çocuğunu gönderdiği okul"*, *"villanın içi"* değil.
+
+**Sınama:** *"Bu kareyi müşteriye gösterdiğimde 'buna neden para verdim' der mi?"*
+
+---
+
 ## 5. DOKUNULMAYACAKLAR
 
-- **Dünya kuyruğunun üç satırı** — birebir kalır
+- **Dünya kuyruğunun STYLE omurgası, LIGHT AND PALETTE ve NEGATIVE satırları** — birebir kalır.
+  ⚠ **İstisna: STYLE'ın sonundaki `Materials here:` malzeme cümlesi §4b uyarınca YENİDEN YAZILIR** —
+  canlılık ve premium rejimi oradan gelir, palet satırından değil.
 - **`@handle` disiplini** — tag'li kişi/mekân **tarif edilmez**
 - **Tarif kilitleri** — geçtiği her karede birebir aynı
 - **Ekran yazısı ve heceleme** — harf harf sayım ve ORIENTATION cümlesi korunur
@@ -100,5 +137,6 @@ Dosyaları **yerinde güncelle**. Bitince `node scripts/prompt-lint.mjs <dosya> 
 koş — hedef **0 kırmızı**.
 
 Rapor (kısa, Türkçe): kaç karede ne değişti · dramdan arındırılan kare varsa hangileri ve ne
-çıkarıldı · en canlı üç kareyi tek cümleyle anlat (bunlar kalıp olacak) · lint sonucu ·
+çıkarıldı · **§4b uyarınca çıkardığın yoksulluk sözlüğünden 5 örnek — ne yazıyordu, ne yazdın** ·
+en canlı üç kareyi tek cümleyle anlat (bunlar kalıp olacak) · lint sonucu ·
 **gerçek kamerayla çekilemeyecek** hâle getirdiğin kare var mı, hangisi.
