@@ -295,6 +295,119 @@ const TRAPS = [
     fix: 'fiziksel malzeme gerçeği yaz — stil sıfatı ve imza adı REAL negatif kilidinde yasak',
     registers: ['REAL'],
   },
+
+  // ═══ 2026-08-04 · DÖRT ÖLÇÜLMÜŞ TUZAK ═══════════════════════════════════════
+  // Mami: "60 start frame veriyorsan 41 revize veriyorsun, 2-3 kere baştan üretmiş
+  // gibi oluyorum." O 41'in çoğu üç kaynaktan geldi ve üçü de basılmadan ÖNCE
+  // metinde görülebilirdi. Bu dördü yapıyı değil ANLAMI ölçer.
+
+  {
+    key: 'govde-isik-celiskisi',
+    // Ölçüldü (Destek K48): gövde "nearly dark science room" ve "kadrajın dörtte üçü
+    // ışıksızdır" diyordu, aynı bloğun LIGHT satırı "bright and open" diyordu.
+    // Motor GÖVDEYİ dinledi: ölçülen ortalama parlaklık 56, sekans ortalaması 100-116.
+    // Aynı sınıf D bloğunun tamamında vardı ve toplu temizlikte GÖZDEN KAÇTI.
+    hit: (b) => {
+      const govde = b.replace(/^(STYLE|LIGHT AND PALETTE|TEXT|NEGATIVE)\s*:[\s\S]*?$/gim, '');
+      const karanlik = /\b(nearly dark|dark(ened)? (room|interior|classroom|kitchen|space)|dimly lit|in near darkness|unlit (room|interior)|three[- ]quarters? of the frame is unlit)\b/i.test(govde)
+        || /kadrajın dörtte üçü ışıksız|okunmaz karanlığa|karanlıkta kalır/i.test(govde);
+      if (!karanlik) return false;
+      const isikSatiri = (b.match(/^LIGHT AND PALETTE\s*:.*$/im) || [''])[0]
+        + (b.match(/^STYLE\s*:.*$/im) || [''])[0];
+      return /\b(bright and open|high-?key|fully lit|never a dark interior|airy)\b/i.test(isikSatiri);
+    },
+    fix: 'GÖVDE ile LIGHT satırı çelişiyor: gövde karanlık oda istiyor, LIGHT aydınlık. '
+      + 'Motor gövdeyi dinliyor (K48: ölçülen parlaklık 56, sekans ortalaması 100-116). '
+      + 'Gövdedeki karanlık cümlesini sök — yasak listesi: nearly dark / dimly lit / '
+      + 'three-quarters unlit / kadrajın dörtte üçü ışıksız',
+  },
+
+  {
+    key: 'siluet-alt-govde',
+    // Ölçüldü İKİ KEZ (Destek K10 ve K29): etek/elbise + çömelme-diz-oturma + alçak
+    // kamera aynı karede olunca müşteri "muhafazakâr revize" istiyor. Kadraj kilidi
+    // ("nothing below the waist is visible") TEK BAŞINA yetmiyor — yerden bakan bir
+    // kamerada çömelmiş gövdeyi belden kırpmak fiziksel olarak imkânsız, motor
+    // çelişkiyi her şeyi göstererek çözüyor. Çözüm kırpma değil OKLÜZYON.
+    hit: (b) => {
+      const cocuk = /@mira|@dara|@efe|@ali|\b(girl|schoolgirl|child)\b/i.test(b);
+      const etek = /\b(skirt|pinafore|dress|hem)\b/i.test(b);
+      const poz = /\b(crouch|crouched|crouches|squat|kneel|kneels|kneeling|sits? (down|on the floor)|seated on the (floor|bench|worktop)|knees drawn|foot up on)\b/i.test(b);
+      const alcak = /\b(camera (set )?(almost )?down on the (floor|ground)|low angle|from below|looking up at (her|him)|at (floor|ground) level|knee height)\b/i.test(b);
+      if (!(cocuk && etek && poz && alcak)) return false;
+      // OKLÜZYON yazılmışsa temiz — kırpma değil, önünde duran nesne
+      return !/\b(occlud|behind the (base|bench|worktop|table|drum|case)|the (base|bench|worktop|table) (stands|runs|crosses) between the camera and)\b/i.test(b);
+    },
+    fix: 'Çocuk + etek + çömelme/diz + alçak kamera = muhafazakâr revize (iki kez ölçüldü). '
+      + '"nothing below the waist is visible" TEK BAŞINA yetmez — kırpma değil OKLÜZYON yaz: '
+      + 'alt gövdeyi kamerayla arasına giren bir nesne (kaide, tezgâh, tepsi) KAPATSIN, '
+      + 'ya da poz değişsin (ayakta, profilden)',
+  },
+
+  {
+    key: 'adsiz-nesne',
+    // Ölçüldü (Destek K08): prompt "an upright shape stands on a stand" demiş, nesneyi
+    // ADIYLA çağırmamış — motor kendi kütüphanesinden KAFASIZ TERZİ MANKENİ doldurdu,
+    // karanlıkta duran başsız insan gövdesi olarak. Adı konmayan her nesne motorun.
+    hit: (b) => /\b(an?|the|some) (upright|standing|tall|dark|looming|waiting|mysterious) (shape|form|figure|silhouette|thing|mass|object)\b/i.test(b)
+      && !/@[a-zçğıöşü]/i.test((b.match(/\b(an?|the|some) (upright|standing|tall|dark|looming|waiting|mysterious) (shape|form|figure|silhouette|thing|mass|object)\b[^.]{0,80}/i) || [''])[0]),
+    fix: 'Nesneyi ADIYLA çağır. "an upright shape" yazıldığında motor kütüphanesinden '
+      + 'kafasız terzi mankeni doldurdu (K08). Adı konmayan nesne motorundur — '
+      + '@handle ya da açık ad yaz ("the skeleton teaching model on its stand")',
+  },
+
+  {
+    key: 'yonsuz-isin',
+    // SARI: Sabit Sürat korpusunda 12 kare bu deseni taşıyor ve o set regresyon
+    // çıpasında "temiz setin tabanı" olarak duruyor. Desen gerçek bir risktir
+    // (müşteri K30 için "anlamsız olmuş" dedi) ama tek başına kanıtlı eksik değil —
+    // ajanın tek geçişte bakacağı yer.
+    level: 'sari',
+    // Ölçüldü (Sabit Sürat K30, müşteri "anlamsız olmuş" dedi): prompt "the bright
+    // straight cool-blue heading-beam" demiş; "straight" motora YÖN söylemiyor ve
+    // motor oku 90 derece DİKEY, gökyüzüne bakar hâlde çizdi — oysa VO yatay
+    // düzlemde yer değiştirmeyi anlatıyordu.
+    // ⚠ DAR TUTULDU (aynı gün, ilk hâli 25 sahte alarm verdi): bir ışık NESNENİN
+    // İÇİNDE ya da BİR YÜZEY BOYUNCA yazılmışsa yönü zaten nesne veriyor — kemikteki
+    // kor, omurgadaki halka dizisi, maket üstündeki çizgi TEMİZDİR. Kusur yalnız
+    // ışık BOŞLUKTA serbest duran bir ok/ışın olduğunda doğuyor.
+    hit: (b) => {
+      const re = /\b(beam|arrow|heading-beam)\b/gi; let m;
+      while ((m = re.exec(b))) {
+        const seg = b.slice(Math.max(0, m.index - 130), m.index + 130);
+        // nesneye ya da yüzeye bağlıysa yön zaten belli — temiz
+        if (/\b(inside|within|through the (bone|shaft|wall|cage)|along the (bone|shaft|spine|rib|belly|curve|edge|surface|pavement|floor|ground|road|street|bench|desk|table|column)|in the disc gaps?|around the (axis|ball|joint|pin))\b/i.test(seg)) continue;
+        // yatay/yer hizası açıkça yazılmışsa temiz
+        if (/\b(flat along|parallel to the (ground|floor|road|surface)|at (ground|floor|bench|desk) level|horizontal|never rising|never (tilt|point)\w* up)\b/i.test(seg)) continue;
+        // sun beam / window beam gerçek gün ışığıdır, kavram oku değil
+        if (/\b(sun|window|daylight|morning|corridor|volumetric)\s*[- ]?\w*\s*(beam|shaft)/i.test(seg)) continue;
+        // toz/zerre bir IŞIK HUZMESİNİN içinde dönüyorsa o gün ışığıdır, kavram oku değil
+        if (/\b(dust|motes?)\b[^.]{0,60}\bbeam\b|\bbeam\b[^.]{0,60}\b(dust|motes?)\b/i.test(seg)) continue;
+        return true;
+      }
+      return false;
+    },
+    fix: '"straight" motora YÖN söylemiyor — Sürat K30\'da ok 90 derece DİKEY çıktı, '
+      + 'müşteri "anlamsız olmuş" dedi. Yatay isteniyorsa açıkça yaz: "lies flat along '
+      + 'the ground, parallel to the road surface, never rising into the air"',
+  },
+
+  {
+    key: 'islak-goz',
+    // SARI: altın standart Üreme korpusunda (0 revize almış iş) 50 karenin 1'inde bu
+    // ifade VAR. Yani tek geçiş ölümcül değil — kusur YOĞUNLUKTA doğuyor (Hücre'de
+    // karakter karelerinin 18/20'sinde vardı ve Mami iki tur "plastik" dedi).
+    // Kırmızıya çekmek altın standardı yalancı çıkarırdı; bu, doğrulayıcının kendi
+    // kanıtını çürütmesi olurdu.
+    level: 'sari',
+    // Ölçüldü (Hücre madeni, 2026-08-04): "wet dual-point catchlights in the eyes"
+    // karakter karelerinin 18/20'sinde, organel karelerinde 4/33. Mami'nin iki tur
+    // boyunca "plastik" dediği şeyin kaynağı bu tek cümleydi; 77 yerden söküldü.
+    hit: (b) => /\bwet\b[^.]{0,30}\bcatchlights?\b|\bcatchlights?\b[^.]{0,20}\bwet\b|\bdual-?point catchlights?\b/i.test(b),
+    fix: 'PLASTİK TEN buradan geliyor (18/20 karakter karesi vs 4/33 organel karesi). '
+      + 'Yerine: "a single soft catchlight in the eyes only and never a wet sheen over '
+      + 'the face — skin stays matte with low specular"',
+  },
 ];
 
 // STYLE bloğu kelime tavanı — ARTIK SARI (2026-08-02, yön ölçümü).
@@ -743,7 +856,7 @@ function lintBlock(body, register = 'EDU', fk = 'frame-dosyasi') {
   const fb = frameBody(body);
   for (const t of TRAPS) {
     if (!appliesTo(t, register)) continue;
-    if (t.hit(fb)) problems.push({ kind: 'trap', key: t.key, level: 'kirmizi', msg: `tuzak: ${t.key}`, why: `→ ${t.fix}` });
+    if (t.hit(fb)) problems.push({ kind: 'trap', key: t.key, level: t.level || 'kirmizi', msg: `tuzak: ${t.key}`, why: `→ ${t.fix}` });
   }
 
   // Heceleme talimatinin KENDISI dogru mu? Yanlis heceleme yokluktan beterdir.
