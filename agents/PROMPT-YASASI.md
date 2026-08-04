@@ -211,6 +211,8 @@ gerilimin en ucuz biçimi **çatışmadır**: biri dışlanır, biri yargılar, 
 · **yankı** — iki ayrı şeyin aynı olduğunun görülmesi (kaval ile kaval, iki masa aynı hizada)
 Bunların hiçbiri kimseyi yalnız bırakmaz, kimseyi yargılamaz ve kimseye kusur yüklemez.
 
+🔴 **HAM SENARYO GELDİĞİNDE — VARSAYILAN POZİTİFTİR.** (Mami, 2026-08-04: *"sana ham senaryo verdiğimde de müşteri net drama istemiyorsa biraz pozitife yönel."*) Kaynak nötr ya da belirsizse ton **olumluya** çekilir; çatışma yalnız kaynak onu **açıkça** istiyorsa yazılır. Şüphede kalınan yerde dram değil **merak** seçilir.
+
 **Denetim sorusu (her kare ve her VO cümlesi için):** *"Bu cümle/kare kaynakta var mı, yoksa
 ben mi ekledim? Eklediysem duygusal rejimi değiştiriyor mu?"* Değiştiriyorsa **çıkarılır** —
 güzel olsa bile. Teslim kaynağın filmidir, ajanın filmi değil.
