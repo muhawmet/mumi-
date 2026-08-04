@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 8d6d4d77-e230-4291-adaa-4e9965edc47d
-  modified: 2026-08-03T12:18:06.441Z
+  modified: 2026-08-04T21:12:47.455Z
 ---
 
 # Yerleşim varsayımı — bu repoda 8 kez ölçülen tek kusur sınıfı
@@ -25,11 +25,27 @@ bulamayınca hata vermiyor, **sessizce yeşil kalıyor** ya da var olan işi yok
 | 6 | `current-work.test.mjs` | proje BAŞINA test üretiyordu; taşınan proje sayıyı düşürdü, **commit kilitlendi** |
 | 7 | `gate.sh --diff-filter=ACMR` | **saf taşımayı** "yeni yazılmış" saydı; onarımı da yalnız İLERİ yönü kapattı |
 | 8 | `kapanis-hasadi` | bloklu teslimi (`PROMPTLAR/A-K01-K14.txt`) hiç görmedi; 54 kare teslim etmiş proje **ders adayı üretmedi** |
+| 9 | **Claude'un kendi ölçüm scripti** (2026-08-05) | `parseBlocks` `{head, body}` NESNESİ döndürürken string sandım; regex `"[object Object]"` üzerinde koştu ve **0/289** verdi — "sıfır yanlış alarm" diye okunabilecek **sahte bir yeşil** |
+| 10 | `gate.sh` tarzı `cmd \| tail -5 && ...` zinciri | pipeline'ın çıkış kodu **`tail`'in** kodudur; vitest düşse bile `&&` zinciri devam ediyordu — kapı sağır |
+
+## Dokuzuncusu ÇIKTI — ve öngörü tuttu
+
+Madde 9 bu dosyanın *"dokuzuncusu da çıkar"* cümlesinden bir gün sonra, **ölçüm sınıfını
+en iyi bilen ajanın kendi elinden** çıktı. Sınıf bilgisi bağışıklık vermiyor.
+
+**Yakalatan tek şey ŞÜPHEYDİ:** sonuç `0/289` çıktı ve "sıfır yanlış alarm" iyi haber gibi
+görünüyordu. *"Sıfır, hiç ateşlemiyor da olabilir"* diye düşünüp **bilinen pozitiflerde**
+(kusurun ölçüldüğü gerçek kareler) test edince ortaya çıktı.
+
+**How to apply — TEMİZ SONUÇ ŞÜPHELİDİR.** Bir ölçüm "hiç kusur yok" diyorsa, ölçümün
+**ateşleyebildiğini** bilinen bir pozitifte kanıtlamadan o sonuç okunmaz. Kapı kurmak ≠
+kapı ateşliyor. Ve mümkünse ölçüm **gerçek üretim yolundan** (`lintBlock`) yapılır; kuralın
+kopyasını yeniden yazmak yeni bir yerleşim varsayımıdır.
 
 ## Kalıcı ders
 
 **Bir kusuru onarmak SINIFI onarmaz.** 1-4 numara 2026-08-02'de onarıldı; 5-8 ertesi gün
-çıktı. Noktasal onarım devam ettiği sürece dokuzuncusu da çıkar.
+çıktı; 9-10 bir gün sonra. Noktasal onarım devam ettiği sürece on birincisi de çıkar.
 
 **How to apply — yeni bir ölçüm aracı yazarken üç soru:**
 1. Girdisini **ADIYLA mı İÇERİĞİYLE mi** buluyor? (Doğrusu: içerik. `^STYLE:`/`^NEGATIVE:`
