@@ -329,3 +329,29 @@ describe('T5 · MOTION INTENT ve kare imzası', () => {
     expect(ps[0].level).toBe('sari');
   });
 });
+
+// ---------------------------------------------------------------------------
+// SOL NARROW ARTIĞI (2026-08-05) — yorum satırı hayaleti tamamen kapandı mı?
+//
+// İlk onarım yalnız `#`'siz düz cümleyi eledi; Codex Sol ölçtü ve `# K52'de…` biçimli
+// YORUM satırlarının hâlâ başlık sayıldığını gösterdi. Gerçek başlık numaradan sonra
+// `|` · `·` · `:` taşır ya da orada biter.
+// ---------------------------------------------------------------------------
+describe('hayalet başlık — ikinci daraltma', () => {
+  const govde = `### K1 | 5s · VO "x"\n-----\n${'word '.repeat(200)}\n-----\n`;
+
+  it('`# K52de kamera sabitti` yorumu başlık SANILMAZ', () => {
+    expect(parseMotionBlocks(`${govde}# K52de kamera sabitti ve bu bir yorumdur\n`)).toHaveLength(1);
+  });
+
+  it('`K7 (kol ve açık el)` düz cümlesi de başlık SANILMAZ', () => {
+    expect(parseMotionBlocks(`${govde}K7 (kol ve açık el) diye bir not\n`)).toHaveLength(1);
+  });
+
+  it('GERÇEK başlık biçimleri okunmaya devam eder', () => {
+    for (const h of ['### K2 | 5s · VO "y"', 'K02', '## K3 · 5s', 'K4: giriş']) {
+      const m = `${h}\n-----\n${'word '.repeat(200)}\n`;
+      expect(parseMotionBlocks(m), `başlık düştü: ${h}`).toHaveLength(1);
+    }
+  });
+});

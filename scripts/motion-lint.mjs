@@ -65,7 +65,11 @@ import { pathToFileURL } from 'node:url';
 // gerçek işi bloke ediyordu. Kusur metinde değil ÖLÇENDEYDİ.
 // `#`'siz biçim korunuyor (eski dosyalar `K01` diye açıyor) ama artık BAŞLIK GİBİ durmalı:
 // numaradan sonra satır biter ya da `|` · `·` · `:` gelir. Düz cümle `K5 (` ile devam eder.
-const HEAD_RE = /^(?:#{1,6}\s*K\s*\d{1,3}\b|K\s*\d{1,3}\s*(?:[|·:]|$))/;
+// ⚠ İKİNCİ DARALTMA (Codex Sol, NARROW hükmü): ilk onarım yalnız `#`'siz düz cümleyi
+// eledi, ama `# K52'de kamera sabitti` gibi YORUM satırları hâlâ başlık sayılıyordu —
+// `#` vardı, numaradan sonrası serbestti. Gerçek başlık numaradan sonra `|` · `·` · `:`
+// taşır ya da orada biter (`K01`). Yorum ise kelimeyle devam eder.
+const HEAD_RE = /^#{0,6}\s*K\s*\d{1,3}\s*(?:[|·:]|$)/;
 
 export function parseMotionBlocks(text) {
   const src = text.replace(/^﻿/, '').replace(/\r\n?/g, '\n');

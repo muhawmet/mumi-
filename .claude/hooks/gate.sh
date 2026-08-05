@@ -340,15 +340,29 @@ Duzelt, ya da bilerek geciyorsan:
   # TASLAK dosyalar olculmez ama SAYILIR ve BASILIR: `TASLAK` basligi tasiyan dosya bir
   # teslim degil, canary onayi bekleyen musveddedir (T0 baseline). Sessiz muafiyet
   # muafiyet degildir — kac dosyanin olcum disinda kaldigi her commit'te goze sokulur.
-  MOTION_DIR=$(node -e "try{const s=require('./artifacts/current-work.json');const p=s.projectId||'';if(p&&s.status!=='kapandi')process.stdout.write('agents/COMMAND-INBOX/'+p+'/MOTION')}catch{}" 2>/dev/null || true)
+  # ⚠ SESSIZ KACIS KAPATILDI (Codex Sol, NARROW hukmu). Ilk yazimda state okunamazsa
+  # `MOTION_DIR` bos kaliyor ve dal HIC KOSMUYORDU — yani kaydi bozmak, kapiyi kapatmanin
+  # en kolay yoluydu. Bu repoda "kapi kendini dogrulayamiyorsa SESSIZCE GECMEZ" yazili bir
+  # yasa (gate.sh:17-18). Ayrim: kayit YOK/KAPANDI ise gecmek dogru (olculecek is yok);
+  # kayit VAR ama OKUNAMIYOR ise bloke edilir.
+  MOTION_DIR=$(node -e "try{const s=require('./artifacts/current-work.json');const p=s.projectId||'';if(p&&s.status!=='kapandi')process.stdout.write('agents/COMMAND-INBOX/'+p+'/MOTION')}catch{process.exit(9)}" 2>/dev/null)
+  MOTION_RC=$?
+  if [ "$MOTION_RC" = "9" ] && [ -f artifacts/current-work.json ]; then
+    fail "DURUM KAYDI OKUNAMADI — artifacts/current-work.json bozuk.
+Canli motion olcumu bu kayittan tureyen bir yolla calisir; kayit okunamazsa
+olcum SESSIZCE atlanirdi. Kor kapi, kapali kapidan tehlikelidir."
+  fi
   if [ -n "$MOTION_DIR" ] && [ -d "$MOTION_DIR" ]; then
     MTASLAK=0
+    MTASLAK_ADLAR=''
     for MF in "$MOTION_DIR"/*.txt "$MOTION_DIR"/*.md; do
       [ -f "$MF" ] || continue
       # Yalnizca ILK SATIR bakilir; emoji/tire kodlamasina bagimli olmamak icin duz
       # `TASLAK` aranir (Windows Git Bash'te em-dash eslesmesi guvenilmez).
       if head -n 1 "$MF" 2>/dev/null | grep -q 'TASLAK'; then
         MTASLAK=$((MTASLAK + 1))
+        MTASLAK_ADLAR="$MTASLAK_ADLAR
+     · $(basename "$MF")"
         continue
       fi
       MOUT=$(node scripts/motion-lint.mjs "$MF" 2>&1) || true
@@ -370,8 +384,18 @@ Duzelt, ya da canary onayi alana kadar dosyanin ILK SATIRINA su basligi koy:
       printf '✅ canli motion yesil: %s\n' "$MF" >&2
     done
     if [ "$MTASLAK" -gt 0 ]; then
-      printf '🟡 CANLI MOTION: %s dosya TASLAK isaretli — olcum disinda.\n' "$MTASLAK" >&2
-      printf '   Canary PASS alinca baslik kaldirilir ve kapi bu dosyalari olcmeye baslar.\n' >&2
+      # ⚠ MUAFIYET KIMLIKLI OLMAK ZORUNDA (Codex Sol, NARROW): once yalniz SAYI
+      # basiliyordu. Sayi bir muafiyeti gorunur kilmaz — hangi dosyanin olcum disinda
+      # kaldigi bilinmezse, muafiyet sessizce kalicilesabilir. Adlar ve faz basilir.
+      printf '🟡 CANLI MOTION: %s dosya TASLAK isaretli — olcum disinda:%s\n' \
+        "$MTASLAK" "$MTASLAK_ADLAR" >&2
+      MFAZ=$(node -e "try{process.stdout.write(require('./artifacts/current-work.json').phase||'?')}catch{process.stdout.write('?')}" 2>/dev/null || printf '?')
+      printf '   faz: %s — canary PASS alinca baslik kaldirilir ve kapi bunlari olcmeye baslar.\n' "$MFAZ" >&2
+      if [ "$MFAZ" = "uretim" ]; then
+        fail "TASLAK MOTION URETIM FAZINDA — $MTASLAK dosya olcum disinda ama faz 'uretim'.
+Taslak, canary onayi bekleyen musveddedir; uretim fazinda taslak olamaz.
+Ya baslik kaldirilip dosya olculur, ya faz geri alinir."
+      fi
     fi
   fi
 
