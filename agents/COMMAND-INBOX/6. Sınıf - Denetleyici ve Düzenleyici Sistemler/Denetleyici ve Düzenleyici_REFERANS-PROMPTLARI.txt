@@ -6,9 +6,14 @@ Kaynak: _REFERANSLAR.txt (kimlik ve kilitler) + _DUNYA-KUYRUGU.txt (üç satır,
 @efe BASILMAZ — önceki videolardan var (Eşeyli · Kütle · Bitkilerde · Hayvanlarda).
 Basılacak DÖRT referans: @kedi · @maket · @mutfak · @koridor
 
-🔴 HER PROMPTUN SONUNA `_DUNYA-KUYRUGU.txt`'teki ÜÇ SATIR (STYLE / LIGHT AND PALETTE /
-   NEGATIVE) BİREBİR yapıştırılır. Buraya kopyalanmadı — tek kaynak o dosya, iki nüsha
-   iki gerçek üretir. Ölçüldü (Hücre): elle yazılınca 53 karede 53 farklı sürüm doğdu.
+✅ DÜNYA KUYRUĞU HER PROMPTUN İÇİNDE — `-----` bloklarını olduğu gibi kopyala, YAPIŞTIR, BAS.
+   Ek bir şey eklemene gerek yok.
+
+   ⚠ Bu dosya önce kuyruksuz yazıldı ("ayrı dosyadan yapıştır" notuyla) ve @kedi basıldığında
+   motor FOTO-GERÇEK kedi verdi — dünya stili hiç gitmemişti. Gerekçe yanlıştı: tehlike
+   kuyruğu ELLE YENİDEN YAZMAKTA (Hücre'de ölçüldü, 53 karede 53 farklı sürüm doğdu),
+   BİREBİR eklemekte değil. Kuyruk `_DUNYA-KUYRUGU.txt`'ten **makineyle** kopyalandı,
+   elle yazılmadı — tek kaynak korunuyor, prompt ise tek başına çalışıyor.
 
 🔴 REFERANS PLAKASI ≠ SAHNE. Plaka nesneyi/mekânı TANITIR; sahneye KADRAJINI taşımaz.
    Her ref'in TAŞIR/TAŞIMAZ satırı §4a.1 gereği aşağıda — ölçüldü: kadraj kilidi
@@ -39,10 +44,16 @@ walking, not leaping, not stretching. Neutral even lighting from the front and s
 above, no dramatic key, no rim, no coloured gel, so that identity reads before mood.
 Plain uninterrupted background of one warm-neutral tone, no room, no furniture, no window,
 no plants, no other animal, no person, no hand.
-NEGATIVE (kare-özel): NO collar, NO bell, NO leash, NO toy, NO food bowl, NO second cat,
-NO kitten proportions, NO ginger or black or white coat, NO long-haired breed, NO mid-jump
-or running pose, NO room interior, NO window, NO concept glow of any colour on the fur.
-[+ DÜNYA KUYRUĞU üç satırı]
+The cat is rendered as a stylised feature-animation CG character: slightly overscaled head
+and eyes for child-safe readability, groomed fur simulated as CG strands with soft rim
+separation, never a photographic animal.
+NEGATIVE (kare-özel): NO photoreal cat, NO wildlife photography, NO real animal fur capture,
+NO documentary or camera-trap look; NO collar, NO bell, NO leash, NO toy, NO food bowl,
+NO second cat, NO kitten proportions, NO ginger or black or white coat, NO long-haired
+breed, NO mid-jump or running pose, NO room interior, NO window, NO concept glow on the fur.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+NEGATIVE: NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay/plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light source in frame; NO anamorphic streak; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only — blocky dimensional letterform, raised and legible, NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
 =========================================================================
@@ -81,7 +92,9 @@ NEGATIVE (kare-özel): NO torso, NO chest, NO body cross-section, NO internal or
 veins, NO blood, NO wet or fleshy surface, NO glowing part, NO coloured light on any
 section, NO arrows, NO leader lines, NO printed labels other than the brass plate, NO
 English text, NO second model, NO hand, NO person, NO room interior.
-[+ DÜNYA KUYRUĞU üç satırı]
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+NEGATIVE: NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay/plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light source in frame; NO anamorphic streak; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only — blocky dimensional letterform, raised and legible, NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
 =========================================================================
@@ -118,7 +131,9 @@ NEGATIVE (kare-özel): NO person, NO child, NO adult, NO hand, NO cat, NO amber 
 liquid in the brewing pot, NO clear view through the window, NO wiped patch on the glass,
 NO English text, NO modern appliance, NO concept glow, NO steam rendered as a graphic
 shape, NO printed labels on the jars.
-[+ DÜNYA KUYRUĞU üç satırı]
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+NEGATIVE: NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay/plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light source in frame; NO anamorphic streak; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only — blocky dimensional letterform, raised and legible, NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
 =========================================================================
@@ -150,7 +165,9 @@ along its own length.
 NEGATIVE (kare-özel): NO person, NO child, NO adult, NO hand, NO figure in the doorway, NO
 moving bicycle, NO English text, NO framed photographs of people, NO concept glow, NO
 arrows or measurement graphics beside the height marks, NO ruler or tape measure.
-[+ DÜNYA KUYRUĞU üç satırı]
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+NEGATIVE: NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay/plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light source in frame; NO anamorphic streak; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only — blocky dimensional letterform, raised and legible, NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
 -----
 
 =========================================================================
