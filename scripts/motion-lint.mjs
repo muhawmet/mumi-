@@ -519,9 +519,66 @@ export function lintMotionFile(path) {
     sari,
     metrics: rows.length
       ? { kelimeMin: ws[0], kelimeMax: ws.at(-1), kelimeOrta: ws[Math.floor(ws.length / 2)],
-          kameraCumlesi: `${camli}/${rows.length}`, kameraSonda: `${camSonda}/${rows.length}` }
+          kameraCumlesi: `${camli}/${rows.length}`, kameraSonda: `${camSonda}/${rows.length}`,
+          ...acilisTekduzeligi(blocks).metrik }
       : null,
+    dosyaSorunlari: acilisTekduzeligi(blocks).problems,
     olculmeyen: OLCULMEYEN,
+  };
+}
+
+/**
+ * AÇILIŞ TEKDÜZELİĞİ — dosya düzeyinde ölçülür, blok düzeyinde değil.
+ *
+ * 2026-08-05, Mami: *"sahneleri düşünmeden düz yazdı, o kadar güzel yazıyorduk sonra bunu
+ * yapması korkunç."* Ölçüldü ve haklıydı: bitmiş setin **52/52 bloğu AYNI üç kelimeyle
+ * açılıyordu** (`The clip opens…`), 49/52'sinde `already` vardı. Kamera cümleleri 52/52
+ * benzersizdi — yani yazan KAMERAYI düşünmüş, SAHNEYİ düşünmemişti.
+ *
+ * Ve `motion-lint` o dosyaya **kırmızı 0** demişti. Çünkü ölçen kuyruğa, saate, kamera
+ * cümlesine ve kelimeye bakıyordu; hiçbiri şablonu görmüyor. Yeşil ışık yanlış güven verdi.
+ *
+ * ⚠ BU KURAL KELİME AVLAMAZ. `already` yasaklamak bu repoda çürütülmüş bir yaklaşım
+ * (`HASAT-MORPH-KOKU:42` — *"already kusur değil BELİRTİdir; kelime düzeltilseydi aynı
+ * klipler yeniden basılırdı"*). Ölçülen şey TEKDÜZELİK: hangi kelime olduğu değil, aynı
+ * kalıbın kaç blokta tekrarlandığı. Şablon, düşünülmemişliğin imzasıdır.
+ *
+ * Blok düzeyine yazılmadı çünkü tek bir blok tekdüze olamaz — tekdüzelik ancak SET'te vardır.
+ */
+// KALİBRASYON — üç gerçek setle, 2026-08-05'te diskten ölçüldü. Tahmin YOK.
+//   · Destek ve Hareket (Mami: "sahneleri düşünmeden düz yazdı")   52/52 = %100
+//   · Sorunları Birlikte Çözüyoruz (Efe — TUTMUŞ iş)               46/57 = %81
+//   · Eşeyli ve Eşeysiz Üreme (altın standart)                     24/50 = %48
+//
+// İlk eşik %60 yazılmıştı ve KANITLI İYİ bir korpusa (Efe, %81) sahte alarm verdi.
+// Sahte alarm ölçümün kendisini çöpe atar — Mami kırmızıya bakmayı bırakır. Eşik %90'a
+// çıkarıldı: kanıtlı hiçbir iyi set orada değil, kötü set ise tam orada.
+//
+// ⚠ VE BUNUN ANLAMI ŞU: tekdüze açılış TEK BAŞINA kötülüğün kanıtı DEĞİLDİR. Tutmuş bir
+// set de %81 tekdüze. Bu kural yalnız UÇ hâli yakalar (%90+), yani "her klip istisnasız
+// aynı cümleyle başlıyor" hâlini. Asıl kusur başka yerdedir ve bu ölçen onu görmez.
+export function acilisTekduzeligi(blocks, { esik = 0.9, azBlok = 6 } = {}) {
+  const paras = blocks.map((b) => b.para).filter(Boolean);
+  if (paras.length < azBlok) return { problems: [], metrik: {} };
+  const anahtar = (p) => p.split(/\s+/).slice(0, 3).join(' ').toLowerCase().replace(/[^a-zçğıöşü ]/g, '');
+  const say = {};
+  for (const p of paras) { const k = anahtar(p); say[k] = (say[k] ?? 0) + 1; }
+  const [kalip, adet] = Object.entries(say).sort((a, b) => b[1] - a[1])[0];
+  const oran = adet / paras.length;
+  const metrik = { acilisTekrar: `${adet}/${paras.length}`, acilisKalip: kalip };
+  if (oran < esik) return { problems: [], metrik };
+  return {
+    metrik,
+    problems: [{
+      level: 'kirmizi',
+      key: 'acilis-tekduze',
+      msg: `açılış TEKDÜZE — ${adet}/${paras.length} blok aynı üç kelimeyle başlıyor: "${kalip}…"`,
+      why: 'Şablon, düşünülmemişliğin imzasıdır. Ölçüldü (Destek ve Hareket, 2026-08-05): '
+        + '52/52 blok aynı açılışı taşıyordu, kamera cümleleri ise 52/52 benzersizdi — yazan '
+        + 'kamerayı düşünmüş, SAHNEYİ düşünmemişti. O dosyaya bu ölçen "kırmızı 0" demişti. '
+        + 'Kural kelime avlamaz: hangi kelime olduğu değil, aynı kalıbın kaç blokta '
+        + 'tekrarlandığı ölçülür. Her klip kendi olayından doğar; ortak bir cümleden değil.',
+    }],
   };
 }
 
@@ -571,7 +628,17 @@ function report(r, { kapsam = true } = {}) {
     }
   }
 
-  console.log(`  ${r.bad.length ? '⚠️' : '✅'} kırmızı: ${r.bad.length}/${r.total}${r.sari.length ? ` · sarı: ${r.sari.length}` : ''}`);
+  // DOSYA DÜZEYİ SORUNLAR — tek blok taşıyamaz, ancak SET'te vardır (açılış tekdüzeliği).
+  // Kırmızı sayısına EKLENİR: `gate.sh` bu satırı parse ediyor ve dosya düzeyi bir kusur
+  // görünmez kalırsa kapı yine yanlış yeşil verir — bu tam olarak bugün olan şeydi.
+  const dosyaK = (r.dosyaSorunlari ?? []).filter((p) => p.level === 'kirmizi');
+  for (const p of dosyaK) {
+    console.log(`  ✗ ${p.msg}`);
+    console.log(`    ${p.why}`);
+  }
+
+  const toplamK = r.bad.length + dosyaK.length;
+  console.log(`  ${toplamK ? '⚠️' : '✅'} kırmızı: ${toplamK}/${r.total}${r.sari.length ? ` · sarı: ${r.sari.length}` : ''}`);
 
   if (kapsam) {
     console.log('  ölçülmeyen (yeşil ≠ temiz):');
@@ -603,10 +670,31 @@ if (isMain) {
   }
 
   let bad = 0, sari = 0, klip = 0;
+  const setBloklari = [];
   for (const t of targets) {
     const r = lintMotionFile(t);
     report(r, { kapsam: !NO_KAPSAM && targets.length === 1 });
-    bad += r.bad.length; sari += r.sari.length; klip += r.total;
+    bad += r.bad.length + (r.dosyaSorunlari ?? []).filter((p) => p.level === 'kirmizi').length;
+    sari += r.sari.length; klip += r.total;
+    // SET kapsamı için ham blokları biriktir (aşağı bak).
+    if (!/TASLAK/.test(readFileSync(t, 'utf8').split('\n', 1)[0] ?? '')) {
+      setBloklari.push(...parseMotionBlocks(readFileSync(t, 'utf8')));
+    }
+  }
+
+  // ── SET DÜZEYİ ─────────────────────────────────────────────────────────────
+  // Açılış tekdüzeliği tek DOSYADA görünmez, SETTE görünür. Teslim biçimi klip başına
+  // bir dosya olduğu için (`01.txt`…`52.txt`) dosya düzeyi ölçüm bu kusuru yapısal olarak
+  // kaçırıyordu: her dosyada 1 blok var, 1 blok tekdüze olamaz. Ölçüldü (2026-08-05):
+  // bitmiş sette 52/52 blok `The clip opens…` ile açıyordu ve ölçen "kırmızı 0" diyordu.
+  if (setBloklari.length > 1) {
+    const { problems, metrik } = acilisTekduzeligi(setBloklari);
+    if (metrik.acilisTekrar) console.log(`\nSET kapsamı: açılış tekrarı ${metrik.acilisTekrar} · en sık kalıp "${metrik.acilisKalip}…"`);
+    for (const p of problems) {
+      console.log(`  ✗ ${p.msg}`);
+      console.log(`    ${p.why}`);
+      bad += 1;
+    }
   }
 
   console.log(`\n${bad ? '⚠️' : '✅'} kırmızı: ${bad}/${klip} · sarı: ${sari}`);
