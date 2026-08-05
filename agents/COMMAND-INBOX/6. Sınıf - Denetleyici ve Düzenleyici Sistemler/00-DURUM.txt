@@ -1,0 +1,11 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — AŞAMA: KARE BASILACAK
+════════════════════════════════════════════════════════════════
+prompt ✓ (lint KIRMIZI 0)   ·   kare 0/56   ·   motion ✗   ·   VO ✓
+
+SIRADAKİ ADIM
+  PROMPTLAR/ altındaki blokları sırayla Nano Banana 2'de bas, images/ klasörüne at.
+  Kareler gelince: denetim → revize → motion (tek geçişte).
+
+AÇIK NOT
+  · prompt-lint kırmızısı 0 — basmadan önceki yapısal kapı temiz
+  · yeşil ≠ temiz: lint VO eşliğini ve görsel kaliteyi ÖLÇMEZ

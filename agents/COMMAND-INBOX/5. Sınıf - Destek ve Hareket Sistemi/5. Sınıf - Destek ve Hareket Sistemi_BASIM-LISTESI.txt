@@ -1,6 +1,6 @@
 5. Sınıf - Destek ve Hareket Sistemi — BASIM LİSTESİ
 ========================================================================
-Kare: 53 blok · kaynak sürüm: 11 dosya
+Kare: 53 blok · kaynak sürüm: 12 dosya
 Sürüm önceliği DOSYA ZAMANIDIR; yedek/eski adlı dosyalar düşürüldü.
 🔴 ESKİ SÜRÜMLE DOLDURULDU: K24, K32, K49 — yenisi YAZILMADI, blok içinde de işaretli
 ⚠ ÇAKIŞMA K10: S2.txt → S2-YENI.txt (en yeni seçildi)
@@ -16,15 +16,19 @@ Sürüm önceliği DOSYA ZAMANIDIR; yedek/eski adlı dosyalar düşürüldü.
 ⚠ ÇAKIŞMA K27: S3-YENI.txt → S3.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K30: S3-YENI.txt → S3.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K16: S2-YENI.txt → M-A.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K1: S1-YENI.txt → Destek ve Hareket_CANARY-MOTION.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K29: M-B.txt → Destek ve Hareket_CANARY-MOTION.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K36: M-B.txt → Destek ve Hareket_CANARY-MOTION.txt (en yeni seçildi)
 ========================================================================
 
->>> K1   [kaynak: S1-YENI.txt]
+>>> K1   [kaynak: Destek ve Hareket_CANARY-MOTION.txt]
 ### K1 | 5s · VO "Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı."
+KAMERA NİYETİ: dünya tanıtılır ve ölü sanılan nesne canlanır — kukla önce bir eşya, sonra bir gövde.
+AYRICALIK: gerçek kamerada bu kare ölü bir stüdyo çekimidir; burada kuklayı canlandıran şey
+Mira'nın ittiği hava — yani görünmeyen bir sebep görünür bir gövdeye dönüşüyor.
 -----
-
-The clip opens with the swing already dying: @kukla turns through the last degrees of its arc on the cabinet hook, the jointed body leaning with the movement, its shadow sliding back across the painted door behind it. The arc shortens, shortens again, and the puppet comes to rest hanging plumb, its shadow settling with it, and for one moment nothing in the room moves. Only then does @mira4 change: her shoulders come down as she lets a held breath go and her eyes travel up the hanging figure to the hook it hangs from. The clip begins with the room's only moving thing and ends with its stillness being looked at. Dust turns through the warm morning bar and the water in one brush jar rocks once and settles. Camera: locked off on sticks at the child's eye height, square to the cabinet wall, absolutely still throughout, no push, no drift, no tilt, no rack of focus. Lock: @kukla stays a rigid solid that never folds, sags or bends at a joint, no cord appears on or above it, and the enamel plate keeps its exact letters. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
-
--------------------------------------------------------------------------
+Mira takes one more step toward the cabinet and the air she moves reaches the hanging mannequin: it turns a few degrees out from the door on its hook, the jointed shoulder and the loose forearm lagging a beat behind the torso the way unweighted wooden joints do, and the hard shadow it casts slides slowly across the cabinet panel behind it. Her eyes follow the turn. The clip begins with a thing hanging on a hook and ends with a body that has weight and joints — the difference is readable from any single frozen frame. Camera: a slow drift in toward the mannequin at chest height, the plaster sphere and the stacked paper in the near foreground sliding softly out of the bottom of the frame. The shadow is still travelling across the wood when the clip cuts. The studio, the drying rack, the apron on its peg and the jars of brushes stay exactly where they are; no new objects and no other people enter; the wall sign is not approached and its letters never change; her face never stretches or warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
 
 ------------------------------------------------------------------------
 
@@ -255,7 +259,7 @@ The clip opens with the push already under way: @mira4's right palm lies flat on
 
 ------------------------------------------------------------------------
 
->>> K24   [kaynak: ESKI-cansiz-yedek.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
+>>> K24   [kaynak: MOTION-eski-cansiz.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
 ### K24 | 5s · VO "Kapı, menteşesinin üstünde sessizce döndü."
 -----
 
@@ -307,13 +311,18 @@ The clip opens with the pose already holding: @iskelet stands on its post with o
 
 ------------------------------------------------------------------------
 
->>> K29   [kaynak: M-B.txt]
+>>> K29   [kaynak: Destek ve Hareket_CANARY-MOTION.txt]
 ### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+KAMERA NİYETİ: kavram nesnede kanıtlanır — menteşe açılırken izleyici kendi dizini hisseder.
+AYRICALIK: kemiğin ucundaki pirinç menteşe, gerçek bir dizin yapamayacağı kadar yavaş ve
+eksiksiz açılır; hareketin kendisi bir ders hâline gelir.
+⚠ YÜKÜM UYARISI (bu kare için, üretimden önce oku): VO'nun öznesi "Mira'nın DİZİ" ama karede
+Mira'nın dizi yok — tepside kemik, menteşe ve "DİZ" kartı var. Motion bu boşluğu kapatamaz;
+kapatan tek şey kadrajın Mira'nın kendi dizini de alması ya da VO'nun kareye uydurulmasıdır.
+Bu bir MOTION kusuru değil, START-FRAME kusurudur ve kaydedilmiştir.
 -----
-
-The clip opens with two hinges standing still: @mira4 leans over the bench and in the tray the long bone and the short one beneath it rest open on their brass pin, the card square to camera. Then she bends her near knee: it folds a few degrees behind the bench and her body dips with it, her skirt hanging straight and still. On the same beat the short bone swings up on the brass pin like a workshop hinge, closing to her angle, and a soft warm-golden ring wakes on that pin's axis and carries one slow turn. She straightens and the pair opens back exactly where it began, the ring thinning to a trace. The clip begins with a bend she makes and ends with the same bend made of bone. Camera: locked off on sticks at bench height, absolutely still from first frame to last, no dolly, no pan, no tilt, no zoom, never dropping below the bench line. Lock: the card stays flat and dead still, its word never warping or leaving frame; the bones stay rigid solids turning only about the pin; the amber never reaches her skin. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
-
--------------------------------------------------------------------------
+Mira's fingertip comes down on the far end of the femur and presses: the brass hinge at its base opens through its arc, unhurried and complete, the bone rising against the tray's rim while the polished pin catches the window light and turns it along the metal. The shadow the opening hinge throws stretches across the small card on the tray and thins as the angle widens. The clip begins on one closed shape of bone and brass and ends on an open angle with clear air inside it. Camera: a slow push down and in over the tray, the classroom softening behind her. The hinge is still opening when the clip cuts. The lettering on the card is not approached, not re-drawn and never changes; the corkboard drawings, the wall screen, the cabinets and the empty chairs stay fixed; no new objects and no other people enter; the bone does not bend, melt or change shape and the metal stays rigid. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
 
 ------------------------------------------------------------------------
 
@@ -337,7 +346,7 @@ The clip opens with both bends already made: @iskelet stands tipped forward on i
 
 ------------------------------------------------------------------------
 
->>> K32   [kaynak: ESKI-cansiz-yedek.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
+>>> K32   [kaynak: MOTION-eski-cansiz.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
 ### K32 | 5s · VO "Oynamaz eklemler kafatasındadır ve asla hareket etmezler."
 -----
 
@@ -388,15 +397,26 @@ The clip opens with the waiting already long: @kukla's arm lies exactly where it
 
 ------------------------------------------------------------------------
 
->>> K36   [kaynak: M-B.txt]
+>>> K36   [kaynak: Destek ve Hareket_CANARY-MOTION.txt]
 ### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+KAMERA NİYETİ: keşif anı — kas kalkarken yüzdeki endişe merakla yer değiştirir.
+AYRICALIK: aynı kadrajda iki kol var — biri kalkabilen, biri kalkamayan. Kuklanın ölü kolu
+Mira'nınkiyle yan yana durduğu için kas, tarif edilmeden anlaşılıyor.
+-----
+Mira closes her fist and draws the forearm up: under her palm the muscle rises and firms, and her spread fingers lift with it as the shape swells against them. Her frown breaks — the eyebrows go up and the mouth stays closed as recognition arrives — and her eyes drop to the wooden mannequin lying along the counter in front of her, whose straight jointed arm has not moved at all. The clip begins with her arm looking exactly like the wooden one and ends with it doing the one thing the wooden one cannot. Camera: a slow, small push toward her forearm and hand, the mannequin held in the near foreground. Her fingers are still travelling over the muscle when the clip cuts. The window light, the potted plants, the enamel trays, the corkboard and the cabinets stay exactly where they are; no new objects and no other people enter; the mannequin does not move, soften or gain joints; her face never stretches or warps and her arm keeps its real anatomy. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 
-BLOKE — kare yok. images/36.png bu cümlenin karesi değil (yukarıdaki DOSYA DURUMU).
-Kolun üstündeki kabartıyı taşıyan kare üretildiğinde bu blok tek geçişte yazılır; S4 zincirinin
-tamamı (K37→K41) o tek kabartıya bağlı olduğu için tahminle doldurulmadı.
 
--------------------------------------------------------------------------
+========================================================================
+BASTIKTAN SONRA — Mami'nin bakacağı üç şey (klip başına tek soru)
+
+1. Klip BAŞLARKEN bir şey oluyor mu, yoksa ortasından mı giriyoruz?  (eski setin kusuru)
+2. Klip biterken bir şey hâlâ sürüyor mu, yoksa donuyor mu?          (eski setin kusuru)
+3. "Ne oldu?" sorusunun cevabı VO olmadan okunuyor mu?
+
+Üçü de EVET ise kalan 49 klip bu lehçeye çevrilir.
+Değilse 3 klip kaybedildi, 49 klip kurtarıldı — deneyin amacı buydu.
+========================================================================
 
 ------------------------------------------------------------------------
 
@@ -540,7 +560,7 @@ The clip opens with the room still coming to rest, each thing visibly stopping: 
 
 ------------------------------------------------------------------------
 
->>> K49   [kaynak: ESKI-cansiz-yedek.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
+>>> K49   [kaynak: MOTION-eski-cansiz.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
 ### K49 | 5s · VO "Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz."
 -----
 

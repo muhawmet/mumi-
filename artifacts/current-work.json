@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "enzim",
   "status": "aktif",
-  "lastCompleted": "GECE İNŞA TURU: plastik tenin MEMBASI kapandı (SURGERY_DATA 3 satır) · yeni KIRMIZI kapı isik-yuzu-disliyor (korpus: altın 0/50, Birlikte 89%) · islak-goz SARI→KIRMIZI + daraltıldı · 'Eşeyli 0 revize' çıpası yalanmış, 8 yerde düzeltildi (gerçek: 31 revize, hiçbiri ten/ışık sınıfında) · ders bankası tavanı konusallaştı. Kapı: 2541 PASS 0 FAIL.",
-  "nextAction": "Mami BRIFING-2026-08-05-SABAH.md'yi okusun ve 3 karardan birini seçsin (§5øø ayrım hükmü / 8 baskılık motor deneyi / 6 kliplik motion canary)",
+  "lastCompleted": "Altı projenin altısında da prompt-lint KIRMIZI 0. 35 kırmızının 33'ü yanlış alarmdı (kural dört kez daraltıldı: oda-vs-yüz ayrımı, face=nesne yüzeyi, çapa listesi darlığı, adlandırılmış nesne) — 2'si gerçekti ve metinde düzeltildi. Destek/Hücre/Farklı Kültürler basım listeleri + 3 kliplik canary hazır.",
+  "nextAction": "Mami Destek canary'sini bassın (K1·K29·K36) ya da hazır projelerden birine başlasın",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-04T21:11:45.623Z",
+  "updatedAt": "2026-08-05T05:41:45.521Z",
   "updatedBy": "claude",
-  "baseCommit": "3f39296"
+  "baseCommit": "86f703c"
 }

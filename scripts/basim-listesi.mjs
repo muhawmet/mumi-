@@ -77,9 +77,19 @@ export function kaynaklariTopla(projeDir) {
   for (const f of readdirSync(projeDir)) {
     if (/_MOTION\.txt$/i.test(f) || /MOTION.*\.txt$/i.test(f)) ekle(join(projeDir, f));
   }
+  // MOTION/ ve BİR SEVİYE altındaki klasörler (örn. MOTION/_ESKI-SURUM/).
+  // Eski sürümler kök dizinden karantinaya alınınca (2026-08-05) geri düşüş kaynağı da
+  // kapanmış ve K24/K32/K49 "BOŞ KARE" görünmüştü. Alt klasör taranır ama adı yedek/eski
+  // olan dosyalar `coz()` tarafından zaten düşürülür — yani buradan gelen içerik YALNIZ
+  // geri düşüş olarak kullanılır, canlı sürüm sayılmaz.
   const alt = join(projeDir, 'MOTION');
   if (existsSync(alt) && statSync(alt).isDirectory()) {
-    for (const f of readdirSync(alt)) ekle(join(alt, f));
+    for (const f of readdirSync(alt)) {
+      const yol = join(alt, f);
+      if (statSync(yol).isDirectory()) {
+        for (const g of readdirSync(yol)) ekle(join(yol, g));
+      } else ekle(yol);
+    }
   }
   return adaylar.sort((a, b) => a.zaman - b.zaman);
 }

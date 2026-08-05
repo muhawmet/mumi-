@@ -1,0 +1,19 @@
+DESTEK VE HAREKET — AŞAMA: KLİP BASILACAK
+════════════════════════════════════════════════════════════════
+kare 52/52 ✓ (images/)   ·   klip 0/52   ·   VO ✓   ·   kurgu ✗
+
+SIRADAKİ ADIM
+  1. Destek ve Hareket_CANARY-MOTION.txt  →  YALNIZ 3 KLİP (K1 · K29 · K36)
+     Bas, sonra üç soru: klip başlarken bir şey oluyor mu? biterken bir şey
+     sürüyor mu? 'ne oldu' VO'suz okunuyor mu?
+  2. Üçü de EVET ise kalan 49 klip aynı lehçeye çevrilir, sonra basılır.
+
+BASILACAK DOSYA
+  ✓ 5. Sınıf - Destek ve Hareket Sistemi_BASIM-LISTESI.txt   (53 blok, K sırasında)
+  ✗ MOTION/_ESKI-SURUM/  →  BURADAN BASMA. Ölçüldü: %81'i 'already' ile açılıyor,
+    çalışan korpusta bu oran %0. Karantinada, silinmedi.
+
+AÇIK NOT
+  · K24 · K32 · K49  →  yenisi yazılmadı, listede ESKİ SÜRÜM diye işaretli
+  · K45'in ALT sürümü var (bırakılan kare / düzeltilmiş kare) — seçim senin
+  · K29: VO 'Mira dizini bükünce' diyor ama karede Mira'nın dizi yok (start-frame kusuru)
