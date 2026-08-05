@@ -1,0 +1,96 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · MOTION BLOĞU S6 (K45–K52) · FİNAL
+=========================================================================================
+Motor: Kling 3.0 (i2v) · Register: EDU · Kaynak kare: images/45.png … images/52.png
+Lehçe kaynağı: Biten/5. Sınıf - Hücre ve Organelleri/MOTION/01·04·12·20·33 +
+Biten/6. Sınıf - Bitkilerde Üreme.../MOTION/A-K01-K14 · D-K43-K54 (kapanış klibi K54).
+Kelime bandı: 190–215. Her kare Read ile AÇILDI ve GÖRÜLDÜ.
+
+BLOK GENELİ (her klipte geçerli, hiçbir kliple çelişmez):
+· 🔴 HAREKET KLİP İÇİNDE BAŞLAMAZ, BİTER. Korpusun yasağı birebir: 5 saniyede oturmaktan
+  doğrulma, ayağa kalkma, yürüyüşe başlama, nesnenin el değiştirmesi YOK. Bu yüzden K51'de
+  koşu kareden ÖNCE başlamıştır (klip son yarım adımı ve sönümlenmeyi alır), K49'da kız
+  kareye zaten AYAKTA girer, K52'de kukla zaten ASILIDIR — klip ipin son salınımını alır.
+· Kimse konuşmaz, ağız hareketi yok. Hiçbir nesne el değiştirmez.
+· Yazı taşıyan nesne SABİT KÜTLEDİR — kamera ona YAKLAŞMAZ, mesafe klip boyunca sabit,
+  hareket varsa YANLAMASINA. (K46 "KALP" · K50 "SÜT" tam kilit; K51 "OYUN" · K52
+  "RESİM ATÖLYESİ" sabit mesafeli yanal takip + yazıya özel negatif.)
+· Uzuv merceğe geliyorsa kamera mesafesi KİLİTLİ — yaklaşırsa uzuv gövdeden kopuyor (ölçüldü).
+  Bu yüzden K47 ve K50'de push YOK.
+· Kavram ışığı (amber): kemikte durgun çekirdek, eklemde halka — ilk kare gücünü KORUR,
+  büyümez, yayılmaz, tene/yüze değmez (ENZIM Kilit 4).
+· @mira4 · @iskelet · @kukla handle ile çağrılır; saç/ten/kıyafet YAZILMAZ (REFERANSLAR §kimlik).
+· K52 K01'in AYNASIDIR: K01'de hareket eden kuklaydı, burada Mira'dır.
+=========================================================================================
+
+
+### K45 | 5s · VO "Yavaştırlar ama yorulmazlar."
+🔴 YENİDEN-BASIM — Karede çalışan tek bir öğe yok (amber hiç basılmamış, iki maket de kapalı ve durgun), bu yüzden "yorulmazlar" hükmünü taşıyacak gerçek olay kalmıyor; elde kalan tek olay ön plandaki lastik bandın oturması ve dersle ilgisi yok.
+KAMERA NİYETİ: Tezgâh boyunca sabit mesafede sağa kayış — yavaşlığın kendisi kamera hızıdır; maketle yüzü aynı çerçeveye alınca durur, plankaya hiç yaklaşmaz.
+-----
+The clip opens with the light already travelling: the warm bar off the window has cleared the whiteboard and is easing along the birch plank toward the ribbed tube and the moulded stomach form, rigid on their bases, @mira4 behind them, chin on her forearms. Then it climbs onto the stomach form's curve — and at that instant the model's shadow swings a hand's width further along the birch without hurrying and keeps going, the light neither quickening nor stopping. The clip begins with two idle models on a board and ends with the slowest thing in the room shown never to stop. Three things are alive: the crest creeping along the birch, the shadow lengthening off the stomach form, and one loop of the coiled band in the foreground easing flatter. Camera: a slow lateral dolly runs right along the counter at an unchanging distance from the plank, stopping with the stomach form and her face in one frame. Both models stay rigid moulded resin on fixed bases, neither swelling, pulsing nor breathing, and no amber light appears inside either, no glow or halo. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K46 | 5s · VO "Kalp kası ise yalnızca kalpte bulunur."
+KAMERA NİYETİ: Cama kazınmış "KALP" kadrajın ortasında — kamera TAM KİLİTLİ, mesafe ve yükseklik hiç değişmez; vitrinin tamamı çerçevede kalır ki atan tek şey çizgi olsun.
+-----
+The clip opens with the heart already beating under the panes: the warm-golden line down the front of the moulded heart in the brass case is halfway through a stroke, @mira4 close on the far side of the counter, one hand flat on the stone, eyes on the glass. Then the line finishes its climb — and at that instant it swells to full strength, falls back, gives a second smaller beat and settles where it began, her chin lowering as the working thing declares itself. The clip begins with a model under glass and ends with the one muscle in the room that works. Three things are alive: the beat travelling down the line, dust turning behind the case, and the sill plants nodding. Camera: locked off square to the case at counter height, distance unchanged throughout, the whole case in frame and the etched pane never approached. The heart keeps its shape on its stand, never swelling, squeezing or deforming; the beat lives only in the line, never reaching the glass or her face. The etched KALP letters hold their exact edges and never re-spell, wobble or smear. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K47 | 5s · VO "Şekli çizgili kasa benzer, çalışması düz kasa."
+KAMERA NİYETİ: Tepsinin önünden sabit mesafede süzülüş, çizgili koldan çizgili kalbe — cümlenin iki yarısını tek kayışta bağlar. Kolu merceğe gelen kız var: YAKLAŞMA YOK.
+-----
+The clip opens with the raking light already crossing the tray: it has left the ribbed brick-red forearm on its pedestal and is moving along the birch toward the ribbed heart, @mira4 behind the rail, her hand on the wood, eyes on the heart. Then it arrives on the heart's flank — and at that instant the same fine ribbing lifts out of its surface as it did on the arm, while the golden line down its curve gives one slow even beat that never quickens. The clip begins with two models that look alike and ends with one working its own quiet way. Three things are alive: the lit ribbing travelling from arm to heart, dust turning in the light, and her fingers easing on the rail. Camera: a slow lateral glide runs along the tray front at an unchanging distance, never closing in on the models or her hand, stopping square on the heart. The turned pedestal between the heart and the pale tube stays empty — no fourth model appears — every model stays rigid on its base, the ribbing never becomes a drawn line, and the golden line holds one strength. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K48 | 5s · VO "Ömrümüz boyunca hiç durmadan çalışır."
+KAMERA NİYETİ: Kızı bırakıp tezgâh boyunca sabit mesafede sağa gider ve DURMAYAN kalbin üstünde tam durur — biten şeyden bitmeyen şeye geçiş.
+-----
+The clip opens with two things already moving: the pale band hanging over the counter's edge is still sliding, a hand's width already past the lip, and across the stone the warm-golden line down the heart's curve is midway through its own slow beat, @mira4 low at the left, forearms folded, eyes on the model. Then the band's weight carries it off the lip — and at that instant it swings out from the edge, overshoots past plumb, comes back twice shorter and hangs dead still, while the beat across the counter runs straight on without changing pace. The clip begins with two things moving and ends with only one still going. Three things are alive: the band swinging itself out, the sun bars creeping along the cabinets, and the plant on the sill turning. Camera: a slow lateral track leaves her and runs right along the counter at an unchanging distance, stopping on the heart while it still beats. The band stays exactly one loop, never lengthening, doubling or reaching the floor; the golden line stays on the heart's curve, never brightening, faltering or reaching the tray or the stone. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K49 | 5s · VO "Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz."
+KAMERA NİYETİ: Onunla birlikte bir karış yükselir, mesafe sabit; başının tepesiyle kafatasının tepesi aynı yatayda buluşunca durur — duruşun hükmünü kamera verir. Kız kareye zaten ayakta girer, oturmaz ve kalkmaz.
+-----
+The clip opens with @mira4 already standing tall beside @iskelet: the last of her weight is leaving the hand on the table edge, her shoulders are in the final part of rolling back, her chin already rising toward the skull. Then her shoulders finish opening — and at that instant her fingers lift clear, her crown rises the last centimetre, and her line and the skeleton's agree. The clip begins with a girl propped on a table and ends with one carrying herself the way the model beside her does. Three things are alive: the metal tray ringing once as her hand leaves the wood, the coat's empty sleeves swinging a finger's width on the chair back, and dust turning in the light. Camera: it rises a hand's width at an unchanging distance, never closing in, and stops with the top of her head and the skull's crown on one horizontal. @iskelet stays exactly as it stands — every joint at its angle, both feet on the wheeled plate, which never rolls — and the amber in its spine holds its first-frame strength, never climbing or spreading. She never steps and never sits. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K50 | 5s · VO "Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir."
+KAMERA NİYETİ: Karton yüzündeki büyük "SÜT" kadrajın en okunaklı öğesi — kamera TAM KİLİTLİ, kartona bir santim yaklaşmaz; ayrıca eli merceğe gelen kız var, kilit iki kere gerekli.
+-----
+The clip opens with the release already under way: @mira4's fingertips are parting off the carton's folded peak, the card already springing back, her hand lifting away, the bone lying along the stone, warm amber still inside its shaft. Then the last fingertip leaves the card — and at that instant the peak springs out a hair, flutters twice and stills, the milk climbs one side of its glass, slaps back and flattens, and the spoon in the yoghurt taps the rim and rests. The clip begins with a hand still on the carton and ends with a counter that has answered and gone quiet. Three things are alive: the fluttering peak, the milk levelling, and dust turning in the light. Camera: locked off square to the carton face at counter height — no push, no drift, no reframe — the distance to the printed card identical on the last frame and the first. The carton never leaves the stone and nothing changes hands; the printed SÜT letters hold their exact shapes and ink, never bending with the card, re-spelling or wobbling. Nothing is poured; the bone's amber holds its first-frame strength within the shaft. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K51 | 5s · VO "Bir de bol bol hareket etmek gerekir."
+KAMERA NİYETİ: Videonun en hareketli klibi — ama koşu klipten ÖNCE başlamıştır; kamera son yarım adımda onunla sola koşar, mesafesini birebir tutar (çanta yazısı bu yüzden bozulmaz) ve o durduğu an dimdik durur.
+-----
+The clip opens with @mira4 already in the last half stride of a run begun off-frame: her front foot is coming down, her free arm carrying through, trailing leg off the floor, the canvas bag flying out ahead of her hip, stitched face to lens. Then that foot plants hard — and at that instant she skids, leans past her balance and swings back upright into a full stop, head level, the bag overshooting her hip, coming back twice shorter and hanging still last. The clip begins with a run already spent and ends with the room settling around her. Three things are alive: the pinned drawings lifting and dropping in her wake, the sill plants nodding, and dust bursting in the light. Camera: it runs left beside her at exactly her speed and an unchanging distance, holding her and the bag one size, and stops dead the instant she does. She takes no new stride. @iskelet stays one rigid piece on its stand — its raised arm holds its angle and never lowers, the wheels never roll — and the stitched OYUN keeps its exact letters as the canvas swings, never re-spelling or wobbling. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K52 | 5s · VO "Mira kuklayı yerine astı; bu sefer hareket eden oydu."
+KAMERA NİYETİ: KAPANIŞ ve K01'in aynası — o klipte kamera kapıdan kuklaya gitmişti, burada onunla kapıya gider ve asılı kuklayla aydınlık kapıyı tek çerçevede tutarak TAM DURUR. Asma işi klipten önce bitti; klip yalnız ipin son salınımını alır ve son karede hiçbir şey kıpırdamaz.
+-----
+The clip opens on the same table at the same hour as the film's first shot, both movements already spent: @kukla hangs on its cord, still swinging as one carved piece, @mira4 in the last stride of a walk begun off-frame. Then she plants and stops square in the doorway light — and at that instant @kukla goes past plumb, comes back, taps its heel on the oak, sways twice smaller and hangs dead vertical, its shadow stopping with it. The clip begins with the puppet still swinging and ends with it hanging still, the girl the only thing that travelled. Three things are alive: the swing dying out of the puppet, the brushes trembling in their jars, and dust turning in the doorway. Camera: it travels with her along the table at unchanging height and distance, then stops with the hanging puppet and the lit doorway together; nothing moves on the last frame. Nobody touches @kukla: it swings as one piece, shoulder, hip and knee at their turned angles, never stepping or lifting an arm, bare wood with no amber core. The RESİM ATÖLYESİ plate stays at the same distance, its wording never re-spelling. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:

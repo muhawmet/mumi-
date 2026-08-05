@@ -1,0 +1,118 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · MOTION · S2 (K10-K18)
+KANON LEHÇE — 2026-08-05
+=========================================================================
+Lehçe kaynağı: Biten/5. Sınıf - Hücre ve Organelleri/MOTION/01·04·12·20·33.txt
+            +  Biten/6. Sınıf - Bitkilerde Üreme/MOTION/A-K01-K14.txt
+Bugünkü S2-ENERJI turunun üslubu KULLANILMADI (iki tur kusurlu çıktı).
+
+Kareler images/10.png … images/18.png Read ile AÇILDI ve GÖRÜLDÜ.
+Handle'lar Destek ve Hareket_REFERANSLAR.txt'ten; @handle TARİF EDİLMEZ, yalnız HÂL yazılır.
+Her @tag karesinde kadrajın dışarıda bıraktığı yazıldı (REFERANSLAR §KADRAJ KİLİDİ).
+
+🔴 KAMERA MESAFESİ 9/9 BLOKTA KİLİTLİ. Gerekçe iki ölçüm:
+   (1) K4 — uzuv merceğe gelirken kamera da yaklaşırsa el gövdeden kopuyor (K15·K16 riskli).
+   (2) Kling baked-in yazıyı DÖNÜŞTÜRÜNCE bozuyor (206 · KEMİK · KAFATASI · KABURGA · 30 · 50 g).
+   Yanal kayış 8 blokta serbest, K11'de kamera TAM KİLİTLİ (duvardaki dev KEMİK yazısı).
+
+🔴 5 SANİYE KISITI (korpusun kendi başlığından, birebir): "oturmaktan doğrulma, ayağa kalkma,
+   yürüyüşe başlama, nesnenin el değiştirmesi YOK". Hareket klip içinde BAŞLAMAZ, BİTER —
+   varış sönümlenir, ağırlık oturur, sallanan uzuv durur. 9 blok bu gözle tarandı:
+   yürüyüş/kalkma HİÇBİR blokta yok (K12'de bugünkü turun "iki adımla geçiyor"u atıldı,
+   yerine masaya yüklenme kondu); K15'te kemik iki elinde kalır ve el değiştirmesi
+   açıkça yasaklandı; K13'te iki parçalı tepki tek sönümlü tepkiye indirildi.
+
+🔴 YENİDEN-BASIM satırları önceki turdan AYNEN taşındı: K14, K16.
+
+Sabit kuyruk her blokta birebir:
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+No whip-pan, no shake, no snap-zoom, no camera warp.
+(K17 ve K18'de karede insan yok → "mouth closed, no lip movement" düşer.)
+=========================================================================
+
+
+### K10 | 5s · VO "Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur."
+KAMERA NİYETİ: "206" pirinç plakası kadrajın ortasında ve okunuyor — kamera mesafesi klip boyunca kilitli, taban boyunca yalnız birkaç santim yanlamasına kayar ve plakayla yüzü aynı karede tutarak durur. El yukarı, merceğe DEĞİL; kamera da yerinde kaldığı için K4'ün kopan eli bu blokta doğamaz.
+-----
+The clip opens with the hanging foot already turning a hair in the draught: @mira4 lies chin down on her crossed forearms on the brushed steel base, framed at floor level, nothing of her below the elbows in view, the skeleton's foot a hand's width above her. Then her nearer hand peels off her forearm and flicks the toe bones — at that instant the whole leg swings out from above as one carved piece, knee and ankle holding their exact angles, carries past the steel pole, comes back shorter, rocks shorter again and hangs still. She begins looking at a foot and ends looking up the whole length above her. Her hair slides off her cheek, the pole shivers where it meets the base, her grin widens behind closed lips. Camera: a slow lateral drift of a few centimetres at floor level, its distance from the base unchanged, never closing on the brass plate or her hand, easing to a stop with plate and face held together. The foot ends with exactly the toe bones it began with, none added and none lengthening, and the engraved 206 never re-spells, wobbles or melts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K11 | 5s · VO "Kemikler vücuda şeklini verir ve onu ayakta tutar."
+KAMERA NİYETİ: Duvardaki dev KEMİK yazısı kemikten yapılmış ve kadrajın ortasında — kamera bu tek blokta TAM KİLİTLİ, çünkü yanal kayış bile o harflerin perspektifini çevirir ve Kling yazıyı eritir. Enerji kameradan değil devrilmeden gelir: kemiği olmayan kukla yığılır, kemiği olan @iskelet aynı açılarını korur; VO'nun iki yarısı tek karede karşı karşıya durur.
+-----
+The clip opens on the room holding still, the low sun already across the desk tops. Then @kukla loses its lean against the stoneware mug: it tips forward off the rim, goes over fast as one carved piece, shoulder, hip and knee holding their exact angles, meets the desk, bounces, rocks twice shorter and shorter and lies on its side. No joint straightens as it falls and it never puts a hand out to catch itself. The mug swings upright past centre and its pencils clatter, the stacked notebooks slide a finger's width, dust jumps in the window light. @mira4's head turns to the noise, framed from mid-thigh up with no floor in view, her hair swinging across her cheek and settling, lips closed. Behind her @iskelet keeps every angle it has, hanging without a bone moving. The clip begins with a figure that could not hold itself up and ends with one that can. Camera: locked off at desk height, wide enough to hold the fall and her turn in one frame, no push, no drift, no reframe. The bone letters on the wall stay those same five, none splitting, sagging or re-spelling. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K12 | 5s · VO "Bir de en önemlisi: yumuşak organları korurlar."
+KAMERA NİYETİ: Kamera göğüs hizasında sağa yanlamasına kayar, iskelete olan mesafesi sabit — yaklaşan kamera kaburga içindeki sıcak kütleyi büyütür ve "koruma" okuması dağılır. Anlatımı kolların salınımı değil, o salınımın duvara düşürdüğü gezen kaburga gölgesi yapar: kafes izleyicinin gözünde kurulur.
+-----
+The clip opens with the light already deep inside the rib cage of @iskelet, a warm mass between the bars. @mira4 stands behind the desk, framed from the waist up with nothing below its edge in view, and rocks forward onto it. Then the desk nudges the steel pole — at that instant the whole skeleton shivers, both arm bones swing out from the shoulders as one piece each, carry past the pelvis, tap it, swing back shorter and hang still, and the shadow of the rib bars slides across the wall behind as one moving fence of stripes. The clip begins with a lit thing behind bars and ends with the bars themselves declared. Her hair swings forward and falls back, her chin lifts, her brows rise, lips closed. The warm mass stays exactly the size it is, never brightening, never spreading between the bars or reaching her face, and the cage keeps its own bars, none added, none swinging free. Camera: a slow lateral dolly right at chest height, its distance from the skeleton unchanged, never closing on the rib light, stopping with her in the left third, the cage in the middle. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K13 | 5s · VO "Kafatası beyni sert bir kutu gibi çevreler."
+KAMERA NİYETİ: KAFATASI plakası büyük ve okunuyor — mesafe kilitli, yaklaşma yok; kamera masa hizasında birkaç santim kayıp kapak dikişini ve @mira4'ün yüzünü aynı karede tutarak durur. Çarpmanın sertliği kameradan değil kapağın kendi ağırlığından ve kalemlerin tıkırdamasından gelir; "sert kutu" hükmü ışığın dikişten kesilmesiyle verilir.
+-----
+The clip opens with the hinged cap resting open on its brass hinge, a thin warm line along the seam. Then the cap lifts a hair, swings down fast under its own weight and claps shut onto the bone below — at that instant it bounces back open a finger's width, drops again shorter, and seats; the escaping line pinches to a thread and goes out, the warmth now held entirely inside the braincase. Nothing else in the room lights up. The pencils in the mug knock once, dust jumps off the desk. @mira4's shoulders drop back a fraction with a blink, framed from the chest up, nothing below the desk in view, and settle there, her brows lifting, lips closed. The clip begins with an open box and ends with a shut one. The jaw stays shut and the cap comes back onto the same skull, gaining no second seam or crack. Camera: a slow lateral drift of a few centimetres at desk height, its distance from the base unchanged, never closing on the brass plate, holding seam and face together, easing to a stop. The engraved KAFATASI never re-spells, wobbles or melts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K14 | 5s · VO "Kaburgalar kalbin ve akciğerlerin önünde kafes kurar."
+🔴 YENİDEN-BASIM — kavram ışığı zinciri burada kopuyor: K12'de doğuyor, K13'te kafatasının içinde, K15'te kemiğin içinde, K14'te hiç yok; ışık klip içinde yakılamaz (sıfırdan doğan ışık yasak), o yüzden kare yeniden basılmalı.
+KAMERA NİYETİ: KABURGA plakası kaidenin üstünde — dönen şey kaide DEĞİL, torna gövdesinin üstündeki kafestir, böylece plaka klip boyunca merceğe kare ve sabit kalır. Kamera masa hizasında yanlamasına kayar, mesafesi sabit. VO'nun "kafes kurar" fiili kamerada değil nesnenin kendi dönüşünde olur: çubuklar kalbin önünden geçer, açık aralık kapanır.
+-----
+The clip opens on the rib cage model standing still on its turned post, the red heart visible in the wide gap between two bars. @mira4 stands at the desk, framed from the waist up, nothing below its edge in view. Then her palm slides across the birch and taps the base once — at that instant the cage turns on its post, swings a quarter turn fast, carries past its stop, rocks back twice shorter and settles, the bars travelling across the heart so the wide gap closes into a fence. The base itself never turns or slides. The tap runs through the wood: the folders shift, the pencils rattle, the loose top sheet lifts a corner and lies down. The clip begins with a heart in the open and ends with a heart behind bars. Her chin drops, her brows draw together. The cage keeps the same bars it began with, none added, none splitting, and the heart stays matte red without lighting up. Camera: a slow lateral dolly at desk height, its distance from the base unchanged, never closing on the brass plate, stopping square on the closed side. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K15 | 5s · VO "Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu."
+KAMERA NİYETİ: 🔴 Bu blokta uzuv merceğe doğru — iki kol ve kemik öne uzanıyor, yani K4'te ölçülen kopma tam buradan doğar. Kamera mesafesi klip boyunca KİLİTLİ, hiçbir push yok; göğüs hizasında birkaç santim kayıp kemikle eli aynı düzlemde tutarak durur. "Avuçtan uzun" hükmü kameranın yaklaşmasıyla değil, açılan avucun kemiğin altına yaslanmasıyla ölçülür.
+-----
+The clip opens with the thigh bone already level across @mira4's two palms, framed from the waist up, nothing below the desk edge in view. Then her lower hand turns the shaft a quarter turn — at that instant the ball head swings out past her fingers, carries further than she meant before she catches it, the bone rocking back twice shorter and coming level. Her upper hand then opens flat along the shaft and the bone overhangs her fingertips by a hand's length at each end. The clip begins with a bone being held and ends with a bone being measured. Her hair swings forward and settles, her chin drops. Behind her the hanging arm of @iskelet sways out once, elbow and wrist holding their angles, and stills. Her forearms keep their length, both hands stay her own, five fingers each; the bone keeps its full length and matte ivory surface, never passing between her hands, the ember staying inside the shaft. Camera: a slow lateral drift of a few centimetres at chest height, its distance from her hands unchanged, with no push of any kind, easing to a stop on the bone. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K16 | 5s · VO "Kemikleri şekillerine göre üç gruba ayırıyoruz."
+🔴 YENİDEN-BASIM — VO üç grubu ilan ediyor, karede tek kemik ve iki gölge lekesi var; üçe ayırma hiç görünmüyor ve karede olmayan iki kemik motionla yaratılamaz.
+KAMERA NİYETİ: 🔴 İki kol da masaya doğru öne uzanıyor — mesafe KİLİTLİ, push yasak. Kamera masa hizasında sola yanlamasına kayar; tozu, tıkırdayan kalemi ve boş ahşabı taşıyıp tek kemikle durur. Kare üç grup vaat ediyor ama tek kemik taşıyor: kamera bu eksikliği ÖRTMEZ, boş tahtayı göstererek işaret eder — yeniden basım gerekçesi ekranda da okunur.
+-----
+The clip opens with the low sun already lying across the scarred desk, @mira4 leaning over it from the far edge, framed from the shoulders up, nothing below the desk top in view. Then her nearer hand draws up and comes down flat and fast — at that instant the palm smacks the desk, the fingers spread past their spread and draw back in, and the whole desk answers: the loose pencil hops, rolls and stops against the mug, the pencils rattle, and dust bursts up through the sunbeam. The lit bone rocks once and settles as the same one bone, and no second bone appears anywhere on the bare wood. The clip begins with a hand looking for something and ends with the wood empty beside the one bone it has. Her hair swings across her cheek and falls back, her brows lift. Her arms keep their exact length and both hands stay her own, five fingers each. Camera: a slow lateral drift left along the desk at its unchanged distance and with no push at any point, easing to a stop with empty grain across frame, the one lit bone at its edge. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K17 | 5s · VO "Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur."
+KAMERA NİYETİ: Karede insan yok ve tek yazı cetvelin ucundaki küçük "30" — kamera bu bloğun en serbest olanıdır, masa hizasında yuvarlanmayla birlikte gider ve şaftın boyunca bakan açıda durur. Mesafe yine sabit: rakam klip boyunca aynı büyüklükte kalır, "en uzun" hükmü kameranın yaklaşmasıyla değil kemiğin cetveli aşmasıyla verilir.
+-----
+The clip opens on the thigh bone lying still across the birch desk beside the wooden ruler, dust hanging in the light off the blinds. Then the bone loses its balance on its rounded shaft: it leans back a hair, rolls fast toward the ruler, its ball head knocks the wooden edge and rides a little up over it, drops back, rocks twice shorter and lies still across the grain. The ruler ticks a finger's width and stops without turning. Dust jumps through the beam, the pencils rattle once, and behind the desk the hanging hand of @iskelet sways out from the wrist and hangs still. The clip begins with a bone beside a ruler and ends with a bone past the end of one. The bone keeps its full length and matte ivory surface and never brightens into a light source, the warmth staying inside the shaft; it stays one bone that neither splits nor stretches as it rolls. Camera: a slow lateral track at desk height travelling with the roll at its unchanged distance from the ruler, never closing on the printed 30, settling looking straight along the shaft. The printed 30 never re-spells or wobbles. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K18 | 5s · VO "Kısa kemiklerin eni ve boyu birbirine yakındır."
+KAMERA NİYETİ: 🔴 Aralığın en riskli karesi — yığın sayılamaz ve motor çoğaltıyor (ölçüldü: 8 kemik 20 oldu). Sayı negatifi bu blokta UZUN yazıldı, o yüzden yığının içindeki çarpışma güvenle yapılabiliyor: negatif çit değil izin belgesidir. Kamera masa hizasında sağa yanlamasına kayar, mesafe kilitli ve aşağı push yok — hem "50 g" kazıması korunur hem düşen kemik yığından ayrılıp boş ahşapta yalnız kalır, eni ve boyu orada okunur.
+-----
+The clip opens on the heap of short bones lying still around the standing brass weight, an amber dot inside each. Then the bone riding highest slips off its neighbour: it tips a hair, slides down gathering speed, clips the front bone which hops and drops back, carries past the heap's edge, rocks twice shorter and comes to rest alone on bare wood. Two bones roll into the gap it left and knock once. A fine puff of dust lifts and drifts away, the folded cloth shifts, and the brass weight sinks deeper and stays standing, its face square to the lens. The clip begins with a pile of shapes and ends with one shape you can measure. The heap stays the same bones it began with and never gains, splits or stretches one; none divides where it strikes another, and the fallen bone reads as wide as it is long. Each amber dot stays a dot and never spreads or lights the wood. Camera: a slow lateral dolly right at desk height, its distance from the pile unchanged, never pushing down or closing on the engraved weight, stopping with the fallen bone alone in the middle third. Silent clip, no audio, no dialogue. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+=========================================================================
+S2 BİTTİ — 9/9 blok (K10-K18).
+Yeniden basım önerilen (önceki turdan taşındı): K14 · K16.
+=========================================================================

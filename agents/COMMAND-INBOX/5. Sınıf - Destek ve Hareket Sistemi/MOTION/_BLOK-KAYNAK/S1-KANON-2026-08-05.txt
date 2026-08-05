@@ -1,0 +1,127 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · SEKANS 1 MOTION (K1–K9)
+=========================================================================
+KANON LEHÇE — kaynak korpus: Biten/5. Sınıf - Hücre ve Organelleri/MOTION/*.txt
+ve Biten/6. Sınıf - Bitkilerde Üreme.../MOTION/A-K01-K14.txt (Mami onaylı iki iş).
+Bugünün iki kusurlu turu (S1-2026-08-05, S1-ENERJI-2026-08-05) GEÇERSİZDİR.
+
+Kaynak kare: images/1.png … images/9.png — dokuzu da Read ile AÇILDI ve GÖRÜLDÜ.
+VO: Destek ve Hareket_SESLENDIRME.txt, cümle 1-7 (S1) + 8-9 (S2 açılışı).
+@handle: Destek ve Hareket_REFERANSLAR.txt — @mira4 · @kukla · @atolye · @iskelet ·
+@fensinif. Handle TARİF EDİLMEZ; kimlik handle'dan, HÂL kareden gelir.
+
+Lehçe kilidi (korpustan ölçüldü, uydurulmadı):
+ · KAMERA NİYETİ satırı Türkçe, İngilizce paragraftan ÖNCE, tek satır, gerekçeli.
+ · Klip süregelen bir hâlle AÇILIR (`opens with ... already ...`) ve olay klip İÇİNDE biter.
+ · Kamera YANLAMASINA gider, merceğe doğru değil; mesafe cümlesi zorunlu.
+   🔴 Bir uzuv merceğe geliyorsa kamera mesafesi KİLİTLİDİR (K4'te ölçülen kusur:
+   yaklaşan kamera + yaklaşan el = kol gövdeden kopuyor). K4 · K5 · K7 kilitli.
+ · Her blokta bir "begins X and ends Y" cümlesi.
+ · Negatifler bol, uzun ve SAHNEYE ÖZEL — çit değil, izin belgesi.
+ · Sabit kuyruk birebir · 190-215 kelime · `Camera:` paragrafın son yarısında.
+
+Bu sekansın kalıcıları: kimse konuşmaz, ağız hareketi yok · 5 saniyede oturmaktan
+doğrulma, ayağa kalkma, yürüyüşe BAŞLAMA, nesnenin el değiştirmesi YOK · @kukla'nın
+İPİ YOKTUR, iki omuz arasındaki pirinç halkadan asılıdır · @kukla kendiliğinden asla
+hareket etmez, yalnız taşındığı/itildiği için sallanır · yazı taşıyan nesne (RESİM
+ATÖLYESİ tabelası, FEN BİLİMLERİ kitabı) sabit kütledir, kamera ona YAKLAŞMAZ.
+=========================================================================
+
+
+-------------------------------------------------------------------------
+### K1 | 5s · VO "Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı."
+KAMERA NİYETİ: Açılış — seyirci önce ODAYA girsin, sonra asılı şeyi bulsun. RESİM ATÖLYESİ tabelası kadrajda olduğu için mesafe KİLİTLİ; kamera masanın ön kenarı boyunca sağa yanlamasına kayar ve kukla sağ üçlüğe oturunca tam durur.
+-----
+The clip opens with the air already moving: a draught has reached the hanging @kukla and it is still travelling back against the cabinet door, the whole carved body swinging from the brass ring between its shoulders as one piece, every joint holding the angle it was turned into. It goes past plumb, comes back, taps its heel softly on the oak, sways twice smaller and hangs still, its hard shadow sliding with it and stopping. Dust turns through the window light and the apron stirs on its peg. @mira4's head turns toward the small sound, her shoulders dropping as she finds it. It begins with a room she has walked into and ends with one thing in it that hangs instead of standing. Camera: a slow lateral dolly right along the table at adult eye level, the out-of-focus plaster sphere sweeping the near lower corner, its distance from the cabinet unchanged, stopping with the puppet held in the right third. The puppet never takes a step, never bends a knee and never leaves its hook, and the RESİM ATÖLYESİ sign stays rigid at that same constant distance, its lettering never re-spelling, wobbling or growing. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K2 | 5s · VO "Mira onu indirdi; kolu tıkırdayarak büküldü."
+KAMERA NİYETİ: Olay tek eklemde ve pirinç bilyede; kamera zaten yakın, DAHA yaklaşmaz — eller merceğe dönük olduğu için mesafe kilitli, tezgâh hizasında birkaç santim sola süzülür ve dirsek karşıdan oturunca durur.
+-----
+The clip opens with the arm already going over: @mira4 has @kukla up off its hook and braced upright in her left fist, and her right thumb is still bearing down on the brass ball of its elbow. The loose forearm sinks a finger's width, then whips up, overshoots past the right angle, drops back, swings twice shorter and locks square with a click she feels through the thumb. The puppet kicks back and she catches it. The bench takes the small shock: the masking tape roll rolls a hand's width and stops on its rim, the water in the jar rings once, her hair moves against her cheek. Only that one elbow changes angle, no second joint moves anywhere, and the head, chest and legs ride the recoil as one rigid piece. Her brows lift and her lips stay closed; she begins moving a piece of wood and ends feeling it stop her. Camera: it drifts a few centimetres left at bench height, keeps its distance from her hands unchanged and never closes on them, then eases to a full stop with the brass ball square to the lens. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K3 | 5s · VO "Kuklayı masaya oturttu ve elini çekti."
+KAMERA NİYETİ: Olay ELİN ÇEKİLMESİ ve kuklanın kendi başına kalması; kamera geri çekilen eli masa boyunca sabit mesafede uğurlar, kenarda bırakır ve tek başına oturan kuklada durur. Çöküş burada DEĞİL — o K4'ün olayıdır.
+-----
+The clip opens with the hand already leaving: @kukla is seated on the table edge with its back to the lens and @mira4's open palm is still travelling back from its wooden shoulder, the fingers spreading as they go. Left to itself the seated body tips forward from the hips as one rigid piece, every joint holding its carved angle, goes a few degrees past upright, rocks back, sways twice smaller and settles plumb on the edge, its shadow swinging with it and stopping. It does not fold at the waist, does not slide and does not fall; this clip only sets it down. The curl of paper on the near corner lifts and drops, the water in the brush jars trembles one ring. Her hair falls forward as she watches. She begins putting a thing down and ends finding out it can be left. Camera: a slow lateral track left along the boards at table height, riding back with the withdrawing hand at an unchanging distance, letting it go at the frame edge and coming to a full stop on the puppet sitting alone. The brass-lidded jar at the near right is never approached. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K4 | 5s · VO "Kukla olduğu yerde yığıldı."
+🔴 YENİDEN-BASIM — VO'nun tek olayı olan çöküş kare açılmadan bitmiş; K3 zaten "el çekilmiş" kareyi verdiği için K4 dik oturan kukladan başlamalı ki cümle ekranda gerçekleşsin.
+KAMERA NİYETİ: Klibin tek olayı ÇÖKÜŞTÜR ve @mira4'ün açık eli merceğe en yakın uzuvdur — kamera TAM KİLİTLİ. Ölçüldü: uzuv merceğe gelirken kamera da yaklaşırsa motor kolu gövdeden koparıp masaya dev bir nesne bırakıyor.
+-----
+The clip opens with the seated @kukla already giving: it has been sitting upright on the oak boards and the first slip has started at the hips, the torso leaning further than wood should lean, while @mira4's open hand hangs in the air where the shoulder was, not touching it. Then the whole carved body lets go in order, the hips folding first, the spine following, one shoulder swinging down, the head dropping last, and it sprawls flat across the boards, one loose wooden hand knocking the wood once, the near foot rocking, then nothing. The table registers it: the brass lids on the foreground jar chatter, the water in both brush jars rings, dust leaps through the window light. Her fingers stay five and stay the same length, and her hand stays exactly where it was, still holding the shape of a shoulder that is gone. She begins holding a thing up and ends holding nothing. Camera: fully locked, no push, no drift, no reframe, the focal length and focus plane both fixed for the whole clip, her outstretched hand nearest the lens keeping exactly its size and never approached. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: YENİDEN-BASIM bekliyor — bu motion DİK OTURAN kukla karesi için yazıldı. Mevcut images/4.png kukla zaten yığılmış hâlde açıyor; o kareyle basılırsa VO'nun olayı ekranda gerçekleşmez.
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K5 | 5s · VO "Mira ise sabahtan beri ayaktaydı ve yığılmamıştı."
+KAMERA NİYETİ: Karşılaştırma karesi — yığılmış kukla ön planda, ayakta duran kız arkada; kamera hiçbir yere gitmez ki iki gövde AYNI karenin içinde kıyaslansın. Ayrıca FEN BİLİMLERİ kitabı kadrajda, yaklaşma yasak.
+-----
+The clip opens with the weight already shifting: @mira4 stands at the table with the fallen @kukla huge and soft across the foreground, halfway through moving her weight off one foot onto the other. The transfer completes, her hip settling, her heel taking the load, the apron hem swinging forward and back twice before it hangs still, and she is exactly as tall at the end as at the start; nothing in her gives. Then her free palm comes off the table edge and hangs at her side, so for the last beat she is holding herself up with nothing at all. Steam bends and straightens over the tea glass, dust turns through the window light. It begins with a girl who happens to be standing and ends with standing being something her body is doing. Camera: locked off at chest height and square to the table, distance and focal length unchanged so the fallen wood and the upright girl stay inside one frame. The FEN BİLİMLERİ book stays rigid and flat against her at that same constant distance, its cover lettering never re-spelling, wobbling or growing, and the fallen puppet never stirs. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K6 | 5s · VO "Peki insanı ayakta tutan şey neydi?"
+KAMERA NİYETİ: Soru karesi — kamera tahta hizasında sola yanlamasına süzülüp yığılmış kuklayı geçer ve onun gözlerinde durur; RESİM ATÖLYESİ tabelası sağ kenarda olduğu için mesafe kilitli, tabelaya yaklaşılmaz.
+-----
+The clip opens with her chin already lifting off her wrist: @mira4 lies along the table behind the fallen @kukla, still pressing down into her forearms as her head comes up a little, past where it will stop, dropping back, settling. Her hair swings forward across her face and falls back. The press goes through the boards: the puppet's near foot rocks once in the out-of-focus foreground and stills, the powder jar lid chatters, dust lifts through the window light. Then her eyes leave the wooden body and go up into the empty air above it, her brows drawing in. She begins looking at a thing that fell and ends looking for the thing she has that it does not. Her face stays the same face as it rises. Camera: a slow lateral glide left at board level, its distance from her unchanged and never closing, the blurred wooden thigh sweeping the near lower edge, easing to a full stop with her eyes held on the middle third. The RESİM ATÖLYESİ sign at the right edge keeps exactly its size and softness and is never approached or resolved. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K7 | 5s · VO "Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar."
+KAMERA NİYETİ: Üç kahraman TEK kolun üstünde bulunuyor — kamera kol boyunca yanlamasına yürür (dirsek çıkıntısı, bilek kıvrımı, yumruk) ama mesafesini bozmaz; el merceğe yakın olduğu için yaklaşma yasak, tek sarsıntı yumruğun masaya vurduğu andır.
+-----
+The clip opens with the three fingertips already bearing down: @mira4's forearm lies flat along the table and her other hand presses three pads into it, the skin blanching white under each. She rolls them a hair and something hard refuses underneath. Then the hand on the table closes into a fist, fast, a cord standing up at the wrist, the forearm tightening and thickening, and the arm jumps a centimetre off the boards and knocks down. The water in the brush jars rings, the grey cloth slides a finger's width, dust bursts through the light. The fist springs open, the fingers splaying past straight, closing, settling flat, and colour floods back into the three pale marks at three different speeds. She begins pressing her own arm and ends finding three different things under one skin. Camera: it tracks laterally along the arm at table height, from the elbow ridge to the wrist fold to the fist, its distance from the skin unchanged and never closing on the fingers, taking one small jolt on the knock. The forearm never lengthens, no extra finger appears, and the open hand stays attached to her own arm throughout. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K8 | 5s · VO "Mira kuklayı alıp fen sınıfına geçti."
+KAMERA NİYETİ: Varış karesi — yürüyüş klip içinde başlamaz, BİTER; kamera koridor boyunca sağa yanlamasına süzülüp odanın sağ köşesini seyirciye açar ve klip biterken hâlâ süzülmektedir.
+-----
+The clip opens with the walk already ending: @mira4 has come down the aisle with @kukla riding against her chest still absorbing the last of it, her front foot planted, her body carrying a half step past it and rocking back onto her heels. Her skirt swings forward and back, and the puppet's loose hand and hanging foot swing on from the rhythm and go still, its body riding against her as one rigid piece that never moves on its own. Behind her the chair her shoulder clipped rocks up on two legs, comes down and stills, and the mug of pencils chatters. Then her chin lifts and her head turns to the far right of the room. She begins as a girl arriving and ends as a girl who has seen what she came for. Sunbars lie across the floor with dust turning inside them. Camera: a slow lateral drift right at child height at an unchanging distance, opening the right side of the room as it travels, still travelling when the clip ends. The skeleton model in the corner stays completely still on its stand, no bone moving, none added, none lighting up. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+-------------------------------------------------------------------------
+### K9 | 5s · VO "Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu."
+KAMERA NİYETİ: Karşılaştırmayı KAMERANIN KENDİSİ yapar — oturan kukladan kafatasına doğru tek bir yanlamasına yükseliş ikisini aynı hareketin içinde tutar; mesafe kilitli, iskelete yaklaşılmaz, klip yay hâlâ sürerken biter.
+-----
+The clip opens with her head already going up: @mira4 stands with one palm still flat on the desk beside the seated @kukla, her chin travelling up the length of @iskelet, a little past the skull, coming back down, settling. Her hair swings off her shoulders and drops. The push she is coming off shakes the desk: the seated puppet rocks back as one rigid piece with every joint holding its carved angle, comes forward, sways twice smaller and settles; the mug of pencils rattles; the stacked notebooks in the foreground slide a finger's width. @iskelet hangs still on its stand throughout, no rib added, no bone moving and nothing on it glowing, only its long shadow swinging across the floor as the light shifts. Her brows lift. She begins looking at a model in the corner and ends seeing the small wooden thing behind her made large. Camera: one continuous lateral rise from the seated puppet across to the skull at an unchanging distance, holding both shapes inside the same move and never closing on either of them, and it is still rising when the clip ends. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+SEKANS 1 MOTION BİTTİ — 9/9 blok.
+Kamera: K1 · K2 · K3 · K6 · K7 · K8 · K9 yanlamasına · K4 · K5 tam kilitli.
+Mesafe kilidi tüm bloklarda yazılı. Uzuv merceğe gelen kareler: K4 (açık el),
+K5 (uzanan kol yok ama kitap yazısı kilidi), K7 (kol ve açık el) — üçünde de
+kamera yaklaşmıyor.
+=========================================================================

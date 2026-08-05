@@ -1,0 +1,114 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · MOTION · S4 · K28-K36
+Lehçe: İSPATLANMIŞ KORPUS (5. Sınıf Hücre ve Organelleri + 6. Sınıf Bitkilerde Üreme)
+=========================================================================
+Kaynak kare: images/28.png … images/36.png. Dokuzunun dokuzu Read ile AÇILDI ve gözle okundu.
+VO: Destek ve Hareket_SESLENDIRME.txt cümle 28-36. Kelime bandı 190-215 (kuyruk dahil).
+
+🔴 BU ARALIĞIN ANA RİSKİ — UZUV/KAMERA ÇAKIŞMASI (bugün K4'te ölçüldü)
+Bir uzuv merceğe doğru gelirken kamera da yaklaşırsa motor kolu kaybediyor: el gövdeden
+kopup dev bir nesne olarak masada kalıyor. Bu aralık el/kol/omuz hareketiyle dolu.
+Kural burada uygulandı: uzuv merceğe geliyorsa kamera MESAFEYİ KİLİTLER; kamera hareket
+edecekse uzuv merceğe DEĞİL, kadraj düzlemine paralel gider.
+
+🔴 İKİNCİ KISIT — HAREKET BAŞLAMAZ, BİTER (Bitkilerde Üreme A-K01-K14 başlığından birebir)
+"5 saniyede oturmaktan doğrulma, ayağa kalkma, yürüyüşe başlama, nesnenin el değiştirmesi YOK."
+Gövde bir yerden bir yere GİTMEZ. Yerinde kalan hareket (eğilme, bastırma, yumruk, kas) serbest,
+ama klip o hareketin BAŞLAMASINI değil BİTİŞİNİ alır — hareket klipten önce başlamıştır, klip
+son bölümü ve sönümlenip durmasını taşır. `The clip opens with ... already ...` bunun aracıdır.
+Bu aralıkta 9 blok bu gözle tarandı; dördü (K32 · K34 · K35 · K36) buna göre düzeltildi:
+  · K32 baskı klipte BAŞLIYORDU → artık iniş sürüyor, klip varışı + bırakışı alıyor
+  · K34 el tezgâhta GERİ ÇEKİLİYORDU (yer değiştirme) → el durduğu yerde açılıp kalıyor
+  · K35 yumruk taşa VURUYORDU (el önce kalkmalı, üstelik merceğe doğru) → el zaten taşta,
+    kapanışın kendisi tezgâhı sarsıyor; kalkış yok, merceğe yaklaşma yok
+  · K36 kol klipte KALKIYORDU → kalkış sürüyor, klip varışı + oturmayı alıyor
+Nesne hiçbir blokta el değiştirmiyor; K34'te kukla devriliyor, alınmıyor.
+
+BAKED-IN YAZI KİLİDİ: K29 ("DİZ" kartı) ve K34 ("ATÖLYE" damgası) — kamera yazıya yaklaşmaz.
+=========================================================================
+
+
+### K28 | 5s · VO "Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler."
+KAMERA NİYETİ: Sallanan bacak kadraj düzlemine paralel gider, merceğe DOĞRU gelmez — bu yüzden kamera hareket edebilir; masa sırası boyunca sağa, iskelete olan mesafesi hiç değişmeden yanlamasına kayar ve yanan omuz ile yanan diz aynı kadrajda oturunca tam durur.
+-----
+The clip opens with the swing already loaded: the classroom skeleton on its chrome post holds its free leg drawn back a hand's width behind the plumb line of the pole, one arm high out of frame, the amber ring at its shoulder and the amber ring at its knee both burning steady. Then the leg lets go — it drives forward fast through a wide flat arc across the frame, kicks well past the plumb line, sails back, rocks twice shorter and shorter and hangs dead straight. The clip begins with a loaded limb and ends with a limb that has spent itself. Shin and thigh keep their carved lengths the whole way, the skeleton nods once on its disc, the hanging arm bones tick against the ribs, dust turns in the window light. Camera: a slow lateral dolly right along the desk row at chest height, its distance from the post never changing and never closing on the skeleton, stopping with the lit shoulder and lit knee in one frame. Exactly two amber rings stay lit on their own joints, no third joint lights and no bone stretches or gains a second knee. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+🔴 YENİDEN-BASIM — VO'nun öznesi Mira'nın DİZİ, ama karede diz bir olay olarak yok: Mira geniş planda dimdik duruyor, tepside kemik + pirinç menteşe + "DİZ" kartı var; motion bu boşluğu kapatamaz, kadraj Mira'nın kendi bükülen dizini almalı.
+KAMERA NİYETİ: Kadrajda "DİZ" kartı var — kamera mesafesi klip boyunca KİLİTLİ, karta hiç yaklaşmaz; tezgâh hizasında birkaç santim sola kayıp tepsiye tam karşıdan bakarak durur, Mira'nın kolu merceğe değil masa düzlemine yüklenir.
+-----
+The clip opens with @mira4 already coming down over the tray: her flat hand is on the near edge of the long table and her weight is still travelling into it, the ivory thigh bone standing up out of the open brass hinge below her. Then the table takes her weight — at that instant the bone tips back a hair, falls through the hinge's whole arc, claps flat onto the wood, bounces a few degrees up, drops shorter and lies still with the hinge shut, the polished pin dragging a line of window light down the metal. The clip begins with an open angle of bone and brass and ends with that angle closed. Her hair swings forward past her cheek, the stacked enamel trays ring faintly, dust turns in the window light. Camera: it drifts a few centimetres left at counter height, keeps its distance unchanged and never closes on the tray, then eases to a full stop square to the hinge. The small card lies flat and squared to camera at that same distance, a settled mass whose stamped word holds its ink and never re-spells, wobbles or melts. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K30 | 5s · VO "Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır."
+KAMERA NİYETİ: Mira'nın eli kadrajın solunda ve merceğe değil sağa, tezgâh boyunca iter — kamera ona hiç yaklaşmaz; sarsıntıyla bir kez tepki verir, sonra omurga boyunca sabit mesafede AŞAĞI iner ve eğilmenin en küçük olduğu bel boşluklarında durur.
+-----
+The clip opens with the shove already under way: @mira4 behind the bench has her flat palm sliding along the dark counter toward the round stand base, the skeleton's stack of small vertebrae standing vertical on its post with one amber light burning in each disc gap. Then her palm reaches the base — at that instant the whole column leans over as one row, every block turning a hair against the one below, goes a few degrees further than it means to, springs back past upright, rocks twice smaller and stands still again. The clip begins with a straight column and ends with a column that has moved as far as it can. The hanging arm bones swing at the frame edges and tick against the ribs, the stacked trays ring once, dust jumps in the window light. Camera: it kicks once with the shove, then travels straight down the column at an unchanging distance, never closing on her hand, and stops at the lumbar gaps where the lean was smallest. The same lights stay in the same gaps, none added and none lost, and no new vertebra grows between them. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K31 | 5s · VO "Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz."
+KAMERA NİYETİ: İniş kadraj düzleminde ve aşağı doğru, merceğe doğru değil — kamera mesafeyi hiç değiştirmeden tezgâh boyunca sağa panlar, Mira'nın kavisli sırtından iskeletin aynı kavsine geçer ve ikisini tek kadrajda tutarak durur.
+-----
+The clip opens with @mira4 already going down over the bench: the girl in the teal ribbed sweater has both hands flat on the pale wood and her back is still rolling into one long curve from neck to hip, her elbows giving as the weight arrives, the skeleton hanging forward over its post in exactly the same curve. Then her descent runs out — at that instant she dips past where she meant to stop, comes back up a few centimetres and settles low over the wood, her eyes on the skeleton. The clip begins with a girl bending and ends with two spines drawing the same line. Her back curves along its whole length rather than folding at one point, her sweater pulls at the shoulder, the open cabinet door drifts and knocks against its frame. Camera: a slow pan travels right along the bench at an unchanging distance, never approaching her hands or the post, and stops with her curved back and the skeleton's identical curve in one frame. Her arms keep their own lengths through the descent and neither spine kinks into a hinge at any point. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K32 | 5s · VO "Oynamaz eklemler kafatasındadır ve asla hareket etmezler."
+KAMERA NİYETİ: 🔴 Eller zaten mercek düzleminde ve kadrajın yarısını kaplıyor — kamera TAMAMEN KİLİTLİ, tek santim yaklaşmaz ve odak düzlemi altın dikişte sabit kalır; kuvvet aşağı iner, hikâyeyi kıpırdayan el değil KIPIRDAMAYAN dikiş anlatır.
+-----
+The clip opens with the push already arriving: @mira4's two hands are cupped over the crown of the skull, her straight arms already carrying the line of her weight down into the bone, the gold suture running down the dome between her spread fingers. Then the load reaches the bench — at that instant her fingertips flatten and go white, her knuckles pale, her hair swings past her temples, and the skull takes the whole load as one solid piece, grinding a millimetre across the bench before it stops hard. The clip begins with a girl leaning on a bone and ends with a bone that refused her. She holds it, then lets go, her shoulders dropping as the breath goes out, eyes wide, lips closed. The jars on the sill rattle once and the spider plants tremble. Camera: fully locked — no push, no drift, no reframe, the focal length and focus plane both fixed on the suture for the whole clip, her hands never approached. Her fingers stay on the surface and never sink into the bone, and the gold zigzag holds its exact line, width and branches from first frame to last. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K33 | 5s · VO "Oradaki kemikler birbirine adeta kaynamıştır."
+KAMERA NİYETİ: 🔴 Elin merceğe yakın, kâğıt ise soldan sağa kadraj düzleminde ilerliyor — kamera MESAFEYİ KİLİTLER ve elin üstünden içeri itmez; yalnız birkaç santim sağa kayıp mühürlü altın dikişe karşıdan oturarak durur.
+-----
+The clip opens with the strip already travelling: @mira4's fingers hold the torn piece of squared paper a fingertip clear of the gold seam and it is still moving in toward the skull, her eyes down on the contact point. Then the torn edge meets the seam — at that instant it stops dead, bows up hard under her push, its loose fibres standing along the stopped edge, arching until it can arch no further while not a millimetre of it enters the join. The clip begins with a gap being closed and ends with a join that will not take anything. Then she eases off and the paper snaps flat, flutters once and hangs still; her forearm brushes the mug and the pencils tick against each other and lean back, her eyes lifting as the answer arrives. Camera: it holds its distance from her hand and never pushes past her knuckles, drifting a few centimetres right at the same height and stopping square on the sealed seam. The paper stays one strip with no piece tearing free, and the gold line keeps its exact width and never opens, parts or lets the edge through. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K34 | 10s · VO "Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?"
+KAMERA NİYETİ: Kadrajda büyük ATÖLYE damgası var — kamera BAŞTAN SONA KİLİTLİ, tezgâh hizasında ve sıraya tam karşıdan; uzanan kol tezgâh boyunca yanlamasına gider, merceğe değil. On saniyeyi hareket değil BEKLEYİŞ taşır: olay biter, kız bakar, hiçbir şey olmaz.
+-----
+The clip opens with @mira4's hand already reaching in along the counter: the ivory thigh bone lies across the near stone, the brass-pinned pair beyond it, and @kukla lies on its side with the gold ring at its hip catching the light. Then her fingers meet the wooden shoulder and tip it — at that instant the puppet rolls onto its back as one solid piece, every joint holding the carved angle it already had, drifts a few degrees past flat, rocks gently back twice and rests. The thigh bone rolls a quarter turn and settles against the pinned pair, the stacked trays ring softly, the pencils lean in their mug. The clip begins with a set of finished parts and ends with a body that will not use them. Her hand stays where it stopped, opening flat on the stone, her shoulders dropping with one long breath while nothing else happens. Camera: locked off at bench height, square to the row, the framing and the focus plane fixed from first frame to last. The stamped box holds its violet letters, never re-spelling or wobbling, and no limb of the puppet moves by itself. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K35 | 5s · VO "Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu."
+KAMERA NİYETİ: 🔴 Yumruk merceğe en yakın uzuv, kapanışı ise dikey ve kadraj düzleminde — kamera taş hizasında MESAFEYİ KİLİTLER, yumruğa doğru itmez; darbede bir kez sarsılır ve pirinç bilyeye karşıdan bakarak yerinde kalır.
+-----
+The clip opens with the hand already closing: @kukla's arm lies along the dark stone, the brass ball at its elbow holding a hard line of light, @mira4's cheek down on her folded arm, her far hand still gathering, the spread fingers already dragging in across the stone. Then the fist seats — at that instant the knuckles rise white, the forearm tightens, and the last knuckle raps the stone as the hand shuts. The bench answers: the wooden arm hops a hair, the brass ball ticks and its light slides back, and the arm drops exactly as it lay, elbow at the same angle, giving nothing of its own. The clip begins with a jointed arm at rest and ends with an arm that moved only because the table was struck. Her hair swings across her cheek, the fist loosens open, the potted plants tremble. Camera: it stays low at stone level, its distance from her hand locked, never travelling toward the fist, kicking once on the rap and settling square on the brass ball. Her fingers keep their lengths as they curl and the wooden arm never bends at a joint by itself. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+KAMERA NİYETİ: 🔴 Kol göğsün önünde, kadraj düzleminde yukarı kalkar ve kukla ön planda merceğe yakın durur — kamera MESAFEYİ KİLİTLER, ne kola ne kuklaya yaklaşır; birkaç santim sola kayıp canlı kolu ve kuklanın ölü kolunu aynı kadrajda tutarak durur.
+-----
+The clip opens with the pull already near its top: @mira4 stands over the counter, her forearm coming up across her chest and her other hand spread over the upper arm, her shoulder still holding the load, @kukla lying full length on its back on the stone before her. Then the forearm arrives — at that instant the muscle under her fingers finishes swelling and goes rigid, lifting her fingertips clear, the arm nudging past where it means to stop before settling back full and still. The clip begins with an arm that looks exactly like the wooden one and ends with an arm doing the one thing the wooden one cannot. Her hair swings forward and drops back, her sleeve slides down the forearm and catches, her frown breaks as the eyebrows go up and the breath goes out, her eyes falling to the puppet. Camera: it drifts a few centimetres left at counter height, its distance from her arm and from the puppet both unchanged, and stops holding the working arm and the wooden arm in one frame. Her forearm keeps its length through the pull and the puppet's jointed arm never moves. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+S4 BİTTİ — 9/9 blok. Yeniden-basım önerilen: K29 (kadraj Mira'nın dizini almıyor).
+=========================================================================

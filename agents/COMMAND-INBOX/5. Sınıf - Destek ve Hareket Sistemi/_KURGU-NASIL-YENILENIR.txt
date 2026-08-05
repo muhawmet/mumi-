@@ -1,0 +1,6 @@
+Bu klasördeki blok dosyaları, MOTION/NN.txt klip dosyalarının KAYNAĞIDIR.
+Canlı set NN.txt'lerdir — edit-plan.mjs ve kaba-kurgu.mjs onları okur.
+Bir motion değişecekse NN.txt değiştirilir, sonra:
+  node scripts/edit-plan.mjs "5. Sınıf - Destek ve Hareket Sistemi" --yaz
+  node scripts/kaba-kurgu.mjs "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi" \
+       --klipler "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Destek ve Hareket Sistemi"

@@ -1,0 +1,99 @@
+DESTEK VE HAREKET SİSTEMİ — 5. SINIF · MOTION · S5 · K37–K44
+Kling 3.0 (i2v) · her klip 5s · Kelime bandı 190-215
+=========================================================================
+Kaynak kare: images/37.png … images/44.png (37.png = K37). Sekizi de Read ile AÇILDI ve GÖRÜLDÜ.
+Lehçe: ÇALIŞAN KORPUS (Hücre ve Organelleri MOTION/ · Bitkilerde Üreme BLOK A) — açılış
+`The clip opens with ... already ...`, her blokta "begins X and ends Y", uzun ve sahneye özel
+negatif, `Camera:` cümlesi sonda, sabit kuyruk birebir.
+VO eşlemesi: Destek ve Hareket_SESLENDIRME.txt cümle 37–44.
+
+KAMERA / UZUV KARARI (ölçülmüş kusur: uzuv merceğe gelirken kamera da yaklaşırsa uzuv kopar)
+  · Kadrajda BÜYÜK baked-in yazı olan kareler → kamera TAM KİLİTLİ: K37 (KAS) · K41 (İSTEMLİ)
+    · K43 (İSTEMSİZ). Kilitli kamerada uzuv merceğe gelebilir — K37 ve K41'in yumruğu burada.
+  · Yazı KÜÇÜK ama okunur olan kareler → kamera hareket eder ama MESAFE DEĞİŞMEZ ve yazıya
+    yaklaşmaz: K39 (SPOR çantası) · K44 (MİDE kaidesi).
+  · Kamera serbest olan kareler → hareket eden uzuv/kemik kadraj DÜZLEMİNE paralel çalışır,
+    merceğe doğru gelmez: K38 (model kemiği yanlamasına) · K40 (el plakanın üstünde kalır,
+    hiçbir uzuv merceğe gelmez) · K42 (kol yerinde kalır, kamera yalnız alçalıp pan yapar).
+
+YERİNDE-HAREKET KİLİDİ (çalışan korpusun başlık yasası, A-K01-K14'ten birebir)
+  5 saniyede oturmaktan doğrulma, ayağa kalkma, yürüyüşe başlama, NESNENİN EL DEĞİŞTİRMESİ
+  ve bir nesnenin bir yerden başka bir yere TAŞINMASI YOK. Sekiz blok bu gözle tarandı:
+  kasılma · gevşeme · ağırlık düşmesi · maket sallanması — hepsi yerinde. K40 bu yüzden
+  yeniden yazıldı (plakayı tezgâh boyunca çekmek TAŞIMAYDI; yerine plaka bırakılıp çakılıyor).
+  Her blokta yüklenme klipten ÖNCE başlar, klip tepeyi ve oturmayı alır.
+=========================================================================
+
+
+### K37 | 5s · VO "İşte motor buydu: kaslar."
+KAMERA NİYETİ: Kadrajda KAS harfleri var — kamera tam kilitli, mesafe ve odak uzunluğu klip boyunca sabit. Kilit olduğu için yumruk göğse doğru cesurca gelebilir; tezgâha inen darbe kadrajın kendi içinde kalemleri ve kuklayı bir kez konuşturur.
+-----
+The clip opens with the pull already starting: @mira4's flat hand on the steel bench is already curling, the fingertips dragging in a hair and her shoulder loading back. Then the arm goes — the hand snaps into a tight fist and drives up against her chest, the muscle balling hard under her sleeve, the fist punching past her ribs before it drops back, bobbing twice shorter and holding. The clip begins with a hand lying on a bench and ends with the engine found. The heel of her hand slaps the steel and the knock runs down the bench: the pencils clatter in the mug and @kukla rocks once as one carved piece, shoulder hip and knee holding their angles. Her hair swings late and a grin breaks on her closed lips. Camera: locked off at chest height, square to the bench, distance and focal length fixed throughout. Her forearm keeps its own length through the pull, the elbow bending only where an elbow bends, and no second arm enters frame; the three fibre letters hold as three separate letters, K A S, their strands staying wound and never re-spelling, wobbling or melting. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K38 | 5s · VO "Kaslar kasılırken kısalır ve bağlı olduğu kemiği kendine çeker."
+KAMERA NİYETİ: Kemik kadraj düzlemine paralel bir yay çiziyor, kamera ona yaklaşmıyor — tezgâh yüksekliğine inip sabit mesafede sağa süzülür ve karnı karşıdan alarak durur; çekme işini kemik yapar, kamera yalnız hizalar.
+-----
+The clip opens with the belly already loading: the brick-red muscle between the two pale bones is already drawing a hair longer. Then it snaps short and hauls — the forearm bone comes up through a fast arc, turning on its brass pin as one solid piece, swings past the closed angle, rocks back twice shorter and settles hard against the upper bone. The clip begins with a limp model hanging open and ends with one part having pulled the other. The belly piles into a high tight dome as it shortens; the long beige band whips up with the pull and slaps down in a slower ripple; the black base knocks the steel and the stacked trays ring once. @mira4 pulls her chin back, hair swinging late, lips closed. Camera: it drops to bench-top level and glides a short way right at an unchanging distance, easing to a stop square on the domed belly. The bone is the same length going up as it was hanging down and never bends, softens or gains a joint; the belly stays one belly and never splits or doubles, and its cord ends never turn into light. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K39 | 5s · VO "Gevşediğinde kemik eski yerine döner."
+KAMERA NİYETİ: Kadrajda SPOR yazılı çanta var — kamera ona yaklaşmaz; tezgâh boyunca sabit mesafede sola kayar, düşen kemiğin altını almak için birkaç santim alçalır ve kemik asılı kalınca durur.
+-----
+The clip opens with the belly already letting go: the long red muscle on its turned post is already slimming, the tension bleeding out. Then the bone hanging off its lower end drops through a wide fast arc, swings past straight down, comes back short of level, rocks twice smaller and hangs still, turning on its brass pin as one solid piece. The clip begins with a muscle carrying a bone and ends with the bone back where it started. The rush fans the long beige band on the counter — a ripple runs its waves from pin to pin and dies out — while dust turns in the window beam behind. @mira4's shoulders fall as she lets a breath go, her hair settling late, lips closed. Camera: a slow lateral glide runs left along the counter at an unchanging distance, dropping a few centimetres with the swing, and stops with the hanging bone square to lens. The canvas bag lies a dead weight, its printed face flat and squared and its navy wording holding its ink, never re-spelling, wobbling or lifting; the bone never lengthens, splits or comes away from the muscle. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K40 | 5s · VO "Vücudumuzda üç çeşit kas vardır."
+🔴 YENİDEN-BASIM — kare üç modeli yan yana dizilmiş bir tablo olarak gösteriyor, hiçbir cisim kıpırdayabilecek durumda değil ve Mira geniş planda uzakta duruyor; kareye tek gerçek olay olarak kolunu çekmesi kalıyor.
+KAMERA NİYETİ: Olay YERİNDE — plaka Mira'nın avucu altında zaten kalkık duruyor, bırakılınca tezgâha çakılıyor; taşıma yok, el değiştirme yok. Uzuv merceğe gelmediği için kamera serbest: tezgâh hizasında alçak bir itişle girer, çatırtıda bir kez sarsılır ve üç maketi birden alan kadrajda durur.
+-----
+The clip opens with the plank already tipped: @mira4 is already bearing down on the near end of the birch board so its far edge stands a hair clear of the steel. Then her weight comes off — the board drops flat and cracks against the bench. The three models ride the drop and answer in turn: the muscled forearm rocks first, then the pale tube, then the dark red heart, each swinging twice on its own turned base and coming upright. The clip begins with three objects standing in a row and ends with all three having moved. A grey puff of dust lifts along the board; her hair swings forward and settles late, her eyes stopping on the heart. Camera: a low push runs in at plank height, jolts once on the crack and settles square with all three models in frame. Her hand stays where it lies on the board and the board never travels across the bench; exactly three models are in frame from first to last, none added, none lost, each staying seated on its own base, and the plank stays one solid board that never bends, bows or splits. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K41 | 5s · VO "Çizgili kaslar, yani iskelet kasları, isteğimizle çalışır."
+KAMERA NİYETİ: Kadrajda İSTEMLİ levhası var — kamera tam kilitli, levha merceğe düz duruyor. Kilit sayesinde pazı cesurca kabarabilir; iradenin kanıtı kadrajın içindeki tek gövdede ve kameranın hiçbir yere gitmemesinde okunuyor.
+-----
+The clip opens with @mira4 already loaded: the raised fist is already sinking a little and her spread fingers are already pressing down over the top of her bare upper arm. Then she drives it up hard — the ball of muscle under her fingers jumps and hardens, lifting her fingertips clear, the fist punching past its high point before it drops back and pulses twice smaller as she squeezes and holds. The clip begins with a girl holding her own arm and ends with her arm having answered her. Her knitted cuff rides up the forearm and bunches, her hair swings off her shoulder and settles late, and a grin breaks on her closed lips. Camera: locked off at bench height, square to the tray, distance and focal length fixed throughout. Her arm stays her own arm — it thickens under the skin without growing any longer, the elbow bends only where an elbow bends, her gripping fingers ride over the swell and never sink into it or pass through it, and no second arm appears anywhere. The green plate keeps its letters exactly as printed and the models on the tray stand untouched. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K42 | 5s · VO "Hızlıdırlar ama çabuk yorulurlar."
+KAMERA NİYETİ: Kol ön planda ve yerinde kalıyor — kamera ona hiç yaklaşmaz, yalnız bir avuç kadar alçalıp ağırlığı takip ederek sağa döner; yorulma kolun kendi gevşemesinde, kamera onu bırakıp düşen şeye gider.
+-----
+The clip opens with her fingers already straining: @mira4's palm lies open on the birch tray with the small brass weight rocking on its heel, her fingertips already trembling. Then they give — the weight rolls off the heel of her hand, gathers speed down the tray, drops off the edge and cracks against the stone counter, bounces once, rolls into the beige cloth and stops dead in a fold. The clip begins with a hand holding something up and ends with an empty open hand. Her fingers flop open past flat, bounce once and go slack; the knock runs back up the tray and the near striped model tips twice on its red disc and comes upright. Her smile drains, her eyes down on her emptied hand, lips closed. Camera: it drops and pans right with the falling weight, its distance from her forearm unchanged, easing to a stop low on the weight in the fold. Her hand and forearm keep their own lengths as they go slack and never stretch, sag or reach toward the lens; exactly one brass weight is in frame, one solid piece that never splits, softens or glows. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K43 | 5s · VO "Düz kaslar isteğimiz dışında, kendiliğinden çalışır."
+KAMERA NİYETİ: Kadrajda İSTEMSİZ levhası var — kamera tam kilitli. Kilit burada anlamın kendisi: hiçbir el ve hiçbir kamera hareketi olaya karışmıyor, tüp kendi başına dönüyor ve Mira olaya ancak sonradan yetişiyor.
+-----
+The clip opens with the tube already stirring and no hand anywhere near it: the pale cylinder in its two wooden saddles is already leaning a hair back against the near block. Then it rolls fast a quarter turn the other way, clacks against the far saddle block, rolls back short, rocks twice smaller and settles crooked in its cradle. The clip begins with a row of objects sitting still and ends with one of them having moved on its own. The tray boards ring under the clack and both mounted models shiver once and go still; @mira4's hand jumps off the striped model, her head whips round to the tube, hair swinging late, eyes wide, lips closed. Camera: locked off at tray height, square on, distance and focal length fixed throughout. The amber line rides round with the roll and stays a thin drawn line on the tube's own surface, holding its exact width and never spreading into a haze, flaring or lifting off into a beam; the tube is the same solid cylinder after the roll, never softening, bending or lengthening, and the green plate keeps its letters exactly as printed. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K44 | 5s · VO "Mide ve bağırsak gibi iç organlarımızda bulunurlar."
+🔴 YENİDEN-BASIM — klibin anlatacağı şey karede zaten çizilmiş: amber çizgi tüpten mideye kesintisiz geçmiş durumda, yani bağlantı kurulmuş bitmiş; tüp ışıklı, mide sönük basılsa çizgi klip içinde gerçekten yol alabilirdi.
+KAMERA NİYETİ: Kaidede MİDE oyulu — kamera yazıya yaklaşmaz; boncuğun gittiği yöne sabit mesafede yanlamasına kayar ve mide yerine oturunca karşıdan durur, harfler klip boyunca aynı büyüklükte kalır.
+-----
+The clip opens with the amber line already retreating: it is dimming and drawing back into the pale tube, the gap going dark. Then it fires — a bright bead shoots out along the line, crosses the gap, runs the whole curve of the stomach's outline, overshoots the blind stub, snaps back onto it and thins away to nothing. The clip begins with a lit tube beside a dark shape and ends with the two joined by a journey. The outline lights up behind the bead and dies the same way; the stomach takes the arrival, rocks once on its base as one solid piece and settles upright. @mira4 lifts both palms off the tray, hair swinging late, lips closed. Camera: a slow lateral dolly follows the bead along the bench at an unchanging distance, easing to a square stop on the settling stomach. The bead and the line stay a drawn line on the surfaces and never wash the pale bodies into a glow or a lit fog; the gap between tube and stomach stays open air, and the carved word on the base holds its size and cut, never re-spelling or wobbling. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
