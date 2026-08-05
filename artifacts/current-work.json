@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "REFERANS PROMPTLARI HAZIR — @maket @mutfak @koridor @kedi, dördü de dünya kuyruğu İÇİNDE (makineyle eklendi; ilk sürüm kuyruksuzdu ve @kedi foto-gerçek çıktı). @efe basılmaz. Ayrıca bugün: kapı canlı MOTION'u görüyor, canary kilidi kodla zorunlu, Shot Card ölçeni kapıda, ref TAŞIR/TAŞIMAZ yasada, MOTION INTENT ayrımı + frame sha. 2602 test, 23 yeni fixture.",
-  "nextAction": "MAMİ 4 referans plakasını NB2'de bassın (sıra: maket → mutfak → koridor → kedi), sonra Sekans 1 (K01-K08). 56 motion'ı TEK GEÇİŞTE YAZMA — L1.",
+  "lastCompleted": "REFERANS PROMPTLARI TAM — 5 blok: @maket @mutfak @koridor @kedi (basılacak) + @efe GARDIROP VARYANTI (kimlik plakası değil, referans-edit: 'keep this exact character, change only the clothing'). Hepsinde dünya kuyruğu İÇİNDE, kopyala-yapıştır-bas. @efe'de güneş-ay rozeti korundu (tema: gece-gündüz ritmi), gardıroba HİÇBİR yazı eklenmedi — morph'un birinci sınıfı ekrandaki yazı.",
+  "nextAction": "MAMİ referansları bassın: @efe varyantı (mevcut plakaya edit) + @maket → @mutfak → @koridor → @kedi. Sonra Sekans 1 (K01-K08). 56 motion'ı TEK GEÇİŞTE YAZMA.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T11:14:33.917Z",
+  "updatedAt": "2026-08-05T11:23:29.882Z",
   "updatedBy": "claude",
-  "baseCommit": "7009799"
+  "baseCommit": "50bb92a"
 }
