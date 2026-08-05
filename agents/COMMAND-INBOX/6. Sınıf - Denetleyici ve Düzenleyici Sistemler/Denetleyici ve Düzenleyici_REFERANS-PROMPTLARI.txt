@@ -1,0 +1,166 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — BASILACAK REFERANS PROMPT'LARI
+=========================================================================
+Motor: Nano Banana 2 · Dünya: pixar_3d_edu · register EDU
+Kaynak: _REFERANSLAR.txt (kimlik ve kilitler) + _DUNYA-KUYRUGU.txt (üç satır, BİREBİR)
+
+@efe BASILMAZ — önceki videolardan var (Eşeyli · Kütle · Bitkilerde · Hayvanlarda).
+Basılacak DÖRT referans: @kedi · @maket · @mutfak · @koridor
+
+🔴 HER PROMPTUN SONUNA `_DUNYA-KUYRUGU.txt`'teki ÜÇ SATIR (STYLE / LIGHT AND PALETTE /
+   NEGATIVE) BİREBİR yapıştırılır. Buraya kopyalanmadı — tek kaynak o dosya, iki nüsha
+   iki gerçek üretir. Ölçüldü (Hücre): elle yazılınca 53 karede 53 farklı sürüm doğdu.
+
+🔴 REFERANS PLAKASI ≠ SAHNE. Plaka nesneyi/mekânı TANITIR; sahneye KADRAJINI taşımaz.
+   Her ref'in TAŞIR/TAŞIMAZ satırı §4a.1 gereği aşağıda — ölçüldü: kadraj kilidi
+   yazılmayan karelerde ref kendi stüdyo kadrajını ithal ediyor (ayak kadrajda 7/7 kötü
+   kare, 0/4 iyi kare).
+
+=========================================================================
+1 · @kedi — EV KEDİSİ
+=========================================================================
+TAŞIR    : kimlik (tür · desen · boyut · mizaç) · kürk malzemesi
+TAŞIMAZ  : poz · kadraj · zemin · aydınlatma yönü · hareket (atlama/koşma)
+KAPSAM   : K03 · K46 · K47-K49
+KAYNAK   : basılacak — plaka üretildikten sonra yolu ve sha'sı bu satıra yazılır
+UYUM     : pixar_3d_edu · EDU
+ONAY     : —
+
+-----
+A single Anatolian tabby house cat sits calmly in three-quarter view on a plain warm-neutral
+surface, its whole body inside the frame and its tail curled loosely around its front paws.
+The coat is grey-brown mackerel tabby: dark vertical striping down the flanks, a paler
+cream chest and chin, faint rings on the tail, and a soft M marking above the eyes. Medium
+build, an ordinary healthy house cat, neither kitten nor heavy adult. The fur reads as
+individual layered strands catching light along their length rather than as one soft mass,
+denser at the ruff and shorter over the muzzle. The eyes are calm and open, amber-green,
+the pupils narrowed in even indoor light. Both ears stand upright and forward. Nothing is
+in its mouth, nothing is held, no collar, no tag, no bell. The cat is still — sitting, not
+walking, not leaping, not stretching. Neutral even lighting from the front and slightly
+above, no dramatic key, no rim, no coloured gel, so that identity reads before mood.
+Plain uninterrupted background of one warm-neutral tone, no room, no furniture, no window,
+no plants, no other animal, no person, no hand.
+NEGATIVE (kare-özel): NO collar, NO bell, NO leash, NO toy, NO food bowl, NO second cat,
+NO kitten proportions, NO ginger or black or white coat, NO long-haired breed, NO mid-jump
+or running pose, NO room interior, NO window, NO concept glow of any colour on the fur.
+[+ DÜNYA KUYRUĞU üç satırı]
+-----
+
+=========================================================================
+2 · @maket — OKUL TİPİ SİNİR SİSTEMİ MAKETİ  (dersin en çok dönen nesnesi, 14 kare)
+=========================================================================
+TAŞIR    : geometri (parça yerleşimi ve oranları) · plastik malzemesi · ahşap taban ·
+           pirinç plaka ve üstündeki Türkçe harf
+TAŞIMAZ  : kadraj · mesafe · ışık yönü · hangi parçanın aydınlandığı · açılma/dönme
+KAPSAM   : K09-K14 · K16-K18 · K20-K21 · K24-K26 · K30-K31 · K34 · K53
+KAYNAK   : basılacak
+UYUM     : pixar_3d_edu · EDU
+ONAY     : —
+
+-----
+A school-type anatomical model of the human nervous system stands alone on a plain
+warm-neutral surface, shown from the front in three-quarter view, the whole model inside
+the frame with clear air above it. The model is a BUST ONLY — head and neck, cut cleanly
+at the base of the neck. There is no torso, no chest, no internal organs, no cross-section
+of the body. The left half of the skull is a hinged removable lid, currently lifted away
+and set down beside the base, so the inside is open to view: a large painted plastic BRAIN
+fills the upper cavity, its folds moulded as raised ridges and sunk grooves; behind and
+below it sits a smaller, finely ridged CEREBELLUM; in front of the cerebellum runs a thin
+cylindrical MEDULLA; from there a SPINAL CORD descends behind the neck and ends where the
+neck is cut. Each part is painted a slightly different muted tone so their boundaries read
+without any label or arrow. The material is hard matte school plastic with a thin paint
+coat, worn at the edges and finely scratched — never wet, never bloody, never fleshy. The
+model rests on a base of open-grain wood under a satin varnish, the grain line carrying the
+light along its own length. Screwed flat to the front of that base is an engraved brass
+plate reading İNSAN SİNİR SİSTEMİ, spelled letter by letter İ-N-S-A-N space
+S-İ-N-İ-R space S-İ-S-T-E-M-İ, with the dotted İ carrying a clear separate dot; the metal
+carries an anisotropic brushed highlight, one specular stretched in a single direction
+along the grain of the brushing, and the letters are cut INTO the brass with darkened
+recesses, never raised on top of it. Even neutral lighting from the front and slightly
+above; every part of the model is lit equally.
+NEGATIVE (kare-özel): NO torso, NO chest, NO body cross-section, NO internal organs, NO
+veins, NO blood, NO wet or fleshy surface, NO glowing part, NO coloured light on any
+section, NO arrows, NO leader lines, NO printed labels other than the brass plate, NO
+English text, NO second model, NO hand, NO person, NO room interior.
+[+ DÜNYA KUYRUĞU üç satırı]
+-----
+
+=========================================================================
+3 · @mutfak — KIŞ SABAHI ANADOLU EV MUTFAĞI
+=========================================================================
+TAŞIR    : mekân kimliği · yerleşim · malzemeler · pencere buğusu · ışık KARAKTERİ
+TAŞIMAZ  : kadraj · lens · kamera yüksekliği · demlikteki suyun rengi (süreklilik zinciri
+           kareye aittir) · camın silinmişliği (K33/K56'da değişir) · figür
+KAPSAM   : K01-K08 · K19 · K27-K34 · K37-K38 · K44-K50 · K53-K56
+KAYNAK   : basılacak
+UYUM     : pixar_3d_edu · EDU
+ONAY     : —
+
+-----
+An empty Anatolian home kitchen on a winter morning, shown as a wide establishing view with
+no person and no animal anywhere in the frame. A dark stone counter runs along the near
+wall, a light dusting of dry matte flour across one end of it — every grain reading
+separately rather than as one mass, its edges lightly scattered. On the stove sits a
+double-stacked Turkish teapot: a wide water pot below and a smaller brewing pot above, the
+upper body of enamel with a glass window so the colour of the liquid inside is visible; the
+liquid is COLOURLESS at this stage. Beside it stands an enamel milk pot: fired vitreous
+enamel, hard-glossy, chipped at one edge where the dark metal shows through. A working
+wooden-cased clock hangs on the wall, its face an aged enamel dial with oil-painted
+numerals sunk INSIDE the surface and never laid on top of it. Open shelves carry glazed
+ceramic jars and enamel tins. The window is completely fogged with winter condensation —
+matte scattering condensation glass that passes light but passes no image, with beaded
+droplets of every size gathered where the fog thins; nothing outside is visible. A thin
+tea glass stands on the wooden table. Light: a low winter sun passes through the fogged
+glass and lays a diffuse, soft, warm fill across the room; a second and warmer source
+rises from the open mouth of the stove low on one side. All metal carries an anisotropic
+brushed highlight, one specular stretched in a single direction along the grain of the
+brushing. Wood shows open grain under satin varnish.
+NEGATIVE (kare-özel): NO person, NO child, NO adult, NO hand, NO cat, NO amber or coloured
+liquid in the brewing pot, NO clear view through the window, NO wiped patch on the glass,
+NO English text, NO modern appliance, NO concept glow, NO steam rendered as a graphic
+shape, NO printed labels on the jars.
+[+ DÜNYA KUYRUĞU üç satırı]
+-----
+
+=========================================================================
+4 · @koridor — MUTFAĞA AÇILAN DAR KORİDOR  (dersin ikinci taşıyıcısı: kapı pervazı)
+=========================================================================
+TAŞIR    : mekân kimliği · pervazdaki boy çizgileri ve yıllar · palto · iki ayakkabı ·
+           bisiklet · ışığın tek yanal karakteri
+TAŞIMAZ  : kadraj · lens · yükseklik · figür · bisikletin hareketi
+KAPSAM   : K01 · K23 · K39-K43 · K51-K52
+KAYNAK   : basılacak
+UYUM     : pixar_3d_edu · EDU
+ONAY     : —
+
+-----
+A narrow home hallway opening onto a kitchen, empty of people, shown lengthwise so the far
+doorway is visible. The wooden DOOR FRAME on one side is the subject: up its edge run
+pencil height marks made over several years, each a thin graphite line pressed into the
+open-grain wood, with a handwritten year beside it — 2019, 2021, 2023 — spelled digit by
+digit, the lower marks faded and the topmost line the freshest and darkest. The marks climb
+unevenly, closer together low down and further apart near the top. A heavy winter coat hangs
+from a peg on the wall, its woven stitch texture and slight fiber fray visible at the hem.
+On the floor by the door stand two pairs of shoes: one visibly OUTGROWN and worn, its heel
+collapsed and its toe scuffed, and beside it a newer, clearly larger pair. A bicycle leans
+still against the wall, both wheels on the floor, kickstand unused, not ridden and not
+falling. Light: a single lateral shaft spills in from the kitchen doorway and rakes across
+the door frame so the pencil lines catch along their length; the rest of the hallway stays
+cool and quiet. Wood shows open grain under satin varnish, the grain line carrying the light
+along its own length.
+NEGATIVE (kare-özel): NO person, NO child, NO adult, NO hand, NO figure in the doorway, NO
+moving bicycle, NO English text, NO framed photographs of people, NO concept glow, NO
+arrows or measurement graphics beside the height marks, NO ruler or tape measure.
+[+ DÜNYA KUYRUĞU üç satırı]
+-----
+
+=========================================================================
+BASIM SIRASI VE GEREKÇESİ
+=========================================================================
+1. @maket   — 14 karede dönüyor, geometrisi kayarsa en pahalı hata orada
+2. @mutfak  — 30+ karenin mekânı
+3. @koridor — 9 kare, pervaz dersin ikinci taşıyıcısı
+4. @kedi    — 5 kare, en düşük risk
+
+Plaka basıldıktan sonra bu dosyada her ref'in `KAYNAK:` satırına dosya yolu + sha yazılır;
+`ONAY:` satırını Mami doldurur. Sahne promptlarında bir daha TARİF EDİLMEZ, yalnız @handle
+çağrılır — tarif edilirse referans ezilir ve motor başka bir nesne üretir.
