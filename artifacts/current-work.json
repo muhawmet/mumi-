@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "Gün kapanışı. 56 kare basıldı+denetlendi, 21'i yeniden basıldı. MOTION 6 dosya (56 blok, lint 0 kırmızı) + REVIZE 6 dosya + 24 yeniden-basım promptu + _REFERANS-EDIT.txt teslim edildi. 🔴 .gitignore TESLİM DOSYALARINI eliyordu (MOTION/S*.txt · REVIZE/S*.txt) — 12 dosya git'te YOKTU, kurtarıldı ve izlemeye alındı. K05 bayat motion'ı frame-sha kuralıyla yakalandı ve yeniden yazıldı.",
-  "nextAction": "EVDE: 1) @maket referansını bas (8 kare üç turdur ona takılı) 2) K01'in dört tek-nesne edit'i ve K56'nın K01 referanslı yeniden kurulumu — PROMPTLAR/_REFERANS-EDIT.txt 3) kalan 18 kare tek tek açılıp EDIT talimatı yazılacak, baştan prompt YAZILMAYACAK (KİLİT 4).",
+  "lastCompleted": "ARINDIRMA T3 kapandı: lens/fstop/karsi-terim SARI, neg-ozel kod hatası onarıldı, PROMPT-YASASI'ndaki 4 emir-yasak çelişkisi kapandı (Codex çiviledi), dünya kuyruğu yapıştırma emri söküldü, director-context.mjs (ortak tohum) faz kanonuna bağlandı, memory-sync.mjs silindi. Kanona yazıldı: Codex=BAĞLAMSIZ GÖZ (ajanlar CLAUDE.md'yi alır, körlüğü miras alır; Codex almaz) + Opus 5 kılavuzu üçüncü süzgeci destekliyor + %42.6 rakamı çekildi (gerçek %11-74). ÖLÇÜLDÜ: sistem enerjisinin %85.3'ü bürokraside, %14.7'si imalatta; darboğaz yazma değil BASIM (125 kare yazılı 0 basılı, video başına ~700 el hareketi). AGY şaheseri izledi: 8 kesimde ~2.1sn ölü hava, 6 donan plan, kaşık-spatula süreklilik kırığı, 14 Türkçe yazı 0 bozuk harf.",
+  "nextAction": "Kalan üç iş: (1) kare-yakala.mjs indirme watcher'ı + basim-kuyrugu bağlama + basim-listesi --csv (ajan yazıyor) (2) kesim-VO 2.1sn gecikmesinin kök nedeni (ajan araştırıyor) (3) MAMİ KARARI: ONAY-BEKLEYEN.md'nin 12 satırı okunacak, banka 8'den 18'e çıkar",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T15:04:14.712Z",
+  "updatedAt": "2026-08-05T18:48:40.294Z",
   "updatedBy": "claude",
-  "baseCommit": "7717ee9"
+  "baseCommit": "dd3d058"
 }
