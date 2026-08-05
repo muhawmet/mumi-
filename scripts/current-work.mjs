@@ -68,7 +68,25 @@ export function ensureImagesDir(projectAbs) {
   return dir;
 }
 
-export const PHASES = ['enzim', 'prompt', 'denetim', 'motion', 'uretim', 'kurgu', 'kapandi'];
+// `canary` fazı 2026-08-05'te eklendi ve SIRALAMASI anlamlıdır: `motion` ile `uretim` arasında.
+// Gerekçe ölçüldü — Destek ve Hareket'te 6 klip basıldı, ALTISI da bozuk çıktı; kusur klip
+// basıldıktan SONRA görüldü. Repo genelinde ortalama yeniden basım oranı %42.6. Canary, tam
+// üretimden önce küçük ve geri dönülebilir bir sınamadır: 44 klip değil 8 klip.
+export const PHASES = ['enzim', 'prompt', 'denetim', 'motion', 'canary', 'uretim', 'kurgu', 'kapandi'];
+
+// CANARY KİLİDİ — `uretim` fazına geçmenin ŞARTI.
+// Bu bir dosya varlığı kontrolüdür, bir iddia değil: kilit diskte YOKSA canary hükmü
+// verilmemiştir. `kapat` kapısıyla aynı yasa: "Kapı yalnız diski okur."
+export const CANARY_LOCK_ENDS = ['_canary-lock.md', '_canary-lock.txt'];
+
+/** Projede canary kilidi var mı — diski okur, kayda sormaz. */
+export function canaryLockPath(root, projectPathPosix) {
+  const dir = toPlatformPath(root, projectPathPosix);
+  if (!existsSync(dir)) return null;
+  const hit = readdirSync(dir)
+    .find((f) => CANARY_LOCK_ENDS.some((e) => f.toLowerCase().endsWith(e)));
+  return hit ? `${projectPathPosix}/${hit}` : null;
+}
 export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
 
 // PROMPT-YASASI §5 teslim seti + kaba kurgu (kitin beşinci parçası).
@@ -537,6 +555,32 @@ function cmdIlerle(root, argv) {
   s.nextAction = sirada;
   if (faz) {
     if (!PHASES.includes(faz)) { process.stdout.write(`[durum] ⛔ geçersiz faz: ${faz}\n`); process.exit(1); }
+    // CANARY KAPISI — `uretim` fazı canary kilidi olmadan AÇILMAZ.
+    //
+    // Bugüne kadar `cmdIlerle` yalnız ÜYELİK kontrolü yapıyordu: herhangi bir fazdan
+    // herhangi bir faza atlanabiliyordu. Yani lifecycle bir sıra değil, bir etiket
+    // listesiydi. Ölçülen bedeli: Destek ve Hareket'te 6 klip canary hükmü olmadan
+    // basıldı, altısı da bozuk çıktı.
+    //
+    // Kapı yalnız DİSKİ okur (`kapat` kapısıyla aynı yasa) — kayıt "canary geçti"
+    // diyemez, kilit dosyası ya vardır ya yoktur. `--zorla` bilerek YOK: bu kapı
+    // ucuz bir sınamayı pahalı bir turdan önce zorunlu kılar, atlatılırsa anlamı kalmaz.
+    if (faz === 'uretim' && s.phase !== 'uretim') {
+      const lock = canaryLockPath(root, s.projectPath);
+      if (!lock) {
+        process.stdout.write(
+          '[durum] ⛔ ÜRETİME GEÇİLEMEZ — canary kilidi yok.\n'
+          + `        Aranan: ${s.projectPath}/<Ad>_CANARY-LOCK.md\n`
+          + '        Canary, tam üretimden önceki küçük ve geri dönülebilir sınamadır:\n'
+          + '        8 klip basılır, AGY tarif eder, Sol çürütür, hükmü MAMİ verir.\n'
+          + '        Kilit o hükmün kaydıdır — onaylı kare/klip yolları + sha, Mami\'nin ham\n'
+          + '        cümlesi, çalışan motion biçimi, yasaklanan kalıplar, sınanan tek değişken.\n'
+          + '        Ölçüldü: canary\'siz basılan 6 klibin 6\'sı bozuk çıktı.\n',
+        );
+        process.exit(1);
+      }
+      process.stdout.write(`[durum] ✅ canary kilidi bulundu: ${lock}\n`);
+    }
     s.phase = faz;
   }
   printState(root, writeState(root, s));

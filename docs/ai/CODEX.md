@@ -29,9 +29,18 @@ DEĞİL** — yalnız TARİHSEL derinlik gerekince açılır.
 - Kod değişikliğinde: kök neden ve gerçek davranış kanıtı önce; uygun testler sonra.
 - Üretimde: aktif `faz-icraat.md` ve `PROMPT-YASASI.md` üstündür. `src/core/` donuktur;
   görülen sistem kusuru ledger'a gider, video işi kesilmez.
-- Yeni video: önce `mamilas-enzim`, sonra `mamilas-director`. Enzim kilitleri kapanmadan
-  prompt yazılmaz; storyboard toplu onaylanır; motion yalnız Mami'nin onaylı ve görülen
-  start frame'inden sonra yazılır.
+- Yeni video — **tek sıra, beş metinde aynı** (`faz-icraat.md` · burası · `mamilas-enzim` ·
+  `mamilas-director` · `current-work.mjs` `PHASES`):
+  **TEK VİZYON KİLİDİ görüşmesi** (`/mamilas-enzim`, KİLİT 0-5 — şekil/ritim/risk artık
+  KİLİT 5'tir, ayrı bir "plan" toplantısı yoktur; `mamilas-plan` 2026-08-05'te emekli oldu)
+  → referans envanteri → Shot Card → **INTRO + RİSK CANARY (8 klip)** → gerçek kare denetimi
+  → gerçek kareden motion → AGY tarifi + Sol çürütmesi → **Mami canary hükmü** → `CANARY-LOCK`
+  → **8-12'lik paketler** → rolling rough cut → tam film hükmü → hasat.
+  Enzim kilitleri kapanmadan prompt yazılmaz; storyboard toplu onaylanır; motion yalnız
+  Mami'nin onaylı ve **görülen** start frame'inden sonra yazılır.
+- 🔴 **Canary kilidi olmadan üretime geçilmez ve bu kodla zorlanır:**
+  `current-work.mjs ilerle --faz uretim`, projede `<Ad>_CANARY-LOCK.md` yoksa reddeder.
+  Ölçüldü: canary'siz basılan 6 klibin 6'sı bozuk çıktı.
 - Jüri hükmü kullanıcıyı yormaz: prompt kusuru aynı geçişte düzeltilir. Sadece gerçek
   bilgi eksikliği üretimi keser.
 

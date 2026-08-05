@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "5. Sınıf - Destek ve Hareket Sistemi",
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
-  "phase": "uretim",
+  "phase": "canary",
   "status": "aktif",
-  "lastCompleted": "T0 baseline donduruldu: 6 motion dosyası (55 blok) TASLAK — CANARY ONAYSIZ başlığı aldı. Ölçüm: motion-lint 55/55 kırmızı, sessizlik kuyruğu 0/6 dosyada, kelime 139-150 (duvar 160-250), 2 saat cümlesi. 44 klip basım görevi İPTAL — canary PASS'e bağlandı.",
-  "nextAction": "T0b: .git/hooks/pre-commit kur + gate.sh motion desenini -MOTION için düzelt",
+  "lastCompleted": "T0+T0b+T2 kapandı: kapı artık canlı MOTION klasörünü ölçüyor (.gitignore yüzünden görünmezdi), kelime duvarı kanıtla SARI'ya indi, HEAD_RE hayalet klip kusuru onarıldı. KANON turu 52 klip · kırmızı 0 · sarı 5. Sol hükmü NARROW — yeşilin sahibi kural değişikliği değil KANON yeniden yazımı.",
+  "nextAction": "T1 devam: beş metinde tek lifecycle sırası + Plan'ın Enzim KİLİT 5'e taşınması",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T07:58:48.257Z",
+  "updatedAt": "2026-08-05T08:41:18.524Z",
   "updatedBy": "claude",
-  "baseCommit": "1d323fb"
+  "baseCommit": "906b71c"
 }

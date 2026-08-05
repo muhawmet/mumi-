@@ -154,6 +154,59 @@ sıkıcılığın kaynağı. Kamera ya olayla gider, ya kilitli durup dünyayı 
 
 ---
 
+## KİLİT 5 — ŞEKİL VE RİSK
+
+> 2026-08-05'te `mamilas-plan` emekli edildi ve taşıdığı üç değerli şey buraya indi.
+> Gerekçe ölçüldü: skill yazılmıştı ama **bir kere bile koşmamıştı** — diskte 7 adet
+> `_ENZIM.md` vardı, `_PLAN.md` **sıfır**. Ayrı bir yaşam döngüsü olarak yaşamıyordu;
+> Mami için de iki ayrı toplantı değil, **tek Vizyon Kilidi görüşmesiydi.**
+
+Enzim NE'yi kilitler (dünya, cast, omurga, ışık). Bu kilit **ŞEKLİ** kilitler:
+
+- **VO/beat → klip haritası** — hangi cümle hangi klibe düşüyor, kaç klip.
+- **Ritim** — nerede hızlanma, nerede tutma, nerede nefes.
+- **En fazla üç duygu tepesi.** Daha fazlası tepe olmaktan çıkar.
+- **Kapanış kafiyesi** varsa (açılış karesine dönen bir görsel yankı).
+- **Intro canary adayları** — ilk basılacak sekiz klip buradan seçilir.
+- **Pahalı riskli klipler:** ekranda yazı · anatomi · katı/mekanik nesne · güçlü kamera ·
+  uzun VO. Canary'nin sınayacağı riskler bunlardır; hepsi intro'dan seçilmez.
+
+**Neden bu kilit pahalı:** ölçüldü (Bileşke Kuvvet v1) — 69 VO cümlesi 52 klibe sıkıştırıldı,
+11 klip 10 saniyeyi aştı, en uzunu 14.9s, Kling boşluğu warp'la doldurdu. Kusur prompt'ta
+değil **o tablodaydı.** İkinci ölçüm (Mami, 2026-08-03): *"kurgu da çok basic"* — 53 klibin
+53'ü 5 saniye, her kesim aynı yerde.
+
+**Çıktı:** `_ENZIM.md` içinde KİLİT 5 başlığı altında. Ayrı `_PLAN.md` **açılmaz.**
+
+---
+
+## LIFECYCLE — tek sıra
+
+Bu sıra beş yerde AYNI kelimelerle yazılıdır (`faz-icraat.md` · `CODEX.md` · bu skill ·
+`mamilas-director` · `current-work.mjs` `PHASES`). Ayrışırsa iki gerçek doğar:
+
+```
+Kaynak + Mami referansları
+  → TEK VİZYON KİLİDİ görüşmesi   (dünya/register + Enzim KİLİT 1-5 + ref rolleri)
+  → Mami tek readback hükmü                                   ◀ KARAR 1
+  → Referans envanteri
+  → aktif sekansın Shot Card'ları
+  → INTRO + RİSK CANARY  (8 klip, 44 değil)
+  → gerçek kare denetimi → gerçek kareden canary motion
+  → AGY tarifi + Sol çürütmesi
+  → Mami canary hükmü                                         ◀ KARAR 2
+  → CANARY-LOCK
+  → doğal sekans sınırında 8-12 shot paketleri
+  → rolling rough cut → tam film hükmü                        ◀ KARAR 3
+  → hasat
+```
+
+🔴 **Canary kilidi olmadan üretime geçilmez** ve bu bir tavsiye değil, **kodla zorlanır**:
+`current-work.mjs ilerle --faz uretim`, projede `<Ad>_CANARY-LOCK.md` yoksa **reddeder.**
+Ölçüldü: canary'siz basılan 6 klibin 6'sı bozuk çıktı.
+
+---
+
 ## Sınırlar
 
 Bu skill karar **kilitler**, prompt yazmaz — yazma işi `mamilas-director`'ın.

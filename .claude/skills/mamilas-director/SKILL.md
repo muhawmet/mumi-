@@ -66,8 +66,14 @@ Skill çağrılınca tek hamlede context'i kur:
    kilitler elle `ENZIM-KILITLERI.json`'a yazıldı. Bu akış 50/50 klip verdi. Site'in ürettiği
    metinle teslim arasındaki örtüşme zaten %1-3.)*
    İki meşru giriş var, Mami'ye **hangisi olduğunu sor**:
-   - **(a) Kaynak metin** (`.docx`, senaryo, sohbet) → `/mamilas-enzim` ile kilitleri kapat,
-     dünyayı `dunya-kilidi.mjs` ile bas, prompt'u yaz. Command JSON aranmaz, eksik sayılmaz.
+   - **(a) Kaynak metin** (`.docx`, senaryo, sohbet) → `/mamilas-enzim` ile **TEK VİZYON
+     KİLİDİ görüşmesini** yap (KİLİT 0-5; **şekil/ritim/riskli klip listesi KİLİT 5'tir** —
+     ayrı bir "plan" toplantısı yoktur, `mamilas-plan` 2026-08-05'te emekli oldu), dünyayı
+     `dunya-kilidi.mjs` ile bas, prompt'u yaz. Command JSON aranmaz, eksik sayılmaz.
+     🔴 **İlk basım CANARY'dir: 8 klip, hepsi değil.** KİLİT 5'in riskli klip listesi
+     canary'nin neyi sınayacağını söyler. Canary hükmü Mami'den gelip
+     `<Ad>_CANARY-LOCK.md` doğmadan tam üretim açılmaz — `current-work.mjs` bunu
+     kodla reddeder.
    - **(b) Command JSON** → `agents/COMMAND-INBOX/` içindeki `*_mamilas_command.json`'ları
      **listele, Mami'ye HANGİSİNİ sor.** Birden fazla olabilir; sessiz seçme.
    JSON yoksa bu bir engel DEĞİLDİR — (a) yolundan devam et.

@@ -13,7 +13,10 @@ import { describe, expect, it } from 'vitest';
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
-import { KIT, scanDeliverables, ensureImagesDir, IMAGES_DIR, IMAGE_DIR_ALIASES } from './current-work.mjs';
+import {
+  KIT, scanDeliverables, ensureImagesDir, IMAGES_DIR, IMAGE_DIR_ALIASES,
+  PHASES, CANARY_LOCK_ENDS, canaryLockPath,
+} from './current-work.mjs';
 import { readFileSync } from 'node:fs';
 
 const REPO = resolve(import.meta.dirname, '..');
@@ -156,4 +159,50 @@ describe('canlı repo — ölçülmüş kusur geri gelmesin', () => {
       expect(scanDeliverables(REPO, DESTEK).PROMPTLAR).toBe(true);
     },
   );
+});
+
+// ---------------------------------------------------------------------------
+// CANARY KAPISI (T1, 2026-08-05)
+//
+// Var oluş sebebi: `cmdIlerle` yalnız faz adının listede olup olmadığına bakıyordu —
+// yani lifecycle bir SIRA değil, bir ETİKET listesiydi; `enzim`den `uretim`e tek
+// komutla atlanabiliyordu. Ölçülen bedeli: Destek ve Hareket'te 6 klip canary hükmü
+// olmadan basıldı, ALTISI da bozuk çıktı; repo ortalaması %42.6 yeniden basım.
+//
+// Bu testler kapının DİSKİ okuduğunu çivileyor — kayıt "canary geçti" diyemez.
+// ---------------------------------------------------------------------------
+describe('canary kapısı — üretim kilitsiz açılmaz', () => {
+  it('`canary` fazı PHASES içinde ve motion ile uretim ARASINDA', () => {
+    expect(PHASES).toContain('canary');
+    expect(PHASES.indexOf('canary')).toBeGreaterThan(PHASES.indexOf('motion'));
+    expect(PHASES.indexOf('canary')).toBeLessThan(PHASES.indexOf('uretim'));
+  });
+
+  it('KIRMIZI FIXTURE: kilit dosyası YOKSA canaryLockPath null döner', () => {
+    const { kok, rel } = fixture((p) => {
+      writeFileSync(join(p, 'Proje_PROMPTLAR.txt'), 'STYLE: x\n');
+      writeFileSync(join(p, 'Proje_MOTION.txt'), 'KAMERA NİYETİ: x\n');
+    });
+    try {
+      expect(canaryLockPath(kok, rel)).toBeNull();
+    } finally { rmSync(kok, { recursive: true, force: true }); }
+  });
+
+  it('kilit VARSA yolu döner — iki uzantı da tanınır', () => {
+    for (const ek of CANARY_LOCK_ENDS) {
+      const { kok, rel } = fixture((p) => {
+        writeFileSync(join(p, `Proje${ek.toUpperCase()}`), 'Mami: bu lehçeyle devam.\n');
+      });
+      try {
+        expect(canaryLockPath(kok, rel), `uzantı tanınmadı: ${ek}`).not.toBeNull();
+      } finally { rmSync(kok, { recursive: true, force: true }); }
+    }
+  });
+
+  it('diski okur, KAYDA sormaz — boş dizin kilitsizdir', () => {
+    const { kok, rel } = fixture(() => {});
+    try {
+      expect(canaryLockPath(kok, rel)).toBeNull();
+    } finally { rmSync(kok, { recursive: true, force: true }); }
+  });
 });

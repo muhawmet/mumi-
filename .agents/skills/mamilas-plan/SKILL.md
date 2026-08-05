@@ -1,9 +1,29 @@
 ---
 name: mamilas-plan
-description: Bir video üretilmeden ÖNCE şeklini kilitler — VO'nun kaç klibe bölüneceği, kesim ritmi, nerede nefes, nerede duygu tepesi, toplam süre, riskli klipler. "plan / plan modu / şekil / kaç klip / ritim / kurgu tasarımı / bu videoyu nasıl kuralım / yeni video başlıyoruz" dendiğinde ve HER yeni video başlarken, prompt yazılmadan önce çalıştır. Enzim NE'yi kilitler (dünya, cast, omurga, ışık); bu skill ŞEKLİ kilitler.
+description: EMEKLİ (2026-08-05) — ÇAĞRILMAZ. Taşıdığı şekil/ritim disiplini `mamilas-enzim` KİLİT 5'e taşındı; yeni video "plan" diye ayrı bir toplantı açmaz, tek VİZYON KİLİDİ görüşmesinde kapanır. Bu dosya arşiv olarak duruyor: içindeki iki ölçülmüş kaza (Bileşke Kuvvet v1'in 14.9 saniyelik klipleri · "kurgu çok basic") KİLİT 5'in gerekçesidir. Şekil kilitlemek için `/mamilas-enzim` kullan.
 ---
 
-# MAMILAS — PLAN MODU
+# ⛔ EMEKLİ — bu skill çağrılmaz
+
+> **Emeklilik tarihi:** 2026-08-05 · **Yerine geçen:** `mamilas-enzim` **KİLİT 5 — ŞEKİL VE RİSK**
+>
+> **Gerekçe ölçüldü, tercih değil.** Bu skill "Dünya Kartı → Plan → Enzim" sırasını
+> dayatıyordu; `docs/ai/faz-icraat.md` ve `docs/ai/CODEX.md` ise "Enzim → Director" diyordu.
+> İki metin **birbirini yalanlıyordu** ve kazanan belliydi: diskte **7 adet `_ENZIM.md`**
+> vardı, **`_PLAN.md` sıfır.** `current-work.mjs` `PHASES` listesinde `plan` diye bir faz
+> hiç olmadı; `KIT` `_PLAN.md`'yi teslim parçası saymadı; hiçbir kapı onu aramadı.
+> **Skill yazıldı ve bir kere bile koşmadı.**
+>
+> Ölü bir organı canlandırmak yerine taşıdığı üç değerli şey çalışan yere kondu:
+> VO/beat → klip haritası · ritim ve duygu tepeleri · pahalı riskli klip listesi.
+> Mami açısından da doğrusu buydu — Plan ve Enzim iki ayrı toplantı değil,
+> **tek Vizyon Kilidi görüşmesi.**
+>
+> Aşağısı **arşivdir**: içindeki iki ölçüm KİLİT 5'in gerekçesi olarak korunuyor.
+
+---
+
+# MAMILAS — PLAN MODU (ARŞİV)
 
 > **Bu skill iki ölçülmüş kazadan doğdu.**
 > **(1) Bileşke Kuvvet v1** — 69 VO cümlesi 52 klibe sıkıştırıldı, 11 klip 10 saniyeyi aştı,
