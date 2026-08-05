@@ -5,12 +5,13 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
 
 ## Faz anahtarı — hangi yasayla açılıyorsun
 
-<!-- FAZ ANAHTARI (CLAUDE.md ile AYNI import'u taşır — docsContract.test.ts kilitler). İNŞA →
-     İCRAAT 2026-07-28'de çevrildi; Codex de artık İCRAAT dünyasına açılır, İNŞA'ya değil. -->
+<!-- FAZ ANAHTARI (CLAUDE.md ile AYNI import'u taşır — docsContract.test.ts kilitler). 2026-08-05:
+     İCRAAT → İNŞA, DAR VE GERİ DÖNÜŞLÜ (Dörtlü Masa'yı kanıtlı kapıya çevirme turu). Tur bitince
+     İCRAAT'a geri çevrilir. Üretim otoritesi bu tur boyunca da `artifacts/current-work.json`'dur. -->
 
-- **Aktif faz: İCRAAT** — yürütme profili `@docs/ai/faz-icraat.md` (video üret). İnşa uykuda:
-  `@docs/ai/faz-insa.md` (duvar kur). Hangi profil aktifse `CLAUDE.md`'nin ilk import satırı söyler;
-  iki giriş sözleşmesi **aynı** `docs/ai/faz-*.md`'ye işaret etmek zorunda.
+- **Aktif faz: İNŞA** — yürütme profili `@docs/ai/faz-insa.md` (duvar kur). İcraat bu tur için
+  uykuda: `@docs/ai/faz-icraat.md` (video üret). Hangi profil aktifse `CLAUDE.md`'nin ilk import
+  satırı söyler; iki giriş sözleşmesi **aynı** `docs/ai/faz-*.md`'ye işaret etmek zorunda.
 - Durum: `artifacts/current-work.json` — aktif işin TEK makine gerçeği; `node scripts/current-work.mjs`
   ile oku (SessionStart hook'u aynı metni basar). `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
   (1337 satır) **arşivdir, otorite DEĞİL** — yalnız geçmişe dair bir cümle kurulacaksa açılır.
