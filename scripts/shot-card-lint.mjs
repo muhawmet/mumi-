@@ -54,6 +54,14 @@ const BOS_RE = /^\s*(|[-—–]+|\?+|yok|tbd|belirsiz|\.\.\.)\s*$/i;
 const TR = 'a-zA-ZçğıöşüÇĞİÖŞÜ';
 const trKelime = (govde) => new RegExp(`(?:^|[^${TR}])(?:${govde})(?![${TR}])`, 'i');
 
+// ⚠ TÜRKÇE BÜYÜK HARF TUZAĞI — aynı sınıfın İKİNCİ varyantı, canlı kartta yakalandı.
+// JS'in `i` bayrağı `I↔i` eşler ama `İ↔i` EŞLEMEZ (U+0130 ayrı bir harf). Yani kartta
+// `BİTMİŞ` yazan bir satır `/bitmiş/i` desenine takılmıyordu: K11 başka bir kelimeyle
+// (`çoktan`) yakalandı, K37 AYNI ÇELİŞKİYİ taşıyıp SESSİZCE geçti. Ölçen yeşil görünüp
+// kusuru kaçırıyordu — bu repoda sekiz kez ölçülmüş kusur sınıfının ta kendisi.
+// Çözüm: karşılaştırmadan önce Türkçe-farkında küçültme.
+const trKucuk = (s) => String(s ?? '').replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase();
+
 // BAŞLANGIÇ alanında "olay bitmiş" beyanı.
 const BITMIS_RE = trKelime('bitmiş|bitti|olmuş|olmuştu|tamamlanmış|tamamlandı|çoktan');
 // MOTION HAZIR alanında olumlu beyan.
@@ -120,7 +128,7 @@ export function lintShotCard(kart, { voMetni = null } = {}) {
 
   // 2 — ÇELİŞKİ. Kartın en sert kuralı: olay bitmişse motion ondan doğamaz.
   if (A['BAŞLANGIÇ'] && A['MOTION HAZIR']
-      && BITMIS_RE.test(A['BAŞLANGIÇ']) && HAZIR_EVET_RE.test(A['MOTION HAZIR'])) {
+      && BITMIS_RE.test(trKucuk(A['BAŞLANGIÇ'])) && HAZIR_EVET_RE.test(trKucuk(A['MOTION HAZIR']))) {
     kirmizi('celiski-esik',
       'BAŞLANGIÇ olayı BİTMİŞ diyor ama MOTION HAZIR EVET diyor',
       'Olmuş bir olay canlandırılamaz. Motorun 5 saniyede yapacak işi kalmayınca boşluğu '

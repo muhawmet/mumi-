@@ -145,3 +145,35 @@ describe('ölçülmeyen listesi — kapı kendi körlüğünü söyler', () => {
     expect(OLCULMEYEN.length).toBeGreaterThanOrEqual(4);
   });
 });
+
+// ---------------------------------------------------------------------------
+// TÜRKÇE BÜYÜK HARF TUZAĞI — canlı kartta yakalandı (2026-08-05).
+// JS'in `i` bayrağı `İ↔i` eşlemiyor: `BİTMİŞ` yazan bir kart çelişki kuralından
+// SESSİZCE kaçıyordu. K11 başka bir kelimeyle yakalandı, K37 aynı çelişkiyle geçti.
+// ---------------------------------------------------------------------------
+describe('Türkçe büyük harf — sessiz kaçış kapandı', () => {
+  const kartMetni = (bas, hazir) => {
+    const alan = {
+      'VO YÜKÜMÜ': 'x', 'FİKİR': 'x', 'AYRICALIK': 'x', 'KAHRAMAN': 'kukla',
+      'BAŞLANGIÇ': bas, 'DEĞİŞİM': 'kukla devrilir', 'MOTION HAZIR': hazir,
+      'KAMERA': 'sabit', 'REF ROLLERİ': 'kimlik @a', 'RİSK': 'morph',
+      'SÜREKLİLİK': 'K3ten alır',
+    };
+    return `### K9 | 5s · VO "z"\n${ALANLAR.map((a) => `${a}: ${alan[a]}`).join('\n')}\n`;
+  };
+
+  it('BÜYÜK harfli `BİTMİŞ` de yakalanır — küçük harfli kadar', () => {
+    const buyuk = lintShotCard(parseShotCards(kartMetni('olay BİTMİŞ sayılır', 'evet'))[0]);
+    expect(buyuk.filter((p) => p.key === 'celiski-esik')).toHaveLength(1);
+  });
+
+  it('BÜYÜK harfli `EVET` de yakalanır', () => {
+    const buyuk = lintShotCard(parseShotCards(kartMetni('olay bitmiş', 'EVET — olur'))[0]);
+    expect(buyuk.filter((p) => p.key === 'celiski-esik')).toHaveLength(1);
+  });
+
+  it('çelişki yoksa büyük harf sahte alarm vermez', () => {
+    const temiz = lintShotCard(parseShotCards(kartMetni('olay ÖNCESİ', 'EVET'))[0]);
+    expect(temiz.filter((p) => p.key === 'celiski-esik')).toHaveLength(0);
+  });
+});
