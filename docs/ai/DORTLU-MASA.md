@@ -98,6 +98,11 @@ varsa **Mami'nin ham cümlesi**.
 `~/Desktop/mamiş/` yalnız **dış göz transfer alanıdır** — kanonik receipt değildir, otorite
 değildir. Oradan gelen bulgu repo'daki bloğa taşınmadıysa yaşamamış sayılır.
 
+Bloğun **biçimi** ve dış göze verilecek brief kalıpları: `agents/DIS-GOZ-BRIEF-SABLONU.md`.
+Bloğun kendisi altı alan taşır — `KOŞULDU` · `OKUNAN` (+ `sha256`) · `HÜKÜM` · `BULGU` ·
+`SONUÇ` · (opsiyonel) `MAMİ`. **`KOŞULDU` ve var olan bir `OKUNAN` yolu zorunludur**: sahte
+`CLEAR`'ı kelimeyle değil ölçenle engelleyen duvar budur.
+
 ---
 
 ## 5. Ölçen
@@ -106,5 +111,6 @@ Bu sözleşmenin kodla zorlanan kısmı:
 
 | Ölçen | Ne zorlar |
 |---|---|
+| `scripts/hukum-blogu.mjs` | hüküm bloğu **uydurulamaz**: koşma kaydı yoksa, okunduğu iddia edilen yol diskte yoksa ya da sözlük dışına çıkılırsa **kırmızı** |
 | `node scripts/current-work.mjs ilerle --faz uretim` | canary kilidi yoksa **reddeder** |
 | `scripts/dortlu-masa.test.mjs` | bu dosyanın kanon olarak bağlı kaldığını ve **nüshalanmadığını** kilitler |
