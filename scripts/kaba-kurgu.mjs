@@ -2,6 +2,7 @@
 // kaba-kurgu.mjs — EDIT-PLAN → Premiere'in doğrudan açtığı FCP7 XML (xmeml v5)
 //
 //   node scripts/kaba-kurgu.mjs "<proje klasörü>" [--klipler <dir>] [--fps 25] [--cikti <ad.xml>]
+//   node scripts/kaba-kurgu.mjs "<proje klasörü>" --animatic
 //   node scripts/kaba-kurgu.mjs "agents/COMMAND-INBOX/5. Sınıf - Kütle ve Ağırlık"
 //
 // NEDEN VAR (2026-07-28 ölçümü): EDIT-PLAN zaten TAM kesim listesi taşıyor — klip, süre,
@@ -11,6 +12,11 @@
 //
 // ÖLÇÜLEN SAPMA: Sabit Sürat planı 312.1s dedi, gerçek kurgu 275.4s çıktı (%12 fazla tahmin).
 // Bu yüzden --vo verilirse kesim boyları TAHMİNDEN değil GERÇEK sesten türetilir (ffprobe).
+//
+// ANIMATIC NEDEN VAR (Hücre, 2026-08-05): EDIT-PLAN 4:50 derken gerçek timeline 3:43.79
+// çıktı — 66 saniyelik sapma 53 klip basıldıktan sonra görüldü. K25'in planı 8s, timeline
+// payı 3.04s idi. --animatic aynı Whisper hizasını images/<n>.png still'lerine uygular;
+// ritim hükmü, klip basımından ÖNCE Premiere timeline'ında verilir.
 
 import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, resolve, basename, extname } from 'node:path';
@@ -22,6 +28,7 @@ const flag = (name, def = null) => {
   return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : def;
 };
 const has = (name) => argv.includes(`--${name}`);
+const ANIMATIC = has('animatic');
 
 const projeArg = argv.find((a) => !a.startsWith('--') && argv[argv.indexOf(a) - 1] !== undefined
   ? !argv[argv.indexOf(a) - 1].startsWith('--') || ['--klipler', '--fps', '--cikti', '--vo', '--muzik'].indexOf(argv[argv.indexOf(a) - 1]) === -1
@@ -75,6 +82,16 @@ if (!kareler.length) {
   process.exit(2);
 }
 kareler.sort((a, b) => a.k - b.k);
+
+// Animatic klipsiz koşar; ama EDIT-PLAN'daki her kare images/ altında gerçekten bulunmalı.
+// Böylece Premiere'e boş kaynak yerine eksik start frame hatası açıkça gider.
+if (ANIMATIC) {
+  const eksikKareler = kareler.filter((kr) => !existsSync(join(PROJE, 'images', kr.kareDosya)));
+  if (eksikKareler.length) {
+    console.error(`❌ animatic için images/ altında kare eksik: ${eksikKareler.map((kr) => kr.kareDosya).join(', ')}`);
+    process.exit(2);
+  }
+}
 
 // ---------- 2b. TAM VO CÜMLESİ — plandaki metin kısaltılmış olabilir ----------
 // EDIT-PLAN satırları "...ekranda beliren sayıyı" gibi KISALTILMIŞ yazılır ve birleşik beat'lerin
@@ -419,13 +436,13 @@ const items = kareler.map((kr, i) => {
   const hedefSn = seg ? (seg.son - seg.bas) : Math.max(kr.klipSn, kr.voSn);
   const durFr = sn2fr(hedefSn);
   // Kaynak boyu: ffprobe ile ÖLÇÜLEN gerçek > plandaki beyan. Kırpma matematiği tahminle yapılmaz.
-  const dosyaOn = klipByK.get(kr.k) || null;
-  const olculenSn = (ffprobe && dosyaOn) ? (sureOf(dosyaOn) || 0) : 0;
-  const srcFr = sn2fr(olculenSn || kr.klipSn);
+  const dosyaOn = ANIMATIC ? join(PROJE, 'images', kr.kareDosya) : (klipByK.get(kr.k) || null);
+  const olculenSn = (!ANIMATIC && ffprobe && dosyaOn) ? (sureOf(dosyaOn) || 0) : 0;
+  const srcFr = ANIMATIC ? durFr : sn2fr(olculenSn || kr.klipSn);
   // Kırpma ZORUNLU — Mami'nin yasası "her klipte, istisnasız". Yer açığını hız kapatır:
   // 5s klip 5s yuvada %90 hızla oynar, göz bunu fark etmez; çirkin yarım saniyeyi fark eder.
   // Tek sınır kaynağın kendisi — geriye en az 1 saniye kalmalı, yoksa kırpma klibi yer.
-  const kirp = Math.max(0, Math.min(kirpFr, srcFr - sn2fr(1)));
+  const kirp = ANIMATIC ? 0 : Math.max(0, Math.min(kirpFr, srcFr - sn2fr(1)));
   const kaynakFr = Math.max(1, srcFr - kirp);
   // Klip yere sığmıyorsa YAVAŞLAT. Eskiden `out`u kırpıyordum → Premiere kalan yeri
   // "medya yok" çizgisiyle dolduruyordu ve orada görüntü donuyordu (Mami'nin gördüğü kusur).
@@ -434,7 +451,7 @@ const items = kareler.map((kr, i) => {
   // alternatifi tırtık, yani kararan ekran. Birleşik beat'lerde (K08 = S8+S9) cümle 10s,
   // klip 5s: matematik başka çıkış bırakmıyor. Yalnız GEREKTİĞİ KADAR yavaşlatılır.
   const gerekenHiz = (kaynakFr / durFr) * 100;
-  const hiz = gerekenHiz >= 99.5 ? 100 : Math.max(45, gerekenHiz);
+  const hiz = ANIMATIC ? 100 : (gerekenHiz >= 99.5 ? 100 : Math.max(45, gerekenHiz));
   const kullanilanKaynak = Math.min(kaynakFr, Math.round(durFr * (hiz / 100)));
   const it = {
     ...kr, i,
@@ -462,6 +479,7 @@ const toplamFr = cursor;
 // Klip VO'suna yetmiyorsa, ÖNCEKİ klibin artan malzemesi varsa sınır geriye kaydırılır:
 // önceki klip daha uzun oynar, bu klip geç başlar. Ses görüntüden önce girer — bu bir kusur
 // değil, standart kurgu (VO lead). Böylece ne yavaşlatma ne yeniden üretim gerekir.
+if (!ANIMATIC) {
 const sureCache = new Map();
 const sureOfCached = (p) => {
   if (!sureCache.has(p)) sureCache.set(p, sureOf(p) || 0);
@@ -522,6 +540,7 @@ for (const it of items) {
   it.kuyrukHandle = it.srcFr - it.outFr;
   it.yavas = it.hiz < 99.5;
 }
+}
 
 // ---------- 6. XML ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -553,6 +572,28 @@ const parBlok = '<pixelaspectratio>square</pixelaspectratio>';
 
 const projeAd = basename(PROJE);
 const videoParcalar = items.map((it, n) => {
+  if (ANIMATIC) {
+    const durFr = it.end - it.start;
+    return `        <clipitem id="ci-${n}">
+          <name>${esc(basename(it.dosya))}</name>
+          <enabled>TRUE</enabled>
+          <duration>${durFr}</duration>
+          ${rate()}
+          <start>${it.start}</start>
+          <end>${it.end}</end>
+          <in>0</in>
+          <out>${durFr}</out>
+          <file id="f-${n}">
+            <name>${esc(basename(it.dosya))}</name>
+            <pathurl>${esc(pathurl(it.dosya))}</pathurl>
+            ${rate()}
+            <duration>${durFr}</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>ANIMATIC K${String(it.k).padStart(2, '0')} — ${esc(it.vo.slice(0, 90))}</mastercomment1></comments>
+        </clipitem>`;
+  }
   if (!it.dosya) return `        <!-- K${String(it.k).padStart(2, '0')} klip YOK (${esc(it.kareDosya)}) — ${(it.end - it.start)} kare boşluk -->`;
   return `        <clipitem id="ci-${n}">
           <name>${esc(basename(it.dosya))}</name>
@@ -598,7 +639,7 @@ const videoParcalar = items.map((it, n) => {
 //
 // Baş handle'ı KIRP_BAS üretiyor (Mami'nin ilk-yarım-saniye yasası). Yani iki yasa aynı yere
 // bakıyor: çirkin başlangıcı kesen kırpma, geçişin malzemesini de doğuruyor.
-const gecisFr = GECIS > 0 ? sn2fr(GECIS) : 0;
+const gecisFr = !ANIMATIC && GECIS > 0 ? sn2fr(GECIS) : 0;
 const gecisler = [];
 if (gecisFr > 0) {
   for (let n = 0; n < items.length - 1; n++) {
@@ -711,7 +752,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
      Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
 <xmeml version="5">
   <sequence id="seq-1">
-    <name>${esc(projeAd)} — kaba kurgu</name>
+    <name>${esc(projeAd)} — ${ANIMATIC ? 'ANIMATIC-0' : 'kaba kurgu'}</name>
     <duration>${toplamFr}</duration>
     ${rate()}
     <timecode>${rate()}<string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
@@ -733,7 +774,7 @@ ${muzikYerlesim.length
 </xmeml>
 `;
 
-const ciktiAd = flag('cikti', `${projeAd} — kaba kurgu.xml`);
+const ciktiAd = flag('cikti', `${projeAd} — ${ANIMATIC ? 'ANIMATIC-0' : 'kaba kurgu'}.xml`);
 const ciktiYol = join(PROJE, ciktiAd);
 writeFileSync(ciktiYol, xml, 'utf8');
 
@@ -745,7 +786,10 @@ const planToplam = items.reduce((n, it) => n + Math.max(it.klipSn, it.voSn), 0);
 const mmss = (s) => { const t = Math.round(s); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
 console.log(`\n📼 ${projeAd}`);
 console.log(`   plan     : ${planDosya} → ${kareler.length} kare`);
-console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir})`);
+// ANIMATIC modunda klip ARANMAZ — animatic'in bütün amacı klipler basılmadan ÖNCE koşmaktır.
+// "0/53 bulundu" satırı orada bir eksik gibi okunuyordu; öyle değil, beklenen durum.
+if (ANIMATIC) console.log(`   kaynak   : images/ still — ${kareler.length} kare (klip aranmadı: animatic)`);
+else console.log(`   klipler  : ${klipByK.size}/${kareler.length} bulundu (${klipDir})`);
 console.log(`   fps      : ${fps} — ${fpsKaynak}`);
 console.log(`   sequence : ${EN}x${BOY}${klipEn ? ` · klipler ${klipEn}x${klipBoy} (boyut BEYAN EDİLMEDİ — Premiere medyadan okur)` : ''}`);
 if (voDosya) console.log(`   VO       : ${basename(voDosya)} → ${voToplam ? mmss(voToplam) : '?'}`);
@@ -789,7 +833,10 @@ const yavaslar = items.filter((it) => it.yavas && !it.tasma);
 if (yavaslar.length) console.log(`   ⏱ yavaşlatıldı (VO'ya sığsın diye): ${yavaslar.map((e) => `K${String(e.k).padStart(2,'0')}%${Math.round(e.hiz)}`).join(' ')}`);
 if (tasan.length) console.log(`   🔴 %35'te bile sığmadı: ${tasan.map((e) => 'K' + String(e.k).padStart(2, '0')).join(' ')} — burada boşluk kalır`);
 // BAŞ KIRPMA + GEÇİŞ karnesi — sessiz kısıntı yasak, ne düştüyse söylenir.
-if (kirpFr > 0) {
+// ⚠ ANIMATIC'te bu karne KOŞMAZ: still'in kırpılacak bozuk başı yoktur ve eski hâli
+// 53 karenin 53'ü için "kaynağı yetmeyen K01(0.00s) K02(0.00s)…" basıyordu. Gürültü,
+// gerçek uyarıların öldüğü yerdir — bu repoda sessiz no-op dört kez oradan doğdu.
+if (kirpFr > 0 && !ANIMATIC) {
   const tam = items.filter((it) => it.dosya && it.kirp >= it.kirpIstendi).length;
   const eksik = items.filter((it) => it.dosya && it.kirp < it.kirpIstendi);
   console.log(`   ✂ baş kırpma ${KIRP_BAS}s (i2v ilk-kare yasası): ${tam}/${items.filter((it) => it.dosya).length} klip tam kırpıldı`);
