@@ -1,0 +1,84 @@
+5. SINIF - DESTEK VE HAREKET SISTEMI — EDIT PLAN
+=========================================================================
+🔴 BU DOSYA ELLE YAZILMAZ — MOTION başlıklarından türetilir:
+   node scripts/edit-plan.mjs "5. Sınıf - Destek ve Hareket Sistemi" --yaz
+   Süreyi değiştirmek istiyorsan MOTION/NN.txt başlık satırını değiştir, sonra bunu koş.
+   Sebep ölçüldü: elle tutulan plan aynı gün bayatlıyor ve "UZUN ÜRET" bayrağı üretime geçmiyor.
+
+52 klip · toplam görüntü 4:25 · VO tahmini 3:56
+süre dağılımı: 5s×51 · 10s×1
+✓ ritim: 2 farklı süre — metronom kırılmış.
+
+SÜTUNLAR: kare · klip · kova · ÜRETİM süresi · VO tahmini · pencere · cümle · bayrak
+⚠ VO süreleri TAHMİNDİR. Bu hatta tahmin tarihsel olarak yüksek çıkıyor (Kütle plan 3:33 →
+  gerçek 3:00 · Bitkilerde plan 4:32 → gerçek 3:29). Gerçek VO inince kaba-kurgu.mjs
+  kesimleri whisper ile GERÇEK cümle sınırlarına oturtur; buradaki pencereler planlamadır.
+=========================================================================
+
+##### SEKANS 1 — KUKLA: DİK DURAMAYAN ŞEY #####
+1.png     K01  TAŞIYICI 5s  6.3s  [0:00–0:05]  Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı.
+2.png     K02  TAŞIYICI 5s  4.3s  [0:05–0:10]  Mira onu indirdi; kolu tıkırdayarak büküldü.
+3.png     K03  TAŞIYICI 5s  3.8s  [0:10–0:15]  Kuklayı masaya oturttu ve elini çekti.
+4.png     K04  TAŞIYICI 5s  2.6s  [0:15–0:20]  Kukla olduğu yerde yığıldı.
+5.png     K05  TAŞIYICI 5s  4.7s  [0:20–0:25]  Mira ise sabahtan beri ayaktaydı ve yığılmamıştı.
+6.png     K06  TAŞIYICI 5s  3.3s  [0:25–0:30]  Peki insanı ayakta tutan şey neydi?
+7.png     K07  TAŞIYICI 5s  4.7s  [0:30–0:35]  Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar.
+
+##### SEKANS 2 — İSKELET VE KEMİKLER #####
+8.png     K08  TAŞIYICI 5s  3.6s  [0:35–0:40]  Mira kuklayı alıp fen sınıfına geçti.
+9.png     K09  TAŞIYICI 5s  5.9s  [0:40–0:45]  Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu.
+10.png    K10  TAŞIYICI 5s  4.9s  [0:45–0:50]  Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur.
+11.png    K11  TAŞIYICI 5s  4.7s  [0:50–0:55]  Kemikler vücuda şeklini verir ve onu ayakta tutar.
+12.png    K12  TAŞIYICI 5s  4.3s  [0:55–1:00]  Bir de en önemlisi: yumuşak organları korurlar.
+13.png    K13  TAŞIYICI 5s  3.8s  [1:00–1:05]  Kafatası beyni sert bir kutu gibi çevreler.
+14.png    K14  TAŞIYICI 5s  4.7s  [1:05–1:10]  Kaburgalar kalbin ve akciğerlerin önünde kafes kurar.
+15.png    K15  TAŞIYICI 5s  5.9s  [1:10–1:15]  Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu.
+16.png    K16  TAŞIYICI 5s  4.7s  [1:15–1:20]  Kemikleri şekillerine göre üç gruba ayırıyoruz.
+17.png    K17  TAŞIYICI 5s  5.9s  [1:20–1:25]  Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur.
+18.png    K18  TAŞIYICI 5s  4.5s  [1:25–1:30]  Kısa kemiklerin eni ve boyu birbirine yakındır.
+19.png    K19  TAŞIYICI 5s  5.4s  [1:30–1:35]  El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır.
+20.png    K20  TAŞIYICI 5s  6.3s  [1:35–1:40]  Yassı kemikler levha gibidir; kafatası, kaburga ve leğen kemiği böyledir.
+21.png    K21  TAŞIYICI 5s  5.6s  [1:40–1:45]  Mira üç kemiği yan yana dizdi; hiçbiri diğerine benzemiyordu.
+
+##### SEKANS 3 — EKLEMLER: BAĞLANTI NOKTALARI #####
+22.png    K22  TAŞIYICI 5s  4.5s  [1:45–1:50]  Peki bu kadar kemik birbirine nasıl bağlanıyordu?
+23.png    K23  TAŞIYICI 5s  3.8s  [1:50–1:55]  Mira atölyenin kapısını yavaşça itti.
+24.png    K24  TAŞIYICI 5s  3.8s  [1:55–2:00]  Kapı, menteşesinin üstünde sessizce döndü.
+25.png    K25  TAŞIYICI 5s  4.0s  [2:00–2:05]  Kemiklerin birleştiği yerlere eklem diyoruz.
+26.png    K26  TAŞIYICI 5s  3.6s  [2:05–2:10]  Eklemler tıpkı bir menteşe gibi çalışır.
+27.png    K27  TAŞIYICI 5s  4.9s  [2:10–2:15]  Onları hareket yeteneklerine göre üçe ayırırız.
+28.png    K28  TAŞIYICI 5s  5.6s  [2:15–2:20]  Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler.
+29.png    K29  TAŞIYICI 5s  5.2s  [2:20–2:25]  Mira dizini bükünce eklem menteşe gibi açılıp kapandı.
+30.png    K30  TAŞIYICI 5s  5.6s  [2:25–2:30]  Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır.
+31.png    K31  TAŞIYICI 5s  5.6s  [2:30–2:35]  Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz.
+32.png    K32  TAŞIYICI 5s  5.2s  [2:35–2:40]  Oynamaz eklemler kafatasındadır ve asla hareket etmezler.
+33.png    K33  TAŞIYICI 5s  4.5s  [2:40–2:45]  Oradaki kemikler birbirine adeta kaynamıştır.
+
+##### SEKANS 4 — KASLAR: HAREKETİN MOTORU #####
+34.png    K34  VURUŞ    10s  5.9s  [2:45–2:55]  Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?   🔴 10s ÜRET
+35.png    K35  TAŞIYICI 5s  5.2s  [2:55–3:00]  Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu.
+36.png    K36  TAŞIYICI 5s  4.7s  [3:00–3:05]  Mira kolunu büktü ve kolunun üstü sertleşip kabardı.
+37.png    K37  TAŞIYICI 5s  2.0s  [3:05–3:10]  İşte motor buydu: kaslar.
+38.png    K38  TAŞIYICI 5s  5.6s  [3:10–3:15]  Kaslar kasılırken kısalır ve bağlı olduğu kemiği kendine çeker.
+39.png    K39  TAŞIYICI 5s  3.6s  [3:15–3:20]  Gevşediğinde kemik eski yerine döner.
+40.png    K40  TAŞIYICI 5s  2.9s  [3:20–3:25]  Vücudumuzda üç çeşit kas vardır.
+41.png    K41  TAŞIYICI 5s  5.2s  [3:25–3:30]  Çizgili kaslar, yani iskelet kasları, isteğimizle çalışır.
+42.png    K42  TAŞIYICI 5s  3.1s  [3:30–3:35]  Hızlıdırlar ama çabuk yorulurlar.
+43.png    K43  TAŞIYICI 5s  4.5s  [3:35–3:40]  Düz kaslar isteğimiz dışında, kendiliğinden çalışır.
+44.png    K44  TAŞIYICI 5s  4.7s  [3:40–3:45]  Mide ve bağırsak gibi iç organlarımızda bulunurlar.
+45.png    K45  TAŞIYICI 5s  2.6s  [3:45–3:50]  Yavaştırlar ama yorulmazlar.
+46.png    K46  TAŞIYICI 5s  3.3s  [3:50–3:55]  Kalp kası ise yalnızca kalpte bulunur.
+47.png    K47  TAŞIYICI 5s  4.0s  [3:55–4:00]  Şekli çizgili kasa benzer, çalışması düz kasa.
+48.png    K48  TAŞIYICI 5s  3.3s  [4:00–4:05]  Ömrümüz boyunca hiç durmadan çalışır.
+
+##### SEKANS 5 — KAPANIŞ: AYNI ATÖLYE #####
+49.png    K49  TAŞIYICI 5s  6.3s  [4:05–4:10]  Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz.
+50.png    K50  TAŞIYICI 5s  5.2s  [4:10–4:15]  Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir.
+51.png    K51  TAŞIYICI 5s  3.1s  [4:15–4:20]  Bir de bol bol hareket etmek gerekir.
+52.png    K52  TAŞIYICI 5s  4.9s  [4:20–4:25]  Mira kuklayı yerine astı; bu sefer hareket eden oydu.
+
+=========================================================================
+🔴 UZUN ÜRETİLECEK 1 KLİP: K34
+   Bu klipler motorda O SÜREDE üretilir — 5 saniyelik klipten kırpılmaz.
+   Ölçüldü (Bitkilerde): plan 15 klibi uzun işaretlemişti, üretimde yalnız 1'i uzun üretildi;
+   filmde 13 plan tam 4.54s çıktı, yani kırpılmamış klip boyu. Bayrak planda kalırsa hiçbir şey değişmiyor.

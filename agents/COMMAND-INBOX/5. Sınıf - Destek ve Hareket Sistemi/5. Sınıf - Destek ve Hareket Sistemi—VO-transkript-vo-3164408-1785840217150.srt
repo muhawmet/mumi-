@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:04,200
+ Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı.
+
+2
+00:00:04,720 --> 00:00:05,960
+ Mira onu indirdi.
+
+3
+00:00:06,400 --> 00:00:08,040
+ Kolu tıkırdayarak büküldü.
+
+4
+00:00:08,520 --> 00:00:11,200
+ Kuklayı masaya oturttu ve elini çekti.
+
+5
+00:00:11,840 --> 00:00:13,640
+ Kukla olduğu yerde yığıldı.
+
+6
+00:00:14,280 --> 00:00:17,760
+ Mira ise sabahtan beri ayaktaydı ve yığılmamıştı.
+
+7
+00:00:18,240 --> 00:00:20,560
+ Peki insanı ayakta tutan şey neydi?
+
+8
+00:00:21,200 --> 00:00:23,240
+ Cevap üç kahramanda saklıydı.
+
+9
+00:00:23,560 --> 00:00:26,120
+ Kemikler, eklemler ve kaslar.
+
+10
+00:00:27,040 --> 00:00:29,200
+ Mira kuklayı alıp fen sınıfına geçti.
+
+11
+00:00:29,480 --> 00:00:32,960
+ Köşedeki iskelet modeli, kuklanın büyümüş hali gibi duruyordu.
+
+12
+00:00:33,640 --> 00:00:36,720
+ Yetişkin bir insanda yaklaşık 206 kemik bulunur.
+
+13
+00:00:37,160 --> 00:00:40,240
+ Kemikler vücuda şeklini verir ve onu ayakta tutar.
+
+14
+00:00:40,800 --> 00:00:43,840
+ Bir de en önemlisi, yumuşak organları korurlar.
+
+15
+00:00:44,560 --> 00:00:47,040
+ Kafatası beyni sert bir kutu gibi çevreler.
+
+16
+00:00:47,320 --> 00:00:50,360
+ Kaburgalar, kalbinle akciğerlerin önünde kafes kurar.
+
+17
+00:00:51,080 --> 00:00:53,600
+ Mira modelin uyluk kemiğini yerinden çıkardı.
+
+18
+00:00:54,080 --> 00:00:55,240
+ Avcundan uzundu.
+
+19
+00:00:55,960 --> 00:00:58,680
+ Kemikleri şekillerine göre üç gruba ayırıyoruz.
+
+20
+00:00:59,200 --> 00:01:01,600
+ Uzun kemikler kollarda ve bacaklardadır.
+
+21
+00:01:02,080 --> 00:01:03,600
+ Uyluk kemiği en uzunudur.
+
+22
+00:01:04,240 --> 00:01:06,760
+ Kısa kemiklerin eni ve boyu birbirine yakındır.
+
+23
+00:01:07,360 --> 00:01:11,240
+ El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır.
+
+24
+00:01:12,000 --> 00:01:13,760
+ Yassı kemikler levha gibidir.
+
+25
+00:01:14,160 --> 00:01:16,880
+ Kafatası, kaburga ve leğen kemiği böyledir.
+
+26
+00:01:17,960 --> 00:01:19,840
+ Mira üç kemiği yan yana dizdi.
+
+27
+00:01:20,440 --> 00:01:22,040
+ Hiçbiri diğerine benzemiyordu.
+
+28
+00:01:22,640 --> 00:01:25,320
+ Peki bu kadar kemik birbirine nasıl bağlanıyordu?
+
+29
+00:01:26,080 --> 00:01:28,320
+ Mira atölyenin kapısını yavaşça itti.
+
+30
+00:01:28,760 --> 00:01:31,440
+ Kapı, menteşesinin üstünde sessizce döndü.
+
+31
+00:01:32,200 --> 00:01:34,600
+ Kemiklerin birleştiği yerlere eklem diyoruz.
+
+32
+00:01:35,080 --> 00:01:37,320
+ Eklemler tıpkı bir menteşe gibi çalışır.
+
+33
+00:01:37,720 --> 00:01:40,280
+ Onları hareket yeteneklerine göre üçe ayırırız.
+
+34
+00:01:40,920 --> 00:01:43,480
+ Oynar eklemler kollarda ve bacaklardadır.
+
+35
+00:01:43,720 --> 00:01:45,000
+ Rahatça hareket ederler.
+
+36
+00:01:45,680 --> 00:01:49,040
+ Mira dizini bükünce eklem menteşe gibi açılıp kapandı.
+
+37
+00:01:49,600 --> 00:01:51,840
+ Yarı oynar eklemler omurgada bulunur.
+
+38
+00:01:52,080 --> 00:01:53,320
+ Hareketleri kısıtlıdır.
+
+39
+00:01:53,920 --> 00:01:57,480
+ Öne doğru eğilebiliriz ama omurga bir kapı gidip atlanmaz.
+
+40
+00:01:58,240 --> 00:02:02,160
+ Oynamaz eklemler kafatasındadır ve asla hareket etmezler.
+
+41
+00:02:02,800 --> 00:02:05,680
+ Oradaki kemikler birbirine adeta kaynamıştır.
+
+42
+00:02:06,760 --> 00:02:11,080
+ Kemikler ve eklemler tamamdı ama kuklayı ne hareket ettirecekti?
+
+43
+00:02:11,840 --> 00:02:15,560
+ Kuklanın eklemleri vardı ama onları çeken hiçbir şey yoktu.
+
+44
+00:02:16,240 --> 00:02:19,560
+ Mira kolunu büktü ve kolunun üstü sertleşip kabardı.
+
+45
+00:02:20,280 --> 00:02:22,440
+ İşte motor buydu, kaslar.
+
+46
+00:02:23,160 --> 00:02:27,120
+ Kaslar kasılırken kısılır ve bağlı olduğu kemiği kendine çeker.
+
+47
+00:02:27,680 --> 00:02:29,840
+ Gevşediğinde kemik eski yerine döner.
+
+48
+00:02:30,560 --> 00:02:32,760
+ Vücudumuzda üç çeşit kas vardır.
+
+49
+00:02:33,200 --> 00:02:37,040
+ Çizgili kaslar yani iskelet kasları isteğimizle çalışır.
+
+50
+00:02:37,680 --> 00:02:39,800
+ Hızlıdırlar ama çabuk yorulurlar.
+
+51
+00:02:40,520 --> 00:02:43,560
+ Düz kaslar isteğimiz dışında kendiliğinden çalışır.
+
+52
+00:02:44,120 --> 00:02:46,880
+ Mide ve bağırsak gibi iç organlarımızda bulunurlar.
+
+53
+00:02:47,480 --> 00:02:49,440
+ Yavaştırlar ama yorulmazlar.
+
+54
+00:02:50,200 --> 00:02:52,440
+ Kalp kası ise yalnızca kalpte bulunur.
+
+55
+00:02:53,120 --> 00:02:56,240
+ Şekli çizgili kasa benzer, çalışması düz kasa.
+
+56
+00:02:56,960 --> 00:02:59,360
+ Ömrümüz boyunca hiç durmadan çalışır.
+
+57
+00:02:59,960 --> 00:03:03,720
+ Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz.
+
+58
+00:03:04,760 --> 00:03:08,240
+ Süt ve yoğur gibi karsiyumlu besinler kemikleri güçlendirir.
+
+59
+00:03:08,680 --> 00:03:10,760
+ Bir de bol bol hareket etmek gerekir.
+
+60
+00:03:11,640 --> 00:03:13,240
+ Mira kuklayı yerine astı.
+
+61
+00:03:13,760 --> 00:03:15,520
+ Bu sefer hareket eden oydu.
+

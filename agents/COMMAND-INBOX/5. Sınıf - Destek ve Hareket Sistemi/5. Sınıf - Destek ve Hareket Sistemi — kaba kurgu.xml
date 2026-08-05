@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Destek ve Hareket Sistemi_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>5. Sınıf - Destek ve Hareket Sistemi — kaba kurgu</name>
+    <duration>4690</duration>
+    <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>1.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>109</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-0">
+            <name>1.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/1.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>2.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>109</start>
+          <end>204</end>
+          <in>12</in>
+          <out>107</out>
+          <file id="f-1">
+            <name>2.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/2.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — Mira onu indirdi; kolu tıkırdayarak büküldü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>3.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>204</start>
+          <end>284</end>
+          <in>12</in>
+          <out>92</out>
+          <file id="f-2">
+            <name>3.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/3.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Kuklayı masaya oturttu ve elini çekti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>4.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>284</start>
+          <end>343</end>
+          <in>12</in>
+          <out>71</out>
+          <file id="f-3">
+            <name>4.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/4.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K04 — Kukla olduğu yerde yığıldı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>5.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>343</start>
+          <end>438</end>
+          <in>12</in>
+          <out>107</out>
+          <file id="f-4">
+            <name>5.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/5.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K05 — Mira ise sabahtan beri ayaktaydı ve yığılmamıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>6.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>438</start>
+          <end>521</end>
+          <in>12</in>
+          <out>95</out>
+          <file id="f-5">
+            <name>6.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/6.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — Peki insanı ayakta tutan şey neydi?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>7.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>521</start>
+          <end>630</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-6">
+            <name>7.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/7.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K07 — Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-7">
+          <name>8.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>630</start>
+          <end>708</end>
+          <in>12</in>
+          <out>90</out>
+          <file id="f-7">
+            <name>8.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/8.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K08 — Mira kuklayı alıp fen sınıfına geçti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>9.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>708</start>
+          <end>808</end>
+          <in>12</in>
+          <out>112</out>
+          <file id="f-8">
+            <name>9.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/9.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>808</start>
+          <end>892</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-9">
+            <name>10.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/10.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>892</start>
+          <end>979</end>
+          <in>12</in>
+          <out>99</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/11.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — Kemikler vücuda şeklini verir ve onu ayakta tutar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>979</start>
+          <end>1069</end>
+          <in>12</in>
+          <out>102</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/12.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Bir de en önemlisi: yumuşak organları korurlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1069</start>
+          <end>1135</end>
+          <in>12</in>
+          <out>78</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/13.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Kafatası beyni sert bir kutu gibi çevreler.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1135</start>
+          <end>1225</end>
+          <in>12</in>
+          <out>102</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/14.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Kaburgalar kalbin ve akciğerlerin önünde kafes kurar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1225</start>
+          <end>1334</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/15.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1334</start>
+          <end>1420</end>
+          <in>12</in>
+          <out>98</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/16.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — Kemikleri şekillerine göre üç gruba ayırıyoruz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1420</start>
+          <end>1529</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/17.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1529</start>
+          <end>1616</end>
+          <in>12</in>
+          <out>99</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/18.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K18 — Kısa kemiklerin eni ve boyu birbirine yakındır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1616</start>
+          <end>1725</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/19.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1725</start>
+          <end>1847</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/20.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>89.3443</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K20 — Yassı kemikler levha gibidir; kafatası, kaburga ve leğen kemiği böyledir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1847</start>
+          <end>1971</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/21.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <filter>
+            <effect>
+              <name>Time Remap</name>
+              <effectid>timeremap</effectid>
+              <effectcategory>motion</effectcategory>
+              <effecttype>motion</effecttype>
+              <mediatype>video</mediatype>
+              <parameter authoringApp="PremierePro"><parameterid>variablespeed</parameterid><name>variablespeed</name><valuemin>0</valuemin><valuemax>1</valuemax><value>0</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>speed</parameterid><name>speed</name><valuemin>-100000</valuemin><valuemax>100000</valuemax><value>87.9032</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>reverse</parameterid><name>reverse</name><value>FALSE</value></parameter>
+              <parameter authoringApp="PremierePro"><parameterid>frameblending</parameterid><name>frameblending</name><value>TRUE</value></parameter>
+            </effect>
+          </filter>
+          <comments><mastercomment1>K21 — Mira üç kemiği yan yana dizdi; hiçbiri diğerine benzemiyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1971</start>
+          <end>2065</end>
+          <in>12</in>
+          <out>106</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/22.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Peki bu kadar kemik birbirine nasıl bağlanıyordu?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2065</start>
+          <end>2129</end>
+          <in>12</in>
+          <out>76</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/23.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K23 — Mira atölyenin kapısını yavaşça itti.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2129</start>
+          <end>2212</end>
+          <in>12</in>
+          <out>95</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/24.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — Kapı, menteşesinin üstünde sessizce döndü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2212</start>
+          <end>2281</end>
+          <in>12</in>
+          <out>81</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/25.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Kemiklerin birleştiği yerlere eklem diyoruz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2281</start>
+          <end>2344</end>
+          <in>12</in>
+          <out>75</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/26.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Eklemler tıpkı bir menteşe gibi çalışır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2344</start>
+          <end>2421</end>
+          <in>12</in>
+          <out>89</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/27.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Onları hareket yeteneklerine göre üçe ayırırız.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2421</start>
+          <end>2530</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/28.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2530</start>
+          <end>2629</end>
+          <in>12</in>
+          <out>111</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/29.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — Mira dizini bükünce eklem menteşe gibi açılıp kapandı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2629</start>
+          <end>2733</end>
+          <in>12</in>
+          <out>116</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/30.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2733</start>
+          <end>2837</end>
+          <in>12</in>
+          <out>116</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/31.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2837</start>
+          <end>2946</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/32.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Oynamaz eklemler kafatasındadır ve asla hareket etmezler.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2946</start>
+          <end>3041</end>
+          <in>12</in>
+          <out>107</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/33.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Oradaki kemikler birbirine adeta kaynamıştır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3041</start>
+          <end>3150</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/34.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?   🔴 10s ÜRET</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3150</start>
+          <end>3259</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/35.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K35 — Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-35">
+          <name>36.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3259</start>
+          <end>3365</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-35">
+            <name>36.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/36.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K36 — Mira kolunu büktü ve kolunun üstü sertleşip kabardı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-36">
+          <name>37.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3365</start>
+          <end>3434</end>
+          <in>12</in>
+          <out>81</out>
+          <file id="f-36">
+            <name>37.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/37.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K37 — İşte motor buydu: kaslar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-37">
+          <name>38.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3434</start>
+          <end>3542</end>
+          <in>12</in>
+          <out>120</out>
+          <file id="f-37">
+            <name>38.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/38.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K38 — Kaslar kasılırken kısalır ve bağlı olduğu kemiği kendine çeker.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-38">
+          <name>39.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3542</start>
+          <end>3611</end>
+          <in>12</in>
+          <out>81</out>
+          <file id="f-38">
+            <name>39.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/39.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K39 — Gevşediğinde kemik eski yerine döner.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-39">
+          <name>40.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3611</start>
+          <end>3674</end>
+          <in>12</in>
+          <out>75</out>
+          <file id="f-39">
+            <name>40.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/40.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K40 — Vücudumuzda üç çeşit kas vardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-40">
+          <name>41.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3674</start>
+          <end>3782</end>
+          <in>12</in>
+          <out>120</out>
+          <file id="f-40">
+            <name>41.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/41.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K41 — Çizgili kaslar, yani iskelet kasları, isteğimizle çalışır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-41">
+          <name>42.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3782</start>
+          <end>3850</end>
+          <in>12</in>
+          <out>80</out>
+          <file id="f-41">
+            <name>42.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/42.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K42 — Hızlıdırlar ama çabuk yorulurlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-42">
+          <name>43.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3850</start>
+          <end>3936</end>
+          <in>12</in>
+          <out>98</out>
+          <file id="f-42">
+            <name>43.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/43.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K43 — Düz kaslar isteğimiz dışında, kendiliğinden çalışır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-43">
+          <name>44.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3936</start>
+          <end>4017</end>
+          <in>12</in>
+          <out>93</out>
+          <file id="f-43">
+            <name>44.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/44.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K44 — Mide ve bağırsak gibi iç organlarımızda bulunurlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-44">
+          <name>45.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4017</start>
+          <end>4082</end>
+          <in>12</in>
+          <out>77</out>
+          <file id="f-44">
+            <name>45.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/45.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K45 — Yavaştırlar ama yorulmazlar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-45">
+          <name>46.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4082</start>
+          <end>4152</end>
+          <in>12</in>
+          <out>82</out>
+          <file id="f-45">
+            <name>46.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/46.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K46 — Kalp kası ise yalnızca kalpte bulunur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-46">
+          <name>47.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4152</start>
+          <end>4244</end>
+          <in>12</in>
+          <out>104</out>
+          <file id="f-46">
+            <name>47.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/47.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K47 — Şekli çizgili kasa benzer, çalışması düz kasa.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-47">
+          <name>48.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4244</start>
+          <end>4316</end>
+          <in>12</in>
+          <out>84</out>
+          <file id="f-47">
+            <name>48.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/48.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K48 — Ömrümüz boyunca hiç durmadan çalışır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-48">
+          <name>49.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4316</start>
+          <end>4425</end>
+          <in>12</in>
+          <out>121</out>
+          <file id="f-48">
+            <name>49.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/49.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K49 — Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-49">
+          <name>50.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4425</start>
+          <end>4525</end>
+          <in>12</in>
+          <out>112</out>
+          <file id="f-49">
+            <name>50.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/50.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K50 — Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-50">
+          <name>51.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4525</start>
+          <end>4588</end>
+          <in>58</in>
+          <out>121</out>
+          <file id="f-50">
+            <name>51.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/51.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K51 — Bir de bol bol hareket etmek gerekir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-51">
+          <name>52.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4588</start>
+          <end>4690</end>
+          <in>12</in>
+          <out>114</out>
+          <file id="f-51">
+            <name>52.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/52.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K52 — Mira kuklayı yerine astı; bu sefer hareket eden oydu.</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo.mp3</name>
+          <enabled>TRUE</enabled>
+          <duration>4693</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>4690</end>
+          <in>0</in>
+          <out>4690</out>
+          <file id="file-vo1">
+            <name>vo.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/vo.mp3</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4693</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>ses2.wav (1/3)</name>
+          <enabled>TRUE</enabled>
+          <duration>2211</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>2211</end>
+          <in>0</in>
+          <out>2211</out>
+          <file id="file-mzk1">
+            <name>ses2.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/5.%20S%C4%B1n%C4%B1f%20-%20Destek%20ve%20Hareket%20Sistemi/ses2.wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>2211</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 1/3</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="mzk1-1">
+          <name>ses2.wav (2/3)</name>
+          <enabled>TRUE</enabled>
+          <duration>2211</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2211</start>
+          <end>4422</end>
+          <in>0</in>
+          <out>2211</out>
+          <file id="file-mzk1"/>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/3</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="mzk1-2">
+          <name>ses2.wav (3/3)</name>
+          <enabled>TRUE</enabled>
+          <duration>2211</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4422</start>
+          <end>4690</end>
+          <in>0</in>
+          <out>268</out>
+          <file id="file-mzk1"/>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 3/3</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>
