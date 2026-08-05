@@ -15,17 +15,28 @@ import {
   lintCanaryLock, uretimAcilabilirMi, URETIMI_ACMAYAN_SOL, URETIMI_ACAN_SOL, LEHCE_ALANLARI,
 } from './canary-lock.mjs';
 
+// 🔴 Sol karşı-denetimi (RESHAPE, madde 5): açıcı/kapatıcı hüküm kümesi ÖLÇÜLEN MODÜLDEN
+// ithal ediliyordu — yani sözlük gevşetilse test onunla birlikte gevşiyordu. Beklenen küme
+// burada ELLE yazılı; modül değişirse bu test DÜŞER, ki asıl istediğimiz budur.
+const BEKLENEN_ACAN = ['CLEAR TO CONTINUE', 'NARROW'];
+const BEKLENEN_ACMAYAN = ['RESHAPE', 'UNPROVEN', 'SOL_UNAVAILABLE'];
+
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const opt = { repoKok: REPO };
 
+// Okunan-yol kanıtı için repo İÇİ gerçek belgeler.
 const VAR_1 = 'docs/ai/DORTLU-MASA.md';
 const VAR_2 = 'agents/DIS-GOZ-BRIEF-SABLONU.md';
+// Medya için GERÇEK kare/klip uzantılı fixture'lar (scripts/__fixtures__/canary/OKUMA.txt).
+// Bir `.md` dosyası kare ya da klip kanıtı SAYILAMAZ — Sol bulgusu buydu.
+const KARE = 'scripts/__fixtures__/canary/kare.png';
+const KLIP = 'scripts/__fixtures__/canary/klip.mp4';
 
 const kilit = (uzerine = {}) => {
   const a = {
     durum: 'PASS',
-    frame: `FRAME: ${VAR_1} · sha256:8fbeaafccf4c413d`,
-    klip: `KLIP: ${VAR_2} · sha256:aabbccdd11223344`,
+    frame: `FRAME: ${KARE} · sha256:8fbeaafccf4c413d`,
+    klip: `KLIP: ${KLIP} · sha256:aabbccdd11223344`,
     solHukum: 'NARROW',
     mami: '"bu lehçeyle devam"',
     lehce: [
@@ -71,7 +82,7 @@ describe('temiz kilit yanlış alarm vermez', () => {
     expect(acik).toBe(true);
   });
 
-  it.each(URETIMI_ACAN_SOL)('Sol hükmü "%s" üretimi açar', (hukum) => {
+  it.each(BEKLENEN_ACAN)('Sol hükmü "%s" üretimi açar', (hukum) => {
     expect(uretimAcilabilirMi(kilit({ solHukum: hukum }), opt).acik).toBe(true);
   });
 });
@@ -85,7 +96,7 @@ describe('BOŞ DOSYA ÜRETİMİ AÇAMAZ — asıl kusur buydu', () => {
 });
 
 describe('Sol sonucu üretimi açmayan üç hâl', () => {
-  it.each(URETIMI_ACMAYAN_SOL)('Sol hükmü "%s" ise üretim AÇILMAZ', (hukum) => {
+  it.each(BEKLENEN_ACMAYAN)('Sol hükmü "%s" ise üretim AÇILMAZ', (hukum) => {
     // SOL_UNAVAILABLE bloğu OKUNAN'dan muaftır; kilit yine de üretimi açmamalı.
     const metin = kilit({ solHukum: hukum });
     const { acik, sebep } = uretimAcilabilirMi(metin, opt);
@@ -124,12 +135,12 @@ describe('medya gerçek olmak zorunda', () => {
   });
 
   it('sahte/bozuk sha KIRMIZI', () => {
-    const metin = kilit({ frame: `FRAME: ${VAR_1} · sha256:XYZ` });
+    const metin = kilit({ frame: `FRAME: ${KARE} · sha256:XYZ` });
     expect(lintCanaryLock(metin, opt).kirmizi.length).toBeGreaterThan(0);
   });
 
   it('sha hiç yoksa yalnız SARI', () => {
-    const metin = kilit({ frame: `FRAME: ${VAR_1}`, klip: `KLIP: ${VAR_2}` });
+    const metin = kilit({ frame: `FRAME: ${KARE}`, klip: `KLIP: ${KLIP}` });
     const { kirmizi, sari } = lintCanaryLock(metin, opt);
     expect(kirmizi).toEqual([]);
     expect(sari.join('\n')).toMatch(/sha256 yok/);
@@ -187,5 +198,38 @@ describe('canary\'den geriye bilgi kalmak zorunda', () => {
   it.each(LEHCE_ALANLARI)('"%s" yoksa kırmızı', (alan) => {
     const metin = kilit().replace(new RegExp(`^${alan}: .*$`, 'mu'), '');
     expect(lintCanaryLock(metin, opt).kirmizi.join('\n')).toMatch(new RegExp(`${alan} satırı yok`));
+  });
+});
+
+describe('sözlük ve medya sözleşmesi kaymıyor', () => {
+  it('açan/açmayan Sol kümeleri ELLE yazılan beklentiyle birebir aynı', () => {
+    // Modül gevşerse bu test düşer — testin ölçtüğü şeyi ölçülenden ithal etmemesinin sebebi bu.
+    expect([...URETIMI_ACAN_SOL].sort()).toEqual([...BEKLENEN_ACAN].sort());
+    expect([...URETIMI_ACMAYAN_SOL].sort()).toEqual([...BEKLENEN_ACMAYAN].sort());
+  });
+
+  it('markdown dosyası FRAME olamaz — metin dosyası kare kanıtı değildir', () => {
+    const metin = kilit({ frame: `FRAME: ${VAR_1}` });
+    expect(lintCanaryLock(metin, opt).kirmizi.join('\n')).toMatch(/FRAME medya uzantısı değil/);
+  });
+
+  it('markdown dosyası KLIP olamaz', () => {
+    const metin = kilit({ klip: `KLIP: ${VAR_2}` });
+    expect(lintCanaryLock(metin, opt).kirmizi.join('\n')).toMatch(/KLIP medya uzantısı değil/);
+  });
+
+  it('KLASÖR yolu medya sayılamaz — varlık kontrolü dosya olmayı da kapsar', () => {
+    const metin = kilit({ frame: 'FRAME: scripts/__fixtures__/canary' });
+    expect(lintCanaryLock(metin, opt).kirmizi.length).toBeGreaterThan(0);
+  });
+
+  it('KOŞULDU: x gibi doldurma bir koşma kaydı değildir', () => {
+    const metin = kilit().replace('KOŞULDU: codex exec -m gpt-5.6-sol · high · read-only · 4 dosya', 'KOŞULDU: x');
+    expect(lintCanaryLock(metin, opt).kirmizi.join('\n')).toMatch(/KOŞULDU çok kısa/);
+  });
+
+  it('gerekçesiz hüküm geçemez — BULGU boşsa KIRMIZI', () => {
+    const metin = kilit().replace('BULGU: Kamera gerekçesi üç kartta yok.', 'BULGU:');
+    expect(lintCanaryLock(metin, opt).kirmizi.join('\n')).toMatch(/BULGU yok\/çok kısa/);
   });
 });

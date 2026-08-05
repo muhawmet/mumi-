@@ -39,7 +39,7 @@ import { execFileSync } from 'node:child_process';
 // Canary kilidi VARLIK değil İÇERİK olarak ölçülür (2026-08-05 ikinci onarımı).
 import { uretimAcilabilirMi } from './canary-lock.mjs';
 import { parseHukumBloklari } from './hukum-blogu.mjs';
-import { lintReceipt } from './kapanis-receipt.mjs';
+import { lintReceipt, parseReceipt, dosyaSha256Sync } from './kapanis-receipt.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_DEFAULT = resolve(HERE, '..');
@@ -616,6 +616,26 @@ function cmdIlerle(root, argv) {
         process.exit(1);
       }
       process.stdout.write(`[durum] ✅ canary kilidi geçerli: ${lock} (Sol: ${olcum.solHukmu})\n`);
+
+      // 🔴 Sol karşı-denetimi (RESHAPE, madde 3): canary fazındaki "retroaktif Sol plan review"
+      // uyarısı yalnız UYARIYDI ve faz yine ilerliyordu — yani hiçbir zaman uygulanmak zorunda
+      // değildi. Mami'nin emri "geçmişi sahteleyip bloklama"ydı; o yüzden uyarı canary'de
+      // uyarı kalıyor, ama ÜRETİM buradan geçmiyor. Denetleyici üretime çok uzak; kimse
+      // geriye dönük kilitlenmiyor, ama kural da buharlaşmıyor.
+      const enzimYolu = projeDosyasi(root, s.projectPath, '_enzim.md');
+      const planSolVar = enzimYolu
+        && parseHukumBloklari(readFileSync(enzimYolu, 'utf8')).some((b) => b.goz === 'SOL');
+      if (!planSolVar) {
+        process.stdout.write(
+          '[durum] ⛔ ÜRETİME GEÇİLEMEZ — Sol PLAN hükmü yok.\n'
+          + `        Yeri: ${s.projectPath}/<Ad>_ENZIM.md → KİLİT 5 altında "DIŞ GÖZ HÜKMÜ — SOL"\n`
+          + '        Canary kilidi (tetikleyici 3) ile plan denetimi (tetikleyici 1) AYRI şeylerdir;\n'
+          + '        kilit geçerli olsa bile planın çürütülmüş olması gerekir.\n'
+          + '        Biçim: agents/DIS-GOZ-BRIEF-SABLONU.md · kanon: docs/ai/DORTLU-MASA.md\n',
+        );
+        process.exit(1);
+      }
+      process.stdout.write('[durum] ✅ Sol plan hükmü ENZİM içinde bulundu\n');
     }
 
     // SOL PLAN BLOĞU — Dörtlü Masa'nın BİRİNCİ tetikleyicisi (docs/ai/DORTLU-MASA.md §3).
@@ -735,22 +755,52 @@ function cmdKapat(root, argv = []) {
     if (s.blockedBy) engel.push(`BLOKE hâlâ açık → ${s.blockedBy}`);
     if (s.openMamiDecision) engel.push(`Mami kararı hâlâ açık → ${s.openMamiDecision}`);
 
-    // KAPANIŞ RECEIPT — biten iş TAŞINABİLİR medya makbuzu bırakmak zorunda.
-    // Ölçüldü: Destek ve Hareket `Biten/` altına taşındı, "kapandı" sayıldı ve 360 MB'lık
-    // final filmin adı repo'nun hiçbir yerinde geçmedi. Kötü bir video "bitti" diye
-    // kaybolursa ondan öğrenilecek şey de kaybolur. Üç kapanış da meşrudur
-    // (APPROVED / REJECTED_HARVESTED / ABANDONED) — makbuzsuz kapanış meşru değildir.
-    const durumDosyasi = projeDosyasi(root, s.projectPath, '00-durum.txt');
-    if (!durumDosyasi) {
-      engel.push(`KAPANIŞ RECEIPT yok → ${s.projectPath}/00-DURUM.txt bulunamadı`);
-    } else {
-      const { kirmizi } = lintReceipt(readFileSync(durumDosyasi, 'utf8'), { repoKok: root });
-      for (const k of kirmizi) engel.push(`KAPANIŞ RECEIPT · ${k}`);
-    }
     if (engel.length) {
       process.stdout.write('[durum] ⛔ kapanmadı — eksik teslimde kapanış bir YALANDIR:\n');
       for (const e of engel) process.stdout.write(`   - ${e}\n`);
       process.stdout.write('   Eksik gerçekten kabul ediliyorsa: current-work.mjs kapat --zorla\n');
+      process.exit(1);
+    }
+  }
+
+  // KAPANIŞ RECEIPT — `--zorla` İLE BİLE ATLANMAZ.
+  //
+  // Ölçüldü: Destek ve Hareket `Biten/` altına taşındı, "kapandı" sayıldı ve 360 MB'lık final
+  // filmin adı repo'nun hiçbir yerinde geçmedi. Kötü bir video "bitti" diye kaybolursa ondan
+  // öğrenilecek şey de kaybolur.
+  //
+  // 🔴 Sol karşı-denetimi (RESHAPE, madde 1): receipt `--zorla` guard'ının İÇİNDEYDİ, yani
+  // `kapat --zorla` makbuzu da atlıyordu. Ayrım şu: `--zorla` KABUL EDİLEN BİR EKSİĞİ geçirir
+  // (kit eksik, klip az) — bu bir yargıdır ve Mami'nindir. Receipt ise bir YARGI DEĞİL, bir
+  // KAYITTIR: "bu iş neyle kapandı" sorusunun cevabı. Kabul edilecek bir şey yok, yazılacak
+  // bir şey var. O yüzden guard'ın dışına alındı.
+  //
+  // 🔴 Sol karşı-denetimi (RESHAPE, madde 4): kapanışta sha GERÇEK dosyaya karşı hesaplanıyor
+  // (senkron, parçalı — 360 MB 128 ms). Biçimi doğru ama uydurulmuş bir hash artık geçmiyor.
+  {
+    const durumDosyasi = projeDosyasi(root, s.projectPath, '00-durum.txt');
+    if (!durumDosyasi) {
+      process.stdout.write(
+        '[durum] ⛔ kapanmadı — KAPANIŞ RECEIPT yok.\n'
+        + `        Aranan: ${s.projectPath}/00-DURUM.txt\n`
+        + '        Biten iş taşınabilir medya makbuzu bırakmak zorunda: mutlak kaynak yol,\n'
+        + '        SHA-256, süre, durum (APPROVED | REJECTED_HARVESTED | ABANDONED), kanıt yolu.\n'
+        + '        Blok üretmek için: node scripts/kapanis-receipt.mjs damgala <medya-yolu>\n'
+        + '        Bu kapı `--zorla` ile de atlanmaz — receipt bir yargı değil, bir KAYITTIR.\n',
+      );
+      process.exit(1);
+    }
+    const metin = readFileSync(durumDosyasi, 'utf8');
+    const on = parseReceipt(metin);
+    let gercekSha = null;
+    if (on?.kaynak && existsSync(on.kaynak)) {
+      try { gercekSha = dosyaSha256Sync(on.kaynak); } catch { gercekSha = null; }
+    }
+    const { kirmizi } = lintReceipt(metin, { repoKok: root, gercekSha, kaynakZorunlu: true });
+    if (kirmizi.length) {
+      process.stdout.write('[durum] ⛔ kapanmadı — KAPANIŞ RECEIPT kırmızı:\n');
+      for (const k of kirmizi) process.stdout.write(`   - ${k}\n`);
+      process.stdout.write('   Bu kapı `--zorla` ile atlanmaz.\n');
       process.exit(1);
     }
   }

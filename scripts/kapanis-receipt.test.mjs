@@ -82,9 +82,21 @@ describe('makbuzsuz kapanış meşru değil', () => {
       .toMatch(/mutlak yol değil/);
   });
 
-  it('KAYNAK diskte yoksa kırmızı', () => {
-    expect(lintReceipt(receipt({ kaynak: '/Users/yok/olmayan-film.mp4' }), opt).kirmizi.join('\n'))
-      .toMatch(/KAYNAK diskte YOK/);
+  // 🔴 Sol karşı-denetimi (RESHAPE, madde 7) burayı DARALTTI. Medya makineye özgüdür
+  // (~/Desktop); Mac'te geçerli bir makbuzu Windows'ta kırmızı yapmak, doğru bir kaydı
+  // yanlış ilan etmekti. Ayrım: yokluk tek başına SARI, sahibi makinede KIRMIZI.
+  it('KAYNAK bu makinede yoksa varsayılan SARI — başka makinede yazılmış olabilir', () => {
+    const { kirmizi, sari } = lintReceipt(receipt({ kaynak: '/Users/yok/olmayan-film.mp4' }), opt);
+    expect(kirmizi.filter((k) => /KAYNAK/.test(k))).toEqual([]);
+    expect(sari.join('\n')).toMatch(/KAYNAK bu makinede YOK/);
+  });
+
+  it('medyanın SAHİBİ makinede (kapanış kapısı · dogrula) KAYNAK yokluğu KIRMIZI', () => {
+    const { kirmizi } = lintReceipt(
+      receipt({ kaynak: '/Users/yok/olmayan-film.mp4' }),
+      { ...opt, kaynakZorunlu: true },
+    );
+    expect(kirmizi.join('\n')).toMatch(/KAYNAK bu makinede YOK/);
   });
 });
 

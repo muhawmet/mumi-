@@ -12,6 +12,8 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SOL_SOZLUGU, SOL_ULASILAMADI, SONUC_SOZLUGU } from './hukum-blogu.mjs';
+import { URETIMI_ACAN_SOL, URETIMI_ACMAYAN_SOL } from './canary-lock.mjs';
 
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const KANON = 'docs/ai/DORTLU-MASA.md';
@@ -34,7 +36,8 @@ const TETIKLEYICI_BASLIKLARI = [
   'TAM FİLM HAZIR',
 ];
 
-const SONUC_SOZLUGU = ['CLEAR TO CONTINUE', 'RESHAPE', 'NARROW', 'UNPROVEN', 'SOL_UNAVAILABLE'];
+/** Kanonda GEÇMESİ beklenen sonuç kelimeleri — elle yazılı, ölçenden ithal DEĞİL. */
+const KANONDA_BEKLENEN_SONUCLAR = ['CLEAR TO CONTINUE', 'RESHAPE', 'NARROW', 'UNPROVEN', 'SOL_UNAVAILABLE'];
 
 describe('Dörtlü Masa — kanon repo\'da yaşıyor', () => {
   it('kanon dosyası VAR (plan dosyası ölünce yasa ölmesin)', () => {
@@ -43,7 +46,7 @@ describe('Dörtlü Masa — kanon repo\'da yaşıyor', () => {
 
   it('sonuç sözlüğünün beş kelimesi de kanonda tanımlı', () => {
     const kanon = oku(KANON);
-    for (const kelime of SONUC_SOZLUGU) {
+    for (const kelime of KANONDA_BEKLENEN_SONUCLAR) {
       expect(kanon.includes(kelime), `sonuç sözlüğünde "${kelime}" yok`).toBe(true);
     }
   });
@@ -76,6 +79,39 @@ describe('Dörtlü Masa — kanon repo\'da yaşıyor', () => {
     }
     // `~/Desktop/mamiş/` otorite DEĞİL — bu ayrım kanonda açıkça durmalı.
     expect(kanon).toMatch(/mamiş[\s\S]{0,200}(kanonik receipt değildir|otorite\s*değildir)/);
+  });
+});
+
+// 🔴 Sol karşı-denetimi (2026-08-05, RESHAPE, madde 6): sonuç sözlüğü hem kanon belgede hem
+// ölçenlerin içinde yaşıyordu ve ikisini bağlayan bir şey yoktu — yani sessizce ayrışabilirlerdi.
+// Repo yasası zaten şunu söylüyor: bir belge bir sıralamayı BİREBİR taşıyorsa, o sıralama koda
+// KİLİTLENMEK zorundadır (PROJECT_CONTRACT.md:27-28). Kod artık kanona çivili.
+describe('kod ile kanon ayrışamaz', () => {
+  it('hukum-blogu.mjs Sol sözlüğü kanonda yazan sözlükle birebir aynı', () => {
+    const kanon = oku(KANON);
+    for (const kelime of SOL_SOZLUGU) {
+      expect(kanon.includes(kelime), `ölçende var, kanonda YOK: ${kelime}`).toBe(true);
+    }
+    expect(kanon.includes(SOL_ULASILAMADI)).toBe(true);
+    // Ters yön: kanonda tanımlı olup ölçende bulunmayan bir sonuç kelimesi kalmasın.
+    for (const kelime of ['CLEAR TO CONTINUE', 'RESHAPE', 'NARROW', 'UNPROVEN']) {
+      expect(SOL_SOZLUGU, `kanonda var, ölçende YOK: ${kelime}`).toContain(kelime);
+    }
+  });
+
+  it('Claude\'un tek karşılık sözlüğü de kanonda yazılı', () => {
+    const kanon = oku(KANON);
+    for (const kelime of SONUC_SOZLUGU) {
+      expect(kanon.includes(kelime), `ölçende var, kanonda YOK: ${kelime}`).toBe(true);
+    }
+  });
+
+  it('üretimi açan/açmayan Sol kümeleri kanonun sözlüğünün alt kümesidir', () => {
+    for (const k of [...URETIMI_ACAN_SOL, ...URETIMI_ACMAYAN_SOL]) {
+      expect([...SOL_SOZLUGU, SOL_ULASILAMADI], `sözlük dışı sonuç: ${k}`).toContain(k);
+    }
+    // Bir sonuç aynı anda hem açıcı hem kapatıcı olamaz.
+    expect(URETIMI_ACAN_SOL.filter((k) => URETIMI_ACMAYAN_SOL.includes(k))).toEqual([]);
   });
 });
 

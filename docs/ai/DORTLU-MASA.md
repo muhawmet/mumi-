@@ -48,6 +48,17 @@ ne AGY'nin çıktısı uydurulabilir; otomatik provider çağrısı / API loop'u
 **AGY'nin çıktısı hüküm değildir.** Zaman damgalı tarif üretir. `APPROVED` ve `MOTION_VERIFIED`
 yalnız **Mami'nin ham cümlesiyle** doğar.
 
+### Claude'un karşılığı — her bulguya TEK kelime
+
+Sol ya da AGY'den gelen her bulgu, kayda **tek** karşılıkla geçer. Başka kelime yazılamaz;
+özellikle **"sonra bakarız" yasaktır** — adlandırılmamış erteleme, bulgunun sessizce ölmesidir.
+
+| Karşılık | Anlamı |
+|---|---|
+| `uygulandı` | bulgu kabul edildi ve değişiklik yapıldı |
+| `daraltıldı` | bulgu doğru ama kapsamı fazla genişti; daraltılmış hâliyle uygulandı |
+| `kanıt yetersiz` | bulgu reddedilmedi, **adı verilmiş** bir sonraki task'a ya da canary hipotezine bağlandı |
+
 ---
 
 ## 3. Beş tetikleyici — masa yalnız burada toplanır

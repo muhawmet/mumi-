@@ -1,0 +1,11 @@
+Bu klasördeki iki dosya TEST FIXTURE'ıdır, üretim medyası DEĞİLDİR.
+
+Neden var: `scripts/canary-lock.mjs` bir canary kilidinin FRAME/KLIP satırlarının
+(a) diskte gerçekten var olan bir DOSYA olduğunu, (b) boş olmadığını, (c) kare/klip
+uzantısı taşıdığını ölçer. Sol karşı-denetimi (2026-08-05, RESHAPE) fixture'ların bunun
+yerine `.md` dosyalarını kare/klip diye kabul ettiğini gösterdi — yani ölçenin asıl
+iddiası ("gerçek kare, gerçek klip") test edilmiyordu.
+
+İçerikleri kasten anlamsız: ölçen dosyanın KODEĞİNİ açmaz, açmamalıdır da. Gerçek medya
+git'te izlenmez (repo dışında, ~/Desktop altında yaşar) ve bir testin ona bağlanması testi
+tek makineye çivilerdi.

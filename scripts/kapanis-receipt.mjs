@@ -11,7 +11,9 @@
 // yaşar. Brief "00-DURUM ile çelişki olamaz" diyor; iki dosya tutmak çelişkiyi MÜMKÜN kılar,
 // tek dosya tutmak onu YAPISAL OLARAK imkânsız kılar. Yeni rapor mezarlığı da kurulmaz.
 
-import { readFileSync, existsSync, statSync, createReadStream } from 'node:fs';
+import {
+  readFileSync, existsSync, statSync, createReadStream, openSync, readSync, closeSync,
+} from 'node:fs';
 import { createHash } from 'node:crypto';
 import { isAbsolute, basename, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -56,6 +58,29 @@ export function sureBicimle(saniye) {
   const h = Math.floor(t / 3600);
   const iki = (n) => String(n).padStart(2, '0');
   return h > 0 ? `${h}:${iki(d)}:${iki(s)}` : `${d}:${iki(s)}`;
+}
+
+/**
+ * Dosyanın gerçek sha256'sı — SENKRON, parçalı okuma (360 MB belleğe alınmaz).
+ *
+ * 🔴 Sol karşı-denetimi (RESHAPE, madde 4): `cmdKapat` senkrondu ve bu yüzden hash'i GERÇEK
+ * dosyaya karşı doğrulamıyordu — uydurulmuş ama biçimi doğru 64 haneli bir sha kapanışı
+ * geçiriyordu. Sahte hash duvarı ancak kapanış anında koşarsa duvardır.
+ */
+export function dosyaSha256Sync(yol) {
+  const h = createHash('sha256');
+  const fd = openSync(yol, 'r');
+  try {
+    const tampon = Buffer.alloc(1 << 20);
+    for (;;) {
+      const n = readSync(fd, tampon, 0, tampon.length, null);
+      if (n <= 0) break;
+      h.update(tampon.subarray(0, n));
+    }
+  } finally {
+    closeSync(fd);
+  }
+  return h.digest('hex');
 }
 
 /** Dosyanın gerçek sha256'sı (akış — 360 MB'lık dosya belleğe alınmaz). */
@@ -111,7 +136,15 @@ export function lintReceipt(metin, secenekler = {}) {
   // başka makinede/başka cwd'de sessizce başka bir şeyi gösterir.
   if (!r.kaynak) kirmizi.push('KAYNAK satırı yok — final medyanın yolu kayıtlı değil');
   else if (!isAbsolute(r.kaynak)) kirmizi.push(`KAYNAK mutlak yol değil → ${r.kaynak}`);
-  else if (!varMi(r.kaynak)) kirmizi.push(`KAYNAK diskte YOK → ${r.kaynak}`);
+  else if (!varMi(r.kaynak)) {
+    // 🔴 Sol karşı-denetimi (RESHAPE, madde 7) DARALTTI: medya repo dışında ve makineye
+    // özgüdür (`~/Desktop/…`). Mac'te geçerli bir makbuz Windows'ta kırmızı yanıyordu —
+    // yani doğru bir kaydı yanlış ilan ediyorduk. Ayrım: yokluk tek başına SARI'dır;
+    // KIRMIZI yalnız medyanın SAHİBİ makinede (kapanış kapısı, `dogrula`) verilir.
+    const mesaj = `KAYNAK bu makinede YOK → ${r.kaynak}`;
+    if (secenekler.kaynakZorunlu) kirmizi.push(mesaj);
+    else sari.push(`${mesaj} (başka makinede yazılmış olabilir — doğrulama sahibi makinede yapılır)`);
+  }
 
   if (!r.sha256) kirmizi.push('SHA256 satırı yok — makbuz hangi dosyayı imzaladığını kanıtlayamaz');
   else if (!/^[0-9a-f]{64}$/u.test(r.sha256)) kirmizi.push(`SHA256 biçimi bozuk → ${r.sha256}`);

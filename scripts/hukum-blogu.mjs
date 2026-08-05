@@ -93,15 +93,29 @@ export function parseHukumBloklari(metin) {
   return bloklar;
 }
 
-/** Bir yolun diskte gerçekten var olup olmadığı. Testler enjekte edebilir; varsayılan GERÇEK fs. */
+/**
+ * Bir yolun diskte gerçekten OKUNABİLİR BİR DOSYA olup olmadığı.
+ *
+ * 🔴 Sol karşı-denetimi (2026-08-05, RESHAPE) burada bir kaçış yolu buldu: yalnız `existsSync`
+ * bakılıyordu, yani bir KLASÖR ya da bir sembolik bağ "okudum" kanıtı sayılabiliyordu.
+ * `OKUNAN: docs/` geçiyordu. Artık dosya olmak ve boş olmamak zorunda.
+ */
 const gercekVarMi = (yol, kok) => {
   const tam = isAbsolute(yol) ? yol : resolve(kok, yol);
   try {
-    return existsSync(tam) && statSync(tam).size >= 0;
+    if (!existsSync(tam)) return false;
+    const st = statSync(tam);
+    return st.isFile() && st.size > 0;
   } catch {
     return false;
   }
 };
+
+/**
+ * KOŞULDU satırının anlamlı olup olmadığı. `KOŞULDU: x` bir koşma kaydı değildir.
+ * Eşik kasten düşük (ölçüm değil, boşluk doldurma tespiti): en az bir komut/model izi.
+ */
+const KOSULDU_ASGARI = 12;
 
 /**
  * Tek bir hüküm bloğunu ölçer.
@@ -143,6 +157,12 @@ export function lintHukumBlogu(blok, secenekler = {}) {
       `satır ${blok.satir}: KOŞULDU satırı yok — dış gözün gerçekten koştuğunun kaydı yok. ` +
       'Ulaşılamadıysa HÜKÜM: SOL_UNAVAILABLE yazılır, sonuç uydurulmaz.',
     );
+  } else if (blok.kosuldu.trim().length < KOSULDU_ASGARI) {
+    // Sol bulgusu: `KOŞULDU: x` alanı doldurup duvarı geçiyordu.
+    kirmizi.push(
+      `satır ${blok.satir}: KOŞULDU çok kısa ("${blok.kosuldu}") — koşma kaydı değil boşluk doldurma. ` +
+      'Komut/model ve kapsam yazılır (ör. "codex exec -m gpt-5.6-sol · high · 4 dosya").',
+    );
   }
 
   // 4 · OKUNAN GERÇEK OLMAK ZORUNDA. Sol "Claude'un özetine değil gerçek yollara bakar";
@@ -159,7 +179,12 @@ export function lintHukumBlogu(blok, secenekler = {}) {
   }
 
   // 5 · Her bulgunun TEK karşılığı olmak zorunda; "sonra bakarız" yok.
-  if (!blok.bulgu) sari.push(`satır ${blok.satir}: BULGU satırı yok — hüküm gerekçesiz`);
+  // Sol bulgusu (RESHAPE): BULGU yalnız SARI'ydı — gerekçesiz bir hüküm duvarı geçiyordu.
+  if (!blok.bulgu || blok.bulgu.trim().length < 12) {
+    kirmizi.push(
+      `satır ${blok.satir}: BULGU yok/çok kısa — gerekçesiz hüküm, hükmün kendisi kadar değersizdir`,
+    );
+  }
   if (blok.sonuc.length === 0) {
     kirmizi.push(`satır ${blok.satir}: SONUÇ satırı yok — bulguya verilen tek karşılık yazılmamış`);
   }

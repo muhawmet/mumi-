@@ -12,7 +12,7 @@
 // BU ÖLÇEN DIŞ GÖZ ÇAĞIRMAZ. Ne Codex'e ne AGY'ye gider; yalnız GERÇEK sonucu içeri alır ve
 // uydurulamaz olduğunu doğrular. Otomatik provider çağrısı / API loop'u bu dosyada YASAKTIR.
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve, isAbsolute, basename } from 'node:path';
 import { parseHukumBloklari, lintHukumBlogu } from './hukum-blogu.mjs';
 
@@ -32,13 +32,28 @@ const MAMI_RE = /^##+\s*MAMİ HÜKMÜ\s*$/mu;
 const LEHCE_RE = (alan) => new RegExp(`^${alan}\\s*:\\s*(.+)$`, 'mu');
 const SHA_EK_RE = /^(.+?)(?:\s*·\s*sha256:\s*([0-9a-zA-Z]+))?\s*$/u;
 
+/**
+ * 🔴 Sol karşı-denetimi (2026-08-05, RESHAPE): yalnız `existsSync` bakılıyordu, bir KLASÖR
+ * medya sayılabiliyordu. Artık dosya olmak ve boş olmamak zorunda.
+ */
 const varMi = (yol, kok) => {
   try {
-    return existsSync(isAbsolute(yol) ? yol : resolve(kok, yol));
+    const tam = isAbsolute(yol) ? yol : resolve(kok, yol);
+    if (!existsSync(tam)) return false;
+    const st = statSync(tam);
+    return st.isFile() && st.size > 0;
   } catch {
     return false;
   }
 };
+
+/**
+ * Medya UZANTISI sözleşmesi. Sol bulgusu: fixture'lar `.md` dosyalarını FRAME/KLIP kabul
+ * ediyordu ve ölçen buna itiraz etmiyordu — yani "gerçek kare/klip" iddiası ölçülmüyordu.
+ */
+export const KARE_UZANTILARI = ['.png', '.jpg', '.jpeg', '.webp'];
+export const KLIP_UZANTILARI = ['.mp4', '.mov', '.webm', '.m4v'];
+const uzantiTutuyor = (yol, liste) => liste.some((u) => yol.toLowerCase().endsWith(u));
 
 /** MAMİ HÜKMÜ başlığından sonraki ilk boş olmayan satırları toplar. */
 function mamiHukmu(metin) {
@@ -90,7 +105,14 @@ export function lintCanaryLock(hamMetin, secenekler = {}) {
   if (klipler.length === 0) kirmizi.push('KLIP satırı yok — canary klipsiz olamaz, hüküm klibe verilir');
   for (const kayit of medya) {
     if (!dosyaVar(kayit.yol)) {
-      kirmizi.push(`${kayit.tur} yolu diskte YOK → ${kayit.yol}`);
+      kirmizi.push(`${kayit.tur} yolu diskte YOK (ya da dosya değil / boş) → ${kayit.yol}`);
+    }
+    const beklenen = kayit.tur === 'FRAME' ? KARE_UZANTILARI : KLIP_UZANTILARI;
+    if (!uzantiTutuyor(kayit.yol, beklenen)) {
+      kirmizi.push(
+        `${kayit.tur} medya uzantısı değil (${beklenen.join(' ')}) → ${kayit.yol} — `
+        + 'bir metin dosyası kare ya da klip kanıtı olamaz',
+      );
     }
     if (kayit.sha && !/^[0-9a-f]{8,64}$/u.test(kayit.sha)) {
       kirmizi.push(`${kayit.tur} sha256 biçimi bozuk (${basename(kayit.yol)}) → ${kayit.sha}`);
