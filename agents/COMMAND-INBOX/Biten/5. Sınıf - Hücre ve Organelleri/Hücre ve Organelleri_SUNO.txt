@@ -1,0 +1,45 @@
+HÜCRE VE ORGANELLERİ — MÜZİK BRIEF (Suno)
+=========================================================================
+Süre hedefi: ~4:30 · Kullanım: VO'nun altında yatak müzik (A2), ~-18 dB
+=========================================================================
+
+
+>>> SUNO "SIMPLE" KUTUSUNA — SADECE ŞUNU YAPIŞTIR <<<
+
+A warm, curious orchestral-and-piano underscore for a children's science film about
+discovering something impossibly small — the feeling of a kid leaning into a microscope
+for the first time. Begins sparse and domestic: single felted upright piano notes, soft
+pizzicato strings, a slow warm cello line underneath, like a quiet morning in a garden.
+Around the one-minute mark a gentle marimba and celesta pattern enters and starts to
+tick along, small and precise and mechanical, the sound of tiny things working. Strings
+open into a warm, wondering swell in the middle section, never triumphant, always
+intimate. Light glass-harmonica shimmer appears sparingly for the moments of discovery.
+Returns at the end to the same solo piano it opened with, one octave higher, settling.
+Tempo unhurried, around 80 BPM, gentle 4/4, no drums beyond a soft brushed pulse.
+Plenty of room for a narrator — the mid-range is deliberately kept clear and nothing
+competes with a speaking voice. Instrumental only, no vocals, no lyrics.
+
+
+=========================================================================
+OPSİYONEL — SUNO "CUSTOM" MODU KULLANILIRSA
+=========================================================================
+
+NEGATİF SATIRI:
+no vocals, no lyrics, no choir, no vocal pads, no drum machine, no trap hi-hats,
+no EDM build or drop, no epic trailer percussion, no brass stabs, no sound effects,
+no dramatic tension, no minor-key sadness
+
+SEKANS ENERJİSİ (kurgu için — Premiere'de bu haritaya göre kısılır/açılır):
+· K01-K08  (duvar, soru)          — en sade yer. Yalnız piyano ve cello. Müzik geride.
+· K09-K15  (mutfak, mikroskop)    — marimba girer, tempo hissi hafif artar.
+· K13      (lamba yanar)          — 🔴 müzik BİR NEFES ALIR: iki saniye neredeyse boşalır.
+· K15      (ilk kez hücreyi görür)— 🔴 asıl reveal. Yaylılar burada açılır.
+· K16-K38  (organeller)           — düzenli, tıkır tıkır marimba. Dersin gövdesi; müzik sabit
+                                    kalır ve VO'ya yer bırakır. Her organelde yükselme YOK.
+· K39-K48  (yanak hücresi)        — biraz daha canlı, merak tonu geri gelir.
+· K49-K53  (kapanış)              — açılış piyanosu bir oktav yukarıdan döner, yavaşlar.
+
+SES MİKS:
+VO önde ve daima üstte (A1). Müzik A2'de ~-18 dB, reveal karelerinde (K13, K15, K53)
+2-3 dB açılır. Klipler sessiz üretildi — Kling native ses kullanılmaz. SFX minimal:
+yalnız mikroskop vidasının tık sesi ve tuğlanın harca oturma sesi, ikisi de çok kısık.

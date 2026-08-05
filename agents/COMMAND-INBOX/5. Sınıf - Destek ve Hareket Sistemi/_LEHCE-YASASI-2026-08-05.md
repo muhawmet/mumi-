@@ -97,3 +97,84 @@ Geniş planda hareketsiz duran çocuk oyuncak gibi okunur — ölçüldü (K8).
 Her ajan kendi aralığı için tek `.txt` üretir: `MOTION/S<n>-2026-08-05.txt`
 ve dosyanın başına **iki satırlık karne** yazar:
 `olay-önde: <n> · olay-bitmiş: <n> · yeniden-basım önerilen: K<..>`
+
+---
+
+# §11 · ENERJİ — cansızlığın panzehiri
+> Mami, 2026-08-05, klipleri gördükten sonra: *"Hareketler cılız gibi biraz, biri hiç beğenmedim.
+> Biz heyecanlı, çocukların seveceği, kamerası interaktif videolar hedefliyoruz."*
+
+**Kusur bu yasanın §1-§10'undaydı.** Morphing'i kesmek için **en küçük güvenli olay** yazıldı,
+üstüne "her şey yerinde kalsın" ve "kamera kilitli" kondu. Morph gitti — **hayat da gitti.**
+Çocuk izleyici için bu ölümdür. §11 o çiti söker; fizik çiti yerinde kalır.
+
+## 11.0 AYRIM — bunu karıştırmak iki kusurdan birini doğurur
+
+| DEĞİŞMEZ (fizik — ölçüldü) | TEPKİ VERİR (hayat — zorunlu) |
+|---|---|
+| nesne **sayısı**, biçimi, kimliği, uzunluğu, malzemesi | saç · kumaş · toz · sıvı · sarkan uçlar · kâğıt |
+| kemik çoğalmaz · el uzamaz · kukla erimez · yazı bozulmaz | çarpılan komşu nesne **bir kez sarsılır** · gölge kayar |
+
+🔴 **`keeps its exact place` YAZMAK ARTIK YASAK.** O cümle çoğalmayı durdurdu ama dünyayı
+dondurdu. Yerine: nesne **aynı nesne kalır** (`stays the same eight bones`) **ve en az bir
+komşu olaya cevap verir.**
+
+## 11.1 OLAY BÜYÜK OLACAK
+Ölçüt "en güvenli olay" değil. Soru şu: **"Bu karede fiziksel olarak olabilecek EN BÜYÜK şey ne?"**
+Onu yaz. Küçük olay morphing'i önlemez — sadece klibi ölü yapar.
+
+## 11.2 ANİMASYON ZAMANLAMASI — dört zaman, hepsi aynı cümlede
+1. **HAZIRLIK** — olayın tersine küçük bir çekiliş/yüklenme
+2. **HIZLANMA** — asıl hareket, hızlı
+3. **AŞMA** — hedefi bir miktar geçme
+4. **OTURMA** — bir-iki sönümlü salınımla yerine gelme
+
+> ✗ `the bone tips over and comes to rest`
+> ✓ `the bone leans back a hair, then goes over fast, overshoots past its resting angle,
+>    rocks twice shorter and shorter, and settles`
+
+**Cılızlığın tek sebebi budur: doğrudan A'dan B'ye gitmek.** Gerçek kamerada dört zaman yoktur,
+animasyonda vardır — ve çocuğun sevdiği şey tam olarak odur.
+
+## 11.3 KAMERA OLAYA KATILIR
+Kamera kilidi **ölçülmüş bir kısıt değildir**, ihtiyattı. Ölçülen tek kamera kısıtı:
+**karede BÜYÜK baked-in yazı varsa kamera kilitlenir** (Kling yazıyı döndürünce bozuyor).
+Onun dışında iten · takip eden · olayla sarsılan · kayan kamera **serbest ve İSTENİR.**
+Kamera hareketi morph üretmez — **boşluk üretir.**
+
+## 11.4 ÇARPMA ETKİ BIRAKIR
+Bir şey düşer, çarpar, kapanırsa: toz kalkar · komşu nesne bir kez zıplar · gölge sıçrar ·
+sıvı bir kez çalkalanır. Bu satır yoksa olay ekranda **olmamış** gibi durur.
+
+⚠ §11, §1-§10'u geçersiz kılmaz. Tek olay · durağan açılış · biten kapanış · katı gövdenin
+fiille korunması · madde sabiti **aynen geçerlidir.** §11 onların **içini doldurur.**
+Kelime aralığı §11 ile birlikte **110-150**'ye çıkar.
+
+---
+
+# §12 · NEGATİF ÇALIŞIR — kalıp çalışmaz (Mami düzeltmesi, 2026-08-05)
+
+> Mami: *"negatifleri özenle yazdığın senaryoda verdiğin hareketler kolay kolay bozulmuyor."*
+
+**§5'i bu madde düzeltir.** §5 ölçüme dayanıyordu ama ölçümü yanlış okudum: K1'de tutmayan şey
+**negatifin kendisi değil**, sahneden kopuk **kalıp `Lock:` satırıydı** — her bloğa aynen
+yapıştırılan ezber yasak listesi. Motor o listeyi sahneyle ilişkilendiremiyor.
+
+| ✗ kalıp | ✓ sahneye özel |
+|---|---|
+| `Lock: @kukla stays a rigid solid that never folds, sags or bends at a joint.` | `the whole puppet swings as one piece, shoulder hip and knee holding their carved angles` **+** `no joint straightens as it swings` |
+
+**Kural:** önce **FİİL** (nesne ne yapıyor), sonra gerekiyorsa **o karede gerçekten olabilecek
+tek bozulmaya** yazılmış, somut, sahneye ait **bir** negatif. Liste değil, cümle.
+
+# §13 · KAMERA ANLATICIDIR
+> Mami: *"kaliteli kamera anlatıcı, öyle dull sahneler yapma, aptal showa da kaçma."*
+
+Kamera hareket etmek için hareket etmez — **neyi ne zaman gösterdiğine karar verir.**
+Amaçsız drift yasak; olayla gelen, bakışı yönlendiren, kadrajı olayın ihtiyacına göre değiştiren
+kamera istenir. İki uç da kusurdur: **cansız** (kilitli ve olaysız) ve **aptal show** (sebepsiz
+whip, sarsıntı, abartı). Enerji sahnenin **kendi fiziğinden** gelir.
+
+# §14 · HER SAHNEYE GEREKEN PROMPT
+Kalıp uygulanmaz. Sakin bir an sakin yazılır, çarpma taşıyan kare sert yazılır. §11.2'nin dört
+zamanı her karede **aynı şiddette olmaz** — biçim aynı, dozu sahne belirler.

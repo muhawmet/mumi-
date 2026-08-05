@@ -1,406 +1,455 @@
 5. Sınıf - Destek ve Hareket Sistemi — BASIM LİSTESİ
 ========================================================================
-Kare: 53 blok · kaynak sürüm: 7 dosya
+Kare: 53 blok · kaynak sürüm: 13 dosya
 Sürüm önceliği DOSYA ZAMANIDIR; yedek/eski adlı dosyalar düşürüldü.
 🔴 ESKİ SÜRÜMLE DOLDURULDU: K45-ALT — yenisi YAZILMADI, blok içinde de işaretli
-⚠ ÇAKIŞMA K1: Destek ve Hareket_CANARY-MOTION.txt → S1-2026-08-05.txt (en yeni seçildi)
-⚠ ÇAKIŞMA K29: Destek ve Hareket_CANARY-MOTION.txt → S4-2026-08-05.txt (en yeni seçildi)
-⚠ ÇAKIŞMA K36: Destek ve Hareket_CANARY-MOTION.txt → S4-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K1: Destek ve Hareket_CANARY-MOTION.txt → S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K29: Destek ve Hareket_CANARY-MOTION.txt → S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K36: Destek ve Hareket_CANARY-MOTION.txt → S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K2: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K3: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K4: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K5: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K6: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K7: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K8: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K9: S1-2026-08-05.txt → S1-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K37: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K38: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K39: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K40: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K41: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K42: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K43: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K44: S5-2026-08-05.txt → S5-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K10: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K11: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K12: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K13: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K14: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K15: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K16: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K17: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K18: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K45: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K46: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K47: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K48: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K49: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K50: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K51: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K52: S6-2026-08-05.txt → S6-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K28: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K30: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K31: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K32: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K33: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K34: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K35: S4-2026-08-05.txt → S4-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K19: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K20: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K21: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K22: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K23: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K24: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K25: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K26: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K27: S3-2026-08-05.txt → S3-ENERJI-2026-08-05.txt (en yeni seçildi)
 ========================================================================
 
->>> K1   [kaynak: S1-2026-08-05.txt]
+>>> K1   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K1 | 5s · VO "Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı."
 -----
-The studio holds for a beat. Then the hanging @kukla swings out from the cabinet door on its hook, the whole body travelling as one piece — shoulder, hip and knee each holding the exact angle they were carved into — and its hard shadow slides across the oak panel behind it with the same shape. The swing shortens, comes back once, and the puppet settles plumb against the door, the shadow stopping with it. @mira4 stands where she is beyond the table; her lips stay closed and soft as her shoulders drop with a breath she lets go, her eyes staying on the puppet. The plaster sphere and the brush jars keep their exact places. Camera: locked off at tabletop height, square to the cabinet, absolutely still.
+The studio holds one still beat. Then the hanging @kukla dips back a few centimetres against the cabinet door and swings out on its hook, the whole carved body travelling as one piece with shoulder, hip and knee locked at the angles they were turned into; it goes a little past plumb, comes back, taps its heel softly on the oak, sways twice smaller and hangs still. Its hard shadow slides across the panel with it and stops. The apron on the peg rail stirs and dust turns through the window light. @mira4's head turns to the small sound, her hair moving against her cheek, her lips closed as her shoulders drop. It never takes a step and never bends a knee; it is carved wood on a hook. Camera: leaves the doorway and pushes slowly across the table, ending framed on the puppet alone in the cabinet shadow.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K2   [kaynak: S1-2026-08-05.txt]
+>>> K2   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K2 | 5s · VO "Mira onu indirdi; kolu tıkırdayarak büküldü."
 -----
-@mira4 holds @kukla upright in her left fist, her right thumb flat on the brass ball of its elbow. She presses. The ball turns one notch, the loose forearm swings up into a clean right angle and stops dead there, and the angle holds on its own once her thumb comes off it. Her fingers open a few millimetres and stay open just clear of the wood, and her chin drops as the joint keeps the shape she gave it. The rest of the puppet keeps every angle it had — head, chest, hips and legs unchanged, its weight carried in her left fist. Dust turns in the window light behind her shoulder. Camera: locked at table height, square to the brass ball, absolutely still.
+@mira4's thumb bears down on the brass ball of @kukla's elbow. The loose forearm sinks a finger's width, then whips up fast, overshoots past the right angle, drops back, swings twice shorter and shorter, and locks square with a click she feels through her thumb. The puppet kicks back in her left fist and she catches it, her elbow knocking the bench: the masking tape roll rolls a hand's width and stops on its rim, the water in the jar rings once, her curls bounce off her cheek. Only that one elbow changes angle — no second joint moves — and the head, chest and legs ride the recoil as one piece. Her lips stay closed and her brows lift. Camera: pushes in to hold on the brass ball just before it turns, taking a single shake on the click.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K3   [kaynak: S1-2026-08-05.txt]
+>>> K3   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K3 | 5s · VO "Kuklayı masaya oturttu ve elini çekti."
 -----
-@kukla sits upright on the boards where it was set, its legs over the table edge. @mira4's open right hand hangs in the air a hand's width from its shoulder. Then the hand draws back across the wood, the fingers spreading wider as they go, and comes to rest on the table edge beside her other palm. The puppet holds the pose it was given — spine plumb, both shoulders level, each joint keeping its exact angle, its shadow unchanged on the boards. She does not straighten; her lips stay closed as she holds a breath, her eyes locked on the wooden shoulder. Camera: locked at board height, square down the table, absolutely still.
+@mira4's open hand hovers a finger's width from @kukla's wooden shoulder. Her fingers spread, and she draws the hand back across the boards to the table edge. Left to itself the seated puppet tips forward from the hips as one rigid piece, every joint holding its carved angle, goes a few degrees past upright, rocks back, sways twice smaller and settles plumb on the edge, its shadow swinging with it and stopping. It does not fold at the waist and does not slide off the table. The curl of paper on the near corner lifts and drops, the water in the brush jars trembles one ring, the aprons on the pegs stir. Her hair falls forward as she watches, lips closed, breath held. Camera: follows the withdrawing hand back, then leaves it and settles on the puppet sitting alone.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K4   [kaynak: S1-2026-08-05.txt]
+>>> K4   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K4 | 5s · VO "Kukla olduğu yerde yığıldı."
 🔴 YENİDEN-BASIM — VO'nun tek olayı olan çöküş kare açılmadan bitmiş; K3 zaten "el çekilmiş" kareyi verdiği için K4 dik oturan kukladan başlamalı ki cümle ekranda gerçekleşsin.
 -----
-@kukla lies flat across the oak boards where it fell, arms and legs sprawled, dead still. Above the table @mira4's right hand stays open in the air, holding the shape of a shoulder that is no longer under it. Then her fingers close slowly out of that shape into a loose curl, her arm comes down to her side, and her shoulders drop as she lets a breath go; her eyes come off the fallen body onto her own empty hand and stop there. The puppet keeps every angle it landed in, each limb resting exactly where the wood laid it. Dust turns in the window light above the boards. Camera: locked at board height, square to the table, absolutely still.
+@kukla lies sprawled across the oak boards, dead still, and @mira4's open hand hangs in the air above it, holding the shape of a shoulder that is gone. Her hand rises a few centimetres — then the whole arm drops and her palm lands flat on the boards with a knock. The fingers splay wide past flat, curl in, and settle. The table takes it: the brass lids on the foreground jar chatter, the water in both brush jars rings, the folded cloth slumps a fold, dust leaps through the window light, and the puppet's loose wooden hand jolts once against the wood and lies still. Her five fingers stay five and stay the same length as they land. Her shoulders drop with the breath she lets go. Camera: sinks to board level as the arm falls, the fallen puppet filling the foreground and leaving her small behind it.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K5   [kaynak: S1-2026-08-05.txt]
+>>> K5   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K5 | 5s · VO "Mira ise sabahtan beri ayaktaydı ve yığılmamıştı."
 -----
-@mira4 stands at the table with the exercise book against her hip and her left hand flat on the edge. Then her weight moves off one foot onto the other, her left hand lifting from the table and settling a hand's width along it, her chin staying level the whole way — she shifts and stays vertical. Her lips stay closed and soft as her shoulders drop with a breath, and her eyes come up off the warm blurred shape in the foreground. The fallen @kukla stays exactly where it lies, out of focus and unmoving. The printed cover stays flat against her, square to the lens, its letters unchanged. Camera: locked off at eye height, square to the table, absolutely still.
+@mira4 leans her weight into the palm on the table edge, sinking a fraction lower, then pushes off and comes up tall. She rises a hair past her full height, her heels lifting and setting back, her hair swinging up off her shoulders and falling, the apron hem swinging forward and back twice before it hangs still. The push travels through the bench: the brush jars rattle, one ring crosses the water, dust bursts through the sunbeam, and the steam over the tea glass on the stool bends and straightens. The FEN BİLİMLERİ book rides straight up with her, flat against the apron and square to the lens; not one letter on the cover changes shape. Her chin comes level, her breath going out. Camera: locked at eye height, square to the table, the fallen puppet low in the foreground while she rises inside the same still frame.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K6   [kaynak: S1-2026-08-05.txt]
+>>> K6   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K6 | 5s · VO "Peki insanı ayakta tutan şey neydi?"
 -----
-@mira4 lies with her chin on the back of her wrist, both forearms flat on the boards, the fallen @kukla stretched between her and the lens. She blinks once, slowly. Then her head comes up off her arms — chin clearing her wrist, her upper hand uncurling and pressing flat on the wood — and her eyes lift from the fallen shape to the empty air above it, her brows drawing in as the question arrives. Her shoulders settle and she stops there, head clear of the table, hand flat. Her lips stay closed and soft. The puppet keeps every angle it lies in, and the brush jars behind her keep their exact places. Camera: locked at board height, square down the table, absolutely still.
+@mira4 lies with her chin on the back of her wrist behind the fallen @kukla. She presses down into her forearms for a beat, then shoves both palms flat and comes up off the boards, her chin clearing her wrist, her head rising a little past where it will stop, dropping back, settling. Her hair swings forward across her face and falls back. The shove goes through the table: the puppet's near foot rocks once in the foreground and stills, the powder jar lid chatters, brush handles nod in their jars, dust lifts through the window light. Her brows draw in and her eyes leave the wooden body for the empty air above it; her face stays the same face as it rises. Camera: pushes in low along the boards, past the puppet, and stops on her eyes as the question arrives.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K7   [kaynak: S1-2026-08-05.txt]
+>>> K7   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K7 | 5s · VO "Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar."
 -----
-@mira4 stands over the table with her right forearm flat on the wood and three fingertips of her left hand pressed into it, the skin blanched pale beneath each pad. She rolls those fingertips a few millimetres along the arm — hard over the ridge of bone, giving where the wrist folds, soft in the middle — then lifts the hand clear and lays it down on the boards. Colour floods back into the three pale marks at three different speeds, and her brows lift as it does. Her forearm keeps its length and its shape throughout, both hands staying the same size, and her lips stay closed and soft. Camera: locked at table height, square to the forearm, absolutely still.
+@mira4's three fingertips press into her own forearm, the skin blanching white under each pad. She draws them back a hair — then her hand closes into a hard fist, fast: a cord stands up at the wrist, the line of the forearm tightens, and the whole arm jumps a centimetre off the bench and knocks back down. The water in both brush jars rings, the grey cloth slides a finger's width, dust bursts through the window light. Then the fist springs open, fingers splaying past straight, closing a little, settling flat, and colour floods back into the three pale marks at three different speeds. The forearm does not lengthen and no extra finger appears. Camera: travels down the arm in one move — the bone ridge at the elbow, the fold of the wrist, then the fist — jolting once on the knock.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K8   [kaynak: S1-2026-08-05.txt]
+>>> K8   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K8 | 5s · VO "Mira kuklayı alıp fen sınıfına geçti."
 -----
-@mira4 stands one step inside the science room with @kukla carried against her chest. Then she walks: two unhurried steps down the aisle between the desks, the puppet's loose wooden hand and one hanging foot swinging from her stride while the rest of it rides against her as one piece. Her weight comes down on the front foot and she stops, and her head turns toward the tall model at the far wall, her chin lifting as she arrives at it. Only she moves; the desks, the chairs and the plants on the sill keep their exact places, and the model stands plumb on its base. Camera: locked off at the child's eye height, square down the aisle, absolutely still.
+@mira4 rocks back onto one heel, then drives forward and walks the aisle fast, three long strides, @kukla riding against her chest as one piece, its loose hand and hanging foot swinging from the rhythm. Her skirt swings, her hair lifts and falls, and her shoulder clips a chair back: the chair rocks up on two legs, comes down, rattles and stills, and the mug of pencils on the near desk chatters. She plants her front foot, carries a half step past it, rocks back onto her heels and stops, her chin lifting. The puppet never moves on its own; it swings only because she does. Sunbars sweep across her and dust turns inside them. Camera: dollies with her at child height, then swings ahead of her as she stops, opening the frame onto the skeleton across the room.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K9   [kaynak: S1-2026-08-05.txt]
+>>> K9   [kaynak: S1-ENERJI-2026-08-05.txt]
 ### K9 | 5s · VO "Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu."
 -----
-@mira4 stands between the desks with her chin tipped back, looking up at @iskelet on its stand. Then her chin comes down: her eyes travel from the model's collarbone down the ribs to the pelvis and across to @kukla sitting on the desk beside her, and her right hand slides a hand's width along the desk toward the puppet and stops. Her brows lift as the two shapes land on her as one shape. The model hangs plumb and dead still on its hook, every rib and finger bone keeping its exact spacing and its shadow unmoved on the floor, and the puppet keeps its seated angles. Camera: locked at the child's eye height, square to the desk line, absolutely still.
+@mira4 pushes off the desk with her flat palm and takes a step back, her head tipping up to take the whole of @iskelet in, her chin travelling a little past the skull, coming back down, settling. Her hair swings off her shoulders and drops. The push shakes the desk: the seated @kukla rocks back on the desktop as one rigid piece with every joint holding, comes forward, sways twice smaller and settles; the mug of pencils rattles; the stacked notebooks in the foreground slide a finger's width. @iskelet hangs still on its hook — no extra rib appears and no bone glows — only its long shadow swinging on the floor as she moves through the light. Her brows lift. Camera: starts on the seated puppet and cranes up and across to the skull, holding both inside the move so one shape becomes the other.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K10   [kaynak: S2-2026-08-05.txt]
+>>> K10   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K10 | 5s · VO "Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur."
 -----
 
-@mira4 rests her chin on her crossed forearms on the brushed steel base, her eyes on the brass plate. In the first half second her shoulders drop as she lets a breath go, and her head sinks slowly sideways until her cheek comes down flat on her upper forearm. Her eyes travel the width of the plate and her mouth curves a little as the number lands. Her lips stay closed and soft. The brass plate holds its exact place, its three engraved figures keeping their sharp edges, and the suspended leg above her hangs still with its toe bones at their exact spacing. Camera: locked off at floor height, square to the plate, absolutely still from first frame to last.
+@mira4 lies with her chin on her crossed forearms on the brushed steel base, the hanging skeleton foot a hand's width above her. Her shoulders drop with a breath; then her right hand peels off her forearm, draws back, and flicks the dangling toe bones. The whole leg swings out from above as one piece, knee and ankle holding their exact angles, carries past the pole, swings back a shorter way, then shorter again, and hangs still. The foot gains no extra toe bone and the leg does not stretch as it swings. Her hair lifts and falls across her cheek, the steel pole shivers where it meets the base, and her grin widens, lips closed. The 206 plate stays the same plate, sharp and square. Camera: low and square on the 206 plate, pushing past it to arrive on her face as the leg swings, no tilt, no turn.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K11   [kaynak: S2-2026-08-05.txt]
+>>> K11   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K11 | 5s · VO "Kemikler vücuda şeklini verir ve onu ayakta tutar."
 -----
 
-The room holds still for a beat. Then @kukla's draped arm slips off the rim of the stoneware mug it leans on, swings down along the wooden torso and lands flat on the birch desk, and the puppet's whole body slides a centimetre lower and stops there, its head-block tipping forward onto its chest. @mira4's eyes leave the wall and drop to the movement, her brows lifting. Behind the desk @iskelet stands square on its stand, spine stacked straight, holding every one of its angles while it leans on nothing. The five bone letters keep their exact places and spacing on the wall throughout. Camera: locked off at desk height, square to the letters, absolutely still from first frame to last.
+The room holds for a beat. Then @kukla's draped arm slides off the rim of the stoneware mug and the whole wooden figure pitches forward off its lean, every joint holding its angle so it falls as one shape, drops onto the birch desk, bounces a finger's width, rocks twice shorter and shorter, and lies still on its side. It does not take a step, reach out or catch itself as it goes. The mug tips back from the shove, swings upright past centre and rattles its pencils once. @mira4's head snaps around toward the noise, hair swinging across her cheek and settling, lips closed. @iskelet keeps every one of its angles on its stand. The five bone letters stay the same five bones. Camera: locked off at desk height, square to the letters, wide enough to hold the fall and her turn in one frame, absolutely still throughout.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K12   [kaynak: S2-2026-08-05.txt]
+>>> K12   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K12 | 5s · VO "Bir de en önemlisi: yumuşak organları korurlar."
 -----
 
-@mira4 stands for a beat, then takes one slow step toward @iskelet, her weight coming down on the heel and her trailing foot closing up beside it; she stops and her hands settle at her sides. As she halts, her chin rises and her eyes climb from the pelvis to the warm light held inside the rib cage, and her brows lift as she reaches it. Her lips stay closed and soft as her shoulders let a breath go. The rib cage keeps its exact shape, every bar holding its curve and spacing, and the warm light stays the same size in the same place deep inside it. Camera: locked off at chest height, square to the model, absolutely still throughout.
+@mira4 stands for a beat, then pushes off and crosses to @iskelet in two quick strides, her trailing foot swinging through; she stops a step short, her upper body carrying past her feet before rocking back and standing straight. Her hair swings forward across her face and falls back, her lips closed and soft as her sweater settles after her. Her chin lifts and her eyes climb from the pelvis to the warm light inside the rib cage, brows lifting. The stand takes her arrival: @iskelet's hanging arm bones sway out once from the shoulders, joints holding their exact angles, tap together and hang still. The light stays the same size deep inside the cage and does not spread out through the bars or reach her face. Camera: travels in with her at chest height and lands on the rib light exactly as her eyes find it.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K13   [kaynak: S2-2026-08-05.txt]
+>>> K13   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K13 | 5s · VO "Kafatası beyni sert bir kutu gibi çevreler."
 -----
 
-The hinged upper cap of the skull model rests open on its brass hinge, a thin warm line of light running out along the seam. In the first half second the cap begins to travel down under its own weight, swinging shut a hair at a time while the escaping line narrows to a thread. @mira4 keeps both hands flat on the desk, her eyes running along that closing seam. The cap comes to rest on the bone below and the line goes out, the braincase holding its warmth entirely inside, and her brows lift as the box finishes closing. The engraved KAFATASI plate keeps its place, sharp and square, and the jaw stays shut. Camera: locked off at desk height, square to the model, absolutely still throughout.
+The hinged cap of the skull rests open on its brass hinge, a thin warm line running out along the seam. It lifts a hair on the hinge, then swings down fast under its own weight and claps shut on the bone below, bounces back open a finger's width, drops again shorter, and seats; the escaping line pinches to a thread and goes out, the braincase holding its warmth entirely inside. No new light appears anywhere in the room as it closes. The pencils in the mug at the right knock together once and stand still. @mira4 pulls back with a blink, hair swinging forward, then leans in again and her brows lift, lips closed. The engraved KAFATASI plate stays sharp and square, the jaw shut. Camera: holds the open seam and her face together, pushes to the seam as the cap falls, jolts on the clap, and rests.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K14   [kaynak: S2-2026-08-05.txt]
+>>> K14   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K14 | 5s · VO "Kaburgalar kalbin ve akciğerlerin önünde kafes kurar."
 🔴 YENİDEN-BASIM — kavram ışığı zinciri burada kopuyor: K12'de doğuyor, K13'te kafatasının içinde, K15'te kemiğin içinde, K14'te hiç yok; ışık klip içinde yakılamaz (sıfırdan doğan ışık yasak), o yüzden kare yeniden basılmalı.
 -----
 
-@mira4 stands at the desk for a beat, then her open right hand slides forward across the birch top, travelling a hand's width until her fingertips reach the wooden base and stop flat. Her head lowers with the movement and her eye line drops from the top of the cage to the red heart form behind the bars, and her brows draw together as she finds it. Her lips stay closed and soft. The rib cage stands square on its turned base, every bar keeping its exact curve and spacing and its striped shadow lying across the red form exactly where it lies now, and the engraved KABURGA plate keeps its sharp square edges. Camera: locked off at desk height, square to the model, absolutely still throughout.
+@mira4 stands at the desk for a beat, then both palms come down flat on the birch top as she drops her weight forward, her upper body carrying past her hands before she rocks back and holds. Her hair swings across her face and falls back, lips closed. The desk answers her: the pencil mug hops and rattles once, the stack of grey folders at the near edge slides a finger's width and stops, and the top sheet lifts at its corner and lies down again. Her eye line drops through the bars to the red heart and her brows draw together. Every bar keeps its curve and spacing on the turned base, no bar swings free of the cage, and the heart stays matte red without lighting up. Camera: pushes past her shoulder and arrives on the heart behind the bars as her palms land, then eases still.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K15   [kaynak: S2-2026-08-05.txt]
+>>> K15   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K15 | 5s · VO "Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu."
 -----
 
-@mira4 holds the ivory thigh bone level in both hands. Then her arms come down together, lowering the bone in one straight unhurried travel until its shaft touches the birch desk and takes its own weight; her hands stay closed around it and her shoulders drop as it lands. Her eyes travel the full length of the shaft, out past the ball head to where it overhangs her fingers, and her chin drops a fraction. Her lips stay closed and soft. The bone keeps its exact length and matte ivory surface, the amber warmth staying deep inside the shaft and reaching nothing of her skin. Camera: a very slow push at the height of her hands, no more than a hand's width, stopping with the bone and her fingertips sharp.
+@mira4 holds the ivory thigh bone level in both hands. Her arms lift it a hair, then bring it down fast, and the shaft knocks the birch desk and takes its own weight; the ball head bounces once, the bone rolls a quarter turn against her fingers, rocks back shorter, and stops. The knock travels: the stack of books at the near edge shifts, dust jumps in the window light, and behind her the hanging arm of @iskelet swings out once from the shoulder, elbow and wrist holding their exact angles. Her hair swings forward and settles, her chin drops a fraction, her lips closed. Her arms do not stretch and the bone does not brighten past the ember deep inside its shaft. Camera: drops with the bone to desk height and finishes tight on the ball head overhanging her fingers.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K16   [kaynak: S2-2026-08-05.txt]
+>>> K16   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K16 | 5s · VO "Kemikleri şekillerine göre üç gruba ayırıyoruz."
 🔴 YENİDEN-BASIM — VO üç grubu ilan ediyor, karede tek kemik ve iki gölge lekesi var; üçe ayırma hiç görünmüyor ve karede olmayan iki kemik motionla yaratılamaz.
 -----
 
-@mira4's right hand hangs open above the bare stretch of desk for a beat. Then it comes down, the arm dropping the last few centimetres so the palm lands flat on the wood with the fingers spreading once and settling; her forearm rolls as the hand takes its weight and stops. Her eyes leave the empty wood and travel back along the desk to the single lit bone under her other hand, and her brows lift as she finds only the one. Her lips stay closed and soft. The bone keeps its place, matte and hard, its warmth staying a dim ember deep inside the shaft, and the bare wood beside it stays bare wood. Camera: locked low along the desk top, square to the wood, absolutely still throughout.
+@mira4's open right hand hangs above the bare stretch of desk for a beat. It draws up, then comes down fast and slaps flat on the wood, the fingers spreading past their spread and drawing back in as the forearm takes the weight. The desk jumps with it: the loose pencil in the foreground hops, rolls a hand's width and stops against the mug, the pencils in the jar rattle, and the dust in the low sunbeam scatters. Under her other hand the lit bone rocks once on its rounded shaft and settles as the same one bone. No second bone appears on the bare wood. Her eyes travel back along the desk, brows lifting as she finds only the one. Camera: runs low along the bare wood as the palm lands, jolts, and stops with the empty grain filling frame, the single lit bone at its far edge.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K17   [kaynak: S2-2026-08-05.txt]
+>>> K17   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K17 | 5s · VO "Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur."
 -----
 
-The desk holds still for a beat. Then the suspended arm of @iskelet behind it swings forward from the shoulder as one piece, travelling a finger's width, its elbow and wrist holding their exact angles and its hand keeping the same open shape; it swings back a shorter way, then shorter again, and comes to rest hanging straight down. The thigh bone lies where it lies throughout, keeping its full length and matte ivory surface, its warmth staying a dim ember deep inside the shaft, and the ruler beside it keeps its place with the printed 30 sharp and square. Camera: a very slow push along the desk toward the bone, no more than two centimetres, easing to a full stop.
+The desk holds for a beat. Then the thigh bone loses its balance on its rounded shaft, tips back a hair, and rolls fast toward the ruler, its ball head knocking the wooden edge and riding a little up over it before dropping back, rocking twice shorter and shorter, and lying still across the grain. The ruler ticks a finger's width along its own length and stops without turning, the printed 30 sharp. Dust jumps in the beam from the blinds, the pencils in the near jar rattle once, and behind the desk the hanging hand of @iskelet sways out from the wrist and hangs still. The bone keeps its full length and matte ivory surface and does not brighten into a light source. Camera: travels with the roll and settles looking straight down the shaft, the bone running past the ruler's 30 at the end of the move.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K18   [kaynak: S2-2026-08-05.txt]
+>>> K18   [kaynak: S2-ENERJI-2026-08-05.txt]
 ### K18 | 5s · VO "Kısa kemiklerin eni ve boyu birbirine yakındır."
 -----
 
-The heap lies still for a beat. Then the one bone lying apart from the others at the front right rocks over on its curved face, tipping a few degrees, settling back, tipping a shorter way, and comes to rest with its flat end down on the wood. Every other bone in the heap keeps its exact place and its exact neighbours through the whole clip, and the heap ends with the same bones it began with. The brass fifty-gram weight stands where it stands, its engraved face sharp and square to the lens, holding no light. Each amber dot stays a small steady point deep inside its own bone. Camera: locked at desk height in a near-macro view, absolutely still throughout, no push, no drift, no tilt.
+The heap holds for a beat. Then the bone riding highest on the pile slips off its neighbour, slides down the slope gathering speed, clips the front bone, which hops and drops back, overshoots past the edge of the heap, rocks twice shorter and shorter, and comes to rest on bare wood beside the folded cloth. Two bones settle into the gap it left and knock together once. A fine puff of dust lifts and drifts off. The heap gains no bone and no bone stretches or splits; it ends as the same bones it began with, each amber dot steady deep inside its own bone. The brass fifty-gram weight sinks a little deeper and stays standing, its engraved 50 g face square to the lens. Camera: pushes down over the pile with the slide and ends close on the fallen bone alone, its width and length reading the same.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K19   [kaynak: S3-2026-08-05.txt]
+>>> K19   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K19 | 5s · VO "El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır."
 -----
-@mira4's open hand lies on the birch desk beside the field of small ivory bones, her cheek low over the wood. Her fingers fold: index and middle curl in first, ring and little finger following, the tendons rising under the skin of her bare wrist, until the hand closes into a soft fist beside the nearest bone. Her forearm rolls a few degrees with it so wrist and bones lie in one line, and there the hand stops. Only her fingers move; every bone keeps its exact place and the amber points inside them hold a steady warmth. Her lips stay closed as her shoulders drop with a breath. Camera: a slow drift along the desk at bone height, stopping with her wrist and the nearest bones in one plane.
+@mira4's open hand lies on the birch desk beside the loose field of small ivory bones. Her fingers spread and the hand lifts a few centimetres, the wrist cocking back; then it comes down flat and fast and the palm smacks the wood beside them. The whole field hops once — every bone leaves the desk a fingernail's height, lands, chatters against its neighbour and rolls still. They stay the same loose scatter of ivory bones, none splitting, none appearing. The pencils clatter in the grey mug, the stacked books nudge, dust bursts up through the window light. Then the desk is quiet and her hand rests flat, lips closed. Camera: starts on her watching face, drops to hand height with the palm, takes the smack as a small shove in, and holds on her wrist lying in one line with the little bones.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K20   [kaynak: S3-2026-08-05.txt]
+>>> K20   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K20 | 5s · VO "Yassı kemikler levha gibidir; kafatası, kaburga ve leğen kemiği böyledir."
 -----
-@iskelet hangs on its polished steel post in the daylight from the blinds. The whole model turns a few degrees on the post and eases back, skull, rib cage and pelvis swinging through the same small arc as one piece, every gap between the ribs holding its exact width and the curved wing of the pelvis keeping its angle to the spine, while the hard shadow of the rib cage slides across the teal cabinet behind it. Then the turn runs out and the model comes to rest, dead still. The children's drawings on the cork board stay pinned and flat. Camera: a slow drift down from the crown of the skull past the ribs to the wing of the pelvis, stopping there completely.
+@iskelet hangs on its polished steel post in the daylight from the blinds. The model tips a few degrees the wrong way first, then swings hard around the post — skull, rib cage and pelvis travelling a quarter turn as one piece, every gap between the ribs holding its width, the wing of the pelvis holding its angle to the spine. It overshoots past the front, comes back, rocks twice shorter and shorter, and settles facing the room. The rib shadow sweeps across the teal cabinet like a striped fan and swings back; the children's drawings lift at their corners on the cork board and lie down again. The ribs stay the same count of curved plates. Camera: arcs in with the turn, then reads the model in the order the voice names it — crown of the skull, down the rib cage, down to the pelvis, and stops.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K21   [kaynak: S3-2026-08-05.txt]
+>>> K21   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K21 | 5s · VO "Mira üç kemiği yan yana dizdi; hiçbiri diğerine benzemiyordu."
 🔴 YENİDEN-BASIM — dizme işi karede bitmiş; VO'nun fiili gösterilemez ve orta planda duran Mira'ya yalnız bir öne eğilme kalıyor (K8'in plastik okuması bu sınıftandır).
 -----
-The three bones lie in their row on the birch table — long thigh bone nearest the lens, the wrist cluster behind it, the curved rib beyond. @mira4 leans in over them: her weight travels forward onto her flat palms, her shoulders coming over her hands and her chin lowering, her fingers spreading on the wood, her eyes travelling from the near end of the row to the far one. Then her weight arrives and she holds there, shoulders settled, brows lifted. Her lips stay closed and soft. Not one of the three bones moves a hair; each keeps its exact place, and the warm light inside them holds the shape it has. Camera: locked at table height straight down the row, absolutely still, no push, no drift, no tilt.
+The three bones lie in their row on the birch table. @mira4 rocks back a hair, then drops her weight forward onto both flat palms and the table takes the thump — her shoulders come over her hands, her hair swings past her cheeks and falls back. The long thigh bone nearest the lens jumps, rolls a quarter turn toward the edge, overshoots, rocks twice shorter and shorter and settles against the wrist cluster with a knock. The cluster and the curved rib stay where they lie; no fourth bone appears on the wood. The pencils rattle in the grey mug and dust bursts through the window light. Her lips stay closed, her brows lifting. Camera: low at table height, travelling the row so each of the three shapes passes the lens in turn, taking the thump as a shove and ending on the rolled thigh bone.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K22   [kaynak: S3-2026-08-05.txt]
+>>> K22   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K22 | 5s · VO "Peki bu kadar kemik birbirine nasıl bağlanıyordu?"
 -----
-@iskelet's raised right arm hangs out into the room, the amber core lying along the upper arm shaft and along the two forearm shafts, a dark unlit gap between them at the elbow. The whole arm swings down a few degrees from the shoulder ball as one piece, upper arm and forearm holding their exact angle to each other, the finger bones keeping their spread, the dark gap travelling with them without opening or closing by a hair. Then the swing runs out and the arm hangs dead still. The two long bones on the near table corner keep their exact places on the wood. Camera: a slow drift down the arm at elbow height, stopping with the lit shaft, the dark gap and the lit forearm in one plane.
+@iskelet's raised right arm hangs out into the room, the amber core lying along the upper arm and the two forearm shafts, a dark unlit gap between them at the elbow. The arm lifts a few degrees higher first, then swings down fast from the shoulder ball as one piece — upper arm and forearm holding their angle to each other, the finger bones holding their spread, the dark gap riding down with them without opening or closing. It overshoots past the hanging line, swings back, rocks twice shorter and shorter and stops dead. The drawings flutter on the cork board and the arm's shadow rakes the cabinet doors. The elbow stays one dark gap. Camera: falls with the arm, then leaves the hand and eases in until the lit shaft, the dark gap and the lit forearm fill the frame — the voice's question left sitting in that gap.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K23   [kaynak: S3-2026-08-05.txt]
+>>> K23   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K23 | 5s · VO "Mira atölyenin kapısını yavaşça itti."
 -----
-@mira4 stands with her right palm flat on the inner face of the oak door, the RESİM ATÖLYESİ plate at her fingertips. Her weight travels forward onto her front foot: her fingertips flatten and pale where they press, her elbow straightens, and the leaf gives — it turns two or three degrees on its two hinges, the whole slab going as one piece, the shadow of her forearm sliding a hand's width across the timber. Then the leaf stops and she holds her hand where it is. The enamel plate rides the leaf as one flat printed piece, its two lines keeping their exact letters, spacing and dots. Camera: locked off at a fifth-grader's eye height, square to the door, absolutely still, no push, no drift, no tilt, no zoom.
+@mira4 stands with her right palm flat on the inner face of the oak door, the RESİM ATÖLYESİ plate at her fingertips. She settles back onto her heel, then leans her weight slowly onto the palm: her elbow straightens and the heavy leaf gives all at once, swinging wide open on its two hinges as one solid slab. At the end of its travel its own weight carries it a little past, it eases back a hand's width and stops, quiet. Her hair and skirt hem lift and fall in the moved air; the pinned drawings flutter; dust turns in the light. The enamel plate rides the leaf flat and unbent, its two printed lines keeping their letters and dots. Camera: at a fifth-grader's eye height, holding on her hand, then walking in past the opening leaf to show what the doorway lets in — no roll, no whip.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K24   [kaynak: S3-2026-08-05.txt]
+>>> K24   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K24 | 5s · VO "Kapı, menteşesinin üstünde sessizce döndü."
 -----
-The steel butt hinge sits closed, its two leaves lying flat in one plane, three barrels stacked around a single bright pin. The door begins to open: the leaf swings out two or three degrees, the barrels rolling against one another around the pin, the pin staying seated where it is, the screws staying down in their countersinks, and a thin wedge of shadow opens along the closing edge. Then the leaf reaches the end of its small travel and stops dead, the barrels settling with it. The hinge stays two leaves, three barrels and one pin. The bone across the foreground keeps its place and its steady ember. Camera: locked square to the plate at hinge height, easing back two centimetres in the last second and stopping.
+The steel butt hinge sits closed, its two leaves flat in one plane, three barrels stacked around one bright pin. The leaf loads back a hair, then swings out in one long weighted move — the three barrels rolling against one another around the pin, the pin staying seated, the screws staying down in their countersinks, a wedge of shadow opening along the closing edge. At the end of its travel the door's own mass carries it a touch past rest, it eases back a finger's width, rocks once shorter and settles. No fourth barrel and no extra screw appears. The bright gap widens behind it; dust is dragged through the beam; the long bone across the foreground rocks once and holds its steady ember. Camera: holds tight on the turning barrels, then eases back to show this small stack of steel moved the whole door, and stops.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K25   [kaynak: S3-2026-08-05.txt]
+>>> K25   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K25 | 5s · ekranda ~3.2s · VO "Kemiklerin birleştiği yerlere eklem diyoruz."
 -----
-The forearm hangs from @iskelet's elbow, the thin amber ring lying in the contact line where the two bones meet, the brass EKLEM letters standing on the cabinet behind. The forearm swings: it turns a few degrees around the brass pin at the joint, both ivory shafts going together as one straight piece, the ends staying in contact all the way, the ring keeping its exact circle as the angle changes. Then the swing runs out and the forearm hangs dead still. The small bones on the near desk corner keep their exact places on the wood, and no second ring forms anywhere on the model. Camera: locked at joint height, absolutely still, no push, no drift, no tilt, no zoom, the brass letters holding their exact place in frame.
+The forearm hangs from @iskelet's elbow, the thin amber ring lying in the contact line where the two bones meet, the brass EKLEM letters standing on the cabinet behind. The forearm loads down, then swings up fast around the brass pin — both ivory shafts going together as one straight piece, the ends staying in contact throughout, the ring holding its exact circle as the angle changes. It overshoots past the top of the flex, falls back, rocks twice shorter and shorter and hangs dead still. Its shadow sweeps the birch table and the small bones there; those stay the same small bones, none added, and no second ring forms on the model. The brass letters keep their shapes, spacing and sharp edges. Camera: locked at joint height with the glowing contact line and the word in one frame, absolutely still, no push, no drift, no tilt, no zoom.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K26   [kaynak: S3-2026-08-05.txt]
+>>> K26   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K26 | 5s · ekranda ~2.9s · VO "Eklemler tıpkı bir menteşe gibi çalışır."
 🔴 YENİDEN-BASIM — dolap kapağı karede zaten sonuna kadar açık; menteşe dersini açılışla anlatacak yol kalmıyor, geriye yalnız kapanma yönünde küçük bir dönüş kalıyor.
 -----
-The green first-aid cabinet stands open against the wall, its door swung wide on two steel barrels, the SARGI BEZİ carton square on the shelf inside. The door swings back: the leaf travels a hand's width toward closed, the two barrels rolling against one another around their pin, the leaf going as one flat panel with the white cross riding it unchanged, its shadow sweeping across the wall. Then the leaf stops and hangs there, the barrels settling with it. The elbow of @iskelet in the near foreground does not move at all — the two shafts hold their angle and the warm line at the contact keeps its steady glow. Camera: locked square to the cabinet, absolutely still, no push, no drift, no tilt, no zoom.
+The green first-aid cabinet stands open against the wall, its door swung wide on two steel barrels, the SARGI BEZİ carton square on the shelf inside. The leaf loads open a finger's width, then swings shut fast — travelling its whole arc as one flat panel, the white cross riding it unchanged, the two barrels rolling around their pin, its shadow sweeping the wall. The edge meets the frame, rebounds a finger's width, swings in again shorter and settles almost closed. The rolled bandage on the near table rocks once and stops; the drawings flutter on the cork board. The carton stays square with its two printed lines unbent, and the skeleton's elbow in the foreground holds its angle and its warm contact line. Camera: square to the cabinet, easing in with the swing until the two steel barrels and that elbow sit side by side, and stopping there.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K27   [kaynak: S3-2026-08-05.txt]
+>>> K27   [kaynak: S3-ENERJI-2026-08-05.txt]
 ### K27 | 5s · ekranda ~3.2s · VO "Onları hareket yeteneklerine göre üçe ayırırız."
 -----
-@iskelet stands on its post, one full amber ring closed around the shoulder ball, small amber lights sitting in the gaps between the neck and back vertebrae, and the skull's suture lying dark in its seam. The upper arm bone turns: it swings a few degrees inside the shoulder ring as one solid piece, the ring staying tight and closed on the ball, the shoulder blade and collarbone holding their exact angles, the rib cage and spine not moving with it at all. Then the turn runs out and the arm holds still. Each small light keeps its own gap between two vertebrae, none joining or multiplying, and the suture stays a dark hairline. Camera: a slow rise from the shoulder ball to the crown, stopping with the suture sharp.
+@iskelet stands on its post, one full amber ring closed around the shoulder ball, small amber lights sitting in the gaps between the neck and back vertebrae, the skull's suture lying dark in its seam. The upper arm bone loads down, then swings up fast and wide inside the shoulder ring as one solid piece — the ring staying tight and closed on the ball, the shoulder blade and collarbone holding their angles, the rib cage and spine not travelling with it. It overshoots at the top, falls back, rocks twice shorter and shorter and stops. The moved air lifts the pinned drawings and lets them down; the arm's shadow rakes the wall. Each small light keeps its own gap, none joining or multiplying. Camera: rides the swing up from the shoulder ball, climbs the neck past the small lit gaps, and stops on the dark suture in the skull.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K28   [kaynak: S4-2026-08-05.txt]
+>>> K28   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K28 | 5s · VO "Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler."
 -----
-The frame holds still for a beat: @iskelet stands on its post, one arm swept high, one knee drawn forward, the free lower leg hanging clear of the floor. Then that lower leg swings forward from the knee, travels through one short easy arc, comes back a little and settles hanging straight down. The amber ring at the knee brightens as it travels and eases to a steady glow the moment it stops. The raised arm keeps its exact angle and its own ring one even brightness; pelvis, spine and standing foot keep their places on the disc. Camera: a slow rise of a hand's width from the knee toward the raised shoulder, easing to a full stop with both rings in frame.
+The frame holds like a photograph for a beat: @iskelet stands on its post, one arm swept high, one knee drawn up, the free lower leg hanging clear of the floor. Then the leg loads — it draws back a hand's width, swings forward fast through a wide arc, kicks past the plumb line, sails back, rocks twice shorter and shorter, and settles hanging straight down. Shin and thigh keep their own lengths through the swing; no bone stretches and no second knee appears. The amber ring rides the whole arc and holds steady the moment the leg dies. The post takes the load: the skeleton nods once on its disc, the hanging arm bones tick against the ribs, dust turns through the window light. Camera: it starts on the raised elbow's ring, drops with the kick to find the knee, and ends with both joints in one frame.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K29   [kaynak: S4-2026-08-05.txt]
+>>> K29   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
 🔴 YENİDEN-BASIM — VO'nun öznesi Mira'nın DİZİ, ama karede diz bir olay olarak yok: Mira geniş planda dimdik duruyor, tepside kemik + pirinç menteşe + "DİZ" kartı var; motion bu boşluğu kapatamaz, kadraj Mira'nın kendi bükülen dizini almalı.
 -----
-The bone stands where it was left, angled up from the tray with the brass hinge open at its base. Then the bone comes down: it turns through the hinge's arc, unhurried, the polished pin carrying a travelling line of window light along the metal as the angle closes, until the bone lies flat along the tray floor and the hinge stops shut against itself. The shadow it throws over the small card shortens with it and stops when the bone stops. @mira4 keeps her hand flat on the table edge and lets a breath go, her lips closed, her eyes following the bone down. The card keeps its lettering exactly. Camera: a slow push down and in over the tray, easing to a complete stop as the hinge closes.
+The frame holds for a beat: @mira4 stands over the tray, the ivory bone angled up out of the open brass hinge. Then she drops her weight — she pulls a breath in and leans down onto her flat hand, her hair swinging forward past her cheek. Her arm keeps its own length as she comes down and the hand stays a hand, five fingers on the wood. The bone goes with her: it tips back a hair, falls through the hinge fast, clacks flat on the tray, bounces up a few degrees, drops shorter, and lies still as the hinge shuts, the pin dragging a line of window light down the metal. The card hops once and keeps its lettering; the stacked trays ring faintly. Camera: it rides down with her and pushes past her hand to the closing hinge, ending tight on the shut joint.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K30   [kaynak: S4-2026-08-05.txt]
+>>> K30   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K30 | 5s · VO "Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır."
 -----
-The column stands dead still for half a second: @iskelet's stack of small vertebrae vertical on its post, one small amber light sitting in each disc gap. Then the lean begins — the column tips a couple of degrees off vertical, each block turning only a hair on the pale disc beneath it, the whole row leaning together — and then it runs out and stops dead, every light stopping with it. Behind it @mira4 lets a breath go and her eyebrows lift a fraction as she sees how little the thing moved. The lights stay inside their gaps, equal in size and evenly spaced. Camera: a slow push of a hand's width along the column toward the lumbar gaps, stopping the same instant the lean stops.
+The column stands dead still for half a second: @iskelet's stack of small vertebrae vertical on its post, one amber light in each disc gap, @mira4 behind it with her hand flat on the bench. Then she shoves — her palm slides forward and knocks the round stand base, and the whole column leans as one row, each block turning a hair against the next and holding there, goes a few degrees further than it wants, springs back past upright, rocks twice smaller, and stands still again. The lights stay the same lights in the same gaps; no new vertebra grows in between. The hanging arm bones swing at the frame edges and tick against the ribs; dust jumps in the light; the stacked trays ring once. Camera: it kicks with the shove, then travels down the column to the lumbar gaps and stops where the lean was smallest.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K31   [kaynak: S4-2026-08-05.txt]
+>>> K31   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K31 | 5s · VO "Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz."
 -----
-Nothing moves for the first beat: @iskelet hangs forward over its post in one long even curve, small amber lights lying along the spinal gaps, and the glass cabinet door stands open behind it. Then the door swings — it drifts a few degrees closed under its own weight, folding along its one hinge line, and comes to rest against the cabinet frame. The spine keeps its curve through all of it, every block holding its own angle. @mira4 keeps both hands flat on the bench, lets a breath go, and her eyes travel from the door back to the bent spine. Camera: a slow drift to the right along the bench line, easing to a full stop with the door corner and the spinal curve in one frame.
+@mira4 stands at the bench for a beat, both hands flat on it, @iskelet hanging forward over its post in one long curve, the cabinet door standing open behind. Then she bends — she rises a little first, then goes down over the bench fast, her back rolling into one long curve from neck to hip, hair swinging forward across her cheek, elbows giving as her weight lands; she dips past where she meant to stop, comes back up a few centimetres, and settles low over the wood. Her back curves along its whole length instead of folding at one point, and her arms keep their length. Her sweater pulls at the shoulder, the bench creaks, and the open cabinet door drifts and knocks against its frame. Camera: it follows her down, then pans off her curved back to the skeleton's identical curve and holds the two together.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K32   [kaynak: S4-2026-08-05.txt]
+>>> K32   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K32 | 5s · VO "Oynamaz eklemler kafatasındadır ve asla hareket etmezler."
 -----
-The frame is dead still for a beat: @mira4's two hands rest on the crown of the skull, the gold suture running down the dome between them. Then the push comes — her fingers press down and inward, the pads flattening against the bone, her knuckles paling as the weight goes on, the whole skull carrying that load straight down into the bench as one piece. The gold zigzag keeps its exact line, the same width and the same place. Her hands hold the push a moment longer and then ease off; her eyes above the dome narrow and settle as the answer arrives, her lips closed. Camera: locked off on sticks at the height of the crown, square to the suture, absolutely still from first frame to last.
+@mira4's hands rest on the crown of the skull for a beat, the gold suture running down the dome between them. Then she loads and pushes — her shoulders lift, then drive down, her whole weight coming through straight arms into the bone; her fingertips flatten white, her knuckles pale, her hair swings forward past her temples. Her fingers stay on the surface and do not sink into the bone; the skull takes all of it as one solid piece, grinds a millimetre across the bench and stops hard, the gold zigzag holding its line and its width. She holds it, then lets go — arms rising, shoulders dropping as the breath goes out, eyes widening, lips closed. The jars on the sill rattle once. Camera: it pushes in over her hands onto the suture, kicks as the weight lands, and stays on the line that never moved.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K33   [kaynak: S4-2026-08-05.txt]
+>>> K33   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K33 | 5s · VO "Oradaki kemikler birbirine adeta kaynamıştır."
 -----
-Everything holds for a beat: @mira4's thumb and forefinger pinch the torn strip of squared paper against the cranial seam. Then she pushes — the strip travels a few millimetres, meets the seam and stops there, bowing upward under the pressure until its torn fibres stand up along the stopped edge and it can bow no further. Not a millimetre of paper goes inside the join. Her fingers ease; her eyes narrow a fraction behind her hand as the answer arrives, her lips closed. The gold thread along the seam keeps its exact line and the mug of pencils keeps every pencil in its place. Camera: an almost imperceptible drift of two centimetres along the seam at bone level, easing to a stop with the contact point sharp.
+@mira4's fingers pinch the torn strip of squared paper a hand's width clear of the cranial seam for a beat. Then she drives it in — the strip travels fast, hits the gold seam and stops dead, bowing up hard under the push, its torn fibres standing along the stopped edge, arching until it can arch no further. Not a millimetre of it enters the join, and the paper stays one strip with no piece tearing free. Then she eases off and it snaps back flat, flutters once, and hangs still between her fingers. Her forearm brushes the mug and the pencils tick against each other and lean back; her hair swings past her cheek; her eyes narrow, then lift as the answer arrives, lips closed. Camera: it pushes in past her knuckles to the contact point and holds there as the paper flattens, the sealed seam filling the frame.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K34   [kaynak: S4-2026-08-05.txt]
+>>> K34   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K34 | 10s · VO "Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?"
 -----
-The bench holds absolutely still for a beat: the ivory thigh bone, the brass-pinned pair and @kukla lying on its side do not shift. Then the small amber ring on the puppet's joint begins to go — it turns slowly through a few degrees, thinning and dimming as it turns, giving less and less to the pale wood on either side, until it turns through the last of itself and goes out. @mira4 leans her weight onto her fingertips, lets a long breath go, and her eyes travel down the row to the dark joint, her brows drawing together, her lips closed. The stamped box holds its violet letters exactly. Camera: locked off at bench height, square to the row, absolutely still from first frame to last.
+The bench holds still for a beat: the ivory thigh bone, the brass-pinned pair and @kukla on its side, @mira4 standing back, one hand on the stone. Then she reaches in slowly, hesitates, and tips the puppet over — it rolls onto its back as one solid piece, every joint holding the angle it had, drifts a few degrees past flat, rocks gently back twice, and rests. No limb moves by itself and the wooden body keeps its length. Then it lies there while she waits for it. The thigh bone rolls a quarter turn and settles against the pinned pair; the trays ring softly; the amber ring at the hip carries its glow along unchanged. Her hand withdraws, her shoulders dropping with a long breath. The stamped box holds its violet letters. Camera: locked off at bench height, square to the row, still from first frame to last.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K35   [kaynak: S4-2026-08-05.txt]
+>>> K35   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K35 | 5s · VO "Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu."
 -----
-The bench holds still: @kukla's arm lies exactly where it lies, the brass ball at its elbow catching one hard line of window light, nothing attached to it and nothing pulling it. Then @mira4's open hand, lying flat on the stone, closes — the fingers curl in one by one until the hand is a loose fist, and there it stops. Across the same bench top the wooden arm gives nothing back: the elbow keeps its one angle, the brass ball its exact line of light. Her cheek stays down on her folded arm, her lips closed, her eyes on the joint. Camera: a very slow dolly in along the bench toward the brass ball, easing to a stop with the fist and the joint in one frame.
+The bench holds still: @kukla's arm lies along the stone, the brass ball at its elbow catching a hard line of window light, @mira4's cheek on her folded arm, her far hand open and flat. Then the hand goes — the fingers spread wide, then snap into a hard fist, the knuckles rising white, the forearm tightening, and the fist thumps the stone once. Her fingers keep their length as they curl; nothing stretches. The bench answers: the wooden arm hops, the brass ball ticks and its line of light slides back, and the arm settles as it lay, elbow at the same angle, giving nothing of its own. Her hair swings across her cheek; the fist loosens and rests. Camera: it pushes low along the stone from her fist to the brass ball, kicking on the thump, ending on the joint that moved only because she hit the table.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K36   [kaynak: S4-2026-08-05.txt]
+>>> K36   [kaynak: S4-ENERJI-2026-08-05.txt]
 ### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
 -----
-@mira4 holds her pose for a beat, the raised forearm across her chest and her other hand spread over the upper arm, her brow drawn down. Then she tightens — the forearm draws up a few more degrees and the muscle under her spread fingers rises and firms, lifting her fingertips as the shape swells against them, and there it holds, full and still. Her brow lets go: the eyebrows come up and the mouth stays closed as recognition arrives, and her eyes drop to @kukla lying along the bench, whose straight jointed arm has given nothing. Her arm keeps its real anatomy; the puppet keeps its place. Camera: a slow small push toward her upper arm, the puppet held in the near foreground, easing to a full stop.
+@mira4 holds the pose for a beat, forearm across her chest, her other hand spread over the upper arm. Then she pulls — her shoulder drops and loads, then the forearm snaps up hard, her body turning with it; the muscle under her fingers swells and goes rigid, lifting her fingertips clear, the arm rising past where it means to stop and settling back, full and still. The forearm keeps its length through the pull and her fingers stay on the muscle instead of sinking into it. Her hair swings forward and drops back; her sleeve slides down her forearm and catches. Then her brow lets go — eyebrows up, mouth closed, breath out — and her eyes fall to @kukla, whose jointed arm has given nothing. Camera: it pushes in and arcs to her working arm, then tilts down to the puppet's dead arm in the foreground and stops.
 
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K37   [kaynak: S5-2026-08-05.txt]
+>>> K37   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K37 | 5s · VO "İşte motor buydu: kaslar."
 -----
-@mira4 stands at the bench with her palm flat on the steel top. Her hand draws slowly into a loose fist and her head turns a few degrees toward the muscled arm model on its turned wooden base at the right; at the top of the squeeze she lets the fist open again and her fingers settle flat on the steel, and she holds still, lips closed, eyes on the model. Everything else keeps its place: the three fibre letters stay square and motionless in the air, @kukla lies where it lies at the near left, and the highlight along the model's belly holds its exact length. Camera: a slow push of a hand's width toward the bench at chest height, easing to a full stop.
+@mira4's spread fingers press hard into the steel, her shoulder loading back, then her whole arm rips up off the bench: the hand snaps into a tight fist and drives in against her chest, the forearm balling under the sleeve, punching past her ribs before it drops back, bobs twice smaller and stops. Her hair swings across her cheek and settles late, a grin breaking on her closed lips. The heel of her hand slaps the steel as it leaves and the knock runs down the bench: the pencils clatter against the rim of the mug and @kukla rocks once as one carved piece, shoulder hip and knee holding their angles, and goes still. The three letters hold in the air as three letters, K A S, their red fibre strands staying wound. Camera: locked off at chest height, square to the bench, dead still throughout.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K38   [kaynak: S5-2026-08-05.txt]
+>>> K38   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K38 | 5s · VO "Kaslar kasılırken kısalır ve bağlı olduğu kemiği kendine çeker."
 -----
-On the black base the forearm bone swings a few degrees closer to the upper bone and stops there, turning on its brass pin as one solid piece. The brick-red belly between them shortens with it, drawing its two pale cord ends toward each other and thickening into a higher dome, and the small amber glint on the belly moves in a finger's width with the shortening skin. The long beige band keeps its exact folds where it lies across the bench, and the black base does not shift. @mira4 lowers her chin and follows the bone in, her hands flat, her lips closed, and her eyes settle on the closed angle. Camera: a slow push at bench-top level toward the belly, easing to a complete stop.
+The brick-red belly stretches a hair longer, then snaps short and hauls: the forearm bone comes up through a fast arc toward the upper bone, turning on its brass pin as one solid piece, swings past the closed angle, rocks back twice shorter and settles hard against it, the bone the same length coming in as going out. The belly piles into a high tight dome, its pale cord ends drawn straight, the amber glint sliding along the stretched skin. The long beige band whips up off the bench with the pull, cracks over and slaps down in a slower ripple; the black base knocks the steel and the stacked enamel trays ring once. @mira4 pulls her chin back, hair swinging late, lips closed. Camera: drops to bench-top level and pushes in with the rising bone, jolting on the knock, settling on the domed belly.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K39   [kaynak: S5-2026-08-05.txt]
+>>> K39   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K39 | 5s · VO "Gevşediğinde kemik eski yerine döner."
 -----
-The bone hanging from the model's lower end swings down the last few degrees under its own weight, rocks once past the bottom of its arc and settles hanging straight, turning on its pin as one solid piece. The long brick-red belly above it eases as it goes, its surface flattening a shade and its thin amber line evening out along the whole run. The coiled beige band lying across the bench keeps every wave exactly where it is, and the canvas bag lies dead flat. @mira4 lets her shoulders drop as she breathes out, her hand resting where it rests on the bench edge, her brows softening, lips closed. Camera: locked off at chest height, square to the bench, still from first frame to last.
+The long red belly tightens, then lets go: it lengthens and slims along its whole run and the bone hanging off it drops through a wide fast arc, swings past straight down, comes back short of level, rocks twice smaller and hangs still, turning on its brass pin as one solid piece and holding its own length all the way down. The rush fans the coiled beige band — a ripple runs the waves from the near pin to the far one and dies out — and the near corner of the canvas bag lifts, flaps once and drops flat. @mira4's shoulders fall as she lets a breath go, her hair settling late, lips closed. Camera: starts close on the belly, drops and pushes in with the falling bone, the canvas bag sliding out of the bottom of frame, easing to a stop on the still bone.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K40   [kaynak: S5-2026-08-05.txt]
+>>> K40   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K40 | 5s · VO "Vücudumuzda üç çeşit kas vardır."
 🔴 YENİDEN-BASIM — kare üç modeli yan yana dizilmiş bir tablo olarak gösteriyor, hiçbir cisim kıpırdayabilecek durumda değil ve Mira geniş planda uzakta duruyor; kareye tek gerçek olay olarak kolunu çekmesi kalıyor.
 -----
-@mira4 lifts her flat hand off the birch plank, brings it down against her side and stops; as it comes away her head turns slowly left along the row, past the dark red heart and the pale sealed tube, and comes to rest looking at the muscled arm model at the far end, her chin low and her lips closed. All three models stand exactly where they stand on their turned bases through the whole clip, none of them rocking, tilting or leaving its stand, and the birch plank keeps its place on the steel bench. Camera: a slow drift of a few centimetres to the right at bench height, easing to a full stop with all three models in frame.
+@mira4 sets both hands flat on the birch plank, rocks it back to load, then hauls it toward herself in one fast pull: the plank scrapes across the steel and stops dead against the bench lip with a knock. The three models ride it as one row and answer in turn — the muscled forearm at the far end rocks first, then the pale tube, then the dark red heart, each swinging twice on its turned base, shorter and shorter, and coming upright, three models at the end as at the start, every one still on its own base. A grey puff of dust lifts where the plank passed. Her hair swings forward and settles, her eyes travel the row and stop on the heart, lips closed. Camera: rides in with the pull at bench height, jolts on the knock, settles square with all three models in frame.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K41   [kaynak: S5-2026-08-05.txt]
+>>> K41   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K41 | 5s · VO "Çizgili kaslar, yani iskelet kasları, isteğimizle çalışır."
 -----
-@mira4 draws her raised fist a little tighter and the swell along the top of her bare upper arm rises and firms under her spread fingers; she holds it a beat, then lets the fist ease open a fraction so the swell settles back under her palm, and her arm stays exactly at its angle. Her eyes stay down on her own arm and her brows lift a fraction as she feels it, her lips closed. On the birch tray the two striped models, the pale tube and the dark heart keep their exact places on their bases, and the green label strip holds square to camera with its white lettering unchanged. Camera: locked off at bench height, square to the tray, still from first frame to last.
+@mira4 lets the raised fist sink, then drives it up hard: the ball of muscle on top of her bare arm jumps and hardens under her spread fingers, the fist punching past its high point before it drops back and pulses twice smaller as she squeezes and holds. Her arm stays her own arm through it — thickening under the skin without stretching longer, the elbow bending where it bends. Her gripping fingers spread wider over the swell, the knitted cuff rides up that forearm and bunches, her hair swings off her shoulder and settles late, a grin breaking on her closed lips with her eyes down on her own arm. On the tray the two striped models, the pale tube and the dark red heart stand untouched. Camera: locked off at bench height, square to the tray, the green İSTEMLİ plate flat to lens and unmoving throughout.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K42   [kaynak: S5-2026-08-05.txt]
+>>> K42   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K42 | 5s · VO "Hızlıdırlar ama çabuk yorulurlar."
 -----
-The knurled brass weight resting against @mira4's open palm rolls the last of its way off the heel of her hand onto the birch tray, turns half a turn on the wood and comes to rest against the base of the near model, where it stays. Her fingers fall a few millimetres further open as it goes and stop there, her forearm staying flat on the tray. Her eyes go down to her own emptied hand and stay, her smile fading a little, her lips closed. The two striped models keep their exact places on their red bases, and the crumpled beige band on the bench keeps every fold. Camera: a very slow push at bench-top level toward the open palm, easing to a complete stop.
+@mira4's fingers strain up under the brass weight and hold one beat — then they give: the weight rolls off the heel of her hand, gathers speed down the birch tray, drops off the edge and cracks against the stone bench, bounces once, rolls into the crumpled beige cloth and stops dead in a fold. Her hand flops open past flat, the fingers bouncing once and going slack, her forearm dropping heavy. The knock runs back up through the tray: the near striped model tips twice on its red disc, shorter each time, and comes upright, the two models still the two models on their own discs. Her smile drains, her eyes stay on her emptied hand, lips closed. Camera: pushes in tight on the straining fingers, drops with the falling weight and settles low on it lying still in the cloth.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K43   [kaynak: S5-2026-08-05.txt]
+>>> K43   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K43 | 5s · VO "Düz kaslar isteğimiz dışında, kendiliğinden çalışır."
 -----
-@mira4's fingertips press down on the two striped models, the pads flattening a hair against the moulded muscle, hold the press, then lift clear and her hand draws back to the edge of the birch tray and stops. Both striped models stay dull and unlit through the press and after it, keeping their exact places on their turned bases, neither one brightening or shifting. On the pale sealed tube behind her reach the warm amber line holds the exact length and strength it has, running unbroken from one capped end to the other without flicker. Her eyes leave her own fingers and travel to the tube, her chin low, her lips closed. Camera: locked off at bench height, square to the tray, still from first frame to last.
+Nobody touches the pale tube. It leans a hair back in its wooden saddles, then rolls fast a quarter turn the other way, clacks against the far saddle block, rolls back short, rocks twice smaller and settles crooked in its cradle. The amber line down its side rides round with the roll and stays a thin drawn line on the surface, holding its own width instead of spreading into a haze, the tube the same solid cylinder after the roll as before it. The tray boards ring under the clack and both mounted models shiver once on their turned bases and go still. @mira4's hand jumps off the striped model, her head whips round to the tube, hair swinging late across her cheek, eyes wide, lips closed. Camera: locked off at tray height, square on, the green İSTEMSİZ plate flat to lens and unmoving from first frame to last.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K44   [kaynak: S5-2026-08-05.txt]
+>>> K44   [kaynak: S5-ENERJI-2026-08-05.txt]
 ### K44 | 5s · VO "Mide ve bağırsak gibi iç organlarımızda bulunurlar."
 🔴 YENİDEN-BASIM — klibin anlatacağı şey karede zaten çizilmiş: amber çizgi tüpten mideye kesintisiz geçmiş durumda, yani bağlantı kurulmuş bitmiş; tüp ışıklı, mide sönük basılsa çizgi klip içinde gerçekten yol alabilirdi.
 -----
-A single bright bead gathers on the amber line at the tube's far end and travels once along it: across the short gap, onto the curve of the pale stomach form, all the way round its belly to the blind stub, where it thins out and is gone. The line it runs on keeps the exact path, length and brightness it has, breaking nowhere. Both forms stay put on their bases, the carved word on the near base holding square to camera. @mira4's palms stay flat on the bench either side of the tray, touching neither model; her eyes follow the bead across and come to rest on the stomach, her lips closed. Camera: locked off at bench height, square to the tray, still from first frame to last.
+The amber line dims and draws back into the tube half a beat, then fires: a bright bead shoots out along it, crosses the gap, hits the stomach and runs the whole curve of its outline, overshoots the blind stub, snaps back onto it and thins out gone. The outline lights up behind the bead and dies the same way, staying a drawn line on the surface rather than washing the pale form into a glow, the gap between the forms staying open air. The stomach takes the hit, rocks once on its wooden base as one solid piece and settles upright, the carved word square to lens. The dust in the window light swirls in the wake. @mira4 lifts both palms off the tray, hair swinging late, lips closed. Camera: tracks with the bead across the gap and eases to a square stop on the settling stomach.
 -------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
->>> K45   [kaynak: S6-2026-08-05.txt]
+>>> K45   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K45 | 5s · VO "Yavaştırlar ama yorulmazlar."
 🔴 YENİDEN-BASIM — Karede çalışan tek bir öğe yok (amber hiç basılmamış, iki maket de kapalı ve durgun), bu yüzden "yorulmazlar" hükmünü taşıyacak gerçek olay kalmıyor; elde kalan tek olay ön plandaki lastik bandın oturması ve dersle ilgisi yok.
 -----
 
-The frame opens dead still, the window bar lying flat across the birch plank. Then the coiled pale band at the near counter edge gives: only its outermost loop slides a finger's width across the dark laminate under its own weight and stops flat there, the two loops beneath it keeping their exact places. As it stops @mira4 lets one breath go — her shoulders drop a fraction against her folded arms, eyes on the standing tube, lips closed and soft. The upright tube and the stomach form keep their exact shapes on their wooden bases, and nothing in the room brightens. Camera: locked off at bench-top height and square to the plank, absolutely still from first frame to last.
+The frame opens dead still on the dark counter. Then the coiled pale band in the foreground lets go: its outer loop draws in a hair, springs outward fast across the laminate, overshoots into a wide flattened oval, wobbles twice shorter and shorter, and settles as the same single band, its two inner loops sliding a finger's width with it. It stays one band throughout, never doubling into a third loop. The slap reaches @mira4 — her chin comes up off her folded arms, her head turns down toward the sound, her hair swings forward and falls back, and she stops with her eyes on the band, lips closed. The standing tube and the stomach form ride out one small tick on their turned bases. Camera: pushes low along the birch plank, leaving the idle models behind, and eases to a dead stop on her face as her chin lifts.
 
 -------------------------------------------------------------------------
 
@@ -408,23 +457,11 @@ The frame opens dead still, the window bar lying flat across the birch plank. Th
 
 ------------------------------------------------------------------------
 
->>> K45-ALT   [kaynak: MOTION-eski-cansiz.txt]   🔴 ESKİ SÜRÜM — yenisi yazılmadı, kusurlu sette
-### K45-ALT | 5s · VO "Yavaştırlar ama yorulmazlar."   [kaynak: images/36.png — düzeltilmiş kare]
------
-
-The clip opens with the room already spending itself: window light lies along the birch plank, the beige band coiled and dusty at the near edge, and the warm-golden line running unbroken along the horizontal tube and on over the closed stomach form. Then time passes over everything except that line: the bar of light creeps a hand's width down the plank leaving a duller strip behind, one loop of the slack band sinks lower under its own weight, motes come down through the light, and @mira4 blinks slowly and lets her shoulders drop on one breath, her eyes never leaving the tube. Through all of it the line holds the exact length and strength it had at the first frame, never brightening, dimming or breaking. The clip begins as a room running down and ends with two bodies that have spent nothing. Camera: locked off at bench-top level, absolutely still from first frame to last, no dolly, no pan, no tilt, no zoom. Lock: both closed forms stay sealed rigid solids that never deform, melt, roll or open, and the line never travels onto the tray, her arm or her skin. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
-
--------------------------------------------------------------------------
-
--------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
->>> K46   [kaynak: S6-2026-08-05.txt]
+>>> K46   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K46 | 5s · VO "Kalp kası ise yalnızca kalpte bulunur."
 -----
 
-The frame opens still: the heart model in its brass-framed case, one thin warm-golden line down its front curve. Then @mira4 comes in — her weight shifts forward, her flat hand slides a hand's width along the dark counter toward the case, and she stops with her face near the glass, her eyes settling on the line, lips closed. What she comes toward stays put: the heart holds its exact shape on its stand, and the golden line keeps one even strength inside the case, stopping at the panes and reaching neither the counter, the birch tray nor her face. She stops; the light stays inside. Camera: locked off on sticks at counter height and square to the case, absolutely still throughout, no dolly, no pan, no tilt, no zoom.
+The frame opens still, @mira4 a step back from the brass case. Then she comes in fast: she pushes off, her weight carries forward, her flat hand lands on the dark counter with a knock, her hair swings past her cheek and falls back, and she stops with her face near the glass, eyes on the heart, lips closed. Under the panes the warm-golden line down the heart's front swells into one full beat, climbs past the strength it began at, falls back, gives a second smaller beat, and settles where it started. The moulded heart holds its own shape on the brass stand, the beat living only in the line; the etched KALP letters on the front pane keep their exact edges and never smear. Camera: locked off square to the case at counter height, holding the whole case in frame so the beat is the only moving thing.
 
 -------------------------------------------------------------------------
 
@@ -432,11 +469,11 @@ The frame opens still: the heart model in its brass-framed case, one thin warm-g
 
 ------------------------------------------------------------------------
 
->>> K47   [kaynak: S6-2026-08-05.txt]
+>>> K47   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K47 | 5s · VO "Şekli çizgili kasa benzer, çalışması düz kasa."
 -----
 
-The frame opens still, the models standing along the birch tray. Then @mira4's hand travels: her fingers slide a hand's width along the wooden rail, leaving the heart's base behind, crossing the empty turned stand, and coming to rest with her fingertips short of the smooth pale tube at the right. Her chin comes level as her hand stops, her eyes going with it, lips closed. Every model keeps its shape and its own base — the fine-banded brick-red arm, the banded heart — and the thin golden line down the heart's curve holds one even strength there, giving nothing to the rail or her hand. Camera: a very slow push of a hand's width at rail height, easing to a complete stop as her fingers settle.
+The frame opens still, @mira4's hand resting on the wooden rail. Then her arm comes off the rail, swings over, and her palm lands flat on the birch tray with a thump. Everything standing on the tray answers at once: the banded heart rocks back on its turned pedestal, tips past its resting angle, swings twice shorter, and comes upright; the fine-ribbed brick-red forearm sways once on its own base; the smooth pale tube at the right ticks and stills. The turned stand between them stays empty through the whole thing — no fourth model grows on it — and the thin golden line down the heart's curve holds one even strength, giving nothing to the rail or her hand. Camera: pushes in fast with the thump, arriving on the rocking heart and easing to a full stop as it comes upright.
 
 -------------------------------------------------------------------------
 
@@ -444,11 +481,11 @@ The frame opens still, the models standing along the birch tray. Then @mira4's h
 
 ------------------------------------------------------------------------
 
->>> K48   [kaynak: S6-2026-08-05.txt]
+>>> K48   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K48 | 5s · VO "Ömrümüz boyunca hiç durmadan çalışır."
 -----
 
-The frame opens still, sun bars lying across the cabinets and the stone counter. Then @mira4 lets a held breath go: her shoulders come down a finger's width, her chin lowers onto her folded forearms and settles, and she comes to a complete rest, eyes across the counter, lips closed and soft. Nothing else goes with her — the pale band over the counter edge keeps its exact loop, and the heart model holds its shape on the birch tray. Through all of it the warm-golden line down the heart's curve keeps the same slow even pulse it had in the first frame, staying on its own curve and reaching neither the counter nor her face. Camera: locked off at counter height, absolutely still from first frame to last.
+The frame opens still, sun bars lying across the cabinets and the stone counter. Then the pale band hanging over the counter edge gives: the loop slides a hand's width, drops, and swings out from the lip like a pendulum, overshoots past plumb, comes back twice shorter and shorter, and hangs still — one loop the whole way, its length never growing. @mira4 answers it: her chin comes up off her folded forearms, her shoulders lift, her head turns toward the sound and settles, lips closed and soft. Across the counter the warm-golden line down the heart's curve keeps beating its own slow even beat straight through, staying on its curve and reaching neither the birch tray nor the stone. Camera: leaves her with a slow push along the counter and comes to rest on the heart, still beating, as the band goes still.
 
 -------------------------------------------------------------------------
 
@@ -456,11 +493,11 @@ The frame opens still, sun bars lying across the cabinets and the stone counter.
 
 ------------------------------------------------------------------------
 
->>> K49   [kaynak: S6-2026-08-05.txt]
+>>> K49   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K49 | 5s · VO "Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz."
 -----
 
-The frame opens still. Then @mira4 straightens: her hand comes off the table edge to her side, her shoulders draw back, her chin comes level, her weight settles evenly onto both feet, and she holds there taller than she began, eyes on the skeleton, lips closed. The padded jacket keeps its place over the chair back, its slumped shoulders and empty sleeves holding every fold, and @iskelet keeps each joint at its angle, its wheeled base standing still. The amber inside its spine holds the even strength it had in the first frame, staying within the bone and reaching neither the pelvis nor her skin. Camera: a slow drift of a hand's width to the right at chest height, easing to a complete stop as she settles.
+The frame opens still, @mira4's hand flat on the table edge. Then she comes up: her knees give a hair, her hand pushes off the wood, her shoulders roll back and open, her chin lifts, and she rises a touch past her full height before easing back down onto both feet, standing taller than she began, eyes on @iskelet, lips closed. The push runs through the table — the shallow metal tray rings once and the small hand-bone model beside it ticks against the rim and rests; on the chair back the padded jacket takes the shudder, its empty sleeves swinging a finger's width and stilling. @iskelet answers nothing: its feet stay on the wheeled plate, every joint at its angle, the amber in its spine holding first-frame strength. Camera: stands up with her, rising a hand's width and easing to a stop as she settles.
 
 -------------------------------------------------------------------------
 
@@ -468,11 +505,11 @@ The frame opens still. Then @mira4 straightens: her hand comes off the table edg
 
 ------------------------------------------------------------------------
 
->>> K50   [kaynak: S6-2026-08-05.txt]
+>>> K50   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K50 | 5s · VO "Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir."
 -----
 
-The frame opens still, her hand closed on the carton's folded peak. Then she lets go: her fingers open one at a time off the card, her hand comes down and settles flat on the dark counter beside the glass and stays there. The carton stands where it was, its printed front face square to the lens; the spoon stands upright in the yoghurt without leaning or sinking, and the milk lies dead flat. As her hand comes to rest the warm amber inside the ivory bone comes up one clear step, holds there, and stays within the shaft — none of it reaching the counter or her fingers. Camera: locked off at counter height and square to the carton face, absolutely still from first frame to last.
+The frame opens still, @mira4's fingers closed on the carton's folded peak. Then she lets go fast: her fingers spring open off the card, her hand lifts away and swings back to her side, and the pinched cardboard peak springs out a hair, overshoots, flutters twice shorter, and stills. The counter takes the release — the milk in the glass climbs one side, slaps back, and flattens; the spoon standing in the yoghurt tips a finger's width, taps the glass rim, and rests. The carton stands where it stood, square to the lens, the printed SÜT letters keeping their exact shapes and never bending with the card. As it all goes quiet the warm amber inside the ivory bone comes up one clear step and holds within the shaft, the bone staying solid ivory. Camera: locked off square to the carton face, absolutely still from first frame to last.
 
 -------------------------------------------------------------------------
 
@@ -480,11 +517,11 @@ The frame opens still, her hand closed on the carton's folded peak. Then she let
 
 ------------------------------------------------------------------------
 
->>> K51   [kaynak: S6-2026-08-05.txt]
+>>> K51   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K51 | 5s · VO "Bir de bol bol hareket etmek gerekir."
 -----
 
-The frame holds one still instant, then breaks into motion: @mira4's raised rear foot swings forward and plants on the floor, she carries one more stride toward the window bench, her weight settling onto the front foot, her hair falling back as she stops. The canvas bag travels with her and rides the last of its arc down against her hip, its stitched front face staying square to the lens. Behind her @iskelet keeps its pose on the wheeled stand — the raised arm held where it is, every joint at its angle — and the amber in its long bones and joint rings holds its first-frame strength. The room is still when she stops. Camera: locked off at a fifth-grader's eye height, absolutely still throughout.
+The frame holds one still instant, then breaks: @mira4 drives off her back foot into two full running strides, her free arm pumping through, her skirt swinging out, her hair streaming back — then she plants her front foot hard, skids a hand's width, leans past her own balance, and swings back upright into a complete stop, her hair falling last. The canvas bag flies out ahead of her on its cords, overshoots past her hip, comes back twice shorter, and hangs still with its stitched face square to the lens. In her wake the pinned drawings on the corkboard lift and drop, and @iskelet rocks once as one solid piece on its wheeled stand, its raised arm held at its angle and never lowering. Camera: runs left beside her at her own speed, whip-fast, and stops dead the instant she does.
 
 -------------------------------------------------------------------------
 
@@ -492,11 +529,11 @@ The frame holds one still instant, then breaks into motion: @mira4's raised rear
 
 ------------------------------------------------------------------------
 
->>> K52   [kaynak: S6-2026-08-05.txt]
+>>> K52   [kaynak: S6-ENERJI-2026-08-05.txt]
 ### K52 | 5s · VO "Mira kuklayı yerine astı; bu sefer hareket eden oydu."
 -----
 
-The frame holds one still instant, then breaks into motion: @mira4's raised rear foot swings forward and plants on the boards, her trailing hand comes in to her side, and she takes one more step toward the open doorway. Her weight settles onto the front foot, her head comes level, her hair settles last, and she stops there and stays stopped, lips closed. Behind her @kukla hangs exactly as it hangs — its cord dead plumb, its wooden body vertical and square, every joint at its angle, its hard shadow nailed to the cabinet door. No amber core, ring or line appears anywhere. On the last frame the room is completely still. Camera: locked off at a fifth-grader's eye height and square to the cabinet wall, absolutely still throughout.
+The frame holds one still instant, then breaks: @mira4 pushes off her back foot into one long stride toward the doorway, her trailing arm swinging through, her skirt carrying past her, and she plants, leans a hair too far, comes back, and stops square in the doorway light, head level, hair settling last. Behind her the cord she just let go gives, and @kukla swings out from the cabinet door as one solid piece, past plumb, back twice shorter, then hangs dead vertical, shoulder hip and knee holding their exact angles, its hard grey shadow sliding across the oak in the same shape. Its bare birch takes the room light and gives none back — no amber core or ring lights inside the wood. Camera: eases a hand's width toward @kukla as she stops, coming to rest with the still puppet and the lit doorway together on the last frame.
 
 -------------------------------------------------------------------------
 

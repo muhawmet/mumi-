@@ -1,0 +1,62 @@
+olay-önde: 7 · olay-bitmiş: 2
+yeniden-basım önerilen: K29
+
+=========================================================================
+S4 · K28-K36 · lehçe: _LEHCE-YASASI-2026-08-05.md
+Her kare Read ile açıldı ve gözle okundu. Tek olay · durağan açılış · duran kapanış.
+=========================================================================
+
+### K28 | 5s · VO "Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler."
+-----
+The frame holds still for a beat: @iskelet stands on its post, one arm swept high, one knee drawn forward, the free lower leg hanging clear of the floor. Then that lower leg swings forward from the knee, travels through one short easy arc, comes back a little and settles hanging straight down. The amber ring at the knee brightens as it travels and eases to a steady glow the moment it stops. The raised arm keeps its exact angle and its own ring one even brightness; pelvis, spine and standing foot keep their places on the disc. Camera: a slow rise of a hand's width from the knee toward the raised shoulder, easing to a full stop with both rings in frame.
+
+-------------------------------------------------------------------------
+
+### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+🔴 YENİDEN-BASIM — VO'nun öznesi Mira'nın DİZİ, ama karede diz bir olay olarak yok: Mira geniş planda dimdik duruyor, tepside kemik + pirinç menteşe + "DİZ" kartı var; motion bu boşluğu kapatamaz, kadraj Mira'nın kendi bükülen dizini almalı.
+-----
+The bone stands where it was left, angled up from the tray with the brass hinge open at its base. Then the bone comes down: it turns through the hinge's arc, unhurried, the polished pin carrying a travelling line of window light along the metal as the angle closes, until the bone lies flat along the tray floor and the hinge stops shut against itself. The shadow it throws over the small card shortens with it and stops when the bone stops. @mira4 keeps her hand flat on the table edge and lets a breath go, her lips closed, her eyes following the bone down. The card keeps its lettering exactly. Camera: a slow push down and in over the tray, easing to a complete stop as the hinge closes.
+
+-------------------------------------------------------------------------
+
+### K30 | 5s · VO "Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır."
+-----
+The column stands dead still for half a second: @iskelet's stack of small vertebrae vertical on its post, one small amber light sitting in each disc gap. Then the lean begins — the column tips a couple of degrees off vertical, each block turning only a hair on the pale disc beneath it, the whole row leaning together — and then it runs out and stops dead, every light stopping with it. Behind it @mira4 lets a breath go and her eyebrows lift a fraction as she sees how little the thing moved. The lights stay inside their gaps, equal in size and evenly spaced. Camera: a slow push of a hand's width along the column toward the lumbar gaps, stopping the same instant the lean stops.
+
+-------------------------------------------------------------------------
+
+### K31 | 5s · VO "Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz."
+-----
+Nothing moves for the first beat: @iskelet hangs forward over its post in one long even curve, small amber lights lying along the spinal gaps, and the glass cabinet door stands open behind it. Then the door swings — it drifts a few degrees closed under its own weight, folding along its one hinge line, and comes to rest against the cabinet frame. The spine keeps its curve through all of it, every block holding its own angle. @mira4 keeps both hands flat on the bench, lets a breath go, and her eyes travel from the door back to the bent spine. Camera: a slow drift to the right along the bench line, easing to a full stop with the door corner and the spinal curve in one frame.
+
+-------------------------------------------------------------------------
+
+### K32 | 5s · VO "Oynamaz eklemler kafatasındadır ve asla hareket etmezler."
+-----
+The frame is dead still for a beat: @mira4's two hands rest on the crown of the skull, the gold suture running down the dome between them. Then the push comes — her fingers press down and inward, the pads flattening against the bone, her knuckles paling as the weight goes on, the whole skull carrying that load straight down into the bench as one piece. The gold zigzag keeps its exact line, the same width and the same place. Her hands hold the push a moment longer and then ease off; her eyes above the dome narrow and settle as the answer arrives, her lips closed. Camera: locked off on sticks at the height of the crown, square to the suture, absolutely still from first frame to last.
+
+-------------------------------------------------------------------------
+
+### K33 | 5s · VO "Oradaki kemikler birbirine adeta kaynamıştır."
+-----
+Everything holds for a beat: @mira4's thumb and forefinger pinch the torn strip of squared paper against the cranial seam. Then she pushes — the strip travels a few millimetres, meets the seam and stops there, bowing upward under the pressure until its torn fibres stand up along the stopped edge and it can bow no further. Not a millimetre of paper goes inside the join. Her fingers ease; her eyes narrow a fraction behind her hand as the answer arrives, her lips closed. The gold thread along the seam keeps its exact line and the mug of pencils keeps every pencil in its place. Camera: an almost imperceptible drift of two centimetres along the seam at bone level, easing to a stop with the contact point sharp.
+
+-------------------------------------------------------------------------
+
+### K34 | 10s · VO "Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?"
+-----
+The bench holds absolutely still for a beat: the ivory thigh bone, the brass-pinned pair and @kukla lying on its side do not shift. Then the small amber ring on the puppet's joint begins to go — it turns slowly through a few degrees, thinning and dimming as it turns, giving less and less to the pale wood on either side, until it turns through the last of itself and goes out. @mira4 leans her weight onto her fingertips, lets a long breath go, and her eyes travel down the row to the dark joint, her brows drawing together, her lips closed. The stamped box holds its violet letters exactly. Camera: locked off at bench height, square to the row, absolutely still from first frame to last.
+
+-------------------------------------------------------------------------
+
+### K35 | 5s · VO "Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu."
+-----
+The bench holds still: @kukla's arm lies exactly where it lies, the brass ball at its elbow catching one hard line of window light, nothing attached to it and nothing pulling it. Then @mira4's open hand, lying flat on the stone, closes — the fingers curl in one by one until the hand is a loose fist, and there it stops. Across the same bench top the wooden arm gives nothing back: the elbow keeps its one angle, the brass ball its exact line of light. Her cheek stays down on her folded arm, her lips closed, her eyes on the joint. Camera: a very slow dolly in along the bench toward the brass ball, easing to a stop with the fist and the joint in one frame.
+
+-------------------------------------------------------------------------
+
+### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+-----
+@mira4 holds her pose for a beat, the raised forearm across her chest and her other hand spread over the upper arm, her brow drawn down. Then she tightens — the forearm draws up a few more degrees and the muscle under her spread fingers rises and firms, lifting her fingertips as the shape swells against them, and there it holds, full and still. Her brow lets go: the eyebrows come up and the mouth stays closed as recognition arrives, and her eyes drop to @kukla lying along the bench, whose straight jointed arm has given nothing. Her arm keeps its real anatomy; the puppet keeps its place. Camera: a slow small push toward her upper arm, the puppet held in the near foreground, easing to a full stop.
+
+-------------------------------------------------------------------------

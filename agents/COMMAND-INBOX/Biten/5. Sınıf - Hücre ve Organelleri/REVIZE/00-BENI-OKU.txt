@@ -1,0 +1,22 @@
+· HÜCRE VE ORGANELLERİ — REVİZE
+· ==========================================================
+· Klasörleri sırayla aç. Her klasörde 3 dosya var:
+·   K01-DUVARIN-DOGRUSU.png  → referans 1 olarak yükle
+·   K<nn>-MEVCUT.png         → referans 2 olarak yükle
+·   PROMPT.txt               → çizginin altını kopyala, yapıştır, bas
+· İKİ görseli birden yükle. Yeni kareyi aynı klasöre indir.
+·
+· 01-K02   usta tuğla koyuyor
+· 02-K03   kız harca dokunuyor
+· 03-K04   "duvar küçük parçalardan"
+· 04-K52   kapanış duvarı
+· 05-K53   kapanış son kare
+·
+· 06-MUZIK/SUNO.txt → Suno'ya yapıştır, yeni müzik.
+·
+· Neden bu 5 kare: müşteri "tuğla ikinci sahnede değişti" dedi, haklı.
+· Duvar her karede başka duvar olmuş — K01'de alçak sarı taş bahçe
+· duvarı, K02/K03/K04'te yüksek kırmızı fabrika tuğlası, K04'te gök de
+· gri olmuş. Doğrusu K01. Beş karede duvarı K01'e döndürüyoruz.
+·
+· Bitince "kareler hazır" de. Motion'ları ben yazarım.
