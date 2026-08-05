@@ -922,7 +922,11 @@ sette Mami hükmü *"hiç beğenmedim"*, paragraf formatıyla yazılan Eşeyli a
 ### K<n> | <süre>s · ekranda ~<x>s | VO "<Türkçe cümle>"
 KAMERA NİYETİ: <tek Türkçe cümle — yönetmen için, prompta GİRMEZ>
 -----
-<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 210-260 kelime. Zorunlu iç sırası:>
+<TEK PARAGRAF, akıcı İngilizce, tam cümlelerle, 190-215 kelime. Zorunlu iç sırası:>
+  ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI (5.): burada "210-260" yazıyordu, oysa 12 satır yukarıdaki
+  düzyazı "geçerli tek rakam 190-215" diyor ve `motion-lint.mjs` bandı 160-250 (hedef 190-215).
+  Yani şablon hem düzyazıyla hem ölçenle çelişiyor, üstelik 260 lint'in tavanını aşıyordu.
+  Tek hüküm: **190-215** (altın standart Eşeyli 202).
   1 ZATEN OLAN İŞ   klip devam eden bir işin ORTASINDA açılır:
                     "The clip opens with @efe still hunting: his fingertips keep making
                     tiny turns on the focus knob…" — durgun kare + tek olay DEĞİL.

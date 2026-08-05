@@ -281,6 +281,13 @@ const SLOTS = [
   },
   {
     key: 'neg',
+    // 2026-08-05 · SARI (Codex/Terra karşı-denetimi). Kırmızı kalma gerekçesi "iki temiz setin
+    // ortak paydası"ydı — bu bir korelasyon, ölçülmüş motor kırılması değil; ne güvenlik ne
+    // süreklilik kilidi. Üstelik kural fiilen UYKUDA: Hücre 53/53, Bileşke 52/52 — NEGATIVE
+    // zaten her yerde var, yani kırmızılığı hiçbir şeyi tutmuyor.
+    // 🔴 GERİ ALMA KOŞULU: NEGATIVE'siz basılmış bir kare ölçülür ve kusuru NEGATIVE'in
+    // yokluğuna bağlanabilirse KIRMIZI'ya döner. O ölçüm yapılana kadar sarı.
+    warnOnly: true,
     label: 'NEGATIVE slotu',
     // Bileşke `FIREWALL NEGATIVE:` yazıyor — eski desen onu göremiyordu ve 52/52 karesi
     // "NEGATIVE yok" diye kırmızı alıyordu; oysa hepsinde negatif VAR (Codex denetimi).

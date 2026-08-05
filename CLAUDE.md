@@ -93,6 +93,11 @@ ajan değil Codex çağrılır.
   rahat izlenir ve **sekans başına 8-10 klip TEK çağrıda** verilebilir — klip klip izletmek hem
   pahalı hem de süreklilik kusurunu (K12'deki gömlek K13'te değişti) yapısal olarak göremez.
   🔴 **AGY'ye HÜKÜM sordurma, TARİF ettir** — hüküm sorulunca her şeye "YOK" basıyor.
+  🔴 **MAMİ'NİN KURALI (2026-08-05): "AGY'yi NET GÖREVLERE gönder — malın teki ama hızlı."**
+  Aynı gün iki kez ölçülerek doğrulandı (aşağıdaki iki madde). Geniş, yorum isteyen, "sistemi
+  değerlendir / neyi silelim / kaç saniye" biçimindeki görevlerde **kendinden emin biçimde
+  yanlış** cevap veriyor. Doğru kullanım: **tek konu · somut nesne · yalnız tarif ·
+  doğrulanabilir çıktı.** Sonsuz usage ve hız oradan kazanılır, hükümden değil.
   🔴 **VE ONDALIK SANİYE SORDURMA — AGY HASSASİYET UYDURUYOR** (ölçüldü 2026-08-05).
   AGY, Hücre filminde *"8 kesimde ses 2.07 · 2.25 · 1.96 · 2.10 · 2.18 · 2.46 · 1.98 · 2.26
   saniye geç giriyor"* dedi. İnandırıcıydı: sapma düşüktü, mekanik bir sebebe işaret ediyordu.
@@ -107,6 +112,10 @@ ajan değil Codex çağrılır.
   saniye donuk"* dedi, `ffmpeg freezedetect` onayladı — **10 donma / ~9.5 sn** (filmin %4.3'ü),
   en ağırı 55.4'te **2.63 sn kesintisiz.** Yani AGY **iyi bir işaretçi, kötü bir cetveldir.**
   Donma taraması hazır komut: `ffmpeg -i <film> -vf "freezedetect=n=-38dB:d=0.6" -f null -`
+  ⚠ Aynı sınır AGY'nin **kod/mimari** hükümleri için de geçerli: mimari taramasında
+  `_EDIT-PLAN.txt` *"kimsenin okumadığı ölü çıktı"* ilan edildi — oysa `kaba-kurgu.mjs:37-38`
+  onu okuyor, **kaba kurgunun girdisi o.** Tavsiyeye uyulsaydı kurgu hattı kırılırdı.
+  **AGY'nin "şu ölü/gereksiz" dediği her şey silinmeden önce `grep` ile doğrulanır.**
 - **Codex sınırları — kanona yazılan sayı 1M DEĞİL.** CLI bağlam penceresi **272.000**
   (kullanılabilir ~258k), API'nin ilan ettiği 1.05M değil; ayrıca **tek dosya okuması 10.000
   token'da kesiliyor.** Yani Codex'e "repoyu ver" denmez — **adı verilmiş 5-15 dosyalık,

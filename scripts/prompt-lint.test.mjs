@@ -103,11 +103,14 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
   });
 
   it('Sabit Sürat (44 kare): 3 kırmızı blok — temiz setin tabanı', () => {
-    // 4 → 3 (2026-08-05, ARINDIRMA T3 tamamlandı): `lens` · `fstop` · `karsi-terim` SARI'ya
-    // indi. Üçü de bir İFADE bekliyordu (sayısal mm · f/ · altı sabit photoreal teriminden
-    // biri) ve hiçbiri ölçülmüş bir motor kırılmasına dayanmıyordu. Bu sayının DÜŞMESİ
-    // beklenen sonuçtur, gerileme değil: kırmızı artık yalnız üç sınıfta kalıyor —
-    // ölçülmüş motor kırılması · çocuk güvenliği/pedagoji · süreklilik-referans kilidi.
+    // 4 → 3 (2026-08-05). ⚠ İLK AÇIKLAMASI YANLIŞTI, Codex/Terra karşı-denetimi düzeltti:
+    // düşüşün sebebi `lens`/`fstop`/`karsi-terim`in SARI'ya inmesi DEĞİL. Sabit Sürat EDU'dur;
+    // `lens` bu sette zaten 44/44 karşılanıyordu, `fstop` ve `karsi-terim` ise yalnız REAL'de
+    // uygulanıyor — yani üçü de bu dosyada hiç ateşlemiyordu.
+    // GERÇEK SEBEP: `neg-ozel` kuralı `level: 'sari'` taşıdığı hâlde `kirmizi.push` ile
+    // gidiyordu (dispatch hatası) ve kırmızı sayısını sahte biçimde bir artırıyordu. O onarıldı.
+    // Kalan 3 kırmızının hepsi GERÇEK ve hepsi `text-hece` — aşağıda çivilendi ki bu sayı
+    // bir daha "neyin düştüğü belirsiz" biçimde değişmesin.
     // 7 → 6 (2026-08-02): `style-uzun` SARI'ya indi; 116 kelimelik tek karesi kırmızıdan düştü.
     // 6 → 4 (2026-08-05): `text-tasiyici` SARI'ya indi. O kural bir İFADE bekliyordu
     // (harfin taşıyıcı malzemesinin yazılması) ve kendi yorumu bunu anti-monotonluk olarak
@@ -121,6 +124,17 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     // iki karede gerçekten eksik — Sabit Sürat §11b'den (harf, taşıdığı nesnenin malzemesidir)
     // önce yazıldı, yazı VAR ama harfin nasıl var olduğu yazılmamış. Sahte alarm değil, çağ farkı.
     expect(r.bad.length).toBe(3);
+    // ÇİVİ (2026-08-05): yalnız SAYIYA bakan bir çıpa, sayı aynı kalıp SEBEBİ değişince
+    // sessizce yeşil kalır — bu repoda sekiz kez ölçülmüş kusur sınıfı. Üçünün de `text-hece`
+    // olduğu ve `neg-ozel`in kırmızı dizisine SIZMADIĞI ayrıca çivileniyor.
+    // ⚠ `bad` bir BLOK listesidir ve blokların `problems` dizisi sarıları da taşır —
+    // süzmeden sayarsan sarı anahtarlar kırmızı sanılır (bu çivi ilk yazımda tam buna düştü).
+    const kirmiziAnahtarlar = r.bad
+      .flatMap((b) => (b.problems || []))
+      .filter((p) => p.level !== 'sari' && !p.warnOnly)
+      .map((p) => p.key);
+    expect([...new Set(kirmiziAnahtarlar)]).toEqual(['text-hece']);
+    expect(kirmiziAnahtarlar).not.toContain('neg-ozel');
     expect(r.metrics.styleMaxRepeat).toBe(2);
   });
 });

@@ -58,6 +58,37 @@ Model adları bu sözleşmeye sabitlenmez. Proje `.codex/config.toml` varsayıla
 ayarlar; kullanıcı seçimi her zaman üstündür. Çoklu ajan yalnız bağımsız iş kolları olduğunda
 kullanılır.
 
+### Codex devralırken — iş bölümü ve devir sözleşmesi (2026-08-05)
+
+Mami'nin Claude usage'ı sınırlı bir kaynaktır. **Ağır ve mekanik iş Codex'e devredilir;**
+Claude yön, montaj ve Mami ile konuşma tarafında kalır.
+
+| iş | kim | neden |
+|---|---|---|
+| Tutarlılık taraması · çapraz kontrol · toplu denetim · çelişki avı | **Terra + `high`** | ucuz (1M girdi başına 50 kredi), mekanik işte yeterli |
+| Tek-atış kök-neden teşhisi · bir hükmü çürütme · mimari karar | **Sol + `xhigh`** | 125 kredi ama tek koşuda bitiriyor |
+| Klip/film izleme, süreklilik, ekran yazısı | **AGY** | Codex video GÖREMEZ (`text`, `image`) |
+| Prompt yazma · sahne fikri · Mami ile karar | **Claude** | devredilmez |
+
+**Devir kalitesini belirleyen tek şey görev tarifidir.** Codex'e repo verilmez —
+**adı verilmiş 5-15 dosyalık, toplamı 200k altında bir küme** verilir (CLI bağlamı 272k,
+kullanılabilir ~258k; **tek dosya okuması 10.000 token'da kesiliyor** — 1400 satırlık bir
+script tek okumada tamamlanmaz, `grep` ile hedefe indirmesi söylenir).
+
+🔴 **Codex'e iddia verilir, soru değil.** Ölçüldü (2026-08-05): "şu dosyayı incele" yerine
+"şu üç iddiayı ÇÜRÜT" denince üçünü de doğruladı **ve kendi başına 3 çelişki daha buldu.**
+Gerekçesi `CLAUDE.md`'de yazılı (BAĞLAMSIZ GÖZ): Codex bu reponun anlatısını taşımadığı için
+dosyayı okur, anlatıyı doğrulamaz — Claude'un ajanları ise `CLAUDE.md`'yi alır ve körlüğü
+miras alır. Bir hüküm gerçekten çürütülecekse ajan değil **Codex** çağrılır.
+
+Devir bloğu (kopyalanabilir, ikisi ayrı — düzyazı "Sol" derken blok "terra" vermesin):
+```
+codex exec -m gpt-5.6-terra -c model_reasoning_effort='"high"' \
+  -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<mekanik denetim>"
+codex exec -m gpt-5.6-sol -c model_reasoning_effort='"xhigh"' \
+  -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<kök-neden / karşı-denetim>"
+```
+
 Raster görsel üretimi/düzenlemesi istenirse yerleşik `imagegen` akışı tercih edilir; seçilmiş
 çıktı `artifacts/imagegen/` altına kopyalanır. <!-- bag-yok: ilk imagegen koşusunda oluşan hedef dizin, repoda boş durmaz --> Yerel hedef görsel düzenlenecekse önce görseli
 incele ve değişmemesi gereken özellikleri açıkça kilitle.
