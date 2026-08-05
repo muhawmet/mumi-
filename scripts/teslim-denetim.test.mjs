@@ -158,10 +158,20 @@ describe('projeyiOlc — kusurları gerçekten yakalıyor mu', () => {
     const d = proje((x) => {
       yaz(x, 'A_PROMPTLAR.txt', '# K01 — "a"\nSTYLE: s\n# K02 — "b"\nSTYLE: s\n');
       mkdirSync(join(x, 'MOTION'), { recursive: true });
-      for (let i = 1; i <= 6; i++) writeFileSync(join(x, 'MOTION', `0${i}.txt`), 'motion metni\n');
+      // 🔴 2026-08-05 · FIXTURE KÖRDÜ: eski hâli dosyalara yalnız 'motion metni' yazıyordu,
+      // yani hiçbir motion BAŞLIĞI yoktu; sayaç 0 buluyor, `Math.max(1,0)` onu 1 yapıyor ve
+      // test kendi kusurunu göremeden yeşil kalıyordu (Sol/xhigh yakaladı). Maske kalkınca
+      // test dürüstçe kırıldı. Artık fixture GERÇEK iki-satırlı lehçeyi taşıyor — ve o lehçe
+      // tam olarak diskte 122 motion'ın kaybolmasına yol açan biçimdir.
+      for (let i = 1; i <= 6; i++) {
+        writeFileSync(join(x, 'MOTION', `0${i}.txt`),
+          `K0${i} | 10s klip · ekranda ~7.1s\nVO${i} "Bu ${i} numaralı motion cümlesidir."\n-----\nThe clip opens...\n`);
+      }
     });
     const r = projeyiOlc(d);
     expect(r.bulgu.some((b) => b.renk === 'KIRMIZI' && /MOTION KARESİZ/.test(b.s))).toBe(true);
+    // ÇİVİ: iki-satırlı lehçe gerçekten SAYILIYOR mu — 6 dosya = 6 blok, 1 değil.
+    expect(r.motionSayi).toBe(6);
     rmSync(d, { recursive: true, force: true });
   });
 

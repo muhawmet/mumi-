@@ -410,12 +410,28 @@ export function projeyiOlc(proje) {
     let fark = 0;
     for (const f of motionDosyalar) {
       const t = readFileSync(f, 'utf8');
-      // 2026-08-05 · Desen DARALTILDI (Codex/Terra). Eski hâli metnin HERHANGİ bir yerindeki
-      // `VO "..."` geçişini blok sanıyordu — yeniden-basım turlarında dosyanın başına düşen
-      // iki açıklama satırı da sayılıyor ve "58 motion / 56 kare" sahte kırmızısını üretiyordu.
-      // Blok yalnız kanonik motion başlığıdır: `### K<n> | <süre> | VO "<cümle>"`.
-      const bloklar = [...t.matchAll(/^#{1,6}\s*K\d+\s*\|[^\n]*?VO\s*\d*\s*"([^"]+)"/gm)].map((m) => m[1].trim());
-      motionSayi += Math.max(1, bloklar.length);
+      // 2026-08-05 · İKİ KEZ DEĞİŞTİ, İKİNCİSİ ONARIM.
+      // (1) Eski hâli metnin HERHANGİ bir yerindeki `VO "..."` geçişini blok sanıyordu ve
+      //     yeniden-basım açıklama satırlarını sayıp sahte kırmızı üretiyordu.
+      // (2) 🔴 Onu düzeltmek için konan desen HEM başlığı HEM VO'yu AYNI SATIRDA arıyordu ve
+      //     meşru iki-satırlı lehçeyi tümden kaçırdı. Sol/xhigh gerçek diski taradı:
+      //     643 gerçek motion vardı, denetçi 521 raporluyordu — **122 motion sessizce kayıp.**
+      //     (Bitkiler 53→4 · Değerler 34→1 · Bileşke 52→36 · Kuvvet 48→32 · Sabit Sürat 44→36)
+      //     Üstelik `Math.max(1, 0)` sıfırı 1 diye raporlayıp kaybı gizliyordu.
+      // Onarım: blok = BAŞLIK satırıdır (`K<n>` + ayraç); VO o satırda ya da sonraki iki
+      // satırda aranır. Beş lehçe de tanınır: `### K1 | .. | VO ".."` · `# K1 — ".."` ·
+      // iki satırlı `K1 | ..` + `VO1 ".."` · `VO5+6 ".."` · `VO2a ".."`.
+      const satirlar = t.split('\n');
+      const bloklar = [];
+      for (let i = 0; i < satirlar.length; i++) {
+        if (!/^#{0,6}\s*K\d+\s*(?:\||—|–|-\s)/.test(satirlar[i])) continue;
+        const pencere = satirlar.slice(i, i + 3).join('\n');
+        const vo = pencere.match(/VO\s*[\d+ab/]*\s*"([^"]+)"/);
+        bloklar.push(vo ? vo[1].trim() : '');
+      }
+      // ⚠ Math.max KALDIRILDI: sıfır blok bir gerçektir, 1 diye raporlanamaz.
+      motionSayi += bloklar.length;
+      if (!bloklar.length) sari(`motion dosyası SIFIR blok verdi: ${basename(f)} — biçim tanınmadı`);
       const no = Number(basename(f).replace(/\D+/g, '')) || null;
       if (no && cumleler[no] && bloklar.length === 1 && bloklar[0] !== cumleler[no]) fark++;
     }
