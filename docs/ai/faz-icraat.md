@@ -38,7 +38,7 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
 | **Prompt yazıldıktan sonra, BASMADAN ÖNCE** | `node scripts/prompt-lint.mjs <dosya> --register=real\|edu\|sty` — 71 revizenin ~44-52'si burada, kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik · SARI = ajan baksın · KAPSAM = yeşilin kapsamadığı |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |
-| **İlk klipler basılmadan ÖNCE** | **INTRO + RİSK CANARY — 8 klip, 44 değil.** İntro sahneleri + projenin pahalı riskleri (yazı · anatomi · katı/mekanik nesne · güçlü kamera). AGY tarif eder, Sol çürütür, **hükmü Mami verir** → `<Ad>_CANARY-LOCK.md`. Ölçüldü: canary'siz basılan 6 klibin 6'sı bozuk çıktı; repo ortalaması **%42.6 yeniden basım** |
+| **İlk klipler basılmadan ÖNCE** | **INTRO + RİSK CANARY — 8 klip, 44 değil.** İntro sahneleri + projenin pahalı riskleri (yazı · anatomi · katı/mekanik nesne · güçlü kamera). AGY tarif eder, Sol çürütür, **hükmü Mami verir** → `<Ad>_CANARY-LOCK.md` (kim ne zaman çağrılır ve sonucu ne anlama gelir: **`docs/ai/DORTLU-MASA.md`**). Ölçüldü: canary'siz basılan 6 klibin 6'sı bozuk çıktı; repo ortalaması **%42.6 yeniden basım** |
 | **Canary PASS'ten sonra** | `node scripts/current-work.mjs ilerle --faz uretim` — kilit dosyası yoksa **REDDEDER** (tavsiye değil, kodla zorlanıyor). Kalan işler doğal sekans sınırında **8-12'lik paketler** hâlinde |
 | Klip geldiğinde | `node scripts/motion-qc.mjs <klip>` — videonun kendisi denetlenir |
 | **Klipler + VO inince** | `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>` — **Premiere timeline'ı kurulu gelir** |

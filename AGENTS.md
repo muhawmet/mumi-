@@ -15,6 +15,11 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
 - Durum: `artifacts/current-work.json` — aktif işin TEK makine gerçeği; `node scripts/current-work.mjs`
   ile oku (SessionStart hook'u aynı metni basar). `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md`
   (1337 satır) **arşivdir, otorite DEĞİL** — yalnız geçmişe dair bir cümle kurulacaksa açılır.
+- **Dörtlü Masa** (Claude · Codex Sol · AGY · Mami) — roller, dört sonuçluk Sol sözlüğü
+  (`CLEAR TO CONTINUE` / `RESHAPE` / `NARROW` / `UNPROVEN`, ulaşılamazsa `SOL_UNAVAILABLE`), beş
+  tetikleyici ve her hükmün hangi dosyada yaşayacağı **tek otoritededir: `docs/ai/DORTLU-MASA.md`**.
+  Codex bu masada **karşı-yönetmendir**: Claude'un özetine değil gerçek dosya yollarına bakar,
+  prompt yazmaz, jüri değildir. Sahte `CLEAR` yasak.
 - Tamamlanmış task'ı yeniden yapma. Çelişki varsa `FACT REQUIRED` ile dur; sohbet hafızasından varsayma.
 - Claude ve Codex **aynı** state ve receipt dosyalarını yazar. İkinci bir gerçeklik üretme.
 - **Site TARİF üretir; motora giden prompt'u AJAN yazar.** Ölçüm (2026-07-29): kodun ürettiği metin

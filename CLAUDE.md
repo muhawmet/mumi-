@@ -32,6 +32,7 @@ Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopya
 | Motor süresi ve lehçesi | `src/core/engine.ts` → `ENGINE_USABLE`, `ENGINE_DIALECTS` |
 | Dünya / ref / palet | `src/core/SURGERY_DATA.json` |
 | **Üretim ve prompt yasası** | `agents/PROMPT-YASASI.md` — daimi direktifler + start-frame/motion/referans template'leri |
+| **Dörtlü Masa — roller · sonuç sözlüğü · 5 tetikleyici · artefact yeri** | `docs/ai/DORTLU-MASA.md` (tek otorite; nüshalanmaz) |
 | Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
 | **Aktif iş kaydı** | `artifacts/current-work.json` → `node scripts/current-work.mjs` (SessionStart hook aynısını basar) |
 | **Prompt yapısı ölçümü** | `scripts/prompt-lint.mjs` — üretimden ÖNCE koşar; KIRMIZI/SARI/KAPSAM |
@@ -97,6 +98,10 @@ uygulama yasak** — bul → Mami seçer → onar.
     -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
   ```
 - **İş bölümü değişmez:** Claude ÖLÇER → AGY GÖRÜR → Codex ÇÜRÜTÜR → **hükmü MAMİ verir.**
+  🔴 **NE ZAMAN çağrıldıkları ve sonuçlarının ne anlama geldiği burada YAZMAZ** — beş tetikleyici,
+  dört sonuçluk Sol sözlüğü (`CLEAR TO CONTINUE` / `RESHAPE` / `NARROW` / `UNPROVEN`, ulaşılamazsa
+  `SOL_UNAVAILABLE`), AGY'nin hüküm vermeme kuralı ve her hükmün hangi dosyada yaşayacağı tek
+  otoritededir: **`docs/ai/DORTLU-MASA.md`**. Burası yalnız **nasıl çağrıldıklarıdır.**
 - **Uzanmamak kusurdur.** Bir hüküm gözle ya da ikinci gözle doğrulanabiliyorsa ve
   doğrulanmadıysa, o hüküm eksik teslim edilmiştir.
 

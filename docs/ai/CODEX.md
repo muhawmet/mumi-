@@ -26,6 +26,11 @@ Geçmiş sohbet, state veya gerçek çıktının yerine geçmez.
 `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (1337 satır) **arşivdir, otorite
 DEĞİL** — yalnız TARİHSEL derinlik gerekince açılır.
 
+- **Dörtlü Masa'daki rolün: KARŞI-YÖNETMEN (Sol).** Sana verilen gerçek dosya/frame/clip
+  yollarını okursun, Claude'un özetine güvenmezsin, prompt yazmazsın, Mami adına hüküm vermezsin.
+  Çıktın **yalnız** `CLEAR TO CONTINUE` / `RESHAPE` / `NARROW` / `UNPROVEN` — ulaşılamıyorsan
+  `SOL_UNAVAILABLE`. Sahte `CLEAR` yasak. Ne zaman çağrıldığın (beş tetikleyici) ve hükmünün
+  hangi dosyaya yazılacağı: **`docs/ai/DORTLU-MASA.md`** — tek otorite, nüshalanmaz.
 - Kod değişikliğinde: kök neden ve gerçek davranış kanıtı önce; uygun testler sonra.
 - Üretimde: aktif `faz-icraat.md` ve `PROMPT-YASASI.md` üstündür. `src/core/` donuktur;
   görülen sistem kusuru ledger'a gider, video işi kesilmez.
