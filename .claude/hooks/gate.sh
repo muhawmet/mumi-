@@ -368,6 +368,44 @@ Duzelt, ya da canary onayi alana kadar dosyanin ILK SATIRINA su basligi koy:
       printf '   Canary PASS alinca baslik kaldirilir ve kapi bu dosyalari olcmeye baslar.\n' >&2
     fi
   fi
+
+  # --- 6a3. SHOT CARD — prompttan ONCEKI dusunce ---
+  #
+  # `MOTION_DIR` ile ayni state'ten tureyen SHOTS/ klasoru olculur. Neden kapiya bagli:
+  # bu repoda "yazildi ama hicbir kapi cagirmiyor" olculmus bir kusur sinifidir
+  # (motion-lint 490 satir/14 kural yazildi ve 2026-08-02'ye kadar hicbir kapiya bagli
+  # degildi). Yeni bir olcen ekleyip cagirmamak ayni hatayi ucuncu kez yapmak olurdu.
+  #
+  # SHOTS/ yoksa dal hic calismaz — Shot Card zorunlu bir teslim parcasi DEGIL, canary
+  # ve paket akisinin araci. Var olduğu an sozlesmesine uymak zorunda.
+  if [ -n "${MOTION_DIR:-}" ]; then
+    SHOTS_DIR="${MOTION_DIR%/MOTION}/SHOTS"
+    if [ -d "$SHOTS_DIR" ]; then
+      # VO dosyasi bulunursa baslikTAKI VO cumlesi kaynakla karsilastirilir; yoksa o kural
+      # sessizce atlanir (uydurma bir karsilastirma yapmaktansa olcmemek dogru).
+      VO_FILE=$(ls "${MOTION_DIR%/MOTION}"/*_SESLENDIRME.txt 2>/dev/null | head -1)
+      if [ -n "$VO_FILE" ]; then
+        SOUT=$(node scripts/shot-card-lint.mjs "$SHOTS_DIR" --vo "$VO_FILE" 2>&1) || true
+      else
+        SOUT=$(node scripts/shot-card-lint.mjs "$SHOTS_DIR" 2>&1) || true
+      fi
+      SKIRMIZI=$(printf '%s' "$SOUT" | grep -oE 'kırmızı: [0-9]+' | grep -oE '[0-9]+' | head -1)
+      if [ -z "$SKIRMIZI" ]; then
+        fail "SHOT CARD LINT OKUNAMADI — $SHOTS_DIR
+Cikti 'kırmızı: N' satirini icermiyor. Kapi kor kalamaz."
+      fi
+      if [ "$SKIRMIZI" -gt 0 ] 2>/dev/null; then
+        fail "SHOT CARD KIRMIZI ($SKIRMIZI kart) — $SHOTS_DIR
+
+$(printf '%s' "$SOUT" | grep -E '✗|kırmızı' | head -20)
+
+Kart prompttan ONCEKI dusuncedir. Bos ya da kendini yalanlayan bir kart, prompt
+asamasinda uydurmaya donusur — motorun morph uretmesiyle ayni mekanizma.
+Sablon: agents/SHOT-CARD-SABLONU.md"
+      fi
+      printf '✅ shot-card yesil: %s\n' "$SHOTS_DIR" >&2
+    fi
+  fi
 fi
 
 # --- 6c. BELGE BAG DENETIMI (BLOKE EDER) ---
