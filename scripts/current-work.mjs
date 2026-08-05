@@ -36,6 +36,9 @@ import { join, resolve, dirname, sep } from 'node:path';
 import { homedir } from 'node:os';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
+// Canary kilidi VARLIK değil İÇERİK olarak ölçülür (2026-08-05 ikinci onarımı).
+import { uretimAcilabilirMi } from './canary-lock.mjs';
+import { parseHukumBloklari } from './hukum-blogu.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_DEFAULT = resolve(HERE, '..');
@@ -86,6 +89,14 @@ export function canaryLockPath(root, projectPathPosix) {
   const hit = readdirSync(dir)
     .find((f) => CANARY_LOCK_ENDS.some((e) => f.toLowerCase().endsWith(e)));
   return hit ? `${projectPathPosix}/${hit}` : null;
+}
+
+/** Proje kökünde son eki tutan ilk dosyanın MUTLAK yolu — yoksa null. Disk okur, kayda sormaz. */
+export function projeDosyasi(root, projectPathPosix, sonEk) {
+  const dir = toPlatformPath(root, projectPathPosix);
+  if (!existsSync(dir)) return null;
+  const hit = readdirSync(dir).find((f) => f.toLowerCase().endsWith(sonEk.toLowerCase()));
+  return hit ? join(dir, hit) : null;
 }
 export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
 
@@ -565,6 +576,14 @@ function cmdIlerle(root, argv) {
     // Kapı yalnız DİSKİ okur (`kapat` kapısıyla aynı yasa) — kayıt "canary geçti"
     // diyemez, kilit dosyası ya vardır ya yoktur. `--zorla` bilerek YOK: bu kapı
     // ucuz bir sınamayı pahalı bir turdan önce zorunlu kılar, atlatılırsa anlamı kalmaz.
+    //
+    // 2026-08-05 İKİNCİ ONARIM — VARLIK YETMİYOR, İÇERİK ÖLÇÜLÜYOR.
+    // İlk hâli yalnız dosyanın var olup olmadığına bakıyordu; adı doğru olan BOŞ bir dosya
+    // üretimi açıyordu. Bu repoda sekiz kez ölçülen kusur sınıfının aynısı: kapı bir şey
+    // ölçüyor sanılıyor, ölçtüğü şey başka. Artık `scripts/canary-lock.mjs` kilidin İÇİNİ
+    // okuyor — gerçek kare/klip yolları diskte var mı, Sol ve AGY blokları koşma kaydı
+    // taşıyor mu, Mami'nin ham cümlesi yazılı mı, lehçe kaydı dolu mu.
+    // Bu kapı DIŞ GÖZ ÇAĞIRMAZ: yalnız gerçek sonucu içeri alır.
     if (faz === 'uretim' && s.phase !== 'uretim') {
       const lock = canaryLockPath(root, s.projectPath);
       if (!lock) {
@@ -575,11 +594,52 @@ function cmdIlerle(root, argv) {
           + '        8 klip basılır, AGY tarif eder, Sol çürütür, hükmü MAMİ verir.\n'
           + '        Kilit o hükmün kaydıdır — onaylı kare/klip yolları + sha, Mami\'nin ham\n'
           + '        cümlesi, çalışan motion biçimi, yasaklanan kalıplar, sınanan tek değişken.\n'
+          + '        Biçim: agents/DIS-GOZ-BRIEF-SABLONU.md · kanon: docs/ai/DORTLU-MASA.md\n'
           + '        Ölçüldü: canary\'siz basılan 6 klibin 6\'sı bozuk çıktı.\n',
         );
         process.exit(1);
       }
-      process.stdout.write(`[durum] ✅ canary kilidi bulundu: ${lock}\n`);
+      const { acik, sebep, olcum } = uretimAcilabilirMi(
+        readFileSync(toPlatformPath(root, lock), 'utf8'),
+        { repoKok: root },
+      );
+      for (const k of olcum.kirmizi) process.stdout.write(`[durum]   🔴 ${k}\n`);
+      for (const w of olcum.sari) process.stdout.write(`[durum]   🟡 ${w}\n`);
+      if (!acik) {
+        process.stdout.write(
+          `[durum] ⛔ ÜRETİME GEÇİLEMEZ — ${sebep}\n`
+          + `        Kilit: ${lock}\n`
+          + '        Kilit VAR ama hüküm taşımıyor. RESHAPE / UNPROVEN / SOL_UNAVAILABLE\n'
+          + '        üretimi açmaz: kırılan hipotez düzeltilir ve YENİ küçük canary basılır.\n',
+        );
+        process.exit(1);
+      }
+      process.stdout.write(`[durum] ✅ canary kilidi geçerli: ${lock} (Sol: ${olcum.solHukmu})\n`);
+    }
+
+    // SOL PLAN BLOĞU — Dörtlü Masa'nın BİRİNCİ tetikleyicisi (docs/ai/DORTLU-MASA.md §3).
+    // Vizyon Kilidi + Shot Card hazır olunca Sol planı çürütür ve hükmü ENZİM KİLİT 5 altında
+    // yaşar. Ölçüldü: bu adım hiç koşmadı ve koşmadığını gösterecek bir yer yoktu.
+    //
+    // 🔴 BU BİR BLOKAJ DEĞİL, DÜRÜST KAYIT. Geçmişi sahteleyip zaten yol almış projeleri
+    // kilitlemek, kapıyı `--zorla` aramaya iter. Kural: uyarı canary fazında görünür,
+    // uygulanması İLK CANARY MOTION'ından önce zorunludur.
+    if (faz === 'canary' && s.phase !== 'canary') {
+      const enzim = projeDosyasi(root, s.projectPath, '_enzim.md');
+      const solVar = enzim
+        && parseHukumBloklari(readFileSync(enzim, 'utf8')).some((b) => b.goz === 'SOL');
+      if (!solVar) {
+        process.stdout.write(
+          '[durum] ⚠️  RETROAKTİF SOL PLAN REVIEW GEREKLİ — bu proje Sol plan hükmü olmadan ilerledi.\n'
+          + `        Yeri: ${s.projectPath}/<Ad>_ENZIM.md → KİLİT 5 altında bir "DIŞ GÖZ HÜKMÜ — SOL" bloğu\n`
+          + '        Sol neyi çürütür: ritim · tekrar · ref rolleri · animasyon ayrıcalığı ·\n'
+          + '        start-frame olay eşiği · risk kör noktaları.\n'
+          + '        Bloke DEĞİL (geçmiş sahtelenmiyor) — ama İLK CANARY MOTION\'ından önce yazılır.\n'
+          + '        Biçim: agents/DIS-GOZ-BRIEF-SABLONU.md\n',
+        );
+      } else {
+        process.stdout.write('[durum] ✅ Sol plan hükmü ENZİM içinde bulundu\n');
+      }
     }
     s.phase = faz;
   }
