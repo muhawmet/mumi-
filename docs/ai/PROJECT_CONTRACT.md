@@ -70,6 +70,19 @@ Claude yön, montaj ve Mami ile konuşma tarafında kalır.
 | Klip/film izleme, süreklilik, ekran yazısı | **AGY** | Codex video GÖREMEZ (`text`, `image`) |
 | Prompt yazma · sahne fikri · Mami ile karar | **Claude** | devredilmez |
 
+🔴 **İŞLERDE TERRA, HATA AVINDA SOL** — Mami'nin kuralı (2026-08-05), aynı gün ölçümle
+doğrulandı. *"Terra da iyi bayağı, Sol hayalperest; Terra'yla Opus benzerler."*
+
+| model | aynı gün ölçülen davranış | ne için çağrılır |
+|---|---|---|
+| **Terra + high** | Verilen üç işi eksiksiz yaptı: üç kırmızının üçünün de kök nedenini `dosya:satır` ve onarımıyla getirdi. Kaçan yok — **fazlasını da aramadı.** | **İŞ**: yazmak · onarmak · doğrulamak · çapraz kontrol |
+| **Sol + xhigh** | **İstenmeyeni buldu:** üç iddiayı doğrulamakla kalmayıp yasada kendi başına **3 çelişki daha** çıkardı; sonra alıcı gözüyle çerçeveyi kurdu (shot fabrikası / PHD/MS / ANIMATIC-0). Bedeli: detayda kayıyor — bayat bir rakamı canlı sandı, iki yerde EMİN DEĞİLİM yazdı. | **AV**: kusur aramak · hükmü çürütmek · "burada başka ne bozuk" |
+
+**İki kural birlikte:** Ava Sol çıkar, avı Terra temizler. Sol'un bulduğu hiçbir hüküm tek
+başına uygulanmaz — detayı Terra'ya ya da ölçüm aracına çivilettirilir. Bugün tam bu sırayla
+işledi: Sol'un vizyonu (ANIMATIC-0) aynı gece kod oldu ve **80 saniyelik gerçek bir plan
+hatasını** yakaladı; ama Sol'un kendi rakamlarını `ffmpeg` ve Terra düzeltti.
+
 **Devir kalitesini belirleyen tek şey görev tarifidir.** Codex'e repo verilmez —
 **adı verilmiş 5-15 dosyalık, toplamı 200k altında bir küme** verilir (CLI bağlamı 272k,
 kullanılabilir ~258k; **tek dosya okuması 10.000 token'da kesiliyor** — 1400 satırlık bir
