@@ -1,0 +1,107 @@
+DENETLEYİCİ VE DÜZENLEYİCİ — REFERANS-EDIT TALİMATLARI
+=========================================================================
+Kullanım: NB2'ye **mevcut kareyi referans olarak ver**, altındaki tek paragrafı yapıştır.
+Baştan üretme. Kare zaten büyük ölçüde doğru; yalnız adı geçen şey değişir.
+
+🔴 NEDEN BU DOSYA VAR — bugün ölçüldü (Mami, 2026-08-05):
+"revizede sıfırdan neden ürettirdin, basit bir use this reference kullanabilecekken?"
+Haklıydı. `mamilas-enzim` KİLİT 4 zaten yazıyordu: mekân/kompozisyon yanlışsa baştan üret,
+küçük şey (yazı · sayı · renk · TEK NESNE) değişecekse REFERANS-EDIT.
+24 karenin çoğu tek nesne kusuruydu ve ben hepsini baştan yazdırdım. Bedeli ölçüldü:
+K01 iyi bir kareydi, baştan üretilince BEŞ YENİ kusurla döndü (bıçaklık geldi, fırın yandı,
+pencere açıldı, bardak düzeldi, Efe içeri girdi). **Baştan üretmek tutan şeyi de çöpe atıyor.**
+
+🔴 İKİNCİ YASA — YASAK BAĞLAMIYOR, GİYDİRME BAĞLIYOR (bugün üçüncü tekrarı):
+Kırılan her kilit bir `NO X` cümlesiydi; tutan her şey olumlu tarif edilmiş bir NESNEYDİ.
+Aşağıdaki talimatlar bu yüzden "şunu çıkar" demez — **"onun yerine şu var"** der.
+
+=========================================================================
+K01 — dört tek-nesne düzeltmesi (kompozisyon KORUNUR)
+=========================================================================
+Kare iyi: pervazdaki 2023/2021/2019 kusursuz, saat, çaydanlık, raflar, palto, aydınlık
+neşeli oda — hepsi kalıyor. Dört şey değişiyor.
+
+-----
+Use this image as the reference and keep everything in it — the same room, the same camera,
+the same light, the same boy, the same clock, kettle, shelves, coat and the same pencil
+years on the door jamb. Change only these four things.
+
+The boy steps back out of the kitchen and stands in the doorway itself, on the corridor
+side of the threshold, both feet behind the line of the door frame; his right palm rests
+flat on the wooden jamb at his own shoulder height with his thumb touching the topmost
+pencil line, and his other arm hangs relaxed at his side. Nothing of him is inside the
+kitchen and neither hand reaches toward anything in the room.
+
+Where the knife block now stands on the counter there is instead a shallow white enamel
+bowl with a soft drift of flour beside it, and the counter carries nothing else.
+
+The oven below the cooker is closed and cold — its glass door is dark and quiet, with the
+same warm room light simply falling across it; the warm glow in the lower right of the
+frame comes only from the small iron stove vent, not from inside any appliance.
+
+The window behind the boy is completely fogged over, edge to edge, an even matte pane that
+glows bright white with the winter light behind it — nothing outside is visible through it,
+no tree, no branch, no snow shape, no garden, only clean bright fog.
+
+And on the table at the right, the thin-waisted tea glass stands upside down, resting on
+its own rim, empty and dry.
+-----
+
+=========================================================================
+K05 — tek düzeltme (bunu listede olmadan basmışsın, sebebini bilmiyorum)
+=========================================================================
+Karenin neyi bozuk yazılmadı — bozukluğu söyle, tek satırlık edit yazayım.
+Şu an talimat YOK, bilerek boş bırakıldı. Uydurmuyorum.
+
+=========================================================================
+K56 — AYNA · bu kare EDIT DEĞİL, K01 referansıyla YENİDEN kurulur
+=========================================================================
+Sebep: kusur tek nesne değil, KADRAJIN KENDİSİ. K01 koridordan kapı boşluğuna bakıyor,
+basılan K56 koridor boyunca bakıyor — farklı lens, farklı mesafe, Efe uzakta ve arkadan.
+Değişmesi gereken üç şey (çayın rengi, bardak, cam) kadrajda görünmüyor bile.
+
+Bu yüzden referans **K56'nın kendisi değil, K01'in karesidir.**
+
+-----
+Use the K01 frame (images/1.png) as the reference for framing and lighting: the same lens,
+the same camera height, the same distance and the same layout — the corridor door jamb with
+its pencil years slicing the left edge, the kitchen read through the door opening, the
+fogged window flat in the middle of the far wall, the wall clock high at the right, the
+cooker with the two-tier kettle at the left, the table at the lower right.
+
+Keep all of that identical. Change only three things, and nothing else.
+
+The water in the upper brewing pot is now deep amber, dark at the bottom and thinning
+upward, filling the glass body from base to shoulder.
+
+The tea glass on the table now stands the right way up, filled to its brim with the same
+deep amber tea.
+
+The lower half of the window has been wiped clear — a clean sharp band of bright, snowy
+garden shows through the cleared lower half, while the upper half stays evenly fogged.
+
+The boy stands where he stood before, at the doorway with his palm on the jamb.
+-----
+
+=========================================================================
+K13 · K12 · K14 · K16 · K20 · K21 · K25 · K26 — BEKLİYOR
+=========================================================================
+🔴 Bu sekiz kare için talimat YAZILMADI ve yazılmayacak — çünkü kusur karede değil.
+`@maket` referans plakası hâlâ basılmadı. Üç turdur aynı yerden düşüyor:
+  1. tur → ten renkli plastik büst · göz çukurları boş kafatası · çıplak kafatası
+  2. tur → oluklu ahşap kâse · som pirinç çubuk · adsız plastik kabuk
+  3. tur → K13'te GERÇEKÇİ TEN RENGİNDE, YÜZÜ OLAN, BOYUNDAN KESİLMİŞ İNSAN BAŞI
+           — çocuk materyalinde "kesik baş" okuması veriyor (§5øø siluet sınıfı)
+
+Envanterin kendi cümlesi bunu baştan söylemişti: *"tag'li: tarife bırakılırsa parça
+geometrisi her karede kayar."* Metin tarifi üç kez denendi, üçünde de tutmadı.
+
+**Sıra:** `_REFERANS-PROMPTLARI.txt` 2. blok (@maket) basılır → sonra bu sekiz kare
+o plaka referans verilerek edit'lenir. Referanssız dördüncü tur aynı kaymayı satın alır.
+
+=========================================================================
+KALAN KARELER
+=========================================================================
+Basılan 21 karenin K01 · K13 · K56 dışındakileri henüz tek tek açılmadı.
+Açılınca her biri için burada tek paragraflık edit talimatı yazılır — **baştan prompt
+yazılmaz.** Kural: kusur tek nesne/yazı/renk ise EDIT; mekân ya da kadraj ise YENİDEN.
