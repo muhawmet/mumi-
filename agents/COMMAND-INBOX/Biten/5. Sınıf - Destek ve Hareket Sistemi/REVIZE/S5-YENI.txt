@@ -1,0 +1,97 @@
+DESTEK VE HAREKET SİSTEMİ — SEKANS 5 İKİNCİ TUR REVİZE (K49, K52)
+=========================================================================
+K50 ve K51 TUTTU, motion'ları MOTION/S5-YENI.txt'te. Bu dosyada yalnız tutmayan iki kare var.
+Her ikisi de "change ONLY" düzeltmesidir — kare atılmıyor, tek şey değişiyor.
+=========================================================================
+
+### 49.png — KISMEN TUTTU, IŞIK HÂLÂ DİYAGRAM
+
+GEREKÇE (Mami için, prompt'a girmez):
+· TUTTU: mont. Kambur gerçekten kuruldu — sırt yuvarlak, bir omuz çökük, yaka öne katlanmış,
+  kollar sandalyeden aşağı sarkıyor. Karenin FİKRİ ("kambur hâlâ orada ama içi boş") artık
+  kareye girdi ve VO'suz da okunuyor.
+· TUTTU: bel omurlarında halka dizisi doğdu — disk boşluklarında ayrı, eşit, kapalı amber
+  halkalar, aralarında sönük kemik. Boyun da halka halka. İstenen şey buydu.
+· TUTMADI: ışık omurgada DURMADI. Kaburgalar, kaburga kıkırdakları, göğüs kemiği ve leğenin
+  ön kenarı hâlâ boydan boya amber yanıyor; sağrı deliklerinde de amber var. Yani "fosforlu
+  kalem" yarı yarıya sürüyor ve dünyanın negatifindeki "flat graphic fill / diagram highlight"
+  hâlâ kadrajda. Prompt'un kendi PLAN'ı da bunu yasaklıyordu: "ışık ... kaburgalara ulaşmaz."
+· Düzeltme küçük ve tek yönlü: doğan halka dizisine dokunulmuyor, YALNIZ omurga dışındaki her
+  şeyden ışık çekiliyor.
+· SARI (revize istemiyorum, kayıt): kafatası kadrajda — bir önceki turda da kayda geçmişti,
+  kare bundan zarar görmüyor.
+· SARI: panodaki çocuk resimlerinde çizgi çizgi sahte harfler var; odak dışında ve çocuk el
+  yazısı olarak okunuyor, tek bir kelime çözülmüyor. Geçti.
+· SİLUET (§5øø) yeniden sınandı — kambur eklendikten SONRA: mont kollarıyla birlikte
+  sandalyeye açıkça asılı, gündüz ışığında, yaka bir giysi yakası olarak okunuyor. Yükseklik,
+  yüz gölgesi, yalnızlık ve sarkan ip yok. Birleşme kuralı ihlal edilmiyor. Geçti.
+· ÇOCUK GÜVENLİĞİ: temiz.
+
+-------------------------------------------------------------------------
+
+
+Use this referenced image, change ONLY: the warm-amber light is taken off every part of the
+model except the vertebral column — the ribs, the costal cartilage, the sternum, the collarbones,
+the shoulder blades, the sacrum, the pelvis, the arm bones, the hands and the leg bones all go
+completely dark and return to plain matte teaching bone lit only by the room's daylight — and
+what is left is one single vertical column of small, separate, equal, closed amber rings, one
+ring sitting in each pale disc gap between two vertebrae from the neck down to the lowest lumbar
+vertebra and nowhere else, every ring the same size and the same brightness as the next, with
+clear unlit bone showing between each pair of them and no glow, bleed, halo or warm wash
+spreading outward from that column onto any bone beside it. Keep everything else identical.
+
+-------------------------------------------------------------------------
+
+### 52.png — AYNA TUTTU, MİRA TUTMADI
+
+GEREKÇE (Mami için, prompt'a girmez):
+· TUTTU ve büyük tuttu: ODA. 1.png ile 52.png yan yana konduğunda aynı oda — düz sıcak
+  kırık-beyaz duvar (yeşil sıva ve teal lambri gitti), aynı mumlu meşe tezgâh, aynı iki fırça
+  kavanozu solda, aynı kurutma rafı, aynı keten önlükler, aynı dolap, aynı kanca, aynı ışık
+  yönü, aynı ön plan alçı küresi. Geçen turun ana kusuru kapandı.
+· TUTTU: @kukla ipinde dik, yüzsüz, hareketsiz, gölgesi dolap kapağında. Aynanın tersine
+  çevrilen tek şeyi doğru.
+· TUTTU: kavram ışığı sönük — kadrajda tek bir amber çekirdek, halka ya da çizgi yok.
+· TUTMADI — DİZ KİLİDİ. Prompt "dizden yukarısı kadrajda, dizin altı görünmez, hiçbir yeri
+  tezgâh yüzeyinin üstünde değil" diyordu. Teslim edilen karede iki diz de, baldırların bir
+  kısmı da görünüyor ve meşe tezgâhın yüzey çizgisinin ÜSTÜNDE kalıyor. VO'yu duymayan biri
+  için okuma değişmedi: "kız masanın üstünde." Aynı kusur ikinci kez düştü.
+· TUTMADI — PLASTİKLİK. Mami'nin hükmü ikinci kez doğrulandı ve sebebi yine ölçülebilir:
+  Mira'nın kadrajın HİÇBİR YERİNDE gölgesi yok — arkasındaki duvar bomboş, temiz ve düz.
+  Yüzünde yön yok, iki kaynak yok, sıcak rim yok; ten parlak, saç tek parça kalıp gibi. Düz
+  dolgu + gölgesizlik = sahneye yapıştırılmış çıkartma (§7a birebir). Prompt bunu üç maddede
+  istemişti, üçü de gelmedi — yani bu bir prompt eksiği değil, motor bu üç şeyi ancak
+  ayrı ayrı ve somut yazıldığında koyuyor. Yeni metin üçünü de tek tek yazıyor.
+· Pozun kendisi de değişti: "havada, yakalanmış" değil, iki dizi bükük çömelmiş bir adım.
+  Diz kilidi geri konunca bu tartışma zaten kapanıyor — hareket üst gövdede okunacak, tıpkı
+  K01'de duruşun üst gövdede okunduğu gibi.
+· 🔴 MAMİ KARARI GEREKİYOR (bu revizede DEĞİŞTİRİLMİYOR): emaye oda plakasındaki "ATÖLYESİ"
+  kelimesinde Ö harfinin iki noktası yerine tek yatay çizgi var — "ATŌLYESİ" okunuyor. Kusur
+  K52'ye ait değil: 1.png'de, yani AÇILIŞ KARESİNDE de birebir aynı. İki kare de aynı hatayı
+  taşıyor, yani ayna bu noktada kusursuz. Seçenek iki: (a) ikisi de böyle kalır, kimse fark
+  etmez (plaka odak dışında, videoda ~5 saniye görünür), (b) K01 ve K52 birlikte yeniden
+  basılır. Tek başına K52'yi düzeltmek aynayı kırar — o yüzden bu revizede dokunulmadı.
+
+-------------------------------------------------------------------------
+
+
+🔴 ÜRETİM NOTU: bu düzeltme **images/1.png (K01'in teslim edilen karesi) yine referans olarak
+beslenerek** basılır — oda artık tuttu, kırılmasın.
+
+
+Use this referenced image, change ONLY: @mira4 is brought forward and reframed so that the oak
+tabletop crosses her at hip height exactly as it crosses her in the opening frame — no legs, no
+knees, no shins, no ankles, no feet and no shoes appear anywhere in the picture, and no part of
+her body is ever above the table surface — while her upper body keeps exactly the movement it
+already has, her torso turned away from the cabinet and leaning into the turn, both arms swept
+back behind her, her hair thrown back off her shoulders; and she is lit as part of this room
+instead of laid over it, in three specific ways: the warm bounce coming up off the waxed oak
+wraps under her chin and along the undersides of her forearms and lays a warm rim down her near
+cheek, her jaw and her near shoulder, her far cheek falls half a stop into cool open-sky bounce
+so her face is shaped by two different lights and is never evenly flat, and her own soft
+warm-edged shadow falls clearly onto the pale wall behind her and down onto the floor. Her skin
+is matte with low specular and one single soft catchlight in the eye, never a wet sheen over the
+face, and her hair reads as separate clumped strands with a few loose ones catching the sun bar
+instead of one moulded shell. Keep everything else identical.
+
+-------------------------------------------------------------------------

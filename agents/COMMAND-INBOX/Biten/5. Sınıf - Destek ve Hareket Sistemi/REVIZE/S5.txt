@@ -1,0 +1,215 @@
+DESTEK VE HAREKET SİSTEMİ — SEKANS 5 REVİZE (K49–K52)
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2
+Denetim: dört karenin dördü de açıldı ve K01 (1.png) ile yan yana kondu.
+Sonuç: DÖRDÜ DE REVİZE. Bu yüzden bu geçişte MOTION yazılmadı (bkz. MOTION/S5.txt).
+
+🔴 K52 İÇİN ZORUNLU: yeni üretimde **K01'in TESLİM EDİLEN KARESİ (images/1.png) referans
+olarak beslenecek.** Ayna metinle kurulmuyor — bu ölçüldü, K52 metinle kuruldu ve tutmadı.
+
+=========================================================================
+
+### 49.png
+
+Use this referenced image, change ONLY: the warm-amber light on the model stops flooding the
+bone and becomes a single vertical column of small, separate, equal, closed amber rings, one
+ring sitting in each pale disc gap between two vertebrae and nowhere else — the vertebral bones
+themselves, the sternum, the ribs, the costal cartilage, the sacrum, the pelvis, the hands and
+the leg bones carry no glow at all and stay plain matte teaching bone in daylight — and the
+empty school coat thrown over the chair back is reshaped so that its own spine curves into a
+hard round hunch with one shoulder dragged down and the collar folded forward, plainly holding
+the shape of a slumped back with nobody in it. Keep everything else identical.
+
+GEREKÇE (Mami için, prompt'a girmez):
+· Modelin bütün omurgası + kaburga kıkırdakları + leğen kenarı + parmak kemikleri düz sarı
+  dolguyla yanıyor. Bu bir ışık olayı değil, FOSFORLU KALEM — dünyanın negatifindeki
+  "flat graphic fill / diagram highlight" tam olarak bu. Kavram ışığı yasası halka der,
+  boyama demez; ENZIM §3: "ışık nesnenin üstündedir, geometrik yazılır."
+· Mont şu hâliyle "sandalyeye atılmış bir mont". Karenin FİKRİ ("kambur hâlâ orada ama içi boş")
+  kareye hiç girmemiş — VO'yu duymayan biri duruşu göremiyor.
+· SİLUET (§5øø) sınaması yapıldı: mont başsız bir gövde gibi okunmuyor, kollar sarkık ve
+  sandalyeye açıkça asılı — ürkütücü okuma YOK. Kambur eklendikten sonra da yüksekliğe,
+  sarkan ipe ya da yüz gölgesine dokunulmuyor; §5øø birleşme kuralı ihlal edilmiyor.
+· SARI (revize istemiyorum, kayıt): kafatası kadrajda — prompt "en alt kaburganın üstü kadraj
+  dışında" diyordu, motor tam boy verdi. Kare bundan zarar görmüyor, kayda geçiyor.
+· SARI: tezgâhta duran kırmızı kalp maketi damarlı/parlak bir anatomi maketi. Küçük ve arka
+  planda; ENZIM §6'nın "kapalı maket" kilidini gerer ama kare bu yüzden reddedilmez.
+
+-------------------------------------------------------------------------
+
+### 50.png
+
+Use this referenced image, change ONLY: the ivory thigh bone is moved along the bench so that
+it lies directly beside the two glasses with its shaft a hand's width from the milk, a still,
+soft, spread warm-amber core now glows from inside that shaft through the polymer without ever
+leaving its surface, and the milk's flat white face throws a distinct cool white bounce up onto
+the underside of the shaft and along the lower curve of the ball head. Keep everything else
+identical.
+
+GEREKÇE (Mami için, prompt'a girmez):
+· Kemikte kavram ışığı HİÇ YOK. Zincir K12'de kemiğin içinde doğdu, 38 kare taşındı ve tam
+  "besin kemiği güçlendirir" cümlesinde düşmüş. Kapanış zincirinin kopma noktası burası.
+· Sütün kemiğe attığı serin beyaz yansıma da yok; kemik kadrajın sağ ucunda, bardaklardan
+  uzakta, fiziksel olarak bağlantısız duruyor. Karenin bütün fikri ("yemek kemiğe IŞIK olarak
+  varıyor") görünmüyor — geriye "tezgâhta süt ve bir kemik var" kalıyor.
+· ÇOCUK GÜVENLİĞİ: temiz. Ağza giden bardak/kaşık yok, Mira yalnız kutunun tepesini tutuyor,
+  ağzı kapalı. Kaşık yoğurtta kendi başına dik duruyor, el yok. Bu kare bu maddede geçti.
+· ÖĞRETİM: süt + yoğurt + kemik doğru üçlü, kalsiyum iddiası doğru.
+· YAZI: "SÜT" net, Ü'nün iki noktası yerinde, tek yüzeyde, ters değil. TUTTU.
+
+-------------------------------------------------------------------------
+
+### 51.png
+
+Use this referenced image, change ONLY: the two cuts of raw red meat on the wooden tray at the
+right are replaced by the two dry matt brick-red banded muscle teaching models standing upright
+on their own turned hardwood bases — even pale cross-banding around each belly, sealed and
+unbroken, no cut face, no exposed pink interior, no fat, no wet sheen, no blood — each carrying
+one even unbroken warm-amber line along its belly, and @mira4's hair returns to the same
+mid-brown it has in every other frame of the lesson instead of black. Keep everything else
+identical.
+
+GEREKÇE (Mami için, prompt'a girmez):
+· Tepsideki iki nesne KASAP ETİ: kesilmiş pembe kesit yüzeyi, yağ mermerlenmesi, ıslak parlaklık.
+  Bu bloğun en ağır kusuru. Üç yasayı birden kırıyor — ENZIM §6 (maketler KAPALI, kesit yok),
+  dünya negatifi (ıslak/damarlı/ürkütücü yok), çocuk materyali. Kare bu hâliyle müşteriye
+  gösterilmez.
+· Saç rengi bu karede siyaha kaymış; K49, K50 ve K52'de orta kahve. Kapanış sekansının içinde
+  karakter kimliği değişiyor.
+· TUTTU: zincirin tamamı gerçekten aynı anda yanıyor — omuz, dirsek, kalça, diz halkaları ve
+  uzun kemiklerin içindeki çekirdek birlikte okunuyor. Karenin işi bu ve yapıyor.
+· TUTTU: "OYUN" zincir dikişle nakışlı, dört harf de doğru ve düz N — yazı SAĞLAM. (Kelime
+  çantanın kavisi yüzünden yatay değil eğik duruyor; okunuyor, revize istemiyorum.)
+· SARI: Mira'nın bacakları ve ayakkabıları tam kadrajda — prompt "mid-shin üstü" demişti.
+  Kadraj kilidi (ENZIM §1) gevşemiş ama figürin etkisi doğmamış; kayda geçiyor.
+
+-------------------------------------------------------------------------
+
+### 52.png — SAHNE BOZUK, TAM YENİ PROMPT
+
+🔴 ÜRETİM NOTU: bu prompt **images/1.png (K01'in teslim edilen karesi) referans olarak
+beslenerek** basılır. Oda, lens ve ışık düşüşü o kareden alınır; metin yalnız farkı yazar.
+
+35mm lens at f/4, camera locked at a fifth-grader's eye height of roughly 1.35 metres, square to
+the cabinet wall, three-quarter medium-wide view of the same school art atelier in the same first
+hour of morning as the referenced opening frame — the same room, the same wall, the same
+furniture in the same places, only the movement has changed hands. The walls are the same plain
+warm off-white plaster running unbroken from floor to ceiling with no panelling, no wainscot, no
+painted dado and no second colour anywhere on them. The same long solid-oak work table runs
+across the lower middle plane, hand-waxed to a soft satin with a worked history of colour driven
+into its open grain, and the same two heavy glass jars of good sable and hog brushes stand
+bristle-up in clean water on it at the left of centre exactly where they stood. @kukla hangs from
+the small brass hook screwed into the outer edge of the tall varnished supply cabinet at frame
+right, head-high and back where it started, and it is completely at rest — its cord hanging dead
+plumb, its jointed body square and vertical, both arms hanging straight down at its sides, and
+its shadow lying still and hard-edged on the varnished cabinet door with no drift in it at all.
+@mira4 is the moving one now: she is in the left-centre of the middle plane a step and a half
+away, already in the air and caught there, her near knee driven high and forward, her far leg
+swept straight back, her torso turned away from the cabinet and leaning into the turn, her hair
+and the hem of her skirt thrown back, and her far hand still trailing behind her toward the hook
+she has just let go of; she is framed from the knees up and nothing below the knees is visible,
+so neither foot, neither shoe and neither sock is anywhere in the picture, and the oak tabletop
+crosses her at hip height so no part of her is ever above the table surface. She is plainly
+inside this room and not laid over it: the warm bounce coming up off the waxed oak wraps under
+her chin and along the undersides of her forearms, her near cheek and near shoulder carry a warm
+rim off that bounce while her far cheek falls half a stop down into cool open-sky bounce, so her
+face is shaped by two different lights and is never evenly flat, and her own soft low-contrast
+shadow falls across the floorboards and up the pale wall behind her to her left. Skin stays matte
+with low specular but keeps visible subsurface warmth at the ear, at the fingers and along the
+bridge of the nose, and is never tinted green or grey. The setting is @atolye fully dressed
+exactly as before: the gypsum study sphere and the gypsum cornice fragment on the shelf above,
+the drying rack at the left of the middle plane, thick natural-linen aprons hanging on
+turned-wood pegs, and the atelier door standing open at the far left with its enamel room plate
+mounted flat on the inner face at adult chest height. The cabinet's upper shelves and the ceiling
+are outside the frame above. The lesson's warm-amber light has gone out and is nowhere in this
+frame — no core, no ring, no line anywhere on any object; the only warm light left in the room is
+the real one it was borrowed from. Motivated key is the low morning sun through the east window
+as one clean warm bar across the cabinet door, @kukla and the near edge of the oak table; from
+there the light does not stop — it bounces off the waxed oak and the pale gypsum casts and
+carries right through the room, so the drying rack, the linen aprons and the far wall read a stop
+and a half down and cooler but stay completely legible, and an open north sky wash fills the
+shadow side and grazes the enamel plate. Nothing in this room is unlit; the light has direction,
+not a border. Three things are alive in the frame: @mira4 is in mid-air and turning, dust turns
+slowly through the sun bar, the water in one brush jar still rocks — and @kukla is the one thing
+in the picture that is not moving at all. Depth in three layers — the gypsum sphere sits large
+and out of focus across the near bottom-left edge, @mira4, the oak table and @kukla sharp in the
+middle plane, the open door, the enamel plate and the corridor beyond falling into soft cool
+bokeh. Every object rests in contact with its surface and casts a soft contact shadow — the hook
+plate flush against the cabinet edge, the brush jars ringed on the table boards, the table legs
+on the floor; @mira4 alone touches nothing, and her shadow carries her weight instead.
+Clean motion-ready start frame, the still cord and the airborne stride held.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage, a
+RenderMan-successor pipeline — form carried entirely by lighting rim and value separation,
+subsurface translucency in skin holding the scene's light temperature, wet dual-point catchlights
+in the eyes. Material specificity is mandatory: hand-waxed solid oak with open grain and a satin
+sheen, turned beech limbs with lathe rings and polished brass ball joints, vitreous enamel fused
+over steel, pale gypsum, heavy natural linen, fine ribbed cotton knit with individual fibre
+catch, hair reading as separate clumped strands with the sun bar catching a few loose ones.
+Props drawn 10–15% overscale for child-clear readability. Lighting is art-directed: motivated low
+morning sun through the east window as key — beams visible as soft volumetric shafts with dust
+suspended in them, laying warm window-shaped patches on the oak table and floor; open sky fill at
+half key reaching every corner, painted AO — shadow stays warm and legible, never black. Daylight
+is real and directional, never a flat wash, never artificial bloom. No outlines.
+LIGHT AND PALETTE: colour lives everywhere the light reaches, and the light reaches everything —
+shadows settle into an open luminous blue-indigo that stays airy and full of detail, midtones glow
+a full warm burnt-orange across the waxed oak and carry that warmth into the linen aprons and the
+far wall, vivid warm amber runs along the sunlit edge of the puppet's shoulder and its cord and
+belongs entirely to the real sun, returning as a softer amber bounce under the table and up onto
+@mira4's forearms and chin, highlights lift toward a warm near-white ivory on the gypsum casts,
+and a cool-violet sky bounce opens the shadow side without draining it. Saturation comes from real
+material and real light, never from a filter — rich and sunlit, never pale, never neon. Overall
+exposure is bright and open — a sunlit morning room, high-key overall with a directional accent,
+never a dark interior with a beam in it. Render as light behaviour, never flat colour fills.
+No acid green, no neon, no teal-orange grade, no desaturated grey, no washed-out milky look.
+TEXT: none — clean plate. The enamel room plate stands at the far left edge exactly where it
+stood in the opening frame, but it lies outside the plane of focus and reads only as a soft
+rectangle of dark-blue-on-white glaze with a cool sheen across it — colour and material only,
+with no letterform resolving anywhere on it. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: the walls are one single plain warm off-white plaster from floor to ceiling — no
+panelled wainscot, no painted dado, no teal or green lower wall, no two-tone wall and no tiling
+anywhere; the work table is waxed solid oak with a soft satin sheen and is never a bare, raw,
+paint-spattered or hand-waxed solid oak bench; no legible word, letter, glyph or letter-like mark
+appears anywhere in this frame — the enamel plate stays a soft out-of-focus blue-and-white
+rectangle and nothing on it resolves into type, and no lettering appears on any painting, sheet,
+jar, apron, poster or surface; no amber core, ring, line, halo or glow of any kind appears on the
+puppet, the cabinet, the table, the jars, @mira4 or anywhere else — the only warm light in the
+room is the sun bar itself; @kukla is completely motionless with its cord dead vertical, it does
+not swing, tilt, lean or turn, and its shadow on the cabinet door does not move; @kukla has no
+face — its head is a plain turned oval block of wood with no eyes, no nose, no mouth and no drawn
+features of any kind; the puppet stays a rigid solid, no deform, melt, morph or merge, its joints
+stay hard wooden balls, and it is hanging on the hook by its own cord with nothing else attached
+to it; @mira4 is cut off by the frame at the knees — no feet, no shoes, no socks and no lower legs
+appear anywhere in the picture, no part of her body is ever above the tabletop, she is never
+standing, kneeling, climbing, sitting or running on the table, and she never reads as a figurine
+or a doll; she is lit by the room's own bounce with a warm rim on her near side and a cooler far
+side, never by an even flat frontal fill, and her own soft shadow is present on the floor and wall
+so she never reads as a cut-out laid over the plate; she is one single figure caught in one single
+moment in the air — no motion trail, no ghosted repeat pose, no blur streak, no second copy of her
+and no dotted path anywhere in the frame; she is fully clothed, present with her face, her mouth
+closed, and she never touches, holds or reaches the puppet; no second child, no teacher, no other
+person anywhere in the room; no 2D cel shading, no black outline, no flat graphic fill, no toon
+shader, no clay or plasticine skin; no photoreal or live-action, no real-human photographic skin;
+no recognisable franchise character, real person, logo, badge or brand; no English text anywhere;
+no arrows, leader lines, callout circles, labels, charts, diagrams, gauges or infographic panels;
+no formula symbols or equations; no lens flare unless motivated by a practical light in frame;
+no teal-orange grade, no desaturated grey look, no hard-black shadow; no empty white void.
+
+GEREKÇE (Mami için, prompt'a girmez):
+· AYNA TUTMADI, ve kusur kadrajda değil ODADA. K01: düz açık duvar, mumlu meşe masa, fırça
+  kavanozları solda. K52: yeşil sıva + koyu teal lambri, çıplak boya sıçramış çam tezgâh,
+  kavanozlar sağa geçmiş, duvarda hortum ve önlük rayı. İki kare yan yana konduğunda aynı oda
+  DEĞİL. Kısmen prompt'un kendi suçu: K52 metni "hand-waxed solid oak work table" yazmıştı, K01
+  "hand-waxed solid oak" diyordu — ayna metinde zaten kırıktı.
+· Kamera K01'den alçak ve geride; Mira K01'deki gibi diz üstü kesilmemiş, bacakları ve
+  ayakkabısı tam görünüyor VE tezgâh yüzeyinin ÜSTÜNDE kalıyor. Siluet okuması: "kız boya
+  masasının üstünde koşuyor." VO'yu duymayan biri bunu görür (§5øø). Diz kilidi geri konuldu.
+· MAMİ'NİN "PLASTİK OLDU" HÜKMÜ DOĞRULANDI ve sebebi ölçüldü: Mira'da anahtar ışık yok, rim
+  yok, ve kadrajın HİÇBİR YERİNDE gölgesi yok. Havada olduğu için temas gölgesi yazılmamış,
+  ama havadaki bir gövde de gölge düşürür. Düz dolgu + gölgesizlik = sahneye yapıştırılmış
+  çıkartma. §7a'nın tarifi birebir bu. Yeni prompt üç yeri onarıyor: iki farklı ışık kaynağıyla
+  şekillenen yüz, meşeden gelen sıcak rim, zemine ve duvara düşen kendi gölgesi.
+· TUTTU ve KORUNDU: kavram ışığı gerçekten SÖNMÜŞ — kadrajda tek bir amber çekirdek, halka ya
+  da çizgi yok, tek sıcak ışık gerçek sabah güneşi. Kapanış sözü burada tutulmuş.
+· TUTTU ve KORUNDU: kukla yüzsüz, ipi dik, hareketsiz, gölgesi kapıda çivili. Aynanın tersine
+  çevrilen tek şeyi doğru.
+· TUTTU ve KORUNDU: emaye plaka kadrajda, odak dışında, tek harfi okunmuyor.
+=========================================================================

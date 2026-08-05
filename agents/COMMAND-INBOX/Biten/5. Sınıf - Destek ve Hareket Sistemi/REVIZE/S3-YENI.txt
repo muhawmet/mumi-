@@ -1,0 +1,76 @@
+DESTEK VE HAREKET SİSTEMİ — SEKANS 3 (K22–K33) · REVİZE · İKİNCİ TUR
+=========================================================================
+Denetim: 2026-08-04 · 12 karenin 12'si açıldı ve görüldü · dünya pixar_3d_edu · register EDU
+
+TUTTU (motion yazıldı → MOTION/S3-YENI.txt): K23 · K28 · K31 · K33
+HÂLÂ TEMİZ (motion yeniden yazıldı, kelime bandı için): K25 · K26 · K27 · K30
+TUTMADI (motion YAZILMADI): K22 · K24 · K29 · K32
+
+⚠ Bu turda güvenlik kalemlerinin İKİSİ DE kapandı: K29'un oturma/uyluk kadrajı ve K31'in
+  kalçadan öne eğilme kadrajı gitti. Kalan dört kusurun hiçbiri §5øø siluet sınıfında değil.
+=========================================================================
+
+
+### 22.png — TUTMADI (yarısı düzeldi)
+DÜZELDİ: eklem boşlukları artık açık karanlık — mor-mavi macun kütlesi gitti.
+TUTMADI: "kopmuş kol" okuması "kopmuş GÖVDE" okumasına döndü. Kaburga kafesi geldi ama
+kendisi de havada duruyor: altında kaide, direk ya da gövde yok, üstünde boyun yok. Kafesin
+tepesinde omurganın TESTEREYLE KESİLMİŞ gözenekli kesiti duruyor — boynun olması gereken
+yerde açık bir kesit yüzü. Çocuk materyalinde bu kare "kesilmiş gövde" olarak da okunabilir.
+Ayrıca kürek kemiği ile köprücük kafesin SOLUNDA, aralarında hava var — omuz kafese değmiyor.
+🔴 Çözümün özü: karenin içinde HİÇBİR ŞEY kesilmiş bitmeyecek. Kesen şey KADRAJ olacak.
+-----
+Use this referenced image, change ONLY: nothing in the picture ends in a cut any more — the spine runs up out of the neck bones and leaves through the top edge of frame and the lower ribs continue down and leave through the bottom edge, so the ribcage is plainly the middle of a whole standing teaching skeleton that the frame is cropping, and the sawn, porous cut face at the top of the spine is gone. The shoulder blade and collarbone move across into contact with the ribcage so the arm visibly hangs off the cage with no air between them. Keep the joint gaps as open unlit shadow, keep the amber cores inside the shafts, and keep everything else identical.
+-----
+
+
+### 24.png — TUTMADI (hiç değişmedi)
+Kapı hâlâ petrol-mavi BOYALI. K23'te aynı kapı çıplak cilalı meşe; iki kare arka arkaya
+kesiliyor ve VO ikisinde de aynı kapıyı söylüyor. Menteşe kusursuz: iki kanat, iç içe beş
+namlu, tek pim, sekiz vida, aşınma şeridi ve çatlamış boya yayı yerinde.
+🔴 Önceki talimat "menteşe kanatlarının çevresinde ince bir eski krem boya kalsın" diyordu —
+   motor bu cümledeki BOYA kelimesini tuttu, kapıyı bıraktı. Bu turda boya cümlesi tümüyle
+   kaldırıldı ve renk olumsuz olarak da yazıldı.
+🔴 MAMİ'NİN KARARI: kusur yalnız süreklilik. Bu kare başka hiçbir kalemden düşmüyor.
+   Alternatif (daha ucuz olabilir): bu kareyi bırak, K23'ün kapısını maviye çevir. Ama K23
+   emaye plakayı taşıyor ve plakadaki İ/Ö şu an kusursuz — yeniden basmak onu riske atar.
+   Tavsiyem: K24 basılsın, K23'e dokunulmasın.
+-----
+Use this referenced image, change ONLY: the door leaf and the jamb are bare waxed pale-oak timber with the grain and the wax sheen showing right up to the hinge leaves — no paint of any kind anywhere on the door, no blue, no teal, no petrol, no cream, no primer, no worn paint skin — and the hairline crazed arc now reads as a fine burnished wear arc polished into the bare wax where the leaf has swept for years. Keep the hinge, the screws, the pin, the worn barrel strip, the light and the background exactly as they are.
+-----
+
+
+### 29.png — TUTMADI (siluet düzeldi, kare hâlâ dört kalemden düşüyor)
+DÜZELDİ 🔴: oturma gitti — ayakta, ayağı kaideye basıyor, etek dik iniyor ve uyluk kapalı,
+kamera hizada. Siluet riski kapandı. Bu tur bunun için değerdi.
+TUTMADI:
+ 1) 🔴 BOZUK YAZI: künyede "DIZ" yazıyor — İ'nin NOKTASI YOK. Net okunuyor, tartışmasız kusur.
+ 2) FİKİR HÂLÂ ÖLÜ: kemik çifti neredeyse DÜMDÜZ (yaklaşık 165°), Mira'nın dizi ise yaklaşık
+    90°. Karenin tek fikri "aynı açıda iki diz"di; iki açı birbirini tutmuyor.
+ 3) SAYIM: tezgâhta üç-dört kemik var. Prompt "tam olarak iki kemik" diyordu.
+ 4) KAVRAM IŞIĞI YOK: pirinç pimde amber halka görünmüyor, yalnız pirincin kendi parlaması
+    var. Zincir K28'in iki tam halkasından K30'un yirmi halkasına bu kareden geçiyor.
+ 5) İFADE: yüzü hâlâ endişeli/telaşlı — istenen "parlak, meraklı, sakin" gelmedi (§5ø).
+-----
+Use this referenced image, change ONLY these five things and leave her pose, the camera, the room and the light exactly as they are: the word on the khaki card tag becomes "DİZ" with a clear separate dot standing above the stem of its middle letter, a capital D then a dotted capital İ then a capital Z, in the same graphite block handwriting; the two bones on the plinth close up until the pair is bent to the very same right angle as her own bent knee, the shorter bone swinging up so the pair mirrors her leg in the same plane and at the same height; every extra bone is removed so exactly two bones lie there, one long and one short, joined by one brass pin; a soft round warm-golden ring of light rides the axis of that brass pin, clearly luminous and clearly the brightest thing on the plinth, reaching nothing beyond the pin and a thumb's width of bone on either side, never touching her skin, the timber or the bench; and her expression becomes bright, curious and calm with her brows level and unlifted, her eyes interested rather than wide, her mouth closed — never worried, never startled, never anxious, never sad.
+-----
+
+
+### 32.png — TUTMADI (iki kalem düzeldi, plastiklik kalemi hiç kıpırdamadı)
+DÜZELDİ: kamera indi ve geri çekildi — kaş kemeri, şakaklar ve iki göz çukuru kadraja girdi,
+nesne artık tartışmasız KAFATASI okuyor, YUMURTA değil. Amber iplik de tek dikişte, ötekiler
+düz fildişi kaldı.
+TUTMADI 🔴: ışık HİÇ dönmemiş. Yüz hâlâ kadraja tam dik, iki göz eşit aydınlık, yüzü kesen
+gölge yok. Üstelik kadraj artık tam simetrik: ortada kafatası, üstünde iki göz, iki yanda iki
+el — plastiklik yasasının birebir tarifi, hem de daha güçlü hâli.
+İKİNCİ NOT: dikiş şu an KAKMA ALTIN ŞERİT gibi duruyor (sert metalik, kendi ışığı yok).
+Aynı kusuru 33.png'de yakalayıp düzeltmiştik; burada geri geldi. Işık olmalı, kakma değil.
+-----
+Use this referenced image, change ONLY the light and the head angle, keeping the framing, the skull, her hands and the room exactly where they are: the key light swings round so it rakes across her face from her left, so the near side of her face and her near eye keep the light while the far half of her face and her far eye fall into an open luminous violet-blue shadow that still holds full detail — the two eyes are no longer equally lit; her head turns a few degrees off the lens axis and tips a fraction so she is no longer square and symmetrical to camera; and the golden line along the cranial seam stops reading as an inlaid metal strip and becomes a soft warm-golden thread of light glowing out of the seam itself, with a faint bloom on the ivory beside it and no hard metallic edge. Her skin stays matte with low specular, her expression stays calm and curious, and her mouth stays closed.
+-----
+
+
+=========================================================================
+SIRADAKİ TEK ADIM: Mami bu dört kareyi bassın (22 · 24 · 29 · 32).
+Geldiğinde üçüncü geçişte yalnız o dördünün motion'ı yazılır; kalan sekiz klip hazır.
+=========================================================================

@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "projectId": "5. Sınıf - Destek ve Hareket Sistemi",
-  "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
-  "phase": "canary",
+  "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
+  "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "T0·T0b·T1·T2·T3·T4·T5 kapandı + Sol'un 3 NARROW artığı. Kapı artık canlı MOTION klasörünü ölçüyor, canary kilidi kodla zorunlu, Shot Card ölçeni kapıya bağlı, ref sözleşmesi (TAŞIR/TAŞIMAZ) yasada ve 11 projede eksik ölçülüyor, Director Context derleyicisi hash'li. 2599 test.",
-  "nextAction": "MAMİ: canary-8 seçkisini onayla (K1 K4 K7 K8 K11 K31 K37 K41) — Destek ve Hareket_CANARY-ONERISI.md",
+  "lastCompleted": "Destek ve Hareket KAPANDI ve Biten/ altına taşındı. Hasat koştu: karne 58/61 · revize 55 blok/39 kare · oran %64 · 2 tur · DEVİR %94 · ders adayı 8. Ayrıca elle 5 makro ders yazıldı (HASAT-DESTEK-VE-HAREKET-2026-08-05.md) — L4: banka 5 gündür durmuş, sistem öğrendiğini taşıyamamış.",
+  "nextAction": "MAMİ Sekans 1'i basıyor (K01-K08). Kareler inince Shot Card + motion sekans sekans — 56'yı tek geçişte YAZMA (L1).",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
-    "revize": true,
-    "MOTION": true,
-    "EDIT-PLAN": true,
+    "revize": false,
+    "MOTION": false,
+    "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
-    "KABA-KURGU.xml": true
+    "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T09:51:04.011Z",
+  "updatedAt": "2026-08-05T10:58:16.881Z",
   "updatedBy": "claude",
-  "baseCommit": "3ae5222"
+  "baseCommit": "bec4400"
 }

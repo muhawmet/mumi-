@@ -122,7 +122,13 @@ describe('ensureImagesDir — iskelet rutini', () => {
 });
 
 describe('canlı repo — ölçülmüş kusur geri gelmesin', () => {
-  const DESTEK = 'agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi';
+  // ⚠ YOL GÖMÜLMEZ — proje bitince `Biten/` altına taşınıyor ve sabit yol yazan test
+  // sessizce ATLANIYOR (kapı: "test sayısı düştü"). Aynı kusur prompt-lint.test.mjs:222'de
+  // beşinci kez sayılmıştı; bu altıncı. Proje nerede duruyorsa oradan aranır.
+  const DESTEK = [
+    'agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi',
+    'agents/COMMAND-INBOX/Biten/5. Sınıf - Destek ve Hareket Sistemi',
+  ].find((p) => existsSync(join(REPO, p))) ?? 'agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi';
 
   // Rutin ancak DİSKTE varsa rutindir. Aktif projelerin hepsinde `images/` olmalı.
   //

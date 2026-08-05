@@ -1,0 +1,131 @@
+SEKANS 1 (K01–K07) · @atolye — REVİZE TURU 2
+=========================================================================
+NASIL BASILIR:
+ · "Use this referenced image, change ONLY:" ile başlayan blok → mevcut kareyi
+   REFERANS bağla, prompt olarak yalnız o cümleyi ver. Sahneyi baştan tarif ETME.
+ · "TAM YENİ PROMPT" yazan blok → kare baştan üretilir.
+ · GEREKÇE neden revize olduğunu söyler — katılmıyorsan atla, söyle.
+
+DURUM: 5 revizeden 2'si tam tuttu (1.png hedefi, 7.png), 1'i yarı tuttu (2.png),
+2'si tutmadı (4.png, 5.png). 3.png ve 6.png hâlâ temiz ve değişmemiş.
+🔴 4.png dışındaki her blok MALZEME/BAKIŞ düzeltmesidir — kadraj değişmez, bu
+   yüzden MOTION/S1-YENI.txt'teki motion'lar düzeltilmiş karelerde de geçerlidir.
+=========================================================================
+
+
+### 4.png — TAM YENİ PROMPT (revize TUTMADI, sahne baştan kurulur)
+
+GEREKÇE (§5øø + §2ø): istenen "öne katlanmış yığın" yerine kadrajda BOYDAN BOYA
+UZANMIŞ bir gövde doğdu — göğüs kavisli ve yukarı, kalça kalkık, baş solda,
+bacaklar sağda. Bu, revizenin NEGATIVE'inin birebir yasakladığı okuma:
+"never lying on its back, never reclining, never posed with a hip raised, never
+reads as a resting, lounging or sleeping body". İkinci kez aynı yere düştü.
+İkinci kalem: Mira'nın "boş el"i avuç KAMERAYA dönük ve parmaklar yukarı — bu
+"DUR" işareti okuyor, oysa istenen avuç AŞAĞI dönük, omzun biçimini tutan bir el.
+Üçüncü kalem (§5ø): yüzü endişeli/üzgün; VO nötr anlatı, kaynakta hüzün yok.
+
+KÖK NEDEN — yasa değil, YAZIM: "lies collapsed" + "arms flung forward past the
+head" + "one leg splayed sideways" üç ayrı uzuv talimatıdır ve motor bunları
+UZATARAK çözüyor. Bu sefer poz UZATILMIYOR, KAPATILIYOR: yüzüstü, uzuvlar gövdeye
+yatık. Ayrıca kuklanın CANSIZ NESNE olduğu tek bir imkânsız eklem açısıyla
+kilitleniyor — bir insan kolunun yapamayacağı yarım tur. Bu, §5øø okumasını
+kaynağında kesiyor: gördüğün şey bir gövde değil, dağılmış bir tahta parçası.
+⚠ K05 ve K06 ön planındaki bulanık kütle YATAY'dır — bu yüzden kukla bu karede de
+   yatay kalır, yalnız yığılma biçimi düzelir; süreklilik korunur.
+-----
+35mm lens at f/4, camera just above tabletop height, three-quarter medium view down the paint table, matching the previous shot's height and angle so the two frames cut together. @kukla has gone down onto its front exactly where it was sitting, and the collapse reads at a glance because everything has closed inward instead of opening out: it has folded straight forward over its waist ball, its plain oval head-block resting flat on the boards a hand's width in front of its own hip block with the rounded crown turned up to the light, the spine bowed over into one long arc above it, both arms folded in tight against its own ribs with the paddle hands tucked half under the chest, and both legs lying straight out behind it, close together and flat on the wood, the ankles slack. Every joint has given up at once. One forearm has rotated a half-turn at its elbow ball so that its paddle hand lies palm-up while the shoulder above it lies palm-down — a twist no living arm could make — and that one impossible angle tells the whole frame that this is a wooden thing that has come apart, not a body at rest. The small dulled brass ring in the middle of its back is turned up to the sun. Directly above it @mira4's right hand is still open in the air, the palm turned DOWN toward the boards with the fingers curved in the shape of a shoulder that is no longer under them, held a hand's width above the empty place where that shoulder was. She stands beyond the table at the back of the middle plane, upright and dead still, framed from the waist up with nothing below the waist visible, her chin level, her lips closed, her face fully lit and calm and attentive as she looks at what has happened — interested, not distressed. Skin stays matte with low specular and is never tinted green or grey. The setting is @atolye, dressed and close: the hand-waxed solid-oak work table, heavy glass jars of brushes standing bristle-up in clean water, a folded linen cloth, a squat stoneware pigment jar with a brass screw lid, the tall deep petrol-blue painted double-door cupboard behind her with its honest brush drag and its empty steel hook, thick natural-linen aprons on their turned-wood pegs, the chalky sage-green wall above its deep petrol-blue wainscot, the tall east window blowing out white at the far end of the table. Motivated key is the morning sun bar landing along the bowed spine, across the fallen head-block, on the empty downturned palm above it and on @mira4's shoulder and jaw; the far half of the table burns out into the window's white glare and the bar's warmth bounces off the oak and carries into the left side of the room, so the cupboard and the aprons read a stop and a half down and cooler but stay completely legible, with an open north-sky fill reaching every corner. Nothing here is unlit. Three things are alive in the frame: dust turns through the bar in the space between the empty hand and the fallen head-block, the water in a brush jar still rocks, one curl of dried pigment trembles at the table edge in the warm air. Depth in three layers — the stoneware pigment jar sits large and out of focus across the near bottom-left edge, the folded puppet and the empty downturned hand razor-sharp in the middle plane, @mira4 standing upright and the blown window behind her in warm bokeh. Every object rests in contact with its surface and casts a soft contact shadow — the head-block and the near shoulder pressed hard into the boards with a dark weighted shadow tight beneath them, the jars ringed on the wood. Clean plate — no on-screen text; the fallen thing, the empty hand and the standing girl carry the whole line. Clean motion-ready start frame, the collapse already complete and held.
+STYLE: Full 3D CGI feature-animation render in the premium-CG feature-animation lineage, a RenderMan-successor pipeline — form carried entirely by lighting rim and value separation, subsurface translucency in skin holding the scene's light temperature, a single soft catchlight in the eyes only and never a wet sheen over the face — skin stays matte with low specular. Material specificity is mandatory: turned beech with fine lathe rings and polished brass ball joints gone slack, one dulled brass ring recessed into the back block, hand-waxed solid oak boards with open grain and paint sunk into it, deep petrol-blue painted timber with honest brush drag, glazed stoneware with a brass screw lid, heavy natural linen. Props drawn 10–15% overscale for child-clear readability. Lighting is art-directed: motivated low morning sun through the east window as key — beams visible as soft volumetric shafts with dust suspended in them, laying warm window-shaped patches on the oak table and floor; open sky fill at half key reaching every corner, painted AO — shadow stays warm and legible, never black. Daylight is real and directional, never a flat wash, never artificial bloom. No outlines.
+LIGHT AND PALETTE: colour lives everywhere the light reaches, and the light reaches everything — shadows settle into an open luminous blue-indigo that stays airy and full of detail, midtones glow a full warm burnt-orange across the fallen beech body and the waxed oak boards and carry that warmth into the petrol cupboard and the linen behind, vivid warm amber runs along the bowed spine and the rim of the empty downturned palm and returns as a softer amber bounce under the table edge, highlights blow past ivory into clean white in the far window, and a cool-violet sky bounce opens the underside of the table without draining it. Saturation comes from real material and real light, never from a filter — rich and sunlit, never pale, never neon. Overall exposure is bright and open — a sunlit mid-morning room, high-key overall with a directional accent, never a dark interior with a beam in it. Render as light behaviour, never flat colour fills. No acid green, no neon, no teal-orange grade, no desaturated grey, no washed-out or milky low-contrast look.
+TEXT: none — clean plate. Any background sign soft-focus, Turkish or blank.
+NEGATIVE: @kukla is FACE-DOWN and FOLDED SHUT, with its head-block, its chest and its folded arms all pressed down onto the boards — it is never lying on its back, never lying on its side, never reclining, never stretched out at full length across the table, never arched with its chest raised, never posed with a hip, a knee, a shoulder or an elbow lifted off the wood, never has an arm flung out or thrown above its head, and it never reads as a resting, lounging, sleeping or posed body of any kind; its limbs stay folded in against its own body and are never opened out or spread; the plain oval head-block is clearly identifiable as a head, it is the lowest point of the whole figure, it touches the boards, and it lies in front of the hips and never level with them or behind them; exactly two arms and two legs are present and every one of them is countable and accounted for — no lost limb, no duplicated limb, no extra joint, no unreadable pile of parts; @kukla has no face — no eyes, no nose, no mouth, no drawn features — and it does not look sad, sleeping, hurt or alive; the puppet stays a rigid solid, no deform, melt, morph or merge — a heap of hard wooden parts, never a soft or rubbery body; it is already fully collapsed and stays collapsed, never half-standing, never propped, never sitting, never caught in the middle of falling; no cord, string, thread or wire anywhere; @mira4's open hand has its palm turned DOWN toward the table with the fingers softly curved — it is never a flat palm turned toward camera, never raised beside her head, never a stop, halt, wave, greeting or push gesture, and it never reads as a signal of any kind; her expression is calm, level and attentive — never sad, never worried, never anxious, never alarmed, never frightened, never on the verge of tears, and her mouth stays closed; the open hand belongs to @mira4 and she stands in the same frame with her face visible — no disembodied hand, no floating arm; no second child, no teacher; no lettering on any surface; no 2D cel shading, no black outline, no flat graphic fill, no toon shader, no clay or plasticine skin; no photoreal or live-action, no real-human photographic skin; no recognisable franchise character, real person, logo, badge or brand; no English text anywhere; no arrows, leader lines, callout circles, labels, charts, diagrams, gauges or infographic panels; no formula symbols or equations; no lens flare unless motivated by a practical light in frame; no teal-orange grade, no desaturated grey look, no hard-black shadow; no empty white void.
+
+-------------------------------------------------------------------------
+
+### 1.png
+
+GEREKÇE: 🟢 revizenin KENDİ hedefi TUTTU — kordon tamamen gitti, gövde dik, iki kol
+yanda, ayaklar boşta, §5øø riski kapandı. Ama karede üç ayrı DÜNYA KİLİDİ kusuru var:
+(a) 🔴 Dolap MEŞE geldi. Hem `_REFERANSLAR.txt` @atolye ("a tall double-door cupboard
+    in deep petrol-blue... its panels showing honest brush drag") hem K01'in KENDİ
+    promptu ("tall deep petrol-blue painted supply cabinet") petrol-mavi diyor.
+    K02 ve K04'te aynı dolap doğru petrol-mavi doğdu — yani kilit taşınmıyor, sekiyor.
+(b) 🔴 Duvar da düştü: adaçayı yeşili duvar ve petrol lambri yok, düz bej-gri bir
+    duvar var. K02/K03/K04/K06 ile aynı oda değil.
+(c) Pirinç halka göğsün ÖNÜNDE. Referans: "A single small brass ring is set flush into
+    the BACK of the upper chest block". Önde olduğu için kukla bir şeye ASILI okumuyor,
+    dolaba YASLANMIŞ okuyor — VO "asılıydı" diyor, kare demiyor.
+🔴 BU KARE K52'NİN AYNASI — kadraj kilidi doğru geldi ve KORUNUYOR; yalnız malzeme
+   düzeliyor. Kadrajı değiştiren bir şey yapma.
+-----
+Use this referenced image, change ONLY the materials and the fitting, never the framing: the tall cabinet at frame right is repainted in deep petrol-blue over timber with a low sheen and honest brush drag in its panels, no bare or waxed oak left anywhere on it; the wall behind @mira4 becomes chalky sage-green above a waist-high wainscot of deep petrol-blue painted timber; and the small brass ring on @kukla moves off the front of its chest to sit flush in the BACK of its upper chest block between the shoulders, dropped over a small plain steel hook screwed to the outer edge of the cabinet so the puppet visibly hangs from that hook with its front face completely bare and unbroken. Keep the camera, the framing, the poses, the light direction and everything else identical.
+
+-------------------------------------------------------------------------
+
+### 2.png
+
+GEREKÇE: 🟡 YARI tuttu. Dirsek gerçekten BÜKÜLDÜ — pirinç top belirgin, önkol öne
+katlanmış, iki dirsek aynı karede okunuyor, kuklanın yüzü yok, dolap petrol-mavi.
+Tutmayan iki kalem:
+(a) 🔴 Mira dirseğe BAKMIYOR. Gözleri kadrajın soluna, işinin dışına dönük; pirinç
+    dirsek topu kadrajın sağında. Revizenin NEGATIVE'i birebir bunu yasaklıyordu:
+    "looking down at the elbow she is working, never off to the side". İkinci kez düştü.
+(b) Adaçayı duvarda düz KOYU GRİ bir dikdörtgen panel duruyor ve KARA TAHTA okuyor —
+    23.png'de aynı kusur yakalandı, @atolye akıllı tahtası camında pencere ışığını
+    parlak açık bir levha gibi taşır, "never a dark panel".
+-----
+Use this referenced image, change ONLY: @mira4's eyes and head turn down and to her own working hand so she is looking directly at the brass elbow ball she is pressing, her gaze locked on that joint and never off to the side, never past the frame edge and never at camera, her chin tipped down toward it and her brows drawn in concentration with her lips closed; and the dark rectangular panel on the sage-green wall behind her becomes the room's wall-mounted interactive smart board in a slim dark frame whose glass carries the window wall's daylight across it as a bright pale sheet, never a chalkboard, never a slate, never a dark screen, and with no writing on it. Keep everything else identical.
+
+-------------------------------------------------------------------------
+
+### 3.png — SÜREKLİLİK · MAMİ KARARI
+
+GEREKÇE: bu kare revizeye gitmemişti ve KUSURSUZ değil ama TEMİZ — kukla dik oturuyor,
+el çekiliyor, boşluk okunuyor, yüz yok, kordon yok. Tek kalem SÜREKLİLİK:
+arkadaki dolap camlı kapaklı AÇIK MEŞE geldi; K02 ve K04'te aynı duvarın dolabı
+solid panelli DERİN PETROL-MAVİ. K02→K03→K04 arka arkaya kesiliyor ve dolap iki kez
+renk değiştiriyor. K03'ün kendi promptu da "deep petrol-blue painted cabinet" diyor.
+⚠ Kare başka HİÇBİR kalemden düşmüyor. Katılmıyorsan bu bloğu at — motion zaten yazılı.
+-----
+Use this referenced image, change ONLY: the tall cabinet standing behind her becomes the room's deep petrol-blue painted double-door cupboard with solid timber panels showing honest brush drag and a low sheen, with no glazed or glass-panelled doors and no bare or waxed oak anywhere on it. Keep the camera, the framing, the poses, the light and everything else identical.
+
+-------------------------------------------------------------------------
+
+### 5.png
+
+GEREKÇE: 🔴 TUTMADI — defter kapağındaki "FEN BİLİMLERİ" hâlâ 90 derece döndürülmüş,
+yazı aşağıdan yukarı okunuyor. Harfler doğru yazılmış (İ'ler noktalı), kusur yalnız
+YÖN. İki kez aynı yerde düştü.
+KÖK NEDEN — düzeltme yanlış yere bakıyordu: sorun TİPOGRAFİ değil TUTUŞ. Defter
+gövdesine YAN bastırılmış tutulduğu için kapağın uzun ekseni dikey duruyor ve motor
+yazıyı o eksene yatırıyor. Yazının yönünü emretmek işe yaramadı; bu sefer TUTUŞ
+değişiyor — kapak kameraya kare gelirse yazının yatmasının fiziksel sebebi kalmıyor.
+⚠ Üçüncü kez düşerse çözüm defteri düzeltmek değil, yazı taşıyıcısını DEĞİŞTİRMEKTİR
+   (K05'in yazısını iptal et, blokta zaten 7 taşıyıcı var).
+-----
+Use this referenced image, change ONLY how the exercise book is held: @mira4 now holds it up flat against her chest with both the cover and its printed wording turned square to camera and parallel to the sensor, the spine running vertically down the left edge of the cover and the cover's full face open to the lens; the wording sits across the upper half of that cover in two stacked horizontal lines reading left to right — "FEN" on the upper line and "BİLİMLERİ" on the lower line — level, upright and never rotated, never turned on its side, never running vertically, never mirrored. Keep her stance, her expression, the camera, the light and everything else identical.
+
+=========================================================================
+NOT — Mami'ye, revize DEĞİL, karar isteyen gözlem:
+
+· 🔴 ÖNLÜK SÜREKLİLİĞİ. K05 ve K07'de Mira'nın üstünde keten önlük var; K02, K03 ve
+  K04'te yok. Kusur karede değil PROMPT'ta: K05 ve K07'nin metni önlüğü açıkça
+  istiyor, K02-K04'ünki hiç anmıyor. Beş kare kesintisiz aynı sabah ve aynı masa.
+  İki çözüm var, ikisi de tek satır: ya K05+K07'den önlük kalkar, ya K02+K03+K04'e
+  eklenir. Hangisi? — kredi yakmadan önce senin kararın.
+
+· @mira4 SİMASI K01'de sapıyor: K02–K07'de belirgin çilleri ve daha ince bir yüz
+  var, K01'de çil yok ve yüz belirgin biçimde daha yuvarlak. K01'de kız yumuşak
+  odakta ve uzakta olduğu için kurguda muhtemelen görünmez — kare zaten basılacaksa
+  düzeltmeye değmez; ayrı bir tur açılacaksa aynı edit'e eklenir.
+
+· K06'nın promptu "clean plate — no on-screen text" ve "no lettering on any surface"
+  diyor, ama karede sağ kenarda "RESİM ATÖLYESİ" plakası net okunuyor. Yazı DOĞRU
+  yazılmış ve K01'in kurduğu odanın kendi plakası — kusur saymadım, aksine iki kare
+  arasında odayı bağlıyor. Beğenmezsen tek cümlelik fix yazılır.
+
+· K06 ve K04'te Mira kadraja DİK, iki gözü eşit aydınlık, yüz gölgesiz — bugün
+  ölçülen plastiklik kalıbının tam kendisi. Ten MAT ve gözde tek yumuşak catchlight
+  var, yani doku tarafı temiz; kusur ışık yerleşiminde. K07 aynı sekansta bunun
+  panzehiri: dörtte üç profil + yan ışık = sekansın en doğal yüzü. Sonraki
+  sekanslarda çocuğun yüzü mümkün olduğunca kadraja dik verilmemeli.
+=========================================================================

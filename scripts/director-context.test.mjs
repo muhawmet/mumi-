@@ -9,8 +9,13 @@ import { join, resolve } from 'node:path';
 import { derle, ilgiliDersler } from './director-context.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
+// ⚠ YOL GÖMÜLMEZ — bu repoda ALTINCI tekrar (prompt-lint.test.mjs:222 beşinciyi sayıyor).
+// Proje bitince `Biten/` altına taşınıyor; sabit yol yazan test o an sessizce ATLANIYOR ve
+// kapı "test sayısı düştü" diyor. Proje nerede duruyorsa oradan aranır.
 const AKTIF = '5. Sınıf - Destek ve Hareket Sistemi';
-const varAktif = existsSync(join(ROOT, 'agents/COMMAND-INBOX', AKTIF));
+const aktifYol = ['agents/COMMAND-INBOX', 'agents/COMMAND-INBOX/Biten']
+  .map((k) => join(ROOT, k, AKTIF)).find((p) => existsSync(p));
+const varAktif = Boolean(aktifYol);
 
 describe('ilgiliDersler — tavan ve sıralama', () => {
   const banka = Array.from({ length: 30 }, (_, i) => `- ders ${i} — kaynak: X · 2026-01-01 · Mami onayı`);

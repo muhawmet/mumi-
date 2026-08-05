@@ -1,0 +1,58 @@
+DESTEK VE HAREKET SİSTEMİ — SEKANS 2 REVİZE TURU 2 (K08–K21 denetimi çıktısı)
+=========================================================================
+2 kare · ikisi de REFERANS-EDİT (sahne sağlam, kadraj sağlam — tek kalem düşüyor)
+Kalan 12 karenin motion'ı yazıldı: MOTION/S2-YENI.txt
+
+NASIL ÜRETİLİR: mevcut kareyi REFERANS olarak bağla, prompt olarak yalnız
+"Use this referenced image, change ONLY:" bloğunu ver. Sahneyi baştan tarif ETME.
+=========================================================================
+
+
+### 14.png
+
+GEREKÇE (kavram ışığı zinciri): geçen turun iki isteği de TUTTU — Mira'nın alnı, kaşları ve
+iki gözü kadrajın içinde ve saçının üstünde boşluk var; oda 61'den 121 ortalamaya çıktı,
+dolap camı ve raflar okunuyor. Ama revize metninin "birebir korunuyor" dediği şey düştü:
+**kafesin içindeki amber ışık kareden tamamen yok oldu.** Kafesin içi yalnız gündüz ışığıyla
+aydınlık; kalp mat kırmızı, akciğerler mat pembe, kavram ışığı YOK.
+Zincir kopuyor: K12 doğdu → K13 kafatasının içinde var → **K14 yok** → K15 kemiğin içinde var.
+Kaburga şeritlerinin kalbin üstüne düşürdüğü çizgili gölge (karenin FİKRİ) doğru çıktı,
+ona dokunulmuyor.
+⚠ Bu motion'la kapatılamaz: ENZIM §3 "sıfırdan doğan ışık yok" — K14 ışığın doğduğu kare
+değil, taşındığı kare. Klip içinde yakılırsa zincir yine yalan söyler.
+
+Use this referenced image, change ONLY: put the lesson's warm light back inside the cage — a soft round warm-golden glow of light now rests inside the rib cage on the moulded red heart form, still and evenly spread, close to the size of a fist, lighting the inner faces of the bars from within and escaping as narrow warm bands through the gaps between them, and it reaches nothing outside the cage — not the wooden base, not the brass plate, not the desk, not the cabinetry and not her face or skin; it stays a soft round light and never becomes a flower, petal, flame, spark or heart shape, and the ribs' own striped shadows keep falling across the red form exactly as they do now. Keep everything else identical.
+
+-------------------------------------------------------------------------
+
+### 16.png
+
+GEREKÇE (üç kalem, hepsi masa yüzeyinde): istenen düzeltme TUTTU — kemik artık simetrik
+köpek kemiği değil, bir ucunda tek yuvarlak baş ve kısa eğik boyun, öbür ucunda iki condyle
+topuzu olan gerçek bir uyluk kemiği. Ama kare üç ayrı yerden düşüyor:
+ 1) 🔴 KEMİK ÜÇ YERİN HİÇBİRİNİN İÇİNDE DEĞİL — süpürülmüş yerlerin epeyce solunda, çıplak
+    kirli tahtanın üstünde duruyor. Karenin tek fikri "birinci yer DOLU, ikinci ve üçüncü
+    BOŞ" idi; şu an üçü de boş ve fikir ters okunuyor.
+ 2) 🔴 ÜÇ YER İKİ DEV DAİREYE DÜŞTÜ — masanın yarısını kaplayan, keskin kenarlı iki büyük
+    disk. Bu tam olarak NEGATIVE'in yasakladığı "callout dairesi / laid-on grafik" görüntüsü;
+    ayrıca üçüncü yer kadrajın sağ kenarında yarım kalmış, sıra sayılamıyor.
+ 3) KAVRAM IŞIĞI YOK — kemiğin gövdesinde kor yok. K15'te var, K17'de var, arada K16 sönük.
+Not (revize DEĞİL, gözlem): bu karede panjurlar İNİK ve oda gri; dünya kartı "blinds drawn
+fully up" diyor. Kadraj her yerde okunur olduğu için kusur saymadım — istersen tek cümle
+eklenir.
+
+Use this referenced image, change ONLY: the three places on the desk and where the bone lies — the three swept dust-free places become three modest oval patches of clean wood in one straight evenly spaced row running away down the desk, each one only a little larger than the bone itself and each with a soft feathered edge in the pencil grime rather than a hard rim, so none of them reads as a drawn circle, a laid-on disc or a callout ring; the thigh bone now lies squarely INSIDE the first and nearest of those three places, its shaft following the run of the row and its two condyle knobs seated within that patch, so the first place is plainly filled while the second and third stay completely empty with nothing in them; and the lesson's warm-golden light returns as a still spread core deep inside the bone's shaft, glowing the polymer from within and reaching neither the desk, her forearms nor any skin. Keep everything else identical.
+
+=========================================================================
+NOT — Mami'ye, revize DEĞİL, gözlem (ölçülerek bulundu):
+· PLASTİKLİK KAPANDI. Ten mat, çilleri ve gözenek dokusu var, gözde tek yumuşak
+  catchlight — bu bloğun 14 karesinin 14'ünde. "wet dual-point catchlights" sökümü tuttu;
+  Hücre'deki "plastik Mira" kusuru bu sette görünmüyor.
+· KARANLIK KAPANDI. Ölçülen ortalama parlaklık: K08 54→142 · K13 66→104 · K14 61→121.
+  60 altı piksel oranı K08'de %67'den %8.9'a düştü. Panjurlar açık, güneş içeride.
+· AKILLI TAHTA: K09/K11/K12/K13/K14/K19'da ölü siyah panel bitti. K12 ve K14'te yüzey artık
+  beyaz tahta + kalemlik olarak doğuyor (akıllı tahta değil). Kara tahta değil, parlak ve
+  temiz — kusur saymadım; precedent "asla kara tahta" diyor, o tutuldu.
+· K10'da sol ayakkabısının burnu kaidenin kenarından görünüyor (prompt "hiçbir ayak
+  görünmez" diyordu). Alt gövde okuması doğmuyor, kadraj güvenli — kusur saymadım.
+=========================================================================

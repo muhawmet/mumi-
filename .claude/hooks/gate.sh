@@ -126,8 +126,14 @@ fi
 # Son sed cift egik cizgiyi tekile indirir — iki yon de ayni yola cikar.
 # Rename+DUZENLEME bu listeye GIRMEZ (numstat sifirdan buyuk cikar) — gercek duzenleme olculmeye
 # devam eder. Olcut ad degil SAYI.
+# ⚠ `-l0` = YENIDEN-ADLANDIRMA LIMITI YOK (2026-08-05'te olculdu).
+# `-M` varsayilan olarak sinirli sayida dosyayi eslestirmeye calisir; bir PROJE KLASORU
+# `Biten/` altina tasininca (100+ dosya) limit asiliyor, git rename ciftlerini kuramiyor ve
+# saf tasima "yeni dosya" gibi gorunuyor. Sonuc: bitmis bir projenin DEGISMEMIS dosyalari
+# yeniden lint'lenip commit'i bloke etti. Kapinin kendi MOVED_ONLY mekanizmasi vardi ve
+# tam da isini goremiyordu. `-l0` limiti kaldirir; maliyeti tek seferlik ve olculebilir.
 MOVED_ONLY="|$(
-  git -c core.quotepath=false diff --cached -M --numstat 2>/dev/null \
+  git -c core.quotepath=false diff --cached -M -l0 --numstat 2>/dev/null \
     | awk -F'\t' '$1 == "0" && $2 == "0" { print $3 }' \
     | sed -e 's/{[^}]* => \([^}]*\)}/\1/g' -e 's/.* => //' -e 's|//*|/|g' \
     | tr '\n' '|'
@@ -187,6 +193,12 @@ else
       # bloke etti. `prompt-lint.mjs:901` walk() ile AYNI liste — iki yerde ayrisirsa iki
       # gercek dogar; degistiren ikisini birden degistirir.
       *_KALAN-URETIM*|*_YAPILACAK-REVIZE*|*_revize*) continue ;;
+      # ⚠ REVIZE KLASOR BICIMI (2026-08-05). Eleme yalniz AD ariyordu (`*_revize*`) ve
+      # `REVIZE/S1-YENI.txt` yerlesimini gormuyordu: revize NOTU, kare prompt'u sanilip
+      # sekiz kirmizi verdi ve bitmis bir projenin tasinmasini bloke etti. `current-work.mjs`
+      # KIT tanimi bu klasoru zaten biliyor (`dir: 'revize'`) — kapi onu bilmiyordu.
+      # Ad degil YERLESIM elenir; buyuk/kucuk harf iki bicimde de yasiyor.
+      */REVIZE/*|*/revize/*|*/Revize/*) continue ;;
     esac
     # `*_PROMPTLAR*` ADIYLA sozlesmeyi ustlenmis dosyadir; digerleri ICERIKLE secilir.
     ADLI=0
