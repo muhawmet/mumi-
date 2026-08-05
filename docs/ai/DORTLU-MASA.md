@@ -28,6 +28,44 @@ bunlar estetik kanıtın kendisidir; yapılandırılmış bir forma çevrilmeler
 **Mami'nin bir turdaki zorunlu karar sayısı üçü geçmez.** Sorunsuz paket tekrar onay istemez;
 yalnız istisna ona gider.
 
+### 1a. AGY — ölçülmüş yetenekler ve ölçülmüş sınırlar
+
+> Buraya taşındı 2026-08-05: kanıt anlatısı `CLAUDE.md`'de 41 satır tutuyordu. `CLAUDE.md`
+> **nasıl çağrıldığını** söyler; **ne olduğu ve neye güvenilmeyeceği** burada yaşar.
+
+**Mami'nin kuralı:** *"AGY'yi NET GÖREVLERE gönder — malın teki ama hızlı."*
+Doğru kullanım: **tek konu · somut nesne · yalnız tarif · doğrulanabilir çıktı.**
+
+**YAPABİLDİĞİ** (üçü de aynı gün basılıp **gözle** doğrulandı):
+
+| yetenek | kanıt |
+|---|---|
+| Gerçek teslim prompt'undan **kare üretme** | Hücre K01'in 6277 karakterlik prompt'u → kasket · bıyık · çay · zeytin ağacı · prompt'un istediği tek tuğlalık boşluk ışığıyla |
+| **Türkçe yazı** | `ÇİMENTO` (Ç, İ) · `RİBOZOM` (noktalı İ), harfler ribozom taneciklerinden |
+| 🔴 **Referans-edit** — *"yalnız şunu değiştir"* | usta · duvar · mala · kova · palet · el arabası · çay · ışık · kadraj birebir korundu, yalnız tulum rengi değişti. **Revize döngüsü budur ve 52 karenin 39'u oradan geçer.** |
+| **Karakter tutarlılığı** (kimlik çıpası olarak kare verilir) | aynı kız, yeni sahne, yeni poz — yüz, saç, tulum, üst korundu; orta yakın planda ten mat ve gözenekli |
+| 1M bağlam · video **1 FPS** · istek başına 10 videoya kadar | 3-4 dk tam film tek çağrıda izlenir; sekans başına 8-10 klip birlikte verilir |
+
+**YAPAMADIĞI / GÜVENİLMEYECEĞİ:**
+
+1. **VİDEO ÜRETEMEZ.** Yalnız `generate_image` var; Veo çağrılabilir değil (test edildi).
+2. **HÜKÜM VERMEZ, TARİF EDER.** Hüküm sorulunca her şeye "YOK" basıyor.
+3. 🔴 **ONDALIK SANİYE UYDURUR.** *"8 kesimde ses 2.07 · 2.25 · 1.96 … saniye geç giriyor"*
+   dedi; `ffmpeg` ölçtü: **50 kesimin 44'ü 0.30 sn içinde, medyan sapma 0.032 sn, o bantta
+   SIFIR kesim.** Sebep yapısal — 1 FPS örnekliyor, o çözünürlüğü yok.
+4. 🔴 **"ŞU ÖLÜ/GEREKSİZ" HÜKMÜ DOĞRULANMADAN UYGULANMAZ.** `_EDIT-PLAN.txt`'i *"kimsenin
+   okumadığı ölü çıktı"* ilan etti — oysa `kaba-kurgu.mjs:37-38` onu okuyor, **kaba kurgunun
+   girdisi o.** Uyulsaydı kurgu hattı kırılırdı.
+5. **Kümülatif eşleme kayar.** 10 donmayı kliplere eşlerken 3'ünü yanlış klibe verdi
+   (10 · 25 · 26'da donma yoktu); 6 · 9 · 21 · 22 doğruydu.
+
+✅ **AMA YERİ DOĞRUDUR:** *"53-58 arası beş saniye donuk"* dedi, `freezedetect` onayladı —
+**10 donma / ~9.5 sn = filmin %4.3'ü**, en ağırı 55.4'te 2.63 sn kesintisiz.
+
+> **TEK CÜMLE: AGY iyi bir İŞARETÇİ, kötü bir CETVELDİR.**
+> Nereye bakılacağını ondan al, ne kadar olduğunu ölçen araçtan.
+> Donma taraması: `ffmpeg -i <film> -vf "freezedetect=n=-38dB:d=0.6" -f null -`
+
 ---
 
 ## 2. Sonuç sözlüğü — bu dört kelimeden başkası yazılamaz

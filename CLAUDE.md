@@ -75,26 +75,14 @@ ajan değil Codex çağrılır.
   kurduğunda (kod şurada kopuk, dosya şunu ihlal ediyor, ölçüm şu) o iddia Codex'e
   **çürütülebilir biçimde** verilir. Ölçüldü (2026-08-03): iki iddiadan birini DOĞRULADI,
   birini KISMEN'e düşürdü — ikinci göz tam olarak bunun için var.
-🔴 **AGY YALNIZ GÖZ DEĞİL — EL DE. GÖRSEL ÜRETİYOR VE REFERANS-EDİT YAPIYOR.**
-(Ölçüldü 2026-08-05, üç kare basılıp **gözle** doğrulandı. Mami'nin sorusu: *"illa yazılımcı
-mı olmam gerekiyordu?"* — hayır.)
-`Nano Banana 2` zaten Gemini ailesidir; yani tarayıcıda elle yapılan iş **terminalden**
-yapılabiliyormuş ve aylarca kimse bakmamış. Kanıtlar:
-- **Sıfırdan kare:** Hücre K01'in *gerçek* teslim prompt'u (6277 karakter) verildi → kasket,
-  bıyık, çay bardağı, zeytin ağacı, prompt'un istediği **tek tuğlalık boşluk** ışığıyla,
-  ve **`ÇİMENTO` doğru yazılmış** (Ç ve İ). K28 → **`RİBOZOM`**, noktalı İ doğru, harfler
-  taneciklerden.
-- **REFERANS-EDİT — asıl kazanç:** var olan kare + *"yalnız tulum mavi yerine hardal, başka
-  hiçbir şey değişmesin"* → usta, duvar, mala, kova, palet, ÇİMENTO, el arabası, çay, ağaçlar,
-  ışık, kadraj **birebir korundu**; yalnız istenen değişti. **Revize döngüsü budur ve 52
-  karenin 39'u oradan geçiyor.**
-- Çağrı biçimi olağan AGY çağrısıdır; prompt uzunsa dosyaya yazılıp *"şu dosyayı oku ve
-  birebir kullan"* denir. Çıktı doğrudan diske yazılıyor — indirme/adlandırma adımı yok.
-⚠ **SINANMAMIŞ olanlar** (hüküm verilmeden önce basılacak): `@handle` ile çok-kareli karakter
-tutarlılığı · yakın plan yüz · Mami'nin ödediği NB2 Pro ile kalite kıyası. Karar yolu
-değişmez: **8 karelik canary bas, Mami gözüyle NB2 çıktısıyla karşılaştır.**
-
-- **AGY = GERÇEK GÖZ.** Claude video izleyemez, ses duyamaz; bu yapısal körlük.
+- **AGY = GERÇEK GÖZ *ve* EL.** Claude video izleyemez, ses duyamaz — bu yapısal körlük.
+  AGY izler; ayrıca **görsel üretir ve referans-edit yapar** (2026-08-05'te dört sınav basılıp
+  gözle doğrulandı). **Video ÜRETEMEZ.** Yetenek/sınır tablosunun tamamı ve kanıtları tek
+  otoritede: **`docs/ai/DORTLU-MASA.md` §1a** — buraya nüshalanmaz.
+  🔴 Ezberlenecek tek cümle: **AGY iyi bir İŞARETÇİ, kötü bir CETVELDİR** — nereye bakılacağını
+  ondan al, ne kadar olduğunu `ffmpeg`/`ffprobe`'dan. Ondalık saniye ve "şu ölü/gereksiz"
+  hükümleri doğrulanmadan uygulanmaz.
+  🔴 Mami'nin kuralı: **"net görevlere gönder — malın teki ama hızlı."**
   🔴 **DOĞRU ÇAĞRI (2026-08-03'te ölçülerek bulundu, öncesi yanlıştı):**
   ```
   agy --dangerously-skip-permissions --model gemini-3.6-flash-high \
@@ -135,24 +123,11 @@ değişmez: **8 karelik canary bas, Mami gözüyle NB2 çıktısıyla karşıla�
   `_EDIT-PLAN.txt` *"kimsenin okumadığı ölü çıktı"* ilan edildi — oysa `kaba-kurgu.mjs:37-38`
   onu okuyor, **kaba kurgunun girdisi o.** Tavsiyeye uyulsaydı kurgu hattı kırılırdı.
   **AGY'nin "şu ölü/gereksiz" dediği her şey silinmeden önce `grep` ile doğrulanır.**
-- **Codex sınırları — kanona yazılan sayı 1M DEĞİL.** CLI bağlam penceresi **272.000**
-  (kullanılabilir ~258k), API'nin ilan ettiği 1.05M değil; ayrıca **tek dosya okuması 10.000
-  token'da kesiliyor.** Yani Codex'e "repoyu ver" denmez — **adı verilmiş 5-15 dosyalık,
-  toplamı 200k altında bir küme** verilir. **Codex video GÖREMEZ** (`text`, `image`) — klip
-  AGY'nin işi, prompt metni ve kod Codex'in.
-  **Model seçimi maliyet kararıdır:** üçünün de bağlamı aynı, fark muhakeme ve fiyat.
-  1M girdi başına kredi — **Sol 125 · Terra 50 · Luna 5.** Mekanik denetim (tutarlılık taraması,
-  çapraz kontrol) → **Terra/Luna**; tek-atış kök-neden teşhisi → **Sol + `xhigh`**.
-  ```
-  # mekanik denetim (tutarlılık taraması, çapraz kontrol) — ucuz koşu:
-  codex exec -m gpt-5.6-terra -c model_reasoning_effort='"high"' \
-    -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
-  # tek-atış kök-neden teşhisi / karşı-denetim — model VE effort birlikte yükselir:
-  codex exec -m gpt-5.6-sol   -c model_reasoning_effort='"xhigh"' \
-    -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
-  ```
-  ⚠ Ölçüldü (2026-08-05): düzyazı "Sol + xhigh" diyor ama tek kopyalanabilir blok `terra`+`high`
-  veriyordu — bloğu kopyalayan ne Sol'u ne xhigh'ı alıyordu. İki blok ayrı yazıldı.
+- **Codex sınırları — kısa hâli:** CLI bağlamı **272k** (1M değil) · **tek dosya okuması 10k
+  token'da kesilir** · **video GÖREMEZ.** Yani "repoyu ver" denmez, **adı verilmiş 5-15 dosya**
+  verilir. Model seçimi ve iki kopyalanabilir çağrı bloğu **`docs/ai/PROJECT_CONTRACT.md`**
+  → *"Codex devralırken"* bölümünde; buraya nüshalanmaz.
+  🔴 Ezberlenecek: **işlerde Terra, hata avında Sol** — ve Codex'e **soru değil İDDİA** verilir.
 - **İş bölümü değişmez:** Claude ÖLÇER → AGY GÖRÜR → Codex ÇÜRÜTÜR → **hükmü MAMİ verir.**
   🔴 **NE ZAMAN çağrıldıkları ve sonuçlarının ne anlama geldiği burada YAZMAZ** — beş tetikleyici,
   dört sonuçluk Sol sözlüğü (`CLEAR TO CONTINUE` / `RESHAPE` / `NARROW` / `UNPROVEN`, ulaşılamazsa
