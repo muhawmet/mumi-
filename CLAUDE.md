@@ -93,6 +93,20 @@ ajan değil Codex çağrılır.
   rahat izlenir ve **sekans başına 8-10 klip TEK çağrıda** verilebilir — klip klip izletmek hem
   pahalı hem de süreklilik kusurunu (K12'deki gömlek K13'te değişti) yapısal olarak göremez.
   🔴 **AGY'ye HÜKÜM sordurma, TARİF ettir** — hüküm sorulunca her şeye "YOK" basıyor.
+  🔴 **VE ONDALIK SANİYE SORDURMA — AGY HASSASİYET UYDURUYOR** (ölçüldü 2026-08-05).
+  AGY, Hücre filminde *"8 kesimde ses 2.07 · 2.25 · 1.96 · 2.10 · 2.18 · 2.46 · 1.98 · 2.26
+  saniye geç giriyor"* dedi. İnandırıcıydı: sapma düşüktü, mekanik bir sebebe işaret ediyordu.
+  `ffmpeg` ile kare hassasiyetinde ölçüldü: **50 kesimin 44'ü gerçek konuşma başlangıcına
+  0.30 sn içinde oturuyor, medyan sapma 0.032 sn, ve 1.9-2.5 sn bandında SIFIR kesim var.**
+  Sebep yapısal: **AGY videoyu 1 FPS örnekliyor**, yani 2.07 ile 2.25'i ayırt edecek
+  çözünürlüğü fiziksel olarak yok — o rakamları üretmedi, **uydurdu.**
+  **Kural: AGY'den zaman damgası NE OLDUĞU için alınır, KAÇINCI SANİYE olduğu için değil.**
+  Saniye altı her iddia `ffmpeg`/`ffprobe` ile doğrulanır. AGY nerede bakılacağını söyler;
+  ne kadar olduğunu ölçen araç söyler.
+  ✅ Aynı raporun ÖBÜR yarısı doğrulandı ve bu ayrımı tam gösteriyor: AGY *"53-58 arası beş
+  saniye donuk"* dedi, `ffmpeg freezedetect` onayladı — **10 donma / ~9.5 sn** (filmin %4.3'ü),
+  en ağırı 55.4'te **2.63 sn kesintisiz.** Yani AGY **iyi bir işaretçi, kötü bir cetveldir.**
+  Donma taraması hazır komut: `ffmpeg -i <film> -vf "freezedetect=n=-38dB:d=0.6" -f null -`
 - **Codex sınırları — kanona yazılan sayı 1M DEĞİL.** CLI bağlam penceresi **272.000**
   (kullanılabilir ~258k), API'nin ilan ettiği 1.05M değil; ayrıca **tek dosya okuması 10.000
   token'da kesiliyor.** Yani Codex'e "repoyu ver" denmez — **adı verilmiş 5-15 dosyalık,
