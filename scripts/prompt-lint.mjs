@@ -547,16 +547,36 @@ const TRAPS = [
         || /\b(girl|boy|child|teacher|student|woman|man)\b/i.test(b);
       if (!insanVar) return false;
 
-      // 2) Işığı yüzten DIŞLAYAN cümle var mı?
-      const disla = [
-        /\b(reaches|touches|lifts|falls on|catches)\s+(nothing|none)\b/i,
-        /\b(not|never)\s+@[a-zçğıöşü]+\d*'?s?\s+(face|skin|cheek)\b/i,
-        /\b(face|cheek|skin|features?)\b[^.]{0,70}\b(is|are|stays?|remains?|sits?|kept?)\b[^.]{0,40}\b(out of|outside|beyond|clear of|away from)\b[^.]{0,30}\blight\b/i,
-        /\b(out of|outside of|beyond)\s+the\s+[\w-]{0,24}\s*light\b[^.]{0,60}\b(face|cheek|eyes?|features?)\b/i,
-        /\b(face|features?|eyes?)\b[^.]{0,60}\b(stays?|remains?|sits?)\s+in\s+the\s+[^.]{0,40}\b(shade|ambient|fill)\b/i,
-        /\bno light (falls|reaches|lands)\b[^.]{0,50}\b(face|cheek|skin)\b/i,
-        /\bdoes not reach\b[^.]{0,50}\b(face|cheek|skin)\b/i,
-      ].some((re) => re.test(b));
+      // 2) Işığı DIŞLAYAN cümle var mı — VE o cümle YÜZE Mİ AİT?
+      //
+      // ⚠ DARALTILDI (2026-08-05, basılmamış iki projede 25 kırmızı çıkınca ölçüldü).
+      // İlk hâli "blokta insan var + herhangi bir yerde dışlama cümlesi var" diye
+      // ateşliyordu ve YANLIŞ ALARM veriyordu. Gerçek vaka (Denetleyici K02):
+      //   "it reaches nothing in the upper half of the back wall, nothing on the ceiling
+      //    and nothing on the top edge of the clock's wooden case"
+      // Bu ODANIN kararmasıdır ve dünya kartının MEŞRU saydığı şeydir (§5øø ayrımı:
+      // oda karartılabilir, YÜZ karartılamaz). Kusur yalnız dışlama YÜZE ait olduğunda
+      // doğuyor — o yüzden her dışlama eşleşmesinin PENCERESİNDE yüz sözcüğü aranır.
+      const YUZ = /\b(face|cheek(bone)?s?|skin|brow|jaw|forehead|chin|eyes?|features?)\b/i;
+      const DISLAMA = [
+        /\b(reaches|touches|lifts|falls on|catches)\s+(nothing|none)\b/gi,
+        /\b(not|never)\s+@[a-zçğıöşü]+\d*'?s?\s+\w+/gi,
+        /\b(out of|outside of|beyond|clear of|away from)\s+the\s+[\w-]{0,24}\s*light\b/gi,
+        /\b(stays?|remains?|sits?)\s+in\s+the\s+[^.]{0,30}\b(shade|ambient|fill)\b/gi,
+        /\bno light (falls|reaches|lands)\b/gi,
+        /\bdoes not reach\b/gi,
+      ];
+      let disla = false;
+      for (const re of DISLAMA) {
+        re.lastIndex = 0;
+        let m;
+        while ((m = re.exec(b))) {
+          // Dışlama cümlesinin kendi cümle penceresi — yüz burada geçiyor mu?
+          const seg = b.slice(Math.max(0, m.index - 110), m.index + m[0].length + 110);
+          if (YUZ.test(seg)) { disla = true; break; }
+        }
+        if (disla) break;
+      }
       if (!disla) return false;
 
       // 3) KARANLIK ÇAPASI yazılmış mı? Yazılmışsa kusur yok — karanlık modellenmiş demektir.

@@ -40,10 +40,17 @@ export function bloklariAyir(metin) {
   eslesme.forEach((m, i) => {
     const bas = m.index;
     const son = i + 1 < eslesme.length ? eslesme[i + 1].index : metin.length;
-    const etiket = m[1].toUpperCase();
-    const kare = Number.parseInt(etiket.replace(/^K/, ''), 10);
+    const ham = m[1].toUpperCase();
+    const kare = Number.parseInt(ham.replace(/^K/, ''), 10);
+    // ⚠ SIFIR DOLGUSU NORMALİZE EDİLİR: `K01` ile `K1` AYNI karedir. Ölçüldü (2026-08-05):
+    // etiketi ham kullanınca Hücre ve Farklı Kültürler'de K01-K09 "BOŞ KARE" göründü —
+    // 53 blok çözülmüşken 9 kare eksik raporlandı. Bu deponun 11 kez ölçülen kusur sınıfı,
+    // yine doğrulayıcının kendi elinden: anahtarın BİÇİMİNİ varsaymak.
+    const sonek = ham.replace(/^K\d+/, '');
+    const etiket = 'K' + kare + sonek;
     bloklar.push({
       etiket,
+      ham,
       kare,
       alternatif: /-/.test(etiket),
       baslik: (m[0] || '').trim(),
