@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "REFERANS PROMPTLARI TAM — 5 blok: @maket @mutfak @koridor @kedi (basılacak) + @efe GARDIROP VARYANTI (kimlik plakası değil, referans-edit: 'keep this exact character, change only the clothing'). Hepsinde dünya kuyruğu İÇİNDE, kopyala-yapıştır-bas. @efe'de güneş-ay rozeti korundu (tema: gece-gündüz ritmi), gardıroba HİÇBİR yazı eklenmedi — morph'un birinci sınıfı ekrandaki yazı.",
-  "nextAction": "MAMİ referansları bassın: @efe varyantı (mevcut plakaya edit) + @maket → @mutfak → @koridor → @kedi. Sonra Sekans 1 (K01-K08). 56 motion'ı TEK GEÇİŞTE YAZMA.",
+  "lastCompleted": "🔴 KARE IŞIĞI ÖLÇÜLDÜ VE REDDEDİLDİ. Mami: 'kareler kötü ruhsuz, neşeli vivid istiyorlar.' Ölçüm: karanlık:aydınlık oranı Denetleyici 13.4:1, Hücre (altın) 2.8:1 — altın standarttan 5 KAT karanlık, 56 karede cheerful/lively/inviting SIFIR. Dünya kartı ve kuyruk AYNI, hiçbir ayar bozulmamış. Kök neden KİLİT 4'ün kendisi: sert kenarlı altın çizgi okunsun diye oda karartılmış. ENZIM'e KİLİT 4ø AMBİYANS TABANI eklendi.",
+  "nextAction": "56 kare promptunun IŞIK satırları KİLİT 4ø'ya göre yeniden yazılacak — SEKANS SEKANS, tek geçişte değil. Önce K01-K08, Mami bassın, beğenirse devam.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T11:23:29.882Z",
+  "updatedAt": "2026-08-05T11:51:11.781Z",
   "updatedBy": "claude",
-  "baseCommit": "50bb92a"
+  "baseCommit": "d9b41ff"
 }

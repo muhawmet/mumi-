@@ -73,10 +73,53 @@ K56 o yuvayı doldurur.
 🔴 **DERSİN EN İYİ FİKRİ K47-K50'dir** — adrenalin. Dersin iki ışığı **tek karede yan yana**
 yalnız orada durur (bkz. KİLİT 4). En iyi kadraj oraya harcanır.
 
+## 3. KİLİT 4ø — AMBİYANS TABANI (2026-08-05'te eklendi, ÖLÇÜLEREK)
+
+🔴 **ODA AYDINLIK VE NEŞELİDİR. Bu pazarlıksızdır ve KİLİT 4'ten ÖNCE gelir.**
+
+**Neden eklendi:** ilk 56 kare basıldı ve Mami reddetti — *"kareler kötü, ruhsuz; o kadar
+söyledim neşeli vivid videolar istiyorlar diye."* Ölçüldü, haklıydı:
+
+| proje | karanlık : aydınlık kelime oranı |
+|---|---|
+| **bu ders, ilk yazım** | **13.4 : 1** — 56 karede *cheerful/lively/inviting* SIFIR |
+| Hücre (altın standart) | **2.8 : 1** |
+
+**Kök neden kötü yazım değil, BU KİLİDİN KENDİSİYDİ.** KİLİT 4 sert kenarlı altın çizgi
+istiyor; yazan ajan o çizgi *okunsun* diye odayı karartıyor. Kış sabahı + buğulu cam + soba
+üçlüsü kararı pekiştiriyor (171 geçiş). Kimse ambiyansa TABAN koymamıştı.
+
+**Çözüm KİLİT 4'ün kendi cümlesinde yazılı:** *"İki sistemi ayıran şey ışığın rengi ya da
+şekli değil — nasıl geldiği, nereye değdiği ve gittikten sonra ne bıraktığıdır."*
+Fark **davranıştaysa karanlık oda gerekmez.** Kavram ışığı parlaklıkla değil, **davranışla**
+okunur: sert kenar ↔ kenarsız yayılma.
+
+**TABAN — her karede geçerli:**
+- Oda **aydınlık** okunur. Kış sabahı ışığı **kardan dönen ışıktır**: yüksek, temiz, bol.
+  Buğulu cam güneşi **karartmaz, ışıldatır** — mat cam parlak bir ışık kutusudur.
+- **Gölge var ama ölü değil:** gölgeler dünya kuyruğunun dediği gibi *deep cool indigo* —
+  yani renkli ve dolgulu, siyah çukur değil. Karşıt sıçrama %25-35 zaten kuyrukta yazılı.
+- Tezgâh, metal, ahşap **koyu MALZEME olabilir** — koyu malzeme ≠ karanlık oda. Bu ayrım
+  yazılırken karışmış: "the dark stone" 34 kez geçiyor ve o meşru; "the dark room" 10 kez
+  geçiyor ve o değil.
+- **Kadrajda her zaman bir aydınlık yüzey bulunur** — pencere düzlemi, kar aksi, açık raf,
+  beyaz emaye. Çocuk materyalinde kadrajın tamamı loş olamaz.
+- Yasak: `dark room` · `dim` · `gloom` · `barely lit` · `low light` · `unlit` — oda için.
+  (Malzeme için `dark stone`, `dark metal` serbesttir.)
+
+⚠ **Bu taban dersin fikrini zayıflatmaz, GÜÇLENDİRİR:** aydınlık bir odada beliren sert
+kenarlı altın çizgi, karanlıkta beliren çizgiden daha çok dikkat çeker — çünkü karanlıkta
+her ışık parlar, aydınlıkta yalnız DAVRANIŞI farklı olan ayrışır.
+
+---
+
 ## 3. KİLİT 4 — KAVRAM IŞIĞI (dersin fikri budur)
 
 **TEK BİR sıcak-altın ışık, İKİ FARKLI DAVRANIŞ.** İki sistemi ayıran şey ışığın *rengi* ya da
 *şekli* değil — **nasıl geldiği, nereye değdiği ve gittikten sonra ne bıraktığıdır.** Ders bu.
+
+⚠ Bu kilit **KİLİT 4ø'nun tabanı üstünde** okunur: kavram ışığı karanlıkla değil, davranışla
+ayrışır. Oda karartılarak elde edilen kontrast bu derste YASAKTIR (yukarı bak, ölçüldü).
 
 **SİNİR IŞIĞI — hızlı, keskin, anlık:**
 - **Kenarı serttir.** Tek bir *ince* çizgi hâlinde, yalnız bir nesnenin **tek kenarına** oturur
