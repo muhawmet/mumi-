@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "🔴 KARE IŞIĞI ÖLÇÜLDÜ VE REDDEDİLDİ. Mami: 'kareler kötü ruhsuz, neşeli vivid istiyorlar.' Ölçüm: karanlık:aydınlık oranı Denetleyici 13.4:1, Hücre (altın) 2.8:1 — altın standarttan 5 KAT karanlık, 56 karede cheerful/lively/inviting SIFIR. Dünya kartı ve kuyruk AYNI, hiçbir ayar bozulmamış. Kök neden KİLİT 4'ün kendisi: sert kenarlı altın çizgi okunsun diye oda karartılmış. ENZIM'e KİLİT 4ø AMBİYANS TABANI eklendi.",
-  "nextAction": "56 kare promptunun IŞIK satırları KİLİT 4ø'ya göre yeniden yazılacak — SEKANS SEKANS, tek geçişte değil. Önce K01-K08, Mami bassın, beğenirse devam.",
+  "lastCompleted": "56 KARENİN 56'SI YENİDEN IŞIKLANDIRILDI (3 ajan, blok başına bir tane). Oran 13.4:1 → 0.52:1. Dünya kuyruğu üç blokta da hash'le doğrulandı, tek bayt değişmedi (LIGHT 56/56 tek sürüm; STYLE'ın 54 sürümü BEKLENEN — omurga aynı, 'Materials here:' kare başına farklı olmak ZORUNDA). prompt-lint 0/14 · 0/20 · 0/22 kırmızı. Sahne/kompozisyon/lens/yazı/@handle'a dokunulmadı.",
+  "nextAction": "🔴 AMBİYANS CANARY: 56'yı birden basma. Önce 4 kare — K01 (açılış+ayna) · K39 (koridor, tek kaynak, en riskli) · K50 (iki ışık, dersin kapanışı) · K56 (ayna eşi). Oran 13.4'ten 0.52'ye savruldu, altın standart 2.8; bu bant HİÇ ölçülmedi. 4 kare söyler.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T11:51:11.781Z",
+  "updatedAt": "2026-08-05T12:10:57.992Z",
   "updatedBy": "claude",
-  "baseCommit": "d9b41ff"
+  "baseCommit": "5e855f5"
 }
