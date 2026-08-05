@@ -47,7 +47,11 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
 | Klip geldiğinde | `node scripts/motion-qc.mjs <klip>` — videonun kendisi denetlenir |
 | **Klipler + VO inince** | `node scripts/kaba-kurgu.mjs "<proje>" --klipler <dir>` — **Premiere timeline'ı kurulu gelir** |
 | Yeni referans eklerken | `/mamilas-ref` |
+| **Kareler onaylanınca, KLİP BASILMADAN ÖNCE** | 🔴 `node scripts/kaba-kurgu.mjs "<proje>" --animatic --vo <vo.mp3>` — **ANIMATIC-0.** Ritim, süre ve kesim yeri en pahalı adımdan ÖNCE Premiere'de görülür. Ölçüldü (Hücre, 2026-08-05): plan 5:04 diyordu, gerçek VO 3:44 — **80 saniyelik tahmin hatası tek klip basılmadan yakalandı.** ⚠ `--vo` verilmezse plan tahminini kullanır ve aynı hatayı üretir |
 | Video bitince | `node scripts/kapanis-hasadi.mjs --all` — karne + ders adayı + dünya kusuru + kit sapması |
+| **Video bitince — GERÇEK GÖZ** | `node scripts/dis-goz.mjs gor "<film.mp4>" "<tarif sorusu>"` → `<Ad>_FILM-RAPORU.md`. Ardından **ölçen araç doğrular**: `ffmpeg -i <film> -vf "freezedetect=n=-38dB:d=0.6" -f null -`. Ölçüldü: AGY yeri doğru söyledi (10 donma / ~9.5 sn = filmin %4.3'ü) ama ondalık saniyeleri uydurdu. **İşaretçi ondan, cetvel ffmpeg'den** |
+| **Bir HÜKÜM kurulduğunda** | `node scripts/dis-goz.mjs cur "<iddia>"` — Sol'a **soru değil İDDİA** verilir. Ölçüldü: "incele" vasat; "çürüt" deyince üç iddiayı doğrulayıp **kendi başına üç çelişki daha** buldu. Bir hüküm gözle ya da dış gözle doğrulanabiliyorsa ve doğrulanmadıysa **eksik teslim edilmiştir** |
+| **Kod/onarım işi çıkarsa** | `node scripts/dis-goz.mjs is "<görev>"` — Terra. İCRAAT fazında Claude'un işi prompt ve karar; mekanik yazım devredilir. Kural: **işlerde Terra, hata avında Sol** |
 
 ## Bu fazın yasaları
 

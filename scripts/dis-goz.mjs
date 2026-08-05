@@ -1,0 +1,203 @@
+#!/usr/bin/env node
+/**
+ * DIŞ GÖZ — Codex ve AGY için ince, ezbersiz çağrı yüzeyi.
+ * =============================================================================
+ *
+ * NEDEN VAR
+ * ---------
+ * Ezber bu repoda bir kez ısırdı: CLAUDE.md düzyazısı Sol + xhigh derken tek
+ * kopyalanabilir blok terra + high çağırıyordu. Bloğu kopyalayan ne Sol'u ne
+ * xhigh'ı alıyordu. AGY'de de sessiz zaman aşımı göreli yoldan değil, workspace
+ * dışı okumanın reddinden doğdu; CLI bunu `status:SUCCESS` + boş `response` diye
+ * geçirdi. Bu launcher model, izin ve boş-yanıt kapısını KODA bağlar.
+ *
+ * Kullanım:
+ *   node scripts/dis-goz.mjs is   "<görev>"
+ *   node scripts/dis-goz.mjs cur  "<iddia>"
+ *   node scripts/dis-goz.mjs gor  "</mutlak/medya>" "<soru>"
+ *   node scripts/dis-goz.mjs ara  "<konu>"
+ *   node scripts/dis-goz.mjs kare "</mutlak/prompt.txt>" "</mutlak/cikti.png>"
+ *
+ * Her çağrı `--kuru` alır: yalnız kurulacak komutu basar, dış aracı çalıştırmaz.
+ */
+
+import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
+
+const AGY_WARNING = 'AGY iyi bir İŞARETÇİ, kötü bir CETVELDİR — saniye altı her iddiayı ffmpeg/ffprobe ile doğrula.';
+const AGY_MODEL = 'gemini-3.6-flash-high';
+const CODEX_MODELS = Object.freeze({
+  is: { model: 'gpt-5.6-terra', effort: 'high', sandbox: 'workspace-write' },
+  cur: { model: 'gpt-5.6-sol', effort: 'xhigh', sandbox: 'read-only' },
+});
+
+export class DisGozError extends Error {}
+
+const fail = (message) => { throw new DisGozError(message); };
+const isAbsolute = (value) => path.isAbsolute(value);
+const displayArg = (value) => /^[A-Za-z0-9_./:=@-]+$/.test(value) ? value : JSON.stringify(value);
+
+export function usage() {
+  return `Kullanım:
+  node scripts/dis-goz.mjs is   "<görev>"                 [--kuru]
+  node scripts/dis-goz.mjs cur  "<iddia>"                 [--kuru]
+  node scripts/dis-goz.mjs gor  "<medya yolu>" "<soru>"   [--kuru]
+  node scripts/dis-goz.mjs ara  "<konu>"                  [--kuru]
+  node scripts/dis-goz.mjs kare "<prompt dosyası>" "<çıktı.png>" [--kuru]`;
+}
+
+function needText(value, label) {
+  if (!value || !value.trim()) fail(`${label} boş olamaz.`);
+  return value;
+}
+
+function needExistingAbsolute(file, label) {
+  needText(file, label);
+  if (!isAbsolute(file)) fail(`${label} mutlak yol olmalı: ${file}`);
+  if (!existsSync(file)) fail(`${label} diskte yok; AGY çalıştırılmadı: ${file}`);
+  return file;
+}
+
+function needOutputPath(file) {
+  needText(file, 'Çıktı yolu');
+  if (!isAbsolute(file)) fail(`Çıktı yolu mutlak olmalı: ${file}`);
+  if (!existsSync(path.dirname(file))) fail(`Çıktı klasörü diskte yok; AGY çalıştırılmadı: ${path.dirname(file)}`);
+  return file;
+}
+
+function codexInvocation(subcommand, task) {
+  const profile = CODEX_MODELS[subcommand];
+  const output = path.join('/tmp', `dis-goz-${subcommand}-${Date.now()}.txt`);
+  const instruction = subcommand === 'cur'
+    ? `Aşağıdaki iddiayı DOĞRULA ya da ÇÜRÜT. "İncele" demekle yetinme: gerçek dosyaları aç, her bulgu için dosya:satır kanıtı ver; iddianın dışında bulduğun çelişkileri de yaz. Kanıt yoksa UNPROVEN de. İddia:\n${task}`
+    : task;
+  return {
+    bin: 'codex',
+    args: ['exec', '-m', profile.model, '-c', `model_reasoning_effort="${profile.effort}"`, '-s', profile.sandbox, '--skip-git-repo-check', instruction],
+    output,
+    kind: 'codex',
+  };
+}
+
+function agyInvocation(subcommand, args) {
+  let prompt;
+  let output = null;
+  if (subcommand === 'gor') {
+    const media = needExistingAbsolute(args[0], 'Medya yolu');
+    const question = needText(args[1], 'Soru');
+    prompt = `Şu gerçek medyayı tarif et; hüküm verme, yalnız gördüğünü yaz. Medya: ${media}\nSoru: ${question}\nZamanla ilgili iddiaları yaklaşık işaret olarak yaz; saniye altı kesinlik uydurma.`;
+  } else if (subcommand === 'ara') {
+    const topic = needText(args[0], 'Konu');
+    prompt = `İnternetten şu konuyu araştır: ${topic}\nKısa, kaynak bağlantılı bulgular ver; emin olmadığın bilgiyi açıkça ayır.`;
+  } else {
+    const promptFile = needExistingAbsolute(args[0], 'Prompt dosyası');
+    output = needOutputPath(args[1]);
+    const imagePrompt = readFileSync(promptFile, 'utf8').trim();
+    if (!imagePrompt) fail(`Prompt dosyası boş; AGY çalıştırılmadı: ${promptFile}`);
+    prompt = `Aşağıdaki prompttan tek bir PNG görsel üret ve TAM OLARAK şu mutlak yola kaydet: ${output}\nPrompt dosyası: ${promptFile}\nPROMPT BAŞI\n${imagePrompt}\nPROMPT SONU\nKaydettikten sonra yalnız ne ürettiğini ve kaydetme sonucunu yaz.`;
+  }
+  return {
+    bin: 'agy',
+    args: ['--dangerously-skip-permissions', '--model', AGY_MODEL, '--output-format', 'json', '--print-timeout', '25m', '-p', prompt],
+    kind: 'agy',
+    output,
+  };
+}
+
+/** Test edilebilir saf komut kurucusu; hiçbir dış araç çalıştırmaz. */
+export function buildInvocation(argv) {
+  const values = [...argv];
+  const dryIndex = values.indexOf('--kuru');
+  const dry = dryIndex !== -1;
+  if (dry) values.splice(dryIndex, 1);
+  const [subcommand, ...args] = values;
+  if (!['is', 'cur', 'gor', 'ara', 'kare'].includes(subcommand)) fail(`Bilinmeyen alt komut: ${subcommand || '(yok)'}\n${usage()}`);
+  const counts = { is: 1, cur: 1, gor: 2, ara: 1, kare: 2 };
+  if (args.length !== counts[subcommand]) fail(`${subcommand} için ${counts[subcommand]} argüman gerekli.\n${usage()}`);
+  const invocation = (subcommand === 'is' || subcommand === 'cur')
+    ? codexInvocation(subcommand, needText(args[0], subcommand === 'cur' ? 'İddia' : 'Görev'))
+    : agyInvocation(subcommand, args);
+  return { ...invocation, dry, subcommand };
+}
+
+export function parseAgyResponse(raw) {
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch { fail('AGY JSON döndürmedi; başarı sayılmadı.'); }
+  if (parsed.status !== 'SUCCESS') {
+    fail(`AGY başarısız: status:${String(parsed.status ?? 'YOK')}${parsed.error ? ` · ${String(parsed.error)}` : ''}`);
+  }
+  if (typeof parsed.response !== 'string' || !parsed.response.trim()) {
+    fail('AGY status:SUCCESS ama response boş; bu BAŞARISIZLIK sayıldı.');
+  }
+  return parsed.response.trim();
+}
+
+function onPath(bin) {
+  const extensions = process.platform === 'win32'
+    ? (process.env.PATHEXT || '.EXE;.CMD;.BAT').split(';')
+    : [''];
+  return (process.env.PATH || '').split(path.delimiter).some((dir) =>
+    extensions.some((ext) => existsSync(path.join(dir, `${bin}${ext}`))));
+}
+
+function runCodex(invocation) {
+  if (!onPath(invocation.bin)) fail('codex PATH içinde bulunamadı; Codex CLI kurulu/açık değil.');
+  let stdout = '';
+  try {
+    stdout = execFileSync(invocation.bin, invocation.args, { encoding: 'utf8' });
+  } catch (error) {
+    stdout = String(error.stdout || '');
+    writeFileSync(invocation.output, stdout, 'utf8');
+    if (stdout) process.stdout.write(stdout);
+    fail(`Codex başarısız çıktı (çıkış ${error.status ?? 'bilinmiyor'}). Çıktı kaydı: ${invocation.output}\n${String(error.stderr || '').trim()}`);
+  }
+  writeFileSync(invocation.output, stdout, 'utf8');
+  if (stdout) process.stdout.write(stdout);
+  process.stderr.write(`Codex çıktısı kaydedildi: ${invocation.output}\n`);
+}
+
+function runAgy(invocation) {
+  if (!onPath(invocation.bin)) fail('agy PATH içinde bulunamadı; AGY CLI kurulu/açık değil.');
+  let raw = '';
+  try {
+    raw = execFileSync(invocation.bin, invocation.args, { encoding: 'utf8' });
+  } catch (error) {
+    fail(`AGY çağrısı başarısız çıktı (çıkış ${error.status ?? 'bilinmiyor'}): ${String(error.stderr || error.stdout || '').trim()}`);
+  }
+  const response = parseAgyResponse(raw);
+  if (invocation.subcommand === 'kare' && !existsSync(invocation.output)) {
+    fail(`AGY response verdi ama hedef PNG oluşmadı; bu BAŞARISIZLIK sayıldı: ${invocation.output}`);
+  }
+  process.stdout.write(response + '\n');
+  if (invocation.subcommand === 'gor') process.stdout.write(AGY_WARNING + '\n');
+}
+
+export function commandForDisplay(invocation) {
+  return [invocation.bin, ...invocation.args].map(displayArg).join(' ');
+}
+
+export function main(argv = process.argv.slice(2)) {
+  try {
+    if (!argv.length || argv.includes('--yardim') || argv.includes('--help')) {
+      process.stdout.write(usage() + '\n');
+      return 0;
+    }
+    const invocation = buildInvocation(argv);
+    if (invocation.dry) {
+      process.stdout.write(commandForDisplay(invocation) + '\n');
+      return 0;
+    }
+    if (invocation.kind === 'codex') runCodex(invocation);
+    else runAgy(invocation);
+    return 0;
+  } catch (error) {
+    process.stderr.write(`❌ ${error instanceof Error ? error.message : String(error)}\n`);
+    return 2;
+  }
+}
+
+const thisFile = fileURLToPath(import.meta.url);
+if (process.argv[1] && path.resolve(process.argv[1]) === thisFile) process.exitCode = main();
