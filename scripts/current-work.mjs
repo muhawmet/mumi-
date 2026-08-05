@@ -401,6 +401,18 @@ export function renderState(state, drift = [], extra = {}) {
   const eksik = Object.entries(state.deliverables ?? {}).filter(([, v]) => !v).map(([k]) => k);
   L.push(eksik.length ? `  KİT      : eksik → ${eksik.join(' · ')}` : '  KİT      : 5/5 tam');
 
+  // BASIM — yazılı ama basılmamış kare sayısı (kaynak: basim-kuyrugu.mjs, her koşuda diskten
+  // türer). Ölçüldü 2026-08-04: 233 kare YAZILI, 0'ı BASILI ve bunu kimse oturum başında
+  // görmüyordu. Sayı null ise satır BASILMAZ — "ölçemedim" ile "0 kaldı" ayrı gerçeklerdir.
+  const bs = extra.basim;
+  if (bs && (Number.isInteger(bs.proje) || Number.isInteger(bs.toplam))) {
+    const aktif = Number.isInteger(bs.proje)
+      ? (bs.proje ? `${bs.proje} kare BASILMAMIŞ` : 'kuyruk boş')
+      : 'ölçülemedi';
+    const kutu = Number.isInteger(bs.toplam) && bs.toplam !== bs.proje ? ` · kutuda toplam ${bs.toplam}` : '';
+    L.push(`  BASIM    : ${aktif}${kutu}${(bs.proje || bs.toplam) ? ' → node scripts/basim-kuyrugu.mjs' : ''}`);
+  }
+
   for (const m of (state.requiredLocalMedia ?? [])) {
     const s = scanMedia(m);
     const want = m?.expect?.clips;

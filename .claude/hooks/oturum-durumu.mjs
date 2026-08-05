@@ -25,7 +25,10 @@ try {
     out(mod.renderMissing(r.reason, r.detail).join('\n'));
   } else {
     const drift = mod.driftOf(root, r.state);
-    const extra = { otherJobs: mod.otherInboxJobs(root, r.state) };
+    // Basılmamış kare sayısı AYRI try ile alınır: yeni bir araç eskiyen bir kaydı kilitleyemez.
+    const basim = await import(pathToFileURL(resolve(root, 'scripts/basim-kuyrugu.mjs')).href)
+      .then((bk) => bk.basimOzeti(root, r.state.projectId)).catch(() => null);
+    const extra = { otherJobs: mod.otherInboxJobs(root, r.state), basim };
     out(mod.renderState(r.state, drift, extra).join('\n'));
   }
 } catch (e) {
