@@ -1,0 +1,73 @@
+DESTEK VE HAREKET — CANARY MOTION (3 klip)
+========================================================================
+NEDEN BU DOSYA VAR — ölçüm, 2026-08-05
+
+Mevcut motion setinin (hem eski hem "YENİ") yapısı, ÇALIŞAN korpustan ölçülebilir
+biçimde ayrışıyor:
+
+                          blok   `already` ile açılan   durarak biten
+  Sabit Sürat (çalışan)     44          0  (%0)              0
+  Destek — ESKİ set         52         42  (%81)            14
+  Destek — "YENİ" set       51        ~41  (%80)            13
+
+Yani yeniden yazım bu iki kusura HİÇ dokunmamış. 52 klibi bu setle basmak, ölçülen
+tek çalışan setten yapısal olarak ayrışan bir seti yakmak demektir.
+
+Bu dosya 52'yi yakmadan önce hipotezi sınar: ÜÇ klip yeni lehçeyle yazıldı.
+Mami basar → beğenirse kalan 49 aynı lehçeye çevrilir → beğenmezse 3 klip kaybedilir,
+49 klip kurtarılır.
+
+LEHÇE — çalışan korpustan (Sabit Sürat) ÖLÇÜLEREK alındı, ezberden değil:
+  · klip hareketi DEVRALMAZ, BAŞLATIR — "already" ile açılmaz
+  · klip durarak bitmez; son karede bir şey hâlâ sürüyor olur
+  · tek sebep → etki → sonuç yayı
+  · kimlik/gardırop YENİDEN TARİF EDİLMEZ (start frame çıpadır)
+  · `Camera:` cümlenin sonunda, süreklilik kilitleri en sonda
+  · sessiz klip, ağız kapalı
+
+⚠ Üç karenin üçü de Read ile AÇILDI ve gözle okundu (1.png · 29.png · 36.png).
+   Görmediğim kareye motion yazılmadı.
+========================================================================
+
+
+### K1 | 5s · VO "Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı."
+KAMERA NİYETİ: dünya tanıtılır ve ölü sanılan nesne canlanır — kukla önce bir eşya, sonra bir gövde.
+AYRICALIK: gerçek kamerada bu kare ölü bir stüdyo çekimidir; burada kuklayı canlandıran şey
+Mira'nın ittiği hava — yani görünmeyen bir sebep görünür bir gövdeye dönüşüyor.
+-----
+Mira takes one more step toward the cabinet and the air she moves reaches the hanging mannequin: it turns a few degrees out from the door on its hook, the jointed shoulder and the loose forearm lagging a beat behind the torso the way unweighted wooden joints do, and the hard shadow it casts slides slowly across the cabinet panel behind it. Her eyes follow the turn. The clip begins with a thing hanging on a hook and ends with a body that has weight and joints — the difference is readable from any single frozen frame. Camera: a slow drift in toward the mannequin at chest height, the plaster sphere and the stacked paper in the near foreground sliding softly out of the bottom of the frame. The shadow is still travelling across the wood when the clip cuts. The studio, the drying rack, the apron on its peg and the jars of brushes stay exactly where they are; no new objects and no other people enter; the wall sign is not approached and its letters never change; her face never stretches or warps. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+KAMERA NİYETİ: kavram nesnede kanıtlanır — menteşe açılırken izleyici kendi dizini hisseder.
+AYRICALIK: kemiğin ucundaki pirinç menteşe, gerçek bir dizin yapamayacağı kadar yavaş ve
+eksiksiz açılır; hareketin kendisi bir ders hâline gelir.
+⚠ YÜKÜM UYARISI (bu kare için, üretimden önce oku): VO'nun öznesi "Mira'nın DİZİ" ama karede
+Mira'nın dizi yok — tepside kemik, menteşe ve "DİZ" kartı var. Motion bu boşluğu kapatamaz;
+kapatan tek şey kadrajın Mira'nın kendi dizini de alması ya da VO'nun kareye uydurulmasıdır.
+Bu bir MOTION kusuru değil, START-FRAME kusurudur ve kaydedilmiştir.
+-----
+Mira's fingertip comes down on the far end of the femur and presses: the brass hinge at its base opens through its arc, unhurried and complete, the bone rising against the tray's rim while the polished pin catches the window light and turns it along the metal. The shadow the opening hinge throws stretches across the small card on the tray and thins as the angle widens. The clip begins on one closed shape of bone and brass and ends on an open angle with clear air inside it. Camera: a slow push down and in over the tray, the classroom softening behind her. The hinge is still opening when the clip cuts. The lettering on the card is not approached, not re-drawn and never changes; the corkboard drawings, the wall screen, the cabinets and the empty chairs stay fixed; no new objects and no other people enter; the bone does not bend, melt or change shape and the metal stays rigid. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+KAMERA NİYETİ: keşif anı — kas kalkarken yüzdeki endişe merakla yer değiştirir.
+AYRICALIK: aynı kadrajda iki kol var — biri kalkabilen, biri kalkamayan. Kuklanın ölü kolu
+Mira'nınkiyle yan yana durduğu için kas, tarif edilmeden anlaşılıyor.
+-----
+Mira closes her fist and draws the forearm up: under her palm the muscle rises and firms, and her spread fingers lift with it as the shape swells against them. Her frown breaks — the eyebrows go up and the mouth stays closed as recognition arrives — and her eyes drop to the wooden mannequin lying along the counter in front of her, whose straight jointed arm has not moved at all. The clip begins with her arm looking exactly like the wooden one and ends with it doing the one thing the wooden one cannot. Camera: a slow, small push toward her forearm and hand, the mannequin held in the near foreground. Her fingers are still travelling over the muscle when the clip cuts. The window light, the potted plants, the enamel trays, the corkboard and the cabinets stay exactly where they are; no new objects and no other people enter; the mannequin does not move, soften or gain joints; her face never stretches or warps and her arm keeps its real anatomy. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+========================================================================
+BASTIKTAN SONRA — Mami'nin bakacağı üç şey (klip başına tek soru)
+
+1. Klip BAŞLARKEN bir şey oluyor mu, yoksa ortasından mı giriyoruz?  (eski setin kusuru)
+2. Klip biterken bir şey hâlâ sürüyor mu, yoksa donuyor mu?          (eski setin kusuru)
+3. "Ne oldu?" sorusunun cevabı VO olmadan okunuyor mu?
+
+Üçü de EVET ise kalan 49 klip bu lehçeye çevrilir.
+Değilse 3 klip kaybedildi, 49 klip kurtarıldı — deneyin amacı buydu.
+========================================================================

@@ -1,0 +1,72 @@
+🔴 TASLAK — CANARY ONAYSIZ
+Bu dosya BASIM GÖREVİ DEĞİLDİR. Motion kanonu (T2) kapanmadan ve 8 kliplik canary
+Mami tarafından PASS almadan (T8) buradaki hiçbir blok Kling'e basılmaz.
+Ölçüm 2026-08-05: motion-lint 55/55 kırmızı · sessizlik kuyruğu 0/6 dosyada.
+olay-önde: 1 · olay-bitmiş: 8
+yeniden-basım önerilen: K14, K16
+§11 ENERJİ turu — olay büyütüldü, dört zaman yazıldı, her karede en az bir komşu tepki. Negatif geri alındı ama SAHNEYE ÖZEL: her blokta fiil cümlesinin YANINDA, o karede gerçekten olabilecek tek bozulmaya yazılı (K18 yığın: "the heap gains no bone"). Kamera anlatıcı: her blokta neyi ne zaman gösterdiğine karar veriyor. Kilit yalnız K11 (duvardaki KEMİK harfleri büyük baked-in Türkçe yazı).
+
+### K10 | 5s · VO "Yetişkin bir insanda yaklaşık iki yüz altı kemik bulunur."
+-----
+
+@mira4 lies with her chin on her crossed forearms on the brushed steel base, the hanging skeleton foot a hand's width above her. Her shoulders drop with a breath; then her right hand peels off her forearm, draws back, and flicks the dangling toe bones. The whole leg swings out from above as one piece, knee and ankle holding their exact angles, carries past the pole, swings back a shorter way, then shorter again, and hangs still. The foot gains no extra toe bone and the leg does not stretch as it swings. Her hair lifts and falls across her cheek, the steel pole shivers where it meets the base, and her grin widens, lips closed. The 206 plate stays the same plate, sharp and square. Camera: low and square on the 206 plate, pushing past it to arrive on her face as the leg swings, no tilt, no turn.
+
+-------------------------------------------------------------------------
+
+### K11 | 5s · VO "Kemikler vücuda şeklini verir ve onu ayakta tutar."
+-----
+
+The room holds for a beat. Then @kukla's draped arm slides off the rim of the stoneware mug and the whole wooden figure pitches forward off its lean, every joint holding its angle so it falls as one shape, drops onto the birch desk, bounces a finger's width, rocks twice shorter and shorter, and lies still on its side. It does not take a step, reach out or catch itself as it goes. The mug tips back from the shove, swings upright past centre and rattles its pencils once. @mira4's head snaps around toward the noise, hair swinging across her cheek and settling, lips closed. @iskelet keeps every one of its angles on its stand. The five bone letters stay the same five bones. Camera: locked off at desk height, square to the letters, wide enough to hold the fall and her turn in one frame, absolutely still throughout.
+
+-------------------------------------------------------------------------
+
+### K12 | 5s · VO "Bir de en önemlisi: yumuşak organları korurlar."
+-----
+
+@mira4 stands for a beat, then pushes off and crosses to @iskelet in two quick strides, her trailing foot swinging through; she stops a step short, her upper body carrying past her feet before rocking back and standing straight. Her hair swings forward across her face and falls back, her lips closed and soft as her sweater settles after her. Her chin lifts and her eyes climb from the pelvis to the warm light inside the rib cage, brows lifting. The stand takes her arrival: @iskelet's hanging arm bones sway out once from the shoulders, joints holding their exact angles, tap together and hang still. The light stays the same size deep inside the cage and does not spread out through the bars or reach her face. Camera: travels in with her at chest height and lands on the rib light exactly as her eyes find it.
+
+-------------------------------------------------------------------------
+
+### K13 | 5s · VO "Kafatası beyni sert bir kutu gibi çevreler."
+-----
+
+The hinged cap of the skull rests open on its brass hinge, a thin warm line running out along the seam. It lifts a hair on the hinge, then swings down fast under its own weight and claps shut on the bone below, bounces back open a finger's width, drops again shorter, and seats; the escaping line pinches to a thread and goes out, the braincase holding its warmth entirely inside. No new light appears anywhere in the room as it closes. The pencils in the mug at the right knock together once and stand still. @mira4 pulls back with a blink, hair swinging forward, then leans in again and her brows lift, lips closed. The engraved KAFATASI plate stays sharp and square, the jaw shut. Camera: holds the open seam and her face together, pushes to the seam as the cap falls, jolts on the clap, and rests.
+
+-------------------------------------------------------------------------
+
+### K14 | 5s · VO "Kaburgalar kalbin ve akciğerlerin önünde kafes kurar."
+🔴 YENİDEN-BASIM — kavram ışığı zinciri burada kopuyor: K12'de doğuyor, K13'te kafatasının içinde, K15'te kemiğin içinde, K14'te hiç yok; ışık klip içinde yakılamaz (sıfırdan doğan ışık yasak), o yüzden kare yeniden basılmalı.
+-----
+
+@mira4 stands at the desk for a beat, then both palms come down flat on the birch top as she drops her weight forward, her upper body carrying past her hands before she rocks back and holds. Her hair swings across her face and falls back, lips closed. The desk answers her: the pencil mug hops and rattles once, the stack of grey folders at the near edge slides a finger's width and stops, and the top sheet lifts at its corner and lies down again. Her eye line drops through the bars to the red heart and her brows draw together. Every bar keeps its curve and spacing on the turned base, no bar swings free of the cage, and the heart stays matte red without lighting up. Camera: pushes past her shoulder and arrives on the heart behind the bars as her palms land, then eases still.
+
+-------------------------------------------------------------------------
+
+### K15 | 5s · VO "Mira modelin uyluk kemiğini yerinden çıkardı; avucundan uzundu."
+-----
+
+@mira4 holds the ivory thigh bone level in both hands. Her arms lift it a hair, then bring it down fast, and the shaft knocks the birch desk and takes its own weight; the ball head bounces once, the bone rolls a quarter turn against her fingers, rocks back shorter, and stops. The knock travels: the stack of books at the near edge shifts, dust jumps in the window light, and behind her the hanging arm of @iskelet swings out once from the shoulder, elbow and wrist holding their exact angles. Her hair swings forward and settles, her chin drops a fraction, her lips closed. Her arms do not stretch and the bone does not brighten past the ember deep inside its shaft. Camera: drops with the bone to desk height and finishes tight on the ball head overhanging her fingers.
+
+-------------------------------------------------------------------------
+
+### K16 | 5s · VO "Kemikleri şekillerine göre üç gruba ayırıyoruz."
+🔴 YENİDEN-BASIM — VO üç grubu ilan ediyor, karede tek kemik ve iki gölge lekesi var; üçe ayırma hiç görünmüyor ve karede olmayan iki kemik motionla yaratılamaz.
+-----
+
+@mira4's open right hand hangs above the bare stretch of desk for a beat. It draws up, then comes down fast and slaps flat on the wood, the fingers spreading past their spread and drawing back in as the forearm takes the weight. The desk jumps with it: the loose pencil in the foreground hops, rolls a hand's width and stops against the mug, the pencils in the jar rattle, and the dust in the low sunbeam scatters. Under her other hand the lit bone rocks once on its rounded shaft and settles as the same one bone. No second bone appears on the bare wood. Her eyes travel back along the desk, brows lifting as she finds only the one. Camera: runs low along the bare wood as the palm lands, jolts, and stops with the empty grain filling frame, the single lit bone at its far edge.
+
+-------------------------------------------------------------------------
+
+### K17 | 5s · VO "Uzun kemikler kollarda ve bacaklardadır; uyluk kemiği en uzunudur."
+-----
+
+The desk holds for a beat. Then the thigh bone loses its balance on its rounded shaft, tips back a hair, and rolls fast toward the ruler, its ball head knocking the wooden edge and riding a little up over it before dropping back, rocking twice shorter and shorter, and lying still across the grain. The ruler ticks a finger's width along its own length and stops without turning, the printed 30 sharp. Dust jumps in the beam from the blinds, the pencils in the near jar rattle once, and behind the desk the hanging hand of @iskelet sways out from the wrist and hangs still. The bone keeps its full length and matte ivory surface and does not brighten into a light source. Camera: travels with the roll and settles looking straight down the shaft, the bone running past the ruler's 30 at the end of the move.
+
+-------------------------------------------------------------------------
+
+### K18 | 5s · VO "Kısa kemiklerin eni ve boyu birbirine yakındır."
+-----
+
+The heap holds for a beat. Then the bone riding highest on the pile slips off its neighbour, slides down the slope gathering speed, clips the front bone, which hops and drops back, overshoots past the edge of the heap, rocks twice shorter and shorter, and comes to rest on bare wood beside the folded cloth. Two bones settle into the gap it left and knock together once. A fine puff of dust lifts and drifts off. The heap gains no bone and no bone stretches or splits; it ends as the same bones it began with, each amber dot steady deep inside its own bone. The brass fifty-gram weight sinks a little deeper and stays standing, its engraved 50 g face square to the lens. Camera: pushes down over the pile with the slide and ends close on the fallen bone alone, its width and length reading the same.
+
+-------------------------------------------------------------------------

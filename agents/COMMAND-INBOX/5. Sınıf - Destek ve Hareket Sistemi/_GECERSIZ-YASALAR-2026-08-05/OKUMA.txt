@@ -1,0 +1,13 @@
+🔴 BU KLASÖRDEKİ DOSYALAR GEÇERSİZDİR — OKUMAYIN, UYGULAMAYIN.
+
+2026-08-05'te Claude, çalışan motion lehçesini bilmeden iki ayrı yasa icat etti:
+  · _LEHCE-YASASI-2026-08-05.md  (110-150 kelime · "already" yasağı · kalıp negatif yasağı)
+  · Destek ve Hareket_CANARY-MOTION.txt  (üçüncü, ayrı bir lehçe)
+
+İkisi de ispatlanmış korpusla ÇELİŞİYOR ve iki tur kredi yaktı.
+
+GEÇERLİ LEHÇE — motion yazacak herkes buradan öğrenir:
+  agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/MOTION/
+  agents/COMMAND-INBOX/Biten/6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi/MOTION/
+
+Kanıtı: Mami ikisini de beğendi ve teslim etti.

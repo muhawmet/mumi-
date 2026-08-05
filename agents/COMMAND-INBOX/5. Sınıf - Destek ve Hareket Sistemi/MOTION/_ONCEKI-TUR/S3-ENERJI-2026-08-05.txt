@@ -1,0 +1,57 @@
+🔴 TASLAK — CANARY ONAYSIZ
+Bu dosya BASIM GÖREVİ DEĞİLDİR. Motion kanonu (T2) kapanmadan ve 8 kliplik canary
+Mami tarafından PASS almadan (T8) buradaki hiçbir blok Kling'e basılmaz.
+Ölçüm 2026-08-05: motion-lint 55/55 kırmızı · sessizlik kuyruğu 0/6 dosyada.
+olay-önde: 5 · olay-bitmiş: 4
+yeniden-basım önerilen: K21, K26
+enerji turu (§11): 9/9 karede dört zaman + komşu tepki · `keeps its exact place` 0 · kamera kilidi yalnız K25 (EKLEM harfleri kadrajın ~%30'u)
+negatif: sahneye özel, kalıp `Lock:` satırı yok — K23/K25/K26 yazı negatifi, K19/K21/K24/K27 çoğalma negatifi
+kamera: her blokta anlatan bir yol izliyor (K20 VO sırası · K22 soru boşlukta · K26 menteşe-eklem yan yana · K27 üç eklem tipi sırayla)
+ton: K23 ve K24 VO "yavaşça/sessizce" dediği için ağır ve sakin yazıldı; sert çarpma K19/K21/K26'da
+
+### K19 | 5s · VO "El ve ayak bileklerimizde bu küçük kemiklerden onlarca vardır."
+-----
+@mira4's open hand lies on the birch desk beside the loose field of small ivory bones. Her fingers spread and the hand lifts a few centimetres, the wrist cocking back; then it comes down flat and fast and the palm smacks the wood beside them. The whole field hops once — every bone leaves the desk a fingernail's height, lands, chatters against its neighbour and rolls still. They stay the same loose scatter of ivory bones, none splitting, none appearing. The pencils clatter in the grey mug, the stacked books nudge, dust bursts up through the window light. Then the desk is quiet and her hand rests flat, lips closed. Camera: starts on her watching face, drops to hand height with the palm, takes the smack as a small shove in, and holds on her wrist lying in one line with the little bones.
+-------------------------------------------------------------------------
+
+### K20 | 5s · VO "Yassı kemikler levha gibidir; kafatası, kaburga ve leğen kemiği böyledir."
+-----
+@iskelet hangs on its polished steel post in the daylight from the blinds. The model tips a few degrees the wrong way first, then swings hard around the post — skull, rib cage and pelvis travelling a quarter turn as one piece, every gap between the ribs holding its width, the wing of the pelvis holding its angle to the spine. It overshoots past the front, comes back, rocks twice shorter and shorter, and settles facing the room. The rib shadow sweeps across the teal cabinet like a striped fan and swings back; the children's drawings lift at their corners on the cork board and lie down again. The ribs stay the same count of curved plates. Camera: arcs in with the turn, then reads the model in the order the voice names it — crown of the skull, down the rib cage, down to the pelvis, and stops.
+-------------------------------------------------------------------------
+
+### K21 | 5s · VO "Mira üç kemiği yan yana dizdi; hiçbiri diğerine benzemiyordu."
+🔴 YENİDEN-BASIM — dizme işi karede bitmiş; VO'nun fiili gösterilemez ve orta planda duran Mira'ya yalnız bir öne eğilme kalıyor (K8'in plastik okuması bu sınıftandır).
+-----
+The three bones lie in their row on the birch table. @mira4 rocks back a hair, then drops her weight forward onto both flat palms and the table takes the thump — her shoulders come over her hands, her hair swings past her cheeks and falls back. The long thigh bone nearest the lens jumps, rolls a quarter turn toward the edge, overshoots, rocks twice shorter and shorter and settles against the wrist cluster with a knock. The cluster and the curved rib stay where they lie; no fourth bone appears on the wood. The pencils rattle in the grey mug and dust bursts through the window light. Her lips stay closed, her brows lifting. Camera: low at table height, travelling the row so each of the three shapes passes the lens in turn, taking the thump as a shove and ending on the rolled thigh bone.
+-------------------------------------------------------------------------
+
+### K22 | 5s · VO "Peki bu kadar kemik birbirine nasıl bağlanıyordu?"
+-----
+@iskelet's raised right arm hangs out into the room, the amber core lying along the upper arm and the two forearm shafts, a dark unlit gap between them at the elbow. The arm lifts a few degrees higher first, then swings down fast from the shoulder ball as one piece — upper arm and forearm holding their angle to each other, the finger bones holding their spread, the dark gap riding down with them without opening or closing. It overshoots past the hanging line, swings back, rocks twice shorter and shorter and stops dead. The drawings flutter on the cork board and the arm's shadow rakes the cabinet doors. The elbow stays one dark gap. Camera: falls with the arm, then leaves the hand and eases in until the lit shaft, the dark gap and the lit forearm fill the frame — the voice's question left sitting in that gap.
+-------------------------------------------------------------------------
+
+### K23 | 5s · VO "Mira atölyenin kapısını yavaşça itti."
+-----
+@mira4 stands with her right palm flat on the inner face of the oak door, the RESİM ATÖLYESİ plate at her fingertips. She settles back onto her heel, then leans her weight slowly onto the palm: her elbow straightens and the heavy leaf gives all at once, swinging wide open on its two hinges as one solid slab. At the end of its travel its own weight carries it a little past, it eases back a hand's width and stops, quiet. Her hair and skirt hem lift and fall in the moved air; the pinned drawings flutter; dust turns in the light. The enamel plate rides the leaf flat and unbent, its two printed lines keeping their letters and dots. Camera: at a fifth-grader's eye height, holding on her hand, then walking in past the opening leaf to show what the doorway lets in — no roll, no whip.
+-------------------------------------------------------------------------
+
+### K24 | 5s · VO "Kapı, menteşesinin üstünde sessizce döndü."
+-----
+The steel butt hinge sits closed, its two leaves flat in one plane, three barrels stacked around one bright pin. The leaf loads back a hair, then swings out in one long weighted move — the three barrels rolling against one another around the pin, the pin staying seated, the screws staying down in their countersinks, a wedge of shadow opening along the closing edge. At the end of its travel the door's own mass carries it a touch past rest, it eases back a finger's width, rocks once shorter and settles. No fourth barrel and no extra screw appears. The bright gap widens behind it; dust is dragged through the beam; the long bone across the foreground rocks once and holds its steady ember. Camera: holds tight on the turning barrels, then eases back to show this small stack of steel moved the whole door, and stops.
+-------------------------------------------------------------------------
+
+### K25 | 5s · ekranda ~3.2s · VO "Kemiklerin birleştiği yerlere eklem diyoruz."
+-----
+The forearm hangs from @iskelet's elbow, the thin amber ring lying in the contact line where the two bones meet, the brass EKLEM letters standing on the cabinet behind. The forearm loads down, then swings up fast around the brass pin — both ivory shafts going together as one straight piece, the ends staying in contact throughout, the ring holding its exact circle as the angle changes. It overshoots past the top of the flex, falls back, rocks twice shorter and shorter and hangs dead still. Its shadow sweeps the birch table and the small bones there; those stay the same small bones, none added, and no second ring forms on the model. The brass letters keep their shapes, spacing and sharp edges. Camera: locked at joint height with the glowing contact line and the word in one frame, absolutely still, no push, no drift, no tilt, no zoom.
+-------------------------------------------------------------------------
+
+### K26 | 5s · ekranda ~2.9s · VO "Eklemler tıpkı bir menteşe gibi çalışır."
+🔴 YENİDEN-BASIM — dolap kapağı karede zaten sonuna kadar açık; menteşe dersini açılışla anlatacak yol kalmıyor, geriye yalnız kapanma yönünde küçük bir dönüş kalıyor.
+-----
+The green first-aid cabinet stands open against the wall, its door swung wide on two steel barrels, the SARGI BEZİ carton square on the shelf inside. The leaf loads open a finger's width, then swings shut fast — travelling its whole arc as one flat panel, the white cross riding it unchanged, the two barrels rolling around their pin, its shadow sweeping the wall. The edge meets the frame, rebounds a finger's width, swings in again shorter and settles almost closed. The rolled bandage on the near table rocks once and stops; the drawings flutter on the cork board. The carton stays square with its two printed lines unbent, and the skeleton's elbow in the foreground holds its angle and its warm contact line. Camera: square to the cabinet, easing in with the swing until the two steel barrels and that elbow sit side by side, and stopping there.
+-------------------------------------------------------------------------
+
+### K27 | 5s · ekranda ~3.2s · VO "Onları hareket yeteneklerine göre üçe ayırırız."
+-----
+@iskelet stands on its post, one full amber ring closed around the shoulder ball, small amber lights sitting in the gaps between the neck and back vertebrae, the skull's suture lying dark in its seam. The upper arm bone loads down, then swings up fast and wide inside the shoulder ring as one solid piece — the ring staying tight and closed on the ball, the shoulder blade and collarbone holding their angles, the rib cage and spine not travelling with it. It overshoots at the top, falls back, rocks twice shorter and shorter and stops. The moved air lifts the pinned drawings and lets them down; the arm's shadow rakes the wall. Each small light keeps its own gap, none joining or multiplying. Camera: rides the swing up from the shoulder ball, climbs the neck past the small lit gaps, and stops on the dark suture in the skull.
+-------------------------------------------------------------------------

@@ -1,0 +1,74 @@
+🔴 TASLAK — CANARY ONAYSIZ
+Bu dosya BASIM GÖREVİ DEĞİLDİR. Motion kanonu (T2) kapanmadan ve 8 kliplik canary
+Mami tarafından PASS almadan (T8) buradaki hiçbir blok Kling'e basılmaz.
+Ölçüm 2026-08-05: motion-lint 55/55 kırmızı · sessizlik kuyruğu 0/6 dosyada.
+olay-önde: 7 · olay-bitmiş: 2
+yeniden-basım önerilen: K29
+
+=========================================================================
+S4 · K28-K36 · lehçe: _LEHCE-YASASI-2026-08-05.md · §11 ENERJİ geçişi
+Her kare yeniden Read ile açıldı. Olay büyütüldü · dört zaman (hazırlık →
+hızlanma → aşma → sönümlü oturma) · her blokta en az bir komşu tepki ·
+"keeps its exact place" söküldü.
+Mami ek direktifi (2026-08-05): negatif SERBEST ama kalıp değil — her blokta o
+karede gerçekten olabilecek tek bozulmaya yazıldı (bu aralık insan bedeni taşıyor:
+uzuv uzaması / parmağın ete gömülmesi / kemik çoğalması). Kamera ANLATIR: nereden
+başlayıp neyi ne zaman bulduğu yazılı, amaçsız drift yok.
+Tempo kare kare: K30-K33, K35-K36 sert ve çarpmalı · K34 (10s) SAKİN keşif, dört
+zaman geniş ve yumuşak · kamera kilidi yalnız K34'te (ATÖLYE baked-in yazısı).
+=========================================================================
+
+### K28 | 5s · VO "Oynar eklemler kollarda ve bacaklardadır; rahatça hareket ederler."
+-----
+The frame holds like a photograph for a beat: @iskelet stands on its post, one arm swept high, one knee drawn up, the free lower leg hanging clear of the floor. Then the leg loads — it draws back a hand's width, swings forward fast through a wide arc, kicks past the plumb line, sails back, rocks twice shorter and shorter, and settles hanging straight down. Shin and thigh keep their own lengths through the swing; no bone stretches and no second knee appears. The amber ring rides the whole arc and holds steady the moment the leg dies. The post takes the load: the skeleton nods once on its disc, the hanging arm bones tick against the ribs, dust turns through the window light. Camera: it starts on the raised elbow's ring, drops with the kick to find the knee, and ends with both joints in one frame.
+
+-------------------------------------------------------------------------
+
+### K29 | 5s · VO "Mira dizini bükünce eklem menteşe gibi açılıp kapandı."
+🔴 YENİDEN-BASIM — VO'nun öznesi Mira'nın DİZİ, ama karede diz bir olay olarak yok: Mira geniş planda dimdik duruyor, tepside kemik + pirinç menteşe + "DİZ" kartı var; motion bu boşluğu kapatamaz, kadraj Mira'nın kendi bükülen dizini almalı.
+-----
+The frame holds for a beat: @mira4 stands over the tray, the ivory bone angled up out of the open brass hinge. Then she drops her weight — she pulls a breath in and leans down onto her flat hand, her hair swinging forward past her cheek. Her arm keeps its own length as she comes down and the hand stays a hand, five fingers on the wood. The bone goes with her: it tips back a hair, falls through the hinge fast, clacks flat on the tray, bounces up a few degrees, drops shorter, and lies still as the hinge shuts, the pin dragging a line of window light down the metal. The card hops once and keeps its lettering; the stacked trays ring faintly. Camera: it rides down with her and pushes past her hand to the closing hinge, ending tight on the shut joint.
+
+-------------------------------------------------------------------------
+
+### K30 | 5s · VO "Yarı oynar eklemler omurgada bulunur; hareketleri kısıtlıdır."
+-----
+The column stands dead still for half a second: @iskelet's stack of small vertebrae vertical on its post, one amber light in each disc gap, @mira4 behind it with her hand flat on the bench. Then she shoves — her palm slides forward and knocks the round stand base, and the whole column leans as one row, each block turning a hair against the next and holding there, goes a few degrees further than it wants, springs back past upright, rocks twice smaller, and stands still again. The lights stay the same lights in the same gaps; no new vertebra grows in between. The hanging arm bones swing at the frame edges and tick against the ribs; dust jumps in the light; the stacked trays ring once. Camera: it kicks with the shove, then travels down the column to the lumbar gaps and stops where the lean was smallest.
+
+-------------------------------------------------------------------------
+
+### K31 | 5s · VO "Öne doğru eğilebiliriz, ama omurga bir kapı gibi katlanmaz."
+-----
+@mira4 stands at the bench for a beat, both hands flat on it, @iskelet hanging forward over its post in one long curve, the cabinet door standing open behind. Then she bends — she rises a little first, then goes down over the bench fast, her back rolling into one long curve from neck to hip, hair swinging forward across her cheek, elbows giving as her weight lands; she dips past where she meant to stop, comes back up a few centimetres, and settles low over the wood. Her back curves along its whole length instead of folding at one point, and her arms keep their length. Her sweater pulls at the shoulder, the bench creaks, and the open cabinet door drifts and knocks against its frame. Camera: it follows her down, then pans off her curved back to the skeleton's identical curve and holds the two together.
+
+-------------------------------------------------------------------------
+
+### K32 | 5s · VO "Oynamaz eklemler kafatasındadır ve asla hareket etmezler."
+-----
+@mira4's hands rest on the crown of the skull for a beat, the gold suture running down the dome between them. Then she loads and pushes — her shoulders lift, then drive down, her whole weight coming through straight arms into the bone; her fingertips flatten white, her knuckles pale, her hair swings forward past her temples. Her fingers stay on the surface and do not sink into the bone; the skull takes all of it as one solid piece, grinds a millimetre across the bench and stops hard, the gold zigzag holding its line and its width. She holds it, then lets go — arms rising, shoulders dropping as the breath goes out, eyes widening, lips closed. The jars on the sill rattle once. Camera: it pushes in over her hands onto the suture, kicks as the weight lands, and stays on the line that never moved.
+
+-------------------------------------------------------------------------
+
+### K33 | 5s · VO "Oradaki kemikler birbirine adeta kaynamıştır."
+-----
+@mira4's fingers pinch the torn strip of squared paper a hand's width clear of the cranial seam for a beat. Then she drives it in — the strip travels fast, hits the gold seam and stops dead, bowing up hard under the push, its torn fibres standing along the stopped edge, arching until it can arch no further. Not a millimetre of it enters the join, and the paper stays one strip with no piece tearing free. Then she eases off and it snaps back flat, flutters once, and hangs still between her fingers. Her forearm brushes the mug and the pencils tick against each other and lean back; her hair swings past her cheek; her eyes narrow, then lift as the answer arrives, lips closed. Camera: it pushes in past her knuckles to the contact point and holds there as the paper flattens, the sealed seam filling the frame.
+
+-------------------------------------------------------------------------
+
+### K34 | 10s · VO "Kemikler ve eklemler tamamdı. Ama kuklayı ne hareket ettirecekti?"
+-----
+The bench holds still for a beat: the ivory thigh bone, the brass-pinned pair and @kukla on its side, @mira4 standing back, one hand on the stone. Then she reaches in slowly, hesitates, and tips the puppet over — it rolls onto its back as one solid piece, every joint holding the angle it had, drifts a few degrees past flat, rocks gently back twice, and rests. No limb moves by itself and the wooden body keeps its length. Then it lies there while she waits for it. The thigh bone rolls a quarter turn and settles against the pinned pair; the trays ring softly; the amber ring at the hip carries its glow along unchanged. Her hand withdraws, her shoulders dropping with a long breath. The stamped box holds its violet letters. Camera: locked off at bench height, square to the row, still from first frame to last.
+
+-------------------------------------------------------------------------
+
+### K35 | 5s · VO "Kuklanın eklemleri vardı; ama onları çeken hiçbir şey yoktu."
+-----
+The bench holds still: @kukla's arm lies along the stone, the brass ball at its elbow catching a hard line of window light, @mira4's cheek on her folded arm, her far hand open and flat. Then the hand goes — the fingers spread wide, then snap into a hard fist, the knuckles rising white, the forearm tightening, and the fist thumps the stone once. Her fingers keep their length as they curl; nothing stretches. The bench answers: the wooden arm hops, the brass ball ticks and its line of light slides back, and the arm settles as it lay, elbow at the same angle, giving nothing of its own. Her hair swings across her cheek; the fist loosens and rests. Camera: it pushes low along the stone from her fist to the brass ball, kicking on the thump, ending on the joint that moved only because she hit the table.
+
+-------------------------------------------------------------------------
+
+### K36 | 5s · VO "Mira kolunu büktü ve kolunun üstü sertleşip kabardı."
+-----
+@mira4 holds the pose for a beat, forearm across her chest, her other hand spread over the upper arm. Then she pulls — her shoulder drops and loads, then the forearm snaps up hard, her body turning with it; the muscle under her fingers swells and goes rigid, lifting her fingertips clear, the arm rising past where it means to stop and settling back, full and still. The forearm keeps its length through the pull and her fingers stay on the muscle instead of sinking into it. Her hair swings forward and drops back; her sleeve slides down her forearm and catches. Then her brow lets go — eyebrows up, mouth closed, breath out — and her eyes fall to @kukla, whose jointed arm has given nothing. Camera: it pushes in and arcs to her working arm, then tilts down to the puppet's dead arm in the foreground and stops.
+
+-------------------------------------------------------------------------

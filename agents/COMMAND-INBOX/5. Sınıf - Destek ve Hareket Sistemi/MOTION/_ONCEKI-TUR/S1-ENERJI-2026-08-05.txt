@@ -1,0 +1,56 @@
+🔴 TASLAK — CANARY ONAYSIZ
+Bu dosya BASIM GÖREVİ DEĞİLDİR. Motion kanonu (T2) kapanmadan ve 8 kliplik canary
+Mami tarafından PASS almadan (T8) buradaki hiçbir blok Kling'e basılmaz.
+Ölçüm 2026-08-05: motion-lint 55/55 kırmızı · sessizlik kuyruğu 0/6 dosyada.
+olay-önde: 4 · olay-bitmiş: 5
+yeniden-basım önerilen: K4
+ENERJİ turu (§11) + canlı direktif: her karede sahneye özel TEK negatif (fiilden sonra, kalıp Lock: yok) ·
+kamera anlatıcı (K7 kemik→eklem→kas, K8 iskeleti açar, K9 iki şekli tek harekette birleştirir) ·
+şiddet kare kare ayarlandı: K1/K3/K9 sakin, K2/K4/K7 sert, K5/K6/K8 yükselen.
+Kamera kilidi yalnız K5'te (FEN BİLİMLERİ kapağı); K1 ve K6'da kamera küçük RESİM ATÖLYESİ tabelasını kadraj dışına atar.
+
+### K1 | 5s · VO "Okulun resim atölyesinde, dolabın kenarında tahta bir kukla asılıydı."
+-----
+The studio holds one still beat. Then the hanging @kukla dips back a few centimetres against the cabinet door and swings out on its hook, the whole carved body travelling as one piece with shoulder, hip and knee locked at the angles they were turned into; it goes a little past plumb, comes back, taps its heel softly on the oak, sways twice smaller and hangs still. Its hard shadow slides across the panel with it and stops. The apron on the peg rail stirs and dust turns through the window light. @mira4's head turns to the small sound, her hair moving against her cheek, her lips closed as her shoulders drop. It never takes a step and never bends a knee; it is carved wood on a hook. Camera: leaves the doorway and pushes slowly across the table, ending framed on the puppet alone in the cabinet shadow.
+-------------------------------------------------------------------------
+
+### K2 | 5s · VO "Mira onu indirdi; kolu tıkırdayarak büküldü."
+-----
+@mira4's thumb bears down on the brass ball of @kukla's elbow. The loose forearm sinks a finger's width, then whips up fast, overshoots past the right angle, drops back, swings twice shorter and shorter, and locks square with a click she feels through her thumb. The puppet kicks back in her left fist and she catches it, her elbow knocking the bench: the masking tape roll rolls a hand's width and stops on its rim, the water in the jar rings once, her curls bounce off her cheek. Only that one elbow changes angle — no second joint moves — and the head, chest and legs ride the recoil as one piece. Her lips stay closed and her brows lift. Camera: pushes in to hold on the brass ball just before it turns, taking a single shake on the click.
+-------------------------------------------------------------------------
+
+### K3 | 5s · VO "Kuklayı masaya oturttu ve elini çekti."
+-----
+@mira4's open hand hovers a finger's width from @kukla's wooden shoulder. Her fingers spread, and she draws the hand back across the boards to the table edge. Left to itself the seated puppet tips forward from the hips as one rigid piece, every joint holding its carved angle, goes a few degrees past upright, rocks back, sways twice smaller and settles plumb on the edge, its shadow swinging with it and stopping. It does not fold at the waist and does not slide off the table. The curl of paper on the near corner lifts and drops, the water in the brush jars trembles one ring, the aprons on the pegs stir. Her hair falls forward as she watches, lips closed, breath held. Camera: follows the withdrawing hand back, then leaves it and settles on the puppet sitting alone.
+-------------------------------------------------------------------------
+
+### K4 | 5s · VO "Kukla olduğu yerde yığıldı."
+🔴 YENİDEN-BASIM — VO'nun tek olayı olan çöküş kare açılmadan bitmiş; K3 zaten "el çekilmiş" kareyi verdiği için K4 dik oturan kukladan başlamalı ki cümle ekranda gerçekleşsin.
+-----
+@kukla lies sprawled across the oak boards, dead still, and @mira4's open hand hangs in the air above it, holding the shape of a shoulder that is gone. Her hand rises a few centimetres — then the whole arm drops and her palm lands flat on the boards with a knock. The fingers splay wide past flat, curl in, and settle. The table takes it: the brass lids on the foreground jar chatter, the water in both brush jars rings, the folded cloth slumps a fold, dust leaps through the window light, and the puppet's loose wooden hand jolts once against the wood and lies still. Her five fingers stay five and stay the same length as they land. Her shoulders drop with the breath she lets go. Camera: sinks to board level as the arm falls, the fallen puppet filling the foreground and leaving her small behind it.
+-------------------------------------------------------------------------
+
+### K5 | 5s · VO "Mira ise sabahtan beri ayaktaydı ve yığılmamıştı."
+-----
+@mira4 leans her weight into the palm on the table edge, sinking a fraction lower, then pushes off and comes up tall. She rises a hair past her full height, her heels lifting and setting back, her hair swinging up off her shoulders and falling, the apron hem swinging forward and back twice before it hangs still. The push travels through the bench: the brush jars rattle, one ring crosses the water, dust bursts through the sunbeam, and the steam over the tea glass on the stool bends and straightens. The FEN BİLİMLERİ book rides straight up with her, flat against the apron and square to the lens; not one letter on the cover changes shape. Her chin comes level, her breath going out. Camera: locked at eye height, square to the table, the fallen puppet low in the foreground while she rises inside the same still frame.
+-------------------------------------------------------------------------
+
+### K6 | 5s · VO "Peki insanı ayakta tutan şey neydi?"
+-----
+@mira4 lies with her chin on the back of her wrist behind the fallen @kukla. She presses down into her forearms for a beat, then shoves both palms flat and comes up off the boards, her chin clearing her wrist, her head rising a little past where it will stop, dropping back, settling. Her hair swings forward across her face and falls back. The shove goes through the table: the puppet's near foot rocks once in the foreground and stills, the powder jar lid chatters, brush handles nod in their jars, dust lifts through the window light. Her brows draw in and her eyes leave the wooden body for the empty air above it; her face stays the same face as it rises. Camera: pushes in low along the boards, past the puppet, and stops on her eyes as the question arrives.
+-------------------------------------------------------------------------
+
+### K7 | 5s · VO "Cevap üç kahramanda saklıydı: kemikler, eklemler ve kaslar."
+-----
+@mira4's three fingertips press into her own forearm, the skin blanching white under each pad. She draws them back a hair — then her hand closes into a hard fist, fast: a cord stands up at the wrist, the line of the forearm tightens, and the whole arm jumps a centimetre off the bench and knocks back down. The water in both brush jars rings, the grey cloth slides a finger's width, dust bursts through the window light. Then the fist springs open, fingers splaying past straight, closing a little, settling flat, and colour floods back into the three pale marks at three different speeds. The forearm does not lengthen and no extra finger appears. Camera: travels down the arm in one move — the bone ridge at the elbow, the fold of the wrist, then the fist — jolting once on the knock.
+-------------------------------------------------------------------------
+
+### K8 | 5s · VO "Mira kuklayı alıp fen sınıfına geçti."
+-----
+@mira4 rocks back onto one heel, then drives forward and walks the aisle fast, three long strides, @kukla riding against her chest as one piece, its loose hand and hanging foot swinging from the rhythm. Her skirt swings, her hair lifts and falls, and her shoulder clips a chair back: the chair rocks up on two legs, comes down, rattles and stills, and the mug of pencils on the near desk chatters. She plants her front foot, carries a half step past it, rocks back onto her heels and stops, her chin lifting. The puppet never moves on its own; it swings only because she does. Sunbars sweep across her and dust turns inside them. Camera: dollies with her at child height, then swings ahead of her as she stops, opening the frame onto the skeleton across the room.
+-------------------------------------------------------------------------
+
+### K9 | 5s · VO "Köşedeki iskelet modeli, kuklanın büyümüş hâli gibi duruyordu."
+-----
+@mira4 pushes off the desk with her flat palm and takes a step back, her head tipping up to take the whole of @iskelet in, her chin travelling a little past the skull, coming back down, settling. Her hair swings off her shoulders and drops. The push shakes the desk: the seated @kukla rocks back on the desktop as one rigid piece with every joint holding, comes forward, sways twice smaller and settles; the mug of pencils rattles; the stacked notebooks in the foreground slide a finger's width. @iskelet hangs still on its hook — no extra rib appears and no bone glows — only its long shadow swinging on the floor as she moves through the light. Her brows lift. Camera: starts on the seated puppet and cranes up and across to the skull, holding both inside the move so one shape becomes the other.
+-------------------------------------------------------------------------

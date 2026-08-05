@@ -2,18 +2,43 @@ DESTEK VE HAREKET — AŞAMA: KLİP BASILACAK
 ════════════════════════════════════════════════════════════════
 kare 52/52 ✓ (images/)   ·   klip 0/52   ·   VO ✓   ·   kurgu ✗
 
-SIRADAKİ ADIM
-  1. Destek ve Hareket_CANARY-MOTION.txt  →  YALNIZ 3 KLİP (K1 · K29 · K36)
-     Bas, sonra üç soru: klip başlarken bir şey oluyor mu? biterken bir şey
-     sürüyor mu? 'ne oldu' VO'suz okunuyor mu?
-  2. Üçü de EVET ise kalan 49 klip aynı lehçeye çevrilir, sonra basılır.
+🔴 2026-08-05 — MOTION LEHÇESİ KONUSUNDA ÜÇ TUR YANILDIK. OKU:
+  Bugün Claude, çalışan motion lehçesini BİLMEDEN iki ayrı yasa icat etti
+  ("already yasak", "110-150 kelime", "kalıp negatif yasak"). İkisi de yanlıştı
+  ve kredi yaktı. O dosyalar _GECERSIZ-YASALAR-2026-08-05/ altına alındı.
 
-BASILACAK DOSYA
-  ✓ 5. Sınıf - Destek ve Hareket Sistemi_BASIM-LISTESI.txt   (53 blok, K sırasında)
-  ✗ MOTION/_ESKI-SURUM/  →  BURADAN BASMA. Ölçüldü: %81'i 'already' ile açılıyor,
-    çalışan korpusta bu oran %0. Karantinada, silinmedi.
+  GEÇERLİ LEHÇE — motion yazacak herkes BURADAN öğrenir, ezberden yazmaz:
+    Biten/5. Sınıf - Hücre ve Organelleri/MOTION/
+    Biten/6. Sınıf - Bitkilerde Üreme ve Tohumun Çimlenmesi/MOTION/
+
+  Ölçülmüş kalıp (o korpustan, tahmin değil):
+   · `KAMERA NİYETİ:` Türkçe satırı — kameranın NE İÇİN orada olduğu
+   · Açılış `The clip opens with ... already ...` — YASAK DEĞİL, KURALIN ARACI:
+     hareket klipten ÖNCE başlamıştır, klip onun SONUNU alır
+   · 5 saniyede AYAĞA KALKMA · YÜRÜYÜŞE BAŞLAMA · OTURMAKTAN DOĞRULMA ·
+     NESNENİN EL DEĞİŞTİRMESİ **YOK** — sığmıyor, motor uydururken bozuyor
+   · Kamera YANLAMASINA gider, mesafe kilitlidir
+   · 🔴 Bir uzuv merceğe gelirken kamera YAKLAŞAMAZ — ölçüldü (K4): el gövdeden
+     koptu, masada dev bir nesne olarak kaldı
+   · Her blokta bir "begins X and ends Y" cümlesi
+   · Negatifler BOL, UZUN ve SAHNEYE ÖZEL — negatif bir çit değil İZİN BELGESİ:
+     neyin bozulabileceğini adlandırınca cesur hareketi güvenle yazarsın (Mami)
+   · 190-215 kelime · sabit kuyruk birebir:
+     "Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+      No whip-pan, no shake, no snap-zoom, no camera warp."
+
+SIRADAKİ ADIM
+  1. MOTION/S*-KANON-2026-08-05.txt  →  geçerli set budur.
+  2. 52'yi BİRDEN BASMA. Önce 3 klip, tut(ma)dığını gör, sonra gerisi.
+     Bugün iki kez 52 birden yazıldı ve iki kez kredi yandı.
+
+BASILMAYACAK
+  ✗ MOTION/_ONCEKI-TUR/      (sabahki tur — cansız)
+  ✗ MOTION/S*-ENERJI-*.txt   (enerji turu — kopan el, yürüme ihlali)
+  ✗ _GECERSIZ-YASALAR-2026-08-05/   (icat edilmiş yasalar)
 
 AÇIK NOT
-  · K24 · K32 · K49  →  yenisi yazılmadı, listede ESKİ SÜRÜM diye işaretli
-  · K45'in ALT sürümü var (bırakılan kare / düzeltilmiş kare) — seçim senin
-  · K29: VO 'Mira dizini bükünce' diyor ama karede Mira'nın dizi yok (start-frame kusuru)
+  · YENİDEN BASILACAK 9 KARE: K4 K14 K16 K21 K26 K29 K40 K44 K45
+    8'inin start-frame promptu hazır: PROMPTLAR/_YENIDEN-BASIM-2026-08-05.txt
+    K44'ünki HENÜZ YOK.
+  · K29: VO "Mira dizini bükünce" diyor ama karede Mira'nın dizi yok.

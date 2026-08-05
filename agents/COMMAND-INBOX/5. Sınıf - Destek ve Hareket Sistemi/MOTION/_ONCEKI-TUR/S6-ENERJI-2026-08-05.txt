@@ -1,0 +1,100 @@
+🔴 TASLAK — CANARY ONAYSIZ
+Bu dosya BASIM GÖREVİ DEĞİLDİR. Motion kanonu (T2) kapanmadan ve 8 kliplik canary
+Mami tarafından PASS almadan (T8) buradaki hiçbir blok Kling'e basılmaz.
+Ölçüm 2026-08-05: motion-lint 55/55 kırmızı · sessizlik kuyruğu 0/6 dosyada.
+olay-önde: 7 · olay-bitmiş: 1
+yeniden-basım önerilen: K45
+
+# Lehçe: _LEHCE-YASASI-2026-08-05.md + §11 ENERJİ + Mami'nin 2026-08-05 canlı eki
+#   (negatif geri geldi ama KALIP DEĞİL · kamera anlatıcıdır · dull yok, aptal show da yok)
+# Aralık K45–K52 = videonun FİNALİ. Her kare images/<n>.png açılarak yazıldı.
+#
+# §11 turu: "en küçük güvenli olay" bırakıldı; her karede fiziksel olarak olabilecek EN BÜYÜK olay,
+#   dört zamanıyla (hazırlık → hızlanma → aşma → sönümlü oturma) yazıldı.
+# `keeps its exact place` aralıktan tamamen SİLİNDİ; her klipte en az bir komşu tepki var.
+# NEGATİF: her blokta EN FAZLA BİR tane, `Lock:` satırı yok, ezber yok — negatif o karenin
+#   gerçekten yaşayabileceği bozulmaya yazıldı (K47'de boş kaide, K50'de basılı SÜT harfleri,
+#   K52'de kuklanın eklemi gibi). Önce fiil, sonra o tek negatif.
+# KAMERA: her klipte bir şey anlatıyor — K45 tembel maketlerden tepki veren yüze gider,
+#   K48 kızı bırakıp durmayan kalpte durur, K49 duruşla birlikte yükselir, K51 onunla koşar ve
+#   onunla durur, K52 videoyu kapatır. Amaçsız drift yok.
+# KAMERA KİLİDİ yalnız iki karede: K46 (cama kazınmış büyük "KALP", kadrajın ortasında) ve
+#   K50 (karton yüzündeki büyük "SÜT", kadrajın en okunaklı öğesi). K51'deki "OYUN" dikişi düşük
+#   kontrastlı ve kamera YANLAMASINA takip ediyor — yazı düzlemi lense göre dönmüyor, kilit gerekmedi.
+#   K52'deki "RESİM ATÖLYESİ" küçük ve kenarda — kamera serbest.
+# K45 = images/45.png. K45-ALT'ın kaynağı diye listelenen images/36.png BAŞKA BİR SAHNE — ALT sürüm yok.
+# Önceki turda "olay-bitmiş" sayılan K48 ve K52, §11 ile gerçek fiziksel artık olay verdi
+#   (tezgâh kenarından sarkan lastik · yeni asılmış kukla), o yüzden olay-bitmiş 3'ten 1'e düştü.
+
+------------------------------------------------------------------------
+
+### K45 | 5s · VO "Yavaştırlar ama yorulmazlar."
+🔴 YENİDEN-BASIM — Karede çalışan tek bir öğe yok (amber hiç basılmamış, iki maket de kapalı ve durgun), bu yüzden "yorulmazlar" hükmünü taşıyacak gerçek olay kalmıyor; elde kalan tek olay ön plandaki lastik bandın oturması ve dersle ilgisi yok.
+-----
+
+The frame opens dead still on the dark counter. Then the coiled pale band in the foreground lets go: its outer loop draws in a hair, springs outward fast across the laminate, overshoots into a wide flattened oval, wobbles twice shorter and shorter, and settles as the same single band, its two inner loops sliding a finger's width with it. It stays one band throughout, never doubling into a third loop. The slap reaches @mira4 — her chin comes up off her folded arms, her head turns down toward the sound, her hair swings forward and falls back, and she stops with her eyes on the band, lips closed. The standing tube and the stomach form ride out one small tick on their turned bases. Camera: pushes low along the birch plank, leaving the idle models behind, and eases to a dead stop on her face as her chin lifts.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K46 | 5s · VO "Kalp kası ise yalnızca kalpte bulunur."
+-----
+
+The frame opens still, @mira4 a step back from the brass case. Then she comes in fast: she pushes off, her weight carries forward, her flat hand lands on the dark counter with a knock, her hair swings past her cheek and falls back, and she stops with her face near the glass, eyes on the heart, lips closed. Under the panes the warm-golden line down the heart's front swells into one full beat, climbs past the strength it began at, falls back, gives a second smaller beat, and settles where it started. The moulded heart holds its own shape on the brass stand, the beat living only in the line; the etched KALP letters on the front pane keep their exact edges and never smear. Camera: locked off square to the case at counter height, holding the whole case in frame so the beat is the only moving thing.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K47 | 5s · VO "Şekli çizgili kasa benzer, çalışması düz kasa."
+-----
+
+The frame opens still, @mira4's hand resting on the wooden rail. Then her arm comes off the rail, swings over, and her palm lands flat on the birch tray with a thump. Everything standing on the tray answers at once: the banded heart rocks back on its turned pedestal, tips past its resting angle, swings twice shorter, and comes upright; the fine-ribbed brick-red forearm sways once on its own base; the smooth pale tube at the right ticks and stills. The turned stand between them stays empty through the whole thing — no fourth model grows on it — and the thin golden line down the heart's curve holds one even strength, giving nothing to the rail or her hand. Camera: pushes in fast with the thump, arriving on the rocking heart and easing to a full stop as it comes upright.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K48 | 5s · VO "Ömrümüz boyunca hiç durmadan çalışır."
+-----
+
+The frame opens still, sun bars lying across the cabinets and the stone counter. Then the pale band hanging over the counter edge gives: the loop slides a hand's width, drops, and swings out from the lip like a pendulum, overshoots past plumb, comes back twice shorter and shorter, and hangs still — one loop the whole way, its length never growing. @mira4 answers it: her chin comes up off her folded forearms, her shoulders lift, her head turns toward the sound and settles, lips closed and soft. Across the counter the warm-golden line down the heart's curve keeps beating its own slow even beat straight through, staying on its curve and reaching neither the birch tray nor the stone. Camera: leaves her with a slow push along the counter and comes to rest on the heart, still beating, as the band goes still.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K49 | 5s · VO "Sağlıklı bir destek ve hareket sistemi için duruşumuza dikkat etmeliyiz."
+-----
+
+The frame opens still, @mira4's hand flat on the table edge. Then she comes up: her knees give a hair, her hand pushes off the wood, her shoulders roll back and open, her chin lifts, and she rises a touch past her full height before easing back down onto both feet, standing taller than she began, eyes on @iskelet, lips closed. The push runs through the table — the shallow metal tray rings once and the small hand-bone model beside it ticks against the rim and rests; on the chair back the padded jacket takes the shudder, its empty sleeves swinging a finger's width and stilling. @iskelet answers nothing: its feet stay on the wheeled plate, every joint at its angle, the amber in its spine holding first-frame strength. Camera: stands up with her, rising a hand's width and easing to a stop as she settles.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K50 | 5s · VO "Süt ve yoğurt gibi kalsiyumlu besinler kemikleri güçlendirir."
+-----
+
+The frame opens still, @mira4's fingers closed on the carton's folded peak. Then she lets go fast: her fingers spring open off the card, her hand lifts away and swings back to her side, and the pinched cardboard peak springs out a hair, overshoots, flutters twice shorter, and stills. The counter takes the release — the milk in the glass climbs one side, slaps back, and flattens; the spoon standing in the yoghurt tips a finger's width, taps the glass rim, and rests. The carton stands where it stood, square to the lens, the printed SÜT letters keeping their exact shapes and never bending with the card. As it all goes quiet the warm amber inside the ivory bone comes up one clear step and holds within the shaft, the bone staying solid ivory. Camera: locked off square to the carton face, absolutely still from first frame to last.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K51 | 5s · VO "Bir de bol bol hareket etmek gerekir."
+-----
+
+The frame holds one still instant, then breaks: @mira4 drives off her back foot into two full running strides, her free arm pumping through, her skirt swinging out, her hair streaming back — then she plants her front foot hard, skids a hand's width, leans past her own balance, and swings back upright into a complete stop, her hair falling last. The canvas bag flies out ahead of her on its cords, overshoots past her hip, comes back twice shorter, and hangs still with its stitched face square to the lens. In her wake the pinned drawings on the corkboard lift and drop, and @iskelet rocks once as one solid piece on its wheeled stand, its raised arm held at its angle and never lowering. Camera: runs left beside her at her own speed, whip-fast, and stops dead the instant she does.
+
+-------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### K52 | 5s · VO "Mira kuklayı yerine astı; bu sefer hareket eden oydu."
+-----
+
+The frame holds one still instant, then breaks: @mira4 pushes off her back foot into one long stride toward the doorway, her trailing arm swinging through, her skirt carrying past her, and she plants, leans a hair too far, comes back, and stops square in the doorway light, head level, hair settling last. Behind her the cord she just let go gives, and @kukla swings out from the cabinet door as one solid piece, past plumb, back twice shorter, then hangs dead vertical, shoulder hip and knee holding their exact angles, its hard grey shadow sliding across the oak in the same shape. Its bare birch takes the room light and gives none back — no amber core or ring lights inside the wood. Camera: eases a hand's width toward @kukla as she stops, coming to rest with the still puppet and the lit doorway together on the last frame.
+
+-------------------------------------------------------------------------
