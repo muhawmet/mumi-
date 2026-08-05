@@ -557,7 +557,19 @@ const TRAPS = [
       // Bu ODANIN kararmasıdır ve dünya kartının MEŞRU saydığı şeydir (§5øø ayrımı:
       // oda karartılabilir, YÜZ karartılamaz). Kusur yalnız dışlama YÜZE ait olduğunda
       // doğuyor — o yüzden her dışlama eşleşmesinin PENCERESİNDE yüz sözcüğü aranır.
-      const YUZ = /\b(face|cheek(bone)?s?|skin|brow|jaw|forehead|chin|eyes?|features?)\b/i;
+      // ⚠ SAHİPLİK ŞARTI (2026-08-05, üçüncü daraltma — 13 kırmızı elle okununca ölçüldü).
+      // Bu korpusta `face` çoğu zaman NESNE YÜZEYİ demek, insan yüzü değil:
+      //   "the branded face of the timber box" · "the stencilled face of the sign"
+      //   "the faded face of the seed packet" · "the milk skin"
+      // Bu dosyanın kendi tarihinde aynı sınıf iki kez yaşandı (`surface` içindeki `face`,
+      // `handle` içindeki `hand`) ve \b sınırıyla çözüldü sanıldı — çözülmedi, çünkü sorun
+      // sınırda değil ANLAMDA. İnsan yüzü bu korpusta HER ZAMAN sahipli yazılır:
+      // "her face" · "his jaw" · "@mira3's face". Nesne yüzeyi ise "face OF the ...".
+      // ⚠ `\b` ALTERNASYONUN BAŞINA KONMAZ: `@` sözcük karakteri değildir, `\b@` hiçbir
+      // zaman eşleşmez ve @handle seçeneği sessizce ölür (ölçüldü — kendi kırmızı-kanıtı
+      // fixture'ım düştü, yani kural @mira3's face'i göremiyordu). Sınır kelime
+      // seçeneklerinin içine taşındı.
+      const YUZ = /(?:\b(?:her|his|their)|@[a-zçğıöşü]+\d*'?s?)\s+(face|cheeks?|cheekbones?|skin|brow|jaw|forehead|chin|eyes?|features?|head|profile)\b/i;
       const DISLAMA = [
         /\b(reaches|touches|lifts|falls on|catches)\s+(nothing|none)\b/gi,
         /\b(not|never)\s+@[a-zçğıöşü]+\d*'?s?\s+\w+/gi,
