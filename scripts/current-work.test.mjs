@@ -132,12 +132,27 @@ describe('canlı repo — ölçülmüş kusur geri gelmesin', () => {
   // (gate.sh:70) → commit BLOKE oldu. Yani duvar, işin BİTMESİNİ kusur sayıyordu.
   // Doğrusu: liste diskten okunur ve TEK test içinde dönülür — proje sayısı değişince test
   // sayısı oynamaz, ama kapsam aynı kalır. Yeni proje açıldığında da kendiliğinden kapsanır.
-  const AKTIF_DISI = new Set(['Biten', 'Bekleyen', 'DENEME']);
+  // ⚠ AD LİSTESİ DEĞİL, İMZA (2026-08-05'te ölçüldü).
+  //
+  // Eskiden `AKTIF_DISI = ['Biten','Bekleyen','DENEME']` diye bir KARA LİSTE vardı ve
+  // COMMAND-INBOX altındaki her klasörü proje sayıyordu. Üretim bir gün `REVIZE/` adında
+  // bir triyaj klasörü açtı ve test kırmızı yandı — klasör proje değildi, kapsayıcıydı.
+  // Kara liste üretimin bir sonraki klasörünü asla bilemez; aynı sınıf hata aynı gün
+  // `gate.sh`'in MOTION dalında da yakalandı ve orada da sözleşmeye çevrildi.
+  //
+  // Sözleşme: bir klasör ancak TESLİM İMZASI taşıyorsa projedir — seslendirme, enzim ya da
+  // prompt klasörü. Kapsayıcılar (Biten, Bekleyen, DENEME, REVIZE, …) bunları taşımaz.
+  const PROJE_IMZA = [/_SESLENDIRME.*\.(txt|md)$/i, /_ENZIM\.(md|txt)$/i, /^PROMPTLAR$/i];
+  const projeMi = (dir) => {
+    try {
+      return readdirSync(dir).some((f) => PROJE_IMZA.some((re) => re.test(f)));
+    } catch { return false; }
+  };
   const aktifProjeler = () => {
     const kok = join(REPO, 'agents/COMMAND-INBOX');
     if (!existsSync(kok)) return [];
     return readdirSync(kok, { withFileTypes: true })
-      .filter((d) => d.isDirectory() && !AKTIF_DISI.has(d.name) && !d.name.startsWith('.'))
+      .filter((d) => d.isDirectory() && !d.name.startsWith('.') && projeMi(join(kok, d.name)))
       .map((d) => d.name)
       .sort();
   };
