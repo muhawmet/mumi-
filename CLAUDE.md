@@ -75,6 +75,25 @@ ajan değil Codex çağrılır.
   kurduğunda (kod şurada kopuk, dosya şunu ihlal ediyor, ölçüm şu) o iddia Codex'e
   **çürütülebilir biçimde** verilir. Ölçüldü (2026-08-03): iki iddiadan birini DOĞRULADI,
   birini KISMEN'e düşürdü — ikinci göz tam olarak bunun için var.
+🔴 **AGY YALNIZ GÖZ DEĞİL — EL DE. GÖRSEL ÜRETİYOR VE REFERANS-EDİT YAPIYOR.**
+(Ölçüldü 2026-08-05, üç kare basılıp **gözle** doğrulandı. Mami'nin sorusu: *"illa yazılımcı
+mı olmam gerekiyordu?"* — hayır.)
+`Nano Banana 2` zaten Gemini ailesidir; yani tarayıcıda elle yapılan iş **terminalden**
+yapılabiliyormuş ve aylarca kimse bakmamış. Kanıtlar:
+- **Sıfırdan kare:** Hücre K01'in *gerçek* teslim prompt'u (6277 karakter) verildi → kasket,
+  bıyık, çay bardağı, zeytin ağacı, prompt'un istediği **tek tuğlalık boşluk** ışığıyla,
+  ve **`ÇİMENTO` doğru yazılmış** (Ç ve İ). K28 → **`RİBOZOM`**, noktalı İ doğru, harfler
+  taneciklerden.
+- **REFERANS-EDİT — asıl kazanç:** var olan kare + *"yalnız tulum mavi yerine hardal, başka
+  hiçbir şey değişmesin"* → usta, duvar, mala, kova, palet, ÇİMENTO, el arabası, çay, ağaçlar,
+  ışık, kadraj **birebir korundu**; yalnız istenen değişti. **Revize döngüsü budur ve 52
+  karenin 39'u oradan geçiyor.**
+- Çağrı biçimi olağan AGY çağrısıdır; prompt uzunsa dosyaya yazılıp *"şu dosyayı oku ve
+  birebir kullan"* denir. Çıktı doğrudan diske yazılıyor — indirme/adlandırma adımı yok.
+⚠ **SINANMAMIŞ olanlar** (hüküm verilmeden önce basılacak): `@handle` ile çok-kareli karakter
+tutarlılığı · yakın plan yüz · Mami'nin ödediği NB2 Pro ile kalite kıyası. Karar yolu
+değişmez: **8 karelik canary bas, Mami gözüyle NB2 çıktısıyla karşılaştır.**
+
 - **AGY = GERÇEK GÖZ.** Claude video izleyemez, ses duyamaz; bu yapısal körlük.
   🔴 **DOĞRU ÇAĞRI (2026-08-03'te ölçülerek bulundu, öncesi yanlıştı):**
   ```
