@@ -1,0 +1,126 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 5 (K35–K43) · REVİZE
+=========================================================================
+Denetim: TEK GEÇİŞ. Dokuz karenin dokuzu Read ile AÇILDI ve gözle okundu.
+Yazı taşıyan beş kare ayrıca kırpılıp büyütülerek harf harf okundu
+(K35 saat kadranı + çay kutusu · K36 "ÇAY" · K37 "HORMON" · K38 "SÜT" · K41 yıllar).
+K41'in iki eli ayrıca kırpılıp anatomi için bakıldı — temiz, beş parmak, ikisi de kola bağlı.
+Kıstas: Mami'nin yedi sınıfı. Estetik tercih, süreklilik nüansı ve arka plan detayı GEÇİLDİ.
+
+KARNE:  temiz 5  ·  yeniden-basım 4
+  temiz          : K37 · K40 · K41 · K42 · K43
+  yeniden-basım  : K35 · K36 · K38 · K39
+
+=========================================================================
+🔴 MAKRO HÜKÜM — dört kusurun ÜÇÜ tek bir yetenek boşluğundan doğuyor:
+   EKRANDAKİ YAZI DENETLENMİYOR, YALNIZ İSTENEN YAZI YAZILIYOR.
+=========================================================================
+
+Prompt her karede "TEXT:" slotunda İSTEDİĞİ yazıyı tarif ediyor ve NEGATIVE'de
+"NO English signage" satırı dünya kuyruğundan zaten geliyor. Ama motorun kendi
+uydurduğu yazı bu kapıdan geçiyor: kadraja giren HER teneke, HER kavanoz, HER
+pirinç plaka kendi etiketini doğuruyor ve o etiket İngilizce çıkıyor.
+
+  · K35 → çay kutusunun üstünde "TEA CADDY" (İngilizce, okunur boyutta)
+  · K38 → tezgâhın üstünde el yazısıyla "honey" (İngilizce, KOCAMAN, kadrajın
+          sol üçte biri) — üstelik bir önceki kare K37'de AYNI tezgâhta AYNI
+          madde ile "HORMON" yazıyordu; iki kare arka arkaya çelişiyor
+  · K39 → duvarda pirinç levha: "Büyüme Kayıtları" (Türkçe ve doğru yazılmış,
+          ama PLAN "TEXT: none — clean plate" diyor; ev koridoruna vidalanmış
+          müze künyesi, üstelik dersin ETİKET yasağının tam ortasında)
+
+ÇÖZÜM (kare-özel NEGATIVE'e, üç karenin üçüne): istenen yazının DIŞINDA kalan her
+taşıyıcı adıyla anılıp SUSTURULUR — "the tea caddy, the glazed jar and the milk pan
+carry no label, badge, script or maker's mark of any kind; the counter's stone is
+bare except for the one Turkish word; no plaque, sign or nameplate appears on any wall."
+Yalnız "NO English signage" yetmiyor: motor etiketi yasak sanmıyor, adlandırılmamış
+yüzeyi BOŞ sanıyor ve dolduruyor. Yasak değil, GİYDİRME gerekiyor (KİLİT 5, madde 4).
+
+Dördüncü kusur ayrı sınıf ve tek başına duruyor: K36'da "ÇAY" harfi bozuk.
+
+=========================================================================
+KARE KARE
+=========================================================================
+
+-------------------------------------------------------------------------
+# K35 — VO "Peki daha yavaş ve uzun süren işleri kim yönetir?"
+🔴 YENİDEN-BASIM — SINIF 3 (ekranda okunur İngilizce yazı)
+   Tezgâhın üstündeki teneke kutunun ön yüzünde iki satır İNGİLİZCE yazı okunuyor:
+   "TEA / CADDY". Kutu kadrajın orta düzleminde, odakta ve okunur boyutta.
+   Aynı kutu bir sonraki karede (K36) doğru şekilde "ÇAY" yazıyor — yani kadraj
+   kendi içinde de çelişiyor.
+   ⚠ Kadranın rakamları (12·1·2…11) KUSURSUZ, ışık ve kadraj kusursuz — tek
+     düzeltme kutunun yüzüdür.
+   DÜZELTME (tek cümle, TEXT ve NEGATIVE'e): tenekedeki tek yazı Türkçe "ÇAY"
+   olacak, kutunun geri kalanı ve kavanoz tamamen etiketsiz — "no English word,
+   no Latin brand script and no maker's mark appears anywhere in frame; the only
+   readable surfaces are the clock dial's numerals and the Turkish word ÇAY."
+
+-------------------------------------------------------------------------
+# K36 — VO "Bu işleri iç salgı bezleri üstlenir."
+🔴 YENİDEN-BASIM — SINIF 3 (Türkçe yazıda harf hatası, okunur boyutta)
+   "ÇAY" doğru heceleniyor ama Ç'nin ÇENGELİ İKİ KEZ basılmış: harfe bağlı küçük
+   bir sedilla var, bir de harfin ALTINDA, taban çizgisinin belirgin şekilde
+   dışında, kopuk duran ikinci ve daha büyük bir çengel. Kelime kadrajın
+   merkezinde, odakta, ~110 piksel eninde — kusur çıplak gözle görülüyor.
+   ⚠ Karenin geri kalanı bu sekansın en iyi işlerinden: çayın içindeki kenarsız
+     amber (hormon ışığının DOĞUŞU) tam yasanın istediği gibi, camın dışına bir
+     milim taşmıyor. O korunacak.
+   DÜZELTME (tek cümle, TEXT'e): "the word is exactly three letters — Ç (C with
+   ONE attached cedilla), A, Y — the cedilla touches the C and no second hook,
+   comma, dot or stray stroke sits below the baseline anywhere on the tin."
+
+-------------------------------------------------------------------------
+# K38 — VO "Hormonlar doğrudan kana karışır ve yavaşça yayılır."
+🔴 YENİDEN-BASIM — SINIF 3 (ekranda okunur İngilizce yazı, KOCAMAN)
+   Tezgâhın üstünde, el yazısı bir bal akıntısı hâlinde İNGİLİZCE "honey" yazıyor.
+   Kadrajın sol üçte birini kaplıyor, altın ışıkta parlıyor ve karenin ikinci en
+   dikkat çeken nesnesi. Bir önceki kare (K37) AYNI tezgâhta AYNI bal maddesiyle
+   "HORMON" yazıyordu — arka arkaya kesildiğinde ders kelimesi İngilizce bir
+   ürün adına dönüşmüş gibi okunuyor.
+   ⚠ "SÜT" harfleri (Ü diyerezli) KUSURSUZ, sütün içindeki kenarsız amber bulut
+     ve kabuk tam istenen şey. Yalnız tezgâhın sol şeridi düzelecek.
+   DÜZELTME (tek cümle, TEXT ve NEGATIVE'e): "the stone counter beside the pan is
+   bare, wiped and unmarked — no honey script, no handwriting, no English word and
+   no second lettering of any kind lies on it; the only readable surface in frame
+   is the Turkish word SÜT on the pan's body."
+
+-------------------------------------------------------------------------
+# K39 — VO "İç salgı bezlerinin lideri hipofiz bezidir."
+🔴 YENİDEN-BASIM — SINIF 4 (dünya kayması) + planlanmamış ETİKET
+   İki kusur bir arada, ikisi de aynı kareyi bozuyor:
+   (a) Kapıdan görünen mutfak @mutfak DEĞİL. Kadrajın en parlak ve en çok bakılan
+       yeri orası ve orada beyaz-kayın MODERN mutfak var: düz kapaklı hazır
+       dolaplar, paslanmaz evye + tek kollu batarya, stor perde ve — en kesin
+       kanıt — BERRAK CAM: bahçe net görünüyor. Referans kilidi *"pencere K56'ya
+       kadar BUĞULU, dışarısı görünmez"* diyor. Yani bu, dersin evinin mutfağı değil.
+   (b) Duvarda, paltoların yanında pirinç bir levha: "Büyüme Kayıtları". Türkçesi
+       ve yazımı doğru, ama PLAN bu kareyi "TEXT: none — clean plate" diye
+       kilitlemişti; bir ev koridoruna vidalanmış künye sahneyi eve değil SERGİYE
+       çeviriyor ve dersin "şema/etiket YOK" yasağının içine düşüyor.
+   ⚠ Karenin fikri (tek yanal hüzme, koridordaki her şeyin görünürlüğü ona borçlu)
+     kadrajda TUTMUŞ — kompozisyon korunacak, kapının ardı ve duvar düzelecek.
+   DÜZELTME (iki cümle): "through the open doorway the kitchen reads as @mutfak —
+   dark stone counter, the two-tier kettle on the stove and the window MISTED so
+   the garden cannot be seen; no pale flat-fronted modern units, no stainless sink,
+   no mixer tap and no clear glazing appear in it." + "the corridor walls carry no
+   plaque, nameplate, engraved brass sign or framed label of any kind."
+
+=========================================================================
+GEÇİLDİ — bilerek revize YAZILMADI (Mami'nin yedi sınıfına girmiyor)
+=========================================================================
+· K41 · K42 · K43 — kapıdan görünen mutfak burada da @mutfak değil, ama üçünde de
+  patlamış beyazın içinde, küçük ve okunmaz hâlde. K39'daki gibi net değil; kural
+  açık: arka planda zar zor seçilen detay GEÇER. (Motion'da o dikdörtgen bilerek
+  ÇÖZÜLMEDEN bırakıldı — kamera oraya gitmiyor.)
+· K41 — Efe pervaza değil kadraj dışına bakıyor; bu kare kusuru değil, MOTION işi.
+  Bakışın en alttaki çizgiye inmesi klibin yayı olarak yazıldı.
+· K41 — pervazdaki çizgiler eşit aralıklı bir ölçü şeridi gibi okunuyor; 2019 ·
+  2021 · 2023 yılları doğru, merdiven fikri ayakta. Estetik tercih, geçildi.
+· K37 — "HORMON" altı harfin altısı doğru; son N perspektifte yatık ama köşe
+  sırası (sol-üst → sol-alt → sağ-üst → sağ-alt) N'in kendisi. Temiz.
+· K35/K36/K37 arasında ocak tipi değişiyor (tezgâha gömülü göz ↔ ayaklı fırın).
+  Süreklilik nüansı, geçildi.
+· K42 — askıdaki boş palto + açık yaka: SİLUET OKUMASI için ayrıca bakıldı.
+  Kapalı bir koridorda kancaya asılı palto zararlı okuma üretmiyor. TEMİZ —
+  ama motion'da paltonun SALLANMASI yasaklandı (sallanan boş palto askıda
+  duran bir gövdeye benzemeye başlar; kilit cümlesi klibe yazıldı).

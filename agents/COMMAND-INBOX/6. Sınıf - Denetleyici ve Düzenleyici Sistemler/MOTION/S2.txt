@@ -1,0 +1,88 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 2 (K09–K14) MOTION
+=========================================================================
+Kling 3.0 · i2v · Efe bu sekansta YOK · @maket ÖLÜDÜR: dönmez, açılmaz,
+parçaları sırayla yanmaz. Hareket ışıkta, tozda ve kamerada.
+Kavram ışığı K11'de DOĞAR — K09 ve K10'da hiçbir parlama yoktur.
+temiz 3 · yeniden-basım 3. Revize gerekçeleri: REVIZE/S2.txt
+=========================================================================
+
+
+### K09 | 5s · VO "Sinir sistemi milyonlarca sinir hücresinden oluşur."
+frame: images/9.png · sha256:3fd29a1ee9cb3499268307a0
+KAMERA NİYETİ: Pirinç plakadan başlayıp boynun arkasına doğru yükselerek tek plastik yüzeyi kalabalığa çeviren yumuşak bir yükseliş.
+-----
+Dust is already turning in the daylight beside @maket, motes drifting down off the window and touching nothing, while steam rises out of focus far behind. Then the light itself does the work: the winter sun gains on the fogged pane, the white rectangle behind lifts, and the raking light reaches further across the back of the model's neck, so that more and more of the packed field of fine moulded threads picks up its own separate hairline highlight — a few dozen, then a whole bank, until the surface no longer reads as one piece of plastic but as an uncountable multitude. The clip opens showing a single object and ends showing a crowd. @maket is a dead-weight prop: it never turns, tilts, opens or shifts on its base, its modelled face never animates, and no part of it lights up on its own. The brass plate and its base are a fixed mass, and the camera never approaches the lettering. Camera: begins wide at table level on the brass plate, eases up and right along the neck as the highlights multiply, and rests with the thread field filling the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+
+-------------------------------------------------------------------------
+### K10 | 4s · VO "Bu hücrelere nöron denir."
+frame: images/10.png · sha256:aa263009f29a8b2dc642b890
+KAMERA NİYETİ: Odak üç çataldan yuvarlak uca doğru sürünürken tek ipliğin baştan sona tek bir nesne olduğu ortaya çıkar.
+-----
+Focus is mid-hunt when the clip begins: the plane of sharpness creeps along the moulded thread, the three fine forks at the upper end still soft, the long shaft crisp, the rounded body at the lower end short of legible. The dust fibre lying across the shaft trembles at one loose end where the room's air reaches it, and a mote drifts through the shallow focus and out again. Then the sharpness arrives at the rounded body and the whole length is readable at once — forks, shaft and body together, one continuous moulded object where there had been three separate blurs. The clip begins with a shape being hunted and ends with the shape held whole. Behind it the packed bundle remains a pale luminous field and never resolves into countable threads. The thread is rigid painted plastic and a fixed mass: it never bends, flexes, whips, twitches, brightens or turns into a wire, a cable or a strand of light, and nothing in this frame glows or sparks. Camera: starts tight on the three forks and creeps down the diagonal toward the rounded body, still travelling when the clip ends. Silent clip, no audio, no dialogue, no mouth or face anywhere in frame, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+
+-------------------------------------------------------------------------
+### K11 | 5s · VO "Nöronlar mesajları elektrik sinyalleri gibi taşır."
+frame: images/11.png · sha256:09ed6ea186e245ff750249f2
+KAMERA NİYETİ: Kamera altın çizginin boyunca yürüyüp yumuşak bir kenar arar ve hiçbir yerde bulamaz.
+-----
+The golden sliver is lying on the top edge of the thread before anything else happens, and it has no beginning to show: no beam arrives, no source appears, nothing travels toward it. What moves is everything around it. Cold daylight breathes across the bundle behind as the pane brightens, dust motes turn through the shallow focus, and the paint flake at the moulding seam lifts a fraction. The camera runs the length of the band looking for a soft edge and never finds one; it holds the same knife-hard boundary end to end and stops dead where the forks begin. The plastic beneath it, the bundle behind and the wood below take no warmth from it, and the cool blue filling the lower half holds its hue all clip. The clip opens with a light you might read as a highlight and ends with a light you have understood is different. The sliver never widens, dims, flickers, pulses, travels, grows a halo or becomes a spark, an arc, a wire or a lightning bolt. Camera: tracks slowly rightward along the lit edge, still moving as the clip ends. Silent clip, no audio, no dialogue, no mouth or face anywhere in frame, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+
+
+-------------------------------------------------------------------------
+### K12 | 4s · VO "Bu yüzden sinir sistemi çok hızlı çalışır."
+frame: images/12.png · sha256:cc17d6fbf4a8690a4111e31a
+KAMERA NİYETİ: Kesintisiz altın çizginin boyunca aşağı inen sakin bir kayma — ama önce kare yeniden basılacak.
+-----
+🔴 MOTION INTENT — final motion YAZILMADI, kare yeniden basılacak.
+Karenin üst şeridi bir EL okuyor (beyin ve beyincik lobları parmak eklemi gibi duruyor),
+@maket'in geometrisi etli/organik bir kütleye kaymış ve altın çizgi hâle vererek ahşap
+tabana kadar iniyor. Motion bunların hiçbirini onaramaz — hepsi kare kusuru.
+NİYET (yeni kare gelince yazılacak): kamera omurilik soğanının altından başlayıp çizginin
+boyunca boyun köküne kadar iner ve çizginin hiçbir yerde ne başladığı ne bittiği görünür —
+tek olay, kameranın yolculuk arayıp bulamamasıdır. Maket hiç kıpırdamaz.
+Gerekçe ve delta: REVIZE/S2.txt → K12.
+-----
+DURUM: 🔴 YENİDEN-BASIM — siluet bir el okuyor · @maket geometrisi kaymış (beyincik şişmiş, omurilik soğanı ayrı gövde olarak yok, kütle etli) · altın çizgi hâle veriyor ve tabana değiyor.
+
+
+-------------------------------------------------------------------------
+### K13 | 5s · VO "Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır."
+frame: images/13.png · sha256:c47059213b9843194c1566e5
+KAMERA NİYETİ: Odak düzlemi merkezî sütunda kilitliyken kenarlara kaçan iplikler daha da çözülür — ama önce kare yeniden basılacak.
+-----
+🔴 MOTION INTENT — final motion YAZILMADI, kare yeniden basılacak.
+Maket boş göz çukurlu bir KAFATASI olmuş (altıncı sınıf materyalinde ölüm imgesi),
+"FEN BİLİMLERİ" etiketi 90° döndürülmüş basılmış, ve karenin fikri — merkez net, çevre
+çözülüyor — hiç gelmemiş: iki yana giden tek bir iplik bile yok. Oda da kütüphaneye kaymış.
+NİYET (yeni kare gelince yazılacak): kamera hiç yer değiştirmez, yalnız odak düzlemi bir
+tık daralır; merkezî sütun daha da çivilenirken iki kenardaki iplikler tamamen erir.
+Ayrımı yapan tek şey odaktır ve klip onu bir kez daha sıkarak biter.
+Gerekçe ve delta: REVIZE/S2.txt → K13.
+-----
+DURUM: 🔴 YENİDEN-BASIM — maket kafatasına dönmüş · "FEN BİLİMLERİ" 90° dönük basılmış · merkez/çevre ayrımının görsel taşıyıcısı yok · oda kütüphaneye kaymış.
+
+
+-------------------------------------------------------------------------
+### K14 | 5s · VO "Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur."
+frame: images/14.png · sha256:947c27c24e1e9c2b66aae2a8
+KAMERA NİYETİ: Açık kafatasının içinde dört parçanın üstünden geçen tek bir yayılım — ama önce kare yeniden basılacak.
+-----
+🔴 MOTION INTENT — final motion YAZILMADI, kare yeniden basılacak.
+İçerik doğru, TAŞIYICI yanlış: dört parça (beyin · beyincik · omurilik soğanı · omurilik)
+sekansın en iyi anatomi okuması ve pirinç plaka projenin en iyi yazı render'ı — ama nesne
+ten renkli büst değil, dişleri görünen kemik bir kafatası, boyun yok ve omurilik masanın
+üstüne yatay uzanıyor.
+NİYET (yeni kare gelince yazılacak): tek bir gündüz yalaması açık kafatasının içinden geçer
+ve dört parçanın dördü de sırayla DEĞİL, aynı anda kendi gölge desenini kazanır; kamera
+plakadan başlayıp içeri süzülür ve dört parça kadraja yerleşince durur.
+Gerekçe, korunacaklar ve delta: REVIZE/S2.txt → K14.
+-----
+DURUM: 🔴 YENİDEN-BASIM — @maket çıplak kemik kafatası olmuş (diş görünür, boyun yok, kapak havada) · omurilik boyundan inmiyor, masaya yatay uzanıyor. ⚠ Dört parçanın yerleşimi ve pirinç plaka KORUNACAK.

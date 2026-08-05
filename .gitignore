@@ -65,5 +65,12 @@ agents/COMMAND-INBOX/**/*.jpg
 !agents/COMMAND-INBOX/**/images/.gitkeep
 artifacts/codex-69-prompts/
 canli.log
-agents/COMMAND-INBOX/*/REVIZE/S*.txt
-agents/COMMAND-INBOX/*/MOTION/S*.txt
+# 🔴 KALDIRILDI (2026-08-05) — bu iki satır TESLİM DOSYALARINI eliyordu.
+# Ölçüldü: Denetleyici'de 6 MOTION dosyası (56 blok) ve 6 REVIZE dosyası bir günlük işin
+# tamamıydı ve HİÇBİRİ git'te değildi. Mami "evde çalışacağım" dediğinde o iş öbür makinede
+# yoktu. Çelişki kendi kanonumuzdaydı: `current-work.mjs` KIT tanımı MOTION ve revize'yi
+# TESLİM PARÇASI sayıyor (`dir: 'MOTION'`, `dir: 'revize'`), .gitignore ise onları çöp
+# sayıyordu. Aynı sınıf 2026-07-29'da bir kez ölçülmüştü: yasa yazıldı, PUSH EDİLMEDİ,
+# ertesi gün öbür makine onsuz çalıştı ve 141 saniyelik video çöpe gitti.
+# Desen `S*.txt` idi ve teslim biçimi tam olarak `S1.txt`, `S6-S7.txt` — yani eleme
+# doğrudan teslimi vuruyordu. Kareler (.png) ignore'lu KALIR, metin teslimi taşınır.

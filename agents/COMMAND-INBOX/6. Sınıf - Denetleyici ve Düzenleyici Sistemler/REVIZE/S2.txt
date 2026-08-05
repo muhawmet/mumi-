@@ -1,0 +1,162 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 2 (K09–K14) REVİZE
+=========================================================================
+Denetim: tek geçiş, altı kare Read ile açıldı ve gözle okundu (2026-08-05).
+temiz 3 (K09 · K10 · K11)  ·  yeniden-basım 3 (K12 · K13 · K14)
+=========================================================================
+
+
+🔴 KÖK NEDEN — ÜÇ REVİZENİN DE SEBEBİ AYNI VE KAREDE DEĞİL
+
+@maket REFERANSI HİÇ BASILMADI. `_REFERANS-PROMPTLARI.txt` dört referansı yazmış ve
+"sıra basımda" demiş; `images/` altında 1-56 dışında tek dosya yok. Yani 14 karede dönen
+en pahalı nesne TARİFE bırakıldı — ve envanterin kendi cümlesi bunu önceden söylemişti:
+*"tag'li: tarife bırakılırsa parça geometrisi her karede kayar."*
+
+Kaydı ölçtüm. @maket altı karede ÜÇ AYRI NESNE oldu:
+  K09 · ten renkli, yüzü tam, boynu tam plastik BÜST; kafatası kapağı yanda masada duruyor
+  K12 · boynun içi; beyincik iki dev lobe şişmiş, omurilik soğanı ayrı bir gövde olarak YOK
+  K13 · göz çukurları BOŞ, dişleri açıkta bir KAFATASI; beyin başın yanından dışarı taşmış
+  K14 · kemik renginde çıplak KAFATASI, boyun YOK, kapak havada ayrı duruyor,
+        omurilik masanın üstüne yatay bir kuyruk gibi uzanmış
+
+Bu bir yazım kusuru değil — üç blok da doğru yazılmıştı ("the model is a bust and ends at
+the base of the neck" üçünde de KARE-ÖZEL YASAK'ta yazılı). Metin motoru tutmadı; tutacak
+olan şey referans sayfasıydı ve o basılmadı.
+
+⚠ SIRA: önce @maket referansı basılır (ve o sayfada omuriliğin arka yüzündeki ince paralel
+kabartı iplikler MUTLAKA görünür — S2 bloğunun `FACT REQUIRED` notu bunu istiyordu), sonra
+K12-K14 aşağıdaki deltalarla yeniden basılır. Referans basılmadan yeniden basmak aynı
+kaymayı üçüncü kez satın almaktır.
+
+
+-------------------------------------------------------------------------
+# K12 — 🔴 YENİDEN-BASIM
+VO 12: "Bu yüzden sinir sistemi çok hızlı çalışır."
+
+NE BOZUK
+ 1. SİLUET OKUMASI. Kadrajın üst şeridi tek bakışta **bir el** okuyor: beyin lobları
+    parmak eklemleri, beyinciğin iki şişmiş lobu da parmaklar gibi duruyor ve maketi
+    kavrıyormuş gibi görünüyor. VO'yu duymayan biri "bir el maketi sıkıyor" der.
+    Karede insan yok ama kare insan gösteriyor — okuma izleyicinindir.
+ 2. @maket geometrisi kaymış: beyincik iki dev sosis lobe şişmiş, omurilik soğanı ayrı ve
+    ince silindirik bir gövde olarak okunmuyor, kütle etli/kırışık organik görünüyor.
+    "sert mat plastik" kilidi kırık.
+ 3. Altın çizgi HÂLE VERİYOR. Komşu kabartılı yüzeye taşan yumuşak bir parlaklık var —
+    blok "no halo, no bloom, no glow spilling off it" diyordu. Çizgi bir kenarda değil,
+    içeriden sızan bir YARIK gibi okuyor (LED şerit etkisi).
+ 4. Işık TABANA DEĞİYOR: çizgi aşağıda ahşap tabandaki metal vidayla buluşuyor.
+    Blok "the wooden base, the brass plate and the table are completely cold" diyordu.
+
+DÜZELTME — mevcut K12 bloğuna uygulanacak delta (gövde metni korunur)
+ · Kadraj cümlesi netleştirilir: kamera maketin ARKASINDAN VE SOLUNDAN, boyun hizasında;
+   kadrajın üst kenarı **omurilik soğanının hemen ALTINDA** kesilir. Beyin ve beyincik
+   kadraja HİÇ girmez — kavrama okuması yalnız o iki gövde kadrajdayken doğuyor.
+   Eklenecek: "the frame is cut at the top just below the medulla; the brain and the
+   cerebellum are entirely outside the frame and no rounded, lobed or knuckled mass
+   appears along the upper edge."
+ · KARE-ÖZEL YASAK'a eklenecek: "nothing in the frame reads as a hand, a fist, a set of
+   fingers or knuckles gripping the model; no rounded lobed masses cluster along the top
+   edge; every surface is hard dry matte painted plastic and nothing is soft, wrinkled,
+   fleshy, swollen or organic."
+ · Çizgi cümlesi sıkılaştırılır: "the sliver rides the OUTERMOST silhouette edge of the
+   cord against the background, not a seam or a slot inside the model, and no light
+   appears to leak from inside the plastic."
+ · Taban kilidi: "the sliver is cut dead at the neck root and never reaches the wooden
+   base, the screw heads, the brass plate or the tabletop — those take no warmth at all."
+
+DURUM: 🔴 YENİDEN-BASIM
+
+
+-------------------------------------------------------------------------
+# K13 — 🔴 YENİDEN-BASIM
+VO 13: "Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır."
+
+NE BOZUK
+ 1. Maket bir KAFATASI oldu: göz çukurları boş ve karanlık, yüz kemik maskesi gibi,
+    beyin başın yanından dışarı taşmış. Altıncı sınıf materyalinde bu ölüm imgesidir ve
+    K09'daki ten renkli büstle aynı nesne olduğu okunmuyor.
+ 2. YAZI HATASI — "FEN BİLİMLERİ" etiketi **90° DÖNDÜRÜLMÜŞ** basılmış (aşağıdan yukarı
+    okunuyor). Blok birebir "Reads left-to-right, never mirrored, reversed or rotated"
+    diyordu. Harfler ayrıca içi boş hayalet konturlar, kurşun kalem grafiti değil.
+ 3. Karenin FİKRİ hiç gelmemiş. İstenen şey "ortada net dik sütun ↔ iki yana çözünen
+    iplikler" idi; karede iki yana giden TEK bir iplik yok, merkezî dört parça da bu
+    mesafede okunmuyor. VO 13'ün görsel taşıyıcısı sıfır.
+ 4. Oda kaydı: iki duvarı kitaplıklı bir KÜTÜPHANE geldi. K09'da masa + raf + buğulu cam,
+    K14'te şömine rafı var — altı karede üç ayrı oda.
+ 5. Defter cilt bezi kaplı bir kitap, etiket ise kıvrılmış kocaman bir kâğıt yaprak —
+    "kapağa yapıştırılmış küçük beyaz kâğıt etiket" değil.
+
+DÜZELTME — delta
+ · @maket cümlesine olumlu gövde yazılır (referans basıldıktan sonra bile): "the model is
+   the same skin-toned plastic bust as before — a complete moulded face with closed
+   modelled eyes in their sockets, a full neck and shoulders; it is never a bare skull,
+   never bone-coloured, has no empty eye sockets, no exposed teeth and no jaw."
+ · Yazı taşıyıcısı DEĞİŞTİRİLİR. Etiket bu kadar uzakta ve bu kadar eğimliyken harf
+   kurtarılamıyor. İki seçenekten biri: (a) defter kadrajdan çıkarılır ve karenin yazısı
+   YOK olur (plaka zaten K09 ve K14'te taşıyor), (b) defter ön plana getirilip etiket
+   sensöre PARALEL ve büyük yazılır. **Tavsiyem (a)** — bu karenin işi ayrımı göstermek,
+   yazı taşımak değil; yazı bütçesi K09/K14'te zaten ödendi.
+ · Ayrımın taşıyıcısı olumlu yazılır: "the four stacked parts of the central column are
+   large in frame and held sharp from top to bottom, while the moulded threads leaving the
+   cord to left and right go progressively out of focus until their ends dissolve; the
+   division is carried by focus alone."
+ · Oda kilidi: "the room is the same table and shelf and fogged window as before — no
+   bookshelves, no library, no book spines on any wall."
+
+DURUM: 🔴 YENİDEN-BASIM
+
+
+-------------------------------------------------------------------------
+# K14 — 🔴 YENİDEN-BASIM
+VO 14: "Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur."
+
+NE BOZUK — ⚠ bu kare az kalsın tutuyordu, kusur İÇERİKTE değil TAŞIYICIDA
+ 1. Taşıyıcı yanlış: kemik renginde çıplak bir kafatası, dişleri görünür, boyun YOK,
+    kafatası kapağı havada ayrı ve ölçeği tutmuyor. @maket "BÜST — baş ve boyun."
+ 2. Omurilik kafatasından çıkıp masanın üstüne YATAY uzanmış — boynun içinden aşağı
+    inmiyor. Organik bir hortum/kuyruk gibi okuyor.
+ 3. Diş ve boş kemik = ölüm imgesi; K09'un ten renkli büstüyle aynı nesne değil.
+
+NE TUTMUŞ — YENİDEN BASARKEN BUNLARI KORU
+ · Dört parça DÖRT AYRI GÖVDE olarak okunuyor: kıvrımlı büyük beyin · paralel çizgili
+   beyincik · pürüzsüz KISA SİLİNDİR omurilik soğanı · ondan çıkan ince omurilik.
+   Sekansın en iyi anatomi okuması bu karede. Aynı yerleşimi koru.
+ · Pirinç plaka: "İNSAN SİNİR SİSTEMİ" harf harf DOĞRU, büyük, dik roman, İ noktaları
+   yerinde. Projenin en iyi yazı render'ı. Aynı ölçek ve aynı açıyla koru.
+ · Yüzeyler mat ve kuru okuyor — ıslak/kanlı/etli DEĞİL. Bu kilit tutmuş.
+
+DÜZELTME — delta
+ · Taşıyıcı cümlesi: "the camera looks down into the OPENED LEFT HALF of the same
+   skin-toned plastic bust — the removed skull cap is lying face-up on the tabletop beside
+   the base exactly as in the establishing shot, not floating in the air; the bust's face,
+   cheek and full neck stay in frame at the left, and the spinal cord runs DOWN through
+   the neck root, never out across the table."
+ · KARE-ÖZEL YASAK'a eklenecek: "no bare skull, no bone-coloured cranium, no visible
+   teeth, no jaw, no empty eye sockets; the skull cap is resting on the table and is never
+   airborne, tilted in mid-air or larger than the head it came from."
+
+
+DURUM: 🔴 YENİDEN-BASIM
+
+
+-------------------------------------------------------------------------
+SARI — REVİZE DEĞİL, YENİDEN BASILIRKEN BAKILACAK (kredi yakmaz)
+
+K10 · Nöron ipliğinin yuvarlak ucu CAM GİBİ PARLAK — plastik boncuk yerine bir sıvı damlası
+      okuyor. "nemli görünmez" kilidinin kıyısında. Ayrıca arkadaki demet kitap sırtı gibi
+      beyaz-lacivert bir kütle olmuş ve iplik maketten AYRI, üstte duran bir çubuk gibi
+      duruyor (blok "joined into the moulded plastic along its whole length" istiyordu).
+      Kare yine de VO 10'u tek başına taşıyor — basmaya değmez.
+K11 · Alt yarıda doygun KOBALT MAVİ bir ışık yaması var. Dünya kuyruğu "open luminous
+      blue-indigo" diyor, bu ondan bir tık daha doygun ve renkli bir ışık gibi okuyor.
+      Altın çizgiyle çatışmıyor, aksine soğutuyor — bırakıyorum, ama motion'da o mavinin
+      klip boyunca kaymaması kilitlendi.
+K09 · Pirinç plakanın harfleri EĞİK (oblik) bir sans; K13 ve K14'te aynı plaka DİK roman.
+      Aynı nesnenin iki ayrı yazı karakteri. K09'un ölçeğinde göze çarpmıyor, bırakıyorum;
+      yeniden basılan karelerde K14'ün dik roman'ı standart alınsın.
+K09 · "milyonlarca" iddiasının taşıyıcısı olan sayısız kabartı iplik alanı kadrajda çok
+      küçük kalmış — boynun arkasında zar zor okunuyor. Motion bunu ışıkla çoğaltarak
+      kurtarıyor (bkz. MOTION/S2.txt K09), yeniden basım gerekmiyor.
+
+
+temiz: K09 · K10 · K11

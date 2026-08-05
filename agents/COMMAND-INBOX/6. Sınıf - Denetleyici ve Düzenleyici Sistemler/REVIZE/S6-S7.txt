@@ -1,0 +1,111 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 6+7 (K44–K56) · REVİZE
+=========================================================================
+On üç karenin on üçü açıldı. Ayna için images/1 de açıldı ve K56 ile yan yana okundu.
+Yazı taşıyıcıları ayrıca kırpılıp büyütülerek harf harf okundu (K53 pirinç plaka,
+K45 kadran, K46 ve K49 tenekeleri, K56 raf tenekeleri). Efe'nin elleri K49 ve K56'da
+ayrıca kırpıldı.
+
+KIstas: Mami'nin yedi sınıfı + ayna. Estetik tercih, süreklilik nüansı, malzeme tonu,
+arka plan detayı ve kadraj mesafesi RAPORLANMADI — şüphede kalan her kare TEMİZ sayıldı.
+
+SONUÇ: temiz 10 · yeniden-basım 3 (K45 · K53 · K56).
+=========================================================================
+
+
+🔴 K45 — EKRANDA İNGİLİZCE YAZI (sınıf 3 · ekrandaki yazı)
+-------------------------------------------------------------------------
+Terazinin kadranı kadrajın sol üçte birini kaplıyor ve üstünde okunabilir boyutta
+İNGİLİZCE üç kelime var: "GRAMS" (bir kez) ve "KILOGRAMS" (iki kez). Kare promptunun
+TEXT bloğu bunu açıkça yasaklamıştı ("No word, no letter and no name appears on the
+dial") ve daimi direktif ekranda yalnız Türkçe diyor. Karenin en büyük okunur öğesi bu.
+Ayrıca kadran 0–10 arasında sayarken "10" iki kez yazılmış, "11" yok.
+
+DÜZELTME (tek cümle prompt'a): kadran K44'ün kadranıdır — beyaz emaye yüz, pirinç
+çerçeve, yalnız 0'dan 5'e rakamlar, üstünde HİÇBİR kelime yok; terazi de K44'teki
+lacivert dökme gövdeli aynı terazidir, aynı yönde ve aynı yerde durur.
+
+⚠ Not: aynı terazi K46'da da başka bir teraziye dönüşmüş (beyaz gövde, farklı kadran).
+K46'nın kendi fikri (boşalmış kefe · alçakta kilitli ibre · tanelerin içindeki amber ·
+kedi) tutuyor, o yüzden K46 TEMİZ sayıldı — ama K45 zaten yeniden basılacaksa, K46'yı
+da aynı teraziyle bastırmak ibre karşılaştırmasını (K44 çizgide → K45 üç çentik yukarı →
+K46 üç çentik aşağı) tek seferde kurtarır. **Karar Mami'nin.**
+
+
+🔴 K53 — DERSİN KAPANIŞ KARŞILAŞTIRMASI KAREDE YOK (sınıf 7 · kavram ışığı)
+-------------------------------------------------------------------------
+K53 ile K54 dersin hükmünü kesimle söyleyen ÇİFT'tir: birebir aynı kadraj, tek fark
+ışığın davranışı. Teslim edilen K53'te iki şey ters:
+
+1. Olması gereken TEK SERT-KENARLI ALTIN ÇİZGİ (maketin ensesinden inen parçanın dış
+   hattında, parça bitince kesik) karede HİÇ YOK. Sinir ışığının tek başına gösterildiği
+   kanıt karesi bu; o çizgi olmayınca VO 53 ("elektrik sinyalleriyle, hızlı ve kısa
+   süreli") kareyle karşılıksız kalıyor.
+2. Bu karede BİLEREK kesilmesi gereken kenarsız hormon amberi duruyor: cam demlikteki
+   koyu amber çay kadrajın sağ üçte birinde ve ışıyor. Yani K53, K54'ün resmini veriyor.
+
+Ek olarak çift sözleşmesi tutmuyor: K54'te maket başka (kafatası kapağı iki kanat
+hâlinde açılmış ve içi boş), kaide başka (düz tahta altlık, pirinç plaka yok), demlik
+başka, masa açısı başka.
+
+DÜZELTME: K53, K54'ün kadrajıyla YENİDEN kurulur — aynı lens, aynı yükseklik, aynı yön,
+aynı mesafe, aynı maket, aynı kaide, aynı demlik, aynı yerlerde. Değişen tek şey ışığın
+davranışıdır: maketin ensesinden inen parçanın dış hattında tek sert-kenarlı altın çizgi
+durur ve parça bitince kesilir; çayın içinde kenarsız amber YOKTUR, çay nötr ve soğuk
+okunur; masa, pirinç plaka ve kafatasının kalanı ışığa hiç değmez.
+(K54 temiz ve olduğu gibi kalır — ucuz olan K53'ü ona uydurmaktır.)
+
+
+🔴 K56 — AYNA TUTMUYOR (ENZIM KİLİT 3)
+-------------------------------------------------------------------------
+Üç ayna farkı DOĞRU basılmış ve üçü de karede duruyor:
+  · demlikteki su → koyu amber ✅
+  · masadaki bardak → düz duruyor ve ağzına kadar dolu ✅
+  · pencere camı → alt yarısı silinmiş, karlı bahçe berrak görünüyor ✅
+
+Taşıyıcı kadraj yanlış. K01 ile K56 aynı odayı iki AYRI kameradan gösteriyor:
+
+|                | K01 (images/1)                          | K56 (images/56)                    |
+|----------------|-----------------------------------------|------------------------------------|
+| kamera yeri    | kapı eşiğinden içeri, koridordan        | mutfağın içinden tezgâh boyunca    |
+| Efe            | ARKADAN, ocağın başında, kolu kalkık    | ÖNDEN, masanın yanında, kol masada |
+| duvar saati    | kadrajın SAĞINDA                        | kadrajın SOLUNDA                   |
+| pervaz/yıllar  | kadrajda (2019 · 2021 · 2023)           | kadrajda yok                       |
+| pencere        | kadrajın ORTASINDA                      | kadrajın SAĞINDA                   |
+
+Ayna bir kadraj sözleşmesidir; aynı odanın başka bir planı ayna değildir. İzleyici
+kapanışta "başladığımız yere döndük" hissini kadrajdan alır, envanterden değil.
+
+DÜZELTME: ENZIM'in üretim notu birebir uygulanır — K56 METİNLE KURULMAZ. K01'in TESLİM
+EDİLEN karesi (images/1.png) motora referans olarak verilir ve prompt yalnız üç farkı
+söyler: demlikte koyu amber, masada düz ve dolu ince belli bardak, camın alt yarısı
+silinmiş ve karlı bahçe berrak. Efe aynı yerde, aynı duruşta, ARKADAN; kamera K01'in
+yerinde, aynı yükseklikte, aynı yönde.
+
+
+=========================================================================
+TEMİZ SAYILAN ON KARE — ve şüphede bırakılan noktalar (revize DEĞİL)
+
+K44 · terazi kadranı yalnız rakam taşıyor, harf hatası yok; ibre çizgide, tek ibre.
+K46 · @kedi rafta, kefe boş, tanelerin içindeki amber okunuyor. "Tuz" tenekeleri
+       kadrajda ve doğru yazılmış (kare planı yazısız istiyordu — imla temiz, geçildi).
+K47 · düşmüş tencere yerde, hiçbir şey havada değil, amber emayenin ve karonun içinde.
+K48 · sert kenarlı ışık yok, amber kütlelerin içinde; kedi rafta, sıçramıyor.
+K49 · ⭐ Efe'nin eli kırpılıp büyütüldü: bilek kola bağlı, BEŞ parmak tam, eriyen doku
+       yok. Tezgâhın ön kenarında sert-kenarlı altın çizgi VAR ve kesik. Kadrajda tek
+       insan. Raftaki "ÇAY" tenekelerinin imlası doğru (Ç cedillası yerinde).
+K50 · dersin en güçlü karesi: ağız kenarındaki keskin çizgi ile arkadaki kenarsız amber
+       aynı karede, aynı renkte, farkı yalnız davranışta. Çizgi kenarı tam dolanıyor
+       (kesikten çok halkaya yakın) — fikri bozmuyor, TEMİZ sayıldı.
+K51 · iki ayakkabı, beden yok, imla yok, güvenli okuma. Sarkan bağcık tek ve gevşek,
+       yükseklik/yalnızlık/gölge birleşmesi yok.
+K52 · pervaz merdiveni okunuyor, yıllar odak dışında (planın istediği gibi).
+K54 · çift'in DOĞRU yarısı: keskin çizgi yok, çayda kenarsız amber var, maket nötr.
+K55 · "ÇAY" tenekesi doğru yazılmış (Ç cedillası yerinde), kapağı yanında düz duruyor;
+       iki ışık da yok — kapanış doğal kış sabahı ışığı.
+K56 · Efe'nin eli kırpıldı: bilek kola bağlı, beş parmak tam. Raftaki "ÇAY" ve "UN"
+       tenekelerinin imlası doğru. Tek kusur AYNA (yukarıda).
+
+⭐ K53 pirinç plakası ayrıca 10× büyütülerek okundu: **İNSAN SİNİR SİSTEMİ** — beş
+noktalı İ'nin beşi de yerinde (İNSAN'ın ilki, SİNİR'in 2. ve 4. harfi, SİSTEMİ'nin
+2. ve son harfi). Dersin en değerli yazı taşıyıcısı KUSURSUZ; K53 yeniden basılırken
+plaka aynen korunmalı.

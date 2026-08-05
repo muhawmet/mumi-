@@ -1,0 +1,125 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 5 (K35–K43) · MOTION · Kling 3.0 (i2v)
+=========================================================================
+Kaynak kare: images/35 … images/43 — dokuzunun dokuzu Read ile AÇILDI.
+Kaynak yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b
+Kilit: Denetleyici ve Düzenleyici_ENZIM.md KİLİT 4ø · KİLİT 4 · KİLİT 8
+VO: Denetleyici ve Düzenleyici_SESLENDIRME.txt cümle 35–43.
+
+🔴 BU SEKANSIN IŞIĞI HORMON IŞIĞIDIR — motion'da da öyle davranıyor.
+  Sinir ışığı (S2–S4) sert kenarlıydı, zaten oradaydı ve iz bırakmıyordu. Hormon ışığı
+  KENARSIZ, YAVAŞ ve KALICI: hiçbir klipte yanmıyor, sıçramıyor, bir yol boyunca akmıyor.
+  Yaptığı tek şey **derinleşmek ve genişlemek** — ve her klipte "bir önceki anın aynı
+  soluk sıcaklığı hâlâ altında" cümlesi geçiyor (birikme, KİLİT 4). Kanal, boru, hat,
+  damar ve akış çizgisi hiçbir klipte YOK.
+
+🔴 AÇILIŞ TEKDÜZELİĞİ YASAK — beş final klibin beşi farklı yapıyla açıyor:
+  K37 madde-durumu · K40 iz-önce · K41 beden-önce · K42 yokluk-önce · K43 sayım-önce.
+  Dört blok YENİDEN-BASIM olduğu için niyet cümlesi taşıyor, motion taşımıyor.
+
+🔴 KAMERA KİLİDİ KOŞULLU (yasa 2026-08-03): sessizlik kuyruğu BEŞ klipte de var.
+  `No whip-pan, no shake, no snap-zoom, no camera warp.` yalnız ekranda HARF ya da
+  katı/mekanik gövde taşıyan üç klipte (K37 bal harfleri · K40 sele borusu ve kelepçe ·
+  K41 pervazdaki yıllar) yazılı. K42 ve K43 kilitsiz — o iki klip **hareket hâlinde
+  bitiyor**, film sekans sonunda durmuyor.
+
+🔴 KİLİT 8 motion'a taşındı: `HORMON` harfleri AKMAZ (bal donuk kalır) · yazı taşıyan
+  nesne SABİT KÜTLE · kimse yazmaz · nesne el değiştirmez · bisiklet sürülmez ·
+  OLAY DEĞİL DURUM (kapı açılmaz, palto sallanmaz, kimse eşikten geçmez).
+
+⚠ K42 — GÜVENLİK KİLİDİ, sınıf 5øø gereği: askıda duran BOŞ palto klip içinde
+  **sallanmaz ve gövde biçimi almaz.** Sallanan boş bir palto VO'yu duymayan izleyicide
+  askıda duran bir gövde okuması üretebilir; hareket yalnız atkının saçağında.
+
+⚠ DÖRT KLİP `YENİDEN-BASIM` işaretli (bkz. REVIZE/S5.txt). O bloklar TESLİM DEĞİL,
+  NİYETTİR: kare yeniden basıldıktan sonra kare açılıp motion tek geçişle yazılır.
+  Frame imzası yalnız beş temiz karede var — imzasız blok motora gitmez.
+=========================================================================
+
+
+### K35 | 5s · VO "Peki daha yavaş ve uzun süren işleri kim yönetir?"
+🔴 YENİDEN-BASIM — çay kutusunun yüzünde okunur İngilizce yazı ("TEA CADDY"); aynı kutu
+K36'da doğru şekilde "ÇAY" yazıyor, kadraj kendi içinde çelişiyor (bkz. REVIZE/S5.txt).
+Kadran rakamları, kadraj ve ışık kusursuz — yalnız kutunun yüzü düzelecek.
+🔴 MOTION INTENT: Saatin yelkovanı tek bir dişlik yer değiştirirken kadrajdaki hiçbir el
+kıpırdamıyor ve odanın dört yavaş kanıtı olduğu yerde duruyor — klip "kimse bir şey
+yapmadı, oda yine de değişti" cümlesinin görüntüsü olacak.
+
+
+### K36 | 4s · VO "Bu işleri iç salgı bezleri üstlenir."
+🔴 YENİDEN-BASIM — "ÇAY" kelimesinde Ç'nin çengeli iki kez basılmış; taban çizgisinin
+altında kopuk ikinci bir sedilla duruyor, kelime kadrajın merkezinde ve odakta
+(bkz. REVIZE/S5.txt). Çayın içindeki kenarsız amber KUSURSUZ ve korunacak.
+🔴 MOTION INTENT: Kamera cam demliğin gövdesinde sabit mesafede kalırken çayın içindeki
+amber dipten yukarı doğru bir tık daha derinleşiyor ve camın dışına tek milim taşmıyor —
+hormon ışığının doğduğu klip bu, ve doğuş bir parlama değil bir koyulaşma olacak.
+
+
+### K37 | 5s · VO "İç salgı bezleri hormon denilen kimyasal maddeler salgılar."
+KAMERA NİYETİ: Taşın uzak ucundan bir el genişliği kayıp kavanozu yandan yalıyorum ve
+kelimeyi hiç yaklaşmadan, keskin düzlemde tam karşıma alarak duruyorum.
+-----
+The honey has already finished arriving on the stone: the thick letters sit in their own shallow pool and the run down the jar's shoulder hangs heavy and still. Then the low light off the misted window reaches the pool — at that instant the amber inside each letter deepens from the bottom upward and thins away with no boundary to point at, the same faint warmth from the moment before still lying under it. The clip begins as something spilled and ends as something lit from inside. The kitchen goes on around it: dust turns in the window shaft, the glass pot behind holds its pale straw colour deep at the bottom. Nobody enters and no mouth appears in the frame. The honey is a fixed mass: the letters never run, sag, re-spell, join or lose a stroke, and the amber inside them never gains a hard edge or becomes a heart, star, flame or arrow. Camera: it begins low at the stone's far end, drifts a hand's width along the counter so the jar passes broadside at an unchanged distance, and rests with the whole word square in the sharp plane. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/37.png · sha256:9bf99c7ce54100f1
+
+
+### K38 | 5s · VO "Hormonlar doğrudan kana karışır ve yavaşça yayılır."
+🔴 YENİDEN-BASIM — tezgâhın üstünde el yazısıyla İngilizce "honey" yazıyor, kadrajın sol
+üçte birini kaplıyor; bir önceki kare aynı tezgâhta aynı maddeyle "HORMON" yazıyordu
+(bkz. REVIZE/S5.txt). "SÜT" harfleri ve sütteki amber bulut kusursuz, ikisi de korunacak.
+🔴 MOTION INTENT: Sütün içindeki amber bulut kendi kenarını bulamadan bir parmak daha
+genişlerken kabuğun kırışığı yerinde duruyor ve hiçbir şey onu taşımıyor — klip "yol yok,
+hat yok, yine de her yere gitti" cümlesini tek bir yayılmayla söyleyecek.
+
+
+### K39 | 4s · VO "İç salgı bezlerinin lideri hipofiz bezidir."
+🔴 YENİDEN-BASIM — kapıdan görünen mutfak @mutfak değil (beyaz-kayın modern dolap,
+paslanmaz evye, tek kollu batarya ve en kesin kanıt olarak BERRAK cam: bahçe net
+görünüyor, oysa kilit "K56'ya kadar buğulu" diyor); ayrıca duvarda planlanmamış pirinç
+künye: "Büyüme Kayıtları" (bkz. REVIZE/S5.txt). Tek hüzme fikri ve kompozisyon tutmuş.
+🔴 MOTION INTENT: Hüzmenin içindeki toz dönerken koridorun geri kalanı yalnız o şeritten
+dönen sıcak bounce ile ayakta duruyor — klip liderliği söylemeden, tek kaynağın kesilmesi
+hâlinde her şeyin kararacağını sezdirerek kuracak.
+
+
+### K40 | 4s · VO "Hipofiz bezi büyüme hormonu salgılar."
+KAMERA NİYETİ: Selenin hemen altından boru boyunca yukarı bakıp birkaç santim yükseliyorum;
+taze bant ile eski kelepçe izi tek dikey hatta üst üste gelince orada duruyorum.
+-----
+Under the clamp the seat post carries a band of metal that has never seen daylight, and a hand's width below it the older clamp has left its own thin scar in the finish. Then the draught out of the lit doorway reaches the corridor and the blanket's frayed fringe swings once against the tube — at that instant the warm light crosses the exposed band and the bright metal lifts out of the dull post, the old scar going on dull beneath it. The clip begins as a parked bicycle and ends as a record of how much taller a boy got. The hallway keeps its scale around it: the saddle's cracked leather nose carries one long stretched highlight, the plaster gives almost nothing back. No one walks in and no mouth appears in the frame. The bicycle is a fixed mass — no wheel turns, no pedal moves, the saddle never tips, the clamp never opens, and nobody mounts or touches it. Camera: it begins under the saddle looking up the post, rises a few centimetres so the fresh band and the old scar stack into one vertical, and settles with both together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/40.png · sha256:1d6df88e9af33fce
+
+
+### K41 | 5s · VO "Kapı pervazındaki çizgiler yıllar içinde yukarı çıkmıştı."
+KAMERA NİYETİ: Koridor tarafından alçaktan bakıp pervazın çevresinde birkaç derece
+dönüyorum; çizgi merdiveni sabit mesafede yandan açılırken Efe ile en üstteki yılı
+aynı karede bırakıp duruyorum.
+-----
+@efe's palm has already settled flat on the painted jamb, his weight carried on that one arm and his eyes still off across the corridor. Then the draught from the lit doorway moves the coat's hem behind him and his gaze comes off the far wall and travels down the jamb — at that instant it stops on the lowest mark, level with his own knee, his chin drops a fraction and his brows lift. He begins standing beside a doorframe and ends reading his own height in it. The corridor holds its place around him: the bright doorway stays a soft unresolved rectangle and dust turns in the warm side light. His lips stay pressed together throughout and his jaw never opens. The pencil marks are a fixed mass — the three years never re-spell, wobble, blur or gain a new line, and no hand marks the wood. Camera: it begins low on the corridor side, eases a few degrees around the jamb so the ladder of marks unwraps broadside at an unchanged distance, and stops with him and the topmost year together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/41.png · sha256:1e935d72b141a2af
+
+
+### K42 | 5s · VO "Boynumuzda yer alan tiroit bezi tiroksin hormonu üretir."
+KAMERA NİYETİ: Kancanın altından yaka boyunca yukarı bakıp sağa doğru süzülüyorum;
+atkı ön plandan çekilince açık yaka bandına iniyorum ve kamera inerken hâlâ akıyor.
+-----
+Nothing fills the collar of the coat on the hook: the wool stands open at exactly the height a neck would be, and the amber lying deep in its weave has no edge to put a finger on. Then the draught out of the lit doorway crosses the plaster and the fringe of the scarf lifts and settles against it — at that instant the amber widens a little further into the nap without brightening, the same faint warmth from the moment before still underneath it. The clip begins as a coat on a hook and ends as the shape of a neck that is not there. The corridor goes on quietly behind: the brass hook carries one long stretched highlight, the bicycle stands unresolved beyond. Nobody comes in and no mouth appears in the frame. The coat never swings, sways or turns on its hook, never takes a body's shape, and the amber in the collar never hardens into a ring, halo or arrow. Camera: it begins under the hook looking up the collar, drifts to camera-right so the scarf clears the foreground, and is still easing when it lands on the open collar band. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+frame: images/42.png · sha256:1af779d6d34c3f2a
+
+
+### K43 | 4s · VO "Tiroksin metabolizma hızımızı ve büyümemizi düzenler."
+KAMERA NİYETİ: Çizmenin arkasından, tahtalara yapışık başlayıp pirinç eşik boyunca
+gerçek ön plan paralaksıyla ilerliyorum ve iki banda varırken birkaç santim yükseliyorum —
+klip hareket hâlinde bitiyor.
+-----
+Two rub bands share the painted face of the door and neither of them arrived quickly: the low one is wide, dark and years deep, the higher one narrow, pale and recent. Then the light coming down the corridor reaches the brass strip across the threshold — at that instant its polished middle comes up bright while its untouched edges keep their dullness, and the two bands separate in value so the higher one reads as the fresher of the two. The clip begins as a scuffed door and ends as two different speeds left on one house. The passage keeps its own life around them: the boot's cracked leather sits huge in the near corner and dust turns in the low shaft. Nobody walks through and no mouth appears in the frame. The door is a fixed mass — it never swings, closes or moves on its hinge, no hand pushes it, and no new mark appears on its painted face. Camera: it begins flat on the boards behind the boot, tracks forward along the brass with real foreground parallax so the threshold runs past, and lifts a few centimetres as it reaches the two bands, still moving. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+frame: images/43.png · sha256:e3451cad68146673

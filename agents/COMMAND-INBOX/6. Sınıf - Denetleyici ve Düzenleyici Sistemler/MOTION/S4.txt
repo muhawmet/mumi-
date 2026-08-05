@@ -1,0 +1,108 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 4 (K24–K34) · MOTION · Kling 3.0 (i2v)
+=========================================================================
+Kaynak kare: images/24 … images/34 — on birinin on biri Read ile AÇILDI ve gözle okundu.
+Kaynak yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b
+Kilit: Denetleyici ve Düzenleyici_ENZIM.md KİLİT 4ø · KİLİT 4 · KİLİT 7 · KİLİT 8
+VO: Denetleyici ve Düzenleyici_SESLENDIRME.txt cümle 24–34.
+
+🔴 AÇILIŞ TEKDÜZELİĞİ YASAK — on bir blok on bir farklı yapıyla açıyor:
+  K24 komşuluk-önce · K25 ışık-önce · K26 malzeme-önce · K27 beden-önce ·
+  K28 hava-önce · K29 hız-önce · K30 oda-önce · K31 malzeme-zemini ·
+  K32 el-önce · K33 madde-önce · K34 mesafe-önce.
+
+🔴 KAMERA KİLİDİ KOŞULLU (yasa 2026-08-03): sessizlik kuyruğu ALTI teslim bloğunun
+  altısında da var. `No whip-pan, no shake, no snap-zoom, no camera warp.` yalnız ekranda
+  HARF taşıyan dört klipte (K28 ÇAY · K31 pirinç plaka · K32 raf kavanozları ·
+  K33 REFLEKS) yazılı — K24 ve K27'de kamera kesimin içinden akıp geçebiliyor.
+
+🔴 K27'nin kuyruğu bilerek `jaw held` biçiminde: karede ağız hafif ARALIK ve
+  §3ø'ye göre açık ağza "mouth closed" yazmak morph üretiyor. Dudaklar ayrıca
+  paragrafın içinde OLUMLU cümleyle sabitlendi.
+
+🔴 KİLİT 8 motion'a taşındı: maket ÖLÜ (dönmez, açılmaz, parçaları sırayla yanmaz) ·
+  ışık zaten yerinde başlar ve orada kalır · yazı taşıyan nesne SABİT KÜTLE ·
+  kimse yazmaz · nesne el değiştirmez · OLAY DEĞİL DURUM.
+
+⚠ BEŞ BLOK `YENİDEN-BASIM` işaretli (bkz. REVIZE/S4.txt). O bloklar TESLİM DEĞİL,
+  NİYETTİR ve motora GİTMEZ: kare yeniden basıldıktan sonra kare açılır ve paragraf
+  tek geçişle yazılır. Frame imzası yalnız altı temiz karede var.
+=========================================================================
+
+
+### K24 | 5s · VO "Beyinciğin yanındaki ince yapı omurilik soğanıdır."
+KAMERA NİYETİ: İki komşunun arasındaki boşluktan başlayıp birkaç derece dönüyorum; oluklu komşu kadrajın kenarına doğru salınıp geçince ince parça ortada yalnız kalıyor ve orada tam duruyorum.
+-----
+Two pieces stand a finger apart and only one of them is answering the light. The hard-cut golden edge already lies down the flank of the narrow cylindrical part, keeping its exact shape, while the grooved neighbour beside it sits in open daylight with nothing of its own. Then the room's air moves through the gap and one dust mote crosses the lit flank — at that instant the pale plastic beyond the seam sinks a shade into luminous indigo and the two neighbours stop reading as one lumpy object. The clip begins as a crowded macro of an old teaching model and ends with one narrow structure standing alone inside it. The rest keeps its quiet: grey dust sits packed dry in the step where the parts meet, warm bounce breathes along the paler paint batch, the misted window glows soft and unresolved far behind. The golden edge never travels, never widens into a halo, never breaks into beads and never crosses onto the grooved neighbour. Camera: it begins low in the gap, turns a few degrees so the grooved neighbour swings out toward the frame edge, and stops with the narrow part upright and alone in the middle. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+frame: images/24.png · sha256:4a7bd59873863c40
+
+
+### K25 | 5s · VO "Omurilik soğanı iç organların istemsiz çalışmasını yönetir."
+🔴 YENİDEN-BASIM — parçanın TAMAMI içten yanan, hâleli, ıslak-bal görünümlü altın bir sütun; sert kenar ve kesik uç yok, yani kare sinir ışığı yerine HORMON ışığı çiziyor (bkz. REVIZE/S4.txt · sınıf 7).
+🔴 MOTION INTENT: Küçük parça sabit dururken oda nefes alır ve büyük kütle bir ton daha indigoya düşer — kadrajın en küçük şeyi tek başına kalır, kamera plakanın hizasından yükselip orada durur.
+
+
+### K26 | 5s · VO "Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir."
+🔴 YENİDEN-BASIM — ön düzlemde maket parçası yok, ahşap kaideye dikilmiş som pirinç bir çubuk var; VO "omurilik soğanı" derken çocuk bir metal direk görüyor (bkz. REVIZE/S4.txt · sınıf 1). Arka plandaki dört iş doğru geldi ve korunacak.
+🔴 MOTION INTENT: Arkadaki dört iş kendi hızlarında sürerken (buhar bükülüp toparlanır, damla şişer, ateş nabzeder) ön düzlemdeki tek keskin kenar hiç değişmez — kamera tek eksende, buhar yüzünden itmesiz kalır.
+
+
+### K27 | 5s · VO "Efe camı buğulandırırken nefesini hiç düşünmemişti."
+KAMERA NİYETİ: Camın hizasından, omzunun hemen yanından başlayıp pencere boyunca birkaç santim kayıyorum; aydınlanmış çenesi kadraja oturunca bakışının kadrajı terk ettiği yerde duruyorum.
+-----
+@efe's fingertip has been resting on the metal latch for a while already, his chin lifted, his weight settled onto one hip, his head turned away from the misted pane toward the warm side of the room. Then the heat off the stove reaches him and his shoulders let a held breath go — at that instant his eyes soften and travel further from the glass, and his parted lips stay soft and still, never opening to speak. He begins standing at a window and ends somewhere else entirely without moving his feet. The kitchen keeps its own business around him: the thick mist on the pane creeps a hair further across the glass, one heavy droplet gathers weight low on the pane and hangs there, the cool daylight coming through that matte panel breathes across the shelf behind him. His hand never leaves the latch, never presses it and never opens the window, and no hand, cloth or finger ever crosses the misted glass to clear it. Camera: it begins level with the glass just off his shoulder, eases a few centimetres along the pane so his lit jaw passes broadside, and settles as his look leaves the frame. Silent clip, no audio, no dialogue, no lip movement, jaw held.
+-----
+DURUM: temiz
+frame: images/27.jpg · sha256:ce0d2e65f2d265ee
+
+
+### K28 | 5s · VO "Hapşırmak, öksürmek ve yutkunmak da omurilik soğanının işidir."
+KAMERA NİYETİ: Rafın altından, asılı tozun içinden bir el genişliği ilerliyorum; aydınlanmış tahta damarı yandan geçip gidince ÇAY kutusunun yüzü kadraja dosdoğru oturuyor ve mesafe hiç değişmeden orada duruyorum.
+-----
+The air under the shelf is still carrying what was knocked out of it: the whole cloud of fine dust hangs in the low raking shaft and leans slowly sideways as one body, none of it yet settling. Then one heavy mote falls out of the shaft and goes dark — at that instant the lit underside of the boards seems to lift and the corner stops being a shelf with dust in front of it and becomes a room that has just been disturbed. The clip begins as suspended dust and ends as a room breathing out. Nothing else asks for anything: the brushed streak on the tin's steel lid slides a hair, warm bounce breathes in the chipped enamel corner, the glazed jars hold their sheen in the indigo above the shelf line. The enamel tin is a fixed mass throughout — it never rocks, slides or turns, its fired letters never soften, re-spell or drift, and the camera holds one unchanged distance from them. Camera: it begins under the boards inside the hanging dust, glides a hand's width along the shelf so the lit grain passes broadside, and stops square on the tin's lettered face. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/28.png · sha256:5214e80131d4c743
+
+
+### K29 | 4s · VO "Rafın tozu burnunu gıdıklayınca Efe hapşırdı."
+🔴 YENİDEN-BASIM — toz yana savrulmuş gevşek bir bulut değil, göğüs hizasında duvara çarpan basınçlı bir püskürtme jeti; kaynağı raf değil Efe'nin eli hizası, üstelik ifadesi hapşırık sonrası değil ağlamaklı (bkz. REVIZE/S4.txt · sınıf 1 + 6).
+🔴 MOTION INTENT: Beden çoktan durmuşken oda hâlâ olanı taşır — omuzlar inik kalır, yalnız gevşek parmaklar bir kıl payı yerleşir ve toz bulutu yönsüzce yayılmaya devam eder; kamera rafın yanından çok alçak genlikte kayıp durur.
+
+
+### K30 | 4s · VO "Maketin aşağı inen uzun kısmı omuriliktir."
+🔴 YENİDEN-BASIM — arka plan neredeyse siyah lacivert bir boşluk, oda diye bir şey yok; KİLİT 4ø doğrudan ihlal (bkz. REVIZE/S4.txt · sınıf 4). Uzun parça ve kenarındaki sert altın çizgi doğru geldi, o korunacak.
+🔴 MOTION INTENT: Kadrajı boydan boya kesen tek düz hat hiç kıpırdamazken toz onun önünden geçer ve aydınlık odanın sıcak sıçraması dipteki koyulaşmış boyanın üstünde nefes alır — kamera parçaya paralel, tek eksende, çok kısa bir kayışla iner.
+
+
+### K31 | 4s · VO "Omurilik, beyin ile vücut arasında mesaj taşır."
+KAMERA NİYETİ: Pirinç plakanın hizasından başlayıp masa boyunca birkaç santim kayıyorum; kafatasının açık yanı yandan görünür hâle gelince, plakaya hiç yaklaşmadan tam duruyorum.
+-----
+Brass, varnish and worn paint hold the bottom of the picture steady while the warm run inside the opened skull already burns along its whole length at once, arriving from nowhere and going nowhere. Then the winter daylight off the window shifts and the pale mass above it drops a shade into luminous indigo — at that instant the lit run stops looking like a part of the head and starts looking like the one road through it. The clip begins as a model of a head and ends as a model of a route. Around it the table keeps its scale: the brushed streak across the brass slides a hair, the removed skull cap rests where it was set down beside the base, dust turns once in the window light. The engraved plate is a fixed mass throughout — it never tips, slides or turns, its letters never soften, re-spell or drift, and no part of the model rotates, opens or lights up in sequence. Camera: it begins low at the plate, eases a few centimetres along the table so the open side of the skull swings into view, and stops with the lit run square inside the cavity. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/31.png · sha256:c232390445787d1f
+
+
+### K32 | 5s · VO "Efe sıcak çaydanlığın sapına dokunup elini anında çekti."
+KAMERA NİYETİ: Durmuş elin hizasından ocağa doğru, gerçek ön plan paralaksıyla birkaç santim kayıyorum; omuz inerken sapla aydınlanmış çenesini bir arada bırakıp duruyorum.
+-----
+@efe's hand got home before he did: it is already pulled in against his own chest, the fingers half curled, that shoulder still hitched and not yet down, while his eyes are still on the kettle where his hand had been. Then the shoulder finally gives and drops — at that instant his eyes catch up with it, his brows ease and the whole braced line of him lets go, his lips staying closed and soft, no speech shapes forming in them. He begins caught out by his own body and ends having understood what it did for him. The kitchen carries on without him: the steam column lifts off the spout and bends away from his face, the amber in the small upper pot keeps its depth low in the glass, flour dust turns above the dark stone. His hand never returns toward the kettle, never reaches out and never touches anything, and the packed shelf behind him is a fixed mass whose painted letters never soften, re-spell or drift. Camera: it begins low beside his stopped hand, tracks a few centimetres toward the stove with real foreground parallax, and settles with the handle and his lit jaw held together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/32.png · sha256:fbad685860277899
+
+
+### K33 | 4s · VO "Bu ani ve istemsiz tepkiye refleks denir."
+KAMERA NİYETİ: Camın düzleminde kalarak alt çıta boyunca bir el genişliği kayıyorum ve harflerin gövdesi tam karşıma geldiğinde duruyorum — mesafe klip boyunca hiç değişmiyor.
+-----
+Water is doing all the work in this frame and none of it is being decided. Along the border of one clear stroke a droplet has been gathering weight for a while already, sagging on its own without yet running, while the misted field around it keeps its cold even brilliance. Then the droplet gives up its shape and settles a hair lower against the glass — at that instant the doubled reflection inside the clear strokes shifts and the pane stops being a misted window and becomes a surface with something standing in it. The clip begins as weather on glass and ends as a word held by weather. The rest keeps its place: the mist creeps a hair back in along the top edge of the pane far from the strokes, the brushed streak on the steel catch slides, the sill keeps its grain readable in luminous indigo. The pane is a fixed mass throughout — the glass never tips or swings, the clear strokes never close over, soften, re-spell or drift, and the camera holds one unchanged distance from them. Camera: it stays square to the glass and slides a hand's width along the lower bar so the strokes pass broadside, then rests with them centred. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+frame: images/33.png · sha256:bb398190efaf20f5
+
+
+### K34 | 4s · VO "Reflekslerin yönetim merkezi omuriliktir."
+🔴 YENİDEN-BASIM — kadrajın sağ kenarında, odak dışı ama okunan bir insan eli ve ön kolu var; bu ders TEK KİŞİLİK ve kare @efe'siz tasarlanmış (bkz. REVIZE/S4.txt · sınıf 5). Aynı basımda omurilik gövdesinin pirinç-altın rengi de düzeltilecek.
+🔴 MOTION INTENT: Ön düzlemdeki tek sıcak kenar hiç değişmezken arkadaki buhar sütunu bükülüp kendini toparlar ve bulanık mutfak kendi hızında yaşamaya devam eder — kamera keskin düzlemi bırakmadan çok kısa bir yay çizip durur.

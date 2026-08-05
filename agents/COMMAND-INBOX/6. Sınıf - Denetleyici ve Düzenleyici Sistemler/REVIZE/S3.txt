@@ -1,0 +1,315 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 3 (K15–K23) · REVİZE
+=========================================================================
+Denetim: tek geçiş, dokuz karenin dokuzu Read ile AÇILDI ve gözle okundu.
+Yazı taşıyan dört kare ayrıca 3x büyütülüp harf harf okundu (K15 plaka · K17 defter ·
+K19 kutu · K22 un). Ellerin anatomisi K15/K19/K22'de ayrıca kırpılıp bakıldı.
+
+KARNE:  temiz 3  ·  yeniden-basım 6
+  temiz          : K17 · K19 · K22
+  yeniden-basım  : K15 · K16 · K18 · K20 · K21 · K23
+
+=========================================================================
+🔴 MAKRO HÜKÜM — bu sekansın altı kusuru iki mekanizmadan doğdu, altısı da ajan
+   hatası DEĞİL, PROMPT'un kendi tercihi.
+=========================================================================
+
+1) **@tag kadrajda tanınmaz hâle gelince hiçbir şey taşımıyor.**
+   Prompt maket parçalarını organ ADIYLA anmıyor — "the largest moulded piece",
+   "one small moulded piece", "a compact rounded form" diye geçiyor. Gerekçe meşruydu
+   (anatomi-atlası negatifinden kaçınmak), sonucu ölçüldü: motor adı olmayan parçayı
+   ADSIZ PLASTİK KABUK olarak basıyor.
+     · K16 → VO "en üstteki büyük kısım BEYİNDİR" derken kadrajda BOŞ KAFATASI KAPAĞI var, beyin yok.
+     · K21 → VO "BEYİNCİK" derken kadrajda oluklu bir AHŞAP/SERAMİK KÂSE var.
+     · K20 → parça doğru ama kimliği yalnız konumdan okunuyor.
+   Üç makro maket karesinin üçü de aynı yerden düştü. ENZIM'in "S2 en ucuz sekanstır,
+   kadraj çeşitliliği makro ile alınır" reçetesi bu maket için YANLIŞ ölçüldü:
+   makroda @maket hem kimliğini hem odayı kaybediyor.
+   ÇÖZÜM: parça organ adıyla YAZILIR ("the moulded cerebellum piece"), anatomi-atlası
+   riski ADLA değil MALZEMEYLE kesilir — zaten öyle yazılmış ve o kısım tuttu
+   (kalıp dikişi, aşınmış boya, sprue izi, havşa vida hepsi geldi).
+
+2) **Oda yalnız "bokeh'e düşer" diye yazılınca motor kendi odasını uyduruyor.**
+   Kadrajda tanınabilir tek bir @mutfak/@koridor çıpası kalmayan her karede dünya kaydı:
+     · K18 → modern beyaz fayans + davlumbaz + beyaz dolap mutfağı (K19/K22 ile AYNI EV DEĞİL)
+     · K20 → oda tamamen yok, KOYU LACİVERT BOŞLUK (KİLİT 4ø doğrudan ihlal)
+     · K21 → gri-mavi stüdyo duvarı ve beyaz masa
+     · K23 → kapıdan görünen mutfak yine modern; koridor kış SABAHI değil akşam mavisi
+   Buna karşılık kadrajda gerçek çıpa taşıyan üç kare (K17 pencere+taş masa, K19 ve K22
+   saat+raf+çift katlı çaydanlık+ocak) dünyayı KUSURSUZ tuttu.
+   ÇÖZÜM: her karede odak dışında bile olsa **adı konmuş iki çıpa** yazılır
+   (duvar saati · raf kavanozları · çift katlı çaydanlık · soba ağzı · koyu taş tezgâh).
+   "falls into airy cool bokeh" bir çıpa değildir.
+
+3) Ayrıca tek başına duran bir kusur: K15'te **gövdesiz uzuv**.
+
+=========================================================================
+NE İYİ GİTTİ — bir daha yazılırken bozulmasın
+=========================================================================
+· Türkçe yazının DÖRDÜ DE KUSURSUZ: "İNSAN SİNİR SİSTEMİ" (dört İ'nin dördü noktalı),
+  "FEN BİLİMLERİ", "UN", "DENGE". Harf harf heceleme + diakritiği adıyla anma yöntemi
+  bu sekansta 4/4 tuttu — yöntem çalışıyor, dokunma.
+· "Fabrika ürünü, organ değil" yazımı tuttu: kalıp dikişi, tepe noktalarda aşınmış boya,
+  pirinç menteşe pimi, sprue zımpara izi, çatlaktaki sararmış tutkal — hepsi geldi.
+· KİLİT 4ø aydınlık tabanı, YAZILDIĞI yerde tuttu (K15/K17/K19/K22 dördü de açık ve neşeli).
+  Karanlık çıkan kareler karartıldığı için değil, ODA HİÇ YAZILMADIĞI için karardı.
+· @efe gardırobu üç karede birebir aynı (kiremit örgü kazak + kot bahçıvan): K15 · K19 · K22.
+· Demlik saati zinciri doğru: K19 ve K22'de üstteki demlikte en soluk saman rengi, dipte.
+
+=========================================================================
+KARE KARE
+=========================================================================
+
+-------------------------------------------------------------------------
+# K15 — 🔴 YENİDEN-BASIM
+VO: "Efe masadaki plastik maketi kendine doğru çevirdi."
+VO UYUMU: ✔ dönüş bitmiş, plaka okunuyor, iki avuç masada.
+YAZI: ✔ "İNSAN SİNİR SİSTEMİ" — İ-N-S-A-N · S-İ-N-İ-R · S-İ-S-T-E-M-İ, dört İ'nin
+      dördü noktalı, harfler pirincin içinde, dipleri kararmış. KUSURSUZ.
+ODA:  ✔ aydınlık, pencere ışık kutusu gibi, gölgeler indigo ve dolgulu.
+@efe: ✔ figürin değil, ayak/zemin kadrajda yok, ten mat.
+
+🔴 KUSUR — GÖVDESİZ UZUV (tek ve yeterli sebep):
+Kadrajın solunda masada duran SOL EL bir kola bağlı DEĞİL. Kiremit kazak kolu kafatası
+kapağının arkasında bitiyor, el ondan bir avuç kadar SOLDA, aradaki bilek-önkol hiç yok;
+el düz masaya bırakılmış ayrı bir parça gibi duruyor. Ayrıca o elde BAŞPARMAK YOK —
+yalnız dört parmak var. (Sağ el kusursuz: beş parmak, kola bağlı, kazak manşeti yerinde.)
+
+REVİZE — kadrajı BOZMA, yalnız şunu değiştir:
+· "with both palms laid flat on the scrubbed wood either side of the base" cümlesini
+  TEK ELE indir: `with one palm laid flat on the scrubbed wood at the near right of the
+  base, that arm unbroken from the knitted cuff through the wrist to the hand, all five
+  fingers and the thumb present and in contact with the wood; his other arm is not in
+  frame at all.`
+· NEGATIVE'e ekle: `no second hand, no detached hand, no hand without a continuous arm
+  and cuff behind it, no arm entering frame without its owner, no hand with a missing
+  thumb or fewer than five digits.`
+· Geri kalan her şey AYNEN kalsın — plaka, kadraj, ışık, ayrılmış kafatası kabuğu.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K16 — 🔴 YENİDEN-BASIM
+VO: "En üstteki büyük kısım beyindir."
+
+🔴 KUSUR — VO KAREYİ YALANLIYOR:
+Kadrajda BEYİN YOK. Gelen şey maketin BOŞ KAFATASI KABUĞU: içi görünen, pirinç menteşe
+pimiyle ikiye açılmış, aşınmış boyalı bir kavuk. VO "en üstteki büyük kısım beyindir"
+derken çocuk boş bir kafatası kapağı görüyor. İkinci okuma riski de var: kare kırık bir
+yumurta / kask gibi okunuyor.
+KÖK NEDEN: prompt beynin adını hiç anmıyor — "the largest moulded piece of the model".
+Maketin gerçekten en büyük kalıp parçası kafatası kabuğudur; motor doğru cevabı verdi,
+soru yanlıştı.
+
+REVİZE:
+· Parçayı ADIYLA çağır: `the moulded plastic brain sitting inside the opened skull —
+  the largest painted piece of the model, its folded surface rolling over the top`.
+· Anatomi-atlası riskini ADLA değil MALZEMEYLE kes (zaten yazılı, koru): kalıp dikişi
+  kıvrımların üstünden geçiyor, tepe noktalarda boya aşınmış, gri toz oluklara oturmuş.
+· KADRAJA ODA ÇIPASI KOY (yeni, zorunlu): odak dışında da olsa `the wall clock's wooden
+  case and the packed shelf of glazed jars stand soft in the daylight behind`.
+· Sert kenarlı altın çizgi TEK bir kıvrım sırtında kalsın; menteşe pimi ışık ALMASIN.
+· Kafatası kapağı bu karede MENTEŞEYE BAĞLI kalsın — K15 ve K17'de kapak masada AYRI
+  duruyor; bu karede de AYRI dursun ki üçü aynı ev olsun.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K17 — TEMİZ
+VO: "Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir."
+VO UYUMU: ✔ maketin beyni açıkta, önünde yorulmuş defter — bilgi maketin içinde değil,
+          defterin yıpranmışlığında. Fikir kareye geçmiş.
+YAZI: ✔ "FEN BİLİMLERİ" — F-E-N · B-İ-L-İ-M-L-E-R-İ, üç İ'nin üçü noktalı, mürekkep
+      mukavvanın dokusuna emilmiş, köşede matlaşmış. Doğru.
+IŞIK: ✔ sert kenarlı altın çizgi kafatası kesiğinin üst hattında, tek nesnede, kesik.
+ODA:  ✔ pencere, taş masa, kavanoz — dünya duruyor, kare aydınlık.
+
+SARI (yeniden basım GEREKTİRMEZ, motion'da kilitlendi):
+· Tabandaki pirinç plaka BOŞ ve kadraja yarı dönük. Prompt "turned away and unreadable"
+  demişti; motor plakayı boş ama görünür bıraktı. Defter ve gevşek kâğıtlar üstünü
+  yarıya kadar kapattığı için kare kurtuluyor — ama motion'da kamera plakaya YAKLAŞMAZ.
+· "FEN BİLİMLERİ"de İ'ler öteki büyük harflerden alçak (küçük-i yüksekliğinde). Okunuyor,
+  yazım doğru; sonraki mukavva yazısında `all letters the same cap height` eklenebilir.
+· Defterden fırlayan gevşek kâğıtlar kıvrılmış — dar bir açıdan bıçak gibi okunabiliyor.
+  Motion o kâğıtları donduruyor.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K18 — 🔴 YENİDEN-BASIM
+VO: "Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır."
+İYİ OLAN: üç nesne gerçekten üç ayrı mesafede ve sıraya dizilmemiş; ekmek · yarıdan biraz
+fazla dolu bardak · örgü atkı. Fikir çalışıyor. Maket doğru okunuyor (beyin, beyincik,
+beyin sapı). Altın çizgi var.
+
+🔴 KUSUR 1 — DÜNYA KAYDI: arkadaki mutfak MODERN. Beyaz metro fayans, çelik davlumbaz,
+beyaz mutfak dolapları, gri modern tezgâh. K19 ve K22'deki Anadolu mutfağıyla (ahşap
+kasalı duvar saati, açık raf, sırlı kavanozlar, çift katlı çaydanlık, ocak, koyu taş
+tezgâh) aynı ev değil. Kurguda K18→K19 kesildiğinde iki ayrı eve geçiliyor.
+KÖK NEDEN: prompt odayı yalnız "thrown far out of focus and nothing in it is readable"
+diye yazdı. Motor okunmaz bir oda istenince kendi varsayılan mutfağını basıyor.
+
+🔴 KUSUR 2 — BOŞ PANEL: maketin tabanındaki pirinç plaka kadraja DOSDOĞRU bakıyor ve
+TAMAMEN BOŞ. Aynı plaka K15'te "İNSAN SİNİR SİSTEMİ" yazıyordu; burada yazı düşmüş.
+Prompt "the brass plate is turned away" demişti, motor çevirmedi. KİLİT 5'in
+"yazı istemediğin yüzey giydirilir, boş panel bırakma" maddesinin birebir ihlali.
+
+REVİZE:
+· Odayı ADIYLA çıpala (odak dışı kalabilir, ama YAZILSIN):
+  `behind them, soft and unreadable but unmistakably the same room: the wooden-cased wall
+  clock, the open shelf packed with glazed jars, the double-decker kettle on the stove and
+  the dark stone counter — no tiled splashback, no extractor hood, no fitted white cabinets.`
+· NEGATIVE'e ekle: `no modern fitted kitchen, no white subway tile, no stainless extractor
+  hood, no built-in cabinetry.`
+· Plakayı ya YAZDIR (K15'in TEXT bloğunu birebir kopyala) ya da fiziksel olarak çevir:
+  `the base is turned so its front edge with the brass plate faces away from the camera and
+  only the bare varnished side of the wood is seen` + NEGATIVE'e `no blank or unengraved
+  brass plate facing the camera.` — İKİNCİSİ tercih edilir, kare zaten yazısız planlandı.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K19 — TEMİZ
+VO: "Ekmek kokusunu alıp acıktığını fark etmesi bu yüzdendi."
+VO UYUMU: ✔ el hâlâ bezin ucunda, baş elinin çektiği yönden BAŞKA tarafa dönmüş —
+          "farkına varma" tam o uyumsuzlukta duruyor. Fikir kareye geçmiş.
+YAZI: ✔ "UN" — U-N, fırınlanmış, harfler emayenin içinde. Doğru.
+IŞIK: ✔ sert kenarlı altın çizgi kutunun üst çemberinde, çember dönünce kesik;
+      ekmeğe, beze, taşa, kola değmiyor.
+ODA:  ✔ @mutfak birebir: ahşap kasalı saat, iki raf dolusu kavanoz, çift katlı çaydanlık
+      (üstteki demlikte en soluk saman rengi — zincirin doğru halkası), ocak, koyu taş
+      tezgâh, buğulu pencere, un izi. Kare açık ve neşeli.
+@efe: ✔ gardırop K15/K22 ile aynı; el anatomisi temiz (başparmak + işaret parmağı bezi
+      kıstırmış, kol manşete bağlı); kadrajda ayak/zemin yok; ikinci insan yok; bıçak yok.
+NOT: dosya .jpg (öteki sekiz .png) — kurguda sorun değil, frame imzası elle yazıldı.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K20 — 🔴 YENİDEN-BASIM
+VO: "Maketin arka alt tarafındaki küçük kısım beyinciktir."
+İYİ OLAN: parça KONUM olarak doğru — büyük parçanın arkasında ve altında, oluklu yüzeyi
+belirgin. VO'nun tarif ettiği yer birebir bu.
+
+🔴 KUSUR 1 — ODA YOK: arka plan baştan başa KOYU LACİVERT BOŞLUK. Ne masa, ne pencere,
+ne raf, ne ahşap taban — hiçbir aydınlık yüzey yok. KİLİT 4ø'nun "kadrajda her zaman bir
+aydınlık yüzey bulunur, çocuk materyalinde kadrajın tamamı loş olamaz" maddesi doğrudan
+ihlal. Kare bir mutfak karesi değil, bir anatomi atlası levhası gibi duruyor — tam olarak
+NEGATIVE'in yasakladığı şey.
+🔴 KUSUR 2 — IŞIK YANLIŞ DAVRANIYOR: altın ışık sert kenarlı DEĞİL; yumuşak bir hâle
+hâlinde ve AŞAĞI, beyin sapı/omurilik boyunca akıyor. KİLİT 7 madde 1'in birebir ihlali
+(omurilik soğanı ile omurilik ayrı organlardır, ışık ikisine birden değmez) ve KİLİT 4'ün
+"kenar bitince KESİK, hâle yok" kuralının ihlali. Ayrıca sol tarafta MOR/neon bir kenar
+ışığı var — palet ihlali.
+KÖK NEDEN: prompt odayı "the daylit room dissolves into airy cool-indigo bokeh" diye
+yazdı ve makro kadraj masayı da kadraj dışında bıraktı; geriye çıpasız bir nesne kaldı.
+
+REVİZE:
+· Kadrajı GENİŞLET: cilalı ahşap taban ve masanın bir şeridi kadrajın alt üçte birinde
+  KALSIN — `the satin-varnished base and a band of the scrubbed table stay in frame along
+  the bottom third, lit and readable.`
+· Oda çıpası zorunlu: `behind, out of focus but plainly a lit room: the misted window
+  standing as a bright glowing rectangle and the packed shelf of glazed jars.`
+· NEGATIVE'e ekle: `no dark studio void, no black or navy seamless background, no floating
+  specimen on an empty ground; the frame always contains at least one bright, lit surface.`
+· Işığı yeniden yaz: `a hard-edged golden sliver rides only the outer contour of the
+  cerebellum piece and is cut dead where that contour turns out of sight; it never runs
+  down the brainstem, never reaches the spinal cord, never softens into a halo or gradient.`
+· Palet: NEGATIVE'e `no violet, magenta or neon rim light on any surface.`
+· Parçayı adıyla çağır (K16 ile aynı gerekçe): `the moulded cerebellum piece.`
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K21 — 🔴 YENİDEN-BASIM
+VO: "Beyincik kaslarımızın uyumlu çalışmasını sağlar."
+İYİ OLAN: altın çizgi tam istendiği gibi — oluk sırtlarının hepsinde AYNI ANDA, tek
+kesintisiz hat, kenar bitince kesik. Dersin fizik fikri bu karede fiziksel olarak doğru.
+
+🔴 KUSUR 1 — NESNE OKUNMUYOR: kadrajdaki şey beyinciğe benzemiyor; oluklu, kiremit
+renkli, yarım küre bir AHŞAP/SERAMİK KÂSE gibi duruyor (önünde ikinci bir kâse daha var).
+Beyincik olduğunu bilen bile bakarak çıkaramıyor. VO "beyincik" derken çocuk mutfak kabı
+görüyor. Ölçek de kayıp — nesne masa büyüklüğünde okunuyor.
+🔴 KUSUR 2 — DÜNYA KAYDI: arka plan gri-mavi stüdyo duvarı, masa beyaz/gri laminat.
+@mutfak yok. Kare soğuk okunuyor.
+KÖK NEDEN: K16 ile aynı — "one small moulded piece" adsız yazıldı ve motor adsız kabuk
+bastı; artı makro kadraj odayı sildi.
+
+REVİZE:
+· Adıyla çağır ve KOMŞUSUYLA bağla — kimlik tek başına duran parçadan çıkmaz:
+  `the moulded cerebellum piece of @maket, still attached below and behind the larger
+  brain piece, the underside of that brain mass hanging into the top of the frame so the
+  scale and the position are both readable.`
+· Makro'yu bir tık aç: `100mm macro at f/4 but pulled back far enough that the wooden
+  base and the brass plate are visible, soft, along the bottom edge.`
+· Oda çıpası: `the wooden-cased wall clock and the misted window stand soft and bright
+  behind` + NEGATIVE'e `no grey studio wall, no white laboratory table, no seamless
+  backdrop.`
+· NEGATIVE'e ekle: `never reads as a bowl, dish, shell, husk, carved wooden vessel or
+  half-sphere of pottery — it is a small painted plastic part of a larger head model.`
+· Altın çizgiyi AYNEN koru, o kısım tuttu.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K22 — TEMİZ
+VO: "Dengede kalmamızı da beyincik yönetir."
+VO UYUMU: ✔ bütün ağırlık tek avucun topuğunda, öteki kol karşı ağırlık; denge bir duruş
+          değil bir pazarlık olarak okunuyor.
+YAZI: ✔ "DENGE" — D-E-N-G-E, unun İÇİNDE, kabarık banklar hâlinde, kenarları dağılmış,
+      araya tek tek taneler saçılmış. Yazan el/parmak izi/çizik YOK, harfler yüzmüyor.
+IŞIK: ✔ sert kenarlı altın çizgi yatmış emaye kâsenin üst çemberinde; una, harflere,
+      tene değmiyor.
+ODA:  ✔ @mutfak birebir ve K19 ile aynı ev: ahşap kasalı saat, raf kavanozları, çift
+      katlı çaydanlık (cam demlikte en soluk saman, dipte), ocak, koyu taş tezgâh, un,
+      buğulu pencere, buhar. Kare sıcak ve aydınlık.
+@efe: ✔ gardırop K15/K19 ile aynı; el anatomisi temiz; ikinci insan yok.
+
+SARI (yeniden basım GEREKTİRMEZ, motion'da kilitlendi):
+· Harfler yumuşak; "DENGE" okunuyor ama kenarları un tanesine karışıyor. Bu bir yazım
+  hatası değil, çözünürlük meselesi — 🔴 motion'da un ve kamera kesinlikle sabit tutuldu
+  (§3ø: taşıyıcı oynadığı an harf eriyor).
+· Kadraj göğüs ortasının altına iniyor (kot pantolon/kalça görünüyor). Ayak ve zemin
+  kadrajda YOK, figürin okuması doğmadı — kabul edildi.
+· Ezilmiş un sırtı harflerin sonuna bir avuç kadar yaklaşıyor; değmiyor. Sınırda ama temiz.
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+# K23 — 🔴 YENİDEN-BASIM
+VO: "Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz."
+İYİ OLAN: fikir kareye geçmiş — makine kendi başına duramıyor, bütün ağırlığını duvara
+vermiş, ön tekerlek içeri kıvrılmış, bir pedal üst ölü noktada. Kimse binmiyor. Palto,
+çizmeler, küçük gelmiş ayakkabılar yerinde. Pervaz çizgileri doğru biçimde kadraj dışında.
+
+🔴 KUSUR 1 — KAVRAM IŞIĞI DERSİ YALANLIYOR: altın ışık ön jantın ÜST YAYINDA değil,
+jantın TAMAMINDA — kapalı, parlayan bir HALKA. Üstelik yalnız orada da değil: arka jantta
+ikinci bir halka ve kadronun üst borusunda üçüncü bir çizgi var. Yani "tek nesnenin tek
+kenarı, kenar bitince kesik" kuralı üç kez kırılmış ve ortaya çıkan şey ışık değil bir
+NEON JANT AKSESUARI. Bu, NEGATIVE'in "never becomes a ring" yasağının birebir ihlali ve
+dersin tek mekanizmasını (davranış farkı) tersine çeviriyor.
+🔴 KUSUR 2 — GÜNÜN SAATİ KAYDI: koridor kış SABAHI değil, AKŞAM okunuyor. Duvarlar
+lavanta-mavi, gölgeler koyu, tek sıcak kaynak kapıdan geliyor. Prompt "the corridor reads
+bright, clean and airy" istemişti. Mami'nin ilk 56 kareyi reddettiği kusurun aynısı.
+🔴 KUSUR 3 — kapıdan görünen mutfak yine MODERN (beyaz dolap, açık fayans) — K18 ile aynı
+dünya kaydı, aynı sebep.
+
+REVİZE:
+· Işığı yeniden yaz ve YAYI ADIYLA SINIRLA: `a hard-edged golden sliver rides only the
+  upper arc of the front wheel's rim, roughly from the ten o'clock position to the two
+  o'clock position, and is cut dead at both ends where the arc leaves the light; it never
+  closes into a full ring, never appears on the rear wheel, never runs along the frame
+  tubes, the fork or the handlebar.`
+· NEGATIVE'e ekle: `no glowing ring, no complete lit circle, no illuminated wheel, no
+  neon rim, no bicycle light of any kind, no second lit rim.`
+· Saati geri al: `it is mid-morning in winter: cool daylight comes down the passage from
+  the glazed front door and the whitewashed plaster works as one huge pale reflector, so
+  the walls read bright warm white and the corridor is open and airy` + NEGATIVE'e
+  `no evening or dusk light, no blue-violet walls, no dim hallway, no night interior.`
+· Kapıdan görünen mutfağı çıpala: `through the doorway the same kitchen is soft but
+  recognisable — the dark stone counter and the double-decker kettle on the stove` +
+  NEGATIVE'e `no modern fitted kitchen, no white subway tile, no built-in cabinetry.`
+· Zemin: `bare wooden floorboards, no carpet.`
+· Geri kalan kompozisyon AYNEN korunsun.
+-------------------------------------------------------------------------
+
+=========================================================================
+BASIM SIRASI ÖNERİSİ (Mami seçer)
+=========================================================================
+1. K15 — tek cümlelik düzeltme, kare zaten şaheser. En ucuz kazanç.
+2. K18 · K23 — kompozisyon duruyor, yalnız dünya/ışık cümlesi ekleniyor.
+3. K16 · K20 · K21 — üçü aynı kök nedeni taşıyor; ÜÇÜNÜ BİRDEN basma, önce K16'yı bas.
+   K16 organ adıyla düzelip beyni verirse aynı düzeltme K20 ve K21'e körlemesine
+   uygulanabilir; vermezse makro maket kadrajı bu maket için terk edilir ve üç kare
+   @maket'in bütününü gösteren orta plana çevrilir.

@@ -1,0 +1,128 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 1 (K01–K08) REVİZE
+Denetim: tek geçiş, sekiz karenin sekizi Read ile açıldı ve gözle okundu.
+=========================================================================
+
+
+-------------------------------------------------------------------------
+# K01 — 🔴 YENİDEN-BASIM
+VO1: "Efe kış sabahı mutfağın kapısında durdu."
+
+1. NE GÖRÜLÜYOR: Efe kapı boşluğunda DEĞİL — mutfağın içinde, ocağın yanında duruyor
+   ve sağ kolu kalkmış, açık avucu kaynayan çaydanlığın buhar sütununun içinde.
+   NE OLMALI: prompt'un yazdığı hâl — pervazda duruyor, avucu ahşapta, başparmağı en
+   üstteki boy çizgisinde, çalışan hiçbir şeye eli değmiyor, henüz içeri girmemiş.
+   NEDEN: üç ayrı sebep aynı yere işaret ediyor.
+     (a) VO "mutfağın KAPISINDA durdu" diyor; kare içeride duruyor.
+     (b) Karenin kendi FİKİR'i "çalışan her şey onsuz çalışıyor, karedeki tek durağan
+         şey o" üstüne kurulu — elini koyduğu tek yer tam da çalışan şey.
+     (c) SİLUET OKUMASI: VO'yu duymayan izleyiciye bu kare "çocuk kaynayan çaydanlığın
+         buharına elini sokuyor" diye de okunur. Aynı ders K32'de sıcak çaydanlığa
+         dokunup elini çekmeyi REFLEKS olarak anlatacak; açılış o beat'i hem harcıyor
+         hem tehlikeli okumasını açıkta bırakıyor.
+
+2. NE GÖRÜLÜYOR: masadaki ince belli bardak DÜZ duruyor (boş ama ağzı yukarı).
+   NE OLMALI: TERS duracak, boş ve kuru.
+   NEDEN: AYNA kilidi (ENZİM KİLİT 3). K56'nın "ağzına kadar amber dolu düz bardak"
+   farkı ancak K01'de bardak tersse doğar. Bu, dersin "yavaş"ı kanıtlayan üç farkından
+   biri ve kaybı K56'da telafi edilemez.
+
+3. NE GÖRÜLÜYOR: Efe baldırına kadar görünüyor.
+   NE OLMALI: uyluk ortasından yukarısı; ayakkabı ve altındaki zemin kadrajda yok.
+   NEDEN: KADRAJ KİLİDİ — @efe referansının stüdyo tam-boy duruşu ithal olunca figürin
+   okuması geliyor. Bu karede figürin okumadı ama kadraj kilidi ezilmemiş.
+
+4. NE GÖRÜLÜYOR: pencerenin sağ kanadında dışarıdaki ağaç seçiliyor.
+   NE OLMALI: kenardan kenara buğulu, dışarıdan hiçbir şey görünmüyor.
+   NEDEN: ayna zincirinin üçüncü farkı — K56'da camın alt yarısı AÇILACAK. K01'de
+   zaten görünüyorsa açılmanın anlamı kalmıyor.
+
+TUTAN (yeniden basımda korunacak): duvar saati birebir 7:10 gösteriyor ve 1–12
+rakamlarının hepsi doğru · pervazdaki 2019 / 2021 / 2023 doğru yazılmış · oda aydınlık,
+sıcak ve neşeli okunuyor (KİLİT 4ø tam tutmuş) · kadrajda ikinci insan yok.
+
+
+-------------------------------------------------------------------------
+# K03 — 🔴 YENİDEN-BASIM
+VO3: "Cam buğulanmış, sobanın üstünde süt tenceresi duruyordu."
+
+1. NE GÖRÜLÜYOR: sağdaki iki sırlı kavanozun omzunda İngilizce kelime PARÇALARI
+   okunuyor — "AR" ve "ER" (arkadaki yeşil kavanozda tek "E").
+   NE OLMALI: kavanozlar döndürülür, yazılı omuzlar duvara bakar; kadrajdaki tek
+   yazı SÜT kalır.
+   NEDEN: karenin kendi yasak satırı "the glazed jars stand with their lettered
+   shoulders turned to the wall" diyordu ve dünya NEGATIVE'i "NO English signage".
+   Kesik İngilizce hece, çocuk materyalinde ekrandaki tek Türkçe yazının yanında duruyor.
+
+2. NE GÖRÜLÜYOR: süt tenceresinin altında, gaz ızgarasının üstünde, kızıl-turuncu
+   parlayan ELEKTRİKLİ rezistans halkası yanıyor.
+   NE OLMALI: mavi gaz alevi (K02 ve K08 aynı ocakta mavi alev gösteriyor) ya da hiç
+   görünmeyen ısı.
+   NEDEN: iki katman. (a) Aynı sekansta aynı ocak iki farklı fizik gösteriyor.
+   (b) Bu derste sıcak-altın parlayan yuvarlak ışık DERSİN KENDİSİDİR (KİLİT 4);
+   kadrajın ortasında kendiliğinden parlayan turuncu bir halka kavram ışığıyla
+   karışıyor ve K11'de doğması gereken şeyi K03'te harcıyor.
+
+TUTAN: SÜT harfleri kusursuz, Ü'nün iki noktası doğru · cam kenardan kenara buğulu,
+damlalı ve tek damla izi doğru (zincirin istediği hâl) · kedi tek, tam gövde, rafta
+duruyor, atlamıyor.
+
+
+-------------------------------------------------------------------------
+# K04 — 🔴 YENİDEN-BASIM
+VO4: "Onlarca iş aynı anda oluyor, hiçbiri çarpışmıyordu."
+
+1. NE GÖRÜLÜYOR: oda LOŞ. Sekiz karenin en karanlığı bu — dolaplar, tezgâh, arka duvar
+   ve tavan mavi-gri gölgede; kadrajda tek parlak yüzey pencere, ikinci ışık kaynağı da
+   fırının açık kapağından sızan turuncu.
+   NE OLMALI: K02'nin ışık seviyesi. Kardan dönen ışık odayı baştan başa dolduruyor,
+   dolap yüzleri ve arka duvar değerde AÇIK okunuyor, gölge indigo ve dolgulu kalıyor.
+   NEDEN: KİLİT 4ø, bu projede ÖLÇÜLEREK eklendi ("kareler kötü, ruhsuz" reddi).
+   Kilidin cümlesi birebir: kadrajın tamamı loş olamaz. Bu kare mutfağı TANIMLAYAN
+   geniş kare — izleyicinin odayı nasıl hatırlayacağını bu belirliyor, o yüzden
+   sekizin içinde en pahalı karanlık bu.
+
+2. NE GÖRÜLÜYOR: tezgâhın üstünde bıçaklıkta dört bıçak açıkça ve odakta duruyor;
+   bloğun ön yüzünde küçük bir marka logosu da var.
+   NE OLMALI: bıçaklık kadrajdan çıkar.
+   NEDEN: karenin KENDİ yasak satırı "no knife, blade or sharp tool anywhere in frame"
+   yazıyordu — kanıtlı ihlal. Dünya kuyruğu ayrıca marka izini yasaklıyor.
+   NOT: aynı blok K02, K06 ve K08'de de arka planda duruyor ama küçük ve odak dışında;
+   yalnız K04 onu okunur boyutta gösteriyor.
+
+3. NE GÖRÜLÜYOR: çaydanlığın üst kabı bu karede METAL; K02 ve K08'de cam.
+   NE OLMALI: üst kap cam gövdeli, içindeki suyun rengi görünüyor.
+   NEDEN: demlikteki suyun rengi K01→K56 zincirinin taşıyıcısı. Mutfağın geniş
+   kuruluş karesinde cam kap görünmezse zincir bir halka kaybediyor.
+
+TUTAN: terazi kadranındaki gram rakamları temiz ve ibre iki rakam arasında · altı iş
+gerçekten altı ayrı yerde duruyor ve hiçbiri ötekine değmiyor · sarkaç ve buhar doğru ·
+kadrajda insan yok.
+
+
+-------------------------------------------------------------------------
+temiz: K02 K05 K06 K07 K08
+
+
+=========================================================================
+ZİNCİR NOTLARI — yeniden basım DEĞİL. Sonraki sekans ajanlarına devir.
+=========================================================================
+
+· SAAT. K01 birebir 7:10 gösteriyor ve ayna çıpası odur. K02 ~8:35, K07 ~9:45
+  gösteriyor; K02'nin kendi kilidi "K01 ile aynı okuma" istiyordu, tutmadı. Kadran her
+  iki karede de kadraj genişliğinin ~%8'i ve video ölçeğinde okunmuyor — kredi yakmaya
+  değmez. Ama K53–K56 ajanı ayna karesinde saati K01'e göre yeniden kurmak zorunda.
+
+· DEMLİKTEKİ ÇAY. K08'de kehribar zaten cam potun alt üçte birini dolduruyor ve üst
+  sınırı KESKİN bir çizgi. Kilit "kenarsız, dipte yoğun, yukarı doğru zayıflayan"
+  diyordu ve bu zincirin ilk kıpırtısı olmalıydı. S5–S7 ajanı buradan daha koyu ve
+  daha yukarı çıkan bir amber yazmak zorunda; yoksa K56'nın "dipten tepeye tek renk"
+  farkı doğmaz.
+
+· @efe KİMLİĞİ. K01'deki çocuk K05/K06/K07'dekinden belirgin biçimde daha küçük ve
+  yuvarlak yüzlü; K05–K07 kendi aralarında tutarlı. K01 zaten yeniden basılacak —
+  kimlik K05–K07 hattına çekilsin (ya da tersi; hüküm Mami'nin).
+
+· OCAK. Dünya "soba + menfez ışığı" diye kilitlenmişti; motor her karede modern gazlı
+  ocak + fırın veriyor ve bu sekiz karede TUTARLI. Geri döndürmek sekizini birden
+  yeniden basmak demek — önerilmez, ocak yeni kanon sayılsın ve S2+ ajanları "soba"
+  yerine gazlı ocağı yazsın.

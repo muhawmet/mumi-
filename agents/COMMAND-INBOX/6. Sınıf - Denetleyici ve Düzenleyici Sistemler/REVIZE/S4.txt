@@ -1,0 +1,154 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 4 (K24–K34) · REVİZE
+=========================================================================
+Denetim: tek geçiş, on bir karenin on biri Read ile AÇILDI ve gözle okundu.
+Yazı taşıyan üç kare ayrıca büyütülüp harf harf okundu (K28 kutu · K31 plaka · K33 cam).
+Eller K29 ve K32'de ayrıca kırpılıp bakıldı. K26/K34'ün arka planı 3-4x büyütüldü.
+
+KARNE:  temiz 6  ·  yeniden-basım 5
+  temiz          : K24 · K27 · K28 · K31 · K32 · K33
+  yeniden-basım  : K25 · K26 · K29 · K30 · K34
+
+=========================================================================
+🔴 MAKRO HÜKÜM — beş kusurun dördü İKİ mekanizmadan doğdu, ikisi de S3'te
+   ölçülen sınıfın aynısı. Yani kusur ajanda değil, PROMPT'un tercihinde.
+=========================================================================
+
+1) **KAVRAM IŞIĞI PARÇANIN KENDİSİNE DÖNÜŞÜYOR — dersin fikri burada ölüyor.**
+   Prompt maket parçasını yalnız BİÇİMLE anıyor ("the narrow cylindrical part",
+   "the long descending part") ve o parçaya iliştirilmiş tek sıcak kelime `golden`.
+   Motor ikisini birleştiriyor: parçayı ışığın kendisinden yapıyor.
+     · K25 → omurilik soğanının TAMAMI içten yanan, hâleli, ıslak-bal görünümlü altın bir
+       sütun. Sert kenar yok, kesik yok, yayılma var — yani bu kare **hormon ışığını**
+       çiziyor. K47-K50'nin bütün ayrımı (sert kenar ↔ kenarsız) burada peşinen harcanıyor.
+     · K26 → parça hiç yok: kadrajda **cilalı ahşap kaideye dikilmiş som pirinç bir çubuk**
+       duruyor. Anatomi yok, kalıp dikişi yok, maket yok.
+     · K34 → omurilik gövdesi baştan sona pirinç-altın; nötr kalması gereken tek şey
+       ışığın DEĞMEDİĞİ yüzeydi, o yüzey de altın çıktı.
+   Buna karşılık aynı ışık yazımı K24'te KUSURSUZ geldi: parça kendi soluk fildişi
+   plastiğinde kaldı, çizgi tek kenarda, bıçakla kesik, hâlesiz.
+   ÇÖZÜM: parçanın KENDİ RENGİ olumlu cümleyle yazılır ve ışıktan önce gelir —
+   *"the moulded medulla piece stays the same worn ivory plastic as its neighbours; only a
+   hard-cut line on one edge is golden, and the part itself is never gold, brass, amber,
+   honey or glowing."* Ayrıca parça **organ adıyla** anılır (S3'ün 1. bulgusu, orada da
+   aynı yerden düşmüştü).
+
+2) **Kadrajda tanınabilir çıpa kalmayınca dünya yine kayıyor — bu kez iki yönde.**
+     · K30 → oda **neredeyse siyah lacivert bir boşluk**; iki loş pencere dikdörtgeni dışında
+       hiçbir şey yok. KİLİT 4ø doğrudan ihlal (S3'te K20 birebir aynı yerden düşmüştü).
+     · K34 → arka planda, tezgâhın üstünde **odaklanmamış ama açıkça okunan bir insan eli ve
+       ön kolu** var. Bu ders TEK KİŞİLİK; kare ise @efe'siz tasarlanmış bir maket makrosu.
+   ÇÖZÜM: karanlık düşen karede odanın kendisi olumlu yazılır (K34'ün arka planı doğru
+   yazılmıştı ve aydınlık geldi — K30'a aynı cümle taşınır); ayrıca "no person, no hand"
+   negatifi **odak dışı düzleme de** açıkça bağlanır: *"the defocused background contains no
+   person, no hand, no arm and no face at any depth."*
+
+3) Ayrıca tek başına duran bir kusur: **K29'da hapşırık patlamaya dönmüş.**
+
+=========================================================================
+NE İYİ GİTTİ — bir daha yazılırken bozulmasın
+=========================================================================
+· **Türkçe yazının üçü de kusursuz:** `ÇAY` (C-cedilla doğru, fırınlanmış harf yüzeyin
+  İÇİNDE), `İNSAN SİNİR SİSTEMİ` (dört noktalı İ'nin dördü de doğru), `REFLEKS` (yedi harf,
+  buğunun içinden berrak, kenarlarda damlacık). Harf harf hecele + diakritiği adıyla an
+  yöntemi bu sekansta da 3/3 tuttu — dokunma.
+· **K33 bu sekansın en iyi karesi:** yazı camın ÜSTÜNE konmamış, camın İÇİNDEN kesilmiş;
+  damlacıklar harf kenarında toplanmış, dışarısı hiç okunmuyor. Tasarlanmış ekran yazısı
+  için kanıtlı reçete budur.
+· **K24 kavram ışığının referans karesidir:** tek kenar, bıçakla kesik, hâlesiz, komşusu
+  tamamen nötr. K25/K26/K34 yeniden yazılırken kıstas bu karedir.
+· @mutfak süreklilik çıpaları tuttuğu her yerde dünya tuttu: K28 (raf + kavanoz + emaye
+  kutu), K32 (duvar saati + ÇAY/TUZ/ŞEKER kavanozları + çift katlı çaydanlık + buğulu cam +
+  çay bardağı), K34 arka planı (çaydanlık + ocak + raf).
+· @efe gardırobu üç karede birebir aynı (kiremit örgü kazak + kot bahçıvan): K27 · K29 · K32.
+· Demlik zinciri doğru ilerliyor: K27'de soluk saman, K32/K34'te berrak erken amber, dipte.
+
+=========================================================================
+KARE KARE — yalnız yedi ciddi sınıfa girenler
+=========================================================================
+
+-------------------------------------------------------------------------
+K25 — "Omurilik soğanı iç organların istemsiz çalışmasını yönetir."
+SINIF: 7 — kavram ışığı fikri bozacak kadar yanlış (sert kenar kuralı kırık)
+NE GÖRÜLÜYOR: Omurilik soğanı + beyin sapı **bütün gövdesiyle** sıcak altın; ışık yüzeyin
+  İÇİNDEN geliyor, dışa doğru zayıflayarak yayılıyor ve parçanın çevresine hâle bırakıyor.
+  Yüzey ıslak ve akışkan okunuyor — dökülen bal görüntüsü; hatta gövdenin sağ yanında aşağı
+  doğru inen damla benzeri koyu bir iz var. Sert kenar, kesik uç ve "komşu tamamen nötr"
+  hükmünün üçü de yok.
+NE OLMALI: Parça K24'teki gibi **soluk fildişi mat plastik** kalır; ışık yalnız TEK kenarda,
+  ince, bıçakla kesik, hâlesiz. Prompt'a olumlu kilit eklenir: parçanın gövdesi asla altın,
+  pirinç, amber, bal ya da içten aydınlık değildir; ışık plastiğin İÇİNDEN gelmez, kenarına
+  OTURUR. (Bal/amber bu dersin HORMON dili — sinir karesinde kullanılamaz.)
+
+-------------------------------------------------------------------------
+K26 — "Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir."
+SINIF: 1 — VO ile kare çelişiyor  (+ 7)
+NE GÖRÜLÜYOR: Kadrajın ortasında, ahşap kaidenin üstünde **düz, som, cilalı bir pirinç
+  çubuk** duruyor. Maket parçası değil: anatomi yok, kalıp dikişi yok, boya yok, ölçek yok.
+  Çocuk VO'da "omurilik soğanı" duyup ekranda bir metal direk görüyor. Arka plandaki dört iş
+  (buhar, süt tenceresi, soba ağzı, damla) ise doğru ve güzel geldi.
+NE OLMALI: Ön düzlemde @maket'in omurilik soğanı parçası, K24'teki malzemeyle birebir aynı —
+  aşınmış ince boya, kalıp dikişi, ince çizikler, adımdaki gri toz. Işık yine tek kenarda ve
+  kesik. Arka plandaki dört iş aynen korunur, o kısım çalıştı.
+  ⚠ Ayrıca arka planda tenimsi, el benzeri bir bulanıklık var; yeniden basımda odak dışı
+  düzleme de "hiçbir derinlikte insan, el, kol, yüz yok" kilidi yazılır.
+
+-------------------------------------------------------------------------
+K29 — "Rafın tozu burnunu gıdıklayınca Efe hapşırdı."
+SINIF: 1 — VO ile kare çelişiyor  (+ 6 siluet okuması)
+NE GÖRÜLÜYOR: Toz "yana savrulmuş geniş gevşek bir yelpaze" değil; kadrajın ortasından sağa
+  doğru, göğüs hizasında, duvara çarpan **basınçlı bir püskürtme jeti** olarak çıkıyor.
+  Kaynağı raf değil, Efe'nin eli/çaydanlık hizası — yani izleyici "raftan kalkan toz" değil,
+  "bir şey fışkırdı" görüyor. VO'yu duymayan biri bunu **ağızdan çıkan tükürük/damlacık
+  saçılması** olarak da okuyabilir ve kare bir mutfakta, açık çay demliğinin üstünde geçiyor.
+  Ayrıca Efe'nin ifadesi hapşırık sonrası değil: kaşların içi yukarı kalkmış, gözler inik,
+  ağız köşesi aşağıda — kare **üzgün/ağlamaklı** okunuyor. Eli de gevşek ve açık değil,
+  sıcak cam demliğin önünde pençe gibi duruyor.
+NE OLMALI: Toz **yavaş, dağınık ve yönsüz** — rafın ön kenarından kalkmış, hafifçe yana
+  eğilmiş, hiçbir yere doğru atılmamış bir bulut; jet, koni, huzme, sıçrama yok. Efe rafa
+  BAKMIYOR, başı hafif eğik ve **yüzü rahatlamış** (hapşırığın geçmiş hâli, kaşlar
+  düzleşmiş). Eli yüzünden uzakta, gevşek ve açık, çaydanlığın hiçbir parçasıyla üst üste
+  gelmiyor. Damlacık, tükürük, sıvı saçılması hiçbir biçimde yok.
+
+-------------------------------------------------------------------------
+K30 — "Maketin aşağı inen uzun kısmı omuriliktir."
+SINIF: 4 — dünya kayması (KİLİT 4ø doğrudan ihlal)
+NE GÖRÜLÜYOR: Arka plan **neredeyse siyah, koyu lacivert bir boşluk**; içinde iki loş pencere
+  dikdörtgeni dışında hiçbir şey yok, oda diye bir şey yok. Kış sabahı değil, gece okunuyor.
+  Uzun parçanın kendisi ve kenarındaki sert altın çizgi doğru geldi — kusur yalnız odada.
+NE OLMALI: KİLİT 4ø tabanı: kardan dönen yüksek, temiz, bol kış ışığı odayı doldurur;
+  gölgeler siyah çukur değil **aydınlık indigo**; kadrajda odak dışında bile olsa aydınlık
+  bir yüzey ve **adı konmuş iki çıpa** bulunur (buğulu pencere düzlemi + raf kavanozları ya
+  da çift katlı çaydanlık). K34'ün arka plan cümlesi bu kareye taşınır: "the kitchen behind
+  is bright, the whitewashed wall bounces it back, the whole defocused field reads as
+  luminous cream and warm amber rather than as darkness."
+
+-------------------------------------------------------------------------
+K34 — "Reflekslerin yönetim merkezi omuriliktir."
+SINIF: 5 — kadrajda ikinci insan
+NE GÖRÜLÜYOR: Kadrajın sağ kenarında, ocağın/tezgâhın üstünde, odak dışı ama 3x büyütmede
+  net biçimde okunan **bir insan eli ve ön kolu** duruyor — parmak eklemleri ve kolun devamı
+  seçiliyor. Bu ders TEK KİŞİLİK ve bu kare @efe'siz tasarlanmış bir maket makrosu; prompt
+  da "no person, no hand and no animal enters the picture" diyor.
+  İkinci sıra kusur (aynı basımda düzeltilsin): omurilik gövdesinin TAMAMI pirinç-altın —
+  bkz. makro hüküm 1. Nötr kalması gereken yüzey de ışık rengine boyanmış.
+NE OLMALI: Kadrajın sağı yalnız mutfağın kendi kütleleri — bulanık çaydanlık, ocak, tezgâh,
+  raf; **hiçbir derinlikte insan, el, kol, omuz ya da yüz yok.** Uzun parça K24'ün soluk
+  fildişi mat plastiğinde kalır, altın yalnız tek kenarda ve kesik. Arka planın aydınlık
+  yazımı aynen korunur, o kısım kusursuz geldi.
+
+=========================================================================
+REVİZE YAZILMAYANLAR — bilerek geçildi (yedi sınıfa girmiyor)
+=========================================================================
+· K24'te altın çizgi silindirik parçanın kenarından aşağıdaki uzun parçaya bir miktar
+  taşıyor. Çizginin kendisi kusursuz (sert, kesik, hâlesiz) ve VO'nun adlandırdığı yapı
+  kadrajda tek başına okunuyor. Motion'da çizgi olduğu yerde kilitleniyor.
+· K25'te pirinç plaka kadraja dönük ve boş (prompt "çevrili ve okunmaz" demişti). Harf hatası
+  değil, harf yok. K31'de aynı plaka doğru ve dolu geliyor.
+· K27'de nefesin taze buğu dairesi ayrı bir leke olarak gelmemiş, cam baştan sona buğulu.
+  VO "camı buğulandırırken" diyor, kare buğulu camı gösteriyor — çelişki yok.
+· K27'de Efe'nin ağzı hafif aralık. Motion'da dudaklar olumlu cümleyle sabitlendi ve kuyruk
+  "jaw held" biçiminde yazıldı; yeniden basım gerekmiyor.
+· K29/K32'deki paslanmaz ocak "modern" görünüyor ama K26/K32/K34'te de aynısı var — dünya
+  KENDİ İÇİNDE tutarlı. Süreklilik tercihi, kusur değil.
+· K31'in arka duvarı koyu lacivert ama pencere parlak, masa sıcak aydınlık ve maket baştan
+  sona okunuyor — K30'un boşluğuyla aynı sınıf değil.
