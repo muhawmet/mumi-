@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "canary",
   "status": "aktif",
-  "lastCompleted": "Destek kaba kurgusu kuruldu: 52/52 klip whisper ile gerçek VO cümlelerine oturdu, film 3:15. K51'in bozuk ilk 2.42 saniyesi kesildi, açığı K52'nin kuyruğu kapattı. MOTION yapısı çalışan projelerle hizalandı (NN.txt).",
-  "nextAction": "Mami Premiere'de kurguyu açsın; AGY klip kusur raporu geliyor",
+  "lastCompleted": "T0·T0b·T1·T2·T3·T4·T5 kapandı + Sol'un 3 NARROW artığı. Kapı artık canlı MOTION klasörünü ölçüyor, canary kilidi kodla zorunlu, Shot Card ölçeni kapıya bağlı, ref sözleşmesi (TAŞIR/TAŞIMAZ) yasada ve 11 projede eksik ölçülüyor, Director Context derleyicisi hash'li. 2599 test.",
+  "nextAction": "MAMİ: canary-8 seçkisini onayla (K1 K4 K7 K8 K11 K31 K37 K41) — Destek ve Hareket_CANARY-ONERISI.md",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": true
   },
-  "updatedAt": "2026-08-05T09:43:06.952Z",
+  "updatedAt": "2026-08-05T09:51:04.011Z",
   "updatedBy": "claude",
-  "baseCommit": "923b1ab"
+  "baseCommit": "3ae5222"
 }
