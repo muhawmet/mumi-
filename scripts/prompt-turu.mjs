@@ -124,7 +124,12 @@ export const TUR_SOZLESMESI = {
     // konusu tam olarak "ölçen yaratıcı karar vermesin"dir — kural yamanmadı, SİLİNDİ.
     // Plakanın sahne taşıyıp taşımadığı bir ANLAM sorusudur; onu Claude okur, ölçen değil.
     tasiyamaz: [],
-    zorunlu: [
+    zorunlu: [],
+    // SARI — kusur iddiası değil, bakılacak yer.
+    // `plaka-tasimaz` bilerek KIRMIZI DEĞİL: TAŞIR/TAŞIMAZ sözleşmesi 2026-08-05'te doğdu ve
+    // ölçüldü — 11 canlı projede yok. Hepsini birden kırmızıya çevirmek çalışan işi kilitlerdi
+    // (aynı karar `ced8ff5`'te de böyle verildi). Yeni yazılan ref'te beklenir, eskiye yasak olmaz.
+    sari: [
       {
         key: 'plaka-tasimaz',
         test: (m) => /^TAŞIMAZ\s*:/mu.test(m),
@@ -154,17 +159,21 @@ export const TUR_SOZLESMESI = {
 export function lintTur(govde, secenekler = {}) {
   const metin = String(govde ?? '').replace(/\r\n/g, '\n');
   const tur = secenekler.tur ?? promptTuru(metin, secenekler);
-  const sozlesme = TUR_SOZLESMESI[tur] ?? { tasiyamaz: [], zorunlu: [] };
+  const sozlesme = TUR_SOZLESMESI[tur] ?? {};
   const kirmizi = [];
+  const sari = [];
 
-  for (const kural of sozlesme.tasiyamaz) {
+  for (const kural of sozlesme.tasiyamaz ?? []) {
     const bulunan = kural.bul(metin);
     if (bulunan.length) kirmizi.push({ key: kural.key, msg: kural.mesaj(bulunan) });
   }
-  for (const kural of sozlesme.zorunlu) {
+  for (const kural of sozlesme.zorunlu ?? []) {
     if (!kural.test(metin)) kirmizi.push({ key: kural.key, msg: kural.mesaj });
   }
-  return { tur, kirmizi };
+  for (const kural of sozlesme.sari ?? []) {
+    if (!kural.test(metin)) sari.push({ key: kural.key, msg: kural.mesaj });
+  }
+  return { tur, kirmizi, sari };
 }
 
 /**
@@ -180,12 +189,31 @@ export function lintTur(govde, secenekler = {}) {
  */
 export function parseReferansBloklari(metin) {
   const satirlar = String(metin ?? '').replace(/\r\n/g, '\n').split('\n');
-  // Başlık: `1 · @kedi — EV KEDİSİ` ya da `5 · @efe — GARDIROP VARYANTI (…)`
-  const BASLIK_RE = /^\s*\d+\s*[·.\-]\s*(@[a-z0-9çğıöşü_-]+)\s*[—–-]/iu;
+  // 🔴 ÜÇ GERÇEK BİÇİM VAR — ve ilk sürüm YALNIZ BİRİNİ tanıyordu.
+  // Ölçüldü (2026-08-05, aynı gün): 15 referans dosyasının 13'ü SIFIR blok verdi, yani yeni
+  // ölçen repodaki referansların %87'sine KÖRDÜ ve sessizce yeşil kalıyordu. Bu, bu repoda
+  // sekiz kez ölçülmüş kusur sınıfının kendisi — doğrulayıcı, ölçtüğü şeyin YERLEŞİMİNİ
+  // varsayıyor. Kusur ölçenin kendisindeydi ve "yeni işlerde dene" denince ortaya çıktı.
+  // Tanınan biçimler (hepsi diskte canlı):
+  //   Denetleyici : `1 · @kedi — EV KEDİSİ`      (numaralı, `====` çubuklu)
+  //   Eşeyli      : `@gul — BARDAKTAKİ GÜL (…)`  (numarasız, `-----` çubuklu)
+  //   Hayvanlarda : `@efe`                        (tek başına, gövde girintili)
+  //   Kuvvet      : `### @dinamometre-ince`       (markdown başlık, `-----` çubuklu)
+  // ⚠ Biçim listesi TAHMİN EDİLMEDİ, diskte sayıldı. Yeni bir biçim çıkarsa buraya EKLENİR —
+  // ve `lintReferansFile` 0 blok döndürdüğünde bunu SESSİZ GEÇMEK yerine "KÖR" diye bildirmesi
+  // gerekir; sessiz sıfır, bu repoda sekiz kez ölçülmüş kusurun kendisidir.
+  //   Hücre       : `Full-body character reference of @mira3:`  (İngilizce giriş satırı)
+  const BASLIK_RE = /^\s*(?:#{1,6}\s*)?(?:\*\*\s*)?(?:\d+\s*[·.)\-]\s*)?(@[a-z0-9çğıöşü_-]+)\s*(?:\*\*)?\s*(?:[—–:-]|$)/iu;
+  /** İngilizce giriş biçimi: `Full object reference of @gul:` — handle satırın SONUNDA. */
+  const ING_BASLIK_RE = /^\s*(?:#{1,6}\s*)?[A-Za-z][\w\s-]{0,60}\breference of\s+(@[a-z0-9çğıöşü_-]+)\s*:/iu;
   const baslangic = [];
   for (let i = 0; i < satirlar.length; i += 1) {
-    const m = BASLIK_RE.exec(satirlar[i]);
-    if (m) baslangic.push({ i, handle: m[1].toLowerCase(), baslik: satirlar[i].trim() });
+    const dm = BASLIK_RE.exec(satirlar[i]);
+    const im = dm ? null : ING_BASLIK_RE.exec(satirlar[i]);
+    const m = dm ?? im;
+    if (m) {
+      baslangic.push({ i, handle: m[1].toLowerCase(), baslik: satirlar[i].trim(), ingGiris: Boolean(im) });
+    }
   }
   const bloklar = [];
   for (let n = 0; n < baslangic.length; n += 1) {
@@ -194,12 +222,31 @@ export function parseReferansBloklari(metin) {
     let son = n + 1 < baslangic.length ? baslangic[n + 1].i : satirlar.length;
     while (son > bas.i + 1 && /^\s*[=]{5,}\s*$/u.test(satirlar[son - 1])) son -= 1;
     const tam = satirlar.slice(bas.i, son).join('\n');
-    const ayrac = tam.search(/^-{5,}$/mu);
-    const govde = ayrac >= 0 ? tam.slice(ayrac).replace(/^-{5,}$/mu, '').trim() : '';
-    // Gövdesi olmayan satır bir BLOK DEĞİLDİR. Aynı dosyada `1. @maket — 14 karede dönüyor…`
-    // biçiminde bir BASIM SIRASI listesi var; başlık desenine uyuyor ama motora giden metni
-    // yok. Ölçüldü: ilk denemede o dört satır dört sahte blok üretti ve dördü de kırmızı yandı.
-    if (!govde) continue;
+    // GÖVDE: iç `-----` varsa ondan sonrası (Denetleyici biçimi); yoksa başlıktan sonrası
+    // (Eşeyli ve Hayvanlarda biçimleri — prompt gövdesi doğrudan başlığın altında başlar).
+    // İlk sürüm iç `-----` ŞART koşuyordu ve iki biçimi tamamen görmüyordu.
+    const icAyrac = tam.search(/^-{5,}$/mu);
+    const govde = (icAyrac >= 0 ? tam.slice(icAyrac).replace(/^-{5,}$/mu, '') : tam.slice(bas.baslik.length)).trim();
+    // GÖVDE MOTORA GİDEN METİN GİBİ GÖRÜNMEK ZORUNDA — uzunluk YETMEZ.
+    // Ölçüldü iki kez:
+    //  1) `1. @maket — 14 karede dönüyor…` biçimindeki BASIM SIRASI listesi başlık desenine
+    //     uyuyor; uzunluk eşiği tek başınayken bu satırlar sahte blok üretti.
+    //  2) Envanter notları (Türkçe düzyazı) da 200 karakteri kolayca geçiyor.
+    // Ayırt edici: prompt gövdesi İngilizcedir. Türkçe'ye özgü harf oranı yüksekse bu bir
+    // envanter notudur, motora giden metin değildir.
+    // 🔴 İSTATİSTİK DEĞİL, YAZARIN AÇIK İŞARETİ.
+    // Bu eşik iki kez yanlış kalibre edildi: uzunluk tek başına envanter listesini blok saydı
+    // (sahte @kedi), Türkçe harf ORANI ise Türkçe ETİKET taşıyan gerçek gövdeleri kesti
+    // (76 → 27 blok, 49 gerçek blok kayboldu). Üçüncü denemede tahmin bırakıldı.
+    // Bir blok, yazar onu bir PROMPT olarak işaretlediyse prompt bloğudur. Üç açık işaret:
+    //   1) iç `-----` ayracı           (Denetleyici · Eşeyli · Kuvvet biçimleri)
+    //   2) `reference of @x:` girişi    (Hücre · Eşeyli biçimi)
+    //   3) çıplak `@handle` başlığı + gövdede yeterli İngilizce  (Hayvanlarda biçimi)
+    // Envanter satırı üçünü de taşımaz: numaralıdır, ayraçsızdır, gövdesi Türkçe nottur.
+    const asciiHarf = (govde.match(/[A-Za-z]/gu) ?? []).length;
+    const ciplakBaslik = /^\s*@[a-z0-9çğıöşü_-]+\s*$/iu.test(bas.baslik);
+    const isaretVar = icAyrac >= 0 || bas.ingGiris || (ciplakBaslik && asciiHarf >= 150);
+    if (!isaretVar || govde.length < 200 || asciiHarf < 150) continue;
     bloklar.push({ handle: bas.handle, baslik: bas.baslik, tam, govde, satir: bas.i + 1 });
   }
   return bloklar;

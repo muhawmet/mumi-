@@ -96,13 +96,20 @@ describe('EDİT DELTA-ONLY — asıl duvar', () => {
 });
 
 describe('PLAKA sözleşmesi', () => {
-  it('TAŞIMAZ satırı olmayan plaka KIRMIZI', () => {
+  it('TAŞIMAZ satırı olmayan plaka SARI — kırmızı DEĞİL', () => {
+    // 2026-08-05: kırmızıydı, SARI'ya indirildi. Gerekçe ölçüldü: TAŞIR/TAŞIMAZ sözleşmesi
+    // bugün doğdu ve 11 CANLI projede yok. Kırmızı yapmak bitmiş işleri kilitlerdi — aynı
+    // karar `ced8ff5`'te de böyle verilmişti. Yeni ref'te beklenir, eskiye yasak olmaz.
     const eksik = PLAKA_GOVDESI.replace(/^TAŞIMAZ.*$/mu, '');
-    expect(lintTur(eksik, { tur: TURLER.PLAKA }).kirmizi.map((k) => k.key)).toContain('plaka-tasimaz');
+    const r = lintTur(eksik, { tur: TURLER.PLAKA });
+    expect(r.kirmizi).toEqual([]);
+    expect(r.sari.map((k) => k.key)).toContain('plaka-tasimaz');
   });
 
-  it('TAŞIMAZ taşıyan plaka temiz', () => {
-    expect(lintTur(PLAKA_GOVDESI, { tur: TURLER.PLAKA }).kirmizi).toEqual([]);
+  it('TAŞIMAZ taşıyan plaka temiz — ne kırmızı ne sarı', () => {
+    const r = lintTur(PLAKA_GOVDESI, { tur: TURLER.PLAKA });
+    expect(r.kirmizi).toEqual([]);
+    expect(r.sari).toEqual([]);
   });
 
   it('plakada dünya kuyruğu KIRMIZI DEĞİL — plaka kendi dünyasını taşıyabilir', () => {
@@ -165,5 +172,34 @@ describe('PLATFORM — CRLF sapma üretmez', () => {
     const crlf = lf.replace(/\n/gu, '\r\n');
     expect(promptTuru(crlf)).toBe(promptTuru(lf));
     expect(lintTur(crlf).kirmizi.map((k) => k.key)).toEqual(lintTur(lf).kirmizi.map((k) => k.key));
+  });
+});
+
+// ---------------------------------------------------------------------------
+// BEŞ GERÇEK BAŞLIK BİÇİMİ (2026-08-05).
+//
+// Ölçülen kusur: ayrıştırıcı ilk sürümde TEK biçim tanıyordu ve 15 referans dosyasının 13'ü
+// SIFIR blok verdi — yani ölçen, repodaki referansların %87'sine KÖRDÜ ve sessizce yeşil
+// kalıyordu. Bu, bu repoda sekiz kez ölçülmüş kusur sınıfının kendisi: doğrulayıcı, ölçtüğü
+// şeyin YERLEŞİMİNİ varsayıyor. Kusur "yeni işlerde dene" denince ortaya çıktı.
+describe('ayrıştırıcı beş gerçek biçimi de görür — sessiz sıfır YOK', () => {
+  const BICIMLER = [
+    ['Denetleyici (numaralı + ==== )', 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt'],
+    ['Eşeyli (numarasız + ----- )', 'agents/COMMAND-INBOX/Biten/6. Sınıf - Eşeyli ve Eşeysiz Üreme/Eşeyli ve Eşeysiz Üreme_REFERANSLAR.txt'],
+    ['Hücre (İngilizce giriş)', 'agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/Hücre ve Organelleri_REFERANSLAR.txt'],
+    ['Kuvvet (markdown ### )', 'agents/COMMAND-INBOX/Biten/Kuvvet ve Kuvvetin Ölçülmesi/Kuvvet ve Kuvvetin Ölçülmesi_REFERANSLAR.txt'],
+  ];
+
+  it.each(BICIMLER)('%s → en az bir blok bulunur', (_ad, yol) => {
+    const bloklar = parseReferansBloklari(oku(yol));
+    expect(bloklar.length, `${yol} SIFIR blok verdi — ayrıştırıcı bu biçime kör`).toBeGreaterThan(0);
+    for (const b of bloklar) expect(b.handle).toMatch(/^@/u);
+  });
+
+  it('ENVANTER SATIRI blok sayılmaz — açık yazar işareti şart', () => {
+    // `1. @maket — 14 karede dönüyor…` başlık desenine uyar ama motora giden metni yoktur.
+    // Ölçüldü: eşik yalnız UZUNLUK olduğunda bu satır sahte bir @kedi bloğu üretti.
+    const bloklar = parseReferansBloklari(oku(BICIMLER[0][1]));
+    expect(bloklar.map((b) => b.handle)).toEqual(['@kedi', '@maket', '@mutfak', '@koridor', '@efe']);
   });
 });

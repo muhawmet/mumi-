@@ -33,6 +33,32 @@ ten kilidi yok → 2 karede yeşil cilt; kavram-ışığı isimlendirmesi yok (`
 
 ---
 
+## 0.3 KURAL EKLEME KAPISI — "OPUS 5 BUNA İHTİYAÇ DUYAR MI?!"
+
+**Mami, 2026-08-05.** Bu yasanın büyüme kapısı §6'daydı ama bir SÜZGEÇ eksikti ve o eksik,
+yasanın kendisini şişirdi. §0'ın çit yasası iki soru soruyordu — *bu motorun sınırı mı, benim
+alışkanlığım mı?* Üçüncü soru bu ve en keskini o: **kuralların çoğu daha zayıf bir modele
+yazılmıştı.**
+
+Ölçüldü (2026-08-05): `prompt-lint` **on yerde** yazılacak İngilizce cümleyi veriyordu, **12**
+üretim-engelleyen kırmızı ölçülmüş bir motor kırılmasına değil bir *ifade beklentisine*
+dayanıyordu, ve o kurallardan biri **altın standardı** (Hücre) kırmızı yapıyordu. Motora giden
+metnin **%60'ı** kalıptı; altın standart ise kalıbın **%9'uyla** çalışmıştı.
+
+**Süzgeç sırası — üçü de geçilmeden madde yazılmaz:**
+
+| # | Soru | Geçerse |
+|---|---|---|
+| 1 | Bu **motorun** ölçülmüş sınırı mı? | kalır — warp · eriyen harf · Kling yazmaz · yazı morph'u |
+| 2 | Bu bir **güvenlik / pedagoji / süreklilik** kilidi mi? | kalır — çocuk güvenliği · VO doğruluğu · kaynağın tonu · TAŞIR/TAŞIMAZ |
+| 3 | **Opus 5 buna ihtiyaç duyar mı?** | duymuyorsa **YAZILMAZ**; yazılmışsa **SÖKÜLÜR** |
+
+🔴 Üçüncü soruya "hayır" gelen bir maddenin yerine **hiçbir şey konmaz.** Yaratıcı kararın adı
+budur: kadraj, ışık, malzeme, kamera hamlesi, kare-özel negatif ve cümlenin kendisi ajanındır.
+
+Karşı-örnek olarak okunacak tek şey: bir madde ancak **basılmış bir kareyle** kanıtlıysa
+1. ya da 2. süzgeci geçer. "Böyle daha iyi olur" bir kanıt değildir.
+
 ## 0.4 PROMPT TÜRÜ — üç ayrı iş, üç ayrı sözleşme
 
 **Ölçüldü (2026-08-05):** sistemin tek bir "prompt" kavramı vardı ve üç ayrı iş aynı kurallara

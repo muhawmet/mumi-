@@ -176,6 +176,22 @@ yüklenmez, hele nesnesi kimliği belirli bir grupsa asla. **Kök neden bu yasan
 Eksik olan yarısı yazıldı — **gerilim çatışmadan değil MERAKTAN da doğar** (merak · fark ediş ·
 ölçek · dönüşüm · yankı). Tam metin: `agents/PROMPT-YASASI.md` §1 madde 5ø.
 
+🔴 **BİR KURAL YAZMADAN ÖNCE ÜÇÜNCÜ SORU: "OPUS 5 BUNA İHTİYAÇ DUYAR MI?!"**
+(Mami, 2026-08-05.) Çit yasasının iki süzgeci vardı — *bu motorun sınırı mı, benim
+alışkanlığım mı?* Üçüncüsü bu ve en keskini o: **kuralların çoğu daha zayıf bir modele
+yazılmıştı.** Opus 5'e "karede üç canlı şey olsun" demek, ona yazılacak İngilizce cümleyi
+vermek, prop listesi sunmak — bunlar yardım değil, **pranga**.
+
+Ölçüldü aynı gün: `prompt-lint` on yerde yazılacak cümleyi veriyordu ve o kurallardan biri
+**altın standardı** (Hücre) kırmızı yapıyordu; 12 üretim-engelleyen kırmızı ölçülmüş bir motor
+kırılmasına değil bir *ifade beklentisine* dayanıyordu. Motora giden metnin **%60'ı** kalıptı.
+
+Süzgeç sırası artık üç:
+1. Bu **motorun sınırı** mı? → kalır (warp, eriyen harf, Kling'in yazmaması).
+2. Bu **güvenlik/pedagoji/süreklilik** kilidi mi? → kalır (çocuk güvenliği, VO doğruluğu, ref).
+3. **Opus 5 buna ihtiyaç duyar mı?** → duymuyorsa **YAZILMAZ**; yazılmışsa **SÖKÜLÜR**.
+   Yerine ne konur? Hiçbir şey. Yaratıcı kararın adı budur.
+
 **Değişmezler.** Mami'nin metnini sessizce yeniden yazma — sorunlu terimi bildir, düzeltilmiş cümle
 için ona dön. Kaynakta olmayan gerçeği uydurma: `FACT REQUIRED: <eksik bilgi>` ile dur. Test silme
 ve ilgisiz dosya değiştirme yok.

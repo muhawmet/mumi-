@@ -1261,14 +1261,15 @@ export function lintReferansFile(path) {
   const bloklar = parseReferansBloklari(text);
   const satirlar = [];
   for (const b of bloklar) {
-    const { tur, kirmizi } = lintTur(b.tam, { dosyaRolu: 'referans' });
-    satirlar.push({ handle: b.handle, satir: b.satir, tur, kirmizi });
+    const { tur, kirmizi, sari } = lintTur(b.tam, { dosyaRolu: 'referans' });
+    satirlar.push({ handle: b.handle, satir: b.satir, tur, kirmizi, sari: sari ?? [] });
   }
   return {
     path,
     total: bloklar.length,
     bloklar: satirlar,
     bad: satirlar.filter((r) => r.kirmizi.length),
+    warn: satirlar.filter((r) => !r.kirmizi.length && r.sari.length),
   };
 }
 
