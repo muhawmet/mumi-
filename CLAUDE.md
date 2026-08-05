@@ -11,12 +11,10 @@ prompt'un doğduğu yer değil.
 
 **Bu dosya yalnız her fazda geçerli olanı taşır.** Faza özel yürütme aşağıdaki import'tadır.
 
-@docs/ai/faz-insa.md
+@docs/ai/faz-icraat.md
 
-<!-- FAZ ANAHTARI (2026-08-05: İCRAAT → İNŞA, DAR VE GERİ DÖNÜŞLÜ. Dörtlü Masa'yı kanıtlı kapıya
-     çevirme turu için açıldı; tur bitince İCRAAT'a geri çevrilir ve bu not düşürülür.
-     Üretim otoritesi bu tur boyunca da `artifacts/current-work.json`'dur — aktif Denetleyici
-     projesinin promptu, Enzimi, referansı ve basım sırası bu turda DEĞİŞMEZ.)
+<!-- FAZ ANAHTARI (2026-08-05: kısa bir İNŞA turu açıldı ve KAPANDI — Dörtlü Masa'yı kanıtlı
+     kapıya çevirme turu; kaydı `docs/ai/INSA-RECEIPT-2026-08-05.md`. Aktif faz yine İCRAAT.)
      Üstteki tek satır ajanın hangi yasayla
      açılacağını belirler: `@docs/ai/faz-icraat.md` (video üret) ↔ `@docs/ai/faz-insa.md` (duvar kur).
      İki profil de repoda durur; hiçbir şey silinmez, sadece hangisinin yükleneceği değişir.
