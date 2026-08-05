@@ -33,6 +33,30 @@ ten kilidi yok → 2 karede yeşil cilt; kavram-ışığı isimlendirmesi yok (`
 
 ---
 
+## 0.4 PROMPT TÜRÜ — üç ayrı iş, üç ayrı sözleşme
+
+**Ölçüldü (2026-08-05):** sistemin tek bir "prompt" kavramı vardı ve üç ayrı iş aynı kurallara
+sokuluyordu. Bedeli diskte görünür: `@efe` referans-**edit**'i 709 karakterlik `STYLE` +
+`LIGHT AND PALETTE` + 191 kelimelik global `NEGATIVE` taşıyor — yani kaynağı korumak yerine
+onu **yeniden ışıklandırıyor**. Aynı ölçümde referans blokları, kuyruk tekrarını denetleyen
+iki kurala **yapısal olarak görünmez** çıktı.
+
+| Tür | Ne yapar | Ne TAŞIYAMAZ |
+|---|---|---|
+| **scene-start-frame** | Hikâye anı: kompozisyon, kamera, ışık, malzeme, **kare-özel** negatif | *(tür yasağı YOK — burası Claude'un alanıdır)* |
+| **reference-plate** | Bir karakter/nesne/mekânın yeniden kullanılabilir **DNA**'sı | `TAŞIMAZ` satırı boş bırakılamaz (§4a.1) |
+| **reference-edit** | **Yalnız delta:** *"bu görüntüyü kullan, YALNIZ şunu değiştir, kalan her şey aynı kalsın"* | dünya kuyruğu (`STYLE` / `LIGHT AND PALETTE` / global `NEGATIVE`) · kamera-objektif kararı · koruma cümlesinin eksikliği |
+
+🔴 **Sahne karesine tür yasağı konmaz.** Kadraj, ışık, malzeme, kamera hamlesi ve kare-özel
+negatif **Claude'un yaratıcı seçimidir**; bu tablo yalnız türler arası **sızıntıyı** durdurur.
+
+🔴 **Edit neden kuyruk taşıyamaz:** edit'in girdisi zaten o dünyada üretilmiş bir görüntüdür.
+Dünyayı yeniden yazmak, korunması istenen şeyi yeniden üretmeye davettir. Ölçüldü: aynı edit
+içinde hem *"stays exactly as it is"* hem 40 kelimelik yeniden tarif vardı.
+
+Ölçen: `scripts/prompt-turu.mjs` (sınıflandırır ve tür sızıntısını basar) — **prompt yazmaz.**
+Tam gerekçe ve sayılar: `docs/ai/PROMPT-SISTEMI-ARINDIRMA.md`.
+
 ## 0.5 REGISTER — bu yasa üç dilde konuşur
 
 **Dürüst durum:** yukarıdaki 181 karenin **181'i `pixar_3d_edu`**. Yani §1 ve §2'nin bir kısmı
