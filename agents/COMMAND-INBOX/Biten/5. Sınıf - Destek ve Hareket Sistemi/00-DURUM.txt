@@ -42,3 +42,15 @@ AÇIK NOT
     8'inin start-frame promptu hazır: PROMPTLAR/_YENIDEN-BASIM-2026-08-05.txt
     K44'ünki HENÜZ YOK.
   · K29: VO "Mira dizini bükünce" diyor ama karede Mira'nın dizi yok.
+
+## KAPANIŞ RECEIPT
+DURUM: REJECTED_HARVESTED
+KAYNAK: /Users/Muhammet/Desktop/6. Sınıf Animasyonlar/5. Sınıf - Destek ve Hareket Sistemi/5. Sınıf - Destek ve Hareket Sistemi.mp4
+SHA256: 5fb864d4a68d16d3ff156345c71104762fac617daf1671fa86107449b12a12a7
+SÜRE: 3:16
+KANIT: agents/COMMAND-INBOX/Biten/5. Sınıf - Destek ve Hareket Sistemi/Destek ve Hareket_AGY-TAM-VIDEO.md
+
+Bu iş İYİ ilan EDİLMEDİ. Film bozuk çıktı (AGY tam video tarifinde 23 morph, 8'i ekrandaki
+yazı), 52 klibin hiçbiri onaylanmadı, 9 kare yeniden basım listesinde kaldı. REJECTED_HARVESTED
+demek: video reddedildi ama ondan öğrenilen ders hasat edildi ve medyası taşınabilir kaldı.
+Geçmiş yeniden yazılmadı.

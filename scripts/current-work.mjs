@@ -39,6 +39,7 @@ import { execFileSync } from 'node:child_process';
 // Canary kilidi VARLIK değil İÇERİK olarak ölçülür (2026-08-05 ikinci onarımı).
 import { uretimAcilabilirMi } from './canary-lock.mjs';
 import { parseHukumBloklari } from './hukum-blogu.mjs';
+import { lintReceipt } from './kapanis-receipt.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_DEFAULT = resolve(HERE, '..');
@@ -733,6 +734,19 @@ function cmdKapat(root, argv = []) {
     }
     if (s.blockedBy) engel.push(`BLOKE hâlâ açık → ${s.blockedBy}`);
     if (s.openMamiDecision) engel.push(`Mami kararı hâlâ açık → ${s.openMamiDecision}`);
+
+    // KAPANIŞ RECEIPT — biten iş TAŞINABİLİR medya makbuzu bırakmak zorunda.
+    // Ölçüldü: Destek ve Hareket `Biten/` altına taşındı, "kapandı" sayıldı ve 360 MB'lık
+    // final filmin adı repo'nun hiçbir yerinde geçmedi. Kötü bir video "bitti" diye
+    // kaybolursa ondan öğrenilecek şey de kaybolur. Üç kapanış da meşrudur
+    // (APPROVED / REJECTED_HARVESTED / ABANDONED) — makbuzsuz kapanış meşru değildir.
+    const durumDosyasi = projeDosyasi(root, s.projectPath, '00-durum.txt');
+    if (!durumDosyasi) {
+      engel.push(`KAPANIŞ RECEIPT yok → ${s.projectPath}/00-DURUM.txt bulunamadı`);
+    } else {
+      const { kirmizi } = lintReceipt(readFileSync(durumDosyasi, 'utf8'), { repoKok: root });
+      for (const k of kirmizi) engel.push(`KAPANIŞ RECEIPT · ${k}`);
+    }
     if (engel.length) {
       process.stdout.write('[durum] ⛔ kapanmadı — eksik teslimde kapanış bir YALANDIR:\n');
       for (const e of engel) process.stdout.write(`   - ${e}\n`);
