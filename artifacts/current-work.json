@@ -2,24 +2,24 @@
   "version": 1,
   "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "phase": "prompt",
+  "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "56 KARENİN 56'SI YENİDEN IŞIKLANDIRILDI (3 ajan, blok başına bir tane). Oran 13.4:1 → 0.52:1. Dünya kuyruğu üç blokta da hash'le doğrulandı, tek bayt değişmedi (LIGHT 56/56 tek sürüm; STYLE'ın 54 sürümü BEKLENEN — omurga aynı, 'Materials here:' kare başına farklı olmak ZORUNDA). prompt-lint 0/14 · 0/20 · 0/22 kırmızı. Sahne/kompozisyon/lens/yazı/@handle'a dokunulmadı.",
-  "nextAction": "🔴 AMBİYANS CANARY: 56'yı birden basma. Önce 4 kare — K01 (açılış+ayna) · K39 (koridor, tek kaynak, en riskli) · K50 (iki ışık, dersin kapanışı) · K56 (ayna eşi). Oran 13.4'ten 0.52'ye savruldu, altın standart 2.8; bu bant HİÇ ölçülmedi. 4 kare söyler.",
+  "lastCompleted": "56 KARE DENETLENDİ, 6 ajan sekans sekans, hepsi kareleri Read ile AÇTI. Temiz 32 · yeniden-basım 24. Motion yazıldı: 6 dosya, motion-lint kırmızı 0/56, açılış tekdüzeliği YOK (9/56 ve o dokuz MOTION INTENT işareti, klip açılışı değil). Sıkı revize barı (7 ciddi sınıf) ölçülebilir fark yaptı: bar öncesi %48 temiz, bar sonrası %64.",
+  "nextAction": "🔴 ÖNCE @maket REFERANSINI BAS — 24 yeniden-basımın ~8'i tek sebepten: @maket hiç basılmadı ve altı karede üç ayrı nesne oldu. Referanssız yeniden basmak aynı kaymayı satın almak.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
-    "revize": false,
-    "MOTION": false,
+    "revize": true,
+    "MOTION": true,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T12:10:57.992Z",
+  "updatedAt": "2026-08-05T13:30:23.500Z",
   "updatedBy": "claude",
-  "baseCommit": "5e855f5"
+  "baseCommit": "349e187"
 }
