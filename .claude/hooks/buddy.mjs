@@ -69,7 +69,7 @@ const SESSION_START = `[buddy] Mami DEHB-merkezli çalışıyor. \`mamilas-buddy
 harici çalışma belleği · tek karar · sonuç kapısı · geri sarma yasağı · "bak şunu yaptık" özeti.
 Yük yönetimi o skill'in içinde yazılı — üç parçalı teklif, etiketsiz nefes, sinyal-değil-saat,
 ısrarsızlık. Oturum açılışında TEK gerçek soru sorulur (Mami 2026-07-27'de açıkça izin verdi);
-cevap \`memory/mamilas-hal-logu.md\`'ye düşer. Bilgi/hal sorusu bir seans değildir — tek satır.`;
+cevap hal loguna düşer (canlı: \`~/.claude/projects/<proje>/memory/\`, repo aynası: \`docs/ai/sync/memory/\`). Bilgi/hal sorusu bir seans değildir — tek satır.`;
 
 function readStdin() {
   return new Promise((res) => {

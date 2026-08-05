@@ -64,8 +64,9 @@ Skill çağrılınca tek hamlede context'i kur:
    - **Banka boşsa hiçbir şey olmaz:** uyarı basma, Mami'ye sorma, eksik sayma — boş banka
      NORMAL durumdur. Adaylar (`agents/lessons/CANDIDATES-*.md`, `HASAT-*.md`) ders DEĞİLDİR;
      `APPROVED.md`'ye yazmak **yalnız Mami'nin** işidir, sen aday taşımazsın (M7 yasası).
-2. **Kaynak ne? — command JSON ZORUNLU DEĞİL.** *(2026-07-29 ölçümü: altın standart olan
-   "Eşeyli ve Eşeysiz Üreme" site/command OLMADAN üretildi — kaynak bir `.docx` senaryoydu ve
+2. **Kaynak ne? — command JSON ZORUNLU DEĞİL.** *(2026-07-29 ölçümü: O GÜNÜN altın standardı
+   "Eşeyli ve Eşeysiz Üreme" — tavan 2026-08-03'te **Hücre ve Organelleri**'ne geçti, Eşeyli
+   yalnız motion BİÇİMİNİN referansı kaldı — site/command OLMADAN üretildi — kaynak bir `.docx` senaryoydu ve
    kilitler elle `ENZIM-KILITLERI.json`'a yazıldı. Bu akış 50/50 klip verdi. Site'in ürettiği
    metinle teslim arasındaki örtüşme zaten %1-3.)*
    İki meşru giriş var, Mami'ye **hangisi olduğunu sor**:

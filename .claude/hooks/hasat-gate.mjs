@@ -70,18 +70,23 @@ try {
   // Bloke etmek onay bekleyen adayların oturumu kilitlemesi demek olurdu.
   // Ama 2026-07-31 ölçümü: uyarı düz metin olduğu için terminal kaydında kayboluyordu —
   // 1.858 satır ders adayı biriktiği hâlde APPROVED.md sıfır. Kaçırılmaz hâle getiriliyor.
-  say('[hasat] ══════════════════════════════════════════════════════════════');
-  say('[hasat] 🚨 HASAT BEKLEYEN PROJE VAR — biten iş henüz derse dönüşmedi');
-  say('[hasat] ══════════════════════════════════════════════════════════════');
-  say(`[hasat] ⚠️ ${res.rows.length - notOk.length}/${res.rows.length} proje güncel. Bekleyenler:`);
-  for (const r of notOk) say(`[hasat]    · ${r.project}  [${r.status}]  ${r.detail}`);
-  for (const o of res.orphans) say(`[hasat]    · (sahipsiz) ${o.file} — kaynak klasör "${o.dir}" yok`);
-  for (const s of res.syntheses ?? []) {
-    say(`[hasat]    · (sentez) ${s.file} — ${s.ders} aday ders, ${s.projeler} proje · hata değil, ONAY bekliyor`);
-  }
-  say('[hasat] Kapanış hasadı yapılmadan biten video sadece bir klasördür.');
-  say('[hasat]   node scripts/kapanis-hasadi.mjs --all    (ERROR verenler Mami kararı bekler)');
-  say("[hasat] Çıktı ADAY — APPROVED.md'ye yalnız Mami taşır.");
+  // 2026-08-05 · KISALTILDI, SUSTURULMADI.
+  // Ölçüldü: bu blok her oturumda 2.878 bayt / 21 satır basıyordu ve HER bekleyen projeyi tek
+  // tek sayıyordu — yani duran bağlam, hasat borcu büyüdükçe büyüyordu. Uyarının işi
+  // "kaçırılmaz olmak"tı, "envanter dökmek" değil. Alarm aynı sesle kalıyor; liste özetleniyor.
+  // MAMİ KARARI GEREKTİREN `ERROR` satırları TEK TEK basılmaya devam ediyor — onlar iş, gürültü değil.
+  const say2 = (s) => say(`[hasat] ${s}`);
+  const sinif = {};
+  for (const r of notOk) sinif[r.status] = (sinif[r.status] ?? 0) + 1;
+  const hatalilar = notOk.filter((r) => r.status === 'ERROR');
+  say2('🚨 HASAT BEKLEYEN İŞ VAR — biten video derse dönüşmeden sadece bir klasördür.');
+  say2(`⚠️ ${res.rows.length - notOk.length}/${res.rows.length} proje güncel · bekleyen: `
+    + `${Object.entries(sinif).map(([k, v]) => `${v}×${k}`).join(' · ')}`
+    + `${res.orphans.length ? ` · ${res.orphans.length}× sahipsiz HASAT dosyası` : ''}`
+    + `${(res.syntheses ?? []).length ? ` · ${(res.syntheses ?? []).length}× sentez (ONAY bekliyor)` : ''}`);
+  for (const r of hatalilar) say2(`   🔴 MAMİ KARARI: ${r.project} — ${r.detail.slice(0, 150)}`);
+  say2('  node scripts/kapanis-hasadi.mjs --all   (tam liste + ERROR gerekçeleri)');
+  say2("Çıktı ADAY — APPROVED.md'ye yalnız Mami taşır.");
   for (const s of await dersSatirlari()) say(s);
 } catch (e) {
   // Kapının kendi çöküşü sessiz geçmez: ölçemediğini SÖYLER.

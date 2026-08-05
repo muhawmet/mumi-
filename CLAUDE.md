@@ -92,9 +92,15 @@ uygulama yasak** — bul → Mami seçer → onar.
   1M girdi başına kredi — **Sol 125 · Terra 50 · Luna 5.** Mekanik denetim (tutarlılık taraması,
   çapraz kontrol) → **Terra/Luna**; tek-atış kök-neden teşhisi → **Sol + `xhigh`**.
   ```
+  # mekanik denetim (tutarlılık taraması, çapraz kontrol) — ucuz koşu:
   codex exec -m gpt-5.6-terra -c model_reasoning_effort='"high"' \
     -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
+  # tek-atış kök-neden teşhisi / karşı-denetim — model VE effort birlikte yükselir:
+  codex exec -m gpt-5.6-sol   -c model_reasoning_effort='"xhigh"' \
+    -s read-only --skip-git-repo-check -o /tmp/codex-cikti.txt "<görev>"
   ```
+  ⚠ Ölçüldü (2026-08-05): düzyazı "Sol + xhigh" diyor ama tek kopyalanabilir blok `terra`+`high`
+  veriyordu — bloğu kopyalayan ne Sol'u ne xhigh'ı alıyordu. İki blok ayrı yazıldı.
 - **İş bölümü değişmez:** Claude ÖLÇER → AGY GÖRÜR → Codex ÇÜRÜTÜR → **hükmü MAMİ verir.**
   🔴 **NE ZAMAN çağrıldıkları ve sonuçlarının ne anlama geldiği burada YAZMAZ** — beş tetikleyici,
   dört sonuçluk Sol sözlüğü (`CLEAR TO CONTINUE` / `RESHAPE` / `NARROW` / `UNPROVEN`, ulaşılamazsa
@@ -183,6 +189,9 @@ ve ilgisiz dosya değiştirme yok.
   `agentsSync` satır sonuna göre hash'ledi. **Kural: bir araç ortama dair varsayım yapıyorsa, o
   varsayımı test et — "yazdım" çalışıyor demek değildir.** Mac launcher sözleşmesini yine de koru.
 - Kalite kapısı: `npx tsc --noEmit` → `npx vitest run` → `npm run build`.
+  ⚠ `gate.sh` bu üçünden FAZLASINI koşuyor (ölçüldü 2026-08-05): prompt-lint · motion-lint ·
+  canlı `MOTION/` klasörü · shot-card lint · `claude-sync --check` de commit'i etkiler.
+  Tam liste kodda: `.claude/hooks/gate.sh` — buraya ikinci kopyası yazılmaz.
   `.claude/hooks/gate.sh` bunu `git commit` öncesi **duvar** olarak koşar; kırmızıysa commit olmaz.
 - **Commit ve push:** kapı yeşilken commit + `main`'e push **sorulmaz** (private repo, çok-cihaz).
   Yalnız ilgili dosyaları açıkça stage et.

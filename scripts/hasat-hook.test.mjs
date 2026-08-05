@@ -58,7 +58,11 @@ describe('hasat kapısı — kanal sözleşmesi', () => {
   test('bekleyen iş varsa 🚨 işareti stdout\'tadır (md.1 kabul kriteri)', () => {
     const { stdout } = kosu();
     // Koşullu ama kaçamak değil: bekleyen yoksa ✅ satırı ZORUNLU olarak aranır.
-    if (/BEKLEYEN PROJE VAR/.test(stdout)) {
+    //
+    // ⚠ 2026-08-05: bu dal bir kez `BEKLEYEN PROJE VAR` CÜMLESİNE bağlıydı ve uyarı metni
+    // kısaltılınca (2.878 → 1.372 bayt) test düştü — yani test sözleşmeyi değil KELİMEYİ
+    // ölçüyordu. Sözleşme 🚨 işaretidir; metin serbesttir.
+    if (/\[hasat\] 🚨/.test(stdout)) {
       expect(stdout).toMatch(/\[hasat\] 🚨/);
       expect(stdout).toMatch(/node scripts\/kapanis-hasadi\.mjs --all/);
     } else {
