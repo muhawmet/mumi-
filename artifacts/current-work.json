@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "5. Sınıf - Destek ve Hareket Sistemi",
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
-  "phase": "enzim",
+  "phase": "uretim",
   "status": "aktif",
-  "lastCompleted": "Altı projenin altısında da prompt-lint KIRMIZI 0. 35 kırmızının 33'ü yanlış alarmdı (kural dört kez daraltıldı: oda-vs-yüz ayrımı, face=nesne yüzeyi, çapa listesi darlığı, adlandırılmış nesne) — 2'si gerçekti ve metinde düzeltildi. Destek/Hücre/Farklı Kültürler basım listeleri + 3 kliplik canary hazır.",
-  "nextAction": "Mami Destek canary'sini bassın (K1·K29·K36) ya da hazır projelerden birine başlasın",
+  "lastCompleted": "Gece+sabah turu kapandı. Altı projede lint KIRMIZI 0 · klasör düzeni + 00-DURUM kartları · eski motion seti karantinada · Destek canary (3 klip) hazır. Kapı 2558 PASS.",
+  "nextAction": "Mami Destek canary'sini bassın (K1·K29·K36) — 3 soruya EVET ise kalan 49 klip aynı lehçeye çevrilecek",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T05:41:45.521Z",
+  "updatedAt": "2026-08-05T06:06:49.235Z",
   "updatedBy": "claude",
-  "baseCommit": "86f703c"
+  "baseCommit": "74fa739"
 }
