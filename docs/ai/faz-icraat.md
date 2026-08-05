@@ -34,7 +34,7 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
 | **Her iş parçası bitince** | `node scripts/current-work.mjs ilerle --bitti "<ölçülmüş>" --sirada "<tek eylem>"` — kayıt bayatlarsa sonraki oturum sıfırdan başlar |
 | Yeni video başlarken | `node scripts/current-work.mjs baslat "<proje>"` + `/mamilas-enzim` — **TEK VİZYON KİLİDİ görüşmesi**, KİLİT 0-5 kapanmadan prompt yazılmaz. Ayrı bir "plan" toplantısı YOK: `mamilas-plan` 2026-08-05'te emekli oldu (yazıldı ve bir kez bile koşmadı — diskte 7 `_ENZIM.md`, 0 `_PLAN.md`), şekil/ritim/risk artık **KİLİT 5**'tir |
 | **Kilitler kapanınca** | **Referans envanteri** (`PROMPT-YASASI` §4a) — tekrar eden her şey `_REFERANSLAR.txt`'e; tek kare yazılmadan önce |
-| **Prompt yazmadan ÖNCE** | `node scripts/dunya-kilidi.mjs <worldId>` — STYLE/LIGHT/NEGATIVE kuyruğunu **bas ve yapıştır**. Elle yazma: ölçüldü, aynı dünyada dört lehçe doğdu (Kütle'nin ilk 8 karesi 81-91 kelime, kalan 27'si 23-30; `overscale` 8/8 → 0/27) |
+| **Prompt yazmadan ÖNCE** | `node scripts/dunya-kilidi.mjs <worldId>` — **dünya kartını oku** (kimlik · ışık davranışı · malzeme · motorun ölçülmüş eğilimleri). Kart **yapıştırılmaz**; cümleyi sen yazarsın. Ölçüldü: yapıştırılan kuyruk motora giden metnin %60'ı olmuştu, altın standart Hücre 53/53 kendi satırını yazdı. Kanon `PROMPT-YASASI §0.4` |
 | Prompt yazarken | `/mamilas-director` — yasa + engine lehçesi + command JSON |
 | **Prompt yazıldıktan sonra, BASMADAN ÖNCE** | `node scripts/prompt-lint.mjs <dosya> --register=real\|edu\|sty` — 71 revizenin ~44-52'si burada, kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik · SARI = ajan baksın · KAPSAM = yeşilin kapsamadığı |
 | Mami kareleri atınca | `/mamilas-denetim` — sekans başına bir ajan, tek geçiş |

@@ -34,10 +34,13 @@ Skill çağrılınca tek hamlede context'i kur:
 
 0.5 **Araçlar — elle yazma, bunları koş** *(2026-07-29'da eklendi; Sol denetimi: "nöron üretildi
    ama sinapsa takılmadı")*:
-   - `node scripts/dunya-kilidi.mjs <worldId> [--register=] [--palet=]` → **STYLE / LIGHT AND
-     PALETTE / NEGATIVE kuyruğunu bas ve yapıştır.** Elle yazma: ölçüldü, aynı dünyada dört lehçe
-     doğdu (Kütle'nin ilk 8 karesi 81-91 kelime, kalan 27'si 23-30; `overscale` 8/8 → 0/27).
-     Çıktının stderr'i "bütçe dışı kalan bileşenler"i listeler — imza cümlesi düştüyse ELLE ekle.
+   - `node scripts/dunya-kilidi.mjs <worldId> [--register=] [--palet=]` → **DÜNYA KARTI: oku,
+     seç, kendi cümlenle yaz.** Kart yapıştırılmaz (2026-08-05'te değişti — ölçüldü: yapıştırılan
+     kuyruk motora giden metnin %60'ı olmuştu ve LIGHT AND PALETTE 56 karede TEK sürüme donmuştu;
+     altın standart Hücre ise 53/53 kendi satırını yazdı). Kart kimliği, ışık davranışını,
+     malzemeyi ve motorun bu dünyadaki ölçülmüş eğilimlerini verir; NEGATİF kare-özeldir.
+     ⚠ Eski davranış `--kuyruk` ile duruyor ve YALNIZ süregelen bir işin tutarlılığı için
+     kullanılır — yeni işte kullanılmaz. Kanon: `agents/PROMPT-YASASI.md §0.4`.
    - `node scripts/prompt-lint.mjs <teslim dosyası>` → **prompt yazıldıktan sonra, Mami BASMADAN
      ÖNCE koş.** 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor. KIRMIZI = kanıtlı eksik ·
      SARI = kusur iddiası DEĞİL, sen bak · KAPSAM satırı = yeşilin kapsamadığı. **Yeşil ≠ temiz.**
@@ -69,7 +72,7 @@ Skill çağrılınca tek hamlede context'i kur:
    - **(a) Kaynak metin** (`.docx`, senaryo, sohbet) → `/mamilas-enzim` ile **TEK VİZYON
      KİLİDİ görüşmesini** yap (KİLİT 0-5; **şekil/ritim/riskli klip listesi KİLİT 5'tir** —
      ayrı bir "plan" toplantısı yoktur, `mamilas-plan` 2026-08-05'te emekli oldu), dünyayı
-     `dunya-kilidi.mjs` ile bas, prompt'u yaz. Command JSON aranmaz, eksik sayılmaz.
+     `dunya-kilidi.mjs` kartını oku, prompt'u yaz. Command JSON aranmaz, eksik sayılmaz.
      🔴 **İlk basım CANARY'dir: 8 klip, hepsi değil.** KİLİT 5'in riskli klip listesi
      canary'nin neyi sınayacağını söyler. Canary hükmü Mami'den gelip
      `<Ad>_CANARY-LOCK.md` doğmadan tam üretim açılmaz — `current-work.mjs` bunu

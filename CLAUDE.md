@@ -34,7 +34,7 @@ Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopya
 | Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
 | **Aktif iş kaydı** | `artifacts/current-work.json` → `node scripts/current-work.mjs` (SessionStart hook aynısını basar) |
 | **Prompt yapısı ölçümü** | `scripts/prompt-lint.mjs` — üretimden ÖNCE koşar; KIRMIZI/SARI/KAPSAM |
-| **Dünya kilidi (STYLE kuyruğu)** | `scripts/dunya-kilidi.mjs` — elle yazma, bunu bas ve yapıştır |
+| **Dünya kaynağı (kart)** | `scripts/dunya-kilidi.mjs` — **okunacak kart basar, yapıştırılacak metin DEĞİL.** Kimlik · ışık davranışı · malzeme · motorun ölçülmüş eğilimleri; cümleyi sen yazarsın (`--kuyruk` eski davranış, yalnız süregelen işin tutarlılığı için) |
 | Doküman drift denetimi | `src/core/docsContract.test.ts` |
 
 `artifacts/decision-pipeline-implementation/EXECUTION_STATE.md` (1337 satır) **arşivdir, otorite
@@ -131,7 +131,7 @@ bütünde görünür. Yalnız **5-6. sınıf** işlerine bakılır; öncekiler e
 Eski işe bakarken lens şudur: *"bunlar hatalı, ne bozuk?"* — kopyalanacak kalıp değil, kusur madeni.
 
 **Üretimden ÖNCE ölç, sonra harca.** Ölçüldü: 71 revizenin **~44-52'si** prompt metnine bakılarak,
-tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile kuyruğu bas → prompt'u yaz →
+tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile **dünya kartını oku** → prompt'u **kendi cümlenle** yaz →
 `prompt-lint.mjs` koş → **sonra** Mami bassın. Lint'in KIRMIZI'sı kanıtlı eksiktir; SARI'sı kusur
 iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
 **yeşil ≠ temiz.**

@@ -812,6 +812,84 @@ function printList() {
   process.stdout.write('\nKullanım: node scripts/dunya-kilidi.mjs <worldId> [--register=edu|real|sty] [--palet=<id>]\n');
 }
 
+/**
+ * DÜNYA KARTI — yapıştırılacak metin DEĞİL, okunacak kaynak.
+ *
+ * Kart ile kuyruk arasındaki fark tek cümlede: kuyruk **cümle** verir, kart **olgu** verir.
+ * Cümle verilirse prompt'un %60'ı ortaklaşır; olgu verilirse her kare kendi cümlesini yazar
+ * — altın standardın (Hücre, 53/53 özgün STYLE) yaptığı tam olarak budur.
+ *
+ * Kartta İngilizce hazır blok YOKTUR ve olmamalıdır: buraya bir gün "işte örnek cümle"
+ * eklenirse kart sessizce kuyruğa geri döner.
+ */
+export function dunyaKarti(world, register, palette, props = []) {
+  const sat = [];
+  const p = (s = '') => sat.push(s);
+  const sar = (metin, genislik = 92, girinti = '  ') => {
+    const kelimeler = T(metin).split(/\s+/).filter(Boolean);
+    let satir = girinti;
+    for (const k of kelimeler) {
+      if (satir.length + k.length + 1 > genislik) { p(satir); satir = girinti; }
+      satir += (satir.trim() ? ' ' : '') + k;
+    }
+    if (satir.trim()) p(satir);
+  };
+
+  p('');
+  p(`━━ ${world.id} · ${world.name || ''} · register ${register}`);
+  p('');
+  p('🔴 BU KART PROMPTA YAPIŞTIRILMAZ. Okunur, sahnene gerekeni SEÇERSİN, kendi cümlenle yazarsın.');
+  p('   Ölçüldü: kuyruk yapıştırılan projede motora giden metnin %60\'ı ortaklaştı ve');
+  p('   LIGHT AND PALETTE 56 karede TEK sürüme dondu. Altın standart (Hücre) hiç yapıştırmadı:');
+  p('   53 karenin 53\'ü kendi STYLE, LIGHT ve NEGATIVE satırını yazdı.');
+  p('');
+
+  p('DÜNYANIN KİMLİĞİ — sahneye göre değişmez, cümlesi sana ait');
+  sar(world.one_liner || '(kayıtsız)');
+  p('');
+
+  p('IŞIK NASIL DAVRANIR');
+  sar(world.light_law || '(kayıtsız)');
+  p('');
+
+  const pl = world.palette_lock || {};
+  p('PALET — DAVRANIŞ olarak yazılır, ham hex asla prompta girmez');
+  if (pl.bias) sar(pl.bias);
+  p(`  roller: gölge · orta ton · aksan · parlaklık  (değerler kodda: ${world.id}.palette_lock)`);
+  if (palette) p(`  seçilen palet: ${palette.id}`);
+  p('');
+
+  const mat = Array.isArray(world.material_compat) ? world.material_compat.filter((m) => m && m !== 'none') : [];
+  if (mat.length) {
+    p('BU DÜNYADA İKNA EDEN MALZEMELER');
+    sar(mat.join(' · '));
+    p('');
+  }
+  if (props.length) {
+    p('ÖLÇÜLMÜŞ RENDER ÖZELLİKLERİ — hangisi sahnende gerçekten varsa onu yaz');
+    for (const pr of props.slice(0, 12)) sar(`· ${pr}`);
+    p('');
+  }
+
+  const neg = Array.isArray(world.negative_lock) ? world.negative_lock : [];
+  if (neg.length) {
+    p(`MOTORUN BU DÜNYADAKİ ÖLÇÜLMÜŞ EĞİLİMLERİ — ${neg.length} madde`);
+    p('  Bu bir YASAK LİSTESİ DEĞİL, bir risk haritasıdır. Sahnende hangi risk GERÇEKTEN');
+    p('  mümkünse yalnız onu, kendi cümlenle ve o karenin diliyle yaz.');
+    for (const n of neg) sar(`· ${n}`);
+    p('');
+  }
+
+  p('NEGATİF KARE-ÖZELDİR');
+  p('  Ölçüldü: global kuyruk tek başına yetmiyor (Bileşke 52/52 karede NEGATIVE vardı,');
+  p('  kare-özel 2/52). Altın standartta her karenin negatifi o karenin davet ettiği');
+  p('  kusurla açılıyor ve ortak son ek 1 karakter.');
+  p('');
+  p('  Eski davranış (yapıştırmaya hazır üç satır) gerekiyorsa: --kuyruk');
+  p('');
+  return `${sat.join('\n')}\n`;
+}
+
 function main() {
   const argv = process.argv.slice(2);
   if (argv.includes('--liste') || argv.includes('--list')) { printList(); return 0; }
@@ -879,10 +957,32 @@ function main() {
   }).filter(Boolean);
   const negative = scrubImageNegatives([worldAvoidText(world)], diagrammatic, forbidItems);
 
-  // ---- stdout: yapıştırmaya hazır kuyruk, başka hiçbir şey ----
-  process.stdout.write(`STYLE: ${style}\n`);
-  process.stdout.write(`LIGHT AND PALETTE: ${light}\n`);
-  process.stdout.write(`NEGATIVE: ${negative}\n`);
+  // ---- stdout ----
+  //
+  // 2026-08-05 — VARSAYILAN DEĞİŞTİ: KART, kuyruk değil.
+  //
+  // Bu betik doğduğunda (3640aa1) gerçek bir sorunu çözüyordu: dünya kilidi koddan emit
+  // edilmiyordu, ajan her karede ELLE kopyalıyordu ve aynı dünyada DÖRT lehçe doğmuştu
+  // (Kütle'nin ilk 8 karesi STYLE 81-91 kelime, kalan 27'si 23-30). Çözüm doğruydu.
+  // Ama çözümün BİÇİMİ — "yapıştırmaya hazır üç satır" — zamanla prompt'un kendisi oldu:
+  // aktif projede motora giden metnin %60'ı kuyruk, LIGHT AND PALETTE 56 karede TEK sürüm.
+  //
+  // Karşı kanıt aynı repoda duruyor: ALTIN STANDART (Hücre) kuyruğu HİÇ yapıştırmadı —
+  // 53 karenin 53'ü kendi STYLE'ını, kendi LIGHT'ını ve kendi NEGATIVE'ini yazdı; bütün
+  // negatiflerin en uzun ortak son eki 1 karakter (nokta). `prompt-lint`'in `style-tekrar`
+  // kuralı da zaten bunu söylüyordu: "o kuyruk bir BAŞLANGIÇTIR".
+  //
+  // Yani dünya bilgisi kalır, YAPIŞTIRMA gider. Kart okunur, seçilir, kendi cümlenle yazılır.
+  // `--kuyruk` eski davranışı verir ve BİLEREK duruyor: aktif projenin 56 karesi eski kuyrukla
+  // basıldı, yeniden basımların onlarla tutarlı kalması gerekiyor. Yeni işte kullanılmaz.
+  if (flags.kuyruk) {
+    warn('⚠ --kuyruk ESKİ DAVRANIŞ: yapıştırmaya hazır üç satır. Yeni işte KART kullan.');
+    process.stdout.write(`STYLE: ${style}\n`);
+    process.stdout.write(`LIGHT AND PALETTE: ${light}\n`);
+    process.stdout.write(`NEGATIVE: ${negative}\n`);
+  } else {
+    process.stdout.write(dunyaKarti(world, register, palette, props));
+  }
 
   // ---- stderr: ölçüm ve uyarılar ----
   const styleWords = words(style);

@@ -31,13 +31,18 @@ function run(args) {
 const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 
 let IDS = [];
-let OUT = new Map();   // worldId → stdout
+const OUT = new Map();   // worldId → `--kuyruk` stdout (eski davranış, hâlâ doğru çalışmalı)
+const KART = new Map();  // worldId → varsayılan stdout (yapıştırılamaz dünya kartı)
 
 beforeAll(() => {
   const list = run(['--liste']);
   // `  <id>   <REGISTER>   <ad>` — liste biçiminin kendisi de bir sözleşmedir.
   IDS = [...list.stdout.matchAll(/^ {2}(\S+)\s+(EDU|REAL|STY)\s/gm)].map((m) => m[1]);
-  for (const id of IDS) OUT.set(id, run([id]));
+  for (const id of IDS) OUT.set(id, run([id, '--kuyruk']));
+  // 2026-08-05: varsayılan çıktı KART oldu. Süpürme yine üç satırı doğruluyor (alttaki
+  // buildStyle/paletteLight/negatif kurucuları hâlâ o yoldan ölçülüyor) ama artık açık
+  // `--kuyruk` ile; KART modu ayrıca kendi bloğunda ölçülüyor (B3b).
+  for (const id of IDS) KART.set(id, run([id]));
 }, SWEEP_TIMEOUT);
 
 describe('B · dünya kilidi süpürmesi', () => {
@@ -66,10 +71,14 @@ describe('B · dünya kilidi süpürmesi', () => {
   }, SWEEP_TIMEOUT);
 
   // -------------------------------------------------------------------------
-  // B3 · ÜÇ SATIR SÖZLEŞMESİ — ajan çıktıyı olduğu gibi kareye yapıştırır. Bir satır
-  // düşerse kare o dünyanın ışığını ya da negatif kilidini kaybeder, kimse fark etmez.
+  // B3 · ÜÇ SATIR SÖZLEŞMESİ — artık YALNIZ `--kuyruk` yolunda geçerli.
+  // Bu test silinmedi çünkü ölçtüğü şey hâlâ gerçek: alttaki kurucular (buildStyle,
+  // paletteLightPrompt, scrubImageNegatives) her dünya için çökmeden ve eksiksiz
+  // çalışmak zorunda. Değişen tek şey, bu çıktının artık VARSAYILAN olmaması.
+  // Aktif projenin 56 karesi eski kuyrukla basıldı; yeniden basımların tutarlı
+  // kalması için `--kuyruk` bilerek yaşıyor.
   // -------------------------------------------------------------------------
-  it('B3 · her dünya STYLE / LIGHT AND PALETTE / NEGATIVE satırlarını taşır', () => {
+  it('B3 · --kuyruk her dünya için STYLE / LIGHT AND PALETTE / NEGATIVE taşır', () => {
     const eksik = [];
     for (const id of IDS) {
       const s = OUT.get(id).stdout;
@@ -78,6 +87,41 @@ describe('B · dünya kilidi süpürmesi', () => {
       }
     }
     expect(eksik).toEqual([]);
+  }, SWEEP_TIMEOUT);
+
+  // -------------------------------------------------------------------------
+  // B3b · KART YAPIŞTIRILAMAZ. Bu turun (2026-08-05) asıl kazanımı: varsayılan çıktı
+  // artık motora gidebilecek hazır bir blok DEĞİL. Kart bir gün sessizce kuyruğa geri
+  // dönerse — biri "kolaylık olsun" diye örnek cümle eklerse — bu test düşer.
+  // Ölçülen kusur: yapıştırılabilir çıktı, aktif projede motora giden metnin %60'ı oldu
+  // ve LIGHT AND PALETTE 56 karede TEK sürüme dondu.
+  // -------------------------------------------------------------------------
+  it('B3b · KART modu yapıştırmaya hazır üç satır ÜRETMEZ', () => {
+    const sizanlar = [];
+    for (const id of IDS) {
+      const s = KART.get(id).stdout;
+      for (const lbl of ['STYLE:', 'LIGHT AND PALETTE:', 'NEGATIVE:']) {
+        if (new RegExp(`^${lbl}\\s*\\S`, 'm').test(s)) sizanlar.push(`${id} → ${lbl}`);
+      }
+    }
+    expect(sizanlar).toEqual([]);
+  }, SWEEP_TIMEOUT);
+
+  it('B3b · KART yapıştırılmayacağını KENDİ İÇİNDE söyler ve dünya bilgisini taşır', () => {
+    const s = KART.get('pixar_3d_edu').stdout;
+    expect(s).toMatch(/PROMPTA YAPIŞTIRILMAZ/);
+    expect(s).toMatch(/DÜNYANIN KİMLİĞİ/);
+    expect(s).toMatch(/IŞIK NASIL DAVRANIR/);
+    expect(s).toMatch(/YASAK LİSTESİ DEĞİL/);      // negatif bir risk haritası olarak sunulur
+    expect(s).toMatch(/NEGATİF KARE-ÖZELDİR/);
+  }, SWEEP_TIMEOUT);
+
+  it('B3b · kartta da ham hex yok', () => {
+    const sizanlar = IDS
+      .map((id) => [id, KART.get(id).stdout.match(/#[0-9a-fA-F]{3,8}\b/g)])
+      .filter(([, m]) => m)
+      .map(([id, m]) => `${id}: ${[...new Set(m)].join(', ')}`);
+    expect(sizanlar).toEqual([]);
   }, SWEEP_TIMEOUT);
 
   // -------------------------------------------------------------------------

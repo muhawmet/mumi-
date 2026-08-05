@@ -69,7 +69,7 @@ Bütün cam, düzgün asılmış pano, sağlam mobilya, canlı bakımlı bitki.
 
 ## PALET
 
-Kaynak: `node scripts/dunya-kilidi.mjs pixar_3d_edu` — **elle yazılmaz, basılır.**
+Kaynak: `node scripts/dunya-kilidi.mjs pixar_3d_edu` — **kart olarak okunur, yapıştırılmaz** (2026-08-05).
 
 Omurga: gölge açık luminous mavi-indigo · midtone sıcak burnt-orange · aksan canlı sıcak amber ·
 highlight sıcak fildişi beyaz · gölge tarafında serin-mor bounce.

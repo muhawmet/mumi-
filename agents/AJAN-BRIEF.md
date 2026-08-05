@@ -32,7 +32,7 @@ ulaşmaması demektir. Yol **birebir** yazılır:
 | Onaylı ders bankası | `agents/lessons/APPROVED.md` |
 | Projenin kilitleri | `<proje>/_ENZIM.md` ya da `<proje>/*_ENZIM.md` |
 | Projenin referansları | `<proje>/*_REFERANSLAR.txt` |
-| Dünya kuyruğu | `<proje>/_DUNYA-KUYRUGU.txt` — yoksa `node scripts/dunya-kilidi.mjs <worldId> --register=<reg>` ile basılır |
+| Dünya kaynağı | `node scripts/dunya-kilidi.mjs <worldId> --register=<reg>` → **okunacak kart** (yapıştırılmaz). Süregelen işlerde `<proje>/_DUNYA-KUYRUGU.txt` eski kuyruğu tutar |
 | Biçim örneği | `agents/COMMAND-INBOX/5. Sınıf - Hücre ve Organelleri/PROMPTLAR/` — bu repodaki en iyi ölçülen korpus |
 
 ### A2 · Yazı haritası — kare numarasından değil, BEYANDAN

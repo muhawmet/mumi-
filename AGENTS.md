@@ -29,8 +29,8 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
   değil; çoğu iş çıkışında aceleyle üretildi. "Sıfır revize" kusursuz demek değildir. Altın standart
   2026-08-03'te değişti: **5. Sınıf - Hücre ve Organelleri** (Mami: *"Eşeyli artık eskidi"*).
   **Eşeyli ve Eşeysiz Üreme** yalnız **motion BİÇİMİNİN** referansıdır, kalite tavanı değil.
-- **Harcamadan önce ölç:** `scripts/dunya-kilidi.mjs` ile dünya kuyruğunu bas (elle yazma),
-  `scripts/prompt-lint.mjs` ile yapıyı ölç — 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor.
+- **Harcamadan önce ölç:** `scripts/dunya-kilidi.mjs` ile **dünya kartını oku** (kart yapıştırılmaz —
+  cümleyi ajan yazar), `scripts/prompt-lint.mjs` ile yapıyı ölç — 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor.
 
 ## Önce oku
 
