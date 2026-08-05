@@ -162,6 +162,27 @@ describe('dış göz ve Mami yerine geçilemez', () => {
   });
 });
 
+describe('PLATFORM — Windows birincil ortam', () => {
+  // Ölçülmüş kusur sınıfı (repoda DÖRT kez): bir araç ortama dair varsayım yapıyorsa
+  // bu makinede sessiz no-op olur. gate.sh python3 aradı · protocolHash CRLF'te değişti ·
+  // buddy-gate ham komut deseni aradı · agentsSync satır sonuna göre hash'ledi.
+  it('CRLF ve LF aynı sonucu verir — satır sonu içerik değildir', () => {
+    const lf = kilit();
+    const crlf = lf.replace(/\n/gu, '\r\n');
+    const a = lintCanaryLock(lf, opt);
+    const b = lintCanaryLock(crlf, opt);
+    expect(b.durum).toBe(a.durum);
+    expect(b.solHukmu).toBe(a.solHukmu);
+    expect(b.kirmizi).toEqual(a.kirmizi);
+    expect(b.medya.map((m) => m.yol)).toEqual(a.medya.map((m) => m.yol));
+  });
+
+  it('CRLF\'li BOZUK kilit de aynı biçimde reddedilir (sahte yeşil doğmaz)', () => {
+    const bozuk = kilit({ durum: 'FAIL' }).replace(/\n/gu, '\r\n');
+    expect(uretimAcilabilirMi(bozuk, opt).acik).toBe(false);
+  });
+});
+
 describe('canary\'den geriye bilgi kalmak zorunda', () => {
   it.each(LEHCE_ALANLARI)('"%s" yoksa kırmızı', (alan) => {
     const metin = kilit().replace(new RegExp(`^${alan}: .*$`, 'mu'), '');

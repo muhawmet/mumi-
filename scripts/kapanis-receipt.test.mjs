@@ -139,6 +139,34 @@ describe('süre', () => {
   });
 });
 
+describe('PLATFORM ve TAŞINMA — sessiz düşme yok', () => {
+  it('CRLF ve LF aynı sonucu verir — Windows birincil ortam', () => {
+    const lf = receipt();
+    const crlf = lf.replace(/\n/gu, '\r\n');
+    const a = lintReceipt(lf, sabitVar);
+    const b = lintReceipt(crlf, sabitVar);
+    expect(b.kirmizi).toEqual(a.kirmizi);
+    expect(b.receipt.durum).toBe(a.receipt.durum);
+    expect(b.receipt.sha256).toBe(a.receipt.sha256);
+  });
+
+  it('proje Biten/ altına TAŞINDIKTAN sonra da receipt çözülür — KANIT repo köküne göre', () => {
+    // KANIT repo-göreli yazılır; proje klasörü taşınsa da repo kökü değişmediği için yol tutar.
+    // Bu, "taşınan projede receipt sessizce düşer" kusurunun testi.
+    const tasinmis = receipt({
+      kanit: 'agents/COMMAND-INBOX/Biten/5. Sınıf - Destek ve Hareket Sistemi/Destek ve Hareket_AGY-TAM-VIDEO.md',
+    });
+    expect(lintReceipt(tasinmis, sabitVar).kirmizi).toEqual([]);
+  });
+
+  it('receipt bloğundan SONRAKİ başlık bloğa sızmaz (alan hırsızlığı yok)', () => {
+    const metin = `${receipt()}\n## BAŞKA BÖLÜM\nDURUM: APPROVED\nSHA256: ${'f'.repeat(64)}\n`;
+    const r = parseReceipt(metin);
+    expect(r.durum).toBe('REJECTED_HARVESTED');
+    expect(r.sha256).toBe(SHA);
+  });
+});
+
 describe('canlı Destek receipt\'i — gerçek artefact ölçülüyor', () => {
   const YOL = 'agents/COMMAND-INBOX/Biten/5. Sınıf - Destek ve Hareket Sistemi/00-DURUM.txt';
 

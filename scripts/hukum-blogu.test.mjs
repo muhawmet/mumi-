@@ -175,6 +175,24 @@ describe('imza', () => {
   });
 });
 
+describe('PLATFORM — CRLF sapma üretmez', () => {
+  it('CRLF\'li blok LF ile aynı ölçülür', () => {
+    const lf = solBlogu();
+    const crlf = lf.replace(/\n/gu, '\r\n');
+    const a = lintHukumBloklari(lf, opt);
+    const b = lintHukumBloklari(crlf, opt);
+    expect(b.kirmizi).toEqual(a.kirmizi);
+    expect(b.bloklar[0].hukum).toBe(a.bloklar[0].hukum);
+    expect(b.bloklar[0].okunan[0].yol).toBe(a.bloklar[0].okunan[0].yol);
+  });
+
+  it('CRLF\'li SAHTE blok da reddedilir — sahte yeşil doğmaz', () => {
+    const sahte = `## DIŞ GÖZ HÜKMÜ — SOL\nOKUNAN: docs/ai/YOK.md\nHÜKÜM: CLEAR TO CONTINUE\nBULGU: x\nSONUÇ: uygulandı — y.\n`
+      .replace(/\n/gu, '\r\n');
+    expect(lintHukumBloklari(sahte, opt).kirmizi.length).toBeGreaterThan(0);
+  });
+});
+
 describe('şablon ile ölçen aynı şeyi söylüyor', () => {
   it('DIS-GOZ-BRIEF-SABLONU örneği ölçenden temiz geçer (şablon kendi duvarını ihlal etmez)', () => {
     const ornek = `

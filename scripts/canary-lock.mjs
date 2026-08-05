@@ -59,7 +59,11 @@ function mamiHukmu(metin) {
  * @returns {{durum: string|null, kirmizi: string[], sari: string[], solHukmu: string|null,
  *            medya: Array<{tur: string, yol: string, sha: string|null}>}}
  */
-export function lintCanaryLock(metin, secenekler = {}) {
+export function lintCanaryLock(hamMetin, secenekler = {}) {
+  // SATIR SONU İÇERİK DEĞİLDİR. Repo `core.autocrlf=true` ile checkout ediliyor ve Windows
+  // birincil ortam — CRLF bir dosyada `DURUM: PASS\r` üretir. Bugün `trim()` bunu KAZARA
+  // kurtarıyordu; kazara doğru olan bir şey ilk refactor'da bozulur. Garantiyi açık yapıyoruz.
+  const metin = String(hamMetin ?? '').replace(/\r\n/g, '\n');
   const kok = secenekler.repoKok ?? process.cwd();
   const dosyaVar = secenekler.dosyaVar ?? ((yol) => varMi(yol, kok));
   const kirmizi = [];
