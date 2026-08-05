@@ -27,8 +27,8 @@
 //
 // Buna karşılık eski linter, revizeyi öngören iki şeyi HİÇ ölçmüyordu:
 //   · **negatifin KARE-ÖZELLİĞİ** — satırın varlığı ölçülüyordu, işi ölçülmüyordu. Ölçüldüğünde
-//     ayrım net: Üreme %100 · Sürtünme %100 · Sabit Sürat %23 · **Bileşke %0** (52/52 karede
-//     NEGATIVE var ama hepsi aynı) → K34/K38 ok ucu, K19/K21 yüze düşen ışık.
+//     ayrım net: Üreme %100 · Sürtünme %100 · Sabit Sürat %23 · **Bileşke %21** (11/52 farklı
+//     blok; 52/52 NEGATIVE var) → K34/K38 ok ucu, K19/K21 yüze düşen ışık.
 //   · **STYLE kelime tavanı** — `\Z` JS'te yok (Perl kalıntısı), regex sessizce kırıktı ve tavan
 //     HİÇ ateşlemiyordu. Ölçüldüğünde: Üreme 86-116 · Sabit Sürat 68-116 · Sürtünme 125 ·
 //     **Bileşke 148-243**. Revize sırasıyla birebir aynı yönde.
@@ -46,7 +46,7 @@
 // Kanıtla sınanır (2026-07-29 ölçümü):
 //   Sürtünme  → `canlı üçlü` 31/31 ve `sheen` SUSAR (ikisi de sahteydi); `derinlik` 1/31 ve
 //               `ten` 0/25 KIRMIZI kalır (ikisi de gerçekti); STYLE 125 kelime.
-//   Bileşke   → `neg` 52/52 GÖRÜLÜR (`FIREWALL NEGATIVE:` yazıyor) ama kare-özel %0; STYLE 148-243.
+//   Bileşke   → `neg` 52/52 GÖRÜLÜR (`FIREWALL NEGATIVE:` yazıyor) ama kare-özel %21; STYLE 148-243.
 //   Üreme     → temas 50/50 · text-hece 14/14 · NEGATIVE kare-özel %100 (altın standart).
 //   Kuvvet .md→ 58/58 MOTION olarak tanınır ve start-frame ölçütleriyle lintlenmez.
 // Bunlardan biri tutmuyorsa linter yanlıştır, prompt değil.
@@ -66,6 +66,19 @@ import { pathToFileURL } from 'node:url';
 // ---------------------------------------------------------------------------
 // TÜR SÖZLEŞMESİ — tek tanım scripts/prompt-turu.mjs'te; buraya kopyalanmaz (PROMPT-YASASI §0.4).
 import { lintTur, TURLER, promptTuru, parseReferansBloklari, dosyaRolu } from './prompt-turu.mjs';
+
+// NEGATIVE'in adı başına göre değişiyor ama görevi değişmiyor. Slot sayacı ile korpus
+// ölçeri ayrı desen taşıdığında Bileşke'nin `FIREWALL NEGATIVE:` satırları 52/52 kapsamda
+// görünürken neg-ozel kanıtından kayboldu; aynı körlüğün tekrar etmemesi için kök tek yerde.
+const NEGATIVE_PREFIX_SOURCE = '(?:(?:FRAME|FIREWALL|GLOBAL|WORLD)\\s+)?NEGATIVE';
+// Eski teslimlerde kuyruk aynı fiziksel satıra da yazılmıştır; satır başına bağlanmak
+// `STYLE: … FIREWALL NEGATIVE:` biçimini kaçırır. Boşluk sınırı, sıradan metindeki
+// "negative" kelimesini etiket sanmadan iki yazımın da aynı slot olduğunu korur.
+const NEGATIVE_LINE_RE = new RegExp(`(?:^|\\s)${NEGATIVE_PREFIX_SOURCE}\\s*:`, 'im');
+const NEGATIVE_BLOCK_RE = new RegExp(
+  `(?:^|\\s)${NEGATIVE_PREFIX_SOURCE}\\s*:([\\s\\S]*?)(?=\\n[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}:|$)`,
+  'im',
+);
 
 const SLOTS = [
   {
@@ -291,7 +304,7 @@ const SLOTS = [
     label: 'NEGATIVE slotu',
     // Bileşke `FIREWALL NEGATIVE:` yazıyor — eski desen onu göremiyordu ve 52/52 karesi
     // "NEGATIVE yok" diye kırmızı alıyordu; oysa hepsinde negatif VAR (Codex denetimi).
-    test: (b) => /^(FRAME |FIREWALL |GLOBAL |WORLD )?NEGATIVE\s*:/im.test(b) || /(FRAME|FIREWALL) NEGATIVE/i.test(b),
+    test: (b) => NEGATIVE_LINE_RE.test(b),
     why: 'İki temiz setin ortak paydası: Sürtünme 31/31 inline, Sabit Sürat 44/44.',
   },
 ];
@@ -1045,13 +1058,13 @@ function corpusMetrics(blocks) {
   const kareOzelOran = all ? own / all : 1;
 
   // 2) NEGATİFİN KARE-ÖZELLİĞİ — Bileşke'nin 52/52 karesinde NEGATIVE VARDI, ama
-  //    kare-özel yalnız 2/52. Satırın varlığı değil, farklı olması ölçülür.
+  //    yalnız 11 ayrı blok vardı. Satırın varlığı değil, farklı olması ölçülür.
   // 🔴 2026-08-03: kare-özel yasak AYRI BİR SLOTTA da yazılabiliyor (`KARE-ÖZEL YASAK:`) ve
   //    lint onu görmüyordu → global kuyruğu paylaşan 14 kare "%7 kare-özel" diye kırmızı yandı,
   //    oysa her karenin kendi yasağı vardı, sadece başka satırdaydı. Ölçülen şey satırın ADI
   //    değil, o karenin kendi bozulma yolunun kapatılıp kapatılmadığıdır.
   const negs = frames.map((f) => {
-    const m = f.body.match(/(?:^NEGATIVE:|FRAME NEGATIVE[:—–-]?)([\s\S]*?)(?=\n[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}:|$)/im);
+    const m = f.body.match(NEGATIVE_BLOCK_RE);
     const ozel = f.body.match(/^KARE[- ]ÖZEL(?:\s+YASAK)?\s*:([\s\S]*?)(?=\n[A-ZÇĞİÖŞÜ][A-ZÇĞİÖŞÜ ]{2,}:|$)/im);
     const parca = [m ? m[1] : '', ozel ? ozel[1] : ''].filter(Boolean).join(' ').trim();
     return parca ? parca.replace(/\s+/g, ' ') : null;
@@ -1259,7 +1272,7 @@ export function lintFile(path, register = 'EDU') {
       // varsayılan (T2); bu satır bir gözlem olarak kalır, üretimi engellemez.
       kind: 'korpus', key: 'neg-ozel', level: 'sari',
       msg: `NEGATIVE ${metrics.negVar} karede var ama yalnız %${Math.round(metrics.negOzel * 100)}'i kare-özel`,
-      why: 'Bileşke\'nin 52/52 karesinde NEGATIVE vardı, kare-özel 2/52 → K34/K38 ok ucu, K19/K21 yüze düşen ışık. Global kuyruk tek başına yetmiyor.' }] });
+      why: 'Bileşke\'nin 52/52 karesinde NEGATIVE vardı, kare-özel 11/52 → K34/K38 ok ucu, K19/K21 yüze düşen ışık. Global kuyruk tek başına yetmiyor.' }] });
   }
 
   // `bad` geriye dönük uyumluluk için KIRMIZI'yı taşır (kapanis-hasadi.mjs bunu sayıyor).

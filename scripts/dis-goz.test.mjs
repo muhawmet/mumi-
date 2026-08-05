@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildInvocation, parseAgyResponse } from './dis-goz.mjs';
+import { buildInvocation, parseAgyResponse, parseCodexResponse } from './dis-goz.mjs';
 
 const SCRIPT = fileURLToPath(new URL('./dis-goz.mjs', import.meta.url));
 const MEDIA = fileURLToPath(new URL('./__fixtures__/canary/kare.png', import.meta.url));
@@ -18,27 +18,43 @@ function dry(args) {
 describe('dış göz launcher', () => {
   it('her alt komutta --kuru doğru motor ve zorunlu bayrakları gösterir', () => {
     const is = dry(['is', 'mekanik işi doğrula']);
-    expect(is).toContain('gpt-5.6-terra');
-    expect(is).toContain('model_reasoning_effort=\\"high\\"');
-    expect(is).toContain('-s workspace-write');
+    expect(is).toContain("'gpt-5.6-terra'");
+    expect(is).toContain("'model_reasoning_effort=\"high\"'");
+    expect(is).toContain("'-s' 'workspace-write'");
+    expect(is).toContain('Windows PowerShell');
 
     const cur = dry(['cur', 'Bu iddia çürütülebilir.']);
-    expect(cur).toContain('gpt-5.6-sol');
-    expect(cur).toContain('model_reasoning_effort=\\"xhigh\\"');
-    expect(cur).toContain('-s read-only');
+    expect(cur).toContain("'gpt-5.6-sol'");
+    expect(cur).toContain("'model_reasoning_effort=\"xhigh\"'");
+    expect(cur).toContain("'-s' 'read-only'");
     expect(cur).toContain('DOĞRULA ya da ÇÜRÜT');
 
     const ara = dry(['ara', 'Müfredat araştırması']);
-    expect(ara).toContain('--output-format json');
+    expect(ara).toContain("'--output-format' 'json'");
     expect(ara).toContain('gemini-3.6-flash-high');
 
     const gor = dry(['gor', MEDIA, 'Neyi görüyorsun?']);
-    expect(gor).toContain('--output-format json');
+    expect(gor).toContain("'--output-format' 'json'");
     expect(gor).toContain(MEDIA);
 
     const kare = dry(['kare', PROMPT, path.join('/tmp', 'dis-goz-kuru.png')]);
-    expect(kare).toContain('--output-format json');
+    expect(kare).toContain("'--output-format' 'json'");
     expect(kare).toContain('/tmp/dis-goz-kuru.png');
+  });
+
+  it('kuru çıktı görevdeki shell sözdizimini POSIX tek tırnakla etkisizleştirir', () => {
+    const task = "'$(touch /tmp/dis-goz-pwned)' ve `id`";
+    const output = dry(['is', task]);
+    expect(output).toContain("printf %s ''\\''$(touch /tmp/dis-goz-pwned)'\\'' ve `id`'");
+    expect(output).not.toContain(`printf %s \"${task}\"`);
+  });
+
+  it('review görevi Codex alt-komutu değil stdin görevidir', () => {
+    const invocation = buildInvocation(['is', 'review']);
+    expect(invocation.args).toContain('-');
+    expect(invocation.args).not.toContain('review');
+    expect(invocation.stdin).toBe('review');
+    expect(invocation.cwd).toBe(path.resolve(path.dirname(SCRIPT), '..'));
   });
 
   it('var olmayan medya yolunu AGY çalıştırılmadan reddeder', () => {
@@ -46,8 +62,24 @@ describe('dış göz launcher', () => {
       .toThrow(/diskte yok; AGY çalıştırılmadı/);
   });
 
+  it('var olan kare hedefini üzerine yazmadan reddeder', () => {
+    expect(() => buildInvocation(['kare', PROMPT, MEDIA]))
+      .toThrow(/zaten var; üzerine yazılmaz/);
+  });
+
+  it('kare hedefi yalnız yeni .png/.jpg normal dosya yolu olabilir', () => {
+    expect(() => buildInvocation(['kare', PROMPT, '/private/tmp/dis-goz-yanlis.txt']))
+      .toThrow(/yalnız .png veya .jpg/);
+    expect(() => buildInvocation(['kare', PROMPT, path.dirname(MEDIA)]))
+      .toThrow(/hedefi dizin olamaz/);
+  });
+
   it('AGY SUCCESS + boş response durumunu başarısızlık sayar', () => {
     expect(() => parseAgyResponse('{"status":"SUCCESS","response":"   "}'))
       .toThrow(/BAŞARISIZLIK/);
+  });
+
+  it('Codex boş veya yalnız boşluk stdout döndürürse başarısız sayar', () => {
+    expect(() => parseCodexResponse(' \n\t ')).toThrow(/BAŞARISIZLIK/);
   });
 });

@@ -90,16 +90,21 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     expect(r.metrics.styleMax).toBe(125);
   });
 
-  it('Bileşke (52 kare): NEGATIVE 52/52 GÖRÜLÜR ama kare-özel %0 · temas 0/52', () => {
+  it('Bileşke (52 kare): NEGATIVE 52/52 GÖRÜLÜR ama kare-özel 11/52 · temas 0/52', () => {
     const r = lintFile(
       join(INBOX, 'Biten', '6. Sınıf - Kuvvetlerin Güç Birliği', 'Bileşke Kuvvet_PROMPTLAR.txt'),
       'EDU');
     expect(r.total).toBe(52);
     // `FIREWALL NEGATIVE:` biçimi tanınmalı — eski desen 52/52'ye sahte kırmızı basıyordu.
     expect(r.counts.neg).toBe('52/52');
+    // Aynı gerçek fixture korpus ölçerini de çiviler: slot kapsamı ile neg-özel kanıtı
+    // farklı önek desenleri taşırsa Bileşke yeniden sessizce `0` görünür.
+    expect(r.metrics.negVar).toBe(52);
     // Temas gerçekten yok: K33/34/35/50 havada yüzdü, revizede "floating in mid-air".
     expect(r.counts.temas).toBe('0/52');
-    expect(r.metrics.negOzel).toBe(0);
+    expect(r.metrics.negOzel).toBe(11 / 52);
+    // Ölçerin görmesi üretimi bloke etmez: neg-özel bir gözlem olarak SARI kalır.
+    expect(r.sari.flatMap((row) => row.problems).find((p) => p.key === 'neg-ozel')?.level).toBe('sari');
   });
 
   it('Sabit Sürat (44 kare): 3 kırmızı blok — temiz setin tabanı', () => {

@@ -22,7 +22,7 @@
  */
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
@@ -33,12 +33,14 @@ const CODEX_MODELS = Object.freeze({
   is: { model: 'gpt-5.6-terra', effort: 'high', sandbox: 'workspace-write' },
   cur: { model: 'gpt-5.6-sol', effort: 'xhigh', sandbox: 'read-only' },
 });
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 export class DisGozError extends Error {}
 
 const fail = (message) => { throw new DisGozError(message); };
 const isAbsolute = (value) => path.isAbsolute(value);
-const displayArg = (value) => /^[A-Za-z0-9_./:=@-]+$/.test(value) ? value : JSON.stringify(value);
+const posixQuote = (value) => `'${String(value).replaceAll("'", "'\\''")}'`;
+const powerShellQuote = (value) => `'${String(value).replaceAll("'", "''")}'`;
 
 export function usage() {
   return `Kullanım:
@@ -46,7 +48,7 @@ export function usage() {
   node scripts/dis-goz.mjs cur  "<iddia>"                 [--kuru]
   node scripts/dis-goz.mjs gor  "<medya yolu>" "<soru>"   [--kuru]
   node scripts/dis-goz.mjs ara  "<konu>"                  [--kuru]
-  node scripts/dis-goz.mjs kare "<prompt dosyası>" "<çıktı.png>" [--kuru]`;
+  node scripts/dis-goz.mjs kare "<prompt dosyası>" "<çıktı.png/.jpg>" [--kuru]`;
 }
 
 function needText(value, label) {
@@ -64,8 +66,26 @@ function needExistingAbsolute(file, label) {
 function needOutputPath(file) {
   needText(file, 'Çıktı yolu');
   if (!isAbsolute(file)) fail(`Çıktı yolu mutlak olmalı: ${file}`);
-  if (!existsSync(path.dirname(file))) fail(`Çıktı klasörü diskte yok; AGY çalıştırılmadı: ${path.dirname(file)}`);
+  const outputDir = path.dirname(file);
+  if (!existsSync(outputDir) || !statSync(outputDir).isDirectory()) {
+    fail(`Çıktı klasörü diskte yok; AGY çalıştırılmadı: ${outputDir}`);
+  }
+  assertMissingOutput(file);
+  if (!['.png', '.jpg'].includes(path.extname(file).toLowerCase())) {
+    fail(`Çıktı yalnız .png veya .jpg olmalı: ${file}`);
+  }
   return file;
+}
+
+/** Hedefi iki kez kontrol ederiz: kurulumda ve subprocess'e tam girmeden önce. */
+function assertMissingOutput(file) {
+  let entry;
+  try { entry = lstatSync(file); } catch (error) {
+    if (error && error.code === 'ENOENT') return;
+    throw error;
+  }
+  if (entry.isDirectory()) fail(`Çıktı hedefi dizin olamaz: ${file}`);
+  fail(`Çıktı hedefi zaten var; üzerine yazılmaz: ${file}`);
 }
 
 function codexInvocation(subcommand, task) {
@@ -76,9 +96,13 @@ function codexInvocation(subcommand, task) {
     : task;
   return {
     bin: 'codex',
-    args: ['exec', '-m', profile.model, '-c', `model_reasoning_effort="${profile.effort}"`, '-s', profile.sandbox, '--skip-git-repo-check', instruction],
+    // `-`, Codex'in görevi stdin'den almasını belgelenmiş biçimde ister. Böylece
+    // "review" ve "--json" gibi kullanıcı metinleri CLI alt-komutu/seçeneği olamaz.
+    args: ['exec', '-m', profile.model, '-c', `model_reasoning_effort="${profile.effort}"`, '-s', profile.sandbox, '--skip-git-repo-check', '-'],
+    stdin: instruction,
     output,
     kind: 'codex',
+    cwd: REPO_ROOT,
   };
 }
 
@@ -97,13 +121,14 @@ function agyInvocation(subcommand, args) {
     output = needOutputPath(args[1]);
     const imagePrompt = readFileSync(promptFile, 'utf8').trim();
     if (!imagePrompt) fail(`Prompt dosyası boş; AGY çalıştırılmadı: ${promptFile}`);
-    prompt = `Aşağıdaki prompttan tek bir PNG görsel üret ve TAM OLARAK şu mutlak yola kaydet: ${output}\nPrompt dosyası: ${promptFile}\nPROMPT BAŞI\n${imagePrompt}\nPROMPT SONU\nKaydettikten sonra yalnız ne ürettiğini ve kaydetme sonucunu yaz.`;
+    prompt = `Aşağıdaki prompttan tek bir görsel üret ve TAM OLARAK şu mutlak yola kaydet: ${output}\nPrompt dosyası: ${promptFile}\nPROMPT BAŞI\n${imagePrompt}\nPROMPT SONU\nKaydettikten sonra yalnız ne ürettiğini ve kaydetme sonucunu yaz.`;
   }
   return {
     bin: 'agy',
     args: ['--dangerously-skip-permissions', '--model', AGY_MODEL, '--output-format', 'json', '--print-timeout', '25m', '-p', prompt],
     kind: 'agy',
     output,
+    cwd: REPO_ROOT,
   };
 }
 
@@ -135,6 +160,13 @@ export function parseAgyResponse(raw) {
   return parsed.response.trim();
 }
 
+export function parseCodexResponse(raw) {
+  if (typeof raw !== 'string' || !raw.trim()) {
+    fail('Codex başarıyla çıktı ama stdout boş; bu BAŞARISIZLIK sayıldı.');
+  }
+  return raw;
+}
+
 function onPath(bin) {
   const extensions = process.platform === 'win32'
     ? (process.env.PATHEXT || '.EXE;.CMD;.BAT').split(';')
@@ -147,13 +179,18 @@ function runCodex(invocation) {
   if (!onPath(invocation.bin)) fail('codex PATH içinde bulunamadı; Codex CLI kurulu/açık değil.');
   let stdout = '';
   try {
-    stdout = execFileSync(invocation.bin, invocation.args, { encoding: 'utf8' });
+    stdout = execFileSync(invocation.bin, invocation.args, {
+      cwd: invocation.cwd,
+      encoding: 'utf8',
+      input: invocation.stdin,
+    });
   } catch (error) {
     stdout = String(error.stdout || '');
     writeFileSync(invocation.output, stdout, 'utf8');
     if (stdout) process.stdout.write(stdout);
     fail(`Codex başarısız çıktı (çıkış ${error.status ?? 'bilinmiyor'}). Çıktı kaydı: ${invocation.output}\n${String(error.stderr || '').trim()}`);
   }
+  parseCodexResponse(stdout);
   writeFileSync(invocation.output, stdout, 'utf8');
   if (stdout) process.stdout.write(stdout);
   process.stderr.write(`Codex çıktısı kaydedildi: ${invocation.output}\n`);
@@ -161,22 +198,34 @@ function runCodex(invocation) {
 
 function runAgy(invocation) {
   if (!onPath(invocation.bin)) fail('agy PATH içinde bulunamadı; AGY CLI kurulu/açık değil.');
+  if (invocation.subcommand === 'kare') assertMissingOutput(invocation.output);
   let raw = '';
   try {
-    raw = execFileSync(invocation.bin, invocation.args, { encoding: 'utf8' });
+    raw = execFileSync(invocation.bin, invocation.args, { cwd: invocation.cwd, encoding: 'utf8' });
   } catch (error) {
     fail(`AGY çağrısı başarısız çıktı (çıkış ${error.status ?? 'bilinmiyor'}): ${String(error.stderr || error.stdout || '').trim()}`);
   }
   const response = parseAgyResponse(raw);
-  if (invocation.subcommand === 'kare' && !existsSync(invocation.output)) {
-    fail(`AGY response verdi ama hedef PNG oluşmadı; bu BAŞARISIZLIK sayıldı: ${invocation.output}`);
+  if (invocation.subcommand === 'kare') {
+    if (!existsSync(invocation.output)) {
+      fail(`AGY response verdi ama hedef görsel oluşmadı; bu BAŞARISIZLIK sayıldı: ${invocation.output}`);
+    }
+    if (!lstatSync(invocation.output).isFile()) {
+      fail(`AGY response verdi ama hedef normal dosya değil; bu BAŞARISIZLIK sayıldı: ${invocation.output}`);
+    }
   }
   process.stdout.write(response + '\n');
   if (invocation.subcommand === 'gor') process.stdout.write(AGY_WARNING + '\n');
 }
 
 export function commandForDisplay(invocation) {
-  return [invocation.bin, ...invocation.args].map(displayArg).join(' ');
+  const command = [invocation.bin, ...invocation.args].map(posixQuote).join(' ');
+  if (!invocation.stdin) return command;
+  const powerShellCommand = [invocation.bin, ...invocation.args].map(powerShellQuote).join(' ');
+  return [
+    `printf %s ${posixQuote(invocation.stdin)} | ${command}`,
+    `# Windows PowerShell: $disGozTask = ${powerShellQuote(invocation.stdin)}; $disGozTask | & ${powerShellCommand}`,
+  ].join('\n');
 }
 
 export function main(argv = process.argv.slice(2)) {
