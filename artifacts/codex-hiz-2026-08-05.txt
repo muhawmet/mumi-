@@ -1,0 +1,218 @@
+# Kısa hüküm
+
+4 saatin ana nedeni yalnızca motorların yavaşlığı değil.
+
+- 52 kare + 52 klip, en az **104 manuel gönder–bekle–indir–adlandır döngüsü** yaratıyor.
+- Kare onaylanmadan motion yazılamıyor. Bu gerçek bağımlılık, kaldırılmamalı.
+- Fakat üretim “bütün kareler → bütün motion’lar → bütün klipler → kurgu” şeklinde ilerlediğinde bağımsız beklemeler üst üste ekleniyor.
+- Daha büyük kayıp yeniden yapma: mevcut projede 52 karenin **39’u en az bir kez revize edilmiş**, 16 kare ikinci revize turuna girmiş. Toplam 55 revize kaydı var.
+- Projenin kendi ölçümü de 71 revizenin yaklaşık 44–52’sinin kredi harcanmadan metinden yakalanabileceğini söylüyor. [CLAUDE.md](/Users/Muhammet/Desktop/mamilas-modern/CLAUDE.md:126)
+
+Sonuç: İlk hedef “motoru hızlandırmak” değil; **hatalı render’ı azaltmak ve beklemeleri konveyör biçiminde üst üste bindirmek** olmalı.
+
+# 1. Hat denetimi — kritik yol
+
+İşaretler:
+
+- **[M] Makine:** Yerel araç veya görsel/video motoru çalışıyor.
+- **[İ] İnsan:** Mami tıklıyor, indiriyor, adlandırıyor veya karar veriyor.
+- **[A] Ajan:** Prompt, denetim veya düzeltme metni hazırlanıyor.
+
+## Gerçek üretim zinciri
+
+```text
+VO + sahne haritası + dünya + referans kilitleri
+                    ↓
+[A/M] Dünya kilidi → [A] Image prompt → [M/A] Prompt-lint
+                    ↓
+[İ] NB2'ye gönder → [M] Kare render → [İ] İndir/adlandır
+                    ↓
+[A] Kareyi görerek denetle → [İ] Mami kare kararı
+             ↙ REVISE                 ↘ PASS
+        Image döngüsüne dön       Onaylı kareyi dondur
+                                         ↓
+                            [A] Motion prompt + motion-lint
+                                         ↓
+                         [İ] Kling'e gönder → [M] Klip render
+                                         ↓
+                         [İ] İndir/adlandır → [M/A] Motion-QC
+                                         ↓
+                              [İ] Mami klip kararı
+                              ↙ REVISE       ↘ PASS
+                                 döngü       onaylı klip
+                                                ↓
+VO + müzik + tüm klipler + edit plan → kaba-kurgu XML
+                                                ↓
+                                     Premiere ince kurgu
+                                                ↓
+                             Tam-film kararı → export → hasat
+```
+
+## Adım adım bekleme türü
+
+| Adım | Bekleyen taraf | Gerçek blokaj |
+|---|---|---|
+| VO, numara, merge, dünya, cast, referans kilitleri | A + İ | Bütün üretim bunlara bağlı |
+| `dunya-kilidi` | M + A | Prompt yazımından önce gerekli |
+| Image prompt yazımı | A | İlgili karenin basımını bloke eder |
+| `prompt-lint` ve anlam denetimi | M + A | Kredi harcamadan önce geçmeli |
+| NB2’ye kopyalama/yükleme | İ | Render başlangıcını bloke eder |
+| NB2 render | M | O karenin denetimini bloke eder |
+| İndirme, doğru ad, doğru klasör | İ | Ajanın gerçek kareyi görmesini bloke eder |
+| Kare denetimi ve Mami kararı | A + İ | Nihai motion prompt’unu bloke eder |
+| Revize kare döngüsü | A + İ + M | Onaylı kare oluşana kadar motion kapalı |
+| Motion prompt ve lint | A + M | O klibin Kling basımını bloke eder |
+| Kling yükleme ve başlatma | İ | Klip render’ını bloke eder |
+| Kling render | M | O klibin görsel doğrulamasını bloke eder |
+| Motion-QC + gerçek klip kararı | M + A + İ | Klip onayını bloke eder |
+| Edit plan | M/A | Motion başlıkları tamamlanınca üretilebilir |
+| Kaba-kurgu XML | M | Edit plan + medya eşleşmesine bağlı |
+| Premiere ince kurgu | İ | Onaylı teslimi bloke eder |
+| Tam-film denetimi ve export | İ + M | Kapanışı bloke eder |
+
+`motion-qc` yalnızca dört örnek kare çıkarır; kendi başına PASS vermez. Gerçek klip ve Mami kararı zorunludur. [motion-qc.mjs](/Users/Muhammet/Desktop/mamilas-modern/scripts/motion-qc.mjs:1)
+
+## Gerçek bağımlılıklar
+
+- Nihai motion prompt’u, **onaylı start-frame görülmeden yazılamaz**. Bu alışkanlık değil, kalite yasasıdır. [PROJECT_CONTRACT.md](/Users/Muhammet/Desktop/mamilas-modern/docs/ai/PROJECT_CONTRACT.md:37)
+- Revize ve motion aynı kare-denetim geçişinde çıkmalıdır. Böylece kare ikinci kez incelenmez. [faz-icraat.md](/Users/Muhammet/Desktop/mamilas-modern/docs/ai/faz-icraat.md:51)
+- Kling, ilgili karenin sürümü kesinleşmeden başlatılmamalı. Aksi halde pahalı klip çöpe gider.
+- Tam-film kararı, gerçek klipler Premiere zaman çizelgesinde görülmeden verilemez.
+- Üç-klip canary kapısı gerçek ve faydalı seriliktir. 49 yanlış klip üretme riskini keser. Mevcut sıradaki eylem de K1/K29/K36 canary’sidir. [current-work.json](/Users/Muhammet/Desktop/mamilas-modern/artifacts/current-work.json:7)
+
+## Alışkanlıktan seri kalan bölüm
+
+Bir sonraki karenin prompt yazımı, önceki karenin NB2 render’ını beklemek zorunda değil.
+
+Bir önceki onaylı karenin motion yazımı da sonraki karenin NB2 render’ını beklemek zorunda değil.
+
+NB2’nin ilerideki kareyi üretmesi ile Kling’in daha önce onaylanmış kareyi hareketlendirmesi, sürüm kilitleri korunursa birbirinden bağımsızdır.
+
+Dolayısıyla kritik yol tek uzun zincir değil; aslında **52 küçük bağımlı zincir** var. Bunlar dalga halinde üst üste bindirilebilir.
+
+# 2. Yanlış serilik avı
+
+| Şu an seri görünen iş | Gerçek durum | Paralelleştirme önkoşulu | Bozulabilecek şey |
+|---|---|---|---|
+| Motion’u kareden önce yazmak | **Paralelleştirilemez.** Nihai motion kareye bağlı | Gerçek onaylı kare | Kör motion, kadraj uyuşmazlığı, yeniden Kling basımı |
+| Önce bütün prompt’lar, sonra bütün kareler | Gereksiz seri | Dünya/ref/VO kilidi; en fazla bir sekans önden gitmek | İlk karelerde keşfedilen stil sorunu bütün prompt stokunu bayatlatır |
+| NB2 render ederken prompt yazımını durdurmak | Gereksiz seri | Sıradaki sekansın numara ve referansları sabit | Fazla önden gidilirse bağlam ve süreklilik kaybı |
+| Bütün kareler bitmeden hiçbir motion yazmamak | Gereksiz seri | Önceki kare PASS ve sürümü dondurulmuş olmalı | Komşu sekans sınırı sonradan değişirse motion revizesi |
+| NB2 ve Kling’i ayrı dönemlerde çalıştırmak | Büyük ölçüde gereksiz seri | Kling’e yalnız dondurulmuş kare girecek; kesin dosya adı/sürüm fişi | Yanlış frame sürümünden pahalı klip üretmek |
+| Klip render olurken motion-QC beklemek | Gereksiz seri | Önceki klip inmiş ve doğru prompt/frame ile eşleşmiş olmalı | Eski/yeni klip çakışması; yanlış K numarası |
+| Seslendirmeyi görsellerden sonra yapmak | Gereksiz seri | VO metni, merge ve numaralar dondurulmuş olmalı | Sonradan VO değişirse süre ve kurgu planı çöker |
+| Suno’yu kliplerden sonra yapmak | Gereksiz seri | Ton ve yaklaşık toplam süre kilitli | Müzik zirvesi nihai ritme uymayabilir |
+| Edit planı tüm kliplerden sonra yapmak | Gereksiz seri | Motion başlıkları ve numaralı VO hazır | Motion süreleri değişirse plan tekrar üretilmeli |
+| XML hazırlığını son klipten sonra başlatmak | Kısmen gereksiz seri | VO ölçümü ve edit plan erkenden hazır tutulabilir | Eksik kliple erken XML alınırsa tekrar import karmaşası |
+| Kurgu beklerken sonraki videonun prompt’larını yazmak | İçerik açısından bağımsız; şu anda **yanlış öncelik** | Mevcut video kapanmış veya basım kuyruğu küçülmüş olmalı | İki aktif gerçeklik, bağlam kaybı, eski ref ve numara kullanımı |
+| Birden çok ajanla toplu prompt yazmak | Teknik olarak mümkün; bugün darboğaz değil | Çok sıkı sekans paketleri ve ortak süreklilik denetimi | Üslup/cast/kamera sürekliliği bozulur; WIP büyür |
+
+Önemli bulgu: canlı kuyrukta başka projeler için **181 yazılmış fakat basılmamış kare** bulunuyor. Yani ajan metin üretimi zaten insan basım kapasitesinin önünde. [basim-kuyrugu.mjs](/Users/Muhammet/Desktop/mamilas-modern/scripts/basim-kuyrugu.mjs:5)
+
+Bu nedenle “kurgu sırasında sonraki videonun prompt’larını yazalım” fikri:
+
+- Mevcut videonun 4 saatlik çevrimini kısaltmaz.
+- Toplam proje stokunu büyütür.
+- Mami’nin aktif bağlamını iki videoya böler.
+- Ancak mevcut kuyruğun basımı yetiştiğinde veya uzun export beklemesinde anlamlı olur.
+
+## En doğru paralel çalışma şekli
+
+```text
+Dalga N
+
+Mami + NB2 : Sekans N karelerini basar
+Ajan       : Sekans N+1 promptlarını yazar ve lint eder
+Ajan       : Sekans N-1 inmiş karelerini denetler; revize/motion çıkarır
+Kling      : Sekans N-2'nin dondurulmuş karelerini render eder
+QC         : Daha önce inmiş Kling kliplerini kontrol eder
+```
+
+Bu, motion yasasını ihlal etmez. Çünkü motion hâlâ yalnızca görülmüş ve onaylanmış kare için yazılır.
+
+Sekans sınırlarında iki komşu karenin birlikte kontrol edilmesi gerekir. Aksi halde tek tek güzel fakat birbirine bağlanmayan görüntüler oluşabilir.
+
+# 3. En ucuz üç hamle
+
+Kazançlar ölçülmüş render süresi bulunmadığı için **tahmindir**. Birbirleriyle kısmen örtüşür; doğrudan toplanmamalıdır.
+
+| Sıra | İş akışı değişikliği | Tahmini kazanç | Uygulama maliyeti |
+|---|---|---:|---:|
+| 1 | Kredi kapısını öne taşı | 45–90 dk/video | 5–10 dk disiplin |
+| 2 | Tek-sekans konveyörü kur | 30–50 dk/video | Başlangıçta 10–15 dk |
+| 3 | Ses ve kurgu dalını erken aç | 20–35 dk/video | 5–15 dk |
+
+## 1. Kredi kapısını öne taşı
+
+Her 6–8 karelik sekans için sıra:
+
+1. Dünya kilidi.
+2. Prompt-lint.
+3. Ajanın anlam denetimi: VO yükümü, tek fikir, kadraj, görünür metin, referans ve süreklilik.
+4. Ancak bundan sonra NB2 basımı.
+5. İlk kritik kare onaylanmadan bir sonraki sekans stoklanmaz.
+
+Kalite kapısı kaldırılmıyor; **kredi harcamadan önceye taşınıyor**.
+
+Neden birinci sırada:
+
+- Ölçülen 71 revizenin 44–52’si metinden yakalanabilirdi.
+- Aktif projede 39/52 kare revize edilmiş.
+- 16 kare ikinci revize turuna girmiş.
+- Dolayısıyla en büyük gizli süre, render değil “aynı kareye tekrar dönme” olabilir.
+
+Bedeli: Başlangıçta 5–10 dakika daha yavaş hissedilir. Fakat bu süre, onlarca gönder–bekle–indir döngüsünü önler.
+
+## 2. Tek-sekans konveyörü kur
+
+Mami aynı anda dört iş yapmayacak. İşler hazır kuyruğa konacak:
+
+- NB2 mevcut sekansı render ederken ajan sonraki sekansı lint eder.
+- İnen önceki sekans denetlenir.
+- PASS alan daha eski sekansın motion’ı yazılır ve Kling’e verilir.
+- Kling render ederken yeni NB2 kareleri ilerler.
+
+Sınır: **En fazla bir sekans yazım stoku.**
+
+Gerekli fiş:
+
+- K numarası.
+- Kare sürümü.
+- `FRAME PASS` durumu.
+- Motion hazır mı?
+- Kling’e gitti mi?
+- Klip sürümü ve Mami kararı.
+
+Bu sürüm disiplini önemli; `basim-listesi` eski/yeni motion dosyası çakışmalarını özellikle ayıklamak zorunda kalıyor. [basim-listesi.mjs](/Users/Muhammet/Desktop/mamilas-modern/scripts/basim-listesi.mjs:6)
+
+Bedeli: Mami’nin hangi motorun hangi işi yaptığına bakması gerekir. Takip fişi gevşerse hız kazancı yanlış sürüm basımıyla geri kaybedilir.
+
+## 3. Ses ve kurgu dalını erken aç
+
+VO metni, merge ve numaralar kesinleştiği anda:
+
+- ElevenLabs seslendirmesi görsellerle paralel alınır.
+- Suno müziği kliplerden bağımsız başlatılır.
+- Motion başlıkları tamamlandığında edit plan hemen üretilir; kliplerin bitmesi beklenmez. [edit-plan.mjs](/Users/Muhammet/Desktop/mamilas-modern/scripts/edit-plan.mjs:3)
+- Son Kling klipleri render olurken VO ölçümü/Whisper hazırlığı tamamlanır.
+- Bütün klipler indiğinde `kaba-kurgu` bir kez çalıştırılır.
+- Premiere’de manuel yerleştirme yerine yalnız ince kurgu yapılır. [kaba-kurgu.mjs](/Users/Muhammet/Desktop/mamilas-modern/scripts/kaba-kurgu.mjs:2)
+
+Bedeli: VO veya numaralandırma sonradan değişirse edit plan yeniden üretilir. Bu nedenle dal yalnızca metin kilidinden sonra açılmalı.
+
+# Gerçekçi hedef
+
+İlk turda 4 saati 1 saate indirmek gerçekçi görünmüyor.
+
+Kod değişikliği ve kalite kaybı olmadan makul ilk hedef:
+
+- **Yaklaşık 2 saat 30 dakika–3 saat 15 dakika.**
+- En büyük pay: gereksiz revize render’larını kesmek.
+- İkinci pay: NB2, ajan denetimi ve Kling beklemelerini üst üste bindirmek.
+- Üçüncü pay: ses ve kaba-kurguyu sona yığmamak.
+
+Kesin ölçüm için bir videoda yalnızca beş zaman damgası tutulmalı: NB2 gönderim, kare indirme, kare PASS, Kling gönderim, klip PASS. Böylece makine beklemesi ile insan/ajan aktarım kaybı birbirinden ayrılır.
+
+**EN ÇOK ŞUNDAN EMİNİM:** Ana kayıp saf render süresinden çok yeniden basım ve 104 manuel aktarımın seri yürütülmesidir; prompt kalite kapısını öne almak en değerli hamledir.  
+**EN AZ ŞUNDAN EMİNİM:** Dakika cinsinden kazanç aralıkları; depoda gerçek NB2/Kling gönderim–bitiş zaman günlüğü bulunmadığı için bunlar açıkça tahmindir.
+
