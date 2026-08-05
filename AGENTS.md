@@ -22,7 +22,8 @@ Bu dosya Codex için kısa ve kalıcı giriş noktasıdır. Ayrıntılı ortak k
   kütüphanesidir — prompt'un doğduğu yer değil. `generateBatch` çıktısı prompt kalitesi kanıtı DEĞİLDİR.
 - **Arşiv kıstas değil** (Mami): `agents/COMMAND-INBOX/Biten/` ne yapıldığının kaydıdır, kalite ölçütü
   değil; çoğu iş çıkışında aceleyle üretildi. "Sıfır revize" kusursuz demek değildir. Altın standart
-  **Eşeyli ve Eşeysiz Üreme**.
+  2026-08-03'te değişti: **5. Sınıf - Hücre ve Organelleri** (Mami: *"Eşeyli artık eskidi"*).
+  **Eşeyli ve Eşeysiz Üreme** yalnız **motion BİÇİMİNİN** referansıdır, kalite tavanı değil.
 - **Harcamadan önce ölç:** `scripts/dunya-kilidi.mjs` ile dünya kuyruğunu bas (elle yazma),
   `scripts/prompt-lint.mjs` ile yapıyı ölç — 71 revizenin ~44-52'si burada kredi yakmadan kesiliyor.
 
