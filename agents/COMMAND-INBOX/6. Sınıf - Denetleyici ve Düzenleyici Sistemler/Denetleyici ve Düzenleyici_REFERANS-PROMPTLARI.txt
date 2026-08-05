@@ -181,3 +181,59 @@ BASIM SIRASI VE GEREKÇESİ
 Plaka basıldıktan sonra bu dosyada her ref'in `KAYNAK:` satırına dosya yolu + sha yazılır;
 `ONAY:` satırını Mami doldurur. Sahne promptlarında bir daha TARİF EDİLMEZ, yalnız @handle
 çağrılır — tarif edilirse referans ezilir ve motor başka bir nesne üretir.
+
+=========================================================================
+5 · @efe — GARDIROP VARYANTI  (kimlik plakası DEĞİL — referans-edit)
+=========================================================================
+🔴 BU BİR KİMLİK PLAKASI DEĞİLDİR. @efe dört videodan var (Eşeyli · Kütle · Bitkilerde ·
+   Hayvanlarda). Yeniden tanımlanırsa motor BAŞKA ÇOCUK üretir — envanterin kırmızı kuralı.
+   Bu prompt MEVCUT PLAKAYA referans-edit olarak verilir: yüz, saç, ten, yaş, vücut oranı
+   DEĞİŞMEZ; yalnız gardırop kışa çevrilir.
+
+TAŞIR    : kimlik (mevcut plakadan) · yeni gardırop · güneş-ay rozeti · kumaş malzemesi
+TAŞIMAZ  : 🔴 TAM-BOY STÜDYO KADRAJI · poz (el yakada, gövde hafif dönük) · beyaz seamless
+           zemin · stüdyo ışığı · ayakkabıların kadrajda olması
+KAPSAM   : K01 · K05-K07 · K15 · K19 · K22 · K27 · K29 · K32 · K41 · K49 · K56
+KAYNAK   : mevcut @efe plakası + bu edit
+UYUM     : pixar_3d_edu · EDU
+ONAY     : —
+
+⚠ TAŞIMAZ satırı bu ref'te en pahalı satırdır. Ölçüldü: kadraj kilidi yazılmayan karelerde
+  referans sayfasının tam-boy stüdyo kadrajı sahneye ithal oluyor ve figür FİGÜRİN gibi
+  okunuyor (ayak kadrajda 7/7 kötü kare, 0/4 iyi kare). @efe geçen HER karede kadrajın neyi
+  DIŞARIDA bıraktığı ayrıca yazılır — örn: "framed from mid-chest up, nothing below the
+  chest is visible".
+
+-----
+Keep this exact character — the same face, the same hair, the same eyes, the same build and
+the same age. Change only the clothing, to a winter-morning indoor outfit.
+
+He now wears a thick hand-knitted crew-neck sweater in deep brick red under the same denim
+dungarees. The knit is chunky and clearly hand-made: visible cable ribs running down the
+chest, a loose open collar that sits slightly away from the neck, and cuffs long enough to
+fall over the base of the thumbs, one cuff pushed back further than the other. The wool
+shows woven stitch texture and slight fiber fray where it has been worn, with a soft halo
+of loose fibres catching the light along the shoulder line.
+
+The dungarees stay the same washed indigo denim with orange topstitching and turned-up
+hems, but they are visibly lived in for winter: the knees hold soft pale wear, the denim is
+softened and slightly faded along the thigh seams, and one shoulder strap sits a little
+twisted where it has been pulled on in a hurry. On the bib pocket the small enamel
+SUN-AND-MOON badge stays exactly as it is — a round pin where a crescent moon and a small
+sun sit inside one circle, in warm amber and pale ivory, its enamel hard-glossy with a
+chipped edge showing the dark metal beneath. It is the only graphic element on him.
+
+He wears thick ribbed wool socks in undyed cream, pushed down in soft folds around the
+ankle, and simple indoor slippers of dark felt — no outdoor shoes, no laces.
+
+Skin stays matte with low specular and is never tinted green or grey.
+
+NEGATIVE (kare-özel): NO change to the face, hair, eyes, age or body proportions; NO
+outdoor sneakers, NO yellow laces; NO hood, NO hoodie; NO printed text or lettering anywhere
+on the clothing; NO logo, NO brand mark, NO number; NO second badge or extra patch; NO scarf,
+NO hat, NO gloves, NO coat; NO backpack; NO concept glow on the skin, face or clothing;
+NO adult proportions.
+STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
+LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
+NEGATIVE: NO hard-black shadow; NO 2D cel shading; NO hard black outlines; NO flat graphic fill; NO clay/plasticine surface texture on character skin; NO outlines; NO lens flare unless motivated by a visible practical light source in frame; NO anamorphic streak; NO clay or plasticine character skin; NO hard cel shading, NO cartoon black outline, NO anime-style eye geometry; NO toon shader, NO 2D illustration style on 3D forms; NO teal-orange Hollywood grade, NO desaturated look, NO high-contrast noir; Turkish label only — blocky dimensional letterform, raised and legible, NO English signage; NO octane-render aesthetic (avoid: harsh physical sky, raw caustics, overly sharp AO); NO photoreal or live-action capture, NO real-human photographic skin — this is continuous dimensional 3D feature-animation CGI in every scene; no recognizable franchise or real-person characters, logos, brand names; the named thing replaced by a symbol for it — no icon, pictogram, chart, diagram, arrow, gauge or infographic panel standing in for the real object or the real action; the literal thing is IN the frame, photographed/rendered as matter, not illustrated as a concept; empty adjectives (cinematic, dynamic, stunning, 4K); flat slide; warped or drifting text; character retyping
+-----
