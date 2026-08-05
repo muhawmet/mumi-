@@ -16,7 +16,7 @@ Sürüm önceliği DOSYA ZAMANIDIR; yedek/eski adlı dosyalar düşürüldü.
 ⚠ ÇAKIŞMA K11: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K12: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K13: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
-⚠ ÇAKIŞMA K14: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
+⚠ ÇAKIŞMA K14: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt → S7-REVIZE-KARELER-2026-08-05.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K15: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K16: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt → S7-REVIZE-KARELER-2026-08-05.txt (en yeni seçildi)
 ⚠ ÇAKIŞMA K17: S2-2026-08-05.txt → S2-ENERJI-2026-08-05.txt → S2-KANON-2026-08-05.txt (en yeni seçildi)
@@ -232,15 +232,16 @@ REVİZE:
 
 ------------------------------------------------------------------------
 
->>> K14   [kaynak: S2-KANON-2026-08-05.txt]
+>>> K14   [kaynak: S7-REVIZE-KARELER-2026-08-05.txt]
 ### K14 | 5s · VO "Kaburgalar kalbin ve akciğerlerin önünde kafes kurar."
-🔴 YENİDEN-BASIM — kavram ışığı zinciri burada kopuyor: K12'de doğuyor, K13'te kafatasının içinde, K15'te kemiğin içinde, K14'te hiç yok; ışık klip içinde yakılamaz (sıfırdan doğan ışık yasak), o yüzden kare yeniden basılmalı.
-KAMERA NİYETİ: KABURGA plakası kaidenin üstünde — dönen şey kaide DEĞİL, torna gövdesinin üstündeki kafestir, böylece plaka klip boyunca merceğe kare ve sabit kalır. Kamera masa hizasında yanlamasına kayar, mesafesi sabit. VO'nun "kafes kurar" fiili kamerada değil nesnenin kendi dönüşünde olur: çubuklar kalbin önünden geçer, açık aralık kapanır.
+KAMERA NİYETİ: Kafesin KURULMASI, modelin kaidesi üzerinde dönerken kaburgaların ışıyan kalbin önüne sıra sıra gelmesidir — kamera tezgâh hizasında yanlamasına kayar ama kaidedeki pirinç KABURGA plakasına hiç yaklaşmaz, mesafesi klip boyunca aynı kalır.
 -----
-The clip opens on the rib cage model standing still on its turned post, the red heart visible in the wide gap between two bars. @mira4 stands at the desk, framed from the waist up, nothing below its edge in view. Then her palm slides across the birch and taps the base once — at that instant the cage turns on its post, swings a quarter turn fast, carries past its stop, rocks back twice shorter and settles, the bars travelling across the heart so the wide gap closes into a fence. The base itself never turns or slides. The tap runs through the wood: the folders shift, the pencils rattle, the loose top sheet lifts a corner and lies down. The clip begins with a heart in the open and ends with a heart behind bars. Her chin drops, her brows draw together. The cage keeps the same bars it began with, none added, none splitting, and the heart stays matte red without lighting up. Camera: a slow lateral dolly at desk height, its distance from the base unchanged, never closing on the brass plate, stopping square on the closed side. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+The clip opens with the model already turning: the rib cage on its turned wooden base has been swinging slowly on its post and is still coming round, the front bars sliding across the warm-golden light held inside the cage, their shadows travelling over the desk in a moving ladder. Then the turn arrives — the near ribs line up one after another in front of the lit heart and lungs, the last bar comes over, the model goes a few degrees past square, rocks back once on its post, and stops with the whole front rank standing between the light and the room. The cage stays one rigid carved piece throughout: no rib bends, opens, spreads or leaves its neighbour, the count never changes, and the light inside holds exactly the strength it had at the first frame. On the desk the shadow ladder stops with it, the pencils in the mug tick once against the china, and dust turns through the window light. @mira4 keeps her hand flat on the desk and her eyes on the cage, chin level, lips closed. It begins as an open lit body and ends as a heart standing behind bars. Camera: a slow lateral dolly right at desk height at an unchanging distance from the base, never closing on the brass plate, whose cut letters hold their exact shapes and never re-spell or wobble, easing to a full stop with the cage in the middle third. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
 DURUM: temiz
 REVİZE:
+
+-------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
