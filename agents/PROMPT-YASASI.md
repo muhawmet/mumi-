@@ -173,6 +173,13 @@ Motorun sınırıysa kalır ve gerekçesi ölçümle yazılır. Alışkanlıksa 
 3. **Malzeme hâl değiştirir** — boya suda ebru olur, iplik kumaş olur, buhar yazı olur.
    Bu **yeni özne değildir**, aynı maddenin başka hâlidir; `motion yeni öğe doğurmaz` bunu
    yasaklamaz ve yasaklamamalıdır.
+   🔴 **Ama ayrım REGISTER değil FAZ'dır: KARE YAZABİLİR, KLİP YAZAMAZ.** Buharın yazı
+   olması **start-frame'de** serbesttir — o yazı karede zaten doğmuş hâlde durur. Aynı
+   dönüşümü **motion'da** istemek ölçülmüş motor sınırına çarpar: Kling harf üretemez ve
+   üretmeye zorlandığında taşıyıcıyla birlikte eritir (§3ø · §3b). Klipte yazı ne doğar,
+   ne değişir, ne yeniden hecelenir.
+   ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §1·0.3 ile §3ø/§3b birleşti — ikisi de kalır, sınır
+   faza konuldu.
 4. **Mekân kendini yeniden dizer** — bahçe 23 Nisan'ı bayrak dizisiyle **yazabilir**, yaprak
    gölgeleri yere rakamı düşürebilir. Takvim yaprağı aramak gerekmez.
 5. **Kadraj fiziğe borçlu değil** — kesit, üstten bakış, imkânsız açı, aynı anda iki ölçek.
@@ -477,7 +484,11 @@ PLAN:  <kahraman> · <kaç net insan> · <ışık NEYE DEĞİYOR, neye değmiyor
 [1 LENS]      <24-85>mm lens at f/<x>, <göz hizası|yüksek|alçak> <yakın|orta|geniş> <üç-çeyrek> view
               ⚠ eksenden ÇIK: ön planda kesilen bir çapa yoksa motor simetriye düşüyor (§2a)
 [2 ÖZNE]      — @handle <TEK fiil: VO cümlesinin birebir görsel karşılığı>
-[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey. <gardırop çıpası>
+[3 KİMLİK]    Warm matte tan skin, low specular, never tinted green or grey.   ← RENDER kilidi,
+              kadrajdaki HER ten için; kimlik tarifi değil, dünyanın negatifi (§2R'de tersine döner)
+              ⚠ KOŞULLU İKİNCİ YARI — <gardırop / görünüş çıpası> yalnız TAGSIZ figür için
+              yazılır: yaş + Türk/Anadolu + giysi malzemesi + ifade. **`@handle` varsa bu yarı
+              BOŞ bırakılır** — görünüşü referans taşır, tarif onunla yarışır (§2 @tag disiplini).
 [4 MEKÂN]     The setting is <spesifik, tam giydirilmiş mekân>: <3-5 isimli obje>
 [5 IŞIK]      <motive edilmiş key> ... <bounce> ... <rim>
 [6 KAVRAM]    a soft round warm-golden glow of light   ← kavram ışığı varsa
@@ -492,6 +503,12 @@ TEXT: <TAŞIYICI NESNE — sahnede zaten var olan> · <HARF KARAKTERİ — o nes
 NEGATIVE: <KARE-ÖZEL 1-2 madde ÖNCE> ; <global kuyruk>
 -----
 ```
+
+⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: `[3 KİMLİK]` slotu ile §2 @tag disiplini birleşti — disiplin
+kazandı ve slot **ikiye ayrıldı**. Şablon eskiden `@handle`'dan **sonra** görünüş tarifi
+emrediyordu. Artık: **ten satırı bir RENDER kilidi**, tag'li tag'siz her karede yazılır
+(ölçüm: Bileşke K14/K39 yeşil cilt, `prompt-lint` `ten` kuralı); **görünüş/gardırop yarısı
+koşulludur** — `@handle` varsa yazılmaz, tagsız figürde zorunludur.
 
 ### §2ø⁺ — YÜKÜM ve AYRICALIK: kapının NE SORDUĞU (2026-08-05, ölçülmüş)
 
@@ -618,9 +635,17 @@ yüzey okunur, her doku görünür. Beş fark ölçüldü:
    gerçek işte renk dekordan gelir — kırmızı koltuk, beyaz plastik, turuncu tulum.
 
 **YASA: her karede bir şey FEDA EDİLİR** ve neyin feda edildiği PLAN satırında yazılır.
-Bir yüz ışığın dışında kalır · bir yazının bir harfi elin altında kalır · bir kol kadraj
-tarafından kesilir · bir alan patlar · bir yüzey odağı kaybeder. Feda yoksa kare fotoğraf
-gibi durur; feda varsa **an** gibi durur.
+Bir yüz ışığın dışında kalır · bir yazının bir harfi elin altında kalır · bir gövdenin bir
+yanı kadraj dışında kalır · bir alan patlar · bir yüzey odağı kaybeder. Feda yoksa kare
+fotoğraf gibi durur; feda varsa **an** gibi durur.
+
+🔴 **Feda KOMPOZİSYONDAN alınır, UZUVDAN değil.** Meşru olan kırpma: gövdenin bir yanı kadraj
+dışında kalır, figür yine de kadraj kenarına kadar **bütün** okunur ve zemine basar. Yasak
+olan **kesilmiş uzuv**: el, kol, bacak ya da ayağın kadraj kenarında **gövdesiz** bitmesi —
+motor orayı eritir ya da havada uçan bir parça çizer (K05, §2 @tag disiplini).
+⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §2c FEDA ile §2'nin "KADRAJDAN KESİK FİGÜR YAZILMAZ" kilidi
+birleşti — kilit kazandı, FEDA örneğindeki "bir kol kadraj tarafından kesilir" kalemi
+kompozisyon kırpmasıyla değiştirildi.
 
 ⚠ Lens bir SAYI olarak değil, bir CAM olarak yazılır: kenar bozulması, sıcak noktada halation,
 grain yapısı. "35mm film grain" yazmak bir etikettir, bir davranış değil.
@@ -638,7 +663,7 @@ tek kelimeyle döndü: *"inanılmaz"*. Değişen dört şey — **PLAN satırı 
 | Karar | Çirkin kare | Onarılmış kare |
 |---|---|---|
 | **Kahraman kim** | iki çocuk, kadrajın ortasında, eşit boyda | oymalı direk kadrajın 1/3'ü; çocuk ölçek referansı |
-| **Kaç net insan** | iki çocuk + dansçılar + tezgâhçılar + "arka plandaki her çocuk ve yetişkin" | **bir**; gerisi çözünmez siluet, yüz/el tarif edilmez |
+| **Kaç net insan** | iki çocuk + dansçılar + tezgâhçılar + "arka plandaki her çocuk ve yetişkin" | **bir**; gerisi uzakta/sırtı dönük kalır, yüz ve el tarif edilmez (kelime seçimi §2d.6) |
 | **Işık nerede BİTİYOR** | "geç öğleden sonra güneşi" — gökyüzü, her şeyi eşit yıkıyor | yatay raking key; sol direk ve tezgâh içleri *"güneşin hiç ulaşmadığı"* indigo gölge |
 | **Özne zeminden nasıl ayrılıyor** | krem tulum, krem tente, krem taş — aynı değer | sıcak rim + arkasında karanlık oyma |
 
@@ -654,10 +679,13 @@ diye sormaz. Bu yüzden PLAN satırı **başlıkta**, prompt yazılmadan önce d
    kez basıldı (kalabalıklı ve kalabalıksız), ikisinde de simetri aynen kaldı — yani sebep
    kalabalık değil, **çapasızlık**. Çapa konunca kırıldı.
 2. **İsimsiz insan pahalıdır ve piksel sınırı tarifle aşılmaz.** Ekranda ~30-40 piksellik bir
-   yüzde kimlik taşınamaz; ne yazarsan yaz leke çıkar. Doğrusu tarif etmemek: *"unresolved
-   silhouettes in heavy defocus, no face, no hand, no costume detail"* — motor bunu dinliyor
-   (kanıtlandı). Kalabalık hissi **gövdeyle değil eşyayla** kurulur: asılı mal, istif çanak,
+   yüzde kimlik taşınamaz; ne yazarsan yaz leke çıkar. Doğrusu o yüzü **tarif etmemektir** —
+   ama bunu `silhouette` kelimesiyle yazmak tuzaktır (**§2d.6**, K04'te lacivert 2D insan
+   ikonu basıldı). Yazılacak biçim §2d.6'nındır: arka plandaki insan **sırtı dönük ama tam
+   render**. Kalabalık hissi **gövdeyle değil eşyayla** kurulur: asılı mal, istif çanak,
    sarılı kilim, boş tabure.
+   ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §2a.2 ile §2d.6 birleşti — piksel ölçümü burada kalır,
+   yazım hükmü tek yerde (§2d.6). "unresolved silhouettes in heavy defocus" reçetesi söküldü.
 
 ⚠ Ve bir uyarı: **yasak battaniyesi dünyayı öldürür.** Değerler'in 34/34 karesinde
 *"arka plandaki her tabela, afiş, pankart, tente ve levha yüzeyi tamamen boştur"* yazıyordu —
@@ -707,6 +735,9 @@ nereden bastırıyor.
 okuyor ve düz 2D kesme-kâğıt figür basıyor (K04'te lacivert bir insan ikonu çıktı).
 `saffron`→çiçek, `bloom`→çiçek ile aynı sınıf. Arka plandaki insan **sırtı dönük ama tam
 render** yazılır; "unresolved silhouette in heavy defocus" bir daha yazılmaz.
+⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §2a.2 ile §2d.6 birleşti — §2a.2 bu reçeteyi emrediyordu,
+söküldü. §2a.2'nin ölçümü (~30-40 piksellik yüz kimlik taşımaz) orada durur; **isimsiz
+insanın nasıl YAZILACAĞININ tek hükmü burasıdır.**
 
 **7. ARDIŞIK FİZİKSEL DURUM KARE KARE KİLİTLENİR.** K23-K26 suyu çekilmiş sokak gösterirken
 K27 sokağı yeniden sele boğdu — kesimde zaman geri sardı. Kural: bir sekans boyunca değişen
@@ -791,6 +822,9 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
   üretmemekten kötüdür.
 - **TAG'Lİ karakteri asla tarif etme**, handle yeter — görünüş yalnız referans promptunda
   tanımlanır. `@efe1` yazdıktan sonra saçını, kıyafetini, boyunu yazmak referansla yarışır.
+  ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: bu madde ile §2 şablonunun `[3 KİMLİK]` slotu birleşti —
+  slotun **görünüş yarısı** artık koşullu: `@handle` varsa boş geçilir, yalnız tagsız figürde
+  doldurulur. Slotun **ten satırı** koşulsuzdur: o kimlik değil, dünyanın render kilidi.
 - 🔴 **TAGSIZ insan ise MUTLAKA tarif edilir** — ve bu çelişki değil, aynı kuralın öteki yüzü:
   tag'li kimliği referans taşır, tagsızı taşıyan hiçbir şey yoktur. Tagsız bırakılan her
   figürde motor kendi kastını kuruyor (ölçüldü: cast ihlali 28 revize). Tagsız insan için
@@ -800,6 +834,9 @@ arrowhead."* Bileşke K34/K38'de bu cümle yoktu ve NB2 ok ucu çizdi.
   ayakkabı, bacak ve çanta** çizdi — gövde yok. Aynı sınıf daha önce 7 karede ölçülmüştü.
   Her insan en az diz ya da bel hizasından itibaren **bütün** tarif edilir, ayağı zemine basar,
   temas gölgesi taşır. **Kalabalığı azaltmak için figür KESİLMEZ, figür SAYISI azaltılır.**
+  ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §2c FEDA ile bu kilit birleşti — yasak **kesilmiş UZVA**
+  (el/kol/bacak/ayağın kadraj kenarında gövdesiz bitmesi) aittir. §2c'nin meşru fedası
+  **kompozisyon kırpmasıdır**: gövdenin bir yanı kadraj dışında kalır ama uzuv kopuk bitmez.
 - Her ufak nesneye tag açma; yargıyla.
 
 ---
@@ -962,6 +999,10 @@ Mami'nin akışını bozuyor; o klip klip kopyalıyor.
 - **KİMSE YAZMAZ.** Kalem, kurşun kalem, tebeşir, fırça — hiçbir el harf ÜRETMEZ. Karede
   yazan bir el varsa motion'da o el **durur**: kalem kâğıda değmiş hâlde kalır ya da elden
   bırakılmıştır. `writes`, `traces`, `signs`, `the tip moves along` → hepsi yasak fiil.
+  ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §1·0.3 ile §3ø/§3b birleşti — **yasak FAZA bağlıdır,
+  kavrama değil.** §1·0.3'ün "buhar yazı olur"u **start-frame'de** meşrudur (yazı karede
+  doğmuş hâlde durur); burada yasaklanan **klipte harf üretmektir**. Kare yazabilir, klip
+  yazamaz.
 - **KİMSE KONUŞMAZ.** Sabit kuyruk zaten yazıyor ama sebebi burası: ağzı oynayan Kling
   klibi yüz morph'u üretiyor. Gülümseme serbest, **çene açılması yasak.**
 - **KAMERA YAZIYA YAKLAŞMAZ.** Yazı taşıyan kareye push-in, dolly-in ya da yazıya rack
@@ -1052,6 +1093,8 @@ Kıstas tek cümle: **klibi okuyan biri "ne oldu?" sorusuna cevap verebiliyor mu
 o klip ambiyanstır, motion değil.
 
 - **Motion yeni öğe doğurmaz.** "Sonra bir çocuk gelir", "yazı belirir" YOK.
+  ⚠ Yeni ÖZNE doğmaz; bir maddenin hâl değiştirmesi yeni özne değildir (§1·0.3). **Tek
+  kesin istisna YAZIDIR ve sebebi faz:** yazı **karede** doğabilir, **klipte** doğamaz.
 ### 3b. KAMERA — "sıkıcı slowly push in" yasak
 
 > **Mami, 2026-07-28:** *"Sahneler yaşasın, canavar gibi start frame'lerin var, limit testing yap.
@@ -1081,6 +1124,9 @@ o klip ambiyanstır, motion değil.
 - **Kavram ışıkları IŞIK kalır** — çiçek, ok ucu, gerçek ateş olmaz. Kare-özel kilide yaz:
   *"the glow stays a soft round golden light and never becomes a flower, petal or flame."*
 - **Yazı dondurulur:** *"do NOT morph, re-spell, wobble or add ANY text."*
+  ⚠ 2026-08-05 · ÇELİŞKİ KAPANDI: §3b ile §1·0.3 birleşti — `add ANY text` **klip** hükmüdür.
+  Start-frame'de yazının bir malzemeden doğması (buhar, zar, damar) serbesttir; klip o yazıyı
+  yalnız **taşır**, üretmez ve değiştirmez.
 - **Bozuk motion'da önce KAREYİ düzelt.** i2v'de kompozisyon/yörünge kareden gelir; motion'a
   negatif yığma. (İstisna: kamera-kaynaklı warp — orada kamera minimale çekilir.)
 - **Riskli klipleri önceden işaretle** (uzun VO, hızlı takip, geniş crane) — kredi yakmadan test edilsin.

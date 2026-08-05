@@ -70,6 +70,11 @@ import { lintTur, TURLER, promptTuru, parseReferansBloklari, dosyaRolu } from '.
 const SLOTS = [
   {
     key: 'lens',
+    // 2026-08-05 · SARI'ya indirildi (ARINDIRMA §4 SÖK tablosu). Sayısal lens bir İFADE
+    // beklentisidir: yokluğunda motorun kırıldığı ölçülmedi, yalnız "NB2 sayıyı okur" gözlemi
+    // var — ki bu lensi ZORUNLU kılmaz, yalnız yazıldığında işe yaradığını söyler. Altın
+    // standart lensi yazıyor; onu yazmayan bir kare bu yüzden basılamaz hale gelemez.
+    warnOnly: true,
     label: 'lens/kamera (sayısal, başta)',
     test: (b) => /\b\d{2,3}\s*mm\b/i.test(b),
     why: 'NB2 sayısal lensi okur; "cinematic lens" okumaz.',
@@ -110,6 +115,9 @@ const SLOTS = [
   },
   {
     key: 'fstop',
+    // 2026-08-05 · SARI (ARINDIRMA §4 SÖK). Kanıtsız kelime beklentisi — REAL bloğu
+    // 181/181 karede bir kez bile ateşlemedi, yani hiç sınanmadı.
+    warnOnly: true,
     label: 'sayısal diyafram (f/x)',
     test: (b) => /\bf\/\d/i.test(b),
     why: 'REAL dünyaların render yasası diyaframı sayıyla yazar (f/4-f/8 ürün, f/2.8 bağlam, f/8 mimari).',
@@ -117,6 +125,9 @@ const SLOTS = [
   },
   {
     key: 'karsi-terim',
+    // 2026-08-05 · SARI (ARINDIRMA §4 SÖK). Altı sabit terimden birini ZORUNLU kılıyordu —
+    // ifade dayatmasının en saf hali. Ölçen yazar değildir.
+    warnOnly: true,
     label: 'photoreal karşı-terimleri (negative fill / motivated / grain)',
     test: (b) => /(negative fill|motivated light|film grain|35\s*mm film|black flag|bounce card)/i.test(b),
     why: 'Motorun varsayılanı "parlak ticari plastik"; mined `photoreal` maddesi onu kıran tek şey.',
@@ -1233,7 +1244,10 @@ export function lintFile(path, register = 'EDU') {
       why: 'DOĞRULANMAMIŞ metrik: revize sayısıyla korelasyonu ölçülmedi, dosya uzunluğuna duyarlı. Ajan gözle baksın.' }] });
   }
   if (metrics && metrics.negVar >= 3 && metrics.negOzel < 0.5) {
-    kirmizi.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{
+    // 2026-08-05 · KOD HATASI ONARILDI: yorum ve `level` alanı 'sari' diyordu ama satır
+    // `kirmizi.push` ile gidiyordu → `bad` sayısına giriyor, gate.sh:252 commit'i bloke
+    // ediyordu. Kural kendi belgelediği seviyede değildi; artık sarıda.
+    sari.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{
       // 2026-08-05 · SARI: benzersizlik ORANI ölçüyor, yani aynılığı. Kare-özel negatif artık
       // varsayılan (T2); bu satır bir gözlem olarak kalır, üretimi engellemez.
       kind: 'korpus', key: 'neg-ozel', level: 'sari',

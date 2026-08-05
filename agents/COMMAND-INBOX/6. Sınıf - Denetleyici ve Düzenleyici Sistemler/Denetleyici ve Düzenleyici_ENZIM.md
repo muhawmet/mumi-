@@ -9,7 +9,17 @@
 
 `pixar_3d_edu` · register **EDU** · Image: Nano Banana 2 · Motion: Kling 3.0.
 STYLE/LIGHT/NEGATIVE kuyruğu `node scripts/dunya-kilidi.mjs pixar_3d_edu --register=edu`
-çıktısından gelir; **elle yazılmaz.**
+çıktısından gelir.
+
+⚠ **2026-08-05 · BU SATIR DEĞİŞTİ.** Eskiden *"elle yazılmaz"* diyordu ve o emir ölçülerek
+çürütüldü: kuyruk yapıştırıldığında motora giden metnin **%60'ı kalıp** oluyordu ve bu blokta
+`LIGHT AND PALETTE` **56 karenin 56'sında TEK sürümdü** (52 KB birebir tekrar). Altın standart
+`Hücre` bunun tersini yapmıştı — 53/53 karede kendi STYLE/LIGHT/NEGATIVE satırını yazdı,
+negatiflerinin en uzun ortak son eki **1 karakter** (nokta). Kuyruk kare gövdesiyle çeliştiğinde
+(gövde `never raised`, kuyruk `raised dimensional letters`) motor çelişkiyi çözemeyip kendi
+varsayılanına düşüyor — plastik kare tam buradan geliyor.
+**Yeni hüküm: `dunya-kilidi.mjs` çıktısı OKUNACAK KARTTIR, yapıştırılacak metin değil.**
+Kimlik · ışık davranışı · malzeme oradan okunur; **cümleyi kare için sen yazarsın.**
 
 ⚠ Bu ders **metal ve cam** dersidir (emaye çaydanlık, soba kapağı, pirinç plaka, buğulu cam,
 cam bardak). Kuyruğun bütçe dışı bıraktığı imza bileşeni gereken kareye **elle** eklenir:

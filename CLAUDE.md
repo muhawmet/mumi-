@@ -59,7 +59,17 @@ uygulama yasak** — bul → Mami seçer → onar.
 (2026-08-03): *"codex ve agy'yi hep kullanmanı, kanun yapmanı istiyorum — terra sol boş değil,
 çok iyi bir ikinci göz; agy de gerçek gözlerin. Bunu rutin haline getirmen lazım."*
 
-- **Codex = İKİNCİ GÖZ.** `codex exec --skip-git-repo-check "<görev>"`. Motoru OpenAI GPT-5.6
+🔴 **CODEX'İN ADI YANLIŞTI — "ikinci göz" değil, BAĞLAMSIZ GÖZ** (ölçüldü 2026-08-05).
+Mami sordu: *"Codex nasıl Opus 5'ten daha iyi görür?"* Cevap zekâ değil, **bağlam**: Claude bir
+dosyayı açtığında yanında ~405 satırlık "bu sistem şöyle çalışır" metni duruyor (CLAUDE.md +
+faz profili + MEMORY.md + üç hook), yani kodu okumuyor, **kodun anlatısını doğruluyor.** Codex
+çıplak geliyor. Aynı gün kanıtlandı: Claude'un kurduğu üç iddiayı doğruladı ve `PROMPT-YASASI`
+içinde **kendi başına 3 çelişki daha** buldu — bir şeyi bir yerde emredip başka yerde yasaklayan.
+**Sonuç kanona yazılır: Claude'un açtığı ajanlar CLAUDE.md'yi ALIR, yani Claude'un körlüğünü
+MİRAS ALIR. Codex almaz. Tek yapısal fark budur** — bir hükmü gerçekten çürütmek gerektiğinde
+ajan değil Codex çağrılır.
+
+- **Codex = BAĞLAMSIZ GÖZ.** `codex exec --skip-git-repo-check "<görev>"`. Motoru OpenAI GPT-5.6
   ailesi: **Sol** (amiral, ağır doğrulama) · **Terra** (dengeli, toplu/tekrarlı iş, ~yarı
   maliyet) · Luna (hızlı/ucuz). Kullanım yeri: **kendi hükmünü çürütmek.** Claude bir iddia
   kurduğunda (kod şurada kopuk, dosya şunu ihlal ediyor, ölçüm şu) o iddia Codex'e
@@ -192,6 +202,19 @@ Süzgeç sırası artık üç:
 3. **Opus 5 buna ihtiyaç duyar mı?** → duymuyorsa **YAZILMAZ**; yazılmışsa **SÖKÜLÜR**.
    Yerine ne konur? Hiçbir şey. Yaratıcı kararın adı budur.
 
+📌 **Üçüncü süzgeç SATICININ KENDİ BELGESİYLE destekleniyor** (2026-08-05'te okundu,
+`platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5`):
+*"Claude Opus 5 kendi işini söylenmeden doğrular. Prompt'unuz açık doğrulama talimatları
+içeriyorsa **kaldırın** — Opus 5'te aşırı-doğrulamaya yol açar ve kaldırmak kaliteden hiçbir
+şey kaybettirmeden token israfını azaltır."* Aynı sayfa: *"yapılmaması gerekenleri anlatan
+talimatlar yerine **istediğiniz şeyin olumlu örnekleri** daha etkilidir"* ve *"görü performansı
+en güçlü, modele kırpma ve görsel doğrulama araçları verildiğinde."*
+Yani bu repodaki "önce şunu doğrula", "sonra bir kez daha bak", "şu ifadeyi yaz" kalıpları
+**daha zayıf bir modele yazılmıştı** ve bugün maliyetten başka bir şey üretmiyorlar.
+🔴 Motor tarafında da aynı yasa ölçülmüş: **olumlu yazım** (`no crowd` yerine
+`an empty deserted street`) semantik uyumu **+%24** artırıyor; uzun negatif katalogları motora
+tam da kaçınılan görüntüyü hatırlatıyor.
+
 **Değişmezler.** Mami'nin metnini sessizce yeniden yazma — sorunlu terimi bildir, düzeltilmiş cümle
 için ona dön. Kaynakta olmayan gerçeği uydurma: `FACT REQUIRED: <eksik bilgi>` ile dur. Test silme
 ve ilgisiz dosya değiştirme yok.
@@ -215,7 +238,10 @@ ve ilgisiz dosya değiştirme yok.
   CLAUDE.md) — git onu taşımaz, o yüzden Mac ile Windows kendiliğinden ayrışır.
   `node scripts/claude-sync.mjs` iki yönlü senkronlar: **hiçbir koşulda silmez**, yön tahmin
   etmez, iki taraf da değiştiyse ÇATIŞMA der ve durur — hangi sürümün doğru olduğunu Mami seçer.
-  (`--check` kapıda koşar, `--dry-run` ne yapacağını yazar. Tek yönlü `memory-sync` emekli.)
+  (`--check` kapıda koşar, `--dry-run` ne yapacağını yazar.)
+  ⚠ Tek yönlü `memory-sync.mjs` **2026-08-05'te SİLİNDİ.** Emekli ilan edilmişti ama diskte
+  duruyordu ve koşturulabilirdi; kardeşi `claude-sync.mjs:7-10` onu birebir suçluyordu
+  (*"sabah Mac'te 21 dosya arşive gitti"*). Emekli bir aracı silmemek, bir gün onu koşmaktır.
 
 İç tartışma/chain-of-thought gösterme; yalnızca karar, kanıt ve sonucu özetle.
 Eski uzun sürüm: `docs/ai/archive/CLAUDE-legacy-2026-07-12.md`.

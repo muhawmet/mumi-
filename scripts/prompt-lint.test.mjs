@@ -102,7 +102,12 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     expect(r.metrics.negOzel).toBe(0);
   });
 
-  it('Sabit Sürat (44 kare): 4 kırmızı blok — temiz setin tabanı', () => {
+  it('Sabit Sürat (44 kare): 3 kırmızı blok — temiz setin tabanı', () => {
+    // 4 → 3 (2026-08-05, ARINDIRMA T3 tamamlandı): `lens` · `fstop` · `karsi-terim` SARI'ya
+    // indi. Üçü de bir İFADE bekliyordu (sayısal mm · f/ · altı sabit photoreal teriminden
+    // biri) ve hiçbiri ölçülmüş bir motor kırılmasına dayanmıyordu. Bu sayının DÜŞMESİ
+    // beklenen sonuçtur, gerileme değil: kırmızı artık yalnız üç sınıfta kalıyor —
+    // ölçülmüş motor kırılması · çocuk güvenliği/pedagoji · süreklilik-referans kilidi.
     // 7 → 6 (2026-08-02): `style-uzun` SARI'ya indi; 116 kelimelik tek karesi kırmızıdan düştü.
     // 6 → 4 (2026-08-05): `text-tasiyici` SARI'ya indi. O kural bir İFADE bekliyordu
     // (harfin taşıyıcı malzemesinin yazılması) ve kendi yorumu bunu anti-monotonluk olarak
@@ -115,7 +120,7 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     // 6 → 5: `hasHuman` düzeltmesi (bkz. Üreme çıpası). 5 → 7: yeni `text-tasiyici` slotu
     // iki karede gerçekten eksik — Sabit Sürat §11b'den (harf, taşıdığı nesnenin malzemesidir)
     // önce yazıldı, yazı VAR ama harfin nasıl var olduğu yazılmamış. Sahte alarm değil, çağ farkı.
-    expect(r.bad.length).toBe(4);
+    expect(r.bad.length).toBe(3);
     expect(r.metrics.styleMaxRepeat).toBe(2);
   });
 });

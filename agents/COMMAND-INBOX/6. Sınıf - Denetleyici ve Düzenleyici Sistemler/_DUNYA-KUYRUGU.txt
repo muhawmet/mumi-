@@ -1,8 +1,26 @@
 # DÜNYA KUYRUĞU — pixar_3d_edu · register EDU
-# 🔴 BU ÜÇ SATIR HER KAREYE BİREBİR YAPIŞTIRILIR. YENİDEN YAZILMAZ, PARAFRAZ EDİLMEZ.
-# Ölçüldü (2026-08-03, Hücre): elle yazılınca 53 karede 53 farklı sürüm doğdu,
-# negatif iskeleti bloktan bloğa 151→295 kelimeye şişti ve 3 kare foto-gerçekçiye kaydı.
-# Kaynak: node scripts/dunya-kilidi.mjs pixar_3d_edu --register=edu
+# 🔴 2026-08-05 · BU DOSYA ARTIK EMİR DEĞİL, OKUNACAK KARTTIR.
+#
+# Eski başlık "HER KAREYE BİREBİR YAPIŞTIRILIR" diyordu. Kaldırıldı — çünkü aynı Hücre
+# ölçümünden İKİ TERS HÜKÜM çıkarılmıştı ve ikisi de doğruydu:
+#
+#   (a) BU DOSYANIN eski iddiası: elle yazılınca 53 karede 53 sürüm doğdu, negatif iskeleti
+#       151→295 kelimeye şişti, 3 kare foto-gerçekçiye kaydı.        → sürüklenme GERÇEK
+#   (b) ARINDIRMA'nın iddiası: Hücre 53/53 kendi satırını yazdı, negatiflerinin en uzun ortak
+#       son eki 1 karakter (nokta) — ve o iş ŞAHESER.                → kare-özel yazım GERÇEK
+#
+# İkisi de aynı dosyada ölçüldü. Doğru sonuç "yapıştır" ya da "yazma" değil:
+#   ✅ CÜMLEYİ KARE İÇİN SEN YAZARSIN — kimlik, ışık davranışı ve malzeme bu karttan OKUNUR.
+#   ✅ Yapıştırmanın önlediği tek gerçek kusur RENDER DİLİ KOPMASI'dır (foto-gerçekçiye kayma).
+#      Onun karşılığı yapıştırma değil DENETİM: kayan kare revizede yakalanır.
+#
+# Neden yapıştırma sökülüyor: bu blokta `LIGHT AND PALETTE` 56 karenin 56'sında TEK sürümdü —
+# 52 KB birebir tekrar, motora giden metnin %60'ı kalıp. Kuyruk kare gövdesiyle çeliştiğinde
+# (gövde "never raised", kuyruk "raised dimensional letters") motor çelişkiyi çözemeyip kendi
+# varsayılanına düşüyor. Plastik kare tam oradan geliyor.
+#
+# Kaynak: node scripts/dunya-kilidi.mjs pixar_3d_edu --register=edu   (kart basar)
+#         --kuyruk  → eski yapıştırma davranışı, YALNIZ süregelen işin tutarlılığı için
 
 STYLE: Feature-animation 3D CGI in the RenderMan / RenderMan-successor premium-CG feature-animation pipeline lineage, subsurface scattering on character skin that carries the scene's light temperature, Every prop has a deliberate overscale factor (10-15%) for child-safe readability, Material specificity is non-negotiable, wood shows visible grain with satin-varnish sheen, fabric shows woven stitch texture and slight fiber fray at edges, complementary bounce fill at 25-35% intensity in the key's opposing hue, FULL 3D CGI FEATURE-ANIMATION RENDER, continuous physically-based shading. Silhouette reads entirely through lighting rim and value separation, Ambient occlusion painted in, never raytraced-hard.
 LIGHT AND PALETTE: shadows read as deep cool indigo, midtones read as vivid warm burnt orange, accents read as vivid warm amber, highlights read as near-white warm ivory — palette character: warm-honey SSS dominant on skin; complementary cool-violet bounce in shadow; wood tones in brown-ochre range with satin sheen; fabric in warm-saturated primaries with fiber texture. NO acid green, NO neon, NO teal-orange Hollywood grade, NO desaturated grey anywhere in character or environment. Render these as light behaviour, never flat fills.
