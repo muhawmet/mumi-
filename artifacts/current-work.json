@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "ARINDIRMA T3 kapandı: lens/fstop/karsi-terim SARI, neg-ozel kod hatası onarıldı, PROMPT-YASASI'ndaki 4 emir-yasak çelişkisi kapandı (Codex çiviledi), dünya kuyruğu yapıştırma emri söküldü, director-context.mjs (ortak tohum) faz kanonuna bağlandı, memory-sync.mjs silindi. Kanona yazıldı: Codex=BAĞLAMSIZ GÖZ (ajanlar CLAUDE.md'yi alır, körlüğü miras alır; Codex almaz) + Opus 5 kılavuzu üçüncü süzgeci destekliyor + %42.6 rakamı çekildi (gerçek %11-74). ÖLÇÜLDÜ: sistem enerjisinin %85.3'ü bürokraside, %14.7'si imalatta; darboğaz yazma değil BASIM (125 kare yazılı 0 basılı, video başına ~700 el hareketi). AGY şaheseri izledi: 8 kesimde ~2.1sn ölü hava, 6 donan plan, kaşık-spatula süreklilik kırığı, 14 Türkçe yazı 0 bozuk harf.",
-  "nextAction": "Kalan üç iş: (1) kare-yakala.mjs indirme watcher'ı + basim-kuyrugu bağlama + basim-listesi --csv (ajan yazıyor) (2) kesim-VO 2.1sn gecikmesinin kök nedeni (ajan araştırıyor) (3) MAMİ KARARI: ONAY-BEKLEYEN.md'nin 12 satırı okunacak, banka 8'den 18'e çıkar",
+  "lastCompleted": "GECE TURU — 14 commit. Yasada çelişki 5→0 · linter ifade dayatması 7→0 · teslim kapısı sahte kırmızı 3→0 · ANIMATIC-0 yazıldı (80sn plan hatasını klip basılmadan yakaladı) · mamilas-studyo skill'i (sekans omurgası) · dis-goz.mjs (dış gözler tek kapıda, 4 güvenlik açığı kapalı) · director-context bağlandı · AGY'nin GÖRSEL ÜRETTİĞİ ve REFERANS-EDİT yaptığı 4 sınavla kanıtlandı (video üretemiyor) · Sol regresyon avı: benim aynı gün soktuğum desen 122 motion'ı sessizce kaybediyordu, onarıldı · neg-ozel kör ölçeri onarıldı (Bileşke negVar 0→52). TERRA PUANI: 67 → 69. ÜRÜN başlığı 48'de KALDI.",
+  "nextAction": "🔴 TERRA'NIN 85'E ÜÇ ADIMI, sırayla: (1) TEK master film — SFX ve L/J kesimli, versiyonlanmış, timeline receipt'li, tam film izlenip Mami hükmü alınmış. Yeni video ÜRETME, elindeki 14 bitmiş işten 60-90 saniye çıkar. (2) 53/53 aynı motion açılışını sekans bazlı farklı giriş/çıkış ritmine çevir — kanıtı prompt değil GERÇEK KLİP denetimi. (3) PHD/MS ölçülebilir hale gelsin + yasadaki iki sessiz zayıflama (silhouette karşı-kanıtı, kesik-figür başlığı) geri kapatılıp regresyon testine çivilensin. AYRICA MAMİ KARARI: ONAY-BEKLEYEN.md 12 ders ✅/❌.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T18:48:40.294Z",
+  "updatedAt": "2026-08-05T21:24:57.581Z",
   "updatedBy": "claude",
-  "baseCommit": "dd3d058"
+  "baseCommit": "e11f4b2d"
 }
