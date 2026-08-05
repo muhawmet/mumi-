@@ -245,3 +245,58 @@ kural SARI gözleme iner — yasak olarak değil, **ölçüm olarak** kalır.
 Öbür sohbet şu an aynı projede Sekans 3'ü denetliyor (9 kare açıldı, 6 yeniden basım).
 **T5 yalnız referans setine dokunur**, `PROMPTLAR/` · `REVIZE/` · `MOTION/` · `images/` ve
 `current-work.json` bu turda ELLENMEZ.
+
+---
+
+## 6 · T6 KANIT KAYDI — dört duvar da ateşliyor
+
+Beşinci bir test dosyası **açılmadı**: dördünün de fixture'ı var ve ateşlediği ölçüldü.
+Yeni dosya açmak, tam bu turun söktüğü şeyin aynısı olurdu (§0.3 üçüncü süzgeç kendi işime
+de uygulanır).
+
+| duvar | nerede | ateşleme kanıtı |
+|---|---|---|
+| edit'e dünya kuyruğu sızması | `scripts/prompt-turu.test.mjs` | 3 fixture: üç satır · tek satır · kamera |
+| referans dosyasının hiç parse edilmemesi | `scripts/prompt-turu.test.mjs` | beş gerçek biçim, her biri diskteki dosyaya karşı |
+| sahte PASS / uydurulmuş dış göz | `scripts/hukum-blogu.test.mjs` · `scripts/canary-lock.test.mjs` | koşma kaydı yok → kırmızı · okunan yol diskte yok → kırmızı · sahte sha → kırmızı |
+| motion'da yazı üretme | `scripts/motion-lint.test.mjs:125-126, 216-220` | `yazma-fiili` KIRMIZI yanıyor; yasağı yazan cümlede ateşlemediği de çivili |
+
+---
+
+## 7 · T8 PERFORMANS RECEIPT'İ
+
+### Ölçülen — tahmin yok
+
+| ne | süre | not |
+|---|---|---|
+| commit dışı Bash çağrısı | **18 ms** | `gate.sh:31-34` ham girdide `git commit` yoksa `exit 0` |
+| SessionStart üç hook | **~200 ms** | oturum-durumu 77 · hasat-gate 70 · buddy 56 |
+| PostToolBatch buddy | **50 ms** | her araç bloğunda |
+| **commit kapısı** | **16.1 s** | tsc 2.4 · **vitest 13.3** · build 0.5 |
+| vitest'in %52'si | 19.2 s dosya-süresi | `commandRuntime.test.ts` 11.9 s + `batchResilience.test.ts` 7.3 s |
+
+**Hook'lar suçsuz.** Prompt yazmanın yavaşlığı hook'tan gelmiyor.
+
+### Duran bağlam
+
+| ne | tur başı | şimdi |
+|---|---|---|
+| SessionStart hook çıktısı | ~4.400 bayt | **3.017 bayt** (−%31) |
+| `hasat-gate` tek başına | 2.878 bayt / 21 satır | **1.372 bayt / 11 satır** |
+| `CLAUDE.md` + `faz-icraat.md` | — | 17.4 KB + 8.2 KB |
+| ölçülmüş çelişki | **8** | **2** (ikisi bilerek: `promptQuality` elle okunuyor · `denetim` skill'inin eski anlatımı) |
+
+### MAMİ'YE TEK AYAR ÖNERİSİ
+
+🔴 **Thinking/model ayarını DEĞİŞTİRME.** Ölçüm bunu desteklemiyor: gecikmenin ölçülebilir
+kısmı hook'ta değil, **commit kapısının vitest'inde** (13.3 s) ve o kapı bu turda iki kez
+gerçek kırığı yakaladı — yani parasını ödüyor.
+
+**Öneri tek ve dar:** `commandRuntime.test.ts` + `batchResilience.test.ts` (vitest'in %52'si)
+İCRAAT fazında **donmuş olan** site/runner yüzeyini ölçüyor. Bu iki dosyayı commit kapısından
+çıkarmak commit'i **~16 s → ~9 s**'ye indirir. **Ama önerim bu DEĞİL** — kapıyı zayıflatmak bu
+repoda dört kez sessiz no-op üretti. Önerim: *kapı olduğu gibi kalsın*, çünkü 16 saniye
+prompt yazma hızını belirleyen şey değil.
+
+Prompt yazma hızını belirleyen şey ölçüldü ve başkaydı: **motora giden metnin %60'ı kalıptı**
+ve o kalıp bu turda söküldü. Hız kazancı ayarlarda değil, yazılacak metnin küçülmesinde.
