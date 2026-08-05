@@ -406,8 +406,27 @@ const TRAPS = [
     // Ölçüldü (Destek K08): prompt "an upright shape stands on a stand" demiş, nesneyi
     // ADIYLA çağırmamış — motor kendi kütüphanesinden KAFASIZ TERZİ MANKENİ doldurdu,
     // karanlıkta duran başsız insan gövdesi olarak. Adı konmayan her nesne motorun.
-    hit: (b) => /\b(an?|the|some) (upright|standing|tall|dark|looming|waiting|mysterious) (shape|form|figure|silhouette|thing|mass|object)\b/i.test(b)
-      && !/@[a-zçğıöşü]/i.test((b.match(/\b(an?|the|some) (upright|standing|tall|dark|looming|waiting|mysterious) (shape|form|figure|silhouette|thing|mass|object)\b[^.]{0,80}/i) || [''])[0]),
+    // ⚠ İKİ MUAFİYET (2026-08-05, iki kırmızı elle okununca ölçüldü). Tuzağın hedefi
+    // ADSIZ nesnedir ("an upright shape stands on a stand" → motor kafasız manken
+    // doldurdu). Nesne ADLANDIRILMIŞSA kusur yoktur:
+    //   · "the dark mass OF THE NEST"        → ad hemen yanında (Hayvanlarda K39)
+    //   · "the big moulded piece READ AS a dark silhouette" → özne adlı, bu yalnız
+    //     onun NASIL OKUNDUĞUNU söylüyor (Denetleyici K25)
+    // Muafiyet yazılmazsa iyi yazılmış kare kusurlu görünür ve ajan onu "düzeltmeye"
+    // iter — ölçümün kendisini çürüten sınıf.
+    hit: (b) => {
+      const re = /\b(an?|the|some) (upright|standing|tall|dark|looming|waiting|mysterious) (shape|form|figure|silhouette|thing|mass|object)\b/gi;
+      let m;
+      while ((m = re.exec(b))) {
+        const sonra = b.slice(m.index + m[0].length, m.index + m[0].length + 90);
+        const once = b.slice(Math.max(0, m.index - 90), m.index);
+        if (/^\s+of\s+(the|a|an|его|his|her|its)\b/i.test(sonra)) continue;   // "mass OF THE nest"
+        if (/\bread(s|ing)?\s+as\s*$/i.test(once)) continue;                   // "…piece READ AS a dark silhouette"
+        if (/@[a-zçğıöşü]/i.test(b.slice(m.index, m.index + 80))) continue;    // @handle ile çağrılmış
+        return true;
+      }
+      return false;
+    },
     fix: 'Nesneyi ADIYLA çağır. "an upright shape" yazıldığında motor kütüphanesinden '
       + 'kafasız terzi mankeni doldurdu (K08). Adı konmayan nesne motorundur — '
       + '@handle ya da açık ad yaz ("the skeleton teaching model on its stand")',
@@ -592,8 +611,21 @@ const TRAPS = [
       if (!disla) return false;
 
       // 3) KARANLIK ÇAPASI yazılmış mı? Yazılmışsa kusur yok — karanlık modellenmiş demektir.
+      // ⚠ ÇAPA LİSTESİ GENİŞLETİLDİ (2026-08-05, dördüncü daraltma). Kalan 5 kırmızı ELLE
+      // okununca kusurun promptta DEĞİL bu listede olduğu görüldü: kareler karanlığın
+      // taşıyıcısını yazmıştı, ama benim tanımadığım biçimlerde —
+      //   "opened only by the broad cold fill off the fogged glass"
+      //   "opened only by a low warm bounce rising off the stove side of the room"
+      //   "stay in cool violet shade lifted by sky bounce alone"
+      //   "leaving one bright rim along his left jaw"
+      // Dar bir çapa listesi, İYİ YAZILMIŞ kareyi kusurlu gösterir ve ajanı onları
+      // "düzeltmeye" iter — ölçümün kendisini çürüten sınıf. Kural: karanlığın taşıyıcısı
+      // ADLANDIRILMIŞSA çapa vardır; hangi fiille yazıldığı serbesttir.
       const capa = /\bterminator\b/i.test(b)
         || /\b(bounce|bounced) (light|back|off)\b/i.test(b)
+        || /\b(opened|lifted|carried|held|softened|filled)\s+(only\s+)?by\b[^.]{0,70}\b(bounce|fill|sky|reflect\w*|glow|wall|surface|counter|glass|snow|sand)\b/i.test(b)
+        || /\bleav\w*\s+(one|a|the)\b[^.]{0,50}\brim\b/i.test(b)
+        || /\b(cold|warm|low|soft)\s+(fill|bounce)\s+(off|from)\b/i.test(b)
         || /\bcarried (only )?by\b[^.]{0,60}\b(bounce|reflect|wall|surface|floor)\b/i.test(b)
         || /\bnegative fill\b|\bblack flag\b/i.test(b)
         || /\b(shadow|dark) side\b/i.test(b)
