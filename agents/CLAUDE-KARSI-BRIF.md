@@ -1,5 +1,6 @@
 # CLAUDE — KARŞI BRİF (Codex'in `claude.txt` brifine ek ve itiraz)
 
+<!-- bag-yok: kaynak brif masaüstünden silindi (2026-08-05); atıf tarihsel kayıttır, bu belgenin neye cevap yazdığı bilinsin diye duruyor -->
 > Tarih: 2026-08-04 · Kaynak brif: `~/Desktop/claude.txt` (Codex, 17 madde)
 > Bu dosya Codex'in brifini **değiştirmez**, üstüne bindirir. Codex'in doğrulanabilir
 > 4 iddiasından 3'ü tam tuttu, 1'i benim ölçtüğümden yumuşaktı. İyi bir brif.

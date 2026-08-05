@@ -35,6 +35,7 @@ const ALTIN = join(INBOX, 'Biten', '6. Sınıf - Eşeyli ve Eşeysiz Üreme', 'M
 
 const kirmiziKeys = (ps) => ps.filter((p) => p.level === 'kirmizi').map((p) => p.key);
 const kirmiziVar = (ps, key) => kirmiziKeys(ps).includes(key);
+const sariVar = (ps, key) => ps.some((p) => p.level === 'sari' && p.key === key);
 
 const dosyaNo = (n) => String(n).padStart(2, '0') + '.txt';
 const klasorLint = (dir, n) => {
@@ -133,13 +134,75 @@ describe('A2 · bilerek bozuk örnekler kırmızı verir', () => {
     expect(kirmiziVar(lintMotionBlock(iki), 'donmus-govde')).toBe(false);
   });
 
-  it('kelime duvarı: Kling\'in resmi 60-kelime tavsiyesi kırmızı verir, 260 kelime de', () => {
+  // 🔴 T2 (2026-08-05): kelime bandı KIRMIZI'DAN SARI'ya indi. Bu test eskiden
+  // "kelime duvarı kırmızı verir" diye yazılmıştı; duvarın dayanağı gerçek klip
+  // kanıtıyla çürütüldü (6 bozuk klibin 5'i bandın İÇİNDEYDİ). Test o çürütmeyi
+  // çivileyecek biçimde ters çevrildi — duvar geri konursa burası kırmızı yanar.
+  it('kelime bandı KIRMIZI DEĞİL, SARI — bant kusuru yakalamadı (6 bozuk klibin 5\'i içerideydi)', () => {
     const kisa = 'The clip opens with him walking. Camera: a slow dolly. '
       + 'Silent clip, no audio, no dialogue, mouth closed, no lip movement. '
       + 'No whip-pan, no shake, no snap-zoom, no camera warp.';
-    expect(kirmiziVar(lintMotionBlock(kisa), 'kelime-bandi')).toBe(true);
+    expect(kirmiziVar(lintMotionBlock(kisa), 'kelime-bandi')).toBe(false);
+    expect(sariVar(lintMotionBlock(kisa), 'kelime-bandi')).toBe(true);
+
     const uzun = temizParagraf() + ' ' + Array(60).fill('the light drifts across').join(' ');
-    expect(kirmiziVar(lintMotionBlock(uzun), 'kelime-bandi')).toBe(true);
+    expect(kirmiziVar(lintMotionBlock(uzun), 'kelime-bandi')).toBe(false);
+    expect(sariVar(lintMotionBlock(uzun), 'kelime-bandi')).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A2b · T2 SÖZLEŞMESİ — canary'ye kadar geçerli tek motion kanonu.
+//
+// Üç fixture, üçü de plandan (T2 · "Fixture: kuyruksuz final motion kırmızı ·
+// takvim-saniye kırmızı · 120 kelime yalnız sarı"). Amaç: kanon gevşerse ya da
+// sessizce sıkışırsa testin haber vermesi. Yeşil test tek başına kanıt değildir —
+// bunlar KIRMIZI fixture'lardır, kural kalkarsa düşerler.
+// ---------------------------------------------------------------------------
+describe('A2b · T2 motion sözleşmesi', () => {
+  it('sessizlik kuyruğu yoksa KIRMIZI — iki korpusta 107/107, EDU iş akışı yasası', () => {
+    const kuyruksuz = temizParagraf().replace(
+      /Silent clip[^.]*\.\s*/i, '',
+    );
+    expect(kirmiziVar(lintMotionBlock(kuyruksuz), 'kuyruk')).toBe(true);
+  });
+
+  it('takvim-saniye cümlesi KIRMIZI kalır — motor saniyeyi takvim sanıp SNAP atıyor', () => {
+    const saatli = temizParagraf().replace(
+      /^/, 'For half a second the room holds still. ',
+    );
+    expect(kirmiziVar(lintMotionBlock(saatli), 'saat')).toBe(true);
+  });
+
+  it('not satırı başlık SANILMAZ — `K5 (…)` düz cümledir, hayalet klip doğuramaz', () => {
+    // 2026-08-05 canlı vakası (S1-KANON:125): dosya sonundaki not bölümünde
+    // `K5 (uzanan kol yok ama kitap yazısı kilidi), K7 (kol ve açık el) — üçünde de`
+    // satırı başlık sayıldı, 3 kelimelik hayalet klip doğdu ve DOSYA KIRMIZI oldu.
+    // Ölçen olmayan bir klibi ölçüp gerçek işi bloke ediyordu.
+    const metin = [
+      '### K1 | 5s · VO "Bir cümle."',
+      '-----',
+      temizParagraf(),
+      '-----',
+      'DURUM: temiz',
+      '',
+      'NOTLAR',
+      'K5 (uzanan kol yok ama kitap yazısı kilidi), K7 (kol ve açık el) — üçünde de',
+      'aynı kilit kullanıldı ve üçü de tuttu.',
+    ].join('\n');
+    const bloklar = parseMotionBlocks(metin);
+    expect(bloklar).toHaveLength(1);
+    expect(bloklar[0].head).toMatch(/^K1\b/);
+  });
+
+  it('120 kelimelik blok YALNIZ sarı — hiçbir kırmızı vermez', () => {
+    // Kuyruk ve kamera cümlesi yerinde; tek sapma uzunluk. Kırmızı listesi BOŞ olmalı.
+    const govde = Array(95).fill('the light drifts').join(' ');
+    const p = `${govde}. Camera: locked at table height, square to the wood. `
+      + 'Silent clip, no audio, no dialogue, mouth closed, no lip movement.';
+    const problems = lintMotionBlock(p);
+    expect(kirmiziKeys(problems)).toEqual([]);
+    expect(sariVar(problems, 'kelime-bandi')).toBe(true);
   });
 });
 

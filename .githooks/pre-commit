@@ -1,0 +1,42 @@
+#!/bin/sh
+# MAMILAS — KALITE KAPISININ GIT TARAFI
+#
+# Neden var (2026-08-05 olcumu): `.claude/hooks/gate.sh` kendini "commit gerceklesmez,
+# --dangerously-skip-permissions modunda bile" diye tanimliyordu. Olculdu: `.git/hooks/`
+# altinda TEK BIR aktif hook yoktu. Kapi yalnizca `.claude/settings.json` PreToolUse
+# matcher=Bash uzerinden, yani SADECE Claude'un Bash aletinden gecen commit'lere
+# baglilydi. Mami'nin terminalden, IDE'den, Codex'ten ya da `.command` launcher'indan
+# attigi her commit duvari HIC gormuyordu. Duvar sanilan sey tek bir ajanin tek bir
+# aletinin onundeki paspastir.
+#
+# IKINCI KAPI KOPYASI YAZILMAZ. Tek kapi vardir (`gate.sh`), bu dosya ona ikinci bir
+# GIRIS acar. gate.sh girdisini PreToolUse sozlesmesiyle stdin'den okur; burada ayni
+# sozlesme taklit edilir. Kapinin mantigi bu dosyada tekrarlanmaz — tekrarlanan yasa
+# iki gercek uretir.
+#
+# TASINABILIRLIK: `.git/hooks/` git ile tasinmaz, bu yuzden hook izlenen bir dizinde
+# (`.githooks/`) yasar ve her makine bir kez su komutu kosar:
+#     git config core.hooksPath .githooks
+# Windows Git Bash bu dosyayi `sh` ile kosar; gate.sh'in kendisi bash ister ve asagida
+# acikca `bash` ile cagrilir (POSIX varsayimi yok).
+#
+# Kacis: gate.sh'in kendi `MAMILAS_LINT_SKIP=1` bayragi burada da gecerlidir — ama o
+# bayrak yalniz prompt/motion lint'ini atlar; tsc, test ve build duvari kalir.
+
+ROOT=$(git rev-parse --show-toplevel) || exit 1
+GATE="$ROOT/.claude/hooks/gate.sh"
+
+# Kapi dosyasi yoksa SESSIZ GECIS YOK — kor kapi, kapali kapidan tehlikelidir.
+if [ ! -f "$GATE" ]; then
+  printf '\n❌ GATE BULUNAMADI — %s yok.\n' "$GATE" >&2
+  printf 'Kapi kendini dogrulayamadigi icin commit bloke edildi.\n' >&2
+  exit 1
+fi
+
+command -v bash >/dev/null 2>&1 || {
+  printf '\n❌ bash bulunamadi — gate.sh bash gerektiriyor (process substitution).\n' >&2
+  exit 1
+}
+
+printf '{"tool_input":{"command":"git commit"}}' \
+  | CLAUDE_PROJECT_DIR="$ROOT" bash "$GATE"

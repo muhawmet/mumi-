@@ -180,7 +180,8 @@ else
     # `MOTION/` klasoru de burada elenir: o dosyalar asagidaki motion dalinin isidir, iki
     # dal ayni dosyaya iki farkli lehceyle hukum vermez.
     case "$PF" in
-      *_MOTION*|*_EDIT-PLAN*|*_SESLENDIRME*|*_SUNO*|*_REFERANSLAR*|*/MOTION/*) continue ;;
+      # `*MOTION*` alt tiresiz: `_CANARY-MOTION.txt` bu elemeden de kaciyordu (2026-08-05).
+      *MOTION*|*_EDIT-PLAN*|*_SESLENDIRME*|*_SUNO*|*_REFERANSLAR*|*/MOTION/*) continue ;;
       # Uretim ceteleleri: icinde prompt ALINTISI gecer ama kare basmazlar. 2026-08-03'te
       # "Farkli Kulturler" Biten/ altina tasininca kapi bir NOT satirini kare sanip commit'i
       # bloke etti. `prompt-lint.mjs:901` walk() ile AYNI liste — iki yerde ayrisirsa iki
@@ -273,9 +274,20 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
   # yasa bunu :743'te kendisi soyluyor). Uydurma bir bayrak eklemek kapiyi yalanci yapardi.
   while IFS= read -r -d '' MF; do
     case "$MF" in
-      agents/COMMAND-INBOX/*_MOTION*.txt|agents/COMMAND-INBOX/*_MOTION*.md) : ;;
+      # ALT TIRE SARTI KALKTI (2026-08-05, olculdu): desen `*_MOTION*` idi ve
+      # `Destek ve Hareket_CANARY-MOTION.txt` icinde `_MOTION` gecmiyor (once `-` var).
+      # Dosya bu daldan kacti; prompt dali da onu `*_MOTION*` elemesiyle gecemedi ve
+      # icerik grep'inde (^STYLE:/^NEGATIVE:) elendi. Yani 3 kliplik gercek bir motion
+      # teslimi IKI DALDAN DA sessizce dustu ve kapi "✅ Gate yesil" yazdi.
+      agents/COMMAND-INBOX/*MOTION*.txt|agents/COMMAND-INBOX/*MOTION*.md) : ;;
       agents/COMMAND-INBOX/*/MOTION/*.txt|agents/COMMAND-INBOX/*/MOTION/*.md) : ;;
       *) continue ;;
+    esac
+    # KARANTINA OLCULMEZ: `_ESKI-SURUM/` ve `_ONCEKI-TUR/` bilerek emekliye ayrilmis
+    # surumlerdir. Case'in `*` isareti `/` uzerinden de eslestigi icin bu dosyalar
+    # yukaridaki desene giriyordu — emekli metin, canli teslim gibi olculuyordu.
+    case "$MF" in
+      */MOTION/_ESKI-SURUM/*|*/MOTION/_ONCEKI-TUR/*) continue ;;
     esac
     # `.md` de sayilir: ilk yazimda MOTION/ dali yalnizca `.txt` esliyordu ve degismis bir
     # `MOTION/01.md` lint gormeden geciyordu (Terra 5.6 ikinci goz, KRITIK). Ayni sinif
@@ -305,6 +317,57 @@ Duzelt, ya da bilerek geciyorsan:
       git -c core.quotepath=false diff --name-only --diff-filter=ACMR -z 2>/dev/null
     } | sort -z -u
   )
+
+  # --- 6a2. CANLI MOTION KLASORU — DIFF DEGIL DURUM OLCULUR ---
+  #
+  # 2026-08-05 olcumu, kapinin en buyuk korlugu: yukaridaki dal girdisini `git diff`ten
+  # alir. Ama canli motion dosyalari `.gitignore:69` ile IZLENMIYOR:
+  #     agents/COMMAND-INBOX/*/MOTION/S*.txt
+  # Izlenmeyen dosya ne `--cached` ne calisma agaci diff'ine girer. Yani KLING'E GIDEN
+  # motion metni bu kapi icin YAPISAL OLARAK GORUNMEZDI. Kapi bugune kadar yalniz
+  # `_ESKI-SURUM/`, `_ONCEKI-TUR/` ve `Biten/` kopyalarini olctu — yani onemsiz olani.
+  # Kanit: aktif projede 55 blok, motion-lint 55/55 kirmizi, ve hicbir commit bloke olmadi.
+  #
+  # Cozum ADI DEGIL KAYNAGI degistirmek: diff yerine DURUM olculur. Aktif projenin
+  # MOTION/ klasoru dogrudan taranir, dosya git'te olsun olmasin.
+  #
+  # TASLAK dosyalar olculmez ama SAYILIR ve BASILIR: `TASLAK` basligi tasiyan dosya bir
+  # teslim degil, canary onayi bekleyen musveddedir (T0 baseline). Sessiz muafiyet
+  # muafiyet degildir — kac dosyanin olcum disinda kaldigi her commit'te goze sokulur.
+  MOTION_DIR=$(node -e "try{const s=require('./artifacts/current-work.json');const p=s.projectId||'';if(p&&s.status!=='kapandi')process.stdout.write('agents/COMMAND-INBOX/'+p+'/MOTION')}catch{}" 2>/dev/null || true)
+  if [ -n "$MOTION_DIR" ] && [ -d "$MOTION_DIR" ]; then
+    MTASLAK=0
+    for MF in "$MOTION_DIR"/*.txt "$MOTION_DIR"/*.md; do
+      [ -f "$MF" ] || continue
+      # Yalnizca ILK SATIR bakilir; emoji/tire kodlamasina bagimli olmamak icin duz
+      # `TASLAK` aranir (Windows Git Bash'te em-dash eslesmesi guvenilmez).
+      if head -n 1 "$MF" 2>/dev/null | grep -q 'TASLAK'; then
+        MTASLAK=$((MTASLAK + 1))
+        continue
+      fi
+      MOUT=$(node scripts/motion-lint.mjs "$MF" 2>&1) || true
+      MKIRMIZI=$(printf '%s' "$MOUT" | grep -oE 'kırmızı: [0-9]+' | grep -oE '[0-9]+' | head -1)
+      if [ -z "$MKIRMIZI" ]; then
+        fail "MOTION LINT OKUNAMADI (canli klasor) — $MF
+Cikti 'kırmızı: N' satirini icermiyor. Kapi kor kalamaz."
+      fi
+      if [ "$MKIRMIZI" -gt 0 ] 2>/dev/null; then
+        fail "CANLI MOTION KIRMIZI ($MKIRMIZI klip) — $MF
+
+$(printf '%s' "$MOUT" | grep -E '✗|▸|kırmızı' | head -30)
+
+Bu dosya AKTIF projenin MOTION klasorunde ve TASLAK isareti tasimiyor —
+yani teslim sayiliyor. Kling'e bu haliyle giderse eksik krediyle odenir.
+Duzelt, ya da canary onayi alana kadar dosyanin ILK SATIRINA su basligi koy:
+  🔴 TASLAK — CANARY ONAYSIZ"
+      fi
+      printf '✅ canli motion yesil: %s\n' "$MF" >&2
+    done
+    if [ "$MTASLAK" -gt 0 ]; then
+      printf '🟡 CANLI MOTION: %s dosya TASLAK isaretli — olcum disinda.\n' "$MTASLAK" >&2
+      printf '   Canary PASS alinca baslik kaldirilir ve kapi bu dosyalari olcmeye baslar.\n' >&2
+    fi
+  fi
 fi
 
 # --- 6c. BELGE BAG DENETIMI (BLOKE EDER) ---

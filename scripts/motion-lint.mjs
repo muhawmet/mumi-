@@ -56,7 +56,15 @@ import { pathToFileURL } from 'node:url';
 // Prompt METNİ `-----` ayraçları arasındadır; ayraç yoksa KAMERA NİYETİ satırından DURUM'a kadar.
 // BOM ve CRLF burada temizlenir — Windows birincil ortam, ham okuma dört kez sessiz no-op üretti.
 // ---------------------------------------------------------------------------
-const HEAD_RE = /^(?:#{1,6}\s*)?K\s*\d{1,3}\b/;
+// Blok başlığı. Teslim sözleşmesi (`PROMPT-YASASI §5`): `### K<n> | <süre> · VO "<cümle>"`.
+// ⚠ 2026-08-05'te ölçüldü: `#` işareti İSTEĞE BAĞLI yazılmıştı ve bu, dosya sonundaki not
+// bölümündeki DÜZ CÜMLEYİ başlık sanıyordu — `K5 (uzanan kol yok ama kitap yazısı kilidi),
+// K7 (kol ve açık el) — üçünde de` (S1-KANON:125). O sahte başlık bir hayalet klip doğurdu:
+// 3 kelimelik, kamerasız, kuyruksuz → dosya KIRMIZI. Yani ölçen, olmayan bir klibi ölçüp
+// gerçek işi bloke ediyordu. Kusur metinde değil ÖLÇENDEYDİ.
+// `#`'siz biçim korunuyor (eski dosyalar `K01` diye açıyor) ama artık BAŞLIK GİBİ durmalı:
+// numaradan sonra satır biter ya da `|` · `·` · `:` gelir. Düz cümle `K5 (` ile devam eder.
+const HEAD_RE = /^(?:#{1,6}\s*K\s*\d{1,3}\b|K\s*\d{1,3}\s*(?:[|·:]|$))/;
 
 export function parseMotionBlocks(text) {
   const src = text.replace(/^﻿/, '').replace(/\r\n?/g, '\n');
@@ -205,13 +213,6 @@ const KIRMIZI_KURALLAR = [
       + 'geçebilir ve klip hareket hâlinde bitebilir.',
   },
   {
-    key: 'kelime-bandi',
-    hit: (p) => { const w = kelimeSayisi(p); return w < KELIME_KIRMIZI_ALT || w > KELIME_KIRMIZI_UST; },
-    msg: (p) => `paragraf ${kelimeSayisi(p)} kelime (hedef 190-215, kırmızı duvarı ${KELIME_KIRMIZI_ALT}-${KELIME_KIRMIZI_UST})`,
-    why: 'Kanıtlı iyi çıkmış hiçbir dosya bu duvarın dışında değil (altın 166-243, Efe 203-215). '
-      + 'Altta klip ambiyansa düşüyor, üstte motora izin verilen alan kalmıyor ve kendi hareketini uyduruyor.',
-  },
-  {
     key: 'metronom',
     hit: (p) => AT_FIRST_ACILIS.test(p) && BY_THE_END.test(p),
     msg: () => '"At first" açılışı + "By the end" kapanışı — donmuş iskelet',
@@ -290,6 +291,30 @@ const SARI_KURALLAR = [
   // Yarısında ateşleyen bir sarı, sarı değil GÜRÜLTÜDÜR; prompt-lint'te `kareOzelOran` tam
   // bu sebeple (iyi seti ters yönde işaretlemesi) kırmızıdan düşürülmüştü. Konum ÖLÇÜLÜR ve
   // kapsam satırında BASILIR (`kamera son yarıda: N/M`), ama hüküm vermez.
+  {
+    // 🔴 2026-08-05'te KIRMIZI'DAN DÜŞTÜ. Duvar bir varsayıma dayanıyordu ve varsayım
+    // gerçek klip kanıtıyla çürütüldü: Destek'te basılan 6 bozuk klibin eski motion
+    // metinleri 208 · 215 · 248 · 215 · 212 · 215 kelimeydi — BEŞİ hedef bandın tam
+    // içinde ve altısı da bozuldu. Yani bant kusuru YAKALAMIYOR; kusurun sebebi
+    // olduğu ise hiç gösterilmedi. Kök neden ölçüldü ve başka: kareye VO'nun SONUCU
+    // çizilmiş, motorun 5 saniyede yapacak işi kalmamış, boşluğu morph'la doldurmuş.
+    //
+    // Duvar bırakılsaydı bedeli somuttu: 52 prompt, kanıtsız bir sayıya ulaşmak için
+    // şişirilecekti — yani tek ölçümden üç değişiklik doğuracaktı. Bu repoda ölçülmüş
+    // ana kusur sınıfı tam olarak budur.
+    //
+    // SARI kalıyor çünkü bant BİLGİ taşıyor: kanıtlı iyi çıkmış hiçbir dosya bu
+    // aralığın dışında değil (altın 166-243, Efe 203-215). Yani dışarısı "kanıtsız
+    // bölge"dir, "yasak bölge" değil. Kırmızıya ancak canary klip kanıtı çıkarsa döner.
+    key: 'kelime-bandi',
+    hit: (p) => { const w = kelimeSayisi(p); return w < KELIME_KIRMIZI_ALT || w > KELIME_KIRMIZI_UST; },
+    msg: (p) => `paragraf ${kelimeSayisi(p)} kelime — kanıtlı korpusun dışında `
+      + `(${KELIME_KIRMIZI_ALT}-${KELIME_KIRMIZI_UST}; hedef 190-215, sınanmamış hipotez)`,
+    why: 'Kanıtlı iyi çıkmış hiçbir dosya bu aralığın dışında değil (altın 166-243, Efe 203-215) — '
+      + 'ama bandın KUSURA SEBEP olduğu gösterilmedi: 6 bozuk klibin 5\'i bandın içindeydi. '
+      + 'Bu yüzden sarı. Kelime sayısını tutturmak için motion ŞİŞİRİLMEZ; ajan yalnız '
+      + '"bu klip gerçekten anlatılabilecek her şeyi anlattı mı" diye bir kez bakar.',
+  },
   {
     key: 'kilit-uzun',
     hit: (p) => uzunKilitler(p).length > 0,
