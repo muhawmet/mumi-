@@ -331,7 +331,12 @@ export function projeyiOlc(proje) {
     const tersIndeks = new Map();
     for (const [no, c] of Object.entries(cumleler)) tersIndeks.set(sadeles(c), Number(no));
     for (const f of promptDosyalar) {
-      for (const m of readFileSync(f, 'utf8').matchAll(/"([^"\n]{20,})"/g)) {
+      // 2026-08-05 · `{20,}` eşiği KALDIRILDI (Codex/Terra karşı-denetimi). Kısa ama geçerli
+      // VO cümleleri sessizce elenip "VO ÖRTÜLMEMİŞ" sahte kırmızısı üretiyordu: Hayvanlarda
+      // Üreme K41 → "Buna kuluçka denir." = 19 karakter, karesi VARDI ama denetçi göremedi.
+      // Eşleşme zaten kanonik VO cümlesine tam normalize edilerek yapılıyor (`tersIndeks`),
+      // yani uzunluk süzgeci koruma değil, kör nokta üretiyordu.
+      for (const m of readFileSync(f, 'utf8').matchAll(/"([^"\n]+)"/g)) {
         const no = tersIndeks.get(sadeles(m[1]));
         if (no) metinVO.add(no);
       }
@@ -382,7 +387,11 @@ export function projeyiOlc(proje) {
   if (p.editPlan) {
     const epRows = {};
     for (const l of readFileSync(p.editPlan, 'utf8').split(/\r?\n/)) {
-      const m = /^\s*(\d+)\.(?:png|jpe?g)\s+K(\d+)\s+\S+\s+\S+\s+\[[^\]]+\]\s+(.+?)(?:\s{3,}◄.*)?$/.exec(l);
+      // 2026-08-05 · `🔴 …` meta eki de kesiliyor (Codex/Terra). EDIT-PLAN'da 15 satır
+      // `🔴 UZUN ÜRET` soneki taşıyor; eski desen yalnız ◄ ekini atıyordu ve o 15 satır
+      // "EDIT-PLAN ↔ SESLENDIRME ayrışıyor" sahte kırmızısını üretiyordu. Aynı temizlik
+      // `kaba-kurgu.mjs`'te de yapıldı — orada gerçek bir kurgu kusuruydu (Whisper eşleme).
+      const m = /^\s*(\d+)\.(?:png|jpe?g)\s+K(\d+)\s+\S+\s+\S+\s+\[[^\]]+\]\s+(.+?)(?:\s{2,}(?:◄|🔴).*)?$/u.exec(l);
       if (m) epRows[Number(m[2])] = m[3].trim();
     }
     epSatir = Object.keys(epRows).length;
@@ -401,7 +410,11 @@ export function projeyiOlc(proje) {
     let fark = 0;
     for (const f of motionDosyalar) {
       const t = readFileSync(f, 'utf8');
-      const bloklar = [...t.matchAll(/VO\s*\d*\s*"([^"]+)"/g)].map((m) => m[1].trim());
+      // 2026-08-05 · Desen DARALTILDI (Codex/Terra). Eski hâli metnin HERHANGİ bir yerindeki
+      // `VO "..."` geçişini blok sanıyordu — yeniden-basım turlarında dosyanın başına düşen
+      // iki açıklama satırı da sayılıyor ve "58 motion / 56 kare" sahte kırmızısını üretiyordu.
+      // Blok yalnız kanonik motion başlığıdır: `### K<n> | <süre> | VO "<cümle>"`.
+      const bloklar = [...t.matchAll(/^#{1,6}\s*K\d+\s*\|[^\n]*?VO\s*\d*\s*"([^"]+)"/gm)].map((m) => m[1].trim());
       motionSayi += Math.max(1, bloklar.length);
       const no = Number(basename(f).replace(/\D+/g, '')) || null;
       if (no && cumleler[no] && bloklar.length === 1 && bloklar[0] !== cumleler[no]) fark++;

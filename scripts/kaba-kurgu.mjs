@@ -61,7 +61,12 @@ for (const ln of plan.split('\n')) {
     k: parseInt(m[2], 10),
     klipSn: parseFloat(m[3]),
     voSn: parseFloat(m[4]),
-    vo: (m[5] || '').replace(/◄.*$|⚠.*$|△.*$|✓VO.*$/g, '').trim(),
+    // 2026-08-05 · 🔴 EKİ DE TEMİZLENİYOR (Codex/Terra karşı-denetimi). EDIT-PLAN'da 15 satır
+    // `🔴 UZUN ÜRET` soneki taşıyor; eski süzgeç yalnız ◄ ⚠ △ ✓VO işaretlerini atıyordu.
+    // İki sonucu vardı: (a) teslim denetçisi VO'yu ayrışmış sanıp sahte kırmızı basıyordu,
+    // (b) DAHA ÖNEMLİSİ burada — "uzun/üret" token'ları Whisper eşleme skoruna giriyor ve
+    // kesim o cümleye yanlış hizalanıyordu. Bu bir kozmetik onarım değil, kurgu onarımı.
+    vo: (m[5] || '').replace(/◄.*$|⚠.*$|△.*$|✓VO.*$|🔴.*$/gu, '').trim(),
   });
 }
 if (!kareler.length) {
