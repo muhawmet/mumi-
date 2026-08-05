@@ -19,7 +19,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { lintFile, lintBlock, parseBlocks, fileKind, STYLE_TEKRAR_MIN } from './prompt-lint.mjs';
+import {
+  lintFile, lintBlock, parseBlocks, fileKind, STYLE_TEKRAR_MIN, SLOTS, TRAPS,
+} from './prompt-lint.mjs';
 
 // Sentetik kare dosyaları için — repo'ya dosya bırakmaz.
 const TMP = mkdtempSync(join(tmpdir(), 'prompt-lint-'));
@@ -100,8 +102,11 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     expect(r.metrics.negOzel).toBe(0);
   });
 
-  it('Sabit Sürat (44 kare): 6 kırmızı blok — temiz setin tabanı', () => {
+  it('Sabit Sürat (44 kare): 4 kırmızı blok — temiz setin tabanı', () => {
     // 7 → 6 (2026-08-02): `style-uzun` SARI'ya indi; 116 kelimelik tek karesi kırmızıdan düştü.
+    // 6 → 4 (2026-08-05): `text-tasiyici` SARI'ya indi. O kural bir İFADE bekliyordu
+    // (harfin taşıyıcı malzemesinin yazılması) ve kendi yorumu bunu anti-monotonluk olarak
+    // tarif ediyordu — estetik bir tercih, ölçülmüş bir motor kırılması değil.
     // Kalan 6 gerçek: `text-tasiyici` 5 kare + NEGATIVE kare-özel %23. Sabit Sürat'ın STYLE'ı
     // 41 sürüm / 44 kare — yeni `style-tekrar` kuralı burada ATEŞLEMEZ, ve etmemeli.
     const r = lintFile(
@@ -110,13 +115,21 @@ describe('A1 · gerçek korpus regresyon çıpası', () => {
     // 6 → 5: `hasHuman` düzeltmesi (bkz. Üreme çıpası). 5 → 7: yeni `text-tasiyici` slotu
     // iki karede gerçekten eksik — Sabit Sürat §11b'den (harf, taşıdığı nesnenin malzemesidir)
     // önce yazıldı, yazı VAR ama harfin nasıl var olduğu yazılmamış. Sahte alarm değil, çağ farkı.
-    expect(r.bad.length).toBe(6);
+    expect(r.bad.length).toBe(4);
     expect(r.metrics.styleMaxRepeat).toBe(2);
   });
 });
 
 // ---------------------------------------------------------------------------
-// A5 · ÖLÇÜMÜN YÖNÜ — bu linterin varlık sebebi (2026-08-02).
+// A5 · ÖLÇÜMÜN YÖNÜ — KALIP YOĞUNLUĞU, "kalite" DEĞİL (2026-08-02 · dürüst adı 2026-08-05).
+//
+// ⚠ 2026-08-05'te bu bloğun İDDİASI daraltıldı, ölçümü değil.
+// Eskiden yön KIRMIZI SAYISI üzerinden kuruluyordu ve o sayı büyük ölçüde iki kuralla
+// (`style-tekrar`, `neg-ozel`) taşınıyordu. İkisi SARI'ya indi — çünkü ölçtükleri şey
+// AYNILIK, ve aynılığın sebebi kuyruk yapıştırmaktı; kuyruk T2'de kalktı.
+// Ama korelasyon GERÇEK: donmuş STYLE ↔ 30/54 revize, kare-özel STYLE ↔ 0 revize.
+// O yüzden test silinmedi: yön artık VEKİL (kırmızı sayısı) yerine DOĞRUDAN ölçüm
+// (`styleMaxRepeat`) üzerinden çiviliyor. Bu daha dürüst ve daha dayanıklı.
 //
 // Bir duvarın "kurulu" olması onu doğru yapmaz. 2026-08-02'de ölçüldü ki prompt-lint kaliteyi
 // değil `dunya-kilidi.mjs`'in yapıştırdığı KUYRUĞA UYUMU ölçüyordu — yani araç kendi
@@ -146,27 +159,37 @@ describe('A5 · ölçümün yönü — altın standart EN AZ, en çok revize ala
   const KULTURLER = bul('5. Sınıf - Farklı Kültürler, Ortak Bir Yaşam',
     'Farklı Kültürler_PROMPTLAR.txt');                              // 53 kare
 
-  it('YÖN: Üreme (0 revize) < Farklı Kültürler ≤ Birlikte (30/54 revize)', () => {
+  it('YÖN: kalıp yoğunluğu revize sayısıyla aynı yöne gidiyor', () => {
     const ureme = lintFile(UREME, 'EDU');
     const birlikte = lintFile(BIRLIKTE, 'EDU');
     const kulturler = lintFile(KULTURLER, 'EDU');
-    // Oran karşılaştırılır, ham sayı değil: dosyalar 50/53/54 kare, eşit uzunlukta değil.
-    const oran = (r) => r.bad.length / r.total;
-    expect(oran(ureme)).toBeLessThan(oran(kulturler));
-    expect(oran(kulturler)).toBeLessThanOrEqual(oran(birlikte));
-    // Ölçülmüş değerler — sapması bilinmek istenen şeydir.
+    // DOĞRUDAN ölçüm: aynı STYLE bloğunun en çok kaç karede tekrarlandığı.
+    // Üreme (0 revize) 2 · Farklı Kültürler 53 · Birlikte (30/54 revize) 54.
+    expect(ureme.metrics.styleMaxRepeat).toBeLessThan(kulturler.metrics.styleMaxRepeat);
+    expect(kulturler.metrics.styleMaxRepeat).toBeLessThanOrEqual(birlikte.metrics.styleMaxRepeat);
+    expect(ureme.metrics.styleMaxRepeat).toBe(2);
+    expect(kulturler.metrics.styleMaxRepeat).toBe(53);
+    expect(birlikte.metrics.styleMaxRepeat).toBe(54);
+    // STYLE sürüm sayısı da aynı yönü söyler ve daha okunur: 49 sürüm ↔ 1 sürüm.
+    expect(ureme.metrics.styleVariants).toBe(49);
+    expect(birlikte.metrics.styleVariants).toBe(1);
+    // 🔴 ALTIN STANDART ÜRETİMİ ENGELLENMEZ: kırmızı SIFIR kalmak zorunda.
     expect(ureme.bad.length).toBe(0);
-    expect(kulturler.bad.length).toBe(53);
-    expect(birlikte.bad.length).toBe(54);
   });
 
-  it('style-tekrar: Birlikte 54/54 karede BİREBİR aynı STYLE → hepsi kırmızı', () => {
+  it('style-tekrar: Birlikte 54/54 karede BİREBİR aynı STYLE → 54 SARI (ölçülüyor, engellemiyor)', () => {
     const r = lintFile(BIRLIKTE, 'EDU');
     expect(r.metrics.styleVariants).toBe(1);
     expect(r.metrics.styleMaxRepeat).toBe(54);
-    const tekrar = r.bad.filter((row) =>
-      row.problems.some((p) => p.key === 'style-tekrar' && p.level === 'kirmizi'));
+    // Kural KAYBOLMADI — SARI'ya indi. Buradan da düşerse ölçüm körleşir.
+    const tumSatirlar = [...r.bad, ...r.sari];
+    const tekrar = tumSatirlar.filter((row) =>
+      row.problems.some((p) => p.key === 'style-tekrar' && p.level === 'sari'));
     expect(tekrar.length).toBe(54);
+    // Ve artık HİÇBİR karede kırmızı olarak görünmüyor.
+    const kirmiziTekrar = r.bad.filter((row) =>
+      row.problems.some((p) => p.key === 'style-tekrar' && p.level === 'kirmizi'));
+    expect(kirmiziTekrar.length).toBe(0);
   });
 
   it('style-uzun artık KIRMIZI DEĞİL — yasa 86-116 diyordu, altın standart 86-152 yazıp 0 revize aldı', () => {
@@ -190,7 +213,11 @@ describe('A5 · ölçümün yönü — altın standart EN AZ, en çok revize ala
       'Sorunları Birlikte Çözüyoruz_PROMPTLAR-V2.txt'), 'EDU');
     expect(v1.metrics.styleMaxRepeat).toBe(53);
     expect(v2.metrics.styleMaxRepeat).toBe(7);
-    expect(v2.bad.length).toBeLessThan(v1.bad.length);
+    // 2026-08-05: kıyas KIRMIZI SAYISINDAN metriğe çevrildi. Kırmızı sayısı artık bu farkı
+    // taşımıyor (ikisi de ~0) çünkü aynılık kuralı SARI'ya indi — ama ölçüm hâlâ iki sürümü
+    // ayırt ediyor ve ayırt etmek zorunda: 53 tekrar ↔ 7 tekrar, 1 sürüm ↔ 46 sürüm.
+    expect(v1.metrics.styleVariants).toBe(1);
+    expect(v2.metrics.styleVariants).toBe(46);
   });
 });
 
@@ -500,5 +527,52 @@ describe('A5 · isik-yuzu-disliyor', () => {
     const hepsi = JSON.stringify(r);
     expect(hepsi.includes('isik-yuzu-disliyor'),
       'ALTIN STANDART bu tuzağı ateşlerse tuzak yanlıştır, prompt değil').toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// A9 · LİNTER PROMPT YAZMAZ (2026-08-05).
+//
+// Ölçülen kusur: linter kırmızının yanına YAZILACAK İNGİLİZCE CÜMLEYİ koyuyordu.
+// En açık örneği `isik-yuzu-disliyor` idi:
+//   YAZMA: "the light reaches nothing of her face" · YAZ: "the terminator falls as one soft
+//   curved line down her cheek so the near side sits well under, carried only by warm bounce…"
+// Yani ölçen, sahnenin ışığını yönetmenin yerine seçiyordu — ve tam bu kural ALTIN STANDARDIN
+// (Hücre) kendi kanıtında "doğal" diye geçen K07 karesinde kırmızı yanıyordu.
+//
+// Bu blok, hazır cümlenin geri gelmesi hâlinde düşer. Ölçüt: bir kural metni içinde
+// TIRNAK İÇİNDE 6+ kelimelik İngilizce öbek = yapıştırılabilir prompt cümlesi.
+describe('A9 · linter denetçidir, prompt yazarı değildir', () => {
+  const KURAL_METINLERI = () => {
+    const metinler = [];
+    for (const s of SLOTS) metinler.push([`slot:${s.key}`, `${s.label ?? ''} ${s.why ?? ''}`]);
+    for (const t of TRAPS) metinler.push([`trap:${t.key}`, `${t.fix ?? ''} ${t.msg ? '' : ''}`]);
+    return metinler;
+  };
+
+  /** Tırnak içinde 6+ kelime, çoğu ASCII harf → yapıştırılabilir İngilizce öbek. */
+  const HAZIR_CUMLE = /"([A-Za-z][A-Za-z0-9,;:'\- ]{28,})"/g;
+
+  it('hiçbir kural metni yapıştırılabilir İngilizce prompt cümlesi VERMEZ', () => {
+    const suclular = [];
+    for (const [ad, metin] of KURAL_METINLERI()) {
+      for (const m of String(metin).matchAll(HAZIR_CUMLE)) {
+        const kelime = m[1].trim().split(/\s+/).length;
+        if (kelime >= 6) suclular.push(`${ad} → "${m[1].slice(0, 60)}…" (${kelime} kelime)`);
+      }
+    }
+    expect(suclular, 'ölçen prompt cümlesi veriyor — mekanizmayı yaz, cümleyi Claude kurar').toEqual([]);
+  });
+
+  it('ALTIN STANDART bugünkü linter\'dan KIRMIZI ALMAZ — kalibrasyonun tek gerçek sınaması', () => {
+    // 2026-08-05 ölçümü: Hücre 4 dosyada 5 kırmızı alıyordu (A 3/15 · C 1/14 · D 1/9) ve
+    // ateşleyen kural `isik-yuzu-disliyor`du. Bir ölçüm aracının şaheseri reddetmesi,
+    // kalibrasyonunun bozulduğunun tanımıdır.
+    const HUCRE = join(INBOX, 'Biten', '5. Sınıf - Hücre ve Organelleri', 'PROMPTLAR');
+    for (const dosya of ['A-K01-K15.txt', 'B-K16-K30.txt', 'C-K31-K44.txt', 'D-K45-K53.txt']) {
+      const r = lintFile(join(HUCRE, dosya), 'EDU');
+      expect(r.total, `${dosya} parse edilemedi`).toBeGreaterThan(5);
+      expect(r.bad.map((b) => b.head.slice(0, 40)), `${dosya} kırmızı verdi`).toEqual([]);
+    }
   });
 });

@@ -64,6 +64,9 @@ import { pathToFileURL } from 'node:url';
 // kelime avlamaz: aranan şey ifadenin kendisi değil, o slotun karede yapılmış olması.
 // Bu yüzden her `test` bir İFADE AİLESİDİR — korpusta kanıtlanmış eşdeğerler kabul edilir.
 // ---------------------------------------------------------------------------
+// TÜR SÖZLEŞMESİ — tek tanım scripts/prompt-turu.mjs'te; buraya kopyalanmaz (PROMPT-YASASI §0.4).
+import { lintTur, TURLER, promptTuru, parseReferansBloklari, dosyaRolu } from './prompt-turu.mjs';
+
 const SLOTS = [
   {
     key: 'lens',
@@ -96,6 +99,9 @@ const SLOTS = [
   },
   {
     key: 'ten-real',
+    // 2026-08-05 · SARI'ya indirildi: bu kural bir İFADE bekliyor, ölçülmüş bir motor
+    // kırılması değil. Üretim engeli olamaz — kanon: docs/ai/PROMPT-SISTEMI-ARINDIRMA.md.
+    warnOnly: true,
     label: 'REAL ten/yüzey gerçeği (gözenek, mikro-doku)',
     test: (b) => /(micro-?texture|pore|microtexture|real pore|skin micro)/i.test(b),
     why: 'REAL negatifi "NO plastic AI-smooth skin" der; pozitifi yazılmazsa motor plastik cilt basıyor.',
@@ -118,6 +124,9 @@ const SLOTS = [
   },
   {
     key: 'canli',
+    // 2026-08-05 · SARI'ya indirildi: bu kural bir İFADE bekliyor, ölçülmüş bir motor
+    // kırılması değil. Üretim engeli olamaz — kanon: docs/ai/PROMPT-SISTEMI-ARINDIRMA.md.
+    warnOnly: true,
     label: 'canlı üçlü (karede yaşayan 3 şey)',
     // AİLE — hepsi korpusta kanıtlı ve hepsi aynı işi görüyor:
     //   "Three things are alive in the frame"  (Sabit Sürat 44/44, Kütle 8/8)
@@ -128,6 +137,9 @@ const SLOTS = [
   },
   {
     key: 'derinlik',
+    // 2026-08-05 · SARI'ya indirildi: bu kural bir İFADE bekliyor, ölçülmüş bir motor
+    // kırılması değil. Üretim engeli olamaz — kanon: docs/ai/PROMPT-SISTEMI-ARINDIRMA.md.
+    warnOnly: true,
     label: 'üç katman derinlik',
     test: (b) => /(depth in three layers|three layers\s*[—–-]|near plane|foreground[\s\S]{0,90}(bokeh|blur|soft-?focus|out-of-focus))/i.test(b),
     why: 'Kare-özel yazılmazsa void/kopuk kadraj doğuyor (Bileşke K8, K11).',
@@ -198,7 +210,7 @@ const SLOTS = [
       + 'HÜCRESİNDE HİÇ YOKTU" diyor; FİKİR satırı cümlenin ikinci yarısını hiç anmıyor ve '
       + 'kare tek taraflı geldi. FİKİR bir SEZGİdir; YÜKÜM bir SAYIMdır: VO\'daki her '
       + 'nicelik / konum / ölçek / karşıtlık / sahiplik sözcüğü tek tek karede nerede '
-      + 'karşılandığıyla eşleşir. Yazım: `YÜKÜM: "soğanda vardı" → sol yarı, mercekler '
+      + 'karşılandığıyla eşleşir. Biçim: VO\'nun her nicelik/konum/karşıtlık sözcüğünün karede '
       + 'sayılabilir · "Mira\'nınkinde hiç yoktu" → sağ yarı, sıfır yeşil cisim`',
   },
   {
@@ -227,6 +239,9 @@ const SLOTS = [
   },
   {
     key: 'text-tasiyici',
+    // 2026-08-05 · SARI'ya indirildi: bu kural bir İFADE bekliyor, ölçülmüş bir motor
+    // kırılması değil. Üretim engeli olamaz — kanon: docs/ai/PROMPT-SISTEMI-ARINDIRMA.md.
+    warnOnly: true,
     label: 'TEXT harf karakteri (malzeme ya da tasarım)',
     // `text-hece` yazının DOĞRU çıkmasını ölçüyor; bu slot NEREDE yaşadığını ölçüyor.
     // İkisi ayrı kusur: Üreme'nin 50 karesinde imla 50/50 temizdi (heceleme tuttu) ama
@@ -286,18 +301,22 @@ function nearSkin(body, w, win = 70) {
 const TRAPS = [
   {
     key: 'tekduzelik-yazi',
+    // 2026-08-05 · SARI: kendi yorumu "hiçbiri hatalı değildi, hepsi AYNIYDI" diyor. Ajan baksın, üretim durmasın.
+    level: 'sari',
     // Tekdüzelik imzası. Üreme'de yazı taşıyan 14 karenin 14'ünde birebir bu kalıp vardı;
     // hiçbiri "hatalı" değildi, hepsi AYNIYDI — ve tekrar kurguda monotonluk olarak çıkıyor.
     // Kelime avı değil: bu üçlü, sahneye ait olmayan bir etiketin sahneye çakıldığı andır.
     hit: (b) => /blocky[^.]{0,80}\braised\b|\braised\b[^.]{0,40}\bdimensional\b/i.test(b),
-    fix: 'sahneye ait TAŞIYICI seç (tohum paketi, fidan etiketi, defter sayfası, kavanoz '
-      + 'kapağı, emaye kadran) ya da o ana tasarlanmış tipografi yaz — "blocky raised '
-      + 'dimensional" havada duran kavram kelimesidir, on dört karede aynı hamle çıktı',
+    fix: 'GEREKEN: harfin TAŞIYICISI o sahnenin kendi maddesinden gelsin — hangi nesne ve '
+      + 'hangi tipografi, SENİN kararın. Ölçülen kusur bir üslup tercihi değil TEKRAR: '
+      + '"blocky raised dimensional" öbeği on dört karede aynı hamleyle çıktı ve havada '
+      + 'duran bir kavram kelimesi gibi okundu.',
   },
   {
     key: 'saffron',
     hit: (b) => /\bsaffron\b/i.test(b),
-    fix: 'warm golden — NB2 "saffron"u safran ÇİÇEĞİ çiziyor (Bileşke\'de 6 kare lotus/turuncu çiçek)',
+    fix: 'GEREKEN: rengi baharat/çiçek adı KULLANMADAN yaz — NB2 "saffron"u safran ÇİÇEĞİ '
+      + 'çiziyor (Bileşke\'de 6 kare lotus/turuncu çiçek). Hangi kelime, senin kararın.',
   },
   {
     key: 'bloom-cicek',
@@ -316,7 +335,8 @@ const TRAPS = [
       }
       return false;
     },
-    fix: '"a soft round warm-golden glow of light" — isim olarak "bloom" ve çiçek/parçacık komşuluğu taç yaprağı doğuruyor',
+    fix: 'GEREKEN: kuvvet ışığı bir IŞIK OLAYI olarak yazılsın, bir nesne olarak değil — isim '
+      + 'olarak "bloom" ve çiçek/parçacık komşuluğu taç yaprağı doğuruyor. Cümle senin.',
   },
   {
     key: 'sheen-tende',
@@ -343,11 +363,15 @@ const TRAPS = [
   },
   {
     key: 'clean-table',
+    // 2026-08-05 · SARI: kanıtsız iki kelimelik yasak. Ajan baksın, üretim durmasın.
+    level: 'sari',
     hit: (b) => /\bclean (table|desk|surface)\b/i.test(b),
     fix: 'giydirilmiş yüzey — "clean table" void doğuruyor',
   },
   {
     key: 'real-stil-sifati',
+    // 2026-08-05 · SARI: yasaklı sıfat/imza adı listesi. Ajan baksın, üretim durmasın.
+    level: 'sari',
     hit: (b) => /\b(teal[- ]orange|premium commercial look|deakins lighting|cinematic lens)\b/i.test(b),
     fix: 'fiziksel malzeme gerçeği yaz — stil sıfatı ve imza adı REAL negatif kilidinde yasak',
     registers: ['REAL'],
@@ -383,7 +407,7 @@ const TRAPS = [
     key: 'siluet-alt-govde',
     // Ölçüldü İKİ KEZ (Destek K10 ve K29): etek/elbise + çömelme-diz-oturma + alçak
     // kamera aynı karede olunca müşteri "muhafazakâr revize" istiyor. Kadraj kilidi
-    // ("nothing below the waist is visible") TEK BAŞINA yetmiyor — yerden bakan bir
+    // (kadraj kilidi (belden aşağısının görünmediğini yazan biçim)) TEK BAŞINA yetmiyor — yerden bakan bir
     // kamerada çömelmiş gövdeyi belden kırpmak fiziksel olarak imkânsız, motor
     // çelişkiyi her şeyi göstererek çözüyor. Çözüm kırpma değil OKLÜZYON.
     hit: (b) => {
@@ -396,7 +420,8 @@ const TRAPS = [
       return !/\b(occlud|behind the (base|bench|worktop|table|drum|case)|the (base|bench|worktop|table) (stands|runs|crosses) between the camera and)\b/i.test(b);
     },
     fix: 'Çocuk + etek + çömelme/diz + alçak kamera = muhafazakâr revize (iki kez ölçüldü). '
-      + '"nothing below the waist is visible" TEK BAŞINA yetmez — kırpma değil OKLÜZYON yaz: '
+      + 'kadraj kilidi (belden aşağısının görünmediğini yazan biçim) TEK BAŞINA yetmez — '
+      + 'kırpma değil OKLÜZYON gerekir: '
       + 'alt gövdeyi kamerayla arasına giren bir nesne (kaide, tezgâh, tepsi) KAPATSIN, '
       + 'ya da poz değişsin (ayakta, profilden)',
   },
@@ -429,7 +454,7 @@ const TRAPS = [
     },
     fix: 'Nesneyi ADIYLA çağır. "an upright shape" yazıldığında motor kütüphanesinden '
       + 'kafasız terzi mankeni doldurdu (K08). Adı konmayan nesne motorundur — '
-      + '@handle ya da açık ad yaz ("the skeleton teaching model on its stand")',
+      + 'GEREKEN: nesnenin ADI yazılsın — @handle ya da açık ad. Adı konmayan nesne motorundur.',
   },
 
   {
@@ -464,12 +489,18 @@ const TRAPS = [
       return false;
     },
     fix: '"straight" motora YÖN söylemiyor — Sürat K30\'da ok 90 derece DİKEY çıktı, '
-      + 'müşteri "anlamsız olmuş" dedi. Yatay isteniyorsa açıkça yaz: "lies flat along '
-      + 'the ground, parallel to the road surface, never rising into the air"',
+      + 'müşteri "anlamsız olmuş" dedi. GEREKEN: ışığın nereye yaslandığı yazılsın — '
+      + 'hangi yüzeye paralel gittiği ve havaya yükselmediği. Cümleyi sen kurarsın.',
   },
 
   {
     key: 'islak-goz',
+    // 2026-08-05 · GERİ SARI'YA İNDİRİLDİ (aynı gün kırmızıya çıkarılmıştı).
+    // Sebep tek ve ölçülmüş: kırmızıya çıkarıldığı hâliyle ALTIN STANDARDI (Hücre D-K45-K53)
+    // kırmızı yapıyor. Arkasındaki korelasyon gerçek (18/20 karakter karesi vs 4/33 organel
+    // karesi, iki tur "plastik") ama kural o korelasyonu KELİME VARLIĞIYLA yakalıyor ve
+    // şaheserin kendi kullanımını ayırt edemiyor. Ölçüm kalır, üretim engeli kalkar.
+    level: 'sari',
     // 🔴 2026-08-05: SARI → KIRMIZI. Eski gerekçe birebir şuydu: *"altın standart Üreme
     // (0 revize almış iş) 50 karenin 1'inde bu ifadeyi taşıyor; kırmızıya çekmek altın
     // standardı yalancı çıkarırdı."* O gerekçenin dayandığı ÇIPA ÇÜRÜK ÇIKTI — Üreme'nin
@@ -503,12 +534,14 @@ const TRAPS = [
       return false;
     },
     fix: 'PLASTİK TEN buradan geliyor (18/20 karakter karesi vs 4/33 organel karesi). '
-      + 'Yerine: "a single soft catchlight in the eyes only and never a wet sheen over '
-      + 'the face — skin stays matte with low specular"',
+      + 'GEREKEN: parlaklığın SINIRI yazılsın — yansımanın gözde kalıp tende BİTTİĞİ. '
+      + 'Tenin nasıl okuduğu senin cümlen.',
   },
 
   {
     key: 'isik-yuzu-disliyor',
+    // 2026-08-05 · SARI: KENDİ KANITININ "doğal" dediği karede ateşliyor (Hücre K07) — kalibrasyonu bozuk. Ajan baksın, üretim durmasın.
+    level: 'sari',
     // PLASTİK TENİN İKİNCİ VE DAHA BÜYÜK SEBEBİ (Hücre madeni, 2026-08-04).
     //
     // Ölçüm 5/5 tutarlı: kavram ışığını yüzün DIŞINDA bırakan üç kare (K12 K13 K49)
@@ -638,10 +671,9 @@ const TRAPS = [
     fix: 'PLASTİK TENİN ASIL SEBEBİ (5/5 ölçüldü: K12 K13 K49 plastik · K07 K14 doğal). '
       + 'Işığın nereye ULAŞMADIĞINI yazma — karanlığın nerede DURDUĞUNU yaz. '
       + 'Motor negatiften karanlık üretmiyor, yüzü gradyansız ortam dolgusuna bırakıyor. '
-      + 'YAZMA: "the light reaches nothing of her face" · '
-      + 'YAZ: "the terminator falls as one soft curved line down her cheek so the near side '
-      + 'sits well under, carried only by warm bounce off the sunlit wall and never lifted by '
-      + 'any fill" — terminatör / sıçrama / gölge tarafı / negative fill terimlerinden biri geçsin',
+      + 'KUSUR: ışığın yüze ULAŞMADIĞINI yazmak bir negatiftir. GEREKEN: karanlığın nerede '
+      + 'DURDUĞU — terminatörün yüzden nereden geçtiği, gölge tarafını neyin taşıdığı. '
+      + 'Cümle senin; ölçen yalnız bu bilginin eksik olduğunu söyler.',
   },
 ];
 
@@ -1058,6 +1090,14 @@ function lintBlock(body, register = 'EDU', fk = 'frame-dosyasi') {
   // "change ONLY" gerçekten TEK şey mi değiştiriyor? (Kuvvet K31/K38 dört şeyi birden
   // değiştiriyordu; NB2'nin tek geçişte dördünü tutması güvenilir değil.)
   if (kind === 'ref-edit') {
+    // 2026-08-05 · TÜR SÖZLEŞMESİ BAĞLANDI (scripts/prompt-turu.mjs, PROMPT-YASASI §0.4).
+    // Ölçülen kusur: bu dal TEK kontrol yapıp dönüyordu, yani bir edit'e dünya kuyruğu ya da
+    // kamera kararı sızsa linter HİÇ görmüyordu. Sızdı: @efe edit'i 709 karakterlik STYLE +
+    // LIGHT AND PALETTE + 191 kelimelik global NEGATIVE taşıyor.
+    // Sözleşme burada YAZILMAZ, İTHAL EDİLİR — ikinci kopya iki gerçek üretir.
+    for (const k of lintTur(body, { tur: TURLER.EDIT }).kirmizi) {
+      problems.push({ kind: 'tur', key: k.key, level: 'kirmizi', msg: k.msg, why: 'PROMPT-YASASI §0.4 — referans-edit yalnız DELTA taşır.' });
+    }
     const m = body.match(/change ONLY:?([\s\S]{0,300})/i);
     if (m) {
       const n = (m[1].match(/\band\b|[;+]|,\s*(?=[a-z])/gi) ?? []).length;
@@ -1158,7 +1198,10 @@ export function lintFile(path, register = 'EDU') {
         //   EKLENİR → satırlar zaten farklı çıkar ve kural sağlanır.
         // Malzemeyi gövdeye koyup STYLE'ı çıplak bırakmak bu kuralı ihlal eder ve etmelidir.
         // Ayrıntı: agents/AJAN-BRIEF.md §A5.
-        kind: 'korpus', key: 'style-tekrar', level: 'kirmizi',
+        // 2026-08-05 · SARI. Arkasındaki korelasyon GERÇEK (donmuş STYLE ↔ 30/54 revize) ama kural
+        // bir VEKİL: asıl istenen "kuyruk yapıştırma"ydı ve o T2'de kalktı — `dunya-kilidi.mjs`
+        // artık kart basıyor. Ölçüm kalır, YASAK kalkar: kalıp yoğunluğu bir gözlemdir.
+        kind: 'korpus', key: 'style-tekrar', level: 'sari',
         msg: `STYLE bloğu ${n} karede BİREBİR aynı (eşik ${STYLE_TEKRAR_MIN}+) — `
           + `omurga aynı kalır ama MALZEME cümlesi STYLE satırına kareye özel eklenmeli`,
         why: STYLE_TEKRAR_NEDEN,
@@ -1191,13 +1234,42 @@ export function lintFile(path, register = 'EDU') {
   }
   if (metrics && metrics.negVar >= 3 && metrics.negOzel < 0.5) {
     kirmizi.push({ head: '(DOSYA GENELİ)', kind: 'korpus', problems: [{
-      kind: 'korpus', key: 'neg-ozel', level: 'kirmizi',
+      // 2026-08-05 · SARI: benzersizlik ORANI ölçüyor, yani aynılığı. Kare-özel negatif artık
+      // varsayılan (T2); bu satır bir gözlem olarak kalır, üretimi engellemez.
+      kind: 'korpus', key: 'neg-ozel', level: 'sari',
       msg: `NEGATIVE ${metrics.negVar} karede var ama yalnız %${Math.round(metrics.negOzel * 100)}'i kare-özel`,
       why: 'Bileşke\'nin 52/52 karesinde NEGATIVE vardı, kare-özel 2/52 → K34/K38 ok ucu, K19/K21 yüze düşen ışık. Global kuyruk tek başına yetmiyor.' }] });
   }
 
   // `bad` geriye dönük uyumluluk için KIRMIZI'yı taşır (kapanis-hasadi.mjs bunu sayıyor).
   return { path, register, total: blocks.length, rows, bad: kirmizi, sari, counts, metrics, olculmeyen: OLCULMEYEN };
+}
+
+/**
+ * REFERANS DOSYASI ÖLÇENİ (2026-08-05).
+ *
+ * Ölçülen kusur: `--all` taraması `_REFERANSLAR` ve `_REFERANS-PROMPTLARI` dosyalarını
+ * BİLEREK atlıyordu (satır 1300 civarı) ve referans blokları `blockKind !== 'frame'`
+ * olduğu için kuyruk tekrarını denetleyen iki kurala da görünmüyordu. Sonuç: referans
+ * bloklarında %55-63 birebir yapıştırma tam da ölçülmeyen yerde birikti.
+ *
+ * Bu ölçen sahne slotlarını UYGULAMAZ — bir plaka lens/canlı üçlü/derinlik taşımak zorunda
+ * değildir. Yalnız tür sözleşmesini ölçer.
+ */
+export function lintReferansFile(path) {
+  const text = readFileSync(path, 'utf8');
+  const bloklar = parseReferansBloklari(text);
+  const satirlar = [];
+  for (const b of bloklar) {
+    const { tur, kirmizi } = lintTur(b.tam, { dosyaRolu: 'referans' });
+    satirlar.push({ handle: b.handle, satir: b.satir, tur, kirmizi });
+  }
+  return {
+    path,
+    total: bloklar.length,
+    bloklar: satirlar,
+    bad: satirlar.filter((r) => r.kirmizi.length),
+  };
 }
 
 export {
