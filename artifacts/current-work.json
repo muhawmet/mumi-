@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "Referans promptları YAZILDI — @maket · @mutfak · @koridor · @kedi (dördü de TAŞIR/TAŞIMAZ sözleşmesiyle, §4a.1). @efe basılmaz, önceki videolardan var. Basım sırası: maket(14 kare) → mutfak(30+) → koridor(9) → kedi(5).",
-  "nextAction": "MAMİ 4 referans plakasını NB2'de bassın; her promptun sonuna _DUNYA-KUYRUGU.txt üç satırı BİREBİR yapıştırılır. Sonra Sekans 1 (K01-K08).",
+  "lastCompleted": "REFERANS PROMPTLARI HAZIR — @maket @mutfak @koridor @kedi, dördü de dünya kuyruğu İÇİNDE (makineyle eklendi; ilk sürüm kuyruksuzdu ve @kedi foto-gerçek çıktı). @efe basılmaz. Ayrıca bugün: kapı canlı MOTION'u görüyor, canary kilidi kodla zorunlu, Shot Card ölçeni kapıda, ref TAŞIR/TAŞIMAZ yasada, MOTION INTENT ayrımı + frame sha. 2602 test, 23 yeni fixture.",
+  "nextAction": "MAMİ 4 referans plakasını NB2'de bassın (sıra: maket → mutfak → koridor → kedi), sonra Sekans 1 (K01-K08). 56 motion'ı TEK GEÇİŞTE YAZMA — L1.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T11:08:07.692Z",
+  "updatedAt": "2026-08-05T11:14:33.917Z",
   "updatedBy": "claude",
-  "baseCommit": "06ecdf1"
+  "baseCommit": "7009799"
 }
