@@ -212,6 +212,33 @@ export function projeyiOlc(proje) {
   const kirmizi = (s) => bulgu.push({ renk: 'KIRMIZI', s });
   const sari = (s) => bulgu.push({ renk: 'SARI', s });
 
+  // ── §4a.1 REF SÖZLEŞMESİ — her @handle TAŞIR + TAŞIMAZ taşır (2026-08-05) ──
+  //
+  // Envanterin üç kovası bir ref'in NE OLDUĞUNU söylüyordu, NEYİ SIZDIRDIĞINI değil.
+  // Ölçülmüş kusur (`CANDIDATES-plastik-mesafe-yasasi.md:15-18`): plastikliğin kaynağı
+  // referans sayfasının KENDİ KADRAJI — ayak kadrajda 7/7 kötü karede var, 0/4 iyi karede
+  // yok. Karakter ref'i kimliği taşırken tam-boy stüdyo pozunu da ithal ediyor.
+  //
+  // SARI, kırmızı değil: 14 canlı `_REFERANSLAR.txt`'in çoğu bu alanları taşımıyor ve
+  // hepsini bir anda kırmızıya çevirmek çalışan projeleri kilitlerdi. İyi dosyalar bunu
+  // ZATEN elle yazmış (Bileşke:30-37 KİMLİK/DURUM bölüşümü, Denetleyici:17-28 kadraj
+  // kilidi) — yani sözleşme icat değil, en iyi pratiğin adının konması.
+  if (p.referanslar) {
+    let refMetin = '';
+    try { refMetin = readFileSync(p.referanslar, 'utf8'); } catch { refMetin = ''; }
+    const handleSayi = new Set((refMetin.match(/@[a-zçğıöşü][\w-]*/gi) ?? []).map((h) => h.toLowerCase())).size;
+    if (handleSayi > 0) {
+      const tasir = /^\s*TAŞIR\s*:/im.test(refMetin);
+      const tasimaz = /^\s*TAŞIMAZ\s*:/im.test(refMetin);
+      if (!tasimaz) {
+        sari(`REF SÖZLEŞMESİ EKSİK — ${handleSayi} @handle var ama TAŞIMAZ satırı yok`
+          + `${tasir ? ' (TAŞIR yazılmış, TAŞIMAZ yazılmamış)' : ''}. `
+          + 'Ref neyi SIZDIRMAYACAĞI yazılmazsa kendi kadrajını sahneye ithal eder — '
+          + 'ölçüldü: ayak kadrajda 7/7 kötü kare, 0/4 iyi kare. §4a.1');
+      }
+    }
+  }
+
   const { bicim: voBicim, cumleler } = voBicimi(p.vo);
   const nVO = Object.keys(cumleler).length;
 

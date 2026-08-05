@@ -283,11 +283,17 @@ o eksik krediyle odenir. Duzelt, ya da bilerek geciyorsan:
       agents/COMMAND-INBOX/*/MOTION/*.txt|agents/COMMAND-INBOX/*/MOTION/*.md) : ;;
       *) continue ;;
     esac
-    # KARANTINA OLCULMEZ: `_ESKI-SURUM/` ve `_ONCEKI-TUR/` bilerek emekliye ayrilmis
-    # surumlerdir. Case'in `*` isareti `/` uzerinden de eslestigi icin bu dosyalar
-    # yukaridaki desene giriyordu — emekli metin, canli teslim gibi olculuyordu.
+    # MOTION/ ALTINDAKI ALT KLASORLER TESLIM DEGILDIR — calisma alanidir.
+    #
+    # Ilk yazimda burada bir KARA LISTE vardi (`_ESKI-SURUM/`, `_ONCEKI-TUR/`) ve bir gun
+    # sonra `_BLOK-KAYNAK/OKUMA.txt` acilinca kapi bir OKUMA dosyasini klip sanip commit'i
+    # bloke etti. Kara liste, uretimin bir sonraki klasorunu asla bilemez.
+    #
+    # Sozlesme: teslim edilen motion dosyalari `MOTION/` KOKUNDE yasar (`S1-...txt`).
+    # Alt klasor ne olursa olsun (karantina, kaynak, not) olculmez. Ayni kural 6a2'de
+    # zaten boyle: orada sadece kok glob'u taranir. Iki dal ayni gercegi konusur.
     case "$MF" in
-      */MOTION/_ESKI-SURUM/*|*/MOTION/_ONCEKI-TUR/*) continue ;;
+      */MOTION/*/*) continue ;;
     esac
     # `.md` de sayilir: ilk yazimda MOTION/ dali yalnizca `.txt` esliyordu ve degismis bir
     # `MOTION/01.md` lint gormeden geciyordu (Terra 5.6 ikinci goz, KRITIK). Ayni sinif

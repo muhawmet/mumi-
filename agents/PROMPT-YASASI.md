@@ -1121,6 +1121,38 @@ referans beklemeden basabildi.
 ve tarifler birbirini tutmaz — süreklilik kusurlarının kaynağı budur. Ölçüldü: 50 karelik bir
 derste imla 50/50 temiz çıkarken **kusurun tamamı süreklilikteydi.**
 
+### 🔴 §4a.1 — HER REF **TAŞIR / TAŞIMAZ** SATIRI TAŞIR (2026-08-05)
+
+Envanterin üç kovası bir ref'in **ne olduğunu** söylüyordu; **neyi sahneye SIZDIRDIĞINI**
+söylemiyordu. Ölçülmüş kusur sınıfı budur:
+`CANDIDATES-plastik-mesafe-yasasi.md:15-18` — plastikliğin kaynağı **referans sayfasının
+kendi kadrajı**; ayak kadrajda **7/7 kötü karede var, 0/4 iyi karede yok.** Yani karakter
+ref'i kimliği taşırken **tam-boy stüdyo pozunu ve seamless zeminini de** ithal ediyor ve
+sahne figürine dönüyor.
+
+Bu, AGY'nin 2026-08-05'te bulduğu kusurla **aynı ailedendir**: orada hareket yanlış özneye
+gitmişti, burada kadraj yanlış kaynaktan geliyor. İkisi de "ne geleceği" değil,
+**"ne GELMEYECEĞİ" yazılmadığı için** oluyor.
+
+Aktif her `@handle` için envantere iki satır **zorunlu** girer:
+
+```
+TAŞIR    : kimlik · gardırop · mekân · ışık · malzeme · prop · kompozisyon   (geçerli olanlar)
+TAŞIMAZ  : poz · tam-boy kadraj · stüdyo zemini · <bu ref'e özgü istenmeyen ithalat>
+KAPSAM   : hangi sahnelerde kullanılabilir
+KAYNAK   : asset yolu + sha
+UYUM     : world / register
+ONAY     : Mami
+```
+
+**`TAŞIMAZ` boş bırakılamaz.** "Bir şey sızdırmıyor" diye düşünülen ref, tam da ölçülen
+kusurun kaynağıydı. Şablon değil, envanterde birebir bu alan adları aranır
+(`scripts/teslim-denetim.mjs`).
+
+Çekirdekte bu alan **zaten var**: `src/core/SURGERY_DATA.json` reflerinin `avoid` alanı
+133/133 dolu ve `brain.ts:592` onu tüketiyor. Eksik olan **proje katmanıydı** — yani yeni
+bir şema icat edilmiyor, çalışan bir alan yukarı terfi ediyor.
+
 ⚠ **Referans dosyası klip numarası taşır — plan değişirse dosya da değişir.** Bileşke v1'in
 referansı `@kitap → K32-K37` diyordu; edit planı v2'de 52 klip 71 olunca o numaralar bambaşka
 kareleri gösterir hale geldi ve dosya sessizce yalan söylemeye başladı. Klip sayısına dokunan
