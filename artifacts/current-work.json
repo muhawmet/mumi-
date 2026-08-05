@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/5. Sınıf - Destek ve Hareket Sistemi",
   "phase": "uretim",
   "status": "aktif",
-  "lastCompleted": "Gece+sabah turu kapandı. Altı projede lint KIRMIZI 0 · klasör düzeni + 00-DURUM kartları · eski motion seti karantinada · Destek canary (3 klip) hazır. Kapı 2558 PASS.",
-  "nextAction": "Mami Destek canary'sini bassın (K1·K29·K36) — 3 soruya EVET ise kalan 49 klip aynı lehçeye çevrilecek",
+  "lastCompleted": "T0 baseline donduruldu: 6 motion dosyası (55 blok) TASLAK — CANARY ONAYSIZ başlığı aldı. Ölçüm: motion-lint 55/55 kırmızı, sessizlik kuyruğu 0/6 dosyada, kelime 139-150 (duvar 160-250), 2 saat cümlesi. 44 klip basım görevi İPTAL — canary PASS'e bağlandı.",
+  "nextAction": "T0b: .git/hooks/pre-commit kur + gate.sh motion desenini -MOTION için düzelt",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T06:06:49.235Z",
+  "updatedAt": "2026-08-05T07:58:48.257Z",
   "updatedBy": "claude",
-  "baseCommit": "74fa739"
+  "baseCommit": "1d323fb"
 }
