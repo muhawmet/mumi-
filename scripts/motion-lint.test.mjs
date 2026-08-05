@@ -18,7 +18,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import {
-  lintMotionFile, lintMotionBlock, parseMotionBlocks, kameraCumlesi, OLCULMEYEN,
+  lintMotionFile, lintMotionBlock, parseMotionBlocks, kameraCumlesi, OLCULMEYEN, frameProblemi,
 } from './motion-lint.mjs';
 
 // ⚠ `.pathname` KULLANMA — Windows'ta `file:///C:/…` → `/C:/…` verir ve `join` onu
@@ -292,5 +292,40 @@ describe('A4 · biçim ve kapsam sözleşmesi', () => {
     expect(Array.isArray(r.olculmeyen)).toBe(true);
     expect(r.olculmeyen.length).toBeGreaterThan(0);
     expect(OLCULMEYEN.some((o) => /SINANMADI|sınanmadı/i.test(o))).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// T5 · İKİ KADEMELİ TESLİM — MOTION INTENT ↔ FİNAL MOTION
+//
+// Yasa (`PROMPT-YASASI:817`) "görmediğin kareye motion yazma, revize edilmiş kare de
+// dahil" diyordu ve HİÇBİR ŞEY ölçmüyordu: teslim dosyalarında tek bir kare yolu yoktu.
+// Bu testler o boşluğun geri gelmesini engeller.
+// ---------------------------------------------------------------------------
+describe('T5 · MOTION INTENT ve kare imzası', () => {
+  const blok = (govde) => parseMotionBlocks(
+    `### K4 | 5s · VO "x"\n${govde}\n-----\n${temizParagraf()}\n`,
+  )[0];
+
+  it('YENİDEN-BASIM bloğu INTENT sayılır — içerik kuralları ona koşmaz', () => {
+    expect(blok('🔴 YENİDEN-BASIM — kare bozuk').intent).toBe(true);
+    expect(blok('KAMERA NİYETİ: normal').intent).toBe(false);
+  });
+
+  it('`MOTION INTENT` de aynı kademeyi açar', () => {
+    expect(blok('🔴 MOTION INTENT — kare henüz basılmadı').intent).toBe(true);
+  });
+
+  it('KIRMIZI FIXTURE: imza VARSA ve kare diskte YOKSA kırmızı', () => {
+    const b = blok('frame: images/9999.png · sha256:deadbeefdeadbeef');
+    const ps = frameProblemi(b, join(EFE, '01.txt'));
+    expect(ps.map((p) => p.key)).toContain('frame-yok');
+    expect(ps[0].level).toBe('kirmizi');
+  });
+
+  it('imza YOKSA sarı — 48 canlı bloğu kilitlemez ama görünür kalır', () => {
+    const ps = frameProblemi(blok('KAMERA NİYETİ: normal'), join(EFE, '01.txt'));
+    expect(ps[0].key).toBe('frame-imza');
+    expect(ps[0].level).toBe('sari');
   });
 });

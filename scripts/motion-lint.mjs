@@ -46,7 +46,8 @@
 // `lintMotionFile` dışa açıktır — ikinci kopya ölçüm yazılmaz (prompt-lint'in `lintFile` deseni).
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 
 // ---------------------------------------------------------------------------
@@ -91,7 +92,17 @@ export function parseMotionBlocks(text) {
     }
     // Prompt tek paragraftır; kazara kalan DURUM/REVİZE kuyruğu ölçüme girmez.
     para = para.replace(/^(DURUM|REVİZE|REVIZE):[\s\S]*$/im, '').trim();
-    return { head, para, niyet: (raw.match(/^KAMERA NİYETİ:.*$/im) ?? [''])[0] };
+    return {
+      head,
+      para,
+      niyet: (raw.match(/^KAMERA NİYETİ:.*$/im) ?? [''])[0],
+      // T5 — blok DURUMU. `YENİDEN-BASIM` (üretim tarafının zaten kullandığı işaret) ya da
+      // `MOTION INTENT` taşıyan blok bir TESLİM DEĞİLDİR: kare henüz doğmamıştır, yazılan
+      // şey niyettir ve motora gitmez.
+      intent: /YENİDEN[- ]?BASIM|MOTION\s+INTENT/i.test(raw),
+      // Kare kimliği: `frame: images/12.png · sha256:abc123…`
+      frame: raw.match(/^\s*frame:\s*(\S+)[^\S\n]*(?:·|\|)?[^\S\n]*sha256:\s*([0-9a-f]{6,})/im),
+    };
   }).filter((b) => b.para.length > 40);
 }
 
@@ -412,12 +423,78 @@ export function lintMotionBlock(para) {
   return problems;
 }
 
+/**
+ * T5 — FİNAL MOTION KARE KİMLİĞİ.
+ * Final blok `frame: <yol> · sha256:<hex>` taşımalı; taşıyorsa yol diskte VAR olmalı ve
+ * sha gerçekten o dosyanın olmalı. Yani "kareyi gördüm" bir cümle değil, bir MAKBUZ.
+ * Kare değişirse (revize basıldı) sha tutmaz ve blok doğal olarak bayatlar.
+ */
+export function frameProblemi(b, path) {
+  if (!b.frame) {
+    // ⚠ NEDEN SARI, NEDEN KIRMIZI DEĞİL (2026-08-05 kararı, gerekçesi burada kalsın):
+    // Kural KIRMIZI yazılsaydı aktif projenin 48 bloğu aynı anda kırmızıya döner ve her
+    // commit kilitlenirdi — yani ölçen, ölçtüğü işi durdururdu. Damgalamak da tek başıma
+    // verebileceğim bir karar değil: `S7-REVIZE-KARELER` dosyasının kareleri revize mi
+    // yoksa eski mi, bunu üretim tarafı bilir. Tahmin edilen bir imza, imzasızlıktan
+    // KÖTÜDÜR — yalan söyleyen bir makbuz olur.
+    //
+    // Bu yüzden ayrım şudur: **imza YOKSA sarı, imza VARSA ve YALAN SÖYLÜYORSA kırmızı.**
+    // Yani kimse damgalamak zorunda değil, ama damgalayan doğru damgalamak zorunda.
+    // Canary'nin 8 karesi gerçek onaylı karelerle damgalanınca bu kural KIRMIZI'ya döner —
+    // o zaman tek satırlık bir değişiklik, bugün ise 48 bloğu kilitleyen bir duvar.
+    return [{
+      level: 'sari',
+      key: 'frame-imza',
+      msg: 'final motion kare kimliği taşımıyor (`frame: <yol> · sha256:<hex>`)',
+      why: 'Yasa "görmediğin kareye motion yazma" diyordu ama hiçbir şey ölçmüyordu — teslim '
+        + 'dosyalarında tek bir kare yolu yoktu, "gördüm" iddiası doğrulanamayan bir cümleydi. '
+        + 'Kare henüz yoksa blok `🔴 MOTION INTENT` olur ve motora gitmez; final motion ancak '
+        + 'gerçek kare açıldıktan sonra yazılır. Damga: node scripts/frame-imza.mjs <dosya>',
+    }];
+  }
+  const [, rel, sha] = b.frame;
+  const abs = resolve(dirname(path), '..', rel.replace(/^\.\//, ''));
+  if (!existsSync(abs)) {
+    return [{
+      level: 'kirmizi',
+      key: 'frame-yok',
+      msg: `kare diskte yok: ${rel}`,
+      why: 'Kimlik uydurulamaz. Yol yanlışsa motion görülmemiş bir kareye yazılmış demektir.',
+    }];
+  }
+  const gercek = createHash('sha256').update(readFileSync(abs)).digest('hex').slice(0, sha.length);
+  if (gercek !== sha.toLowerCase()) {
+    return [{
+      level: 'kirmizi',
+      key: 'frame-bayat',
+      msg: `kare DEĞİŞMİŞ — sha tutmuyor (${rel}: ${sha.slice(0, 8)}… ≠ ${gercek.slice(0, 8)}…)`,
+      why: 'Kare yeniden basıldı ama motion eski kareye göre yazılmış. Bu tam olarak yasanın '
+        + '"revize edilmiş kare de dahil" dediği hâldir: yeni kare açılıp motion yeniden yazılır.',
+    }];
+  }
+  return [];
+}
+
 export function lintMotionFile(path) {
   const blocks = parseMotionBlocks(readFileSync(path, 'utf8'));
   const rows = blocks.map((b) => ({
     head: b.head,
     kelime: kelimeSayisi(b.para),
-    problems: lintMotionBlock(b.para),
+    // T5 — İKİ KADEMELİ TESLİM.
+    //
+    // `🔴 MOTION INTENT` / `YENİDEN-BASIM` bloğu bir teslim değil, bir NİYETTİR: kare
+    // bozuk ya da henüz basılmamış, yazılan şey motora gitmiyor. Ona kelime/kuyruk/kamera
+    // kuralı koşturmak, olmayan bir teslimi ölçmek olurdu — motion-lint'in `S1-KANON:125`
+    // hayaletiyle aynı sınıf hata. O yüzden içerik kuralları ATLANIR.
+    //
+    // Buna karşılık FİNAL motion, gerçek onaylı karenin kimliğini TAŞIMAK ZORUNDADIR.
+    // Yasa zaten yazılıydı (`PROMPT-YASASI:817` *"görmediğin kareye motion yazma, revize
+    // edilmiş kare de dahil"*) ama hiçbir şey ölçmüyordu: teslim edilen dosyalarda tek bir
+    // kare yolu yoktu ve "kareyi gördüm" iddiası serbest metin olarak yazılıyordu.
+    // Mekanizma zaten vardı (`mamilas-command.mjs:850` SHA-256 üretiyor) — İCRAAT hattına
+    // hiç bağlanmamıştı. Bu satır o bağlantıdır, yeni bir API değil.
+    intent: b.intent,
+    problems: b.intent ? [] : lintMotionBlock(b.para).concat(frameProblemi(b, path)),
   }));
   const bad = rows.filter((r) => r.problems.some((p) => p.level === 'kirmizi'));
   const sari = rows.filter((r) => !r.problems.some((p) => p.level === 'kirmizi')
