@@ -1,161 +1,122 @@
 DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 6+7 (K44–K56) · MOTION · Kling 3.0 (i2v)
 =========================================================================
-Kaynak kare: images/44 … images/56 — on üçünün on üçü Read ile AÇILDI.
-Ayna karşılaştırması için images/1 de açıldı ve K56 ile yan yana okundu.
-Kaynak yasa: agents/PROMPT-YASASI.md §3 · §3ø · §3a · §3b
-Kilit: Denetleyici ve Düzenleyici_ENZIM.md KİLİT 3 (AYNA) · KİLİT 4ø · KİLİT 4
-VO: Denetleyici ve Düzenleyici_SESLENDIRME.txt cümle 44–56.
-
-🔴 AÇILIŞ TEKDÜZELİĞİ YASAK — on üç klip on üç farklı yapıyla açıyor:
-  K44 nesne-durumu · K45 malzeme-yayılımı · K46 yükseklik-önce · K47 kamera-kotu-önce ·
-  K48 yokluk-önce · K49 beden-önce · K50 ışık-önce · K51 sayı-önce · K52 bakış-yönü-önce ·
-  K53 olumsuz-envanter · K54 madde-içi-önce · K55 mekân-geçmişi · K56 ışık-kaynağı-önce.
-
-🔴 KAMERA KİLİDİ KOŞULLU (yasa 2026-08-03): sessizlik kuyruğu ON ÜÇ klipte de var.
-  `No whip-pan, no shake, no snap-zoom, no camera warp.` yalnız YEDİ klipte yazılı —
-  harf taşıyan K44 · K45 · K46 · K53 · K55 · K56 ve sert-kenarlı çizgiyi katı bir
-  kenarda taşıyan K50. Kalan altıda (K47 · K48 · K49 · K51 · K52 · K54) kamera kesimin
-  içinden akıp geçiyor; film klip sayısı kadar kez durmuyor.
-
-🔴 KİLİT 4 motion'a taşındı — DERSİN KAPANIŞI K47–K50'de İKİ IŞIĞIN DAVRANIŞ FARKIDIR:
-  · SİNİR çizgisi (K49 tezgâh ön kenarı · K50 tencere ağız kenarı): tek kenarda, ZATEN
-    ORADA, kenar bitince KESİK, komşu yüzey tamamen soğuk, klip boyunca genişlemiyor.
-  · ADRENALİN amberi (K47 · K48 · K49 · K50): kütlenin İÇİNDE, kenarsız, klip boyunca
-    genişliyor ve HİÇBİR KAREDE SÖNMÜYOR — her klipte "never dims" olumlu yazılı.
-  · K53'te hormon zinciri bilerek kesik (kadrajda kenarsız amber YOK), K55–K56'da iki ışık
-    da yok: kapanış doğal kış sabahı ışığıdır.
-
-⚠ ÜÇ KLİP `YENİDEN-BASIM` işaretli (bkz. REVIZE/S6-S7.txt): K45 · K53 · K56.
-  O bloklar TESLİM DEĞİL, NİYETTİR — tek cümle. Kare yeniden basıldıktan sonra kare
-  açılıp paragraf tek geçişle yazılır. Frame imzası yalnız on temiz karede var;
-  imzasız blok motora gitmez.
+Kaynak kare: images/44 … images/56 — hepsi görüldü ve incelendi.
+Kapanış ayna karesi: images/1 görüldü ve K56 EXIT'i ona bağlandı.
 =========================================================================
 
 
-### K44 | 4s · VO "Pankreas kandaki şeker dengesini kurar."
-KAMERA NİYETİ: Kadranın camını yandan yalayıp birkaç santim sağa kayıyorum ve kefedeki şekerle hiç oynamayan ibreyi kadrajın sağ üçte birinde bir arada bırakıp tam duruyorum.
-frame: images/44.png · sha256:86d6f77c3883cd77
+### K44 | 4s klip · ekranda ~4s | VO "Pankreas kandaki şeker dengesini kurar."
+frame: images/44.png
+EXIT  STATE : kamera terazinin sağında durur · ibre tam 0 çentiğinde çakılı kalır · kefedeki şeker tepeciği ve dökülen tane kıpırtısız kalır
+ENTRY STATE : Sekans 6 (Pankreas ve Şeker Denzesi) açılıyor; oda sakince çalışıyor, terazi kefe ağırlığıyla tam oturmuş durumda
 -----
-The needle has already finished its work and is holding: its tip rests dead on one marked line of the enamel dial. Then the last loose grains give up their slope — a few slide a hair down the flank of the white heap and come to rest against the pan, and at that instant the frame stops being a weighing and becomes a balance held. It begins as an object still settling and ends as an object that has decided. The kitchen goes on quietly around it: dust turns in the broad window light above the dial, the amber inside that pot stays low and heavy in the water with no edge, never rising. The dial is a fixed dead-weight mass — it does not tilt, turn or rock, its fired figures never re-spell or drift, and exactly one needle is in frame throughout, with no swing and no second pointer. Camera: it begins low off the scale's axis, eases a few centimetres right so the dial glass passes broadside at an unchanged distance, and stops with the sugar heap and the held needle locked in the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+Sugar has already settled into a smooth cone upon the white enamel pan of the vintage scale, and its weight keeps the mechanical brass mechanism locked in absolute poise. As a few micro-grains at the peak slip down the slope, the white dust comes to rest against the metal rim, so that the frame ceases to be a dynamic weighing process and turns into an established state of balance. Soft daylight filtering through the misted window pane on the right illuminates fine dust particles drifting in the quiet kitchen air, while the amber tea inside the glass teapot behind holds its rich translucent depth without forming any sharp edges. The wooden clock faces the counter from the wall, and the honey jar with its wooden dipper remains motionless beside the metal caddy. The fired figures along the dial rim stay rigid, ensuring that no numbers wobble, morph, re-spell or drift, and the single brass needle points steadily toward its mark without vibrating. Camera: positioned low near the counter, it drifts a few centimetres right so the scale passes broadside at an unchanged distance, coming to rest with the sugar cone held in the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K45 | 5s · VO "Şeker yükselince pankreas insülin hormonu salgılar."
-KAMERA NİYETİ: (kare yeniden basıldıktan sonra yazılacak)
+### K45 | 5s klip · ekranda ~5s | VO "Şeker yükselince pankreas insülin hormonu salgılar."
+frame: images/45.png
+EXIT  STATE : kamera tezgâh seviyesinde yanal kaymasını tamamlar · kavanozdaki kehribar sıvı alt sınırda durgunlaşır · dökülen şeker tepeciği tamamen durur
+ENTRY STATE : K44'ün terazi kadrajından daha yakın ve yayılmış şeker odağına geçilir; tezgâha saçılmış taneler devralınır
 -----
-🔴 MOTION INTENT: Taşmış şekerin yayılması dururken kavanozun içindeki amber kendi ağırlığıyla aşağı doğru koyulaşır ve üç çentik yukarıda kilitli ibre klip boyunca hiç oynamaz — yükselen madde durur, inen ışık kalır.
+A fine scattering of spilled sugar lies spread across the dark marble counter top, holding still under the warm morning light. As the last airborne dust particles settle onto the stone surface, the heavy amber syrup inside the glass jar labelled BAL deepens slightly in tone, so that the frame captures a stillness following an overflow. Soft daylight coming from the window in the background illuminates the glass teapot sitting on the gas stove, while the cork stopper rests motionlessly beside the wooden honey dipper. High up on the shelf, ceramic storage containers stand quietly in line, and the kitchen clock keeps its steady cadence. The brass scale dial on the left stands firm in close view, its metal body unyielding and solid. All etched text on screen including BAL, GRAMS and KILOGRAMS remains completely frozen, so that no letters morph, re-spell, wobble or add any text, and the pointer stays fixed without swinging. Camera: starting low at counter level, it glides smoothly to the right along the marble edge at a constant distance, settling with the honey jar held in the right foreground. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — kadranın üstünde okunabilir boyutta İNGİLİZCE yazı var: "GRAMS" ve iki kez "KILOGRAMS", kadrajın sol üçte birini kaplıyor (daimi direktif: ekranda yalnız Türkçe). Ayrıca terazi K44'ün terazisi değil. Bu blok revize kare basıldıktan sonra doğrulanacak.
 
 
-### K46 | 4s · VO "Şeker düşünce ise glukagon hormonu salgılar."
-KAMERA NİYETİ: Rafın altından yukarı bakıp tezgâh boyunca bir el genişliği kayıyorum, rafın ön kenarı açılırken kedi üst sağda ve boşalmış kefe alt ortada yerleşiyor.
-frame: images/46.png · sha256:8eee6b36f1298dee
+### K46 | 4s klip · ekranda ~4s | VO "Şeker düşünce ise glukagon hormonu salgılar."
+frame: images/46.png
+EXIT  STATE : kamera alt raftan yukarı bakarak durur · kedi raf kenarında sessizce aşağı bakmaktadır · kefe boş ve hareketsiz kalır
+ENTRY STATE : K45'teki dökülen şeker tepeciğinden boşalmış beyaz kefeye geçilir; tezgâhtaki bal kavanozu ve ışık açısı devralınır
 -----
-High on the shelf @kedi keeps its watch, one paw hooked over the board's edge and its head lowered over the drop, settled and not crouched. Then the last of the dust lifts off the emptied enamel pan below — one grain crosses the light and clears, and at that moment the pan reads as emptied rather than merely empty, and the needle held low beneath it stops being a position and becomes a loss. The clip begins with a cat looking down at a dish and ends with a dish that has nothing left in it. The rest of @mutfak keeps its business: the honey jar sits corked and quiet, the misted pane stands behind as one broad panel of snow-light. The amber owes that window nothing — it lives inside the few remaining grains themselves, and it never leaves the pan, never becomes an outline or a beam. The lettered tins are fixed masses: no letter shifts or re-spells. Camera: it begins under the shelf looking up, drifts a hand's width along the counter so the shelf's front edge unwraps, and settles with the cat high right and the empty pan low centre. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+High on the wooden shelf, the tabby cat keeps a watchful posture, its head lowered over the front edge while its tail tip twitches once. As a tiny dust mote clears the soft light streaming through the misted window pane, the empty enamel pan on the vintage scale settles into complete stillness, so that the pan reads as emptied rather than merely empty. The rest of the kitchen continues its quiet morning routine: the glass teapot filled with amber liquid sits untouched on the dark counter, while the corked honey jar glistens beside the wooden dipper. Above on the upper shelf, the white container marked Tuz holds its position without shifting. The metal scale frame and dial remain rigid dead-weight masses, ensuring that no printed numbers or letters re-spell, morph or drift, and the black indicator needle holds its low mark. Camera: starting under the shelf line looking slightly upward, it drifts a hand's width along the counter so that the shelf front edge unwraps, coming to rest with the cat high on the right and the empty scale pan low in the centre. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K47 | 4s · VO "Böbrek üstü bezleri adrenalin hormonu salgılar."
-KAMERA NİYETİ: Neredeyse karonun üstünden, düşmüş kapağın arkasından yumuşak bir kreynle yükselip tencerenin kıvrımını geçiyorum ve rafın solmamış halkasını sağ üstte bırakıyorum.
-frame: images/47.png · sha256:2645a248ba15e3ce
+### K47 | 4s klip · ekranda ~4s | VO "Böbrek üstü bezleri adrenalin hormonu salgılar."
+frame: images/47.png
+EXIT  STATE : kamera karonun üzerinden tencere eğrisine doğru yükselip durur · yerdeki amber ışıma sınır çizmeden genişlemiş kalır · kedi raf kenarında hareketsiz durur
+ENTRY STATE : K46'daki rafa oturmuş kedi bakışından yerdeki düşmüş tencerenin gürültüsüz artçı anına inilir; oda ışığı devralınır
 -----
-Down at floor level the fallen pot is still giving up the last of its fall: the big enamel body rocks a hair on its curved side. Then the rocking runs out and the pot goes over onto its resting point — at that instant the warm amber just woken inside its enamel and inside the tile beneath widens another hand's breadth outward, thinning with no boundary you could point to, and the floor stops being the scene of a drop and becomes a room with something left in it. The clip begins with an object still moving and ends with a light that has spread. Nothing else hurries: @kedi sits settled at the shelf rail high right and moves only its tail tip, the misted window burns as one tall bright panel at the end of the room. The amber never sharpens into an edge, never becomes an outline, a lamp or a spark, and it does not dim at any point. Nothing falls and nothing is in the air. Camera: it begins almost on the tiles behind the fallen lid, cranes gently up and forward past the pot's curve, and settles with the shelf's clean unfaded ring high in the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Down at floor level, the fallen enamel pot comes to its final resting point upon the tiled floor, its white rim coming to a complete rest. As the last micro-vibration dies out along the curved metal wall, a warm amber glow living inside the enamel and reflecting onto the floor tile widens another hand's breadth outward without any sharp edge, so that the floor stops being a place of impact and becomes a space filled with lingering warmth. Nothing else rushes in the quiet room: high on the wooden shelf rail at the upper right, the cat sits calmly watching the floor, moving only its ears slightly, while the misted window burns as a bright vertical panel in the distance. The warm amber illumination never sharpens into an outline, beam or spark, and it does not dim at any point during the clip. The pot lid rests still in the near foreground on the floor tiles, unmoving and solid. Camera: starting low on the floor tiles behind the fallen lid, it cranes gently upward and forward past the pot's curve, settling with the shelf rail held high in the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K48 | 5s · VO "Korktuğumuzda ya da heyecanlandığımızda adrenalin bizi alarma geçirir."
-KAMERA NİYETİ: Tezgâhın uzak ucundan rafa doğru birkaç derece dönüyorum, kavanozlar profilde açılıp geçerken kediyle pencereyi aynı karede bırakıp oturuyorum.
-frame: images/48.png · sha256:018e36054498d471
+### K48 | 5s klip · ekranda ~5s | VO "Korktuğumuzda ya da heyecanlandığımızda adrenalin bizi alarma geçirir."
+frame: images/48.png
+EXIT  STATE : kamera rafa doğru hafif bir ark çizer · kedi raf kenarında dikkatle büzülmüş durur · çaydanlıktaki kehribar sıvı yoğunlaşmış kalır
+ENTRY STATE : K47'deki yerdeki tencere anından tezgâh üzerindeki ocağa ve teyakkuzdaki kediye geçilir; kütlesel amber ışıması devralınır
 -----
-Steam has stopped rising from the kettle and the whole of @mutfak is holding: the tea sits dark in the upper glass, nothing in the room has anywhere to be. Then @kedi lowers its head further over the shelf edge and its shoulders draw a fraction tighter — at that moment the amber already living inside the packed jars, the enamel tins, the glass pot and the stone counter deepens together, all of it at once, and the room reads as a body that has just been told something. It begins as a kitchen at rest and ends as a kitchen listening. The daylight keeps its scale behind: the misted pane stands as one tall bright panel, dust turns slowly in the window fill. The amber never gathers into a stroke, a rim or a beam, it stays inside the masses that carry it, and it does not fade anywhere in this clip. The cat stays on the boards, whole and settled, never crouching to spring. Camera: it begins wide at the counter's far end, arcs a few degrees toward the shelf so the jars unwrap in profile, and eases to rest with the cat and the bright window in the same frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+A thin curl of steam drifts from the spout of the double tea kettle resting upon the gas stove, leaning slowly toward the window light. As the cat on the middle shelf crouches tensely and lowers its head over the edge, the warm amber tone residing within the stacked tea pot, storage jars and marble counter deepens silently across the entire room, so that the kitchen shifts from a passive workspace into an attentive, listening atmosphere. Bright morning daylight filters through the misted window pane on the right, illuminating fine dust particles suspended in the calm air. On the wooden table in the lower right foreground, a clear tea glass stands empty beside a wooden chair, holding its position. The amber light never gathers into a stroke, outline or beam, remaining softly diffused inside the carrying masses and never dimming at any point. The cat stays poised on the shelf boards without springing or jumping. Camera: starting wide near the counter end, it arcs a few degrees toward the wooden shelf so the storage jars unwrap in profile, coming to rest with the cat and bright window framed together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K49 | 5s · VO "Raftan düşen tencerenin sesi Efe'yi yerinden sıçrattı."
-KAMERA NİYETİ: Işıklı önkolunun arkasından tezgâh hizasında gerçek paralaksla eğik yüzüne doğru yaklaşıyorum ve gözlerini tezgâhın ucundaki keskin çizgiyle aynı karede bırakıyorum.
-frame: images/49.png · sha256:b8ed288e31b67c94
+### K49 | 5s klip · ekranda ~5s | VO "Raftan düşen tencerenin sesi Efe'yi yerinden sıçrattı."
+frame: images/49.png
+EXIT  STATE : kamera Efe'nin eğik yüzünde durur · Efe gözlerini yere doğrultmuş olarak kalır · tezgâh ön kenarındaki keskin altın çizgi ve çaydaki amber sönmeden kalır
+ENTRY STATE : K48'deki kedinin teyakkuzundan Efe'nin sesle sıçramış ve tezgâha dayanmış bedenine sıçranır; tezgâh kenarındaki altın ışık çizgisi devralınır
 -----
-@efe's shoulder is still up around his ear where the sound put it, his palm slammed flat on the stone and his weight thrown forward onto that one arm. Then his breath finally comes back — his shoulders drop a fraction, his jaw unclenches and his eyes travel down toward the floor, and the boy stops being a body that flinched and becomes a boy working out what he heard. He begins braced against the counter and ends looking for the cause. The hard-edged golden sliver on the counter's front lip beside his hand is already there and never moves: it rides that one edge, holds its exact width and is cut dead where the edge turns, and the stone and his sleeve stay untouched by it. Behind him @mutfak carries on: the tea sits dark in the glass pot on the range, and the wide amber in the shelf jars is still there, wider and fainter, and never dims. His hand stays flat and whole with all five fingers in contact. Camera: it begins level with the stone behind his lit forearm, moves in with real foreground parallax and eases to a stop, settling on his lowered eyes with the lit sliver still in frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Efe's left hand remains pressed flat upon the dark marble counter top, his arm bracing his weight while his shoulders gradually ease downward following the sudden noise. As his breath exhales in a quiet release, his jaw unclenches and his gaze travels downward toward the fallen enamel pot on the blue floor below, so that his posture shifts from a startled flinch into an inquiring focus. Along the front lip of the marble counter beside his fingers, a razor-thin sliver of hard golden light rides the stone edge, holding its exact width without shifting or expanding onto the stone surface. Behind him on the stove, the glass teapot steams softly, its amber liquid glowing warmly inside without fading or dimming. The metal storage container in the right foreground stands solid and unyielding. Efe's facial features stay steady with his mouth closed and no speech movement, while all five fingers keep contact with the stone. Camera: starting level with the counter behind his illuminated forearm, it pushes in gently with foreground parallax, coming to rest focused on his lowered eyes with the lit counter edge held in frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K50 | 5s · VO "Ses bir anda bitti, ama kalbi uzun süre hızlı attı."
-KAMERA NİYETİ: Işıklı ağız kenarına yakın başlayıp hafifçe geri ve sağa açılıyorum; raf ve uzak bardak arkada açılırken keskin çizgi alt solda, kenarsız amber üst sağda kalıyor.
-frame: images/50.png · sha256:543af69c20c2755e
+### K50 | 5s klip · ekranda ~5s | VO "Ses bir anda bitti, ama kalbi uzun süre hızlı attı."
+frame: images/50.png
+EXIT  STATE : kamera ağız kenarından geri çekilip durur · keskin altın çizgi tencere ağzında kilitli kalır · arka plandaki kavanozlarda amber sönmeden devam eder
+ENTRY STATE : K49'daki Efe'nin tezgâhtaki elinden ve kenar ışığından düşmüş tencerenin ışıldayan ağız kenarına geçilir; keskin altın çizgi ile kütlesel amber yan yana devralınır
 -----
-One line of hard golden light lies along the fallen pot's mouth and it is already finished: it rides that single curved rim, holds its exact width and is cut dead where the rim turns away, while the pot's body, the tile beneath and the grout line beside it stay completely cold. Then the room behind comes forward in the eye — at that instant the wide amber living inside the shelf jars and inside the tea glass on the far table reads as the thing that has not stopped, and the frame lays the two lights side by side without a word: one is an edge, the other is a mass. The clip begins with a rim and ends with a room. Nothing hurries around them: the pot rocks a hair and settles, the misted window burns soft behind the stove. The sharp line never widens and never leaves that rim; the wide amber never sharpens and never dims. Camera: it begins low and close on the lit rim, eases back and slightly right so the shelf and the far glass open up behind it, and stops with the rim low left and the amber high right. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+A single sharp line of hard golden light gleams along the circular rim of the fallen enamel pot resting on the counter, riding its curved edge without spreading. As the pot settles from its last micro-tremor, the soft background light coming from the window illuminates the rest of the kitchen, so that the shot presents two contrasting light behaviors side by side: a razor-sharp edge and a broad diffused mass. The pot lid lies tilted in the near foreground right, its enamel surface catching a dull reflection. Behind on the shelf, storage jars glow with a warm amber tone inside their bodies, which remains steady and never dims or fades throughout the shot. Soft daylight burns gently through the misted window glass in the background. The sharp golden rim light never expands or bleeds onto the adjacent ceramic tile, maintaining its precise boundary on the metal edge. Camera: starting low and close on the illuminated pot rim, it pulls back slowly and eases slightly to the right, coming to rest with the pot rim in the lower left and the amber shelf jars in the upper right. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K51 | 5s · VO "Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır."
-KAMERA NİYETİ: Tahtaların üstünden küçük ayakkabının arkasından sağa, gerçek paralaksla kayıyorum; kapı pervazı yandan geçip gidince iki ayakkabı orta düzlemde hizalanıyor.
-frame: images/51.png · sha256:fcb5c3dc6642ef1b
+### K51 | 5s klip · ekranda ~5s | VO "Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır."
+frame: images/51.png
+EXIT  STATE : kamera taban tahtalarında sağa paralaks kaymasını tamamlar · iki ayakkabı orta düzlemde yan yana durur · kapı altından geçen hafif hava akımı kesilir
+ENTRY STATE : Sekans 7 (Eşeysel Bezler ve Gelişim) başlar; kış sabahı mutfağından koridor eşiğindeki iki farklı boyuttaki ayakkabıya geçilir
 -----
-Two shoes stand side by side at the threshold where they were left, the small worn one leaning onto its collapsed heel, the larger newer one squared and settled with its lace fallen across the boards. Then the draught out of the bright kitchen reaches the hall — the loose lace end lifts and lies down again, and at that moment the pair stops reading as two objects and starts reading as one child measured twice. It begins as footwear by a door and ends as a length of time. The house keeps its quiet around them: warm daylight lies along the floorboards from the left, the bicycle wheel stands unmoving in the cool blue beyond. The amber owes the window nothing — it lives inside the worn leather itself, deepest in the creases of the small shoe and thinning outward with no boundary you could point to, and it never leaves the leather. Nobody enters, no foot comes into frame, and neither shoe is lifted or turned. Camera: it begins low on the boards behind the small shoe, tracks a hand's width right with real foreground parallax so the doorframe passes broadside, and settles with both shoes level in the middle plane. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Two leather shoes rest side by side on the polished wooden floorboards at the hallway threshold where they were placed. As a soft breeze from the sunlit kitchen causes the loose end of a lace to flutter slightly before settling, the warm morning light grazing the wood floor illuminates the worn textures, so that the pair reads as a silent measurement of growth over time. The rest of the house remains quiet: warm sunlight spills across the wooden floorboards from the left doorway, while the blue shadow of the hallway cradles a bicycle wheel in the background. The leather body of the smaller shoe carries a soft amber glow within its worn creases, which stays bound inside the material without bleeding outward into the air. Neither shoe is lifted, moved or turned, and no feet enter the frame during the clip. Camera: starting low on the floorboards behind the smaller shoe, it tracks a hand's width to the right with natural foreground parallax as the doorframe passes, settling with both shoes level in the middle plane. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K52 | 5s · VO "Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar."
-KAMERA NİYETİ: Süpürgeliğin dibinden pervaza dikey bakıp çizgiler boyunca yumuşak bir kreynle yukarı çıkıyorum ve en geniş aralık kadrajın tepesine oturduğunda duruyorum.
-frame: images/52.png · sha256:71df04e0fdd2770f
+### K52 | 5s klip · ekranda ~5s | VO "Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar."
+frame: images/52.png
+EXIT  STATE : kamera pervaz boyunca dikey yükselip durur · en üstteki geniş aralıklı çizgi kadrajın tepesinde kilitlenir · arka plandaki kapı ışığı sabit kalır
+ENTRY STATE : K51'deki eşikteki ayakkabılardan pervaz boyunca yukarı uzanan çizgi merdivenine geçilir; ahşap dokusu ve koridor ışığı devralınır
 -----
-Seen from the floor the doorframe climbs the whole height of the picture, its ladder of pencil marks running up and away, tight together low down and opening wider toward the top where the last two stand furthest apart. Then the raking shaft along the jamb shifts a hair as the corridor air moves — at that instant each graphite line gains its own thin shadow, the gaps between them become the only measurement in the frame, and the timber stops being a doorway and becomes a record. The clip begins as a plank of painted wood and ends as a list of years. The corridor keeps its depth behind: the bicycle rests against the wall, the open doorway at the far end stands as a tall bright rectangle. The amber lives inside the grain of the jamb and travels along that grain only, thinning with no boundary you could point to. No mark is added and no line moves, and not one written year ever comes into focus. Camera: it begins at the skirting looking straight up the jamb, cranes gently upward along the marks, and comes to rest with the widest gap held at the top of frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Pencil marks notched into the wooden doorframe climb vertically in a series of height records, closely spaced near the skirting board and opening wider toward the top. As a raking shaft of morning light shifts across the jamb, each handwritten line casts a delicate shadow, so that the timber frame transforms from a structural doorway into a living timeline of growth. In the cool blue depth of the hallway behind, a bicycle leans quietly against the wall, while bright white daylight pours through the open doorway at the far end, illuminating floating dust motes. The warm wood grain of the jamb holds a quiet golden resonance that follows the vertical timber fibers without spreading onto the wall surface. No new marks are written or drawn, no existing lines alter, and no numerical text morphs, re-spells or shifts. Camera: starting near the skirting board looking straight up the doorframe, it cranes smoothly upward along the notched marks, coming to a rest with the widest gap held at the top of the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K53 | 5s · VO "Sinir sistemi elektrik sinyalleriyle, hızlı ve kısa süreli çalışır."
-KAMERA NİYETİ: (kare yeniden basıldıktan sonra yazılacak — K54 ile BİREBİR aynı kamera olmak zorunda)
+### K53 | 5s klip · ekranda ~5s | VO "Sinir sistemi elektrik sinyalleriyle, hızlı ve kısa süreli çalışır."
+frame: images/53.png
+EXIT  STATE : kamera masaya dik durur · maket ve pirinç levha kadrajın solunda sabitleşir · cam demlikteki çay durgun kalır
+ENTRY STATE : Pervazdaki büyüme çizgilerinden çalışma masası üzerindeki sinir sistemi anatomik maketine geçilir; pencere ışığı ve cam demlik devralınır
 -----
-🔴 MOTION INTENT: Maketin ensesinden inen parçanın dış hattındaki tek sert-kenarlı altın çizgi klip boyunca hiç genişlemez, hiç yürümez ve parça bitince kesik kalır; masa, plaka ve çay tamamen soğuk durur — kamera K54'ün kamerasının aynısıdır, tek fark ışığın davranışıdır.
+An anatomical head model exposing the brain structure rests upon its wooden base on the dark table, holding firm beside the glass teapot. As a subtle wispy vapour curl escapes the spout of the glass pot, bright winter light streaming from the window illuminates fine dust motes and highlights the wood grain of the desk, so that the scene demonstrates the fast electrical nature of nervous transmission without moving any object. Beside the head model, a metal tea tin stands upright on a folded striped towel, remaining steady. The brass plate reading İNSAN SİNİR SİSTEMİ fixed to the wooden base stays completely legible, so that no Turkish letters morph, re-spell, wobble or drift. The model remains a rigid solid mass, with no structural shifting, opening or deformation taking place. The liquid inside the teapot holds its calm amber color without expanding or glowing into a beam. Camera: positioned square to the table surface, it maintains a static, stable frame that holds both the anatomical model and the glass pot in balanced composure. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — dersin kapanış karşılaştırması karede YOK: sert-kenarlı altın çizgi hiç basılmamış ve kesilmesi gereken hormon amberi (cam demlikteki ışıyan çay) kadrajın sağ üçte birinde duruyor. Ayrıca K54 ile ÇİFT SÖZLEŞMESİ tutmuyor — maket, kaide, demlik ve kadraj K54'te başka. Bu blok revize kare basıldıktan sonra doğrulanacak.
 
 
-### K54 | 5s · VO "İç salgı bezleri hormonlarla, yavaş ve uzun süreli çalışır."
-KAMERA NİYETİ: Masaya dik durup birkaç santim demliğe doğru yaklaşıyorum, maket kadrajda kalırken çay sağ üçte birde yerleşiyor.
-frame: images/54.png · sha256:74df6f96824f0a85
+### K54 | 5s klip · ekranda ~5s | VO "İç salgı bezleri hormonlarla, yavaş ve uzun süreli çalışır."
+frame: images/54.png
+EXIT  STATE : kamera demliğe doğru birkaç santim yaklaşıp durur · çay kütlesi içindeki amber derinleşmiş kalır · maket arka planda kütlesel ve soğuk kalır
+ENTRY STATE : K53'teki sinir sistemi maketinden cam demlikteki amberleşmiş çayın kütlesel odağına kayılır; masa yüzeyi ve ışık devralınır
 -----
-Inside the glass pot the tea has been sitting for a long while already, dark and heavy at the bottom of the body and thinning upward through the water with no boundary you could point to. Then the winter light off the window shifts across the table — at that moment the amber inside the tea answers it from within, deepening slowly through its own mass, and the clip makes its case without moving a single object: the light that stays is the one that lives inside things. It begins as a table with two objects on it and ends as a demonstration. The model beside it does exactly nothing: its plastic stays matte and completely cold, and no edge anywhere on it carries a sliver of light. Behind them the misted pane stands as one broad bright panel and the tin holds its place. The amber never sharpens into an edge, never becomes an outline or a beam, and it never dims or leaves the water. The model is a fixed mass: it does not turn, tip or open further. Camera: it begins square to the table, eases a few centimetres toward the glass with the model held in frame, and stops with the tea filling the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Inside the glass pot on the wooden table, brewed tea has been resting quietly, its deep amber liquid filling the vessel from within. As soft daylight shifting through the misted window catches the surface, the rich golden tone deepens slowly throughout its own fluid volume, so that the clip presents the slow, sustained action of hormonal regulation without moving a single item. The anatomical head model beside it stays completely static and cold, its matte plastic surface casting no sharp reflections or light rays. In the background, the metal container rests on the folded striped towel, and the window pane stands as a broad bright backdrop. The amber warmth remains strictly confined within the tea, never sharpening into a rim light, beam or outline, and never dimming at any moment. The anatomical model keeps its fixed position on the wooden base without tilting, rotating or closing. Camera: starting square to the table, it eases a few centimetres toward the glass pot while holding the head model in frame, coming to rest with the tea filling the right third. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K55 | 4s · VO "İkisi birlikte vücudumuzun iç dengesini korur."
-KAMERA NİYETİ: Tezgâhın yakın ucundan taş boyunca yavaşça kayıyorum, kutuya mesafemi hiç bozmadan çaydanlıkla cam demliği aynı karede bırakıp duruyorum.
-frame: images/55.png · sha256:faf0fb6a684b83e3
+### K55 | 4s klip · ekranda ~4s | VO "İkisi birlikte vücudumuzun iç dengesini korur."
+frame: images/55.png
+EXIT  STATE : kamera tezgâh boyunca kaymasını tamamlar · çaydanlık ve cam demlik kadrajda kilitlenir · mutfak tamamen durulmuş bir oda olarak kalır
+ENTRY STATE : K54'teki masadan mutfak tezgâhına dönülür; çaydanlık, demlik ve "ÇAY" kutusunun tamamlanmış ortak düzeni devralınır
 -----
-Everything in @mutfak has already been done: the double kettle sits cooling on a burnt-out ring, the tea stands dark and finished in the upper glass. Then the last of the steam clears off the kettle's shoulder and the brushed metal goes dull — at that instant nothing in the room is working any more, and the kitchen reads not as it was at the beginning but as a kitchen that has finished. It begins as a room in use and ends as a room at rest. The daylight does the remaining work: the misted pane stands as one broad bright panel at the right, the wall clock keeps its face flat and level in the upper left. No golden edge appears anywhere here and no amber wakes inside any mass — the light here is the winter morning. The lettered caddy is a fixed dead-weight mass: it does not lift or turn and its fired letters never re-spell or drift. Camera: it begins at the counter's near end, tracks slowly along the stone at an unchanged distance from the caddy, and comes to rest with the kettle and the glass pot together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+The brushed aluminum kettle sits resting on the gas stove, its surface holding a dull sheen as the last faint trace of steam dissipates into the kitchen air. As morning daylight fills the room from the misted window pane on the right, the entire kitchen reads as a space that has completed its tasks and achieved balance. In the foreground left, the square metal container marked ÇAY stands firmly beside an overturned small tea cup and tray on the marble counter. Above on the left wall, the wooden clock holds its position, while the glass teapot filled with dark brewed tea rests atop the kettle. All printed text including ÇAY remains completely frozen, ensuring that no letters morph, re-spell, wobble or drift, and no golden rim light or artificial amber glow wakes within any surface. The metal kettle and glass teapot maintain their solid dead-weight masses without tilting or sliding. Camera: starting near the counter edge, it tracks slowly along the stone at a constant distance from the caddy, coming to rest with the kettle and glass pot framed together. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
-### K56 | 5s · VO "Efe'nin çayı demlenmiş, buğulu cam yeniden açılmıştı."
-KAMERA NİYETİ: (kare yeniden basıldıktan sonra yazılacak — K01'in kamerası birebir alınacak)
+### K56 | 5s klip · ekranda ~5s | VO "Efe'nin çayı demlenmiş, buğulu cam yeniden açılmıştı."
+frame: images/56.png
+EXIT  STATE : kamera koridor eşiğinde K01 açılış karesine kilitli durur · Efe ışıklı mutfak kapısında arkası dönük durur · sekans kapanışı dersin başındaki ilk duruma ayna olarak devredilir
+ENTRY STATE : K55'teki mutfağın içinden koridora ve dersin açılış karesi K01'in tam ayna kadrajına geçilir; kapı pervazındaki yıllar ve eşikteki ayakkabılar devralınır
 -----
-🔴 MOTION INTENT: Kamera K01'in yerinde, aynı yükseklikte ve aynı yönde durur ve hiç yer değiştirmez; klip boyunca yalnız koyu amber çayın kütlesi içinde derinleşir, silinmiş camdan görünen karlı bahçe berrak kalır ve @efe'nin avucu masada düz durur — kapanış hareketle değil aynı kadrajın iki hâliyle söylenir.
+Looking through the doorway from the hallway, Efe stands calmly in the sunlit kitchen with his back turned to the camera, his posture relaxed as he gazes toward the bright open window. As a soft sunbeam filters into the hallway corridor, illuminating tiny dust motes floating in the air, the dark amber liquid inside the teapot deepens quietly, so that the final frame mirrors the opening scene of K01 in perfect balance. On the wooden door trim on the left foreground, the carved height records reading 2019, 2021 and 2023 remain sharply etched into the wood without drifting, while the leather boots and sneakers rest side by side on the floor. On the right wall, a heavy winter coat hangs undisturbed on its rack, and a bicycle stands parked in the hallway depth. Efe remains completely composed with no mouth movement or head turn. All handwritten numbers on the wooden door frame remain solid, ensuring no text morphs, re-spell or shifts. Camera: locked in position at the hallway doorway at the exact angle and height as K01, remaining completely static throughout. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — AYNA TUTMUYOR. K01 kapı eşiğinden ocağa bakıyor (Efe arkadan, saat SAĞDA, pervazdaki yıllar kadrajda); K56 tezgâh boyunca bakıyor (Efe önden, saat SOLDA, pervaz yok). Üç ayna farkı (koyu amber çay · dolu düz bardak · silinmiş cam) DOĞRU basılmış, taşıyıcı kadraj yanlış. Bu blok revize kare basıldıktan sonra doğrulanacak.
-
-
-=========================================================================
-NOTLAR — bu dosyayı kullanan için
-
-· Frame imzası (`frame:` satırı) olan on blok TESLİMDİR — K44, K46, K47, K48, K49,
-  K50, K51, K52, K54 ve K55. İmzasız üç blok (K45, K53, K56) niyettir.
-· K49 ve K50 dersin duygu tepesidir ve iki ışık orada ayrı ayrı yazıldı: çizgi
-  "holds its exact width / cut dead", amber "never dims". Bu iki ifade motion'da
-  KOŞULLU değil, o iki klibin sözleşmesidir.
-· K49 tek push-in'dir ve gerekçesi vardır (sebebi arama anı); "slowly push in" refleksi
-  başka hiçbir klipte yok — K44 yatay kayma, K46 alttan kayma, K47 kreyn, K48 ark,
-  K50 geri açılma, K51 paralaks tracking, K52 dikey kreyn, K54 birkaç santim yaklaşma,
-  K55 sabit mesafeli tracking.
-· Süreler VO cümlesinin uzunluğuna göre: 4s → K44 · K46 · K47 · K55. Kalan dokuz 5s.

@@ -1,156 +1,75 @@
 DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 1 (K01–K08) MOTION
 Kling 3.0 · i2v · sekiz karenin sekizi açıldı ve görüldü.
-Yeniden basım işaretli üç karede motion YAZILMADI, yalnız MOTION INTENT (bir, üç, dört).
 =========================================================================
 
 
-### K01 | 5s · VO "Efe kış sabahı mutfağın kapısında durdu."
-KAMERA NİYETİ: Kapı boşluğu sabit bir çerçeve olarak dursun, kamera pervazın arkasından
-bir adım kadar içeri sızsın ve mutfağı Efe'nin durduğu yerden göstersin.
+### K01 | 5s klip · ekranda ~5s | VO "Efe kış sabahı mutfağın kapısında durdu."
+frame: images/1.png
+EXIT  STATE : kamera doorframe arkasından mutfağa doğru süzülüp durur · Efe bakışını ocağa kilitli tutar · hareket mutfak içi kaynayan çaydanlık ve sarkaçla tamamlanır
+ENTRY STATE : sekansın ilk planı; durgun kış sabahı atmosferiyle açılır, Efe kapı eşiğinde ocağa bakmaktadır
 -----
-🔴 MOTION INTENT: Efe pervazda kalır ve hiçbir şeye uzanmaz; mutfağın beş işi onsuz
-dönerken yalnız sarkaç, buhar ipliği ve camdaki damla oynar, klip bitiminde odada
-değişen tek şey damlanın indiği mesafedir.
+Cold morning light filters through the doorway timber where height marks are carved into the grain, casting a soft glow across the kitchen threshold. Efe stands steady in the opening with his hand resting against the doorframe, his chest rising and falling softly as he breathes. Across the room, a slender column of steam ascends from the kettle spout, leaning as warm air drifts toward the fogged window pane. Behind him, the brass pendulum inside the wall clock swings smoothly back past the clock face. A bead of condensation gathers on the cold glass, slipping down to leave a clean track on the steamed surface. On the marble counter, fine flour dust settles under the light while the oven glows with steady amber warmth. As his weight shifts subtly on his slippers, his gaze remains fixed toward the stove so that the space lives in quiet harmony. Camera: from behind the door jamb, the frame glides forward into the doorway, staying square to the counter while maintaining its original height, continuing its motion until the shot ends. The carved year numbers on the wood do NOT morph, re-spell, wobble or add ANY text. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — Efe kapıda değil ocağın yanında ve açık avucu kaynayan
-çaydanlığın buharının içinde; VO'yu duymayan izleyici için kare iki türlü okunuyor.
 
 
--------------------------------------------------------------------------
-### K02 | 5s · VO "Ocakta çaydanlık ısınıyor, duvardaki saat işliyordu."
-KAMERA NİYETİ: Kamera ÇAY kutusunun önünden geçerek kaysın — mesafe hiç değişmesin ki
-harf düzlemde kalsın, ama paralaks çaydanlığı kutudan ayırsın ve oda derinlik kazansın.
-frame: images/2.png · sha256:26e0787e6a4fb495
+### K02 | 5s klip · ekranda ~5s | VO "Ocakta çaydanlık ısınıyor, duvardaki saat işliyordu."
+frame: images/2.png
+EXIT  STATE : kamera kadrajı yanal olarak sola kaydırarak ÇAY kutusunun önünden geçer · çaydanlıktaki suyun ısınma hareketi sürer · yanal kayma sakinleşerek tamamlanır
+ENTRY STATE : K01'in kapı eşiğindeki genel görünümünden tezgah hizasına inilir; ocağın üzerindeki çaydanlık ve ÇAY kutusu devralınır
 -----
-Heat is already in the metal when the shot begins: a fine chain of bubbles keeps letting go
-of the inner wall and climbing, while a thin thread of steam leans off the spout toward the
-shelf. Then one larger bubble breaks free and the thread thickens — and at that instant the
-brass pendulum behind reaches the end of its return and starts back, two speeds running
-side by side without either noticing the other. The clip begins with a kettle merely
-warming and ends with a kettle plainly working, while the clock keeps the same patient beat
-through both. The room holds as it is: the pane burning white at the right, the jars still
-on their shelf, the blue ring steady underneath. Camera: from hob height the frame drifts a
-hand's width left so the caddy passes in front of the kettle with real parallax, holding
-the same distance throughout, and it is still easing when the clip ends. The water in the
-upper glass pot stays completely colourless from first frame to last, and the ÇAY letters
-keep their shape, spacing and depth on a caddy that never lifts, tips or slides.
-Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+Blue gas flames flicker steadily beneath the brushed aluminum kettle base, sending continuous convection currents through the water inside the clear upper glass pot. Fine chains of tiny air bubbles release from the inner glass floor and ascend upward, while a delicate plume of steam wafts off the spout toward the wall shelves. Next to the burner, the square metal container holds its position on the dark marble surface as the heat builds inside the vessels. In the background, the brass clock pendulum completes its rhythmic arc, creating two separate temporal paces within the space. As the water warms further, the upper tea liquid begins its subtle transformation while the white enamel pot behind rests quietly against the tile backsplash. Cold morning sunlight washes through the fogged glass of the window, illuminating tiny airborne dust particles that drift gently through the room air draft. Camera: from hob height the frame drifts slowly to the left so the tea container passes in front of the kettle with natural parallax, holding a constant camera distance throughout the motion. The ÇAY letters on the metal container do NOT morph, re-spell, wobble or add ANY text. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
--------------------------------------------------------------------------
-### K03 | 5s · VO "Cam buğulanmış, sobanın üstünde süt tenceresi duruyordu."
-KAMERA NİYETİ: Kamera tencerenin yanından rafın hizasına doğru yükselsin, kediyi
-sonda bulsun — ama SÜT harfi düzlemde kalsın diye mesafe değişmesin.
+### K03 | 5s klip · ekranda ~5s | VO "Cam buğulanmış, sobanın üstünde süt tenceresi duruyordu."
+frame: images/3.png
+EXIT  STATE : kamera süt tenceresinden kediye doğru yükselir · kedi gözleriyle yükselen buharı izler · camdaki damlanın süzülüşü ve buharın kıvrılışıyla tamamlanır
+ENTRY STATE : K02'nin çaydanlık ve ocak düzleminden süt tenceresine geçilir; ocağın ısı döngüsü ve arka plandaki saat devralınır
 -----
-🔴 MOTION INTENT: Süt kabarmadan yüzeydeki kaymak bir tık genişler, kedinin kulağı sesin
-yönüne döner ve camdaki damla kendi izinde bir parmak daha iner — üç iş, üç ayrı hız,
-hiçbiri ötekine değmez.
+Dense condensation coats the tall window pane as a single water bead breaks free and trickles down the glass surface, leaving a narrow transparent trail in its wake. On the active gas hob below, blue gas flames lick the base of the white enamel milk pot, causing steam to curl upward into the air. A young tabby cat seated on the high wooden wall shelf twitches its ears slightly at the soft simmering sound, its large bright eyes watching the rising vapor with calm curiosity. In the background, the double kettle steams quietly while the wall clock continues its steady ticking beat behind the window area. The milk surface inside the pot expands subtly near the rim as thermal convection circulates the liquid without boiling over. Soft light from the window highlights the fine fur along the cat's back as it shifts its paws on the wooden plank. Camera: from stove height the frame tilts upward toward the wooden shelf level, bringing the seated cat into focus while preserving the spatial depth between stove and window. The SÜT letters on the enamel pot do NOT morph, re-spell, wobble or add ANY text. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — kavanoz omuzlarında İngilizce hece parçaları ("AR", "ER")
-okunuyor ve tencerenin altında gaz yerine kızıl elektrikli rezistans halkası yanıyor.
 
 
--------------------------------------------------------------------------
-### K04 | 5s · VO "Onlarca iş aynı anda oluyor, hiçbiri çarpışmıyordu."
-KAMERA NİYETİ: Tek bir yavaş yanal kayış altı işi sırayla kadrajdan geçirsin — kesim
-yapmadan, hiçbirinin üstünde durmadan; eşzamanlılığı kameranın kendisi kanıtlasın.
+### K04 | 5s klip · ekranda ~5s | VO "Onlarca iş aynı anda oluyor, hiçbiri çarpışmıyordu."
+frame: images/4.png
+EXIT  STATE : kamera soldan sağa doğru yavaş bir yanal kayış yapar · eşzamanlı altı süreç kadrajdan sırayla geçer · kamera sağ tarafta masayı da kadraja alarak tamamlanır
+ENTRY STATE : K03'teki tencere ve pencere düzleminden mutfağın geniş kadrajına açılınır; ocak, saat ve cam buğusu devralınır
 -----
-🔴 MOTION INTENT: Altı yarım iş altı ayrı yerde kendi hızında bir adım ilerler ve klip
-biterken altısı da hâlâ yarımdır, hiçbiri ötekine değmemiştir.
+Fine white flour drifts across the dark marble counter around the mechanical scale as six simultaneous physical events unfold across the kitchen space without interference. The needle on the vintage balance scale vibrates with imperceptible micro-movements, responding to the subtle ambient vibrations of the house. Beside it, the double kettle emits a steady column of steam from its upper glass lid rim while blue gas flames flicker underneath the brushed metal base. On the adjacent burner, the enamel pot simmers gently as warm air currents carry vapor toward the window. Further right, the sheer white curtain sways softly in the cold window draft while the brass clock pendulum completes its patient swing on the wall. A small tea glass resting on a saucer in the foreground catches the soft daylight, reflecting the warm atmosphere of the room. Camera: from counter height the frame glides laterally from left to right across the worktop, passing each simultaneous process in sequence until the table corner enters view. The numbers on the scale dial do NOT morph, re-spell, wobble or add ANY text. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: 🔴 YENİDEN-BASIM — mutfağı tanımlayan geniş kare loş (KİLİT 4ø) ve karenin kendi
-yasakladığı bıçaklık odakta duruyor.
 
 
--------------------------------------------------------------------------
-### K05 | 5s · VO "Efe'nin vücudunda da tam o anda onlarca iş sürüyordu."
-KAMERA NİYETİ: Kamera sabit kalır ve hiç yaklaşmaz — bu karenin fikri "aynı anda çok iş",
-ve eşzamanlılık ancak kadraj bütünken okunur; kamera bir işe yaklaşırsa diğerlerini siler.
-frame: images/5.png · sha256:75b0ffedb0dc18f4
+### K05 | 5s klip · ekranda ~5s | VO "Efe'nin vücudunda da tam o anda onlarca iş sürüyordu."
+frame: images/5.png
+EXIT  STATE : kamera tezgah yüksekliğinde kilitli durur · tüm eşzamanlı işler kadrajın içinde kendi ritminde devam eder · ÇAY kutusu ve kaplar sabit kalarak tamamlanır
+ENTRY STATE : K04'ün geniş kadrajından tezgah boyu açısına geçilir; tezgahın üzerindeki nesneler ve eşzamanlılık fikri devralınır
 -----
-Nobody is in the kitchen and five separate works are running at once. A single thin thread
-of steam leaves the upper brewing pot and leans slowly toward the window, thinning as it
-goes. On the milk pot beside it a skin has begun to set at the rim, and one small dome
-lifts under that skin, holds, and settles back flat. The clock's pendulum swings out to
-the far end of its travel, hangs there for a breath and starts back, its brass edge picking
-up the window light each time it passes. On the fogged pane a single bead of condensation
-breaks loose and runs a short way down the glass, leaving a clear wet track above it while
-the fog below stays untouched. And on the dark stone counter one grain of flour lifts off
-the edge, turns once in the air and settles again. Nothing waits for anything else — the
-five run on their own separate clocks and none of them finishes; the room simply keeps
-working. Camera: locked off at counter height, square to the run of the worktop, absolutely
-still so all five works stay inside the frame at once. Silent clip, no audio, no dialogue,
-mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+An inverted clear glass rests silently on the dark marble counter while five independent processes run simultaneously throughout the quiet room. Inside the double kettle's upper glass pot, rich amber tea extract diffuses downward through hot water, darkening the liquid layer by layer. A delicate thread of steam rises from the spout and drifts toward the steamed window pane, thinning gradually into the cool air draft. Below the stove top, the oven interior glows with a steady, warm orange light that casts long soft shadows along the dark wooden cabinets. High on the wall, the clock pendulum swings out to the end of its arc, pausing briefly before gliding back past the wooden casing. A solitary drop of moisture on the window pane breaks away and creeps downward, leaving a clear track through the frost. Camera: locked off at counter height square to the marble worktop, remaining completely static throughout so all simultaneous processes remain within frame. The ÇAY letters on the container do NOT morph, re-spell, wobble or add ANY text. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
-
-### K06 | 5s · VO "Kalbi atıyor, ciğerleri nefes alıyor, kasları çalışıyordu."
-KAMERA NİYETİ: Kamera pencerenin yanından ona doğru yürüsün ve yükselsin — nefes
-sütununu ışığın içinden geçirerek göstermenin tek yolu bu açıdan gelmek.
-frame: images/6.png · sha256:e8055f8254c3f6c5
------
-Breath leaves him in one slow column as the clip runs: the plume standing in the cold air
-before his face keeps unrolling and thinning, and under his left palm the knitted cloth
-lifts and falls with it. Then the column reaches as far as it will go and begins to lose
-itself — and as it goes his chin lowers a little and the four tendons on the back of his
-right hand ease where his weight rests on the counter. The clip begins with a body plainly
-at work and ends with the same body a shade calmer, and no part of it has been opened to
-explain why. The kitchen holds around him: the fogged pane filling the left as a bright
-field, the flour still on the dark stone. Camera: from his left the frame travels slowly
-toward him with the window frame passing through the near foreground, rising a few
-centimetres as it comes, and it is still moving when the clip ends. His lips stay exactly as
-the frame has them, parted only for breathing, and never move into a speech shape; his face
-holds its features; the breath stays real vapour with a soft dissipating end and never
-becomes a ribbon, line or drawn arrow.
-Silent clip, no audio, no dialogue, no lip movement, jaw held.
------
-DURUM: temiz
 
 
--------------------------------------------------------------------------
-### K07 | 5s · VO "Peki bütün bunları aynı anda kim yönetiyordu?"
-KAMERA NİYETİ: Kamera onun bakış yönüne doğru bir yay çizsin — soru sözle değil, kameranın
-elsiz çalışan işlere doğru dönmesiyle sorulsun.
-frame: images/7.png · sha256:9963cf7c7d64d3c2
+### K06 | 5s klip · ekranda ~5s | VO "Kalbi atıyor, ciğerleri nefes alıyor, kasları çalışıyordu."
+frame: images/6.png
+EXIT  STATE : kamera pencere kenarından Efe'ye doğru yükselerek yaklaşır · Efe'nin göğsü nefesle iner kalkar, buhar bulutu dağılır · Efe'nin duruşu daha sakin bir dengeye ulaşır
+ENTRY STATE : K05'in cansız nesnelerinden Efe'nin bedenine odaklanılır; mutfak ışığı ve tezgahtaki un detayları devralınır
 -----
-Up on the shelf his fingers still rest on the rim of the jar he has just pushed back into
-line, and the jar rocks down its last hair onto its foot while behind him four other works
-run with nobody near them. Then the jar settles for good under his fingertips — and at that
-moment his head, already turned over his shoulder, comes round the last few degrees and his
-eyes travel to the far side of the kitchen, where the steam, the pendulum and the halted
-bead go on without him. He begins the clip having just finished one small job and ends it
-looking for whoever is doing all the others. The room keeps its own light: the corridor a
-soft blue rectangle at the left, the pane glowing at the right. Camera: from below the shelf
-line the frame arcs a few degrees around him toward his eyeline and rises with the turn of
-his head, and it is still travelling when the clip ends. His hand stays on the jar rim and
-the jar never lifts, tips or leaves the shelf; his face holds its features and his lips stay
-closed and soft.
-Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+Warm white breath expands into the chilly morning air before Efe's face as his lungs complete a slow, rhythmic exhalation. Underneath his left palm, his rust cable knit sweater rises and falls softly with each steady breath he takes beside the marble worktop. As the vapor cloud rolls forward toward the steamed window pane, it gradually thins and dissipates into the clear light filtering through the glass frame. His right hand rests flat on the counter edge near the spilled flour, his fingers adjusting their grip as his posture settles into quiet ease. In the background, the wall clock pendulum continues its rhythmic swing while steam rises from the distant stove area. The room holds its peaceful atmosphere around him, with cold winter daylight illuminating the soft features of his face and dark hair. Camera: from Efe's left side the frame travels slowly toward him, rising a few centimetres as the window frame passes through the near foreground. His lips remain parted strictly for breathing, never moving into any speech shape or lip articulation. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
 
 
--------------------------------------------------------------------------
-### K08 | 5s · VO "Cevap iki sistemdeydi: sinir sistemi ve iç salgı bezleri."
-KAMERA NİYETİ: Kamera tek eksende, alttaki metalden üstteki cama doğru yükselsin — dersin
-iki hızı kameranın kat ettiği mesafeyle üst üste okunsun.
-frame: images/8.png · sha256:e9f52c8d3e6e6cce
+### K07 | 5s klip · ekranda ~5s | VO "Peki bütün bunları aynı anda kim yönetiyordu?"
+frame: images/7.png
+EXIT  STATE : kamera rafın altından Efe'nin bakış eksenine doğru kavis çizer · Efe bakışını mutfağın derinliğindeki işlere çevirir · eli kavanoz üzerinde sabitlenerek tamamlanır
+ENTRY STATE : K06'daki Efe'nin yakın beden planından raf hizasındaki hareketine geçilir; Efe'nin kazağı, ocağın buharı ve ışık tonları devralınır
 -----
-One flame feeds both vessels and the difference is already running as the shot opens:
-below, the water turns over hard against the inner wall and the steam leaves the spout in a
-tight hard-edged jet; above, in the glass pot, the amber lies deep at the bottom and lifts
-one slow thread that loses itself with no edge. Then the boil gathers and the jet thickens
-— and while that happens the amber only reaches a little further into the water it is
-already inside, going nowhere. The clip begins with two vessels on one ring and ends with
-the same two, one faster and one wider, which is the whole lesson said without a word. The
-kitchen stays where it is: the pane burning white behind, the ring steady underneath.
-Camera: from just above hob height the frame rises slowly along the stacked column, staying
-on one axis and holding the same distance from the glass, and it is still rising when the
-clip ends. The amber stays inside the water, never reaches the top of the pot and never
-becomes a beam, halo or light touching anything else; the metal holds its rigid solid form
-with no deform, melt, morph or merge.
-Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+Fingertips press gently against the glazed rim of a blue ceramic jar on the wooden wall shelf, settling the container firmly onto its wooden base. Efe's body pauses in his reach while his head turns slowly over his left shoulder, his curious gaze scanning across the kitchen behind him. His eyes travel toward the far side of the room where the kettle steams and the clock pendulum swings without anyone touching them. Soft golden morning light catches the coarse weave of his orange knit sweater, contrasting with the cool blue illumination streaming from the open hallway. Down on the marble counter, spilled white flour reflects the window light while steam drifts silently from the stove top into the background air. As his posture stabilizes, his grip on the shelf jar remains steady without tipping or sliding the pottery. Camera: from below the shelf line the frame arcs gradually around his figure toward his eyeline, rising slightly with the turn of his head. His mouth remains closed and soft with no speech movement as his face holds its quiet, thoughtful expression. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
+
+
+### K08 | 5s klip · ekranda ~5s | VO "Cevap iki sistemdeydi: sinir sistemi ve iç salgı bezleri."
+frame: images/8.png
+EXIT  STATE : kamera tek eksende alt metal su ısıtıcısından üst cam çay potuna doğru yükselir · iki katlı sistemdeki iki ayrı hız aynı kadrajda görünür · Sekans 2'ye köprü kuracak sabit bir odakla tamamlanır
+ENTRY STATE : K07'deki Efe'nin arayan bakışından ocağın üzerindeki çaydanlığın iki katlı yapısına odaklanılır; buhar ve ışık devralınır
+-----
+A diagonal jet of dense white steam shoots continuously from the lower aluminum spout, driven by the vigorous boiling water inside the metal chamber beneath. Simultaneously, in the upper glass teapot, amber tea extract diffuses downward through hot water, forming translucent swirling clouds that move at a much slower, measured pace. The single blue gas flame underneath fuels both vessels at once, highlighting the dual speeds operating within the same heating system. Tiny condensation droplets form on the outer glass surface of the upper pot, running down toward the metal rim in fine clear lines. Beyond the stove, morning light streams through the frosted window, illuminating the wooden knife block and enamel pots resting on the counter. The brushed aluminum body of the kettle holds its solid metallic sheen, reflecting the gas flame glow along its curved lower wall. Camera: from just above hob level the frame ascends steadily along the vertical stacked kettle column, staying on a single vertical axis throughout. The metal and glass vessels maintain their rigid solid forms with no deformation or warping. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
