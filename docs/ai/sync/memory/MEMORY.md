@@ -67,6 +67,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 
 ## Araçlar
 
+- [AGY continue + donma ölçeri](mamilas-agy-continue-ve-donma-olceri.md) — `agy -c` videoyu KORUYOR: tek izleme, çok soru (kanıt: 2.3M cache read + önceki cevapta olmayan yeni detay). 🔴 `freezedetect -38dB` YALANCI — donma iddiası kare md5'iyle doğrulanır; Hücre'nin "10 donma" hükmü kuşkulu.
 - [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Claude klip izleyemez, Gemini izler. AGY'ye HÜKÜM sordurma, TARİF ettir. PATH tuzağı içeride.
 - [Magnific MCP hattı](mamilas-magnific-mcp-hatti.md) — sohbetten kare basıyor (ölçüldü: üretildi + gözle görüldü), `simulate_cost` exact fiyat verir. 🔴 library BOŞ → @handle süreklilik hattı MCP'den kurulmuyor; kredi %86 tükenmiş.
 - [Higgsfield hattı](mamilas-higgsfield-hatti.md) — sohbetten kare/klip üretimi çalışıyor (ölçüldü). 🔴 Element referansı opsiyon değil TAŞIYICI KOLON: referanssız basılan K01'de Efe yetişkin geldi. Fiyat matrisi + Kling referans almıyor + `--sound off` tuzağı içeride.

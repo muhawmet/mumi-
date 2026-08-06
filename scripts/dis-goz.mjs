@@ -47,6 +47,8 @@ export function usage() {
   node scripts/dis-goz.mjs is   "<görev>"                 [--kuru]
   node scripts/dis-goz.mjs cur  "<iddia>"                 [--kuru]
   node scripts/dis-goz.mjs gor  "<medya yolu>" "<soru>"   [--kuru]
+  node scripts/dis-goz.mjs sor  "<takip sorusu>" [--oturum <id>] [--kuru]   # film YENİDEN İZLENMEZ; kimliği gor basar
+                                                                            # kimliksiz `-c` EN SON oturuma döner — araya çağrı girdiyse yanlış filmi sürdürür
   node scripts/dis-goz.mjs ara  "<konu>"                  [--kuru]
   node scripts/dis-goz.mjs kare "<prompt dosyası>" "<çıktı.png/.jpg>" [--kuru]`;
 }
@@ -106,13 +108,19 @@ function codexInvocation(subcommand, task) {
   };
 }
 
-function agyInvocation(subcommand, args) {
+function agyInvocation(subcommand, args, session = null) {
   let prompt;
   let output = null;
   if (subcommand === 'gor') {
     const media = needExistingAbsolute(args[0], 'Medya yolu');
     const question = needText(args[1], 'Soru');
     prompt = `Şu gerçek medyayı tarif et; hüküm verme, yalnız gördüğünü yaz. Medya: ${media}\nSoru: ${question}\nZamanla ilgili iddiaları yaklaşık işaret olarak yaz; saniye altı kesinlik uydurma.`;
+  } else if (subcommand === 'sor') {
+    // Ölçüldü 2026-08-06: `-c` medya bağlamını KORUYOR (num_turns:2, 2.3M cache okuması, önceki
+    // cevapta olmayan yeni görsel detay). Ama aynı ölçümde AGY özetinden cevaplamaya da yatkın;
+    // o yüzden "tekrar BAK" ve "bilmiyorsan BİLMİYORUM" iki kilit prompt'ta kalır.
+    const question = needText(args[0], 'Takip sorusu');
+    prompt = `Az önce izlediğin medyaya TEKRAR BAKARAK cevapla — kendi özetinden değil. Hüküm verme, yalnız gördüğünü yaz. Bilmiyorsan "BİLMİYORUM" yaz; tahmin etme.\nSoru: ${question}\nZamanla ilgili iddiaları yaklaşık işaret olarak yaz; saniye altı kesinlik uydurma.`;
   } else if (subcommand === 'ara') {
     const topic = needText(args[0], 'Konu');
     prompt = `İnternetten şu konuyu araştır: ${topic}\nKısa, kaynak bağlantılı bulgular ver; emin olmadığın bilgiyi açıkça ayır.`;
@@ -125,7 +133,15 @@ function agyInvocation(subcommand, args) {
   }
   return {
     bin: 'agy',
-    args: ['--dangerously-skip-permissions', '--model', AGY_MODEL, '--output-format', 'json', '--print-timeout', '25m', '-p', prompt],
+    args: [
+      '--dangerously-skip-permissions', '--model', AGY_MODEL, '--output-format', 'json', '--print-timeout', '25m',
+      // `sor` önceki AGY oturumunu sürdürür: film bir kez izlenir, sonraki sorular bedava.
+      // 🔴 `--continue` "EN SON oturuma" döner — araya başka bir agy çağrısı girerse sessizce
+      // onu sürdürür. O yüzden kimlik verildiyse `--conversation` tercih edilir; `gor` çıktısı
+      // oturum kimliğini basar. Kimliksiz `-c` yalnız hemen ardından çağrılırsa güvenlidir.
+      ...(subcommand === 'sor' ? (session ? ['--conversation', session] : ['-c']) : []),
+      '-p', prompt,
+    ],
     kind: 'agy',
     output,
     cwd: REPO_ROOT,
@@ -138,13 +154,21 @@ export function buildInvocation(argv) {
   const dryIndex = values.indexOf('--kuru');
   const dry = dryIndex !== -1;
   if (dry) values.splice(dryIndex, 1);
+  let session = null;
+  const sessionIndex = values.indexOf('--oturum');
+  if (sessionIndex !== -1) {
+    session = needText(values[sessionIndex + 1], 'Oturum kimliği');
+    if (!/^[0-9a-fA-F-]{8,}$/.test(session)) fail(`Oturum kimliği AGY conversation id biçiminde değil: ${session}`);
+    values.splice(sessionIndex, 2);
+  }
   const [subcommand, ...args] = values;
-  if (!['is', 'cur', 'gor', 'ara', 'kare'].includes(subcommand)) fail(`Bilinmeyen alt komut: ${subcommand || '(yok)'}\n${usage()}`);
-  const counts = { is: 1, cur: 1, gor: 2, ara: 1, kare: 2 };
+  if (session && subcommand !== 'sor') fail('--oturum yalnız `sor` ile kullanılır.');
+  if (!['is', 'cur', 'gor', 'sor', 'ara', 'kare'].includes(subcommand)) fail(`Bilinmeyen alt komut: ${subcommand || '(yok)'}\n${usage()}`);
+  const counts = { is: 1, cur: 1, gor: 2, sor: 1, ara: 1, kare: 2 };
   if (args.length !== counts[subcommand]) fail(`${subcommand} için ${counts[subcommand]} argüman gerekli.\n${usage()}`);
   const invocation = (subcommand === 'is' || subcommand === 'cur')
     ? codexInvocation(subcommand, needText(args[0], subcommand === 'cur' ? 'İddia' : 'Görev'))
-    : agyInvocation(subcommand, args);
+    : agyInvocation(subcommand, args, session);
   return { ...invocation, dry, subcommand };
 }
 
@@ -158,6 +182,15 @@ export function parseAgyResponse(raw) {
     fail('AGY status:SUCCESS ama response boş; bu BAŞARISIZLIK sayıldı.');
   }
   return parsed.response.trim();
+}
+
+/** AGY JSON'undan oturum kimliği; yoksa null döner (takip sorusu kimliksiz kalır, çağrı ölmez). */
+export function agyConversationId(raw) {
+  try {
+    const parsed = JSON.parse(raw);
+    const id = parsed?.conversation_id;
+    return typeof id === 'string' && /^[0-9a-fA-F-]{8,}$/.test(id) ? id : null;
+  } catch { return null; }
 }
 
 export function parseCodexResponse(raw) {
@@ -215,6 +248,11 @@ function runAgy(invocation) {
     }
   }
   process.stdout.write(response + '\n');
+  // Oturum kimliği basılmazsa takip sorusu kör `-c`'ye mahkûm kalır; kimlik tek satırda verilir.
+  const session = agyConversationId(raw);
+  if (session && invocation.subcommand !== 'kare') {
+    process.stdout.write(`\nOturum: ${session}\nTakip sorusu (film YENİDEN İZLENMEZ): node scripts/dis-goz.mjs sor "<soru>" --oturum ${session}\n`);
+  }
   if (invocation.subcommand === 'gor') process.stdout.write(AGY_WARNING + '\n');
 }
 
