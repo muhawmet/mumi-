@@ -32,6 +32,8 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [Sürekli push emri](mamilas-surekli-push-emri.md) — her iş parçasından sonra commit+push, çöp dışarıda, sorulmaz.
 - [Skill kanonu GİT](mamilas-skill-kanonu-git.md) — bir skill adı yalnız `.claude/skills`'te yaşar; canlı yüzeydeki ikiz repo nüshasını gölgeler ve yazdığın kuralı öldürür. Duvar: `skillSurface.test.ts`.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
+- [Cılız sahne + yoğunluk](mamilas-ciliz-sahne-ve-yogunluk.md) — "seninkiler sadece güzel": altın kare ile cılız karenin 7 ölçülmüş farkı. 🔴 Kavram yazısı ETİKETE değil sahnenin MALZEMESİNDEN yazılır; etiket deseni yeni sette 7 karede geri sızmış.
+- [Üç kademeli göz](mamilas-uc-kademeli-goz.md) — AGY İŞARETÇİ · ffmpeg CETVEL · Claude'un Read'i HAKEM. claude-video'dan `kare-cek.mjs` fikri alınır, claude-mem'in otomatik özeti ALINMAZ. compact = kaza, /clear = karar.
 - [Zevk madeni](mamilas-zevk-madeni.md) — 71 revizenin SIFIRI sinematografi; Mami kareyi beğenip içindeki YALANI reddediyor. Tam metin `agents/MAMI-ZEVKI.md`.
 - [Hal logu](mamilas-hal-logu.md) — tarih · ne dedi · ne yardım etti · ne çöktürdü. Sorulmadan desen okunmaz.
 - [DEHB ders logu](mamilas-dehb-ders-logu.md) — hangi kavram anlatıldı; yeni kavramdan önce bak.
