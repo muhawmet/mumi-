@@ -1,0 +1,40 @@
+BİLEŞKE KUVVET — KARAKTER & PROP REFERANS PLAKASI PROMPTLARI (v2)
+=========================================================================
+Dünya: pixar_3d_edu · Model Sheet Düzeni: Saf Beyaz Fon (Pure White Seamless Backdrop)
+Nano Banana 2 Referans Üretim Promptları
+=========================================================================
+
+### @mira — Mira (6. Sınıf Öğrencisi Kız Çocuk)
+TAŞIR: Yüz geometrisi, 11-12 yaş Anatolya kız çocuk anatomisi, koyu dalgalı atkuyruğu saç, sıcak mat ten tonu, kahverengi gözler, domates kırmızısı örgü hırka, beyaz yakalı gömlek, lacivert pantolon, beyaz spor ayakkabılar, okul çantası askıları.
+TAŞIMAZ: Üçlü model sheet kadrajı, saf beyaz stüdyo fonu, nötr tarafsız ayakta poz, stüdyo ışığı, ayak altı temas gölgesi.
+-----
+Full-body character reference of a cute stylized Turkish/Anatolian schoolgirl, eleven years old. Soft matte warm Mediterranean skin with gentle subsurface scatter, low specular, never tinted green or grey. She has dark wavy hair tied in a ponytail, warm expressive dark-brown eyes, and a neutral standing posture. Model sheet layout presenting three views side by side on a pure white seamless backdrop: front view, three-quarter view, and side profile view. Figures are at identical height and scale with even spacing. She wears a tomato-red knitted cardigan, white collared shirt, dark-blue trousers, and clean white sneakers. Feature-animation 3D CGI render, tactile fabric weave, flat neutral studio lighting, soft contact shadow beneath feet. FIREWALL NEGATIVE: no waxy plastic skin, no green face tint, no single-view framing, no text.
+-----
+
+### @ali — Ali (6. Sınıf Öğrencisi Erkek Çocuk — Yeşil Kapüşonlu)
+TAŞIR: Yüz geometrisi, 10-12 yaş Anatolya erkek çocuk anatomisi, kalın koyu dalgalı saç, sıcak buğday mat ten tonu, iri sıcak kahverengi gözler, çim yeşili fermuarlı kapüşonlu hırka, beyaz tişört, koyu mavi kot pantolon, beyaz spor ayakkabılar, hafif kalıplı enerjik vücut yapısı.
+TAŞIMAZ: Üçlü model sheet kadrajı, saf beyaz stüdyo fonu, nötr tarafsız ayakta poz, stüdyo ışığı, ayak altı temas gölgesi.
+-----
+Full-body character reference of a cute stylized Turkish/Anatolian schoolboy, ten years old. Warm tan Mediterranean skin rendered as soft matte subsurface scatter, low specular, never tinted green or grey. He has thick dark wavy hair in appeal clumps, big expressive warm-brown eyes, sturdy friendly build, and neutral posture. Model sheet layout showing three views side by side on a pure white seamless backdrop: front view, three-quarter view, and side profile view. Figures at identical height and scale with even spacing. He wears a grass-green zip hoodie over a white tee, dark-blue denim jeans, and simple white sneakers. Feature-animation 3D CGI render, woven fabric stitch, flat neutral studio lighting, soft contact shadow beneath feet. FIREWALL NEGATIVE: no waxy plastic skin, no green facial discoloration, no single-view framing, no text.
+-----
+
+### @can — Can (6. Sınıf Öğrencisi Erkek Çocuk — Sarı Kazaklı)
+TAŞIR: Yüz geometrisi, 10-12 yaş Anatolya erkek çocuk anatomisi, düz koyu kahverengi yandan ayrılmış saç, açık zeytini mat ten tonu, sakin düşünen koyu renk gözler, hardal sarısı bisiklet yaka örgü kazak, paçası kıvrık mavi pantolon, ince uzun boylu vücut yapısı, basit spor ayakkabılar, Ali'den belirgin şekilde farklı görünüş.
+TAŞIMAZ: Üçlü model sheet kadrajı, saf beyaz stüdyo fonu, nötr tarafsız ayakta poz, stüdyo ışığı, ayak altı temas gölgesi.
+-----
+Full-body character reference of a cute stylized Turkish/Anatolian schoolboy, ten years old, visibly distinct from @ali. Light olive Mediterranean skin rendered as soft matte subsurface scatter, low specular, never tinted green or grey. Straight dark-brown hair with a side part, thoughtful dark eyes, taller slimmer build, and neutral posture. Model sheet layout displaying three views side by side on a pure white seamless backdrop: front view, three-quarter view, and side profile view. Figures at identical height and scale with even spacing. He wears a mustard-yellow crewneck sweater, blue rolled-cuff trousers, and simple sneakers. Feature-animation 3D CGI render, soft knit texture, flat neutral studio lighting, soft contact shadow beneath feet. FIREWALL NEGATIVE: no waxy plastic skin, no green face tint, no single-view sheet, no text.
+-----
+
+### @araba — Kırmızı Oyuncak Kamyonet (Bileşke Arabası)
+TAŞIR: Nesne geometrisi, domates kırmızısı boyalı mat-saten metal gövde, tombul yuvarlak hatlı oyuncak kamyonet formu (açık kasalı pickup), mat siyah iri kauçuk lastikler, sade gümüş jant kapakları, krom tampon, yuvarlak farlar, hafif koyu camlı ön rüzgarlık, oyuncak ölçeği ve oranlar (Beetle'dan tamamen farklı).
+TAŞIMAZ: Üçlü görünüm model sheet kadrajı, saf beyaz stüdyo fonu, stüdyo ışığı, plakanın kendi duruş açısı, zemin temas gölgesi, çamur veya dış mekan ögeleri.
+-----
+Full object reference of a stylized toy car — a chunky rounded tomato-red toy pickup truck with friendly overscaled child-appeal proportions. It features a rounded cab, small open rear cargo bed, matte tomato-red painted metal body, big soft-matte black rubber tires with plain silver hubcaps, simple chrome bumper, and round headlights. Model sheet layout displaying three views on a pure white seamless backdrop: three-quarter hero angle, side profile view, and a close-up macro material detail shot showing painted metal sheen and rubber tire grain. Feature-animation 3D CGI render, satin painted metal sheen, flat neutral studio lighting, soft contact shadow beneath tires. FIREWALL NEGATIVE: no real-car photorealism, no Beetle silhouette, no driver, no text, no logo, no mud.
+-----
+
+### @kitap — Fen Bilgisi Ders Kitabı (Kuvvet ve Hareket)
+TAŞIR: Ciltli kitap geometrisi, koyu lacivert kumaş dokulu sert kapak, krem rengi iç panel, girintili-çıkıntılı kabartma altın Türkçe başlık "KUVVET VE HAREKET", paneli çerçeveleyen ince altın yaldız çizgi, krem sayfa kenarları ve yaprak çizgileri, alt kenardan çıkan tek domates kırmızısı saten ayraç kurdelesi, nesne ölçeği.
+TAŞIMAZ: Üçlü görünüm model sheet kadrajı, saf beyaz stüdyo fonu, masadaki yatay duruş açısı, stüdyo ışığı, temas gölgesi, masadaki diğer nesneler veya kütüphane ortamı.
+-----
+Full object reference of a hardcover science schoolbook — a sturdy closed hardback prop. It features a deep navy-blue cloth-textured board cover with a warm cream inset panel, embossed Turkish title "KUVVET VE HAREKET" in clean raised gold chiseled letters, a thin gold rule framing the panel, cream paper edges with fine page striations, and one tomato-red satin ribbon bookmark trailing from the bottom edge. Model sheet layout displaying three views on a pure white seamless backdrop: three-quarter hero angle, side profile view showing spine and paper pages, and close-up material detail showing cloth weave and gold embossing. Feature-animation 3D CGI render, flat neutral studio lighting, soft contact shadow beneath book. FIREWALL NEGATIVE: no brand logo, no extra text, no photoreal capture, no cel-shading outlines, no extra books.
+-----
