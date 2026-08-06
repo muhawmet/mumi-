@@ -68,6 +68,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 ## Araçlar
 
 - [agy — Claude'un video gözü](mamilas-agy-video-gozu.md) — Claude klip izleyemez, Gemini izler. AGY'ye HÜKÜM sordurma, TARİF ettir. PATH tuzağı içeride.
+- [Magnific MCP hattı](mamilas-magnific-mcp-hatti.md) — sohbetten kare basıyor (ölçüldü: üretildi + gözle görüldü), `simulate_cost` exact fiyat verir. 🔴 library BOŞ → @handle süreklilik hattı MCP'den kurulmuyor; kredi %86 tükenmiş.
 - [Higgsfield hattı](mamilas-higgsfield-hatti.md) — sohbetten kare/klip üretimi çalışıyor (ölçüldü). 🔴 Element referansı opsiyon değil TAŞIYICI KOLON: referanssız basılan K01'de Efe yetişkin geldi. Fiyat matrisi + Kling referans almıyor + `--sound off` tuzağı içeride.
 - [Üç katman hükmü](mamilas-uc-katman-hukmu.md) — 13 kollu denetim: sahne tasarımı > kontrol > kelime. Kling 45 kelime ister, biz 260 yazıyoruz. Ham raporlar `artifacts/denetim-2026-07-31/`.
 - [Proje enzimi rutini](mamilas-proje-enzimi-rutini.md) — her videoda `_ENZIM.md` açılır; "bunu kaydet" → tek satır, "bitti" → ölçülebilen kontrole gider, yasaya düzyazı EKLENMEZ.
