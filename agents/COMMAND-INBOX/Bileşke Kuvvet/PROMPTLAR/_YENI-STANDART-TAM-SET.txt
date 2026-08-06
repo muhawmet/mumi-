@@ -1,0 +1,780 @@
+# K01 — "Bu Mira. Her sabah olduğu gibi bugün de okula gitmek için yola çıktı."
+FİKİR: Günün başlangıcı, kapı eşiğinden sokağa adım atan Mira'nın sabah enerjisini kurma.
+-----
+35mm lens at f/4.5, eye-level three-quarter wide view, standing about three metres back from the carved wooden doorway of a warm Anatolian house. @mira steps cheerfully over the polished stone threshold, holding her backpack strap with one hand while pausing on the top step. The living street corner features a hand-hammered copper çaydanlık resting on a windowsill, a glass tea tumbler casting an amber reflection, a small wooden stool beside a clay pot of red geraniums, and a cobbled stone path leading toward the school. Direct morning sunlight streams from the upper-left, hitting the stone steps and creating soft matte skin tones with low specular highlight on her face, never tinted green or grey. As her front shoe touches the threshold, a soft round warm-golden GLOW of light subtly outlines the contact point where her foot applies force onto the stone. The warm morning light direction and natural shadows establish the spatial continuity for her school journey. Her shoes rest firmly flat against the weathered limestone step, casting a distinct soft contact shadow beneath the soles. Feature-animation 3D CGI render with tactile textures, clear spatial depth, vibrant Mediterranean daylight, and zero cel-shading outlines.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K01 with tactile wooden and stone surfaces, soft matte subsurface skin scatter, and appeal-driven child silhouette.
+LIGHT AND PALETTE: Golden hour morning key light from upper-left for K01, soft warm ambient fill from cobbled street, crisp rim lighting along shoulders, rich warm palette of terracotta and stone grey.
+TEXT: a small carved wooden street plaque mounted on the doorframe displays raised painted Turkish letters reading left-to-right, never mirrored, two words, eight letters: K İ R T A S İ Y E (the seventh a dotted capital İ)
+NEGATIVE: K01 firewall: no photoreal live-action, no cel shading, no black outlines, no green or grey skin cast, no waxy plastic skin, no drawn vector graphics, no floating objects
+-----
+
+# K02 — "Kapıyı itti, ağır çantasını omzuna aldı ve otobüse yetişmek için koştu."
+FİKİR: Çantanın omza yüklenmesi ve adımların koşuya dönüşmesiyle fiziksel çabanın başlaması.
+-----
+35mm lens at f/4.5, eye-level side profile tracking view, standing about four metres back along the paved sidewalk of the sunlit neighborhood street. @mira runs forward with dynamic momentum, adjusting her backpack strap over her shoulder while leaning eagerly into her energetic stride. The living street environment features a wrought-iron garden fence, an antique brass door handle mounted on a wooden gate, a decorative ceramic planter, and a yellow bus stop sign anchored in concrete. Warm directional sunlight cuts across the sidewalk, creating soft matte skin with natural warmth on her face, never tinted green or grey, as light glints off the fabric weave of her shoulder strap. A soft round warm-golden GLOW of light pulses at the physical contact point where her hand pulls the heavy backpack strap, demonstrating mechanical force in action. Continuity is maintained from the previous shot through the consistent morning sunlight angle and her energetic forward movement along the same cobbled street layout. Both sneakers touch the paved ground in mid-stride, each shoe casting a clear soft contact shadow against the sunlit cobblestones below. Feature-animation 3D CGI style with expressive character motion, rich material shaders, soft atmospheric depth, and clean appeal.
+
+STYLE: Feature-animation 3D CGI render for K02 with painterly textures, dynamic appeal-driven pose, matte subsurface scatter skin, and realistic fabric surface detail.
+LIGHT AND PALETTE: Direct warm morning sunlight from camera-left for K02, soft cool ambient fill from clear sky, bright highlights on brass metal details, palette of warm ochre and navy blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K02 firewall: no motion blur distortion, no floating feet, no drawn force arrows, no green face tint, no waxy plastic skin, no specular sheen, no cel-shading outlines, no garbled text
+-----
+
+# K03 — "Aslında Mira farkında değildi ama o sabah yaptığı her hareketin arkasında görünmez bir güç vardı: Kuvvet!"
+FİKİR: Sokak sahnesinde hareketin anlık donmasıyla adımların ve çanta askısının ardındaki gizemli kuvvet aurasının açığa çıkması.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing three metres back near the neighborhood town square. @mira pauses mid-step near a stone fountain, looking upward with wide curiosity as the invisible physical force behind her daily movement is visually revealed. The living environment includes a carved stone water trough, a brass faucet with water droplets, a wooden park bench, and a small potted olive tree in a terracotta container. Diffuse morning sunlight illuminates the scene, casting warm matte skin shading across her face with low specular reflection, never tinted green or grey. Around her stepping shoe and backpack strap, a soft round warm-golden GLOW of light expands into a luminous energy aura, visually revealing the invisible force driving her physical action. Continuity carries over from the running movement of K02, preserving the warm morning sun orientation and neighborhood architectural context. Her shoe rests firmly flat on the stone paving, creating an explicit soft contact shadow on the ground surface beneath her feet. Feature-animation 3D CGI render with luminous visual effects, rich tactile materials, and appealing storybook aesthetic.
+
+STYLE: Feature-animation 3D CGI for K03 with soft subsurface scattering, painterly environmental textures, glowing energy effects integrated into physical props, and appeal-driven forms.
+LIGHT AND PALETTE: Soft morning sunlight from high-left for K03, gentle golden energy glow fill, cool blue shadow bounce from fountain stone, palette of terracotta, warm gold, and stone grey.
+TEXT: a decorative brass plaque mounted on the stone fountain displays raised stamped Turkish capital letters reading left-to-right, never mirrored, two words, nine letters: B İ L İ M   K Ö Ş E S İ (the second and fifth a dotted capital İ, the seventh a capital Ö, the eighth a capital Ş)
+NEGATIVE: K03 firewall: no drawn vector graphics, no saffron flowers, no plastic skin, no green face discoloration, no floating character, no illegible text, no photoreal live-action
+-----
+
+# K04 — "Kapıyı açarken, topa vururken ya da market arabasını iterken hep kuvvet uygularız."
+FİKİR: Üç ayrı günlük hayat temasının (kapı pirinç kolu, emaye market arabası kolu, deri futbol topu) fiziksel kuvvet aurasıyla üçlü görünümü.
+-----
+35mm lens at f/4.0, slightly low-angle close three-quarter view, standing two metres back from a split interactive display setup. An anonymous Turkish child's hands and feet perform three daily force actions: pressing a solid brass door handle, kicking a stitched leather football, and pushing a red enamel shopping trolley handle. The living environment contains an oak wood door frame with brass hinges, a patch of green lawn grass with dew drops, and a red enamel grocery trolley with rubber wheels. Warm directional key light reflects off the polished brass and leather textures, showing warm matte skin tones on the hands with low specular scatter, never tinted green or grey. At each of the three contact points, a soft round warm-golden GLOW of light shines brightly, proving how physical force is applied through contact. Continuity is maintained through the recurring warm-golden force glow quality established in the previous frame. The leather football and trolley wheels touch the ground surfaces directly, each casting a clear soft contact shadow onto the grass and indoor floor. Feature-animation 3D CGI render with rich physical material properties, clear tactile feedback, and vibrant color harmonies.
+
+STYLE: Feature-animation 3D CGI for K04 showcasing high-detail physical surface shaders, tactile materials, soft subsurface scatter skin shading, and luminous glow accents.
+LIGHT AND PALETTE: Clean directional key light from upper-right for K04, warm bounce light from brass and red enamel surfaces, palette of forest green, brass gold, and enamel red.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K04 firewall: no cut-off floating limbs, no drawn vector graphics, no green skin tint, no plastic wax sheen, no garbled letters, no dark muddy shadows
+-----
+
+# K05 — "Peki bir cismi her zaman tek bir kuvvet mi etkiler? Tabii ki hayır."
+FİKİR: Mira'nın sokak köşesinde durup gökyüzüne doğru bakarak 'tek bir kuvvet mi?' sorusuyla askıda kalması ve gülümseyerek başını sallaması.
+-----
+35mm lens at f/4.5, eye-level three-quarter medium view, standing three metres back near a cozy neighborhood bakery corner. @mira stands thoughtfully near a wooden bench, tilting her head slightly with a curious smile while gesturing toward a red apple resting on a small outdoor table. The living street environment features a woven wicker basket filled with fresh bread rolls, a clay tea cup on a small round wooden table, a potted geranium, and a decorative wooden street lamp. Soft warm morning key light illuminates her face, highlighting her warm matte skin with low specular subsurface scatter, never tinted green or grey. On the wooden table, a soft round warm-golden GLOW of light surrounds the red apple, visually questioning if only a single force acts upon it. Continuity connects with the prior street setting in K01-K03, maintaining the established morning sun direction and architectural style. Her shoes and the wooden table legs rest solidly on the cobbled pavement, each casting a clear soft contact shadow beneath. Feature-animation 3D CGI with warm narrative atmosphere, expressive facial appeal, and detailed material crafting.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan tradition for K05, featuring soft painterly textures, warm matte skin rendering, and appealing character expressions.
+LIGHT AND PALETTE: Warm morning key light from upper-left for K05, soft golden bounce from cobblestones, cool sky fill in shadows, palette of terracotta, warm oak, and sky blue.
+TEXT: a wooden shop sign hanging above the bakery window displays carved painted Turkish letters reading left-to-right, never mirrored, one word, five letters: F I R I N (the second a capital I without dot)
+NEGATIVE: K05 firewall: no waxy plastic skin, no green facial tone, no drawn vector graphics, no floating props, no garbled text, no photoreal live-action
+-----
+
+# K06 — "Bazen birden fazla kuvvet bir araya gelir ve güçlerini birleştirir."
+FİKİR: Ahşap bir sokak bankının iki yanından aynı yöne doğru uygulanan iki ayrı sıcak-altın ışık aurasının tek bir güçlü aura hâlinde erimesi.
+-----
+50mm lens at f/4.0, eye-level three-quarter wide view, standing three metres back from a sturdy wooden garden bench on a sunlit stone terrace. Two distinct physical force inputs act upon the heavy oak bench, causing it to shift slightly across the smooth flagstone floor surface. The living environment includes a copper watering can resting near a terracotta pot, a stone retaining wall covered with green ivy, a wooden flower crate, and a patterned outdoor rug. Bright morning sunlight streams across the terrace, catching the rough wood grain of the bench and smooth stone textures with rich physical fidelity. Two separate soft round warm-golden GLOWs of light merge together at the side of the bench into a single unified luminous aura, demonstrating forces combining their strength. Continuity carries over the warm-golden glow effect from K05, expanding it into a multi-force combination concept on the same outdoor terrace. The sturdy bench legs rest firmly flat on the flagstone floor, casting clear soft contact shadows beneath each wooden foot. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with tactile surface shaders, clear physical cause-and-effect visualization, and warm Mediterranean lighting.
+
+STYLE: Feature-animation 3D CGI for K06 featuring realistic physical materials, luminous effect integration without graphics, soft ambient occlusion, and appeal-driven staging.
+LIGHT AND PALETTE: Direct morning sun from upper-left for K06, warm golden glow from combined force energy, soft ambient shadows, palette of oak brown, terracotta, and warm gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K06 firewall: no drawn vector graphics, no saffron flowers, no floating bench legs, no harsh black shadows, no cel shading, no photoreal live-action
+-----
+
+# K07 — "Mira bugün işte bu gizemli gücü, yani bileşke kuvveti keşfedecek."
+FİKİR: Mira'nın tarihi okul binasının ahşap kapısından içeri adım atarak keşif yolculuğuna başlaması.
+-----
+35mm lens at f/4.5, eye-level three-quarter wide view, standing four metres back from the grand arched entrance of a historic Turkish school building. @mira walks purposefully through the open double wooden doors, her face lit with excitement and curiosity as she enters the sunlit hallway. The living school entrance features carved stone arches, a polished brass door knocker, a ceramic umbrella stand holding two colorful umbrellas, and potted green fern plants flanking the doorway. Warm sunlight pours through the open archway, illuminating her warm matte skin with low specular subsurface scatter, never tinted green or grey. As her front foot lands on the polished marble floor, a soft round warm-golden GLOW of light gently radiates around her shoe, signaling the start of her scientific discovery. Continuity is maintained through her backpack position and the consistent warm morning sun angle seen in the earlier outdoor scenes. Her shoes make firm contact with the marble floor, casting soft contact shadows on the polished surface below. Feature-animation 3D CGI render with rich architectural depth, inviting morning light, and premium animation appeal.
+
+STYLE: Feature-animation 3D CGI for K07 with soft architectural lighting, matte subsurface skin shading, rich material textures, and clear narrative clarity.
+LIGHT AND PALETTE: Bright morning key light streaming through archway for K07, soft golden hall bounce, cool exterior rim light, palette of warm marble, dark mahogany, and fern green.
+TEXT: a carved stone plaque mounted above the school entrance arch displays raised chiseled Turkish capital letters reading left-to-right, never mirrored, two words, nine letters: K Ö Y   O K U L U (the second a capital Ö, the sixth a capital U)
+NEGATIVE: K07 firewall: no English text, no garbled letters, no plastic skin, no green face tint, no drawn vector graphics, no floating characters
+-----
+
+# K08 — "Hazırsanız, Mira'nın yolculuğuna biz de katılalım!"
+FİKİR: Okul koridorunda ilerleyen Mira'nın neşeyle omzunun üstünden dönüp izleyiciyi sınıfa davet etmesi.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium tracking shot, standing three metres back in the sunlit school corridor. @mira turns back over her shoulder with a joyful, welcoming smile, gesturing with an open hand toward the science classroom door. The living hallway environment features polished wooden floorboards, glass-framed student science posters on warm plaster walls, a small wooden bench, and a brass bell mounted near the doorway. Warm sunlight filtering through tall corridor windows illuminates her warm matte skin with soft subsurface scatter, low specular reflection, never tinted green or grey. Near her open hand, a subtle soft round warm-golden GLOW of light shimmer accentuates her inviting gesture without obscuring the background. Continuity flows smoothly from her entrance in K07, preserving her posture, backpack placement, and the warm interior school aesthetic. Her sneakers rest flat on the wooden floorboards, casting natural soft contact shadows beneath her feet. Feature-animation 3D CGI render with inviting warm tones, high character appeal, and clean architectural composition.
+
+STYLE: Feature-animation 3D CGI for K08 featuring soft indoor lighting, painterly wooden floor textures, matte skin rendering, and high emotional connection.
+LIGHT AND PALETTE: Warm window key light from camera-left for K08, soft ambient hallway bounce, bright catchlight in eyes only, palette of warm oak, cream plaster, and sky blue.
+TEXT: a polished wooden door plaque beside the classroom entrance displays raised brass Turkish capital letters reading left-to-right, never mirrored, two words, eleven letters: F E N   S I N I F I (the fourth and ninth a capital I without dot)
+NEGATIVE: K08 firewall: no waxy skin, no green face tone, no drawn vector graphics, no floating feet, no garbled letters, no dark shadowy corners
+-----
+
+# K09 — "Mira'nın ilk dersi fendi."
+FİKİR: Aydınlık fen sınıfına genel bakış; ahşap sıralar, saksı sardunyalar ve dersin başlaması.
+-----
+28mm lens at f/5.6, eye-level wide overview shot, standing five metres back from the front of a bright Anatolian science classroom. A group of diverse Turkish middle-school students sit attentively at wooden double desks, looking forward toward the teacher's desk and green chalkboard. The living classroom features a teacher's oak desk with a ceramic mug, a window sill with potted red geraniums, a globe of the Earth, and wall charts of solar system orbits. Sunlight streams through large side windows, casting soft matte skin shading on the children with gentle subsurface scatter, low specular, never tinted green or grey. A soft round warm-golden GLOW of light shines gently on a demonstrative spring balance resting on the front teacher's desk. Continuity seamlessly bridges the hallway corridor in K08 with the interior classroom setup where the lesson unfolds. Every desk leg, chair base, and student shoe rests securely on the parquet floor, casting clear soft contact shadows beneath them. Feature-animation 3D CGI render with rich group staging, tactile classroom props, and inspiring warm atmosphere.
+
+STYLE: Feature-animation 3D CGI for K09 with broad spatial depth, authentic Turkish classroom details, matte skin rendering, and harmonious color composition.
+LIGHT AND PALETTE: Abundant daylight from large windows on left for K09, soft ceiling fill, warm wood bounce, palette of chalkboard green, oak tan, and geranium red.
+TEXT: a paper wall chart hanging on the classroom wall displays printed ink Turkish capital letters reading left-to-right, never mirrored, two words, twelve letters: G Ü N E Ş   S İ S T E M İ (the second a capital Ü, the sixth a capital Ş, the eighth and eleventh a dotted capital İ)
+NEGATIVE: K09 firewall: no English posters, no garbled text, no waxy plastic skin, no specular sheen, no green facial discolouration, no drawn vector graphics, no floating furniture
+-----
+
+# K10 — "Öğretmeni tahtaya sevimli bir kutu çizdi ve kutunun üzerine oklar koydu."
+FİKİR: Yeşil tahtada tebeşirle çizilen sevimli kutunun üzerine uygulanan kuvvetlerin netleşmesi.
+-----
+50mm lens at f/4.0, eye-level medium view, standing three metres back facing the front green chalkboard of the classroom. The female Turkish teacher stands beside the chalkboard holding a piece of white chalk, having just drawn a stylized wooden box illustration with soft direction indicators. The living chalkboard area includes a wooden chalk tray holding colored chalks, a felt board eraser, a wooden meter ruler hanging on a hook, and a small potted desk plant. Warm directional classroom light illuminates the teacher's hand and face, showing warm matte skin shading with low specular scatter, never tinted green or grey. On the green board, the box illustration is illuminated by a soft round warm-golden GLOW of light at the contact point where the chalk completed the line drawing. Continuity carries over the classroom setting from K09, maintaining identical chalkboard texture, wooden trim, and daylight direction. The teacher's shoes rest firmly on the wooden platform floor, casting a natural soft contact shadow beneath her feet. Feature-animation 3D CGI render with crisp chalkboard details, tactile wood and chalk textures, and clear educational focus.
+
+STYLE: Feature-animation 3D CGI for K10 featuring high-detail chalkboard shaders, soft matte subsurface skin, warm interior lighting, and clean graphic legibility.
+LIGHT AND PALETTE: Key light from left window for K10, soft chalkboard reflection, warm wood fill, palette of deep green board, white chalk, and warm oak.
+TEXT: the green chalkboard features hand-written white chalk Turkish capital letters reading left-to-right, never mirrored, three words, eleven letters: K U T U   V E   O K L A R
+NEGATIVE: K10 firewall: no illegible text, no waxy plastic skin, no green face tint, no photoreal live-action, no floating teacher, no drawn vector arrows
+-----
+
+# K11 — "Sonra bir kuvveti tam olarak tanımlamak için dört şeye ihtiyacımız olduğunu anlattı."
+FİKİR: Tahtadaki dört temel elemanın başlıklar hâlinde sıralanması ve ışığın maddeler üstünde yürümesi.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two and a half metres back in front of the chalkboard presentation area. The chalkboard displays a central stylized box diagram surrounded by four numbered headline items listed cleanly in white chalk. The living display area features a wooden pointer resting on the ledge, a box of chalk sticks, a brass desk lamp, and a small framed science diagram. Clean daylight illuminates the board surface, highlighting the physical texture of the slate and wood trim with low specular clarity. A soft round warm-golden GLOW of light glides sequentially across the numbered headings on the board, visually emphasizing the four essential force properties. Continuity preserves the chalkboard illustration from K10, building directly upon the box drawing and classroom lighting setup. The wooden display stand rests flat on the floor surface, casting a clear soft contact shadow along its base. U Y G U L A M A N O K T A S I , 2. D O Ğ R U L T U , 3. Y Ö N , 4. B Ü Y Ü K L Ü K (with clear Turkish letters Ğ, Ö, Ü). Feature-animation 3D CGI render with high educational legibility, rich tactile board shaders, and warm focused lighting.
+
+STYLE: Feature-animation 3D CGI for K11 with strong graphic clarity, physical chalk textures, warm soft ambient glow, and appealing academic aesthetics.
+LIGHT AND PALETTE: Focused daylight key from left for K11, soft golden effect glow traversing headlines, ambient classroom fill, palette of slate green, chalk white, and warm gold.
+TEXT: the green chalkboard displays neat white chalk Turkish capital letters reading left-to-right, never mirrored, four numbered items: 1. U Y G U L A M A   N O K T A S I ,   2. D O Ğ R U L T U ,   3. Y Ö N ,   4. B Ü Y Ü K L Ü K (with clear Turkish letters Ğ, Ö, Ü)
+NEGATIVE: K11 firewall: no garbled text, no English labels, no plastic wax sheen, no drawn vector graphics, no floating items, no dark heavy shadows
+-----
+
+# K12 — "Birincisi uygulama noktası, yani kuvvetin cisme etki ettiği yer."
+FİKİR: Kutu üzerindeki 1. madde olan temas ve uygulama noktasının sıcak-altın bir dairesel aura ile vurgulanması.
+-----
+50mm lens at f/4.0, eye-level close-up view, standing two metres back focused on the central box illustration on the chalkboard. The illustration shows a solid wooden cube resting on a flat surface, with focus concentrated on the exact point of contact where force is applied. The living chalkboard detail includes chalk dust along the lower wooden ledge, a wooden compass tool, and a felt eraser resting on the tray. Soft diffuse indoor key light illuminates the green board surface, showing realistic matte slate texture and fine chalk grain without harsh glare. At the exact point where force meets the box, a bright soft round warm-golden GLOW of light shines in a circular aura, proving the concept of uygulama noktası. Continuity connects directly with K11, zooming into the first specific property of force established on the same chalkboard. The chalk-drawn box rests on a drawn horizontal baseline, with the physical board frame casting a soft contact shadow against the wall. Feature-animation 3D CGI render with pristine graphic clarity, rich slate textures, and warm luminous highlight effects.
+
+STYLE: Feature-animation 3D CGI for K12 featuring focused educational framing, tactile chalk slate shaders, soft golden aura effects, and clean aesthetic appeal.
+LIGHT AND PALETTE: Soft key light from camera-left for K12, intense warm-golden circular glow at contact point, soft green board bounce, palette of slate green and radiant gold.
+TEXT: neat white chalk lettering beside the highlight on the green chalkboard reads left-to-right, never mirrored, two words, sixteen letters: U Y G U L A M A   N O K T A S I
+NEGATIVE: K12 firewall: no drawn vector arrows, no saffron flowers, no plastic skin, no garbled letters, no floating elements, no photoreal live-action
+-----
+
+# K13 — "İkincisi doğrultu; tıpkı doğu-batı gibi bir çizgi."
+FİKİR: Kutu zemininde doğu-batı eksenini gösteren yatay bir çizginin tahta üzerinde uzanması.
+-----
+50mm lens at f/4.0, eye-level medium close view, standing two metres back facing the chalkboard force diagram. The chalkboard illustration shows a straight horizontal axis line extending infinitely through the box, representing the line of action. The living environment contains a wooden T-square ruler resting against the board, a tray of white chalk sticks, and a small potted clover plant on the desk. Natural window daylight illuminates the board, casting soft diffuse light across the slate texture with zero plastic sheen. Along the horizontal line, a soft round warm-golden GLOW of light moves steadily from left to right, demonstrating the spatial concept of doğrultu. Continuity carries over the box and application point from K12, extending the diagram to reveal the second force property. The wooden desk edge in the foreground rests flat on the classroom floor, casting a soft contact shadow onto the parquet. Feature-animation 3D CGI render with high graphic clarity, detailed chalk texture, and warm educational illumination.
+
+STYLE: Feature-animation 3D CGI in premium educational style for K13, featuring rich slate textures, soft animated light paths, and clear diagrammatic appeal.
+LIGHT AND PALETTE: Clean window daylight from upper-left for K13, warm golden light pulse along axis line, slate green ambient fill, palette of chalk white, golden yellow, and slate green.
+TEXT: white chalk lettering above the axis line on the green chalkboard displays three words, sixteen letters reading left-to-right, never mirrored: D O Ğ R U L T U :   D O Ğ U - B A T I (with capital Ğ clearly written)
+NEGATIVE: K13 firewall: no drawn vector graphics, no garbled text, no English words, no plastic wax sheen, no floating props, no harsh dark shadows
+-----
+
+# K14 — "Üçüncüsü yön; örneğin doğuya doğru olması."
+FİKİR: Yatay çizginin doğu ucuna oturarak yönü gösteren tebeşir formunun kilitlenmesi.
+-----
+50mm lens at f/4.0, eye-level close-up view, standing two metres back focusing on the right end of the horizontal direction line. The chalkboard diagram shows the east-bound direction along the line of action clearly established relative to the box illustration. The living chalkboard surroundings include a wooden pointer stick resting on the chalk ledge and a felt board eraser. Soft diffuse classroom daylight falls across the green board surface, showing fine chalk dust and matte slate material texture without glare. At the eastern terminus of the line, a luminous soft round warm-golden GLOW of light settles gently to illuminate the direction concept without graphic overlays. Continuity seamlessly extends K13's line of action by specifying its eastward direction on the same chalkboard setup. The wooden eraser on the ledge rests flat against the wood trim, casting a clear soft contact shadow underneath. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with clean educational focus, vibrant effect lighting, and tactile board textures.
+
+STYLE: Feature-animation 3D CGI for K14 featuring precise graphic staging, soft subsurface effect glow, realistic slate texture, and warm educational appeal.
+LIGHT AND PALETTE: Diffused side key light from left for K14, radiant warm-golden glow on eastern terminus, soft green ambient bounce, palette of slate green and warm gold.
+TEXT: white chalk lettering beside the eastern terminus on the green chalkboard reads left-to-right, never mirrored, two words, nine letters: Y Ö N :   D O Ğ U (the second a capital Ö, the seventh a capital Ğ)
+NEGATIVE: K14 firewall: no drawn vector graphics, no vector arrows, no garbled text, no plastic skin, no floating props, no photoreal live-action
+-----
+
+# K15 — "Ve dördüncüsü büyüklük, yani kuvvetin Newton cinsinden değeri; mesela 5 N."
+FİKİR: Dinamometre yayı gerildikçe pirinç ibrenin 5 N değerine oturmasıyla büyüklük kavramının kanıtlanması.
+-----
+50mm lens at f/3.5, eye-level macro close-up view, standing one and a half metres back focused on a brass spring dynamometer on the teacher's desk. The clear acrylic cylinder of the dynamometer houses an internal steel spring that stretches down under tension, its red indicator pin pointing precisely at 5 N. The living desk environment features a polished oak wood tabletop, a brass calibration screw, a ceramic mug, and a wooden block being weighed. Warm directional desk light glints off the polished brass fittings and clear acrylic, creating low specular reflection on metal and matte wood grain textures. A soft round warm-golden GLOW of light encapsulates the stretched spring coil, dynamically proving magnitude through physical mechanical force. Continuity completes the sequence of four force properties, building from the chalkboard concepts in K11-K14 to a tangible physical device. The heavy brass base of the dynamometer rests solidly flat on the oak desk, casting a distinct soft contact shadow beneath it. Feature-animation 3D CGI render with exquisite mechanical detail, tactile wood and metal shaders, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K15 with high-precision prop modeling, realistic glass and metal shaders, soft glowing energy aura, and warm physical appeal.
+LIGHT AND PALETTE: Warm brass desk lamp key light from upper-right for K15, golden spring glow reflection, cool ambient bounce, palette of brass gold, oak brown, and clear acrylic.
+TEXT: etched black numerals and letters on the clear acrylic cylinder of the dynamometer read left-to-right, never mirrored, six gauge readings: 0 N ,   1 N ,   2 N ,   3 N ,   4 N ,   5 N (with the red indicator pin pointing exactly at 5 N)
+NEGATIVE: K15 firewall: no garbled numbers, no drawn vector graphics, no plastic wax sheen, no floating instrument, no green skin tint, no photoreal live-action
+-----
+
+# K16 — "Mira defterine not aldıkça bir şeyi merak etti: Ya bir cisme aynı anda birden fazla kuvvet etki ederse?"
+FİKİR: Mira'nın defterinden başını kaldırıp merakla tahtaya bakarak yeni soruyu sorması.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing two and a half metres back beside Mira's classroom desk. @mira pauses writing in her open science notebook, holding a wooden pencil above the page as she looks up toward the board with wide, curious eyes. Her living desk space features an open hardcover notebook with hand-drawn pencil sketches, a wooden eraser, a metal pencil case, and a small glass water bottle. Warm window daylight illuminates her face, highlighting her warm matte skin with soft subsurface scatter, low specular reflection, never tinted green or grey. Above her open notebook, a gentle soft round warm-golden GLOW of light hovers near her pencil tip, visually representing her curiosity about multiple forces. Continuity connects with the classroom setting established in K09-K10, preserving her seating position, notebook layout, and daylight direction. Her forearm and notebook rest flat on the oak desk surface, casting soft contact shadows onto the wood grain. Feature-animation 3D CGI render with high emotional appeal, rich student desk props, and warm inquisitive atmosphere.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan tradition for K16, featuring soft matte skin shading, detailed paper textures, and appealing inquisitive expression.
+LIGHT AND PALETTE: Soft window key light from upper-left for K16, warm golden aura bounce from notebook, cool shadow fill, palette of oak tan, cream paper, and sky blue.
+TEXT: handwritten graphite pencil notes on the cream paper page of the open notebook read left-to-right, never mirrored, two Turkish words, twenty-one letters: K U V V E T İ N   Ö Z E L L İ K L E R İ (with dotted capital İ and capital Ö)
+NEGATIVE: K16 firewall: no waxy plastic skin, no green face tint, no garbled handwriting, no drawn vector graphics, no floating objects, no photoreal live-action
+-----
+
+# K17 — "İşte tam o an öğretmeni sihirli tanımı söyledi:"
+FİKİR: Öğretmenin tahtaya dönüp sihirli tanımı yazmaya hazırlandığı an, sınıfın odaklanması.
+-----
+50mm lens at f/4.0, eye-level medium view, standing three metres back facing the front of the bright science classroom area. The Turkish female teacher turns to face the green chalkboard with a warm, encouraging smile, raising a piece of white chalk to write the key scientific definition. The living classroom environment features student wooden desks, a ceramic water carafe on the teacher's table, a potted green fern, and a wall clock showing 10:15 AM. Soft window daylight illuminates the teacher's face, highlighting her warm matte skin with low specular subsurface scatter, never tinted green or grey. A soft round warm-golden GLOW of light begins to form at her chalk tip, signaling the upcoming reveal of the central net force definition. Continuity carries forward the classroom setup from K16, maintaining identical chalkboard texture, desk placement, and morning sun angle. Her shoes rest flat on the wooden platform floor, casting a natural soft contact shadow beneath her feet. Feature-animation 3D CGI render with rich indoor lighting, warm teacher-student connection, and clear visual anticipation.
+
+STYLE: Feature-animation 3D CGI with soft atmospheric depth for K17, painterly chalkboard shaders, warm matte skin rendering, and high character appeal.
+LIGHT AND PALETTE: Clean window daylight from upper-left for K17, soft golden chalk tip glow, warm oak floor bounce, palette of chalkboard green, warm tan, and terracotta.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K17 firewall: no waxy plastic skin, no green facial tint, no drawn vector graphics, no floating characters, no garbled letters, no photoreal live-action
+-----
+
+# K18 — "İki ya da daha fazla kuvvetin bir cisme yaptığı etkiyi, tek başına yapabilen kuvvete bileşke kuvvet, ya da net kuvvet diyoruz."
+FİKİR: Tahtada ahşap kabartma harflerle BİLEŞKE KUVVET (NET KUVVET) tanımının yerleşmesi.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing two and a half metres back in front of the classroom board presentation. The green chalkboard features a prominent presentation layout where the complete formal definition of net force is displayed in clear chalk lettering. The living board area contains a wooden display tray holding chalk sticks, a felt eraser, a wooden meter ruler, and a small potted desk plant. Warm directional daylight falls across the slate board, showing warm matte skin, low specular, never tinted green or grey on hands, highlighting the tactile chalk grain and wood grain frame with zero plastic sheen. A soft round warm-golden GLOW of light softly outlines the title heading, emphasizing the formal scientific definition across the board. Continuity connects directly with K17, completing the teacher's action by establishing the definition on the same chalkboard setup. The wooden tray rests flat along the bottom board rail, casting a soft contact shadow onto the green slate. Feature-animation 3D CGI render with crisp graphic legibility, rich slate textures, and inspiring educational presentation.
+
+STYLE: Feature-animation 3D CGI for K18 featuring high-precision text staging, realistic chalk slate shaders, soft glowing energy aura, and warm educational appeal.
+LIGHT AND PALETTE: Focused daylight key from left window for K18, soft golden title glow reflection, ambient classroom fill, palette of slate green, chalk white, and warm gold.
+TEXT: prominent white chalk lettering on the green chalkboard displays two Turkish headline words, fourteen letters reading left-to-right, never mirrored: B İ L E Ş K E   K U V V E T (the second a dotted capital İ, the seventh a capital Ş)
+NEGATIVE: K18 firewall: no English text, no garbled letters, no drawn vector arrows, no plastic wax sheen, no floating elements, no dark muddy shadows, no green or grey skin cast, no waxy plastic skin
+-----
+
+# K19 — "Ve onu R harfiyle gösteriyoruz."
+FİKİR: Odaklanan alanda tek ve büyük bir altın akrilik R harfinin parlayarak yerini alması.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the central display card on a wooden easel stand. A single large, elegant capital letter R crafted from matte gold acrylic stands prominently at the center of the educational display. The living easel surroundings feature a polished oak wood frame, a brass adjustment knob, a small felt eraser, and a potted desk succulent. Soft diffuse key light illuminates the dimensional gold letter, showcasing a smooth matte satin sheen without harsh mirror reflections or green tint. A soft round warm-golden GLOW of light radiates gently behind the golden letter R, visually enshrining it as the universal symbol for resultant force. Continuity seamlessly follows K18's definition by highlighting its mathematical symbol R in the same classroom lighting setup. The golden letter R rests securely in the wooden ledge of the easel, casting a distinct soft contact shadow against the back panel. Feature-animation 3D CGI render with pristine graphic clarity, rich tactile materials, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K19 with high-detail object modeling, satin acrylic material shaders, soft radiant aura, and clear symbolic legibility.
+LIGHT AND PALETTE: Clean directional key light from upper-left for K19, radiant warm-golden aura bounce, soft oak wood fill, palette of satin gold, oak brown, and deep navy.
+TEXT: a wooden easel display card features a raised matte gold acrylic letter reading left-to-right, never mirrored, two words, eight letters: S İ M G E S İ :   R (the second and sixth a dotted capital İ)
+NEGATIVE: K19 firewall: no garbled characters, no drawn vector graphics, no plastic wax sheen, no floating letter, no green skin tint, no photoreal live-action
+-----
+
+# K20 — "Zil çaldı, teneffüs başladı."
+FİKİR: Pirinç okul zilinin çalmasıyla öğrencilerin neşeyle okul bahçesine taşması.
+-----
+35mm lens at f/4.5, eye-level wide angle view, standing four metres back in the sunlit school courtyard terrace area. A group of Turkish school children happily flood out of the double wooden doors into the open courtyard for recess, talking and smiling together. The living courtyard features an antique brass school bell mounted on a brick wall, stone benches, potted red geraniums, and a cobbled garden path leading to a lawn. Bright mid-morning sunlight fills the outdoor space, illuminating their warm matte skin with low specular scatter, never tinted green or grey. A soft round warm-golden GLOW of light glints off the polished brass bell as it rings, symbolizing the vibrant transition to recess. Continuity transitions the setting from the indoor classroom in K19 to the outdoor sunlit school courtyard. All student shoes, bench legs, and flower pots touch the stone flags, casting soft contact shadows on the sunlit ground. Feature-animation 3D CGI render with vibrant daylight, rich group staging, and cheerful school courtyard atmosphere.
+
+STYLE: Feature-animation 3D CGI for K20 featuring broad spatial depth, vibrant Mediterranean sunlight, matte skin rendering, and high social energy.
+LIGHT AND PALETTE: Direct mid-morning sunlight from high-left for K20, bright courtyard bounce, cool sky fill in shadows, palette of terracotta, warm brick, and leafy green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K20 firewall: no garbled text, no English signs, no waxy plastic skin, no specular sheen, no green facial tint, no drawn vector graphics, no floating children
+-----
+
+# K21 — "Mira bahçeye çıktığında arkadaşları Ali ile Can'ı, çamura saplanmış kırmızı bir oyuncak arabayı kurtarmaya çalışırken buldu."
+FİKİR: Okul bahçesindeki çamurlu alanda @ali ve @can'ın çamura batmış @araba ile mücadele etmesi.
+-----
+35mm lens at f/4.5, eye-level three-quarter wide view, standing four metres back near the edge of the school garden plot. @mira steps onto the stone garden path, watching with curious interest as @ali and @can lean over a mud patch to rescue @araba. The living garden scene features a wet mud puddle, a wooden garden border, a metal watering can, a clay pot with pink geraniums, and a small stone wall. Vibrant morning sunlight illuminates the scene, casting warm matte skin shading across the children with low specular scatter, never tinted green or grey. No light glows on the children's faces; instead, a soft round warm-golden GLOW of light gently outlines the mud line around @araba's rear wheels. Continuity flows directly from K20's recess courtyard transition into this specific mud rescue scene in the school garden. @araba's thick rubber tires sit embedded in the mud patch, casting soft contact shadows onto the wet soil below. Feature-animation 3D CGI render with rich environmental textures, mud splash detail, and appealing child character interaction.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K21 with tactile mud and metal shaders, soft matte skin rendering, and dynamic group composition.
+LIGHT AND PALETTE: Bright morning sunlight from upper-left for K21, soft wet mud specular bounce, cool garden shadow fill, palette of tomato red, muddy brown, and garden green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K21 firewall: no glow on children's faces, no face discoloration, no drawn vector arrows, no plastic wax skin, no floating vehicle, no English signs
+-----
+
+# K22 — "Ali arabayı doğu yönünde var gücüyle, 10 N ile itiyordu ama araba yerinden kıpırdamıyordu."
+FİKİR: @ali'nin 10 N ile @araba'yı tek başına itmesi ancak arabanın çamurda çakılı kalması.
+-----
+35mm lens at f/4.0, eye-level low-angle three-quarter view, standing three metres back near the garden mud patch. @ali leans forward with both hands pressed firmly against the rear bumper of @araba, pushing with all his strength toward the east. The living garden surroundings include wet mud grooves, a wooden garden stake, a discarded metal toy spade, and potted red geraniums. Warm directional morning sunlight catches @ali's strained posture, showing his warm matte skin with low specular scatter, never tinted green or grey. At his hand contact points on the red pickup bumper, a soft round warm-golden GLOW of light shines brightly to represent his 10 N pushing force, while @araba remains stuck. Continuity builds upon K21, zooming closer to focus on @ali's solo physical effort against the immovable toy vehicle. @ali's sneakers dig into the soil and @araba's tires rest in the deep mud track, each casting soft contact shadows on the ground. Feature-animation 3D CGI render with dynamic physical effort staging, detailed mud textures, and clear force visualization.
+
+STYLE: Feature-animation 3D CGI for K22 featuring expressive physical posture modeling, tactile mud and metal shaders, soft energy aura, and high character appeal.
+LIGHT AND PALETTE: Direct morning key light from left for K22, soft gold contact glow on bumper, muddy earth bounce, palette of grass green, tomato red, and earth brown.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K22 firewall: no face glow, no green skin tint, no drawn vector graphics, no saffron flowers, no floating vehicle, no garbled letters
+-----
+
+# K23 — "Yetmedi! Can da yardıma koştu ve aynı yönde 15 N ile destek verdi."
+FİKİR: @can'ın kadraja girerek @ali'nin yanında yer alması ve 15 N ile ikinci ellerini arabaya koyması.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing three metres back beside the garden mud patch. @can steps dynamically into the frame beside @ali, placing both hands onto the side of @araba to add his 15 N pushing force in the exact same eastward direction. The living outdoor environment features the mud puddle, a wooden garden border, a brass garden hose nozzle, and a terracotta planter with flowering flowers. Bright morning sunlight illuminates both boys, highlighting their warm matte skin with soft subsurface scatter, low specular reflection, never tinted green or grey. Where @can's hands touch @araba, a second soft round warm-golden GLOW of light radiates alongside @ali's glow, demonstrating two forces combining. Continuity carries over @ali's pushing stance from K22, extending the action as @can joins to double the physical effort. Both boys' shoes press firmly into the earth and @araba rests in the mud, casting distinct soft contact shadows on the wet soil. Feature-animation 3D CGI render with dynamic collaborative motion, detailed mud and sweater textures, and vibrant team appeal.
+
+STYLE: Feature-animation 3D CGI for K23 with multi-character physical staging, soft matte skin rendering, tactile fabric and mud shaders, and clear force effects.
+LIGHT AND PALETTE: Strong morning key light from left for K23, dual warm-golden contact glows on truck, cool soil shadow fill, palette of mustard yellow, grass green, and tomato red.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K23 firewall: no face glow, no green skin discolouration, no drawn vector arrows, no plastic wax sheen, no floating characters, no garbled text
+-----
+
+# K24 — "İkisi de aynı doğrultuda ve aynı yönde kuvvet uyguladığı için bu kuvvetler birbirine yardım etti."
+FİKİR: @ali ve @can'ın aynı yönde uyguladığı iki kuvvetin yan yana gelerek güçlerini birleştirmesi.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing three and a half metres back looking toward @araba's side profile. @ali and @can push in perfect synchronization against @araba, their body weight leaning eastward with shared determination. The living garden backdrop includes the muddy track, a stone courtyard step, a brass watering can, and a potted geranium bush. Warm directional morning sunlight illuminates the scene, casting warm matte skin shading on both boys with low specular scatter, never tinted green or grey. The two separate hand-contact glows expand and merge into a single, continuous soft round warm-golden GLOW of light along @araba's side, showing force cooperation. Continuity preserves @ali and @can's exact positions from K23, capturing the moment their two individual efforts unify into one joint direction. Their sneakers grip the mud surface and @araba's tires touch the mud track, casting soft contact shadows on the ground below. Feature-animation 3D CGI render with harmonious group staging, rich physical material textures, and clear scientific cause-and-effect visualization.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K24 with tactile mud and metal shaders, soft glowing energy aura, and appealing child silhouettes.
+LIGHT AND PALETTE: Direct morning sunlight from upper-left for K24, merged warm-golden force glow, soft ambient ground bounce, palette of grass green, mustard yellow, and tomato red.
+TEXT: clean white chalk mathematical symbols written on the green chalkboard read left-to-right, never mirrored, eleven characters: R   =   2 5   N (one capital letter R, one clear space, one equals sign, one clear space, digit two, digit five, one clear space, capital letter N)
+NEGATIVE: K24 firewall: no face glow, no green facial tint, no drawn vector arrowheads, no saffron flowers, no floating feet, no photoreal live-action
+-----
+
+# K25 — "Mira hemen hesapladı: Aynı yönlü kuvvetlerde bileşke kuvveti bulmak için onları toplarız."
+FİKİR: Ahşap stanttaki kartta 'AYNI YÖNLÜ KUVVETLERDE TOPLAMA' kuralının yazılması.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two and a half metres back focusing on an educational display board set up near the garden. A wooden demonstration stand holds a clean display panel explaining the addition rule for forces acting in the same direction. The living surroundings feature a wooden garden bench, a terra cotta pot, a metal garden trowel, and a small potted geranium plant. Crisp morning sunlight illuminates the wooden panel, showing detailed grain and smooth matte paint finish with zero specular glare. A soft round warm-golden GLOW of light illuminates the mathematical plus sign on the board, reinforcing the concept of combining same-direction forces. Continuity links K24's physical pushing action to Mira's cognitive mathematical formula rule established on this garden board. The wooden demonstration stand rests flat on the courtyard flagstones, casting a clear soft contact shadow beneath its legs. Feature-animation 3D CGI render with high educational clarity, rich tactile materials, and warm inviting lighting.
+
+STYLE: Feature-animation 3D CGI for K25 featuring precise graphic presentation, physical wood and acrylic shaders, soft glowing accents, and high aesthetic appeal.
+LIGHT AND PALETTE: Clean daylight key from left window angle for K25, soft golden glow on math symbol, warm wood ambient fill, palette of oak brown, cream white, and warm gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K25 firewall: no garbled letters, no English text, no drawn vector arrows, no plastic wax sheen, no floating stand, no dark heavy shadows
+-----
+
+# K26 — "R eşittir F1 artı F2; yani 10 N artı 15 N, eder 25 N."
+FİKİR: R = 10 N + 15 N = 25 N matematiksel eşitliğinin tek bir 25 N sıcak-altın aura hâlinde birleşmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the mathematical formula panel on the wooden stand. The calculation panel clearly shows the addition equation R = F1 + F2 leading to the final combined resultant magnitude of 25 N. The living display surroundings include the oak frame, a brass mounting pin, a wooden ruler, and a small potted succulent. Soft diffuse key light illuminates the dimensional white acrylic numbers, showcasing matte surface textures with zero specular reflection. A single, powerful soft round warm-golden GLOW of light envelops the final number 25 N, proving how two forces sum into a single net value. Continuity directly completes K25's mathematical rule by executing the exact numerical calculation for @ali (10 N) and @can (15 N). The calculation board rests securely on the wooden ledge, casting a soft contact shadow against the rear backing panel. Feature-animation 3D CGI render with immaculate numerical legibility, rich tactile material shaders, and warm radiant aura effects.
+
+STYLE: Feature-animation 3D CGI for K26 featuring high-precision mathematical staging, satin acrylic materials, soft radiant energy glow, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K26, intense warm-golden glow on 25 N, warm wood ambient bounce, palette of matte white, satin gold, and oak tan.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K26 firewall: no R=ON mutation, no garbled digits, no drawn vector graphics, no plastic wax sheen, no floating panel, no photoreal live-action
+-----
+
+# K27 — "Ve araba, doğu yönündeki bu 25 N'luk güçle çamurdan bir anda kurtuldu!"
+FİKİR: @araba'nın 25 N birleşik güçle çamurdan aniden fırlaması, çamurun sıçraması ve tekerleklerin dönmesi.
+-----
+35mm lens at f/4.0, eye-level low-angle action tracking shot, standing three metres back near the garden mud patch. @araba surges forward out of the mud puddle toward the east, its thick rubber tires catching grip as mud droplets splash dynamically around the wheels. The living garden background features @ali and @can cheering in the background, a wooden garden border, a brass watering can, and potted red geraniums. Bright morning sunlight catches the flying mud drops and shiny red pickup body, showcasing warm matte skin on the boys with low specular, never tinted green or grey. Surrounding @araba's body, a bright soft round warm-golden GLOW of light powers the vehicle forward, visually proving the 25 N resultant force in action. Continuity culminates the mud rescue sequence from K21-K26, as the mathematical calculation of 25 N produces immediate physical motion. @araba's front wheels touch the firm stone path beyond the mud, casting dynamic soft contact shadows on the ground. Feature-animation 3D CGI render with high dynamic energy, realistic fluid mud splash physics, rich toy shaders, and triumphant child appeal.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K27 with dynamic action staging, mud fluid particle physics, soft glowing energy aura, and vibrant child appeal.
+LIGHT AND PALETTE: Direct morning sun from left for K27, radiant golden force glow around truck, sparkling mud highlights, palette of tomato red, muddy brown, and garden green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K27 firewall: no face glow on boys, no green skin tint, no drawn vector arrows, no plastic wax skin, no floating vehicle, no garbled letters
+-----
+
+# K28 — "Mira gülümsedi: Demek aynı yöndeki kuvvetler birleşince güçleniyordu."
+FİKİR: Kurtuluşu izleyen Mira'nın yüzüne tatlı bir gülümseme ve kavrayış ifadesinin oturması.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focused on Mira's expressive face. @mira smiles warmly with a joyful look of scientific understanding, nodding slightly as she watches the successful toy car rescue. The living garden background shows soft-focus green foliage, a wooden garden fence, a terracotta pot, and warm sunlight filtering through leaves. Soft warm morning key light illuminates her face, highlighting her warm matte skin with gentle subsurface scatter, low specular reflection, never tinted green or grey. Along the mud track beneath @araba, a subtle soft round warm-golden GLOW of light shimmers gently, highlighting the physical combination of forces. Continuity carries forward her role as the observing narrator from K21, capturing her emotional reaction to the successful 25 N mud rescue. Her chin and shoulders are framed comfortably, her body posture resting naturally against the wooden garden fence railing with soft contact shadows. Feature-animation 3D CGI render with exquisite facial appeal, warm emotional depth, soft bokeh background, and matte skin rendering.
+
+STYLE: Feature-animation 3D CGI for K28 featuring premium facial blend-shapes, soft matte subsurface skin scatter, painterly background bokeh, and high emotional resonance.
+LIGHT AND PALETTE: Gentle morning window key light from upper-left for K28, soft golden ground force bounce, cool foliage fill, palette of terracotta, warm tan, and leaf green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K28 firewall: no waxy plastic skin, no green facial tint, no drawn vector graphics, no floating head, no garbled text, no photoreal live-action
+-----
+
+# K29 — "Öğleden sonra beden eğitimi dersinde sınıfça halat çekme yarışı yaptılar."
+FİKİR: Okul bahçesindeki toprak sahada çekilen kalın örme halatın iki tarafına iki takımın dizilmesi.
+-----
+35mm lens at f/4.5, eye-level wide angle view, standing five metres back along the edge of the school sports pitch. Two teams of Turkish middle-school students stand positioned on opposite sides of a thick jute tug-of-war rope, holding it taut across a central line. The living sports ground features a dirt pitch, wooden spectator benches, a brass referee whistle, a chalk line on the ground, and a small potted olive tree. Bright afternoon sunlight pours across the open field, casting soft matte skin shading on the children with low specular scatter, never tinted green or grey. Along the taut jute rope, a gentle soft round warm-golden GLOW of light shines at the central marker, highlighting the tension within the rope. Continuity transitions the setting from the morning garden scene to the afternoon physical education tug-of-war competition. Every student's sneakers grip the dirt ground firmly, casting distinct soft contact shadows on the soil. Feature-animation 3D CGI render with expansive spatial composition, detailed jute rope textures, and energetic sports atmosphere.
+
+STYLE: Feature-animation 3D CGI for K29 with broad multi-character staging, tactile jute and fabric shaders, warm afternoon lighting, and appealing sports dynamics.
+LIGHT AND PALETTE: Direct afternoon sunlight from camera-right for K29, soft warm ground bounce, cool sky fill in shadows, palette of earth brown, jute tan, and sky blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K29 firewall: no garbled text, no English signs, no waxy plastic skin, no specular sheen, no green facial tint, no drawn vector graphics, no floating athletes
+-----
+
+# K30 — "Mira kenardan izledi."
+FİKİR: Saha kenarında duran Mira'nın heyecanla halat yarışını takip etmesi.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing three metres back near the sideline bench. @mira stands watching at the side of the sports pitch, hands completely free by her side, intently observing the tug-of-war match without pulling the rope. The living sideline surroundings feature a wooden sports bench, a woven wicker basket holding water bottles, a ceramic mug, and a potted geranium. Warm afternoon sun illuminates her profile, highlighting her warm matte skin with low specular subsurface scatter, never tinted green or grey. Near her gaze line toward the field, a soft round warm-golden GLOW of light gently accents her focused attention on the competing forces. Continuity preserves @mira's observer role from K28-K29, maintaining her distinct attire and free-standing posture away from the rope competition. Her sneakers rest flat on the packed dirt ground beside the wooden bench, casting a clear soft contact shadow. Feature-animation 3D CGI render with high emotional focus, rich sideline prop details, soft background depth, and matte skin rendering.
+
+STYLE: Feature-animation 3D CGI for K30 featuring appealing character staging, soft matte subsurface skin scatter, painterly background depth, and natural posture.
+LIGHT AND PALETTE: Warm afternoon side key light from right for K30, soft golden gaze aura, cool grass shadow fill, palette of oak tan, grass green, and warm ochre.
+TEXT: neat white chalk lettering on the green chalkboard reads left-to-right, never mirrored, seven characters explicitly spelled out: R   =   0   N (one capital letter R, one clear space, one equals sign, one clear space, one digit zero, one clear space, one capital letter N)
+NEGATIVE: K30 firewall: no Mira pulling rope, no hands on rope, no waxy plastic skin, no green face tint, no drawn vector graphics, no floating characters
+-----
+
+# K31 — "Batı tarafındaki arkadaşı halatı 30 N ile çekerken, doğu tarafındaki arkadaşı 20 N ile karşı koyuyordu."
+FİKİR: Halatın batı tarafının 30 N pull, doğu tarafının 20 N pull ile zıt yönlerde gerilmesi.
+-----
+35mm lens at f/4.0, eye-level wide view, standing four metres back focusing on the central tension point of the tug-of-war rope. Two anonymous student pullers lean backward on opposite ends of the thick jute rope, pulling in opposing east-west directions across the dirt field. The living sports ground features packed dirt ground, a central chalk line, a wooden referee table with a brass stopwatch, and a potted geranium plant. Warm afternoon sunlight illuminates the scene, casting soft matte skin shading on the pullers with low specular scatter, never tinted green or grey. Along the left side of the rope, a soft round warm-golden GLOW of light glows strongly to represent 30 N, while a smaller glow on the right represents 20 N opposing force. Continuity maintains the sports ground environment established in K29-K30, preserving the afternoon light direction and jute rope texture. The pullers' sneakers dig firmly into the dirt ground, each casting a clear soft contact shadow on the soil. Feature-animation 3D CGI render with dynamic physical tension, tactile rope shaders, and clear opposing force staging.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K31 with tactile jute rope modeling, soft glowing energy aura, matte skin rendering, and high tension dynamics.
+LIGHT AND PALETTE: Bright afternoon sunlight from upper-right for K31, dual warm-golden force glows, warm dirt ambient bounce, palette of jute tan, dirt brown, and crimson red.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K31 firewall: no crocus flowers, no flower shapes, no vector arrows, no face glow, no waxy plastic skin, no specular sheen, no floating pullers, no duplicate 20 N labels
+-----
+
+# K32 — "Ortadaki kırmızı kurdele yavaşça batıya doğru kaydı."
+FİKİR: Halatın ortasındaki kırmızı kurdelenin doğu direncini kırarak yavaşça batı yönüne doğru süzülmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focused on the central red satin ribbon tied around the jute rope. The red satin ribbon shifts steadily toward the west side of the white chalk marker line drawn on the packed dirt ground surface below. The living ground detail includes coarse dirt grains, small pebbles, the white chalk line, and a wooden referee whistle resting near the boundary. Crisp afternoon sunlight glints off the satin sheen of the red ribbon and catches the rough fiber texture of the jute rope without plastic reflection. A soft round warm-golden GLOW of light encapsulates the moving ribbon, proving how net force causes directional physical displacement along the rope. Continuity directly follows K31's tension setup by demonstrating the actual physical displacement resulting from the 30 N vs 20 N imbalance. The red satin ribbon rests tied tightly against the jute rope fibers, casting a soft contact shadow onto the rope surface beneath. Feature-animation 3D CGI render with high tactile texture precision, satin ribbon material shaders, and warm focused energy lighting.
+
+STYLE: Feature-animation 3D CGI for K32 featuring detailed fabric and fiber shaders, dynamic physical motion, soft radiant aura, and focused narrative appeal.
+LIGHT AND PALETTE: Direct afternoon key light from right for K32, radiant warm-golden glow on moving ribbon, soft ground bounce, palette of crimson red, jute tan, and chalk white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K32 firewall: no crocus flowers, no flower shapes, no vector arrows, no garbled text, no floating ribbon, no photoreal live-action
+-----
+
+# K33 — "Mira bu sefer kuvvetlerin aynı doğrultuda ama zıt yönlerde olduğunu fark etti ve kendi kendine 'Bunları toplayamam, çünkü birbirlerine karşı çekiyorlar' dedi."
+FİKİR: Kenardaki Mira'nın elini çenesine koyarak 'zıt yönler toplanmaz, çekişir' çıkarımını yapması.
+-----
+50mm lens at f/3.5, eye-level three-quarter medium view, standing three metres back near the sports pitch sideline fence. @mira stands at the edge of the field, hands completely free from the rope, holding her chin thoughtfully as she analyzes the opposing forces. The living sideline environment features a wooden bench, a clay pitcher, a potted geranium plant, and soft-focus students pulling in the background. Warm afternoon key light illuminates her face, highlighting her warm matte skin with low specular subsurface scatter, never tinted green or grey. Along the taut central segment of the jute rope where opposing forces meet, a gentle soft round warm-golden GLOW of light shines brightly, highlighting the physical subtraction of opposing forces. Continuity preserves @mira's observer position from K30. Her sneakers rest flat on the dirt field boundary, casting a clear soft contact shadow on the ground beneath. Feature-animation 3D CGI render with expressive character blend-shapes, soft matte skin rendering, painterly background depth, and intellectual appeal.
+
+STYLE: Feature-animation 3D CGI for K33 featuring soft matte subsurface skin scatter, detailed facial expression, painterly bokeh depth, and strong narrative focus.
+LIGHT AND PALETTE: Warm afternoon side key light from right for K33, soft golden rope tension bounce, cool shadow fill, palette of terracotta, oak tan, and leaf green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K33 firewall: no Mira pulling rope, no hands on rope, no face discoloration, no vector arrows, no waxy plastic skin, no floating character
+-----
+
+# K34 — "Zıt yönlü kuvvetlerde bileşke kuvveti bulmak için büyük kuvvetten küçük kuvveti çıkarırız."
+FİKİR: Kart standında 'ZIT YÖNLÜ KUVVETLERDE ÇIKARMA' kuralının netleşmesi.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two and a half metres back facing the outdoor science display board area. The wooden display board presents the formal subtraction rule for forces acting in opposite directions along the same line of action. The living display surroundings feature an oak wood easel frame, a brass mounting clip, a wooden ruler, and a small potted desk succulent. Clear afternoon sunlight falls across the wooden panel, showing smooth matte paint finish and tactile wood grain with zero specular sheen. A soft round warm-golden GLOW of light highlights the minus symbol on the board, reinforcing the mathematical subtraction principle. Continuity connects Mira's cognitive realization in K33 to this formal written subtraction rule on the educational board. The wooden display stand rests flat on the ground flags, casting a clear soft contact shadow beneath its feet. Feature-animation 3D CGI render with high educational legibility, rich tactile material shaders, and warm inviting lighting.
+
+STYLE: Feature-animation 3D CGI for K34 featuring crisp graphic presentation, physical wood and acrylic shaders, soft glowing energy accents, and high educational appeal.
+LIGHT AND PALETTE: Focused daylight key from camera-right for K34, soft golden subtraction glow, warm wood ambient fill, palette of oak brown, warm yellow, and deep navy.
+TEXT: raised matte yellow painted letters on the wooden display chart read left-to-right, never mirrored, three Turkish words, twenty letters: Z I T   Y Ö N L Ü   K U V V E T L E R (with capital I without dot, capital Ö, capital Ü)
+NEGATIVE: K34 firewall: no garbled letters, no English text, no vector arrows, no plastic wax sheen, no floating stand, no dark heavy shadows
+-----
+
+# K35 — "R eşittir büyük kuvvet eksi küçük kuvvet; yani 30 N eksi 20 N, eder 10 N."
+FİKİR: R = 30 N - 20 N = 10 N işleminin tahtada görünür kılınması.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the numerical calculation panel on the easel. The display panel clearly presents the subtraction formula equation R = 30 N - 20 N resulting in the net value of 10 N. The living panel surroundings include the oak frame, a brass calibration pin, a wooden ruler, and a small potted desk plant. Soft diffuse key light illuminates the dimensional acrylic symbols, showing smooth satin finishes with zero specular reflection. A single soft round warm-golden GLOW of light illuminates the final calculated value 10 N, proving the net force magnitude. Continuity directly completes K34's rule by calculating the exact numerical outcome of the 30 N and 20 N tug-of-war forces. The calculation board rests securely on the wooden easel ledge, casting a soft contact shadow against the backing panel. Feature-animation 3D CGI render with immaculate numerical legibility, rich tactile material shaders, and warm radiant aura effects.
+
+STYLE: Feature-animation 3D CGI for K35 featuring high-precision mathematical staging, satin acrylic materials, soft radiant energy glow, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from right for K35, radiant warm-golden glow on 10 N, warm wood ambient bounce, palette of matte white, satin gold, and oak tan.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K35 firewall: no duplicate 20 N labels, no garbled digits, no vector arrows, no plastic wax sheen, no floating panel, no photoreal live-action
+-----
+
+# K36 — "Peki halat hangi yöne hareket etti?"
+FİKİR: Gergin halatın ortasındaki kırmızı kurdelenin askıda kalarak yön kararını beklemesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focused on the red ribbon hovering above the ground line. The red ribbon hangs suspended momentarily in mid-motion above the white chalk marker line, creating narrative suspense before direction is confirmed. The living ground surroundings include the dirt field texture, small pebbles, the white chalk line, and a wooden referee whistle. Warm afternoon sunlight glints off the satin red ribbon fabric, highlighting detailed woven thread texture without plastic glare. A soft round warm-golden GLOW of light pulses gently around the suspended ribbon, asking the visual question of final directional movement along the field. Continuity builds on K35's calculation of 10 N, holding the physical ribbon in dramatic pause before finalizing the direction. The red ribbon is tied tightly around the jute rope, casting a soft contact shadow onto the rope surface beneath. Feature-animation 3D CGI render with dramatic narrative staging, exquisite fabric shaders, and warm focused effect lighting.
+
+STYLE: Feature-animation 3D CGI for K36 featuring focused narrative framing, detailed fabric shaders, soft glowing energy aura, and high visual suspense.
+LIGHT AND PALETTE: Direct afternoon key light from right for K36, pulsing warm-golden ribbon glow, soft ground reflection, palette of crimson red, jute tan, and chalk white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K36 firewall: no vector arrows, no garbled text, no plastic wax sheen, no floating unattached ribbon, no green tint, no photoreal live-action
+-----
+
+# K37 — "Tabii ki güçlü olanın yönüne, yani batıya!"
+FİKİR: Batı tarafının 10 N farkla halatı kesin olarak kendi yönüne çekmesi.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing three and a half metres back looking toward the west side of the field. The tug-of-war rope shifts decisively toward the west direction as the larger 30 N force wins the physical pull over the 20 N opposing force. The living sports ground scene features cheering students, packed dirt field, a wooden scoreboard post, and a potted geranium plant. Bright afternoon sunlight fills the scene, casting warm matte skin shading on the children with low specular scatter, never tinted green or grey. A bright soft round warm-golden GLOW of light streams along the winning west direction line, proving that net force dictates movement toward the stronger force. Continuity resolves K36's question, carrying the ribbon's movement firmly into the west direction established in K31-K35. The winning team's sneakers press firmly into the soil, each casting a clear soft contact shadow on the dirt ground. Feature-animation 3D CGI render with triumphant physical motion, detailed environment textures, and dynamic team energy.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K37 with dynamic multi-character staging, soft glowing energy aura, and vibrant sports appeal.
+LIGHT AND PALETTE: Bright afternoon sun from right for K37, radiant warm-golden directional glow, warm soil ambient bounce, palette of jute tan, dirt brown, and meadow green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K37 firewall: no vector arrows, no face glow, no green skin tint, no plastic wax skin, no floating athletes, no garbled letters
+-----
+
+# K38 — "Mira'nın bulduğu bileşke kuvvet: batı yönünde 10 N."
+FİKİR: B A T I   Y Ö N Ü N D E   1 0   N etiketinin net ve okunur biçimde kilitlenmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the final summary display panel on the easel. The wooden display panel clearly presents the final resultant force conclusion combining both magnitude (10 N) and direction (west). The living panel surroundings feature the oak wood frame, brass adjustment fittings, a wooden ruler, and a small potted succulent plant. Soft diffuse afternoon light falls across the matte acrylic lettering, showcasing clean tactile surfaces with zero specular reflection. A soft round warm-golden GLOW of light illuminates the summary text panel, celebrating the completed calculation without using graphic overlays. Continuity completes the entire tug-of-war sequence in K29-K37, unifying direction (west) and magnitude (10 N) into a single formal answer. The display panel rests securely on the wooden easel ledge, casting a distinct soft contact shadow against the backing board. Feature-animation 3D CGI render with immaculate typographical legibility, rich material shaders, and warm triumphant illumination.
+
+STYLE: Feature-animation 3D CGI for K38 featuring high-precision text staging, satin acrylic material shaders, soft radiant energy glow, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from right for K38, radiant warm-golden summary glow, warm wood ambient fill, palette of matte white, satin gold, and oak brown.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K38 firewall: no vector arrows, no vector arrows, no garbled text, no plastic wax sheen, no floating panel, no photoreal live-action
+-----
+
+# K39 — "Ders bitince Mira kütüphaneye uğradı."
+FİKİR: Mira'nın ahşap kütüphane kapısından içeri adım atarak sessiz ortama girmesi.
+-----
+35mm lens at f/4.5, eye-level three-quarter wide view, standing four metres back in the quiet sunlit school library hallway entrance. @mira steps softly through the double oak doors of the school library, looking around with quiet interest at the tall bookshelves. The living library environment features tall carved oak bookshelves filled with colorful books, brass reading lamps, a globe on a stand, and potted green ivy. Late afternoon golden sunlight filters through high arched windows, casting warm matte skin shading across her face with low specular scatter, never tinted green or grey. Near her stepping shoe, a subtle soft round warm-golden GLOW of light glimmers gently on the polished parquet floor, introducing the next phase of discovery. Continuity transitions @mira from the outdoor sports field in K38 into the peaceful, scholarly interior of the school library. Her shoes make soft contact with the polished parquet floor, casting gentle soft contact shadows beneath her feet. Feature-animation 3D CGI render with serene atmospheric depth, rich architectural woodwork, and inviting golden daylight.
+
+STYLE: Feature-animation 3D CGI for K39 featuring soft indoor lighting, painterly wooden book-cabinet textures, matte skin rendering, and serene scholarly atmosphere.
+LIGHT AND PALETTE: Late afternoon golden window key light from left for K39, warm parquet floor bounce, soft shadows, palette of mahogany brown, brass gold, and forest green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K39 firewall: no garbled text, no English signs, no waxy plastic skin, no specular sheen, no green facial tint, no vector arrows, no floating character
+-----
+
+# K40 — "Masanın üzerinde sessizce duran bir fen kitabı gördü ve düşündü:"
+FİKİR: Cilalı ahşap kütüphane masasında tamamen hareketsiz duran @kitap'a yakın çekim.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium close view, standing two metres back facing a polished oak library table. @kitap rests completely motionless lying flat on the smooth wooden tabletop, its navy-blue cloth cover catching soft ambient window light. The living library environment features a brass reading lamp with a green shade, a stack of reference volumes, a ceramic tea mug, and tall oak bookshelves. Warm late-afternoon key light streams through high side windows, highlighting the matte cloth texture of @kitap's cover and smooth wood grain with zero plastic sheen. A subtle soft round warm-golden GLOW of light rests around the base of @kitap, visually isolating its silent, motionless state. Continuity follows @mira's entry into the library in K39, focusing her attention onto this specific stationary textbook. @kitap rests flat ON the table surface, casting a clear soft contact shadow beneath its lower edge. Feature-animation 3D CGI render with serene scholarly depth, tactile cloth and wood shaders, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K40 with tactile cloth and wood shaders, painterly book textures, soft ambient occlusion, and serene scholarly appeal.
+LIGHT AND PALETTE: Warm late-afternoon window key light from left for K40, soft brass lamp fill, warm oak wood bounce, palette of navy blue, oak tan, and warm gold.
+TEXT: embossed gold foil letters on the navy-blue cloth cover of @kitap read left-to-right, never mirrored, three Turkish words, fifteen letters: K U V V E T   V E   H A R E K E T
+NEGATIVE: K40 firewall: no floating book, no garbled cover text, no mirrored letters, no drawn force arrows, no plastic wax sheen, no green skin tint, no photoreal live-action
+-----
+
+# K41 — "'Bu kitap hareket etmiyor ama üzerine kuvvet etki ediyor olmalı.'"
+FİKİR: @kitap'ın etrafındaki durgun atmosferde 'burada da kuvvet var mı?' sorusunun belirmesi.
+-----
+50mm lens at f/3.5, eye-level three-quarter medium view, standing two metres back beside the library reading desk. @kitap lies stationary flat on the oak desk while @mira leans over slightly in the background, studying it with a thoughtful, questioning expression. The living library desk scene includes the brass reading lamp, a wooden pencil cup, a leather notebook, and a small potted desk ivy. Soft warm key light illuminates @mira's profile and the desk, showcasing her warm matte skin with low specular scatter, never tinted green or grey. Around @kitap, two gentle soft round warm-golden GLOWs of light pulse softly above and below the book cover, asking if forces act upon it. Continuity carries forward @kitap's exact position and table placement from K40, framing @mira's mental inquiry about its static state. @kitap rests flat ON the oak tabletop and @mira's sleeve touches the desk edge, both casting distinct soft contact shadows. Feature-animation 3D CGI render with rich inquisitive atmosphere, detailed book and lamp shaders, and warm scholarly lighting.
+
+STYLE: Feature-animation 3D CGI for K41 featuring appealing character staging, soft matte subsurface skin scatter, tactile prop shaders, and serene narrative depth.
+LIGHT AND PALETTE: Warm late-afternoon side key light from left for K41, soft golden aura pulses around book, brass lamp glow, palette of navy blue, oak tan, and emerald green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K41 firewall: no floating book, no garbled cover text, no drawn force arrows, no face discoloration, no waxy plastic skin, no photoreal live-action
+-----
+
+# K42 — "Gerçekten de yer çekimi kitabı aşağı çekiyor, masa ise onu tam olarak aynı büyüklükte yukarı itiyordu."
+FİKİR: @kitap'a etki eden aşağı yönlü yerçekimi aurası ile masa yüzeyinin yukarı yönlü tepki aurasının tam eşit büyüklükte belirmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing one and a half metres back focused on @kitap on the library table. @kitap lies completely flat on the polished oak surface while two equal physical forces act upon it in opposite vertical directions. The living table detail features the brass lamp base, a wooden bookmark, a ceramic mug, and smooth oak wood grain texture. Warm directional light illuminates @kitap's navy cover, showing detailed cloth weave and metallic gold rule detail without harsh plastic reflection. A downward soft round warm-golden GLOW of light (gravity) and an equal upward soft round warm-golden GLOW of light (table reaction) shine symmetrically above and below @kitap. Continuity preserves @kitap's exact position from K40-K41, revealing the two equal opposing forces acting on the static textbook. @kitap rests flat ON the oak table surface, casting a precise soft contact shadow onto the wood grain beneath. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with immaculate force concept staging, rich tactile shaders, and warm focused effect lighting.
+
+STYLE: Feature-animation 3D CGI for K42 featuring precise physical concept staging, satin cloth and wood shaders, soft glowing energy aura, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K42, dual warm-golden aura glows above and below book, warm wood ambient fill, palette of navy blue, satin gold, and oak tan.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K42 firewall: no drawn force arrows, no vector arrows, no floating book, no garbled cover text, no plastic wax sheen, no photoreal live-action
+-----
+
+# K43 — "İki kuvvet eşit ve zıt yönlü olduğu için birbirini yok ediyor,"
+FİKİR: İki zıt ve eşit auranın kitap gövdesinde buluşarak birbirini tam olarak sönümlemesi ve yok olması.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing one and a half metres back focused on @kitap's side profile on the table. The two equal and opposite vertical force glows meet at @kitap's central spine, gradually dissolving into a soft quiet luminescence. The living table surroundings include the brass lamp base, a leather bookmark, a wooden pencil, and polished oak wood grain. Soft warm key light illuminates the book cover, showing clean matte texture and crisp gold embossed trim without specular glare. The downward gravity aura and upward table reaction aura merge together and dissolve into a subtle soft round warm-golden GLOW of light, demonstrating cancellation. Continuity directly follows K42, showing the physical visual result of two equal opposing forces canceling each other out. @kitap rests flat ON the oak tabletop, casting a stable soft contact shadow on the wooden surface. Feature-animation 3D CGI render with elegant effect physics, detailed book shaders, and warm harmonious illumination.
+
+STYLE: Feature-animation 3D CGI for K43 featuring delicate visual effect staging, satin cloth shaders, soft dissolving energy aura, and serene narrative appeal.
+LIGHT AND PALETTE: Gentle window key light from left for K43, soft warm-golden dissolving glow, oak wood ambient bounce, palette of navy blue, warm gold, and oak brown.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K43 firewall: no drawn force arrows, no floating book, no garbled cover text, no crocus flowers, no plastic wax sheen, no photoreal live-action
+-----
+
+# K44 — "bileşke kuvvet tam olarak sıfır, yani R eşittir 0 N oluyordu."
+FİKİR: Sönümlenen alanın yanında 'R = 0 N' akrilik etiketinin masanın üstünde belirip kilitlenmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing one and a half metres back focusing on the tabletop beside @kitap. Beside stationary @kitap on the polished wooden desk, a clean dimensional acrylic label rests flat on the table, displaying the net force result. The living desk surroundings feature the brass lamp base, a wooden bookmark, a ceramic mug, and smooth oak wood grain texture. Soft diffuse key light illuminates the dimensional white acrylic symbols, showing smooth matte surfaces with zero plastic glare or green tint. A soft round warm-golden GLOW of light softly highlights the R = 0 N label, confirming that net force equals zero for a balanced static object. Continuity builds on K43's cancellation, formalizing the zero net force equation beside @kitap on the same library desk setup. @kitap and the dimensional label both rest flat ON the wooden tabletop, each casting a clear soft contact shadow beneath. Feature-animation 3D CGI render with pristine typographical legibility, rich tactile material shaders, and warm focused lighting.
+
+STYLE: Feature-animation 3D CGI for K44 featuring high-precision numerical staging, satin acrylic materials, soft radiant energy glow, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K44, radiant warm-golden label glow, warm oak wood fill, palette of matte white, navy blue, and satin gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K44 firewall: no R=ON text, no text on book cover, no floating book, no garbled digits, no drawn force arrows, no plastic wax sheen, no photoreal live-action
+-----
+
+# K45 — "İşte Mira buna dengelenmiş kuvvetler dendiğini öğrendi."
+FİKİR: Masa üstünde 'DENGELENMİŞ KUVVETLER' teriminin net ve gururlu biçimde durması.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the formal term display beside @kitap. A raised wooden display plaque resting flat on the table presents the formal scientific terminology DENGELENMİŞ KUVVETLER. The living library table scene features @kitap, the brass lamp, a leather notebook, and a small potted desk plant. Warm directional light illuminates the wooden plaque and @kitap, showcasing rich wood grain and cloth textures with low specular glare. A soft round warm-golden GLOW of light outlines the plaque lettering, celebrating the key concept of balanced forces. Continuity completes K44's zero net force equation by attaching its formal scientific term DENGELENMİŞ KUVVETLER in the library environment. @kitap and the wooden plaque rest flat ON the oak tabletop, each casting a clear soft contact shadow. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with crisp text legibility, rich material shaders, and warm educational presentation.
+
+STYLE: Feature-animation 3D CGI for K45 featuring high-precision text staging, satin wood and metal shaders, soft glowing energy accents, and high educational appeal.
+LIGHT AND PALETTE: Focused daylight key from left for K45, radiant warm-golden title glow, warm oak wood bounce, palette of oak brown, matte gold, and navy blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K45 firewall: no garbled letters, no English text, no drawn force arrows, no floating objects, no plastic wax sheen, no dark heavy shadows
+-----
+
+# K46 — "Ama dengelenmiş olmak sadece durmak demek değildi."
+FİKİR: Durgun kütüphane ortamından dışarıdaki hareketli dünyaya geçişi müjdeleyen hinge sahnesi.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing three metres back near the library window overlooking the street. @mira stands near the window, looking out toward the sunlit road outside while @kitap remains resting on the desk in the foreground shadow. The living room environment features the oak reading table, brass lamp, tall bookshelves, and a large multi-pane window frame showing a passing yellow car outside. Late-afternoon key light streams through the window glass, illuminating @mira's warm matte skin with low specular scatter, never tinted green or grey. At the window frame, a subtle soft round warm-golden GLOW of light pulses near the window pane, signaling the transition to moving balanced objects. Continuity acts as the crucial narrative hinge between static balance in K40-K45 and constant-velocity moving balance in K47-K49. @kitap rests flat ON the desk and @mira's shoes rest on the parquet floor, casting natural soft contact shadows. Feature-animation 3D CGI render with rich atmospheric depth, dual indoor-outdoor lighting contrast, and compelling story hinge staging.
+
+STYLE: Feature-animation 3D CGI for K46 with sophisticated dual-lighting balance, soft matte skin rendering, painterly window reflections, and strong narrative transition appeal.
+LIGHT AND PALETTE: Bright window sunlight key from right for K46, soft amber interior shadow fill, warm-golden transition glow, palette of oak tan, navy blue, and sunlight yellow.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K46 firewall: no waxy plastic skin, no green facial tint, no drawn force arrows, no floating furniture, no garbled letters, no photoreal live-action
+-----
+
+# K47 — "Otobanda sabit süratle giden bir araba da,"
+FİKİR: Otobanda tam 90 km/s sabit süratle seyreden sarı binek arabanın dengelenmiş kuvvet altında olması.
+-----
+35mm lens at f/4.5, eye-level tracking side view, standing four metres back along the paved highway shoulder. A sleek yellow passenger car travels smoothly at a steady constant speed along a clean asphalt highway lined with green trees. The living highway environment features painted lane lines, a steel guardrail, an overhead metal traffic portal sign, and distant green hills. Bright afternoon sunlight pours across the highway asphalt, reflecting off the car's satin paint and glass windows without harsh lens flares. Surrounding the moving vehicle, a steady soft round warm-golden GLOW of light encapsulates the chassis, representing balanced forces at constant velocity. Continuity carries forward the window view in K46, transitioning into the real-world example of constant-speed balanced motion. The car's rubber tires touch the asphalt pavement directly, casting smooth soft contact shadows along the road surface. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with smooth vehicular motion staging, rich asphalt textures, and crisp daylight contrast.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K47 with tactile asphalt and metallic car shaders, soft glowing energy aura, and clean environmental composition.
+LIGHT AND PALETTE: Bright afternoon sunlight from upper-left for K47, soft road reflection, warm-golden aura bounce around car chassis, palette of canary yellow, asphalt grey, and meadow green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K47 firewall: no drawn force arrows, no vector arrows, no garbled signs, no photoreal live-action, no floating car, no motion blur distortion
+-----
+
+# K48 — "gökyüzünde sabit süratle süzülen bir paraşütçü de dengelenmiş kuvvetlerin etkisindeydi;"
+FİKİR: Gökyüzünde hava direnci ile ağırlığı eşitlenmiş, sabit süratle süzülen paraşütçü.
+-----
+35mm lens at f/4.5, eye-level wide air-to-air view, standing about ten metres back in the open blue sky. A stylized parachutist glides serenely at a constant terminal velocity through a bright sky filled with soft puffy white clouds. The living aerial environment features a colorful nylon parachute canopy with tensioned shroud lines, a safety harness, and distant green landscape far below. Abundant high-altitude sunlight illuminates the parachutist's gear, showcasing detailed fabric weave and matte harness leather without specular glare. A soft round warm-golden GLOW of light envelops the parachutist and canopy, demonstrating equal upward air resistance and downward gravity in balance. Continuity connects with K47 by presenting a second distinct environment in the sky where balanced forces maintain constant speed. The shroud lines are pulled taut against the harness rings, each connection point showing subtle soft contact shadows. Feature-animation 3D CGI render with breathtaking aerial depth, vibrant canopy materials, soft glowing energy aura, and serene freedom appeal. High-detail surface shaders and precise spatial composition ensure maximum visual clarity and storybook charm.
+
+STYLE: Feature-animation 3D CGI for K48 featuring broad spatial horizon depth, tactile nylon fabric shaders, soft glowing energy aura, and vibrant aerial color harmonies.
+LIGHT AND PALETTE: Pure high-altitude sunlight from camera-left for K48, soft white cloud bounce, gentle warm-golden aura glow, palette of sky blue, nylon orange, and cloud white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K48 firewall: no drawn force arrows, no vector arrows above or below, no garbled text, no photoreal live-action, no plastic wax sheen, no green skin tint
+-----
+
+# K49 — "çünkü onların da sürati ve yönü değişmiyordu."
+FİKİR: Hem arabanın hem paraşütçünün hareketindeki tam kararlılığın ve değişmezliğin görsel kanıtı.
+-----
+50mm lens at f/4.0, eye-level split-frame comparative view, standing three metres back from a dual educational display panel. The display panel features both the car and the parachutist side-by-side, each maintaining unvarying speed and straight-line direction. The living display surroundings feature an oak wood frame, brass mounting pins, a wooden meter rule, and a small potted succulent. Crisp afternoon daylight falls across the wooden panel, showing smooth matte paint finish and tactile wood grain textures. A soft round warm-golden GLOW of light steadily illuminates both sides of the panel, proving the core condition of zero speed and direction change. Continuity unifies K47 (car) and K48 (parachutist) into a single visual summary of constant-velocity balanced forces. The demonstration stand rests flat on the floor flags, casting a clear soft contact shadow beneath its wooden legs. Feature-animation 3D CGI render with clear comparative staging, tactile wood and acrylic shaders, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K49 featuring high-precision split presentation, satin acrylic materials, soft glowing energy accents, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K49, soft golden aura bounce, warm wood ambient fill, palette of oak brown, sky blue, and matte gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K49 firewall: no garbled letters, no English text, no drawn vector arrows, no plastic wax sheen, no floating stand, no dark heavy shadows
+-----
+
+# K50 — "Tam o sırada Mira pencereden dışarı baktı."
+FİKİR: Kütüphane penceresinden dışarı bakan Mira'nın bahçedeki ağaca odaklanması.
+-----
+35mm lens at f/4.0, eye-level medium view, standing three metres back inside the school library facing the window area. @mira stands close to the large glass window, leaning forward slightly as she gazes outside into the sunlit garden courtyard. The living library environment features an oak reading table with books, a brass desk lamp, potted geraniums, and a large multi-pane window frame. Soft afternoon sunlight pours through the glass, illuminating her warm matte skin with low specular subsurface scatter, never tinted green or grey. At the window sill, a subtle soft round warm-golden GLOW of light catches her eye line, directing visual focus toward the garden tree outside. Continuity returns to @mira in the library from K46, linking her observational gaze to the upcoming unbalanced force examples outside. Her shoes rest flat on the parquet floor and her arm rests gently on the wooden window sill, casting soft contact shadows. Feature-animation 3D CGI render with serene indoor-outdoor depth, rich architectural window framing, soft matte skin rendering, and high curiosity appeal.
+
+STYLE: Feature-animation 3D CGI for K50 featuring soft indoor lighting contrast, painterly glass reflections, matte skin rendering, and expressive character posture.
+LIGHT AND PALETTE: Warm afternoon window key light from upper-right for K50, soft parquet floor bounce, cool interior shadows, palette of terracotta, oak tan, and garden green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K50 firewall: no green facial skin tint, no waxy plastic skin, no drawn force arrows, no floating characters, no garbled text, no photoreal live-action
+-----
+
+# K51 — "Bahçedeki ağaçtan bir elma koptu ve gitgide hızlanarak yere düştü."
+FİKİR: Ağaç dalından kopan kırmızı elmanın yerçekimi etkisiyle aşağı düşerken gitgide hızlanması.
+-----
+50mm lens at f/3.5, eye-level action close-up view, standing two metres back near a sunlit apple tree branch. A ripe red apple detaches from its wooden twig and falls vertically through the air, accelerating toward the garden soil below. The living garden scene features green apple tree leaves, wooden branches, a stone garden wall, and dappled afternoon sunlight. Vibrant afternoon sunlight glints off the smooth peel of the red apple, showcasing matte satin finish and organic surface texture without plastic glare. A soft round warm-golden GLOW of light trails dynamically behind the falling apple, visually demonstrating acceleration caused by gravity. Continuity fulfills @mira's window view in K50, presenting the first specific real-world example of changing motion under unbalanced force. The apple branch above shows the broken stem contact point casting a soft contact shadow against the green leaf behind it. Feature-animation 3D CGI render with crisp motion physics, rich organic fruit shaders, soft glowing trail aura, and natural outdoor beauty.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K51 with tactile organic fruit shaders, soft glowing energy trail, and vibrant Mediterranean daylight.
+LIGHT AND PALETTE: Dappled afternoon sunlight through leaves for K51, radiant warm-golden motion trail glow, soft leaf bounce, palette of apple red, leaf green, and sunlit yellow.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K51 firewall: no drawn force arrows, no vector arrows, no garbled text, no photoreal live-action, no plastic wax sheen, no floating unattached tree
+-----
+
+# K52 — "Biraz ötede bir bisikletli, önüne aniden bir kedi çıkınca frene bastı; yavaşladı ve durdu."
+FİKİR: Önüne kedi çıkan bisikletlinin frene basıp yavaşlayarak güvenle durması.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing four metres back along a sunlit cobbled street path. A friendly Turkish boy on a vintage blue bicycle squeezes his brake levers as a fluffy orange cat sits calmly on the stone path ahead. The living street environment features a stone garden wall, potted red geraniums, a wooden bench, and a brass bicycle bell on the handlebars. Warm afternoon key light illuminates the boy and cat, showcasing their warm matte skin and fur with low specular scatter, never tinted green or grey. Around the bicycle brake pads and tires, a soft round warm-golden GLOW of light flares softly to represent the decelerating friction force. Continuity presents the second key example of changing motion (deceleration and stopping) following the falling apple in K51. The bicycle tires and the cat's paws touch the stone cobblestones directly, each casting a clear soft contact shadow on the path. Feature-animation 3D CGI render with high narrative charm, detailed bicycle and cat fur shaders, and warm safe community appeal.
+
+STYLE: Feature-animation 3D CGI for K52 featuring appealing multi-subject staging, soft matte skin and fur rendering, tactile metal and stone shaders, and clear force effects.
+LIGHT AND PALETTE: Warm afternoon sunlight from left for K52, soft golden friction glow on brake pads, cobbled ground bounce, palette of sky blue, orange cat fur, and stone grey.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K52 firewall: no drawn force arrows, no face glow, no green skin tint, no plastic wax skin, no floating bicycle, no garbled signs
+-----
+
+# K53 — "Mira bunların dengelenmiş olamayacağını anladı, çünkü ikisinde de hareket değişiyordu."
+FİKİR: Penceredeki Mira'nın hareketing değiştiğini (hızlanma/yavaşlama) fark ederek başını sallaması.
+-----
+50mm lens at f/3.5, eye-level three-quarter medium view, standing two and a half metres back inside the library near the window. @mira nods thoughtfully with a sharp smile of scientific insight as she connects the accelerating apple and braking bicycle to changing motion. The living library interior features the oak reading desk, brass desk lamp, potted fern, and the sunlit garden window background. Soft afternoon key light illuminates her face, highlighting her warm matte skin with low specular subsurface scatter, never tinted green or grey. Along the sunlit stone window sill framing the view outside, a gentle soft round warm-golden GLOW of light radiates softly, highlighting the physical presence of non-zero net force in changing motion. Continuity links the observations in K51 (apple) and K52 (cyclist) back to @mira's analytical deduction inside the library. Her forearm rests flat on the wooden window ledge, casting a distinct soft contact shadow onto the wood grain. Feature-animation 3D CGI render with expressive character blend-shapes, soft matte skin rendering, painterly window bokeh, and high cognitive charm.
+
+STYLE: Feature-animation 3D CGI for K53 featuring soft matte subsurface skin scatter, detailed facial expression, painterly background depth, and strong narrative focus.
+LIGHT AND PALETTE: Warm afternoon window key light from right for K53, soft golden window sill bounce, cool interior shadow fill, palette of terracotta, oak tan, and leaf green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K53 firewall: no waxy plastic skin, no green facial tint, no drawn vector arrows, no floating character, no garbled text, no photoreal live-action
+-----
+
+# K54 — "Eğer bileşke kuvvet sıfırdan farklıysa, yani taraflardan biri daha güçlüyse,"
+FİKİR: Pirinç terazinin bir kefesinin aşağı çökerek dengenin bozulduğunu göstermesi.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two metres back focusing on a classic brass balance scale on the teacher's desk. The brass balance scale tilts significantly to the right as one pan carries a heavier weight, demonstrating unbalanced mechanical state. The living desk surroundings feature polished oak wood tabletop, a brass calibration weight set in a wooden box, a ceramic mug, and a potted plant. Directional afternoon sunlight glints off the polished brass pans and beam, showing warm matte skin, low specular, never tinted green or grey on hands, showcasing metallic satin highlights without harsh mirror reflection. A soft round warm-golden GLOW of light shines brightly beneath the lower, heavier pan, visually proving that one force dominates when net force is non-zero. Continuity formalizes @mira's realization in K53 into a visual balance metaphor showing R ≠ 0 N. The heavy brass base of the scale rests solidly flat ON the oak desk, casting a clear soft contact shadow beneath its footings. Feature-animation 3D CGI render with exquisite brass metal shaders, clear mechanical balance staging, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K54 featuring high-detail instrument modeling, satin metal shaders, soft glowing energy aura, and clear educational legibility.
+LIGHT AND PALETTE: Focused afternoon key light from left for K54, radiant warm-golden glow on heavy pan, warm oak wood bounce, palette of brass gold, oak brown, and satin white.
+TEXT: raised brass symbols mounted on the wooden desk base read left-to-right, never mirrored, seven characters explicitly spelled out: R   ≠   0   N (one capital letter R, one clear space, one not-equal symbol ≠, one clear space, one digit zero, one clear space, one capital letter N)
+NEGATIVE: K54 firewall: no R=0 N text, no garbled symbols, no drawn vector arrows, no plastic wax sheen, no floating scale, no photoreal live-action, no green or grey skin cast, no waxy plastic skin
+-----
+
+# K55 — "orada dengelenmemiş kuvvetler vardır ve cismin hareketi mutlaka değişir."
+FİKİR: Bozuk dengenin nesneyi harekete geçirdiğini kanıtlayan net kuvvet aurası.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two and a half metres back facing the classroom demonstration panel. The wooden presentation panel displays the official scientific headline DENGELENMEMİŞ KUVVETLER alongside an active motion diagram. The living panel surroundings feature an oak wood frame, brass adjustment pins, a wooden meter rule, and a small potted desk plant. Clear afternoon sunlight falls across the wooden panel, showing smooth matte paint finish and tactile wood grain textures. A soft round warm-golden GLOW of light illuminates the headline text, emphasizing that unbalanced forces always alter motion. Continuity builds on K54's tilted balance scale by revealing the formal scientific term for non-zero net force systems. The demonstration stand rests flat on the floor flagstones, casting a clear soft contact shadow beneath its wooden feet. Feature-animation 3D CGI render with crisp typographical legibility, rich tactile material shaders, and warm educational presentation.
+
+STYLE: Feature-animation 3D CGI for K55 featuring high-precision text staging, satin wood and acrylic shaders, soft glowing energy accents, and high educational appeal.
+LIGHT AND PALETTE: Focused daylight key from left for K55, radiant warm-golden headline glow, warm wood ambient fill, palette of oak brown, warm yellow, and deep navy.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K55 firewall: no garbled letters, no English text, no drawn vector arrows, no plastic wax sheen, no floating stand, no dark heavy shadows
+-----
+
+# K56 — "Kısacası Mira şu kuralı çıkardı:"
+FİKİR: Mira'nın kalemi durdurup 3 altın kuralı zihninde kilitlediği an.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back beside Mira's library study desk. @mira pauses her pencil above her notebook page, looking up with a confident, decisive expression as she prepares to summarize the three rules. Her living desk space features the open notebook, a wooden pencil, a brass desk lamp, an eraser, and a small glass water bottle. Warm afternoon key light illuminates her face, highlighting her warm matte skin with gentle subsurface scatter, low specular reflection, never tinted green or grey. Near her pencil tip, a soft round warm-golden GLOW of light shines steadily, representing the synthesis of the core scientific rule. Continuity links K55's formal term to @mira's active note-taking process in her notebook. Her forearm and notebook rest flat ON the wooden tabletop, casting distinct soft contact shadows onto the wood grain. Feature-animation 3D CGI render with warm character appeal, detailed paper and pencil textures, and focused intellectual atmosphere.
+
+STYLE: Feature-animation 3D CGI for K56 featuring appealing character staging, soft matte subsurface skin scatter, tactile paper shaders, and calm narrative clarity.
+LIGHT AND PALETTE: Warm afternoon side key light from left for K56, soft golden pencil glow, cool desk shadow fill, palette of oak tan, cream paper, and sky blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K56 firewall: no waxy plastic skin, no green facial tint, no drawn vector arrows, no floating notebook, no garbled handwriting, no photoreal live-action
+-----
+
+# K57 — "Bir şey hızlanıyorsa,"
+FİKİR: HIZLANMA: Çim sahada fırlayıp hızlanan futbol topunun dinamik görüntüsü.
+-----
+35mm lens at f/4.0, eye-level low-angle dynamic tracking view, standing three metres back on a lush green sports lawn. A stitched leather football surges forward rapidly across the green grass blades, accelerating dynamically from a standstill position. The living lawn surroundings include crisp green grass blades with water drops, a white painted chalk boundary line, and a small wooden corner flag. Direct afternoon sunlight glints off the stitched leather surface of the ball, showcasing realistic leather grain and matte sheen without plastic glare. A radiant soft round warm-golden GLOW of light forms a dynamic energy trail behind the accelerating football, proving velocity increase. Continuity initiates the rhythmic three-hit montage (K57 acceleration, K58 deceleration, K59 direction change) summarizing motion change. The leather football touches the grass blades directly, casting a dynamic soft contact shadow onto the lawn surface below. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with high dynamic motion physics, crisp lawn textures, soft glowing effect trail, and vibrant sports appeal.
+
+STYLE: Feature-animation 3D CGI in premium RenderMan lineage for K57 with dynamic sports physics, tactile leather and grass shaders, soft glowing effect trail, and clean graphic legibility.
+LIGHT AND PALETTE: Direct afternoon sun from upper-left for K57, radiant warm-golden motion trail glow, lush green lawn bounce, palette of forest green, white leather, and radiant gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K57 firewall: no drawn force arrows, no vector arrows, no garbled text, no photoreal live-action, no plastic wax sheen, no floating ball
+-----
+
+# K58 — "yavaşlıyorsa"
+FİKİR: YAVAŞLAMA: Kumsalda sürülen oyuncak arabanın kumda yavaşlaması.
+-----
+35mm lens at f/4.0, eye-level low-angle tracking view, standing two and a half metres back along a sandy playground track. A red toy pickup truck slows down rapidly as its thick rubber tires plow through loose dry sand, coming to a gradual stop. The living playground scene features fine sand grains, a wooden sandpit border, a plastic toy bucket, and a potted geranium plant. Warm afternoon sunlight illuminates the red toy body, showcasing matte metal paint texture and rubber tire tread without plastic sheen. A soft round warm-golden GLOW of light flares gently around the tires in resistance, visually proving deceleration caused by sand friction. Continuity delivers the second hit of the motion-change trilogy (K57 acceleration → K58 deceleration → K59 turning). The toy truck's rubber tires press deep into the sand track, casting distinct soft contact shadows on the sandy ground. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with realistic sand displacement physics, tactile toy shaders, and warm focused energy lighting.
+
+STYLE: Feature-animation 3D CGI for K58 featuring dynamic friction physics, tactile sand and rubber shaders, soft glowing energy aura, and clean educational clarity.
+LIGHT AND PALETTE: Warm afternoon sun from left for K58, soft golden friction glow on tires, warm sand bounce, palette of tomato red, sand tan, and terracotta.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K58 firewall: no drawn force arrows, no vector arrows, no garbled text, no photoreal live-action, no plastic wax sheen, no floating vehicle
+-----
+
+# K59 — "ya da yön değiştiriyorsa,"
+FİKİR: YÖN DEĞİŞİMİ: Viraja giren kaykaycının yönünü değiştirmesi.
+-----
+35mm lens at f/4.0, eye-level dynamic tracking view, standing three metres back on a smooth concrete skate park curve. A young Turkish boy on a wooden skateboard carves a sharp turn along a curved concrete track, leaning his body into the arc. The living skate park environment features smooth grey concrete, a wooden spectator bench, a potted olive tree, and painted track markings. Bright afternoon sunlight catches his active posture, showing his warm matte skin with low specular scatter, never tinted green or grey. A soft round warm-golden GLOW of light arcs smoothly along his curving wheel path, visually proving that direction change requires unbalanced force. Continuity completes the rapid three-hit motion-change trilogy (K57-K59), finalizing the three visual conditions of unbalanced forces. The skateboard wheels press firmly against the smooth concrete surface, casting a crisp soft contact shadow along the curving arc. Feature-animation 3D CGI render with high dynamic movement physics, rich concrete shaders, and energetic youth sports appeal.
+
+STYLE: Feature-animation 3D CGI for K59 featuring dynamic curve movement physics, soft matte skin rendering, tactile wood and concrete shaders, and clear force pathing.
+LIGHT AND PALETTE: Direct afternoon key light from left for K59, radiant golden arc glow along wheel path, soft concrete bounce, palette of oak brown, concrete grey, and sky blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K59 firewall: no drawn force arrows, no face glow, no green skin tint, no plastic wax skin, no floating skateboard, no garbled signs
+-----
+
+# K60 — "bilin ki orada dengelenmemiş bir güç iş başındadır!"
+FİKİR: Üç hareketli örneğin 'DENGELENMEMİŞ KUVVET' ilkesinde birleşmesi.
+-----
+50mm lens at f/4.0, eye-level wide overview view, standing three and a half metres back facing a grand educational summary panel. The summary panel unifies all three motion-change examples (acceleration, deceleration, direction change) under one clear rule heading. The living surroundings feature an oak wood frame, brass mounting clips, a wooden meter rule, and a small potted desk plant. Clear afternoon sunlight falls across the wooden panel, showing smooth matte paint finish and tactile wood grain textures. A powerful soft round warm-golden GLOW of light illuminates the entire summary panel, celebrating the master rule of unbalanced forces. Continuity synthesizes the rapid three-hit trilogy (K57-K59) into one grand authoritative scientific conclusion. The demonstration stand rests flat on the floor flagstones, casting a clear soft contact shadow beneath its wooden legs. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with crisp typographical legibility, rich tactile material shaders, and warm triumphant illumination.
+
+STYLE: Feature-animation 3D CGI for K60 featuring high-precision text staging, satin wood and acrylic shaders, soft glowing energy aura, and high educational appeal.
+LIGHT AND PALETTE: Focused daylight key from left for K60, radiant warm-golden master glow, warm wood ambient fill, palette of oak brown, warm yellow, and deep navy.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K60 firewall: no garbled letters, no English text, no drawn force arrows, no plastic wax sheen, no floating stand, no dark heavy shadows
+-----
+
+# K61 — "Akşam eve dönerken Mira o gün öğrendiklerini düşündü."
+FİKİR: Akşamüstü tatlı gün batımı ışığında eve yürüyen Mira'nın memnuniyeti.
+-----
+35mm lens at f/4.5, eye-level three-quarter medium tracking view, standing four metres back along a sunlit neighborhood street. @mira walks peacefully homeward along the cobbled sidewalk, holding her backpack strap with a satisfied, contented smile. The living street scene features historic Anatolian wooden houses, potted red geraniums on stone windowsills, a sleeping cat on a bench, and warm evening street lamps. Golden sunset light bathes the street in warm amber tones, highlighting her warm matte skin with soft subsurface scatter, low specular, never tinted green or grey. A gentle soft round warm-golden GLOW of light surrounds her stepping shoe, softly echoing the day's scientific discoveries as evening sets in. Continuity shifts the scene from the intense classroom learning in K50-K60 to @mira's peaceful, reflective walk home at golden hour. Her shoes touch the cobbled flagstones directly, casting long soft contact shadows on the warm stone pavement. Feature-animation 3D CGI render with warm storybook sunset ambiance, serene character appeal, and rich architectural textures.
+
+STYLE: Feature-animation 3D CGI for K61 featuring rich golden hour atmospheric lighting, painterly stone and wood textures, matte skin rendering, and serene emotional resonance.
+LIGHT AND PALETTE: Golden sunset key light from low-left for K61, warm amber street bounce, long soft shadows, palette of terracotta, warm gold, and evening violet.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K61 firewall: no waxy plastic skin, no green facial tint, no drawn force arrows, no floating characters, no garbled letters, no photoreal live-action
+-----
+
+# K62 — "Artık kuvvetlerin bazen birleşip güçlendiğini,"
+FİKİR: ÖZET 1 (BİRLEŞİR): İki aynı yönlü auranın tek bir güçlü aurada birleştiği aynı kadrajlı deney.
+-----
+50mm lens at f/4.0, eye-level medium close-up view, standing two and a half metres back facing the standardized summary demonstration table. Two soft round warm-golden GLOWs of light push a smooth wooden block in the same eastward direction across a polished oak table surface. The living demonstration setup features a wooden meter ruler, a brass calibration pin, a ceramic mug, and a potted desk succulent. Warm directional light illuminates the wooden block, showing crisp oak grain and smooth matte finish with low specular reflection. The two force glows merge into a single powerful golden aura, visually proving the addition rule (BİRLEŞİR) for forces in the same direction. Continuity establishes the first of three identical-framing summary shots (K62 combining, K63 subtracting, K64 balancing) for direct visual comparison. The wooden block rests flat ON the oak tabletop, casting a clear soft contact shadow on the wood grain surface. Feature-animation 3D CGI render with pristine graphic clarity, rich tactile materials, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K62 featuring standardized comparative staging, tactile wood shaders, soft glowing energy aura, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K62, radiant warm-golden combined glow, warm wood ambient bounce, palette of oak tan, matte gold, and cream white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K62 firewall: no drawn force arrows, no garbled letters, no plastic wax sheen, no floating block, no camera angle shift between K62-K64
+-----
+
+# K63 — "bazen çekişip birbirini azalttığını,"
+FİKİR: ÖZET 2 (ÇEKİŞİR): İki zıt yönlü auranın birbirini eksilttiği aynı kadrajlı deney.
+-----
+50mm lens at f/4.0, eye-level medium close-up view, standing two and a half metres back facing the identical standardized summary demonstration table. Two opposing soft round warm-golden GLOWs of light push the wooden block in opposite directions, with the larger force dominating. The living demonstration setup maintains identical placement of the wooden meter ruler, brass pin, ceramic mug, and potted desk succulent. Warm directional light illuminates the wooden block, showing crisp oak grain and smooth matte finish with low specular reflection. The larger force aura reduces the smaller opposing aura, visually proving the subtraction rule (ÇEKİŞİR) for opposite forces. Continuity preserves the exact camera framing, lens, and lighting from K62, isolating force interaction as the sole changing variable. The wooden block rests flat ON the oak tabletop, casting a clear soft contact shadow on the wood grain surface. Feature-animation 3D CGI render with pristine graphic clarity, rich tactile materials, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K63 featuring standardized comparative staging, tactile wood shaders, soft glowing energy aura, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K63, dual warm-golden opposing glows, warm wood ambient bounce, palette of oak tan, matte gold, and cream white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K63 firewall: no drawn force arrows, no garbled letters, no plastic wax sheen, no floating block, no camera angle shift between K62-K64
+-----
+
+# K64 — "bazen de tam denge kurup her şeyi olduğu gibi bıraktığını biliyordu."
+FİKİR: ÖZET 3 (DENGE): İki eşit zıt auranın birbirini sıfırladığı aynı kadrajlı deney.
+-----
+50mm lens at f/4.0, eye-level medium close-up view, standing two and a half metres back facing the identical standardized summary demonstration table. Two equal and opposite soft round warm-golden GLOWs of light push against the wooden block, completely canceling each other out to leave it static. The living demonstration setup maintains identical placement of the wooden meter ruler, brass pin, ceramic mug, and potted desk succulent. Warm directional light illuminates the static block, showing crisp oak grain and smooth matte finish with low specular reflection. The two equal force glows splay and dissolve into quiet ambient light, visually proving zero net force (DENGE) and zero motion change. Continuity completes the three-shot comparative summary (K62-K64), concluding the core force principles on the identical demonstration setup. The wooden block rests flat ON the oak tabletop, casting a precise soft contact shadow on the wood grain surface. Feature-animation 3D CGI render with pristine graphic clarity, rich tactile materials, and warm focused illumination.
+
+STYLE: Feature-animation 3D CGI for K64 featuring standardized comparative staging, tactile wood shaders, soft glowing energy aura, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K64, soft golden dissolving glows, warm wood ambient bounce, palette of oak tan, matte gold, and cream white.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K64 firewall: no drawn force arrows, no garbled letters, no plastic wax sheen, no floating block, no camera angle shift between K62-K64
+-----
+
+# K65 — "Bugün bileşke kuvveti jet hızıyla öğrendik!"
+FİKİR: Sınıfta/çalışma masasında tamamlanan dersin neşeli coşkusu.
+-----
+35mm lens at f/4.0, eye-level three-quarter medium view, standing three metres back near the science classroom desk area. @mira raises both hands in a joyful celebration gesture, holding her wooden pencil with a triumphant smile at her successful lesson. The living classroom environment features her open notebook, a brass desk lamp, a globe, a ceramic tea mug, and potted red geraniums. Bright afternoon sunlight pours through the side window, illuminating her warm matte skin with soft subsurface scatter, low specular, never tinted green or grey. A radiant soft round warm-golden GLOW of light sparkles near her celebration gesture, adding festive energy to her educational milestone. Continuity transitions from the summary physics demonstration in K62-K64 back to @mira's personal joy and achievement in the classroom. Her forearm and notebook rest flat ON the oak desk, casting distinct soft contact shadows on the wood grain. Feature-animation 3D CGI render with warm energetic character appeal, rich classroom props, and joyful educational celebration.
+
+STYLE: Feature-animation 3D CGI for K65 featuring expressive character blend-shapes, soft matte subsurface skin scatter, rich indoor props, and bright cheerful appeal.
+LIGHT AND PALETTE: Bright afternoon window key light from left for K65, radiant warm-golden celebration sparkle, warm oak bounce, palette of terracotta, oak tan, and sky blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K65 firewall: no waxy plastic skin, no green facial tint, no drawn force arrows, no floating character, no garbled letters, no photoreal live-action
+-----
+
+# K66 — "Şimdi sıra sizde; işte Mira'dan küçük bir ödüllü soru:"
+FİKİR: Ahşap masada beliren soru kartı.
+-----
+50mm lens at f/4.0, eye-level medium close-up view, standing two metres back focused on a beautiful wooden presentation stand on the desk. A clean paper quiz card rests on a carved wooden easel stand, presenting the interactive student question challenge. The living desk surroundings include a brass reading lamp, a wooden pencil box, a ceramic mug, and a potted desk succulent. Crisp afternoon key light illuminates the paper card and desk with warm matte skin, low specular, never tinted green or grey, showing fine paper weave and smooth wooden stand grain without specular glare. A gentle soft round warm-golden GLOW of light outlines the quiz card, inviting the viewer to participate in the upcoming challenge. Continuity bridges @mira's celebration in K65 to the interactive student quiz card presented on her study desk. The wooden quiz stand rests flat ON the oak desk tabletop, casting a clear soft contact shadow beneath its feet. Feature-animation 3D CGI render with crisp graphic legibility, tactile paper and wood shaders, and warm inviting lighting.
+
+STYLE: Feature-animation 3D CGI for K66 featuring high-precision card staging, tactile paper and wood shaders, soft glowing aura, and clear interactive appeal.
+LIGHT AND PALETTE: Focused daylight key from left for K66, soft golden aura outline, warm wood ambient fill, palette of cream paper, oak brown, and satin gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K66 firewall: no garbled letters, no English text, no drawn force arrows, no plastic wax sheen, no floating card stand, no dark heavy shadows, no green or grey skin cast, no waxy plastic skin
+-----
+
+# K67 — "Bir kutuyu kuzey yönünde 15 N, güney yönünde ise yine 15 N kuvvetle çekersek,"
+FİKİR: Ahşap kutu, kuzeye 15 N ve güneye 15 N zıt aura kuvvetleri.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing two and a half metres back facing the quiz demonstration setup. A solid wooden box rests flat on a smooth desk surface, subject to two equal opposing pulls: 15 N toward the north and 15 N toward the south. The living demonstration area features a compass rose etched into the wood table, a wooden ruler, a ceramic tea mug, and a potted desk plant. Directional afternoon sunlight falls across the wooden box, highlighting rich oak grain and smooth matte finish with low specular reflection. A soft round warm-golden GLOW of light shines at the north contact point (15 N), and an identical soft round warm-golden GLOW shines at the south contact point (15 N). Continuity establishes the physical premise of the student quiz challenge introduced in K66, setting up the opposing 15 N forces. The wooden box rests flat ON the oak table surface, casting a clear soft contact shadow beneath its lower edge. Feature-animation 3D CGI render with high physical clarity, tactile wood shaders, soft glowing energy auras, and clear challenge staging.
+
+STYLE: Feature-animation 3D CGI for K67 featuring precise physical problem staging, tactile wood shaders, soft glowing energy aura, and clear educational focus.
+LIGHT AND PALETTE: Focused daylight key from left for K67, dual warm-golden opposing glows, warm wood ambient bounce, palette of oak brown, matte white, and satin gold.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K67 firewall: no drawn force arrows, no floating box, no garbled text, no plastic wax sheen, no mid-air floating elements, no photoreal live-action
+-----
+
+# K68 — "bu kutu dengelenmiş kuvvette midir ve bileşke kuvvet kaç olur?"
+FİKİR: Kutunun üstünde beliren 'R = ?' soru işareti etiketinin izleyiciyi düşündürmesi.
+-----
+50mm lens at f/3.5, eye-level close-up view, standing two metres back focusing on the question mark label above the wooden box. Above the static wooden box on the desk, a clean dimensional acrylic card presents the open unanswered question without revealing the solution. The living desk surroundings include the compass rose on the tabletop, brass lamp base, a wooden ruler, and a potted desk plant. Soft diffuse key light illuminates the dimensional white acrylic symbols and desk details with warm matte skin, low specular, never tinted green or grey, showing smooth satin finish with zero plastic glare. A soft round warm-golden GLOW of light pulses gently around the question mark symbol, maintaining visual suspense for viewer participation. Continuity holds the exact physical setup of K67, adding the unanswered R = ? label to prompt student comment answers. The wooden box and the quiz stand rest flat ON the oak tabletop, each casting a soft contact shadow beneath. Every physical surface in the scene exhibits detailed material properties, authentic textures, and natural lighting fidelity. Feature-animation 3D CGI render with immaculate typographical legibility, gentle glowing energy pulse, and high interactive engagement.
+
+STYLE: Feature-animation 3D CGI for K68 featuring high-precision question staging, satin acrylic materials, soft glowing energy aura, and high student engagement appeal.
+LIGHT AND PALETTE: Focused daylight key from left for K68, pulsing golden question glow, warm wood ambient fill, palette of matte white, satin gold, and oak tan.
+TEXT: raised matte white acrylic symbols on the desk display card read left-to-right, never mirrored, five characters: R   =   ? (one capital letter R, one clear space, one equals sign, one clear space, one question mark ?)
+NEGATIVE: K68 firewall: no answer revealed, no R=0 N text, no drawn force arrows, no garbled symbols, no floating box, no photoreal live-action, no green or grey skin cast, no waxy plastic skin
+-----
+
+# K69 — "Cevaplarınızı yorumlara bekliyoruz."
+FİKİR: Yorum çağrısını simgeleyen ahşap yorum kutusu ve neşeli atmosfer.
+-----
+50mm lens at f/4.0, eye-level medium view, standing two and a half metres back facing an inviting wooden comment box on the desk. A decorative carved wooden comment box with an open top slot sits prominently on the desk, inviting viewers to leave their quiz answers. The living desk surroundings feature colorful paper comment cards, a wooden pen holder with pencils, a ceramic mug, and a potted geranium. Bright afternoon sunlight fills the scene, highlighting rich wood grain and paper textures with soft diffuse warmth. A cheerful soft round warm-golden GLOW of light sparkles around the comment box slot, reinforcing the call-to-action for comments. Continuity smoothly shifts the focus from the quiz question in K68 to the active viewer comment submission box. The wooden comment box and pen holder rest flat ON the oak tabletop, casting clear soft contact shadows. Feature-animation 3D CGI render with warm community appeal, tactile wood and paper shaders, and vibrant inviting lighting.
+
+STYLE: Feature-animation 3D CGI for K69 featuring inviting prop staging, tactile wood and paper shaders, soft glowing energy accents, and warm viewer connection.
+LIGHT AND PALETTE: Clean daylight key from left for K69, radiant golden slot sparkle, warm wood ambient bounce, palette of oak brown, cream paper, and geranium red.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K69 firewall: no garbled letters, no English text, no drawn force arrows, no plastic wax sheen, no floating box, no dark heavy shadows
+-----
+
+# K70 — "Bilimle kalın, kuvvetiniz hep dengede kalsın."
+FİKİR: İmzalı denge görseli — terazide dengede duran iki şeffaf küre.
+-----
+50mm lens at f/4.0, eye-level three-quarter medium view, standing two and a half metres back focusing on an artistic brass lever scale. A beautifully crafted brass lever scale stands perfectly horizontal on the desk, holding two identical glowing crystal spheres in complete balance. The living desk scene features polished oak tabletop, a brass desk clock, a leather-bound book, and a potted green ivy plant. Soft warm key light illuminates the brass mechanism and crystal spheres, casting luminous caustics and smooth metallic highlights. A soft round warm-golden GLOW of light encapsulates both balanced crystal spheres, creating a serene signature image of scientific equilibrium. Continuity provides the thematic artistic conclusion to the entire video, enshrining the concept of perfect balance as a closing signature visual. The heavy brass base of the scale rests solidly flat ON the oak desk, casting a distinct soft contact shadow beneath. Feature-animation 3D CGI render with exquisite glass and metal shaders, serene lighting balance, and inspiring philosophical elegance.
+
+STYLE: Feature-animation 3D CGI for K70 featuring high-precision artistic prop modeling, glass caustics and satin metal shaders, soft glowing aura, and serene philosophical appeal.
+LIGHT AND PALETTE: Focused afternoon key light from left for K70, radiant golden sphere glow, warm wood ambient fill, palette of brass gold, clear crystal, and oak tan.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K70 firewall: no unbalanced tilt, no drawn force arrows, no garbled letters, no plastic wax sheen, no floating instrument, no photoreal live-action
+-----
+
+# K71 — "Mira'yla bir sonraki keşifte görüşmek üzere!"
+FİKİR: Kadrajın genişlemesi, Mira'nın neşeyle el sallayarak gelecek keşfi müdelemesi.
+-----
+35mm lens at f/4.5, eye-level three-quarter wide view, standing four metres back in the bright sunlit science classroom. @mira waves cheerfully to the camera with a bright, warm smile, standing beside her study desk as the frame pulls back gently. The living classroom environment features her open notebook, the brass scale, a globe of the Earth, potted red geraniums, and sunlit windows. Abundant warm afternoon sunlight fills the room, illuminating her warm matte skin with soft subsurface scatter, low specular, never tinted green or grey. A radiant soft round warm-golden GLOW of light surrounds her waving hand, creating a joyful, inspiring farewell atmosphere. Continuity concludes the entire 71-clip video by bringing @mira back to full-frame view for a friendly final wave goodbye. Her sneakers rest flat on the wooden classroom floorboards, casting clear soft contact shadows on the ground beneath. Feature-animation 3D CGI render with vibrant character appeal, expansive spatial warmth, rich classroom props, and inspiring educational farewell.
+
+STYLE: Feature-animation 3D CGI for K71 featuring expressive character blend-shapes, soft matte subsurface skin scatter, rich indoor environment depth, and bright cheerful appeal.
+LIGHT AND PALETTE: Abundant afternoon window key light from left for K71, radiant golden farewell glow, warm oak floor bounce, palette of terracotta, oak tan, and sky blue.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: K71 firewall: no waxy plastic skin, no green facial tint, no drawn force arrows, no floating characters, no garbled letters, no photoreal live-action
+-----
