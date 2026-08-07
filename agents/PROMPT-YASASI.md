@@ -966,11 +966,46 @@ tek istisna `Camera:` sözcüğü, o altın standartta 28/50 dosyada aynen böyl
 > Türkçe yazı kusursuz çıktı). Ama o karelerin sayısı ~12; kalan 42 klipte kuyruk bedava
 > değil, **filmin akışına mal oluyor.**
 >
-> **Önerilen değişiklik (Mami onaylarsa):** sabit kuyruğun kamera yarısı
-> (`No whip-pan, no shake, no snap-zoom, no camera warp`) **yalnız yazı taşıyan ve katı/mekanik
-> nesne taşıyan karelere** yazılır; kalan kliplerde kamera kesimin içinden akıp geçebilsin.
-> Sessizlik yarısı (`Silent clip, no audio, no dialogue, mouth closed, no lip movement`)
-> **her karede kalır** — o EDU iş akışı yasasıdır, kamera tercihi değil.
+> ✅ **MAMİ ONAYLADI — 2026-08-07. Kural artık budur, öneri değil.** Sabit kuyruğun kamera
+> yarısı (`No whip-pan, no shake, no snap-zoom, no camera warp`) **yalnız ekranda yazı taşıyan
+> ve katı/mekanik gövde taşıyan karelere** yazılır; kalan kliplerde kamera kesimin içinden
+> akıp geçebilir. Sessizlik yarısı (`Silent clip, no audio, no dialogue, mouth closed,
+> no lip movement`) **her karede kalır** — o EDU iş akışı yasasıdır, kamera tercihi değil.
+> `motion-lint.mjs:222` bu koşulu zaten uyguluyordu; bayat olan yasa metniydi.
+
+### 🔴 §3n — NEGATİF SAHNEYE ÖZELDİR, TEMPLATE DEĞİLDİR (Mami, 2026-08-07)
+
+Mami'nin cümlesi: *"negatifi sahne spesifik yazman gerekecek — birleşmesinler, morphlanmasınlar.
+Template kopyalama; sahneyi yazarken **neyin bozabileceğini de düşünüp** yazacaksın."*
+
+**Neden bu kadar pahalı — ölçüldü 2026-08-07:** Magnific'in `kling-30` modelinde **ayrı bir
+`negative_prompt` alanı YOKTUR.** Tek bir `prompt` alanı var (2500 karakter). Kling'in kendi
+API'sinde negatif alanı bulunuyor ama **Magnific onu açmıyor.** Yani negatif cümlemiz pozitif
+sahne tarifiyle **aynı kanaldan, aynı bütçeden** gidiyor: her template kelimesi, sahneyi
+anlatacak bir kelimenin yerini yiyor.
+
+Satıcı belgeleri aynı yönü gösteriyor:
+- **Kling:** *"negatif prompt'ları dar tut — **3-5 hedefli madde**, uzun genel listeleri yener."*
+- **Seedance 2.0:** **negatif prompt'u HİÇ desteklemiyor**; kısıt *olumlu cümleyle* yazılır
+  (`face stable, anatomically correct, physically accurate motion`). Yani sektör negatiften
+  olumlu kısıta geçiyor.
+- Bu repoda zaten ölçülü: olumlu yazım (`an empty deserted street` ⟂ `no crowd`) semantik
+  uyumu **+%24** artırıyor; uzun negatif katalogları motora kaçınılan görüntüyü hatırlatıyor.
+
+**Yazım kuralı — her kare için tek soru:** *"BU kare nasıl bozulur?"* Cevap kareye bakarak
+verilir, listeden seçilerek değil. Sonra **en çok 3-5 madde**, ve mümkünse **olumlu** yazılır.
+
+| Karede ne var | Gerçek bozulma yolu | Yazılacak (olumlu tercih edilir) |
+|---|---|---|
+| Çok sayıda küçük benzer nesne (sürü, yumurta, karınca) | sayı klip sonunda erir/birleşir | `the count stays the same from first to last frame, each one keeps its own body` |
+| İki canlı yan yana / temas | gövdeler birleşir, uzuv takas eder | `the two bodies never overlap or merge, each keeps a visible gap` |
+| Ekranda Türkçe yazı | harf/diakritik dağılır | kamera kuyruğu **+** `the lettering stays exactly as printed` |
+| Katı/mekanik nesne (tel, kova, alet) | warp, eğrilme | kamera kuyruğu **+** `rigid edges stay straight` |
+| El / parmak işi | fazla parmak, eriyen el | `hands stay anatomically correct, five fingers, fingers stay separate` |
+| Konuşmayacak karakter | ağız oynar (Kling negatifi dinlemiyor) | **kare tasarımında** çözülür: profil/uzak kadraj |
+
+⚠ **Bu tablo bir menü değil, örnektir.** Karede bu satırların hiçbiri yoksa negatif de yazılmaz.
+Sahnede olmayan bir bozulmayı yasaklamak, motora o görüntüyü tarif etmektir.
 
 🔴 **ÖLÇÜLEN ÜÇ KUSUR — Mami hükmü: *"hareketler çok ai, hiç duygu yok, ruh yok, aptalca ani
 hareketler"* (2026-07-30, Mira K01-K21 basıldı).** Altın standart 50 dosya ile kusurlu 54

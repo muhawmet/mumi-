@@ -1,0 +1,88 @@
+6. SINIF - HAYVANLARDA ÜREME, BÜYÜME VE GELIŞME — EDIT PLAN
+=========================================================================
+🔴 BU DOSYA ELLE YAZILMAZ — MOTION başlıklarından türetilir:
+   node scripts/edit-plan.mjs "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme" --yaz
+   Süreyi değiştirmek istiyorsan MOTION/NN.txt başlık satırını değiştir, sonra bunu koş.
+   Sebep ölçüldü: elle tutulan plan aynı gün bayatlıyor ve "UZUN ÜRET" bayrağı üretime geçmiyor.
+
+54 klip · toplam görüntü 3:14 · VO tahmini 3:50
+süre dağılımı: 4s×2 · 5s×10 · 6s×27 · 7s×13 · 8s×2
+✓ ritim: 5 farklı süre — metronom kırılmış.
+
+SÜTUNLAR: kare · klip · kova · ÜRETİM süresi · VO tahmini · pencere · cümle · bayrak
+⚠ VO süreleri TAHMİNDİR. Bu hatta tahmin tarihsel olarak yüksek çıkıyor (Kütle plan 3:33 →
+  gerçek 3:00 · Bitkilerde plan 4:32 → gerçek 3:29). Gerçek VO inince kaba-kurgu.mjs
+  kesimleri whisper ile GERÇEK cümle sınırlarına oturtur; buradaki pencereler planlamadır.
+=========================================================================
+
+##### SEKANS 1 — KÜMES KAPISI: AYNI SABAH, İKİ DOĞUM #####
+1.png     K01  TAŞIYICI 6s  5.6s  [0:00–0:06]  Efe o sabah dedesinin bahçesinde iki şeyi aynı anda gördü.
+2.png     K02  TAŞIYICI 6s  5.9s  [0:06–0:12]  Kümeste tavuk, yumurtalarının üstünde kıpırdamadan oturuyordu.
+3.png     K03  TAŞIYICI 7s  5.4s  [0:12–0:16]  Ahırın köşesinde kedi, yeni doğmuş yavrularını yalıyordu.   ◄VO 5.4s (kalibre 4.3s) > pencere 4.1s
+4.png     K04  TAŞIYICI 6s  4.7s  [0:16–0:19]  Yavru kediler daha o günden annelerine benziyordu.
+5.png     K05  TAŞIYICI 7s  5.4s  [0:19–0:23]  Yumurtaların içinde ne olduğunu ise kimse göremiyordu.   ◄VO 5.4s (kalibre 4.3s) > pencere 4.1s
+6.png     K06  VURUŞ    8s  5.4s  [0:23–0:29]  Efe merak etti: biri doğuyor, öteki yumurtadan çıkıyordu.   🔴 8s ÜRET
+7.png     K07  TAŞIYICI 7s  5.4s  [0:29–0:33]  Cevap, hayvanlarda üreme ve gelişme çeşitliliğinde saklıydı.
+8.png     K08  TAŞIYICI 6s  4.5s  [0:33–0:37]  Efe işin başına, üremeye bakmaya karar verdi.
+
+##### SEKANS 2 — GÖLET: DIŞ DÖLLENME #####
+9.png     K09  TAŞIYICI 5s  2.9s  [0:37–0:39]  Hayvanların çoğu eşeyli ürer.
+10.png    K10  TAŞIYICI 7s  5.4s  [0:39–0:44]  Bir erkek üreme hücresi ve bir dişi üreme hücresi birleşir.
+11.png    K11  TAŞIYICI 6s  3.1s  [0:44–0:46]  Erkek üreme hücresine sperm denir.
+12.png    K12  TAŞIYICI 5s  4.0s  [0:46–0:49]  Dişi üreme hücresine ise yumurta denir.   ◄VO 4.0s (kalibre 3.2s) > pencere 3s
+13.png    K13  TAŞIYICI 7s  5.2s  [0:49–0:54]  Ama bu ikisinin nerede buluştuğu her şeyi değiştirir.
+14.png    K14  TAŞIYICI 5s  3.8s  [0:54–0:57]  Efe bahçenin alt ucundaki gölete indi.
+15.png    K15  TAŞIYICI 6s  4.5s  [0:57–1:00]  Suyun içinde balıklar sığ kıyı boyunca yüzüyordu.   ◄VO 4.5s (kalibre 3.6s) > pencere 3.3s
+16.png    K16  TAŞIYICI 6s  4.5s  [1:00–1:03]  Dişi balık yumurtalarını doğrudan suya bırakır.   ◄VO 4.5s (kalibre 3.6s) > pencere 3.3s
+17.png    K17  TAŞIYICI 6s  4.0s  [1:03–1:07]  Erkek balık da spermlerini aynı suya bırakır.
+18.png    K18  TAŞIYICI 7s  4.3s  [1:07–1:11]  Sperm ve yumurta dış ortamda, suyun içinde birleşir.
+19.png    K19  TAŞIYICI 5s  2.2s  [1:11–1:13]  Buna dış döllenme denir.
+20.png    K20  TAŞIYICI 7s  4.5s  [1:13–1:17]  Açıkta risk çoktur; çoğu yumurta yavruya dönüşemez.
+21.png    K21  TAŞIYICI 7s  4.5s  [1:17–1:21]  Bu yüzden bir seferde milyonlarca yumurta bırakılır.
+22.png    K22  TAŞIYICI 5s  4.5s  [1:21–1:24]  Kurbağalar da yumurtalarını aynı suya bırakır.   ◄VO 4.5s (kalibre 3.6s) > pencere 3s
+
+##### SEKANS 3 — KÜMES VE AHIR: İÇ DÖLLENME #####
+23.png    K23  TAŞIYICI 5s  3.1s  [1:24–1:27]  Efe göletten bahçeye geri döndü.
+24.png    K24  TAŞIYICI 6s  4.5s  [1:27–1:30]  Kümesteki tavuk hâlâ yumurtalarının üstündeydi.   ◄VO 4.5s (kalibre 3.6s) > pencere 3.2s
+25.png    K25  TAŞIYICI 6s  4.9s  [1:30–1:34]  Kuşlarda döllenme dişinin vücudunun içinde gerçekleşir.
+26.png    K26  TAŞIYICI 6s  4.5s  [1:34–1:38]  Yılanda, kertenkelede ve kaplumbağada da böyledir.
+27.png    K27  TAŞIYICI 6s  4.7s  [1:38–1:41]  Kedide, atta ve keçide de döllenme içeride olur.   ◄VO 4.7s (kalibre 3.8s) > pencere 3.4s
+28.png    K28  TAŞIYICI 5s  2.2s  [1:41–1:43]  Buna iç döllenme denir.
+29.png    K29  TAŞIYICI 6s  4.5s  [1:43–1:47]  İçeride sperm ile yumurtanın buluşma şansı yüksektir.
+30.png    K30  TAŞIYICI 6s  3.6s  [1:47–1:50]  Bu yüzden yumurta sayısı çok daha azdır.
+
+##### SEKANS 4 — ÜÇ YOL: YAVRU NASIL DÜNYAYA GELİR #####
+31.png    K31  TAŞIYICI 7s  4.3s  [1:50–1:55]  Döllenme tamamdı; peki yavru nasıl büyür ve doğar?
+32.png    K32  TAŞIYICI 6s  4.3s  [1:55–1:59]  Efe aynı bahçede bunun üç ayrı yolunu gördü.
+33.png    K33  TAŞIYICI 5s  3.1s  [1:59–2:01]  Birincisi doğurarak çoğalmaktır.
+34.png    K34  TAŞIYICI 6s  4.0s  [2:01–2:05]  Yavru annenin karnında gelişir ve öyle doğar.
+35.png    K35  TAŞIYICI 6s  3.3s  [2:05–2:08]  Doğduktan sonra anne sütüyle beslenir.
+36.png    K36  VURUŞ    8s  4.5s  [2:08–2:13]  Kedi, koyun, inek, yarasa, balina ve insan böyledir.   🔴 8s ÜRET
+37.png    K37  TAŞIYICI 5s  3.1s  [2:13–2:16]  İkincisi yumurtlayarak çoğalmaktır.
+38.png    K38  TAŞIYICI 7s  5.2s  [2:16–2:20]  Döllenme içte olur, ama yavru yumurtanın içinde gelişir.
+39.png    K39  TAŞIYICI 5s  3.6s  [2:20–2:23]  Yumurta annenin vücudunun dışındadır.   ◄VO 3.6s (kalibre 2.9s) > pencere 2.7s
+40.png    K40  TAŞIYICI 6s  4.9s  [2:23–2:26]  Tavuk yumurtalarının üstüne yatar ve onları ısıtır.   ◄VO 4.9s (kalibre 4.0s) > pencere 3.5s
+41.png    K41  TAŞIYICI 4s  2.0s  [2:26–2:28]  Buna kuluçka denir.
+42.png    K42  TAŞIYICI 7s  5.2s  [2:28–2:32]  Yılan ve kaplumbağa yumurtalarını toprağa bırakıp gider.
+43.png    K43  TAŞIYICI 4s  2.2s  [2:32–2:34]  Üçüncüsü balıklardır.
+44.png    K44  TAŞIYICI 7s  4.5s  [2:34–2:38]  Onlarda hem döllenme hem gelişme suyun içinde olur.
+45.png    K45  TAŞIYICI 6s  4.0s  [2:38–2:41]  Yavru bakımı kuşlarda ve memelilerde vardır.
+46.png    K46  TAŞIYICI 7s  5.2s  [2:41–2:46]  Yumurtasını bırakıp giden canlılarda yavru bakımı yoktur.
+
+##### SEKANS 5 — BAŞKALAŞIM: AYNI CANLI, BAŞKA BEDEN #####
+47.png    K47  TAŞIYICI 6s  4.3s  [2:46–2:49]  Efe dönerken maydanozun üstünde bir tırtıl gördü.
+48.png    K48  TAŞIYICI 6s  4.5s  [2:49–2:53]  Bazı canlıların yavruları erginlere hiç benzemez.
+49.png    K49  TAŞIYICI 6s  4.7s  [2:53–2:56]  Tırtıl bir süre sonra kendini kozanın içine kapatır.   ◄VO 4.7s (kalibre 3.8s) > pencere 3.6s
+50.png    K50  TAŞIYICI 6s  3.8s  [2:56–3:00]  Kozadan çıkan artık tırtıl değil, kelebektir.
+51.png    K51  TAŞIYICI 6s  3.3s  [3:00–3:03]  Bu büyük değişime başkalaşım denir.
+52.png    K52  TAŞIYICI 6s  4.9s  [3:03–3:07]  Kurbağa yavrusunun önce solungaçları ve kuyruğu vardır.   ◄VO 4.9s (kalibre 4.0s) > pencere 3.7s
+
+##### SEKANS 6 — KÜMES KAPISI: AYNA #####
+53.png    K53  TAŞIYICI 6s  4.9s  [3:07–3:11]  Efe kümese döndüğünde yumurtalardan biri çatlamıştı.
+54.png    K54  TAŞIYICI 6s  5.4s  [3:11–3:14]  Her canlının neslini sürdürmek için kendine özgü bir yolu vardı.   ◄VO 5.4s (kalibre 4.3s) > pencere 3.7s
+
+=========================================================================
+🔴 UZUN ÜRETİLECEK 2 KLİP: K06 · K36
+   Bu klipler motorda O SÜREDE üretilir — 5 saniyelik klipten kırpılmaz.
+   Ölçüldü (Bitkilerde): plan 15 klibi uzun işaretlemişti, üretimde yalnız 1'i uzun üretildi;
+   filmde 13 plan tam 4.54s çıktı, yani kırpılmamış klip boyu. Bayrak planda kalırsa hiçbir şey değişmiyor.

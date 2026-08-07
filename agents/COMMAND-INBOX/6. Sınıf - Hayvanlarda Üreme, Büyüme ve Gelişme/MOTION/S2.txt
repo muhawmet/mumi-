@@ -1,0 +1,133 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MOTION · SEKANS 2 (K09-K18)
+=========================================================================
+Motor: Kling 3.0 (i2v) · Cüzdan: Magnific · Dünya: pixar_3d_edu · register EDU
+VO: ElevenLabs, ayrı katman — ekranda kimse konuşmaz.
+Kaynak: PROMPT-YASASI §3 + §3n · DIRECTOR-CONTEXT-S2 · MUST-DO-KUYRUK §5
+Her blok yazılmadan ÖNCE karesi Read ile açıldı; frame satırı o karenin sha256 makbuzudur.
+
+SEKANS 2 = GÖLET / DIŞ DÖLLENME. Bu sekansın ölçülmüş EN BÜYÜK riski SÜRÜ ERİMESİ:
+Kling çok sayıda küçük ve benzer nesneyi klip boyunca sayıca koruyamıyor (K11'de ölçüldü).
+Savunma üç katlı — (a) sayı sabitliği OLUMLU cümleyle yazılır, (b) sürü taşıyan kareler
+4 saniye tutulur, (c) kahraman nesne yakında ve tek başına net kalır, sürü derinlikte durur.
+
+Sabit kuyruk KOŞULLU (Mami onayı 2026-08-07): sessizlik satırı her karede; kamera satırı
+YALNIZ ekranda yazı ya da katı/mekanik gövde taşıyan karede. Bu sekansta o kare yalnız K13.
+=========================================================================
+
+
+### K09 | 5s · ekranda ~2.6s | VO "Hayvanların çoğu eşeyli ürer."
+KAMERA NİYETİ: Kamera hiç kıpırdamaz — iki cinsin yan yana durması vuruşun kendisi, hareket eklemek onu zayıflatır.
+frame: images/9.png · sha256:844c4585cbfe41bf
+-----
+The rooster is already mid-weight-shift when we join him: his body rolls forward onto the left foot, the long dark sickle feathers of his tail swing once behind him and settle, and his head lowers a few centimetres toward the hen beside him. She has just come up out of the grass, one bright blade still caught across her buff shoulder, her small round eye already turned his way. Then he finds that eye — and at that instant both heads come up together, level with each other, and hold there. The clip opens with two birds busy in separate work and ends as a pair, each aware of the other and completely still. Around them the tall grass leans in one slow direction, a single dry stalk shivers against the leaning fence rail, and the bare tree on the far ridge holds motionless against the pale sky. The two birds never overlap: a clear band of grass stays visible between the rooster's breast and the hen's head from the first frame to the last, and each keeps both feet planted on the packed earth. Camera: locked off completely, not one centimetre of travel, holding the pair at grass height. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K10 | 7s · ekranda ~4.3s | VO "Bir erkek üreme hücresi ve bir dişi üreme hücresi birleşir."
+KAMERA NİYETİ: Kamera birkaç santim yana kayar, çünkü kayarken arkadaki yumurta dizisi ortaya çıkar — dünya kadrajda bitmiyor.
+frame: images/10.png · sha256:f17e56e2cc90028b
+-----
+A single sperm cell has already reached the rim of the crater as we arrive: its head rests against the warm ridge of the great sphere's skin, its long tail still carrying one unfinished curve behind it, and the amber ring beneath it grows brighter as the contact holds. The pale sphere fills the lower half of the world like a landscape, its surface breathing with the faintest swell, and far behind it a line of other spheres recedes into the teal water, each softer and smaller than the one before it. A leaf skeleton turns a few degrees at the right edge. Two droplets rise slowly past. This clip opens with one cell arriving and ends with that arrival accepted, the ring of light drawing closed around the head like a held breath. The tail remains one unbroken curve with a single head at its end, and the line of spheres behind keeps its own count and its own order. The warm ring stays a hard-edged round golden light that never becomes a heart, star, flame or drawn arrowhead. Camera: a lateral drift of a few centimetres to the left, uncovering the receding line, easing to a full stop. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K11 | 6s · ekranda ~2.9s | VO "Erkek üreme hücresine sperm denir."
+BASILDI ✓ 2026-08-07 · 540 kredi · onaylandı (kusur: sürü sonda eridi)
+KAMERA NİYETİ: Basılan klibin kamerası — yumurtanın ufkuna doğru çok yavaş yaklaşma; sürü kadrajın derinliğinde kalır.
+frame: images/11.png · sha256:b4b1e1adabe80c24
+-----
+One sperm cell is already ahead of all the others when the shot begins: it swims low over the curved pale plain of the egg's surface, its tail sweeping in a long unhurried figure that carries it forward, and the amber light banked beneath the horizon warms as it passes over. Behind it, far back in the water and far smaller, the rest of the shoal follows in a loose ribbon, none of them gaining on the leader. Two rough grains of debris turn slowly at the upper left. Then the leader crosses the brightest part of that buried light — and there the shot ends, with one cell clearly first and the crowd clearly behind. The leading cell holds one head and one continuous tail throughout; the distant shoal keeps the same number of small bodies it started with, each with its own gap around it, and never gathers into a single smear. Camera: a very slow forward creep of a few centimetres along the curve of the horizon, settling to rest before the leader reaches frame edge. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: basıldı — kusurlu ama kullanılıyor
+REVİZE: sürü klibin son saniyesinde sayıca eridi. Yeniden basılırsa süre 4s'ye indirilir ve sürü daha derine, daha küçük yazılır.
+
+
+### K12 | 5s · ekranda ~3.0s | VO "Dişi üreme hücresine ise yumurta denir."
+KAMERA NİYETİ: Kamera çok yavaş geri çekilir — dev yumurta yalnız değil, kendi kardeşlerinin arasında; nefes verme anı.
+frame: images/12.png · sha256:68233ad4ee79144a
+-----
+The great egg cell is already turning when we come to it, so slowly that only the spokes radiating out from its amber core reveal the movement, sliding a degree or two across the rose-coloured membrane. Its inner mass glows steadily from within, never flaring, never dimming. Two thin sperm filaments sweep across the water in front of it and pass on without touching. A few tiny crystal facets rest on the outer skin and catch the light as the surface carries them. Then the turn brings the core round to face us fully: this shot begins with a glowing shape and ends with a body, dense and deliberate and enormous. Its size is the whole point here, and the sisters receding into the dark crimson behind it grow small very quickly. The membrane holds one smooth unbroken outline throughout, the crystal facets keep their count and their places on that skin, and the amber core stays a round warm light and never becomes a flower, petal, flame or drawn icon. Camera: a very slow pull-out of a hand's width, letting the smaller sisters enter at the edges, coming to a complete rest. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K13 | 7s · ekranda ~4.1s | VO "Ama bu ikisinin nerede buluştuğu her şeyi değiştirir."
+KAMERA NİYETİ: Kamera birkaç santim aşağı yerleşir, Efe'nin omuz hizasından yola iner; yürüyüş yok, karar var.
+frame: images/13.png · sha256:edc2add306110f9f
+-----
+`@efe` is already halfway through the turn when the shot opens: his shoulders are square to the dirt track, his head is coming round to the right, and his chin arrives at his shoulder as his eyes reach the far end of the path. His hair lifts and drops once in the field air, and the loose sleeve of his red hooded top stirs against his arm. Both feet stay exactly where they are on the gravel. Then his gaze fixes on something down the track and his shoulders drop a little as the breath goes out of him — this shot begins with a boy scanning and ends with a boy who has decided where he is going. Behind him the dry field ripples in one direction, the overhead leaves shift at the top of the frame, and his long shadow lies still across the stones. His hands stay anatomically correct with five separate fingers, and the fallen tin bucket and the split rail fence keep rigid straight edges throughout. Camera: a settle downward of a few centimetres, from shoulder height to just below it, coming to rest. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K14 | 5s · ekranda ~3.0s | VO "Efe bahçenin alt ucundaki gölete indi."
+KAMERA NİYETİ: Kamera kilitli — keşif Efe'nin yüzünde ve suyun içinde oluyor, kameranın işi yok.
+frame: images/14.png · sha256:ee46f12effdcfaac
+-----
+`@efe` is already low over the water when this one starts, one hand pressed flat on the mossy stone, the other arm reaching down toward the shallow edge, his eyes tracking something under the surface. His head follows that something a few degrees to the right; his brows lift; the closed-lip smile he came in with deepens until it reaches his eyes. The clip opens with a boy searching the water and ends with a boy who has found what he came for. Below him the four small fish hold their loose formation and drift a body length over the pebbles, the light on the sand slides in slow bright ropes, one lily pad rocks once on the surface tension, and the reed blades in the near foreground sway across the corner of the frame. His five fingers stay separate and correctly formed where they press the mossy stone, the four fish stay four with clear water between them, and the lily pads keep their own round outlines and never fuse into one another. Camera: locked off, not a centimetre of travel, holding him and the shallows in the same frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K15 | 6s · ekranda ~3.3s | VO "Suyun içinde balıklar sığ kıyı boyunca yüzüyordu."
+KAMERA NİYETİ: Kamera su hattına paralel, tek eksende birkaç santim yanal kayar; su çizgisi asla eğilmez.
+frame: images/15.png · sha256:1065582ec08c894d
+-----
+Five small fish are already crossing the shallow shelf as we pick them up, moving together at the same unhurried pace, tails beating out of phase with one another so the group breathes rather than marches. The bright net of sunlight on the pebble bed slides steadily beneath them and over their flanks. Above the seam of the surface, the reed heads on the far bank nod once in the field air. Then the leading fish tips a few degrees and the whole group leans with it, and this shot begins with a loose scatter and ends with a single shoal turning as one body. The sunken branch on the left holds still under its green fur of algae, the pebbles below stay put while only the light moves across them, and the reed blade in the near left corner drifts a little in the water. The waterline stays one straight unbroken horizontal seam across the upper frame, and the five fish stay five, each keeping its own body and clear water on both sides of it. Camera: a lateral glide of a few centimetres to the right, exactly parallel to the surface seam, easing to a stop. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K16 | 6s · ekranda ~3.3s | VO "Dişi balık yumurtalarını doğrudan suya bırakır."
+KAMERA NİYETİ: Kamera kilitli — bırakma anı sabit kadrajda olur, hareketi yumurtalar yapar.
+frame: images/16.png · sha256:f70438908c948ec4
+-----
+The female fish is already releasing when we arrive: her body holds a long slow flex, her tail sculls once to keep her in place, and beneath her the translucent spheres are drifting away and downward through the lit water toward the pale sand. Her silver flank catches the moving light. The whole event happens in her stillness rather than her motion, and this clip opens with a fish suspended in effort and ends with her settling level again, lighter, the work done and the eggs on their way down. Behind her the reeds lean in the current, the mossy branch on the left holds its diagonal without shifting, and the net of sunlight travels across the sand grain by grain. Every egg keeps its own round body and its own small shadow on the sand below; the drift stays a countable scatter with water visible between the spheres and never gathers into a single mass. The fish holds one tail, one dorsal fin and one continuous silver outline throughout. Camera: locked off entirely, no travel at all, the frame holding both the fish and the falling spheres. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K17 | 6s · ekranda ~3.4s | VO "Erkek balık da spermlerini aynı suya bırakır."
+KAMERA NİYETİ: Kamera çok yavaş geriler; "aynı su" ancak kadraj genişleyince görülür.
+frame: images/17.png · sha256:d904839950af30b2
+-----
+The milky cloud is already unfurling behind the male fish as the shot opens, spreading outward in soft slow curls that thin as they travel and never snap or flick. He holds his position just above the sand, pectoral fins fanning, his tail giving one measured stroke that pushes the cloud a little further to the right. The small pale clusters of eggs lie waiting on the sand below him. Then the leading edge of the cloud reaches the nearest cluster and softens over it — this shot begins with two separate things in one pond and ends with a single shared water holding both. The reeds on the left lean together in the current, the mossy branch stays flat along the sand, and the light on the bed moves in slow ropes. The fish's silver body stays fully visible through the drifting cloud and is never absorbed into it; the pale clusters on the sand keep their own count, their own gaps and their own places. Camera: a very slow pull-back of a hand's width, widening to hold cloud and eggs in one frame, coming to a full rest. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K18 | 7s · ekranda ~4.2s | VO "Sperm ve yumurta dış ortamda, suyun içinde birleşir."
+KAMERA NİYETİ: Kamera temas noktasına doğru yaklaşır — yaklaşmanın kendisi bu anın olayıdır.
+frame: images/18.png · sha256:b97a5f6b64084afc
+-----
+The last sperm cell is already touching down on the amber shoulder of the great glassy egg as this one opens, its tail still trailing one long relaxed curve behind it, the warm band of light beneath the contact deepening where the head rests. The egg turns almost imperceptibly, its creamy inner mass sliding a degree behind the clear outer skin. Above and beyond, the line of sister spheres recedes toward the bright ceiling of the pond, and the shafts of sunlight coming down through that ceiling swing very slightly as the surface moves. A strand of algae drifts across the lower left corner. Then the amber band closes fully around the contact, and this shot begins with two separate lives and ends with one. Exactly one sperm cell is present from the first frame to the last, with one head and one unbroken tail; the glassy outer skin holds a smooth round unbroken outline; and the amber band stays a hard-edged warm golden light that never becomes a heart, star, flame or drawn arrowhead. Camera: a forward move of a few centimetres onto the contact point, accelerating gently and then stopping dead. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+KAMERA DAĞILIMI: K09 kilitli · K10 yanal kaydırma · K11 çok yavaş yaklaşma (basıldı) ·
+K12 çok yavaş geri çekilme · K13 aşağı yerleşme · K14 kilitli · K15 yanal kaydırma ·
+K16 kilitli · K17 çok yavaş geri çekilme · K18 çok yavaş yaklaşma.
+→ 5 farklı hareket türü (tavan istenen 3) · 3 kilitli kamera (tavan istenen 2) ·
+   aynı tür arka arkaya HİÇ tekrar etmiyor (istenen: en çok 2).
+
+SABİT KUYRUK DAĞILIMI: sessizlik satırı 10/10 karede. Kamera satırı (No whip-pan…)
+YALNIZ K13'te — kadrajda devrik teneke kova ve yarık ahşap çit var, yani katı gövde.
+Kalan dokuz karede ekranda yazı YOK ve katı/mekanik gövde YOK; kuyruk yazılmadı, kamera
+kesimin içinden akıp geçebiliyor.
+
+SÜRE DAĞILIMI: 4s ×3 (K09, K16, K17) · 5s ×6 · 6s ×1 (K11, basıldı). Sürü taşıyan iki kare
+(K16, K17) bilerek 4s. Metronom kırıldı: ekranda süreler 2.5 – 4.6 sn arasında.
+=========================================================================

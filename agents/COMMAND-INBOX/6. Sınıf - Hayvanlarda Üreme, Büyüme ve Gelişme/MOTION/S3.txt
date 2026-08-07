@@ -1,0 +1,130 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MOTION · SEKANS 3 (K19-K30)
+=========================================================================
+Motor: Kling 3.0 (i2v) · Magnific · register EDU · dünya pixar_3d_edu
+Biçim: PROMPT-YASASI §3 — tek paragraf, Camera: kendi cümlesi, kilit tek cümle.
+Negatif §3n uyarınca SAHNEYE ÖZEL yazıldı; template kuyruk kopyalanmadı.
+Kamera kuyruğu (No whip-pan…) YALNIZ ekranda Türkçe yazı ya da katı/mekanik
+gövde (galvaniz tel kafes, ahşap kasa, emaye plaka) taşıyan karelerde.
+=========================================================================
+
+
+### K19 | 5s · ekranda ~2.3s | VO "Buna dış döllenme denir."
+KAMERA NİYETİ: Kamera kilitli — yazı okunacak, yaklaşılmayacak; sekansın adı konuyor.
+-----
+Light is already at work on the sand: the caustic net from the surface is mid-crawl across the pale floor, sliding over the dark wet pebbles that spell DIŞ DÖLLENME, brightening one letter as it dims the one beside it. Then the moving light covers the whole line at once — at that instant the pebble shapes read as a single phrase rather than scattered stones, and the shallow begins the clip as a lit patch of riverbed and ends it as a named idea. Behind the lettering the small silver shoal drifts slowly along the far bank without crossing the open sand, three tiny bubbles ease up out of the top of the frame, and the tall reeds on both sides bend a few degrees in the same steady current. Camera: locked off, no travel and no reframe of any kind, holding its exact distance to the pebble line so the writing is read and never approached. Every pebble keeps its own position and its own shadow, the lettering stays exactly as printed on the sand, the sand around it remains undisturbed, and the shoal stays far behind the letters. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K20 | 7s · ekranda ~4.1s | VO "Açıkta risk çoktur; çoğu yumurta yavruya dönüşemez."
+KAMERA NİYETİ: Birkaç santim yanal kayma — balık geçerken kum açılır, sonra tam durur.
+-----
+The big silver fish is already halfway through its pass above the egg bed, its tail still finishing the stroke that carried it in, while below it the shrimp on the right is mid-step, feelers sweeping the sand ahead of itself. Then the fish clears the last of the glowing cluster — at that instant one of the three warm amber cores fades down to the dull grey of the emptied shells around it, and the bed begins the clip full of promise and ends it a little emptier than it started. The dappled light overhead keeps moving in slow bands across the pale floor, the reeds along the back edge lean together in one direction with the current, and a thin drift of silt lifts where the shrimp's legs touch down. Nothing lunges and nothing snaps shut. Camera: a few centimetres of lateral drift to the left, opening a little more sand ahead of the fish, easing to a full stop while it is still in frame. The eggs keep the same count from first frame to last, each one keeping its own rounded body and its own gap, and the fish and the shrimp never overlap or merge. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K21 | 7s · ekranda ~4.1s | VO "Bu yüzden bir seferde milyonlarca yumurta bırakılır."
+KAMERA NİYETİ: Çok yavaş geri çekilme — sayı ölçeğe dönüşsün, sonra nefes verip dursun.
+-----
+Across the whole lakebed the eggs already lie carpeted, reaching all the way to the far bank, and the surface above them is mid-ripple, throwing a shifting mesh of light down over the mass. Then the ripple pattern sweeps the length of the field in one slow travelling band — at that instant the eye stops counting and starts measuring, and the shot begins as a close crowd and ends as a scale. Three small fish hold their slow line in the middle distance without coming near the eggs, the reed clump on the right sways once in the same current, and the pale channel of bare sand between the clusters stays a clean bright path. The eggs nearest the lens catch the strongest highlight and hold it steadily. Camera: a very slow pull back, only a hand's width, drawing the far bank into frame and settling to a complete stop. The eggs keep the same count and the same spacing from first frame to last, each sphere keeping its own round body and its own dark centre, none of them sliding together into a single sheet, and the sand channel between them stays open. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K22 | 5s · ekranda ~3.0s | VO "Kurbağalar da yumurtalarını aynı suya bırakır."
+KAMERA NİYETİ: Birkaç santim aşağı yerleşme — su altındaki yansıma kadraja girsin.
+-----
+On the mossy stone the frog is already settled and already breathing: its pale throat is mid-pulse, one slow swell and release, its front toes gripping the wet rock. Then the spawn raft beside it rides a single low swell coming in off the pond — at that instant a ring of water spreads out from under the jelly and reaches the frog's stone, and the shore begins the clip as a frog and a mass of eggs and ends it as one continuous act. The cattail blades on the right sway once and settle, the mirrored reflection beneath the waterline follows a moment behind, and the smooth green water beyond the reeds keeps its slow evening shimmer. The frog neither jumps nor turns its head. Camera: a very slight downward settle of a few centimetres, letting a little more of the spawn and its underwater reflection into the lower frame, then coming to rest. The dark spot inside each egg keeps its own place and its own spacing, the jelly holds together as one continuous raft with no egg drifting free, and a visible gap of water stays between the frog's body and the spawn. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K23 | 5s · ekranda ~2.5s | VO "Efe göletten bahçeye geri döndü."
+KAMERA NİYETİ: Yanal kayma sağa — kümes kadraja girsin; sekansın nefes alan açılışı.
+-----
+@efe is already mid-stride and already turning his head back over his shoulder, the dry wheat stalk still swinging in his lowered hand from the step before. Then his eyes reach the coop across the yard — at that instant his walk slows to a halt and his face opens from idle to interested, and he begins the clip merely crossing the yard and ends it having chosen where to look. Dust lifts in a thin veil behind his heel, the low sun keeps its long orange rake across the barn boards on the left, and the bare tree at the right edge holds a few leaves that stir once. The enamel KÜMES plate above the coop door catches the same low light. Camera: a few centimetres of lateral slide to the right, opening a little more of the coop into frame, easing to a complete stop while he is still turned. His feet stay planted once he halts, the wheat stalk stays one unbroken piece in his hand, the lettering on the enamel plate stays exactly as printed, and the wire cage keeps its straight rigid edges. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K24 | 6s · ekranda ~3.2s | VO "Kümesteki tavuk hâlâ yumurtalarının üstündeydi."
+KAMERA NİYETİ: Bir karış ileri süzülme, hızlanıp yerleşerek durur — sığınağa girme hissi.
+-----
+Deep in the straw @tavuk is already at work in the smallest way: her breast feathers rise and fall, and one foot shifts a single straw beneath her without her body leaving the nest. Then the low sun beam widens as it clears the door frame — at that instant the warm light reaches her back, the shed stops being a shed and becomes a warm room, and the clip begins with a bird merely sitting and ends with a bird plainly keeping something. Dust motes drift slowly through the shaft of light, a few loose straws at the front edge stir in the doorway air, and her long shadow on the plank wall shifts with the light rather than with her. Her beak stays shut throughout. Camera: the lens creeps forward by a hand's width toward the nest, gathering a little speed and then coming to a firm rest. Her body keeps one continuous resting shape with no wing lifting, the straw beneath her remains where it lies, the galvanised wire mesh keeps its straight rigid edges, and the wooden door frame keeps its true lines. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K25 | 6s · ekranda ~4.0s | VO "Kuşlarda döllenme dişinin vücudunun içinde gerçekleşir."
+KAMERA NİYETİ: Çok az ileri süzülme — buluşma anı olduğu için yaklaşma meşru, sonra kilitlenir.
+-----
+The single sperm cell has already arrived and is already touching down, its slender tail still carrying the last of the motion that brought it in, its head resting against the pale ridged surface of the ovum where a soft warm-golden light has gathered. Then that light swells once from the contact point outward across the ovum's curve — at that instant the tunnel behind it warms a shade, and the shot begins as a journey still under way and ends as a meeting already made. The folded coral walls breathe with an almost invisible slow undulation, a few pale motes drift through the deeper opening beyond, and the golden mass inside the ovum keeps its slow inner shimmer. Nothing else enters the frame. Camera: the lens eases closer to the contact point by a very small amount, gaining a little speed and then locking to a firm stop, holding the ovum's curve across the lower frame. There is exactly one sperm cell in frame from first frame to last, and its head and tail keep one continuous unbroken shape. The glow stays a soft warm-golden light and never becomes a heart, star, flame or drawn arrowhead. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K26 | 6s · ekranda ~3.9s | VO "Yılanda, kertenkelede ve kaplumbağada da böyledir."
+KAMERA NİYETİ: Kilitli kamera, sıfır hareket — yumurta sayısı vuruş anıdır, kamera susar.
+-----
+High in the frame the hen's feathers are already moving, the loose down along her flank lifting and settling in the draught, while below her the row of eggs sits deep in the straw as she left it. Then a thin straw across the foreground tips over and comes to rest against the nearest egg — at that instant the nest reads as occupied rather than arranged, and the clip begins as a still row of objects and ends as a place someone is holding. Warm low light rakes across the speckled shells and picks out the fine brown flecks, a few dust particles turn in the doorway beam behind, and the blurred yard beyond the mesh keeps its soft golden haze. Nothing rolls and nothing is added. Camera: locked off, holding its exact position and its exact distance to the nearest egg, with no travel of any kind. The eggs keep the same count from first frame to last, each shell keeping its own body and a visible gap from its neighbours, the wire mesh behind keeps its straight rigid edges, and the wooden posts keep their true vertical lines. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K27 | 6s · ekranda ~3.4s | VO "Kedide, atta ve keçide de döllenme içeride olur."
+KAMERA NİYETİ: Birkaç santim yukarı yerleşme — çömelmiş çocuğun bakışıyla kafes yükselsin.
+-----
+Crouched at the cage door, @efe is already watching, his forearm resting across his knee, his fingers slowly closing and opening once against the fabric while his eyes stay on the nest inside. Then the hen shifts her weight and one of the eggs beneath her comes further into view — at that instant his eyebrows lift a fraction and his mouth curves without parting, and he begins the clip merely looking in and ends it having understood what he is looking at. The tipped wicker basket beside his shoe holds its exact fallen angle, the dry grasses along the left edge sway in the evening air, and the orange sky behind the stone wall deepens by a shade. His knees do not straighten and he does not rise. Camera: a very slight upward settle of a few centimetres, letting a little more of the cage roof into frame, then coming to a complete rest. His hands keep five separate fingers on each side and stay anatomically correct, the basket holds one rigid woven shape without collapsing, and a clear gap of air stays between his shoulder and the cage frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K28 | 5s · ekranda ~2.2s | VO "Buna iç döllenme denir."
+KAMERA NİYETİ: Kilitli kamera — buğday harfleri okunacak; tavuk eşikte kalır, taneye inmez.
+-----
+Everything in the coop is already moving around the writing rather than over it: the hen at the far threshold is mid-step with one foot lifted, and a loose feather at the right edge is already turning where it lies on the swept earth. Then the low sun clears the top rail and the long frame shadow slides once across the packed soil — at that instant every grain letter gains a small hard shadow, and the ground begins the clip as swept dirt and ends it as a page. The hen sets her foot back down at the threshold and stays there, well behind the grain. Loose straws around the border stir in the draught, the cage holds the warm evening light along its top rail, and the earth keeps its fine dusty texture. Camera: locked off, no travel and no reframe, holding its exact distance so the writing is read and never approached. Every grain keeps its own position and its own shadow, the lettering stays exactly as printed on the earth, no bird foot or feather reaches the letters, and the cage keeps its straight rigid edges. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K29 | 6s · ekranda ~3.5s | VO "İçeride sperm ile yumurtanın buluşma şansı yüksektir."
+KAMERA NİYETİ: Çok az ileri süzülme, kısa klip — sürü kalabalık, uzun tutulursa erir.
+-----
+Up the long fold the small group of sperm cells is already travelling, tails already in slow synchronised motion, the round ovum ahead of them holding a steady warm-golden core at the centre of the chamber. Then the leading cell reaches the foot of the ovum's ridge — at that instant the golden core brightens by one step and the whole chamber warms with it, and the shot begins as a crowd travelling and ends as a crowd arriving. The coral folds around them undulate with a slow, almost invisible breath, a few pale motes drift across the dark opening beyond the ovum, and the light from the core spills a short way onto the nearest wall. No cell reaches the surface inside this clip. Camera: the lens eases forward toward the ovum by a very small amount, gathering a little speed before locking to a firm stop. There are exactly ten sperm cells in frame from first frame to last, each keeping its own head, its own tail and a visible gap from its neighbours. The glow stays a soft warm-golden light and never becomes a heart, star, flame or drawn arrowhead. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K30 | 6s · ekranda ~3.4s | VO "Bu yüzden yumurta sayısı çok daha azdır."
+KAMERA NİYETİ: Çok yavaş geri çekilme — sekansın nefes verişi; az ile çok aynı kadrajda kalsın.
+-----
+The nest is already breathing at its edges: the hen's rust-red feathers at the top of frame lift and settle once, and a single straw beneath the front egg shifts and comes to rest. Then the light broadens across the five shells as the pale mass behind them softens further out of focus — at that instant the difference stops being a background and becomes the point, and the clip begins as a small nest and ends as a comparison that has already been made. The blurred green water behind keeps its slow shimmer without any shape resolving out of it, the straw around the nest holds its warm golden colour, and the wooden post at the right stays cleanly lit. Nothing rolls and nothing is added. Camera: a very slow pull back of about a hand's width, taking in more of the straw bed and easing to a complete stop. There are exactly five eggs in the nest from first frame to last, each shell keeping its own body and a visible gap from its neighbours, the far mass stays soft and unresolved, and the wooden post keeps its true straight edges. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+KAMERA DAĞILIMI: kilitli 3 (K19, K26, K28) · yanal kayma 2 (K20, K23) ·
+geri çekilme 2 (K21, K30) · ileri süzülme 3 (K24, K25, K29) ·
+aşağı yerleşme 1 (K22) · yukarı yerleşme 1 (K27).
+→ 6 farklı tür · 3 kilitli · aynı tür arka arkaya en fazla 2 (K24-K25).
+
+KAMERA KUYRUĞU: 7/12 karede (K19, K23, K24, K26, K27, K28, K30) — hepsi ekranda
+Türkçe yazı ya da galvaniz tel kafes / ahşap kasa taşıyor. K20, K21, K22, K25, K29
+organik ve yazısız; orada kamera kesimin içinden akıp geçer.
+
+SÜRE DAĞILIMI: 4s ×3 · 5s ×5 · 6s ×1 · 7s ×2 — toplam plan 62s, ekranda ~40.1s.
+=========================================================================

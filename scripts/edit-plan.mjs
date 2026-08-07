@@ -61,14 +61,38 @@ if (!fs.existsSync(mdir)) {
   console.error(`edit-plan: ${mdir} yok — plan MOTION'dan türetilir, motion olmadan üretilemez.`);
   process.exit(2);
 }
+// 🔴 2026-08-07 · YERLEŞİM VARSAYIMI ONARILDI. Bu okuyucu `MOTION/01.txt` gibi KARE BAŞINA
+// bir dosya varsayıyordu (`/^\d+\.txt$/`) ve her dosyanın YALNIZ İLK SATIRINI okuyordu.
+// Oysa bu repo motion'ı SEKANS başına yazıyor (`S1.txt` … `S5.txt`, Denetleyici'de de öyle) ve
+// bir dosyada 8-12 başlık bulunuyor. Sonuç: 54 başlık taşıyan bir MOTION klasöründe araç
+// "0 klip · 0:00" basıp **sıfırla çıkış kodu** döndürüyordu — yani ölçemediğini "ölçtüm" diye
+// geçiriyordu. Bu, `kare-cek` ve `kaba-kurgu` kovasında da görülen aynı kusur sınıfıdır.
+// Artık: MOTION altındaki HER .txt okunur, dosyanın TAMAMINDAKİ her `### K..` başlığı alınır,
+// ve hiç başlık bulunamazsa araç sessizce başarılı olmaz — kırmızı verip 2 ile çıkar.
 const klipler = [];
-for (const f of fs.readdirSync(mdir).filter((f) => /^\d+\.txt$/.test(f)).sort()) {
-  const bas = fs.readFileSync(path.join(mdir, f), 'utf8').split('\n')[0];
-  const m = bas.match(/^###\s*K(\d+)\s*\|\s*(\d+)s\s*·\s*ekranda\s*~?(\d+(?:\.\d+)?)s/);
-  if (!m) { console.error(`⚠ başlık okunamadı: ${f} → ${bas.slice(0, 60)}`); continue; }
-  klipler.push({ n: Number(m[1]), uret: Number(m[2]), ekran: Number(m[3]), dosya: f });
+const motionDosyalari = fs.readdirSync(mdir).filter((f) => /\.txt$/i.test(f)).sort();
+for (const f of motionDosyalari) {
+  const govde = fs.readFileSync(path.join(mdir, f), 'utf8').replace(/\r\n/g, '\n');
+  let bulundu = 0;
+  for (const ln of govde.split('\n')) {
+    const m = ln.match(/^###\s*K(\d+)\s*\|\s*(\d+(?:\.\d+)?)s\s*·\s*ekranda\s*~?(\d+(?:\.\d+)?)s/);
+    if (!m) continue;
+    bulundu++;
+    klipler.push({ n: Number(m[1]), uret: Number(m[2]), ekran: Number(m[3]), dosya: f });
+  }
+  if (!bulundu) console.error(`⚠ ${f} içinde tek bir "### K.. | Ns · ekranda ~Ns" başlığı yok`);
 }
 klipler.sort((a, b) => a.n - b.n);
+const cifte = klipler.map((k) => k.n).filter((n, i, a) => a.indexOf(n) !== i);
+if (cifte.length) {
+  console.error(`edit-plan: aynı kare birden çok MOTION dosyasında: K${[...new Set(cifte)].join(', K')}`);
+  process.exit(2);
+}
+if (!klipler.length) {
+  console.error(`edit-plan: ${mdir} altında hiç motion başlığı bulunamadı — plan üretilemez.`);
+  console.error(`   okunan dosyalar: ${motionDosyalari.join(', ') || '(yok)'}`);
+  process.exit(2);
+}
 
 // --- kare dosyası ---
 const idir = path.join(kok, 'images');

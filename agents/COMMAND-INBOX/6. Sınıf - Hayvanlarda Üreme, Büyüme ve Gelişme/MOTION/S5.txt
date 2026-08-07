@@ -1,0 +1,168 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MOTION · SEKANS 5 (K43–K54)
+=========================================================================
+Motor: Kling 3.0 (i2v) · Magnific · start frame zorunlu.
+Kaynak kareler: images/43.png … images/54.png (K51 için **51-C.png** — 51.png'de harfler
+dağınık, 51-B ve 51-C temiz, 51-C en okunaklısı).
+Ayna: K54 ↔ K01. K01 kilitli kamera + birkaç santim push-in ile basıldı (onaylı);
+K54 aynı mesafeyi **geri verir** — film nefes vererek kapanır.
+
+SABİT KUYRUK KURALI (Mami onayı, 2026-08-07):
+ · "Silent clip, no audio, no dialogue, mouth closed, no lip movement." → HER karede.
+ · "No whip-pan, no shake, no snap-zoom, no camera warp." → yalnız ekranda Türkçe yazı
+   ya da katı/mekanik gövde (galvaniz tel, emaye plaka, sac levha) taşıyan karede.
+   Yazıldığı kareler: 43, 45, 51, 52, 53, 54. Diğer altısında YAZILMADI.
+=========================================================================
+
+
+### K43 | 4s · ekranda ~1.8s | VO "Üçüncüsü balıklardır."
+KAMERA NİYETİ: Kamera sığ suda birkaç santim yanal kayar; ön plandaki saz yaprağı kadrajı süpürüp geçer, mesafe hiç değişmez.
+frame: images/43.png · sha256:74e42336785e4f0a
+-----
+Shallow water is already at work here: the caustic net on the pale sand slides slowly, the reed blades on the right lean one way, and the three transparent fry hold their place above the pearly egg bed with quick flickers of their tails. Then the current gathers under them — at that instant the nearest fry tips its head down toward the bed it came out of, drifts one body-length across the eggs and levels off again, and the small glassy shape reads as a creature that has just found out it can leave. The shot begins as a nursery and ends as a departure. Two grown @balik cross high through the upper right, fins feathering, while a single out-of-focus reed stalk sits heavy against the front of the lens. Camera: a lateral slide of a few centimetres travels left to right at a constant distance, lets the foreground reed sweep across the frame, and stops with the egg bed still low and the fry right of centre. The pearly eggs keep the same count from first frame to last, each one round and separate, and the rusted tin sign at the left stays soft, distant and unread. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K44 | 7s · ekranda ~4.2s | VO "Onlarda hem döllenme hem gelişme suyun içinde olur."
+KAMERA NİYETİ: Kamera bir karış aşağı yerleşir; ön plandaki iri yumurtalar büyür, sürü aynı mesafede kalır.
+frame: images/44.png · sha256:bf8bfff0e08c8284
+-----
+Sun shafts are already leaning through the green upper layer of the pond when we arrive: the cattail stems on both edges sway against their own weight and the school of @balik cruises left across the middle of the water in one loose formation. Then the leading fish angles its body a few degrees — at that instant the whole school tilts with it and the light runs along ten flanks at once, and the eye is carried down from the open water to the amber-cored eggs resting in the sand at the bottom of the frame. The clip begins as open water and ends as a nursery, the same place read twice. Green algae-furred stones sit along the floor, a few tiny fry hang near them, and slow particles drift through the shafts. Camera: the frame settles downward by a hand's width in one continuous easing move, bringing the foreground eggs up into the lower third, and stops level with the sand. Every egg keeps its round transparent shell and its single amber core, the school stays the same number of separate fish with a clear gap between each body, and no fish crosses in front of another. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K45 | 6s · ekranda ~3.1s | VO "Yavru bakımı kuşlarda ve memelilerde vardır."
+KAMERA NİYETİ: Kamera tamamen kilitli — vuruş anı. Kümesin iki köşesinde aynı anda aynı iş yapılıyor; kamera buna karışmaz.
+frame: images/45.png · sha256:6d93d40b3c9f3baf
+-----
+Evening is already settling into the coop: low sun lies flat along the stone slab, dust turns slowly in the doorway light, and the @tavuk stands over her clutch with her breast feathers lifted. Then the warmth in the doorway drops — because of it she lowers her whole body down onto the eggs in one continuous settling motion, her wings easing out a finger's width to cover the outer shells, and in the dark right-hand corner one of the kittens pushes deeper into @kedi's flank at the same moment. The shot begins as two separate corners of one building and ends as a single shared act of keeping something warm. Straw lies loose across the boards, the open wire gate holds still against the pale sky, and the far hills stay soft. Camera: locked off with zero movement for the whole clip, the same height, the same distance, letting the light and the two animals carry all the change. The pale down feathers arranged on the stone slab stay exactly as they lie, every one in its own place, holding the same word without drifting, and the camera never comes any closer to them. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K46 | 7s · ekranda ~4.4s | VO "Yumurtasını bırakıp giden canlılarda yavru bakımı yoktur."
+KAMERA NİYETİ: Kamera çok yavaş geri çekilir; yuva küçülür, göl ve boş kıyı büyür — terk edilmişlik ölçekle anlatılır.
+frame: images/46.png · sha256:d4b9a138f2c11f8c
+-----
+This shore is already emptying: the hatchling is halfway up the sand slope with its four small legs working in a steady alternating rhythm, its fresh track running behind it in a broken line, and the evening water beyond holds a single flat band of sky. Then the little animal reaches the crest of the slope — because of that its short shadow slides clear of the nest hollow altogether, and for the rest of the clip nothing at all is attached to the eggs. The clip begins with a family and ends with only a place. Dry reeds lean in from both edges and move a few millimetres, the pale stones hold their warm rim, and the far treeline stays unbothered. Camera: a very slow pull-out begins from the nest hollow, opens up more sand and more open water on every side, and eases to a complete stop with the clutch small and low in the frame. The six leathery eggs hold their exact number and their soft dented shapes with the one broken shell still broken, the hatchling keeps four separate legs and one head, and no adult animal ever comes into the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K47 | 6s · ekranda ~3.5s | VO "Efe dönerken maydanozun üstünde bir tırtıl gördü."
+KAMERA NİYETİ: Fark ediş anı olduğu için push-in meşru — ama yaprağa doğru; @efe'nin yüzü sağ kenara kayar.
+frame: images/47.png · sha256:af94e9060f336842
+-----
+@efe is already hunting through the parsley bed when we join him: his eyes move across the leaves, his head is tipped down and to the left, and the low sun comes through the lit leaf in the middle of the frame. Then the leaf tip dips — the @tirtil crawls forward a body-length along the midrib and its weight bends the blade downward, and at that instant @efe's eyebrows lift and his whole gaze locks onto the small striped animal. He begins scanning and ends having found. A single ant works its way up the dry stem on the left, the stone wall behind holds its cool grey, and the loose soil at the bottom edge stays in shadow. Camera: a very slow push-in advances toward the lit leaf, gains a few centimetres, and settles so that the caterpillar sits centred while @efe's face drifts toward the right edge of the frame. His lips stay together in a closed half-smile and only his eyes and eyebrows carry the discovery; the @tirtil keeps its segmented body and its own countable legs, never sinking into or merging with the leaf it stands on. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K48 | 6s · ekranda ~3.5s | VO "Bazı canlıların yavruları erginlere hiç benzemez."
+KAMERA NİYETİ: Kamera birkaç santim yukarı yerleşir; iki tırtıl alt kenara oturur, kelebek kadrajda yükselir — kıyas kendiliğinden kurulur.
+frame: images/48.png · sha256:77687150c8c38f0b
+-----
+Dusk has this garden already moving: both green-and-black @tirtil larvae grip their stems and rock forward in that slow caterpillar walk, the parsley blades around them swing a little, and the pale butterfly is perched high on the dry stalk with its wings held half open. Then the last of the sun reaches the stalk — because of that the butterfly spreads its wings a further few degrees and the light passes straight through the membrane, and in that moment the two shapes can finally be compared with one look. The clip begins as two unrelated animals and ends as one animal at two ages. Behind them @kedi lies in the barn doorway with her kittens tucked against her, the barn boards hold their dark red, and the sky stays a still band of gold. Camera: a very slight upward settle lifts the frame by a few centimetres in one eased move, letting the larvae sink toward the lower edge, and stops with the butterfly clear of the doorway. The two caterpillars never touch, overlap or merge and each keeps its own stem and its own banded body; the butterfly stays one insect with four separate wings. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K49 | 6s · ekranda ~3.6s | VO "Tırtıl bir süre sonra kendini kozanın içine kapatır."
+KAMERA NİYETİ: Kilitli kamera, sıfır hareket — filmin durduğu nokta. Değişen tek şey içerideki gölge ve akşam ışığı.
+frame: images/49.png · sha256:322c830eed8e70be
+-----
+A chrysalis is still finishing its last swing: the pale shell hangs from its silk under the cut stem and turns through a few degrees, the warm rim of the last light sits along its top ridge, and the dark curled silhouette inside shifts very slightly against the translucent wall. Then the swing runs out — because it does, the shell comes to rest perfectly vertical, the shadow inside settles into one compact shape, and after that the only thing left moving in the whole frame is the blue evening light cooling on the leaves. The clip begins with something still restless inside and ends with it shut, still and waiting. The parsley leaves around it lean once in the air, a dry umbel stem crosses the lower right, and the stone wall behind stays deep and soft. Camera: locked off, zero movement, the same framing from first frame to last, so the stillness itself is the event. The shell holds one closed unbroken form all the way through, nothing splits, opens or emerges from it, and no second insect appears anywhere in the frame. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K50 | 6s · ekranda ~3.6s | VO "Kozadan çıkan artık tırtıl değil, kelebektir."
+KAMERA NİYETİ: Zirve anı — çok yavaş push-in kanadın içindeki ışığa gider ve orada durur.
+frame: images/50.png · sha256:9ee59f4e06e21ad1
+-----
+Hanging head-up beside the split shell, the butterfly is already at work: its damp wings are held out and trembling with the small continuous shiver of drying, its legs are clamped around the dry stem, and the golden light crosses the wing membrane from behind. Then the wings press down once in a single slow pump — because of that the whole insect lifts a millimetre higher on the stem, the last dampness leaves the trailing edge, and the colour in the wing goes from milky to clear iridescent blue. It begins damp and heavy and ends dry and ready to go. Dew sits on the dark leaves below, the bare tree stands unmoving against the low wall, and the amber field behind stays out of focus. Camera: a very slow push-in moves toward the wing, gains only a little ground, eases as it arrives and stops with the butterfly and the empty shell both still in frame. The abandoned chrysalis stays empty, single and split exactly where it is already split, and the butterfly keeps four separate wings and six countable legs with nothing crawling out of the shell a second time. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K51 | 6s · ekranda ~3.2s | VO "Bu büyük değişime başkalaşım denir."
+KAMERA NİYETİ: Kilitli kamera. Yazı klibin kahramanı; kamera ona ne yaklaşır ne de kayar — yalnız kelebek oynar.
+frame: images/51-C.png · sha256:69a00c85f6fc53af
+-----
+Morning is already running down the wet slate: a thin film of water slides slowly across the dark surface, the empty pale shell on its cut stick holds perfectly upright, and the butterfly on the twig at the top right fans its wings in shallow unhurried beats. Then one beat opens wider than the rest — because of it the sun catches the whole underside of the wing at once, the colour flares across the membrane, and the insect draws its wings together and settles into complete stillness for the rest of the clip. The clip begins with something restless on the edge of the stone and ends with it perfectly at rest above the word. The parsley leaves at the edges hold their dew, the dark soil stays damp, and the water film keeps sliding. Camera: locked off with zero movement, exactly the same distance and angle from first frame to last, so the slab and the lettering never change size or shape. The pale iridescent scale lettering stays exactly as it lies on the slate, every mark in its own place, none of it drifting, spreading or re-spelling, and the camera never moves closer to it. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K52 | 6s · ekranda ~3.7s | VO "Kurbağa yavrusunun önce solungaçları ve kuyruğu vardır."
+KAMERA NİYETİ: Su yüzeyi warp üretiyor — kamera tek eksende, birkaç santim yanal kayar; su çizgisi hep düz kalır.
+frame: images/52.png · sha256:22366364dee016f0
+-----
+The waterline is already busy: five @kurbaga tadpoles scull through the shallow green water with their long tails beating side to side, the caustic net crawls over the pale sunken stone, and the cattails on the right lean in the morning air. Then the nearest tadpole finishes its turn — as it comes broadside its feathery external gills open out from behind its head and its wide tail fin flattens into the light, and for one clear stretch both the gills and the tail can be read at once on the same animal. The clip begins as a scatter of dark shapes and ends as one creature you can actually describe. The reed bank behind holds soft, the open water beyond stays flat, and the round green pebbles sit undisturbed on the left. Camera: a lateral slide of a few centimetres travels along a single horizontal axis at a constant distance and stops, keeping the waterline exactly level across the frame. All five tadpoles keep their count with one tail and one frilled gill set each, no two bodies overlapping, and the dark carved lettering on the wet stone holds precisely as it is above and below the water. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K53 | 6s · ekranda ~3.9s | VO "Efe kümese döndüğünde yumurtalardan biri çatlamıştı."
+KAMERA NİYETİ: Çok yavaş push-in — ama civcive doğru, alçaktan. @efe kadrajın sağ üstüne kayar, ağzı hâkim nokta olmaz.
+frame: images/53.png · sha256:7a1a01b7c399dbb5
+-----
+Having already arrived at the coop doorway, @efe leans in over the threshold with his eyes wide and fixed low, and the @tavuk stands tall over the straw with her head turned down toward the nest. Then the wet chick pushes with one leg — because of that the upper half of the broken shell rocks back a centimetre against the straw, the chick's damp head lifts clear of the rim, and @efe's whole face goes from searching to astonished without a single step being taken. He comes in expecting the same nest and ends looking at a new animal. Loose straw lies across the boards, the evening sky behind the door holds a soft pink, and the dry stone wall outside stays quiet. Camera: a very slow low push-in advances toward the chick and the broken shell, gains a few centimetres, and settles with @efe drifting up toward the right edge of the frame. His open mouth holds one long silent breath and never forms a word, the galvanized wire keeps its straight even diamond grid, and the three whole eggs and the two shell halves all hold their number and their broken edges. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K54 | 6s · ekranda ~3.7s | VO "Her canlının neslini sürdürmek için kendine özgü bir yolu vardı."
+KAMERA NİYETİ: AYNA. K01 kilitli durup birkaç santim ilerlemişti; K54 o mesafeyi geri verir — çok yavaş pull-out, filmin nefes verişi.
+frame: images/54.png · sha256:e5001c18c1d08ba4
+-----
+This yard is already awake: mist still lifts off the stone wall, @efe stands in the open coop doorway with one hand on the frame, and the @tavuk inside steps slowly around the cracked shell on the straw. Then a loose feather comes down past the barn eave and lands — as it settles, @efe turns his head in one continuous easy movement from the coop to the barn corner, where the sitting kitten opens its jaws in a long yawn while the other three stay curled against @kedi. He begins looking at one corner and ends seeing the whole yard at once. The bare fruit tree holds its orange fruit against the pale sky, the wicker basket sits still on the cobbles with its shell fragment inside, and the dry grass barely moves. Camera: a very slow pull-out gives back exactly the ground the opening shot took, widens the yard on both sides, and eases to a full stop with the coop, the boy and the cats held in one calm frame. The four kittens keep their number with their eyes open, the basket stays upright, the enamel plate above the door holds its lettering unchanged, and nobody new enters. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+KAMERA DAĞILIMI (12 kare · 5 farklı tür · aynı tür arka arkaya en fazla 1)
+
+  K43  yanal kaydırma (birkaç cm, sol→sağ)
+  K44  hafif aşağı yerleşme
+  K45  KİLİTLİ KAMERA — sıfır hareket
+  K46  çok yavaş pull-out
+  K47  çok yavaş push-in (fark ediş anı, §3b'nin izin verdiği tek meşru push-in)
+  K48  hafif yukarı yerleşme
+  K49  KİLİTLİ KAMERA — sıfır hareket (sekansın vuruş anı)
+  K50  çok yavaş push-in (zirve)
+  K51  KİLİTLİ KAMERA — sıfır hareket (yazı karesi)
+  K52  yanal kaydırma (tek eksen, su yüzeyi warp kilidi)
+  K53  çok yavaş push-in (alçak, civcive doğru)
+  K54  çok yavaş pull-out — AYNA, filmin nefes verişi
+
+  Sayım: push-in 3 · pull-out 2 · yanal 2 · kilitli 3 · yerleşme 2.
+  Ardışık tekrar YOK (C E D B A E D A D C A B). Kilitli kamera 3 kez — tavsiye edilen taban 2.
+=========================================================================
+NOTLAR — motion yazarken kareye bakarken görülenler
+
+1. K51 için kaynak kare **51-C.png**'dir. 51.png'de BAŞKALAŞIM harfleri dağılmış; 51-B
+   okunuyor, 51-C hem frontal hem en okunaklısı. Basımda 51-C kullanılmalı.
+2. K45'in "YAVRU BAKIMI" tüy yazısı karede zaten yumuşak/zor okunuyor (MAMI-BAK'ta işaretli).
+   Motion bunu KURTARAMAZ; kilitli kamera + donmuş tüy en fazla daha kötü olmasını önler.
+   Hüküm Mami'nin.
+3. K46 karede balık yumurtası değil **kaplumbağa yuvası + uzaklaşan yavru** basılmış —
+   prompt'tan sapmış ama VO'yu ("bırakıp giden") prompt'un kendisinden daha iyi taşıyor.
+4. K48 karede tek bir tırtılın makro çekimi değil, **iki tırtıl + ergin kelebek aynı kadrajda**
+   basılmış. Kıyas tek karede kuruluyor; buna karşılık K50'nin sürprizi üç kare erken harcanmış.
+5. K43'ün sol arkasındaki paslı sac levhada okunmayan işaretler var — kamera ona hiç
+   yaklaşmıyor ve kilit onu "soft, distant and unread" diye sabitliyor.

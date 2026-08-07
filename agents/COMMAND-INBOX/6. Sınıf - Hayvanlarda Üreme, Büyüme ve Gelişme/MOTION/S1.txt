@@ -1,0 +1,102 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MOTION · SEKANS 1 (K01–K08)
+=========================================================================
+Motor: Kling 3.0 (i2v) · Cüzdan: Magnific · Dünya: pixar_3d_edu · register EDU
+VO eşlemesi: Hayvanlarda Üreme_SESLENDIRME.txt, SEKANS 1 (1–8. cümleler, birebir).
+Sekiz karenin sekizi de Read ile açılıp görüldü; motion kareden yazıldı, prompt metninden değil.
+
+KUYRUK KURALI (Mami onayı 2026-08-07):
+ · "Silent clip, no audio, no dialogue…" → HER karede.
+ · "No whip-pan, no shake, no snap-zoom, no camera warp." → YALNIZ ekranda Türkçe yazı
+   ya da katı/mekanik gövde (tel, kova, güğüm, alet) taşıyan karelerde: K01 · K02 · K03 · K07.
+NEGATİF SAHNEYE ÖZEL (§3n): her blokta kilit, O KARENİN gerçek bozulma yolundan yazıldı;
+ mümkün olan her yerde olumlu cümleyle.
+=========================================================================
+
+
+### K01 | 6s · ekranda ~6s | VO "Efe o sabah dedesinin bahçesinde iki şeyi aynı anda gördü."
+BASILDI ✓ 2026-08-07 · 540 kredi · onaylandı
+KAMERA NİYETİ: Kilitli duran kamera, klip boyunca yalnız birkaç santim öne süzülür; bakış çocuğun kendisinden değil, kadrajın iki ucundan doğar.
+frame: images/1.png · sha256:8454ae75131f8df3
+-----
+Morning is already running when we arrive. `@efe` stands on the worn stone step of the `@kumes` doorway, his weight still settling onto the front foot, his look held across the yard on the shadowed corner of the `@ahir` where the `@kedi` lies with her kittens. A loose feather is already falling through the middle of the yard and keeps falling, turning over once on the way down. Behind him, inside the wire, the hen shifts her weight and resettles into the straw — and at that instant his head turns a few degrees toward the coop, so both animals sit inside one look. He begins watching one corner of the yard and ends holding two. Dust drifts through the low sunlight, single straw stalks tremble beside the tipped wicker basket, and the long shadows stay exactly where the sun put them. Camera: locked at step height, creeping forward only a few centimetres across the whole clip and ending on the axis it began on. The enamel plate above the door never moves and its lettering stays exactly as printed; no egg is visible anywhere and none is cracked. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K02 | 6s · ekranda ~6s | VO "Kümeste tavuk, yumurtalarının üstünde kıpırdamadan oturuyordu."
+BASILDI ✓ 2026-08-07 · 540 kredi · onaylandı
+KAMERA NİYETİ: Yine kilitli-yakın kamera; klibin işi hareket değil, nefes alan bir kütlenin altında saklı olanı hissettirmek.
+frame: images/2.png · sha256:3031e3821c2ecfa0
+-----
+A bird deep in her own work: the `@tavuk` sits low in the straw nest, her whole body swelling and easing with each slow breath, the fine hairs at the edge of her feathers lifting in the draught coming through the open coop door. A single dry straw in the blurred foreground trembles and goes still. Then something outside catches her: her head turns perhaps ten degrees toward the light, the comb tipping with it, and one slow blink closes and opens — after that she pushes herself a centimetre deeper into the nest and stops there. She begins as a shape that could be asleep and ends as an animal plainly guarding what is underneath her. Beyond the doorway the pale hills stay soft and out of focus, dust hangs in the light, and the chipped enamel bowl sits untouched on the boards. Camera: locked at nest height, drifting forward only a few centimetres and coming to a full stop while she is still settling. The enamel plate on the back wall never moves and its lettering stays exactly as printed. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K03 | 7s · ekranda ~4.1s | VO "Ahırın köşesinde kedi, yeni doğmuş yavrularını yalıyordu."
+KAMERA NİYETİ: Kamera birkaç santim yana kayar ve ön plandaki direği sıyırır — böylece en uçtaki yavru klibin ortasında ortaya çıkar; hareketin sebebi budur, süs değil.
+frame: images/3.png · sha256:f3047003dad50c87
+-----
+Grooming is underway before the first frame: the `@kedi` has her tongue down on the head of the kitten nearest her chest and she keeps working, three long strokes that push the small head sideways and let it come back each time. The kittens stay pressed into her flank with their eyes shut; the one under her chin kneads once with a front paw and gives up. Then she lifts her muzzle out of the fur, holds it a moment inside the shaft of light, and goes back down to a slower, softer lick — she begins doing a chore and ends having claimed them. Dust turns over slowly inside the beam, single straw stalks catch the light on the earth floor, and the shadowed half of the barn stays deep and blue. Camera: a lateral slide of a few centimetres to the right, letting the near wooden post clear the frame edge so the furthest kitten comes out from behind it, easing to a full stop while she is still licking. Every kitten keeps its own outline and its own stripes and none merges into her flank; the tipped wooden bucket holds its staves straight. Silent clip, no audio, no dialogue, no lip movement.
+No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz — kuyruğun ağız yarısı bilerek "no lip movement" biçiminde; kadrajda dili dışarıda yalayan bir kedi var, "mouth closed" yazmak çenesini kapatmaya zorlayıp morph üretir (§3ø).
+REVİZE:
+
+
+### K04 | 6s · ekranda ~3.7s | VO "Yavru kediler daha o günden annelerine benziyordu."
+KAMERA NİYETİ: Kamera birkaç santim aşağı yerleşip yavruların göz hizasına iner; ders desenin eşleşmesidir, o yüzden kamera anneyi değil deseni bulur.
+frame: images/4.png · sha256:0e2210e2a173ae1b
+-----
+Only the smallest one is moving. The standing kitten takes a half step along the burlap sack, wobbling on soft legs, and leans its shoulder into the mother's side so that the two striped coats line up along one edge. The `@kedi` holds her upright posture and only her nearer ear swivels back toward the sound of it; her eyes stay level and open, watching past the camera. The two sleeping kittens breathe against her hind leg, one paw curling and releasing. The pair begins as two different sizes of animal and ends reading as one continuous pattern. Loose straw stirs on the sacking, the bright doorway behind stays soft and blown out, and the hay bales hold their dry gold. Camera: settling down a few centimetres from crate height to kitten eye level, easing to a stop the moment the small shoulder meets her side. Four kittens are there from first frame to last, each keeping its own body, its own tail and its own outline against her fur; nothing merges. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K05 | 7s · ekranda ~4.1s | VO "Yumurtaların içinde ne olduğunu ise kimse göremiyordu."
+KAMERA NİYETİ: Kamera hiç kıpırdamaz. Sekansın sorusu burada sorulur ve soru kameranın durmasıyla ağırlaşır — yumurtalar görünürken başlar, tüyün altında kaybolurken biter.
+frame: images/5.png · sha256:7af06041ab3a13f7
+-----
+Stillness here is doing work. The pale speckled eggs lie in the hollow of the straw and the warm bulk of the `@tavuk` fills the top of the frame. Her feathers rise and fall with a slow breath that never quite reaches the nest below her. A dry straw crossing the foreground trembles in the draught from the open door. Then she rocks her body forward and settles a little lower, and her underfeathers come down over the nearest eggs until only their upper curves are still catching light — the nest begins open to the eye and ends closed to it. Fine down drifts sideways through the doorway light, a wheat grain rolls a finger's width on the boards, and the far view stays cool and hazy. Camera: locked hard at nest height for the whole clip, not one centimetre of drift in any direction, so the only change in frame is what the bird's body covers. The eggs themselves never move, never roll and never crack; each shell keeps its own shape and its own speckles. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz — kamera kilitli olduğu için kamera kuyruğu bilerek YAZILMADI; sıfır hareket zaten warp yolunu kapatıyor, kuyruk yalnız kelime yerdi.
+REVİZE:
+
+
+### K06 | 8s · ekranda ~5.2s | VO "Efe merak etti: biri doğuyor, öteki yumurtadan çıkıyordu."
+KAMERA NİYETİ: Push-in burada refleks değil olayın kendisi — fark ediş anı. Kamera hızlanıp yerleşir, sürünmez; ve süre kısa tutulur çünkü çocuğun ağzı kadrajın hâkim noktasında.
+frame: images/6.png · sha256:e2bd842faa2ec3a3
+-----
+Two fingers are pressed under his jaw before anything happens. `@efe` stands there with his eyes travelling slowly from the dark barn opening on his right back across the yard toward the coop wire on his left. His fingers press once more and then relax against his chin. Then his eyes stop moving — and at that instant his brows lift a fraction and his head tilts a few degrees, the way a face changes when two separate things have just become one question. He begins looking from one place to another and ends having found the thing that joins them. Dry grass sways at the frame edge, the leaning tyre and the fence post hold their shadows, and the hazy hills behind stay pale and still. Camera: a measured move forward from a half step back, gathering a little speed and then settling firmly at chest distance exactly as his brows lift, ending completely still. His hand stays anatomically correct with five separate fingers throughout, his jaw stays closed, and his face keeps the same features it starts with. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K07 | 7s · ekranda ~4.4s | VO "Cevap, hayvanlarda üreme ve gelişme çeşitliliğinde saklıydı."
+KAMERA NİYETİ: Sekansın nefes verişi — kamera çok yavaş geri açılır ve avlu tek tek canlılardan tek bir yere dönüşür. Süre 5 saniyede kapatılır çünkü kadrajda çok sayıda küçük benzer gövde var.
+frame: images/7.png · sha256:892d652686fde38b
+-----
+This yard was busy before anyone came to look at it. The tabby crossing the middle of the frame takes two unhurried steps and stops, one ear turning back toward the hens scratching by the shed. The hens keep pecking at the dust in their own rhythm, one lifting its head. Then the dog lying in the lean-to raises its muzzle off its paws toward the same sound — and at that moment a pigeon on the ridge shuffles a step along the tiles and folds its wings again. The yard begins as a handful of separate lives and ends as one place holding all of them. Dust hangs low in the flat sunlight, the sheen on the water in the long trough shifts a little, and the sheep beyond the stone wall drift without leaving. Camera: pulling back very slowly and evenly from the trough, opening the far hills into frame and coming to a complete stop. Every animal that is there at the start is still there at the end, each keeping its own body and its own place; the wheelbarrow and the trough hold their straight rigid edges. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K08 | 6s · ekranda ~3.6s | VO "Efe işin başına, üremeye bakmaya karar verdi."
+KAMERA NİYETİ: Kamera birkaç santim yukarı yerleşip göz hizasına oturur; kararın kendisi kamerada da olur. Süre kısa çünkü yüz kadrajın hâkim noktası.
+frame: images/8.png · sha256:99f9fe4dd2750cfb
+-----
+He is one small nod away from deciding. `@efe` stands under the porch with one hand closed around the strap of his overalls, his gaze up and off to the left, his brows still drawn together from the question. His grip tightens on the strap. Then his chin lifts and comes back down in one small, definite nod, and the tension leaves his forehead as his eyes settle on something he has chosen — he begins uncertain and ends having decided, and his shoulders drop half a centimetre with it. The strings of dried peppers sway barely at the frame edge, the light on the side of his face stays warm and low, and the plain behind him keeps its haze. Camera: rising a few centimetres from just under his eye line and settling level with it as the nod finishes, then holding perfectly still. His hand stays anatomically correct with five separate fingers around the strap, his jaw stays closed through the nod, and the strap keeps its straight edge. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+KAMERA DAĞILIMI: K01 çok yavaş push-in (basıldı) · K02 çok yavaş push-in (basıldı) · K03 yanal kaydırma (sağa birkaç santim) · K04 hafif AŞAĞI yerleşme · K05 KİLİTLİ KAMERA, sıfır hareket · K06 push-in — fark ediş anı, hızlanıp yerleşir · K07 çok yavaş PULL-OUT (sekans nefesi) · K08 hafif YUKARI yerleşme.
+→ beş ayrı tür · bir kilitli kare · aynı tür arka arkaya en fazla iki kez (yalnız K01-K02, ikisi de zaten basılmış).
+SÜRE DAĞILIMI: 6 · 6 · 5 · 4 · 7 · 4 · 5 · 4 — kısa plan K04/K06/K08, uzun plan K05. Metronom düz değil.

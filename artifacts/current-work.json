@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
   "phase": "motion",
   "status": "aktif",
-  "lastCompleted": "K01, K02, K11 klipleri basıldı ve Mami onayladı (3 klip, 1620 kredi) — iş emrine işlendi. Kayıt çelişkisi kapandı: current-work Denetleyici adına Hayvanlarda ilerlemesi yazıyordu, artık doğru projeye bakıyor.",
-  "nextAction": "KALAN 51 KLİP — kamera hareketi sekans içinde DÖNDÜRÜLEREK, sürü/kalabalık kareler 4-5 sn kısa. Her klip indikçe KLIPLER/<n>.mp4, ardından is-emri.mjs kaydet --asama klip",
+  "lastCompleted": "MOTION 54/54 kare yazıldı (5 paralel sekans ajanı, 15 dk, lint kırmızı 0) + EDIT-PLAN + ANIMATIC-0 üretildi. Kredi yakmadan iki kusur kesildi: 41 klipte Kling payı yoktu (K06/K20 eksideydi), süreler ekran+2sn'ye çekildi; edit-plan.mjs sekans dosyalarını göremiyordu ve '0 klip' deyip yeşil geçiyordu.",
+  "nextAction": "51 KLİP BASIMI — ama önce Mami hükmü: K25/K29 tıbbi iç-anatomi kareleri ENZIM KİLİT 7'yi ihlal ediyor, K33 'DOGURARAK' (Ğ breve yok) ve K37 yazısı bozuk.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -13,13 +13,17 @@
     "REFERANSLAR": true,
     "PROMPTLAR": true,
     "revize": false,
-    "MOTION": false,
-    "EDIT-PLAN": false,
+    "MOTION": true,
+    "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T10:25:52.948Z",
+  "deliverablesOverride": {
+    "MOTION": true,
+    "EDIT-PLAN": true
+  },
+  "updatedAt": "2026-08-07T10:54:34.696Z",
   "updatedBy": "claude",
-  "baseCommit": "2335f76d"
+  "baseCommit": "8c31b945"
 }
