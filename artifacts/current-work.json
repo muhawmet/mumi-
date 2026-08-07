@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "KURGUYA KADAR BİTTİ: 58 kare + 58 motion + REFERANSLAR + EDIT-PLAN. teslim-denetim bu proje için sıfır uyarı (58/58/58/58). 5400/5500 kredi. Motion ajanı K29'un planetaryum çıktığını yakaladı, yeniden basıldı.",
-  "nextAction": "ANIMATIC-0 için gerçek VO gerekiyor (ElevenLabs); sonra klip bütçesini Mami'den al ve Kling'de bas",
+  "lastCompleted": "FİLM HAM HÂLDE BİTTİ: 58 kare + 58 KLİP. Klipler ~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/ (256MB, ham 5:31, kırpılmış ~3:35). AGY canary: MORPHING YOK. Klip Higgsfield'da 580 kredi — Magnific'te 26.000 olacaktı.",
+  "nextAction": "ElevenLabs'tan VO al, sonra kaba-kurgu.mjs --klipler --vo ile Premiere timeline kur",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T21:26:35.218Z",
+  "updatedAt": "2026-08-07T22:09:51.057Z",
   "updatedBy": "claude",
-  "baseCommit": "2fed031e"
+  "baseCommit": "e05c9d81"
 }

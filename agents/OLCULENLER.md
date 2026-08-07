@@ -106,6 +106,15 @@ Buraya **hüküm** yazılır, anlatı değil.
     ajanın `images_generate` çağrısı `[AJAN]` ile bloke, ana oturumunki açık, kredi değişmedi.
     Kanonun üç yerinde hâlâ "Mami basar" yazıyordu ve yeni oturum işi ona yıkıyordu.)*
 
+28. 🔴 **KLİP HİGGSFIELD'DA BASILIR — aynı Kling 3.0, 45 KAT UCUZ.** Ölçüldü 2026-08-07,
+    exact: Magnific `kling-30` 1080p 5 sn = **450 kredi** · Higgsfield `kling3_0` 5 sn =
+    **10 kredi**. 58 klip Magnific'te ~26.000 kredi, Higgsfield'da **580** yaktı.
+    ⚠ Karşılığı çözünürlük: Higgsfield çıktısı **1284×716 / 24 fps**, 1080p değil.
+    Kare Magnific'te kalır (madde 10 kanun), **klip Higgsfield'a gider.**
+    ⚠ İki tuzak: Higgsfield başlangıç karesini `media_upload` → curl PUT → `media_confirm`
+    ile ister (`start_image` rolü); ve bazı prompt'lara iş göndermek yerine **preset öneriyor**
+    — `declined_preset_id` ile reddedilmezse o klip hiç basılmaz.
+
 10. 🔴 **START FRAME YALNIZ MAGNIFIC'te basılır.** İstisnası yoktur. Higgsfield **ortak hesap**
     ve MCP'sinde **silme aracı yok** — oraya giden prompt görünür kalır. Mami'nin ölçüsü:
     *"start frame motion prompt'undan daha değerli."* Bu kural fiyat kuralını **ezer**.

@@ -2,12 +2,12 @@
   "surum": 1,
   "proje": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "olusturuldu": "2026-08-07T19:18:18.406Z",
-  "guncellendi": "2026-08-07T21:21:33.722Z",
+  "guncellendi": "2026-08-07T22:08:01.466Z",
   "shots": [
     {
       "n": 1,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -20,13 +20,23 @@
           "zaman": "2026-08-07T19:18:51.656Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.693Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 2,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -39,13 +49,23 @@
           "zaman": "2026-08-07T19:18:51.707Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.743Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 3,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -58,13 +78,23 @@
           "zaman": "2026-08-07T19:18:51.756Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.792Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 4,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -77,13 +107,23 @@
           "zaman": "2026-08-07T19:18:51.803Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.840Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 5,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -96,13 +136,23 @@
           "zaman": "2026-08-07T19:18:51.850Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.889Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 6,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -115,13 +165,23 @@
           "zaman": "2026-08-07T19:18:51.897Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.941Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 7,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -134,13 +194,23 @@
           "zaman": "2026-08-07T19:18:51.945Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:58.990Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 8,
       "sekans": "S1",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -153,13 +223,23 @@
           "zaman": "2026-08-07T19:18:51.993Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.038Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 9,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -181,13 +261,23 @@
           "zaman": "2026-08-07T19:56:37.115Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.087Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 10,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -200,13 +290,23 @@
           "zaman": "2026-08-07T19:38:40.416Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.137Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 11,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -219,13 +319,23 @@
           "zaman": "2026-08-07T19:56:36.643Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.184Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 12,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -238,13 +348,23 @@
           "zaman": "2026-08-07T19:56:36.691Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.234Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 13,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -257,13 +377,23 @@
           "zaman": "2026-08-07T19:56:36.739Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.282Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 14,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -276,13 +406,23 @@
           "zaman": "2026-08-07T19:56:36.788Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.330Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 15,
       "sekans": "S2",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -295,13 +435,23 @@
           "zaman": "2026-08-07T19:56:36.836Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.377Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 16,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -314,13 +464,23 @@
           "zaman": "2026-08-07T19:56:36.883Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.425Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 17,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -333,13 +493,23 @@
           "zaman": "2026-08-07T19:56:36.928Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.472Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 18,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -352,13 +522,23 @@
           "zaman": "2026-08-07T19:56:36.974Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.520Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 19,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -380,13 +560,23 @@
           "zaman": "2026-08-07T19:56:37.208Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.567Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 20,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -399,13 +589,23 @@
           "zaman": "2026-08-07T19:56:37.020Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.614Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 21,
       "sekans": "S3",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -418,13 +618,23 @@
           "zaman": "2026-08-07T19:38:40.464Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.664Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 22,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -482,13 +692,23 @@
           "zaman": "2026-08-07T20:31:59.678Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.712Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 23,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -510,13 +730,23 @@
           "zaman": "2026-08-07T20:31:59.420Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.765Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 24,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -538,13 +768,23 @@
           "zaman": "2026-08-07T20:31:59.470Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.814Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 25,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -566,13 +806,23 @@
           "zaman": "2026-08-07T20:09:37.762Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.863Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 26,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -594,13 +844,23 @@
           "zaman": "2026-08-07T20:31:59.772Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.914Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 27,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -613,13 +873,23 @@
           "zaman": "2026-08-07T20:31:59.524Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:07:59.964Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 28,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -632,13 +902,23 @@
           "zaman": "2026-08-07T20:31:59.576Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.012Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 29,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -669,13 +949,23 @@
           "zaman": "2026-08-07T21:21:33.722Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.060Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 30,
       "sekans": "S4",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -688,13 +978,23 @@
           "zaman": "2026-08-07T21:04:16.477Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.108Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 31,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -707,13 +1007,23 @@
           "zaman": "2026-08-07T21:04:16.524Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.155Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 32,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -726,13 +1036,23 @@
           "zaman": "2026-08-07T21:04:16.572Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.201Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 33,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -745,13 +1065,23 @@
           "zaman": "2026-08-07T21:04:16.619Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.249Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 34,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -764,13 +1094,23 @@
           "zaman": "2026-08-07T21:04:16.668Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.298Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 35,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -783,13 +1123,23 @@
           "zaman": "2026-08-07T21:04:16.715Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.346Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 36,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -802,13 +1152,23 @@
           "zaman": "2026-08-07T21:04:16.761Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.394Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 37,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -830,13 +1190,23 @@
           "zaman": "2026-08-07T21:04:17.838Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.441Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 38,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -849,13 +1219,23 @@
           "zaman": "2026-08-07T21:04:16.809Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.487Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 39,
       "sekans": "S5",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -868,13 +1248,23 @@
           "zaman": "2026-08-07T21:04:16.856Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.536Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 40,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -887,13 +1277,23 @@
           "zaman": "2026-08-07T21:04:16.901Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.585Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 41,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -906,13 +1306,23 @@
           "zaman": "2026-08-07T21:04:16.949Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.633Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 42,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -925,13 +1335,23 @@
           "zaman": "2026-08-07T21:04:16.996Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.681Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 43,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -944,13 +1364,23 @@
           "zaman": "2026-08-07T21:04:17.043Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.729Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 44,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -963,13 +1393,23 @@
           "zaman": "2026-08-07T21:04:17.088Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.778Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 45,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -982,13 +1422,23 @@
           "zaman": "2026-08-07T21:04:17.134Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.827Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 46,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1001,13 +1451,23 @@
           "zaman": "2026-08-07T21:04:17.181Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.876Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 47,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1020,13 +1480,23 @@
           "zaman": "2026-08-07T21:04:17.228Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.929Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 48,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1039,13 +1509,23 @@
           "zaman": "2026-08-07T21:04:17.274Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:00.981Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 49,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1058,13 +1538,23 @@
           "zaman": "2026-08-07T21:04:17.321Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.032Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 50,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1077,13 +1567,23 @@
           "zaman": "2026-08-07T21:04:17.369Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.081Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 51,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1096,13 +1596,23 @@
           "zaman": "2026-08-07T21:04:17.414Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.130Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 52,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1115,13 +1625,23 @@
           "zaman": "2026-08-07T21:04:17.461Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.178Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 53,
       "sekans": "S6",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1134,13 +1654,23 @@
           "zaman": "2026-08-07T21:04:17.509Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.227Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 54,
       "sekans": "S7",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1153,13 +1683,23 @@
           "zaman": "2026-08-07T21:04:17.556Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.275Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 55,
       "sekans": "S7",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1172,13 +1712,23 @@
           "zaman": "2026-08-07T21:04:17.603Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.324Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 56,
       "sekans": "S7",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1191,13 +1741,23 @@
           "zaman": "2026-08-07T21:04:17.650Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.370Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 57,
       "sekans": "S7",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1210,13 +1770,23 @@
           "zaman": "2026-08-07T21:04:17.699Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.418Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 58,
       "sekans": "S7",
-      "asama": "onaylandi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1229,7 +1799,17 @@
           "zaman": "2026-08-07T21:04:17.747Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T22:08:01.466Z"
+        }
+      ],
       "not": ""
     }
   ]

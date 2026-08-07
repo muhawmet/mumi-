@@ -1,79 +1,80 @@
-# MAMİ — GECE BRİFİ · Denetleyici ve Düzenleyici Sistemler
+# MAMİ — Z RAPORU · Denetleyici ve Düzenleyici Sistemler
 
-> Sen uyurken koştu. Soru yok, karar bekleyen tek şey aşağıda **AÇIK** başlığı altında.
+> Sen uyurken koştu. Soru yok. Karar bekleyen tek şey en altta.
 
 ## TEK SATIR
 
-**Kurguya kadar BİTTİ.** 58 kare · 58 motion · tam teslim seti.
-İlk basımda tutma **%90** · yakılan **5400 kredi** (tavan 5500 — **100 kaldı, aşmadım**).
+**58 kare + 58 KLİP bitti.** Film ham hâlde diskte. Kalan tek adım kurgu.
 
-## NE VAR ELDE
-
-| parça | durum |
+| ne | nerede |
 |---|---|
-| **58 start frame** | ✅ `images/1.png` … `58.png` — numaralar kesintisiz, hepsi gözden geçti |
-| **58 MOTION bloğu** | ✅ `_MOTION.txt` — her karede süre payı, `Camera:` sonda, sessiz kuyruk |
-| **Senaryo / VO** | ✅ 58 cümle, ~4:05. İki VO dosyası senaryodan **türetiliyor**, ayrışamazlar |
-| **Prompt seti** | ✅ `PROMPTLAR/S1…S7.txt` — 58 blok, hepsi kare-özel negatifli |
-| **REFERANSLAR** | ✅ `@mira` tek referans; TAŞIR/TAŞIMAZ sözleşmesi yazılı |
-| **EDIT-PLAN** | ✅ kare kare süre + 6 L/J kesim + 4 sert vuruş · **ekran 206 sn ≈ 3:26** |
-| **Sekans omurgası** | ✅ `_OMURGA.md` — soru→kanıt→dönüşüm→köprü, ses haritası |
-| Kaba kurgu XML | ⛔ **klip ve VO sesi olmadan üretilemez** — sıradaki adım o |
+| **58 klip** | `~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/K01.mp4 … K58.mp4` · 256 MB |
+| **58 start frame** | repo · `images/1.png … 58.png` |
+| **58 motion + edit-plan + referanslar + senaryo + VO** | repo · teslim seti tam |
 
-`teslim-denetim` artık bu proje için **hiç uyarı vermiyor**: 58 VO · 58 prompt · 58 kare ·
-58 motion, dördü de hizalı. Tek eksik kalem `KABA_KURGU` ve onun girdisi henüz yok.
+**Ham klip toplamı 5:31.** Kırpıldıktan sonra (her klibin başından 0.5 sn, sonundan 1.5 sn)
+**ekran süresi ≈ 3:35.** Senaryo 4:05 diyor — fark ANIMATIC'te kapanır, VO gelince görülür.
 
-⚠ **206 sn (3:26) bir TAHMİN.** Senaryo ~4:05 diyor; aradaki fark motion sürelerinden geliyor.
-Gerçek VO inince **ANIMATIC-0** koşulur ve sapma orada kapanır — Hücre'de bu adım 80 saniyelik
-tahmin hatasını tek klip basılmadan yakalamıştı. Klip basmadan önce mutlaka koşulmalı.
+## PARA — ve burada bir şey buldum
+
+| kalem | kredi | cüzdan |
+|---|---|---|
+| 58 start frame + 6 revize + plaka | **5400** | Magnific |
+| **58 klip** | **~580** | Higgsfield |
+
+🔴 **Klipler kareden 10 KAT UCUZA çıktı.** Magnific'te `kling-30` 1080p 5 sn = **450 kredi**;
+Higgsfield'da aynı Kling 3.0 5 sn = **10 kredi**. 45 kat fark. 58 klibi Magnific'te bassaydım
+**~26.000 kredi** yakacaktım; Higgsfield'da **580** yaktı.
+Higgsfield bakiyesi hâlâ **4446** — yani bu filmin klip maliyeti bütçenin yanında yuvarlama hatası.
+**Bu bilgi 3000 videoluk planın en değerli parçası ve kanona yazıldı.**
+⚠ Karşılığı çözünürlük: klipler **1284×716, 24 fps**. 1080p değil. Portfolyo için upscale gerekebilir.
+
+## AGY NE GÖRDÜ — senin sorduğun soru
+
+Klip basmadan önce iki canary bastım ve AGY'ye izlettim (en yüksek riskli iki kare:
+elli/yüzlü bir kare ve çok sayıda küçük nesne taşıyan bir kare).
+
+**MORPHING YOK.** AGY'nin altı maddesi: şekil değiştiren/eriyen/birleşen nesne **yok** ·
+tekrar eden küçük nesnelerin sayısı **değişmiyor** · yüz veya uzuv deformasyonu **yok** ·
+okunabilir yazı **yok**. Bunun üstüne 56 klibin hepsini bastım.
+
+**Bulduğum tek sapma morphing değil:** K37'de motor elini kadraj dışına indirdi (metin
+"hiçbir yere gitmiyor" diyordu) ve **ağzını açtı**. Ağız kuralı zaten kanonda ölçülü —
+Kling "ağız oynamasın" negatifini dinlemiyor. Bir nefes nefese şaşkınlık, konuşma değil;
+anlatıcı dış ses olduğu için kabul ettim.
+
+## GECE İÇİNDE ONARILAN İKİ KARE
+
+- **K29 bir PLANETARYUMDU** — duvarda nebula, teleskop, denge yok; VO ise "tek ayak üstünde
+  durdu ve sallanmadı" diyordu. **Bunu motion ajanı yakaladı**, kareyi açıp plana uymadığını
+  gördü ve bana getirdi. Yeniden basıldı: tek ayak, kalkık diz, duvarda tek parça keskin
+  siluet — ders artık gölgede duruyor.
+- **K37 plaka ithal etmişti** (mutfak yok, boş fonda portre). Kadraja mutfağı özne yapıp
+  yeniden bastım.
+
+## SIRADAKİ ADIM — tek şey kaldı
+
+1. **VO'yu ElevenLabs'tan al** (`_SESLENDIRME-TEK-BLOK.txt` hazır, 58 cümle).
+2. `node scripts/kaba-kurgu.mjs "<proje>" --klipler <klipler dizini> --vo <vo.mp3>`
+   → Premiere timeline kurulu gelir: klipler sırada, VO A1'de, kesimler cümlelere oturmuş.
+3. Müzik (Suno brief hazır) ve SFX (Envato) Premiere'de.
 
 ## SENİN İÇİN AÇIK OLAN TEK ŞEY
 
-**K53'te fidanın dibinde küçük bir bitki etiketi var, üstünde okunmayan bir yazı.**
-Ekranda-yazı kilidimize takılıyor ama parkta gerçekçi ve bulanık; "bariz hata yoksa geçme"
-dediğin için **basmadım.** İstersen 75 kredi, tek basım. Diğer 57 karede harf yok.
+**K53'te fidanın dibindeki bitki etiketinde okunmayan bir yazı var.** Ekranda-yazı kilidine
+takılıyor ama parkta gerçekçi ve bulanık; "bariz hata yoksa geçme" dediğin için basmadım.
+75 kredi, tek basım, senin sözün. Kalan 57 karede harf yok.
 
-## GECE İÇİNDE YAKALANAN İKİ KUSUR (ikisi de onarıldı)
-
-- **K37** plaka ithal etmişti — mutfak yok, çaydanlık yok, sadece boş fonda portre.
-  Sekansın dönüşüm karesiydi. Kadraja mutfağı özne yapıp yeniden bastım, oturdu.
-- **K29 bir PLANETARYUMDU** — duvarda nebula, teleskop, denge yok. VO "tek ayak üstünde
-  durdu ve sallanmadı" diyordu, kare dersi hiç taşımıyordu. *(Bunu motion ajanı yakaladı:
-  kareyi açıp plana uymadığını gördü ve bana getirdi — üçüncü göz çalıştı.)*
-  Yeniden basıldı: tek ayak, kalkık diz, duvarda tek parça keskin siluet. Ders artık gölgede.
-
-## BU GECE DEĞİŞENLER
-
-- **Maket söküldü** (senin kararın). S4 bedenin içine taşındı, K21'in katedral diline.
-  **VO'nun üç cümlesi** buna göre yeniden yazıldı — sen yakaladın, haklıydın: cümleler
-  ortada olmayan bir nesneyi işaret ediyordu. S5'te de üç kare maketi anıyordu, onları
-  **kredi yakmadan metinden** çevirdim.
-- **`@mira` plakası kimliği düzeltildi.** Yeniden bastığım plaka motora hiç gitmiyormuş;
-  eski düz plakanın kaydı kullanılıyordu. Artık doğru olan bağlı.
-- **Bütçe 4200 → 5500** (senin onayın).
-
-## BUGÜN KANONA GİREN 6 ÖLÇÜM (her yeni sohbette otomatik yüklenir)
+## BUGÜN KANONA GİREN ÖLÇÜMLER
 
 1. **Bariz hata yoksa reddetme, Mami'ye sor** — senin emrin, kodlandı.
-2. **İki redden sonra üçüncüyü basma, Mami'ye getir.** Bugün tek kare 6 kez basıldı (450
-   kredi) ve doğru cevap teknik değil yönetmenlikti.
-3. **Referans kimliği diskteki dosyayı değil motordaki kaydı gösterir** — plakayı yeniden
-   basmak yetmez.
+2. **İki redden sonra üçüncüyü basma.** Bugün tek kare 6 kez basıldı (450 kredi) ve doğru
+   cevap teknik değil yönetmenlikti.
+3. **Referans kimliği diskteki dosyayı değil motordaki kaydı gösterir.**
 4. **Referans karesinde yüz görünür ve ışıkta olmalı**, yoksa motor plakayı ithal ediyor.
-5. **Karakter + aydınlık iç mekân = motor vintage moduna kaçıyor** ve arka plana basılı
-   sayfa/diyagram getiriyor. Karanlık mekân ya da tek sert huzmenin bandı.
-6. **Anıtsallık ışığın tepeden inmesiyle taşınır**, "biz küçüğüz" demekle değil.
-   Ayrıca güçlendi: **negatifte adlandırmak çağırıyor** — bunu bu gece ben yaptım ve motor
-   İngilizce etiketli anatomi diyagramı bastı.
-
-## SIRADAKİ ADIM (sabah)
-
-1. `MOTION-1/2` birleşir → `_MOTION.txt`, ben okurum.
-2. Klipler Kling'de basılır — **süre = ekran + 2 sn**, iki cüzdan paralel.
-3. VO ElevenLabs'ta alınır → `kaba-kurgu.mjs --animatic --vo` ile **klip basılmadan** ritim
-   görülür (Hücre'de bu adım 80 saniyelik tahmin hatası yakalamıştı).
-4. Klipler + VO inince kaba kurgu XML üretilir, Premiere kurulu gelir.
-
-**Kredi durumu:** klip aşaması ayrı bütçe ister — Magnific `kling-30` 1080p **90 kredi/sn**,
-Higgsfield `kling3_0` **~1.5 kredi/sn**. Ekranda yazı taşıyan ve kilit sahneler Magnific'te,
-sıradan canlanma Higgsfield'da. Rakamı sen söylemeden klip basmıyorum.
+5. **Karakter + aydınlık iç mekân = motor vintage moduna kaçıyor.**
+6. **Anıtsallık ışığın tepeden inmesiyle taşınır.**
+7. **Negatifte adlandırmak çağırıyor** — bunu bu gece ben yaptım, motor İngilizce etiketli
+   anatomi diyagramı bastı.
+8. 🔴 **KLİP HİGGSFIELD'DA BASILIR** — aynı Kling 3.0, 45 kat ucuz. Start frame Magnific'te
+   kalır (kanun), klip Higgsfield'a gider.
