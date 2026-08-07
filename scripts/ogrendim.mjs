@@ -34,6 +34,12 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DEFTER = join(ROOT, 'artifacts', 'ogrendiklerim.md');
 const KALICI = join(ROOT, 'agents', 'OLCULENLER.md');
+// TAM ARŞİV (Mami, 2026-08-07: "bir de ogrenenler_all yap, onu da genel görürüm, arada
+// kendim törpülerim"). Buraya HER hüküm yazılır — ana hafızaya taşınan da, düşürülen de.
+// Otomatik yüklenmez, tavanı yoktur, hiçbir şey silinmez. Ana hafıza DAR olmak zorunda
+// (her oturum onu yükler); arşiv GENİŞ olmak zorunda (hiçbir ölçüm kaybolmasın).
+// Düşürülen bir madde bir gün gerekirse buradan geri alınır.
+const ARSIV = join(ROOT, 'agents', 'OGRENENLER-ALL.md');
 
 const BOLUMLER = {
   motion: '## MOTION VE KLİP',
@@ -131,10 +137,29 @@ if (cmd === 'tasi') {
     }
   }
   writeFileSync(KALICI, kal, 'utf8');
+
+  // Arşive HEPSİ yazılır — taşınan da, düşen de. Hiçbir ölçüm kaybolmaz.
+  const dusenler = list.filter((x) => !kalan.includes(x));
+  const bugun = new Date().toISOString().slice(0, 10);
+  let ars = existsSync(ARSIV) ? readFileSync(ARSIV, 'utf8') : `# ÖĞRENENLER — TAM ARŞİV
+
+> Buraya **her hüküm** yazılır: ana hafızaya (\`agents/OLCULENLER.md\`) taşınan da,
+> Mami'nin düşürdüğü de. Bu dosya **otomatik yüklenmez**, tavanı yoktur, hiçbir şey
+> silinmez. Ana hafıza DAR olmak zorunda çünkü her oturum onu yükler; arşiv GENİŞ
+> olmak zorunda çünkü bir ölçüm bugün gereksizken yarın gerekebilir.
+>
+> Mami arada bakar ve törpüler. Düşmüş bir maddeyi geri almak isterse kaynağı burasıdır.
+`;
+  ars = ars.replace(/\s*$/, '\n') + `\n## ${bugun}\n\n`;
+  for (const x of kalan) ars += `- ✅ **ANA HAFIZAYA** · [${x.bolum}] ${x.hukum}` + (x.kanit ? `\n  kanıt: ${x.kanit}` : '') + '\n';
+  for (const x of dusenler) ars += `- ⬇️ düşürüldü (Mami) · [${x.bolum}] ${x.hukum}` + (x.kanit ? `\n  kanıt: ${x.kanit}` : '') + '\n';
+  writeFileSync(ARSIV, ars, 'utf8');
+
   yazDefter([]);
   console.log(`✅ ${kalan.length} madde kalıcı yere taşındı → agents/OLCULENLER.md`);
   if (dusen) console.log(`   ${dusen} madde düştü (Mami kararı).`);
   console.log(`   Defter boşaltıldı. Yeni oturum bunları ilk mesajda bilecek.`);
+  console.log(`   📚 Hepsi (taşınan + düşen) arşive de yazıldı → agents/OGRENENLER-ALL.md`);
   process.exit(0);
 }
 
