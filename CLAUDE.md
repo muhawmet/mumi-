@@ -33,6 +33,9 @@ Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopya
 | **Dörtlü Masa — roller · sonuç sözlüğü · 5 tetikleyici · artefact yeri** | `docs/ai/DORTLU-MASA.md` (tek otorite; nüshalanmaz) |
 | Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
 | **Aktif iş kaydı** | `artifacts/current-work.json` → `node scripts/current-work.mjs` (SessionStart hook aynısını basar) |
+| **Shot seviyesinde üretim durumu** | `artifacts/is-emri/<proje>.json` → `node scripts/is-emri.mjs devral` — hangi kare basıldı, hangisi reddedildi, kaç kredi yandı. `current-work.json` PROJE seviyesidir; bu SHOT seviyesidir ve otonom koşuyu oturumdan bağımsız kılan tek şeydir |
+| **Motor + cüzdan + element rafı** | `node scripts/rota.mjs` — fiyat cüzdana göre değişir ve **referans gerçeği de öyle**. Ana hat Magnific; kalan kapasite kredi değil **film** olarak okunur |
+| **Şu an Mami'den ne bekleniyor** | `node scripts/karar.mjs` — tek ekran, en fazla 5 madde, her madde tuşa inmiş |
 | **Prompt yapısı ölçümü** | `scripts/prompt-lint.mjs` — üretimden ÖNCE koşar; KIRMIZI/SARI/KAPSAM |
 | **Dünya kaynağı (kart)** | `scripts/dunya-kilidi.mjs` — **okunacak kart basar, yapıştırılacak metin DEĞİL.** Kimlik · ışık davranışı · malzeme · motorun ölçülmüş eğilimleri; cümleyi sen yazarsın (`--kuyruk` eski davranış, yalnız süregelen işin tutarlılığı için) |
 | Doküman drift denetimi | `src/core/docsContract.test.ts` |

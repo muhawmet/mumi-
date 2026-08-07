@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "MAMILAS OS kuruldu — 7 yeni organ (brifing plan-modu kapısı · is-emri shot omurgası · rota motor+cüzdan · kare-cek hakem ayağı · uretim-defteri kuzey yıldızı+üç vuruş · lj-kesim kurgu zekâsı · karar tek-ekran yüzeyi), 69 yeni test. Ölçüldü: Adobe kurgu yapamaz, Soul ID hattımızda çalışmaz, element rafı doluymuş (9), Kling referansı cüzdana bağlı.",
-  "nextAction": "Mami hedef konuyu verecek → brifing.mjs ile plan modu açılır, altı kilit kapanır, is-emri kurulur, 2 dünya canary basılır",
+  "lastCompleted": "Hayvanlarda Üreme: 54 kare + açılış kartı basıldı (32 dk, 2K, ~4.650 kredi). 8 element üretildi, raf 13 kayıt. Yeni organlar: brifing/is-emri/rota/kare-cek/uretim-defteri/lj-kesim/karar/sahne-metni. Ahşap levha kalıbı 11 TEXT satırından söküldü, yazılar sahnenin malzemesinden.",
+  "nextAction": "MOTION: kareler görülerek Kling 3.0 motion yazımı — sekans sekans; ardından ANIMATIC-0 (gerçek VO ile), sonra klip basımı",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T08:06:27.260Z",
+  "updatedAt": "2026-08-07T10:08:34.770Z",
   "updatedBy": "claude",
-  "baseCommit": "99325c64"
+  "baseCommit": "7ed9de36"
 }

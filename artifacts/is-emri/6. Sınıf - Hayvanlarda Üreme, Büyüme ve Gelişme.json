@@ -2,7 +2,7 @@
   "surum": 1,
   "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
   "olusturuldu": "2026-08-07T08:09:12.816Z",
-  "guncellendi": "2026-08-07T09:12:53.593Z",
+  "guncellendi": "2026-08-07T10:08:34.717Z",
   "shots": [
     {
       "n": 1,
@@ -839,9 +839,19 @@
     {
       "n": 41,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "basildi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T10:08:34.717Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
