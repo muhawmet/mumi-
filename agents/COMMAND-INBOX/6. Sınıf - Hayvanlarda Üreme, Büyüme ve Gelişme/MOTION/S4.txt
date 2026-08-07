@@ -33,7 +33,7 @@ REVİZE:
 
 ### K33 | 5s · ekranda ~2.7s | VO "Birincisi doğurarak çoğalmaktır."
 KAMERA NİYETİ: Kilitli kamera, sıfır hareket — saman harfler okunacak, asla yaklaşılmayacak.
-frame: images/33-B.png · sha256:12b5236259312b20
+frame: images/33.png · sha256:12b5236259312b20
 -----
 Around the straw line rather than over it, the barn floor is already in gentle motion: @kedi lies along the blanket with her flank rising and falling, and the kitten pressed against her belly pushes deeper into her fur without leaving its place. Then she lowers her chin onto her outstretched paw — at that instant the whole group settles into one warm mass, so the corner begins the clip as a scatter of animals and ends as a family that has stopped moving. Warm light from the open barn doors behind lies across the packed earth in one long band and holds its level, dust turns slowly inside that band, and the bales at the right edge keep their dry golden texture. Nothing crosses the floor between the lens and the straw. Camera: locked off, no travel and no reframe of any kind, holding its exact distance to the straw line so the writing is read and never approached. Every straw stalk keeps its own position and its own shadow, the lettering stays exactly as laid on the earth, each kitten keeps its own separate body with a visible gap along its back, and the count of kittens holds. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
@@ -72,13 +72,13 @@ REVİZE:
 
 
 ### K37 | 5s · ekranda ~2.6s | VO "İkincisi yumurtlayarak çoğalmaktır."
-KAMERA NİYETİ: Kilitli kamera — tane harfler uzakta ve yumuşak kalsın, kamera hiç yaklaşmasın.
-frame: images/37.png · sha256:83853034d63b78a4
+KAMERA NİYETİ: Kilitli kamera — yazı artık okunuyor, kamera onu bozmadan seyretsin.
+frame: images/37.png · REVİZE 1 SONRASI — tepeden bakan açı, 13 harf tek düzlemde
 -----
-At the coop door @tavuk sits deep in her straw with her breast feathers already rising and falling, while one loose straw near the right edge turns slowly where it lies on the packed earth. Then she draws her head back into her ruff and settles — at that instant her outline goes from alert to at rest, so the doorway begins the clip as a bird about to do something and ends as a bird already doing it. Low sun lies flat across the swept soil in one long warm band, the wheelbarrow and the old tractor beyond the gate keep their soft distant blur, dust hangs almost still in the light between the door posts, and the far hills stay pale behind the fence. Nothing walks across the grain. Camera: locked off, no travel and no reframe of any kind, holding its exact distance to the grain line so it is read as texture and never approached. Every grain keeps its own place and its own small shadow, the scatter stays soft at this distance and never sharpens into readable letters, and @tavuk stays one single bird on her nest well behind the grain. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+@tavuk is already mid-step beside the nest, one foot lifted and held, her head turning by a few degrees to keep the clutch in view while a single loose straw rocks once where it lies across the swept earth. Then she sets the lifted foot down beside the nearest egg and stills — at that instant the doorway goes from a bird deciding to a bird settled, so the clip begins with a small unfinished movement and ends with it finished. Low sun rakes in from the open door behind, each corn kernel throwing its own short shadow, dust turning slowly in the warm band of light, the wooden nest-box edge and the tipped tin scoop holding their places at the frame edge. The seven eggs stay exactly seven, each keeping its own shell and its own contact shadow in the straw. Camera: locked off, no travel and no reframe of any kind, holding the whole floor in one plane so the word stays flat to the lens from first frame to last. The kernels stay exactly where they lie and every letter keeps the same height and the same crisp gap from its neighbour, the far end of the word staying as sharp as the near end. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
 -----
-DURUM: temiz
-REVİZE:
+DURUM: revize sonrası — kare yeniden basılacak
+REVİZE: 1 · yazı yerleşimi (13 harf derinlemesineydi, tepeden tek düzleme alındı) + yumurtalar kadraja girdi
 
 
 ### K38 | 7s · ekranda ~4.4s | VO "Döllenme içte olur, ama yavru yumurtanın içinde gelişir."

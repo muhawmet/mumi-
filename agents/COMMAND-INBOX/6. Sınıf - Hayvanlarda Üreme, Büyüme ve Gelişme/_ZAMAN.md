@@ -15,16 +15,25 @@
 | İlk 3 klip (K01, K02, K11) + cetvel doğrulaması | 08-07 13:08 | 08-07 13:22 | **14 dk** | commit → commit |
 | **MOTION — 54 kare, 5 paralel sekans ajanı** | 08-07 13:37 | 08-07 13:52 | 🔴 **15 dk** | ajan `duration_ms` (en uzun 919s) |
 
-**Buraya kadar toplam çalışılan zaman: ~7 sa 12 dk** (54 kare + 54 motion + 3 klip).
+| **EDIT-PLAN + ANIMATIC-0 + süre onarımı** | 08-07 13:52 | 08-07 14:10 | 🔴 **18 dk** | commit damgası |
+
+**Buraya kadar toplam çalışılan zaman: ~7 sa 30 dk** (54 kare + 54 motion + kurgu planı + 3 klip).
 
 ## Henüz ölçülmedi — koşuldukça buraya yazılır
 
 | Adım | Tahmin | Gerçek |
 |---|---|---|
-| ANIMATIC-0 (gerçek VO ile ritim provası) | ~5 dk | — |
-| Kalan 51 klip basımı | — | — |
-| Kaba kurgu (Premiere XML) | ~5 dk | — |
+| Kalan 51 klip basımı (309 sn üretim · ~27.800 kredi) | — | — |
+| Kaba kurgu (gerçek kliplerle Premiere XML) | ~5 dk | — |
 | Tam film denetimi (AGY + cetvel + hakem) | ~20 dk | — |
+
+## ANIMATIC-0'ın kredi yakmadan kestiği iki kusur (08-07)
+
+1. **41 klipte Kling payı yoktu** — K06 ve K20 eksideydi. Kling'in ilk ~0.5 sn'si ve son
+   ~1.5 sn'si kullanılamıyor; süreler ekran+2 sn'ye çekildi (277s → 327s, +4.500 kredi).
+   Bu 41 klip aynen basılsaydı kurguda kesilecek yer kalmayacaktı → 41 yeniden basım.
+2. **Plan 5:27 tahmin ediyordu, gerçek VO 3:11** — 136 saniyelik tahmin hatası, tek klip
+   basılmadan yakalandı.
 
 ## Okunması gereken tek sayı
 
