@@ -1,0 +1,762 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — MOTION (Kling 3.0)
+=========================================================================
+58 klip · SÜRE = ekran süresi + 2 sn (Kling ilk ~0.5 ve son ~1.5 sn kullanılamaz)
+Her klip SESSİZ basılır — VO ve müzik Premiere katmanı.
+Kimlik start frame' ten gelir; motion metninde @handle çağrılmaz.
+=========================================================================
+
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — MOTION K01-K30 (Kling 3.0 · i2v)
+═══════════════════════════════════════════════════════════════════════
+Motor: Kling 3.0. SÜRE = ekran süresi + 2 sn (Kling'in ilk ~0.5 ve son ~1.5 sn'si
+kullanılamıyor). Her blok TEK PARAGRAF, `Camera:` cümlesi sonda.
+
+🔴 Bu 30 blok KARELERE BAKILARAK yazıldı — images/1.png … images/30.png tek tek açıldı.
+🔴 KİMSE KONUŞMAZ. Sessizlik kuyruğu 30/30 blokta.
+🔴 Kamera kuyruğu (`No whip-pan…`) KOŞULLU — yalnız katı/mekanik gövde ya da mimari
+   düz hat taşıyan 9 karede: K03 · K08 · K19 · K22 · K25 · K26 · K28 · K29 · K30.
+   Kalan 21 klipte kamera kesimin içinden akıp geçer.
+🔴 OLAY DEĞİL DURUM — hiçbir klipte eğilme, doğrulma, kalkma, binme, el değiştirme yok.
+🔴 Kavram ışığının dili: SİNİR = jilet gibi sert kenar, bittiği yerde kesilir, İZ BIRAKMAZ.
+   HORMON = kenarsız, malzemenin içinde, KALIR ve genişler. K01-K30 sinir tarafındadır;
+   hormon davranışı yalnız K14 ve K15'te, sinirle yan yana, ilk kez görünür.
+🔴 Hiçbir kavram ışığı Mira'nın tenine değmez.
+🔴 Kesim planı bu bölgede: K13 → K14 **J** · K29 → K30 **L**.
+   SERT ve tam sınırda (bilerek): K06 · K19.
+═══════════════════════════════════════════════════════════════════════
+
+
+K01 — motion
+VO 1 "Sahnede onlarca müzisyen aynı anda çalıyordu."
+SÜRE: 5s   (ekran ~3s + 2s pay)
+ENTRY STATE: Kamera sağdan, bütün yaylar hareket hâlinde, huzmeler soldan iniyor.
+EXIT  STATE: Aynı doluluk, hilal ortalanmış; sonraki plan yakına iner.
+-----
+The clip opens in the middle of a piece that is already running: every bow in the middle ground is mid-stroke, the horns are already at the lips, and the whole stage is at work. Nearest the lens the out-of-focus double bass and the hand on its neck carry on with one long unbroken draw, the fingers settling a fraction further down the string as the bow travels. Behind them the white-gold shafts from the flies stay exactly where they are while the dust turning inside them drifts slowly down and across. Then the long draw arrives at the end of its stroke, and at that instant the whole crescent behind it gathers — dozens of separate small jobs reading, for one moment, as a single held breath. The clip begins as many and ends as one. The crimson curtain hangs dead still and the indigo house keeps its colour. The number of players stays exactly the same from first frame to last, each keeping their own chair and instrument, and every bow stays a straight rigid stick. Camera: a slow lateral dolly from screen-right to screen-left, sliding behind the out-of-focus bass so it sweeps the near edge of frame, easing to a full stop with the lit crescent centred.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K02 — motion
+VO 2 "Yaylar, nefesliler, davullar; hepsi bir arada."
+SÜRE: 5s   (ekran ~3.2s + 2s pay)
+ENTRY STATE: Üç yay da aynı diyagonalde, inişin ortasında; timpani tokmakları kalkık.
+EXIT  STATE: Yaylar inişini tamamlamış, diyagonal korunuyor; odak arkadaki adama geçmiş.
+-----
+The clip opens with the row already playing: the three raised bows are partway through the same downward stroke, all of them lying on one diagonal, and the timpani mallets behind are held at the top of their lift. The players keep working rather than posing — the near woman's jaw stays set against her chin rest and her bowing forearm keeps travelling, the fingers of her left hand pressing and releasing along the neck without ever leaving it. Then the diagonal completes itself, the three bows arrive at the bottom of the stroke together, and at that instant the mallets behind come down onto the drum head, so the strings and the skins land as one thing rather than two. The clip begins as three separate families and ends as one arrival. The brass bells behind hold their reflections and the sheet on the near stand keeps its exact printed markings. Every bow stays a straight rigid stick, all three keeping a clear gap between them, and each face stays the same face throughout. Camera: a shallow arc travelling a few degrees along the line of the bows, and as it settles the focus slips off the near bow onto the bald player behind, who is left sharp and looking off.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K03 — motion
+VO 3 "Ama ortada hiçbir kargaşa yoktu."
+SÜRE: 5s   (ekran ~2.6s + 2s pay)
+ENTRY STATE: Tepeden geniş, piyano kapağı ön düzlemde; bütün sıralar tek düzende.
+EXIT  STATE: Kamera inmiş, sahne düzlemi ortalanmış; düzen bozulmamış.
+-----
+The clip opens with the stage already in order and staying that way: the woodwind rows are mid-phrase with the clarinets and oboes level at their lips, the brass rank behind is holding one long note, and along the right the strings are drawing together. Nothing collides — the whole point of the shot is that dozens of separate people are busy inside one geometry and none of them crosses another's space. Nearest the lens the black lacquered lid of the grand piano stays a perfectly still slab with its edge dead straight. Then the descent brings the curved riser of the stage into the middle of the frame, and at that moment the scattered rows read as one arc: the film begins looking at a crowd and ends looking at an order. The single beam from the flies keeps its exact place, its dust turning slowly. The number of players and stands stays the same from first frame to last, and every straight edge — lid, riser, stand, rail — stays rigid. Camera: a slow crane down past the piano lid, the lid rising through the near edge as the camera descends, easing to a full stop level with the boards.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K04 — motion
+VO 4 "En öndeki tek kişi elini havaya kaldırdı."
+SÜRE: 5s   (ekran ~3.2s + 2s pay)
+ENTRY STATE: El tepede, avuç açık ve tutuluyor; huzme yukarıdan iniyor.
+EXIT  STATE: El hâlâ tepede, parmak uçlarındaki gerilim artmış; salon bekliyor.
+-----
+The clip opens with the hand already up and holding: the conductor stands with his back to us, both arms raised, the open left palm and the baton in the right both inside the shaft of light, and he does not lift them any further — the whole clip is a held state, not a gesture being made. His shoulders keep the slow tension of a man carrying a room, his jacket easing once across his back as he breathes, and the fingers of the open hand tighten by a hair. Below him the players stay where they are, bows up and waiting. Nearest the lens the out-of-focus violin and bow at the left edge carry on with one soft continuous draw. Then the rise brings the raised hand fully into the brightest part of the shaft, and at that instant the waiting in the hall becomes visible — the clip begins with a man standing and ends with a room held. The gilded plasterwork and crimson drapes stay motionless. He stays the same man in the same suit throughout, and the baton stays one straight rigid stick. Camera: a slow boom up along his back, tilting a few degrees as it rises, stopping with the raised hand centred under the light.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K05 — motion
+VO 5 "O bir orkestra şefiydi."
+SÜRE: 5s   (ekran ~2.4s + 2s pay)
+ENTRY STATE: Bakışları oyuncuların üstünde, ağzı kapalı, çene sıkı; nota lambası yanıyor.
+EXIT  STATE: Aynı bakış, karar verilmiş; nefesini içine çekmiş.
+-----
+The clip opens with him already reading the room: his eyes are travelling slowly across the players off-frame, his mouth stays closed, his jaw stays set, and the hand resting at the stand keeps the baton lightly against the lit ledge. He is not performing for us — he is checking, and the clip is the last second of that checking. The little brass stand lamp burns steadily, throwing its hard warm pool up under his chin, and the skin of his face keeps its texture in that light. Then the reading finishes: at that instant his eyes stop travelling and settle on one point, the brow eases by a fraction and he draws a breath in through the nose without opening his mouth. The clip begins with a man searching and ends with a man who has decided. Nearest the lens the great brass bell at the right stays out of focus and perfectly still, holding one long warm reflection. He stays the same man with the same face and silver hair from first frame to last. Camera: a very slow push in on his profile, easing as it goes and coming to a complete stop just short of his eye line.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K06 — motion
+VO 6 "Bageti indi ve bütün salon aynı anda konuştu."
+SÜRE: 6s   (ekran ~3.6s + 2s pay)
+ENTRY STATE: Kamera locadan, kilitli; bütün yaylar aşağı vuruşta, tokmaklar iniyor.
+EXIT  STATE: Aynı kütle, aynı yön, ses sürüyor — SERT KESİM, tam sınırda.
+-----
+The clip opens on the instant after the beat has landed and holds there: the conductor's arms are already down and out, and across the whole stage the answer is arriving at once — every bow in the string blocks is on the same downstroke, the trumpets and horns along the right are already sounding, the cellos are leaning into the note and the timpani mallets are coming off the skin. Nothing starts during the clip and nothing stops; what changes is that the sound settles into the room. The players keep working through it, shoulders and forearms carrying the stroke. Then the stroke finishes together and the whole stage eases by the smallest amount, and at that instant the hall reads as one instrument instead of eighty. The clip begins as a strike and ends as a resonance. Nearest the lens the deep red velvet and gilt of the box front stays absolutely motionless. In the audience at the left nobody moves. The number of players stays exactly the same from first frame to last, each keeping their own chair, and every bow stays a straight rigid stick. Camera: locked off completely on the box rail — no move at all, only the dust in the beams and the stage itself alive.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K07 — motion
+VO 7 "Mira ön sırada oturmuş, o eli izliyordu."
+SÜRE: 5s   (ekran ~3.3s + 2s pay)
+ENTRY STATE: Öne eğik, eli çenesinin altında, gözü sahnede; nefesi tutuk.
+EXIT  STATE: Aynı duruş; parmakları biraz daha yerleşmiş, bakışı sabitlenmiş.
+-----
+The clip opens with her already leaning out of the seat and already watching: her hand is under her chin, her mouth is closed, her eyes are fixed off-frame at the stage, and she stays exactly like that. She is not settling in and she is not getting up — the whole clip is one continuous held attention. Through it her chest rises and falls once, slowly, and her fingers ease a little further along her jaw as the hand takes its weight. Then the thing she is aimed at happens off-frame, and at that instant her eyes stop searching and lock, the brows lifting by a hair while her mouth stays shut. The clip begins with a girl looking and ends with a girl who has caught it. She stays exactly the girl in the first frame — same face, hair, clip and clothes, unchanged throughout. Nearest the lens the deep crimson velvet seat back stays still. Behind her at the left the conductor and cello stay soft and out of focus, and the house stays a rich indigo. Camera: a slow crab to the right, the seat backs sliding past the near edge while she stays anchored in the frame, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K08 — motion
+VO 8 "Onlarca enstrüman, tek bir uyum."
+SÜRE: 5s   (ekran ~2.9s + 2s pay)
+ENTRY STATE: Neredeyse dik tepeden; bütün hilal aynı anda çalıyor, yaylar tek yönde.
+EXIT  STATE: Aynı hilal, aynı yön — S1 kapanıyor, sonraki plan karanlık salona iner.
+-----
+The clip opens from high above with the whole crescent already playing: seen from here the dozens of separate people are one shape, and every bow in the arc lies at the same angle and travels together, so the rhythm reads as a ripple crossing the shape rather than as many small movements. The players keep their seats and their spacing exactly; nobody stands, nobody leaves, nobody arrives. Nearest the lens the black barrel and barn doors of the stage lantern stay perfectly rigid and still, and the solid cone of dusty gold light leaving it keeps its exact edges while the dust inside it turns slowly. Then the ripple finishes crossing the arc, and at that instant the long shadows radiating across the oak boards line up as one fan. The clip begins as dozens and ends as one figure drawn on the floor. The empty podium at the focus stays empty and lit. The number of players and chairs stays exactly the same from first frame to last, each keeping their place in the arc, and the boards, rails and stands keep their straight edges. Camera: a very slow rotation about the vertical axis, the whole crescent turning a few degrees beneath the lens, easing to a complete stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K09 — motion
+VO 9 "Mira avucunu göğsüne koydu."
+SÜRE: 5s   (ekran ~2.4s + 2s pay)
+ENTRY STATE: Avuç göğsünde, parmaklar bitişik, gözler kapalı, nefes yavaş.
+EXIT  STATE: Aynı duruş; omzu bir kez alçalıp yükselmiş, dinleme içeri dönmüş.
+-----
+The clip opens with her hand already flat on her chest and her eyes already closed: nothing is placed, nothing is lifted, she is simply staying there in the dark of the auditorium after the music. The faint smile she is wearing holds without widening, her mouth stays closed, and her free hand rests where it is on her lap. Through the clip her shoulder lowers and rises once with one long slow breath, and the fingers on her chest settle a fraction closer together as they take the movement. Then the breath reaches its bottom, and at that instant her face changes very slightly — the brow softens and the attention turns inward, so the clip begins with a girl listening to a hall and ends with a girl listening to herself. She stays exactly the girl in the first frame, the same face, hair, clip and clothes, unchanged throughout. Around her the deep red velvet seats stay motionless, and the small warm house lamps far behind hold their soft round bokeh without drifting or changing number. Camera: a slow boom down through the empty seat backs, descending a short way and easing to a stop at her chest height, with her face held in frame the whole way.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K10 — motion
+VO 10 "İçeride de tam o anda onlarca iş sürüyordu."
+SÜRE: 6s   (ekran ~3.6s + 2s pay)
+ENTRY STATE: Işık iki lifin üstünde yürüyor, uçlarında duruyor; parmak ucu tepede.
+EXIT  STATE: Aynı iki lif ışıklı, derinlikte bir üçüncüsü yanmış; ölçek içeri inmiş.
+-----
+The clip opens already deep inside, at the scale of a single fingertip: the dark curve of the fingertip fills the top of the frame and stays there, and beneath it a whole field of pale translucent strands lies crossed and layered in a saturated indigo. Two of those strands are already carrying warm white-gold light along their length, and that light keeps travelling toward their cut ends and stops dead there — clean, sharp, with no halo, no spill and nothing left behind it on the strand. Dust drifts slowly across the beam coming in from the upper right. Then the descent brings a deeper layer into view, and at that instant a third strand back in the depth lights the same way and holds. The clip begins with two small jobs running and ends with the field admitting there are more than you can count. The strands themselves do not bend, swim or braid together; they keep their exact crossings and their gaps, and each lit line keeps its own hard end. The number of lit strands only ever goes from two to three and never fewer. Camera: the boom down continues from the previous shot, sinking slowly under the fingertip into the layers, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K11 — motion
+VO 11 "Kalbi atıyor, ciğerleri nefes alıyor, midesi sindiriyordu."
+SÜRE: 6s   (ekran ~4.1s + 2s pay)
+ENTRY STATE: Üç ışıklı küme yanıyor, her biri kendi temposunda; hiçbiri diğerini beklemiyor.
+EXIT  STATE: Aynı üç küme; tempoları bir kez birbirinin üstünden geçmiş, sonra ayrılmış.
+-----
+The clip opens with three separate lit hubs already working in the dark web, each one at its own tempo: the one high on the left swells and eases slowly and deeply, the wide one in the middle beats in short even pulses, and the small far one at the right glows and fades on a long lazy cycle. None of them waits for another and none of them copies another — three jobs in three places at the same time. The light stays inside the strands that meet at each hub and dies out along them with a hard clean end; it never bleeds off into the indigo between them. Then the three cycles happen to cross one another at one instant and the whole web brightens together for a moment before they separate again and go back to their own time. The clip begins as three unrelated rhythms and ends having shown them share one body. Nearest the lens the out-of-focus golden strand at the lower right holds one long soft highlight and does not move. The three hubs stay three, each keeping its own place and arms. Camera: a slow lateral macro dolly to the left, the near strand sweeping through the foreground with strong parallax, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K12 — motion
+VO 12 "Hiçbiri ötekiyle çarpışmıyordu."
+SÜRE: 5s   (ekran ~2.6s + 2s pay)
+ENTRY STATE: Bütün kesişme noktaları aynı anda parlıyor, hiçbiri kaymıyor.
+EXIT  STATE: Aynı örgü; parlaklık kesişmelerde bir kez daha yükselip inmiş.
+-----
+The clip opens on a weave that is already alive: two sets of golden strands run across one another at a shallow angle, and every point where they touch is already carrying warm light. The brightness is not a flicker — it travels along the weave as one slow wave, lifting each crossing in turn and letting it fall again, so the whole lattice breathes across its diagonal. Crucially the strands themselves stay exactly where they are: they touch and they hold, they never sink into one another, never fuse, never swap places and never slide; every strand keeps its own body and its own gap through the whole clip. Then the wave reaches the far corner of the weave and turns back once, and at that instant the crossings brighten together and settle. The clip begins as a pattern and ends as an agreement. Nearest the lens the glassy bead at the upper left stays out of focus and perfectly still. The saturated indigo behind the lattice keeps its colour and stays empty. The count of strands stays the same from first frame to last. Camera: a shallow arc over the top of the weave, a few degrees only, so the crossings slide beneath the lens, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K13 — motion
+VO 13 "Peki bu orkestrayı kim yönetiyordu?"
+SÜRE: 5s   (ekran ~2.8s + 2s pay)
+ENTRY STATE: Kilitli kamera; bütün halkalar ışıklı ve merkeze dönük, merkez karanlık.
+EXIT  STATE: Aynı halkalar, aynı yön, merkez HÂLÂ karanlık — kapanmadan bırakılır.
+🔴 K13 → K14 **J**: K14'ün görüntüsü bu cümle bitmeden açılır. Bu klip çözülmez, askıda biter.
+-----
+The clip opens on a shape that is already pointing: dozens of fine pale rings lie inside one another, every one of them turned toward the same place, and their tiny radiating barbs all aim inward. The rings are alive without going anywhere — the light on them travels slowly inward from the outer edge, ring after ring, each one taking it up as the one outside it lets it go. And each time it arrives at the innermost ring it stops there with a hard clean end. The centre takes nothing. It stays a flat, complete, unlit dark all the way through the clip, and it never brightens, never fills and never resolves. Then the last wave arrives, and at that instant the whole spiral is aimed at an empty middle and simply holds, so the clip begins as an answer being handed inward and ends as a question left standing. Nearest the lens the twisted pale cable at the upper left stays out of focus and does not move. The saturated indigo around the rings stays clean and empty. Every ring keeps its own circle, spacing and barbs. Camera: locked off completely — no move at all, only the light travelling and the dust turning.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K14 — motion
+VO 14 "Cevap iki sistemde: sinir sistemi ve iç salgı bezleri."
+SÜRE: 6s   (ekran ~4.2s + 2s pay)
+ENTRY STATE: J kesim — klip TAM CANLI açılır, yerleşme yok. İki kaynak da yanıyor,
+  aralarındaki alan tamamen karanlık.
+EXIT  STATE: Aynı iki kaynak; sağdakinin hâlesi bir tık daha geniş.
+-----
+The clip opens already fully alive — nothing settles in, nothing starts up. Two lit sources are burning in the dark at once, one high on the left and one low on the right, each at the meeting point of its own bundle of glassy arcs. They behave differently and the clip is that difference. The left one is hard: its light runs out along its arms as thin clean lines and stops the instant each arm ends, leaving the dark beside it completely untouched. The right one is soft: its light lives inside the material and pushes outward into the dark with no edge anywhere, so that the indigo around it is faintly warm long before it reaches anything. Through the clip the left one pulses twice, sharp and quick, and each pulse vanishes without leaving a trace. Then the right one swells once, slowly, and at that instant it does not go back — its halo settles wider than it began and stays wide. The clip begins with two lights and ends with two habits. The dark corridor between them stays black and empty throughout. There are exactly two sources from first frame to last. Camera: a slow crab to the right, opening the gap between the two sources, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K15 — motion
+VO 15 "Biri ışık hızında konuşur, öteki sabırla."
+SÜRE: 5s   (ekran ~3.3s + 2s pay)
+ENTRY STATE: Sert kenar yanıyor ve tam bittiği yerde kesiliyor; sağdaki hâle geniş ve sabit.
+EXIT  STATE: Sert kenar sönmüş, ARKASINDA HİÇBİR İZ YOK; hâle hâlâ orada ve biraz daha geniş.
+-----
+The clip opens with both strands already lit in the same warm white-gold, and the whole clip is the difference between how they hold it. On the left, one razor-thin line runs along the upper edge of the dark strand and ends exactly where that edge ends, with a clean cut and no bloom of any kind; the body of the strand below it and everything behind it stay completely cold. On the right, the neighbouring strand glows from inside its own material, brightest in its core, softening outward with no boundary at all and still faintly present at the far corner of the frame. Through the clip the hard line travels a short way along its edge and then goes out — and at that instant the strand it was on is left exactly as dark as before, keeping nothing. The soft one never goes out, and by the end its bloom has spread further into the indigo and stayed there. The clip begins with two lights that look alike and ends with two that plainly are not. Both strands keep their own bodies and a visible gap. Camera: a shallow arc that carries the cut end of the left strand past the lens, ending with the soft bloom filling the near corner.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K16 — motion
+VO 16 "Sinir sistemi vücudumuzu milyonlarca sinir hücresiyle bir ağ gibi sarar."
+SÜRE: 7s   (ekran ~4.9s + 2s pay)
+ENTRY STATE: Uzak kırıntılar duruyor, hiçbiri yaklaşmıyor; yalnız pusta toz.
+EXIT  STATE: Aynı dokuma, artan derinlik; içeride olduğumuz anlaşılmış.
+-----
+The clip opens already inside the weave: a vast pale woven vault of fibre curves overhead and down both sides, and a deep hollow opens away into the dark ahead. Nothing here approaches and nothing is built during the clip — the structure is finished and standing. What lives is the light and the air: two broad shafts come down through the weave from the upper left, and the dust hanging in them turns slowly and drifts down the beams. On the floor the lattice shadows cast by the weave stay exactly where they lie. Far back in the hollow a scatter of tiny warm points hangs suspended, and they keep their number and their places throughout, each one steady, none arriving and none going out. Then the pull-back opens more of the vault above and to the sides, and at that instant the shot stops being a wall of texture and becomes a room you are standing inside. The clip begins as a surface and ends as a scale. Nearest the lens the thick twisted cable at the left stays out of focus and motionless, and the fibres keep their exact interlacing. Camera: a slow pull-back down the length of the hollow, the vault widening around the frame, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K17 — motion
+VO 17 "Bu hücrelere nöron denir."
+SÜRE: 5s   (ekran ~2.5s + 2s pay)
+ENTRY STATE: Yapı hareketsiz, kollar karanlığa uzanıyor, huzme sol üstten iniyor.
+EXIT  STATE: Aynı duruş; huzme gövdeyi bir uçtan öbürüne geçmiş, toz dönmüş.
+-----
+The clip opens on one structure standing still on the fibrous floor, and it is presented rather than performed: a smooth pale dome of bone-coloured material with a ring of tapered arms reaching out of it into the dark, and one long arm running away to the right across the ground. It does not pulse, twitch, breathe or grow — it is architecture, and the clip lets it be architecture. What moves is the light. The single hard shaft coming down from the upper left travels slowly across the dome as the view changes, so the highlight slides around its curve and the modelling shadow underneath it lengthens and sharpens on the fibrous ground. Then the shaft reaches the far side of the dome, and at that instant the long arm running off to the right catches the light along its whole length and the shape reads, for the first time, as one continuous thing rather than a lump with spines. The clip begins as an object and ends as a design. Behind it the saturated indigo stays clean and empty, the pale ground keeps its fibre texture, and the arms keep their exact number and spacing. Camera: a slow orbit of a few degrees around the dome, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K18 — motion
+VO 18 "Nöronlar mesajı elektrik sinyali gibi taşır."
+SÜRE: 5s   (ekran ~3.2s + 2s pay)
+ENTRY STATE: Altın çizgi kenarda duruyor, kesildiği yer keskin; gövde soğuk ve karanlık.
+EXIT  STATE: Aynı çizgi, aynı kesim yeri; hiçbir yere yayılmadı, hiçbir iz bırakmadı.
+-----
+The clip opens with the signal already running: one razor-thin line of warm gold lies along the upper edge of the fibre and it travels, steadily and fast, toward the cut end where that edge stops. The line stays exactly as thin and exactly as clean the whole way — it does not thicken, does not flare, does not throw a halo and does not warm the fibre beside it. The body of the fibre under the line stays a cold pale grey, and the dark blue-grey bulb waiting beyond the cut stays completely unlit. Then the line arrives at the cut, and at that instant it simply ends: nothing crosses over, nothing spills onto the bulb, nothing glows behind it, and the edge it just travelled is left exactly as dark as it was before. The clip begins as a message on the move and ends as a message delivered and gone. The fibres themselves stay still — they do not bend, ripple or swim — and each keeps its own body and gap. The fine hair texture of the sheath stays sharp. Camera: a slow lateral track along the lit edge in the direction the line is travelling, arriving at the cut and stopping there.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K19 — motion
+VO 19 "Bu yüzden haber ışık hızında gider."
+SÜRE: 5s   (ekran ~3.0s + 2s pay)
+ENTRY STATE: Kilitli kamera; yakın yarı tamamen karanlık, uzakta ince bir soğuk hat.
+EXIT  STATE: Aynı; yakın yarı hâlâ hiçbir şey almadı — SERT KESİM, vuruş anı.
+🔴 Bu klibin olayı YOKLUKTUR. Hiçbir altın ışık kadraja girmez.
+-----
+The clip opens on a long ribbed corridor of arches running away into the dark, and everything in it is cold: deep blue-grey vaulting, deep blue-grey ropes along both walls, a pale floor with no warmth on it at all. The signal has already gone through here, and the whole point of the clip is that you cannot tell. Far away at the vanishing point one thin cool line of light sits low, and it stays there — it does not travel toward us, does not brighten and does not spread. Nothing warm enters the frame at any moment. What lives instead is very small and very slow: the fine dust drifting through the near half of the corridor, and one faint cool sheen easing along the top of the arches and then leaving them exactly as they were. Then that sheen passes off the last arch, and at that instant the corridor is completely unmarked again, so the clip begins as a place something crossed and ends as a place that kept nothing. Every arch, rope and floor edge stays rigid and straight, holding its exact position and spacing throughout, and the perspective lines stay dead true. Camera: locked off completely — no move at all, only the dust and the cool sheen alive.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K20 — motion
+VO 20 "Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır."
+SÜRE: 6s   (ekran ~4.0s + 2s pay)
+ENTRY STATE: Dokuma hareketsiz; sıkı taraf ışıkta, seyrek taraf aralıklı parıltıda.
+EXIT  STATE: Aynı iki yoğunluk; kamera sıkıdan seyreğe geçmiş, malzeme tek kalmış.
+-----
+The clip opens on one material in two densities: on the left a thick braided mass of pale cord packed tight against itself, and on the right that same cord leaving the mass and running out as separate parallel strands into the dark. Nothing here is assembled or unravelled during the clip — the division already exists and the clip travels along it. On the dense side the light lies broad and even across the braid and stays put. On the thinning side small hard glints run out along the separate strands one after another, each stopping cleanly at its end and leaving nothing behind. Then the travel brings the last of the dense braid out of frame, and at that instant the shot is entirely made of separated strands, so the clip begins looking at a core and ends looking at a reach — the same cord, two jobs. Nearest the lens the glassy loop at the lower left stays out of focus and motionless. The shaft from above holds its exact place with dust turning in it. Every strand keeps its own body, spacing and gap. Camera: a slow lateral dolly along the weave from the dense side toward the fanning side, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K21 — motion
+VO 21 "Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur."
+SÜRE: 7s   (ekran ~5.4s + 2s pay)
+ENTRY STATE: Dört kütle duruyor, huzmeler iniyor, gölgeler yerde.
+EXIT  STATE: Aynı dört kütle; kamera yükselmiş, büyük olan lensin üstünde kalmış.
+🔴 Filmin en yüksek şema riskli karesi — hiçbir yüzeye yazı, ok, numara ya da panel girmez.
+-----
+The clip opens on four separate masses of the same dry pale bone-coloured material standing together in a great fibrous hall, and they stand still: the large deeply folded one, the small tightly fluted one tucked beneath and behind it, the short narrow knot where they join, and the long ringed column running down from that knot to the floor. Nothing is built, opened or taken apart. What lives is the air and the light — the hard white-gold shafts coming down from the upper right stay in their exact places with dust turning slowly inside them, and as the view rises those shafts travel across the folded surface so its ridges take the light in turn and the valleys between them deepen. Then the rise carries the largest mass up over the lens, and at that instant the four stop reading as a group and read as one body with a head, so the clip begins as four things and ends as one arrangement. Nearest the lens the pale fibrous column at the right stays out of focus and motionless, and every surface stays bare dry stone and fibre, carrying only its own grain. Camera: a slow boom up in front of the masses, tilting a few degrees as it rises, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K22 — motion
+VO 22 "Ağın merkezinde, her şeyden büyük bir yapı yükselir."
+SÜRE: 6s   (ekran ~3.9s + 2s pay)
+ENTRY STATE: Kütle hareketsiz ve bize dönük; huzmede toz dönüyor, gölge yerde duruyor.
+EXIT  STATE: Aynı duruş; nef açılmış, ölçek okunmuş.
+-----
+The clip opens inside a great stone hall with the structure already standing at its far end: a huge fluted fan of dry pale material rises from the floor, gathered at a single knot at its base, with the small tightly ribbed mass sitting low beside it and the long ringed column running out of the knot toward the lens along the floor. Nothing here moves of itself. What lives is the hall — one hard shaft of white-gold comes down onto the fan and holds its exact place, dust turning slowly inside it, and the deep blue vaulting to the left stays cool and untouched. As the camera withdraws, the arches open out one after another. Then the last arch clears the frame edge, and at that instant the structure stops looking large and starts looking enormous — the clip begins as an object at the end of a room and ends as a room built around an object. Nearest the lens the thick pale rope stays out of focus and dead still. Every stone edge, rib and floor joint stays rigid, and every surface stays bare. Camera: a slow pull-back through the near rope, the nave opening around the frame, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K23 — motion
+VO 23 "Bu en büyük yapı beyindir."
+SÜRE: 5s   (ekran ~2.6s + 2s pay)
+ENTRY STATE: Işık çizgisi dış hatta oturmuş, kesildiği yer keskin; aşağısı karanlık.
+EXIT  STATE: Aynı çizgi, aynı kesim yeri; kütle lensin üstünde büyümüş.
+🔴 Işık YALNIZ büyük kütlenin dış hattında — kıvrımların içine inmez, alttakilere ulaşmaz.
+-----
+The clip opens from low down with the great folded mass already overhanging the lens, and one hard warm line already lying along its leading edge. That line is the only warm thing in the frame and it stays exactly where it is: it does not slide down into the folds, does not spread across the face of the mass and does not reach the smaller fluted shape or the ringed column hanging below in the dark. Under the rim, everything stays a deep saturated indigo. The mass itself does not deform, sag, breathe or ripple — it is dry pressed fibre and it behaves like stone. As the view rises, the shadow beneath the lit edge deepens and the folds behind it separate. Then the rim reaches the top of the frame, and at that instant the mass stops being a shape and becomes a ceiling, so the clip begins looking at something big and ends being underneath it. Nearest the lens the pale limb at the lower right stays out of focus and still, the saturated indigo behind keeps its colour, and every surface stays bare. Camera: a slow low boom up along the lit rim, the mass growing over the lens, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K24 — motion
+VO 24 "Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir."
+SÜRE: 6s   (ekran ~4.2s + 2s pay)
+ENTRY STATE: Üç parıltı üç ayrı duvarda duruyor; hiçbiri kaymıyor, hiçbiri sönmüyor.
+EXIT  STATE: Aynı üç parıltı; ışık sırtları bir kez taramış, vadiler indigoda kalmış.
+🔴 Kavram burada MALZEMEDEN doğar — etiket, panel, ok, ışıklı sembol yok.
+-----
+The clip opens on the surface itself, at a scale where the folds become a landscape: long soft ridges running away in parallel, warm grazing light lying along their crests, and deep saturated indigo held in the valleys between them. Nothing is added to this and nothing is written on it. What moves is the grazing light — it travels slowly across the ridges as the view slides, so each crest takes the highlight in turn and gives it up again, and the valley beside it darkens as it goes. Down inside three separate valleys, three tiny hard glints sit deep in the shadow; they stay in their own places and stay lit throughout, none of them travelling, spreading or going out. Then the highlight finishes crossing the last ridge, and at that instant the three deep glints are the only warm things left in the frame, so the clip begins as a lit surface and ends as three things kept in the dark underneath it. The material stays dry and matte with fine pores; it never turns wet, red or fleshy, and the ridges keep their exact spacing and shape without swelling or flattening. Camera: a slow lateral macro travel across the ridges, crossing them at an angle, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K25 — motion
+VO 25 "Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır."
+SÜRE: 6s   (ekran ~4.2s + 2s pay)
+ENTRY STATE: Bardak elinde ve masada duruyor; buğu iniyor, toz güneş bandında yükseliyor.
+EXIT  STATE: Aynı duruş; bir damla daha inmiş, odak onun yüzüne geçmiş.
+-----
+The clip opens with her hand already resting around the cold glass on the table and her eyes already off to the side, and she stays sitting exactly as she is: nothing is picked up, nothing is put down, nothing is eaten. She is simply in the middle of a slow morning. Through the clip her chest rises and falls once, her fingers ease a little around the glass as they take its cold, and a single drop of condensation runs down the outside of the tumbler and stops at the base. The hard bar of sun keeps its exact place across the wood, dust turning slowly inside it. Then the cold reaches her, and at that instant her expression changes very slightly — the eyes soften and the mouth stays closed — so the clip begins as a girl at a table and ends as a girl who has felt something. She stays exactly the girl in the first frame, the same face, hair, clip and clothes, unchanged throughout. The bitten apple stays exactly as bitten, and the glass, window frame and table edge stay rigid and true. Camera: a very slow drift in, and as it settles the focus slips off the glass onto her face, leaving her sharp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K26 — motion
+VO 26 "Onun hemen altındaki daha küçük yapı ise beyinciktir."
+SÜRE: 6s   (ekran ~4.0s + 2s pay)
+ENTRY STATE: Kilitli kamera; yatay ışık bandı taraklı küçük kütlenin üstünde, kubbe karanlık.
+EXIT  STATE: Aynı band, aynı sert üst sınır; kubbe hâlâ karanlık.
+🔴 Işık YALNIZ küçük taraklı kütlede. Büyük kubbe bu klipte hiç aydınlanmaz.
+-----
+The clip opens with the small ribbed mass already lit and everything above it already dark. One low horizontal band of warm white-gold comes in from the left and lies across that small fluted shape on the floor, and the top edge of the band is a hard, flat, straight cut that stays exactly where it is all the way through the clip — it never rises, never widens and never reaches the great vaulted dome hanging overhead, which stays a full saturated indigo from first frame to last. What lives is the air in the band: dust drifts slowly across it, and a faint second slice of the same light travels along the pale floor and settles. The fine parallel ribs take the light one after another, so the shape gains texture without gaining brightness. Then the drifting dust clears the band, and at that instant the small lit mass is the only thing in the frame that exists, so the clip begins as a dark room with something in it and ends as one thing with a dark room around it. The ringed column running toward the lens stays unlit, rigid and straight, and every stone rib and moulding stays straight. Camera: locked off completely — no move at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K27 — motion
+VO 27 "Beyincik kaslarımızın uyumlu çalışmasını sağlar."
+SÜRE: 5s   (ekran ~3.4s + 2s pay)
+ENTRY STATE: Bütün sırtlar hizada ve hareketsiz; paralel gölgeler yerde tek dizi.
+EXIT  STATE: Aynı hiza, aynı tek gölge dizisi; slat gölgeleri bir kez geçmiş.
+-----
+The clip opens on a field of fine parallel ridges running away from the lens in perfect alignment, with hard slatted shadows lying across them in one even series. Nothing here is separate and nothing acts alone — the whole frame is one surface agreeing with itself, and the clip keeps it that way. What moves is the light: the slatted bars travel slowly across the ridges together, all of them at the same speed and the same spacing, so the striping crosses the field as a single event rather than as many. The ridges stay exactly parallel; they never splay, cross or bunch, and each keeps its own width. Behind them the soft pale dome sits out of focus and stays put. Then the last bar of shadow clears the near ridge, and at that instant the whole field is evenly lit and reads as one continuous piece, so the clip begins as many separate lines and ends as one working surface. Nearest the lens the twisted rope-like ridge at the lower right stays out of focus and motionless, and the indigo behind stays empty. Camera: a slow low forward track along the grooves, the ridges running past the lens with strong linear parallax, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K28 — motion
+VO 28 "Dengede kalmamızı da beyincik yönetir."
+SÜRE: 5s   (ekran ~2.9s + 2s pay)
+ENTRY STATE: Payanda dimdik, tepesi kımıldamıyor; gölge tek parça ve düz.
+EXIT  STATE: Aynı dik eksen, aynı tek gölge — dünya döndü, eksen dönmedi.
+-----
+The clip opens with the pale vertical post already standing dead upright in the middle of the hall, and the whole clip is about the fact that it stays that way. Everything else in the frame moves around it: as the view swings, the great fibrous arches on both sides sweep across the frame, the ropes strung between them pass in front of the lens one after another, and the lit ribbed mass behind the post slides slowly out from behind it and back again. The post itself does not lean, sway, bend or drift by a single degree, and its shadow on the pale floor stays one clean unbroken straight line pointing away from the light. Then the last rope clears the lens, and at that instant the post is standing alone in the middle of a world that has just turned around it, so the clip begins as a moving room and ends as a fixed axis. The hard warm light on the ribbed mass keeps its exact place. Every arch, rope and edge stays rigid, keeping its own shape and spacing, and the indigo behind stays clean. Camera: a slow arc around the standing post, a few degrees only, the near ropes sweeping through the foreground, easing to a full stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K29 — motion
+VO 29 "Mira tek ayak üstünde durdu ve sallanmadı."
+SÜRE: 5s   (ekran ~3.4s + 2s pay)
+ENTRY STATE: Kilitli kamera; gövde çoktan yerleşmiş ve sabit, yüzü ışıkta, ağzı kapalı.
+EXIT  STATE: Aynı duruş, aynı sabitlik — yalnız duvardaki ışık yavaşça sürüklendi.
+🔴 K29 → K30 **L**: bu sahnenin sesi bisiklet karesine sarkar. Klip TAM SESSİZ ve TAM
+   HAREKETSİZ biter ki taşınan ses onunla çarpışmasın.
+⚠ AJAN NOTU — Mami'ye: bu kare S4.txt'te yazılan K29 DEĞİL (planda tek ayak + duvarda
+   tek parça siluet vardı; basılan kare bir gözlemevi/planetaryum). Ayaklar kadraj
+   dışında olduğu için VO görüntüyü yalanlamıyor, ve motion "çoktan durmuş ve hiç
+   sallanmıyor" üstüne kuruldu — ama kare/plan ayrışması kayda geçiyor.
+-----
+The clip opens with her already standing perfectly still and staying that way: her weight is already settled, her shoulders are already level, her mouth is closed, and her eyes are already up and off to the side on the thing she is looking at. She does not turn, step, lean or reach at any point. Her stillness is the subject. Through the clip her chest rises and falls once with one long slow breath, and the small settling of that breath is the only thing her body does — her head does not drift with it and her shoulders do not roll. What lives around her is the light: the projected nebula behind her breathes very slowly, its stars holding their exact places, and a faint cool sheen travels the brass telescope on the right. Then the breath finishes, and at that instant she is exactly as she began, so the clip begins as a girl holding a position and ends as proof she never wavered. She stays exactly the girl in the first frame, the same face, hair, clip and clothes throughout. The telescope, its mount and the cases stay rigid and straight. Camera: locked off completely — no move at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+K30 — motion
+VO 30 "Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz."
+SÜRE: 6s   (ekran ~4.0s + 2s pay)
+ENTRY STATE: L kesim — görüntü açılırken önceki sahnenin sesi hâlâ sürüyor. Tekerlekler
+  çoktan dönüyor, gidon düz, gövde dik, gölge tek parça.
+EXIT  STATE: Aynı duruş, aynı düz hat, birkaç metre daha yakın — S5'in sorusuna J ile devredilir.
+-----
+The clip opens with her already riding at speed down the middle of the avenue and coming toward the lens: both hands are on the bars, both wheels are straight, her back is upright and her eyes are on the path ahead. She does not mount, dismount, turn, brake or wobble at any point — she is simply already going, and stays going, in one straight line. Through the clip the wheels turn steadily, her knees rise and fall in an easy continuous rhythm, and the baguettes in the basket settle once as the tyres cross a paving joint. The low sun through the trunks rakes her face and forearms in a regular series, and the long parallel trunk shadows sweep across her and the paving one after another. Then a last shadow passes off her and she is fully in the light and a few metres nearer, so the clip begins with a girl travelling and ends with a girl arriving. She stays exactly the girl in the first frame throughout. The bicycle stays a rigid solid with straight forks, true round rims and separate spokes, and her shadow stays one clean unbroken shape. Camera: a slow tracking move backing away down the avenue at her speed, holding her at the same size, easing to a stop.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+
+
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — MOTION K31-K58 (Kling 3.0)
+=========================================================================
+Motor: Kling 3.0 · SÜRE = ekran süresi + 2 sn (ilk ~0.5 ve son ~1.5 sn kullanılamıyor).
+Her blok karenin KENDİSİNE bakılarak yazıldı (images/31.png … images/58.png okundu).
+Sekanslar: S5 K31-K39 · S6 K40-K53 · S7 K54-K58.
+
+SABİT KUYRUK — her karede: Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+KAMERA KUYRUĞU — KOŞULLU, yalnız ekranda yazı ya da katı/mekanik gövde taşıyan karelerde:
+  K43 (bisiklet · krom sele borusu) · K49 (hız treni · çelik kule) · K50 (emniyet barı) ·
+  K51 (park lokomotifi · çelik kafes kule) · K53 (fidan künyesi — ekranda yazı).
+  Kalan 23 karede YAZILMADI: her karede olduğunda film 23 kez duruyor (ölçüldü).
+
+HORMON İMZASI (K42 → K53): hâle kenarsızdır, malzemenin içindedir, klip boyunca
+  yavaşça GENİŞLER ve HİÇBİR karede sönmez. K42'de doğar, K48'de en yoğun,
+  K51'de tren durmuştur ama hâle hâlâ oradadır ve daha geniştir.
+SİNİR İMZASI (K31 → K39, K54): ışık jilet gibi sert kenarlıdır, bittiği yerde kesilir,
+  geçtiği yer soğuk kalır — İZ BIRAKMAZ.
+
+KESİMLER — bu bölgede: K30→K31 J · K39→K40 J · K51→K52 L · K57→K58 L.
+VURUŞ (SERT, tam sınırda): K37 (el çekilmiş) · K49 (tren bıraktı).
+=========================================================================
+
+
+K31 — motion
+VO 31 "Beyinciğin yanındaki omurilik soğanı iç organları istemsiz çalıştırır."
+SÜRE: 6s   (ekran 4s + 2s pay)
+ENTRY STATE: J devri — kare, VO 30'un kuyruğu hâlâ duyulurken açılır. Kamera bedenin
+  içinde, alçak; kıvrımlı büyük kubbe ve altındaki taranmış küçük kütle ışıkta, halatlı
+  omurilik sağa uzanıyor, sıcak-altın key soldan.
+EXIT  STATE: yalnız halkalı ince yapı ışıkta kalmıştır; büyük kubbe indigoya gömülmüştür —
+  K32'nin "dört ayrı iş" karesi bu karanlıktan doğar.
+-----
+Inside the body: a vast grooved dome and, beneath it, a smaller striated mass rest in deep indigo, while a pale ringed cord runs away to the right through a knot. The warm gold key rakes both the dome and the cord. Then the key slides very slowly to the right and the dome's lit face sinks into indigo, until only the ringed cord holds the gold along its rings. Through this the cord breathes with a slow involuntary rhythm, each ring swelling and settling in turn, never in unison. The out-of-focus braided fibre across the lower left drifts a fraction closer. The gold stays hard-edged and cuts off exactly where the cord ends. Camera: a very slow lateral dolly to the right, following the cord.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K32 — motion
+VO 32 "Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir."
+SÜRE: 6s   (ekran 4s + 2s pay)
+ENTRY STATE: karanlık lif nefi, geniş; dört ayrı sert altın çizgi dört ayrı yerde,
+  farklı parlaklıkta; ön düzlemde odak dışı örgülü halat sağ altta.
+EXIT  STATE: dördü de sönmüş, uzaktaki tek kıvılcım hâlâ yanıyor — K33 makroya iner.
+-----
+A dark nave of braided fibre columns. Four separate hard gold streaks sit on four separate strands at four different depths, each at its own brightness. Then, one after another and never together, each streak travels a short way along its own strand and is cut off dead at the strand's end, and the strand it left goes completely cold and dark behind it — nothing lingers. As the last one goes out, a small distant spark far down the nave answers from the depth and holds. Fine dust drifts through the columns. The out-of-focus braided rope across the lower right stays a soft solid mass. Camera: a very slow push in down the nave toward the distant spark.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K33 — motion
+VO 33 "Hapşırmak, öksürmek ve yutkunmak da onun işidir."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: makro; koyu mavi lif yumağı, üç kısa sert altın çizgi üç ayrı lifte,
+  en yakın lif ön düzlemde net.
+EXIT  STATE: üç çizgi de kesilmiş, dördüncüsü karanlıktan girmiştir — refleks fikri
+  K34'ün gerçek anına devrolur.
+-----
+Macro on a tangle of dark blue fibres. Three short hard gold lines ride three separate strands. Then each line runs a little way along its own strand at its own speed, and each is cut off abruptly at the strand's end; the strand behind every line returns instantly to cold blue and keeps no trace at all. At that instant a fourth line enters from the darkness at the far right and takes over the rhythm. Fine motes drift between the strands. The strands themselves stay still, keeping their exact curves and never crossing into one another. Camera: a very slow focus pull from the near strands back into the deeper tangle.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K34 — motion
+VO 34 "Mira hapşırdı ve bunu hiç düşünmemişti."
+SÜRE: 5s   (ekran 3s + 2s pay)
+ENTRY STATE: gerçek dünya, indigo duvarlı oda; pencereden tek sert huzme; hapşırığın
+  SONRASI — bulut çoktan havada, kız başını sağa çevirmiş, gözleri büyük, eli göğsünde.
+EXIT  STATE: bulut dağılmış, omuzlar yerine oturmuş — K35 bedenin içine döner.
+-----
+The sneeze has already happened. In the sunbeam the sprayed cloud of fine motes drifts outward, thins and sinks slowly through the light, and by the end it is almost gone. The girl keeps exactly the face, hair and clothing of the first frame. Her shoulders, still lifted from the involuntary jolt, settle down in one continuous fall; her parted lips relax closed; her wide eyes soften and she blinks once, slowly. Her raised hand lowers a little and comes to rest. Nothing new enters the room and she starts no new action — this is the aftermath settling. Her hand stays anatomically correct, five fingers, fingers separate. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K35 — motion
+VO 35 "Ondan aşağı uzanan uzun yapı omuriliktir; beyinle vücut arasında mesaj taşır."
+SÜRE: 7s   (ekran 5s + 2s pay)
+ENTRY STATE: makro; halkalı soluk kordon soldan sağa uzanıyor, sırtında erimiş altın
+  sert çizgi; uzakta sol üstte kubbe KARANLIK; sağ üstte soluk payanda.
+EXIT  STATE: altın çizgi uzak düğüme varmış ve arkasında soğuk kordon bırakmıştır;
+  kubbe hâlâ ışıksız — K36 gerçek dünyaya, temas anına keser.
+-----
+Macro along a pale ringed cord that runs from the lower left up to a knot at the right. A single molten gold line lies hard-edged along the top ridge of the cord. Then the line travels steadily along the ridge toward the far knot, and every stretch of ridge it has passed goes cold, pale and unlit again — it leaves nothing behind it. The dark ribbed dome far in the upper left never receives any of this light and stays sunk in indigo for the whole clip. Fine dust drifts across the pale stone floor below. The cord keeps its exact ringed shape and its rings stay evenly spaced. Camera: a very slow boom down until the lens is level with the ridge.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K36 — motion
+VO 36 "Mira sıcak çaydanlığın sapına dokundu."
+SÜRE: 5s   (ekran 3s + 2s pay)
+ENTRY STATE: gerçek dünya, aydınlık mutfak; kız tezgâhın ardında, sağ eli çelik
+  kettle'ın siyah sapında — TEMAS ANI; bakışı sapa dönük.
+EXIT  STATE: sıcaklık yeni kaydolmuş, kaşlar kalkmış, omuz gerilmiş; hiçbir karar
+  verilmemiş — K37 SERT kesimle "sonrası"na atlar.
+-----
+Her fingers are already on the black handle. Then they close a fraction further around it and settle, and at that instant the heat registers: her eyebrows lift a little, her eyes widen slightly, and the shoulder of the touching arm tightens and rises. Her lips settle closed. Her other hand stays flat on the marble counter. She keeps exactly the face, hair and clothing of the first frame. Warm daylight from the window behind moves almost imperceptibly across the counter. The clip ends on the instant before anything is decided — she does not pull away here. Her hands stay anatomically correct, five fingers, fingers separate. The kettle keeps its exact straight silhouette and its lid stays seated. Camera: a very slow push in toward the handle.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K37 — motion
+VO 37 "Elini düşünmeden, anında geri çekti."
+SÜRE: 5s   (ekran 3s + 2s pay)   🔴 VURUŞ — SERT kesim, tam cümle sınırında
+ENTRY STATE: akşam mutfağı, indigo; bakır çaydanlık ışık havuzunda, buhar yükseliyor;
+  kız profilde, eli ÇOKTAN GERİDE ve havada, avuç açık, gözler çaydanlıkta.
+EXIT  STATE: buhar genişlemiş, tutulan nefes bırakılmış; oda değişmemiş —
+  K38 bedenin içine, refleks yayına keser.
+-----
+The hand is already withdrawn and open in the air; it does not travel anywhere in this clip. The steam column keeps curling up from the copper spout, widening and softening as it rises toward the dark. Her withdrawn hand trembles very faintly where it already is and the fingers spread a touch further apart. Her eyes stay locked on the kettle and do not move. Then her raised shoulders drop as the held breath leaves her and her parted lips close. Nothing else in the kitchen changes; the kettle, the cups and the jars all stay exactly where they are. Her hand stays anatomically correct, five fingers, fingers separate. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K38 — motion
+VO 38 "Bu ani ve istemsiz tepkiye refleks denir."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: bedenin içi, zemin hizası; dikey halkalı sütun düğüme yükseliyor, soldan
+  soluk halat geliyor, sağdan iki sert altın yay sütunun dibine doğru süzülüyor.
+EXIT  STATE: iki yay sütunun dibinde DURMUŞ ve sönmüştür; yukarısı hiç ışık almamıştır —
+  K39 aynı dersi dikey olarak kanıtlar.
+-----
+Inside the body at floor level. Two hard gold arcs sweep in from the right along their own curved strands toward the base of the tall ringed column. Then both arcs run inward and stop dead at the column's base — the light goes no further up the column, and the huge dark vault overhead receives nothing at all and stays black for the whole clip. Finally the two arcs go out and the strands they rode return to cold pale grey with no trace left on them. The pale rope lying along the floor from the left stays motionless. Long shadows on the stone floor stay exactly where they are. Camera: a very slow arc around the base of the column, moving to the left.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K39 — motion
+VO 39 "Reflekslerin yönetim merkezi omuriliktir."
+SÜRE: 5s   (ekran 3s + 2s pay)
+ENTRY STATE: sütuna dik yukarı bakış; halkalı kordon karanlık indigo kubbeye doğru
+  yükseliyor, sağ üstten sıcak huzme; ön düzlemde halat dolanmış.
+EXIT  STATE: 🔴 J KESİMİ — görüntü VO 39 daha bitmeden K40'a devredilir. Işık kordonun
+  ortasında kesilmiştir, kubbe karanlıktır ve boş merkez fikri hazırdır.
+-----
+Looking straight up a pale ringed cord that rises toward a vast dark indigo vault. The warm shaft from the upper right lands on the cord and then climbs it, ring by ring, a short way — and stops well below the vault. The vault itself never receives the light and stays deep indigo for the whole clip. Then the climbing light holds for a moment at its limit and fades from the top downward, leaving the upper rings cold again. Fine dust turns slowly inside the shaft. The rope looped around the base in the foreground stays a still, solid mass. The cord keeps its exact ringed shape and its rings stay evenly spaced. Camera: a slow tilt up along the cord, stopping before it reaches the vault.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K40 — motion
+VO 40 "Peki daha yavaş ve uzun süren işleri kim yönetir?"
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: 🔴 J DEVRİ — kare, VO 39 hâlâ biterken açılır ve ilk anda "boş merkez"
+  olarak okunmalıdır. Karanlık örgülü lif katedrali, merkez boş, sağ ortada tek uzak
+  küçük sıcak lamba ve ince huzme; ön düzlemde koyu halat sol altta.
+EXIT  STATE: merkez daha da boşalmış, uzak ışık yaklaşmayı reddetmiştir — K41 kaynağı
+  gösterir.
+-----
+A vast dark hall of braided fibre arches with an empty centre. The single small warm light far away on the right holds steady and refuses to come any closer, its thin shaft slowly filling with drifting dust. Then the nearer braided columns dim by a shade and their arches sink further into the blue-black, so the empty centre of the frame becomes emptier still. Nothing enters that centre for the whole clip and nothing crosses it. The dark braided rope across the lower left stays a still solid mass. The floor keeps its long low ridges exactly as they are. Camera: a very slow pull back, widening the emptiness.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K41 — motion
+VO 41 "Onları iç salgı bezleri üstlenir; hormon denilen maddeler salgılarlar."
+SÜRE: 6.5s   (ekran 4.5s + 2s pay)
+ENTRY STATE: üç sıcak parlayan yuvarlak kütle üç ayrı derinlikte lif duvarlarına
+  yuvalanmış; sol üstten huzmeler; ön düzlemde sağ altta odak dışı soluk kütle.
+EXIT  STATE: üçü de kendi içinden parlamış, ışık çevrelerindeki life sızmış ve kalmıştır —
+  K42 o sızmanın makrosuna iner.
+-----
+Three warm glowing rounded bodies rest at three different depths in the fibre walls. Each brightens slowly from within on its own rhythm, never in unison with the others, the near one first and the far one last. The light stays inside each body and in the fibres immediately around it, seeping outward into that fibre and staying there once it arrives; nothing leaves them, nothing travels between them, and the space between them stays dark blue. The shafts from the upper left drift with fine dust. The large pale form in the lower right foreground stays a soft solid mass. Camera: a very slow lateral dolly from left to right, the foreground form sliding past.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K42 — motion
+VO 42 "Hormonlar doğrudan kana karışır ve yavaşça yayılır."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)   🔴 HÂLENİN DOĞDUĞU KARE
+ENTRY STATE: makro; kadrajı dolduran soluk yuvarlak gövde içeriden parlıyor, kenarı
+  yumuşak; çevresinde ince tüyler, üstte indigo, altta odak dışı kütle.
+EXIT  STATE: hâle belirgin biçimde GENİŞLEMİŞ ve orada kalmıştır — bu genişleme
+  K53'e kadar her karede sürer.
+-----
+Macro on a large pale rounded body lit from inside. The glow rises from within the material and has no edge anywhere: it simply grows weaker outward with no boundary. Then that glow widens outward into the surrounding dark, continuously and very slowly, through the whole clip — it never contracts, never pulses and never dims. As it spreads, the fine hairs around the rim catch it one by one and keep it once they have it. The indigo above slowly warms at its lower edge and stays warmed. The body itself stays completely still and keeps its exact rounded shape. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K43 — motion
+VO 43 "İç salgı bezlerinin lideri hipofiz bezidir; büyüme hormonu salgılar."
+SÜRE: 6.5s   (ekran 4.5s + 2s pay)
+ENTRY STATE: gerçek dünya, ağaçlı park, alçak güneş arkadan; net olan şey YÜKSELTİLMİŞ
+  krom sele borusu ve iki eski kelepçe izi; bisikletin gerisi yumuşak; uzun gölgeler.
+EXIT  STATE: sıcak parıltı ağaçların arasında genişlemiş ve kalmıştır — büyümenin izi
+  metalde durur; K44 bedenin içine döner.
+-----
+Golden hour in a tree-lined park. The low sun behind the bicycle blooms wider and wider through the branches across the whole clip and never dims once, the warm haze spreading further into the frame and staying there. The long shadows on the paving creep a fraction. A few leaves drift down through the light at the left and pass out of frame. Focus stays on the raised chrome seat post and its two old clamp marks, which catch the light and hold it. The bicycle stays parked and completely still on its own; nobody enters. Rigid edges stay straight and the frame keeps its exact geometry. Camera: a very slow push in toward the raised seat post. No whip-pan, no shake, no snap-zoom, no camera warp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K44 — motion
+VO 44 "Boynumuzdaki tiroit bezi tiroksin hormonu üretir."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: bedenin içi, alçak açı; halkalı kordonun üstünde küçük, iki loblu soluk
+  gövde içeriden parlıyor; üstte büyük KOYU perdemsi kütle; iki yan indigo.
+EXIT  STATE: hâle kordonun yakın halkalarına sızmış ve orada kalmıştır; üstteki koyu
+  kütle hiç ışık almamıştır — K45 aynı ışığın geniş hâline açılır.
+-----
+Inside the body, low angle. The small two-lobed pale form resting on top of the ringed cord glows from inside with no edge to the glow. Then that glow widens outward into the indigo around it, slowly and continuously, and the rings of the cord nearest to it take on a faint warmth which stays once it arrives and never fades. The large dark draped mass hanging above receives none of this light and stays dark for the whole clip. Fine motes drift in the warmed air between them. The cord keeps its exact ringed shape and the small form keeps its exact two-lobed silhouette. Camera: a very slow arc to the right around the small glowing form.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K45 — motion
+VO 45 "Tiroksin metabolizma hızımızı ve büyümemizi düzenler."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: bedenin içi, geniş; bal rengi lif sütunlu nef, güçlü huzmeler zemine ızgara
+  ışık deseni düşürüyor; uzakta kemerin altında küçük iki loblu soluk gövde asılı;
+  ön düzlemde sağda odak dışı çapraz kiriş.
+EXIT  STATE: ızgara desen genişlemiş, nef daha sıcak — hız bir DURUM olarak kalır;
+  K46 dengeye iner.
+-----
+A wide honey-lit nave of fibrous columns. Strong shafts fall through the arches and lay a grid of light across the stone floor. Then the whole nave warms further: the grid of light on the floor broadens and its edges soften, the dust inside the shafts thickens and turns faster, and the warm glow climbs a little higher up the columns and stays there. The small two-lobed pale form hanging far down the nave brightens gently from within and holds. The out-of-focus diagonal beam in the right foreground stays a still solid mass. The columns keep their exact positions. Camera: a very slow boom up along the nearest shaft of light.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K46 — motion
+VO 46 "Pankreas kandaki şeker dengesini kurar."
+SÜRE: 5s   (ekran 3s + 2s pay)
+ENTRY STATE: iki soluk yontulmuş kütle taş zeminde karşılıklı; sağ üstten sıcak huzme;
+  arkada indigo karanlık; solda ve sağda lif payandalar.
+EXIT  STATE: iki kütlenin hâleleri aralarındaki boşlukta buluşmuştur — gövdeler
+  değmeden; K47 malzemenin kendisine iner.
+-----
+Two pale sculpted masses sit facing each other on the stone floor, the left one nearer, the right one raised on a low block. Each begins to glow gently from inside, the left one first and the right one answering. Then both glows widen outward with no edge, spread across the floor between them and finally meet in the middle of that gap, filling it with light while the two bodies themselves stay exactly where they are and keep a clear visible gap between them. The warm shaft from the upper right thickens with drifting dust. The fibre buttresses at the edges stay still. Camera: a very slow lateral dolly from right to left.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K47 — motion
+VO 47 "Şeker yükselince insülin, düşünce glukagon salgılar."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)   ⚠ ÇOK SAYIDA KÜÇÜK NESNE — kısa tutuldu, kamera kilitli
+ENTRY STATE: makro; kahverengi spiral desenli yuvarlak taneler ile berrak köşeli
+  kristaller iç içe; sıcak amber arka ışık; sağ üstten ince soluk lif iniyor.
+EXIT  STATE: sıcak arka ışık tanelerin arasında genişlemiş; iki biçim de sayıca ve
+  biçimce aynı kalmıştır — K48 hâlenin doruğuna çıkar.
+-----
+Macro on a bed of small brown spiral-marked round grains mixed with clear faceted crystals. The warm amber backlight behind them swells and widens between the pieces, and the light travelling through the clear crystals grows brighter and spreads while the brown grains keep their soft matte surface. The fine pale filament curving down from the upper right sways once, very slightly, and settles. The count stays the same from first to last frame and each piece keeps its own body: the round grains stay round and separate, the faceted crystals keep their flat straight facets, and the two kinds never merge into one another. Nothing rolls and nothing is added. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K48 — motion
+VO 48 "Böbrek üstü bezleri adrenalin hormonu salgılar."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)   🔴 HÂLE EN YOĞUN BURADA
+ENTRY STATE: bedenin içi; soluk örülü sütunların arasından beyaz-altın ışık patlıyor,
+  solda toz huzmesi, sağ altta odak dışı büyük kök biçimli kütle.
+EXIT  STATE: ışık bütün nefi doldurmuş ve GERİ ÇEKİLMEMİŞTİR — K49 dış dünyaya, hız
+  trenine SERT keser.
+-----
+Inside the body: white-gold light blazes through the diamond openings of a woven pale lattice. That light swells outward continuously through the whole clip, its edges staying soft and unbounded, until it floods the arches on both sides and washes up the floor toward the camera — and it never once pulls back or dims. The dust shaft at the left thickens and turns. The deep indigo alcoves at the far left and right slowly warm at their edges and keep that warmth. The lattice itself and the large root-like form in the right foreground stay completely still and keep their exact shapes. Camera: a very slow push in toward the brightest opening.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K49 — motion
+VO 49 "Hız treni tepede bir an durdu, sonra aşağı bıraktı."
+SÜRE: 6s   (ekran 4s + 2s pay)   🔴 VURUŞ — SERT kesim, tam cümle sınırında
+ENTRY STATE: gerçek dünya, gün batımında bakımlı lunapark; tren İNİŞİN ORTASINDA,
+  binenlerin kolları havada, siluet; alçak güneş solda; ön düzlemde odak dışı çelik
+  korkuluk sol altta.
+EXIT  STATE: tren inişin dibine yaklaşmış, güneşin parıltısı genişlemiştir —
+  K50 aynı anın içine, ellere iner.
+-----
+Sunset at a well-kept amusement park. The coaster train is already partway down the drop and simply continues down the track at speed, its cars following the rail one after another with the riders' raised arms held up in silhouette, until the train reaches the lower bend. Its long shadow travels across the plaza below it. The low sun's bloom on the horizon widens through the clip and stays. The lamps on the plaza hold steady. The steel structure, the track and the out-of-focus railing in the left foreground keep their rigid straight edges and their exact geometry throughout. Camera: locked, no movement at all. No whip-pan, no shake, no snap-zoom, no camera warp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K50 — motion
+VO 50 "İşte o duygunun adı adrenalindi."
+SÜRE: 5s   (ekran 3s + 2s pay)
+ENTRY STATE: yakın; iki çocuk eli, mavi vagonun deri kaplı emniyet barını arkadan
+  kavramış; sıcak kenar ışığı; arka plan alacakaranlık ve odak dışı.
+EXIT  STATE: parmak boğumları biraz daha beyazlamış, sıcak kenar ışığı genişlemiştir —
+  duygunun izi; K51 aynı ışığın sonrasını gösterir.
+-----
+Close on two small hands gripping the padded lap bar of a blue coaster car from behind. The grip tightens: the fingers press a little further down over the bar and the knuckles pale, then hold there. The warm rim light along the knuckles and the top edge of the bar broadens through the clip and stays broadened; the dusk behind stays soft and out of focus. Nothing else enters the frame and the hands never leave the bar. The hands stay anatomically correct, five fingers each, fingers separate, and the two hands keep a visible gap between them. The bar keeps its rigid straight edge. Camera: a very slow tilt down onto the knuckles. No whip-pan, no shake, no snap-zoom, no camera warp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K51 — motion
+VO 51 "Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı."
+SÜRE: 6s   (ekran 4s + 2s pay)   🔴 KANIT KARESİ — tren durmuştur, hâle durmaz
+ENTRY STATE: gerçek dünya, ahşap iskele, altın alacakaranlık; kız sağda, profile yakın,
+  bakışı sola; arkada DURMUŞ renkli park lokomotifi odak dışı, ampul dizisi, fener;
+  solda çelik kafes kule ön düzlemde.
+EXIT  STATE: 🔴 L KESİMİ — görüntü K52'ye geçer ama trenin uzak uğultusu sonraki karede
+  sürer. Hava hâlâ sıcak parıltıyla dolu ve parıltı daha geniş.
+-----
+The park locomotive behind her has already stopped and stays completely still for the whole clip; not a wheel turns. The girl stands where she is, keeping exactly the face, hair and clothing of the first frame. Her chest rises and falls, still quick and deep, and slows only a little by the end; her gaze stays off to the left; her lips stay closed; she blinks once. A strand of hair lifts and settles in the evening air. Meanwhile the warm golden haze filling the boardwalk widens through the whole clip and never dims — the ride has ended, the glow has not. The string lights hold steady. Rigid edges stay straight. Camera: locked, no movement at all. No whip-pan, no shake, no snap-zoom, no camera warp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K52 — motion
+VO 52 "Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır."
+SÜRE: 6s   (ekran 4s + 2s pay)   🔴 ÇOCUK GÜVENLİĞİNİN EN DAR YERİ — hiçbir şey eklenmez
+ENTRY STATE: 🔴 L DEVRİ — görüntü, trenin uğultusu hâlâ duyulurken açılır. Bedenin içi:
+  sıcak lif kubbe, ortada soluk halkalı kubbecik, sağ üstten huzme; altta simetrik iki
+  parlayan damla biçimli kütle, biri solda biri sağda; ön düzlemde çapraz soluk çubuklar.
+EXIT  STATE: iki hâle genişlemiş ve kalmıştır — K53 zamanın izine, gerçek dünyaya çıkar.
+-----
+Inside the body: a warm fibrous chamber with a pale ribbed dome at the back. The two glowing teardrop forms low in the frame, one at the left and one at the right, brighten gently from within, and their glows widen outward into the fibre around them slowly and continuously and stay once they have spread. The single shaft from the upper right thickens with drifting dust and lays a slow-widening pool of warm light on the stone floor between them. Nothing is added to the frame and nothing moves except light and air; both forms stay exactly in place and keep their exact shapes and their distance from each other. Camera: a very slow boom down toward the floor.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K53 — motion
+VO 53 "Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar."
+SÜRE: 6.5s   (ekran 4.5s + 2s pay)   🔴 ÇOCUK GÜVENLİĞİ — beden üstünde hiçbir şey
+ENTRY STATE: gerçek dünya, akşam parkı; kız solda ayakta, yukarı doğru büyük çınara
+  bakıyor; sağda destekli genç fidan ve küçük künye; altın yan ışık.
+EXIT  STATE: altın ışık taçtan geniş biçimde süzülüp kalmıştır; zamanın izi iki ağaç
+  arasındadır — S7 salona döner.
+-----
+Evening in a park. The girl stands at the left, keeping exactly the face, hair and clothing of the first frame; her gaze stays lifted toward the big plane tree's canopy, her lips stay closed in a small smile, and she blinks once as the light reaches her eyes. Her weight shifts gently onto one leg and settles. In the canopy the leaves stir and the golden side light broadens through them until it lies wide across the gravel and stays there. The young staked sapling's leaves lift once in the same air. Nothing is added to the scene. Rigid edges stay straight and the lettering stays exactly as printed. Camera: a slow tilt up from the sapling toward the big tree's canopy. No whip-pan, no shake, no snap-zoom, no camera warp.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K54 — motion
+VO 54 "Sinir sistemi çok hızlı çalışır, etkisi kısa sürer."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)   🔴 SİNİR DAVRANIŞI — sert kenar, iz yok
+ENTRY STATE: konser salonu; çello ve kontrbas sırası profilde, yaylar kaldırılmış ve
+  kıllar boyunca sert altın çizgi; ön düzlemde odak dışı timpani ve tokmak; solda
+  yaldızlı localar ve kırmızı perde.
+EXIT  STATE: yaylar aşağı inmiş, altın çizgi kesilmiş ve hiçbir iz bırakmamıştır —
+  K55 aynı salonun öbür ışığına keser.
+-----
+A concert hall, the cello and double bass row in profile. The players draw their bows together in one continuous stroke, arms moving as a single row, bodies leaning slightly into the stroke. The hard gold line lying along the bow hairs runs the length of each bow with the stroke — and at the end of the stroke it is cut off dead and the bow hairs go completely dark, leaving nothing behind them. The players' faces keep exactly the features and proportions of the first frame and their lips stay closed. The out-of-focus timpani head and mallet in the foreground stay still. The bows stay straight, evenly spaced and parallel, and never cross one another. Camera: a very slow lateral dolly along the row.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K55 — motion
+VO 55 "İç salgı bezleri yavaş çalışır, etkisi uzun sürer."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)   🔴 HORMON DAVRANIŞI — kenarsız, sönmez
+ENTRY STATE: yakın; koyu kırmızı kadife perde kıvrımları, sağda yaldızlı proscenium
+  silmesi ve loca korkuluğu; bir kıvrımda kenarsız sıcak parıltı; sol üstte soğuk sızıntı.
+EXIT  STATE: parıltı komşu kıvrımlara yayılmış ve orada kalmıştır — K56 ikisini tek
+  kadrajda toplar.
+-----
+Close on the folds of a deep red velvet stage curtain with gilded moulding at the right. The warm glow sitting on one fold has no edge at all: it grows weaker outward with no boundary. Then that glow widens very slowly across the velvet, reaching the neighbouring folds one after another and staying on each one once it arrives — it never contracts and never dims, and the nap of the velvet keeps every trace of it. The cool spill at the upper left stays where it is. The curtain itself hangs completely still and its folds keep their exact vertical shapes; the gilded moulding keeps its exact carving. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K56 — motion
+VO 56 "İkisi birlikte vücudumuzun iç dengesini korur."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: geniş; sahneden salona bakış, ön düzlemde odak dışı yaldızlı arp gövdesi
+  ve telleri; yaylı grup çalıyor, şef sırtı dönük; solda ışıklı localar, sağda karanlık
+  boş koltuklar.
+EXIT  STATE: sert yay çizgisi kesilmiş ama localardaki sıcak parıltı genişlemiş ve
+  kalmıştır — iki davranış çarpışmadan; K57 şefin eline iner.
+-----
+A wide view of the hall from the stage. The string players draw their bows in one continuous stroke and the hard gold line along the bow hairs runs the length of the stroke, then is cut off dead at its end and leaves the hairs dark with no trace. At the same time the warm glow in the gilded balconies at the left spreads slowly outward along the tiers with no edge and stays where it spreads, never dimming. The two behaviours share the frame without touching each other; the dark empty seats at the right stay dark. The bows stay straight, evenly spaced and parallel. Camera: a very slow push in past the harp column.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K57 — motion
+VO 57 "Salonda son akor çalındı ve şefin eli indi."
+SÜRE: 5.5s   (ekran 3.5s + 2s pay)
+ENTRY STATE: yakın; şef arkadan, siyah frak, sağ eli AŞAĞIDA ve baget yere doğru;
+  arkada odak dışı orkestra ve timpani; sol üstten huzme; solda yaldızlı loca korkuluğu.
+EXIT  STATE: 🔴 L KESİMİ — son akor K58'de sürer. El inmiş hâlde durur, huzmedeki toz
+  yerine oturur, salon susmuştur.
+-----
+The conductor's hand is already down and the baton already points at the floor; the arm does not travel in this clip. Then the last of the tension leaves it: the fingers, still spread, relax and soften a fraction, the wrist settles, and the baton comes to rest and stops swaying. His shoulders lower once with a breath. Behind him the out-of-focus players lower their bows and instruments in one slow settling motion and hold. The dust in the shaft from the upper left drifts down and settles through the warm beam. His hand stays anatomically correct, five fingers, fingers separate, and the baton stays a single straight rigid line. Camera: locked, no movement at all.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+
+
+K58 — motion
+VO 58 "Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu."
+SÜRE: 6s   (ekran 4s + 2s pay)   🔴 KAPANIŞ
+ENTRY STATE: 🔴 L DEVRİ — görüntü, son akor hâlâ sürerken açılır. Geniş; kız ÇOKTAN
+  AYAKTA, sağda, profilde sahneye bakıyor; yanında oturan seyirciler; solda sahne ve
+  orkestra; sıcak salon ışığı.
+EXIT  STATE: hâle HAVADA kalır, teninde değil — filmin son karesi; içerideki orkestra
+  sürer.
+-----
+She is already standing; she does not rise in this clip. The girl keeps exactly the face, hair and clothing of the first frame. Her chest rises and falls slowly and deeply, her gaze stays on the stage, her lips stay closed in a small smile, and she blinks once. Her hair settles against her shoulder. Around her the seated audience stay seated and still. Meanwhile the warm glow in the air of the hall widens through the whole clip and never dims, spreading through the gilded tiers and the space above the heads and staying there — it stays in the air and never lands on her skin. Camera: a very slow boom up above the seated rows.
+Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----

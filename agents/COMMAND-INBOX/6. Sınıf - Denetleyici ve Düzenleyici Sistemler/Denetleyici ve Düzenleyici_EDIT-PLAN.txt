@@ -1,0 +1,91 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — EDIT-PLAN
+=========================================================================
+58 klip · VO ~4:05 · tahmini timeline aşağıda
+🔴 SÜRE = ÜRETİM süresi. Ekran süresi = üretim − 2 sn (Kling'in ilk ~0.5 ve son
+   ~1.5 saniyesi kullanılamıyor). Premiere'de her klibin başından 0.5, sonundan 1.5 kırp.
+🔴 Klipler SESSİZ. A1 = VO (ElevenLabs) · A2 = müzik (Suno) · A3 = SFX (Envato).
+⚠ ANIMATIC-0: klip basılmadan ÖNCE gerçek VO ile koş —
+   node scripts/kaba-kurgu.mjs "<proje>" --animatic --vo <vo.mp3>
+=========================================================================
+
+===== S1 — konser salonu · K01-K08 =====
+K01  üretim  5.0s → ekran  3.0s   |  Sahnede onlarca müzisyen aynı anda çalıyordu.
+K02  üretim  5.0s → ekran  3.0s   |  Yaylar, nefesliler, davullar; hepsi bir arada.
+K03  üretim  5.0s → ekran  3.0s   |  Ama ortada hiçbir kargaşa yoktu.
+K04  üretim  5.0s → ekran  3.0s   |  En öndeki tek kişi elini havaya kaldırdı.
+K05  üretim  5.0s → ekran  3.0s   |  O bir orkestra şefiydi.
+K06  üretim  6.0s → ekran  4.0s   |  Bageti indi ve bütün salon aynı anda konuştu.   ✂ SERT ve tam sınırda — vuruş anı (bagetin inişi)
+K07  üretim  5.0s → ekran  3.0s   |  Mira ön sırada oturmuş, o eli izliyordu.
+K08  üretim  5.0s → ekran  3.0s   |  Onlarca enstrüman, tek bir uyum.
+
+===== S2 — bedenin içi · K09-K15 =====
+K09  üretim  5.0s → ekran  3.0s   |  Mira avucunu göğsüne koydu.
+K10  üretim  6.0s → ekran  4.0s   |  İçeride de tam o anda onlarca iş sürüyordu.
+K11  üretim  6.0s → ekran  4.0s   |  Kalbi atıyor, ciğerleri nefes alıyor, midesi sindiriyordu.
+K12  üretim  5.0s → ekran  3.0s   |  Hiçbiri ötekiyle çarpışmıyordu.
+K13  üretim  5.0s → ekran  3.0s   |  Peki bu orkestrayı kim yönetiyordu?   ✂ J — cevap sahnesi soru bitmeden açılır
+K14  üretim  6.0s → ekran  4.0s   |  Cevap iki sistemde: sinir sistemi ve iç salgı bezleri.
+K15  üretim  5.0s → ekran  3.0s   |  Biri ışık hızında konuşur, öteki sabırla.
+
+===== S3 — nöron dünyası · K16-K21 =====
+K16  üretim  7.0s → ekran  5.0s   |  Sinir sistemi vücudumuzu milyonlarca sinir hücresiyle bir ağ gibi sarar.
+K17  üretim  5.0s → ekran  3.0s   |  Bu hücrelere nöron denir.
+K18  üretim  5.0s → ekran  3.0s   |  Nöronlar mesajı elektrik sinyali gibi taşır.
+K19  üretim  5.0s → ekran  3.0s   |  Bu yüzden haber ışık hızında gider.   ✂ SERT ve tam sınırda — vuruş anı (sinyal kesildi)
+K20  üretim  6.0s → ekran  4.0s   |  Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır.
+K21  üretim  7.0s → ekran  5.0s   |  Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur.
+
+===== S4 — bedenin içi + gerçek anlar · K22-K30 =====
+K22  üretim  6.0s → ekran  4.0s   |  Ağın merkezinde, her şeyden büyük bir yapı yükselir.
+K23  üretim  5.0s → ekran  3.0s   |  Bu en büyük yapı beyindir.
+K24  üretim  6.0s → ekran  4.0s   |  Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir.
+K25  üretim  6.0s → ekran  4.0s   |  Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır.
+K26  üretim  6.0s → ekran  4.0s   |  Onun hemen altındaki daha küçük yapı ise beyinciktir.
+K27  üretim  5.0s → ekran  3.0s   |  Beyincik kaslarımızın uyumlu çalışmasını sağlar.
+K28  üretim  5.0s → ekran  3.0s   |  Dengede kalmamızı da beyincik yönetir.
+K29  üretim  5.0s → ekran  3.0s   |  Mira tek ayak üstünde durdu ve sallanmadı.   ✂ L — sesi bisiklete sarkar
+K30  üretim  6.0s → ekran  4.0s   |  Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz.   ✂ J — S5'in sorusu erken doğar
+
+===== S5 — gerçek anlar / refleks · K31-K39 =====
+K31  üretim  6.0s → ekran  4.0s   |  Beyinciğin yanındaki omurilik soğanı iç organları istemsiz çalıştırır.
+K32  üretim  6.0s → ekran  4.0s   |  Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir.
+K33  üretim  5.5s → ekran  3.5s   |  Hapşırmak, öksürmek ve yutkunmak da onun işidir.
+K34  üretim  5.0s → ekran  3.0s   |  Mira hapşırdı ve bunu hiç düşünmemişti.
+K35  üretim  7.0s → ekran  5.0s   |  Ondan aşağı uzanan uzun yapı omuriliktir; beyinle vücut arasında mesaj taşır.
+K36  üretim  5.0s → ekran  3.0s   |  Mira sıcak çaydanlığın sapına dokundu.
+K37  üretim  5.0s → ekran  3.0s   |  Elini düşünmeden, anında geri çekti.   ✂ SERT ve tam sınırda — vuruş anı (el çekildi)
+K38  üretim  5.5s → ekran  3.5s   |  Bu ani ve istemsiz tepkiye refleks denir.
+K39  üretim  5.0s → ekran  3.0s   |  Reflekslerin yönetim merkezi omuriliktir.   ✂ J — S6 sorusu S5 bitmeden girer
+
+===== S6 — kan dolaşımı + lunapark · K40-K53 =====
+K40  üretim  5.5s → ekran  3.5s   |  Peki daha yavaş ve uzun süren işleri kim yönetir?
+K41  üretim  6.5s → ekran  4.5s   |  Onları iç salgı bezleri üstlenir; hormon denilen maddeler salgılarlar.
+K42  üretim  5.5s → ekran  3.5s   |  Hormonlar doğrudan kana karışır ve yavaşça yayılır.
+K43  üretim  6.5s → ekran  4.5s   |  İç salgı bezlerinin lideri hipofiz bezidir; büyüme hormonu salgılar.
+K44  üretim  5.5s → ekran  3.5s   |  Boynumuzdaki tiroit bezi tiroksin hormonu üretir.
+K45  üretim  5.5s → ekran  3.5s   |  Tiroksin metabolizma hızımızı ve büyümemizi düzenler.
+K46  üretim  5.0s → ekran  3.0s   |  Pankreas kandaki şeker dengesini kurar.
+K47  üretim  5.5s → ekran  3.5s   |  Şeker yükselince insülin, düşünce glukagon salgılar.
+K48  üretim  5.5s → ekran  3.5s   |  Böbrek üstü bezleri adrenalin hormonu salgılar.
+K49  üretim  6.0s → ekran  4.0s   |  Hız treni tepede bir an durdu, sonra aşağı bıraktı.   ✂ SERT ve tam sınırda — vuruş anı (tren bıraktı)
+K50  üretim  5.0s → ekran  3.0s   |  İşte o duygunun adı adrenalindi.
+K51  üretim  6.0s → ekran  4.0s   |  Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı.   ✂ L — trenin uğultusu sonraki kareye sarkar
+K52  üretim  6.0s → ekran  4.0s   |  Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır.
+K53  üretim  6.5s → ekran  4.5s   |  Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar.
+
+===== S7 — konser salonu · kapanış · K54-K58 =====
+K54  üretim  5.5s → ekran  3.5s   |  Sinir sistemi çok hızlı çalışır, etkisi kısa sürer.
+K55  üretim  5.5s → ekran  3.5s   |  İç salgı bezleri yavaş çalışır, etkisi uzun sürer.
+K56  üretim  5.5s → ekran  3.5s   |  İkisi birlikte vücudumuzun iç dengesini korur.
+K57  üretim  5.5s → ekran  3.5s   |  Salonda son akor çalındı ve şefin eli indi.   ✂ L — son akor Mira'nın karesinde sürer
+K58  üretim  6.0s → ekran  4.0s   |  Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu.
+
+=========================================================================
+TOPLAM ekran süresi: 206 sn ≈ 3:26   ·   üretilecek klip: 322 sn
+⚠ Bu bir TAHMİNDİR. Gerçek VO inince ANIMATIC-0 koşulur ve sapma orada kapanır
+   (altın standart Hücre'de bu adım 80 saniyelik tahmin hatası yakaladı).
+
+KESİM DİSİPLİNİ — 'kurgu çok basic' kusurunun panzehiri
+Ölçüldü: 53 kesimin 47'si cümle sınırındaysa film metronoma döner. Yukarıda 6 kesim
+bilerek kayar (J: sahne cümle bitmeden açılır · L: ses yeni görüntüye sarkar),
+4 kesim bilerek tam sınırda ve sert kalır — onlar vuruş anları.

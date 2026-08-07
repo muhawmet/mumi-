@@ -2,7 +2,7 @@
   "surum": 1,
   "proje": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "olusturuldu": "2026-08-07T19:18:18.406Z",
-  "guncellendi": "2026-08-07T21:04:17.838Z",
+  "guncellendi": "2026-08-07T21:21:33.722Z",
   "shots": [
     {
       "n": 1,
@@ -649,6 +649,24 @@
           "sonuc": "kabul",
           "kusur": null,
           "zaman": "2026-08-07T21:04:16.428Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "dunya-kaymasi",
+          "zaman": "2026-08-07T21:21:33.674Z"
+        },
+        {
+          "deneme": 3,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:21:33.722Z"
         }
       ],
       "klip": [],

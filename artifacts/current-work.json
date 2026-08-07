@@ -4,22 +4,22 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "58/58 kare BASILDI ve gözden geçti — ilk basımda tutma %90, 5250/5500 kredi. Maket S5'ten de söküldü (kredi yakmadan metinden). @mira kimliği düzeltildi. MOTION iki ajanda. Gece brifi _MAMI-BRIEF.md",
-  "nextAction": "MOTION-1/2 birleştir ve oku; sonra klip bütçesini Mami'den al, ANIMATIC-0 için VO gerekiyor",
+  "lastCompleted": "KURGUYA KADAR BİTTİ: 58 kare + 58 motion + REFERANSLAR + EDIT-PLAN. teslim-denetim bu proje için sıfır uyarı (58/58/58/58). 5400/5500 kredi. Motion ajanı K29'un planetaryum çıktığını yakaladı, yeniden basıldı.",
+  "nextAction": "ANIMATIC-0 için gerçek VO gerekiyor (ElevenLabs); sonra klip bütçesini Mami'den al ve Kling'de bas",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
-    "REFERANSLAR": false,
+    "REFERANSLAR": true,
     "PROMPTLAR": true,
     "revize": false,
-    "MOTION": false,
-    "EDIT-PLAN": false,
+    "MOTION": true,
+    "EDIT-PLAN": true,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T21:07:05.397Z",
+  "updatedAt": "2026-08-07T21:26:35.218Z",
   "updatedBy": "claude",
-  "baseCommit": "7dc43081"
+  "baseCommit": "2fed031e"
 }

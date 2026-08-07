@@ -1,0 +1,79 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — REFERANS ENVANTERİ
+=========================================================================
+🔴 `references` alanına YALNIZ `@mira` geçer.
+Mekân ve nesne plakası kareyi eziyor — 27 kare basılarak ölçüldü: motor geometriyi değil
+BÜTÜN kompozisyonu kopyalıyor. Mekân sürekliliği YAZIYLA taşınır.
+=========================================================================
+
+
+@mira — kahraman, 6. sınıf öğrencisi
+-------------------------------------------------------------------------
+dosya   : agents/COMMAND-INBOX/elements/mira.png
+motor   : Magnific creation `UPOqovywny`
+🔴 ESKİ KİMLİK `1lLXJFpr4r` ÖLÜDÜR — beyaz fonda düz aydınlatılmış stüdyo plakasıydı ve
+   o düz ışığı kareye taşıyordu (Mami: "sağdaki plastik değil mi"). 2026-08-07'de sahne
+   rejiminde yeniden basıldı: tek yönlü sert key, modelleme gölgesi, çilli ten dokusu,
+   fleece ve denim örgüsü okunuyor, ışıklı nötr fon, bel üstü 3/4 kadraj.
+   Eski plaka arşivde: `elements/mira-DUZ-ISIK-ARSIV.png`
+
+TAŞIR   : yüz · saç · ten · göz · gardırop (kırmızı kapüşonlu + lacivert tulum + rozetler
+          + sarı yıldız toka) · yaş ve gövde oranı · ışık rejimi (tek yönlü sert key,
+          modelleme gölgesi, ten dokusu).
+TAŞIMAZ : 🔴 KADRAJ — plaka bel üstü 3/4'tür, sahneye kadraj dayatmaz; her karede kadrajın
+          dışarıda bıraktığı ayrıca yazılır.
+          🔴 POZ — plakadaki duruş sahneye taşınmaz; poz o karenin işidir.
+          🔴 FON — plakanın nötr fonu sahneye sızmaz; mekân her karede yazıyla kurulur.
+          🔴 AYAK VE ZEMİN — ayaklar ve zemin hiçbir karede kadrajda değildir (K29 hariç,
+          orada kalkık diz dersin kendisidir). Ölçüldü: ayak kadrajda 7/7 kötü kare.
+          🔴 IŞIK YÖNÜ — plakanın soldan key'i sahnenin ışığını belirlemez; yön sahneden gelir.
+
+geçtiği kareler (14):
+  K07 · K09 · K22 · K25 · K29 · K30 · K34 · K36 · K37 · K43(dolaylı) · K51 · K53 · K58
+  (K07 basılı ve onaylı, S1'den; kalanlar bu turda basıldı)
+
+🔴 ÇAĞRILIR, TARİF EDİLMEZ. Prompt gövdesinde yaş, yüz, saç, ten tonu, göz rengi, milliyet
+   ve gardırop YAZILMAZ — yalnız `the girl` / `she`. Tarif referansı EZİYOR: bu projede
+   ajana "nötr tanıma çevir" denildi, ajan "a ten-year-old Turkish girl in a deep red
+   hooded sweatshirt" yazdı ve 27 kare çöpe gitti.
+
+🔴 KADRAJ KİLİDİ ZORUNLU. Geçtiği her karede kadrajın DIŞARIDA bıraktığı yazılır
+   ("framed from mid-chest up, her legs and the floor out of frame" gibi). Yoksa plakanın
+   tam-boy stüdyo kadrajı birebir ithal oluyor.
+
+🔴 YÜZÜ GÖRÜNÜR VE IŞIKTA OLMALI. Yüz kadraj ya da odak dışına alınırsa motor sahneyi
+   tamamen atlayıp beyaz fonda tam-boy plakayı basıyor (2026-08-07'de iki kez ölçüldü).
+
+🔴 AYDINLIK İÇ MEKÂNDA YAZILMAZ. Karakter referansı + aydınlık oda = motor düz ışıklı
+   "vintage / çocuk kitabı" moduna kaçıyor ve arka plana basılı sayfa, gravür, hatta
+   İngilizce etiketli diyagram getiriyor. Kare ya KARANLIK mekânda ya da TEK SERT HUZMENİN
+   BANDINDA yazılır; bandın dışı doygun indigo, yüzeyler boş.
+
+
+ÜRETİLMEYEN ELEMENTLER — bilerek
+-------------------------------------------------------------------------
+@salon  (konser salonu, S1+S7 ~13 kare) : plaka ÜRETİLMEDİ.
+        Süreklilik `images/4.png · 5.png · 6.png · 8.png` GÖZLE devralınarak ve yazıyla
+        taşındı. S1'in sekiz karesinin tuttuğu şeyin sebebi buydu: **referans yoktu**,
+        motor karakteri ve mekânı sahnenin kendi ışığında icat etti.
+
+@noron  (bedenin içi mimarisi, S2-S3-S6 ~25 kare) : plaka ÜRETİLMEDİ.
+        Dünya `images/10.png · 16.png · 17.png · 21.png` üstünden yazıyla taşındı.
+
+@maket  (sinir sistemi maketi) : 🔴 SÖKÜLDÜ — Mami kararı 2026-08-07 ("kötü oldu").
+        Ölçüm: kaynak docx'te `maket` 1 kez geçiyordu ve ona 9 kare yazılmıştı.
+        Ders artık bedenin içinde, K21'in katedral dilinde geçiyor. VO'nun üç cümlesi
+        buna göre yeniden yazıldı; seslendirme gövdesinde "maket" 0 kez geçiyor.
+
+
+DÜNYA SÜREKLİLİĞİ — yazıyla taşınan sabitler
+-------------------------------------------------------------------------
+KONSER SALONU : bal rengi ahşap sahne · koyu kırmızı perde · yaldızlı balkon locaları ·
+                indigo seyirci karanlığı · sahne solundan tek sert beyaz-altın huzme ·
+                siyah frak · bal tonlu yaylılar · bakır nefesliler.
+BEDENİN İÇİ   : kuru, camsı, yarı saydam lif · solgun kemik rengi taş · örülü kablolar ·
+                dokunmuş tonoz · mat taş zemin · doygun indigo derinlik · havada toz.
+                🔴 Islak, etli, kırmızı yüzey YOK. Kesit YOK.
+GERÇEK ANLAR  : geniş, çağdaş, kaliteli, bakımlı — özel okul standardı. Yıpranmış,
+                çentikli, solmuş, dar ya da loş hiçbir şey yok.
+KAVRAM IŞIĞI  : SİNİR = jilet gibi sert kenar, bittiği yerde kesilir, İZ BIRAKMAZ.
+                HORMON = kenarsız, malzemenin içinde, sınırsız zayıflar, KALIR ve genişler.
