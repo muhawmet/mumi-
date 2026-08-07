@@ -1,20 +1,49 @@
-DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — AŞAMA: 🅿️ PARK (2026-08-07, Mami kararı)
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — AŞAMA: SIFIRDAN YAZIM (2026-08-07, Mami emri)
 ════════════════════════════════════════════════════════════════
-prompt ✓ (lint KIRMIZI 0)   ·   kare 56/56 ✓   ·   motion ✓ (S1–S7)   ·   VO ✓   ·   KLİP 0/56
+prompt 56/56 ✓ (yeni)  ·  plaka 3/3 ✓  ·  KARE 0/56  ·  motion 0/56  ·  VO metni ✓  ·  KLİP 0/56
 
-NEDEN PARK
-  Aynı gün Hayvanlarda Üreme motion turuna girdi; iki iş aynı anda canlı tutulmuyor.
-  Bu proje SİLİNMEDİ, sadece current-work.json'daki aktif slottan düştü.
+⚠ ÖNCEKİ TUR TAMAMEN GEÇERSİZ — arşivde, otorite DEĞİL
+  Eski 56 kare, eski prompt'lar, eski motion ve eski revize kayıtları `_ESKI/` altında.
+  İki sebeple geçersiz:
+  1. KAHRAMAN DEĞİŞTİ — @efe → @mira (Mami, 2026-08-07). Basılı her karede yanlış çocuk var.
+  2. YAPISAL KUSUR ÖLÇÜLDÜ — LIGHT AND PALETTE 56/56 karede TEK sürümdü, NEGATIVE ortak
+     katalog olarak 11 kez birebir tekrarlıyordu, ENTRY/EXIT STATE 0/56 idi.
+  🔴 `_ESKI/` AÇILMAZ. Oradan cümle taşımak yasaktır; kusurun kaynağı o metnin kendisiydi.
+
+BU TURDA NE YAPILDI
+  · ENZIM'e iki kilit eklendi: KİLİT 9 (öğretici register — hücre dünyası, K10-K12) ve
+    KİLİT 10 (ölçek merdiveni + sinematik kamera + "Mira öğrencidir, seyirci değil").
+  · `_TOHUM.md` yazıldı — 6 sekans ajanının ortak doğruluk seçkisi (kadraj kotası, ayna
+    sözleşmesi, zorunlu ENTRY/EXIT).
+  · 56 kare prompt'u 6 paralel ajanla SIFIRDAN yazıldı → `PROMPTLAR/S1..S7.txt`
+  · 3 referans plakası basıldı ve gözle onaylandı (11 tur, 8 red) → `REFERANSLAR/` + rafa kopya
+
+ÖLÇÜM — eski set ↔ yeni set
+  LIGHT benzersiz sürüm     1/56  →  56/56
+  ENTRY/EXIT STATE          0/56  →  56/56
+  @mira'nın kare sayısı      ~13  →  11 (kota)
+  ardışık aynı ölçek     ölçülmemiş → yok
 
 DEVRALINACAK NOKTA — tek cümle
-  Kareler ve MOTION/ hazır. Sıradaki adım DOĞRUDAN KLİP BASIMI; yeniden yazılacak
-  hiçbir prompt yok. Klip basımından önce INTRO + RİSK CANARY (8 klip) koşulmadı.
+  Prompt'lar ve plakalar hazır. Sıradaki adım DOĞRUDAN 56 KARENİN BASIMI (Magnific/NB2,
+  75 kredi/kare, ~4.200 kredi). Mami'nin emri: image'dan sonra DUR, klip basma.
 
-YENİDEN AÇMAK İÇİN
-  node scripts/current-work.mjs kapat            # önce aktif işi kapat
-  node scripts/current-work.mjs baslat "6. Sınıf - Denetleyici ve Düzenleyici Sistemler" --faz motion
-  node scripts/is-emri.mjs ac "6. Sınıf - Denetleyici ve Düzenleyici Sistemler" --kare 56
+MEDYA RUTİNİ — dört yer, tahmin edilmez
+  yeni kareler   → images/
+  eski kareler   → _ESKI/images/   (silinmez)
+  plakalar       → ../elements/    (ortak raf: maket.png · mutfak.png · koridor.png)
+  klip ve ses    → /Users/Muhammet/Desktop/6. Sınıf Animasyonlar/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/
+                   (DÜZ klasör — alt klasör yok, klipler 1.mp4 … 56.mp4; EDIT orada yapılır)
 
-AÇIK NOT
-  · İş emri dosyası YOK — açılırken shot kaydı sıfırdan kurulacak, basılan 56 kare
-    `--asama basim --sonuc kabul` ile geriye dönük işlenmeli, yoksa kuzey yıldızı %0 okur.
+MAMİ'NİN İŞİ — bende değil
+  · SUNO (müzik) ve ElevenLabs (seslendirme). VO metni @mira'ya çevrildi, temiz.
+  · Kare kalitesinin son hükmü. Şüpheli kareler `_SUPHELI/` altına ayrılacak.
+
+AÇIK KARARLAR — Mami'ye soruldu, körleme yapılmadı
+  1. prompt-lint'in iki kuralı hiç yeşil yanamıyor (üç ajan bağımsız ölçtü):
+     `AYRICALIK`/`YÜKÜM` `\S{12,}` istiyor — doğal Türkçe cümle asla geçmiyor; ve insan
+     dedektörü Türkçe gövdeye karşı korumasız ("adlandırmanın" içindeki "man" → insan).
+     Onarım tek satır ama kod donmuş fazdayız.
+  2. K56'da duvar saati bilerek odak dışında — okunur ikinci bir saat ya aynayı ya
+     demlenmiş çayı yalanlar.
+  3. `_REFERANSLAR.txt` @mira'yı 13 karede listeliyor, kota 11 — envanter yeniden numaralanmalı.

@@ -38,7 +38,7 @@ AYRICALIK: zaman-çapası — bu kare aynı lens, aynı yükseklik ve aynı 07:1
 PLAN:  kahraman @mira, kadrajın sol üçte biri, göğüsten yukarı, dörtte üç sırttan · bir net insan ·
        ışık buğulu cam düzleminden geliyor; sağ yanağının kenarına, pervazın üst ahşabına ve süt
        tenceresinin emayesine değiyor — sol yanağı, boynu ve ocağın altındaki taban ışığın dışında ·
-       özne zeminden ayrılıyor: koyu örgü kazak, tam arkasında parlayan buğulu cam levhası ·
+       özne zeminden ayrılıyor: doygun kırmızı jarse omuz kütlesi, tam arkasında parlayan buğulu cam levhası ·
        FEDA: yüzünün sol yarısı okunmuyor, demliğin gövdesi ancak yarısına kadar görünüyor,
        saatin kadranı odağın dışında kalıyor.
 ENTRY STATE: Mutfak Mira'sız çalışıyor — çaydanlığın alt kabı kaynamış, üst demlikteki su hâlâ
@@ -81,15 +81,19 @@ EXIT STATE: Hiçbir şey değişmedi; kadrajın tek yeni öğesi eşikteki çocu
 [9 TEMAS]     Every object rests in contact with its surface: the milk pan's rim of base sits into a
               tight dark contact shadow on the stove top, the upturned tumbler leaves a small ring of
               shadow on the table, the clock case throws a soft occlusion onto the wall beneath it.
-STYLE: Continuous dimensional feature-animation CGI, appeal-driven shape language. Knitted wool
-reads fibre by fibre; the jamb's painted wood shows grain, old dents and a worn edge; enamel is
+STYLE: Continuous dimensional feature-animation CGI, appeal-driven shape language. Brushed cotton
+sweatshirt jersey reads with a soft raised nap that takes light as a low even sheen, its seams
+thickening slightly where they are stitched and the hood cord ending in a small hard metal tip;
+denim reads as woven diagonal twill with pale abrasion along its seams; the jamb's painted wood
+shows grain, old dents and a worn edge; enamel is
 fired glass over metal with dark metal showing at one chipped rim; fogged glass is a matte
 scattering sheet that carries light without carrying image. Skin is subsurface-scattered, never
 clay. Painted soft occlusion pools in the jamb corners and reads warm-dark rather than black.
 No cel outline, no toon shader, no photoreal capture.
 LIGHT AND PALETTE: Cool snow-white daylight dominates and the complementary bounce runs warm-honey
 in the shadows, exactly the reverse of a warm-key room — this is the one cool-key frame of the
-sequence. Wool sits in a deep saturated primary with visible fibre; the stove iron holds
+sequence. The sweatshirt jersey sits in a deep saturated primary with a soft napped surface and
+the denim answers a shade cooler and deeper; the stove iron holds
 brown-ochre; the fogged glass is the brightest value in frame. Every shadow is a coloured indigo,
 never a grey or a black hole.
 TEXT: The wall clock's fired enamel dial — a fixed mass, screwed to the wall, its face square to

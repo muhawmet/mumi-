@@ -293,93 +293,110 @@ cat. No English lettering, no summary table, no caption.
 -----
 
 
-### K56 | VO56 "Mira'nın çayı demlenmiş, buğulu cam yeniden açılmıştı." · yazı: YOK · KARAKTER · ORTA (Mira) · 🔴 AYNA
-🔴 K01'İN İKİZİ. Aynı 50mm lens · aynı yükseklik (mutfak kapısı eşiği, göğüs hizası) ·
-   aynı saat (07:10) · aynı ışık düzeni. Değişen YALNIZ üç şey: çay, bardak, cam.
-   Saat kadranı odak dışıdır ve okunmaz (bkz. dosya başı sözleşmesi). İki kare de yazısızdır.
-FİKİR: Aynı kapı, aynı ışık, aynı sabah — ve odanın üç yerinde zamanın geçtiği görünüyor.
-       Demlikteki su renksizken şimdi dipten tepeye tek renk koyu amber; ters duran boş
-       bardak şimdi düz ve ağzına kadar dolu; tamamen buğulu cam şimdi alt yarısından
-       açılmış ve karlı bahçe berrak. Hiçbiri anlatılmıyor, hepsi duruyor. Yavaşın kanıtı
-       bu: hiçbir an görülmedi, sonucu her yerde.
-YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "Mira'nın" (sahiplik) → eli çoktan bardağın çevresinde, bardak
-       tezgâhta duruyor, kaldırılmıyor · "çayı" → demlikteki çay dipten tepeye tek renk koyu
-       amber, bardaktaki aynı renk · "demlenmiş" (tamamlanmış geçmiş) → demlenme anı
-       kadrajda yok, yalnız sonucu var · "buğulu cam" → camın üst yarısı hâlâ mat ve saçıcı ·
-       "yeniden açılmıştı" → alt yarısı berrak ve yansıtıcı, karlı bahçe net görünüyor,
-       sınırda su damlacıkları toplanmış.
-AYRICALIK: ANİMASYON-AYRICALIĞI. Aynı kadrajın iki kez, saniyesi saniyesine aynı lens ve aynı
-       ışıkla kurulup yalnız üç maddesinin hâl değiştirmesi — gerçek çekimde bu bir set
-       tutarlılığı problemidir; burada zamanın kendisi kadraja üç maddede yazılmış olur.
-PLAN:  kahraman @mira ama kadrajın sağ üçte biri; asıl olay arkasındaki üç madde ·
-       net insan 1 · ışık camın açılmış yarısından ve buğulu yarısından geliyor, çayın ve
-       bardağın İÇİNDE amber var; Mira'nın eline, yüzüne ve saçına DEĞMİYOR · özne zeminden
-       arkadaki berrak cam yarısının parlak değeriyle ayrılıyor · FEDA: yüzünün üst yarısı
-       kendi saçının gölgesinde kalıyor, gözünün biri okunmuyor.
-ENTRY STATE: Mutfak kapısından bakılıyor; çay demlenmiş, bardak dolu, camın alt yarısı
-       açılmış; Mira tezgâhta, eli bardağın çevresinde, gözü aşağıda.
-EXIT STATE:  Hiçbir şey değişmiyor — film burada duruyor; üç madde de yeni hâlinde kalıyor.
+### K56 | VO56 "Mira'nın çayı demlenmiş, buğulu cam yeniden açılmıştı." · yazı: saat kadranı (odak dışı, okunmaz) · KARAKTER · ORTA (Mira) · 🔴 AYNA
+🔴 K01'İN İKİZİ — S1.txt'teki K01 OKUNARAK yazıldı. Aynı 50mm f/2.0 · aynı göz hizasının bir
+   tık altı · aynı koridor eşiği · aynı dörtte üç sırttan bakış · aynı soğuk kar-key + sıcak-bal
+   sıçrama · sol kenarda aynı odak dışı pervaz çapası · aynı sarkaç.
+   DEĞİŞEN ÜÇ ŞEY: demlikteki su → dipten tepeye tek renk koyu amber · masadaki bardak → düz ve
+   ağzına kadar dolu · pencere → alt yarısı silinmiş, karlı bahçe berrak.
+   DÖRDÜNCÜ VE TEK EK FARK, bilerek: çocuk artık eşikte DURMUYOR, mutfak tarafına geçmiş.
+   Açılışta eli pervazdaki en üst boy çizgisindeydi; burada el pervazı yeni bırakmış.
+   ⚠ SAAT KARARI: K01 kadranı 07:10'u yumuşak odakta okutuyor. K56'da kadran DAHA derin odak
+   dışında ve akrep-yelkovan seçilmiyor — çünkü çay demlendiyse zaman geçmiştir ve okunur ikinci
+   bir saat ya aynayı ya çayı yalanlar. Bu bir yönetmen kararıdır; Mami tersini isterse tek
+   düzeltme kadranın netliğidir.
+FİKİR: Aynı eşik, aynı ışık, aynı sarkaç — ve odanın üç yerinde zamanın geçtiği duruyor.
+       Hiçbiri anlatılmıyor, hepsi olmuş bitmiş. Filmin ilk karesinde ders başlamamıştı ve
+       kadrajda hiç kavram ışığı yoktu; burada ders bitti ve yine hiç kavram ışığı yok —
+       amber artık bir ışık değil, demlenmiş çayın kendi rengi. Yavaşın kanıtı bu.
+YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "Mira'nın" (sahiplik) → bardak onun bıraktığı yerde, masada, dolu;
+       odada ondan başka kimse yok · "çayı" → üst demlikte su değil, dipten tepeye tek renk koyu
+       amber; masadaki bardakta birebir aynı renk · "demlenmiş" (tamamlanmış geçmiş) → demlenme
+       anı kadrajda yok, yalnız sonucu duruyor · "buğulu cam" → camın üst yarısı hâlâ mat ve
+       saçıcı, dışarısı oradan hiç görünmüyor · "yeniden açılmıştı" → alt yarısı silinmiş,
+       berrak ve yansıtıcı; karlı bahçe oradan net; sınırda su damlacıkları toplanmış.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Aynı kadraj, aynı lens ve aynı ışık ikinci kez kusursuz
+       kuruluyor ve yalnız üç maddenin hâli değişiyor. Gerçek çekimde bu "aynı set, iki ayrı
+       gün" işidir ve asla tam tutmaz — bir gölge kayar, bir ışık döner. Animasyonda tek karar,
+       ve zamanın kendisi kadraja üç maddede yazılmış olur.
+PLAN:  kahraman @mira, kadrajın sol üçte biri, göğüsten yukarı, dörtte üç sırttan — K01 ile
+       birebir aynı yer · bir net insan · ışık camın buğulu üst yarısından ve silinmiş alt
+       yarısından geliyor; sağ yanağının kenarına, pervazın üst ahşabına ve süt tenceresinin
+       emayesine değiyor, tabana ULAŞMIYOR · özne zeminden koyu örgü kazak ile arkasındaki
+       parlak cam levhası arasındaki değer farkıyla ayrılıyor · FEDA: yüzünün sol yarısı
+       okunmuyor, demliğin gövdesi yarısına kadar görünüyor, saatin kadranı odağın dışında.
+ENTRY STATE: Mutfak sakin ve aydınlık; çay demlenmiş, bardak masada düz ve dolu, camın alt
+       yarısı silinmiş. Mira eşiği geçmiş, mutfak tarafında, eli pervazı yeni bırakmış.
+EXIT STATE:  Film burada duruyor. Üç madde de yeni hâlinde kalıyor; hiçbiri geri dönmüyor.
 -----
-[1 LENS]      50mm at f/2.2, camera standing in the kitchen doorway at chest height, exactly
-              the same position, height and framing as the film's opening shot,
-              three-quarter into the room — the door jamb blurred down the near left edge as
-              the same foreground anchor.
-[2 ÖZNE]      — @mira has her hand already closed around the tall-waisted glass where it
-              stands on the worktop, filled to its brim, her eyes down on it and never on
-              the camera.
+[1 LENS]      50mm lens at f/2.0, camera a touch below eye level standing in the hallway
+              doorway, medium three-quarter rear view past the girl's left shoulder into the
+              kitchen — the identical setup of the film's opening shot, with the painted door
+              jamb running down the left edge of the frame as a dark out-of-focus anchor so
+              the composition never falls into one-point symmetry.
+[2 ÖZNE]      — @mira has crossed the threshold and come to a stop on the kitchen side, her
+              weight settled onto one leg, the fingertips of her left hand only just off the
+              door jamb behind her, her eyes already on the wiped lower half of the window.
 [3 KİMLİK]    Skin stays matte with low specular and is never tinted green or grey. Framed
-              from mid-chest up, nothing below the chest is visible in this shot.
-[4 MEKÂN]     The setting is @mutfak from the doorway on a winter morning at ten past seven:
-              the stove behind her carries the double kettle, and the upper glass pot now
-              holds tea gone one single deep amber from its base right up to its rim; the
-              tall glass on the worktop stands upright and full to the brim with the same
-              amber; the window's lower half has been wiped clear so the snowy garden reads
-              sharp through it while its upper half stays fogged, with beads of water
-              collected along the line between them; the wooden-cased wall clock hangs in the
-              soft-focus plane with its dial unreadable.
-[5 IŞIK]      Exactly the light setup of the opening shot, unchanged: one motivated key of low
-              winter sun, which the fogged upper half of the pane spreads into a wide clean
-              panel while the wiped lower half lets it through hard and bright — the room
-              reads open, warm and snow-lit. Cool-violet bounce off the pale stone returns
-              into the shadow side of Mira's face at roughly a third of key so it stays fully
-              modelled. A warmer second source from the stove mouth rims her shoulder.
-[6 KAVRAM]    A slow warm-golden light lives inside the tea itself, in the glass pot and in
-              the filled glass alike, deepest at the base and thinning upward with no
-              boundary you could point to, and the same amber has settled into the worktop
-              stone beneath the glass; it never crosses onto Mira's hand, her sleeve, her
-              face or her hair.
-[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam lifting off the full glass and
-              crossing the cleared lower pane, snow falling slowly in the garden beyond that
-              clear half, and a single bead of water running down the boundary where the fog
-              stops.
-[8 DERİNLİK]  Depth in three layers — the door jamb blurred into a soft dark bar down the
-              near left, Mira's hand and the full glass sharp together on the middle plane,
-              the stove, the kettle, the clock and the half-cleared window falling away into
-              soft focus.
-[9 TEMAS]     The glass rests in contact with the stone under its own weight, her fingers
-              wrapped around it without lifting it, and a tight wet ring of contact shadow
-              sits under its base; the kettle rests in contact with the stove ring and
-              nothing in the frame floats.
-STYLE: Dimensional 3D feature-animation CGI with subsurface-scattered skin that reads tactile
-rather than plastic, one small catchlight in the lit eye only and painted iris depth. Knitted
-wool reads as real fibre with loose halo hairs. Thin-waisted glass is genuine glass — thick
-at the foot, a bright vertical caustic on its curve, its colour living in the liquid. Fogged
-glass is matte and scattering above, clear and reflective below, with beads gathered on the
-line between. Dark stone is mineral and matte. No photographic capture, no cel outline.
-LIGHT AND PALETTE: The same bright winter morning as the opening frame, unchanged in
-direction, height and warmth; the room is open and cheerful and no corner falls away.
-Shadows are deep cool indigo, coloured and filled. Palette behaves as warm honey in the
-skin's subsurface, one single deep amber in both the pot and the glass, cool violet in the
-shadow, mineral grey-blue in the worktop, and a cold snow-white through the cleared pane.
-TEXT: clean plate — no on-screen text in this frame, exactly as in the opening shot. The
-clock's dial is held in soft focus with its numerals and hands unreadable, the canister's
-lettered face is turned into the room, and the jars show only glazed shoulders, so every
-surface is dressed and none is legible.
-NEGATIVE: Only three things differ from the opening frame and nothing else moves: the tea is
-one single deep amber from base to rim, the glass stands upright and full, and the lower half
-of the pane is wiped clear onto a sharp snowy garden. The upper half of the pane stays fogged
-and the garden is unreadable through it. The clock's hands stay unreadable. No golden light
-touches Mira's hand, face, hair or clothing. She is alone in the kitchen and never looks at
-the camera. No organ, model, body interior or diagram. No English lettering, no caption, no
-end card.
+              from mid-chest up — nothing below the chest is in the frame, and no arm, hand or
+              shoulder ends at a frame edge; the figure reads whole to the edge of the crop.
+[4 MEKÂN]     The setting is @mutfak seen from the @koridor threshold, the same view as the
+              opening shot: the twin-tier kettle on the lit stove ring, its wide lower water
+              pot steaming and its smaller upper pot now holding tea that is one single deep
+              amber from its base right up to its rim; the enamel milk pan on the wood stove;
+              the window plane behind it fogged across its whole upper half and wiped clear
+              across its lower half, so the snowy garden reads sharp only through the clear
+              part; the slim-waisted glass tumbler standing upright on the table, filled to
+              its brim with that same amber; and the walnut-cased wall clock high on the
+              right wall.
+[5 IŞIK]      The motivated key is the window itself, exactly as in the opening shot: a broad
+              high sheet of snow-returned daylight, now coming through the wiped lower half
+              hard and clean as well as spreading across the fogged upper half, so the whole
+              room reads bright and open. It lands on the edge of her right cheek, on the top
+              face of the door jamb and on the wet-looking enamel of the milk pan, and it
+              stops before the floor. The open stove mouth is again the second, lower and
+              warmer source, lifting warm light onto the underside of the kettle and dying at
+              the stove's foot. Bounce fill is warm-honey off the limewashed wall at about a
+              third of the key, so the shadow side of her face stays fully modelled and
+              coloured rather than sunk.
+[6 KAVRAM]    — no concept glow anywhere in this frame; the lesson is over and every warm
+              colour here belongs to a real thing in the room. The amber in the upper pot and
+              in the tumbler is the tea's own brewed colour, not a light.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: a thin unbroken steam ribbon lifting off
+              the filled tumbler, the clock pendulum caught well off its vertical axis to one
+              side, and snow falling slowly in the garden beyond the wiped half of the glass.
+[8 DERİNLİK]  Depth in three layers — the out-of-focus door jamb and a coat sleeve on its hook
+              in the near foreground, @mira and the stove crisply resolved in the middle, the
+              half-fogged half-cleared window plane behind them reading as the brightest field
+              in frame with the snowy garden softly present only through its lower part.
+[9 TEMAS]     Every object rests in contact with its surface: the milk pan's base sits into a
+              tight dark contact shadow on the stove top, the filled tumbler stands on the
+              table inside a small wet ring of contact shadow, and the clock case throws a
+              soft occlusion onto the wall beneath it.
+STYLE: Continuous dimensional feature-animation CGI, appeal-driven shape language. Knitted
+wool reads fibre by fibre; the jamb's painted wood shows grain; enamel is
+fired glass over metal with dark metal at one chipped rim. The window is one sheet in two
+states — matte and scattering above, clear and reflective below, beads gathered along the
+line between. The slim tumbler is thick at the foot with a bright vertical caustic, its
+colour in the liquid. Skin is subsurface-scattered, never clay. No cel outline, no toon
+shader, no photoreal capture.
+LIGHT AND PALETTE: Cool snow-white daylight dominates again and the complementary bounce runs
+warm-honey in the shadows — the same reversed key as the opening frame, unchanged in
+direction and height. The wiped lower pane is now the brightest value in frame and the fogged
+upper pane sits just under it. Wool holds a deep saturated primary with visible fibre, the
+stove iron holds brown-ochre, and one single deep amber sits in both the upper pot and the
+tumbler. Every shadow is a coloured indigo, never grey and never a black hole.
+TEXT: The wall clock's fired enamel dial — the same fixed mass screwed to the wall, its
+numerals baked into the enamel — is held in deeper soft focus than in the opening shot, and
+neither hand is legible at this distance. No other surface in this frame carries a readable
+word: the shelf tins are turned so their plain backs face camera and the canister's lettered
+face points into the room, so every surface is dressed and none is legible.
+NEGATIVE: Exactly three things have changed from the opening frame and nothing else: the tea
+in the upper pot is one single deep amber from base to rim, the tumbler stands upright and
+filled to its brim on the table, and the lower half of the window has been wiped clear onto a
+sharp snowy garden. The upper half of the pane stays fogged and nothing is visible through
+it. The clock's hands stay illegible. No concept glow of any kind appears; nothing warm
+touches Mira's hand, face or hair beyond the room's own daylight. She is alone in the kitchen
+and never looks at the camera. No adult, no disembodied hand. No arrow, label line, chart,
+inset panel or diagram. No photoreal human skin.
 -----
