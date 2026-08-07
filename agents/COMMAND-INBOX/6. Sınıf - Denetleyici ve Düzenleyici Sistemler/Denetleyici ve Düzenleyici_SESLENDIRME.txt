@@ -1,86 +1,92 @@
 DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SESLENDİRME METNİ (ElevenLabs)
 =========================================================================
+🔴 BU DOSYA _SENARYO.txt DOSYASINDAN TÜRETİLİR — elle düzenlenmez.
+   Senaryo değişirse bu dosya yeniden üretilir; iki metin AYRIŞAMAZ.
+   (Ölçüldü 2026-08-07: ayrıştıkları için bu dosya silinmiş mutfak dünyasını
+    anlatıyordu ve onaylı konser salonu karelerinin üstüne binecekti.)
 Konu: Denetleyici ve Düzenleyici Sistemler · 6. Sınıf Fen Bilimleri
 Anlatıcı: dış ses (Mira ekranda GÖRÜNÜR ama KONUŞMAZ, ağız hareketi yok)
 BİR CÜMLE = BİR KLİP. Hiçbir cümle 12 kelimeyi aşmaz.
-Ton: meraklı, sakin, çocuğa yukarıdan bakmayan. Anlatan; sunucu değil.
+Ton: kaynağın istediği gibi — ENERJİK, MERAKLI, EĞLENCELİ. Anlatan; sunucu değil.
 İngilizce yok. Terimler Türkçe okunur.
-Kare: 56 · Tahmini süre: ~4:25
+Kare: 58 · Tahmini süre: ~4:05
 =========================================================================
 
 
-===== SEKANS 1 — MUTFAK KAPISI: HER ŞEY AYNI ANDA =====
-1. Mira kış sabahı mutfağın kapısında durdu.
-2. Ocakta çaydanlık ısınıyor, duvardaki saat işliyordu.
-3. Cam buğulanmış, sobanın üstünde süt tenceresi duruyordu.
-4. Onlarca iş aynı anda oluyor, hiçbiri çarpışmıyordu.
-5. Mira'nın vücudunda da tam o anda onlarca iş sürüyordu.
-6. Kalbi atıyor, ciğerleri nefes alıyor, kasları çalışıyordu.
-7. Peki bütün bunları aynı anda kim yönetiyordu?
-8. Cevap iki sistemdeydi: sinir sistemi ve iç salgı bezleri.
+===== SEKANS 1 — ORKESTRA: ONLARCA İŞ, TEK UYUM (konser salonu) =====
+1. Sahnede onlarca müzisyen aynı anda çalıyordu.
+2. Yaylar, nefesliler, davullar; hepsi bir arada.
+3. Ama ortada hiçbir kargaşa yoktu.
+4. En öndeki tek kişi elini havaya kaldırdı.
+5. O bir orkestra şefiydi.
+6. Bageti indi ve bütün salon aynı anda konuştu.
+7. Mira ön sırada oturmuş, o eli izliyordu.
+8. Onlarca enstrüman, tek bir uyum.
 
 
-===== SEKANS 2 — SİNİR SİSTEMİ: IŞIK HIZINDA AĞ =====
-9. Sinir sistemi milyonlarca sinir hücresinden oluşur.
-10. Bu hücrelere nöron denir.
-11. Nöronlar mesajları elektrik sinyalleri gibi taşır.
-12. Bu yüzden sinir sistemi çok hızlı çalışır.
-13. Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır.
-14. Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur.
+===== SEKANS 2 — AYNI ORKESTRA İÇERİDE (bedenin içi) =====
+9. Mira avucunu göğsüne koydu.
+10. İçeride de tam o anda onlarca iş sürüyordu.
+11. Kalbi atıyor, ciğerleri nefes alıyor, midesi sindiriyordu.
+12. Hiçbiri ötekiyle çarpışmıyordu.
+13. Peki bu orkestrayı kim yönetiyordu?
+14. Cevap iki sistemde: sinir sistemi ve iç salgı bezleri.
+15. Biri ışık hızında konuşur, öteki sabırla.
 
 
-===== SEKANS 3 — BEYİN VE BEYİNCİK =====
-15. Mira masadaki plastik maketi kendine doğru çevirdi.
-16. En üstteki büyük kısım beyindir.
-17. Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir.
-18. Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır.
-19. Ekmek kokusunu alıp acıktığını fark etmesi bu yüzdendi.
-20. Maketin arka alt tarafındaki küçük kısım beyinciktir.
-21. Beyincik kaslarımızın uyumlu çalışmasını sağlar.
-22. Dengede kalmamızı da beyincik yönetir.
-23. Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz.
+===== SEKANS 3 — IŞIK HIZINDA AĞ (bedenin içi · nöron) =====
+16. Sinir sistemi vücudumuzu milyonlarca sinir hücresiyle bir ağ gibi sarar.
+17. Bu hücrelere nöron denir.
+18. Nöronlar mesajı elektrik sinyali gibi taşır.
+19. Bu yüzden haber ışık hızında gider.
+20. Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır.
+21. Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur.
 
 
-===== SEKANS 4 — OMURİLİK SOĞANI VE REFLEKS =====
-24. Beyinciğin yanındaki ince yapı omurilik soğanıdır.
-25. Omurilik soğanı iç organların istemsiz çalışmasını yönetir.
-26. Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir.
-27. Mira camı buğulandırırken nefesini hiç düşünmemişti.
-28. Hapşırmak, öksürmek ve yutkunmak da omurilik soğanının işidir.
-29. Rafın tozu burnunu gıdıklayınca Mira hapşırdı.
-30. Maketin aşağı inen uzun kısmı omuriliktir.
-31. Omurilik, beyin ile vücut arasında mesaj taşır.
-32. Mira sıcak çaydanlığın sapına dokunup elini anında çekti.
-33. Bu ani ve istemsiz tepkiye refleks denir.
-34. Reflekslerin yönetim merkezi omuriliktir.
+===== SEKANS 4 — BEYİN VE BEYİNCİK (maket · denge anı) =====
+22. Mira masadaki maketi kendine doğru çevirdi.
+23. En üstteki büyük kısım beyindir.
+24. Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir.
+25. Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır.
+26. Arka alttaki küçük kısım ise beyinciktir.
+27. Beyincik kaslarımızın uyumlu çalışmasını sağlar.
+28. Dengede kalmamızı da beyincik yönetir.
+29. Mira tek ayak üstünde durdu ve sallanmadı.
+30. Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz.
 
 
-===== SEKANS 5 — İÇ SALGI BEZLERİ: YAVAŞ HABERCİ =====
-35. Peki daha yavaş ve uzun süren işleri kim yönetir?
-36. Bu işleri iç salgı bezleri üstlenir.
-37. İç salgı bezleri hormon denilen kimyasal maddeler salgılar.
-38. Hormonlar doğrudan kana karışır ve yavaşça yayılır.
-39. İç salgı bezlerinin lideri hipofiz bezidir.
-40. Hipofiz bezi büyüme hormonu salgılar.
-41. Kapı pervazındaki çizgiler yıllar içinde yukarı çıkmıştı.
-42. Boynumuzda yer alan tiroit bezi tiroksin hormonu üretir.
-43. Tiroksin metabolizma hızımızı ve büyümemizi düzenler.
+===== SEKANS 5 — OMURİLİK SOĞANI VE REFLEKS (gerçek anlar) =====
+31. Beyinciğin yanındaki omurilik soğanı iç organları istemsiz çalıştırır.
+32. Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir.
+33. Hapşırmak, öksürmek ve yutkunmak da onun işidir.
+34. Mira hapşırdı ve bunu hiç düşünmemişti.
+35. Aşağı inen uzun kısım omuriliktir; beyinle vücut arasında mesaj taşır.
+36. Mira sıcak çaydanlığın sapına dokundu.
+37. Elini düşünmeden, anında geri çekti.
+38. Bu ani ve istemsiz tepkiye refleks denir.
+39. Reflekslerin yönetim merkezi omuriliktir.
 
 
-===== SEKANS 6 — ŞEKER, ALARM VE ERGENLİK =====
-44. Pankreas kandaki şeker dengesini kurar.
-45. Şeker yükselince pankreas insülin hormonu salgılar.
-46. Şeker düşünce ise glukagon hormonu salgılar.
-47. Böbrek üstü bezleri adrenalin hormonu salgılar.
-48. Korktuğumuzda ya da heyecanlandığımızda adrenalin bizi alarma geçirir.
-49. Raftan düşen tencerenin sesi Mira'yı yerinden sıçrattı.
-50. Ses bir anda bitti, ama kalbi uzun süre hızlı attı.
-51. Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır.
-52. Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar.
+===== SEKANS 6 — YAVAŞ HABERCİ (kan dolaşımı · lunapark) =====
+40. Peki daha yavaş ve uzun süren işleri kim yönetir?
+41. Onları iç salgı bezleri üstlenir; hormon denilen maddeler salgılarlar.
+42. Hormonlar doğrudan kana karışır ve yavaşça yayılır.
+43. İç salgı bezlerinin lideri hipofiz bezidir; büyüme hormonu salgılar.
+44. Boynumuzdaki tiroit bezi tiroksin hormonu üretir.
+45. Tiroksin metabolizma hızımızı ve büyümemizi düzenler.
+46. Pankreas kandaki şeker dengesini kurar.
+47. Şeker yükselince insülin, düşünce glukagon salgılar.
+48. Böbrek üstü bezleri adrenalin hormonu salgılar.
+49. Hız treni tepede bir an durdu, sonra aşağı bıraktı.
+50. İşte o duygunun adı adrenalindi.
+51. Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı.
+52. Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır.
+53. Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar.
 
 
-===== SEKANS 7 — FARK VE AYNA =====
-53. Sinir sistemi elektrik sinyalleriyle, hızlı ve kısa süreli çalışır.
-54. İç salgı bezleri hormonlarla, yavaş ve uzun süreli çalışır.
-55. İkisi birlikte vücudumuzun iç dengesini korur.
-56. Mira'nın ekmeği kabarmış, buğulu cam yeniden açılmıştı.
+===== SEKANS 7 — İKİ ŞEF, TEK UYUM (kapanış · konser salonu) =====
+54. Sinir sistemi çok hızlı çalışır, etkisi kısa sürer.
+55. İç salgı bezleri yavaş çalışır, etkisi uzun sürer.
+56. İkisi birlikte vücudumuzun iç dengesini korur.
+57. Salonda son akor çalındı ve şefin eli indi.
+58. Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu.

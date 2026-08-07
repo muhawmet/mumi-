@@ -71,10 +71,30 @@ koduyla bloke edildi, ana oturumunki açık geçti, kredi değişmedi.
 (plaka klonu · İngilizce etiketli beyin · gövdesiz karakter · karakter künye sayfası).
 
 **ÖNCE ONARILACAK — tek kare üretimden önce:**
-1. `@mira` plakası sahne rejiminde yeniden basılır (aşağıdaki öğrenilen madde). ~75 kredi.
-2. VO örtüşmesi: `teslim-denetim` 17/56 cümlenin karesi yok diyor
-   (K1-K2 · K19-K20 · K25 · K27-K30 · K32 · K45-K46 · K48-K50 · K53-K54).
-   Ölç: gerçekten eksik mi, yoksa sayaç yerleşim mi varsayıyor (bu repoda 11 kez oldu).
+
+1. ✅ **YAPILDI 2026-08-07 — `@mira` plakası sahne rejiminde yeniden basıldı.** 2 varyant,
+   150 kredi, `imagen-nano-banana-2-flash`, referans eski plaka (`1lLXJFpr4r`), 1:1.
+   Kurulan: `elements/mira.png` = **varyant B** (kimlik korundu · çilli ten + subsurface ·
+   fleece nap ve denim twill okunuyor · soldan yönlü key · ışıklı fon, beyaz boşluk yok ·
+   bel üstü 3/4, tam-boy poz plakası DEĞİL). Eski düz plaka `mira-DUZ-ISIK-ARSIV.png`.
+   Varyant A reddedildi: ışığı daha sert ama **çenedeki gölge sakal okuyor** —
+   `images/mami-bak/PLAKA-A-cenede-golge-sakal-okuyor.png`.
+   ⏳ Mami'nin son hükmü bekleniyor.
+
+2. 🔴 **ÖLÇÜLDÜ 2026-08-07 — "17/56 cümlenin karesi yok" YANLIŞ SORU.**
+   Sayaç aritmetikte haklı, **dosyada yanlış**: `_SESLENDIRME.txt` ve
+   `_SESLENDIRME-TEK-BLOK.txt` hâlâ **MUTFAK VO'su** (56 cümle). Canlı metin
+   `_SENARYO.txt` (66 cümle, orkestra dünyası, kaynaktan türetilmiş, commit `f3f79d87`).
+   O commit iki VO dosyasında **yalnız 2 satır** değiştirdi — gövde taşınmadı.
+   **Kanıt:** VO cümle 1 = *"Mira kış sabahı mutfağın kapısında durdu."*
+   Onaylı K01 ise konser salonu. Yani 17 kare eksik değil — **teslim setindeki VO,
+   silinmiş bir dünyayı anlatıyor.** ElevenLabs'a bu dosya giderse film orkestra
+   karelerinin üstüne mutfak anlatır.
+   ⚠ İkinci kusur: `_SENARYO.txt` başlığı *"Kare: 54 · ~4:20"* diyor, gövdesi **66 cümle**
+   sayıyor, dipnotu *"66 cümle ~4:40"* diyor. Kare sayısı kilitlenmeden iş emri kurulamaz
+   (`is-emri` hâlâ 56'lık eski planda).
+   **Bloke:** `_SENARYO.txt` dipnotu *"MAMİ ONAYINA SUNULDU — onaysız tek kare yazılmaz"*
+   diyor ve üç soru açık. Onay gelmeden K09+ yazılmaz.
 
 ## MAMİ KARARLARI
 
