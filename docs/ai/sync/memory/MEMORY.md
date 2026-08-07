@@ -31,6 +31,7 @@ Bağlamı: [Aktif üretim durumu](mamilas-aktif-uretim-durumu.md) — aktif iş,
 - [MAKRO kuralı](mamilas-makro-kurali.md) — kelime avlamak yasak; bulgu ancak bir YETENEĞİ açıklıyorsa raporlanır.
 - [Sürekli push emri](mamilas-surekli-push-emri.md) — her iş parçasından sonra commit+push, çöp dışarıda, sorulmaz.
 - [Skill kanonu GİT](mamilas-skill-kanonu-git.md) — bir skill adı yalnız `.claude/skills`'te yaşar; canlı yüzeydeki ikiz repo nüshasını gölgeler ve yazdığın kuralı öldürür. Duvar: `skillSurface.test.ts`.
+- [Hafıza nerede yaşar](mamilas-hafiza-nerede-yasar.md) — beş kayıt organı ve her birinin işi. Yeni oturum bunu nereden bulacak? Cevap 'sohbetten' ise o bilgi ölmüştür. Bankaya yalnız YETENEK değiştiren ders girer; tavan 13 satır.
 - [Taşıma yasası](mamilas-tasima-yasasi.md) — yazılmayan yasa bir `/clear` ömrü yaşar. Kanon repo'da, hafıza tamamlayıcı.
 - [Cılız sahne + yoğunluk](mamilas-ciliz-sahne-ve-yogunluk.md) — "seninkiler sadece güzel": altın kare ile cılız karenin 7 ölçülmüş farkı. 🔴 Kavram yazısı ETİKETE değil sahnenin MALZEMESİNDEN yazılır; etiket deseni yeni sette 7 karede geri sızmış.
 - [Üç kademeli göz](mamilas-uc-kademeli-goz.md) — AGY İŞARETÇİ · ffmpeg CETVEL · Claude'un Read'i HAKEM. claude-video'dan `kare-cek.mjs` fikri alınır, claude-mem'in otomatik özeti ALINMAZ. compact = kaza, /clear = karar.
