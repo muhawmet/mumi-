@@ -66,9 +66,17 @@ Buraya **hüküm** yazılır, anlatı değil.
 20. KURAL YAZMADAN ÖNCE ALTIN KAREYE BAK: bu oturumda üç kusurun üçü de kuralı kanıttan değil kendi çıkarımımdan yazmaktan doğdu
     *(Mira kotası (Mami'nin 'hep uzaktan olmasın' sözünü 'çıkar' diye okudum, 45 kare insansız), hücre dünyası ('oda aydınlık' tabanını hücreye uygulattım, mor sis), tarif edilen kız. Üçünü de düzelten şey aynıydı: Hücre K14/K28/K48 ve Hayvanlarda K01/K20'yi Read ile AÇIP BAKMAK)*
 
-23. 🔴 **ÜÇÜNCÜ DENEMEDE DUR — kareyi Mami'ye getir, dördüncüyü basma.** *(2026-08-07:
-    tek kare **altı kez** basıldı, **450 kredi**, ve doğru cevap teknik değil YÖNETMENLİK
-    kararıydı — Mami bakınca "maketi sök" dedi ve kare bir denemede oturdu. İki kez
+23. 🔴 **BARİZ HATA YOKSA REDDETME — MAMİ'YE SOR.** Mami'nin emri (2026-08-07):
+    *"bariz hata yoksa bana sor, belki kullanılabilirdi."* Ayrım net:
+    **kilit kırılmışsa** (ekranda yazı · süreklilik · dünya kaynakta yok · plaka ithali ·
+    ders yanlışı · iki türlü okuma) **ajan reddeder ve onarır.**
+    **Kilit kırılmamış, "aynı filmden görünmüyor" düzeyindeyse** karar AJANIN DEĞİL:
+    kare `mami-bak/` altına atılıp **sorulur**, sessizce çöpe gitmez.
+    *(Ölçüldü: aynı gün 8 red verildi, 2'sinde hiçbir kilit kırılmamıştı — biri "ölçek
+    kumaş gibi", biri "kubbe abajur gibi". İkisi de Mami'ye sorulmadan atıldı.)*
+    Buna bağlı ikinci kural: **iki redden sonra üçüncüyü basma, Mami'ye getir.**
+    *(Tek kare **altı kez** basıldı, **450 kredi**, ve doğru cevap teknik değil YÖNETMENLİK
+    kararıydı — Mami bakınca "maketi sök" dedi, kare bir denemede oturdu. İki kez
     reddettiğin kare bir prompt sorunu değil, bir TASARIM sorunudur.)*
 24. 🔴 **REFERANS KİMLİĞİ DİSKTEKİ DOSYAYI DEĞİL, MOTORDAKİ CREATION'I GÖSTERİR.** Plakayı
     yeniden basıp `elements/` içine kurmak **yetmez** — prompt'taki `references` kimliği de
