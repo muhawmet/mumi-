@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "GECE TURU — 14 commit. Yasada çelişki 5→0 · linter ifade dayatması 7→0 · teslim kapısı sahte kırmızı 3→0 · ANIMATIC-0 yazıldı (80sn plan hatasını klip basılmadan yakaladı) · mamilas-studyo skill'i (sekans omurgası) · dis-goz.mjs (dış gözler tek kapıda, 4 güvenlik açığı kapalı) · director-context bağlandı · AGY'nin GÖRSEL ÜRETTİĞİ ve REFERANS-EDİT yaptığı 4 sınavla kanıtlandı (video üretemiyor) · Sol regresyon avı: benim aynı gün soktuğum desen 122 motion'ı sessizce kaybediyordu, onarıldı · neg-ozel kör ölçeri onarıldı (Bileşke negVar 0→52). TERRA PUANI: 67 → 69. ÜRÜN başlığı 48'de KALDI.",
-  "nextAction": "🔴 TERRA'NIN 85'E ÜÇ ADIMI, sırayla: (1) TEK master film — SFX ve L/J kesimli, versiyonlanmış, timeline receipt'li, tam film izlenip Mami hükmü alınmış. Yeni video ÜRETME, elindeki 14 bitmiş işten 60-90 saniye çıkar. (2) 53/53 aynı motion açılışını sekans bazlı farklı giriş/çıkış ritmine çevir — kanıtı prompt değil GERÇEK KLİP denetimi. (3) PHD/MS ölçülebilir hale gelsin + yasadaki iki sessiz zayıflama (silhouette karşı-kanıtı, kesik-figür başlığı) geri kapatılıp regresyon testine çivilensin. AYRICA MAMİ KARARI: ONAY-BEKLEYEN.md 12 ders ✅/❌.",
+  "lastCompleted": "MAMILAS OS kuruldu — 7 yeni organ (brifing plan-modu kapısı · is-emri shot omurgası · rota motor+cüzdan · kare-cek hakem ayağı · uretim-defteri kuzey yıldızı+üç vuruş · lj-kesim kurgu zekâsı · karar tek-ekran yüzeyi), 69 yeni test. Ölçüldü: Adobe kurgu yapamaz, Soul ID hattımızda çalışmaz, element rafı doluymuş (9), Kling referansı cüzdana bağlı.",
+  "nextAction": "Mami hedef konuyu verecek → brifing.mjs ile plan modu açılır, altı kilit kapanır, is-emri kurulur, 2 dünya canary basılır",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -13,13 +13,13 @@
     "REFERANSLAR": true,
     "PROMPTLAR": true,
     "revize": true,
-    "MOTION": true,
+    "MOTION": false,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-05T21:24:57.581Z",
+  "updatedAt": "2026-08-07T08:06:27.260Z",
   "updatedBy": "claude",
-  "baseCommit": "e11f4b2d"
+  "baseCommit": "99325c64"
 }
