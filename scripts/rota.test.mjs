@@ -8,6 +8,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import {
   FILM_KARE, FILM_KLIP, FIYAT, RotaError, VARSAYILAN,
+  ELEMENT_ORAN, SAHNE_ORAN, SUREKLILIK_CAST,
   fiyatTablosu, filmKapasitesi, main, rafYaz, sec, usage,
 } from './rota.mjs';
 
@@ -91,6 +92,25 @@ describe('rota — element rafı', () => {
     const yol = path.join(dizin, 'raf.json');
     expect(() => rafYaz({ items: [] }, { yol })).toThrow(RotaError);
     expect(() => rafYaz({ items: [{ name: 'ogr' }] }, { yol })).toThrow(RotaError);
+  });
+});
+
+describe('rota — Mami\'nin element kuralı', () => {
+  it('element 1:1, sahne 16:9 — ikisi karışmaz', () => {
+    expect(ELEMENT_ORAN).toBe('1:1');
+    expect(SAHNE_ORAN).toBe('16:9');
+  });
+
+  it('süreklilik odağı Mira ve Efe — geri kalan element tek seferlik', () => {
+    expect(SUREKLILIK_CAST).toEqual(['mira', 'efe']);
+  });
+
+  it('durum ekranı süreklilik cast\'i rafta yoksa UYARIR', () => {
+    const yol = path.join(dizin, 'raf.json');
+    rafYaz({ items: [{ name: 'ogr', id: 'a', medias: [{ url: 'https://x/y.png' }] }] }, { yol });
+    const raf = JSON.parse(readFileSync(yol, 'utf8'));
+    const eksik = SUREKLILIK_CAST.filter((ad) => !raf.elementler.some((e) => e.ad.includes(ad)));
+    expect(eksik).toEqual(['mira', 'efe']);
   });
 });
 

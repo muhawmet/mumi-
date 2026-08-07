@@ -6,19 +6,22 @@
 
 ## 1 — Tarlayı açan işler (önce bunlar)
 
-- [ ] **Element mutfağı.** Magnific kütüphanesi BOŞ (`library_list` → 0). Tekrar eden her element
-      bir kez tasarlanır → gözle onaylanır → id'si projeye yazılır. Süreklilik bu olmadan MCP
-      hattından kurulamıyor; tek yol `references:[{type:"image", identifier}]`.
-      30 saniyelik bir işte 18 element demek = 18 raf kaydı.
-- [ ] **`kare-cek.mjs`** (~40 satır): `<film> <t1-t2> [n]` → n kare PNG + o aralığın whisper
-      transkripti. Üç kademeli gözün HAKEM ayağı. Parçalar elde: ffmpeg · whisper · `Read`.
-      Donma ölçümü **ortalama mutlak fark** ile (md5 yalnız birebir aynıyı yakalıyor).
+- [x] ~~**Element mutfağı.**~~ **2026-08-07: raf BOŞ DEĞİLMİŞ.** Magnific `library_list` gerçekten 0,
+      ama **Higgsfield Elements'te 9 element duruyor**: `ogr` · `aras1` · `defne1` · `emin` · `ref` ·
+      `iye` · `taoni` · `logo` · `building`. `artifacts/element-rafi.json`'a indekslendi
+      (`rota.mjs raf-yaz`). Element `<<<element_id>>>` olarak prompt'a gömülüyor ve **NB2, NB Pro,
+      GPT Image 2, Seedream ve Kling 3.0** ile çalışıyor.
+      🔴 **Soul ID DÜŞTÜ:** yalnız `soul_2` / `soul_cinema` modellerinde çalışıyor, bizim hattımızda
+      (NB2 + Kling 3.0) çalışmıyor. Süreklilik yolu Element'tir, Soul değil.
+- [x] ~~**`kare-cek.mjs`**~~ **yazıldı (2026-08-07).** `<film> <aralık> [adet] [--ses]` → kareler +
+      transkript; donma **ortalama mutlak farkla** ölçülüyor. Üç kademeli gözün HAKEM ayağı kapandı.
 - [ ] **Gün sonu SORU-CEVAP kapısı.** `current-work.mjs kapat`'a bağlanır: 8-12 soru, ölçümden
       türetilmiş (hangi kare recreate edildi · hangi motion revize aldı · hangi lint yanlış çıktı),
       cevaplar **kareye bağlı ders adayı** olur. Tetikleyiciler: Mami'nin kelimesi ("bitti",
       "teslim ettim", "kapatalım") · kapatma komutu · kanıtı görüp Claude'un kendi açması.
-- [ ] **Recreate oranını ölçmeye başla.** Mami: *"karelerin neredeyse yarısını recreate ediyordum."*
-      İlk geçişte tutma oranı sistemin kuzey yıldızı — öğrenme iddiası ancak bu sayı düşerse doğru.
+- [x] ~~**Recreate oranını ölçmeye başla.**~~ **organ yazıldı (2026-08-07):** `is-emri.mjs` her denemeyi
+      kaydediyor, `uretim-defteri.mjs karne` **ilk basımda tutma oranını** basıyor. ⚠ Sayı henüz
+      DOLMADI — ilk gerçek üretim turunda dolacak. Organ var demek ölçüm var demek değildir.
 - [ ] **Dersleri DOĞRU organa yaz.** Bugünün dersleri hafızaya ve commit'e düştü; ama kare yazılırken
       okunan yer `PROMPT-YASASI` + `APPROVED.md`. Bir ders ikisine de düşmezse kareyi değiştirmiyor.
       → `agents/lessons/CANDIDATES-2026-08-06.md` Mami onayından geçince yasaya işlenir.
@@ -47,6 +50,48 @@
 - [ ] **`dis-goz.mjs sor` derinlik sınırı.** Ölçüldü: devam turu BİR TANE; ikinci takip 3/3
       `status:ERROR`. Sebep kanıtlanmadı (bağlam tavanı en olası). Kural şimdilik: takip soruları
       **tek çağrıda toplu**.
+
+## 3b — BAĞLI AMA HİÇ KULLANILMAMIŞ YÜZEYLER (2026-08-06'da sayıldı)
+
+Hepsi **çağrılabilir** durumda; hiçbiri **ölçülmedi**. Ölçüm yöntemi bugünkü unlimited ölçümüyle
+aynı: çağrı öncesi/sonrası bakiye + gözle sonuç.
+
+- [ ] **`higgsfield-soul-id` skill'i makinede KURULU** — yüz eğitip kimlik sabitliyor
+      (`reference_id` → `text2image_soul_v2`). Mira/Efe sürekliliğinin muhtemel çözümü.
+      Claude bunu iki hafta boyunca söylemedi; **kusur Claude'da** (öneri yetkisi ihlali).
+- [x] 🔴 **ADOBE ÖLÇÜLDÜ (2026-08-07) — KURGU MOTORU OLARAK KULLANILAMAZ.** Adobe'nin kendi routing
+      belgesi: *"Video trimming to timestamps — **not available**"* · *"Large batch processing
+      (>~20 files) — **not available**"* · video araçları **assetId** ister ve *"the assistant
+      cannot read or upload files from the user's local machine"* → yerel klip için tek yol
+      `asset_add_file()` **dosya seçici**, yani klip başına bir tıklama. `video_create_quick_cut`
+      bir **highlight reel** seçicisidir, sekans sırasına dizen timeline değil.
+      **Sonuç: kurgu `kaba-kurgu.mjs` (Premiere XML) + `ffmpeg` hattında kalır.** Adobe'den geriye
+      kalan tek gerçek aday `media_enhance_speech` (tek VO dosyası, tek tıklama).
+      ⚠ Adobe'nin kalan yüzeyini **Mami kendi araştırıyor** (2026-08-07).
+- [x] 🔴 **Higgsfield `faceless-channel-video` v2.1 KEŞFEDİLDİ** — anlatıcılı explainer / kids /
+      story videosu, 30 sn – 10+ dk, stil kilidi + tekrar kullanılan varlıklar, tek videoyu
+      sunucu tarafında bitiriyor. **Tam bizim kategorimiz.** Varlığı ölçüldü, **kalitesi ölçülmedi**;
+      Türkçe müfredat sadakati, dünya kilidi ve Mami'nin zevki orada YOK. Yerine geçen değil,
+      hızlandırıcı olabilir — ölçüm bir sonraki turda.
+- [ ] **Adobe MCP'nin kalan yüzeyi** (Mami araştırıyor): Firefly board · `image_generative_expand` /
+      `image_fill_area` (Firefly generative expand/fill) · `image_remove_background` ·
+      `image_vectorize` · InDesign/IDML · PDF · Express'e HTML aktarma · `video_create_quick_cut` /
+      `video_render` / `video_resize` · **`media_enhance_speech` (VO temizleme)** ·
+      `media_summarize` · font önerisi · CC depolama · **`asset_license_and_download_stock`
+      (Adobe Stock lisansla+indir — Envato'nun yerine geçebilir)**.
+- [ ] **Canva MCP bağlı** — brand kit, brand template, export. Müşteri sunumu ve portfolyo sayfası.
+- [ ] **Gmail MCP bağlı** — müşteri briefini okuyup enzim kilitlerine çevirmek, teklif draft'ı.
+      ⚠ Mami'ye bildirildi: bu yüzey Claude'a posta okuma yetkisi veriyor.
+- [ ] **Higgsfield**: 5.157 kredi · creator plan · Soul ID · video · 3D · dublaj · ses klonlama ·
+      upscale · virality predictor · `video_analysis`.
+- [ ] **Telefon bildirimi + zamanlanmış koşu** — "ben denizdeyim sen çalış" senaryosunun eksik
+      parçası. Batch bitince bildirim, kuyruk oturum olmadan koşabiliyor.
+- [ ] **Artifact yayınlama** — Upwork portfolyosu için özel web sayfası (showreel, önce/sonra).
+- [ ] **YOK olanlar:** Suno MCP yok (müzik: magnific `audio_music_generate` + Higgsfield Seed Audio) ·
+      Envato yok (yerine Adobe Stock) · AtomX yok. **ElevenLabs'e ayrı MCP GEREKMİYOR** —
+      magnific `audio_tts` sesleri zaten `provider: elevenlabs`, 10 Türkçe ses hazır.
+- [ ] 🔴 **Kural: her yeni videonun açılışında YETENEK TARAMASI.** "Geçen aya göre elimizde ne yeni
+      var, akışın hangi adımını kısaltır." Mami sormayacak, Claude getirecek.
 
 ## 4 — Mami'nin bekleyen kararları
 

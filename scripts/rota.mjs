@@ -36,6 +36,13 @@ const fail = (mesaj) => { throw new RotaError(mesaj); };
 export const FILM_KARE = 60;
 export const FILM_KLIP = 60;
 
+// Mami'nin kuralı (2026-08-07): **element 1:1, sahne 16:9.** Element bir kez üretilir ve
+// projelerden birike birike raf büyür — baştan hepsini kurmaya gerek yok, ihtiyaç çıkınca basılır.
+// Süreklilik odağı tekrar eden cast: **Mira ve Efe.** Geri kalan element tek seferliktir.
+export const ELEMENT_ORAN = '1:1';
+export const SAHNE_ORAN = '16:9';
+export const SUREKLILIK_CAST = Object.freeze(['mira', 'efe']);
+
 /**
  * Ölçülmüş fiyat tablosu. Hepsi `simulate_cost` / `generate cost` ile EXACT alındı.
  * Tarih damgası bilerek duruyor: fiyat değişirse bu tablo yalan söyler, ölçüm yenilenir.
@@ -157,9 +164,17 @@ export function durumMetni() {
   }
 
   satirlar.push('');
-  satirlar.push(raf?.elementler?.length
-    ? `   element rafı: ${raf.elementler.length} kayıt → ${raf.elementler.map((e) => e.ad).join(', ')}`
-    : '   element rafı BOŞ ya da indekslenmemiş — süreklilik referanssız kurulmuyor.');
+  if (raf?.elementler?.length) {
+    satirlar.push(`   element rafı: ${raf.elementler.length} kayıt → ${raf.elementler.map((e) => e.ad).join(', ')}`);
+    const eksik = SUREKLILIK_CAST.filter(
+      (ad) => !raf.elementler.some((e) => String(e.ad).toLocaleLowerCase('tr').includes(ad)));
+    satirlar.push(eksik.length
+      ? `   ⚠ süreklilik cast'i rafta YOK: ${eksik.join(', ')} — tekrar eden kimlik referanssız tutmuyor.`
+      : `   süreklilik cast'i rafta: ${SUREKLILIK_CAST.join(', ')}`);
+  } else {
+    satirlar.push('   element rafı BOŞ ya da indekslenmemiş — süreklilik referanssız kurulmuyor.');
+  }
+  satirlar.push(`   (element ${ELEMENT_ORAN} üretilir, sahne ${SAHNE_ORAN}; raf projelerden birike birike büyür)`);
   return satirlar.join('\n');
 }
 
