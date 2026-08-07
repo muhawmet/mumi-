@@ -2,7 +2,7 @@
   "surum": 1,
   "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
   "olusturuldu": "2026-08-07T08:09:12.816Z",
-  "guncellendi": "2026-08-07T10:24:19.132Z",
+  "guncellendi": "2026-08-07T11:58:01.002Z",
   "shots": [
     {
       "n": 1,
@@ -92,7 +92,7 @@
     {
       "n": 3,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -105,13 +105,23 @@
           "zaman": "2026-08-07T08:48:12.224Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.366Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 4,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -124,13 +134,23 @@
           "zaman": "2026-08-07T08:48:12.270Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.411Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 5,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -143,13 +163,23 @@
           "zaman": "2026-08-07T08:48:12.318Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.461Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 6,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -162,13 +192,23 @@
           "zaman": "2026-08-07T08:48:12.363Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 720,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.510Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 7,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -181,13 +221,23 @@
           "zaman": "2026-08-07T08:48:12.408Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.557Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 8,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -200,13 +250,23 @@
           "zaman": "2026-08-07T08:48:12.454Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.605Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 9,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -219,13 +279,23 @@
           "zaman": "2026-08-07T08:48:12.499Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.065Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 10,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -238,7 +308,17 @@
           "zaman": "2026-08-07T08:50:21.916Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.118Z"
+        }
+      ],
       "not": ""
     },
     {
@@ -282,7 +362,7 @@
     {
       "n": 12,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -304,13 +384,23 @@
           "zaman": "2026-08-07T08:37:38.821Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.170Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 13,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -323,13 +413,23 @@
           "zaman": "2026-08-07T08:50:21.965Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:58:01.002Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 14,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -342,13 +442,23 @@
           "zaman": "2026-08-07T08:50:22.012Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.222Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 15,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -361,13 +471,23 @@
           "zaman": "2026-08-07T08:50:22.057Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.275Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 16,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -380,13 +500,23 @@
           "zaman": "2026-08-07T08:52:17.441Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.326Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 17,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -399,13 +529,23 @@
           "zaman": "2026-08-07T08:52:17.490Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.378Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 18,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -418,13 +558,23 @@
           "zaman": "2026-08-07T08:52:17.538Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.430Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 19,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -446,13 +596,23 @@
           "zaman": "2026-08-07T08:54:02.967Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 7.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.481Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 20,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -465,13 +625,23 @@
           "zaman": "2026-08-07T08:58:14.060Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.532Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 21,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -484,13 +654,23 @@
           "zaman": "2026-08-07T08:58:14.107Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 10.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.584Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 22,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -503,13 +683,23 @@
           "zaman": "2026-08-07T08:58:14.155Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 7.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.636Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 23,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -522,13 +712,23 @@
           "zaman": "2026-08-07T08:58:14.200Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 7.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.689Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 24,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -541,13 +741,23 @@
           "zaman": "2026-08-07T09:00:17.975Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.741Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 25,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -560,13 +770,23 @@
           "zaman": "2026-08-07T09:00:18.024Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.793Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 26,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -579,13 +799,23 @@
           "zaman": "2026-08-07T09:00:18.070Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.844Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 27,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -598,13 +828,23 @@
           "zaman": "2026-08-07T09:00:18.116Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.897Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 28,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -617,13 +857,23 @@
           "zaman": "2026-08-07T09:02:36.949Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 7.5,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:10.948Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 29,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -636,13 +886,23 @@
           "zaman": "2026-08-07T09:02:36.997Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.000Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 30,
       "sekans": "S3",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -655,13 +915,23 @@
           "zaman": "2026-08-07T09:02:37.042Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.050Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 31,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -674,13 +944,23 @@
           "zaman": "2026-08-07T09:02:37.088Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.105Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 32,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -693,13 +973,23 @@
           "zaman": "2026-08-07T09:04:21.631Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.157Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 33,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -712,13 +1002,23 @@
           "zaman": "2026-08-07T09:04:21.677Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.209Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 34,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -740,13 +1040,23 @@
           "zaman": "2026-08-07T09:06:03.898Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.261Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 35,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -759,13 +1069,23 @@
           "zaman": "2026-08-07T09:04:21.724Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.314Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 36,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -778,13 +1098,23 @@
           "zaman": "2026-08-07T09:06:03.948Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 720,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.367Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 37,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -795,15 +1125,34 @@
           "sonuc": "bekliyor",
           "kusur": null,
           "zaman": "2026-08-07T09:06:03.994Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 150,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:16:13.651Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.417Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 38,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -816,13 +1165,23 @@
           "zaman": "2026-08-07T09:08:02.020Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.471Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 39,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -844,13 +1203,23 @@
           "zaman": "2026-08-07T09:08:02.069Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 450,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.523Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 40,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -863,13 +1232,23 @@
           "zaman": "2026-08-07T09:08:02.114Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.575Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 41,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -882,13 +1261,23 @@
           "zaman": "2026-08-07T10:08:34.717Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 360,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.626Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 42,
       "sekans": "S4",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -901,13 +1290,23 @@
           "zaman": "2026-08-07T09:08:02.157Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.678Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 43,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -920,13 +1319,23 @@
           "zaman": "2026-08-07T09:09:33.418Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 360,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.729Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 44,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -939,13 +1348,23 @@
           "zaman": "2026-08-07T09:09:33.466Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.780Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 45,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -958,13 +1377,23 @@
           "zaman": "2026-08-07T09:09:33.512Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.832Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 46,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -977,13 +1406,23 @@
           "zaman": "2026-08-07T09:09:33.560Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 630,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.883Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 47,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -996,13 +1435,23 @@
           "zaman": "2026-08-07T09:11:02.090Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.933Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 48,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1015,13 +1464,23 @@
           "zaman": "2026-08-07T09:11:02.138Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:11.992Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 49,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1034,13 +1493,23 @@
           "zaman": "2026-08-07T09:11:02.185Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:12.044Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 50,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1053,13 +1522,23 @@
           "zaman": "2026-08-07T09:11:02.234Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:12.100Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 51,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1072,13 +1551,23 @@
           "zaman": "2026-08-07T09:12:53.453Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:58:00.904Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 52,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1091,13 +1580,23 @@
           "zaman": "2026-08-07T09:12:53.502Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:12.151Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 53,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1110,13 +1609,23 @@
           "zaman": "2026-08-07T09:12:53.548Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:57:12.202Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 54,
       "sekans": "S5",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -1129,7 +1638,17 @@
           "zaman": "2026-08-07T09:12:53.593Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "higgsfield",
+          "kredi": 9,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T11:58:00.953Z"
+        }
+      ],
       "not": ""
     }
   ]

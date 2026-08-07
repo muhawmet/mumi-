@@ -137,3 +137,33 @@ K11'de sperm sürüsü klibin SONUNA doğru eriyor (Mami: *"sonda sürünün eri
 kullanılır"*). Kling çok sayıda küçük ve benzer nesneyi klip boyunca sayıca koruyamıyor.
 → Kalabalık sürü karelerinde klip **kısa tutulur** (4-5 sn) ya da sürü kadrajın uzağında
 bırakılır; kahraman nesne yakında ve tek başına net kalır.
+
+### 🔴 İKİ CÜZDAN AYNI ANDA — MAMİ'NİN DAĞITIM KURALI (2026-08-07)
+
+Mami'nin emri birebir: *"kuyruktan alma, ikisinin limiti neyse hep çalışsın üretim anında"*
+ve *"promptu çözseler ne olacak, ben elimle temizlerim; kilit şeyler işte ekranda yazı
+vardır falan onları Magnific'ten üretiriz."*
+
+**Dağıtım yasası:**
+- **Magnific** (Mami'nin kendi hesabı) → **ekranda Türkçe yazı taşıyan** · **kilit/epik sahne**
+  · **kimlik taşıyan @handle kareleri**. Eşzamanlı tavan **8 video**; aşınca
+  `Concurrent video limit reached` döner ve ~600 sn slot bekletir.
+- **Higgsfield** (ORTAK HESAP) → sıradan sahne canlanması. **Prompt'lar ortak hesapta
+  görünür kalır ve MCP'de SİLME ARACI YOKTUR** (ölçüldü 2026-08-07: `show_generations`
+  okur, hiçbir şey kaldırmaz). Mami bunu bilerek kabul etti; kilit prompt oraya gitmez.
+- **İkisi de aynı anda doludur.** Boru boş bekletmek hız kaybıdır.
+
+**Ölçülen fiyat farkı (2026-08-07, `simulate_cost` exact):**
+Magnific `kling-30` 1080p = **90 kredi/sn** (5sn 450 · 6sn 540 · 4K 400/sn) ·
+Higgsfield `kling3_0` = **~1.5 kredi/sn** (`sound:"off"` şart, açık kalırsa pahalanır).
+Cüzdanlar kıyaslanamaz, kıyaslanan birim FİLM.
+
+🔴 **HIGGSFIELD TUZAĞI — sessiz iş yutma.** `generate_video_batch` 12 işin **8'ini**
+iş göndermeden *"Preset IN THE DARK önerildi"* diye geri çevirdi. Hata gibi görünmüyor,
+`submission_failed` diyor ama sebebi teknik değil pazarlama. **Çözüm:** aynı isteği
+`declined_preset_id: "<önerilen preset id>"` ile tekrar gönder — 8/8 geçti.
+
+🔴 **HIGGSFIELD'A UCUZ YÜKLEME.** `media_upload` presigned URL'leri devasa (kare başına
+~3000 karakter) ve sohbetten yürütmek bağlamı yakıyor. Ucuz yol: kareyi **Magnific'e**
+yükle (`creations_request_upload`, kısa URL) → `creations_get` ile public token URL'sini
+al → Higgsfield'da **`media_import_url`**. Tek satır, tek media_id.

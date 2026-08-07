@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<!-- MAMILAS kaba kurgu — Hayvanlarda Üreme, Büyüme ve Gelişme_EDIT-PLAN.txt kaynağından üretildi.
+     Bu bir TASLAK timeline'dır; nihai kesim hükmü Mami'nindir. -->
+<xmeml version="5">
+  <sequence id="seq-1">
+    <name>6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme — kaba kurgu</name>
+    <duration>4587</duration>
+    <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+    <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
+    <media>
+      <video>
+        <format><samplecharacteristics><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><width>1920</width><height>1080</height><pixelaspectratio>square</pixelaspectratio><anamorphic>FALSE</anamorphic><fielddominance>none</fielddominance></samplecharacteristics></format>
+        <track>
+        <clipitem id="ci-0">
+          <name>01.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>94</end>
+          <in>12</in>
+          <out>106</out>
+          <file id="f-0">
+            <name>01.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/01.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K01 — Efe o sabah dedesinin bahçesinde iki şeyi aynı anda gördü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-1">
+          <name>02.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>94</start>
+          <end>192</end>
+          <in>12</in>
+          <out>110</out>
+          <file id="f-1">
+            <name>02.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/02.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K02 — Kümeste tavuk, yumurtalarının üstünde kıpırdamadan oturuyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-2">
+          <name>03.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>192</start>
+          <end>291</end>
+          <in>12</in>
+          <out>111</out>
+          <file id="f-2">
+            <name>03.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/03.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K03 — Ahırın köşesinde kedi, yeni doğmuş yavrularını yalıyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-3">
+          <name>04.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>291</start>
+          <end>379</end>
+          <in>12</in>
+          <out>100</out>
+          <file id="f-3">
+            <name>04.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/04.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K04 — Yavru kediler daha o günden annelerine benziyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-4">
+          <name>05.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>379</start>
+          <end>477</end>
+          <in>12</in>
+          <out>110</out>
+          <file id="f-4">
+            <name>05.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/05.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K05 — Yumurtaların içinde ne olduğunu ise kimse göremiyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-5">
+          <name>06.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>477</start>
+          <end>603</end>
+          <in>12</in>
+          <out>138</out>
+          <file id="f-5">
+            <name>06.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/06.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K06 — Efe merak etti: biri doğuyor, öteki yumurtadan çıkıyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-6">
+          <name>07.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>603</start>
+          <end>709</end>
+          <in>12</in>
+          <out>118</out>
+          <file id="f-6">
+            <name>07.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/07.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K07 — Cevap, hayvanlarda üreme ve gelişme çeşitliliğinde saklıydı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-7">
+          <name>08.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>709</start>
+          <end>795</end>
+          <in>12</in>
+          <out>98</out>
+          <file id="f-7">
+            <name>08.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/08.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K08 — Efe işin başına, üremeye bakmaya karar verdi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-8">
+          <name>09.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>795</start>
+          <end>856</end>
+          <in>12</in>
+          <out>73</out>
+          <file id="f-8">
+            <name>09.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/09.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K09 — Hayvanların çoğu eşeyli ürer.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-9">
+          <name>10-ESKI-YAPRAKLI.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>856</start>
+          <end>959</end>
+          <in>12</in>
+          <out>115</out>
+          <file id="f-9">
+            <name>10-ESKI-YAPRAKLI.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/10-ESKI-YAPRAKLI.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K10 — Bir erkek üreme hücresi ve bir dişi üreme hücresi birleşir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-10">
+          <name>11.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>959</start>
+          <end>1031</end>
+          <in>12</in>
+          <out>84</out>
+          <file id="f-10">
+            <name>11.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/11.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K11 — Erkek üreme hücresine sperm denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-11">
+          <name>12.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1031</start>
+          <end>1103</end>
+          <in>12</in>
+          <out>84</out>
+          <file id="f-11">
+            <name>12.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/12.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K12 — Dişi üreme hücresine ise yumurta denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-12">
+          <name>13.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1103</start>
+          <end>1202</end>
+          <in>12</in>
+          <out>111</out>
+          <file id="f-12">
+            <name>13.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/13.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K13 — Ama bu ikisinin nerede buluştuğu her şeyi değiştirir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-13">
+          <name>14.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1202</start>
+          <end>1274</end>
+          <in>12</in>
+          <out>84</out>
+          <file id="f-13">
+            <name>14.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/14.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K14 — Efe bahçenin alt ucundaki gölete indi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-14">
+          <name>15.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1274</start>
+          <end>1353</end>
+          <in>12</in>
+          <out>91</out>
+          <file id="f-14">
+            <name>15.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/15.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K15 — Suyun içinde balıklar sığ kıyı boyunca yüzüyordu.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-15">
+          <name>16.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1353</start>
+          <end>1433</end>
+          <in>12</in>
+          <out>92</out>
+          <file id="f-15">
+            <name>16.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/16.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K16 — Dişi balık yumurtalarını doğrudan suya bırakır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-16">
+          <name>17.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1433</start>
+          <end>1515</end>
+          <in>12</in>
+          <out>94</out>
+          <file id="f-16">
+            <name>17.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/17.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K17 — Erkek balık da spermlerini aynı suya bırakır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-17">
+          <name>18.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1515</start>
+          <end>1616</end>
+          <in>12</in>
+          <out>113</out>
+          <file id="f-17">
+            <name>18.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/18.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K18 — Sperm ve yumurta dış ortamda, suyun içinde birleşir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-18">
+          <name>19.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1616</start>
+          <end>1672</end>
+          <in>12</in>
+          <out>68</out>
+          <file id="f-18">
+            <name>19.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/19.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K19 — Buna dış döllenme denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-19">
+          <name>20.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1672</start>
+          <end>1770</end>
+          <in>12</in>
+          <out>110</out>
+          <file id="f-19">
+            <name>20.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/20.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K20 — Açıkta risk çoktur; çoğu yumurta yavruya dönüşemez.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-20">
+          <name>21.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1770</start>
+          <end>1868</end>
+          <in>12</in>
+          <out>110</out>
+          <file id="f-20">
+            <name>21.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/21.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K21 — Bu yüzden bir seferde milyonlarca yumurta bırakılır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-21">
+          <name>22.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1868</start>
+          <end>1939</end>
+          <in>12</in>
+          <out>83</out>
+          <file id="f-21">
+            <name>22.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/22.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K22 — Kurbağalar da yumurtalarını aynı suya bırakır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-22">
+          <name>23.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1939</start>
+          <end>1999</end>
+          <in>12</in>
+          <out>72</out>
+          <file id="f-22">
+            <name>23.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/23.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K23 — Efe göletten bahçeye geri döndü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-23">
+          <name>24.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>1999</start>
+          <end>2077</end>
+          <in>12</in>
+          <out>90</out>
+          <file id="f-23">
+            <name>24.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/24.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K24 — Kümesteki tavuk hâlâ yumurtalarının üstündeydi.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-24">
+          <name>25.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2077</start>
+          <end>2173</end>
+          <in>12</in>
+          <out>108</out>
+          <file id="f-24">
+            <name>25.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/25.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K25 — Kuşlarda döllenme dişinin vücudunun içinde gerçekleşir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-25">
+          <name>26.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2173</start>
+          <end>2267</end>
+          <in>12</in>
+          <out>106</out>
+          <file id="f-25">
+            <name>26.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/26.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K26 — Yılanda, kertenkelede ve kaplumbağada da böyledir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-26">
+          <name>27.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2267</start>
+          <end>2350</end>
+          <in>12</in>
+          <out>95</out>
+          <file id="f-26">
+            <name>27.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/27.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K27 — Kedide, atta ve keçide de döllenme içeride olur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-27">
+          <name>28.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2350</start>
+          <end>2403</end>
+          <in>12</in>
+          <out>65</out>
+          <file id="f-27">
+            <name>28.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/28.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K28 — Buna iç döllenme denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-28">
+          <name>29.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2403</start>
+          <end>2487</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-28">
+            <name>29.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/29.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K29 — İçeride sperm ile yumurtanın buluşma şansı yüksektir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-29">
+          <name>30.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2487</start>
+          <end>2570</end>
+          <in>12</in>
+          <out>95</out>
+          <file id="f-29">
+            <name>30.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/30.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K30 — Bu yüzden yumurta sayısı çok daha azdır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-30">
+          <name>31.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2570</start>
+          <end>2675</end>
+          <in>12</in>
+          <out>117</out>
+          <file id="f-30">
+            <name>31.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/31.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K31 — Döllenme tamamdı; peki yavru nasıl büyür ve doğar?</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-31">
+          <name>32.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2675</start>
+          <end>2766</end>
+          <in>12</in>
+          <out>103</out>
+          <file id="f-31">
+            <name>32.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/32.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K32 — Efe aynı bahçede bunun üç ayrı yolunu gördü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-32">
+          <name>33.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2766</start>
+          <end>2830</end>
+          <in>12</in>
+          <out>76</out>
+          <file id="f-32">
+            <name>33.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/33.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K33 — Birincisi doğurarak çoğalmaktır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-33">
+          <name>34.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2830</start>
+          <end>2914</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-33">
+            <name>34.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/34.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K34 — Yavru annenin karnında gelişir ve öyle doğar.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-34">
+          <name>35.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2914</start>
+          <end>2993</end>
+          <in>12</in>
+          <out>91</out>
+          <file id="f-34">
+            <name>35.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/35.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K35 — Doğduktan sonra anne sütüyle beslenir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-35">
+          <name>36.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>193</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>2993</start>
+          <end>3118</end>
+          <in>12</in>
+          <out>137</out>
+          <file id="f-35">
+            <name>36.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/36.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>193</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K36 — Kedi, koyun, inek, yarasa, balina ve insan böyledir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-36">
+          <name>37.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3118</start>
+          <end>3181</end>
+          <in>12</in>
+          <out>75</out>
+          <file id="f-36">
+            <name>37.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/37.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K37 — İkincisi yumurtlayarak çoğalmaktır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-37">
+          <name>38.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3181</start>
+          <end>3286</end>
+          <in>12</in>
+          <out>117</out>
+          <file id="f-37">
+            <name>38.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/38.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K38 — Döllenme içte olur, ama yavru yumurtanın içinde gelişir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-38">
+          <name>39.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>121</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3286</start>
+          <end>3350</end>
+          <in>12</in>
+          <out>76</out>
+          <file id="f-38">
+            <name>39.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/39.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>121</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K39 — Yumurta annenin vücudunun dışındadır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-39">
+          <name>40.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3350</start>
+          <end>3434</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-39">
+            <name>40.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/40.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K40 — Tavuk yumurtalarının üstüne yatar ve onları ısıtır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-40">
+          <name>41.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>97</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3434</start>
+          <end>3477</end>
+          <in>12</in>
+          <out>55</out>
+          <file id="f-40">
+            <name>41.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/41.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>97</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K41 — Buna kuluçka denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-41">
+          <name>42.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3477</start>
+          <end>3576</end>
+          <in>12</in>
+          <out>111</out>
+          <file id="f-41">
+            <name>42.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/42.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K42 — Yılan ve kaplumbağa yumurtalarını toprağa bırakıp gider.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-42">
+          <name>43.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>97</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3576</start>
+          <end>3618</end>
+          <in>12</in>
+          <out>54</out>
+          <file id="f-42">
+            <name>43.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/43.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>97</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K43 — Üçüncüsü balıklardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-43">
+          <name>44.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3618</start>
+          <end>3720</end>
+          <in>12</in>
+          <out>114</out>
+          <file id="f-43">
+            <name>44.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/44.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K44 — Onlarda hem döllenme hem gelişme suyun içinde olur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-44">
+          <name>45.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3720</start>
+          <end>3794</end>
+          <in>12</in>
+          <out>86</out>
+          <file id="f-44">
+            <name>45.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/45.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K45 — Yavru bakımı kuşlarda ve memelilerde vardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-45">
+          <name>46.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>169</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3794</start>
+          <end>3899</end>
+          <in>12</in>
+          <out>117</out>
+          <file id="f-45">
+            <name>46.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/46.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>169</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K46 — Yumurtasını bırakıp giden canlılarda yavru bakımı yoktur.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-46">
+          <name>47.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3899</start>
+          <end>3983</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-46">
+            <name>47.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/47.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K47 — Efe dönerken maydanozun üstünde bir tırtıl gördü.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-47">
+          <name>48.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3983</start>
+          <end>4067</end>
+          <in>12</in>
+          <out>96</out>
+          <file id="f-47">
+            <name>48.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/48.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K48 — Bazı canlıların yavruları erginlere hiç benzemez.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-48">
+          <name>49.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4067</start>
+          <end>4154</end>
+          <in>12</in>
+          <out>99</out>
+          <file id="f-48">
+            <name>49.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/49.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K49 — Tırtıl bir süre sonra kendini kozanın içine kapatır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-49">
+          <name>50.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4154</start>
+          <end>4241</end>
+          <in>12</in>
+          <out>99</out>
+          <file id="f-49">
+            <name>50.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/50.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K50 — Kozadan çıkan artık tırtıl değil, kelebektir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-50">
+          <name>51.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4241</start>
+          <end>4317</end>
+          <in>12</in>
+          <out>88</out>
+          <file id="f-50">
+            <name>51.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/51.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K51 — Bu büyük değişime başkalaşım denir.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-51">
+          <name>52.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4317</start>
+          <end>4405</end>
+          <in>12</in>
+          <out>100</out>
+          <file id="f-51">
+            <name>52.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/52.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K52 — Kurbağa yavrusunun önce solungaçları ve kuyruğu vardır.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-52">
+          <name>53.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4405</start>
+          <end>4498</end>
+          <in>12</in>
+          <out>105</out>
+          <file id="f-52">
+            <name>53.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/53.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K53 — Efe kümese döndüğünde yumurtalardan biri çatlamıştı.</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="ci-53">
+          <name>54.mp4</name>
+          <enabled>TRUE</enabled>
+          <duration>145</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>4498</start>
+          <end>4587</end>
+          <in>12</in>
+          <out>101</out>
+          <file id="f-53">
+            <name>54.mp4</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/54.mp4</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>145</duration>
+            <media><video/></media>
+          </file>
+          <sourcetrack><mediatype>video</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>K54 — Her canlının neslini sürdürmek için kendine özgü bir yolu vardı.</mastercomment1></comments>
+        </clipitem>
+        </track>
+      </video>
+      <audio>
+      <track>
+        <clipitem id="vo1-0">
+          <name>vo.mp3 (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>4584</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>4584</end>
+          <in>0</in>
+          <out>4584</out>
+          <file id="file-vo1">
+            <name>vo.mp3</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/SES/vo.mp3</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>4584</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>VO — ElevenLabs — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      <track>
+        <clipitem id="mzk1-0">
+          <name>ses1.wav (1/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>3477</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>0</start>
+          <end>3477</end>
+          <in>0</in>
+          <out>3477</out>
+          <file id="file-mzk1">
+            <name>ses1.wav</name>
+            <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/SES/ses1.wav</pathurl>
+            <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+            <duration>3477</duration>
+            <media><audio><channelcount>2</channelcount></audio></media>
+          </file>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 1/2</mastercomment1></comments>
+        </clipitem>
+        <clipitem id="mzk1-1">
+          <name>ses1.wav (2/2)</name>
+          <enabled>TRUE</enabled>
+          <duration>3477</duration>
+          <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
+          <start>3477</start>
+          <end>4587</end>
+          <in>0</in>
+          <out>1110</out>
+          <file id="file-mzk1"/>
+          <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
+          <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/2</mastercomment1></comments>
+        </clipitem>
+      </track>
+      </audio>
+    </media>
+  </sequence>
+</xmeml>
