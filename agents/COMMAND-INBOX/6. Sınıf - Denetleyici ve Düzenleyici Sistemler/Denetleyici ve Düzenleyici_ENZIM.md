@@ -146,3 +146,24 @@ Kare-özel, **en çok 3-5 madde**, tek soru: *"BU kare nasıl bozulur?"*
 ⚠ Magnific `kling-30`'da ayrı negatif alanı **yoktur** — negatif, sahneyi anlatacak
 kelimelerle aynı bütçeden gider. Uzun ortak katalog **ölçülmüş zarardır**.
 Kısıt mümkün olan her yerde **olumlu** yazılır (+%24 semantik uyum).
+
+## 11 — ÜRETİM YETKİSİ (Mami, 2026-08-07 — pazarlık dışı)
+
+> *"Üretim kısmını sadece sen yapacaksın, şef sensin. Onlar sadece prompt yazacak.
+>  MCP sadece sende. Bıraksam sonsuz üretecektin."*
+
+🔴 **KARE BASMA YETKİSİ YALNIZ ANA OTURUMDADIR.** Ajanlar `mcp__magnific__*` çağırmaz.
+Ajanın işi **prompt yazmaktır**, basmak değil. Brifingine "bas" yazılmaz.
+
+**Neden — ölçüldü:** 6 basım ajanı paralel koştu, her birinin kendi basım döngüsü vardı ve
+**hiçbirinde bütçe yoktu**; toplamı gören kimse yoktu. Diskte 135 görsel birikti ve Mami
+sorana kadar sayı ne bende ne ondaydı.
+
+🔴 **BASMADAN ÖNCE RAKAM SÖYLENİR:** *"N kare × 75 kredi = X kredi"* — ve o rakam aşılmaz.
+🔴 **HER BASIM ANINDA KAYDA GİRER:**
+   `node scripts/is-emri.mjs kaydet "<proje>" --kare N --asama basim --motor nb2
+    --cuzdan magnific --kredi 75 --sonuc kabul|red [--kusur <sınıf>]`
+🔴 **KİLİT DEĞİŞİRSE ONAY DÜŞER.** Dünya, referans ya da kural değiştiği an yeniden sorulur;
+   eski "devam et" yeni dünyada geçmez. Bugün üç kez değişti, üçünde de sorulmadı.
+🔴 **CANARY DİSİPLİNİ:** 2 kare → Mami bakar → parti. Bugün iki kez atlandı ve yanlış dünyaya
+   27 kare basıldı; canary koşsaydı bedel 2 kare olurdu.

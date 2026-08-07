@@ -1,0 +1,122 @@
+BİLEŞKE KUVVET — CANARY 4 KARE (basılacak · Mami onayına gidecek)
+=========================================================================
+Motor: Nano Banana 2 (Magnific) · Dünya: pixar_3d_edu · Register: EDU
+Yazım: 2026-08-07 · SIFIRDAN. Eski 71'lik set `_ESKI/` altında ve AÇILMADI.
+
+SEÇİM GEREKÇESİ — dört kare, dört ayrı risk:
+  K01  dünya + ışık rejimi + zenginlik + @mira        (ilk kare)
+  K02  kuvvetin MADDEDEKİ izi — filmin görsel tezi     (ikinci kare)
+  K42  kavram ışığı: iki eşit sütun, R = 0            (epik · filmin en güzel fikri)
+  K51  13 HARFLİ yazı + mekanik nesne + hayvan        (epik · en pahalı üç riskin üçü birden)
+
+🔴 MEKÂN TEK DEĞİL — kaynakta sayıldı (kapı · çamur · halat · masa · otoban · gökyüzü ·
+   elma ağacı · bisiklet yolu). Süreklilik ÜÇ ŞEYDEN gelir, mekândan değil:
+   1. @mira  2. IŞIK REJİMİ: yağmur yeni durmuş, alçak ve sert doğu güneşi, bütün gölgeler
+      uzun ve TEK YÖNE, ıslak yüzeyden soğuk-mor sıçrama — film tek bir sabahta geçiyor
+   3. MALZEME DİLİ: honlanmış taş · saten pirinç · masif meşe · gerçek kenevir · dövme demir
+
+🔴 @mira METİNDE TARİF EDİLMEZ (KİLİT 13.1) — yalnız `she` / `her hand`. Yaş, ten, saç,
+   gardırop, milliyet yazılmaz; hepsini referans taşır. references: [@mira] yalnız.
+
+=========================================================================
+
+### K01 | VO1 "Bir kapıyı iterken, bir topa vururken, bir market arabasını sürerken" · yazı: YOK · KARAKTER
+FİKİR: Kadraj bir kapının açıldığı anı değil, açılmaya DİRENDİĞİ anı tutuyor — cam daha bir
+       parmak açılmış, kızın bütün ağırlığı avucunda. Kuvvet henüz kazanmadı; işte tam bu
+       yüzden görünüyor.
+YÜKÜM: dört-yükümlülük · "bir kapıyı" → tam boy cam kanat, pirinç itme çubuğu göğüs hizasında ·
+       "iterken" → omuz kilitlenmiş, dirsek gövdeye yapışmış, arka ayak taşa basmış ve
+       topuğu kalkmış · devam eden eylem → kanat ile kasa arasında bir parmak kalınlığında
+       gün ışığı çizgisi açılmış · günlük hayat → koltuğunun altında çamurlu kırmızı oyuncak araba.
+AYRICALIK: eşik-anı — gerçek çekimde kapı ya kapalıdır ya açık; buradaki bir parmaklık açıklık
+       ve ona eşlik eden buğu tacı, kuvvetin süresini tek karede dondurmak demektir.
+PLAN:  kahraman avuç ve cam · bir net insan · ışık alçak doğu güneşinden, camın ötesinden
+       geliyor; avucunun kenarına, pirinç çubuğun üst kavsine ve buğu tacının ıslak sınırına
+       değiyor — sırtına, taşın ön yüzüne ve arabanın alt gövdesine ulaşmıyor · FEDA: yüzünün
+       yalnız çene hattı okunuyor, avlunun arkası tamamen odak dışı.
+ENTRY STATE: Yağmur bir saat önce durmuş; taş ıslak, kapı kapalı, cam iç yüzünde hiç buğu yok.
+EXIT STATE: Kanat bir parmak açılmış ve orada duruyor; avucunun etrafındaki buğu tacı oluştu,
+       araba hâlâ çamurlu, pirinç itme plakasına hiçbir harf kazınmadı.
+-----
+This is a lit three-dimensional scene of real physical objects in a real place — not a diagram, not an infographic. 35mm lens at f/2.8, camera just below her eye height and set a few degrees off the door's plane so the glass runs diagonally across frame; a wet clipped box branch is cut and heavily blurred across the lower-left corner as the foreground anchor. She stands with her flat palm and shoulder pressed into a tall single pane of glass framed in satin brass, her elbow tucked hard against her ribs, her back foot planted on honed grey stone with the heel already lifted, and the muddy red pressed-steel toy car tucked under her other arm with its chrome grille catching a small hot point of sun. Her skin stays matte with low specular and is never tinted green or grey. The door has moved: a finger-wide seam of daylight has opened between the leaf and the brass jamb, and a corona of breath fog has bloomed on the cold glass around her hand. Beyond the glass a wet courtyard of honed stone recedes, one puddle holding the whole sky, a mature apple tree soft and unresolved at the far end. The key is the low hard eastern sun coming through the glass from behind it: it lands on the outer edge of her palm, on the upper curve of the brass push-bar and along the wet rim of the fog corona, and it stops there — her back, the near face of the stone and the car's lower body sit outside it and hold a deep coloured indigo. Cool-violet bounce comes up off the wet stone at about a third of the key. Three things are alive: the fog corona spreading a millimetre at its lower edge, a single rain drop running down the outside of the glass and stopping at the brass, and the mown grass beyond bending once in a gust. Depth in three layers — the blurred wet branch cut at the near corner, her hand, the glass seam and the car crisply resolved in the middle, the courtyard and tree compressed soft behind. Every object rests in contact: her heel presses a dark tight collar into the wet stone, the car's four rubber tyres each seat into her sleeve, the puddle beyond holds a sharp edge against its stone kerb.
+STYLE: Dimensional feature-animation CGI read materials-first. Glass is thick, cold and truly transparent with a green edge where it is cut; satin brass takes an anisotropic brushed highlight stretching one way only; honed stone is fine-grained and matt with water sitting on it as separate beads and one continuous film; the toy car's pressed steel is finely made and precisely machined with real depth of paint, the dried mud on it a crust that has cracked into plates. Skin is subsurface-scattered and never clay. No cel outline, no flat graphic fill, no toon shader, no photoreal capture.
+LIGHT AND PALETTE: A single strong directional key, low and hard from the east, not a soft even wash — every object lays a long crisply-shaped shadow across the surface it stands on and every shadow runs the same way, so the whole frame reads as one light. The palette is fully saturated: the car a true deep red, her denim a true blue, the brass a true honey-gold, the wet lawn a true green, and the shadows a deep coloured indigo with surface detail still visible inside them. Never pastel, never chalky, never a flat even diffuse fill. No teal-orange grade, no desaturated wash.
+TEXT: No word is legible anywhere in this frame. The brass push-plate on the door is plain unengraved satin brass with nothing cut into it. Any distant signage stays soft-focus, Turkish or bare.
+NEGATIVE: The brass push-plate stays blank with no letters, numbers or motto cut into it anywhere. The door has opened exactly one finger-width and stays there. There is no golden glow, no light beam, no arrow, no label line and no floating shape anywhere in frame — every light here has a physical source. No second person and no adult. No English lettering.
+-----
+
+### K02 | VO2 "hep aynı şeyi yaparsın. Bir şeye kuvvet uygularsın." · yazı: YOK · KAVRAM
+FİKİR: Filmin bütün tezi bu tek makro karede: kuvveti göremezsin, ama bastığın yerde derinin
+       beyazladığını görürsün. Ders başlamadan önce kanıt masaya konuyor.
+YÜKÜM: üç-yükümlülük · "hep aynı şeyi" → aynı avuç, aynı cam, yalnız kadraj daraldı ·
+       "bir şeye" → cam, dokunulan yüzey olarak kadrajı dolduruyor · "kuvvet uygularsın" →
+       parmak uçlarının ve avuç topuğunun altındaki deri basınçla BEYAZLAMIŞ, çevresi ise
+       kanla dolu ve kırmızımsı; temas yüzeyi yassılmış.
+AYRICALIK: görünmezin izi — gerçek kamerayla bu ölçekte hem derinin beyazlamasını hem camın
+       öteki yüzündeki damlayı aynı anda net veremezsin. Burada ikisi tek düzlemde ve kuvvet,
+       çizilmeden, ölçülmeden, adı konmadan okunuyor.
+PLAN:  kahraman avucun cama değen yüzeyi · bir net insan (yalnız el ve bileğin bir kısmı) ·
+       ışık camın ötesinden, alçak ve sert; beyazlamış parmak uçlarının kenarına, buğunun ıslak
+       sınırına ve camın kesik yeşil kenarına değiyor — bileğin iç yüzüne ulaşmıyor ·
+       FEDA: bileğin üstü tamamen odak dışı, avlunun tamamı çözülmemiş bir ışık alanı.
+ENTRY STATE: Avuç camda, kanat bir parmak açık, buğu tacı yeni oluşmuş.
+EXIT STATE: Hiçbir şey ilerlemedi; yalnız buğu tacı bir tık genişledi ve dışarıdaki damla
+       pirinç çubuğa vardı. Kapı hâlâ bir parmak açık.
+-----
+This is a lit three-dimensional scene of real physical objects in a real place — not a diagram, not an infographic. 100mm macro lens at f/4, camera square to the glass from the courtyard side and level with her hand, an extreme close view in which the palm fills two-thirds of the frame; the blurred green cut edge of the glass runs down the near-right corner as the foreground anchor. Her hand is flat against the cold pane, fingers splayed and slightly bowed, and the skin under each fingertip and under the heel of the hand has gone bloodless and pale where the pressure sits while the flesh immediately around each contact stays warm and full — the contact patches are visibly flattened against the glass. Her skin stays matte with low specular and is never tinted green or grey. A corona of breath fog rings the whole hand on the far side of the glass, densest a centimetre out and thinning to nothing further away, and inside that corona the glass is clear where her warmth has already burned it off. A single rain drop is running down the outer face of the pane just past her little finger, and it has reached the satin brass rail. The key is the low hard eastern sun coming straight through the glass: it lands on the pale rims of the pressed fingertips, along the wet upper boundary of the fog corona and on the cut green edge of the pane, and it stops there — the inside of her wrist and everything above it sit outside the light in a deep coloured indigo. Cool-violet bounce comes back off the wet stone below at about a third of the key. Three things are alive: the fog corona breathing outward at its lower edge, the drop hanging and then moving on the far face, and one tendon lifting on the back of her hand. Depth in three layers — the blurred green glass edge cut at the near corner, the palm and the fog boundary crisply resolved in the middle, and the courtyard behind dissolved into a bright unresolved field. Every object rests in contact: each fingertip flattens and holds its own tight bright rim against the pane, and the drop flattens where it meets the brass.
+STYLE: Dimensional feature-animation CGI in a materials-first read at close range. Skin is subsurface-scattered with real translucency at the thinned fingertips and never clay; glass is thick, cold, truly transparent and green in its cut section; breath fog is a scattering film of separate microscopic beads, not a painted haze, and where it has burned off the glass turns mirror-sharp within a single millimetre; satin brass takes a brushed highlight in one direction only. No cel outline, no flat graphic fill, no toon shader, no photoreal capture, no real-human photographic skin.
+LIGHT AND PALETTE: A single strong directional key, low and hard, not a soft even wash — the hand lays one long crisply-shaped shadow across the glass and the fog corona carries a hard bright edge on its sun side. The palette is fully saturated: the warm flesh a true deep rose against the true cold green of the glass edge, the brass a true honey-gold, and the shadow a deep coloured indigo with the weave of the fog still visible inside it. Never pastel, never chalky, never a flat even diffuse fill. No teal-orange grade, no desaturated wash.
+TEXT: No word, letter or number is legible anywhere in this frame and no surface in it is able to carry one — the glass is plain, the brass rail is unengraved, and the courtyard beyond is dissolved past legibility.
+NEGATIVE: The glass stays plain with nothing written, etched, frosted or drawn into it and no shape traced in the fog. There is no glow, no beam, no arrow and no floating marker anywhere — the only light is the sun through the pane. Her hand keeps a flat settled contact and is never lifting or waving. No face, no second person. No English lettering.
+-----
+
+### K42 | VO42 "Yerçekimi onu aşağı çekiyor; masa aynı büyüklükte yukarı itiyor. İki kuvvet eşit ve zıt yönlü." · yazı: "R = 0" · KAVRAM
+FİKİR: Filmin en sessiz ve en güzel karesi. İki altın sütun aynı kalınlıkta, aynı parlaklıkta,
+       biri yukarıdan iniyor biri meşenin damarından çıkıyor ve kitabın kenarında birbirini
+       yiyip tek bir kımıldamayan çizgiye dönüyor. Kız elini kitaptan ÇEKMİŞ — hiçbir şey
+       itmiyor ve kitap yine de duruyor.
+YÜKÜM: dört-yükümlülük · "Yerçekimi onu aşağı çekiyor" → üstten inen sütun kitabın kapağına
+       oturuyor · "masa yukarı itiyor" → meşenin damarından çıkan sütun kitabın altına
+       basıyor · "eşit" → iki sütunun kalınlığı ve parlaklığı gözle aynı · "zıt yönlü" →
+       ikisi tam karşı karşıya, kitabın kenarında yatay tek bir hatta sönüyor.
+AYRICALIK: iptal-anı — gerçek dünyada bu iki kuvvet hiç görünmez ve tam olarak burada
+       animasyon kazanıyor: eşitliği ölçmeden, sayı yazmadan, ok çizmeden GÖSTERİYOR.
+PLAN:  kahraman kitap ve iki sütunun kesiştiği çizgi · bir net insan (yalnız masaya dayalı
+       parmak uçları, kitaba DEĞMİYOR) · ışık iki kaynak: alçak doğu güneşi ıslak havada
+       görünür bir sütun kuruyor, ikinci sütun kavram ışığıdır ve meşenin kendi damarından
+       doğuyor · FEDA: masanın uzak ucu tamamen odak dışı, kitabın sırtı okunmuyor.
+ENTRY STATE: Kitap masanın üstünde duruyor, kız elini az önce çekmiş, parmak uçları hâlâ meşede.
+EXIT STATE: Hiçbir madde kımıldamadı. İki sütun aynı kalınlıkta kaldı, kitap aynı yerde,
+       pirinç kakmadaki "R = 0" aynı açıda.
+-----
+This is a lit three-dimensional scene of real physical objects in a real place — not a diagram, not an infographic. 50mm lens at f/8, camera set down onto the table surface itself and level with it, an extreme low view along the solid oak top so the book stands against the sky; a blurred oak grain ridge crosses the extreme near edge as the foreground anchor. A hardbound linen-covered science book lies squarely on the honed solid-oak table, and her fingertips rest on the bare oak a hand's width away from it, not touching it. Her skin stays matte with low specular. Two columns of warm volumetric gold meet at the book: one descends through the damp morning air onto the centre of its cover, the other rises out of the oak's own grain directly beneath it, and the two are exactly the same width and exactly the same brightness — where they meet at the book's lower edge they cancel into one flat motionless horizontal line and neither one continues past it. Both columns are soft-edged volumetric light born from the surfaces themselves, with no head, no point and no drawn edge of any kind. Set flush into the oak beside the book is a brushed brass inlay plate carrying the cut characters. The key is the low hard eastern sun raking across the table from the left: it lands on the book's linen weave, on the raised brass letters and along the oak's open grain, and it stops at the table's near edge, so the underside and the ground beyond sit outside it in a deep coloured indigo. Three things are alive and all three are balanced: dust motes drifting equally inside both columns at the same speed, one water bead hanging on the table's near edge and not falling, and a single blade of wet grass beyond moving in the gust while nothing on the table does. Depth in three layers — the blurred oak ridge at the near edge, the book, the brass plate and the meeting line crisply resolved in the middle, and the wet garden dissolved bright and soft behind. Every object rests in contact: the book seats into a tight dark collar of occlusion along its whole footprint, the brass inlay sits flush with a hairline shadow around it, and her fingertips press two small pale ovals into the oak's surface film of water.
+STYLE: Dimensional feature-animation CGI read materials-first. Bookcloth is a coarse woven linen over stiff board with the weave raised and one corner softened by handling; solid oak is open-grained and honed with water lying in the grain lines; brushed brass takes an anisotropic highlight stretching in one direction only and the cut characters hold a bright machined edge. The volumetric light is real scattering in damp air, thick and soft-bodied. Skin is subsurface-scattered and never clay. No cel outline, no flat graphic fill, no toon shader, no photoreal capture.
+LIGHT AND PALETTE: A single strong directional key, low and hard from the left, not a soft even wash — the book lays one long crisply-shaped shadow across the oak and the brass plate lays its own, both running the same way. Against that, the two gold columns are the only symmetrical thing in frame. The palette is fully saturated: the bookcloth a true deep blue, the oak a true warm ochre, the brass a true honey-gold, the wet grass beyond a true green, and the shadows a deep coloured indigo with the oak grain still readable inside them. Never pastel, never chalky, never a flat even diffuse fill. No teal-orange grade.
+TEXT: The characters "R = 0" are cut clean through the brushed brass inlay plate that sits flush in the oak — a fixed rigid mass lying in the table top, its lettered face turned square to the sensor and its baseline exactly parallel to the bottom frame edge, every character in one single plane and all of them inside the depth of field. Five characters read left to right: capital R, a clear space, the equals sign with its two strokes level and parallel, a clear space, then the digit zero. It reads left to right, never mirrored, reversed or rotated, and appears on this one plate and on no other surface in frame. The book's cover and spine carry no legible title.
+NEGATIVE: The two gold columns stay exactly equal in width and brightness and both end at the same horizontal line — the light is volumetric and born from the surfaces, never a drawn arrowhead, never a flat graphic overlay. The book stays perfectly still and flat on the table with its cover closed. Her fingertips stay on the bare oak and never touch the book. The brass plate carries only "R = 0" and no other word, unit or number, and no label line, callout, ruler or inset panel appears anywhere. No English lettering.
+-----
+
+### K51 | VO51 "Önüne kedi çıkan bisikletli frene basar ve yavaşlar; burada da kuvvetler dengelenmemiştir." · yazı: "DENGELENMEMİŞ" · KARAKTER
+FİKİR: Fren balatası jantı sıkmış, arka lastik ıslak asfalta koyu bir iz bırakmaya başlamış,
+       tekir kedi yolun ortasında durmuş ve dönüp bakmış bile değil. Kuvvet burada bir okla
+       değil, asfalta bırakılan izin uzunluğuyla ölçülüyor.
+YÜKÜM: dört-yükümlülük · "Önüne kedi çıkan" → tekir, yolun tam ortasında, gövdesi kadraja dik ·
+       "bisikletli" → gidona yüklenmiş iki el, ön çatal yay basmış · "frene basar" → balata
+       jant çemberine kapanmış, kablo gergin, parmak eklemleri beyazlamış · "yavaşlar" →
+       arka lastikten geriye doğru uzayan koyu ıslak iz ve kalkan ince su perdesi.
+AYRICALIK: durma-mesafesi — gerçek çekimde ya kedi net olur ya iz; uzun lens ikisini aynı
+       görsel rafa sıkıştırıyor ve "yavaşlama"nın kendisi tek karede uzunluk olarak okunuyor.
+PLAN:  kahraman fren balatası ve jant · bir net insan (iki el, önkollar) · ışık alçak doğu
+       güneşi, ıslak asfalttan geri sıçrıyor; balatanın üst kenarına, jantın kavsine, ıslak
+       izin parlak sınırına ve kedinin sırt tüylerinin ucuna değiyor — asfaltın ön yüzüne
+       ulaşmıyor · FEDA: kedinin yüzü tamamen odak dışı, yolun uzağı çözülmüyor.
+ENTRY STATE: Bisiklet hâlâ ilerliyor; iz başlamış ama kısa, kedi durmuş ve kımıldamıyor.
+EXIT STATE: İz uzadı ve sona ermedi, balata jantı bırakmadı, kedi hâlâ tam ortada.
+       Asfalttaki tebeşir kelime hiç bozulmadı.
+-----
+This is a lit three-dimensional scene of real physical objects in a real place — not a diagram, not an infographic. 85mm lens at f/8, camera low and almost level with the wet asphalt and set slightly behind the rear wheel so the brake, the tyre, the skid track and the cat all compress onto one visual shelf; a blurred wet kerbstone is cut across the near-left corner as the foreground anchor. Her two hands are locked on the brake levers with the knuckles gone pale, her forearms braced, and the finely made bicycle's rim brake has closed hard onto the polished alloy rim with the cable pulled visibly taut. Her skin stays matte with low specular. Behind the rear tyre a dark wet skid track has been laid down the honed asphalt and a fine curtain of water is lifting off the tread. A grey-brown Anatolian tabby stands square in the middle of the road with all four feet down. Written large across the wet asphalt in white chalk, well ahead of the wheel and lying flat on the road surface, is the single Turkish word. The key is the low hard eastern sun raking down the road from ahead: it lands on the top edge of the brake pad, on the curve of the alloy rim, along the bright wet boundary of the skid track and on the tips of the cat's back fur, and it stops at the near face of the kerb, which sits outside it in a deep coloured indigo. Cool-violet bounce comes up off the wet road at about a third of the key. Three things are alive: the curtain of water lifting off the tread, one bead of water running down the taut brake cable, and the cat's ear turned back while its body stays still. Depth in three layers — the blurred kerbstone cut at the near corner, the brake, rim, tyre and chalk word crisply resolved in the middle, and the cat and the road beyond compressed soft by the long lens. Every object rests in contact: the tyre flattens into a wide dark contact patch on the wet road, the brake pad flattens against the rim, each of the cat's four feet presses its own small dark print into the water film, and the chalk sits in the asphalt's texture rather than on top of it.
+STYLE: Dimensional feature-animation CGI read materials-first at close range. Polished alloy takes a hard specular band with real machining marks; the brake pad is dense matt rubber compressed out of shape where it grips; tyre rubber is true black with a real moulded tread pattern holding water in its channels; honed asphalt is fine-grained with a continuous film of water over it and separate beads at its edges; chalk is a dry powdery deposit lying in the surface texture. Fur is soft-diffuse with visible translucency at the thin edges of the ears. Skin is subsurface-scattered and never clay. No cel outline, no flat graphic fill, no toon shader, no photoreal capture.
+LIGHT AND PALETTE: A single strong directional key, low and hard from ahead, not a soft even wash — the bicycle, the cat and the kerb each lay a long crisply-shaped shadow back along the road and all of them run the same way. The palette is fully saturated: the frame a true deep red, the tyre a true black, the alloy a true cold silver, the tabby a true warm ochre-grey, and the shadows a deep coloured indigo with the asphalt's grain still visible inside them. Never pastel, never chalky in the light, never a flat even diffuse fill. No teal-orange grade, no desaturated wash.
+TEXT: The thirteen-letter Turkish word "DENGELENMEMİŞ" is drawn large in white chalk directly on the wet asphalt, lying completely flat in the road plane with its baseline exactly parallel to the bottom frame edge, seen from a low angle that still keeps every letter in one single plane and all of them inside the deep depth of field. Thirteen letters read left to right: D, E, N, G, E, L, E, N, M, E, M, then a capital İ carrying its dot clearly above the stem, then a capital Ş carrying its cedilla clearly below. It appears once, on the road, and on no other surface in frame; the bicycle carries no brand name and the kerb no marking.
+NEGATIVE: All thirteen chalk letters lie in one flat plane on the road with the dot of the İ and the cedilla of the Ş both clearly present and separate. The bicycle frame, forks, rim and brake stay rigid machined solids holding their exact geometry. The cat stands with all four feet down and is never caught mid-leap. There is no glow, beam, arrow, label line, speed marking or inset panel anywhere in frame. No English lettering on the frame, tyre or road.
+-----

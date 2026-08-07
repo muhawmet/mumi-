@@ -1,18 +1,33 @@
 SEKANS 6b — BÖBREK ÜSTÜ BEZLERİ · LUNAPARK · EŞEYSEL BEZLER (K55–K60)
 Motor: Nano Banana 2 Flash (Magnific) · 16:9 · register EDU · dünya pixar_3d_edu
-REFERANS: yalnız @mira → 1lLXJFpr4r  (mekân/nesne plakası referans olarak VERİLMEZ)
+🔴 REFERANS: yalnız @mira **BÜST KIRPIMI** → `u5qTaHJQLD`
+   Eski tam boy plaka `1lLXJFpr4r` **KULLANILMAZ** (koordinatör ölçümü: o plakayla basılan
+   8 karenin 8'i reddedildi). Mira'sız karede (K59, K60) referans HİÇ verilmez.
+   Mekân/nesne plakası zaten referans olarak verilmez.
 DURUM: 55–60 basıldı ve gözle onaylandı (6/6). Aşağıdaki metinler BASILAN metinlerdir.
 
 🔴 BU TURDA ÖLÇÜLEN — sonraki sekanslar için
-1. @mira plakası kareyi 4 kez EZDİ (beyaz stüdyo fonu + tam boy duruş klonlandı).
-   Kesin çare, gövdenin İLK cümlesinde: *"The attached reference is an identity plate only:
-   take from it the child's face, hair and outfit and nothing else — the setting, camera,
-   framing and pose below override it completely."* Bunu yazınca 6/6 kare temiz geldi.
-2. Kadraj kilidi TEK BAŞINA yetmiyor; "cropped BY THE FRAME EDGE at mid-chest" yaz —
+1. Büst plakası tam boy plakadan ölçülebilir biçimde iyi: aynı dört karede stüdyo fonu ve
+   ayakta duruş bir kez bile dönmedi, ÖN PLAN çıpası daha güçlü oturdu.
+2. Tam boy plakayla çalışırken zorunlu olan kimlik sözleşmesi büstte de KALIR — tek fark
+   son yarısı: *"take from it the child's face and hair and nothing else — the setting,
+   camera, framing and pose below govern the shot."* Büst gardırobu taşımadığı için
+   kıyafet cümlesi ARTIK GÖVDEDE yazılır (kırmızı kapüşonlu, denim tulum, altın yıldız toka).
+3. Kadraj kilidi TEK BAŞINA yetmiyor; "cropped BY THE FRAME EDGE at mid-chest" yaz —
    "framed from mid-chest up" plakayı durdurmadı.
-3. Yıldız toka rengi kayıyor (kırmızıya döndü). Referansı EZMEYEN tek düzeltme:
-   *"her small golden-yellow star hair clip"* — tarif değil, plakanın teyidi.
-4. Sahne EVRENİ önce, çocuk sonra yazılınca plaka klonu hiç olmadı.
+4. 🔴 **ÖN PLAN ÇIPASI ZORUNLU.** Kadrajın en önünde odak dışı SOMUT KÜTLE
+   (kuyruk babası · çelik payanda · pirinç küpeşte). Çıpayı "a solid dark mass the eye
+   reads first" diye yazınca üç karenin üçü de tuttu; çıpasız sürümler yassı geldi.
+5. 🔴 **NEGATİFTE NESNE ADLANDIRMA — O NESNEYİ ÇAĞIRIYOR.** Negatiften bütün nesne
+   adları (etiket, ok, panel, tabela, fon) çıkarıldı; yerlerine olumlu cümle kondu
+   (*"stalls carry plain painted stripes and solid blocks of colour"*). Negatifte yalnız
+   IŞIK KOŞULU kaldı (düz dolgu · alacakaranlık · solgun grade) — bunlar nesne değil.
+6. 🔴 **ARKA PLANDAKİ TEZGÂH SIRASI YAZI ÜRETİYOR.** "plain painted stripes" yazılmasına
+   RAĞMEN K57'de motor "POP" ve "RIDES" bastı. Çare kelimeyi düzeltmek değil, YÜZEYİ
+   KALDIRMAK: kamera yükseltilip arka plan ağaç · göl · tepe · dönme dolaba indirildi,
+   yazı üretecek düz cephe kadrajda kalmadı → temiz geldi.
+7. Referans parmağa yüzük taktı; olumlu düzeltme tuttu: *"one flat bare palm … her fingers
+   plain and unadorned."*
 
 ⚠ K59–K60 çocuk güvenliği kilidi: organ çizilmez, beden gösterilmez, Mira kadrajda YOK.
 ⚠ K56–K58 lunapark: "gülüyor" + "kucak barı kapalı, iki eli barda" — ölçülmüş geçen ifade.
@@ -22,20 +37,22 @@ DURUM: 55–60 basıldı ve gözle onaylandı (6/6). Aşağıdaki metinler BASIL
 -----
 
 K55  ·  VO 55: "Böbrek üstü bezleri adrenalin hormonu salgılar."
-REFERANS: @mira (1lLXJFpr4r)
+REFERANS: @mira büst (u5qTaHJQLD)
 
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair and outfit and nothing else — the setting, camera, framing and pose below override it completely.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face and hair and nothing else — the setting, camera, framing and pose below govern the shot.
 
-A big, well-kept amusement park in hard late-afternoon sun. The camera sits on the boarding deck of the roller coaster, looking along the painted steel gate toward the lift hill, which climbs steeply out of the top of the frame; the train of cars is two thirds of the way up it, a row of small dark shapes with riders sitting shoulder to shoulder. The girl stands at the gate on the right of frame, cropped by the frame edge at mid-chest so only her upper body and head are visible, turned three-quarters away from the camera, one flat palm resting on the steel, chin lifted, grinning as she looks up at the track. Beyond the gate the park is alive and cared for: a Ferris wheel turning, a carousel, crisp striped awnings, families walking the clean paved avenue, a lake catching the sun. The low sun comes hard from the left, drawing a bright gold edge down the gate, her shoulder and every steel upright, and laying long raked shadows of the lattice across the deck boards. In the immediate foreground a queue railing post and the corner of a striped awning sit out of focus and close the bottom-left corner. Deep saturated cobalt sky, warm dust hanging in the light.
+A big, modern, immaculately kept amusement park in hard late-afternoon sun; every structure is crisp, freshly painted steel and clean canvas. The camera sits on the boarding deck of the roller coaster, looking along the painted steel gate toward the lift hill, which climbs steeply out of the top of the frame; the train of cars is two thirds of the way up it, a row of small dark shapes with riders sitting shoulder to shoulder. The girl stands at the gate on the right of frame, cropped by the frame edge at mid-chest so only her upper body and head are visible, turned three-quarters away from the camera, one flat bare palm resting on the steel, her fingers plain and unadorned, chin lifted, grinning as she looks up at the track. She wears a red hooded sweatshirt under denim dungarees and a small golden-yellow star clip in her hair. Beyond the gate the park is alive: a Ferris wheel turning, a carousel with brass poles, awnings and stalls carrying plain painted stripes and solid blocks of colour across every panel, families walking the clean paved avenue, a lake catching the sun. The low sun comes hard from the left, drawing a bright gold edge down the gate, her shoulder and every steel upright, and laying long raked shadows of the lattice across the deck boards. Closest to the camera, filling the bottom-left corner completely out of focus, sits the heavy painted post of the queue railing — a solid dark mass the eye reads first. Deep saturated cobalt sky, warm dust hanging in the light.
 
-STYLE: cinematic 3D animation, medium-close lens on the deck, shallow depth of field on the foreground railing, telephoto compression on the lift hill, tactile painted steel and clean canvas.
+STYLE: cinematic 3D animation, medium-close lens on the deck, very shallow depth of field so the near railing post is a soft solid mass, telephoto compression on the lift hill, tactile painted steel and clean canvas.
 LIGHT AND PALETTE: single hard low sun from frame left, long raked shadows; saturated cobalt sky, warm gold on steel, full-bodied indigo shadows.
-NEGATIVE: no plain studio backdrop and no full-body standing character pose; no lettering or signage text anywhere; no arrows, labels or inset panels; no flat even fill light.
+NEGATIVE: no flat even fill light; no dusk or twilight; no pale or desaturated grade; no greyed or weathered surfaces.
 
 -----
 
 K56  ·  VO 56: "Hız treni tepede bir an durdu, sonra aşağı bıraktı."
-REFERANS: @mira (1lLXJFpr4r)  — sekansın kahraman karesi
+REFERANS: @mira — ⚠ bu kare ESKİ tam boy plakayla (`1lLXJFpr4r`) basıldı ve ONAYLANDI;
+plaka kuralı değişmeden önce bitmişti, yeniden basılmadı. Yeniden basılırsa `u5qTaHJQLD`.
+Sekansın kahraman karesi.
 
 A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair and outfit and nothing else — the setting, camera, framing and pose below override it completely.
 
@@ -48,30 +65,34 @@ NEGATIVE: no raised arms and no hands off the bar; no shoulder harness; no dusk,
 -----
 
 K57  ·  VO 57: "İşte o duygunun adı adrenalindi."
-REFERANS: @mira (1lLXJFpr4r)
+REFERANS: @mira büst (u5qTaHJQLD)
+⚠ Arka plandaki TEZGÂH SIRASI kaldırıldı — iki denemede motor oraya yazı bastı
+  ("POP", "RIDES"). Yüzey kadrajdan çıkınca yazı da çıktı.
 
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair, her small golden-yellow star hair clip and her outfit, and nothing else — the setting, camera, framing and pose below override it completely.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face and hair and nothing else — the setting, camera, framing and pose below govern the shot.
 
-The camera is out ahead of a steel roller coaster and below it, looking back up at the lead car halfway down its long descent, the rails sweeping out of the top of the frame. The girl is centre frame in three-quarter view, cropped by the frame edge at mid-chest, both hands wrapped around the padded lap bar closed in front of her, elbows down, hair blown straight back, laughing wide and delighted, her golden-yellow star clip catching the sun. Behind her the cars stretch away up the rail in a receding row, riders leaning the same way with their hands on their bars. The low sun hits hard from the upper left and sears a crisp gold line along the top edge of the car, along her hair and along the polished rail; the underside of the car is deep cool indigo shadow. The rushing air reads — loose hair, a snapping pennant on a distant pole, dust lit like sparks streaking past. Behind and far below, the park is warm and busy: striped awnings, treetops, the bright disc of the Ferris wheel, a lake edge. In the immediate foreground one out-of-focus steel bracing tube crosses the lower left corner. Deep saturated cobalt sky.
+The camera is out ahead of a steel roller coaster and below it, looking back up at the lead car halfway down its long descent, the rails sweeping out of the top of the frame. The girl is centre frame in three-quarter view, cropped by the frame edge at mid-chest, both bare hands wrapped around the padded lap bar closed in front of her, fingers plain and unadorned, elbows down and arms low and forward, hair blown straight back, laughing wide and delighted. She wears a red hooded sweatshirt under denim dungarees and a small golden-yellow star clip in her hair, the clip catching the sun. Behind her the cars stretch away up the rail in a receding row, riders leaning the same way with their hands on their own bars. The low sun hits hard from the upper left and sears a crisp gold line along the top edge of the car, along her hair and along the polished rail; the underside of the car is deep cool indigo shadow. The rushing air reads — loose hair, a plain solid-colour pennant snapping on a distant pole, dust lit like sparks streaking past. Far below and behind lies only open parkland: a broad canopy of green treetops, a wide lake burning with sun, low hills on the horizon, and the pale skeletal disc of the Ferris wheel turning above the trees. The camera is high enough that no stalls, kiosks or building fronts appear anywhere in frame. Closest to the camera, crossing the lower left corner completely out of focus, runs a thick steel bracing tube of the track — a solid dark mass the eye reads first. Deep saturated cobalt sky.
 
-STYLE: cinematic 3D animation, medium lens, low three-quarter angle, motion-charged air, shallow depth of field with the girl sharp and the train falling away soft.
-LIGHT AND PALETTE: single hard low sun from upper left, crisp gold on hair and steel edges; saturated cobalt sky, deep indigo undersides, warm amber park far below; strong contrast, no haze wash.
-NEGATIVE: the star hair clip is golden yellow, never red or pink; no plain studio backdrop and no full-body standing pose; no raised arms; no pale or desaturated sky.
+STYLE: cinematic 3D animation, medium lens, low three-quarter angle, motion-charged air, very shallow depth of field with the near bracing tube a soft solid mass and the train falling away soft behind.
+LIGHT AND PALETTE: single hard low sun from upper left, crisp gold on hair and steel edges; saturated cobalt sky, deep indigo undersides, warm green and gold parkland far below; strong contrast.
+NEGATIVE: the star hair clip is golden yellow; every surface in frame is bare painted metal, fabric, foliage or water; no flat even fill light; no hazy, pale or desaturated sky.
 
 -----
 
 K58  ·  VO 58: "Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı."
-REFERANS: @mira (1lLXJFpr4r)  — 🔴 dersin kapanış kanıtı: İKİ IŞIK tek karede
+REFERANS: @mira büst (u5qTaHJQLD)  — 🔴 dersin kapanış kanıtı: İKİ IŞIK tek karede
 Durum, olay değil: tren çoktan durmuş, bar çoktan kalkmış, o çoktan inmiş.
 ⚠ Kapalı istasyonda sert güneş yoktu — çözüm: kız gölgeden ÇIKMIŞ, tren gölgede KALMIŞ.
+⚠ Amber "hâlâ var" demek yetmedi; "the shaded half of the frame glows on its own" yazınca
+  gölgeli yarı gerçekten kendi başına yandı ve iki ışık aynı karede okunur oldu.
 
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair, her small golden-yellow star hair clip and her outfit, and nothing else — the setting, camera, framing and pose below override it completely.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face and hair and nothing else — the setting, camera, framing and pose below govern the shot.
 
-The exit ramp at the open end of a modern roller coaster station, hard late-afternoon sun, the ride over. The camera is low and close, level with the girl. She has just stepped out of the shade into the open sunlight and stands right of centre, large in frame and cropped by the frame edge at mid-chest so only her upper body and head are visible, turned three-quarters, one hand still resting on the polished brass handrail beside her, weight settled, breathing out, smiling to herself. The low sun comes in hard from frame left: it lays a crisp gold edge along the top of the brass rail and along her shoulder, and where the station canopy begins the light stops at a knife-sharp diagonal shadow line — past that line the crisp painted steel is cold unlit indigo, with no halo and no bounce carried across. Behind her, inside that shade, the stopped train waits in the station with its lap bars raised and a few riders stepping out; a broad amber with no edge at all still glows from inside the enamelled steel of the cars, from inside the smooth timber decking and from inside the fabric of her sleeve, dimming outward with no boundary. Beyond the ramp the park is bright and busy — crisp striped awnings, the Ferris wheel, families on clean paved avenues, a lake. In the immediate foreground the out-of-focus curve of the ramp rail crosses the bottom of the frame.
+The exit ramp at the open end of a modern roller coaster station, hard late-afternoon sun, the ride over; every structure is crisp, freshly painted steel and smooth timber. The camera is low and close, level with the girl. She has just stepped out of the shade into the open sunlight and stands right of centre, large in frame and cropped by the frame edge at mid-chest so only her upper body and head are visible, turned three-quarters, one bare hand still resting on the polished brass handrail beside her, weight settled, breathing out, smiling to herself. She wears a red hooded sweatshirt under denim dungarees and a small golden-yellow star clip in her hair. The low sun comes in hard from frame left and lays a crisp gold edge along the top of the brass rail and along her shoulder; where the station canopy begins, that edge stops at a knife-sharp diagonal line and the steel beyond it is cold unlit indigo, keeping nothing of the light and carrying none of it across. Deep inside that shade the stopped train waits with its lap bars raised and riders stepping out, and there a completely different warmth is at work: a broad amber with no edge at all burns from within the crimson enamel of the car bodies, from within the timber decking and from within the fabric of her sleeve, so strongly that the shaded half of the frame glows on its own, thinning outward with no boundary. Beyond the ramp the park is bright and busy — awnings in plain painted stripes, the Ferris wheel, families on clean paved avenues, a lake. Closest to the camera, curving across the bottom of the frame completely out of focus, lies the heavy polished brass of the ramp rail — a solid warm mass the eye reads first.
 
-STYLE: cinematic 3D animation, medium-close lens, low level angle, shallow depth of field, tactile enamelled steel, polished brass and smooth timber.
-LIGHT AND PALETTE: one hard low sun from frame left with a knife-sharp diagonal shadow line; separately a broad edgeless amber glowing from within the materials in the shade, never on skin; saturated cobalt sky, crimson enamel, deep indigo shade.
-NEGATIVE: no weathered, greyed or rustic timber and no barn-like structure; no mobile phones; no full-body standing pose and no plain backdrop; no soft twilight or even fill light.
+STYLE: cinematic 3D animation, medium-close lens, low level angle, very shallow depth of field so the near brass rail is a soft solid mass, tactile enamelled steel, polished brass and smooth timber.
+LIGHT AND PALETTE: one hard low sun from frame left with a knife-sharp diagonal shadow line; and separately a strong broad edgeless amber glowing from within the materials in the shade, never on skin; saturated cobalt sky, crimson enamel, deep indigo shade.
+NEGATIVE: no soft twilight and no flat even fill light; no bloom around the hard-lit edge; no greyed or weathered surfaces.
 
 -----
 

@@ -94,10 +94,23 @@ export function canaryLockPath(root, projectPathPosix) {
 
 /** Proje kökünde son eki tutan ilk dosyanın MUTLAK yolu — yoksa null. Disk okur, kayda sormaz. */
 export function projeDosyasi(root, projectPathPosix, sonEk) {
-  const dir = toPlatformPath(root, projectPathPosix);
-  if (!existsSync(dir)) return null;
-  const hit = readdirSync(dir).find((f) => f.toLowerCase().endsWith(sonEk.toLowerCase()));
-  return hit ? join(dir, hit) : null;
+  // İki yer denenir: kayıttaki yol, sonra `Biten/<proje>`.
+  //
+  // 2026-08-07'de ölçüldü ve bu, bu repoda ONBİRİNCİ "yerleşim varsayımı" kusuru: bir iş
+  // teslim edilip `Biten/` altına taşındığında kayıttaki `projectPath` eskiyor ve bu arama
+  // BOŞ dönüyor. Sonuç, kapanış kapısının "KAPANIŞ RECEIPT yok" demesiydi — oysa makbuz
+  // yazılabilir durumdaydı, kapı sadece taşınmış klasörü bilmiyordu. Yani iş bitmişti ama
+  // sistem onu kapatamıyordu ve kayıt sonsuza kadar "aktif" kalıyordu.
+  const adaylar = [projectPathPosix];
+  const ad = String(projectPathPosix ?? '').split('/').pop();
+  if (ad && !/\/Biten\//.test(String(projectPathPosix))) adaylar.push(`${INBOX_REL}/Biten/${ad}`);
+  for (const aday of adaylar) {
+    const dir = toPlatformPath(root, aday);
+    if (!existsSync(dir)) continue;
+    const hit = readdirSync(dir).find((f) => f.toLowerCase().endsWith(sonEk.toLowerCase()));
+    if (hit) return join(dir, hit);
+  }
+  return null;
 }
 export const STATUSES = ['aktif', 'bloke', 'mami-bekliyor', 'kapandi'];
 

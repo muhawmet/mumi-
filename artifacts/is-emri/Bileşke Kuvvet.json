@@ -1,0 +1,512 @@
+{
+  "surum": 1,
+  "proje": "Bileşke Kuvvet",
+  "olusturuldu": "2026-08-07T12:56:16.508Z",
+  "guncellendi": "2026-08-07T12:56:16.508Z",
+  "shots": [
+    {
+      "n": 1,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 2,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 3,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 4,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 5,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 6,
+      "sekans": "S1",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 7,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 8,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 9,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 10,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 11,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 12,
+      "sekans": "S2",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 13,
+      "sekans": "S3",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 14,
+      "sekans": "S3",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 15,
+      "sekans": "S3",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 16,
+      "sekans": "S3",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 17,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 18,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 19,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 20,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 21,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 22,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 23,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 24,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 25,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 26,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 27,
+      "sekans": "S5",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 28,
+      "sekans": "S6",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 29,
+      "sekans": "S6",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 30,
+      "sekans": "S6",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 31,
+      "sekans": "S6",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 32,
+      "sekans": "S6",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 33,
+      "sekans": "S7",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 34,
+      "sekans": "S7",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 35,
+      "sekans": "S7",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 36,
+      "sekans": "S7",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 37,
+      "sekans": "S7",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 38,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 39,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 40,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 41,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 42,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 43,
+      "sekans": "S8",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 44,
+      "sekans": "S9",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 45,
+      "sekans": "S9",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 46,
+      "sekans": "S9",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 47,
+      "sekans": "S9",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 48,
+      "sekans": "S10",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 49,
+      "sekans": "S10",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 50,
+      "sekans": "S10",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 51,
+      "sekans": "S10",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 52,
+      "sekans": "S10",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 53,
+      "sekans": "S11",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 54,
+      "sekans": "S11",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 55,
+      "sekans": "S11",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 56,
+      "sekans": "S11",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    }
+  ]
+}

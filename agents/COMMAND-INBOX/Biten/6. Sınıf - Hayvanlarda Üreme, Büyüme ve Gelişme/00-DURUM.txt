@@ -1,3 +1,17 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — AŞAMA: TESLİM EDİLDİ (2026-08-07, Mami)
+
+## KAPANIŞ RECEIPT
+DURUM: APPROVED
+KAYNAK: /Users/Muhammet/Desktop/6. Sınıf Animasyonlar/Hayvanlarda Üreme, Büyüme ve Gelişme/RENDER/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme.mp4
+SHA256: a451a933eb435f459325a9eb0ecddb35c0d5d9eab9c636df964193a90ce014e1
+SÜRE: 3:09
+KANIT: agents/COMMAND-INBOX/Biten/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme — kaba kurgu.xml
+NOT: Mami'nin teslim hükmü (2026-08-07) — "Hayvanları teslim ettim." Film 349.8 MB.
+
+────────────────────────────────────────────────────────────────
+AŞAĞISI TESLİMDEN ÖNCEKİ KAYITTIR — arşiv, otorite değil.
+────────────────────────────────────────────────────────────────
+
 HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — AŞAMA: MOTION (klip basımı sürüyor)
 ════════════════════════════════════════════════════════════════
 prompt ✓ (lint KIRMIZI 0)   ·   kare 54/54 ✓   ·   KLİP 3/54   ·   VO ✓

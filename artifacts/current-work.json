@@ -1,41 +1,25 @@
 {
   "version": 1,
-  "projectId": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
-  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
-  "phase": "kurgu",
+  "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
+  "phase": "uretim",
   "status": "aktif",
-  "lastCompleted": "VO değişti (eski kayıt peltek okuyordu, Mami yeniden seslendirtti) → kaba kurgu YENİ VO ile yeniden kuruldu. 3:11 → 3:08, whisper 54/54 kareyi yeni cümle sınırlarına oturttu. Eski VO vo-ESKI-PELTEK.mp3 olarak duruyor.",
-  "nextAction": "Premiere'de KURGU/KABA-KURGU.xml aç, render al. Render inince AGY tam film izleyecek + cetvel ffmpeg + hakem Read.",
+  "lastCompleted": "iş açıldı — henüz ölçülmüş bir çıktı yok.",
+  "nextAction": "Enzim kilitlerini kapat (/mamilas-enzim).",
   "openMamiDecision": null,
   "blockedBy": null,
-  "requiredLocalMedia": [
-    {
-      "path": "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/Hayvanlarda Üreme, Büyüme ve Gelişme",
-      "expect": {
-        "clips": 57,
-        "vo": 2,
-        "muzik": 2
-      },
-      "note": "repo dışı — git-ignore değil, hiç repoda değil"
-    }
-  ],
+  "requiredLocalMedia": [],
   "deliverables": {
-    "REFERANSLAR": true,
+    "REFERANSLAR": false,
     "PROMPTLAR": true,
-    "revize": true,
-    "MOTION": true,
-    "EDIT-PLAN": true,
+    "revize": false,
+    "MOTION": false,
+    "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
-    "KABA-KURGU.xml": true
+    "KABA-KURGU.xml": false
   },
-  "deliverablesOverride": {
-    "MOTION": true,
-    "EDIT-PLAN": true,
-    "KABA-KURGU.xml": true,
-    "revize": true
-  },
-  "updatedAt": "2026-08-07T12:31:33.215Z",
+  "updatedAt": "2026-08-07T18:41:21.329Z",
   "updatedBy": "claude",
-  "baseCommit": "f3357a50"
+  "baseCommit": "b87e38ac"
 }

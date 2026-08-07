@@ -1,7 +1,16 @@
 SEKANS 7 — İKİ ŞEF, TEK UYUM · KAPANIŞ (K61–K66)
 Motor: Nano Banana 2 Flash (Magnific) · 16:9 · register EDU · dünya pixar_3d_edu
-REFERANS: yalnız @mira → 1lLXJFpr4r  (salon plakası referans olarak VERİLMEZ — yazıyla taşınır)
+🔴 REFERANS: yalnız K66'da @mira **BÜST KIRPIMI** → `u5qTaHJQLD`
+   Eski tam boy plaka `1lLXJFpr4r` **KULLANILMAZ**. K61–K65'te Mira yok → referans HİÇ verilmez.
+   Salon plakası referans olarak VERİLMEZ — salon yalnız yazıyla taşınır.
 DURUM: 61–66 basıldı ve gözle onaylandı (6/6). Aşağıdaki metinler BASILAN metinlerdir.
+
+🔴 K66 İKİ KEZ BASILDI, İKİNCİSİ AÇIK ARA KAZANDI — fark referans DEĞİL, ÖN PLAN ÇIPASI.
+   Eski sürüm: "an out-of-focus gilt seat-row rail closes the bottom-right" → çıpa cılız,
+   kadraj yassı. Yeni sürüm: *"Closest to the camera, filling the bottom-right corner
+   completely out of focus, rises the carved gilt end of the seat row — a solid golden mass
+   the eye reads first"* → salon doldu, derinlik üç düzleme oturdu, kapanış karesi oldu.
+   Kural: çıpa "önde bir şey var" diye değil, **nerede · ne kadar · ne kütlesi** diye yazılır.
 
 🔴 TABLO YASAK. Şema, etiket, ok, inset panel, iki sütunlu karşılaştırma yok.
    Fark İKİ IŞIĞIN DAVRANIŞIYLA anlatıldı ve motor bunu ÜÇ kez doğru bastı:
@@ -93,13 +102,13 @@ NEGATIVE: no flat even fill light and no bare empty wall filling the frame; no r
 -----
 
 K66  ·  VO 66: "Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu."
-REFERANS: @mira (1lLXJFpr4r)  — filmin son karesi
+REFERANS: @mira büst (u5qTaHJQLD)  — filmin son karesi
 🔴 Kavram ışığı TENE DEĞMEZ — kadifenin, örgünün, pirincin içinde.
 
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair and outfit and nothing else — the setting, camera, framing and pose below override it completely.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face and hair and nothing else — the setting, camera, framing and pose below govern the shot.
 
-The front row of a grand gilded concert hall at the end of the concert. The camera is low, at the stage side, looking back along the row. The girl has risen to her feet and is cropped by the frame edge at the waist, seen in three-quarter view, her hands already brought together in applause and held there, chin lifted toward the stage, eyes bright, a wide open smile. Around and behind her the rest of the audience is rising too — a warm blurred field of shoulders and moving hands, crimson velvet seat backs tipping up. Spill from the stage shafts comes hard from frame left and draws a clean gold edge down one side of her face, her shoulder and the seat back beside her. Deeper in, past her, the orchestra is still on its feet in honey pools of light and the conductor is turning toward the hall. A second warmth sits under all of it — a broad amber with no edge, alive inside the crimson velvet, inside the knit of her sleeve and inside the brass on stage, thinning outward with no boundary. In the immediate foreground an out-of-focus gilt seat-row rail and one blurred raised hand close the bottom-right. Dust turns in the shafts above.
+The front row of a grand gilded concert hall at the end of the concert. The camera is low, at the stage side, looking back along the row. The girl has risen to her feet and is cropped by the frame edge at the waist, seen in three-quarter view, her hands already brought together in applause and held there, chin lifted toward the stage, eyes bright, a wide open smile. She wears a red hooded sweatshirt under denim dungarees and a small golden-yellow star clip in her hair. Around and behind her the rest of the audience is rising too — a warm blurred field of shoulders and moving hands, crimson velvet seat backs tipping up. Spill from the stage shafts comes hard from frame left and draws a clean gold edge down one side of her face, her shoulder and the seat back beside her. Deeper in, past her, the orchestra is still on its feet in honey pools of light and the conductor is turning toward the hall. A second warmth sits under all of it — a broad amber with no edge, alive inside the crimson velvet, inside the knit of her sleeve and inside the brass on stage, thinning outward with no boundary. Closest to the camera, filling the bottom-right corner completely out of focus, rises the carved gilt end of the seat row — a solid golden mass the eye reads first. Dust turns in the shafts above.
 
-STYLE: cinematic 3D animation, medium-close lens, low three-quarter angle, shallow depth of field, tactile velvet, gilt and knitted fabric.
+STYLE: cinematic 3D animation, medium-close lens, low three-quarter angle, very shallow depth of field so the near gilt seat end is a soft solid mass, tactile velvet, gilt and knitted fabric.
 LIGHT AND PALETTE: hard stage spill from frame left with a crisp gold edge on face and shoulder; separately a broad edgeless amber inside velvet, fabric and brass, never on skin; saturated crimson, honey and deep indigo.
-NEGATIVE: no plain studio backdrop and no full-body standing pose; no empty hall and no seated audience; no labels, arrows or panels; no washed-out pastel grade.
+NEGATIVE: the hall is packed and everyone is on their feet; no flat even fill light; no washed-out pastel grade.

@@ -1,0 +1,26 @@
+Bileşke Kuvvet'i sıfırdan kuracağız. Önce şunu oku, tek dosya:
+
+agents/COMMAND-INBOX/Bileşke Kuvvet/_DEVIR-YENI-SOHBET.md
+
+Özet: elimizdeki 71 promptluk set ZAYIF ve ARŞİV — bir cümlesi bile taşınmayacak.
+Kaynaktan yeniden kuracağız:
+
+agents/COMMAND-INBOX/Bekleyen/KUVVETLERİN GÜÇ BİRLİĞİ-6. sınıf -vıdeo senaryosu.docx
+
+Hedefim: vivid, canlı, kaliteli, çok öğretici, well thought. Eski kafa olmayacak.
+
+PLAN MODUNDA aç ve şu sırayla yürü:
+  1. node scripts/brifing.mjs "<yukarıdaki docx>"   (koşuldu, çıktısı devir dosyasında)
+  2. /mamilas-enzim  — bu projede vizyon kilidi HİÇ kurulmamış, en büyük eksik bu
+  3. /mamilas-studyo — sekans omurgası (eski sette S1 68 saniyeydi, olmaz)
+
+Devir dosyasının 3. bölümünü atlama: bu ayın SEKİZ ölçümü orada ve hiçbiri ders
+bankasında yok. Kamera türü sekans içinde döner, negatif sahneye özel yazılır,
+klip süresi ekran+2 saniyedir — üçünü de bugün ölçtük.
+
+İki kuralım kesin:
+  · START FRAME YALNIZ MAGNIFIC'te basılır. Higgsfield ortak hesap, prompt silinemiyor;
+    start frame motion prompt'undan değerli.
+  · Kareyi görmeden motion yazma.
+
+Öneri serbest, körleme uygulama yasak: bul, bana söyle, ben seçerim.

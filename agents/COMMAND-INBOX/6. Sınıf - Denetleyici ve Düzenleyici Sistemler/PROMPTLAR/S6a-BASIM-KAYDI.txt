@@ -1,0 +1,42 @@
+SEKANS 6a (K45–K54) — BASIM KAYDI · 2026-08-07
+Motor: Magnific · imagen-nano-banana-2-flash · 16:9 · 75 kredi/kare
+Referans: @mira = creation `1lLXJFpr4r`, references[].type = **image** (character DEĞİL —
+"character" denince motor "bu bir creation, library asset değil" diye REDDEDİYOR; ölçüldü).
+
+kare | tur | sonuç | not
+-----|-----|-------|----
+K45  | 2   | KABUL | tur1 reddedildi: kaynaksız amber hiç görünmedi + key yumuşak, oda soluk bej.
+     |     |       | tur2'de "razor-edged slab" + "amber densest deep in the corner" yazıldı, oturdu.
+K46  | 1   | KABUL | ilk denemede tam images/20.png dili — içeriden yanan kütleler, uzaklaşan dizi.
+K47  | 2   | KABUL | tur1 reddedildi: "washes lie across the volume" cümlesi arka plana iki AMBER
+     |     |       | ŞERİT bastı — KANAL YASAĞI riski. tur2'de "formless bloom, no band, no ribbon,
+     |     |       | no strand, no line" yazıldı, arka plan temiz indigo geldi.
+K48  | 1   | KABUL | uçsuz akıntının içi; damar/kesit YOK, kırmızı YOK.
+K49  | 1   | KABUL | mimari ölçek, jilet rim, uzaklaşan zincir. Sekansın en parlak amber'i.
+K50  | 2   | KABUL | tur1 reddedildi: İKİ AYAKKABI NEREDEYSE AYNI BOYDAYDI (karenin bütün öğretim
+     |     |       | yükü boyut farkındaydı) + yüz ifadesi hüzünlüydü. tur2'de "tiny toddler's shoe"
+     |     |       | ⟂ "roughly twice its length" + "bright and curious, lifted brows" yazıldı.
+K51  | 1   | KABUL | camsı keseciklerin salı, içinde amber kolloid — 20.png dilinin en yakın akrabası.
+K52  | 1   | KABUL | boyut merdiveni + uzun parlak yaylar (hız bir DURUM olarak yazıldı).
+K53  | 1   | KABUL | ufuk kompozisyonu, kristal alanı çivi gibi düz ve eşit yoğunlukta.
+K54  | 1   | KABUL | tek hacim, diyagonal; kalabalık üst-sol ⟂ boş alt-sağ, bölünmüş panel YOK.
+     |     |       | ⚠ MAMİ'YE SORU: amber "kapsül"ler İLAÇ KAPSÜLÜNE benziyor. Ders ilaç değil
+     |     |       | hormon; okuma riski var ama iki farklı molekülü ayırma işini de tam yapıyor.
+     |     |       | İstenirse tek basımda "elongated capsules" → "elongated amber grains" ile döner.
+
+TOPLAM: 13 basım · 10 kabul · 3 red · ~975 kredi.
+
+REDDEDİLENLER images/mami-bak/ altında:
+  45-tur1.png · 47-tur1.png · 50-tur1-ayakkabilar-ayni-boy.png
+
+🔴 BU TURDA ÖLÇÜLEN — ders adayı
+1. "wash / lie across the volume" gibi UZANAN cümleler motoru ŞERİT çizmeye itiyor.
+   Kalıcı hâle (hormon ışığı) yazarken kelime "formless / shapeless / no direction" olmalı;
+   yoksa kalıcılık kanala dönüşüyor. (K47 tur1)
+2. Boyut karşıtlığı "one clearly larger than the other" ile GELMİYOR — motor iki nesneyi
+   birbirine yakın basıyor. Ölçü verilmeli: "roughly twice its length and twice its height".
+   (K50 tur1: iki ayakkabı aynı boy çıktı, karenin tek öğretim yükü buydu.)
+3. "single hard low sun" tek başına yetmiyor; "razor-edged slab" ve "blow the sill white"
+   yazılmadan NB2 yumuşak eşit dolgu basıyor ve kare soluk çıkıyor. (K45 tur1)
+4. Magnific'te @mira'nın referans TİPİ `image` — `character` reddediliyor. Bu bir kere
+   yazılmazsa her yeni oturum aynı hatayı tekrarlıyor.

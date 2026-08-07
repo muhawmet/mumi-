@@ -43,6 +43,16 @@ Sıradaki adım doğrudan 56 karenin basımı; Mami'nin emri: **image'dan sonra 
 
 ## BU VİDEODA ÖĞRENİLENLER
 
+- 2026-08-07 🔴 **KARAKTER PLAKASI KİMLİĞİ TAŞIYOR AMA IŞIK REJİMİNİ DE TAŞIYOR.**
+  Mami: *"sağdaki plastik değil mi, soldaki direkt filmden."* Ölçüldü: K05 (şef, **referanssız**)
+  sahnenin kendi ışığında doğdu — nota lambası pratiği, sert yan key, modelleme gölgesi, ten
+  dokusu, ön düzlemde odak dışı tuba. K07 (Mira, **`@mira` referanslı**) plastik.
+  Sebep `elements/mira.png`: beyaz fonda **düz aydınlatılmış stüdyo plakası** — yön veren key
+  yok, gölge yok, ten tek tonda, kumaş mat. Motor bunu kareye taşıyor.
+  **Onarım plakada, prompt'ta değil:** plaka sahne rejiminde yeniden basılır (tek yönlü sert
+  key + modelleme gölgesi + ten dokusu + ışıklı nötr fon). Tek kare (~75 kredi) 11 Mira
+  karesini birden düzeltir.
+
 - 2026-08-07 ❌ Kaynakta 0 kez geçen mekâna (mutfak) 56 kare yazıldı; motor sonunda pes edip
   ders kitabı diyagramı bastı — etiketli oklar, İngilizce yazı, çocuk yok. 27 kare çöpe.
 - 2026-08-07 ✅ Dünya kaynaktan türetilince (orkestra / nöron) ilk 3 kare onay aldı.
