@@ -1,11 +1,20 @@
-DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — AŞAMA: KARE BASILACAK
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — AŞAMA: 🅿️ PARK (2026-08-07, Mami kararı)
 ════════════════════════════════════════════════════════════════
-prompt ✓ (lint KIRMIZI 0)   ·   kare 0/56   ·   motion ✗   ·   VO ✓
+prompt ✓ (lint KIRMIZI 0)   ·   kare 56/56 ✓   ·   motion ✓ (S1–S7)   ·   VO ✓   ·   KLİP 0/56
 
-SIRADAKİ ADIM
-  PROMPTLAR/ altındaki blokları sırayla Nano Banana 2'de bas, images/ klasörüne at.
-  Kareler gelince: denetim → revize → motion (tek geçişte).
+NEDEN PARK
+  Aynı gün Hayvanlarda Üreme motion turuna girdi; iki iş aynı anda canlı tutulmuyor.
+  Bu proje SİLİNMEDİ, sadece current-work.json'daki aktif slottan düştü.
+
+DEVRALINACAK NOKTA — tek cümle
+  Kareler ve MOTION/ hazır. Sıradaki adım DOĞRUDAN KLİP BASIMI; yeniden yazılacak
+  hiçbir prompt yok. Klip basımından önce INTRO + RİSK CANARY (8 klip) koşulmadı.
+
+YENİDEN AÇMAK İÇİN
+  node scripts/current-work.mjs kapat            # önce aktif işi kapat
+  node scripts/current-work.mjs baslat "6. Sınıf - Denetleyici ve Düzenleyici Sistemler" --faz motion
+  node scripts/is-emri.mjs ac "6. Sınıf - Denetleyici ve Düzenleyici Sistemler" --kare 56
 
 AÇIK NOT
-  · prompt-lint kırmızısı 0 — basmadan önceki yapısal kapı temiz
-  · yeşil ≠ temiz: lint VO eşliğini ve görsel kaliteyi ÖLÇMEZ
+  · İş emri dosyası YOK — açılırken shot kaydı sıfırdan kurulacak, basılan 56 kare
+    `--asama basim --sonuc kabul` ile geriye dönük işlenmeli, yoksa kuzey yıldızı %0 okur.

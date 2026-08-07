@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "phase": "denetim",
+  "projectId": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
+  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
+  "phase": "motion",
   "status": "aktif",
-  "lastCompleted": "Motion turu başladı: K01, K02, K11 basıldı ve Mami onayladı (3 klip, 1620 kredi). Temiz-klip reçetesi doğrulandı — cetvel üçünde de donma bulamadı. Medya yeri kural oldu: video/ses/kurgu ~/Desktop/6. Sınıf Animasyonlar/<proje>/ altında.",
-  "nextAction": "KALAN 51 KLİP — kamera hareketi sekans içinde DÖNDÜRÜLEREK (hepsi push-in olmayacak, Mami'nin ölçümü), sürü/kalabalık kareler 4-5 sn kısa. Her klip indikçe KLIPLER/ altına <n>.mp4",
+  "lastCompleted": "K01, K02, K11 klipleri basıldı ve Mami onayladı (3 klip, 1620 kredi) — iş emrine işlendi. Kayıt çelişkisi kapandı: current-work Denetleyici adına Hayvanlarda ilerlemesi yazıyordu, artık doğru projeye bakıyor.",
+  "nextAction": "KALAN 51 KLİP — kamera hareketi sekans içinde DÖNDÜRÜLEREK, sürü/kalabalık kareler 4-5 sn kısa. Her klip indikçe KLIPLER/<n>.mp4, ardından is-emri.mjs kaydet --asama klip",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
-    "revize": true,
+    "revize": false,
     "MOTION": false,
     "EDIT-PLAN": false,
     "SESLENDIRME": true,
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T10:22:08.110Z",
+  "updatedAt": "2026-08-07T10:25:52.948Z",
   "updatedBy": "claude",
-  "baseCommit": "ab4bc63d"
+  "baseCommit": "2335f76d"
 }

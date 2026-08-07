@@ -1,11 +1,21 @@
-HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — AŞAMA: KARE BASILACAK
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — AŞAMA: MOTION (klip basımı sürüyor)
 ════════════════════════════════════════════════════════════════
-prompt ✓ (lint KIRMIZI 0)   ·   kare 0/54   ·   motion ✗   ·   VO ✓
+prompt ✓ (lint KIRMIZI 0)   ·   kare 54/54 ✓   ·   KLİP 3/54   ·   VO ✓
 
 SIRADAKİ ADIM
-  PROMPTLAR/ altındaki blokları sırayla Nano Banana 2'de bas, images/ klasörüne at.
-  Kareler gelince: denetim → revize → motion (tek geçişte).
+  KALAN 51 KLİP. Kamera hareketi sekans içinde DÖNDÜRÜLEREK — hepsi push-in olmayacak
+  (Mami'nin ölçümü: kamera tekdüzeliği). Sürü/kalabalık kareler 4-5 sn kısa tutulur.
+  Her klip indikçe → ~/Desktop/6. Sınıf Animasyonlar/Hayvanlarda Üreme.../KLIPLER/<n>.mp4
+  ve hemen: node scripts/is-emri.mjs kaydet "<proje>" --kare N --asama klip ... --sonuc kabul|red
+
+BASILAN VE ONAYLANAN
+  K01 · K02 · K11 — kling3_0 / magnific, 1620 kredi. Cetvel üçünde de donma bulamadı;
+  temiz-klip reçetesi doğrulandı.
+
+KİT EKSİĞİ
+  MOTION · EDIT-PLAN · KABA-KURGU.xml  (revize dosyası da yok)
 
 AÇIK NOT
-  · prompt-lint kırmızısı 0 — basmadan önceki yapısal kapı temiz
-  · yeşil ≠ temiz: lint VO eşliğini ve görsel kaliteyi ÖLÇMEZ
+  · 54 karenin iş emrindeki sonucu hâlâ "bekliyor" → ilk basımda tutma %0 okuyor.
+    Bu ölçüm değil, EKSİK KAYIT. Kuzey yıldızı düzelsin istiyorsan kabul/red işlenmeli.
+  · Medya yeri kural: video/ses/kurgu repo'da DEĞİL, ~/Desktop/6. Sınıf Animasyonlar/ altında.
