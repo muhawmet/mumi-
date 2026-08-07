@@ -102,3 +102,20 @@ aynı: çağrı öncesi/sonrası bakiye + gözle sonuç.
 - [ ] **Yetki devri**: canary'den sonra kalan karelerin onayı Claude'a geçsin mi? (aşamalı olacak —
       Mami 2026-08-06: *"her şey oturunca yetki benden gider, daha kurmadık"*)
 - [ ] Kareleri kim basacak: **web/Spaces bedava** mı, MCP'den kredi mi? (60 kare = 4.500 kredi)
+
+## 5 — Motion turunda ÖLÇÜLENLER (2026-08-07, Hayvanlarda Üreme)
+
+- 🔴 **Kling 3.0 "ağız oynamasın" negatifini DİNLEMİYOR.** K01'de negatif satırında
+      `talking, speaking, mouth opening, lip movement` açıkça yazılıydı; klipte çocuğun ağzı
+      yine de oynadı. Mami: *"oynamayacak ama tekrar üretme, kullanılır."*
+      → Kare tasarımında çözülür: konuşmayacak karakter **profilden ya da uzaktan** kadrajlanır,
+      ağız kadrajın hâkim noktasında bırakılmaz. Negatif tek başına yetmiyor.
+- ✅ Ölçülmüş temiz-klip reçetesi K01'de tuttu: karmaşık uzuv hareketi YOK · mikro jest VAR
+      (toz, tüy, tek nefes, pençe gerinmesi) · kamera kilitli + birkaç santim push-in.
+      `kare-cek` cetveli: komşu kare farkı 14.9–15.75, donma eşiği 0.6 → **donma YOK**.
+- 🔴 **Medya yeri KURAL** (Mami, 2026-08-07): kare repoda kalır; **video · ses · kurgu**
+      `~/Desktop/6. Sınıf Animasyonlar/<proje>/` altında yaşar → `KLIPLER · SES · KURGU · RENDER`.
+      Revize geldiğinde ikisi de aynı yerden bulunur.
+- 🔴 **Yazı hükmü tam çözünürlüklü kırpmadan verilir.** Bu turda iki kez küçültülmüş görüntüden
+      "diakritik yok" dedim, ikisinde de vardı; üçüncüsünde kırpma penceresi harflerin üstünü
+      kesti. Kendi cetvelimi yanlış tuttum. Şüphede kalırsa hüküm verilmez, Mami'ye sorulur.
