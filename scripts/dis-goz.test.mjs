@@ -83,3 +83,37 @@ describe('dış göz launcher', () => {
     expect(() => parseCodexResponse(' \n\t ')).toThrow(/BAŞARISIZLIK/);
   });
 });
+
+// `gor --film` tam motion raporunu açar. Ölçülen kusur (2026-08-05): AGY sekiz ondalık saniye
+// uydurdu, ffmpeg o bantta sıfır kesim buldu — 1 FPS örneklemede o çözünürlük fiziksel olarak yok.
+// Bu yüzden şablonun kendisi ondalığı YASAKLAR ve kesim noktasını AGY'ye SORDURMAZ.
+describe('gor --film — motion raporu ve cetvel kilidi', () => {
+  it('sekiz başlığı da taşır', () => {
+    const cikti = dry(['gor', MEDIA, 'morphing var mı', '--film']);
+    for (const baslik of ['GENEL İZLENİM', 'MORPHING', 'FİZİK', 'KİMLİK SÜREKLİLİĞİ',
+      'KAMERA', 'YAZI', 'TEMİZ ARALIK', 'HÜKÜM']) {
+      expect(cikti).toContain(baslik);
+    }
+  });
+
+  it('ONDALIK SANİYEYİ açıkça yasaklar ve sebebini yazar', () => {
+    const cikti = dry(['gor', MEDIA, 'x', '--film']);
+    expect(cikti).toContain('ONDALIK SANİYE YAZMA');
+    expect(cikti).toContain('saniyede bir kare');
+  });
+
+  it('KESİM NOKTASINI AGY\'ye sordurmaz — onu hakem belirler', () => {
+    expect(dry(['gor', MEDIA, 'x', '--film'])).toContain('KESİM NOKTASI VERME');
+  });
+
+  it('--film olmadan kısa tarif prompt\'u kalır', () => {
+    const cikti = dry(['gor', MEDIA, 'x']);
+    expect(cikti).not.toContain('GENEL İZLENİM');
+    expect(cikti).toContain('saniye altı kesinlik uydurma');
+  });
+
+  it('--film argüman sayımını bozmaz ve yalnız gor ile çalışır', () => {
+    expect(() => buildInvocation(['gor', MEDIA, 'x', '--film'])).not.toThrow();
+    expect(() => buildInvocation(['ara', 'konu', '--film'])).toThrow(/yalnız `gor`/);
+  });
+});

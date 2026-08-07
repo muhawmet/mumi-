@@ -1,0 +1,68 @@
+{
+  "guncellendi": "2026-08-07T07:41:19.399Z",
+  "elementler": [
+    {
+      "ad": "ogr",
+      "id": "f29837c8-8632-418b-9d96-fcec1497b83c",
+      "tur": "auto:character",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d8j0ntlcm91z4.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/hf_20260713_104659_05fe56c0-e834-49b1-8d4a-e3d3ba2e2216.png"
+    },
+    {
+      "ad": "aras1",
+      "id": "2d54b1e0-d5b4-499d-952b-3db861f62f2a",
+      "tur": "auto:character",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d8j0ntlcm91z4.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/hf_20260713_104632_8bc8af44-aee6-49c1-bea6-5823f57a1669.png"
+    },
+    {
+      "ad": "defne1",
+      "id": "8a78c473-8405-4fe4-bf7b-cbcb6c438049",
+      "tur": "auto:character",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d8j0ntlcm91z4.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/hf_20260713_104649_85fc4ac6-466f-4bfe-b033-e6d7b2ac17cc.png"
+    },
+    {
+      "ad": "emin",
+      "id": "9f24c3e3-b155-47e7-b4d7-aead06d638cc",
+      "tur": "auto:character",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d2ol7oe51mr4n9.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/dcb3b902-4005-4f7b-85e3-8e1f6a16669b.jpg"
+    },
+    {
+      "ad": "ref",
+      "id": "d67c7cfe-8ae7-4e14-810f-1e4ac7fb6f0b",
+      "tur": "auto:character",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d2ol7oe51mr4n9.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/e87d9900-e12b-49dc-b80b-3d15416adad9.png"
+    },
+    {
+      "ad": "iye",
+      "id": "44981351-dbb8-4809-89f9-cb20b3ca5b97",
+      "tur": "auto:prop",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d8j0ntlcm91z4.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/hf_20260716_064132_4185ae4f-dba5-42a5-9d54-705e6201569a.png"
+    },
+    {
+      "ad": "taoni",
+      "id": "b04ae0e7-fd47-41c7-b6a4-a04d4d80f79e",
+      "tur": "auto:prop",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d2ol7oe51mr4n9.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/6148313e-2830-4481-8de1-eb77edeafd49.png"
+    },
+    {
+      "ad": "logo",
+      "id": "404a448c-6de2-4eab-8741-9269a2932315",
+      "tur": "auto:prop",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d2ol7oe51mr4n9.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/9c4d05e5-abbe-4480-b824-da889300152a.png"
+    },
+    {
+      "ad": "building",
+      "id": "4462f7d6-715d-4db7-9ace-48be14c87d2d",
+      "tur": "environment",
+      "cuzdan": "higgsfield",
+      "gorsel": "https://d2ol7oe51mr4n9.cloudfront.net/user_37VgjJcSnMtuZuzPM1VwzDHgwVQ/06fec29f-430a-4ab3-94a7-6976a955d649.png"
+    }
+  ]
+}

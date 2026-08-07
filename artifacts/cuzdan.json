@@ -1,0 +1,17 @@
+{
+  "_not": "Bakiye anlık görüntüsü. Claude MCP'den okur, rota.mjs okur. Node MCP çağıramaz — bu dosya o köprüdür.",
+  "olculdu": "2026-08-07",
+  "magnific": {
+    "kalan": 84456,
+    "toplamPlan": 600000,
+    "harcanan": 515544,
+    "plan": "Premium+",
+    "unlimitedGecerli": false
+  },
+  "higgsfield": {
+    "kalan": 5157,
+    "plan": "creator",
+    "unlimitedGecerli": false,
+    "_not": "models_explore unlim.available:false — ücretsiz sınırsız üretim hakkı şu an yok."
+  }
+}

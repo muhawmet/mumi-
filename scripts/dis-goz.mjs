@@ -28,6 +28,31 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 const AGY_WARNING = 'AGY iyi bir İŞARETÇİ, kötü bir CETVELDİR — saniye altı her iddiayı ffmpeg/ffprobe ile doğrula.';
+
+/**
+ * `gor --film` motion raporu. Brief'in sekiz maddesi burada, ama ONDALIK SANİYE YASAĞIYLA.
+ *
+ * Ölçüldü 2026-08-05: AGY sekiz kesim için "2.07 · 2.25 · 1.96 …" verdi; ffmpeg o bantta SIFIR
+ * kesim buldu. Sebep yapısal — AGY videoyu 1 FPS örneklüyor, o çözünürlük onda YOK. Uydurulmuş
+ * bir ondalıktan ffmpeg ile kesmek hem temiz saniyeyi çöpe atar hem kredi yakar. Bu yüzden
+ * rapor TAM SANİYE ister ve kesim noktasını AGY'ye SORDURMAZ — onu hakem belirler.
+ */
+const MOTION_RAPORU = [
+  'Bu videoyu baştan sona izle ve aşağıdaki sekiz başlığı SIRAYLA doldur. Hüküm verme; gördüğünü tarif et.',
+  '',
+  '🔴 ZAMAN KURALI — MUTLAK: zaman verirken YALNIZ TAM SANİYE kullan ("6. saniye civarı").',
+  'ONDALIK SANİYE YAZMA (2.3s, 3.15s gibi). Videoyu saniyede bir kare örneklüyorsun; ondalık',
+  'ayrım sende fiziksel olarak YOK. Emin değilsen "bilmiyorum" yaz — tahmini sayı yazma.',
+  '',
+  '1. GENEL İZLENİM — hareket doğal mı, film gibi mi yoksa "AI videosu" olduğu belli mi? Tek cümle.',
+  '2. MORPHING/ERİME — hangi nesnede, hangi TAM SANİYE civarında, neye dönüşüyor?',
+  '3. FİZİK — saç/kumaş/ağırlık doğal mı? Bir nesne başkasının içinden geçiyor mu?',
+  '4. KİMLİK SÜREKLİLİĞİ — karakter baştan sona aynı kişi mi? Kıyafet, saç, ten değişiyor mu?',
+  '5. KAMERA — pürüzsüz mü? Ani sıçrama, titreme, kadraj kayması var mı?',
+  '6. YAZI — varsa hareketle bozuluyor mu? Hangi TAM SANİYE civarında okunamaz oluyor?',
+  '7. TEMİZ ARALIK — kabaca hangi saniye aralığı kusursuz, hangisi bozuk? Aralık ver, KESİM NOKTASI VERME.',
+  '8. HÜKÜM — tam kullanılır / kısmen kullanılır / çöp. Net söyle.',
+].join('\n');
 const AGY_MODEL = 'gemini-3.6-flash-high';
 const CODEX_MODELS = Object.freeze({
   is: { model: 'gpt-5.6-terra', effort: 'high', sandbox: 'workspace-write' },
@@ -108,13 +133,16 @@ function codexInvocation(subcommand, task) {
   };
 }
 
-function agyInvocation(subcommand, args, session = null) {
+function agyInvocation(subcommand, args, session = null, { film = false } = {}) {
   let prompt;
   let output = null;
+  let media = null;
   if (subcommand === 'gor') {
-    const media = needExistingAbsolute(args[0], 'Medya yolu');
+    media = needExistingAbsolute(args[0], 'Medya yolu');
     const question = needText(args[1], 'Soru');
-    prompt = `Şu gerçek medyayı tarif et; hüküm verme, yalnız gördüğünü yaz. Medya: ${media}\nSoru: ${question}\nZamanla ilgili iddiaları yaklaşık işaret olarak yaz; saniye altı kesinlik uydurma.`;
+    prompt = film
+      ? `${MOTION_RAPORU}\n\nMedya: ${media}\nEk soru: ${question}`
+      : `Şu gerçek medyayı tarif et; hüküm verme, yalnız gördüğünü yaz. Medya: ${media}\nSoru: ${question}\nZamanla ilgili iddiaları yaklaşık işaret olarak yaz; saniye altı kesinlik uydurma.`;
   } else if (subcommand === 'sor') {
     // Ölçüldü 2026-08-06: `-c` medya bağlamını KORUYOR (num_turns:2, 2.3M cache okuması, önceki
     // cevapta olmayan yeni görsel detay). Ama aynı ölçümde AGY özetinden cevaplamaya da yatkın;
@@ -144,6 +172,7 @@ function agyInvocation(subcommand, args, session = null) {
     ],
     kind: 'agy',
     output,
+    media,
     cwd: REPO_ROOT,
   };
 }
@@ -154,6 +183,11 @@ export function buildInvocation(argv) {
   const dryIndex = values.indexOf('--kuru');
   const dry = dryIndex !== -1;
   if (dry) values.splice(dryIndex, 1);
+  // `--film` tam motion raporunu açar. Bayrak, argüman sayımına GİRMEZ — sayım katı ve
+  // katı kalmalı (ölçüldü: gevşek sayım yanlış dosyayı medya sanıp sessiz geçiyordu).
+  const filmIndex = values.indexOf('--film');
+  const film = filmIndex !== -1;
+  if (film) values.splice(filmIndex, 1);
   let session = null;
   const sessionIndex = values.indexOf('--oturum');
   if (sessionIndex !== -1) {
@@ -166,9 +200,10 @@ export function buildInvocation(argv) {
   if (!['is', 'cur', 'gor', 'sor', 'ara', 'kare'].includes(subcommand)) fail(`Bilinmeyen alt komut: ${subcommand || '(yok)'}\n${usage()}`);
   const counts = { is: 1, cur: 1, gor: 2, sor: 1, ara: 1, kare: 2 };
   if (args.length !== counts[subcommand]) fail(`${subcommand} için ${counts[subcommand]} argüman gerekli.\n${usage()}`);
+  if (film && subcommand !== 'gor') fail('--film yalnız `gor` ile kullanılır.');
   const invocation = (subcommand === 'is' || subcommand === 'cur')
     ? codexInvocation(subcommand, needText(args[0], subcommand === 'cur' ? 'İddia' : 'Görev'))
-    : agyInvocation(subcommand, args, session);
+    : agyInvocation(subcommand, args, session, { film });
   return { ...invocation, dry, subcommand };
 }
 
@@ -253,7 +288,17 @@ function runAgy(invocation) {
   if (session && invocation.subcommand !== 'kare') {
     process.stdout.write(`\nOturum: ${session}\nTakip sorusu (film YENİDEN İZLENMEZ): node scripts/dis-goz.mjs sor "<soru>" --oturum ${session}\n`);
   }
-  if (invocation.subcommand === 'gor') process.stdout.write(AGY_WARNING + '\n');
+  if (invocation.subcommand === 'gor') {
+    process.stdout.write(AGY_WARNING + '\n');
+    // İşaretçi konuştu; şimdi CETVEL ve HAKEM. Bu iki satır elle hatırlanmaz — o yüzden basılır.
+    process.stdout.write([
+      '',
+      'ZİNCİRİN KALANI — AGY\'nin işaret ettiği aralık kanıta çevrilmeden hüküm EKSİKTİR:',
+      `  node scripts/kare-cek.mjs ${posixQuote(invocation.media ?? '<film>')} <aralık> 8 --ses`,
+      '  → kareler Read ile açılır (HAKEM); komşu kare farkı donmayı ölçer (CETVEL).',
+      '',
+    ].join('\n'));
+  }
 }
 
 export function commandForDisplay(invocation) {
