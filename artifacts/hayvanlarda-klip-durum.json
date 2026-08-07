@@ -1,0 +1,20 @@
+{
+  "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
+  "guncellendi": "2026-08-07 kesim",
+  "inen_klipler": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
+  "magnific_kuyrukta": {"KLxpbdOkqp":30,"WDVgnUgcXe":31,"lJwtLhkgv9":32,"JN4CwQzOq4":33,"gO7msatSXO":34,"s7UIjhxl8e":35,"LwS8xhRswO":36,"tCaR8GimZJ":37},
+  "higgsfield_kuyrukta": {
+    "5238dd4e-cc5f-490e-b696-8ddc5a44b6b7":18,"782f5125-ed56-4532-92ef-7f32ed2b3a3a":19,
+    "97359c9d-ab3d-4f30-99a6-eb577b091943":20,"7ce1e611-cb75-4f8a-a89f-cc579463a278":21,
+    "ed000fa6-5127-411a-8be6-10b8e38289d8":22,"1dddec1c-525c-406a-88c7-f8277124c7be":23,
+    "7243ee51-90bd-4ebd-a8f7-83a4e35717d9":24,"ed6f3986-3b1a-41d3-a875-4944d70df502":25,
+    "ec0c8f4b-514f-4540-a487-76ab4ed1a5ee":26,"91cc0da0-c52b-495f-88b0-e7eea7cb4727":27,
+    "f2571789-a858-4db5-8aa5-f7a9be24d79b":28,"11e1efe5-5118-4a9c-8bba-aa706bef4b5a":29
+  },
+  "kalan_basilacak": [38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],
+  "mami_kusur_kaydi": {
+    "K10": "hücrenin içinde YAPRAK — kök neden image prompt'unda 'yaprak damarı'. Kare yapraksız yeniden basılıyor, sonra klip yenilenecek.",
+    "K13": "Efe'nin yüzü tutmuyor. 2-3 saniyesi kullanılır (Mami). Yüz kilidi eklenip yeniden basılacak."
+  },
+  "olculen_tuzak": "Higgsfield generate_video_batch 12 işin 8'ini SESSİZCE iş göndermeden 'preset önerisi'ne çeviriyor. Çözüm: declined_preset_id ile aynı isteği tekrar gönder."
+}

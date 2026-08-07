@@ -10,9 +10,14 @@ Kare sayısı 56. ⚠ Kare sayısına dokunan her düzenlemede bu dosya yeniden 
 ===== 1 · KİŞİ =====
 
 @mira
-  ÖNCEDEN VAR — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık", "Bitkilerde Üreme" ve
-  "Hayvanlarda Üreme"de basıldı. AYNI çocuk: aynı yüz, aynı saç. Gardırop bu derse
-  varyantlandı (kış sabahı, ev içi: kalın örgü kazak, yakası açık, kollar hafif uzun).
+  ÖNCEDEN VAR — element rafında basılı plaka: `agents/COMMAND-INBOX/elements/mira.png`.
+  AYNI çocuk: aynı yüz, aynı saç, saçında sarı yıldız toka.
+  🔴 GARDIROP DEĞİŞTİRİLMEZ — plakadaki hâli: **kırmızı kapüşonlu sweatshirt + lacivert
+     denim tulum (kısa paça) + beyaz spor ayakkabı.** Envanterin eski satırı "kalın örgü
+     kazak" diyordu ve **diskteki plakayla çelişiyordu**; tarif referansla kavga edince
+     motor kendi varsayılanına düşer (ölçülmüş kusur sınıfı). Kış sabahı olması bunu
+     değiştirmez — oda sobalı ve sıcaktır, kapüşonlu meşrudur, ve seri sürekliliği
+     mevsim ayrıntısından değerlidir. Kazak/atkı/palto **yazılmaz.**
   Yaş yazımı: "sixth-grade, around eleven or twelve, pre-teen"
   🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten TONU, göz, yaş ve gardırop yazılmaz — yalnız @mira
      çağrılır. (Mami, 2026-08-03: "efeyi tarif etme, başka birini çıkartıyor, sadece

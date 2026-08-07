@@ -1,0 +1,258 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 3 · K15-K23 (beyin + beyincik)
+=========================================================================
+Motor: Nano Banana 2 · Dünya: pixar_3d_edu · Register: EDU
+Kaynak: _TOHUM.md · _ENZIM.md (10 kilit) · _SESLENDIRME.txt cümle 15-23 · dunya-kilidi kartı
+Bloklar `-----` ayraçlı. Başlık satırı ve kapı yönetmen içindir, prompta GİRMEZ.
+=========================================================================
+
+KADRAJ KOTASI — KİLİT (S3: YAKIN NESNE 4 · MAKRO 2 · ORTA 2 · GENİŞ 1)
+  K15 ORTA · K16 YAKIN NESNE · K17 MAKRO · K18 YAKIN NESNE · K19 ORTA ·
+  K20 YAKIN NESNE · K21 MAKRO · K22 YAKIN NESNE · K23 GENİŞ
+  Ardışık iki karede aynı ölçek YOK. ✓
+
+YAZI TAŞIYAN KARELER (4/9): K15 "İNSAN SİNİR SİSTEMİ" (pirinç plaka) ·
+  K17 "FEN BİLİMLERİ" (defter kapağı) · K19 "TUZ" (emaye kutu) ·
+  K22 "DENGE" (koyu taş tezgâha serpilmiş un) ← KİLİT 5'in üç tasarlanmış yazısından BİRİ.
+
+IŞIK REJİMİ — S3'ün tamamı SİNİR IŞIĞIDIR: sert kenarlı tek altın çizgi, yalnız TEK bir
+  kenara oturur, o kenar bitince BİRDEN kesilir, hiçbir iz bırakmaz. Hormon ışığının
+  kenarsız/birikimli davranışı bu sekansta HİÇBİR karede yoktur.
+  Maket üstünde tek seferde TEK parça ışıklıdır (KİLİT 4): K16-K18 beyin · K20-K21 beyincik.
+  Işık hiçbir karede tene, yüze ya da @mira'nın bedenine değmez.
+
+ÜÇ ÇÖZÜLMÜŞ ÇATIŞMA — ajan kararı, uydurma değil:
+  1) `_REFERANSLAR.txt` @mira'yı S3'te üç karede (K15, K19, K22) listeliyor; KİLİT 10 +
+     _TOHUM kotası ORTA=2 diyor ve toplam Mira'yı 11 kareye kilitliyor (referans listesi 13
+     sayıyor, yani liste eski). KOTA KAZANDI: Mira K15 ve K19'da. K22 (DENGE) Mira'sız.
+  2) K22 hiçbir mekân listesinde yok; KİLİT 5 `DENGE`yi "koyu taş tezgâha serpilmiş un"a
+     koyuyor ve o tezgâh @mutfak'ın kendi parçası. K22 = @mutfak.
+  3) §2d.2 "her geniş karede yakın planda modellenmiş bir yüz bulunur" der; KİLİT 2 bu derste
+     ikinci insanı yasaklar ve Mira kotası dolu. K23'te dünya YÜZLE değil, YAKIN DÜZLEM
+     MALZEMESİYLE tutulur (kauçuk, çipli emaye, yün) — karar PLAN satırında yazılı.
+
+FACT REQUIRED: yok.
+
+
+-----
+### K15 | VO15 "Mira masadaki plastik maketi kendine doğru çevirdi." · yazı: "İNSAN SİNİR SİSTEMİ" · KARAKTER
+FİKİR: Maket artık odaya değil, bir öğrenciye bakıyor — ve o öğrenci maketin hizasına inmiş. Değişim kadrajda yazılı: tezgâh tozunda tabanın süpürdüğü yay ve eski yerinin temiz halkası.
+YÜKÜM: "masadaki" → maket masanın üstünde, tabanı ahşaba basıyor, altında sıkı temas gölgesi · "kendine doğru" → maketin yüzü Mira'ya dönük, kamera Mira'nın omzundan değil MAKETİN göz hizasından bakıyor · "çevirdi" → çevirme hareketi kadrajda YOK, çevrilmiş HÂL var: un tozundaki yay izi + tabanın kalktığı yerdeki temiz halka.
+AYRICALIK: Kamera bir plastik büstün göz hizasına iner ve bir çocukla onu aynı yatay hizada eşit boy okutur. Gerçek kamerada bu masa altında bir çukur ister; burada yalnız bir karardır.
+PLAN: kahraman @maket'in tabanı ve pirinç plakası (kadrajın 1/3'ü) · net insan: 1 (@mira, arka düzlemde, üç-çeyrek, eksen dışı) · ışık: kardan dönen pencere ışığı ahşap tabana, plakanın ÜST kenarına ve Mira'nın pencereye bakan yanağına değer — pencereden uzak yanağına ULAŞMAZ · özne zeminden ayrılıyor: sıcak fırçalı pirinç ile koyu ahşap arasındaki değer farkı · FEDA: Mira'nın uzak yanağı ışığın dışında kalır ve plakanın son harfi tabanın köşesinde yarı gölgede okunur.
+ENTRY STATE: Maket masanın üstünde, yüzü Mira'ya dönmüş hâlde duruyor; un tozunda dönüş yayı taze, Mira'nın çenesi çoktan maketin göz hizasına inmiş.
+EXIT STATE: Hiçbir şey yer değiştirmiyor; altın çizgi hâlâ yalnız pirinç plakanın üst kenarında, beyin-beyincik-omurilik soğanı-omurilik dördü de nötr ve ışıksız plastik kalıyor.
+-----
+[1 LENS]      50mm lens at f/2.0, low camera set exactly at the model's own eye height, close-medium three-quarter view, the polished wooden base cutting into the lower left corner as a near anchor so the frame never falls into symmetry.
+[2 ÖZNE]      @maket already stands squared toward @mira, and @mira holds her look level with the model's face, her chin down at its height, one forearm flat on the table beside the base.
+[3 KİMLİK]    Skin stays matte with low specular and is never tinted green or grey. @mira is framed from mid-chest up and nothing below the chest is visible.
+[4 MEKÂN]     The setting is the kitchen-side work table, fully dressed: dark stone top carrying a thin drift of flour, the model's satin-polished wood base, a closed science notebook pushed to the far corner face-up, a fogged window pane behind, the wall clock's brass pendulum far back in soft focus.
+[5 IŞIK]      A single motivated key: low winter sun bounced off snow, entering through the fogged pane which behaves as one large soft light box — bright, high and clean. It lands on the wood base, on the top edge of the brass plate and on the near half of Mira's face, and it stops there; the far side of her face and the table's back corner hold a deep cool indigo bounce at about a third of key. The stove behind puts a warmer, lower rim on the base's back edge.
+[6 KAVRAM]    A hard-edged golden sliver rides only the top edge of the brass plate and is cut dead where the plate ends; the wood, the stone, the flour and Mira's sleeve stay completely untouched by it, with no halo and no falloff.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: flour dust turning slowly in the window light, a single thread of steam drifting in from the stove behind Mira, the brass pendulum swinging far back in soft focus.
+[8 DERİNLİK]  Depth in three layers — an out-of-focus stone lip and the shoulder of a glazed jar at the near edge, the brass plate and base razor sharp, Mira and the fogged pane falling back into soft bloom.
+[9 TEMAS]     The base rests flat on the stone with a tight soft contact shadow under its front edge, the notebook lies flush to the table, and Mira's forearm presses the flour dust into a faint dark line where it touches.
+STYLE: Premium-CG feature-animation 3D CGI with appeal-driven shapes; every material reads tactile before it reads rendered. Engraved brass with blackened letter troughs and an anisotropic brushed highlight stretched one way; satin-polished wood whose grain carries light along its length; hard matte school plastic with thin paint and worn edges; dry flour that reads grain by grain. Warm-honey subsurface in skin, cool-violet in shadow, wood in brown-ochre. A bright, cheerful winter kitchen — snow-returned light, generous and clean.
+LIGHT AND PALETTE: Key arrives off snow through frosted glass, so it is soft but plentiful; bounce fill sits cool violet at a third of key and keeps the shadow side fully modelled, never a black hole; the stove adds a low warm rim behind. Warm honey against cool violet, brass the only saturated accent, no Hollywood teal-orange grade anywhere.
+TEXT: CARRIER — the engraved brass plate screwed to the front vertical face of the model's wooden base. LETTERFORM — letters cut down into the brass itself, troughs darkened with age, the surrounding metal brushed; never printed, painted or floating. THE WORDS — "İNSAN SİNİR SİSTEMİ", three words, seventeen letters, with five dotted capital İ in all: one opening the first word, two inside the second, two inside the third. ORIENTATION — the plate's face is square and parallel to the sensor; the text reads left to right, never mirrored, reversed or rotated, and appears on this one brass plate and on no other surface. Any background lettering stays soft-focus, Turkish or blank.
+NEGATIVE: the model does not turn, tilt, rotate or open in this frame — it already stands turned and the only trace of turning is the arc in the flour ; the golden line stays a plain warm light on the plate's edge and never becomes a heart, star, flame, lightning bolt or drawn arrowhead ; the brain, cerebellum, medulla and spinal cord all stay neutral unlit plastic ; no second person, no adult, no hand without a body ; no arrows, labels, callouts, cutaway or comparison panels ; no photoreal or real-human photographic skin ; no English lettering on any surface.
+-----
+
+
+-----
+### K16 | VO16 "En üstteki büyük kısım beyindir." · yazı: YOK · KAVRAM
+FİKİR: Açık kafatasının içinde tek bir parça ışık alıyor ve o parça hem en üstte hem en büyük — kare, adı söylenmeden hangi organın anlatıldığını söylüyor.
+YÜKÜM: "en üstteki" → beyin kadrajın üst üçte birinde ve kadrajdaki en yüksek kütle · "büyük" → tek parça olarak kadrajın en geniş kütlesi; beyincik altında, ışıksız ve belirgin şekilde küçük duruyor ki kıyas mümkün olsun · "kısım" → parça maketin İÇİNDE, yerinde; sökülmüş, havada ya da ayrı durmuyor.
+AYRICALIK: Alan derinliği bir karar olarak kullanılır — beynin ön kıvrımı katı ve dokulu kalırken açılmış kafatası kapağının kenarı erimiş cam gibi geçer; aynı nesnenin iki kenarı iki ayrı maddeye dönüşür. Gerçek makro objektifte bu ayrımı seçemezdim.
+PLAN: kahraman beyin parçası (kadrajın yarısı) · net insan: 0 · ışık: yalnız beynin en üst kıvrım sırtına değer, kapağın iç yüzüne ve beyinciğe hiç ulaşmaz · özne zeminden ayrılıyor: sıcak boyalı plastik ile arkadaki soğuk indigo oda derinliği arasındaki değer farkı · FEDA: kafatası kapağının menteşesi kadrajın dışında kalır ve beyinciğin alt ucu odaktan düşer.
+ENTRY STATE: Maket K15'te bırakıldığı gibi duruyor; ışık pirinç plakadan çekilmiş, hiçbir iz bırakmamış ve şimdi yalnız beynin üst kıvrımında.
+EXIT STATE: Maket kımıldamıyor; beyin ışıklı, beyincik-omurilik soğanı-omurilik üçü de nötr plastik; masadaki un tozu bozulmamış.
+-----
+[1 LENS]      65mm lens at f/2.2, camera slightly high and pushed in close over the opened skull, three-quarter view from the model's front left, the cut edge of the skull cap breaking the top left corner.
+[2 ÖZNE]      @maket holds its opened skull to the light, the painted plastic brain sitting highest and widest inside the cavity.
+[3 KİMLİK]    No person is in this frame; every skin-adjacent surface here is school plastic, so it stays hard, matte and dry with a thin paint film, never wet, fleshy or living tissue.
+[4 MEKÂN]     The setting is the same kitchen-side work table: dark stone with flour dust, the polished wood base below, a glazed ceramic jar and the enamel tin far behind out of focus, the fogged window pane a pale bright panel at the back.
+[5 IŞIK]      Snow-returned daylight comes through the fogged pane high and to the left and rakes across the plastic, modelling the folds; it dies on the far side of the cavity where a cool violet bounce takes over at a third of key, keeping that side full and coloured rather than empty.
+[6 KAVRAM]    A hard-edged golden sliver rides only the outermost crest of the brain's top fold and is cut dead where that crest drops away; the cerebellum, the medulla, the cord, the base, the plate and the table are all completely untouched, with no glow spilling anywhere.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: dust turning in the raking light, steam creeping in along the top of frame from the stove, snow falling slow and unreadable behind the fogged pane.
+[8 DERİNLİK]  Depth in three layers — the blurred rim of the skull cap at the near edge, the brain's front folds sharp to the paint's worn grain, the jar and the bright pane dissolving behind.
+[9 TEMAS]     The model's base meets the stone with a tight contact shadow, and the skull cap rests against its own hinge stop rather than floating.
+STYLE: Premium-CG feature-animation 3D CGI, shapes composed to read at a glance. Hard matte school plastic is the hero material: thin paint film, worn edges, hairline scratches, dust caught in the moulding seam — dry and inert, never moist or organic. Around it, satin wood grain, glazed ceramic and fired enamel. Warm-honey and brown-ochre against cool-violet shadow, fabric and surfaces saturated but never neon. A bright, lively winter kitchen, generously lit.
+LIGHT AND PALETTE: One raking key off snow through frosted glass picks the fold crests and leaves the troughs cool; the violet bounce fills those troughs so they stay readable and coloured. Accent lives only in the golden sliver named above. Painted soft ambient occlusion sits in the cavity's corner pockets, warm-dark rather than cold-black.
+TEXT: none in this frame. Every surface that could invite a sign is dressed instead of left blank — the enamel tin is turned so its lettering faces the wall, the glazed jar shows only glaze crazing, the notebook is out of frame. Any lettering that survives in the far background stays soft-focus, Turkish or blank.
+NEGATIVE: only the brain is lit — the cerebellum below it must stay plainly neutral plastic so the two never read as one glowing mass ; the plastic stays dry and matte and never turns wet, fleshy, veined or anatomical-photographic ; no cutaway, cross-section, arrow, leader line, label or magnifier ring ; the light is a plain warm-golden line and never an icon or spark ; no person, no hand, no second figure ; no English lettering ; no photoreal render.
+-----
+
+
+-----
+### K17 | VO17 "Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir." · yazı: "FEN BİLİMLERİ" · KAVRAM
+FİKİR: Beyin plastiği bir arazi gibi kadrajı doldururken, tam altında defterin kapağı duruyor — ve defterin kenarı bir kez yazılmış değil, defalarca geri dönülmüş bir kenar. Işık alan tek şey yine beyin.
+YÜKÜM: "öğrenme" → kalemin yassılmış grafit ucu ve kapağın aşınmış köşesi · "hafıza" → sayfa bloğunun kararmış, yumuşamış, çok kez çevrilmiş kenarı — geri dönülen bir şey · "duyuların değerlendirilmesi" → kadrajın üst kenarını geçen tek buhar tüyü, yani dışarıdan gelen; onunla aynı anda ışıklı olan tek şey beyin · "beynin işidir" → altın çizgi yalnız beyinde; ne defterde ne kalemde ne buharda.
+AYRICALIK: Ölçek yalan söyler — üç santimlik okul plastiği, boya aşınması ve kılcal çizikle bir arazi sırtı olarak okunur, ve aynı karede on iki harf mürekkep derinliğiyle katı kalır. Gerçek makro objektifte bu iki düzlem aynı anda seçilemez; burada ikisi de seçilir.
+PLAN: kahraman beynin ön kıvrım sırtı (kadrajın üst üçte ikisi) · net insan: 0 · ışık: yalnız tek bir kıvrım sırtına ve defter kapağının mürekkep harflerine düşen genel pencere dolgusuna; taşa ve tabana ulaşmaz · özne zeminden ayrılıyor: aşınmış açık boya ile arkasındaki koyu kavite arasındaki değer farkı · FEDA: kalemin gövdesinin yarısı kadraj dışında kalır ve defterin sağ kenarı odaktan düşer.
+ENTRY STATE: Maket ve defter K16'daki yerlerinde; defter artık tabanın ön kenarına sıkışmış hâlde, kapağı kameraya dönük duruyor, kalem kapağın üstünde yatıyor.
+EXIT STATE: Işık hâlâ yalnız beyinde; defter, kalem ve un tozu bir milim oynamıyor, hiçbir harf kaymıyor.
+-----
+[1 LENS]      85mm macro lens at f/2.8, camera high and steeply angled down, extreme close macro view, the frame filled edge to edge by one object's single detail.
+[2 ÖZNE]      @maket fills the frame with a single ridge of its painted plastic brain, and the closed science notebook wedged under the base's front edge tilts its cover up into the same plane.
+[3 KİMLİK]    No person is in this frame; the plastic stays hard, matte, dry and thinly painted, never moist, fleshy or living.
+[4 MEKÂN]     The setting is the work table at macro range: the brain's ridge above, the wedged notebook cover below with a pencil lying across it, the wood base's satin grain between them, and far beyond, entirely out of focus, the pale bright rectangle of the fogged window.
+[5 IŞIK]      Snow-returned daylight comes from high left and grazes along the ridge so the paint's worn crest goes bright while the trough beside it holds a full cool-violet bounce; the same light lays flat and even across the notebook cover so the ink sits legible, and it does not reach the stone beneath.
+[6 KAVRAM]    A hard-edged golden sliver rides only one single crest of the brain's fold and is cut dead where that crest ends; the notebook, the pencil, the wood grain and the stone stay completely untouched by it.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: a single thread of steam crossing the very top of frame, flour dust settling on the notebook's cover, the light shifting faintly as snow moves outside the pane.
+[8 DERİNLİK]  Depth in three layers — the softened near edge of the wood base, the razor-sharp ridge crest and cover lettering, the bright pane blooming to nothing behind.
+[9 TEMAS]     The notebook is wedged tight under the base's front edge with a dark contact line where board meets wood, and the pencil lies along the cover with its own thin shadow following it.
+STYLE: Premium-CG feature-animation 3D CGI at macro scale. Hard matte school plastic reads as landscape: thin paint worn to the crest, a hairline scratch, dust in the seam. Pressed board cover with ink sunk into the grain, graphite worn flat, page block softened by handling, satin wood grain carrying light along its length. Warm-honey and brown-ochre against cool-violet shadow; bright, cheerful winter light throughout, never dim.
+LIGHT AND PALETTE: One high raking key off snow separates crest from trough; violet bounce keeps every trough coloured and modelled; painted ambient occlusion pools warm-dark where board meets wood. Brass-gold appears only as the single sliver. No teal-orange grade, no desaturated grey anywhere.
+TEXT: CARRIER — the pressed-board cover of the science notebook, tilted up against the model's base. LETTERFORM — letters pressed into the board with the ink sunk into its grain, edges slightly fibrous, never printed on top, never floating. THE WORDS — "FEN BİLİMLERİ", two words, twelve letters, with three dotted capital İ inside the second word at its second, fourth and last positions. ORIENTATION — the cover's face is parallel to the sensor; the text reads left to right, never mirrored, reversed or rotated, and appears on this one cover and on no other surface. Any lettering elsewhere stays soft-focus, Turkish or blank.
+NEGATIVE: the golden sliver stays on the plastic crest alone and never crosses onto the notebook or the pencil ; the cerebellum and everything below the brain are out of frame or unlit, so only one part is ever lit ; the plastic never turns wet, veined, fleshy or anatomical ; no arrow, leader line, label, callout, inset panel or magnifier ring ; no person, no hand ; no English lettering ; no photoreal skin or photographic capture.
+-----
+
+
+-----
+### K18 | VO18 "Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır." · yazı: YOK · KAVRAM
+FİKİR: Aynı tezgâhın üç ayrı derinliğinde üç ayrı ihtiyacın kanıtı duruyor — kesilmiş somun, yarısı içilmiş kupa, taşan süt — ve üçünün hiçbiri ışık almıyor. Işık alan tek şey, üçünü birden yöneten parça.
+YÜKÜM: "acıkmak" → tahtada somun ve ondan çoktan ayrılmış iki dilim, orta düzlem · "susamak" → çipli emaye kupa yarısına kadar içilmiş, taşta ıslak bir halka bırakmış, ön düzlem · "vücut sıcaklığı" → sobada emaye süt tenceresi ağzına kadar kabarmış, buharı dik duruyor ve arkasındaki cam kenardan kenara buğulu: sıcak içeride tutuluyor · "de beyne bağlıdır" → bağ ışıkla kurulmuyor; üç kanıt ışıksız, yalnız beyin ışıklı ve hepsi aynı karede.
+AYRICALIK: Taşıyıcı kare — ayrıcalık K21 ve K22'dedir. Buradaki iş, üç ihtiyacı tek kadrajda üç ayrı derinliğe dizip hepsini tek bir ışıklı parçaya bağlamaktır.
+PLAN: kahraman @maket'in beyin parçası (kadrajın sol üçte biri, en yüksek nokta) · net insan: 0 · ışık: yalnız beynin bir kıvrım sırtına; kupaya, somuna, tencereye ve taşa ulaşmaz · özne zeminden ayrılıyor: aydınlık boyalı plastik ile arkasındaki koyu ocak duvarı arasındaki değer farkı · FEDA: kesme tahtasının sağ yarısı kadraj dışında kalır ve soba üstündeki tencere odaktan düşer.
+ENTRY STATE: Maket masada, beyin hâlâ tek ışıklı parça; defter tabanın önünden alınmış, tezgâhta somun tahtası, yarım kupa ve ıslak halka duruyor, sobada süt kabarmış.
+EXIT STATE: Hiçbir kap yer değiştirmiyor, süt taşmıyor, kupanın seviyesi aynı kalıyor; ışık beynin aynı sırtında duruyor ve beyincik nötr plastik.
+-----
+[1 LENS]      40mm lens at f/2.5, camera down at table level, close object view along the counter's length, the near lip of the dark stone crossing the bottom of frame out of focus as an anchor.
+[2 ÖZNE]      @maket stands at the left of frame with its painted plastic brain the highest and only lit part, and the counter runs away from it through three separate pieces of evidence.
+[3 KİMLİK]    No person is in this frame; the plastic stays hard, matte and dry, never wet or fleshy, and no hand or forearm enters the frame.
+[4 MEKÂN]     The setting is @mutfak at counter level: dark stone with flour, a round loaf on a wooden board with two cut slices already lying flat beside it, a chipped enamel mug drunk to half with a wet ring beside it, and behind on the stove an enamel milk pot risen to its rim, with the fogged pane a pale bright panel edge to edge above.
+[5 IŞIK]      Snow-returned daylight enters high from the window as the main key and lays across the stone; a second, warmer and lower source rises from the stove's mouth and catches the underside of the milk pot and the steam. The key dies before the stove wall, where a deep cool indigo bounce at a third of key keeps that corner full and coloured.
+[6 KAVRAM]    A hard-edged golden sliver rides only one fold crest of the brain and is cut dead where that crest ends; the loaf, the board, the mug, the wet ring, the milk pot and the stone are all completely untouched by it.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam standing straight up off the milk, the wet ring slowly darkening the stone at its edge, snow drifting unreadable behind the fogged pane.
+[8 DERİNLİK]  Depth in three layers — the blurred near lip of the stone and the mug's rim, the loaf and the model's brain sharp, the stove and pane softening into warm bloom.
+[9 TEMAS]     Every object rests in contact with its surface and casts a soft contact shadow: the board's corners bite the flour, the mug sits inside its own wet ring, the pot's base sits flat on the iron plate.
+STYLE: Premium-CG feature-animation 3D CGI. Fired enamel is the second hero material here — hard glossy glaze, chipped at the rim with dark metal showing beneath; beside it, bread crust with a dry cracked skin and open crumb, dark stone with old stains, hard matte school plastic thinly painted, iron with an anisotropic brushed highlight stretched one way. Warm honey against cool violet, brown-ochre wood, a bright and cheerful winter kitchen.
+LIGHT AND PALETTE: Two motivated sources, both visible in frame — cold-clean window key from the left, warm stove glow rising from the right — and their meeting keeps the middle of the counter fully modelled. Shadows read deep cool indigo, coloured and full. Golden accent exists only as the single sliver named above; no teal-orange grade.
+TEXT: none in this frame. Surfaces that could invite a sign are dressed rather than left blank — the enamel tins are turned to show their plain backs, the shelf is filled with glazed ceramic, the stove front carries only iron casting. Any lettering surviving in the far background stays soft-focus, Turkish or blank.
+NEGATIVE: the milk stays exactly at the rim and never boils over, and the mug's level never changes ; only the brain is lit and the cerebellum stays plainly neutral plastic ; no window glass is wiped clear anywhere — the pane stays fogged edge to edge ; the glow is a plain warm-golden line and never a heart, star, flame or arrowhead ; no arrow, label, chart, comparison table or inset panel ; no person, no hand, no cut-off limb ; no English lettering ; no photoreal capture.
+-----
+
+
+-----
+### K19 | VO19 "Ekmek kokusunu alıp acıktığını fark etmesi bu yüzdendi." · yazı: "TUZ" · KARAKTER
+FİKİR: Koku çizilemez; çizilebilen şey Mira'nın DURMUŞ olmasıdır — eli somuna uzanmamış, taşın üstünde düz duruyor, parmakları gevşek ve gözü çatlağa inmiş. Kare fark etme ANINI değil, fark etmiş HÂLİNİ tutuyor.
+YÜKÜM: "ekmek kokusu" → yeni devrilmiş somunun tepesindeki çatlak hâlâ açık renk ve nemli, buhar oradan dik çıkıyor · "alıp" → koku ok, dalga ya da çizgiyle GÖSTERİLMEZ; kanıt buharın yönü ve Mira'nın yönü · "acıktığını fark etmesi" → uzanma yok: avuç taşta düz, ağırlık dirsekte, bakış somunda · "bu yüzdendi" → sebep bir önceki karede kuruldu; burada yalnız sonucu duruyor.
+AYRICALIK: Buhar kar aksinin içinden geçerken hem katı hem saydam okunur ve çatlağın sıcak rengini yukarı taşır — gerçek kamerada bu tüy ya patlar ya kaybolur. Burada buhar bir malzemedir.
+PLAN: kahraman somun ve çatlağı (kadrajın orta üçte biri) · net insan: 1 (@mira, göğüsten yukarı, üç-çeyrek, eksen dışı) · ışık: kardan dönen pencere ışığı somunun kabuğuna, emaye kutunun yüzüne ve Mira'nın pencereye bakan yanağına değer; uzak yanağına ULAŞMAZ · özne zeminden ayrılıyor: açık kabuk ile koyu taş tezgâh arasındaki değer farkı · FEDA: Mira'nın uzak yanağı ve çenesi ışığın dışında kalır, kesme tahtasının sol köşesi kadraj dışında kalır.
+ENTRY STATE: Somun tahtanın üstünde, üstü çatlamış ve buharlı; taşıdığı bez yanına açılmış düşmüş; Mira çoktan durmuş, avucu somunun yanında taşta düz, gözü çatlakta.
+EXIT STATE: Mira ne uzanıyor ne dokunuyor; somun aynı yerde, buhar aynı yönde; altın çizgi kabuğun aynı sırtında; pencerenin hiçbir yeri açılmamış.
+-----
+[1 LENS]      50mm lens at f/2.0, camera at chest height and slightly low, medium three-quarter view from the counter's side, a glazed jar shoulder cutting the near right corner out of focus.
+[2 ÖZNE]      @mira has stopped over the loaf, her palm flat on the stone beside it and her look already down on the split crust, her weight carried on her elbow.
+[3 KİMLİK]    Skin stays matte with low specular and is never tinted green or grey. @mira is framed from mid-chest up and nothing below the chest is visible; her sleeve is turned back to the elbow.
+[4 MEKÂN]     The setting is @mutfak at the counter: dark stone dusted with flour, a round loaf turned out onto a wooden board with its cloth fallen open beside it, an enamel salt tin standing square behind it, the stove's warm mouth further back, the fogged window pane a pale bright panel above.
+[5 IŞIK]      Snow-returned daylight through the fogged pane is the single motivated key, high and to the left; it lands on the crust, on the enamel tin's face and on the near half of Mira's face, and it stops there. The far half of her face and the counter's back corner hold a cool violet bounce at a third of key, full and coloured. A low warm rim from the stove separates the loaf's back edge from the dark stone.
+[6 KAVRAM]    A hard-edged golden sliver rides only the top ridge of the loaf's split crust and is cut dead where the crust folds down; the cloth, the board, the stone, the tin and Mira's sleeve stay completely untouched by it, and it never reaches her skin.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam standing off the split crust, flour dust settling around the board, snow moving unreadable behind the fogged pane.
+[8 DERİNLİK]  Depth in three layers — the blurred jar shoulder at the near right, the loaf and Mira's near cheek sharp, the stove and bright pane falling into warm bloom.
+[9 TEMAS]     The board sits flat on the stone with a soft contact shadow under its edge, the loaf presses into the board, the tin's base meets the stone with a tight dark line, and Mira's palm flattens the flour where it rests.
+STYLE: Premium-CG feature-animation 3D CGI. Bread crust is the hero material — dry, blistered, cracked open with an open moist crumb inside; fired enamel with letters sunk inside the glaze and a chipped rim showing dark metal; loose-woven cloth with visible fibre; dark stone carrying old marks. Warm-honey subsurface in skin, cool-violet in shadow, brown-ochre wood. A bright, warm, cheerful winter kitchen, snow-returned light throughout.
+LIGHT AND PALETTE: One clean window key plus a low warm rim from the stove; the meeting of the two is what separates loaf from stone. Bounce is cool violet at a third of key and keeps Mira's shadow side modelled rather than empty. The single golden accent is the sliver on the crust; nothing else is saturated, and no teal-orange grade appears anywhere.
+TEXT: CARRIER — the enamel salt tin standing on the dark stone behind the loaf. LETTERFORM — letters fired inside the glaze itself, slightly sunken, edges softened by the enamel; never printed on top, never floating. THE WORDS — "TUZ", one word, three letters, T then U then Z, no diacritics. ORIENTATION — the tin's front face is square and parallel to the sensor; the text reads left to right, never mirrored, reversed or rotated, and appears on this one tin and on no other surface. Any background lettering stays soft-focus, Turkish or blank.
+NEGATIVE: Mira does not reach for, touch, lift or break the bread — her palm stays flat on the stone and the loaf stays whole and untouched ; no knife, no blade and no cutting tool anywhere in this frame ; smell is never drawn — no wafting lines, no swirls, no scent trails, no arrows ; the pane stays fogged edge to edge with no part wiped clear ; the golden line stays a plain warm light on the crust and never becomes a flame, spark or icon ; no light touches her face or hands ; no second person ; no English lettering ; no photoreal skin.
+-----
+
+
+-----
+### K20 | VO20 "Maketin arka alt tarafındaki küçük kısım beyinciktir." · yazı: YOK · KAVRAM
+FİKİR: Kamera ilk kez maketin arkasına geçiyor ve beynin kütlesinin altında, çizgili küçük bir parça tek başına ışık alıyor — konum, boyut ve kimlik tek bakışta okunuyor.
+YÜKÜM: "arka" → kamera maketin arkasına geçmiş; kafatası kapağı bu açıdan menteşesinden okunuyor · "alt" → beyincik beynin kütlesinin ALTINDA duruyor ve ikisi aynı karede, üstlük-altlık kıyaslanabilir · "küçük" → beyincik beynin kütlesinin yaklaşık üçte biri kadar okunuyor · "kısım" → yerinde, sökülmemiş, maketin içinde.
+AYRICALIK: Işık bir organı seçerken komşusunu hiç aydınlatmıyor — çizgi beyinciğin dış hattı bitince BİRDEN kesiliyor ve önündeki ince silindir tamamen soğuk kalıyor. Gerçek bir ışık bunu yapmaz; bu, animasyonun yapabildiği bir cerrahlıktır.
+PLAN: kahraman beyincik (kadrajın merkezinde ama merkezden kaydırılmış, üçte bir hattında) · net insan: 0 · ışık: yalnız beyinciğin dış hattına; omurilik soğanına, omuriliğe, beyne, tabana ve masaya ulaşmaz · özne zeminden ayrılıyor: aydınlık çizgili plastik ile arkasındaki koyu boyun kavitesi arasındaki değer farkı · FEDA: beynin üst yarısı kadrajın üst kenarında kesilir ve tabanın pirinç plakası kadraj dışında kalır.
+ENTRY STATE: Maket masada aynı yerde ve aynı açıda; ışık beyni bırakmış, hiçbir iz bırakmamış ve şimdi yalnız beyinciğin dış hattında.
+EXIT STATE: Beyin, omurilik soğanı ve omurilik nötr plastik olarak duruyor; beyincik ışıklı; maket dönmüyor, açılmıyor, hiçbir parçası kalkmıyor.
+-----
+[1 LENS]      65mm lens at f/2.2, camera moved round behind the model and set slightly low, close object view from the rear left three-quarter, the hinged skull cap breaking the upper left corner.
+[2 ÖZNE]      @maket shows its rear cavity, where the small ridged cerebellum sits beneath the mass of the brain.
+[3 KİMLİK]    No person is in this frame; the plastic stays hard, matte, dry and thinly painted, never moist, veined or fleshy.
+[4 MEKÂN]     The setting is the kitchen-side work table seen from behind the model: the polished wood base below, dark stone with flour beyond it, a glazed jar and the shelf's enamel tins far back and out of focus, the fogged pane a pale bright panel at the top right.
+[5 IŞIK]      Snow-returned daylight comes from the front left, so from this rear angle it wraps the cavity's near wall and stops; the far side of the cavity carries a cool violet bounce at a third of key that keeps every ridge readable. A warm low rim from the stove grazes the back of the model's neck line.
+[6 KAVRAM]    A hard-edged golden sliver rides only the outer contour of the cerebellum and is cut dead exactly where that contour meets the slim cylindrical medulla in front of it; the medulla, the cord running down behind the neck, the brain above, the base and the table are all completely untouched.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: dust turning in the shaft of window light, steam reaching in along the top of frame, the far pendulum swinging in deep soft focus.
+[8 DERİNLİK]  Depth in three layers — the out-of-focus hinge and cap edge at the near left, the ridged cerebellum sharp to its moulding seam, the shelf and bright pane blooming away behind.
+[9 TEMAS]     The base rests flat on the stone with a tight contact shadow beneath its rear edge, and the cap leans on its hinge stop rather than floating.
+STYLE: Premium-CG feature-animation 3D CGI. Hard matte school plastic carries the frame: parallel moulded ridges, thin paint worn along every crest, a hairline scratch, dust settled in the seam — dry and inert. Around it satin-polished wood with visible grain, dark stone, glazed ceramic. Warm honey and brown-ochre against cool violet; a bright, cheerful winter kitchen, never dim.
+LIGHT AND PALETTE: A single wrapping key off snow separates ridge from trough, and the violet bounce fills the troughs so nothing collapses into black. Painted ambient occlusion sits warm-dark in the cavity's pockets. The only saturated accent is the golden contour line named above; no teal-orange grade, no desaturated grey.
+TEXT: none in this frame. The brass plate is deliberately out of frame and every panel that could invite a sign is dressed — plain enamel backs on the shelf, glaze crazing on the jar, wood grain on the base. Any far-background lettering stays soft-focus, Turkish or blank.
+NEGATIVE: the light must not touch the slim cylindrical medulla in front of the cerebellum or the cord running down behind the neck — those are separate parts and stay neutral plastic ; the cerebellum and the medulla never merge into one shape or one glow ; only one part is lit at a time, so the brain above stays plainly unlit ; the plastic never turns wet, fleshy or anatomical-photographic ; no cross-section, cutaway, arrow, leader line or label ; no person, no hand ; no English lettering ; no photoreal capture.
+-----
+
+
+-----
+### K21 | VO21 "Beyincik kaslarımızın uyumlu çalışmasını sağlar." · yazı: YOK · KAVRAM
+FİKİR: Düzine düzine paralel sırt, hiçbiri ötekinden sapmamış, aralıkları eşit — uyum karenin kendi yapısıdır; ve o sırtlardan yalnız BİRİ ışık alır. Kare uyumu anlatmıyor, uyumu gösteriyor.
+YÜKÜM: "kaslarımızın" → çoğul karşılığı kadrajda sayılabilir: on ikiden fazla paralel sırt, hepsi aynı yönde · "uyumlu" → hiçbir sırt komşusuyla çakışmıyor, hiçbiri sıradan çıkmamış, aralıklar eşit · "çalışmasını sağlar" → ışık sırtların üstünde, taşta ya da tabanda değil; kaynak beyinciktir, yönetilen şey değil.
+AYRICALIK: Ölçek yalan söyler — üç santimlik boyalı okul plastiği, kadrajı doldurunca bir arazi sırtı gibi okunur ve boya aşınması bir kar hattı olur. Üstelik alan derinliği o kadar sığdır ki üstteki beyin kütlesiz, nötr bir bulanıklığa düşer: "tek seferde tek parça" kuralı burada OPTİK olarak kanıtlanır.
+PLAN: kahraman beyinciğin çizgili yüzeyi (kadrajın tamamı) · net insan: 0 · ışık: yalnız tek bir sırtın tepesine; komşu sırtlar ve alttaki oluklar soğuk kalır · özne zeminden ayrılıyor: aşınmış açık boya ile aradaki koyu oluklar arasındaki değer farkı · FEDA: kadrajın sağ üçte biri odağın tamamen dışında kalır ve beyin nötr bir kütleye dönüşür.
+ENTRY STATE: Kamera K20'nin arka açısından beyinciğin üstüne inmiş; maket kımıldamamış, ışık aynı dış hattın üstündeki tek sırtta.
+EXIT STATE: Tek sırt ışıklı kalıyor; beyin nötr bulanıklık, omurilik soğanı kadraj dışında; hiçbir sırt oynamıyor, hiçbir toz kalkmıyor.
+-----
+[1 LENS]      85mm macro lens at f/3.2, camera low and pushed against the model's rear flank, extreme macro view where one detail of one object fills the frame corner to corner.
+[2 ÖZNE]      @maket fills the frame with the ridged surface of its cerebellum, its parallel crests running edge to edge in step.
+[3 KİMLİK]    No person is in this frame; the plastic stays hard, matte and dry with a thin worn paint film, never moist, fleshy or living tissue.
+[4 MEKÂN]     The setting is still the work table, present only as context at the frame's margins: a sliver of satin wood base at the bottom edge, the brain's neutral mass dissolving at the top, the fogged window's pale bright glow leaking in from the upper right.
+[5 IŞIK]      Snow-returned daylight rakes almost parallel to the ridges from the left, so every crest catches a thin line of light and every trough holds a cool violet bounce at a third of key — nothing collapses to black and nothing blows out. The light dies before the wood base at the bottom edge.
+[6 KAVRAM]    A hard-edged golden sliver rides only one single crest among all of them and is cut dead where that crest ends; the neighbouring crests, every trough, the wood below and the brain above stay completely untouched by it, with no halo and no bleed.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: fine flour dust drifting down through the raking light, a thread of steam softening the upper right glow, the light itself shifting faintly as snow passes the pane.
+[8 DERİNLİK]  Depth in three layers — the softened nearest crest at the bottom edge, the sharp central band of ridges resolved to the paint's grain, the brain reduced to a neutral out-of-focus mass behind.
+[9 TEMAS]     At the bottom edge the model's plastic meets its wooden base with a tight dark contact line, so the ridged mass is plainly resting on something and not floating.
+STYLE: Premium-CG feature-animation 3D CGI at macro scale, where a three-centimetre object reads as landscape. Hard matte school plastic is everything here: parallel moulded ridges, thin paint worn to a pale line along each crest, a hairline scratch crossing two of them, dust caught in the moulding seam, dry and inert throughout. Warm-honey highlight and brown-ochre body against cool-violet troughs. Bright, clean, cheerful winter light.
+LIGHT AND PALETTE: One near-parallel raking key does all the modelling — crest bright, trough coloured, no ridge lost. Violet bounce at a third of key keeps the deepest troughs full. Painted ambient occlusion pools warm-dark where crests meet. The single golden sliver is the only saturated accent; no teal-orange grade anywhere.
+TEXT: none in this frame, and no surface here can carry a sign — the frame is entirely one moulded plastic surface, dressed by its own ridges, paint wear and dust. Any glow leaking in from behind stays blank and unreadable.
+NEGATIVE: exactly one crest carries the golden line and every neighbouring crest stays plain — two lit ridges would destroy the reading ; the plastic never turns wet, veined, fleshy or anatomical-photographic ; the brain behind stays a neutral unlit blur and never lights up as a second glow ; no cross-section, cutaway, magnifier ring, microscope eyepiece mask, slide or specimen framing ; no arrow, label or leader line ; no person, no hand ; no English lettering ; no photoreal capture.
+-----
+
+
+-----
+### K22 | VO22 "Dengede kalmamızı da beyincik yönetir." · yazı: "DENGE" · KAVRAM
+FİKİR: Unun içinde beş harf, harflerin hemen üstünde dar ucunun üstünde duran bir yumurta. Kare dengeyi tarif etmiyor — dengeyi TUTUYOR, ve izleyici nefesini tutuyor.
+YÜKÜM: "dengede kalmamız" → yumurta dar ucunun üstünde dimdik duruyor, gölgesi dar ve sıkı bir elips, çevresinde ittiği ince un halkası · "kalmamızı" → süregelen HÂL: eğim yok, devrilme yok, destek yok, hiçbir el yok · "de" → bu beyinciğin İKİNCİ işi; unun içindeki harf zaten K20-K21'in ışığından geliyor · "yönetir" → sert kenarlı altın çizgi oklavanın düz kenarında; un, taş ve yumurta ondan hiç etkilenmemiş.
+AYRICALIK: Bir yumurtanın ucunda durması gerçek kamerada bir hile ya da bir mucize anı ister; burada yalnızca ÖYLEDİR ve kimse şaşırmaz. Ayrıca kamera tezgâhın tam üstüne dik iner — gerçek mutfakta bu, tavana asılmış bir vinç demektir.
+PLAN: kahraman un içindeki beş harf ve yumurta (kadrajın orta yarısı) · net insan: 0 · ışık: pencereden gelen kar aksi tezgâhın yüzeyine düz iner ve unun her tanesini ayrı okutur; oklavanın düz kenarında tek sert altın çizgi durur · özne zeminden ayrılıyor: mat beyaz un ile koyu taş arasındaki en yüksek değer farkı · FEDA: kadrajın alt kenarında un çuvalının omzu tamamen odaktan düşer ve son harfin sağ ucu ince bir un dağılmasıyla yumuşar.
+ENTRY STATE: Tezgâhta somunun devrildiği yerden yayılmış un duruyor; unun içinde beş harf zaten oluşmuş, yumurta harflerin üstünde ucunda dimdik, oklava yanlarında yatıyor. Kimse kadrajda değil.
+EXIT STATE: Un bir tanecik bile dağılmıyor, harfler aynen duruyor, yumurta devrilmiyor ve oklava yuvarlanmıyor; altın çizgi oklavanın aynı kenarında.
+-----
+[1 LENS]      55mm lens at f/4.0, camera set directly overhead looking straight down at the counter, close object view, the shoulder of a flour sack breaking the bottom edge out of focus so the frame is never clean or catalogue-like.
+[2 ÖZNE]      A dusting of flour spread across the dark stone holds five letters, and an egg stands upright on its narrow end just above them, dead still.
+[3 KİMLİK]    No person is in this frame; no hand, forearm or sleeve enters it at any edge.
+[4 MEKÂN]     The setting is @mutfak's counter seen from above: dark stone with old marks and a broad sweep of flour, a wooden rolling pin lying beside the word, the flour sack's shoulder at the near edge, and at the top edge the wooden board the loaf was turned out onto.
+[5 IŞIK]      Snow-returned daylight from the window falls across the counter at a low angle from the left, so each grain of flour casts its own micro shadow and reads separately rather than as one mass; the stone's far side holds a cool violet bounce at a third of key and stays coloured. The egg's shadow is a tight narrow ellipse pinned to its tip.
+[6 KAVRAM]    A hard-edged golden sliver rides only the straight upper edge of the wooden rolling pin and is cut dead where the barrel meets its handle; the flour, the letters, the egg and the stone stay completely untouched by it.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: the finest flour still settling at the sweep's outer edge, a thread of steam crossing the top corner from the loaf, the light shifting faintly as snow passes the window.
+[8 DERİNLİK]  Depth in three layers — the blurred flour sack shoulder at the near edge, the letters, egg and rolling pin sharp to the grain, the board and counter edge softening at the top.
+[9 TEMAS]     The egg's tip meets the stone through a thin ring of flour it has pushed aside, the rolling pin lies along the counter with one unbroken line of contact and its own soft shadow, and the sack presses a dark crease into the flour where it leans.
+STYLE: Premium-CG feature-animation 3D CGI. Dry flour is the hero material — matte, dusty, each grain separately readable on the dark stone, edges of every drift slightly feathered, never a smooth paste. Around it dark stone with old absorbed stains, turned wood with satin grain and a worn middle, a matte eggshell with faint speckle. Warm-honey light against cool-violet shadow, brown-ochre wood, bright and cheerful winter kitchen light.
+LIGHT AND PALETTE: One low raking key gives the flour its grain-by-grain texture and gives the egg its single tight shadow; the violet bounce keeps the stone's far side full and coloured rather than empty. Highest value contrast in the frame is white flour against dark stone, which is what makes the word legible. The only saturated accent is the golden line on the rolling pin; no teal-orange grade.
+TEXT: CARRIER — the flour scattered on the dark stone counter, a fixed mass that is not carried, floated or held. LETTERFORM — the letters exist in the flour itself, matte and dusty, their edges slightly feathered where grains have spread, sitting in the same plane as the counter; never drawn, printed, painted, embossed or floating above the surface. THE WORDS — "DENGE", one word, five letters, D then E then N then G then E, no diacritics. ORIENTATION — the camera looks straight down so the counter's surface is parallel to the sensor; the word reads left to right across the frame, never mirrored, reversed or rotated, and appears in this one drift of flour and on no other surface. Any lettering elsewhere in frame stays soft-focus, Turkish or blank.
+NEGATIVE: the flour never lifts, drifts, swirls or scatters — every letter stays exactly as it is and the sweep's outline does not change ; the egg stands and never tilts, wobbles, rolls or falls, and nothing supports it ; the rolling pin does not roll ; the letters are made of flour and never become drawn, printed or glowing type ; the golden line stays a plain warm light on the wooden edge and never becomes a spark, star or arrowhead ; no arrow, label, chart, scale diagram or inset panel ; no hand, no person ; no English lettering ; no photoreal capture.
+-----
+
+
+-----
+### K23 | VO23 "Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz." · yazı: YOK · KAVRAM
+FİKİR: Koridorda kimse yok, bisiklet duvarda sakin duruyor — ama her parçası kullanılmış: tutamağın parlamış kauçuğu, pedalın tek yandan yenmiş lastiği, zeminde kurumuş ince tekerlek izi. Kare "biniliyor" demiyor, "yıllardır binilmiş ve hiç düşülmemiş" diyor.
+YÜKÜM: "bisiklete" → bisiklet kadrajın yakın üçte birinde, duvara dayalı, iki tekerlek de yerde · "düşmeden" → devrilme, yatıklık, yerde yatan bisiklet YOK; sele ile gidon aynı düşeyde, sakin ve dik · "binebiliyorsak" → geçmiş kullanımın izleri sayılabilir: parlamış tutamak, tek yandan aşınmış pedal kauçuğu, zeminde kurumuş tekerlek izi · "beyinciğe" → maket bu karede yok; bağ ışığın kimliğiyle kuruluyor — aynı sert kenarlı tek altın çizgi, şimdi kadronun üst borusunda.
+AYRICALIK: Taşıyıcı ve köprü kare — ayrıcalık K21 ve K22'dedir. Buradaki iş, sekansı insansız ama ölü olmayan bir soluğa bağlamak ve S4'ün maket masasına dönüşünü hazırlamaktır.
+PLAN: kahraman bisiklet (yakın üçte bir, kadrajın sol yarısı) · net insan: 0 — bu ders tek kişiliktir ve Mira'nın kotası doludur; §2d.2'nin "geniş karede yakın planda bir yüz" reçetesi burada UYGULANAMAZ, dünyayı tutan şey YAKIN DÜZLEM MALZEMESİDİR: aşınmış kauçuk, çipli emaye, kalın yün palto, cilalı ahşap · ışık: mutfak kapısından gelen tek yanal hüzme yere aydınlık bir dikdörtgen ve bisikletin kroma çalan jantına ince yatay bir parlama bırakır; koridorun geri kalanı serin ama dolu · özne zeminden ayrılıyor: koyu emaye kadro ile arkasındaki aydınlık kapı dikdörtgeni arasındaki değer farkı · FEDA: bisikletin ön tekerleğinin yarısı kadraj dışında kalır ve koridorun ucundaki kapı camı odağı tamamen kaybeder.
+ENTRY STATE: Koridor boş; bisiklet duvara dayalı duruyor, iki tekerlek de yerde, sele ve gidon dik; askıda kalın palto, kapının yanında büyük çizmeler ve küçük gelmiş eski bir ayakkabı; mutfak kapısı açık ve ışığı içeri düşüyor.
+EXIT STATE: Bisiklet hiç kımıldamıyor, hiçbir tekerlek dönmüyor, kimse koridora girmiyor; mutfak kapısındaki ışık aynı yerde ve masadaki maket bir oda ötede, dokunulmamış duruyor.
+-----
+[1 LENS]      35mm lens at f/2.8, camera at hip height and slightly low, wide view down the length of the corridor from the kitchen doorway, the bicycle's rear wheel and mudguard breaking the near left third out of focus.
+[2 ÖZNE]      A bicycle stands leaning against the corridor wall in @koridor, both wheels down and perfectly still, with no one on it and no one in the corridor.
+[3 KİMLİK]    No person is in this frame at all — no figure, no hand, no partial limb at any edge. The house carries an adult's trace only through objects: a heavy coat on the hook, large boots by the door.
+[4 MEKÂN]     The setting is @koridor, fully dressed: the leaning bicycle with worn grips and a one-sided worn pedal rubber, a thick wool coat hanging on the wall hook, large boots and one outgrown small shoe beside the door, a dried thin tyre track on the floorboards, and at the far end the pale bright rectangle of the frosted door glass.
+[5 IŞIK]      One motivated lateral shaft spills from the open kitchen doorway on the right and lays a bright rectangle across the floorboards, catching the bicycle's rim, the coat's shoulder and the boots; it stops at the corridor's far half, which holds a deep cool indigo bounce at a third of key and stays coloured and full. The frosted door glass at the end reads as a second pale bright panel, so the frame is never short of light.
+[6 KAVRAM]    A hard-edged golden sliver rides only the top tube of the bicycle frame and is cut dead where the tube meets the seat post; the floorboards, the wall, the coat, the boots and the wheels stay completely untouched by it, with no halo, no trail and no falloff.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: dust turning inside the doorway shaft, the coat's hem barely stirring in the draught from the warm kitchen, a thread of steam reaching along the ceiling from the same doorway.
+[8 DERİNLİK]  Depth in three layers — the out-of-focus rear wheel and mudguard at the near left, the frame's top tube, the coat and the boots sharp in the doorway light, the far door glass blooming soft at the corridor's end.
+[9 TEMAS]     Both tyres press flat onto the floorboards with tight soft contact shadows, the handlebar grip and the pedal touch the wall with two small dark points, the boots sit heel-down with shadow pooled under their soles, and the coat's hem hangs clear of the floor with its own shadow beneath.
+STYLE: Premium-CG feature-animation 3D CGI. The near-plane materials hold the world here: perished rubber grips polished smooth by years of hands, chipped enamel on the frame with dark metal showing through, a chrome rim with an anisotropic brushed highlight stretched one way, thick wool coat with visible fibre and weight, waxed boot leather, satin floorboards with worn grain. Warm-honey doorway light against cool-violet corridor shadow; bright, lively and inviting, never dim.
+LIGHT AND PALETTE: A single doorway key does the work and the frosted end-glass gives the second bright plane; between them the corridor keeps a full cool-violet fill rather than emptiness. Warm honey and brown-ochre against cool violet, the enamel frame a saturated but never neon note, the golden sliver the only accent. No teal-orange grade, no desaturated grey.
+TEXT: none in this frame. Every panel that could invite a sign is dressed rather than left blank — the wall carries plaster texture, the door is panelled wood, the coat is plain wool, the boot leather is scuffed. The pencil growth marks on the door frame stay soft and unresolved, and any lettering surviving in the background stays soft-focus, Turkish or blank.
+NEGATIVE: no one rides, mounts, holds or touches the bicycle and no one appears in the corridor ; the bicycle stands still against the wall with both wheels down and never leans further, rolls, tips or falls, and no bicycle lies on the ground ; the pencil marks on the door frame stay unresolved and no year is legible ; the golden line stays a plain warm light on the top tube and never becomes a streak, spark, star or arrowhead ; no arrow, label, diagram or inset panel ; no cut-off limb at any frame edge ; no English lettering ; no photoreal or photographic capture, and no flat architectural-visualisation look — the corridor stays in the same dimensional animation language as the kitchen.
+-----
