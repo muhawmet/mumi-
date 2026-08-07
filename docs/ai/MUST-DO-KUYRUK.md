@@ -119,3 +119,21 @@ aynı: çağrı öncesi/sonrası bakiye + gözle sonuç.
 - 🔴 **Yazı hükmü tam çözünürlüklü kırpmadan verilir.** Bu turda iki kez küçültülmüş görüntüden
       "diakritik yok" dedim, ikisinde de vardı; üçüncüsünde kırpma penceresi harflerin üstünü
       kesti. Kendi cetvelimi yanlış tuttum. Şüphede kalırsa hüküm verilmez, Mami'ye sorulur.
+
+### 🔴 KAMERA TEKDÜZELİĞİ — motion'ın "kurgu çok basic"i (Mami, 2026-08-07)
+Mami: *"kamera hep slowly push in vibeında, haberin olsun."* Üç klibin üçü de aynı hareketle
+basıldı. Sebep: temiz-klip reçetesi ("kamera sabit ya da çok düşük genlikli") kamera
+GÜVENLİĞİNİ anlatıyor, kamera ÇEŞİTLİLİĞİNİ değil — ben ikisini karıştırdım.
+**Kural: düşük genlik korunur, ama hareket TÜRÜ sekans içinde döner.** Ölçülmüş güvenli havuz:
+  · çok yavaş push in     · çok yavaş pull out (nefes verme, sekans kapanışı)
+  · birkaç santim yanal kaydırma (yeni bir şey ortaya çıkacaksa)
+  · kilitli kamera, sıfır hareket (vuruş anı; en güçlüsü, en az kullanılanı)
+  · çok hafif aşağı/yukarı yerleşme (karakter oturuyor/kalkıyorsa)
+Aynı hareket **arka arkaya ikiden fazla** karede kullanılmaz. Kilitli kamera bir kusur değil,
+ritmin nefesidir — L/J kesim yasasının motion'daki karşılığı.
+
+### Ölçülen motor kusuru — sürü sonda eriyor
+K11'de sperm sürüsü klibin SONUNA doğru eriyor (Mami: *"sonda sürünün eridiğini gör, ama
+kullanılır"*). Kling çok sayıda küçük ve benzer nesneyi klip boyunca sayıca koruyamıyor.
+→ Kalabalık sürü karelerinde klip **kısa tutulur** (4-5 sn) ya da sürü kadrajın uzağında
+bırakılır; kahraman nesne yakında ve tek başına net kalır.

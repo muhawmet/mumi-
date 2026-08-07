@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "denetim",
   "status": "aktif",
-  "lastCompleted": "Hayvanlarda Üreme: 54 kare + açılış kartı basıldı (32 dk, 2K, ~4.650 kredi). 8 element üretildi, raf 13 kayıt. Yeni organlar: brifing/is-emri/rota/kare-cek/uretim-defteri/lj-kesim/karar/sahne-metni. Ahşap levha kalıbı 11 TEXT satırından söküldü, yazılar sahnenin malzemesinden.",
-  "nextAction": "MOTION: kareler görülerek Kling 3.0 motion yazımı — sekans sekans; ardından ANIMATIC-0 (gerçek VO ile), sonra klip basımı",
+  "lastCompleted": "Motion turu başladı: K01, K02, K11 basıldı ve Mami onayladı (3 klip, 1620 kredi). Temiz-klip reçetesi doğrulandı — cetvel üçünde de donma bulamadı. Medya yeri kural oldu: video/ses/kurgu ~/Desktop/6. Sınıf Animasyonlar/<proje>/ altında.",
+  "nextAction": "KALAN 51 KLİP — kamera hareketi sekans içinde DÖNDÜRÜLEREK (hepsi push-in olmayacak, Mami'nin ölçümü), sürü/kalabalık kareler 4-5 sn kısa. Her klip indikçe KLIPLER/ altına <n>.mp4",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T10:08:34.770Z",
+  "updatedAt": "2026-08-07T10:22:08.110Z",
   "updatedBy": "claude",
-  "baseCommit": "7ed9de36"
+  "baseCommit": "ab4bc63d"
 }
