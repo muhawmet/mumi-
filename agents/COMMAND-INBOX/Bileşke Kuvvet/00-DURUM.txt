@@ -1,6 +1,6 @@
-BİLEŞKE KUVVET — AŞAMA: KARE BASILACAK
+BİLEŞKE KUVVET — AŞAMA: PLAN KATMANI ONARILACAK, SONRA KARE
 ════════════════════════════════════════════════════════════════
-prompt ✓ (lint KIRMIZI 0)   ·   kare 0/52   ·   motion ✗   ·   VO ✓
+prompt ✓ (lint KIRMIZI 0)   ·   kare 0/71   ·   motion ✗   ·   VO ✓
 
 SIRADAKİ ADIM
   PROMPTLAR/ altındaki blokları sırayla Nano Banana 2'de bas, images/ klasörüne at.

@@ -323,10 +323,10 @@ export function sorulariKur(kaynak, { proje, raf = rafOku() } = {}) {
       baslik: 'BÜTÇE VE CÜZDAN',
       soru: 'Hangi cüzdandan harcanacak?',
       kanit: 'gerçek fiyat `node scripts/rota.mjs fiyat` ile kredi yakmadan okunur',
-      gerekce: 'Mami\'nin kuralı: önce Magnific kredisi bitirilir; Higgsfield daha pahalı, ekstra araç olarak durur.',
+      gerekce: 'Ölçüldü 2026-08-07 (simulate_cost exact): Magnific kling-30 1080p = 90 kredi/sn, Higgsfield kling3_0 = ~1.5 kredi/sn. Higgsfield UCUZ, pahalı DEĞİL. Ayrım fiyat değil GİZLİLİK: Higgsfield ortak hesap ve MCP\'de silme aracı yok, prompt görünür kalıyor. Kilit sahne ve ekran yazısı Magnific\'te; sıradan sahne canlanması Higgsfield\'da. İkisi de aynı anda dolu koşar.',
       secenekler: [
         { etiket: 'Magnific (ana hat)', onerilen: true, aciklama: 'NB2 kare + Kling 3.0 klip + 3 referans. Varsayılan.' },
-        { etiket: 'Higgsfield (ekstra)', aciklama: 'Element referansı ve 4k gerektiğinde. Daha pahalı — bilerek seçilir.' },
+        { etiket: 'Higgsfield (ucuz, ORTAK HESAP)', aciklama: '~1.5 kredi/sn — Magnific\'in 60\'ta biri. Ama ortak hesap: prompt görünür kalır, silinemez. Sıradan sahne canlanması buraya; ekran yazısı ve kilit sahne ASLA.' },
         { etiket: 'Karışık — kare Magnific, klip Higgsfield', aciklama: 'Yalnız ölçülmüş bir gerekçe varsa.' },
       ],
     },

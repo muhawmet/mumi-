@@ -167,3 +167,22 @@ iş göndermeden *"Preset IN THE DARK önerildi"* diye geri çevirdi. Hata gibi 
 ~3000 karakter) ve sohbetten yürütmek bağlamı yakıyor. Ucuz yol: kareyi **Magnific'e**
 yükle (`creations_request_upload`, kısa URL) → `creations_get` ile public token URL'sini
 al → Higgsfield'da **`media_import_url`**. Tek satır, tek media_id.
+
+### 🔴 START FRAME YALNIZ MAGNIFIC'TE ÜRETİLİR (Mami, 2026-08-07)
+
+Mami'nin cümlesi birebir: *"start frame'ler sadece Magnific'te üretilecek, onu kural ekle.
+Higgsfield'da istemiyorum — **start frame motion prompt'undan daha değerli**."*
+
+**Yasa:**
+- **Start frame (kare) → HER ZAMAN Magnific.** İstisnası yoktur. Kare üretim prompt'u
+  Higgsfield'a **gönderilmez**, `generate_image` oraya açılmaz.
+- **Klip (motion) → sıradan sahne canlanması Higgsfield'da olabilir.** Ekranda yazı taşıyan
+  ve kilit/epik sahneler yine Magnific'te kalır (bkz. iki-cüzdan dağıtım yasası).
+
+**Gerekçe Mami'nin kendi ölçüsü, fiyat değil:** start frame dünyanın, kadrajın, kimliğin ve
+kompozisyonun tamamını taşır — motion prompt'u yalnız o karenin nasıl kımıldadığını anlatır.
+Higgsfield **ortak hesaptır** ve MCP'sinde silme aracı yoktur (ölçüldü 2026-08-07):
+oraya giden her prompt görünür kalır. Değerli olanın orada bırakılması kabul edilemez.
+
+⚠ Bu kural fiyat kuralını **ezer**: Higgsfield saniyede ~1.5 kredi, Magnific 90 —
+yine de kare Magnific'te basılır. Ucuzluk, kareyi ortak hesaba taşımanın gerekçesi değildir.
