@@ -29,7 +29,7 @@ Kaynak docx'te geçen ve buraya birebir taşınan görseller:
 Kaynakta OLMAYAN hiçbir mekân yok. (Ölçüm: kaynakta mutfak 0 · soba 0 · ocak 0.)
 
 🔴 MEKÂN KAVRAMI TAKİP EDER — tek mekân kilitli DEĞİL:
-  konser salonu → bedenin içi → maket masası → gerçek anlar → kan dolaşımı → lunapark → kapanış
+  konser salonu → bedenin içi → gerçek anlar → kan dolaşımı → lunapark → kapanış
 Süreklilik mekândan değil, MİRA'dan + ışık rejiminden + paletten gelir.
 
 🔴🔴 ÖZEL OKUL STANDARDI — Mami'nin emri (2026-08-07):
@@ -46,7 +46,7 @@ malzeme iyi, mekân geniş, ışık bol, her şey bakımlı.
 Element **1:1** üretilir ve `agents/COMMAND-INBOX/elements/` içinde yaşar; sonraki
 videolarda bedava gelir. **Her şeyin elementi üretilmez** — yalnız eşiği geçen.
 Bu senaryoda eşiği geçen ÜÇ öğe:
-  · `@maket`  — sinir sistemi maketi        (S4-S5, ~11 kare)
+  · ~~`@maket`~~ — MAKET SÖKÜLDÜ (Mami, 2026-08-07); ders bedenin içinde geçiyor
   · `@salon`  — konser salonu               (S1 + S7, ~10 kare)
   · `@noron`  — nöron / beden içi dünyası    (S2-S3, ~11 kare)
 Rafta zaten var: `@mira` (2026-08-07'de sahne rejiminde yeniden basıldı) · `@kedi`.
@@ -88,12 +88,12 @@ Bisiklet ve lunapark eşiği geçmiyor — element YOK, o kareler kendi cümlesi
 21. Merkezî sinir sistemi beyin, beyincik, omurilik soğanı ve omurilikten oluşur.
 
 
-===== SEKANS 4 — BEYİN VE BEYİNCİK (maket · denge anı) =====
-22. Mira masadaki maketi kendine doğru çevirdi.
-23. En üstteki büyük kısım beyindir.
+===== SEKANS 4 — BEYİN VE BEYİNCİK (bedenin içi · denge anı) =====
+22. Ağın merkezinde, her şeyden büyük bir yapı yükselir.
+23. Bu en büyük yapı beyindir.
 24. Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir.
 25. Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır.
-26. Arka alttaki küçük kısım ise beyinciktir.
+26. Onun hemen altındaki daha küçük yapı ise beyinciktir.
 27. Beyincik kaslarımızın uyumlu çalışmasını sağlar.
 28. Dengede kalmamızı da beyincik yönetir.
 29. Mira tek ayak üstünde durdu ve sallanmadı.

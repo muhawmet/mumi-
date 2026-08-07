@@ -1,126 +1,123 @@
-SEKANS 4 — BEYİN VE BEYİNCİK (maket masası + denge) · K22-K30
+SEKANS 4 — BEYİN VE BEYİNCİK (bedenin içi + gerçek anlar) · K22-K30
 ═══════════════════════════════════════════════════════════════════
-Mekân kaynaktan: "sunucu tek ayak üstünde durmaya çalışır" · "bisiklete binmek"
-Süreklilik: S3'ten DEVRALINIR — ama ölçek geri döner, artık gerçek bir odadayız.
-Taşınan şey MALZEME DİLİ: K21'in onaylı dört kütlesi (derin kıvrımlı büyük kubbe ·
-altında ve arkasında ince paralel taraklı küçük kütle · ikisinin birleştiği kısa dar
-düğüm · düğümden inen halkalı uzun sütun) bu sekansta MASA MAKETİ olarak birebir
-aynı biçimlerle geri gelir. Şema değil, aynı heykel — başka ölçekte.
-Işık rejimi S1'in tabanı: tek yönlü SERT alçak beyaz-altın key (pencere), puslu havada
-görünür huzme, uzun paralel gölgeler, bal/ceviz/kemik/pirinç ⟂ doygun indigo.
-Düz eşit dolgu YOK. Pirinç masa lambası K05'in nota lambasının kardeşidir.
+🔴 MAKET SÖKÜLDÜ — Mami kararı 2026-08-07. Ölçüm: kaynakta `maket` 1 kez geçiyor ve
+ona 9 kare yazılmıştı; mutfak hatasının küçük kardeşi. Basılan kare kanıtladı: aynı
+ders K21'de KATEDRAL olarak kurulunca onay aldı, K22'de bir okul laboratuvarı prop'una
+(pembe plastik beyin · pirinç dikme · ceviz kaide) inince Mami "kötü oldu" dedi.
+🔴 PORSELEN MAKET · PİRİNÇ DİKME · CEVİZ KAİDE · ÇALIŞMA MASASI · MASA LAMBASI YOK —
+   hiçbiri kadrajda yok ve hiçbiri metinde ANILMIYOR.
 
-MAKET KANONU — her blokta AYNI kelimelerle geçer, referans olarak VERİLMEZ:
-müze kalitesinde bir merkezî sinir sistemi masa maketi; soluk mat kemik rengi
-porselenden elde bitirilmiş, ince fırçalanmış pirinç bir dikmede, cilalı ceviz kaide
-üstünde. Bütün yüzeyleri çıplak, işlenmiş malzeme.
-⚠ `@maket` plakası referans olarak GEÇMEZ (27 kare basılarak ölçüldü: nesne plakası
-kompozisyonu eziyor). Süreklilik yazıyla taşınır — yukarıdaki dört biçim her blokta.
+Ders artık BEDENİN İÇİNDE, K21'in dilinde geçer. Mekân onaylı K21'in mimarisidir
+(`images/21.png`): solgun kemik renginde lif/taş mimari · dört ayrı kütle, her biri
+kendi sert huzmesinde ve kendi uzun gölgesiyle · doygun indigo tonoz · havada dönen toz.
+S4 o mimarinin İÇİNE girer ve ona YAKLAŞIR — aynı yapı, azalan mesafe.
 
-ODA KANONU: iyi bir çağdaş evde geniş, ferah çalışma odası — enişli meşe masa, sol
-kenarda tabandan tavana pencere, derin ceviz kitap rafları, yün halı, iyi bir okuma
-koltuğu. Geç ikindi. ÖZEL OKUL STANDARDI: hiçbir şey yıpranmış, çentikli, solmuş
-ya da dar değil; zenginlik gösteriş değil KALİTE (marka yok, logo yok, varak yok).
+MİMARİ KANONU — her blokta AYNI biçimlerle geçer, referans olarak VERİLMEZ:
+derin kıvrımlı büyük kubbe · altında ve arkasında ince paralel taraklı küçük yoğun kütle ·
+ikisinin birleştiği kısa dar düğüm · düğümden inen halkalı uzun sütun. Hepsi tek ve aynı
+malzemeden: KURU, solgun, kemik rengi lif taşa preslenmiş; ıslak değil, etli değil, kırmızı değil.
+
+Işık rejimi S1'in tabanı ve K21'in kanıtı: tek yönlü SERT beyaz-altın key, puslu havada
+görünür huzme, uzun paralel gölgeler, bal/kehribar/kemik ⟂ doygun indigo. Düz eşit dolgu YOK.
+Işık GEOMETRİK yazılır — hangi hattın üstünde, nerede kesildiği. "Kontrast yüksek" YOK.
 
 register: edu
-Ölçek merdiveni: K22 orta · K23 yakın · K24 makro · K25 orta · K26 yakın · K27 orta
-· K28 yakın · K29 geniş (iç, tam boy) · K30 çok geniş (dış mekân).
-Ardışık iki karede aynı ölçek yok. ⚠ Omurga K29 ve K30'un ikisine de "geniş" diyor;
-mekân değiştiği için K30 bir kademe açıldı — merdiven kararı değişmedi, çakışma açıldı.
+Ölçek merdiveni: K22 orta · K23 yakın · K24 makro · K25 orta (BASILI)
+· K26 yakın · K27 orta · K28 yakın · K29 geniş (gerçek dünya, iç)
+· K30 çok geniş (gerçek dünya, dış).
+Ardışık iki karede aynı ölçek yok.
 Ön düzlem kütlesi DOKUZ karenin dokuzunda var — kadraj kilidi cümleyle değil kütleyle tutuyor.
 
-@mira K22 · K25 · K27 · K29 · K30 → references: UPOqovywny
+🔴 K22 · K23 · K24 · K26 · K27 · K28 → İNSAN YOK, REFERANS YOK. `references` alanı BOŞ.
+@mira yalnız gerçek dünya karelerinde: K25 · K29 · K30 → references: UPOqovywny
 🔴 Kız TARİF EDİLMEZ, ÇAĞRILIR. Yaş, yüz, saç, ten, göz, gardırop, milliyet YAZILMAZ —
    gövdede yalnız "the girl from the character reference" / "she".
-🔴 Her @mira karesi kadrajın DIŞARIDA bıraktığını yazar (bel üstü / baştan ayağa,
-   tavan dışarıda), yoksa plakanın stüdyo tam-boy kadrajı ithal oluyor.
 
-🔴 ÜÇ SIK HATANIN BU SEKANSTAKİ KİLİDİ:
+🔴 ÜÇ KİLİT:
    · K23 ışık YALNIZ büyük kubbenin DIŞ HATTINDA — kıvrımların içine inmiyor,
-     aşağıdaki parçalara ve kaideye ulaşmıyor.
-   · K26 ışık YALNIZ taraklı küçük kütlede — kubbe bu karede TAMAMEN karanlık,
-     ışık kubbenin alt kenarına bile tırmanmıyor.
+     aşağıdaki kütlelere ulaşmıyor.
+   · K26 ışık YALNIZ taraklı küçük kütlede; büyük kubbe bu karede TAMAMEN KARANLIK.
+     Işığın üst sınırı kubbenin kenarının ALTINDA kesilen sert ve düz bir hattır.
    · `omurilik soğanı` (kısa dar düğüm) ile `omurilik` (halkalı sütun) bu sekansta
      hiç aydınlanmaz; ikisi de S5'in işidir. Burada ışıksız kütle olarak dururlar.
-   Işık GEOMETRİK yazılır — hangi hattın üstünde, nerede kesildiği. "Kontrast yüksek" YOK.
 
-🔴 KAVRAM IŞIĞI vs ODA IŞIĞI: bu sekansta ayrı bir kavram ışığı YOK. Kavramı taşıyan
-şey odanın kendi sert key'inin NEREYE düştüğüdür. ENZIM §7'nin "ışık tene değmez"
-kilidi kavram ışığı içindir; oda ışığı Mira'ya düşer ve düşmelidir (VIVID §6.1).
-Kavramı ışıkla söyleyen iki karede (K23, K26) Mira zaten yok.
-
-🔴 ŞEMA YASAĞI gövdenin İLK cümlelerinde: "not a diagram". Sonda kalırsa motor ders
-   kitabı diyagramı basıyor — bu projede ölçüldü. Maket üstünde etiket, numara, ok,
-   çağrı çizgisi, inset panel YOK; bütün yüzeyler çıplak malzeme.
-🔴 MOTION KISITI ŞİMDİDEN KAREDE: hepsi OLAY DEĞİL DURUM — maket çoktan çevrilmiş,
-   kız çoktan tek ayakta ve dengede, bisiklete çoktan binmiş. Eğilip doğrulma, kalkma,
-   bisiklete binme hareketi hiçbir karede gerekmiyor. Kimse konuşmuyor, ağız oynamıyor.
+🔴 ŞEMA YASAĞI gövdenin İLK cümlelerinde: "not a diagram" + "nothing in it is written on,
+   pointed at or numbered" — K21'de böyle yazıldı ve tuttu. Sonda kalırsa motor ders kitabı
+   diyagramı basıyor; bu projede iki kez ölçüldü.
+🔴 NEGATİFTE BİR NESNEYİ ADLANDIRMAK ONU ÇAĞIRIYOR (K22 tur2'de ölçüldü: "no open book"
+   yazıldı, motor İngilizce etiketli anatomi diyagramı bastı). Kısıt OLUMLU yazılır —
+   "every surface stays bare". Negatif kare-özel, en çok 3-5 madde.
+🔴 ÇOCUK GÜVENLİĞİ: kan, damar kesiti, organ kesiti, doku katmanı, ıslak/etli/kırmızı yüzey
+   YOK. Malzeme kuru, solgun, taş/lif/camsı.
+🔴 MOTION KISITI ŞİMDİDEN KAREDE: hepsi OLAY DEĞİL DURUM. Kimse konuşmuyor, ağız oynamıyor.
 Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
 ═══════════════════════════════════════════════════════════════════
 
 
 K22 ──────────────────────────────────────────────────────────────
 VO 22: "Mira masadaki maketi kendine doğru çevirdi."
-FİKİR: Sekans bir EL HAREKETİYLE açılıyor. Kavram ağın içinden çıkıp masaya indi;
-  artık elle tutuluyor ve bir çocuk onu kendine çeviriyor.
-YÜKÜM: OLAY DEĞİL DURUM — maket çoktan ona dönmüş ve duruyor; çevirme anı değil.
-  Eller hâlâ kaidenin üstünde, parmaklar ayrı ve sabit.
-AYRICALIK: Odanın tanıtıldığı tek kare — özel okul standardı burada okunur:
-  geniş, ferah, iyi döşenmiş, bol ışıklı bir çalışma odası.
-PLAN: Önde odak dışı pirinç masa lambasının başlığı ve arkasındaki sıcak ampul
-  (sol alt) · ortada keskin eller ve maket · arkada ceviz raflar ve tabandan
-  tavana pencere.
-ENTRY STATE: Maket ona dönük ve hareketsiz; iki el kaidenin kenarında, nefes yavaş.
-EXIT STATE: Aynı duruş; yalnız huzmedeki toz döndü.
-🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+FİKİR: 🔴 VO maketi söylüyor ama sahne maket DEĞİL — sahne YAKLAŞMADIR. K21'de dört
+  kütleyi uzaktan gördük; burada en büyüğünün ayağındayız ve o bize DÖNÜK duruyor.
+  "Kendine doğru çevirdi" bir el hareketi değil, bir KARŞILAŞMA: yüzü bize bakıyor.
+YÜKÜM: Ölçek bizim küçüklüğümüzü söylemeli — kütle kadrajın üstünden taşıyor, zemin
+  ayağımızın dibinden ona doğru kaçıyor. İnsan yok, el yok, nesne yok.
+AYRICALIK: K21'in aynı mimarisi, azalan mesafe. Bir sonraki karede kubbenin kendisiyle
+  yalnız kalacağız; bu kare o yaklaşmanın ilk adımı.
+PLAN: Önde odak dışı kalın örülü lif halatı (sol alt, yükselerek) · ortada keskin, bize
+  dönük kıvrımlı büyük kütle ve ayağındaki üç küçük kütle · arkada indigoya düşen tonoz.
+ENTRY STATE: Kütle hareketsiz ve bize dönük; huzmede toz dönüyor, gölge yerde duruyor.
+EXIT STATE: Aynı duruş, aynı gölge; yalnız huzmedeki toz döndü.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A large, generous study in a good modern home, late in the afternoon. The girl from the character reference sits at a wide oak desk, framed from the waist up with her legs, the chair and the floor out of frame, seen from her right and slightly above. Standing on the desk in front of her is a museum-quality desk model of the central nervous system, hand-finished in pale matte bone-coloured porcelain on a slim brushed-brass upright rising from a polished walnut plinth: a great dome folded into deep ridges and valleys, a smaller tight mass tucked low and behind it combed into fine parallel ridges like thin pressed leaves, a short narrow knot where the two meet, and from the knot a long evenly ringed column running down into the plinth. Every surface of it is bare worked material. The model has already been swung round to face her and it is still; both her hands rest on the near edge of the walnut plinth, fingers spread and steady, the hands anatomically clean with five separate fingers each. Her chin is a little down and her mouth is closed. Nearest the lens, out of focus and closing the lower left corner, the hooded brass shade of a small desk lamp with its warm bulb glowing behind it. Behind her, deep walnut shelves of books and a tall window running floor to ceiling on screen-left. One hard low sun comes through that window, visible in the fine dust, and lays long parallel shadows of the model and her hands across the oak.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A medium view from the floor at the foot of the largest built mass of the fibre architecture, much closer to it than we have been before, looking up and slightly across. We are very small here: the pale stone slabs of the floor run away from our feet toward it and the mass climbs out of the top of the frame. It stands square to us, its whole face offered — the deep folds and valleys of its surface radiate outward from a point directly facing the lens and wrap away around both sides until the far edge is lost in the dark. Everything is built of one material: dry pale bone-coloured fibre pressed and set into stone, each fold carrying real thickness and a warm softness where it thins over a crest. Low behind and below it, a smaller tight mass combed into fine parallel ridges sits half in shadow, and where the two meet the material gathers into a short narrow knot with a long evenly ringed column running down from it out of the bottom of frame. Every surface stays bare worked material. Nearest the lens, out of focus and rising through the lower left corner, one thick braided cable of the same pale fibre crosses the frame and catches a long highlight. One hard shaft of white-gold light drops from high screen-left, visible in the turning dust, and lays one long shadow of the whole mass across the floor toward us. Behind it all the vault falls away into a full saturated indigo that keeps its colour.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens at desk height from her right, sharp on the hands and the model, tactile matte porcelain, brushed brass, polished walnut and oiled oak, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold key from the tall window on screen-left, visible in the dust, throwing long parallel shadows across the desk and floor; honey oak, walnut, warm bone porcelain and brass against a full saturated indigo shadow, nothing pastel and nothing grey.
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium wide lens low at floor level looking up, sharp in the middle ground, tactile pressed pale fibre, spun glass and matte stone, fine film grain.
+LIGHT AND PALETTE: one hard white-gold key from high screen-left, visible in the haze, throwing one long shadow of the mass across the floor; warm bone, honey and amber against a full saturated indigo vault, colour rich in the darks, nothing pastel and nothing grey.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no labels, numbers or leader lines on the model; no full-body studio pose on a plain background; no flat even fill light; no readable text anywhere.
+NEGATIVE: no diagram, cross-section or textbook plate; no labels, numbers, callout circles or leader lines; no flat even fill light; no readable text anywhere.
 -----
 
 
 K23 ──────────────────────────────────────────────────────────────
 VO 23: "En üstteki büyük kısım beyindir."
-FİKİR: "En üstteki" bir konum bildirimidir ve cevabı bir ok değil, IŞIKTIR —
-  tek bir parçanın dış hattı yanar, geri kalan her şey kütle olarak kalır.
-YÜKÜM: 🔴 Işık kubbenin YALNIZ dış hattında. Kıvrımların içine inmiyor; taraklı
-  küçük kütleye, düğüme, halkalı sütuna ve ceviz kaideye HİÇ ulaşmıyor.
-AYRICALIK: Masa yüksekliğinin altından bakış — maket bize bir yapı gibi
-  yükseliyor; onaylı K21'in katedral bakışının masa ölçeğindeki yankısı.
-PLAN: Önde odak dışı ağır cam kâğıt ağırlığı (sağ alt) · ortada keskin kubbe ve
-  dış hattındaki tek ışık çizgisi · arkada odak dışı raflar ve indigo oda.
-ENTRY STATE: Işık çizgisi dış hatta oturmuş ve kesildiği yer keskin; aşağısı karanlık.
-EXIT STATE: Aynı çizgi, aynı kesim yeri; yalnız huzmedeki toz döndü.
+FİKİR: "En üstteki" bir konum bildirimidir ve cevabı bir ok değil, IŞIKTIR — tek bir
+  kütlenin dış hattı yanar, geri kalan her şey kütle olarak kalır.
+YÜKÜM: 🔴 Işık kubbenin YALNIZ dış hattında. Kıvrımların içine inmiyor; taraklı küçük
+  kütleye, kısa düğüme ve halkalı sütuna HİÇ ulaşmıyor. Kesildiği yer keskin.
+AYRICALIK: Kubbenin hemen altından yukarı bakış — silüet tek çizgi hâlinde okunuyor,
+  altındaki üç kütle ışıksız kütle olarak duruyor.
+PLAN: Önde odak dışı, tabandan yükselen kavisli soluk taş kaburga (sağ alt) · ortada
+  keskin kubbe ve dış hattındaki tek ışık çizgisi · arkada ışıksız kütleler, indigo tonoz.
+ENTRY STATE: Işık çizgisi dış hatta oturmuş, kesildiği yer keskin; aşağısı karanlık.
+EXIT STATE: Aynı çizgi, aynı kesim yeri; yalnız havadaki toz döndü.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view of the porcelain desk model taken from just below the level of the desk, looking up and slightly across, so the model rises in front of us like a building. Its shapes are the same throughout: a great dome folded into deep ridges and valleys at the top, a smaller tight mass combed into fine parallel ridges tucked low and behind it, a short narrow knot where the two meet, and a long evenly ringed column running down from the knot into the polished walnut plinth. One hard blade of low sun comes in from screen-left and lies along the outer contour of the great dome only: it runs the whole upper silhouette edge from front to back, holds a thin bright line on the crest of the outermost fold, and stops dead where the dome turns away from it. It does not travel down into the valleys, and the smaller ridged mass, the knot, the ringed column and the walnut plinth are all outside it and stay dark, readable only as shapes against the room. Nearest the lens, out of focus and closing the lower right corner, a heavy round glass paperweight sits on the desk with one long soft highlight across it. Behind, the deep walnut shelves and the study fall away into a full saturated indigo that keeps its colour.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A close view of the great folded mass taken from just beneath it, looking up and slightly across, so it rises in front of us and fills most of the frame. Its whole surface is folded into deep ridges and valleys like a landscape, all of it dry pale bone-coloured fibre pressed into stone, and every surface of it stays bare worked material. One hard blade of white-gold light comes in from screen-left and lies along the outer contour of this mass alone: it runs the whole upper silhouette edge from front to back, holds one thin bright line on the crest of the outermost fold, and stops dead where the surface turns away from it. It does not travel down into the valleys — a hand's width inside that edge the folds are already dark. Everything below is outside the light: the smaller tight mass combed into fine parallel ridges tucked low and behind, the short narrow knot where they meet, and the long evenly ringed column running down from it are all unlit, readable only as shapes standing against the indigo vault behind them. Nearest the lens, out of focus and closing the lower right corner, one curved rib of pale stone rises through the frame and carries a single soft highlight. Behind everything the vault falls away into a full saturated indigo that keeps its colour and never goes grey.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; close lens low at desk level looking up, shallow depth of field, tactile matte porcelain, brushed brass, polished walnut and cast glass, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold blade from screen-left carrying a single thin line along the top contour and nothing else warm; honey and amber on that one edge, warm bone in the unlit porcelain, a full saturated indigo through the room, colour rich in the darks.
+STYLE: 3D animated feature, warm stylised Pixar tradition; close lens low beneath the mass looking up, shallow depth of field, tactile folded pale fibre and matte stone, fine film grain.
+LIGHT AND PALETTE: one hard white-gold blade from screen-left carrying a single thin line along the top contour and nothing else warm; honey and amber on that one edge, warm bone deep in the unlit material, a full saturated indigo through the vault, colour rich in the darks.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no labels, numbers, callout circles or leader lines on the model; no glow or halo spilling off the lit edge; no flat even fill light; no readable text anywhere.
+NEGATIVE: no glow or halo spilling off the lit edge; no second light lifting the lower masses; no flat even fill light; no readable text anywhere.
 -----
 
 
 K24 ──────────────────────────────────────────────────────────────
 VO 24: "Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir."
-FİKİR: 🔴 Kavram MAKETİN MALZEMESİNDEN doğuyor, etiketten değil. Üç iş de "yer"
-  ister; cevap kıvrımlarda: küçücük bir hacme imkânsız kadar çok yüzey sığmış.
+FİKİR: 🔴 Kavram MALZEMEDEN doğuyor, etiketten değil. Üç iş de "yer" ister; cevap
+  kıvrımlarda: küçücük bir hacme imkânsız kadar çok yüzey sığmış. Kıvrımlar bir MANZARA.
 YÜKÜM: Üç ayrı yönden gelen ÜÇ ayrı sert parıltı, ÜÇ ayrı kıvrım duvarına iniyor —
-  üç duyu aynı yere varıyor. Aralarında hiçbir çizgi, ok ya da numara yok.
-AYRICALIK: Makro — porselenin dokusu, sırın ince çatlağı ve vadinin dibindeki
-  gölge okunuyor. Bu ölçek gerçek kamerayla masada yakalanamaz.
-PLAN: Önde odak dışı komşu kıvrım sırtı (alt kenar) · ortada keskin vadi duvarları
-  ve üç parıltı · arkada yumuşayarak devam eden kıvrım manzarası.
+  üç iş aynı yere varıyor. Aralarında hiçbir çizgi, ok ya da numara yok.
+AYRICALIK: Makro — malzemenin kendi dokusu, taşın ince tanesi ve vadinin dibindeki
+  gölge okunuyor. Bu ölçeğe gerçek kamerayla ulaşılamaz.
+PLAN: Önde odak dışı komşu kıvrım sırtı (alt kenar) · ortada keskin vadi duvarları ve
+  üç parıltı · arkada yumuşayarak devam eden kıvrım manzarası ve indigo.
 ENTRY STATE: Üç parıltı üç ayrı duvarda duruyor; hiçbiri kaymıyor, hiçbiri sönmüyor.
 EXIT STATE: Aynı üç parıltı, aynı üç duvar; yalnız havadaki toz döndü.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing here is written on, pointed at or numbered. An extreme macro view across the folded surface of the porcelain model's great dome, so close that the material becomes a landscape: ridge behind ridge behind ridge, every valley cut deep and doubling back on itself, packing far more surface into this small volume than the shape looks big enough to hold. The pale bone-coloured glaze carries real tactile grain, a fine web of crazing and a warm subsurface softness where the material thins over a crest. Three separate small hard highlights arrive from three different directions and land in three different places — one riding a near ridge crest, one lying deep down inside a fold, one on a far wall well back — each keeping its own clean hard edge and its own direction, none of them joined to another. Nearest the lens, out of focus and closing the bottom edge, a neighbouring ridge of the same material crosses the frame as a soft pale mass. In the middle ground the valley walls are razor sharp, each throwing a real shadow onto the wall opposite. Behind them the folded landscape softens away into a full saturated indigo that never turns grey.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing here is written on, pointed at or numbered. An extreme macro view across the folded surface of the great mass, so close that the material becomes a landscape: ridge behind ridge behind ridge, every valley cut deep and doubling back on itself, packing far more surface into this small volume than the shape looks big enough to hold, the far ridges running away like hills. The material stays dry and pale — bone-coloured fibre pressed into stone, with a fine tooth to the surface, a faint dusting of pale grit gathered in the bottoms of the valleys, and a warm inner softness where it thins over a crest. Every surface stays bare worked material. Three separate small hard highlights arrive from three different directions and land in three different places — one riding a near ridge crest, one lying deep down inside a fold, one on a far wall well back — each keeping its own clean hard edge and its own direction, none of them joined to another and nothing running between them. Nearest the lens, out of focus and closing the bottom edge, a neighbouring ridge of the same material crosses the frame as a soft pale mass. In the middle ground the valley walls are razor sharp, each throwing a real shadow onto the wall opposite. Behind them the folded landscape softens away into a full saturated indigo that never turns grey.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; extreme macro with a very shallow plane of focus, sharp on the near valley walls, tactile glazed porcelain with fine crazing and warm subsurface, fine film grain.
+STYLE: 3D animated feature, warm stylised Pixar tradition; extreme macro with a very shallow plane of focus, sharp on the near valley walls, tactile dry pressed fibre and fine-grained pale stone, fine film grain.
 LIGHT AND PALETTE: three separate small hard white-gold highlights from three directions, each landing on one surface and modelling it with a deep shadow; honey and amber on the lit crests, warm bone in the material, full saturated indigo in the valley bottoms, nothing pastel and nothing grey.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
 NEGATIVE: no labels, numbers or leader lines; no wet, fleshy or red surfaces; no flat even fill light; no readable text anywhere.
@@ -129,6 +126,7 @@ NEGATIVE: no labels, numbers or leader lines; no wet, fleshy or red surfaces; no
 
 K25 ──────────────────────────────────────────────────────────────
 VO 25: "Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır."
+🔒 BASILI VE MAMİ ONAYLI — `images/25.png`. DOKUNULMAZ, yeniden yazılmaz.
 FİKİR: Masanın GERÇEK HAYATI. Üç sıradan şey ve maket AYNI ışığın altında —
   ilişkiyi ok değil, ışığın aynılığı kuruyor.
 YÜKÜM: Üç kanıt kadrajda ve üçü de bir DURUM: bardak yarı içilmiş, elmadan bir
@@ -155,73 +153,78 @@ NEGATIVE: no labels or leader lines on the model; no full-body studio pose on a 
 K26 ──────────────────────────────────────────────────────────────
 VO 26: "Arka alttaki küçük kısım ise beyinciktir."
 FİKİR: 🔴 SEKANSIN EN SIKI KİLİDİ. Beyincik tanıtılıyor ve tanıtan şey ışığın
-  GEOMETRİSİ: kadrajda aydınlanan tek bir parça var, gerisi kütle.
-YÜKÜM: 🔴 Işık YALNIZ taraklı küçük kütlede. Büyük kubbe bu karede TAMAMEN karanlık —
-  ışık kubbenin hemen yukarıdaki alt kenarına bile tırmanmıyor. Kısa düğüm, halkalı
-  sütun ve ceviz kaide de havuzun dışında. Işık lambanın başlığıyla kesiliyor;
-  "kontrast yüksek" değil, KESİLDİĞİ YER yazılıyor.
-AYRICALIK: Maketin arkasından ve altından bakış — küçük kütle ancak buradan öne
+  GEOMETRİSİ: kadrajda aydınlanan tek bir kütle var, gerisi kütle. Konum ışıkla
+  öğretiliyor — "arka altta" olduğunu ışığın nereye VARABİLDİĞİ söylüyor.
+YÜKÜM: 🔴 Işık YALNIZ taraklı küçük kütlede. Büyük kıvrımlı kubbe bu karede TAMAMEN
+  KARANLIK — ışık onun alt kenarına bile tırmanmıyor. Kilit ışığın YOLUNDA yazılıyor:
+  huzme yerin hemen üstünden, arkadaki iki payanda arasındaki dar aralıktan girer ve
+  neredeyse yatay ilerler; üst sınırı SERT ve DÜZ bir hattır ve o hat kubbenin
+  kenarının epey ALTINDA kesilir. Kubbe o hattın üstünde kalır, dolayısıyla karanlıktır.
+AYRICALIK: Mimarinin arkasından ve altından bakış — küçük kütle ancak buradan öne
   çıkar; kubbe onun üstünde ışıksız bir kütle olarak asılı kalır.
-PLAN: Önde odak dışı halkalı sütun, ışıksız (alt kenar) · ortada keskin taraklı
-  kütle ve dış hattındaki ışık · arkada odak dışı, ışıksız kubbe ve indigo oda.
-ENTRY STATE: Işık havuzu taraklı kütlenin üstünde duruyor; kubbe karanlık.
-EXIT STATE: Aynı havuz, aynı sınır; kubbe hâlâ karanlık.
+PLAN: Önde odak dışı halkalı sütun, ışıksız (alt kenar) · ortada keskin taraklı kütle
+  ve sırt uçlarındaki ışık · arkada ışıksız kubbe ve indigo tonoz.
+ENTRY STATE: Yatay ışık bandı taraklı kütlenin üstünde duruyor; kubbe karanlık.
+EXIT STATE: Aynı band, aynı sert üst sınır; kubbe hâlâ karanlık.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view of the porcelain desk model taken from behind it and a little below, looking up and across. The hooded shade of the small brass desk lamp has been turned down and to the side, so its hard-edged pool of light reaches exactly one thing: the smaller tight mass tucked low and behind, combed into fine parallel ridges like thin pressed leaves. The light lies along that mass's outer contour and across the cut ends of its ridges, and it stops at the rim of the pool. Everything above and in front of it is outside that pool: the great folded dome, including the underside of its rim directly over the small mass, is completely unlit and reads as a dark unlit mass against the room, its folds swallowed. The short narrow knot below, the long evenly ringed column and the polished walnut plinth are outside the pool too and stay dark. Nearest the lens, out of focus and crossing the bottom of frame, the ringed column of the same model lies cold and matte. Behind everything the study falls into a full saturated indigo that keeps its colour and never goes grey.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A close view taken from behind the built masses and a little below, looking up and across. One hard shaft of white-gold light enters far back through a narrow gap between two piers at floor level and travels almost level with the ground, a flat band of light no taller than one small mass, its upper boundary a hard straight line cut clean in the dust. That band reaches exactly one thing: the smaller tight mass tucked low and behind, combed into fine parallel ridges like thin pressed leaves. The light lies along that mass's outer contour and across the cut ends of its ridges, and it stops at the edge of the band. Everything above that straight upper line is outside it. The great folded dome hangs directly over the small mass and receives nothing at all — it is one dark unlit mass against the vault, its folds swallowed, and the light does not climb even to the underside of its rim. The short narrow knot below and the long evenly ringed column are outside the band too and stay dark. Every surface stays bare worked material, dry and pale. Nearest the lens, out of focus and crossing the very bottom of frame, the ringed column lies cold and matte. Behind everything the vault falls into a full saturated indigo that keeps its colour and never goes grey.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; close lens low and behind the model looking up, shallow depth of field, tactile ridged matte porcelain, brushed brass and polished walnut, fine film grain.
-LIGHT AND PALETTE: one small hard warm key from the hooded brass lamp, its pool cut hard and reaching only the ridged mass; honey and amber across those ridge ends alone, warm bone deep in the material, everything else a full saturated indigo, colour rich in the darks.
+STYLE: 3D animated feature, warm stylised Pixar tradition; close lens low and behind the masses looking up, shallow depth of field, tactile ridged pale fibre and matte stone, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft raking in almost horizontally at floor level, its band cut hard along a straight upper edge and reaching only the ridged mass; honey and amber across those ridge ends alone, warm bone deep in the material, everything above the band a full saturated indigo, colour rich in the darks.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no second light source lifting the room; no labels, numbers or leader lines on the model; no flat even fill light; no readable text anywhere.
+NEGATIVE: no second light source lifting the dome or the vault; no glow or halo spilling above the band; no flat even fill light; no readable text anywhere.
 -----
 
 
 K27 ──────────────────────────────────────────────────────────────
 VO 27: "Beyincik kaslarımızın uyumlu çalışmasını sağlar."
-FİKİR: Uyum bir açıklama değil bir DURUŞTUR — onlarca kas aynı anda ve tam
-  yerinde. Salon geri geliyor: K02'nin kemancıları, bu sefer Mira'nın elinde.
-YÜKÜM: OLAY DEĞİL DURUM — parmaklar çoktan yerinde, yay çoktan tele oturmuş,
-  hiçbir şey titremiyor. Eller anatomik olarak temiz, her parmak ayrı ve kendi
-  yerinde; kimse konuşmuyor.
-AYRICALIK: Filmin ilk dünyası ikinci kez masaya iniyor — orkestra çıkmadı, el
-  değiştirdi. Ders ile hikâye aynı nesnede buluşuyor.
-PLAN: Önde odak dışı açık keman kutusunun köşesi ve kadife yuvasındaki reçine
-  kalıbı (sol alt) · ortada keskin eller, parmak tahtası ve yay · arkada odak
-  dışı maket ve pencere huzmesi.
-ENTRY STATE: Her parmak kendi yerinde, yay tele oturmuş ve düz; hiçbiri kaymıyor.
-EXIT STATE: Aynı duruş; yalnız yay bir parmak boyu ilerlemiş.
-🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+FİKİR: Uyum bir açıklama değil bir DURUM — onlarca şey aynı anda, aynı açıda, aynı
+  ışıkta. Kanıt sayıda değil AYNI ANDA olmakta: hiçbiri kaymış, dönmüş, geride kalmış değil.
+YÜKÜM: Sırtların hepsi aynı yükseklikte, aynı kalınlıkta ve aynı açıda; ışık hepsini
+  TEK SEFERDE kesiyor ve her birinin sırt ucunda aynı ince parıltı var. Gölgeler tek bir
+  paralel bar dizisi hâlinde yere düşüyor — biri bile ötekinden ayrı düşmüyor.
+AYRICALIK: Kadraj çok sayıda canlı unsurla dolu ama hiçbiri poz vermiyor; uyum
+  kalabalığın kendisinden okunuyor.
+PLAN: Önde odak dışı kalın örülü lif halatı (sağ alt) · ortada keskin, yana doğru
+  uzayan taraklı sırt tarlası ve tek seferde kesen huzme · arkada yumuşak, loş kubbe.
+ENTRY STATE: Bütün sırtlar hizada ve hareketsiz; paralel gölgeler yerde tek dizi.
+EXIT STATE: Aynı hiza, aynı tek gölge dizisi; yalnız huzmedeki toz döndü.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A medium view across the same oak desk in the study. The girl from the character reference is framed from the waist up with her legs, the chair and the floor out of frame, seen from her left and slightly above, mouth closed. A student violin of honey-toned spruce is already up under her chin and settled there: her left hand is high on the fingerboard with each finger curled down onto its own separate place and a clear gap kept between them, and her right hand holds the bow with the hair already resting flat and level on a string. Nothing is shaking — every joint sits exactly where it has to and holds. Both hands stay anatomically correct with five separate fingers each, the fingers keeping their own bodies. Nearest the lens, out of focus and closing the lower left corner, the corner of an open violin case with a block of amber rosin in its velvet cup. In the middle ground the hands, the fingerboard and the bow are razor sharp, the spruce and horsehair carrying real texture. Behind her, soft and warm, the porcelain model still stands on the desk with the window beam lying along the outer contour of its folded dome. One hard low sun from screen-left rakes her knuckles, her jaw and the length of the bow, and lays long parallel shadows back across the wood.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A medium view along the flank of the smaller combed mass, seen from the side so its fine parallel ridges run away from us across the frame as a long even field — dozens of them, each one the same height and the same thickness and set at exactly the same angle as its neighbours, all of it the same dry pale bone-coloured fibre pressed into stone. One hard shaft of white-gold light crosses the whole field at once from screen-left, and every single ridge takes the same thin bright line along its cut end at the same moment: not one of them is out of line, not one is turned aside, not one sits higher or lower than the rest. The shadows they throw are one set of long parallel bars marching evenly across the pale floor, all the same length and all the same spacing. Every surface stays bare worked material. Nearest the lens, out of focus and closing the lower right corner, one thick braided cable of the same fibre crosses the frame and catches a long highlight. Behind the field the great folded dome rises soft and dim, legible as a shape but carrying almost no light, and past it the vault falls away into a full saturated indigo that keeps its colour.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto across the desk from her left, shallow depth of field, tactile spruce, horsehair, rosin, velvet and oiled oak, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold key from the window on screen-left picking out the knuckles, the jawline and the bow, throwing long parallel shadows; honey, amber and warm spruce against a full saturated indigo study, no pastel and no grey.
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens at ridge height along the flank, sharp on the ridge field, tactile combed pale fibre and matte stone, fine film grain.
+LIGHT AND PALETTE: one hard white-gold key from screen-left crossing every ridge at once, visible in the haze, laying one set of long even parallel shadows; honey and amber on the ridge ends, warm bone in the material, a full saturated indigo behind, nothing pastel and nothing grey.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no full-body studio pose on a plain background; no second child in the room; no flat even fill light; no readable text anywhere.
+NEGATIVE: no ridge broken, bent or out of alignment; no labels, numbers or leader lines; no flat even fill light; no readable text anywhere.
 -----
 
 
 K28 ──────────────────────────────────────────────────────────────
 VO 28: "Dengede kalmamızı da beyincik yönetir."
-FİKİR: Denge bir sonuç değil, sürüp giden bir İŞ. Kadrajda dimdik duran bir şey var
-  ve dik durmaya devam ediyor — kanıt sözde değil, gölgede.
-YÜKÜM: 🔴 İki kütle AYNI ışığı taşıyor ve aralarında hiçbir çizgi, ok, bağ ya da
-  panel yok. İlişkiyi ışığın aynılığı söylüyor. Topacın gölgesi TEK ve keskin
-  kenarlı — çift ya da bulanık değil; ekseni dimdik.
-AYRICALIK: Lens neredeyse masa tahtasının hizasında — topaç bize dev gibi geliyor
-  ve arkasındaki maket parçası onunla aynı boyda okunuyor.
-PLAN: Önde odak dışı ceviz masa kenarı ve üstündeki tek parlak yansıma şeridi
-  (alt kenar) · ortada keskin, dimdik dönen pirinç topaç · arkada odak dışı
-  taraklı kütle, dış hattında aynı sıcak ışık.
-ENTRY STATE: Topaç dimdik dönüyor, tepesi kımıldamıyor; gölge tek parça.
-EXIT STATE: Aynı dik eksen, aynı tek gölge; yalnız pirinçteki parıltı bir tur dönmüş.
+FİKİR: Denge bir sonuç değil, sürüp giden bir İŞ — ve bir DURUM olarak yazılır:
+  mimarinin içinde tek bir şey kendi ekseninde dimdik duruyor, çevresindeki her şey
+  ona göre eğik. Dik olan tek olduğu için görülüyor.
+YÜKÜM: 🔴 Dik payanda ile arkasındaki taraklı kütle AYNI ışığı taşıyor ve aralarında
+  hiçbir çizgi, ok, bağ ya da panel yok. İlişkiyi ışığın aynılığı söylüyor. Payandanın
+  gölgesi TEK ve keskin kenarlı, dümdüz — çift ya da bulanık değil.
+  ⚠ Halkalı sütun (omurilik) bu karede de ışıksız kalır; dik duran o DEĞİL, ayrı bir payanda.
+AYRICALIK: Kadrajın kendisi bir terazi: tek dikey hattın iki yanında her şey eğik,
+  sarkık, kavisli. Denge sözle değil KOMPOZİSYONLA söyleniyor.
+PLAN: Önde odak dışı, çapraz sarkan kalın lif halatı (alt kenar, eğik) · ortada keskin,
+  dimdik duran ince soluk payanda ve tek keskin gölgesi · arkada odak dışı taraklı kütle,
+  sırt uçlarında aynı sıcak ışık.
+ENTRY STATE: Payanda dimdik, tepesi kımıldamıyor; gölge tek parça ve düz.
+EXIT STATE: Aynı dik eksen, aynı tek gölge; yalnız havadaki toz döndü.
+references: YOK
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view along the surface of the oak desk with the lens almost down at the level of the wood. A heavy brushed-brass gyroscope top is spinning in the middle ground, standing perfectly upright on its fine point, its outer ring throwing one hard curved highlight and its axis dead vertical and steady at the top, so the whole object reads as calm rather than fast. It prints one single shadow across the boards, clean and sharp-edged and staying one shape. Directly behind it, softer but still legible, the smaller tight mass of the porcelain model — combed into fine parallel ridges like thin pressed leaves on its brushed-brass upright — carries the same hard warm light along the cut ends of its ridges. The two simply share one light and nothing at all passes between them. Nearest the lens, out of focus and closing the bottom edge, the dark oiled walnut lip of the desk carries one long bright reflected sliver. Behind both, the study falls away into a full saturated indigo that keeps its colour, the tall window a soft warm blur at the far left.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A close view deep inside the fibre architecture, the lens low and level. In the middle of the frame one slender pier of the same dry pale bone-coloured material stands perfectly upright, its axis dead vertical from the floor to where it meets the vault, and it holds. Everything around it leans: the braided cables sag and swing across the frame at angles, the ribs curve away to both sides, the arch above it tilts, and the far members all run off the vertical — so the whole place is read against this one straight thing. The pier prints one single shadow across the pale floor, clean and sharp-edged and dead straight, staying one shape. Directly behind it, softer but still legible, the smaller tight mass combed into fine parallel ridges carries exactly the same hard warm light along the cut ends of its ridges — the same colour and the same hardness. The two simply share one light and nothing at all passes between them. Every surface stays bare worked material. Nearest the lens, out of focus and crossing the bottom edge on a slant, one thick fibre cable hangs across the frame well off the vertical. Behind both, the vault falls away into a full saturated indigo that keeps its colour and never goes grey.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; close lens at desk-surface level with a shallow plane of focus, sharp on the spinning top, tactile brushed brass, ridged matte porcelain and oiled oak, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold key from screen-left striking the brass ring and the ridge ends with the same colour and the same hardness; honey, amber and burnished brass against a full saturated indigo, one long clean shadow across the wood, nothing pastel.
+STYLE: 3D animated feature, warm stylised Pixar tradition; close lens low and level inside the structure, shallow depth of field, tactile pale pressed fibre, ridged stone and braided cable, fine film grain.
+LIGHT AND PALETTE: one hard white-gold key from screen-left striking the upright pier and the ridge ends with the same colour and the same hardness; honey and amber on those two alone, warm bone in the material, one long clean straight shadow across the floor, a full saturated indigo everywhere else.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no line, arrow or connector running between the top and the model; no labels or leader lines; no flat even fill light; no readable text anywhere.
+NEGATIVE: no line, arrow or connector running between the pier and the ridged mass; no doubled or blurred shadow on the floor; no flat even fill light; no readable text anywhere.
 -----
 
 

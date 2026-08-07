@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "22 kare basıldı ve gözle denetlendi (K01-K21 + K25). Canary geçti. @mira referans kimliği DÜZELTİLDİ: yeniden basılan plaka motora hiç gitmiyormuş, eski düz plakanın kimliği kullanılıyordu. Mami maketi SÖKTÜRDÜ — S4 bedenin içine taşınıyor.",
-  "nextAction": "S4 yeniden yazımı + S6 ajanlardan gelince oku, bas; sonra S7 (K54-K58) ve K29/K30",
+  "lastCompleted": "28/58 kare basıldı ve gözle denetlendi. S4 maketsiz yeniden kuruldu (K22-K28 bedenin içinde), VO'nun üç cümlesi buna göre düzeltildi — seslendirmede 'maket' sıfır. S6 yazıldı, basılmadı. Bugünün 5 ölçümü OLCULENLER'e yazıldı.",
+  "nextAction": "S6'yı (K40-K53) oku ve bas; sonra S7 (K54-K58) ve K29/K30 yazdır",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T20:15:34.139Z",
+  "updatedAt": "2026-08-07T20:35:44.499Z",
   "updatedBy": "claude",
-  "baseCommit": "2c785150"
+  "baseCommit": "5089d348"
 }

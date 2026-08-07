@@ -2,7 +2,7 @@
   "surum": 1,
   "proje": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "olusturuldu": "2026-08-07T19:18:18.406Z",
-  "guncellendi": "2026-08-07T20:09:37.945Z",
+  "guncellendi": "2026-08-07T20:31:59.772Z",
   "shots": [
     {
       "n": 1,
@@ -462,6 +462,24 @@
           "sonuc": "kabul",
           "kusur": null,
           "zaman": "2026-08-07T20:09:37.945Z"
+        },
+        {
+          "deneme": 5,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "olcek-cokmesi",
+          "zaman": "2026-08-07T20:31:59.628Z"
+        },
+        {
+          "deneme": 6,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.678Z"
         }
       ],
       "klip": [],
@@ -481,6 +499,15 @@
           "sonuc": "kabul",
           "kusur": null,
           "zaman": "2026-08-07T20:09:37.618Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.420Z"
         }
       ],
       "klip": [],
@@ -500,6 +527,15 @@
           "sonuc": "kabul",
           "kusur": null,
           "zaman": "2026-08-07T20:09:37.666Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.470Z"
         }
       ],
       "klip": [],
@@ -536,27 +572,66 @@
     {
       "n": 26,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "olcek-cokmesi",
+          "zaman": "2026-08-07T20:31:59.726Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.772Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 27,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.524Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 28,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T20:31:59.576Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },

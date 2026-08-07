@@ -46,6 +46,11 @@ Buraya **hüküm** yazılır, anlatı değil.
    hiç desteklemiyor.)* Tam metin: `PROMPT-YASASI §3n`.
 7. **Kısıt mümkün olan her yerde OLUMLU yazılır** — `the count stays the same` ⟂ `no morphing`.
    *(Ölçülü +%24 semantik uyum; uzun negatif katalogları motora kaçınılan görüntüyü hatırlatıyor.)*
+   🔴 **NEGATİFTE BİR ŞEYİ ADLANDIRMAK ONU ÇAĞIRIYOR — 2026-08-07'de orkestratörün KENDİSİ
+   yaptı.** Negatife *"no open book, no printed page, no antique instrument"* yazıldı; motor
+   **İngilizce etiketli anatomi diyagramı** bastı (CEREBRUM · MEDULLA · THORACIC NERVES +
+   çağrı çizgileri) — yani o projeyi bir kez öldüren kusurun birebir aynısı, negatif
+   tarafından çağrılmış. Yerine: *"the walls stay bare; the surface stays bare."*
 8. **Ekran yazısı kusuru genellikle KELİMEDE değil YERLEŞİMDEDİR.** Zemine derinlemesine
    dizilen uzun kelimenin uzak yarısı hem perspektifte ezilir hem netlik alanının dışında kalır.
    Onarım kelimeyi kısaltmak değil **açıyı değiştirmektir**: tepeden, kapalı diyafram, kelime
@@ -60,6 +65,27 @@ Buraya **hüküm** yazılır, anlatı değil.
     *(Basım brifingimde 'etiketi nötr tanıma çevir' yazdım, ajan da 'a ten-year-old Turkish girl in a deep red hooded sweatshirt' yazdı: yaş yanlış (6. sınıf 11-12), gardırop tarif edildi, referans ezildi. Kilit doğruydu, benim ara belgem onu geçersiz kıldı)*
 20. KURAL YAZMADAN ÖNCE ALTIN KAREYE BAK: bu oturumda üç kusurun üçü de kuralı kanıttan değil kendi çıkarımımdan yazmaktan doğdu
     *(Mira kotası (Mami'nin 'hep uzaktan olmasın' sözünü 'çıkar' diye okudum, 45 kare insansız), hücre dünyası ('oda aydınlık' tabanını hücreye uygulattım, mor sis), tarif edilen kız. Üçünü de düzelten şey aynıydı: Hücre K14/K28/K48 ve Hayvanlarda K01/K20'yi Read ile AÇIP BAKMAK)*
+
+23. 🔴 **ÜÇÜNCÜ DENEMEDE DUR — kareyi Mami'ye getir, dördüncüyü basma.** *(2026-08-07:
+    tek kare **altı kez** basıldı, **450 kredi**, ve doğru cevap teknik değil YÖNETMENLİK
+    kararıydı — Mami bakınca "maketi sök" dedi ve kare bir denemede oturdu. İki kez
+    reddettiğin kare bir prompt sorunu değil, bir TASARIM sorunudur.)*
+24. 🔴 **REFERANS KİMLİĞİ DİSKTEKİ DOSYAYI DEĞİL, MOTORDAKİ CREATION'I GÖSTERİR.** Plakayı
+    yeniden basıp `elements/` içine kurmak **yetmez** — prompt'taki `references` kimliği de
+    değişmezse onarım motora hiç gitmez ve sessizce hiç olmamış sayılır. *(2026-08-07:
+    150 kredilik plaka onarımı 12 kare boyunca kullanılmadı; kanıt, motorun sahneyi atlayıp
+    eski plakayı birebir ithal ettiği kare.)*
+25. **Referans karesinde öznenin YÜZÜ görünür ve IŞIKTA olmalı.** Yüz kadraj dışına ya da
+    odak dışına alınırsa motor sahneyi atlayıp plakayı ithal ediyor — beyaz fonda tam boy
+    stüdyo pozu. *(Aynı gün ölçüldü.)*
+26. **Karakter referansı + AYDINLIK iç mekân = motor düz ışıklı "vintage/çocuk kitabı"
+    moduna kaçıyor** ve arka plana basılı sayfa, gravür, diyagram getiriyor. Referanslı kare
+    ya **karanlık** mekânda ya da **tek sert huzmenin bandında** yazılır; bandın dışı doygun
+    indigo, yüzeyler boş. *(K09 karanlık salonda tuttu; aynı kız aydınlık odada iki kez düştü.)*
+27. **Anıtsallık ışığın UZAKTAN ve ÇOK YUKARIDAN gelmesiyle taşınır, "biz küçüğüz" demekle
+    değil.** Işık yer hizasından girince aynı nesne masa üstü oyuncağına dönüyor.
+    *(2026-08-07: aynı prompt, ışık kaynağı değişti — kütle önce kumaş parçası gibi çıktı,
+    tepeden inen koni huzmeyle katedral oldu.)*
 
 ## CÜZDAN
 
