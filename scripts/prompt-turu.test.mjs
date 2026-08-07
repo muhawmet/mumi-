@@ -19,7 +19,7 @@ import {
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const oku = (y) => readFileSync(resolve(REPO, y), 'utf8');
 
-const AKTIF_REF = 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt';
+const AKTIF_REF = 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/_ESKI/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt';
 const ALTIN_KARE = 'agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/PROMPTLAR/A-K01-K15.txt';
 
 const KUYRUK = [
@@ -126,6 +126,11 @@ describe('SAHNE karesine tür yasağı KONULMAZ', () => {
   });
 });
 
+// 2026-08-07: AKTIF_REF yolu `_ESKI/` altına çevrildi. Sebep, bu dosyanın kendi yorumunda
+// yazılı kusur sınıfının aynısı: fikstür olarak CANLI bir üretim dosyası kullanılıyordu.
+// Denetleyici projesi sıfırdan yazıma açılınca (kahraman @efe → @mira) dosya arşive taşındı
+// ve altı test hedefini kaybetti — testin ölçtüğü şey ayrıştırıcının BİÇİM körlüğü olmasına
+// rağmen, kırmızıyı üretim işi tetikledi. Arşiv nüshası donmuştur; fikstür orada yaşar.
 describe('GERÇEK DOSYALAR — sabit değil, diskteki artefact ölçülüyor', () => {
   it('aktif referans dosyası BEŞ blok olarak parse edilir (basım sırası listesi blok sayılmaz)', () => {
     const bloklar = parseReferansBloklari(oku(AKTIF_REF));
@@ -184,7 +189,7 @@ describe('PLATFORM — CRLF sapma üretmez', () => {
 // şeyin YERLEŞİMİNİ varsayıyor. Kusur "yeni işlerde dene" denince ortaya çıktı.
 describe('ayrıştırıcı beş gerçek biçimi de görür — sessiz sıfır YOK', () => {
   const BICIMLER = [
-    ['Denetleyici (numaralı + ==== )', 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt'],
+    ['Denetleyici (numaralı + ==== )', 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/_ESKI/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt'],
     ['Eşeyli (numarasız + ----- )', 'agents/COMMAND-INBOX/Biten/6. Sınıf - Eşeyli ve Eşeysiz Üreme/Eşeyli ve Eşeysiz Üreme_REFERANSLAR.txt'],
     ['Hücre (İngilizce giriş)', 'agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/Hücre ve Organelleri_REFERANSLAR.txt'],
     ['Kuvvet (markdown ### )', 'agents/COMMAND-INBOX/Biten/Kuvvet ve Kuvvetin Ölçülmesi/Kuvvet ve Kuvvetin Ölçülmesi_REFERANSLAR.txt'],

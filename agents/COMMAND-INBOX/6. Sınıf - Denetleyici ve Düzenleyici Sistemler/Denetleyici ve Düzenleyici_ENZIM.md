@@ -30,7 +30,7 @@ saçıcı**, açılmış cam **berrak ve yansıtıcı** — ikisi aynı camda ya
 
 | Handle | Kim | Yaş yazımı |
 |---|---|---|
-| `@efe` | Kahraman çocuk. **ÖNCEDEN VAR** — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık", "Bitkilerde Üreme" ve "Hayvanlarda Üreme"de basıldı, aynı çocuk. | "sixth-grade, around eleven or twelve, pre-teen" |
+| `@mira` | Kahraman çocuk. **ÖNCEDEN VAR** — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık", "Bitkilerde Üreme" ve "Hayvanlarda Üreme"de basıldı, aynı çocuk. | "sixth-grade, around eleven or twelve, pre-teen" |
 
 - Bu ders **tek kişiliktir.** İkinci çocuk, anne, dede, öğretmen, yetişkin, kalabalık **YOK**.
   Ev başkasının izini taşır (kapıdaki büyük çizme, askıdaki palto, pervazdaki eski boy çizgileri)
@@ -38,7 +38,7 @@ saçıcı**, açılmış cam **berrak ve yansıtıcı** — ikisi aynı camda ya
 - Türk/Anadolu. Tag'li kişi **asla tarif edilmez.**
 - Tek istisna canlı: `@kedi` — evin tekir kedisi. İnsan değil, ucuz, ve K49'un sebebi odur.
 
-🔴 **KADRAJ KİLİDİ — `@efe` çağıran HER kare kadrajın DIŞARIDA bıraktığını yazar**
+🔴 **KADRAJ KİLİDİ — `@mira` çağıran HER kare kadrajın DIŞARIDA bıraktığını yazar**
 (*"framed from mid-chest up, nothing below the chest is visible"*). Ezmezsen referansın
 stüdyo tam-boy kadrajı ithal olur ve figürin gelir.
 🔴 **Kadrajdan kesik figür YAZILMAZ** — kalabalığı azaltmak için figür kesilmez, figür SAYISI azaltılır.
@@ -137,7 +137,7 @@ ayrışır. Oda karartılarak elde edilen kontrast bu derste YASAKTIR (yukarı b
 - **Zaten varmış gibidir** — yolculuk göstermez. Işığın "geldiği yer" kadrajda yoktur.
 - **Hiçbir iz bırakmaz.** Komşu yüzeyler tamamen soğuktur; masa, taban, duvar etkilenmemiştir.
 - Fiziksel yazım: *"a hard-edged golden sliver rides only the top edge of the kettle handle,
-  cut dead where the handle ends; the counter, the wall and Efe's sleeve stay completely
+  cut dead where the handle ends; the counter, the wall and Mira's sleeve stay completely
   untouched by it."*
 
 **HORMON IŞIĞI — yavaş, yayılan, uzun süren:**
@@ -176,7 +176,7 @@ Hedef: **56 karenin ~26'sı** sahnenin kendi yazısını taşır. Aynı çözüm
 **Nesnenin kendi yazısı (Türkçe, sabit kütle üstünde):** `ÇAY` (emaye/teneke çay kutusu,
 fırınlanmış harf) · `SÜT` (emaye süt tenceresi) · `UN` · `TUZ` · `BAL` (sırlı seramik kavanoz
 omzu, sırın altında harf) · `İNSAN SİNİR SİSTEMİ` (maketin tabanına vidalı **kazınmış pirinç
-plaka** — dersin en değerli tek yazı taşıyıcısı) · `FEN BİLİMLERİ` (Efe'nin defter kapağı) ·
+plaka** — dersin en değerli tek yazı taşıyıcısı) · `FEN BİLİMLERİ` (Mira'nın defter kapağı) ·
 duvar saatinin kadranındaki rakamlar · pervazdaki kalem çizgilerinin yanına yazılmış **yıllar**
 (`2019` · `2021` · `2023` — hipofiz karesinin kanıtı) · mutfak terazisinin kadranı.
 
@@ -201,7 +201,7 @@ kenarı ağırlıktan hafifçe sarkmış (iç salgı, ~K37).
 
 | Handle | Ne | Kareler |
 |---|---|---|
-| `@efe` | kahraman | K01, K05-K07, K15, K19, K22, K27, K29, K32, K41, K49, K56 |
+| `@mira` | kahraman | K01, K05-K07, K15, K19, K22, K27, K29, K32, K41, K49, K56 |
 | `@mutfak` | kış sabahı mutfağı — soba, ocak, çift katlı çaydanlık, buğulu pencere, koyu taş tezgâh, emaye kaplar, duvar saati, raf | K01-K08, K19, K27-K34, K37-K38, K44-K50, K53-K56 |
 | `@maket` | masadaki plastik sinir sistemi maketi — büst, açık kafatası, beyin/beyincik/omurilik soğanı/omurilik, cilalı ahşap taban, pirinç plaka | K09-K14, K16-K18, K20-K21, K24-K26, K30-K31, K34, K53 |
 | `@koridor` | mutfağa açılan koridor — kapı pervazı ve boy çizgileri, askıda palto, kapıda ayakkabılar, duvara dayalı bisiklet | K01, K23, K39-K43, K51-K52 |
@@ -251,8 +251,8 @@ süreklilik ölür). `@kedi` de tag'li: hayvanda tür kilidi tarifle tutmuyor.
   göstermez. K51-K52'nin görseli **pervazdaki boy çizgileri ve kapıda küçük gelmiş ayakkabılar**
   üstündeki yavaş ışıktır — büyüme ve değişimin izi, bedenin kendisi değil.
 - Ergenlik **tek cümlede, sakin ve olgun** geçer; ne vurgulanır ne saklanır.
-- Efe'nin kendi bedeni üstünde hiçbir şey gösterilmez, hiçbir ışık tenine değmez.
-- Tiroit karesinde Efe'nin boynuna ışık konmaz — ışık **maketin boyun bölgesine** ya da
+- Mira'nın kendi bedeni üstünde hiçbir şey gösterilmez, hiçbir ışık tenine değmez.
+- Tiroit karesinde Mira'nın boynuna ışık konmaz — ışık **maketin boyun bölgesine** ya da
   atkının/yakanın ötesindeki nötr yüzeye gider.
 
 🔴 **Şema, ok, etiket çizgisi, karşılaştırma tablosu, iki sütunlu özet, inset panel, büyüteç
@@ -279,6 +279,105 @@ göstererek** anlatıyoruz. NEGATIVE'e kare kare yazılır.
   K01→K56 arasındaki kare zinciriyle anlatılır.
 - 5 saniyede **eğilip doğrulmak, koşmaya başlamak, kapı açıp geçmek, bisiklete binmek yasak** —
   kare bunları gerektirmeyecek şekilde tasarlanır. Bisiklet **duvara dayalı durur**, sürülmez.
+
+---
+
+## 8. KİLİT 9 — ÖĞRETİCİ REGISTER: HÜCRE DÜNYASI ("kloroplast vibe")
+
+> Mami'nin emri (2026-08-07): *"canlı detaylı şık güzel bir videoya çevir; öğretici yerlerde
+> kloroplast gibi vibe'a dönüyoruz."* Altın standart `5. Sınıf - Hücre ve Organelleri`'nin
+> iç-hücre dünyası bu derste **bir kez** ve **tam yerinde** açılır.
+
+🔴 **NEREDE AÇILIR — tek yer: hücre ölçeği.** VO *hücreden* söz ettiği anda, yalnız orada.
+Ders boyunca bu register'a giren kareler: **K10 · K11 · K12** (nöron, elektrik sinyali).
+Başka hiçbir yerde açılmaz — açılırsa mutfağın dünyası ölür ve ders "iki ayrı video" olur.
+
+🔴 **GİRİŞ VE ÇIKIŞ MAKETTEN GEÇER.** K09 maket büstünde başlar, K13 makete geri döner.
+Hücre dünyası **kadrajın içinden büyüyerek** gelir, kesme geçişle değil: K09'un son bakışı
+maketin pirinç plakasının kazıma harfinin dibindeki mikro-çiziğe iner, K10 o ölçekte açılır.
+Bu, KİLİT 8'in *"olay değil durum"* kuralını bozmaz — geçiş **kadrajlar arasındadır**, kare
+içinde dönüşüm yoktur.
+
+**REGISTER'IN KENDİSİ — bu üç karede geçerli, dışında değil:**
+- **Malzeme yarı saydamdır.** Nöron gövdesi ve uzantıları içeriden aydınlanır; kenar çizgisiyle
+  değil, **iç yoğunlukla** okunur. Zar, kalınlığı görünen ıslak bir film gibidir.
+- **Ölçek yüzer.** Zemin yok, ufuk yok, masa yok. Derinlik **odak** ile kurulur: ön plandaki
+  uzantılar yumuşak, orta düzlem net, arka düzlem geniş ve soluk.
+- **Sitoplazma boş değildir** — ince taneli, hafif akışkan, içinde asılı duran soluk yapılar.
+  Altın standardın ölçülmüş dersi: boş iç hacim kareyi "şema" yapıyor.
+- **Renk davranışı KİLİT 4'ün altındadır, onu ezmez.** Sinyal yine **sert kenarlı sıcak-altın**:
+  tek bir uzantının **tek kenarında** ilerlemiş, o kenar bitince kesik. Nöronun kendi iç ışığı
+  ise soğuk-mor/indigo tarafta durur; ikisi karışmaz. Ders yine **davranış farkıdır.**
+- **Makro lens dili:** çok sığ alan derinliği, gerçek optik, kenarda hafif yumuşama.
+
+🔴 **SINIR — pazarlık dışı, KİLİT 7 ezmez:** açılan şey **hücre ölçeğidir, beden içi DEĞİL.**
+Damar, kan, organ kesiti, doku katmanı, sinir demeti, omurga kanalı **yoktur.** Bir nöron
+bir hücredir; kloroplast nasıl gösteriliyorsa öyle gösterilir. Kadrajda hiçbir insan parçası,
+hiçbir organ yüzeyi bulunmaz.
+
+🔴 **"CANLI · DETAYLI · ŞIK" — bu üç kelime mutfağa da yazılır, hücreye değil sadece.**
+Aynı emrin ikinci yarısı bu: mutfak kareleri **kalabalık değil, YOĞUN** olacak. Ölçülmüş fark
+(`mamilas-ciliz-sahne-ve-yogunluk`): cılız kare "güzel"dir, yoğun kare **inandırıcıdır** —
+her yüzeyin bir geçmişi var (emayenin çentiği, tezgâhın lekesi, camın akmış damlası),
+her ışığın bir kaynağı var, ve kadrajda **her zaman ikinci bir olay** sürüyor (buhar, kar,
+kedinin kuyruğu, saatin sarkacı). ⚠ Yoğunluk **nesne eklemek değildir** — KİLİT 2'nin
+tek-kişi ve KİLİT 7'nin şema yasakları aynen durur.
+
+---
+
+## 9. KİLİT 10 — KADRAJ, ÖLÇEK VE KAMERA (2026-08-07, Mami emri)
+
+> *"hep uzaktan ekranın tamamını kaplayan Mira falan olmasın"* · *"kamera heyecanlı"* ·
+> *"film gibi yapıyoruz, exclusive high-end cinematic ama çok öğretici"* ·
+> *"Mira sadece bakmıyor, o da öğrenci."*
+
+🔴 **ÖLÇEK MERDİVENİ — 56 karenin dağılımı KİLİTTİR, tavsiye değil.**
+Eski setin ölçülmüş kusuru buydu: aynı mesafeden bir çocuk, elli kez.
+
+| Ölçek | Ne görünür | Kaç kare | Nerede |
+|---|---|---|---|
+| **İÇİNDE** (immersive) | hücre dünyası — duvar boyu zar, koridor kalınlığında uzantı | **3** | K10-K12 |
+| **MAKRO** | tek nesnenin tek detayı kadrajı doldurur — emaye çentiği, bal damlası, pirinç harfin dibi, buğudaki parmak izi | **14** | dağınık, her sekansta ≥1 |
+| **YAKIN NESNE** | maketin bir parçası, bardak, terazi kadranı, kedinin pençesi | **16** | gövde |
+| **ORTA — Mira dahil** | göğüsten yukarı, iş yaparken | **11** | yalnız Mira'nın eylemi anlatıyorsa |
+| **GENİŞ — mekân** | mutfak/koridor bütünü, insan küçük ya da yok | **12** | açılış, geçiş, kapanış |
+
+⚠ **Mira 56 karenin en fazla 11'inde vardır** ve o 11'in hiçbirinde *durup bakmaz.*
+İki ardışık karede aynı ölçek kullanılmaz. Aynı ölçek üçüncü kez üst üste gelirse kare yanlıştır.
+
+🔴 **MİRA ÖĞRENCİDİR, SEYİRCİ DEĞİL.** Kadrajda daima bir **araştırma durumu** yakalanır:
+maketi kendine çevirmiş ve gözü maketin hizasına inmiş · defterine kendi el yazısıyla bir şey
+yazmış ve kalemi hâlâ kâğıtta duruyor · kolu sıvanmış, parmak ucu buğulu cama değmiş ·
+teraziye bakmak için tezgâha dirsek dayamış. ⚠ KİLİT 8 aynen durur: bu bir **durum**, bir olay
+değil — yazma/çevirme *hareketi* kadrajda yoktur, **sonucu** vardır.
+🔴 Yasak: *"Mira izliyor" · "Mira bakıyor" · "Mira gülümsüyor" · kameraya bakan Mira ·
+kadrajın ortasında duran, elleri boşta Mira.*
+
+🔴 **KAMERA HEYECANLI — ama sinema dilinde, çizgi film dilinde değil.**
+- Her karenin **bir bakış açısı kararı** vardır: göz hizası değil, *seçilmiş* hiza —
+  maketle aynı hizada alçak kamera · rafın üstünden bakan yüksek kamera · buhar perdesinin
+  arkasından · omzun yanından · tezgâh yüzeyine yatık.
+- **Ön plan kirliliği** sinemayı kuran şeydir: kadrajın kenarında odak dışı bir kavanoz,
+  bir buhar tüyü, bir raf kenarı. Boş, temiz, kataloğa benzeyen kadraj **yasaktır.**
+- Anamorfik his: uzun lens sıkıştırması, sığ alan derinliği, gerçek optik kusurları
+  (kenarda hafif yumuşama, ışık kaynağında ince yatay parlama). ⚠ Renk grade'i **teal-orange
+  DEĞİL** — dünya kuyruğu bunu açıkça yasaklıyor, sıcak-bal + soğuk-mor kalır.
+- ⚠ *"cesur olabilirsin"* (Mami) kadrajdadır; **sadakat, güvenlik ve öğretim doğruluğu
+  gevşemez** — KİLİT 7 her cesur kadrajın üstündedir.
+
+🔴 **"ÖĞRETİCİLİK EN ÖNEMLİSİ" — sınama cümlesi.** Kare yazıldıktan sonra tek soru sorulur:
+*"VO'nun bu cümlesini duymayan biri, bu kareye bakıp dersin o adımını söyleyebilir mi?"*
+Hayırsa kare şıktır ama işe yaramaz — yeniden yazılır. Özel okul müşterisi güzelliği değil,
+**öğrencinin sınavda hatırladığını** satın alıyor.
+
+## KİLİT 9'A EK — HÜCRE DÜNYASINDA ÖLÇEK
+
+🔴 *"hücreyse her yer çok büyük olsun"* (Mami). K10-K12'de kamera hücreye **bakmaz,
+içindedir.** Zar bir örtü değil **duvardır** — kalınlığı görünür, ıslak, içeriden aydınlık.
+Nöronun uzantısı bir çizgi değil **koridordur** — kadrajın dışına çıkar, sonu görünmez.
+Sinyal bir nokta değil, kamerayı **geçip giden** sert kenarlı bir altın hattır.
+⚠ Slayt, lam, büyüteç halkası, mikroskop okülerinin yuvarlak maskesi **YOK** — bu bir
+"numuneye bakma" karesi değil, bir **yer** karesidir.
 
 ---
 

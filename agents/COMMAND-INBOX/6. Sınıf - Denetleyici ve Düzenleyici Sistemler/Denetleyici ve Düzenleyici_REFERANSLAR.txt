@@ -9,12 +9,12 @@ Kare sayısı 56. ⚠ Kare sayısına dokunan her düzenlemede bu dosya yeniden 
 
 ===== 1 · KİŞİ =====
 
-@efe
+@mira
   ÖNCEDEN VAR — "Eşeyli ve Eşeysiz Üreme", "Kütle ve Ağırlık", "Bitkilerde Üreme" ve
   "Hayvanlarda Üreme"de basıldı. AYNI çocuk: aynı yüz, aynı saç. Gardırop bu derse
   varyantlandı (kış sabahı, ev içi: kalın örgü kazak, yakası açık, kollar hafif uzun).
   Yaş yazımı: "sixth-grade, around eleven or twelve, pre-teen"
-  🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten TONU, göz, yaş ve gardırop yazılmaz — yalnız @efe
+  🔴 ASLA TARİF EDİLMEZ. Yüz, saç, ten TONU, göz, yaş ve gardırop yazılmaz — yalnız @mira
      çağrılır. (Mami, 2026-08-03: "efeyi tarif etme, başka birini çıkartıyor, sadece
      etiketlemen yeterli.") Tarif edilirse referans EZİLİR ve motor başka çocuk üretir.
 
@@ -23,10 +23,10 @@ Kare sayısı 56. ⚠ Kare sayısına dokunan her düzenlemede bu dosya yeniden 
      · "low specular, never tinted green or grey" → ÖLÇÜLMÜŞ NEGATİF KİLİT. KALIR.
        Yokluğunda motor yeşil/gri cilt basıyor (duvarı `scripts/prompt-lint.mjs` "ten kilidi").
      Doğru yazım, tonsuz: "Skin stays matte with low specular and is never tinted green or grey."
-  🔴 KADRAJ KİLİDİ zorunlu: @efe geçen her karede kadrajın neyi DIŞARIDA bıraktığı yazılır.
+  🔴 KADRAJ KİLİDİ zorunlu: @mira geçen her karede kadrajın neyi DIŞARIDA bıraktığı yazılır.
      Örn: "framed from mid-chest up, nothing below the chest is visible"
      Yazılmazsa referans sayfasının stüdyo tam-boy kadrajı ithal olur ve figürin gelir.
-  🔴 Hiçbir kavram ışığı Efe'nin tenine, yüzüne ya da bedenine değmez.
+  🔴 Hiçbir kavram ışığı Mira'nın tenine, yüzüne ya da bedenine değmez.
   Kareler: K01, K05-K07, K15, K19, K22, K27, K29, K32, K41, K49, K56
 
   ⚠ Bu derste BAŞKA İNSAN YOK. Ev bir yetişkinin izini taşır — kapıda büyük çizme, askıda
