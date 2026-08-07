@@ -16,6 +16,18 @@ Kilitlerin tam metni burada çoğaltılmaz, çağrılır:
 
 @Denetleyici ve Düzenleyici_ENZIM.md
 
+## ÜRETİM ZİNCİRİ — Mami'nin kuralı, üç adım, atlanamaz
+
+**Ajan YAZAR → sen KONTROL EDERSİN → sen BASARSIN.** Ortadaki adım bir formalite değil,
+zincirin sebebidir: ajan orkestratörün körlüğünü miras alır ve altı mükemmel ajan yanlış
+dünyada altı mükemmel yanlış üretir. Ajanın getirdiği hiçbir prompt **okunmadan** motora
+gitmez — kaynak dünyası, `@handle` çağrısı (tarif değil), kadraj kütlesi, negatifin sahneye
+özel olması ve yazı yokluğu tek tek görülür.
+
+Üçüncü adım kodla zorlanıyor: `harcama-kapisi.mjs` girdide `agent_id` görünce üretim
+çağrısını reddeder. Canlı ölçüldü 2026-08-07: ajanın `images_generate` çağrısı `[AJAN]`
+koduyla bloke edildi, ana oturumunki açık geçti, kredi değişmedi.
+
 ## KİLİT BAŞLIKLARI — yeni oturumun yanlış yapamayacağı üç şey
 
 - **Tek mekân YOK; mekân kavramı takip eder ve her sekansın mekânı kaynaktan gelir.**

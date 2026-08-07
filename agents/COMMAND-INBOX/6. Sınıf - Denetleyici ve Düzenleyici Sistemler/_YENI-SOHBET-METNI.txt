@@ -30,8 +30,13 @@ B. VO örtüşmesi ölçülecek. teslim-denetim 17/56 cümlenin karesi yok diyor
 
 ═══ KURALLAR ═══
 
-· ÜRETİM YALNIZ SENDE. Ajan prompt YAZAR, BASMAZ. Bu artık rica değil: harcama kapısı
-  ajanın MCP çağrısını reddediyor.
+· ÜRETİM ZİNCİRİ ÜÇ ADIM, ATLANAMAZ: ajan YAZAR → sen KONTROL EDERSİN → sen BASARSIN.
+  Ortadaki adım formalite değil, zincirin sebebi: ajanın getirdiği hiçbir prompt
+  OKUNMADAN motora gitmez. Bakacakların: dünya kaynaktan mı, @handle çağrılmış mı
+  (tarif edilmiş mi), kadrajın önünde odak dışı kütle var mı, negatif SAHNEYE ÖZEL mi,
+  ekranda yazı var mı.
+  Üçüncü adım kodla zorlanıyor — harcama kapısı ajanın MCP üretim çağrısını reddediyor
+  (canlı ölçüldü: ajan [AJAN] koduyla bloke, ana oturum açık).
 · EŞZAMANLI AJAN TAVANI 2. Paralel iş usage'ı yakıyor.
 · Dünya kaynaktan gelir. Kapı, beyindeki mekân kelimelerini gerçek docx'te SAYIYOR;
   0 çıkarsa üretim açılmaz.

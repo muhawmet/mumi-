@@ -158,9 +158,12 @@ teslim edildi. Her subagent yeni bir bağlam penceresidir — CLAUDE.md + skill 
 yüklenir; 136 kez sıfırdan başlamak usage katilidir. Kural: **2 ajan bitsin, kontrol et, sonra 2
 tane daha.** Bölüşüm birimi kare değil **SEKANS**.
 
-🔴 **ÜRETİM YALNIZ ANA OTURUMDA — ve bu artık kodla zorlanıyor.** Mami, 2026-08-07: *"üretim
-kısmını sadece sen yapacaksın, şef sensin, onlar sadece prompt yazacak; MCP sadece sende.
-Bıraksam sonsuz üretecektin."* Ölçüm: 6 basım ajanının her birinin kendi döngüsü vardı,
+🔴 **ÜRETİM ZİNCİRİ ÜÇ ADIMDIR: ajan YAZAR → Claude KONTROL EDER → Claude BASAR.**
+Mami, 2026-08-07: *"ajanların getirdiği promptları sen kontrol edip MCP ile basacaksın, kural
+bu"* ve *"üretim kısmını sadece sen yapacaksın, şef sensin, onlar sadece prompt yazacak; MCP
+sadece sende. Bıraksam sonsuz üretecektin."* **Ortadaki adım formalite değil, zincirin
+sebebidir** — ajan orkestratörün körlüğünü miras alır; ajanın getirdiği hiçbir prompt
+okunmadan motora gitmez. Ölçüm: 6 basım ajanının her birinin kendi döngüsü vardı,
 hiçbirinde bütçe yoktu, toplamı gören kimse yoktu — diskte 135 görsel birikti ve sayı kimsede
 yoktu. `.claude/hooks/harcama-kapisi.mjs` girdideki `agent_id` alanını görünce üretim çağrısını
 **reddediyor** (ölçüldü: ajanın MCP çağrısı hook'a düşüyor, ana oturumun payload'ında bu alan yok).
