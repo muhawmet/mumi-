@@ -12,9 +12,9 @@
     {
       "path": "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/Hayvanlarda Üreme, Büyüme ve Gelişme",
       "expect": {
-        "clips": 54,
-        "vo": 1,
-        "muzik": 1
+        "clips": 57,
+        "vo": 2,
+        "muzik": 2
       },
       "note": "repo dışı — git-ignore değil, hiç repoda değil"
     }
@@ -35,7 +35,7 @@
     "KABA-KURGU.xml": true,
     "revize": true
   },
-  "updatedAt": "2026-08-07T12:06:41.852Z",
+  "updatedAt": "2026-08-07T12:31:33.215Z",
   "updatedBy": "claude",
-  "baseCommit": "604832b1"
+  "baseCommit": "f3357a50"
 }

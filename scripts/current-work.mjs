@@ -295,12 +295,28 @@ export function scanMedia(entry) {
   try { st = statSync(abs); } catch { return res; }
   if (!st.isDirectory()) return res;
   res.exists = true;
-  let names = [];
-  try { names = readdirSync(abs); } catch { return res; }
-  for (const n of names) {
-    const low = n.toLowerCase();
-    if (VIDEO_EXT.some((e) => low.endsWith(e))) res.clips += 1;
-    else if (AUDIO_EXT.some((e) => low.endsWith(e))) res.audio += 1;
+  // 🔴 2026-08-07 · YERLEŞİM VARSAYIMI ONARILDI. Bu sayaç yalnız klasörün ÜST DÜZEYİNİ
+  // okuyordu. Oysa medya yerleşimi aynı gün Mami tarafından kurala bağlandı:
+  //   ~/Desktop/6. Sınıf Animasyonlar/<proje>/  →  KLIPLER · SES · KURGU · RENDER
+  // Sonuç: 54 klip diskteyken kapı "klip eksik (0 < 54)" diyordu — ölçemediğini
+  // "ölçtüm" diye geçiren, bu repoda dokuz kez görülen kusur sınıfının aynısı.
+  // Artık kök VE bir seviye alt klasörler taranıyor (daha derine inilmez: sınır bilinçli,
+  // yoksa RENDER altındaki ara dosyalar klip sayılır).
+  const say = (dir) => {
+    let names = [];
+    try { names = readdirSync(dir); } catch { return; }
+    for (const n of names) {
+      const low = n.toLowerCase();
+      if (VIDEO_EXT.some((e) => low.endsWith(e))) res.clips += 1;
+      else if (AUDIO_EXT.some((e) => low.endsWith(e))) res.audio += 1;
+    }
+  };
+  say(abs);
+  let ents = [];
+  try { ents = readdirSync(abs, { withFileTypes: true }); } catch { return res; }
+  for (const d of ents) {
+    if (!d.isDirectory() || d.name.startsWith('.')) continue;
+    say(join(abs, d.name));
   }
   return res;
 }
