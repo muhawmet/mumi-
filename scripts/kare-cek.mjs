@@ -23,7 +23,7 @@
 //
 // BU SCRIPT HÜKÜM VERMEZ. Kanıt üretir; kareyi açıp bakan ve karar veren ajandır.
 
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -73,12 +73,14 @@ export function yavgOku(ciktı) {
 }
 
 export function komsuFark(oncekiPng, sonrakiPng) {
-  const ham = execFileSync('ffmpeg', [
-    '-v', 'error', '-i', oncekiPng, '-i', sonrakiPng,
+  // ⚠ `metadata=print` STDERR'e yazar. execFileSync yalnız stdout döndürüyordu ve cetvel
+  // sessizce "ölçemedim" diyordu — ilk gerçek koşuda yakalandı. İkisi birden okunur.
+  const sonuc = spawnSync('ffmpeg', [
+    '-v', 'info', '-i', oncekiPng, '-i', sonrakiPng,
     '-filter_complex', '[0:v][1:v]blend=all_mode=difference,signalstats,metadata=print',
     '-f', 'null', '-',
-  ], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
-  return yavgOku(ham);
+  ], { encoding: 'utf8' });
+  return yavgOku(`${sonuc.stdout ?? ''}\n${sonuc.stderr ?? ''}`);
 }
 
 export function komut(film, { bas, son }, adet, { ses } = {}) {
@@ -130,7 +132,7 @@ export function cek(film, aralikHam, adet, { ses = false, kuru = false } = {}) {
   const satirlar = [
     `━━ ${path.basename(film)} · ${aralik.bas}–${aralik.son}s · ${kareler.length} kare → ${cikti}`,
     ...kareler.map((k) => {
-      const fark = k.fark === null ? '  —  ' : k.fark.toFixed(2).padStart(5);
+      const fark = k.fark == null ? '  —  ' : k.fark.toFixed(2).padStart(5);
       const isaret = k.donuk ? ' 🧊 ÖNCEKİYLE NEREDEYSE AYNI' : '';
       return `   ${path.basename(k.png).padEnd(18)} fark ${fark}${isaret}`;
     }),
