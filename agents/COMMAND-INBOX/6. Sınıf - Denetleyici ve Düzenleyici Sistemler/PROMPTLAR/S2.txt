@@ -6,7 +6,7 @@ doygun indigo karanlık, bal/amber sıcaklık. S1'in bal rengi ahşabının ve p
 iç dünyadaki karşılığı: KURU, CAMSI, YARI SAYDAM LİF. Islak doku yok, kesit yok.
 Ölçek merdiveni: K09 yakın · K10 makro · K11 geniş · K12 orta · K13 geniş · K14 orta
 · K15 yakın. Ardışık iki karede aynı ölçek yok.
-@mira YALNIZ K09'da → references: 1lLXJFpr4r · K10-K15'te referans YOK, kimse yok.
+@mira YALNIZ K09'da → references: UPOqovywny · K10-K15'te referans YOK, kimse yok.
 🔴 K09 kadrajın dışarıda bıraktığını yazar (bel üstü) — yoksa plakanın tam-boy
    stüdyo kadrajı ithal oluyor. Kız TARİF EDİLMEZ, çağrılır: yalnız "the girl"/"she".
 🔴 Beden yalnız SİNYAL ölçeğinde açılır. Kan, damar kesiti, organ kesiti, doku
@@ -29,7 +29,7 @@ PLAN: Önde odak dışı kadife koltuk sırtının yuvarlak omzu ve ahşap kolç
   ucu · ortada keskin Mira, bel üstü · arkada odak dışı karanlık salon.
 ENTRY STATE: Avuç göğsünde, parmaklar bitişik, ağzı kapalı, nefesi yavaş.
 EXIT STATE: Aynı duruş; yalnız omzu bir kez alçalıp yükselmiş.
-🔴 references: 1lLXJFpr4r (@mira) — kız TARİF EDİLMEZ, çağrılır.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
 -----
 A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The front row of the same grand concert hall, the house dark all around her. The girl from the character reference is framed from the waist up, her legs and the floor out of frame, seen from her right side and slightly above across the seat backs. Her open palm is already flat against the middle of her own chest and resting there, fingers together, the hand anatomically clean with five separate fingers and the wrist relaxed. She has settled back from the edge of the seat, mouth closed, chin a little down, both eyes still fixed off-frame toward the stage — she has stopped watching the hall and started listening to herself. Nearest the lens, out of focus and closing the lower left corner, the rolled velvet shoulder of the next seat back and the polished wooden end of its armrest, catching one long soft highlight. Every bit of light on her comes from the stage off-frame to screen-left: one warm directional spill that models the side of her face, her forearm and the back of her hand, and lays a long shadow across the seat behind her. She is the only sharp thing in the frame; the rest of the row and the dark house fall away into full saturated indigo, still readable, never grey.
 

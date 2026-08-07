@@ -77,7 +77,26 @@ cümlesinde: *"this is a lit scene of real things in a real place, not a diagram
 
 ---
 
-## S4 — BEYİN VE BEYİNCİK · K22-K30 (9 kare) · maket masası + denge
+## S4 — BEYİN VE BEYİNCİK · K22-K30 (9 kare) · bedenin içi + gerçek anlar
+
+🔴 **MAKET SÖKÜLDÜ — Mami kararı 2026-08-07.** Ölçüm: kaynakta `maket` **1 kez** geçiyor
+ve ona 9 kare yazılmıştı; mutfak hatasının küçük kardeşi. Basılan kare kanıtladı — aynı
+ders K21'de **katedral** olarak kurulunca onay aldı, K22'de bir **okul laboratuvarı
+prop'una** (pembe plastik beyin, pirinç ayak) inince Mami *"kötü oldu"* dedi.
+**Ders artık bedenin içinde, K21'in dilinde geçer.** Mira'nın gerçek anları dışarıda kalır.
+
+| kare | nerede |
+|---|---|
+| K22 · K23 · K24 | **bedenin içi** — K21'in katedrali, şimdi kubbeye yaklaşıyoruz |
+| **K25** 🔒 | **gerçek dünya** — BASILI VE KABUL (su bardağı · ısırılmış elma · hırka). Ders nesneyle anlatılıyor, dokunulmaz |
+| K26 · K27 · K28 | **bedenin içi** — taranmış küçük kütle (beyincik) |
+| K29 · K30 | **gerçek dünya** — tek ayak · bisiklet |
+
+**Malzeme K21'den devralınır:** solgun kemik renginde lif/taş mimari, sıcak-altın sert
+huzmeler, doygun indigo tonoz. Porselen, pirinç ayak, ceviz kaide, çalışma masası **YOK**.
+🔴 **K26'da ışık YALNIZ taranmış küçük kütlede; büyük kıvrımlı kubbe o karede KARANLIK.**
+
+### Eski maket tasarımı (arşiv, uygulanmaz)
 
 **SORU** — Bu ağın merkezi neye benziyor; elle tutulur mu?
 **KANIT** — Gerçek bir maket, Mira'nın **kendi çalışma masasında**. Işık **geometrik** yazılır:

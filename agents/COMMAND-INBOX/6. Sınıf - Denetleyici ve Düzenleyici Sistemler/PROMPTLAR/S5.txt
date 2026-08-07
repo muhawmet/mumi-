@@ -1,0 +1,262 @@
+SEKANS 5 — OMURİLİK SOĞANI VE REFLEKS (gerçek anlar) · K31-K39
+═══════════════════════════════════════════════════════════════════
+Mekân kaynaktan: "elini sıcak bir çaydanlığa dokundurup hemen çeker" ·
+"tek ayak üstünde durmaya çalışır" (S4'ten devralınan maket masası)
+Süreklilik: tek mekân YOK. Üç yer dönüşümlü kullanılır ve hiçbiri sekansı ele
+geçirmez — (a) S4'ten devralınan MAKET MASASI: geniş, aydınlık, çağdaş çalışma
+odası, ceviz masa, pirinç masa lambası, dolu kitaplıklar · (b) BEDENİN İÇİ, S2-S3'ün
+kuru camsı lif mimarisi, kan/kesit/doku YOK · (c) MUTFAK, yalnız K36-K37, iki kare.
+⚠ K36-K37 bir mutfak ANIdır, mutfak DÜNYASI değil. Geçen tur bu projeyi tam buradan
+öldürdü: kaynakta 0 kez geçen mutfak 56 kareye yayıldı. Burada iki kare, tek olay.
+Mutfak geniş, çağdaş ve kaliteli — yıpranmış/çentikli/solmuş/dar/loş hiçbir şey yok.
+Işık rejimi S1'in tabanı: tek yönlü SERT beyaz-altın key, uzun modelleme gölgeleri,
+bal/kehribar/kemik ⟂ doygun indigo. Düz eşit dolgu YOK, pastel/kırık/soluk ton YOK.
+Kavram ışığının davranışı (ENZIM §7 — SİNİR): kenar JİLET gibi sert · tek nesnenin
+TEK kenarına oturur · bitince BİRDEN kesilir · hâle yok, yansıma yok, İZ BIRAKMAZ.
+🔴 MAKET GEOMETRİSİ (S4'ten devralınır, yeni nesne icat edilmez): tek parça, soluk
+kemik renginde oyulmuş mat malzeme — üstte kıvrımlı sırtlarla işlenmiş büyük KUBBE ·
+altına ve arkasına sıkışmış, ince paralel sırtlarla taranmış küçük yoğun KÜTLE ·
+ikisinin birleştiği yerde malzemenin toplanıp kalınlaştığı KISA DAR DÜĞÜM · oradan
+aşağı inen, eşit halkalarla boğumlanmış UZUN SÜTUN. Koyu ceviz kaidesi var.
+🔴 ÜÇ SIK HATA BU SEKANSTA ÖLÇÜLÜYOR:
+   1. `omurilik soğanı` = KISA DAR DÜĞÜM · `omurilik` = UZUN HALKALI SÜTUN. Işık
+      ikisine BİRDEN değmez. K31 yalnız düğümü yakar, K35/K39 yalnız sütunu.
+   2. Refleksin merkezi OMURİLİKTİR, beyin değil → K37/K38/K39'da BEYİN IŞIKSIZ.
+      Sinyal yukarı hiç çıkmadı; kare bunu ışığın NEREYE ULAŞMADIĞIYLA söyler.
+   3. Hapşırma/öksürme/yutkunma OMURİLİK SOĞANININ işidir (K32-K34); refleks
+      karelerine (K36-K39) karışmaz.
+   Işık her blokta GEOMETRİK yazılır: hangi yapının dış hattına değdiği ve NEREDE
+   kesildiği söylenir. "kontrast yüksek" tutmuyor.
+🔴 OLAY DEĞİL DURUM — sekansın belkemiği. K34 hapşırığın SONRASI (an değil), K37'de
+el ÇOKTAN geride ve çaydanlık hâlâ orada, buharı çıkıyor. Kimse konuşmaz, ağız oynamaz.
+🔴 ÇOCUK GÜVENLİĞİ: beden içi yalnız sinyal ölçeğinde. Kan, damar kesiti, organ kesiti,
+doku katmanı YOK. Hiçbir kavram ışığı Mira'nın tenine değmez — K34/K36/K37'de tek ışık
+kaynağı gerçek pratiktir (pencere huzmesi, tezgâh, çelik). Çaydanlık karesi merakı ve
+şaşkınlığı taşır, korkuyu değil: alev yok, kızarıklık yok, acı ifadesi yok.
+🔴 ŞEMA YASAĞI gövdenin İLK cümlelerinde: "not a diagram". Sonda kalırsa motor ders
+kitabı diyagramı basıyor — ölçüldü. Etiket, ok, çağrı çizgisi, numara, inset panel,
+iki sütunlu tablo YOK. Hiçbir okunabilir yazı YOK.
+Ölçek merdiveni: K31 yakın · K32 geniş · K33 orta · K34 yakın · K35 makro · K36 orta
+· K37 yakın · K38 orta · K39 yakın. Ardışık iki karede aynı ölçek YOK.
+Ön düzlem kütlesi DOKUZ karenin dokuzunda var — kadraj kilidi cümleyle değil kütleyle
+tutuyor; her karede farklı kütle (pirinç lamba başlığı · örgülü halat · soğuk lif ·
+kubbenin omzu · taranmış sırt kütlesi · seramik kâse · taş tezgâh köşesi + testi ·
+soluk halat · ceviz kaide kenarı).
+@mira K34 · K36 · K37 → references: UPOqovywny · K31/K32/K33/K35/K38/K39'da referans
+YOK, insan yok. 🔴 Kız TARİF EDİLMEZ, çağrılır: metinde yalnız "the girl" / "she";
+yaş, yüz, saç, ten, göz, milliyet, gardırop YAZILMAZ. Geçtiği her karede kadrajın
+DIŞARIDA bıraktığı yazılır (bel/göğüs üstü), yoksa plakanın tam-boy stüdyo kadrajı
+ithal oluyor.
+🔴 KÖPRÜ: K39'da sinir ışığı yine İZ BIRAKMADAN kesilir → S6'nın sorusu ("peki iz
+BIRAKAN?") oradan doğar. Kesim planı: K30 → K31 J · K39 → K40 J.
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+K31 ──────────────────────────────────────────────────────────────
+VO 31: "Beyinciğin yanındaki omurilik soğanı iç organları istemsiz çalıştırır."
+FİKİR: "Yanındaki" bir konum bilgisi değil, bir IŞIK KARARIDIR — beyincik kadrajda
+  ve KARANLIK; küçük düğüm tek başına yanıyor. Konum ışıkla öğretiliyor.
+YÜKÜM: 🔴 Işık YALNIZ kısa dar düğümün dış hattında. Üstteki kıvrımlı kubbe ve
+  aşağı inen halkalı sütun hiçbir şey almıyor; hâle, taşma, yansıma yok.
+AYRICALIK: Düğümle aynı hizada, masa yüksekliğinden bakıyoruz — maketi bir insan
+  gibi değil, bir yapı gibi görüyoruz.
+PLAN: Önde odak dışı pirinç masa lambası başlığı (sol alt) · ortada keskin maket ve
+  yanan düğüm · arkada yumuşak, aydınlık, geniş çalışma odası.
+ENTRY STATE: Işık düğümün üstünde duruyor, kesildiği yer keskin; maket hareketsiz.
+EXIT STATE: Aynı ışık, aynı kesim yeri; yalnız huzmedeki toz döndü.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view of a sculpted anatomical model standing on a broad walnut desk in a large, bright, modern study. The model is one continuous piece of pale bone-coloured carved material, matte and warm with a real grain running through it: a great dome at the top whose whole surface is worked into deep winding ridges, a much smaller and denser mass tucked below and behind it combed into fine parallel ridges like thin pressed leaves, and below where those two meet the material gathers and thickens into one short narrow knot before running on down as a long column ringed in even segments. We are level with that knot and just to the right of it. One hard warm key from a brass desk lamp off screen-left falls on the knot alone: it wraps the knot's own outer contour, models every turn in it, and it stops exactly where the knot stops. The ridged dome above it and the ringed column below it receive none of it and stay in cold saturated indigo, their shapes only just readable. Nearest the lens, out of focus and closing the lower left corner, the curved brass shade of that lamp comes into frame carrying one long soft highlight. In the middle ground the model is razor sharp on its dark walnut base. Behind it the study stays soft and warm: a wide window, deep filled bookshelves, a large clear desk.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; close medium-telephoto at desk height, shallow depth of field, tactile carved bone-coloured material, brushed brass and oiled walnut, fine film grain.
+LIGHT AND PALETTE: one hard warm key from the brass lamp screen-left landing on the knot only and cut off at its edge, plus cool daylight from the window behind; honey and amber on the lit knot against a full saturated indigo on everything unlit, colour rich in the darks, nothing pastel.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no glow, halo or bloom carrying up onto the ridged dome; no labels, numbers or leader lines on the model; no shiny cheap plastic toy finish; no readable text anywhere.
+-----
+
+
+K32 ──────────────────────────────────────────────────────────────
+VO 32: "Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir."
+FİKİR: Dört iş, dört ayrı yer, TEK AN. "Denetim" bir bağlantı çizgisiyle değil,
+  AYNI ANDA yanmakla gösterilir — hiçbiri diğerini beklemiyor.
+YÜKÜM: 🔴 Dört bölgeyi birbirine bağlayan hiçbir çizgi, boru, ok ya da akış hattı
+  YOK. Dördü de sinir davranışında: sert kenar, hâle yok, komşu lifler soğuk.
+AYRICALIK: Lif mimarisinin en geniş görüldüğü yer — dört bölge dört ayrı DERİNLİKTE,
+  yani gerçek bir kameranın tek bakışta toplayamayacağı bir hacim.
+PLAN: Önde odak dışı örgülü kalın halat (sağ alt) · ortada keskin dört yanan bölge
+  · arkada katman katman indigoya inen boş hacim.
+ENTRY STATE: Dördü de yanıyor, dördü de aynı anda; aralarındaki hacim tamamen karanlık.
+EXIT STATE: Aynı dört bölge, aynı anda; yalnız derinlikte toz kımıldadı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A very wide view from a high vantage inside an immense dark hall built entirely of dry glassy fibre — spun strands, braided cables and tapering struts, everything here dry, pale and jewel-like. Four separate regions of that architecture are alight at exactly the same instant, and they sit far apart at four different distances: one near and low on the left, one further in and high at the centre, one well back on the right, one very small and almost lost in the deepest part of the hall. Each region is nothing but a handful of strands carrying hard clean lines of warm gold along their near edges, and every one of those lines is cut off dead where its edge ends — no halo, no bloom, no reflection, the strand lying next to each lit one completely cold. Between the four regions the hall is simply empty and dark; nothing runs from one to another. Nearest the lens, out of focus and filling the lower right corner, one thick braided cable of the same pale fibre crosses the frame and catches a single long highlight. In the middle ground the near structure is razor sharp, modelled by a dim hard indigo edge light from the vault that prints long cold shadows down the pale floor.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; very wide lens from a high vantage with real depth staged front to back, sharp in the middle ground, tactile spun glass and braided pale fibre, fine film grain.
+LIGHT AND PALETTE: four small hard gold sources of identical colour burning at once and nothing warm between them, a dim hard indigo key from the vault carrying all the modelling; honey and amber against a full saturated indigo, colour rich in the darks, nothing grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no line, tube, channel or arrow joining the four regions; no organ shapes or cross-sections; no glow or halo spreading off the lit edges; no readable text anywhere.
+-----
+
+
+K33 ──────────────────────────────────────────────────────────────
+VO 33: "Hapşırmak, öksürmek ve yutkunmak da onun işidir."
+FİKİR: Üç ayrı iş ama TEK EL YAZISI — aynı yazarın üç imzası. Fark ne yaptıkları
+  değil, hepsinin aynı biçimde ve sorulmadan olması.
+YÜKÜM: Üç işaret BİREBİR aynı olmalı: aynı incelik, aynı temiz başlangıç, aynı boy,
+  aynı sert kesim. Ama üçü farklı derinlikte ve farklı açıda durmalı — sıra olmaz,
+  ızgara olmaz; dizilirse kare tabloya döner ve düşer.
+AYRICALIK: Üçü tek bakışta okunuyor ama hiçbiri diğerinin yanında değil; derinlik
+  onları ayırıyor, kompozisyon değil.
+PLAN: Önde odak dışı soğuk mat lif üst kenarı kapatıyor · ortada keskin üç lif ve
+  üstlerindeki üç altın işaret · arkada indigoya inen boş derinlik.
+ENTRY STATE: Üç işaret de aynı anda yanıyor, üçünün de kesildiği yer keskin.
+EXIT STATE: Üçü de sönmüş, ARKALARINDA HİÇBİR İZ YOK; lifler hiç yanmamış gibi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A medium view into the same dark fibre interior, where three separate glassy strands hang at three quite different distances from us. On each of them one hard line of warm gold sits along the upper edge, and the three lines are identical to one another: the same razor-thin width, the same clean beginning, the same length along the edge, and each one cut off dead at its far end as if by a blade. Because the three strands lie at different depths and at different angles, the three marks read completely differently on screen — the nearest is large and steeply diagonal low on the left, the second is mid-distance and slanting away at the centre, the third is small and almost flat high on the right. They are lit at the same instant and nothing at all passes between them; the strands beside each lit one are entirely cold, and no warmth touches the space in between. Nearest the lens, out of focus and closing the whole upper edge, another strand of the same fibre lies matte and unlit. In the middle ground the three strands are razor sharp, modelled by a dim hard indigo edge light from above that prints their shadows onto the layers behind them.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens with a deep plane of focus across three distances, tactile blown glass over spun fibre, fine drifting dust, fine film grain.
+LIGHT AND PALETTE: three identical hard gold edge lines as the only warm light, a dim hard indigo rim from above modelling everything else; honey gold against a full saturated indigo and blue-black, colour full in the darks, nothing pastel.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no row, grid or three-panel layout; no bloom or halo spilling off the lit edges; no labels, numbers or leader lines; no readable text anywhere.
+-----
+
+
+K34 ──────────────────────────────────────────────────────────────
+VO 34: "Mira hapşırdı ve bunu hiç düşünmemişti."
+FİKİR: Hapşırığın kendisi gösterilmez — İZİ gösterilir. Pencere huzmesindeki toz
+  havalanmış ve hâlâ dönüyor; olan biten yalnız orada duruyor.
+YÜKÜM: 🔴 OLAY DEĞİL DURUM — hapşırık BİTMİŞ. Omuzları yeni inmiş, çenesi yeniden
+  kalkıyor, ağzı kapalı. Yüzünde şaşkınlık var, rahatsızlık yok.
+AYRICALIK: Animasyonun izin verdiği çözüm: eylemi değil eylemin havada bıraktığını
+  çekiyoruz. Gerçek kamerayla bu toz bulutu kurulamaz, burada kurulabilir.
+PLAN: Önde odak dışı maketin kıvrımlı kubbesinin omzu (sağ alt) · ortada keskin
+  Mira, göğüs üstü · arkada odak dışı geniş pencere ve kitaplık.
+ENTRY STATE: Toz bulutu havada, aydınlık ve dönüyor; omuzları inmiş, ağzı kapalı.
+EXIT STATE: Aynı duruş; toz bulutu bir tık daha alçalmış ve genişlemiş.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view in the same large, bright, modern study. The girl from the character reference is framed from mid-chest up, the desktop and her legs out of frame, seen from her left and slightly above. The sneeze is already over: her shoulders have just come back down, her chin is lifting again, her mouth is closed, her eyes are open and aimed at nothing in particular, and one hand rests loose and empty at the edge of frame, anatomically clean with five separate fingers. She is not doing anything — she is realising that something happened without her asking for it, and the look on her face is plain surprise. In the hard shaft of daylight crossing the room from a window off screen-left, a whole cloud of fine dust has been thrown up in front of her and is still hanging there, brightly lit and turning slowly as it settles: the only trace left of the thing that just happened. Nearest the lens, out of focus and closing the lower right corner, the ridged shoulder of the sculpted model's pale dome rises into frame. She is the only sharp thing in the picture; the bookshelves and the window behind her fall away into a soft warm blur and a full saturated indigo in the corners.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto at eye height, shallow depth of field, tactile brushed cotton, carved pale material and oiled walnut, visible airborne dust, fine film grain.
+LIGHT AND PALETTE: one hard daylight shaft from the window screen-left as the only key, visible in the raised dust, modelling her cheek, jaw and knuckles and throwing a long shadow across the desk behind her; honey and amber on the lit side against a full saturated indigo in the shadows, no pastel wash and no grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no other child with a similar face; no full-body studio pose on a plain background; no motion blur, streak or double image; no readable text anywhere.
+-----
+
+
+K35 ──────────────────────────────────────────────────────────────
+VO 35: "Aşağı inen uzun kısım omuriliktir; beyinle vücut arasında mesaj taşır."
+FİKİR: 🔴 SEKANSIN DERS KİLİDİ — omurilik, omurilik soğanı DEĞİL. Işık halkalı
+  sütunun BÜTÜN boyunca yürür ve düğümün başladığı yerde BİRDEN kesilir.
+YÜKÜM: Işık düğüme ve kubbeye ASLA ulaşmaz. "Mesaj taşır" cümlesini kesintisizlik
+  söylüyor: çizgi kadrajın altından girip yukarıya kadar hiç bölünmeden gidiyor.
+AYRICALIK: Makro — bir maket parçası bir mimari kolon kadar büyük; malzemenin
+  kendi dokusu, oyma izleri ve halkaların kalınlığı okunuyor.
+PLAN: Önde odak dışı, ince paralel sırtlarla taranmış kütle üst kenarı kapatıyor ·
+  ortada keskin halkalı sütun ve üstündeki altın çizgi · arkada odak dışı karanlık.
+ENTRY STATE: Çizgi sütunun bütün boyunda, kesildiği yer keskin; düğüm karanlık.
+EXIT STATE: Aynı çizgi, aynı kesim yeri; hiçbir yere yayılmadı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. An extreme macro view along the long ringed column of the same sculpted model, so close that a single carved segment fills a good part of the frame. The column crosses the whole picture as a tapering shaft of pale bone-coloured material, banded in even rings, and at this scale everything in the material is readable: the grain running under the surface, the fine tool marks left in each ring, the soft chamfer where one ring meets the next. One hard line of warm gold lies along its near edge and runs the entire visible length of the column, unbroken, entering at the very bottom of frame and travelling all the way up — and then, exactly where the last ring ends and the short narrow knot begins, it stops dead, cut clean. Past that cut the knot is completely cold, and further beyond it the great ridged dome sits far out of focus and entirely dark, with no gold anywhere on either of them. Nothing spills: the far side of the column is dark, the surface beside the line receives nothing, and the walnut base below stays unlit. Nearest the lens, out of focus and closing the whole upper edge, the small mass combed into fine parallel ridges crosses the frame, matte and cold.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; extreme macro with a very shallow plane of focus, sharp on the lit edge, tactile carved bone-coloured material with visible grain and tool marks, fine film grain.
+LIGHT AND PALETTE: the single unbroken gold edge line running the length of the column is the only warm light in frame; a dim hard indigo rim models everything else; saturated indigo and near-black against one long band of honey gold, nothing pastel and nothing grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no bloom, halo or glow spilling off the lit line; no warm light past the cut on the short knot; no gaps or breaks along the lit line; no readable text anywhere.
+-----
+
+
+K36 ──────────────────────────────────────────────────────────────
+VO 36: "Mira sıcak çaydanlığın sapına dokundu."
+FİKİR: Refleksin şartı, kızın HİÇBİR ŞEY BİLMEMESİ. Kare bu yüzden tamamen sakin:
+  henüz hiçbir şey olmadı, kimse tetikte değil.
+YÜKÜM: 🔴 Kare merakı taşır, korkuyu değil. Yüzünde alarm yok, teninde iz yok,
+  kadrajda alev yok. Ocak soğuk ve boş; çaydanlık kaynamayı bitirmiş, tezgâhta.
+  Parmak uçları sapa yeni değmiş — bu bir DURUM, bir kavrama hamlesi değil.
+AYRICALIK: Mutfak geniş, aydınlık ve kaliteli — özel okul standardı. Bu bir mutfak
+  ANIdır; sekansın kalanı başka yerlerde ve iki kare sonra buradan çıkıyoruz.
+PLAN: Önde odak dışı ağır seramik kâse (sol alt) · ortada keskin Mira, göğüs üstü,
+  ve çelik çaydanlık · arkada odak dışı geniş pencere ve meşe dolaplar.
+ENTRY STATE: Parmak uçları sapta, omuzlar gevşek, ağzı kapalı, gözü çaydanlıkta.
+EXIT STATE: Aynı duruş; yalnız buhar şeridi bir kez kıvrıldı.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A medium view in a large, bright, contemporary kitchen: a long pale stone counter, deep oak cabinetry, a wide window running along one wall. The girl from the character reference stands at the counter, framed from mid-chest up with her legs and the floor out of frame, seen from her right side. A good brushed steel kettle stands on the stone well away from the hob, finished boiling, one thin steady ribbon of steam climbing off it and curling in the light; the hob further along the counter is a flat cold empty surface. Her arm has come across and her fingertips have just met the metal handle, resting on it — the hand anatomically correct with five separate fingers, the fingers stay separate, her skin even and unmarked. Her face is completely ordinary: mouth closed, eyes on the kettle, mid-thought, entirely untroubled. Nothing has happened yet. Nearest the lens, out of focus and closing the lower left corner, a heavy ceramic bowl sits on the stone and catches one long soft highlight. In the middle ground she and the kettle are razor sharp; behind them the window and the oak fronts fall into a soft warm blur with full saturated indigo in the corners.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens at chest height from her right, shallow depth of field, tactile brushed steel, honed stone, oiled oak and glazed ceramic, fine film grain.
+LIGHT AND PALETTE: one hard morning key from the window screen-right raking the counter, modelling her knuckles and jaw and laying a long shadow across the stone, with a hot specular streak down the steel; honey, amber and warm bone against a full saturated indigo in the shadows, no pastel and no grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no alarmed, pained or frightened expression; no full-body studio pose on a plain background; no other child with a similar face; no readable text anywhere.
+-----
+
+
+K37 ──────────────────────────────────────────────────────────────
+VO 37: "Elini düşünmeden, anında geri çekti."
+FİKİR: 🔴 SEKANSIN DÖNÜŞÜMÜ — ve kanıt hareket değil, IŞIĞIN NEREYE ULAŞMADIĞIDIR.
+  El çoktan geride, sap boş, buhar hiç bozulmamış: karar el hizasında verildi.
+YÜKÜM: 🔴 BEYİN IŞIKSIZ ve bu kareye GEOMETRİK yazılıyor: kadrajdaki tek sıcak ışık
+  ALÇAK — tezgâhtan ve çelikten geliyor, çekilmiş kolun üstünde duruyor ve
+  KÖPRÜCÜK KEMİĞİNDE KESİLİYOR. Omuzlarının üstünde, başında ve başının üstündeki
+  havada hiçbir sıcak ışık yok. Sinyal yukarı çıkmadı; kare bunu söylüyor.
+AYRICALIK: K36'nın neredeyse aynı açısı — değişen tek şey elin yeri ve ışığın
+  nereye ulaştığı. Fark böyle okunuyor.
+PLAN: Önde odak dışı taş tezgâh köşesi ve ağır seramik testi (sağ alt) · ortada
+  keskin çekilmiş el, boş sap ve buhar şeridi · arkada soğuk indigoda başı ve omuzları.
+ENTRY STATE: El yanda, parmaklar yarı kıvrık; sap boş; buhar kesintisiz yükseliyor.
+EXIT STATE: Aynı el, aynı boş sap; buhar bir kez daha kıvrılmış, başka hiçbir şey yok.
+🔴 Kesim planı: K37 SERT ve tam sınırda — vuruş anı.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view in the same bright kitchen, from almost the same side as before. The girl from the character reference is framed from mid-chest up, her legs and the floor out of frame. Her hand is already back at her side, hanging clear of the counter with the fingers still half curled, anatomically correct with five separate fingers that stay separate; the kettle's handle is empty. The kettle stands exactly where it stood and its thin ribbon of steam is still climbing off it, unbroken and undisturbed. Her skin is even and unmarked, her mouth is closed, and what is on her face is surprise at herself and nothing worse. The whole frame is built so that the only warm light in it is low: it comes off the pale stone counter and the brushed steel, it lies along her withdrawn forearm and the back of her hand, and it climbs no higher — it stops at her collarbone. Everything above her shoulders, her whole head and all the air above it, sits in cold saturated indigo with no warm light reaching it at all. Nearest the lens, out of focus and closing the lower right corner, the corner of the stone counter and a heavy ceramic jug cut into frame.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; close medium-telephoto from her right, shallow depth of field, tactile honed stone, brushed steel, glazed ceramic and brushed cotton, fine film grain.
+LIGHT AND PALETTE: one low warm bounce off the counter and the steel as the only warm source, holding the forearm and the back of the hand and ending at the collarbone; a cool indigo ambient carries the head and the air above it; honey and amber below, full saturated indigo above, colour rich in the darks, nothing grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no warm light anywhere above her collarbone; no motion blur, streak or double image of the arm; no steam filling the frame or covering her; no readable text anywhere.
+-----
+
+
+K38 ──────────────────────────────────────────────────────────────
+VO 38: "Bu ani ve istemsiz tepkiye refleks denir."
+FİKİR: Refleksin tarifi bir şema değil, bir MİMARİDİR: dönüş AŞAĞIDA oluyor.
+  Kare bunu yukarısını tamamen karanlık bırakarak anlatıyor.
+YÜKÜM: 🔴 BEYİN IŞIKSIZ — kubbe kadrajın üst yarısında ve tamamen karanlık; düğüm de
+  karanlık; sütunun ancak en dibi ışık görüyor. İki altın çizgi AYNI ANDA yanıyor
+  ve ikisi de uçlarında birden kesiliyor, arkalarında hiçbir iz kalmıyor.
+  Ok başı, ok, çağrı çizgisi, numara YOK — ilişkiyi yapı söylüyor, işaret değil.
+AYRICALIK: Katedral içi, tabandan yukarı bakış — ama bu kez yukarısı bilerek boş.
+  (S3'te dört kütle ışıkla sayılmıştı; burası aynı mimarinin ışıksız hâli.)
+PLAN: Önde odak dışı kalın soluk örgülü halat (sol alt) · ortada keskin, alçakta
+  buluşan iki lif ve iki altın çizgi · arkada karanlık kubbe ve tonoz.
+ENTRY STATE: İki çizgi de yanıyor, ikisi de aynı anda; yukarısı tamamen karanlık.
+EXIT STATE: İkisi de sönmüş, ARKALARINDA HİÇBİR İZ YOK; yukarısı hâlâ karanlık.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A medium view low down inside the fibre architecture, at the very foot of the long ringed column, looking up along it at a steep angle. Two strands of glassy fibre come in from the right at two different depths and two different thicknesses and reach the column low down, close to the pale floor. Along the upper edge of the nearer strand one hard line of warm gold runs inward toward the column; along the upper edge of the farther strand a second hard line of exactly the same gold runs back outward, away again. Both are lit at the same instant, both are cut off dead at their ends, and neither leaves anything behind it. Everything above them is cold: the ringed column higher up takes no light, the short knot at its top takes none, and far above, filling the upper half of the frame, the great ridged dome sits in complete darkness with no gold anywhere on it, its folds only just readable. Nearest the lens, out of focus and closing the lower left corner, a thick pale braided cable crosses the frame, matte and unlit. A dim hard indigo edge light from the vault models the architecture and prints long cold shadows down the floor toward us.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens low and looking up like a cathedral interior, sharp in the middle ground, tactile spun glass, braided pale fibre and matte stone floor, fine film grain.
+LIGHT AND PALETTE: two hard gold edge lines low in the frame and nothing warm anywhere above them; a dim hard indigo key from the vault carrying all the modelling; honey gold at the bottom against a full saturated indigo filling the upper half, colour full in the darks, nothing grey.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no arrowheads, arrows or leader lines on the strands; no glow or light climbing the column; no labels, numbers or callout circles; no flat white or empty background behind the architecture.
+-----
+
+
+K39 ──────────────────────────────────────────────────────────────
+VO 39: "Reflekslerin yönetim merkezi omuriliktir."
+FİKİR: 🔴 SEKANSIN HÜKMÜ — merkez, karenin EN BÜYÜK şeyi değil, en PARLAK şeyidir.
+  Kubbe kadrajın yarısını kaplıyor ve karanlık; komuta aşağıda.
+YÜKÜM: 🔴 Işık YALNIZ halkalı sütunda ve sütun kadrajın tek parlak nesnesi. Düğüm
+  hiçbir şey almıyor, kubbe hiçbir şey almıyor — beyin bu karede IŞIKSIZ.
+AYRICALIK: K31'in tersi — orada düğüm yanıyordu, sütun karanlıktı; burada tam tersi
+  ve kamera alçalıp arkaya geçti. Aynı maket, aynı masa, ters hüküm.
+PLAN: Önde odak dışı koyu ceviz kaide kenarı (alt kenar boyunca) · ortada keskin,
+  bütün boyunca yanan halkalı sütun · arkada karanlık kubbe kütlesi ve soft oda.
+ENTRY STATE: Sütun baştan sona yanıyor; düğüm ve kubbe tamamen karanlık.
+EXIT STATE: 🔴 Işık sönmüş ve maket TAM ESKİSİ GİBİ — hiçbir kalıntı, hiçbir sönen
+  hâle, hiçbir iz yok. S6'nın sorusu tam buradan doğuyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view of the same sculpted model on the walnut desk, taken from low down and slightly behind it, looking up past the long ringed column toward the masses above. One hard warm key from the brass desk lamp off screen-right falls on the ringed column alone and lights its full length as a single bright object: every ring stands proud, the grain of the pale material glows warm through it, and it is by a long way the brightest thing in the picture. The key stops where the column stops. Above it the short narrow knot takes nothing at all, and above that the great ridged dome fills the upper half of the frame completely unlit — the largest shape in the composition and also the darkest, a cold saturated indigo mass whose deep folds are only just readable against the room. Nearest the lens, out of focus and rising across the bottom edge, the dark walnut lip of the model's base cuts into frame carrying one thin highlight. Behind the model the study falls away into a warm soft depth: the corner of a wide window, the blur of full bookshelves, dust turning slowly in the lamp beam.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; close wide-normal lens low and looking up, sharp on the column, tactile carved bone-coloured material, brushed brass and oiled walnut, fine film grain.
+LIGHT AND PALETTE: one hard warm key from the brass lamp screen-right holding the ringed column and cut off at its top; honey and amber on the column against a full saturated indigo filling the upper half of the frame, the unlit dome the darkest value in the picture, nothing pastel.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no glow, halo or bloom reaching the knot or the ridged dome; no second light source picking out the dome; no labels, numbers or leader lines; no readable text anywhere.
+-----

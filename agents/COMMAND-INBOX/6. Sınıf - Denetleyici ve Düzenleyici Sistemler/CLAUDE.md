@@ -109,6 +109,37 @@ koduyla bloke edildi, ana oturumunki açık geçti, kredi değişmedi.
 
 ## BU VİDEODA ÖĞRENİLENLER
 
+- 2026-08-07 🔴 **REFERANS KİMLİĞİ DİSKTEKİ DOSYAYI DEĞİL, MOTORDAKİ CREATION'I GÖSTERİR.**
+  Plaka sahne rejiminde yeniden basıldı ve `elements/mira.png` olarak kuruldu — ama
+  prompt'lardaki `references` hâlâ **eski düz plakanın** creation kimliğini taşıyordu.
+  Yani 150 kredilik onarım motora **hiç gitmedi**; K09/K25'in güzelliği yeni plakadan
+  değil **sahne yazımından** geliyordu. Doğru kimlik artık `UPOqovywny` (yeni ışıklı
+  bel-üstü plaka); `1lLXJFpr4r` ölü. **Kural: plakayı yeniden basmak yetmez, kimliği de
+  değiştir — yoksa onarım sessizce hiç olmamış sayılır.**
+
+- 2026-08-07 🔴 **`@mira` + AYDINLIK İÇ MEKÂN = motor "sıcak, düz ışıklı, antika" moduna
+  kaçıyor.** K09 tuttu çünkü mekân KARANLIKTI (salon). K22/K25 ilk turda düştü çünkü
+  "geç öğleden sonra çalışma odası" yazılmıştı: motor pirinç mikroskop, botanik gravür,
+  cam balon, küre getirdi ve **açık kitaplara ders kitabı diyagramı bastı.**
+  Onarım: mekân **çoğunlukla karanlık** yazılır, TEK sert huzme bir bant çizer, bandın
+  dışı doygun indigodur, masa **boştur**. İkisi de o cümleyle ilk denemede döndü.
+
+- 2026-08-07 🔴 **NEGATİFTE ADLANDIRMAK ÇAĞIRIYOR — ve bunu BEN yaptım.** K22 tur2'de
+  negatife *"no open book, printed page or illustrated plate · no antique brass
+  instruments or framed botanical prints"* yazdım. Motor **İngilizce etiketli anatomi
+  diyagramı** bastı (CEREBRUM · MEDULLA · THORACIC NERVES, çağrı çizgileriyle) —
+  yani tur2'yi öldüren kusurun birebir aynısı, negatif tarafından çağrılmış.
+  Kısıt **olumlu** yazılır: *"the walls stay completely bare; the desk surface stays bare."*
+
+- 2026-08-07 🔴 **REFERANS KARESİNDE ÖZNENİN YÜZÜ KADRAJ DIŞI/ODAK DIŞIYSA MOTOR SAHNEYİ
+  ATLAYIP PLAKAYI İTHAL EDİYOR.** K22 tur3'te "omuz ön düzlemde, yüz kadraj dışı" yazıldı;
+  çıkan kare beyaz fonda **tam boy stüdyo pozuydu** — sahne yok. Referans karesinde yüz
+  görünür ve ışıkta olmalı; kadraj kilidi ancak o zaman tutuyor.
+
+- 2026-08-07 ✅ **"Çocuk maketi sunuyor" kadrajı motorun eğitim-posteri önyargısını
+  tetikliyor.** Çözüm negatif değil **kadraj**: maket sunulmaz, kız ona BAKAR — üç çeyrek
+  arkadan, elleri kaidede, yüzü ışığın kenarında. K22 tur4 böyle geçti.
+
 - 2026-08-07 🔴 **KARAKTER PLAKASI KİMLİĞİ TAŞIYOR AMA IŞIK REJİMİNİ DE TAŞIYOR.**
   Mami: *"sağdaki plastik değil mi, soldaki direkt filmden."* Ölçüldü: K05 (şef, **referanssız**)
   sahnenin kendi ışığında doğdu — nota lambası pratiği, sert yan key, modelleme gölgesi, ten

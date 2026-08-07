@@ -8,7 +8,7 @@ register: edu
 Ölçek merdiveni: çok geniş → yakın → geniş-üstten → alçak orta → yakın →
 geniş yan-balkon → yakın (Mira) → tepeden çok geniş.
 Ardışık iki karede aynı ölçek yok.
-@mira YALNIZ K07'de → references: 1lLXJFpr4r
+@mira YALNIZ K07'de → references: UPOqovywny
 Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
 
 ⚠ K01 ve K02 blokları 2026-08-07'de GERİ YAZILDI. Kareler (`images/1.png`, `2.png`)
@@ -150,7 +150,7 @@ PLAN: Önde odak dışı koyu kadife koltuk sırtı ve bir yetişkinin omzu · o
   keskin Mira · arkada odak dışı sahne, şefin kalkık eli küçük parlak bir leke.
 ENTRY STATE: Öne eğik, ağzı kapalı, gözü sahnede; nefesi tutuk.
 EXIT STATE: Aynı duruş; yalnız parmakları kolçağın kenarını biraz daha sıkmış.
-🔴 references: 1lLXJFpr4r (@mira) — kız TARİF EDİLMEZ, çağrılır.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
 -----
 A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The front row of a grand concert hall. The girl from the character reference sits at the end of the row, framed from the waist up with her legs and the floor out of frame, seen from her left and slightly below over the seat backs. She is leaning forward out of her seat, one forearm along the arm of the chair and her fingers curled over its edge, chin lifted, mouth closed, both eyes fixed off-frame toward the stage — she is not relaxed and she is not simply watching, she is working something out. Nearest the lens, out of focus and closing the right edge, the deep red velvet back of the next seat and the dark shoulder of an adult beside her. She is the only sharp thing in the frame. Far behind her, thrown well out of focus, the lit stage reads as a warm blur of honey and brass, and inside that blur the conductor's raised hand sits as one small bright shape she is aimed at. Warm spill from the stage catches the side of her face and her forearm; the rest of the row falls into rich indigo.
 

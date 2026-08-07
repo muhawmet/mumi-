@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "@mira plakası sahne rejiminde yeniden basıldı (varyant B kuruldu, 150 kredi) · VO ölçüldü: 17/56 sayacı ÖLÜ DOSYAYI okuyormuş — SESLENDIRME hâlâ mutfak dünyasıydı · SENARYO Mami onayıyla 66→58 indi · iki VO dosyası SENARYO'dan türetildi · iş emri 58 shot'a kuruldu, K01-K08 kabul kaydedildi · tur2'nin 53 reddedilen karesi ve S2-S7 prompt'ları _ESKI'ye alındı",
-  "nextAction": "K09-K58 sekans omurgası: /mamilas-studyo ile S2-S7 alt-sekansları + referans envanteri, sonra 2 ajanla S2+S3 prompt yazımı",
+  "lastCompleted": "22 kare basıldı ve gözle denetlendi (K01-K21 + K25). Canary geçti. @mira referans kimliği DÜZELTİLDİ: yeniden basılan plaka motora hiç gitmiyormuş, eski düz plakanın kimliği kullanılıyordu. Mami maketi SÖKTÜRDÜ — S4 bedenin içine taşınıyor.",
+  "nextAction": "S4 yeniden yazımı + S6 ajanlardan gelince oku, bas; sonra S7 (K54-K58) ve K29/K30",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T19:19:35.679Z",
+  "updatedAt": "2026-08-07T20:15:34.139Z",
   "updatedBy": "claude",
-  "baseCommit": "49b27f3e"
+  "baseCommit": "2c785150"
 }
