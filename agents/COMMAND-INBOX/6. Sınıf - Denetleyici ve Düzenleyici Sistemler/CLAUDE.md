@@ -28,10 +28,37 @@ Kilitlerin tam metni burada çoğaltılmaz, çağrılır:
 - **`@handle` çağrılır, tarif edilmez.** Yaş, yüz, saç, ten, göz, gardırop, milliyet
   yazılmaz — metinde yalnız `the girl` / `she`. Bu tur tam buradan kırılmıştı.
 
-## DURUM — tek cümle
+## DURUM — 2026-08-07 akşamı, Mami'nin hükmü: BAŞTAN KURULUYOR
 
-Prompt 56/56 ✓ · plaka 3/3 ✓ · **kare 0/56** · motion 0/56 · klip 0/56.
-Sıradaki adım doğrudan 56 karenin basımı; Mami'nin emri: **image'dan sonra DUR, klip basma.**
+🔴 **Mami: *"Baştan kur ama orkestra kalsın. Mahvet o videoyu, orkestra güzel, show yap."***
+
+**KALAN — dokunulmaz, yeniden yazılmaz:**
+- `images/1.png` … `images/8.png` = **K01-K08, SEKANS 1 (konser salonu).** Sekizi de gözle
+  denetlendi ve onaylandı. Üçü şaheser: **K05** (şefin yakın planı — nota lambası pratiği,
+  sert yan key, ten dokusu, ön düzlemde odak dışı tuba), **K04** (şef arkadan, ışık huzmesi,
+  ön düzlemde odak dışı yay), **K08** (tepeden, ön düzlemde sahne feneri, eşmerkezli yaylar,
+  uzun paralel gölgeler).
+- **S1'in dünyası ve ışık rejimi** yeni setin TABANIDIR: bal rengi ahşap sahne, koyu kırmızı
+  perde, yaldızlı localar, indigo seyirci karanlığı, sahne solundan tek sert beyaz-altın key.
+  S7 (kapanış) aynı salondur.
+
+**ORTAK YAN — bu sekiz karenin neden tuttuğu (yeni set bunu taşır):**
+1. Dünya kaynaktan geldi (`orkestra` kaynakta 7 kez).
+2. **Referans YOK** — motor karakteri sahnenin kendi ışığında icat etti.
+3. Ön düzlemde odak dışı somut kütle (piyano kapağı · yay · tuba · fener · kontrbas).
+4. Tek yönlü sert key + modelleme gölgesi; düz dolgu yok.
+5. Kadrajda çok sayıda canlı şey; kimse poz vermiyor, herkes iş yapıyor.
+6. Ekranda yazı yok, etiket yok, ok yok.
+
+**YENİDEN KURULACAK:** K09-K66 (S2-S7). Eski prompt'lar (`PROMPTLAR/S2..S7.txt`) ve
+`images/9.png`+ **kıstas değildir** — reddedilenlerin kanıtı `images/mami-bak/` altında
+(plaka klonu · İngilizce etiketli beyin · gövdesiz karakter · karakter künye sayfası).
+
+**ÖNCE ONARILACAK — tek kare üretimden önce:**
+1. `@mira` plakası sahne rejiminde yeniden basılır (aşağıdaki öğrenilen madde). ~75 kredi.
+2. VO örtüşmesi: `teslim-denetim` 17/56 cümlenin karesi yok diyor
+   (K1-K2 · K19-K20 · K25 · K27-K30 · K32 · K45-K46 · K48-K50 · K53-K54).
+   Ölç: gerçekten eksik mi, yoksa sayaç yerleşim mi varsayıyor (bu repoda 11 kez oldu).
 
 ## MAMİ KARARLARI
 
@@ -40,6 +67,9 @@ Sıradaki adım doğrudan 56 karenin basımı; Mami'nin emri: **image'dan sonra 
 - 2026-08-07 — "zengin bir hayat, fakir değil, özel okullara yapıyoruz devlete değil."
 - 2026-08-07 — kahraman `@efe` değil **`@mira`**; önceki turun 56 karesi bu yüzden geçersiz.
 - 2026-08-07 — "usage çok hızlı eridi, paralel işte dayanmadı; birer videolar yapmak lazım."
+- 2026-08-07 — "Baştan kur ama orkestra kalsın. Mahvet o videoyu, orkestra güzel, show yap."
+- 2026-08-07 — K05 için: "bi adam vardı direkt pixar" · K07 için: "sağdaki plastik değil mi,
+  Mira'yı yanlış tasarladık." Tavan artık K05'tir.
 
 ## BU VİDEODA ÖĞRENİLENLER
 

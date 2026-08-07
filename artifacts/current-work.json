@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "phase": "uretim",
+  "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "iş açıldı — henüz ölçülmüş bir çıktı yok.",
-  "nextAction": "Enzim kilitlerini kapat (/mamilas-enzim).",
+  "lastCompleted": "İnşa bitti: video beyni + harcama kapısı canlı. Hayvanlarda teslim edildi ve kapandı. Denetleyici BAŞTAN kurulacak — S1 (K01-K08 orkestra) kalıyor, K09-K66 yeniden.",
+  "nextAction": "@mira plakasını sahne rejiminde yeniden bas (~75 kredi), sonra VO örtüşmesini ölç (17/56 iddiası)",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [],
@@ -19,7 +19,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-07T18:41:21.329Z",
+  "updatedAt": "2026-08-07T18:49:17.808Z",
   "updatedBy": "claude",
-  "baseCommit": "b87e38ac"
+  "baseCommit": "1ba8b128"
 }
