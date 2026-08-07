@@ -506,12 +506,31 @@ fi
 # altinda yasiyor; git onu tasimaz. Sapma commit aninda gorunur olsun diye burada.
 # Bloke ETMEZ: oturum icinde hafiza dogal olarak degisir, her commit'i durdurmak dogru degil.
 # CATISMA da bloke etmez ama farkli konusur — yon karari Mami'nindir, kapinin degil.
+# 🔴 2026-08-07 · ARTIK UYARMIYOR, KOSUYOR. Mami: "her sohbette diskte olmasi gerekiyor
+# diyorsun, lutfen su senkron sorununu coz." Olculdu: bu kapi HER commit'te uyariyordu,
+# tek bir oturumda 6 kez, ve kimse senkronu kosmuyordu — cunku uyari bir is degil, bir not.
+# `claude-sync.mjs` yapisi geregi GUVENLI: hicbir kosulda SILMEZ, yon tahmin ETMEZ, iki
+# taraf da degistiyse CATISMA deyip durur. Yani catisma yokken elle onay beklemek kazanilmis
+# bir ihtiyat degil, sadece bir aliskanlikti. Catismasiz sapma artik kendiliginden akar;
+# CATISMA hala durur ve Mami'ye gider — yon karari kapinin degil.
 if ! SYNC_OUT=$(node scripts/claude-sync.mjs --check 2>&1); then
   if printf '%s' "$SYNC_OUT" | grep -q 'ÇATIŞMA'; then
     printf '🔴 claude senkronu CATISMALI — iki makine ayni dosyayi ayri degistirmis.\n' >&2
     printf '   `node scripts/claude-sync.mjs` calistir, hangi surum dogru MAMI secer.\n' >&2
+    printf '   (Catismada hicbir sey yazilmaz; otomatik akis burada BILEREK durur.)\n' >&2
   else
-    printf '⚠️  claude senkronu sapmis — `node scripts/claude-sync.mjs` calistir.\n' >&2
+    if SYNC_RUN=$(node scripts/claude-sync.mjs 2>&1); then
+      # Repo tarafina dosya tasindiysa bu commit'e katilsin; yoksa bir sonraki commit'e
+      # kadar unstaged kalir ve "diskte var ama git'te yok" sinifini uretir.
+      if [ -d docs/ai/sync ] && ! git diff --quiet -- docs/ai/sync 2>/dev/null; then
+        git add docs/ai/sync 2>/dev/null || true
+        printf 'ℹ️  claude senkronu kendiliginden kosuldu; repo tarafi bu commit e eklendi.\n' >&2
+      else
+        printf 'ℹ️  claude senkronu kendiliginden kosuldu (canli taraf guncellendi).\n' >&2
+      fi
+    else
+      printf '⚠️  claude senkronu kosuldu ama tamamlanamadi — `node scripts/claude-sync.mjs` elle bak.\n' >&2
+    fi
   fi
 fi
 
