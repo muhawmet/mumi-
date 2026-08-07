@@ -69,16 +69,25 @@ Kare sayısı 56. ⚠ Kare sayısına dokunan her düzenlemede bu dosya yeniden 
 ===== 4 · MEKÂN =====
 
 @mutfak
-  Kış sabahı Anadolu ev mutfağı. Koyu taş tezgâh, üstünde un izi. Ocakta ÇİFT KATLI
-  ÇAYDANLIK (altta geniş su kabı, üstte daha küçük demlik — demliğin gövdesi cam ya da
-  emaye, içindeki suyun rengi GÖRÜNÜR). Yanında emaye süt tenceresi. Duvarda çalışan
-  ahşap kasalı saat. Rafta sırlı seramik kavanozlar ve emaye kutular. Pencere KIŞ SABAHINDA
-  BUĞULU — dışarısı görünmez. Masada ince belli cam bardak.
-  Işık: alçak kış güneşi buğulu camdan geçip mutfağa dağınık, yumuşak, sıcak bir dolgu
-  bırakır; sobanın ağzından gelen ikinci ve daha sıcak bir kaynak alttan yükselir.
-  🔴 SÜREKLİLİK — DEMLİK SAATİ: K01'de demlikteki su RENKSİZ; ders boyunca her mutfak
-     karesinde bir tık daha amber; K56'da dipten tepeye koyu amber. Kare yazan ajan
-     kendi karesinin zincirde nerede olduğunu yazar.
+  Kış sabahı Anadolu ev mutfağı. Koyu taş tezgâh, üstünde un izi. Döküm demir SOBA — kısa
+  ayaklı, yuvarlak ateş kapağı aralık, borusu duvara çıkıyor; tablası pişirme yüzeyi ve
+  üstünde emaye SÜT TENCERESİ duruyor. Yanındaki tek gözde emaye SU GÜĞÜMÜ (kaynayan su —
+  refleks karesi VO32 buna bağlı). Duvarda çalışan ahşap kasalı saat. Rafta sırlı seramik
+  kavanozlar ve emaye kutular (`UN` · `SÜT` · `TUZ` · `BAL`). Tezgâhta üstü bezle örtülü
+  EKMEK HAMURU. Pencere KIŞ SABAHINDA BUĞULU — dışarısı görünmez.
+  Işık: kardan dönen yüksek ve temiz gündüz ışığı buğulu camdan geçip odayı BAŞTAN AŞAĞI
+  aydınlatır — oda parlak ve neşelidir; sobanın ateşi yalnız alt köşede küçük bir sıcak
+  aksandır ve odayı KARARTMAZ.
+
+  🔴🔴 ÇAY YASAK (Mami, 2026-08-07: *"her yerde çay var, nefret ettiler"*). Demlik, çift
+     katlı çaydanlık, ince belli cam bardak, demlenmiş çay, içinde renkli sıvı olan cam
+     kap — hiçbiri hiçbir karede YOK. ENZIM KİLİT 11.3.
+  🔴 SÜREKLİLİK — HAMUR SAATİ (çayın yerine geçen ayna çapası): K01'de hamur YASSI, YOĞUN,
+     SIKI ve üstündeki bez düz yatıyor; ders boyunca her mutfak karesinde bir tık daha
+     kabarık; K56'da KUBBELİ ve bezi yukarı itmiş. Hamur yavaş kabarır, geri dönmez ve
+     gözle görülür — yani iç salgı bezlerinin "yavaş ve uzun süreli" dersinin görsel
+     kanıtıdır. Kare yazan ajan kendi karesinin zincirde nerede olduğunu yazar.
+  🔴 SÜREKLİLİK — ATEŞ: K01'de genç ve dik alevli; K56'da oturmuş kor, alev yok.
   🔴 SÜREKLİLİK — CAM: K01'de cam TAMAMEN buğulu. K33'te üstünde "REFLEKS" harfleri
      silinmiş. K56'da alt yarısı açılmış, karlı bahçe berrak görünür.
   Kareler: K01-K08, K19, K27-K34, K37-K38, K44-K50, K53-K56

@@ -35,3 +35,40 @@ KABUL EDİLENLER → REFERANSLAR/  (reddedilen turlar REFERANSLAR/_RED/ altında
    · demlikteki çayın rengi  (K01 renksiz → K56 koyu amber; demlenme zinciri)
    · pencerenin ne kadarının açıldığı  (K01 tamamen buğulu → K56 alt yarısı berrak)
    Bu dördü plakadan İTHAL EDİLMEZ; her kare kendi hâlini yazar.
+
+## MAGNIFIC REFERANS KİMLİKLERİ — 2026-08-07, yeniden yüklenmesin
+
+Beş referansın beşi de Magnific'te canlı. Kare basarken `references: [{type:"image",
+identifier:"<id>"}]` olarak geçilir; **referanssız kare basılmaz** (ölçülmüş kusur:
+referanssız basılan karede çocuk yetişkin geldi).
+
+| handle | Magnific identifier | kaynak |
+|---|---|---|
+| `@mira`    | `1lLXJFpr4r` | element rafından yüklendi (elements/mira.png) |
+| `@kedi`    | `Tdp7tz8VNR` | element rafından yüklendi (elements/kedi.png) |
+| `@maket`   | `yiNulFEPW9` | bu projede basıldı, 3. tur |
+| `@mutfak`  | `CqFntzNEEy` | bu projede basıldı, 4. tur |
+| `@koridor` | `cpMSNtx0eP` | bu projede basıldı, 2. tur |
+
+⚠ Magnific `library` boş olduğu için @handle süreklilik hattı MCP'den kurulmuyor —
+referans **creation identifier** olarak geçilir, kütüphane kaydı olarak değil.
+
+## 2026-08-07 · @mutfak YENİDEN BASILDI — ÇAY SÖKÜLDÜ (5. tur)
+Mami: *"şu çaydan da kurtul, her yerde çay var, nefret ettiler."* Eski plaka (v4b) ocakta
+çift katlı çaydanlık ve masada ince belli bardak taşıyordu — yani çay yasağı prompt'la
+değil REFERANSLA savaşıyordu ve her mutfak karesine geri ithal ediliyordu (K01'de ölçüldü).
+Yeni plaka: tek gövdeli emaye su ibriği · sobada süt tenceresi · tezgâhta bezle örtülü
+YASSI HAMUR (ayna çapası) · UN kutusu, kepçe, oklava · oda aydınlık · çay sıfır.
+🔴 YENİ MAGNIFIC KİMLİĞİ: `@mutfak` → **IfvRoAEtvE**  (eski CqFntzNEEy ARTIK KULLANILMAZ)
+
+## 2026-08-07 · ZENGİN DÜNYA — @mutfak ve @koridor YENİDEN BASILDI
+Mami: *"çok önemli — zengin bir hayat, fakir değil. Özel okullara yapıyoruz, devlete değil!"*
+ve *"vivid olsun, gerçek Pixar filmi gibi; Hayvanlarda Üreme temel olabilir."*
+Eski dünya köy eviydi (soba, çentikli emaye, aşınmış kenar) ve ışık düzdü.
+Yeni: honlanmış taş tezgâh · masif meşe · pirinç · bakır · cam kapaklı çağdaş soba ·
+tasarım sarkıt · geniş meşe parkeli antre · kilim. Işık YÖNLÜ ve sert, gölgeler renkli
+ve derin, palet doygun (KİLİT 12 + 12.1).
+🔴 GEÇERLİ MAGNIFIC KİMLİKLERİ:
+   @mutfak  → **KLxdlIwkqp**   (IfvRoAEtvE ve CqFntzNEEy ARTIK KULLANILMAZ)
+   @koridor → **bx1pLot5Y2**   (cpMSNtx0eP ARTIK KULLANILMAZ)
+   @mira 1lLXJFpr4r · @kedi Tdp7tz8VNR · @maket yiNulFEPW9 (değişmedi)

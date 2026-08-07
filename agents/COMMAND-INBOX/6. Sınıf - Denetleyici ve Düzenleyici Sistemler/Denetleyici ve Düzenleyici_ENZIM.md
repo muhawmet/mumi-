@@ -325,7 +325,129 @@ tek-kişi ve KİLİT 7'nin şema yasakları aynen durur.
 
 ---
 
+## 🔴🔴🔴 KİLİT 12 — ZENGİN HAYAT (2026-08-07, Mami emri — DÜNYAYI DEĞİŞTİRİR)
+
+> Mami: *"çok önemli — **zengin bir hayat, fakir değil.** Özel okullara yapıyoruz, devlete değil!"*
+
+**Bu kilit @mutfak ve @koridor'un kimliğini EZER.** Kurduğumuz dünya köy eviydi: sobalı,
+**çentikli** emaye, **aşınmış** kenar, **solmuş** çizgi, kapıda **küçük gelmiş eski** ayakkabı.
+Hepsi *"mütevazı"* okuyor. Müşteri özel okul: kadraj **özenilmiş bir ev** göstermeli.
+
+🔴 **YENİ KİMLİK — varlıklı, çağdaş, bakımlı bir Türk evi.** Kırsal değil, nostaljik değil,
+yoksul değil. Geniş, aydınlık, iyi tasarlanmış, iyi bakılmış.
+
+| Eskiydi (SİLİNDİ) | Yerine |
+|---|---|
+| çentikli/aşınmış emaye, yıpranmış kenar | **kusursuz bakımlı** malzeme: honlanmış mermer, saten pirinç, dövme bakır |
+| kaba taş tezgâh, boya dökülmüş pervaz | **honlanmış doğal taş** tezgâh, **el işi meşe** dolap, saten cila |
+| döküm soba (köy sobası) | **cam kapaklı çağdaş odun sobası** — varlıklı evde tasarım nesnesidir, ateş yine görünür |
+| çıplak ampul, sade raf | **tasarım sarkıt aydınlatma**, açık raflarda seçilmiş el yapımı seramik |
+| dar loş koridor | **geniş, aydınlık antre** — meşe parke, iyi bir halı, çerçeveli bir baskı |
+| kapıda "küçük gelmiş, ökçesi çökmüş eski" ayakkabı | **bakımlı** ayakkabılar, biri gözle görülür biçimde **küçük** — büyümenin kanıtı yıpranmayla değil **BOYUTLA** verilir |
+
+🔴 **YASAK SIFATLAR (mekân ve eşya için):** `worn` · `chipped` · `scuffed` · `faded` ·
+`battered` · `humble` · `rustic` · `peasant` · `village` · `shabby` · `cracked paint` ·
+`collapsed heel` · `threadbare`.
+🔴 **YERİNE OLUMLU YAZIM:** `honed` · `satin` · `well-kept` · `finely made` · `hand-thrown` ·
+`solid oak` · `brushed brass` · `generous` · `light-filled`.
+
+⚠ **DEĞİŞMEYENLER:** kış sabahı · buğulu pencere · kardan dönen ışık · **hamur aynası**
+(zengin evde de ekmek yapılır, hatta daha iyi bir kâsede) · ateş aynası (artık cam kapaklı
+sobada) · pervazdaki boy çizgileri (varlıklı evde de aile geleneğidir) · kavram ışığının
+davranışı · çocuk güvenliği · öğretim doğruluğu · tek-kişi kilidi.
+⚠ Zenginlik **gösteriş değil, kalitedir**: marka, logo, lüks etiketi, altın varak yok —
+malzeme iyi, ışık bol, mekân geniş, her şey bakımlı.
+
+### 12.1 — VIVID: "gerçek Pixar filmi gibi" (Mami, 2026-08-07 · temel: `Hayvanlarda Üreme`)
+
+Mami temel olarak `6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme/images/` klasörünü verdi.
+O kareler gözle açıldı (K01 kümes, K20 su altı) ve **vivid'in ne olduğu ölçüldü.**
+
+🔴 **KUSUR YİNE BENİM KURALIMDAYDI.** KİLİT 4ø *"yumuşak, eşit, dağınık dolgu"* diyor —
+o cümle odayı aydınlatıyor ama **dramı öldürüyor**; sonuç soluk, düz, ilaç prospektüsü gibi
+bir kare. Aydınlık ≠ düz. **Vivid = KARANLIK DEĞİL, YÖNLÜ.**
+
+Hayvanlarda karelerinin ölçülen dört imzası — her karede aranacak:
+1. **GÜÇLÜ YÖNLÜ KEY.** Tek, sert, açıkça bir yönden gelen ışık; yüzeylerde uzun ve net
+   gölgeler bırakıyor. Kümes karesinde alçak altın güneş yerdeki her saman çöpünün kendi
+   gölgesini çiziyor. Yumuşak eşit dolgu **tek başına asla yeterli değil.**
+2. **DOYGUN PALET.** Kırmızı gerçekten kırmızı, denim gerçekten mavi, saman gerçekten altın.
+   Soluk, pastel, kırık ton yok. Gölgeler **renkli ve derin** — dolgun indigo, siyah çukur değil
+   ama **açık gri de değil.**
+3. **KADRAJDA ÇOK CANLI ŞEY.** Kümes karesinde beş tane sayılıyor: tavuk · kedi · iki yavru ·
+   havada asılı tüy · rüzgârdaki otlar. Kare **nefes alıyor**, poz vermiyor.
+4. **GERÇEK DERİNLİK.** Ön planda odak dışı somut bir kütle (direk, ot, kavanoz omzu),
+   ortada keskin özne, arkada okunabilir ama yumuşak bir mekân. Üç düzlem de **dolu.**
+
+🔴 Yazarken sınama: *"bu kareyi Hayvanlarda'nın K01'inin yanına koysam, aynı filmden mi
+görünür?"* Soluk ve düzse **hayır** — key'i sertleştir, paleti doygunlaştır, canlı ekle.
+
+## 🔴🔴 KİLİT 11 — ALTIN STANDARDA GÖRE DÜZELTME (2026-08-07, dört demo karesi reddedildi)
+
+Mami dört demo karesine baktı: *"çok kötüler 4'ü de, ne alaka"* · *"altınlarımıza bak, adam
+akıllı yaz"* · *"şu çaydan da kurtul, her yerde çay var, nefret ettiler."*
+`Hücre` karelerine (K14 · K28 · K48) **gözle** bakıldı ve fark ölçüldü. **Bu kilit,
+KİLİT 9 ve KİLİT 10'un ilgili maddelerini EZER.**
+
+### 11.1 — MİRA KAREDEDİR VE İŞ YAPAR (KİLİT 10'un kotası SÖKÜLDÜ)
+
+**Ölçülen kusur:** KİLİT 10 "Mira en fazla 11 karede" dedi; sonuç 45 karede **insansız oda
+fotoğrafı** oldu. Mami'nin sözü *"hep uzaktan ekranın tamamını kaplayan Mira olmasın"*
+**"Mira'yı çıkar" değil, "hep AYNI mesafeden çekme" demekti.** Yanlış okuyan bendim.
+
+Altın kare (Hücre K14) şudur: **çocuk kadrajın içinde ve YAKIN · gözü işin üstünde ·
+eli nesnenin üstünde · masa hikâye nesneleriyle DOLU · kenarı odak dışı ikinci bir nesne
+kapatıyor · kamera onun hizasında.** Bir çocuk mutfak masasında bilim yapıyor.
+
+🔴 **Yeni taban: 56 karenin EN AZ 30'unda Mira vardır.** Üst sınır yok. Kotanın kendisi kalktı.
+🔴 Değişmesi gereken **mesafe ve açıdır, varlığı değil**: gözünün hizasından makro · omzunun
+   üstünden · elinin altından · masanın yüzeyinden · onun tuttuğu nesnenin içinden.
+🔴 **Elleri kadrajda olur ve BİR ŞEY TUTAR.** Boş duran, seyreden, gülümseyen Mira yasak —
+   ama bu "kadrajdan çıksın" demek değil, "işe soksun" demek.
+🔴 **Masa DOLUDUR.** Altın karede tek kadrajda: mikroskop, kesilmiş soğan yarımları, tahta,
+   bıçak, lam kutusu, lam, bardak, ikinci alet. Cılız kare "güzel"dir; **yoğun kare
+   inandırıcıdır.**
+
+### 11.2 — HÜCRE DÜNYASI KOYU VE MÜCEVHER GİBİDİR (KİLİT 4ø orada GEÇERSİZ)
+
+**Ölçülen kusur:** "oda aydınlık" tabanını hücre dünyasına da uyguladım; K11 **süt gibi mor
+bir tünel** çıktı — derinliği, kontrastı ve dramı yok.
+
+Altın kareler tersini yapıyor: `Hücre` K28 ve K48'de iç dünya **koyu, derin, yüksek kontrastlı**
+ve içinde **tek bir parlayan aksan** var (turuncu çekirdek). Malzeme **makro-gerçek**: cam gibi
+kesecikler, gerçek kırılma, asılı toz zerreleri, ıslak yüzey parlaması.
+
+🔴 **KİLİT 4ø (oda aydınlık) YALNIZ MUTFAK VE KORİDOR İÇİNDİR.** Hücre karelerinde geçersizdir.
+🔴 Hücre karesi: **derin koyu alan + tek sıcak parlayan kütle + cam/sıvı makro malzeme.**
+   Pastel sis, süt gibi mor, düz mor tünel **yasak.**
+🔴 Ölçek karşıtlığı şart: kadrajda **çok büyük bir kütle** ile **çok küçük tanecikler** aynı
+   anda bulunur. Altın karede bu, dev çekirdek ile binlerce ribozom tanesidir.
+
+### 11.3 — ÇAY YASAK (Mami: *"nefret ettiler"*)
+
+🔴 **Hiçbir karede çay, çay bardağı, demlik içinde renkli sıvı, demlenme YOKTUR** — öğretimde
+yeri olmadığı sürece. Bu derste yeri yok: çay yalnız dekordu.
+
+🔴 **AYNA KİLİDİ YENİDEN KURULDU — çay değil HAMUR.** VO 19 zaten *"Ekmek kokusunu alıp
+acıktığını fark etmesi"* diyor, yani ekmek senaryonun içinde. Hamur **yavaş kabarır, geri
+dönmez, gözle görülür** — iç salgı bezlerinin *"yavaş ve uzun süreli"* dersinin görsel kanıtı.
+Çay dekordu; hamur **öğretir.**
+
+| | K01 (açılış) | K56 (kapanış) |
+|---|---|---|
+| tezgâhtaki hamur | **yassı, yoğun, sıkı** bir topak, üstündeki bez düz duruyor | **kabarmış, kubbeli**, bezi yukarı itmiş, kenarından kaba dokusu görünüyor |
+| pencere camı | **tamamen buğulu**, dışarısı hiç görünmüyor | alt yarısı **açılmış**, karlı bahçe berrak |
+| sobanın ateşi | **genç ve dik alevli**, kapak aralığından canlı turuncu | **oturmuş kor**, alev yok, derin ve sakin kırmızı |
+
+Üçü de zamanın geçtiğini gösterir ve üçü de odanın kendi fiziğidir.
+⚠ Eski çay tabanlı ayna satırları (KİLİT 3'teki tablo) **GEÇERSİZDİR**; bu tablo kazanır.
+🔴 `ÇAY` yazısı da düşer — yerine `UN` · `SÜT` · `TUZ` gibi mutfağın kendi kutuları yazılır.
+
 ## 9. KİLİT 10 — KADRAJ, ÖLÇEK VE KAMERA (2026-08-07, Mami emri)
+
+⚠ **Bu kilidin ölçek TABLOSU ve "Mira en fazla 11 kare" kotası KİLİT 11.1 tarafından
+SÖKÜLDÜ.** Aşağıdaki "iki ardışık karede aynı ölçek olmaz", "her karenin bir bakış açısı
+kararı vardır", "ön plan kirliliği" ve "Mira seyirci değil" maddeleri **aynen geçerlidir.**
 
 > *"hep uzaktan ekranın tamamını kaplayan Mira falan olmasın"* · *"kamera heyecanlı"* ·
 > *"film gibi yapıyoruz, exclusive high-end cinematic ama çok öğretici"* ·
