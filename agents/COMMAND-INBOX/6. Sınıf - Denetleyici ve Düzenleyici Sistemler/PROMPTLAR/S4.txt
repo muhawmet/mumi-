@@ -1,0 +1,114 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 4 · START FRAME PROMPT'LARI (K25–K33)
+=========================================================================
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 (Magnific) · Motion: Kling 3.0
+Kilit kaynağı: Denetleyici ve Düzenleyici_ENZIM.md · VO: ..._SENARYO.txt (K25 = 25. cümle)
+Mihenk: images/1.png · images/2.png (güçlü yönlü key, doygun palet, üç düzlemli derinlik)
+
+MEKÂN: K25–K32 Mira'nın geniş, aydınlık çalışma odası (özel okul standardı) · K33 taş teras
+REFERANS: `references` alanına YALNIZ @mira (1lLXJFpr4r) — K25, K27, K28, K30, K31, K32, K33.
+  K26 ve K29 referanssız (maket close-up). Maket ASLA referans olarak verilmez, YAZIYLA gelir.
+IŞIK SÖZLEŞMESİ: oda anahtarı = güçlü SOĞUK gökışığı, sol pencereden, uzun sert gölge.
+  Kavram ışığı = sıcak-altın, SERT kenarlı, aynı anda TEK maket parçasında, tene ASLA değmez.
+  K26–K28 beyin ışıklı · K29–K32 beyincik ışıklı · K33 kavram ışığı yok.
+YAZI: bu sekansta ekran yazısı YOK — pirinç plaka her karede ya kadraj dışında ya odak dışında.
+
+=========================================================================
+
+# K25 — "Mira masadaki maketi kendine doğru çevirdi."
+FİKİR: Öğrenci seyirci değil; nesneyi kendi tarafına çeviriyor — dersin sahibi o.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 40mm lens at f/2.8, held just above the desktop. The girl is framed from the waist up, nothing below the desk edge is visible; both her hands are down on the polished oak base of a teaching model and she has just rotated it a quarter turn toward herself, her fingers still spread on the wood, her mouth closed, her whole attention down on the object. Her skin stays matte with low specular. The model is a cream-white sculpted bust of a head and shoulders whose face is calm and completely closed — smoothly moulded plastic features, softly sculpted closed lids, a quiet closed mouth, no bare skull and no exposed teeth — the top of the cranium lifted away like a lid so a rose-pink brain sits open in it, a small sage-green cerebellum tucked beneath the back of that brain, a warm yellow-ochre medulla descending from it and continuing as a slender spinal cord down behind the neck; the brass plaque on the oak base is turned away from camera and unreadable. Strong cool late-afternoon skylight pours from a tall window at screen left, laying one long hard shadow of the model across the desk and a second across the girl's forearm. A large leafy plant stands at the window; dust drifts through the beam. Out of focus in the near foreground, the corner of a stack of plain unlettered cloth-bound books blocks the bottom right. Behind her the room runs deep — high ceiling, pale wall, a second window, an open doorway.
+
+STYLE: 3D CGI feature-film render, warm stylised Pixar shape language, tactile oak and matte plastic, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong cool skylight from screen left; cream and rose-pink model, saturated indigo shadow, honey oak, warm matte skin.
+NEGATIVE: a bare skull or exposed teeth on the model, warm gold glow on any part of the model, on-screen text or lettering, a small dim modest room.
+-----
+-------------------------------------------------------------------------
+
+# K26 — "En üstteki büyük kısım beyindir."
+FİKİR: Tek parça ışıklı — sinir ışığı beynin TEK kenarına oturur ve orada biter.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 100mm lens at f/2.8, very close and slightly above, the upper half of the teaching model filling the frame. The rose-pink brain sits open in the lifted cream-white cranium, its folds soft and matte, its rounded surface tactile. A single hard-edged warm gold line lies along the top ridge of the brain only, sharp as a drawn edge, and where the ridge turns down the gold stops instantly — no halo, no bloom, nothing spills onto the cream cranium a centimetre away, and no reflection of it appears anywhere on the desk. Beneath and behind, the small sage-green cerebellum, the yellow-ochre medulla and the pale spinal cord are plainly visible and are ordinary unlit matte plastic in cool shadow. The sculpted face below is calm and completely closed, softly moulded, no bare skull and no exposed teeth. Strong cool skylight from screen left models the whole bust and throws one long hard shadow out of frame to the right. Behind, the room falls away into soft blur — a bright tall window, a leafy plant, the warm blur of a wooden shelf. Dust drifts in the beam. Out of focus at the very bottom edge, the girl's fingertips rest on the oak base.
+
+STYLE: 3D CGI feature-film render, macro-close tactile plastic, crisp hard-edge specular, cinematic bokeh.
+LIGHT AND PALETTE: Cool skylight key plus one hard warm gold edge on the brain alone; rose pink, cream, saturated indigo shadow.
+NEGATIVE: gold light on the cerebellum or medulla, a soft glow or halo around the brain, arrows or callout labels, a bare skull or exposed teeth.
+-----
+-------------------------------------------------------------------------
+
+# K27 — "Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir."
+FİKİR: Kavram nesneyle değil, o kızın masasında birikmiş İZLERLE anlatılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 35mm lens at f/2.8, from the side of the desk. The girl is framed from the waist up, nothing below the desk edge is visible; she leans on one elbow with her chin near her knuckles, mouth closed, eyes on the model, and her other hand rests flat on an open sketchbook covered in loose pencil marks and small drawings with no readable words. Her skin stays matte with low specular. Spread across the desk in front of her, worn smooth by use: a pair of good over-ear headphones lying on their side, a shallow dish of small collected stones and shells, and three plain unlettered cloth-bound books with a pencil holding a place. The teaching model stands beyond them — cream-white sculpted bust, calm closed moulded face, no bare skull and no exposed teeth, lifted cranium, rose-pink brain, sage-green cerebellum beneath its back, yellow-ochre medulla running down into a pale spinal cord — and one hard-edged warm gold line lies along the top ridge of the brain only, stopping dead at the turn, touching nothing else, never reaching her hands or her face. Strong cool skylight from the tall window at screen left rakes across the desk and lays long hard shadows of every object toward the camera. The window is open a hand's width and a light curtain lifts. Deep behind, the wide room continues past a low bookshelf to a bright far wall.
+
+STYLE: 3D CGI feature-film render, warm stylised Pixar shape language, lived-in tactile desk surfaces, cinematic depth.
+LIGHT AND PALETTE: Strong cool skylight from screen left, one hard warm gold edge on the brain; honey oak, cream, rose pink, saturated indigo shadow.
+NEGATIVE: readable words or lettering in the sketchbook or on the book spines, gold light on the girl's skin, a thought bubble or floating icons, a cramped modest room.
+-----
+-------------------------------------------------------------------------
+
+# K28 — "Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır."
+FİKİR: Üç iş de kaynağın kendi dünyasında duruyor: bardak, meyve, üstünden çıkarılmış hırka.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 50mm lens at f/2.5, slightly low across the desktop. The girl is framed from the waist up, nothing below the desk edge is visible; she has just picked up a tall glass of water, half of it gone, and holds it near her chest without drinking, mouth closed, still looking at the model. Her skin stays matte with low specular. A soft knitted cardigan has been pushed off her shoulders and hangs over the back of the leather chair behind her; the tall window at screen left stands open and the curtain lifts inward. On the desk beside her elbow, a small plate holds a peeled tangerine broken into segments and its curl of peel. The teaching model stands across the desk — cream-white sculpted bust, calm closed moulded face, no bare skull and no exposed teeth, lifted cranium, rose-pink brain, sage-green cerebellum beneath its back, yellow-ochre medulla running down into a pale spinal cord — with one hard-edged warm gold line along the top ridge of the brain only, stopping dead at the turn, casting no halo and never touching her hands or her face. Strong cool skylight rakes the room and puts a long hard shadow of the glass across the oak. Water refracts a sharp cold caustic onto the desktop. Deep behind, the room opens toward a second window and a bright far wall.
+
+STYLE: 3D CGI feature-film render, tactile glass and knit and citrus peel, crisp refraction, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong cool skylight from screen left, one hard warm gold edge on the brain; orange citrus accent, honey oak, saturated indigo shadow.
+NEGATIVE: a kitchen, a stove or a cooking pot, gold light on the girl's skin, worn or patched clothing and shabby furniture.
+-----
+-------------------------------------------------------------------------
+
+# K29 — "Arka alttaki küçük kısım ise beyinciktir."
+FİKİR: Işık el değiştiriyor — beyin sönüyor, beyincik tek başına kalıyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 100mm lens at f/2.8, close and from behind and slightly below the model so the underside of the brain and the small structure beneath it are the subject. The rose-pink brain fills the upper frame as an ordinary unlit matte plastic mass in cool shadow, its folds soft and quiet. Tucked directly beneath the back of it sits the small sage-green cerebellum, densely ridged with fine parallel grooves, and one hard-edged warm gold line lies along its lower rear contour only — sharp, precise, stopping dead where the contour turns, no halo, no bloom, no spill onto the pink above it and no reflection on the oak below. Below the cerebellum the warm yellow-ochre medulla descends and continues as a slender pale spinal cord, both unlit matte plastic. The cream-white bust and its calm closed moulded face are turned mostly away, no bare skull and no exposed teeth. Strong cool skylight from screen left rims the whole model and throws one long hard shadow across the desk. Behind, the bright room dissolves into warm blur — the window, the leafy plant, a wooden shelf. Dust drifts. Out of focus at the near bottom corner, the edge of the polished oak base.
+
+STYLE: 3D CGI feature-film render, macro-close ridged plastic texture, crisp hard-edge specular, deep cinematic bokeh.
+LIGHT AND PALETTE: Cool skylight key plus one hard warm gold edge on the cerebellum alone; sage green, dull rose pink, saturated indigo shadow.
+NEGATIVE: gold light on the brain or the medulla, a glow or halo around the cerebellum, arrows or callout labels, a bare skull or exposed teeth.
+-----
+-------------------------------------------------------------------------
+
+# K30 — "Beyincik kaslarımızın uyumlu çalışmasını sağlar."
+FİKİR: Uyum bir şema değil, elin başardığı bir şeydir — kule ayakta, eller çekilmiş.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 50mm lens at f/2.5, low on the desktop so the tower rises against the bright window. The girl is framed from the chest up, nothing below the desk edge is visible; both her hands are lifted open and still in the air a few centimetres apart, fingers spread, just withdrawn, and in between them stands a tall slender tower of small polished wooden blocks, perfectly upright and untouched, the topmost block sitting slightly proud of the one below it. Her mouth is closed and she is watching the tower, delighted and completely still. Her skin stays matte with low specular. Strong cool skylight from the tall window at screen left throws the tower's long hard shadow far across the oak. Beyond the tower, on the same desk, the teaching model stands in three-quarter blur — cream-white sculpted bust, calm closed moulded face, no bare skull and no exposed teeth, lifted cranium, rose-pink brain, small sage-green cerebellum beneath its back, yellow-ochre medulla into a pale spinal cord — and one hard-edged warm gold line sits on the lower rear contour of the sage-green cerebellum alone, stopping dead at the turn, spilling onto nothing and never reaching her skin. A leafy plant moves faintly at the window; dust drifts through the beam. Deep behind, the wide room and a bright far wall.
+
+STYLE: 3D CGI feature-film render, warm stylised Pixar shape language, polished wood and matte plastic, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong cool skylight from screen left, one hard warm gold edge on the cerebellum; honey oak, cream, sage green, saturated indigo shadow.
+NEGATIVE: the tower falling or blurred with motion, gold light on the girl's hands, arrows or motion lines, a cramped modest room.
+-----
+-------------------------------------------------------------------------
+
+# K31 — "Dengede kalmamızı da beyincik yönetir."
+FİKİR: Kare denemenin ÖNCESİ — sandalye itilmiş, zemin boş, karar verilmiş.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 28mm wide lens at f/4, from across the room at chest height so the whole space reads. The girl stands beside the desk, framed from the knees up, the leather chair pushed back behind her, one hand still flat on the oak desktop and her weight already shifted onto one leg, her mouth closed, her eyes down on the wide clear stretch of polished oak floor in front of her. Her skin stays matte with low specular. The room is large, high-ceilinged and well kept: a tall window floor to ceiling at screen left, a low bookshelf of plain unlettered cloth-bound books, a big leafy potted plant, a woven rug pushed aside to clear the floor. Strong cool late-afternoon skylight cuts in from the window and lays long hard shadows of the girl, the chair and the plant across the boards. On the desk behind her the teaching model stands small in the mid-ground — cream-white sculpted bust, calm closed moulded face, no bare skull and no exposed teeth, lifted cranium, rose-pink brain, small sage-green cerebellum beneath its back, yellow-ochre medulla into a pale spinal cord — and a single hard-edged warm gold line still sits on the cerebellum's lower rear contour alone, tiny at this distance, touching nothing else. At the near edge, out of focus, the corner of a broad armchair blocks the bottom left. Dust drifts through the beam.
+
+STYLE: 3D CGI feature-film render, wide interior establishing shot, warm stylised Pixar shape language, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong cool skylight from screen left, long hard floor shadows; honey oak floor, cream walls, saturated indigo shadow, one tiny warm gold accent.
+NEGATIVE: a small dim modest room, worn or patched furniture, gold light on the girl, on-screen text or lettering.
+-----
+-------------------------------------------------------------------------
+
+# K32 — "Mira tek ayak üstünde durdu ve sallanmadı."
+FİKİR: Başarı anı — sallanma yok, gövde dik, gölge zeminde tek ayakla buluşuyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 35mm lens at f/4, from slightly below standing height across the clear floor. The girl is shown as a full figure from head to feet, standing balanced on one foot in the middle of the wide polished oak floor of her own large bright room, the raised foot lifted just clear of the boards, both arms out and low and perfectly steady, her spine upright, her mouth closed and her chin lifted with quiet satisfaction. Her skin stays matte with low specular; nothing about her is blurred or leaning. Strong cool late-afternoon skylight cuts in from the tall floor-to-ceiling window at screen left and lays one long hard shadow from her single planted foot right across the boards toward the camera. The room around her is unmistakably a real lived-in place, not a studio: the desk with the teaching model on it in the mid-ground at screen right, a low bookshelf of plain unlettered cloth-bound books, a big leafy potted plant at the window, a woven rug pushed aside, a high pale wall and a second window carrying the space deeper. On the desk the model's small sage-green cerebellum still holds a single hard-edged warm gold line on its lower rear contour, tiny and precise at this distance. Out of focus in the near foreground, the arm of a broad armchair cuts across the bottom edge. Dust drifts through the beam.
+
+STYLE: 3D CGI feature-film render, full-figure cinematic staging, warm stylised Pixar shape language, tactile oak and fabric.
+LIGHT AND PALETTE: Strong cool skylight from screen left, one long hard floor shadow; honey oak, cream walls, saturated indigo shadow.
+NEGATIVE: a plain white or empty studio background, the figure wobbling or motion-blurred, gold light on the girl, worn shabby furnishings.
+-----
+-------------------------------------------------------------------------
+
+# K33 — "Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz."
+FİKİR: Kimse binmiyor — bisiklet duruyor, kız yanında; anlatılan şey BECERİ, olay değil.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 40mm lens at f/2.8, held low near the paving so the bicycle reads tall. On a broad stone terrace outside a large modern house, a good new bicycle stands still and upright on its kickstand, nobody on it and nobody moving — clean matte frame, taut spokes, unworn tyres, both wheels stationary and firmly on the stone. The girl stands beside it, framed from the knees up, one hand resting flat on the saddle and a helmet held loosely under her other arm, her feet planted on the paving, her mouth closed, her face turned up and out of frame toward the light with an easy pleased expression. Her skin stays matte with low specular. Strong warm late-afternoon sun comes in low from screen right and throws the long hard shadows of the bicycle and the girl together across the pale stone. In the middle ground the terrace runs to a clipped hedge and wide glass doors; beyond them the deep background opens onto tall trees and a bright sky. Leaves move in the hedge and two small birds sit on its top. Out of focus at the near bottom corner, a broad terracotta planter of green herbs cuts into frame.
+
+STYLE: 3D CGI feature-film render, warm stylised Pixar shape language, tactile stone and matte metal, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong warm low sun from screen right, long hard stone shadows; pale limestone, deep hedge green, saturated indigo shadow.
+NEGATIVE: anyone riding or sitting on the bicycle, wheels spinning or motion blur, a rusty or battered bicycle and a narrow shabby yard, on-screen text or lettering.
+-----
+-------------------------------------------------------------------------

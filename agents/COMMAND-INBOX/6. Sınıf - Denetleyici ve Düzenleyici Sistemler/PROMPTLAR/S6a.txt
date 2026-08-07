@@ -1,0 +1,162 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 6a · START FRAME PROMPT'LARI (K45–K54)
+=========================================================================
+Konu bloğu: hormon nedir · kana karışması · hipofiz (büyüme) · tiroit · pankreas (şeker)
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 (Magnific) · Motion: Kling 3.0
+Kilit kaynağı: Denetleyici ve Düzenleyici_ENZIM.md · VO: SENARYO 45–54, birebir.
+Görsel mihenk: images/20.png (koyu, mücevher gibi, malzemenin İÇİNDE yaşayan ışık,
+camsı kesecikler, gerçek kırılma, zerre alanı, ölçek karşıtlığı) + images/1-2.png (güçlü
+yönlü key, doygun palet).
+
+REFERANS: `references` alanına YALNIZ `@mira` (1lLXJFpr4r), yalnız K45 ve K50'de.
+Mekân/nesne plakası referans olarak GEÇİLMEZ (OLCULENLER 17). @mira TARİF EDİLMEZ.
+
+🔴 HORMON IŞIĞI — BU SEKANSIN OMURGASI (K45→K54 ARDIŞIK BİRİKME)
+Sinir ışığı sert kenarlıydı ve iz bırakmıyordu. Hormon ışığının KENARI YOKTUR: malzemenin
+içinde yaşar, dışa doğru sınırsız zayıflar ve KALIR. Her kare, bir öncekinin hâlesini daha
+GENİŞ ve daha SOLUK olarak taşır. Merdiven:
+  K45 → kaynağı olmayan tek bir ilk sıcaklık, hâle yok
+  K46 → ilk kor + arkasında ondan daha geniş, daha soluk tek eski yıkanma
+  K47 → iki eski yıkanma, ikisi de daha geniş ve daha soluk
+  K48 → eski yıkanmalar tek bir geniş çok soluk tona kaynadı, ortam tümüyle hafif ısındı
+  K49 → en parlak iç yanma + arkada geniş soluk alanlar
+  K50 → sıcaklık odanın uzak yarısını dolduruyor, hâlâ kenarsız, DUVARIN İÇİNDE
+  K51 → alan artık her kesenin içinde, aralarındaki sıvı da soluk sıcak
+  K52 → bütün kare hafif amber, hiçbir yerde kenar yok
+  K53 → en geniş hâlde, kristal alanı boydan boya çok soluk sıcak
+  K54 → hacmin tamamı sıcak; en soluk, en geniş hâl
+🔴 KANAL ÇİZİLMEZ — boru, hat, kanal, ok, akış yolu, ışık ipliği hiçbir karede YOK.
+
+🔴 ÇOCUK GÜVENLİĞİ: kan, damar kesiti, doku katmanı, organ kesiti HİÇBİR karede çizilmez.
+Beden içi yalnız hücre/moleküler ölçekte, soyut ama MADDİ olarak açılır: kırılan cam,
+asılı kesecikler, içeriden yanan kütle, zerre alanı. K51'de tene ışık değmesi imkânsız —
+karede insan teni yok.
+
+🔴 ŞEMA YASAĞI GÖVDENİN İLK CÜMLESİNDE (ölçüldü: sonda olunca motor diyagram bastı).
+
+ÖLÇEK MERDİVENİ — ardışık aynı ölçek yok:
+  K45 oda/orta · K46 mikro-geniş · K47 mikro-makro · K48 mikro-uçsuz · K49 mikro-mimari ·
+  K50 oda/orta · K51 mikro-yakın · K52 mikro-ekstrem makro · K53 mikro-ufuk · K54 mikro-diyagonal
+
+=========================================================================
+
+-------------------------------------------------------------------------
+
+# K45 — "Peki daha yavaş ve uzun süren işleri kim yönetir?"
+FİKİR: Hızlı elektrik dünyası sustu; odanın havasında kaynağı olmayan yavaş bir sıcaklık başlıyor.
+REFERANS: @mira
+-----
+This is a lit photographic scene of real things in a real room, not a diagram and not an illustration. 35mm lens at f/2.2, camera at desk height on the far side of a large modern room. `@mira` sits at her own wide oak-topped study desk, framed from mid-chest up so nothing below the chest enters frame, both hands flat and completely still on the desk, lips closed, her gaze carried away from camera toward the far end of the room. One hard slab of late-afternoon sun enters through a tall window at the left and crosses the room diagonally, drawing a long crisp shadow of the window frame across the pale wide-plank floor and leaving the right half of the room in deep saturated indigo. In the far third of the room the air itself holds a faint amber warmth that has no source, no lamp, no beam and no edge — it lives inside the air and thins outward until it can no longer be traced, and it touches no skin. Foreground: the out-of-focus brass arm of a desk lamp and the corner of a stack of hardcover books crossing the near edge. Midground: the girl, sharp. Background: a low walnut bookshelf, a tall potted fig whose leaves lift, a linen curtain breathing, dust turning inside the sunbeam. The room is broad, well-built and cared for.
+
+STYLE: 3D CGI RenderMan style, cinematic animation, soft stylized realism, matte porous skin.
+LIGHT AND PALETTE: single hard low sun from the left, deep saturated indigo shadow, warm oak and amber, cool window blue.
+NEGATIVE: labels, arrows, callout lines or any on-screen text; flat even fill light; glowing outline or rim halo around the girl; worn, chipped or shabby furniture.
+-----
+-------------------------------------------------------------------------
+
+# K46 — "Onları iç salgı bezleri üstlenir."
+FİKİR: İlk iniş — karanlık mücevher hacminde, içeriden yanan kütleler farklı uzaklıklarda asılı.
+REFERANS: yok
+-----
+This is a lit scene of real material photographed inside a liquid world, not a diagram, not a chart and not a medical illustration. Dark and jewel-like: a deep indigo volume, real glass, real fluid, real refraction. 50mm macro at f/2.8. Several rounded masses hang at different distances; the nearest is large and slow, its surface a genuine landscape of fine grain and shallow ridges that curves away like terrain, and it burns from within with a warm amber that has no rim, no outline and no visible boundary — the glow simply weakens outward until it is gone. Behind it the same kind of mass repeats into the depth, each one smaller and softer than the last, until they dissolve into an indigo horizon, so the world does not end at the frame. A dense field of tiny bright motes drifts through the whole volume and gives the scale away. One hard cold shaft enters from upper left and rakes across the near mass, its edge sharp, leaving the far side in deep saturated indigo. Across the lower right lies one broad pale amber wash, far wider and far fainter than any burning mass — an older warmth that has not finished leaving. Foreground: an out-of-focus glassy membrane sheet crossing the bottom edge.
+
+STYLE: 3D CGI RenderMan style, cinematic macro photography, physically correct glass and caustics.
+LIGHT AND PALETTE: one hard cold shaft from upper left, deep saturated indigo body, amber burning from inside the material.
+NEGATIVE: textbook diagram, labels, arrows, callout lines or any on-screen text; tube, duct, channel or lane of any kind; blood red; flat even fill light.
+-----
+-------------------------------------------------------------------------
+
+# K47 — "Bu bezler hormon denilen kimyasal maddeler salgılar."
+FİKİR: Kesecikler kütleden kopup AÇIK sıvıya salınıyor — hiçbir yol, hiçbir kanal yok.
+REFERANS: yok
+-----
+This is a lit scene of real material photographed inside a liquid world, not a diagram and not a medical illustration. Dark and jewel-like. 100mm macro at f/4, held close against the flank of one great mass whose skin fills the left half of frame, lit from within so the amber comes up through the material itself with no rim and no edge. Clear glassy vesicles are coming free from that skin into open fluid — perfect small spheres of real glass, each one bending the amber behind it into a bright inverted point at its own centre, each one carrying a hard cold specular dot from the single upper-right shaft. They simply drift free; there is no tube, no duct, no channel, no lane, no thread of light and no path of any kind, only open indigo fluid all around them. A few carry a second, larger sphere pressed against them. Behind the release, two older amber washes lie across the volume, each broader and fainter than the one in front, and further back a soft field of the same spheres recedes until it becomes only texture. Foreground: one out-of-focus sphere blown huge across the bottom right corner.
+
+STYLE: 3D CGI RenderMan style, cinematic macro photography, physically correct refraction and caustics.
+LIGHT AND PALETTE: single hard cold shaft from upper right, deep indigo fluid, amber living inside the mass, cold white speculars.
+NEGATIVE: tube, duct, channel, arrow, flow line or glowing thread; labels or any on-screen text; blood red; plastic matte spheres without refraction.
+-----
+-------------------------------------------------------------------------
+
+# K48 — "Hormonlar doğrudan kana karışır ve yavaşça yayılır."
+FİKİR: Uçsuz yavaş akıntının İÇİNDEYİZ — kap değil, dünya. Kesecikler çözünüyor, sıcaklık sınırsız.
+REFERANS: yok
+-----
+This is a lit scene of real fluid photographed from inside it, not a diagram, not a cross-section and not a medical illustration. Dark and jewel-like. 24mm at f/5.6. A vast slow current of deep indigo fluid fills the entire frame and continues past every edge; the camera sits inside the current, so there is no wall, no tube, no cut surface, no layer of tissue and no cross-section anywhere — the fluid is the world. Enormous soft banded sheets of denser fluid fold slowly through the volume, each band catching one hard cold shaft that enters from above right and picking up a sharp bright crest before turning back into deep saturated indigo. Countless tiny motes and small dark bodies drift with the bands at every distance, near ones huge and out of focus, far ones only faint grain, and the sheer difference between them makes the space read as enormous. The glassy spheres from before are thinning here: their edges soften, their inner amber leaks out and stops belonging to them, and the whole medium is now faintly and evenly warmed with no boundary anywhere. Every earlier amber wash has merged into a single very broad, very faint tint across the upper half.
+
+STYLE: 3D CGI RenderMan style, cinematic wide macro, volumetric fluid, physically correct scattering.
+LIGHT AND PALETTE: one hard cold shaft from above right, deep saturated indigo and blue-violet body, unbounded faint amber, cold white crests.
+NEGATIVE: cross-section, cut wall, tube or vessel interior; blood red; labels, arrows or any on-screen text; flat even fill light.
+-----
+-------------------------------------------------------------------------
+
+# K49 — "İç salgı bezlerinin lideri hipofiz bezidir."
+FİKİR: Lider kütle mimari ölçekte — arazi gibi, ufka kıvrılıyor; ötekiler uzakta ve sönük.
+REFERANS: yok
+-----
+This is a lit scene of real material photographed at landscape scale inside a liquid world, not a diagram and not a medical illustration. Dark and jewel-like. 28mm at f/5.6, camera low. One great rounded mass occupies the middle ground like a landform, its surface curving away to a genuine horizon, its fine grain reading as terrain, and it burns from within with the strongest amber in this whole sequence — still with no rim, no outline and no boundary, only a slow unlimited fall-off into the indigo. One hard cold shaft comes from behind and to the left, catching the ridge of the mass in a thin razor-sharp cold line and throwing a long corridor of unlit fluid toward the camera. Strung far away into the depth, a chain of smaller masses of the same kind carries the same amber but much dimmer, each further one smaller and softer, so the world continues far past the frame. A drifting field of bright motes crosses every plane. Broad pale amber fields, wider and fainter than the leader's own glow, still lie across the lower volume. Foreground: an out-of-focus glassy sheet cutting the bottom left corner.
+
+STYLE: 3D CGI RenderMan style, epic cinematic macro, architectural scale, physically correct glass.
+LIGHT AND PALETTE: hard cold backlight from behind left, razor rim on the ridge, deep saturated indigo, strongest inner amber of the sequence.
+NEGATIVE: labels, arrows, callout lines or any on-screen text; tube, duct or channel; blood red; flat even fill light.
+-----
+-------------------------------------------------------------------------
+
+# K50 — "Hipofiz bezi büyüme hormonu salgılar."
+FİKİR: Büyümenin kanıtı YIPRANMA DEĞİL BOYUT — pervazdaki boy çizgileri, boyu farklı iki bakımlı ayakkabı.
+REFERANS: @mira
+-----
+This is a lit photographic scene of real things in a real room, not a diagram and not an illustration. 40mm lens at f/2.8, camera resting on a broad window seat. In the foreground two clean modern sneakers stand side by side on the cushion, both in excellent condition with bright laces and unmarked soles, one clearly and obviously larger than the other — the difference in size is the whole point and both are well cared for. `@mira` sits just behind them, framed from mid-chest up so nothing below the chest enters frame, lips closed, one hand resting flat on the cushion beside the larger shoe, her eyes on it. One hard slab of morning sun enters from the right through a tall window and crosses the pale wide-plank floor, drawing long crisp shadows from both shoes and leaving the left of the room in deep saturated indigo. On the white-painted door jamb across the wide room, a short ladder of fine graphite lines climbs the wood, the highest line fresh and dark, the lower ones older and faded; there are no letters and no numbers anywhere. The far half of the room holds a broad sourceless amber warmth with no edge, sitting inside the plaster of the wall rather than on it, never reaching her skin. Dust turns in the sunbeam; a linen curtain lifts.
+
+STYLE: 3D CGI RenderMan style, cinematic animation, soft stylized realism, matte porous skin.
+LIGHT AND PALETTE: single hard morning sun from the right, deep saturated indigo shadow, warm plaster and oak, cold window blue.
+NEGATIVE: any letters, numbers or on-screen text; worn, cracked, collapsed or shabby shoes and furniture; labels or arrows; glowing outline around the girl.
+-----
+-------------------------------------------------------------------------
+
+# K51 — "Boynumuzdaki tiroit bezi tiroksin hormonu üretir."
+FİKİR: Camsı keseciklerin sık salı — her birinin içinde amber sıvı, kendi içinden yanıyor.
+REFERANS: yok
+-----
+This is a lit scene of real glass and real fluid photographed close, not a diagram, not an anatomy plate and not a medical illustration; no human skin, no body and no anatomy appears anywhere in the frame. Dark and jewel-like. 100mm macro at f/3.5. A dense raft of clear glassy sacs is packed together like a float of soap bubbles filling the middle of frame, each sac holding a thick amber fluid that glows from inside itself with no rim, no outline and no boundary, only an unlimited soft fall-off through the glass wall. Real refraction everywhere: each sac bends its neighbour into a bright inverted crescent, and the single hard cold shaft from upper left lays one small razor specular on every wet dome and throws sharp amber caustics onto the sacs beneath. The raft recedes into deep saturated indigo where the sacs become only fine texture, and the fluid between them is now faintly warm too, carrying the accumulated glow of everything before. Foreground: one out-of-focus sac blown enormous across the lower left corner. Tiny bright motes drift through every plane.
+
+STYLE: 3D CGI RenderMan style, cinematic macro photography, physically correct glass, caustics and subsurface glow.
+LIGHT AND PALETTE: one hard cold shaft from upper left, deep saturated indigo, thick amber inside every sac, cold white speculars.
+NEGATIVE: human skin, neck, throat or any body part; anatomy plate, labels, arrows or any on-screen text; tube, duct or channel; blood red.
+-----
+-------------------------------------------------------------------------
+
+# K52 — "Tiroksin metabolizma hızımızı ve büyümemizi düzenler."
+FİKİR: Hız ve büyüme tek karede — zerreler uzun parlak yaylarda akıyor, keseler uzağa doğru BÜYÜYOR.
+REFERANS: yok
+-----
+This is a lit scene of real glass and real fluid photographed extremely close, not a diagram and not a medical illustration. Dark and jewel-like. 180mm macro at f/2.8. One small glassy sac sits sharp and near, its amber interior visibly shimmering with heat so the light inside it trembles and bends, still with no rim and no boundary. The whole field of tiny motes around it is moving fast and reads as speed in a single still: each mote is drawn out into a long bright arc, all arcs bending the same way past the sac, hundreds of them, brightest where the single hard cold shaft from the right crosses them. Directly behind the near sac stands a far larger sac of exactly the same kind, and behind that one larger still, and a fourth larger again fading into deep saturated indigo — a ladder of increasing size climbing away from the camera, so growth is read as size and nothing else. Real refraction throughout: each sac carries an inverted amber image of the one in front. The entire frame now sits under a faint even amber, edgeless everywhere.
+
+STYLE: 3D CGI RenderMan style, cinematic extreme macro, physically correct glass, long-exposure particle streaks.
+LIGHT AND PALETTE: one hard cold shaft from the right, deep saturated indigo, trembling amber inside the glass, cold white streak highlights.
+NEGATIVE: labels, arrows, speed lines with arrowheads or any on-screen text; tube, duct or channel; blood red; flat even fill light.
+-----
+-------------------------------------------------------------------------
+
+# K53 — "Pankreas kandaki şeker dengesini kurar."
+FİKİR: Ufuk kompozisyonu — uzun kütle alçak bir sırt gibi yatıyor, üstünde kristal alanı ÇİVİ GİBİ DÜZ.
+REFERANS: yok
+-----
+This is a lit scene of real material photographed at landscape scale inside a liquid world, not a diagram, not a chart and not a medical illustration. Dark and jewel-like. 35mm at f/6.3, camera level. One long slender mass lies low across the frame like a ridge, its fine grain reading as terrain, burning from within with a steady amber that has no rim and no boundary. Above and around it a wide field of tiny faceted crystals hangs suspended in the deep indigo fluid, each crystal catching the single hard cold shaft that comes from the right and returning one small hard white spark; the crystals are spread with exactly the same density from the left edge to the right edge and the field lies perfectly horizontal, unmistakably level, holding itself steady. The ridge blocks the shaft and throws a long dark corridor of unlit fluid away to the left, and the crystals inside that corridor go quiet and blue. Far behind, the same crystal field continues to a soft indigo horizon so the world does not end at the frame. Across the whole width lies the broadest, faintest amber yet, edgeless from side to side. Foreground: an out-of-focus crystal cluster crossing the bottom edge.
+
+STYLE: 3D CGI RenderMan style, epic cinematic macro, landscape composition, physically correct crystal and caustics.
+LIGHT AND PALETTE: one hard cold shaft from the right, long unlit corridor, deep saturated indigo, steady amber inside the ridge, hard white sparks.
+NEGATIVE: balance scale, seesaw, gauge, meter, labels, arrows or any on-screen text; tube, duct or channel; blood red; tilted or uneven crystal field.
+-----
+-------------------------------------------------------------------------
+
+# K54 — "Şeker yükselince insülin, düşünce glukagon salgılar."
+FİKİR: TEK hacim, diyagonal — kalabalık üst-sol, boş alt-sağ; aynı sırttan iki AYRI salınım.
+REFERANS: yok
+-----
+This is one single continuous lit scene of real material inside a liquid world, one camera and one light, not a diagram, not a chart, not a comparison panel and not a split screen. Dark and jewel-like. 40mm at f/5.6, camera tilted so the composition runs on a diagonal. The upper left of the volume is crowded with the tiny faceted crystals, packed thick and sparking hard under the single cold shaft from the upper right; the lower right of the same volume is almost empty of them, only deep saturated indigo and a few lonely sparks, and the crystal density falls off smoothly and continuously between the two, one unbroken gradient with no line and no border. The long ridge-like mass crosses the middle, burning from inside with edgeless amber, and two different kinds of body are leaving it into open fluid: pale cool-gold glassy spheres rising toward the crowded upper left, and deeper warm-amber elongated capsules sinking toward the empty lower right — both simply drifting free, with no tube, no channel, no arrow and no path of any kind. Real refraction on every body. The entire volume is now warm, the widest and faintest amber of the sequence.
+
+STYLE: 3D CGI RenderMan style, cinematic macro, diagonal composition, physically correct glass and crystal.
+LIGHT AND PALETTE: one hard cold shaft from upper right, deep saturated indigo body, pale cool-gold and deep warm-amber bodies, edgeless overall warmth.
+NEGATIVE: split screen, divided panel, comparison chart, border line down the frame; labels, arrows or any on-screen text; tube, duct or channel; blood red.
+-----
+-------------------------------------------------------------------------

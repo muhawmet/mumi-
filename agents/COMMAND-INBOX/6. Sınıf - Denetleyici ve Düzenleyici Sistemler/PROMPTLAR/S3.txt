@@ -1,0 +1,91 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 3 · START FRAME PROMPT'LARI (K17–K24)
+=========================================================================
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 (Magnific) · Motion: Kling 3.0
+Kilit kaynağı: Denetleyici ve Düzenleyici_ENZIM.md · VO: ..._SENARYO.txt (K17 = 17. cümle)
+Mihenk: images/20.png (nöron içi) · images/1.png · images/2.png (konser salonu)
+
+MEKÂN: K17–K22 nöron dünyası (koyu, mücevher gibi) · K23–K24 maket masası (devir karesi)
+REFERANS: bu sekansta HİÇBİR karede referans yok — @mira K25'te giriyor.
+KAVRAM IŞIĞI: SİNİR rejimi — sert kenarlı sıcak-altın, tek kenara oturur, kenar bitince
+BİRDEN kesilir, hâle yok, yansıma yok, iz bırakmaz.
+YAZI: yalnız K24'te pirinç plaka okunur (İNSAN SİNİR SİSTEMİ). Diğerlerinde yazı YOK.
+
+=========================================================================
+
+# K17 — "Sinir sistemi vücudumuzu bir ağ gibi sarar."
+FİKİR: Ağ bir şema değil, karanlıkta bir gövdeyi saran gerçek halat donanımıdır.
+-----
+A single frame from a 3D animated feature film for children — dark and jewel-like, an interior world rendered as a real lit place with real depth of field, glassy translucent membranes and drifting motes. This is a lit scene of real things in a real place, not a diagram, not a medical illustration, not a stock science animation. A 24mm wide lens at f/4, placed low so the world towers. Filling the middle distance, an immense smooth dark mass curves away out of frame, its surface deep velvet blue-black, faintly iridescent where the light grazes it. Wrapped around that curve, following it the way rigging follows a hull, run dozens of hair-fine fibres, gathered into cables and split again into finer strands, riding over the crest of the mass and vanishing down its far side. A single hard key from the upper right catches only the top edge of each fibre in warm gold — a sharp bright line that stops dead where the fibre turns away, leaving no halo and no reflection on the surface below. Every fibre lays a long thin shadow across the dark mass. At the very bottom left, a fold of glassy translucent membrane sits out of focus and cuts the corner, a cold blue rim along its lip. Far behind, the mass dissolves into indigo haze where three tiny amber points glow. Fine pale motes drift through the whole depth, catching light one at a time.
+
+STYLE: 3D CGI feature-film render, jewel-like subsurface glass, deep cinematic haze, sharp fibre specular.
+LIGHT AND PALETTE: One hard gold rim from upper right; midnight indigo body, saturated blue-black shadow, distant amber pinpoints.
+NEGATIVE: pink or red flesh tones and blood vessels, a floating human body silhouette, evenly lit flat background, fibres repeating as a symmetrical wallpaper pattern.
+-----
+-------------------------------------------------------------------------
+
+# K18 — "Bu ağ milyonlarca sinir hücresinden oluşur."
+FİKİR: Ağ yaklaşınca tek tek gövdelere ayrılıyor — sayı ölçekle anlatılır, etiketle değil.
+-----
+A single frame from a 3D animated feature film for children — dark and jewel-like, an interior world rendered as a real lit place with real depth of field, glassy translucent membranes and drifting motes. This is a lit scene of real things in a real place, not a diagram, not a medical illustration, not a stock science animation. A 50mm lens at f/2.8, angled down the length of the cabling so the ranks recede. What read as smooth cables from far away now resolve into countless small pearl-grey teardrop bodies strung along the fibres, each one glassy with a faint cool sheen inside it, each trailing a spray of thread-thin branches into the dark. The nearest three bodies are large and razor-sharp, the surface of each one showing a soft granular skin; behind them the ranks shrink away rank by rank until the farthest are only cold pinpricks in indigo haze, too many to count. A hard key from the left touches the upper shoulder of each body in warm gold and stops there — the underside of every body is fully dark, no bounce, no glow spilling onto the neighbour. Across the bottom edge, out of focus, a broad glassy sheet curves through frame and cuts the composition. Motes drift in the beam.
+
+STYLE: 3D CGI feature-film render, translucent pearl subsurface, extreme depth stacking, crisp micro-texture.
+LIGHT AND PALETTE: Hard gold key from screen left; pearl grey bodies, saturated indigo void, cold blue underside.
+NEGATIVE: identical bodies copied on a grid, a bright uniform background glow, cartoon outlines around each cell, any label or leader line.
+-----
+-------------------------------------------------------------------------
+
+# K19 — "Bu hücrelere nöron denir."
+FİKİR: Portre karesi — kalabalıktan tek bir canlıya inip ona bakmak.
+-----
+A single frame from a 3D animated feature film for children — dark and jewel-like, an interior world rendered as a real lit place with real depth of field, glassy translucent membranes and drifting motes. This is a lit scene of real things in a real place, not a diagram, not a medical illustration, not a stock science animation. An 85mm lens at f/2, a portrait framing held slightly below the subject so it reads as tall. One single cell fills the frame in three-quarter view: a pearl-grey glassy body the shape of a river stone, its surface faintly pitted and alive, an inner core glowing dim and cool through the translucent wall. From its crown a crowd of fine branches spreads like coral, each branch tapering to nothing; from its base one long smooth fibre leaves the frame at the right, thicker than the rest and unmistakably going somewhere. A hard key from the left lays a bright warm gold line down the left contour of the body and along the top of two branches only, and where those edges turn the gold stops instantly — the entire right side of the cell is deep saturated indigo with no fill light at all. Behind it, two more of the same bodies sit far out of focus as soft grey lozenges, and further back a single amber ember burns small and warm. Motes drift across the dark.
+
+STYLE: 3D CGI feature-film render, hero character portrait lighting, translucent subsurface glass, shallow cinematic focus.
+LIGHT AND PALETTE: Single hard gold rim on the left contour; pearl grey, midnight indigo shadow, one distant amber ember.
+NEGATIVE: a symmetrical textbook cell shape, glowing outline around the whole body, bright fill on the shadow side, arrows or callout dots.
+-----
+-------------------------------------------------------------------------
+
+# K21 — "Bu yüzden haber ışık hızında gider."
+FİKİR: Hız, hareketle değil MESAFEYLE anlatılır — sinyal çoktan uzakta, geçtiği yer kapkaranlık.
+-----
+A single frame from a 3D animated feature film for children — dark and jewel-like, an interior world rendered as a real lit place with real depth of field, glassy translucent membranes and drifting motes. This is a lit scene of real things in a real place, not a diagram, not a medical illustration, not a stock science animation. A 35mm lens at f/2.8, placed almost on top of the fibre so it runs from the bottom-left corner of frame straight into the far distance. The fibre is a long smooth pale tube, softly segmented, its near length completely dark — matte, cold, holding no light whatsoever, as if nothing had ever passed along it. Far down its run, close to the vanishing point, a single hard-edged sliver of warm gold sits on the fibre's upper edge, small and blindingly clean, with no trail behind it, no smear, no fading glow anywhere between it and the camera. The gold does not touch the surrounding darkness at all. In the immediate foreground, out of focus, a cluster of three glassy transparent vesicles catches a cold blue rim and blocks the lower right corner. Far behind the fibre, deep indigo haze and two dim amber shapes. Motes hang almost still in the near dark.
+
+STYLE: 3D CGI feature-film render, extreme perspective compression, glass and cold specular, cinematic haze.
+LIGHT AND PALETTE: One tiny hard gold sliver at depth; the whole near field cold midnight indigo, no ambient fill.
+NEGATIVE: a glowing streak or light trail along the fibre, lightning bolt shapes, neon cyan energy, the near length of the fibre lit.
+-----
+-------------------------------------------------------------------------
+
+# K22 — "Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır."
+FİKİR: İkiye ayrılma bir tablo değil, bir çatal — kalın gövde yukarı, ince olanlar dışarı.
+-----
+A single frame from a 3D animated feature film for children — dark and jewel-like, an interior world rendered as a real lit place with real depth of field, glassy translucent membranes and drifting motes. This is a lit scene of real things in a real place, not a diagram, not a medical illustration, not a stock science animation. A 28mm lens at f/4, held low and looking upward so the structure rises. A thick braided trunk of many fibres climbs out of the bottom of frame; a third of the way up it reaches a natural fork where the braid splits without ceremony — one dense heavy cable continues upward and inward, narrowing into indigo haze toward a large dark vaulted mass that fills the upper background like a distant cathedral roof, while all the remaining strands peel outward, thinning and spreading wide until they leave the frame at both sides and the lower corners. A hard key from the upper left runs a warm gold edge only along the thick upward cable, and that gold stops the instant the cable enters the haze; the outward-spreading strands carry no gold at all, only a cold blue rim. Out of focus at the near right edge, a curved glassy membrane cuts into frame. Motes drift through the fork. The distances are real and hazy, the darkness has depth, nothing floats on a flat backdrop.
+
+STYLE: 3D CGI feature-film render, low heroic angle, atmospheric depth, cathedral-scale interior.
+LIGHT AND PALETTE: Hard gold edge on the central cable only; cold blue rim on the outer strands, saturated indigo haze.
+NEGATIVE: a split-screen or two-column comparison layout, any text label, a bright empty backdrop behind the fork, mirrored symmetry between the two branches.
+-----
+-------------------------------------------------------------------------
+
+# K23 — "Merkezî sinir sistemi dört yapıdan oluşur."
+FİKİR: Soyut iç dünya, gerçek bir masanın üstündeki gerçek bir nesneye iniyor — devir karesi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A 40mm lens at f/2.8, held at desk height across a wide oak study desk in a large, bright, well-kept room. Standing on the desk in the middle distance is a teaching model of the human nervous system: a cream-white sculpted bust of a head and shoulders whose face is calm and completely closed — smoothly moulded plastic features, softly sculpted closed lids, a quiet closed mouth, no bare skull and no exposed teeth — with the top of the cranium lifted away like a lid so that a rose-pink brain sits open in it, a small sage-green cerebellum tucked beneath the back of that brain, a warm yellow-ochre medulla descending from the cerebellum and continuing as a slender spinal cord down behind the neck; the whole model is mounted on a polished oak base with a brass plaque on its front edge, the plaque turned slightly away and soft in the blur. Behind the desk a tall window runs floor to ceiling; strong cool late-afternoon skylight enters from screen left and rakes across the room, throwing one long hard shadow of the model far across the desktop. A large leafy potted plant stands at the window and moves faintly. At the near edge of frame, out of focus, a stack of plain unlettered cloth-bound books and the curved back of a leather chair block the bottom corner. Dust drifts through the light. Deep in the background, the far wall of the room and a second window carry on the space.
+
+STYLE: 3D CGI feature-film render, warm stylised Pixar shape language, tactile plastic and oak, cinematic three-plane depth.
+LIGHT AND PALETTE: Strong cool directional skylight from screen left; cream and rose-pink model, saturated indigo shadows, honey oak.
+NEGATIVE: warm gold glow on any part of the model, a bare skull or exposed teeth, on-screen text or lettering, a cramped dim modest room.
+-----
+-------------------------------------------------------------------------
+
+# K24 — "Beyin, beyincik, omurilik soğanı ve omurilik."
+FİKİR: Dördü aynı anda görünür ama HİÇBİRİ ışıklı değil — bu kare tanıtır, seçmez.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. An 85mm lens at f/4, close and slightly below the desktop line, the model filling most of the frame in three-quarter view. The teaching model of the human nervous system stands square to camera: a cream-white sculpted bust of a head and shoulders whose face is calm and completely closed — smoothly moulded plastic features, softly sculpted closed lids, a quiet closed mouth, no bare skull and no exposed teeth — the top of the cranium lifted away like a lid so that the rose-pink brain sits open in it with its folds catching the light, the small sage-green cerebellum tucked beneath the back of that brain, the warm yellow-ochre medulla descending from the cerebellum and continuing as a slender pale spinal cord down behind the neck; all four parts are plainly visible at once and all four are ordinary matte plastic, none of them glowing. The model is mounted on a polished oak base. On the front edge of that base a brass plaque faces the camera dead-on, its face exactly parallel to the sensor and level with the bottom of frame, every letter in one plane, engraved and readable, reading İNSAN SİNİR SİSTEMİ. One strong cool key from screen left rakes across every part and casts a single hard shadow to the right. Behind, the tall window and the room fall away into soft blur; dust drifts. Out of focus at the near left corner, the rim of a glass of water.
+
+STYLE: 3D CGI feature-film render, product-close tactile plastic, engraved brass, cinematic shallow background.
+LIGHT AND PALETTE: One strong cool raking key from screen left; cream white, rose pink, sage green, yellow ochre, saturated indigo shadow, honey oak.
+TEXT: an engraved brass plaque reads İNSAN SİNİR SİSTEMİ, three Turkish words, sensor-parallel and level, left to right, never mirrored — the second word begins with a dotted capital İ.
+NEGATIVE: any warm gold glow on one part, a bare skull or exposed teeth or empty eye sockets, English lettering or invented words on the plaque, arrows and callout labels pointing at the parts.
+-----
+-------------------------------------------------------------------------

@@ -1,0 +1,86 @@
+SEKANS 6b — BÖBREK ÜSTÜ BEZLERİ · LUNAPARK · EŞEYSEL BEZLER (K55–K60)
+Motor: Nano Banana 2 (Magnific) · 16:9 · register EDU · dünya pixar_3d_edu
+REFERANS: yalnız @mira → 1lLXJFpr4r  (mekân/nesne plakası referans olarak VERİLMEZ)
+
+⚠ K59–K60 çocuk güvenliği kilidi: organ çizilmez, beden gösterilmez, Mira kadrajda yok.
+⚠ K56–K58 lunapark: "gülüyor" + "kucak barı kapalı, iki eli barda" — ölçülmüş geçen ifade.
+
+-----
+
+K55  ·  VO 55: "Böbrek üstü bezleri adrenalin hormonu salgılar."
+REFERANS: @mira (1lLXJFpr4r)
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+Late afternoon at a big, well-kept amusement park. @mira stands at the boarding gate of the roller coaster, framed from mid-chest up and turned three-quarters away from the camera, one flat palm resting on the freshly painted steel gate, chin lifted, grinning as she looks up. Behind and above her the lift hill climbs steeply across the frame and the train of cars is two thirds of the way up it, a row of small dark shapes with riders sitting shoulder to shoulder. Beyond the track the park is alive and cared for: a Ferris wheel turning, a carousel, crisp striped awnings, families walking the clean paved avenue, a lake catching the sun. The low sun comes hard from the left, drawing a bright gold edge down the gate, the girl's shoulder and every steel upright, and laying long raked shadows of the lattice across the boarding deck. In front of the camera, a queue railing post and the corner of a striped awning sit out of focus and close the bottom-left of the frame. Deep saturated blue sky, warm dust hanging in the light.
+
+STYLE: cinematic 3D animation, shallow depth of field on the foreground railing, telephoto compression on the lift hill, tactile painted steel and clean canvas.
+LIGHT AND PALETTE: single hard low sun from frame left, long raked shadows; saturated cobalt sky, warm gold on steel and skin, shadows full-bodied indigo, no washed-out pastel.
+NEGATIVE: no lettering or signage text anywhere; no arrows, labels, callout lines or inset panels; no worn, rusted or shabby fairground; no flat even fill light.
+
+-----
+
+K56  ·  VO 56: "Hız treni tepede bir an durdu, sonra aşağı bıraktı."
+REFERANS: @mira (1lLXJFpr4r)
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+The roller coaster train is held at the top of its first descent. The front car has already tipped over the crest and points down the steel track, while the row of cars behind it is still hinged over the climb, so the whole train bends across the summit. @mira rides in the front car, framed from the waist up, the lap bar closed across her lap and both her hands on the bar, her hair swept straight back, laughing. The other riders behind her lean the same way. Low late-afternoon sun strikes hard from behind and to the side: it draws a bright gold rim along her hair and one shoulder, flares off the polished rails and the painted car bodies, and throws the long shadow of the whole train down onto the steel structure beneath. The sky is deep saturated blue. Far below, the park is alive and prosperous — a turning Ferris wheel, a carousel with brass poles, striped awnings, small bright crowds on the clean avenues, a lake. Close to the camera, out-of-focus steel lattice crosses and closes the right edge of the frame.
+
+STYLE: cinematic 3D animation, wide lens from slightly above and outside the track, strong perspective down the descent, shallow foreground blur on the lattice.
+LIGHT AND PALETTE: hard backlit low sun from upper right, gold rim on hair, shoulder and rails; cobalt sky, crimson and cream painted cars, deep indigo shadow in the structure.
+NEGATIVE: no shoulder harness and no raised arms; no frightened, crying or open-mouthed face; no lettering or signage text; no flat overcast light.
+
+-----
+
+K57  ·  VO 57: "İşte o duygunun adı adrenalindi."
+REFERANS: @mira (1lLXJFpr4r)
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+The camera is out ahead of the coaster and slightly below it, looking back up at the lead car in the middle of its long descent. @mira fills the centre of the frame, framed from mid-chest up in three-quarter view, the lap bar closed across her lap and both her hands on it, hair blown straight back, laughing wide and delighted. The riders in the cars behind her stretch away up the rail in a receding row, all leaning the same way, the track itself sweeping out of the top of the frame. Late sun hits from the upper left and sears a hard gold line along the top edge of the car, the girl's hair and the polished rail; the underside of the car is deep cool shadow. The rushing air is readable — loose hair, a fluttering flag on a distant pole, dust and pollen lit like sparks streaking past. Behind and far below, the park reads warm and busy: awnings, treetops, the bright disc of the Ferris wheel, a lake edge. In front of the camera, one out-of-focus steel bracing tube crosses the lower left corner.
+
+STYLE: cinematic 3D animation, medium lens, low three-quarter angle, motion-charged air, shallow depth of field with the girl sharp and the train falling away soft.
+LIGHT AND PALETTE: single hard sun from upper left, gold on hair and steel edges; saturated blue sky, deep indigo undersides, warm amber park below.
+NEGATIVE: no motion-blur smear on the face; no fear, no tears, no screaming; no arrows, labels or callout lines; no pale desaturated sky.
+
+-----
+
+K58  ·  VO 58: "Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı."
+REFERANS: @mira (1lLXJFpr4r)  — 🔴 dersin kapanış kanıtı: İKİ IŞIK tek karede
+Durum, olay değil: tren çoktan durmuş, bar çoktan kalkmış.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+The ride is over. The train sits still in the covered station, lap bars raised, the other riders already stepping out behind. @mira stands on the varnished timber platform, framed from mid-chest up in three-quarter view, one hand still resting on the grab rail of the front car, weight settled, breathing out, smiling to herself. The station roof cuts the low sun into one clean shaft: a hard gold edge runs along the top rail of the car and along the girl's shoulder, and it stops dead at the shadow line of the roof — past that line the steel is cold, unlit indigo, with no halo, no bounce, no reflection carried across. At the same time a second, quite different warmth is still present: a broad amber with no edge at all, living inside the painted steel of the car body, inside the varnished platform boards and inside the fabric of her sleeve, dimming outward with no boundary, refusing to end. Beyond the station opening the park glows — awnings, the Ferris wheel, warm crowds. Out of focus in the foreground, the polished handrail of the exit ramp crosses the bottom of the frame.
+
+STYLE: cinematic 3D animation, medium-close lens, layered station depth, shallow foreground blur, tactile painted steel and oiled timber.
+LIGHT AND PALETTE: one hard sun shaft cut by the roof, with an abrupt unlit shadow line; and a separate broad edgeless amber glowing from within the materials, never on skin; deep indigo shade, saturated crimson and brass accents.
+NEGATIVE: no glow, halo or bloom around the hard-lit edge; no light rays, no visible energy trails; no arrows, labels or comparison panels; no flat even fill.
+
+-----
+
+K59  ·  VO 59: "Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır."
+REFERANS: yok  — 🔴 ORGAN ÇİZİLMEZ, BEDEN GÖSTERİLMEZ, kadrajda çocuk yok.
+ORIENTATION: kapı pervazı sensöre TAM PARALEL, bütün rakamlar tek düzlemde.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+The wide, bright hallway of a spacious contemporary family home, late afternoon. The subject is a tall painted doorframe standing perfectly square to the camera, its face parallel to the lens. Up its edge climbs a neat ladder of fine pencil marks, each a short horizontal tick with a small pencilled year beside it — numerals only, no words — the lower ticks faded and close together, the upper ones fresh, darker and spaced further apart, the highest well above the door handle. The paintwork is clean and well kept; nothing here is chipped or shabby. Low sun comes hard through a tall window at frame left and throws the long crisp shadow of the frame and of a potted olive tree straight across the pale oak floor. A cat lies stretched in the warm floor patch, tail flicking; dust turns slowly in the shaft. Beyond the open doorway an airy living room opens up — deep sofa, bookshelves, a bowl of fruit, the city trees outside. In the foreground, an out-of-focus leaf of the potted plant and the corner of a console table close the lower right.
+
+STYLE: cinematic 3D animation, medium-wide lens, flat-on architectural framing, shallow foreground blur, tactile matte paint and oak.
+LIGHT AND PALETTE: single hard low sun from frame left, long crisp shadows across the floor; warm cream and honey oak against saturated indigo shade, no pastel wash.
+NEGATIVE: no people and no body; no letters or words anywhere, numerals only; no arrows, labels, rulers or measurement graphics; no worn, chipped or shabby surfaces.
+
+-----
+
+K60  ·  VO 60: "Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar."
+REFERANS: yok  — 🔴 büyümenin kanıtı BOYUT, yıpranma değil. Eskimiş eşya yasak.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+The wide entrance hall of the same well-appointed home, later in the same afternoon. On the pale oak floor beside a long low bench stand two pairs of shoes, side by side and both immaculately kept: a smaller pair of white canvas sneakers with their laces tied, and beside them a noticeably larger pair of the same clean white, the difference in length obvious and quiet. Both are spotless, their soles unworn, their shape still crisp. Low sun rakes in hard from a tall window at frame right and pushes the two shadows out across the boards in one long parallel sweep, the larger shadow reaching further; a broad, edgeless warmth also lives inside the canvas itself and inside the oiled timber of the bench, fading outward with no boundary. A cat is curled asleep at the far end of the bench in the same light. Above the bench a row of hooks carries a jacket and a helmet; a tall vase of eucalyptus stands beyond. In the foreground, the out-of-focus corner of the bench and one hanging strap close the left edge. Through the glazed door behind, green treetops and warm city light.
+
+STYLE: cinematic 3D animation, low close camera near floor level, strong perspective along the shadows, shallow foreground blur, tactile canvas and oiled oak.
+LIGHT AND PALETTE: single hard low sun from frame right, two long parallel shadows; plus a soft edgeless amber glowing from within the canvas and timber; saturated honey and cream against deep indigo shade.
+NEGATIVE: no people and no body; no scuffed, cracked, collapsed or dirty shoes; no lettering, brand marks or logos; no arrows, labels or size charts.

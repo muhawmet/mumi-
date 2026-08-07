@@ -1,0 +1,129 @@
+SEKANS 1 — ORKESTRA: ONLARCA İŞ, TEK UYUM (konser salonu) · K03-K08
+═══════════════════════════════════════════════════════════════════
+Mekân kaynaktan: "dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi"
+Süreklilik: K01 ve K02 ile aynı salon — bal rengi ahşap sahne, koyu kırmızı perde,
+yaldızlı balkon locaları, indigo seyirci karanlığı, sahne solundan gelen sert
+beyaz-altın huzmeler, siyah frak, bal tonlu yaylılar, bakır nefesliler.
+Ölçek merdiveni: K03 geniş-üstten · K04 alçak orta · K05 yakın · K06 geniş yan-balkon
+· K07 yakın (Mira) · K08 tepeden çok geniş. Ardışık iki karede aynı ölçek yok.
+@mira YALNIZ K07'de → references: 1lLXJFpr4r
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+K03 ──────────────────────────────────────────────────────────────
+VO 3: "Ama ortada hiçbir kargaşa yoktu."
+FİKİR: Kargaşasızlık bir açıklama değil, bir GÖRÜNTÜDÜR — aynı yükseklikteki
+  sehpalar, aynı açıdaki yaylar, aynı el genişliğindeki boşluklar.
+YÜKÜM: Düzenin kendisi kareye bakan ilk şey olmalı; kimse geç kalmamış, kimse
+  başka yöne bakmıyor.
+AYRICALIK: Şefin podyumunun arkasından bakıyoruz — seyircinin göremediği açı.
+PLAN: Önde odak dışı podyum korkuluğu + kapalı partisyon · ortada keskin eşmerkezli
+  yaylar · arkada yumuşak kırmızı perde ve yaldızlı localar.
+ENTRY STATE: Bütün yaylar tek diyagonalde havada, hiçbir ses henüz kesilmemiş.
+EXIT STATE: Aynı düzen; yalnız ışıktaki toz kımıldıyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. We stand just behind and slightly above the conductor's podium, looking down the length of a grand concert stage. The whole orchestra is laid out in clean concentric arcs: every music stand at the same height and tilted to the same angle, every chair spaced by the same hand's width, every bow in the string section lifted onto one identical diagonal. Nearest the lens, out of focus and filling the lower left edge, the dark lacquered curve of the podium rail with a closed score resting on it, the gilt page-edge of the score catching a hard sliver of light. In the middle ground the arcs are razor sharp — a brass rank behind a woodwind rank behind the strings, every player already at work, nobody turning, nobody late. Far behind them the deep red curtain and the gilded balcony boxes stay legible but soft. One hard shaft of white-gold light drops from high stage-left, cuts across the arcs and lays long clean shadows of stands and chairs across the warm oak boards, all leaning the same way.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens at a raised three-quarter height, sharp in the middle ground, tactile lacquered oak, brushed brass and honey-toned spruce, fine film grain.
+LIGHT AND PALETTE: single hard white-gold key from high stage-left throwing long parallel shadows; honey, amber and burnished brass against a deep crimson curtain, shadows a full saturated indigo, no washed grey anywhere.
+NEGATIVE: no labels, arrows or leader lines; no empty chairs or gaps breaking the arcs; no flat even fill light; no modern plastic stacking chairs.
+-----
+
+
+K04 ──────────────────────────────────────────────────────────────
+VO 4: "En öndeki tek kişi elini havaya kaldırdı."
+FİKİR: Yüzlerce çalgının önünde tek bir el. Güç eldedir, gövdede değil.
+YÜKÜM: El HAVADA TUTULUYOR — henüz inmedi. Bütün salon o eli bekliyor.
+AYRICALIK: Orkestranın kendi göz hizasından, alçaktan bakıyoruz; şef bize
+  dev gibi geliyor çünkü müzisyenler onu böyle görüyor.
+PLAN: Önde odak dışı keman burgusu ve kalkık yay · ortada keskin şef silueti
+  ve aydınlanmış el · arkada huzmenin içinde toz.
+ENTRY STATE: El tepede, avuç açık, tutuluyor; hiç kimse kımıldamıyor.
+EXIT STATE: El hâlâ tepede; yalnız parmak uçlarındaki gerilim artmış.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. Seen from the orchestra's own eye level, low, looking up at the conductor standing on his podium. He is a tall dark shape in black tails against a hot column of light, one arm raised straight above him, hand open and held, the baton pointing at the ceiling. The raised hand and forearm are the brightest thing in the frame; the shaft catches the fine dust in the air around them so the beam itself reads as a solid cone. Nearest the lens, out of focus and crossing the lower left corner, the carved scroll and pegs of a violin with its bow lifted and waiting beside it. In the middle ground the conductor is sharp against the light, his shoulders and back in deep rich shadow, only the rim of his jaw and collar lit. Behind and above him the gilded proscenium arch and the fold of the crimson curtain sit soft and warm. Every string player we can partly see along the bottom edge is frozen in the same held posture, waiting.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; low wide-angle from stage floor level, strong perspective on the podium, sharp on the conductor, creamy fall-off elsewhere, fine grain.
+LIGHT AND PALETTE: one hard white-gold beam from directly above and slightly behind, visible in the dust, rim-lighting the raised hand; near-black tails and deep indigo shadow against burnished gold and crimson, colour stays rich in the darks.
+NEGATIVE: no disembodied floating hand; no starburst lens flare swallowing the figure; no second conductor; no readable text on the podium or score.
+-----
+
+
+K05 ──────────────────────────────────────────────────────────────
+VO 5: "O bir orkestra şefiydi."
+FİKİR: Şefi tanıtıyoruz. Enstrümanı yok — enstrümanı bütün salon.
+YÜKÜM: Yüzünde otorite değil DİKKAT olsun; bu bir portre değil, iş üstünde bir insan.
+AYRICALIK: Sehpa lambası yüzü alttan ısıtıyor; klasik ve inandırıcı bir ışık.
+PLAN: Önde odak dışı bakır nefesli çanağı · ortada keskin şef, göğüs üstü ·
+  arkada yumuşak, okunur salon derinliği.
+ENTRY STATE: Bakışları oyuncuların üstünde, ağzı kapalı, çene sıkı.
+EXIT STATE: Aynı bakış; nefesini içine çekmiş.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A medium close view of the conductor from the front and slightly below, turned three-quarters, framed from the chest up so the podium and the players are out of frame. He is an older man in black tails with a white collar, silver at the temples, mouth closed, jaw set, his eyes carrying across the players in front of him with complete attention rather than authority. The small brass lamp on his music stand warms him from below and picks out the collar, the underside of his jaw and the edge of the baton in his hand; a harder white-gold beam from high behind rims his shoulder and the back of his head and separates him cleanly from the darkness. Nearest the lens, out of focus and filling the lower right corner, the wide golden bell of a tuba catches one long soft highlight. Far behind him the crimson curtain and a warm sliver of gilded balcony sit blurred but readable, with slow dust turning in the beam.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto portrait, shallow depth of field, tactile wool, starched linen and lacquered brass, fine grain.
+LIGHT AND PALETTE: warm low key from the brass stand lamp plus a hard white-gold rim from high behind; amber and honey on skin and brass, saturated crimson and deep indigo behind, no pastel and no grey.
+NEGATIVE: no microphone in front of the face; no blown-out reflection hiding the eyes; no readable text on the score or stand; no smiling to camera.
+-----
+
+
+K06 ──────────────────────────────────────────────────────────────
+VO 6: "Bageti indi ve bütün salon aynı anda konuştu."
+FİKİR: Tek bir işaretin bütün salonda AYNI ANDA karşılık bulması.
+YÜKÜM: OLAY DEĞİL DURUM — baget çoktan inmiş, herkes çoktan çalıyor.
+  Düşüş anı değil, düşüşün SONRASI.
+AYRICALIK: Yan balkon locasından bakıyoruz; hem sahneyi hem salonun kütlesini
+  aynı karede görüyoruz.
+PLAN: Önde odak dışı oymalı yaldızlı loca korkuluğu ve kadife kolçak · ortada
+  keskin, tümüyle hareket hâlindeki sahne · arkada salonun derinliği.
+ENTRY STATE: Bütün yaylar aşağı vuruşta, bakır çanaklar kalkık, timpani tokmakları
+  deriden yeni ayrılmış.
+EXIT STATE: Aynı kütle, aynı yön; ses sürüyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. Seen from a side balcony box, high and to the right, so the lit stage and the dark body of the hall share the frame. The whole orchestra is already playing: the baton has finished its stroke and rests low at the conductor's hip, every bow in the string arcs is driving through the same down-stroke, the brass bells are raised and open, the timpani mallets have just left the head and the skin is still trembling. Nearest the lens, out of focus and closing the left and lower edges, the carved gilded rail of the box with a deep red velvet armrest below it, one soft highlight running along the gilding. In the middle ground the stage is sharp and blazing, warm oak boards, honey-coloured wood and burnished brass all catching the beams at once. Far behind, the crimson curtain climbs into darkness and the tiers of gilded boxes on the far side of the hall fall away, soft, lit only by their own small lamps.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens from an elevated box, deep staging front to back, sharp across the stage, tactile velvet, gilt and lacquered wood, fine grain.
+LIGHT AND PALETTE: several hard white-gold shafts from high stage-left striking the players and cutting long shadows across the boards; blazing amber and brass against a saturated crimson and a deep indigo house, colour stays full in the shadows.
+NEGATIVE: no motion-blur smear across the whole stage; no falling confetti or paper; no silhouetted audience heads cutting across the stage; no readable text anywhere.
+-----
+
+
+K07 ──────────────────────────────────────────────────────────────
+VO 7: "Mira ön sırada oturmuş, o eli izliyordu."
+FİKİR: Mira ilk kez görünüyor — ve SEYİRCİ DEĞİL, iş üstünde bir öğrenci.
+YÜKÜM: Öne eğilmiş, eli koltuğun kenarında, gözü sahnede. Rahatça oturmuyor;
+  bir şeyi çözmeye çalışıyor.
+AYRICALIK: Özel okul standardı — gerçek bir konser salonunda ön sıra, iyi kadife,
+  geniş mekân, bol ışık.
+PLAN: Önde odak dışı koyu kadife koltuk sırtı ve bir yetişkinin omzu · ortada
+  keskin Mira · arkada odak dışı sahne, şefin kalkık eli küçük parlak bir leke.
+ENTRY STATE: Öne eğik, ağzı kapalı, gözü sahnede; nefesi tutuk.
+EXIT STATE: Aynı duruş; yalnız parmakları kolçağın kenarını biraz daha sıkmış.
+🔴 references: 1lLXJFpr4r (@mira) — kız TARİF EDİLMEZ, çağrılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The front row of a grand concert hall. The girl from the character reference sits at the end of the row, framed from the waist up with her legs and the floor out of frame, seen from her left and slightly below over the seat backs. She is leaning forward out of her seat, one forearm along the arm of the chair and her fingers curled over its edge, chin lifted, mouth closed, both eyes fixed off-frame toward the stage — she is not relaxed and she is not simply watching, she is working something out. Nearest the lens, out of focus and closing the right edge, the deep red velvet back of the next seat and the dark shoulder of an adult beside her. She is the only sharp thing in the frame. Far behind her, thrown well out of focus, the lit stage reads as a warm blur of honey and brass, and inside that blur the conductor's raised hand sits as one small bright shape she is aimed at. Warm spill from the stage catches the side of her face and her forearm; the rest of the row falls into rich indigo.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto over the seat backs, shallow depth of field with a soft stage bokeh, tactile velvet and brushed cotton, fine grain.
+LIGHT AND PALETTE: warm directional spill from the stage as the only key, striking her from screen-left and leaving a long shadow across the seat behind her; amber and honey on the lit side, saturated indigo and crimson in the house, no pastel wash.
+NEGATIVE: no other child with a similar face; no phone, tablet or programme in her hands; no adult leaning into frame in focus; no full-body studio pose on a plain background.
+-----
+
+
+K08 ──────────────────────────────────────────────────────────────
+VO 8: "Onlarca enstrüman, tek bir uyum."
+FİKİR: Yukarıdan bakınca onlarca ayrı iş TEK BİR ŞEKİL oluyor — sekansın hükmü.
+YÜKÜM: Kare tek bir hilal okumalı; sayılan enstrüman değil, görülen bütün.
+AYRICALIK: Tavan ışık köprüsünden, neredeyse dik tepeden bakış — filmin en
+  geniş ve en soğukkanlı karesi.
+PLAN: Önde odak dışı sahne lambası gövdesi ve içinden inen görünür ışık konisi ·
+  ortada keskin hilal · arkada sahnenin ahşap zemini ve perde eteği.
+ENTRY STATE: Bütün hilal aynı anda çalıyor, yaylar tek yönde.
+EXIT STATE: Aynı hilal, aynı yön.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. Looking almost straight down onto the stage from the lighting bridge high in the ceiling. From here the dozens of separate players stop being dozens: the concentric arcs read as one single great crescent of warm wood, black shoulders and burnished brass curved around the small bright disc of the conductor's podium at its focus. Every bow in the crescent lies at the same angle, so the whole shape carries one repeating rhythm across it. Nearest the lens, out of focus and filling the upper left corner, the black barrel and barn doors of a stage lantern, with its beam leaving the housing as a solid visible cone of dusty gold light that plunges down into the frame and lands across the crescent. In the middle ground the crescent is sharp, every stand and chair casting a long shadow outward across the warm oak boards. At the far edge of frame the crimson curtain hem and the dark orchestra pit rail sit soft and legible.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; very wide near-top-down from the lighting bridge, sharp on the stage floor, tactile oak boards, lacquered wood and brass, fine grain.
+LIGHT AND PALETTE: hard white-gold beams from the rig, visible in the dust, throwing long radiating shadows across the boards; honey, amber and brass against warm oak, the unlit boards a full saturated indigo-brown, nothing pastel.
+NEGATIVE: no vertigo warp bending the architecture; no readable text on the stage floor; no holes or missing players breaking the crescent; no labels or arrows.
+-----
