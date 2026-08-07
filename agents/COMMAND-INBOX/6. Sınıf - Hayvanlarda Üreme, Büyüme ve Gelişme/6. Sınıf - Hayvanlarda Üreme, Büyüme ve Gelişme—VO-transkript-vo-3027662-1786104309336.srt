@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:03,920
+ Efe o sabah dedesinin bahçesinde iki şeyi aynı anda gördü.
+
+2
+00:00:03,920 --> 00:00:08,000
+ Kümeste tabuk, yumurtalarının üstünde kıpırdamadan oturuyordu.
+
+3
+00:00:08,000 --> 00:00:12,000
+ Ahırın köşesinde kedi, yeni dolmuş yavrularını yalıyordu.
+
+4
+00:00:12,000 --> 00:00:15,600
+ Yavru kediler daha o günden annelerine benziyordu.
+
+5
+00:00:15,600 --> 00:00:19,600
+ Yumurtaların içinde ne olduğunuysa kimse göremiyordu.
+
+6
+00:00:19,600 --> 00:00:21,200
+ Efe merak etti.
+
+7
+00:00:21,200 --> 00:00:24,400
+ Biri doğuyor, öteki yumurtadan çıkıyordu.
+
+8
+00:00:24,400 --> 00:00:28,800
+ Cevap, hayvanlarda üreme ve gelişme çeşitliliğinde saklıydı.
+
+9
+00:00:28,800 --> 00:00:32,400
+ Efe işin başına üremeye bakmaya karar verdi.
+
+10
+00:00:32,400 --> 00:00:34,800
+ Hayvanların çoğu eşeğili ürer.
+
+11
+00:00:34,800 --> 00:00:39,000
+ Bir erkek üreme hücresi ve bir dişi üreme hücresi birleşir.
+
+12
+00:00:39,000 --> 00:00:41,800
+ Erkek üreme hücresine "spam" denir.
+
+13
+00:00:41,800 --> 00:00:45,000
+ Dişi üreme hücresine ise "yumurta" denir.
+
+14
+00:00:45,000 --> 00:00:49,200
+ Ama bu ikisinin nerede buluştuğu her şeyi değiştirir.
+
+15
+00:00:49,200 --> 00:00:51,800
+ Efe bahçenin alt ucundaki gölete indi.
+
+16
+00:00:51,800 --> 00:00:55,200
+ Suyun içinde balıklar sığ kıyı boyunca yüzüyordu.
+
+17
+00:00:55,200 --> 00:00:58,200
+ Dişi balık yumurtalarını doğrudan suya bırakır.
+
+18
+00:00:58,200 --> 00:01:01,800
+ Erkek balık da spermlerini aynı suya bırakır.
+
+19
+00:01:01,800 --> 00:01:05,600
+ Spermle yumurta dış ortamda, suyun içinde birleşir.
+
+20
+00:01:05,600 --> 00:01:07,800
+ Buna "dış döllenme" denir.
+
+21
+00:01:07,800 --> 00:01:09,600
+ Açıkta risk çoktur.
+
+22
+00:01:09,600 --> 00:01:11,800
+ Çoğu yumurta yavruya dönüşemez.
+
+23
+00:01:11,800 --> 00:01:15,400
+ Bu yüzden bir seferde milyonlarca yumurta bırakılır.
+
+24
+00:01:15,400 --> 00:01:18,600
+ Kurbağalar da yumurtalarını aynı suya bırakır.
+
+25
+00:01:18,600 --> 00:01:21,000
+ Efe göletten bahçeye geri döndü.
+
+26
+00:01:21,000 --> 00:01:24,400
+ Kümes'teki tavuk hâlâ yumurtalarının üstündeydi.
+
+27
+00:01:24,400 --> 00:01:28,600
+ Kuşlarda döllenme dişinin vücudunun içinde gerçekleşir.
+
+28
+00:01:28,600 --> 00:01:32,400
+ Yılanda, kertenkelede ve kaplumbağada da böyledir.
+
+29
+00:01:32,400 --> 00:01:36,200
+ Kedi de, atta ve keçide de döllenme içeride olur.
+
+30
+00:01:36,200 --> 00:01:38,600
+ Buna "iç döllenme" denir.
+
+31
+00:01:38,600 --> 00:01:41,800
+ İçeride spermle yumurtanın buluşma şansı yüksektir.
+
+32
+00:01:41,800 --> 00:01:45,000
+ Bu yüzden yumurta sayısı çok daha azdır.
+
+33
+00:01:45,000 --> 00:01:46,600
+ Döllenme tamamdı.
+
+34
+00:01:46,600 --> 00:01:49,000
+ Peki yavru nasıl büyür ve doğar?
+
+35
+00:01:49,000 --> 00:01:52,600
+ Efe aynı bahçede bunun üç ayrı yolunu gördü.
+
+36
+00:01:52,600 --> 00:01:55,200
+ Birincisi doğurarak çoğalmaktır.
+
+37
+00:01:55,200 --> 00:01:59,000
+ Yavru, annenin karnında gelişir ve öyle doğar.
+
+38
+00:01:59,000 --> 00:02:02,000
+ Doğduktan sonra anne sütüyle beslenir.
+
+39
+00:02:02,000 --> 00:02:07,000
+ Kedi, koyun, inek, yarasa, balina ve insan böyledir.
+
+40
+00:02:07,000 --> 00:02:09,600
+ İkincisi yumurtlayarak çoğalmaktır.
+
+41
+00:02:09,600 --> 00:02:13,800
+ Döllenme içte olur ama yavru yumurtanın içinde gelişir.
+
+42
+00:02:13,800 --> 00:02:16,400
+ Yumurta annenin vücudunun dışındadır.
+
+43
+00:02:16,400 --> 00:02:19,800
+ Tavuk yumurtalarının üstüne yatar ve onları ısıtır.
+
+44
+00:02:19,800 --> 00:02:21,600
+ Buna "kuluçka" denir.
+
+45
+00:02:21,600 --> 00:02:25,600
+ Yılan ve kaplumbağa yumurtalarını toprağa bırakıp gider.
+
+46
+00:02:25,600 --> 00:02:27,600
+ Üçüncüsü balıklardır.
+
+47
+00:02:27,600 --> 00:02:31,800
+ Onlarda hem döllenme hem gelişme suyun içinde olur.
+
+48
+00:02:31,800 --> 00:02:35,000
+ Yavru bakımı kuşlarda ve memelilerde vardır.
+
+49
+00:02:35,000 --> 00:02:39,400
+ Yumurtasını bırakıp giden canlılarda yavru bakımı yoktur.
+
+50
+00:02:39,400 --> 00:02:42,800
+ Efe dönerken maydanozun üstünde bir tırtıl gördü.
+
+51
+00:02:42,800 --> 00:02:46,400
+ Bazı canlıların yavruları erginlere hiç benzemez.
+
+52
+00:02:46,400 --> 00:02:49,800
+ Tırtıl bir süre sonra kendini kozanın içine kapatır.
+
+53
+00:02:49,800 --> 00:02:53,200
+ Kozadan çıkan artık tırtıl değil kelebektir.
+
+54
+00:02:53,200 --> 00:02:56,200
+ Bu büyük değişime başkalaşım denir.
+
+55
+00:02:56,200 --> 00:03:00,000
+ Kurbağa yavrusunun önce solungaçları ve kuyruğu vardır.
+
+56
+00:03:00,000 --> 00:03:03,600
+ Efe kümese döndüğünde yumurtalardan biri çatlamıştı.
+
+57
+00:03:03,600 --> 00:03:08,000
+ Her canlının nesnini sürdürmek için kendine özgü bir yolu vardı.
+

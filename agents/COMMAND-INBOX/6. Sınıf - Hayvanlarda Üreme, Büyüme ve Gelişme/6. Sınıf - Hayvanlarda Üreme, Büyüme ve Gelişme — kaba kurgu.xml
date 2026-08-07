@@ -5,7 +5,7 @@
 <xmeml version="5">
   <sequence id="seq-1">
     <name>6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme — kaba kurgu</name>
-    <duration>4587</duration>
+    <duration>4517</duration>
     <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
     <timecode><rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate><string>00:00:00:00</string><frame>0</frame><displayformat>NDF</displayformat></timecode>
     <media>
@@ -56,9 +56,9 @@
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>192</start>
-          <end>291</end>
+          <end>288</end>
           <in>12</in>
-          <out>111</out>
+          <out>108</out>
           <file id="f-2">
             <name>03.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/03.mp4</pathurl>
@@ -74,10 +74,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>291</start>
-          <end>379</end>
+          <start>288</start>
+          <end>374</end>
           <in>12</in>
-          <out>100</out>
+          <out>98</out>
           <file id="f-3">
             <name>04.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/04.mp4</pathurl>
@@ -93,10 +93,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>379</start>
-          <end>477</end>
+          <start>374</start>
+          <end>470</end>
           <in>12</in>
-          <out>110</out>
+          <out>108</out>
           <file id="f-4">
             <name>05.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/05.mp4</pathurl>
@@ -112,10 +112,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>477</start>
-          <end>603</end>
+          <start>470</start>
+          <end>585</end>
           <in>12</in>
-          <out>138</out>
+          <out>127</out>
           <file id="f-5">
             <name>06.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/06.mp4</pathurl>
@@ -131,8 +131,8 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>603</start>
-          <end>709</end>
+          <start>585</start>
+          <end>691</end>
           <in>12</in>
           <out>118</out>
           <file id="f-6">
@@ -150,8 +150,8 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>709</start>
-          <end>795</end>
+          <start>691</start>
+          <end>777</end>
           <in>12</in>
           <out>98</out>
           <file id="f-7">
@@ -169,10 +169,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>795</start>
-          <end>856</end>
+          <start>777</start>
+          <end>835</end>
           <in>12</in>
-          <out>73</out>
+          <out>70</out>
           <file id="f-8">
             <name>09.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/09.mp4</pathurl>
@@ -188,10 +188,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>856</start>
-          <end>959</end>
+          <start>835</start>
+          <end>936</end>
           <in>12</in>
-          <out>115</out>
+          <out>113</out>
           <file id="f-9">
             <name>10-ESKI-YAPRAKLI.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/10-ESKI-YAPRAKLI.mp4</pathurl>
@@ -207,10 +207,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>959</start>
-          <end>1031</end>
+          <start>936</start>
+          <end>1003</end>
           <in>12</in>
-          <out>84</out>
+          <out>79</out>
           <file id="f-10">
             <name>11.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/11.mp4</pathurl>
@@ -226,10 +226,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1031</start>
-          <end>1103</end>
+          <start>1003</start>
+          <end>1080</end>
           <in>12</in>
-          <out>84</out>
+          <out>89</out>
           <file id="f-11">
             <name>12.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/12.mp4</pathurl>
@@ -245,10 +245,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1103</start>
-          <end>1202</end>
+          <start>1080</start>
+          <end>1181</end>
           <in>12</in>
-          <out>111</out>
+          <out>113</out>
           <file id="f-12">
             <name>13.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/13.mp4</pathurl>
@@ -264,10 +264,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1202</start>
-          <end>1274</end>
+          <start>1181</start>
+          <end>1243</end>
           <in>12</in>
-          <out>84</out>
+          <out>74</out>
           <file id="f-13">
             <name>14.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/14.mp4</pathurl>
@@ -283,10 +283,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1274</start>
-          <end>1353</end>
+          <start>1243</start>
+          <end>1325</end>
           <in>12</in>
-          <out>91</out>
+          <out>94</out>
           <file id="f-14">
             <name>15.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/15.mp4</pathurl>
@@ -302,10 +302,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1353</start>
-          <end>1433</end>
+          <start>1325</start>
+          <end>1397</end>
           <in>12</in>
-          <out>92</out>
+          <out>84</out>
           <file id="f-15">
             <name>16.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/16.mp4</pathurl>
@@ -321,10 +321,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1433</start>
-          <end>1515</end>
+          <start>1397</start>
+          <end>1483</end>
           <in>12</in>
-          <out>94</out>
+          <out>98</out>
           <file id="f-16">
             <name>17.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/17.mp4</pathurl>
@@ -340,10 +340,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1515</start>
-          <end>1616</end>
+          <start>1483</start>
+          <end>1574</end>
           <in>12</in>
-          <out>113</out>
+          <out>103</out>
           <file id="f-17">
             <name>18.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/18.mp4</pathurl>
@@ -359,10 +359,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1616</start>
-          <end>1672</end>
+          <start>1574</start>
+          <end>1627</end>
           <in>12</in>
-          <out>68</out>
+          <out>65</out>
           <file id="f-18">
             <name>19.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/19.mp4</pathurl>
@@ -378,10 +378,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1672</start>
-          <end>1770</end>
+          <start>1627</start>
+          <end>1723</end>
           <in>12</in>
-          <out>110</out>
+          <out>108</out>
           <file id="f-19">
             <name>20.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/20.mp4</pathurl>
@@ -397,10 +397,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1770</start>
-          <end>1868</end>
+          <start>1723</start>
+          <end>1809</end>
           <in>12</in>
-          <out>110</out>
+          <out>98</out>
           <file id="f-20">
             <name>21.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/21.mp4</pathurl>
@@ -416,10 +416,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1868</start>
-          <end>1939</end>
+          <start>1809</start>
+          <end>1886</end>
           <in>12</in>
-          <out>83</out>
+          <out>89</out>
           <file id="f-21">
             <name>22.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/22.mp4</pathurl>
@@ -435,10 +435,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1939</start>
-          <end>1999</end>
+          <start>1886</start>
+          <end>1944</end>
           <in>12</in>
-          <out>72</out>
+          <out>70</out>
           <file id="f-22">
             <name>23.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/23.mp4</pathurl>
@@ -454,10 +454,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>1999</start>
-          <end>2077</end>
+          <start>1944</start>
+          <end>2026</end>
           <in>12</in>
-          <out>90</out>
+          <out>94</out>
           <file id="f-23">
             <name>24.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/24.mp4</pathurl>
@@ -473,10 +473,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2077</start>
-          <end>2173</end>
+          <start>2026</start>
+          <end>2127</end>
           <in>12</in>
-          <out>108</out>
+          <out>113</out>
           <file id="f-24">
             <name>25.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/25.mp4</pathurl>
@@ -492,10 +492,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2173</start>
-          <end>2267</end>
+          <start>2127</start>
+          <end>2218</end>
           <in>12</in>
-          <out>106</out>
+          <out>103</out>
           <file id="f-25">
             <name>26.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/26.mp4</pathurl>
@@ -511,10 +511,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2267</start>
-          <end>2350</end>
+          <start>2218</start>
+          <end>2309</end>
           <in>12</in>
-          <out>95</out>
+          <out>103</out>
           <file id="f-26">
             <name>27.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/27.mp4</pathurl>
@@ -530,10 +530,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2350</start>
-          <end>2403</end>
+          <start>2309</start>
+          <end>2367</end>
           <in>12</in>
-          <out>65</out>
+          <out>70</out>
           <file id="f-27">
             <name>28.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/28.mp4</pathurl>
@@ -549,10 +549,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2403</start>
-          <end>2487</end>
+          <start>2367</start>
+          <end>2444</end>
           <in>12</in>
-          <out>96</out>
+          <out>89</out>
           <file id="f-28">
             <name>29.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/29.mp4</pathurl>
@@ -568,10 +568,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2487</start>
-          <end>2570</end>
+          <start>2444</start>
+          <end>2521</end>
           <in>12</in>
-          <out>95</out>
+          <out>89</out>
           <file id="f-29">
             <name>30.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/30.mp4</pathurl>
@@ -587,10 +587,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2570</start>
-          <end>2675</end>
+          <start>2521</start>
+          <end>2617</end>
           <in>12</in>
-          <out>117</out>
+          <out>108</out>
           <file id="f-30">
             <name>31.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/31.mp4</pathurl>
@@ -606,10 +606,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2675</start>
-          <end>2766</end>
+          <start>2617</start>
+          <end>2703</end>
           <in>12</in>
-          <out>103</out>
+          <out>98</out>
           <file id="f-31">
             <name>32.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/32.mp4</pathurl>
@@ -625,10 +625,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2766</start>
-          <end>2830</end>
+          <start>2703</start>
+          <end>2765</end>
           <in>12</in>
-          <out>76</out>
+          <out>74</out>
           <file id="f-32">
             <name>33.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/33.mp4</pathurl>
@@ -644,10 +644,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2830</start>
-          <end>2914</end>
+          <start>2765</start>
+          <end>2856</end>
           <in>12</in>
-          <out>96</out>
+          <out>103</out>
           <file id="f-33">
             <name>34.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/34.mp4</pathurl>
@@ -663,10 +663,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2914</start>
-          <end>2993</end>
+          <start>2856</start>
+          <end>2928</end>
           <in>12</in>
-          <out>91</out>
+          <out>84</out>
           <file id="f-34">
             <name>35.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/35.mp4</pathurl>
@@ -682,10 +682,10 @@
           <enabled>TRUE</enabled>
           <duration>193</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>2993</start>
-          <end>3118</end>
+          <start>2928</start>
+          <end>3048</end>
           <in>12</in>
-          <out>137</out>
+          <out>132</out>
           <file id="f-35">
             <name>36.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/36.mp4</pathurl>
@@ -701,10 +701,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3118</start>
-          <end>3181</end>
+          <start>3048</start>
+          <end>3110</end>
           <in>12</in>
-          <out>75</out>
+          <out>74</out>
           <file id="f-36">
             <name>37.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/37.mp4</pathurl>
@@ -720,10 +720,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3181</start>
-          <end>3286</end>
+          <start>3110</start>
+          <end>3211</end>
           <in>12</in>
-          <out>117</out>
+          <out>113</out>
           <file id="f-37">
             <name>38.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/38.mp4</pathurl>
@@ -739,10 +739,10 @@
           <enabled>TRUE</enabled>
           <duration>121</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3286</start>
-          <end>3350</end>
+          <start>3211</start>
+          <end>3273</end>
           <in>12</in>
-          <out>76</out>
+          <out>74</out>
           <file id="f-38">
             <name>39.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/39.mp4</pathurl>
@@ -758,10 +758,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3350</start>
-          <end>3434</end>
+          <start>3273</start>
+          <end>3355</end>
           <in>12</in>
-          <out>96</out>
+          <out>94</out>
           <file id="f-39">
             <name>40.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/40.mp4</pathurl>
@@ -777,8 +777,8 @@
           <enabled>TRUE</enabled>
           <duration>97</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3434</start>
-          <end>3477</end>
+          <start>3355</start>
+          <end>3398</end>
           <in>12</in>
           <out>55</out>
           <file id="f-40">
@@ -796,10 +796,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3477</start>
-          <end>3576</end>
+          <start>3398</start>
+          <end>3494</end>
           <in>12</in>
-          <out>111</out>
+          <out>108</out>
           <file id="f-41">
             <name>42.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/42.mp4</pathurl>
@@ -815,10 +815,10 @@
           <enabled>TRUE</enabled>
           <duration>97</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3576</start>
-          <end>3618</end>
+          <start>3494</start>
+          <end>3542</end>
           <in>12</in>
-          <out>54</out>
+          <out>60</out>
           <file id="f-42">
             <name>43.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/43.mp4</pathurl>
@@ -834,10 +834,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3618</start>
-          <end>3720</end>
+          <start>3542</start>
+          <end>3643</end>
           <in>12</in>
-          <out>114</out>
+          <out>113</out>
           <file id="f-43">
             <name>44.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/44.mp4</pathurl>
@@ -853,10 +853,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3720</start>
-          <end>3794</end>
+          <start>3643</start>
+          <end>3720</end>
           <in>12</in>
-          <out>86</out>
+          <out>89</out>
           <file id="f-44">
             <name>45.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/45.mp4</pathurl>
@@ -872,10 +872,10 @@
           <enabled>TRUE</enabled>
           <duration>169</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3794</start>
-          <end>3899</end>
+          <start>3720</start>
+          <end>3826</end>
           <in>12</in>
-          <out>117</out>
+          <out>118</out>
           <file id="f-45">
             <name>46.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/46.mp4</pathurl>
@@ -891,10 +891,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3899</start>
-          <end>3983</end>
+          <start>3826</start>
+          <end>3908</end>
           <in>12</in>
-          <out>96</out>
+          <out>94</out>
           <file id="f-46">
             <name>47.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/47.mp4</pathurl>
@@ -910,10 +910,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>3983</start>
-          <end>4067</end>
+          <start>3908</start>
+          <end>3994</end>
           <in>12</in>
-          <out>96</out>
+          <out>98</out>
           <file id="f-47">
             <name>48.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/48.mp4</pathurl>
@@ -929,10 +929,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4067</start>
-          <end>4154</end>
+          <start>3994</start>
+          <end>4076</end>
           <in>12</in>
-          <out>99</out>
+          <out>94</out>
           <file id="f-48">
             <name>49.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/49.mp4</pathurl>
@@ -948,10 +948,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4154</start>
-          <end>4241</end>
+          <start>4076</start>
+          <end>4158</end>
           <in>12</in>
-          <out>99</out>
+          <out>94</out>
           <file id="f-49">
             <name>50.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/50.mp4</pathurl>
@@ -967,10 +967,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4241</start>
-          <end>4317</end>
+          <start>4158</start>
+          <end>4230</end>
           <in>12</in>
-          <out>88</out>
+          <out>84</out>
           <file id="f-50">
             <name>51.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/51.mp4</pathurl>
@@ -986,10 +986,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4317</start>
-          <end>4405</end>
+          <start>4230</start>
+          <end>4321</end>
           <in>12</in>
-          <out>100</out>
+          <out>103</out>
           <file id="f-51">
             <name>52.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/52.mp4</pathurl>
@@ -1005,10 +1005,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4405</start>
-          <end>4498</end>
+          <start>4321</start>
+          <end>4407</end>
           <in>12</in>
-          <out>105</out>
+          <out>98</out>
           <file id="f-52">
             <name>53.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/53.mp4</pathurl>
@@ -1024,10 +1024,10 @@
           <enabled>TRUE</enabled>
           <duration>145</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-          <start>4498</start>
-          <end>4587</end>
+          <start>4407</start>
+          <end>4517</end>
           <in>12</in>
-          <out>101</out>
+          <out>122</out>
           <file id="f-53">
             <name>54.mp4</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/KLIPLER/54.mp4</pathurl>
@@ -1045,17 +1045,17 @@
         <clipitem id="vo1-0">
           <name>vo.mp3 (1/2)</name>
           <enabled>TRUE</enabled>
-          <duration>4584</duration>
+          <duration>4516</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>0</start>
-          <end>4584</end>
+          <end>4516</end>
           <in>0</in>
-          <out>4584</out>
+          <out>4516</out>
           <file id="file-vo1">
             <name>vo.mp3</name>
             <pathurl>file://localhost/Users/Muhammet/Desktop/6.%20S%C4%B1n%C4%B1f%20Animasyonlar/Hayvanlarda%20%C3%9Creme%2C%20B%C3%BCy%C3%BCme%20ve%20Geli%C5%9Fme/SES/vo.mp3</pathurl>
             <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
-            <duration>4584</duration>
+            <duration>4516</duration>
             <media><audio><channelcount>2</channelcount></audio></media>
           </file>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
@@ -1088,9 +1088,9 @@
           <duration>3477</duration>
           <rate><timebase>24</timebase><ntsc>FALSE</ntsc></rate>
           <start>3477</start>
-          <end>4587</end>
+          <end>4517</end>
           <in>0</in>
-          <out>1110</out>
+          <out>1040</out>
           <file id="file-mzk1"/>
           <sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack>
           <comments><mastercomment1>Müzik — Suno (VO altında ~-18 dB) — döngü 2/2</mastercomment1></comments>

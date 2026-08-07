@@ -2,10 +2,10 @@
   "version": 1,
   "projectId": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
-  "phase": "motion",
+  "phase": "kurgu",
   "status": "aktif",
-  "lastCompleted": "MOTION 54/54 + EDIT-PLAN + ANIMATIC-0 teslim. Mami hükmü alındı: K25/K29 kalıyor, K33 okunuyor kalıyor, K37 revize edildi (yazı kusuru yerleşimdeydi, tepeden açıya alındı) ve motion'ı yeniden yazıldı.",
-  "nextAction": "K37 yeniden basılacak (150 kredi), sonra 51 KLİP BASIMI — 309 sn üretim, ~27.800 kredi, cüzdanda 77.136 var. Süreler ekran+2sn'ye çekildi, kamera türü sekans içinde dönüyor.",
+  "lastCompleted": "VO değişti (eski kayıt peltek okuyordu, Mami yeniden seslendirtti) → kaba kurgu YENİ VO ile yeniden kuruldu. 3:11 → 3:08, whisper 54/54 kareyi yeni cümle sınırlarına oturttu. Eski VO vo-ESKI-PELTEK.mp3 olarak duruyor.",
+  "nextAction": "Premiere'de KURGU/KABA-KURGU.xml aç, render al. Render inince AGY tam film izleyecek + cetvel ffmpeg + hakem Read.",
   "openMamiDecision": null,
   "blockedBy": null,
   "requiredLocalMedia": [
@@ -35,7 +35,7 @@
     "KABA-KURGU.xml": true,
     "revize": true
   },
-  "updatedAt": "2026-08-07T11:58:17.408Z",
+  "updatedAt": "2026-08-07T12:06:41.852Z",
   "updatedBy": "claude",
-  "baseCommit": "339e1896"
+  "baseCommit": "604832b1"
 }
