@@ -82,6 +82,12 @@ export function derle(projeAd, { sekans = null } = {}) {
   const ref = refAd ? oku(join(dir, refAd)) : null;
   const lock = lockAd ? oku(join(dir, lockAd)) : null;
 
+  // VİDEO BEYNİ — o videonun BEYAN'ı: dünya kaynağı, Mami kararları, o videoda öğrenilenler.
+  // Neden tohuma giriyor (ölçüldü 2026-08-07): "ajanlar orkestratörün körlüğünü miras alır —
+  // altı mükemmel ajan, yanlış dünyada altı mükemmel yanlış üretir." Enzim kilitleri taşır ama
+  // Mami'nin o gün verdiği kararları ve o videoda yanan parmakları taşımaz.
+  const beyin = oku(join(dir, 'CLAUDE.md'));
+
   // Dünya/register: Enzim kilitlerinden okunur — UYDURULMAZ, bulunamazsa "bilinmiyor".
   // Dünya kimliği Enzim'de iki biçimde yazılıyor: `worldId: x` ya da KİLİT 1 — DÜNYA
   // başlığının altında backtick'li snake_case id (`pixar_3d_edu`). İkisi de aranır;
@@ -123,6 +129,7 @@ export function derle(projeAd, { sekans = null } = {}) {
     worldId: worldId ?? 'bilinmiyor',
     register: register ?? 'bilinmiyor',
     enzim: enzimAd ?? null,
+    beyin: beyin ? 'CLAUDE.md' : null,
     ref: refAd ?? null,
     vo: voAd ?? null,
     canaryLock: lockAd ?? null,
@@ -144,6 +151,11 @@ export function derle(projeAd, { sekans = null } = {}) {
     `- proje: \`${parcalar.dizin}\``,
     `- dünya: \`${parcalar.worldId}\` · register: \`${parcalar.register}\``,
     `- canary kilidi: ${lockAd ? `\`${lockAd}\` ✅` : '**YOK — üretim fazı açılamaz**'}`,
+    '',
+    '## VİDEO BEYNİ — beyan, karar ve bu videoda yanan parmaklar',
+    '> 🔴 ÜRETİM YETKİSİ: prompt YAZARSIN, kare BASMAZSIN. MCP üretim çağrısı ajanda kapalıdır',
+    '> ve bu bir rica değil — `harcama-kapisi.mjs` `agent_id` görünce reddediyor (ölçüldü).',
+    beyin ? beyin.trim() : '_(YOK — `node scripts/video-beyni.mjs kur "<proje>"`. Beyin yoksa üretim kapısı da kapalıdır.)_',
     '',
     '## VİZYON KİLİDİ (Enzim)',
     enzim ? enzim.trim() : '_(yok — `/mamilas-enzim` ile KİLİT 0-5 kapatılmadı)_',

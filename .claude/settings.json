@@ -13,6 +13,17 @@
             "timeout": 300
           }
         ]
+      },
+      {
+        "matcher": "mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/harcama-kapisi.mjs"],
+            "timeout": 20
+          }
+        ]
       }
     ],
     "SessionStart": [

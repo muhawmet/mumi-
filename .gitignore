@@ -33,6 +33,9 @@ screenshots/
 .claude/settings.local.json
 .claude/.buddy-last-gap
 .claude/.buddy-state/
+# Kapının acil çıkış işareti — yereldir ve 10 dakikada kendiliğinden eskir.
+# Commit'lenirse başka makinede taze görünüp kapıyı sessizce açardı.
+.claude/.lint-skip
 
 # Üretim koşusu artefaktları (proje-başına geçici; kalıcı ders agents/lessons/APPROVED.md'ye damıtılır)
 images/

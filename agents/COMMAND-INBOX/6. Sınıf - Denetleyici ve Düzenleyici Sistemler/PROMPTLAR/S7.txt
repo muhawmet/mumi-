@@ -1,0 +1,105 @@
+SEKANS 7 — İKİ ŞEF, TEK UYUM · KAPANIŞ (K61–K66)
+Motor: Nano Banana 2 Flash (Magnific) · 16:9 · register EDU · dünya pixar_3d_edu
+REFERANS: yalnız @mira → 1lLXJFpr4r  (salon plakası referans olarak VERİLMEZ — yazıyla taşınır)
+DURUM: 61–66 basıldı ve gözle onaylandı (6/6). Aşağıdaki metinler BASILAN metinlerdir.
+
+🔴 TABLO YASAK. Şema, etiket, ok, inset panel, iki sütunlu karşılaştırma yok.
+   Fark İKİ IŞIĞIN DAVRANIŞIYLA anlatıldı ve motor bunu ÜÇ kez doğru bastı:
+     · SİNİR  = sert kenar · tek yüzeyde · bitince BİRDEN kesilir · iz bırakmaz  → K61, K63
+     · HORMON = kenarsız · malzemenin İÇİNDE · sınırsız zayıflar · KALIR        → K62, K63, K65
+   Ölçüm: K62'de "no rim light, no hard specular edge" + "glowing OUT OF the metal rather
+   than OFF it" ikilisi tuttu; bakır kazanlar içeriden yandı, kenar oluşmadı.
+
+🔴 SALON SÜREKLİLİĞİ — images/1.png açılıp okundu, altı karede aynı salon tutturuldu:
+   yaldızlı sahne kemeri · derin kırmızı kadife perde ve koltuklar · yaldızlı balkon locaları
+   mavi-mor gölgede · cilalı ahşap sahne zemini · TEPEDEN inen sert spot huzmeleri, havada
+   görünür toz · siyah frak giymiş müzisyenler · siyah nota sehpaları · önde odak dışı kontrbas.
+   Plaka referansı GEREKMEDİ; salon yalnız bu cümlelerle taşındı.
+
+⚠ K65 bir kez düz ışıkta ve boş duvarla geldi. Onaran şey ışık sayısı değil, kadrajın
+  YALDIZLI LOCA VE KADİFE PERDEYLE doldurulmasıydı — "no bare empty wall filling the frame".
+
+-----
+
+K61  ·  VO 61: "Sinir sistemi çok hızlı çalışır, etkisi kısa sürer."
+REFERANS: yok
+🔴 SERT KENAR IŞIĞI — kenar bitince BİRDEN kesilir, hâle ve yansıma bırakmaz.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+Close on the conductor's hand on the podium of a grand gilded concert hall, held at the bottom of the beat. The slim white baton lies level in his fingers, his starched white cuff just behind it, the black sleeve beyond. One hard spotlight shaft comes down steeply from above and to the left and lays a single bright gold line along the upper edge of the baton and the top of the cuff — and that line ends exactly where the baton ends. Nothing carries past it: no halo, no bloom, no gold bounced onto the black sleeve, none reflected in the polished music stand a hand's width away, none on the score. Every surface outside that one edge is deep, cold, saturated indigo. Behind him, out of focus and lower, the first violins are caught mid-bow in the same shaft, bows raked at one angle, the players' faces intent. Further back the crimson velvet curtain and the gilded balcony boxes glow dim. In the immediate foreground, the out-of-focus black corner of a music stand and one blurred scroll of a violin frame the bottom of the shot. Visible dust turns in the shaft.
+
+STYLE: cinematic 3D animation, close macro-leaning lens, very shallow depth of field, tactile lacquered wood, starched linen and polished brass.
+LIGHT AND PALETTE: one hard narrow spotlight from upper left; a single crisp gold edge that terminates abruptly; deep saturated indigo everywhere else, crimson velvet glow far back.
+NEGATIVE: no glow, halo, bloom or lens flare around the lit edge; no reflected gold on neighbouring surfaces; no arrows, labels, panels or diagrams; no soft even fill light.
+
+-----
+
+K62  ·  VO 62: "İç salgı bezleri yavaş çalışır, etkisi uzun sürer."
+REFERANS: yok
+🔴 KENARSIZ IŞIK — malzemenin İÇİNDE, sınırsız zayıflar, KALIR. Rim yok.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+At the back of a grand gilded concert hall's orchestra, the timpani. Two big copper kettles fill the middle of the frame, their heads still after the stroke, one felt mallet resting across a rim and the second held loose at the timpanist's side; he stands behind them in black tie, head tilted, listening to the sound go out. The warmth here has no edge anywhere: a broad amber lives inside the copper itself and inside the taut drumhead, glowing out of the metal rather than off it, thinning outward with no boundary and no line to point at, still faintly warming the felt of the mallet, the brass of the tubas behind and the deep crimson velvet on the back wall. The overhead spotlight shafts fall further forward, so the timpani sit in their own residual glow rather than in direct light. Beyond and slightly out of focus, the brass row and a corner of the gilded box balcony; in the immediate foreground, the blurred black silhouette of a music stand and the shoulder of a trombonist close the left edge. Dust drifts slowly through the darker air.
+
+STYLE: cinematic 3D animation, medium lens, layered orchestral depth, shallow foreground blur, tactile hammered copper, felt and velvet.
+LIGHT AND PALETTE: no rim and no hard edge on the subject; a broad edgeless amber emitted from within copper, drumhead and brass, falling off endlessly; saturated crimson and deep blue-violet surround.
+NEGATIVE: no rim light and no hard specular edge on the kettles; no visible light rays, beams, channels or energy trails; no arrows, labels or comparison panels; no washed-out grey shadows.
+
+-----
+
+K63  ·  VO 63: "Biri elektrik sinyaliyle, öteki hormonla konuşur."
+REFERANS: yok
+🔴 İKİ IŞIK AYNI MEKÂNDA, TEK KARE — tablo değil, kompozisyon. Yaylar yakın yarıda sert
+   kenarlı, bakırlar uzak yarıda kenarsız; aradaki tahta nefesliler soğuk indigoda.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+A three-quarter view across a grand gilded concert hall's orchestra from stage left, taking in the strings in the near half and the brass in the far half of the same shot. In the near half the violin section is mid-phrase: a dozen bows raked at exactly the same angle, and a single hard spotlight shaft from above lays one crisp gold line along the upper edge of every bow — each line stopping dead at the strings, nothing spilling onto the players' black sleeves or onto the pale sheet music beside them. In the far half, past the sharp bows, the brass row holds a completely different warmth: a broad amber with no edge at all, coming from inside the tubas and horns, thinning outward into the crimson velvet with no boundary anywhere, warming the whole rear of the stage. Between the two, the woodwind players sit in cool indigo. The wooden stage floor is polished and reflective, the gilded balcony boxes rise at the right in blue-violet shadow, and dust turns in the shafts. In the immediate foreground an out-of-focus contrabass scroll and one blurred hand close the right edge.
+
+STYLE: cinematic 3D animation, medium-wide lens across the stage, deep layered orchestral space, shallow foreground blur, tactile spruce, brass and velvet.
+LIGHT AND PALETTE: hard narrow shafts from above producing crisp terminating gold edges on the bows; separately an edgeless internal amber in the far brass; saturated crimson, honey and deep indigo.
+NEGATIVE: no split screen, no dividing line, no two-column comparison and no panels; no labels, arrows or callout lines; no glow or halo around the bow edges; no flat even lighting.
+
+-----
+
+K64  ·  VO 64: "İkisi birlikte vücudumuzun iç dengesini korur."
+REFERANS: yok  — filmin en geniş karesi; iç denge, her şeyin AYNI ANDA yürümesi olarak.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+A grand gilded concert hall seen high from a side box, looking down across the stage. The full orchestra is playing at once — strings, woodwinds, brass, timpani, dozens of musicians in black tie, every bow and every bell caught in the same instant of order, the conductor small and central on his podium with both arms open. Three hard spotlight shafts come down steeply from the flies and cut visible columns through the hazy air onto the polished timber stage, throwing long shadows of stands and chairs; where the shafts land the wood burns honey-bright, and everywhere else the stage falls to deep saturated blue-violet. A separate broad warmth, edgeless, glows from inside the varnished instrument bodies and the crimson velvet so the whole room feels held rather than lit. The stalls below are full: rows of crimson seats, a warm scatter of upturned faces, the front row nearest the stage. The gilded proscenium arch and the tiers of boxes curve away at the right. In the foreground, out of focus, the carved gilt rail of the box and one blurred velvet curtain edge frame the bottom-left corner.
+
+STYLE: cinematic 3D animation, high wide-angle establishing shot, strong vertical light shafts, atmospheric haze, tactile gilt, velvet and varnished wood.
+LIGHT AND PALETTE: three hard top shafts with visible volumetric edges; honey pools on the stage, deep blue-violet elsewhere; a broad edgeless amber inside wood and velvet; fully saturated crimson and gold.
+NEGATIVE: no diagram overlay and no labels, arrows or panels; no empty seats and no empty stage; no pale, grey or desaturated grade; no modern stage screens or projections.
+
+-----
+
+K65  ·  VO 65: "Salonda son akor çalındı ve şefin eli indi."
+REFERANS: yok
+🔴 Durum, olay değil: el ÇOKTAN inmiş, yaylar ÇOKTAN durmuş.
+🔴 İki ışık bir arada: sert kenar BİTMİŞ ve izsiz · geniş amber HÂLÂ orada.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram.
+
+From the stalls of a grand gilded concert hall, close behind and below the conductor, looking past his shoulder into the orchestra. The last chord has gone. His arm has already come down and hangs at his side, the baton tip pointing at the floor; in front of him every bow is lowered and resting, instruments dropped from the chin, dozens of players in black tie sitting still and looking up at him. Two hard spotlight shafts still hang from the flies and cut visible columns through the hazy air onto the polished timber stage, pooling honey-bright on the wood and dropping everything outside them to deep saturated blue-violet. The hard gold edge that had run along the baton and his white cuff is finished — that edge is simply gone and has left nothing behind it, the metal and linen now cold indigo with no afterglow. What remains is a different warmth: a broad, edgeless amber glowing from inside the varnished spruce of the violins and cellos, inside the brass, inside the deep crimson velvet curtain and the timber of the stage, dimming outward with no boundary. The gilded proscenium arch, the crimson swagged curtain and three tiers of gilded boxes fill the right of the frame, small lamps burning along them. In the immediate foreground the out-of-focus dark shoulder of the conductor closes the left edge and a blurred crimson seat back closes the bottom.
+
+STYLE: cinematic 3D animation, medium-wide lens from behind and below, layered depth into the orchestra, shallow foreground blur, tactile varnish, brass, gilt and velvet.
+LIGHT AND PALETTE: two hard volumetric shafts with honey pools and deep blue-violet falloff; the directional edge has ended and left no trace; a broad edgeless amber remains inside the materials; fully saturated crimson and gold.
+NEGATIVE: no flat even fill light and no bare empty wall filling the frame; no raised bows and no mid-play motion; no glow or trail where the hard edge ended; no labels, arrows or panels.
+
+-----
+
+K66  ·  VO 66: "Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu."
+REFERANS: @mira (1lLXJFpr4r)  — filmin son karesi
+🔴 Kavram ışığı TENE DEĞMEZ — kadifenin, örgünün, pirincin içinde.
+
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The attached reference is an identity plate only: take from it the child's face, hair and outfit and nothing else — the setting, camera, framing and pose below override it completely.
+
+The front row of a grand gilded concert hall at the end of the concert. The camera is low, at the stage side, looking back along the row. The girl has risen to her feet and is cropped by the frame edge at the waist, seen in three-quarter view, her hands already brought together in applause and held there, chin lifted toward the stage, eyes bright, a wide open smile. Around and behind her the rest of the audience is rising too — a warm blurred field of shoulders and moving hands, crimson velvet seat backs tipping up. Spill from the stage shafts comes hard from frame left and draws a clean gold edge down one side of her face, her shoulder and the seat back beside her. Deeper in, past her, the orchestra is still on its feet in honey pools of light and the conductor is turning toward the hall. A second warmth sits under all of it — a broad amber with no edge, alive inside the crimson velvet, inside the knit of her sleeve and inside the brass on stage, thinning outward with no boundary. In the immediate foreground an out-of-focus gilt seat-row rail and one blurred raised hand close the bottom-right. Dust turns in the shafts above.
+
+STYLE: cinematic 3D animation, medium-close lens, low three-quarter angle, shallow depth of field, tactile velvet, gilt and knitted fabric.
+LIGHT AND PALETTE: hard stage spill from frame left with a crisp gold edge on face and shoulder; separately a broad edgeless amber inside velvet, fabric and brass, never on skin; saturated crimson, honey and deep indigo.
+NEGATIVE: no plain studio backdrop and no full-body standing pose; no empty hall and no seated audience; no labels, arrows or panels; no washed-out pastel grade.

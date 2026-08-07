@@ -28,11 +28,17 @@ EXIT STATE: Aynı duruş; omuzları biraz daha inmiş.
 🔴 references: 1lLXJFpr4r (@mira) — kız TARİF EDİLMEZ, çağrılır.
 🔴 Hiçbir kavram ışığı tene ya da göğse değmez; giysinin altından hiçbir şey görünmez.
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. Still in the front row of the grand concert hall. The girl from the character reference is framed from the waist up, turned three-quarters toward the lens and seen from slightly above, her legs and the floor out of frame. She has laid one palm flat on the centre of her own chest, fingers spread and relaxed against the fabric, her other hand still resting on the arm of the seat. Her chin has dropped a little, her mouth is closed and her eyes are half lowered and unfocused — the attention has turned from the stage to something she can feel under her hand. Nearest the lens, out of focus and closing the lower left edge, the deep red velvet back of the seat in front of her. Behind her the lit stage is thrown far out of focus into a soft warm field of honey and brass with no readable detail. Warm spill from the stage lands on her shoulder and the back of her hand from screen-right and leaves the other side of her in rich indigo.
+⚠ BASILAN SÜRÜM v2 — dört tur sürdü, üçü `images/mami-bak/` altında ve ders taşıyor:
+   v1 simetrik cepheden portre, iki el göğüste, gözler kapalı → poz, sahne değil.
+   v3 palet ısındı ama ağız açık ve ifade korkmuş çıktı.
+   v4 KADRAJ KİLİDİ KIRILDI: referansın stüdyo tam-boy plakası birebir ithal oldu (beyaz fon).
+   🔴 Ölçüm: @mira karelerinde NEGATİF GERİ TEPİYOR — "no programme" broşür üretti,
+   "no thought bubble" düşünce balonu üretti. İfade ve duruş OLUMLU yazılır.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. The darkened front row of a grand concert hall. The girl from the character reference is seated, placed well off to the right of frame and seen in three-quarter profile from her left, framed from the waist up with her legs and the floor out of frame. She has laid one single palm flat on the centre of her own chest, fingers spread against the fabric; her other arm is still down on the arm of the seat. Her chin has dropped, her eyes are open but lowered and unfocused, her mouth closed — her attention has turned from the stage to something she can feel under her hand. Nearest the lens, thrown far out of focus, the deep crimson velvet back of the seat in front of her closes the whole lower left corner as a soft heavy mass. Far behind her the lit stage is a broad warm blur of honey and brass with no readable detail. One hard warm beam from the stage strikes her from screen-left, lights the rim of her cheek, her shoulder and the back of her hand, and throws a long clean shadow of her arm across her front; everything the beam misses drops into deep saturated indigo.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto, shallow depth of field with a broad warm bokeh behind, tactile velvet and brushed cotton, fine grain.
-LIGHT AND PALETTE: single warm directional spill from the stage at screen-right, hard enough to draw a clean shadow line down her front; amber and honey on the lit side, saturated indigo and crimson elsewhere, no pastel and no grey.
-NEGATIVE: no glow on her skin or chest; no anatomical shape showing through her clothing; no open mouth; no full-body studio pose on a plain background.
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto in three-quarter profile, off-centre asymmetric composition, very shallow depth of field, tactile crushed velvet and brushed cotton, fine grain.
+LIGHT AND PALETTE: one hard warm key from screen-left with almost no fill; amber and honey on the lit rim, full saturated indigo and crimson elsewhere, nothing pale, nothing grey.
+NEGATIVE: no symmetrical head-on portrait; no both hands on the chest; no closed eyes; no worn or scuffed upholstery; no standing figure.
 -----
 
 
@@ -129,11 +135,17 @@ EXIT STATE: Aynı ifade; bakış bir tık yukarı kaymış.
 🔴 references: 1lLXJFpr4r (@mira) — kız TARİF EDİLMEZ, çağrılır.
 🔴 Düşünce balonu, soru işareti, ekran yazısı yok.
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A tight frame in the darkened concert hall. The girl from the character reference is framed from mid-chest up, the rest of her body and the row out of frame, turned almost to the lens and seen at her own eye level. Her palm is still flat on her chest at the very bottom edge of frame. Her eyebrows have lifted, her eyes are wide and looking slightly up and off to one side at nothing in particular, and her mouth stays closed — the whole question is in her face and she has not said a word. Nearest the lens, out of focus and closing the left edge, the deep red velvet back of the seat in front of her. Behind her the stage has dimmed to a soft dull warm field with no readable detail at all, so she is the only sharp and the only bright thing in the frame. A narrow warm shaft from the stage crosses her cheekbone and the bridge of her nose from screen-right and leaves the other half of her face in deep rich shadow.
+⚠ BASILAN SÜRÜM v2. İlk sürümde NEGATİF GERİ TEPTİ: "no thought bubble or question mark"
+   yazıldı, motor tam da yıldızlı bir DÜŞÜNCE BALONU bastı (`mami-bak/14-dusunce-balonu.png`).
+   Onarım: balon kelimesi metinden tamamen çıkarıldı ve yerine olumlu cümle kondu —
+   *"the air completely empty and clear around her"*.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A tight frame in a darkened symphony concert hall, the air completely empty and clear around her. The girl from the character reference is framed from mid-chest up, the rest of her body and the row out of frame, seen in three-quarter view at her own eye level and placed off to the right side of the frame. Her palm is still flat on her chest at the very bottom edge of frame. Her eyebrows have lifted into a soft arch of wonder, her eyes are wide open and looking slightly up and away past the camera, and her lips stay closed together in a small quiet line — the whole question sits on her face and she says nothing. Nearest the lens, thrown far out of focus, the deep crimson velvet back of the seat in front of her closes the left edge as a soft heavy mass. Behind her the hall has fallen to a dull warm glow with no readable detail at all, so she is the only sharp and the only bright thing in the picture. A narrow hard warm shaft crosses her cheekbone and the bridge of her nose from screen-right and leaves the other half of her face in deep rich shadow.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; close telephoto portrait at eye level, very shallow depth of field, tactile brushed cotton and velvet, fine grain.
-LIGHT AND PALETTE: one narrow hard warm shaft from screen-right cutting a clean diagonal across the face, everything else falling into saturated indigo; amber and honey on the lit half, no fill, no pastel and no grey.
-NEGATIVE: no glowing overlay on her face; no thought bubble or question mark; no open mouth; no text anywhere in frame.
+STYLE: 3D animated feature, warm stylised Pixar tradition; close telephoto portrait at eye level, off-centre composition, very shallow depth of field, tactile brushed cotton and velvet, fine grain, strong contrast.
+LIGHT AND PALETTE: one narrow hard warm shaft from screen-right cutting a clean diagonal across the face with no fill; amber and honey on the lit half, full saturated indigo everywhere else, warm throughout.
+NEGATIVE: no floating shapes or sparkles in the air around her; no open mouth; no flat even lighting.
+⚠ Teslim edilen karede ağız hafif ARALIK (şaşkınlık O'su). Motion yazarı için not: bu kare
+   konuşma değil; klip boyunca ağız SABİT kalır, dudak hareketi yok.
 -----
 
 

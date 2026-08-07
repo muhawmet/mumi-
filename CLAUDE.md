@@ -41,6 +41,8 @@ Bu dosyaya **kodda yaşayan sayıyı, motor listesini veya durum bilgisini kopya
 | **Dörtlü Masa — roller · sonuç sözlüğü · 5 tetikleyici · artefact yeri** | `docs/ai/DORTLU-MASA.md` (tek otorite; nüshalanmaz) |
 | Ortak Claude+Codex kanonu | `docs/ai/PROJECT_CONTRACT.md` |
 | **Aktif iş kaydı** | `artifacts/current-work.json` → `node scripts/current-work.mjs` (SessionStart hook aynısını basar) |
+| 🔴 **O videonun BEYNİ** | `agents/COMMAND-INBOX/<Proje>/CLAUDE.md` → `node scripts/video-beyni.mjs`. Dünya beyanı · kaynak · canary · onaylı rakam · Mami kararları · o videoda öğrenilenler. **Yalnız BEYAN taşır, sayı taşımaz** — sayı diskten türer, elle yazılan sayı bayatlar. Oturum açılışında otomatik basılır, ajan tohumuna girer ve **harcama kapısı onu okur**: beyni olmayan işte üretim açılmaz |
+| 🔴 **Kredi duvarı** | `.claude/hooks/harcama-kapisi.mjs` — kredi yakan her MCP çağrısından ÖNCE koşar. Beyin yok · dünya kaynakta 0 · canary onaylanmamış · çağıran ajan · onaylı rakam aşılıyor → **RED**. Karar `scripts/video-beyni.mjs → harcamaKarari()` içinde ve SAF; 28 kırmızı/yeşil fixture ile kilitli. Acil çıkış yalnız `export MAMILAS_HARCAMA_ACIK=1` (satır-içi ön ek hook'a ULAŞMAZ) |
 | **Shot seviyesinde üretim durumu** | `artifacts/is-emri/<proje>.json` → `node scripts/is-emri.mjs devral` — hangi kare basıldı, hangisi reddedildi, kaç kredi yandı. `current-work.json` PROJE seviyesidir; bu SHOT seviyesidir ve otonom koşuyu oturumdan bağımsız kılan tek şeydir |
 | **Motor + cüzdan + element rafı** | `node scripts/rota.mjs` — fiyat cüzdana göre değişir ve **referans gerçeği de öyle**. Ana hat Magnific; kalan kapasite kredi değil **film** olarak okunur |
 | **Şu an Mami'den ne bekleniyor** | `node scripts/karar.mjs` — tek ekran, en fazla 5 madde, her madde tuşa inmiş |
@@ -147,12 +149,24 @@ ajan değil Codex çağrılır.
 - **Uzanmamak kusurdur.** Bir hüküm gözle ya da ikinci gözle doğrulanabiliyorsa ve
   doğrulanmadıysa, o hüküm eksik teslim edilmiştir.
 
-**AJAN KULLANIMI RUTİNDİR — tavan 6.** Mami'nin duran izni (2026-07-27): *"ultracode'u rutin
-haline getir, 6 ajana kadar kullanabilirsin gerektikçe — çünkü iş yapıyorsun, buddylik
-yapamıyorsun."* Teşhis doğru: her işi kendin yaparsan bağlamın dolar ve buddy olacak yer kalmaz.
-Yani ajan açmak lüks değil, **buddy kalabilmenin şartı**. Kural: işi ajana ver, sen ipi tut ve
-Mami'yle kal. **Eşzamanlı tavan 6** — bu bir tavsiye değil, Mami'nin sayısı. Bölüşüm birimi
-kare değil **SEKANS** (44 kare için 44 ajan usage yakar ve süreklilik bozar).
+**AJAN KULLANIMI RUTİNDİR — 🔴 TAVAN 2 (6 DEĞİL, 2026-08-07'de düşürüldü).** Mami'nin duran
+izni (2026-07-27) hâlâ geçerli: *"iş yapıyorsun, buddylik yapamıyorsun"* — ajan açmak lüks değil,
+**buddy kalabilmenin şartı**. Ama sayı ölçümle değişti. Mami, 2026-08-07: *"usage çok hızlı eridi,
+paralel işte dayanmadı; birer videolar yapmak lazım."* Aynı gün ölçüldü: **136 subagent** açıldı,
+24'ü yarıda durdu ve 5 saatte usage bitti; aynı günün sabahı **5 ajanla** 54 kare 32 dakikada
+teslim edildi. Her subagent yeni bir bağlam penceresidir — CLAUDE.md + skill + brifing yeniden
+yüklenir; 136 kez sıfırdan başlamak usage katilidir. Kural: **2 ajan bitsin, kontrol et, sonra 2
+tane daha.** Bölüşüm birimi kare değil **SEKANS**.
+
+🔴 **ÜRETİM YALNIZ ANA OTURUMDA — ve bu artık kodla zorlanıyor.** Mami, 2026-08-07: *"üretim
+kısmını sadece sen yapacaksın, şef sensin, onlar sadece prompt yazacak; MCP sadece sende.
+Bıraksam sonsuz üretecektin."* Ölçüm: 6 basım ajanının her birinin kendi döngüsü vardı,
+hiçbirinde bütçe yoktu, toplamı gören kimse yoktu — diskte 135 görsel birikti ve sayı kimsede
+yoktu. `.claude/hooks/harcama-kapisi.mjs` girdideki `agent_id` alanını görünce üretim çağrısını
+**reddediyor** (ölçüldü: ajanın MCP çağrısı hook'a düşüyor, ana oturumun payload'ında bu alan yok).
+
+🔴 **TEK SOHBET TEK VİDEO.** Ölçüldü aynı gün: OS + Denetleyici + düzeltme aynı sohbette
+27 MB'a çıktı, bağlam doldu, kalite düştü. Paralel çalışma sohbetle değil **ajanla** yapılır.
 
 **DEHB merkezdedir, yan destek değil.** Çalışma biçimi `mamilas-buddy` skill'idir: harici çalışma
 belleği · tek karar · sonuç kapısı · geri sarma yasağı · "bak şunu yaptık" özeti. **RSD yoğun** —

@@ -37,4 +37,27 @@ try {
   out('        Aktif iş hakkında hüküm verme; Mami\'ye "nerede kalmıştık" diye sor.');
 }
 
+// ─── VİDEO BEYNİ ────────────────────────────────────────────────────────────────
+// Mami'nin emri (2026-08-07): "o başta triggerlanmasını sağlarsan çok ekstra olur."
+//
+// Sebebi ölçüldü aynı gün: yeni sohbet `CLAUDE.md` + faz profili + `OLCULENLER.md` ile
+// açılıyordu; AKTİF VİDEONUN kilitleri (`_ENZIM.md`, 169 satır, diskte) kimsenin bağlamında
+// değildi. Oturum prosedürü biliyordu, o videonun dünyasını bilmiyordu — ve kaynakta 0 kez
+// geçen bir mekâna 56 kare yazdı.
+//
+// AYRI try: beyin okunamazsa `[durum]` bloğu yine de basılmalı. Yeni bir yüzey eski bir
+// yüzeyi kilitleyemez — bu repoda ölçülmüş kural.
+try {
+  const vb = await import(pathToFileURL(resolve(root, 'scripts/video-beyni.mjs')).href);
+  const beyin = vb.beyinOku(root);
+  const sayim = beyin.ok ? await vb.dunyaSayimi(beyin.meta, root) : null;
+  const sayac = vb.sayacDegeri(beyin.ok ? beyin.meta?.proje : null, root);
+  out(vb.beyinBlogu(beyin, sayim, { sayac }).join('\n'));
+} catch (e) {
+  // Sessiz kalmak yasak: beyin okunamıyorsa harcama kapısı da kapalıdır ve oturum bunu bilmeli.
+  out('[beyin] ⚠ video beyni okunamadı — scripts/video-beyni.mjs yok ya da bozuk.');
+  out(`        ${e?.message ?? e}`);
+  out('        Harcama kapısı bu durumda üretimi REDDEDER; önce aracı onar.');
+}
+
 process.exit(0);
