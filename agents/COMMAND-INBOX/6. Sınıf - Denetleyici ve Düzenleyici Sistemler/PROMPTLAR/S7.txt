@@ -1,0 +1,385 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SEKANS 7 (K53-K56)
+FARK VE AYNA — hızlı·kısa ↔ yavaş·uzun · kapanış
+=========================================================================
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 · Motion: Kling 3.0
+Kaynak: _TOHUM.md · Denetleyici ve Düzenleyici_ENZIM.md (10 kilit) · VO cümleleri 53-56
+Kadraj kotası (KİLİT 10): GENİŞ 1 · MAKRO 1 · YAKIN NESNE 1 · ORTA(Mira) 1
+Bu sekansın ölçek sırası: YAKIN NESNE · MAKRO · GENİŞ · ORTA — ardışık tekrar yok.
+Mira yalnız K56'da ve orada da durup bakmıyor: eli çoktan dolu bardağın çevresinde.
+
+🔴 BELGE İKİ SÜTUNLU TABLO İSTİYOR — BİZ TABLO YAPMIYORUZ (KİLİT 7). Şema, ok, etiket
+   çizgisi, karşılaştırma tablosu, iki sütunlu özet, inset panel YASAK. Fark aynı mutfakta
+   İKİ IŞIĞI GÖSTEREREK anlatılıyor:
+     · K53 hızlı-kısa → sert kenar, kenar bitince kesik, ardında hiçbir iz yok.
+     · K54 yavaş-uzun → kenarsız, malzemenin İÇİNDE, nerede bittiği söylenemiyor, kalıyor.
+     · K55 ikisi birlikte → aynı odada, aynı renkte, hiçbiri ötekini bastırmıyor.
+   İki ışık kadrajda İKİ YANA AYRILMAZ; odanın içine dağılırlar, yoksa tablo olur.
+
+🔴 K56 AYNA KAPANIŞIDIR — K01'İN İKİZİ. S1 ajanı için bağlayıcı sözleşme:
+     aynı lens (50mm) · aynı yükseklik (mutfak kapısı eşiği, göğüs hizası) · aynı saat
+     (07:10 kış sabahı) · aynı ışık (buğulu camdan gelen tek key + soba ağzından ikinci
+     sıcak kaynak) · aynı kadraj mantığı.
+   ÜÇ FARK ve yalnız üç fark — üçü de VO'nun sözüdür, yavaşın kanıtıdır:
+     | | K01 | K56 |
+     | demlikteki çay | renksiz berrak su | koyu amber, dipten tepeye TEK renk |
+     | masadaki bardak | ters, boş | düz, ağzına kadar amber dolu |
+     | pencere camı | tamamen buğulu | alt yarısı açılmış, karlı bahçe berrak |
+   S1 ajanı K01 NEGATIVE satırına şu kilidi yazar: "çayda hiç renk yok, bardak boş ve ters, camın
+   hiçbir yeri açılmamış." K56 o yuvayı doldurur.
+   ⚠ İKİ EK KARAR (yönetmen kararı, S1 ajanı da uyar):
+     1. Duvar saatinin kadranı İKİ KAREDE DE odak dışıdır ve akrep-yelkovan OKUNMAZ.
+        Sebep: çalışan bir saat iki karede de aynı dakikayı gösteremez; çay demlendiyse
+        zaman geçmiştir. Kadran okunursa ayna kendi kendini yalanlar.
+     2. İKİ KARE DE YAZISIZDIR (clean plate). Ayna karesine yazı yüklenmez; yüzeyler
+        giydirilir, boş bırakılmaz.
+=========================================================================
+
+
+### K53 | VO53 "Sinir sistemi elektrik sinyalleriyle, hızlı ve kısa süreli çalışır." · yazı: "İNSAN SİNİR SİSTEMİ" · KAVRAM · YAKIN NESNE
+FİKİR: Maketin boynundan aşağı inen omurilik parçasının TEK dış kenarında tek bir altın
+       çizgi var — ve o çizgi kenar bitince matematik gibi kesiliyor. Maketin geri kalanı,
+       cilalı ahşap taban, pirinç plaka ve masa tamamen nötr; hiçbiri ısınmamış. Hızlının
+       tarifi budur: geldiği yer görünmüyor, gittiği yer iz bırakmıyor.
+YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "Sinir sistemi" → @maket, tabanındaki kazınmış pirinç plaka
+       adını söylüyor · "elektrik sinyalleriyle" → tek, ince, sert kenarlı altın çizgi;
+       şimşek, kıvılcım ya da devre yok · "hızlı" → çizginin kenarı keskin, yumuşaması yok,
+       geldiği yer kadrajda değil · "kısa süreli" → kenar bitince kesik, komşu yüzeyler
+       tamamen serin, hiçbir hâle, hiçbir kalıntı yok.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Işığın bir cismin tek bir kenarında yaşayıp iki milimetre
+       ötesine hiç geçmemesi fizikte imkânsızdır — gerçek kamerada her ışık saçılır ve
+       komşusunu ısıtır. Burada ışığın davranışı dersin kendisi olduğu için ışık fizikten
+       çok kavrama itaat ediyor.
+PLAN:  kahraman maketin omurilik parçası, kadrajın sol üçte biri · net insan 0 · ışık
+       YALNIZ omuriliğin dış hattında; beyin parçasına, beyinciğe, omurilik soğanına,
+       tabana, pirinç plakaya ve masaya DEĞMİYOR · özne zeminden mat plastik ile cilalı
+       ahşap arasındaki parlaklık farkıyla ayrılıyor · FEDA: maketin başı kadrajın üst
+       kenarında odağını kaybediyor, yüz hiç okunmuyor.
+ENTRY STATE: @maket mutfak masasında duruyor, tek bir parçası ışıklı, geri kalanı nötr
+       plastik; kimse masada değil.
+EXIT STATE:  Maket kımıldamadı, hiçbir parça açılmadı; çizgi aynı kenarda, aynı yerde
+       kesik ve ardında hiçbir iz yok.
+-----
+[1 LENS]      85mm at f/2.8, camera set low and level with the polished wooden base on the
+              kitchen table, three-quarter from behind and left so the cord runs down
+              toward the lens — a chosen height, not eye level, with a glazed jar blurred
+              across the near right edge as a foreground anchor.
+[2 ÖZNE]      — @maket occupies the left half of the frame on the kitchen table, the spinal
+              cord part descending from the back of its neck and carrying one hard-edged
+              golden line along its single outer edge.
+[4 MEKÂN]     The setting is @mutfak at the table: the polished wooden base of the model
+              with its screwed-on engraved brass plate, the dark stone worktop running away
+              behind, the stove with the double kettle whose upper glass pot now holds tea
+              at nearly full depth, and the fogged window filling the far wall with clean
+              pale light.
+[5 IŞIK]      One motivated key: the diffuse snow-fed light from the fogged pane comes in
+              from the left and reads the matte plastic and the wood grain clearly, keeping
+              the whole table open and bright. Cool-violet bounce off the pale worktop fills
+              the model's shadow side so it stays coloured and modelled. A warmer second
+              source from the stove mouth catches the brass plate's top bevel with a single
+              stretched anisotropic highlight.
+[6 KAVRAM]    A hard-edged golden line rides only the outer edge of the spinal cord part,
+              thin and absolutely crisp with no softening and no halo, and it is cut dead
+              the instant that edge ends. Everything the line does not sit on is entirely
+              cool: the brain part, the cerebellum, the medulla, the polished base, the
+              brass plate, the table and the jar beside it all stay neutral, unlit plastic,
+              wood and metal and carry no trace of it whatsoever.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam bending off the kettle in the far
+              plane, a slow drift of flour dust turning in the window light, and the
+              striped cat's tail passing along the far edge of the table.
+[8 DERİNLİK]  Depth in three layers — the glazed jar dissolved to soft colour at the near
+              right, the spinal cord edge and the engraved brass plate both perfectly sharp
+              in the middle, the stove and the luminous window softened behind.
+[9 TEMAS]     The wooden base rests in contact with the table under real weight and casts a
+              tight warm-dark contact shadow along its whole footprint; the brass plate sits
+              screwed flush into a shallow recess in the wood and does not float above it.
+STYLE: Dimensional 3D feature-animation CGI, forms composed to read at thumbnail size.
+School-model plastic is hard, matte and thinly painted, worn back to grey at the edges with
+fine scratches across the mouldings — never wet, never fleshy, never alive. Polished wood
+base is open-grained satin that carries light along its grain. Engraved brass is polished on
+the high spots and darkened deep inside the cut strokes. Painted soft ambient occlusion at
+the base joint reads warm-dark. No photoreal capture, no cel outline, no flat graphic fill.
+LIGHT AND PALETTE: The fogged pane is a wide clean source and the table reads bright and
+workable from corner to corner; shadows are deep cool indigo, coloured and filled, never
+black pits. Palette behaves as bone-grey and soft ochre in the painted plastic, brown-ochre
+satin in the base wood, tarnished gold in the brass, mineral grey-blue in the worktop, and
+one narrow hard gold along a single edge.
+TEXT: TAŞIYICI — the brass plate screwed into the model's wooden base, its letter strokes
+engraved down into the metal itself. HARF KARAKTERİ — plain Turkish capitals cut
+into the brass by machine, evenly weighted, the bottom of every cut darkened by decades of
+tarnish so the letters read as sunk into the plate rather than sitting on it, with the
+polished metal bright between them. Spell it letter by letter, the three words separated by
+one clear space each: İ (dotted capital I), N, S, A, N — S, İ (dotted capital I), N, İ
+(dotted capital I), R — S, İ (dotted capital I), S, T, E, M, İ (dotted capital I), reading
+"İNSAN SİNİR SİSTEMİ". ORIENTATION — the brass plate's face is turned flat and parallel to
+the sensor so the whole line reads without foreshortening. Background lettering: none.
+NEGATIVE: The golden line touches one edge and nothing else — no glow spilling onto the
+brain part, no second lit component, no warmed base, no halo and no reflection anywhere past
+its cut end. The model is a plastic bust and stays one: no torso, no cutaway, no internal
+organ, no vessel, no blood, no wet or fleshy surface. The line stays a light and never
+becomes a lightning shape, a spark, a circuit trace or a drawn arrow. Nobody is at the
+table. No English lettering, no label line, no comparison panel.
+-----
+
+
+### K54 | VO54 "İç salgı bezleri hormonlarla, yavaş ve uzun süreli çalışır." · yazı: "BAL" · KAVRAM · MAKRO
+FİKİR: Bir bal kütlesi kendi ağırlığıyla koyu taşın üstüne çökmüş. Işık balın İÇİNDE,
+       en kalın yerde en yoğun, dışa doğru zayıflıyor ve nerede bittiği söylenemiyor —
+       taşa geçtiği yerde bile bir sınır yok. Bir öncekinin hâlesi hâlâ orada, daha geniş
+       ve daha soluk. Yavaşın tarifi bu: kenarı olmayan ve gitmeyen ışık.
+YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "İç salgı bezleri" → hiçbir yerde çizilmiyor; VO isimlendiriyor,
+       kadraj göstermiyor · "hormonlarla" → BAL kavanozunun omzundaki harfler ve taşın
+       üstündeki kalın bal dili; hormon KANA verilir, o yüzden hiçbir kanal, boru ya da
+       hat yok · "yavaş" → kütlenin kendi ağırlığıyla çökmüş olması, keskin kenarın hiç
+       olmaması · "uzun süreli" → önceki anın amberi hâlâ taşın içinde, daha geniş ve
+       daha soluk, bunun altında duruyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Işığın viskoz bir kütlenin içinde YAŞAMASI ve taşın
+       gözeneğine sınırsız geçmesi çekilebilir bir şey değil — gerçek kamerada bal ya
+       arkadan aydınlatılır (kenar doğar) ya yüzeyi parlar (kütle kaybolur). Kavram
+       burada sahnenin kendi maddesinden doğuyor.
+PLAN:  kahraman taşın üstündeki bal dili · net insan 0 · ışık balın kütlesinin ve taşın
+       gözeneğinin İÇİNDE; kavanozun sırlı yüzeyine bir parlama olarak DEĞMİYOR · özne
+       zeminden koyu mat taş ile içi aydınlık amber kütle arasındaki değer farkıyla
+       ayrılıyor · FEDA: kavanozun ağzı ve kapağı kadrajın üstünde odak dışında kalıyor,
+       kavanozun biçimi okunmuyor.
+ENTRY STATE: Kavanoz koyu taş tezgâhta duruyor, yanında kalın bir bal dili çökmüş hâlde;
+       kimse kadrajda değil.
+EXIT STATE:  Bal aynı yerde, kütlesi bir tık daha yayıldı; amberin taştaki payı genişledi
+       ve hiçbir yerde kenar oluşmadı.
+-----
+[1 LENS]      100mm macro at f/2.8, camera pressed low against the dark stone worktop and
+              level with the honey's surface, extremely shallow, with a scatter of flour
+              blurred hard across the very front of the frame.
+[2 ÖZNE]      — a thick tongue of honey has settled beside the glazed ceramic jar on the
+              stone, its mass sagging slowly under its own weight with no sharp edge
+              anywhere along its rim.
+[4 MEKÂN]     The setting is @mutfak at worktop level: dark mineral stone with old flour
+              worked into its pores, the glazed shoulder of the honey jar rising at the top
+              of the frame, a wooden spoon laid across the stone out of focus, and the
+              fogged window reading as a bright pale field far behind.
+[5 IŞIK]      One motivated key: snow-fed daylight through the fogged pane comes across the
+              worktop almost flat and passes right through the honey, so the mass is lit
+              from inside rather than on its skin, and the whole close frame stays open and
+              legible. Cool-violet bounce off the pale wall fills the shadow under the jar's
+              shoulder. A warmer graze from the stove mouth runs along the stone toward
+              camera.
+[6 KAVRAM]    A slow warm-golden light lives inside the honey itself: densest deep in the
+              thickest part of the mass and weakening steadily outward, with no boundary you
+              could point to at any distance from the centre. The same amber continues into
+              the stone's own pores beneath and beside the honey, so there is no seam
+              between where the honey's light ends and the stone's light begins, and the
+              broader, fainter halo left from the moment before is still lying under it.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: the honey's edge creeping outward a
+              fraction under its own weight, a fine curtain of flour dust drifting through the
+              near blur, and steam moving across the bright field far behind.
+[8 DERİNLİK]  Depth in three layers — flour dissolved into soft grain in the immediate
+              foreground, the honey's mass and the jar's incised letters both razor-sharp in
+              the middle, the wooden spoon and the luminous window plane softened behind.
+[9 TEMAS]     The honey rests in contact with the stone along a wide wetted footprint and
+              darkens the stone where it touches; the jar rests in contact with the worktop
+              and casts a tight warm-dark contact shadow at its base, and nothing floats.
+STYLE: Dimensional 3D feature-animation CGI at macro scale with honest optics — very shallow
+depth, faint softening at the frame edge, real lens falloff. Honey reads as a thick viscous
+mass: it passes light through its whole body, keeps a continuously wet surface, and settles
+under its own weight so no edge is ever sharp. Glazed stoneware is fired clay under a thin
+glass skin, the glaze pooling deeper in the cut strokes. Dark stone is mineral, matte and
+open-pored. No photoreal capture, no toon shading, no flat graphic fill.
+LIGHT AND PALETTE: Flat clean daylight passes straight through the honey so this frame is
+lit from inside its own subject and never falls murky; the stone's shadow is deep cool
+indigo, coloured and filled. Palette behaves as deep golden amber inside the honey, brown-
+ochre in the glazed clay, mineral grey-blue in the stone, chalk white in the flour, and one
+cold clean note where the far window plane sits.
+TEXT: TAŞIYICI — the glazed ceramic honey jar, a fixed heavy object whose letter strokes are
+carved into the clay before firing. HARF KARAKTERİ — Turkish capitals cut
+into the soft clay with a blunt tool and then glazed over, so the glass glaze pools thicker
+and darker inside every stroke and the letters live underneath the surface rather than on
+it, their edges rounded by the glaze's flow. Spell it letter by letter across the jar's
+shoulder: B, A, L — reading "BAL". ORIENTATION — the lettered face of the jar is turned flat
+and parallel to the sensor so the word reads square, without foreshortening. Background
+lettering: none.
+NEGATIVE: No gland, no organ, no anatomical shape and no body interior is drawn anywhere in
+this frame — the endocrine glands are named by the voice only. No pipe, tube, channel, vein
+or flow line carries the amber; it lives inside the honey and inside the stone and travels
+nowhere. The honey keeps a soft settling edge everywhere and never forms a crisp boundary or
+a hard rim of light. The amber stays a light and never becomes a heart, a star, a flame or a
+drawn arrow. No hand, no spoon lifting, nobody in frame. No English lettering, no chart.
+-----
+
+
+### K55 | VO55 "İkisi birlikte vücudumuzun iç dengesini korur." · yazı: YOK · KAVRAM · GENİŞ
+FİKİR: Aynı mutfak, sakin ve aydınlık, her şey yerinde. İki ışık aynı odanın içinde birden
+       duruyor ve hiçbiri ötekini bastırmıyor: çaydanlığın sapının üst kenarında tek sert
+       çizgi, kenar bitince kesik; aynı anda çayın, ahşabın, taşın ve balın içinde kenarsız
+       amber. İkisi kadrajın iki yanına ayrılmıyor, odanın içine dağılıyor — denge budur.
+YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "İkisi" → tam olarak iki ışık davranışı, ne bir ne üç ·
+       "birlikte" → ikisi de aynı kadrajda, aynı renkte, aynı sıcaklıkta ve karışmıyor ·
+       "vücudumuzun" → beden çizilmiyor; karşılığı bütün gün aynı anda çalışan mutfak ·
+       "iç dengesini korur" → hiçbir şey devrilmemiş, hiçbir şey taşmamış, hiçbir şey
+       yanmamış; onlarca iş sürüyor ve hiçbiri çarpışmıyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Tek bir renkteki ışığın aynı karede iki ayrı fizik
+       yasasına birden uyması — bir yerde kesin kenarlı ve iz bırakmayan, iki adım ötede
+       kütlenin içinde ve sınırsız. Gerçek kamerada bir ışık kaynağı tek bir yasayla
+       davranır; ayrımın kendisi ancak çizilerek gösterilebilir.
+PLAN:  kahraman mutfağın bütünü, ocak sağ üçte bir · net insan 0 · sert çizgi YALNIZ
+       çaydanlığın sapının üst kenarında; tezgâha, duvara ve ocağa ULAŞMIYOR · amber
+       demlikteki çayın, rafın ahşabının, tezgâhın taşının ve baldaki kütlenin İÇİNDE ·
+       özne zeminden aydınlık pencere düzlemi ile koyu taş tezgâh arasındaki değer
+       farkıyla ayrılıyor · FEDA: sağ alt köşe ocağın buharının içinde okunmaz kalıyor,
+       ocak düğmeleri görünmüyor.
+ENTRY STATE: Mutfak sakin ve aydınlık; çaydanlık ocakta, bal kavanozu tezgâhta, bardak
+       tezgâhta düz ve boş duruyor, @kedi rafta oturuyor, saat işliyor.
+EXIT STATE:  Hiçbir şey devrilmedi, hiçbir şey taşmadı; sert çizgi kesik ve izsiz kaldı,
+       amber dört malzemede birden durmadan sürüyor.
+-----
+[1 LENS]      32mm at f/4, camera at hip height in the middle of the room and turned
+              three-quarter toward the stove, so the worktop runs diagonally out of the
+              frame — the corner of the kitchen table cutting the near left edge out of
+              focus as a foreground anchor, the composition deliberately off-centre.
+[2 ÖZNE]      — the double kettle sits on the stove with one hard-edged golden line riding
+              only the top edge of its handle, while the upper glass pot holds tea at
+              nearly full depth.
+[4 MEKÂN]     The setting is @mutfak seen whole and calm: the dark stone worktop with the
+              glazed honey jar and its settled tongue of honey, the tall-waisted glass
+              standing upright and still empty beside it, the wooden shelf with its glazed
+              jars, @kedi sitting quietly at the shelf's end, the wooden-cased wall clock
+              working above, and the fogged window filling the far wall with clean bright
+              light.
+[5 IŞIK]      A single motivated key: the low winter sun turns the fogged pane into a wide
+              luminous panel and the whole room reads bright, airy and snow-lit into every
+              corner. Cool-violet bounce off the pale stone fills all shadows so they stay
+              coloured and modelled. The stove mouth supplies a warmer second source low and
+              right, and it puts a thin rim along the kettle's belly and the cat's back.
+[6 KAVRAM]    Both behaviours of one warm-golden light hold the room at the same time, equal
+              and identical in colour. One is a hard-edged golden line on the top edge of
+              the kettle handle alone: crisp, thin, cut dead the moment the handle ends, and
+              the stove top, the tiled wall and the worktop beside it are completely
+              untouched by it and carry no trace of it. The other is a wide amber that lives
+              inside the masses of the room: inside the tea in the glass pot, inside the
+              honey on the stone, inside the grain of the shelf wood, inside the worktop's
+              stone — deepest in each material, thinning outward with no boundary anywhere,
+              still there from before and not going out. They are scattered through the same
+              room rather than sorted to two sides of the frame.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam rising steadily off the kettle,
+              the clock's pendulum swinging on the wall, and the cat's tail moving slowly at
+              the end of the shelf.
+[8 DERİNLİK]  Depth in three layers — the table corner blurred to a soft dark wedge at the
+              near left, the kettle, the glass pot and the honey jar sharp across the middle,
+              the shelf, the cat, the clock and the luminous window softened behind.
+[9 TEMAS]     The kettle rests in contact with the stove ring and its base darkens where it
+              touches; the honey jar and the empty glass rest in contact with the stone under
+              their own weight, each with a tight contact shadow, and the cat's body rests in
+              contact with the shelf — nothing in this frame floats.
+STYLE: Dimensional 3D feature-animation CGI, appeal-driven silhouettes readable at thumbnail
+size. Enamelled kettle metal carries one long directional highlight down its belly with
+chips at the spout. Glass tea pot is thick at the base with a bright vertical caustic and its
+colour living in the liquid. Honey is viscous and continuously wet. Shelf wood is
+open-grained satin. Cat fur is short, striped and rimmed with light. Painted soft ambient
+occlusion in the corner pockets reads warm-dark. No photographic capture, no toon shading.
+LIGHT AND PALETTE: A cheerful snow-fed morning fills this room; there is a bright surface in
+every quarter of the frame and no corner drops away. Shadows are deep cool indigo, coloured
+and filled, never black pits. Palette behaves as deep honey-amber in the tea and the honey,
+brown-ochre satin in the shelf and the clock case, mineral grey-blue in the worktop, cream
+enamel on the kettle, and one narrow hard gold along a single handle edge.
+TEXT: clean plate — no on-screen text in this frame. The clock's dial sits in the soft-focus
+plane with its numerals unreadable, the jars are turned so only their glazed shoulders face
+the room, and the canister's lettered face points away, so every surface is dressed and none
+is legible.
+NEGATIVE: The two lights are not sorted into halves — neither one occupies its own side of
+the frame, and there is no dividing line, no split screen and no paired panel of any kind.
+The hard line on the handle leaves nothing behind it: no falloff, no halo, no warmed stove
+top. No organ, model, body interior or anatomical shape appears anywhere. The amber stays a
+light and never becomes a heart, a star, a flame or a drawn arrow, and no pipe, tube or flow
+line carries it. Nothing is tipping, spilling or boiling over. Nobody is in the room but the
+cat. No English lettering, no summary table, no caption.
+-----
+
+
+### K56 | VO56 "Mira'nın çayı demlenmiş, buğulu cam yeniden açılmıştı." · yazı: YOK · KARAKTER · ORTA (Mira) · 🔴 AYNA
+🔴 K01'İN İKİZİ. Aynı 50mm lens · aynı yükseklik (mutfak kapısı eşiği, göğüs hizası) ·
+   aynı saat (07:10) · aynı ışık düzeni. Değişen YALNIZ üç şey: çay, bardak, cam.
+   Saat kadranı odak dışıdır ve okunmaz (bkz. dosya başı sözleşmesi). İki kare de yazısızdır.
+FİKİR: Aynı kapı, aynı ışık, aynı sabah — ve odanın üç yerinde zamanın geçtiği görünüyor.
+       Demlikteki su renksizken şimdi dipten tepeye tek renk koyu amber; ters duran boş
+       bardak şimdi düz ve ağzına kadar dolu; tamamen buğulu cam şimdi alt yarısından
+       açılmış ve karlı bahçe berrak. Hiçbiri anlatılmıyor, hepsi duruyor. Yavaşın kanıtı
+       bu: hiçbir an görülmedi, sonucu her yerde.
+YÜKÜM: VO-YÜKÜMLÜLÜK-SAYIMI. "Mira'nın" (sahiplik) → eli çoktan bardağın çevresinde, bardak
+       tezgâhta duruyor, kaldırılmıyor · "çayı" → demlikteki çay dipten tepeye tek renk koyu
+       amber, bardaktaki aynı renk · "demlenmiş" (tamamlanmış geçmiş) → demlenme anı
+       kadrajda yok, yalnız sonucu var · "buğulu cam" → camın üst yarısı hâlâ mat ve saçıcı ·
+       "yeniden açılmıştı" → alt yarısı berrak ve yansıtıcı, karlı bahçe net görünüyor,
+       sınırda su damlacıkları toplanmış.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Aynı kadrajın iki kez, saniyesi saniyesine aynı lens ve aynı
+       ışıkla kurulup yalnız üç maddesinin hâl değiştirmesi — gerçek çekimde bu bir set
+       tutarlılığı problemidir; burada zamanın kendisi kadraja üç maddede yazılmış olur.
+PLAN:  kahraman @mira ama kadrajın sağ üçte biri; asıl olay arkasındaki üç madde ·
+       net insan 1 · ışık camın açılmış yarısından ve buğulu yarısından geliyor, çayın ve
+       bardağın İÇİNDE amber var; Mira'nın eline, yüzüne ve saçına DEĞMİYOR · özne zeminden
+       arkadaki berrak cam yarısının parlak değeriyle ayrılıyor · FEDA: yüzünün üst yarısı
+       kendi saçının gölgesinde kalıyor, gözünün biri okunmuyor.
+ENTRY STATE: Mutfak kapısından bakılıyor; çay demlenmiş, bardak dolu, camın alt yarısı
+       açılmış; Mira tezgâhta, eli bardağın çevresinde, gözü aşağıda.
+EXIT STATE:  Hiçbir şey değişmiyor — film burada duruyor; üç madde de yeni hâlinde kalıyor.
+-----
+[1 LENS]      50mm at f/2.2, camera standing in the kitchen doorway at chest height, exactly
+              the same position, height and framing as the film's opening shot,
+              three-quarter into the room — the door jamb blurred down the near left edge as
+              the same foreground anchor.
+[2 ÖZNE]      — @mira has her hand already closed around the tall-waisted glass where it
+              stands on the worktop, filled to its brim, her eyes down on it and never on
+              the camera.
+[3 KİMLİK]    Skin stays matte with low specular and is never tinted green or grey. Framed
+              from mid-chest up, nothing below the chest is visible in this shot.
+[4 MEKÂN]     The setting is @mutfak from the doorway on a winter morning at ten past seven:
+              the stove behind her carries the double kettle, and the upper glass pot now
+              holds tea gone one single deep amber from its base right up to its rim; the
+              tall glass on the worktop stands upright and full to the brim with the same
+              amber; the window's lower half has been wiped clear so the snowy garden reads
+              sharp through it while its upper half stays fogged, with beads of water
+              collected along the line between them; the wooden-cased wall clock hangs in the
+              soft-focus plane with its dial unreadable.
+[5 IŞIK]      Exactly the light setup of the opening shot, unchanged: one motivated key of low
+              winter sun, which the fogged upper half of the pane spreads into a wide clean
+              panel while the wiped lower half lets it through hard and bright — the room
+              reads open, warm and snow-lit. Cool-violet bounce off the pale stone returns
+              into the shadow side of Mira's face at roughly a third of key so it stays fully
+              modelled. A warmer second source from the stove mouth rims her shoulder.
+[6 KAVRAM]    A slow warm-golden light lives inside the tea itself, in the glass pot and in
+              the filled glass alike, deepest at the base and thinning upward with no
+              boundary you could point to, and the same amber has settled into the worktop
+              stone beneath the glass; it never crosses onto Mira's hand, her sleeve, her
+              face or her hair.
+[7 CANLI ÜÇLÜ] Three things are alive in the frame: steam lifting off the full glass and
+              crossing the cleared lower pane, snow falling slowly in the garden beyond that
+              clear half, and a single bead of water running down the boundary where the fog
+              stops.
+[8 DERİNLİK]  Depth in three layers — the door jamb blurred into a soft dark bar down the
+              near left, Mira's hand and the full glass sharp together on the middle plane,
+              the stove, the kettle, the clock and the half-cleared window falling away into
+              soft focus.
+[9 TEMAS]     The glass rests in contact with the stone under its own weight, her fingers
+              wrapped around it without lifting it, and a tight wet ring of contact shadow
+              sits under its base; the kettle rests in contact with the stove ring and
+              nothing in the frame floats.
+STYLE: Dimensional 3D feature-animation CGI with subsurface-scattered skin that reads tactile
+rather than plastic, one small catchlight in the lit eye only and painted iris depth. Knitted
+wool reads as real fibre with loose halo hairs. Thin-waisted glass is genuine glass — thick
+at the foot, a bright vertical caustic on its curve, its colour living in the liquid. Fogged
+glass is matte and scattering above, clear and reflective below, with beads gathered on the
+line between. Dark stone is mineral and matte. No photographic capture, no cel outline.
+LIGHT AND PALETTE: The same bright winter morning as the opening frame, unchanged in
+direction, height and warmth; the room is open and cheerful and no corner falls away.
+Shadows are deep cool indigo, coloured and filled. Palette behaves as warm honey in the
+skin's subsurface, one single deep amber in both the pot and the glass, cool violet in the
+shadow, mineral grey-blue in the worktop, and a cold snow-white through the cleared pane.
+TEXT: clean plate — no on-screen text in this frame, exactly as in the opening shot. The
+clock's dial is held in soft focus with its numerals and hands unreadable, the canister's
+lettered face is turned into the room, and the jars show only glazed shoulders, so every
+surface is dressed and none is legible.
+NEGATIVE: Only three things differ from the opening frame and nothing else moves: the tea is
+one single deep amber from base to rim, the glass stands upright and full, and the lower half
+of the pane is wiped clear onto a sharp snowy garden. The upper half of the pane stays fogged
+and the garden is unreadable through it. The clock's hands stay unreadable. No golden light
+touches Mira's hand, face, hair or clothing. She is alone in the kitchen and never looks at
+the camera. No organ, model, body interior or diagram. No English lettering, no caption, no
+end card.
+-----

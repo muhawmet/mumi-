@@ -232,7 +232,7 @@ LIGHT AND PALETTE: Backlight rules this frame — daylight comes from behind the
 and glass glow from within while the metals stay dark-edged and readable. Shadows fall toward
 the lens in cool indigo and stay open. Palette: cream enamel, warm honey water, iron grey-black,
 stone grey-green, and one saturated golden accent on iron alone.
-TEXT: The word "SÜT" is fired into the cream enamel of the milk pot's near face — S, then Ü as a
+TEXT: The word "SÜT" lives in the cream enamel of the milk pot's near face, every letterform fired into the glaze — S, then Ü as a
 capital U carrying two dots above it, then T, three letters with one clear space between each,
 their edges slightly pooled where the glaze gathered in the kiln, the glaze thicker inside the
 strokes so the letters live in the surface rather than on it. The pot's face stands parallel to
@@ -435,7 +435,7 @@ LIGHT AND PALETTE: Broad frontal daylight through frosted glass, so the whole fr
 and lively; the dust becomes visible because the key sits almost behind it. Shadows stay cool
 indigo with colour inside them. Palette: warm honey skin tones, deep madder-red knit, cream
 enamel, cold stone grey-green, and one narrow golden accent on painted wood alone.
-TEXT: The word "ÇAY" is fired into the cream enamel of the tin's front face — Ç as a capital C
+TEXT: The word "ÇAY" lives in the cream enamel of the tin's front face, every letterform fired into the glaze — Ç as a capital C
 with a cedilla hooked beneath it, then A, then Y, three letters with one clear space between
 each, the glaze pooled slightly at every stroke edge so the letters sit inside the surface
 rather than printed on top of it. The tin's face stands parallel to the sensor, reads left to
@@ -666,10 +666,10 @@ FİKİR: Kelime camın üstüne yazılmamış — kelime buğunun YOKLUĞU. Kör
 ve harflerin içinden karlı bahçe keskin görünüyor. Kavram, adını taşıdığı maddeden doğuyor.
 YÜKÜM: KELİME-KELİME. "ani" → harflerin kenarları jilet gibi kesilmiş, sürtme lekesi ya da yayvan geçiş yok;
 açılma tek seferde olmuş gibi duruyor · "istemsiz" → camda el yok, parmak izi yok, bez izi yok,
-sürtme yolu yok — kimse açmamış · "tepkiye refleks denir" → adlandırmanın kendisi kare: kelime
+sürtme yolu yok — kimse açmamış · "tepkiye refleks denir" → adın konması karenin kendisi: kelime
 bütün, okunur ve kadrajın tam ortasında değil, çıtanın üstünde asılı.
-AYRICALIK: ANİMASYON-AYRICALIĞI. gerçek kamerayla bir kelimeyi "yoğuşmanın içindeki delik" olarak çekemezsin — harfin
-içinden bahçenin netleşmesi ancak yoğuşmanın kalınlığı sanat yönetildiğinde olur. Üstelik kelime
+AYRICALIK: ANİMASYON-AYRICALIĞI. gerçek kamerayla bir kelimeyi "buğunun içindeki delik" olarak çekemezsin — harfin
+içinden bahçenin netleşmesi ancak buğu kalınlığı sanat yönetildiğinde olur. Üstelik kelime
 DONUK: her harfin kenarında su çoktan iri damlalara toplanmış ve hiçbiri akmıyor, hiçbiri
 kapanmıyor — animasyon bir anı kararlı bir DURUM hâline getirebiliyor.
 PLAN: kahraman = camdaki kelime · 0 insan · ışık: altın çizgi yalnız alt ahşap çıtanın kenarında
@@ -681,8 +681,8 @@ buğusu bu sabah ilk kez bir yerinden tamamen açılmış durumda.
 EXIT STATE: Yedi harfin içi berrak ve kuru kalıyor, kenarlarındaki iri damlalar asılı duruyor,
 tek biri bile akmadı ve buğu harflerin içine geri sızmadı.
 -----
-[1 LENS]      100mm macro lens at f/4, camera perfectly square-on to the pane at a hand's
-              distance, the glass filling the frame; the wooden glazing bar crosses the lower
+[1 LENS]      100mm macro lens at f/4, camera perfectly square-on to the pane a palm-width
+              away, the glass filling the frame; the wooden glazing bar crosses the lower
               quarter and the word sits above it, off-centre toward the left
 [2 ÖZNE]      — the fogged pane of @mutfak carrying one whole word that exists as clear glass
               cleared out from inside the fog itself
@@ -718,7 +718,7 @@ LIGHT AND PALETTE: Fully transmitted light — the pane is the source, so the fr
 soft white luminance interrupted by seven sharper, cooler openings. The only darks are wood and
 putty and they stay cool indigo with colour inside. Palette: milk white, water clear, cold blue
 snow-light, chalky pale wood, and one narrow golden accent on timber alone.
-TEXT: The word "REFLEKS" stands on the pane as seven clear openings cleared out of the fog
+TEXT: The word "REFLEKS" stands on the pane as seven clear letterform openings wiped out of the fog
 itself — R, E, F, L, E, K, S, each letter separated by one clear space, each one a crisp-edged
 window of fully transparent glass with the snowed garden reading sharp inside its counters;
 along every letter edge the displaced water has already gathered into heavy separate beads that
@@ -727,7 +727,7 @@ never mirrored, reversed or rotated; it appears on this pane only and no other s
 carries lettering.
 NEGATIVE: The letters stay open, dry-clear and fully legible — the fog does not creep back into
 them and nothing runs down through them; the beads on their edges hang without releasing. There
-is no hand, no cloth, no fingertip, no smear track and no drag mark anywhere on the glass, and
+is no touch mark, no cloth, no fingertip, no smear track and no drag mark anywhere on the glass, and
 nobody is reflected in the cleared openings. The word is exactly seven letters
 with no extra mark, second word, number or stray stroke on the pane. No arrow, frame, box or
 underline around it.

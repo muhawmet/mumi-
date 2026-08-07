@@ -708,10 +708,10 @@ EXIT STATE:  Hiçbir şey yer değiştirmedi; amber pervazın damarında en üst
               the floor at both tyres, each contact anchored by its own dark shadow; the
               shoes rest in contact with the boards and the coat hangs in contact with its
               hook, the fabric pulling into a real crease there — nothing floats.
-STYLE: Dimensional 3D feature-animation CGI, appeal-driven shapes that read at thumbnail
+STYLE: Dimensional 3D feature-animation CGI, appeal-driven shapes readable at thumbnail
 size. Painted jamb wood shows open grain under a thin worn finish, the paint rubbed back at
-the door edge. Graphite pencil lines are thin and pressed into the wood, each with a
-different degree of fading. Wool coat reads as heavy fibre with real weight in its fall.
+the door edge. Graphite pencil lines are thin and pressed into the wood, each faded
+differently. Wool coat reads as heavy fibre with real weight in its fall.
 Bicycle enamel is chipped over steel with one long anisotropic highlight down the frame
 tube. Painted soft ambient occlusion in the corner pockets reads warm-dark. No photographic
 capture, no cel outline, no flat graphic fill.
