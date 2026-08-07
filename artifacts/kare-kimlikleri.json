@@ -1,0 +1,36 @@
+{
+  "_neden": "Motion basarken her klibin start_image'ı bu karedir. Magnific creation identifier'ı OLMAZSA yeni oturum 51 PNG'yi tek tek yeniden yüklemek zorunda kalır — bu dosya o kaybı önler. `video_generate` → keyframes.start.url alanına doğrudan bu identifier yazılır.",
+  "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
+  "cuzdan": "magnific",
+  "motor": "imagen-nano-banana-2-flash · 2K · 16:9",
+  "olusturuldu": "2026-08-07",
+  "kareler": {
+    "00-GIRIS": "s7UXxxol8e",
+    "1": "cpML4zI0eP", "2": "yiNf3o3PW9", "3": "3zAqnxBREY", "4": "6AZFGOSiJO",
+    "5": "jUgd7J0LD0", "6": "yiNf29FPW9", "7": "iG2HWDr3uK", "8": "0eDlo1CTfW",
+    "9": "4RiEGKT9Aa", "10": "SyJIijbUb8", "11": "EbHAmljuuO", "12": "p8BwcSQehw",
+    "13": "lJwo64kgv9", "14": "huC3KJlvqL", "15": "xSleP8NjfW", "16": "gO78RIiSXO",
+    "17": "s7UBiEal8e", "18": "cpMsmc60eP", "19": "5jrTPP4Kxe", "20": "cpMsQjt0eP",
+    "21": "rgsp2alxtc", "22": "8ah9stHIrU", "23": "5jrT3yUKxe", "24": "vQERJkOa47",
+    "25": "ovm4lS7829", "26": "9Z3u85nNYZ", "27": "vQERJoHa47", "28": "eIoJWaOdqL",
+    "29": "fHQ29AFCDY", "30": "ovm4UTT829", "31": "s7UBMSEl8e", "32": "ovm47PO829",
+    "33": "s7UBbkil8e", "34": "EbHGZmsuuO", "35": "gO78diBSXO", "36": "iG2HQ0M3uK",
+    "37": "MBdUgU1DCm", "38": "4RiEEkS9Aa", "39": "s7UBB1xl8e", "40": "9Z3uQ2INYZ",
+    "41": "6AZFuIJiJO", "42": "8ah9N1KIrU", "43": "YMTjs3aWeC", "44": "ksjMeja16B",
+    "45": "eIoJProdqL", "46": "79PhfXMJAL", "47": "huC3AMxvqL", "48": "fHQ2YuUCDY",
+    "49": "EbHGcL9uuO", "50": "8ah9RgrIrU", "51": "LwSXmFtswO", "52": "xSletldjfW",
+    "53": "DoXw9FZpcl", "54": "s7UBvmPl8e"
+  },
+  "_51_not": "K51 BAŞKALAŞIM okunmuyordu; iri/yüksek kontrast iki yeni aday basıldı: fHQGHiOCDY ve eIoyISRdqL. Mami hangisini seçerse `kareler.51` onunla değişir.",
+  "basilan_klipler": {
+    "1": { "identifier": "lJwIUlrgv9", "sure": 6, "kredi": 540, "hukum": "Mami onayladı — ağız oynuyor ama kullanılır" },
+    "2": { "identifier": "jUgBy7WLD0", "sure": 6, "kredi": 540, "hukum": "Mami onayladı" },
+    "11": { "identifier": "w4yv3Wv7EI", "sure": 6, "kredi": 540, "hukum": "Mami onayladı — sürü SONDA eriyor, kullanılır" }
+  },
+  "motion_recetesi": {
+    "tutan": "karmaşık uzuv hareketi YOK · mikro jest VAR (toz, tüy, tek nefes, pençe gerinmesi) · düşük genlikli kamera",
+    "kamera": "🔴 hareket TÜRÜ sekans içinde DÖNER — hepsi push-in olmaz. Havuz: yavaş push in · yavaş pull out · birkaç santim yanal · KİLİTLİ (vuruş anı) · hafif yerleşme. Aynı hareket arka arkaya ikiden fazla karede kullanılmaz.",
+    "surekli_negatif": "konuşma/ağız · yürüme · el uzatma · nesne el değiştirme · yeni öğe doğması · yazının değişmesi · whip pan/shake/snap zoom · morph/erime",
+    "olculmus_sinir": "Kling ağız yasağını DİNLEMİYOR — kare tasarımında çözülür (profilden ya da uzaktan kadraj). Kalabalık sürü klip sonuna doğru eriyor — sürü kareleri 4-5 sn kısa tutulur."
+  }
+}

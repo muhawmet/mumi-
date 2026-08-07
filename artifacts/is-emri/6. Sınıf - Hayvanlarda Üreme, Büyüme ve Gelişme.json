@@ -2,12 +2,12 @@
   "surum": 1,
   "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
   "olusturuldu": "2026-08-07T08:09:12.816Z",
-  "guncellendi": "2026-08-07T10:08:34.717Z",
+  "guncellendi": "2026-08-07T10:24:19.132Z",
   "shots": [
     {
       "n": 1,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -47,13 +47,23 @@
           "zaman": "2026-08-07T08:48:12.132Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T10:24:19.033Z"
+        }
+      ],
       "not": ""
     },
     {
       "n": 2,
       "sekans": "S1",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -66,7 +76,17 @@
           "zaman": "2026-08-07T08:48:12.178Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T10:24:19.084Z"
+        }
+      ],
       "not": ""
     },
     {
@@ -224,7 +244,7 @@
     {
       "n": 11,
       "sekans": "S2",
-      "asama": "basildi",
+      "asama": "klip",
       "elementler": [],
       "basim": [
         {
@@ -246,7 +266,17 @@
           "zaman": "2026-08-07T08:37:38.774Z"
         }
       ],
-      "klip": [],
+      "klip": [
+        {
+          "deneme": 1,
+          "motor": "kling3_0",
+          "cuzdan": "magnific",
+          "kredi": 540,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T10:24:19.132Z"
+        }
+      ],
       "not": ""
     },
     {
