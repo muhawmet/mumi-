@@ -6,7 +6,7 @@ kaynak: agents/COMMAND-INBOX/Bekleyen/6.sınıf denetleyici ve düzenleyici sist
 # Aynı kaynakta: mutfak 0 · soba 0 — önceki turun 56 karelik dünyası buydu ve çöktü.
 dunya: [orkestra, sinir, hormon, elektrik, nöron, maket, bisiklet, damar, lunapark]
 canary: GECTI          # 4 demo karesi Mami onayı aldı (commit 3a3d539a)
-butce: { onayli: 4200, birim: 75 }
+butce: { onayli: 5500, birim: 75 }
 uretim_yetkisi: ana-oturum
 ---
 

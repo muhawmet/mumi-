@@ -23,9 +23,14 @@ Işık GEOMETRİK yazılır — hangi hattın üstünde, nerede kesildiği. "Kon
 
 register: edu
 Ölçek merdiveni: K22 orta · K23 yakın · K24 makro · K25 orta (BASILI)
-· K26 yakın · K27 orta · K28 yakın · K29 geniş (gerçek dünya, iç)
-· K30 çok geniş (gerçek dünya, dış).
+· K26 yakın · K27 orta · K28 yakın · K29 orta (gerçek dünya, iç)
+· K30 geniş (gerçek dünya, dış).
 Ardışık iki karede aynı ölçek yok.
+⚠ `_OMURGA.md` K29'a "geniş", K30'a "çok geniş" diyordu ve ilk taslak K29'u baştan
+   ayağa kadrajlamıştı. İkisi de indirildi — sebep zevk değil ÖLÇÜM: `@mira` geçen
+   kare tam boy kadrajlanınca motor sahneyi atlayıp referansın stüdyo plakasını
+   ithal ediyor (bu projede K22 tur3'te ölçüldü) ve ENZIM §2 her referanslı karede
+   kadrajın DIŞARIDA bıraktığını yazmayı zorunlu kılıyor. Karelerin işi değişmedi.
 Ön düzlem kütlesi DOKUZ karenin dokuzunda var — kadraj kilidi cümleyle değil kütleyle tutuyor.
 
 🔴 K22 · K23 · K24 · K26 · K27 · K28 → İNSAN YOK, REFERANS YOK. `references` alanı BOŞ.
@@ -230,56 +235,66 @@ NEGATIVE: no line, arrow or connector running between the pier and the ridged ma
 
 K29 ──────────────────────────────────────────────────────────────
 VO 29: "Mira tek ayak üstünde durdu ve sallanmadı."
-FİKİR: 🔴 SEKANSIN DÖNÜŞÜMÜ — kavram maketten Mira'nın KENDİ BEDENİNE geçiyor.
-  Ve kanıt maket değil, GÖLGE: yerdeki siluet tek parça ve keskin kenarlı,
+FİKİR: 🔴 SEKANSIN DÖNÜŞÜMÜ — kavram mimariden Mira'nın KENDİ BEDENİNE geçiyor.
+  Ve kanıt gövde değil, GÖLGE: duvara düşen siluet tek parça ve keskin kenarlı,
   yani gerçekten sallanmıyor. "Sallanmadı" bir sıfat değil, ölçülebilen bir şey.
+  Denge burada da ışıkla öğretiliyor — sekansın bütün dili bu.
 YÜKÜM: OLAY DEĞİL DURUM — çoktan tek ayakta ve çoktan dengede. Kalkma, yükselme,
-  kolunu kaldırma anı yok. Bir ayak halının üstünde düz basıyor, öteki diz
-  hizasında ve orada tutuluyor. Ağzı kapalı.
-AYRICALIK: Sekansın ilk tam-boy karesi — masa, maket ve oda arkaya düşüyor,
-  gövde öne çıkıyor. Kavram artık bir nesnenin değil, bir çocuğun üstünde.
-PLAN: Önde odak dışı masanın köşesi ve yanından yükselen halkalı sütun (sağ alt) ·
-  ortada keskin, tek ayak üstünde duran gövde · arkada pencere, ceviz raflar,
-  okuma koltuğu ve yere düşen uzun paralel kayıt gölgeleri.
-ENTRY STATE: Bir ayak yerde, öteki diz hizasında ve orada duruyor; kollar yanlarda
-  açık ve sabit; yerdeki gölge tek ve keskin.
-EXIT STATE: Aynı duruş, aynı tek gölge; yalnız huzmedeki toz döndü.
+  kolunu kaldırma anı yok. Kollar yanlarda alçak ve sabit, ağzı kapalı.
+  🔴 Kadraj başının hemen üstünden kalkık dizin biraz altında biter; basan ayak,
+  halı ve zemin KADRAJ DIŞI. Tam boy kadraj yasak — stüdyo plakasını ithal ediyor.
+  🔴 Oda ÇOĞUNLUKLA KARANLIK; tek sert alçak güneş duvarda TEK BİR BANT çiziyor,
+  bandın dışı doygun indigo, yüzeyler boş. Yüzü bandın içinde ve IŞIKTA.
+AYRICALIK: Kanıt kadrajın kendisinde değil DUVARINDA — çocuğa değil gölgesine
+  bakıyoruz. Gerçek kamerayla çekilebilir ama ancak animasyonda bu kadar temiz.
+PLAN: Önde odak dışı, iyi bir okuma koltuğunun düğmeli deri sırtı (sağ alt) ·
+  ortada keskin gövde, bel-göğüs üstü · arkada ceviz duvar, üstündeki tek ışık
+  bandı, o bandın içinde tek parça siluet ve pencere kayıtlarının paralel gölgeleri.
+ENTRY STATE: Diz kalkık ve orada tutuluyor; kollar açık ve sabit; duvardaki gölge
+  tek ve keskin kenarlı.
+EXIT STATE: Aynı duruş, aynı tek gölge; yalnız bandın içindeki toz döndü.
 🔴 Kesim planı: K29 → K30 **L** — bu sahnenin sesi bisiklet karesine sarkar.
 🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A wide view of the open floor of the same generous study, in the space between the oak desk and the tall window. The girl from the character reference is already standing on one foot and already balanced, framed head to feet with the ceiling and the far wall out of frame, seen three-quarters from her left. One foot is flat on the wool rug, the other is lifted to about knee height and held there; both arms are out from her sides, low and steady; her mouth is closed, her eyes are level and nothing about her is moving. The proof is on the floor: the low sun through the window throws one single shadow of her across the boards, and that shadow is one clean sharp-edged shape that holds together, not doubled and not smeared. Nearest the lens, out of focus and closing the lower right corner, the corner of the oak desk with the ringed column of the porcelain model rising past it. In the middle ground she is razor sharp. Behind her the tall window, the deep walnut shelves and the good reading chair sit warm and legible, and the long parallel shadows of the window mullions lie across the floorboards and run toward us.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A medium view across a large, mostly dark room in a good home. One hard low shaft of white-gold sun comes through a tall window on screen-left and lays a single bright band across the deep walnut wall behind her; everything outside that band — the shelves, the ceiling, the near half of the room — sits in a full saturated indigo, and every surface in it carries only its own bare figured grain. The girl from the character reference stands inside the band, already balanced on one foot and already still, framed from just above her head down to just below her lifted knee, with her standing foot, the rug and the floor out of frame, seen three-quarters from her left. Her face is turned into the light and clearly lit; her mouth is closed, her eyes are level, both arms are out low from her sides and holding, and nothing about her is moving. The proof is on the wall behind her: the hard sun throws her silhouette across it with the arms out and the lifted knee clear inside it, and that shadow is one clean shape with one sharp edge, not doubled, not smeared and not soft at its rim. Nearest the lens, out of focus and closing the lower right corner, the deep-buttoned leather back of a reading chair rises through the frame. In the middle ground she is razor sharp, and the long parallel shadows of the window mullions lie across the wall beside her own.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens at chest height across the room, sharp on the standing figure, tactile wool rug, oiled floorboards, walnut and brushed cotton, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold key from the tall window on screen-left, visible in the dust, laying long parallel mullion shadows and one clean single shadow of the figure across the floor; honey, amber and warm walnut against a full saturated indigo, colour rich in the darks.
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium lens at chest height across the room, shallow depth of field, tactile figured walnut, buttoned leather, brushed cotton and dust, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold key from the tall window on screen-left, visible in the dust, cutting a single bright band across the wall and printing one clean sharp-edged silhouette inside it; honey, amber and warm walnut in the band, a full saturated indigo everywhere outside it, colour rich in the darks.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no full-body studio pose on a plain background; no blurred or doubled shadow on the floor; no flat even fill light; no readable text anywhere.
+NEGATIVE: no full-body studio pose on a plain background; no doubled, blurred or soft-edged shadow on the wall; no second light lifting the dark half of the room; no flat even fill light.
 -----
 
 
 K30 ──────────────────────────────────────────────────────────────
 VO 30: "Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz."
-FİKİR: Beyinciğin işi masada bitmiyor — dışarıda, tam hızda ve hiç düşünülmeden
-  sürüyor. Filmin ilk dış mekânı ve ilk açık gündüzü; içerinin indigosundan sonra
-  bu kare nefes aldırıyor ve sekansı S5'e devrediyor.
+FİKİR: Beyinciğin işi içeride bitmiyor — dışarıda, tam hızda ve hiç düşünülmeden
+  sürüyor. Filmin tek gündüz karesi; içerinin indigosundan sonra nefes aldırıyor
+  ve sekansı S5'e devrediyor.
 YÜKÜM: OLAY DEĞİL DURUM — çoktan biniyor, düz gidiyor, iki eli gidonda, tekerlekler
-  düz. Binme, kalkma, dönme anı yok (5 saniyeye sığmaz). Bisiklet SAĞLAM ve YENİ,
-  yol bakımlı, park bakımlı — özel okul standardı burada bir kez daha okunur.
-AYRICALIK: Çok geniş — sekansın en açık kadrajı. Kamera onu bırakıyor, kavram
-  odadan çıkıp dünyaya yayılıyor.
-PLAN: Önde odak dışı budanmış çalı kütlesi (alt kenar) · ortada keskin bisiklet ve
-  gövde · arkada çınar sırası, yola düşen uzun paralel gölgeler, yumuşak iyi evler.
+  düz. Binme, kalkma, dönme anı yok (5 saniyeye sığmaz).
+  🔴 Gündüz olması indigo rejimini BOZMAZ: ışık S1'e bağlanır — aynı alçak SERT
+  güneş, uzun paralel gölgeler, gölgeler doygun indigo, hiçbir yerde soluk gri yok.
+  🔴 Kamera önünde ve yanında; yüzü ışığa dönük ve GÖRÜNÜR. Arkadan kadraj yasak —
+  yüz kadraj dışı kalınca motor stüdyo plakasını ithal ediyor (bu projede ölçüldü).
+  Bisiklet SAĞLAM ve YENİ, yol ve park bakımlı — özel okul standardı burada okunur.
+AYRICALIK: Sekansın en açık kadrajı. Kamera onu bırakıyor, kavram odadan çıkıp
+  dünyaya yayılıyor.
+PLAN: Önde odak dışı, lensin hemen yanından geçen benekli çınar gövdesi (sol kenar) ·
+  ortada keskin bisiklet ve gövde · arkada çınar sırası, yola düşen uzun paralel
+  gölgeler, yumuşak ve bakımlı iyi evler.
 ENTRY STATE: Tekerlekler dönüyor, gidon düz, gövde dik; yoldaki gölge tek parça.
-EXIT STATE: Aynı duruş, aynı düz hat; yalnız birkaç adım daha ilerlemiş.
+EXIT STATE: Aynı duruş, aynı düz hat; yalnız birkaç metre daha yaklaşmış.
 🔴 Kesim planı: K30 → K31 **J** — S5'in sorusu bu kare bitmeden girer.
 🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
-⚠ MAMİ'YE SORU: kask YAZILMADI. Kask @mira plakasının başını kapatır ve referansı
-  ezer (bu projede ölçülmüş kusur sınıfı). Müşteri açısından istenirse eklenir —
-  ama o zaman kimlik plakadan değil kaskın altından gelir ve kare yeniden kurulur.
+⚠ MAMİ KARARI: kask? Kask YAZILMADI — çünkü kask `@mira` plakasının başını kapatır
+  ve referansı ezer (bu projede ölçülmüş kusur sınıfı). Müşteri açısından istenirse
+  eklenir, ama o zaman kimlik plakadan değil kaskın altından gelir ve kare yeniden
+  kurulur. Karar Mami'nin.
 -----
-A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A very wide view of a clean paved path running through a well-kept park of mature plane trees, late in the afternoon. The girl from the character reference is already riding, small in the frame and seen three-quarters from behind and slightly above, framed from the treetops down to the paving stones with the sky out of frame. She is upright on a solid new bicycle, both hands on the bars, both wheels straight, travelling in one straight line down the middle of the path — already going, not starting off and not turning. The low sun comes hard from screen-left between the trunks and lays long parallel shadows of the trees straight across the paving, and her own shadow runs out beside her as one clean unbroken shape. Nearest the lens, out of focus and closing the bottom edge, the mass of a clipped hedge crosses the frame. In the middle ground the path, the bicycle and the girl are razor sharp, the stone warm and dry and the bicycle's frame and rims catching hard clean highlights. Behind her the avenue carries on into a warm haze, and good houses sit soft and legible between the trunks with their windows catching the sun.
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A wide view down a clean paved avenue through a well-kept park of mature plane trees, late in the afternoon with the sun low between the trunks. The girl from the character reference is already riding, at middle distance and coming toward the lens at a slight angle so that her lit face is turned into the frame, framed from the crowns of the trees down to the paving with the sky and the near verge out of frame. She is upright on a solid new bicycle, both hands on the bars, both wheels straight, travelling in one straight line down the middle of the path — already going, not starting off and not turning; her mouth is closed and her eyes are on the path ahead. One hard low sun comes from screen-left between the trunks, rakes her face and forearms and the frame of the bicycle, and lays the long parallel shadows of the trunks straight across the paving; her own shadow runs out beside her as one clean unbroken shape. Nearest the lens, out of focus and filling the left edge, the deeply mottled trunk of a plane tree passes close beside the camera. In the middle ground she, the bicycle and the stone are razor sharp, the paving warm and dry, the rims and spokes catching hard clean highlights. Behind her the avenue carries on into a warm haze with good, well-kept houses soft and legible between the trunks.
 
-STYLE: 3D animated feature, warm stylised Pixar tradition; very wide lens at chest height down the path, sharp in the middle ground, tactile paving stone, plane bark, painted steel and brushed alloy, fine film grain.
-LIGHT AND PALETTE: one hard low white-gold sun from screen-left through the trunks, throwing long parallel tree shadows across the path; honey, amber leaf and warm stone against a full saturated indigo shadow, colour rich in the darks, nothing pastel and nothing grey.
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens at chest height down the avenue, sharp in the middle ground, tactile paving stone, plane bark, painted steel and brushed alloy, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from screen-left through the trunks, throwing long parallel trunk shadows straight across the paving; honey, amber leaf and warm stone against a full saturated indigo shadow, colour rich in the darks, nothing pastel and nothing grey.
 TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
-NEGATIVE: no full-body studio pose on a plain background; no second child riding alongside; no motion-blur smear across the frame; no readable text anywhere.
+NEGATIVE: no full-body studio pose on a plain background; no second child riding alongside; no motion-blur smear across the frame; no flat even fill light.
 -----

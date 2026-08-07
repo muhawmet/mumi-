@@ -2,7 +2,7 @@
   "surum": 1,
   "proje": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "olusturuldu": "2026-08-07T19:18:18.406Z",
-  "guncellendi": "2026-08-07T20:31:59.772Z",
+  "guncellendi": "2026-08-07T21:04:17.838Z",
   "shots": [
     {
       "n": 1,
@@ -638,270 +638,579 @@
     {
       "n": 29,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.428Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 30,
       "sekans": "S4",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.477Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 31,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.524Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 32,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.572Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 33,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.619Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 34,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.668Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 35,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.715Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 36,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.761Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 37,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "plaka-ithal",
+          "zaman": "2026-08-07T21:04:17.792Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.838Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 38,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.809Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 39,
       "sekans": "S5",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.856Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 40,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.901Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 41,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.949Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 42,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:16.996Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 43,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.043Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 44,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.088Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 45,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.134Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 46,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.181Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 47,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.228Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 48,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.274Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 49,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.321Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 50,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.369Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 51,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.414Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 52,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.461Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 53,
       "sekans": "S6",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.509Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 54,
       "sekans": "S7",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.556Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 55,
       "sekans": "S7",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.603Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 56,
       "sekans": "S7",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.650Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 57,
       "sekans": "S7",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.699Z"
+        }
+      ],
       "klip": [],
       "not": ""
     },
     {
       "n": 58,
       "sekans": "S7",
-      "asama": "yazildi",
+      "asama": "onaylandi",
       "elementler": [],
-      "basim": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "imagen-nano-banana-2-flash",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "kabul",
+          "kusur": null,
+          "zaman": "2026-08-07T21:04:17.747Z"
+        }
+      ],
       "klip": [],
       "not": ""
     }

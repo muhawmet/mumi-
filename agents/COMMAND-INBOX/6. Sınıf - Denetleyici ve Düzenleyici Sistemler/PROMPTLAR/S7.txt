@@ -1,0 +1,187 @@
+SEKANS 7 — İKİ ŞEF, TEK UYUM (konser salonu · kapanış) · K54-K58
+═══════════════════════════════════════════════════════════════════
+Mekân kaynaktan: "dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi" —
+film açıldığı salona geri döner. S7 S1'in AYNI SALONUDUR; dünya `images/4.png`,
+`5.png`, `6.png`, `8.png` (basılı ve Mami onaylı) açılıp bakılarak yazıldı:
+bal rengi ahşap sahne · koyu kırmızı perde · yaldızlı localar · indigo seyirci
+karanlığı · sahne solundan tek sert beyaz-altın huzme, puslu havada görünür,
+uzun paralel gölgeler. Düz eşit dolgu YOK; renk gölgede de dolgun kalır.
+
+register: edu
+
+🔴 KAYNAĞIN "İKİ SÜTUNLU TABLO" İSTEĞİ K54 + K55'TE KARŞILANIR — ŞEMA OLARAK DEĞİL.
+İkisi de AYNI salonun içinde, İKİ AYRI KARE, iki ayrı IŞIK DAVRANIŞI:
+  · K54 — SİNİR: kenar jilet gibi sert, tek nesnenin tek kenarına oturur, bittiği
+    yerde BİRDEN kesilir, hâle yok, komşu yüzeyler tamamen soğuk, İZ BIRAKMAZ.
+  · K55 — HORMON: kenarı YOK, malzemenin İÇİNDEDİR, dışa doğru sınırsız zayıflar,
+    hiçbir yerde bitmez, KALIR.
+Tablo · panel · iki sütun · bölünmüş kadraj · karşılaştırma düzeni · ok · etiket YOK.
+Fark RENKTE değil DAVRANIŞTA — ikisi de sıcak-altın.
+Kanıt kareleri: `images/15.png` (sert kenar, kesilmiş) ⟂ `images/18.png` (kenarsız hâle).
+
+🔴 K57 K06'NIN AYNASIDIR (`images/6.png`, basılı ve onaylı) — aynı loca kenarı, aynı
+yaldızlı korkuluk + kırmızı kadife ön düzlemi, aynı huzme; ama bu kez el İNMİŞ ve
+salon SUSMUŞ. Kare bakılarak yazıldı.
+
+🔴 OLAY DEĞİL DURUM: K57'de el çoktan inmiş (iniş anı değil), K58'de Mira çoktan
+ayakta (kalkma anı değil). Kimse konuşmaz, ağız oynamaz.
+
+Ölçek merdiveni: K54 orta · K55 yakın · K56 geniş · K57 yakın-uzun lens ·
+K58 geniş (özne lense yakın, bel üstü). Ardışık iki karede aynı ölçek yok.
+⚠ `_OMURGA.md` K54 ve K55'in ikisine de "orta" diyor; ardışık iki karede aynı ölçek
+   yasağı gereği K55 yakına indirildi. Kare içerikleri omurgadaki işleriyle aynı.
+
+Ön düzlem kütlesi BEŞ karenin beşinde var ve beşi de farklı: timpani kasnağı ·
+proskenyum oymalı yaldızı · arp gövdesi · loca korkuluğu+kadife · kadife koltuk sırtı.
+Kadraj kilidi cümleyle değil KÜTLEYLE tutuyor.
+
+references: YALNIZ K58 → UPOqovywny (@mira). K54-K57'de referans YOK.
+🔴 Kız TARİF EDİLMEZ, ÇAĞRILIR. Yaş, yüz, saç, ten, göz, gardırop, milliyet YAZILMAZ —
+   gövdede yalnız "the girl from the character reference" / "she".
+🔴 K58 kadrajın DIŞARIDA bıraktığını yazar (bel üstü) ve yüzü GÖRÜNÜR + IŞIKTADIR;
+   yüz kadraj/odak dışına alınırsa motor sahneyi atlayıp stüdyo plakasını ithal ediyor
+   (bu projede ölçüldü). Salon zaten karanlıktır — referansı "düz ışıklı vintage"
+   moduna kaçıran aydınlık iç mekân riski burada yok.
+🔴 Hiçbir kavram ışığı Mira'nın tenine değmez (ENZIM §7 + çocuk güvenliği).
+🔴 ŞEMA YASAĞI gövdenin İLK cümlelerinde, sonda değil.
+🔴 Negatif kare-özel, en çok 3-5 madde. Negatifte bir nesneyi ADLANDIRMAK onu çağırıyor —
+   kısıt mümkün olan her yerde OLUMLU yazıldı.
+
+Kesim planı: K57 → K58 **L** — son akor Mira'nın karesinde sürer.
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+K54 ──────────────────────────────────────────────────────────────
+VO 54: "Sinir sistemi çok hızlı çalışır, etkisi kısa sürer."
+FİKİR: "Kısa sürer" bir süre bildirimi değil, bir YOKLUKTUR. Sinir ışığının yasası
+  film boyunca üç kez kuruldu (K15, K18, K19); burada ilk kez GERÇEK bir salonda,
+  gerçek nesnelerin üstünde tekrar ediyor — yani ders bir şema değil, filmin dili.
+YÜKÜM: 🔴 Işık yaylar dizisinin ÜST KENARINDA tek bir jilet çizgisi; sıranın ortasında
+  BİRDEN kesiliyor. Kesimden sonrası birebir aynı yaylar, aynı ahşap, ama tamamen
+  soğuk. Hâle yok, taşma yok, altta tahtada iz yok, komşu müzisyende yansıma yok.
+AYRICALIK: Sahne seviyesinden, yayların hizasından bakış — kesimin tam olarak nerede
+  olduğu ancak buradan tek bakışta okunuyor.
+PLAN: Önde odak dışı dövme bakır timpani kasnağı ve deri üstünde duran keçe tokmak
+  (sol alt) · ortada keskin yay dizisi ve üstündeki kesilen altın çizgi · arkada
+  kırmızı perde ve yaldızlı locaların indigoya düşen duvarı.
+ENTRY STATE: Çizgi kenarda duruyor, kesildiği yer keskin; kesimin ötesi karanlık.
+EXIT STATE: Aynı çizgi, aynı kesim yeri; hiçbir yere yayılmadı, hiçbir iz bırakmadı.
+references: YOK
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A medium view along the front arc of the string section of a grand concert stage, taken from stage level at bow height, so the raised bows cross the whole frame on one long repeated diagonal, dozens of them held at exactly the same angle. One hard razor-thin line of white-gold light lies along the top edge of those bows — perfectly sharp, no wider than a hair, running from the near end of the arc through several players — and then, partway along the row, it stops dead, cut off clean as if by a blade. Past that cut the arc simply carries on cold: the same bows, the same honey-toned spruce, the same black shoulders, and nothing warm anywhere on them. Nothing spills off the lit stretch either — the players beside it are dark, the oak boards beneath it are dark, and past the cut there is no trace at all that the light was ever there. Nearest the lens, out of focus and closing the lower left corner, the beaten copper rim of a timpani with a felt mallet head resting on the skin. In the middle ground the bows and the hands on them are razor sharp, every player already at work. Behind them the crimson curtain and one wall of gilded boxes fall away into a full saturated indigo house.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto along the arc at bow height, shallow depth of field with strong diagonal repetition, tactile spruce, horsehair, beaten copper and felt, fine film grain.
+LIGHT AND PALETTE: one hard white-gold key from high stage-left carrying the razor line along the bow edge and reaching nothing at all past its cut; a dim hard indigo edge from the house doing every bit of the remaining modelling; honey, amber and copper against saturated crimson and a full indigo dark, colour rich in the shadows.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no glow, halo or bloom spilling off the lit line; no warm bounce on the bows past the cut; no flat even fill light; no player looking at camera.
+-----
+
+
+K55 ──────────────────────────────────────────────────────────────
+VO 55: "İç salgı bezleri yavaş çalışır, etkisi uzun sürer."
+FİKİR: K54'ün TAM ZIDDI, aynı salonda ve aynı sıcak-altın renkte. Fark renkte değil
+  DAVRANIŞTA: bu ışığın hiçbir yerde kenarı yok, hiçbir yerde bitmiyor.
+  "Uzun sürer" bir sıfat değil, kadrajın en uzak köşesinde HÂLÂ ORADA olmasıdır.
+YÜKÜM: 🔴 Sıcaklık kadifenin havının İÇİNDE yaşıyor — yüzeyinde bir hat, bir rim,
+  bir başlangıç ya da bitiş noktası YOK. Kat kat zayıflıyor ama en uzak kıvrımda bile
+  seçilebiliyor. Sahnenin kendi sert key'i ayrıca ve AYRI olarak modelliyor —
+  düz dolguya düşmemenin şartı bu.
+AYRICALIK: Sekansın tek malzeme yakınlığı — hormonu anlatan şey nesne değil DOKU.
+PLAN: Önde odak dışı proskenyumun oymalı yaldızlı kıvrımı (sağ alt) · ortada keskin
+  üç derin kadife kıvrımı ve içlerinde yaşayan kehribar · arkada kulis derinliğinin
+  indigosu.
+ENTRY STATE: Sıcaklık kadifenin içinde duruyor, hiçbir kenarı yok; en uzak kıvrımda
+  hâlâ seçiliyor.
+EXIT STATE: Aynı hâle, aynı kenarsızlık; sönmedi, çekilmedi, hiçbir yerde bitmedi.
+references: YOK
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A close view of the great crimson curtain at the side of the same concert stage, taken from a few steps away and slightly below, so three deep folds of heavy velvet fill the frame and the carved gilded plasterwork of the proscenium runs up beside them. A warm amber light lives inside the velvet itself. It has no edge anywhere at all: it is deepest in the nap of the near fold and simply keeps thinning as it travels — through the second fold, weaker through the third, weaker again along the gilding — and it is still faintly and unmistakably there in the furthest fold at the very edge of frame, where it has clearly been for a long time and shows no sign of going out. Nowhere in the frame is there a line, a rim or a boundary where this warmth begins or ends; it belongs to the depth of the material and not to its surface. Separately and quite differently, one hard white-gold shaft from high stage-left grazes the crest of the near fold and cuts a single deep clean shadow down into the pleat behind it, modelling the whole mass. Nearest the lens, out of focus and closing the lower right corner, the carved gilded scroll of the proscenium ornament catches one soft highlight. Behind the folds the depth of the wings falls away into a full saturated indigo that keeps its colour.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; close normal lens a few steps from the curtain, shallow depth of field, tactile velvet nap, gilded plaster and dust, fine film grain.
+LIGHT AND PALETTE: an edgeless amber warmth living inside the velvet and thinning without limit through every fold, still present at the far edge of frame; plus one separate hard white-gold key from high stage-left grazing the near crest and cutting one deep shadow; crimson, amber and old gold against a full saturated indigo, colour rich in the darks.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no hard line or boundary where the warm inner light ends; no visible beam or cone carrying that warmth; no flat even fill light; no readable text anywhere.
+-----
+
+
+K56 ──────────────────────────────────────────────────────────────
+VO 56: "İkisi birlikte vücudumuzun iç dengesini korur."
+FİKİR: Dersin hükmü. İki davranış TEK kadrajda, aynı salonda, aynı anda — ve
+  birbirlerine hiç dokunmadan. "Birlikte" bir bağlantı çizgisi değil, aynı yerde
+  aynı anda var olmaktır.
+YÜKÜM: 🔴 Kadrajı bölen hiçbir şey YOK: çizgi yok, dikiş yok, iki sütun yok, iki panel
+  yok, karşılaştırma düzeni yok. Yakın yaylarda jilet çizgisi ve onun keskin kesimi;
+  salonun bütün derinliğinde kenarsız kehribar. İkisi karışmıyor ve çarpışmıyor.
+AYRICALIK: Üst locadan geniş bakış — hem sahnenin yakın kavsini hem salonun en uzak
+  balkonunu aynı karede tutabilen tek konum. Sekansın en soğukkanlı karesi.
+PLAN: Önde odak dışı yaldızlı arp gövdesi ve gerili telleri (sol kenar) · ortada
+  keskin yaylı kavsi ve üstündeki kesilen altın çizgi · arkada localar, en uzak
+  balkon ve havada duran kenarsız sıcaklık.
+ENTRY STATE: Çizgi kesildiği yerde duruyor; kehribar bütün derinlikte hareketsiz.
+EXIT STATE: Aynı iki davranış, aynı mesafede; ikisi de yerinde, ikisi de değişmemiş.
+references: YOK
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram, and nothing in it is written on, pointed at or numbered. A wide view from a high balcony box of the same concert hall, angled so that the near curve of the string section fills the lower third of the frame and the whole depth of the auditorium opens away behind it — rows of gilded boxes, the far balcony, the dark house beyond. Two quite different warm lights are present at once. On the near bows, one hard razor-thin line of white-gold sits along their top edges and then stops dead partway along the curve, cut clean, with the bows past the cut completely cold and nothing spilled onto the boards beneath them. Everywhere behind that, filling the depth of the house, a broad amber warmth hangs with no edge of any kind — it is strongest around the near boxes and simply keeps thinning outward through the gilding and the crimson and the turning dust, weaker and weaker but still faintly there on the furthest balcony rail at the back of the frame. Nothing at all runs between the two, nothing divides the frame, and the sharp line and the boundless warmth never meet. Nearest the lens, out of focus and rising through the left edge, the tall gilded column of a harp with its strings crossing the frame. In the middle ground the players are razor sharp and every one of them is at work.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens from a high box looking down and across, deep staging front to back, tactile spruce, gilding, velvet and lacquered wood, fine film grain.
+LIGHT AND PALETTE: one hard white-gold key from high stage-left carrying the razor line and cutting dead at its end, and a separate edgeless amber warmth filling the whole depth of the house and thinning without limit; honey, amber and old gold against saturated crimson and a full indigo dark, colour rich in the shadows.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no dividing line, seam, split screen or two-panel comparison; no glow spilling off the razor line; no flat even fill light; no readable text anywhere.
+-----
+
+
+K57 ──────────────────────────────────────────────────────────────
+VO 57: "Salonda son akor çalındı ve şefin eli indi."
+FİKİR: 🔴 K06'NIN AYNASI. Orada baget indi ve bütün salon AYNI ANDA konuştu; burada
+  aynı el, aynı loca, aynı huzme — ve bütün salon AYNI ANDA sustu. Filmin ilk
+  cümlesi burada kapanıyor: tek bir işaret, yüzlerce karşılık.
+YÜKÜM: 🔴 OLAY DEĞİL DURUM — el ÇOKTAN inmiş. İniş anı, hareket, savrulma yok.
+  Bilek gevşek, parmaklar artık sıkmıyor, bagetin ucu tahtayı gösteriyor.
+  Arkada odak dışı orkestranın TAMAMI durmuş: yaylar kucakta, çanaklar aşağıda.
+AYRICALIK: K06 ile birebir aynı loca kenarı ve aynı ön düzlem, ama uzun lens —
+  kare aynı yerden bakıyor, yalnız daha yakın ve daha sessiz.
+PLAN: Önde odak dışı oymalı yaldızlı loca korkuluğu ve altındaki koyu kırmızı kadife
+  (sol alt, K06'nın aynısı) · ortada keskin, inmiş el ve baget · arkada odak dışı,
+  tamamen durmuş orkestra.
+ENTRY STATE: El kalçanın yanında aşağıda ve açık; baget ucu tahtaya bakıyor; kimse
+  kımıldamıyor.
+EXIT STATE: Aynı el, aynı yükseklik; yalnız huzmedeki toz döndü.
+🔴 Kesim planı: K57 → K58 **L** — son akor Mira'nın karesinde sürer.
+references: YOK
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view from the very edge of the same low balcony box, on a long lens, framed tight on the conductor's right hand and the baton with his head and the podium out of frame. The stroke is long over: the hand hangs low and open beside his hip, the wrist loose, the fingers no longer gripping, and the thin baton points down at the warm oak boards. His black sleeve and the white edge of his cuff fall away into deep rich shadow. Behind him, thrown well out of focus, the whole orchestra has already stopped — bows are down across laps, the golden bells of the brass are lowered, the timpani mallets rest on the skin, and not one player is moving anywhere in the blur. Nearest the lens, out of focus and closing the lower left corner, the carved gilded rail of the box with deep red velvet below it. One hard white-gold shaft from high stage-left comes down exactly where it always did and lands on the back of the lowered hand and along the length of the baton, and the fine dust still turns slowly inside it. Far behind, the crimson curtain climbs into a full saturated indigo darkness.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; long telephoto from the box edge, very shallow depth of field, tactile wool, starched linen, lacquered wood and gilt, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft from high stage-left, visible in the dust, landing on the lowered hand and the baton and leaving everything else in deep shadow; amber and honey on skin and gilt against saturated crimson and a full indigo dark, colour rich in the darks.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no disembodied floating hand; no raised or mid-swing arm; no motion-blur smear across the hand; no flat even fill light.
+-----
+
+
+K58 ──────────────────────────────────────────────────────────────
+VO 58: "Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu."
+FİKİR: 🔴 FİLMİN KAPANIŞI. Salon sustu, Mira ayakta kaldı — ve sıcaklık gitmedi.
+  K07'de oturuyordu ve izliyordu; burada ayakta ve ARTIK BİLİYOR. Hormonun yasası
+  son karede duyguya dönüşüyor: iz bırakan şey hâlâ orada.
+YÜKÜM: 🔴 OLAY DEĞİL DURUM — çoktan ayakta ve hareketsiz; kalkma anı yok, alkış yok,
+  el çırpma yok. Ağzı kapalı.
+  🔴 HÂLE HAVADA KALIR, TENİNDE ASLA: kenarsız kehribar salonun havasında, koltukların
+  üstünde ve ondan uzakta durur; yüzünü ve kolunu yalnız sahnenin sıcak sızıntısı
+  aydınlatır. Kavram ışığı ne cildine ne kıyafetine değer.
+AYRICALIK: Geniş lens ama özne lense yakın — salonun bütün derinliği onun arkasında
+  açılıyor. Filmin açıldığı yerden kapanıyor.
+PLAN: Önde odak dışı yandaki koltuğun koyu kırmızı kadife sırtı ve pirinç koridor
+  dikmesi (sağ kenar) · ortada keskin Mira, bel üstü · arkada sırada oturan kalan
+  seyirci, sönmüş sahne ve boş podyumdaki tek huzme.
+ENTRY STATE: Ayakta ve hareketsiz; havadaki kehribar duruyor, tenine değmiyor.
+EXIT STATE: Aynı duruş, aynı hâle; yalnız havadaki toz döndü.
+🔴 references: UPOqovywny (@mira) — kız TARİF EDİLMEZ, çağrılır.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A wide view from inside the front row of the same grand concert hall, the lens low and close to her. The girl from the character reference has already stood up and is standing still, framed from the waist up with her legs, her seat and the floor out of frame, seen three-quarters from her left, her mouth closed and both eyes toward the stage. Warm spill from the stage strikes her face and one forearm from screen-left and leaves the far side of her in rich shadow; her face is clearly lit and clearly readable. Around her the hall has stopped: the people along the row are still seated with their hands down, nobody moving, and on the stage behind her the players have lowered their instruments while one last shaft of light rests on the empty podium. High in the air of the house, above the rows and well clear of her, a broad amber warmth hangs in the turning dust — it has no edge at all, thinning outward through the gilded boxes and the far balcony without ever ending, and it touches neither her skin nor her clothes. Nearest the lens, out of focus and closing the right edge, the deep red velvet back of the next seat with a brushed brass aisle standard beside it. Behind everything the house falls away into a full saturated indigo.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens low and close in the front row, deep staging front to back, tactile velvet, brushed cotton, gilding and brass, fine film grain.
+LIGHT AND PALETTE: warm directional spill from the stage as the only key on her, striking her from screen-left and leaving a long shadow across the seat behind her; separately an edgeless amber warmth hanging high in the air of the house and thinning without limit; honey and amber against saturated crimson and a full indigo house, no pastel wash.
+TEXT: no lettering anywhere in frame — no signage, labels, numerals, symbols or written marks on any surface.
+NEGATIVE: no warm glow touching her skin or her clothing; no full-body studio pose on a plain background; no other child with a similar face; no flat even fill light.
+-----
