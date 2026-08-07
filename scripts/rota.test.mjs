@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import {
   FILM_KARE, FILM_KLIP, FIYAT, RotaError, VARSAYILAN,
-  ELEMENT_ORAN, SAHNE_ORAN, SUREKLILIK_CAST,
+  ELEMENT_ORAN, SAHNE_ORAN, ELEMENT_ESIGI,
   fiyatTablosu, filmKapasitesi, main, rafYaz, sec, usage,
 } from './rota.mjs';
 
@@ -101,16 +101,20 @@ describe('rota — Mami\'nin element kuralı', () => {
     expect(SAHNE_ORAN).toBe('16:9');
   });
 
-  it('süreklilik odağı Mira ve Efe — geri kalan element tek seferlik', () => {
-    expect(SUREKLILIK_CAST).toEqual(['mira', 'efe']);
+  it('süreklilik bir İSİM LİSTESİ değil EŞİK — 3+ tekrar eden her öğe element olur', () => {
+    expect(ELEMENT_ESIGI).toBe(3);
   });
 
-  it('durum ekranı süreklilik cast\'i rafta yoksa UYARIR', () => {
+  it('raf cüzdan üstüdür — aynı @ad iki cüzdanda birden yaşayabilir', () => {
     const yol = path.join(dizin, 'raf.json');
-    rafYaz({ items: [{ name: 'ogr', id: 'a', medias: [{ url: 'https://x/y.png' }] }] }, { yol });
+    rafYaz({
+      items: [
+        { name: 'kedi', id: 'h1', medias: [{ url: 'https://x/y.png' }] },
+        { name: 'kedi', id: 'm1', cuzdan: 'magnific', medias: [{ url: 'https://x/z.png' }] },
+      ],
+    }, { yol });
     const raf = JSON.parse(readFileSync(yol, 'utf8'));
-    const eksik = SUREKLILIK_CAST.filter((ad) => !raf.elementler.some((e) => e.ad.includes(ad)));
-    expect(eksik).toEqual(['mira', 'efe']);
+    expect([...new Set(raf.elementler.map((e) => e.cuzdan))].sort()).toEqual(['higgsfield', 'magnific']);
   });
 });
 

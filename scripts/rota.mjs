@@ -38,10 +38,15 @@ export const FILM_KLIP = 60;
 
 // Mami'nin kuralı (2026-08-07): **element 1:1, sahne 16:9.** Element bir kez üretilir ve
 // projelerden birike birike raf büyür — baştan hepsini kurmaya gerek yok, ihtiyaç çıkınca basılır.
-// Süreklilik odağı tekrar eden cast: **Mira ve Efe.** Geri kalan element tek seferliktir.
+//
+// 🔴 SÜREKLİLİK BİR İSİM LİSTESİ DEĞİL, BİR EŞİKTİR. Mami: *"her şeyde de 2-3'ten fazla
+// görünüyorsa videoda devamlılık olur, üretiriz başta. Mesela kediyse `@kedi` diye üretiriz;
+// sonra bir videoda kedi kullanırsak onu kullanırsın."* Yani kural cast'e özel değil: karakter,
+// hayvan, nesne, mekân — hangisi olursa olsun **eşiği geçen element olur.**
+// Raf CÜZDAN ÜSTÜ: aynı `@ad` hem Magnific hem Higgsfield tarafında yaşayabilir.
 export const ELEMENT_ORAN = '1:1';
 export const SAHNE_ORAN = '16:9';
-export const SUREKLILIK_CAST = Object.freeze(['mira', 'efe']);
+export const ELEMENT_ESIGI = 3;
 
 /**
  * Ölçülmüş fiyat tablosu. Hepsi `simulate_cost` / `generate cost` ile EXACT alındı.
@@ -165,16 +170,15 @@ export function durumMetni() {
 
   satirlar.push('');
   if (raf?.elementler?.length) {
+    const cuzdanlar = [...new Set(raf.elementler.map((e) => e.cuzdan))];
     satirlar.push(`   element rafı: ${raf.elementler.length} kayıt → ${raf.elementler.map((e) => e.ad).join(', ')}`);
-    const eksik = SUREKLILIK_CAST.filter(
-      (ad) => !raf.elementler.some((e) => String(e.ad).toLocaleLowerCase('tr').includes(ad)));
-    satirlar.push(eksik.length
-      ? `   ⚠ süreklilik cast'i rafta YOK: ${eksik.join(', ')} — tekrar eden kimlik referanssız tutmuyor.`
-      : `   süreklilik cast'i rafta: ${SUREKLILIK_CAST.join(', ')}`);
+    satirlar.push(`   cüzdanlar: ${cuzdanlar.join(', ')}`);
   } else {
     satirlar.push('   element rafı BOŞ ya da indekslenmemiş — süreklilik referanssız kurulmuyor.');
   }
-  satirlar.push(`   (element ${ELEMENT_ORAN} üretilir, sahne ${SAHNE_ORAN}; raf projelerden birike birike büyür)`);
+  satirlar.push(
+    `   (element ${ELEMENT_ORAN} üretilir, sahne ${SAHNE_ORAN}; raf projelerden birike birike büyür)`,
+    `   KURAL: bir öğe videoda ${ELEMENT_ESIGI}+ kez görünüyorsa element olur — karakter, hayvan, nesne, mekân fark etmez.`);
   return satirlar.join('\n');
 }
 

@@ -161,11 +161,77 @@ export function rafOku(yol = RAF_YOLU) {
   }
 }
 
-/** Kaynakta geçen tekrar eden isimleri rafla eşler. Rafta olmayan = üretilecek element. */
+/**
+ * 🔴 SÜREKLİLİK BİR EŞİKTİR, İSİM LİSTESİ DEĞİL. Mami (2026-08-07): *"her şeyde de 2-3'ten
+ * fazla görünüyorsa videoda devamlılık olur, üretiriz başta. Mesela kediyse `@kedi` diye
+ * üretiriz; sonra bir videoda kedi kullanırsak onu kullanırsın."*
+ *
+ * Türkçe eklemeli bir dil: "kedi / kediyi / kedinin" ayrı token. Bu yüzden gövde tahmini
+ * KABA yapılıyor — ilk dört harfe göre kümeleniyor. Dört, beş değil: Türkçe kökler kısa ve
+ * beş harfte "kedi" kendi çekimlerinden ayrı düşüyordu (ölçüldü). Bu bir dilbilim iddiası
+ * DEĞİL, bir ÖNERİ yüzeyi: liste Mami'ye gider, eleme onundur.
+ */
+export const ELEMENT_ESIGI = 3;
+export const GOVDE_UZUNLUK = 4;
+// İki grup: (a) dilin taşıyıcı kelimeleri, (b) SENARYO ZANAATININ kelimeleri. İkincisi kritik —
+// senaryo dosyasında "sahne", "görsel", "kapanış" doğal olarak onlarca kez geçiyor ve eşiği
+// geçiyor, ama hiçbiri çizilebilir bir öğe değil. Filtrelenmezse liste gürültüye boğuluyor.
+export const DURAK_KELIMELER = new Set([
+  've', 'ile', 'bir', 'bu', 'şu', 'için', 'gibi', 'daha', 'çok', 'ama', 'ancak', 'sonra',
+  'önce', 'kadar', 'her', 'hepsi', 'kendi', 'olan', 'olarak', 'diye', 'değil', 'yok', 'var',
+  'ben', 'sen', 'biz', 'siz', 'onlar', 'şey', 'zaman', 'olur', 'oldu', 'yapar', 'eder',
+  // senaryo zanaatı
+  'sahne', 'sahnede', 'plan', 'kare', 'video', 'saniye', 'çekim', 'kamera', 'görüntü',
+  'görsel', 'metin', 'yazı', 'ekran', 'ses', 'müzik', 'anlatıcı', 'seslendirme', 'efekt',
+  'giriş', 'kapanış', 'bölüm', 'başlık', 'açıklama', 'konu', 'ders', 'ünite', 'sınıf',
+  'öğrenci', 'öğretmen', 'not', 'örnek', 'soru', 'cevap', 'süre', 'geçiş',
+]);
+/** Aday listesi bir öneri yüzeyi; uzunsa okunmuyor. Tavan konur ve kalanın sayısı söylenir. */
+export const ADAY_TAVANI = 12;
+
+export function tekrarEdenler(metin, { esik = ELEMENT_ESIGI } = {}) {
+  const tokenlar = String(metin).toLocaleLowerCase('tr')
+    .split(/[^a-zçğıöşü]+/i)
+    .filter((t) => t.length >= 4 && !DURAK_KELIMELER.has(t));
+
+  const kume = new Map();
+  for (const t of tokenlar) {
+    const govde = t.slice(0, GOVDE_UZUNLUK);
+    const kayit = kume.get(govde) ?? { govde, adet: 0, bicimler: new Set() };
+    kayit.adet += 1;
+    kayit.bicimler.add(t);
+    kume.set(govde, kayit);
+  }
+
+  return [...kume.values()]
+    .filter((k) => k.adet >= esik)
+    .map((k) => ({
+      ad: [...k.bicimler].sort((a, b) => a.length - b.length)[0],
+      adet: k.adet,
+      bicimler: [...k.bicimler],
+    }))
+    .sort((a, b) => b.adet - a.adet);
+}
+
+/**
+ * Kaynakta geçen tekrar eden öğeleri rafla eşler. Rafta olmayan = üretilecek element.
+ * Eşleşme KELİME SINIRINDA yapılır — substring eşleşmesi `iye`yi "sahibiye"nin içinde bulup
+ * yanlış rafa bağlıyordu; yanlış eşleşme yanlış referans, yanlış referans yanlış kimlik demek.
+ */
 export function elementEslestir(metin, elementler) {
   const kucuk = String(metin).toLocaleLowerCase('tr');
-  const rafta = elementler.filter((e) => kucuk.includes(String(e.ad).toLocaleLowerCase('tr')));
-  return { rafta, rafSayisi: elementler.length };
+  const rafta = elementler.filter((e) => {
+    const ad = String(e.ad).toLocaleLowerCase('tr');
+    return new RegExp(`(^|[^a-zçğıöşü])${ad}([^a-zçğıöşü]|$)`, 'i').test(kucuk);
+  });
+  const raftaAdlar = new Set(rafta.map((e) => String(e.ad).toLocaleLowerCase('tr')));
+  const tumAdaylar = tekrarEdenler(metin).filter((t) => !raftaAdlar.has(t.ad));
+  return {
+    rafta,
+    rafSayisi: elementler.length,
+    adaylar: tumAdaylar.slice(0, ADAY_TAVANI),
+    adayToplam: tumAdaylar.length,
+  };
 }
 
 // ─── Soru mimarisi ────────────────────────────────────────────────────────────
@@ -207,15 +273,23 @@ export function sorulariKur(kaynak, { proje, raf = rafOku() } = {}) {
     {
       kilit: 2,
       baslik: 'CAST VE ELEMENT',
-      soru: element.rafta.length
-        ? `Rafta eşleşen ${element.rafta.length} element var (${element.rafta.map((e) => e.ad).join(', ')}). Bunlar kullanılsın mı?`
-        : `Rafta (${element.rafSayisi} element) bu kaynakla eşleşen çıkmadı. Tekrar eden cast için yeni element basılsın mı?`,
-      kanit: element.rafSayisi ? `element rafı: ${element.rafSayisi} kayıt` : 'element rafı boş ya da indekslenmemiş',
-      gerekce: 'Referanssız basılan karede Efe 12 yaşında çocuk yerine ~35\'lik yetişkin geldi. Element opsiyon değil ÖN KOŞUL.',
+      soru: [
+        element.rafta.length
+          ? `Rafta eşleşen ${element.rafta.length} element: **${element.rafta.map((e) => e.ad).join(', ')}**.`
+          : `Rafta (${element.rafSayisi} element) bu kaynakla eşleşen çıkmadı.`,
+        element.adaylar.length
+          ? `Kaynakta ${ELEMENT_ESIGI}+ kez geçen ${element.adayToplam} aday var, en sık ${Math.min(8, element.adaylar.length)}\'i: **${element.adaylar.slice(0, 8).map((a) => `@${a.ad} (${a.adet})`).join(' · ')}**. Hangileri element olsun? (Liste ham — soyut kelimeler de düşüyor, eleme senin.)`
+          : `Kaynakta ${ELEMENT_ESIGI}+ kez tekrar eden öğe çıkmadı.`,
+      ].join(' '),
+      kanit: element.rafSayisi ? `element rafı: ${element.rafSayisi} kayıt · eşik ${ELEMENT_ESIGI}+ tekrar` : 'element rafı boş ya da indekslenmemiş',
+      gerekce: 'Süreklilik bir isim listesi değil, bir EŞİK: bir öğe videoda 3+ kez görünüyorsa element olur — karakter, hayvan, nesne, mekân fark etmez. Referanssız basılan karede Efe 12 yaşında çocuk yerine ~35\'lik yetişkin geldi.',
       secenekler: [
-        { etiket: 'Raftakileri kullan', onerilen: element.rafta.length > 0, aciklama: 'Süreklilik bedava gelir; yeni kredi yanmaz.' },
-        { etiket: 'Eksikleri bas, sonra rafa yaz', onerilen: element.rafta.length === 0, aciklama: 'Tek sefer maliyet, sonraki bütün videolarda kâr.' },
-        { etiket: 'Bu videoda tekrar eden cast yok', aciklama: 'Element katmanı atlanır — yalnız gerçekten tek seferlik işlerde.' },
+        { etiket: 'Raftakiler + adayları bas', onerilen: element.adaylar.length > 0, aciklama: 'Eşiği geçen her öğe 1:1 element olur, rafa yazılır; sonraki videolarda bedava gelir.' },
+        { etiket: 'Yalnız raftakileri kullan', onerilen: element.adaylar.length === 0 && element.rafta.length > 0, aciklama: 'Yeni kredi yanmaz; bu videoda eşiği geçen yeni öğe yok.' },
+        { etiket: 'Adayları ben eleyeyim', aciklama: 'Liste sana gelir, hangisi element olacağını sen seçersin — ham listede soyut kelimeler de var.' },
+        // Ne raf eşleşmesi ne aday varsa dürüst öneri budur. Öneri boş kalırsa Mami tek tuşla
+        // karar veremez; kapı işini yapmamış olur.
+        { etiket: 'Tekrar eden öğe yok — element katmanını atla', onerilen: element.adaylar.length === 0 && element.rafta.length === 0, aciklama: 'Gerçekten tek seferlik iş; boşuna element basılmaz.' },
       ],
     },
     {

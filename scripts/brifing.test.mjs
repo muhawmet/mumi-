@@ -5,7 +5,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import {
-  BrifingError, KELIME_HIZI, RISK_SINIFLARI, docxMetni, elementEslestir,
+  ADAY_TAVANI, BrifingError, ELEMENT_ESIGI, KELIME_HIZI, RISK_SINIFLARI, docxMetni, elementEslestir, tekrarEdenler,
   kaynakOku, main, markdown, riskTara, sorulariKur, sureTahmini, tonOlc, usage, zipGirdisi,
 } from './brifing.mjs';
 
@@ -60,20 +60,49 @@ describe('brifing — süre', () => {
   });
 });
 
-describe('brifing — element rafı', () => {
+describe('brifing — element eşiği (isim listesi değil, EŞİK)', () => {
   it('rafta eşleşen elementi bulur', () => {
-    const e = elementEslestir('Sınıfta ogr tahtaya yazıyor.', [{ ad: 'ogr' }, { ad: 'defne1' }]);
+    const e = elementEslestir('Sınıfta ogr tahtaya bakıyor.', [{ ad: 'ogr' }, { ad: 'defne1' }]);
     expect(e.rafta.map((x) => x.ad)).toEqual(['ogr']);
   });
 
-  it('raf boşsa "eksikleri bas" önerilir — element ÖN KOŞUL', () => {
-    const [, , kilit2] = sorulariKur(kaynak('Bir hikâye.'), { raf: { elementler: [] } });
-    expect(kilit2.secenekler.find((s) => s.onerilen).etiket).toContain('Eksikleri bas');
+  it('KELİME SINIRINDA eşler — "iye" artık "sahibiye"nin içinde bulunmuyor', () => {
+    const e = elementEslestir('Evin sahibiye seslendi.', [{ ad: 'iye' }]);
+    expect(e.rafta).toEqual([]);
   });
 
-  it('rafta eşleşme varsa raftakiler önerilir — süreklilik bedava', () => {
-    const [, , kilit2] = sorulariKur(kaynak('ogr tahtada.'), { raf: { elementler: [{ ad: 'ogr' }] } });
-    expect(kilit2.secenekler.find((s) => s.onerilen).etiket).toContain('Raftakileri kullan');
+  it(`bir öğe ${ELEMENT_ESIGI}+ kez geçerse aday olur — kedi de olur, karakter de`, () => {
+    const t = tekrarEdenler('Kedi bahçede. Kediyi gördü. Kedinin tüyü siyah. Sonra köpek geldi.');
+    expect(t[0].ad).toBe('kedi');
+    expect(t[0].adet).toBeGreaterThanOrEqual(ELEMENT_ESIGI);
+    expect(t.map((x) => x.ad)).not.toContain('köpek');
+  });
+
+  it('SENARYO ZANAATININ kelimeleri aday olmaz — "sahne" onlarca kez geçer ama çizilemez', () => {
+    const metin = Array.from({ length: 10 }, () => 'sahne görsel ekran anlatıcı').join(' ');
+    expect(tekrarEdenler(metin)).toEqual([]);
+  });
+
+  it('aday listesi tavanı aşmaz ama TOPLAMI bildirir', () => {
+    // Rakam harf değil — tokenleyici onu ayırıyor, o yüzden ayrım harflerle kuruluyor.
+    const harfler = 'abcdefghijklmnoprstuvyz'.split('');
+    const metin = harfler.map((h) => `${h}${h}kule ${h}${h}kule ${h}${h}kule`).join(' ');
+    const e = elementEslestir(metin, []);
+    expect(e.adayToplam).toBeGreaterThan(ADAY_TAVANI);
+    expect(e.adaylar).toHaveLength(ADAY_TAVANI);
+  });
+
+  it('aday varsa "raftakiler + adayları bas" önerilir', () => {
+    const kilit2 = sorulariKur(kaynak('Kedi kedi kedi bahçede.'), { raf: { elementler: [] } })
+      .find((s) => s.kilit === 2);
+    expect(kilit2.secenekler.find((s) => s.onerilen).etiket).toContain('adayları bas');
+    expect(kilit2.gerekce).toContain('EŞİK');
+  });
+
+  it('tekrar eden öğe yoksa yalnız raftakiler önerilir — boşuna kredi yakılmaz', () => {
+    const kilit2 = sorulariKur(kaynak('ogr geldi.'), { raf: { elementler: [{ ad: 'ogr' }] } })
+      .find((s) => s.kilit === 2);
+    expect(kilit2.secenekler.find((s) => s.onerilen).etiket).toContain('Yalnız raftakileri');
   });
 });
 
