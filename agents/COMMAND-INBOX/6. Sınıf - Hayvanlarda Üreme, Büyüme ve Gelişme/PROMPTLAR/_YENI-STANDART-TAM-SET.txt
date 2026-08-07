@@ -12,6 +12,56 @@ AYNA SÖZLEŞMESİ — K01 ↔ K54:
  · K54 → 40mm lens f/4, kümes taş eşiği yüksekliğinde. @efe mid-chest up. Kümeste tavuk altında bir yumurta ÇATLAMIS, kabuk iki parça, ıslak sarı civciv orada. Kedilerin gözleri AÇIK, biri oturmuş. Hasır sepet DOĞRULTULMUŞ, içinde tek kabuk parçası var.
 
 =========================================================================
+🔴 SAHNE YASASI — HER KAREYE UYGULANIR (2026-08-07 canary'sinde üç denemeyle ölçüldü)
+
+Bu blok her karenin başına eklenir. K01 üç kez basıldı; birinci ve ikincide sahne MAKET
+çıktı, üçüncüde bu üç madde yazılınca düzeldi. Kusur karede değil, metnin EKSİĞİNDEYDİ.
+
+1 · GERÇEK ÖLÇEK — "readability" için hiçbir şey büyütülmez.
+   `props 10-15% overscale` cümlesi bir karede çocuk + hayvan + bina varken ölçek
+   hiyerarşisini yok ediyor: tavuk çocuk gövdesi kadar, sepet göğsü kadar, 5 adım
+   ötedeki kedi kafası kadar çıkıyor. Sonuç "her şeyi eşit anlatan oyuncak şehir".
+   Bunun yerine kare başına GÖRELİ ÖLÇEK yazılır:
+     "tavuğun sırtı çocuğun dizine gelir" · "sepet baldırından yüksek değil" ·
+     "beş adım ötedeki kedi ailesi kadrajda kolu kadar geniş"
+   Kural: overscale YOK; gerçek göreli boy, mekânı büyük hissettiren şeydir.
+
+2 · DÜNYA KAREDE BİTMEZ.
+   Nesnelerin arkasında ne olduğu yazılmazsa motor oraya DÜZ BİR PANEL koyuyor
+   (K01'in ilk iki denemesinde kümesin arkası mavi bir levha çıktı — beyaz fonlu
+   element arka planının sahneye sızması). Her karede uzaklık yazılır: alçak taş duvar,
+   çıplak meyve ağacı, sabah pusu, açık soluk gök — dünya kadrajın ötesinde devam eder.
+
+3 · MAKET DEĞİL, YAŞANMIŞ YER.
+   · Zemin döşeli ve temiz değil: sıkışmış toprak, dağılmış saman, kurumuş tekerlek izi.
+   · ÖN PLAN ÖRTMESİ zorunlu — birkaç saman sapı ya da direk kenarı en yakın kenarı
+     kesip odaktan çıkar. Dekor hissini öldüren tek şey budur.
+   · Hiçbir şey temiz değil: omuzda toz, ayakkabıda çamur, harçta çipleme, yere düşmüş
+     tüy ve saman, ahşapta el izi. Ten mat, gözenekli, asimetrik — düz mum yüzey DEĞİL.
+
+⚠ ELEMENT REFERANSI KİMLİK İÇİNDİR, KOMPOZİSYON İÇİN DEĞİL.
+   Mekân elementine "keep exactly as shown" denirse motor sahneyi KURMAZ, iki dioramayı
+   yan yana YAPIŞTIRIR. Doğrusu: karakter için "aynı yüz, aynı beden"; mekân/nesne için
+   "yalnız malzeme ve renk; kadrajı ve yerleşimi serbestçe yeniden kur".
+
+4 · MİKRO DÜNYA — İHTİŞAM MİMARİ ÖLÇEKTEN GELİR (Mami, 2026-08-07: *"dull, hiç ihtişamlı değil"*)
+   Ölçüldü: sperm/yumurta ilk turda boş suda tek küçük nesneydi ve cansız çıktı. Altın
+   standarda bakıldı (`Hücre ve Organelleri` K45, kloroplast karesi) ve fark bulundu —
+   orada hücre bir NESNE değil, ufka giden bir ŞEHİR: tekrarlayan geometri kadrajı yönetiyor.
+   Mikro sahnede zorunlu üç şey:
+     · Kahraman nesne kadraja **arazi/gezegen** gibi girer — yüzeyi ufka kıvrılır, dokusu
+       manzara olur. Nesneyi büyütmek değil, dünyayı derinleştirmek.
+     · Arkada **aynı türden bir DİZİ** uzağa gider (her biri öncekinden küçük ve yumuşak),
+       böylece mekân kadrajda bitmez.
+     · **Tek renk rejimi + tek vurgu** (Hücre'de soğuk gri hücreler + tek yeşil; burada
+       derin teal su + tek amber çekirdek).
+   🔴 **MİKRO DÜNYADA YAZI YOKTUR.** Suya asılmış pirinç levha / etiket denendi ve Mami
+   reddetti — bu, kavramı taşımak için *gerçek kamerayla çekilebilecek bir nesne* aramaktır,
+   yani gerçek-video refleksi (`PROMPT-YASASI §0`). Kavram nesnenin KENDİSİYLE anlatılır.
+   Yazı, gerçekten yazı taşıyan bir yüzeyin bulunduğu yerde olur: kümes kapısındaki emaye
+   plaka gibi. Mami'nin kuralı: *"her sahnede değil, öğretici kısımlarda, sahneyle uyumlu."*
+
+=========================================================================
 
 -------------------------------------------------------------------------
 
@@ -23,7 +73,7 @@ FİKİR: Hikayenin kahramanı Efe'nin çiftlikteki farklı üreme şekillerini g
 STYLE: 3D CGI RenderMan style, vibrant cinematic animation, soft stylized realism.
 LIGHT AND PALETTE: Warm morning sunlight, deep earthy browns, vibrant greens, golden hour highlights.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, oversaturated, unnatural plastic skin, cartoonish exaggerations, deep black crushed shadows.
+NEGATIVE: oversaturated, unnatural plastic skin, cartoonish exaggerations, deep black crushed shadows.
 -----
 -------------------------------------------------------------------------
 
@@ -83,7 +133,7 @@ FİKİR: Gözlemlenen iki farklı üreme stratejisinin kahramanın zihninde soru
 STYLE: 3D CGI RenderMan style, bright cinematic realism, expressive character animation.
 LIGHT AND PALETTE: Bright midday sun, sky blue, earthy browns, vibrant foliage greens.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, dull lighting, glossy reflective skin, exaggerated cartoon expressions, flat shading.
+NEGATIVE: dull lighting, glossy reflective skin, exaggerated cartoon expressions, flat shading.
 -----
 -------------------------------------------------------------------------
 
@@ -107,7 +157,7 @@ FİKİR: Bilimsel sürecin ilk adımı olan araştırmaya ve temellere inmeye ka
 STYLE: 3D CGI RenderMan style, expressive character portrait, cinematic shallow depth of field.
 LIGHT AND PALETTE: Crisp directional sunlight, warm skin tones, faded terracotta, rustic reds.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, poorly lit face, distracting background elements, shiny skin, lack of emotion.
+NEGATIVE: poorly lit face, distracting background elements, shiny skin, lack of emotion.
 -----
 -------------------------------------------------------------------------
 
@@ -130,7 +180,7 @@ FİKİR: Üremenin temel taşı olan döllenme olayının (hücresel düzeyde) k
 
 STYLE: 3D CGI RenderMan style, stylized microscopic visualization, ethereal and educational.
 LIGHT AND PALETTE: Ethereal internal luminescence, glowing cyan, soft magenta, deep fluid blues.
-TEXT: displays the word DÖLLENME engraved on a polished oak tag, reads left-to-right, never mirrored — one word, eight letters, the second a dotted capital Ö, the fourth and fifth capital Ls.
+TEXT: the word DÖLLENME formed only from the scene's own material at the point of contact — never a tag, plaque or board, reads left-to-right, never mirrored — one word, eight letters, the second a dotted capital Ö, the fourth and fifth capital Ls.
 NEGATIVE: horrific biology, scary textures, overly complex scientific diagrams, harsh clinical white light.
 -----
 -------------------------------------------------------------------------
@@ -142,7 +192,7 @@ FİKİR: Erkek üreme hücresinin isminin ve genel hareketli formunun öğretilm
 
 STYLE: 3D CGI RenderMan style, dynamic microscopic visualization, sleek and energetic.
 LIGHT AND PALETTE: Cool directional beam, electric blue, stark white highlights, deep teal background.
-TEXT: displays the word SPERM etched onto a brass plaque, reads left-to-right, never mirrored — one word, five letters, all capital S-P-E-R-M.
+TEXT: the word SPERM no on-screen word in this frame — the concept is carried by the thing itself, reads left-to-right, never mirrored — one word, five letters, all capital S-P-E-R-M.
 NEGATIVE: gross organic matter, muddy colors, static lifeless rendering, confusing chaotic background.
 -----
 -------------------------------------------------------------------------
@@ -167,7 +217,7 @@ FİKİR: Döllenmenin gerçekleştiği yerin (iç veya dış), üreme stratejisi
 STYLE: 3D CGI RenderMan style, dynamic tracking shot, cinematic dappled lighting.
 LIGHT AND PALETTE: Dappled shifting sunlight, dusty browns, faded greens, bright sunflecks.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, static boring composition, flat lighting, artificial looking walking motion, messy path.
+NEGATIVE: static boring composition, flat lighting, artificial looking walking motion, messy path.
 -----
 -------------------------------------------------------------------------
 
@@ -179,7 +229,7 @@ FİKİR: Dış döllenmeyi gözlemlemek için sucul bir ortama, yani gölete var
 STYLE: 3D CGI RenderMan style, vibrant aquatic environment, highly reflective and wet textures.
 LIGHT AND PALETTE: Reflective bouncing sunlight, deep aquatic greens, muddy browns, shimmering blues.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, dry arid look, matte water, dull lighting, cartoonish fish.
+NEGATIVE: dry arid look, matte water, dull lighting, cartoonish fish.
 -----
 -------------------------------------------------------------------------
 
@@ -238,7 +288,7 @@ Using a 35mm lens positioned underwater at a moderate distance of approximately 
 
 STYLE: 3D CGI Animation, RenderMan, wide cinematic underwater landscape, educational textbook style
 LIGHT AND PALETTE: Dappled sunlight, clear visibility, golden hour underwater, turquoise and warm sand colors
-TEXT: displays the phrase DIŞ DÖLLENME carved into a weathered wooden garden marker, reads left-to-right, never mirrored — two words, twelve letters total, the third a capital Ş with cedilla, the fifth a dotted capital Ö, one clear space between.
+TEXT: the phrase DIŞ DÖLLENME laid out in dark wet pebbles on the pale sand under the water, the I in DIŞ with NO dot above it, reads left-to-right, never mirrored — formed only of pebbles, never a plaque, board, sign or carved wood.
 NEGATIVE: dark, scary, overexposed, messy
 -----
 -------------------------------------------------------------------------
@@ -287,7 +337,7 @@ Using a 35mm lens at a distance of approximately 1.5 meters, we observe @efe fra
 STYLE: 3D CGI Animation, RenderMan, warm cinematic character animation framing, Pixar-level lighting
 LIGHT AND PALETTE: Golden hour sunlight, strong rim light, earthy browns, warm skin tones, and soft greens
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, green tint, grey skin, scary, night
+NEGATIVE: green tint, grey skin, scary, night
 -----
 -------------------------------------------------------------------------
 
@@ -346,7 +396,7 @@ Using a 50mm lens positioned at a distance of approximately 1.2 meters, we obser
 
 STYLE: 3D CGI Animation, RenderMan, serene farm conclusion shot, idealized educational textbook style
 LIGHT AND PALETTE: Beautiful diffused sunlight, glowing flora, soft emerald greens, pure whites, and warm greys
-TEXT: displays the phrase İÇ DÖLLENME stamped onto a brass plate on a wooden board, reads left-to-right, never mirrored — two words, eleven letters total, the first a dotted capital İ, the second a capital Ç with cedilla, the fourth a dotted capital Ö, one clear space between.
+TEXT: the phrase İÇ DÖLLENME laid out in scattered wheat grains on the swept earth inside the coop, the İ in İÇ WITH a dot above it, reads left-to-right, never mirrored — formed only of grains, never a plaque, board, sign or carved wood.
 NEGATIVE: messy, chaotic, harsh shadows, low resolution
 -----
 -------------------------------------------------------------------------
@@ -383,7 +433,7 @@ FİKİR: Efe'nin merakla yavrunun gelişim sürecini sorgulamasını gösteriyor
 STYLE: 3D CGI RenderMan style, Pixar-like character animation, bright outdoor scenery, expressive facial rigging.
 LIGHT AND PALETTE: Golden hour sunlight, bright green nature tones, warm skin tones, soft blue sky background.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, full body shot, creepy smile, photorealistic human, dark environment, winter setting.
+NEGATIVE: full body shot, creepy smile, photorealistic human, dark environment, winter setting.
 -----
 -------------------------------------------------------------------------
 
@@ -395,7 +445,7 @@ Captured with a 24mm wide-angle lens at f/5.6 focusing on the expansive scene, t
 STYLE: 3D CGI RenderMan style, vibrant farm aesthetic, stylized nature, deep depth of field.
 LIGHT AND PALETTE: Bright midday sun, rich earth tones, vibrant greens, warm reds and browns on the wooden barns.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, full body shot, empty yard, nighttime, gloomy colors, realistic dirt or mud.
+NEGATIVE: full body shot, empty yard, nighttime, gloomy colors, realistic dirt or mud.
 -----
 -------------------------------------------------------------------------
 
@@ -406,7 +456,7 @@ FİKİR: Doğurarak çoğalmayı temsil eden memeli bir hayvanı (örneğin bir 
 
 STYLE: 3D CGI RenderMan style, soft fluffy fur grooming, stylized animal design, cozy atmosphere.
 LIGHT AND PALETTE: Dappled sunlight, warm golden hour palette, soft greens and warm oranges.
-TEXT: displays the word DOĞURARAK painted with white enamel on a dark wood plaque, reads left-to-right, never mirrored — one word, nine letters, the third a capital Ğ with breve.
+TEXT: the word DOĞURARAK laid out in dry straw stalks on the packed barn floor, reads left-to-right, never mirrored — one word, nine letters, the third a capital Ğ with breve.
 NEGATIVE: aggressive animal, dark shadows, realistic fur matting, scary expressions, urban setting.
 -----
 -------------------------------------------------------------------------
@@ -430,7 +480,7 @@ FİKİR: Yeni doğmuş bir yavrunun annesinden süt emdiğini sevimli bir şekil
 
 STYLE: 3D CGI RenderMan style, tender character interaction, soft fur rendering, cozy indoor lighting.
 LIGHT AND PALETTE: Warm window light, soft golden tones, gentle browns and whites, comforting atmosphere.
-TEXT: displays the phrase ANNE SÜTÜ written in neat chalk on a mini wooden slate, reads left-to-right, never mirrored — two words, nine letters total, the sixth and eighth dotted capital Üs, one clear space between.
+TEXT: the word ANNE SÜTÜ drawn by a fingertip through the dust on the metal milk churn, reads left-to-right, never mirrored — two words, nine letters total, the sixth and eighth dotted capital Üs, one clear space between.
 NEGATIVE: messy environment, realistic animal anatomy, aggressive posture, cold lighting, busy background.
 -----
 -------------------------------------------------------------------------
@@ -454,7 +504,7 @@ FİKİR: Yumurtlayarak çoğalmayı temsil eden bir kuş veya sürüngen yuvası
 
 STYLE: 3D CGI RenderMan style, rustic farm aesthetic, highly detailed straw and feathers, soft lighting.
 LIGHT AND PALETTE: Warm sunlight piercing dust motes, golden straw tones, bright white eggs, soft red accents.
-TEXT: displays the word YUMURTLAYARAK deeply etched into a cedar block, reads left-to-right, never mirrored — one word, twelve letters, all capital Y-U-M-U-R-T-L-A-Y-A-R-A-K.
+TEXT: the word YUMURTLAYARAK laid out in scattered wheat grains on the swept earth inside the coop, reads left-to-right, never mirrored — one word, twelve letters, all capital Y-U-M-U-R-T-L-A-Y-A-R-A-K.
 NEGATIVE: broken eggs, dirty environment, scary chickens, dark shadows, highly realistic mud.
 -----
 -------------------------------------------------------------------------
@@ -502,7 +552,7 @@ FİKİR: Kuluçka kelimesini ekranda vurgulayarak, tavuğun yatma eyleminin bili
 
 STYLE: 3D CGI RenderMan style, educational graphic overlay, cozy farm aesthetics, bright typography.
 LIGHT AND PALETTE: Warm ambient lighting, glowing yellow text, deep rustic browns, soft orange highlights.
-TEXT: displays the word KULUÇKA carved into pine wood, reads left-to-right, never mirrored — one word, seven letters, the fifth a capital Ç with cedilla.
+TEXT: the word KULUÇKA laid out in fallen hen feathers on the pitted stone step, reads left-to-right, never mirrored — one word, seven letters, the fifth a capital Ç with cedilla.
 NEGATIVE: misspelled text, messy background, dark shadows, aggressive chicken, distracting elements.
 -----
 -------------------------------------------------------------------------
@@ -550,7 +600,7 @@ FİKİR: Tavuk ve yavrularının ile kedinin yavrularına bakmasının aynı and
 
 STYLE: 3D CGI Animation, RenderMan, cozy volumetric lighting, photorealistic fur and feather grooming systems, high tactile fidelity.
 LIGHT AND PALETTE: Golden late-afternoon sunlight, warm amber, rustic wood browns, straw yellows, soft whites, and earthy tones.
-TEXT: displays the phrase YAVRU BAKIMI painted on a timber board, reads left-to-right, never mirrored — two words, eleven letters total, the ninth and eleventh dotless capital Is, one clear space between.
+TEXT: the word YAVRU BAKIMI laid out in soft down feathers on the stone lip of the nest, reads left-to-right, never mirrored — two words, eleven letters total, the ninth and eleventh dotless capital Is, one clear space between.
 NEGATIVE: Harsh artificial lighting, plastic-looking fur or feathers, modern architecture, cold color temperatures, disjointed spacing.
 -----
 -------------------------------------------------------------------------
@@ -575,7 +625,7 @@ FİKİR: Efe'nin bir maydanoz yaprağı üzerindeki tırtılı ilk kez fark etti
 STYLE: 3D CGI Animation, RenderMan, highly detailed skin shaders for human, squishy organic shaders for insect, cinematic over-the-shoulder framing.
 LIGHT AND PALETTE: Warm amber concept light glowing from foliage, rich leafy greens, skin tones, rusted tin orange, dark soil browns.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, Full body shot of boy, glossy or green-tinted skin, flat daylight, cartoon proportions, blurry caterpillar textures.
+NEGATIVE: Full body shot of boy, glossy or green-tinted skin, flat daylight, cartoon proportions, blurry caterpillar textures.
 -----
 -------------------------------------------------------------------------
 
@@ -622,7 +672,7 @@ FİKİR: Kelebeğin kanatlarını tamamen açıp uçmaya hazır olduğu ihtişam
 
 STYLE: 3D CGI Animation, RenderMan, triumphant composition, crisp typography integration, exquisite wing pattern detailing.
 LIGHT AND PALETTE: Fading warm amber transitioning to natural daylight, vivid butterfly colors, chipped white enamel, bright leaf greens, crisp bold text.
-TEXT: displays the word BAŞKALAŞIM carved into a wooden post, reads left-to-right, never mirrored — one word, ten letters, the third and eighth capital Şs with cedilla, the ninth a dotless capital I.
+TEXT: the word BAŞKALAŞIM formed from loose iridescent butterfly wing scales settled on a dark wet stone, reads left-to-right, never mirrored — one word, ten letters, the third and eighth capital Şs with cedilla, the ninth a dotless capital I.
 NEGATIVE: Folded wings, misspelt text, harsh spotlights, dull wing colors, flat metal textures, awkward text placement.
 -----
 -------------------------------------------------------------------------
@@ -634,7 +684,7 @@ FİKİR: Başkalaşımın bir başka örneği olarak, suda yüzen iribaşın (ku
 
 STYLE: 3D CGI Animation, RenderMan, underwater macro realism, gelatinous animal shaders, dynamic fluid particle scattering.
 LIGHT AND PALETTE: Cool dappled aquatic sunlight, murky water greens, dark decaying leaf browns, smooth grey pebbles, translucent fleshy tones.
-TEXT: displays the word LARVA painted on a small wooden stake, reads left-to-right, never mirrored — one word, five letters, all capital L-A-R-V-A.
+TEXT: the word LARVA drawn in wet dark silt on a pale flat stone at the waterline, reads left-to-right, never mirrored — one word, five letters, all capital L-A-R-V-A.
 NEGATIVE: Adult frog features, dry environments, bright warm lighting, low-detail leaves, opaque solid skin textures, lack of water particles.
 -----
 -------------------------------------------------------------------------
@@ -647,7 +697,7 @@ FİKİR: Kümesteki tavuğun altındaki yumurtanın çatladığı, içinden sar�
 STYLE: 3D CGI Animation, RenderMan, high-contrast directional lighting, hyper-realistic wet feather grooming, warm rustic atmosphere.
 LIGHT AND PALETTE: Warm directional afternoon sunlight, bright yellow chick, crisp white eggshell, golden straw, dark wooden browns, matte skin tones.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, Full body shot of boy, glossy skin, cool blue lighting, clean uncracked eggs, dry fluffy chick, sterile environment.
+NEGATIVE: Full body shot of boy, glossy skin, cool blue lighting, clean uncracked eggs, dry fluffy chick, sterile environment.
 -----
 -------------------------------------------------------------------------
 
@@ -659,5 +709,5 @@ FİKİR: İlk kareye (K01) ayna sözleşmesi. Efe'nin bahçede durup kümese ve 
 STYLE: 3D CGI Animation, RenderMan, wide cinematic farmyard framing, hyper-realistic natural lighting, deep depth of field.
 LIGHT AND PALETTE: Natural golden hour sunlight, warm rustic farm tones, vibrant greens, soft earthy browns, bright white eggshell fragment.
 TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
-NEGATIVE: warm matte skin, low specular, never tinted green or grey, Full body shot of boy, tipped over basket, closed kitten eyes, unbroken eggs, flat lighting, mismatched farm layout, glossy skin.
+NEGATIVE: Full body shot of boy, tipped over basket, closed kitten eyes, unbroken eggs, flat lighting, mismatched farm layout, glossy skin.
 -----

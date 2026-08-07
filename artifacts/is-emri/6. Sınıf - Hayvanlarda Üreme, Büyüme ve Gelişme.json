@@ -1,0 +1,1096 @@
+{
+  "surum": 1,
+  "proje": "6. Sınıf - Hayvanlarda Üreme, Büyüme ve Gelişme",
+  "olusturuldu": "2026-08-07T08:09:12.816Z",
+  "guncellendi": "2026-08-07T09:12:53.593Z",
+  "shots": [
+    {
+      "n": 1,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "sahne-eksik",
+          "zaman": "2026-08-07T08:20:44.289Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:26:26.846Z"
+        },
+        {
+          "deneme": 3,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:33:02.548Z"
+        },
+        {
+          "deneme": 4,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.132Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 2,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.178Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 3,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.224Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 4,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.270Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 5,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.318Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 6,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.363Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 7,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.408Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 8,
+      "sekans": "S1",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.454Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 9,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:48:12.499Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 10,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:50:21.916Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 11,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:33:02.594Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:37:38.774Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 12,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:33:02.646Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:37:38.821Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 13,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:50:21.965Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 14,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:50:22.012Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 15,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:50:22.057Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 16,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:52:17.441Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 17,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:52:17.490Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 18,
+      "sekans": "S2",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:52:17.538Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 19,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:52:17.586Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 150,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:54:02.967Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 20,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:58:14.060Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 21,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:58:14.107Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 22,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:58:14.155Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 23,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T08:58:14.200Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 24,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:00:17.975Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 25,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:00:18.024Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 26,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:00:18.070Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 27,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:00:18.116Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 28,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:02:36.949Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 29,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:02:36.997Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 30,
+      "sekans": "S3",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:02:37.042Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 31,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:02:37.088Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 32,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:04:21.631Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 33,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:04:21.677Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 34,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "red",
+          "kusur": "nsfw-filtre",
+          "zaman": "2026-08-07T09:04:21.768Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:06:03.898Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 35,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:04:21.724Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 36,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:06:03.948Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 37,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:06:03.994Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 38,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:08:02.020Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 39,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:06:04.040Z"
+        },
+        {
+          "deneme": 2,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:08:02.069Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 40,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:08:02.114Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 41,
+      "sekans": "S4",
+      "asama": "yazildi",
+      "elementler": [],
+      "basim": [],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 42,
+      "sekans": "S4",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:08:02.157Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 43,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:09:33.418Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 44,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:09:33.466Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 45,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:09:33.512Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 46,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:09:33.560Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 47,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:11:02.090Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 48,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:11:02.138Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 49,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:11:02.185Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 50,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:11:02.234Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 51,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:12:53.453Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 52,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:12:53.502Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 53,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:12:53.548Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    },
+    {
+      "n": 54,
+      "sekans": "S5",
+      "asama": "basildi",
+      "elementler": [],
+      "basim": [
+        {
+          "deneme": 1,
+          "motor": "nb2",
+          "cuzdan": "magnific",
+          "kredi": 75,
+          "sonuc": "bekliyor",
+          "kusur": null,
+          "zaman": "2026-08-07T09:12:53.593Z"
+        }
+      ],
+      "klip": [],
+      "not": ""
+    }
+  ]
+}
