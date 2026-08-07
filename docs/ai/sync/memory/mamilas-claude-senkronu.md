@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: fbff88be-4a01-42c5-8144-26fb9e4d6996
-  modified: 2026-07-28T18:15:30.969Z
+  modified: 2026-08-07T08:03:18.529Z
 ---
 
 # Mac ↔ Windows: Claude'un aklı nasıl taşınıyor (2026-07-28'de kuruldu)
@@ -33,10 +33,12 @@ Yeni makinede ilk koşu tabansızdır: farklar çatışma olarak gelir, bir kez 
 2. **Yön tahmin etmez.** İki taraf da değiştiyse `ÇATIŞMA` der, durur, exit 1 — seçim Mami'nin.
 3. **mtime'a bakmaz.** git checkout mtime'ı bugüne çeker; taze dosya bayat görünürdü.
 
-**Emekli: `memory-sync.mjs`.** Tek yönlüydü ve canlıyı tek otorite sayıyordu — ikinci makinede
-repo'daki taze aklı "silinmiş" sanıp arşive sürüyordu. Aynı gün iki kez ısırdı: sabah Mac'te
-21, akşam Windows'ta 9 hafıza dosyası. Dosya duruyor ama çalışmaz, çağrılırsa yönlendirip
-exit 2 verir. Ledger'daki **T-1** budur, kapandı.
+**SİLİNDİ: `memory-sync.mjs`** (2026-08-05). Tek yönlüydü ve canlıyı tek otorite sayıyordu —
+ikinci makinede repo'daki taze aklı "silinmiş" sanıp arşive sürüyordu. Aynı gün iki kez ısırdı:
+sabah Mac'te 21, akşam Windows'ta 9 hafıza dosyası. Önce "emekli" ilan edilip diskte bırakılmıştı;
+**emekli bir aracı silmemek, bir gün onu koşmaktır** — o yüzden dosya tamamen kaldırıldı.
+Tek kanon `claude-sync.mjs`. Ledger'daki **T-1** budur, kapandı.
+(Aynı sınıf: `mamilas-plan` skill'i de 2026-08-07'de aynı gerekçeyle silindi.)
 
 **Codex'in yakaladığı kusur (ikinci göz çalıştı):** ilk hal, "bir taraf sildi + diğeri
 değiştirdi" durumunu sessizce *geri yükleme* sanıyordu. **Silme de bir değişikliktir** —

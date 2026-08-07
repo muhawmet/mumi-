@@ -6,7 +6,8 @@ Hayvanlarda Üreme · Hücre ve Organelleri · Kütle ve Ağırlık · Bitkilerd
 
 > **Bu kart 2026-08-04'te 233 karenin revizesinden doğdu.** Kusurların hiçbiri karede değildi;
 > hepsi bu sayfada yazılı olması gereken ve hiçbir yerde yazılı olmayan şeylerdi. Kanon
-> gerekçesi: `.claude/skills/mamilas-plan/SKILL.md` §0 · `agents/CANLI-EVREN.md` §4b, §4c.
+> gerekçesi: `.claude/skills/mamilas-enzim/SKILL.md` KİLİT 5 · `agents/CANLI-EVREN.md` §4b, §4c.
+> (Atıf 2026-08-07'de taşındı: `mamilas-plan` silindi, taşıdığı şekil/ritim disiplini KİLİT 5'e indi.)
 
 ---
 

@@ -4,7 +4,7 @@ Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 · Motion: Kling 3.
 Kilit kaynağı: Hayvanlarda Üreme_ENZIM.md · Referans: Hayvanlarda Üreme_REFERANSLAR.txt
 VO eşlemesi: Hayvanlarda Üreme_SESLENDIRME.txt (K01 = 1. cümle … K54 = 54. cümle, birebir).
 
-REFERANSLAR (sahnede yalnız @handle — görünüş TARİF EDİLMEZ):
+REFERANSLAR (sahnede yalnız @efe, @tavuk, @golet, @balik, @kumes, @kedi, @ahir, @tirtil, @kurbaga — görünüş TARİF EDİLMEZ):
  @efe · @kumes · @tavuk · @kedi · @golet · @balik · @kurbaga · @tirtil · @ahir
 
 AYNA SÖZLEŞMESİ — K01 ↔ K54:

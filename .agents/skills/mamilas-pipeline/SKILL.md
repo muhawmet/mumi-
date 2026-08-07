@@ -1,6 +1,6 @@
 ---
 name: mamilas-pipeline
-description: "UYKUDA — YALNIZ İNŞA FAZI. Aktif faz İCRAAT olduğu sürece ÇAĞRILMAZ. Site/kod inşasının üç odaklı kapanış akışını yürütür; yalnız Mami açıkça 'inşa turu açıyoruz' ya da 'siteyi bitirelim' dediğinde ve faz profili docs/ai/faz-insa.md'ye çevrildiğinde kullanılır. ⚠ 'devam et', 'faz', 'execute' gibi günlük kelimelerle AÇILMAZ — üretim oturumunda bu skill yasaklı arşivi (EXECUTION_STATE.md, 1337 satır) bağlama çeker. Üretim devamı için mamilas-director, mamilas-denetim ya da mamilas-plan kullanılır."
+description: "UYKUDA — YALNIZ İNŞA FAZI. Aktif faz İCRAAT olduğu sürece ÇAĞRILMAZ. Site/kod inşasının üç odaklı kapanış akışını yürütür; yalnız Mami açıkça 'inşa turu açıyoruz' ya da 'siteyi bitirelim' dediğinde ve faz profili docs/ai/faz-insa.md'ye çevrildiğinde kullanılır. ⚠ 'devam et', 'faz', 'execute' gibi günlük kelimelerle AÇILMAZ — üretim oturumunda bu skill yasaklı arşivi (EXECUTION_STATE.md, 1337 satır) bağlama çeker. Üretim devamı için mamilas-director, mamilas-denetim ya da mamilas-studyo kullanılır."
 ---
 
 # MAMILAS — three-phase execution
