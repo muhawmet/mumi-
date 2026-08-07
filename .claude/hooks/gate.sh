@@ -200,6 +200,21 @@ else
       # Ad degil YERLESIM elenir; buyuk/kucuk harf iki bicimde de yasiyor.
       */REVIZE/*|*/revize/*|*/Revize/*) continue ;;
     esac
+    # 🔴 ARSIV VE CALISMA ALANI TESLIM DEGILDIR (2026-08-07, olculdu).
+    # Denetleyici turu sifirdan kurulurken eski set `_ESKI/` altina TASINDI (silinmedi) ve
+    # kapi arsivi taramaya devam etti: `_ESKI/PROMPTLAR/S4.txt`in 8 kirmizisi, o dosyaya
+    # hic dokunmayan commit'leri saatlerce bloke etti. Olu bir turun kirmizisi canli isi
+    # durduramaz — arsivin amaci zaten "bir daha acilmayacak" olmasidir.
+    #
+    # KARA LISTE YAZILMADI. Bu dosya MOTION dalinda ayni tuzagi bir kez yasadi ve hukmu
+    # oraya yazdi: "kara liste, uretimin bir sonraki klasorunu asla bilemez." Onun yerine
+    # YAPISAL sozlesme: bu repoda alt cizgiyle baslayan bir KLASOR calisma/arsiv alanidir
+    # (`_ESKI`, `_SUPHELI`, `_HAZIRLIK`, `_ONIZLEME`, `_BLOK-KAYNAK`), teslim degil.
+    # Teslim DOSYALARI da alt cizgiyle baslar (`_PROMPTLAR.txt`, `_REFERANSLAR.txt`) —
+    # o yuzden eleme yalnizca KLASOR segmentine bakar, dosya adina degil.
+    case "$PF" in
+      */_*/*) continue ;;
+    esac
     # `*_PROMPTLAR*` ADIYLA sozlesmeyi ustlenmis dosyadir; digerleri ICERIKLE secilir.
     ADLI=0
     case "$PF" in

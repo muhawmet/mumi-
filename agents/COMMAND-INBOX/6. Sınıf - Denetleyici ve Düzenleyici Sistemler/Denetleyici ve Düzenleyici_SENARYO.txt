@@ -1,0 +1,145 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — SENARYO / SESLENDİRME (ElevenLabs)
+=========================================================================
+Konu: Denetleyici ve Düzenleyici Sistemler · 6. Sınıf Fen Bilimleri
+Anlatıcı: dış ses. Mira ekranda GÖRÜNÜR ama KONUŞMAZ, ağız hareketi yok.
+BİR CÜMLE = BİR KLİP. Hiçbir cümle 12 kelimeyi aşmaz.
+Ton: kaynağın istediği gibi — ENERJİK, MERAKLI, EĞLENCELİ. Anlatan; sunucu değil.
+İngilizce yok. Terimler Türkçe okunur.
+Kare: 54 · Tahmini süre: ~4:20
+=========================================================================
+
+🔴 BU METİN KAYNAKTAN TÜRETİLDİ — uydurulmuş dünya YOK.
+Kaynak docx'te geçen ve buraya birebir taşınan görseller:
+  · "dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi"      → SEKANS 1
+  · "vücudumuzu saran ışık hızıyla parlayan elektrik ağları"           → SEKANS 2
+  · "sunucu tek ayak üstünde durmaya çalışır" · "bisiklete binmek"     → SEKANS 3
+  · "elini sıcak bir çaydanlığa dokundurup hemen çeker"                → SEKANS 4
+  · "haberci ikonları kan damarları içinde süzülerek organlara ulaşır" → SEKANS 5
+  · "lunaparkta tren hızlıca aşağı inerken hissettiğiniz o duygu"      → SEKANS 6
+  · iki sistemin karşılaştırması                                       → SEKANS 7
+Kaynakta OLMAYAN hiçbir mekân yok. (Ölçüm: kaynakta mutfak 0 · soba 0 · ocak 0.)
+
+🔴 MEKÂN KAVRAMI TAKİP EDER — tek mekân kilitli DEĞİL:
+  konser salonu → bedenin içi → maket masası → gerçek anlar → kan dolaşımı → lunapark → kapanış
+Süreklilik mekândan değil, MİRA'dan + ışık rejiminden + paletten gelir.
+
+🔴🔴 ÖZEL OKUL STANDARDI — Mami'nin emri (2026-08-07):
+*"özel okul standartlarında kur; çocukları bizim öğrenciler zengin.
+ 'gariban gariban tema yüklüyorsunuz' diyor müşteri."*
+Mira'nın hayatı **varlıklı, çağdaş ve geniş**: gerçek bir konser salonunda ön sıra ·
+iyi bir evde kendi çalışma masası · sağlam ve yeni bir bisiklet · gerçek bir lunapark.
+YASAK: mütevazı köy evi · yıpranmış eşya · dar loş oda · eskimiş kıyafet ·
+"idareli", "eski ama temiz", "elden düşme" okuyan hiçbir şey.
+⚠ Zenginlik gösteriş değil KALİTEDİR: marka yok, logo yok, altın varak yok —
+malzeme iyi, mekân geniş, ışık bol, her şey bakımlı.
+
+🔴 ELEMENT KURALI (Mami: *"2'den fazla görünüyorsa bir şey üret, element olarak dursun"*)
+Element **1:1** üretilir ve `agents/COMMAND-INBOX/elements/` içinde yaşar; sonraki
+videolarda bedava gelir. **Her şeyin elementi üretilmez** — yalnız eşiği geçen.
+Bu senaryoda eşiği geçen ÜÇ öğe:
+  · `@maket`  — sinir sistemi maketi        (S4-S5, ~12 kare)
+  · `@salon`  — konser salonu               (S1 + S7, ~10 kare)
+  · `@noron`  — nöron / beden içi dünyası    (S2-S3, ~12 kare)
+Rafta zaten var: `@mira` · `@kedi`. Bisiklet ve lunapark eşiği geçmiyor — element YOK,
+o kareler kendi cümlesiyle yazılır.
+⚠ `@handle` ÇAĞRILIR, TARİF EDİLMEZ — yaş, yüz, saç, ten, gardırop, milliyet yazılmaz.
+   (Bu tur tam buradan kırıldı: ajana "nötr tanıma çevir" dedim, kızı tarif etti.)
+
+
+===== SEKANS 1 — ORKESTRA: ONLARCA İŞ, TEK UYUM (konser salonu) =====
+1. Sahnede onlarca müzisyen aynı anda çalıyordu.
+2. Yaylar, nefesliler, davullar; hepsi bir arada.
+3. Ama ortada hiçbir kargaşa yoktu.
+4. En öndeki tek kişi elini havaya kaldırdı.
+5. O bir orkestra şefiydi.
+6. Bageti indi ve bütün salon aynı anda konuştu.
+7. Mira ön sırada oturmuş, o eli izliyordu.
+8. Onlarca enstrüman, tek bir uyum.
+
+
+===== SEKANS 2 — AYNI ORKESTRA İÇERİDE (bedenin içi) =====
+9. Mira avucunu göğsüne koydu.
+10. İçeride de tam o anda onlarca iş sürüyordu.
+11. Kalbi atıyor, ciğerleri nefes alıyordu.
+12. Kasları çalışıyor, midesi sindiriyordu.
+13. Hiçbiri ötekiyle çarpışmıyordu.
+14. Peki bu orkestrayı kim yönetiyordu?
+15. Cevap iki sistemde: sinir sistemi ve iç salgı bezleri.
+16. Biri ışık hızında konuşur, öteki sabırla.
+
+
+===== SEKANS 3 — IŞIK HIZINDA AĞ (bedenin içi · nöron) =====
+17. Sinir sistemi vücudumuzu bir ağ gibi sarar.
+18. Bu ağ milyonlarca sinir hücresinden oluşur.
+19. Bu hücrelere nöron denir.
+20. Nöronlar mesajı elektrik sinyali gibi taşır.
+21. Bu yüzden haber ışık hızında gider.
+22. Sinir sistemi merkezî ve çevresel olarak ikiye ayrılır.
+23. Merkezî sinir sistemi dört yapıdan oluşur.
+24. Beyin, beyincik, omurilik soğanı ve omurilik.
+
+
+===== SEKANS 4 — BEYİN VE BEYİNCİK (maket · denge anı) =====
+25. Mira masadaki maketi kendine doğru çevirdi.
+26. En üstteki büyük kısım beyindir.
+27. Öğrenme, hafıza ve duyuların değerlendirilmesi beynin işidir.
+28. Acıkmak, susamak ve vücut sıcaklığı da beyne bağlıdır.
+29. Arka alttaki küçük kısım ise beyinciktir.
+30. Beyincik kaslarımızın uyumlu çalışmasını sağlar.
+31. Dengede kalmamızı da beyincik yönetir.
+32. Mira tek ayak üstünde durdu ve sallanmadı.
+33. Bisiklete düşmeden binebiliyorsak beyinciğe teşekkür etmeliyiz.
+
+
+===== SEKANS 5 — OMURİLİK SOĞANI VE REFLEKS (gerçek anlar) =====
+34. Beyinciğin yanındaki ince yapı omurilik soğanıdır.
+35. İç organların istemsiz çalışmasını o yönetir.
+36. Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir.
+37. Hapşırmak, öksürmek ve yutkunmak da onun işidir.
+38. Mira hapşırdı ve bunu hiç düşünmemişti.
+39. Aşağı inen uzun kısım omuriliktir.
+40. Omurilik, beyin ile vücut arasında mesaj taşır.
+41. Mira sıcak çaydanlığın sapına dokundu.
+42. Elini düşünmeden, anında geri çekti.
+43. Bu ani ve istemsiz tepkiye refleks denir.
+44. Reflekslerin yönetim merkezi omuriliktir.
+
+
+===== SEKANS 6 — YAVAŞ HABERCİ (kan dolaşımı · lunapark) =====
+45. Peki daha yavaş ve uzun süren işleri kim yönetir?
+46. Onları iç salgı bezleri üstlenir.
+47. Bu bezler hormon denilen kimyasal maddeler salgılar.
+48. Hormonlar doğrudan kana karışır ve yavaşça yayılır.
+49. İç salgı bezlerinin lideri hipofiz bezidir.
+50. Hipofiz bezi büyüme hormonu salgılar.
+51. Boynumuzdaki tiroit bezi tiroksin hormonu üretir.
+52. Tiroksin metabolizma hızımızı ve büyümemizi düzenler.
+53. Pankreas kandaki şeker dengesini kurar.
+54. Şeker yükselince insülin, düşünce glukagon salgılar.
+55. Böbrek üstü bezleri adrenalin hormonu salgılar.
+56. Hız treni tepede bir an durdu, sonra aşağı bıraktı.
+57. İşte o duygunun adı adrenalindi.
+58. Tren durdu, ama Mira'nın kalbi uzun süre hızlı attı.
+59. Eşeysel bezler erkeklerde testis, kadınlarda yumurtalıktır.
+60. Ergenlikteki değişimleri ve üreme hücrelerinin oluşumunu sağlarlar.
+
+
+===== SEKANS 7 — İKİ ŞEF, TEK UYUM (kapanış · konser salonu) =====
+61. Sinir sistemi çok hızlı çalışır, etkisi kısa sürer.
+62. İç salgı bezleri yavaş çalışır, etkisi uzun sürer.
+63. Biri elektrik sinyaliyle, öteki hormonla konuşur.
+64. İkisi birlikte vücudumuzun iç dengesini korur.
+65. Salonda son akor çalındı ve şefin eli indi.
+66. Mira ayağa kalktı; içindeki orkestra hâlâ çalıyordu.
+
+
+=========================================================================
+⚠ MAMİ ONAYINA SUNULDU — onaysız tek kare yazılmaz.
+Sorulacaklar:
+  1. 66 cümle ~4:40 eder; kaynak 4-5 dakika istiyor. Kısaltılsın mı?
+  2. Kapanışta orkestraya dönüş (65-66) kaynakta yok — benim eklediğim tek şey,
+     çünkü açılışın metaforunu kapatıyor ve altın standart `Hücre` de aynı şeyi
+     yapıyor (duvara dönüş). İstemezsen çıkarılır.
+  3. Kaynak kapanışta "iki sütunlu tablo" istiyor; ben onu ŞEMA olarak değil,
+     61-64'te iki sistemin yan yana gösterilmesiyle veriyorum. Şema yasağı duruyor.
+=========================================================================

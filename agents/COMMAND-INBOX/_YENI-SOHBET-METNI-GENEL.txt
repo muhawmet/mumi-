@@ -1,0 +1,84 @@
+Yeni video kuracağız. Baştan sona sen yürüteceksin; ben yalnız KARAR verdiğim yerlerde
+gireceğim, hata avlamak için değil.
+
+KAYNAK: <buraya docx yolunu yapıştır>
+
+Not: bu repoda artık @agents/OLCULENLER.md otomatik yükleniyor — bu ayın bütün ölçümleri
+senin bağlamında zaten var. Onları bana tekrar anlatma, UYGULA.
+
+═══ NASIL ÇALIŞACAKSIN ═══
+
+Beş kapı var. Her kapıda KENDİ KENDİNİ denetleyeceksin ve ancak yeşilse ilerleyeceksin.
+Bana geldiğin her nokta ya bir ZEVK kararı ya da bir FACT REQUIRED olacak — kusur raporu
+değil. Kusuru sen bulacaksın.
+
+── KAPI 1 · KAYNAK VE KİLİTLER ────────────────────────────────────────────
+  node scripts/brifing.mjs "<kaynak docx>"
+  Plan modunda aç. Altı kilit kapanmadan tek kare yazma.
+
+  🔴 DÜNYA KİLİDİNDE ŞU SORUYU KENDİNE SOR VE CEVABINI BANA YAZ:
+     "Seçtiğim mekân kaynakta geçiyor mu, yoksa güzel render olacağı için mi seçtim?"
+     İkincisiyse o bir dünya değil, bir fotoğraf fikridir — at.
+     (Ölçüldü 2026-08-07: bir oturum "bu ders metal ve cam dersidir" deyip sinir sistemi
+     dersini odun sobalı mutfağa kurdu. Kaynakta mutfak 0 kez geçiyordu. 56 kare çöpe gitti.)
+
+── KAPI 2 · DÜNYA DOĞRULAMASI · MEKANİK, TARTIŞMASIZ ──────────────────────
+  Prompt yazmaya BAŞLAMADAN, dünya kilidini kaynağa karşı SAY:
+    · Kilitlediğin mekânın 3-5 anahtar kelimesini seç (ör. mutfak, soba, çaydanlık)
+    · Aynı kelimeleri kaynak docx'te ara
+    · Kaynakta 0 çıkan bir kelimeyi 50+ karede kullanacaksan DUR ve bana sor
+
+  Bu kapı bugün icat edildi çünkü çöküşü tam olarak böyle yakaladım:
+  kaynakta "mutfak 0", prompt'larda "stove 179". Sayı yalan söylemiyor.
+
+── KAPI 3 · İKİ KARE CANARY · GÖZÜNLE BAK ────────────────────────────────
+  56 kare yazmadan ÖNCE yalnız İKİ kare yaz ve bas (dünya testi, ~150 kredi).
+  Sonra o iki kareyi Read ile AÇ ve GÖR. Bana göndermeden önce kendine sor:
+    1. Bu bir SAHNE mi, yoksa bir poster/diyagram/ürün çekimi mi?
+    2. Kadrajda ders geçiyor mu, yoksa ders bir etikete mi indirgenmiş?
+    3. Ekranda okunan her şey Türkçe mi? (İngilizce ya da uydurma harf = kırmızı)
+    4. Çocuk sahnenin İÇİNDE mi, yoksa seyirci mi?
+  Biri bile hayırsa dünyaya dön, kare yazma. Sonra ikisini bana at, ben ONAY veririm.
+
+── KAPI 4 · TAM SET · SONRA KENDİ DENETİMİN ──────────────────────────────
+  Canary onayından sonra kalan kareleri yaz ve bas.
+  Kareler inince ÖNCE kendin bak, sonra bana gel:
+
+    node scripts/onizleme.mjs "<proje klasörü>"     ← kare okumasını %75 ucuzlatır
+    Ajanlar _ONIZLEME/ okur. YAZI taşıyan ve anatomi hükmü gereken kareler
+    TAM ÇÖZÜNÜRLÜKTEN açılır — küçültülmüş görüntüden "diakritik yok" hükmü verme.
+
+  ⚠ Kareleri AGY'ye baktırma. AGY iyi bir İŞARETÇİ, kötü bir CETVELDİR ve durağan
+    görüntüde sana üstünlüğü yok — sen zaten görüyorsun. AGY yalnız VİDEO içindir,
+    çünkü orada senin gözün yok.
+
+  Bana yalnız ŞUNLARI getir: (a) senin kırmızı dediğin kareler ve gerekçesi,
+  (b) zevk kararı gereken yerler. "Şuna bir bakar mısın" getirme — sen bak.
+
+── KAPI 5 · MOTION VE KURGU ──────────────────────────────────────────────
+  · Görmediğin kareye motion yazma. İstisnası yok.
+  · Klip süresi = ekran süresi + 2 saniye (Kling'in baş 0.5 + kuyruk 1.5 sn'si ölü).
+  · Kamera TÜRÜ sekans içinde döner; aynı hareket arka arkaya ikiden fazla karede yok.
+  · Klipler basılmadan ÖNCE gerçek VO ile ANIMATIC-0 koş — süre hatasını orada yakala.
+  · Klipler ve VO inince kaba kurgu üret; XML KURGU/ klasörüne konur.
+  · Tam film indiğinde AGY izler (dis-goz gor --film) — ORASI onun işi.
+
+═══ BANA NE ZAMAN GELİRSİN ═══
+
+GEL:  dünya kilidi · canary onayı · kare kalitesinin son hükmü · zevk ve ton kararları ·
+      FACT REQUIRED (kaynakta olmayan bilgi) · para yakacak bir seçim
+
+GELME: kendi bulabileceğin kusur · "şuna bakar mısın" · uzun ilerleme raporu ·
+       yaptığın işin özeti (kısa "bak şunu yaptık" yeter)
+
+═══ KESİN KURALLAR ═══
+
+· START FRAME YALNIZ MAGNIFIC'te basılır. Higgsfield ortak hesap, prompt silinemiyor.
+· Kaynakta olmayan gerçeği uydurma: FACT REQUIRED yazıp dur.
+· Kaynağın duygusal rejimi bağlayıcıdır — çatışmasız kaynağa çatışma icat etme.
+· Bir doğrulayıcı SIFIR/BOŞ sonuç veriyorsa bu "temiz" değil KIRMIZIDIR; önce aracı sorgula.
+· Öneri serbest, körleme uygulama yasak: bul → bana söyle → ben seçerim → onar.
+· Her iş parçasından sonra: current-work.mjs ilerle + commit + push.
+
+Kredi sorun değil, DİKKAT sorun. Yanlış dünyaya 56 kare yazmak, 56 kareyi tek tek
+düzeltmekten pahalıdır.

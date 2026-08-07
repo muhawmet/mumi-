@@ -1,0 +1,440 @@
+DENETLEYİCİ VE DÜZENLEYİCİ SİSTEMLER — 6. SINIF · START FRAME PROMPT'LARI · SEKANS 4 (K24–K34)
+=========================================================================
+2. TUR — SIFIRDAN YENİDEN YAZIM (2026-08-07). 1. turun demo kareleri reddedildi.
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 · Motion: Kling 3.0
+Kaynak kilit: Denetleyici ve Düzenleyici_ENZIM.md — 🔴 KİLİT 11 önce okunur, KİLİT 9-10'u EZER.
+Ortak tohum: _TOHUM.md · Referanslar: Denetleyici ve Düzenleyici_REFERANSLAR.txt
+VO: Denetleyici ve Düzenleyici_SESLENDIRME.txt — K24 = 24. cümle, K34 = 34. cümle.
+Konu: OMURİLİK SOĞANI (K24–K29, istemsiz işler + hapşırma) → OMURİLİK ve REFLEKS (K30–K34).
+
+🔴 NEDEN YENİDEN — üç değişiklik, üçü de karede ölçülebilir
+  1) MİRA KOTASI SÖKÜLDÜ (KİLİT 11.1). 11 karenin **7'sinde** Mira var ve yedisinde de
+     ELLERİ KADRAJDA, bir şey TUTUYOR ya da bir şeyi TUTUYOR. Değişen mesafe ve açı,
+     varlığı değil: göz hizasından yakın · masadan geniş · camın önünden makro · rafın
+     önünden orta · elinin altından yakın · ocağın karşısından orta · odanın içinden geniş.
+     ⚠ `_REFERANSLAR.txt` bu aralıkta @mira'yı yalnız K27-K29-K32'de listeliyor; o liste
+     KİLİT 11.1'den ESKİ ve kilit kazandı.
+     ⟹ SAYIM: Mira K24, K25, K27, K29, K30, K32, K34 = **7 kare** · insansız K26, K28,
+     · K31, K33 = 4 kare. Dördü de bilerek insansız: üçünde ders "kimse karar vermedi"
+     demek zorunda (K26 istemsiz süreçler · K28 hapşırık/öksürük/yutkunma · K33 kimsenin
+     silmediği kelime), biri saf malzeme makrosu (K31).
+  2) ÇAY TAMAMEN GİTTİ (KİLİT 11.3). Bu sekansta hiçbir karede çay, ince belli bardak,
+     demlik, demlenme, amber sıvı YOK. Ocakta yalnız **su kaynatan geniş emaye çaydanlık**
+     (VO32 birebir onu istiyor), **emaye süt tenceresi** ve **geniş cam su kâsesi** var.
+     ⚠ @mutfak referans plakasında masada ince belli bir bardak ve üstte demlik VAR — o yüzden
+     odayı gösteren iki geniş karede (K25, K34) NEGATIVE bunu adıyla kesiyor; kalanlarda
+     kadraj zaten oraya bakmıyor. `ÇAY` yazısı düştü, yerine **UN** geldi (K29).
+     ⚠ Eski S4'ün "çay zinciri" satırı ve demlikteki amberi "leke, ışık değil" diye tutan
+     bütün NEGATIVE kilitleri **iptal** — koruyacak leke kalmadı.
+  3) MASA VE TEZGÂH DOLU. Her kadrajda birden çok hikâye nesnesi + kenarda odak dışı çapa.
+     Masanın sabit kadrosu: maket, **tabanın yanında ters duran ayrılmış kafatası kapağı**
+     (referans plakasında zaten var — içine kalem konmuş kâse gibi duruyor), açık defter ve
+     kurşun kalem, unlu koyu taş, katlanmış keten bez, sırlı kavanoz.
+
+🔴 SÜREKLİLİK SAATİ — S4 sabahın ORTASI (üç zaman kanıtı, KİLİT 11.3'ün yeni aynası)
+  · HAMUR: tezgâhta keten bezin altında; topak artık **yassı değil**, bezi alçak bir kubbe
+    hâlinde kaldırmış — K01'in sıkı topağı ile K56'nın tam kubbesinin tam ortasında.
+    Her mutfak karesinde AYNI kubbe yüksekliğinde. Kabarma kare içinde OLMAZ.
+  · SOBANIN ATEŞİ: ilk kordan oluşmuş yatağın üstünde **alçak ve düzenli diller** — K01'in
+    genç dik alevi geçmiş, K56'nın alevsiz koru gelmemiş.
+  · PENCERE: bu sekansın tamamında **tamamen buğulu**. Tek istisna K33'te buğunun içinden
+    silinmiş yedi harf; buğu onların içine geri sızmıyor, camın kalanı kapalı kalıyor.
+
+🔴 MAKET — referans plakasından okunan malzeme gerçeği (kare bunu ezmez)
+  Krem plastik büst · üstte **pembe** beyin · arka altta daha küçük, çizgili **soluk adaçayı
+  yeşili** beyincik · beyinciğin önünde ince, **sarı-oker** silindir = omurilik soğanı ·
+  oradan boynun arkasından aşağı inen aynı sarı-oker **omurilik** · cilalı ahşap taban ·
+  tabana vidalı pirinç plaka, üstünde **TEK SATIR** "İNSAN SİNİR SİSTEMİ".
+  ⚠ Eski S4 plakayı üç satır yazmıştı — plaka tek satır. Düzeltildi.
+
+IŞIK REJİMİ — bu sekansın tamamı SİNİR IŞIĞIDIR (KİLİT 4)
+  Sert kenarlı tek altın çizgi, TEK nesnenin TEK kenarına oturur, o kenar bitince BİRDEN
+  kesilir; hâle yok, hava sızması yok, iz yok, birikme yok. Hormon ışığının kenarsız ve
+  kalıcı davranışı bu sekansın hiçbir karesinde geçmez — o K35'ten sonra açılır.
+  Çizginin taşıyıcısı her karede DEĞİŞİR: soğanın üst hattı → soğanın hattı (masada, uzakta)
+  → ocağın ön demir rayı → pencere çıtası → çaydanlık kapağının çemberi → rafın ön kenarı →
+  omuriliğin dış hattı → omuriliğin sol kenarı → çaydanlık sapının üst kenarı → alt cam çıtası
+  → omuriliğin dış hattı (oda ölçeğinde). Işık gezer, hiçbir yerde birikmez.
+  🔴 Işık hiçbir karede Mira'nın tenine, saçına, giysisine ya da kediye değmiyor.
+
+ÖĞRETİM KİLİDİ — KİLİT 7'nin üç hatası, kare kare kesildi
+  1. `omurilik soğanı` ≠ `omurilik`. Işık K24–K29'da YALNIZ **soğana**, K30–K34'te YALNIZ
+     **omuriliğe** değiyor. Maketin göründüğü her karede öteki parça adıyla anılıp
+     "ışıksız nötr plastik" yazıldı. İki parça hiçbir karede birlikte parlamıyor.
+  2. Refleksin merkezi **omuriliktir, beyin değil**. K30, K31 ve K34'ün NEGATIVE'i maketin
+     **pembe beyin** parçasını adıyla ışıksız tutuyor; K34'te beyin kadrajda ve gözle görülür
+     biçimde sönük duruyor.
+  3. **Hapşırma / öksürme / yutkunma omurilik soğanının işidir.** Üçü de K28–K29'da, yani
+     soğan bloğunda duruyor; refleks bloğuna (K32–K34) tek kelimeyle bile sızmıyor.
+
+KADRAJ MERDİVENİ — iki ardışık karede aynı ölçek YOK
+  · K24 YAKIN · K25 GENİŞ · K26 YAKIN · K27 MAKRO · K28 YAKIN · K29 ORTA ·
+  · K30 YAKIN · K31 MAKRO · K32 ORTA · K33 MAKRO · K34 GENİŞ
+
+YAZI — 11 karenin 5'i, beşi de FARKLI MADDE
+  · K25 duvar saatinin kadranındaki rakamlar (emaye üstünde aşınmış boya) ·
+  · K26 "SÜT" (emaye tencerenin sırına fırınlanmış) · K29 "UN" (emaye kutunun sırına
+  fırınlanmış) · K30 "İNSAN SİNİR SİSTEMİ" (pirincin İÇİNE kazınmış, tek satır) ·
+  · K33 "REFLEKS" (buğunun içinden silinmiş berrak cam — KİLİT 5'in ıslak cam kolu).
+  Beşinde de ORIENTATION cümlesi yazılı; beşi de sabit kütle üstünde.
+
+🔴 Gövde kesintisiz düzyazıdır — slot etiketi ([1 LENS] gibi) YAZILMAZ; altın standartta
+   sıfır tane var ve parantezler motora düz metin olarak gidiyor.
+=========================================================================
+
+
+### K24 | VO24 "Beyinciğin yanındaki ince yapı omurilik soğanıdır." · yazı: YOK · KAVRAM
+FİKİR: Maketin en küçük parçası, karedeki tek ışıklı şey. Hemen yanında duran, ondan üç kat
+büyük yeşil beyincik sönük kalıyor. Gerilim büyüklük ile önem arasındaki uyuşmazlıkta — ve
+Mira'nın gözü tam o küçük şeyin hizasına inmiş, büyük olana bakmıyor.
+YÜKÜM: KELİME-KELİME. "beyinciğin yanındaki" → çizgili yeşil beyincik kadrajda, ışıksız, ince yapıya değecek
+kadar yakın, solunda · "ince" → ışıklı sarı-oker silindir başparmak kalınlığında ve beyinciğin
+kütlesiyle yan yana, aynı düzlemde ölçülüyor · "yapı" → okul plastiği: kalıp izi, aşınmış boya,
+ince çizik — organ değil model; Mira'nın parmakları kafatası kapağının açık kenarını tutuyor,
+yani bu şey elle tutulur bir nesne.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Sekiz milimetre ötedeki komşusuna hiç değmeyen, kenarı
+jiletle kesilmiş tek bir ışık şeridi gerçek sette maskeyle bile kurulamaz — bayrak da,
+spot da mutlaka yeşil plastiğe sızar. Animasyonda ışık bir aydınlatma değil bir CÜMLEDİR:
+"burası, buraya kadar, öteki değil."
+PLAN: kahraman = maketin sarı-oker omurilik soğanı · 1 net insan (@mira, yakın, elleri işte) ·
+ışık YALNIZ silindirin üst dış hattına değiyor; beyinciğe, pembe beyne, ahşap tabana, taşa ve
+Mira'nın hiçbir yerine ULAŞMIYOR · özne zeminden ayrılıyor çünkü sarı-oker plastik, arkasındaki
+serin indigo gölge cebinin önünde duruyor · FEDA: maketin yüzü ve Mira'nın alnının üstü kadrajın
+dışında kalıyor, pirinç plaka odağın tamamen dışında sadece sıcak bir bulanıklık.
+ENTRY STATE: Maket mutfak masasında, koridor karesinden sonra kimse ona dokunmamış gibi
+duruyor; hiçbir parçasında ışık yok, önceki sekansın beyincik çizgisinden geriye tek iz kalmamış.
+EXIT STATE: İnce sarı-oker silindir tek altın çizgisini taşıyor, beyincik hâlâ ışıksız yeşil
+plastik; Mira'nın parmakları kapağın kenarında duruyor, maket kımıldamadı, masada hiçbir şey
+yer değiştirmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 85mm at f/2.8, camera dropped to counter height and tilted a few degrees up, a tight three-quarter close from behind the model's left shoulder; the out-of-focus shoulder of a hand-thrown grey-green stoneware jar cuts the lower-left corner so the composition is never symmetric. An anatomical school bust of the human nervous system stands turned toward the window with its hinged skull cap lifted away: inside the opening the slim ochre-yellow cylinder of the medulla stands bare, the smaller ridged sage-green cerebellum pressed close beside it, the pink brain rising above them both, all mounted on a satin solid-oak base. A ten-year-old Turkish girl in a deep red brushed-cotton hooded sweatshirt is here and working, framed from mid-chest up with nothing below the chest visible: she has brought her head down until her eye is level with the stone and the small ochre cylinder, chin almost on her forearm, two fingertips of her near hand resting on the cut rim of the open skull to hold the bust from turning, her other hand flat on the stone with a pencil trapped under its heel. Her skin stays matte, never tinted green or grey. The setting is a well-kept contemporary Turkish kitchen: a honed deep grey-green natural stone counter with a satin finish, solid light-oak cabinetry with brushed brass pulls, oak floating shelves of hand-thrown ceramic jars, hammered copper pans on a brass rail, a sculptural brushed-brass pendant overhead, and the oak-framed window fully fogged behind. The counter is full — the detached skull cap lying upside down beside the oak base like a small bowl with a second pencil resting in it, an open notebook half under the base with three lines already written, a scatter of flour worked into the stone, a folded linen cloth at the edge, the stoneware jar in the near corner. KEY LIGHT: low winter sun drives through the fogged pane from camera-left as one strong directional source, not a soft even fill, and lays a long clean-edged shadow of the bust and of her head right across the stone toward the lens; the wood stove's wide glass door adds a lower orange source that grazes only the oak base; cool-violet bounce keeps the pocket behind the cerebellum fully coloured. Separate from all of that, one hard-edged warm-golden sliver lies along the upper outer contour of the slim ochre cylinder alone and is cut dead where that contour ends — no halo, no spill — and the cerebellum, the brain, the base, the stone, the notebook and every part of the girl are left entirely without it. Four things are alive: steam drifting far behind in soft focus, a grain of flour turning in the sunlit air, a bead of condensation slipping down the glass, live flame moving behind the stove's glass door. Depth in three layers — the blown-soft jar in the near foreground, the medulla, the cerebellum and her fingertips razor-sharp in the middle, the luminous pane dissolving into bokeh behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI with appeal-driven forms, no cel shading and no drawn outline. School plastic rules the frame — hard and matt, its paint thin over every moulded ridge, fine scratches raking the cut edge of the skull, a faint join seam down the side, the ochre cylinder slightly glossier than the sage cerebellum from handling. The base is finely made solid oak, satin-polished, its open grain carrying light along its length; the stone is honed, cool and floury; brushed brass is warm and softly reflective; hand-thrown stoneware carries a hand-dipped glaze; brushed cotton jersey has a raised nap. Every material reads tactile before it reads rendered.
+LIGHT AND PALETTE: One strong directional winter sun through frosted glass does the modelling, so the room is bright AND sculpted — long shadows with clean edges, never a flat diffuse wash. Shadows are deep saturated indigo with colour living inside them, never grey, never milky, never black. Saturated palette: bone-cream and ochre plastic, true sage green, honey-brown satin oak, deep grey-green stone, hammered copper, madder-red jersey, and one saturated golden accent that belongs to nothing else in the frame.
+TEXT: none — clean plate, no on-screen text. The brass plate on the base is turned away from the lens and reads only as a warm out-of-focus edge; the stoneware jar is plain-glazed with its label side to the wall; the notebook page shows handwriting far too small and soft-focused to resolve into any word; the linen cloth is folded so no flat panel is left open.
+NEGATIVE: The cerebellum and the pink brain stay unlit neutral plastic — exactly one part of the model carries light and no second part glows anywhere. The sun lights whole broad surfaces; the single hard-edged golden sliver is the only narrow line of light in the frame and it leaves the wood, the stone, the cloth and her hand completely without it. The plastic stays dry and hard: no tissue, no vessels, nothing wet or fleshy, and nothing here is a real head. Her face is calm, curious and unhurried, her mouth closed. Nothing in this home is worn, chipped, scuffed, shabby or rustic — every surface is finely made and well kept. No tea glass, no teapot, no amber liquid in any vessel. No arrow, leader line, label, inset panel or cutaway.
+-----
+
+
+### K25 | VO25 "Omurilik soğanı iç organların istemsiz çalışmasını yönetir." · yazı: saat kadranı rakamları · KAVRAM
+FİKİR: Odada bir çocuk var ve oda ona rağmen çalışıyor. Mira defterine yazmış, kalemi hâlâ
+kâğıtta; arkasında çaydanlık kaynıyor, süt tenceresi ısınıyor, sarkaç sallanıyor, cam
+terliyor — ve hiçbirinin üstünde el yok. Bütün aydınlık mutfakta altın olan tek şey, onun
+dirseğinin yanındaki başparmak boyu plastik parçanın kenarı.
+YÜKÜM: KELİME-KELİME. "iç organların" → beden değil, ODANIN çalışan organları: kaynayan çaydanlık, sobadaki
+süt tenceresi, işleyen sarkaçlı saat, camdan akan yoğuşma — dördü de kadrajda ve dördü de
+işbaşında · "istemsiz" → Mira kadrajda ama eli bunların hiçbirinde değil; kalemi kendi
+defterinde, sırtı ocağa dönük, hiçbirini yönetmiyor · "yönetir" → ışıklı tek parça en yakında
+ve en keskin; çalışan her şey onun arkasında ve hepsi salt gün ışığında kalıyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Gerçek kamerada yöneten şey büyük ve uzak, yönetilen küçük ve
+yakın olur. Burada ölçek tersine yalan söylüyor — yöneten parça bir başparmak, yönettiği oda
+bir mutfak, ve tek kadraj ikisini aynı düzlemde eşit okunur tutuyor.
+PLAN: kahraman = masadaki maketin omurilik soğanı, odanın içinde küçük ama en yakın · 1 net
+insan (@mira, masada, kalemi kâğıtta) · ışık: altın çizgi yalnız soğanın üst kenarında;
+çaydanlığa, saate, süt tenceresine, cama ve Mira'ya hiç değmiyor, odanın kalanı salt gün
+ışığıyla aydınlık · özne ayrımı: sarı-oker plastik, arkasındaki koyu ocak gövdesinin önünde ·
+FEDA: tavan tamamen kayboluyor, tezgâhın uzak ucu pencere ışığında bembeyaz patlıyor ve
+oradaki hamurun dokusu hiç okunmuyor.
+ENTRY STATE: Maket masada, soğanın çizgisi bir önceki karedeki yerinde duruyor; kamera geri
+çekilmiş ve odanın tamamı bu sekansta ilk kez tek kadrajda görünüyor, Mira masaya oturmuş.
+EXIT STATE: Oda aynı hızda çalışmaya devam ediyor, çizgi kımıldamadı, kalem kâğıtta duruyor;
+kimse ocağa uzanmadı ve hiçbir kap yer değiştirmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 35mm at f/4, camera low at counter height in the near corner of the room, a wide view that opens the whole kitchen to the right; the anatomical model's cropped skull sits huge and out of focus at the left edge as a foreground anchor so the frame is never symmetric. The school bust of the human nervous system stands on the stone island in the near middle ground with a ten-year-old Turkish girl seated behind it, and the whole well-kept contemporary Turkish kitchen works away behind them both. The girl is framed from mid-chest up with nothing below the chest visible, three-quarter to camera and turned away from the stove, weight on one forearm, her pencil still resting where it stopped on her open notebook, her other hand holding a loose page flat. Her skin stays matte, never tinted green or grey. Behind her the room runs itself with no hand anywhere near it: a white enamel kettle simmers on the matte-black top plate of a contemporary wood stove whose wide glass door shows live flame over a bed of embers, a white enamel milk pan warms beside it, a wide clear glass bowl of water stands behind them, a wooden-cased wall clock swings its brass pendulum on the cream plaster wall, hammered copper pans hang from a brushed brass rail, oak floating shelves carry hand-thrown ceramic jars, a sculptural brass pendant hangs over the island, and along the honed deep grey-green stone counter a linen cloth lies over a low domed mound of dough that has already lifted the cloth into a soft curve. A grey tabby cat is curled asleep on a folded blanket by the stove. KEY LIGHT: low winter sun drives through the fogged oak-framed window at the back as one strong directional source and throws a long bright wedge with clean edges across the dark slate floor and up the oak cabinet fronts, every table leg and stool leg drawing its own long shadow; the stove's glass door adds a low orange pool; cool-violet bounce off the cream plaster opens the doorway shadow. Separate from all of that, a single hard-edged warm-golden line rides only the upper contour of the model's slim ochre cylinder in the near ground and is cut dead where that contour ends; the kettle, the clock, the milk pan, the glass bowl, the pane, the cat and the girl herself all stay in plain daylight with no golden light of their own. Five things are alive: steam standing off the kettle's spout, the clock's brass pendulum caught mid-swing, condensation running in threads down the pane, flame moving behind the stove's glass door, the cat's ear turning. Depth in three layers — the cropped skull soft at the very front edge, the girl, the model and the stove sharp in the middle, the fogged window and the shelves falling into luminous haze behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI, tactile and warm, no cel shading and no outline. A finely made contemporary Turkish kitchen: honed natural stone with a satin surface, solid oak cabinetry with visible quartersawn grain, brushed brass pulls and rail, hammered copper catching long stretched highlights, hand-thrown stoneware with a thick hand-dipped glaze, fired white enamel, matte-black steel and thick clear glass on the wood stove, dark slate floor tiles, smooth cream plaster, and linen with a visible weave lying over risen dough. Dense with life rather than crowded with objects — every surface is cared for.
+LIGHT AND PALETTE: One low directional winter sun through frosted glass rules the room and draws long clean-edged shadows across floor and cabinetry, while the stove's fire adds a warm lower pool; this is a bright room that is sculpted, not flattened. Shadows stay saturated indigo and fully coloured, never grey. Palette: white enamel, honey oak, deep grey-green stone, hammered copper, ember orange behind glass, the true deep red of her jersey, and one isolated golden accent.
+TEXT: The wall clock's dial carries numerals only — a full ring of worn black figures on cream enamel, 12 at the top, 3 at the right, 6 at the bottom, 9 at the left, with short tick marks between them. The dial faces the lens flat and parallel to the sensor, reads upright and is never mirrored, reversed or rotated. No other surface in frame carries lettering: every jar on the shelves is turned label-away, the model's brass plate is angled out of legibility, and her notebook page is too far and too soft to resolve any word.
+NEGATIVE: Nothing in this kitchen is brewed or amber — there is no tulip tea glass, no teapot stacked on the kettle and no coloured liquid in any vessel; the kettle and the glass bowl hold plain clear water and the counter carries no glass at all. Only the model's slim ochre cylinder carries golden light; the kettle, clock, milk pan, bowl, cat and window carry none, and none of it reaches the girl. Her hands stay on her own page and touch nothing on the stove. Nothing in this home is worn, chipped, scuffed, shabby or rustic — this is a prosperous, well-kept, light-filled house. No diagram, chart, arrow, two-column comparison or floating panel. No corner of the kitchen falls into gloom.
+-----
+
+
+### K26 | VO26 "Solunum, dolaşım, sindirim ve boşaltım onun denetimindedir." · yazı: "SÜT" · KAVRAM
+FİKİR: Dört ayrı iş, dört ayrı madde, tek kadraj ve tek bir el yok. Kimsenin başlatmadığı dört
+süreç uzun lensin altında aynı hizada sıraya girmiş — nefes alan, dönen, sindiren ve boşaltan
+dört kap, ve hiçbiri ötekini beklemiyor.
+YÜKÜM: KELİME-KELİME. "solunum" → çaydanlığın ağzından eşit aralıklarla çıkan buhar nabızları · "dolaşım" →
+ocağın arka rafındaki geniş cam su kâsesinde, içine düşmüş un taneciklerinin ısınan sudan
+yukarı çıkıp kenardan aşağı indiği yavaş ve kapalı bir halka · "sindirim" → emaye süt
+tenceresinde kırışmış kaymak ve altında sırayla çalışan yavaş kabarcıklar · "boşaltım" →
+pencerenin alt pervazından süzülüp kenardaki sığ tabağa damlayan yoğuşma, tabakta çoktan
+oluşmuş ıslak halka · "onun denetimindedir" → dördü de ocağın ön demir rayının hizasında
+duruyor ve altın çizgi yalnız o rayın kenarında, dördünün hiçbirinde değil.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Cam kâse sayesinde DOLAŞIM bir okla değil, maddenin kendisiyle
+görünüyor — gerçek mutfakta o dönüş suyun içinde neredeyse görünmezdir ve emayenin içinde
+tamamen saklıdır. Üstelik uzun lens dört farklı derinlikteki dört süreci tek düzleme sıkıştırıyor;
+gerçek kamerada bu dördü aynı karede asla eşit okunmaz.
+PLAN: kahraman = ocak-tezgâh ekseninin tamamı, dört kap tek hatta · 0 insan · ışık: sert kenarlı
+altın çizgi yalnız ocağın ön demir rayının üst kenarında ve rayın köşesinde birden kesiliyor;
+buharın, suyun, sütün ve damlanın üstünde hiç altın yok · özne ayrımı: beyaz emaye kütleler,
+ocağın koyu dökme demiri önünde · FEDA: pencere pervazındaki tabak odağın en ucunda ve ıslak
+halkası neredeyse eriyor; ocağın gövdesi kadrajın altında kesiliyor.
+ENTRY STATE: Oda geniş karenin bıraktığı gibi çalışıyor; maket ve Mira kadrajın solunda kaldı,
+kamera ocak eksenine geçti ve odadaki tek altın çizgi artık maketin değil rayın üstünde.
+EXIT STATE: Dört süreç de aynı hızda sürüyor, tabaktaki ıslak halka bir damla genişledi,
+kâsedeki halka aynı yönde dönmeye devam ediyor; hiçbir el kadraja girmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 100mm at f/2.5, camera at counter height looking straight down the length of the stove and counter, strong long-lens compression stacking four working things into a single plane; the near corner of the stove's brushed steel front rail cuts across the bottom of the frame. This is a well-kept contemporary Turkish kitchen seen along its working axis, with four separate processes running at once and no hand anywhere near any of them. Nearest sits a white enamel water kettle with steam leaving its spout in even pulses; beyond it a wide clear glass bowl of plain water carries a slow closed loop of convection, a few grains of flour riding up through the warm centre and sinking again at the cool rim so the turning is visible in the water itself; past that a white enamel milk pan works under a wrinkled opaque skin with slow bubbles arriving one after another beneath it; and at the far end of the run the window's oak sill sheds a bead of condensation into a shallow porcelain saucer that already carries a wet ring. The stove is a contemporary wood-burning stove in matte black steel with a wide clear glass door showing live flame over embers; behind the vessels, hammered copper pans hang from a brushed brass rail, and along the honed deep grey-green stone counter a linen cloth lies over a low domed mound of dough. KEY LIGHT: low winter sun comes straight back along the counter through the fogged pane at the far end, so every steam plume is backlit and luminous and the vessels stand as strongly modelled dark shapes with long shadows thrown toward the lens; the stove's glass door supplies a warm orange under-light along the steel; cool-violet bounce fills the gaps between the vessels; one hard white specular runs the kettle's brushed metal in a single stretched direction. Separate from all of that, a hard-edged warm-golden line rides only the top edge of the stove's brushed steel front rail and is cut dead at the rail's corner; the steam, the water, the milk and the falling drop are all left completely without it. Four things are alive: the spout's steam rising in even pulses, the slow ring turning inside the glass bowl, a drop swelling at the oak sill, flame moving behind the stove's glass door. Depth in three layers — the steel rail out of focus across the bottom, the kettle and the glass bowl sharp in the middle, the milk pan and the far saucer softening into backlit haze. Every vessel rests in real contact with its ring with a tight dark seam at its foot, the saucer rests on the oak sill, and the drop hangs from the sill's underside in true contact.
+STYLE: Dimensional feature-animation CGI, richly material, no cel shading and no outline. Fired white enamel is glassy and flawless over a rolled rim; brushed metal throws one stretched anisotropic highlight along a single direction; milk skin is matt, wrinkled and opaque; the glass bowl is thin and clear with real refraction and a visible meniscus; the stove's steel is matte black and finely made, its glass door thick and slightly warm-tinted; hammered copper carries a hundred small facets; stone is honed and floury. Steam is volumetric with density and shape, never a flat white smear.
+LIGHT AND PALETTE: Strong directional backlight rules this frame — low winter sun comes from behind the objects so the steam and the glass glow from within while the metals stay dark-edged and readable and their shadows reach toward the lens in saturated cool indigo. Palette: white enamel, clear water, matte black steel, hammered copper, honed grey-green stone, ember orange behind glass, and one saturated golden accent living on steel alone.
+TEXT: The word "SÜT" lives in the white enamel of the milk pan's near face, every letterform fired into the glaze — S, then Ü as a capital U carrying two dots above it, then T, three letters with one clear space between each, their edges slightly pooled where the glaze gathered in the kiln so the letters live in the surface rather than on it. The pan's face stands parallel to the sensor, reads left to right, and is never mirrored, reversed or rotated. The word appears on this one pan and on no other surface; every jar in frame is turned label-away and the saucer is plain white.
+NEGATIVE: Nothing in this frame is tea — the kettle and the bowl hold plain clear water with no colour in it, there is no teapot stacked above the kettle and no tulip glass anywhere on the counter. Steam stays water vapour and never forms letters, shapes or figures. No hand, arm, sleeve or person enters the frame and nothing is being lifted, stirred or poured. Nothing here is chipped, worn, rusted or shabby; this is a well-kept, finely made kitchen. No arrow, pipe, drawn channel or flow line connects any two vessels. No labels, callouts or numbered markers on any pot.
+-----
+### K27 | VO27 "Mira camı buğulandırırken nefesini hiç düşünmemişti." · yazı: YOK · KAVRAM
+FİKİR: Kare bir nefesin tutanağı ve nefesi veren kişi kadrajın içinde olduğu hâlde ondan
+habersiz. Mira cam su kâsesini pencereye kaldırmış, içindeki un taneciklerinin dönüşünü
+izliyor; yanağının bir karış önünde, camda, taze bir buğu ovali açılmış — damlacıkları hâlâ
+ayrı ayrı — ve o ovale bakan tek göz kameranınki.
+YÜKÜM: KELİME-KELİME. "Mira" → kadrajda, ama yakın planda olan yüzü değil ELLERİ ve kâse; yüzünün yalnız
+çenesi, dudağı ve burnunun ucu odakta · "camı buğulandırırken" → taze oval camın kendisine ait
+ve hiçbir ele ait değil: parmak izi yok, silme yok, sürtme yolu yok · "nefesini hiç
+düşünmemişti" → gözü kâsedeki dönen taneciklerde, oval ona bakmıyor; camda tek bir kasıtlı
+işaret bile yok.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Kare tek yüzeyde iki ayrı zamanı aynı anda gösteriyor: taze
+oval hâlâ ayrı ayrı duran mikro damlacıklarla, çevresindeki eski buğu çoktan birleşip akmış iri
+boncuklarla. Gerçek kamerada bu iki pozlama ister ve ikisinden biri mutlaka gider. Burada
+malzemenin kendisi ikisini birden saklıyor: buğu bir yüzey değil, bir KAYIT.
+PLAN: kahraman = camdaki taze buğu ovali · 1 net insan (@mira, elleri kâsede, camın öbür
+yanında değil aynı tarafında) · ışık: altın çizgi yalnız alt ahşap kayıt çıtasının üst
+kenarında, çıtanın dikmeyle birleştiği yerde birden kesiliyor; camın hiçbir yerine, hiçbir
+damlaya, kâseye ve Mira'ya değmiyor · özne ayrımı: ıslak ve yoğun taze oval, mat ve kuru
+duran eski buğunun önünde · FEDA: bahçe, kar ve dışarısı tamamen yok; Mira'nın gözlerinin
+üstü ve alnı odağın dışında, yalnız kâsenin camından geçen ışıkla var.
+ENTRY STATE: Ocak eksenindeki dört süreç kadrajın arkasında sürüyor; Mira cam su kâsesini
+tezgâhtan alıp pencerenin önüne getirmiş, kâseyi iki eliyle göğüs hizasında tutuyor ve
+camdaki eski buğu bu sabahtan beri orada.
+EXIT STATE: Taze oval hâlâ ayrı ayrı duran küçük damlacıklarını taşıyor, tek biri bile akmaya
+başlamadı; eski buğunun iri boncukları alt kenarda beklemeyi sürdürüyor, kâsedeki halka aynı
+yönde dönüyor ve kâse hiç eğilmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 100mm macro at f/4, camera close in on the pane at a shallow angle from the room side, the fogged glass filling two-thirds of the frame; the satin solid-oak glazing bar cuts across the lower third so the composition is never a flat empty field. On the glass, a fresh oval bloom of breath sits over an older, drier field of fog: the fresh oval is denser and whiter with its droplets still tiny, separate and perfectly round, while the older fog around it has already coalesced into larger beads with flattened tops and wet tails. A ten-year-old Turkish girl is in the frame on the room side of the pane, framed from mid-chest up with nothing below the chest visible, holding a wide clear glass bowl of water up in both hands at chest height against the bright glass so the daylight passes through it; her eyes are down on the grains of flour turning inside the water, her chin and the tip of her nose sit sharp a palm's width from the pane and the rest of her face falls softly out of focus. Her skin stays matte, never tinted green or grey. The setting is the window of a well-kept contemporary Turkish kitchen seen from inside: fogged pane in a solid oak frame with a satin finish, a brushed brass casement handle catching light at the edge, the honed deep grey-green stone sill entering the lower corner with its scatter of flour, and the folded linen edge of the dough cloth just visible at the counter's end. KEY LIGHT: low winter sun drives straight through the fogged glass, so the pane behaves as one strong luminous source and casts her hands and the bowl as long clean-edged shadows back across the stone sill; the wood stove's fire from behind the camera grazes the glazing bar's near edge and the underside of her jaw; cool-violet bounce sits in the oak's shadow groove; every droplet on the glass carries a tiny inverted bright point of the pane inside it and the water in the bowl throws a sharp caustic ellipse onto her forearm. Separate from all of that, a hard-edged warm-golden line rides only the top edge of the oak glazing bar and stops dead at the joint where the bar meets the upright; it touches no glass, no droplet, no fog, no part of the bowl and nothing of the girl. Four things are alive: a heavy bead beginning to slide at the pane's lower edge, the fresh oval's fine droplets still separate and trembling, the slow ring of flour grains turning inside the bowl, a thread of steam crossing far behind. Depth in three layers — a droplet blown completely soft in the extreme near field, the fresh oval, her chin and her hands razor-sharp in the middle, the older fog and her forehead dissolving into pure luminous white behind. Every droplet rests in real contact with the glass with a visible wetting foot, and the glazing bar meets the pane in a true contact seam with a thin dark shadow inside it.
+STYLE: Dimensional feature-animation CGI at macro scale, no cel shading and no outline. Fogged glass is matt and scattering — it passes light but not image; the fresh bloom is denser and whiter with tiny separate perfectly round droplets; the older fog has already gathered into larger beads with flattened tops. The bowl is thin and clear, its water refracting honestly with a visible meniscus and a real caustic on the skin beneath it. The oak glazing bar is finely made and satin-finished with honest open grain; brushed brass is warm and softly reflective. Everything reads as water on cold glass before it reads as rendered.
+LIGHT AND PALETTE: Strong transmitted light — the pane is the source, so the frame is filled with brilliant white luminance and the caustics and cast shadows keep it sculpted rather than flat; the only darks are the oak and its shadow groove and they stay saturated indigo and fully coloured. Palette: milk white, water clear, honey-brown satin oak, brushed brass, honed grey-green stone, warm honey skin, and one narrow golden accent living on timber alone.
+TEXT: none — clean plate, no on-screen text. The fog carries no letters, no words, no numbers and no drawn marks of any kind; the pane is unwritten; the oak glazing bar is bare timber with no plate, sticker or label on it; and the glass bowl is plain and unmarked.
+NEGATIVE: Nothing on the glass is intentional — there is no fingerprint, no wiped patch, no smear track and no writing anywhere on the pane, and neither of her hands is near the glass. The garden, the snow and the outside world stay completely invisible; the fog passes light and no image at all. The fresh oval keeps its own separate small droplets and has not yet run. Her eyes stay down on the water and she does not look at the camera. No golden light touches her skin, her hair or the bowl. Nothing here is chipped, peeling, cracked or shabby — the joinery is finely made and well kept. No second person, no adult and no reflection of a face anywhere in frame.
+-----
+
+
+### K28 | VO28 "Hapşırmak, öksürmek ve yutkunmak da omurilik soğanının işidir." · yazı: YOK · KAVRAM
+FİKİR: Üç istemsiz iş, tek kapta ve tek anda: yoğun bir buhar düğümü ağızdan çoktan kopmuş ve
+arkasındaki ağız bir an bomboş; kapak sarsıntıdan yamuk oturmuş ve aralığından ince bir sızıntı
+çıkıyor; emayenin boğazından inen iri bir damla dikişin içinde kaybolmuş. Üçünün de kararını
+kimse vermedi ve kadrajda kimse yok.
+YÜKÜM: KELİME-KELİME. "hapşırmak" → ağızdan ayrılmış, kenarı okunur, tek parça buhar düğümü — atılmışın
+grameri · "öksürmek" → kapak yuvasından bir tık kaymış, yamuk oturmuş, aralığından ince ve
+sürekli bir sızıntı · "yutkunmak" → emayenin boğazından aşağı inen iri damla dikişin içinde
+kaybolmuş, arkasında yalnız ıslak izi kalmış · "omurilik soğanının işidir" → üçünün de sebebi
+kadrajda yok: kimse dokunmuyor, hiçbir el yok, ateş bile görünmüyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Gerçek kamera buhar düğümünü tutamaz — 1/500'de bile kenarı
+olmayan bir bulanıklık çıkar. Animasyon buharı bir kare boyunca AĞIRLIĞI ve TARİHİ olan bir
+kütle yapabilir: nereden koptuğu ve nereye gittiği aynı biçimde okunur, ve düğüm bir bulut
+değil bir NESNE olur.
+PLAN: kahraman = çaydanlığın kapağı, ağzı ve boğazı · 0 insan · ışık: altın çizgi yalnız
+kapağın çevresel kenarında, kapağın yamuk oturduğu aralıkta birden kesiliyor; buhara, damlaya,
+ocağa, saplara hiç değmiyor · özne ayrımı: koyu fırça izli metal, arkadaki parlak buhar perdesi
+önünde · FEDA: ocağın ve mutfağın tamamı yumuşak ışık sisine gömülüyor ve çaydanlığın gövdesinin
+alt yarısı odağın dışında kalıyor.
+ENTRY STATE: Camdaki taze oval kameranın arkasında kaldı; Mira kâseyi tezgâha bıraktı ve
+kadrajın dışında, çaydanlık ocaktaki yerinde duruyor, kapağı sabahtan beri bir tık yamuk.
+EXIT STATE: Buhar düğümü kadrajın üst kenarına doğru kopuk hâlde yol alıyor, kapak hâlâ yamuk
+oturuyor ve sızıntısı sürüyor, damla dikişte kaybolmuş; hiçbir el kadraja girmedi ve çaydanlık
+kımıldamadı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 85mm at f/2, camera slightly above the kettle looking down along the spout's axis in three-quarter view; the defocused shoulder of a hand-thrown stoneware jar cuts the near right corner so the frame never sits square. This is the white enamel water kettle of a well-kept contemporary Turkish kitchen, standing on the matte-black top plate of a wood stove, and three separate involuntary things are true at once. A single dense knot of steam has already detached from the spout and is travelling on its own above a mouth that is momentarily clear, its edge readable and its body holding a real inner structure. The kettle's lid has shifted a fraction in its seat and now sits crooked, and a thin steady leak of vapour escapes the tilted gap. A heavy drop has run down the enamel throat below the handle and disappeared into the rolled seam, leaving only its wet track behind it. There is no person, hand or arm in the frame and nothing is being lifted, opened or poured. The setting is the stove top: the kettle's body with its curved handle, the brushed steel rail beneath it, a folded linen cloth over the rail's end, a white enamel milk pan standing beyond, the wide clear glass door of the stove glowing orange with live flame below, hammered copper pans on a brushed brass rail behind, and the bright fogged pane far behind. KEY LIGHT: low winter sun through the fogged pane is a single strong backlight that makes the detached knot luminous and reads it as a solid body while the metal in front of it goes dark-edged and throws a long clean shadow forward across the stove plate; the stove's fire supplies a warm orange under-light along the kettle's foot; cool-violet bounce off the cream plaster opens the shadow side of the body; a single stretched anisotropic highlight rakes the brushed metal in one direction only. Separate from all of that, a hard-edged warm-golden line rides only the circular rim of the lid and is cut dead at the gap where the lid sits crooked; the steam knot, the leak, the running drop, the handle and the steel carry none of it. Four things are alive: the detached knot of steam travelling on its own, the thin leak escaping the lid's tilted gap, the wet track drying slowly on the enamel throat, flame moving behind the stove's glass door. Depth in three layers — the stoneware jar blown soft at the near right edge, the lid rim and the spout razor-sharp in the middle, the milk pan and the window dissolving into bright haze behind. The kettle rests in real contact with the stove plate with a tight dark seam at the foot, the crooked lid rests against one side of its seat in true contact, and the folded cloth lies in contact with the rail.
+STYLE: Dimensional feature-animation CGI, no cel shading and no outline. Brushed metal carries one stretched anisotropic highlight over a soft granular surface; fired enamel is flawless and glassy over a rolled rim with a faint fold seam down the throat; the stove's steel is matte black and finely made, its glass door thick and clear; hammered copper carries small facets; brushed brass is warm; the cloth is fine linen with a visible weave. Steam is volumetric, with density, an inner structure and a readable edge, never a flat white smear.
+LIGHT AND PALETTE: Strong directional backlight rules — vapour is the brightest thing in the frame and the metal in front of it reads as a dark, richly modelled silhouette lifted from below by a warm fire glow, so nothing goes empty and every shadow is long and clean-edged. Shadows stay saturated indigo and open, never grey. Palette: luminous white vapour, dark warm metal, white enamel, matte black steel, hammered copper, ember orange behind glass, and one golden accent confined to a single circular rim.
+TEXT: none — clean plate, no on-screen text. Every ceramic jar on the shelf behind is turned label-away and falls fully out of focus, the cloth is folded so no flat panel remains open, and no plate, sticker or maker's mark appears anywhere on the kettle.
+NEGATIVE: The steam stays water vapour and never becomes a letter, a shape, a face or a figure. No hand, arm, sleeve or person is anywhere near the stove and nothing is being lifted or poured. The golden line stays on the lid's rim alone and leaves the vapour completely unlit. The kettle holds plain clear water — no tea, no teapot stacked above it, no tulip glass and no colour in any vessel in frame. Nothing here is chipped, rusted, dented or shabby; the kitchen is finely made and well kept. No arrows, motion lines, speed streaks or drawn puffs.
+-----
+
+
+### K29 | VO29 "Rafın tozu burnunu gıdıklayınca Mira hapşırdı." · yazı: "UN" · KARAKTER
+FİKİR: Hapşırık bitti ve oda hâlâ onu taşıyor. Un kutusu Mira'nın iki elinde, göğsüne yakın;
+kutunun kenarından kalkan toz sütunu yana savrulmuş, omuzları yukarıdan inmiş, raftaki toz
+filminde açılmış bir yelpaze duruyor. Hiçbirini kimse seçmedi ve elindeki kutu hiç eğilmedi.
+YÜKÜM: KELİME-KELİME. "rafın tozu" → toz hem raf tahtasında ve emaye kutunun omzunda ince bir film, hem de
+havada, pencere ışığında yönü olan görünür bir kütle · "burnunu gıdıklayınca" → toz sütununun
+alt ucu tam burun hizasında ve kaynağı elindeki kutunun kapağının kenarı — sebep ile sonuç aynı
+kadrajda · "Mira hapşırdı" → geçmiş zaman: toz çoktan yana savrulmuş, omuzlar inmiş, burun hâlâ
+kırışık, ön saç telleri öne atılmış, kutu iki elinde ve hiç devrilmemiş.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Havadaki toz burada gürültü değil, YAŞI ve YÖNÜ olan bir kütle
+— vurulduğu yerde yoğun, gittiği yerde ince ve seyrek. Gerçek lens bu pozlamada onu grene
+çevirir; animasyon savrulmanın yönünü tek bir kare içinde okunur kılabiliyor.
+PLAN: kahraman = Mira ve elindeki un kutusu, tek kütle · 1 net insan (@mira, iki eli kutunun
+altında) · ışık: hiçbir altın ışık Mira'ya, kutuya ya da toza değmiyor; kavram çizgisi yalnız
+rafın ön tahtasının kenarında ve demir dirsekte birden kesiliyor · özne ayrımı: kapüşonlu
+jarsenin doygun kırmızı kütlesi, arkadaki parlak buğulu cam düzleminin önünde · FEDA: tezgâhın
+ön dudağı pencere ışığında bembeyaz patlıyor ve orada hiçbir doku okunmuyor; rafın üst sırası
+kadrajın dışında.
+ENTRY STATE: Çaydanlığın buhar düğümü kadraj dışında dağıldı; Mira rafın önüne gelmiş, emaye
+un kutusunu raftan indirmiş ve iki eliyle tutuyor, raftaki toz filmi çoktan bozulmuş durumda.
+EXIT STATE: Toz bulutu yana doğru süzülmeyi sürdürüyor, omuzlar inmiş hâlde kalıyor, kutu iki
+elinde aynı açıda duruyor ve içinden un dökülmedi; raftan hiçbir şey düşmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 50mm at f/2, camera at chest height and a little low, three-quarter view; the front edge of a solid oak floating shelf cuts diagonally across the top of the frame as a foreground anchor so the composition never sits symmetric. A ten-year-old Turkish girl is framed from mid-chest up with nothing below the chest visible, already straightening after a sneeze: her shoulders have dropped from their raised position, her chin is still slightly tucked, her nose is crinkled and her eyes narrowed rather than shut, and she holds a cream enamel flour canister in both hands against her chest, thumbs hooked over its shoulder and its brushed brass clamp lid tipped back in the crook of one thumb, the canister perfectly level and nothing spilled from it. Her skin stays matte, never tinted green or grey. The setting is the shelf wall of a well-kept contemporary Turkish kitchen: a solid oak floating shelf on brushed brass brackets carrying hand-thrown ceramic jars and enamel canisters, a fine film of dust along the shelf board with a fresh fan-shaped clearing in it, the honed deep grey-green stone counter below carrying flour and a cloth-covered domed mound of dough at its far end, and the bright fogged oak-framed window standing behind her shoulder. A column of dust has come off the canister's lid edge and hangs in the air at the height of her nose, dense where it left the rim and thinning as it drifts sideways. KEY LIGHT: low winter sun drives through the fogged pane behind her right shoulder as one strong directional source, edging her cheek and hair and throwing a long clean-edged shadow of her and of the canister across the cabinet fronts beside her; a warmer secondary glow rises from the stove's glass door off-frame and fills under her jaw; cool-violet bounce from the cream plaster models the shadow side of her sleeve; the airborne dust is fully lit and reads as a shaped body with direction. Separate from all of that, a hard-edged warm-golden line rides only the front edge of the oak shelf board and is cut dead at the brass bracket; it touches no dust, no canister, and nothing of the girl — not her hair, not her sleeve, not her skin. Four things are alive: the dust plume drifting sideways in the sunlight, the front strands of her hair still thrown forward, the small metal tip of her hood cord still swinging beside her shoulder, steam crossing far behind. Depth in three layers — the shelf edge and its dust soft across the top, the girl, her hands and the lettered canister sharp in the middle, the luminous pane and the far counter melting into bokeh behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI with appeal-driven silhouettes, no cel shading and no outline. Brushed cotton sweatshirt jersey with a soft raised nap, seams thickening where they are stitched and a hood cord ending in a small hard metal tip; denim woven as a diagonal twill; fired enamel flawless and glassy with a brushed brass clamp lid; solid oak shelving with honest quartersawn grain and a satin finish under a fine even dust film; hand-thrown stoneware with a thick hand-dipped glaze; airborne dust volumetric and shaped, never a flat sparkle overlay. Skin is soft and dry, taking light only on the planes turned into it with a clean terminator.
+LIGHT AND PALETTE: One low directional winter sun through frosted glass rules the frame — it sits almost behind the dust so the plume becomes a lit body, edges her face and hair, and lays long clean shadows across the cabinetry; shadows stay saturated indigo with colour inside them, never grey. Palette: warm honey skin, deep madder-red brushed jersey, cream enamel, brushed brass, honey oak, honed grey-green stone, and one narrow golden accent living on timber alone.
+TEXT: The word "UN" lives in the cream enamel of the canister's front face, both letterforms fired into the glaze — U, then N, two letters with one clear space between them, the glaze pooled slightly at every stroke edge so they sit inside the surface rather than printed on top of it. The canister's face is held parallel to the sensor by her hands, reads left to right, and is never mirrored, reversed or rotated; it is the only lettered surface in frame and every jar on the shelf is turned label-away.
+NEGATIVE: No golden light of any kind reaches the girl — her face, hands and hair stay in plain daylight only. Her face stays open, lit and readable and is never buried in her arm or hidden in shadow; her expression is relieved and a little amused, never distressed. The sneeze itself is over: no spray, no droplets and no burst leaves her mouth. The canister stays level in both hands, nothing pours from it and nothing falls from the shelf. Nothing in this home is worn, chipped, scuffed or shabby — this is a prosperous, well-kept, light-filled house. No second person, no adult and no disembodied hand enters the frame.
+-----
+### K30 | VO30 "Maketin aşağı inen uzun kısmı omuriliktir." · yazı: "İNSAN SİNİR SİSTEMİ" · KAVRAM
+FİKİR: Karedeki en uzun şey, aynı zamanda tek ışıklı şey. Az önce ışıklı olan başparmak boyu
+silindir artık tamamen sönük — ders bir ölçü değişimiyle anlatılıyor, ve Mira'nın başparmağı
+tabanın kenarında maketi tutuyor, yani ölçünün yanında bir insan ölçüsü de duruyor.
+YÜKÜM: KELİME-KELİME. "maketin" → tabana vidalı kazınmış pirinç plaka kareyi "bu bir okul maketidir" diye
+imzalıyor; hemen yanında Mira'nın parmakları aynı tabanın kenarında · "aşağı inen" → alçak
+kamera, altın çizgi kadrajın üstünden altına doğru kesintisiz iniyor, yön tartışmasız · "uzun"
+→ çizgi kare yüksekliğinin neredeyse tamamını kat ediyor ve hemen üstündeki başparmak boyu
+sönük soğanla, ayrıca Mira'nın başparmağının boyuyla yan yana ölçülüyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Işığın kenarı plastiğin bittiği yerde jiletle kesildiği için
+çizginin ÖLÇÜLEBİLİR bir uzunluğu var — kare, içinde hiç cetvel olmayan bir cetvel. Gerçek
+sette bu, parçaya yapıştırılmış bir şerit ister ve şerit ışıktan önce görünür.
+PLAN: kahraman = maketin sarı-oker omuriliği, yakadan tabana kadar · 1 net insan (@mira, eli
+tabanda, yüzü arkada odak dışı) · ışık: yalnız omuriliğin sol dış hattında, yakadan başlayıp
+plastiğin bittiği yerde birden kesiliyor; omurilik soğanına, pembe beyne, ahşap tabana, pirinç
+plakaya ve Mira'nın parmaklarına hiç ulaşmıyor · özne ayrımı: soluk sarı-oker hat, arkadaki koyu
+dolap yüzeyi önünde · FEDA: maketin başı kadrajın üst kenarında kesiliyor, kafatasının hiçbir
+yeri okunmuyor ve Mira'nın yüzü sadece yumuşak bir kütle.
+ENTRY STATE: Toz kadraj dışında hâlâ süzülüyor; Mira un kutusunu tezgâha bırakıp masaya
+dönmüş, maket dokunulmamış duruyor ve omurilik soğanının çizgisi geriye tek iz bırakmadan
+gitmiş — maket bir an tamamen nötr.
+EXIT STATE: Uzun altın çizgi omuriliğin kenarında duruyor, üstündeki soğan sönük kalıyor,
+pirinç plaka okunur; Mira'nın başparmağı tabanın kenarında aynı yerde ve masada hiçbir şey
+yer değiştirmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 70mm at f/2.8, camera dropped below counter level and tilted slightly up, a tight three-quarter view from behind the model's right side; the near edge of the oak base cuts the bottom-left corner so the frame is never symmetric. An anatomical school bust of the human nervous system fills the height of the frame and the subject is the long ochre-yellow cord descending from the base of the skull, down behind the neck, to where the plastic ends just above the satin solid-oak base. A ten-year-old Turkish girl is present and holding it steady: framed from mid-chest up with nothing below the chest visible, her near hand comes in from the right with the thumb and two fingertips closed on the edge of the polished base, her wrist resting on the stone, while her face sits behind the model well out of focus and turned down toward the cord. Her skin stays matte, never tinted green or grey. The setting is the stone island of a well-kept contemporary Turkish kitchen beside the fogged oak-framed window, and the surface around the base is full: an engraved brass plate screwed to the front of the base, the detached skull cap lying upside down beside it with a pencil resting inside, an open notebook pushed half under the base, the honed deep grey-green stone with its scatter of flour, and the matte-black flank of the wood stove standing dark behind with its glass door glowing orange out of focus. KEY LIGHT: low winter sun drives through the fogged pane at camera-right as one strong directional source, raking the model so the cord and the neck are sculpted and a long clean-edged shadow of the bust falls across the stone; the stove's fire grazes the oak base and lifts its grain; cool-violet bounce fills the hollow behind the neck so that shadow stays saturated and fully modelled; a narrow stretched highlight rides the brass plate's polished top bevel. Separate from all of that, a hard-edged warm-golden line runs the full outer contour of the descending ochre cord from the collar down to its lower tip and is cut dead exactly where the plastic ends — no halo, no bleed, nothing carried onto the wood — and the short ochre cylinder above it, the pink brain, the base, the brass plate and her fingers are left completely without it. Four things are alive: flour dust drifting in the sunlight, steam crossing far behind out of focus, a thread of condensation running on the pane, flame moving behind the stove's glass door. Depth in three layers — the oak base corner blown soft in the near foreground, the descending cord and the engraved brass plate razor-sharp in the middle, the stove flank, her face and the pane falling into quiet bokeh behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI, no cel shading and no outline. School plastic is hard and matt with a thin paint layer rubbed through at the mould lines and hairline scratches across the neck, the ochre cord slightly glossier than the surrounding cream from handling; polished brass is warm and bright and throws one stretched directional highlight; the base is finely made solid oak, satin-polished, its open grain carrying light along its length; the stone is honed and cool; matte black steel and thick clear glass on the stove; cotton jersey has a soft raised nap. Every surface is tactile before it is rendered.
+LIGHT AND PALETTE: One strong low winter sun from one side worked against a warm fire glow from the other, so the cord is sculpted on both flanks and nothing goes flat and nothing goes milky; shadows are deep saturated indigo with colour living inside them. Palette: ochre-yellow and bone-cream plastic, bright honey brass, honey-brown satin oak, honed grey-green stone, matte black steel, ember orange, and one saturated golden accent belonging to a single contour.
+TEXT: The brass plate carries "İNSAN SİNİR SİSTEMİ" engraved into the metal on one single centred line, three words of five, five and seven letters, every letter separated by one clear space — İ as a dotted capital I, then N, then S, then A, then N; a wider word gap; then S, then İ as a dotted capital I, then N, then İ as a dotted capital I, then R; a wider word gap; then S, then İ as a dotted capital I, then S, then T, then E, then M, then İ as a dotted capital I — every letter cut into the brass so each trough is darkened while the surrounding surface stays polished. The plate's face stands parallel to the sensor, reads left to right and is never mirrored, reversed or rotated; it is the only lettered surface in frame, the notebook page is turned away and unreadable, and no second line, badge or number appears on the plate.
+NEGATIVE: The short ochre cylinder above the cord and the pink brain behind it stay unlit neutral plastic — one contour carries light and no other part of the model glows at all. The golden line stops dead at the plastic's lower tip and leaves the wood, the brass, the stone and her hand completely without it. The plastic stays dry and hard: no tissue, no vessels, no nerve strands branching off the cord. Her hand holds the base still and nothing is being lifted, turned or taken apart. Nothing in this home is worn, chipped, scuffed or shabby — every surface is finely made and well kept. No tea glass and no teapot anywhere. No arrow, leader line, label, ruler, scale bar or inset panel anywhere in frame.
+-----
+
+
+### K31 | VO31 "Omurilik, beyin ile vücut arasında mesaj taşır." · yazı: YOK · KAVRAM
+FİKİR: Kesintisiz tek bir ışık hattı, iki ucu da sönük olan iki şeyin arasında duruyor. Kurye
+aydınlık, iki kapı da kapalı — ve hattın alt ucu kadrajın dışına, olmayan bedene doğru tam
+güçte çıkıp gidiyor.
+YÜKÜM: KELİME-KELİME. "beyin ile" → pembe beynin alt yüzeyi kadrajın üst şeridini dolduruyor, sönük, adı
+konabilir biçimde kadrajda · "vücut arasında" → omurilik kadrajın alt kenarından çıkıp gidiyor:
+büstün sahip olmadığı beden orada, kadrajın dışında, ve kare tam da orada bitiyor · "mesaj
+taşır" → altın hat omuriliğin görünen kenarının tamamı boyunca kesintisiz; yukarıda yakada
+birden kesiliyor, aşağıda hiç zayıflamadan kadrajı terk ediyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Bu büyütmede maketin omuriliği bir sütun, beynin alt yüzeyi
+bir tavan olur — ölçek yalan söyler ve "mesaj taşımak" bir okla değil bir KORİDORLA anlatılır.
+Gerçek kamera aynı yalanı söyleyemez: bu mesafede plastiğin çiziği ve boya aşınması onu ele
+verir. Burada aynı çizikler kalıyor ve yalan yine tutuyor, çünkü ölçeği taşıyan şey doku değil
+IŞIĞIN GEOMETRİSİ.
+PLAN: kahraman = omuriliğin plastik sütunu · 0 insan · ışık: yalnız sütunun sol kenarında;
+beynin alt yüzeyine, yakadaki kısa silindire ve ahşaba hiç değmiyor · özne ayrımı: parlak
+kenar, arka düzlemin soluk pembe kütlesi önünde · FEDA: yakadaki birleşme odağın dışına
+düşüyor ve beynin kütlesi yalnız yumuşak, okunmayan bir alan olarak kalıyor.
+ENTRY STATE: Mira elini tabandan çekip kadrajın dışına, defterine dönmüş; maket bir önceki
+karedeki konumunda ve kamera birkaç santime inip yaklaşmış, pirinç plaka kadrajın tamamen
+dışında kalmış.
+EXIT STATE: Hat aynı yerde, aynı sertlikte duruyor; yukarısı ve aşağısı sönük kalmayı
+sürdürüyor, plastikte hiçbir şey değişmedi ve hiçbir el kadraja girmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 100mm macro at f/3.2, camera low and very close, looking up along the cord from below and behind so the plastic column rises through the whole height of the frame; a defocused flake of lifted paint at the near edge keeps the composition off-axis. This is an anatomical school bust at macro scale: the ochre-yellow cord's plastic column filling the frame, the pale pink underside of the brain closing the top of the frame like a low ceiling, and the collar of the short ochre cylinder just entering at the upper left. No person is in frame and no hand enters it. At this range the subject is unmistakably a manufactured object: a mould seam runs the column's length, a thin matt paint film is rubbed through on the ridges, hairline scratches cross it at shallow angles, one chipped edge shows the paler plastic underneath, and dust has settled into the deepest scratches. The setting is barely visible behind the plastic: the matte-black flank of a contemporary wood stove, one bright vertical slice of the fogged pane at the frame's edge, and the satin solid-oak base far below in soft focus. KEY LIGHT: low winter sun through that bright slice of pane at camera-left is a single hard directional source skimming across the plastic at a shallow angle so every scratch and mould line reads and the column throws its own long clean-edged shadow across the far flank; cool-violet bounce from the cream plaster keeps the shadow side coloured and fully modelled; a warm orange spill from the stove's glass door touches only the oak far below; the frame stays bright and airy rather than closed. Separate from all of that, a hard-edged warm-golden line rides the cord's left contour without a single break: at the top it is cut dead where the cord meets the collar of the short cylinder above, and at the bottom it leaves the frame at full strength without fading; the brain's underside and the collar itself receive nothing. Four things are alive: a fleck of flour dust turning in the slice of sunlight, the pane's bright edge shifting as steam passes far behind, a thread of condensation sliding at the frame's very edge, orange firelight flickering far below. Depth in three layers — the defocused paint flake at the extreme near edge, the cord's contour and its scratches razor-sharp in the middle, the brain's underside a soft neutral field with no detail behind. The cord meets the collar above it in a visible moulded contact seam with a thin dark line inside it, and far below the base rests in real contact with the stone — nothing floats.
+STYLE: Dimensional feature-animation CGI at macro range, no cel shading and no outline. Painted school plastic dominates the frame and carries the whole illusion: a thin matt paint film rubbed through on the ridges, a mould seam running the column's length, hairline scratches crossing it, one chipped edge showing paler plastic underneath, dust settled in the deepest grooves. The material reads unmistakably as a manufactured school object seen very close, never as living tissue.
+LIGHT AND PALETTE: A single hard grazing sun turns surface texture itself into the subject and draws a long clean-edged shadow along the column, opposed by a saturated cool fill that keeps the far flank readable, so the frame is bright without ever going flat or milky. Shadows are deep saturated indigo and open. Palette: ochre-yellow and pale grey plastic, a soft pink neutral field above, a brilliant white slice of window, honey oak far below, ember orange, and one saturated golden accent confined to a single contour.
+TEXT: none — clean plate, no on-screen text. The brass plate is entirely outside the frame, the surface behind is bare matte steel, and no sticker, marking, number or maker's stamp appears anywhere on the plastic.
+NEGATIVE: The brain's pink underside stays unlit neutral plastic and the short cylinder at the collar stays unlit as well — the light belongs to the cord's contour and to nothing else. Nothing in frame is wet, red, veined or fleshy; this is painted plastic with visible scratches, not tissue, and no part of a real body appears. No fibres, filaments or branching strands leave the cord. The only worn thing in the frame is the school model itself; the home around it is finely made and well kept. No arrow, leader line, label or drawn pathway of any kind, and no hand or sleeve enters the frame.
+-----
+### K32 | VO32 "Mira sıcak çaydanlığın sapına dokunup elini anında çekti." · yazı: YOK · KARAKTER
+FİKİR: El çoktan yakasının hizasına dönmüş, çaydanlık ise hiç değişmemiş — hâlâ orada, hâlâ
+buharlı, hâlâ ocağın üstünde. Karar, Mira'nın erişemediği bir yerde verildi ve kadraj kararın
+yerini değil SONUCUNU gösteriyor: öbür eli hâlâ tutmak için aldığı katlı bezi sıkıyor, yani
+plan vardı ve plandan önce davranan bir şey oldu.
+YÜKÜM: KELİME-KELİME. "sıcak" → sapın dibinde emayenin parlaklığı ince bir buğu filmiyle kırılmış, ağızdan
+buhar dimdik çıkıyor · "çaydanlığın sapına" → sap kadrajın öbür kutbu ve altın çizgi tam onun
+üst kenarında · "dokunup" → sapın üstündeki buğu filminde parmak ucu büyüklüğünde taze bir
+temiz leke duruyor; temasın tek kanıtı o · "elini anında çekti" → el çoktan köprücük kemiğinin
+önünde, parmaklar yarı kıvrık, dirsek gövdeye yapışmış, omuz geriye alınmış; çekme hareketi
+kadrajda yok, öbür elde bez hâlâ tutuluyor.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Sapın üst kenarındaki sert kenarlı altın çizgi, on santim
+ötedeki kola hiç dokunmuyor — gerçek dünyada sıcak bir sap yalnız kızılötesinde parlar, görünür
+ışıkta hiçbir şey yapmaz. Animasyon, HİSSEDİLEN şeyi görünür kılıp yine de tenin dışında
+tutabiliyor: sıcaklık kareye giriyor ama Mira'nın üstüne çıkmıyor.
+PLAN: kahraman = Mira ve sap, iki kutup · 1 net insan (@mira, bir eli göğsünde, öbür elinde
+katlı bez) · ışık: altın çizgi yalnız sapın üst kenarında, sapın gövdeye girdiği yerde birden
+kesiliyor; Mira'nın tenine, koluna, saçına, yüzüne ve bezin üstüne hiç değmiyor · özne ayrımı:
+kapüşonlu jarsenin doygun kırmızı kütlesi, arkadaki parlak buhar perdesinin önünde · FEDA:
+Mira'nın yüzünün uzak yarısı pencere ışığının dışında kalıyor ve çaydanlığın gövdesinin yarısı
+kadrajın sağında kesiliyor.
+ENTRY STATE: Maket kadrajın dışında masada kaldı ve omuriliğin çizgisi orada duruyor; Mira
+ocağın yanına gelmiş, katlı bezi öbür eline almış ve elini çoktan geri çekmiş durumda,
+çaydanlık ocaktaki yerinde.
+EXIT STATE: El göğsün önünde kalıyor, sapın üstündeki temiz leke duruyor ve kapanmıyor, buhar
+aynı hızda yükseliyor; çaydanlık kımıldamadı, bez elden düşmedi, hiçbir şey devrilmedi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 50mm at f/2, camera at chest height on the far side of the stove looking across it in three-quarter view; the kettle's spout and its steam cut into the right foreground so the girl never sits centred. A ten-year-old Turkish girl in a deep red brushed-cotton hooded sweatshirt is framed from mid-chest up with nothing below the chest visible, standing a clear arm's length back from the stove: her near hand is already back against her collarbone with the fingers half-curled and the elbow pinned to her side, her shoulder drawn back and her chin turned a little away from the stove, while her other hand still grips a folded linen cloth she had picked up to hold the handle with. Her skin stays matte, never tinted green or grey. The setting is the stove corner of a well-kept contemporary Turkish kitchen: a contemporary wood-burning stove in matte black steel with a wide clear glass door showing live flame over embers, a white enamel water kettle with its curved handle standing on its top plate, a white enamel milk pan beyond it, a brushed steel rail, hammered copper pans on a brushed brass rail behind, the honed deep grey-green stone counter running away to the left with a linen cloth over a low domed mound of dough, and the bright fogged oak-framed window filling the wall behind. On the upper surface of the kettle's handle, inside the thin film of condensation that has settled there, a single fresh fingertip-sized clear patch stands out — the only evidence in the frame that anything was touched. KEY LIGHT: low winter sun drives through the fogged pane behind the stove as one strong directional source, rimming the steam hard and throwing long clean-edged shadows of the kettle and of the girl across the stove plate and the counter; the stove's fire adds a low orange source that fills under the kettle; cool-violet bounce off the cream plaster models the shadow side of her sleeve; one stretched anisotropic highlight rakes the kettle's brushed metal along a single direction. Separate from all of that, a hard-edged warm-golden line rides only the upper edge of the kettle's handle and is cut dead where the handle meets the body — no halo and no spill — and the steam, the stove, the cloth, her sleeve, her hand and her face carry none of it. Four things are alive: steam rising straight off the spout, a loose strand of hair still settling by her cheek, the cut corner of the folded cloth swinging a fraction where it hangs from her fist, flame moving behind the stove's glass door. Depth in three layers — the spout and its steam blown soft in the near right foreground, the girl, her hand and the lit handle sharp in the middle, the luminous pane and the copper pans dissolving into bokeh behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI with appeal-driven silhouettes, no cel shading and no outline. Brushed cotton sweatshirt jersey with a soft raised nap, seams thickening where they are stitched and a hood cord ending in a small hard metal tip; denim woven as a diagonal twill; fired enamel flawless and glassy over a rolled rim; brushed metal carrying one stretched directional highlight broken by a film of settled condensation; matte black steel and thick clear glass on the stove; hammered copper with small facets; fine linen with a visible weave crushed inside a fist; steam volumetric with real density. Skin is dry and matt with a clean terminator.
+LIGHT AND PALETTE: One low directional winter sun through frosted glass separates every silhouette and draws long clean-edged shadows, while the stove's fire keeps the underside of everything alive, so the room reads bright, saturated and sculpted rather than washed out; shadows are deep saturated indigo, never grey. Palette: warm honey skin, deep madder brushed jersey, white enamel, matte black steel, hammered copper, ember orange, pale linen, and one narrow golden accent on a single metal edge.
+TEXT: none — clean plate, no on-screen text. Every ceramic jar behind her is turned label-away and defocused, the cloth in her hand is crushed so no flat panel is left open, and the kettle carries no maker's stamp, plate or marking of any kind.
+NEGATIVE: No golden light reaches the girl anywhere — not her hand, her sleeve, her hair or her face; the concept light lives on metal alone. She is already clear of the stove and nothing is tipping, spilling or falling; the kettle sits square and stable holding plain clear water, with no teapot above it and no tulip glass in frame. The kettle is a single-chamber enamel kettle with one body and one lid — absolutely no second pot stacked on top of it, no Turkish double çaydanlık, and no word or brand painted anywhere on it. The stove burns wood behind a glass door; there are no gas burners, no gas hob and no open gas flame anywhere. Her expression is alert and surprised, calm and unhurt, never pained or frightened, and there is no redness, mark or injury on her hand. Nothing in this home is worn, chipped, scuffed or shabby — this is a prosperous, well-kept house. No second person, no adult, no disembodied hand. No motion lines, speed streaks or drawn impact marks.
+-----
+
+
+### K33 | VO33 "Bu ani ve istemsiz tepkiye refleks denir." · yazı: "REFLEKS" · KAVRAM
+FİKİR: Kelime camın üstüne yazılmamış — kelime buğunun YOKLUĞU. Kör bir camdaki tek berrak şey,
+ve harflerin içinden karlı bahçe keskin görünüyor. Kavram, adını taşıdığı maddenin eksiğinden
+doğuyor; kimse yazmadı, kimse silmedi, kelime orada.
+YÜKÜM: KELİME-KELİME. "ani" → harflerin kenarları jilet gibi kesilmiş, sürtme lekesi ya da yayvan geçiş yok;
+açılma tek seferde olmuş gibi duruyor · "istemsiz" → camda el yok, parmak izi yok, bez izi yok,
+sürtme yolu yok, yansımada kimse yok — kimse açmadı · "tepkiye refleks denir" → adın konması
+karenin kendisi: kelime bütün, yedi harf, okunur ve kadrajın tam ortasında değil, çıtanın
+üstünde asılı.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Gerçek kamerayla bir kelimeyi "buğunun içindeki delik" olarak
+çekemezsin — harfin içinden bahçenin netleşmesi ancak buğu kalınlığı sanat yönetildiğinde olur.
+Üstelik kelime DONUK: her harfin kenarında su çoktan iri damlalara toplanmış ve hiçbiri akmıyor,
+hiçbiri kapanmıyor — animasyon geçici bir anı kararlı bir DURUM hâline getirebiliyor.
+PLAN: kahraman = camdaki kelime · 0 insan · ışık: altın çizgi yalnız alt ahşap çıtanın üst
+kenarında ve dikmeyle birleştiği yerde birden kesiliyor; harflerin, damlaların ve buğunun
+üstünde hiç altın yok · özne ayrımı: berrak harf boşlukları, çevresindeki süt beyazı mat buğunun
+önünde · FEDA: bir karış camın dışındaki her şey — mutfağın tamamı, Mira, ocak, maket —
+kadrajdan silindi.
+ENTRY STATE: Çaydanlık kadraj dışında hâlâ buhar veriyor ve Mira ocağın yanında, kadrajın
+dışında duruyor; kamera pencereye dönmüş, camın buğusu bu sabah ilk kez bir yerinden tamamen
+açılmış durumda ve K27'nin taze ovali artık eski buğuya karışmış.
+EXIT STATE: Yedi harfin içi berrak ve kuru kalıyor, kenarlarındaki iri damlalar asılı duruyor,
+tek biri bile akmadı ve buğu harflerin içine geri sızmadı; camın kalan yüzü kapalı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 100mm macro at f/4, camera perfectly square-on to the pane a palm's width away, the glass filling the frame; the satin solid-oak glazing bar crosses the lower quarter and the word sits above it, off-centre toward the left, so the composition is never a flat centred field. This is the fogged pane of a well-kept contemporary Turkish kitchen carrying one whole word that exists only as clear glass cleared out from inside the fog itself. Nobody is in frame and nothing has touched the glass. Beyond the cleared letters a snow-covered garden reads sharp and small: a bare branch, a low white wall, snow drifting slowly. The setting is the kitchen window from inside: fogged pane in a solid oak frame with honest open grain and a satin finish, a brushed brass casement handle catching light at the edge of the frame, and the honed deep grey-green stone sill just entering the lower corner. KEY LIGHT: low winter sun transmits through the fogged glass as one strong luminous source and comes through the clear letter openings sharper, colder and much brighter, so each letter throws its own faint clean-edged patch of light onto the oak bar below; the wood stove's fire from behind the camera grazes the glazing bar's near edge; every heavy bead carries a tiny inverted bright point inside it. Separate from all of that, a hard-edged warm-golden line rides only the upper edge of the oak glazing bar and stops dead at the joint where the bar meets the upright; no golden light touches the letters, the beads or the fog. Four things are alive: a bead hanging heavy at a letter's lower edge without releasing, snow drifting slowly beyond the clear openings, the faint breathing of the older fog at the pane's far corner, a bare branch stirring outside. Depth in three layers — a foreground bead blown completely soft at the near edge, the letter edges and their gathered droplets razor-sharp in the middle, the snowed garden crisp but small inside the letter openings behind. Every bead rests in real contact with the glass with a visible wetting foot and a flattened base, and the glazing bar meets the pane in a true contact seam with a thin dark shadow inside it.
+STYLE: Dimensional feature-animation CGI at macro scale, no cel shading and no outline. Fogged glass is matt and scattering, passing light but no image; the cleared shapes are perfectly transparent and slightly reflective; along every cleared edge the displaced water has collected into separate rounded beads of differing size with flattened contact feet. The oak glazing bar is finely made and satin-finished with honest open grain; brushed brass is warm. Water reads as water and glass reads as glass before either reads as rendered.
+LIGHT AND PALETTE: Strong transmitted light — the pane is itself the source, so the frame is a field of brilliant white luminance interrupted by seven sharper, colder and brighter openings, and the only darks are the oak and its shadow line, which stay saturated indigo with colour inside. Palette: milk white, water clear, cold blue snow-light, honey-brown satin oak, brushed brass, and one narrow golden accent on timber alone.
+TEXT: The word "REFLEKS" stands on the pane as seven clear letterform openings wiped out of the fog itself — R, E, F, L, E, K, S, each letter separated by one clear space, each one a crisp-edged window of fully transparent glass with the snowed garden reading sharp inside its counters; along every letter edge the displaced water has already gathered into heavy separate beads that hang still. The pane is exactly parallel to the sensor, the word reads left to right and is never mirrored, reversed or rotated; it appears on this pane only and no other surface in frame carries lettering.
+NEGATIVE: The letters stay open, dry-clear and fully legible — the fog does not creep back into them and nothing runs down through them; the beads on their edges hang without releasing. There is no touch mark, no cloth, no fingertip, no smear track and no drag mark anywhere on the glass, and nobody is reflected in the cleared openings. The word is exactly seven letters with no extra mark, second word, number or stray stroke on the pane. Nothing here is chipped, peeling or cracked; the joinery is finely made and well kept. No arrow, frame, box or underline around it.
+-----
+
+
+### K34 | VO34 "Reflekslerin yönetim merkezi omuriliktir." · yazı: YOK · KAVRAM
+FİKİR: Koca aydınlık mutfakta tek bir altın kenar var; onu taşıyan az önce elini yaktıran
+çaydanlık değil, maketin pembe beyni de değil — aşağı inen uzun parça. Mira masada, avucu
+defterinin üstünde, o tek kenara bakıyor. Kare "nerede" sorusunu etiketle değil, ışığın nereye
+DEĞMEDİĞİYLE yanıtlıyor.
+YÜKÜM: KELİME-KELİME. "reflekslerin" → az önce elini çektiren çaydanlık kadrajın arkasında, hâlâ buharlı ve
+hâlâ ocakta, olayın kanıtı olarak duruyor · "yönetim merkezi" → odadaki tek ışıklı şey; ne
+çaydanlık, ne raf, ne saat, ne cam, ne Mira bir altın taşıyor · "omuriliktir" → maket bütün
+olarak okunuyor, çizgi aşağı inen uzun parçanın üstüne oturuyor ve hemen üstündeki pembe beyin
+gözle görülür biçimde SÖNÜK.
+AYRICALIK: ANİMASYON-AYRICALIĞI. Geniş bir odada tek bir kenarın ışıklı olması ve geri kalan
+her yerin salt gün ışığında kalması gerçek sette bir spot ve bir bayrak ormanı ister — ve o
+spot kaçınılmaz olarak masaya düşer. Burada ışığın nereye değmediği, değdiği kadar bilgi
+taşıyor: ders bir cümleyle değil, bir yoklukla kapanıyor.
+PLAN: kahraman = masadaki maket, odanın içinde küçük ama tek ışıklı · 1 net insan (@mira,
+masada, avucu defterin üstünde) · ışık: altın çizgi yalnız omuriliğin kenarında; çaydanlık,
+pembe beyin, raf, tezgâh, hamur ve Mira salt gün ışığında · özne ayrımı: soluk maket silueti,
+koridor kapısının serin indigo boşluğu önünde · FEDA: maket küçük, pirinç plakası bu mesafede
+hiç okunmuyor ve tezgâhın uzak ucu pencere ışığında bembeyaz patlıyor.
+ENTRY STATE: Camdaki kelime kameranın arkasında, solda kaldı; kamera pencere tarafından odaya
+döndü, Mira ocaktan masaya dönüp oturmuş, maket masada ve çaydanlık ocakta bir önceki mutfak
+karesindeki yerinde.
+EXIT STATE: Çizgi omuriliğin kenarında sert ve kımıldamadan duruyor, çaydanlık buhar vermeye
+devam ediyor, hamur bezin altında aynı yükseklikte; odada hiçbir şey yayılmaya, kalmaya ya da
+kenarını kaybetmeye başlamadı — bu sekans sert kenarlı ışıkla kapanıyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition. Not photography, not an architectural render. 35mm at f/4, camera at standing eye height by the window looking back into the room, a wide view of the whole kitchen with the window behind the lens; the near corner of the counter and a hanging linen cloth cut into the left foreground so the composition is never symmetric. An anatomical school bust of the human nervous system stands small and whole on the stone island in the middle ground of a well-kept contemporary Turkish kitchen, its descending ochre cord carrying the only golden edge in the room, and a ten-year-old Turkish girl sits at that island framed from mid-chest up with nothing below the chest visible, one palm laid flat on her open notebook and the other hand resting on the stone beside the model's base, her head tipped toward the lit cord. Her skin stays matte, never tinted green or grey. The setting is the whole winter-morning kitchen seen from the window side: the honed deep grey-green stone island with the model, the notebook and the upturned skull cap; a contemporary wood-burning stove in matte black steel behind it, its wide glass door showing settled flame over a bed of embers, a white enamel kettle still steaming and a white enamel milk pan on its top plate; the stone counter running along the left with a linen cloth over a low domed mound of dough; solid oak floating shelves of hand-thrown ceramic jars; hammered copper pans on a brushed brass rail; a sculptural brushed-brass pendant over the island; a wooden-cased clock on the cream plaster wall; dark slate floor tiles; a grey tabby cat curled asleep on a folded blanket by the stove; and the wide oak-floored hallway opening at the back. KEY LIGHT: low winter sun through the fogged window directly behind the camera drives one strong bright wedge with clean edges across the slate floor, the island and the stove front, every chair leg and every jar drawing its own long shadow; the stove's fire adds a low orange pool at the back; cool-violet bounce off the plaster opens the hallway shadow. Separate from all of that, a single hard-edged warm-golden line rides only the outer contour of the model's descending cord and is cut dead where the plastic ends; the pink brain above it sits in plain daylight with no light of its own, and the kettle, the shelves, the stone, the dough, the floor, the cat and the girl carry none of it either. Five things are alive: steam standing off the kettle's spout, dust turning in the sunlit wedge, the hanging cloth edge lifting slightly in the draught, flame moving behind the stove's glass door, the cat's tail flicking. Depth in three layers — the counter corner and the hanging cloth soft at the left foreground, the island, the girl and the model sharp in the middle, the stove and the bright hallway falling into quiet depth behind. Everything rests in real contact with a tight dark seam beneath it.
+STYLE: Dimensional feature-animation CGI, tactile and warm, no cel shading and no outline. A finely made contemporary Turkish kitchen: honed natural stone with a satin surface, solid oak cabinetry with visible quartersawn grain, brushed brass pulls and rail, hammered copper catching long stretched highlights, hand-thrown stoneware with a thick hand-dipped glaze, fired white enamel, matte-black steel and thick clear glass on the wood stove, dark slate floor tiles, smooth cream plaster, and fine linen lying over risen dough with the dough's texture pressing through the weave. Dense with life rather than crowded with objects.
+LIGHT AND PALETTE: One low directional winter sun behind the lens lays a single bright clean-edged wedge through the room and every object draws a long shadow from it, while the far corners are filled by saturated coloured bounce, so the kitchen reads bright, deep and sculpted rather than evenly washed. Shadows stay deep saturated indigo with life inside them. Palette: white enamel, honey oak, deep grey-green stone, hammered copper, brushed brass, ember red at the stove door, the true deep red of her jersey, and one isolated golden accent on a single plastic contour.
+TEXT: none — clean plate, no on-screen text. The model is turned so its brass plate faces away from the lens and no letters are legible anywhere; every jar on the shelves is turned label-away; her notebook lies open at this distance with handwriting too small and too soft to resolve into any word; the clock is seen edge-on with its dial unreadable; and the plaster walls carry hanging cloth and utensils so no blank panel is left open.
+NEGATIVE: The pink brain on the model and the short ochre cylinder tucked in front of the cerebellum both stay plainly unlit at this distance — the room contains exactly one golden edge and it belongs to the long descending cord. The kettle steams but carries no golden light of its own, and it holds plain clear water: there is no teapot stacked above it, no tulip glass on the island and no amber or brewed liquid anywhere in the kitchen. The kettle is a single-chamber enamel kettle with one body and one lid — absolutely no second pot stacked on top of it, no Turkish double çaydanlık, and no word or brand painted anywhere on it. The stove burns wood behind a glass door; there are no gas burners and no gas hob. Nothing in the frame spreads, lingers or glows without an edge; every light here is hard and local. Her hands stay on the island and nothing is being lifted or carried. Nothing in this home is worn, chipped, scuffed, shabby or rustic — this is a prosperous, well-kept, light-filled house. No second person and no adult anywhere in the room. No diagram, chart, two-column summary, arrow or floating caption anywhere.
+-----
+

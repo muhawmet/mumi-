@@ -1,0 +1,155 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — MOTION · SEKANS 4 (K31-K42)
+=========================================================================
+Motor: Kling 3.0 (i2v) · Magnific · register EDU · dünya pixar_3d_edu
+Biçim: PROMPT-YASASI §3 — tek paragraf, Camera: kendi cümlesi, kilit tek cümle.
+Negatif §3n uyarınca SAHNEYE ÖZEL yazıldı; template kuyruk kopyalanmadı.
+Kamera kuyruğu (No whip-pan…) YALNIZ ekranda Türkçe yazı ya da katı/mekanik
+gövde (galvaniz tel kafes, emaye harfli metal güğüm) taşıyan karelerde.
+Bu sekansın ana riski YAVRU BAKIMI: anne ile yavrunun gövdesi birleşiyor ve
+sayı klip sonunda eriyor. Ayrı gövde ve sabit sayı OLUMLU cümleyle korundu,
+temaslı ve kalabalık kareler bilerek kısa tutuldu.
+=========================================================================
+
+
+### K31 | 7s · ekranda ~4.4s | VO "Döllenme tamamdı; peki yavru nasıl büyür ve doğar?"
+KAMERA NİYETİ: Bir karış ileri süzülme, kaş kalkınca tam durur — soru kadrajın içinde doğsun.
+frame: images/31.png · sha256:2087380578350f3c
+-----
+@efe is still turning his head across the yard when the shot picks him up, his chin lifting a little, his eyes running ahead of his face. Then his look catches something past the edge of the barn — at that instant the turning stops, his eyebrows climb a fraction, and his whole expression changes from idle to asking without his mouth ever parting. His shoulders rise once on a slow breath and settle lower than they began, so he begins the clip merely wandering and ends it holding a question he has not said out loud. Golden dust drifts sideways through the low sun between him and the coop, two dry straws roll a finger's width across the packed earth beside the wheel rut, and the bare branches above the stone wall stir just enough to prove there is air moving. Camera: eases forward toward his face by about a hand's width, gathering a little speed and coming to a firm stop the moment his eyebrows lift. His hands stay down at his sides with five separate fingers on each, his face keeps the same features and the same matte low-specular skin it opens with, and the coop planks and barn boards hold their true straight lines. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K32 | 6s · ekranda ~3.8s | VO "Efe aynı bahçede bunun üç ayrı yolunu gördü."
+KAMERA NİYETİ: Birkaç santim yanal kayma sağa — kümes kapısı açılsın, üç köşe tek kadrajda kalsın.
+frame: images/32.png · sha256:24dc69869219d620
+-----
+The yard is awake in three places at once before anything moves: @efe stands mid-turn on the path with his look travelling from the dark corner of @ahir toward the coop, the @kedi in that corner breathes slowly beneath her sleeping litter, and inside @kumes the @tavuk shifts one shoulder on her straw. Then the hen settles that shoulder back down — at that instant his look arrives on the coop doorway and stays there, so the yard begins the clip as one place and ends as three. Low sun rakes along the stone wall behind the wheelbarrow, the water beyond it holds a long flat sheet of light, and the tall dry stalks at the near edge sway once across the bottom of the frame. The spilled fruit beside the coop stays where it fell. Camera: a few centimetres of lateral slide to the right, opening a little more of the coop doorway into frame and easing to a complete stop while he is still turned. The litter beside the mother cat keeps the same number of kittens with each one keeping its own body, exactly one hen stays in the coop doorway, and @efe stays whole inside the frame with both feet on the ground. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K33 | 5s · ekranda ~2.7s | VO "Birincisi doğurarak çoğalmaktır."
+KAMERA NİYETİ: Kilitli kamera, sıfır hareket — saman harfler okunacak, asla yaklaşılmayacak.
+frame: images/33.png · sha256:12b5236259312b20
+-----
+Around the straw line rather than over it, the barn floor is already in gentle motion: @kedi lies along the blanket with her flank rising and falling, and the kitten pressed against her belly pushes deeper into her fur without leaving its place. Then she lowers her chin onto her outstretched paw — at that instant the whole group settles into one warm mass, so the corner begins the clip as a scatter of animals and ends as a family that has stopped moving. Warm light from the open barn doors behind lies across the packed earth in one long band and holds its level, dust turns slowly inside that band, and the bales at the right edge keep their dry golden texture. Nothing crosses the floor between the lens and the straw. Camera: locked off, no travel and no reframe of any kind, holding its exact distance to the straw line so the writing is read and never approached. Every straw stalk keeps its own position and its own shadow, the lettering stays exactly as laid on the earth, each kitten keeps its own separate body with a visible gap along its back, and the count of kittens holds. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K34 | 6s · ekranda ~3.5s | VO "Yavru annenin karnında gelişir ve öyle doğar."
+KAMERA NİYETİ: Çok yavaş geri çekilme — kapalı bir yer açılırken sığınağa dönüşsün.
+frame: images/34.png · sha256:2bf5f0486ae775b0
+-----
+The chamber is breathing before anything else happens: the pale coral folds lift and fall with a slow, almost invisible undulation, and inside the single round sphere at the centre the warm core turns over on itself. Then that core strengthens by one step from the middle outward — at that instant the nearest fold eases back and gives the sphere a little more room around it, so the space begins the clip as an enclosure and ends as a shelter. A few pale motes drift across the deep opening behind, the thin golden threads reaching out from the sphere sway very slightly in the same current that moves the walls, and the far end keeps its soft unresolved darkness. Nothing enters the frame and nothing divides. Camera: a very slow pull back of about a hand's width, letting more of the folded chamber into the edges of frame before easing to a complete stop. The sphere keeps one unbroken round body with a single warm core, the threads keep their number and their existing paths without branching, and the light stays a soft warm-golden light and never becomes a heart, star, flame or drawn arrowhead. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K35 | 6s · ekranda ~3.3s | VO "Doğduktan sonra anne sütüyle beslenir."
+KAMERA NİYETİ: Kilitli kamera — güğümdeki yazı ve emen yavrular; ikisi de dokunulmadan durur.
+frame: images/35.png · sha256:917841b8df45e2bb
+-----
+Feeding is already under way when the shot begins: the kittens tucked against @kedi's belly make small rhythmic pushes into her fur, and her flank rises and falls above them in a slower rhythm of its own. Then her eyelids drift almost shut and the tip of her tail comes down onto the burlap and rests there — at that instant the whole floor goes quiet, so the corner begins the clip busy with small hungry movement and ends with a mother who has let go. Warm door light from the far end of the barn lies in a soft orange wedge on the boards behind her, a few loose straws in front of the bales stir once in the draught, and the dust on the churn's metal keeps its dull grey sheen. Camera: locked off, holding its exact position and its exact distance to both the animals and the churn, with no travel of any kind. Each kitten keeps its own separate body with a visible gap and the count holds, the milk churn keeps its straight rigid metal sides, and the lettering pressed into it stays exactly as it is with both dotted Üs intact. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K36 | 8s · ekranda ~5.2s | VO "Kedi, koyun, inek, yarasa, balina ve insan böyledir."
+KAMERA NİYETİ: Birkaç santim aşağı yerleşme — kilim hizasına inip üç köşeyi eşitle.
+frame: images/36.png · sha256:7302f368f86abbea
+-----
+Three corners of the barn are doing the same thing at the same time: the lamb is mid-suck under the ewe on the left, the calf is mid-suck under the cow on the right, and on the kilim in the middle @kedi breathes slowly over her sleeping kittens. Then the ewe lowers her head to touch the lamb's back — at that instant the cat's ears turn toward the doorway and the three groups read as one idea, so the barn begins the clip as three separate corners and ends as a single sentence about mothers. Blue dusk stands in the open doorway behind them, the lantern on the post throws a small steady warm circle onto the boards, and loose straw at both edges of the frame sways once in the evening draught. Camera: a very slight downward settle of a few centimetres toward the rug, then coming fully to rest at that lower height. Each mother and her young keep separate visible bodies with a gap where they touch, the number of kittens and the one lamb and the one calf all hold from first frame to last, and the woven kilim keeps its shapes without any pattern crawling. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K37 | 5s · ekranda ~2.6s | VO "İkincisi yumurtlayarak çoğalmaktır."
+KAMERA NİYETİ: Kilitli kamera — yazı artık okunuyor, kamera onu bozmadan seyretsin.
+frame: images/37.png · REVİZE 1 SONRASI — tepeden bakan açı, 13 harf tek düzlemde
+-----
+@tavuk is already mid-step beside the nest, one foot lifted and held, her head turning by a few degrees to keep the clutch in view while a single loose straw rocks once where it lies across the swept earth. Then she sets the lifted foot down beside the nearest egg and stills — at that instant the doorway goes from a bird deciding to a bird settled, so the clip begins with a small unfinished movement and ends with it finished. Low sun rakes in from the open door behind, each corn kernel throwing its own short shadow, dust turning slowly in the warm band of light, the wooden nest-box edge and the tipped tin scoop holding their places at the frame edge. The seven eggs stay exactly seven, each keeping its own shell and its own contact shadow in the straw. Camera: locked off, no travel and no reframe of any kind, holding the whole floor in one plane so the word stays flat to the lens from first frame to last. The kernels stay exactly where they lie and every letter keeps the same height and the same crisp gap from its neighbour, the far end of the word staying as sharp as the near end. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: revize sonrası — kare yeniden basılacak
+REVİZE: 1 · yazı yerleşimi (13 harf derinlemesineydi, tepeden tek düzleme alındı) + yumurtalar kadraja girdi
+
+
+### K38 | 7s · ekranda ~4.4s | VO "Döllenme içte olur, ama yavru yumurtanın içinde gelişir."
+KAMERA NİYETİ: Bir karış ileri süzülme — içeriyi fark ediş anıdır; hızlanıp kabuğun önünde durur.
+frame: images/38.png · sha256:cf1d82ca922cf1f7
+-----
+The egg is already occupied when the shot opens: the warm light held low inside the shell turns over on itself, brightening the speckled curve from within, while above the nest the hen's loose down stirs in the draught coming through the coop. Then that inner light gathers upward toward the middle of the shell and holds there — at that instant the object stops being an egg and becomes a room with someone in it, so the shot begins as a thing lying in straw and ends as a life being kept. Behind the nest the far hills stay soft in the evening haze, a few straws at the front edge shift a hair as the draught passes over them, and the wire beyond the posts stays gently out of focus. Nothing cracks and nothing opens. Camera: eases forward toward the near shell by about a hand's width, gathering a little speed and locking to a firm stop just short of it. The shell stays whole and uncracked with its speckled surface intact, the eggs behind it keep their count and their spacing, and the glow stays a soft warm-golden light inside the shell and never becomes a heart, star, flame or drawn arrowhead. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K39 | 5s · ekranda ~2.7s | VO "Yumurta annenin vücudunun dışındadır."
+KAMERA NİYETİ: Birkaç santim yanal kayma — anne ile yuva arasındaki boşluk kadrajın konusu olsun.
+frame: images/39.png · sha256:47ed402e6bc9e1df
+-----
+@tavuk has already begun stepping away from the nest: one foot is lifted mid-stride, her body is turned toward the open gate, and behind her the pale speckled eggs sit alone in the straw just as she left them. Then she plants that foot and turns her head back over her shoulder toward the clutch — at that instant the bare straw between them becomes the subject, so the nest begins the clip as part of her and ends as a place she has stepped out of. Evening light comes flat through the wire wall and lays a fine diamond shadow across the straw, the bare tree beyond the stone wall holds still against the pale sky, and a few loose stalks at the near edge lift once and drop. Camera: a few centimetres of lateral slide, widening the gap between the bird and the clutch, then easing to a complete stop with both still in frame. The clutch keeps the same number of eggs with each shell holding its own rounded body and visible straw between them, her two thin legs stay two legs with the feet fully formed, and the wire mesh keeps its straight taut diamonds. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K40 | 6s · ekranda ~3.5s | VO "Tavuk yumurtalarının üstüne yatar ve onları ısıtır."
+KAMERA NİYETİ: Birkaç santim aşağı yerleşme — kamera da kuşla birlikte yuvaya insin.
+frame: images/40.png · sha256:1fc9c0b052a49cf8
+-----
+Her spread wings are easing down along her sides as @tavuk lowers herself onto the nest, her breast descending toward the pale shells beneath her, the straw ring still giving under her weight. Then her breast meets the eggs and takes them — at that instant everything in her goes still except the slow swell of her breathing, so she begins the clip still arranging herself and ends as a warm roof over something. Blue dusk stands in the open doorway behind her while the low warm light of the coop holds her chest and throat, dust turns inside that warmer pool, and the loose straws at both edges of the frame stir once and settle. Her beak stays shut and her head stays level throughout. Camera: a very slight downward settle of a few centimetres to nest height, following her down and then coming fully to rest. Her wings fold inward in one unbroken movement without ever re-forming or changing shape, the eggs beneath her keep their number and stay under her body, and the straw ring keeps its bowl shape without collapsing. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K41 | 4s · ekranda ~1.8s | VO "Buna kuluçka denir."
+KAMERA NİYETİ: Kilitli kamera, sıfır hareket — tüy harfler en kırılgan yazı; taşın üstünde hava ölü.
+frame: images/41.png · sha256:85c9dfcc34ef1a2e
+-----
+Behind the stone the coop is moving while the stone itself holds perfectly still: beyond the doorway @tavuk shifts her weight once on the nest and her rust-gold feathers lift and settle along her flank. Then she lowers her head into the straw — at that instant the last warm light of the day slides a shade further along the pitted slab and the feather shapes on it gain their own small shadows, so the step begins the clip as a stone to walk on and ends as a name for what is happening behind it. Dust hangs almost motionless in the doorway beam, the wooden posts hold their true vertical lines against the blue outside, and the dry stalks at the bottom corners of the frame stay where they lie. Camera: locked off, no travel and no reframe of any kind, holding its exact distance to the slab so the writing is read and never approached. The air over the stone stays completely still and every feather stays exactly where it lies, keeping its letter shape without lifting, sliding, curling or rotating, and the slab keeps its own hard straight edge. Silent clip, no audio, no dialogue, mouth closed, no lip movement. No whip-pan, no shake, no snap-zoom, no camera warp.
+-----
+DURUM: temiz
+REVİZE:
+
+
+### K42 | 7s · ekranda ~4.1s | VO "Yılan ve kaplumbağa yumurtalarını toprağa bırakıp gider."
+KAMERA NİYETİ: Çok yavaş geri çekilme — sekansın nefes verişi; iki ebeveyn küçülsün, yuva yalnız kalsın.
+frame: images/42.png · sha256:73efa4c4ba14e625
+-----
+Both parents are already leaving when the shot opens: the tortoise is mid-step on the sand toward the water with one front leg reaching out, and on the right the snake is sliding away, the last third of its body still drawing through the dry grass. Then the snake's tail clears the flat stone and the grass closes over it — at that instant the hollow in the sand holds nothing but the eggs, so the shore begins the clip with two parents in the picture and ends with none. The water behind keeps its long low evening shimmer, the reeds along the far bank lean together in one direction, and a thin veil of dry sand lifts where the tortoise's foot comes down and drifts off to the side. Nothing returns to the nest. Camera: a very slow pull back of about a hand's width, letting more of the sandy hollow into frame and easing to a complete stop. The clutch keeps the same number of eggs with each one holding its own rounded leathery body and its own contact shadow, the snake stays one continuous even line that never loops back on itself or thickens, and the tortoise keeps four separate legs. Silent clip, no audio, no dialogue, mouth closed, no lip movement.
+-----
+DURUM: temiz
+REVİZE:
+
+
+=========================================================================
+KAMERA DAĞILIMI: kilitli 4 (K33, K35, K37, K41) · ileri süzülme 2 (K31, K38) ·
+yanal kayma 2 (K32, K39) · geri çekilme 2 (K34, K42) · aşağı yerleşme 2 (K36, K40).
+→ 5 farklı tür · 4 kilitli · aynı tür arka arkaya HİÇ tekrar etmiyor (en fazla 1).
+Sıra: ileri · yanal · KİLİT · geri · KİLİT · aşağı · KİLİT · ileri · yanal · aşağı · KİLİT · geri.
+S3 ile dikiş: K30 geri çekilme → K31 ileri süzülme (tür değişiyor).
+
+KAMERA KUYRUĞU: 5/12 karede (K33, K35, K37, K39, K41). K33/K37/K41 ekranda saman,
+buğday ve tüy harf taşıyor; K35 emaye harfli metal güğüm; K39 keskin galvaniz tel kafes
+kadrajın yarısı. Kalan 7 kare organik ve yazısız — orada kamera kesimin içinden akıp geçer.
+
+SÜRE DAĞILIMI: 4s ×3 · 5s ×6 · 6s ×2 · 7s ×1 — toplam plan 61s, ekranda ~43.0s.
+Ekranda bandı 2.4s – 5.0s; metronom yok. Temaslı/kalabalık kareler (K33, K35, K36, K37,
+K41, K42) bilerek kısa: anne-yavru teması ve sürü sayısı klip sonunda eriyor.
+
+🔴 KARE KUSURU — MOTION'DA ÖRTÜLDÜ, KAREDE ÇÖZÜLMEDİ:
+· K33 tam çözünürlükte "DOGURARAK" okuyor — üçüncü harfte Ğ'nin breve'i YOK.
+· K37 tane yazısı ilk altı harften sonra harf olmaktan çıkıyor; "YUMURTLAYARAK" okunmuyor.
+İkisinde de kamera kilitlendi ve yazıya YAKLAŞMIYOR (Mira K22 emsali: "TANAN" yazıyordu,
+kamera hiç yaklaşmadı, kare kabul edildi). K37'nin kilidi bunu bilerek olumlu yazıyor:
+tane "okunur harfe keskinleşmez". Hüküm Mami'nin — kare yeniden basılacaksa motion aynen kalır.
+=========================================================================

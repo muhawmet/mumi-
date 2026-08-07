@@ -13,6 +13,14 @@ prompt'un doğduğu yer değil.
 
 @docs/ai/faz-icraat.md
 
+**Ve ölçülenler her oturumda otomatik yüklenir.** Mami'nin 2026-08-07 emri: *"her yeni
+sohbette sıfırdan anlatıyorum, artık öğrenme de."* Mekanizma ölçüldü: yeni oturum yalnız
+`CLAUDE.md` + faz profili + `MEMORY.md` yüklüyordu, ölçümler başka dosyalardaydı ve kimse
+açmıyordu — oturum **prosedürü** biliyor, **ölçümü** bilmiyordu. Aşağıdaki dosya o boşluktur:
+yalnız *modelin davranışını değiştiren* ölçüm girer, tavanı sabit, oturum kapanışında yazılır.
+
+@agents/OLCULENLER.md
+
 <!-- FAZ ANAHTARI (2026-08-05: kısa bir İNŞA turu açıldı ve KAPANDI — Dörtlü Masa'yı kanıtlı
      kapıya çevirme turu; kaydı `docs/ai/INSA-RECEIPT-2026-08-05.md`. Aktif faz yine İCRAAT.)
      Üstteki tek satır ajanın hangi yasayla

@@ -325,6 +325,48 @@ tek-kişi ve KİLİT 7'nin şema yasakları aynen durur.
 
 ---
 
+## 🔴🔴🔴 KİLİT 13 — REFERANS KULLANIMI (2026-08-07, 27 kare basılarak ÖLÇÜLDÜ)
+
+Mami: *"kötü frameler, iyi bak, durdur gerekirse — hiç bizim standardımız değil!!!
+referanslarda sıkıntı var galiba."* Haklıydı. 27 kare basıldı, üçü açıldı, kusur bulundu.
+Basım ajanı da bağımsız olarak aynı cümleyi yazdı: *"K45, K47, K48 plaka klonu —
+`@mutfak` referansı kameramı eziyor."*
+
+🔴 **REPO'NUN VARSAYIMI YANLIŞTI.** `_REFERANS-PROMPTLARI.txt` şöyle diyor: *"plaka
+TAŞIR: geometri · TAŞIMAZ: kadraj, mesafe, ışık."* Bu bir **umut**, motorun sözleşmesi değil.
+Ölçülen davranış:
+
+| referans türü | sonuç | kanıt |
+|---|---|---|
+| **karakter** (beyaz fonda tek figür) | ✅ **ÇALIŞIYOR** — doğru çocuk, doğru gardırop | K01, K09 |
+| **mekân plakası** (`@mutfak`, `@koridor`) | ❌ **KAREYİ EZİYOR** — motor geometriyi değil BÜTÜN kompozisyonu kopyalar; kadraj, açı, fon, ışık plakanın olur | K45 · K47 · K48 plaka klonu çıktı |
+| **nesne plakası** (`@maket` — boş stüdyo fonunda) | ❌ ya klonlar (K31: bej stüdyo fonu + üstüne şema) ya geometriyi kaybeder (K09: maket beyaz topak oldu) | K09 · K31 |
+
+🔴🔴 **VE `@mira` METİNDE TARİF EDİLMEZ — bu turda ihlal edildi, kusur BENDEYDİ.**
+Mami kareyi açtı ve sordu: *"neden kızı tarif etmiş?"* Basım ajanına verdiğim brifingde
+`@mira` etiketini *"nötr tanıma çevir"* diye yazdım ve örnek olarak şu cümleyi verdim:
+*"a ten-year-old Turkish girl in a deep red brushed-cotton hooded sweatshirt…"*.
+Bu, KİLİT 2'nin *"tag'li kişi ASLA tarif edilmez"* maddesinin doğrudan ihlali — üstelik
+**yaşı da yanlış** (10 yazıldı; 6. sınıf, 11-12). Referans 12'lik bir kız taşırken metin 10
+diyor ve motor ikisinin arasında bir çocuk üretiyor.
+**Doğru yazım: metinde yalnız `the girl` / `she`.** Yaş, ten, saç, yüz, gardırop, milliyet
+YAZILMAZ — hepsini referans taşır. Tek istisna, tagsız figür (bu derste yok).
+
+🔴 **YENİ KURAL — sahne karesi basılırken:**
+- **`references` alanına YALNIZ `@mira` geçilir.** Başka hiçbir plaka referans olarak verilmez.
+- **Mekân sürekliliği YAZIYLA taşınır.** Plaka dosyası ajanın **gözü** içindir: açar, bakar,
+  gördüğünü kendi cümlesiyle o karenin diliyle yazar. Motora resim olarak gitmez.
+- **`@maket` de yazılır, referansa verilmez** — ama tarifi HER karede aynı dört parçayla:
+  pembe beyin · adaçayı yeşili beyincik · sarı-oker omurilik soğanı · ondan inen omurilik ·
+  cilalı meşe taban · üstünde kazınmış pirinç plaka `İNSAN SİNİR SİSTEMİ`.
+- `@kedi` de yazılır (Anadolu tekiri, gri-kahve çizgili), referansa verilmez.
+
+🔴 **K31'İN İKİNCİ KUSURU — ŞEMA GERİ GELDİ.** Kare tıbbi bir infografiğe dönüşmüştü:
+etiket çizgileri, `AKSON VE DENDRİTLER` kutucuğu, köşede İngilizce yazılı **inset panel**.
+KİLİT 7 bunu zaten yasaklıyordu ama yasak prompt'un SONUNDAydı ve referans onu ezdi.
+**Şema yasağı artık gövdenin İLK cümlelerinde, olumlu biçimde durur:** *"this is a lit
+photographic scene of real objects in a room, not a diagram"* — sonra negatif.
+
 ## 🔴🔴🔴 KİLİT 12 — ZENGİN HAYAT (2026-08-07, Mami emri — DÜNYAYI DEĞİŞTİRİR)
 
 > Mami: *"çok önemli — **zengin bir hayat, fakir değil.** Özel okullara yapıyoruz, devlete değil!"*

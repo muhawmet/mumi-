@@ -19,7 +19,7 @@ import {
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const oku = (y) => readFileSync(resolve(REPO, y), 'utf8');
 
-const AKTIF_REF = 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/_ESKI/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt';
+const AKTIF_REF = 'scripts/__fixtures__/referans-bes-blok.txt';
 const ALTIN_KARE = 'agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/PROMPTLAR/A-K01-K15.txt';
 
 const KUYRUK = [
@@ -126,7 +126,15 @@ describe('SAHNE karesine tür yasağı KONULMAZ', () => {
   });
 });
 
-// 2026-08-07: AKTIF_REF yolu `_ESKI/` altına çevrildi. Sebep, bu dosyanın kendi yorumunda
+// 🔴 2026-08-07 (ikinci onarım): AKTIF_REF artık `scripts/__fixtures__/` altında.
+// Birinci onarım yolu `_ESKI/` arşivine çevirmiş ve "arşiv nüshası donmuştur" demişti —
+// ama donmadı: aynı gün öbür oturum referans setini yeniden yazınca arşivdeki nüsha da
+// 5 bloktan 3'e düştü ve beş test birden kırıldı. Ders: ARŞİV DE CANLIDIR. Bir testin
+// fikstürü üretim ağacının HİÇBİR yerinde duramaz; bu dosya git 940ff7da'dan donduruldu
+// ve artık yalnız test için yaşıyor. Ölçtüğü şey ayrıştırıcının BİÇİM körlüğüdür,
+// herhangi bir projenin o günkü referans listesi değil.
+// (Aynı kusur sınıfının bugünkü öbür iki örneği: edit-plan.mjs ve current-work.mjs
+//  ölçtükleri şeyin YERLEŞİMİNİ varsayıyordu.) Sebep, bu dosyanın kendi yorumunda
 // yazılı kusur sınıfının aynısı: fikstür olarak CANLI bir üretim dosyası kullanılıyordu.
 // Denetleyici projesi sıfırdan yazıma açılınca (kahraman @efe → @mira) dosya arşive taşındı
 // ve altı test hedefini kaybetti — testin ölçtüğü şey ayrıştırıcının BİÇİM körlüğü olmasına
@@ -189,7 +197,7 @@ describe('PLATFORM — CRLF sapma üretmez', () => {
 // şeyin YERLEŞİMİNİ varsayıyor. Kusur "yeni işlerde dene" denince ortaya çıktı.
 describe('ayrıştırıcı beş gerçek biçimi de görür — sessiz sıfır YOK', () => {
   const BICIMLER = [
-    ['Denetleyici (numaralı + ==== )', 'agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/_ESKI/Denetleyici ve Düzenleyici_REFERANS-PROMPTLARI.txt'],
+    ['Denetleyici (numaralı + ==== )', AKTIF_REF],
     ['Eşeyli (numarasız + ----- )', 'agents/COMMAND-INBOX/Biten/6. Sınıf - Eşeyli ve Eşeysiz Üreme/Eşeyli ve Eşeysiz Üreme_REFERANSLAR.txt'],
     ['Hücre (İngilizce giriş)', 'agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/Hücre ve Organelleri_REFERANSLAR.txt'],
     ['Kuvvet (markdown ### )', 'agents/COMMAND-INBOX/Biten/Kuvvet ve Kuvvetin Ölçülmesi/Kuvvet ve Kuvvetin Ölçülmesi_REFERANSLAR.txt'],

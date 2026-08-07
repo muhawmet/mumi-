@@ -1,0 +1,51 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — REVİZE
+=========================================================================
+Mami hükmü 2026-08-07: K33 okunuyor, KALIYOR. K37 revize.
+Kare yeniden basılınca images/37.png üzerine yazılır; MOTION/S4.txt K37 bloğu
+bu revizeye göre YENİDEN YAZILDI (aşağıda gerekçesi var).
+
+
+# K37 — "İkincisi yumurtlayarak çoğalmaktır."   🔴 REVİZE 1
+
+ÖLÇÜLEN KUSUR (gözle, tam çözünürlükte):
+  Tane harfler "YUMURTL"den sonra harf olmaktan çıkıyor. İki sebebi var ve ikisi de
+  yazının kendisinde değil, YERLEŞİMİNDE:
+   1. 13 harf zemine DERİNLEMESİNE dizilmiş — uzaktaki harfler perspektifte eziliyor.
+      K33'ün DOĞURARAK'ı 9 harf ve kameraya daha paralel; o yüzden tuttu.
+   2. 50mm f/2.8 netlik alanı kelimenin uzak yarısını yumuşatıyor.
+  AYRICA: prompt "a clutch of freshly laid eggs" istiyordu — basılan karede
+  TEK YUMURTA YOK. Yumurtlama karesinde yumurtanın olmaması kavramın kendisini düşürüyor.
+
+REVİZE KARARI: kelime kısalmıyor, AÇI değişiyor. Kamera yukarı çıkıp zemine bakınca
+13 harfin hepsi aynı ölçekte ve aynı netlik düzleminde kalır. Yumurtalar kadraja girer.
+-----
+A high three-quarter overhead view, 35mm lens at f/8 so the entire swept earth floor stays
+in one sharp plane, looking down into the open coop doorway. The dominant subject is a
+clutch of seven pale cream eggs resting in a shallow straw nest, and @tavuk stands beside
+them with one foot lifted, her body turned so the eggs are never hidden. Below the nest,
+on the swept packed earth, the word YUMURTLAYARAK is laid out in dry corn kernels running
+straight across the frame parallel to the bottom edge, every letter the same height and the
+same distance from the lens, with clear dark earth separating one letter from the next. The
+living location features kuru saman çöpleri, ahşap folluk kenarı, tek bir tüy parçası and
+devrik bir teneke ölçek, creating an immersive @kumes environment. Low warm sunlight enters
+from the open door behind, raking across the kernels so each one casts its own small shadow
+and the letters stand up from the ground by contrast rather than by colour. Soft contact
+shadows form where the eggs touch the straw and where each kernel touches the earth, adding
+volumetric depth. Continuous physically-based shading renders every surface with high tactile
+realism. Skin stays warm matte with low specular and is never tinted green or grey.
+
+STYLE: 3D CGI RenderMan style, rustic farm aesthetic, highly detailed straw and feathers, soft lighting.
+LIGHT AND PALETTE: Warm sunlight piercing dust motes, golden straw tones, bright white eggs, soft red accents.
+TEXT: the word YUMURTLAYARAK laid out in dry corn kernels on the swept earth, running straight
+across the frame parallel to the bottom edge, every letter the same height and every letter at
+the same distance from the lens, reads left-to-right, never mirrored — one word, thirteen
+letters, all capital Y-U-M-U-R-T-L-A-Y-A-R-A-K, with clear dark earth between neighbouring letters.
+NEGATIVE: the kernels stay in one straight line at one single depth, the far end of the word
+stays exactly as sharp and exactly as large as the near end, the seven eggs stay seven and
+each keeps its own shell.
+-----
+
+MOTION SONUCU: K37 bloğu yeniden yazıldı. Eski motion kusuru KABULLENİYORDU —
+"never sharpens into readable letters" yazıyordu, yani bozuk yazıyı bozuk tutmayı
+görev edinmişti. Yeni karede yazı okunur olduğu için motion artık onu KORUYOR.
+Kamera kilidi duruyor (yazı karesi), ama kilit cümlesi tersine döndü.

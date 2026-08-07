@@ -23,7 +23,29 @@ tek yasak işidir — kusurun kaynağı o metnin kendisiydi.
 3. `node scripts/dunya-kilidi.mjs pixar_3d_edu --register=edu` — **kart.** Okunur, yapıştırılmaz.
 4. `agents/PROMPT-YASASI.md` §2 (start-frame şablonu) + §0 (animasyonun ruhu) + §0.3 (negatif üçlü kapı).
 
-## KADRAJ KOTASI — sekansına düşen pay KİLİTTİR
+## 🔴🔴 2. TUR — DÖRT DEMO KARESİ REDDEDİLDİ (2026-08-07)
+
+Mami dört kareye baktı: **"çok kötüler 4'ü de, ne alaka"** · **"altınlarımıza bak, adam akıllı
+yaz"** · **"şu çaydan da kurtul, nefret ettiler."** Kusur karelerde değil, **aşağıdaki kotadaydı.**
+
+🔴 **ÖNCE ŞUNU YAP — kural okuma, KAREYE BAK.** `Read` ile aç:
+- `agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/images/14.png` — çocuk + iş + yoğun masa
+- `agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/images/28.png` — kavram yazısı sahnenin malzemesinden
+- `agents/COMMAND-INBOX/Biten/5. Sınıf - Hücre ve Organelleri/images/48.png` — hücre içi: koyu, makro-gerçek, cam gibi
+Ve reddedilenlere bak: `6. Sınıf - Denetleyici ve Düzenleyici Sistemler/_SUPHELI/` (3 kare).
+**Farkı gözünle gör, sonra yaz.** Bu turun tek gerçek talimatı budur.
+
+🔴 **ÜÇ DEĞİŞİKLİK — ENZIM KİLİT 11'de tam metin, özeti:**
+1. **Mira kotası SÖKÜLDÜ.** 56 karenin **en az 30'unda** Mira var, üst sınır yok. Değişen
+   MESAFE ve AÇI, varlığı değil. Elleri kadrajda ve **bir şey tutuyor.** Masa DOLU.
+2. **Hücre dünyası KOYU ve mücevher gibi** — KİLİT 4ø (oda aydınlık) orada geçersiz.
+   Derin koyu alan + tek parlayan kütle + cam/sıvı makro malzeme. Pastel mor tünel YASAK.
+3. **ÇAY YASAK.** Ayna kilidi **hamura** taşındı (yassı topak → kabarmış kubbe), pencere ve
+   sobanın ateşi diğer iki fark. `ÇAY` yazısı düştü, yerine `UN`/`SÜT`/`TUZ`.
+
+⚠ Aşağıdaki kadraj kotası tablosu **GEÇERSİZDİR**, tarih olarak bırakıldı.
+
+## ~~KADRAJ KOTASI~~ — GEÇERSİZ, KİLİT 11.1 söktü
 
 KİLİT 10'un ölçek merdiveni sekanslara şöyle bölündü. **Kotana uy**; iki ardışık karede
 aynı ölçek kullanma, aynı ölçek üçüncü kez üst üste gelirse kare yanlıştır.

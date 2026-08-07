@@ -1,0 +1,713 @@
+HAYVANLARDA ÜREME, BÜYÜME VE GELİŞME — 6. SINIF · START FRAME PROMPT'LARI (TAM SET: K01–K54)
+=========================================================================
+Dünya: pixar_3d_edu · register EDU · Image: Nano Banana 2 · Motion: Kling 3.0 · VO: ElevenLabs.
+Kilit kaynağı: Hayvanlarda Üreme_ENZIM.md · Referans: Hayvanlarda Üreme_REFERANSLAR.txt
+VO eşlemesi: Hayvanlarda Üreme_SESLENDIRME.txt (K01 = 1. cümle … K54 = 54. cümle, birebir).
+
+REFERANSLAR (sahnede yalnız @efe, @tavuk, @golet, @balik, @kumes, @kedi, @ahir, @tirtil, @kurbaga — görünüş TARİF EDİLMEZ):
+ @efe · @kumes · @tavuk · @kedi · @golet · @balik · @kurbaga · @tirtil · @ahir
+
+AYNA SÖZLEŞMESİ — K01 ↔ K54:
+ · K01 → 40mm lens f/4, kümes taş eşiği yüksekliğinde. @efe mid-chest up. Kümeste tavuk kuluçkada, hiç yumurta çatlak DEĞİL. Ahır köşesinde kedi ve 4 yavru (gözleri KAPALI). Hasır sepet taş eşikte DEVRİK ve BOŞ.
+ · K54 → 40mm lens f/4, kümes taş eşiği yüksekliğinde. @efe mid-chest up. Kümeste tavuk altında bir yumurta ÇATLAMIS, kabuk iki parça, ıslak sarı civciv orada. Kedilerin gözleri AÇIK, biri oturmuş. Hasır sepet DOĞRULTULMUŞ, içinde tek kabuk parçası var.
+
+=========================================================================
+🔴 SAHNE YASASI — HER KAREYE UYGULANIR (2026-08-07 canary'sinde üç denemeyle ölçüldü)
+
+Bu blok her karenin başına eklenir. K01 üç kez basıldı; birinci ve ikincide sahne MAKET
+çıktı, üçüncüde bu üç madde yazılınca düzeldi. Kusur karede değil, metnin EKSİĞİNDEYDİ.
+
+1 · GERÇEK ÖLÇEK — "readability" için hiçbir şey büyütülmez.
+   `props 10-15% overscale` cümlesi bir karede çocuk + hayvan + bina varken ölçek
+   hiyerarşisini yok ediyor: tavuk çocuk gövdesi kadar, sepet göğsü kadar, 5 adım
+   ötedeki kedi kafası kadar çıkıyor. Sonuç "her şeyi eşit anlatan oyuncak şehir".
+   Bunun yerine kare başına GÖRELİ ÖLÇEK yazılır:
+     "tavuğun sırtı çocuğun dizine gelir" · "sepet baldırından yüksek değil" ·
+     "beş adım ötedeki kedi ailesi kadrajda kolu kadar geniş"
+   Kural: overscale YOK; gerçek göreli boy, mekânı büyük hissettiren şeydir.
+
+2 · DÜNYA KAREDE BİTMEZ.
+   Nesnelerin arkasında ne olduğu yazılmazsa motor oraya DÜZ BİR PANEL koyuyor
+   (K01'in ilk iki denemesinde kümesin arkası mavi bir levha çıktı — beyaz fonlu
+   element arka planının sahneye sızması). Her karede uzaklık yazılır: alçak taş duvar,
+   çıplak meyve ağacı, sabah pusu, açık soluk gök — dünya kadrajın ötesinde devam eder.
+
+3 · MAKET DEĞİL, YAŞANMIŞ YER.
+   · Zemin döşeli ve temiz değil: sıkışmış toprak, dağılmış saman, kurumuş tekerlek izi.
+   · ÖN PLAN ÖRTMESİ zorunlu — birkaç saman sapı ya da direk kenarı en yakın kenarı
+     kesip odaktan çıkar. Dekor hissini öldüren tek şey budur.
+   · Hiçbir şey temiz değil: omuzda toz, ayakkabıda çamur, harçta çipleme, yere düşmüş
+     tüy ve saman, ahşapta el izi. Ten mat, gözenekli, asimetrik — düz mum yüzey DEĞİL.
+
+⚠ ELEMENT REFERANSI KİMLİK İÇİNDİR, KOMPOZİSYON İÇİN DEĞİL.
+   Mekân elementine "keep exactly as shown" denirse motor sahneyi KURMAZ, iki dioramayı
+   yan yana YAPIŞTIRIR. Doğrusu: karakter için "aynı yüz, aynı beden"; mekân/nesne için
+   "yalnız malzeme ve renk; kadrajı ve yerleşimi serbestçe yeniden kur".
+
+4 · MİKRO DÜNYA — İHTİŞAM MİMARİ ÖLÇEKTEN GELİR (Mami, 2026-08-07: *"dull, hiç ihtişamlı değil"*)
+   Ölçüldü: sperm/yumurta ilk turda boş suda tek küçük nesneydi ve cansız çıktı. Altın
+   standarda bakıldı (`Hücre ve Organelleri` K45, kloroplast karesi) ve fark bulundu —
+   orada hücre bir NESNE değil, ufka giden bir ŞEHİR: tekrarlayan geometri kadrajı yönetiyor.
+   Mikro sahnede zorunlu üç şey:
+     · Kahraman nesne kadraja **arazi/gezegen** gibi girer — yüzeyi ufka kıvrılır, dokusu
+       manzara olur. Nesneyi büyütmek değil, dünyayı derinleştirmek.
+     · Arkada **aynı türden bir DİZİ** uzağa gider (her biri öncekinden küçük ve yumuşak),
+       böylece mekân kadrajda bitmez.
+     · **Tek renk rejimi + tek vurgu** (Hücre'de soğuk gri hücreler + tek yeşil; burada
+       derin teal su + tek amber çekirdek).
+   🔴 **MİKRO DÜNYADA YAZI YOKTUR.** Suya asılmış pirinç levha / etiket denendi ve Mami
+   reddetti — bu, kavramı taşımak için *gerçek kamerayla çekilebilecek bir nesne* aramaktır,
+   yani gerçek-video refleksi (`PROMPT-YASASI §0`). Kavram nesnenin KENDİSİYLE anlatılır.
+   Yazı, gerçekten yazı taşıyan bir yüzeyin bulunduğu yerde olur: kümes kapısındaki emaye
+   plaka gibi. Mami'nin kuralı: *"her sahnede değil, öğretici kısımlarda, sahneyle uyumlu."*
+
+=========================================================================
+
+-------------------------------------------------------------------------
+
+# K01 — "Efe o sabah dedesinin bahçesinde iki şeyi aynı anda gördü."
+FİKİR: Hikayenin kahramanı Efe'nin çiftlikteki farklı üreme şekillerini gözlemlemesi.
+-----
+40mm lens at f/4, held at coop step height. `@efe` gazes across the yard towards the corner of the `@ahir` where a `@kedi` rests with four kittens, their eyes closed. `@efe` is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The dusty courtyard features a wicker basket which lies tipped and empty on the stone step, alongside a rusty süt güğümü, scattered saman, and a galvaniz tel fence segment. Morning sunlight streaks across the dry earth, hitting the rough stone step and the metallic sheen of the milk jug, casting long shadows. The spatial comparison between the distant barn corner and the immediate foreground establishes the dual focus on both animal locations simultaneously, showcasing the vastness of the space. The morning light inherits its warm angle from the rising sun, setting the initial physical state of the tranquil farmyard. The tipped wicker basket rests firmly on the uneven stone step, casting soft contact shadows on the ground, while the milk jug sits solidly on the dirt. Eggs under the unseen `@tavuk` remain completely covered, not one egg cracked, preserving the serene atmosphere.
+
+STYLE: 3D CGI RenderMan style, vibrant cinematic animation, soft stylized realism.
+LIGHT AND PALETTE: Warm morning sunlight, deep earthy browns, vibrant greens, golden hour highlights.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: oversaturated, unnatural plastic skin, cartoonish exaggerations, deep black crushed shadows.
+-----
+-------------------------------------------------------------------------
+
+# K02 — "Kümeste tavuk, yumurtalarının üstünde kıpırdamadan oturuyordu."
+FİKİR: Kuşlarda yumurtlayarak üremenin ve kuluçka sürecinin durağan ama mucizevi doğası.
+-----
+85mm lens at f/2.8, positioned just inches away from the straw bedding inside the wooden structure. A `@tavuk` nestles deeply atop her hidden nest, maintaining a completely motionless posture. The cramped interior of the `@kumes` displays scattered saman, an old emaye plaka nailed to the back wall, a chipped porcelain water bowl, and a thick wooden beam overhead. Soft, diffused daylight filters through gaps in the wooden planks, illuminating the textured feathers of the bird and the rough, dry straw scattered around her. The material transformation of the nesting area highlights the warmth being transferred from the bird to the hidden clutches below her body, enhancing the feeling of a safe, enclosed sanctuary for the incubating eggs. The inherited dim lighting and cramped physical state of the enclosure carry over perfectly from the surrounding morning ambiance outside. The bird's heavy body makes firm contact with the straw nest, generating deep, soft contact shadows that ground her solidly within the rustic environment, while the water bowl rests firmly against the dirt floor. The emaye plaka on the wall clearly displays the word KÜMES.
+
+STYLE: 3D CGI RenderMan style, rich textural detail, intimate macro photography feel.
+LIGHT AND PALETTE: Soft diffused ambient light, dusty ochre, warm amber, muted rustic browns.
+TEXT: displays the word KÜMES on an enamel plate with baked enamel typography, reads left-to-right, never mirrored — one word, five letters, the second a dotted capital Ü, the fifth a capital S.
+NEGATIVE: harsh flash photography, flat lighting, messy textures, artificial neon colors.
+-----
+-------------------------------------------------------------------------
+
+# K03 — "Ahırın köşesinde kedi, yeni doğmuş yavrularını yalıyordu."
+FİKİR: Memelilerde doğurarak üreme ve anne bakımı kavramının doğrudan gösterimi.
+-----
+50mm lens at f/3.5, held close to the dusty floor level in the shadowy corner. A mother `@kedi` licks her newly born kittens rhythmically in the sheltered corner of the `@ahir`. The quiet space features an overturned ahşap kova, a pile of dry saman, a coiled halat, and a rusted demir kanca hanging from a low wooden post. A narrow shaft of golden sunlight pierces the gloom, landing directly on the grooming feline family, highlighting the slick, wet fur of the tiny newborns against the dry, dusty floor. The cause-effect relationship of the grooming action demonstrates the immediate care, cleansing process, and intense physical bond essential for the initial survival and warmth of these extremely vulnerable offspring in the cold barn. The inherited narrow beam of golden sunlight and the dusty physical state of the textured floor perfectly maintain the authentic, rustic atmosphere of the old barn structure. The mother's paws press softly into the scattered straw, casting delicate, soft contact shadows, while the overturned wooden bucket rests heavily on the uneven ground behind them, creating a solid dark silhouette in the background space. The tiny kittens huddle together tightly, seeking warmth and protection.
+
+STYLE: 3D CGI RenderMan style, dramatic chiaroscuro, tender and evocative mood.
+LIGHT AND PALETTE: High contrast shaft of light, deep shadow blues, warm golden fur tones.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: bright flat studio lighting, lack of fur detail, overly stylized abstract geometry.
+-----
+-------------------------------------------------------------------------
+
+# K04 — "Yavru kediler daha o günden annelerine benziyordu."
+FİKİR: Kalıtım ve ebeveyne benzerlik olgusunun görsel bir karşılaştırması.
+-----
+100mm lens at f/2.8, positioned intimately at kitten eye level within the nest. A tiny `@kedi` wobbles slightly while leaning against its mother's matching patterned side. The snug resting area within the `@ahir` contains a folded çuval bezi, scattered pieces of saman, a dusty tahta kasa, and a small toprak kase for water. Gentle ambient light bounces off the wooden crate, softly illuminating the identical fur patterns and facial markings shared by both the miniature kitten and the adult feline. The spatial comparison between the small offspring and the large parent visually reinforces the concept of inherited physical traits appearing immediately after birth. The inherited calm physical state and consistent soft directional lighting maintain the deeply peaceful mood established in the previous moments. The tiny paws of the kitten make shaky but firm contact with the rough burlap sack, casting soft contact shadows that anchor the fragile body, while the clay water bowl and wooden crate sit heavily on the nearby floor. The striking resemblance serves as a perfect biological demonstration of genetic inheritance in mammalian reproduction.
+
+STYLE: 3D CGI RenderMan style, macro nature documentary aesthetic, highly detailed fur rendering.
+LIGHT AND PALETTE: Soft bounce light, warm beige, soft charcoal greys, earthy terra cotta.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: motion blur, unnatural eye colors, aggressive lighting, smooth plastic fur.
+-----
+-------------------------------------------------------------------------
+
+# K05 — "Yumurtaların içinde ne olduğunu ise kimse göremiyordu."
+FİKİR: Yumurtanın içindeki kapalı gelişim sürecinin yarattığı gizem ve merak.
+-----
+60mm lens at f/4, angled slightly downward toward the shadowed nest interior. A cluster of smooth, pale eggs rests completely undisturbed beneath the warm underbelly of the `@tavuk`. The rustic interior of the `@kumes` features tightly woven saman stems, a cracked kiremit parçası, scattered buğday taneleri, and a piece of frayed kendir ipi. Extremely dim, mottled light filters through the feathers above, catching only the subtle curvature and matte texture of the eggshells against the rough straw. The material transformation from the soft organic feathers to the rigid, protective calcium shells emphasizes the hidden, sealed environment where embryonic development secretly takes place. The inherited shadowy lighting and confined physical state perfectly preserve the claustrophobic yet safe atmosphere of the nesting box. The heavy eggs make solid, unmoving contact with the woven straw bed, generating precise soft contact shadows beneath their curves, while the roof tile fragment and scattered wheat grains rest securely against the dry dirt floor. The sealed shells maintain their impenetrable mystery.
+
+STYLE: 3D CGI RenderMan style, mysterious and atmospheric, high texture realism.
+LIGHT AND PALETTE: Very dim mottled light, stark whites, pale creams, deep sepia shadows.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: transparent shells, glowing eggs, direct harsh sunlight, messy composition.
+-----
+-------------------------------------------------------------------------
+
+# K06 — "Efe merak etti: biri doğuyor, öteki yumurtadan çıkıyordu."
+FİKİR: Gözlemlenen iki farklı üreme stratejisinin kahramanın zihninde soru işareti yaratması.
+-----
+50mm lens at f/2.8, framed at a natural viewing height facing the boy. `@efe` rubs his chin thoughtfully while looking back and forth between the two animal shelters. `@efe` is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The vibrant courtyard space includes a weathered ahşap çit, a rusted teneke saksı, a patch of yabani otlar, and a discarded tekerlek lastiği. Bright midday sunlight washes over the yard, highlighting the rough texture of the wooden fence and the boy's inquisitive facial expression. The spatial comparison of the boy standing centrally between the distant barn and the nearby coop physicalizes his mental comparison of the two distinct biological processes. The inherited bright outdoor lighting and the active physical state of the environment carry the narrative forward into the active inquiry phase. The heavy rubber tire rests firmly against the dusty ground, casting deep, soft contact shadows, while the tin pot sits solidly on the wooden fence post. The boy's focused gaze drives the educational journey forward. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI RenderMan style, bright cinematic realism, expressive character animation.
+LIGHT AND PALETTE: Bright midday sun, sky blue, earthy browns, vibrant foliage greens.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: dull lighting, glossy reflective skin, exaggerated cartoon expressions, flat shading.
+-----
+-------------------------------------------------------------------------
+
+# K07 — "Cevap, hayvanlarda üreme ve gelişme çeşitliliğinde saklıydı."
+FİKİR: Doğadaki farklı stratejilerin, canlıların çeşitliliğinin bir sonucu olduğunun belirtilmesi.
+-----
+35mm lens at f/5.6, positioned high to provide a wide, sweeping overview of the farmyard. Various farm animals go about their daily routines across the expansive yard. The lively environment features a large saman balyası, a wooden el arabası, a scattered array of mısır koçanları, and a long su oluğu. Expansive, even sunlight bathes the entire scene, reflecting off the water trough and illuminating the varied textures of the hay and wooden tools. The scale change from the close-up portraits to this wide environmental shot illustrates the broad diversity of life and reproductive strategies coexisting in a single ecosystem. The inherited bright ambient light and the bustling physical state of the farm seamlessly connect the individual animal stories to the larger biological concept. The wooden wheelbarrow rests heavily on the dirt path, its metal wheel pressing in to cast soft contact shadows, while the hay bale, corn cobs, and long water trough sit securely on the earth. The entire farmyard pulses with the natural rhythm of life and growth.
+
+STYLE: 3D CGI RenderMan style, wide environmental establishing shot, rich atmospheric depth.
+LIGHT AND PALETTE: Expansive even sunlight, vibrant golden yellows, dusty earth tones, clear blues.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: shallow depth of field, empty backgrounds, gloomy lighting, low resolution textures.
+-----
+-------------------------------------------------------------------------
+
+# K08 — "Efe işin başına, üremeye bakmaya karar verdi."
+FİKİR: Bilimsel sürecin ilk adımı olan araştırmaya ve temellere inmeye karar verme anı.
+-----
+50mm lens at f/2.8, held at eye level to capture a determined portrait. `@efe` nods definitively, adjusting his posture with a newfound sense of focused purpose. `@efe` is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The background reveals a blurred ahşap sundurma, a stack of kiremitler, a hanging kurutulmuş biber dizisi, and a small ahşap tabure. Crisp, directional sunlight highlights the side of his face, catching the determination in his eyes and the subtle weave of his shirt collar. The cause-effect of his sudden realization propels him into action, transitioning the narrative from passive observation to active scientific investigation. The inherited natural sunlight and the stable physical state of the porch maintain the consistent reality of the farm setting. The wooden stool rests firmly on the porch planks, casting soft contact shadows that anchor it within the space, while the stacked roof tiles and dried pepper strings sit solidly against the rustic wall. His expression shows he is ready to learn.
+
+STYLE: 3D CGI RenderMan style, expressive character portrait, cinematic shallow depth of field.
+LIGHT AND PALETTE: Crisp directional sunlight, warm skin tones, faded terracotta, rustic reds.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: poorly lit face, distracting background elements, shiny skin, lack of emotion.
+-----
+-------------------------------------------------------------------------
+
+# K09 — "Hayvanların çoğu eşeyli ürer."
+FİKİR: Genel kuralın, yani erkek ve dişinin katkısıyla gerçekleşen eşeyli üremenin tanıtılması.
+-----
+85mm lens at f/4, positioned from a low, respectful angle looking across the pasture. A male and female `@tavuk` (rooster and hen) stand side-by-side foraging actively in the grass. The vibrant pasture contains tall yeşil çimenler, a few scattered çakıl taşları, a broken ağaç dalı, and a distant çit direği. Bright, clear daylight illuminates the striking contrast between the vibrant, ornate plumage of the male and the subdued, camouflaged feathers of the female. The spatial comparison between the two distinct sexes visually establishes the fundamental concept of sexual dimorphism and the necessity of both partners in the reproductive cycle. The inherited bright lighting and the active physical state of the foraging birds continue the lively, educational tone of the farmyard exploration. The birds' clawed feet make precise, firm contact with the dirt and grass, casting sharp soft contact shadows that ground their movements, while the broken tree branch and fence post rest heavily on the soil. The pairing perfectly illustrates the biological requirement for two distinct individuals.
+
+STYLE: 3D CGI RenderMan style, vibrant nature documentary, sharp focus on plumage details.
+LIGHT AND PALETTE: Bright clear daylight, iridescent greens and reds, earthy browns, vibrant grass green.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: muddy textures, unnatural animal proportions, dark silhouettes, flat lighting.
+-----
+-------------------------------------------------------------------------
+
+# K10 — "Bir erkek üreme hücresi ve bir dişi üreme hücresi birleşir."
+FİKİR: Üremenin temel taşı olan döllenme olayının (hücresel düzeyde) kavramsal olarak ifade edilmesi.
+-----
+100mm macro lens at f/2.8, positioned in an abstract, microscopic-style conceptual space. A glowing conceptual representation of male and female cells approaches each other slowly in a fluid environment. The abstract background is stylized using physical farm elements like floating su damlacıkları, a magnified toz zerresi, a translucent yaprak damarı, and a glowing polen tozu to ground the science in nature. Soft, ethereal internal luminescence radiates from the cellular shapes, casting a gentle glow on the surrounding suspended particles and water droplets. The material transformation of farm reality into a microscopic conceptual space bridges the gap between the macroscopic animals and the invisible cellular biology driving their reproduction. The inherited fluid physics and floating physical state maintain a sense of biological life and natural rhythm despite the abstraction. The suspended cellular spheres create soft contact shadows where floating water droplets interact with the leaf vein, anchoring the microscopic forms and pollen grains weightlessly within the fluid medium.
+
+STYLE: 3D CGI RenderMan style, stylized microscopic visualization, ethereal and educational.
+LIGHT AND PALETTE: Ethereal internal luminescence, glowing cyan, soft magenta, deep fluid blues.
+TEXT: the word DÖLLENME formed only from the scene's own material at the point of contact — never a tag, plaque or board, reads left-to-right, never mirrored — one word, eight letters, the second a dotted capital Ö, the fourth and fifth capital Ls.
+NEGATIVE: horrific biology, scary textures, overly complex scientific diagrams, harsh clinical white light.
+-----
+-------------------------------------------------------------------------
+
+# K11 — "Erkek üreme hücresine sperm denir."
+FİKİR: Erkek üreme hücresinin isminin ve genel hareketli formunun öğretilmesi.
+-----
+100mm macro lens at f/4, tracking the subject horizontally across the conceptual fluid space. A single, stylized, tadpole-like conceptual cell swims vigorously forward using its tail. The surrounding fluid space contains scattered ince kum taneleri, floating yosun parçacıkları, tiny hava kabarcıkları, and a magnified su piresi kabuğu. A focused beam of cool, directional light highlights the streamlined shape and dynamic movement of the cell, emphasizing its active, mobile nature. The cause-effect of the tail's rapid motion propelling the cell forward visually defines the specific biological function and energetic characteristics of the male reproductive cell. The inherited fluid dynamics and the suspended physical state of the microscopic environment maintain visual continuity with the previous cellular exploration. The cell's tail makes rhythmic contact with the fluid medium, generating subtle pressure waves and soft contact shadows on the floating algae particles, while the fine sand grains sink slowly onto the bed.
+
+STYLE: 3D CGI RenderMan style, dynamic microscopic visualization, sleek and energetic.
+LIGHT AND PALETTE: Cool directional beam, electric blue, stark white highlights, deep teal background.
+TEXT: the word SPERM no on-screen word in this frame — the concept is carried by the thing itself, reads left-to-right, never mirrored — one word, five letters, all capital S-P-E-R-M.
+NEGATIVE: gross organic matter, muddy colors, static lifeless rendering, confusing chaotic background.
+-----
+-------------------------------------------------------------------------
+
+# K12 — "Dişi üreme hücresine ise yumurta denir."
+FİKİR: Dişi üreme hücresinin isminin ve büyük, durağan yapısının öğretilmesi.
+-----
+100mm macro lens at f/4, positioned completely static facing the large central subject. A massive, perfectly spherical conceptual cell pulses gently while remaining stationary in the fluid. The surrounding micro-environment features soft pamukçuk lifleri, glowing mineral kristalleri, suspended bitki özsuyu, and delicate hücre zarı kıvrımları. Warm, omnidirectional ambient light glows from within the large sphere, illuminating its rich, complex internal textures and the nutrient-dense appearance of its core. The scale change between the tiny, active male cell seen previously and this massive, stationary female cell powerfully illustrates their complementary biological roles and differing physical investments. The inherited fluid environment and the tranquil physical state of the space contrast sharply with the previous frantic motion, emphasizing stability. The floating mineral crystals make gentle contact with the outer membrane of the massive cell, casting extremely soft contact shadows that accentuate the sphere's solid presence, while the cotton fibers drift lazily nearby.
+
+STYLE: 3D CGI RenderMan style, majestic microscopic visualization, rich glowing textures.
+LIGHT AND PALETTE: Warm omnidirectional glow, rich amber, soft pinks, deep crimson depths.
+TEXT: displays the word YUMURTA stamped onto a pewter metal tag, reads left-to-right, never mirrored — one word, seven letters, all capital Y-U-M-U-R-T-A.
+NEGATIVE: fast motion blur, small size, dull flat lighting, uninteresting plain surface.
+-----
+-------------------------------------------------------------------------
+
+# K13 — "Ama bu ikisinin nerede buluştuğu her şeyi değiştirir."
+FİKİR: Döllenmenin gerçekleştiği yerin (iç veya dış), üreme stratejisini tamamen değiştirdiğinin vurgulanması.
+-----
+50mm lens at f/2.8, positioned tracking the boy as he walks away from the coop. `@efe` turns his back to the camera and walks determinedly down the dirt path away from the farm buildings. `@efe` is framed from mid-chest up initially before turning, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The transitionary pathway features scattered çakıl taşları, a broken tahta çit, tall kuruyan otlar, and a discarded teneke kova. Shifting, dappled sunlight filters through the unseen trees overhead, creating a dynamic pattern of light and shadow across the boy's shoulders and the dusty path. The spatial transition from the confined, familiar farmyard toward an unseen new location mirrors the narrative shift from internal to external fertilization strategies. The inherited dappled lighting and the boy's active walking physical state propel the story into its next major educational segment. The boy's shoes make firm contact with the gravel path, generating crisp soft contact shadows with every step, while the discarded tin bucket and broken wooden fence rest heavily in the dry grass.
+
+STYLE: 3D CGI RenderMan style, dynamic tracking shot, cinematic dappled lighting.
+LIGHT AND PALETTE: Dappled shifting sunlight, dusty browns, faded greens, bright sunflecks.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: static boring composition, flat lighting, artificial looking walking motion, messy path.
+-----
+-------------------------------------------------------------------------
+
+# K14 — "Efe bahçenin alt ucundaki gölete indi."
+FİKİR: Dış döllenmeyi gözlemlemek için sucul bir ortama, yani gölete varış.
+-----
+35mm lens at f/5.6, held low near the water's edge looking across the surface. `@efe` kneels carefully at the muddy edge of the vibrant `@golet`, peering intently into the shallow water where a small `@balik` darts. `@efe` is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The aquatic environment features slick yosunlu kayalar, tall sazlık kamışları, floating nilüfer yaprakları, and a muddy su birikintisi edge. Bright, reflective sunlight bounces harshly off the rippling water surface, illuminating the boy's concentrated face and the slick, wet textures of the surrounding rocks and plants. The material transformation from the dry, dusty farmyard to this wet, reflective aquatic ecosystem perfectly introduces the specific environmental requirements for external fertilization. The inherited bright daylight and the kneeling physical state of the boy anchor his scientific observation in this new setting. The boy's knees make soft, sinking contact with the damp mud edge, casting deep soft contact shadows, while the lily pads float lightly on the water's surface tension. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI RenderMan style, vibrant aquatic environment, highly reflective and wet textures.
+LIGHT AND PALETTE: Reflective bouncing sunlight, deep aquatic greens, muddy browns, shimmering blues.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: dry arid look, matte water, dull lighting, cartoonish fish.
+-----
+-------------------------------------------------------------------------
+
+# K15 — "Suyun içinde balıklar sığ kıyı boyunca yüzüyordu."
+FİKİR: Dış döllenme konusuna giriş yapmak için sığ sudaki balıkları gösteriyoruz.
+-----
+Using a 35mm lens positioned slightly above the water surface at a distance of approximately 1.5 meters from the subjects, we observe the @balik as they continuously swim through the clear shallow area of the @golet. The location features natural elements such as yeşil sazlık, yuvarlak çakıl taşları, and a piece of çürümüş dal partially submerged in the mud. The primary light source is the bright midday sun filtering through the rippling water, casting dynamic, dancing caustic patterns that land directly on the sandy bottom and highlight the smooth, reflective scales of the fish. This demonstrates a spatial comparison between the vastness of the water body and the specific shallow breeding ground chosen for reproduction. Continuity is maintained through the consistent sun direction established earlier, ensuring the water's physical state remains clear and vibrant. Soft contact shadows anchor the pebbles and sunken wood to the riverbed, preventing any floating appearance. The interaction of light and the wet surfaces creates a realistic material transformation from dry to submerged textures. The entire scene captures the serene movement of the aquatic life in their natural habitat, emphasizing the tranquil yet purposeful behavior of the fish as they navigate the coastal edge.
+
+STYLE: 3D CGI Animation, RenderMan, photorealistic underwater macro photography, National Geographic style
+LIGHT AND PALETTE: Bright midday sun rays, shimmering caustics, cyan and aqua blues with earthy browns
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: cartoon, low resolution, murky, blurry
+-----
+-------------------------------------------------------------------------
+
+# K16 — "Dişi balık yumurtalarını doğrudan suya bırakır."
+FİKİR: Dış döllenmenin ilk adımı olan yumurtaların suya bırakılmasını gösteriyoruz.
+-----
+Using a 50mm macro lens positioned underwater at a very close distance of approximately 0.3 meters, we observe the female @balik as she actively releases hundreds of tiny translucent spheres into the @golet. The immediate underwater location features natural aquatic elements such as yeşil yosun öbekleri, ince dere kumu, and a few pürüzsüz dere taşları. The primary light source is the bright sunlight penetrating the water surface, creating diffused light rays that land directly on the newly released eggs and highlight their soft, gelatinous material textures. This clear visual demonstrates a cause-effect relationship where the fish's muscular contraction results in the sudden expulsion of eggs into the open environment. Continuity is seamlessly maintained through the identical underwater lighting and the consistent physical state of the flowing water. Soft contact shadows carefully anchor the green moss and smooth stones to the sandy riverbed, providing depth and realism to the macro environment. The entire composition focuses closely on the biological process, capturing the delicate nature of the spherical eggs as they begin to slowly drift downwards through the illuminated water column, marking the very beginning of the external reproduction cycle in this aquatic habitat.
+
+STYLE: 3D CGI Animation, RenderMan, cinematic macro biological rendering, BBC Earth documentary style
+LIGHT AND PALETTE: Diffused sunlight, glowing translucent elements, teal, soft amber, and pale green
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: dry, 2D animation, artificial lighting, text
+-----
+-------------------------------------------------------------------------
+
+# K17 — "Erkek balık da spermlerini aynı suya bırakır."
+FİKİR: Dış döllenmenin ikinci adımı olan erkek balığın katkısını vurguluyoruz.
+-----
+Using a 50mm macro lens positioned underwater at a distance of approximately 0.3 meters, we observe the male @balik as he vigorously releases a cloudy white substance into the exact same area of the @golet. The immediate environment features natural elements like yeşil yosun öbekleri, ince dere kumu, and several pürüzsüz dere taşları scattered on the bottom. The primary light source remains the bright sunlight penetrating the water surface, creating diffused light rays that land directly on the milky fluid and highlight its fine, particle-like material textures spreading outward. This visual demonstrates a cause-effect relationship where the fish's movement creates turbulent water currents that mix the newly released fluid with the surrounding environment. Continuity is seamlessly maintained through the identical underwater lighting and the consistent physical state of the previously released eggs drifting nearby. Soft contact shadows carefully anchor the green moss and smooth stones to the sandy riverbed, providing depth and realism to the scene. The entire composition focuses on this crucial biological contribution, capturing the dynamic swirling motion of the white substance as it disperses through the illuminated water column to complete the fertilization process.
+
+STYLE: 3D CGI Animation, RenderMan, high-speed macro photography, fluid dynamics simulation style
+LIGHT AND PALETTE: Piercing sunbeams, high contrast, deep aquatic blues with milky white accents
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: static, flat, muddy, low detail
+-----
+-------------------------------------------------------------------------
+
+# K18 — "Sperm ve yumurta dış ortamda, suyun içinde birleşir."
+FİKİR: Hücresel boyutta döllenme anını mikroskobik ölçekte gösteriyoruz.
+-----
+Using a 100mm extreme macro lens positioned underwater at a microscopic distance of approximately 0.05 meters, we observe the microscopic cells as they physically merge together within the clear water of the @golet. The tightly framed location features extreme close-up details like yüzen organik partiküller, mikroskobik yosun telleri, and incecik kum taneleri suspended in the background. The primary light source is a soft, diffused ambient sunlight that lands directly on the translucent spherical eggs, highlighting the delicate, gel-like material textures and the tiny cellular structures interacting. This intense visual demonstrates a material transformation as the two distinct biological elements fuse into a single unified zygote structure right before our eyes. Continuity is perfectly maintained by keeping the identical underwater lighting color palette and the consistent physical state of the gently drifting aquatic environment. Soft contact shadows delicately anchor the heavier sand grains settling in the distant background, maintaining a realistic depth of field. The entire composition captures the miraculous exact moment of fertilization, emphasizing the fragile and intricate biological connection happening freely in the open, unprotected aquatic ecosystem outside of any parental body. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, extreme microscopic 3D rendering, scientific visualization style
+LIGHT AND PALETTE: Soft ambient glow, subsurface scattering, emerald greens and translucent pearlescent whites
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: macro, out of focus, noisy, abstract
+-----
+-------------------------------------------------------------------------
+
+# K19 — "Buna dış döllenme denir."
+FİKİR: Sürecin adını koyarak dış döllenme terimini su altı ortamıyla özetliyoruz.
+-----
+Using a 35mm lens positioned underwater at a moderate distance of approximately 0.8 meters, we observe the newly fertilized eggs as they gently settle towards the bottom of the @golet. The wider location features natural riverbed elements such as yeşil su bitkileri, yuvarlak çakıl taşları, and a piece of çürümüş dal partially buried. The primary light source is bright sunlight filtering down, casting moving caustic patterns that land on the eggs and highlight their shiny, protective outer membrane textures. A glowing text element appears floating in the water. This visual demonstrates a spatial comparison between the tiny developing life forms and the vast, open aquatic environment surrounding them. Continuity is maintained through the consistent sun direction and the physical state of the gently flowing water currents. Soft contact shadows firmly anchor the pebbles and the sunken wood to the muddy riverbed below. The beautiful overall composition perfectly summarizes the complex concept of external fertilization occurring entirely within the wild aquatic nature.
+
+STYLE: 3D CGI Animation, RenderMan, wide cinematic underwater landscape, educational textbook style
+LIGHT AND PALETTE: Dappled sunlight, clear visibility, golden hour underwater, turquoise and warm sand colors
+TEXT: the phrase DIŞ DÖLLENME laid out in dark wet pebbles on the pale sand under the water, the I in DIŞ with NO dot above it, reads left-to-right, never mirrored — formed only of pebbles, never a plaque, board, sign or carved wood.
+NEGATIVE: dark, scary, overexposed, messy
+-----
+-------------------------------------------------------------------------
+
+# K20 — "Açıkta risk çoktur; çoğu yumurta yavruya dönüşemez."
+FİKİR: Yumurtaların dış ortamda karşılaştığı doğal tehlikeleri ve avcıları gösteriyoruz.
+-----
+Using a 50mm lens positioned underwater at a distance of approximately 0.5 meters, we observe a small passing @balik as it quickly consumes several of the exposed eggs in the @golet. The dangerous environment features natural elements such as sivri kayalar, karanlık oyuklar, and kopmuş yosun parçaları drifting by. The primary light source is a slightly dimmed, dappled sunlight that casts menacing, long shadows landing directly on the clustered eggs, highlighting their soft and highly vulnerable material textures against the rough rocks. This dramatic scene demonstrates a clear cause-effect relationship where the lack of physical protection results in the immediate loss of potential offspring to natural predators. Continuity is maintained through the consistent water murkiness and the established physical state of the remaining scattered eggs. Soft contact shadows deeply anchor the sharp rocks and organic debris to the uneven riverbed, adding a sense of peril and weight. The entire composition focuses on the harsh reality of external reproduction, emphasizing the extreme vulnerability and low survival probability of these developing embryos when left completely unguarded in a large, predatory aquatic ecosystem. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, dramatic underwater thriller styling, high-tension documentary style
+LIGHT AND PALETTE: Dimmed dappled light, deep shadows, dark teal, navy blue, and stark grey
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: cheerful, bright, flat lighting, cartoonish
+-----
+-------------------------------------------------------------------------
+
+# K21 — "Bu yüzden bir seferde milyonlarca yumurta bırakılır."
+FİKİR: Hayatta kalma stratejisi olarak devasa yumurta sayısını vurguluyoruz.
+-----
+Using a 24mm wide-angle lens positioned underwater at a distance of approximately 2 meters, we observe the massive cluster of eggs as they collectively blanket a large section of the @golet floor. The expansive location features numerous elements including geniş sazlık kökleri, büyük pürüzsüz kayalar, and yoğun yeşil yosun tabakaları covering the bottom. The primary light source is bright, volumetric sunlight rays piercing the water, landing broadly across the massive egg field to highlight the reflective, bubbly material textures of millions of tiny spheres. This wide shot demonstrates a massive scale change, revealing the sheer astronomical quantity of eggs produced to counter the environmental hazards previously shown. Continuity is strongly maintained by keeping the identical sunlight angle and the consistent physical state of the gentle underwater current sweeping over the mass. Soft contact shadows firmly anchor the large boulders and thick moss to the riverbed, preventing any visual floating. The composition powerfully visualizes the biological strategy of overproduction, capturing the breathtaking sight of countless potential new lives spread across the river bottom to ensure at least some survive to adulthood. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, epic wide-angle environment rendering, grand scale nature style
+LIGHT AND PALETTE: Volumetric god rays, luminous reflections, vibrant azure blue with golden highlights
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: claustrophobic, macro, dark, low contrast
+-----
+-------------------------------------------------------------------------
+
+# K22 — "Kurbağalar da yumurtalarını aynı suya bırakır."
+FİKİR: Kurbağaların da aynı dış döllenme yöntemini kullandığını gösteriyoruz.
+-----
+Using a 50mm lens positioned near the water surface at a distance of approximately 0.6 meters, we observe a green @kurbaga as it steadily pushes its gelatinous egg strings into the shallow edge of the @golet. The muddy shoreline location features elements like uzun saz yaprakları, ıslak çamur birikintileri, and su mercimekleri floating on the surface. The primary light source is the bright afternoon sun that lands directly on the thick, jelly-like egg masses, highlighting their extremely glossy, wet material textures and the tiny black dots inside. This scene demonstrates a spatial comparison between the amphibian's body size and the long, continuous strings of eggs being deposited in the vegetation. Continuity is maintained through the consistent warm sunlight and the physical state of the calm, murky water near the shore. Soft contact shadows securely anchor the muddy banks and the tall reeds to the solid ground, giving realistic depth. The composition introduces another species utilizing the same external reproductive strategy, focusing on the fascinating biological similarities in how different aquatic animals rely on the exact same water environment for their vulnerable offspring. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, shallow depth of field wetland photography, naturalistic amphibian style
+LIGHT AND PALETTE: Warm afternoon sun, glossy reflections, muddy browns, vibrant greens, and slimy blacks
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: dry, clean, artificial, low poly
+-----
+-------------------------------------------------------------------------
+
+# K23 — "Efe göletten bahçeye geri döndü."
+FİKİR: Odağı dış döllenmeden iç döllenme örneklerinin bulunduğu çiftliğe taşıyoruz.
+-----
+Using a 35mm lens at a distance of approximately 1.5 meters, we observe @efe framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. He happily walks away from the @golet towards the distant garden area. The transition location features natural outdoor elements like kuru toprak yol, ahşap çit direkleri, and sararmış çayır otları bordering the path. The primary light source is the bright, warm afternoon sun shining from the upper right, casting strong, directional light that lands on his face and shoulders, highlighting the woven cotton material textures of his casual shirt. This shot demonstrates a spatial comparison between the aquatic environment he is leaving behind and the terrestrial, domestic environment he is entering. Continuity is maintained through the consistent afternoon lighting and his energetic physical state as he moves. Soft contact shadows firmly anchor the wooden fence posts and dry grass to the dirt path. The composition smoothly transitions the narrative focus from wild aquatic life back to the familiar, human-centered farm environment, following his curious exploration journey. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, warm cinematic character animation framing, Pixar-level lighting
+LIGHT AND PALETTE: Golden hour sunlight, strong rim light, earthy browns, warm skin tones, and soft greens
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: green tint, grey skin, scary, night
+-----
+-------------------------------------------------------------------------
+
+# K24 — "Kümesteki tavuk hâlâ yumurtalarının üstündeydi."
+FİKİR: İç gelişimi ve ebeveyn korumasını vurgulamak için kuluçkadaki tavuğu gösteriyoruz.
+-----
+Using a 50mm lens positioned inside at a distance of approximately 1.2 meters, we observe the brown @tavuk as it patiently sits inside the wooden @kumes. The cozy interior location features rustic elements such as kuru saman balyaları, tahta folluk kenarı, and dökülmüş mısır taneleri scattered on the floor. The primary light source is a soft, warm light streaming through a small side window, landing directly on the bird's back and highlighting the intricate, layered feather material textures. This intimate scene demonstrates a clear cause-effect relationship where the bird's physical body heat provides the necessary incubation and protection for the hidden eggs beneath her. Continuity is maintained by keeping the warm, earthy color palette and the quiet, static physical state of the resting bird. Soft contact shadows deeply anchor the straw bedding, spilled corn, and nesting box to the wooden floorboards, grounding the warm nesting environment securely into the rustic space.
+
+STYLE: 3D CGI Animation, RenderMan, cozy interior farm rendering, rustic still-life style
+LIGHT AND PALETTE: Soft window light, dusty atmosphere, warm ambers, rich browns, and golden straw colors
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: cold, blue light, modern, sterile
+-----
+-------------------------------------------------------------------------
+
+# K25 — "Kuşlarda döllenme dişinin vücudunun içinde gerçekleşir."
+FİKİR: Kuşlarda döllenmenin anne vücudunun güvenli ortamında gerçekleştiğini açıklıyoruz.
+-----
+Using a 85mm portrait lens positioned at a distance of approximately 1.0 meters, we observe the @tavuk as it gently shifts its weight inside the warm @kumes. The detailed location features distinct elements like ince saman çöpleri, eski ahşap tahtalar, and ufak toz zerreleri floating in the air. The primary light source is a focused, golden beam from the window that lands exclusively on the bird's face and chest, highlighting the soft, downy feather material textures and the smooth beak. This focused visual demonstrates a conceptual proof of internal processes, emphasizing the animal's physical body as the secure vessel where fertilization safely occurs hidden from the outside world. Continuity is seamlessly maintained through the identical warm interior lighting and the calm, nesting physical state of the bird. Soft contact shadows securely anchor the individual straw pieces and the wooden planks to the structure's base. The composition shifts the educational focus entirely to internal fertilization, using the familiar farm bird to illustrate how some species protect their reproductive processes by keeping them completely enclosed within the female's protective anatomy. Continuous physically-based shading renders every surface with high tactile realism. Skin stays warm matte with low specular and is never tinted green or grey.
+
+STYLE: 3D CGI Animation, RenderMan, intimate animal portraiture, gentle domestic wildlife style
+LIGHT AND PALETTE: Focused golden beam, high contrast background, soft yellows, deep mahogany, and dusty whites
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: outdoor, harsh flash, aggressive, low detail
+-----
+-------------------------------------------------------------------------
+
+# K26 — "Yılanda, kertenkelede ve kaplumbağada da böyledir."
+FİKİR: Sürüngenlerin de karasal yaşama uyum için iç döllenme yaptığını gösteriyoruz.
+-----
+Using a 35mm lens positioned near the ground at a distance of approximately 0.8 meters, we observe a small lizard as it quickly scurries across the dry dirt near the @ahir. The rugged location features terrestrial elements such as çatlamış toprak yüzeyi, yassı kaya parçaları, and dikenli çalı kökleri. The primary light source is a harsh, direct midday sun that lands sharply on the reptile's back, highlighting the dry, scaly material textures of its patterned skin. This scene demonstrates a spatial comparison between the dry, arid terrestrial environment and the previously seen wet aquatic habitats, linking this dry environment to internal fertilization. Continuity is maintained through the bright, outdoor daylight and the alert, active physical state of the fast-moving reptile. The reptile's clawed feet press sharply into the sun-baked ground, casting distinct soft contact shadows beneath the flat rocks and thorny roots anchored firmly into the cracked earth.
+
+STYLE: 3D CGI Animation, RenderMan, harsh daylight reptile photography, arid desert documentary style
+LIGHT AND PALETTE: Direct midday sun, sharp shadows, baked terracotta, sandy yellows, and olive greens
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: wet, soft lighting, cute, blurry, oversaturated
+-----
+-------------------------------------------------------------------------
+
+# K27 — "Kedide, atta ve keçide de döllenme içeride olur."
+FİKİR: Memelilerin de tamamen iç döllenme yöntemiyle çoğaldığını kedi üzerinden gösteriyoruz.
+-----
+Using a 50mm lens positioned at a comfortable distance of approximately 1.5 meters, we observe a fluffy @kedi as it lazily stretches its legs on a sunny patch of grass outside the @ahir. The domestic farm location features familiar elements like kısa yeşil çimenler, eski bir tahta kova, and kalın halat parçaları resting nearby. The primary light source is the gentle, warm afternoon sun that lands softly on the feline, highlighting the dense, soft fur material textures reacting to the breeze. This relaxed scene demonstrates a material transformation of the environment from harsh dry dirt to comfortable, cultivated farm grass, associating mammals with the internal reproduction concept. Continuity is perfectly maintained through the warm, golden hour lighting and the peaceful, resting physical state of the domestic animal. Soft contact shadows gently anchor the wooden bucket and thick ropes to the grassy ground, providing realistic depth. The composition further expands the educational scope to include familiar mammals, using the beloved farm pet to reinforce that highly developed terrestrial animals universally rely on internal fertilization for their reproduction. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI Animation, RenderMan, relaxed pastoral scene, peaceful countryside style
+LIGHT AND PALETTE: Gentle afternoon sun, soft diffuse bounce light, vibrant grass greens and warm orange-browns
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: tense, dark, stormy, artificial
+-----
+-------------------------------------------------------------------------
+
+# K28 — "Buna iç döllenme denir."
+FİKİR: Memeliler ve diğer kara canlılarındaki bu korunaklı süreci iç döllenme olarak adlandırıyoruz.
+-----
+Using a 50mm lens positioned at a distance of approximately 1.2 meters, we observe the @kedi as it calmly rests its head on its paws right beside the wooden @kumes. The peaceful outdoor location features elements such as taze bahar çimenleri, papatya çiçekleri, and ahşap çit gölgeleri cast on the ground. The primary light source is a beautiful, diffused sunlight that lands warmly on the animal and the surrounding flora, highlighting the soft fur and the delicate petal material textures. A glowing text element appears floating in the air. This final visual demonstrates a conceptual proof, visually summarizing the safety and enclosed nature of internal reproduction typical of land animals. Continuity is maintained through the consistent golden lighting and the completely relaxed physical state of the resting mammal. Soft contact shadows perfectly anchor the daisies and the feline to the soft grass bed. The composition beautifully concludes the educational lesson with a perfectly serene summary.
+
+STYLE: 3D CGI Animation, RenderMan, serene farm conclusion shot, idealized educational textbook style
+LIGHT AND PALETTE: Beautiful diffused sunlight, glowing flora, soft emerald greens, pure whites, and warm greys
+TEXT: the phrase İÇ DÖLLENME laid out in scattered wheat grains on the swept earth inside the coop, the İ in İÇ WITH a dot above it, reads left-to-right, never mirrored — formed only of grains, never a plaque, board, sign or carved wood.
+NEGATIVE: messy, chaotic, harsh shadows, low resolution
+-----
+-------------------------------------------------------------------------
+
+# K29 — "İçeride sperm ile yumurtanın buluşma şansı yüksektir."
+FİKİR: İç üremede yumurtanın korunaklı yapısını ve döllenme ihtimalinin yüksekliğini gösteriyoruz.
+-----
+85mm macro lens at f/2.8 focusing closely on the scene, the dominant subject glows dynamically, showing abstract stylized biological particles converging on a single large glowing ovum. The living location features elements like dokulu bir uterus duvarı, pembe saydam hücre zarları, yumuşak dokulu kılcal damar yolları, and sıvı damlacıkları, creating an immersive, safe environment. A strong, directional light source from the upper left illuminates the central ovum, casting gentle reflections on the surrounding organic textures and creating a warm, radiant effect throughout the enclosed space. The concept proof is established through the spatial comparison between the vast enclosed space and the highly targeted convergence of the microscopic particles, highlighting the increased probability of a successful meeting inside the body. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where particles interact with the cellular walls, adding volumetric depth to the carefully arranged microscopic landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, abstract medical visualization, soft organic forms, highly detailed micro-textures.
+LIGHT AND PALETTE: Bioluminescent pink and warm amber lighting, soft magenta shadows, glowing golden highlights.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: harsh shadows, jagged edges, scary biological elements, realistic gore, chaotic composition.
+-----
+-------------------------------------------------------------------------
+
+# K30 — "Bu yüzden yumurta sayısı çok daha azdır."
+FİKİR: İç döllenme yapan canlılarda üretilen yumurta sayısının az olduğunu vurguluyoruz.
+-----
+50mm lens at f/4 focusing on a clean, minimal layout, the dominant subject rests peacefully, displaying a single, highly stylized and beautifully textured egg-like sphere. The living location features elements like yumuşak bir biyolojik doku yastığı, hafif nemli yüzey kıvrımları, parlak protein damlacıkları, and ılık bir yuva tabanı, creating an immersive, serene environment. A strong, directional light source from directly above softly highlights the solitary sphere, casting gentle reflections on the surrounding biological textures and creating a calming, radiant effect. The concept proof is established through the scale change and numeric reduction, clearly showing only one prominent, well-protected entity rather than a massive cluster, demonstrating the biological strategy of producing fewer but highly protected offspring. The continuity inherits the established visual themes and colors from previous internal biological shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the sphere touches the soft tissue, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, minimalist biological art, rounded geometric forms, clean macro photography look.
+LIGHT AND PALETTE: Soft studio lighting, warm pastel pinks and soft whites, subtle peach reflections.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: multiple eggs, messy background, dark colors, sharp corners, dirty textures, confusing layout.
+-----
+-------------------------------------------------------------------------
+
+# K31 — "Döllenme tamamdı; peki yavru nasıl büyür ve doğar?"
+FİKİR: Efe'nin merakla yavrunun gelişim sürecini sorgulamasını gösteriyoruz.
+-----
+35mm lens at f/2.8 focusing on the character's expression, the dominant subject @efe looks thoughtfully upward, rubbing his chin as he contemplates the next stage of animal development. @efe is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The living location features elements like ahşap çit direği, parlak yeşil çimen yaprakları, sarı bir papatya, and uzaktaki ahırın ahşap duvarı, creating an immersive rural environment. A strong, directional light source from the warm afternoon sun illuminates the character's face, casting gentle reflections on his hair and creating a radiant effect in his eyes. The concept proof is established through the cause-effect transition of the character's visible curiosity, setting up the spatial comparison of the upcoming environments where different animals grow. The continuity inherits the established visual themes and colors from previous outdoor shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the character's hand touches his chin, adding volumetric depth to the carefully arranged outdoor landscape. The overall composition balances narrative clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, Pixar-like character animation, bright outdoor scenery, expressive facial rigging.
+LIGHT AND PALETTE: Golden hour sunlight, bright green nature tones, warm skin tones, soft blue sky background.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: full body shot, creepy smile, photorealistic human, dark environment, winter setting.
+-----
+-------------------------------------------------------------------------
+
+# K32 — "Efe aynı bahçede bunun üç ayrı yolunu gördü."
+FİKİR: Efe'nin etrafındaki farklı hayvanları izleyerek üreme yollarını keşfettiğini anlatıyoruz.
+-----
+Captured with a 24mm wide-angle lens at f/5.6 focusing on the expansive scene, the dominant subject @efe observes attentively as he looks across a lively farmyard filled with different animals. @efe is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The living location features elements like @ahir yapısı, @kumes kapısı, saman dolu bir el arabası, ahşap su yalağı, and toprak yoldaki çakıl taşları, creating an immersive farm environment. A strong, directional light source from the bright afternoon sun shines across the yard, casting gentle reflections on the wooden textures and creating a vibrant, radiant effect. The concept proof is established through the spatial comparison of three distinct animal habitats visible in the background, showing the diversity of life cycles in one unified space. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the wooden structures touch the ground surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances narrative clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, vibrant farm aesthetic, stylized nature, deep depth of field.
+LIGHT AND PALETTE: Bright midday sun, rich earth tones, vibrant greens, warm reds and browns on the wooden barns.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: full body shot, empty yard, nighttime, gloomy colors, realistic dirt or mud.
+-----
+-------------------------------------------------------------------------
+
+# K33 — "Birincisi doğurarak çoğalmaktır."
+FİKİR: Doğurarak çoğalmayı temsil eden memeli bir hayvanı (örneğin bir kedi) gösteriyoruz.
+-----
+50mm lens at f/2.8 focusing on the warm subject, the dominant subject @kedi rests comfortably on a soft patch of grass, looking maternal and peaceful. The living location features elements like örme bir hasır sepet parçası, taze yeşil yonca yaprakları, sıcak toprak zemin, and küçük bir süt kabı, creating an immersive, cozy environment. A strong, directional light source from a dappled sunbeam shines through unseen leaves above, casting gentle reflections on the animal's fur and creating a soft, radiant effect. The concept proof is established through the material transformation of the comfortable resting space, emphasizing the mammalian characteristic of preparing a safe nesting area for live birth. The continuity inherits the established visual themes and colors from previous garden shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the animal touches the grass surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, soft fluffy fur grooming, stylized animal design, cozy atmosphere.
+LIGHT AND PALETTE: Dappled sunlight, warm golden hour palette, soft greens and warm oranges.
+TEXT: the word DOĞURARAK laid out in dry straw stalks on the packed barn floor, reads left-to-right, never mirrored — one word, nine letters, the third a capital Ğ with breve.
+NEGATIVE: aggressive animal, dark shadows, realistic fur matting, scary expressions, urban setting.
+-----
+-------------------------------------------------------------------------
+
+# K34 — "Yavru annenin karnında gelişir ve öyle doğar."
+FİKİR: Anne karnında gelişimi anlatan, yavrunun annenin içinde büyüdüğünü belirten stilize bir görüntü.
+-----
+85mm lens at f/4 focusing on a stylized cross-section concept, the dominant subject glows warmly, showing a generic, cute mammalian silhouette with a glowing protective orb in its belly. The living location features elements like rüzgarda sallanan uzun otlar, arka planda bulanık ağaç gövdeleri, yumuşak toprak zemin, and parlayan ateşböcekleri, creating an immersive, magical environment. A strong, directional light source from a setting sun backlights the animal, casting gentle reflections on the silhouette edges and creating a radiant effect around the glowing belly area. The concept proof is established through the spatial comparison between the adult animal's outer shape and the protected internal glowing space, illustrating internal development before birth. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the silhouette touches the grassy ground surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, magical educational graphic, soft glowing silhouettes, stylized nature.
+LIGHT AND PALETTE: Sunset backlighting, deep purples, glowing warm amber, soft orange rim lights.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: literal anatomy, medical gore, scary silhouettes, bright daylight, harsh outlines.
+-----
+-------------------------------------------------------------------------
+
+# K35 — "Doğduktan sonra anne sütüyle beslenir."
+FİKİR: Yeni doğmuş bir yavrunun annesinden süt emdiğini sevimli bir şekilde gösteriyoruz.
+-----
+50mm lens at f/2.8 focusing on the tender interaction, the dominant subject @kedi nurses its tiny newborn kitten, showing a moment of care and feeding. The living location features elements like yumuşak bir yün battaniye, ahşap zemin tahtaları, hasır bir minder, and pencereden sızan güneş ışığı hüzmesi, creating an immersive, nurturing environment. A strong, directional light source from a nearby window illuminates the pair, casting gentle reflections on their soft fur and creating a warm, radiant effect. The concept proof is established through the cause-effect relationship of the mother providing nourishment directly to the newborn, demonstrating the defining characteristic of mammals. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the animals touch the blanket surfaces, adding volumetric depth to the carefully arranged indoor landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame. Continuous physically-based shading renders every surface with high tactile realism.
+
+STYLE: 3D CGI RenderMan style, tender character interaction, soft fur rendering, cozy indoor lighting.
+LIGHT AND PALETTE: Warm window light, soft golden tones, gentle browns and whites, comforting atmosphere.
+TEXT: the word ANNE SÜTÜ drawn by a fingertip through the dust on the metal milk churn, reads left-to-right, never mirrored — two words, nine letters total, the sixth and eighth dotted capital Üs, one clear space between.
+NEGATIVE: messy environment, realistic animal anatomy, aggressive posture, cold lighting, busy background.
+-----
+-------------------------------------------------------------------------
+
+# K36 — "Kedi, koyun, inek, yarasa, balina ve insan böyledir."
+FİKİR: Memeli hayvanların çeşitliliğini gösteren bir montaj veya grup görüntüsü sunuyoruz.
+-----
+35mm lens at f/5.6 focusing on a playful lineup, the dominant subject stands proudly, featuring stylized, toy-like figures of a cat, sheep, cow, bat, and a small whale floating in a bubble. The living location features elements like ahşap bir sergileme rafı, renkli yapı blokları, küçük bir saksı bitkisi, and yumuşak bir halı dokusu, creating an immersive, educational playroom environment. A strong, directional light source from the ceiling spot illuminates the diverse group, casting gentle reflections on their stylized plastic and fur textures, and creating a radiant effect. The concept proof is established through the spatial comparison and grouping of vastly different animals, uniting them under the shared biological trait of being mammals. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the figures touch the wooden shelf surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, vinyl toy aesthetic, cute chibi proportions, vibrant diorama setup.
+LIGHT AND PALETTE: Bright studio spotlighting, colorful primary colors, soft wood tones, cheerful atmosphere.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: realistic scary animals, mismatched scales, dark gloomy lighting, messy room, confusing layout.
+-----
+-------------------------------------------------------------------------
+
+# K37 — "İkincisi yumurtlayarak çoğalmaktır."
+FİKİR: Yumurtlayarak çoğalmayı temsil eden bir kuş veya sürüngen yuvası gösteriyoruz.
+-----
+50mm lens at f/2.8 focusing on a carefully constructed nest, the dominant subject @tavuk stands proudly next to a clutch of freshly laid eggs. The living location features elements like kuru saman çöpleri, ahşap folluk kenarı, küçük bir tüy parçası, and topraktaki mısır taneleri, creating an immersive @kumes environment. A strong, directional light source from the open coop door illuminates the white eggs, casting gentle reflections on the smooth eggshells and creating a clean, radiant effect. The concept proof is established through the material transformation of the nest containing external eggs, visually differentiating this reproduction method from live birth. The continuity inherits the established visual themes and colors from previous farmyard shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the eggs touch the straw surfaces, adding volumetric depth to the carefully arranged rustic landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame. Continuous physically-based shading renders every surface with high tactile realism. Skin stays warm matte with low specular and is never tinted green or grey.
+
+STYLE: 3D CGI RenderMan style, rustic farm aesthetic, highly detailed straw and feathers, soft lighting.
+LIGHT AND PALETTE: Warm sunlight piercing dust motes, golden straw tones, bright white eggs, soft red accents.
+TEXT: the word YUMURTLAYARAK laid out in scattered wheat grains on the swept earth inside the coop, reads left-to-right, never mirrored — one word, twelve letters, all capital Y-U-M-U-R-T-L-A-Y-A-R-A-K.
+NEGATIVE: broken eggs, dirty environment, scary chickens, dark shadows, highly realistic mud.
+-----
+-------------------------------------------------------------------------
+
+# K38 — "Döllenme içte olur, ama yavru yumurtanın içinde gelişir."
+FİKİR: Yumurtanın içindeki yavru gelişimini sembolize eden ışıklı bir yumurta görseli.
+-----
+85mm macro lens at f/4 focusing on a single, glowing egg, the dominant subject rests securely, revealing a stylized, glowing silhouette of a tiny bird embryo developing inside. The living location features elements like yumuşak saman yatağı, karanlık ahşap arka plan, tek bir parlayan toz zerresi, and kurumuş bir yaprak, creating an immersive, magical environment. A strong, directional light source from directly behind the egg creates a subsurface scattering effect, casting gentle reflections on the internal silhouette and creating a radiant, translucent effect. The concept proof is established through the spatial comparison showing the developing life securely contained within the hard outer shell, illustrating external embryonic development following internal fertilization. The continuity inherits the established visual themes and colors from previous nesting shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the egg touches the straw surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, magical subsurface scattering, educational x-ray view, soft glows.
+LIGHT AND PALETTE: Strong backlighting, warm amber and gold tones, glowing orange center, dark rustic background.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: realistic veins, medical gore, cracked shell, scary embryo, flat lighting.
+-----
+-------------------------------------------------------------------------
+
+# K39 — "Yumurta annenin vücudunun dışındadır."
+FİKİR: Yumurtanın anne vücudunun dışında, dış ortamda bulunduğunu vurguluyoruz.
+-----
+35mm lens at f/5.6 focusing on the wider context of the nest, the dominant subject @tavuk walks away slightly, leaving the eggs clearly visible and independent in the nest. The living location features elements like @kumes telleri, ahşap folluk basamağı, etrafa saçılmış saman balyası parçaları, and dışarıdaki yeşil çimenler, creating an immersive, open environment. A strong, directional light source from the bright exterior shines onto the exposed nest, casting gentle reflections on the isolated eggs and creating a distinct, radiant effect. The concept proof is established through the spatial separation between the parent animal and the eggs, clearly demonstrating that the development environment is now completely external to the mother's body. The continuity inherits the established visual themes and colors from previous farm shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the eggs touch the nesting surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame. Skin stays warm matte with low specular and is never tinted green or grey.
+
+STYLE: 3D CGI RenderMan style, bright farmyard aesthetic, clear spatial composition, stylized cartoon realism.
+LIGHT AND PALETTE: Bright daylight, strong golden hour shadows, warm yellows, crisp greens outside.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: parent sitting on eggs, dark indoor lighting, confusing perspective, messy distracting background.
+-----
+-------------------------------------------------------------------------
+
+# K40 — "Tavuk yumurtalarının üstüne yatar ve onları ısıtır."
+FİKİR: Tavuğun yumurtalarının üzerine kuluçkaya yatıp onları ısıttığını gösteriyoruz.
+-----
+50mm lens at f/2.8 focusing on the nurturing behavior, the dominant subject @tavuk settles gently onto the nest, puffing up her feathers to cover and warm the eggs beneath her. The living location features elements like kalın saman yığını, ahşap folluk duvarı, bakır bir su kabı, and duvarda asılı kurumuş mısır koçanı, creating an immersive, cozy @kumes environment. A strong, directional light source from a small window bathes the nesting mother, casting gentle reflections on her soft feathers and creating a warm, radiant effect conveying heat. The concept proof is established through the cause-effect relationship of the mother's body heat transferring to the external eggs, a necessary step for their continued development. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the chicken touches the straw surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, cozy maternal warmth, fluffy stylized feathers, rich environmental details.
+LIGHT AND PALETTE: Warm golden shaft of light, deep reds and oranges, soft brown shadows.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: cold blue lighting, aggressive posture, standing chicken, sparse nest, scary environment.
+-----
+-------------------------------------------------------------------------
+
+# K41 — "Buna kuluçka denir."
+FİKİR: Kuluçka kelimesini ekranda vurgulayarak, tavuğun yatma eyleminin bilimsel adını öğretiyoruz.
+-----
+85mm lens at f/4 focusing on a beautifully stylized educational graphic overlay, the dominant subject @tavuk rests peacefully on the eggs while a glowing text banner appears below her. The living location features elements like altın sarısı saman sapları, ahşap arka plan dokusu, sıcak bir battaniye hissi veren tüyler, and havada uçuşan toz zerreleri, creating an immersive environment. A strong, directional light source highlights the central text and the resting bird, casting gentle reflections on the letters and creating a vibrant, radiant effect. The concept proof is established through the direct visual association of the text label with the physical action of incubating, locking in the vocabulary term for the student. The continuity inherits the established visual themes and colors from previous nesting shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the 3D text hovers slightly above the straw surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame. Skin stays warm matte with low specular and is never tinted green or grey.
+
+STYLE: 3D CGI RenderMan style, educational graphic overlay, cozy farm aesthetics, bright typography.
+LIGHT AND PALETTE: Warm ambient lighting, glowing yellow text, deep rustic browns, soft orange highlights.
+TEXT: the word KULUÇKA laid out in fallen hen feathers on the pitted stone step, reads left-to-right, never mirrored — one word, seven letters, the fifth a capital Ç with cedilla.
+NEGATIVE: misspelled text, messy background, dark shadows, aggressive chicken, distracting elements.
+-----
+-------------------------------------------------------------------------
+
+# K42 — "Yılan ve kaplumbağa yumurtalarını toprağa bırakıp gider."
+FİKİR: Sürüngenlerin kuluçkaya yatmadığını, yumurtalarını doğanın sıcaklığına bıraktığını anlatıyoruz.
+-----
+35mm lens at f/4 focusing on a sun-drenched patch of sand, the dominant subject slithers away in the background, leaving a small clutch of leathery eggs buried in the warm earth. The living location features elements like ince taneli kum tepesi, yeşil palmiye yaprağı gölgesi, yuvarlak çakıl taşları, and kuru ağaç dalı, creating an immersive, warm coastal environment. A strong, directional light source from the midday sun bakes the sand, casting gentle reflections on the leathery egg textures and creating a bright, radiant effect indicating natural heat. The concept proof is established through the spatial comparison of the parent leaving the frame while the eggs remain in the sun-warmed environment, showing a different reproductive strategy from birds. The continuity inherits the established visual themes and colors from previous shots, maintaining a highly consistent, engaging, and educational tone throughout the sequence. Soft contact shadows form where the eggs touch the sandy ground surfaces, adding volumetric depth to the carefully arranged landscape. The overall composition balances scientific clarity with visually engaging, highly stylized textures, ensuring the educational concept is both immediately accessible and visually captivating for the young viewing audience while maintaining high visual engagement and immense educational value in every single rendered frame.
+
+STYLE: 3D CGI RenderMan style, bright tropical environment, stylized sand textures, soft cartoon realism.
+LIGHT AND PALETTE: High noon sunlight, bright warm yellows and tans, crisp green leaf shadows.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: scary snakes, dark nighttime, cold colors, parent sitting on eggs, realistic scales.
+-----
+-------------------------------------------------------------------------
+
+# K43 — "Üçüncüsü balıklardır."
+FİKİR: Göletin sığ suyunda, balıkların kendi doğal ortamlarındaki halini gösteriyoruz.
+-----
+65mm lens at f/2.8 shot from a shallow water level distance, the dominant physical action focuses on a @balik hovering near a dense cluster of swaying underwater plants inside the @golet. The living location is rich with Turkish reality props, including smooth rounded river stones, long green water reeds, and a half-buried rusty sunken galvanized metal bucket rim heavily overgrown with dark green algae. Bright sunlight filters down dynamically from the rippling surface above, casting complex, shifting caustic light nets onto the iridescent scales of the @balik and illuminating the textured mud at the pond's bottom. The material textures deliberately emphasize the wet, glossy nature of the @balik in contrast with the rough, porous, matte surface of the river stones. The spatial comparison explicitly shows the @balik dwarfed by the tall, swaying reeds, clearly establishing its small scale within the aquatic ecosystem. The concept proof of cause-effect is demonstrated by the gentle water current visibly bending the aquatic plants and forcing the fish's delicate translucent fins to flutter rapidly to maintain its stationary position. The continuity inherits the bright outdoor daytime sunlight environment established in earlier scenes, with natural light directing the viewer's eye firmly toward the center composition. Deep soft contact shadows form securely beneath the heavy stones and the sunken bucket on the pond floor, grounding the physical objects firmly in the sandy mud.
+
+STYLE: 3D CGI Animation, RenderMan, hyper-detailed aquatic textures, highly realistic subsurface scattering on fish scales, cinematic depth of field.
+LIGHT AND PALETTE: Bright overhead dappled sunlight, shifting caustic light nets, vibrant aquatic greens, shimmering silver, muddy browns, and clear water blues.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: 2D animation, flat lighting, cartoonish fish, dry environments, heavy shadows, abstract shapes, low resolution, murky textures.
+-----
+-------------------------------------------------------------------------
+
+# K44 — "Onlarda hem döllenme hem gelişme suyun içinde olur."
+FİKİR: Balığın suya bıraktığı minik yumurtaların su içindeki gelişimine odaklanıyoruz.
+-----
+90mm macro lens at f/5.6 from an extreme close-up distance, the dominant physical action is a cluster of transparent spherical eggs clinging to a submerged green stem inside the @golet, with the @balik swimming away in the blurred background. The living location features a thick underwater maydanoz yaprağı, tiny floating organic particles, and a small eroded piece of a broken terracotta pot resting in the silt. Cool, diffused underwater light illuminates the scene, highlighting the translucent jelly-like material textures of the eggs, which contain tiny dark developing embryos inside. The material textures contrast the squishy, clear egg casings against the fibrous, crisp edges of the green leaf and the gritty texture of the terracotta shard. The spatial comparison highlights the microscopic scale of the eggs compared to the thick stem supporting them. The concept proof of material transformation is visible in the developing embryos suspended securely within the protective watery environment, showing external development. The continuity maintains the identical shifting caustic light nets and aquatic atmosphere from the previous shot, keeping the visual flow seamless. Soft contact shadows anchor the terracotta shard into the silt and define the point where the sticky eggs adhere firmly to the plant stem.
+
+STYLE: 3D CGI Animation, RenderMan, extreme macro photography style, translucent jelly shaders, microscopic biological realism.
+LIGHT AND PALETTE: Cool diffused underwater lighting, glowing translucent whites, deep aquatic greens, subtle muddy browns, dark embryo dots.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: 2D illustration, opaque egg materials, dry lighting, overexposed highlights, unnatural neon colors, messy composition.
+-----
+-------------------------------------------------------------------------
+
+# K45 — "Yavru bakımı kuşlarda ve memelilerde vardır."
+FİKİR: Tavuk ve yavrularının ile kedinin yavrularına bakmasının aynı anda hissedildiği sıcak bir an.
+-----
+50mm lens at f/4.0 captured from a medium wide distance, the dominant physical action shows a @tavuk actively sheltering her chicks inside the @kumes while the @kedi nurses her kittens nearby in the @ahir. The living location contains scattered golden straw, a galvanized feeding trough, and a weathered wooden nesting box with chipped blue paint on its edges. Warm, golden late-afternoon sunlight streams diagonally through an unseen wooden slat, landing softly on the feathers of the @tavuk and the soft fur of the @kedi. The material textures contrast the fluffy, downy feathers of the baby chicks against the sleek, dense fur of the kittens and the rough, splintering grain of the wooden box. The spatial comparison places the birds and mammals in parallel cozy zones, emphasizing their shared trait of maternal care. The concept proof of cause-effect is the visible comfort and warmth provided by the parents, causing the offspring to huddle closely against them. The continuity inherits the rural farmyard setting and earthy color palette from the initial outdoor scenes, maintaining the established geographic layout. Thick soft contact shadows pool heavily beneath the nesting boxes and the resting animals, rooting the protective families firmly into the straw-covered wooden floorboards.
+
+STYLE: 3D CGI Animation, RenderMan, cozy volumetric lighting, photorealistic fur and feather grooming systems, high tactile fidelity.
+LIGHT AND PALETTE: Golden late-afternoon sunlight, warm amber, rustic wood browns, straw yellows, soft whites, and earthy tones.
+TEXT: the word YAVRU BAKIMI laid out in soft down feathers on the stone lip of the nest, reads left-to-right, never mirrored — two words, eleven letters total, the ninth and eleventh dotless capital Is, one clear space between.
+NEGATIVE: Harsh artificial lighting, plastic-looking fur or feathers, modern architecture, cold color temperatures, disjointed spacing.
+-----
+-------------------------------------------------------------------------
+
+# K46 — "Yumurtasını bırakıp giden canlılarda yavru bakımı yoktur."
+FİKİR: Suyun altındaki balık yumurtalarının yalnız, terk edilmiş ama doğal döngüsündeki hali.
+-----
+85mm lens at f/5.6 shot from a close-up distance, the dominant physical action focuses on the isolated cluster of eggs swaying gently on a submerged plant inside the @golet with absolutely no @balik in sight. The living location includes dark green aquatic moss, scattered gray pebbles, and a rusty metallic bottle cap half-buried in the rippling pond mud. A single, distinct shaft of cool, blue-tinted sunlight pierces through the dark water, illuminating the fragile, translucent material textures of the abandoned eggs and making their internal dark spots highly visible. The material textures heavily contrast the gelatinous, slippery surface of the eggs against the sharp, rigid, oxidized edges of the rusty bottle cap resting below them. The spatial comparison emphasizes the vulnerability and tiny scale of the unprotected eggs left completely alone in the vast, open aquatic environment. The concept proof of spatial comparison shows the stark absence of any parental figure, physically proving the lack of parental care. The continuity directly inherits the exact underwater location, caustic light patterns, and specific plant stems established in the previous aquatic scenes. Deep soft contact shadows form firmly under the pebbles and the metal cap, anchoring the solitary aquatic nursery securely to the muddy floor.
+
+STYLE: 3D CGI Animation, RenderMan, dramatic spotlighting, high contrast underwater atmosphere, hyper-realistic rusted metal shaders.
+LIGHT AND PALETTE: Single cool blue sunlight shaft, deep shadowed aquatic greens, rusty orange, slate grey, glowing translucent whites.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Warm sunny lighting, visible adult fish, dry terrain, cheerful colors, flat rendering, low-contrast textures.
+-----
+-------------------------------------------------------------------------
+
+# K47 — "Efe dönerken maydanozun üstünde bir tırtıl gördü."
+FİKİR: Efe'nin bir maydanoz yaprağı üzerindeki tırtılı ilk kez fark ettiği merak dolu anı.
+-----
+50mm lens at f/2.8 shot from an over-the-shoulder medium close-up distance, the dominant physical action shows @efe leaning in closely to observe a plump green @tirtil crawling slowly across a fresh maydanoz yaprağı. In this shot, @efe is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The living location includes a rusted tin watering can, a weathered wooden garden stake, and rich dark potting soil. A warm amber concept light begins to glow subtly from the foliage, illuminating the crisp, veined texture of the maydanoz yaprağı and the segmented, squishy material textures of the @tirtil. The material textures contrast the smooth, matte skin of @efe with the fuzzy bristles on the caterpillar's back and the rough, dry splinters of the wooden stake. The spatial comparison highlights the tiny scale of the insect compared to the human observer's face. The concept proof of cause-effect is the weight of the insect causing the delicate leaf tip to bend slightly downward. The continuity initiates the warm amber metamorphosis lighting motif while maintaining the outdoor farmyard environment. Crisp soft contact shadows drop cleanly directly beneath the caterpillar's numerous tiny legs onto the leaf surface.
+
+STYLE: 3D CGI Animation, RenderMan, highly detailed skin shaders for human, squishy organic shaders for insect, cinematic over-the-shoulder framing.
+LIGHT AND PALETTE: Warm amber concept light glowing from foliage, rich leafy greens, skin tones, rusted tin orange, dark soil browns.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Full body shot of boy, glossy or green-tinted skin, flat daylight, cartoon proportions, blurry caterpillar textures.
+-----
+-------------------------------------------------------------------------
+
+# K48 — "Bazı canlıların yavruları erginlere hiç benzemez."
+FİKİR: Tırtılın detaylı yapısını göstererek, gelecekteki kelebek formuyla olan zıtlığına zemin hazırlıyoruz.
+-----
+100mm macro lens at f/5.6 captured from an extreme close-up macro distance, the dominant physical action focuses intensely on the @tirtil actively chewing a large semi-circular bite out of the crisp maydanoz yaprağı. The living location features intricate leaf veins, a single heavy dewdrop clinging to the leaf edge, and the blurred outline of a galvanized metal bucket handle in the distant background. The intense warm amber concept light heavily bathes the scene, highlighting the translucent, gelatinous green material textures of the caterpillar's fleshy segments and its tiny dark mandibles. The material textures sharply contrast the wet, smooth surface of the spherical dewdrop against the matte, fibrous, torn edges of the partially eaten leaf. The spatial comparison drastically enlarges the insect's tiny mouthparts, emphasizing its current chewing-focused larval anatomy which looks entirely different from an adult winged insect. The concept proof of material transformation is visually implied by the rapid consumption of the leaf, fueling its impending change. The continuity heavily reinforces the warm amber metamorphosis lighting while keeping the exact leaf location from the previous shot. Deep soft contact shadows carve sharply underneath the insect's plump body segments, firmly anchoring its gripping prolegs to the chewed leaf surface.
+
+STYLE: 3D CGI Animation, RenderMan, extreme macro biological photography, high fidelity subsurface scattering on the caterpillar, crisp depth of field.
+LIGHT AND PALETTE: Intense warm amber concept light, luminous translucent greens, dark mandible browns, bright specular hits on dewdrop.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Wide angle shots, human presence, cold blue lighting, blurry leaf textures, low-resolution geometry, flat shading.
+-----
+-------------------------------------------------------------------------
+
+# K49 — "Tırtıl bir süre sonra kendini kozanın içine kapatır."
+FİKİR: Tırtılın etrafına ördüğü ipeksi kozanın tamamlanmak üzere olduğu an.
+-----
+85mm macro lens at f/4.0 shot from a close-up distance, the dominant physical action reveals the @tirtil mostly encased inside a spun silk cocoon hanging vertically beneath a thick maydanoz yaprağı stem. The living location includes a dry brown twig, peeling bark, and the blurred rusted surface of the tin watering can in the background. The strong warm amber concept light aggressively backlights the cocoon, making the silken threads glow and revealing the dark silhouette of the transforming insect hidden inside. The material textures deeply contrast the rough, rigid, flaky surface of the dry twig against the soft, layered, fibrous, and slightly sticky texture of the newly spun silk cocoon. The spatial comparison shows the tight, compact cylindrical volume of the cocoon perfectly encompassing the volume of the original insect. The concept proof of material transformation is explicitly demonstrated by the liquid silk solidifying into a protective structural shell around the biological organism. The continuity strictly maintains the intense warm amber metamorphosis light and the specific garden branch location. Dense soft contact shadows form precisely where the thick silk attachment threads wrap tightly around the rough bark, anchoring the delicate hanging structure securely in place.
+
+STYLE: 3D CGI Animation, RenderMan, silken thread simulation, high fidelity backlighting, organic structural realism, macro framing.
+LIGHT AND PALETTE: Strong warm amber concept backlight, glowing golden silk threads, dark bark browns, muted rusty background tones.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Fully visible caterpillar, unlit front lighting, cold color palette, plastic-looking silk, smooth bark textures, messy background.
+-----
+-------------------------------------------------------------------------
+
+# K50 — "Kozadan çıkan artık tırtıl değil, kelebektir."
+FİKİR: Kozanın yırtılıp içinden yepyeni, kanatlı bir kelebeğin çıkma anı.
+-----
+100mm macro lens at f/5.6 from a close-up distance, the dominant physical action displays a brightly colored adult butterfly actively pushing its damp, crumpled wings out of the split, empty silk cocoon attached to the maydanoz yaprağı stem. The living location includes the torn papery remnants of the chrysalis, a nearby galvanized wire fence, and a weathered terracotta pot rim. The brilliant warm amber concept light peaks in intensity, shining directly through the fragile, stained-glass-like material textures of the butterfly's unfolding wings. The material textures starkly contrast the dry, brittle, translucent husk of the abandoned cocoon against the vibrant, velvety, powdery scales of the new insect's wings. The spatial comparison demonstrates the massive scale expansion as the large, broad wings unfold to a size much wider than the tiny restrictive shell they emerged from. The concept proof of material transformation is fully realized, showing the complete morphological shift from a crawling green cylinder to a delicate flying creature. The continuity climaxes the warm amber metamorphosis lighting scheme while staying on the exact same hanging branch. Crisp soft contact shadows define the tiny grasping legs holding firmly onto the torn chrysalis shell as the insect pulls itself completely free.
+
+STYLE: 3D CGI Animation, RenderMan, vivid subsurface scattering on wings, micro-scale wing powder textures, dramatic peak lighting.
+LIGHT AND PALETTE: Brilliant warm amber concept light, vibrant stained-glass wing colors, pale dry silk, terracotta orange, blurred metallic grey.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Closed cocoon, caterpillar form, cold or flat lighting, smooth plastic wings, lack of contrast between shell and insect.
+-----
+-------------------------------------------------------------------------
+
+# K51 — "Bu büyük değişime başkalaşım denir."
+FİKİR: Kelebeğin kanatlarını tamamen açıp uçmaya hazır olduğu ihtişamlı an ve "BAŞKALAŞIM" yazısı.
+-----
+50mm lens at f/4.0 shot from a medium close-up distance, the dominant physical action features the fully formed butterfly resting proudly with wide-open wings on the edge of the emaye kova. The living location includes the chipped white enamel edge of the bucket, a wooden handle, and the vibrant green maydanoz yaprağı in the softly blurred background. The fading warm amber concept light gently illuminates the scene, highlighting the intricate symmetrical patterns on the wings and the glossy, hard material textures of the chipped enamel bucket. The material textures beautifully contrast the impossibly delicate, powdery wing surfaces against the cold, smooth, rigid metal and the splintered wooden grip. The spatial comparison shows the adult insect boldly commanding the space on the bucket rim, fully adapted to its new physical form and scale. The concept proof of material transformation concludes as the dry, flight-ready wings gently flutter, proving the complete success of the biological change. The continuity resolves the warm amber metamorphosis lighting, transitioning smoothly back toward the natural outdoor farmyard daylight. Soft contact shadows anchor the insect's slender legs firmly to the curved metal rim of the bucket.
+
+STYLE: 3D CGI Animation, RenderMan, triumphant composition, crisp typography integration, exquisite wing pattern detailing.
+LIGHT AND PALETTE: Fading warm amber transitioning to natural daylight, vivid butterfly colors, chipped white enamel, bright leaf greens, crisp bold text.
+TEXT: the word BAŞKALAŞIM formed from loose iridescent butterfly wing scales settled on a dark wet stone, reads left-to-right, never mirrored — one word, ten letters, the third and eighth capital Şs with cedilla, the ninth a dotless capital I.
+NEGATIVE: Folded wings, misspelt text, harsh spotlights, dull wing colors, flat metal textures, awkward text placement.
+-----
+-------------------------------------------------------------------------
+
+# K52 — "Kurbağa yavrusunun önce solungaçları ve kuyruğu vardır."
+FİKİR: Başkalaşımın bir başka örneği olarak, suda yüzen iribaşın (kuyruklu kurbağa yavrusu) detayı.
+-----
+90mm macro lens at f/5.6 shot from a close-up underwater distance, the dominant physical action shows a tiny, swimming @kurbaga tadpole vigorously propelling itself forward using its long tail inside the @golet. The living location features murky green pond water, a decaying brown oak leaf resting on the bottom, and a smooth grey pebble. Cool, dappled sunlight pierces the water surface, highlighting the translucent, fleshy material textures of the tadpole's wide tail fin and the feathery external gills branching from its neck. The material textures sharply contrast the soft, slippery, jelly-like skin of the aquatic larva against the brittle, skeletonized veins of the decaying submerged oak leaf. The spatial comparison emphasizes the small, streamlined, fish-like body shape of the tadpole compared to the large, flat leaf it swims over. The concept proof of material transformation introduces a different animal's developmental stage, showing aquatic features that will eventually disappear. The continuity visually connects back to the underwater environment of the @balik scenes, using similar caustic lighting nets and floating organic particulate matter. Deep soft contact shadows form darkly beneath the sunken leaf and the pebble, grounding them securely in the soft, silty pond floor.
+
+STYLE: 3D CGI Animation, RenderMan, underwater macro realism, gelatinous animal shaders, dynamic fluid particle scattering.
+LIGHT AND PALETTE: Cool dappled aquatic sunlight, murky water greens, dark decaying leaf browns, smooth grey pebbles, translucent fleshy tones.
+TEXT: the word LARVA drawn in wet dark silt on a pale flat stone at the waterline, reads left-to-right, never mirrored — one word, five letters, all capital L-A-R-V-A.
+NEGATIVE: Adult frog features, dry environments, bright warm lighting, low-detail leaves, opaque solid skin textures, lack of water particles.
+-----
+-------------------------------------------------------------------------
+
+# K53 — "Efe kümese döndüğünde yumurtalardan biri çatlamıştı."
+FİKİR: Kümesteki tavuğun altındaki yumurtanın çatladığı, içinden sarı civcivin çıktığı anı Efe'nin görmesi.
+-----
+35mm lens at f/4.0 captured from a medium distance, the dominant physical action shows @efe peering excitedly into the wooden @kumes where the @tavuk sits next to a visibly cracked egg. In this shot, @efe is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The living location includes scattered dry golden straw, rough wooden floorboards, and a rusted metal latch on the coop door. Warm, directional afternoon sunlight streams directly through the coop entrance, illuminating the fuzzy, damp material textures of the newly hatched yellow chick struggling out of the white shell. The material textures heavily contrast the fragile, sharp, jagged edges of the broken calcium eggshell against the soft, wet downy feathers of the baby bird and the coarse straw. The spatial comparison highlights the tiny, fragile chick emerging into the larger, protective space guarded by the massive mother hen. The concept proof of cause-effect is the physical breaking of the shell resulting from the biological growth and movement of the chick inside. The continuity returns fully to the natural golden farmyard lighting and the specific wooden coop interior. Thick soft contact shadows pool heavily beneath the cracked eggshell and the resting hen, anchoring them deeply into the straw bed.
+
+STYLE: 3D CGI Animation, RenderMan, high-contrast directional lighting, hyper-realistic wet feather grooming, warm rustic atmosphere.
+LIGHT AND PALETTE: Warm directional afternoon sunlight, bright yellow chick, crisp white eggshell, golden straw, dark wooden browns, matte skin tones.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Full body shot of boy, glossy skin, cool blue lighting, clean uncracked eggs, dry fluffy chick, sterile environment.
+-----
+-------------------------------------------------------------------------
+
+# K54 — "Her canlının neslini sürdürmek için kendine özgü bir yolu vardı."
+FİKİR: İlk kareye (K01) ayna sözleşmesi. Efe'nin bahçede durup kümese ve ahıra bakarak yaşam döngüsünü kavraması.
+-----
+40mm lens at f/4 from a coop step height distance, the dominant physical action shows @efe looking across the yard to the barn corner where a @kedi rests with 4 kittens, while under the @tavuk, one egg is cracked into two shell pieces and a wet yellow hatchling chick rests in that exact spot. In this shot, @efe is framed from mid-chest up, nothing below the chest is visible. Skin stays matte with low specular and is never tinted green or grey. The living location features an upright wicker basket on the wooden step containing one eggshell fragment inside, and the @ahir in the background. The kittens have their eyes OPEN, and one is visibly sitting. Natural golden hour sunlight washes across the farmyard, highlighting the coarse material textures of the woven wicker basket and the soft fur of the felines. The material textures contrast the sharp, brittle eggshell fragment against the smooth skin of @efe and the rough wooden step. The spatial comparison encompasses the farmyard layout, showing the interconnected habitats of mammals and birds. The concept proof visually summarizes the diverse reproductive strategies of the farm animals in one unified space. The continuity perfectly mirrors the geographic layout and lighting of the very first shot. Soft contact shadows anchor the upright basket and the sitting kitten firmly to their respective surfaces.
+
+STYLE: 3D CGI Animation, RenderMan, wide cinematic farmyard framing, hyper-realistic natural lighting, deep depth of field.
+LIGHT AND PALETTE: Natural golden hour sunlight, warm rustic farm tones, vibrant greens, soft earthy browns, bright white eggshell fragment.
+TEXT: none — clean plate, no on-screen text, any background sign soft-focus, Turkish or blank
+NEGATIVE: Full body shot of boy, tipped over basket, closed kitten eyes, unbroken eggs, flat lighting, mismatched farm layout, glossy skin.
+-----

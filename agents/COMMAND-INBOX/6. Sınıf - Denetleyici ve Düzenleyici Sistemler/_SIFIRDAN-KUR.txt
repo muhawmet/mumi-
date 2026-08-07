@@ -1,0 +1,87 @@
+DUR. Kare basmayı ve prompt yazmayı bırak. Bu iş SIFIRDAN kuruluyor.
+Mami'nin emri: "sıfırdan kur dedim, gerektiği yerde olsun hep."
+
+Mevcut 56 prompt ARŞİVDİR. Bir cümlesi bile taşınmayacak. Basılı 18 kare de öyle.
+_ESKI/ altına alınır, silinmez, ama AÇILMAZ — kusurun kaynağı o metnin kendisiydi.
+
+═══ NE OLDU — ölçüm, suçlama değil ═══
+
+Kaynak docx'te:   mutfak 0 · soba 0 · ocak 0 · laboratuvar 0
+56 promptunda:    oak 258 · stove 179 · flour 175 · pane 141 · kettle 92 · kitchen 90
+Kare kahramanları: "çaydanlığın kapağı" · "çatal" · "unun içindeki beş harf" · "taşın üstündeki altı harf"
+Ölçek:            macro 29 kez
+
+Sinir ve iç salgı sistemi dersi, kaynakta hiç geçmeyen odun sobalı bir mutfakta kuruldu;
+karelerin kahramanı ders değil mutfak eşyası oldu; ve film nesnelerin aşırı yakınlarından
+oluşan bir natürmort serisine döndü. 31.png'de motor pes edip ders kitabı diyagramı bastı:
+etiketli oklar, UYDURMA İngilizce yazı ("Pro synsptic termisal couten"), kesik Türkçe plaka.
+
+Kök neden tek satır: dünya DERSTEN değil MALZEMEDEN seçildi. Enzim dosyası KİLİT 1'de
+"bu ders metal ve cam dersidir" diyor. Malzeme bir RENDER kararıdır; dünya bir PEDAGOJİ kararı.
+
+═══ 🔴 YENİ DÜNYA YASASI — MAMİ'NİN EMRİ ═══
+
+"GEREKTİĞİ YERDE OLSUN HEP."
+
+Tek bir sevimli mekân kilitleyip 56 kareyi ona sığdırmak YASAK. Bu bir alışkanlıktı ve
+kusuru üretti. Mekân KAVRAMI takip eder:
+
+  · Sinyal, ileti, uyarı yolu anlatılıyorsa      → bedenin içi. Mekân orasıdır.
+  · Mira öğreniyor, deniyor, fark ediyorsa        → onun gerçekten olduğu yer.
+  · Refleks, tepki, denge olayı geçiyorsa         → o olayın geçtiği gerçek an ve yer.
+  · Bir bez, organ, ölçek karşılaştırması varsa   → o ölçeğin kendi dünyası.
+
+Yani dünya bir DEKOR değil, o karenin ARGÜMANIDIR. Süreklilik mekândan gelmez —
+Mira'dan, ışık rejiminden, palet ve malzeme dilinden gelir.
+
+Her sekans için mekânı yazarken kendine sor ve cevabını Mami'ye YAZ:
+  "Bu mekân, bu karenin öğrettiği şeyin GEÇTİĞİ yer mi — yoksa güzel render olacağı için mi?"
+İkincisiyse o bir dünya değil, bir fotoğraf fikridir. At.
+
+═══ SIRAYLA ═══
+
+0. @agents/OLCULENLER.md — bu repoda artık otomatik yükleniyor, 14 madde. Bu oturumdaysan
+   elle oku; yeni oturum açarsan zaten sende olur.
+
+1. ARŞİVLE
+   mkdir -p _ESKI && git mv PROMPTLAR _ESKI/PROMPTLAR && git mv images _ESKI/images
+   (silme, taşı. _ESKI/ AÇILMAZ.)
+
+2. KİLİTLER — plan modunda
+   node scripts/brifing.mjs "agents/COMMAND-INBOX/Bekleyen/6.sınıf denetleyici ve düzenleyici sistemler video senaryosu.docx"
+   /mamilas-enzim
+   🔴 KİLİT 1'de tek mekân kilitleme. Sekans başına mekân yaz, hepsi kaynaktan türesin.
+
+3. DÜNYA DOĞRULAMASI — mekanik, tartışmasız
+   Yazdığın her mekânın 3-5 anahtar kelimesini kaynak docx'te SAY.
+   Kaynakta 0 çıkan kelimeyi 10+ karede kullanacaksan DUR ve Mami'ye sor.
+
+4. SEKANS OMURGASI
+   /mamilas-studyo — 15-30 sn'lik alt-sekanslar, soru → gözlemsel kanıt → dönüşüm → köprü.
+   Ölçek merdiveni: geniş → orta → yakın → makro. Ardışık iki karede aynı ölçek YOK.
+   (Eski sette 29 macro vardı; tek nota.)
+
+5. İKİ KARE CANARY — 56 kare yazmadan önce
+   İki kare bas (~150 kredi), Read ile AÇ ve GÖZÜNLE bak:
+     · Bu bir SAHNE mi, poster/ürün çekimi mi?
+     · Karenin kahramanı DERS mi, yoksa bir eşya mı?
+     · Ekranda okunan her şey Türkçe mi? (uydurma harf = kırmızı)
+     · Mira öğrenci mi, seyirci mi?
+   Biri bile hayırsa geri dön. Yeşilse ikisini Mami'ye ONAYA getir. Onaysız devam yok.
+
+6. TAM SET — onaydan sonra
+   Kare başına ~530 kelime YAZMA; motorun okuduğu şey sahne, deneme değil.
+   Negatif sahneye özel ve en çok 3-5 madde (Magnific'in kling-30'unda ayrı negatif
+   alanı YOKTUR — negatif, sahneyi anlatacak kelimelerle aynı bütçeden gider).
+   Etiketli ok ve çağrı çizgisi YASAK: kavram yazısı sahnenin MALZEMESİNDEN doğar.
+   Start frame YALNIZ Magnific'te basılır.
+
+═══ MAMİ'YE NE ZAMAN GELİRSİN ═══
+
+GEL:  sekans mekânları (kaynaktan türettiğin liste) · canary onayı · kare kalitesinin
+      son hükmü · zevk/ton kararı · FACT REQUIRED · para yakacak seçim
+
+GELME: kendi bulabileceğin kusur · "şuna bakar mısın" · uzun ilerleme raporu
+
+"Kredi sorun değil, daha dikkatli olalım." Yanlış dünyaya 56 kare yazmak,
+56 kareyi tek tek düzeltmekten pahalıdır.
