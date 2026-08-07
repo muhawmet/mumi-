@@ -1,14 +1,61 @@
-SEKANS 1 — ORKESTRA: ONLARCA İŞ, TEK UYUM (konser salonu) · K03-K08
+SEKANS 1 — ORKESTRA: ONLARCA İŞ, TEK UYUM (konser salonu) · K01-K08
 ═══════════════════════════════════════════════════════════════════
 Mekân kaynaktan: "dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi"
-Süreklilik: K01 ve K02 ile aynı salon — bal rengi ahşap sahne, koyu kırmızı perde,
-yaldızlı balkon locaları, indigo seyirci karanlığı, sahne solundan gelen sert
-beyaz-altın huzmeler, siyah frak, bal tonlu yaylılar, bakır nefesliler.
-Ölçek merdiveni: K03 geniş-üstten · K04 alçak orta · K05 yakın · K06 geniş yan-balkon
-· K07 yakın (Mira) · K08 tepeden çok geniş. Ardışık iki karede aynı ölçek yok.
+Süreklilik: tek salon — bal rengi ahşap sahne, koyu kırmızı perde, yaldızlı balkon
+locaları, indigo seyirci karanlığı, sahne solundan gelen sert beyaz-altın huzmeler,
+siyah frak, bal tonlu yaylılar, bakır nefesliler.
+register: edu
+Ölçek merdiveni: çok geniş → yakın → geniş-üstten → alçak orta → yakın →
+geniş yan-balkon → yakın (Mira) → tepeden çok geniş.
+Ardışık iki karede aynı ölçek yok.
 @mira YALNIZ K07'de → references: 1lLXJFpr4r
 Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+
+⚠ K01 ve K02 blokları 2026-08-07'de GERİ YAZILDI. Kareler (`images/1.png`, `2.png`)
+basılı ve Mami onaylı, ama prompt metinleri bu dosyada hiç yoktu — kit eksikti ve
+motion yazarken elde metin olmayacaktı. Bloklar **basılı kareye bakılarak** kuruldu,
+yeni basım yapılmadı. Yeniden basılırlarsa çıktı birebir aynı olmayabilir; kaynak
+otoritesi kareyle metin arasında **karedir**.
 ═══════════════════════════════════════════════════════════════════
+
+
+K01 ──────────────────────────────────────────────────────────────
+VO 1: "Sahnede onlarca müzisyen aynı anda çalıyordu."
+FİKİR: Film ilk karesinde dünyayı kurar — "onlarca" bir sıfat değil, sayılabilen
+  bir GÖRÜNTÜ olmalı; kadraj dolu ama karışık değil.
+YÜKÜM: Herkes ÇALIŞIYOR. Kimse poz vermiyor, kimse kameraya bakmıyor.
+AYRICALIK: Sahnenin kendi içinden, yaylıların arasından bakıyoruz — seyircinin
+  hiç göremeyeceği bir yerden.
+PLAN: Önde odak dışı kontrbas gövdesi ve burgusu (sağ kenar) · ortada keskin
+  yaylılar ve nefesliler · arkada yaldızlı localar ve indigo seyirci karanlığı.
+ENTRY STATE: Bütün yaylar hareket hâlinde, hiçbiri aynı yerde değil.
+EXIT STATE: Aynı doluluk; yalnız huzmedeki toz döndü.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. We are standing inside the orchestra itself, back among the double basses on stage left, looking across the whole ensemble at a slight downward angle. The stage is packed and every single player is working: cellos and basses bowing in the near rows, a bank of woodwinds behind them with reeds at their lips, a brass rank further back with tubas and horns catching the light, violins and violas filling the far half in curving ranks, and a conductor small and dark at the very back of the depth. Nearest the lens, out of focus and filling the entire right edge, the honey-toned shoulder and carved scroll of a double bass with a player's hand raised on its neck. In the middle ground a black music stand with open pages sits sharp against the warm oak boards. Behind everything the gilded balcony boxes glow and the auditorium beyond them falls into a deep blue darkness. Three broad shafts of white-gold light come down from high stage left, visible in the air, and lay long warm reflections across the polished floor.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; wide lens from inside the ensemble at chest height, deep focus through the middle ground, tactile spruce, lacquered brass and polished oak, fine film grain.
+LIGHT AND PALETTE: three hard white-gold shafts from high stage-left, visible in the dusty air; honey, amber and burnished brass against crimson drapery and a saturated indigo auditorium, no washed grey.
+NEGATIVE: no empty chairs breaking the ranks; no player looking at camera; no flat even fill light; no readable text on the sheet music.
+-----
+
+
+K02 ──────────────────────────────────────────────────────────────
+VO 2: "Yaylar, nefesliler, davullar; hepsi bir arada."
+FİKİR: Üç aile tek kadrajda, tek ışıkta, tek diyagonalde — "bir arada" bir liste
+  değil, bir KOMPOZİSYON.
+YÜKÜM: Yaylar aynı açıda olmalı; uyum önce gözle görülür, sonra anlaşılır.
+AYRICALIK: Yayların hizasından, neredeyse enstrümanların arasından bakıyoruz.
+PLAN: Önde odak dışı nota sehpası kenarı (sağ alt) · ortada keskin üç keman ve
+  yayları · arkada bakır çanaklar, timpani ve tokmağı kalkmış perküsyoncu.
+ENTRY STATE: Üç yay da aşağı inişin ortasında, aynı diyagonalde.
+EXIT STATE: Yaylar inişini tamamlamış; diyagonal korunuyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. A close view along the front row of the violin section, taken almost from bow height so the instruments cross the frame in a strong repeated diagonal. Three violinists are sharp: their chins are down on the rests, their left hands are up on the fingerboards, and all three bows lie on exactly the same slanting line, catching a thin hard highlight along their length. Just behind them and softer, the golden bells of two trombones and a tuba glow warm, and behind those a timpanist stands with a felt mallet lifted over a wide copper drum. Nearest the lens, out of focus and cutting up the right edge, the black lip of a music stand with the corner of a page. The far background holds a deep crimson curtain and a warm gilded column, both soft. One hard warm key comes from the upper left, rakes across the honey-coloured spruce of the instruments, lights the players' knuckles and jaws, and leaves their shoulders and the space between them in rich shadow.
+
+STYLE: 3D animated feature, warm stylised Pixar tradition; medium telephoto along the row, shallow depth of field with strong diagonal repetition, tactile spruce, horsehair, felt and beaten copper, fine grain.
+LIGHT AND PALETTE: single hard warm key from upper left picking out the bow line and the brass bells; honey, amber and copper against deep crimson and saturated shadow, colour stays rich in the darks.
+NEGATIVE: no bow crossing at a different angle from the others; no readable text on the pages; no flat even fill light; no player smiling to camera.
+-----
 
 
 K03 ──────────────────────────────────────────────────────────────

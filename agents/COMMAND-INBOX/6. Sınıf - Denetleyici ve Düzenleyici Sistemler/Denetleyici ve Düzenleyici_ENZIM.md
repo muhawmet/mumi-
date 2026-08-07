@@ -12,15 +12,22 @@
 
 🔴 **Tek bir mekân kilitlenmez.** Her sekansın mekânı **kaynak docx'ten** gelir:
 
-| sekans | mekân | kaynağın kendi cümlesi |
-|---|---|---|
-| S1 K01-08 | **konser salonu** | *"dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi"* |
-| S2 K09-16 | Mira + **bedenin içi** | *"vücudumuzu saran ışık hızıyla parlayan elektrik ağları"* |
-| S3 K17-24 | **nöron dünyası** | *"milyonlarca sinir hücresinden (nöron) oluşur"* |
-| S4 K25-33 | **maket masası** + denge anı | *"tek ayak üstünde durmaya çalışır"* · *"bisiklete binmek"* |
-| S5 K34-44 | gerçek anlar | *"elini sıcak bir çaydanlığa dokundurup hemen çeker"* |
-| S6 K45-60 | **kan dolaşımı** + **lunapark** | *"kan damarları içinde süzülerek"* · *"lunaparkta tren"* |
-| S7 K61-66 | konser salonu (kapanış) | iki sistemin karşılaştırması |
+🔴 KARE NUMARALARI 2026-08-07'de GÜNCELLENDİ — senaryo Mami onayıyla 66→**58** indi.
+Aşağıdaki aralıklar tek geçerli olanlardır; eski 66'lık numaralandırma her yerde ölüdür.
+
+| sekans | kare | mekân | kaynağın kendi cümlesi |
+|---|---|---|---|
+| S1 | **K01-08** 🔒 | **konser salonu** | *"dev bir orkestra, onlarca enstrüman, en önde Orkestra Şefi"* |
+| S2 | **K09-15** | Mira + **bedenin içi** | *"vücudumuzu saran ışık hızıyla parlayan elektrik ağları"* |
+| S3 | **K16-21** | **nöron dünyası** | *"milyonlarca sinir hücresinden (nöron) oluşur"* |
+| S4 | **K22-30** | **maket masası** + denge anı | *"tek ayak üstünde durmaya çalışır"* · *"bisiklete binmek"* |
+| S5 | **K31-39** | gerçek anlar | *"elini sıcak bir çaydanlığa dokundurup hemen çeker"* |
+| S6 | **K40-53** | **kan dolaşımı** + **lunapark** | *"kan damarları içinde süzülerek"* · *"lunaparkta tren"* |
+| S7 | **K54-58** | konser salonu (kapanış) | iki sistemin karşılaştırması |
+
+🔒 S1 basılı ve onaylı (`images/1.png`…`8.png`) — yeniden yazılmaz.
+Sekans omurgası (soru→kanıt→dönüşüm→köprü, ölçek merdiveni, L/J kesim, ses haritası):
+**`_OMURGA.md`** — kare yazan ajan ONU okur, bu tabloyu değil.
 
 **Sınama — yazmadan önce:** *bu mekân kaynakta geçiyor mu, yoksa güzel render olacağı
 için mi seçildi?* İkincisiyse dünya değil, bir fotoğraf fikridir. At.
