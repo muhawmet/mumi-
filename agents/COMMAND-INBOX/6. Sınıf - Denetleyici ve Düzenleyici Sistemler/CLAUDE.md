@@ -18,7 +18,11 @@ Kilitlerin tam metni burada çoğaltılmaz, çağrılır:
 
 ## ÜRETİM ZİNCİRİ — Mami'nin kuralı, üç adım, atlanamaz
 
-**Ajan YAZAR → sen KONTROL EDERSİN → sen BASARSIN.** Ortadaki adım bir formalite değil,
+**Ajan YAZAR → sen KONTROL EDERSİN → sen BASARSIN.**
+
+🔴 **BASAN SENSİN. Ajan değil, MAMİ DE DEĞİL.** (Mami, 2026-08-07: *"sen basacaksın, ajan
+değil sen, ben de değil."*) Mami'nin işi **hüküm**: canary onayı, kare kalitesinin son sözü,
+zevk ve ton kararı. Ona "şunu basar mısın" denmez, "şuna bakar mısın" denir. Ortadaki adım bir formalite değil,
 zincirin sebebidir: ajan orkestratörün körlüğünü miras alır ve altı mükemmel ajan yanlış
 dünyada altı mükemmel yanlış üretir. Ajanın getirdiği hiçbir prompt **okunmadan** motora
 gitmez — kaynak dünyası, `@handle` çağrısı (tarif değil), kadraj kütlesi, negatifin sahneye

@@ -63,6 +63,15 @@ Buraya **hüküm** yazılır, anlatı değil.
 
 ## CÜZDAN
 
+22. 🔴 **BASAN CLAUDE'DUR — ajan değil, Mami de değil.** Zincir üç adım: **ajan YAZAR →
+    Claude KONTROL EDER → Claude MCP ile BASAR.** Ortadaki adım formalite değil, zincirin
+    sebebi (ajan orkestratörün körlüğünü miras alır). Mami'nin işi HÜKÜM: canary onayı, kare
+    kalitesinin son sözü, zevk/ton kararı — tuşa basmak değil.
+    *(Mami 2026-08-07: "sen basacaksın, ajan değil sen, ben de değil." Üçüncü adım kodla
+    zorlanıyor: `harcama-kapisi.mjs` girdide `agent_id` görünce reddediyor — canlı ölçüldü,
+    ajanın `images_generate` çağrısı `[AJAN]` ile bloke, ana oturumunki açık, kredi değişmedi.
+    Kanonun üç yerinde hâlâ "Mami basar" yazıyordu ve yeni oturum işi ona yıkıyordu.)*
+
 10. 🔴 **START FRAME YALNIZ MAGNIFIC'te basılır.** İstisnası yoktur. Higgsfield **ortak hesap**
     ve MCP'sinde **silme aracı yok** — oraya giden prompt görünür kalır. Mami'nin ölçüsü:
     *"start frame motion prompt'undan daha değerli."* Bu kural fiyat kuralını **ezer**.

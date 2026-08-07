@@ -5,7 +5,13 @@
 > dönülür — ama icraat fazında duvar kurmak **işi ertelemenin kılık değiştirmiş halidir.**
 
 İcraat fazında iş **video üretmektir**, sistem inşa etmek değil. Mami konuyu getirir, ajan
-prompt yazar, Mami basar, ajan denetler, kurgu kiti teslim edilir.
+prompt yazar, **Claude MCP ile basar**, Claude denetler, kurgu kiti teslim edilir.
+
+🔴 **BASAN CLAUDE'DUR — ajan değil, Mami de değil** (Mami, 2026-08-07: *"sen basacaksın,
+ajan değil sen, ben de değil"*). Mami'nin işi **hüküm**: canary onayı, kare kalitesinin son
+sözü, zevk ve ton kararı. Tuşa basmak onun işi değil ve bir daha ona yıkılmaz. Zincir üç
+adımdır: **ajan YAZAR → Claude KONTROL EDER → Claude BASAR.** Üçüncü adım kodla zorlanıyor
+(`.claude/hooks/harcama-kapisi.mjs`, ajanın MCP çağrısını `[AJAN]` ile reddediyor).
 
 **Nihai hedef: Upwork portfolyosu.** Üretilen her iş bir portfolyo parçasıdır, deneme değil —
 *"bunu bir müşteriye gösterir miyim"* her kararın kıstasıdır.
@@ -67,7 +73,8 @@ Tarihsel derinlik gerekirse `artifacts/decision-pipeline-implementation/EXECUTIO
   durmaz. Kod işi ayrı bir inşa turudur.
 - **Kusur kütüphanede düzeltilir** (dünya metni), kodda değil.
 - **Görmediğin kareye motion yazma.** Onaylı kare Read ile açılır. Revize edilmiş kare de dahil.
-- **Sekans sekans teslim.** Önce Intro; Mami basar, beğenirse devam. Tek geçişte 50 kare basma.
+- **Sekans sekans teslim.** Önce Intro; **Claude basar**, Mami bakar, beğenirse devam.
+  Tek geçişte 50 kare basma.
 - **Ajan başına sekans, kare başına değil.** Eşzamanlı tavan 6.
 - **Tek geçiş denetimi.** Kareye bir kez bak; aynı geçişte motion + varsa revize.
 - **Kurgu kiti motion fazıyla birlikte gelir** — MOTION + EDIT-PLAN + SESLENDIRME + SUNO.

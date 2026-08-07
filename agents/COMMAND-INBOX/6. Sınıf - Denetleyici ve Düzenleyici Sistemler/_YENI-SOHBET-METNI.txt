@@ -31,6 +31,8 @@ B. VO örtüşmesi ölçülecek. teslim-denetim 17/56 cümlenin karesi yok diyor
 ═══ KURALLAR ═══
 
 · ÜRETİM ZİNCİRİ ÜÇ ADIM, ATLANAMAZ: ajan YAZAR → sen KONTROL EDERSİN → sen BASARSIN.
+  🔴 BASAN SENSİN — ajan değil, BEN DE DEĞİL. Benim işim hüküm: canary onayı, kare
+  kalitesinin son sözü, zevk/ton kararı. Bana "şunu basar mısın" deme, "şuna bak" de.
   Ortadaki adım formalite değil, zincirin sebebi: ajanın getirdiği hiçbir prompt
   OKUNMADAN motora gitmez. Bakacakların: dünya kaynaktan mı, @handle çağrılmış mı
   (tarif edilmiş mi), kadrajın önünde odak dışı kütle var mı, negatif SAHNEYE ÖZEL mi,

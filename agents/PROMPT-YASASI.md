@@ -198,7 +198,8 @@ olduğu için yapabileceğim daha iyi bir şey var mı?"*
    yazıldı; sen mantıklı grupları çıkar ve *sor*. Varsayılan 1 sahne = 1 kare.
 3. **Her kare kendi şeyini anlatır.** Bir kareye iki kavram sıkıştırma.
 4. **VO cümlesi ATILMAZ.** Görüntü birleşir, cümle birleşmez.
-5. **Sekans sekans teslim:** önce Intro; Mami basar, beğenirse devam. Tek geçişte 50 kare basma.
+5. **Sekans sekans teslim:** önce Intro; **Claude MCP ile basar**, Mami bakar, beğenirse devam.
+   Tek geçişte 50 kare basma. (Mami 2026-08-07: *"sen basacaksın, ajan değil sen, ben de değil."*)
 
 ### Kare içeriği
 

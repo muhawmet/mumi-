@@ -193,7 +193,7 @@ Eski işe bakarken lens şudur: *"bunlar hatalı, ne bozuk?"* — kopyalanacak k
 
 **Üretimden ÖNCE ölç, sonra harca.** Ölçüldü: 71 revizenin **~44-52'si** prompt metnine bakılarak,
 tek kredi yakmadan kesilebilirdi. Sıra: `dunya-kilidi.mjs` ile **dünya kartını oku** → prompt'u **kendi cümlenle** yaz →
-`prompt-lint.mjs` koş → **sonra** Mami bassın. Lint'in KIRMIZI'sı kanıtlı eksiktir; SARI'sı kusur
+`prompt-lint.mjs` koş → **sonra SEN bas** (MCP, ana oturum). Lint'in KIRMIZI'sı kanıtlı eksiktir; SARI'sı kusur
 iddiası değil, ajanın tek geçişte bakacağı yerdir; KAPSAM satırı yeşilin neyi kapsamadığını söyler —
 **yeşil ≠ temiz.**
 
