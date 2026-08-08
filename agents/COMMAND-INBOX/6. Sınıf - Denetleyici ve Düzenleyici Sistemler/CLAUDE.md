@@ -96,6 +96,27 @@ koduyla bloke edildi, ana oturumunki açık geçti, kredi değişmedi.
    **Bloke:** `_SENARYO.txt` dipnotu *"MAMİ ONAYINA SUNULDU — onaysız tek kare yazılmaz"*
    diyor ve üç soru açık. Onay gelmeden K09+ yazılmaz.
 
+## 🔴 DURUM 2026-08-08 — FİLM HAM HÂLDE BİTTİ, PARK EDİLDİ
+
+**58 kare + 58 klip hazır.** Klipler repoda DEĞİL:
+`~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/K01.mp4 … K58.mp4`
+256 MB · ham 5:31 · kırpıldıktan sonra ekran ~3:35 · **1284×716 / 24 fps (1080p değil).**
+Teslim seti tam: prompt · motion · edit-plan · referanslar · senaryo · iki VO dosyası.
+
+**KALAN TEK ADIM:** ElevenLabs'tan VO → `kaba-kurgu.mjs --klipler --vo` → Premiere timeline.
+
+⚠ **58 klibin 56'sı İZLENMEDİ.** Yalnız 2 canary AGY'ye izletildi (morphing yok, sayı sabit,
+yazı yok) ve kalan 56 o kanıta dayanarak basıldı. **"İyi" denemez, ölçülmedi.**
+Kalite hükmü kanona göre **tam film** izlenerek verilir.
+
+⚠ **AÇIK TEK KARAR:** K53'te fidanın dibindeki bitki etiketinde okunmayan bir yazı var.
+Ekranda-yazı kilidine takılıyor ama bulanık; Mami'nin "bariz hata yoksa geçme" emri gereği
+basılmadı. 75 kredi, Mami'nin sözü.
+
+⚠ **KREDİ — dün yanlış yazıldı, düzeltildi:** 58 kare Magnific'in **%6,4**'ünü, 58 klip
+Higgsfield'ın **%11,5**'ini yaktı. Klip kareden **ucuz değil, daha pahalı.** İki cüzdanın
+ham kredisi yan yana konmaz (`rota.mjs:148`).
+
 ## MAMİ KARARLARI
 
 - 2026-08-07 — "üretim kısmını sadece sen yapacaksın, şef sensin, onlar sadece prompt
