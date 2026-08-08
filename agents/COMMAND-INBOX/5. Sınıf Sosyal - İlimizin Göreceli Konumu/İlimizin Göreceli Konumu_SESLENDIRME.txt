@@ -1,0 +1,42 @@
+5. SINIF SOSYAL BİLGİLER · 5.2.1 İLİMİZİN GÖRECELİ KONUMU
+SESLENDİRME METNİ
+======================================================================
+Ses: sıcak, meraklı, aceleci DEĞİL. Bir çocuğa bir şey gösteren biri gibi.
+Tempo: ~2.4 kelime/sn (kaynağın kendi temposundan bir tık yavaş — nefes payı var).
+Kaynağın metnine TEK KELİME eklenmedi, tek kelime çıkarılmadı.
+
+🔴 KAYIT NOTU: cümleler arası duraklamalar KURGUDA açılacak. Seslendirmede
+cümle sonlarını uzatma, doğal bırak — konuşmasız görsel pasajlar araya girecek.
+======================================================================
+
+── VO 1  ·  40 kelime  ·  ~16.7 sn
+Bir ilin adını söylemeden onun hangi il olduğunu bulabilir miyiz? Komşu illerinden, çevresindeki dağ ve denizlerden, ulaşım yollarından ya da tarihî eserlerinden söz edersek bunu başarabiliriz. Çünkü her ilin, çevresindeki yerlere ve sahip olduğu özelliklere göre tanımlanan bir konumu vardır.
+
+── VO 2  ·  34 kelime  ·  ~14.2 sn
+Göreceli konum, bir yerin başka yerlere göre nerede bulunduğunu açıklar. Örneğin ‘Hastane okulun doğusundadır.’ ya da ‘Kütüphane parkın yanındadır.’ dediğimizde göreceli konumdan yararlanırız. Bir yer tarif edilirken yön, mesafe ve çevredeki belirgin yapılar kullanılabilir.
+
+── VO 3  ·  33 kelime  ·  ~13.8 sn
+Göreceli konum açıklanırken ana ve ara yönlerden yararlanılır. Bir ilin kuzeyinde, güneyinde, doğusunda ve batısında bulunan komşu iller belirlenir. Böylece ilin ülkemizin hangi bölümünde yer aldığı ve çevresindeki illerle ilişkisi daha kolay anlaşılır.
+
+── VO 4  ·  38 kelime  ·  ~15.8 sn
+Bir ilin göreceli konumu yalnızca komşu illerle açıklanmaz. İlin çevresindeki dağlar, ovalar ve platolar gibi yeryüzü şekilleri ile deniz, göl ve akarsu gibi su kaynakları da dikkate alınır. Bu doğal özellikler; ulaşımı, tarımı, yerleşmeyi ve ekonomik faaliyetleri etkileyebilir.
+
+── VO 5  ·  44 kelime  ·  ~18.3 sn
+Ulaşım yolları ile yer altı ve yer üstü kaynakları da ilin göreceli konumunu belirleyen özelliklerdendir. Ana yolların kavşağında bulunan, limana sahip olan veya önemli kaynakları barındıran bir il; ticaret, sanayi ve ulaşım bakımından gelişebilir. Bu nedenle konum, insanların yaşamını ve ilin ekonomik faaliyetlerini etkiler.
+
+── VO 6  ·  41 kelime  ·  ~17.1 sn
+Doğal güzellikler ve tarihî mekânlar da bir ili diğer illerden ayırır. Göller, ormanlar ve kanyonlar doğal; kaleler, köprüler ve camiler ise tarihî konum özellikleri arasında yer alabilir. Bu değerler ilin tanınmasına ve turizmin gelişmesine katkı sağlar. Onları korumak ise hepimizin sorumluluğudur.
+
+── VO 7  ·  30 kelime  ·  ~12.5 sn
+Bir ilin göreceli konumunu açıklarken farklı özelliklerden birlikte yararlanırız. Komşu iller, yeryüzü şekilleri, su kaynakları, ulaşım yolları, ekonomik kaynaklar, doğal güzellikler ve tarihî mekânlar bize o ilin haritadaki hikâyesini anlatır.
+
+── VO 8  ·  10 kelime  ·  ~4.2 sn
+Peki sen, yaşadığın ilin göreceli konumunu hangi özelliklerden yararlanarak anlatabilirsin?
+
+======================================================================
+TOPLAM: 270 kelime · ~112 sn konuşma
+Konuşmasız görsel pasajlar ~62 sn → FİLM ~2:55
+
+KESİM NOTU (kurgu için): VO 1 → S1 (K01-K07) · VO 2 → S2 (K08-K12) ·
+VO 3 → S3 (K13-K17) · VO 4 → S4 (K18-K24) · VO 5 → S5 (K25-K30) ·
+VO 6 → S6 (K31-K36) · VO 7 → S7 (K37-K39) · VO 8 → K40 (kapanış sorusu).

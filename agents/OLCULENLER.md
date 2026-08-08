@@ -110,6 +110,44 @@ Buraya **hüküm** yazılır, anlatı değil.
     hiç onay yok. Kapı yakalamadı çünkü tek sayı tutuyor, cüzdan ayırmıyor. Ayrıca bütün gece
     kredi sayıldı, hiç paraya çevrilmedi: Higgsfield'da $1 ≈ 22 kredi, yani 580 kredi ≈ $26.)*
     Basımdan önce söylenecek cümle: **"<cüzdan> · N birim × fiyat = X kredi ≈ $Y"**.
+31. 🔴 **CANARY SETİ SABİT: İLK 2 SAHNE + EN EPİK 2 SAHNE.** Dört kare, tartışma yok.
+    Mami'nin kuralı (2026-08-08): *"canary hep ilk 2 sahne ve en epik 2 sahne."*
+    Sebebi yapısal: **ilk 2 sahne dünyayı ve referansı sınar** (film oradan doğar, yanlışsa
+    hepsi yanlış), **en epik 2 sahne motorun tavanını sınar** (en pahalı, en çok kırılan,
+    ve filmin beğenilip beğenilmeyeceğini belirleyen kare orası). Risk sınıfı listesinden
+    canary türetmek eskidi — o yöntem 8 kare istiyordu ve her projede yeniden tartışılıyordu.
+32. **FOTOĞRAF TEK CÜZDAN, VİDEO İKİ CÜZDAN.** Start frame **yalnız Magnific · Nano Banana 2 ·
+    2K**; klip Magnific ya da Higgsfield'dan üretilebilir. *(Mami, 2026-08-08: "fotolar 2k
+    nano banana 2 magnificten üret sadece, videoları ikisinden de üretebilirsin.")*
+    NB2 2K 16:9 = **75 kredi** (`simulate_cost` exact, 2026-08-08).
+
+33. 🔴 **REFERANS PLAKASININ TEMASI SAHNENİN TEMASIYLA ÖRTÜŞÜYORSA PLAKA SAHNEYİ ELE
+    GEÇİRİR.** Kusur "referans çalışmıyor" değil; motor plakayı *"bu sahne nedir"* diye
+    okuyor. *(2026-08-08 · Göreceli Konum: `@mira`'nın gardırobu keşif temalı — teleskop
+    rozeti, Satürn cebi — ve sahne bir harita/keşif odası. **4 referanslı karenin 4'ü de
+    çöktü**, iki AYRI plaka tasarımıyla: portre plakası → sahnesiz portre, sonra vintage
+    kitap odası + İngilizce fantasy harita; 1:1 turnaround → turnaround'ın birebir kopyası
+    (gardırop bile değişti), sonra gece astronomi odası, teleskop kahraman, harita yok.
+    Aynı `@mira` plakası Denetleyici'de MUTFAKTA çalışmıştı — tema çakışmıyordu.
+    Aynı turda **referanssız 2 karenin 2'si şaheser** çıktı.)*
+    **Sınama, kare yazmadan önce:** *plakanın taşıdığı nesneler bu sahnede de var mı?*
+    Evetse referans VERİLMEZ; süreklilik kısa ve sabit bir gardırop cümlesiyle taşınır.
+34. **Turnaround/model sheet SAHNE karesine referans olarak verilmez** — motor onu bir
+    kompozisyon olarak kopyalıyor, tıpkı mekân plakası gibi (ölçülen ders 17'nin karakter
+    versiyonu). Turnaround bir İNSAN belgesidir, bir motor girdisi değil.
+
+35. 🔴 **BİR BİNAYI İŞLEVİYLE ADLANDIRMAK MOTORU O İŞLEVİ YAZMAYA İTİYOR.** Prompt'ta
+    "a hospital with a porch canopy" geçince motor binanın alnına **HOSPITAL** yazıyor;
+    "school" geçince **SCHOL** (yanlış heceleme) yazıyor — İngilizce, istenmemiş, kilit kırar.
+    *(2026-08-08 · Göreceli Konum K10 ve K11: iki karede de İngilizce tabela çıktı, oysa
+    negatifte yazı hiç adlandırılmamıştı — kusuru negatif değil, GÖVDEDEKİ işlev adı çağırdı.)*
+    **Onarım:** binayı işlevle değil **BİÇİMLE** tarif et — "a broad calm building with a deep
+    porch canopy and a wide ramp". İşlev adı prompt'ta hiç geçmez; seyirci onu zaten biçimden
+    okur. Aynı kural tabela taşıyabilen her nesne için geçerli (dükkân, istasyon, müze).
+36. **Pusula/kadran gibi DAİRESEL yüzeye yazılan kelimeler dönüyor.** "Hepsi dik ve alt kenara
+    paralel" talimatı dairesel kadranda tutmuyor; motor kelimeleri yayla birlikte eğiyor.
+    *(K16: KUZEY yatay çıktı ama BATI dikey, GÜNEY ters döndü.)* Ekran yazısı DÜZ yüzeye
+    yazılır; kadran yalnız iğne ve derece çizgisi taşır.
 
 ## CÜZDAN
 

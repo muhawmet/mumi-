@@ -1,0 +1,92 @@
+CANARY SETİ — İLK 2 SAHNE + EN EPİK 2 SAHNE (kanon: OLCULENLER 31)
+═══════════════════════════════════════════════════════════════════
+Proje: 5. Sınıf Sosyal — İlimizin Göreceli Konumu
+Motor: Magnific · Nano Banana 2 (imagen-nano-banana-2-flash) · 2K · 16:9
+Fiyat: 75 kredi/kare exact · 4 kare = 300 kredi
+references: UPOqovywny (@mira) — yalnız K01 ve K37 (ikisinde de yüz kadrajda ve ışıkta).
+K02'de insan yok. K18'de YALNIZ parmak ucu var → referans VERİLMEZ: ölçülen ders 25,
+yüz kadraj dışıysa motor sahneyi atlayıp plakayı ithal ediyor (beyaz fonda stüdyo pozu).
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+K01 ──────────────────────────────────────────────────────────────  [DÜNYA + REFERANS]
+VO 1: "Bir ilin adını söylemeden onun hangi il olduğunu bulabilir miyiz?"
+FİKİR: Film ilk karesinde dünyayı kurar. Soru VO'da; karede olan şey bir çocuğun
+  bir kâğıda kendi ağırlığını vermesi.
+YÜKÜM: Mira OKUYOR — poz vermiyor, kameraya bakmıyor, gülümsemiyor.
+AYRICALIK: Kâğıdın hizasından bakıyoruz; haritanın kendi yüzeyinden.
+PLAN: Önde odak dışı pirinç-cam ağırlık (sol kenar) · ortada keskin harita yüzeyi
+  ve elleri ve yüzü · arkada çıplak sıva karanlığa gömülüyor.
+ENTRY STATE: Avuçları kâğıtta, başı eğik, nefesi ipi kımıldatıyor.
+EXIT STATE: Aynı duruş; yalnız huzmedeki toz döndü ve kâğıdın uzak kenarı bir kez indi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 35mm lens at f/4, the camera set down low at the near edge of a heavy oak table almost level with the surface of the paper and angled up across it toward her; the blurred brass-collared glass paperweight fills the extreme near-left of the frame as a solid foreground anchor so the composition never falls into symmetry. @mira stands at the far side of the table with both palms flat on a large open paper map and her head down over it, her weight forward on her hands, reading it the way you read something you have only just begun to understand. Warm matte tan skin, low specular, never tinted green or grey. She is framed from the hips up so nothing below the hip is visible, and no arm, hand or shoulder ends at a frame edge. The room is a dark attic study at the last hour of daylight: wide oak boards underfoot, bare plaster far behind, and that wall stays bare. The map is thick old paper with visible fibre, four deep fold creases still standing proud of the sheet, a drawn coastline and a range of hand-inked contour lines, three steel pins pushed into it and a length of red cotton thread lying slack across one corner. The key is a single hard white-gold shaft falling from high and far outside the frame, and it lands as one clean band across the open map and across her hands and her face and stops dead at the near edge of the table; past that edge the oak, the floor and the far wall stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale grey. The shaft prints a long crisp shadow away from every pin standing in the paper and lays the raised fold creases across the sheet as hard black ridges. One warm accent only and it is small: the brass head of a single pin takes a hard-edged golden point, cut dead at the metal, and that light stops dead at the metal and travels no further into the frame. Three things are alive: a slow drift of dust turning inside the shaft, the loose end of the red thread stirring where her breath reaches it, and the far edge of the paper lifting a few millimetres and settling. Depth in three layers — the paperweight blurred across the near-left, the paper surface and her hands and her face razor-sharp together through the middle, the bare plaster dissolving into deep coloured dark behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the pins sit into tight dark seams in the paper, the paperweight presses a small bright ring into the sheet beneath it, her palms flatten the paper where they lie. The paper carries only its drawn coastline and its inked contour lines. The air of the room is clear and dry and reads without haze to the far wall.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries drawn linework only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 35mm from paper height at f/4, tactile fibrous paper, oak grain, brass and steel, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft from high outside frame landing as a single band on the map and dying at the table edge; warm honey paper and oak against deep saturated indigo shade, colour stays rich in the darks.
+NEGATIVE: one light source only; the shaft dies at the near table edge and everything past it stays in coloured shade; the paper surface carries only drawn coastline and inked contour lines; she keeps her eyes down on the sheet.
+-----
+
+
+K02 ──────────────────────────────────────────────────────────────  [EKRANDA YAZI]
+VO 1 (devam): "…Çünkü her ilin, çevresindeki yerlere ve sahip olduğu özelliklere göre
+  tanımlanan bir konumu vardır."
+FİKİR: Başlık bir grafik değil, kâğıdın kendisi. Harfler kâğıda basılmış ve
+  yalayan ışık her harfin çukurunu gölgeyle dolduruyor — yazıyı ışık yazıyor.
+YÜKÜM: Bütün harfler TEK düzlemde ve kadrajın alt kenarına PARALEL.
+AYRICALIK: Tam tepeden — kâğıda dik bakan tek kare; film boyunca bir daha yok.
+PLAN: Kadrajın tamamı kâğıt. Üstte contour çizgileri, altta başlık, sağ altta
+  kırmızı ipin ucu ve tek çelik iğne.
+ENTRY STATE: Kâğıt kıpırdamıyor, yalnız toz iniyor.
+EXIT STATE: Aynı. Bu kare KİLİTLİ kamera — yazı taşıyıcısı hareket etmez.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 50mm lens at f/8, the camera directly overhead and perfectly square to the table so the sheet of paper fills the whole frame and every part of it lies in one single flat plane. The subject is the paper itself. Across the lower third, running exactly parallel to the bottom edge of the frame and reading left to right in one straight unbroken line, the Turkish words İLİMİZİN GÖRECELİ KONUMU are pressed deep into the thick paper as debossed letterforms — each letter is a clean valley stamped into the fibre, with a slightly raised burr along its rim where the fibre has been pushed up, and no ink, no paint and no printing anywhere in them. A single hard white-gold shaft rakes in low from the left and almost along the surface of the sheet, so it fills the inside of every stamped letter with a crisp black shadow and lights the raised burr on the opposite side of each stroke — the light is what makes the words readable. Above the words the upper two thirds of the sheet carry a drawn coastline and a dense range of hand-inked contour lines, a small hand-drawn compass rose in the far corner, and nothing else. Lying on the sheet: one steel pin standing upright near the lower right with its brass head, and the frayed end of a length of red cotton thread. The paper shows its fibre and the soft shoulders of two old fold creases crossing the upper half. The band of light covers the words and the near half of the contour lines and stops dead before the far edge of the sheet, which falls into deep saturated indigo shade. Every letter is Turkish and cut from the paper itself. Three things are alive: dust settling slowly through the raking beam, the frayed thread end lifting a hair, and the burr of one letter catching a moving glint as the dust crosses it. Every object rests in contact with the sheet and casts a hard-cored contact shadow: the pin lays a long thin black needle of shadow across the letters, the thread presses a soft trench into the fibre.
+
+TEXT: "İLİMİZİN GÖRECELİ KONUMU" — three Turkish words, 22 letters in total (8 + 8 + 6), spelled İ-L-İ-M-İ-Z-İ-N / G-Ö-R-E-C-E-L-İ / K-O-N-U-M-U, with dotted capital İ in İLİMİZİN and in GÖRECELİ and Ö in GÖRECELİ. The letterforms are stamped down into the paper fibre, never printed or painted or floating, and they read only by the shadow the raking light lays inside each stroke. All letters sit in one flat plane, on one straight baseline exactly parallel to the bottom edge of the frame.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 50mm directly overhead at f/8, everything in one plane, edge-to-edge sharpness across the lettering, tactile fibrous paper, steel and brass, fine film grain.
+LIGHT AND PALETTE: one hard white-gold raking shaft from the left almost parallel to the paper, filling every stamped letter with shadow; warm honey paper against deep saturated indigo at the far edge.
+NEGATIVE: every letterform is stamped down into the fibre and reads only by the shadow inside it; the words are Turkish and spelled exactly İLİMİZİN GÖRECELİ KONUMU; the sheet stays perfectly square to the lens with all letters in one plane; one light source only.
+-----
+
+
+K18 ──────────────────────────────────────────────────────────────  [EPİK 1 — FİLMİN GÖSTERİSİ]
+VO 4: "İlin çevresindeki dağlar, ovalar ve platolar gibi yeryüzü şekilleri…"
+FİKİR: Filmin tek fikri burada gözle görülür — KIRIŞIK SIRT OLUYOR. Metafor değil,
+  mekanizma: aynı çizgi, iki ölçek.
+YÜKÜM: Dikiş yeri KADRAJDA ve keskin olmalı. "Harita canlanıyor" değil; hangi
+  kırışığın hangi sırta döndüğü görünüyor.
+AYRICALIK: Kamera dikişin üstünde, iki ölçeği aynı anda tutan tek yerde.
+PLAN: Önde odak dışı kâğıt kenarı ve Mira'nın parmak ucu · ortada keskin dikiş ·
+  arkada gerçek vadi ölçeğe açılıyor.
+ENTRY STATE: Parmak ucu kâğıt tarafında duruyor, dikiş sabit.
+EXIT STATE: Aynı; yalnız uzak vadide bulut gölgesi bir karış kaydı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 40mm lens at f/5.6, the camera low and close over the surface of the map and angled along it into the distance, so the sheet runs away from the lens and opens into real land. One long raised fold crease in the paper runs from the near-left of the frame into the depth, and it changes as it goes: in the near half it is unmistakably paper — thick fibre, a soft shoulder where the sheet was folded, hand-inked contour lines curving over it — and then at a hard clean seam across the middle of the frame it becomes a true mountain ridge at real scale, the same line continuing outward as rock strata, with old snow lying in the lee of the crest and dark conifer forest running down the flank into a wide valley that falls away for miles behind it. The seam is the subject of the frame and it is razor-sharp: on one side inked contour lines, on the other the real strata those lines describe, meeting exactly. A child's fingertip rests on the paper side of the seam, close to the lens and slightly soft, one hand only, no face and no body in frame; warm matte tan skin, low specular, never tinted green or grey, and the pad of the fingertip flattens very slightly where it presses the sheet. The key is a single hard low white-gold sun raking in from the left, and it is the same light on both sides of the seam — it lays a long crisp shadow of the paper crease across the sheet in the near half, and lays the same shadow shape as a real ridge shadow across the valley in the far half. Beyond the reach of that light the valley floor and the far range stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale grey. One warm accent only: a thin hard-edged golden line rides the top of the crest where the sun catches the snow, and it is cut dead where the crest ends; and that light stops dead at the snow and travels no further down the flank. Three things are alive: a slow drift of dust turning in the beam over the paper, a single cloud shadow crawling across the far valley floor, and fine snow lifting off the crest in a thin banner. Depth in three layers — the paper edge and her fingertip blurred across the near foreground, the seam and the near ridge razor-sharp together through the middle, the far range and the valley floor dissolving into cool distance behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the paper lies flat and pressed to the table beneath it, the old snow sits down into the hollows of the lee slope, each conifer meets the flank at a tight dark root shadow, and the fingertip lays a small soft shadow onto the sheet. The paper carries only its inked contour lines. The air is clear and dry and the far range reads with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries inked contour lines only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 40mm low along the paper at f/5.6, tactile fibrous paper meeting real rock, snow and conifer at one hard seam, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left, identical on both sides of the seam; warm honey paper and lit rock against deep saturated indigo shade in the valley, colour stays rich in the darks.
+NEGATIVE: the seam stays hard and razor-sharp all the way across the frame; the paper surface carries only inked contour lines; one light source only, identical on both sides of the seam.
+-----
+
+
+K37 ──────────────────────────────────────────────────────────────  [EPİK 2 — KAPANIŞ AÇILIŞI]
+VO 7: "Bir ilin göreceli konumunu açıklarken farklı özelliklerden birlikte yararlanırız."
+FİKİR: Film başladığı odaya döner ama oda büyümüştür — huzme artık iki haritayı
+  birden tutuyor. Öğrenmenin ölçüsü ışığın genişlemesi.
+YÜKÜM: Mira geri çekilmiş; artık kâğıda yaslanmıyor, BAKIYOR.
+AYRICALIK: Odanın tamamını gören tek kare — film boyunca bir daha açılmıyor.
+PLAN: Önde odak dışı meşe masa köşesi ve cam ağırlık (sol alt) · ortada keskin iki
+  harita ve Mira · arkada çıplak sıva ve karanlık çatı makası.
+ENTRY STATE: İki avucu masanın kenarında, gövdesi geride, başı iki harita arasında.
+EXIT STATE: Aynı duruş; huzmedeki toz döndü, kırmızı ip bir kez sallandı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 28mm lens at f/5.6, the camera set at child chest height at the doorway side of the dark attic study and held level, wide across the whole room, so the heavy oak table runs away to the right and the bare plaster wall closes the far side; the blurred brass-collared glass paperweight and the turned oak corner of the table together anchor the extreme near-left. Two large paper maps lie open side by side on the table, touching along their inner edges: the near one is a physical relief map, thick paper with modelled hills standing up off the sheet, hand-inked contour lines, a coastline and a river system; the far one is a political map, the same land divided by clean drawn boundary lines into flat colour fields in muted ochre, sage, clay and slate, with small steel pins standing in several of them. @mira stands back from the table with both palms resting on its near edge and her body weight settled back on her heels, her head turned down and between the two sheets, looking from one to the other. Warm matte tan skin, low specular, never tinted green or grey. She is framed from the knees up so nothing below the knee is visible, and no arm, hand or shoulder ends at a frame edge. The key is a single hard white-gold shaft falling from a high dormer far outside the frame, and it has widened: where earlier it covered one sheet it now lays one broad clean band across both maps at once and across her face and forearms, and it stops dead just short of the far wall, which stands in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale grey. The shaft prints long crisp shadows away from every pin standing in the political map and lays the modelled hills of the relief map as hard black ridge shadows across the sheet. One warm accent only and it is small: the brass collar of the paperweight takes a hard-edged golden point, cut dead at the metal, and that light stops dead at the metal and travels no further into the frame. Four things are alive: a slow drift of dust turning through the widened shaft, the frayed end of the red cotton thread swinging once off the table edge, the far corner of the political map lifting and settling, and the dark roof truss deep behind holding perfectly still. Depth in three layers — the paperweight and oak corner blurred across the near-left, the two maps and @mira razor-sharp together through the middle, the bare plaster and the roof truss dissolving into deep coloured dark behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the pins sit into tight dark seams in the paper, both sheets lie flat with their inner edges pressed together, her palms flatten the oak edge where they rest. The plaster wall stays bare and the paper carries only its drawn boundaries, its coastline and its contour lines.
+
+TEXT: clean plate — no on-screen text in this frame; both sheets carry drawn linework and colour fields only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 28mm at child chest height at f/5.6, wide and level, tactile fibrous paper, modelled relief, oak, brass and steel, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft from a high dormer, now broad enough to cover both maps at once and dying before the far wall; warm honey paper and oak against deep saturated indigo, muted ochre sage clay and slate in the colour fields, colour stays rich in the darks.
+NEGATIVE: both sheets carry only drawn boundary lines, coastline and contour lines and their flat colour fields; the plaster wall stays bare; one light source only; she keeps her eyes down between the two sheets.
+-----

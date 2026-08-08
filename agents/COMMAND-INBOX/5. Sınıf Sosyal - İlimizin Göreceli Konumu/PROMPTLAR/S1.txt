@@ -1,0 +1,152 @@
+SEKANS 1 — ŞEHRİ BULABİLİR MİSİN? · K01-K07
+═══════════════════════════════════════════════════════════════════
+Mekân: harita odası (ankraj) → üç kısa arazi dalışı → odaya dönüş
+Süreklilik: ceviz kitaplıklar gölgede · pirinç teleskop · iki yer küresi · meşe masa ·
+lifi görünen kâğıt harita · dört katlanma izi · çelik iğneler · kırmızı pamuk ip ·
+pirinç yakalı cam ağırlık · TEK sert beyaz-altın huzme yüksek çatı penceresinden.
+register: edu · references YOK (canary'de ölçüldü: referanslı 4/4 çöktü)
+Ölçek merdiveni: alçak yakın (kâğıt hizası) → tepeden tam kare → yakın makro →
+çok geniş kıyı → geniş dağ eteği → orta ova → orta arkadan.
+Ardışık iki karede aynı ölçek yok.
+Çocuk: K01 (yüz, huzme bandında) · K07 (arkadan, yüz gölgede). K02-K06'da insan YOK.
+🔴 K02 ZATEN BASILDI VE ONAYLANDI — canary/K02.png. Bloğu `_CANARY.txt`'te.
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+K01 ──────────────────────────────────────────────────────────────
+VO 1: "Bir ilin adını söylemeden onun hangi il olduğunu bulabilir miyiz?"
+FİKİR: Film ilk karesinde dünyayı kurar. Soru VO'da; karede olan şey bir çocuğun
+  bir kâğıda kendi ağırlığını vermesi.
+YÜKÜM: "Bulabilir miyiz" bir arayış — o yüzden kız aramıyor, OKUYOR; kadrajda
+  cevap değil dikkat var.
+AYRICALIK: Kameranın kâğıdın hizasına inmesi. Gerçek bir masada lens oraya girmez;
+  burada harita bir yüzey değil bir ARAZİ gibi kadrajlanıyor, film daha ilk karede
+  ne yapacağını söylüyor.
+PLAN: Önde odak dışı pirinç yakalı cam ağırlık (sol kenar) · ortada keskin kâğıt
+  yüzeyi, elleri ve yüzü · arkada kitaplıklar ve teleskop koyu gölgede eriyor.
+ENTRY STATE: Avuçları kâğıtta, başı eğik, nefesi kırmızı ipin ucunu kımıldatıyor.
+EXIT STATE: Aynı duruş; huzmedeki toz bir tur döndü, kâğıdın uzak kenarı bir kez indi.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 35mm lens at f/4, the camera set down low at the near edge of a heavy oak table almost level with the surface of the paper and angled up across it toward her; the blurred brass-collared glass paperweight fills the extreme near-left of the frame as a solid foreground anchor so the composition never falls into symmetry. A girl in a coral-red hooded sweatshirt and dark blue denim overalls, a small yellow star clip in her wavy dark brown hair, stands at the far side of the table with both palms flat on a large open paper map and her head down over it, her weight forward on her hands, reading it the way you read something you have only just begun to understand. Warm matte tan skin with a low specular response. She is framed from the hips up so nothing below the hip is visible, and no arm, hand or shoulder ends at a frame edge. The room is a collector's attic study at the last hour of daylight, rich and sunk in shadow behind her: tall walnut bookcases packed with cloth-bound volumes, a brass refracting telescope on a wooden tripod, two terrestrial globes on turned stands, a patterned wool rug over wide oak boards, a steep timber roof truss overhead — all of it deep in coloured dark. The map is the sharp thing: thick old paper with visible fibre, four deep fold creases still standing proud of the sheet, a single long peninsular coastline drawn in ink with a scatter of small islands off its western shore, a dense range of hand-inked contour lines inland, three steel pins pushed into it and a length of red cotton thread lying slack across one corner. The key is a single hard white-gold shaft falling from a high dormer far outside the frame, and it lands as one clean band across the open map and across her hands and her face and stops dead at the near edge of the table; past that edge the oak, the rug, the bookcases and the telescope stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. The shaft prints a long crisp shadow away from every pin standing in the paper and lays the raised fold creases across the sheet as hard black ridges. One warm accent only and it is small: the brass head of a single pin takes a hard-edged golden point, and that light stops dead at the metal and travels no further into the frame. Three things are alive: a slow drift of dust turning inside the shaft, the loose end of the red thread stirring where her breath reaches it, and the far edge of the paper lifting a few millimetres and settling. Depth in three layers — the paperweight blurred across the near-left, the paper surface and her hands and her face razor-sharp together through the middle, the bookcases and the telescope dissolving into deep coloured dark behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the pins sit into tight dark seams in the paper, the paperweight presses a small bright ring into the sheet beneath it, her palms flatten the paper where they lie. The air of the room is clear and dry and reads without haze to the far wall.
+
+TEXT: clean plate — no on-screen text in this frame; the map carries drawn coastline and inked contour lines only, and every book spine on the shelves stays too deep in shadow to read.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 35mm from paper height at f/4, tactile fibrous paper, oak and walnut grain, brass and steel, worn wool, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft from a high dormer landing as a single band on the map and dying at the table edge; warm honey paper and oak against deep saturated indigo shade, colour stays rich in the darks.
+NEGATIVE: one light source only; the shaft dies at the near table edge and everything past it stays in coloured shade; the map surface carries drawn linework only; she keeps her eyes down on the sheet.
+-----
+
+
+   ↳ K02 BASILDI VE ONAYLANDI — blok _CANARY.txt içinde, burada tekrarlanmaz.
+Blok `_CANARY.txt` içinde. Kare: `canary/K02.png` — 22/22 harf okundu, Türkiye kıyı
+şeridi tanınacak doğrulukta çıktı. YENİDEN BASILMAZ.
+-----
+
+
+K03 ──────────────────────────────────────────────────────────────
+VO 1 (devam): "Komşu illerinden, çevresindeki dağ ve denizlerden…"
+FİKİR: "İller" bir liste değil, sayılabilen bir görüntü olmalı — kâğıdın üstünde
+  komşu alanlar sırayla ısınıyor.
+YÜKÜM: "Komşu" kelimesi karede DOKUNMA olarak karşılanıyor: alanlar birbirine
+  değiyor, aralarında ortak bir sınır çizgisi var.
+AYRICALIK: Boyanın kâğıdın lifine sırayla işlemesi — gerçek bir haritada renk
+  zaten basılıdır, burada renk ZAMAN içinde geliyor.
+PLAN: Önde odak dışı çelik iğne gövdesi (sağ alt) · ortada keskin sınır çizgisi ve
+  ısınmış üç alan · arkada kâğıdın gölgeye giren uzak yarısı.
+ENTRY STATE: İki alan boyalı, üçüncüsünün kenarı yeni ıslanmış.
+EXIT STATE: Üçüncü alan tamamen dolmuş, dördüncüsünün kenarı ıslanmaya başlamış.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 90mm macro lens at f/2.8, the camera close down over the paper at a shallow angle so the sheet fills the frame and runs away into soft focus at the top; the blurred bright shaft of a steel pin cuts up through the extreme near-right as a foreground anchor. The subject is a small cluster of neighbouring districts on the map, each one a closed shape bounded by a thin hand-inked line, and the colour is arriving in them one at a time: two are already saturated with muted ochre and sage watercolour that has soaked into the fibre and crept very slightly past its boundary line, the third is filling now with a damp advancing edge visibly wetter and darker than the dry paper ahead of it, and the fourth is still bare paper with only its ink boundary. Where two filled shapes meet they share one single ink line and their colours sit right up against it on both sides. The paper shows its fibre, a soft fold shoulder crossing the upper left, and fine flecks in the pulp. The key is a single hard white-gold shaft raking in low from the left almost along the surface, so the damp advancing edge catches a bright wet glint along its whole length and the dry paper beyond it reads matte; it lays a long crisp shadow of the pin across three of the shapes and stops dead two thirds up the frame, where the far paper falls into deep saturated indigo shade. One warm accent only: the brass head of the pin takes a hard-edged golden point, and that light stops dead at the metal and travels no further. Three things are alive: the damp colour edge creeping a hair further into the dry paper, a fibre of the pulp lifting where the wet reaches it, and dust turning slowly in the raking beam. Depth in three layers — the pin shaft blurred across the near-right, the wet advancing edge and its boundary line razor-sharp through the middle, the far half of the sheet dissolving into coloured dark. Every object rests in contact with the sheet and casts a hard-cored contact shadow: the pin sits into a tight dark seam where it pierces the paper, the wet colour sinks into the fibre rather than sitting on top of it. The paper carries drawn boundary lines and soaked-in colour only.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries drawn boundary lines and soaked-in colour only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 90mm macro at f/2.8 close over the sheet, tactile fibrous paper, damp watercolour bloom, steel and brass, fine film grain.
+LIGHT AND PALETTE: one hard white-gold raking shaft from the left catching the wet colour edge; muted ochre and sage soaked into warm honey paper, deep saturated indigo across the far half.
+NEGATIVE: one light source only; the colour soaks into the fibre and stays inside its inked boundary; the paper carries drawn linework and colour only; the far half of the sheet stays in coloured shade.
+-----
+
+
+K04 ──────────────────────────────────────────────────────────────
+VO 1 (devam): "…çevresindeki dağ ve denizlerden…"
+FİKİR: İlk DALIŞ. Kâğıttan ilk kez çıkıyoruz ve çıktığımız yer bir kıyı.
+YÜKÜM: "Deniz" karede bir kelime değil bir ÖLÇEK — kıyı şeridi kadrajın sonuna
+  kadar gidiyor ve şehir onun yanında küçük duruyor.
+AYRICALIK: Kâğıdın kesik kenarının gerçek falezin tepesine dönüşmesi. Kamera
+  bir kâğıdın kenarından bir uçurumun kenarına geçiyor.
+PLAN: Önde odak dışı kâğıt kenarı ve lifi (sol alt köşe) · ortada keskin falez
+  ve kıyı şehri · arkada deniz ufka kadar ve alçak güneş bandı.
+ENTRY STATE: Kâğıt kenarı hâlâ kadrajda, dalgalar falezin dibinde kırılıyor.
+EXIT STATE: Aynı; bir tekne bir gövde boyu ilerledi, gölge bandı sabit.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 24mm lens at f/8, the camera very wide and set just above the torn edge of the paper looking out along a real coastline, so the near foreground is still unmistakably a sheet of thick fibrous paper and the same edge continues outward as the lip of a real sea cliff. The torn paper fibre in the near corner and the crumbling limestone of the cliff top are the same shape, and the seam between them is a hard clean line. Beyond it a broad bay opens: a small coastal town sits on the flat below with pale stone houses and terracotta roofs stepping down to a harbour, a stone breakwater curving out with two fishing boats moored inside it, olive terraces climbing the slope behind the town, and the sea running out to a clean horizon with a scatter of low islands on it. The key is a single hard low white-gold sun raking in from the left, the same light that lit the paper, and it lays a long crisp shadow of the cliff lip out across the terraces and puts a hard bright band on the water that runs from the horizon to the breakwater; where the light stops, the near flank of the bay and the harbour basin stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the top edge of the breakwater where the sun catches its wet stone, and that light stops dead at the stone and travels no further into the water. Three things are alive: one fishing boat drawing a slow wake inside the harbour, a thin line of surf breaking white along the base of the cliff, and dust turning in the beam over the paper in the near corner. Depth in three layers — the paper fibre blurred across the near-left, the cliff lip and the town razor-sharp together through the middle, the far islands and horizon dissolving into cool aerial distance. Every object rests in contact with its surface and casts a hard-cored contact shadow: each house sits into a tight dark seam on its terrace, the boats sit into their own reflections, the breakwater roots into the sea floor at its base. The air is clear and dry and the far islands read with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the town carries no signage of any kind and the paper corner carries fibre only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 24mm very wide at f/8, torn paper fibre meeting real limestone at one hard seam, pale stone, terracotta, olive silver and open sea, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left, the same light that lit the paper; warm honey stone and terracotta against deep saturated indigo in the bay, colour stays rich in the darks.
+NEGATIVE: the seam between paper and cliff stays hard and visible; one light source only; the town rooftops and walls stay plain; the harbour basin stays in coloured shade.
+-----
+
+
+K05 ──────────────────────────────────────────────────────────────
+VO 1 (devam): "…ulaşım yollarından ya da tarihî eserlerinden söz edersek…"
+FİKİR: İkinci dalış, ikinci ölçek: dağ eteğine kurulmuş bir şehir. Aynı ders,
+  bambaşka bir coğrafya — "çevresine göre" cümlesi burada gözle görülüyor.
+YÜKÜM: "Ulaşım yolu" karede bir çizgi değil bir KARAR: yol dağın etrafından
+  dolaşıyor, çünkü dağ oradan geçmesine izin vermiyor.
+AYRICALIK: Şehri ve onu var eden coğrafyayı TEK kadrajda tutabilmek — gerçek
+  bir kamera için bu bir helikopter, burada bir bakış.
+PLAN: Önde odak dışı çam dalı (sağ üst) · ortada keskin şehir ve viraj yapan yol ·
+  arkada karlı dağ sırası ve gölgeye giren vadi.
+ENTRY STATE: Yolda iki araç, biri virajın içinde.
+EXIT STATE: Araç virajı tamamladı; dağdaki gölge bandı bir karış kaydı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 50mm lens at f/6.3, the camera on a high shoulder of ground looking down and across a town built where a mountain range meets a plain; the blurred needled branch of a pine crosses the extreme upper-right of the frame as a foreground anchor so the composition never falls into symmetry. The town sits in the middle distance on the last flat ground before the mountains, close-packed pale stone and terracotta with a minaret and a domed roof among them, and a road comes into the frame from the plain and swings wide around the foot of the mountain rather than climbing it, curving out of sight behind the first spur. Behind and above the town a long range rises in hard rock strata with old snow lying in its gullies and dark conifer forest running down its lower flanks; in front of it the plain runs away flat and pale gold with ploughed field lines drawn across it. The key is a single hard low white-gold sun raking in from the left, and it lights the town, the near flank of the range and the ribbon of road, and lays one long crisp mountain shadow out across the plain that stops dead at the edge of the town; beyond that shadow line the valley and the far spurs stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the top of the highest snow crest, and that light stops dead at the snow and travels no further down the flank. Three things are alive: a single small vehicle working its way around the curve of the road, a thin plume of woodsmoke leaning from one rooftop in the town, and a cloud shadow crawling slowly across the ploughed plain. Depth in three layers — the pine branch blurred across the upper-right, the town and the curving road razor-sharp together through the middle, the range and the far spurs dissolving into cool aerial distance behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: each house sits into a tight dark seam on the slope, the road presses a shallow cut into the hillside with a dark shoulder below it, every conifer meets the flank at a tight dark root shadow. The air is clear and dry and the far range reads with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the town carries no signage of any kind.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 50mm from high ground at f/6.3, pale stone and terracotta, rock strata, old snow, conifer and ploughed earth, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left laying a single long mountain shadow across the plain; warm honey stone and gold stubble against deep saturated indigo in the valley, colour stays rich in the darks.
+NEGATIVE: one light source only; the road curves around the foot of the mountain and stays on the low ground; the town walls and rooftops stay plain; the far valley stays in coloured shade.
+-----
+
+
+K06 ──────────────────────────────────────────────────────────────
+VO 1 (devam): "…Çünkü her ilin, çevresindeki yerlere ve sahip olduğu özelliklere göre…"
+FİKİR: Üçüncü dalış: ovada, çevresi açık bir şehir. Üç kare üç farklı "çevre",
+  ve üçü de aynı cümleyi kanıtlıyor.
+YÜKÜM: "Sahip olduğu özellikler" — burada özellik SU: şehir bir nehir kavşağında
+  kurulmuş ve bunu kadraj söylüyor, VO değil.
+AYRICALIK: Nehrin çatallandığı yeri ve şehrin tam oraya oturduğunu aynı anda
+  görmek; sebep ve sonuç tek karede.
+PLAN: Önde odak dışı buğday başakları (alt kenar) · ortada keskin nehir çatalı ve
+  şehir · arkada uzayan ova ve alçak tepeler.
+ENTRY STATE: Nehir akıyor, bir tren ova hattında ilerliyor.
+EXIT STATE: Tren kadrajın üçte birini geçmiş; nehir aynı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 35mm lens at f/9, the camera low over a wheat field at the edge of a wide plain looking across it, so the horizon sits high and the plain fills most of the frame; a few blurred ears of wheat cross the extreme lower edge as a foreground anchor. In the middle distance a town sits exactly where two rivers meet, the pale stone and terracotta gathered into the fork of the confluence with a low arched stone bridge crossing one arm and a second, longer bridge crossing the other. Both rivers come in from the depth as bright hard lines of reflected sky, join, and leave the frame as one wider channel. Around the town the plain runs out flat in a patchwork of ploughed and standing fields with lines of poplar between them, a railway line ruled straight across the near half, and a low range of soft hills closing the far distance. The key is a single hard low white-gold sun raking in from the left, and it puts a hard bright band on both rivers and lays long crisp shadows away from every poplar line across the fields, and it stops dead at the far side of the plain, where the low hills stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the parapet of the near stone bridge, and that light stops dead at the stone and travels no further onto the water. Three things are alive: a small train working slowly along the ruled railway line, wheat ears bending in one direction in the near foreground, and a heron lifting off the confluence and holding low over the water. Depth in three layers — the wheat ears blurred across the lower edge, the confluence and the town razor-sharp together through the middle, the poplar lines and the far hills dissolving into cool aerial distance. Every object rests in contact with its surface and casts a hard-cored contact shadow: the bridges root into both banks, each poplar meets the field at a tight dark root shadow, the town walls sit into the ground with a dark seam at their base. The air is clear and dry and the far hills read with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the town and the railway carry no signage of any kind.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 35mm low over wheat at f/9, deep focus across the plain, pale stone, terracotta, ripe wheat, poplar and bright water, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left putting a hard band on both rivers; ripe gold stubble and warm honey stone against deep saturated indigo in the far hills, colour stays rich in the darks.
+NEGATIVE: one light source only; the two rivers meet inside the frame and leave as one channel; the fields stay open with only poplar lines between them; the far hills stay in coloured shade.
+-----
+
+
+K07 ──────────────────────────────────────────────────────────────
+VO 1 (kapanış): "…tanımlanan bir konumu vardır."
+FİKİR: Odaya dönüş. Üç şehri gördükten sonra aynı masa artık aynı masa değil —
+  seyirci kâğıda bir daha kâğıt gibi bakmayacak.
+YÜKÜM: "Konumu vardır" bir sonuç cümlesi; kare de bir sonuç kadrajı: kız artık
+  eğilmiyor, doğrulmuş ve haritaya uzaktan bakıyor.
+AYRICALIK: Aynı fiziksel alanın iki ölçekte yaşadığını hatırlatmak — arkasındaki
+  gölgede duran teleskop ve küreler dalıştan yeni döndüğümüzü söylüyor.
+PLAN: Önde odak dışı yer küresi omzu (sol kenar) · ortada keskin sırtı, omzu ve
+  ışıklı harita · arkada kitaplıklar koyu gölgede.
+ENTRY STATE: Sırtı dönük, sağ eli haritanın kenarında, başı hafif yana eğik.
+EXIT STATE: Aynı; parmakları kâğıdın kenarında bir kez düzeltme yaptı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 65mm lens at f/2.8, the camera behind her and a little above, looking over her shoulder down onto the lit map, so we see her from the back with her face turned just far enough that only the edge of her cheek and jaw catch light; the blurred shoulder of a terrestrial globe on its turned stand fills the extreme near-left as a foreground anchor. A girl in a coral-red hooded sweatshirt and dark blue denim overalls, a small yellow star clip in her wavy dark brown hair, stands upright at the table now rather than leaning on it, one hand resting flat at the edge of the paper, looking down at the whole map at once. Warm matte tan skin with a low specular response. She is framed from the waist up so nothing below the waist is visible, and no arm, hand or shoulder ends at a frame edge. On the table the map lies open and lit: thick fibrous paper, four fold creases, the long peninsular coastline and its islands, the dense inland contour lines, three steel pins, the red thread. Behind her the room is deep in coloured dark: walnut bookcases, the brass telescope on its tripod catching one small dull sheen, the second globe, the patterned wool rug. The key is a single hard white-gold shaft falling from a high dormer far outside the frame; it lands as one clean band on the open map and clips the rim of her shoulder and the edge of her jaw on its way, and it stops dead at the near edge of the table, so her back, the rug and the bookcases stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. The shaft prints long crisp shadows away from the three pins and lays the fold creases as hard black ridges across the sheet. One warm accent only: the brass tube of the telescope in the dark takes a single hard-edged golden sliver along its upper edge, and that light stops dead at the metal and travels no further into the room. Three things are alive: dust turning slowly in the shaft, the loose end of the red thread swinging once where her hand disturbed it, and one strand of her hair lifting at the edge of the beam. Depth in three layers — the globe shoulder blurred across the near-left, her back and the lit map razor-sharp together through the middle, the bookcases and the telescope dissolving into deep coloured dark behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the pins sit into tight dark seams in the paper, the globe stand presses into the table with a dark ring beneath it, her fingers flatten the paper edge where they rest. The air of the room is clear and dry and reads without haze to the far wall.
+
+TEXT: clean plate — no on-screen text in this frame; the map carries drawn coastline and inked contour lines only, and every book spine stays too deep in shadow to read.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 65mm over the shoulder at f/2.8, tactile fibrous paper, walnut and oak, brass and steel, worn wool, fine film grain.
+LIGHT AND PALETTE: one hard white-gold shaft from a high dormer landing on the map and only clipping her shoulder and jaw; warm honey paper against deep saturated indigo across her back and the room, colour stays rich in the darks.
+NEGATIVE: one light source only; her face stays turned away with only the jaw edge in the light; the shaft dies at the near table edge; the bookcases stay deep in coloured shade.
+-----

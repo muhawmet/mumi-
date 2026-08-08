@@ -1,0 +1,70 @@
+5. SINIF SOSYAL BİLGİLER · 5.2.1 İLİMİZİN GÖRECELİ KONUMU
+MÜZİK BRİFİ (Suno)
+======================================================================
+Filmin tek fikri: bir çocuk karanlık bir odada bir haritaya bakıyor,
+ve harita gerçek oluyor. Müzik bu dönüşümü TAŞIR, süslemez.
+
+🔴 MÜZİK YÖNETMENLİK NOTU
+Bu film konuşmasız görsel pasajlarla nefes alıyor (~62 sn). VO'nun olmadığı
+yerlerde müzik TEK BAŞINA anlatıyor — orada yükselir. VO'nun altındayken
+geri çekilir ve yalnız zemin tutar. İki katman şart.
+
+──────────────────────────────────────────────────────────────────────
+ANA PARÇA — "Haritadaki Hikâye" (3:00)
+──────────────────────────────────────────────────────────────────────
+
+[Style]
+Warm orchestral score for a children's animated feature. Solo piano and
+plucked harp over sustained strings; a single clarinet carries the melody
+in the middle section. Light hand percussion — brushed frame drum, soft
+shaker — enters only when the film leaves the paper for real landscape.
+Intimate and curious, never grand and never sentimental. Turkish folk
+modality touched lightly in the clarinet line, not costume-heavy.
+Tempo 78 BPM. No vocals. No drums with attack. No electronic elements.
+
+[Structure]
+0:00–0:20  INTRO · solo piano, very sparse, single notes with air between
+           them. One room, one shaft of light. (K01–K02)
+0:20–0:50  OPENING OUT · harp joins under the piano, strings enter as a
+           low sustained bed. First landscapes. (K03–K07)
+0:50–1:20  CURIOSITY · piano becomes a light repeating figure, clarinet
+           states the melody for the first time. The plan and the compass.
+           At the compass needle settling (K15) — everything drops away
+           to one held string note. (K08–K17)
+1:20–1:55  THE TRANSFORMATION · the film's peak. Strings swell, frame drum
+           enters, clarinet takes the melody up an octave. Paper becomes
+           mountain. This is the widest the music ever gets. (K18–K24)
+1:55–2:25  THE WORKING LAND · rhythm settles into a steady warm pulse,
+           shaker and brushed drum, harp arpeggios. Roads, harbour,
+           fields. (K25–K30)
+2:25–2:45  STILLNESS AND STONE · percussion leaves. Strings and clarinet
+           only, slower, wider intervals. Waterfall, canyon, castle,
+           courtyard. (K31–K36)
+2:45–3:00  RETURN AND QUESTION · back to the solo piano of the opening,
+           the same first notes, one string note holding underneath.
+           The last eight seconds are almost silence — one piano note,
+           left to decay. (K37–K40)
+
+[Exclude]
+No vocals, no choir, no whistling, no orchestral hits, no cinematic
+braams, no risers, no reversed cymbals, no synth pads, no percussion
+with hard attack, no key change in the final section.
+
+──────────────────────────────────────────────────────────────────────
+ALTERNATİF — "Kâğıt ve Işık" (aynı brif, daha az yaylı)
+──────────────────────────────────────────────────────────────────────
+Aynı yapı, ama yaylı yerine solo çello + piyano + arp. Daha yalın, daha
+oda-müziği. Mami iki sürümü yan yana dinleyip seçer.
+
+──────────────────────────────────────────────────────────────────────
+SES TASARIMI (müzik değil — kurguda ayrı katman)
+──────────────────────────────────────────────────────────────────────
+Bu filmde ses tasarımı MALZEMEDEN gelir ve neredeyse müzik kadar önemli:
+· kâğıdın açılma ve kıvrılma sesi (kuru, lifli)
+· çelik iğnenin kâğıda girişi (tek, kısa, net)
+· pirinç nesnenin ahşaba konması (ağır, tok)
+· pusula iğnesinin cam altında sönümlenmesi (çok ince, neredeyse yok)
+· kurşun kalemin masaya bırakılması (son karede, filmin son sesi)
+· dalışlarda: rüzgâr, su, uzak kuş — ASLA şehir gürültüsü
+🔴 Dikiş anlarında (kâğıt→arazi) ses de dikiş yapar: kâğıt sesi kesilir,
+   arazi sesi aynı karede başlar. Geçiş yok, KESİM var.

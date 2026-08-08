@@ -1,33 +1,25 @@
 {
   "version": 1,
-  "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
-  "phase": "prompt",
-  "status": "mami-bekliyor",
-  "lastCompleted": "58/58 klip 1080p'ye upscale edildi (Topaz, 235 kredi ≈ $10,5); hepsi ffprobe ile doğrulandı: 1920x1080/24fps/sessiz, süreler orijinalle aynı",
-  "nextAction": "Denetleyici için VO al (ElevenLabs) → kaba-kurgu.mjs --klipler klipler-1080p --vo → tam filmi izle",
-  "openMamiDecision": "Denetleyici kapanmadan Kuvvetlerin Güç Birliği açılsın mı? Kapanış receipt'i final film istiyor; film henüz kurgulanmadı.",
+  "projectId": "5. Sınıf Sosyal - İlimizin Göreceli Konumu",
+  "projectPath": "agents/COMMAND-INBOX/5. Sınıf Sosyal - İlimizin Göreceli Konumu",
+  "phase": "motion",
+  "status": "aktif",
+  "lastCompleted": "40/40 start frame basıldı (NB2 2K, Magnific) — referans YOK, süreklilik metinle tuttu",
+  "nextAction": "MOTION + kit yazımı, sonra VO ve ANIMATIC-0",
+  "openMamiDecision": null,
   "blockedBy": null,
-  "requiredLocalMedia": [
-    {
-      "path": "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler",
-      "expect": {
-        "clips": 58
-      },
-      "note": "repo dışı — git-ignore değil, hiç repoda değil"
-    }
-  ],
+  "requiredLocalMedia": [],
   "deliverables": {
-    "REFERANSLAR": true,
+    "REFERANSLAR": false,
     "PROMPTLAR": true,
     "revize": false,
-    "MOTION": true,
-    "EDIT-PLAN": true,
-    "SESLENDIRME": true,
-    "SUNO": true,
+    "MOTION": false,
+    "EDIT-PLAN": false,
+    "SESLENDIRME": false,
+    "SUNO": false,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-08T10:02:45.786Z",
+  "updatedAt": "2026-08-08T17:17:46.898Z",
   "updatedBy": "claude",
-  "baseCommit": "68d842b6"
+  "baseCommit": "a34faa8b"
 }

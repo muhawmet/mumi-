@@ -1,0 +1,150 @@
+SEKANS 4 — İLİMİZİN DOĞAL ÖZELLİKLERİ · K18-K24   🔴 FİLMİN EPİK SEKANSI
+═══════════════════════════════════════════════════════════════════
+Mekân: kâğıt ↔ arazi DİKİŞİ. Bu sekansta masa ile arazi aynı kadrajda yaşıyor.
+🔴 GEÇİŞ KURALI: her karede kâğıttan gerçeğe dönen SOMUT bir nesne var ve o nesne
+kadrajda kalır. "Harita canlanıyor" YAZILMAZ; hangi kırışığın hangi sırta, hangi
+mürekkep çizgisinin hangi nehre döndüğü yazılır. Işık dikişin İKİ YANINDA AYNI.
+register: edu · references YOK
+Ölçek merdiveni: alçak yakın dikiş → çok geniş plato → orta nehir → geniş göl →
+tepeden tam kare (yazı) → orta teras → yakın makro el.
+Çocuk: yalnız K24 ve YALNIZ EL. K18'de de yalnız parmak ucu (basıldı, onaylı).
+🔴 K18 ZATEN BASILDI VE ONAYLANDI — canary/K18.png. Bloğu `_CANARY.txt`'te.
+Blok kapısı (FİKİR/YÜKÜM/AYRICALIK/PLAN/ENTRY/EXIT) motora GİTMEZ, basarken kesilir.
+═══════════════════════════════════════════════════════════════════
+
+
+   ↳ K18 BASILDI VE ONAYLANDI — blok _CANARY.txt içinde, burada tekrarlanmaz.
+Blok `_CANARY.txt` içinde. Kare: `canary/K18.png` — kırışık dağ sırtına dönüyor,
+dikiş keskin, ışık iki yanda aynı. YENİDEN BASILMAZ.
+-----
+
+
+K19 ──────────────────────────────────────────────────────────────
+VO 4: "Bir ilin göreceli konumu yalnızca komşu illerle açıklanmaz."
+FİKİR: Dikiş bir kez tuttu; şimdi ölçek açılıyor. Kâğıdın DÜZ kalan kısmı bir
+  plato oluyor — yani "düzlük" de bir yeryüzü şeklidir.
+YÜKÜM: "Yalnızca komşu illerle değil" — kadrajda hiç sınır çizgisi YOK; ilk kez
+  toprağın kendisine bakıyoruz, bölünmesine değil.
+AYRICALIK: Kâğıdın pürüzsüzlüğünün bir yükseklik hissine dönüşmesi. Gerçekte
+  düz bir kâğıt düzdür; burada düzlük 1500 metre yüksekte duruyor.
+PLAN: Önde odak dışı kâğıt lifi ve katlanma omzu (sol alt) · ortada keskin plato
+  kenarı ve otlak · arkada uzak dağ sırası soğuk mesafede.
+ENTRY STATE: Ot, tek yönde yatık; bulut gölgesi platonun ortasında.
+EXIT STATE: Bulut gölgesi plato kenarına ulaşmış.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 24mm lens at f/8, the camera very wide and low near the surface of the paper looking out across it, so the smooth unfolded field of the sheet in the near third is still unmistakably paper — visible fibre, a soft fold shoulder, faint flecks in the pulp — and then at a hard clean seam running across the frame that same flat surface becomes a real high plateau at true scale, a vast level tableland of dry pale grassland running out for miles, dropping away at its far edge in a long stepped escarpment to lower ground. The seam is razor-sharp and the flatness carries straight through it: what read as smooth paper on one side reads as high open steppe on the other. Far behind the plateau a range of snow-touched mountains closes the distance. The key is a single hard low white-gold sun raking in from the left, the same light on both sides of the seam; it combs the dry grass into a bright rippling sheet, lays one long crisp shadow of the paper's fold shoulder across the near third, and lays the same shadow shape as a real escarpment shadow across the lower ground beyond; where it stops, the foot of the escarpment and the far range stand in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the very lip of the escarpment where the sun catches its exposed rock, and that light stops dead at the rock and travels no further down the face. Three things are alive: the dry grass bending in one long travelling wave across the tableland, a single cloud shadow crawling toward the plateau edge, and dust turning in the beam over the paper in the near third. Depth in three layers — the paper fibre and fold shoulder blurred across the near-left, the plateau surface and its escarpment lip razor-sharp together through the middle, the lower ground and the far range dissolving into cool aerial distance. Every object rests in contact with its surface and casts a hard-cored contact shadow: the paper lies flat and pressed to the table beneath it, each tussock of grass sits into a tight dark seam at its base, loose rock along the lip casts small hard shadows onto the face below. The paper carries fibre and one fold shoulder only. The air is clear and dry and the far range reads with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries fibre and a fold shoulder only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 24mm very wide and low at f/8, smooth fibrous paper meeting dry steppe grass and exposed rock at one hard seam, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left, identical on both sides of the seam, combing the grass into a bright sheet; pale straw and warm honey against deep saturated indigo below the escarpment.
+NEGATIVE: the seam stays hard and razor-sharp all the way across the frame; one light source only, identical on both sides; the tableland stays open and level with no boundary line drawn on it.
+-----
+
+
+K20 ──────────────────────────────────────────────────────────────
+VO 4 (devam): "İlin çevresindeki dağlar, ovalar ve platolar gibi yeryüzü şekilleri…"
+FİKİR: Mürekkep çizgisi nehir oluyor. Bu sekansın en okunaklı dönüşümü: haritanın
+  en soyut işareti (ince mavi bir çizgi) en akışkan gerçeğe dönüyor.
+YÜKÜM: "Akarsu" bir çizgi değil bir GÜÇ — kestiği vadiyi kendisi açmış, ve karede
+  bunun kanıtı var: iki yakadaki katmanlar birbirinin aynısı.
+AYRICALIK: Bir çizginin akmaya başlaması. Sinemada bir nehri çekebilirsin; bir
+  mürekkep çizgisinin nehir olduğu ANI yalnız burada çekebilirsin.
+PLAN: Önde odak dışı kâğıt kenarı ve mürekkep çizgisinin ucu (sol) · ortada keskin
+  vadi ve nehir · arkada vadi ağzı ve gölgeli yamaçlar.
+ENTRY STATE: Su akıyor, kıvrımın iç yakasında bir çakıl adacığı.
+EXIT STATE: Aynı; suyun üstündeki ışık bandı kıvrımın bir adım ilerisine kaymış.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 45mm lens at f/5.6, the camera low and close over the paper and angled along a single hand-inked blue watercourse line that runs from the near-left of the frame into the depth; in the near half it is unmistakably ink on paper — a thin drawn line with a slightly feathered edge where the pigment has crept into the fibre — and then at a hard clean seam across the middle of the frame the same line becomes a real river at true scale, filling the floor of a limestone gorge it has cut for itself, with the same strata banded identically on both walls, gravel bars in the slack water on the inside of each bend, and willows leaning off the lower banks. The seam is the subject and it is razor-sharp: on one side a drawn line on fibre, on the other the moving water that line describes, meeting exactly at the same width. The key is a single hard low white-gold sun raking in from the left, the same light on both sides of the seam; it lays a long crisp shadow of the paper's edge across the sheet in the near half, and in the far half it puts one hard bright band along the surface of the water that follows every bend, leaving the gorge walls beneath the light line in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the top of the sunlit gorge rim, and that light stops dead at the rim and travels no further down the wall. Three things are alive: the water moving over a gravel bar with a standing ripple that holds its shape, a willow branch turning where the current tugs it, and dust drifting in the beam over the paper in the near half. Depth in three layers — the paper edge and the inked line end blurred across the near-left, the seam and the first bend of the river razor-sharp together through the middle, the mouth of the gorge dissolving into cool distance behind. Every object rests in contact with its surface and casts a hard-cored contact shadow: the paper lies flat and pressed to the table beneath it, each gravel bar sits into the water with a dark wet rim, the willows root into the bank at tight dark seams. The paper carries one drawn watercourse line only.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries one drawn watercourse line only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 45mm low along the paper at f/5.6, feathered ink on fibre meeting real moving water and banded limestone at one hard seam, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left, identical on both sides of the seam, laying one bright band along the water; warm honey stone against deep saturated indigo in the gorge, colour stays rich in the darks.
+NEGATIVE: the seam stays hard and razor-sharp and the line keeps exactly the same width across it; one light source only, identical on both sides; the gorge walls carry matching strata on both sides.
+-----
+
+
+K21 ──────────────────────────────────────────────────────────────
+VO 4 (devam): "…ile deniz, göl ve akarsu gibi su kaynakları da dikkate alınır."
+FİKİR: Üçüncü dönüşüm ve en sessizi: kâğıda yayılmış soluk bir sulu boya lekesi
+  bir göl oluyor. Kenar çizgisi yok — göl kendi kıyısını çiziyor.
+YÜKÜM: "Göl" karede bir su kütlesi değil, bir AYNA: karşı kıyının dağları suyun
+  üstünde ters duruyor, yani göl çevresini taşıyor.
+AYRICALIK: Boyanın kenarının kıyı şeridine dönüşmesi — dalgalı, düzensiz, ve
+  tam olarak boyanın lifte durduğu yerde biten bir kıyı.
+PLAN: Önde odak dışı sazlık (sağ alt) · ortada keskin su yüzeyi ve yansıma ·
+  arkada karşı kıyı ve tepeler soğuk mesafede.
+ENTRY STATE: Su neredeyse durgun, yansıma bütün.
+EXIT STATE: Bir kuş inişi yansımayı bir noktadan kırmış, halka genişliyor.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 30mm lens at f/9, the camera low at the level of a lake shore looking out across still water; in the extreme near-left corner the surface is still a pale watercolour wash sitting in the fibre of the paper with a soft irregular feathered edge, and at a hard clean seam a hand's width in, that same wash becomes real standing water at true scale, and the ragged feathered edge continues outward as the real, irregular, reed-fringed shoreline of a wide inland lake. A blurred stand of reeds crosses the extreme lower-right as a foreground anchor. The lake runs out to a far shore of low pale hills, and because the water is almost still the whole far shore stands inverted on its surface, hills and all, slightly softer than the real thing. The key is a single hard low white-gold sun raking in from the left, the same light on both sides of the seam; it puts one hard bright band across the water that runs from the far shore to the reeds, and it stops dead where the near bank shelves up, leaving the shallows, the reed bed and the near mud in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the top edge of the reed heads where the sun clips them, and that light stops dead at the reeds and travels no further onto the water. Three things are alive: one expanding ring spreading from where a bird has just touched down and breaking the inverted hills along one arc, a reed head turning slowly, and dust drifting in the beam over the paper in the near corner. Depth in three layers — the reeds and the paper corner blurred across the near edge, the water surface and the ring razor-sharp together through the middle, the far shore and its inversion dissolving into cool aerial distance. Every object rests in contact with its surface and casts a hard-cored contact shadow: the reeds enter the water at a tight dark waterline, the wet mud of the near bank holds a dark rim where the lake meets it, the paper lies flat and pressed to the table beneath it. The paper carries a soaked-in wash and its feathered edge only.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries a soaked-in wash and its feathered edge only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 30mm at shore level at f/9, soaked watercolour bloom meeting real still water, reed and wet mud, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left laying one bright band across still water; pale wash and warm honey against deep saturated indigo in the shallows, colour stays rich in the darks.
+NEGATIVE: the seam stays hard and razor-sharp and the feathered edge continues outward as the real shoreline; one light source only; the far shore stands inverted on the water except where the ring crosses it.
+-----
+
+
+K22 ──────────────────────────────────────────────────────────────  [EKRANDA YAZI]
+VO 4 (devam): "Bu doğal özellikler; ulaşımı, tarımı, yerleşmeyi…"
+FİKİR: Sekansın toplayıcı karesi. Dört dönüşümün dördü de bu tek sayfadan çıktı
+  ve şimdi sayfa bunu kendi malzemesiyle söylüyor.
+YÜKÜM: Başlık bir grafik değil — harfler kâğıda basılmış ve ışık onları yazıyor.
+  K02'nin ölçülmüş tarifi birebir uygulanıyor.
+AYRICALIK: Tepeden, kâğıda dik bakan ikinci ve son kare. Film bu açıyı yalnız
+  başlıklar için saklıyor; seyirci bunu bilmeden öğreniyor.
+PLAN: Kadrajın tamamı kâğıt. Üstte kabartma sırtlar ve mavi çizgi, altta iki
+  satır yazı, sağ altta pirinç başlı iğne ve kırmızı ip ucu.
+ENTRY STATE: Kâğıt kıpırdamıyor, yalnız toz iniyor.
+EXIT STATE: Aynı. Bu kare KİLİTLİ kamera — yazı taşıyıcısı hareket etmez.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 50mm lens at f/8, the camera directly overhead and perfectly square to the table so the sheet of paper fills the whole frame and every part of it lies in one single flat plane. The subject is the paper itself. Across the lower third, on two straight unbroken lines both exactly parallel to the bottom edge of the frame, the Turkish words YERYÜZÜ ŞEKİLLERİ on the upper line and SU KAYNAKLARI on the lower line are pressed deep into the thick paper as debossed letterforms — each letter a clean valley stamped into the fibre with a slightly raised burr along its rim where the fibre has been pushed up, and no ink, no paint and no printing anywhere in them. A single hard white-gold shaft rakes in low from the left and almost along the surface of the sheet, so it fills the inside of every stamped letter with a crisp black shadow and lights the raised burr on the opposite side of each stroke — the light is what makes the words readable. Above the words the upper two thirds of the sheet carry the modelled relief of a mountain range standing up off the paper in low hand-built ridges, a single drawn blue watercourse winding down out of it, a pale soaked wash where a lake sits, and the long peninsular coastline along the far edge. Lying on the sheet near the lower right: one steel pin standing upright with its brass head, and the frayed end of a length of red cotton thread. The band of light covers both lines of words and the near half of the modelled ridges, and it stops dead before the far edge of the sheet, which falls into deep saturated indigo shade. Every letter is Turkish and cut from the paper itself. Three things are alive: dust settling slowly through the raking beam, the frayed thread end lifting a hair, and the burr of one letter catching a moving glint as the dust crosses it. Every object rests in contact with the sheet and casts a hard-cored contact shadow: the pin lays a long thin black needle of shadow across the paper clear of the lettering, the thread presses a soft trench into the fibre, each modelled ridge lays a hard black shadow on the sheet beside it.
+
+TEXT: two Turkish lines. Upper line "YERYÜZÜ ŞEKİLLERİ" — two words, 16 letters, spelled Y-E-R-Y-Ü-Z-Ü / Ş-E-K-İ-L-L-E-R-İ, with Ü in YERYÜZÜ, cedilla Ş at the start of ŞEKİLLERİ and dotted capital İ twice in ŞEKİLLERİ. Lower line "SU KAYNAKLARI" — two words, 12 letters, spelled S-U / K-A-Y-N-A-K-L-A-R-I with dotless capital I at the end. Both lines are stamped down into the paper fibre, never printed or painted or floating, and read only by the shadow the raking light lays inside each stroke. All letters sit in one flat plane on two straight baselines exactly parallel to the bottom edge of the frame, and nothing lies across the lettering.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 50mm directly overhead at f/8, everything in one plane, edge-to-edge sharpness across the lettering, tactile fibrous paper, modelled relief, steel and brass, fine film grain.
+LIGHT AND PALETTE: one hard white-gold raking shaft from the left almost parallel to the paper, filling every stamped letter with shadow; warm honey paper against deep saturated indigo at the far edge.
+NEGATIVE: every letterform is stamped down into the fibre and reads only by the shadow inside it; the two lines are Turkish and spelled exactly YERYÜZÜ ŞEKİLLERİ and SU KAYNAKLARI; the sheet stays perfectly square to the lens with all letters in one plane; the pin and thread stay clear of the lettering.
+-----
+
+
+K23 ──────────────────────────────────────────────────────────────
+VO 4 (kapanış): "…ve ekonomik faaliyetleri etkileyebilir."
+FİKİR: "Etkileyebilir" bir sonuç fiili. Kare de sonucu gösteriyor: yamaç teras
+  teras kesilmiş, çünkü su ve eğim insana ne yapacağını söylemiş.
+YÜKÜM: Sebep ve sonuç aynı kadrajda: üstte kaynak, altta kanal, kanalın izlediği
+  her seviyede bir teras. Kimse anlatmıyor, geometri anlatıyor.
+AYRICALIK: Yüz yıllık bir kararın tek bakışta okunması — terasların hepsi aynı
+  su seviyesini takip ediyor ve bu ancak yukarıdan görülür.
+PLAN: Önde odak dışı zeytin dalı (sağ üst) · ortada keskin teraslar ve su kanalı ·
+  arkada vadi tabanı gölgede.
+ENTRY STATE: Kanalda su akıyor, en alt terasın kenarından sızıyor.
+EXIT STATE: Sızıntı bir terasa daha inmiş; ışık aynı.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, gently overscaled forms, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 70mm lens at f/6.3, the camera high on the opposite side of a valley looking across at a terraced hillside so the terraces stack up the frame in a long repeated rhythm; a blurred olive branch crosses the extreme upper-right as a foreground anchor. The hillside is cut into dozens of narrow level terraces held by dry stone retaining walls, each one following a single contour exactly, planted with rows of young fruit trees and vines. A narrow stone irrigation channel runs across the slope near the top, fed from a spring pooling in a rock cleft above it, and every terrace below sits at a level the channel can reach; the lowest terraces meet the untended scrub where the channel no longer goes. The key is a single hard low white-gold sun raking in from the left, and it lights the face of every retaining wall and lays a long crisp shadow from each wall onto the terrace below it, so the whole hillside reads as a stack of bright bands and hard dark bands; the light stops dead partway down the slope, and the valley floor beneath stands in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. One warm accent only: a thin hard-edged golden line rides the wet lip of the stone channel where the water spills over it, and that light stops dead at the stone and travels no further down the wall. Three things are alive: water moving along the channel and seeping over its lip onto the terrace below, the crowns of the young fruit trees turning together in one direction, and a small dust plume lifting off a dry terrace at the edge of the light. Depth in three layers — the olive branch blurred across the upper-right, the channel and the upper terraces razor-sharp together through the middle, the lower terraces and the valley floor dissolving into deep coloured dark. Every object rests in contact with its surface and casts a hard-cored contact shadow: each retaining wall roots into the slope with a tight dark seam at its base, every tree meets its terrace at a hard root shadow, the channel presses into the hillside with a dark shoulder beneath it. The air is clear and dry and the far side of the valley reads with real aerial distance.
+
+TEXT: clean plate — no on-screen text in this frame; the terraces and walls carry no marking of any kind.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 70mm across the valley at f/6.3, dry stone, worked earth, young orchard and running water, fine film grain.
+LIGHT AND PALETTE: one hard low white-gold sun from the left banding the whole hillside into bright faces and hard dark shadows; warm honey stone and green orchard against deep saturated indigo on the valley floor.
+NEGATIVE: one light source only; every terrace follows a single level that the stone channel can reach; the terraces stop where the channel stops; the valley floor stays in coloured shade.
+-----
+
+
+K24 ──────────────────────────────────────────────────────────────
+VO 4 (kuyruk · konuşmasız pasaj)
+FİKİR: Sekansı kapatan el. Dört dönüşümden sonra çocuk kâğıda dokunuyor ve kâğıt
+  yine kâğıt — büyü bitmedi, sadece sıraya girdi.
+YÜKÜM: (konuşmasız) — bu kare ritmi taşıyor: epik sekanstan sonra bir nefes.
+AYRICALIK: Kabartma sırtın üstünden geçen parmak ucunun altında kâğıdın hafifçe
+  çökmesi. Ölçek oyunu tek bir dokunuşla kapanıyor.
+PLAN: Önde odak dışı kâğıt kenarı (alt kenar) · ortada keskin parmak ucu ve
+  kabartma sırt · arkada haritanın gölgeye giren uzak yarısı.
+ENTRY STATE: Parmak ucu sırta yeni değdi, kâğıt henüz çökmedi.
+EXIT STATE: Kâğıt bir milim çökmüş, parmak ucunun pedi yassılmış.
+-----
+A single frame from a 3D animated feature film for children, in the warm stylised Pixar tradition — appealing shape language, tactile materials, cinematic lighting. This is a lit scene of real things in a real place, not a diagram. 100mm macro lens at f/3.5, the camera very close down over the map at a shallow angle so the sheet fills the frame and falls away into soft focus behind; the blurred torn edge of the paper crosses the extreme lower edge as a foreground anchor. A single fingertip, coming in from the lower left, rests on the crest of a modelled paper ridge — one of the low hand-built mountain ranges standing up off the sheet — and the paper has given very slightly beneath it, the crest dipping a millimetre and the fibre creasing in a fine star around the point of contact. The fingertip is the only part of the girl in frame: one hand only, no face, no arm above the wrist, the cuff of a coral-red hooded sweatshirt just visible and soft at the frame edge. Warm matte tan skin with a low specular response, and the pad of the fingertip flattens where it presses. Around the touch the sheet carries its inked contour lines curving over the modelled ridge, a fold shoulder running away into the depth, and the frayed end of a red cotton thread lying across the lower right. The key is a single hard white-gold shaft raking in low from the left, and it lights the crest of the ridge, the back of the fingertip and the raised fibre around the point of contact, and it stops dead just past the touch, so the far half of the sheet stands in deep saturated indigo shade at about a fifth of the key, coloured and modelled, never pale. It lays one long crisp shadow of the finger across the paper away from the light. One warm accent only: the brass head of a steel pin standing far off in the soft focus takes a small hard-edged golden point, and that light stops dead at the metal and travels no further. Three things are alive: the paper crest settling the last fraction under the fingertip, a single fibre lifting where the crease runs, and dust turning slowly in the raking beam. Depth in three layers — the torn paper edge blurred across the lower edge, the fingertip and the ridge crest razor-sharp together through the middle, the far half of the map dissolving into deep coloured dark. Every object rests in contact with its surface and casts a hard-cored contact shadow: the fingertip lays a small hard-cored shadow onto the sheet at its base, the thread presses a soft trench into the fibre, the modelled ridge lays a hard black shadow beside itself. The paper carries inked contour lines only.
+
+TEXT: clean plate — no on-screen text in this frame; the paper carries inked contour lines only.
+STYLE: 3D animated feature, warm stylised Pixar tradition; 100mm macro at f/3.5 close over the sheet, tactile fibrous paper, modelled relief, cotton thread and brass, fine film grain.
+LIGHT AND PALETTE: one hard white-gold raking shaft from the left lighting the ridge crest and the fingertip and dying just past the touch; warm honey paper against deep saturated indigo across the far half.
+NEGATIVE: one light source only; only a hand is in frame with the wrist soft at the edge; the paper gives under the fingertip and creases in a fine star around it; the far half of the sheet stays in coloured shade.
+-----

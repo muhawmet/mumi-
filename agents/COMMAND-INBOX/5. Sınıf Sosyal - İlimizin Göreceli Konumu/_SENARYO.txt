@@ -1,0 +1,175 @@
+5. SINIF SOSYAL BİLGİLER · 5.2.1 İLİMİZİN GÖRECELİ KONUMU
+"İlimizin Haritadaki Hikâyesi"
+════════════════════════════════════════════════════════════════════════════════
+ORTAK TOHUM — bu sekansı yazan herkes ÖNCE bunu okur. Kare yazımı buradan türer.
+Kaynak: _KAYNAK.docx · Beyin: CLAUDE.md · Register: EDU (pixar_3d_edu)
+════════════════════════════════════════════════════════════════════════════════
+
+▓▓ 1 · FİLMİN TEK FİKRİ ▓▓
+
+Bir çocuk karanlık bir odada bir haritaya bakıyor, ve harita gerçek oluyor.
+
+Bu bir metafor değil, bir MEKANİZMA: kâğıdın katlanma izi dağ sırtına dönüşür,
+kâğıdın lifi sürülmüş tarlaya, mürekkep çizgisi asfalta, iğne deliği limana.
+Kamera hep haritadan İNER, araziye çıkar, sonra masaya geri döner.
+
+Film "göreceli konum"u anlatmıyor — bir çocuğun haritayı OKUMAYI öğrendiği anı
+anlatıyor. Bilgi VO'da; filmde olan şey merak.
+
+⚠ Kaynakta çatışma YOK, icat EDİLMEZ. Sürücü çatışma değil MERAK:
+   soru → fark ediş → ölçek → dönüşüm → yankı.
+
+▓▓ 2 · DÜNYA — İKİ KATMAN, TEK IŞIK MANTIĞI ▓▓
+
+Bu ikisi iki ayrı film değil; aynı ışığın iki ölçeği. Bağ budur, ve kırılmaz.
+
+  ── ANKRAJ · HARİTA ODASI ── (CANARY'DE MAMİ ONAYLI, 2026-08-08)
+  Alacakaranlıkta bir koleksiyoncu çatı katı çalışması. Ağır meşe masa,
+  üstünde açılmış büyük kâğıt harita. Arkada ZENGİN ama GÖLGEDE: tavana kadar
+  ceviz kitaplıklar, bez ciltli kitaplar, ahşap sehpalı pirinç teleskop,
+  torna ayaklı iki yer küresi, geniş meşe döşeme üstünde desenli yün halı,
+  tepede dik ahşap çatı makası.
+  🔴 Zenginlik ÖZEL OKUL STANDARDI'dır (Mami 2026-08-07) — mütevazı/yıpranmış YOK.
+  Tek sert beyaz-altın huzme yüksek bir çatı penceresinden iniyor ve YALNIZ
+  haritanın üstüne düşüyor; bandın dışındaki her şey doygun indigo gölgede.
+  Kitaplıklar okunmayacak kadar gölgede kalır — kitap sırtı yazısı çıkmasın.
+
+  Malzemeler: lifi görünen eskimiş kâğıt, katlanma izleri, meşe ve ceviz damarı,
+  pirinç, kırmızı pamuk ip, çelik iğne, cam ağırlık, yün halı.
+
+  ── DALIŞ · ARAZİ ──
+  Aynı ışık, gerçek ölçekte: alçak ve yalayan bir güneş. Arazi haritanın
+  kâğıdının gerçek olmuş hâli gibi okunur — kırışık sırt olur, lif tarla olur.
+  Gökyüzü asla düz beyaz değil; huzmenin dışı hâlâ doygun soğuk gölge.
+
+  🔴 GEÇİŞ KURALI: her dalışta kâğıttan gerçeğe dönen SOMUT bir nesne vardır
+     ve o nesne kadrajda kalır. "Harita canlanıyor" yazılmaz — hangi kırışığın
+     hangi sırta döndüğü yazılır.
+
+▓▓ 3 · IŞIK YASASI — bu filmin imzası ▓▓
+
+  · TEK sert anahtar. İkinci ışık kaynağı yok.
+  · Işık BANT hâlinde iner ve bir yerde ÖLÜR. Bandın bittiği yer yazılır.
+  · Bandın dışı doygun indigo — soluk gri değil, RENKLİ gölge (%20-25 dolgu).
+  · Anıtsallık ışığın YUKARIDAN ve UZAKTAN gelmesiyle taşınır (ölçülen ders 27).
+    Işık yer hizasından girerse aynı nesne masa oyuncağına düşüyor.
+  · Her nesne yüzeyine DEĞER ve sert çekirdekli temas gölgesi bırakır.
+
+  🔴 @mira taşıyan kare AYDINLIK iç mekânda YAZILMAZ (ölçülen ders 26).
+     Ya karanlık oda, ya huzmenin bandı. Yüzü kadrajda ve ışıkta (ders 25).
+
+▓▓ 4 · REFERANS SÖZLEŞMESİ — 🔴 REFERANS YOK ▓▓
+
+CANARY'DE ÖLÇÜLDÜ (2026-08-08): referanslı 4 kare, 4 çöküş. Referanssız 2 kare, 2 şaheser.
+  · portre plakası     → sahne hiç kurulmadı, boş fonda portre çıktı
+  · portre plakası     → vintage kitap odası + İngilizce fantasy harita (TERRA IGNOTA)
+  · 1:1 turnaround     → turnaround'ın birebir kopyası, gardırop bile değişti
+  · 1:1 turnaround     → gece astronomi odası, teleskop kahraman, harita yok
+
+Sebep: `@mira`'nın gardırobu KEŞİF temalı (teleskop rozeti, Satürn cebi) ve bu filmin
+dünyası da bir keşif odası. Motor plakayı "bu sahne nedir" diye okuyup sahneyi onunla
+değiştiriyor. Aynı plaka Denetleyici'de MUTFAKTA çalışmıştı — tema çakışmıyordu.
+
+🔴 BU FİLMDE HİÇBİR KAREYE `references` VERİLMEZ.
+
+Süreklilik METİNLE taşınır. Handle olmadığı için tarif etmek meşrudur (ders 18 handle
+çağrılırken tarif etmeyi yasaklar; handle yoksa tek yol budur). SABİT CÜMLE, değişmez:
+
+  a girl in a coral-red hooded sweatshirt and dark blue denim overalls,
+  a small yellow star clip in her wavy dark brown hair
+
+Bu cümle kısa kalır ve her karede AYNEN geçer. Yaş, ten rengi, boy, yüz ayrıntısı
+EKLENMEZ — eklenirse 40 karede 40 farklı kız çıkar.
+
+🔴 Masa · harita · oda · pusula da plaka olarak VERİLMEZ (ölçülen ders 17).
+
+▓▓ 5 · EKRANDA YAZI — motorda basılır, motionda dokunulmaz ▓▓
+
+Mami (2026-08-08): "Start frame'deki yazıyı motionda bozmuyoruz."
+
+  Yazım kuralı — her harf oturduğu yüzeyin MALZEMESİNDEN kesilir:
+  kâğıda basılmış kabartma, pirinç harf, kırmızı iple dizilmiş, gölgeyle
+  yazılmış. Asla "yüzen etiket", asla basılı grafik.
+
+  Uzun Türkçe dizgi için ölçülmüş onarım (kelimeyi kısaltmak DEĞİL):
+  · kamera TEPEDEN
+  · yazı kadrajın alt kenarına PARALEL
+  · bütün harfler TEK düzlemde
+  · kapalı diyafram (f/8)
+  (13 harfli YUMURTLAYARAK derinlemesine dizilince dağıldı; aynı uzunluk
+   tepeden ve paralel yazılınca 13/13 harf okundu.)
+
+  Motion kuralı: yazı taşıyan karede taşıyıcı yüzey HAREKET ETMEZ.
+  Kamera kilitli ya da en fazla yazı düzlemine paralel çok yavaş kayma.
+
+▓▓ 6 · SEKANS OMURGASI — 40 kare · ~2:55 ▓▓
+
+Gerçek VO 270 kelime = ~1:44. Fark KONUŞMASIZ GÖRSEL PASAJLARLA kapatılır;
+müşterinin metnine tek kelime eklenmez.
+
+┌─────┬───────┬──────────────────────────────────────────┬──────────────────────┐
+│ SEK │ KARE  │ NE OLUYOR                                │ EKRANDA YAZI         │
+├─────┼───────┼──────────────────────────────────────────┼──────────────────────┤
+│ S1  │ 01-07 │ Oda · harita açılır · iller tek tek yanar │ İlimizin Göreceli    │
+│     │       │ → DALIŞ: kıyı / dağ eteği / ova şehri    │ Konumu               │
+│ S2  │ 08-12 │ Mahalle krokisi · pirinç oklar           │ YÖN · MESAFE ·       │
+│     │       │ okul-hastane-park · kısa sokak dalışı    │ ÇEVRE                │
+│ S3  │ 13-17 │ PUSULA masaya konur · iğne titrer ·       │ KUZEY GÜNEY          │
+│     │       │ komşu iller sırayla renklenir            │ DOĞU BATI            │
+│ S4  │ 18-24 │ 🔴 EPİK: kırışık → dağ sırtı. Kabartma   │ Yeryüzü Şekilleri +  │
+│     │       │ harita gerçek araziye açılır             │ Su Kaynakları        │
+│ S5  │ 25-30 │ Kırmızı ip = yollar · iğne = liman       │ (dört pirinç kelime) │
+│     │       │ → DALIŞ: viyadük, liman, tarla, ocak     │                      │
+│ S6  │ 31-36 │ Şelale · kanyon · orman → kale · köprü ·  │ (dört pirinç kelime) │
+│     │       │ cami · ziyaretçiler                      │                      │
+│ S7  │ 37-40 │ 🔴 EPİK: iki harita yan yana · Mira geri │ "Her ilin konumu,    │
+│     │       │ çekilir · huzme genişler · soru          │ kendine özgü bir     │
+│     │       │                                          │ hikâye taşır."       │
+└─────┴───────┴──────────────────────────────────────────┴──────────────────────┘
+
+  ÇOCUK hangi karelerde: K01 · K07 · K13 · K18 · K24 · K30 · K37 · K40 (8 kare).
+  Kalan 32 karede insan YOK — harita, arazi ve nesneler taşır.
+
+  🔴 ÇOCUK ÖNCE EL, SONRA SİLÜET, EN SON YÜZ:
+   · K18 · K24 · K30 → yalnız EL (parmak, avuç, iğne tutan el). Ölçüldü: K18'de
+     referanssız parmak ucu kusursuz çıktı.
+   · K07 · K13 → arkadan ya da profilden, yüz kısmen gölgede.
+   · K01 · K37 · K40 → yüz görünür, ama HER ZAMAN tek huzmenin bandında.
+  Sebep: yüz ne kadar az kadrajda olursa süreklilik riski o kadar düşer, ve
+  elimizdeki iki şaheser karede zaten insan yok.
+
+▓▓ 7 · KESİM DİSİPLİNİ ▓▓
+
+Ölçüldü (Sol): 53 kesimin 47'si cümle sınırındaydı — "kurgu çok basic"in sayısı.
+Bu filmde kesimlerin en fazla YARISI cümle sınırında kalır.
+  · J kesim: sahne cümle bitmeden açılır → merak (dalış girişlerinde)
+  · L kesim: sahne yeni cümleye sarkar → duygu (dalış çıkışlarında)
+  · SERT kalanlar: pusula iğnesinin durduğu an (K15) ve kapanış (K40).
+
+Her karede ENTRY STATE / EXIT STATE yazılır: klip nerede başlar, nerede biter.
+Komşu karenin EXIT'i bir sonrakinin ENTRY'sini karşılamalı.
+
+▓▓ 8 · CANARY SETİ — ilk 2 sahne + en epik 2 sahne (kanon, ölçülen ders 31) ▓▓
+
+  K01 · oda + masa + harita + huzme + @mira yüzü ışıkta   → dünya ve referans
+  K02 · aynı masa, ekranda "İlimizin Göreceli Konumu"      → yazı
+  K18 · kırışık dağ sırtına dönüyor                        → filmin gösterisi
+  K37 · iki harita yan yana, uzun Türkçe cümle             → geometri + uzun yazı
+
+  Bu dördü geçmeden kalan 36 kare BASILMAZ.
+
+▓▓ 9 · NEGATİF ▓▓
+
+Sahneye özel, en fazla 3-5 madde. Her kare için tek soru: "BU kare nasıl bozulur?"
+
+🔴 NEGATİFTE BİR ŞEYİ ADLANDIRMAK ONU ÇAĞIRIYOR (ölçülen ders 7).
+   "no diagram, no printed page, no English text" YAZILMAZ.
+   Yerine olumlu: "the walls stay bare · the paper carries only the drawn
+   coastline · every letter is Turkish and cut from the paper itself".
+
+Bu filmin gerçek riskleri, sırayla:
+  1. Motor haritaya İngilizce etiket ve çağrı çizgisi basıyor  → olumlu yazımla kes
+  2. Uzun Türkçe dizgi derinlemesine gidince dağılıyor         → tepeden + paralel
+  3. Katı/mekanik nesne (pusula) motionda warp yiyor           → kısa klip, kilitli kamera
+  4. Çok sayıda küçük benzer nesne (iller) sayıca kaymıyor      → 4-5 sn, olumlu sabitleme
+  5. Referanslı kare aydınlıkta "vintage" moduna kaçıyor        → karanlık oda / huzme bandı
