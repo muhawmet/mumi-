@@ -22,12 +22,14 @@
 | 58 start frame + 6 revize + plaka | **5400** | Magnific |
 | **58 klip** | **~580** | Higgsfield |
 
-🔴 **Klipler kareden 10 KAT UCUZA çıktı.** Magnific'te `kling-30` 1080p 5 sn = **450 kredi**;
-Higgsfield'da aynı Kling 3.0 5 sn = **10 kredi**. 45 kat fark. 58 klibi Magnific'te bassaydım
-**~26.000 kredi** yakacaktım; Higgsfield'da **580** yaktı.
-Higgsfield bakiyesi hâlâ **4446** — yani bu filmin klip maliyeti bütçenin yanında yuvarlama hatası.
-**Bu bilgi 3000 videoluk planın en değerli parçası ve kanona yazıldı.**
-⚠ Karşılığı çözünürlük: klipler **1284×716, 24 fps**. 1080p değil. Portfolyo için upscale gerekebilir.
+🔴 **DÜZELTME (2026-08-08, Mami yakaladı).** Gece "klip 45 kat ucuz" yazmıştım — **YANLIŞ.**
+İki cüzdanın ham kredi sayısını yan yana koydum; oysa ölçekleri farklı: Higgsfield ~6k,
+Magnific ~600k, yani bir Higgsfield kredisi ~100 kat değerli. Kanonun kendi kuralı bunu
+zaten yasaklıyormuş (`rota.mjs:148`: *"Krediler KIYASLANAMAZ. Kıyaslanan birim FİLM."*).
+**Doğru tablo — cüzdan yüzdesi:** 58 kare Magnific'in **%6,4'ünü**, 58 klip Higgsfield'ın
+**%11,5'ini** yaktı. Klip kareden ucuz değil, **daha pahalıydı.**
+Kalan: Magnific ~79.000 · Higgsfield 4.446.
+⚠ Ayrıca klipler **1284×716 / 24 fps** — 1080p değil, portfolyoda upscale ister.
 
 ## AGY NE GÖRDÜ — senin sorduğun soru
 
@@ -76,5 +78,14 @@ takılıyor ama parkta gerçekçi ve bulanık; "bariz hata yoksa geçme" dediği
 6. **Anıtsallık ışığın tepeden inmesiyle taşınır.**
 7. **Negatifte adlandırmak çağırıyor** — bunu bu gece ben yaptım, motor İngilizce etiketli
    anatomi diyagramı bastı.
-8. 🔴 **KLİP HİGGSFIELD'DA BASILIR** — aynı Kling 3.0, 45 kat ucuz. Start frame Magnific'te
-   kalır (kanun), klip Higgsfield'a gider.
+8. 🔴 **İKİ CÜZDANIN HAM KREDİ SAYISI YAN YANA KONMAZ** — bunu 2026-08-08'de ben yaptım,
+   Mami yakaladı. Ölçekler farklı (Higgsfield ~6k, Magnific ~600k). Kıyaslanan birim
+   **FİLM** ya da **cüzdan yüzdesi**; kaynak `node scripts/rota.mjs durum`.
+
+## ⚠ HENÜZ YAPILMAMIŞ — dürüst olayım
+
+**58 klibin 56'sını GÖRMEDİM.** Canary olarak iki klip AGY'ye izletildi ve temiz çıktı;
+kalan 56'yı o kanıta dayanarak bastım ama hiçbiri izlenmedi. "10/10" diyemem, ölçmedim.
+Kalite hükmü için sıradaki adım: `node scripts/dis-goz.mjs gor` ile AGY'ye toplu izletmek
+(istek başına 10 klibe kadar) ya da kaba kurgu kurulduktan sonra **tam filmi** izletmek —
+kanon zaten ikincisini istiyor: *"hüküm klip klip değil, TAM VİDEO izlenerek verilir."*

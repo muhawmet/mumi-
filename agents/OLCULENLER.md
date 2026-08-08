@@ -106,14 +106,17 @@ Buraya **hüküm** yazılır, anlatı değil.
     ajanın `images_generate` çağrısı `[AJAN]` ile bloke, ana oturumunki açık, kredi değişmedi.
     Kanonun üç yerinde hâlâ "Mami basar" yazıyordu ve yeni oturum işi ona yıkıyordu.)*
 
-28. 🔴 **KLİP HİGGSFIELD'DA BASILIR — aynı Kling 3.0, 45 KAT UCUZ.** Ölçüldü 2026-08-07,
-    exact: Magnific `kling-30` 1080p 5 sn = **450 kredi** · Higgsfield `kling3_0` 5 sn =
-    **10 kredi**. 58 klip Magnific'te ~26.000 kredi, Higgsfield'da **580** yaktı.
-    ⚠ Karşılığı çözünürlük: Higgsfield çıktısı **1284×716 / 24 fps**, 1080p değil.
-    Kare Magnific'te kalır (madde 10 kanun), **klip Higgsfield'a gider.**
-    ⚠ İki tuzak: Higgsfield başlangıç karesini `media_upload` → curl PUT → `media_confirm`
-    ile ister (`start_image` rolü); ve bazı prompt'lara iş göndermek yerine **preset öneriyor**
-    — `declined_preset_id` ile reddedilmezse o klip hiç basılmaz.
+28. 🔴 **İKİ CÜZDANIN HAM KREDİ SAYISI YAN YANA KONMAZ — 2026-08-08'de orkestratör bunu
+    yaptı ve yanlış bir "45 kat ucuz" hükmü kanona yazdı.** Higgsfield ölçeği ~6k,
+    Magnific ~600k: bir Higgsfield kredisi ~**100 kat** değerli. Ham sayı kıyaslamak
+    ("450'ye karşı 10") anlamsızdır. Kıyaslanan birim **FİLM** ya da **cüzdan yüzdesi**;
+    tek doğruluk kaynağı `node scripts/rota.mjs durum` ve kuralı kodun içinde yazılı
+    (`rota.mjs:148`). *(Gerçek: 58 kare Magnific cüzdanının %6,4'ünü, 58 klip Higgsfield
+    cüzdanının %11,5'ini yaktı — klip kareden UCUZ değil, daha pahalıydı.)*
+    ⚠ Higgsfield çıktısı **1284×716 / 24 fps** — 1080p değil, portfolyoda upscale ister.
+    ⚠ İki tuzak: başlangıç karesi `media_upload` → curl PUT → `media_confirm` zinciriyle
+    verilir (`start_image` rolü); ve motor bazı prompt'lara iş göndermek yerine **preset
+    öneriyor** — `declined_preset_id` verilmezse o klip **hiç basılmaz** (3 kez oldu).
 
 10. 🔴 **START FRAME YALNIZ MAGNIFIC'te basılır.** İstisnası yoktur. Higgsfield **ortak hesap**
     ve MCP'sinde **silme aracı yok** — oraya giden prompt görünür kalır. Mami'nin ölçüsü:
