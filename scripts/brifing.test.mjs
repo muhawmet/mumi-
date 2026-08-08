@@ -3,7 +3,7 @@
 // Bir öneri gerekçesiz geliyorsa Mami tek tuşla karar veremez ve kapı işini yapmamıştır.
 
 import { describe, expect, it } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, globSync } from 'node:fs';
 import {
   ADAY_TAVANI, BrifingError, ELEMENT_ESIGI, KELIME_HIZI, RISK_SINIFLARI, docxMetni, elementEslestir, tekrarEdenler,
   kaynakOku, main, markdown, riskTara, sorulariKur, sureTahmini, tonOlc, usage, zipGirdisi,
@@ -152,8 +152,11 @@ describe('brifing — .docx okuma (bağımlılıksız)', () => {
     expect(zipGirdisi(Buffer.from('bu bir zip değil'), 'word/document.xml')).toBeNull();
   });
 
-  const gercekDocx = 'agents/COMMAND-INBOX/Bekleyen/KUVVETLERİN GÜÇ BİRLİĞİ-6. sınıf -vıdeo senaryosu.docx';
-  it.skipIf(!existsSync(gercekDocx))('GERÇEK bir Word senaryosunu açar ve metin çıkarır', () => {
+  // Sabit bir yola bağlanmaz: docx'ler proje bitince Bekleyen'den kendi klasörüne taşınır
+  // ve o gün bu test SESSİZCE skip'e düşer — yani "geçti" der ama hiçbir şey ölçmez.
+  // (Bu repoda dokuz kez ölçülen kusur sınıfı: doğrulayıcı ölçtüğü şeyin YERLEŞİMİNİ varsayıyor.)
+  const gercekDocx = globSync('agents/COMMAND-INBOX/**/*.docx').sort()[0];
+  it.skipIf(!gercekDocx || !existsSync(gercekDocx))('GERÇEK bir Word senaryosunu açar ve metin çıkarır', () => {
     const xml = zipGirdisi(readFileSync(gercekDocx), 'word/document.xml');
     expect(xml).not.toBeNull();
     const metin = docxMetni(xml);

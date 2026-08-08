@@ -1,6 +1,6 @@
 ---
 proje: 6. Sınıf - Denetleyici ve Düzenleyici Sistemler
-kaynak: agents/COMMAND-INBOX/Bekleyen/6.sınıf denetleyici ve düzenleyici sistemler video senaryosu.docx
+kaynak: agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler/6.sınıf denetleyici ve düzenleyici sistemler video senaryosu.docx
 # Ölçüldü 2026-08-07 (607 kelimelik kaynakta):
 #   sinir 12 · orkestra 7 · hormon 5 · elektrik 3 · nöron 1 · maket 1 · bisiklet 1 · damar 1 · lunapark 1
 # Aynı kaynakta: mutfak 0 · soba 0 — önceki turun 56 karelik dünyası buydu ve çöktü.
