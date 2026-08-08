@@ -4,11 +4,19 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "aktif",
-  "lastCompleted": "FİLM HAM HÂLDE BİTTİ: 58 kare + 58 KLİP. Klipler ~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/ (256MB · ham 5:31 · kırpılmış ~3:35 · 1284x716/24fps, 1080p DEĞİL). ⚠ 58 klibin 56'sı İZLENMEDİ — yalnız 2 canary AGY'ye izletildi (morphing yok); kalite hükmü TAM FİLM izlenerek verilecek. ⚠ Kredi: 58 kare Magnific'in %6,4'ü, 58 klip Higgsfield'ın %11,5'i — klip kareden UCUZ DEĞİL (dün ters yazmıştım, düzeltildi).",
-  "nextAction": "ElevenLabs'tan VO al → kaba-kurgu.mjs --klipler --vo → tam filmi AGY'ye izlet. AÇIK: K53'te bitki etiketinde okunmayan yazı, 75 kredi, Mami'nin sözü",
+  "lastCompleted": "Proje açıldı. Kaynak: agents/COMMAND-INBOX/Bekleyen/KUVVETLERİN GÜÇ BİRLİĞİ-6. sınıf -vıdeo senaryosu.docx (20.7 KB). Henüz hiçbir şey yapılmadı.",
+  "nextAction": "PLAN MODUNDA aç → node scripts/brifing.mjs '<kaynak docx>' → /mamilas-enzim ile KİLİT 0-5",
   "openMamiDecision": null,
   "blockedBy": null,
-  "requiredLocalMedia": [],
+  "requiredLocalMedia": [
+    {
+      "path": "/Users/Muhammet/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler",
+      "expect": {
+        "clips": 58
+      },
+      "note": "repo dışı — git-ignore değil, hiç repoda değil"
+    }
+  ],
   "deliverables": {
     "REFERANSLAR": true,
     "PROMPTLAR": true,
@@ -19,7 +27,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-08T07:18:29.892Z",
+  "updatedAt": "2026-08-08T07:22:02.076Z",
   "updatedBy": "claude",
-  "baseCommit": "0e97a7d9"
+  "baseCommit": "db13b3c3"
 }
