@@ -95,6 +95,22 @@ Buraya **hüküm** yazılır, anlatı değil.
     *(2026-08-07: aynı prompt, ışık kaynağı değişti — kütle önce kumaş parçası gibi çıktı,
     tepeden inen koni huzmeyle katedral oldu.)*
 
+29. 🔴 **İLK ÇIKTIYI TEKNİK OLARAK DOĞRULAMADAN SERİYE GEÇME.** Yeni bir motor/cüzdan/araçla
+    basılan İLK çıktıda `ffprobe` (video) ya da dosya ölçüsü (görsel) koşulur ve **niyetle
+    karşılaştırılır**: çözünürlük · ses izi · süre · fps. Uymuyorsa **DUR ve Mami'ye sor.**
+    *(2026-08-08: 58 klip 1284×716 ve SESLİ çıktı. Kusur "bakmadım" değil — ilk 12 klipte
+    ffprobe koştum, `width=1284 height=716` ekrandaydı, Mami'ye "1080p değil" diye yazdım
+    bile, sonra 46 klip daha bastım. Görüp geçmek bakmamaktan beterdir. Durmanın bedeli
+    12 klip / ~5 dolar olurdu; durmamanın bedeli 58 klip / ~26 dolar ve Mami'nin beğendiği
+    filmin yarım kalması. Kling'de ses PROMPT'la kapanmaz — "silent clip" metindir, parametre
+    değil; çözünürlük de `width/height` ile açıkça verilir.)*
+30. 🔴 **RAKAM KREDİ DEĞİL PARA OLARAK ONAYLANIR, VE CÜZDAN ADIYLA.** "5500 kredi" bir soyutlama;
+    hangi cüzdan olduğu ve kaç dolar ettiği söylenmeden onay değildir.
+    *(2026-08-08: Mami MAGNIFIC için 5500 dedi, ajan HIGGSFIELD'dan harcadı — başka cüzdan,
+    hiç onay yok. Kapı yakalamadı çünkü tek sayı tutuyor, cüzdan ayırmıyor. Ayrıca bütün gece
+    kredi sayıldı, hiç paraya çevrilmedi: Higgsfield'da $1 ≈ 22 kredi, yani 580 kredi ≈ $26.)*
+    Basımdan önce söylenecek cümle: **"<cüzdan> · N birim × fiyat = X kredi ≈ $Y"**.
+
 ## CÜZDAN
 
 22. 🔴 **BASAN CLAUDE'DUR — ajan değil, Mami de değil.** Zincir üç adım: **ajan YAZAR →
