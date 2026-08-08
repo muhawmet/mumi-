@@ -3,10 +3,10 @@
   "projectId": "6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
-  "status": "aktif",
-  "lastCompleted": "Proje açıldı. Kaynak: agents/COMMAND-INBOX/Bekleyen/KUVVETLERİN GÜÇ BİRLİĞİ-6. sınıf -vıdeo senaryosu.docx (20.7 KB). Henüz hiçbir şey yapılmadı.",
-  "nextAction": "PLAN MODUNDA aç → node scripts/brifing.mjs '<kaynak docx>' → /mamilas-enzim ile KİLİT 0-5",
-  "openMamiDecision": null,
+  "status": "mami-bekliyor",
+  "lastCompleted": "FİLM HAM HÂLDE BİTTİ: 58 kare + 58 KLİP. Klipler ~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/ (256MB · ham 5:31 · kırpılmış ~3:35 · 1284x716/24fps). ⚠ 58 klibin 56'sı İZLENMEDİ — yalnız 2 canary AGY'ye izletildi. ⚠ Klip kareden UCUZ DEĞİL: kare Magnific'in %6,4'ü, klip Higgsfield'ın %11,5'i.",
+  "nextAction": "🔴 MAMİ KUVVETLERİN GÜÇ BİRLİĞİ'Nİ SEÇTİ (2026-08-08) ama Denetleyici KAPANAMIYOR: kapanış receipt'i final film ister, film daha kurgulanmadı. İKİ YOL: (a) Denetleyici'yi bitir — VO al, kaba-kurgu.mjs koş, tam filmi izlet, sonra receipt damgala ve kapat. (b) Kuvvetlerin Güç Birliği'ni AÇMADAN, ayrı sohbette plan modunda başlat. Mami (a) dedi ise sıra VO'da.",
+  "openMamiDecision": "Denetleyici kapanmadan Kuvvetlerin Güç Birliği açılsın mı? Kapanış receipt'i final film istiyor; film henüz kurgulanmadı.",
   "blockedBy": null,
   "requiredLocalMedia": [
     {
@@ -27,7 +27,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-08T07:22:02.076Z",
+  "updatedAt": "2026-08-08T07:23:29.077Z",
   "updatedBy": "claude",
-  "baseCommit": "db13b3c3"
+  "baseCommit": "3a6272fb"
 }
