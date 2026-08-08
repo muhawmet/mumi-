@@ -4,8 +4,8 @@
   "projectPath": "agents/COMMAND-INBOX/6. Sınıf - Denetleyici ve Düzenleyici Sistemler",
   "phase": "prompt",
   "status": "mami-bekliyor",
-  "lastCompleted": "FİLM HAM HÂLDE BİTTİ: 58 kare + 58 KLİP. Klipler ~/Desktop/6. Sınıf Animasyonlar/Denetleyici ve Düzenleyici/klipler/ (256MB · ham 5:31 · kırpılmış ~3:35 · 1284x716/24fps). ⚠ 58 klibin 56'sı İZLENMEDİ — yalnız 2 canary AGY'ye izletildi. ⚠ Klip kareden UCUZ DEĞİL: kare Magnific'in %6,4'ü, klip Higgsfield'ın %11,5'i.",
-  "nextAction": "🔴 MAMİ KUVVETLERİN GÜÇ BİRLİĞİ'Nİ SEÇTİ (2026-08-08) ama Denetleyici KAPANAMIYOR: kapanış receipt'i final film ister, film daha kurgulanmadı. İKİ YOL: (a) Denetleyici'yi bitir — VO al, kaba-kurgu.mjs koş, tam filmi izlet, sonra receipt damgala ve kapat. (b) Kuvvetlerin Güç Birliği'ni AÇMADAN, ayrı sohbette plan modunda başlat. Mami (a) dedi ise sıra VO'da.",
+  "lastCompleted": "58/58 klip 1080p'ye upscale edildi (Topaz, 235 kredi ≈ $10,5); hepsi ffprobe ile doğrulandı: 1920x1080/24fps/sessiz, süreler orijinalle aynı",
+  "nextAction": "Denetleyici için VO al (ElevenLabs) → kaba-kurgu.mjs --klipler klipler-1080p --vo → tam filmi izle",
   "openMamiDecision": "Denetleyici kapanmadan Kuvvetlerin Güç Birliği açılsın mı? Kapanış receipt'i final film istiyor; film henüz kurgulanmadı.",
   "blockedBy": null,
   "requiredLocalMedia": [
@@ -27,7 +27,7 @@
     "SUNO": true,
     "KABA-KURGU.xml": false
   },
-  "updatedAt": "2026-08-08T07:23:29.077Z",
+  "updatedAt": "2026-08-08T10:02:45.786Z",
   "updatedBy": "claude",
-  "baseCommit": "3a6272fb"
+  "baseCommit": "68d842b6"
 }

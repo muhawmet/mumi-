@@ -6,7 +6,15 @@ kaynak: agents/COMMAND-INBOX/Bekleyen/6.sınıf denetleyici ve düzenleyici sist
 # Aynı kaynakta: mutfak 0 · soba 0 — önceki turun 56 karelik dünyası buydu ve çöktü.
 dunya: [orkestra, sinir, hormon, elektrik, nöron, maket, bisiklet, damar, lunapark]
 canary: GECTI          # 4 demo karesi Mami onayı aldı (commit 3a3d539a)
-butce: { onayli: 5500, birim: 75 }
+butce: { onayli: 10100, birim: 75 }
+# ⚠ 10100 SAYISI PARA DEĞİL, KAPININ BİRİMİ. harcama-kapisi.mjs her çağrıyı `birim`
+# (75) üstünden sayıyor. Mami 2026-08-08'de son upscale klibi (K58) için tavanı
+# 10000 → 10100 onayladı; gerçek bedeli 5 kredi ≈ $0,25.
+# ÖLÇÜLDÜ 2026-08-08 — upscale fiyatı SABİT DEĞİL: 5 sn klip 3 kredi, 6-7 sn klip
+# 5 kredi. 58 klibin tamamı = 235 gerçek kredi ≈ $10,5 (bakiye 4446,25 → 4206,25).
+# Kapı aynı işi 4350 birim sayıyor — birim gerçeği çarpıtıyor.
+# 🔴 KOD İŞİ: kapı araç başına birim tutmalı (kare 75 · klip ~10 · upscale 3), tek
+# sabit birim gerçeği çarpıtıyor ve onayı anlamsız kılıyor. Kod donmuş fazda.
 uretim_yetkisi: ana-oturum
 ---
 
